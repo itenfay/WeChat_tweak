@@ -5,7 +5,7 @@
 
 @class FinderLiveNoticeInfo, MMFinderLiveBuyTicketHandle, MMLiveIconButton, MMPaddingView, MMUIButton, MMUILabel, MMWebImageView, NSString, WCFinderBaseCgi, WCFinderLiveNoticePayActionView, WCLiveActionSheet;
 
-@interface MMFinderLiveNoticePromotePubbleContentView
+@interface MMFinderLiveNoticePromotePubbleContentView : NSObject
 {
     _Bool _isLastReserved;
     _Bool _isLastHasPay;

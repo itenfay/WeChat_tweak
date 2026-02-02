@@ -6,7 +6,7 @@
 @class FinderUniCommentMediaView, NSIndexPath, NSString, UIButton, UIColor, UIImageView, UIView, WCCommentLikeView, WCFinderComment, WCFinderFeedContentTextView;
 @protocol WCCommentSubCommentTableViewCellActionDelegate;
 
-@interface WCCommentSubCommentTableViewCell
+@interface WCCommentSubCommentTableViewCell : NSObject
 {
     _Bool _wechatAccountProfileSwitch;
     _Bool _isFriendIdentity;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface PlayingController
+@interface PlayingController : NSObject
 {
     _Bool m_bPlaying;
     unsigned int m_uiMesLocalID;

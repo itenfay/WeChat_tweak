@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIViewController, MMWebCanvasLogicJsEngine, MMWebCanvasPkgInfo, MMWebCanvasRenderJsEngine, NSMutableDictionary, NSString, WCEliminatedSlotMMKV;
 @protocol WXCustomWebViewControllerProtocol;
 
-@interface MMWebCanvasJsEngineMgr
+@interface MMWebCanvasJsEngineMgr : NSObject
 {
     _Bool _isSettingUpLogicEngine;
     _Bool _reflowWhenEnterForeground;

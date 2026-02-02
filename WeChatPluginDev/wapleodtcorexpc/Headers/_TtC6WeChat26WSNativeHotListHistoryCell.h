@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26WSNativeHotListHistoryCell
+@interface _TtC6WeChat26WSNativeHotListHistoryCell : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *isEditingStatus;

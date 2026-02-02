@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString, UITextField, UIView;
 
-@interface MMWebViewPlugin_SearchInPage
+@interface MMWebViewPlugin_SearchInPage : NSObject
 {
     _Bool _bEnableSearchInPage;
     CDUnknownBlockType _inputTextCallbackBlock;

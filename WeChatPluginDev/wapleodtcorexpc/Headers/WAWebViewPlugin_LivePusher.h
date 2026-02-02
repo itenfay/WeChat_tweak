@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIView;
 @protocol TXLivePushJSAdapterProtocol;
 
-@interface WAWebViewPlugin_LivePusher
+@interface WAWebViewPlugin_LivePusher : NSObject
 {
     int _curArrayBufferId;
     int _lastArrayBufferId;

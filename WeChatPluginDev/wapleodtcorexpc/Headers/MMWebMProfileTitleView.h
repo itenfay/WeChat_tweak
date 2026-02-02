@@ -6,7 +6,7 @@
 @class MMUILabel, UIButton, UIImageView;
 @protocol MMWebMProfileTitleViewDelegate;
 
-@interface MMWebMProfileTitleView
+@interface MMWebMProfileTitleView : NSObject
 {
     id <MMWebMProfileTitleViewDelegate> _delegate;
     MMUILabel *_titleView;

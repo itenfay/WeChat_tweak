@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface WASMPageSheetFooterView
+@interface WASMPageSheetFooterView : NSObject
 {
     UIButton *_declineButton;
     UIButton *_keepOptionButton;

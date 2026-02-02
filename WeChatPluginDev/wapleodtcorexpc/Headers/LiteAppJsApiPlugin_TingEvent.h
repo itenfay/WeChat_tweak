@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiPlugin_TingEvent
+@interface LiteAppJsApiPlugin_TingEvent : NSObject
 {
     _Bool _isNotifyTingStateChange;
     _Bool _lastVituralPlayerForegroundState;

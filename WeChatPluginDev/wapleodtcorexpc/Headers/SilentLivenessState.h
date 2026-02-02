@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableString, YTLiveDetector, YtTimerCounter;
 
-@interface SilentLivenessState
+@interface SilentLivenessState : NSObject
 {
     CDStruct_0edc81f6 trackInfo;
     struct YTPOSE pose;

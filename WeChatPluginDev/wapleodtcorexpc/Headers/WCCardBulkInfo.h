@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCCardBulkInfo
+@interface WCCardBulkInfo : NSObject
 {
     _Bool _acceptButtonStatus;
     unsigned int _privateStatus;

@@ -5,7 +5,7 @@
 
 @protocol WCPayF2FGetReceiveHistoryCgiDelegate;
 
-@interface WCPayF2FGetReceiveHistoryCgi
+@interface WCPayF2FGetReceiveHistoryCgi : NSObject
 {
     unsigned int _maxItemPerTime;
     unsigned int _svrRettryNum;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WADeviceVoipAuthGetDeviceListCgiDelegate;
 
-@interface WADeviceVoipAuthGetDeviceListCgi
+@interface WADeviceVoipAuthGetDeviceListCgi : NSObject
 {
     id <WADeviceVoipAuthGetDeviceListCgiDelegate> _delegate;
     NSString *_appId;

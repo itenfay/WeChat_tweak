@@ -6,7 +6,7 @@
 @class MMFinderGameLiveStarterViewModel, MMFinderGameLiveTabPageViewModel, MMFinderLiveGameSearchViewModel, MMFinderLiveGameUserInfo, MMLiveGameRecentlyPalyedView, MMLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUIButton, MMUISearchBar, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIButton, UILabel, UIView, WCFinderGameLiveListHeaderView, WCFinderLiveStarterReporter, WCFinderTabPageView, WCTimeLineFooterView;
 @protocol WCFinderGameLiveListViewControllerDelegate;
 
-@interface WCFinderGameLiveListViewController
+@interface WCFinderGameLiveListViewController : NSObject
 {
     _Bool _showSearch;
     _Bool _isShowGameSearchResult;

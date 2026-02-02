@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPlayerHttpMediaWrap
+@interface WAPlayerHttpMediaWrap : NSObject
 {
     NSString *_url;
     NSString *_localFilePath;

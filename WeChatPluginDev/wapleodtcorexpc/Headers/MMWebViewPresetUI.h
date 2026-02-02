@@ -5,7 +5,7 @@
 
 @class MMWebViewPresetUIChildViewConfig, NSMutableArray, NSMutableSet, NSString, UIColor, UIView;
 
-@interface MMWebViewPresetUI
+@interface MMWebViewPresetUI : NSObject
 {
     _Bool _hideCloseButton;
     _Bool _shouldShowDomain;

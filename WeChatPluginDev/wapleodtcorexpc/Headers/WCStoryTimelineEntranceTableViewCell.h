@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSString, UIButton, UICollectionView, UIImageView, UILabel, UIView, WCStoryReportUtil, WCStoryTimelineEntranceCollectionViewLayout;
 @protocol WCStoryTimelineEntranceTableViewCellDelegate;
 
-@interface WCStoryTimelineEntranceTableViewCell
+@interface WCStoryTimelineEntranceTableViewCell : NSObject
 {
     _Bool _canShowDeleteButton;
     _Bool _canAdjustInset;

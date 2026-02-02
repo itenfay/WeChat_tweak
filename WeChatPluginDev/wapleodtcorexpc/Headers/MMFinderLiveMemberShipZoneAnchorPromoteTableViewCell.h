@@ -5,7 +5,7 @@
 
 @class MMFinderLiveMemberShipZoneAnchorPromoteInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveMemberShipZoneAnchorPromoteTableViewCell
+@interface MMFinderLiveMemberShipZoneAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_companyLabel;

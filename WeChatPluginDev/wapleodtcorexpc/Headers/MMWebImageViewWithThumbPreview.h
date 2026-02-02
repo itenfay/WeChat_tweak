@@ -5,7 +5,7 @@
 
 @class EmojiInfo, EmoticonPreviewWindowViewController, MMImageView, MMWebImageView, NSString;
 
-@interface MMWebImageViewWithThumbPreview
+@interface MMWebImageViewWithThumbPreview : NSObject
 {
     MMWebImageView *m_imageView;
     MMImageView *m_imageFocusView;

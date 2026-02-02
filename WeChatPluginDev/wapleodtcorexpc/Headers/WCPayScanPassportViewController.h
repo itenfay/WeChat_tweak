@@ -6,7 +6,7 @@
 @class AVCaptureSession, AVCaptureVideoPreviewLayer, CornerView, IntelligentOCRPassport, MMUIButton, MMUILabel, MobileOCRImage, NSDictionary, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView;
 @protocol WCPayScanPassportViewControllerDelegate;
 
-@interface WCPayScanPassportViewController
+@interface WCPayScanPassportViewController : NSObject
 {
     _Bool _use4KMode;
     _Bool _testMissingModel;

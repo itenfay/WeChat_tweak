@@ -5,7 +5,7 @@
 
 @class WANetworkConfigBase;
 
-@interface WAJSEventHandler_checkNetworkAPIURL
+@interface WAJSEventHandler_checkNetworkAPIURL : NSObject
 {
     WANetworkConfigBase *_netConfig;
 }

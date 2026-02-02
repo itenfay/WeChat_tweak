@@ -5,7 +5,7 @@
 
 @class MMCheckBox, MMTableView, MMUIButton, NSString, RichTextView, UILabel, UIView, ZZFLEXAngel;
 
-@interface WAAuthPageSheetUserIdView
+@interface WAAuthPageSheetUserIdView : NSObject
 {
     UIView *_auiView;
     UILabel *_idLabel;

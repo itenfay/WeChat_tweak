@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUILabel, MMUITextField, NSString, UIColor, UIImageView, UISwitch, UIView;
 @protocol WCFinderLiveStartLotteryItemViewDelegate;
 
-@interface WCFinderLiveStartLotteryItemView
+@interface WCFinderLiveStartLotteryItemView : NSObject
 {
     _Bool _hasRectCorner;
     _Bool _isShowSepelateLine;

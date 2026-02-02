@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, SightIconView, UIImage, WAAppVideoViewModel, WAPlayerHttpMediaWrap, YYAsyncImageView;
 
-@interface WAAppVideoCellView
+@interface WAAppVideoCellView : NSObject
 {
     YYAsyncImageView *m_thumbImageView;
     SightIconView *m_sightIconView;

@@ -5,7 +5,7 @@
 
 @protocol WCPayF2FMiniProgramConfirmRcvrCgiDelegate;
 
-@interface WCPayF2FMiniProgramConfirmRcvrCgi
+@interface WCPayF2FMiniProgramConfirmRcvrCgi : NSObject
 {
     id <WCPayF2FMiniProgramConfirmRcvrCgiDelegate> m_delegate;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderLiveTopCommentCGI
+@interface WCFinderLiveTopCommentCGI : NSObject
 {
     unsigned int _optype;
     CDUnknownBlockType _successBlock;

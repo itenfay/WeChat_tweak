@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, RoamBackupRange, RoamBackupRangeItem_ContactFilter, UIViewController, WXGRoamBackupPackageBridge, WXGRoamBackupPackageManagerViewController, WXGRoamBackupPackageModel, WXGRoamBackupPackageRangeHandler, WXGRoamChooseRangeExactUserViewController, WXGRoamWindowViewController;
 
-@interface WXGRoamBackupPackageService
+@interface WXGRoamBackupPackageService : NSObject
 {
     _Bool _bAfterCreateShowDetail;
     _Bool _bSwitchPackagePlaceTop;

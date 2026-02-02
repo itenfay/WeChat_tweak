@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat21KaraGroupVideoFeature
+@interface _TtC6WeChat21KaraGroupVideoFeature : NSObject
 {
     MISSING_TYPE *preview;
     MISSING_TYPE *_containsRaw;

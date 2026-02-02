@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MsgImgSearchPhashMemItem, NSString, UIImage, WCDataItem, WCImageSearchReportModel, WCMediaItem;
 
-@interface WCImageSearchEntity
+@interface WCImageSearchEntity : NSObject
 {
     unsigned long long _dataType;
     CMessageWrap *_msgWrap;

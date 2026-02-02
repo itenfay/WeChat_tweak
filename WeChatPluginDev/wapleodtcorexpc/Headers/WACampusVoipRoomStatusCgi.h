@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WACampusVoipRoomStatusCgi
+@interface WACampusVoipRoomStatusCgi : NSObject
 {
     NSString *_groupId;
     long long _roomStatus;

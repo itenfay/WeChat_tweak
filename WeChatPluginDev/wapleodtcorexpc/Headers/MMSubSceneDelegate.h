@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMainSceneDelegate;
 
-@interface MMSubSceneDelegate
+@interface MMSubSceneDelegate : NSObject
 {
     MMMainSceneDelegate *_mainSceneDelegate;
 }

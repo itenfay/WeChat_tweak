@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderFollowVerifyCGI
+@interface WCFinderFollowVerifyCGI : NSObject
 {
     unsigned int _optype;
     unsigned long long _followId;

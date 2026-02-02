@@ -6,7 +6,7 @@
 @class CMessageWrap, IntelligentMsgBrowseView, IntelligentMsgImgLabelListView, MMDropableTitleView, MMTableView, MMTableViewInfo, MMUIView, MsgDataSaveLogic, MsgImgFullScreenWindow, MsgNewImgDataLogic, MultiSelectController, NSMutableSet, NSString, UIButton, UIView, ViewAppMsgController, WCDataSearcher;
 @protocol IntelligentMsgImgBrowseViewControllerDelegate;
 
-@interface IntelligentMsgImgBrowseViewController
+@interface IntelligentMsgImgBrowseViewController : NSObject
 {
     NSString *m_sessionId;
     _Bool m_bEditing;

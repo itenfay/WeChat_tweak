@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface SettingQuickReplyViewController
+@interface SettingQuickReplyViewController : NSObject
 {
     _Bool _isSelectionChanged;
     CDUnknownBlockType _selectionHandler;

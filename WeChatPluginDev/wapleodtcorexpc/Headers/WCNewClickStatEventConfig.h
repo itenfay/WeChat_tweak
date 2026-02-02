@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCNewClickStatEventConfig
+@interface WCNewClickStatEventConfig : NSObject
 {
     unsigned int _eventID;
     unsigned int _expireTime;

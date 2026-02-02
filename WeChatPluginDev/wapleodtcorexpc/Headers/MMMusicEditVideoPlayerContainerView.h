@@ -5,7 +5,7 @@
 
 @class MMMusicEditVideoPlayerView, MMMusicFadeOutLayer, MMWebImageView, NSString;
 
-@interface MMMusicEditVideoPlayerContainerView
+@interface MMMusicEditVideoPlayerContainerView : NSObject
 {
     MMMusicEditVideoPlayerView *m_playerView;
     MMWebImageView *m_imageView;

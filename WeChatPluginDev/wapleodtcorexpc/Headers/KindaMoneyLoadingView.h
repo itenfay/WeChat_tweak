@@ -5,7 +5,7 @@
 
 @class MMDynamicColor, NSString, TimeoutNumber;
 
-@interface KindaMoneyLoadingView
+@interface KindaMoneyLoadingView : NSObject
 {
     float _textSize;
     TimeoutNumber *_timeoutNumber;

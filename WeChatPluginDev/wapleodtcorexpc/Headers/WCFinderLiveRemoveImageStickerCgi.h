@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveRemoveImageStickerCgi
+@interface WCFinderLiveRemoveImageStickerCgi : NSObject
 {
     NSString *_stickerSubmissionId;
     CDUnknownBlockType _successBlock;

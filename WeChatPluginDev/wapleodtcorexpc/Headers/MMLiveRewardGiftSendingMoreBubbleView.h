@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class LOTAnimationView, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, MMUIView, NSString, UILongPressGestureRecognizer;
 @protocol MMLiveRewardGiftSendingMoreLogicDelegate;
 
-@interface MMLiveRewardGiftSendingMoreBubbleView
+@interface MMLiveRewardGiftSendingMoreBubbleView : NSObject
 {
     _Bool _isEnableSendAgain;
     _Bool _sendButtonTouchIsNotFinish;

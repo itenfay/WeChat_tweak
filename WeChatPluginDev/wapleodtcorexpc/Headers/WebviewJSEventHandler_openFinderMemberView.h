@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_openFinderMemberView
+@interface WebviewJSEventHandler_openFinderMemberView : NSObject
 {
     JSEvent *_event;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, NSString, UIButton, UITableView, WCFinderFeedContentVM, WCFinderPostSessionModel, WCFinderShareCustomTransition;
 @protocol WCFinderPostFullScreenPreviewViewControllerDelegate;
 
-@interface WCFinderPostFullScreenPreviewViewController
+@interface WCFinderPostFullScreenPreviewViewController : NSObject
 {
     _Bool _needsResumeTimelineVideo;
     _Bool _isAuthorPerspective;

@@ -6,7 +6,7 @@
 @class NSString, WCCardEntryTips, WCCardMsgTips, WCCardPkgDB;
 @protocol WCCardMsgCenterMgrDelegate;
 
-@interface WCCardMsgCenterMgr
+@interface WCCardMsgCenterMgr : NSObject
 {
     WCCardPkgDB *_wccardPkgDB;
     WCCardMsgTips *_wccardMsgTips;

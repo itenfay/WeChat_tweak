@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, UIView;
 
-@interface MMMLiveRewardQuotaSettingDetailCell
+@interface MMMLiveRewardQuotaSettingDetailCell : NSObject
 {
     unsigned long long _rewardQuota;
     MMUILabel *_titleLabel;

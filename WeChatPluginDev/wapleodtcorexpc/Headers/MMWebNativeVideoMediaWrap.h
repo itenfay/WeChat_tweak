@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebNativeVideoMediaWrap
+@interface MMWebNativeVideoMediaWrap : NSObject
 {
     NSString *_url;
     NSString *_identifier;

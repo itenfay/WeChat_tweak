@@ -6,7 +6,7 @@
 @class NSNumber, NSString, UIColor, UIImageView, UIScrollView, UIView;
 @protocol MMNavBarInteractiveDelegate;
 
-@interface MMNavBarInteractiveConfig
+@interface MMNavBarInteractiveConfig : NSObject
 {
     unsigned long long _navBarInteractiveStyle;
     double _navBarFadeInStartOffset;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMECGetProductQRCodeCGI
+@interface MMECGetProductQRCodeCGI : NSObject
 {
     NSString *_appId;
     unsigned long long _productId;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WxamImageManager
+@interface WxamImageManager : NSObject
 {
     _Bool _exptOnlyStoreWxam;
     _Bool _exptTransferWxam;

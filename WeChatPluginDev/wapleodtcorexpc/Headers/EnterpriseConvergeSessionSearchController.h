@@ -6,7 +6,7 @@
 @class EnterpriseContactSearchView, EnterpriseSearchDataController, NSMutableArray, NSRecursiveLock, NSString;
 @protocol EnterpriseConvergeSessionSearchControllerDelegate;
 
-@interface EnterpriseConvergeSessionSearchController
+@interface EnterpriseConvergeSessionSearchController : NSObject
 {
     NSString *_mainBrandUserName;
     NSString *_chatBrandUserName;

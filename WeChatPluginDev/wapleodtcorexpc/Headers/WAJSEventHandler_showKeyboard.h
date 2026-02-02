@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_showKeyboard
+@interface WAJSEventHandler_showKeyboard : NSObject
 {
 }
 

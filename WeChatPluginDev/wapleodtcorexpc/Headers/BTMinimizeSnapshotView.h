@@ -5,7 +5,7 @@
 
 @class CContact, MMUILabel, MMWebImageView, NSString, RichTextView, SightIconView, UIImageView, UIView;
 
-@interface BTMinimizeSnapshotView
+@interface BTMinimizeSnapshotView : NSObject
 {
     _Bool _isShowLargeCover;
     unsigned int _itemShowType;

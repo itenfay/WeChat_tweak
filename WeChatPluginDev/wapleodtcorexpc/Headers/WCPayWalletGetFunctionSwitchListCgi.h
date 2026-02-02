@@ -5,7 +5,7 @@
 
 @protocol WCPayWalletGetFunctionSwitchListCgiDelegate;
 
-@interface WCPayWalletGetFunctionSwitchListCgi
+@interface WCPayWalletGetFunctionSwitchListCgi : NSObject
 {
     id <WCPayWalletGetFunctionSwitchListCgiDelegate> m_delegate;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, NSArray, NSString;
 
-@interface WCFinderStatsReportCGI
+@interface WCFinderStatsReportCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

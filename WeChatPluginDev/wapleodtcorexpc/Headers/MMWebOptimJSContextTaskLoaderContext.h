@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebOptimJSContextTaskConfig;
 
-@interface MMWebOptimJSContextTaskLoaderContext
+@interface MMWebOptimJSContextTaskLoaderContext : NSObject
 {
     MMWebOptimJSContextTaskConfig *_config;
     CDUnknownBlockType _successBlock;

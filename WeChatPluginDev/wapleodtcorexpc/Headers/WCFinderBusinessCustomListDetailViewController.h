@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiteAppViewController, NSString, UIView, WCFinderBusinessCustomListDetailViewModel, WCFinderFeedDetailStatusView, WCFinderFeedListView, WCFinderShareCustomTransition;
 @protocol WCFinderBusinessCustomListDetailViewControllerDelegate;
 
-@interface WCFinderBusinessCustomListDetailViewController
+@interface WCFinderBusinessCustomListDetailViewController : NSObject
 {
     _Bool _isPresentedScene;
     int _commentScene;

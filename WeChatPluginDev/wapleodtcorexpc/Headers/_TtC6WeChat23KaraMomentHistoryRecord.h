@@ -5,7 +5,7 @@
 
 @class KaraTextFeature_Embedding1x32, MISSING_TYPE, NSString, _TtC6WeChat17WCDBIntegerNumber;
 
-@interface _TtC6WeChat23KaraMomentHistoryRecord
+@interface _TtC6WeChat23KaraMomentHistoryRecord : NSObject
 {
     MISSING_TYPE *identifier;
     MISSING_TYPE *userName;

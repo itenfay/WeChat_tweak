@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTVideoItemCellAutoMediaWrap
+@interface BTVideoItemCellAutoMediaWrap : NSObject
 {
     NSString *_url;
     NSString *_identifier;

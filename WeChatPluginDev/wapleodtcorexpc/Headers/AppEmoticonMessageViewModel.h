@@ -5,7 +5,7 @@
 
 @class CEmoticonWrap, NSString;
 
-@interface AppEmoticonMessageViewModel
+@interface AppEmoticonMessageViewModel : NSObject
 {
     _Bool _hasTryAutoDownload;
     int _iconType;

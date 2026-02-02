@@ -5,7 +5,7 @@
 
 @class FaceRecogReporterFaceErrCounter, FaceRecogReporterFaceTimeMeter, NSMutableArray, NSString;
 
-@interface FaceRecogReporter
+@interface FaceRecogReporter : NSObject
 {
     unsigned long long frReportSessionId;
     _Bool _needUploadVideo;

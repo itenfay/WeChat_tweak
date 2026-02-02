@@ -5,7 +5,7 @@
 
 @class WCFinderLiveBaseLogReporter;
 
-@interface MMLiveMoreFunctionManager
+@interface MMLiveMoreFunctionManager : NSObject
 {
     _Bool _isConnectMicEnabled;
     WCFinderLiveBaseLogReporter *_reporter;

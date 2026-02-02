@@ -5,7 +5,7 @@
 
 @protocol EmoticonUploadPrepareCgiDelegate;
 
-@interface EmoticonUploadPrepareCgi
+@interface EmoticonUploadPrepareCgi : NSObject
 {
     id <EmoticonUploadPrepareCgiDelegate> _delegate;
 }

@@ -5,7 +5,7 @@
 
 @class MMUIImageView, WARefreshDefaultNoMoreDataLabel;
 
-@interface WARefreshAutoCustomFooter
+@interface WARefreshAutoCustomFooter : NSObject
 {
     int _marginTop;
     int _lineWordsInterval;

@@ -6,7 +6,7 @@
 @class CAAnimationGroup, MMSightRecordView, UIButton, UIImageView;
 @protocol CameraScanOCRContentViewDelegate;
 
-@interface CameraScanOCRContentView
+@interface CameraScanOCRContentView : NSObject
 {
     double _scanLineTopCenterY;
     double _scanLineBottomCenterY;

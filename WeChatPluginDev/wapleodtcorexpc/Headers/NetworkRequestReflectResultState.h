@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, UIImage, YtExtraOptions;
 
-@interface NetworkRequestReflectResultState
+@interface NetworkRequestReflectResultState : NSObject
 {
     UIImage *frameUIImage;
     _Bool isManual;

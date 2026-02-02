@@ -6,7 +6,7 @@
 @class EmoticonBoardView, MMTextView, MMUIButton, MsgFullScreenInputConfig, NSString, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITapGestureRecognizer, UIView, WXKeyBoardTipsView;
 @protocol MsgFullScreenInputDelegate;
 
-@interface MsgFullScreenInputViewController
+@interface MsgFullScreenInputViewController : NSObject
 {
     _Bool _isInDismissState;
     _Bool _showKeyboardWhenPresent;

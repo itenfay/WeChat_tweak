@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OMJStickerOverlayDesc
+@interface OMJStickerOverlayDesc : NSObject
 {
     unsigned long long _stickerType;
     unsigned long long _timingFillMode;

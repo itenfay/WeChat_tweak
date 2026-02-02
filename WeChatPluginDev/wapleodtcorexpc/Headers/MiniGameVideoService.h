@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MiniGameVideoShareHandler, NSMutableDictionary, NSString, WCTTable;
 
-@interface MiniGameVideoService
+@interface MiniGameVideoService : NSObject
 {
     WCTTable *_miniGameVideoTable;
     NSMutableDictionary *_publishCallbackMap;

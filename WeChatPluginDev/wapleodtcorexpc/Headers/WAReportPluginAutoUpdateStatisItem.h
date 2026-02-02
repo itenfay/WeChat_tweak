@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPluginAutoUpdateStatisItem
+@interface WAReportPluginAutoUpdateStatisItem : NSObject
 {
     NSString *_pluginAppid;
     long long _pluginVersion;

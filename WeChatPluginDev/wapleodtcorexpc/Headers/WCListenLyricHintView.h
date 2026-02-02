@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, MMUILabel;
 
-@interface WCListenLyricHintView
+@interface WCListenLyricHintView : NSObject
 {
     unsigned long long _mode;
     MMUIActivityIndicatorView *_indicatorView;

@@ -6,7 +6,7 @@
 @class MMTableView, NSString;
 @protocol WCPayECardBankCardListViewControllerDelegate;
 
-@interface WCPayECardBankCardListViewController
+@interface WCPayECardBankCardListViewController : NSObject
 {
     id <WCPayECardBankCardListViewControllerDelegate> _delegate;
     MMTableView *_tableView;

@@ -5,7 +5,7 @@
 
 @class UILabel, WCFinderAuthInfoIconView, WCFinderShareNameCardCellViewModel;
 
-@interface WCFinderShareNameCardCellView
+@interface WCFinderShareNameCardCellView : NSObject
 {
     UILabel *_nameLabel;
     UILabel *_descLabel;

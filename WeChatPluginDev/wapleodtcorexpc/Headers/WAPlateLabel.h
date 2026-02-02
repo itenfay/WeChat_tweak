@@ -6,7 +6,7 @@
 @class UIView;
 @protocol WAPlateLabelDelegate;
 
-@interface WAPlateLabel
+@interface WAPlateLabel : NSObject
 {
     UIView *_inputView;
     unsigned long long _inputViewType;

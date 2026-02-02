@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLivePromoteListBaseViewItem, NSString;
 
-@interface WCFinderLiveAnchorModPromoteJumpInfoListCGI
+@interface WCFinderLiveAnchorModPromoteJumpInfoListCGI : NSObject
 {
     unsigned int _opType;
     unsigned int _type;

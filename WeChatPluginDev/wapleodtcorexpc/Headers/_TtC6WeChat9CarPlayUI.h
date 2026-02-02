@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, _TtC6WeChat17CarPlayController;
 
-@interface _TtC6WeChat9CarPlayUI
+@interface _TtC6WeChat9CarPlayUI : NSObject
 {
     MISSING_TYPE *interfaceController;
     MISSING_TYPE *tabBarController;

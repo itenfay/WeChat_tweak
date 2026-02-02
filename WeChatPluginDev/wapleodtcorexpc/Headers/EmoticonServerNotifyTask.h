@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol EmoticonServerNotifyTaskDelegate;
 
-@interface EmoticonServerNotifyTask
+@interface EmoticonServerNotifyTask : NSObject
 {
     unsigned long long _opcode;
     unsigned long long _type;

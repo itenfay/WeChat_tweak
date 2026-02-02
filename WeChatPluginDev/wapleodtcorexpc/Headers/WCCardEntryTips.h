@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardEntryTips
+@interface WCCardEntryTips : NSObject
 {
     _Bool _bShowNew;
     _Bool _bShowRedDot;

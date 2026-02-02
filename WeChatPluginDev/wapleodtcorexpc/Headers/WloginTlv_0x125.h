@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_0x125
+@interface WloginTlv_0x125 : NSObject
 {
     NSData *openId;
 }

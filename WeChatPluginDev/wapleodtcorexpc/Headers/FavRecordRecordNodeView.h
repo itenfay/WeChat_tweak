@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface FavRecordRecordNodeView
+@interface FavRecordRecordNodeView : NSObject
 {
     MMUILabel *m_titleLabel;
     MMUILabel *m_detailLabel;

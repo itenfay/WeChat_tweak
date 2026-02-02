@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString, OrderedDictionary;
 
-@interface FileDetailMinimizeKeeperMgr
+@interface FileDetailMinimizeKeeperMgr : NSObject
 {
     NSRecursiveLock *_lock;
     OrderedDictionary *_fileVcDic;

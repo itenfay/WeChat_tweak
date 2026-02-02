@@ -5,7 +5,7 @@
 
 @class MMFinderLiveJumpInfoAnchorPromoteInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveJumpInfoAnchorPromoteTableViewCell
+@interface MMFinderLiveJumpInfoAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleTagLabel;

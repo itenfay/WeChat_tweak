@@ -6,7 +6,7 @@
 @class MJActionPanelMainMenuView, MJActionPanelViewModel, NSString;
 @protocol MJActionPanelViewDelegate;
 
-@interface MJActionPanelView
+@interface MJActionPanelView : NSObject
 {
     MJActionPanelViewModel *_viewModel;
     id <MJActionPanelViewDelegate> _delegate;

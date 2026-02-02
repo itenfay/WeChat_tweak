@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, WCFinderCustomImageRichTextView;
 
-@interface WCFinderNotifyUnifiedPrivateAccountTableViewCell
+@interface WCFinderNotifyUnifiedPrivateAccountTableViewCell : NSObject
 {
     WCFinderCustomImageRichTextView *_contentTextView;
     UIButton *_confirmButton;

@@ -6,7 +6,7 @@
 @class EditVideoBGMSearchResultCollectionViewFooterView, NSIndexPath, NSMutableArray, NSString, UICollectionView;
 @protocol EditVideoBGMSearchResultViewDelegate;
 
-@interface EditVideoBGMSearchResultView
+@interface EditVideoBGMSearchResultView : NSObject
 {
     id <EditVideoBGMSearchResultViewDelegate> _delegate;
     NSMutableArray *_musicList;

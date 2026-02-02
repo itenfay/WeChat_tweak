@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCGroupUndoneEduView;
 @protocol WCGroupUndoneEduViewDelegate;
 
-@interface WCGroupUndoneEduWindow
+@interface WCGroupUndoneEduWindow : NSObject
 {
     id <WCGroupUndoneEduViewDelegate> _undoneDelegate;
     WCGroupUndoneEduView *_contentView;

@@ -6,7 +6,7 @@
 @class NSString, PasswordLogic, RichTextView, UIButton, WCAccountForgetPasswordControlLogic, WCAccountTextFieldItem, WCBaseKeyboardToolBar;
 @protocol WCAccountSetPasswordViewControllerDelegate;
 
-@interface WCAccountSetPasswordViewController
+@interface WCAccountSetPasswordViewController : NSObject
 {
     id <WCAccountSetPasswordViewControllerDelegate> m_delegate;
     PasswordLogic *m_setPasswdLogic;

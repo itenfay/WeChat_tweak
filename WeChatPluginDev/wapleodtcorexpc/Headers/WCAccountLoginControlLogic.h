@@ -5,7 +5,7 @@
 
 @class NSString, WCPlayLiveWithoutLoginControlLogic;
 
-@interface WCAccountLoginControlLogic
+@interface WCAccountLoginControlLogic : NSObject
 {
     WCPlayLiveWithoutLoginControlLogic *_m_playLiveWthioutLoginLoigc;
 }

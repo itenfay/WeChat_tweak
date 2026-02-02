@@ -5,7 +5,7 @@
 
 @class FinderPaidCollectionInfo, MMUIButton, MMUILabel, MMWebImageView;
 
-@interface MMFinderLivePromotePaidCollectionContentView
+@interface MMFinderLivePromotePaidCollectionContentView : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleLabel;

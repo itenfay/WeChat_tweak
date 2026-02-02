@@ -5,7 +5,7 @@
 
 @class NSString, PAGView, UIView, WCAdFireworkCheerAnimationView, WCAdPagView, WCDataItem;
 
-@interface WCAdSocialLikeLogic
+@interface WCAdSocialLikeLogic : NSObject
 {
     _Bool _attractingViewPlayed;
     _Bool _attractingViewErrorReported;

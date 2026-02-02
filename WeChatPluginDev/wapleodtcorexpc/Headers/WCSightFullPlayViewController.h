@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCDataItem, WCMediaItem, WCSightFullPlayView;
 @protocol WCSightFullPlayViewControllerDelegate;
 
-@interface WCSightFullPlayViewController
+@interface WCSightFullPlayViewController : NSObject
 {
     WCMediaItem *m_mediaData;
     WCDataItem *m_dataItem;

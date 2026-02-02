@@ -5,7 +5,7 @@
 
 @class KindaDashLineUIView, MMDynamicColor, NSString;
 
-@interface KindaDashLineView
+@interface KindaDashLineView : NSObject
 {
     float _m_dashWidth;
     KindaDashLineUIView *_m_dashLineView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AnchorSwitchSkinInfo_SelectedValue, NSString;
 
-@interface MMFinderLiveCommitAnchorCustomizeRewardCGI
+@interface MMFinderLiveCommitAnchorCustomizeRewardCGI : NSObject
 {
     NSString *_productId;
     AnchorSwitchSkinInfo_SelectedValue *_commitStyle;

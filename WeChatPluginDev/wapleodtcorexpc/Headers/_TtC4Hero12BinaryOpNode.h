@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero12BinaryOpNode
+@interface _TtC4Hero12BinaryOpNode : NSObject
 {
     MISSING_TYPE *lhs;
     MISSING_TYPE *rhs;

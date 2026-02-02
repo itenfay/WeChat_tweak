@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUIView, NSDictionary, NSString, RichTextView, UIButton, UIImageView, UITextField, UIView, WCPayBalanceTipsLogic, WCPayBindCardInfo, WCPayDecimalKeyboardView, WCPayFetchBalanceReport, WCPayLQTipsModal, WCPayNoticeItemView, WCPayWebImageView;
 @protocol WCPayNewFetchViewControllerDelegate;
 
-@interface WCPayNewFetchViewController
+@interface WCPayNewFetchViewController : NSObject
 {
     WCPayBindCardInfo *m_oCardInfo;
     WCPayNoticeItemView *m_banner;

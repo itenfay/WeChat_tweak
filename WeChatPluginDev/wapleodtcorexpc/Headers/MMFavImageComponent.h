@@ -6,7 +6,7 @@
 @class MMCDNImageView, MMUIImageView, MMUILabel, MMWebImageView, NSMutableArray, NSString;
 @protocol MMFavImageComponentDelegate;
 
-@interface MMFavImageComponent
+@interface MMFavImageComponent : NSObject
 {
     MMUIImageView *m_thumbImageView;
     MMCDNImageView *m_cdnImageView;

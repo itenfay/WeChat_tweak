@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSString;
 
-@interface MBPluginMgr
+@interface MBPluginMgr : NSObject
 {
     NSMapTable *_extPluginsMap;
 }

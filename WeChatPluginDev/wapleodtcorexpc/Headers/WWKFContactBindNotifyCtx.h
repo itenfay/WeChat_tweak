@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKFContactBindNotifyCtx
+@interface WWKFContactBindNotifyCtx : NSObject
 {
     int _scene;
     NSString *_url;

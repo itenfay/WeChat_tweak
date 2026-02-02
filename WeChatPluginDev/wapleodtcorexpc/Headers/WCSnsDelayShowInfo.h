@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSnsDelayShowInfo
+@interface WCSnsDelayShowInfo : NSObject
 {
     _Bool needDelayInViewLifeCycle;
     unsigned int _respTimeStamp;

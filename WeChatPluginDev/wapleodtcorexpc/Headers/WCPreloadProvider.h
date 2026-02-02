@@ -5,7 +5,7 @@
 
 @protocol WCPreloadProviderDelegate;
 
-@interface WCPreloadProvider
+@interface WCPreloadProvider : NSObject
 {
     _Bool isWorking;
     unsigned long long uiClientLatestID;

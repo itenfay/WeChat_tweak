@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSString, WSWeSeeRouter;
 
-@interface NewLifeOpenWeSeePageHandler
+@interface NewLifeOpenWeSeePageHandler : NSObject
 {
     MMUIViewController *_vc;
     WSWeSeeRouter *_router;

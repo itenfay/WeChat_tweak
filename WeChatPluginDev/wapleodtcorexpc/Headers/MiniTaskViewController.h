@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, MiniTaskCollectioViewMaskLayer, MiniTaskCollectionViewLayout, MiniTaskDurantionCounter, MiniTaskDynamicBgView, MiniTaskPanGestureHandler, MiniTaskViewControllerContext, MultiTaskPageActionInfo, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionView, UIImageView, UIView, WCScheduleLogicController;
 
-@interface MiniTaskViewController
+@interface MiniTaskViewController : NSObject
 {
     _Bool _bNeedReportVisibleCellsDisplayAction;
     _Bool _isCollectionUpdateAnimating;

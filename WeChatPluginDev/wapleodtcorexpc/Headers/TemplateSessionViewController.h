@@ -5,7 +5,7 @@
 
 @class CBaseContact, MMTableView, NSString, TemplateMsgSearchHelper;
 
-@interface TemplateSessionViewController
+@interface TemplateSessionViewController : NSObject
 {
     MMTableView *m_tableView;
     CBaseContact *_templateContact;

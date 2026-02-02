@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSArray, NSString, UICollectionView;
 
-@interface MMFinderLiveFansGroupSuperfanRightsCell
+@interface MMFinderLiveFansGroupSuperfanRightsCell : NSObject
 {
     MMUILabel *_titleLabel;
     UICollectionView *_collectionView;

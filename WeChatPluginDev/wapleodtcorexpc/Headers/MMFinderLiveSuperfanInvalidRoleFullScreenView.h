@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIImageView, WCFinderHeadImageView;
 
-@interface MMFinderLiveSuperfanInvalidRoleFullScreenView
+@interface MMFinderLiveSuperfanInvalidRoleFullScreenView : NSObject
 {
     CDUnknownBlockType _switchRoleCallback;
     UIImageView *_infoImageView;

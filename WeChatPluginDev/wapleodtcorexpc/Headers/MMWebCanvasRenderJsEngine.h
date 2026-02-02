@@ -6,7 +6,7 @@
 @class MMWebJsMediaServiceHandler, NSDictionary, NSMutableDictionary, NSString, WACanvasFileHelper;
 @protocol MMWebCanvasRenderJsEngineDelegate;
 
-@interface MMWebCanvasRenderJsEngine
+@interface MMWebCanvasRenderJsEngine : NSObject
 {
     id <MMWebCanvasRenderJsEngineDelegate> _delegate;
     NSDictionary *_configInfo;

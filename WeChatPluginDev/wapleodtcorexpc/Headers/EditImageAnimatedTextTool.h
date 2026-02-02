@@ -5,7 +5,7 @@
 
 @class CALayer, NSString, UIColor, UILabel;
 
-@interface EditImageAnimatedTextTool
+@interface EditImageAnimatedTextTool : NSObject
 {
     UILabel *m_layerView;
     CALayer *m_textLayer;

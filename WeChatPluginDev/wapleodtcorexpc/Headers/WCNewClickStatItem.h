@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface WCNewClickStatItem
+@interface WCNewClickStatItem : NSObject
 {
     unsigned int dataType;
     unsigned int errType;

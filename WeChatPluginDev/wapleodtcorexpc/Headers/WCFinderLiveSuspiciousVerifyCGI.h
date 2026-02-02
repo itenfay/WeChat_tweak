@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSString;
 
-@interface WCFinderLiveSuspiciousVerifyCGI
+@interface WCFinderLiveSuspiciousVerifyCGI : NSObject
 {
     unsigned int _scene;
     MMFinderLiveTaskId *_taskId;

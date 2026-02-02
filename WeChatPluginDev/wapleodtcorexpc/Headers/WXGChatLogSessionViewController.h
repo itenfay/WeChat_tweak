@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTableView, MMUIActivityIndicatorView, NSDate, NSString, UIButton, UIImageView, UILabel, UIView, WCFilterView;
 @protocol WXGChatLogSessionViewControllerDelegate;
 
-@interface WXGChatLogSessionViewController
+@interface WXGChatLogSessionViewController : NSObject
 {
     struct vector<std::shared_ptr<ChatLogSessionItem>, std::allocator<std::shared_ptr<ChatLogSessionItem>>> _arrAllSessionItem;
     struct vector<std::shared_ptr<ChatLogSessionItem>, std::allocator<std::shared_ptr<ChatLogSessionItem>>> _arrSelectedData;

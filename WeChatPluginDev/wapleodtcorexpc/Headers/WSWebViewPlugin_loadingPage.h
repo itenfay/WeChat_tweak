@@ -5,7 +5,7 @@
 
 @class UIImageView, UIScrollView, WSDotLoadingView;
 
-@interface WSWebViewPlugin_loadingPage
+@interface WSWebViewPlugin_loadingPage : NSObject
 {
     UIScrollView *_loadingContainerView;
     UIImageView *_headView;

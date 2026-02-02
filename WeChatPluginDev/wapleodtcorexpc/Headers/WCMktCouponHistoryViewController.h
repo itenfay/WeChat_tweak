@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, UIView, WCMktCouponHistoryLogicController;
 
-@interface WCMktCouponHistoryViewController
+@interface WCMktCouponHistoryViewController : NSObject
 {
     WCMktCouponHistoryLogicController *_logicController;
     MMTableView *_tableView;

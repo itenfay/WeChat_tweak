@@ -6,7 +6,7 @@
 @class KidsWatchButton, KidsWatchTipsCardView, NSString;
 @protocol KidsWatchKidsRegisterBindConfirmViewControllerDelegate;
 
-@interface KidsWatchKidsRegisterBindConfirmViewController
+@interface KidsWatchKidsRegisterBindConfirmViewController : NSObject
 {
     KidsWatchTipsCardView *_tipsCardView;
     KidsWatchButton *_continueButton;

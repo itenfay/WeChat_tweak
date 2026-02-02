@@ -5,7 +5,7 @@
 
 @class QOverseaProvider;
 
-@interface QWorldTileOverlayCustomProvider
+@interface QWorldTileOverlayCustomProvider : NSObject
 {
     QOverseaProvider *_userProvider;
 }

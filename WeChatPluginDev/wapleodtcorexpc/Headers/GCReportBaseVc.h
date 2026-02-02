@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface GCReportBaseVc
+@interface GCReportBaseVc : NSObject
 {
     _Bool _gcReportIsVisible;
     _Bool _gcReportIsViewDidAppear;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveReplayTaskId, MMFinderLiveReplayView, NSString;
 
-@interface MMFinderLiveReplayTask
+@interface MMFinderLiveReplayTask : NSObject
 {
     _Bool _isLivePausedBySlider;
     _Bool _isLivePausedForCapture;

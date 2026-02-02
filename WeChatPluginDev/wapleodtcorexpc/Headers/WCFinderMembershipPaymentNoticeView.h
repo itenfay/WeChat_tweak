@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderMembershipPaymentNoticeDetailView;
 
-@interface WCFinderMembershipPaymentNoticeView
+@interface WCFinderMembershipPaymentNoticeView : NSObject
 {
     WCFinderMembershipPaymentNoticeDetailView *_panelDetailView;
 }

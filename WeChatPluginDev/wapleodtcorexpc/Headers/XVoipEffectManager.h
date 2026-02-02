@@ -5,7 +5,7 @@
 
 @class SpatiotemporalDenosingPreProcess, XImage, XMMGPUClarityPreProcess;
 
-@interface XVoipEffectManager
+@interface XVoipEffectManager : NSObject
 {
     struct CGSize _renderTargetSizeWithoutRotation;
     struct CGSize _renderTargetSize;

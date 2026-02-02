@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSData;
 
-@interface WCFinderLiveCreateRewardWishListCGI
+@interface WCFinderLiveCreateRewardWishListCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

@@ -5,7 +5,7 @@
 
 @class CardsHomePageList, NSMutableArray, NSString, SecEntranceCardList;
 
-@interface WCCardLayoutStorage
+@interface WCCardLayoutStorage : NSObject
 {
     _Bool _bShowLayoutRed;
     unsigned int _layoutRedEndTime;

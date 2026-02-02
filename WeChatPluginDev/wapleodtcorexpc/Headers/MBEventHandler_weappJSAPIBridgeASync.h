@@ -5,7 +5,7 @@
 
 @class NSString, WAJSEventHandler_BaseEvent;
 
-@interface MBEventHandler_weappJSAPIBridgeASync
+@interface MBEventHandler_weappJSAPIBridgeASync : NSObject
 {
     WAJSEventHandler_BaseEvent *_bridgeWeAppHandler;
 }

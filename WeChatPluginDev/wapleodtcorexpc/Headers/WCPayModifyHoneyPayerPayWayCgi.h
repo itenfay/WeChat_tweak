@@ -6,7 +6,7 @@
 @class ModifyHoneyPayerPayWayReq;
 @protocol WCPayModifyHoneyPayerPayWayCgiDelegate;
 
-@interface WCPayModifyHoneyPayerPayWayCgi
+@interface WCPayModifyHoneyPayerPayWayCgi : NSObject
 {
 }
 

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface _TtC6WeChat34MagicEmojiJsApi_getVisibleMsgMetas
+@interface _TtC6WeChat34MagicEmojiJsApi_getVisibleMsgMetas : NSObject
 {
 }
 

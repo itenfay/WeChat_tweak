@@ -6,7 +6,7 @@
 @class NSString, TXCBeautifyFilter, TXCCustomProcessor, TXCDispatchQueue, TXCGSensor, TXCImageBlendFilter, TXCLookupFilter, TXCRgbToYuvFilter, TXCRoiRegionTransformFilter, TXCTransformFilter, TXCVideoPreprocessConfig, TXCVideoPreprocessSupervisor, TXCYuvToRgbFilter;
 @protocol TXCVideoPreprocessControllerDelegate, TXIGlContext, TXIVideoBindable;
 
-@interface TXCVideoPreprocessController
+@interface TXCVideoPreprocessController : NSObject
 {
     id <TXCVideoPreprocessControllerDelegate> _delegate;
     TXCGSensor *_gSensor;

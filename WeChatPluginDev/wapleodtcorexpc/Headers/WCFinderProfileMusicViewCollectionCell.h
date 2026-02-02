@@ -5,7 +5,7 @@
 
 @class UIView, WCFinderProfileMusicView;
 
-@interface WCFinderProfileMusicViewCollectionCell
+@interface WCFinderProfileMusicViewCollectionCell : NSObject
 {
     _Bool _showSeperator;
     _Bool _allowSlideDelete;

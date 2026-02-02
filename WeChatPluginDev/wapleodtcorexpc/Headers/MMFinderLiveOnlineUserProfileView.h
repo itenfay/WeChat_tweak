@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, CContact, FinderAudienceLiveInfo, FinderLiveContact, MMFinderLiveFansGroupSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveNormalTextSignView, MMFinderLiveOnlineUserProfileOpenParameter, MMHeadImageView, MMLiveActionSheetScrollView, MMLoadingIndicatorView, MMUIActivityIndicatorView, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, RichTextView, UIButton, UIImageView, UILabel, UIView, UIVisualEffectView, WCFinderContact, WCFinderProfileAuthView, WCLiveActionSheet;
 
-@interface MMFinderLiveOnlineUserProfileView
+@interface MMFinderLiveOnlineUserProfileView : NSObject
 {
     _Bool _isOpening;
     _Bool _isFromOnlineStateView;

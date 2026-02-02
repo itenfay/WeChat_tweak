@@ -5,7 +5,7 @@
 
 @class FavoritesItem;
 
-@interface FavTVViewController
+@interface FavTVViewController : NSObject
 {
     FavoritesItem *m_favItem;
 }

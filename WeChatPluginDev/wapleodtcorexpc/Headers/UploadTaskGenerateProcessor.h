@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSMutableArray;
 
-@interface UploadTaskGenerateProcessor
+@interface UploadTaskGenerateProcessor : NSObject
 {
     CMessageWrap *_msgWrap;
     NSMutableArray *_uploadTaskList;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSIndexPath, NSString, WCFinderFeedListView, WCFinderFollowTabDetailBaseViewModel, WCFinderFollowTabDetailVCReporter, WCFinderShareCustomTransition;
 @protocol WCFinderFollowTabDetailVCDelegate;
 
-@interface WCFinderFollowTabDetailViewController
+@interface WCFinderFollowTabDetailViewController : NSObject
 {
     int _commentScene;
     id <WCFinderFollowTabDetailVCDelegate> _delegate;

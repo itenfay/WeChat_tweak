@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableSet, NSSet, NSString, WCDataItem, WCTimelineBatchGetFeedsCGI, WCTimelineMissReadBreakLayerExposureRecord, WCTimelineMissReadJumpBtnClickReportRecord, WCTimelineMissReadRecord;
 
-@interface WCTimelineMissReadMgr
+@interface WCTimelineMissReadMgr : NSObject
 {
     _Bool _isSupport;
     _Bool _usePlainExposureMethod;

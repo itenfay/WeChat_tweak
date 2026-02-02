@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface DataReportPageConfig
+@interface DataReportPageConfig : NSObject
 {
     NSMutableDictionary *m_pageConfigModels;
     NSMutableArray *m_filterPages;

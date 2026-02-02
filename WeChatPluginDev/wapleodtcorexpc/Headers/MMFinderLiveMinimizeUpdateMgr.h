@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface MMFinderLiveMinimizeUpdateMgr
+@interface MMFinderLiveMinimizeUpdateMgr : NSObject
 {
     MemoryMappedKV *_mappedKV;
 }

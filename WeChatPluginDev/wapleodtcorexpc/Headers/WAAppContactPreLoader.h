@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIViewController, NSString, WAAppOpenParameter, WAAppTaskExtInfo, WAAppTaskHandlerWrapper, WAAppTrialInfoLoader, WAContact;
 @protocol IWALimitModeHelper;
 
-@interface WAAppContactPreLoader
+@interface WAAppContactPreLoader : NSObject
 {
     WAAppTaskHandlerWrapper *m_handlerWrapper;
     WAAppOpenParameter *m_openInfo;

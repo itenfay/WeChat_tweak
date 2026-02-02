@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWALocationService;
 
-@interface WAJSEventHandler_chooseLocation
+@interface WAJSEventHandler_chooseLocation : NSObject
 {
     id <IWALocationService> _locationService;
     struct CLLocationCoordinate2D _startCoord;

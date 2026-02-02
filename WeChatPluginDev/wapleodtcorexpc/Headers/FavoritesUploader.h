@@ -5,7 +5,7 @@
 
 @class FavoritesCDNInfo, MsgDataDownloadLogic, NSMutableArray, NSMutableSet, NSString;
 
-@interface FavoritesUploader
+@interface FavoritesUploader : NSObject
 {
     NSMutableArray *m_chectCdnDatalist;
     NSMutableArray *m_chectCdnItemlist;

@@ -5,7 +5,7 @@
 
 @class MMImageGridView, NSString, UIImageView, UILabel;
 
-@interface WCContentItemViewTemplateNote
+@interface WCContentItemViewTemplateNote : NSObject
 {
     MMImageGridView *_imageGridView;
     UIImageView *_defaultImageView;

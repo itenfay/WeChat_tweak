@@ -5,7 +5,7 @@
 
 @class CEmoticonWrap, CMessageWrap, ChatroomMsgEmoji;
 
-@interface GCEmoticonCellModel
+@interface GCEmoticonCellModel : NSObject
 {
     ChatroomMsgEmoji *_emojiMsg;
     CEmoticonWrap *_emoticonWrap;

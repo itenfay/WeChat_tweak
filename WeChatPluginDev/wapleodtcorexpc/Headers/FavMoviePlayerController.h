@@ -5,7 +5,7 @@
 
 @class FavDataItemWrap, FavoritesItem, FavoritesItemDataField, NSString;
 
-@interface FavMoviePlayerController
+@interface FavMoviePlayerController : NSObject
 {
     FavoritesItem *m_favItem;
     FavDataItemWrap *m_favDataWrap;

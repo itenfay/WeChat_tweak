@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMAutoSearchItem
+@interface MMAutoSearchItem : NSObject
 {
     _Bool _startFromFirst;
     NSString *_keyWord;

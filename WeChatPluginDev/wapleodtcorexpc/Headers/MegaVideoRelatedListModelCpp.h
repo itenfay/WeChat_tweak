@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MegaVideoRelatedListModelCpp
+@interface MegaVideoRelatedListModelCpp : NSObject
 {
 }
 

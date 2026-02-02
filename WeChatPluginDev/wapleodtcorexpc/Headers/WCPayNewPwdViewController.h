@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIView, WCPayTenpayPasswordCtrlItem;
 @protocol WCPayNewPwdViewControllerDelegate;
 
-@interface WCPayNewPwdViewController
+@interface WCPayNewPwdViewController : NSObject
 {
     id <WCPayNewPwdViewControllerDelegate> m_delegate;
     _Bool _isLogicStop;

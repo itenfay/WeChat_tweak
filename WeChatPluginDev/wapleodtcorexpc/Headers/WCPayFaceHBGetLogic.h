@@ -6,7 +6,7 @@
 @class MMUIViewController, NSString, UIWindow, WCPayComplianceHalfPage, WCPayFaceHBCgi, WCPayFaceHBGetView, WCPayFaceHBItem, WCPayFaceHBScanQRCodeHandler, WCPayInterceptWinLogic, WCRedEnvelopesControlData, WCRedEnvelopesRedEnvelopesDetailViewController;
 @protocol WCPayFaceHBGetLogicDelegate;
 
-@interface WCPayFaceHBGetLogic
+@interface WCPayFaceHBGetLogic : NSObject
 {
     id <WCPayFaceHBGetLogicDelegate> m_delegate;
     WCPayFaceHBItem *m_hbItem;

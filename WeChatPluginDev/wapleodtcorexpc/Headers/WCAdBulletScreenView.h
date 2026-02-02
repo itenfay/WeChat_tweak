@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMTimer, MMUIView, NSMutableArray, WCAdBulletScreenInfo;
 
-@interface WCAdBulletScreenView
+@interface WCAdBulletScreenView : NSObject
 {
     _Bool _endureTimerScheduled;
     WCAdBulletScreenInfo *_adBulletScreenInfo;

@@ -6,7 +6,7 @@
 @class NSMutableSet;
 @protocol IMBFileSystem;
 
-@interface MagicBrushPublicServiceFileSystem
+@interface MagicBrushPublicServiceFileSystem : NSObject
 {
     id <IMBFileSystem> _mAssetsFS;
     id <IMBFileSystem> _mWxaPkgFS;

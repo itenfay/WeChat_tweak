@@ -5,7 +5,7 @@
 
 @class ImageMessageViewModel, MMAssetICloudLoadingView, MMDragManager, NSString, SightIconView, UIDragInteraction, UIImageView, UIView, YYAsyncImageView;
 
-@interface ImageMessageCellView
+@interface ImageMessageCellView : NSObject
 {
     YYAsyncImageView *m_imageView;
     UIImageView *m_imageDownloadFailView;

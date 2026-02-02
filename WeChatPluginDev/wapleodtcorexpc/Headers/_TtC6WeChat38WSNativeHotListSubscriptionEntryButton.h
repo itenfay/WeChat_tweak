@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat38WSNativeHotListSubscriptionEntryButton
+@interface _TtC6WeChat38WSNativeHotListSubscriptionEntryButton : NSObject
 {
     MISSING_TYPE *maxWidth;
     MISSING_TYPE *data;

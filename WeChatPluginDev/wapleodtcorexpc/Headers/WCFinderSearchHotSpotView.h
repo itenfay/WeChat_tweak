@@ -6,7 +6,7 @@
 @class NSString, UITableView, WCFinderSearchHotSpotViewModel;
 @protocol WCFinderSearchHotSpotViewDelegate;
 
-@interface WCFinderSearchHotSpotView
+@interface WCFinderSearchHotSpotView : NSObject
 {
     id <WCFinderSearchHotSpotViewDelegate> _delegate;
     UITableView *_tableView;

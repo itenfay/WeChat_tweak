@@ -5,7 +5,7 @@
 
 @protocol MMMenuWindowDelegate;
 
-@interface MMMenuWindow
+@interface MMMenuWindow : NSObject
 {
     id <MMMenuWindowDelegate> _delegate;
     struct CGRect _menuFrame;

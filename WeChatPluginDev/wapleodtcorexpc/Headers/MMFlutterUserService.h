@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFlutterUserService
+@interface MMFlutterUserService : NSObject
 {
 }
 

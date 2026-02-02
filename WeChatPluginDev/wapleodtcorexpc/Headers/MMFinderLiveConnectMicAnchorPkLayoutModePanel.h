@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicModePreviewView, MMFinderLiveTaskId, NSString, UITableView;
 @protocol MMFinderLiveConnectMicAnchorPkLayoutModePanelDelegate;
 
-@interface MMFinderLiveConnectMicAnchorPkLayoutModePanel
+@interface MMFinderLiveConnectMicAnchorPkLayoutModePanel : NSObject
 {
     _Bool _modeChanged;
     id <MMFinderLiveConnectMicAnchorPkLayoutModePanelDelegate> _delegate;

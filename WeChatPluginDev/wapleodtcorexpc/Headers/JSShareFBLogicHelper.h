@@ -6,7 +6,7 @@
 @class NSString, ShareConfirmView;
 @protocol JSShareFBLogicHelperDelegate;
 
-@interface JSShareFBLogicHelper
+@interface JSShareFBLogicHelper : NSObject
 {
     ShareConfirmView *_confirmView;
     unsigned int fbEventID;

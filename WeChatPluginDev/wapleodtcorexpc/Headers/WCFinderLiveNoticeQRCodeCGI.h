@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveNoticeQRCodeCGI
+@interface WCFinderLiveNoticeQRCodeCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failureBlock;

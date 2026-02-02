@@ -5,7 +5,7 @@
 
 @class MMCPLabel, MMHeadImageView, MainFrameCellData, UILabel;
 
-@interface ChatRoomMemMsgListItemView
+@interface ChatRoomMemMsgListItemView : NSObject
 {
     MainFrameCellData *m_cellData;
     MMHeadImageView *m_frameHeadView;

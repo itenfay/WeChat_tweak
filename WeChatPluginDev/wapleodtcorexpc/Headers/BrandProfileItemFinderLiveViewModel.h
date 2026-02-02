@@ -5,7 +5,7 @@
 
 @class BrandFinderLiveCardViewModel, BrandFinderLiveDataWrapper, NSMutableArray, NSString;
 
-@interface BrandProfileItemFinderLiveViewModel
+@interface BrandProfileItemFinderLiveViewModel : NSObject
 {
     BrandFinderLiveDataWrapper *_liveDataWrapperCache;
     NSMutableArray *_liveTitleLabelStyles;

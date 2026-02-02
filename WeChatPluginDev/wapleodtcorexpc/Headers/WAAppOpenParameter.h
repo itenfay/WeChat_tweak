@@ -5,7 +5,7 @@
 
 @class MiniTaskTransitionContext, NSArray, NSDictionary, NSString, UINavigationController, UIView, WAAppOpenCustomLoadingParameter, WAAppOpenCustomUIParameter, WAAppOpenDebugModeParameter, WAAppOpenExtJSParameter, WAAppOpenSheetModeParameter, WAContact, WAProvideApiConfig;
 
-@interface WAAppOpenParameter
+@interface WAAppOpenParameter : NSObject
 {
     _Bool _m_bUpdateAndForceReloadTask;
     _Bool _m_isOpenFromFloatingView;

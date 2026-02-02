@@ -5,7 +5,7 @@
 
 @class CMessageWrap, JSEvent, NSDictionary, NSMutableData, NSString, NSURLConnection, ShareMessageConfirmLogicHelper;
 
-@interface WebviewJSEventHandler_sendAppMessageToSpecifiedContact
+@interface WebviewJSEventHandler_sendAppMessageToSpecifiedContact : NSObject
 {
     ShareMessageConfirmLogicHelper *m_jsSendAppMsgHelper;
     CMessageWrap *m_wrapMsg;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTBaseMenuView;
 
-@interface WCTBaseMenuTVCell
+@interface WCTBaseMenuTVCell : NSObject
 {
     WCTBaseMenuView *_view;
 }

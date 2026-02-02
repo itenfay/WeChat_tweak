@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSDictionary, WCWebNavigationEventsStore, WebViewJSLogicImpl;
 
-@interface WCWebNavigationEventActionContext
+@interface WCWebNavigationEventActionContext : NSObject
 {
     WebViewJSLogicImpl *_webJsImpl;
     WCWebNavigationEventsStore *_webEventsStore;

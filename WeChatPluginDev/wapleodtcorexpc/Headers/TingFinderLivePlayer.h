@@ -5,7 +5,7 @@
 
 @class MMLiveCDNPlayerView, MMTimer, NSString, WCFinderDataItem;
 
-@interface TingFinderLivePlayer
+@interface TingFinderLivePlayer : NSObject
 {
     _Bool _isChecking;
     unsigned int _checkInterval;

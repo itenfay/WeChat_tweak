@@ -6,7 +6,7 @@
 @class MMPageSheetAdapter, NSString, WCAdCardBtnInfo, WCAdConventionalHalfScreenCustomBackgroundView, WCDataItem;
 @protocol WCAdConventionalDetailContainerViewControllerDelegate;
 
-@interface WCAdConventionalDetailContainerViewController
+@interface WCAdConventionalDetailContainerViewController : NSObject
 {
     _Bool _isPageSheetViewFullyVisible;
     _Bool _isPageSheetViewClosedByUser;

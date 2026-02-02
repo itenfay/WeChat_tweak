@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSDate, NSString;
 
-@interface _TtC6WeChat28KaraProphetTingEntryBehavior
+@interface _TtC6WeChat28KaraProphetTingEntryBehavior : NSObject
 {
     MISSING_TYPE *session;
 }

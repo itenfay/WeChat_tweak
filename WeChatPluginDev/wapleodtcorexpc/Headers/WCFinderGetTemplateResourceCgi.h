@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetTemplateResourceCgi
+@interface WCFinderGetTemplateResourceCgi : NSObject
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failedBlock;

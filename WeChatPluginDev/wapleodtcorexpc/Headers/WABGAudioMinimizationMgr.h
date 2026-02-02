@@ -5,7 +5,7 @@
 
 @class MinimizeTaskData, NSMutableDictionary, NSString;
 
-@interface WABGAudioMinimizationMgr
+@interface WABGAudioMinimizationMgr : NSObject
 {
     NSString *_showingId;
     NSString *_interruptedId;

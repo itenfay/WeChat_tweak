@@ -6,7 +6,7 @@
 @class KindaProxy, MMUILabel, NSString, PAGView, UIButton, UIImageView, UIView, WCRedEnvTextStateInfo;
 @protocol WCRedEnvTextStateDetailViewControllerDelegate;
 
-@interface WCRedEnvTextStateDetailViewController
+@interface WCRedEnvTextStateDetailViewController : NSObject
 {
     _Bool _hasPageFile;
     _Bool _m_bIsSetWXStatusClick;

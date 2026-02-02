@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFrequencyChecker, NSMutableArray, NSMutableSet, NSString, SystemAuthConfigurator;
 
-@interface MMSystemAuthManager
+@interface MMSystemAuthManager : NSObject
 {
     NSMutableArray *_requestQueue;
     MMFrequencyChecker *_frequencyChecker;

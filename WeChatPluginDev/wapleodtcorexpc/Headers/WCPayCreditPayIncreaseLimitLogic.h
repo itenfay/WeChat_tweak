@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayCreditPayIncreaseLimitLogic
+@interface WCPayCreditPayIncreaseLimitLogic : NSObject
 {
     _Bool m_bNeedQueryCreditInfo;
 }

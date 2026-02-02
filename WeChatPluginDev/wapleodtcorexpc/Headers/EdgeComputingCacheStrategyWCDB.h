@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface EdgeComputingCacheStrategyWCDB
+@interface EdgeComputingCacheStrategyWCDB : NSObject
 {
     WCTDatabase *_dataBase;
     WCTTable *_cacheDataTable;

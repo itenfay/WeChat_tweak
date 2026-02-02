@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPrefetchSequenceInfo
+@interface WAPrefetchSequenceInfo : NSObject
 {
     unsigned int _cmdType;
     unsigned int _sequence;

@@ -5,7 +5,7 @@
 
 @class NSNumber;
 
-@interface EmoticonDescMd5Object
+@interface EmoticonDescMd5Object : NSObject
 {
     NSNumber *_pidIndex;
     NSNumber *_customIndex;

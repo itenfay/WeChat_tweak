@@ -6,7 +6,7 @@
 @class EmoticonLensInfo, NSString, PersonalDesigner, UIButton, UIImageView, UILabel, UIView;
 @protocol EmoticonStoreLensDesignerViewDelegate;
 
-@interface EmoticonStoreLensDesignerView
+@interface EmoticonStoreLensDesignerView : NSObject
 {
     id <EmoticonStoreLensDesignerViewDelegate> _delegate;
     NSString *_lensId;

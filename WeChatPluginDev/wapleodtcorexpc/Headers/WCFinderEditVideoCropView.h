@@ -6,7 +6,7 @@
 @class AVAsset, MMUIView, NSString, SightLocalVideoImageSlider, UIButton, UILabel;
 @protocol WCFinderEditVideoCropViewDelegate;
 
-@interface WCFinderEditVideoCropView
+@interface WCFinderEditVideoCropView : NSObject
 {
     _Bool _ignoreShock;
     id <WCFinderEditVideoCropViewDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCAdConventionalHalfScreenCloseBarView
+@interface WCAdConventionalHalfScreenCloseBarView : NSObject
 {
     UIImageView *_closeIcon;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveDiscoverPreloadInfo, NSData, WCFinderNavLiveStreamPrefetchExtraData, WCFinderNavLiveStreamRequestModel;
 
-@interface WCFinderNavLiveStreamCGI
+@interface WCFinderNavLiveStreamCGI : NSObject
 {
     _Bool _isPreRecommendRequest;
     _Bool _overLiteCgi;

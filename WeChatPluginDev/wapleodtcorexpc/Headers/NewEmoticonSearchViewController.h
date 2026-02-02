@@ -6,7 +6,7 @@
 @class CEmoticonWrap, EmoticonSearchInMessagePanelReporter, EmoticonUploader, NSDictionary, NSString, StoreEmotionBatchEmojiDownLoadCgi, WCTopicSearchActionLogic;
 @protocol EmoticonSearchViewControllerDelegate;
 
-@interface NewEmoticonSearchViewController
+@interface NewEmoticonSearchViewController : NSObject
 {
     _Bool _includeCustomEmoji;
     _Bool _bShowKeyboardTips;

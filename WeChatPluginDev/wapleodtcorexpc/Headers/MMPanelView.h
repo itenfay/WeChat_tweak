@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIButton, UILabel, UIView, WCPayCss;
 
-@interface MMPanelView
+@interface MMPanelView : NSObject
 {
     MMUIButton *_leftBarButton;
     UIButton *_rightBarButton;

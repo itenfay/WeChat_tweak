@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIView;
 
-@interface WCPayUIView
+@interface WCPayUIView : NSObject
 {
     _Bool _enableHighlight;
     NSMutableArray *_bizAccessElems;

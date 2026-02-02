@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface BatchCheckCdnHitProcessor
+@interface BatchCheckCdnHitProcessor : NSObject
 {
     NSMutableArray *_uploadTaskList;
 }

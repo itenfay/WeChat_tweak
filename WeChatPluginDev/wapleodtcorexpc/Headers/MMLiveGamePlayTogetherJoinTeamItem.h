@@ -5,7 +5,7 @@
 
 @class MMFinderLiveGameTeamInfo;
 
-@interface MMLiveGamePlayTogetherJoinTeamItem
+@interface MMLiveGamePlayTogetherJoinTeamItem : NSObject
 {
     MMFinderLiveGameTeamInfo *_teamInfo;
 }

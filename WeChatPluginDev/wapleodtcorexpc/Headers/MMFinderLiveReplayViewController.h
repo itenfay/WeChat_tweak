@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveContentVM, MMFinderLiveReplayLogic, MMFinderLiveReplayOperationView, MMFinderLiveReplayTask, MMFinderLiveReplayTaskId, MMFinderLiveReplayView, MMLiveFullScreenTipsView, MMLiveTaskId, MMLiveView, NSString, UIImageView, UINavigationController, UIView;
 @protocol MMLiveContainerDisplayViewProtocol, MMLiveViewControllerDelegate;
 
-@interface MMFinderLiveReplayViewController
+@interface MMFinderLiveReplayViewController : NSObject
 {
     _Bool _isForcePortraitForExtend;
     MMFinderLiveReplayTaskId *_replayTaskId;

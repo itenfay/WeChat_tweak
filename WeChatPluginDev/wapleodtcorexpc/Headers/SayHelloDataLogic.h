@@ -6,7 +6,7 @@
 @class CContactVerifyLogic, NSMutableArray, NSMutableDictionary, NSString, SendVerifyMsgLogicController;
 @protocol SayHelloDataLogicDelegate;
 
-@interface SayHelloDataLogic
+@interface SayHelloDataLogic : NSObject
 {
     unsigned int m_uiScene;
     id <SayHelloDataLogicDelegate> m_delegate;

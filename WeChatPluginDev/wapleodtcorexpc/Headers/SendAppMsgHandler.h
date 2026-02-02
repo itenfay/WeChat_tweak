@@ -6,7 +6,7 @@
 @class CContact, CMessageWrap, ForwardMessageLogicController, MMTipsViewController, MMUINavigationController, NSArray, NSMutableDictionary, NSString, OpenApiParameter, WAContactGetter, WCShareAuthViewController, WXMediaInternalMessage;
 @protocol SendAppMsgHandleDelegate;
 
-@interface SendAppMsgHandler
+@interface SendAppMsgHandler : NSObject
 {
     OpenApiParameter *m_parameter;
     CMessageWrap *m_messageWrap;

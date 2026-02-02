@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCommentSensitiveSearchTableViewModel, MMFinderLiveTask, MMFinderLiveTaskId, MMTableView, NSMutableArray, NSString;
 
-@interface MMFinderLiveSensitiveSearchViewController
+@interface MMFinderLiveSensitiveSearchViewController : NSObject
 {
     _Bool _isSearching;
     MMFinderLiveTaskId *_taskId;

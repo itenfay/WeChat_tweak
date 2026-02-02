@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMImageLocation
+@interface MMImageLocation : NSObject
 {
     double _latitude;
     double _longitude;

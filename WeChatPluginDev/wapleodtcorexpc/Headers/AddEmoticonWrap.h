@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, EmoticonStoreItem, EmoticonUploadInfoObj, EmotionFinderLinkInfo, NSNumber, NSString;
 
-@interface AddEmoticonWrap
+@interface AddEmoticonWrap : NSObject
 {
     _Bool _showDetailWhenExchangeFailed;
     _Bool _allowAddAlreadyInListEmoticons;

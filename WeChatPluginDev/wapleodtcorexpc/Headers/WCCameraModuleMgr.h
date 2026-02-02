@@ -5,7 +5,7 @@
 
 @class NSString, WCCameraModule;
 
-@interface WCCameraModuleMgr
+@interface WCCameraModuleMgr : NSObject
 {
     WCCameraModule *_activeModule;
     WCCameraModule *_interruptionModule;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCMegaVideoDeleteBulletCommentCGI
+@interface WCMegaVideoDeleteBulletCommentCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

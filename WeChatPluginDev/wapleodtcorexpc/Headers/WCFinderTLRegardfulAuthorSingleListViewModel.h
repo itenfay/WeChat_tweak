@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableArray, NSMutableSet, NSString;
 
-@interface WCFinderTLRegardfulAuthorSingleListViewModel
+@interface WCFinderTLRegardfulAuthorSingleListViewModel : NSObject
 {
     _Bool _noMoreData;
     NSString *_finderUsername;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _ZZProgressViewChainModel
+@interface _ZZProgressViewChainModel : NSObject
 {
 }
 

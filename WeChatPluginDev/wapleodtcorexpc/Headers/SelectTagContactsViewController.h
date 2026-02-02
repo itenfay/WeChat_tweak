@@ -6,7 +6,7 @@
 @class ContactTagData, ContactsAllSelectPanelView, MMTableView, NSArray, NSDictionary, NSMutableDictionary, NSString, UILabel, UIView;
 @protocol SelectTagContactsViewControllerDelegate;
 
-@interface SelectTagContactsViewController
+@interface SelectTagContactsViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableDictionary *m_dicMultiSelect;

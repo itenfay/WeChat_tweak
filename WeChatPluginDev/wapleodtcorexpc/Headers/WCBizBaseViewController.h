@@ -6,7 +6,7 @@
 @class MMTableViewInfo, NSString, UILabel;
 @protocol WCBizBaseViewControllerDelegate;
 
-@interface WCBizBaseViewController
+@interface WCBizBaseViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     UILabel *m_powerByTenpay;

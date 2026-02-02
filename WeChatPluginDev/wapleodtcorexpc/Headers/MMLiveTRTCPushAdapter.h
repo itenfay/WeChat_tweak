@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TRTCAudioConfig, TRTCParams, TRTCVideoConfig;
 
-@interface MMLiveTRTCPushAdapter
+@interface MMLiveTRTCPushAdapter : NSObject
 {
     _Bool _isLocalMicClosed;
     unsigned long long _trtcCloudAppId;

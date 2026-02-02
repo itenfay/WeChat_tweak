@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WXCustomWebViewControllerProtocol;
 
-@interface LiteAppStoreExtKeyCallLiteAppConnectEventAdapter
+@interface LiteAppStoreExtKeyCallLiteAppConnectEventAdapter : NSObject
 {
     id <WXCustomWebViewControllerProtocol> _webviewController;
 }

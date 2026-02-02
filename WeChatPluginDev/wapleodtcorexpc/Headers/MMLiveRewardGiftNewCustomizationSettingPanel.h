@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftNewCustomizationModel, MMFinderLiveRewardGiftItem, MMLiveRewardGiftNewCustomizationEditLogic, MMLiveRewardGiftNewCustomizationEffectPreviewView, MMLiveRewardGiftNewCustomizationInputToolView, MMLiveRewardGiftNewCustomizationPriceDisplayView, MMLiveRewardGiftNewCustomizationStyleSelectView, MMLiveTaskId, MMUIButton, NSString, UIView;
 
-@interface MMLiveRewardGiftNewCustomizationSettingPanel
+@interface MMLiveRewardGiftNewCustomizationSettingPanel : NSObject
 {
     _Bool _isKeyboardShow;
     _Bool _isCloseWithModified;

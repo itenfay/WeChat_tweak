@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32CarPlayVoIPRecentTalksController
+@interface _TtC6WeChat32CarPlayVoIPRecentTalksController : NSObject
 {
     MISSING_TYPE *listTemplate;
     MISSING_TYPE *recentVoIPItems;

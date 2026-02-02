@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface BTMissedSubsReaderItemViewModel
+@interface BTMissedSubsReaderItemViewModel : NSObject
 {
     NSMutableArray *_titleArrStyles;
 }

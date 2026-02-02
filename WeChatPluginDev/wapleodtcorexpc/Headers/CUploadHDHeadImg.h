@@ -6,7 +6,7 @@
 @class CUploadHDHeadImgWrap, NSString;
 @protocol HeadImgDelegate;
 
-@interface CUploadHDHeadImg
+@interface CUploadHDHeadImg : NSObject
 {
     NSString *m_nsFile;
     CUploadHDHeadImgWrap *m_currTask;

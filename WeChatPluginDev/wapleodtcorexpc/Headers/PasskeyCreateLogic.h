@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSData, NSString, PasskeyEntitlementProvider;
 @protocol PasskeyCreateDelegate;
 
-@interface PasskeyCreateLogic
+@interface PasskeyCreateLogic : NSObject
 {
     _Bool _passkeyExists;
     _Bool _passkeySwitch;

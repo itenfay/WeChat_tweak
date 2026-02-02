@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, FTSSelectableMenuView, UIColor, UIView;
 
-@interface FTSPopUpSelectableMenuViewController
+@interface FTSPopUpSelectableMenuViewController : NSObject
 {
     UIView *_maskView;
     FTSSelectableMenuView *_menuView;

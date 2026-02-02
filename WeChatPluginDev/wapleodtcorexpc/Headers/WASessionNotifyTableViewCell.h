@@ -6,7 +6,7 @@
 @class MMWebImageView, NSString, UIButton, UILabel, UIView;
 @protocol WASessionNotifyTableViewCellDelegate;
 
-@interface WASessionNotifyTableViewCell
+@interface WASessionNotifyTableViewCell : NSObject
 {
     NSString *_userName;
     NSString *_nickName;

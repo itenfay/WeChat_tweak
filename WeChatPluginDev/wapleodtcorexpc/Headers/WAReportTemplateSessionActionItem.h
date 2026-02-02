@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportTemplateSessionActionItem
+@interface WAReportTemplateSessionActionItem : NSObject
 {
     unsigned int _EventID;
     unsigned int _TimeSecond;

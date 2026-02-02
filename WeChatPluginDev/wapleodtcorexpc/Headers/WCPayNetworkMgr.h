@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCPayNetworkMgr
+@interface WCPayNetworkMgr : NSObject
 {
     NSMutableDictionary *_startedTimeDic;
     NSMutableDictionary *_callbacks;

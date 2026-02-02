@@ -6,7 +6,7 @@
 @class MJComposingToolbar, MJPublisherPlaybackProgressSlider, MMUIView;
 @protocol MJClippingPanelDelegate;
 
-@interface MJClippingPanel
+@interface MJClippingPanel : NSObject
 {
     id <MJClippingPanelDelegate> _delegate;
     unsigned long long _panelConfiguration;

@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MMWebOptimizationAuthLiteControlData
+@interface MMWebOptimizationAuthLiteControlData : NSObject
 {
     _Bool _hasAllowanceOfFirstAsyncGetA8Key;
     _Bool _needAuthState;

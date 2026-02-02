@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class DataReportViewExposeVisiableTools, NSArray, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIViewController;
 
-@interface DataReportExposeMonitor
+@interface DataReportExposeMonitor : NSObject
 {
     NSNumber *m_monitorSwitch;
     NSHashTable *m_monitorViews;

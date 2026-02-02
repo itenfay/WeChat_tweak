@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WXLaunchMiniProgramReq
+@interface WXLaunchMiniProgramReq : NSObject
 {
     NSString *userName;
     NSString *path;

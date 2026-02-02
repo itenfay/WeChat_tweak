@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIButton, UIColor, UIImageView, UITextView, UIView, WABackgroundRootButton;
 @protocol WAAlertDialogDelegate;
 
-@interface WAAlertDialog
+@interface WAAlertDialog : NSObject
 {
     WABackgroundRootButton *_backgroundRoot;
     UIView *_contentView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface NavigateMap
+@interface NavigateMap : NSObject
 {
     int _mapType;
     NSString *_mapName;

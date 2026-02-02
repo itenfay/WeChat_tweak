@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PreEnterSetTrustedFriendsStep
+@interface PreEnterSetTrustedFriendsStep : NSObject
 {
     NSString *m_content;
 }

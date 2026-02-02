@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface EmoticonDesc
+@interface EmoticonDesc : NSObject
 {
     NSString *_m_md5;
     NSMutableArray *_m_LangList;

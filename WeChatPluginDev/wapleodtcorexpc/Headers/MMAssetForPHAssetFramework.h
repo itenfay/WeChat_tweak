@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetExportSession, EditImageAttr, EditImageLogicController, EditVideoAttr, NSNumber, NSString, NSURL, PHAsset;
 
-@interface MMAssetForPHAssetFramework
+@interface MMAssetForPHAssetFramework : NSObject
 {
     _Bool _isSpatialMedia;
     _Bool _hasCheckSpatialMedia;

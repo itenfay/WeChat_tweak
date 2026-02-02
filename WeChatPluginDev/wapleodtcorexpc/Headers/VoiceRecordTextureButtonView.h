@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, CALayer, CAShapeLayer, NSArray, NSString, UIColor;
 
-@interface VoiceRecordTextureButtonView
+@interface VoiceRecordTextureButtonView : NSObject
 {
     _Bool _hideVoiceIcon;
     long long _state;

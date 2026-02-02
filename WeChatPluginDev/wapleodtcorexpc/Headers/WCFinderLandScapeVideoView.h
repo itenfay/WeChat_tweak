@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderHandOffItem, NSMutableArray, NSString, UIImage, UILabel, UITableView, UIView, UIViewController, WCFinderAnimationLoadingView, WCFinderBulletGroupView, WCFinderExtStatsReporter, WCFinderFeedContentVM, WCFinderFeedFriendsLikeListViewController, WCFinderLandScapeReporter, WCFinderLandScapeVCParams, WCFinderLandScapeVideoDisplayView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet, WCFinderVideoDragProgressReporter;
 @protocol WCFinderCommentBaseViewProtocol, WCFinderLandScapeVideoViewDataSource, WCFinderLandScapeVideoViewDelegate;
 
-@interface WCFinderLandScapeVideoView
+@interface WCFinderLandScapeVideoView : NSObject
 {
     _Bool _isPlayingBeforeDisappear;
     id <WCFinderLandScapeVideoViewDataSource> _dataSource;

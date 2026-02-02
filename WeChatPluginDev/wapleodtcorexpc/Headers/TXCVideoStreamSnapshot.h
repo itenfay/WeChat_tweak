@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, TXCDispatchQueue;
 
-@interface TXCVideoStreamSnapshot
+@interface TXCVideoStreamSnapshot : NSObject
 {
     TXCDispatchQueue *_queue;
     NSMutableArray *_snapshotBlocks;

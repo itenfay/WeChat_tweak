@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSString, UIScrollView, WCFinderFeedPickerParams, WCFinderFeedPickerTabView, WCFinderPostMgr;
 @protocol WCFinderFeedPickerViewControllerDelegate;
 
-@interface WCFinderFeedPickerViewController
+@interface WCFinderFeedPickerViewController : NSObject
 {
     id <WCFinderFeedPickerViewControllerDelegate> _delegate;
     UIScrollView *_scrollView;

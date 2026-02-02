@@ -5,7 +5,7 @@
 
 @class HeavyUserRespInfo, NSRecursiveLock, NSString;
 
-@interface CKVCommReportLogic
+@interface CKVCommReportLogic : NSObject
 {
     _Bool is_running_;
     NSString *m_filename;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MainFrameGroupLiveReporter
+@interface MainFrameGroupLiveReporter : NSObject
 {
     NSMutableDictionary *_chatroomLiveInfos;
 }

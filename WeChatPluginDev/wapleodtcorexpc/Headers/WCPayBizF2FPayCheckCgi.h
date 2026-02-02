@@ -5,7 +5,7 @@
 
 @protocol WCPayBizF2FPayCheckCgiDelegate;
 
-@interface WCPayBizF2FPayCheckCgi
+@interface WCPayBizF2FPayCheckCgi : NSObject
 {
     id <WCPayBizF2FPayCheckCgiDelegate> _cgiDelegate;
 }

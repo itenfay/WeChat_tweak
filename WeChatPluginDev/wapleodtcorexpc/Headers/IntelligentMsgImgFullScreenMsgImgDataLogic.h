@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface IntelligentMsgImgFullScreenMsgImgDataLogic
+@interface IntelligentMsgImgFullScreenMsgImgDataLogic : NSObject
 {
     NSArray *m_arrResultMsg;
 }

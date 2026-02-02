@@ -5,7 +5,7 @@
 
 @class NSArray, QAnimation, QPolyline, QProgressAnimation, UIColor, UIImage;
 
-@interface QTexturePolylineView
+@interface QTexturePolylineView : NSObject
 {
     _Bool _useGradient;
     _Bool _drawSymbol;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface TSTrackedSlideItem
+@interface TSTrackedSlideItem : NSObject
 {
     NSArray *_touches;
 }

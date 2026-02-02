@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, WCPayNetImageResource;
 
-@interface PocketMoneyMessageViewModel
+@interface PocketMoneyMessageViewModel : NSObject
 {
     NSMutableArray *_titleLabelStyles;
     NSMutableArray *_descLabelStyles;

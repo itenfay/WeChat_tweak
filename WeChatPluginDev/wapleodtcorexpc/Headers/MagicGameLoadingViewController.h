@@ -5,7 +5,7 @@
 
 @class MMUIButton, MagicSclFrameSetView, NSString, WAGameCircleProgressLoadingViewController;
 
-@interface MagicGameLoadingViewController
+@interface MagicGameLoadingViewController : NSObject
 {
     WAGameCircleProgressLoadingViewController *_circleProgressVC;
     MagicSclFrameSetView *_frameSetView;

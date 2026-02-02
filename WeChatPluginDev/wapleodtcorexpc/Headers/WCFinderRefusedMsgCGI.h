@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderRefusedMsgCGI
+@interface WCFinderRefusedMsgCGI : NSObject
 {
     _Bool _isSwitchOn;
     _Bool _refuseObjectIsFinder;

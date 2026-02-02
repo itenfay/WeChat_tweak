@@ -5,7 +5,7 @@
 
 @class BizPersonalCenterCellList_CellInfo, MMUILabel, UIImageView, UIView;
 
-@interface BizTLPersonalCenterMainCellView
+@interface BizTLPersonalCenterMainCellView : NSObject
 {
     UIView *_seperateView;
     BizPersonalCenterCellList_CellInfo *_listCellInfo;

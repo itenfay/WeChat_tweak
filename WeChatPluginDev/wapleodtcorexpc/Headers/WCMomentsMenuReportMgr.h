@@ -5,7 +5,7 @@
 
 @class NSString, WCDataItem, WCMomentsMenuActionReportSession, WCUserComment;
 
-@interface WCMomentsMenuReportMgr
+@interface WCMomentsMenuReportMgr : NSObject
 {
     _Bool _isShow;
     WCDataItem *_dataItem;

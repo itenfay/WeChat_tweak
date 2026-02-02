@@ -6,7 +6,7 @@
 @class PayIBGCheckJsapiSignReq;
 @protocol WCPayIBGCheckJSAPICgiDelegate;
 
-@interface WCPayIBGCheckJSAPICgi
+@interface WCPayIBGCheckJSAPICgi : NSObject
 {
 }
 

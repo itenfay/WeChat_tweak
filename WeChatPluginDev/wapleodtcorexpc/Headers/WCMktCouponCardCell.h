@@ -5,7 +5,7 @@
 
 @class CardElementCouponList, MMUILabel, UIView, WCPayWebImageView;
 
-@interface WCMktCouponCardCell
+@interface WCMktCouponCardCell : NSObject
 {
     _Bool _bIsFromHistoryPage;
     CardElementCouponList *_cellData;

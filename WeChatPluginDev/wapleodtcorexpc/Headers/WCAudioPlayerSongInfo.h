@@ -5,7 +5,7 @@
 
 @class WCAudioInfo;
 
-@interface WCAudioPlayerSongInfo
+@interface WCAudioPlayerSongInfo : NSObject
 {
     WCAudioInfo *_audioInfo;
 }

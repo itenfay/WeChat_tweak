@@ -6,7 +6,7 @@
 @class EmoticonBoardView, NSString, UIToolbar;
 @protocol EditImageEmotionToolAttrDelegate;
 
-@interface EditImageEmotionToolAttrView
+@interface EditImageEmotionToolAttrView : NSObject
 {
     _Bool _animatable;
     _Bool _isEmoticonSearchEnabled;

@@ -6,7 +6,7 @@
 @class MMMusicInfo, MMMusicShareItem, NSString, UIImage;
 @protocol MMMusicPlayerContollerDelegate;
 
-@interface MMMusicPlayerContoller
+@interface MMMusicPlayerContoller : NSObject
 {
     MMMusicInfo *m_musicInfo;
     UIImage *m_imgForIdle;

@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel, UIStackView, WCFinderHeadImageView;
 
-@interface WCFinderMSTitleHeaderCell
+@interface WCFinderMSTitleHeaderCell : NSObject
 {
     WCFinderHeadImageView *_avatarView;
     UIStackView *_actionStackView;

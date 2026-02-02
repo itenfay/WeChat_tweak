@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MultiTalkMemberList
+@interface MultiTalkMemberList : NSObject
 {
     NSArray *_memberList;
 }

@@ -5,7 +5,7 @@
 
 @class NewLifeMMKVKeyModel;
 
-@interface NewLifeSyncLogic
+@interface NewLifeSyncLogic : NSObject
 {
     NewLifeMMKVKeyModel *_kvModel;
 }

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol MMScrollableActionSheetVerticalContainerViewDelegate;
 
-@interface MMScrollableActionSheetVerticalContainerView
+@interface MMScrollableActionSheetVerticalContainerView : NSObject
 {
     double _topPadding;
     double _bottomPadding;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveVerifyAgreementCommonHeadView, MMLiveVerifyAgreementProtocolView, MMLiveView, NSString, UIButton, UIImageView, UIView, WCFinderAnimationLoadingView;
 @protocol MMLiveVerifyViewControllerDelegate;
 
-@interface MMLiveVerifyViewController
+@interface MMLiveVerifyViewController : NSObject
 {
     _Bool _needAutoRotateToPortrait;
     _Bool _isAgreementChecked;

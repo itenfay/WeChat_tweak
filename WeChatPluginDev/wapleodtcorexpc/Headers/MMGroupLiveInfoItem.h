@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMGroupLiveInfoItem
+@interface MMGroupLiveInfoItem : NSObject
 {
     _Bool enableComment;
     _Bool enableApplyLiveMic;

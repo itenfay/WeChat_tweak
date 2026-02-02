@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveContact, MMFinderLiveCommentTableViewCellFrame, MMLiveCommentPubbleCell, MMLiveLongPressRecognizer, MMLiveTaskId, MMUIButton, NSString, PAGView, UIColor, UITapGestureRecognizer, UIView, WCFinderAnimationLoadingView;
 
-@interface MMFinderLiveCommentTableViewCell
+@interface MMFinderLiveCommentTableViewCell : NSObject
 {
     _Bool _isShowMenu;
     _Bool _isInGetContactProcess;

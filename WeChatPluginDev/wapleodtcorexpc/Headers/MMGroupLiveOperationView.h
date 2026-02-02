@@ -5,7 +5,7 @@
 
 @class CContact, LiveInfo, MMAudienceLiveLikePlayUtil, MMGroupLiveTask, MMHeadImageView, MMLiveAchorTopStateBar, MMLiveConnectMicDescriptionButton, MMLiveConnectMicOperationPanel, MMLiveConnectMicVideoPreviewPanel, MMLiveLikeAnimationUtil, MMLiveLikeButton, MMLiveLikeDataMgr, MMLiveLikePlayUtil, MMLiveOnlineStateBar, MMUILabel, NSString, UIView, WCLiveBlurButton, WCLiveBottomTextButton;
 
-@interface MMGroupLiveOperationView
+@interface MMGroupLiveOperationView : NSObject
 {
     _Bool _isInLive;
     _Bool _hideOperation;

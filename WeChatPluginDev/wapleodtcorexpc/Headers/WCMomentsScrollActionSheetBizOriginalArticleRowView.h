@@ -6,7 +6,7 @@
 @class MMUIButton, UIImageView, UILabel;
 @protocol WCMomentsScrollActionSheetBizOriginalArticleRowViewDelegate;
 
-@interface WCMomentsScrollActionSheetBizOriginalArticleRowView
+@interface WCMomentsScrollActionSheetBizOriginalArticleRowView : NSObject
 {
     id <WCMomentsScrollActionSheetBizOriginalArticleRowViewDelegate> _delegate;
     MMUIButton *_backgroundButton;

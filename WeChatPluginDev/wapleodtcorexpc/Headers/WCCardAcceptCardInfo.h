@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardAcceptCardInfo
+@interface WCCardAcceptCardInfo : NSObject
 {
     unsigned int _succCount;
     unsigned int _retCode;

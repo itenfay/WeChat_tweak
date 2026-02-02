@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderPremovieAdReportCGI
+@interface WCFinderPremovieAdReportCGI : NSObject
 {
     NSString *_reportData;
     NSString *_reportBypData;

@@ -5,7 +5,7 @@
 
 @class MMWebImageView, SightIconView;
 
-@interface WCTogetherFinderFeedCell
+@interface WCTogetherFinderFeedCell : NSObject
 {
     MMWebImageView *_previewImageView;
     SightIconView *_playIconView;

@@ -5,7 +5,7 @@
 
 @class NSString, QBarCodeView;
 
-@interface KindaQRCodeView
+@interface KindaQRCodeView : NSObject
 {
     QBarCodeView *contentView;
 }

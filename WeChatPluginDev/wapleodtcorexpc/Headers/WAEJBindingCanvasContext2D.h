@@ -5,7 +5,7 @@
 
 @class WAEJCanvasContext2D, WAEJCanvasContextSkia2D;
 
-@interface WAEJBindingCanvasContext2D
+@interface WAEJBindingCanvasContext2D : NSObject
 {
     struct OpaqueJSValue *jsCanvas;
     WAEJCanvasContext2D *renderingContext;

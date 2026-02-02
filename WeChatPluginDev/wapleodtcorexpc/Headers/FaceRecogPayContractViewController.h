@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UIButton, UIImageView;
 @protocol FaceRecogPayContractViewControllerDelegate;
 
-@interface FaceRecogPayContractViewController
+@interface FaceRecogPayContractViewController : NSObject
 {
     _Bool _hasContract;
     id <FaceRecogPayContractViewControllerDelegate> _delegate;

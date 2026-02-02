@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCBaseNetworkingError
+@interface WCBaseNetworkingError : NSObject
 {
     _Bool _isNetworkError;
     _Bool _canRetry;

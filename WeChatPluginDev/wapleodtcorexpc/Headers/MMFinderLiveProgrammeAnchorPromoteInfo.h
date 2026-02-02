@@ -5,7 +5,7 @@
 
 @class FinderLiveProgrammePromoteInfo;
 
-@interface MMFinderLiveProgrammeAnchorPromoteInfo
+@interface MMFinderLiveProgrammeAnchorPromoteInfo : NSObject
 {
     FinderLiveProgrammePromoteInfo *_programInfo;
 }

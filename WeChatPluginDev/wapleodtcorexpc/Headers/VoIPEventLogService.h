@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoIPEventLogService
+@interface VoIPEventLogService : NSObject
 {
 }
 

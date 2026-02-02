@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface FlutterFuncCallService
+@interface FlutterFuncCallService : NSObject
 {
     NSMutableDictionary *_funcImpl;
 }

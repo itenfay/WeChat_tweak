@@ -6,7 +6,7 @@
 @class MMLiveScrollGradientMaskingView, NSArray, NSString, UIButton, UICollectionView, UICollectionViewFlowLayout, UILabel, UIView;
 @protocol MMFinderLiveStickerTextTemplatesPageSheetDelegate;
 
-@interface MMFinderLiveStickerTextTemplatesPageSheet
+@interface MMFinderLiveStickerTextTemplatesPageSheet : NSObject
 {
     id <MMFinderLiveStickerTextTemplatesPageSheetDelegate> _delegate;
     NSArray *_templateItems;

@@ -5,7 +5,7 @@
 
 @class NSString, WCActionSheet;
 
-@interface EnterpriseMsgContentViewController
+@interface EnterpriseMsgContentViewController : NSObject
 {
     WCActionSheet *_enterpriseActionSheet;
 }

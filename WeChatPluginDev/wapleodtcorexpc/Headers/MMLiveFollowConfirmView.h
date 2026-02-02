@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, UIButton, UIImageView, UILabel, UIView, WCFinderHeadImageView;
 
-@interface MMLiveFollowConfirmView
+@interface MMLiveFollowConfirmView : NSObject
 {
     _Bool _isPop;
     CDUnknownBlockType _block;

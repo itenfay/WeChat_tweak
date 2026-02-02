@@ -6,7 +6,7 @@
 @class NSString, WCFinderFeedListView, WCFinderShareCustomTransition, WCFinderTopicListDetailViewModel;
 @protocol WCFinderTopicListDetailViewControllerDelegate;
 
-@interface WCFinderTopicListDetailViewController
+@interface WCFinderTopicListDetailViewController : NSObject
 {
     int _topicType;
     int _fromScene;

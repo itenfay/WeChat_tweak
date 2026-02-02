@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat48EmoticonStoreDesignerProfileCrossSingleEmojiCell
+@interface _TtC6WeChat48EmoticonStoreDesignerProfileCrossSingleEmojiCell : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *$__lazy_storage_$_itemEdge;

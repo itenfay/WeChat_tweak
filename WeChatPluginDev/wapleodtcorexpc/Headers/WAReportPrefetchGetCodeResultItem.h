@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPrefetchGetCodeResultItem
+@interface WAReportPrefetchGetCodeResultItem : NSObject
 {
     unsigned int _isEncrypt;
     unsigned int _networkEnvType;

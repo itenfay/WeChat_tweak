@@ -5,7 +5,7 @@
 
 @protocol WCPayWalletGetAllFunctionCgiDelegate;
 
-@interface WCPayWalletGetAllFunctionCgi
+@interface WCPayWalletGetAllFunctionCgi : NSObject
 {
     id <WCPayWalletGetAllFunctionCgiDelegate> _cgiDelegate;
 }

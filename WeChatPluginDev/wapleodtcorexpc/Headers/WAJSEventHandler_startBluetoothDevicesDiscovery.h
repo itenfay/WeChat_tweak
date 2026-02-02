@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_startBluetoothDevicesDiscovery
+@interface WAJSEventHandler_startBluetoothDevicesDiscovery : NSObject
 {
 }
 

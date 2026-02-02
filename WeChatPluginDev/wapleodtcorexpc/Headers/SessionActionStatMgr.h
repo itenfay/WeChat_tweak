@@ -5,7 +5,7 @@
 
 @class Log_IMOperation, MemoryMappedKV, NSMutableArray, NSString, WCStatTimerHelper;
 
-@interface SessionActionStatMgr
+@interface SessionActionStatMgr : NSObject
 {
     NSMutableArray *_actionList;
     MemoryMappedKV *_actionStorage;

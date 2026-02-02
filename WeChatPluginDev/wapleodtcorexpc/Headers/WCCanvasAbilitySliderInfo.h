@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasAbilitySliderInfo
+@interface WCCanvasAbilitySliderInfo : NSObject
 {
     NSString *_label;
     double _value;

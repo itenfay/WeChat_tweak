@@ -6,7 +6,7 @@
 @class UIView, WCDataItem;
 @protocol ILinkEventExt;
 
-@interface WCSnsCommentDetailRewardView
+@interface WCSnsCommentDetailRewardView : NSObject
 {
     UIView *_rewardTipView;
     UIView *m_lineView;

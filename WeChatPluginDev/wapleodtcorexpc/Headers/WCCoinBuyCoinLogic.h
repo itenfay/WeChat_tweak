@@ -6,7 +6,7 @@
 @class GetWecoinPriceListResponse, MMUIViewController, NSString, PrepareWecoinRechargeResponse, WCCoinBuyCoinParameter, WCCoinBuyCoinView, WCCoinInterceptLogic;
 @protocol WCCoinBuyCoinLogicDelegate;
 
-@interface WCCoinBuyCoinLogic
+@interface WCCoinBuyCoinLogic : NSObject
 {
     WCCoinBuyCoinParameter *_parameter;
     id <WCCoinBuyCoinLogicDelegate> _delegate;

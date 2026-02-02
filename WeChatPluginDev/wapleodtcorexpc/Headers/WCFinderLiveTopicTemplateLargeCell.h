@@ -6,7 +6,7 @@
 @class FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions, MMFinderLiveFeedHighlightTagView, NSMutableArray, NSString, RichTextView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView, WCFinderLiveCardProductShowcase;
 @protocol WCFinderLiveTopicTemplateLargeCellDelegate;
 
-@interface WCFinderLiveTopicTemplateLargeCell
+@interface WCFinderLiveTopicTemplateLargeCell : NSObject
 {
     _Bool _hideAudienceNum;
     WCFinderHeadImageView *_avatorImageView;

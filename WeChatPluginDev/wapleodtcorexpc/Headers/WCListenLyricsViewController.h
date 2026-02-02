@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMMusicLyricResolver, NSMutableDictionary, NSString, UIView, WCListenLyricHintView, WCListenLyricsCollectionView, WCListenLyricsLoadingHeaderView, WCListenLyricsPlayCell;
 @protocol WCListenLyricsViewControllerDataSource, WCListenLyricsViewControllerDelegate;
 
-@interface WCListenLyricsViewController
+@interface WCListenLyricsViewController : NSObject
 {
     _Bool _isFirstLocation;
     _Bool _hasSetContentOffset;

@@ -6,7 +6,7 @@
 @class AccountErrorInfo, BaseResponseErrMsgHandler, VoicePrintVerifyLogic, WCPolicyListControlLogic;
 @protocol WCAccountErrorHandleLogicDelegate;
 
-@interface WCAccountErrorHandleLogic
+@interface WCAccountErrorHandleLogic : NSObject
 {
     WCPolicyListControlLogic *m_policyListLogic;
     id <WCAccountErrorHandleLogicDelegate> _delegate;

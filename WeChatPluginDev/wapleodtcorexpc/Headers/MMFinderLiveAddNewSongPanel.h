@@ -6,7 +6,7 @@
 @class MMFinderLiveAddNewSongTableViewModel, MMTableView, MMUIButton, NSArray, NSString, UILabel, UIView;
 @protocol MMFinderLiveAddNewSongPanelDelegate;
 
-@interface MMFinderLiveAddNewSongPanel
+@interface MMFinderLiveAddNewSongPanel : NSObject
 {
     id <MMFinderLiveAddNewSongPanelDelegate> _delegate;
     NSArray *_originalSongs;

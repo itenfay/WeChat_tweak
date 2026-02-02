@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, OrderedDictionary;
 
-@interface MMFinderLiveInfoMgr
+@interface MMFinderLiveInfoMgr : NSObject
 {
     _Bool _isInBackground;
     OrderedDictionary *_liveInfoWrapDict;

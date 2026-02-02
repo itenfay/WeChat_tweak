@@ -5,7 +5,7 @@
 
 @class FinderLiveListenPromoteInfo, MMUIButton, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveListenPromotePubbleContentView
+@interface MMFinderLiveListenPromotePubbleContentView : NSObject
 {
     _Bool _downLoadImageSuccess;
     MMWebImageView *_backgroundImgView;

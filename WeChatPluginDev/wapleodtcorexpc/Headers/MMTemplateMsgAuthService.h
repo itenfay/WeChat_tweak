@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMTemplateMsgAuthService
+@interface MMTemplateMsgAuthService : NSObject
 {
     _Bool _isScopeItemWrapFetching;
     NSMutableArray *_pendingScopeItemWrapQueue;

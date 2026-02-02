@@ -5,7 +5,7 @@
 
 @class NSString, WCPayJSApiSecureTunnelControlLogic;
 
-@interface WAJSEventHandler_secureTunnel
+@interface WAJSEventHandler_secureTunnel : NSObject
 {
     WCPayJSApiSecureTunnelControlLogic *logic;
 }

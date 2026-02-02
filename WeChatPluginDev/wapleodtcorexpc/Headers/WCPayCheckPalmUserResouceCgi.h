@@ -5,7 +5,7 @@
 
 @protocol WCPayCheckPalmUserResouceCgiDelegate;
 
-@interface WCPayCheckPalmUserResouceCgi
+@interface WCPayCheckPalmUserResouceCgi : NSObject
 {
     id <WCPayCheckPalmUserResouceCgiDelegate> _cgiDelegate;
 }

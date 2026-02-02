@@ -6,7 +6,7 @@
 @class NSMutableSet, OrderedDictionary;
 @protocol WCDownloadMgrDelegate;
 
-@interface WCDownloadMgr
+@interface WCDownloadMgr : NSObject
 {
     long long m_currScene;
     NSMutableSet *m_cancelDownloadMedias;

@@ -5,7 +5,7 @@
 
 @class CContact, FinderLiveTagInfo, MMFinderLiveAudioModeBackgroundUploadModel, MMFinderLiveCreateImageSpamCheckItem, MMFinderLiveTaskId, NSData, NSMutableArray, NSString, UIImage, WCFinderDataItem, WCFinderLiveShareItem, WCFinderLiveStarterReporter, WCFinderUploadTask;
 
-@interface MMFinderLiveCreateParamsModel
+@interface MMFinderLiveCreateParamsModel : NSObject
 {
     _Bool _isLiveCoverImageUpdated;
     _Bool _useFinderHeadAsCoverImage;

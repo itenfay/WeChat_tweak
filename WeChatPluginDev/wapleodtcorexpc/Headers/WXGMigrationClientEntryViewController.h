@@ -6,7 +6,7 @@
 @class MMCircleProgressView, MMProgressView, MMUIActivityIndicatorView, MMUILabel, MMUINavigationBar, NSString, RichTextView, UIButton, UIImageView, UILabel, UINavigationItem, UIScrollView, UIView, WXGDotDotDotLabel;
 @protocol WXGMigrationClientEntryViewControllerDelegate;
 
-@interface WXGMigrationClientEntryViewController
+@interface WXGMigrationClientEntryViewController : NSObject
 {
     UIButton *m_leftTopCornerButton;
     UIImageView *m_iconImageView;

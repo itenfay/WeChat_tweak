@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableArray, NSString;
 
-@interface EmoticonDownloadMd5ListObject
+@interface EmoticonDownloadMd5ListObject : NSObject
 {
     _Bool _needRecordVersionKeyUpdate;
     unsigned int _m_lastUpdateTime;

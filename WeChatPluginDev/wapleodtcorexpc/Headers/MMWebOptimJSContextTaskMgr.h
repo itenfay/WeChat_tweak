@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSVirtualMachine, MMWebOptimJSContextTaskLoader, NSMutableDictionary, NSString;
 
-@interface MMWebOptimJSContextTaskMgr
+@interface MMWebOptimJSContextTaskMgr : NSObject
 {
     MMWebOptimJSContextTaskLoader *_taskLoader;
     NSMutableDictionary *_dicTaskId2Task;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WAPlateAuthorizeSheetInfo
+@interface WAPlateAuthorizeSheetInfo : NSObject
 {
     _Bool _isAcceptProtocol;
     NSMutableArray *_plateList;

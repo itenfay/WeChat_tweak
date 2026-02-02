@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MVImageLoader, MusicCallbackApi, NSString;
 
-@interface MusicSerachFlutterViewController
+@interface MusicSerachFlutterViewController : NSObject
 {
     CDUnknownBlockType _sendMusicHandler;
     CDUnknownBlockType _viewDidPopedOrDismissedHandler;

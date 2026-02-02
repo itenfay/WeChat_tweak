@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MagicBrushFileSystemBizRegistry
+@interface MagicBrushFileSystemBizRegistry : NSObject
 {
     NSString *_mBizName;
     NSString *_mBizDir;

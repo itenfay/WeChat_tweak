@@ -6,7 +6,7 @@
 @class GLProgram, GPUImageFramebuffer, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_semaphore;
 
-@interface GPUImageRawDataInput
+@interface GPUImageRawDataInput : NSObject
 {
     struct CGSize uploadedImageSize;
     struct CGSize uploadedChromaSize;

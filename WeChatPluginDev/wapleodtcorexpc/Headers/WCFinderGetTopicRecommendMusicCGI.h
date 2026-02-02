@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderGetTopicRecommendMusicCGIParams;
 
-@interface WCFinderGetTopicRecommendMusicCGI
+@interface WCFinderGetTopicRecommendMusicCGI : NSObject
 {
     WCFinderGetTopicRecommendMusicCGIParams *_params;
     CDUnknownBlockType _successBlock;

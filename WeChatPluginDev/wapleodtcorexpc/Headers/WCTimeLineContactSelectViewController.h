@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCTimeLineContactSelectViewControllerDelegate;
 
-@interface WCTimeLineContactSelectViewController
+@interface WCTimeLineContactSelectViewController : NSObject
 {
     id <WCTimeLineContactSelectViewControllerDelegate> _delegate;
 }

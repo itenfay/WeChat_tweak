@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, NewTipsNetworkLogic, NewTipsUtils;
 
-@interface MMNewTipsMgr
+@interface MMNewTipsMgr : NSObject
 {
     NewTipsUtils *_tipsUtils;
     NewTipsNetworkLogic *_networkLogic;

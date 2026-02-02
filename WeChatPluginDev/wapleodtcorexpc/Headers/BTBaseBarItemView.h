@@ -6,7 +6,7 @@
 @class MMUILabel, UIImageView, UILabel, UIView;
 @protocol BTBarItemViewModelProtocol;
 
-@interface BTBaseBarItemView
+@interface BTBaseBarItemView : NSObject
 {
     UIView *_headImageView;
     UIView *_subtitleView;

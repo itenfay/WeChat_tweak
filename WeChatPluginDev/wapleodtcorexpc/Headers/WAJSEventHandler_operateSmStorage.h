@@ -5,7 +5,7 @@
 
 @class NSError;
 
-@interface WAJSEventHandler_operateSmStorage
+@interface WAJSEventHandler_operateSmStorage : NSObject
 {
     NSError *_err;
 }

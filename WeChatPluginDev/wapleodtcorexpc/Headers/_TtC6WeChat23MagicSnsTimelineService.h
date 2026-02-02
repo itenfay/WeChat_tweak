@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat23MagicSnsTimelineService
+@interface _TtC6WeChat23MagicSnsTimelineService : NSObject
 {
     MISSING_TYPE *snsTimelineBiz;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UIImageView, UIVisualEffectView, WCCanvasComponent;
 
-@interface WCCanvasFloatActionButtonComponent
+@interface WCCanvasFloatActionButtonComponent : NSObject
 {
     UIImageView *_iconView;
     RichTextView *_titleView;

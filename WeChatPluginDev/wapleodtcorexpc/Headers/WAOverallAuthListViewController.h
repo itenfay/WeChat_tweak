@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, UILabel, UIView;
 
-@interface WAOverallAuthListViewController
+@interface WAOverallAuthListViewController : NSObject
 {
     NSMutableArray *_cellDataList;
     unsigned int _minUpdateTime;

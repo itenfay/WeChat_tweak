@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView;
 
-@interface QPinAnnotationView
+@interface QPinAnnotationView : NSObject
 {
     _Bool _animatesDrop;
     int _pinColor;

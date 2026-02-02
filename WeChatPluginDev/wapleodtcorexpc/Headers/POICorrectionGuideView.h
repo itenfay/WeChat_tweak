@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIButton, UIImageView, UIView;
 @protocol POICorrectionGuideViewDelegate;
 
-@interface POICorrectionGuideView
+@interface POICorrectionGuideView : NSObject
 {
     _Bool _isPoiPrivated;
     NSString *_addr;

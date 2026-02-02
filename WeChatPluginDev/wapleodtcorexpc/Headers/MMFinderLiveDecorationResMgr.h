@@ -5,7 +5,7 @@
 
 @class MMLiveResourceFetcherRootFlowAction, NSMutableSet, NSRecursiveLock, NSString;
 
-@interface MMFinderLiveDecorationResMgr
+@interface MMFinderLiveDecorationResMgr : NSObject
 {
     MMLiveResourceFetcherRootFlowAction *_downloader;
     NSMutableSet *_downloadKeyList;

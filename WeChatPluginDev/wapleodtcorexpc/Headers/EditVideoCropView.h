@@ -6,7 +6,7 @@
 @class AVAsset, MMUIButton, NSString, SightLocalVideoImageSlider, UIColor;
 @protocol EditVideoCropViewDelegate;
 
-@interface EditVideoCropView
+@interface EditVideoCropView : NSObject
 {
     AVAsset *_avAsset;
     MMUIButton *_cancelBtn;

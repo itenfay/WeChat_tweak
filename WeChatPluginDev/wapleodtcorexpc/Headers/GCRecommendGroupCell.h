@@ -5,7 +5,7 @@
 
 @class GCTagLineView, MMWebImageView, UIButton, UIImageView, UILabel, UIView;
 
-@interface GCRecommendGroupCell
+@interface GCRecommendGroupCell : NSObject
 {
     UIImageView *_lockImgView;
     MMWebImageView *_userImgView;

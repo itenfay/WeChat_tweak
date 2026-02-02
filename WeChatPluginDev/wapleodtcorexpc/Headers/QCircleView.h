@@ -5,7 +5,7 @@
 
 @class NSArray, QCircle;
 
-@interface QCircleView
+@interface QCircleView : NSObject
 {
     unsigned long long _lineType;
     NSArray *_lineDashPattern;

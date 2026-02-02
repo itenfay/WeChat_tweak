@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface EnterpriseConvergeSessionMgr
+@interface EnterpriseConvergeSessionMgr : NSObject
 {
     NSMutableDictionary *_dicMainUserName2ConvergedSessionList;
 }

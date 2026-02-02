@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WWKFContactOpLogic;
 
-@interface WWKFContactUpdateMgr
+@interface WWKFContactUpdateMgr : NSObject
 {
     WWKFContactOpLogic *_contactOpLogic;
     NSMutableArray *_queueWaitingTasks;

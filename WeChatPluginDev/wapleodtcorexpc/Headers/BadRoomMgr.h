@@ -6,7 +6,7 @@
 @class NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
-@interface BadRoomMgr
+@interface BadRoomMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *m_updateDigestQueue;
     NSRecursiveLock *_m_oLock;

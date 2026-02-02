@@ -5,7 +5,7 @@
 
 @class MMCPLabel, NSString, WCCanvasAbilitySlider;
 
-@interface WCCanvasAbilitySliderComponent
+@interface WCCanvasAbilitySliderComponent : NSObject
 {
     WCCanvasAbilitySlider *_abilitySlider;
     MMCPLabel *_abilityLabel;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface ShareConfirmViewRootController
+@interface ShareConfirmViewRootController : NSObject
 {
     unsigned long long _orientationMask;
     CDUnknownBlockType _didTransitionToNewSize;

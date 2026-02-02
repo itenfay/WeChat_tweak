@@ -6,7 +6,7 @@
 @class MagicPkgInfoDBMgr, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MagicPkgCheckListener
+@interface MagicPkgCheckListener : NSObject
 {
     NSMutableSet *_preloadPkgId;
     NSMutableSet *_netscene;

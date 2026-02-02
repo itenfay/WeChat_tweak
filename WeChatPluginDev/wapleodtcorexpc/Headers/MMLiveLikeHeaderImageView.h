@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, NSString;
 
-@interface MMLiveLikeHeaderImageView
+@interface MMLiveLikeHeaderImageView : NSObject
 {
     MMHeadImageView *_headImageView;
     NSString *_identityId;

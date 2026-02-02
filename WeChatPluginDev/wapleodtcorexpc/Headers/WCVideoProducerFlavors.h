@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCVideoProducerFlavors
+@interface WCVideoProducerFlavors : NSObject
 {
     _Bool _isPreviewMuteAll;
     _Bool _isPreviewOSTEnabled;

@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCCardChooseEmptyView
+@interface WCCardChooseEmptyView : NSObject
 {
     UILabel *_emptyLabel;
 }

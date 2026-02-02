@@ -6,7 +6,7 @@
 @class ShakeMusicLogicController, ShakePeopleLogicController;
 @protocol ShakeLogicProxyDelegate;
 
-@interface ShakeLogicProxy
+@interface ShakeLogicProxy : NSObject
 {
     long long m_logicType;
     id <ShakeLogicProxyDelegate> m_delegate;

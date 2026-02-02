@@ -5,7 +5,7 @@
 
 @class FinderLiveMicInfo;
 
-@interface MMFinderLiveReplayConnectMicLogic
+@interface MMFinderLiveReplayConnectMicLogic : NSObject
 {
     FinderLiveMicInfo *_lastLiveMicInfo;
 }

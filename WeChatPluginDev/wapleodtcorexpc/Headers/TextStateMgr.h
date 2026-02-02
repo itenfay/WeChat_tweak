@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, NSMutableArray, NSMutableDictionary, NSSet, NSString, TextStateDataLogic, TextStateIconLogic, TextStateLikeLogic, TextStateNewXMLLogic, TextStatePublishIconRecentUseCache, TextStatePublishLogic, TextStateReadLogic, TextStateRedDotLogic, TextStateTopicLogic, UIImage, _TtC6WeChat18DoNotDisturbManger;
 
-@interface TextStateMgr
+@interface TextStateMgr : NSObject
 {
     _Bool _bShowTextState;
     _Bool _bShowTextStateIconInTimelineCommentsAndLike;

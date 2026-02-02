@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderCreateCoordinator;
 
-@interface WCTimeLineEditVideoViewController
+@interface WCTimeLineEditVideoViewController : NSObject
 {
     WCFinderCreateCoordinator *_createCoordinator;
 }

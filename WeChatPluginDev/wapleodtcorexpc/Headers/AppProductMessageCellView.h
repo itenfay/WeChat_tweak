@@ -5,7 +5,7 @@
 
 @class AppProductMessageViewModel;
 
-@interface AppProductMessageCellView
+@interface AppProductMessageCellView : NSObject
 {
 }
 

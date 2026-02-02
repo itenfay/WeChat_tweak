@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCImageSearchReportModel
+@interface WCImageSearchReportModel : NSObject
 {
     int _cgiRet;
     long long _action;

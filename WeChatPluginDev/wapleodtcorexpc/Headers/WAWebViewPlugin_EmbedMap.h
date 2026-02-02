@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WAWebViewPlugin_EmbedMap
+@interface WAWebViewPlugin_EmbedMap : NSObject
 {
     _Bool m_isDarkmodeEnabled;
 }

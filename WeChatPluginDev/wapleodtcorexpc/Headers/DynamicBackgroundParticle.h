@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WADynamicBackgroundGLGeometry;
 
-@interface DynamicBackgroundParticle
+@interface DynamicBackgroundParticle : NSObject
 {
     float _radius;
     int _sideCount;

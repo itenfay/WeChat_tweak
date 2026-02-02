@@ -5,7 +5,7 @@
 
 @class NSString, WCBatchViewCardHelper;
 
-@interface WAJSEventHandler_openCard
+@interface WAJSEventHandler_openCard : NSObject
 {
     WCBatchViewCardHelper *_viewCardHelp;
 }

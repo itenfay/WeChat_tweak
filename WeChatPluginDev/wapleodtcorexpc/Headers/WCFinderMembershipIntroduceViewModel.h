@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ForwardMessageLogicController, NSMutableSet, NSString, WCFinderContact, WCFinderMemberShipIntroducePushParams, WCFinderMemberShipZoneIntroduceHeaderData;
 @protocol WCFinderMembershipIntroduceViewModelDelegate;
 
-@interface WCFinderMembershipIntroduceViewModel
+@interface WCFinderMembershipIntroduceViewModel : NSObject
 {
     _Bool _isPreviewMode;
     _Bool _isBlocked;

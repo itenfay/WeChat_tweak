@@ -6,7 +6,7 @@
 @class CdnTaskInfo, FIFOFileQueue, NSMutableArray;
 @protocol OpenUploadCDNMgrDelegate;
 
-@interface OpenUploadVideoCDNMgr
+@interface OpenUploadVideoCDNMgr : NSObject
 {
     FIFOFileQueue *_fileInfoQueue;
     NSMutableArray *m_arrDeletingItems;

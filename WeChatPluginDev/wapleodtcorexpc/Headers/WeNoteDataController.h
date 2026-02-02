@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CMessageWrap, FavDataItemWrap, FavoritesItem, FavoritesItemDataField, NSMutableArray, NSNumber, NSString, RTESectionMgr, RTETextView, WCDataItem, WNContentStorage, WNContentStorageBuilder;
 @protocol WeNoteDataControllerDelegate><WNTextViewOperationDelegate;
 
-@interface WeNoteDataController
+@interface WeNoteDataController : NSObject
 {
     WNContentStorageBuilder *m_contentBuilder;
     unsigned int m_maxObjectId;

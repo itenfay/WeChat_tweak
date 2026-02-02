@@ -5,7 +5,7 @@
 
 @class MMResSignatureDataInfos, NSData, NSString;
 
-@interface MMResInfo
+@interface MMResInfo : NSObject
 {
     _Bool isAutoIncrement;
     _Bool _isEncrypt;

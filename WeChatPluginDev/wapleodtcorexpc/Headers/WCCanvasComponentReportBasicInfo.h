@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentReportBasicInfo
+@interface WCCanvasComponentReportBasicInfo : NSObject
 {
     unsigned int _exposureCount;
     NSString *_cid;

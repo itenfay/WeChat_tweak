@@ -5,7 +5,7 @@
 
 @class NSString, ScreenEffectNode;
 
-@interface AnimateEmojiNode
+@interface AnimateEmojiNode : NSObject
 {
     NSString *_key;
     NSString *_animFile;

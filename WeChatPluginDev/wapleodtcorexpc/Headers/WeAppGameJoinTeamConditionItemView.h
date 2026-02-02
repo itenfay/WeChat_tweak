@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, NSString, UIView;
 
-@interface WeAppGameJoinTeamConditionItemView
+@interface WeAppGameJoinTeamConditionItemView : NSObject
 {
     int _conditionId;
     NSString *_wording;

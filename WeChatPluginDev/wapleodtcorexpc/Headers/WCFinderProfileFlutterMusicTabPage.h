@@ -5,7 +5,7 @@
 
 @class MMFlutterViewController, NSString;
 
-@interface WCFinderProfileFlutterMusicTabPage
+@interface WCFinderProfileFlutterMusicTabPage : NSObject
 {
     MMFlutterViewController *_flutterVC;
 }

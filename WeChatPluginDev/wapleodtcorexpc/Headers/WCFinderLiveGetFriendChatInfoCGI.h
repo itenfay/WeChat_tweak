@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveGetFriendChatInfoCGI
+@interface WCFinderLiveGetFriendChatInfoCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

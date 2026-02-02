@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMPrefetcherGameCenterJSContext, MMWebJsBasePkgInfo, MMWebOptimizationPrefetcher, MMWebPrefecherJsEngine, MMWebPrefetcherPkgDownloadTask, MemoryMappedKV, NSMutableArray, NSString, NSURLSession;
 
-@interface MMWebPrefetcherMgr
+@interface MMWebPrefetcherMgr : NSObject
 {
     MMWebPrefecherJsEngine *_jsEngine;
     MMWebOptimizationPrefetcher *_resourcePrefetcher;

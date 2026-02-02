@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedContentVM;
 
-@interface BrandFlowListFinderMediaCellModel
+@interface BrandFlowListFinderMediaCellModel : NSObject
 {
     WCFinderFeedContentVM *_feedContentVM;
     NSString *_exportId;

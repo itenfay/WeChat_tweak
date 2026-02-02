@@ -6,7 +6,7 @@
 @class MISSING_TYPE, NSString;
 @protocol _TtP6WeChat26IMBSclExternalViewDelegate_;
 
-@interface _TtC6WeChat17MagicWeAppCardBiz
+@interface _TtC6WeChat17MagicWeAppCardBiz : NSObject
 {
     MISSING_TYPE *mbCommonAdapter;
     MISSING_TYPE *mbVConsoleHelper;

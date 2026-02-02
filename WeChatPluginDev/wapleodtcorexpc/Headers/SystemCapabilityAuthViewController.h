@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, _TtC6WeChat24SystemAuthCapabilityInfo;
 
-@interface SystemCapabilityAuthViewController
+@interface SystemCapabilityAuthViewController : NSObject
 {
     _TtC6WeChat24SystemAuthCapabilityInfo *_capabilityInfo;
     RichTextView *_richTextLabel;

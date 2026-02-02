@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WXKBWeSearchMessageAction
+@interface WXKBWeSearchMessageAction : NSObject
 {
     NSDictionary *_dataItem;
 }

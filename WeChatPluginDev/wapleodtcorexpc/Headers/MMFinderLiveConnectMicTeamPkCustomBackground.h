@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMFinderLiveConnectMicTeamPkCustomBackground
+@interface MMFinderLiveConnectMicTeamPkCustomBackground : NSObject
 {
     UIImageView *_decorImageView;
 }

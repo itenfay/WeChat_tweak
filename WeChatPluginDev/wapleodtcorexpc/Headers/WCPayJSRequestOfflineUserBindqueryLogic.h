@@ -6,7 +6,7 @@
 @class KindaJSEvent, NSString;
 @protocol WCPayJSRequestOfflineUserBindqueryLogicDelegate;
 
-@interface WCPayJSRequestOfflineUserBindqueryLogic
+@interface WCPayJSRequestOfflineUserBindqueryLogic : NSObject
 {
     id <WCPayJSRequestOfflineUserBindqueryLogicDelegate> _delegate;
     KindaJSEvent *_jsEvent;

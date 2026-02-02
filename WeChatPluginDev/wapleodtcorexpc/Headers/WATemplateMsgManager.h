@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WATemplateMsgInfoWrap;
 
-@interface WATemplateMsgManager
+@interface WATemplateMsgManager : NSObject
 {
     _Bool _isManulLogined;
     _Bool _isContactListUpdated;

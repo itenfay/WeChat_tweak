@@ -5,7 +5,7 @@
 
 @class FTSIntelligentMessageDB, FTSIntelligentMsgIndexState, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSRecursiveLock, NSString;
 
-@interface FTSIntelligentMsgIndexMgr
+@interface FTSIntelligentMsgIndexMgr : NSObject
 {
     NSRecursiveLock *_lock;
     NSRecursiveLock *_insertDbLock;

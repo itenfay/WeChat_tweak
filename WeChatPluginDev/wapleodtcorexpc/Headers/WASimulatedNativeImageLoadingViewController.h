@@ -5,7 +5,7 @@
 
 @class MMProgressViewEx, MMUIButton, UIImageView, WATitleView;
 
-@interface WASimulatedNativeImageLoadingViewController
+@interface WASimulatedNativeImageLoadingViewController : NSObject
 {
     MMUIButton *_quitButton;
     WATitleView *_titleView;

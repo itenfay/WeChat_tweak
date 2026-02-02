@@ -5,7 +5,7 @@
 
 @class MMFinderLiveKTVAudioEffectSettingUserInfo, MMUILabel, MMUIView, UICollectionView, UISlider;
 
-@interface MMFinderLiveKTVAudioEffectSettingCell
+@interface MMFinderLiveKTVAudioEffectSettingCell : NSObject
 {
     MMFinderLiveKTVAudioEffectSettingUserInfo *_customUserInfo;
     MMUIView *_contentView;

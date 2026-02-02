@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface WNHalfScreenNoticeView
+@interface WNHalfScreenNoticeView : NSObject
 {
     UILabel *m_textLabel;
 }

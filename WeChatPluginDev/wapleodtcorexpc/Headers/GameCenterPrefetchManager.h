@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURLSession;
 
-@interface GameCenterPrefetchManager
+@interface GameCenterPrefetchManager : NSObject
 {
     NSURLSession *_urlSession;
 }

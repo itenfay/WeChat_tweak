@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPaySDKOpenOfflinePayControlLogic
+@interface WCPaySDKOpenOfflinePayControlLogic : NSObject
 {
     _Bool _bIsSuccOpenOfflinePay;
     NSString *_appId;

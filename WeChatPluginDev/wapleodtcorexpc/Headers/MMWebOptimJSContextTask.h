@@ -5,7 +5,7 @@
 
 @class JSContext, JSVirtualMachine, MMWebOptimJSContextTaskConfig, NSString;
 
-@interface MMWebOptimJSContextTask
+@interface MMWebOptimJSContextTask : NSObject
 {
     NSString *_taskId;
     JSContext *_publicContext;

@@ -5,7 +5,7 @@
 
 @class NSCache, NSString, UIView, WebTransWebpageLogic;
 
-@interface MMWebViewPlugin_handleTranslate
+@interface MMWebViewPlugin_handleTranslate : NSObject
 {
     _Bool _canUseWebTransAbility;
     _Bool _isInTransABtestList;

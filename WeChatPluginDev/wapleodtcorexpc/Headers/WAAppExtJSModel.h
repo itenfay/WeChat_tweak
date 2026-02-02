@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppExtJSModel
+@interface WAAppExtJSModel : NSObject
 {
     unsigned int _downloadCostTimeInMs;
     unsigned long long _target;

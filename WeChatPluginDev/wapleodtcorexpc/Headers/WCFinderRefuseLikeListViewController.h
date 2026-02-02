@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, RichTextView, UILabel, UITableView, UITapGestureRecognizer, WCFinderRefuseLikeListModel, WCStoryDismissInteractiveTransition, WCStoryFriendsCollectionDismissTransition;
 @protocol WCFinderRefuseLikeListViewControllerDelegate;
 
-@interface WCFinderRefuseLikeListViewController
+@interface WCFinderRefuseLikeListViewController : NSObject
 {
     int _scene;
     id <WCFinderRefuseLikeListViewControllerDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class MMMultipleMusicViewController, MMMusicInfo, NSString;
 
-@interface MMMusicMinimizationMgr
+@interface MMMusicMinimizationMgr : NSObject
 {
     MMMultipleMusicViewController *_nativePlayerViewController;
     _Bool _autoCloseAtFinish;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WAPrivacyUsageDetailCgiDelegate;
 
-@interface WAPrivacyUsageDetailCgi
+@interface WAPrivacyUsageDetailCgi : NSObject
 {
     unsigned int _lastUpdateTime;
     unsigned int _recordCount;

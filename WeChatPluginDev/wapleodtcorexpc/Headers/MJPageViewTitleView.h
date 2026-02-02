@@ -6,7 +6,7 @@
 @class MJPageViewCursorView, MMUIView, NSArray, NSString;
 @protocol MJPageViewDataSource, MJPageViewInnerProtocol;
 
-@interface MJPageViewTitleView
+@interface MJPageViewTitleView : NSObject
 {
     id <MJPageViewDataSource> _dataSource;
     id <MJPageViewInnerProtocol> _delegate;

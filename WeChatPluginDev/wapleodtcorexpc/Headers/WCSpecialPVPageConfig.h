@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSpecialPVPageConfig
+@interface WCSpecialPVPageConfig : NSObject
 {
     NSString *_prePageID;
     NSString *_pageID;

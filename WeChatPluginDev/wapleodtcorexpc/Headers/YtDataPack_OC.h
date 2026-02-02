@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol YtRawImgData_OC;
 
-@interface YtDataPack_OC
+@interface YtDataPack_OC : NSObject
 {
     float _offset_sys;
     int _config_begin;

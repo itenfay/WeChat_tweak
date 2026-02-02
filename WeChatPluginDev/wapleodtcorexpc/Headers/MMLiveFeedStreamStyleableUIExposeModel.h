@@ -5,7 +5,7 @@
 
 @class FinderWindowProductInfo, NSString;
 
-@interface MMLiveFeedStreamStyleableUIExposeModel
+@interface MMLiveFeedStreamStyleableUIExposeModel : NSObject
 {
     _Bool _reportKvExposeOnStart;
     unsigned long long _exposeTs;

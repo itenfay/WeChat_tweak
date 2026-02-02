@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface YtCAPTCHA_OC
+@interface YtCAPTCHA_OC : NSObject
 {
     int _fixed_interval;
     int _unit;

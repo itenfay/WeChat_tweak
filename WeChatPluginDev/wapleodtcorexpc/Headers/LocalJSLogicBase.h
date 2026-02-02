@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WKWebView;
 @protocol WSWebViewPluginableProtocol, YYWebViewInterface;
 
-@interface LocalJSLogicBase
+@interface LocalJSLogicBase : NSObject
 {
     WKWebView<YYWebViewInterface> *_webView;
     NSMutableArray *_authApiList;

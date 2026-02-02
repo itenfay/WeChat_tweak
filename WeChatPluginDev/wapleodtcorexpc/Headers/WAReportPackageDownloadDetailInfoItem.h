@@ -5,7 +5,7 @@
 
 @class NSString, WAPackageDownloadProtocolInfo;
 
-@interface WAReportPackageDownloadDetailInfoItem
+@interface WAReportPackageDownloadDetailInfoItem : NSObject
 {
     _Bool _isPatch;
     unsigned int _downloadPkgSize;

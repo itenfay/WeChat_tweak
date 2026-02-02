@@ -5,7 +5,7 @@
 
 @class UISwitch;
 
-@interface WCTSettingSwitchView
+@interface WCTSettingSwitchView : NSObject
 {
     UISwitch *_switchControl;
 }

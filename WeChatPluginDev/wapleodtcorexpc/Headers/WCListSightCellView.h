@@ -5,7 +5,7 @@
 
 @class NSString, UIButton;
 
-@interface WCListSightCellView
+@interface WCListSightCellView : NSObject
 {
     UIButton *m_tailView;
 }

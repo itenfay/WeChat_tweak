@@ -5,7 +5,7 @@
 
 @class GameShareNameCardViewModel, NSString, UIImageView, UILabel;
 
-@interface GameShareNameCardCellView
+@interface GameShareNameCardCellView : NSObject
 {
     UIImageView *_headImageView;
     UILabel *_nameLabel;

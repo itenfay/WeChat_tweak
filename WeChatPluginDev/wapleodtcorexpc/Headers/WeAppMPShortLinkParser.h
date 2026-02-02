@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WeAppMPShortLinkParser
+@interface WeAppMPShortLinkParser : NSObject
 {
     NSString *_nsUrl;
     NSString *_nsSourceUrl;

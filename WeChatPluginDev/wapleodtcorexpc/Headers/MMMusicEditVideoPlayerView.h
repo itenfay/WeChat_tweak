@@ -6,7 +6,7 @@
 @class MMMusicEditVideoMediaWrap, NSString, WCFinderFeedMediaWrap, WCPlayerPlayArgs, WCPlayerView;
 @protocol MMMusicEditVideoPlayerDelegate;
 
-@interface MMMusicEditVideoPlayerView
+@interface MMMusicEditVideoPlayerView : NSObject
 {
     WCPlayerView *m_retainPlayerView;
     unsigned long long m_lastPlayerState;

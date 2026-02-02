@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, WCGroup, WCOpLog, WCSnsPrivacyReporter;
 
-@interface WCClassifyMembersViewController
+@interface WCClassifyMembersViewController : NSObject
 {
     WCGroup *_group;
     NSMutableArray *_arrGroupTempMember;

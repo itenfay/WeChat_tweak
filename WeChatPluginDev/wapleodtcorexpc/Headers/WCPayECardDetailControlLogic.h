@@ -6,7 +6,7 @@
 @class NSString, QryCancelECardDescRes;
 @protocol WCPayECardDetailControlLogicDelegate;
 
-@interface WCPayECardDetailControlLogic
+@interface WCPayECardDetailControlLogic : NSObject
 {
     id <WCPayECardDetailControlLogicDelegate> _delegate;
     QryCancelECardDescRes *_cancelDetail;

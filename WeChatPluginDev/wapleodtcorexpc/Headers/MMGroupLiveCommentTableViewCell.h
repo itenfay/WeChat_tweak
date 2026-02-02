@@ -5,7 +5,7 @@
 
 @class MMGroupLiveCommentPubbleView, MMGroupLiveCommentTableViewCellFrame;
 
-@interface MMGroupLiveCommentTableViewCell
+@interface MMGroupLiveCommentTableViewCell : NSObject
 {
     MMGroupLiveCommentPubbleView *_pubbleView;
 }

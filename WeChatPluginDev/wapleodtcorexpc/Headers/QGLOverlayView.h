@@ -5,7 +5,7 @@
 
 @class QGLOverlay;
 
-@interface QGLOverlayView
+@interface QGLOverlayView : NSObject
 {
 }
 

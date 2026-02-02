@@ -5,7 +5,7 @@
 
 @class EmoticonPreviewModel, MMEmoticonView, MMUIActivityIndicatorView, NSString, UIImageView, UILabel, UIView;
 
-@interface EmoticonPreviewBaseWindowViewController
+@interface EmoticonPreviewBaseWindowViewController : NSObject
 {
     _Bool _isLoadLocally;
     EmoticonPreviewModel *_model;

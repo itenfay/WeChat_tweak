@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveNewShareSettingSessionSelectController
+@interface MMFinderLiveNewShareSettingSessionSelectController : NSObject
 {
 }
 

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderMemberShipDetailInfoRequestParam;
 
-@interface WCFinderFetchFinderMemberShipDetailInfoCGI
+@interface WCFinderFetchFinderMemberShipDetailInfoCGI : NSObject
 {
     WCFinderMemberShipDetailInfoRequestParam *_requestParam;
     CDUnknownBlockType _successful;

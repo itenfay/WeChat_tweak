@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCMegaVideoLikeCGI
+@interface WCMegaVideoLikeCGI : NSObject
 {
     _Bool _isLike;
     CDUnknownBlockType _successful;

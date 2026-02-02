@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMLiveTaskId, MMUIImageView, MMUIView, MMWebImageView, NSString, UIColor, UIImage, UIImageView;
 
-@interface MMFinderLiveViewAnchorCoverImageView
+@interface MMFinderLiveViewAnchorCoverImageView : NSObject
 {
     MMLiveTaskId *_taskId;
     UIImage *_image;

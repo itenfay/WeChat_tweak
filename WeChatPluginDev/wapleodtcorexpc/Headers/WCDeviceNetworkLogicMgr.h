@@ -5,7 +5,7 @@
 
 @protocol WCDeviceNetworkLogicMgrDelegate;
 
-@interface WCDeviceNetworkLogicMgr
+@interface WCDeviceNetworkLogicMgr : NSObject
 {
     id <WCDeviceNetworkLogicMgrDelegate> _delegate;
 }

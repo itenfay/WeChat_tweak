@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString, NSURLSession;
 @protocol WCPaySingleDownloadLogicExt;
 
-@interface WCPaySingleDownloadLogic
+@interface WCPaySingleDownloadLogic : NSObject
 {
     id <WCPaySingleDownloadLogicExt> _m_delegate;
     NSURLSession *_session;

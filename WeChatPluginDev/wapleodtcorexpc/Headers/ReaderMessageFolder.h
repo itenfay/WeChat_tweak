@@ -5,7 +5,7 @@
 
 @class ChatTimeNodeRightButtonInfo, ChatTimeViewModel, NSMutableArray, ReaderMessageFolderViewModel;
 
-@interface ReaderMessageFolder
+@interface ReaderMessageFolder : NSObject
 {
     ChatTimeNodeRightButtonInfo *_rightButtonInfo;
     NSMutableArray *_messageWrapList;

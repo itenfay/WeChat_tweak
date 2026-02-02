@@ -6,7 +6,7 @@
 @class NSDictionary, PaddingLabel, UIButton, UIImageView, UIView, WAMapCalloutView, WAMapMarker;
 @protocol WAMapAnnotationViewDelegate;
 
-@interface WAMapAnnotationView
+@interface WAMapAnnotationView : NSObject
 {
     _Bool _fixedCallout;
     _Bool _isCalloutViewShow;

@@ -5,7 +5,7 @@
 
 @class BTBaseRecommendAppMsgCellViewModel, UILongPressGestureRecognizer, UIView;
 
-@interface BTMissedSubsBaseItemCell
+@interface BTMissedSubsBaseItemCell : NSObject
 {
     _Bool _forceHighlight;
     UILongPressGestureRecognizer *_longPressGest;

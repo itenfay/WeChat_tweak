@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MBEventHandler_showActionSheet
+@interface MBEventHandler_showActionSheet : NSObject
 {
     NSString *_number;
 }

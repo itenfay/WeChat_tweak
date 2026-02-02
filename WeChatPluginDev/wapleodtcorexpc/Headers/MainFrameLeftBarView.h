@@ -5,7 +5,7 @@
 
 @class UIColor, UIImageView, UIView;
 
-@interface MainFrameLeftBarView
+@interface MainFrameLeftBarView : NSObject
 {
     _Bool _resumeAnimateAtMoveToWindow;
     UIColor *_iconTintedColor;

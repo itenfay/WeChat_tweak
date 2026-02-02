@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CContact, MMTimer, MMUIButton, MultipleTextStateCardView, NSHashTable, NSString, TextStateFullScreenCardContentView, TextStateMediaContainerView, TextStateMusicPlayerCoordinator, TextStateProfileCardContentView, UIButton, UIView;
 @protocol TextStateProfileDragAnimateHelperDelegate;
 
-@interface TextStateProfileDragAnimateHelper
+@interface TextStateProfileDragAnimateHelper : NSObject
 {
     _Bool _shouldAutoPlayMedia;
     _Bool _showSameFriendDescription;

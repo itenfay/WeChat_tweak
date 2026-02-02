@@ -5,7 +5,7 @@
 
 @class NSDate, NSString;
 
-@interface WCFinderExtStatsLiveShareExposeReportModel
+@interface WCFinderExtStatsLiveShareExposeReportModel : NSObject
 {
     NSDate *_start;
     NSDate *_end;

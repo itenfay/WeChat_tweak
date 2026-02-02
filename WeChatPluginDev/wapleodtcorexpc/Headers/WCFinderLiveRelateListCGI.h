@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveRelateListCGI
+@interface WCFinderLiveRelateListCGI : NSObject
 {
     int _commentScene;
     NSData *_lastBuff;

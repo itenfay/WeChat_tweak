@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMUIButton, MMUILabel, MMWebImageView, NSMutableArray, NSString, UIImage, UIImageView, UIView;
 
-@interface MiniTaskCollectionCardCell
+@interface MiniTaskCollectionCardCell : NSObject
 {
     UIView *_frontView;
     MMUILabel *_titleLabel;

@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCModifyRemarkCgiDelegate;
 
-@interface WCPayT2BCModifyRemarkCgi
+@interface WCPayT2BCModifyRemarkCgi : NSObject
 {
     id <WCPayT2BCModifyRemarkCgiDelegate> m_delegate;
 }

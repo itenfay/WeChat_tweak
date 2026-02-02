@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView;
 
-@interface MMFinderLiveNotifyStyleCommentPubbleCell
+@interface MMFinderLiveNotifyStyleCommentPubbleCell : NSObject
 {
     RichTextView *_nickLabel;
     NSString *_selfAccessibilityStr;

@@ -5,7 +5,7 @@
 
 @class GCPannelItem;
 
-@interface GCPannelCellModel
+@interface GCPannelCellModel : NSObject
 {
     GCPannelItem *_pannelItem;
 }

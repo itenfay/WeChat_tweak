@@ -6,7 +6,7 @@
 @class MMLiveBizArticleListViewModel, MMLiveBizArticleMoreView, MMTableView, NSString, WCSearchBar;
 @protocol MMLiveBizArticleListViewControllerDelegate;
 
-@interface MMLiveBizArticleListViewController
+@interface MMLiveBizArticleListViewController : NSObject
 {
     id <MMLiveBizArticleListViewControllerDelegate> _delegate;
     MMLiveBizArticleListViewModel *_viewModel;

@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface CGAnimatedImageDecoder
+@interface CGAnimatedImageDecoder : NSObject
 {
     _Bool m_hasDecodeOneLoop;
     _Bool m_isSingleFrame;

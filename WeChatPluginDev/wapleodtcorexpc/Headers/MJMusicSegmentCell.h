@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MJMusicSegmentCell
+@interface MJMusicSegmentCell : NSObject
 {
     UILabel *_titleLabel;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMWebOptimPrefetchDomainInfo
+@interface MMWebOptimPrefetchDomainInfo : NSObject
 {
     unsigned int _openType;
     NSString *_domain;

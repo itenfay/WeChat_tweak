@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CMMotionManager, MMObject, MMWindowController, MemoryMappedKV, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, SightDraftMgr, UIImage, WCSightCameraBeautyConfig, WXSourceColorProperties;
 @protocol SightCaptureLogic;
 
-@interface SightFacade
+@interface SightFacade : NSObject
 {
     _Bool m_preventCamera;
     MMWindowController *m_sightDraftTipsWindow;

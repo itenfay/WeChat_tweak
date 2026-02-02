@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WXChannelShareVideoReq
+@interface WXChannelShareVideoReq : NSObject
 {
     NSString *_localIdentifier;
     NSData *_extData;

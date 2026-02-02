@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCMomentsPlayerSourceCache
+@interface WCMomentsPlayerSourceCache : NSObject
 {
     NSMutableDictionary *_sourceStatusCache;
 }

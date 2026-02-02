@@ -5,7 +5,7 @@
 
 @class NSString, WePkgUpdateConfigExt;
 
-@interface WePkgUpdateConfigTable
+@interface WePkgUpdateConfigTable : NSObject
 {
     unsigned int _pkgType;
     NSString *_pkgId;

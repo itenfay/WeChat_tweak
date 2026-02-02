@@ -6,7 +6,7 @@
 @class EXTPKG_mmpayapplynfccardbo_CardTypeInfo, NSString, RichTextView, UIButton, UIImageView, UILabel, UIView, WCPayCss, WCPayWebImageView;
 @protocol WCPayNFCCardChargeViewControllerDelegate;
 
-@interface WCPayNFCCardChargeViewController
+@interface WCPayNFCCardChargeViewController : NSObject
 {
     _Bool _isChecked;
     id <WCPayNFCCardChargeViewControllerDelegate> _m_delegate;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface MMLiveGamePlayTogetherJoinTeamSettingCell
+@interface MMLiveGamePlayTogetherJoinTeamSettingCell : NSObject
 {
     UIView *_containerView;
     UILabel *_optionLabel;

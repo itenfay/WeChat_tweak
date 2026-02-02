@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableDictionary, NSRecursiveLock, NSString, WCGPUCounterSamplingReporter, WCSamplingConfig;
 
-@interface WCGPUCounterSamplingMgr
+@interface WCGPUCounterSamplingMgr : NSObject
 {
     WCSamplingConfig *_samplingConfig;
     unsigned long long _appLaunchTime;

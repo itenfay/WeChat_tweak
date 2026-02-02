@@ -6,7 +6,7 @@
 @class HoneyPayGetMCreditLineTokenCgi, HoneyPayPayerCardDetailViewController, NSString, WCPayGetPayPwdTokenCgi, WCPayModifyHoneyPayerCreditLineCgi, WCPayModifyHoneyPayerNotifyCgi, WCPayModifyHoneyPayerPayWayCgi, WCPayQryHoneyPayerDetailCgi, WCPayUnbindHoneyPayCardCgi;
 @protocol HoneyPayPayerDetailControlLogicDelegate;
 
-@interface HoneyPayPayerDetailControlLogic
+@interface HoneyPayPayerDetailControlLogic : NSObject
 {
     id <HoneyPayPayerDetailControlLogicDelegate> _delegate;
     unsigned long long _entranceType;

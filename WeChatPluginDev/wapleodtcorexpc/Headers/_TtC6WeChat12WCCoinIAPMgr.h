@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSSet, NSString, PrepareWecoinRechargeResponse, PrepareWecoinSubscriptionResponse;
 
-@interface _TtC6WeChat12WCCoinIAPMgr
+@interface _TtC6WeChat12WCCoinIAPMgr : NSObject
 {
     MISSING_TYPE *api;
     MISSING_TYPE *midasDelegateInstance;

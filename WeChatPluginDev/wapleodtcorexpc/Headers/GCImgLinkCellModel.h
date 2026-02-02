@@ -5,7 +5,7 @@
 
 @class GCImgLinkVideoModel, JumpInfo, NSString;
 
-@interface GCImgLinkCellModel
+@interface GCImgLinkCellModel : NSObject
 {
     GCImgLinkVideoModel *_videoModel;
     NSString *_coverUrl;

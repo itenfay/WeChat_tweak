@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface SystemMessageViewModel
+@interface SystemMessageViewModel : NSObject
 {
     NSMutableArray *m_contentTextStyles;
     _Bool _hasParseForFold;

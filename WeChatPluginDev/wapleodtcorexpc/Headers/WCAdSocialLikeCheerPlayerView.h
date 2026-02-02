@@ -6,7 +6,7 @@
 @class NSString, PAGView, UIView, WCAdSocialLikeInfo, WCAdSocialLikeLogic, WCDataItem;
 @protocol WCAdSocialLikeCheerPlayerViewDelegate;
 
-@interface WCAdSocialLikeCheerPlayerView
+@interface WCAdSocialLikeCheerPlayerView : NSObject
 {
     _Bool _bTimelineScene;
     id <WCAdSocialLikeCheerPlayerViewDelegate> _delegate;

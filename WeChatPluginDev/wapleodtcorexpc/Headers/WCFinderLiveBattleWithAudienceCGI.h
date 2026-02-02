@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSData, NSString, WCFinderDataItem;
 @protocol MMFinderLivePkWinningConditionArguments;
 
-@interface WCFinderLiveBattleWithAudienceCGI
+@interface WCFinderLiveBattleWithAudienceCGI : NSObject
 {
     int _opCode;
     WCFinderDataItem *_dataItem;

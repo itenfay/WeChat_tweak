@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x11a
+@interface WloginTlv_0x11a : NSObject
 {
     unsigned short wFaceId;
     unsigned char cAge;

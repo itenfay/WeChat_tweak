@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCC2CMsgImageSquareThumbViewDelegate;
 
-@interface WCC2CMsgImageSquareThumbView
+@interface WCC2CMsgImageSquareThumbView : NSObject
 {
     id <WCC2CMsgImageSquareThumbViewDelegate> _m_delegate;
 }

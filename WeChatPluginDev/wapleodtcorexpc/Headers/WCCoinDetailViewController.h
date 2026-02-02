@@ -5,7 +5,7 @@
 
 @class GetWecoinPageInfoResponse, KindaUIScrollView, NSString, UIView, WCCoinNewUserTipsView;
 
-@interface WCCoinDetailViewController
+@interface WCCoinDetailViewController : NSObject
 {
     _Bool _directlyJumpDetailPage;
     _Bool _didBuyCoin;

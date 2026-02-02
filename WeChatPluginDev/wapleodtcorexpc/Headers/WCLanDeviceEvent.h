@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WCLanDeviceEvent
+@interface WCLanDeviceEvent : NSObject
 {
     NSString *m_deviceId;
     JSEvent *m_event;

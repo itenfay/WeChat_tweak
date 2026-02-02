@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, UIScrollView, UIView;
 
-@interface MMLiveStarterWeakNetTipView
+@interface MMLiveStarterWeakNetTipView : NSObject
 {
     MMUILabel *_firstTipNumLabel;
     MMUILabel *_firstTipTitleLabel;

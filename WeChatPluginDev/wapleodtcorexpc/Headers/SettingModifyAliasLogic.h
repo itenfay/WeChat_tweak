@@ -5,7 +5,7 @@
 
 @protocol SettingModifyAliasLogicDelegate;
 
-@interface SettingModifyAliasLogic
+@interface SettingModifyAliasLogic : NSObject
 {
     id <SettingModifyAliasLogicDelegate> _m_delegate;
 }

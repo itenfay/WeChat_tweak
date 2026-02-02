@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIView, WCAdFinderLiveLogic, WCAdFinderLivePlayerView, WCAdLiveDisplayView, WCAdLiveLikeAnimationView, WCImageView, WCSightView;
 
-@interface WCTimeLineAdCombinedGridView
+@interface WCTimeLineAdCombinedGridView : NSObject
 {
     unsigned int _liveStatus;
     UIView *_mainMediaHolder;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportVideoActionItem
+@interface WAReportVideoActionItem : NSObject
 {
     unsigned int _isFullScreen;
     unsigned int _eventId;

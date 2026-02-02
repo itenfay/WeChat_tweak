@@ -5,7 +5,7 @@
 
 @class AMRAudioRecorder, BaseUploadVoiceMgr, MMNewUploadVoiceMgr, MMNewVoiceInputCacheLogic, NSString, SPXAudioRecorder, SilkAudioRecorder;
 
-@interface AudioSender
+@interface AudioSender : NSObject
 {
     SPXAudioRecorder *m_spxrecorder;
     SilkAudioRecorder *m_silkRecorder;

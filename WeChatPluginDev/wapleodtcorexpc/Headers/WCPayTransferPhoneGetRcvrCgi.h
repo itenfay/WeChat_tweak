@@ -5,7 +5,7 @@
 
 @protocol WCPayTransferPhoneGetRcvrCgiDelegate;
 
-@interface WCPayTransferPhoneGetRcvrCgi
+@interface WCPayTransferPhoneGetRcvrCgi : NSObject
 {
     id <WCPayTransferPhoneGetRcvrCgiDelegate> _m_delegate;
 }

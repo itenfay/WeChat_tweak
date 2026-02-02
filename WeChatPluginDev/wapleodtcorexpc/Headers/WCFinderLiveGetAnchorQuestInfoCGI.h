@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveGetAnchorQuestInfoCGI
+@interface WCFinderLiveGetAnchorQuestInfoCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failureBlock;

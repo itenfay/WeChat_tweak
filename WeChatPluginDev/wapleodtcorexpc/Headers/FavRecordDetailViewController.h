@@ -5,7 +5,7 @@
 
 @class FavActionSheet, FavImagePreView, FavoritesItemDataField, ForwardMessageLogicController, MMMsgMenuReporter, MMRichTextCoverView, NSArray, NSMutableDictionary, NSString;
 
-@interface FavRecordDetailViewController
+@interface FavRecordDetailViewController : NSObject
 {
     unsigned int m_uiLongPressedIndex;
     _Bool m_hasIllegalData;

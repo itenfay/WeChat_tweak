@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WCFinderBindPOICGI
+@interface WCFinderBindPOICGI : NSObject
 {
     NSMutableArray *_ids;
     NSString *_finderUsername;

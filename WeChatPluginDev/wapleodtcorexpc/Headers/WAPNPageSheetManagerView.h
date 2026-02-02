@@ -5,7 +5,7 @@
 
 @class UIButton, WAPhoneNumberPageSheetViewModel;
 
-@interface WAPNPageSheetManagerView
+@interface WAPNPageSheetManagerView : NSObject
 {
     UIButton *_button;
 }

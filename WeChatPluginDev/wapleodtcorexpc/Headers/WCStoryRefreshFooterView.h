@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, NSString, UIColor, UIFont, UILabel, UIView;
 
-@interface WCStoryRefreshFooterView
+@interface WCStoryRefreshFooterView : NSObject
 {
     _Bool _centerAlignLabel;
     _Bool _darkStyle;

@@ -6,7 +6,7 @@
 @class CountryCodeWrap, MMTimer, MMUIButton, NSString, TenpaySecureCtrl, UIButton, UIImageView, UILabel, UIView, WCPayCss, WCUITextField;
 @protocol WCPayVerifyPhoneViewControllerDelegate;
 
-@interface WCPayVerifyPhoneViewController
+@interface WCPayVerifyPhoneViewController : NSObject
 {
     _Bool _hasSendCode;
     unsigned int _lastSendTime;

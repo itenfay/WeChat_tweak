@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderApplyStorePromotionRightsCgi
+@interface WCFinderApplyStorePromotionRightsCgi : NSObject
 {
     int _permissionType;
     int _operationType;

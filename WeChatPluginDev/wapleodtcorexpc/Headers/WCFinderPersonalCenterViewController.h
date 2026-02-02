@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderNewUserPrepareResponse, MJPublisher, MMFinderLivePurchasedFeedViewModel, NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout, UINavigationController, WCActionSheet, WCActionSheetWithHeadAvatar, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderPersonalCenterCollectionViewCell, WCFinderPersonalCenterContactData, WCFinderPersonalCenterTakePhotoCollectionViewCell, WCFinderPersonalCenterViewModel, WCFinderPersonalCenterWeixinContactCollectionViewCell, WCFinderPostActionSheetConfigArray, WCFinderProcessTimeRecorder, WCFinderWebViewOpener;
 
-@interface WCFinderPersonalCenterViewController
+@interface WCFinderPersonalCenterViewController : NSObject
 {
     _Bool _hasRedDotAtEnter;
     _Bool _hasReportBrandIdentityTipsExpose;

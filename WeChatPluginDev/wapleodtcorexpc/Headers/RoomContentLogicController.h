@@ -5,7 +5,7 @@
 
 @class CBaseContact, ChatRoomInfoSettingMgr, ChatRoomToolViewController, ChatRoomUpgradeOpenIMLogic, ChatUnavailableTipsView, MMInputToolView, NSString, RoomDelMemController, RoomHistoryContext, RoomReportController, WCTopicSearchViewController;
 
-@interface RoomContentLogicController
+@interface RoomContentLogicController : NSObject
 {
     _Bool m_bStartShowRoomContactSelector;
     ChatRoomInfoSettingMgr *m_ChatRoomInfoSettingMgr;

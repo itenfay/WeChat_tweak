@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface WCDeviceAccountWCDB
+@interface WCDeviceAccountWCDB : NSObject
 {
     WCTDatabase *m_db;
     WCTTable *m_tableAccount;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol SimpleImgInfoDelegate;
 
-@interface SimpleImgInfo
+@interface SimpleImgInfo : NSObject
 {
     NSString *m_strMsgLocalID;
     unsigned int m_uiCreateTime;

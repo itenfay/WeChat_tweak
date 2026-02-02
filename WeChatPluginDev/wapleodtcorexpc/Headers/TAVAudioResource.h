@@ -5,7 +5,7 @@
 
 @class AVAsset;
 
-@interface TAVAudioResource
+@interface TAVAudioResource : NSObject
 {
     AVAsset *_emptyAsset;
 }

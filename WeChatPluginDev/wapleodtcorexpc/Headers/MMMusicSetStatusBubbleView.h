@@ -6,7 +6,7 @@
 @class MMMusicSetStatusBubbleTriangleView, MMUIButton, MMUILabel, UIImageView;
 @protocol MMMusicSetStatusBubbleViewDelegate;
 
-@interface MMMusicSetStatusBubbleView
+@interface MMMusicSetStatusBubbleView : NSObject
 {
     id <MMMusicSetStatusBubbleViewDelegate> _delegate;
     MMUIButton *_setStatusContainerBtn;

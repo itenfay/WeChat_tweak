@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface WCPayOpenTouchIDAuthConfirmView
+@interface WCPayOpenTouchIDAuthConfirmView : NSObject
 {
     CDUnknownBlockType _cancelBlock;
     CDUnknownBlockType _okBlock;

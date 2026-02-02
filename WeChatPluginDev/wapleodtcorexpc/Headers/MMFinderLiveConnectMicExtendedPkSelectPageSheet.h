@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBattleDurationItem, MMFinderLiveConnectMicPkSelectionModel, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, NSMutableArray, NSString, UITableView;
 
-@interface MMFinderLiveConnectMicExtendedPkSelectPageSheet
+@interface MMFinderLiveConnectMicExtendedPkSelectPageSheet : NSObject
 {
     _Bool _anchorParticipating;
     _Bool _audienceParticipating;

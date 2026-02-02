@@ -5,7 +5,7 @@
 
 @class UIBezierPath;
 
-@interface MJShootFocusView
+@interface MJShootFocusView : NSObject
 {
     UIBezierPath *_borderPath;
 }

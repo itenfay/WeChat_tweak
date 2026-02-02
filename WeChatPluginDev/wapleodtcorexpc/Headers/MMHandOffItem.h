@@ -5,7 +5,7 @@
 
 @class MMHandOffAttributes, NSString;
 
-@interface MMHandOffItem
+@interface MMHandOffItem : NSObject
 {
     unsigned int _receiveSeqNum;
     MMHandOffAttributes *__XMLAttributes;

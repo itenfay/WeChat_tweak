@@ -5,7 +5,7 @@
 
 @class QGPSetVisibleParam;
 
-@interface QGPSetVisibleCommand
+@interface QGPSetVisibleCommand : NSObject
 {
     QGPSetVisibleParam *_params;
 }

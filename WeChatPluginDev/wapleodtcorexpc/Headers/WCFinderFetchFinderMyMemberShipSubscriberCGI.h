@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderFetchFinderMyMemberShipSubscriberCGI
+@interface WCFinderFetchFinderMyMemberShipSubscriberCGI : NSObject
 {
     _Bool _continueFlag;
     NSString *_finderUsername;

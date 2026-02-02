@@ -6,7 +6,7 @@
 @class NSMutableSet, NSSet;
 @protocol NewContactTagViewControllerDelegate;
 
-@interface NewContactTagViewController
+@interface NewContactTagViewController : NSObject
 {
     unsigned int m_curEventID;
     id <NewContactTagViewControllerDelegate> _m_delegate;

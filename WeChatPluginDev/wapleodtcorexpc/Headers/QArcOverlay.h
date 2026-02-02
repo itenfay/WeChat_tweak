@@ -5,7 +5,7 @@
 
 @class NSArray, QArcOverlayAnimation, QArcStyle;
 
-@interface QArcOverlay
+@interface QArcOverlay : NSObject
 {
     _Bool _enable3D;
     NSArray *_curves;

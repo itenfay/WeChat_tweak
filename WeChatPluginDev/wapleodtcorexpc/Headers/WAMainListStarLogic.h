@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableSet, NSString;
 @protocol WAMainListStarLogicDelegate;
 
-@interface WAMainListStarLogic
+@interface WAMainListStarLogic : NSObject
 {
     NSMutableArray *_starItems;
     id <WAMainListStarLogicDelegate> _delegate;

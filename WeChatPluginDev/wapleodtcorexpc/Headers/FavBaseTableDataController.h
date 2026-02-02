@@ -6,7 +6,7 @@
 @class FavMultiMenuTableViewCell, MMUIActivityIndicatorView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary, UITableView, UIView;
 @protocol FavBaseTableDataControllerDelegate;
 
-@interface FavBaseTableDataController
+@interface FavBaseTableDataController : NSObject
 {
     _Bool m_bAnimating;
     _Bool m_bReadyToLoad;

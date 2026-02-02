@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface OpenWebviewHandler
+@interface OpenWebviewHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

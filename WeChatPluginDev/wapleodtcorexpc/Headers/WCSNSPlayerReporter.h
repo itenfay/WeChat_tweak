@@ -5,7 +5,7 @@
 
 @class NSString, WCMediaItem;
 
-@interface WCSNSPlayerReporter
+@interface WCSNSPlayerReporter : NSObject
 {
     WCMediaItem *_mediaWrap;
     NSString *_reqFlag;

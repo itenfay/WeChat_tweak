@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveSuperfanForbidJoinLiveFullScreenView
+@interface MMFinderLiveSuperfanForbidJoinLiveFullScreenView : NSObject
 {
     CDUnknownBlockType _confirmCallback;
 }

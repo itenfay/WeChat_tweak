@@ -5,7 +5,7 @@
 
 @class AppDefaultMessageViewModel, UIImageView, UILabel;
 
-@interface AppDefaultMessageCellView
+@interface AppDefaultMessageCellView : NSObject
 {
     UIImageView *m_thumbImageView;
     UILabel *m_titleLabel;

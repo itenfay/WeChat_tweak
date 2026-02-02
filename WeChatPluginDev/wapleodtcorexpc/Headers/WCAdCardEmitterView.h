@@ -5,7 +5,7 @@
 
 @class NSString, UIImage, WCAdTouchParticleInfo;
 
-@interface WCAdCardEmitterView
+@interface WCAdCardEmitterView : NSObject
 {
     WCAdTouchParticleInfo *_particleInfo;
     UIImage *_cellContent;

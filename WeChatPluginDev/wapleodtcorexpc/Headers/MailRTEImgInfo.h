@@ -5,7 +5,7 @@
 
 @class MailRTEAttachment;
 
-@interface MailRTEImgInfo
+@interface MailRTEImgInfo : NSObject
 {
     MailRTEAttachment *_attachment;
 }

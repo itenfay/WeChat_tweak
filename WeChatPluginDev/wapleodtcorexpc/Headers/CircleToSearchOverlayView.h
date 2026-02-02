@@ -5,7 +5,7 @@
 
 @class CAShapeLayer;
 
-@interface CircleToSearchOverlayView
+@interface CircleToSearchOverlayView : NSObject
 {
     CAShapeLayer *_maskLayer;
     CAShapeLayer *_focusBoxLayer;

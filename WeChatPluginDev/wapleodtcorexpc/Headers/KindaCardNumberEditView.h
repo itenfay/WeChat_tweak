@@ -5,7 +5,7 @@
 
 @class MMDynamicColor, MMKCardNumberEditViewOnTextChangedCallback, MMKCardNumberEditViewOnTextEndEditingCallback, NSString, WCPayTenpaySecureCtrlItem;
 
-@interface KindaCardNumberEditView
+@interface KindaCardNumberEditView : NSObject
 {
     MMKCardNumberEditViewOnTextChangedCallback *m_callback;
     MMKCardNumberEditViewOnTextEndEditingCallback *m_endEditingCallback;

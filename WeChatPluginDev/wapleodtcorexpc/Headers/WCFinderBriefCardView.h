@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, RichTextView, UILabel;
 
-@interface WCFinderBriefCardView
+@interface WCFinderBriefCardView : NSObject
 {
     MMWebImageView *_avatarView;
     UILabel *_nameLabel;

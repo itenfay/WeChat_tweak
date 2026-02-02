@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCJdRemindItem;
 
-@interface WCJdBussinessMgr
+@interface WCJdBussinessMgr : NSObject
 {
     _Bool hadLoadEntranceItem;
     NSMutableArray *aryHadHandleRemindItemList;

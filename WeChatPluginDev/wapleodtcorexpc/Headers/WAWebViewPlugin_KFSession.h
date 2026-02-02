@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAWebViewPlugin_KFSession
+@interface WAWebViewPlugin_KFSession : NSObject
 {
     NSString *_userName;
     unsigned int _lastUnreadCount;

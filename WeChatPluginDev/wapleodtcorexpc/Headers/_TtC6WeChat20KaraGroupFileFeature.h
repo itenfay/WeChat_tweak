@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat20KaraGroupFileFeature
+@interface _TtC6WeChat20KaraGroupFileFeature : NSObject
 {
     MISSING_TYPE *_sizeInMB;
     MISSING_TYPE *_previewType;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
-@interface EmoticonStoreSession
+@interface EmoticonStoreSession : NSObject
 {
     NSMutableDictionary *m_itemList;
     NSMutableArray *m_downloadingItemList;

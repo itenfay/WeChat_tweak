@@ -6,7 +6,7 @@
 @class NSIndexPath, NSMutableArray, NSString, UILabel, UITableView;
 @protocol WCFinderFeedSubtitleSettingViewControllerDelegate;
 
-@interface WCFinderFeedSubtitleSettingViewController
+@interface WCFinderFeedSubtitleSettingViewController : NSObject
 {
     id <WCFinderFeedSubtitleSettingViewControllerDelegate> _delegate;
     UITableView *_tableView;

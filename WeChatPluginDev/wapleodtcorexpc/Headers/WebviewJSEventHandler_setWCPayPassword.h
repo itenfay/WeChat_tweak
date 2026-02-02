@@ -5,7 +5,7 @@
 
 @class NSString, WCPayPayPwdViewController, WCPayResetPwdByTokenCgi;
 
-@interface WebviewJSEventHandler_setWCPayPassword
+@interface WebviewJSEventHandler_setWCPayPassword : NSObject
 {
     NSString *_token;
     WCPayPayPwdViewController *_pwdVC;

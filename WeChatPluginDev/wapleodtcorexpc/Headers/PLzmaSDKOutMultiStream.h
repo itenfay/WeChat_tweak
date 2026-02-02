@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface PLzmaSDKOutMultiStream
+@interface PLzmaSDKOutMultiStream : NSObject
 {
 }
 

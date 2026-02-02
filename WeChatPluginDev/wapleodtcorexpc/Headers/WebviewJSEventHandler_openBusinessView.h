@@ -5,7 +5,7 @@
 
 @class WAContactGetter;
 
-@interface WebviewJSEventHandler_openBusinessView
+@interface WebviewJSEventHandler_openBusinessView : NSObject
 {
     WAContactGetter *_contactGetter;
 }

@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIButton, UIView, WCImageView;
 
-@interface WCContentItemViewTemplateRedEnvelopesV4
+@interface WCContentItemViewTemplateRedEnvelopesV4 : NSObject
 {
     WCImageView *_imageView;
     UIButton *_imageButton;

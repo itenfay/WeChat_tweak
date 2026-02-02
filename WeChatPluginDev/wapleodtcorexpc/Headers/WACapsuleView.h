@@ -6,7 +6,7 @@
 @class MMUIView, NSString, NSTimer, UILongPressGestureRecognizer, WACapsuleButton, WCSequentialActionRunner;
 @protocol WACapsuleViewDelegate;
 
-@interface WACapsuleView
+@interface WACapsuleView : NSObject
 {
     UILongPressGestureRecognizer *_longPressRecognizer;
     UILongPressGestureRecognizer *_moreLongPressRecognizer;

@@ -5,7 +5,7 @@
 
 @class MMBadgeView, NSMutableArray, UIImageView, UILabel;
 
-@interface TextStateFriendTopicButton
+@interface TextStateFriendTopicButton : NSObject
 {
     _Bool _hasSmallReddot;
     unsigned int _notifiesCount;

@@ -6,7 +6,7 @@
 @class NSString, UICollectionView, UICollectionViewFlowLayout, WAMainFrameTaskBarSectionOtherViewCell, WAMainFrameTaskBarSectionViewModel;
 @protocol WAMainFrameTaskBarSectionOtherViewDelegate;
 
-@interface WAMainFrameTaskBarSectionOtherView
+@interface WAMainFrameTaskBarSectionOtherView : NSObject
 {
     long long _selectedIndex;
     WAMainFrameTaskBarSectionOtherViewCell *_highlightedCell;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCPipContentSourcePlaybackDelegateObj, WCPlayerPipDisplayLayerView;
 
-@interface WCPipContentSourcePlayer_SampleBuffer
+@interface WCPipContentSourcePlayer_SampleBuffer : NSObject
 {
     _Bool _isPlaying;
     _Bool _isCompleted;

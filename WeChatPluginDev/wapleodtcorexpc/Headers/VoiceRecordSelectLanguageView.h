@@ -6,7 +6,7 @@
 @class NSString, UIView;
 @protocol VoiceRecordSelectLanguageViewDelegate;
 
-@interface VoiceRecordSelectLanguageView
+@interface VoiceRecordSelectLanguageView : NSObject
 {
     unsigned int _selectedLanguageType;
     id <VoiceRecordSelectLanguageViewDelegate> _delegate;

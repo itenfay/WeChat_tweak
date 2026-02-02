@@ -5,7 +5,7 @@
 
 @class WCTextStateDB;
 
-@interface StatusDBWrapper
+@interface StatusDBWrapper : NSObject
 {
     _Bool _useAffDB;
     _Bool _affDBTransferFinish;

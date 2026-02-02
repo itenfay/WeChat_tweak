@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EcsJumpLiteAppInfo
+@interface EcsJumpLiteAppInfo : NSObject
 {
     NSString *_appId;
     NSString *_path;

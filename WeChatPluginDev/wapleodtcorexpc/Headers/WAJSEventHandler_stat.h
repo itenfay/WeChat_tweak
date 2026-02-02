@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAJSEventHandler_stat
+@interface WAJSEventHandler_stat : NSObject
 {
     NSMutableDictionary *_recursiveDic;
 }

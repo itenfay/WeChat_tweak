@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasStreamVideoCDNComponent
+@interface WCCanvasStreamVideoCDNComponent : NSObject
 {
     _Bool _waitForUserClickToPlay;
 }

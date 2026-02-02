@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVBoardItem, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUILabel, MMUISearchBar, NSData, NSMutableArray, NSMutableSet, NSString, UICollectionView, UIView, WCFinderLiveAnchorLogReporter, WCTimeLineFooterView;
 
-@interface MMFinderLiveKTVRequestSongPanel
+@interface MMFinderLiveKTVRequestSongPanel : NSObject
 {
     _Bool _searchHasNext;
     _Bool _searchTextAutoFilled;

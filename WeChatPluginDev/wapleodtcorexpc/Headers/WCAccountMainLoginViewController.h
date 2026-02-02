@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSMutableArray, NSString, UIButton, WCAccountLoginMainPageView;
 @protocol WCAccountMainLoginViewControllerDelegate;
 
-@interface WCAccountMainLoginViewController
+@interface WCAccountMainLoginViewController : NSObject
 {
     id <WCAccountMainLoginViewControllerDelegate> _delegate;
     unsigned long long _signMethod;

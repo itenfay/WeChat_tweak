@@ -5,7 +5,7 @@
 
 @class MMFinderLiveCommentSensitiveTableViewModel, MMFinderLiveSensitiveLogic, MMFinderLiveSensitiveTableView, MMFinderLiveTask, MMFinderLiveTaskId;
 
-@interface MMFinderLiveSensitiveSettingViewController
+@interface MMFinderLiveSensitiveSettingViewController : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     MMFinderLiveSensitiveTableView *_tableView;

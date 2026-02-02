@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface RawVideoUploadTask
+@interface RawVideoUploadTask : NSObject
 {
     _Bool _bStop;
     NSString *_downloadFileKey;

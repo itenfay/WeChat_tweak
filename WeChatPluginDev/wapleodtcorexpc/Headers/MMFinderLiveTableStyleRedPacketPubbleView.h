@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLiveRoleSignView, NSString, UIImageView;
 
-@interface MMFinderLiveTableStyleRedPacketPubbleView
+@interface MMFinderLiveTableStyleRedPacketPubbleView : NSObject
 {
     UIImageView *_iconImageView;
     MMFinderLiveLiveRoleSignView *_mysteriousSignView;

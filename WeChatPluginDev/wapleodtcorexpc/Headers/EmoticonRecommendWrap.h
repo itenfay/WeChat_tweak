@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, NSString;
 
-@interface EmoticonRecommendWrap
+@interface EmoticonRecommendWrap : NSObject
 {
     _Bool _needPurchase;
     _Bool _isFree;

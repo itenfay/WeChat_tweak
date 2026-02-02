@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface GCViewHolderCellModel
+@interface GCViewHolderCellModel : NSObject
 {
     UIView *_targetView;
     struct UIEdgeInsets _edgeInsets;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveFlowActionInvocationContext, MMLiveFlowInvocationContext, MMLiveResourceFetcherTask, NSString;
 
-@interface MMLiveResourceFetcherDownloadingFlowAction
+@interface MMLiveResourceFetcherDownloadingFlowAction : NSObject
 {
     _Bool _cdnCalledBack;
     MMLiveResourceFetcherTask *_task;

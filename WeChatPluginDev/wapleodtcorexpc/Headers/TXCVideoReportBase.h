@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface TXCVideoReportBase
+@interface TXCVideoReportBase : NSObject
 {
     _Bool _receivedFirstFrame;
     CDUnknownBlockType _logger;

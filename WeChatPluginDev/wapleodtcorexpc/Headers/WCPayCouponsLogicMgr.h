@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCPayTradeFavInfo;
 
-@interface WCPayCouponsLogicMgr
+@interface WCPayCouponsLogicMgr : NSObject
 {
     _Bool _bIsUserClickConfirmInCouponList;
     WCPayTradeFavInfo *_wcPayTradeFavInfo;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveGetShareQRCodeCGI
+@interface WCFinderLiveGetShareQRCodeCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

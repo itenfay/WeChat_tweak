@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMDragManager, NSString, SightIconView, UIButton, UIDragInteraction, UIImageView, UILabel, UIView, VideoMessageViewModel, YYAsyncImageView;
 
-@interface VideoMessageCellView
+@interface VideoMessageCellView : NSObject
 {
     YYAsyncImageView *m_thumbImageView;
     SightIconView *m_sightIconView;

@@ -6,7 +6,7 @@
 @class MMBGMCategoryDetailView, MMBGMPanelPublishContext, MMBGMSelectedSearchView, MMBGMSelectedTabBarView, NSMutableArray, NSString, UIScrollView, WCSearchBar;
 @protocol MMBGMSelectedContentViewDelegate, MMBGMSelectedMusicDataProtocol;
 
-@interface MMBGMSelectedContentView
+@interface MMBGMSelectedContentView : NSObject
 {
     id <MMBGMSelectedContentViewDelegate> _delegate;
     MMBGMPanelPublishContext *_publishContext;

@@ -5,7 +5,7 @@
 
 @protocol TingEventPluginProtocol;
 
-@interface WebviewJSEventHandlerTingBase
+@interface WebviewJSEventHandlerTingBase : NSObject
 {
     id <TingEventPluginProtocol> _outterTingPlugin;
 }

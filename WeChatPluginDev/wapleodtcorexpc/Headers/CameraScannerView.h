@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, MMTimer, NSMutableString, NSObject, NSRecursiveLock, NSString;
 @protocol CameraScannerViewDelegate, OS_dispatch_queue;
 
-@interface CameraScannerView
+@interface CameraScannerView : NSObject
 {
     AVCaptureSession *_captureSession;
     AVCaptureVideoPreviewLayer *_prevLayer;

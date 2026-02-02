@@ -5,7 +5,7 @@
 
 @class MJAudioWaveformView, NSString;
 
-@interface MJAudioSegmentCell
+@interface MJAudioSegmentCell : NSObject
 {
     _Bool _contentCanBeDrawn;
     MJAudioWaveformView *_waveformView;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FileDetailLogicController, ImageBrowseButton, ImageScrollView, MMCircleProgressView, MMLoadingIndicatorView, MMScrollActionSheet, MMUIButton, MMUILabel, MiniRecTransitionController, NSMutableArray, NSMutableSet, NSString, NSURL, ShareDataToOpenSDKController, UIButton, UIImageView, UIScrollView, UITapGestureRecognizer, UIViewController, WKWebView, WXFullScreenGestureRecognizer;
 @protocol FileDetailCustomizedPreviewController, FileDetailViewControllerDelegate;
 
-@interface FileDetailViewController
+@interface FileDetailViewController : NSObject
 {
     FileDetailLogicController *m_logicController;
     _Bool m_bDownloading;

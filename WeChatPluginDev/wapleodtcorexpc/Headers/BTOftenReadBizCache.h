@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface BTOftenReadBizCache
+@interface BTOftenReadBizCache : NSObject
 {
     NSMutableDictionary *_contactDic;
 }

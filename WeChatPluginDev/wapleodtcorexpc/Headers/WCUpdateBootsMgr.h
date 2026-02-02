@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCBootsUpdateInfo;
 
-@interface WCUpdateBootsMgr
+@interface WCUpdateBootsMgr : NSObject
 {
     NSMutableDictionary *_dicDownloadingItem;
     NSString *_baseID;

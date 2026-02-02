@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSMapTable, NSNumber, NSString, WCFinderArbitraryPageView, WCFinderLifeHomeNoLocationAuthView, WCFinderLifeHomeViewModel, WCFinderRedDotTipsShowInfo;
 
-@interface WCFinderLifeHomeViewController
+@interface WCFinderLifeHomeViewController : NSObject
 {
     _Bool _displayNearPeople;
     _Bool _nearbyLocationServiceAuthed;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QBBeaconWupEventRecordPackage
+@interface QBBeaconWupEventRecordPackage : NSObject
 {
     NSArray *_jcev2_p_0_o_list__b0x9i_VOQBBeaconWupEventRecord;
 }

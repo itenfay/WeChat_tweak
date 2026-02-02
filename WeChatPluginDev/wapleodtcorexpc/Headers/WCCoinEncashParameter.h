@@ -5,7 +5,7 @@
 
 @class RealNameAuthInfo, WecoinTaxCutEntranceInfo;
 
-@interface WCCoinEncashParameter
+@interface WCCoinEncashParameter : NSObject
 {
     unsigned long long _businessId;
     long long _incomeBalance;

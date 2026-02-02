@@ -5,7 +5,7 @@
 
 @protocol WCPayBioPayV2UpdateAuthKeyCgiDelegate;
 
-@interface WCPayBioPayV2UpdateAuthKeyCgi
+@interface WCPayBioPayV2UpdateAuthKeyCgi : NSObject
 {
     id <WCPayBioPayV2UpdateAuthKeyCgiDelegate> m_delegate;
 }

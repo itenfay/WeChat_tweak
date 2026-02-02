@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMUILabel, NSString, UIView, WCFinderFeedImageCDNView, WCFinderHeadImageView, WCFinderLiveFeedGenericCoverReportInfo, WCFinderLiveGenericFeedVM;
 
-@interface WCFinderLiveHomePageFollowCell
+@interface WCFinderLiveHomePageFollowCell : NSObject
 {
     WCFinderFeedImageCDNView *_liveImageView;
     UIView *_containerView;

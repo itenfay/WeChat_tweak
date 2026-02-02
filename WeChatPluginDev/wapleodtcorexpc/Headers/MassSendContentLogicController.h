@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface MassSendContentLogicController
+@interface MassSendContentLogicController : NSObject
 {
     UIImageView *_toolView;
 }

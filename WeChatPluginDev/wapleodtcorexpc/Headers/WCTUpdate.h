@@ -5,7 +5,7 @@
 
 @class NSObject;
 
-@interface WCTUpdate
+@interface WCTUpdate : NSObject
 {
     struct StatementUpdate _statement;
     struct SyntaxList<WCTProperty> _properties;

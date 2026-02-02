@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSLock, NSMapTable, NSString;
 
-@interface BrandCGIReportService
+@interface BrandCGIReportService : NSObject
 {
     NSMapTable *_mapTable;
     NSLock *_lock;

@@ -5,7 +5,7 @@
 
 @class CALayer;
 
-@interface MMFinderLivePkTaskedBonusBarBriefingContentMaskingView
+@interface MMFinderLivePkTaskedBonusBarBriefingContentMaskingView : NSObject
 {
     CALayer *_leftFadeoutLayer;
     CALayer *_rightFadeoutLayer;

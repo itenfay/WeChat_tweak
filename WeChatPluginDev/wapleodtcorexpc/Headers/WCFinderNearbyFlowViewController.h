@@ -6,7 +6,7 @@
 @class NSString, WCFinderFeedListView, WCFinderNearbyFlowViewModel;
 @protocol WCFinderNearbyFlowViewControllerDelegate;
 
-@interface WCFinderNearbyFlowViewController
+@interface WCFinderNearbyFlowViewController : NSObject
 {
     id <WCFinderNearbyFlowViewControllerDelegate> _delegate;
     WCFinderNearbyFlowViewModel *_viewModel;

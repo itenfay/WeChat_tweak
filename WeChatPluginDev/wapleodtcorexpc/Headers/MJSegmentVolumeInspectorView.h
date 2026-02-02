@@ -5,7 +5,7 @@
 
 @class MJPublisherSlider, MJSegmentAudioInspectorViewModel, MMUIButton, MMUILabel;
 
-@interface MJSegmentVolumeInspectorView
+@interface MJSegmentVolumeInspectorView : NSObject
 {
     MMUIButton *_muteButton;
     MMUILabel *_valueLabel;

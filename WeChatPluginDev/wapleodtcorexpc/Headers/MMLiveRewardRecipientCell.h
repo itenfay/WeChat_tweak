@@ -6,7 +6,7 @@
 @class MMCPLabel, MMFinderLiveTaskId, MMHeadImageView, UIImageView, WCFinderContact;
 @protocol MMLiveRewardRecipientCellDelegate;
 
-@interface MMLiveRewardRecipientCell
+@interface MMLiveRewardRecipientCell : NSObject
 {
     id <MMLiveRewardRecipientCellDelegate> _cellDelegate;
     MMHeadImageView *_headImageView;

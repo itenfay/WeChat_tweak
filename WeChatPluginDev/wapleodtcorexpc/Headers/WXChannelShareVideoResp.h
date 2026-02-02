@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelShareVideoResp
+@interface WXChannelShareVideoResp : NSObject
 {
     NSString *_extMsg;
 }

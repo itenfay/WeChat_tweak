@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCEliminatedSlotMMKV;
 
-@interface EcsFinderLiveMgr
+@interface EcsFinderLiveMgr : NSObject
 {
     WCEliminatedSlotMMKV *_ecsFinderLiveInfoSlotKV;
 }

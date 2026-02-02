@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderProfileStickerOverviewSectionCtrl
+@interface WCFinderProfileStickerOverviewSectionCtrl : NSObject
 {
     double _emojiCellWidth;
     unsigned long long _emojiCellLineCount;

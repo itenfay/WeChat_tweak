@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWebCanvasItemData, NSString;
 @protocol BTCanvasItemCellViewModelDelegate;
 
-@interface BTCanvasItemCellViewModel
+@interface BTCanvasItemCellViewModel : NSObject
 {
     _Bool _isDisplaying;
     _Bool _isFinishCreateClient;

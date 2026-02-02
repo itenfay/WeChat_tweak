@@ -5,7 +5,7 @@
 
 @class NSString, WCAdContinuousLikeBannerInfo, WCDataItem;
 
-@interface WCAdContinuousLikeBannerAnimationView
+@interface WCAdContinuousLikeBannerAnimationView : NSObject
 {
     int _lastBannerStyle;
     WCAdContinuousLikeBannerInfo *_bannerInfo;

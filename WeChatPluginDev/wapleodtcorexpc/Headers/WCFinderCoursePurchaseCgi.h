@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderCoursePurchaseCgi
+@interface WCFinderCoursePurchaseCgi : NSObject
 {
     int _reportScene;
     NSString *_finderUsername;

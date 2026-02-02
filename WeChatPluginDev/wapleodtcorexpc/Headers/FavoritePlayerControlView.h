@@ -6,7 +6,7 @@
 @class FavoritesRecordDataField, MMUIButton, MMUILabel, NSString, SightIconView, UIImageView, UILabel, UITapGestureRecognizer, UIView, WCDownloadArgsWrap, WCPlayerProgressBar;
 @protocol FavoritePlayerControlViewDelegate;
 
-@interface FavoritePlayerControlView
+@interface FavoritePlayerControlView : NSObject
 {
     _Bool _isRawVideo;
     _Bool _isSyncSaveingData;

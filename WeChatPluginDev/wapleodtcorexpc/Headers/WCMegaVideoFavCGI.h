@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCMegaVideoFavCGI
+@interface WCMegaVideoFavCGI : NSObject
 {
     _Bool _isFav;
     CDUnknownBlockType _successful;

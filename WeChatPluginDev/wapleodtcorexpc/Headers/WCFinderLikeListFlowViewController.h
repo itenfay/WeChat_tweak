@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RichTextView, UILabel, UIView, WCFinderExtStatsReporter, WCFinderFeedFlowView, WCFinderLikeListFlowViewModel, WCSearchBar;
 
-@interface WCFinderLikeListFlowViewController
+@interface WCFinderLikeListFlowViewController : NSObject
 {
     _Bool _disableSearch;
     double _topPadding;

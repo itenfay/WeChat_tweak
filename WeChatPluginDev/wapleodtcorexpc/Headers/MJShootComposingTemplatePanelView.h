@@ -6,7 +6,7 @@
 @class MJShootComposingTemplatePanelViewModel, NSArray, NSIndexPath, NSLayoutConstraint, NSString, UICollectionView, UIScrollView, UIStackView, UIView;
 @protocol MJShootComposingTemplatePanelViewDelegate;
 
-@interface MJShootComposingTemplatePanelView
+@interface MJShootComposingTemplatePanelView : NSObject
 {
     MJShootComposingTemplatePanelViewModel *_viewModel;
     id <MJShootComposingTemplatePanelViewDelegate> _delegate;

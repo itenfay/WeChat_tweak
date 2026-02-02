@@ -6,7 +6,7 @@
 @class BTBrandBarScrollView, BTOftenReadHeaderView, BTOftenReadSectionData, NSArray, NSMutableArray, NSString;
 @protocol BTOftenReadBarViewCellDelegate;
 
-@interface BTOftenReadBarViewCell
+@interface BTOftenReadBarViewCell : NSObject
 {
     BTOftenReadSectionData *_sectionData;
     id <BTOftenReadBarViewCellDelegate> _barViewDelegate;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CLLocation, EditImageLogicController, EditVideoLogicController, NSObject, NSString, PHCachingImageManager;
 @protocol OS_dispatch_queue;
 
-@interface MMAssetMgr
+@interface MMAssetMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *m_queue;
     CLLocation *m_lastLocation;

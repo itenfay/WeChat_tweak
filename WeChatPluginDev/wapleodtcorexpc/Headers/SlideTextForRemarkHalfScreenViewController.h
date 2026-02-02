@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, SlideTextJSHandler, UIButton, WSTemplateLogicController, WSWebViewPluginScheduler;
 
-@interface SlideTextForRemarkHalfScreenViewController
+@interface SlideTextForRemarkHalfScreenViewController : NSObject
 {
     WSWebViewPluginScheduler *pluginScheduler;
     CDUnknownBlockType _doneBlock;

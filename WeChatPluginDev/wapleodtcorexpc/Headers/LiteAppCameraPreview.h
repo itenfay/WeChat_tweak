@@ -6,7 +6,7 @@
 @class NSString, StrokeView;
 @protocol LiteAppCameraPreviewDelegate;
 
-@interface LiteAppCameraPreview
+@interface LiteAppCameraPreview : NSObject
 {
     double m_zoomLevel;
     _Bool m_isReady;

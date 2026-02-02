@@ -5,7 +5,7 @@
 
 @class CAShapeLayer;
 
-@interface WCEditEraserCurserView
+@interface WCEditEraserCurserView : NSObject
 {
     CAShapeLayer *_shapeLayer;
 }

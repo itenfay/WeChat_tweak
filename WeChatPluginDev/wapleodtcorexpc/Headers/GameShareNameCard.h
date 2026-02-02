@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameShareNameCard
+@interface GameShareNameCard : NSObject
 {
     NSString *_iconUrl;
     NSString *_name;

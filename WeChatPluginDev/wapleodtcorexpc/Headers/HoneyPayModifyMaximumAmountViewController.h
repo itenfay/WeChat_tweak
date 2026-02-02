@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, WCPayInputMoneyView, WCPayNavigationBarBottomBanner;
 @protocol HoneyPayModifyMaximumAmountViewControllerDelegate;
 
-@interface HoneyPayModifyMaximumAmountViewController
+@interface HoneyPayModifyMaximumAmountViewController : NSObject
 {
     _Bool _isHide;
     id <HoneyPayModifyMaximumAmountViewControllerDelegate> _delegate;

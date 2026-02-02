@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, NSURL, UIFont;
 
-@interface WCFinderShareTopicCellViewModel
+@interface WCFinderShareTopicCellViewModel : NSObject
 {
     double m_titleHeight;
     double m_descHeight;

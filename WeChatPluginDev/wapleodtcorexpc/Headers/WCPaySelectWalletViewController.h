@@ -5,7 +5,7 @@
 
 @protocol WCPaySelectWalletViewControllerDelegate;
 
-@interface WCPaySelectWalletViewController
+@interface WCPaySelectWalletViewController : NSObject
 {
     id <WCPaySelectWalletViewControllerDelegate> m_delegate;
 }

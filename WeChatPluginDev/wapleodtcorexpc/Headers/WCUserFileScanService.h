@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableDictionary, NSString, WCHardlinkFileCache, WCHardlinkFileInfoDB, WCUserFileScanOperation;
 
-@interface WCUserFileScanService
+@interface WCUserFileScanService : NSObject
 {
     _Bool _bUseCache;
     WCUserFileScanOperation *_fileScanOperation;

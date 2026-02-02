@@ -5,7 +5,7 @@
 
 @class AffRoamTransferStats, MMProgressView, MMTimer, MMUIActivityIndicatorView, MMUILabel, MMUINavigationBar, NSString, UIButton, UIImageView, UILabel, UINavigationItem, UIScrollView, UIView;
 
-@interface WXGRoamWindowViewController
+@interface WXGRoamWindowViewController : NSObject
 {
     unsigned long long m_notifyCode;
     UIScrollView *m_smallTipsHelpView;

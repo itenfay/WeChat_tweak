@@ -5,7 +5,7 @@
 
 @class LVMinimizeContext, MegaVideoPlayerDetailOpenParam, NSString, UIView;
 
-@interface LVPlayerDetailViewController
+@interface LVPlayerDetailViewController : NSObject
 {
     _Bool _allowRotate;
     _Bool _pendingMinimize;

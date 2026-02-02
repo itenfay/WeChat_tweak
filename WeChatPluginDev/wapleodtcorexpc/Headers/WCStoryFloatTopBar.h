@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString;
 
-@interface WCStoryFloatTopBar
+@interface WCStoryFloatTopBar : NSObject
 {
     NSString *_time;
     MMUILabel *_timeLabel;

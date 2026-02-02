@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVRoutePickerView, CADisplayLink, CContact, CMessageWrap, MMStringToastView, MMUIButton, MinimizeNewTransitionController, MultiTalkHDHeadView, NSString, RingBackSoundCoordinator, RingDancingButton, RingToneDetail, UIImageView, UILabel, UIView, VoIPHeadImageBlurView, VoIPMPUIDotsLoadingView, VoIPTalkingView, VoipMinimizeReportObject, WCUIAlertView;
 @protocol VoIPViewControllerDelegate;
 
-@interface VoIPViewController
+@interface VoIPViewController : NSObject
 {
     unsigned int _status;
     CContact *_contact;

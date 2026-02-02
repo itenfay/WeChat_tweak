@@ -6,7 +6,7 @@
 @class MMUIView, NSArray, NSMutableDictionary, NSString, UIView, WCPayBindCardInfo, WCPayControlData;
 @protocol WCPayOfflinePaySelectPayCardViewDelegate;
 
-@interface WCPayOfflinePaySelectPayCardView
+@interface WCPayOfflinePaySelectPayCardView : NSObject
 {
     _Bool _bHasPostScreenChangeAccessibilityNotification;
     id <WCPayOfflinePaySelectPayCardViewDelegate> _delegate;

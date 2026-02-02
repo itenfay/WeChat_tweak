@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveModNoticeView
+@interface MMFinderLiveModNoticeView : NSObject
 {
     CDUnknownBlockType _liveModNoticeViewBlock;
 }

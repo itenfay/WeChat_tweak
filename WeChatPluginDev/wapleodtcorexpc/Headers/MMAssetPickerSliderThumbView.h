@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMAssetPickerSliderThumbView
+@interface MMAssetPickerSliderThumbView : NSObject
 {
     _Bool _isActive;
     UIImageView *_arrow;

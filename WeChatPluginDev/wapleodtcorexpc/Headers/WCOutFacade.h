@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, OrderedDictionary, PhoneNumberFormatLogic, WCOFeedBackTips, WCOutAddressBookLogic, WCOutCallLogic, WCOutChargeLogic, WCOutCountryCodeLogic, WCOutDataBase;
 
-@interface WCOutFacade
+@interface WCOutFacade : NSObject
 {
     NSMutableDictionary *m_hotCountryCodeDic;
     OrderedDictionary *m_lastCallItemOrderDic;

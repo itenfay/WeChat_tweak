@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMResDeleteUrlInfo
+@interface MMResDeleteUrlInfo : NSObject
 {
     NSString *_resUrl;
     NSString *_version;

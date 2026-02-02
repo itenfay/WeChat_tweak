@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UserIdAuthorizeSmsPhoneItem
+@interface UserIdAuthorizeSmsPhoneItem : NSObject
 {
     NSString *_phoneId;
     NSString *_showPhone;

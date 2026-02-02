@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, UIImageView;
 
-@interface WCPlayLiveWithoutLoginTipsViewController
+@interface WCPlayLiveWithoutLoginTipsViewController : NSObject
 {
     UIImageView *_tipsImageView;
     MMUILabel *_tipsLabel;

@@ -6,7 +6,7 @@
 @class BrandProfileTopicView, BrandProfileTopicViewModel, NSString;
 @protocol BrandProfileMsgTabViewControllerDelegate;
 
-@interface BrandProfileMsgTabViewController
+@interface BrandProfileMsgTabViewController : NSObject
 {
     id <BrandProfileMsgTabViewControllerDelegate> _msgTabDelegate;
     BrandProfileTopicView *_topicView;

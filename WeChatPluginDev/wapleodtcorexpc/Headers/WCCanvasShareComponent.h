@@ -5,7 +5,7 @@
 
 @class UIButton, UIImageView, UILabel;
 
-@interface WCCanvasShareComponent
+@interface WCCanvasShareComponent : NSObject
 {
     UIImageView *_shareIcon;
     UILabel *_shareText;

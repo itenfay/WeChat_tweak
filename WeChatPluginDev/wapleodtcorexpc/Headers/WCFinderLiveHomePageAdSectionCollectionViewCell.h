@@ -6,7 +6,7 @@
 @class NSString, WCFinderLiveHomePageAdSectionView;
 @protocol WCFinderLiveHomePageAdSectionViewDelegate;
 
-@interface WCFinderLiveHomePageAdSectionCollectionViewCell
+@interface WCFinderLiveHomePageAdSectionCollectionViewCell : NSObject
 {
     id <WCFinderLiveHomePageAdSectionViewDelegate> _delegate;
     WCFinderLiveHomePageAdSectionView *_liveCollectionView;

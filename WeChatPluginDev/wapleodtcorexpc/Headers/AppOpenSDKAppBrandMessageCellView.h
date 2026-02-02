@@ -5,7 +5,7 @@
 
 @class AppOpenSDKAppBrandMessageViewModel, MMUILabel, MMWebImageView, NSDate, NSString, UIImageView, UILabel, UIView, WCTagsView;
 
-@interface AppOpenSDKAppBrandMessageCellView
+@interface AppOpenSDKAppBrandMessageCellView : NSObject
 {
     UIImageView *m_thumbImageView;
     UIImageView *m_defaultLogo;

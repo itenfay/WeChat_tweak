@@ -5,7 +5,7 @@
 
 @class NSString, ShakeInfo;
 
-@interface ShakeBgImgDownloadMgr
+@interface ShakeBgImgDownloadMgr : NSObject
 {
     ShakeInfo *m_oShakeInfo;
     unsigned int m_uiCurDownloadID;

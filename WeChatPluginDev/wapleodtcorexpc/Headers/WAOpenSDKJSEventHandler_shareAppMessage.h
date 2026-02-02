@@ -5,7 +5,7 @@
 
 @class NSString, WAShareAppMessageCommonParamsModel, WAShareAppMessageContextModel, WAShareAppMessageForwardLogicControllerComponent;
 
-@interface WAOpenSDKJSEventHandler_shareAppMessage
+@interface WAOpenSDKJSEventHandler_shareAppMessage : NSObject
 {
     WAShareAppMessageContextModel *_shareContextModel;
     WAShareAppMessageCommonParamsModel *_paramsModel;

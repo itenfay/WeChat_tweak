@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLikeNotifyDataItem, NSMutableArray;
 
-@interface MMFinderLiveNotifyStyleLikeNotifyCommentPubbleCell
+@interface MMFinderLiveNotifyStyleLikeNotifyCommentPubbleCell : NSObject
 {
     NSMutableArray *_headImageViewList;
 }

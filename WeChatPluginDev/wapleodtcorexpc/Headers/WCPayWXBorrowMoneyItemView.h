@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel, WCPayWXBorrowMoneyItem;
 
-@interface WCPayWXBorrowMoneyItemView
+@interface WCPayWXBorrowMoneyItemView : NSObject
 {
     WCPayWXBorrowMoneyItem *m_info;
     MMWebImageView *m_logoView;

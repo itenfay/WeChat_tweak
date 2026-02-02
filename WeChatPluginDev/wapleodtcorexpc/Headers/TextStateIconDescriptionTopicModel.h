@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface TextStateIconDescriptionTopicModel
+@interface TextStateIconDescriptionTopicModel : NSObject
 {
     _Bool _dataConstructed;
     NSMutableDictionary *_iconIdToTextStateList;

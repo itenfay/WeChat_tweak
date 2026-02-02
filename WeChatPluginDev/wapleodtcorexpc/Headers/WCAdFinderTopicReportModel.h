@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCAdFinderTopicReportModel
+@interface WCAdFinderTopicReportModel : NSObject
 {
     unsigned int _infoBarClickCount;
     NSMutableArray *_reportItemList;

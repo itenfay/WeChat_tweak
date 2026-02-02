@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCAdvertiseLogDB;
 
-@interface WCAdvertiseLogMgr
+@interface WCAdvertiseLogMgr : NSObject
 {
     _Bool adLogReporting;
     _Bool reportTaskRunning;

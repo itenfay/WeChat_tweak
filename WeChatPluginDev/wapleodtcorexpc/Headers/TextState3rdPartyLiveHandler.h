@@ -5,7 +5,7 @@
 
 @class WCFinderLiveShareItem;
 
-@interface TextState3rdPartyLiveHandler
+@interface TextState3rdPartyLiveHandler : NSObject
 {
     WCFinderLiveShareItem *_liveShareItem;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, NSMutableArray, NSString, UIView, WCFinderCreateCoordinator, WCFinderLiveNearbyReporter, WCFinderNearbyTabPageCacheModel, WCFinderNearbyTabPageViewModel, WCFinderRedDotCtrlInfo, WCFinderTabPageModel;
 @protocol WCFinderNearbyTabPageViewControllerDelegate;
 
-@interface WCFinderNearbyTabPageViewController
+@interface WCFinderNearbyTabPageViewController : NSObject
 {
     _Bool _directlyOpenJumpInfoPage;
     _Bool _isLocationServiceAuthrized;

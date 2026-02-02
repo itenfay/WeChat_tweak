@@ -6,7 +6,7 @@
 @class MMUILabel, NSIndexPath, NSMutableArray, NSString, RichTextView, UIImageView, UIView, WCCellGroup, WCCellGroupItem, WCDataItem;
 @protocol WCListViewRowViewDelegate;
 
-@interface WCListBaseCellView
+@interface WCListBaseCellView : NSObject
 {
     WCCellGroup *m_group;
     WCCellGroupItem *m_groupItem;

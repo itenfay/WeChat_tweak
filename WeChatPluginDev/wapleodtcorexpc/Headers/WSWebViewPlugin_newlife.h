@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WSWebViewPlugin_newlife
+@interface WSWebViewPlugin_newlife : NSObject
 {
     NSMutableDictionary *_feedId2EncryptIdMap;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions, FinderThemeLiveStreamAppearance, FinderThemeLiveStreamResponse, FinderThemeLiveStreamShareInfo, ForwardMessageLogicController, MMFinderLiveFeedExtraInfoFetcher, MMLiveColorfulLabel, MMScrollActionSheet, MMTimer, MMWebImageView, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PAGFile, UIView, WCFinderEmptyTipsView, WCFinderLivePageStayReporter, WCFinderLiveStreamContainerModel, WCFinderLiveTopicTemplateHeaderView, WCFinderLiveTopicTemplateTabContainerView, WCFinderLiveTopicTemplateTabPageView;
 
-@interface WCFinderLiveTopicTemplateViewController
+@interface WCFinderLiveTopicTemplateViewController : NSObject
 {
     _Bool _navWasHidden;
     _Bool _isVisible;

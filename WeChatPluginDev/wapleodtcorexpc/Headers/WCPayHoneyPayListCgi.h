@@ -6,7 +6,7 @@
 @class HoneyPayListReq;
 @protocol WCPayHoneyPayListCgiDelegate;
 
-@interface WCPayHoneyPayListCgi
+@interface WCPayHoneyPayListCgi : NSObject
 {
 }
 

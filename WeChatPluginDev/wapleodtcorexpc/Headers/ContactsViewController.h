@@ -5,7 +5,7 @@
 
 @class ContactsDataLogic, FTSVoiceSearchBarController, MMMainTableView, NSArray, NSMutableArray, NSString, UILabel, WCSearchBar;
 
-@interface ContactsViewController
+@interface ContactsViewController : NSObject
 {
     MMMainTableView *m_tableView;
     struct UIEdgeInsets m_tableViewInsets;

@@ -5,7 +5,7 @@
 
 @class MMScrollView, NSArray, NSString, UIPageControl;
 
-@interface WCAdConventionalHalfScreenGridMediaView
+@interface WCAdConventionalHalfScreenGridMediaView : NSObject
 {
     NSArray *_mediaItems;
     NSArray *_mediaImages;

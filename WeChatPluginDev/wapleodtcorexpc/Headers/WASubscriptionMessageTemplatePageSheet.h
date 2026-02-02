@@ -5,7 +5,7 @@
 
 @class WASMTPageSheetViewModel;
 
-@interface WASubscriptionMessageTemplatePageSheet
+@interface WASubscriptionMessageTemplatePageSheet : NSObject
 {
     long long _backButtonType;
     WASMTPageSheetViewModel *_smtViewModel;

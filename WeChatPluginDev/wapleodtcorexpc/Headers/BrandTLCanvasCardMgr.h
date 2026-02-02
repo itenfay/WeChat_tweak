@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface BrandTLCanvasCardMgr
+@interface BrandTLCanvasCardMgr : NSObject
 {
     MemoryMappedKV *_mappedKV;
 }

@@ -6,7 +6,7 @@
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCTuringMgr
+@interface WCTuringMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _bEnable;

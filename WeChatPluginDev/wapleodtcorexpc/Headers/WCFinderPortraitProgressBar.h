@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSNumber, NSString, UIColor, UIPanGestureRecognizer, UIView;
 
-@interface WCFinderPortraitProgressBar
+@interface WCFinderPortraitProgressBar : NSObject
 {
     int _lastTime;
     MMUIButton *_dotBtn;

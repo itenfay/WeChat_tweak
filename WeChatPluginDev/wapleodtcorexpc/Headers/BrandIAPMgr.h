@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandIAPMgr
+@interface BrandIAPMgr : NSObject
 {
     _Bool _isPaying;
 }

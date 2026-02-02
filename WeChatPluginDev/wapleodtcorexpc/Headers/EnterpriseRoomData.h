@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface EnterpriseRoomData
+@interface EnterpriseRoomData : NSObject
 {
     unsigned int _m_uiMaxMemberCount;
     NSMutableArray *_m_aryMemberList;

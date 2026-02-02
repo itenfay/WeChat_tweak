@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, WAPlateAuthPageSheetViewModel;
 
-@interface WAPlateAuthPageSheetListView
+@interface WAPlateAuthPageSheetListView : NSObject
 {
     MMTableView *_tableView;
 }

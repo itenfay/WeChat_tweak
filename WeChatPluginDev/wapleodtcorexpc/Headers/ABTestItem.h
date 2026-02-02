@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface ABTestItem
+@interface ABTestItem : NSObject
 {
     _Bool _bNoReport;
     unsigned int _uiSeq;

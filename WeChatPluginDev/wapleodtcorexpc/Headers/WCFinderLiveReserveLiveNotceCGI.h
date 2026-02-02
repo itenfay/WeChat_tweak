@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveReserveLiveNotceCGI
+@interface WCFinderLiveReserveLiveNotceCGI : NSObject
 {
     int _scene;
     int _opType;

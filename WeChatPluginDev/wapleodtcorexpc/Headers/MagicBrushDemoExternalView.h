@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MagicBrushDemoExternalView
+@interface MagicBrushDemoExternalView : NSObject
 {
     NSMutableDictionary *_internalViewDict;
 }

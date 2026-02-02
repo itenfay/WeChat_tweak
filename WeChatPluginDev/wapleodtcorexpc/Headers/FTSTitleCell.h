@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface FTSTitleCell
+@interface FTSTitleCell : NSObject
 {
     UILabel *_titleLabel;
     UIView *_topLine;

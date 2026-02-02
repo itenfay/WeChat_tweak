@@ -5,7 +5,7 @@
 
 @class MMFinderLiveConnectMicAllUserInfoView, NSString, UIImageView;
 
-@interface MMFinderLiveFeedStreamConnectMicUserInfoView
+@interface MMFinderLiveFeedStreamConnectMicUserInfoView : NSObject
 {
     MMFinderLiveConnectMicAllUserInfoView *_connectMicAllUserInfoView;
     UIImageView *_connectMicPkAtmosphereBackgroundView;

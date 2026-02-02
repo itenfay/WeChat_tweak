@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetScreenshotPosterInfoCgi
+@interface WCFinderLiveGetScreenshotPosterInfoCgi : NSObject
 {
     NSString *_audienceFinderUsername;
     NSData *_liveCookies;

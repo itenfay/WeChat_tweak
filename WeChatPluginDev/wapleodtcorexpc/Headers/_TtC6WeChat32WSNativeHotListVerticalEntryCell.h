@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32WSNativeHotListVerticalEntryCell
+@interface _TtC6WeChat32WSNativeHotListVerticalEntryCell : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *list;

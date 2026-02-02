@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASyncGetExptInfoCmd
+@interface WASyncGetExptInfoCmd : NSObject
 {
     NSString *_exptInfo;
 }

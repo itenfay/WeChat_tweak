@@ -5,7 +5,7 @@
 
 @class WCFinderShopWindowShareCellViewModel;
 
-@interface WCFinderShopWindowShareCellView
+@interface WCFinderShopWindowShareCellView : NSObject
 {
 }
 

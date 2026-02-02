@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSTimer;
 
-@interface MJShootCountdownView
+@interface MJShootCountdownView : NSObject
 {
     MMUILabel *_countdownLabel;
     NSTimer *_timer;

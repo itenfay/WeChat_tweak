@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIButton, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCPayAreaItem, WCPayCVVItem, WCPayCardTypeItem, WCPayCountryCodeAndPhoneNumberItem, WCPayCountryCodeItem, WCPayCredTypeItem, WCPaySelectCountItem, WCPaySelectDateItem, WCPayTenpaySecureCtrlItem, WCPayValidDateItem;
 @protocol WCPayResetPwdCardInfoViewControllerDelegate;
 
-@interface WCPayResetPwdCardInfoViewController
+@interface WCPayResetPwdCardInfoViewController : NSObject
 {
     UIButton *m_footerButton;
     NSMutableArray *m_arrayInfoGroup;

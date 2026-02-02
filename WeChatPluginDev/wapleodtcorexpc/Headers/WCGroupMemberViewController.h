@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString, WCDataItem;
 
-@interface WCGroupMemberViewController
+@interface WCGroupMemberViewController : NSObject
 {
     MMTableView *m_tableView;
     WCDataItem *m_dataItem;

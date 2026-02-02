@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface WCFinderGroupCreateTipsViewController
+@interface WCFinderGroupCreateTipsViewController : NSObject
 {
     CContact *_chatRoomContact;
 }

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _FixTitleColorButtonChainModel
+@interface _FixTitleColorButtonChainModel : NSObject
 {
     CDUnknownBlockType _fixWidth;
     CDUnknownBlockType _fixWidth_O;

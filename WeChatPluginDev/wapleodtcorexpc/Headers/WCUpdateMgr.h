@@ -6,7 +6,7 @@
 @class NSBundle, NSObject, NSString, WCUpdateInfo;
 @protocol OS_dispatch_queue;
 
-@interface WCUpdateMgr
+@interface WCUpdateMgr : NSObject
 {
     NSBundle *_resourceBundle;
     NSBundle *_languageBundle;

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MMWebViewPlugin_DeviceInfo
+@interface MMWebViewPlugin_DeviceInfo : NSObject
 {
     _Bool _bKeepScreenOn;
     int _setFlag;

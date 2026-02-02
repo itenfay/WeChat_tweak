@@ -5,7 +5,7 @@
 
 @protocol WCPayF2FPaySucPageCgiDelegate;
 
-@interface WCPayF2FPaySucPageCgi
+@interface WCPayF2FPaySucPageCgi : NSObject
 {
     id <WCPayF2FPaySucPageCgiDelegate> m_delegate;
 }

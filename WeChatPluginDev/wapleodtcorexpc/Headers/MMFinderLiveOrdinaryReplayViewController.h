@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveOrdinaryReplayOperationView, NSString, WCFinderLiveReplayActionSheet, WCFinderLiveReplayReporter, WCLiveCountdownToastView;
 
-@interface MMFinderLiveOrdinaryReplayViewController
+@interface MMFinderLiveOrdinaryReplayViewController : NSObject
 {
     _Bool _isSeeking;
     _Bool _hasReportStartWatching;

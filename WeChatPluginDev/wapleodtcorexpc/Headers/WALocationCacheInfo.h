@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WALocationCacheInfo
+@interface WALocationCacheInfo : NSObject
 {
     NSMutableArray *_locationArr;
 }

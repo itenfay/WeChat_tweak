@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString;
 
-@interface BlushStickEffectAdapter
+@interface BlushStickEffectAdapter : NSObject
 {
     NSNumber *_alpha;
     NSNumber *_faceModel;

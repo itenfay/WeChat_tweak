@@ -5,7 +5,7 @@
 
 @class MMScrollView, NSMutableArray, NSString, UIView;
 
-@interface WCCanvasDownloadScrollListComponent
+@interface WCCanvasDownloadScrollListComponent : NSObject
 {
     _Bool _m_isAnimating;
     _Bool _m_hasScroll;

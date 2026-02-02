@@ -6,7 +6,7 @@
 @class ABTestItem, NSString, UIButton, UIView, WCPayControlData, WCPayTenpayPasswordCtrlItem;
 @protocol WCPayOrderPayConfirmViewDelegate;
 
-@interface WCPayOrderPayConfirmView
+@interface WCPayOrderPayConfirmView : NSObject
 {
     UIView *m_backgroundView;
     UIView *m_titleView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmojiInfo, EmoticonStoreDetailCoverImageView, EmoticonStoreDetailRewardEntranceView, EmoticonStoreGridView, EmoticonStoreItem, EmoticonStoreReportInfo, EmotionLinkInfo, EmotionRewardResponseInfo, EmotionStoreDetailDesignerContainerView, MMBorderView, MMEmoticonStoreDownloadLogic, MMUIScrollView, MMWebImageView, NSString, RichTextView, StoreEmotionPageShareLogic, UIButton, UIImageView, UILabel, UIView, WCDataItem;
 
-@interface MMStoreEmotionDetailViewController
+@interface MMStoreEmotionDetailViewController : NSObject
 {
     long long _type;
     long long m_downloadExtrance;

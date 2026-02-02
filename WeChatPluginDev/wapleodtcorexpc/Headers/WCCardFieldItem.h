@@ -5,7 +5,7 @@
 
 @class NSString, WCGiftCardInfo;
 
-@interface WCCardFieldItem
+@interface WCCardFieldItem : NSObject
 {
     unsigned int _showflag;
     NSString *_title;

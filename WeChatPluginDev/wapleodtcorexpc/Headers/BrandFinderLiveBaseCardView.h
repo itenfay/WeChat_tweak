@@ -6,7 +6,7 @@
 @class BrandFinderLiveCardViewModel, MMUILabel, NSMutableDictionary, RichTextView, UIView, WCFinderLiveNowView;
 @protocol BrandFinderLiveBaseCardViewDelegate;
 
-@interface BrandFinderLiveBaseCardView
+@interface BrandFinderLiveBaseCardView : NSObject
 {
     id <BrandFinderLiveBaseCardViewDelegate> _delegate;
     NSMutableDictionary *_extraData;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ECSTLNotifyBarReportItem
+@interface ECSTLNotifyBarReportItem : NSObject
 {
     _Bool _isClick;
     unsigned int _exposeTimes;

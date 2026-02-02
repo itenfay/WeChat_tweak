@@ -6,7 +6,7 @@
 @class NSData, NSDictionary, NSString, WADataPipePerformance, WAJSContextPlugin_userAccount, WAUserAuthorizeLogic;
 @protocol IWATransferProxyImplProtocol;
 
-@interface WAJSEventHandler_operateWXData
+@interface WAJSEventHandler_operateWXData : NSObject
 {
     NSString *_appID;
     NSData *_data;

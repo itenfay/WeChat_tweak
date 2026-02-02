@@ -5,7 +5,7 @@
 
 @class RfxPagFile;
 
-@interface MMFinderLiveGiftRfxPagCacheInfo
+@interface MMFinderLiveGiftRfxPagCacheInfo : NSObject
 {
     RfxPagFile *_pagFile;
 }

@@ -6,7 +6,7 @@
 @class BTRecommendFinderHeaderView, BTScrollableFinderCellViewModel, NSArray, NSHashTable, NSString, UICollectionView;
 @protocol BTScrollableFinderCellViewDelegate;
 
-@interface BTScrollableFinderCellView
+@interface BTScrollableFinderCellView : NSObject
 {
     id <BTScrollableFinderCellViewDelegate> _finderCellViewDelegate;
     BTRecommendFinderHeaderView *_headerView;

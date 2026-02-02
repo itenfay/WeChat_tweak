@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface WASelectGroupMemberCellView
+@interface WASelectGroupMemberCellView : NSObject
 {
     _Bool _disableSelect;
     CContact *_contact;

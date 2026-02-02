@@ -6,7 +6,7 @@
 @class NSURL;
 @protocol APAccessDelegate;
 
-@interface APAccess
+@interface APAccess : NSObject
 {
     NSURL *_thirdPartyUrl;
     id <APAccessDelegate> _delegate;

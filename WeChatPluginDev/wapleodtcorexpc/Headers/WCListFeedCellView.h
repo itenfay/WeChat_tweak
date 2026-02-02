@@ -5,7 +5,7 @@
 
 @class UILabel, UIView, WCListFeedVideoThumbView;
 
-@interface WCListFeedCellView
+@interface WCListFeedCellView : NSObject
 {
     UIView *m_tailView;
     UILabel *_finderPureTextLabel;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_uploadVoice
+@interface WebviewJSEventHandler_uploadVoice : NSObject
 {
     _Bool _isShowProgressTips;
 }

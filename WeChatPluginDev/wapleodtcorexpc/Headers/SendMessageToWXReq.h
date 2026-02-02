@@ -5,7 +5,7 @@
 
 @class NSString, WXMediaMessage, WXSceneDataObject;
 
-@interface SendMessageToWXReq
+@interface SendMessageToWXReq : NSObject
 {
     _Bool bText;
     int scene;

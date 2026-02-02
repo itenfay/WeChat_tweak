@@ -6,7 +6,7 @@
 @class BTRecoFlowSectionData, GetRecommendFeedsResp_RecommendCardMsg, GetRecommendFeedsResp_RecommendCardMsg_RecommendItemMsg, UIView;
 @protocol BTRecoFlowBaseTableViewCellDelegate;
 
-@interface BTRecoFlowBaseTableViewCell
+@interface BTRecoFlowBaseTableViewCell : NSObject
 {
     _Bool _shouldShowBottomSeperateLine;
     id <BTRecoFlowBaseTableViewCellDelegate> _delegate;

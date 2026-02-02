@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCFinderMSGridePhotoCell
+@interface WCFinderMSGridePhotoCell : NSObject
 {
     NSMutableArray *_photoCells;
 }

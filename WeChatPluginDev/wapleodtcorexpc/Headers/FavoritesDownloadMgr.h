@@ -6,7 +6,7 @@
 @class FavoritesDownloader, FavoritesItem, FavoritesItemDB, NSMutableArray, NSMutableSet, NSString;
 @protocol FavoritesDownloadMgrDelegate;
 
-@interface FavoritesDownloadMgr
+@interface FavoritesDownloadMgr : NSObject
 {
     NSMutableArray *_downloadingQueue;
     NSMutableArray *_failQueue;

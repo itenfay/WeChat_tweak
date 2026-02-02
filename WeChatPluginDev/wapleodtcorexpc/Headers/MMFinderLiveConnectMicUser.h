@@ -5,7 +5,7 @@
 
 @class FinderLiveContact, MMFinderLiveAudioModeBackgroundConfiguration, MMFinderLiveFreeMicLocalInfo, NSArray, NSData, NSString, WCFinderContact;
 
-@interface MMFinderLiveConnectMicUser
+@interface MMFinderLiveConnectMicUser : NSObject
 {
     _Bool _useVideo;
     _Bool _initialUseVideo;

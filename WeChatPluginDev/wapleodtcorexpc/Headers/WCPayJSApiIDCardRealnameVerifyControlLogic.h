@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WCPayJSApiIDCardRealnameVerifyControlLogic
+@interface WCPayJSApiIDCardRealnameVerifyControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     long long m_enWCPayCheckAuthorityScene;

@@ -5,7 +5,7 @@
 
 @class BrandProfileMessageSectionData, BrandProfileMsgBaseCell;
 
-@interface BrandProfileMsgBaseViewModel
+@interface BrandProfileMsgBaseViewModel : NSObject
 {
     double _cellHeight;
     BrandProfileMsgBaseCell *_cellView;

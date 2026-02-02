@@ -6,7 +6,7 @@
 @class MMUIViewController, MMUIWindow, MMWebViewController, NSString;
 @protocol WCPrivacyPolicyControlLogicDelegate;
 
-@interface WCPrivacyPolicyControlLogic
+@interface WCPrivacyPolicyControlLogic : NSObject
 {
     MMUIWindow *_window;
     MMUIViewController *_rootVC;

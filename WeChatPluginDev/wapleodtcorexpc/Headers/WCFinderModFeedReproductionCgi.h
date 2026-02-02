@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModFeedReproductionCgi
+@interface WCFinderModFeedReproductionCgi : NSObject
 {
     _Bool _notReproduction;
     NSString *_username;

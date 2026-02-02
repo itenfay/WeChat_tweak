@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonCustomManageAddLogic;
 @protocol EmoticonCreateUploadTaskDelegate;
 
-@interface EmoticonCreateUploadTask
+@interface EmoticonCreateUploadTask : NSObject
 {
     id <EmoticonCreateUploadTaskDelegate> _delegate;
     CDUnknownBlockType _appendInfoBlock;

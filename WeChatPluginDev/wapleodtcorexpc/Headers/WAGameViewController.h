@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CADisplayLink, JITRuntimeTouchReceiverView, MBGLView, MMWebImageView, MagicBrushCore, MagicBrushEAGLLayerRT, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSURLRequest, RCDraggableButton, UILabel, UIScreenEdgePanGestureRecognizer, UIView, WAGameActionSheet, WAGameEvaluatePopSheet, WAGameReviewPopSheet, WAGameRollProgressView, WAJITRuntime, WAMenuPopInteractiveTransition, WAOpenGLView, WCActionSheet, YYWAWebView;
 @protocol IWAEmoticonBoardService, OS_dispatch_queue, WAGameContextDelegate, WAGameKeyboardDelegate;
 
-@interface WAGameViewController
+@interface WAGameViewController : NSObject
 {
     WAOpenGLView *_glView;
     WAGameActionSheet *_gameSheet;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WCCommentLikeView
+@interface WCCommentLikeView : NSObject
 {
     unsigned long long _type;
     UILabel *_likeNumbLabel;

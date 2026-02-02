@@ -6,7 +6,7 @@
 @class MMLoadingView, NSData, NSString, UIButton, UITextField, UIViewController;
 @protocol ReturnToSettingAccoutDelegate;
 
-@interface SettingBindQQVerifyViewController
+@interface SettingBindQQVerifyViewController : NSObject
 {
     MMLoadingView *m_loadingView;
     NSString *m_nsUsrName;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSMutableDictionary, NSString, UIColor, UIView, WCFinderCreateCoordinator, WCFinderEmptyTipsView, WCFinderLivePageStayReporter, WCFinderLiveTabInfo, WCFinderNearbyMoreLiveViewModel, WCFinderTabPageView;
 
-@interface WCFinderNearbyMoreLiveViewController
+@interface WCFinderNearbyMoreLiveViewController : NSObject
 {
     _Bool _enableReddot;
     _Bool _notAuthorizedTipEnable;

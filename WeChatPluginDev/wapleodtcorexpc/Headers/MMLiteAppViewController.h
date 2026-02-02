@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class LiteAppEmbedViewController, LiteAppJsApiPluginScheduler, LiteAppJsApiPlugin_LocalJSAgent, LiteAppViewController, MMLiteAppJsApiLogicImpl, MMLiteAppModalTransitionAnimator, MMLiteAppPlatformView, MMLiteAppVCView, MMLiteAppViewControllerTransitionMgr, NSMutableDictionary, NSString, UIPanGestureRecognizer, WSWebViewPluginScheduler, WebViewA8KeyLogicImpl;
 @protocol LiteAppLifeCycleCallbackDelegate, UIViewControllerTransitioningDelegate, WXCustomWebViewControllerDelegate;
 
-@interface MMLiteAppViewController
+@interface MMLiteAppViewController : NSObject
 {
     id <WXCustomWebViewControllerDelegate> m_delegate;
     _Bool _forbidRightGesture;

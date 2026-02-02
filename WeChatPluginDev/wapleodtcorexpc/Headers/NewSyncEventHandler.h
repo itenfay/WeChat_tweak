@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface NewSyncEventHandler
+@interface NewSyncEventHandler : NSObject
 {
     unsigned int ct1;
     unsigned long long m_startTime;

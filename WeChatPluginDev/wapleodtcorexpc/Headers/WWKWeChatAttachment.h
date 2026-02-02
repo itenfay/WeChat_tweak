@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WWKWeChatAttachment
+@interface WWKWeChatAttachment : NSObject
 {
     NSData *_data;
 }

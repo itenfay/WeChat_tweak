@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString;
 
-@interface SettingTranslateLanguagePreViewController
+@interface SettingTranslateLanguagePreViewController : NSObject
 {
     MMUILabel *_descLabel;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface MMFinderLiveMemberTipsFullScreenView
+@interface MMFinderLiveMemberTipsFullScreenView : NSObject
 {
     _Bool _isShow;
     _Bool _isAppear;

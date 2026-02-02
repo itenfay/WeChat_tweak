@@ -5,7 +5,7 @@
 
 @class NSString, TextStyleAttributeObj, UIColor, UIFont;
 
-@interface TextStyle
+@interface TextStyle : NSObject
 {
     UIFont *_oFont;
     NSString *_nsContent;

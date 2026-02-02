@@ -6,7 +6,7 @@
 @class BaseMsgContentViewController, CMessageWrap, MessagePageSheetTransition, NSString, UIViewController;
 @protocol MessagePageSheetAdapterDelegate;
 
-@interface MessagePageSheetAdapter
+@interface MessagePageSheetAdapter : NSObject
 {
     _Bool _pageSheetWillClose;
     _Bool _shouldCallbackAtPageSheetAppear;

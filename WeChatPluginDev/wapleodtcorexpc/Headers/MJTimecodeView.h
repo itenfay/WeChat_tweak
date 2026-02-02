@@ -5,7 +5,7 @@
 
 @class NSMutableAttributedString, UIColor, UIFont, UILabel, UIStackView;
 
-@interface MJTimecodeView
+@interface MJTimecodeView : NSObject
 {
     unsigned long long _fontConfiguration;
     UILabel *_currentTimeLabel;

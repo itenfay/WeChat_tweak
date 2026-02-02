@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, NSString, UITapGestureRecognizer, UIView;
 
-@interface VoipRecentStatusTextStatePublishSourceView
+@interface VoipRecentStatusTextStatePublishSourceView : NSObject
 {
     _Bool _preferCustomView;
     NSString *_sourceId;

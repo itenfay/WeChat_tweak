@@ -5,7 +5,7 @@
 
 @class MMFinderLiveActivityTask, MMFinderLiveActivityTaskId, MMFinderLiveOlyBarrageContainerView;
 
-@interface MMFinderLiveWinterOlympicView
+@interface MMFinderLiveWinterOlympicView : NSObject
 {
     _Bool _showLiveStream;
     _Bool _isWidgetHiddenForParticipateAnimation;

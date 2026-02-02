@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RoomReportController
+@interface RoomReportController : NSObject
 {
     NSString *_m_redLabelValue;
 }

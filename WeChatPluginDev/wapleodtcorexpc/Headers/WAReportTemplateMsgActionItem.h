@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportTemplateMsgActionItem
+@interface WAReportTemplateMsgActionItem : NSObject
 {
     unsigned int _operateTime;
     unsigned int _templateMsgType;

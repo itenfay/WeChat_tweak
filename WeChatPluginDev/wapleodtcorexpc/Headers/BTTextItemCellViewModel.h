@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTTextItemCellViewModel
+@interface BTTextItemCellViewModel : NSObject
 {
     _Bool _isFullText;
     _Bool _digestShowTailFold;

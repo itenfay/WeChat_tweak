@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, GameLocalAlbumInfo, NSString, NSURL, PHAsset, PHCachingImageManager;
 
-@interface MMAssetForGameHaowanOfPHAsset
+@interface MMAssetForGameHaowanOfPHAsset : NSObject
 {
     PHAsset *_localAsset;
     int _videoRequestId;

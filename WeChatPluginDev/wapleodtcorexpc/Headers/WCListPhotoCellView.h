@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface WCListPhotoCellView
+@interface WCListPhotoCellView : NSObject
 {
     UIView *m_imageGridView;
 }

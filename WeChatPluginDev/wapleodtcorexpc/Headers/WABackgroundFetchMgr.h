@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WABackgroundFetchMgr
+@interface WABackgroundFetchMgr : NSObject
 {
     NSMutableDictionary *_dicPrefechDataMemoryStore;
     NSMutableDictionary *_dicPeriodDataMemoryStore;

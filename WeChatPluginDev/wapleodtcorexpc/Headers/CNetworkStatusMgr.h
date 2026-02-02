@@ -5,7 +5,7 @@
 
 @class MMTimer, NSDate, NSMutableArray, NSString, ReportInfo;
 
-@interface CNetworkStatusMgr
+@interface CNetworkStatusMgr : NSObject
 {
     _Bool m_bConnecting;
     _Bool m_bConnected;

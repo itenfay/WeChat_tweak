@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface ilinkMultiTalkMessageViewModel
+@interface ilinkMultiTalkMessageViewModel : NSObject
 {
     NSMutableArray *m_allTalkedMembers;
     long long _ilinkMsgType;

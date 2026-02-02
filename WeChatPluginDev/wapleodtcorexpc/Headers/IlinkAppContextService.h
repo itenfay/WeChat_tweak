@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IlinkAppContextService
+@interface IlinkAppContextService : NSObject
 {
     NSString *app_dir_;
     struct AffIlinkKeeperCallback *aff_ilink_callback;

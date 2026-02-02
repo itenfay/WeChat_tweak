@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWifiInfo, NSObject, NSRecursiveLock, NSString;
 @protocol NetworkStatusDelegate, OS_dispatch_queue, OS_nw_path_monitor;
 
-@interface CNetworkStatus
+@interface CNetworkStatus : NSObject
 {
     unsigned int m_uiLastStatus;
     id <NetworkStatusDelegate> m_delNetworkStatus;

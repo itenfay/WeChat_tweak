@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSDate, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface MMDebounceLeading
+@interface MMDebounceLeading : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     CDUnknownBlockType _block;

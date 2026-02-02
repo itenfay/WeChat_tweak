@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface NetSceneCheckMagicUpdate
+@interface NetSceneCheckMagicUpdate : NSObject
 {
     CDUnknownBlockType _completionHandler;
     NSString *_mPackageId;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MMFinderLivePIPMinimizeLogicControllerDelegate, MMFinderLivePIPMinimizeLogicDelegate;
 
-@interface MMFinderLiveCustomPIPHandler
+@interface MMFinderLiveCustomPIPHandler : NSObject
 {
     _Bool _isPIPCheckStart;
     id <MMFinderLivePIPMinimizeLogicControllerDelegate> _logicControllerDelegate;

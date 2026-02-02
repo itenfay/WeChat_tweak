@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveCustomPresentTransition
+@interface MMLiveCustomPresentTransition : NSObject
 {
 }
 

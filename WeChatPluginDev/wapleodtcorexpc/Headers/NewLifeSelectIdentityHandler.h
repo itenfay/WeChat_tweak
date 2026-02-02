@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface NewLifeSelectIdentityHandler
+@interface NewLifeSelectIdentityHandler : NSObject
 {
     unsigned long long _identity;
 }

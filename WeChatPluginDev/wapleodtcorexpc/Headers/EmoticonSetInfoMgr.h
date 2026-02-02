@@ -5,7 +5,7 @@
 
 @class EmoticonDataDB, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface EmoticonSetInfoMgr
+@interface EmoticonSetInfoMgr : NSObject
 {
     NSRecursiveLock *_oLock;
     EmoticonDataDB *_oEmoticonPackageDB;

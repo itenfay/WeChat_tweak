@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, MMUILabel, UIImageView, UIView, WCTogetherMoreViewItem;
 
-@interface WCTogetherMoreCell
+@interface WCTogetherMoreCell : NSObject
 {
     UIView *_tipsContainerView;
     MMUIActivityIndicatorView *_activityIndicatorView;

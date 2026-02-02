@@ -6,7 +6,7 @@
 @class MMStepSlider, NSString, UIImageView;
 @protocol MMWebViewFontFloatViewDelegate;
 
-@interface MMWebViewFontFloatView
+@interface MMWebViewFontFloatView : NSObject
 {
     UIImageView *viewBg;
     unsigned int m_uiFontType;

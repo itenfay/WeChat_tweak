@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSObject, NSString, WAFileSpaceTraceLogic;
 @protocol OS_dispatch_queue;
 
-@interface WAFileStorageMgr
+@interface WAFileStorageMgr : NSObject
 {
     WAFileSpaceTraceLogic *_usrFileTraceLogic;
     NSObject<OS_dispatch_queue> *_fileTraceQueue;

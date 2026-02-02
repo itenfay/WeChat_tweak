@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface UDRGlobalConfigFeatureService
+@interface UDRGlobalConfigFeatureService : NSObject
 {
     NSMutableDictionary *_allProjectClass;
     NSMutableDictionary *_allClassName;

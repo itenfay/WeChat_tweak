@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAJSContextPlugin_InferenceManager
+@interface WAJSContextPlugin_InferenceManager : NSObject
 {
     NSMutableDictionary *_dicSessionId2Session;
 }

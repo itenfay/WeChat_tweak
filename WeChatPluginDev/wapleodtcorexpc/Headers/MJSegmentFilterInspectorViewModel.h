@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJFilterAdjustmentValueItem, NSArray, NSIndexPath, NSString;
 
-@interface MJSegmentFilterInspectorViewModel
+@interface MJSegmentFilterInspectorViewModel : NSObject
 {
     NSArray *_titleItems;
     NSArray *_filterItems;

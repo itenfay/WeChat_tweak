@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MttWkMachinceInfo
+@interface MttWkMachinceInfo : NSObject
 {
     _Bool jcev2_p_1_o_is64os;
     NSString *jcev2_p_0_r_phoneID;

@@ -5,7 +5,7 @@
 
 @class EcsGiftAddress, NSString;
 
-@interface EcsGiftItem
+@interface EcsGiftItem : NSObject
 {
     unsigned int _skuPrice;
     unsigned int _giftStatus;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView, WAArrayBuffer, WACameraLogicController;
 
-@interface WAWebViewPlugin_Camera
+@interface WAWebViewPlugin_Camera : NSObject
 {
     WACameraLogicController *_cameraLogic;
     unsigned int _curCameraID;

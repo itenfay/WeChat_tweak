@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UILabel, UIView, WCLiveBlurButton;
 
-@interface MMFinderLiveBoxPageSheetView
+@interface MMFinderLiveBoxPageSheetView : NSObject
 {
     UIView *_contentView;
     WCLiveBlurButton *_closeButton;

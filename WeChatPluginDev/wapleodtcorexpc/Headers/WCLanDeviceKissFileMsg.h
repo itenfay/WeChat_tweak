@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCLanDeviceKissFileMsg
+@interface WCLanDeviceKissFileMsg : NSObject
 {
     _Bool _isContainDetail;
     NSString *_fileName;

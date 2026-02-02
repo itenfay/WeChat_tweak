@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol WCFinderUserPrepareCgiDelegate;
 
-@interface WCFinderUserPrepareCgi
+@interface WCFinderUserPrepareCgi : NSObject
 {
     int _scene;
     id <WCFinderUserPrepareCgiDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class WCPayOverseaIBGGetWalletCgiCache;
 @protocol WCPayNoticeBannerViewDelegate;
 
-@interface WCPayOverseaMainWalletBannerData
+@interface WCPayOverseaMainWalletBannerData : NSObject
 {
     WCPayOverseaIBGGetWalletCgiCache *_m_walletResp;
     id <WCPayNoticeBannerViewDelegate> _m_noticeDelegate;

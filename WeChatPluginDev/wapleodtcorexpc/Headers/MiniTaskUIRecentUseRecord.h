@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MiniTaskUIRecentUseRecord
+@interface MiniTaskUIRecentUseRecord : NSObject
 {
     unsigned int _lastUpdateTime;
     NSString *_taskInnerKey;

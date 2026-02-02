@@ -5,7 +5,7 @@
 
 @protocol WCAdConventionalHalfScreenWebViewControllerDelegate;
 
-@interface WCAdConventionalHalfScreenWebViewController
+@interface WCAdConventionalHalfScreenWebViewController : NSObject
 {
     id <WCAdConventionalHalfScreenWebViewControllerDelegate> _adHalfScreenDelegate;
 }

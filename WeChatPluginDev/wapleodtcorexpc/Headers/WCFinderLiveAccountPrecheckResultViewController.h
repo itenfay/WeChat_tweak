@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAcceptAgreementCommonHeadView, MMFinderLiveTaskId, MMTableView, MMTableViewInfo, NSMutableDictionary, NSString, SecurityInfoAuthrizeLogic, SpamRisk, UIButton;
 
-@interface WCFinderLiveAccountPrecheckResultViewController
+@interface WCFinderLiveAccountPrecheckResultViewController : NSObject
 {
     _Bool _shouldShowOneTimeAgreementView;
     _Bool _hasExtraVerifyItem;

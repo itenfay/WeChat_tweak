@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPlayerAdapterMgr
+@interface WCPlayerAdapterMgr : NSObject
 {
 }
 

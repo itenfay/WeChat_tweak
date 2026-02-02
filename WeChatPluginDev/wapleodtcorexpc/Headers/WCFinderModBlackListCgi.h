@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderModBlackListCgi
+@interface WCFinderModBlackListCgi : NSObject
 {
     unsigned int _optype;
     unsigned int _opscene;

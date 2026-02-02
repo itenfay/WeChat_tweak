@@ -5,7 +5,7 @@
 
 @class WAAppPlatformStateChangedContext;
 
-@interface WAAppStateChangedEvent
+@interface WAAppStateChangedEvent : NSObject
 {
     unsigned long long _eventType;
     WAAppPlatformStateChangedContext *_context;

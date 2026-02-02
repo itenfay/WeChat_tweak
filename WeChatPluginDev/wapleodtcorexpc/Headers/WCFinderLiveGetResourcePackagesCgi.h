@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WCFinderLiveGetResourcePackagesCgi
+@interface WCFinderLiveGetResourcePackagesCgi : NSObject
 {
     NSString *_anchorFinderUsername;
     unsigned long long _objectId;

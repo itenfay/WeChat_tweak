@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WADynamicPageInfo
+@interface WADynamicPageInfo : NSObject
 {
     _Bool _shouldUseDynamicPage;
     NSString *_cacheKey;

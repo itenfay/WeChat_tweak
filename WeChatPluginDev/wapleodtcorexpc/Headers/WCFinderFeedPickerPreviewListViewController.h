@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, NSString, UIButton, UIView, WCFinderFeedListView, WCFinderFeedPickerParams;
 @protocol WCFinderFeedPickerPreviewListViewControllerDelegate, WCFinderFeedPickerPreviewListViewModelProtocol;
 
-@interface WCFinderFeedPickerPreviewListViewController
+@interface WCFinderFeedPickerPreviewListViewController : NSObject
 {
     _Bool _canScrollToFirstAppearIndex;
     WCFinderFeedPickerParams *_params;

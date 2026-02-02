@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCFinderGameLiveTabPageHeaderView
+@interface WCFinderGameLiveTabPageHeaderView : NSObject
 {
     UIView *_separatorLine;
 }

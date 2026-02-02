@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, QDataLayerConfigData, QVisCacheManager, QVisualLayerDataDownloader;
 
-@interface QVisualLayerManager
+@interface QVisualLayerManager : NSObject
 {
     _Bool _isAuthened;
     NSString *_apiKey;

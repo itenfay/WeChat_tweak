@@ -6,7 +6,7 @@
 @class NSString, WCFinderCollectionFeedListVCParams, WCFinderCollectionFeedListViewModel, WCFinderEmptyTipsView, WCFinderFeedListView;
 @protocol WCFinderCollectionFeedListViewControllerDelegate;
 
-@interface WCFinderCollectionFeedListViewController
+@interface WCFinderCollectionFeedListViewController : NSObject
 {
     _Bool _shouldPresentCollectionListAutomatically;
     id <WCFinderCollectionFeedListViewControllerDelegate> _delegate;

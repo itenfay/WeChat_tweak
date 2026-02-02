@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCRedEnvelopesConfirmShowResourcesCgi, WCRedEnvelopesControlData, WCRedEnvelopesDeleteResourceCgi, WCRedEnvelopesExpiredSkinViewController, WCRedEnvelopesGetShowResourcesCgi, WCRedEnvelopesSelectSkinViewController;
 
-@interface WebviewJSEventHandler_getRedPacketDone
+@interface WebviewJSEventHandler_getRedPacketDone : NSObject
 {
     _Bool _bIsFromLoadingMoreInvalidData;
     WCRedEnvelopesGetShowResourcesCgi *_getShowResourcesCgi;

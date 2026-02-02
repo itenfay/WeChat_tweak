@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MJTTSRequestParams
+@interface MJTTSRequestParams : NSObject
 {
     NSString *_text;
     NSString *_roleID;

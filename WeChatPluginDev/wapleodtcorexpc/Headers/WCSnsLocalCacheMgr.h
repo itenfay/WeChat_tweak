@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WCSnsLocalCacheMgr
+@interface WCSnsLocalCacheMgr : NSObject
 {
     _Bool m_hadLoadedCache;
     NSMutableDictionary *m_dicLocalCache;

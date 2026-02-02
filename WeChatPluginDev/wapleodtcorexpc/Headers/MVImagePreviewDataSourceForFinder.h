@@ -5,7 +5,7 @@
 
 @protocol MMMusicDataVM;
 
-@interface MVImagePreviewDataSourceForFinder
+@interface MVImagePreviewDataSourceForFinder : NSObject
 {
     id <MMMusicDataVM> _dataViewModel;
 }

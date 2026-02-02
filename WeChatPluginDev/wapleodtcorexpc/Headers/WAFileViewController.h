@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UITapGestureRecognizer, WKWebView;
 @protocol IWAFileViewService;
 
-@interface WAFileViewController
+@interface WAFileViewController : NSObject
 {
     UITapGestureRecognizer *_singleTapRec;
     _Bool _bIsNaviBarHide;

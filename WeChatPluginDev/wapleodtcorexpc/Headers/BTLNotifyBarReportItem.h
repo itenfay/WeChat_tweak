@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTLNotifyBarReportItem
+@interface BTLNotifyBarReportItem : NSObject
 {
     _Bool _isClick;
     unsigned int _exposeTimes;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPluginCodeSweeperLogic
+@interface WAPluginCodeSweeperLogic : NSObject
 {
 }
 

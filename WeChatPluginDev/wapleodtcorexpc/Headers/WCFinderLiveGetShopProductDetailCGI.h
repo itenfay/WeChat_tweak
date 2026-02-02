@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveGetShopProductDetailCGI
+@interface WCFinderLiveGetShopProductDetailCGI : NSObject
 {
     unsigned long long _productId;
     long long _reqScene;

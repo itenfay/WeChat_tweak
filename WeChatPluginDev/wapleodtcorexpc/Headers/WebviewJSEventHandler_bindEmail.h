@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_bindEmail
+@interface WebviewJSEventHandler_bindEmail : NSObject
 {
 }
 

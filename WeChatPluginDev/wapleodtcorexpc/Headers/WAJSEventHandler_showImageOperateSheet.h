@@ -5,7 +5,7 @@
 
 @class NSString, ScanQRCodeLogicController, WCActionSheetWithScanWXCode;
 
-@interface WAJSEventHandler_showImageOperateSheet
+@interface WAJSEventHandler_showImageOperateSheet : NSObject
 {
     ScanQRCodeLogicController *_scanQRCodeLogic;
     int m_qrcodeActionSheetIndex;

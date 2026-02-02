@@ -5,7 +5,7 @@
 
 @class MMResSignatureDataInfos, NSData, NSString;
 
-@interface MMResDownloadUrlInfo
+@interface MMResDownloadUrlInfo : NSObject
 {
     _Bool _isEncrypt;
     _Bool _isCompress;

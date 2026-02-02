@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WAReportOuterMenuActionItem, WaReportMessageVideoActionItem;
 
-@interface WAWebViewReportStatMgr
+@interface WAWebViewReportStatMgr : NSObject
 {
     NSMutableDictionary *m_outActionTimestampDict;
     NSMutableArray *m_mutiSelectMsgList;

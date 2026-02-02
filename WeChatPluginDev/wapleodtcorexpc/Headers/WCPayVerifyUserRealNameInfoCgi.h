@@ -6,7 +6,7 @@
 @class NSString, WCPayVerifyUserRealNameInfoResp;
 @protocol WCPayVerifyUserRealNameInfoCgiDelegate;
 
-@interface WCPayVerifyUserRealNameInfoCgi
+@interface WCPayVerifyUserRealNameInfoCgi : NSObject
 {
     int _verify_scene;
     NSString *_cre_id;

@@ -10,7 +10,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 struct XmlReaderNode_t;
 
-@interface CMessageWrap
+@interface CMessageWrap : NSObject
 {
     _Bool m_bNew;
     unsigned int m_uiMesLocalID;

@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray, NSMutableSet, NSString, WCFinderListLoadingStateModel;
 @protocol WCFinderProfilePaidCollectionVMDelegate;
 
-@interface WCFinderProfilePaidCollectionViewModel
+@interface WCFinderProfilePaidCollectionViewModel : NSObject
 {
     WCFinderListLoadingStateModel *_loadingState;
     id <WCFinderProfilePaidCollectionVMDelegate> _delegate;

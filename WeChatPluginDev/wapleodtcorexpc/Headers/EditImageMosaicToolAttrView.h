@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIView, TextStateBlurButton, WCEditImageMosaicToolViewInitParams;
 @protocol EditImageMosaicToolAttrDelegate;
 
-@interface EditImageMosaicToolAttrView
+@interface EditImageMosaicToolAttrView : NSObject
 {
     _Bool _enable;
     id <EditImageMosaicToolAttrDelegate> _m_delegate;

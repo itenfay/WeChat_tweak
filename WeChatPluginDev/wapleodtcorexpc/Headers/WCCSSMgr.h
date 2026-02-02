@@ -5,7 +5,7 @@
 
 @class MMRuleSetList, NSHashTable, NSMutableDictionary, NSString, WCCSSStyleExecuter;
 
-@interface WCCSSMgr
+@interface WCCSSMgr : NSObject
 {
     NSMutableDictionary *_dicCssClass;
     WCCSSStyleExecuter *_styleExecuter;

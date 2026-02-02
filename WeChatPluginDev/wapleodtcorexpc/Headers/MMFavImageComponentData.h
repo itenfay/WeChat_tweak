@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, MMMusicShareItem, NSArray, NSString, TingShareCategoryItem, TingShareListenItem, UIImage;
 
-@interface MMFavImageComponentData
+@interface MMFavImageComponentData : NSObject
 {
     _Bool _largeFilePossible;
     _Bool _isCDN;

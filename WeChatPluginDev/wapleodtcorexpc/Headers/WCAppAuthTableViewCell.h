@@ -6,7 +6,7 @@
 @class MMUILabel, UIImageView, UIView, WCAppAuthTableViewCellData;
 @protocol WCAppAuthTableViewCellDelegate;
 
-@interface WCAppAuthTableViewCell
+@interface WCAppAuthTableViewCell : NSObject
 {
     WCAppAuthTableViewCellData *_cellData;
     id <WCAppAuthTableViewCellDelegate> _delegate;

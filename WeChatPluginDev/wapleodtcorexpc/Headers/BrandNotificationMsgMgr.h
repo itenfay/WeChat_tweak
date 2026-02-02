@@ -5,7 +5,7 @@
 
 @class BrandNotificationPriorityItem, MemoryMappedKV, NSString;
 
-@interface BrandNotificationMsgMgr
+@interface BrandNotificationMsgMgr : NSObject
 {
     MemoryMappedKV *_notificationDigestMMKV;
     BrandNotificationPriorityItem *_priorityItem;

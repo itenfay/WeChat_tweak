@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface MMRectTriangleArrowView
+@interface MMRectTriangleArrowView : NSObject
 {
     UIView *_baseContentView;
     unsigned long long _displayState;

@@ -6,7 +6,7 @@
 @class CContact, CreateChatLogic, DelaySwitchSettingLogic, MMTableView, MMTableViewInfo, MsgSearchHelper, NSIndexPath, NSSet, NSString, UIView, WWKFContactOpLogic;
 @protocol addContactToChatRoomDelegate;
 
-@interface AddContactToChatRoomViewController
+@interface AddContactToChatRoomViewController : NSObject
 {
     CContact *m_contact;
     id <addContactToChatRoomDelegate> m_delegate;

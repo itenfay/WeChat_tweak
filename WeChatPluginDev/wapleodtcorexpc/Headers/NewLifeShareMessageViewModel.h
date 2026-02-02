@@ -5,7 +5,7 @@
 
 @class NewLifeShareCoverImageViewModel, WCFinderShareToMomentsItem;
 
-@interface NewLifeShareMessageViewModel
+@interface NewLifeShareMessageViewModel : NSObject
 {
     WCFinderShareToMomentsItem *_item;
     NewLifeShareCoverImageViewModel *_innerViewModel;

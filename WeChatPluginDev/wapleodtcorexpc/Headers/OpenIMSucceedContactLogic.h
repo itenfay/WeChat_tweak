@@ -6,7 +6,7 @@
 @class CBaseContact, CMessageWrap, MMTipsViewController, NSMutableDictionary, NSString, OpenIMContactVerifyLogic;
 @protocol OpenIMSucceedContactLogicLogicDelegate;
 
-@interface OpenIMSucceedContactLogic
+@interface OpenIMSucceedContactLogic : NSObject
 {
     CMessageWrap *m_succeedContactMessageWrap;
     NSMutableDictionary *m_allSucceedContactDic;

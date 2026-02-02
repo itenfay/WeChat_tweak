@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASilentOpenCheckInfo
+@interface WASilentOpenCheckInfo : NSObject
 {
     unsigned int _beginTimeStamp;
     unsigned int _cacheSeconds;

@@ -6,7 +6,7 @@
 @class MMFinderLiveRewardLevelConfigs, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMLiveWeCoinLabel, MMTableView, MMUIButton, MMUILabel, NSArray, NSIndexPath, NSString, UIImageView, UIView;
 @protocol MMFinderLiveRewardGiftPacketSettingViewDelegate;
 
-@interface MMFinderLiveRewardGiftPacketSettingView
+@interface MMFinderLiveRewardGiftPacketSettingView : NSObject
 {
     unsigned int _targetRank;
     MMUILabel *_titleLabel;

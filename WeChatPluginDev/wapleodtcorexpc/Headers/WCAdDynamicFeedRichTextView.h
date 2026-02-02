@@ -5,7 +5,7 @@
 
 @class WCAdDynamicFeedElementInfo;
 
-@interface WCAdDynamicFeedRichTextView
+@interface WCAdDynamicFeedRichTextView : NSObject
 {
     WCAdDynamicFeedElementInfo *_elementInfo;
 }

@@ -5,7 +5,7 @@
 
 @class FinderQRCodeResponse, MMWebImageView, NSString, UIButton, UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderQCCodeNameCardViewModel;
 
-@interface WCFinderQRCodeViewController
+@interface WCFinderQRCodeViewController : NSObject
 {
     UIView *_cardView;
     MMWebImageView *_avatar;

@@ -5,7 +5,7 @@
 
 @class NSMutableString;
 
-@interface WCNewClickStatReportData
+@interface WCNewClickStatReportData : NSObject
 {
     unsigned int seq;
     unsigned int index;

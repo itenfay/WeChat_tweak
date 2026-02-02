@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface BESwitchMgr
+@interface BESwitchMgr : NSObject
 {
     _Bool _isSvrOpenTimelineWhenInit;
     unsigned int _debugConfigOpenTimelineWhenInit;

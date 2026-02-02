@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface QPointEventMarker
+@interface QPointEventMarker : NSObject
 {
     _Bool _avoidOtherAnnotations;
     int _geotype;

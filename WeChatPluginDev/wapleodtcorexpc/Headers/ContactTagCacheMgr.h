@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface ContactTagCacheMgr
+@interface ContactTagCacheMgr : NSObject
 {
     NSMutableDictionary *m_dicCache;
     _Bool _bIsAlreadyBuildCacheFromContacts;

@@ -6,7 +6,7 @@
 @class MMFinderLiveReplaySeekTimeView, MMFinderLiveReplayTask, MMFinderLiveTaskId, MMUIButton, NSDictionary, NSString, UIView, WCFinderLiveReplayPreviewContainer, WCFinderLiveReplayProgressBar;
 @protocol WCFinderLiveReplayControlDelegate;
 
-@interface WCFinderLiveReplayControlView
+@interface WCFinderLiveReplayControlView : NSObject
 {
     _Bool _useSeekTimeView;
     _Bool _useDualLineProgressBarInPortrait;

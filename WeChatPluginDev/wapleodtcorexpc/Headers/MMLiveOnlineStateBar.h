@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMLiveOnlineStateBar
+@interface MMLiveOnlineStateBar : NSObject
 {
     UIImageView *_avatarIcon;
 }

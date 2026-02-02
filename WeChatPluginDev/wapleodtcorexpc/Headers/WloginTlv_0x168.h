@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WloginTlv_0x168
+@interface WloginTlv_0x168 : NSObject
 {
     NSArray *guidArray;
 }

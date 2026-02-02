@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CameraRecordDevice, NSString, NSTimer, NSURLSessionDataTask, UIButton, UIImage, UIImageView, UILabel, UIView, YtFLCircleProgressView;
 
-@interface YtOcrViewController
+@interface YtOcrViewController : NSObject
 {
     UIView *cameraView;
     UILabel *promptLabel;

@@ -5,7 +5,7 @@
 
 @class MMMapView, MMTimer, NSMutableArray, NSMutableDictionary, NSString, UIView;
 
-@interface LocationThumbMgr
+@interface LocationThumbMgr : NSObject
 {
     MMMapView *_mapView;
     UIView *_mapPinView;

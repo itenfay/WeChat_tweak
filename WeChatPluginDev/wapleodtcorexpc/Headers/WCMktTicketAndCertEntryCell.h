@@ -5,7 +5,7 @@
 
 @class CardHomePageTopCell, MMBadgeView, MMUILabel, UIImageView, UIView, WCPayWebImageView;
 
-@interface WCMktTicketAndCertEntryCell
+@interface WCMktTicketAndCertEntryCell : NSObject
 {
     WCPayWebImageView *_iconImgView;
     MMUILabel *_leftLabel;

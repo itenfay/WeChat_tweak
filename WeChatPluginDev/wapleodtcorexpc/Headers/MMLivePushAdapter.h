@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveAudio3AParamConfig, MMLivePushMediaConfig, MMLivePushParams, MMLiveVideoEncParam, NSArray, NSMutableDictionary, NSMutableSet, NSString, TRTCCloud, UIView;
 @protocol MMLivePushAdapterDelegate;
 
-@interface MMLivePushAdapter
+@interface MMLivePushAdapter : NSObject
 {
     _Bool _isHEVCUsing;
     _Bool _forceHEVCMixing;

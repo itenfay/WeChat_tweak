@@ -5,7 +5,7 @@
 
 @class MMLimitedModeSetIndependentPasswordViewController, MMLimitedModeSetPasswordLogic, NSString;
 
-@interface MMLimitedModeRepeatIndependentPasswordViewController
+@interface MMLimitedModeRepeatIndependentPasswordViewController : NSObject
 {
     MMLimitedModeSetPasswordLogic *m_setPasswordLogic;
     NSString *_m_firsetInputPassword;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIImageView, UIPercentDrivenInteractiveTransition, UISearchBar, UIView, UIViewController, WAAppItemData, WAMainListMenuLogic, WAMainListNearByLogic, WAMainListNewTipsLogic, WAMainListPageLogic, WAMainListReporter, WAMainListStarLogic, WAOrderInfoLogic, WAPackageSweeperLogic, WeToast;
 
-@interface WAMainListViewController
+@interface WAMainListViewController : NSObject
 {
     NSMutableArray *m_unStarHistoryItemMenuArray;
     NSMutableArray *m_staredHistoryItemMenuArray;

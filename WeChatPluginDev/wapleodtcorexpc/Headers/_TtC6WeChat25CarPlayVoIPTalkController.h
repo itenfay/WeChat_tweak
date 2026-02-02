@@ -6,7 +6,7 @@
 @class MISSING_TYPE, NSString;
 @protocol _TtP6WeChat23CarPlayVoIPTalkDelegate_;
 
-@interface _TtC6WeChat25CarPlayVoIPTalkController
+@interface _TtC6WeChat25CarPlayVoIPTalkController : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *durationLabel;

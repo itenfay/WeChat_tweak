@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface WCPayGPSelectMemberCellView
+@interface WCPayGPSelectMemberCellView : NSObject
 {
     _Bool _disableSelect;
     CContact *_contact;

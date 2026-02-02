@@ -5,7 +5,7 @@
 
 @class CBCentralManager, NSArray, NSMutableDictionary, NSString;
 
-@interface WAJSContextPlugin_Beacon
+@interface WAJSContextPlugin_Beacon : NSObject
 {
     NSArray *m_uuids;
     unsigned long long m_locationTag;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMAuthorizationRequestDialog
+@interface MMAuthorizationRequestDialog : NSObject
 {
     CDUnknownBlockType _aggreeBlock;
     CDUnknownBlockType _rejectBlock;

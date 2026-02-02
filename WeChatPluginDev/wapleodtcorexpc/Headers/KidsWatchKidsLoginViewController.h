@@ -6,7 +6,7 @@
 @class KidsWatchFlexibleImageView, NSArray, UIButton;
 @protocol KidsWatchKidsLoginViewControllerDelegate;
 
-@interface KidsWatchKidsLoginViewController
+@interface KidsWatchKidsLoginViewController : NSObject
 {
     NSArray *_kidsAccountInfoList;
     UIButton *_switchAccountButton;

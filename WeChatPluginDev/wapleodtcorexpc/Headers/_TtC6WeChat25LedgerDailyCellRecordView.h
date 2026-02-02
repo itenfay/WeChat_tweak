@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25LedgerDailyCellRecordView
+@interface _TtC6WeChat25LedgerDailyCellRecordView : NSObject
 {
     MISSING_TYPE *avatarView;
     MISSING_TYPE *nicknameLabel;

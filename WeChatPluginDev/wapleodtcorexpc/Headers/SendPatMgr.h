@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableSet, NSString, OrderedDictionary, RevokePatReportObject, SendPatToastViewController, SendPatWrap;
 
-@interface SendPatMgr
+@interface SendPatMgr : NSObject
 {
     _Bool _needRevokeLastPat;
     NSMutableDictionary *_userNameToPatTimeMap;

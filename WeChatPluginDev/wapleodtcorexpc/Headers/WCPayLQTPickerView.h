@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIPickerView;
 @protocol WCPayLQTPickerViewDelegate;
 
-@interface WCPayLQTPickerView
+@interface WCPayLQTPickerView : NSObject
 {
     id <WCPayLQTPickerViewDelegate> _m_delegate;
     UIPickerView *_pickerView;

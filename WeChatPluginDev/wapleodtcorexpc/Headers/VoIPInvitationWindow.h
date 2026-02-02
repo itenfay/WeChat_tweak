@@ -5,7 +5,7 @@
 
 @protocol VoIPInvitationWindowDelegate;
 
-@interface VoIPInvitationWindow
+@interface VoIPInvitationWindow : NSObject
 {
     id <VoIPInvitationWindowDelegate> _delegate;
 }

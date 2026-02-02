@@ -5,7 +5,7 @@
 
 @class GCTagLineView;
 
-@interface GameChatGroupCell
+@interface GameChatGroupCell : NSObject
 {
     GCTagLineView *_tagLineView;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebPrefetchDownloadTaskRequest, NSURLSession, NSURLSessionDownloadTask;
 
-@interface MMWebPrefetchDownloadTask
+@interface MMWebPrefetchDownloadTask : NSObject
 {
     _Bool _isCancel;
     MMWebPrefetchDownloadTaskRequest *_request;

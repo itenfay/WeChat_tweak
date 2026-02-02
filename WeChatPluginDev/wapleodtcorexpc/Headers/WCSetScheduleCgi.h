@@ -6,7 +6,7 @@
 @class WCScheduleItem;
 @protocol WCSetScheduleCgiDelegate;
 
-@interface WCSetScheduleCgi
+@interface WCSetScheduleCgi : NSObject
 {
     id <WCSetScheduleCgiDelegate> _delegate;
     WCScheduleItem *_handleItem;

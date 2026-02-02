@@ -5,7 +5,7 @@
 
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface ScanCodeAuthorizeBaseViewController
+@interface ScanCodeAuthorizeBaseViewController : NSObject
 {
     id <MMAuthorizeViewControllerDelegate> _delegate;
 }

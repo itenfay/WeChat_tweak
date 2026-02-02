@@ -6,7 +6,7 @@
 @class MMTableViewInfo, NSArray, NSMutableArray, NSString, UIView, WAAppAuthRespData, WAContact;
 @protocol WAAppAuthorizationDelegate;
 
-@interface WAAppAuthorizationViewController
+@interface WAAppAuthorizationViewController : NSObject
 {
     NSString *m_appid;
     NSMutableArray *m_authorationList;

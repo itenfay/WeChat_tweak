@@ -5,7 +5,7 @@
 
 @protocol BTBaseSectionDataDelegate;
 
-@interface BTBaseSectionData
+@interface BTBaseSectionData : NSObject
 {
     double _sectionWidth;
     id <BTBaseSectionDataDelegate> _delegate;

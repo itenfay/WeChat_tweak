@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppMgr
+@interface WAAppMgr : NSObject
 {
     unsigned int _lastUpdate;
 }

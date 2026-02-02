@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSString, PasswordLogic;
 
-@interface PreEnterSetPwdStep
+@interface PreEnterSetPwdStep : NSObject
 {
     CMessageWrap *m_wrapMsg;
     PasswordLogic *m_setPasswdLogic;

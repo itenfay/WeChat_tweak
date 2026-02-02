@@ -5,7 +5,7 @@
 
 @class NSString, WAContactGetter, WASessionContentSendMsgInfo;
 
-@interface WAJSEventHandler_enterContact
+@interface WAJSEventHandler_enterContact : NSObject
 {
     NSString *_sessionFrom;
     WASessionContentSendMsgInfo *_sendMsgInfo;

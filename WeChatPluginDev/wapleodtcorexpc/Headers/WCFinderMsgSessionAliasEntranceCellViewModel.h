@@ -5,7 +5,7 @@
 
 @class MMBaseSessionCellData, NSString, WCFinderContact;
 
-@interface WCFinderMsgSessionAliasEntranceCellViewModel
+@interface WCFinderMsgSessionAliasEntranceCellViewModel : NSObject
 {
     MMBaseSessionCellData *_cellData;
     NSString *_senderUserName;

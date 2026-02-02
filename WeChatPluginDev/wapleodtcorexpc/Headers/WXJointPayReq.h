@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXJointPayReq
+@interface WXJointPayReq : NSObject
 {
     unsigned int _timeStamp;
     NSString *_partnerId;

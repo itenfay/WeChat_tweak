@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLivePermissionVerifyInfo, NSArray, NSString;
 
-@interface WCFinderLiveGetLiveNoticeGGI
+@interface WCFinderLiveGetLiveNoticeGGI : NSObject
 {
     unsigned int _pageOrder;
     NSString *_anchorFinderUsername;

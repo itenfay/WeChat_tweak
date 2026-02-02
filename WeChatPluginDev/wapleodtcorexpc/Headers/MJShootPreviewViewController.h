@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MJShootComposingViewModel, MMUIButton, MMUIView, NSString, UIStackView, UIView, WCProgressMaskView;
 @protocol MJShootPreviewViewControllerDelegate;
 
-@interface MJShootPreviewViewController
+@interface MJShootPreviewViewController : NSObject
 {
     _Bool _isPresentingCropVC;
     MJShootComposingViewModel *_viewModel;

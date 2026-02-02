@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSValue, TXCDispatchQueue, TXCVideoFrameCoords;
 
-@interface TXCRoiRegionTransformFilter
+@interface TXCRoiRegionTransformFilter : NSObject
 {
     _Bool _shouldSkipRoiRegionTransform;
     TXCVideoFrameCoords *_frameCoords;

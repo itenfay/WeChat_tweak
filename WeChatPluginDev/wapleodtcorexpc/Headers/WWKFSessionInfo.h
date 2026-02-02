@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKFSessionInfo
+@interface WWKFSessionInfo : NSObject
 {
 }
 

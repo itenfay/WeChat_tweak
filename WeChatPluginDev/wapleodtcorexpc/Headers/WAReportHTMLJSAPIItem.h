@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportHTMLJSAPIItem
+@interface WAReportHTMLJSAPIItem : NSObject
 {
     NSString *_currentUrl;
     NSString *_funcName;

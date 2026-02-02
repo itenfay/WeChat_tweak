@@ -6,7 +6,7 @@
 @class CContact, MMHDHeadImageView, MMHeadImageView, MMLoadingView, NSString, UILabel, UIView;
 @protocol ContactInfoAssistDelegate;
 
-@interface CBaseContactInfoAssist
+@interface CBaseContactInfoAssist : NSObject
 {
     UIView *m_headerView;
     UIView *m_footerView;

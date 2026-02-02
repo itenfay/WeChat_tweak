@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface EdgeComputingConfigBreaker
+@interface EdgeComputingConfigBreaker : NSObject
 {
     NSMutableDictionary *scriptConfigRecorder;
     NSMutableDictionary *sqlConfigRecorder;

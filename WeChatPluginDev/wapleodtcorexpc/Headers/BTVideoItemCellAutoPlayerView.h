@@ -6,7 +6,7 @@
 @class BTVideoItemCellAutoMediaWrap, NSString, WCPlayerPlayArgs, WCPlayerView;
 @protocol BTVideoItemCellAutoPlayerDelegate;
 
-@interface BTVideoItemCellAutoPlayerView
+@interface BTVideoItemCellAutoPlayerView : NSObject
 {
     WCPlayerView *m_retainPlayerView;
     unsigned long long m_lastPlayerState;

@@ -5,7 +5,7 @@
 
 @class FinderLiveNoticeInfo;
 
-@interface MMFinderLiveNoticeAnchorPromoteInfo
+@interface MMFinderLiveNoticeAnchorPromoteInfo : NSObject
 {
     FinderLiveNoticeInfo *_noticeInfo;
 }

@@ -5,7 +5,7 @@
 
 @class MMLoadingView, MMPickerView, NSArray, NSDateFormatter, NSString, UIButton, WCMemoryStatRecord;
 
-@interface MMMSUploadViewController
+@interface MMMSUploadViewController : NSObject
 {
     UIButton *m_selectButton;
     UIButton *m_uploadButton;

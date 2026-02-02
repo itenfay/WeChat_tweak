@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface WASMPageSheetAudioListItemView
+@interface WASMPageSheetAudioListItemView : NSObject
 {
     UIButton *_audioButton;
 }

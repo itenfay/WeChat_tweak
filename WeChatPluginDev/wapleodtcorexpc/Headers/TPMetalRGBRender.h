@@ -6,7 +6,7 @@
 @class MTLTextureDescriptor;
 @protocol MTLTexture;
 
-@interface TPMetalRGBRender
+@interface TPMetalRGBRender : NSObject
 {
     struct __CVMetalTextureCache *_textureCache;
     id <MTLTexture> _rgbaTexture;

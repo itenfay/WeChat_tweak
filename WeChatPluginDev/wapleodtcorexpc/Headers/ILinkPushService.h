@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ConfAVMemberList, IConfSDKRegisterableCallbackHolder, MMConfSDKAudioMgr, MMConfSDKCGIImp, MMConfSDKMemberMgr, MMConfSDKNetworkMgr, MMConfSDKVideoHWenc, MMTimer, NSMutableArray, NSMutableData, NSMutableDictionary, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol ILinkPushApiDelegate, OS_dispatch_queue;
 
-@interface ILinkPushService
+@interface ILinkPushService : NSObject
 {
     NSObject<OS_dispatch_queue> *_workerQueue;
     MMConfSDKMemberMgr *_memberMgr;

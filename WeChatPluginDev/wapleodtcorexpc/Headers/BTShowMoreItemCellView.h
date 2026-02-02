@@ -5,7 +5,7 @@
 
 @class BTShowMoreItemCellViewModel, RichTextView, UIImageView, UIView;
 
-@interface BTShowMoreItemCellView
+@interface BTShowMoreItemCellView : NSObject
 {
     RichTextView *m_tipsLabel;
     UIImageView *m_dropDownIcon;

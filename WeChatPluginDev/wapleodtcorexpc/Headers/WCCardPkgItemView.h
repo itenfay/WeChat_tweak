@@ -6,7 +6,7 @@
 @class UIButton, UIView, WCCardData;
 @protocol WCCardPkgItemViewDelegate;
 
-@interface WCCardPkgItemView
+@interface WCCardPkgItemView : NSObject
 {
     _Bool _bSelected;
     _Bool _needSelect;

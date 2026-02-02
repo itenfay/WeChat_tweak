@@ -6,7 +6,7 @@
 @class NSObject, WAEJFontCache, WAEJFontDescriptor, WAEJGLProgram2D, WAEJJavaScriptView, WAEJPath, WAEJSharedOpenGLContext, WAEJTexture;
 @protocol EJFillable;
 
-@interface WAEJCanvasContext2D
+@interface WAEJCanvasContext2D : NSObject
 {
     unsigned int viewFrameBuffer;
     unsigned int viewRenderBuffer;

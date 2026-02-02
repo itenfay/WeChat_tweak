@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderUploadTask;
 
-@interface WCFinderOpFinderMemberShipQACGI
+@interface WCFinderOpFinderMemberShipQACGI : NSObject
 {
     int _oprType;
     WCFinderUploadTask *_task;

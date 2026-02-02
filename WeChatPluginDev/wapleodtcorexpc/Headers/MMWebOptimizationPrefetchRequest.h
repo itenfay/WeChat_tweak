@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface MMWebOptimizationPrefetchRequest
+@interface MMWebOptimizationPrefetchRequest : NSObject
 {
     _Bool _canRedirect;
     _Bool _shouldPrefetchContent;

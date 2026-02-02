@@ -5,7 +5,7 @@
 
 @class EmotionBannerSet, StoreEmotionAllListReportInfo;
 
-@interface MMEmoticonIPPageContext
+@interface MMEmoticonIPPageContext : NSObject
 {
     EmotionBannerSet *_bannerSet;
     StoreEmotionAllListReportInfo *_reportInfo;

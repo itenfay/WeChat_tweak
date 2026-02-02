@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString, WCDurationLogDB, WCDurationLogItem;
 
-@interface WCDurationLogMgr
+@interface WCDurationLogMgr : NSObject
 {
     _Bool _isUserLogoutInThisSession;
     WCDurationLogItem *_currentLogItem;

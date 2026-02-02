@@ -5,7 +5,7 @@
 
 @protocol WCAdDynamicFeedBackgroundButtonDelegate;
 
-@interface WCAdDynamicFeedBackgroundButton
+@interface WCAdDynamicFeedBackgroundButton : NSObject
 {
     id <WCAdDynamicFeedBackgroundButtonDelegate> _delegate;
 }

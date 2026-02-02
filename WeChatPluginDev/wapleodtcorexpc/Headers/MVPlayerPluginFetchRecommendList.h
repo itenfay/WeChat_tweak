@@ -5,7 +5,7 @@
 
 @class MMMusicLiveCGIMgr, NSString;
 
-@interface MVPlayerPluginFetchRecommendList
+@interface MVPlayerPluginFetchRecommendList : NSObject
 {
     MMMusicLiveCGIMgr *_musicLiveCgiManager;
 }

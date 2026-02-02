@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, NSString;
 
-@interface ShakeMusicUtility
+@interface ShakeMusicUtility : NSObject
 {
     MMMusicInfo *_lastPlayingMusic;
     double _lastMusicOffset;

@@ -6,7 +6,7 @@
 @class AddEmoticonWrap, MMSnackBar, NSString, StoreEmotionExchangeEmotionPackCgi;
 @protocol MMUIViewControllerDelegate><EmoticonCustomManageAddLogicDelegate;
 
-@interface EmoticonCustomManageAddLogic
+@interface EmoticonCustomManageAddLogic : NSObject
 {
     _Bool m_isAdding;
     _Bool m_isExchanging;

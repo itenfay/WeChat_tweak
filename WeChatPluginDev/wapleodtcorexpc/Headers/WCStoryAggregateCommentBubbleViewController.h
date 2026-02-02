@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMUIButton, NSString, UIScrollView, UITableView, UIView, WCInputControllerViews, WCStoryAggregateCommentBubbleViewModel, WCStoryComment, WCStoryFriendCommentsListView, WCStoryFriendVisitorListView;
 @protocol WCStoryAggregateCommentBubbleViewControllerDelegate;
 
-@interface WCStoryAggregateCommentBubbleViewController
+@interface WCStoryAggregateCommentBubbleViewController : NSObject
 {
     _Bool _focusOnVisitorList;
     id <WCStoryAggregateCommentBubbleViewControllerDelegate> _delegate;

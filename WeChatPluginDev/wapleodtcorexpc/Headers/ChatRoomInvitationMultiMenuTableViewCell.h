@@ -6,7 +6,7 @@
 @class ChatRoomInvitationWrap, MMHeadImageView, NSMutableArray, NSString, RichTextView, UIButton, UILabel, UIView;
 @protocol ChatRoomInvitationMultiMenuTableViewCellDelegate;
 
-@interface ChatRoomInvitationMultiMenuTableViewCell
+@interface ChatRoomInvitationMultiMenuTableViewCell : NSObject
 {
     id <ChatRoomInvitationMultiMenuTableViewCellDelegate> _delegate;
     ChatRoomInvitationWrap *_invitationWrap;

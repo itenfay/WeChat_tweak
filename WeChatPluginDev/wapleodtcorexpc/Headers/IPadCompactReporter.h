@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IPadCompactReporter
+@interface IPadCompactReporter : NSObject
 {
     _Bool _checkVisionPlatform;
 }

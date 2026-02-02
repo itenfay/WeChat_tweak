@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel, UIView, WCFinderFeedContentVM;
 
-@interface WCFinderTipBarView
+@interface WCFinderTipBarView : NSObject
 {
     UILabel *_topTipsBarLabel;
     UIView *_rightTipView;

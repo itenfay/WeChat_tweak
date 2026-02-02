@@ -5,7 +5,7 @@
 
 @protocol TrustedFriendsCgiDelegate;
 
-@interface TrustedFriendsCgi
+@interface TrustedFriendsCgi : NSObject
 {
     id <TrustedFriendsCgiDelegate> _m_delegate;
 }

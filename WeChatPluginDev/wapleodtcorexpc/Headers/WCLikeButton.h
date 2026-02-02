@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImage, WCDataItem;
 
-@interface WCLikeButton
+@interface WCLikeButton : NSObject
 {
     _Bool m_likeOperating;
     _Bool _isEnhanceInteractionEnabled;

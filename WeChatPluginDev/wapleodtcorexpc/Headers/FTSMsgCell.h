@@ -5,7 +5,7 @@
 
 @class AttributeLabel, FTSMsgCellStyle, FTSMsgItem, MMHeadImageView, MMImageView, MMUILabel, NSArray, NSString, UIImage;
 
-@interface FTSMsgCell
+@interface FTSMsgCell : NSObject
 {
     FTSMsgItem *_msgItem;
     unsigned long long _mergeCount;

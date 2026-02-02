@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface EditImageAnimatedEmoticonTool
+@interface EditImageAnimatedEmoticonTool : NSObject
 {
     UIImageView *m_imageView;
     NSString *m_emoticonMd5;

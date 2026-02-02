@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCMomentsMenuActionReportForwardInfo
+@interface WCMomentsMenuActionReportForwardInfo : NSObject
 {
     _Bool _isAppendix;
     _Bool _isForwardSuccess;

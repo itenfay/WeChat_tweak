@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x113
+@interface WloginTlv_0x113 : NSObject
 {
     unsigned int dwUin;
     unsigned short wNameTag;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSUUID;
 
-@interface WXPTenpayCgiWrapper
+@interface WXPTenpayCgiWrapper : NSObject
 {
     CDUnknownBlockType _errorCallback;
     CDUnknownBlockType _successCallback;

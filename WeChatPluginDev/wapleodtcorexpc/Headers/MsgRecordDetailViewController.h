@@ -5,7 +5,7 @@
 
 @class CBaseContact, CMessageWrap, FavForwardLogicController, MMMsgMenuReporter, MMRichTextCoverView, MMTableView, MMUIWindow, NSArray, NSMutableDictionary, NSString, ScanQRCodeLogicController, WCActionSheetWithScanWXCode, WCPlayerConfigViewController;
 
-@interface MsgRecordDetailViewController
+@interface MsgRecordDetailViewController : NSObject
 {
     MMTableView *m_tableView;
     unsigned int m_uiLongPressedIndex;

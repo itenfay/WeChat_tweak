@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class OpenSDKOAuthRequest;
 
-@interface GetQRCodeOAuthDataCgi
+@interface GetQRCodeOAuthDataCgi : NSObject
 {
     _Bool _hasHandleEcdhRollback;
     OpenSDKOAuthRequest *_authReq;

@@ -5,7 +5,7 @@
 
 @class PAGView, UIView;
 
-@interface MMBGMCoverImageView
+@interface MMBGMCoverImageView : NSObject
 {
     UIView *_maskView;
     PAGView *_dotPagView;

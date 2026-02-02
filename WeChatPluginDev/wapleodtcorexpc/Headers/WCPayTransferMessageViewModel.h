@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayTransferMessageViewModel
+@interface WCPayTransferMessageViewModel : NSObject
 {
     NSString *_bgImageName;
     double _groupTransferBubbleHeight;

@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUITextField, NSString, UIImageView, UIView;
 @protocol MMFinderLivePaymentSettingInputViewDelegate;
 
-@interface MMFinderLivePaymentSettingInputView
+@interface MMFinderLivePaymentSettingInputView : NSObject
 {
     _Bool _forceDarkMode;
     UIView *_contentView;

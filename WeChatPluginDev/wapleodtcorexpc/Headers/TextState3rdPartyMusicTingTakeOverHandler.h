@@ -5,7 +5,7 @@
 
 @class MMMusicVideoStatusOpenParams, TextStateListenMediaView;
 
-@interface TextState3rdPartyMusicTingTakeOverHandler
+@interface TextState3rdPartyMusicTingTakeOverHandler : NSObject
 {
     MMMusicVideoStatusOpenParams *_params;
     TextStateListenMediaView *_mediaView;

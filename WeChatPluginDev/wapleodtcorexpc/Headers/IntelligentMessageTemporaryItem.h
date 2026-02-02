@@ -5,7 +5,7 @@
 
 @class IntelligentClassificationData, IntelligentOCRData, NSArray;
 
-@interface IntelligentMessageTemporaryItem
+@interface IntelligentMessageTemporaryItem : NSObject
 {
     _Bool _isHadOCRData;
     _Bool _isHadClassificationData;

@@ -6,7 +6,7 @@
 @class DataMatrix, MMCommonActionSheetPicker, MMPanelView, MMUIButton, MMUILabel, MMUIView, NSMutableArray, NSString, QREncoder, RichTextView, UIButton, UIColor, UIImageView, UILabel, UIView, WCPayBannerNotice, WCPayFacingQRCodeImageView, WCPayFacingReceiveErrorTipsView, WCPayQRCoverPageView, WCPayQrcodeUsageHalfPage, WCPayWebImageView, WCUIAlertView;
 @protocol WCPayFacingReceiveQRCodeViewControllerDelegate;
 
-@interface WCPayFacingReceiveQRCodeViewController
+@interface WCPayFacingReceiveQRCodeViewController : NSObject
 {
     UIButton *m_footerButton;
     id <WCPayFacingReceiveQRCodeViewControllerDelegate> m_delegate;

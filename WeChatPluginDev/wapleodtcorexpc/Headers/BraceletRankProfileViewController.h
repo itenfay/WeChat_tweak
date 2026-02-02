@@ -6,7 +6,7 @@
 @class BraceletRankUtils, BraceletSportView, CAGradientLayer, DeviceRankDetailResonse, ForwardMessageLogicController, MMHeadImageView, MMTableView, MMUIImageView, MMUILabel, MMWebImageView, NSArray, NSMutableArray, NSString, NSURL, UIButton, UIImage, UIImageView, UILabel, UIScrollView, UIView;
 @protocol BraceletRankProfileViewControllerDelegate;
 
-@interface BraceletRankProfileViewController
+@interface BraceletRankProfileViewController : NSObject
 {
     NSString *nsUserName;
     NSString *nsBrandUserName;

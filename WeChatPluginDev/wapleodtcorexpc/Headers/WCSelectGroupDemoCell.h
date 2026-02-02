@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton, UIImageView, UIView;
 
-@interface WCSelectGroupDemoCell
+@interface WCSelectGroupDemoCell : NSObject
 {
     UIImageView *leftCheckMark;
     UIImageView *rightArrowView;

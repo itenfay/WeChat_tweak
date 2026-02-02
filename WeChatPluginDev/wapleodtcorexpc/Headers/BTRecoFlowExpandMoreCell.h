@@ -5,7 +5,7 @@
 
 @class MMUIButton;
 
-@interface BTRecoFlowExpandMoreCell
+@interface BTRecoFlowExpandMoreCell : NSObject
 {
     MMUIButton *_expandButton;
 }

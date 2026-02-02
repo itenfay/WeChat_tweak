@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveContact;
 
-@interface WCFinderGetAudienceLiveInfoCGI
+@interface WCFinderGetAudienceLiveInfoCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

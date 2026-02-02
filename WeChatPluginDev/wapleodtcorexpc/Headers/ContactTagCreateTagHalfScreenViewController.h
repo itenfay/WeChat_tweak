@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUITextField, MMUIView, NSString, UIButton;
 @protocol ContactTagCreateTagHalfScreenViewControllerDelegate;
 
-@interface ContactTagCreateTagHalfScreenViewController
+@interface ContactTagCreateTagHalfScreenViewController : NSObject
 {
     UIButton *m_modifyAliasButton;
     MMUIView *m_contentView;

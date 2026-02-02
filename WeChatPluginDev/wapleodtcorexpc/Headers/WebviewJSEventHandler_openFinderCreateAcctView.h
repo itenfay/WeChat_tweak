@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCFinderCreateCoordinator;
 
-@interface WebviewJSEventHandler_openFinderCreateAcctView
+@interface WebviewJSEventHandler_openFinderCreateAcctView : NSObject
 {
     WCFinderCreateCoordinator *_createCoordinator;
     JSEvent *_event;

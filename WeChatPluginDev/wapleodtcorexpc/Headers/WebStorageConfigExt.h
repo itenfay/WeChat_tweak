@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebStorageConfigExt
+@interface WebStorageConfigExt : NSObject
 {
     NSString *_filePath;
 }

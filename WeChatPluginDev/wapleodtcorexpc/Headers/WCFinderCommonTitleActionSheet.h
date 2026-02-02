@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UIView;
 
-@interface WCFinderCommonTitleActionSheet
+@interface WCFinderCommonTitleActionSheet : NSObject
 {
     NSString *_titleContent;
     NSString *_subTitleContent;

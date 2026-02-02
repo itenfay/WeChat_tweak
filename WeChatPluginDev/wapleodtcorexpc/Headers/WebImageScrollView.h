@@ -6,7 +6,7 @@
 @class MMImageScrollViewHelper, MMUIActivityIndicatorView, MMWebImageView, NSArray, NSString, WXFullScreenGestureRecognizer;
 @protocol WebImageScrollViewDelegate;
 
-@interface WebImageScrollView
+@interface WebImageScrollView : NSObject
 {
     MMWebImageView *webImageView;
     MMUIActivityIndicatorView *mActivityIndicator;

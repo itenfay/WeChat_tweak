@@ -5,7 +5,7 @@
 
 @class CContact, NSString, SessionSelectController, SharePreConfirmView;
 
-@interface WAJSEventHandler_quickSendRedPacket
+@interface WAJSEventHandler_quickSendRedPacket : NSObject
 {
     SessionSelectController *_sessionSelectVC;
     SharePreConfirmView *_m_confirmView;

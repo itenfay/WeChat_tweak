@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, RichTextView, UIImage, UIImageView, UILabel, UIView;
 
-@interface WCFinderCardEduActionSheet
+@interface WCFinderCardEduActionSheet : NSObject
 {
     NSString *_titleString;
     NSString *_descString;

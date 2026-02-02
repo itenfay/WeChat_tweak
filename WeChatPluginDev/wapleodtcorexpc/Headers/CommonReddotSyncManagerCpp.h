@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CommonReddotSyncManagerCpp
+@interface CommonReddotSyncManagerCpp : NSObject
 {
 }
 

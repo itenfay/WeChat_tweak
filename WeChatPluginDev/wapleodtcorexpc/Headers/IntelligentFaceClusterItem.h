@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface IntelligentFaceClusterItem
+@interface IntelligentFaceClusterItem : NSObject
 {
     int _faceIdx;
     float _zScore;

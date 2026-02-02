@@ -6,7 +6,7 @@
 @class NSArray, NSData, NSString;
 @protocol EmoticonRecommendBoardCgiDelegate;
 
-@interface EmoticonRecommendBoardCgi
+@interface EmoticonRecommendBoardCgi : NSObject
 {
     unsigned int _source;
     unsigned int _startTime;

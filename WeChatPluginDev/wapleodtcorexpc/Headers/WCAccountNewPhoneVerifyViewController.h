@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UIButton, WCAccountNewPhoneVerifyPageView, WCRedesignButtonItem;
 @protocol WCAccountNewPhoneVerifyViewControllerDelegate;
 
-@interface WCAccountNewPhoneVerifyViewController
+@interface WCAccountNewPhoneVerifyViewController : NSObject
 {
     long long _iCount;
     id <WCAccountNewPhoneVerifyViewControllerDelegate> _delegate;

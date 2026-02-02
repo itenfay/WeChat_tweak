@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GameCenterJSEventLogicHandler, JSContext, JSVirtualMachine, NSMutableDictionary, NSString, NSThread;
 
-@interface GameCenterJsService
+@interface GameCenterJsService : NSObject
 {
     GameCenterJSEventLogicHandler *_jsEventHandler;
     NSString *_state;

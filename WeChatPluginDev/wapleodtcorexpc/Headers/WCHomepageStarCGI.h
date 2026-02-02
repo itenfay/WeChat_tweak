@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SnsTopListResponse;
 
-@interface WCHomepageStarCGI
+@interface WCHomepageStarCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failureBlock;

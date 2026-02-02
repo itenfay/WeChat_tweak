@@ -5,7 +5,7 @@
 
 @class NSString, WCSNSNodeVideoView;
 
-@interface WCTogetherVideoFeedCell
+@interface WCTogetherVideoFeedCell : NSObject
 {
     WCSNSNodeVideoView *_videoView;
 }

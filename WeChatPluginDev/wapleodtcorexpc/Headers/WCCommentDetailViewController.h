@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonBoardView, MMUILabel, NSArray, NSIndexPath, NSString, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITableView, UITapGestureRecognizer, UIView, WCCommentDetailHeaderView, WCCommentDetailViewModel, WCCommentEmotionBoardViewContainerView, WCCommentInputView, WCFinderAnimationLoadingView, WCFinderCommentDetailTextView, WCFinderCommentIdentityActionSheetView, WCFinderCommentListHeaderRefreshView, WCFinderCommentSearchMentionContainerView, WCFinderCreateCoordinator, WCFinderHeadImageView, WCFinderPushFeedViewParams, WCFinderRefreshTableFooterView, WCInputController;
 @protocol WCCommentDetailViewControllerDelegate;
 
-@interface WCCommentDetailViewController
+@interface WCCommentDetailViewController : NSObject
 {
     _Bool _statusBarHidden;
     _Bool _disableCommentFunctions;

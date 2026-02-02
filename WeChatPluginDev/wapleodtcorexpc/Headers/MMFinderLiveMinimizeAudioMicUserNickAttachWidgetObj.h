@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMFinderLiveMinimizeAudioMicUserNickAttachWidgetObj
+@interface MMFinderLiveMinimizeAudioMicUserNickAttachWidgetObj : NSObject
 {
     UILabel *_rootNickLabel;
     UILabel *_nickLabel;

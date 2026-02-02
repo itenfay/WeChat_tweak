@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMJSApiVerifyMgr, MMURLHandler, MMWebViewUniversalLinkMinitorLogic, NSMutableDictionary, NSString, NSURL, NSURLRequest, UIButton, UILongPressGestureRecognizer, WCDeepLinkHandler, WKWebView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl;
 @protocol WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
-@interface WXBaseWebViewController
+@interface WXBaseWebViewController : NSObject
 {
     WKWebView<YYWebViewInterface> *webView;
     MMURLHandler *m_urlHandler;

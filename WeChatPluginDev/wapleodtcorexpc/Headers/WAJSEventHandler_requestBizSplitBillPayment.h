@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_requestBizSplitBillPayment
+@interface WAJSEventHandler_requestBizSplitBillPayment : NSObject
 {
 }
 

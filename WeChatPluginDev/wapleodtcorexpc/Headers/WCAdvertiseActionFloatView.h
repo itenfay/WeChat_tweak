@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UITableView, UIView, WCDataItem;
 @protocol WCAdvertiseActionFloatViewDelegate;
 
-@interface WCAdvertiseActionFloatView
+@interface WCAdvertiseActionFloatView : NSObject
 {
     WCDataItem *m_item;
     UIButton *m_unInterestBtn;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, SendPatWrap;
 
-@interface SendPatCgi
+@interface SendPatCgi : NSObject
 {
     SendPatWrap *_sendPatWrap;
     CDUnknownBlockType _successBlock;

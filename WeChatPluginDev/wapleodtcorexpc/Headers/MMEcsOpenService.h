@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMEcsOpenService
+@interface MMEcsOpenService : NSObject
 {
 }
 

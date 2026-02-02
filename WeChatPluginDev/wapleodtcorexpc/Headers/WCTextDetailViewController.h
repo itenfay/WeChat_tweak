@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UIButton, UIScrollView, UIView, WCDataItem, WCMomentsClickHandler, WCUserComment;
 
-@interface WCTextDetailViewController
+@interface WCTextDetailViewController : NSObject
 {
     UIScrollView *_bgScrollView;
     WCDataItem *_dataItem;

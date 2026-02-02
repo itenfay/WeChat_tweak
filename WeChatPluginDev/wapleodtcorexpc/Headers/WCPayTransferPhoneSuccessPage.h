@@ -6,7 +6,7 @@
 @class KindaUIView, NSMutableArray, TransferPhoneSuccPageResp, UIButton, UIImageView, UILabel, UIView, WCPayCss;
 @protocol WCPayTransferPhoneSuccessPageDelegate;
 
-@interface WCPayTransferPhoneSuccessPage
+@interface WCPayTransferPhoneSuccessPage : NSObject
 {
     id <WCPayTransferPhoneSuccessPageDelegate> _m_delegate;
     KindaUIView *_noticeView;

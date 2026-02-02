@@ -5,7 +5,7 @@
 
 @class NSAttributedString, NSString, UIImage;
 
-@interface MMScrollableActionSheetVerticalRowInfo
+@interface MMScrollableActionSheetVerticalRowInfo : NSObject
 {
     _Bool _isLoading;
     unsigned int _rowType;

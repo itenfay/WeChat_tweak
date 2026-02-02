@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, UIImageView, UILabel, UIScrollView, UITextField;
 @protocol FavSearchBarDelegate;
 
-@interface FavSearchBar
+@interface FavSearchBar : NSObject
 {
     NSString *m_searchText;
     NSString *m_searchType;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DynamicQrCodeInfo
+@interface DynamicQrCodeInfo : NSObject
 {
     _Bool _isDynamic;
     _Bool _canRefresh;

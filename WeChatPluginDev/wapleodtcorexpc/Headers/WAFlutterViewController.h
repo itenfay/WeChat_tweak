@@ -5,7 +5,7 @@
 
 @class FlutterEngine, NSMutableSet;
 
-@interface WAFlutterViewController
+@interface WAFlutterViewController : NSObject
 {
     _Bool _isRealAppear;
     FlutterEngine *_skylineEngine;

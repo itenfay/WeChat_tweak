@@ -5,7 +5,7 @@
 
 @class HardWareRankMessageEntryButtonInfo;
 
-@interface AppHardWareRankMessageViewModel
+@interface AppHardWareRankMessageViewModel : NSObject
 {
     HardWareRankMessageEntryButtonInfo *_entryButtonInfo;
 }

@@ -5,7 +5,7 @@
 
 @class CMail, MMTableView, MMTimer, MailAttachmentControlView, MailContactFilterView, MailContentView, MailRTEToolView, MailReceiverEditView, MailSubjectEditView, NSMutableArray, NSString, NSTextStorage, RTEAttachmentViewProvider, UIView, XMailBindMailControlLogic;
 
-@interface WriteMailViewController
+@interface WriteMailViewController : NSObject
 {
     MMTableView *m_tableView;
     MailContactFilterView *m_filterView;

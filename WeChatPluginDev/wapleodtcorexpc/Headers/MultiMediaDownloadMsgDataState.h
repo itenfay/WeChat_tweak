@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MsgDataDownloadLogic, NSString;
 
-@interface MultiMediaDownloadMsgDataState
+@interface MultiMediaDownloadMsgDataState : NSObject
 {
     _Bool _haveCheckedCdn;
     NSString *_downloadKey;

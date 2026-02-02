@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WANativeAppMsgInfo
+@interface WANativeAppMsgInfo : NSObject
 {
     unsigned int _type;
     NSString *_appNameMultiLanguageKey;

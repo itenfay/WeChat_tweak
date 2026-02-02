@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MultiMediaUploadTask, NSMutableArray, NSString;
 
-@interface TaskListUploadProcessor
+@interface TaskListUploadProcessor : NSObject
 {
     CMessageWrap *_msgWrap;
     unsigned long long _uploadTaskTotalSize;

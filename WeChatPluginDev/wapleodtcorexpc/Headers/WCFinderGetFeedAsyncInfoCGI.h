@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, WCFinderGetFeedAsyncInfoCGIConfig;
 
-@interface WCFinderGetFeedAsyncInfoCGI
+@interface WCFinderGetFeedAsyncInfoCGI : NSObject
 {
     int _asyncLoadInfoScene;
     CDUnknownBlockType _successful;

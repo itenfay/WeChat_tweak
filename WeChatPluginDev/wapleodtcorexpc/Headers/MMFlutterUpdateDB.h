@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MMFlutterUpdateDB
+@interface MMFlutterUpdateDB : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_tableFlutterUpdateInfo;

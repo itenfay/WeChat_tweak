@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUIView, NSString, UIView, WAProfileRatingView;
 @protocol WAEvaluatePopSheetDelegate;
 
-@interface WAEvaluatePopSheet
+@interface WAEvaluatePopSheet : NSObject
 {
     NSString *_appId;
     NSString *_weAppName;

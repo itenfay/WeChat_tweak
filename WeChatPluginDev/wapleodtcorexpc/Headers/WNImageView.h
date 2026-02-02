@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WNImageViewDelegate;
 
-@interface WNImageView
+@interface WNImageView : NSObject
 {
     _Bool _isThumb;
     NSString *localSrcPath;

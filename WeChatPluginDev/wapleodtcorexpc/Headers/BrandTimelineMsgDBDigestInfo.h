@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface BrandTimelineMsgDBDigestInfo
+@interface BrandTimelineMsgDBDigestInfo : NSObject
 {
     unsigned int _flag;
     NSMutableArray *_items;

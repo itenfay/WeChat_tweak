@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, UIColor, UIFont, UIImageView, UIView;
 
-@interface MMFinderLiveAudienceDropGiftDetailCardView
+@interface MMFinderLiveAudienceDropGiftDetailCardView : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_descLabel;

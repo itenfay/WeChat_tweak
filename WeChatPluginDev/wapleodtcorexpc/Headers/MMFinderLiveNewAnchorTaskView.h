@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveNewAnchorTaskViewModel, MMFinderLiveTaskId, MMUIActivityIndicatorView, MMUIView, NSString, UICollectionView, UIScrollView, WCFinderLiveAnchorLogReporter, WCFinderLiveStarterReporter;
 
-@interface MMFinderLiveNewAnchorTaskView
+@interface MMFinderLiveNewAnchorTaskView : NSObject
 {
     _Bool _shouldShowCompletePageAnchorNotice;
     unsigned int _scene;

@@ -6,7 +6,7 @@
 @class AVCaptureStillImageOutput;
 @protocol CvPhotoCameraDelegate;
 
-@interface CvPhotoCamera
+@interface CvPhotoCamera : NSObject
 {
     AVCaptureStillImageOutput *stillImageOutput;
     id <CvPhotoCameraDelegate> delegate;

@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString;
 @protocol POICategoryDelegate;
 
-@interface WCTimelinePOICategoryViewController
+@interface WCTimelinePOICategoryViewController : NSObject
 {
     id <POICategoryDelegate> _delegate;
     MMTableView *m_tableView;

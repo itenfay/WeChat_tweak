@@ -5,7 +5,7 @@
 
 @class JSEvent, MMPageSheetAdapter, NSMutableArray, NSString, UIPickerView, UIToolbar, UIView, WADateTimePickerView;
 
-@interface WebviewJSEventHandler_showDatePickerView
+@interface WebviewJSEventHandler_showDatePickerView : NSObject
 {
     struct MMDates m_minDate;
     struct MMDates m_maxDate;

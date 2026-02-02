@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MAVVideoComposition, VideoCompositionOutputConfig;
 
-@interface MMVideoMavEncodeTask
+@interface MMVideoMavEncodeTask : NSObject
 {
     _Bool _isAutoRetryEnabled;
     _Bool _keepsProcessInBackgroundEnabled;

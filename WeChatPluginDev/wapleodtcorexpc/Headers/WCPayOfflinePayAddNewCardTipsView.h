@@ -5,7 +5,7 @@
 
 @protocol WCPayOfflineAddNewCardTipsViewDelegate;
 
-@interface WCPayOfflinePayAddNewCardTipsView
+@interface WCPayOfflinePayAddNewCardTipsView : NSObject
 {
     id <WCPayOfflineAddNewCardTipsViewDelegate> _delegate;
 }

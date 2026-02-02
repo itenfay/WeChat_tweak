@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXOpenCustomerServiceResp
+@interface WXOpenCustomerServiceResp : NSObject
 {
     NSString *_extMsg;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WCPayECardCgiError;
 
-@interface WCPayECardBaseControlLogic
+@interface WCPayECardBaseControlLogic : NSObject
 {
     WCPayECardCgiError *_baseECardCgiError;
 }

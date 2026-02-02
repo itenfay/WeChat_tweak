@@ -5,7 +5,7 @@
 
 @class FinderSyncTipsShowInfo, MMBadgeView, MMTipsViewController, NSArray, NSDictionary, NSNumber, NSString, NewLifeSearchStreamResult, UIBarButtonItem, UIScrollView, WCFinderRedDotCtrlInfo, WCFinderRedDotTipsShowInfo, WCStatTimerHelper, WSTabInfoList, WSTemplateScrollView, WSWebRecommendTabsView, _TtC6WeChat8WSReddot;
 
-@interface WSLocalWebViewController
+@interface WSLocalWebViewController : NSObject
 {
     WCStatTimerHelper *_pageTimeHelper;
     long long _orientation;

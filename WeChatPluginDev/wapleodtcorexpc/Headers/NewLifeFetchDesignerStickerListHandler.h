@@ -5,7 +5,7 @@
 
 @class DesignerPortfolioCollectionViewProvider, NSString;
 
-@interface NewLifeFetchDesignerStickerListHandler
+@interface NewLifeFetchDesignerStickerListHandler : NSObject
 {
     DesignerPortfolioCollectionViewProvider *_provider;
 }

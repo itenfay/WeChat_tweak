@@ -6,7 +6,7 @@
 @class CContact, MMHeadImageView, MMOpenIMAddContactRemindViewView, MMUIButton, MMUILabel, MMUIScrollView, MMUIView, NSString, UIButton;
 @protocol OpenIMAddContactRemindDelegate;
 
-@interface OpenIMAddContactRemindHalfScreenViewController
+@interface OpenIMAddContactRemindHalfScreenViewController : NSObject
 {
     UIButton *m_makeSureButton;
     MMUIView *m_contentView;

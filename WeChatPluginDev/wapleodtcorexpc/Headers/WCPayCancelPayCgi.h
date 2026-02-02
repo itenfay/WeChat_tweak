@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayCancelPayCgiDelegate;
 
-@interface WCPayCancelPayCgi
+@interface WCPayCancelPayCgi : NSObject
 {
     id <WCPayCancelPayCgiDelegate> _cgiDelegate;
     NSString *_reqKey;

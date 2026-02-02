@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardUsedStoreInfo
+@interface WCCardUsedStoreInfo : NSObject
 {
     unsigned int _distance;
     NSString *_name;

@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, UILabel;
 
-@interface EmoticonStoreFootView
+@interface EmoticonStoreFootView : NSObject
 {
     unsigned int m_lineViewWidth;
     MMUIActivityIndicatorView *m_activityIndicatorView;

@@ -5,7 +5,7 @@
 
 @class NSString, QRCodeLoginLogic, WCAccountManualAuthControlLogic, WCPlayLiveWithoutLoginControlLogic;
 
-@interface WCAccountQRCodeLoginControlLogic
+@interface WCAccountQRCodeLoginControlLogic : NSObject
 {
     QRCodeLoginLogic *m_qrcodeLoginLogic;
     WCAccountManualAuthControlLogic *m_manualAuthLogic;

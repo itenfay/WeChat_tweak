@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_getLatestAddress
+@interface WebviewJSEventHandler_getLatestAddress : NSObject
 {
     JSEvent *_jsEvent;
 }

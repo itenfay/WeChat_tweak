@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface FaceRecogReporterFaceErrCounter
+@interface FaceRecogReporterFaceErrCounter : NSObject
 {
     unsigned int _faceOkCount;
     unsigned int _motionOkCount;

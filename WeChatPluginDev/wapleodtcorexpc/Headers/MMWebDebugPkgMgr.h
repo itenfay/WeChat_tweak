@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface MMWebDebugPkgMgr
+@interface MMWebDebugPkgMgr : NSObject
 {
     MemoryMappedKV *_mappedKV;
 }

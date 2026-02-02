@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, WCDataItem;
 
-@interface WCActionButtonFloatView
+@interface WCActionButtonFloatView : NSObject
 {
     WCDataItem *_dataItem;
     UIButton *_actionButton;

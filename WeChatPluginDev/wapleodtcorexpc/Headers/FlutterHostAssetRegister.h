@@ -5,7 +5,7 @@
 
 @class FlutterHostAssetDefault, NSMutableDictionary, NSString;
 
-@interface FlutterHostAssetRegister
+@interface FlutterHostAssetRegister : NSObject
 {
     NSMutableDictionary *_handlerMap;
     FlutterHostAssetDefault *_defaultHandler;

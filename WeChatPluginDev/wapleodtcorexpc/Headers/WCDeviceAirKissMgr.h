@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCDeviceAirKissMgr
+@interface WCDeviceAirKissMgr : NSObject
 {
     _Bool m_isStarted;
 }

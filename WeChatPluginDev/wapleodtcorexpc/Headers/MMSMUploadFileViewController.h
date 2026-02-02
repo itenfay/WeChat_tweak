@@ -5,7 +5,7 @@
 
 @class NSString, UIProgressView;
 
-@interface MMSMUploadFileViewController
+@interface MMSMUploadFileViewController : NSObject
 {
     int m_percent;
     UIProgressView *m_progressView;

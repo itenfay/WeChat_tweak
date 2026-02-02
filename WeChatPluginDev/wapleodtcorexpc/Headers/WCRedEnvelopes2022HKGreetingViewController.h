@@ -6,7 +6,7 @@
 @class AddEmoticonWrap, CEmoticonWrap, EmoticonBoardView, EmoticonCustomAddLogicController, GKImagePicker, MMEmoticonView, MMUILabel, NSArray, NSNumber, NSString, UIButton, UIImage, UIImageView, UIView, WCRedEnvelopesControlData, WeToast, ZCWScrollNumView;
 @protocol WCRedEnvelopes2022HKGreetingViewControllerDelegate;
 
-@interface WCRedEnvelopes2022HKGreetingViewController
+@interface WCRedEnvelopes2022HKGreetingViewController : NSObject
 {
     int m_currentNum;
     NSString *m_currentWish;

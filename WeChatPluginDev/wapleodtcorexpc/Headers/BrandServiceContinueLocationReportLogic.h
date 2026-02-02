@@ -5,7 +5,7 @@
 
 @class CContact, LocationRetriever, NSDate, NSMutableDictionary, NSString;
 
-@interface BrandServiceContinueLocationReportLogic
+@interface BrandServiceContinueLocationReportLogic : NSObject
 {
     LocationRetriever *m_locationRetriever;
     CContact *m_contact;

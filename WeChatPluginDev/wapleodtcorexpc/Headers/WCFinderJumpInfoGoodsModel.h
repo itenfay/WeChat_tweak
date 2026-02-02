@@ -5,7 +5,7 @@
 
 @class WCFinderFeedContentVM;
 
-@interface WCFinderJumpInfoGoodsModel
+@interface WCFinderJumpInfoGoodsModel : NSObject
 {
     WCFinderFeedContentVM *_contentVM;
 }

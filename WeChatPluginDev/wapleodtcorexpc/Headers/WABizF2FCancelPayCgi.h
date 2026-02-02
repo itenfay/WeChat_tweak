@@ -5,7 +5,7 @@
 
 @protocol WABizF2FCancelPayCgiDelegate;
 
-@interface WABizF2FCancelPayCgi
+@interface WABizF2FCancelPayCgi : NSObject
 {
     id <WABizF2FCancelPayCgiDelegate> m_delegate;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardTagItem
+@interface WCCardTagItem : NSObject
 {
     NSString *_tag;
     NSString *_color;

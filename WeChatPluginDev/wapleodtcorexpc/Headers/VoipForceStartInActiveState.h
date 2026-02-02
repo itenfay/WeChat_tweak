@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, VoipForceStartObject;
 
-@interface VoipForceStartInActiveState
+@interface VoipForceStartInActiveState : NSObject
 {
     VoipForceStartObject *_m_audioObject;
     VoipForceStartObject *_m_videoObject;

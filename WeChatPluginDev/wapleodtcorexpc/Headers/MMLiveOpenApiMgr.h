@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupOperationPanel, NSString, WCFinderFeedContentVM;
 
-@interface MMLiveOpenApiMgr
+@interface MMLiveOpenApiMgr : NSObject
 {
     _Bool _tempSwitchPause;
     _Bool _joinTeamBusy;

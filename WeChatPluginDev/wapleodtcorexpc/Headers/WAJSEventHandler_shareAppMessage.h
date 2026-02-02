@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_shareAppMessage
+@interface WAJSEventHandler_shareAppMessage : NSObject
 {
 }
 

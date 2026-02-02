@@ -5,7 +5,7 @@
 
 @protocol GameVideoAlbumDataFetcherDelegate;
 
-@interface GameVideoAlbumDataFetcher
+@interface GameVideoAlbumDataFetcher : NSObject
 {
     _Bool _isReachEnding;
     _Bool _isRequesting;

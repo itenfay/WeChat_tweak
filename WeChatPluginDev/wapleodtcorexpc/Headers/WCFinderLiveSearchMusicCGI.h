@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSData, NSString;
 
-@interface WCFinderLiveSearchMusicCGI
+@interface WCFinderLiveSearchMusicCGI : NSObject
 {
     NSString *_searchText;
     NSData *_liveCookies;

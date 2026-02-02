@@ -5,7 +5,7 @@
 
 @class NSString, WXLocalNotificationInfo;
 
-@interface MultiTalkMonoMsg
+@interface MultiTalkMonoMsg : NSObject
 {
     _Bool m_isCancelMsg;
     _Bool m_isNotFriendMsg;

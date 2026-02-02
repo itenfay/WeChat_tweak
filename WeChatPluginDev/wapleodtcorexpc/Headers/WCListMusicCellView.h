@@ -5,7 +5,7 @@
 
 @class MMMusicPlayerContoller, NSMutableArray, NSString, UIView;
 
-@interface WCListMusicCellView
+@interface WCListMusicCellView : NSObject
 {
     UIView *m_tailView;
     NSMutableArray *_arrKVOImageView;

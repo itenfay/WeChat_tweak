@@ -5,7 +5,7 @@
 
 @class CAMediaTimingFunction;
 
-@interface POPBasicAnimation
+@interface POPBasicAnimation : NSObject
 {
 }
 

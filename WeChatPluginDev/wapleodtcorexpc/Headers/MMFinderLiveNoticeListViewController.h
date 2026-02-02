@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBuyTicketHandle, MMFinderLiveNoticeInfoViewItem, MMFinderLiveNoticeListViewModel, MMUIButton, NSIndexPath, NSString, UILabel, UITableView;
 
-@interface MMFinderLiveNoticeListViewController
+@interface MMFinderLiveNoticeListViewController : NSObject
 {
     CDUnknownBlockType _onReserved;
     CDUnknownBlockType _onRequireBecomeMemberBeforeReserveNotice;

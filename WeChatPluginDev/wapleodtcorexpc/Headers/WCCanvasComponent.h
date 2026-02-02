@@ -6,7 +6,7 @@
 @class NSIndexPath, UIButton, WCAdvertiseInfo, WCCanvasComponentItem, WCCanvasMusicMgr, WCCanvasReportMgr;
 @protocol WCCanvasComponentDelegate;
 
-@interface WCCanvasComponent
+@interface WCCanvasComponent : NSObject
 {
     int _type;
     WCCanvasComponentItem *_componentItem;

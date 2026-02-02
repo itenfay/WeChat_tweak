@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWebViewPVItem
+@interface WAReportWebViewPVItem : NSObject
 {
     unsigned int _publicLibVersion;
     unsigned long long _costtime;

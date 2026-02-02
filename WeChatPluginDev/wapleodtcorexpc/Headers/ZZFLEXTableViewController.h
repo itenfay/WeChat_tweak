@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, NSMutableArray, NSString, UIScrollView, ZZFLEXAngel, ZZFLEXAngelIndexPathChainModel, ZZFLEXAngelViewBatchEditChainModel, ZZFLEXAngelViewEditChainModel;
 
-@interface ZZFLEXTableViewController
+@interface ZZFLEXTableViewController : NSObject
 {
     long long _tableViewStyle;
     MMTableView *_tableView;

@@ -6,7 +6,7 @@
 @class MISSING_TYPE, MTKView, NSString;
 @protocol MTLBuffer, MTLCommandQueue, MTLRenderPipelineState, MTLTexture;
 
-@interface WCAdAlphaVideoMetalRender
+@interface WCAdAlphaVideoMetalRender : NSObject
 {
     int _videoCompositeType;
     MTKView *_mtkView;

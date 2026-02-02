@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UILabel;
 
-@interface MainFrameHideSessionGuideView
+@interface MainFrameHideSessionGuideView : NSObject
 {
     UILabel *_titleLabel;
     RichTextView *_descTextView;

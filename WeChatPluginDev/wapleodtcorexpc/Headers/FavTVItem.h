@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavTVItem
+@interface FavTVItem : NSObject
 {
     NSString *_tvTitle;
     NSString *_tvDesc;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURL, NSURLSession;
 
-@interface MMWebAttachmentDetailLogicController
+@interface MMWebAttachmentDetailLogicController : NSObject
 {
     NSURL *_fileURL;
     NSString *_filePath;

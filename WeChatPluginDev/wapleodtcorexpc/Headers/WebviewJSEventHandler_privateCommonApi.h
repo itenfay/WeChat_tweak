@@ -5,7 +5,7 @@
 
 @class NSString, PrivateCommonApiHandler;
 
-@interface WebviewJSEventHandler_privateCommonApi
+@interface WebviewJSEventHandler_privateCommonApi : NSObject
 {
     PrivateCommonApiHandler *_handler;
 }

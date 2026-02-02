@@ -5,7 +5,7 @@
 
 @class CMessageWrap, ForwardMessageLogicController, NSDictionary, NSMutableData, NSString, NSURLConnection;
 
-@interface LiteAppJsApiSendAppMessage
+@interface LiteAppJsApiSendAppMessage : NSObject
 {
     CMessageWrap *m_wrapMsg;
     ForwardMessageLogicController *m_forwardMsgLogic;

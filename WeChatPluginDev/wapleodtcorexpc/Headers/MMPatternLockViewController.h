@@ -6,7 +6,7 @@
 @class MMPatternLockTipsView, MMPatternLockView, MMUIButton, NSString, WCBizLoadingView;
 @protocol MMPatternLockViewControllerDelegate;
 
-@interface MMPatternLockViewController
+@interface MMPatternLockViewController : NSObject
 {
     _Bool _isConfirm;
     _Bool _isOpSuccess;

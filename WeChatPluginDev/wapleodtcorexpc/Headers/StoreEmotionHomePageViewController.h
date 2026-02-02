@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, MMUIViewController, NSArray, NSString, StoreEmoticonTopicProxyLogic, StoreEmotionHomePageLogic, UICollectionView, UICollectionViewFlowLayout;
 
-@interface StoreEmotionHomePageViewController
+@interface StoreEmotionHomePageViewController : NSObject
 {
     _Bool _hitExpt;
     unsigned int _scene;

@@ -6,7 +6,7 @@
 @class AppleIDBindLogic, AppleStyleLoginRegisterButton, NSString, ThirdAppBindReportObject, UIButton, UILabel;
 @protocol AppleIDBindViewControllerDelegate;
 
-@interface AppleIDBindViewController
+@interface AppleIDBindViewController : NSObject
 {
     _Bool _appleIDBound;
     id <AppleIDBindViewControllerDelegate> _delegate;

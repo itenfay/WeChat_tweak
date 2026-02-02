@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUIImageView, MMUILabel, MMUIView, WCAdHotDiscussedBarInfo, WCDataItem;
 
-@interface WCAdHotDiscussedBarView
+@interface WCAdHotDiscussedBarView : NSObject
 {
     WCDataItem *_dataItem;
     WCAdHotDiscussedBarInfo *_barInfo;

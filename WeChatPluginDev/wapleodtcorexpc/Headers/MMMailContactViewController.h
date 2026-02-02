@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILongPressMenuView, NSString, UIButton;
 
-@interface MMMailContactViewController
+@interface MMMailContactViewController : NSObject
 {
     NSString *_nsMailContactName;
     NSString *_nsMailContactAddress;

@@ -5,7 +5,7 @@
 
 @class MMTableView, NSDictionary, NSNumber, NSString;
 
-@interface WCPayNewOrderDetailViewController
+@interface WCPayNewOrderDetailViewController : NSObject
 {
     _Bool _expandDiscount;
     _Bool _expandProducts;

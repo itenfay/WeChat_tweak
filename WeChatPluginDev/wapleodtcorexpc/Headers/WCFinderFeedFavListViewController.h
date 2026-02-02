@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSMutableSet, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderCustomImageRichTextView, WCFinderFavInfo, WCFinderFeedFavListViewModel, WCFinderMagicAnimationLogic, WCFinderStreamFooterView;
 
-@interface WCFinderFeedFavListViewController
+@interface WCFinderFeedFavListViewController : NSObject
 {
     CDUnknownBlockType _beforePushVCBlock;
     CDUnknownBlockType _afterPopVCBlock;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, MMUIActivityIndicatorView, MMUILabel, NSString, UIImageView, UIView, WCAppAuthLogicController, WCDataSearcher, WCTimeLineFooterView;
 
-@interface WCAppAuthListViewController
+@interface WCAppAuthListViewController : NSObject
 {
     _Bool _bSearchWording;
     _Bool _isAppear;

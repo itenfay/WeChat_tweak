@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSString, UIButton;
 
-@interface WCPayPhoneTextItem
+@interface WCPayPhoneTextItem : NSObject
 {
     UIButton *m_tipBtn;
     MMUIViewController *m_viewController;

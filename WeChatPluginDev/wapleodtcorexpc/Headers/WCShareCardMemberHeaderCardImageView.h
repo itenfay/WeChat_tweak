@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, UIImageView;
 
-@interface WCShareCardMemberHeaderCardImageView
+@interface WCShareCardMemberHeaderCardImageView : NSObject
 {
     UIImageView *_m_coverImg1;
     UIImageView *_m_coverImg2;

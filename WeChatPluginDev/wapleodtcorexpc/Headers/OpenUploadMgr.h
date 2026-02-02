@@ -6,7 +6,7 @@
 @class EmoticonUploader, FIFOFileQueue, FileQueue, MessageCommonUploader, MsgDataDownloadLogic, NSMutableDictionary, NSString, OpenInfo;
 @protocol OpenUploadMgrDelegate;
 
-@interface OpenUploadMgr
+@interface OpenUploadMgr : NSObject
 {
     FIFOFileQueue *m_queUpload;
     unsigned int m_uiCurEventID;

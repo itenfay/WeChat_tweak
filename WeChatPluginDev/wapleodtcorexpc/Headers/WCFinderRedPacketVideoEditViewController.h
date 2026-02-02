@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, UILabel, UIScrollView, WCFinderRedPacketCoverCropView, WCFinderRedPacketCropSliderView, WCFinderRedPacketVideoEditRequestParams;
 @protocol WCFinderRedPacketVideoEditViewControllerDelegate;
 
-@interface WCFinderRedPacketVideoEditViewController
+@interface WCFinderRedPacketVideoEditViewController : NSObject
 {
     id <WCFinderRedPacketVideoEditViewControllerDelegate> _delegate;
     WCFinderRedPacketVideoEditRequestParams *_requestParams;

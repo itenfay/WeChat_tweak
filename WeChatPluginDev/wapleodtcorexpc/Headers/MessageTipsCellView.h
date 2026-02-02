@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, MessageTipsViewModel, UIImageView, UILabel;
 
-@interface MessageTipsCellView
+@interface MessageTipsCellView : NSObject
 {
     MMUIActivityIndicatorView *_loadingView;
     UILabel *_tipsLabel;

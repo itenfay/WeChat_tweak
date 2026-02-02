@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdCouponConfirmInfo
+@interface WCAdCouponConfirmInfo : NSObject
 {
     NSString *_couponAppId;
     NSString *_couponStockId;

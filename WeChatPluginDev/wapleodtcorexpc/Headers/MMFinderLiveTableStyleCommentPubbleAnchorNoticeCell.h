@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveTableStyleCommentPubbleAnchorNoticeCell
+@interface MMFinderLiveTableStyleCommentPubbleAnchorNoticeCell : NSObject
 {
 }
 

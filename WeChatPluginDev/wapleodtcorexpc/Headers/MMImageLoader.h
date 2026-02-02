@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString;
 
-@interface MMImageLoader
+@interface MMImageLoader : NSObject
 {
     NSRecursiveLock *_lockRequest;
 }

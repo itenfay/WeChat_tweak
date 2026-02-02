@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, UISearchController, WCPaySelectBankSearchResultViewController;
 @protocol WCPaySelectBankViewControllerDelegate;
 
-@interface WCPaySelectBankViewController
+@interface WCPaySelectBankViewController : NSObject
 {
     MMTableView *m_tableView;
     id <WCPaySelectBankViewControllerDelegate> _m_delegate;

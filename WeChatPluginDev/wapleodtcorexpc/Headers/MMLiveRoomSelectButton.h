@@ -5,7 +5,7 @@
 
 @class NSArray, UIImageView, UILabel;
 
-@interface MMLiveRoomSelectButton
+@interface MMLiveRoomSelectButton : NSObject
 {
     NSArray *_roomContacts;
     double _maxWidth;

@@ -6,7 +6,7 @@
 @class ContactsViewTagListCollectionView, NSString;
 @protocol NewContactTagTableViewDelegate;
 
-@interface NewContactTagTableView
+@interface NewContactTagTableView : NSObject
 {
     ContactsViewTagListCollectionView *m_tagListView;
     _Bool _hiddenEditButton;

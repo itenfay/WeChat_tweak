@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KFContact
+@interface KFContact : NSObject
 {
     _Bool _headImgUpdateFlag;
     unsigned int _kfType;

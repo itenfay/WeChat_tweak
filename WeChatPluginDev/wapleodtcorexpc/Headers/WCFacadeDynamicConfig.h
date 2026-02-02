@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, SnsServerConfig, VideoEncodeParams;
 
-@interface WCFacadeDynamicConfig
+@interface WCFacadeDynamicConfig : NSObject
 {
     _Bool _MicroMerchant_isUnfoldEnabled;
     _Bool _MiaoJian_templateEnabled;

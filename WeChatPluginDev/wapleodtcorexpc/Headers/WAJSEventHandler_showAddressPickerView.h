@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_showAddressPickerView
+@interface WAJSEventHandler_showAddressPickerView : NSObject
 {
 }
 

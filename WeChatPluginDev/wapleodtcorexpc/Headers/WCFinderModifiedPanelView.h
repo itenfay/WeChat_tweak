@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, RichTextView, UIView;
 @protocol WCFinderModifiedPanelViewDelegate;
 
-@interface WCFinderModifiedPanelView
+@interface WCFinderModifiedPanelView : NSObject
 {
     id <WCFinderModifiedPanelViewDelegate> _delegate;
     UIView *_containerView;

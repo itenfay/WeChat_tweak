@@ -5,7 +5,7 @@
 
 @class JSEvent, MMLiteAppInfoItem, NSArray, NSMutableDictionary, NSString;
 
-@interface WebviewJSEventHandler_openLiteApp
+@interface WebviewJSEventHandler_openLiteApp : NSObject
 {
     _Bool _syncCheckUpdate;
     _Bool _isHalfScreen;

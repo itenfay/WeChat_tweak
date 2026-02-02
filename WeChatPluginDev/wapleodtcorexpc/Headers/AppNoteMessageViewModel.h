@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AppNoteMessageViewModel
+@interface AppNoteMessageViewModel : NSObject
 {
     NSString *m_titleText;
     NSString *m_contentText;

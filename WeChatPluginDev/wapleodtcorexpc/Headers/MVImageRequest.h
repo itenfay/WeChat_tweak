@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, NSURLSession, NSURLSessionDataTask;
 @protocol MVImageRequestDelegate;
 
-@interface MVImageRequest
+@interface MVImageRequest : NSObject
 {
     _Bool _internalExecuting;
     _Bool _internalFinished;

@@ -6,7 +6,7 @@
 @class MMFinderLiveGloryTopItemView, MMFinderLiveSharePubbleTipView, MMLiveTaskId, MMUIImageView, MMUILabel, MMUIView, NSString;
 @protocol MMFinderLiveGloryTopViewDelegate;
 
-@interface MMFinderLiveGloryTopView
+@interface MMFinderLiveGloryTopView : NSObject
 {
     id <MMFinderLiveGloryTopViewDelegate> _delegate;
     MMLiveTaskId *_taskId;

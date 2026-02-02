@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveKtvSongScoreReportRequest_ScoreInfo, MMFinderLiveKTVSongItem, NSData;
 
-@interface WCFinderLiveKtvSongScoreReportCGI
+@interface WCFinderLiveKtvSongScoreReportCGI : NSObject
 {
     _Bool _isFinish;
     MMFinderLiveKTVSongItem *_songItem;

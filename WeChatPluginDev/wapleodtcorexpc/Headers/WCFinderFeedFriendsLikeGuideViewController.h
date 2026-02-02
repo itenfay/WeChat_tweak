@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UILabel, UIView;
 @protocol WCFinderFeedFriendsLikeGuideViewControllerDelegate;
 
-@interface WCFinderFeedFriendsLikeGuideViewController
+@interface WCFinderFeedFriendsLikeGuideViewController : NSObject
 {
     id <WCFinderFeedFriendsLikeGuideViewControllerDelegate> _delegate;
     NSString *_tipsTitle;

@@ -5,7 +5,7 @@
 
 @class ClientSpecificConfig, FinderLiveDiscoverPreloadInfo, NSData;
 
-@interface WCFinderNavLiveStreamRequestModel
+@interface WCFinderNavLiveStreamRequestModel : NSObject
 {
     _Bool _isPreRecommendRequest;
     unsigned int _nextPagePullType;

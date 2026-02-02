@@ -6,7 +6,7 @@
 @class ContactsDataLogic, MMTableView, MMUIButton, MMUISearchBar, MMUIView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSString, OrderedDictionary, UIView;
 @protocol MultiSelectChatRoomHalfScreenViewControllerDelegate;
 
-@interface MultiSelectChatRoomHalfScreenViewController
+@interface MultiSelectChatRoomHalfScreenViewController : NSObject
 {
     MMUIView *m_contentView;
     MMTableView *m_tableView;

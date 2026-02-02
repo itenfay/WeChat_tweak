@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SystemAuthBizInfo, _TtC6WeChat24SystemAuthCapabilityInfo;
 
-@interface SystemAuthCommonSheetView
+@interface SystemAuthCommonSheetView : NSObject
 {
     _Bool _isComplete;
     CDUnknownBlockType _aggreeBlock;

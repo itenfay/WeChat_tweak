@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WCGestureVector;
 
-@interface WCGestureSet
+@interface WCGestureSet : NSObject
 {
     _Bool _isStandardized;
     WCGestureVector *_vector;

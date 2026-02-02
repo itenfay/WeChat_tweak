@@ -5,7 +5,7 @@
 
 @class CIImage;
 
-@interface TAVImageResource
+@interface TAVImageResource : NSObject
 {
     CIImage *_image;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCMusicSearchManager
+@interface WCMusicSearchManager : NSObject
 {
 }
 

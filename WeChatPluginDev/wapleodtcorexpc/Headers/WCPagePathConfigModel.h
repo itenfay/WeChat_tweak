@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCPagePathConfigModel
+@interface WCPagePathConfigModel : NSObject
 {
     _Bool _isNeedReportSingle;
     unsigned int _prePageCount;

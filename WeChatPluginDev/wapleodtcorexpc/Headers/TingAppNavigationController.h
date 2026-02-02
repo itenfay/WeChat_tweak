@@ -5,7 +5,7 @@
 
 @class MinimizeEdgeGestureHandler, MinimizeNewTransitionController, NSString, UIScreenEdgePanGestureRecognizer;
 
-@interface TingAppNavigationController
+@interface TingAppNavigationController : NSObject
 {
     _Bool _lastPresentedFullPlayer;
     _Bool _presentFromTingApp;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface GameLifeItem
+@interface GameLifeItem : NSObject
 {
     NSMutableDictionary *_digestWording;
 }

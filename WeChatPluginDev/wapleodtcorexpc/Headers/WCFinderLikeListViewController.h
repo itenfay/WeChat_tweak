@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedListView, WCFinderLikeListViewModel, WCFinderShareCustomTransition;
 
-@interface WCFinderLikeListViewController
+@interface WCFinderLikeListViewController : NSObject
 {
     WCFinderLikeListViewModel *_viewModel;
     unsigned long long _firstAppearOffset;

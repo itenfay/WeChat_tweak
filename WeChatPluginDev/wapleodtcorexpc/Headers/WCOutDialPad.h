@@ -6,7 +6,7 @@
 @class UIButton, UIView;
 @protocol WCOutDialPadDelegate;
 
-@interface WCOutDialPad
+@interface WCOutDialPad : NSObject
 {
     unsigned long long m_mode;
     UIView *m_keyPadBtnsView;

@@ -6,7 +6,7 @@
 @class FinderLiveContact, MMFinderLiveAudioRoomMicAudioAnimationView, MMFinderLiveConnectMicUser, MMFinderLiveRedPacketView, MMFinderLiveTaskId, MMLiveRewardGiftNotificationContainerView, MMUIButton, NSString, UIColor, UILabel, UIView, WCFinderContact, WCFinderHeadImageView;
 @protocol MMLiveKtvUserViewDelegate;
 
-@interface MMLiveKtvUserView
+@interface MMLiveKtvUserView : NSObject
 {
     _Bool _userTalking;
     FinderLiveContact *_userContact;

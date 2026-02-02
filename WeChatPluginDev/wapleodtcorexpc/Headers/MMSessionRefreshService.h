@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSString;
 
-@interface MMSessionRefreshService
+@interface MMSessionRefreshService : NSObject
 {
     MMTimer *m_refreshTimer;
     NSMutableArray *m_objectNameArray;

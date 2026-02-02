@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAJSEventHandler_addMapPolygons
+@interface WAJSEventHandler_addMapPolygons : NSObject
 {
     NSMutableArray *_overlays;
 }

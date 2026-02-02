@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameHaowanBasePostInfo
+@interface GameHaowanBasePostInfo : NSObject
 {
     _Bool _isMiniGamePublish;
     _Bool _needDelAfterPost;

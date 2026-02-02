@@ -5,7 +5,7 @@
 
 @class NSString, OCRTransHalfScreenViewController, UIScrollView, UIView, WCImageTranslateLogic;
 
-@interface MMImageActionFindTextItem
+@interface MMImageActionFindTextItem : NSObject
 {
     unsigned int _enterScene;
     unsigned int _svrScene;

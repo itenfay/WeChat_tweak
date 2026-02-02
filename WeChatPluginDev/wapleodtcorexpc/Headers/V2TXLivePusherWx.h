@@ -6,7 +6,7 @@
 @class NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_semaphore, V2TXLivePusherObserverWx;
 
-@interface V2TXLivePusherWx
+@interface V2TXLivePusherWx : NSObject
 {
     unsigned long long _mode;
     long long _networkQuality;

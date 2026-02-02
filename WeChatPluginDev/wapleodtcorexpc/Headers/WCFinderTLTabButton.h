@@ -6,7 +6,7 @@
 @class MMBadgeView, NSString, NSURL, UIColor, UIImage, UIImageView, UILabel, WCFinderAnimationLoadingView, WCFinderRedDotTipsShowInfo;
 @protocol WCFinderTLTabButtonDelegate;
 
-@interface WCFinderTLTabButton
+@interface WCFinderTLTabButton : NSObject
 {
     _Bool _shouldShowLeftIcon;
     id <WCFinderTLTabButtonDelegate> _delegate;

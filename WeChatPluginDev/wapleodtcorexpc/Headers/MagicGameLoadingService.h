@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, _TtC6WeChat19MagicGameLoadingBiz;
 
-@interface MagicGameLoadingService
+@interface MagicGameLoadingService : NSObject
 {
     _TtC6WeChat19MagicGameLoadingBiz *_biz;
     long long _reference;

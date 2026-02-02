@@ -5,7 +5,7 @@
 
 @class JSEvent, NSData, NSString;
 
-@interface WebviewJSEventHandler_scanBankCard
+@interface WebviewJSEventHandler_scanBankCard : NSObject
 {
     _Bool _useHttp;
     NSString *_trueName;

@@ -5,7 +5,7 @@
 
 @class FindFriendRedDotEventSender, FindFriendRedDotReporter, FindPageCustomBarView, GameIndexSettingControl, MMHeadImageView, MMMainTableView, MMTimer, MMTitleView, NSIndexPath, NSMutableArray, NSString, UIImageView, UIView, WCDataItem, WCFinderLifeHomeViewController, WCFinderLiveHomePageViewController, WCFinderNearbyTabPageCacheModel, WCFinderTimelineTabViewController, WCTimeLineViewController;
 
-@interface FindFriendEntryViewController
+@interface FindFriendEntryViewController : NSObject
 {
     _Bool m_bNeedToDestroySelf;
     _Bool m_bBeingAppear;

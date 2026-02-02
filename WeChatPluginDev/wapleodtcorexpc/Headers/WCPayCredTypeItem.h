@@ -5,7 +5,7 @@
 
 @class MMPanelView, NSMutableArray, NSString, UILabel, UIPickerView, WCPayCredInfo;
 
-@interface WCPayCredTypeItem
+@interface WCPayCredTypeItem : NSObject
 {
     UILabel *m_textLabel;
     NSMutableArray *m_arrSection;

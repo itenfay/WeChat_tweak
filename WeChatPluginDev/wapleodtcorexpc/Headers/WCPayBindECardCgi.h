@@ -6,7 +6,7 @@
 @class BindECardReq;
 @protocol WCPayBindECardCgiDelegate;
 
-@interface WCPayBindECardCgi
+@interface WCPayBindECardCgi : NSObject
 {
 }
 

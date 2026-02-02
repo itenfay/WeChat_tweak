@@ -5,7 +5,7 @@
 
 @class AppNoteMessageViewModel, UILabel;
 
-@interface AppNoteMessageCellView
+@interface AppNoteMessageCellView : NSObject
 {
     UILabel *m_titleLabel;
     UILabel *m_contentLabel;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface QueryQRCodeOAuthStateCgi
+@interface QueryQRCodeOAuthStateCgi : NSObject
 {
     _Bool _isCancel;
     _Bool _hasHandleEcdhRollback;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMFinderLiveReplayOperationCommentSnapShot
+@interface MMFinderLiveReplayOperationCommentSnapShot : NSObject
 {
     NSArray *_diffCommentItemArr;
 }

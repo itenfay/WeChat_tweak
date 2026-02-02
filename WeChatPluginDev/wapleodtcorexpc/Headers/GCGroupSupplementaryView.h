@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface GCGroupSupplementaryView
+@interface GCGroupSupplementaryView : NSObject
 {
     UILabel *_groupNameLabel;
 }

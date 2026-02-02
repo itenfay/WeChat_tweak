@@ -5,7 +5,7 @@
 
 @class MMWebImageView;
 
-@interface WCFinderLiveBannerMoreLiveCell
+@interface WCFinderLiveBannerMoreLiveCell : NSObject
 {
     MMWebImageView *_leftIconView;
 }

@@ -5,7 +5,7 @@
 
 @class FinderNewUserPrepareResponse, UIScrollView, WCFinderContact;
 
-@interface WCFinderVestAccountInfoViewController
+@interface WCFinderVestAccountInfoViewController : NSObject
 {
     WCFinderContact *_contact;
     UIScrollView *_scrollView;

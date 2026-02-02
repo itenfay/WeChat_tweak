@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentShareInfo
+@interface WCCanvasComponentShareInfo : NSObject
 {
     _Bool _reportClickEventByOwner;
     NSString *_shareText;

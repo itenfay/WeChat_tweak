@@ -6,7 +6,7 @@
 @class CContact, ContactRelatedGroupLogic, DelaySwitchSettingLogic, ForwardMessageLogicController, MMTableViewInfo, NSString, WCOpLog;
 @protocol ContactInfoAssistDelegate, ContactSettingViewControllerDelegate;
 
-@interface ContactSettingViewController
+@interface ContactSettingViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     CContact *m_contact;

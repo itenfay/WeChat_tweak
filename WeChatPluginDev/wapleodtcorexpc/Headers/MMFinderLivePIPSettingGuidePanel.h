@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMUILabel, UIButton, UIView;
 
-@interface MMFinderLivePIPSettingGuidePanel
+@interface MMFinderLivePIPSettingGuidePanel : NSObject
 {
     CDUnknownBlockType _jumpCallback;
     MMFinderLiveTaskId *_taskId;

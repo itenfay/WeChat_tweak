@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter4Text
+@interface _TtCC6WeChat17KaraFeatureCenter4Text : NSObject
 {
     MISSING_TYPE *_tokenizer;
     MISSING_TYPE *_embedding1x32Model;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayGetF2FReceiveDetailDataCgiDelegate;
 
-@interface WCPayGetF2FReceiveDetailDataCgi
+@interface WCPayGetF2FReceiveDetailDataCgi : NSObject
 {
     unsigned int _maxRecordPerTime;
     unsigned long long _fromTimeStamp;

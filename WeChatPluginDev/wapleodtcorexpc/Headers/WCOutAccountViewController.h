@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, NSString, UIImageView, UILabel, WCOutInviteFriendLogic;
 
-@interface WCOutAccountViewController
+@interface WCOutAccountViewController : NSObject
 {
     unsigned int _clickDetailCount;
     unsigned int _clickFeedbackCount;

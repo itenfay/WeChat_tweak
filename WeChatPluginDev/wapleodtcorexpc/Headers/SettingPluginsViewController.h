@@ -5,7 +5,7 @@
 
 @class ContactGetPluginSwitchCgi, NSMutableArray, NSString, WCPayGetCollAssitStatusCgi;
 
-@interface SettingPluginsViewController
+@interface SettingPluginsViewController : NSObject
 {
     struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> m_mapCellToCellType;
     struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> m_uninstallMapCellToCellType;

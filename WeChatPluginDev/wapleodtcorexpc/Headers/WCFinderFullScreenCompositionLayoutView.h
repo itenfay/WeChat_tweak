@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MAVVideoComposition, NSMutableArray, NSString, WCFinderEditVideoCropView, WCFinderEditVideoMultiVideoCropView, WCFinderEditVideoPorgressInfoViewModel, WCFinderEditVideoProgressInfoView, WCFinderFullScreenEditFrameBlurView;
 @protocol WCFinderFullScreenCompositionLayoutViewDelegate;
 
-@interface WCFinderFullScreenCompositionLayoutView
+@interface WCFinderFullScreenCompositionLayoutView : NSObject
 {
     _Bool _isTimeCropDragging;
     id <WCFinderFullScreenCompositionLayoutViewDelegate> _finderDelegate;

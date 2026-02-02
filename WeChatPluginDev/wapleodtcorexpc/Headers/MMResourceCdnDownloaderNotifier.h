@@ -6,7 +6,7 @@
 @class MMTimer, NSString;
 @protocol MMResourceCdnDownloaderNotifierDelegate;
 
-@interface MMResourceCdnDownloaderNotifier
+@interface MMResourceCdnDownloaderNotifier : NSObject
 {
     id <MMResourceCdnDownloaderNotifierDelegate> _delegate;
     NSString *_identifier;

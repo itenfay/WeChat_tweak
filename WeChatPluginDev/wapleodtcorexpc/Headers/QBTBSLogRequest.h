@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBTBSLogRequest
+@interface QBTBSLogRequest : NSObject
 {
     NSString *jcev2_p_0_r_sGUID;
     NSString *jcev2_p_1_r_sStr;

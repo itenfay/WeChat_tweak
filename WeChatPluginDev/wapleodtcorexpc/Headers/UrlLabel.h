@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, UIColor;
 @protocol ILinkEventExt;
 
-@interface UrlLabel
+@interface UrlLabel : NSObject
 {
     NSString *_urlString;
     NSString *_backupUrlString;

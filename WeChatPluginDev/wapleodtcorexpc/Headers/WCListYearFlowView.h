@@ -6,7 +6,7 @@
 @class MMUIImageView, MMUILabel, UITapGestureRecognizer;
 @protocol WCListYearFloatViewDelegate;
 
-@interface WCListYearFlowView
+@interface WCListYearFlowView : NSObject
 {
     _Bool _canClick;
     id <WCListYearFloatViewDelegate> _delegate;

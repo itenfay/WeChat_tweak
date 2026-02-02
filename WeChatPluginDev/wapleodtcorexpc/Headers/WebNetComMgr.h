@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSRecursiveLock, NSString;
 
-@interface WebNetComMgr
+@interface WebNetComMgr : NSObject
 {
     struct shared_ptr<WebNetCallBack> m_spCallback;
     NSMutableSet *m_TaskCallbackSet;

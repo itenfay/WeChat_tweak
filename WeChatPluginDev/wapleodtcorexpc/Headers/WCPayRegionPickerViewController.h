@@ -6,7 +6,7 @@
 @class LocationRetriever, MMRegionCodeMgr, MMRegionSeachResultsViewController, MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSString, UISearchController, UIViewController;
 @protocol WCPayRegionPickerViewControllerDelegate;
 
-@interface WCPayRegionPickerViewController
+@interface WCPayRegionPickerViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableDictionary *m_dataDict;

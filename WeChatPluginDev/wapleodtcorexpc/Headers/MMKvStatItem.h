@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMKvStatItem
+@interface MMKvStatItem : NSObject
 {
     unsigned int _logId;
     NSString *_seperator;

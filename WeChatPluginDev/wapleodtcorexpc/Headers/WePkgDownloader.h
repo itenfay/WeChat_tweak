@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSURLSessionDownloadTask, WePkgFileDownloadInfo;
 @protocol WePkgDownloaderDelegate;
 
-@interface WePkgDownloader
+@interface WePkgDownloader : NSObject
 {
     WePkgFileDownloadInfo *_downloadInfo;
     id <WePkgDownloaderDelegate> _delegate;

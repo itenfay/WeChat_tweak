@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MiniAudioTaskContentView, NSString;
 
-@interface TingMinimizePlayerTask
+@interface TingMinimizePlayerTask : NSObject
 {
     MiniAudioTaskContentView *_contentView;
 }

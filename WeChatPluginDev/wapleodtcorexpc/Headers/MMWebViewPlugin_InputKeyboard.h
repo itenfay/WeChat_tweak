@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonBoardView, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIButton, UILabel, UIView, WCInputController;
 
-@interface MMWebViewPlugin_InputKeyboard
+@interface MMWebViewPlugin_InputKeyboard : NSObject
 {
     CDUnknownBlockType _inputTextCallbackBlock;
     unsigned long long _maxInputLen;

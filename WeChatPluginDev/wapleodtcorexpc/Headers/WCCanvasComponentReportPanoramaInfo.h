@@ -5,7 +5,7 @@
 
 @class WCCanvasComponentReportUrlInfo;
 
-@interface WCCanvasComponentReportPanoramaInfo
+@interface WCCanvasComponentReportPanoramaInfo : NSObject
 {
     unsigned int _swipeCount;
     WCCanvasComponentReportUrlInfo *_imgUrlInfo;

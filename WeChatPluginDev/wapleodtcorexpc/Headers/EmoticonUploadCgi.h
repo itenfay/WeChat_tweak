@@ -6,7 +6,7 @@
 @class EmoticonUploadInfoObj, NSMutableSet, NSString;
 @protocol EmoticonUploadCgiDelegate;
 
-@interface EmoticonUploadCgi
+@interface EmoticonUploadCgi : NSObject
 {
     unsigned long long m_requestStartTime;
     unsigned int _m_startPos;

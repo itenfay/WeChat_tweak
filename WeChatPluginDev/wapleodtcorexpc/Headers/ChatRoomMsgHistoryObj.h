@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ChatRoomMsgHistoryObj
+@interface ChatRoomMsgHistoryObj : NSObject
 {
     unsigned int _msgType;
     unsigned int _createTime;

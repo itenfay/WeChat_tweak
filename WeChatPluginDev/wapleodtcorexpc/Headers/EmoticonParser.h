@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface EmoticonParser
+@interface EmoticonParser : NSObject
 {
     struct CGSize m_emptySpaceSize;
 }

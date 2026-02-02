@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIImageView, WAHeaderStackDisplayView, WAProfileRelatedViewModel;
 
-@interface WAProfileRelatedBrandCell
+@interface WAProfileRelatedBrandCell : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_descLabel;

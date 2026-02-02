@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UILabel, UIView, WAContact;
 
-@interface WAPrivacyUsageDetailViewController
+@interface WAPrivacyUsageDetailViewController : NSObject
 {
     WAContact *_contact;
     NSMutableArray *_cellDataList;

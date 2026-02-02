@@ -5,7 +5,7 @@
 
 @class NSArray, TXCMetalRenderKernel;
 
-@interface TXCMetalRGBRenderer
+@interface TXCMetalRGBRenderer : NSObject
 {
     TXCMetalRenderKernel *_renderKernel;
     NSArray *_textures;

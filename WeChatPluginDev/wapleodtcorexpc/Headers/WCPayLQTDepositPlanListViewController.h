@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSString, UIButton, UIImageView, UILabel, UIView, WCPayCss;
 @protocol WCPayLQTDepositPlanListViewControllerDelegate;
 
-@interface WCPayLQTDepositPlanListViewController
+@interface WCPayLQTDepositPlanListViewController : NSObject
 {
     MMTableView *m_tableView;
     id <WCPayLQTDepositPlanListViewControllerDelegate> m_delegate;

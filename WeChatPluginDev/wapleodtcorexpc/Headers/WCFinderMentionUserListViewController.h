@@ -6,7 +6,7 @@
 @class MMUISearchBar, NSString, UILabel, UITapGestureRecognizer, UIView, WCFinderMentionSearchViewController, WCFinderMentionUserViewModel, WCFinderRefreshTableFooterView, WCTableView;
 @protocol WCFinderMentionUserListViewControllerDelegate;
 
-@interface WCFinderMentionUserListViewController
+@interface WCFinderMentionUserListViewController : NSObject
 {
     id <WCFinderMentionUserListViewControllerDelegate> _delegate;
     WCTableView *_tableView;

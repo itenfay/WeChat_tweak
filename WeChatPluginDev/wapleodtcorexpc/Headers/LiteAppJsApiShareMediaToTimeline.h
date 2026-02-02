@@ -5,7 +5,7 @@
 
 @class MMLiteAppDownloadMgr, NSDictionary, NSString;
 
-@interface LiteAppJsApiShareMediaToTimeline
+@interface LiteAppJsApiShareMediaToTimeline : NSObject
 {
     _Bool _isImage;
     _Bool _useCDN;

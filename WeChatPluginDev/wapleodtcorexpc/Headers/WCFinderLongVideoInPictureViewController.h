@@ -5,7 +5,7 @@
 
 @class MiniRecTransitionController, NSString, WCFinderFeedContentVM, WCFinderFeedListView, WCPlayerView;
 
-@interface WCFinderLongVideoInPictureViewController
+@interface WCFinderLongVideoInPictureViewController : NSObject
 {
     _Bool _hadAppeared;
     _Bool _disableResume;

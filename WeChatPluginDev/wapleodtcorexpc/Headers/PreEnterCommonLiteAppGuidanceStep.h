@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PreEnterCommonLiteAppGuidanceStep
+@interface PreEnterCommonLiteAppGuidanceStep : NSObject
 {
     _Bool _isValid;
     _Bool _needSyncEscape;

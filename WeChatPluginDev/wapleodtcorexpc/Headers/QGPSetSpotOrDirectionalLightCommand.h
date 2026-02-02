@@ -5,7 +5,7 @@
 
 @class QGPSetSpotOrDirectionalLightParam;
 
-@interface QGPSetSpotOrDirectionalLightCommand
+@interface QGPSetSpotOrDirectionalLightCommand : NSObject
 {
     QGPSetSpotOrDirectionalLightParam *_params;
 }

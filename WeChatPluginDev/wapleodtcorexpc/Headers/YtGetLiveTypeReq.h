@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface YtGetLiveTypeReq
+@interface YtGetLiveTypeReq : NSObject
 {
     int _platform;
     NSString *_app_id;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonCustomManageAddLogic, MMFinderHandOffItem, NSMutableDictionary, NSString, UILabel, UIScrollView, UITableView, UIView, WCFinderAnimationLoadingView, WCFinderCommentDetailViewModel, WCFinderExtStatsReporter, WCFinderFeedDetailCommentInputCell, WCFinderFeedDetailContentView, WCFinderFeedDetailVCParams, WCFinderFeedDetailVCReporter, WCFinderFeedInputView, WCFinderFeedbackView, WCFinderFullToolbarView, WCFinderJumpInfoLBSCardMiniView, WCFinderPhotoFeedDetailViewModel, WCFinderPhotoFeedHeaderView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet;
 @protocol WCFinderFeedDetailViewControllerDelegate, WCFinderHeadInfoViewProtocol><WCFinderJumpInfoViewProtocol;
 
-@interface WCFinderFeedDetailViewController
+@interface WCFinderFeedDetailViewController : NSObject
 {
     _Bool _scrollCanScroll;
     _Bool _tableCanScroll;

@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, UISearchController;
 @protocol MMRegionSeachResultsViewControllerDelegate;
 
-@interface MMRegionSeachResultsViewController
+@interface MMRegionSeachResultsViewController : NSObject
 {
     NSArray *_results;
     id <MMRegionSeachResultsViewControllerDelegate> _delegate;

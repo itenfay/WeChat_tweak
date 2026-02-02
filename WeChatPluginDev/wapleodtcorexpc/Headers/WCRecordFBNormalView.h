@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCRecordFBNormalView
+@interface WCRecordFBNormalView : NSObject
 {
     NSMutableArray *_arrPillarsA;
     NSMutableArray *_arrPillarsB;

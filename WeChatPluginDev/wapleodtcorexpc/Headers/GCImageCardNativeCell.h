@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, UIImageView, UIView;
 
-@interface GCImageCardNativeCell
+@interface GCImageCardNativeCell : NSObject
 {
     UIView *_containerView;
     MMWebImageView *_coverImageView;

@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSString, UIView;
 
-@interface MMFinderScreenRecordWebTipView
+@interface MMFinderScreenRecordWebTipView : NSObject
 {
     UIView *_contentView;
     MMWebViewController *_webViewController;

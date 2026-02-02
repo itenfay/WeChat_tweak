@@ -6,7 +6,7 @@
 @class NSString, WCFinderFeedListView, WCFinderNearbyRelatedViewModel, WCFinderShareCustomTransition;
 @protocol WCFinderNearbyRelatedViewControllerDelegate;
 
-@interface WCFinderNearbyRelatedViewController
+@interface WCFinderNearbyRelatedViewController : NSObject
 {
     id <WCFinderNearbyRelatedViewControllerDelegate> _delegate;
     WCFinderFeedListView *_feedListView;

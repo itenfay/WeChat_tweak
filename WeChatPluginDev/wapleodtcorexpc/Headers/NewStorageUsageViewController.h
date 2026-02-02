@@ -5,7 +5,7 @@
 
 @class MMDiskUsageScaner, MMUIScrollView, NSArray, NSMutableArray, NSString, StorageUsageDetailView, StorageUsageLoadingView, StorageUsageSummaryModel, StorageUsageSummaryView, UILabel, UIView;
 
-@interface NewStorageUsageViewController
+@interface NewStorageUsageViewController : NSObject
 {
     MMUIScrollView *m_backgroundView;
     UIView *m_headerView;

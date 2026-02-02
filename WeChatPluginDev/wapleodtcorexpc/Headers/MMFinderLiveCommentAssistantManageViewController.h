@@ -5,7 +5,7 @@
 
 @class MMFinderLiveCommentAssitantManageView, MMFinderLiveCommentAssitantManageViewModel, MMFinderLiveTaskId, WCLiveBlurButton;
 
-@interface MMFinderLiveCommentAssistantManageViewController
+@interface MMFinderLiveCommentAssistantManageViewController : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     MMFinderLiveCommentAssitantManageView *_manageView;

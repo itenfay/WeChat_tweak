@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UILabel, WCFinderDataItem, WCFinderFeedImageCDNView, WCFinderNormalProgressBar;
 @protocol WCFinderBriefIntroCradViewDelegate;
 
-@interface WCFinderBriefIntroCradView
+@interface WCFinderBriefIntroCradView : NSObject
 {
     id <WCFinderBriefIntroCradViewDelegate> _m_delegate;
     UILabel *_nextTipsLabel;

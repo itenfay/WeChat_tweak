@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderContactTagOptionCGI
+@interface WCFinderContactTagOptionCGI : NSObject
 {
     NSString *_wxUsername;
     unsigned long long _optionType;

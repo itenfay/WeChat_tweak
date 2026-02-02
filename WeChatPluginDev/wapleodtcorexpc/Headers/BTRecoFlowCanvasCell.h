@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BTRecoFlowSeparatorLineView, MMWebCanvasItemData, MMWebCanvasView, NSMutableDictionary, NSString;
 
-@interface BTRecoFlowCanvasCell
+@interface BTRecoFlowCanvasCell : NSObject
 {
     _Bool _isDisplaying;
     _Bool _hasExposedOnce;

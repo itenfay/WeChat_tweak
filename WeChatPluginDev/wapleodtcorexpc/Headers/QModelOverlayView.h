@@ -5,7 +5,7 @@
 
 @class QModelOverlay;
 
-@interface QModelOverlayView
+@interface QModelOverlayView : NSObject
 {
 }
 

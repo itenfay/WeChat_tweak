@@ -5,7 +5,7 @@
 
 @class NSMutableSet;
 
-@interface QMUClusterAnnotation
+@interface QMUClusterAnnotation : NSObject
 {
     NSMutableSet *_items;
 }

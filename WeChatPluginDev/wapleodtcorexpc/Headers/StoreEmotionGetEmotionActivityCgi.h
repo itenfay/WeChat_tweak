@@ -6,7 +6,7 @@
 @class NSString;
 @protocol StoreEmotionGetEmotionActivityCgiDelegate;
 
-@interface StoreEmotionGetEmotionActivityCgi
+@interface StoreEmotionGetEmotionActivityCgi : NSObject
 {
     NSString *m_activityId;
     NSString *m_md5;

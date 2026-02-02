@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29CarPlayTingTapeListController
+@interface _TtC6WeChat29CarPlayTingTapeListController : NSObject
 {
     MISSING_TYPE *recentListenLine;
     MISSING_TYPE *recentListenTapeList;

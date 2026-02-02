@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportImageEntranceExposeItem
+@interface WAReportImageEntranceExposeItem : NSObject
 {
     unsigned int _exposeUserUin;
     int _chatType;

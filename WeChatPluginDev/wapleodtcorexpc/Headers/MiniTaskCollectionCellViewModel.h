@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MinimizeTaskData, NSMutableArray, NSString, UIImage, WCScheduleItem;
 @protocol MiniTaskCollectionCellViewModelDelegate;
 
-@interface MiniTaskCollectionCellViewModel
+@interface MiniTaskCollectionCellViewModel : NSObject
 {
     _Bool _isOutdate;
     _Bool _isCellVisible;

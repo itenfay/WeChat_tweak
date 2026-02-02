@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet;
 
-@interface MMWebViewPlugin_WebApiControl
+@interface MMWebViewPlugin_WebApiControl : NSObject
 {
     unsigned int _curMinInJsapiFrequencyBase;
     NSMutableDictionary *_dictInvokeCountInMin;

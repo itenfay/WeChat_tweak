@@ -5,7 +5,7 @@
 
 @class NSString, WAWebViewPlugin_InputKeyboard, WAWebViewPlugin_NativeView;
 
-@interface WAJSEventHandler_showModal
+@interface WAJSEventHandler_showModal : NSObject
 {
     WAWebViewPlugin_InputKeyboard *_keyboardPlugin;
     WAWebViewPlugin_NativeView *_nativeInstance;

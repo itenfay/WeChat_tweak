@@ -5,7 +5,7 @@
 
 @class MMTableView, NSArray, NSString, WCAppAuthDataItem, WCAppAuthDetailFooterView, WCAppAuthDetailHeaderView, WCAppAuthLogicController;
 
-@interface WCAppAuthDetailViewController
+@interface WCAppAuthDetailViewController : NSObject
 {
     unsigned int _scene;
     unsigned int _fromIndex;

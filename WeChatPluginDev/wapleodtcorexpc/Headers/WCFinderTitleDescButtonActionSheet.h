@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, RichTextView, UIView;
 @protocol WCFinderTitleDescButtonActionSheetDelegate;
 
-@interface WCFinderTitleDescButtonActionSheet
+@interface WCFinderTitleDescButtonActionSheet : NSObject
 {
     id <WCFinderTitleDescButtonActionSheetDelegate> _businessDelegate;
     UIView *_tipsView;

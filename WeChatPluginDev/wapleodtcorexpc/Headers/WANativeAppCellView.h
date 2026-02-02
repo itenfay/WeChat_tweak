@@ -5,7 +5,7 @@
 
 @class RichTextView, UIImageView, WANativeAppViewModel;
 
-@interface WANativeAppCellView
+@interface WANativeAppCellView : NSObject
 {
     RichTextView *m_titleLabel;
     RichTextView *m_detailLabel;

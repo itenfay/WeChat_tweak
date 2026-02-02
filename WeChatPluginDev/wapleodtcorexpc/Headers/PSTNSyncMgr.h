@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSRecursiveLock, NSString;
 
-@interface PSTNSyncMgr
+@interface PSTNSyncMgr : NSObject
 {
     _Bool mIsSessionActive;
     _Bool mIsNeedSync;

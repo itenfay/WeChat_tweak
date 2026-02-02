@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, _TtC6WeChat31MagicPermissionConfigPkgManager;
 
-@interface MagicPermissionConfigService
+@interface MagicPermissionConfigService : NSObject
 {
     _TtC6WeChat31MagicPermissionConfigPkgManager *_pkgMgr;
     NSMutableDictionary *_dicBizName2Config;

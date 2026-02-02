@@ -5,7 +5,7 @@
 
 @class EmoticonStoreFootView, EmotionBannerSet, EmotionStoreRecList, LoopPageScrollView, MMLoadingView, MMTableView, NSMutableArray, NSString, ShareMessageConfirmLogicHelper, StoreEmotionGetEmotionListCgi, StoreEmotionPageShareLogic;
 
-@interface StoreEmotionTopicViewController
+@interface StoreEmotionTopicViewController : NSObject
 {
     LoopPageScrollView *_bannerView;
     MMTableView *_tableView;

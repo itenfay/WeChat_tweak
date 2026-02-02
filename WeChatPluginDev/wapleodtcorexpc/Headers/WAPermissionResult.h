@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPermissionResult
+@interface WAPermissionResult : NSObject
 {
     _Bool _useTempPermission;
     _Bool _needDelayExecute;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BrandTemplateMsgAuthMessageBubbleModel, MMBrandHeadImageView, MMUIButton, MMUILabel, NSString, UIButton, UIImageView, UILabel, WAContactGetter, WCPayRecepictReaderMessageViewModel, WCSubscriptionNotifyActionHeaderView_;
 
-@interface WCPayRecepictReaderMessageCellView
+@interface WCPayRecepictReaderMessageCellView : NSObject
 {
     MMBrandHeadImageView *m_headerView;
     UILabel *m_nickNameLabel;

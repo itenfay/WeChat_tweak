@@ -6,7 +6,7 @@
 @class MMUILabel, UIActivityIndicatorView, UIImageView, UIView;
 @protocol MMLimitedModeBizCellDelegate;
 
-@interface MMLimitedModeBizCell
+@interface MMLimitedModeBizCell : NSObject
 {
     id <MMLimitedModeBizCellDelegate> _delegate;
     long long _bizType;

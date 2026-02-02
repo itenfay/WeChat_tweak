@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUINavigationBar, MultiDeviceAutoLoginLogic, MultiDeviceCardView, MultiDeviceLoginInfo, MultiDeviceLoginLogic, MultiDeviceManageLogic, NSArray, NSMutableArray, NSString, UINavigationItem, UIScreenEdgePanGestureRecognizer, UITapGestureRecognizer, WCSheetView;
 
-@interface MultiDeviceManageViewController
+@interface MultiDeviceManageViewController : NSObject
 {
     _Bool _userOpen;
     MMUINavigationBar *_customNavigationBar;

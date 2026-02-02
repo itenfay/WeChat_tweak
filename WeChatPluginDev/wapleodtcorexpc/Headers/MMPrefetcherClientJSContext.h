@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSVirtualMachine, MMClientJsApiHandler, MMPrefetcherClientADJsApiHandler, MMPrefetcherClientJSContextConfig, MMPrefetcherClientJsApiHandler, MMWebJsBasePkgInfo, NSString;
 
-@interface MMPrefetcherClientJSContext
+@interface MMPrefetcherClientJSContext : NSObject
 {
     CDUnknownBlockType _callback;
     MMClientJsApiHandler *_clientJsApiHandler;

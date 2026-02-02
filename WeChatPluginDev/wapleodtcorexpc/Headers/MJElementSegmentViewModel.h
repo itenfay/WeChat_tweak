@@ -6,7 +6,7 @@
 @class OMCContentDescSegment, OMCElementSegment;
 @protocol OMCLayerSpatialAdjustable;
 
-@interface MJElementSegmentViewModel
+@interface MJElementSegmentViewModel : NSObject
 {
     OMCElementSegment *_elementSegment;
     CDStruct_1b6d18a9 _trimmingOriginalDuration;

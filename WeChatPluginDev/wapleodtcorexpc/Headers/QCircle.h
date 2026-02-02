@@ -5,7 +5,7 @@
 
 @class NSString, WAMapCircleData;
 
-@interface QCircle
+@interface QCircle : NSObject
 {
     double _radius;
     struct CLLocationCoordinate2D _coordinate;

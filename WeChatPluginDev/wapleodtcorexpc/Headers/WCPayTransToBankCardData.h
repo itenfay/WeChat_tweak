@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCPayTransToBankCardReceiver, WarningNotice;
 
-@interface WCPayTransToBankCardData
+@interface WCPayTransToBankCardData : NSObject
 {
     unsigned int _m_enterTimeScene;
     unsigned int _m_uiTransferAmount;

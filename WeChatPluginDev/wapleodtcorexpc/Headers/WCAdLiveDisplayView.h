@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, UIImageView, WCAdRollView, WCDataItem;
 
-@interface WCAdLiveDisplayView
+@interface WCAdLiveDisplayView : NSObject
 {
     _Bool _isFullCard;
     WCDataItem *_dataItem;

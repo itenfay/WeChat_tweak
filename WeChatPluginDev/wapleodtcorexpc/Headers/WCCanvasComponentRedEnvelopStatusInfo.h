@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentRedEnvelopStatusInfo
+@interface WCCanvasComponentRedEnvelopStatusInfo : NSObject
 {
     int _subType;
     int _isDoubleCard;

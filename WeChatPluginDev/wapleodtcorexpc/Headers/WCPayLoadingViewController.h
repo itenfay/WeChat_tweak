@@ -6,7 +6,7 @@
 @class WCBizLoadingView;
 @protocol WCPayLoadingViewControllerDelegate;
 
-@interface WCPayLoadingViewController
+@interface WCPayLoadingViewController : NSObject
 {
     WCBizLoadingView *m_loadView;
     id <WCPayLoadingViewControllerDelegate> _delegate;

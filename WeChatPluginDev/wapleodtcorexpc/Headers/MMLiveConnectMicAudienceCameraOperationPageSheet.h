@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMLiveCameraOperationItem, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol MMLiveConnectMicAudienceCameraOperationPanelDelegate;
 
-@interface MMLiveConnectMicAudienceCameraOperationPageSheet
+@interface MMLiveConnectMicAudienceCameraOperationPageSheet : NSObject
 {
     id <MMLiveConnectMicAudienceCameraOperationPanelDelegate> _actionDelegate;
     MMFinderLiveTaskId *_taskId;

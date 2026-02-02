@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCNewShareCardLayoutCacheItem
+@interface WCNewShareCardLayoutCacheItem : NSObject
 {
     _Bool _entryShowRedDot;
     _Bool _entryShowNew;

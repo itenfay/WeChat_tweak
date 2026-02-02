@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface MMSoundSwitchDetector
+@interface MMSoundSwitchDetector : NSObject
 {
     unsigned int _soundId;
     NSMutableArray *_completeHandlers;

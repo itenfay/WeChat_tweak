@@ -5,7 +5,7 @@
 
 @class MPCommentReplyCellViewModel, UIView;
 
-@interface MPCommentReplyCellView
+@interface MPCommentReplyCellView : NSObject
 {
     UIView *m_authorMarkView;
 }

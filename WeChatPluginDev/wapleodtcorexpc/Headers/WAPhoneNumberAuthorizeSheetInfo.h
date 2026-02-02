@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAPhoneNumberAuthorizeSheetInfo
+@interface WAPhoneNumberAuthorizeSheetInfo : NSObject
 {
     NSMutableArray *_phoneInfoArray;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdDynamicCanvasPackageUpdateReportModel
+@interface WCAdDynamicCanvasPackageUpdateReportModel : NSObject
 {
     unsigned long long _errorCode;
     NSString *_currentVersion;

@@ -5,7 +5,7 @@
 
 @class UIView, WCFinderFullScrollTextView, WCFinderLiveNowView;
 
-@interface MMFinderLiveFeedStreamCarouselTextLineCell
+@interface MMFinderLiveFeedStreamCarouselTextLineCell : NSObject
 {
     WCFinderLiveNowView *_liveTipsView;
     WCFinderFullScrollTextView *_textView;

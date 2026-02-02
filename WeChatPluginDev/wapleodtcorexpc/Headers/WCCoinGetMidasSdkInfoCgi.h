@@ -5,7 +5,7 @@
 
 @protocol WCCoinGetMidasSdkInfoCgiDelegate;
 
-@interface WCCoinGetMidasSdkInfoCgi
+@interface WCCoinGetMidasSdkInfoCgi : NSObject
 {
     id <WCCoinGetMidasSdkInfoCgiDelegate> _delegate;
 }

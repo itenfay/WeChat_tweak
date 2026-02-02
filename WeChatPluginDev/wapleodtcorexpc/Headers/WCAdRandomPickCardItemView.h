@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, UIImageView, UILabel, UIView, WCAdRandomPickCardItemInfo, WCAdRandomPickCardItemsInfo, WCAdURLImageView;
 @protocol WCAdRandomPickCardItemViewDelegate;
 
-@interface WCAdRandomPickCardItemView
+@interface WCAdRandomPickCardItemView : NSObject
 {
     WCAdRandomPickCardItemInfo *_itemInfo;
     WCAdRandomPickCardItemsInfo *_itemsInfo;

@@ -6,7 +6,7 @@
 @class MMHeadImageView, MMUILabel, MMWebImageView, NSString, TextStateIcon, UIView;
 @protocol TextStateBaseNotifyInfo;
 
-@interface TextStateSquareButton
+@interface TextStateSquareButton : NSObject
 {
     _Bool _needsUpdateView;
     unsigned int _notifyCount;

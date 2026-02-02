@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWHomepageDataProvider
+@interface WWHomepageDataProvider : NSObject
 {
     NSString *fpHash;
     _Bool isWorking;

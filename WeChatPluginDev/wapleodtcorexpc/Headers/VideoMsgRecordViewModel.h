@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface VideoMsgRecordViewModel
+@interface VideoMsgRecordViewModel : NSObject
 {
     UIImage *_urlImage;
 }

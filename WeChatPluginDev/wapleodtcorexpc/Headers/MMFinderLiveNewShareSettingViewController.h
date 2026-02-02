@@ -6,7 +6,7 @@
 @class MMFinderLivePartialVisivilitySettingInfo, MMFinderLivePartialVisivilityShareSettingView, MMFinderLivePaymentVisivilitySettingInfo, MMFinderLivePaymentVisivilityShareSettingView, MMFinderLiveShareSettingInitParams, MMFinderLiveTestLivePartialVisivilitySettingInfo, MMFinderLiveTestLivePartialVisivilityShareSettingView, MMTableViewInfo, NSArray, NSMutableArray, NSString;
 @protocol MMFinderLiveNewShareSettingViewControllerDelegate;
 
-@interface MMFinderLiveNewShareSettingViewController
+@interface MMFinderLiveNewShareSettingViewController : NSObject
 {
     _Bool _forceDarkMode;
     _Bool _isVisibilityDoneButtonEnable;

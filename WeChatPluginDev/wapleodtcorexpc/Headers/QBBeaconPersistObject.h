@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBBeaconPersistObject
+@interface QBBeaconPersistObject : NSObject
 {
     long long dbid;
     long long encLength;

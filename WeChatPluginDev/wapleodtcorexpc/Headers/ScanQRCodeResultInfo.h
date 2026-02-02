@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScanQRCodeResultInfo
+@interface ScanQRCodeResultInfo : NSObject
 {
     _Bool _scanFromAlbum;
     _Bool _scanFromCombineTab;

@@ -5,7 +5,7 @@
 
 @class UILabel, WCAdURLImageView, WCCanvasRandomLayoutEncorePickInfo;
 
-@interface WCCanvasRandomPickCardBottomIntroduceView
+@interface WCCanvasRandomPickCardBottomIntroduceView : NSObject
 {
     WCCanvasRandomLayoutEncorePickInfo *_encoreInfo;
     unsigned long long _cardsRemainCount;

@@ -5,7 +5,7 @@
 
 @class FinderNewUserPrepareResponse, NSString, WCFinderContact, WCTableViewManager;
 
-@interface WCFinderCreatorCenterViewController
+@interface WCFinderCreatorCenterViewController : NSObject
 {
     _Bool _hasExposeAnchorTaskEntrance;
     _Bool _hasExposeAnchorTaskRedDot;

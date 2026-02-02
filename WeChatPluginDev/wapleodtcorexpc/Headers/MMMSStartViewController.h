@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMMSStartViewController
+@interface MMMSStartViewController : NSObject
 {
     UIImageView *m_logoView;
 }

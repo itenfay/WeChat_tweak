@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextState3rdParty2022WinterOlympicLiveHandler
+@interface TextState3rdParty2022WinterOlympicLiveHandler : NSObject
 {
     NSString *_liveUsername;
     NSString *_liveNickname;

@@ -6,7 +6,7 @@
 @class NSString, UIView;
 @protocol WAMediaCastingPageSheetDelegate;
 
-@interface WAMediaCastingPageSheet
+@interface WAMediaCastingPageSheet : NSObject
 {
     _Bool _shouldRelease;
     id <WAMediaCastingPageSheetDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openBluetoothAdapter
+@interface WAJSEventHandler_openBluetoothAdapter : NSObject
 {
     _Bool _openBackground;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, NSDate, UIView, WCRedEnvelopesRedEnvelopesDetailViewController, WCRedEnvelopesStoryViewController;
 
-@interface WCRedEnvelopesStoryDargUtil
+@interface WCRedEnvelopesStoryDargUtil : NSObject
 {
     _Bool _isHasStory;
     _Bool _isDragEnd;

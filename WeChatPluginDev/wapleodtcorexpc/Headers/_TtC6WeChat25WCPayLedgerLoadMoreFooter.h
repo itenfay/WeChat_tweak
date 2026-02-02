@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25WCPayLedgerLoadMoreFooter
+@interface _TtC6WeChat25WCPayLedgerLoadMoreFooter : NSObject
 {
     MISSING_TYPE *indicator;
     MISSING_TYPE *hintLabel;

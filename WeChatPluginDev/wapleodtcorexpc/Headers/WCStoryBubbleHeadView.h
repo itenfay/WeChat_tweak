@@ -6,7 +6,7 @@
 @class MMCPLabel, MMHeadImageView, MMImageView, MMUIButton, NSString, RichTextView, UILabel, UIView, UIVisualEffectView, WCStoryComment;
 @protocol WCStoryBubbleHeadViewDelegate;
 
-@interface WCStoryBubbleHeadView
+@interface WCStoryBubbleHeadView : NSObject
 {
     _Bool _isUnread;
     _Bool _shouldShowUnreadVideoMark;

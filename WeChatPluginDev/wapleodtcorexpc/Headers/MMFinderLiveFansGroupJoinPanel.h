@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupInterestsCell, MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, MMUIMaskContainerView, NSString, UIImageView, UIScrollView, UIView, WCFinderHeadImageView;
 
-@interface MMFinderLiveFansGroupJoinPanel
+@interface MMFinderLiveFansGroupJoinPanel : NSObject
 {
     _Bool _needPurchase;
     CDUnknownBlockType _joinCallback;

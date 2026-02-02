@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface JoinChatRoomResp
+@interface JoinChatRoomResp : NSObject
 {
     NSString *extMsg;
 }

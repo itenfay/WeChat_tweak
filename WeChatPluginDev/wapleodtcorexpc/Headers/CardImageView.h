@@ -5,7 +5,7 @@
 
 @class UIImageView, UIStackView;
 
-@interface CardImageView
+@interface CardImageView : NSObject
 {
     UIStackView *_stackView;
     UIImageView *_imageView;

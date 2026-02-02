@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WAMainListNewTipsLogicDelegate;
 
-@interface WAMainListNewTipsLogic
+@interface WAMainListNewTipsLogic : NSObject
 {
     id <WAMainListNewTipsLogicDelegate> _delegate;
 }

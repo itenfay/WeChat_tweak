@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavoritesDataItemSource
+@interface FavoritesDataItemSource : NSObject
 {
     int _sourceType;
     NSString *_sourceId;

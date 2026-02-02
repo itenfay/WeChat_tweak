@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCMusicSmartBoxWorker
+@interface WCMusicSmartBoxWorker : NSObject
 {
 }
 

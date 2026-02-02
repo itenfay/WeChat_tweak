@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAShapeLayer, CameraScannerView, MMTimer, NSString, PAGView, PalmEntryLogicController, PalmGuidingTipsView, UIImageView, UIView;
 @protocol PalmEntryViewControllerDelegate;
 
-@interface PalmEntryViewController
+@interface PalmEntryViewController : NSObject
 {
     _Bool _isPageClose;
     _Bool _hasDetectPalm;

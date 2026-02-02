@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WCAdLookbookCardReportItemModel;
 
-@interface WCAdLookbookCardReportModel
+@interface WCAdLookbookCardReportModel : NSObject
 {
     unsigned int _scrollCount;
     unsigned int _slideCount;

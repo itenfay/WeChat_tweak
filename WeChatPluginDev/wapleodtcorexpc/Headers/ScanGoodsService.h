@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScanGoodsService
+@interface ScanGoodsService : NSObject
 {
     _Bool _isUploadingCameraImageInfo;
 }

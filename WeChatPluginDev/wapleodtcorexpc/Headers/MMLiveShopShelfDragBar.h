@@ -5,7 +5,7 @@
 
 @class MMUIView;
 
-@interface MMLiveShopShelfDragBar
+@interface MMLiveShopShelfDragBar : NSObject
 {
     MMUIView *_barView;
     double _displayDragCloseStyleProgress;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PhoneNumberFormatInfo
+@interface PhoneNumberFormatInfo : NSObject
 {
     NSString *leadingDigitsRegex;
     NSString *pattern;

@@ -6,7 +6,7 @@
 @class EmoticonStoreDownloadView, MMEmoticonStoreDownloadViewConfig, NSString, UIImageView;
 @protocol MMEmoticonStoreDownloadLogicDelegate;
 
-@interface MMEmoticonStoreDownloadLogic
+@interface MMEmoticonStoreDownloadLogic : NSObject
 {
     long long _scene;
     long long _downloadType;

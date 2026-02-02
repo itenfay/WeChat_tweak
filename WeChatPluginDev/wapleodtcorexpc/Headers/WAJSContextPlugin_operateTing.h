@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface WAJSContextPlugin_operateTing
+@interface WAJSContextPlugin_operateTing : NSObject
 {
     NSString *_curClientId;
     NSMutableSet *_setMusicWhiteListAppid;

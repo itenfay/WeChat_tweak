@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandProfileItemVideoViewModel
+@interface BrandProfileItemVideoViewModel : NSObject
 {
     double _titleMaxWidth;
     NSString *_timeStr;

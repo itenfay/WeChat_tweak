@@ -5,7 +5,7 @@
 
 @class MMLocatingCoordinateLogic;
 
-@interface NewLifeCurrentLocationHandler
+@interface NewLifeCurrentLocationHandler : NSObject
 {
     MMLocatingCoordinateLogic *_coordinateLogic;
 }

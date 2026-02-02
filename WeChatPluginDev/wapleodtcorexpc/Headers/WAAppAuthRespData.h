@@ -5,7 +5,7 @@
 
 @class NSArray, WxaUseUserInfo;
 
-@interface WAAppAuthRespData
+@interface WAAppAuthRespData : NSObject
 {
     NSArray *_authInfoList;
     WxaUseUserInfo *_useUserInfo;

@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface MMHookUIAlertHolder
+@interface MMHookUIAlertHolder : NSObject
 {
     NSMutableSet *_alertViews;
 }

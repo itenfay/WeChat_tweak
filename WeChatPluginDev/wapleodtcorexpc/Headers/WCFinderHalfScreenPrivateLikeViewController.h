@@ -5,7 +5,7 @@
 
 @class NSString, PAGView, RichTextView, UIButton;
 
-@interface WCFinderHalfScreenPrivateLikeViewController
+@interface WCFinderHalfScreenPrivateLikeViewController : NSObject
 {
     RichTextView *_titleTextView;
     RichTextView *_subtitleTextView;

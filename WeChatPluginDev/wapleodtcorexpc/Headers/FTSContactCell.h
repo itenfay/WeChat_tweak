@@ -5,7 +5,7 @@
 
 @class AttributeLabel, CContact, MMBrandHeadImageView, MMHeadImageView, MMImageView, MMUILabel, SearchMatchTip, TextStateItemView, UIImage, UIImageView, WCTagsView;
 
-@interface FTSContactCell
+@interface FTSContactCell : NSObject
 {
     CContact *_contact;
     SearchMatchTip *_matchTip;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableSet, NSString;
 
-@interface WAEJBindingTouchInput
+@interface WAEJBindingTouchInput : NSObject
 {
     struct OpaqueJSString *jsLengthName;
     struct OpaqueJSString *jsTargetName;

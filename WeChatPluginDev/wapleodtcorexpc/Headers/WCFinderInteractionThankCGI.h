@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderInteractionThankCGIParams;
 
-@interface WCFinderInteractionThankCGI
+@interface WCFinderInteractionThankCGI : NSObject
 {
     _Bool _thanked;
     CDUnknownBlockType _successBlock;

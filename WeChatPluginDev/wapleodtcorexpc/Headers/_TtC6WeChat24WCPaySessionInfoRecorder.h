@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat24WCPaySessionInfoRecorder
+@interface _TtC6WeChat24WCPaySessionInfoRecorder : NSObject
 {
     MISSING_TYPE *jsapiInfoMap;
 }

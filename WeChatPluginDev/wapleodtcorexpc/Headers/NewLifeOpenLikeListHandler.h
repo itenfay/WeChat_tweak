@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedFriendsLikeListViewController;
 
-@interface NewLifeOpenLikeListHandler
+@interface NewLifeOpenLikeListHandler : NSObject
 {
     int _scene;
     WCFinderFeedFriendsLikeListViewController *_tmpLikeListVC;

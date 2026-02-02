@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIFont;
 
-@interface BrandProfileItemTextViewModel
+@interface BrandProfileItemTextViewModel : NSObject
 {
     struct CGSize _mainTitleSize;
     NSMutableArray *_mainTitleStyles;

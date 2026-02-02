@@ -5,7 +5,7 @@
 
 @class MMDeviceHeadImageView, UILabel;
 
-@interface WCDevicePedometerCell
+@interface WCDevicePedometerCell : NSObject
 {
     MMDeviceHeadImageView *_headView;
     UILabel *_titleLabel;

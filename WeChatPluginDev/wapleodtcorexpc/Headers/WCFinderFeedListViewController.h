@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderAnimationLoadingView, WCFinderFeedArray, WCFinderFeedListView, WCFinderStreamLoadingState;
 
-@interface WCFinderFeedListViewController
+@interface WCFinderFeedListViewController : NSObject
 {
     _Bool _allowMinimize;
     int _scene;

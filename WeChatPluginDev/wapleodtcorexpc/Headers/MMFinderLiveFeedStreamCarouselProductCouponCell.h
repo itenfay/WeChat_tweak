@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFeedStreamProductStyleView, NSString;
 
-@interface MMFinderLiveFeedStreamCarouselProductCouponCell
+@interface MMFinderLiveFeedStreamCarouselProductCouponCell : NSObject
 {
     MMFinderLiveFeedStreamProductStyleView *_couponStyleView;
 }

@@ -5,7 +5,7 @@
 
 @class AppGameShareMessageViewModel;
 
-@interface AppGameShareMessageCellView
+@interface AppGameShareMessageCellView : NSObject
 {
 }
 

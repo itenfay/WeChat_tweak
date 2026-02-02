@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMTableViewInfo, UIView;
 
-@interface MMFinderLiveSettingPanel
+@interface MMFinderLiveSettingPanel : NSObject
 {
     CDUnknownBlockType _pipSwitchChangeCallback;
     MMFinderLiveTaskId *_taskId;

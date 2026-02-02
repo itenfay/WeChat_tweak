@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayModifyPayPwdLogic
+@interface WCPayModifyPayPwdLogic : NSObject
 {
 }
 

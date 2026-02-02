@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCPayPhoneTextItem, WCPayTenpaySecureCtrlItem;
 @protocol WCPayECardFillCardInfoViewControllerDelegate;
 
-@interface WCPayECardFillCardInfoViewController
+@interface WCPayECardFillCardInfoViewController : NSObject
 {
     id <WCPayECardFillCardInfoViewControllerDelegate> _delegate;
     WCPayTenpaySecureCtrlItem *_bankCardNumberTextFieldItem;

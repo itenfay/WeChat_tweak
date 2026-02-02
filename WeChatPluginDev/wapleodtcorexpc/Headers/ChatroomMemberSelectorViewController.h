@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, NSString;
 
-@interface ChatroomMemberSelectorViewController
+@interface ChatroomMemberSelectorViewController : NSObject
 {
     CContact *_chatroomContact;
     NSString *_customizedTitle;

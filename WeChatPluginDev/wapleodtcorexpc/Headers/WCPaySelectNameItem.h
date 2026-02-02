@@ -5,7 +5,7 @@
 
 @class NSString, TenpaySecureCtrl, UILabel, WCPayTransferToBankCardCandidateView;
 
-@interface WCPaySelectNameItem
+@interface WCPaySelectNameItem : NSObject
 {
     UILabel *m_nameLabel;
     _Bool m_isUnselectable;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavRecordVideoNodeView
+@interface FavRecordVideoNodeView : NSObject
 {
 }
 

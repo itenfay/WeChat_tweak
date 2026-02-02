@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPStringReturn
+@interface QGPStringReturn : NSObject
 {
     NSString *_value;
 }

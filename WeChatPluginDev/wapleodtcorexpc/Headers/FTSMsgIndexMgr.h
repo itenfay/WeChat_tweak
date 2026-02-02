@@ -5,7 +5,7 @@
 
 @class FTS5MigrationInfo, FTSMessageDB, FTSMsgIndexState, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString;
 
-@interface FTSMsgIndexMgr
+@interface FTSMsgIndexMgr : NSObject
 {
     NSRecursiveLock *_lock;
     unsigned int _unIndexNewMsgCount;

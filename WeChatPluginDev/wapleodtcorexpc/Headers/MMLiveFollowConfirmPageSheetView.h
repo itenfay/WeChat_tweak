@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveContext, MMUILabel, MMWebImageView, NSString, UIImageView, UIScrollView, WCFinderContact, WCFinderHeadImageView;
 
-@interface MMLiveFollowConfirmPageSheetView
+@interface MMLiveFollowConfirmPageSheetView : NSObject
 {
     _Bool _isPop;
     _Bool _isPopup;

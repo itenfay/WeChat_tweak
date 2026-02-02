@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderPOIBasicInfoRequestParams;
 
-@interface WCFinderPoiBasicInfoCGI
+@interface WCFinderPoiBasicInfoCGI : NSObject
 {
     WCFinderPOIBasicInfoRequestParams *_params;
     CDUnknownBlockType _successBlock;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, UILabel, UISwitch, UIView;
 
-@interface WXGRoamHalfScreenView
+@interface WXGRoamHalfScreenView : NSObject
 {
     MMUILabel *m_titleLabel;
     MMUILabel *m_subTitleLabel;

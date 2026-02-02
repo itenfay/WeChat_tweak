@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString, UIView;
 
-@interface DataReportViewDebugInfoSheetView
+@interface DataReportViewDebugInfoSheetView : NSObject
 {
     UIView *_debugView;
     MMTableView *_tableView;

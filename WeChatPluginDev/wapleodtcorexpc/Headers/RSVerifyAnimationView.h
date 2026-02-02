@@ -6,7 +6,7 @@
 @class NSString, RSAnimationHeadImgView;
 @protocol RSVerifyAnimationViewDelegate;
 
-@interface RSVerifyAnimationView
+@interface RSVerifyAnimationView : NSObject
 {
     RSAnimationHeadImgView *_headImage;
     struct CGPoint _originPoint;

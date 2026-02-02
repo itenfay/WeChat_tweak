@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LocalJSEventHandler_postComments
+@interface LocalJSEventHandler_postComments : NSObject
 {
 }
 

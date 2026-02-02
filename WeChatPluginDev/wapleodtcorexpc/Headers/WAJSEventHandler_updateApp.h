@@ -5,7 +5,7 @@
 
 @class NSString, WAContactGetter;
 
-@interface WAJSEventHandler_updateApp
+@interface WAJSEventHandler_updateApp : NSObject
 {
     WAContactGetter *_contactGetter;
     unsigned int _latestVersion;

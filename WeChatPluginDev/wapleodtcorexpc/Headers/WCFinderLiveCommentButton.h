@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UILabel, WCFinderLiveCommentBlurButtonBackView;
 
-@interface WCFinderLiveCommentButton
+@interface WCFinderLiveCommentButton : NSObject
 {
     _Bool _isSynchronizeLayout;
     UILabel *_commentBadgeLabel;

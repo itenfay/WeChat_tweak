@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMGameAudioMixWrapper, MMGameOffTexture, NSString;
 
-@interface WAWebViewPlugin_GameLive
+@interface WAWebViewPlugin_GameLive : NSObject
 {
     _Bool started;
     _Bool capture;

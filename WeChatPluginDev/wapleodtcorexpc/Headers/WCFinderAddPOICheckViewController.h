@@ -5,7 +5,7 @@
 
 @class MMPickLocationViewController, MMUIButton, NSString, RichTextView, UIButton, UIImageView, UILabel;
 
-@interface WCFinderAddPOICheckViewController
+@interface WCFinderAddPOICheckViewController : NSObject
 {
     NSString *_finderUsername;
     UILabel *_titleLabel;

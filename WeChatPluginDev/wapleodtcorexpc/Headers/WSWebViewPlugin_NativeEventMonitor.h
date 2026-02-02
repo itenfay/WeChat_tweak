@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WSWebViewPlugin_NativeEventMonitor
+@interface WSWebViewPlugin_NativeEventMonitor : NSObject
 {
     MISSING_TYPE *enableSendwebviewAppear;
 }

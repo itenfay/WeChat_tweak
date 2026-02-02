@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavLiteAppItem
+@interface FavLiteAppItem : NSObject
 {
     unsigned int _mediaType;
     unsigned int _jumpType;

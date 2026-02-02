@@ -6,7 +6,7 @@
 @class AttributeLabel, MMWebImageView, UIImageView, UILabel, UIView;
 @protocol WCFinderGameLiveListCellDelegate;
 
-@interface WCFinderGameLiveListCell
+@interface WCFinderGameLiveListCell : NSObject
 {
     _Bool _isSelectGame;
     id <WCFinderGameLiveListCellDelegate> _delegate;

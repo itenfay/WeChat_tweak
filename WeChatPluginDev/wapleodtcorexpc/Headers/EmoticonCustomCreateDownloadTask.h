@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface EmoticonCustomCreateDownloadTask
+@interface EmoticonCustomCreateDownloadTask : NSObject
 {
     CDUnknownBlockType _finderOnPrepareDownloadBlock;
     CDUnknownBlockType _finderOnStartDownloadBlock;

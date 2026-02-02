@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat16WARuntimeTaskMgr
+@interface _TtC6WeChat16WARuntimeTaskMgr : NSObject
 {
     MISSING_TYPE *dicRuntime;
 }

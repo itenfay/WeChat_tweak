@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCAccountBindPhoneForRegCGI, WCAccountGatewayMobileHandler, WCAccountManualAuthControlLogic, WCAccountRegisterControlLogic, WCPrivacyPolicyControlLogic;
 
-@interface WCAccountPhoneRegLoginControlLogic
+@interface WCAccountPhoneRegLoginControlLogic : NSObject
 {
     unsigned int m_uiABtest;
     unsigned long long m_eRegStyleStatus;

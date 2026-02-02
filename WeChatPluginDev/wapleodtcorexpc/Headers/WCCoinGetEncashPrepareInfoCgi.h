@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol WCCoinGetEncashPrepareInfoCgiDelegate;
 
-@interface WCCoinGetEncashPrepareInfoCgi
+@interface WCCoinGetEncashPrepareInfoCgi : NSObject
 {
     NSMutableArray *_businessId;
     id <WCCoinGetEncashPrepareInfoCgiDelegate> _delegate;

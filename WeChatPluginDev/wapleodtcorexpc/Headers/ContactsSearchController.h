@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ContactsViewTagListCollectionView, MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UITextField, UIView, WCColorProxy, WCSTokenPickLogic;
 @protocol ContactsSearchControllerDelegate;
 
-@interface ContactsSearchController
+@interface ContactsSearchController : NSObject
 {
     id <ContactsSearchControllerDelegate> m_delegate;
     _Bool _isShowAllTags;

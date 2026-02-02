@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, ShareCardMessageViewModel, UIImageView, UILabel;
 
-@interface ShareCardMessageCellView
+@interface ShareCardMessageCellView : NSObject
 {
     UILabel *m_nicknameLabel;
     UILabel *m_usernameLabel;

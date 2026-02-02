@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BrandProfileEnterInfo, CBaseContactInfoAssist, CContact, CContactVerifyLogic, CMessageWrap, ForwardMessageLogicController, MMPageSheetAdapter, MMTimer, MMUIButton, MMUIView, NSData, NSDictionary, NSMutableDictionary, NSString, SendVerifyMsgLogicController, TextStatePrivacyMgr, TextStateProfileCardContentView, TextStateProfileDragAnimateHelper, UIButton, UITableView, WCStoryDragAnimationUtil;
 @protocol ContactInfoViewControllerDelegate, contactInfoDelegate;
 
-@interface ContactInfoViewController
+@interface ContactInfoViewController : NSObject
 {
     unsigned int m_uiVerify;
     CContact *m_contact;

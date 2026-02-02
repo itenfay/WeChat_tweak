@@ -5,7 +5,7 @@
 
 @protocol WCPayGetFaceCheckLiveTypeCgiDelegate;
 
-@interface WCPayGetFaceCheckLiveTypeCgi
+@interface WCPayGetFaceCheckLiveTypeCgi : NSObject
 {
     id <WCPayGetFaceCheckLiveTypeCgiDelegate> _cgiDelegate;
 }

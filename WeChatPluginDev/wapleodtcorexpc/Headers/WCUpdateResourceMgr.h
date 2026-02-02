@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCUpdateResourceMgr
+@interface WCUpdateResourceMgr : NSObject
 {
 }
 

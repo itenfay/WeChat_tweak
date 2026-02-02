@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x142
+@interface WloginTlv_0x142 : NSObject
 {
     unsigned short wIDVer;
     NSString *sIdentifier;

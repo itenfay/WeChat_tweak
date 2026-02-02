@@ -6,7 +6,7 @@
 @class MMPageSheetBaseView, MMTableViewInfo, NSString;
 @protocol ShakeSettingViewControllerDelegate><ShakeListDelegate;
 
-@interface ShakeSettingViewController
+@interface ShakeSettingViewController : NSObject
 {
     id <ShakeSettingViewControllerDelegate><ShakeListDelegate> m_delegate;
     MMTableViewInfo *_tableViewInfo;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, OrderedDictionary;
 
-@interface MJCdnDownloadManager
+@interface MJCdnDownloadManager : NSObject
 {
     unsigned long long _maxRunningConcurrentCount;
     OrderedDictionary *_pendingTasks;

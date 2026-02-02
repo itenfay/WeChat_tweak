@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x167
+@interface WloginTlv_0x167 : NSObject
 {
     unsigned char cImgType;
     unsigned char cImgFormat;

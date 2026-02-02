@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class IConfSDKRegisterableCallbackHolder, MMConfSDKVideoHWenc, MMOpenVoiceAudioMgr, MMOpenVoiceJoinRoomCGIImp, MMOpenVoiceMemberMgr, MMOpenVoiceNetworkMgr, MMOpenVoiceSessionMgr, MMOpenVoiceVideoMgr, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol OS_dispatch_queue;
 
-@interface MMOpenVoiceService
+@interface MMOpenVoiceService : NSObject
 {
     NSObject<OS_dispatch_queue> *_workerQueue;
     MMOpenVoiceSessionMgr *_sessionMgr;

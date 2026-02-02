@@ -6,7 +6,7 @@
 @class MMImageView, MMUILabel, NSString, UIButton, UITextField, UIView;
 @protocol WCPayQrcodeUsagehalfPageCellDelegate;
 
-@interface WCPayQrcodeUsagehalfPageCell
+@interface WCPayQrcodeUsagehalfPageCell : NSObject
 {
     _Bool _isSelected;
     _Bool _showInputField;

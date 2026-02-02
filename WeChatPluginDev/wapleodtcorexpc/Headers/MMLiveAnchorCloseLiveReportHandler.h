@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveAnchorCloseLiveReportHandler
+@interface MMLiveAnchorCloseLiveReportHandler : NSObject
 {
     unsigned int scene;
     unsigned int roomRole;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiveNoticeInfo, NSString, UITapGestureRecognizer, WCFinderFeedContentVM, WCFinderJumpInfo, WCFinderLiveNoticeCellViewModel;
 @protocol WCFinderJumpInfoViewBaseDelegate;
 
-@interface WCFinderLiveFeedBubbleView
+@interface WCFinderLiveFeedBubbleView : NSObject
 {
     int _showPosition;
     id <WCFinderJumpInfoViewBaseDelegate> _delegate;

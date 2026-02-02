@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCMegaVideoModBulletCommentSwitchCGI
+@interface WCMegaVideoModBulletCommentSwitchCGI : NSObject
 {
     _Bool _commentSwitch;
     CDUnknownBlockType _successful;

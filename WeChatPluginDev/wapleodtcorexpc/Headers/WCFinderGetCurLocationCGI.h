@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetCurLocationCGI
+@interface WCFinderGetCurLocationCGI : NSObject
 {
     CDUnknownBlockType _completionBlock;
     CDUnknownBlockType _failedBlock;

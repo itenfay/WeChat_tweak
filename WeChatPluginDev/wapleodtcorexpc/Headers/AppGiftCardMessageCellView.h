@@ -5,7 +5,7 @@
 
 @class AppGiftCardMessageViewModel, MMWebImageView, NSString, UIImageView, UILabel;
 
-@interface AppGiftCardMessageCellView
+@interface AppGiftCardMessageCellView : NSObject
 {
     UILabel *m_titleLabel;
     UILabel *m_descLabel;

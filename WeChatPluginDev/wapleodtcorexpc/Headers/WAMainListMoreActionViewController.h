@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo;
 
-@interface WAMainListMoreActionViewController
+@interface WAMainListMoreActionViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
 }

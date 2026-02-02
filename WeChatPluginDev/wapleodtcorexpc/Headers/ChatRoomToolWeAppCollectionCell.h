@@ -5,7 +5,7 @@
 
 @class ChatRoomToolWeAppInfo, MMUILabel, MMWebImageView;
 
-@interface ChatRoomToolWeAppCollectionCell
+@interface ChatRoomToolWeAppCollectionCell : NSObject
 {
     MMWebImageView *m_appIconView;
     MMUILabel *m_titleLabel;

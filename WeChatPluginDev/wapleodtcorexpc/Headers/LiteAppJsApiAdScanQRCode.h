@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiAdScanQRCode
+@interface LiteAppJsApiAdScanQRCode : NSObject
 {
     NSString *_qrUrl;
     NSString *_qrExtInfo;

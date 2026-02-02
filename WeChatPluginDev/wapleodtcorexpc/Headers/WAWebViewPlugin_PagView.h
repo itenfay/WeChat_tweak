@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSString;
 @protocol IMBFileSystem;
 
-@interface WAWebViewPlugin_PagView
+@interface WAWebViewPlugin_PagView : NSObject
 {
     id <IMBFileSystem> _fileSystem;
     NSMutableDictionary *_pagViewDataList;

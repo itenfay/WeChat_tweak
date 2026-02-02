@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLocatingCoordinateLogic, MMPOIAnnotation, NSArray, NSMutableArray, NSString, POIItem, QIndoorInfo, QPoiInfo;
 @protocol MMPickLocationDataActionDelegate;
 
-@interface PickLocationManager
+@interface PickLocationManager : NSObject
 {
     _Bool _disablePoiDirectionDesc;
     unsigned int _scene;

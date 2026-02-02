@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonVideoConverter, NSString;
 
-@interface EmoticonCreateVideoUploadTask
+@interface EmoticonCreateVideoUploadTask : NSObject
 {
     CDUnknownBlockType _convertStartBlock;
     CDUnknownBlockType _convertFailBlock;

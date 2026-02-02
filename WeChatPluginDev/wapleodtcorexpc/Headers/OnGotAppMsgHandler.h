@@ -6,7 +6,7 @@
 @class AppCommunicateData, NSString, ShareMessageConfirmLogicHelper;
 @protocol OnGotAppMsgHandleDelegate;
 
-@interface OnGotAppMsgHandler
+@interface OnGotAppMsgHandler : NSObject
 {
     NSString *m_nsAppid;
     AppCommunicateData *m_appData;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAMediaCastingUpnpCommand_SetAVTransportURI
+@interface WAMediaCastingUpnpCommand_SetAVTransportURI : NSObject
 {
     NSString *_uri;
 }

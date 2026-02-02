@@ -5,7 +5,7 @@
 
 @class NSString, WXMediaMessage;
 
-@interface LaunchFromWXReq
+@interface LaunchFromWXReq : NSObject
 {
     NSString *lang;
     NSString *country;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIImageView;
 
-@interface MMLiveRewardGainRecordsBar
+@interface MMLiveRewardGainRecordsBar : NSObject
 {
     CDUnknownBlockType _giftRecordsButtonClickedBlock;
     NSString *_rewardWecoinCntTitle;

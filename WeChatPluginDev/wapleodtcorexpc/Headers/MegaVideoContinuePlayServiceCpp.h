@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoContinuePlayServiceCpp
+@interface MegaVideoContinuePlayServiceCpp : NSObject
 {
 }
 

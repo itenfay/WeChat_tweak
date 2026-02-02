@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardAcceptCardSeed
+@interface WCCardAcceptCardSeed : NSObject
 {
     unsigned int _cardType;
     NSString *_cardTpID;

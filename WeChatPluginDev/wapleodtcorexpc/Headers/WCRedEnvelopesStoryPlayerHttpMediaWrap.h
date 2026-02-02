@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCRedEnvelopesStoryPlayerHttpMediaWrap
+@interface WCRedEnvelopesStoryPlayerHttpMediaWrap : NSObject
 {
     unsigned int _subtypeId;
     NSString *_resourceURL;

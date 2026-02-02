@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebOptimizationDomainControlData
+@interface MMWebOptimizationDomainControlData : NSObject
 {
     unsigned int _controlExpiredTime;
     unsigned int _controlBits;

@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView;
 
-@interface WCLiveActionSheet
+@interface WCLiveActionSheet : NSObject
 {
     NSString *_richTitle;
     id _extraInfo;

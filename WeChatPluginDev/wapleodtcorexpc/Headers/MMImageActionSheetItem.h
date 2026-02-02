@@ -5,7 +5,7 @@
 
 @class MMImageActionSheet, MMUIViewController, NSString, UIImage;
 
-@interface MMImageActionSheetItem
+@interface MMImageActionSheetItem : NSObject
 {
     _Bool _isHidden;
     _Bool _isClickable;

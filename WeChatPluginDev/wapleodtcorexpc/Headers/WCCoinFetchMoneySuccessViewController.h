@@ -5,7 +5,7 @@
 
 @class EncashResultPageInfo, LiveRewardIncomeBizInfo;
 
-@interface WCCoinFetchMoneySuccessViewController
+@interface WCCoinFetchMoneySuccessViewController : NSObject
 {
     _Bool _fetchFromLiveStyle;
     unsigned long long _fetchAmount;

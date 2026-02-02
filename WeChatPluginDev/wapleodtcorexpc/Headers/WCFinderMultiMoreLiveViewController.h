@@ -5,7 +5,7 @@
 
 @class MultiMoreLiveEnterParams, NSMutableDictionary, NSString, UIColor, WCFinderDiscoveryLiveTabPageViewModel, WCFinderEmptyTipsView, WCFinderLivePageStayReporter, WCFinderTabPageView;
 
-@interface WCFinderMultiMoreLiveViewController
+@interface WCFinderMultiMoreLiveViewController : NSObject
 {
     WCFinderTabPageView *_tabPageView;
     WCFinderEmptyTipsView *_emptyTipsView;

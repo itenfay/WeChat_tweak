@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WebviewJSEventHandler_chooseImage
+@interface WebviewJSEventHandler_chooseImage : NSObject
 {
     unsigned int m_imgCnt;
     long long m_sizeType;

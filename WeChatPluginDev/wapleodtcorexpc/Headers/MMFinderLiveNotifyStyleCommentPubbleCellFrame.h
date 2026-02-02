@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTask, NSMutableDictionary, UIFont;
 
-@interface MMFinderLiveNotifyStyleCommentPubbleCellFrame
+@interface MMFinderLiveNotifyStyleCommentPubbleCellFrame : NSObject
 {
     UIFont *_topCommentContentFontPotrait;
     UIFont *_topCommentContentFontLandScape;

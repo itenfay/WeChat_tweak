@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_shareTimeline
+@interface WAJSEventHandler_shareTimeline : NSObject
 {
 }
 

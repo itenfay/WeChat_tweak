@@ -6,7 +6,7 @@
 @class BaseResponseErrMsg, GraphicVerifyWindow, NSData, NSString;
 @protocol PasswordLogicDelegate;
 
-@interface PasswordLogic
+@interface PasswordLogic : NSObject
 {
     id <PasswordLogicDelegate> m_delegate;
     unsigned int m_opCode;

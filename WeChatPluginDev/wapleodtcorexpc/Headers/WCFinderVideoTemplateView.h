@@ -6,7 +6,7 @@
 @class MMWebImageView, RichTextView, UIImageView, UILabel, WCFinderAuthInfoIconView;
 @protocol WCFinderVideoTemplateViewDelegate;
 
-@interface WCFinderVideoTemplateView
+@interface WCFinderVideoTemplateView : NSObject
 {
     id <WCFinderVideoTemplateViewDelegate> _delegate;
     UILabel *_titleLabel;

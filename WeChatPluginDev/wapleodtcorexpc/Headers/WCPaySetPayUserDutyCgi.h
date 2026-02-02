@@ -5,7 +5,7 @@
 
 @protocol WCPaySetPayUserDutyCgiDelegate;
 
-@interface WCPaySetPayUserDutyCgi
+@interface WCPaySetPayUserDutyCgi : NSObject
 {
     id <WCPaySetPayUserDutyCgiDelegate> _m_delegate;
 }

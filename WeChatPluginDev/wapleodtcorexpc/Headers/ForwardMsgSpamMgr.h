@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMsgSpamDb, NSString;
 
-@interface ForwardMsgSpamMgr
+@interface ForwardMsgSpamMgr : NSObject
 {
     ForwardMsgSpamDb *_db;
 }

@@ -5,7 +5,7 @@
 
 @class AVSampleBufferDisplayLayer, NSRecursiveLock, UIView;
 
-@interface WCVideoSampleBufferRender
+@interface WCVideoSampleBufferRender : NSObject
 {
     struct __CVBuffer *_localImageBuffer;
     _Bool _isMirror;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedMediaWrap, WCFinderMediaInfo;
 
-@interface EmoticonCustomCreateVideoDownloadTask
+@interface EmoticonCustomCreateVideoDownloadTask : NSObject
 {
     unsigned long long _targetBitrate;
     WCFinderFeedMediaWrap *_downloadingWrap;

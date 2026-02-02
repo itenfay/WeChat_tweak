@@ -5,7 +5,7 @@
 
 @class NSArray, NSDiffableDataSourceSnapshot, NSString, UITableView, UITableViewDiffableDataSource;
 
-@interface WCFinderCommentFriendLikeListView
+@interface WCFinderCommentFriendLikeListView : NSObject
 {
     UITableView *_tableView;
     NSArray *_likeInfoArray;

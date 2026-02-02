@@ -5,7 +5,7 @@
 
 @class ShareDataToOpenSDKController;
 
-@interface MMImageActionOpenDeviceItem
+@interface MMImageActionOpenDeviceItem : NSObject
 {
     ShareDataToOpenSDKController *_shareVc;
 }

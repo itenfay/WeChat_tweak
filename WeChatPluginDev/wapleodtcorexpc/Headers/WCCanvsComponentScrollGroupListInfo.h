@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCCanvsComponentScrollGroupListInfo
+@interface WCCanvsComponentScrollGroupListInfo : NSObject
 {
     int _pageCtrType;
     int _isFullScreen;

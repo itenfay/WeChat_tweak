@@ -6,7 +6,7 @@
 @class WCRedEnvelopesWelcomePageLayout;
 @protocol WCRedEnvelopesWelcomePageViewControllerDelegate;
 
-@interface WCRedEnvelopesWelcomePageViewController
+@interface WCRedEnvelopesWelcomePageViewController : NSObject
 {
     id <WCRedEnvelopesWelcomePageViewControllerDelegate> m_delegate;
     _Bool m_bDidBack;

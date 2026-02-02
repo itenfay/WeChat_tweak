@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSString, WASubscriptionMessageDataReporter, WASubscriptionMessagePageSheet;
 @protocol WASubscriptionMessageLogicDataSource, WASubscriptionMessageLogicDelegate;
 
-@interface WASubscriptionMessageLogic
+@interface WASubscriptionMessageLogic : NSObject
 {
     unsigned int _appType;
     id <WASubscriptionMessageLogicDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class BrandActionReportLogicController, BrandDeviceConnectLogicController, BrandStyleUILogicController, BrandTemplateMsgAuthLogic, NSMutableArray, NSMutableSet, NSString, TemplateMsgExposeLogic, TipsView;
 
-@interface BrandContentLogicController
+@interface BrandContentLogicController : NSObject
 {
     TipsView *m_tipsView;
     BrandStyleUILogicController *m_uiLogicController;

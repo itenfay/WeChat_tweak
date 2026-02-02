@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvelopesCheckAndUseTimeLimitPromoCgiDelegate;
 
-@interface WCRedEnvelopesCheckAndUseTimeLimitPromoCgi
+@interface WCRedEnvelopesCheckAndUseTimeLimitPromoCgi : NSObject
 {
     id <WCRedEnvelopesCheckAndUseTimeLimitPromoCgiDelegate> m_delegate;
 }

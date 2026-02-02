@@ -5,7 +5,7 @@
 
 @class NSString, WCEditImageViewController;
 
-@interface WAJSEventHandler_editImage
+@interface WAJSEventHandler_editImage : NSObject
 {
     WCEditImageViewController *_editImageViewController;
 }

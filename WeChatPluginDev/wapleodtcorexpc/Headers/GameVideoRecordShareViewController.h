@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MiniGameVideoFile, NSMutableDictionary, NSString, RichTextView, UIButton, UIView, WCPlayerConfigControlView, WCPlayerView;
 
-@interface GameVideoRecordShareViewController
+@interface GameVideoRecordShareViewController : NSObject
 {
     unsigned int _width;
     unsigned int _height;

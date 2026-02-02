@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TXCDispatchQueue, TXCDroppableDispatcher, TXCRetrier, TXCVideoEncodeConfig, TXCVideoEncoderSupervisor;
 
-@interface TXCHardwareVideoEncoder
+@interface TXCHardwareVideoEncoder : NSObject
 {
     _Bool _enable_restart_encoder_when_bitrate_not_health;
     _Bool _should_restart_after_bitrate_changed;

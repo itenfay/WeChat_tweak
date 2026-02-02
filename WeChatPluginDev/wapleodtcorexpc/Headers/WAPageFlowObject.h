@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPageFlowObject
+@interface WAPageFlowObject : NSObject
 {
     _Bool _isEntrance;
     _Bool _isReportBePoped;

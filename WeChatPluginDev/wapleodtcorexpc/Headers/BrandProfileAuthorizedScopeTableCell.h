@@ -6,7 +6,7 @@
 @class BrandProfileAuthorizedScopeTableCellViewModel, MMUILabel, MMWebImageView, UIButton, UIView;
 @protocol BrandProfileAuthorizedScopeTableCellDelegate;
 
-@interface BrandProfileAuthorizedScopeTableCell
+@interface BrandProfileAuthorizedScopeTableCell : NSObject
 {
     id <BrandProfileAuthorizedScopeTableCellDelegate> _delegate;
     MMWebImageView *_appIconImageView;

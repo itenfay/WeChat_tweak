@@ -5,7 +5,7 @@
 
 @class AttributeLabel, FTSFavSearchResultItem, NSMutableArray, NSString, UIView;
 
-@interface FTSFavCell
+@interface FTSFavCell : NSObject
 {
     FTSFavSearchResultItem *_searchItem;
     NSMutableArray *_arrKeyword;

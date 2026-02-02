@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCCanvasComponentReportFloatJumpInfo
+@interface WCCanvasComponentReportFloatJumpInfo : NSObject
 {
     unsigned int _autoJumpCount;
     unsigned int _swipeJumpCount;

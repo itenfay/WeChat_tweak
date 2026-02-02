@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, UIView;
 
-@interface BTMinimizeAnimationView
+@interface BTMinimizeAnimationView : NSObject
 {
     UIView *_backgroundView;
     UIView *_snapshotCellView;

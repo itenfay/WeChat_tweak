@@ -5,7 +5,7 @@
 
 @class MMLanguageCache, NSBundle, NSString;
 
-@interface MMLanguageMgr
+@interface MMLanguageMgr : NSObject
 {
     NSString *m_nsCurSystemLanguage;
     NSString *m_curLanguage;

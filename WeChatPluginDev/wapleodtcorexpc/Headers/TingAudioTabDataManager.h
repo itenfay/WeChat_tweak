@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, NSString;
 
-@interface TingAudioTabDataManager
+@interface TingAudioTabDataManager : NSObject
 {
     _Bool _hasShowAudioTab;
     MemoryMappedKV *_mmkv;

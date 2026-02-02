@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveAudienceOpFansGroupCGI
+@interface WCFinderLiveAudienceOpFansGroupCGI : NSObject
 {
     unsigned long long _opType;
     NSData *_liveCookies;

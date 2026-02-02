@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString;
 
-@interface WCAdCardMultiProductsScreenOneView
+@interface WCAdCardMultiProductsScreenOneView : NSObject
 {
     NSString *_title;
     NSString *_desc;

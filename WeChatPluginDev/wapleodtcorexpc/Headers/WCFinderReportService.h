@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSMutableArray, NSPointerArray, NSString, WCFinderFluencyReportCenter, WCFinderLoadReporter, WCFinderTimelineFluencyReportManager, WCPlayerPlaybackInfo;
 
-@interface WCFinderReportService
+@interface WCFinderReportService : NSObject
 {
     WCFinderTimelineFluencyReportManager *_finderReportManager;
     WCFinderLoadReporter *_loadReporter;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveCheckVerifyResultCGI
+@interface WCFinderLiveCheckVerifyResultCGI : NSObject
 {
     unsigned int _verifyType;
     NSString *_secverifyId;

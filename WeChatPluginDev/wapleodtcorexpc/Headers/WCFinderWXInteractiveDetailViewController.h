@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedListView, WCFinderShareCustomTransition, WCFinderWXInteractiveDetailViewModel;
 
-@interface WCFinderWXInteractiveDetailViewController
+@interface WCFinderWXInteractiveDetailViewController : NSObject
 {
     long long _offset;
     WCFinderFeedListView *_feedListView;

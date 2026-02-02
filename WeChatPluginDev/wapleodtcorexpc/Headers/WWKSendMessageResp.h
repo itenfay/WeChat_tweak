@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKSendMessageResp
+@interface WWKSendMessageResp : NSObject
 {
 }
 

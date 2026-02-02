@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderFullScreenEditImageViewControllerDelegate;
 
-@interface WCFinderFullScreenEditImageViewController
+@interface WCFinderFullScreenEditImageViewController : NSObject
 {
     id <WCFinderFullScreenEditImageViewControllerDelegate> _finderDelegate;
     unsigned long long _enterScene;

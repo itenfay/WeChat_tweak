@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface _TtC9WeAppCore41WAJSEventHandler_setVisualEffectOnCapture
+@interface _TtC9WeAppCore41WAJSEventHandler_setVisualEffectOnCapture : NSObject
 {
 }
 

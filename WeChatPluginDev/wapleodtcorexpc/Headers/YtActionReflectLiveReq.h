@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableArray, NSString, YtDataPack_OC, YtImageInfo;
 
-@interface YtActionReflectLiveReq
+@interface YtActionReflectLiveReq : NSObject
 {
     int _platform;
     int _mode;

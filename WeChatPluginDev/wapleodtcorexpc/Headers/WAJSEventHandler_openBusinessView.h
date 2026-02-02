@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSDictionary, NSString, WAAppIdToUsernameTransfer;
 
-@interface WAJSEventHandler_openBusinessView
+@interface WAJSEventHandler_openBusinessView : NSObject
 {
     WAAppIdToUsernameTransfer *_appID2UserNameTransfer;
     NSString *_bizTypeStr;

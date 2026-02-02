@@ -6,7 +6,7 @@
 @class MJMovieDeleteButton, MJMovieTextButton, NSString;
 @protocol MJMovieTextEditViewDelegate;
 
-@interface MJMovieTextEditView
+@interface MJMovieTextEditView : NSObject
 {
     id <MJMovieTextEditViewDelegate> _delegate;
     unsigned long long _style;

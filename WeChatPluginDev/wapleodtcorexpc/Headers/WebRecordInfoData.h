@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebRecordInfoData
+@interface WebRecordInfoData : NSObject
 {
     unsigned int _visittime;
     NSString *_link;

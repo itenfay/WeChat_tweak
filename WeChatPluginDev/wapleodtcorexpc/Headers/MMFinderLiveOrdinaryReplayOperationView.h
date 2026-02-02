@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicFocusedVideoHeaderView, MMFinderLiveHeaderView, MMFinderLivePaymentRetryViewBar, MMFinderLiveReplayBarrageView, MMFinderLiveReplayCommentView, MMFinderLiveReplayMessageSource, MMFinderLiveRewardRecievingLogic, MMLiveAudioOnlyIndicatorView, MMLiveLoadingEllipsisLabel, MMLiveRewardGiftRecievingAnimationView, MMUIActivityIndicatorView, MMUIButton, MMUILabel, NSString, UIImageView, UILabel, UIView, WCFinderLiveNowView, WCFinderLiveRateAutoIncreaseTipView, WCFinderLiveReplayMomentsLogic, WCFinderLiveReplayMomentsView, WCFinderLiveReplayRateOperationView;
 @protocol MMFinderLiveOrdinaryReplayOperationViewDelegate;
 
-@interface MMFinderLiveOrdinaryReplayOperationView
+@interface MMFinderLiveOrdinaryReplayOperationView : NSObject
 {
     _Bool _supressMessageUpdate;
     _Bool _isClickFirst;

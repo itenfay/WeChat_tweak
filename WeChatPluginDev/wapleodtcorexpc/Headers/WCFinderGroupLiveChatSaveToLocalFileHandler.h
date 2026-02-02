@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderGroupLiveChatSaveToLocalFileHandler
+@interface WCFinderGroupLiveChatSaveToLocalFileHandler : NSObject
 {
     unsigned int _lastCRC32;
     NSString *_filePath;

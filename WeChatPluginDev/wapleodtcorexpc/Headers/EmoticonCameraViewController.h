@@ -6,7 +6,7 @@
 @class AVCaptureDevice, AVCaptureSession, AVCaptureVideoDataOutput, EditImageAnimatedEmoticonTool, EditImageAnimatedTextTool, EditImageColor, EmoticonCameraPreviewView, EmoticonCameraReportObject, EmoticonCameraResultView, EmoticonCameraToolBar, EmoticonEmptyEditView, EmoticonLensDesignerView, EmoticonLensDynamicTipView, EmoticonLensDynamicToolView, EmoticonLensInfo, EmoticonLensPackage, MMCircularProgressView, MMSightRecordHelperView, MMSightRecordView, MMUIButton, NSObject, NSString, StreamVoiceInputLogic, UIImageView, UIView, XEffectEffectManager;
 @protocol EmoticonCameraDelegate, OS_dispatch_queue;
 
-@interface EmoticonCameraViewController
+@interface EmoticonCameraViewController : NSObject
 {
     EmoticonCameraToolBar *m_toolBar;
     MMUIButton *m_hideBarBtn;

@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTCloseFundAccountCgiDelegate;
 
-@interface WCPayLQTCloseFundAccountCgi
+@interface WCPayLQTCloseFundAccountCgi : NSObject
 {
     id <WCPayLQTCloseFundAccountCgiDelegate> _cgiDelegate;
 }

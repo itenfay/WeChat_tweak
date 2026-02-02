@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiteAppAuthInfo
+@interface MMLiteAppAuthInfo : NSObject
 {
     NSString *host;
     NSString *param;

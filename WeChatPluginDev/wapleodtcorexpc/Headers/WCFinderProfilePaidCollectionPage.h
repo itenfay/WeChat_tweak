@@ -5,7 +5,7 @@
 
 @class NSString, UITableView, UITableViewDiffableDataSource, UIView, WCFinderDataLoadTips, WCFinderRefreshTableFooterView;
 
-@interface WCFinderProfilePaidCollectionPage
+@interface WCFinderProfilePaidCollectionPage : NSObject
 {
     UITableView *_tableView;
     WCFinderRefreshTableFooterView *_footerView;

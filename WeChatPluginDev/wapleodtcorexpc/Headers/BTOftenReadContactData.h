@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTOftenReadContactData
+@interface BTOftenReadContactData : NSObject
 {
     _Bool _hasNewMsg;
     _Bool _hasNewLive;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSData, NSMutableArray, NSString;
 
-@interface MMLiveAttendVoteCGI
+@interface MMLiveAttendVoteCGI : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     unsigned long long _objectId;

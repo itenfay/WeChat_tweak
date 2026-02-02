@@ -6,7 +6,7 @@
 @class MMFinderLiveShopSettingAskForPromotingAdapter, MMFinderLiveTaskId, WCTableViewManager;
 @protocol MMFinderLiveShopSettingsViewDelegate;
 
-@interface MMFinderLiveShopSettingsView
+@interface MMFinderLiveShopSettingsView : NSObject
 {
     id <MMFinderLiveShopSettingsViewDelegate> _delegate;
     MMFinderLiveShopSettingAskForPromotingAdapter *_askForPromotingAdapter;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPIPAudioOnlyIndicatorDescription
+@interface WCPIPAudioOnlyIndicatorDescription : NSObject
 {
     NSString *_leftIcon;
     NSString *_rightIcon;

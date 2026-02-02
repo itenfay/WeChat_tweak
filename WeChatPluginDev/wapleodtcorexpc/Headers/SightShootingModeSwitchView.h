@@ -6,7 +6,7 @@
 @class MMUIView, NSArray, NSString, UICollectionView;
 @protocol SightShootingModeSwitchViewDelegate;
 
-@interface SightShootingModeSwitchView
+@interface SightShootingModeSwitchView : NSObject
 {
     NSArray *_dataSource;
     id <SightShootingModeSwitchViewDelegate> _delegate;

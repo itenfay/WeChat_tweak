@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModFeedSettingCGI
+@interface WCFinderModFeedSettingCGI : NSObject
 {
     _Bool _isSwitchOn;
     int _settingScene;

@@ -6,7 +6,7 @@
 @class NSMutableArray, UIPanGestureRecognizer, UITapGestureRecognizer, WCPayMaskViewMatrix;
 @protocol WCPayImageMaskViewFilledDelegate;
 
-@interface WCPayImageMaskView
+@interface WCPayImageMaskView : NSObject
 {
     unsigned long long _tilesX;
     unsigned long long _tilesY;

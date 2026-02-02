@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportNewXmlPushLibsMsgItem
+@interface WAReportNewXmlPushLibsMsgItem : NSObject
 {
     unsigned int _busiType;
     unsigned int _msgType;

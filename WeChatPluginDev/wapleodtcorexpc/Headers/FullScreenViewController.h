@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol UIViewControllerTransitioningDelegate;
 
-@interface FullScreenViewController
+@interface FullScreenViewController : NSObject
 {
     _Bool m_allowAutorotate;
     _Bool _shouldCheckInterfaceOrientations;

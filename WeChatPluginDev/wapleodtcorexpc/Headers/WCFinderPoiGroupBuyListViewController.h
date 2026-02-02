@@ -5,7 +5,7 @@
 
 @class NSString, UITableView, WCFinderPoiGroupBuyListViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderPoiGroupBuyListViewController
+@interface WCFinderPoiGroupBuyListViewController : NSObject
 {
     WCFinderPoiGroupBuyListViewModel *_viewModel;
     UITableView *_tableView;

@@ -6,7 +6,7 @@
 @class CContact, MMHeadImageView, MMUIButton, MMUILabel, UIButton;
 @protocol WWKFLocationRequestViewDelegate;
 
-@interface WWKFLocationRequestView
+@interface WWKFLocationRequestView : NSObject
 {
     CContact *_contact;
     id <WWKFLocationRequestViewDelegate> _delegate;

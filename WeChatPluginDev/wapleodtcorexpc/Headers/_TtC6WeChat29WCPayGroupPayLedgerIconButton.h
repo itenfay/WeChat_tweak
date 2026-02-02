@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, UIImageView, UILabel;
 
-@interface _TtC6WeChat29WCPayGroupPayLedgerIconButton
+@interface _TtC6WeChat29WCPayGroupPayLedgerIconButton : NSObject
 {
     MISSING_TYPE *titleLabel;
     MISSING_TYPE *iconView;

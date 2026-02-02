@@ -5,7 +5,7 @@
 
 @class NSMutableArray, UIColor, UIFont;
 
-@interface BTReaderStyleRecommendMsgCellViewModel
+@interface BTReaderStyleRecommendMsgCellViewModel : NSObject
 {
     NSMutableArray *_titleLabelStyles;
     NSMutableArray *_digestLabelStyles;

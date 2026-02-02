@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCDragTipView
+@interface WCDragTipView : NSObject
 {
     UIView *_tipView;
 }

@@ -6,7 +6,7 @@
 @class FinderCreateLiveWarnPageCommon, MMFinderCreateLiveSpamCheckReportSession, MMFinderLiveTaskId, MMUILabel, MMWebImageView, NSString, RichTextView, UIButton, UIScrollView;
 @protocol MMFinderCreateLiveSpamCheckWarnPageVCDelegate;
 
-@interface MMFinderCreateLiveSpamCheckWarnPageViewController
+@interface MMFinderCreateLiveSpamCheckWarnPageViewController : NSObject
 {
     _Bool _hasVerified;
     int _warnType;

@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UILabel, UIView, WCPayLargeAccountTipsDialog;
 @protocol WCPayFetchIdentifyTipsViewControllerDelegate;
 
-@interface WCPayFetchIdentifyTipsViewController
+@interface WCPayFetchIdentifyTipsViewController : NSObject
 {
     WCPayLargeAccountTipsDialog *m_data;
     id <WCPayFetchIdentifyTipsViewControllerDelegate> _delegate;

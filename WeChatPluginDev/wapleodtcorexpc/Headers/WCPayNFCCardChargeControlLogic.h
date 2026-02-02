@@ -6,7 +6,7 @@
 @class DepositQueryDepositResponse, NSString, OrderCreateOrderResponse, WCPayNFCCardPlaceOrderCgi, WCPayNFCCardQueryDepositCgi, WCPayNFCCardTipsModal, WCPayPassKitFacade;
 @protocol WCPayNFCCardChargeControlLogicDelegate;
 
-@interface WCPayNFCCardChargeControlLogic
+@interface WCPayNFCCardChargeControlLogic : NSObject
 {
     _Bool _isChargeSuccess;
     id <WCPayNFCCardChargeControlLogicDelegate> _logicDelegate;

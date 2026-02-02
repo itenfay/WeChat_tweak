@@ -5,7 +5,7 @@
 
 @class NSCache, NSString;
 
-@interface AnimateEmojiCacheMgr
+@interface AnimateEmojiCacheMgr : NSObject
 {
     unsigned int _realCacheCout;
     unsigned int _realCacheFrameCount;

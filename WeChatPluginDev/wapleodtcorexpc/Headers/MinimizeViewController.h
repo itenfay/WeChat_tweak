@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MinimizeAbsorbFloatingView, MinimizeAntiCollisionLogic, MinimizeGestureCircleView, MinimizePendingTaskContext, MinimizeStarFloatingView, MinimizeTaskOuterContentView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIScrollView, UIView;
 @protocol MinimizeDetailTaskListViewInterface, MinimizeTaskDataSource, MinimizeVCDelegate;
 
-@interface MinimizeViewController
+@interface MinimizeViewController : NSObject
 {
     _Bool _isAnimating;
     _Bool _isLastTimeReverseVertical;

@@ -6,7 +6,7 @@
 @class NSArray, NSString, UILabel, WCPayProfession;
 @protocol WCPayGetProfessionItemDelegate;
 
-@interface WCPayGetProfessionItem
+@interface WCPayGetProfessionItem : NSObject
 {
     id <WCPayGetProfessionItemDelegate> _delegate;
     NSArray *_professions;

@@ -6,7 +6,7 @@
 @class MMTextView, NSString, UIButton;
 @protocol WCPayQRCodeRewardPayerConfirmViewControllerDelegate;
 
-@interface WCPayQRCodeRewardPayerConfirmViewController
+@interface WCPayQRCodeRewardPayerConfirmViewController : NSObject
 {
     _Bool _bIsCheckBoxSelected;
     id <WCPayQRCodeRewardPayerConfirmViewControllerDelegate> _delegate;

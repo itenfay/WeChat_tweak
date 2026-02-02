@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface GameVideoGalleryShareMenuViewController2
+@interface GameVideoGalleryShareMenuViewController2 : NSObject
 {
     CDUnknownBlockType _clickItemBlock;
 }

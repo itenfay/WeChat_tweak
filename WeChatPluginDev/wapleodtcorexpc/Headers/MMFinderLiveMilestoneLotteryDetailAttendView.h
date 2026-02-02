@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveMilestoneLotteryCouponInfo, MMFinderLiveMilestoneLotteryViewModel, MMUIButton, MMWebImageView, NSString, UIButton, UILabel, UIView;
 
-@interface MMFinderLiveMilestoneLotteryDetailAttendView
+@interface MMFinderLiveMilestoneLotteryDetailAttendView : NSObject
 {
     _Bool _accountAlreadyFollowed;
     CDUnknownBlockType _onAttendAction;

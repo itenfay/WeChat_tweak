@@ -6,7 +6,7 @@
 @class NSString, UIView;
 @protocol TranslateLanguageSelectViewDelegate;
 
-@interface TranslateLanguageSelectView
+@interface TranslateLanguageSelectView : NSObject
 {
     _Bool _bShowCloseBtn;
     id <TranslateLanguageSelectViewDelegate> _delegate;

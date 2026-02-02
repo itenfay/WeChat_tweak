@@ -5,7 +5,7 @@
 
 @class MJPublisher;
 
-@interface LiteAppJsapiCheckFinderMovieEditorDraft
+@interface LiteAppJsapiCheckFinderMovieEditorDraft : NSObject
 {
     MJPublisher *_mjPublisher;
 }

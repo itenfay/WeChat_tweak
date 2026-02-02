@@ -6,7 +6,7 @@
 @class NSString, WCAdCommonInteractionInfo, WCAdCommonInteractionView, WCAdInteractionDeviceMotionContainer;
 @protocol WCAdCommonInteractionLogicDelegate;
 
-@interface WCAdCommonInteractionLogic
+@interface WCAdCommonInteractionLogic : NSObject
 {
     WCAdCommonInteractionView *_interactionView;
     id <WCAdCommonInteractionLogicDelegate> _delegate;

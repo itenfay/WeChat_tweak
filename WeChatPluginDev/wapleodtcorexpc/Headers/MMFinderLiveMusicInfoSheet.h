@@ -6,7 +6,7 @@
 @class MMFinderLiveMusicDataItem, MMFinderLiveTaskId, MMUIImageView, MMUILabel, MMUIView, NSString, TingSharedAudioView;
 @protocol MMFinderLiveMusicInfoSheetDelegate;
 
-@interface MMFinderLiveMusicInfoSheet
+@interface MMFinderLiveMusicInfoSheet : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     id <MMFinderLiveMusicInfoSheetDelegate> _delegate;

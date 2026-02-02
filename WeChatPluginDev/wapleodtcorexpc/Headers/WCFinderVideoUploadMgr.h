@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCFinderVideoUploadMgr
+@interface WCFinderVideoUploadMgr : NSObject
 {
     NSMutableDictionary *_uploadDict;
     NSMutableArray *_uploadWaitingArray;

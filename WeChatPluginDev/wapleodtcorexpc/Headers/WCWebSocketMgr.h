@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCWebSocketMgr
+@interface WCWebSocketMgr : NSObject
 {
     NSArray *_arrCertData;
     struct map<std::string, std::shared_ptr<WssCallback>, std::less<std::string>, std::allocator<std::pair<const std::string, std::shared_ptr<WssCallback>>>> callbackMap;

@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, SystemMessageViewModel, UIImageView;
 
-@interface SystemMessageCellView
+@interface SystemMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
     RichTextView *m_richTextView;

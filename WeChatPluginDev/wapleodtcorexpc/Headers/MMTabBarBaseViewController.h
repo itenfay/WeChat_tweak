@@ -5,7 +5,7 @@
 
 @class FontSettingUtil, NSString;
 
-@interface MMTabBarBaseViewController
+@interface MMTabBarBaseViewController : NSObject
 {
     FontSettingUtil *m_fontSettingUtil;
 }

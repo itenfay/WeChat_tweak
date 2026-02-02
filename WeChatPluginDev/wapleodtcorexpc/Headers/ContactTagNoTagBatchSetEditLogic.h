@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol ContactTagNoTagBatchSetEditLogicDelegate;
 
-@interface ContactTagNoTagBatchSetEditLogic
+@interface ContactTagNoTagBatchSetEditLogic : NSObject
 {
     unsigned int m_uiJobID;
     NSArray *m_arrTagNameList;

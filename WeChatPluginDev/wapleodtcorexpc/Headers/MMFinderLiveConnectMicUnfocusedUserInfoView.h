@@ -5,7 +5,7 @@
 
 @class MMFinderLiveClockCountdownView, MMLiveRewardGiftNotificationContainerView, MMLiveViewHiddenStatusContainer, NSString, PAGView, UILabel, UIView;
 
-@interface MMFinderLiveConnectMicUnfocusedUserInfoView
+@interface MMFinderLiveConnectMicUnfocusedUserInfoView : NSObject
 {
     MMLiveRewardGiftNotificationContainerView *_giftNotificationContainerView;
     UIView *_containerView;

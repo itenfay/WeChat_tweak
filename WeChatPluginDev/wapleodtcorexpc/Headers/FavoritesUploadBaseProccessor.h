@@ -6,7 +6,7 @@
 @class FavoritesItem, NSMutableArray;
 @protocol FavoritesUploadProccessorDelegate;
 
-@interface FavoritesUploadBaseProccessor
+@interface FavoritesUploadBaseProccessor : NSObject
 {
     NSMutableArray *m_proccessingQueue;
     _Bool m_bProccessing;

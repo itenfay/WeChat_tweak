@@ -5,7 +5,7 @@
 
 @class NSString, UISlider, WAMediaCastingAirPlayDetector;
 
-@interface WAWebViewPlugin_VideoPlayer
+@interface WAWebViewPlugin_VideoPlayer : NSObject
 {
     _Bool _didAppear;
     Class VideoClass;

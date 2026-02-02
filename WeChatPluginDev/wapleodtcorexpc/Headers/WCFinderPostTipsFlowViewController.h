@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UILabel, WCFinderFeedFlowView, WCFinderStreamProfilePostTipsFeedFlowViewModel;
 
-@interface WCFinderPostTipsFlowViewController
+@interface WCFinderPostTipsFlowViewController : NSObject
 {
     WCFinderStreamProfilePostTipsFeedFlowViewModel *_viewModel;
     UILabel *_titleLabel;

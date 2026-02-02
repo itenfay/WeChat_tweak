@@ -6,7 +6,7 @@
 @class NSString, UIView, WCCardDataCardInfo, WCCardDataCardTPInfo;
 @protocol WCCardDataSource, WCCardLargeCodeViewDelegate;
 
-@interface WCCardLargeCodeView
+@interface WCCardLargeCodeView : NSObject
 {
     WCCardDataCardTPInfo *_cardTpInfo;
     WCCardDataCardInfo *_cardInfo;

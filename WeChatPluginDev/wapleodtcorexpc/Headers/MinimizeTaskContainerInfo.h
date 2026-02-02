@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class UIView, UIViewController;
 @protocol MinimizeTaskContainerInfoDelegate;
 
-@interface MinimizeTaskContainerInfo
+@interface MinimizeTaskContainerInfo : NSObject
 {
     _Bool _recieveTouches;
     _Bool _isAlwaysShowInForground;

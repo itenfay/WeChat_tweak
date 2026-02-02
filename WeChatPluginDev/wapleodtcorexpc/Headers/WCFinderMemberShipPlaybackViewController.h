@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderMemberShipPlaybackTabViewModel;
 
-@interface WCFinderMemberShipPlaybackViewController
+@interface WCFinderMemberShipPlaybackViewController : NSObject
 {
     WCFinderMemberShipPlaybackTabViewModel *_viewModel;
 }

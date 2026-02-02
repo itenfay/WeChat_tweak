@@ -5,7 +5,7 @@
 
 @class DeviceRankDetailResonse, NSMutableDictionary, NSString;
 
-@interface DeviceRankProfileMgr
+@interface DeviceRankProfileMgr : NSObject
 {
     DeviceRankDetailResonse *m_selfDeviceRank;
     NSString *m_nsCDNClientID;

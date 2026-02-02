@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportSkylineOpConfigItem
+@interface WAReportSkylineOpConfigItem : NSObject
 {
     unsigned int _exptGroupId;
     unsigned int _hitSrcType;

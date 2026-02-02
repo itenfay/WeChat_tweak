@@ -5,7 +5,7 @@
 
 @class CContact, JSApiSelectContactsViewController, JSApiSelectSessionViewController;
 
-@interface WAJSEventHandler_chooseWeChatContact
+@interface WAJSEventHandler_chooseWeChatContact : NSObject
 {
     CContact *m_oSelectedContact;
     _Bool _isSingleConatct;

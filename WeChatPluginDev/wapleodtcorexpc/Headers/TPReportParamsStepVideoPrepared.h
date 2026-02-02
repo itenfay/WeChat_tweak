@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPReportParamsStepVideoPrepared
+@interface TPReportParamsStepVideoPrepared : NSObject
 {
     NSString *_url;
     long long _urlindex;

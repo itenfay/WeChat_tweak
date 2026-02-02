@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface WAAppPageViewModel
+@interface WAAppPageViewModel : NSObject
 {
     double _cacheNameWidth;
     double _cacheTitleHeight;

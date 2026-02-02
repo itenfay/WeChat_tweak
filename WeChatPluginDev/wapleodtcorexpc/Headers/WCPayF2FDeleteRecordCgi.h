@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayF2FDeleteRecordCgiDelegate;
 
-@interface WCPayF2FDeleteRecordCgi
+@interface WCPayF2FDeleteRecordCgi : NSObject
 {
     NSString *_billID;
     unsigned long long _timeStamp;

@@ -6,7 +6,7 @@
 @class MMFinderLiveActivityView, MMFinderLiveFeedHighlightTagView, NSString, RichTextView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 @protocol WCFinderLiveHomePageSpecialColumnCellDelegate;
 
-@interface WCFinderLiveHomePageSpecialColumnCell
+@interface WCFinderLiveHomePageSpecialColumnCell : NSObject
 {
     _Bool _hideAudienceNum;
     _Bool _canShowLiveActivityView;

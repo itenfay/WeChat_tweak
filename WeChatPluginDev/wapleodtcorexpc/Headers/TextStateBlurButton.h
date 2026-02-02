@@ -5,7 +5,7 @@
 
 @class MMBadgeView, UIColor, UIView;
 
-@interface TextStateBlurButton
+@interface TextStateBlurButton : NSObject
 {
     _Bool _useRoundCorner;
     UIView *_highlightMaskView;

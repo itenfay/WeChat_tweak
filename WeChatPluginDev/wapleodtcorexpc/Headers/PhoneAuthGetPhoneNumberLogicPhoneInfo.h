@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PhoneAuthGetPhoneNumberLogicPhoneInfo
+@interface PhoneAuthGetPhoneNumberLogicPhoneInfo : NSObject
 {
     _Bool _isBindWechat;
     _Bool _needAuth;

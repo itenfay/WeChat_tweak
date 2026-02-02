@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCommonCacheObj
+@interface WCCommonCacheObj : NSObject
 {
     unsigned int _lastUseTime;
     unsigned int _mediaType;

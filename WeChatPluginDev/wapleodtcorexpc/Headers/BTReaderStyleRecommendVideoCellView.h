@@ -5,7 +5,7 @@
 
 @class BTReaderStyleRecommendVideoCellViewModel, BTVideoItemCellAutoPlayerView, CAGradientLayer, MMUILabel, SightIconView, UIView;
 
-@interface BTReaderStyleRecommendVideoCellView
+@interface BTReaderStyleRecommendVideoCellView : NSObject
 {
     UIView *m_playerBtnContainerView;
     SightIconView *m_playIconView;

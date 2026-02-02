@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSString;
 @protocol TipsViewDelegate;
 
-@interface MMMsgTipsMixedListExpandView
+@interface MMMsgTipsMixedListExpandView : NSObject
 {
     _Bool _isRowAnimating;
     id <TipsViewDelegate> _tipsViewDelegate;

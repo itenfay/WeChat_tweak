@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, WABaseRecorder;
 @protocol IJSContextPluginDelegate;
 
-@interface WAJSContextPlugin_Recorder
+@interface WAJSContextPlugin_Recorder : NSObject
 {
     _Bool _isCheckingPermission;
     _Bool _isInterrupting;

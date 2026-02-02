@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSDictionary, NSString;
 
-@interface WAJSApiBanInfoToast
+@interface WAJSApiBanInfoToast : NSObject
 {
     NSDictionary *m_jsApiNameMap;
     MMUILabel *m_noticeLabel;

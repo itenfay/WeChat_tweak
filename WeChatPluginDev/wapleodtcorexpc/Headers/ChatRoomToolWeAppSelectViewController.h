@@ -6,7 +6,7 @@
 @class CContact, MMTableView, MMToolManageTableViewLogic, MMUILabel, NSArray, NSMutableArray, NSMutableDictionary, NSString, WCTimeLineFooterView;
 @protocol ChatRoomToolWeAppSelectViewControllerDelegate;
 
-@interface ChatRoomToolWeAppSelectViewController
+@interface ChatRoomToolWeAppSelectViewController : NSObject
 {
     unsigned long long m_selectedExistWeAppCount;
     id <ChatRoomToolWeAppSelectViewControllerDelegate> _m_delegate;

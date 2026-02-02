@@ -6,7 +6,7 @@
 @class NSString, WCAdDynamicCanvasPageInfo, WCCanvasDynamicDataLoader, WCStatTimerHelper;
 @protocol WCAdDynamicCanvasViewControllerDelegate;
 
-@interface WCAdDynamicCanvasViewController
+@interface WCAdDynamicCanvasViewController : NSObject
 {
     _Bool _halfScreenReachedTopFlag;
     id <WCAdDynamicCanvasViewControllerDelegate> _delegate;

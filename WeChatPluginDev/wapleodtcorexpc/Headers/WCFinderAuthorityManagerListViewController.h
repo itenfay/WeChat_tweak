@@ -6,7 +6,7 @@
 @class MMUISearchBar, NSString, RichTextView, UIImageView, UITableView, UIView, WCFinderAuthoritySearchListViewController, WCFinderRefreshTableFooterView;
 @protocol WCFinderAuthorityListViewModelProtocol;
 
-@interface WCFinderAuthorityManagerListViewController
+@interface WCFinderAuthorityManagerListViewController : NSObject
 {
     _Bool _autoHideSearchBar;
     UITableView *_tableView;

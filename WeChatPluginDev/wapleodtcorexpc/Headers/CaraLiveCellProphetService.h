@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CaraCppLiveCellProphet, NSString;
 
-@interface CaraLiveCellProphetService
+@interface CaraLiveCellProphetService : NSObject
 {
     CaraCppLiveCellProphet *_underlying;
 }

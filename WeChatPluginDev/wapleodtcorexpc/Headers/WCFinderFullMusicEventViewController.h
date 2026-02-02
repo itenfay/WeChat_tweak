@@ -5,7 +5,7 @@
 
 @class NSString, UIBarButtonItem, WCFinderMusicEventView, WCFinderTopicRouteParams;
 
-@interface WCFinderFullMusicEventViewController
+@interface WCFinderFullMusicEventViewController : NSObject
 {
     WCFinderMusicEventView *_musicEventView;
     WCFinderTopicRouteParams *_params;

@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UILabel;
 @protocol WCPayECardSuccessViewControllerDelegate;
 
-@interface WCPayECardSuccessViewController
+@interface WCPayECardSuccessViewController : NSObject
 {
     id <WCPayECardSuccessViewControllerDelegate> _delegate;
     NSString *_vcTitle;

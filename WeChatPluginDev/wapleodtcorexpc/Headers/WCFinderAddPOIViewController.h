@@ -6,7 +6,7 @@
 @class MMPickLocationViewController, MMUIButton, NSMutableSet, NSString, UIButton, UIImageView, UILabel, UITableView, UIView, WCFinderAddPOIViewModel, WCFinderArrowTipsView, WCFinderRefreshTableFooterView;
 @protocol WCFinderAddPOIViewControllerDelegate;
 
-@interface WCFinderAddPOIViewController
+@interface WCFinderAddPOIViewController : NSObject
 {
     id <WCFinderAddPOIViewControllerDelegate> _delegate;
     NSString *_finderUsername;

@@ -5,7 +5,7 @@
 
 @class EmoticonCustomManageAddLogic, NSString;
 
-@interface WAJSEventHandler_addToEmoticon
+@interface WAJSEventHandler_addToEmoticon : NSObject
 {
     EmoticonCustomManageAddLogic *_emoticonAddLogic;
     NSString *_currentUrl;

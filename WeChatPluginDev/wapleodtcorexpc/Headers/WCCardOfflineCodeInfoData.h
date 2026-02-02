@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WCCardOfflineCodeInfoData
+@interface WCCardOfflineCodeInfoData : NSObject
 {
     unsigned int status;
     NSString *cardId;

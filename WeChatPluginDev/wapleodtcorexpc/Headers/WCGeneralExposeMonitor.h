@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSHashTable, NSMapTable, NSNumber, NSString, UIViewController;
 
-@interface WCGeneralExposeMonitor
+@interface WCGeneralExposeMonitor : NSObject
 {
     NSNumber *m_monitorSwitch;
     NSHashTable *m_monitorViews;

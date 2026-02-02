@@ -5,7 +5,7 @@
 
 @class FinderJumpInfo, FinderLiveGift, FinderLiveGiftBatchGiveConfigList, FinderLiveGiftCustomInfo, MMFinderLiveAnchorCustomizeRewardStyleItem, MMFinderLiveGiftCustomizationModel, MMFinderLiveGiftNewCustomizationModel, NSArray, NSData, NSMutableArray, NSString, PackageResourceInfo_ProductBatchInfo;
 
-@interface MMFinderLiveRewardGiftItem
+@interface MMFinderLiveRewardGiftItem : NSObject
 {
     _Bool needUnlock;
     _Bool _disableCombo;

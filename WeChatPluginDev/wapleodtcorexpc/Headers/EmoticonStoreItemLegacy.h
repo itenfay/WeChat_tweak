@@ -5,7 +5,7 @@
 
 @class EmotionLinkInfo, NSArray, NSString, PersonalDesigner;
 
-@interface EmoticonStoreItemLegacy
+@interface EmoticonStoreItemLegacy : NSObject
 {
     unsigned int packType;
     unsigned int packFlag;

@@ -5,7 +5,7 @@
 
 @class BrandServiceStorage, NSString;
 
-@interface BrandServiceMgr
+@interface BrandServiceMgr : NSObject
 {
     BrandServiceStorage *m_serviceStorage;
 }

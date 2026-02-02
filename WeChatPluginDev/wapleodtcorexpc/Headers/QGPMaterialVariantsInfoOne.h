@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPMaterialVariantsInfoOne
+@interface QGPMaterialVariantsInfoOne : NSObject
 {
     NSString *_name;
 }

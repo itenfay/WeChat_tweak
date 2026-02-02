@@ -5,7 +5,7 @@
 
 @class FavoritesItem, MMUIViewController, NSString, WNOpenParameter;
 
-@interface FavoritesOnTopLogic
+@interface FavoritesOnTopLogic : NSObject
 {
     FavoritesItem *_currentOnTopNoteItem;
     WNOpenParameter *_openParameter;

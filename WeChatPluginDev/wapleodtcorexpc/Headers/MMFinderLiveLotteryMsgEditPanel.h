@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMGrowTextView, NSString, UILabel, UIView;
 
-@interface MMFinderLiveLotteryMsgEditPanel
+@interface MMFinderLiveLotteryMsgEditPanel : NSObject
 {
     NSString *_msgTitleText;
     NSString *_msgPlaceholderText;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface SessionTranslateInfos
+@interface SessionTranslateInfos : NSObject
 {
     NSString *_userName;
     NSMutableArray *_arrTransInfo;

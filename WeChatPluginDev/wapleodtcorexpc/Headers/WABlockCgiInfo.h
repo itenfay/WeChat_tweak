@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WABlockCgiInfo
+@interface WABlockCgiInfo : NSObject
 {
     unsigned int _beginTime;
     unsigned int _endTime;

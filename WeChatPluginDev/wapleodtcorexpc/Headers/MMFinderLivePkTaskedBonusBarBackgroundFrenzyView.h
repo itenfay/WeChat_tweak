@@ -5,7 +5,7 @@
 
 @class MMFinderLivePkTaskedBonusBarBackgroundFrenzyPatternAnimationView, MMFinderLivePkTaskedBonusBarBackgroundFrenzyPatternView, MMLiveGradientLayerView, UIImageView, UIView;
 
-@interface MMFinderLivePkTaskedBonusBarBackgroundFrenzyView
+@interface MMFinderLivePkTaskedBonusBarBackgroundFrenzyView : NSObject
 {
     double _relativeHorizontalShinePosition;
     UIView *_patternContainerView;

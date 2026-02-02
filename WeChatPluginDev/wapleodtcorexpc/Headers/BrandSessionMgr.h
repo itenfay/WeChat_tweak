@@ -5,7 +5,7 @@
 
 @class BrandSessionCache, MMBaseSessionStorage, MemoryMappedKV, NSData, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface BrandSessionMgr
+@interface BrandSessionMgr : NSObject
 {
     BrandSessionCache *m_sessionCache;
     _Bool m_isUpgradeFromOldVersion;

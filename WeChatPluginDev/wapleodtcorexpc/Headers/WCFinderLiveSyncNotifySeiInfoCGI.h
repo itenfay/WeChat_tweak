@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderNotifySeiInfo, NSData;
 
-@interface WCFinderLiveSyncNotifySeiInfoCGI
+@interface WCFinderLiveSyncNotifySeiInfoCGI : NSObject
 {
     NSData *_liveCookies;
     FinderNotifySeiInfo *_notifySeiInfo;

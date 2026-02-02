@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveCommentDataPostEngine
+@interface MMFinderLiveCommentDataPostEngine : NSObject
 {
 }
 

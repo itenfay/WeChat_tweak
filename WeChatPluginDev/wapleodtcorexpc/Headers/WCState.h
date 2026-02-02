@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCState
+@interface WCState : NSObject
 {
     NSString *_name;
 }

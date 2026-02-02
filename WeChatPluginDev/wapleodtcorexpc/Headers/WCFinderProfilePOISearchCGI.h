@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderProfilePOISearchCGI
+@interface WCFinderProfilePOISearchCGI : NSObject
 {
     NSString *_queryText;
     NSString *_finderUserName;

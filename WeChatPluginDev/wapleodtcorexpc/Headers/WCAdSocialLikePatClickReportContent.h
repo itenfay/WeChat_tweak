@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdSocialLikePatClickReportContent
+@interface WCAdSocialLikePatClickReportContent : NSObject
 {
     NSString *_numberRequestId;
 }

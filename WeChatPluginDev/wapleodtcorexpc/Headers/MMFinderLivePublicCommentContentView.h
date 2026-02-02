@@ -5,7 +5,7 @@
 
 @class MMFinderLiveNotifyCommentLogic, UIView;
 
-@interface MMFinderLivePublicCommentContentView
+@interface MMFinderLivePublicCommentContentView : NSObject
 {
     UIView *_notifyCommentContentView;
     MMFinderLiveNotifyCommentLogic *_notifyCommentLogic;

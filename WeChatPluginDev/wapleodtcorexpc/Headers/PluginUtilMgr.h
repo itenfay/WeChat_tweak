@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSSet, NSString;
 
-@interface PluginUtilMgr
+@interface PluginUtilMgr : NSObject
 {
     NSDictionary *m_dicNameToType;
     NSArray *m_arrNames;

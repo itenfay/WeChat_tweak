@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface BrandOverseaPrivacyConfirmLogic
+@interface BrandOverseaPrivacyConfirmLogic : NSObject
 {
     CDUnknownBlockType _openBlock;
     CDUnknownBlockType _closeBlock;

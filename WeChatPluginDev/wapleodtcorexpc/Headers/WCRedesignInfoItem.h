@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIColor;
 
-@interface WCRedesignInfoItem
+@interface WCRedesignInfoItem : NSObject
 {
     NSString *_subtitle;
     UIColor *_subtitleColor;

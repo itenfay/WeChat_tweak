@@ -6,7 +6,7 @@
 @class AdExposureTimerHelper, NSArray, NSString, UICollectionView, WCAdCardEmitterView, WCAdSliderCardSlideJumpInfo, WCDataItem;
 @protocol WCAdSliderCardViewDelegate;
 
-@interface WCAdSliderCardView
+@interface WCAdSliderCardView : NSObject
 {
     _Bool _isDetail;
     _Bool _canAutoPlay;

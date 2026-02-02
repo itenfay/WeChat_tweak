@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMDBMigrationUtil
+@interface MMDBMigrationUtil : NSObject
 {
     NSString *m_flagPath;
 }

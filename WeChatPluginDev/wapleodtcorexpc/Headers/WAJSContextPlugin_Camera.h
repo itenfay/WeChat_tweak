@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAPluginComponent_Camera;
 
-@interface WAJSContextPlugin_Camera
+@interface WAJSContextPlugin_Camera : NSObject
 {
     _Bool _cameraOpened;
     NSString *_appId;

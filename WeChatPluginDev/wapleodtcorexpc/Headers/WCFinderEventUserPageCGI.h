@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderEventUserPageCGI
+@interface WCFinderEventUserPageCGI : NSObject
 {
     NSString *_posterUsername;
     NSData *_lastBuffer;

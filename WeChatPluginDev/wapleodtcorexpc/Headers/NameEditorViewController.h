@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, WCTableViewNormalCellManager;
 
-@interface NameEditorViewController
+@interface NameEditorViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WCTableViewNormalCellManager *m_editInfo;

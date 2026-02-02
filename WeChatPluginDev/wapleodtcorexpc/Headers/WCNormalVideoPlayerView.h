@@ -6,7 +6,7 @@
 @class ImageBrowseButton, MMUIView, NSString, SightIconView, WCNetworkMediaCore, WCPlayerProgressBar;
 @protocol WCNormalVideoPlayerViewDelegate;
 
-@interface WCNormalVideoPlayerView
+@interface WCNormalVideoPlayerView : NSObject
 {
     _Bool _isPlaying;
     _Bool _hasStarted;

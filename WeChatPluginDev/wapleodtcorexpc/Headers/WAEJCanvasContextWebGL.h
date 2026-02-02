@@ -5,7 +5,7 @@
 
 @class WAEJJavaScriptView;
 
-@interface WAEJCanvasContextWebGL
+@interface WAEJCanvasContextWebGL : NSObject
 {
     unsigned int viewFrameBuffer;
     unsigned int viewRenderBuffer;

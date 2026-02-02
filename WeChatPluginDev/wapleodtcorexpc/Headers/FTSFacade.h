@@ -5,7 +5,7 @@
 
 @class FTSContactMgr, FTSDB, FTSFavMgr, FTSFinderLocalSearchMgr, FTSGlobalStat, FTSIndexEngine, FTSIntelligentMessageMgr, FTSKFContactLocalSearchMgr, FTSMemorySearchMgr, FTSMessageMgr, FTSReportMgr, FTSTopHitMgr, FTSWebSearchMgr, LocalSearchDynamicConfig, MCSBrandContactMgr, NSMutableSet, NSString, WALocalSearchMgr, WCSearchGroupTrainingMgr, WebSearchRedotMgr;
 
-@interface FTSFacade
+@interface FTSFacade : NSObject
 {
     FTSDB *_ftsDB;
     _Bool _isPositioning;

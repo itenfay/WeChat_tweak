@@ -5,7 +5,7 @@
 
 @class NSString, TencentLBSLocationManager;
 
-@interface QLBSLocationManager
+@interface QLBSLocationManager : NSObject
 {
     _Bool _toTriggerLocationCheck;
     TencentLBSLocationManager *_manager;

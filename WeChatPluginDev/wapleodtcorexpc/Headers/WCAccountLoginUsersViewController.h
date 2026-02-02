@@ -6,7 +6,7 @@
 @class CTRichTextView, LoginUserCellViewModel, MMUILabel, NSMutableArray, NSString, UIImageView, UIView;
 @protocol WCAccountLoginUsersViewControllerDelegate;
 
-@interface WCAccountLoginUsersViewController
+@interface WCAccountLoginUsersViewController : NSObject
 {
     id <WCAccountLoginUsersViewControllerDelegate> m_delegate;
     UIView *m_headerView;

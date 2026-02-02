@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMProgressViewEx, MMToastView, MMUIButton, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURLRequest, SightIconView, UIColor, UIImageView, UILongPressGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView, WAAlertModel, WAAppActionSheet, WAApptaskPublicResLogic, WABaseInfoToast, WABrandTitleBar, WACacheVersionChecker, WACircleProgressLoadingViewController, WAEvaluatePopSheet, WAMenuPopInteractiveTransition, WAMenuScrollActionSheet, WAProvideApiConfig, WAWebActionSheet, WAWebErrorView, WAWebViewJSLogicImpl, WAWebViewMenuNavBarProperties, WAWebViewMutiFuncMenuView, WAWebViewPluginScheduler, WAWebviewBottomBannerView;
 @protocol IWAFileViewService, IWARecentForwardScrollViewHelper, IWASkylineView><YYWebViewInterface, WAWebViewControllerMenuActionCustomDelegate, WAWebViewDelegate><WAMinimizeDelegate, YYWebViewInterface;
 
-@interface WAWebViewController
+@interface WAWebViewController : NSObject
 {
     _Bool _bIsStatusBarBlack;
     UIView *_webViewContainer;

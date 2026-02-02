@@ -5,7 +5,7 @@
 
 @class EmojiStatisticsInfo, NSString;
 
-@interface EmojiInfoObj
+@interface EmojiInfoObj : NSObject
 {
     _Bool _disableExtern;
     NSString *_md5;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveOptOutPromotionalActivityCgi
+@interface WCFinderLiveOptOutPromotionalActivityCgi : NSObject
 {
     NSString *_activityId;
     NSData *_liveCookies;

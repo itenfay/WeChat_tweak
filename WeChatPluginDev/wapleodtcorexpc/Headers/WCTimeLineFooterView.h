@@ -5,7 +5,7 @@
 
 @class MMTerminatorViewParams, MMUIActivityIndicatorView, NSString, UIColor, UIFont, UILabel, UIView;
 
-@interface WCTimeLineFooterView
+@interface WCTimeLineFooterView : NSObject
 {
     MMUIActivityIndicatorView *m_activityIndicatorView;
     UILabel *m_label;

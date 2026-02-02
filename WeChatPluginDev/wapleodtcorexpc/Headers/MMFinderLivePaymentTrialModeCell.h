@@ -6,7 +6,7 @@
 @class MMUIImageView, MMUILabel, NSString, UITapGestureRecognizer, UIView;
 @protocol MMFinderLivePaymentTrialModeCellDelegate;
 
-@interface MMFinderLivePaymentTrialModeCell
+@interface MMFinderLivePaymentTrialModeCell : NSObject
 {
     _Bool _isSelected;
     id <MMFinderLivePaymentTrialModeCellDelegate> _delegate;

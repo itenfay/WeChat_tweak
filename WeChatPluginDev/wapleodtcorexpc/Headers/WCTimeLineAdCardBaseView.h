@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIView, NSString, WCAdAppointmentLogic, WCAdCardActionButtonLogic, WCAdCardDescriptionView, WCAdCommonInteractionLogic, WCAdCountdownView, WCAdCouponLogic, WCAdFinderFollowLogic, WCAdFinderLiveLogic, WCAdFinderLiveNoticeLogic, WCAdFinderLivePlayerView, WCAdLiveDisplayView, WCAdLiveLikeAnimationView, WCAdMultiProductsLogic, WCAdQuicklyAddBrandLogic, WCAdRollView, WCAdSellingPointLogic, WCAdSubscriptionLogic, WCDataItem, WCHighLightButton, WCSightView, WCTagsView, WCTimeLineTagView;
 @protocol WCTimeLineAdCardBaseViewDelegate;
 
-@interface WCTimeLineAdCardBaseView
+@interface WCTimeLineAdCardBaseView : NSObject
 {
     _Bool _isCanvasPageOpenBySelf;
     unsigned int _liveStatus;

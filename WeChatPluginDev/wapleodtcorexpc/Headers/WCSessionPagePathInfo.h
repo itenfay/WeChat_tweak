@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionPagePathInfo
+@interface WCSessionPagePathInfo : NSObject
 {
     NSString *_pageName;
     unsigned long long _enterTimestampMs;

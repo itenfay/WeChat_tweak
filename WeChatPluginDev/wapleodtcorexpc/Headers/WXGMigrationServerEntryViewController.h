@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView, UIView, WXGDotDotDotLabel;
 @protocol WXGMigrationServerEntryViewControllerDelegate;
 
-@interface WXGMigrationServerEntryViewController
+@interface WXGMigrationServerEntryViewController : NSObject
 {
     UIView *m_backgroundView;
     UIButton *m_leftTopCornerButton;

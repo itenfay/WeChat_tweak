@@ -6,7 +6,7 @@
 @class AVRoutePickerView, CContact, MMConfSDKMemberMgr, MMTimer, MMUIButton, MMUILabel, MMUIView, MinimizeNewTransitionController, MultiTalkBeforeTalkingOperateView, MultiTalkBottomOperatePanel, MultiTalkHDHeadView, MultiTalkScreenSharingAudienceViewController, MultiTalkScreenSharingLogic, MultitalkSecondOperateView, NSArray, NSDictionary, NSString, UIImageView, UIView, VoipDescriptionButton, WCUIAlertView, ilinkMultiSelectLogic;
 @protocol MultiTalkMainViewControllerDelegate, MultiTalkMembersViewProtocol;
 
-@interface MultiTalkMainViewController
+@interface MultiTalkMainViewController : NSObject
 {
     _Bool m_isMinCardMode;
     MultiTalkHDHeadView *m_minCardHeadImageView;

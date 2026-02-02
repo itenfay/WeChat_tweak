@@ -6,7 +6,7 @@
 @class MMUILabel, UIButton, UIImageView, UIView;
 @protocol MMAppRefreshTokenErrorViewControllerDelegate;
 
-@interface MMAppRefreshTokenErrorViewController
+@interface MMAppRefreshTokenErrorViewController : NSObject
 {
     _Bool _isShare;
     id <MMAppRefreshTokenErrorViewControllerDelegate> _delegate;

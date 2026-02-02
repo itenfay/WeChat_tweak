@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock;
 
-@interface SilkAudioRecorder
+@interface SilkAudioRecorder : NSObject
 {
     _Bool m_isNeedRestartAudioTalk;
     NSRecursiveLock *m_prepareSentLock;

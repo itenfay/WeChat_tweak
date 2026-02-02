@@ -5,7 +5,7 @@
 
 @class NSString, WXLocalNotificationInfo;
 
-@interface VoipMonoMsg
+@interface VoipMonoMsg : NSObject
 {
     _Bool _m_fromAnswered;
     _Bool _hasHolded;

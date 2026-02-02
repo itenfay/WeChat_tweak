@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardOperationRegion
+@interface WCCardOperationRegion : NSObject
 {
     unsigned int _type;
     unsigned int _endTime;

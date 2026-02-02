@@ -6,7 +6,7 @@
 @class MJGradientView, MMUIButton, MMUILabel;
 @protocol MJMovieComposingRecognitionGuideViewDelegate;
 
-@interface MJMovieComposingRecognitionGuideView
+@interface MJMovieComposingRecognitionGuideView : NSObject
 {
     id <MJMovieComposingRecognitionGuideViewDelegate> _delegate;
     unsigned long long _guideScene;

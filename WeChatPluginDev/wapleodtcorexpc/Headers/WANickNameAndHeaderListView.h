@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, WANickNameAndHeaderAuthViewModel;
 
-@interface WANickNameAndHeaderListView
+@interface WANickNameAndHeaderListView : NSObject
 {
     MMTableView *_tableView;
 }

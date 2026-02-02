@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKBaseResp
+@interface WWKBaseResp : NSObject
 {
     int _errCode;
     NSString *_errStr;

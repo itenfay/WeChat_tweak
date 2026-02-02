@@ -6,7 +6,7 @@
 @class NSString;
 @protocol PhoneAuthManagePhoneLogicDelegate, PhoneAuthManagePhoneLogicOperationDelegate;
 
-@interface PhoneAuthManagePhoneLogic
+@interface PhoneAuthManagePhoneLogic : NSObject
 {
     id <PhoneAuthManagePhoneLogicDelegate> _delegate;
     id <PhoneAuthManagePhoneLogicOperationDelegate> _operationDelegate;

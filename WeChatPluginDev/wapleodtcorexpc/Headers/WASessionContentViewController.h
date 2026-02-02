@@ -5,7 +5,7 @@
 
 @class NSString, WAAppIdToUsernameTransfer;
 
-@interface WASessionContentViewController
+@interface WASessionContentViewController : NSObject
 {
     WAAppIdToUsernameTransfer *_appIdTransfer;
     NSString *_sceneID;

@@ -6,7 +6,7 @@
 @class ContactsSelectorController, EmoticonBoardView, ImageSelectorController, MMAsset, MMGrowTextView, MMLoadingView, MMTimer, MMTipsViewController, MMUIButton, MMUILabel, NSArray, NSString, SightDraft, SightIconView, SightView, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UILabel, UIView, WCCommitPrivacySetting, WCDataItem, WCDragDeleteBarView, WCDragTipView, WCInputController, WCLocationInfo, WCMomentsAnimatedFireworksView, WCMomentsPostReportSession, WCMomentsSpringTextContainerView, WCMusicInfo, WCPOIStarView, WCPasteTextLengthLogic, WCSelectorView, WCTableViewManager, WCTimelineEnhanceDraftController, WCTimelineExtBean, WCTimelinePOIPickerViewController, WCTimelineTrashReportData;
 @protocol WCCommitViewAnimationDelegate;
 
-@interface WCNewCommitViewController
+@interface WCNewCommitViewController : NSObject
 {
     WCTableViewManager *m_tableViewManager;
     UIView *_headView;

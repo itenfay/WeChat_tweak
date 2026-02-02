@@ -5,7 +5,7 @@
 
 @class GameCenterMsgBubbleInfo, GameCenterMsgMessageCenterInfo, GameCenterMsgReportInfo, GameCenterMsgTimeInfo, GameCenterMsgV2Node, GameCenterTabInfoNode, GameLifeInfo, NSString;
 
-@interface GameCenterCommMsg
+@interface GameCenterCommMsg : NSObject
 {
     NSString *_appId;
     GameCenterMsgBubbleInfo *_bubbleInfo;

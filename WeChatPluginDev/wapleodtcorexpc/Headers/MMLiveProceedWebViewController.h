@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMTimer, NSString, UIButton, UIView;
 
-@interface MMLiveProceedWebViewController
+@interface MMLiveProceedWebViewController : NSObject
 {
     CDUnknownBlockType _proceedActionCallback;
     UIView *_bottomBackgroundView;

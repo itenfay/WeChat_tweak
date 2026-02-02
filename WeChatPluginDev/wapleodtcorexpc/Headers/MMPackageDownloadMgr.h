@@ -5,7 +5,7 @@
 
 @class NSDateFormatter, NSMutableSet, NSString;
 
-@interface MMPackageDownloadMgr
+@interface MMPackageDownloadMgr : NSObject
 {
     NSMutableSet *m_downliadingPackageLists;
     NSMutableSet *m_freshDownliadingPackageLists;

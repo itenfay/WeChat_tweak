@@ -5,7 +5,7 @@
 
 @class AppRecordMessageViewModel, UILabel;
 
-@interface AppRecordMessageCellView
+@interface AppRecordMessageCellView : NSObject
 {
     UILabel *m_titleLabel;
     UILabel *m_descLabel;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, UIImage;
 
-@interface WAOpenWxMaterialMgr
+@interface WAOpenWxMaterialMgr : NSObject
 {
     NSMutableDictionary *_materialWeAppDic;
     UIImage *_cornerImg;

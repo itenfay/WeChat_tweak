@@ -6,7 +6,7 @@
 @class DrawLotteryResponse, ExposureInfoModifyResponse, GetLotteryResponse, MMWebViewController, NSMutableArray, NSString, WCPayDrawLotteryCgi, WCPayFollowCardBDMchCgi, WCPayGetLotteryCgi, WCPayJumpRemindControlLogic, WCPayModifyExposureCgi, WCPayOfflineAckMsgCgi, WCPayOfflineCancelPayCgi, WCPayOfflineEnableCgi, WCPayOfflineGetMsgCgi, WCPayOfflinePayBlockLayer, WCPayOfflinePayConfirmView, WCPayOfflinePayDisableBlockLayer, WCPayOfflinePayGuideBar, WCPayOfflineSetPaymentCgi, WCPayPayMoneyLogic, WCPayRealnameGuideInfo;
 @protocol WCPayOfflineLogicDelegate;
 
-@interface WCPayOfflinePayMainLogic
+@interface WCPayOfflinePayMainLogic : NSObject
 {
     int m_uiLocationTag;
     NSMutableArray *m_arrConfirmedOfflinePayID;

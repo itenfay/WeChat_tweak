@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface BTImageItemCellViewModel
+@interface BTImageItemCellViewModel : NSObject
 {
     NSArray *_picUrls;
 }

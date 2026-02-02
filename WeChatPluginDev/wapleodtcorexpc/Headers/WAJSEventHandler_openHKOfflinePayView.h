@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openHKOfflinePayView
+@interface WAJSEventHandler_openHKOfflinePayView : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelOpenProfileReq
+@interface WXChannelOpenProfileReq : NSObject
 {
     NSString *_userName;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCFinderCreateCoordinator, WCFinderJumpInfo;
 
-@interface OpenFinderShareVideoHandler
+@interface OpenFinderShareVideoHandler : NSObject
 {
     NSMutableArray *_mmAssetArray;
     NSString *_extLinkUrl;

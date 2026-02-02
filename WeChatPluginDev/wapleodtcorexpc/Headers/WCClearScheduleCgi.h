@@ -5,7 +5,7 @@
 
 @protocol WCClearScheduleCgiDelegate;
 
-@interface WCClearScheduleCgi
+@interface WCClearScheduleCgi : NSObject
 {
     _Bool _isRunning;
     id <WCClearScheduleCgiDelegate> _delegate;

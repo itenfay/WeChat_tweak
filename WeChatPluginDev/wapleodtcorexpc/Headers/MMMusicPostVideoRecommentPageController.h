@@ -5,7 +5,7 @@
 
 @class MMMusicPostVideoCollectionFooterCell, MMMusicPostVideoDataVM, NSString, UICollectionView;
 
-@interface MMMusicPostVideoRecommentPageController
+@interface MMMusicPostVideoRecommentPageController : NSObject
 {
     MMMusicPostVideoDataVM *_dataVM;
     UICollectionView *_listView;

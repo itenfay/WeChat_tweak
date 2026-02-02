@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, UIImageView, UIView, WAPopOverTaskBarView, WAPopOverTaskBarlogic;
 
-@interface WAPopOverView
+@interface WAPopOverView : NSObject
 {
     _Bool _isDismissForbidAnimation;
     _Bool _constraitByContainer;

@@ -5,7 +5,7 @@
 
 @class FinderLocation, FinderMusicTopicInfo, MMWebImageView, NSData, NSMutableArray, NSString, UIBarButtonItem, UIView, WCFinderAnimationLoadingView, WCFinderDataItem, WCFinderFeedAudioHelper, WCFinderMusicAuthorsActionSheet, WCFinderMusicCardBriefView, WCFinderMusicEventHeaderView, WCFinderMusicEventViewModel, WCFinderScrollActionSheet, WCFinderTabPageView, WCFinderTopicRouteParams, WCPlayerView;
 
-@interface WCFinderMusicEventViewController
+@interface WCFinderMusicEventViewController : NSObject
 {
     _Bool _showTransparentNaviBar;
     _Bool _isOnPostLoading;

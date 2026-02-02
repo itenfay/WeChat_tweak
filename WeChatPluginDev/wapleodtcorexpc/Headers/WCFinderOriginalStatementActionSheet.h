@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol WCFinderOriginalStatementActionSheetDelegate;
 
-@interface WCFinderOriginalStatementActionSheet
+@interface WCFinderOriginalStatementActionSheet : NSObject
 {
     int _commentScene;
     id <WCFinderOriginalStatementActionSheetDelegate> _finderDelegate;

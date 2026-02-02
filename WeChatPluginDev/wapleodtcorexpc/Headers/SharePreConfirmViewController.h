@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface SharePreConfirmViewController
+@interface SharePreConfirmViewController : NSObject
 {
     _Bool _willRotateToPreviousOrientation;
     CDUnknownBlockType _didTransitionToNewSizeBlock;

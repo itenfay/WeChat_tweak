@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderRootEditImageViewController
+@interface WCFinderRootEditImageViewController : NSObject
 {
     _Bool _shouldCropPhotoInVisibleFrame;
     unsigned long long _enterTime;

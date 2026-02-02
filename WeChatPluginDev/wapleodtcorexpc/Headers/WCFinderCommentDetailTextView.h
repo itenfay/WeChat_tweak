@@ -6,7 +6,7 @@
 @class NSMutableArray, WCFinderCommentDetailTextViewContext;
 @protocol WCFinderCommentDetailTextViewMentionDelegate;
 
-@interface WCFinderCommentDetailTextView
+@interface WCFinderCommentDetailTextView : NSObject
 {
     id <WCFinderCommentDetailTextViewMentionDelegate> _mentionDelegate;
     NSMutableArray *_mentionEntryArray;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMImagePickerReportInfo
+@interface MMImagePickerReportInfo : NSObject
 {
     _Bool _isOriginalImage;
     _Bool _isFinalSend;

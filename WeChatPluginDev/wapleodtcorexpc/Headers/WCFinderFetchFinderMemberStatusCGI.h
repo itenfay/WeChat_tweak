@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderFetchFinderMemberStatusCGI
+@interface WCFinderFetchFinderMemberStatusCGI : NSObject
 {
     _Bool _needSubscriptionType;
     NSString *_finderUsername;

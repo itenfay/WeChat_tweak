@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat33WCWeAppWebSearchTransitionManager
+@interface _TtC6WeChat33WCWeAppWebSearchTransitionManager : NSObject
 {
     MISSING_TYPE *kTotalDuration;
     MISSING_TYPE *kContentDelay;

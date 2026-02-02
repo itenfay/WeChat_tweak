@@ -5,7 +5,7 @@
 
 @class WAEJTexture;
 
-@interface WAEJBindingGfxImage
+@interface WAEJBindingGfxImage : NSObject
 {
     WAEJTexture *_externalTexture;
 }

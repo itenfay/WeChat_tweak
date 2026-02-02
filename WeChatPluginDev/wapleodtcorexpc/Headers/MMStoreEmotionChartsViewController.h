@@ -5,7 +5,7 @@
 
 @class EmoticonStoreFootView, MMTableView, NSMutableArray, NSString;
 
-@interface MMStoreEmotionChartsViewController
+@interface MMStoreEmotionChartsViewController : NSObject
 {
     MMTableView *_chartsTableView;
     NSMutableArray *_chartsItemArray;

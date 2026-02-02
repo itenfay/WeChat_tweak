@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface WebviewJSEventHandler_secureTunnel
+@interface WebviewJSEventHandler_secureTunnel : NSObject
 {
     NSMutableSet *logics;
 }

@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString;
 
-@interface BrandTemplateMsgContentViewController
+@interface BrandTemplateMsgContentViewController : NSObject
 {
     NSString *_templateSessionId;
     NSString *_templateId;

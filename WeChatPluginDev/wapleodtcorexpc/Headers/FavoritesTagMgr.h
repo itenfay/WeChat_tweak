@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MyFavoritesDB, NSArray, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString;
 @protocol FavoritesTagMgrDelegate;
 
-@interface FavoritesTagMgr
+@interface FavoritesTagMgr : NSObject
 {
     NSMutableArray *m_editingLocalIds;
     NSString *m_editingTag;

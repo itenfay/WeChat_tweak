@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KSLocalFileAudioDataProvider
+@interface KSLocalFileAudioDataProvider : NSObject
 {
     NSString *_audioFileExt;
 }

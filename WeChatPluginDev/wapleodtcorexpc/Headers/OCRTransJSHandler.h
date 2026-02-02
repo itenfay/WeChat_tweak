@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface OCRTransJSHandler
+@interface OCRTransJSHandler : NSObject
 {
     NSString *_senderUserName;
     NSString *_imageTransDataJsonStr;

@@ -5,7 +5,7 @@
 
 @class WCFinderAlbumScrollViewParamModel;
 
-@interface WCFinderHalfScreenEditImageViewController
+@interface WCFinderHalfScreenEditImageViewController : NSObject
 {
     _Bool _hiddenCropBtn;
     double _stageFrameY;

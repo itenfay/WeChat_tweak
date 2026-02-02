@@ -5,7 +5,7 @@
 
 @class MMListenMembershipJoinInfo, MMPageSheetAdapter, NSString, TingWecoinPlugin;
 
-@interface LiteAppJsApiTingWecoinPay
+@interface LiteAppJsApiTingWecoinPay : NSObject
 {
     MMListenMembershipJoinInfo *_joinInfo;
     TingWecoinPlugin *_logic;

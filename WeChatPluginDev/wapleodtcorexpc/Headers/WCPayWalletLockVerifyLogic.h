@@ -6,7 +6,7 @@
 @class NSString, WCPayWalletLockReportCgi;
 @protocol WCPayWalletLockVerifyLogicDelegate;
 
-@interface WCPayWalletLockVerifyLogic
+@interface WCPayWalletLockVerifyLogic : NSObject
 {
     unsigned int _patternLockLogicTag;
     unsigned long long _verifyScene;

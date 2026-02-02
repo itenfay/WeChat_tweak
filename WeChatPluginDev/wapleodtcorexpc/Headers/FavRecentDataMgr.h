@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface FavRecentDataMgr
+@interface FavRecentDataMgr : NSObject
 {
     NSMutableArray *_arrRecentFavDatas;
 }

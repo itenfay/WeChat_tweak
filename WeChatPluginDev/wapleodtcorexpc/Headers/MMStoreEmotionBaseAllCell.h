@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreItem, MMEmoticonStoreDownloadLogic, MMWebImageView, NSString, UIView;
 
-@interface MMStoreEmotionBaseAllCell
+@interface MMStoreEmotionBaseAllCell : NSObject
 {
     _Bool _layoutStaticBtnWidth;
     long long _type;

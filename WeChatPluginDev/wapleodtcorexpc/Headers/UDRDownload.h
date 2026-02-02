@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface UDRDownload
+@interface UDRDownload : NSObject
 {
     NSMutableDictionary *_dicDownloadingItem;
     NSObject<OS_dispatch_queue> *_queue;

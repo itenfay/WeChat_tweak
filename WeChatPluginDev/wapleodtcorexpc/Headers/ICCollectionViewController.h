@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ICCollectionStatInfo, ICCollectionView, NSMutableArray, NSString;
 
-@interface ICCollectionViewController
+@interface ICCollectionViewController : NSObject
 {
     _Bool _hasMoreData;
     _Bool _isLoadingNewData;

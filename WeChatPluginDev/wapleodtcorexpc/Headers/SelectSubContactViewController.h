@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableSet, NSString, UIColor;
 @protocol SelectSubContactViewControllerDelegate;
 
-@interface SelectSubContactViewController
+@interface SelectSubContactViewController : NSObject
 {
     _Bool _isMultiSelect;
     _Bool _showsChatroomMembers;

@@ -6,7 +6,7 @@
 @class MMTimer, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet;
 @protocol UploadStreamVoiceDataMgrDelegate;
 
-@interface UploadStreamVoiceDataMgr
+@interface UploadStreamVoiceDataMgr : NSObject
 {
     unsigned int _addTaskCount;
     unsigned int _uploadTaskCount;

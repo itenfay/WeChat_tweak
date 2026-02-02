@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavAddItemHelper
+@interface FavAddItemHelper : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @protocol MJShootBubbleSwitchTouchCaptureViewDelegate;
 
-@interface MJShootBubbleSwitchTouchCaptureView
+@interface MJShootBubbleSwitchTouchCaptureView : NSObject
 {
     id <MJShootBubbleSwitchTouchCaptureViewDelegate> _delegate;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelOpenFeedResp
+@interface WXChannelOpenFeedResp : NSObject
 {
     NSString *_extMsg;
 }

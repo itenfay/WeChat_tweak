@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveNewShareSettingSessionSelectController, MMFinderLiveShareSettingInitParams, MMFinderLiveVisivilitySettingInfo, MMTableViewInfo, MMUIButton, MMUILabel, NSString, UIButton, UIView, UIViewController;
 @protocol MMFinderLiveVisivilityShareSettingDelegate;
 
-@interface MMFinderLiveVisivilityShareSettingView
+@interface MMFinderLiveVisivilityShareSettingView : NSObject
 {
     _Bool _isShown;
     _Bool _forceDarkMode;

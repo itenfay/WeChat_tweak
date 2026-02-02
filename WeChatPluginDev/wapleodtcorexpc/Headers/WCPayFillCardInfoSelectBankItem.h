@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSMutableArray, NSString, UILabel, WCPayCardBinInfo, WCPaySelectBankViewController;
 
-@interface WCPayFillCardInfoSelectBankItem
+@interface WCPayFillCardInfoSelectBankItem : NSObject
 {
     UILabel *m_bankLabel;
     WCPayCardBinInfo *m_selectedBank;

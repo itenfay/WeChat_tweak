@@ -5,7 +5,7 @@
 
 @protocol WCMktTicketHomePageCgiDelegate;
 
-@interface WCMktTicketHomePageCgi
+@interface WCMktTicketHomePageCgi : NSObject
 {
     id <WCMktTicketHomePageCgiDelegate> _cgiDelegate;
 }

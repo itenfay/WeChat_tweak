@@ -5,7 +5,7 @@
 
 @class NSString, WXMediaMessage;
 
-@interface GetMessageFromWXResp
+@interface GetMessageFromWXResp : NSObject
 {
     _Bool bText;
     NSString *text;

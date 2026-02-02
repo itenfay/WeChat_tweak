@@ -5,7 +5,7 @@
 
 @protocol WCPayWalletBatchFunctionOperateCgiDelegate;
 
-@interface WCPayWalletBatchFunctionOperateCgi
+@interface WCPayWalletBatchFunctionOperateCgi : NSObject
 {
     id <WCPayWalletBatchFunctionOperateCgiDelegate> m_delegate;
 }

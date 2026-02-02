@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingDownload
+@interface WAEJBindingDownload : NSObject
 {
     NSString *taskId;
     unsigned int workerId;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface YtFaceFrame_OC
+@interface YtFaceFrame_OC : NSObject
 {
     NSString *_image;
     NSArray *_x_coordinates;

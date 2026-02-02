@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCCanvasComponentItem;
 
-@interface WCCanvasComponentRedEnvelopInfo
+@interface WCCanvasComponentRedEnvelopInfo : NSObject
 {
     int _theChosenSubtype;
     NSString *_title;

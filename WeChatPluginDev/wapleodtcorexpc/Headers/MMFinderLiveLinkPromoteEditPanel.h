@@ -5,7 +5,7 @@
 
 @class MMGrowTextView, MMUIButton, MMUILabel, NSArray, NSString, UIColor, UIView, WCInputController;
 
-@interface MMFinderLiveLinkPromoteEditPanel
+@interface MMFinderLiveLinkPromoteEditPanel : NSObject
 {
     _Bool _resignFirstResponderOnTap;
     _Bool _isKeyboardShow;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol EmoticonBoardCrossCollectionIPTipPageDelegate;
 
-@interface EmoticonBoardCrossCollectionIPTipPageCell
+@interface EmoticonBoardCrossCollectionIPTipPageCell : NSObject
 {
     double _bottomInset;
 }

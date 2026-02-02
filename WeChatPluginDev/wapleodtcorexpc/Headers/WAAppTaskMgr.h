@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTimer, NSDictionary, NSMutableArray, NSObject, NSString, TencentLBSLocation, WAMemoryPressureRecord, WAThreadSafeMutableDictionary;
 @protocol OS_dispatch_source;
 
-@interface WAAppTaskMgr
+@interface WAAppTaskMgr : NSObject
 {
     NSMutableArray *_arrJumpList;
     MMTimer *_timerCheckBackgroundTask;

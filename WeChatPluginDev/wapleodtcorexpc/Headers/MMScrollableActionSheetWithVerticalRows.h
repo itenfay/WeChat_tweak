@@ -6,7 +6,7 @@
 @class MMScrollableActionSheetVerticalContainerView, NSString;
 @protocol MMScrollableActionSheetWithVerticalRowsDelegate;
 
-@interface MMScrollableActionSheetWithVerticalRows
+@interface MMScrollableActionSheetWithVerticalRows : NSObject
 {
     MMScrollableActionSheetVerticalContainerView *_verticalContainerView;
 }

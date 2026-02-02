@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSString, UILabel, UIView, WCFinderHeadImageView, WCFinderLiveGenericFeedVM;
 
-@interface WCFinderLiveHomePageFollowNoticeCell
+@interface WCFinderLiveHomePageFollowNoticeCell : NSObject
 {
     MMWebImageView *_liveImageView;
     UIView *_containerView;

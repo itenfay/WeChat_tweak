@@ -6,7 +6,7 @@
 @class NSDate, NSString, UIBarButtonItem, UIView;
 @protocol MMActionSheetCustomPickerPotocol, MMActionSheetDatePickerDelegate;
 
-@interface MMActionSheetDatePicker
+@interface MMActionSheetDatePicker : NSObject
 {
     id <MMActionSheetDatePickerDelegate> _delegate;
     UIView<MMActionSheetCustomPickerPotocol> *_customDatePickerView;

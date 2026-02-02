@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCWebEventsBaseAction
+@interface WCWebEventsBaseAction : NSObject
 {
     _Bool _bPerformed;
 }

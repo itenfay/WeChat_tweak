@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCRealTimeKVReportWrap
+@interface WCRealTimeKVReportWrap : NSObject
 {
     _Bool _needRealTime;
     _Bool _reportSuccess;

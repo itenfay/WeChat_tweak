@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UINavigationController;
 
-@interface WebviewJSEventHandler_chooseHaowanMedia
+@interface WebviewJSEventHandler_chooseHaowanMedia : NSObject
 {
     NSMutableArray *_localIds;
     unsigned long long _totalCount;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, _TtC6WeChat22MagicCardStarterSclBiz;
 
-@interface _TtC6WeChat28MagicCardStarterJsApiContext
+@interface _TtC6WeChat28MagicCardStarterJsApiContext : NSObject
 {
     MISSING_TYPE *biz;
 }

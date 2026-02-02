@@ -5,7 +5,7 @@
 
 @class KindaUIScrollView, MMKScrollViewOnScrollCallback, NSString;
 
-@interface KindaScrollView
+@interface KindaScrollView : NSObject
 {
     _Bool _m_shouldShowScrollBar;
     KindaUIScrollView *_m_scrollView;

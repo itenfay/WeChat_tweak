@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMObject, MMUILabel, MMUIView, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIScrollView, UITapGestureRecognizer, UITextField, UIView, UIViewController;
 @protocol IWCCTRichTextViewProtocol, IWCUIKitGrowTextViewProtocol, IWCUIKitInputControllerProtocol, IWCUIKitInputControllerProxyService, MMTipsViewControllerDelegate;
 
-@interface MMTipsViewController
+@interface MMTipsViewController : NSObject
 {
     id <MMTipsViewControllerDelegate> m_delegate;
     unsigned long long _tipsType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableString;
 
-@interface RTEContentStorage
+@interface RTEContentStorage : NSObject
 {
     NSMutableString *_textContent;
     NSMutableArray *_attributes;

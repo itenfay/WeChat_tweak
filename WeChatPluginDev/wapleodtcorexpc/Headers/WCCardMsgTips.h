@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardMsgTips
+@interface WCCardMsgTips : NSObject
 {
     unsigned int _newCount;
     unsigned int _lastUpdateTime;

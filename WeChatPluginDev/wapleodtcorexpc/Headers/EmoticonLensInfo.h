@@ -5,7 +5,7 @@
 
 @class LensIcon, LensPackage, NSString, PersonalDesigner;
 
-@interface EmoticonLensInfo
+@interface EmoticonLensInfo : NSObject
 {
     NSString *_lensId;
     NSString *_name;

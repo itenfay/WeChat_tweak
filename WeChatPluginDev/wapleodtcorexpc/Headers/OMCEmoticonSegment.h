@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OMCEmoticonSegment
+@interface OMCEmoticonSegment : NSObject
 {
 }
 

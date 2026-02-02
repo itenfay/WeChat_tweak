@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAJSEventHandler_loadVideoResource
+@interface WAJSEventHandler_loadVideoResource : NSObject
 {
     NSMutableDictionary *_dicDownloadingURL;
 }

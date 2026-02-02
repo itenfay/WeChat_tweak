@@ -6,7 +6,7 @@
 @class NSString, WCPayNoticeItemView, WCPayQRCodeRewardCodeView;
 @protocol WCPayQRCodeRewardReceiverDetailViewControllerDelegate;
 
-@interface WCPayQRCodeRewardReceiverDetailViewController
+@interface WCPayQRCodeRewardReceiverDetailViewController : NSObject
 {
     id <WCPayQRCodeRewardReceiverDetailViewControllerDelegate> _delegate;
     WCPayQRCodeRewardCodeView *_codeView;

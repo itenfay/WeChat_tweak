@@ -6,7 +6,7 @@
 @class MMTextStateMediaUploadTaskInfo, NSMutableArray;
 @protocol MMTextStateMediaUploadCdnMgrDelegate;
 
-@interface MMTextStateMediaUploadCdnMgr
+@interface MMTextStateMediaUploadCdnMgr : NSObject
 {
     id <MMTextStateMediaUploadCdnMgrDelegate> _delegate;
     NSMutableArray *_taskQueue;

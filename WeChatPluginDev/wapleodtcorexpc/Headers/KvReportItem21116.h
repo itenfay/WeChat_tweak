@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem21116
+@interface KvReportItem21116 : NSObject
 {
     unsigned int _preloadVideoPercent_22;
     unsigned int _preloadDuration_23;

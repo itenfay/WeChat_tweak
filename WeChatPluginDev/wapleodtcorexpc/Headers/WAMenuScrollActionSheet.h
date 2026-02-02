@@ -5,7 +5,7 @@
 
 @class NSString, WAMenuAboveHeaderView, WAMenuHeaderView, WAProfileLogicController;
 
-@interface WAMenuScrollActionSheet
+@interface WAMenuScrollActionSheet : NSObject
 {
     _Bool _needPreferredActionInReloadAnimation;
     unsigned long long _source;

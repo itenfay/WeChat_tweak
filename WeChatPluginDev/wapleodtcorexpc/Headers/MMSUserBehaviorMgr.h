@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMSUserBehaviorMgr
+@interface MMSUserBehaviorMgr : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UILabel, WCBaseControlLogic, WCBaseTextFieldItem, WCBizInfoGroup, WCBizTipView, WCPayTenpaySecureCtrlItem;
 @protocol WCPayFillCardNumberViewControllerDelegate;
 
-@interface WCPayFillCardNumberViewController
+@interface WCPayFillCardNumberViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBizInfoGroup *m_group;

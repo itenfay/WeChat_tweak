@@ -6,7 +6,7 @@
 @class MMHeadImageView, MMLiveMsgTipsExpandViewModel, MMUIButton, MMUILabel, UIView;
 @protocol MMLiveMsgTipsExpandViewCellDelegate;
 
-@interface MMLiveMsgTipsExpandViewCell
+@interface MMLiveMsgTipsExpandViewCell : NSObject
 {
     id <MMLiveMsgTipsExpandViewCellDelegate> _delegate;
     UIView *_bubbleView;

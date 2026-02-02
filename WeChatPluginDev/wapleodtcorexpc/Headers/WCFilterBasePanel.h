@@ -6,7 +6,7 @@
 @class MMUIView, NSArray, NSMutableSet, NSString, UIView;
 @protocol WCFilterBasePanelDelegate;
 
-@interface WCFilterBasePanel
+@interface WCFilterBasePanel : NSObject
 {
     NSString *m_cleanBtnTitle;
     _Bool m_isLoading;

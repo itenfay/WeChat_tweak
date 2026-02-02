@@ -5,7 +5,7 @@
 
 @class NSString, Slot, UIColor;
 
-@interface GCGroupMemberHeadModel
+@interface GCGroupMemberHeadModel : NSObject
 {
     _Bool _isOnline;
     _Bool _needPlayAnimation;

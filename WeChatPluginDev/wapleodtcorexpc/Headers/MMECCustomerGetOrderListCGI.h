@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMECCustomerGetOrderListCGI
+@interface MMECCustomerGetOrderListCGI : NSObject
 {
     unsigned int _orderType;
     unsigned int _evaluationStatus;

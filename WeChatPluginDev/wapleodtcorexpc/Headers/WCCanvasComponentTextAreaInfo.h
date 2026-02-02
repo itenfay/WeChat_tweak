@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentTextAreaInfo
+@interface WCCanvasComponentTextAreaInfo : NSObject
 {
     unsigned int _showType;
     unsigned int _textAlignmentType;

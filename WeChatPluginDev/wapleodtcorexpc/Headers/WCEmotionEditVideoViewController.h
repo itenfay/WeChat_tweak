@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, UIButton, WCEditVideoPushPopTransition;
 
-@interface WCEmotionEditVideoViewController
+@interface WCEmotionEditVideoViewController : NSObject
 {
     WCEditVideoPushPopTransition *_customTransitionDelegate;
     MMWebImageView *_thumbWebImgView;

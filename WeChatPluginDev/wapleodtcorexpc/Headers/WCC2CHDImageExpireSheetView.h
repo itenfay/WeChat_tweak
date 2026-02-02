@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIButton, UIImageView;
 
-@interface WCC2CHDImageExpireSheetView
+@interface WCC2CHDImageExpireSheetView : NSObject
 {
     CDUnknownBlockType _onClickConfirmButton;
     UIImageView *_imageView;

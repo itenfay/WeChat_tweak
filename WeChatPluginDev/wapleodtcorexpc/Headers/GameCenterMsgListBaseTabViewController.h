@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GCTableViewSecionModel, GCTableViewSource, MMTableView, NSIndexPath, NSMutableArray, NSString, UINavigationController;
 
-@interface GameCenterMsgListBaseTabViewController
+@interface GameCenterMsgListBaseTabViewController : NSObject
 {
     _Bool _useAsChildViewController;
     _Bool _isInTab;

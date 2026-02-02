@@ -6,7 +6,7 @@
 @class InvoiceFooterView, MMUIButton, MyInvoiceData, NSIndexPath, NSMutableArray, NSString, UIImageView, UIView, WCBankNumberTextFieldItem, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCClearModeTextViewItem;
 @protocol MyInvoiceInfoViewControllerDelegate;
 
-@interface MyInvoiceInfoViewController
+@interface MyInvoiceInfoViewController : NSObject
 {
     WCClearModeTextViewItem *m_textFieldCompanyTitleItem;
     WCClearModeTextViewItem *m_textFieldPersonTitleItem;

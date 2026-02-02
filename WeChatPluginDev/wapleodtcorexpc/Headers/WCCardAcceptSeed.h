@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardAcceptSeed
+@interface WCCardAcceptSeed : NSObject
 {
     unsigned int _fromScene;
     unsigned int _statScene;

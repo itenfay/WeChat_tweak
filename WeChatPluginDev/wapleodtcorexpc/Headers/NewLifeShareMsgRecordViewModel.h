@@ -5,7 +5,7 @@
 
 @class NewLifeShareCoverImageViewModel;
 
-@interface NewLifeShareMsgRecordViewModel
+@interface NewLifeShareMsgRecordViewModel : NSObject
 {
     NewLifeShareCoverImageViewModel *m_innerViewModel;
 }

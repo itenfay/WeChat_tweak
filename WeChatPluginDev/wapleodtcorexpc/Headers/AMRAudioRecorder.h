@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock;
 
-@interface AMRAudioRecorder
+@interface AMRAudioRecorder : NSObject
 {
     NSRecursiveLock *mPrepareSentLock;
     _Bool mIsPrepareSent;

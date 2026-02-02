@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString;
 @protocol EnterpriseBrandSearchControllerDelegate;
 
-@interface EnterpriseBrandSearchController
+@interface EnterpriseBrandSearchController : NSObject
 {
     NSString *_brandUserName;
     NSString *_searchText;

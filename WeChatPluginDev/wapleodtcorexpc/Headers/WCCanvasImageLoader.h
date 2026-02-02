@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString, WCDownloadImageCdnMgr;
 @protocol OS_dispatch_queue;
 
-@interface WCCanvasImageLoader
+@interface WCCanvasImageLoader : NSObject
 {
     NSRecursiveLock *m_lock;
     NSObject<OS_dispatch_queue> *_request_queue;

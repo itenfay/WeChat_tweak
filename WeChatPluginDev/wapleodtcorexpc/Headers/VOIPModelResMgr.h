@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VOIPModelResMgr
+@interface VOIPModelResMgr : NSObject
 {
 }
 

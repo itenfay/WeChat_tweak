@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WAOrderInfoModel;
 
-@interface WAOrderInfoLogic
+@interface WAOrderInfoLogic : NSObject
 {
     WAOrderInfoModel *_orderInfo;
     CDUnknownBlockType _orderInfoRespAction;

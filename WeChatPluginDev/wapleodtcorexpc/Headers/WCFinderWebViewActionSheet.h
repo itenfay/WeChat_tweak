@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIImageView, UILabel, UIView, WCFinderAnimationLoadingView, YYWKWebView;
 
-@interface WCFinderWebViewActionSheet
+@interface WCFinderWebViewActionSheet : NSObject
 {
     NSString *_titleString;
     NSString *_ruleUrl;

@@ -6,7 +6,7 @@
 @class ColorGradientView, EditVideoBGMFetchFeedbackLogic, EditVideoBGMSearchView, EditVideoMusicController, MMMusicPickerScrollView, MMUIButton, NSMutableArray, NSString, UIView;
 @protocol EditVideoBgmViewDelegate;
 
-@interface EditVideoBGMView
+@interface EditVideoBGMView : NSObject
 {
     _Bool _lyricsOn;
     _Bool _musicOn;

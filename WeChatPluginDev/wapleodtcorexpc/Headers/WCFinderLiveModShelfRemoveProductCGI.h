@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderLiveModShelfRemoveProductCGI
+@interface WCFinderLiveModShelfRemoveProductCGI : NSObject
 {
     NSArray *_removeProductIdList;
     CDUnknownBlockType _successBlock;

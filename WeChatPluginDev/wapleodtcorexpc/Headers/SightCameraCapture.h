@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAudioSessionDataSourceDescription, AVCaptureAudioDataOutput, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, MJCameraTemplateReportObject, MJTemplateCameraSession, MMQRCodeScanner, NSMutableArray, NSObject, NSRecursiveLock, NSString, XEffectEffectManager;
 @protocol OS_dispatch_queue, SightCameraCaptureDelegate;
 
-@interface SightCameraCapture
+@interface SightCameraCapture : NSObject
 {
     _Bool m_isActive;
     _Bool m_isAudioActive;

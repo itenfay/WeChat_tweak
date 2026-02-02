@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CIContext, NSString, TXCDispatchQueue, TXCFramebufferDrawer, TXCGlFrameBuffer, TXCPixelBufferPool, TXCRgbToYuvFilter, TXCVideoFrame, TXCVideoFrameCoords, TXCVideoRenderConfig;
 @protocol TXCCustomVideoRendererDelegate, TXIGlContext;
 
-@interface TXCCustomVideoRenderer
+@interface TXCCustomVideoRenderer : NSObject
 {
     CIContext *_ciContext;
     TXCDispatchQueue *_queue;

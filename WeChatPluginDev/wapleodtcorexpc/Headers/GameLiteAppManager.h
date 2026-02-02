@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GCCommonServer, NSMutableDictionary, NSString, WCTTable;
 
-@interface GameLiteAppManager
+@interface GameLiteAppManager : NSObject
 {
     _Bool _ignoreGameLiteCheck;
     NSMutableDictionary *_dbDataDict;

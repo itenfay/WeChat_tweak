@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMAirPlayManager
+@interface MMAirPlayManager : NSObject
 {
     NSMutableDictionary *_mutedToastRecords;
 }

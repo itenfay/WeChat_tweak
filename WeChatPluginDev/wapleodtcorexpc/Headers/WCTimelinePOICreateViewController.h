@@ -6,7 +6,7 @@
 @class CLLocation, MMTableViewInfo, MMUIButton, NSMutableArray, NSString, WCBaseTextFieldItem, WCPOIAddressPickerItem;
 @protocol POICreateDelegate;
 
-@interface WCTimelinePOICreateViewController
+@interface WCTimelinePOICreateViewController : NSObject
 {
     NSString *_poiName;
     CLLocation *_location;

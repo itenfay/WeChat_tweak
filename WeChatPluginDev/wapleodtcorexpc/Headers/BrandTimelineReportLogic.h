@@ -6,7 +6,7 @@
 @class BTLNotifyBarReportItem, BTLTopBarReportItem, BrandReportMainSessionInfo, BrandTLExptConfig, KvReportItem29480, NSMutableArray, NSMutableDictionary, NSMutableSet;
 @protocol BrandTimelineReportLogicDelegate;
 
-@interface BrandTimelineReportLogic
+@interface BrandTimelineReportLogic : NSObject
 {
     unsigned int m_stayTimeStart;
     unsigned int m_listStayTimeStart;

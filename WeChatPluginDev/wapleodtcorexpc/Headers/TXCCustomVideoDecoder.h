@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, TXCDispatchQueue, TXCPixelBufferPool, TXCVideoDecodeConfig, TXCVideoFrame;
 @protocol TXIVideoDecoderSupervisorInterface;
 
-@interface TXCCustomVideoDecoder
+@interface TXCCustomVideoDecoder : NSObject
 {
     struct ITXLiteAVVideoDecoder *_decoder;
     struct unique_ptr<liteav::CustomDecodeCallback, std::default_delete<liteav::CustomDecodeCallback>> _decoderCallback;

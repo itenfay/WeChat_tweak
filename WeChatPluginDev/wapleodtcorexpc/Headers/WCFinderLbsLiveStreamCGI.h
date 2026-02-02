@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, FinderLbsTabTipsInfo, FinderLiveBeforeJoinLiveRoomStatus, FinderLiveClientStatus, NSData, NSMutableArray, NSString, WCFinderLiveTabInfo;
 
-@interface WCFinderLbsLiveStreamCGI
+@interface WCFinderLbsLiveStreamCGI : NSObject
 {
     int _fromScene;
     int _commentScene;

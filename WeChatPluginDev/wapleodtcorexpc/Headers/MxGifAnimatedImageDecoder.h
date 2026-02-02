@@ -5,7 +5,7 @@
 
 @class NSData, NSString, UIImage;
 
-@interface MxGifAnimatedImageDecoder
+@interface MxGifAnimatedImageDecoder : NSObject
 {
     void *m_gifImage;
     NSData *m_gifData;

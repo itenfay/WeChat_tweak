@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GCChannelTitleModel
+@interface GCChannelTitleModel : NSObject
 {
     NSString *_titleName;
     unsigned long long _nubmerCnt;

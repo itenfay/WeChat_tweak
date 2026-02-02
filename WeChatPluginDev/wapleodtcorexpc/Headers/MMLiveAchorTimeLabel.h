@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveAnchorExceptionCheckManager, MMTimerLabel, NSString, UIImageView;
 
-@interface MMLiveAchorTimeLabel
+@interface MMLiveAchorTimeLabel : NSObject
 {
     MMLiveAnchorExceptionCheckManager *_anchorExceptionCheckManager;
     UIImageView *_networkStateImageView;

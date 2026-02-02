@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentItem;
 
-@interface WCCanvasComponentFloatJumpInfo
+@interface WCCanvasComponentFloatJumpInfo : NSObject
 {
     _Bool _autoJump;
     NSString *_title;

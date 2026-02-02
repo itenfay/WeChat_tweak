@@ -5,7 +5,7 @@
 
 @class EditStoryImageAttr, NSString, WCStoryPublishReportObj;
 
-@interface WCMyStoryCameraMgr
+@interface WCMyStoryCameraMgr : NSObject
 {
     WCStoryPublishReportObj *_publishReportObj;
     unsigned long long _enterScene;

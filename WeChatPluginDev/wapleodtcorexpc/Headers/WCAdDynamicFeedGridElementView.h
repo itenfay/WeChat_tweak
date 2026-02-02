@@ -5,7 +5,7 @@
 
 @class WCDataItem, WCImageView, WCMediaItem;
 
-@interface WCAdDynamicFeedGridElementView
+@interface WCAdDynamicFeedGridElementView : NSObject
 {
     WCMediaItem *_mediaItem;
     WCDataItem *_dataItem;

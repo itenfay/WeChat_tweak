@@ -5,7 +5,7 @@
 
 @protocol WCPayQRCodeRewardGetCodeCgiDelegate;
 
-@interface WCPayQRCodeRewardGetCodeCgi
+@interface WCPayQRCodeRewardGetCodeCgi : NSObject
 {
     id <WCPayQRCodeRewardGetCodeCgiDelegate> _cgiDelegate;
 }

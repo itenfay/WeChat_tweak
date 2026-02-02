@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderJoinLiveContext, MMFinderLiveTaskId, NSArray, NSString, UITableView;
 
-@interface MMFinderLiveAudienceSuperfanSwitchRoleSheetView
+@interface MMFinderLiveAudienceSuperfanSwitchRoleSheetView : NSObject
 {
     CDUnknownBlockType _switchRoleCallback;
     MMFinderLiveTaskId *_liveTaskId;

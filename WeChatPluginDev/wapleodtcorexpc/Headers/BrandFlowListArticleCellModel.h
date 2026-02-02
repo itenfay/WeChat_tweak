@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandFlowListArticleCellModel
+@interface BrandFlowListArticleCellModel : NSObject
 {
     unsigned int _itemShowType;
     unsigned int _sceneToAppendUrl;

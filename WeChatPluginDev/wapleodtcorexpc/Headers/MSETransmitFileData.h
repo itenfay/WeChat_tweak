@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MSETransmitFileData
+@interface MSETransmitFileData : NSObject
 {
     NSString *_filePath;
     long long _fileSize;

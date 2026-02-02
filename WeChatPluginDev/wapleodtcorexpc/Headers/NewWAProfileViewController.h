@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ForwardMessageLogicController, NSDictionary, NSMutableArray, NSString, WAContact, WAProfileFooterView, WAProfileHeaderView, WAProfileLogicController;
 @protocol WAProfileViewControllerDelegate;
 
-@interface NewWAProfileViewController
+@interface NewWAProfileViewController : NSObject
 {
     ForwardMessageLogicController *_forwardLogic;
     WAProfileHeaderView *_headerView;

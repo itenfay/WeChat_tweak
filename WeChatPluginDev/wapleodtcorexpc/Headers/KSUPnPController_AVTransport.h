@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface KSUPnPController_AVTransport
+@interface KSUPnPController_AVTransport : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_StartRecord
+@interface WebviewJSEventHandler_StartRecord : NSObject
 {
     _Bool _isCheckingPermission;
     unsigned long long _duration;

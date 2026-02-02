@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface OplogEventHandler
+@interface OplogEventHandler : NSObject
 {
     NSMutableArray *m_arrOplogs;
 }

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29WCPayJSAPIRealnameVerifyLogic
+@interface _TtC6WeChat29WCPayJSAPIRealnameVerifyLogic : NSObject
 {
     MISSING_TYPE *tinyAppEvent;
     MISSING_TYPE *params;

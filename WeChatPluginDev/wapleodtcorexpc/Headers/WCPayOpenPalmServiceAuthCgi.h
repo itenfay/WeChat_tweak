@@ -5,7 +5,7 @@
 
 @protocol WCPayOpenPalmServiceAuthCgiDelegate;
 
-@interface WCPayOpenPalmServiceAuthCgi
+@interface WCPayOpenPalmServiceAuthCgi : NSObject
 {
     id <WCPayOpenPalmServiceAuthCgiDelegate> _cgiDelegate;
 }

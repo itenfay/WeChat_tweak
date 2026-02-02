@@ -5,7 +5,7 @@
 
 @class MasterWxAcctInfo, UILabel, UIView, WCFinderHeadImageView;
 
-@interface WCFinderAccountWechatInfoSheet
+@interface WCFinderAccountWechatInfoSheet : NSObject
 {
     MasterWxAcctInfo *_accountInfo;
     UIView *_contentContainerView;

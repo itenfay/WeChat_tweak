@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_sendRedPacket
+@interface WAJSEventHandler_sendRedPacket : NSObject
 {
 }
 

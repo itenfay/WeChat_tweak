@@ -6,7 +6,7 @@
 @class MMTimer, NSString, WCAdHalfScreenContainerBaseView, WCAdQuicklyAddBrandInfo, WCAdvertiseInfo;
 @protocol WCAdQuicklyAddBrandLogicDelegate;
 
-@interface WCAdQuicklyAddBrandLogic
+@interface WCAdQuicklyAddBrandLogic : NSObject
 {
     int _uiScene;
     int _uiSubScene;

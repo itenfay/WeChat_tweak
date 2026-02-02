@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, NSString, RecommendedMusicInfo, UIImageView, UILabel, WCFlowLyricsView, WCStoryLyricWaveView;
 
-@interface MMMusicPickerContentView
+@interface MMMusicPickerContentView : NSObject
 {
     _Bool _isFromBgmSearch;
     UIImageView *_musicLogoView;

@@ -5,7 +5,7 @@
 
 @protocol WCPayResetSelectVerifyWayViewControllerDelegate;
 
-@interface WCPayResetSelectVerifyWayViewController
+@interface WCPayResetSelectVerifyWayViewController : NSObject
 {
     id <WCPayResetSelectVerifyWayViewControllerDelegate> _delegate;
 }

@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSArray, NSMutableSet, NSString, WCStoryNotifyHandler;
 
-@interface WCMyStoryUserStateUtil
+@interface WCMyStoryUserStateUtil : NSObject
 {
     _Bool _waitingForShowPreview;
     NSString *_selectedMember;

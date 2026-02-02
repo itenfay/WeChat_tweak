@@ -5,7 +5,7 @@
 
 @class StrongNotificationViewController;
 
-@interface MMStrongNotificationWindow
+@interface MMStrongNotificationWindow : NSObject
 {
     StrongNotificationViewController *_viewController;
 }

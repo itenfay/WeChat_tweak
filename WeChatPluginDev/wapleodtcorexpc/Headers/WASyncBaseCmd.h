@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASyncBaseCmd
+@interface WASyncBaseCmd : NSObject
 {
     unsigned int _squence;
     unsigned int _reportId;

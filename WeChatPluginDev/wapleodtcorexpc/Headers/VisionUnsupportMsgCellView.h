@@ -5,7 +5,7 @@
 
 @class VisionUnsupportMsgViewModel;
 
-@interface VisionUnsupportMsgCellView
+@interface VisionUnsupportMsgCellView : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class CdnTaskInfo, FIFOFileQueue, MsgDataDownloadLogic, NSMutableArray, NSMutableDictionary, NSString;
 @protocol OpenUploadCDNMgrDelegate;
 
-@interface OpenUploadCDNMgr
+@interface OpenUploadCDNMgr : NSObject
 {
     FIFOFileQueue *_fileInfoQueue;
     NSMutableArray *m_arrDeletingItems;

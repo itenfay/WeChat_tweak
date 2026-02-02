@@ -5,7 +5,7 @@
 
 @class EmoticonCustomManageAddLogic, NSString;
 
-@interface WebviewJSEventHandler_addToEmoticon
+@interface WebviewJSEventHandler_addToEmoticon : NSObject
 {
     NSString *m_activityId;
     EmoticonCustomManageAddLogic *_emoticonAddLogic;

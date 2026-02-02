@@ -5,7 +5,7 @@
 
 @class NotificationBannerDisplayContentSettingOplog;
 
-@interface DelaySwitchSettingLogic
+@interface DelaySwitchSettingLogic : NSObject
 {
     _Bool m_bNeedToSync;
     NotificationBannerDisplayContentSettingOplog *_quickReplyOplog;

@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString;
 @protocol WCPayF2FReceiveHistoryViewControllerDelegate;
 
-@interface WCPayF2FReceiveHistoryViewController
+@interface WCPayF2FReceiveHistoryViewController : NSObject
 {
     double kReceiveHistoryItemHeight;
     double kReceiveHistoryItemMargin;

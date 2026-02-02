@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCKeyboardMgr
+@interface WCKeyboardMgr : NSObject
 {
     _Bool _externalKeyboardConnected;
     _Bool _receiveNotification;

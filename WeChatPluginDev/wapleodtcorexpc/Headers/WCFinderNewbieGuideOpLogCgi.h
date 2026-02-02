@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderNewbieGuideOpLogCgi
+@interface WCFinderNewbieGuideOpLogCgi : NSObject
 {
     _Bool _neverShow;
     int _eduType;

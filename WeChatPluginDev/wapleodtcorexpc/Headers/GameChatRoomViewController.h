@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class Background, BroadcastMessage, ChannelInfo, ChatroomEnterInfo, ChatroomUserData, EmoticonBoardView, EnterLeadSpeakInfo, GCChatRoomInfo, GCChatRoomServer, GCChatRoonEnterTipView, GCCollectionViewManager, GCJoinHintView, GCMultiChannelContainerView, GCMultiMessageViewModelConfig, GCNotificationBarView, GCSelfUnTouchableView, GCVerticalImgLabelView, GameChatAtPersonListView, GameChatAtPersonListViewModel, GameChatInputToolBaseView, GameChatRoomConfig, GameChatRoomDbData, GetChatroomBaseInfoResponse, GetChatroomPanelResponse, ImageController, JumpInfo, MMPageSheetAdapter, MMSessionInfo, MMWebImageView, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, Notification, PAGFile, PAGView, PremadeCardInfo, RealtimeControlInfo, SlotList, UIButton, UICollectionView, UIControl, UIImageView, UILabel, UIView, WCTTable;
 @protocol GCMessageViewModelProtocol;
 
-@interface GameChatRoomViewController
+@interface GameChatRoomViewController : NSObject
 {
     ImageController *m_imageController;
     _Bool _forbidInteract;

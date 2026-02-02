@@ -5,7 +5,7 @@
 
 @class AddressBookArchive, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MMAddressBookMgr
+@interface MMAddressBookMgr : NSObject
 {
     NSMutableArray *m_phoneContacts;
     NSMutableDictionary *m_phoneAddressBooks;

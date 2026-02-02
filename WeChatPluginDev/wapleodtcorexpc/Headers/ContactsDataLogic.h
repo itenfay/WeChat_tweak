@@ -6,7 +6,7 @@
 @class FTSMultiContactSearchLogic, FTSTopHitMgr, MMTimer, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, WCSTokenPickLogic, WCSmartGroupCore;
 @protocol ContactsDataLogicDelegate;
 
-@interface ContactsDataLogic
+@interface ContactsDataLogic : NSObject
 {
     id <ContactsDataLogicDelegate> m_delegate;
     NSMutableDictionary *m_dicAllContacts;

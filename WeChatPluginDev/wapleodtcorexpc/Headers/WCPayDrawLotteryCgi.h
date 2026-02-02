@@ -5,7 +5,7 @@
 
 @protocol WCPayDrawLotteryCgiDelegate;
 
-@interface WCPayDrawLotteryCgi
+@interface WCPayDrawLotteryCgi : NSObject
 {
     id <WCPayDrawLotteryCgiDelegate> m_delegate;
 }

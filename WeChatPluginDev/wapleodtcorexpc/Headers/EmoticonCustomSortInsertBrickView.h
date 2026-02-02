@@ -5,7 +5,7 @@
 
 @class EmoticonCustomSortSingleBrick, MMBadgeView, UIImageView;
 
-@interface EmoticonCustomSortInsertBrickView
+@interface EmoticonCustomSortInsertBrickView : NSObject
 {
     UIImageView *_emoticonView;
     MMBadgeView *_countView;

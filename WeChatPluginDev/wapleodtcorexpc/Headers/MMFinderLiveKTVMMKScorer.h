@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMKScorer, NSString;
 
-@interface MMFinderLiveKTVMMKScorer
+@interface MMFinderLiveKTVMMKScorer : NSObject
 {
     _Bool _scoreBegin;
     MMKScorer *_audioScore;

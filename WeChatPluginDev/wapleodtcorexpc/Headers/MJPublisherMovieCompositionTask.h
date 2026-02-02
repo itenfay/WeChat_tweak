@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJMovieComposingAsyncExportInfo, NSString, UIImage;
 
-@interface MJPublisherMovieCompositionTask
+@interface MJPublisherMovieCompositionTask : NSObject
 {
     CDUnknownBlockType _resultBlock;
     CDUnknownBlockType _videoFrameCallback;

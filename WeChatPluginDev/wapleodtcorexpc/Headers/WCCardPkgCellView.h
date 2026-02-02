@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMWebImageView, NSString, UIButton, UIColor, UIImage, UIImageView, UILabel, UIView, WCCardData;
 
-@interface WCCardPkgCellView
+@interface WCCardPkgCellView : NSObject
 {
     _Bool _bMemberCard;
     unsigned int _layoutType;

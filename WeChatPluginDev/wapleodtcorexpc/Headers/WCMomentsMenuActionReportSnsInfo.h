@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCMomentsMenuActionReportSnsInfo
+@interface WCMomentsMenuActionReportSnsInfo : NSObject
 {
     int _feedType;
     long long _contentType;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCKSAudioManager
+@interface WCKSAudioManager : NSObject
 {
     _Bool _useCronetDownloader;
     NSMutableDictionary *_referrerDict;

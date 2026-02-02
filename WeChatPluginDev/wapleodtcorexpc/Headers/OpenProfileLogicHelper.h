@@ -6,7 +6,7 @@
 @class NSString;
 @protocol OpenProfileLogicHelperDelegate;
 
-@interface OpenProfileLogicHelper
+@interface OpenProfileLogicHelper : NSObject
 {
     id <OpenProfileLogicHelperDelegate> _delegate;
     NSString *_ticket;

@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, RichTextView, UIImageView, UIView;
 @protocol MMLiveRewardQuotaPolicySheetViewDelegate;
 
-@interface MMLiveRewardQuotaPolicySheetView
+@interface MMLiveRewardQuotaPolicySheetView : NSObject
 {
     _Bool _isAgreementChecked;
     id <MMLiveRewardQuotaPolicySheetViewDelegate> _delegate;

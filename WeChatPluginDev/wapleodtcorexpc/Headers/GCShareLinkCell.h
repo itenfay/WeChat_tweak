@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, UIView;
 
-@interface GCShareLinkCell
+@interface GCShareLinkCell : NSObject
 {
     UIView *_containerView;
     MMUILabel *_titleLabel;

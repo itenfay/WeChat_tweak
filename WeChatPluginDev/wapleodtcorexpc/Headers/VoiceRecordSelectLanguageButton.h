@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface VoiceRecordSelectLanguageButton
+@interface VoiceRecordSelectLanguageButton : NSObject
 {
     unsigned int _type;
     NSString *_name;

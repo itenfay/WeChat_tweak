@@ -6,7 +6,7 @@
 @class MMImageBrowseView, NSString, UIImage;
 @protocol CommonImageBrowserDelegate;
 
-@interface CommonImageBrowseViewController
+@interface CommonImageBrowseViewController : NSObject
 {
     MMImageBrowseView *m_imageView;
     UIImage *m_image;

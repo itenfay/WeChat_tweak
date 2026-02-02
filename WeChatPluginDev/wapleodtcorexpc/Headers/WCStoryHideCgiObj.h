@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCStoryHideCgiObj
+@interface WCStoryHideCgiObj : NSObject
 {
     _Bool _isInvisibility;
     CDUnknownBlockType _dbSyncBlock;

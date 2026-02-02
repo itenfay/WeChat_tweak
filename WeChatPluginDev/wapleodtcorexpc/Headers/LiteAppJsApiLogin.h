@@ -5,7 +5,7 @@
 
 @class NSString, WebViewA8KeyLogicImpl;
 
-@interface LiteAppJsApiLogin
+@interface LiteAppJsApiLogin : NSObject
 {
     _Bool _passAll;
     WebViewA8KeyLogicImpl *_a8keyLogic;

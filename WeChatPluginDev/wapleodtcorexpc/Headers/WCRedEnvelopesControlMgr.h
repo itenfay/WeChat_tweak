@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCRedEnvelopesControlMgr
+@interface WCRedEnvelopesControlMgr : NSObject
 {
     _Bool m_bRceivingGreeting;
 }

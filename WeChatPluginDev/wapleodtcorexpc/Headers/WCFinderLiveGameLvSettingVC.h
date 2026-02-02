@@ -5,7 +5,7 @@
 
 @class GameRankSwitchInfo;
 
-@interface WCFinderLiveGameLvSettingVC
+@interface WCFinderLiveGameLvSettingVC : NSObject
 {
     GameRankSwitchInfo *_gameLiveSwitchInfo;
 }

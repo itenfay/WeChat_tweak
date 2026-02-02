@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoIPPushKitNotifyService
+@interface VoIPPushKitNotifyService : NSObject
 {
     _Bool _useVoIPLCK;
     _Bool _isInBackground;

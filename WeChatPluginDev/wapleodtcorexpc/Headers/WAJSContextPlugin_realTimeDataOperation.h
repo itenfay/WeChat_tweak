@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSContextPlugin_realTimeDataOperation
+@interface WAJSContextPlugin_realTimeDataOperation : NSObject
 {
 }
 

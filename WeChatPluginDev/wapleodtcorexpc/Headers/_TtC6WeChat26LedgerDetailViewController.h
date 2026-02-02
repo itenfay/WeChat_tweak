@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26LedgerDetailViewController
+@interface _TtC6WeChat26LedgerDetailViewController : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *context;

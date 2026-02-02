@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCRedEnvelopesReceiveHomePromotionViewModel
+@interface WCRedEnvelopesReceiveHomePromotionViewModel : NSObject
 {
     NSString *_iconUrl;
     NSString *_title;

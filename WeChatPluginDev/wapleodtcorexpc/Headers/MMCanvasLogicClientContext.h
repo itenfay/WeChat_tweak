@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMBizCanvasJsApiHandler, MMCanvasJsApiHandler, MMCanvasLogicClientContextParams, MMClientJsApiHandler, MMPopupJsApiHandler, NSString;
 @protocol MMCanvasLogicClientContextDelegate;
 
-@interface MMCanvasLogicClientContext
+@interface MMCanvasLogicClientContext : NSObject
 {
     MMCanvasLogicClientContextParams *_params;
     unsigned long long _preloadTs;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface CLMDeleteDataHalfScreenView
+@interface CLMDeleteDataHalfScreenView : NSObject
 {
     CDUnknownBlockType _confirmCallBack;
     unsigned long long _dataSize;

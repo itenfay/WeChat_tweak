@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSDictionary, NSString, WAShareAppMessageInnerPermanentModel, WAShareAppMessageInnerTemporaryModel;
 @protocol WeAppMsgHandleDelegate;
 
-@interface WAWebViewPlugin_WeAppMsg
+@interface WAWebViewPlugin_WeAppMsg : NSObject
 {
     WAShareAppMessageInnerPermanentModel *_permanentModel;
     WAShareAppMessageInnerTemporaryModel *_temporaryModel;

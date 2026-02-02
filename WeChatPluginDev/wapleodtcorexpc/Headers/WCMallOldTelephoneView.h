@@ -6,7 +6,7 @@
 @class MMUIView, NSString, UITableView;
 @protocol WCMallOldTelephoneViewDelegate;
 
-@interface WCMallOldTelephoneView
+@interface WCMallOldTelephoneView : NSObject
 {
     UITableView *m_oTelFilterTableView;
     id <WCMallOldTelephoneViewDelegate> m_delegate;

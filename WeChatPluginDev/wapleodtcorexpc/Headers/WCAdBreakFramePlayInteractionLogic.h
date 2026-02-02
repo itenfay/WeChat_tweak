@@ -5,7 +5,7 @@
 
 @class CADisplayLink;
 
-@interface WCAdBreakFramePlayInteractionLogic
+@interface WCAdBreakFramePlayInteractionLogic : NSObject
 {
     _Bool _beginPosSetFlag;
     _Bool _hasPlayed;

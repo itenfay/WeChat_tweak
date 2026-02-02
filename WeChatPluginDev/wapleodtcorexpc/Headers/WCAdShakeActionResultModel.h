@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentRedEnvelopStatusInfo;
 
-@interface WCAdShakeActionResultModel
+@interface WCAdShakeActionResultModel : NSObject
 {
     int _result;
     double _maxAcceleration;

@@ -5,7 +5,7 @@
 
 @class RichTextView;
 
-@interface WCFinderNotifyUnifiedMentionTableViewCell
+@interface WCFinderNotifyUnifiedMentionTableViewCell : NSObject
 {
     RichTextView *_contentTextView;
 }

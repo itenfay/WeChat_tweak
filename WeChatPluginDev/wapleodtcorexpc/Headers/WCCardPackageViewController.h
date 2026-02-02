@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, MMUISearchBar, NSString, UIButton, UIScrollView, UISegmentedControl, UIView, WCCardDataController, WCCardPackageTableView;
 @protocol WCCardPackageViewControllerDelegate;
 
-@interface WCCardPackageViewController
+@interface WCCardPackageViewController : NSObject
 {
     double _headViewHeight;
     UIButton *_messageTipView;

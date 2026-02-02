@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CHHapticEngine;
 
-@interface MMLiveHapticsEnginePlayer
+@interface MMLiveHapticsEnginePlayer : NSObject
 {
     CHHapticEngine *_hapticsEngine;
 }

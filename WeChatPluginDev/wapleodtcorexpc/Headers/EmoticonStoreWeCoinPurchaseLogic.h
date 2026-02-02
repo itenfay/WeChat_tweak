@@ -6,7 +6,7 @@
 @class NSData, NSString;
 @protocol EmoticonStoreWeCoinPurchaseLogicDelegate;
 
-@interface EmoticonStoreWeCoinPurchaseLogic
+@interface EmoticonStoreWeCoinPurchaseLogic : NSObject
 {
     id <EmoticonStoreWeCoinPurchaseLogicDelegate> _delegate;
     NSString *_billNo;

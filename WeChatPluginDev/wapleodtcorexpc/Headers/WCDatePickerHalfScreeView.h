@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, UIDatePicker;
 
-@interface WCDatePickerHalfScreeView
+@interface WCDatePickerHalfScreeView : NSObject
 {
     CDUnknownBlockType _confirmCallBack;
     NSDate *_minimumDate;

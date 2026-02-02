@@ -6,7 +6,7 @@
 @class MMActiveMessageInfoPersist, MMActiveStorageReportStatus, MMTimer, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMActiveStorageService
+@interface MMActiveStorageService : NSObject
 {
     _Bool _isScanning;
     NSMutableArray *_arrSessionInfo;

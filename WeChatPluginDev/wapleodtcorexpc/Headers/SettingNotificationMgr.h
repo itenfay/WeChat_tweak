@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SettingNotificationMgr
+@interface SettingNotificationMgr : NSObject
 {
 }
 

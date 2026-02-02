@@ -6,7 +6,7 @@
 @class CTRichTextView, MMUIActivityIndicatorView, MMUILabel, MMUINavigationBar, NSString, UIButton, UIImageView, UILabel, UINavigationItem, UIScrollView, UIView, WXGDotDotDotLabel;
 @protocol WCBackupEntryViewControllerDelegate;
 
-@interface WCBackupEntryViewController
+@interface WCBackupEntryViewController : NSObject
 {
     UIScrollView *m_scrollView;
     UIButton *m_leftTopCornerButton;

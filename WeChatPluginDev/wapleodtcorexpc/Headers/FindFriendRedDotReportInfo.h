@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface FindFriendRedDotReportInfo
+@interface FindFriendRedDotReportInfo : NSObject
 {
     NSString *_uuid;
     NSDictionary *_params;

@@ -5,7 +5,7 @@
 
 @class FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo, NSMutableArray, UILabel, UIView;
 
-@interface MMFinderLiveFeedStreamProductHotSellingView
+@interface MMFinderLiveFeedStreamProductHotSellingView : NSObject
 {
     FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo *_bubble;
     UIView *_containerView;

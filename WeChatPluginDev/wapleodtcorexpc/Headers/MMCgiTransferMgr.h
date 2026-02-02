@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableArray, NSString;
 
-@interface MMCgiTransferMgr
+@interface MMCgiTransferMgr : NSObject
 {
     unsigned int _tokenExpiredtime;
     NSString *_h5AuthToken;

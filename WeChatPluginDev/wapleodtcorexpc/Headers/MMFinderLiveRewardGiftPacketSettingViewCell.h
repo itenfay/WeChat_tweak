@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveGiftPacketViewModel, MMUIButton, MMUILabel, MMUITextField, NSString, UIImageView;
 @protocol MMFinderLiveRewardGiftPacketSettingViewCellDelegate;
 
-@interface MMFinderLiveRewardGiftPacketSettingViewCell
+@interface MMFinderLiveRewardGiftPacketSettingViewCell : NSObject
 {
     _Bool _bSelected;
     UIImageView *_thumbnailView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMPersonalEmotionsViewController, MMUnderlineTabsView, MMWechatEmotionsViewController, NSMutableArray, StoreEmotionHomePageViewController, UIImageView;
 
-@interface MMEmotionStoreViewController
+@interface MMEmotionStoreViewController : NSObject
 {
     MMWechatEmotionsViewController *_wechatEmotionsViewController;
     StoreEmotionHomePageViewController *_homePageViewController;

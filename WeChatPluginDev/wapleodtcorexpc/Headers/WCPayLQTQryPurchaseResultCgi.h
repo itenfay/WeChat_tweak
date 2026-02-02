@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTQryPurchaaseResultCgiDelegate;
 
-@interface WCPayLQTQryPurchaseResultCgi
+@interface WCPayLQTQryPurchaseResultCgi : NSObject
 {
     id <WCPayLQTQryPurchaaseResultCgiDelegate> _cgiDelegate;
 }

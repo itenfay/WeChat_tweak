@@ -5,7 +5,7 @@
 
 @class MMLiveShopShelfDragBar;
 
-@interface MMFinderLiveDragBarPageSheet
+@interface MMFinderLiveDragBarPageSheet : NSObject
 {
     MMLiveShopShelfDragBar *_dragBar;
 }

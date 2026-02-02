@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface JSC2CodeCacheMgr
+@interface JSC2CodeCacheMgr : NSObject
 {
     _Bool _shouldSampleLargeReport;
     NSObject<OS_dispatch_queue> *_generatorQueue;

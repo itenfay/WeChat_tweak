@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, UIImageView;
 @protocol MMLimitedModeGuardianEntryViewDelegate;
 
-@interface MMLimitedModeGuardianEntryView
+@interface MMLimitedModeGuardianEntryView : NSObject
 {
     MMUIButton *m_button;
     MMUILabel *m_titleLabel;

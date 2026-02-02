@@ -5,7 +5,7 @@
 
 @class QGPRotation;
 
-@interface QGPSetRotationCommand
+@interface QGPSetRotationCommand : NSObject
 {
     QGPRotation *_params;
 }

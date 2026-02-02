@@ -5,7 +5,7 @@
 
 @class GetSafetyInfoLogic, MMTableViewInfo, NSString, WCAccountSetPasswordViewController;
 
-@interface SettingMyAccountInfoViewController
+@interface SettingMyAccountInfoViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WCAccountSetPasswordViewController *m_setPasswordViewController;

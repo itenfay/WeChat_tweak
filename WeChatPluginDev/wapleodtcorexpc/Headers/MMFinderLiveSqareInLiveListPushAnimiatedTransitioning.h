@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveSqareInLiveListPushAnimiatedTransitioning
+@interface MMFinderLiveSqareInLiveListPushAnimiatedTransitioning : NSObject
 {
 }
 

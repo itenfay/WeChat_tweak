@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMCPLabel, MMHeadImageView, NSString, RichTextView, UIButton, UIImageView, UILabel, UIView, UrlLabel, WCCommentEmotionView, WCDataItem, WCMomentsFireworksIconView, WCUserComment;
 @protocol ILinkEventExt, WCCommentViewDelegate;
 
-@interface WCCommentView
+@interface WCCommentView : NSObject
 {
     MMHeadImageView *_headImageView;
     UIImageView *_likeImageView;

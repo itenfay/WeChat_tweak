@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportMemStatItem
+@interface WAReportMemStatItem : NSObject
 {
     _Bool _isCache;
     _Bool _isGame;

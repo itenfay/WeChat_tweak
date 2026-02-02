@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderPoiGroupBuyRequestParams;
 
-@interface WCFinderPoiGroupBuyCGI
+@interface WCFinderPoiGroupBuyCGI : NSObject
 {
     WCFinderPoiGroupBuyRequestParams *_params;
     CDUnknownBlockType _successBlock;

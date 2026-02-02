@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveScreenSharingConfiguration
+@interface MMLiveScreenSharingConfiguration : NSObject
 {
     long long _centerXSideOfCameraToScreen;
     double _centerYRatioOfCameraToScreen;

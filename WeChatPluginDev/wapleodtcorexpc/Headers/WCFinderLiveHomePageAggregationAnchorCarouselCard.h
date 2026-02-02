@@ -5,7 +5,7 @@
 
 @class InfiniteLoopContainerView, MMLiveColorfulLabel, MMTimer, NSString;
 
-@interface WCFinderLiveHomePageAggregationAnchorCarouselCard
+@interface WCFinderLiveHomePageAggregationAnchorCarouselCard : NSObject
 {
     InfiniteLoopContainerView *_loopPageView;
     MMLiveColorfulLabel *_titleLabel;

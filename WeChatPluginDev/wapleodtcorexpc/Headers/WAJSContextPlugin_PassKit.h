@@ -5,7 +5,7 @@
 
 @class PKAddPassesViewController;
 
-@interface WAJSContextPlugin_PassKit
+@interface WAJSContextPlugin_PassKit : NSObject
 {
     _Bool _isPAPUIOn;
     _Bool _isPAPUIActionBlocked;

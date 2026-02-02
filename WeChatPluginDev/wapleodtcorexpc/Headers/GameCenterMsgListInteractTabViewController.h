@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GCTableViewSecionModel, GameInteractContentServer, GameLifeNotifyInteractiveMsgCell, NSString;
 
-@interface GameCenterMsgListInteractTabViewController
+@interface GameCenterMsgListInteractTabViewController : NSObject
 {
     GCTableViewSecionModel *_noticeSectionModel;
     GameInteractContentServer *_interActServer;

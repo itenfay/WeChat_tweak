@@ -5,7 +5,7 @@
 
 @class LiveKTVAudioSettingCacheInfo, LiveLandscapeBarrageDisplaySettingInfo, NSMutableDictionary, NSString;
 
-@interface MMLiveSettingData
+@interface MMLiveSettingData : NSObject
 {
     _Bool _isPolicyForAnchorConfirmed;
     _Bool _isPolicyForAudienceConfirmed;

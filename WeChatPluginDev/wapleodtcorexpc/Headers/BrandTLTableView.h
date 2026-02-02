@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface BrandTLTableView
+@interface BrandTLTableView : NSObject
 {
     _Bool _reportSwitch;
     CDUnknownBlockType _identifierWithIndexPath;

@@ -5,7 +5,7 @@
 
 @class RichTextView;
 
-@interface MMFinderLiveReplayPaymentPolicyIntroView
+@interface MMFinderLiveReplayPaymentPolicyIntroView : NSObject
 {
     RichTextView *_descLabel;
 }

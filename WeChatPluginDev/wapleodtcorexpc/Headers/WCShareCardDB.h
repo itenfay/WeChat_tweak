@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
-@interface WCShareCardDB
+@interface WCShareCardDB : NSObject
 {
     WCTDatabase *m_db;
     WCTTable *m_tableShareCardInfo;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UITapGestureRecognizer;
 
-@interface MMFinderLiveCommentContentView
+@interface MMFinderLiveCommentContentView : NSObject
 {
     CDUnknownBlockType _getIsShowingInputViewCallback;
     CDUnknownBlockType _getIsEnableChangeContentStateCallback;

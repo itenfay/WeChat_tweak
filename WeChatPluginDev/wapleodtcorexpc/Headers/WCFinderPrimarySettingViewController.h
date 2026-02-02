@@ -5,7 +5,7 @@
 
 @class DataCenterConfig, FinderNewUserPrepareResponse, ForwardMessageLogicController, NSString, WCFinderContact, WCFinderPersonalSettingParams, WCFinderPrimarySettingViewModel, WCFinderProcessTimeRecorder, WCTableViewManager;
 
-@interface WCFinderPrimarySettingViewController
+@interface WCFinderPrimarySettingViewController : NSObject
 {
     _Bool _hasExposeFinderToBrandSwitch;
     _Bool _hasExposeCreatorCenter;

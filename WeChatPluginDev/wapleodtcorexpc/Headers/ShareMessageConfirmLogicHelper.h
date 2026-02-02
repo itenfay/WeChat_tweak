@@ -6,7 +6,7 @@
 @class CMessageWrap, NSData, NSDictionary, NSString, ShareConfirmView;
 @protocol ShareMessageConfirmLogicHelperDelegate;
 
-@interface ShareMessageConfirmLogicHelper
+@interface ShareMessageConfirmLogicHelper : NSObject
 {
     ShareConfirmView *_confirmView;
     CMessageWrap *_msgWrap;

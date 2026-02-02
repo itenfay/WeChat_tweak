@@ -5,7 +5,7 @@
 
 @class NSString, TingItem;
 
-@interface BTAudioItemCellViewModel
+@interface BTAudioItemCellViewModel : NSObject
 {
 }
 

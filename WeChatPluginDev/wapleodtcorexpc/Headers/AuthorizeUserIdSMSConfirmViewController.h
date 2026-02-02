@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIView, UserIdAuthorizeSmsPageInfo, UserIdAuthorizeSmsPhoneItem, WCAccountTextFieldItem, WCActionSheet;
 @protocol AuthorizeUserIdSMSConfirmDelegate;
 
-@interface AuthorizeUserIdSMSConfirmViewController
+@interface AuthorizeUserIdSMSConfirmViewController : NSObject
 {
     NSString *_verifyToken;
     WCActionSheet *_actionSheet;

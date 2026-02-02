@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetPromoteJumpInfoCGI
+@interface WCFinderLiveGetPromoteJumpInfoCGI : NSObject
 {
     unsigned int _type;
     NSString *_jumpId;

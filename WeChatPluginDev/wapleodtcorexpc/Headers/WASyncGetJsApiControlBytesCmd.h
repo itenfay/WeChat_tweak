@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WASyncGetJsApiControlBytesCmd
+@interface WASyncGetJsApiControlBytesCmd : NSObject
 {
     _Bool _forceUpdate;
     NSMutableArray *_pluginAppidList;

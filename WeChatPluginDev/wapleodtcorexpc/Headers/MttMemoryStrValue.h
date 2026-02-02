@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MttMemoryStrValue
+@interface MttMemoryStrValue : NSObject
 {
     int _pos;
     int _size;

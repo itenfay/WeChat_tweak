@@ -6,7 +6,7 @@
 @class NSString, NSURLConnection, PublicWifiCache, UIViewController;
 @protocol APProtalDelegate;
 
-@interface APPortal
+@interface APPortal : NSObject
 {
     NSString *ticket;
     NSString *authUrl;

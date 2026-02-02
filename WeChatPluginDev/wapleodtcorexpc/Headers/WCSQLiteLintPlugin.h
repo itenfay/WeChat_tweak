@@ -5,7 +5,7 @@
 
 @protocol WCSQLiteLintDataSourceDelegate;
 
-@interface WCSQLiteLintPlugin
+@interface WCSQLiteLintPlugin : NSObject
 {
     id <WCSQLiteLintDataSourceDelegate> _deleagte;
 }

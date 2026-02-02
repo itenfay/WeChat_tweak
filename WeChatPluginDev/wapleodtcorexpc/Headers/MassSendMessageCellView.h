@@ -5,7 +5,7 @@
 
 @class MassSendBodyContainerView, MassSendMessageViewModel, NSString, UIButton, UILabel, UIView;
 
-@interface MassSendMessageCellView
+@interface MassSendMessageCellView : NSObject
 {
     MassSendBodyContainerView *m_bodyContainerView;
     UIView *m_bodyView;

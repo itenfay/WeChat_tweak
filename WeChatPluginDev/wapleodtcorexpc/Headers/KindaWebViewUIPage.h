@@ -5,7 +5,7 @@
 
 @class KindaProxy, MMIUIPage, NSString;
 
-@interface KindaWebViewUIPage
+@interface KindaWebViewUIPage : NSObject
 {
     MMIUIPage *_kindaUIPage;
     KindaProxy *_kindProxy;

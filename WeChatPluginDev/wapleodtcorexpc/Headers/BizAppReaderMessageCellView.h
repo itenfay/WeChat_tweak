@@ -5,7 +5,7 @@
 
 @class BizAppReaderMessageBigPicView, BizAppReaderMessageViewModel;
 
-@interface BizAppReaderMessageCellView
+@interface BizAppReaderMessageCellView : NSObject
 {
     BizAppReaderMessageBigPicView *_bigPicView;
 }

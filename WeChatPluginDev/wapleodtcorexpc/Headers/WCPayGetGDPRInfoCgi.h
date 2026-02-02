@@ -5,7 +5,7 @@
 
 @protocol WCPayGetGDPRInfoCgiDelegate;
 
-@interface WCPayGetGDPRInfoCgi
+@interface WCPayGetGDPRInfoCgi : NSObject
 {
     id <WCPayGetGDPRInfoCgiDelegate> m_delegate;
 }

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCAddressHalfScreenPickerView;
 
-@interface LocalJSEventHandler_showAddressPickerView
+@interface LocalJSEventHandler_showAddressPickerView : NSObject
 {
     int _pickerMode;
     unsigned int _state;

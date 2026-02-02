@@ -5,7 +5,7 @@
 
 @class WCTDatabase;
 
-@interface EdgeComputingWCDBManager
+@interface EdgeComputingWCDBManager : NSObject
 {
     WCTDatabase *edgeDatabase;
 }

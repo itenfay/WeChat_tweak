@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSData, NSString, OpenBufferUploadMgr;
 
-@interface AppMsgSendProcessor
+@interface AppMsgSendProcessor : NSObject
 {
     unsigned int _sendRetryCount;
     CMessageWrap *_msgWrap;

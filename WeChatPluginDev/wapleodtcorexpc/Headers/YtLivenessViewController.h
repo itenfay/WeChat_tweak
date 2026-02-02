@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CameraRecordDevice, NSMutableParagraphStyle, NSString, NSTimer, NSURLSessionDataTask, UIButton, UIImageView, UILabel, UITextView, UIView, YtFLCircleProgressView;
 
-@interface YtLivenessViewController
+@interface YtLivenessViewController : NSObject
 {
     UIView *contentView;
     UIView *shapeView;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface BackStickerEffectAdapter
+@interface BackStickerEffectAdapter : NSObject
 {
     NSMutableArray *_stickerArr;
 }

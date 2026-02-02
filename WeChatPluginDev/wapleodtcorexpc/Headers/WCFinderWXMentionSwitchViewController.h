@@ -5,7 +5,7 @@
 
 @class WCTableViewManager, WCTableViewSectionManager;
 
-@interface WCFinderWXMentionSwitchViewController
+@interface WCFinderWXMentionSwitchViewController : NSObject
 {
     WCTableViewManager *_tableViewManager;
     WCTableViewSectionManager *_msgSwitchSection;

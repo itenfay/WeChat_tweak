@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, ImageReaderMessageViewModel, MMUILabel, NSString, UIImageView;
 
-@interface ImageReaderMessageCellView
+@interface ImageReaderMessageCellView : NSObject
 {
     UIImageView *m_imageIcon;
     MMUILabel *m_imageNum;

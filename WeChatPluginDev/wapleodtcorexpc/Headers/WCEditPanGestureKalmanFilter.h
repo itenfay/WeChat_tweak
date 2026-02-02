@@ -5,7 +5,7 @@
 
 @class MMKalmanFilter;
 
-@interface WCEditPanGestureKalmanFilter
+@interface WCEditPanGestureKalmanFilter : NSObject
 {
     MMKalmanFilter *_xFilter;
     MMKalmanFilter *_yFilter;

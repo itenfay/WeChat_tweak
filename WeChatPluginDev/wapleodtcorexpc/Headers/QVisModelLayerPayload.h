@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface QVisModelLayerPayload
+@interface QVisModelLayerPayload : NSObject
 {
     _Bool _autoScale;
     double _altitude;

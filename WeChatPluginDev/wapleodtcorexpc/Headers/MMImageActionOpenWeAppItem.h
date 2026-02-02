@@ -5,7 +5,7 @@
 
 @class WAReportOpenMaterialItem, WAWxMaterialOpenInfo;
 
-@interface MMImageActionOpenWeAppItem
+@interface MMImageActionOpenWeAppItem : NSObject
 {
     WAReportOpenMaterialItem *_materialItem;
     WAWxMaterialOpenInfo *_openInfo;

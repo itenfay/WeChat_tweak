@@ -5,7 +5,7 @@
 
 @protocol WCPayGenMallPrePayCgiDelegate;
 
-@interface WCPayGenMallPrePayCgi
+@interface WCPayGenMallPrePayCgi : NSObject
 {
     id <WCPayGenMallPrePayCgiDelegate> _cgiDelegate;
 }

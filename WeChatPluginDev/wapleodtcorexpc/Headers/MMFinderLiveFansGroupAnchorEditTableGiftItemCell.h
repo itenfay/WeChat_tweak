@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface MMFinderLiveFansGroupAnchorEditTableGiftItemCell
+@interface MMFinderLiveFansGroupAnchorEditTableGiftItemCell : NSObject
 {
     UIImageView *_thumbnailView;
     UILabel *_nameLabel;

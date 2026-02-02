@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CEmoticonWrap, EmoticonBoardView, MMGrowTextView, MMUIButton, MMUILabel, NSArray, NSDictionary, NSString, PrivateInfo, TextStateIcon, TextStatePublishConfiguration, TextStatePublishContentBuilder, TextStatePublishEmoticonView, TextStatePublishGuideView, TextStatePublishIconButton, TextStatePublishIconList, TextStatePublishInputBar, TextStatePublishMediaSwitchView, TextStatePublishReportObject, TextStatePublishSourceInfo, TextStatePublishSourceView, TextStatePublishTitleView, TextStateTopicGuideBubbleView, UIBarButtonItem, UIScreenEdgePanGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, WCInputController, WCLocationInfo, WCMomentsPrivacyParams, WCStatusPrivacySetting;
 @protocol TextStatePublishIconPicker, TextStatePublishViewControllerDelegate;
 
-@interface TextStatePublishViewController
+@interface TextStatePublishViewController : NSObject
 {
     _Bool _preserveLastPrivacy;
     _Bool _isBeingLayout;

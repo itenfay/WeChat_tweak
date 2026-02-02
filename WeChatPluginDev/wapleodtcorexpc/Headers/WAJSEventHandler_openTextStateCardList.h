@@ -5,7 +5,7 @@
 
 @class MMUINavigationController, NSArray, NSString, TextStateCardListSlidingWindowRefreshTask, TextStateCardListViewController;
 
-@interface WAJSEventHandler_openTextStateCardList
+@interface WAJSEventHandler_openTextStateCardList : NSObject
 {
     _Bool _enableExpose;
     _Bool _shouldShowLocationDistance;

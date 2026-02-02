@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString, UITableView, UITableViewDiffableDataSource, UIView, WCFinderDataLoadTips, WCFinderFeedInputView, WCFinderMagicAnimationLogic, WCFinderRefreshTableFooterView, WCFinderWechatMentionCellViewModel, WCFinderWechatMentionVM;
 
-@interface WCFinderWechatMentionVC
+@interface WCFinderWechatMentionVC : NSObject
 {
     WCFinderWechatMentionVM *_viewModel;
     UIView *_customNavBg;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface StoreEmotionDesiginerReddotModel
+@interface StoreEmotionDesiginerReddotModel : NSObject
 {
     unsigned int _reddotTimeStamp;
     NSString *_designerUin;

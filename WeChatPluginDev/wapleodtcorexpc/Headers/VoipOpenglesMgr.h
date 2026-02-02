@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface VoipOpenglesMgr
+@interface VoipOpenglesMgr : NSObject
 {
     _Bool _isApplicationStateActive;
     NSMutableArray *m_openglesContextArray;

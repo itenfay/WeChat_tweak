@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, NSString, WCTableViewManager;
 @protocol MMFinderLiveAdGuideFollowSheetDelegate;
 
-@interface MMFinderLiveAdGuideFollowSheet
+@interface MMFinderLiveAdGuideFollowSheet : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     id <MMFinderLiveAdGuideFollowSheetDelegate> _delegate;

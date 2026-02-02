@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol MMAutoSearchLogicDelegate;
 
-@interface MMAutoSearchLogic
+@interface MMAutoSearchLogic : NSObject
 {
     _Bool _blockSignal;
     id <MMAutoSearchLogicDelegate> _delegate;

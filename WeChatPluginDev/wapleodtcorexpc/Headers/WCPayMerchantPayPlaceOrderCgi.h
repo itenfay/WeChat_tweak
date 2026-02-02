@@ -5,7 +5,7 @@
 
 @protocol WCPayMerchantPayPlaceOrderCgiDelegate;
 
-@interface WCPayMerchantPayPlaceOrderCgi
+@interface WCPayMerchantPayPlaceOrderCgi : NSObject
 {
     id <WCPayMerchantPayPlaceOrderCgiDelegate> _m_delegate;
 }

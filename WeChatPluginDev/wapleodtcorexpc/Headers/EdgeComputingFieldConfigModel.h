@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EdgeComputingFieldConfigModel
+@interface EdgeComputingFieldConfigModel : NSObject
 {
     unsigned int _index;
     unsigned int _type;

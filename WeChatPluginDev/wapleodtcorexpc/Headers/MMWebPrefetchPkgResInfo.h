@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMWebPrefetchPkgResInfo
+@interface MMWebPrefetchPkgResInfo : NSObject
 {
     NSString *_htmlTag;
     NSString *_pathInPkg;

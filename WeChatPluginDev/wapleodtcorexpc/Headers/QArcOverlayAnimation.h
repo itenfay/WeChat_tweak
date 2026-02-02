@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface QArcOverlayAnimation
+@interface QArcOverlayAnimation : NSObject
 {
     UIColor *_highlightColor;
     double _highlightDuration;

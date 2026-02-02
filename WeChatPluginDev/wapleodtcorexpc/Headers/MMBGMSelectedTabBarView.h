@@ -6,7 +6,7 @@
 @class NSMutableArray, UIScrollView;
 @protocol MMBGMSelectedTabBarViewDelegate;
 
-@interface MMBGMSelectedTabBarView
+@interface MMBGMSelectedTabBarView : NSObject
 {
     id <MMBGMSelectedTabBarViewDelegate> _delegate;
     NSMutableArray *_tabButtons;

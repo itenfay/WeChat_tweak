@@ -5,7 +5,7 @@
 
 @class NSString, UISwitch, UITableView, WCLabsAppItem;
 
-@interface WCLabSettingDetailViewControllerNew
+@interface WCLabSettingDetailViewControllerNew : NSObject
 {
     WCLabsAppItem *_labItem;
     UITableView *_tableView;

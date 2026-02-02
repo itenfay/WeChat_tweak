@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableSet, NSString;
 
-@interface MMEasterEggMgr
+@interface MMEasterEggMgr : NSObject
 {
     _Bool m_isShowEgg;
     unsigned int m_uiEasterEggLastUpdateTime;

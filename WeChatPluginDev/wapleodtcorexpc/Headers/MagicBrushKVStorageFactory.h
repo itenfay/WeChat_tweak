@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSString;
 
-@interface MagicBrushKVStorageFactory
+@interface MagicBrushKVStorageFactory : NSObject
 {
     NSMapTable *_mMBKVMap;
     NSMapTable *_mPublicServiceOtherBizStorageMap;

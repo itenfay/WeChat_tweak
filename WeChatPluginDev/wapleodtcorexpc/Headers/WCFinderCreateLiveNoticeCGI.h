@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, FinderLivePaymentSetting, NSArray, NSString;
 
-@interface WCFinderCreateLiveNoticeCGI
+@interface WCFinderCreateLiveNoticeCGI : NSObject
 {
     unsigned int _optype;
     NSString *_finderUserName;

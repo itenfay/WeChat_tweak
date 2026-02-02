@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderPostRealNameVerifyCGI
+@interface WCFinderPostRealNameVerifyCGI : NSObject
 {
     CDUnknownBlockType _completionBlock;
     CDUnknownBlockType _failedBlock;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGlobalSearchCGI
+@interface WCFinderGlobalSearchCGI : NSObject
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failedBlock;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIScrollView, UITapGestureRecognizer;
 @protocol MMMusicPickerScrollViewDelegate;
 
-@interface MMMusicPickerScrollView
+@interface MMMusicPickerScrollView : NSObject
 {
     id <MMMusicPickerScrollViewDelegate> _delegate;
     UIScrollView *_scrollView;

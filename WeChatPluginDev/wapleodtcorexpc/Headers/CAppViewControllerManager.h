@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMainViewController, MainTabBarViewController, NSMutableArray, NSMutableDictionary, NSString, PreEnterWechatLogic, SplitViewEmptyViewController, UIViewController, UIWindow, WCSplitViewController;
 
-@interface CAppViewControllerManager
+@interface CAppViewControllerManager : NSObject
 {
     UIWindow *m_window;
     unsigned int m_uCurrentTabViewIndex;

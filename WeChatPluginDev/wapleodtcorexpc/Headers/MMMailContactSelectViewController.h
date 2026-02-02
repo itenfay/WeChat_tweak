@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCSearcher;
 @protocol MMMailContactSelectViewDelegate;
 
-@interface MMMailContactSelectViewController
+@interface MMMailContactSelectViewController : NSObject
 {
     NSMutableArray *arrMailContact;
     NSMutableArray *arrKeys;

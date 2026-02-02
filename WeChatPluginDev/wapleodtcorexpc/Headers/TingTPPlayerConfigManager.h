@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingTPPlayerConfigManager
+@interface TingTPPlayerConfigManager : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString, WAWebActionSheet;
 
-@interface WAJSContextPlugin_system
+@interface WAJSContextPlugin_system : NSObject
 {
     _Bool _oldIdleTimerDisabled;
     _Bool _idleTimerDisabled;

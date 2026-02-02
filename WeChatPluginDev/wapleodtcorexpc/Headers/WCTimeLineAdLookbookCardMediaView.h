@@ -6,7 +6,7 @@
 @class NSString, WCAdLookbookCardReportItem, WCAdLookbookSightView, WCAdURLImageView, WCDataItem, WCMediaItem, WCSNSADPlayerControlView;
 @protocol WCTimeLineAdLookbookCardMediaViewDelegate;
 
-@interface WCTimeLineAdLookbookCardMediaView
+@interface WCTimeLineAdLookbookCardMediaView : NSObject
 {
     _Bool _bTimelineScene;
     id <WCTimeLineAdLookbookCardMediaViewDelegate> _delegate;

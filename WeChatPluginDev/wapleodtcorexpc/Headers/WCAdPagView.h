@@ -5,7 +5,7 @@
 
 @class NSString, PAGView, WCAdPagInfo, WCAdPagViewConfig, WCAdURLImageView;
 
-@interface WCAdPagView
+@interface WCAdPagView : NSObject
 {
     WCAdPagInfo *_pagInfo;
     WCAdPagViewConfig *_config;

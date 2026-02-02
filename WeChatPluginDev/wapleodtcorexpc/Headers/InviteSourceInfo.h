@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface InviteSourceInfo
+@interface InviteSourceInfo : NSObject
 {
     unsigned int _sourceTag;
     NSString *_sourceName;

@@ -5,7 +5,7 @@
 
 @class CShakeChecker, MMMusicInfo, MMMusicLocalFileDataInfo, MMMusicPageView, MMMusicPlayerModeTipView, MMMusicSliderControlView, MMScrollActionSheet, MMScrollView, MMTimer, MMTipsViewController, MMWebImageView, MPVolumeView, NSMutableArray, NSString, SendAppMsgHandler, UIButton, UIImageView, UILabel;
 
-@interface MMMultipleMusicViewController
+@interface MMMultipleMusicViewController : NSObject
 {
     MMScrollView *_musicPageScrollView;
     MMMusicPageView *_leftPageView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMBadgeView, UIView;
 
-@interface WCFinderMaskButton
+@interface WCFinderMaskButton : NSObject
 {
     UIView *_maskView;
     CDUnknownBlockType _updateBlock;

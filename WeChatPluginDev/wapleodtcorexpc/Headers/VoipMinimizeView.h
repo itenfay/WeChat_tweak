@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface VoipMinimizeView
+@interface VoipMinimizeView : NSObject
 {
     _Bool _isAudioMode;
     UIView *_m_tipsMaskView;

@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, NSArray, NSIndexPath, NSMutableArray, NSString, UITapGestureRecognizer, UITextField, UIView;
 
-@interface WCSettingQuickRepliesController
+@interface WCSettingQuickRepliesController : NSObject
 {
     MMTableView *_mainTableView;
     MMUILabel *_footerLabel;

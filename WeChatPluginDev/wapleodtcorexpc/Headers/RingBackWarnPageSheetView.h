@@ -6,7 +6,7 @@
 @class MMUILabel, UIButton, UIView;
 @protocol RingRecommendSwitchDelegate;
 
-@interface RingBackWarnPageSheetView
+@interface RingBackWarnPageSheetView : NSObject
 {
     id <RingRecommendSwitchDelegate> _delegate;
     UIView *_contentView;

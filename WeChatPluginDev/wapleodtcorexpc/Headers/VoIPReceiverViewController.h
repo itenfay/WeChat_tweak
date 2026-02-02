@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIActivityIndicatorView, NSString, UIImageView, UIView, VOIPVideoRender, VoIPInvitationBreadthView, VoipDescriptionButton, VoipForceStartObject, VoipMonoMsg, XImageViewRenderer;
 
-@interface VoIPReceiverViewController
+@interface VoIPReceiverViewController : NSObject
 {
     VoipMonoMsg *m_monoMsg;
     _Bool isNeedFormSysMsg;

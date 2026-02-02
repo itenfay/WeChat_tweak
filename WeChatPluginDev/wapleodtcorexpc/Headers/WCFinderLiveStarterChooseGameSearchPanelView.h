@@ -6,7 +6,7 @@
 @class MMLiveTaskId, NSMutableArray, NSString, UIView, WCFinderGameLiveListViewController;
 @protocol MMFinderLiveStarterChooseGameSearchDelegate;
 
-@interface WCFinderLiveStarterChooseGameSearchPanelView
+@interface WCFinderLiveStarterChooseGameSearchPanelView : NSObject
 {
     _Bool _showSearch;
     id <MMFinderLiveStarterChooseGameSearchDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, MMFinderLiveAngleViewModel, MMFinderLiveChooseClarityViewNavBar, MMFinderLiveMultiAngleCollectionView, UIView;
 
-@interface MMFinderLiveMultiAngleView
+@interface MMFinderLiveMultiAngleView : NSObject
 {
     MMFinderLiveAngleViewModel *_angleViewModel;
     CAShapeLayer *_shapeLayer;

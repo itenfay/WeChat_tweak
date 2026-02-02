@@ -5,7 +5,7 @@
 
 @class NSString, WASubscriptionMessageLogic;
 
-@interface WAJSEventHandler_requestSubscribeMessage
+@interface WAJSEventHandler_requestSubscribeMessage : NSObject
 {
     WASubscriptionMessageLogic *_logic;
 }

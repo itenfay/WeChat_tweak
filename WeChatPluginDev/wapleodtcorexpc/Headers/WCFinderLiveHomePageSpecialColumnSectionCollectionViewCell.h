@@ -6,7 +6,7 @@
 @class NSArray, NSString, UICollectionView, WCFinderLiveHomePageSpecialColumnSectionView;
 @protocol WCFinderLiveHomePageSpecialColumnSectionViewDelegate;
 
-@interface WCFinderLiveHomePageSpecialColumnSectionCollectionViewCell
+@interface WCFinderLiveHomePageSpecialColumnSectionCollectionViewCell : NSObject
 {
     id <WCFinderLiveHomePageSpecialColumnSectionViewDelegate> _delegate;
     WCFinderLiveHomePageSpecialColumnSectionView *_liveCollectionView;

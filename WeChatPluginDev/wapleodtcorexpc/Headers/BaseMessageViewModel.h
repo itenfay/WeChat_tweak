@@ -6,7 +6,7 @@
 @class CBaseContact, CMessageWrap, NSString;
 @protocol RecordNodeDataSource;
 
-@interface BaseMessageViewModel
+@interface BaseMessageViewModel : NSObject
 {
     CBaseContact *m_contact;
     CMessageWrap *m_messageWrap;

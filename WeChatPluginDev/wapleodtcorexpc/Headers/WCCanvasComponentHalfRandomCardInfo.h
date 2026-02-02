@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCCanvasComponentHalfRandomCardRotateAnimInfo;
 
-@interface WCCanvasComponentHalfRandomCardInfo
+@interface WCCanvasComponentHalfRandomCardInfo : NSObject
 {
     WCCanvasComponentHalfRandomCardRotateAnimInfo *_rotateAnimInfo;
     NSArray *_items;

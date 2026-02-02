@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderCateLogStreamCgi
+@interface WCFinderCateLogStreamCgi : NSObject
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failedBlock;

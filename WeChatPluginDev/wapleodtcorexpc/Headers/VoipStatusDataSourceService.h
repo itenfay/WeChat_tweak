@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface VoipStatusDataSourceService
+@interface VoipStatusDataSourceService : NSObject
 {
     NSMutableArray *_snsProxyList;
 }

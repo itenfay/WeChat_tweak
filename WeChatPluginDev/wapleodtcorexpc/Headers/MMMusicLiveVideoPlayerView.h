@@ -6,7 +6,7 @@
 @class MMMusicVideoStaticticsReporter, NSString, WCFinderFeedMediaWrap, WCPlayerPlayArgs, WCPlayerView;
 @protocol MMMusicLiveVideoPlayerDelegate;
 
-@interface MMMusicLiveVideoPlayerView
+@interface MMMusicLiveVideoPlayerView : NSObject
 {
     WCPlayerView *m_retainPlayerView;
     unsigned long long m_lastPlayerState;

@@ -6,7 +6,7 @@
 @class ILinkPusher, LayerOpenGLContext, MMLayerCompositer, MMLiveILinkCompositerTextureWrap, NSMutableArray, NSMutableDictionary, NSObject, NSString, TRTCTranscodingConfig, UIImage;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface MMLiveILinkPushAdapter
+@interface MMLiveILinkPushAdapter : NSObject
 {
     struct os_unfair_lock_s _remoteVideoDictLock;
     _Bool _hasVideoMuteImage;

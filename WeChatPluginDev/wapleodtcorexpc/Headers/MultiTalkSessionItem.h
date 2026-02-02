@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiTalkSessionItem
+@interface MultiTalkSessionItem : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int localID;

@@ -5,7 +5,7 @@
 
 @class BTLiveBarItemViewModel, CAGradientLayer, MMHeadImageView, MMUILabel, MMWebImageView, NSString, UIView;
 
-@interface BTLiveBarItemView
+@interface BTLiveBarItemView : NSObject
 {
     unsigned int _index;
     BTLiveBarItemViewModel *_itemViewModel;

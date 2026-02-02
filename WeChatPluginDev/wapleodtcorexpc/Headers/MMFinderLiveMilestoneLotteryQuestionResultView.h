@@ -5,7 +5,7 @@
 
 @class FinderLiveMilestoneLotteryInfo, MMFinderLiveMilestoneLotteryViewModel, UILabel, UIScrollView, UIView;
 
-@interface MMFinderLiveMilestoneLotteryQuestionResultView
+@interface MMFinderLiveMilestoneLotteryQuestionResultView : NSObject
 {
     MMFinderLiveMilestoneLotteryViewModel *_vm;
     FinderLiveMilestoneLotteryInfo *_lotteryInfo;

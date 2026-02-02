@@ -5,7 +5,7 @@
 
 @class KindaImage, MMDynamicColor, NSData, NSString, WCPayWebImageView;
 
-@interface KindaImageView
+@interface KindaImageView : NSObject
 {
     WCPayWebImageView *_m_imageView;
     long long _m_scaleType;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UIView, WCShareCardData;
 
-@interface WCShareCardItemView
+@interface WCShareCardItemView : NSObject
 {
     _Bool _bForCard;
     NSArray *_shareCardList;

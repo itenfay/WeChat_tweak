@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveTaskId, MMRollableLabelView, MMUIImageView, MMUILabel, MMUIView, UIView;
 
-@interface MMFinderLiveNewAnchorTaskEntranceView
+@interface MMFinderLiveNewAnchorTaskEntranceView : NSObject
 {
     unsigned int _scene;
     CDUnknownBlockType _actionBlock;

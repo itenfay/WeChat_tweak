@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class UIView, WCDragDeleteBarView;
 @protocol WAMainFrameTaskbarOperationViewControllerDelegate;
 
-@interface WAMainFrameTaskbarOperationViewController
+@interface WAMainFrameTaskbarOperationViewController : NSObject
 {
     _Bool _showing;
     UIView *_deleteContainerView;

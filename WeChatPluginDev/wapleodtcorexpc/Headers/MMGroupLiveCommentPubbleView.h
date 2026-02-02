@@ -5,7 +5,7 @@
 
 @class MMGroupLiveCommentTableViewCellFrame, MMHeadImageView, MMLiveCommentDataItem, RichTextView;
 
-@interface MMGroupLiveCommentPubbleView
+@interface MMGroupLiveCommentPubbleView : NSObject
 {
     MMLiveCommentDataItem *_commentItem;
     MMHeadImageView *_headImageView;

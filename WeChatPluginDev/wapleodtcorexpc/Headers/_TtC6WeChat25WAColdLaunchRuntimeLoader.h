@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25WAColdLaunchRuntimeLoader
+@interface _TtC6WeChat25WAColdLaunchRuntimeLoader : NSObject
 {
     MISSING_TYPE *targetVersion;
     MISSING_TYPE *contact;

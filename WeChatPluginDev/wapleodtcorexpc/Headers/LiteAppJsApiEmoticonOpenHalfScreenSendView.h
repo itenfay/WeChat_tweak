@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, NSString;
 
-@interface LiteAppJsApiEmoticonOpenHalfScreenSendView
+@interface LiteAppJsApiEmoticonOpenHalfScreenSendView : NSObject
 {
     _Bool _showEntry;
     long long _emoticonScene;

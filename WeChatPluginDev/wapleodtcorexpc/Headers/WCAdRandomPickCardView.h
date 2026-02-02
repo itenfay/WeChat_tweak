@@ -6,7 +6,7 @@
 @class NSString, PAGView, WCAdRandomPickCardDescriptionView, WCAdRandomPickCardInfo, WCAdRandomPickCardItemsView, WCDataItem;
 @protocol WCAdRandomPickCardViewDelegate;
 
-@interface WCAdRandomPickCardView
+@interface WCAdRandomPickCardView : NSObject
 {
     _Bool _isRandomPickCardViewActive;
     _Bool _shouldResumeCardItemsView;

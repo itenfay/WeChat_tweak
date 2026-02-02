@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderMemberShipFeedTabViewModel, WCFinderProfileCollectionListLayout;
 
-@interface WCFinderMemberShipFeedViewController
+@interface WCFinderMemberShipFeedViewController : NSObject
 {
     WCFinderMemberShipFeedTabViewModel *_viewModel;
     WCFinderProfileCollectionListLayout *_collectionListLayout;

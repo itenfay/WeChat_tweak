@@ -6,7 +6,7 @@
 @class NSString;
 @protocol V2TXLivePlayerObserverWx;
 
-@interface V2TXLivePlayerWx
+@interface V2TXLivePlayerWx : NSObject
 {
     long long _networkQuality;
     _Bool _enableMessage;

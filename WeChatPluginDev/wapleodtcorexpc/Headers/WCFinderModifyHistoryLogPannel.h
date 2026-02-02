@@ -5,7 +5,7 @@
 
 @class FeedRecord, NSArray;
 
-@interface WCFinderModifyHistoryLogPannel
+@interface WCFinderModifyHistoryLogPannel : NSObject
 {
     FeedRecord *_initialInfo;
     NSArray *_historyArray;

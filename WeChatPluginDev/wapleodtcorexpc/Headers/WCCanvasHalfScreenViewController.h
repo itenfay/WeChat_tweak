@@ -5,7 +5,7 @@
 
 @class NSString, UIView, WCAdCanvasExtraParams, WCAdExpressionCanvasHalfScreenJumpInfo, WCAdvertiseInfo, WCCanvasPageViewController;
 
-@interface WCCanvasHalfScreenViewController
+@interface WCCanvasHalfScreenViewController : NSObject
 {
     _Bool _willJumpToHalfOtherContent;
     int _scene;

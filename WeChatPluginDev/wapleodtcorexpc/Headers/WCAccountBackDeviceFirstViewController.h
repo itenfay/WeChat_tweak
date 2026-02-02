@@ -6,7 +6,7 @@
 @class MMUILabel, UIImageView, WCRedesignButtonItem;
 @protocol WCAccountBackDeviceFirstViewControllerDelegate;
 
-@interface WCAccountBackDeviceFirstViewController
+@interface WCAccountBackDeviceFirstViewController : NSObject
 {
     id <WCAccountBackDeviceFirstViewControllerDelegate> m_delegate;
     UIImageView *_weChatLogoImageView;

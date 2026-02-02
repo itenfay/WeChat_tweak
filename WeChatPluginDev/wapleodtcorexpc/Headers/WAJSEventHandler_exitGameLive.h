@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_exitGameLive
+@interface WAJSEventHandler_exitGameLive : NSObject
 {
 }
 

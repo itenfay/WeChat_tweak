@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderLiveMsgSessionInfoStorage;
 
-@interface WCFinderLiveMsgSessionMgr
+@interface WCFinderLiveMsgSessionMgr : NSObject
 {
     WCFinderLiveMsgSessionInfoStorage *_qaSessionInfoStorage;
 }

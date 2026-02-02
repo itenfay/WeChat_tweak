@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QGPStartTranslateAnimationParam
+@interface QGPStartTranslateAnimationParam : NSObject
 {
     _Bool _needRotate;
     NSArray *_positions;

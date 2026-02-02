@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UIView;
 
-@interface WCCanvasHalfRandomSubCardBulletCommentButton
+@interface WCCanvasHalfRandomSubCardBulletCommentButton : NSObject
 {
     NSString *_bulletComment;
     RichTextView *_bulletCommentView;

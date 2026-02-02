@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MFMigrationBtn
+@interface MFMigrationBtn : NSObject
 {
     unsigned long long _notifyCode;
     unsigned long long _currentSessionCount;

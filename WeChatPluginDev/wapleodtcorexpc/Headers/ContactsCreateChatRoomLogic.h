@@ -6,7 +6,7 @@
 @class CContactVerifyLogic, MMLoadingView, NSDictionary, NSMutableArray, NSString, UIView;
 @protocol ContactsCreateChatRoomLogicDelegate;
 
-@interface ContactsCreateChatRoomLogic
+@interface ContactsCreateChatRoomLogic : NSObject
 {
     NSDictionary *m_dicMultiSelect;
     UIView *m_ParentView;

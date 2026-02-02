@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, MMUIView, NSString, UIImageView, WCAdCommonInteractionLogic, WCAdFinderLiveLogic, WCAdFinderLivePlayerView, WCAdLiveDisplayView, WCSightView;
 
-@interface WCContentItemViewTemplateNewSight
+@interface WCContentItemViewTemplateNewSight : NSObject
 {
     WCSightView *_sightView;
     UIImageView *_adActionIconView;

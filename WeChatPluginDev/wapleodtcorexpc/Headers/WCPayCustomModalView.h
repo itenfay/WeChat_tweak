@@ -6,7 +6,7 @@
 @class CustomModal, KindaRichLabelViewV2, NSMutableArray, NSString, RouteInfo, UIButton, UIScrollView, UIView, WCPayWebImageView;
 @protocol WCPayCustomModalViewDelegate;
 
-@interface WCPayCustomModalView
+@interface WCPayCustomModalView : NSObject
 {
     _Bool _m_protocolSelected;
     _Bool _m_hasClickProtocol;

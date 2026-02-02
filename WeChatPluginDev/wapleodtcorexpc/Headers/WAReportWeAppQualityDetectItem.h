@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWeAppQualityDetectItem
+@interface WAReportWeAppQualityDetectItem : NSObject
 {
     _Bool _currentPageRecoverReloaded;
     _Bool _hasHtmlWeb;

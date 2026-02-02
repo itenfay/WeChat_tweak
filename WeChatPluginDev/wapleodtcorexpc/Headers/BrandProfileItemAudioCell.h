@@ -5,7 +5,7 @@
 
 @class BrandProfileItemAudioViewModel, NSString, UIView, WCBrandAudioPlayView;
 
-@interface BrandProfileItemAudioCell
+@interface BrandProfileItemAudioCell : NSObject
 {
     UIView *_audioBgView;
     WCBrandAudioPlayView *_audioPlayView;

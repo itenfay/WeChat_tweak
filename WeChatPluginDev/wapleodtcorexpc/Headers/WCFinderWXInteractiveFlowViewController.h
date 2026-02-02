@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, WCFinderFeedFlowView, WCFinderWXInteractiveFlowViewModel, WCFinderWXInteractiveHeaderView;
 
-@interface WCFinderWXInteractiveFlowViewController
+@interface WCFinderWXInteractiveFlowViewController : NSObject
 {
     WCFinderFeedFlowView *_feedFlowView;
     NSMutableSet *_exposedTags;

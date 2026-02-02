@@ -6,7 +6,7 @@
 @class AppointBankRes, CheckBankBindRes, GetBankInfoRes, NSString, OperationResp, QueryTransferListRes, TransToBankCardPayRes, WCPayPayMoneyLogic, WCPayT2BCAppointBankCgi, WCPayT2BCBusinessCallBackCgi, WCPayT2BCCheckBankBindCgi, WCPayT2BCDeleteRecordCgi, WCPayT2BCGetBankInfoCgi, WCPayT2BCGetTransHistroyCgi, WCPayT2BCModifyRemarkCgi, WCPayT2BCOperationCgi, WCPayT2BCPayReportCgi, WCPayT2BCPayRequestCgi, WCPayTransferToBankCardFillInfoViewController;
 @protocol WCPayT2BCTransferControlLogicDelegate;
 
-@interface WCPayT2BCTransferControlLogic
+@interface WCPayT2BCTransferControlLogic : NSObject
 {
     id <WCPayT2BCTransferControlLogicDelegate> _t2bcTransferLogicDelgate;
     unsigned long long m_uiT2BCTransferLogicStatus;

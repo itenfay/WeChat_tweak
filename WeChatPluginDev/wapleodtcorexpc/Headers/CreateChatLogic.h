@@ -6,7 +6,7 @@
 @class CContact, ContactsCreateChatRoomLogic, MMTipsViewController, MultiSelectContactsViewController, NSMutableArray, NSMutableDictionary, NSString, SelectContactsViewController;
 @protocol CreateChatLogicDelegate;
 
-@interface CreateChatLogic
+@interface CreateChatLogic : NSObject
 {
     id <CreateChatLogicDelegate> m_delegate;
     ContactsCreateChatRoomLogic *m_createLogic;

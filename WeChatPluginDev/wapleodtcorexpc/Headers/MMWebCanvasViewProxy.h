@@ -6,7 +6,7 @@
 @class MMWebCanvasView, NSString;
 @protocol MMWebCanvasViewDataDelegate, MMWebCanvasViewEventDelegate;
 
-@interface MMWebCanvasViewProxy
+@interface MMWebCanvasViewProxy : NSObject
 {
     MMWebCanvasView *_canvasView;
     id <MMWebCanvasViewDataDelegate> _dataDelegate;

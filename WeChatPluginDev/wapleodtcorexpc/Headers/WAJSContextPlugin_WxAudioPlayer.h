@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSMutableSet, NSObject, NSString, WAAppTask, WXAudioNative;
 @protocol OS_dispatch_queue;
 
-@interface WAJSContextPlugin_WxAudioPlayer
+@interface WAJSContextPlugin_WxAudioPlayer : NSObject
 {
     _Bool _isNeedResumeWXMusic;
     _Bool _obeyMuteSwitch;

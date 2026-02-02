@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderCDNFileDumpCGI
+@interface WCFinderCDNFileDumpCGI : NSObject
 {
     NSString *_posterUsername;
     NSString *_clientId;

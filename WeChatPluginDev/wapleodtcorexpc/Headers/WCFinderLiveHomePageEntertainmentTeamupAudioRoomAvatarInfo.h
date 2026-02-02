@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderLiveHomePageEntertainmentTeamupAudioRoomAvatarInfo
+@interface WCFinderLiveHomePageEntertainmentTeamupAudioRoomAvatarInfo : NSObject
 {
     _Bool _cameraOn;
     NSString *_sdkUserId;

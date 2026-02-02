@@ -6,7 +6,7 @@
 @class CameraScanGoodsAdInfo, CameraScanGoodsJSAPIInfo, CameraScannerViewWrapper, LocationRetriever, NSMutableSet, NSObject, NSRecursiveLock, NSString;
 @protocol GoodsScannerDelegate, OS_dispatch_queue;
 
-@interface GoodsScanner
+@interface GoodsScanner : NSObject
 {
     float _scaleRatio;
     struct CGPoint _cropInputOrigin;

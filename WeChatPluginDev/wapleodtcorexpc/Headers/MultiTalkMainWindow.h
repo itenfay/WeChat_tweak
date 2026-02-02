@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class UIImageView;
 @protocol MultiTalkMainWindowDelegate;
 
-@interface MultiTalkMainWindow
+@interface MultiTalkMainWindow : NSObject
 {
     _Bool _shouldIgnoreExtendFromCollapseFirstStepAnimation;
     _Bool _m_hasStartQuitAnimation;

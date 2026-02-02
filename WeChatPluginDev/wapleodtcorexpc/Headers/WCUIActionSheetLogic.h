@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCUIActionSheetLogic
+@interface WCUIActionSheetLogic : NSObject
 {
     NSMutableDictionary *m_dicTarget;
     NSMutableDictionary *m_dicSel;

@@ -5,7 +5,7 @@
 
 @class InviteFriendLogic, MMTableViewInfo, NSString;
 
-@interface InviteFriendViewController
+@interface InviteFriendViewController : NSObject
 {
     MMTableViewInfo *_tableViewInfo;
     InviteFriendLogic *_inviteLogic;

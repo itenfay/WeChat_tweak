@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLocation, GameTeamUpSpecialGiftSettingDetail, MMFinderLiveGameUserInfo, MMFinderLiveImageOcrOp, MMFinderLivePromoteManageLogic, MMFinderLiveTask, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSString;
 @protocol WCFinderStarterLiveGameViewModelDelegate;
 
-@interface WCFinderLiveStarteGameModeViewModel
+@interface WCFinderLiveStarteGameModeViewModel : NSObject
 {
     int _createGameLiveScene;
     int _wxaGameLiveScene;

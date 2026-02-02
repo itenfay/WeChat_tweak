@@ -5,7 +5,7 @@
 
 @class NSString, WCAdHeadStateInfo, WCAdURLImageView, WCDataItem;
 
-@interface WCAdHeadStateView
+@interface WCAdHeadStateView : NSObject
 {
     WCAdURLImageView *_headStateImageView;
     WCDataItem *_dataItem;

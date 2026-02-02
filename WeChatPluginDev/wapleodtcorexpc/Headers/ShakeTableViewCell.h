@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface ShakeTableViewCell
+@interface ShakeTableViewCell : NSObject
 {
     UILabel *m_nickNameLabel;
     UILabel *m_personalRemarkLabel;

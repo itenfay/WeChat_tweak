@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveCommentDataFetchEngne
+@interface MMFinderLiveCommentDataFetchEngne : NSObject
 {
     int _logCommentOpen;
 }

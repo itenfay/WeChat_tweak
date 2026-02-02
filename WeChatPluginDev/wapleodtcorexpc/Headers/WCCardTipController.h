@@ -5,7 +5,7 @@
 
 @class WCCardTipItem;
 
-@interface WCCardTipController
+@interface WCCardTipController : NSObject
 {
     WCCardTipItem *_wcCardTip;
 }

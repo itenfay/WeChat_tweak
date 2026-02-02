@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface CountryFormatConfig
+@interface CountryFormatConfig : NSObject
 {
     NSString *nsCountryCode;
     NSString *nsISOCode;

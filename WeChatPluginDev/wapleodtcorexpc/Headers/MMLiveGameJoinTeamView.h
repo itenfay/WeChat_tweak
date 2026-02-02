@@ -6,7 +6,7 @@
 @class MMFinderLiveGameTeamInfo, MMFinderLiveTaskId, MMLiveGameJoinTeamShowGiftView, MMLiveJoinGameAudiencePaymentView, MMUIButton, MMUILabel, MMUIView, MMWebImageView, NSString, RichTextView, UIButton, UIImageView, UIView;
 @protocol MMLiveGameJoinTeamViewDelegate;
 
-@interface MMLiveGameJoinTeamView
+@interface MMLiveGameJoinTeamView : NSObject
 {
     _Bool _paidForNextRound;
     _Bool _isShow;

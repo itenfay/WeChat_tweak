@@ -6,7 +6,7 @@
 @class NSString, WCAdConventionalHalfScreenCustomBackgroundView;
 @protocol WCAdContactInfoHalfScreenViewControllerDelegate;
 
-@interface WCAdContactInfoHalfScreenViewController
+@interface WCAdContactInfoHalfScreenViewController : NSObject
 {
     _Bool _isContactViewFullyVisible;
     _Bool _isContactViewClosedByUser;

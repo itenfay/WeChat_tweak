@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportNavBackAlertItem
+@interface WAReportNavBackAlertItem : NSObject
 {
     long long _timestampOfDialog;
     long long _eventId;

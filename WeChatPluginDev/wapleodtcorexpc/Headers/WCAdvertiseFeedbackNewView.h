@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, MMUIView, NSMutableArray, NSString, UIButton, WCDataItem;
 
-@interface WCAdvertiseFeedbackNewView
+@interface WCAdvertiseFeedbackNewView : NSObject
 {
     _Bool _onAnimation;
     _Bool _isIndicatorBeRotate;

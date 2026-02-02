@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class StatusFooterJumpFinderFeed, WCFinderDataItem;
 
-@interface TextState3rdPartyFinderHandler
+@interface TextState3rdPartyFinderHandler : NSObject
 {
     unsigned long long _dataStatus;
     WCFinderDataItem *_dataItem;

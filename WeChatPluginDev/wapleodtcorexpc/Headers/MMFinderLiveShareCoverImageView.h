@@ -5,7 +5,7 @@
 
 @class WCFinderFeedImageCDNView;
 
-@interface MMFinderLiveShareCoverImageView
+@interface MMFinderLiveShareCoverImageView : NSObject
 {
     WCFinderFeedImageCDNView *_CDNImageView;
 }

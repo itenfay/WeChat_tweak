@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ChatBackgroundEntranceViewController
+@interface ChatBackgroundEntranceViewController : NSObject
 {
     NSString *m_username;
 }

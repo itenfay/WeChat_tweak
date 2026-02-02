@@ -6,7 +6,7 @@
 @class MMFinderLiveMultiCouponView;
 @protocol MMFinderLiveCouponViewDelegate;
 
-@interface MMFinderLiveCouponCell
+@interface MMFinderLiveCouponCell : NSObject
 {
     MMFinderLiveMultiCouponView *_couponView;
     long long _style;

@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCBaseKeyboardToolBar, WCBizInfoGroup, WCPayCountryCodeAndPhoneNumberItem, WCPayCountryCodeItem, WCPayPhoneTextItem;
 @protocol WCPayResetPhoneViewViewControllerDelegate;
 
-@interface WCPayResetPhoneViewController
+@interface WCPayResetPhoneViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBizInfoGroup *m_group;

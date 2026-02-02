@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WebviewJSEventHandler_preloadLiteApp
+@interface WebviewJSEventHandler_preloadLiteApp : NSObject
 {
     NSMutableDictionary *_preloadList;
 }

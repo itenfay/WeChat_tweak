@@ -5,7 +5,7 @@
 
 @class NSString, SKBuiltinBuffer_t;
 
-@interface LBSLifeMgr
+@interface LBSLifeMgr : NSObject
 {
     SKBuiltinBuffer_t *_getBuff;
     SKBuiltinBuffer_t *_searchBuff;

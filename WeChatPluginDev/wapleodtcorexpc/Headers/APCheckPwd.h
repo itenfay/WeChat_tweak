@@ -6,7 +6,7 @@
 @class UIViewController;
 @protocol APCheckPwdDelegate;
 
-@interface APCheckPwd
+@interface APCheckPwd : NSObject
 {
     id <APCheckPwdDelegate> _delegate;
     UIViewController *_viewController;

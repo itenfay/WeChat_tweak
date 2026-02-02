@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMMusicNoDotSelectItemDisplayViewBgView
+@interface MMMusicNoDotSelectItemDisplayViewBgView : NSObject
 {
     UIImageView *_hintImageView;
     unsigned long long _curItemCount;

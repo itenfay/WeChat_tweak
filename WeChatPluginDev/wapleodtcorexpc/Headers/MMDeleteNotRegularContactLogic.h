@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MMDeleteNotRegularContactLogicDelegate;
 
-@interface MMDeleteNotRegularContactLogic
+@interface MMDeleteNotRegularContactLogic : NSObject
 {
     NSString *m_contactsMaxLimitSortSessionid;
     int m_responseRet;

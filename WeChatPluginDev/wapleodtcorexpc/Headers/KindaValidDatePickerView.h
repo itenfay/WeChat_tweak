@@ -5,7 +5,7 @@
 
 @class MMKValidDatePickerViewOnSelectCallback, NSString, UIButton, UIPickerView, UIView, WCUITextField;
 
-@interface KindaValidDatePickerView
+@interface KindaValidDatePickerView : NSObject
 {
     UIPickerView *m_pickerView;
     WCUITextField *m_textField;

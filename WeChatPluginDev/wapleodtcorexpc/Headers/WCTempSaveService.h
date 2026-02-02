@@ -5,7 +5,7 @@
 
 @class NSOperationQueue, NSString, WCTempSaveModel;
 
-@interface WCTempSaveService
+@interface WCTempSaveService : NSObject
 {
     _Bool _isReadingFile;
     unsigned long long _curType;

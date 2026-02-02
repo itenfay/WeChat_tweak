@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, WCAdInteractionTagInfo, WCAdInteractionTagLogic, WCAdPagView, WCAdURLImageView, WCDataItem;
 
-@interface WCAdInteractionTagView
+@interface WCAdInteractionTagView : NSObject
 {
     _Bool _isDetail;
     WCAdInteractionTagInfo *_adInteractionTagInfo;

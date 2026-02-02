@@ -5,7 +5,7 @@
 
 @class NSString, WCPayMallPayStruct, WCPayPayMoneyLogic;
 
-@interface WCPayPayMoneyFromMallLogic
+@interface WCPayPayMoneyFromMallLogic : NSObject
 {
     WCPayMallPayStruct *m_oWCPayMallPayStruct;
     WCPayPayMoneyLogic *m_payLogic;

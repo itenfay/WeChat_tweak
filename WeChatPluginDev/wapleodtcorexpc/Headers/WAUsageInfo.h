@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAUsageInfo
+@interface WAUsageInfo : NSObject
 {
     unsigned int _appType;
     unsigned int _lastOpenTime;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, WCPayGPCustomizeLaunchCgi, WCPaySolitairePageSheet;
 @protocol WCPayGPLaunchControlLogicDelegate;
 
-@interface WCPayGPLaunchControlLogic
+@interface WCPayGPLaunchControlLogic : NSObject
 {
     _Bool _bEnableReportLocation;
     _Bool _bEnableReportSSID;

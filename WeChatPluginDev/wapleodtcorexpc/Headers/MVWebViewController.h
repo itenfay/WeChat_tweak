@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSURL;
 
-@interface MVWebViewController
+@interface MVWebViewController : NSObject
 {
     _Bool _webviewDidFinishLoad;
     _Bool _hasGetFirstA8Key;

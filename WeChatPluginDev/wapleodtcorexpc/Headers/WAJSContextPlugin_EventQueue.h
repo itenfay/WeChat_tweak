@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface WAJSContextPlugin_EventQueue
+@interface WAJSContextPlugin_EventQueue : NSObject
 {
     NSMutableArray *_arrViewDidAppearEvent;
     NSMutableArray *_eventHandlersWhenIndexDataLoaded;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportGameCBFPSItem
+@interface WAReportGameCBFPSItem : NSObject
 {
     unsigned int _duration;
     unsigned int _useCommandBuffer;

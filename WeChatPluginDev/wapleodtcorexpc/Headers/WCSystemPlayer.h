@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVPlayer, AVPlayerItem, AVPlayerItemVideoOutput, NSObject, NSString, WCPlayerFairPlayResourceLoader;
 
-@interface WCSystemPlayer
+@interface WCSystemPlayer : NSObject
 {
     _Bool _isNoCallbackSeek;
     float _lastPlayBackRate;

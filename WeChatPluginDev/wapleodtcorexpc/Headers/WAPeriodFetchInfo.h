@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPeriodFetchInfo
+@interface WAPeriodFetchInfo : NSObject
 {
     unsigned int _lastFetchTime;
     NSString *_userName;

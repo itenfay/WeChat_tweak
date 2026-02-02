@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, UIView;
 @protocol WCFinderAdCommentApplyActionSheetDelegate;
 
-@interface WCFinderAdCommentApplyActionSheet
+@interface WCFinderAdCommentApplyActionSheet : NSObject
 {
     int _commentScene;
     id <WCFinderAdCommentApplyActionSheetDelegate> _applyDelegate;

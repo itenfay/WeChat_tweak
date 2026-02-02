@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateMoviePlayer;
 
-@interface MJTemplateMoviePlayerOperation
+@interface MJTemplateMoviePlayerOperation : NSObject
 {
     MJTemplateMoviePlayer *_templateMoviePlayer;
 }

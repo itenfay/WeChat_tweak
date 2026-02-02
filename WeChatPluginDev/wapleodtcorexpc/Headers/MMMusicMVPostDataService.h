@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicLiveCGIMgr, MMMusicMVClipUploader, MMMusicPostingMVContext, NSMutableArray, NSString, UIImage, UIViewController, WCFinderCreateCoordinator;
 
-@interface MMMusicMVPostDataService
+@interface MMMusicMVPostDataService : NSObject
 {
     _Bool _saveAsDraft;
     _Bool _isDraftEditingMode;

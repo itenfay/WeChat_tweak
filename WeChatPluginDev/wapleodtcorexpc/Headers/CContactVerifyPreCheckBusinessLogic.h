@@ -6,7 +6,7 @@
 @class CContactVerifyLogic, MMDeleteNotRegularContactLogic, NSString;
 @protocol ContactVerifyPreCheckBusinessLogicDelegate;
 
-@interface CContactVerifyPreCheckBusinessLogic
+@interface CContactVerifyPreCheckBusinessLogic : NSObject
 {
     CContactVerifyLogic *m_oContactVerifyLogic;
     MMDeleteNotRegularContactLogic *m_deleteNotRegularContactLogic;

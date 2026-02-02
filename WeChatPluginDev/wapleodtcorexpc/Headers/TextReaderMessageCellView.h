@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSMutableArray, NSString, RichTextView, TextReaderMessageViewModel, UIImageView, WAAppIdToUsernameTransfer;
 
-@interface TextReaderMessageCellView
+@interface TextReaderMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
     RichTextView *m_mainTitleView;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, WCMallNetworkHelper;
 
-@interface WCMallLogicMgr
+@interface WCMallLogicMgr : NSObject
 {
     WCMallNetworkHelper *m_oWCMallNetworkHelper;
     NSDictionary *m_oBufferFunctionList;

@@ -6,7 +6,7 @@
 @class UIButton, UIColor, UIImageView, UILabel, UIView;
 @protocol WCFinderTipsViewControllerDelegate;
 
-@interface WCFinderTipsViewController
+@interface WCFinderTipsViewController : NSObject
 {
     _Bool _supportLandscape;
     _Bool _lockOrientation;

@@ -6,7 +6,7 @@
 @class NSObject, NSString;
 @protocol IWAAuthorizeAddAvatarService;
 
-@interface WAJSEventHandler_createVestUser
+@interface WAJSEventHandler_createVestUser : NSObject
 {
     NSObject<IWAAuthorizeAddAvatarService> *_addAvatarService;
 }

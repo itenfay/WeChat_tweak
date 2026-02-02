@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMPageSheetAdapter, MMPageSheetProviderView, NSString;
 @protocol MMPageSheetContainerViewControllerDelegate;
 
-@interface MMPageSheetContainerViewController
+@interface MMPageSheetContainerViewController : NSObject
 {
     _Bool _isPageSheetDismissed;
     id <MMPageSheetContainerViewControllerDelegate> _delegate;

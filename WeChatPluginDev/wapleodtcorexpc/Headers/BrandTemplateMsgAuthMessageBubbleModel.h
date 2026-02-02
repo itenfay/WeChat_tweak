@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandTemplateMsgAuthMessageBubbleModel
+@interface BrandTemplateMsgAuthMessageBubbleModel : NSObject
 {
     unsigned int _templateType;
     unsigned int _jumpType;

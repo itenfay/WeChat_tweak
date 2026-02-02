@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UITextField;
 
-@interface GCKeyValueSettingCell
+@interface GCKeyValueSettingCell : NSObject
 {
     UILabel *_titleLabel;
     UITextField *_textFiled;

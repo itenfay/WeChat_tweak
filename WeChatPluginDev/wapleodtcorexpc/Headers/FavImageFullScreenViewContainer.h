@@ -6,7 +6,7 @@
 @class MMFullScreenItemView, MMImageScrollViewHelper, MMLoadingView, MMProgressViewEx, NSArray, NSString, SimpleImgInfo, UIImage, WXFullScreenGestureRecognizer;
 @protocol FavImageFullScreenViewContainerDelegate, SimpleImgInfoDelegate;
 
-@interface FavImageFullScreenViewContainer
+@interface FavImageFullScreenViewContainer : NSObject
 {
     struct CGRect m_originImageRectInScreen;
     struct CGSize m_initalContentSize;

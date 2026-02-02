@@ -5,7 +5,7 @@
 
 @class NSString, TingSharePlayButton;
 
-@interface FavRecordTingAudioNodeView
+@interface FavRecordTingAudioNodeView : NSObject
 {
     TingSharePlayButton *_playButton;
 }

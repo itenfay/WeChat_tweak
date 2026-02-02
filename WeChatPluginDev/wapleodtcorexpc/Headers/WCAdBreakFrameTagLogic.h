@@ -5,7 +5,7 @@
 
 @class UIView, WCAdBreakFramePlayStateTagInfo;
 
-@interface WCAdBreakFrameTagLogic
+@interface WCAdBreakFrameTagLogic : NSObject
 {
     int _interactionState;
     UIView *_iconViewCache;

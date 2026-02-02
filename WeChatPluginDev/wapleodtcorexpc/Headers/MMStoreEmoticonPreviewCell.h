@@ -5,7 +5,7 @@
 
 @class EmotionLinkInfo, NSString;
 
-@interface MMStoreEmoticonPreviewCell
+@interface MMStoreEmoticonPreviewCell : NSObject
 {
     _Bool _disableDownload;
     _Bool _didLoadCacheLinkInfo;

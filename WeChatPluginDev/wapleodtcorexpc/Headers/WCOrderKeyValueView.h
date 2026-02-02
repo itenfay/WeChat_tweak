@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCOrderKeyValueView
+@interface WCOrderKeyValueView : NSObject
 {
     NSArray *_items;
     id _target;

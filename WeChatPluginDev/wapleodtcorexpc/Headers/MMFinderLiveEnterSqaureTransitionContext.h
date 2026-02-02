@@ -5,7 +5,7 @@
 
 @class MMFinderLiveHomePageBottomPlayerView, UIImageView, UIView;
 
-@interface MMFinderLiveEnterSqaureTransitionContext
+@interface MMFinderLiveEnterSqaureTransitionContext : NSObject
 {
     _Bool _isGesturePanEnter;
     double _duration;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject, NSString, UIImage, UIView, WCDataItem, WCMomentsPlayerViewContainer, WCPlayerFullScreenConfigControlView, WCPlayerPlayArgs, WCPlayerView, WCWidgetPlayer, WXFullScreenGestureRecognizer;
 @protocol WCPlayerConfigFullScreenViewControllerPostDelegate, WCPlayerConfigViewControllerDelegate, WCPlayerMediaExt;
 
-@interface WCPlayerConfigFullScreenViewController
+@interface WCPlayerConfigFullScreenViewController : NSObject
 {
     _Bool m_isPresented;
     _Bool _bDismissSelfOnPresentOther;

@@ -5,7 +5,7 @@
 
 @class LiveInfo, MMLiveOnlineUserListView, MMLiveStatCompositeLabel, MMUILabel, NSString, UIView;
 
-@interface MMGroupLiveStatViewController
+@interface MMGroupLiveStatViewController : NSObject
 {
     UIView *_headerView;
     MMLiveOnlineUserListView *_listView;

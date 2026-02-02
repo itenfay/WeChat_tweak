@@ -5,7 +5,7 @@
 
 @class UIView, VoIPSignalMessageViewModel;
 
-@interface VoIPSignalMessageCellView
+@interface VoIPSignalMessageCellView : NSObject
 {
     UIView *m_unreadImageView;
 }

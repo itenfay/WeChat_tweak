@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportSubscribeMessageItem
+@interface WAReportSubscribeMessageItem : NSObject
 {
     _Bool _keepOption;
     unsigned long long _templateType;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol GameLifeBlackHalfViewControllerDelegate;
 
-@interface GameLifeHalfScreenView
+@interface GameLifeHalfScreenView : NSObject
 {
     _Bool _isBlack;
     _Bool _isAssociateWithWxGame;

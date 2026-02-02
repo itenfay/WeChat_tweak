@@ -5,7 +5,7 @@
 
 @class NSString, WAWebViewPullDownRefreshView;
 
-@interface WAWebViewPlugin_PullRefresh
+@interface WAWebViewPlugin_PullRefresh : NSObject
 {
     _Bool _isReflashingHead;
     _Bool _isEnablePullRefresh;

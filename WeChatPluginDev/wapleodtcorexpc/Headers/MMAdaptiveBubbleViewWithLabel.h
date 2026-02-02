@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMAdaptiveBubbleViewWithLabel
+@interface MMAdaptiveBubbleViewWithLabel : NSObject
 {
     UILabel *_mainPartTitleLabel;
 }

@@ -6,7 +6,7 @@
 @class WAAppItemData;
 @protocol WADesktopStarListReportDelegate;
 
-@interface WADesktopStarListViewModel
+@interface WADesktopStarListViewModel : NSObject
 {
     long long _moveStartIndex;
     long long _moveEndIndex;

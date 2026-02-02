@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIImageView;
 
-@interface MMFinderLiveCoinButton
+@interface MMFinderLiveCoinButton : NSObject
 {
     unsigned int _wecoinCount;
     CDUnknownBlockType _coinButtonClickCallback;

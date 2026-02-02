@@ -5,7 +5,7 @@
 
 @class UITableView, UIView, ZZFLEXAngel;
 
-@interface MagicBrushDemoListLogic
+@interface MagicBrushDemoListLogic : NSObject
 {
     UITableView *_tableView;
     ZZFLEXAngel *_angel;

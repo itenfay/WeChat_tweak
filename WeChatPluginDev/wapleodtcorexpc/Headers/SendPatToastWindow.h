@@ -5,7 +5,7 @@
 
 @protocol SendPatToastWindowDelegate;
 
-@interface SendPatToastWindow
+@interface SendPatToastWindow : NSObject
 {
     id <SendPatToastWindowDelegate> _delegate;
     struct CGRect _toastFrame;

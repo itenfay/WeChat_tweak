@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAShapeLayer, MMUIButton, MMUILabel, NSString, UIImageView, UILabel, UIView, UIVisualEffectView;
 @protocol MMLiveAcceptAgreementPageSheetViewDelegate;
 
-@interface MMLiveAcceptAgreementPageSheetView
+@interface MMLiveAcceptAgreementPageSheetView : NSObject
 {
     id <MMLiveAcceptAgreementPageSheetViewDelegate> _operationDelegate;
     CDUnknownBlockType _actionButtonClickedBlock;

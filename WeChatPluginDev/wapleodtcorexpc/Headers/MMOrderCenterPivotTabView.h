@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface MMOrderCenterPivotTabView
+@interface MMOrderCenterPivotTabView : NSObject
 {
     _Bool _selected;
     NSString *_title;

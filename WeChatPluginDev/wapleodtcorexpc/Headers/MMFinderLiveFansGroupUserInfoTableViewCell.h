@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupSignView, UILabel, WCFinderHeadImageView;
 
-@interface MMFinderLiveFansGroupUserInfoTableViewCell
+@interface MMFinderLiveFansGroupUserInfoTableViewCell : NSObject
 {
     _Bool _smallStyle;
     _Bool _isCurrentRole;

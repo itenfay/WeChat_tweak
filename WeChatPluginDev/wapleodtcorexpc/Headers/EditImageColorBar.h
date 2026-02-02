@@ -6,7 +6,7 @@
 @class EditImageColor, NSArray, NSMutableArray;
 @protocol EditImageColorBarDeleagate;
 
-@interface EditImageColorBar
+@interface EditImageColorBar : NSObject
 {
     unsigned long long m_selectedIndex;
     NSMutableArray *m_colorDotViews;

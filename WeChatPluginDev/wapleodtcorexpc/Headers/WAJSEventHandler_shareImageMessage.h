@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString, WAReportImageEntranceShareItem;
 
-@interface WAJSEventHandler_shareImageMessage
+@interface WAJSEventHandler_shareImageMessage : NSObject
 {
     NSString *_imagePath;
     NSString *_cacheKey;

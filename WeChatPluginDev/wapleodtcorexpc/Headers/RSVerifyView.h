@@ -6,7 +6,7 @@
 @class CContactVerifyPreCheckBusinessLogic, MMHeadImageView, NSString, RSHeadImageView, RSVerifyAnimationView, UIButton, UIImageView, UILabel, WCUIAlertView;
 @protocol RSVerifyViewDelegate;
 
-@interface RSVerifyView
+@interface RSVerifyView : NSObject
 {
     MMHeadImageView *_imageView;
     UIImageView *_headBGView;

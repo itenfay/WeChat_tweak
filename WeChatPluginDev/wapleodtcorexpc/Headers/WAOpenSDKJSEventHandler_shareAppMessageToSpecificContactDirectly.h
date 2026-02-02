@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WAOpenSDKJSEventHandler_shareAppMessageToSpecificContactDirectly
+@interface WAOpenSDKJSEventHandler_shareAppMessageToSpecificContactDirectly : NSObject
 {
     NSDictionary *_dic;
     _Bool _forNativeWeApp;

@@ -5,7 +5,7 @@
 
 @class CTRichTextView, NSMutableArray, NSString, VoiceTransInfo;
 
-@interface VoiceMessageViewModel
+@interface VoiceMessageViewModel : NSObject
 {
     _Bool _isPlaying;
     _Bool _inMultiSelectStatus;

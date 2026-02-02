@@ -5,7 +5,7 @@
 
 @class MMSayHelloButton, UIButton, UILabel;
 
-@interface EnterLbsViewController
+@interface EnterLbsViewController : NSObject
 {
     UIButton *m_btnLbs;
     MMSayHelloButton *m_btnSayHello;

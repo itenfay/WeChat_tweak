@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString, WCMediaItem, WCSNSNodeVideoView;
 
-@interface WCContentItemViewTemplateVideo
+@interface WCContentItemViewTemplateVideo : NSObject
 {
     WCSNSNodeVideoView *_videoView;
     ForwardMessageLogicController *m_forwardMsgLogic;

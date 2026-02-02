@@ -5,7 +5,7 @@
 
 @class MMImageCropperViewController, NSMutableArray, NSString;
 
-@interface LiteAppJsApiCropImage
+@interface LiteAppJsApiCropImage : NSObject
 {
     NSMutableArray *_localIds;
     long long _totalCount;

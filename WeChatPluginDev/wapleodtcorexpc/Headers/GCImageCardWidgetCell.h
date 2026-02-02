@@ -5,7 +5,7 @@
 
 @class GWImageCardCellView;
 
-@interface GCImageCardWidgetCell
+@interface GCImageCardWidgetCell : NSObject
 {
     GWImageCardCellView *_imageWidget;
 }

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCTimelineDataProviderDelegate;
 
-@interface WCTimelineDataProvider
+@interface WCTimelineDataProvider : NSObject
 {
     unsigned long long uiClientLatestID;
     NSString *fpHash;

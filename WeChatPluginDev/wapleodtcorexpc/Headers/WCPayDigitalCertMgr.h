@@ -5,7 +5,7 @@
 
 @class DigitalCertLocalConfig, NSString;
 
-@interface WCPayDigitalCertMgr
+@interface WCPayDigitalCertMgr : NSObject
 {
     NSString *_m_digitalCertNo;
     DigitalCertLocalConfig *_digitalCertLocalConfig;

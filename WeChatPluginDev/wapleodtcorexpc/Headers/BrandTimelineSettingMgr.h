@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface BrandTimelineSettingMgr
+@interface BrandTimelineSettingMgr : NSObject
 {
     unsigned int _timelineSettingInfoControlBit;
 }

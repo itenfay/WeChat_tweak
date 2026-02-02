@@ -5,7 +5,7 @@
 
 @class MMLiveCommentTableViewCellFrame;
 
-@interface MMFinderLiveReusePubbleCommentTableViewCell
+@interface MMFinderLiveReusePubbleCommentTableViewCell : NSObject
 {
     MMLiveCommentTableViewCellFrame *_cellFrame;
 }

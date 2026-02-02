@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WALocationWrap
+@interface WALocationWrap : NSObject
 {
     int _floor;
     double _latitude;

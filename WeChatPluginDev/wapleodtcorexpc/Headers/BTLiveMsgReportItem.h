@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTLiveMsgReportItem
+@interface BTLiveMsgReportItem : NSObject
 {
     _Bool _isClick;
     unsigned int _exposeTimestamp;

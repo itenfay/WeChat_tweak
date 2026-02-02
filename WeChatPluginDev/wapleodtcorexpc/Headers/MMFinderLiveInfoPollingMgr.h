@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MMFinderLiveInfoPollingMgr
+@interface MMFinderLiveInfoPollingMgr : NSObject
 {
     NSMutableDictionary *_cacheItems;
 }

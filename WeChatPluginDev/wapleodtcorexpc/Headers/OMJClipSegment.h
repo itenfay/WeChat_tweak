@@ -5,7 +5,7 @@
 
 @class NSString, OMJAssetInfo;
 
-@interface OMJClipSegment
+@interface OMJClipSegment : NSObject
 {
     unsigned long long _clipType;
     SharedPtr_67e01d81 _backingClipSegment;

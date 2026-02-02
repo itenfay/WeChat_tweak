@@ -5,7 +5,7 @@
 
 @class FeedsPreviewLiveMultiStyleInfo_StyleTwelve, FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo, NSString;
 
-@interface MMFinderLiveFeedStreamCarouselProductCouponItem
+@interface MMFinderLiveFeedStreamCarouselProductCouponItem : NSObject
 {
     FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo *_couponBubble;
     FeedsPreviewLiveMultiStyleInfo_StyleTwelve *_couponStyleConf;

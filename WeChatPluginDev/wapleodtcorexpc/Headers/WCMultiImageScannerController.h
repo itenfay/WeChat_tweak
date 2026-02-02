@@ -6,7 +6,7 @@
 @class MJTemplatePlayerView, NSMutableArray, NSMutableSet, NSString, PageScrollView, SightAssetPreviewView, SightDraft, UIButton;
 @protocol WCMultiImageScannerDelegate;
 
-@interface WCMultiImageScannerController
+@interface WCMultiImageScannerController : NSObject
 {
     PageScrollView *_pageScrollView;
     UIButton *_deleteButton;

@@ -5,7 +5,7 @@
 
 @protocol MMLiveCompleteViewControllerDelegate;
 
-@interface MMLiveCompleteViewController
+@interface MMLiveCompleteViewController : NSObject
 {
     _Bool _needAutoRotateToPortrait;
     long long _currDeviceOrientation;

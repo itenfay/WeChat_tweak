@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface ContactAddDescriptionViewController
+@interface ContactAddDescriptionViewController : NSObject
 {
     _Bool _hasFilledDescription;
     _Bool _descSelectorIconExpo;

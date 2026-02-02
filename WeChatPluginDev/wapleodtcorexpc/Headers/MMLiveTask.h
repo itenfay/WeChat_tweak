@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CdnRenderViewBase, FLVNetworkInfo, GameTeamUpSpecialGiftSettingDetail, LiveInfo, LivePAGStatistics, LiveSdkAudioParams, LiveSdkChannelParams, LiveSdkVideoParams, MMFinderLiveBatchRewardAnimationWeVisionRenderer, MMFinderLiveCustomPIPHandler, MMFinderLiveGiftAttackRenderLogic, MMFinderLiveTask, MMLiveBeautyLogic, MMLiveCDNPlayerItem, MMLiveCaptureAdapter, MMLiveCdnStreamErrorReportInfo, MMLiveCdnStreamInfo, MMLiveDisplayMonitor, MMLiveEnergyController, MMLiveFaceDecodeLogic, MMLiveFaceDetectLogic, MMLiveFaceDetectStatisticLogic, MMLiveFaceLogic, MMLiveInteractionGiftRenderLogic, MMLiveMetricsBusinessMonitorLogic, MMLiveMetricsMonitor, MMLiveMultiAngleChannelInfo, MMLivePrepareAdapter, MMLiveRemoteTrtcCustomRenderComposeManager, MMLiveRemoteTrtcCustomRenderManager, MMLiveRewardGiftNewCustomizationMagicEngineEnergyManager, MMLiveRewardGiftNewCustomizationMagicRewardMemoryManager, MMLiveRewardMagicEnginePerformanceStatisticManager, MMLiveStateDataInfoSession, MMLiveTRTCPushAdapter, MMLiveTrtcRenderingNotificationContext, MMLiveUIPerfMonitorLogic, MMLiveView, MMLiveWevisionWidgetManageLogic, MMTimer, MMWeEffectManager, MMXp2pWrapper, MicSetting_PurchaseMicSetting, NSArray, NSData, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, OrderedDictionary, TRTCParams, UINavigationController, UIView, WAApptaskPublicResLogic, WCFinderLiveStarterLiveModeSubItem, WCLiveBlurBtnPowerModeMonitorLogic;
 @protocol MMLiveTaskDelegate;
 
-@interface MMLiveTask
+@interface MMLiveTask : NSObject
 {
     _Bool _secondaryDeviceCloseLiveSwitch;
     _Bool _isInRoom;

@@ -5,7 +5,7 @@
 
 @class NSString, WSWebViewPluginScheduler;
 
-@interface LiteAppJsApiPlugin_LocalJSAgent
+@interface LiteAppJsApiPlugin_LocalJSAgent : NSObject
 {
     WSWebViewPluginScheduler *_pluginScheduler;
     long long _k1kCategoryId;

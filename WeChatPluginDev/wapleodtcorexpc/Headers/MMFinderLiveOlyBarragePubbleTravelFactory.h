@@ -5,7 +5,7 @@
 
 @class MMFinderLiveActivityTask, MMFinderLiveOlyBarrageTravel, NSMutableArray, NSString;
 
-@interface MMFinderLiveOlyBarragePubbleTravelFactory
+@interface MMFinderLiveOlyBarragePubbleTravelFactory : NSObject
 {
     NSMutableArray *_barragePubbleTravelRouteList;
     MMFinderLiveOlyBarrageTravel *_barrageTravel;

@@ -5,7 +5,7 @@
 
 @class MMTableView, WeToast, ZZFLEXAngel;
 
-@interface WASMPageSheetListView
+@interface WASMPageSheetListView : NSObject
 {
     MMTableView *_tableView;
     ZZFLEXAngel *_angel;

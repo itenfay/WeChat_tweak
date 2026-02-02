@@ -6,7 +6,7 @@
 @class NSString, UIView, WCShareCardMemberHeaderCardImageView, WCShareCardMemberHeaderGiftInfo;
 @protocol WCShareCardMemberCustomImgHeaderDelegate;
 
-@interface WCShareCardMemberCustomImgHeaderView
+@interface WCShareCardMemberCustomImgHeaderView : NSObject
 {
     _Bool _hasDetailView;
     _Bool _acceptAble;

@@ -5,7 +5,7 @@
 
 @class QGPEnabled;
 
-@interface QGPEnableUnlitCommand
+@interface QGPEnableUnlitCommand : NSObject
 {
     QGPEnabled *_params;
 }

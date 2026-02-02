@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextStateHeadClickReportItem
+@interface TextStateHeadClickReportItem : NSObject
 {
     NSString *_toUsername;
     NSString *_toTextStateId;

@@ -5,7 +5,7 @@
 
 @class JSApiScopeConfirmWindow, NSString;
 
-@interface WebviewJSEventHandler_login
+@interface WebviewJSEventHandler_login : NSObject
 {
     _Bool _isRunning;
     NSString *_appID;

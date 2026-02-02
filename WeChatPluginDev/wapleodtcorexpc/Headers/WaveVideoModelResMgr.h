@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WaveVideoModelResMgr
+@interface WaveVideoModelResMgr : NSObject
 {
 }
 

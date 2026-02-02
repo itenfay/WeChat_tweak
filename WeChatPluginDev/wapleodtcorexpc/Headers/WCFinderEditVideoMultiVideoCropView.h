@@ -6,7 +6,7 @@
 @class EditVideoAttr, MMUIView, NSMutableArray, NSString, UIButton, UILabel, UIScrollView, WCFinderEditVideoPorgressInfoViewModel;
 @protocol WCFinderEditVideoMultiVideoCropViewDelegate;
 
-@interface WCFinderEditVideoMultiVideoCropView
+@interface WCFinderEditVideoMultiVideoCropView : NSObject
 {
     _Bool _isScrollingTriggerByPlayer;
     _Bool _isScrollingTriggerByCropPanEnd;

@@ -6,7 +6,7 @@
 @class FavSightFullScreenViewController, FavSightInfo, NSString, WCPlayerConfigControlView, WCPlayerPlayArgs, WCPlayerView;
 @protocol FavSightViewDelegate;
 
-@interface FavSightView
+@interface FavSightView : NSObject
 {
     WCPlayerView *m_sightView;
     WCPlayerConfigControlView *m_controlView;

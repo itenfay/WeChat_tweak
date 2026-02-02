@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppExtInfo
+@interface LiteAppExtInfo : NSObject
 {
     int _priority;
     NSString *_liteAppBizData;

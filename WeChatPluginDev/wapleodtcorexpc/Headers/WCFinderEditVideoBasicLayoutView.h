@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCFinderEditVideoBasicLayoutView
+@interface WCFinderEditVideoBasicLayoutView : NSObject
 {
     NSMutableArray *_currentMusicLyrics;
     double _currentLyricTotalTime;

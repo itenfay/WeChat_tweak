@@ -5,7 +5,7 @@
 
 @class NSData, NSString, UINavigationController, UIViewController, WCFinderDataItem, WCFinderShareItemInfo;
 
-@interface WCFinderTopicRouteParams
+@interface WCFinderTopicRouteParams : NSObject
 {
     _Bool _showHalfScreen;
     _Bool _showHighlightTopicStyle;

@@ -6,7 +6,7 @@
 @class NSMutableDictionary;
 @protocol EmoticonLensIconDownloaderDelegate;
 
-@interface EmoticonLensIconDownloader
+@interface EmoticonLensIconDownloader : NSObject
 {
     id <EmoticonLensIconDownloaderDelegate> _delegate;
     NSMutableDictionary *_downloadingTasks;

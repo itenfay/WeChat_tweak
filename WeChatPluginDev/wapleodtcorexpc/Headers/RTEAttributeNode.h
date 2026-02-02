@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FavoritesItemDataField, NSObject, UIColor;
 @protocol NSCopying;
 
-@interface RTEAttributeNode
+@interface RTEAttributeNode : NSObject
 {
     _Bool _effective;
     unsigned int _listType;

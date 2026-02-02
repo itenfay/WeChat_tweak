@@ -6,7 +6,7 @@
 @class NSString;
 @protocol StoreEmoticonGetDesignerAcctInfoCgiDelegate;
 
-@interface StoreEmoticonGetDesignerAcctInfoCgi
+@interface StoreEmoticonGetDesignerAcctInfoCgi : NSObject
 {
     unsigned int _designerUin;
     id <StoreEmoticonGetDesignerAcctInfoCgiDelegate> _delegate;

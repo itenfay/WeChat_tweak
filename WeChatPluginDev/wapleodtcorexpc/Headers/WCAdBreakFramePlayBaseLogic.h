@@ -5,7 +5,7 @@
 
 @class NSString, WCAdAlphaVideoView, WCAdBreakFrameInfo, WCDataItem;
 
-@interface WCAdBreakFramePlayBaseLogic
+@interface WCAdBreakFramePlayBaseLogic : NSObject
 {
     _Bool _bTimelineScene;
     WCAdBreakFrameInfo *_adBreakFrameInfo;

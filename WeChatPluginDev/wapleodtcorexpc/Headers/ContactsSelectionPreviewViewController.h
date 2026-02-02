@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSString, UIButton, UIView, WCColorProxy;
 @protocol ContactsSelectionPreviewViewControllerDelegate;
 
-@interface ContactsSelectionPreviewViewController
+@interface ContactsSelectionPreviewViewController : NSObject
 {
     id <ContactsSelectionPreviewViewControllerDelegate> _delegate;
     WCColorProxy *_colorProxy;

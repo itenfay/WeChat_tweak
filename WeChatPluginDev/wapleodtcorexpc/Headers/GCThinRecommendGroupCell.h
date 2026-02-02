@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface GCThinRecommendGroupCell
+@interface GCThinRecommendGroupCell : NSObject
 {
     UIView *_lineView;
 }

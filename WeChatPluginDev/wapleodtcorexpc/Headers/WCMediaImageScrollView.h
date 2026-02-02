@@ -5,7 +5,7 @@
 
 @class NSString, WCImageFullScreenTagView, WCMediaImageViewModel;
 
-@interface WCMediaImageScrollView
+@interface WCMediaImageScrollView : NSObject
 {
     WCMediaImageViewModel *_viewModel;
     WCImageFullScreenTagView *_imageTagView;

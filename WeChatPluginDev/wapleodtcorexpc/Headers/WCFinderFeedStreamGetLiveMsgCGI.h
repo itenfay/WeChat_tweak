@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveClientStatus, NSData, NSString;
 
-@interface WCFinderFeedStreamGetLiveMsgCGI
+@interface WCFinderFeedStreamGetLiveMsgCGI : NSObject
 {
     _Bool _offline;
     int _commentScene;

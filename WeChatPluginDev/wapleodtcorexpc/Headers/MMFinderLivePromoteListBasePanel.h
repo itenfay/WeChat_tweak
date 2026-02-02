@@ -5,7 +5,7 @@
 
 @class MMFinderLivePromoteListBaseViewModel, MMTableView, NSMutableArray, NSString, UIView, WCFinderRefreshTableFooterView;
 
-@interface MMFinderLivePromoteListBasePanel
+@interface MMFinderLivePromoteListBasePanel : NSObject
 {
     MMFinderLivePromoteListBaseViewModel *_listViewModel;
     long long _previousOrientation;

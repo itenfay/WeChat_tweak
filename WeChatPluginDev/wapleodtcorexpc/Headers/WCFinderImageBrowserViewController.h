@@ -6,7 +6,7 @@
 @class NSArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIImage, UIView, WCFinderPageControl;
 @protocol WCFinderImageBrowserViewControllerDelegate;
 
-@interface WCFinderImageBrowserViewController
+@interface WCFinderImageBrowserViewController : NSObject
 {
     _Bool _isRotating;
     id <WCFinderImageBrowserViewControllerDelegate> _delegate;

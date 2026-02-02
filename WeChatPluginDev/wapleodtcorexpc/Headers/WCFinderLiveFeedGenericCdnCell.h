@@ -6,7 +6,7 @@
 @class MMLiveCDNPlayerView, NSString, UIImageView, UIView, WCFinderLiveFeedGenericCoverReportInfo, WCFinderLiveGenericFeedVM;
 @protocol WCFinderLiveFeedGenericCdnCellDelegate;
 
-@interface WCFinderLiveFeedGenericCdnCell
+@interface WCFinderLiveFeedGenericCdnCell : NSObject
 {
     _Bool _isJustTappedByUser;
     _Bool _disableEndMask;

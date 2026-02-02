@@ -5,7 +5,7 @@
 
 @class OrderedDictionary;
 
-@interface WCRealFeedExposureItem
+@interface WCRealFeedExposureItem : NSObject
 {
     OrderedDictionary *_realFeedExposureItemDic;
 }

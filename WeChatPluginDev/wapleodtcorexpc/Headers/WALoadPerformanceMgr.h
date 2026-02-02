@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WALoadPerformanceMgr
+@interface WALoadPerformanceMgr : NSObject
 {
     unsigned long long _lanchStartTimeStamp;
     unsigned long long _navigateToStartTimeStamp;

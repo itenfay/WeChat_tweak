@@ -6,7 +6,7 @@
 @class MMFinderLivePaidConnectMicAudienceOperationInfo, MMTableView, NSString;
 @protocol MMFinderLivePaidConnectMicAudienceOperationPanelDelegate;
 
-@interface MMFinderLivePaidConnectMicAudienceOperationPanel
+@interface MMFinderLivePaidConnectMicAudienceOperationPanel : NSObject
 {
     id <MMFinderLivePaidConnectMicAudienceOperationPanelDelegate> _delegate;
     MMFinderLivePaidConnectMicAudienceOperationInfo *_info;

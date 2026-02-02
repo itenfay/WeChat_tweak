@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLivePanGestureRecognizer, NSString, PAGView, UIImageView;
 
-@interface MMLiveLikeButton
+@interface MMLiveLikeButton : NSObject
 {
     _Bool _isShakeForLike;
     _Bool _isLikeStart;

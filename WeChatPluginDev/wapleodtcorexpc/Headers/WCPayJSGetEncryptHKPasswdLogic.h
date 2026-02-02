@@ -5,7 +5,7 @@
 
 @protocol WCPayJSGetEncryptHKPasswdLogicDelegate;
 
-@interface WCPayJSGetEncryptHKPasswdLogic
+@interface WCPayJSGetEncryptHKPasswdLogic : NSObject
 {
     id <WCPayJSGetEncryptHKPasswdLogicDelegate> _delegate;
 }

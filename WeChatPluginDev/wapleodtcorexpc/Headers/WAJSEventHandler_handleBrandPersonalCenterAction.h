@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WAJSEventHandler_handleBrandPersonalCenterAction
+@interface WAJSEventHandler_handleBrandPersonalCenterAction : NSObject
 {
     MISSING_TYPE *sessionId;
 }

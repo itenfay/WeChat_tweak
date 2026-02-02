@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLiveAnchorTaskEntranceMgr
+@interface MMFinderLiveAnchorTaskEntranceMgr : NSObject
 {
     int _primarySettingEnrance;
     int _fetchMoneyEnrance;

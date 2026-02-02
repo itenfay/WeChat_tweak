@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UIButton, UIImageView, WCRedesignTextItem;
 @protocol WCAccountGraphicVerifyViewControllerDelegate;
 
-@interface WCAccountGraphicVerifyViewController
+@interface WCAccountGraphicVerifyViewController : NSObject
 {
     id <WCAccountGraphicVerifyViewControllerDelegate> m_delegate;
     MMUILabel *_titleLabel;

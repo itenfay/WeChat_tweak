@@ -6,7 +6,7 @@
 @class BTBaseItemCellViewModel;
 @protocol BTBaseItemCellViewDelegate;
 
-@interface BTBaseItemCellView
+@interface BTBaseItemCellView : NSObject
 {
     BTBaseItemCellViewModel *_viewModel;
     id <BTBaseItemCellViewDelegate> _delegate;

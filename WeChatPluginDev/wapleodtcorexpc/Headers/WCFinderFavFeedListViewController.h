@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSNumber, NSString, UILabel, UIView, WCFinderCustomImageRichTextView, WCFinderExtStatsReporter, WCFinderFavFeedListPageViewModel, WCFinderFavListViewModel, WCFinderFeedFlowView, WCSearchBar;
 
-@interface WCFinderFavFeedListViewController
+@interface WCFinderFavFeedListViewController : NSObject
 {
     _Bool _disableSearch;
     NSNumber *_givingCommentScene;

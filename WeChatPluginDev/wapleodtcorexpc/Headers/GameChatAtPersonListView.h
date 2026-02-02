@@ -6,7 +6,7 @@
 @class GameChatAtPersonListViewModel, MMTableView, MMTimer, MMUISearchBar, NSArray, NSString, UIView;
 @protocol GameChatAtPersonListViewDelegate;
 
-@interface GameChatAtPersonListView
+@interface GameChatAtPersonListView : NSObject
 {
     _Bool _isSearching;
     GameChatAtPersonListViewModel *_viewModel;

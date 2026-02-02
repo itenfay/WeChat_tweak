@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportCacheDetailItem
+@interface WAReportCacheDetailItem : NSObject
 {
     unsigned int _countedWeAppNum;
     unsigned int _top1AppidAppServiceType;

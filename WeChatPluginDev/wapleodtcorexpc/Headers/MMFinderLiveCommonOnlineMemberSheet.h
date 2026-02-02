@@ -6,7 +6,7 @@
 @class MMFinderLiveCommonOnlineMemberSheetOpenParams, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIActivityIndicatorView, MMUIImageView, NSMutableArray, NSString, RichTextView, UICollectionView, UIScrollView, UIView, WCPinBottomCollectionViewFlowLayout;
 @protocol MMLiveOnlineStateViewDelegate;
 
-@interface MMFinderLiveCommonOnlineMemberSheet
+@interface MMFinderLiveCommonOnlineMemberSheet : NSObject
 {
     unsigned int _boardMemberCount;
     MMFinderLiveTaskId *_taskId;

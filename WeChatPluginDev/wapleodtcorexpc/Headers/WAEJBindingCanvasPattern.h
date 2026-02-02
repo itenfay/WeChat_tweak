@@ -5,7 +5,7 @@
 
 @class WAEJCanvasPattern;
 
-@interface WAEJBindingCanvasPattern
+@interface WAEJBindingCanvasPattern : NSObject
 {
     WAEJCanvasPattern *pattern;
 }

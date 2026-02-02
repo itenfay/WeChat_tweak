@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCMomentScrollActionSheetHeaderView;
 
-@interface WCMomentsScrollActionSheet
+@interface WCMomentsScrollActionSheet : NSObject
 {
     _Bool _isShowLoadingHeader;
     NSString *_loadingHeaderTitle;

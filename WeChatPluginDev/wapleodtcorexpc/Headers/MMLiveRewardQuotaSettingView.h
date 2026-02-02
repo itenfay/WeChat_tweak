@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMTableView, MMUIButton, MMUILabel, NSString, OrderedDictionary, UIView;
 @protocol MMLiveRewardQuotaSettingViewDelegate;
 
-@interface MMLiveRewardQuotaSettingView
+@interface MMLiveRewardQuotaSettingView : NSObject
 {
     unsigned int _curRewardQuota;
     id <MMLiveRewardQuotaSettingViewDelegate> _operationDelegate;

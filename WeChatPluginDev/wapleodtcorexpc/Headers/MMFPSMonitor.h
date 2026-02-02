@@ -7,7 +7,7 @@
 
 @class MemoryMappedKV, NSString, WCFPSMonitorConfig, WCFPSMonitorPlugin;
 
-@interface MMFPSMonitor <WCFPSMonitorPluginDelegate>
+@interface MMFPSMonitor : NSObject <WCFPSMonitorPluginDelegate>
 {
     WCFPSMonitorPlugin *m_plugin;
     WCFPSMonitorConfig *m_configForScroll;

@@ -5,7 +5,7 @@
 
 @class AppMusicMessageViewModel, MMMusicPlayerContoller, NSString, UIImageView, UILabel;
 
-@interface AppMusicMessageCellView
+@interface AppMusicMessageCellView : NSObject
 {
     UILabel *m_titleLabel;
     UILabel *m_detailLabel;

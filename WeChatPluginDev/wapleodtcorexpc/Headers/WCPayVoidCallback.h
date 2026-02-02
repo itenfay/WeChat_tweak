@@ -5,7 +5,7 @@
 
 @protocol WCPayVoidCallbackDelegate;
 
-@interface WCPayVoidCallback
+@interface WCPayVoidCallback : NSObject
 {
     id <WCPayVoidCallbackDelegate> _m_delegate;
     id _m_userInfo;

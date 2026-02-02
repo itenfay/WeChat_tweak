@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WebviewJSEventHandler_choosePassport
+@interface WebviewJSEventHandler_choosePassport : NSObject
 {
     unsigned long long _sourceType;
     NSDictionary *_scanDetailMsgMap;

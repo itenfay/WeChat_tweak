@@ -6,7 +6,7 @@
 @class CContact, CMessageWrap, MMAcceptAgreementCommonHeadView, MMLimitedModeAuthorizeRequestLogic, MMTableView, MMTableViewInfo, NSString, UIButton;
 @protocol MMLimitedModeAuthorizeRequestViewControllerLogicDelegate;
 
-@interface MMLimitedModeAuthorizeRequestViewController
+@interface MMLimitedModeAuthorizeRequestViewController : NSObject
 {
     UIButton *m_closeButton;
     CContact *m_guardianContact;

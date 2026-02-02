@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface BiometricVerifyVoidStringBinaryCallback
+@interface BiometricVerifyVoidStringBinaryCallback : NSObject
 {
     CDUnknownBlockType _callBlock;
 }

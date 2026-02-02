@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface QBBeaconWupModuleStrategy
+@interface QBBeaconWupModuleStrategy : NSObject
 {
     BOOL _jcev2_p_0_r_mId;
     BOOL _jcev2_p_1_r_onOff;

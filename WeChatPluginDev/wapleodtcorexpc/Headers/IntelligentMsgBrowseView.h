@@ -6,7 +6,7 @@
 @class AttributeLabel, IntelligentMessageReportCostTimeAndResult, IntelligentMsgBrowseResultTableViewLogic, IntelligentMsgImgFigurePageHeaderView, IntelligentMsgImgNetWorkLogic, IntelligentMsgImgResultListView, IntelligentRefreshTableFooterView, MMTableView, MMTimer, MMUIView, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, OrderedDictionary, SimpleImgInfo;
 @protocol IntelligentMsgBrowseViewDelegate;
 
-@interface IntelligentMsgBrowseView
+@interface IntelligentMsgBrowseView : NSObject
 {
     NSNumber *m_isHadBuildPriorityBuildIndexMsg;
     OrderedDictionary *m_dicFaceCluster;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderPIPMgrHelper
+@interface WCFinderPIPMgrHelper : NSObject
 {
     _Bool _hasReportedBackground;
     _Bool _hasReportedForeground;

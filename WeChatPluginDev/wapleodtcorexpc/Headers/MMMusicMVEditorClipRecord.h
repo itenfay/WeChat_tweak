@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMusicMVEditorClipRecord
+@interface MMMusicMVEditorClipRecord : NSObject
 {
     NSString *_videoId;
     double _videoEndPos;

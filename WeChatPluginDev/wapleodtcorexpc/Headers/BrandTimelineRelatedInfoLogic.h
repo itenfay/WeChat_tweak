@@ -5,7 +5,7 @@
 
 @protocol BrandTimelineRelatedInfoLogicDelegate;
 
-@interface BrandTimelineRelatedInfoLogic
+@interface BrandTimelineRelatedInfoLogic : NSObject
 {
     id <BrandTimelineRelatedInfoLogicDelegate> _delegate;
 }

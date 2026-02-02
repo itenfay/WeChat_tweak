@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel;
 
-@interface SettingModifyEmailOnBindHeadView
+@interface SettingModifyEmailOnBindHeadView : NSObject
 {
     _Bool _showFullEmail;
     MMUILabel *_emailLabel;

@@ -6,7 +6,7 @@
 @class CContact, MMHeadImageView, NSString, RadarSearchMember, UIImageView, UILabel;
 @protocol RSHeadImageViewDelegate;
 
-@interface RSHeadImageView
+@interface RSHeadImageView : NSObject
 {
     int _status;
     UILabel *_displayNameWhite;

@@ -5,7 +5,7 @@
 
 @class CContact, ContactsItemView, UIImageView;
 
-@interface MMMultiSelectContactsItemView
+@interface MMMultiSelectContactsItemView : NSObject
 {
     _Bool _isAllowMultiSelect;
     CContact *_contact;

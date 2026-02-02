@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, WAAppTask, WANewUniversalAudioEngine;
 @protocol IJSContextPluginDelegate, OS_dispatch_queue;
 
-@interface WAJSContextPlugin_AudioPlayer
+@interface WAJSContextPlugin_AudioPlayer : NSObject
 {
     struct ALCcontext_struct *_alcContext;
     _Bool _isNeedResumeWXMusic;

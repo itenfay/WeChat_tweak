@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface SelectSubContactCell
+@interface SelectSubContactCell : NSObject
 {
     double _bottomLineLeftPadding;
     UIView *_bottomSeparatorView;

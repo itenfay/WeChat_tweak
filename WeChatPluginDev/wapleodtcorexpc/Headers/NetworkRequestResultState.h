@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, UIImage, YtExtraOptions;
 
-@interface NetworkRequestResultState
+@interface NetworkRequestResultState : NSObject
 {
     UIImage *frameUIImage;
     int finalConfidenceThreshold;

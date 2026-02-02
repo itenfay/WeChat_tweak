@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMMusicLiveCGIMgr, MMMusicMVModel, MMMusicMVRecommendAnimationLoadingView, MMMusicMVRecommendHeaderView, MMMusicMVRecommendTableCell, NSData, NSMutableArray, NSString, UIButton, UILabel, UIPanGestureRecognizer, UITableView, UIView, WCFinderLastestPlayVideoInfoMgr;
 @protocol MMMusicMVRecommendViewControllerDataSource;
 
-@interface MMMusicMVRecommendViewController
+@interface MMMusicMVRecommendViewController : NSObject
 {
     NSData *_lastBuff;
     NSString *_bgmSource;

@@ -6,7 +6,7 @@
 @class MMFinderLiveAudioRoomBackgroundImageInfo, NSArray, NSString, WCFinderLiveHomePageFeedEntertainmentAudioRoomTalkingState;
 @protocol WCFinderLiveHomePageFeedEntertainmentAudioRoomVMDelegate;
 
-@interface WCFinderLiveHomePageFeedEntertainmentAudioRoomVM
+@interface WCFinderLiveHomePageFeedEntertainmentAudioRoomVM : NSObject
 {
     NSArray *_teamupList;
     NSArray *_notificationList;

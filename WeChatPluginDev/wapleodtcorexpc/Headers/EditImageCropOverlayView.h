@@ -5,7 +5,7 @@
 
 @class CALayer, CAShapeLayer;
 
-@interface EditImageCropOverlayView
+@interface EditImageCropOverlayView : NSObject
 {
     unsigned long long _overlayLevel;
     long long _cropOverlayViewStyle;

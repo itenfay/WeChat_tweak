@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ChatMigrationCreateQRCode, NSArray, NSData, NSString, WXGMigrationMainViewController, WXGMigrationServerEntryViewController, WXGMigrationServerLogic;
 
-@interface WXGMigrationServerMgr
+@interface WXGMigrationServerMgr : NSObject
 {
     WXGMigrationServerEntryViewController *m_serverEntryViewController;
     WXGMigrationMainViewController *mgViewController;

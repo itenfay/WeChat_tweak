@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionUBAUnitConfigModel
+@interface WCSessionUBAUnitConfigModel : NSObject
 {
     NSString *_pageName;
     NSMutableArray *_businessParams;

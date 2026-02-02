@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCSessionFlowConfigModel
+@interface WCSessionFlowConfigModel : NSObject
 {
     NSMutableArray *_sessionsArray;
     NSMutableDictionary *_sessionsDicForPageName;

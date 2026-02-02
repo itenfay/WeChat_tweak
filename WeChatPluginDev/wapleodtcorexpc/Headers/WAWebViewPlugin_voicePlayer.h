@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWAWebViewPluginDelegate;
 
-@interface WAWebViewPlugin_voicePlayer
+@interface WAWebViewPlugin_voicePlayer : NSObject
 {
     _Bool _stopVoiceFlag;
     id <IWAWebViewPluginDelegate> _resultDelegate;

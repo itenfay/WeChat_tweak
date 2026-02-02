@@ -6,7 +6,7 @@
 @class CMessageWrap, CTRichTextView, CrossfadeAnimationController, MMRichTextCoverView, MMScrollView, MMTextFloatBottomToolView, NSString, UIButton, UIFont, UIView;
 @protocol ILinkEventExt, TextFloatPreviewDelegate;
 
-@interface TextFloatViewController
+@interface TextFloatViewController : NSObject
 {
     UIView *m_oBackView;
     UIButton *m_view;

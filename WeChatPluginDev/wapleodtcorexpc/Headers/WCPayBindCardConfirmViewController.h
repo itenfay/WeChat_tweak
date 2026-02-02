@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayBindCardConfirmViewControllerDelegate;
 
-@interface WCPayBindCardConfirmViewController
+@interface WCPayBindCardConfirmViewController : NSObject
 {
     id <WCPayBindCardConfirmViewControllerDelegate> _m_delegate;
 }

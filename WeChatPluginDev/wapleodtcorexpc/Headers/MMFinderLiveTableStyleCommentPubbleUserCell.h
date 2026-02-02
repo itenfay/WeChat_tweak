@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMFinderLiveFansGroupSignView, MMFinderLiveGameEsportSignView, MMFinderLiveGameRankSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveNormalTextSignView, MMFinderLiveProductQuestionSignView, MMHeadImageView, MMUILabel, MMUIView, NSArray, NSMutableArray, PAGView, UIImageView, UIView;
 
-@interface MMFinderLiveTableStyleCommentPubbleUserCell
+@interface MMFinderLiveTableStyleCommentPubbleUserCell : NSObject
 {
     _Bool _disablePAGAnimation;
     UIImageView *_barrageBackgroundImgView;

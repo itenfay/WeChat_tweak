@@ -6,7 +6,7 @@
 @class OrderedDictionary;
 @protocol MultiRoomContactSelectViewControllerDelegate;
 
-@interface MultiRoomContactSelectViewController
+@interface MultiRoomContactSelectViewController : NSObject
 {
     OrderedDictionary *m_dicMultiSelect;
 }

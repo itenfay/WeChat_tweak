@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol WCTableViewMultiSelectionSectionManagerDelegate;
 
-@interface WCTableViewMultiSelectionSectionManager
+@interface WCTableViewMultiSelectionSectionManager : NSObject
 {
     id <WCTableViewMultiSelectionSectionManagerDelegate> _delegate;
     NSMutableArray *_selectedRows;

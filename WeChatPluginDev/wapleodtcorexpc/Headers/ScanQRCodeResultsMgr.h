@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSMutableArray, NSString, ScanQRCodeLogicController;
 
-@interface ScanQRCodeResultsMgr
+@interface ScanQRCodeResultsMgr : NSObject
 {
     NSMutableArray *_offlineResults;
     ScanQRCodeLogicController *_scanLogicController;

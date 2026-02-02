@@ -5,7 +5,7 @@
 
 @protocol WCCoinEntranceCgiDelegate;
 
-@interface WCCoinEntranceCgi
+@interface WCCoinEntranceCgi : NSObject
 {
     id <WCCoinEntranceCgiDelegate> _delegate;
 }

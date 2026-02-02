@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString, _TtC6WeChat17WCDBIntegerNumber;
 
-@interface _TtC6WeChat27PredownloadC2CHistoryRecord
+@interface _TtC6WeChat27PredownloadC2CHistoryRecord : NSObject
 {
     MISSING_TYPE *svrID;
     MISSING_TYPE *localID;

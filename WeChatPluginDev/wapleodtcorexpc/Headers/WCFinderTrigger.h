@@ -5,7 +5,7 @@
 
 @class CalendarStatisticsArgs, DiscoverExposeEdgeArgs, NSString;
 
-@interface WCFinderTrigger
+@interface WCFinderTrigger : NSObject
 {
     DiscoverExposeEdgeArgs *edgeArgs;
     CalendarStatisticsArgs *finderCalendarArgs;

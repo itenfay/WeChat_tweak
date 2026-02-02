@@ -5,7 +5,7 @@
 
 @class WCFinderFeedSplitBubbleLayoutBubbleInfo;
 
-@interface WCFinderFeedSplitBubbleLayoutContentVM
+@interface WCFinderFeedSplitBubbleLayoutContentVM : NSObject
 {
     WCFinderFeedSplitBubbleLayoutBubbleInfo *_bubbleInfo;
 }

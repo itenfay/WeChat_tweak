@@ -6,7 +6,7 @@
 @class NSDictionary, UIButton, UIImageView, UIView;
 @protocol WCAtomicRedEnvReceiveHomeViewDelegate;
 
-@interface WCAtomicRedEnvReceiveHomeView
+@interface WCAtomicRedEnvReceiveHomeView : NSObject
 {
     id <WCAtomicRedEnvReceiveHomeViewDelegate> m_delegate;
     UIImageView *m_oBackgroundView;

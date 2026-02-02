@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MMListenGetLyricService
+@interface MMListenGetLyricService : NSObject
 {
     NSMutableDictionary *_musicKey2GetLyricResponseItem;
     NSMutableDictionary *_musicKey2GetLyricResponseTime;

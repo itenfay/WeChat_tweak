@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString;
 @protocol MsgAudioPlayerDelegate;
 
-@interface MsgAudioUnitPlayer
+@interface MsgAudioUnitPlayer : NSObject
 {
     _Bool m_isForceStop;
     NSMutableDictionary *m_settings;

@@ -5,7 +5,7 @@
 
 @class NSString, WAWebViewPlugin_HTMLWeb;
 
-@interface WAJSEventHandler_translateHTMLWebView
+@interface WAJSEventHandler_translateHTMLWebView : NSObject
 {
     _Bool _translate;
     WAWebViewPlugin_HTMLWeb *_htmlWeb;

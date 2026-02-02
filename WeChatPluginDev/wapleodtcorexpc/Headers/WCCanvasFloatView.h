@@ -6,7 +6,7 @@
 @class UIView;
 @protocol WCCanvasFloatViewDelegate;
 
-@interface WCCanvasFloatView
+@interface WCCanvasFloatView : NSObject
 {
     _Bool _forbiddenLayoutComponent;
     id <WCCanvasFloatViewDelegate> _delegate;

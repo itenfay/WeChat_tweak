@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BizRecentReadSmallItemViewModel
+@interface BizRecentReadSmallItemViewModel : NSObject
 {
     unsigned int _appMsgId;
     unsigned int _itemId;

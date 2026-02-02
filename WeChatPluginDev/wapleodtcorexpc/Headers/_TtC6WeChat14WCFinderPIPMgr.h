@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, WCFinderFeedContentVM, WCPlayerView;
 
-@interface _TtC6WeChat14WCFinderPIPMgr
+@interface _TtC6WeChat14WCFinderPIPMgr : NSObject
 {
     MISSING_TYPE *sourceContentVM;
     MISSING_TYPE *curContentVM;

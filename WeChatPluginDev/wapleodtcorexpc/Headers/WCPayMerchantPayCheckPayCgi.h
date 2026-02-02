@@ -5,7 +5,7 @@
 
 @protocol WCPayMerchantPayCheckPayCgiDelegate;
 
-@interface WCPayMerchantPayCheckPayCgi
+@interface WCPayMerchantPayCheckPayCgi : NSObject
 {
     id <WCPayMerchantPayCheckPayCgiDelegate> _m_delegate;
 }

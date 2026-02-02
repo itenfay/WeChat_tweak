@@ -6,7 +6,7 @@
 @class NSMutableDictionary;
 @protocol EnterpriseVoiceMsgMgrDelegate;
 
-@interface EnterpriseVoiceMsgMgr
+@interface EnterpriseVoiceMsgMgr : NSObject
 {
     NSMutableDictionary *_dicMsgSource;
     _Bool _isContinueWrite;

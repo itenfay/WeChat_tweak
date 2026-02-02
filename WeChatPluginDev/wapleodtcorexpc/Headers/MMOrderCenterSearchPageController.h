@@ -6,7 +6,7 @@
 @class MMOrderCenterSearchDataProvider, MMOrderCenterTableViewController, MMTableView, MMUISearchBar, NSArray, NSString;
 @protocol MMOrderCenterReporter;
 
-@interface MMOrderCenterSearchPageController
+@interface MMOrderCenterSearchPageController : NSObject
 {
     id <MMOrderCenterReporter> _reporter;
     MMUISearchBar *_searchBar;

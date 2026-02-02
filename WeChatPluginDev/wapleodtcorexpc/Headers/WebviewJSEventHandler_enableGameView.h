@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_enableGameView
+@interface WebviewJSEventHandler_enableGameView : NSObject
 {
     int m_gameOrientation;
     NSString *m_url;

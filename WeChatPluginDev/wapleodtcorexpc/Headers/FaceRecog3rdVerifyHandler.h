@@ -5,7 +5,7 @@
 
 @class FaceRecogResultView, NSString;
 
-@interface FaceRecog3rdVerifyHandler
+@interface FaceRecog3rdVerifyHandler : NSObject
 {
     FaceRecogResultView *_prepareView;
     unsigned int _sourceType;

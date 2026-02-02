@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MMWebPrefetchDocumentInfo
+@interface MMWebPrefetchDocumentInfo : NSObject
 {
     unsigned int _status;
     unsigned int _maxCacheTime;

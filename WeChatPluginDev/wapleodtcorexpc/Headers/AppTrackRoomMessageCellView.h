@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface AppTrackRoomMessageCellView
+@interface AppTrackRoomMessageCellView : NSObject
 {
     UILabel *m_statusLabel;
 }

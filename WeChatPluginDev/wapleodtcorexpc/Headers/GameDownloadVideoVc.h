@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMProgressViewEx, MMWebImageView, NSString;
 
-@interface GameDownloadVideoVc
+@interface GameDownloadVideoVc : NSObject
 {
     _Bool _isSkipCelluarTips;
     _Bool _starFailed;

@@ -5,7 +5,7 @@
 
 @class NSDate, NSString, OMCGeographicInfo;
 
-@interface OMCWhenWhereSegment
+@interface OMCWhenWhereSegment : NSObject
 {
 }
 

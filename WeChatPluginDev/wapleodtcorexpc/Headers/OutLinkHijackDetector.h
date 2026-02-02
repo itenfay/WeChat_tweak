@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface OutLinkHijackDetector
+@interface OutLinkHijackDetector : NSObject
 {
     NSString *_uploadingFile;
     NSMutableDictionary *_fileRecord;

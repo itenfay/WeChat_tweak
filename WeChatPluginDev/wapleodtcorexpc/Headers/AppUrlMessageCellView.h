@@ -5,7 +5,7 @@
 
 @class AppUrlMessageViewModel, RichTextView, UIImageView;
 
-@interface AppUrlMessageCellView
+@interface AppUrlMessageCellView : NSObject
 {
     RichTextView *m_titleLabel;
     RichTextView *m_detailLabel;

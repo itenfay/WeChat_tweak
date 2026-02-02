@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMultiSceneReporter
+@interface MMMultiSceneReporter : NSObject
 {
     long long _preScene;
     long long _lastScene;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCMomentsForwardVideoOpDelegate;
 
-@interface WCMomentsForwardVideoOp
+@interface WCMomentsForwardVideoOp : NSObject
 {
     _Bool _isCompositeVideo;
     id <WCMomentsForwardVideoOpDelegate> _videoOpDelegate;

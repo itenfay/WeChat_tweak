@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIScrollView, MMWebImageView, NSString, UIView, WCFinderCropRectModel;
 
-@interface WCFinderCoverPhotoPreviewView
+@interface WCFinderCoverPhotoPreviewView : NSObject
 {
     MMUIScrollView *_scrollView;
     UIView *_shadowView;

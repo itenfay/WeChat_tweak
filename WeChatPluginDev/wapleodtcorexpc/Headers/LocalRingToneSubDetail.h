@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LocalRingToneSubDetail
+@interface LocalRingToneSubDetail : NSObject
 {
     NSString *_imageName;
 }

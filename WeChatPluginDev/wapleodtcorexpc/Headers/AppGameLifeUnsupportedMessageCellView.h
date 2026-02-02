@@ -5,7 +5,7 @@
 
 @class AppGameLifeUnsupportedMessageViewModel;
 
-@interface AppGameLifeUnsupportedMessageCellView
+@interface AppGameLifeUnsupportedMessageCellView : NSObject
 {
 }
 

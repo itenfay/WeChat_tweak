@@ -5,7 +5,7 @@
 
 @protocol WCPayRecallTransferCgiDelegate;
 
-@interface WCPayRecallTransferCgi
+@interface WCPayRecallTransferCgi : NSObject
 {
     id <WCPayRecallTransferCgiDelegate> _cgiDelegate;
 }

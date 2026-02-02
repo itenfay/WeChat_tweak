@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, NSString, UIColor, UIImageView;
 
-@interface EditImagePenTool
+@interface EditImagePenTool : NSObject
 {
     struct CGPath *_path;
     struct CGPoint _initialPoint;

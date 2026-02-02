@@ -6,7 +6,7 @@
 @class CADisplayLink, CAShapeLayer, EmoticonBoardCrossCollectionController, EmoticonBoardDynamicTabBar, EmoticonBoardViewConfig, EmoticonCustomAddLogicController, EmoticonPreviewWindowViewController, NSString, QQEmojiPreview, UIColor, UIImageView, UIView;
 @protocol BaseEmoticonViewDelegate, EmoticonBoardViewDelegate;
 
-@interface EmoticonBoardView
+@interface EmoticonBoardView : NSObject
 {
     id <BaseEmoticonViewDelegate> m_emoticonSendDelegate;
     UIView *m_backgroundView;

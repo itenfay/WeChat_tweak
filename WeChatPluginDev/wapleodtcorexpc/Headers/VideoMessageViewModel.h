@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface VideoMessageViewModel
+@interface VideoMessageViewModel : NSObject
 {
     NSString *m_videoPath;
     struct CGSize m_thumbImageSize;

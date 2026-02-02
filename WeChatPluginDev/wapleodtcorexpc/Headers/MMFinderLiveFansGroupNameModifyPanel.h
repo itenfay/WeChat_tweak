@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupInputView, MMFinderLiveTaskId, MMUILabel, NSString, UIButton, UIView;
 
-@interface MMFinderLiveFansGroupNameModifyPanel
+@interface MMFinderLiveFansGroupNameModifyPanel : NSObject
 {
     _Bool _isKeyBoardShow;
     NSString *_inputText;

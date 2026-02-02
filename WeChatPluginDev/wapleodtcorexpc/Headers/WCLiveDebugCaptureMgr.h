@@ -5,7 +5,7 @@
 
 @class AVAssetReader, AVAssetReaderTrackOutput, AVAssetTrack, AVURLAsset, NSString;
 
-@interface WCLiveDebugCaptureMgr
+@interface WCLiveDebugCaptureMgr : NSObject
 {
     _Bool _isRestartReading;
     NSString *_videoPath;

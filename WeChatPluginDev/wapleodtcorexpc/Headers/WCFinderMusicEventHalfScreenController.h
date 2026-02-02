@@ -5,7 +5,7 @@
 
 @class NSString, UIBarButtonItem, WCFinderMusicEventView, WCFinderTopicRouteParams;
 
-@interface WCFinderMusicEventHalfScreenController
+@interface WCFinderMusicEventHalfScreenController : NSObject
 {
     _Bool _showTransparentNaviBar;
     WCFinderMusicEventView *_musicEventView;

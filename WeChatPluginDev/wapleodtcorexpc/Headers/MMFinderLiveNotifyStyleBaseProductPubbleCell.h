@@ -5,7 +5,7 @@
 
 @class AnyPromise, MMWebImageView, UIImageView, UILabel;
 
-@interface MMFinderLiveNotifyStyleBaseProductPubbleCell
+@interface MMFinderLiveNotifyStyleBaseProductPubbleCell : NSObject
 {
     MMWebImageView *_imageView;
     UILabel *_titleLabel;

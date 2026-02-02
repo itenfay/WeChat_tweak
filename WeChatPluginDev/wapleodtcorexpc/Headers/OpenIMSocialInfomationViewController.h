@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface OpenIMSocialInfomationViewController
+@interface OpenIMSocialInfomationViewController : NSObject
 {
     CContact *m_contact;
     NSString *_m_customerTitle;

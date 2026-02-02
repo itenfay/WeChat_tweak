@@ -5,7 +5,7 @@
 
 @class MMWebAddContactView;
 
-@interface WebviewJSEventHandler_addContact
+@interface WebviewJSEventHandler_addContact : NSObject
 {
     MMWebAddContactView *m_jsAddContactView;
 }

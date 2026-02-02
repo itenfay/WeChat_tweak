@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, WCPayBaseMessageViewModel;
 
-@interface WCPayBaseMessageCellView
+@interface WCPayBaseMessageCellView : NSObject
 {
     UILabel *m_descLabel;
     UILabel *m_titleLabel;

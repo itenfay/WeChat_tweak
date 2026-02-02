@@ -6,7 +6,7 @@
 @class MMUIButton, SightIconView, UILabel, WCFinderFeedStaticCoverView;
 @protocol WCFinderHoriPreviewCardViewDelegate;
 
-@interface WCFinderHoriPreviewCardView
+@interface WCFinderHoriPreviewCardView : NSObject
 {
     id <WCFinderHoriPreviewCardViewDelegate> _delegate;
     UILabel *_titleLabel;

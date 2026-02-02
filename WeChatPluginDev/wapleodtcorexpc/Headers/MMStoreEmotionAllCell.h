@@ -6,7 +6,7 @@
 @class EmoticonStoreItem;
 @protocol MMStoreEmotionAllCellDelegate;
 
-@interface MMStoreEmotionAllCell
+@interface MMStoreEmotionAllCell : NSObject
 {
     id <MMStoreEmotionAllCellDelegate> _delegate;
 }

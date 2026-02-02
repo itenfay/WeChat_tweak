@@ -6,7 +6,7 @@
 @class MMDiskUsageScaner, MMHeavyUserClassifier, MMHeavyUserDataSource, MMHeavyUserEvaluator, MMStackReportConnection, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMHeavyUserMonitorMgr
+@interface MMHeavyUserMonitorMgr : NSObject
 {
     unsigned long long m_uiHeavyUserType;
     MMStackReportConnection *m_customInfoReporter;

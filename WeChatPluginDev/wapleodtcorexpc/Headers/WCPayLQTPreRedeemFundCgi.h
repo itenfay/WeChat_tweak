@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTPreRedeemFundCgiDelegate;
 
-@interface WCPayLQTPreRedeemFundCgi
+@interface WCPayLQTPreRedeemFundCgi : NSObject
 {
     id <WCPayLQTPreRedeemFundCgiDelegate> _cgiDelegate;
 }

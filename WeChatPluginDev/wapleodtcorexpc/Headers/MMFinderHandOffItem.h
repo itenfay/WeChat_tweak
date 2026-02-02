@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderHandOffItem
+@interface MMFinderHandOffItem : NSObject
 {
     NSString *_icon;
     NSString *_objectId;

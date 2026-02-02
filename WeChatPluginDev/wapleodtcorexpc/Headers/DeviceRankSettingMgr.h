@@ -5,7 +5,7 @@
 
 @class DeviceRankSetting, NSString;
 
-@interface DeviceRankSettingMgr
+@interface DeviceRankSettingMgr : NSObject
 {
     DeviceRankSetting *_rankSetting;
     _Bool bSettingChanged;

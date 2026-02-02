@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSNumber, NSString, UIPanGestureRecognizer, UIView, WCFinderNormalProgressBarConfig;
 
-@interface WCFinderNormalProgressBar
+@interface WCFinderNormalProgressBar : NSObject
 {
     _Bool _showAnchorPoint;
     _Bool _showLargeBar;

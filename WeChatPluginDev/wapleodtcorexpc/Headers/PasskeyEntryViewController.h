@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, PasskeyCreateLogic, PasskeyEntryHeaderView, UIButton, UIView, WCButtonListView, WCSheetView;
 
-@interface PasskeyEntryViewController
+@interface PasskeyEntryViewController : NSObject
 {
     _Bool _isUnsupportedIOSVersion;
     WCSheetView *_sheetView;

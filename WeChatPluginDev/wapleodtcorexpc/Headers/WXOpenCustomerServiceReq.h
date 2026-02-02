@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WXOpenCustomerServiceReq
+@interface WXOpenCustomerServiceReq : NSObject
 {
     NSString *_url;
     NSData *_corpid;

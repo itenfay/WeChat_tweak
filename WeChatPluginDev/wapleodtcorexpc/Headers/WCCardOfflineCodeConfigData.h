@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardOfflineCodeConfigData
+@interface WCCardOfflineCodeConfigData : NSObject
 {
     _Bool needInsertShowTimestamp;
     unsigned int lowerBound;

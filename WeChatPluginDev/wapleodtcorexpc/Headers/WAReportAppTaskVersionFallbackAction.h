@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportAppTaskVersionFallbackAction
+@interface WAReportAppTaskVersionFallbackAction : NSObject
 {
     _Bool _isWeakNet;
     unsigned int _targetAppVersion;

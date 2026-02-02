@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMGroupLiveCommentTableViewCellFrame
+@interface MMGroupLiveCommentTableViewCellFrame : NSObject
 {
     long long _layoutResult;
     double _cellHeightPortrait;

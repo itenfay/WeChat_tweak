@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportCampusVoipInItem
+@interface WAReportCampusVoipInItem : NSObject
 {
     NSString *_roomId;
     unsigned long long _voipInScene;

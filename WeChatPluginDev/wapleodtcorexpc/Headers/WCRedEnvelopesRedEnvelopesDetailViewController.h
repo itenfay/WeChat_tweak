@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAudioPlayer, CEmoticonWrap, CMessageWrap, ContactUpdateHelper, EmoticonBoardView, EmoticonCustomAddLogicController, MMEmoticonView, MMTableView, MMUILabel, NSString, RichTextView, SharePreConfirmSheetView, SharePreConfirmView, UIButton, UIImageView, UILabel, UIView, WCActionSheet, WCRedEnvelopesCommentInputToolView, WCRedEnvelopesStoryDargUtil, WCRedEnvelopesStoryViewController, WCUITextField;
 @protocol WCRedEnvelopesRedEnvelopesDetailViewControllerDelegate;
 
-@interface WCRedEnvelopesRedEnvelopesDetailViewController
+@interface WCRedEnvelopesRedEnvelopesDetailViewController : NSObject
 {
     id <WCRedEnvelopesRedEnvelopesDetailViewControllerDelegate> m_delegate;
     _Bool m_loadingMoreOrderList;

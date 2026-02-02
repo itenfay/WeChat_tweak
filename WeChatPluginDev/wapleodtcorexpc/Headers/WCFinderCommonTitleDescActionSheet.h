@@ -6,7 +6,7 @@
 @class RichTextView, UIButton, UIView;
 @protocol WCFinderCommonTitleDescActionSheetDelegate;
 
-@interface WCFinderCommonTitleDescActionSheet
+@interface WCFinderCommonTitleDescActionSheet : NSObject
 {
     id <WCFinderCommonTitleDescActionSheetDelegate> _businessDelegate;
     UIView *_tipsView;

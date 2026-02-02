@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderCreateCoordinator, WCFinderFeedListView, WCFinderProfileViewModel, WCFinderRefreshTableFooterView, WCFinderShareCustomTransition;
 
-@interface WCFinderProfileViewController
+@interface WCFinderProfileViewController : NSObject
 {
     _Bool _forcePushProfileAtHeaderClick;
     _Bool _hasOperateStickyTop;

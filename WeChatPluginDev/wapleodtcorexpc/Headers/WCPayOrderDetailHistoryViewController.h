@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayOrderDetailHistoryViewControllerDelegate;
 
-@interface WCPayOrderDetailHistoryViewController
+@interface WCPayOrderDetailHistoryViewController : NSObject
 {
     id <WCPayOrderDetailHistoryViewControllerDelegate> m_delegate;
     _Bool m_bShowCompleteBtn;

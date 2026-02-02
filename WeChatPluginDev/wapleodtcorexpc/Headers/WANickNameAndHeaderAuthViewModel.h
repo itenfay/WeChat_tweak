@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, WANicknameAndHeadAuthorizeSheetInfo;
 @protocol IWANicknameAndHeadAuthorizePageSheet;
 
-@interface WANickNameAndHeaderAuthViewModel
+@interface WANickNameAndHeaderAuthViewModel : NSObject
 {
     NSMutableArray *_avatarList;
     CDUnknownBlockType _scrollToAvatarAction;

@@ -5,7 +5,7 @@
 
 @class IndicatorAnimationBallBeatView, MMWebImageView, UIButton, UILabel, UIView;
 
-@interface MMWebViewPlugin_AutoOAuthView
+@interface MMWebViewPlugin_AutoOAuthView : NSObject
 {
     UIView *_bgView;
     MMWebImageView *_headImageView;

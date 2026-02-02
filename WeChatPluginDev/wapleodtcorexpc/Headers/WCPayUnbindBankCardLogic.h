@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WCPayUnbindBankCardLogic
+@interface WCPayUnbindBankCardLogic : NSObject
 {
     JSEvent *m_jsEvent;
     NSString *_unbindCardBindSerial;

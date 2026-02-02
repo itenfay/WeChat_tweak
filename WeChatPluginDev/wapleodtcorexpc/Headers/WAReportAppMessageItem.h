@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportAppMessageItem
+@interface WAReportAppMessageItem : NSObject
 {
     _Bool _hasRelievedBuyFlag;
     _Bool _hasFlagshipFlag;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXGChatSyncKeyService
+@interface WXGChatSyncKeyService : NSObject
 {
     NSString *_publicKey;
     NSString *_privateKey;

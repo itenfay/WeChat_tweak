@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderGetWindowProductProfileCardInfoResponse, FinderJumpInfo, FinderLiveAbnormalClosedPageInfo, FinderLiveAnchorQuestEntrance, FinderLiveInfo, FinderLiveNoticeInfo, FinderLiveSquareStyleInfo, FinderLiveTabInfo, FinderObject, MMFinderAnchorReplaySettingContainerView, MMFinderLiveCompleteNoticeView, MMFinderLiveCompleteViewReplaySettingsPageSheet, MMFinderLiveTask, MMHeadImageView, MMLiveQueue, MMTimer, MMUIButton, MMUILabel, MMUIView, MMWebImageView, NSArray, NSData, NSMutableArray, NSString, UICollectionView, UIImageView, UIView, WCFinderDataItem, WCFinderLiveAudienceLogReporter, WCFinderLiveCompleteDataView, WCFinderLiveCompleteHelpView, WCFinderLiveCompleteLiveAudienceCardView, WCFinderLiveCompleteLiveBannerContentView, WCFinderLiveCompleteLiveContentView, WCFinderLiveCompleteLiveReplayView, WCFinderLiveCompleteLiveVideoContentView, WCFinderLiveCompleteMoreFooterView, WCFinderLiveCompletePageViewModel, WCFinderLiveCompleteRecommendContentView, WCFinderLiveCompleteScrollView, WCFinderLiveCompleteShoppingView, WCFinderLiveHomePageViewController, WCFinderLiveOverReporter, WCFinderLivePageStayReporter, WCFinderNavLiveStreamPreFetchParams;
 
-@interface WCFinderLiveCompleteViewController
+@interface WCFinderLiveCompleteViewController : NSObject
 {
     WCFinderLiveCompleteLiveContentView *_liveContainerView;
     _Bool _isAudience;

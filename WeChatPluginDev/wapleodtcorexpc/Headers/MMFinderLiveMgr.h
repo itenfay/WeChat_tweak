@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiveGlobalRewardLevel, ForwardMessageLogicController, MMFinderLiveTaskId, MemoryMappedKV, NSArray, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSRecursiveLock, NSString, OrderedDictionary, WCFinderLiveAudienceComodityLogReporter;
 @protocol OS_dispatch_queue;
 
-@interface MMFinderLiveMgr
+@interface MMFinderLiveMgr : NSObject
 {
     _Bool _shouldCheckPaymentJoinGameLiveEnable;
     _Bool _isWeakNetFromMars;

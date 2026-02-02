@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceStepItem
+@interface DeviceStepItem : NSObject
 {
     unsigned int _uiTimeStamp;
     unsigned int _uiStep;

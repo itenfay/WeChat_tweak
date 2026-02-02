@@ -5,7 +5,7 @@
 
 @class MagicBrushService, NSMutableSet, NSString;
 
-@interface MagicBrushMgr
+@interface MagicBrushMgr : NSObject
 {
     MagicBrushService *_magicbrush;
     NSMutableSet *_activeBizsSet;

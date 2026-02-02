@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat22KaraMomentImageFeature
+@interface _TtC6WeChat22KaraMomentImageFeature : NSObject
 {
     MISSING_TYPE *thumbnail;
     MISSING_TYPE *_numberOfImages;

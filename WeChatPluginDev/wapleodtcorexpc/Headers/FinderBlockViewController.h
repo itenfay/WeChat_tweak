@@ -6,7 +6,7 @@
 @class NSString, OpenApiParameter, WCFinderJumpInfo;
 @protocol OpenApiFinderBizDelegate;
 
-@interface FinderBlockViewController
+@interface FinderBlockViewController : NSObject
 {
     id <OpenApiFinderBizDelegate> _delegate;
     OpenApiParameter *_parameter;

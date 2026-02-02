@@ -5,7 +5,7 @@
 
 @class NSArray, NSData, NSString;
 
-@interface GameHaowanPostInfoPbObj
+@interface GameHaowanPostInfoPbObj : NSObject
 {
     NSArray *_mediaList;
     NSData *_continueData;

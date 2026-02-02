@@ -5,7 +5,7 @@
 
 @class FinderLiveProgrammePromoteInfo, MMLiveIconButton, MMUIButton, MMUILabel, UIImageView, UIView, WCFinderBaseCgi;
 
-@interface MMFinderLiveProgrammePromotePubbleContentView
+@interface MMFinderLiveProgrammePromotePubbleContentView : NSObject
 {
     _Bool _isLastSubscribed;
     UIImageView *_iconImageView;

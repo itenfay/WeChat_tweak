@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC9WeAppCore23WAReportKoubeiEventItem
+@interface _TtC9WeAppCore23WAReportKoubeiEventItem : NSObject
 {
     MISSING_TYPE *sessionBuffer;
     MISSING_TYPE *actionType;

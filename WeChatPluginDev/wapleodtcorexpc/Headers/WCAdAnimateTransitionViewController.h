@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, WCAdAnimateViewControllerAnimatedTransitioning, WCDataItem;
 
-@interface WCAdAnimateTransitionViewController
+@interface WCAdAnimateTransitionViewController : NSObject
 {
     long long _gestureType;
     WCDataItem *_dataItem;

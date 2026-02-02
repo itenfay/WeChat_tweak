@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveKtvSearchMusicSmartBoxCGI
+@interface WCFinderLiveKtvSearchMusicSmartBoxCGI : NSObject
 {
     NSString *_searchID;
     NSString *_searchKey;

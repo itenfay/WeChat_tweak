@@ -6,7 +6,7 @@
 @class EmoticonFinderDesignerContentLogic, EmoticonFinderDesignerDataCenter, NSString;
 @protocol WCFinderProfileStickerTabPageModelDelegate;
 
-@interface WCFinderProfileStickerTabPageModel
+@interface WCFinderProfileStickerTabPageModel : NSObject
 {
     _Bool _loading;
     _Bool _didLoadFail;

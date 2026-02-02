@@ -6,7 +6,7 @@
 @class AVCaptureSession, AVCaptureVideoPreviewLayer, MMUILabel, NSString, ScanLicenceBackgroundView, UIView;
 @protocol JSApiScanLicenceViewControllerDelegate;
 
-@interface JSApiScanLicenceViewController
+@interface JSApiScanLicenceViewController : NSObject
 {
     int _edgeTh;
     double _typeAspectRadio;

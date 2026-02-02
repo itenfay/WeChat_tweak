@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebViewReportStatMgr
+@interface MMWebViewReportStatMgr : NSObject
 {
     unsigned long long m_iMenuActionRet;
 }

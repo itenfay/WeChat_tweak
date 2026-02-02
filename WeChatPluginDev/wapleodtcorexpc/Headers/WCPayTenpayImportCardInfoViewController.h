@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIButton;
 @protocol WCPayTenpayImportCardInfoViewControllerDelegate;
 
-@interface WCPayTenpayImportCardInfoViewController
+@interface WCPayTenpayImportCardInfoViewController : NSObject
 {
     _Bool m_bReadAgreement;
     _Bool m_bSubscribeApp;

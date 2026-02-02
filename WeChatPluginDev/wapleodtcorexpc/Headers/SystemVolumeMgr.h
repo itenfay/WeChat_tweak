@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface SystemVolumeMgr
+@interface SystemVolumeMgr : NSObject
 {
     int m_volumeCheckType;
     int m_volumeSetType;

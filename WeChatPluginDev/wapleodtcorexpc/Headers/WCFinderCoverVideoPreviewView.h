@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetImageGenerator, AVPlayer, AVPlayerItem, AVPlayerLayer, MMUIScrollView, NSString, UIImageView, UIView, WCFinderCropRectModel, WCFinderPreviewEditVideoCompositionTask;
 
-@interface WCFinderCoverVideoPreviewView
+@interface WCFinderCoverVideoPreviewView : NSObject
 {
     MMUIScrollView *_scrollView;
     UIView *_blurView;

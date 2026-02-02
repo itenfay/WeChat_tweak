@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UIView;
 
-@interface WAHomeRecommendHeaderTableViewCell
+@interface WAHomeRecommendHeaderTableViewCell : NSObject
 {
     UIView *m_bottomLine;
     UILabel *_titleLabel;

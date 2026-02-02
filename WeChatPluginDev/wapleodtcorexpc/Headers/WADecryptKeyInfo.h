@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WADecryptKeyInfo
+@interface WADecryptKeyInfo : NSObject
 {
     unsigned int _appVersion;
     unsigned int _encryptType;

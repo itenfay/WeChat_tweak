@@ -5,7 +5,7 @@
 
 @class NSString, WCPayControlData;
 
-@interface WCPayControlLogic
+@interface WCPayControlLogic : NSObject
 {
     WCPayControlData *m_data;
     NSString *m_nsErrorDetailUrl;

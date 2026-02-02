@@ -5,7 +5,7 @@
 
 @class SecurityInfoAuthrizeLogic;
 
-@interface WAJSEventHandler_openRealnameAuth
+@interface WAJSEventHandler_openRealnameAuth : NSObject
 {
     SecurityInfoAuthrizeLogic *_authLogic;
 }

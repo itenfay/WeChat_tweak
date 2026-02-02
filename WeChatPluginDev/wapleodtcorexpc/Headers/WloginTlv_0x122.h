@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_0x122
+@interface WloginTlv_0x122 : NSObject
 {
     NSData *G;
     NSData *N;

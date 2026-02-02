@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMLiveTaskId, MMTimer, MMUIButton, NSDictionary, NSMutableDictionary, NSString, UIButton, UILabel, UIView;
 @protocol MMLiveStarterViewControllerDelegate;
 
-@interface MMGroupLiveStarterViewController
+@interface MMGroupLiveStarterViewController : NSObject
 {
     _Bool _isEditing;
     _Bool _isEdited;

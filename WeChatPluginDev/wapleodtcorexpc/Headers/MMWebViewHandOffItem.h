@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebViewHandOffItem
+@interface MMWebViewHandOffItem : NSObject
 {
     NSString *_url;
     NSString *_icon;

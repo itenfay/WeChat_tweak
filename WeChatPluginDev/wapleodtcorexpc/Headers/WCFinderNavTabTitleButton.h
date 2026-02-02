@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderNavTabTitle, YYLabel;
 
-@interface WCFinderNavTabTitleButton
+@interface WCFinderNavTabTitleButton : NSObject
 {
     WCFinderNavTabTitle *_normalTitle;
     WCFinderNavTabTitle *_selectedTitle;

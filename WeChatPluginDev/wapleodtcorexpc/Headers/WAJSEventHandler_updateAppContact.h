@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface WAJSEventHandler_updateAppContact
+@interface WAJSEventHandler_updateAppContact : NSObject
 {
     NSString *_requestUsername;
     NSString *_requestAppId;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WALaunchResourceFetcher
+@interface WALaunchResourceFetcher : NSObject
 {
     _Bool _cancelled;
 }

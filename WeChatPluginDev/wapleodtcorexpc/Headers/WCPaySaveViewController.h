@@ -6,7 +6,7 @@
 @class MMUILabel, NSDictionary, NSString, UIButton, UIImageView, UITextField, UIView, WCPayBalanceChargeLQTEntryView, WCPayBindCardInfo, WCPayDecimalKeyboardView, WCPayNoticeItemView, WCPayWebImageView;
 @protocol WCPaySaveViewControllerDelegate;
 
-@interface WCPaySaveViewController
+@interface WCPaySaveViewController : NSObject
 {
     id <WCPaySaveViewControllerDelegate> m_delegate;
     _Bool _bIsUserManulSelectCard;

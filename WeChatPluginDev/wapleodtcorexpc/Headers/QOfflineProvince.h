@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QOfflineProvince
+@interface QOfflineProvince : NSObject
 {
     NSArray *_items;
 }

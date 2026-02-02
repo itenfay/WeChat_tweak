@@ -5,7 +5,7 @@
 
 @protocol WABizF2FPayCheckCgiDelegate;
 
-@interface WABizF2FPayCheckCgi
+@interface WABizF2FPayCheckCgi : NSObject
 {
     id <WABizF2FPayCheckCgiDelegate> m_delegate;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WCFinderFeedbackCGI
+@interface WCFinderFeedbackCGI : NSObject
 {
     int _scene;
     int _satisfactionQuestSubType;

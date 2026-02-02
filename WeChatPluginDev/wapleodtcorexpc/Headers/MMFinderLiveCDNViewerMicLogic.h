@@ -5,7 +5,7 @@
 
 @class MMFinderLiveConnectMicJoinLiveBattleInfoWrap, MMFinderLiveConnectMicPKInfo, MMFinderLiveConnectMicUsersInfo, MMLiveSEIConnectMicMsg, NSMutableArray, NSString, OrderedDictionary;
 
-@interface MMFinderLiveCDNViewerMicLogic
+@interface MMFinderLiveCDNViewerMicLogic : NSObject
 {
     _Bool _isVideoLandscapeMode;
     _Bool _isAnchorMain;

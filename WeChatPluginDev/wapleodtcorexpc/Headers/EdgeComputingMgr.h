@@ -6,7 +6,7 @@
 @class EdgeComputingConfigBreaker, EdgeComputingConfigService, EdgeComputingDataSourceService, EdgeComputingDataStorage, EdgeComputingReporter, EdgeComputingRunRecord, EdgeComputingThresholdController, NSString;
 @protocol IEdgeComputingDataCacheProtocol;
 
-@interface EdgeComputingMgr
+@interface EdgeComputingMgr : NSObject
 {
     EdgeComputingConfigService *configService;
     EdgeComputingDataSourceService *dataSourceService;

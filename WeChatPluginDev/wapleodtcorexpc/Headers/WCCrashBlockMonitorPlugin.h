@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableSet, NSObject, NSString, WCCrashBlockMonitor, WCCrashBlockMonitorConfig;
 @protocol OS_dispatch_queue, WCReportStrategyDelegate;
 
-@interface WCCrashBlockMonitorPlugin
+@interface WCCrashBlockMonitorPlugin : NSObject
 {
     id <WCReportStrategyDelegate> _reportDelegate;
     WCCrashBlockMonitor *_cbMonitor;

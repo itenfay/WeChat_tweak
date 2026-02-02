@@ -6,7 +6,7 @@
 @class NSString, WCCardLargeCodeView, WCShareCardMemberHeaderCardImageView;
 @protocol WCCardMemberCardContentDelegate;
 
-@interface WCCardMemberCardDetailContentView
+@interface WCCardMemberCardDetailContentView : NSObject
 {
     _Bool _bIsShareCardMode;
     _Bool _bIsAcceptMemberCard;

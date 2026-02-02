@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, RichTextView, UIButton, UIImageView, UILabel, UIScrollView, UIView, WCPayRealnameGuideInfo;
 @protocol WCPayRealNameTipsViewControllerDelegate;
 
-@interface WCPayRealNameTipsViewController
+@interface WCPayRealNameTipsViewController : NSObject
 {
     id <WCPayRealNameTipsViewControllerDelegate> _delegate;
     id <WCPayRealNameTipsViewControllerDelegate> _reportDelegate;

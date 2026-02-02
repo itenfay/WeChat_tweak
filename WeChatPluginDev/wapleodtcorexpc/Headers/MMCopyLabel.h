@@ -6,7 +6,7 @@
 @class UIColor, UIView;
 @protocol MMCopyLabelDelegate;
 
-@interface MMCopyLabel
+@interface MMCopyLabel : NSObject
 {
     UIView<MMCopyLabelDelegate> *_delegate;
     UIColor *_highlightedBGColor;

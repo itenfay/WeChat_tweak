@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RichTextView, UIButton, UIImageView, UIView;
 @protocol WCPayOfflinePayCreateOffinePayTipsViewDelegate;
 
-@interface WCPayOfflinePayCreateOfflinePayTipsView
+@interface WCPayOfflinePayCreateOfflinePayTipsView : NSObject
 {
     id <WCPayOfflinePayCreateOffinePayTipsViewDelegate> _delegate;
     UIImageView *_iconImgView;

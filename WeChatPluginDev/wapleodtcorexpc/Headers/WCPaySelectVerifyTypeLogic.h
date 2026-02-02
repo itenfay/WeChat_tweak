@@ -5,7 +5,7 @@
 
 @class MMVoidCallback, NSString, WCPayRealnameRouteCgi;
 
-@interface WCPaySelectVerifyTypeLogic
+@interface WCPaySelectVerifyTypeLogic : NSObject
 {
     _Bool _hasStartAddCard;
     int _fromScene;

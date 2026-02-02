@@ -5,7 +5,7 @@
 
 @class MMFinderLiveReplayOperationCommentSnapShot;
 
-@interface MMFinderLiveReplayCommentView
+@interface MMFinderLiveReplayCommentView : NSObject
 {
     MMFinderLiveReplayOperationCommentSnapShot *_currentSnapShot;
 }

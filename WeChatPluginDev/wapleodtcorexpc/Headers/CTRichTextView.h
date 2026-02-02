@@ -6,7 +6,7 @@
 @class CTFrameWrap, NSArray, NSMutableArray, NSMutableAttributedString, NSString, UIColor, UIFont, UIView;
 @protocol ILinkEventExt, RichTextViewSelectProtocol;
 
-@interface CTRichTextView
+@interface CTRichTextView : NSObject
 {
     NSMutableAttributedString *_attString;
     struct __CTFramesetter *_framesetter;

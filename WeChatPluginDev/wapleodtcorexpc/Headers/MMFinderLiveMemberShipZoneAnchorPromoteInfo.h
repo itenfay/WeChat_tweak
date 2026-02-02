@@ -5,7 +5,7 @@
 
 @class FinderMemberZonePromoteInfoItem;
 
-@interface MMFinderLiveMemberShipZoneAnchorPromoteInfo
+@interface MMFinderLiveMemberShipZoneAnchorPromoteInfo : NSObject
 {
     FinderMemberZonePromoteInfoItem *_memberZoneItem;
 }

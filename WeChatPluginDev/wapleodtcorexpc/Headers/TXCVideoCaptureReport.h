@@ -6,7 +6,7 @@
 @class NSString;
 @protocol TXCVideoCaptureReportDelegate;
 
-@interface TXCVideoCaptureReport
+@interface TXCVideoCaptureReport : NSObject
 {
     id <TXCVideoCaptureReportDelegate> _delegate;
 }

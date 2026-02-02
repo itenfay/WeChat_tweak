@@ -5,7 +5,7 @@
 
 @class ChatroomMsgImgCard;
 
-@interface GCImageCardCellModel
+@interface GCImageCardCellModel : NSObject
 {
     ChatroomMsgImgCard *_imgCard;
 }

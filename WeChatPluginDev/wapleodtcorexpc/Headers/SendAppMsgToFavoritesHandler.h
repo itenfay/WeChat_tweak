@@ -5,7 +5,7 @@
 
 @class MMTipsViewController, NSData, NSString, OpenApiImageCdnUploader, OpenApiParameter, ShareFavoritesConfirmLogicHelper, UINavigationController;
 
-@interface SendAppMsgToFavoritesHandler
+@interface SendAppMsgToFavoritesHandler : NSObject
 {
     OpenApiParameter *_parameter;
     ShareFavoritesConfirmLogicHelper *_shareHelper;

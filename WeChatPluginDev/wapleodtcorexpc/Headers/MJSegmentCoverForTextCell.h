@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, UILabel;
 
-@interface MJSegmentCoverForTextCell
+@interface MJSegmentCoverForTextCell : NSObject
 {
     CAShapeLayer *_flagLayer;
     UILabel *_numberLabel;

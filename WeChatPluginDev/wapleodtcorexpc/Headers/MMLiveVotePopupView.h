@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMLiveVoteViewModel, MMTimer, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MMUIView, NSMutableArray, NSString, RichTextView, UICollectionView, UIView;
 @protocol MMLiveVotePopupViewDelegate;
 
-@interface MMLiveVotePopupView
+@interface MMLiveVotePopupView : NSObject
 {
     _Bool _notUpdate;
     _Bool _showProgress;

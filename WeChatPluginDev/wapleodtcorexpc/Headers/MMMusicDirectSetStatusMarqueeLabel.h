@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMUILabel;
 
-@interface MMMusicDirectSetStatusMarqueeLabel
+@interface MMMusicDirectSetStatusMarqueeLabel : NSObject
 {
     CAGradientLayer *_maskLayer;
     MMUILabel *_labelForDefault;

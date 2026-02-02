@@ -5,7 +5,7 @@
 
 @class MsgImageSquareThumbView, NSIndexPath, NSString;
 
-@interface FTSMsgSearchCell
+@interface FTSMsgSearchCell : NSObject
 {
     _Bool _m_isHadImageThumbView;
     MsgImageSquareThumbView *m_thumbView;

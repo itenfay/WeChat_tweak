@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock;
 
-@interface MMLockMutableDictionary
+@interface MMLockMutableDictionary : NSObject
 {
     NSRecursiveLock *_lock;
     NSMutableDictionary *_dict;

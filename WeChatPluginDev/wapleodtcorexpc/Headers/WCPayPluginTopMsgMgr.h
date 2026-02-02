@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayPluginTopMsgMgr
+@interface WCPayPluginTopMsgMgr : NSObject
 {
 }
 

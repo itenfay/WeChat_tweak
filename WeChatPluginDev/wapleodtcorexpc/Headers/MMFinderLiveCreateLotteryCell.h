@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveCreateLotteryDataItem, MMLiveLotteryGiftPacketsView, MMUIButton, MMUILabel, UIImageView, UIView;
 
-@interface MMFinderLiveCreateLotteryCell
+@interface MMFinderLiveCreateLotteryCell : NSObject
 {
     _Bool _bigCell;
     int _prizeType;

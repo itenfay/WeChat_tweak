@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface HistoryAddMsgWrap
+@interface HistoryAddMsgWrap : NSObject
 {
     int _msgType;
     unsigned int _status;

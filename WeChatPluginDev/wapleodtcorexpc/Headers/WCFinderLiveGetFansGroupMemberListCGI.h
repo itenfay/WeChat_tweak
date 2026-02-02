@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveGetFansGroupMemberListCGI
+@interface WCFinderLiveGetFansGroupMemberListCGI : NSObject
 {
     int _memberType;
     int _sortType;

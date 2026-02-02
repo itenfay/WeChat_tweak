@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardTipItem
+@interface WCCardTipItem : NSObject
 {
     unsigned int _tipType;
     unsigned int _unreadCount;

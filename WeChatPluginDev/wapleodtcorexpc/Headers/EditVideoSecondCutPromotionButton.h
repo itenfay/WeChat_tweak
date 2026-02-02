@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, UIStackView;
 
-@interface EditVideoSecondCutPromotionButton
+@interface EditVideoSecondCutPromotionButton : NSObject
 {
     long long currentEntryType;
     UIStackView *stackView;

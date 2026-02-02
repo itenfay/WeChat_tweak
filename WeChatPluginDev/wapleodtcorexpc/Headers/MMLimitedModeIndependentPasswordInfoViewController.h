@@ -5,7 +5,7 @@
 
 @class FixTitleColorButton, MMLimitedModeSetPasswordLogic, MMTableViewInfo, MMUILabel, NSString, UITableViewCell, UITextView, WCTableViewNormalCellManager;
 
-@interface MMLimitedModeIndependentPasswordInfoViewController
+@interface MMLimitedModeIndependentPasswordInfoViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     UITextView *m_tfInputName;

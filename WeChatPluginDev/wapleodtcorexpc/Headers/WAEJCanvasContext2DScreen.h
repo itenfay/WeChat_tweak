@@ -5,7 +5,7 @@
 
 @class EAGLView, UIView, WAEJTexture;
 
-@interface WAEJCanvasContext2DScreen
+@interface WAEJCanvasContext2DScreen : NSObject
 {
     EAGLView *glview;
     struct CGRect style;

@@ -5,7 +5,7 @@
 
 @class BTVideoItemCellAutoPlayerView, BTVideoItemCellViewModel, CAGradientLayer, MMUILabel, SightIconView, UIView;
 
-@interface BTVideoItemCellView
+@interface BTVideoItemCellView : NSObject
 {
     CAGradientLayer *m_maskLayer;
     UIView *m_playerBtnContainerView;

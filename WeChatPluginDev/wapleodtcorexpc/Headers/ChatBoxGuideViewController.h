@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, UIButton, UILabel, UIView;
 
-@interface ChatBoxGuideViewController
+@interface ChatBoxGuideViewController : NSObject
 {
     NSString *_chatroomUsername;
     UILabel *_titleLabel;

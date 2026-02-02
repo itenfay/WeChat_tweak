@@ -6,7 +6,7 @@
 @class NSString, WCAdConfirmHalfScreenBaseView;
 @protocol WCAdSubscriptionLogicDelegate;
 
-@interface WCAdSubscriptionLogic
+@interface WCAdSubscriptionLogic : NSObject
 {
     _Bool _btnHasBeenClicked;
     id <WCAdSubscriptionLogicDelegate> _delegate;

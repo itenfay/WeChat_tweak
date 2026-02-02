@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface KindaUITableView
+@interface KindaUITableView : NSObject
 {
     NSMutableDictionary *_heightAtIndexPath;
     struct CGRect _oldRect;

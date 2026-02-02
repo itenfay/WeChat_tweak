@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface StreamVoiceInputPrepareView
+@interface StreamVoiceInputPrepareView : NSObject
 {
     NSMutableArray *_dots;
     NSArray *_animationKeyTimes;

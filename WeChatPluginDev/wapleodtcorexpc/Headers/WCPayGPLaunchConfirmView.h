@@ -6,7 +6,7 @@
 @class CContact, ChatroomProfileView, MMUIView, NSString;
 @protocol WCPayGPLaunchConfirmViewDelegate;
 
-@interface WCPayGPLaunchConfirmView
+@interface WCPayGPLaunchConfirmView : NSObject
 {
     _Bool _bChangeHeight;
     id <WCPayGPLaunchConfirmViewDelegate> _delegate;

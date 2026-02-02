@@ -5,7 +5,7 @@
 
 @class NSData, NSString, VoIPTokenRegisterObject;
 
-@interface TokenRegisterService
+@interface TokenRegisterService : NSObject
 {
     _Bool m_apnsTokenRecovered;
     unsigned int m_apnsTokenEntrance;

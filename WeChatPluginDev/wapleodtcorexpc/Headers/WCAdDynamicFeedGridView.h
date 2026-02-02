@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WCAdDynamicFeedElementInfo, WCAdvertiseInfo, WCDataItem;
 
-@interface WCAdDynamicFeedGridView
+@interface WCAdDynamicFeedGridView : NSObject
 {
     WCAdDynamicFeedElementInfo *_elementInfo;
     WCAdvertiseInfo *_adInfo;

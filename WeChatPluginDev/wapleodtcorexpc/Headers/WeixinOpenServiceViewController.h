@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSMutableDictionary, NSString, UISwitch, UIView;
 
-@interface WeixinOpenServiceViewController
+@interface WeixinOpenServiceViewController : NSObject
 {
     struct map<unsigned long, OpenServiceRowType, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, OpenServiceRowType>>> m_mapRowToRowType;
     NSMutableDictionary *m_dictToLink;

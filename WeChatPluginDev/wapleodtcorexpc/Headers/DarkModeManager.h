@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DarkModeManager
+@interface DarkModeManager : NSObject
 {
     _Bool _skipNextReport;
 }

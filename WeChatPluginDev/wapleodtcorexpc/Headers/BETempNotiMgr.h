@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BETempNotiMgr
+@interface BETempNotiMgr : NSObject
 {
 }
 

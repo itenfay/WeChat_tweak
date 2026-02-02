@@ -5,7 +5,7 @@
 
 @class AppVideoMessageViewModel, CAGradientLayer, MMUILabel, SightIconView;
 
-@interface AppVideoMessageCellView
+@interface AppVideoMessageCellView : NSObject
 {
     SightIconView *_playIconImgView;
     MMUILabel *_timeLabel;

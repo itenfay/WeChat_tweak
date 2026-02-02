@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIView, UIView;
 
-@interface GameCenterMsgListRawBaseCell
+@interface GameCenterMsgListRawBaseCell : NSObject
 {
     _Bool _highLightBackground;
     MMUIView *_dividerView;

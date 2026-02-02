@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLivePromoteListBaseViewItem, MMUIButton, MMUILabel, MMWebImageView, UIView;
 
-@interface MMFinderLivePromoteListBaseTableViewCell
+@interface MMFinderLivePromoteListBaseTableViewCell : NSObject
 {
     _Bool _editHidePushButton;
     CDUnknownBlockType _actionBlock;

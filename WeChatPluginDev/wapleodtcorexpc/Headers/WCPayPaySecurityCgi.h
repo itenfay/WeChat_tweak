@@ -5,7 +5,7 @@
 
 @protocol WCPayPaySecurityCgiDelegate;
 
-@interface WCPayPaySecurityCgi
+@interface WCPayPaySecurityCgi : NSObject
 {
 }
 

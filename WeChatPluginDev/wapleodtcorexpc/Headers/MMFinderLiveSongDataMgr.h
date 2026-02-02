@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MMFinderLiveSongDataMgr
+@interface MMFinderLiveSongDataMgr : NSObject
 {
     _Bool _hasMusicInfo;
     int _lastHeartRandomValue;

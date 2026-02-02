@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel;
 
-@interface ShakeMusicTableViewCell
+@interface ShakeMusicTableViewCell : NSObject
 {
     MMWebImageView *coverImageView;
     UILabel *musicNameLabel;

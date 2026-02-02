@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat19MagicAdBrandService
+@interface _TtC6WeChat19MagicAdBrandService : NSObject
 {
     MISSING_TYPE *brandTimelineOpened;
 }

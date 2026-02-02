@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface NewLifeCallbackDefaultGenerator
+@interface NewLifeCallbackDefaultGenerator : NSObject
 {
     NSMutableSet *_observerRedDotTipsPaths;
     NSMutableSet *_updatedRedDotTipsPaths;

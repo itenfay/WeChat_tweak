@@ -5,7 +5,7 @@
 
 @class MMProgressViewEx, NSString, UIView, WCAdvertiseSphereView;
 
-@interface WCCanvasSphereImageComponent
+@interface WCCanvasSphereImageComponent : NSObject
 {
     _Bool _didDelayShowScrollDownArea;
     WCAdvertiseSphereView *_sphereView;

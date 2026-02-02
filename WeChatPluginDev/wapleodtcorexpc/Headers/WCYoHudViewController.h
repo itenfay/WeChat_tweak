@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIImageView, UILabel, UIView, WCYoAvatarView;
 
-@interface WCYoHudViewController
+@interface WCYoHudViewController : NSObject
 {
     int _yoType;
     unsigned int _yoTime;

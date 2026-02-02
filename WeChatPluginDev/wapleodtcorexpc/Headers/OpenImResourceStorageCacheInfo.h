@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface OpenImResourceStorageCacheInfo
+@interface OpenImResourceStorageCacheInfo : NSObject
 {
     NSMutableDictionary *_dictAppId2ContactResources;
     NSMutableDictionary *_dictAppId2LastUpdateTime;

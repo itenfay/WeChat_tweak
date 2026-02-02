@@ -5,7 +5,7 @@
 
 @class NSString, UITableView;
 
-@interface WXGRoamChooseRangeExcludeView
+@interface WXGRoamChooseRangeExcludeView : NSObject
 {
     long long _enterScene;
     UITableView *_sheetView;

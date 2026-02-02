@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSString, UIButton;
 
-@interface WCPayCVVItem
+@interface WCPayCVVItem : NSObject
 {
     UIButton *m_tipBtn;
     MMUIViewController *m_viewController;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFeedStreamProductStyleView, NSString;
 
-@interface MMFinderLiveFeedStreamCarouselProductHotSellingCell
+@interface MMFinderLiveFeedStreamCarouselProductHotSellingCell : NSObject
 {
     MMFinderLiveFeedStreamProductStyleView *_hotSellingStyleView;
 }

@@ -5,7 +5,7 @@
 
 @class UIView, WCAdCardBtnInfo;
 
-@interface WCAdCardActionButton
+@interface WCAdCardActionButton : NSObject
 {
     long long _enabledStyle;
     WCAdCardBtnInfo *_buttonInfo;

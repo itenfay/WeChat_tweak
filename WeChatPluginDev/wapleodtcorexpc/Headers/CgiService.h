@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSLock, NSMapTable, NSString;
 
-@interface CgiService
+@interface CgiService : NSObject
 {
     NSMapTable *_mapTable;
     NSLock *_lock;

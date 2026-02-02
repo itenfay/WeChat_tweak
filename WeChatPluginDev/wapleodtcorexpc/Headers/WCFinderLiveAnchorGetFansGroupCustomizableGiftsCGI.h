@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveAnchorGetFansGroupCustomizableGiftsCGI
+@interface WCFinderLiveAnchorGetFansGroupCustomizableGiftsCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

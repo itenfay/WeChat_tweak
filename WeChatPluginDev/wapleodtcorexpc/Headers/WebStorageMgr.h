@@ -5,7 +5,7 @@
 
 @class NSString, WebStorageDb;
 
-@interface WebStorageMgr
+@interface WebStorageMgr : NSObject
 {
     WebStorageDb *_storageDb;
 }

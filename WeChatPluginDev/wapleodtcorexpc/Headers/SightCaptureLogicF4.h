@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, SightCameraCapture;
 @protocol OS_dispatch_queue, SightCaptureDelegate;
 
-@interface SightCaptureLogicF4
+@interface SightCaptureLogicF4 : NSObject
 {
     id <SightCaptureDelegate> m_delegate;
     _Bool m_shouldStart;

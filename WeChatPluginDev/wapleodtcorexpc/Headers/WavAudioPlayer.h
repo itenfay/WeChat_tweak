@@ -6,7 +6,7 @@
 @class NSRecursiveLock, NSString, SimpleAudioPlayer;
 @protocol AudioDataRead;
 
-@interface WavAudioPlayer
+@interface WavAudioPlayer : NSObject
 {
     unsigned int _m_currentReadPos;
     unsigned int _m_bitsPerChannel;

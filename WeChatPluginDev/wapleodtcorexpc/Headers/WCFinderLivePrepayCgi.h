@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLivePrepayCgi
+@interface WCFinderLivePrepayCgi : NSObject
 {
     unsigned int _rewardType;
     NSData *_rewardExtInfo;

@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTOnClickRedDotCgiDelegate;
 
-@interface WCPayLQTOnClickRedDotCgi
+@interface WCPayLQTOnClickRedDotCgi : NSObject
 {
     id <WCPayLQTOnClickRedDotCgiDelegate> _cgiDelegate;
 }

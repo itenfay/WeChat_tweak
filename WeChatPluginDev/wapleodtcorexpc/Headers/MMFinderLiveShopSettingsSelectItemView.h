@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView;
 
-@interface MMFinderLiveShopSettingsSelectItemView
+@interface MMFinderLiveShopSettingsSelectItemView : NSObject
 {
     UIImageView *_iconView;
     UIImageView *_leftIconView;

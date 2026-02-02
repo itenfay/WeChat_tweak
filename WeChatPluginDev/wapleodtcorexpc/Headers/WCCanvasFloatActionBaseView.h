@@ -5,7 +5,7 @@
 
 @class WCCanvasComponent, WCCanvasComponentItem;
 
-@interface WCCanvasFloatActionBaseView
+@interface WCCanvasFloatActionBaseView : NSObject
 {
     WCCanvasComponentItem *_componentItem;
     WCCanvasComponent *_component;

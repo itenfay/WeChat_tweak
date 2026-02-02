@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterpriseMemberItem
+@interface EnterpriseMemberItem : NSObject
 {
     NSString *_m_nsUsrName;
     NSString *_m_nsContactDisplayName;

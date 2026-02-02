@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WAWebViewPlugin_baseView
+@interface WAWebViewPlugin_baseView : NSObject
 {
     _Bool _isReady;
     NSMutableArray *_animates;

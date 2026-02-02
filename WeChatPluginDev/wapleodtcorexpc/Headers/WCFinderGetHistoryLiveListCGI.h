@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetHistoryLiveListCGI
+@interface WCFinderGetHistoryLiveListCGI : NSObject
 {
     unsigned int _startTimeRange;
     unsigned int _endTimeRange;

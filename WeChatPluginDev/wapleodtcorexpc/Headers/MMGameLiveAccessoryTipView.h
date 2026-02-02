@@ -5,7 +5,7 @@
 
 @class MMUILabel, RichTextView;
 
-@interface MMGameLiveAccessoryTipView
+@interface MMGameLiveAccessoryTipView : NSObject
 {
     MMUILabel *_titleLabel;
     RichTextView *_descLabel;

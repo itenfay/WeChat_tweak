@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class TXCGlFrameBuffer;
 @protocol TXCCustomVideoProcessDelegate, TXICustomProcessConverter, TXIGlContext;
 
-@interface TXCCustomConvertFilter
+@interface TXCCustomConvertFilter : NSObject
 {
     id <TXIGlContext> _context;
     id <TXICustomProcessConverter> _converter;

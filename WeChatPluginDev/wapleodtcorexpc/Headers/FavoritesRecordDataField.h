@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavoritesRecordDataField
+@interface FavoritesRecordDataField : NSObject
 {
     unsigned int _msgLocalId;
     unsigned int _msgCreateTime;

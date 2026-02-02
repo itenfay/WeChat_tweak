@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel;
 
-@interface MMFinderLiveFansGroupRightsBriefCell
+@interface MMFinderLiveFansGroupRightsBriefCell : NSObject
 {
     CDUnknownBlockType _onUnsubscribe;
     MMUIButton *_unsubscribeButton;

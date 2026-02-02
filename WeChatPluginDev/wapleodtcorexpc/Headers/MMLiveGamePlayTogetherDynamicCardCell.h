@@ -5,7 +5,7 @@
 
 @class MMLiveGamePlayTogetherDynamicCardItem, MagicSclFrameSetView, NSString, UIView;
 
-@interface MMLiveGamePlayTogetherDynamicCardCell
+@interface MMLiveGamePlayTogetherDynamicCardCell : NSObject
 {
     MMLiveGamePlayTogetherDynamicCardItem *_item;
     NSString *_rootId;

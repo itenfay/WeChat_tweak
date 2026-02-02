@@ -6,7 +6,7 @@
 @class NSString, WCFinderJumpInfo;
 @protocol WCFinderJumpBigButtonDelegate;
 
-@interface WCFinderJumpBigButton
+@interface WCFinderJumpBigButton : NSObject
 {
     _Bool _needHighlight;
     int _showPosition;

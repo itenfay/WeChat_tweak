@@ -6,7 +6,7 @@
 @class MTLTextureDescriptor;
 @protocol MTLTexture;
 
-@interface TPMetalNV12Render
+@interface TPMetalNV12Render : NSObject
 {
     struct __CVMetalTextureCache *_textureCache;
     id <MTLTexture> _yTexture;

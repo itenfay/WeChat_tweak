@@ -5,7 +5,7 @@
 
 @protocol WCFinderLiveFullScreenGestureDelegate;
 
-@interface WCFinderLiveFullScreenGestureRecognizer
+@interface WCFinderLiveFullScreenGestureRecognizer : NSObject
 {
     id <WCFinderLiveFullScreenGestureDelegate> _fullScreenGestureDelegate;
 }

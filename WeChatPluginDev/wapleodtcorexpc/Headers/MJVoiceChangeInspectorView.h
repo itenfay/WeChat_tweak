@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MJSegmentInspectorViewModel, MMUIActivityIndicatorView, MMUIButton, NSString, UICollectionView;
 @protocol MJSpeechTextInspectorViewModelProtocol;
 
-@interface MJVoiceChangeInspectorView
+@interface MJVoiceChangeInspectorView : NSObject
 {
     _Bool _shouldBlockWhenLoading;
     _Bool _shouldRequestVoiceChangeUponLoaded;

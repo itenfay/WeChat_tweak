@@ -5,7 +5,7 @@
 
 @class QTrailOverlay;
 
-@interface QTrailOverlayView
+@interface QTrailOverlayView : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBBeaconWupEventRecord
+@interface QBBeaconWupEventRecord : NSObject
 {
     _Bool _jcev2_p_3_r_eventResult;
     int _jcev2_p_8_r_eventType;

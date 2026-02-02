@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GCBulletMgsFlowCellLayout
+@interface GCBulletMgsFlowCellLayout : NSObject
 {
     double _cellTopPadding;
     double _avatarSize;

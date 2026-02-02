@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WebviewJSEventHAndler_h5VideoProxySetRemainTime
+@interface WebviewJSEventHAndler_h5VideoProxySetRemainTime : NSObject
 {
 }
 

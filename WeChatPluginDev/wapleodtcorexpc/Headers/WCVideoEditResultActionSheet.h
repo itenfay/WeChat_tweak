@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol WCVideoEditResultActionSheetRecentForwardDelegate;
 
-@interface WCVideoEditResultActionSheet
+@interface WCVideoEditResultActionSheet : NSObject
 {
     NSArray *_actions;
     id <WCVideoEditResultActionSheetRecentForwardDelegate> _recentForwardDelegate;

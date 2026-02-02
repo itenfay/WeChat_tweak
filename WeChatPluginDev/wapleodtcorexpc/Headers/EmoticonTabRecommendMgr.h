@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonTabRecommendMgr
+@interface EmoticonTabRecommendMgr : NSObject
 {
 }
 

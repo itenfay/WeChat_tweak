@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveGoodsManagerViewBottomActionView, MMFinderLiveTaskId, MMTableView, NSMutableArray, NSString;
 @protocol MMFinderLiveGoodsManagerViewControllerDelegate;
 
-@interface MMFinderLiveGoodsManagerViewController
+@interface MMFinderLiveGoodsManagerViewController : NSObject
 {
     id <MMFinderLiveGoodsManagerViewControllerDelegate> _delegate;
     MMFinderLiveTaskId *_taskId;

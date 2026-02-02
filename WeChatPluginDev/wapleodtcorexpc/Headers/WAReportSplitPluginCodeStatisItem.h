@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportSplitPluginCodeStatisItem
+@interface WAReportSplitPluginCodeStatisItem : NSObject
 {
     NSString *_provider;
     long long _version;

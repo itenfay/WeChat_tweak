@@ -5,7 +5,7 @@
 
 @class EKEvent, EKEventStore, NSDictionary, NSString;
 
-@interface WAJSEventHandler_addPhoneCalendar
+@interface WAJSEventHandler_addPhoneCalendar : NSObject
 {
     NSDictionary *_dic;
     EKEventStore *_eventStore;

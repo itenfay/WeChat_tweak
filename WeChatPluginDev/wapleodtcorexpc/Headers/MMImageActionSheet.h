@@ -6,7 +6,7 @@
 @class MMImageActionCircleToSearchItem, MMImageActionEditItem, MMImageActionFavoriateItem, MMImageActionFindTextItem, MMImageActionForwardItem, MMImageActionOpenDeviceItem, MMImageActionOpenWeAppListItem, MMImageActionQRCodeItem, MMImageActionSaveItem, MMImageActionSearchItem, MMImageActionSnsShareItem, MMImageActionTranslateItem, MMImageOpenWeAppLogic, MMUIViewController, NSMutableArray, NSString, UIImage, WCImageTranslateLogic;
 @protocol MMImageActionSheetDelegate;
 
-@interface MMImageActionSheet
+@interface MMImageActionSheet : NSObject
 {
     MMImageActionForwardItem *_forward;
     MMImageActionSnsShareItem *_snsShare;

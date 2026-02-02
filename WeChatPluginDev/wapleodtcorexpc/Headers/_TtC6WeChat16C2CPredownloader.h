@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat16C2CPredownloader
+@interface _TtC6WeChat16C2CPredownloader : NSObject
 {
     MISSING_TYPE *schemes;
     MISSING_TYPE *queue;

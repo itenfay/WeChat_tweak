@@ -6,7 +6,7 @@
 @class LZAudioDataDownloader, NSDictionary, NSString;
 @protocol KSAudioFileProtocol, KSAudioPlayerUserDefineProtocol;
 
-@interface KSRemoteAudioDataProvider
+@interface KSRemoteAudioDataProvider : NSObject
 {
     id <KSAudioPlayerUserDefineProtocol> _userProtocol;
     _Bool _bReadyToParsing;

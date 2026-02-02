@@ -6,7 +6,7 @@
 @class NSString, UIImageView, WCFinderFeedContentTouchExpandTextView, WCFinderTemplateCommentArrowButton;
 @protocol WCFinderTemplateVideoCommentView;
 
-@interface WCFinderTemplateVideoCommentView
+@interface WCFinderTemplateVideoCommentView : NSObject
 {
     id <WCFinderTemplateVideoCommentView> _delegate;
     WCFinderFeedContentTouchExpandTextView *_textView;

@@ -6,7 +6,7 @@
 @class CAGradientLayer, NSMutableArray, UIPanGestureRecognizer, UITapGestureRecognizer, WCAdInteractionReportDataHandler, WCAdInteractionReportInfo, WCAdInteractionResourceInfo, WCStatTimerHelper;
 @protocol WCAdInteractionContentViewDelegate;
 
-@interface WCAdInteractionContentView
+@interface WCAdInteractionContentView : NSObject
 {
     id <WCAdInteractionContentViewDelegate> _delegate;
     WCAdInteractionResourceInfo *_resourceInfo;

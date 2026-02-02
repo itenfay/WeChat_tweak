@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCListSeperatorCellView
+@interface WCListSeperatorCellView : NSObject
 {
     UIView *_seperatorLine;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScanBarcodeMgr
+@interface ScanBarcodeMgr : NSObject
 {
     NSString *_extKey;
     _Bool _isUploading;

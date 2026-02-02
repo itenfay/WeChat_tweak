@@ -5,7 +5,7 @@
 
 @class ContactsDataLogic, NSString;
 
-@interface ContactAddSocialBlackListLogic
+@interface ContactAddSocialBlackListLogic : NSObject
 {
     ContactsDataLogic *m_contactsDataLogic;
 }

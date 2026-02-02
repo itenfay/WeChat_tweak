@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCAdInteractionKeyframeAnimationInfo
+@interface WCAdInteractionKeyframeAnimationInfo : NSObject
 {
     _Bool _remainPreviousAnimation;
     NSArray *_timingFunctions;

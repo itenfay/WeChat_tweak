@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface GameHaowanAlbumVideoItem
+@interface GameHaowanAlbumVideoItem : NSObject
 {
     _Bool _isLocalCache;
     unsigned int _durationSec;

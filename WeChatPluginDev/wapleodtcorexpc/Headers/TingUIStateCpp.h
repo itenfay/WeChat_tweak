@@ -7,7 +7,7 @@
 
 @class NSString;
 
-@interface TingUIStateCpp <TingUIState>
+@interface TingUIStateCpp : NSObject <TingUIState>
 {
 }
 

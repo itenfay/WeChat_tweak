@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayPaidDetailQueryAwardCgiDelegate;
 
-@interface WCPayPaidDetailQueryAwardCgi
+@interface WCPayPaidDetailQueryAwardCgi : NSObject
 {
     NSString *_activityId;
     NSString *_awardId;

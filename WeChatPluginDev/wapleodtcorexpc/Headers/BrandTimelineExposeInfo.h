@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandTimelineExposeInfo
+@interface BrandTimelineExposeInfo : NSObject
 {
     _Bool _isValidExpose;
     _Bool _isAutoPlay;

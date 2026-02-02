@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MMResSignatureInfo
+@interface MMResSignatureInfo : NSObject
 {
     unsigned int _version;
     NSData *_signatureData;

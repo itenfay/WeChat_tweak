@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveECHotSaleLikeAnimationCenter, MMFinderLiveNumberAnimationLogic, MMGradientView, NSString, UILabel;
 
-@interface MMFinderLiveNotifyStyleHotSaleCommentPubbleCell
+@interface MMFinderLiveNotifyStyleHotSaleCommentPubbleCell : NSObject
 {
     MMFinderLiveNumberAnimationLogic *_animationLogic;
     MMGradientView *_gradientView;

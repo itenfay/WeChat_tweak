@@ -5,7 +5,7 @@
 
 @class EmoticonStoreItem, EmotionRewardResponseInfo, MMUILabel, MMUIScrollView, MMWebImageView, NSString, StoreEmotionRewardLogicObject, UIImageView;
 
-@interface MMEmotionStoreRewardThanksViewController
+@interface MMEmotionStoreRewardThanksViewController : NSObject
 {
     EmoticonStoreItem *m_storeItem;
     EmotionRewardResponseInfo *m_rewardInfo;

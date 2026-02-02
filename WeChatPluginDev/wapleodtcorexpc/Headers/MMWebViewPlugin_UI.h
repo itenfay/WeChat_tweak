@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface MMWebViewPlugin_UI
+@interface MMWebViewPlugin_UI : NSObject
 {
     _Bool _hasLongPress;
     _Bool _hasAppear;

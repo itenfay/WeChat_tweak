@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIActivityIndicatorView, NSMutableArray, NSString, RichTextView, UICollectionView;
 @protocol MMLiveOnlineStateViewDelegate;
 
-@interface MMFinderLiveConnectMicUserRewarderSheet
+@interface MMFinderLiveConnectMicUserRewarderSheet : NSObject
 {
     unsigned int _boardType;
     MMFinderLiveTaskId *_taskId;

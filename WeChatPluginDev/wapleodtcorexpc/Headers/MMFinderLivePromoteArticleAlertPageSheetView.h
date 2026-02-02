@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, UIScrollView, UIView;
 
-@interface MMFinderLivePromoteArticleAlertPageSheetView
+@interface MMFinderLivePromoteArticleAlertPageSheetView : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     CDUnknownBlockType _dismissCallback;

@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol EditVideoBGMSearchTagViewDelegate;
 
-@interface EditVideoBGMSearchTagView
+@interface EditVideoBGMSearchTagView : NSObject
 {
     id <EditVideoBGMSearchTagViewDelegate> _delegate;
     NSArray *_tags;

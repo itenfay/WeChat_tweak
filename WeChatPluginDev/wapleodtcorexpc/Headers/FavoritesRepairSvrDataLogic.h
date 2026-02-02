@@ -5,7 +5,7 @@
 
 @class FavoritesItemDB, NSMutableArray;
 
-@interface FavoritesRepairSvrDataLogic
+@interface FavoritesRepairSvrDataLogic : NSObject
 {
     FavoritesItemDB *_favItemDB;
     NSMutableArray *_resendFavItems;

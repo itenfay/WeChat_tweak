@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UITextField;
 @protocol WCFinderCommonSearchBarDelegate;
 
-@interface WCFinderCommonSearchBar
+@interface WCFinderCommonSearchBar : NSObject
 {
     _Bool _isEditing;
     UITextField *_textField;

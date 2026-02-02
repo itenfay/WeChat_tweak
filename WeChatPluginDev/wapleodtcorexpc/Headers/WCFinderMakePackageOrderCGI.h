@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem, WCFinderLiveMakePackageOrderParams;
 
-@interface WCFinderMakePackageOrderCGI
+@interface WCFinderMakePackageOrderCGI : NSObject
 {
     unsigned int _targetLevel;
     CDUnknownBlockType _successBlock;

@@ -5,7 +5,7 @@
 
 @class JSApiScopeAuthViewModel, MMTableView, NSString;
 
-@interface JSApiScopeAuthListView
+@interface JSApiScopeAuthListView : NSObject
 {
     MMTableView *_tableView;
 }

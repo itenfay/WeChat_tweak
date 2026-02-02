@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLiveAcceptMicReportParams;
 
-@interface WCFinderLiveAcceptMicReportCGI
+@interface WCFinderLiveAcceptMicReportCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

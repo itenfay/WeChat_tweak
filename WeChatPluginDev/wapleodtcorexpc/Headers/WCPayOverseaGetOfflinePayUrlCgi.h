@@ -5,7 +5,7 @@
 
 @protocol WCPayOverseaGetOfflinePayUrlCgiDelegate;
 
-@interface WCPayOverseaGetOfflinePayUrlCgi
+@interface WCPayOverseaGetOfflinePayUrlCgi : NSObject
 {
     id <WCPayOverseaGetOfflinePayUrlCgiDelegate> m_delegate;
     _Bool _didResponse;

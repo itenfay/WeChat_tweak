@@ -5,7 +5,7 @@
 
 @class CContact, EditImageForwardAndEditLogicController, MMHeadImageView, MMScrollActionSheet, MMUILabel, NSArray, NSString, NewDesignContactQRCodeInfo, TipsView, UIImage, UIImageView, UIView;
 
-@interface NewPersonalQRCodeViewController
+@interface NewPersonalQRCodeViewController : NSObject
 {
     _Bool _isNotAllowAddMeByQRCode;
     _Bool _isShowingInNewWindow;

@@ -5,7 +5,7 @@
 
 @class MMUIButton, RichTextView, UIButton, UIImageView, UILabel;
 
-@interface WCFinderClaimPOIHalfScreenViewController
+@interface WCFinderClaimPOIHalfScreenViewController : NSObject
 {
     UILabel *_titleLabel;
     UIImageView *_wechatImageView;

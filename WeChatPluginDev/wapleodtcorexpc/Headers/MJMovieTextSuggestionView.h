@@ -6,7 +6,7 @@
 @class MMUILabel, NSArray, NSString, UICollectionView;
 @protocol MJMovieTextSuggestionViewDelegate;
 
-@interface MJMovieTextSuggestionView
+@interface MJMovieTextSuggestionView : NSObject
 {
     id <MJMovieTextSuggestionViewDelegate> _delegate;
     MMUILabel *_titleLabel;

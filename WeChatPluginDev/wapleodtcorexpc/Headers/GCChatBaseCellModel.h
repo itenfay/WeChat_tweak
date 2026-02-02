@@ -6,7 +6,7 @@
 @class Channel, ChatroomUserData, GCChatBaseCellLayoutInfo, GCChatRoomMessage, GCContentModel, JumpInfo, NSString, SendChatroomMsgRequest, UIColor;
 @protocol GCChatBaseCellModelDelegate;
 
-@interface GCChatBaseCellModel
+@interface GCChatBaseCellModel : NSObject
 {
     _Bool _isLocalMessage;
     _Bool _isPlaceHoldMessage;

@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, EditVideoSecondCutPromotionButton;
 
-@interface EditVideoSecondCutPromotionButtonShadowWrapper
+@interface EditVideoSecondCutPromotionButtonShadowWrapper : NSObject
 {
     EditVideoSecondCutPromotionButton *_button;
     CAGradientLayer *_backgroundLayer;

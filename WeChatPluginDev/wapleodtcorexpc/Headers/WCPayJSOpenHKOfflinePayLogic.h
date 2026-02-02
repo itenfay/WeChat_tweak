@@ -5,7 +5,7 @@
 
 @protocol WCPayJSOpenHKOfflinePayLogicDelegate;
 
-@interface WCPayJSOpenHKOfflinePayLogic
+@interface WCPayJSOpenHKOfflinePayLogic : NSObject
 {
     id <WCPayJSOpenHKOfflinePayLogicDelegate> _delegate;
 }

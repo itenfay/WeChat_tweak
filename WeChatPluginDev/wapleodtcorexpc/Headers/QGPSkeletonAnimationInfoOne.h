@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPSkeletonAnimationInfoOne
+@interface QGPSkeletonAnimationInfoOne : NSObject
 {
     unsigned long long _index;
     NSString *_name;

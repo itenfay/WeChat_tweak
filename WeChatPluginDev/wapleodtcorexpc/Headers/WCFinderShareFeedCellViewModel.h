@@ -5,7 +5,7 @@
 
 @class WCFinderDataItem, WCFinderShareToMomentsItem;
 
-@interface WCFinderShareFeedCellViewModel
+@interface WCFinderShareFeedCellViewModel : NSObject
 {
     WCFinderDataItem *_dataItem;
     WCFinderShareToMomentsItem *_item;

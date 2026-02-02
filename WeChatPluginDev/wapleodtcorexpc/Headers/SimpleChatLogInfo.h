@@ -5,7 +5,7 @@
 
 @class CMessageWrap, FavoritesItemDataField;
 
-@interface SimpleChatLogInfo
+@interface SimpleChatLogInfo : NSObject
 {
     shared_ptr_09342520 m_dataItem;
     void * m_multiDataItem;

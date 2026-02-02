@@ -5,7 +5,7 @@
 
 @class NSString, TXCBeautifyBaseFilter;
 
-@interface YTBeautyBlurFilter
+@interface YTBeautyBlurFilter : NSObject
 {
     float _verticalTexelSpacing;
     float _horizontalTexelSpacing;

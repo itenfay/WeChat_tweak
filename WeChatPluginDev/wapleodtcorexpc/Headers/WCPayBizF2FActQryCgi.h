@@ -5,7 +5,7 @@
 
 @protocol WCPayBizF2FActQryCgiDelegate;
 
-@interface WCPayBizF2FActQryCgi
+@interface WCPayBizF2FActQryCgi : NSObject
 {
     id <WCPayBizF2FActQryCgiDelegate> _cgiDelegate;
 }

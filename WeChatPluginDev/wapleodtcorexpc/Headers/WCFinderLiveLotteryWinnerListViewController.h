@@ -5,7 +5,7 @@
 
 @class LotteryWinnerListFooterView, LotteryWinnerListHeaderView, MMFinderLiveLotteryInfo, MMFinderLiveLotteryRecordExpiredTipView, MMFinderLiveTaskId, MMTableView, NSData, NSMutableArray, NSString, WCTimeLineFooterView;
 
-@interface WCFinderLiveLotteryWinnerListViewController
+@interface WCFinderLiveLotteryWinnerListViewController : NSObject
 {
     _Bool _enableToFinderChat;
     _Bool _isInLive;

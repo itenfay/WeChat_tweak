@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, UILabel, UIView;
 
-@interface WNAttachmentVoiceView
+@interface WNAttachmentVoiceView : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_totalTimeLabel;

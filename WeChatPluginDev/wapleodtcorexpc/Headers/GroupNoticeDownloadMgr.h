@@ -5,7 +5,7 @@
 
 @class GroupNoticeItemDownloader, NSMutableArray, NSString;
 
-@interface GroupNoticeDownloadMgr
+@interface GroupNoticeDownloadMgr : NSObject
 {
     NSMutableArray *m_downloadItemQueue;
     GroupNoticeItemDownloader *m_downloader;

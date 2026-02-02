@@ -5,7 +5,7 @@
 
 @class UniversalC2CDataUploader;
 
-@interface MultiMediaCgiUploadDataState
+@interface MultiMediaCgiUploadDataState : NSObject
 {
     UniversalC2CDataUploader *_uploader;
 }

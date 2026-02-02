@@ -5,7 +5,7 @@
 
 @class MMFinderLiveSharePlayerView, MMFinderLiveStatusIconShareView, StatusFooterJumpLivePlayerByExportId, WCFinderLiveShareItem;
 
-@interface TextState3rdPartyLiveExportHandler
+@interface TextState3rdPartyLiveExportHandler : NSObject
 {
     StatusFooterJumpLivePlayerByExportId *_liveInfo;
     WCFinderLiveShareItem *_liveShareItem;

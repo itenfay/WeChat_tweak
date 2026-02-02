@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface QBBeaconEventRecord
+@interface QBBeaconEventRecord : NSObject
 {
     _Bool isSuccess;
     _Bool isRealEvent;

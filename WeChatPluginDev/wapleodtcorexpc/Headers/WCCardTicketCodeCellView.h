@@ -6,7 +6,7 @@
 @class NSString, UIView, WCCardCodeAnimator, WCCardDataCardInfo, WCCardDataCardTPInfo;
 @protocol WCCardTicketCodeCellViewDelegate;
 
-@interface WCCardTicketCodeCellView
+@interface WCCardTicketCodeCellView : NSObject
 {
     WCCardDataCardTPInfo *_cardTpInfo;
     WCCardDataCardInfo *_cardInfo;

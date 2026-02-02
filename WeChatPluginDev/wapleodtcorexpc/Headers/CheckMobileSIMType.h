@@ -5,7 +5,7 @@
 
 @class NSString, NSTimer;
 
-@interface CheckMobileSIMType
+@interface CheckMobileSIMType : NSObject
 {
     _Bool hasGetSimType;
     unsigned int businessFlag;

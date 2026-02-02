@@ -5,7 +5,7 @@
 
 @class NSArray, QTrailLineStyle;
 
-@interface QTrailOverlay
+@interface QTrailOverlay : NSObject
 {
     int _linesCount;
     NSArray *_lines;

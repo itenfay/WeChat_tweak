@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCSQLiteLintConfig
+@interface WCSQLiteLintConfig : NSObject
 {
     NSArray *_ennableCheckers;
 }

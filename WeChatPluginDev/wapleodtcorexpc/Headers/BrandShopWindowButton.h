@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface BrandShopWindowButton
+@interface BrandShopWindowButton : NSObject
 {
     UIImageView *_shopWindowButtonTailIcon;
     double _titleTailIconPadding;

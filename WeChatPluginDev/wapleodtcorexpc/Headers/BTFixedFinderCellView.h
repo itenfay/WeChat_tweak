@@ -6,7 +6,7 @@
 @class BTFixedFinderCellViewModel, NSArray, NSMutableArray;
 @protocol BTFixedFinderCellViewDelegate;
 
-@interface BTFixedFinderCellView
+@interface BTFixedFinderCellView : NSObject
 {
     id <BTFixedFinderCellViewDelegate> _finderCellViewDelegate;
     NSMutableArray *_finderItemViewArr;

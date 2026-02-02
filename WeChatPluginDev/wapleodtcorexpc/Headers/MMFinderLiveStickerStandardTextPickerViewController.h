@@ -6,7 +6,7 @@
 @class EditImageTextInputView, MMFinderLiveTextStickerItem, NSString, UIView;
 @protocol MMFinderLiveStickerContentPickerDelegate;
 
-@interface MMFinderLiveStickerStandardTextPickerViewController
+@interface MMFinderLiveStickerStandardTextPickerViewController : NSObject
 {
     id <MMFinderLiveStickerContentPickerDelegate> _delegate;
     unsigned long long _overrideOrientationMask;

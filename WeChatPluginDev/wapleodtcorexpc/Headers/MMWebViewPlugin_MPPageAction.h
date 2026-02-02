@@ -5,7 +5,7 @@
 
 @class MPCommentEditView, MPShareWowEditView, NSMutableArray, NSString, WCActionSheet;
 
-@interface MMWebViewPlugin_MPPageAction
+@interface MMWebViewPlugin_MPPageAction : NSObject
 {
     _Bool _hasForcePortaitWhenCmtViewShow;
     _Bool _hasIgnoreLongPressWhenCmtViewShow;

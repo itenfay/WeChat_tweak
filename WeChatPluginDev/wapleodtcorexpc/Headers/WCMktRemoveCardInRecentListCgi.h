@@ -5,7 +5,7 @@
 
 @protocol WCMktRemoveCardInRecentListCgiDelegate;
 
-@interface WCMktRemoveCardInRecentListCgi
+@interface WCMktRemoveCardInRecentListCgi : NSObject
 {
     id <WCMktRemoveCardInRecentListCgiDelegate> _cgiDelegate;
 }

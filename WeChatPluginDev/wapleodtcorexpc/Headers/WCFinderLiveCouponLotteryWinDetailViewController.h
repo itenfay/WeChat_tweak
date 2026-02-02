@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveLotteryGetPrizeMethodView, MMFinderLiveLotteryInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMUIButton, MMUILabel, MilestoneLotteryCouponRecordInfo, MilestoneLotteryInfo, MilestoneLotteryRedpacketInfo, NSString, RichTextView, UIImageView, UIScrollView, UIView, WCAddressBaseAddress;
 
-@interface WCFinderLiveCouponLotteryWinDetailViewController
+@interface WCFinderLiveCouponLotteryWinDetailViewController : NSObject
 {
     _Bool _hasRefreshData;
     _Bool _isInLive;

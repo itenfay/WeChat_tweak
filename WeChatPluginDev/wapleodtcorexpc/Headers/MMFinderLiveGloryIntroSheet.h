@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMUIButton, MMUIImageView, MMUILabel, MMWebImageView, UIImageView, UIScrollView;
 @protocol MMFinderLiveGloryIntroSheetDelegate;
 
-@interface MMFinderLiveGloryIntroSheet
+@interface MMFinderLiveGloryIntroSheet : NSObject
 {
     int _showSource;
     MMFinderLiveTaskId *_taskId;

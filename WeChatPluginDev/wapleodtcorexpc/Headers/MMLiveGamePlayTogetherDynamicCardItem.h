@@ -5,7 +5,7 @@
 
 @class GamePlayTogetherDynamicItemList_GamePlayTogetherDynamicItem;
 
-@interface MMLiveGamePlayTogetherDynamicCardItem
+@interface MMLiveGamePlayTogetherDynamicCardItem : NSObject
 {
     double _contentWidth;
     GamePlayTogetherDynamicItemList_GamePlayTogetherDynamicItem *_internalDynamicItem;

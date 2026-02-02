@@ -5,7 +5,7 @@
 
 @protocol WCPayBusiF2FZeroCallBackCgiDelegate;
 
-@interface WCPayBusiF2FZeroCallBackCgi
+@interface WCPayBusiF2FZeroCallBackCgi : NSObject
 {
     id <WCPayBusiF2FZeroCallBackCgiDelegate> _m_cgiDelegate;
 }

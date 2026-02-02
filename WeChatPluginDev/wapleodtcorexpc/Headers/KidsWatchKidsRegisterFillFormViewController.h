@@ -6,7 +6,7 @@
 @class KidsWatchButton, KidsWatchFlexibleImageView, KidsWatchRegisterFormCardView, NSString, WCAgreementCheckBox;
 @protocol KidsWatchKidsRegisterFillFormViewControllerDelegate;
 
-@interface KidsWatchKidsRegisterFillFormViewController
+@interface KidsWatchKidsRegisterFillFormViewController : NSObject
 {
     KidsWatchRegisterFormCardView *_formCardView;
     KidsWatchFlexibleImageView *_bottomBackgroundView;

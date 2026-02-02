@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetNpsSurveyCGI
+@interface WCFinderGetNpsSurveyCGI : NSObject
 {
     unsigned long long _taskId;
     unsigned long long _feedId;

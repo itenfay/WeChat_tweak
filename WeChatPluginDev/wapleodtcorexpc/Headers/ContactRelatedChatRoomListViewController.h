@@ -5,7 +5,7 @@
 
 @class CContact, ContactRelatedGroupLogic, NSString;
 
-@interface ContactRelatedChatRoomListViewController
+@interface ContactRelatedChatRoomListViewController : NSObject
 {
     NSString *_customTitle;
     ContactRelatedGroupLogic *_relatedGroupLogic;

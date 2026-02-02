@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAudioPlayer;
 
-@interface WAJSContextPlugin_OpenVoice
+@interface WAJSContextPlugin_OpenVoice : NSObject
 {
     AVAudioPlayer *_player;
 }

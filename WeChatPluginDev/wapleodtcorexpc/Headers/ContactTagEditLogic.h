@@ -6,7 +6,7 @@
 @class CContact, NSArray, NSString;
 @protocol ContactTagEditLogicDelegate;
 
-@interface ContactTagEditLogic
+@interface ContactTagEditLogic : NSObject
 {
     CContact *m_contact;
     unsigned int _uiJobID;

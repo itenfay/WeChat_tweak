@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveGloryTopView, MMFinderLiveOnlineStateRewardCountView, MMFinderLiveOnlineStateSessionInfo, MMFinderLiveOnlineUserLogic, MMFinderLiveUserStateItem, MMPageSheetAdapter, MMUIActivityIndicatorView, MMWebImageView, NSMutableArray, NSString, RichTextView, UICollectionView, UILabel, UIView, WCPinBottomCollectionViewFlowLayout;
 @protocol MMFinderLiveOnlineStateViewDataSource;
 
-@interface MMFinderLiveOnlineStateView
+@interface MMFinderLiveOnlineStateView : NSObject
 {
     _Bool isOpening;
     _Bool _shouldShowRewardAmount;

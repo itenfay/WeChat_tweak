@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, NSString, RichTextView, TextStateSectionView, UIScrollView, UIView, UIViewPropertyAnimator, WCFinderFullDoubleLikeEduView;
 
-@interface TextStateFullScreenCardContentView
+@interface TextStateFullScreenCardContentView : NSObject
 {
     _Bool _expandContent;
     _Bool _showSameFriendDescription;

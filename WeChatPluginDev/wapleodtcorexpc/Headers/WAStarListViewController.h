@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UICollectionView, UIView, WAMainFrameTaskBarDeleteActionWindow, WAStarCollectionViewLayout, WAStarListViewModel;
 
-@interface WAStarListViewController
+@interface WAStarListViewController : NSObject
 {
     _Bool _isInEditMode;
     WAMainFrameTaskBarDeleteActionWindow *_operationWindow;

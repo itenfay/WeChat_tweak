@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureStillImageOutput, NSDictionary;
 
-@interface GPUImageStillCamera
+@interface GPUImageStillCamera : NSObject
 {
     AVCaptureStillImageOutput *photoOutput;
     _Bool requiresFrontCameraTextureCacheCorruptionWorkaround;

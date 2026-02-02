@@ -5,7 +5,7 @@
 
 @class UserAvatarInfo;
 
-@interface WANicknameAndHeadAuthorizeSheetInfo
+@interface WANicknameAndHeadAuthorizeSheetInfo : NSObject
 {
     UserAvatarInfo *_avatarInfo;
 }

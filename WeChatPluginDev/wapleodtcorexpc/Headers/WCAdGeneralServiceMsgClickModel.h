@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCAdGeneralServiceMsgClickModel
+@interface WCAdGeneralServiceMsgClickModel : NSObject
 {
     int _type;
     unsigned long long _appointmentId;

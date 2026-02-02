@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, UIImageView, WCCanvasDynamicDataLoader, WXFullScreenGestureRecognizer;
 
-@interface WCCanvasPureImageComponent
+@interface WCCanvasPureImageComponent : NSObject
 {
     WCCanvasDynamicDataLoader *_dataLoader;
     UIImageView *_m_imageView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveAnchorCloseLivePageData, WCFinderLiveCompleteDataModel, WCFinderLiveCompleteDataPageView;
 
-@interface WCFinderLiveCompleteDataView
+@interface WCFinderLiveCompleteDataView : NSObject
 {
     CDUnknownBlockType _itemSelectBlock;
     CDUnknownBlockType _dataViewBlock;

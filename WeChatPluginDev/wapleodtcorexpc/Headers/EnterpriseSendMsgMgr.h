@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol EnterpriseSendMsgMgrDelegate;
 
-@interface EnterpriseSendMsgMgr
+@interface EnterpriseSendMsgMgr : NSObject
 {
     NSMutableArray *arySendMsgRunningQueue;
     NSMutableArray *arySendMsgWaitingQueue;

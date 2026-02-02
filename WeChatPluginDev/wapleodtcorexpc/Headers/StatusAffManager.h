@@ -5,7 +5,7 @@
 
 @class NSString, StatusLogicCommentManager, StatusStorageManager, StatusXmlParseManager;
 
-@interface StatusAffManager
+@interface StatusAffManager : NSObject
 {
     StatusLogicCommentManager *_affStatusLogicCommentManager;
     StatusXmlParseManager *_statusXmlParseManager;

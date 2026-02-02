@@ -6,7 +6,7 @@
 @class FavFullScreenImageViewController, MMUIActivityIndicatorView, MMUIImageView, MMUILabel, NSString;
 @protocol MailRTEImageAttachmentViewDelegate;
 
-@interface MailRTEImageAttachmentView
+@interface MailRTEImageAttachmentView : NSObject
 {
     MMUIActivityIndicatorView *m_loadingView;
     MMUILabel *m_failLabel;

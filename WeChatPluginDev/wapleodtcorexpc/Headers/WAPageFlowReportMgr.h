@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WAPageFlowAppInfo, WAPageFlowObject, WAPageFlowSessionInfo;
 
-@interface WAPageFlowReportMgr
+@interface WAPageFlowReportMgr : NSObject
 {
     WAPageFlowObject *m_currentPage;
     unsigned int m_EntranceWebviewID;

@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol JSApiScopeConfirmWindowDelegate;
 
-@interface JSApiScopeConfirmWindow
+@interface JSApiScopeConfirmWindow : NSObject
 {
     NSString *_appName;
     NSString *_appIconURL;

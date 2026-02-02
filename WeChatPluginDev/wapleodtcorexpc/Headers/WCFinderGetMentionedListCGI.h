@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetMentionedListCGI
+@interface WCFinderGetMentionedListCGI : NSObject
 {
     NSString *_lastDisplayId;
     CDUnknownBlockType _successful;

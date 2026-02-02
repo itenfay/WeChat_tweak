@@ -6,7 +6,7 @@
 @class UIImageView, UILabel, WCPayWebImageView, WCRedEnvelopesReceiveHomePromotionViewModel;
 @protocol WCRedEnvelopesReceiveHomePromotionViewDelegate;
 
-@interface WCRedEnvelopesReceiveHomePromotionView
+@interface WCRedEnvelopesReceiveHomePromotionView : NSObject
 {
     WCPayWebImageView *_iconImageView;
     UILabel *_titleLabel;

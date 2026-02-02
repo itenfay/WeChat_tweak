@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAudioSessionDataSourceDescription, FinderMusicReportInfo, MJAITemplateAssetOptions, MJCameraTemplateReportObject, MJMovieComposingAssetsClassifyHelper, MJPublisherContext, MJShootBeautyInspectorViewModel, MJShootComposingTemplatePanelViewModel, MJShootFaceEffectInspectorViewModel, MJShootFilterInspectorViewModel, MJShootMakeupInspectorViewModel, MJShootingMusicPickingViewModel, MJTemplateCamoSession, MMAssetForPHAssetFramework, MMBGMSelectedMusicResult, MMCameraTemplateItem, MMImagePickerManagerOptionObj, NSMutableDictionary, NSString, OMCGeographicInfo, OMJCDNBridgeService, OMJCaptureSession, OMJPublisherSessionMetrics, RecommendedMusicInfo, WCFinderFeedVideoFetcher, WCShortVideoToolBarInitParams;
 @protocol MJShootComposingViewModelDelegate;
 
-@interface MJShootComposingViewModel
+@interface MJShootComposingViewModel : NSObject
 {
     _Bool _shouldOpenMusicPanelForFavMusicEntry;
     _Bool _isPickerEditingEnabled;

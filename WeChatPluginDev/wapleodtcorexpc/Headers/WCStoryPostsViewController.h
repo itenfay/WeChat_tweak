@@ -5,7 +5,7 @@
 
 @class MMUIViewController, MMUnderlineTabsView, NSString, UILabel, UISegmentedControl, WCStoryAlbumViewController, WCStoryHistoryViewController;
 
-@interface WCStoryPostsViewController
+@interface WCStoryPostsViewController : NSObject
 {
     unsigned int _scene;
     UISegmentedControl *_segmentedControl;

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface OMJStickerSegment
+@interface OMJStickerSegment : NSObject
 {
     struct SharedPtr<XMJStickerSegment> _backingStickerSegment;
 }

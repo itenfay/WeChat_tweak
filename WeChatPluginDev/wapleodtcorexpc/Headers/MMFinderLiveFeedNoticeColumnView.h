@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMUIButton, MMUILabel, UIImageView, UIView, WCFinderContact, WCFinderHeadImageView;
 
-@interface MMFinderLiveFeedNoticeColumnView
+@interface MMFinderLiveFeedNoticeColumnView : NSObject
 {
     CDUnknownBlockType _contentButtonBlock;
     WCFinderContact *_anchorContact;

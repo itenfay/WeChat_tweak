@@ -5,7 +5,7 @@
 
 @class BrandActionReportLogicController, NSMutableArray, NSString, WCStatTimerHelper;
 
-@interface MMWebViewPlugin_ReportPageEvent
+@interface MMWebViewPlugin_ReportPageEvent : NSObject
 {
     NSString *_nsSessionID;
     NSString *_referLoadUrl;

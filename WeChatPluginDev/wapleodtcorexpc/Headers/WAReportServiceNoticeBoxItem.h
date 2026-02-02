@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportServiceNoticeBoxItem
+@interface WAReportServiceNoticeBoxItem : NSObject
 {
     unsigned int _opType;
     unsigned int _inBoxIndex;

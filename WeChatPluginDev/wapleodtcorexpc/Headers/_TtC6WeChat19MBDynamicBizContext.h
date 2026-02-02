@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat19MBDynamicBizContext
+@interface _TtC6WeChat19MBDynamicBizContext : NSObject
 {
     MISSING_TYPE *mbCoverViewMgr;
 }

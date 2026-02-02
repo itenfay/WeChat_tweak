@@ -6,7 +6,7 @@
 @class MMBGMUniqueMutableArray, NSData, NSMutableArray;
 @protocol MJCameraMusicTabViewModelDataSource, MJCameraMusicTabViewModelDelegate, MMBGMSelectedMusicDataProtocol;
 
-@interface MJCameraMusicTabViewModel
+@interface MJCameraMusicTabViewModel : NSObject
 {
     _Bool _loadingData;
     _Bool _recommendedDataLoaded;

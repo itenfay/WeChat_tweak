@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveActivityInitTorchCgi
+@interface WCFinderLiveActivityInitTorchCgi : NSObject
 {
     unsigned long long _torchSource;
     CDUnknownBlockType _successBlock;

@@ -6,7 +6,7 @@
 @class FinderObjectPlaceHolderInfo, NSString, RichTextView, UIImageView, UIView, WCFinderAuthInfoIconView, WCFinderCustomImageRichTextView, WCFinderDataItem, WCFinderFeedContentVM, WCFinderGradientView, WCFinderHeadImageView, WCFinderSimplePlayerView;
 @protocol WCFinderLeadToMachineTableViewCellDelegate;
 
-@interface WCFinderLeadToMachineTableViewCell
+@interface WCFinderLeadToMachineTableViewCell : NSObject
 {
     id <WCFinderLeadToMachineTableViewCellDelegate> _delegate;
     WCFinderFeedContentVM *_contentVM;

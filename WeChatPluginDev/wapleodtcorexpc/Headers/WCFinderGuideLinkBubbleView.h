@@ -5,7 +5,7 @@
 
 @class MMWebImageView, RichTextView, WCFinderGuideLinkBubbleModel;
 
-@interface WCFinderGuideLinkBubbleView
+@interface WCFinderGuideLinkBubbleView : NSObject
 {
     MMWebImageView *_iconImageView;
     RichTextView *_textView;

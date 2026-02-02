@@ -5,7 +5,7 @@
 
 @class MMGroupLiveTask, MMLiveApplyConnectMicAudience, MMLiveConnectMicOperationPanel, MMLiveConnectMicVideoPreviewPanel, NSMutableSet, NSString, OrderedDictionary, UIView;
 
-@interface MMLiveGroupConnectMicLogic
+@interface MMLiveGroupConnectMicLogic : NSObject
 {
     _Bool _canConnectMic;
     _Bool _isConnectingMic;

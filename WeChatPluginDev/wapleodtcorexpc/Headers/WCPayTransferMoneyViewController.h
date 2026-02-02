@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CgiTransferBeforeResp, CgiUnionTransferBeforeResp, GetTransferWordingResponse, KindaOpenIMInfoView, MMHeadImageView, MMTipsViewController, MMUIActivityIndicatorView, MMUILabel, NSDictionary, NSMutableString, NSString, RichTextView, UIButton, UILabel, UIView, WCPayBeforeTransferCgi, WCPayDecimalKeyboardView, WCPayGetTransferWordingCgi, WCPayMoneyTextFieldItem, WCPayNoticeBanner, WCPayRemarkPageSheet, WCPayRemarkPageSheetConfig, WCPayTextField, WCPayTransferMoneyAntiCheatUIView, WCPayUnionTransferBeforeCgi, WCUIAlertView;
 @protocol WCPayTransferMoneyViewControllerDelegate;
 
-@interface WCPayTransferMoneyViewController
+@interface WCPayTransferMoneyViewController : NSObject
 {
     UIButton *m_footerButton;
     id <WCPayTransferMoneyViewControllerDelegate> m_delegate;

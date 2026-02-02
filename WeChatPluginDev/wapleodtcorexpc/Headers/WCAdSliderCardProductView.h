@@ -6,7 +6,7 @@
 @class CAAnimation, CAGradientLayer, MMUIButton, MMUILabel, MMUIView, NSString, WCAdSliderCardLogic, WCAdSliderCardProductInfo, WCAdSliderCardProductItem, WCAdURLImageView, WCDataItem;
 @protocol WCAdSliderCardProductViewDelegate;
 
-@interface WCAdSliderCardProductView
+@interface WCAdSliderCardProductView : NSObject
 {
     _Bool _isDetail;
     _Bool _isMediaPlayProcessed;

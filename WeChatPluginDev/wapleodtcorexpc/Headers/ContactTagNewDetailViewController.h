@@ -6,7 +6,7 @@
 @class ContactTagData, ContactsSearchController, MMTableView, MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, UIView;
 @protocol ContactTagNewDetailViewControllerDelegate;
 
-@interface ContactTagNewDetailViewController
+@interface ContactTagNewDetailViewController : NSObject
 {
     _Bool _isNoNeedAddButtonInEmptyView;
     _Bool _isRemovingMember;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString;
 @protocol SettingModifyEmailLogicDelegate;
 
-@interface SettingModifyEmailLogic
+@interface SettingModifyEmailLogic : NSObject
 {
     NSString *m_unbindOKTip;
     id <SettingModifyEmailLogicDelegate> _delegate;

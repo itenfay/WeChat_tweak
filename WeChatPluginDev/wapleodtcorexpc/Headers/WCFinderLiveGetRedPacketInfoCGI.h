@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSArray, NSData, NSString;
 
-@interface WCFinderLiveGetRedPacketInfoCGI
+@interface WCFinderLiveGetRedPacketInfoCGI : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     unsigned long long _liveId;

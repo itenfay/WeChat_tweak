@@ -6,7 +6,7 @@
 @class HalfPage, MMImageView, MMUILabel, NSString, UIView;
 @protocol WCPaySaveQrcodeSuccessHalfPageDelegate;
 
-@interface WCPaySaveQrcodeSuccessHalfPage
+@interface WCPaySaveQrcodeSuccessHalfPage : NSObject
 {
     id <WCPaySaveQrcodeSuccessHalfPageDelegate> _m_delegate;
     MMUILabel *_titleLabel;

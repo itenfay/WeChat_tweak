@@ -5,7 +5,7 @@
 
 @class FinderJumpLiveReservationNecessaryParams, FinderLiveNoticeInfo, NSString;
 
-@interface WCFinderJumpInfoDynamicCarouselLiveNoticeViewModel
+@interface WCFinderJumpInfoDynamicCarouselLiveNoticeViewModel : NSObject
 {
     FinderJumpLiveReservationNecessaryParams *_liveNoticeParams;
     FinderLiveNoticeInfo *_liveNoticeInfo;

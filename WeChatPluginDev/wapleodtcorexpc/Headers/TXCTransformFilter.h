@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class TXCGlFrameBuffer, TXCGlProgram;
 @protocol TXIGlContext;
 
-@interface TXCTransformFilter
+@interface TXCTransformFilter : NSObject
 {
     id <TXIGlContext> _context;
     TXCGlFrameBuffer *_frameBuffer;

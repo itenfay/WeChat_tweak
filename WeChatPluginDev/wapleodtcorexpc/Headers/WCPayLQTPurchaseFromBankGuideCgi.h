@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTPurchaseFromBankGuideCgiDelegate;
 
-@interface WCPayLQTPurchaseFromBankGuideCgi
+@interface WCPayLQTPurchaseFromBankGuideCgi : NSObject
 {
     id <WCPayLQTPurchaseFromBankGuideCgiDelegate> _cgiDelegate;
 }

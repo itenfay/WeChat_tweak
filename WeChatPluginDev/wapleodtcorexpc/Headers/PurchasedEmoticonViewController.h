@@ -5,7 +5,7 @@
 
 @class EmoticonStoreFootView, MMTableView, ModEmotionRecordCgi, NSMutableArray, NSString;
 
-@interface PurchasedEmoticonViewController
+@interface PurchasedEmoticonViewController : NSObject
 {
     NSMutableArray *m_arrTableData;
     MMTableView *m_tableView;

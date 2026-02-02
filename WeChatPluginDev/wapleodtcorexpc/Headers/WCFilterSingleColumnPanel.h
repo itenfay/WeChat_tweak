@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString;
 
-@interface WCFilterSingleColumnPanel
+@interface WCFilterSingleColumnPanel : NSObject
 {
     MMTableView *m_tableView;
 }

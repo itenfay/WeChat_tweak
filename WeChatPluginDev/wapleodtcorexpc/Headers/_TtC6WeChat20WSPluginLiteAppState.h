@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat20WSPluginLiteAppState
+@interface _TtC6WeChat20WSPluginLiteAppState : NSObject
 {
     MISSING_TYPE *bizScrollArea;
 }

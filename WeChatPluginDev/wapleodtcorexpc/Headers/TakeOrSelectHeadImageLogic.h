@@ -6,7 +6,7 @@
 @class NSString, UIViewController;
 @protocol TakeOrSelectHeadImageLogicDelegate;
 
-@interface TakeOrSelectHeadImageLogic
+@interface TakeOrSelectHeadImageLogic : NSObject
 {
     UIViewController *m_viewController;
     id <TakeOrSelectHeadImageLogicDelegate> m_delegate;

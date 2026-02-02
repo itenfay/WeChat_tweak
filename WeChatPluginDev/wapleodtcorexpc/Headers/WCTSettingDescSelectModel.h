@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCTSettingDescSelectModel
+@interface WCTSettingDescSelectModel : NSObject
 {
     NSString *_desc;
 }

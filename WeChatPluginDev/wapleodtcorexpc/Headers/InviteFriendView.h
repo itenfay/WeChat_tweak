@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, NSString, UIImageView, UITextView;
 @protocol InviteFriendViewDelegate;
 
-@interface InviteFriendView
+@interface InviteFriendView : NSObject
 {
     UIImageView *m_imageQRView;
     MMUIActivityIndicatorView *m_loadingView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage, UIImageView, UIScrollView, WCFinderAnimationLoadingView, WCFinderFullScreenImageBrowseTransition, WXFullScreenGestureRecognizer;
 
-@interface WCFinderFullScreenImageBrowseViewController
+@interface WCFinderFullScreenImageBrowseViewController : NSObject
 {
     UIImage *_originImage;
     NSString *_imageURL;

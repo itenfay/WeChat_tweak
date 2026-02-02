@@ -5,7 +5,7 @@
 
 @class MMLiteAppDownloadMgr, NSDictionary, NSMutableDictionary, NSString;
 
-@interface LiteAppJsApiSaveToPhotosAlbum
+@interface LiteAppJsApiSaveToPhotosAlbum : NSObject
 {
     NSMutableDictionary *_result;
     NSDictionary *_tailInfo;

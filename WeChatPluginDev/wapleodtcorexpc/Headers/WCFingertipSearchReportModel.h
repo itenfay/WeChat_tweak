@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFingertipSearchReportModel
+@interface WCFingertipSearchReportModel : NSObject
 {
     _Bool _hasReddot;
     long long _action;

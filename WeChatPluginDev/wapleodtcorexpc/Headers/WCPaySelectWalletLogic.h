@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPaySelectWalletViewController, WCPayWalletInfo;
 
-@interface WCPaySelectWalletLogic
+@interface WCPaySelectWalletLogic : NSObject
 {
     WCPaySelectWalletViewController *selectWalletViewController;
     WCPayWalletInfo *selectedWallet;

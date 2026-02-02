@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface VideoPreloadReporter
+@interface VideoPreloadReporter : NSObject
 {
     NSMutableDictionary *m_dict;
 }

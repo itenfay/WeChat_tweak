@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, UIButton, UILabel, WCFinderProfilePostTipsInfo;
 
-@interface WCFinderStreamProfileHeaderPostTipsView
+@interface WCFinderStreamProfileHeaderPostTipsView : NSObject
 {
     WCFinderProfilePostTipsInfo *_info;
     MMWebImageView *_imageView;

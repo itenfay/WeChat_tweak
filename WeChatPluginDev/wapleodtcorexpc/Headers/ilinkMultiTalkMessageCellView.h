@@ -5,7 +5,7 @@
 
 @class UIImageView, ilinkMultiTalkMessageViewModel;
 
-@interface ilinkMultiTalkMessageCellView
+@interface ilinkMultiTalkMessageCellView : NSObject
 {
     UIImageView *_bubbleView;
 }

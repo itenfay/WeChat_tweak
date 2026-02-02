@@ -5,7 +5,7 @@
 
 @class NSString, SettingModifyEmailOnBindHeadView, UIButton;
 
-@interface SettingModifyEmailOnBindViewController
+@interface SettingModifyEmailOnBindViewController : NSObject
 {
     SettingModifyEmailOnBindHeadView *m_commonHeadView;
     UIButton *_unbindEmailButton;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveGuideFollowAdInfoCgi
+@interface MMFinderLiveGuideFollowAdInfoCgi : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

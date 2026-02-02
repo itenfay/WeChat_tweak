@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol QGPSkeletonAnimationInfoOne;
 
-@interface QGPSkeletonAnimationInfos
+@interface QGPSkeletonAnimationInfos : NSObject
 {
     NSArray<QGPSkeletonAnimationInfoOne> *_animationInfo;
 }

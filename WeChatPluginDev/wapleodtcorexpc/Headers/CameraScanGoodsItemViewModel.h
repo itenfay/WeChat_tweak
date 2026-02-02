@@ -5,7 +5,7 @@
 
 @class CameraScanGoodsItemExchangeInfo, CameraScanGoodsItemPerformanceInfo, CameraScanGoodsItemQualityInfo, NSData, NSNumber, NSString, UIImage;
 
-@interface CameraScanGoodsItemViewModel
+@interface CameraScanGoodsItemViewModel : NSObject
 {
     unsigned int _scanType;
     unsigned int _itemSource;

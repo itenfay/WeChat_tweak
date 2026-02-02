@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, SvrErrorTipViewController;
 
-@interface DisasterNoticeMgr
+@interface DisasterNoticeMgr : NSObject
 {
     unsigned int m_gettingDisasterInfoNoticeId;
     NSMutableDictionary *m_dicSvrErrorInfo;

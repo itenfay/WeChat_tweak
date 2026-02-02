@@ -6,7 +6,7 @@
 @class CContact, MMTimer, MsgNewImgDataLogic, NSMutableArray, NSMutableSet, NSString;
 @protocol ChatRoomToolLastUseWeAppLogicDelegate;
 
-@interface ChatRoomToolLastUseWeAppLogic
+@interface ChatRoomToolLastUseWeAppLogic : NSObject
 {
     MMTimer *m_weAppSearchTimer;
     CContact *_chatRoomContact;

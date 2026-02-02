@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIImageView, MMUILabel;
 @protocol BrandProfileNaviLiveBarDelegate;
 
-@interface BrandProfileNaviLiveBar
+@interface BrandProfileNaviLiveBar : NSObject
 {
     id <BrandProfileNaviLiveBarDelegate> _delegate;
     MMUIImageView *_finderIcon;

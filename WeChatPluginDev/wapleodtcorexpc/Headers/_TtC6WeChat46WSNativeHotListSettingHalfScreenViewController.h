@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat46WSNativeHotListSettingHalfScreenViewController
+@interface _TtC6WeChat46WSNativeHotListSettingHalfScreenViewController : NSObject
 {
     MISSING_TYPE *settingItems;
     MISSING_TYPE *settingDelegate;

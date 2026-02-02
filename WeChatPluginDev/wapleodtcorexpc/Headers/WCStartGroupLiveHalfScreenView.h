@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIView, WCFinderStarterLiveViewModel;
 
-@interface WCStartGroupLiveHalfScreenView
+@interface WCStartGroupLiveHalfScreenView : NSObject
 {
     CDUnknownBlockType _confirmCallback;
     CDUnknownBlockType _cancelCallback;

@@ -6,7 +6,7 @@
 @class AVAudioPlayer, FakeStrongNotificationViewController, MMTableView, MMTimer, MMUIButton, MMUILabel, MMUIView, NSArray, NSMutableArray, NSMutableDictionary, NSString, StrongNotificationContentView, UIImageView;
 @protocol StrongNotificationViewControllerDelegate;
 
-@interface StrongNotificationViewController
+@interface StrongNotificationViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableDictionary *m_cellHeightDic;

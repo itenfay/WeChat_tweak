@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GameChatGroupCellLayout
+@interface GameChatGroupCellLayout : NSObject
 {
     int _maxCondtionNumLine;
     int _maxTagNumLine;

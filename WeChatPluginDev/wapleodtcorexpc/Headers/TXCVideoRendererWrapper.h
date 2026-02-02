@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, TXCDispatchQueue, TXCDroppableDispatcher, TXCGSensor, TXCVideoRenderConfig, UIView;
 @protocol TXILocalVideoRenderer, TXILocalVideoRendererDelegate;
 
-@interface TXCVideoRendererWrapper
+@interface TXCVideoRendererWrapper : NSObject
 {
     id <TXILocalVideoRendererDelegate> rendererDelegate;
     TXCGSensor *gSensor;

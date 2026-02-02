@@ -5,7 +5,7 @@
 
 @class GameSkStoreController, GameWebDurationReport, GameWebViewClientReportRecord, MMTimer, NSMutableArray, NSMutableDictionary, NSNumber;
 
-@interface MMWebViewPlugin_GameCenter
+@interface MMWebViewPlugin_GameCenter : NSObject
 {
     _Bool _canStartRender;
     _Bool _hasCallInitEnd;

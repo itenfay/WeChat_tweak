@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat14VoIPLCKManager
+@interface _TtC6WeChat14VoIPLCKManager : NSObject
 {
     MISSING_TYPE *conversationManager;
     MISSING_TYPE *haveAProcessingCall;

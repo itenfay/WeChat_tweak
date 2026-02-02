@@ -6,7 +6,7 @@
 @class NSString, NSURLRequest;
 @protocol WSTemplateJSLogicImplDelegate;
 
-@interface WSTemplateJSLogicImpl
+@interface WSTemplateJSLogicImpl : NSObject
 {
     id <WSTemplateJSLogicImplDelegate> _handlerDelegate;
 }

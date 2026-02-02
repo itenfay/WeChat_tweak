@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GCRecursiveRunTask, NSMutableSet, NSString;
 
-@interface GCGroupServer
+@interface GCGroupServer : NSObject
 {
     int _roomStatusLongPollingSeq;
     GCRecursiveRunTask *_updateGroupTask;

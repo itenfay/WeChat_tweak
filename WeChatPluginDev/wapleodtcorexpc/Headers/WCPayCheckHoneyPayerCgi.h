@@ -6,7 +6,7 @@
 @class CheckHoneyPayerReq;
 @protocol WCPayCheckHoneyPayerCgiDelegate;
 
-@interface WCPayCheckHoneyPayerCgi
+@interface WCPayCheckHoneyPayerCgi : NSObject
 {
 }
 

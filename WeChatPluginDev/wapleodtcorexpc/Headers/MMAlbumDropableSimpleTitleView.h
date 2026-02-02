@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UIImageView;
 @protocol MMAlbumDropableTitleViewDelegate;
 
-@interface MMAlbumDropableSimpleTitleView
+@interface MMAlbumDropableSimpleTitleView : NSObject
 {
     _Bool _active;
     id <MMAlbumDropableTitleViewDelegate> _titleViewDelegate;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat6MEMeta
+@interface _TtC6WeChat6MEMeta : NSObject
 {
     MISSING_TYPE *ext;
     MISSING_TYPE *emojiKey;

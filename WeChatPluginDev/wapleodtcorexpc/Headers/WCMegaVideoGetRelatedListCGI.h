@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MegaVideoClientStatus, NSData, NSString, WCMegaVideoLocation;
 
-@interface WCMegaVideoGetRelatedListCGI
+@interface WCMegaVideoGetRelatedListCGI : NSObject
 {
     int _scene;
     NSData *_lastBuff;

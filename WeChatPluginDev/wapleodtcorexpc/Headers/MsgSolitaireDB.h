@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MsgSolitaireDB
+@interface MsgSolitaireDB : NSObject
 {
     WCTDatabase *_database;
     WCTTable *_analysistable;

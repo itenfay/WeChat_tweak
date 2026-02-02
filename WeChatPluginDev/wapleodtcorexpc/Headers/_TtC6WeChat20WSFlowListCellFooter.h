@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat20WSFlowListCellFooter
+@interface _TtC6WeChat20WSFlowListCellFooter : NSObject
 {
     MISSING_TYPE *label;
     MISSING_TYPE *model;

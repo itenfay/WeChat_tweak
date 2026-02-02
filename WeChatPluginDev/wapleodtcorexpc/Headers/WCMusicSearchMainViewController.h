@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicInfo, MMPageSheetAdapter, NSArray, NSString, UIViewController, WCMusicListenHistoryViewController, WCMusicSearchContentViewController, WCMusicSearchContext, WCMusicSearchReporter, WCMusicSmartBoxViewController, WCStateMachine;
 
-@interface WCMusicSearchMainViewController
+@interface WCMusicSearchMainViewController : NSObject
 {
     _Bool _isEmbededMode;
     MMPageSheetAdapter *_adapter;

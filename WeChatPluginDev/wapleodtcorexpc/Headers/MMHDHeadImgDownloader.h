@@ -6,7 +6,7 @@
 @class NSMutableDictionary;
 @protocol HeadImgDownloaderDelegate;
 
-@interface MMHDHeadImgDownloader
+@interface MMHDHeadImgDownloader : NSObject
 {
     id <HeadImgDownloaderDelegate> downloadDelegate;
     NSMutableDictionary *_m_downloadTaskDic;

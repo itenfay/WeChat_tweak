@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoiceAppMsgItem
+@interface VoiceAppMsgItem : NSObject
 {
     NSString *_voiceurl;
     NSString *_aeskey;

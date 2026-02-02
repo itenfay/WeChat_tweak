@@ -5,7 +5,7 @@
 
 @class UILabel, UIView, WecoinPriceInfo;
 
-@interface WCPayCoinView
+@interface WCPayCoinView : NSObject
 {
     WecoinPriceInfo *_priceInfo;
     UILabel *_amountLabel;

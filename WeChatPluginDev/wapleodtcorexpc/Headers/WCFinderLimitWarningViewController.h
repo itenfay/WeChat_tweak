@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedDetailStatusView;
 
-@interface WCFinderLimitWarningViewController
+@interface WCFinderLimitWarningViewController : NSObject
 {
     WCFinderFeedDetailStatusView *_statusView;
 }

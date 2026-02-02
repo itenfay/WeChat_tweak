@@ -5,7 +5,7 @@
 
 @class NSString, OMCTransitionDesc;
 
-@interface OMCTransitionSegment
+@interface OMCTransitionSegment : NSObject
 {
 }
 

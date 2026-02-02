@@ -5,7 +5,7 @@
 
 @class MMScrollView, MMTableView, NSArray, NSString;
 
-@interface TemplateMsgRecvViewController
+@interface TemplateMsgRecvViewController : NSObject
 {
     NSString *_username;
     MMTableView *_tableView;

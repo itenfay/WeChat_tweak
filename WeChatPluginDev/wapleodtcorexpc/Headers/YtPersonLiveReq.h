@@ -5,7 +5,7 @@
 
 @class NSString, YtImageInfo, YtPersonLive;
 
-@interface YtPersonLiveReq
+@interface YtPersonLiveReq : NSObject
 {
     int _live_type;
     NSString *_app_id;

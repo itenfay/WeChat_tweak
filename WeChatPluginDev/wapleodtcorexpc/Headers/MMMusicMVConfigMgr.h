@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMusicMVConfigMgr
+@interface MMMusicMVConfigMgr : NSObject
 {
     _Bool _degradeToH5;
 }

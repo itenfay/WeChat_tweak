@@ -5,7 +5,7 @@
 
 @class NSString, QBASIHTTPRequest, UITableView, UIViewController;
 
-@interface QBASIAuthenticationDialog
+@interface QBASIAuthenticationDialog : NSObject
 {
     QBASIHTTPRequest *request;
     int type;

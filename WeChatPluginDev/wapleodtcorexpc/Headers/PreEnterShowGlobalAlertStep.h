@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSNumber, NSString, PasswordLogic, WCAccountBindPhoneControlLogic;
 
-@interface PreEnterShowGlobalAlertStep
+@interface PreEnterShowGlobalAlertStep : NSObject
 {
     PasswordLogic *m_changePasswdLogic;
     WCAccountBindPhoneControlLogic *m_changePhoneLogic;

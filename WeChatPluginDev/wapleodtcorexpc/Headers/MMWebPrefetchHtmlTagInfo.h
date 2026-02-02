@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMWebPrefetchHtmlTagInfo
+@interface MMWebPrefetchHtmlTagInfo : NSObject
 {
     NSString *_htmlTag;
     NSString *_src;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_uploadToCommonCDN
+@interface WAJSEventHandler_uploadToCommonCDN : NSObject
 {
     NSString *_fileKey;
     long long _finishedLength;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MinimizeAdsorbFloatingViewInfo
+@interface MinimizeAdsorbFloatingViewInfo : NSObject
 {
     double _positionX;
     double _positionY;

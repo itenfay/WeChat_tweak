@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface BizAttrSyncBufferCacheItem
+@interface BizAttrSyncBufferCacheItem : NSObject
 {
     NSString *_username;
     unsigned long long _lastUpdateTime;

@@ -6,7 +6,7 @@
 @class FinderJumpInfo_LiteApp, MMFinderLiveLotteryCommentInputView, MMFinderLiveLotteryCommentInputViewController, MMFinderLiveLotteryGetPrizeMethodOperationView, MMFinderLiveLotteryMethodOperationView, MMFinderLiveLotteryStartLogic, MMFinderLiveRewardGiftPacketSettingView, MMFinderLiveTask, MMLiveLotteryErrTipBaseView, MMLiveLotteryGiftDistributeSheetView, MMLiveLotteryGiftPacketsView, MMLiveWeCoinLabel, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, PrizeData, UIButton, UIScrollView, UIView, WCFinderLiveStartLotteryGoodView, WCFinderLiveStartLotteryItemView, WCFinderLiveStartLotteryProductInfo, WCFinderLiveStartSelectLotteryTypeButton;
 @protocol WCFinderLiveStartLotteryViewControllerDelegate;
 
-@interface WCFinderLiveStartLotteryViewController
+@interface WCFinderLiveStartLotteryViewController : NSObject
 {
     _Bool _joinTeamDisable;
     _Bool _showLottteryDurationTipLable;

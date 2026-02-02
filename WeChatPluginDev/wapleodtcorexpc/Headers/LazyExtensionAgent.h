@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface LazyExtensionAgent
+@interface LazyExtensionAgent : NSObject
 {
     NSMutableDictionary *m_dicExtensions;
     NSMutableDictionary *m_dicKeyExtensions;

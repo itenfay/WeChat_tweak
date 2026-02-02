@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, CContactVerifyLogic, MMHeadImageView, MMUILabel, NSString, UIButton, UIImageView, UIScrollView, UIView;
 
-@interface WAWeRunInstallViewController
+@interface WAWeRunInstallViewController : NSObject
 {
     CContact *m_weSportContact;
     NSString *m_nsWeappName;

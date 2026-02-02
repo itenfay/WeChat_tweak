@@ -6,7 +6,7 @@
 @class JSEvent, NSString;
 @protocol WebviewJSEventHandlerBaseDelegate;
 
-@interface WebviewJSEventHandlerBase
+@interface WebviewJSEventHandlerBase : NSObject
 {
     id <WebviewJSEventHandlerBaseDelegate> m_delegate;
     JSEvent *_currentEvent;

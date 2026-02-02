@@ -5,7 +5,7 @@
 
 @class MMTerminatorView, NSString;
 
-@interface WCListTipCellView
+@interface WCListTipCellView : NSObject
 {
     MMTerminatorView *_terminatorView;
 }

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveRealNameFriendLikeBubbleView
+@interface MMFinderLiveRealNameFriendLikeBubbleView : NSObject
 {
     _Bool _isLiked;
     CDUnknownBlockType _likeAction;

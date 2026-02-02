@@ -5,7 +5,7 @@
 
 @class MMScrollActionSheet, NSMutableDictionary, NSString;
 
-@interface MMWebViewPlugin_Share
+@interface MMWebViewPlugin_Share : NSObject
 {
     NSMutableDictionary *_dictShareDataForSendAppMessage;
     NSMutableDictionary *_dictShareDataForShareTimeline;

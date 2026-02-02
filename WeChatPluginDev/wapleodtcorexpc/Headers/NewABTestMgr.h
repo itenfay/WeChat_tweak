@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface NewABTestMgr
+@interface NewABTestMgr : NSObject
 {
     _Bool _bABTestCacheLoaded;
     unsigned int _uiNextUpdateTime;

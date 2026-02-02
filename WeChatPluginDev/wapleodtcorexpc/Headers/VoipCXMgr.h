@@ -5,7 +5,7 @@
 
 @class CXCallController, CXProvider, MonoServiceMsg, NSDate, NSMutableDictionary, NSString, NSUUID;
 
-@interface VoipCXMgr
+@interface VoipCXMgr : NSObject
 {
     _Bool m_bHaveNotActionedEndCallRequest;
     _Bool m_bHaveAnsweredCall;

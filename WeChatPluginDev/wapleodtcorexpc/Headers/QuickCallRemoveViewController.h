@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol QuickCallRemoveViewControllerDelegate;
 
-@interface QuickCallRemoveViewController
+@interface QuickCallRemoveViewController : NSObject
 {
     NSArray *_contacts;
     id <QuickCallRemoveViewControllerDelegate> _removeDelegate;

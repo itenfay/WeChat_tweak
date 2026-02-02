@@ -5,7 +5,7 @@
 
 @class KindaUITableView, MMRefreshTableFooterView, MMUIActivityIndicatorView, MMVoidCallback, NSMutableArray, NSString, UILabel;
 
-@interface KindaTableView
+@interface KindaTableView : NSObject
 {
     _Bool _enabledFooterViewRefresh;
     KindaUITableView *_tableView;

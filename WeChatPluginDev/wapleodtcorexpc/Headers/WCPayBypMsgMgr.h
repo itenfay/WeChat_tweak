@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayBypMsgMgr
+@interface WCPayBypMsgMgr : NSObject
 {
     _Bool _enbalePayByp;
 }

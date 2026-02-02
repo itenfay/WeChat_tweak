@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureVideoPreviewLayer, CALayer, UIImageView, UIView;
 
-@interface FaceRecogRoundView
+@interface FaceRecogRoundView : NSObject
 {
     _Bool _showFacePositionBox;
     AVCaptureVideoPreviewLayer *_previewLayer;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderWindowProductInfo, MMTimer, MMUIButton, MMWebImageView, PAGView, UILabel;
 @protocol MMFinderLiveFeedStreamProductCardViewDelegate;
 
-@interface MMFinderLiveFeedStreamProductCardView
+@interface MMFinderLiveFeedStreamProductCardView : NSObject
 {
     _Bool _isExpandAnimating;
     id <MMFinderLiveFeedStreamProductCardViewDelegate> _delegate;

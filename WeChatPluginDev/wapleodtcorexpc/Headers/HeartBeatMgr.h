@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableSet, NSString;
 
-@interface HeartBeatMgr
+@interface HeartBeatMgr : NSObject
 {
     _Bool m_isStop;
     NSMutableSet *m_setRequestEventID;

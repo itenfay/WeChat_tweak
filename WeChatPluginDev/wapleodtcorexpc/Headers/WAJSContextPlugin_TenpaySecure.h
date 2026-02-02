@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WAJSContextPlugin_TenpaySecure
+@interface WAJSContextPlugin_TenpaySecure : NSObject
 {
     _Bool _pathCreated;
 }

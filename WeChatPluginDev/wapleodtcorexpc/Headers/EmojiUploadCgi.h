@@ -6,7 +6,7 @@
 @class EmoticonUploadInfoObj, NSData, NSString;
 @protocol EmojiUploadCgiDelegate;
 
-@interface EmojiUploadCgi
+@interface EmojiUploadCgi : NSObject
 {
     NSString *m_md5;
     unsigned int m_totalLen;

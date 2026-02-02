@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, UIView, WCAdDynamicFeedElementInfo, WCDataItem;
 @protocol WCAdDynamicLayoutLogicDelegate;
 
-@interface WCAdDynamicLayoutLogic
+@interface WCAdDynamicLayoutLogic : NSObject
 {
     _Bool _didOnExposedAnimationsShow;
     id <WCAdDynamicLayoutLogicDelegate> _delegate;

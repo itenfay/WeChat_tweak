@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat15MagicSclDemoBiz
+@interface _TtC6WeChat15MagicSclDemoBiz : NSObject
 {
     MISSING_TYPE *mbCommonAdapter;
     MISSING_TYPE *bizPkg;

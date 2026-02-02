@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, NSURLSession;
 
-@interface MMWebOptimJSContextTaskLoader
+@interface MMWebOptimJSContextTaskLoader : NSObject
 {
     NSMutableArray *_waitingQueue;
     NSMutableDictionary *_waitingMap;

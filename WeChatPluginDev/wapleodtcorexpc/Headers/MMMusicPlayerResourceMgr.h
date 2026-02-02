@@ -5,7 +5,7 @@
 
 @class MVVideoTransitionResourceConfig, NSMutableDictionary, NSString;
 
-@interface MMMusicPlayerResourceMgr
+@interface MMMusicPlayerResourceMgr : NSObject
 {
     _Bool _hasLoadVideoResourcePath;
     unsigned int _kVideoResrouceCount;

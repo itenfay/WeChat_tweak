@@ -5,7 +5,7 @@
 
 @class NSString, StoreEmotionRewardAskForRewardCgi, WCPayPayMoneyLogic;
 
-@interface LiteAppJsApiEmoticonReward
+@interface LiteAppJsApiEmoticonReward : NSObject
 {
     NSString *_productId;
     StoreEmotionRewardAskForRewardCgi *_rewardCgi;

@@ -5,7 +5,7 @@
 
 @class CALayer, CAShapeLayer, UIColor, UIView;
 
-@interface MMLiveLikeButtonAnimationView
+@interface MMLiveLikeButtonAnimationView : NSObject
 {
     _Bool _needUpdateBgProgress;
     UIView *_animationView;

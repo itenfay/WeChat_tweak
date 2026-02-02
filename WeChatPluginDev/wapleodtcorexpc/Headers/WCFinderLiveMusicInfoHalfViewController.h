@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveMusicDataItem, MMMusicHorizontalScrollingView, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIPanGestureRecognizer, UIView;
 
-@interface WCFinderLiveMusicInfoHalfViewController
+@interface WCFinderLiveMusicInfoHalfViewController : NSObject
 {
     CDUnknownBlockType _loadedBlock;
     CDUnknownBlockType _closedBlock;

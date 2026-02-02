@@ -5,7 +5,7 @@
 
 @class TingLaunchOptionsOpenPlayerTabCommentInfo;
 
-@interface TingLaunchOptionsOpenPlayerTab
+@interface TingLaunchOptionsOpenPlayerTab : NSObject
 {
     int _tabType;
     TingLaunchOptionsOpenPlayerTabCommentInfo *_tabCommentInfo;

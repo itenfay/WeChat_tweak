@@ -5,7 +5,7 @@
 
 @class FinderBannerExtInfo, FinderLiveRelatedExtInfo, FinderLiveStreamCard, NSArray, NSString;
 
-@interface WCFinderLiveFeedContentVM
+@interface WCFinderLiveFeedContentVM : NSObject
 {
     NSString *_sortID;
     FinderLiveStreamCard *_liveStreamCard;

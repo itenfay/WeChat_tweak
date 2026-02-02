@@ -5,7 +5,7 @@
 
 @class UIFont;
 
-@interface GCTextLayoutCommonInfo
+@interface GCTextLayoutCommonInfo : NSObject
 {
     UIFont *_sysTitleFont;
     double _sysTitleHeight;

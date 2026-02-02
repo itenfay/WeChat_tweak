@@ -6,7 +6,7 @@
 @class AVAsset, ColorGradientView, MMAssetICloudLoadingView, MMAssetInfo, MMAssetPickerBrowserStateInfo, NSString, NSURL, SightAssetPreviewView, SightDraft, UIButton, UIImageView, UIView, WXFullScreenGestureRecognizer;
 @protocol MMAssetPickerBrowserViewDelegate, MMImagePickerControlCenter, WCDragToCloseDelegate;
 
-@interface MMVideoPreviewBrowserView
+@interface MMVideoPreviewBrowserView : NSObject
 {
     NSURL *m_originUrl;
     AVAsset *m_avAsset;

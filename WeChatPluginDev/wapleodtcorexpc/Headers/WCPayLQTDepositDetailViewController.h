@@ -6,7 +6,7 @@
 @class MMRefreshTableFooterView, MMTableView, MMUIActivityIndicatorView, NSString, PlanIndexResp_PlanItem, QryAutoPlanOrderListResp, UILabel, UIView, WCPayCss, WCPayWebImageView;
 @protocol WCPayLQTDepositDetailViewControllerDelegate;
 
-@interface WCPayLQTDepositDetailViewController
+@interface WCPayLQTDepositDetailViewController : NSObject
 {
     id <WCPayLQTDepositDetailViewControllerDelegate> _m_delegate;
     MMTableView *_m_tableView;

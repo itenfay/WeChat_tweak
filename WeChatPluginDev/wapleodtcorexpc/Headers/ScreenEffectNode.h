@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScreenEffectNode
+@interface ScreenEffectNode : NSObject
 {
     int _delay;
     unsigned long long _effectVersion;

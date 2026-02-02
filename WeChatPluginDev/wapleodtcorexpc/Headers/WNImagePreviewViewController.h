@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIButton, UIImage, UIScrollView, UIView, WNImageActionSheetView, WNMultiImagesCollectionView, WNSaveImageLogic;
 
-@interface WNImagePreviewViewController
+@interface WNImagePreviewViewController : NSObject
 {
     _Bool _isTrueScroll;
     unsigned int _localId;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface ABTestListWrap
+@interface ABTestListWrap : NSObject
 {
     NSArray *_aryABTestItems;
     NSArray *_aryABTestExpKeyItems;

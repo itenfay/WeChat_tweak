@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMapTable, NSMutableArray, NSString, UIViewController;
 
-@interface MMAppSceneMgr
+@interface MMAppSceneMgr : NSObject
 {
     _Bool _isMovingToSubScene;
     _Bool _closeSubSceneWhenDismissToRoot;

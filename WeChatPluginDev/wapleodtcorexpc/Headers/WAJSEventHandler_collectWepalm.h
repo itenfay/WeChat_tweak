@@ -5,7 +5,7 @@
 
 @class NSString, WCPayControlData;
 
-@interface WAJSEventHandler_collectWepalm
+@interface WAJSEventHandler_collectWepalm : NSObject
 {
     WCPayControlData *_controlData;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, PagingGetGamePlayTogetherDynamicItem;
 
-@interface WCFinderLiveGetGameTeamInfoCGI
+@interface WCFinderLiveGetGameTeamInfoCGI : NSObject
 {
     unsigned int _liveScene;
     CDUnknownBlockType _successBlock;

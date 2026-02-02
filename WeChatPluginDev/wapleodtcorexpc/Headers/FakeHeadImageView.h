@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface FakeHeadImageView
+@interface FakeHeadImageView : NSObject
 {
     UIImageView *m_headImageView;
     UIImageView *m_borderImageView;

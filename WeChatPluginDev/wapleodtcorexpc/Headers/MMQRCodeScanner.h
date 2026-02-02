@@ -6,7 +6,7 @@
 @class NSObject;
 @protocol MMQRCodeScannerDelegate;
 
-@interface MMQRCodeScanner
+@interface MMQRCodeScanner : NSObject
 {
     int m_inputWidth;
     int m_inputHeight;

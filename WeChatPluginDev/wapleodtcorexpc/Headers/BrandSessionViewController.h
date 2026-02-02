@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableDictionary, NSString;
 
-@interface BrandSessionViewController
+@interface BrandSessionViewController : NSObject
 {
     MMTableView *m_tableView;
     unsigned int m_stayTimeStart;

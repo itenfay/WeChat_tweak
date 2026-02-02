@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCommentBlurButtonBackView;
 
-@interface MMFinderLiveCommentButton
+@interface MMFinderLiveCommentButton : NSObject
 {
     _Bool _isSynchronizeLayout;
     CDUnknownBlockType _commentTalkButtonDidTapBlock;

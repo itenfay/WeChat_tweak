@@ -6,7 +6,7 @@
 @class MMUIButton, WCDataItem, WCTagsView;
 @protocol WCAdActionLinkDetailViewDelegate;
 
-@interface WCAdActionLinkDetailView
+@interface WCAdActionLinkDetailView : NSObject
 {
     id <WCAdActionLinkDetailViewDelegate> _delegate;
     WCDataItem *_dataItem;

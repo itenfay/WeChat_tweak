@@ -5,7 +5,7 @@
 
 @class NSString, UIView, WCFinderAlbumScrollViewParamModel, WCFinderHalfScreenEditFrameBlurView;
 
-@interface WCFinderHalfScreenEditImageLayoutView
+@interface WCFinderHalfScreenEditImageLayoutView : NSObject
 {
     _Bool _hiddenCropBtn;
     _Bool _needAdjustThumbItemSize;

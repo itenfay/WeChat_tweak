@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, WCFinderLiveGenericFeedVM;
 
-@interface WCFinderLiveHomePageAdCell
+@interface WCFinderLiveHomePageAdCell : NSObject
 {
     MMWebImageView *_coverLeftImageView;
     MMWebImageView *_coverRightImageView;

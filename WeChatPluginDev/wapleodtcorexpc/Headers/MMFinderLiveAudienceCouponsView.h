@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString;
 
-@interface MMFinderLiveAudienceCouponsView
+@interface MMFinderLiveAudienceCouponsView : NSObject
 {
     NSMutableSet *_exposedCouponIdSet;
 }

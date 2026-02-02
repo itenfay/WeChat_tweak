@@ -5,7 +5,7 @@
 
 @class BaseMessageViewModel, FavoritesItem, FavoritesItemDataField;
 
-@interface FavDataItemWrap
+@interface FavDataItemWrap : NSObject
 {
     FavoritesItemDataField *m_dataItem;
     FavoritesItem *m_parent;

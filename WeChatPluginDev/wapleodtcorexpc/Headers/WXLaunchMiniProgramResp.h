@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXLaunchMiniProgramResp
+@interface WXLaunchMiniProgramResp : NSObject
 {
     NSString *extMsg;
 }

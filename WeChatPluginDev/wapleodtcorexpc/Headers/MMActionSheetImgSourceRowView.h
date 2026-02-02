@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UILabel;
 @protocol MMActionSheetImgSourceRowViewDelegate;
 
-@interface MMActionSheetImgSourceRowView
+@interface MMActionSheetImgSourceRowView : NSObject
 {
     id <MMActionSheetImgSourceRowViewDelegate> _delegate;
     UIButton *_backgroundButton;

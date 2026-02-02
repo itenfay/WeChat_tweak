@@ -5,7 +5,7 @@
 
 @class AVAudioPlayer, NSMutableString, NSString, UIViewController, WCOutRecentCallItem, WcoMinimizeWindow, WcoTalkMainWindow;
 
-@interface WCOutCallLogic
+@interface WCOutCallLogic : NSObject
 {
     unsigned long long m_status;
     _Bool m_isSpeaker;

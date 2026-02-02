@@ -6,7 +6,7 @@
 @class CContact, ChatRoomSpecialAttentionMemberLogic, ChatRoomSpecialAttentionMemberSelectViewController, NSArray, NSString, OrderedDictionary;
 @protocol ChatRoomSpecialAttentionMemberPageLogicDelegate;
 
-@interface ChatRoomSpecialAttentionAddMemberLogic
+@interface ChatRoomSpecialAttentionAddMemberLogic : NSObject
 {
     ChatRoomSpecialAttentionMemberSelectViewController *m_vc;
     OrderedDictionary *m_dicModifySpecialAttentionMember;

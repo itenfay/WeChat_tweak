@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASyncIssueContactCmd
+@interface WASyncIssueContactCmd : NSObject
 {
     NSString *_contactInfoString;
 }

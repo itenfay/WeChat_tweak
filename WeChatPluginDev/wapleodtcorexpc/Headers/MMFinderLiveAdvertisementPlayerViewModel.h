@@ -5,7 +5,7 @@
 
 @class MMLiveStorageCleanupPinningToken, NSMutableSet, NSString, WCFinderLivePlayerViewReporter;
 
-@interface MMFinderLiveAdvertisementPlayerViewModel
+@interface MMFinderLiveAdvertisementPlayerViewModel : NSObject
 {
     NSMutableSet *_preloadAdvertisementSet;
     unsigned long long _beginShowAdVideoTimeForReport;

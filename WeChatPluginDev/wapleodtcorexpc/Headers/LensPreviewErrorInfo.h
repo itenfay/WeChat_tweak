@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LensPreviewErrorInfo
+@interface LensPreviewErrorInfo : NSObject
 {
     long long _errCode;
     NSString *_errMessage;

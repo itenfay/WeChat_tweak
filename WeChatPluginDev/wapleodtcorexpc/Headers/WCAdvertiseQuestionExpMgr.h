@@ -5,7 +5,7 @@
 
 @class NSString, WCADQuestionStatItem;
 
-@interface WCAdvertiseQuestionExpMgr
+@interface WCAdvertiseQuestionExpMgr : NSObject
 {
     NSString *lastReportItemId;
     WCADQuestionStatItem *adQuestItem;

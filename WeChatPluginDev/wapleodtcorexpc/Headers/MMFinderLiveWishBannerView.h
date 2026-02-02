@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderLiveGiftWallInfo, MMFinderLiveRewardWish, MMTimer, MMUILabel, NSArray, NSMutableSet, NSString, UIImageView;
 
-@interface MMFinderLiveWishBannerView
+@interface MMFinderLiveWishBannerView : NSObject
 {
     _Bool _firstDisplay;
     _Bool _isWishExposed;

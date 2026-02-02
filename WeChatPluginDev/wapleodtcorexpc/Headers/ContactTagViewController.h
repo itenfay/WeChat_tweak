@@ -5,7 +5,7 @@
 
 @class CContact, ContactTagEditLogic, NSArray, NSString;
 
-@interface ContactTagViewController
+@interface ContactTagViewController : NSObject
 {
     CContact *m_contact;
     ContactTagEditLogic *m_TagEditLogic;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveViewController, NSMutableDictionary, NSString, UIView;
 
-@interface MMFinderLiveView
+@interface MMFinderLiveView : NSObject
 {
     NSMutableDictionary *_attachWidgetLayerDict;
     NSMutableDictionary *_attachWidgetContainerDict;

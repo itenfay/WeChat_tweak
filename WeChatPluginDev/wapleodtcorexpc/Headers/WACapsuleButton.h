@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, UILabel, UIView;
 
-@interface WACapsuleButton
+@interface WACapsuleButton : NSObject
 {
     long long _navMode;
     long long _menuState;

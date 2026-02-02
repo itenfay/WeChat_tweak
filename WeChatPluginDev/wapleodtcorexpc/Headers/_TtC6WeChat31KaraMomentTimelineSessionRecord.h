@@ -5,7 +5,7 @@
 
 @class NSDate, NSString;
 
-@interface _TtC6WeChat31KaraMomentTimelineSessionRecord
+@interface _TtC6WeChat31KaraMomentTimelineSessionRecord : NSObject
 {
 }
 

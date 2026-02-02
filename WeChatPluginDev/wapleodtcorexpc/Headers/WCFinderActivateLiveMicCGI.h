@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderActivateLiveMicRequest_MicInfo, NSData, NSMutableArray, NSString, WCFinderDataItem;
 
-@interface WCFinderActivateLiveMicCGI
+@interface WCFinderActivateLiveMicCGI : NSObject
 {
     WCFinderDataItem *_dataItem;
     NSString *_liveMicId;

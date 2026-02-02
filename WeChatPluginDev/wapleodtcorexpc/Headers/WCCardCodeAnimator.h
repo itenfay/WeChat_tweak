@@ -6,7 +6,7 @@
 @class UIView;
 @protocol WCCardCodeAnimatorDelegate;
 
-@interface WCCardCodeAnimator
+@interface WCCardCodeAnimator : NSObject
 {
     UIView *_view;
     UIView *_oldSuperView;

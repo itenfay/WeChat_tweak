@@ -6,7 +6,7 @@
 @class MMUIViewController, NSData, NSString, WARedEnvelopesReceiveHomeView;
 @protocol WARedEnvelopesOpenLogicDelegate;
 
-@interface WARedEnvelopesOpenLogic
+@interface WARedEnvelopesOpenLogic : NSObject
 {
     id <WARedEnvelopesOpenLogicDelegate> m_delegate;
     MMUIViewController *_containerVC;

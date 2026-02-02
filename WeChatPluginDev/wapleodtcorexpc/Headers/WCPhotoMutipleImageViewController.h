@@ -5,7 +5,7 @@
 
 @class CContact, EditImageForwardAndEditLogicController, ForwardMessageLogicController, MMHeadImageView, MMImageOpenWeAppLogic, MMScrollView, MMUIButton, NSMutableArray, NSMutableSet, NSString, OCRTransHalfScreenViewController, QRCodeInMultiDisplayView, RichTextView, ScanQRCodeLogicController, SessionForwardRecordLogic, ShareDataToOpenSDKController, SharePreConfirmView, UIButton, UIImageView, UILabel, UIView, WCImageTranslateLogic, WCLikeButton, WCMomentsPageContext, WCMomentsScrollActionSheet, WCMomentsShareScopeMgr, WCTogetherHistoryReportSession;
 
-@interface WCPhotoMutipleImageViewController
+@interface WCPhotoMutipleImageViewController : NSObject
 {
     MMScrollView *pagingScrollView;
     NSMutableArray *m_arrDatas;

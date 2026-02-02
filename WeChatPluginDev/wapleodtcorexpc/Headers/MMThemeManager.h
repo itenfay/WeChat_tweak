@@ -5,7 +5,7 @@
 
 @class MMColor, MMRuleSetList, MMTheme, NSCache, NSString;
 
-@interface MMThemeManager
+@interface MMThemeManager : NSObject
 {
     MMTheme *m_currentTheme;
     MMColor *m_colorList;

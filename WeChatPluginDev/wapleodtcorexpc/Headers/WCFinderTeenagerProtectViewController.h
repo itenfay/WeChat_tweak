@@ -5,7 +5,7 @@
 
 @class MMLimitedModeVerifyPasswordUtilLogic, MMUIButton, MMUIViewController, NSString, WCFinderLimitProtectCommonHeadView;
 
-@interface WCFinderTeenagerProtectViewController
+@interface WCFinderTeenagerProtectViewController : NSObject
 {
     MMUIViewController *_fromVC;
     WCFinderLimitProtectCommonHeadView *_commonHeadView;

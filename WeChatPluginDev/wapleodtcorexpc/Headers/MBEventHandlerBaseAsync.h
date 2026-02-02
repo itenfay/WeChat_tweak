@@ -5,7 +5,7 @@
 
 @class MBJSFunction;
 
-@interface MBEventHandlerBaseAsync
+@interface MBEventHandlerBaseAsync : NSObject
 {
     MBJSFunction *_callbackFunc;
 }

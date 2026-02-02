@@ -5,7 +5,7 @@
 
 @protocol WCPayGetCollAssistMenuCgiDelegate;
 
-@interface WCPayGetCollAssistMenuCgi
+@interface WCPayGetCollAssistMenuCgi : NSObject
 {
     id <WCPayGetCollAssistMenuCgiDelegate> _logicDelegate;
 }

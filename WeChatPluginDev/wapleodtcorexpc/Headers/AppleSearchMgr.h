@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSString;
 
-@interface AppleSearchMgr
+@interface AppleSearchMgr : NSObject
 {
     _Bool m_hasIndexSearch;
     MMUIViewController *m_moreVc;

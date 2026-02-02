@@ -6,7 +6,7 @@
 @class NSString, WCFinderFeedPickerParams;
 @protocol WCFinderSearchPickerViewControllerDelegate;
 
-@interface WCFinderSearchPickerViewController
+@interface WCFinderSearchPickerViewController : NSObject
 {
     id <WCFinderSearchPickerViewControllerDelegate> _delegate;
     WCFinderFeedPickerParams *_params;

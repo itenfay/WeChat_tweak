@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, SightIconView, UIImageView;
 
-@interface WNAttachmentFileView
+@interface WNAttachmentFileView : NSObject
 {
     unsigned char _status;
     UIImageView *_uploadMaskView;

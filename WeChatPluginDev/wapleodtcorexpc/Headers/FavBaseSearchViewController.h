@@ -6,7 +6,7 @@
 @class FavBaseTableDataController, FavClickStreamData, FavMultiSelectToolView, FavoritesSearchController, MMTableView, NSString, UILabel, UIView;
 @protocol FavBaseSearchViewControllerDelegate;
 
-@interface FavBaseSearchViewController
+@interface FavBaseSearchViewController : NSObject
 {
     _Bool _bReceiveSearchResult;
     int _deleteType;

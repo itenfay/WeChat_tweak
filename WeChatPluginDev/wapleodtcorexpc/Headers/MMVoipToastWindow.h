@@ -5,7 +5,7 @@
 
 @class MMStringToastView;
 
-@interface MMVoipToastWindow
+@interface MMVoipToastWindow : NSObject
 {
     MMStringToastView *m_stringView;
     double _m_fixOriginX;

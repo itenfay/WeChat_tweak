@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface C2CVideoStreamPlayerView
+@interface C2CVideoStreamPlayerView : NSObject
 {
     CMessageWrap *m_oMessageWrap;
 }

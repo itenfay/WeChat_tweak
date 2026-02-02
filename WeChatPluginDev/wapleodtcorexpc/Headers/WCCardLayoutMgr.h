@@ -6,7 +6,7 @@
 @class WCCardLayoutStorage;
 @protocol WCCardLayoutMgrDelegate;
 
-@interface WCCardLayoutMgr
+@interface WCCardLayoutMgr : NSObject
 {
     WCCardLayoutStorage *_layoutStg;
     unsigned int _waitLocationTime;

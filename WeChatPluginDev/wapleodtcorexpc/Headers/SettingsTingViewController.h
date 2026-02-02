@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMListenUserConfig, MMTableViewInfo, NSString, SettingsTingSwitchConfig;
 
-@interface SettingsTingViewController
+@interface SettingsTingViewController : NSObject
 {
     MMTableViewInfo *_tableViewInfo;
     MMListenUserConfig *_userConfig;

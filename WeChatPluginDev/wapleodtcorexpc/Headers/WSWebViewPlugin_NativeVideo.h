@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WSWebViewPlugin_NativeVideo
+@interface WSWebViewPlugin_NativeVideo : NSObject
 {
     NSMutableDictionary *_localFinderDataItemDic;
 }

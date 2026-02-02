@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString;
 
-@interface WCFilterDoubleColumnPanel
+@interface WCFilterDoubleColumnPanel : NSObject
 {
     MMTableView *m_tableView;
     double m_rowHeight;

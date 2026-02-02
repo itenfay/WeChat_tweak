@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCrashReporterMgr
+@interface WCCrashReporterMgr : NSObject
 {
     unsigned long long _currentReportType;
 }

@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_Buff
+@interface WloginTlv_Buff : NSObject
 {
     NSData *acSigBuff;
 }

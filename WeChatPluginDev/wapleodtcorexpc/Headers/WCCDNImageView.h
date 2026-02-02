@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCDNImageView
+@interface WCCDNImageView : NSObject
 {
     _Bool _downloading;
     int _fileType;

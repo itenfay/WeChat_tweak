@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCFinderAccountSelectedButton
+@interface WCFinderAccountSelectedButton : NSObject
 {
     UIImageView *_leftImageView;
     UILabel *_selectedLabel;

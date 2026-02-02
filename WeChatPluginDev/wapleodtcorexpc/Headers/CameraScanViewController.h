@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BizScanTabBarInfo, CSCHoleMaskViewMgr, CameraScanBlurButtonWrapView, CameraScanTabView, CameraScanViewControllerOpenParams, CameraScannerViewWrapper, MMUIButton, NSMutableDictionary, NSString, OCRTransReport, RecentPhotoBubbleView, UIImageView, UILabel, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol CameraScanUIDelegate;
 
-@interface CameraScanViewController
+@interface CameraScanViewController : NSObject
 {
     long long _cameraScanType;
     long long _scanTabAction;

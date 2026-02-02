@@ -5,7 +5,7 @@
 
 @class AttributeLabel, MMHeadImageView, NSString, UIImage, UIImageView;
 
-@interface FindContactSearchCell
+@interface FindContactSearchCell : NSObject
 {
     NSString *_searchText;
     NSString *_displayName;

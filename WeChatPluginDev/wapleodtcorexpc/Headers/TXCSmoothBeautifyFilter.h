@@ -5,7 +5,7 @@
 
 @class TXCMaskFilter, TXCSharpFilter, TXCSmoothHorizontalFilter, TXCSmoothMixFilter, TXCSmoothVerticalFilter;
 
-@interface TXCSmoothBeautifyFilter
+@interface TXCSmoothBeautifyFilter : NSObject
 {
     TXCMaskFilter *_maskFilter;
     TXCSmoothHorizontalFilter *_smoothHorizontalFilter;

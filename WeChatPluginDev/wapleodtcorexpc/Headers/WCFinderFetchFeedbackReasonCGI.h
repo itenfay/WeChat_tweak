@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderFetchFeedbackReasonCGI
+@interface WCFinderFetchFeedbackReasonCGI : NSObject
 {
     int _commentScene;
     unsigned long long _feedID;

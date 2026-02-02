@@ -6,7 +6,7 @@
 @class NSString, WAMainListPageLogic, WAMainListStarLogic, WAPackageSweeperLogic;
 @protocol WADesktopStarListReportDelegate;
 
-@interface WARecentStarListViewModel
+@interface WARecentStarListViewModel : NSObject
 {
     WAPackageSweeperLogic *m_sweepLogic;
     id <WADesktopStarListReportDelegate> _reportDelegate;

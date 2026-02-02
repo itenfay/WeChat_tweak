@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFeedStreamConnectMicUserInfoView;
 
-@interface MMFinderLiveFeedStreamMicLogic
+@interface MMFinderLiveFeedStreamMicLogic : NSObject
 {
     MMFinderLiveFeedStreamConnectMicUserInfoView *_micContainerView;
 }

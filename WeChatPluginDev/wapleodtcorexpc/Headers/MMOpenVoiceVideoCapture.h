@@ -6,7 +6,7 @@
 @class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, CMMotionManager, NSObject, NSString, VOIPVideoRender, WeVisVoipEffectMgr;
 @protocol OS_dispatch_queue;
 
-@interface MMOpenVoiceVideoCapture
+@interface MMOpenVoiceVideoCapture : NSObject
 {
     _Bool _inited;
     _Bool _useFrontCamera;

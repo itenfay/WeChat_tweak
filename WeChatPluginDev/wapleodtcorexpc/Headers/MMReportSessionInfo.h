@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMReportSessionInfo
+@interface MMReportSessionInfo : NSObject
 {
     _Bool _bMuteChat;
     _Bool _bTopChat;

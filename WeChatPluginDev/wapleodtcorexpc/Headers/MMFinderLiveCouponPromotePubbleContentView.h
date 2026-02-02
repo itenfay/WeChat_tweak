@@ -5,7 +5,7 @@
 
 @class FinderShopCouponInfo, MMFinderLiveCouponItem, MMFinderLiveCouponView, NSString;
 
-@interface MMFinderLiveCouponPromotePubbleContentView
+@interface MMFinderLiveCouponPromotePubbleContentView : NSObject
 {
     _Bool _willDismissing;
     MMFinderLiveCouponItem *_couponItem;

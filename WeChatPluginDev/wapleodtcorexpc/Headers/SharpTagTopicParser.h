@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SharpTagTopicParser
+@interface SharpTagTopicParser : NSObject
 {
     NSString *_query;
 }

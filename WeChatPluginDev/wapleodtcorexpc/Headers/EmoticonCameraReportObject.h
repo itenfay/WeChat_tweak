@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonCameraReportObject
+@interface EmoticonCameraReportObject : NSObject
 {
     unsigned long long m_enterTime;
     unsigned long long m_totalTime;

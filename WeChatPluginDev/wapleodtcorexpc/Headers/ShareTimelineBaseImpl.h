@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSEvent, NSDictionary, NSMutableData, NSString, NSURLConnection, WebviewJSEventHandlerBase;
 
-@interface ShareTimelineBaseImpl
+@interface ShareTimelineBaseImpl : NSObject
 {
     WebviewJSEventHandlerBase *_eventHandler;
     NSString *_variantEventName;

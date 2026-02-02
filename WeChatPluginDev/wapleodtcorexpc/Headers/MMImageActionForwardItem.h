@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString;
 
-@interface MMImageActionForwardItem
+@interface MMImageActionForwardItem : NSObject
 {
     ForwardMessageLogicController *_logic;
     NSString *_staticImgUuid;

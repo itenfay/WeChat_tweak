@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FlutterActionBarHelper, FlutterPageStateDispacher, FlutterViewController, MMFlutterEdgeGesture, MMFlutterEngine, MMFlutterHybridNavPageState, MMFlutterInstance, MMFlutterRoute, NSMutableDictionary, NSObject, NSString, UIImageView, UIView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl;
 @protocol MMFlutterViewControllerAnimatedTransitioning, MMFlutterViewControllerDelegate, WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
-@interface MMFlutterViewController
+@interface MMFlutterViewController : NSObject
 {
     NSString *_engineGroupId;
     MMFlutterEdgeGesture *_screenEdgePanGesture;

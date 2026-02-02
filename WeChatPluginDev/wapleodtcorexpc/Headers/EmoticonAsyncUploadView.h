@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, NSString, UIImageView, UIView;
 
-@interface EmoticonAsyncUploadView
+@interface EmoticonAsyncUploadView : NSObject
 {
     unsigned long long _m_uploadStatus;
     UIView *_m_maskView;

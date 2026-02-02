@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGroupedBadgeView, MMFinderLiveTrailingButtonTextView, NSString, UIImageView, UILabel;
 
-@interface MMFinderLiveConnectedMicAudienceCellView
+@interface MMFinderLiveConnectedMicAudienceCellView : NSObject
 {
     _Bool _shouldExpandDesc;
     CDUnknownBlockType _expandStateShouldChange;

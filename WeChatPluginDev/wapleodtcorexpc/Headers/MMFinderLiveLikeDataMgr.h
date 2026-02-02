@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveLikeDataMgr
+@interface MMFinderLiveLikeDataMgr : NSObject
 {
 }
 

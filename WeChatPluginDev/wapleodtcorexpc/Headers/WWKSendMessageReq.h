@@ -5,7 +5,7 @@
 
 @class NSString, WWKMessageAttachment;
 
-@interface WWKSendMessageReq
+@interface WWKSendMessageReq : NSObject
 {
     WWKMessageAttachment *_attachment;
 }

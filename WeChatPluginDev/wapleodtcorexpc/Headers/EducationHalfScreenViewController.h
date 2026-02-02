@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OrientationSafePageSheetContainer;
 
-@interface EducationHalfScreenViewController
+@interface EducationHalfScreenViewController : NSObject
 {
     NSString *_title;
     NSString *_hint;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ChatRoomBaseMemberFunctionViewController
+@interface ChatRoomBaseMemberFunctionViewController : NSObject
 {
 }
 

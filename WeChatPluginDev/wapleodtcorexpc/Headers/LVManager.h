@@ -5,7 +5,7 @@
 
 @class LVCacheManager, LVMinimize, NSMutableDictionary, NSString;
 
-@interface LVManager
+@interface LVManager : NSObject
 {
     _Bool _redDotOberver;
     LVMinimize *_minimize;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MJSTTTransRequestResult
+@interface MJSTTTransRequestResult : NSObject
 {
     NSArray *_captionGroups;
 }

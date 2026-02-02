@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BaseMsgContentLogicController, CContact, ChatRoomHistoryShareStat, MMUIButton, MMUILabel, NSArray, UIImageView, UIView;
 
-@interface WCSharedMsgSelectViewController
+@interface WCSharedMsgSelectViewController : NSObject
 {
     UIView *_headerView;
     UIImageView *_downArrow;

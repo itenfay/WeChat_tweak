@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WloginTlv_0x2
+@interface WloginTlv_0x2 : NSObject
 {
     unsigned short wPicSigVer;
     NSString *sCode;

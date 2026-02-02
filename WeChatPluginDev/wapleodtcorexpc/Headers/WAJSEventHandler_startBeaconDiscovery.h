@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_startBeaconDiscovery
+@interface WAJSEventHandler_startBeaconDiscovery : NSObject
 {
 }
 

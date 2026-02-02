@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveArchivedResourceFetcherTask
+@interface MMLiveArchivedResourceFetcherTask : NSObject
 {
     NSString *_unarchiveDestinationPath;
     NSString *_manifestPath;

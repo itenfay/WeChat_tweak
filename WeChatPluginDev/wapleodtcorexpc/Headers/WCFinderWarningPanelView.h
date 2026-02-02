@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class RichTextView, UIView;
 
-@interface WCFinderWarningPanelView
+@interface WCFinderWarningPanelView : NSObject
 {
     RichTextView *_lowBitRateTextView;
     RichTextView *_durationRecomTextView;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WCAdConventionalHalfScreenReportVideoInfo;
 
-@interface WCAdConventionalHalfScreenReportModel
+@interface WCAdConventionalHalfScreenReportModel : NSObject
 {
     int _pinToTop;
     unsigned long long _stayTime;

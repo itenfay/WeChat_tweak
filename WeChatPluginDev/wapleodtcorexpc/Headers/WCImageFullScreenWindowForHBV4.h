@@ -6,7 +6,7 @@
 @class NSString, WCImageFullScreenViewControllerForHBV4;
 @protocol WCImageFullScreenWindowDelegate;
 
-@interface WCImageFullScreenWindowForHBV4
+@interface WCImageFullScreenWindowForHBV4 : NSObject
 {
     WCImageFullScreenViewControllerForHBV4 *m_controller;
     id <WCImageFullScreenWindowDelegate> _wc_delegate;

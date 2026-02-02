@@ -5,7 +5,7 @@
 
 @class GameCgiGetInfoAndJump;
 
-@interface LiteAppJsApiOpenGameDetail
+@interface LiteAppJsApiOpenGameDetail : NSObject
 {
     GameCgiGetInfoAndJump *_launchGame;
 }

@@ -5,7 +5,7 @@
 
 @class MMUIImageView, NSString, UILabel;
 
-@interface FavRecordLeftThumbRightLabelNodeView
+@interface FavRecordLeftThumbRightLabelNodeView : NSObject
 {
     MMUIImageView *m_thumbView;
     NSString *m_titleText;

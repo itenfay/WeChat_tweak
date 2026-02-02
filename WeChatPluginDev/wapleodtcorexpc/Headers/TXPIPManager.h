@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVMutableComposition, AVMutableVideoComposition, AVPictureInPictureController, AVPlayer, AVPlayerItem, AVPlayerLayer, NSMutableDictionary, NSString, TXPIPRenderView, WCPIPCustomHandleLogic;
 
-@interface TXPIPManager
+@interface TXPIPManager : NSObject
 {
     _Bool _isOpenPIP;
     _Bool _isClosedCompletely;

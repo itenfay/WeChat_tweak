@@ -5,7 +5,7 @@
 
 @class BTRecommendAccountData, BTRecommendAppMsg, NSString;
 
-@interface BTBaseRecommendAppMsgCellViewModel
+@interface BTBaseRecommendAppMsgCellViewModel : NSObject
 {
     unsigned int _accountIndex;
     unsigned int _appMsgIndex;

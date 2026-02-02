@@ -5,7 +5,7 @@
 
 @class MultiTalkHDHeadView, UILabel, UIView, ilinkConfSDKMember;
 
-@interface ilinkMultiTalkMsgCell
+@interface ilinkMultiTalkMsgCell : NSObject
 {
     MultiTalkHDHeadView *_headImageView;
     UILabel *_userNameLable;

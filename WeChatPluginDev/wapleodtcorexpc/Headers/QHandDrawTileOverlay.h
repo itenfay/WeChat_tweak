@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class QHandDrawTileOverlayDataProvider;
 
-@interface QHandDrawTileOverlay
+@interface QHandDrawTileOverlay : NSObject
 {
     QHandDrawTileOverlayDataProvider *_provider;
 }

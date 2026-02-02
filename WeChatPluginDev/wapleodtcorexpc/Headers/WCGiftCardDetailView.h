@@ -6,7 +6,7 @@
 @class MMWebImageView, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView, WCFitLayoutView, WCGiftCardData, WCGiftCardLetterView, WCMultiGiftPersonView, WCMultiGiftView;
 @protocol WCGiftCardDetailViewDelegate;
 
-@interface WCGiftCardDetailView
+@interface WCGiftCardDetailView : NSObject
 {
     _Bool _isFirstOpen;
     _Bool _isOpened;

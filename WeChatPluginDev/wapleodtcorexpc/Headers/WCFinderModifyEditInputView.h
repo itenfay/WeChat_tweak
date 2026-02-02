@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIView, WCFinderFilterTextView, WCFinderModTextSelectModel;
 @protocol WCFinderModifyEditInputViewDelegate;
 
-@interface WCFinderModifyEditInputView
+@interface WCFinderModifyEditInputView : NSObject
 {
     id <WCFinderModifyEditInputViewDelegate> _delegate;
     WCFinderFilterTextView *_textView;

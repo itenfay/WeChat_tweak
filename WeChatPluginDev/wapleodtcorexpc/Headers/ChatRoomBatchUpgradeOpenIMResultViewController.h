@@ -5,7 +5,7 @@
 
 @class MMAcceptAgreementCommonHeadView, MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIImage;
 
-@interface ChatRoomBatchUpgradeOpenIMResultViewController
+@interface ChatRoomBatchUpgradeOpenIMResultViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_upgradeOpenIMChatRoomAr;

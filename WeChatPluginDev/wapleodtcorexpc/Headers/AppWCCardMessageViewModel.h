@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface AppWCCardMessageViewModel
+@interface AppWCCardMessageViewModel : NSObject
 {
 }
 

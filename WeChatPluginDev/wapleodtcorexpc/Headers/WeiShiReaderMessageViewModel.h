@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WeiShiReaderMessageViewModel
+@interface WeiShiReaderMessageViewModel : NSObject
 {
 }
 

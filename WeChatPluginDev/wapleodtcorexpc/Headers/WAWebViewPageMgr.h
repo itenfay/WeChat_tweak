@@ -6,7 +6,7 @@
 @class NSMutableArray, WAAppTask;
 @protocol WAWebViewPageMgrDelegate;
 
-@interface WAWebViewPageMgr
+@interface WAWebViewPageMgr : NSObject
 {
     id <WAWebViewPageMgrDelegate> _delegate;
     NSMutableArray *_pages;

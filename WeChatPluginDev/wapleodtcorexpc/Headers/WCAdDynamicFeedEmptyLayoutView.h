@@ -6,7 +6,7 @@
 @class NSString, UIView, WCAdDynamicFeedBackgroundButton, WCAdDynamicFeedElementInfo;
 @protocol WCAdDynamicFeedEmptyLayoutViewDelegate;
 
-@interface WCAdDynamicFeedEmptyLayoutView
+@interface WCAdDynamicFeedEmptyLayoutView : NSObject
 {
     _Bool _isLayoutClickable;
     WCAdDynamicFeedElementInfo *_elementInfo;

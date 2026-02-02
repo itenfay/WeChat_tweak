@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray, NSMutableSet, NSString, WCFinderDataItem;
 @protocol WCFinderFeedFriendsLikeListViewModelDelegate;
 
-@interface WCFinderFeedFriendsLikeListViewModel
+@interface WCFinderFeedFriendsLikeListViewModel : NSObject
 {
     _Bool _continueFlag;
     int _finderObjectType;

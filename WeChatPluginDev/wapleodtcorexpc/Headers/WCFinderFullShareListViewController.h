@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiteAppViewController, MMUILabel, NSMutableDictionary, NSString, PAGView, UIButton, UILabel, UIView, WCFinderFeedDetailStatusView, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListView, WCFinderFeedSideColumnView, WCFinderLeadToMachineTableViewCell, WCFinderNearByDescriptionTableViewCell, WCFinderShareCustomTransition, WCFinderShareListReportModel, WCFinderShareListViewModel, WCFinderShareSpanState, WCFinderWebviewDelegateObject, WCStoryTouchToDismissView, WXFullScreenGestureRecognizer;
 @protocol WCFinderFullShareListViewControllerDelegate;
 
-@interface WCFinderFullShareListViewController
+@interface WCFinderFullShareListViewController : NSObject
 {
     _Bool _doAnimation;
     _Bool _shareListPlayOverEduTipsShow;

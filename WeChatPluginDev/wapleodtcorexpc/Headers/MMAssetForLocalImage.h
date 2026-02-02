@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMAssetForLocalImage
+@interface MMAssetForLocalImage : NSObject
 {
     NSString *_localAssetId;
     NSString *_localFilePath;

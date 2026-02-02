@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface MMFinderLivePaymentTrialTimeSettingCell
+@interface MMFinderLivePaymentTrialTimeSettingCell : NSObject
 {
     unsigned int _curTrialTimeHour;
     unsigned int _curTrialTimeMinute;

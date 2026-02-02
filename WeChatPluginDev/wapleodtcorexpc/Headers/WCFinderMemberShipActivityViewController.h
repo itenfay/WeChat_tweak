@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UILabel, UITableViewDiffableDataSource, UIView, UIViewController, WCFinderEventDelegate, WCFinderMSPostHeader, WCFinderMemberShipActivityViewModel, WCFinderRefreshTableFooterView, WCFinderReuseQueue, WCFinderTabSwitchView;
 @protocol WCFinderCommentBaseViewProtocol;
 
-@interface WCFinderMemberShipActivityViewController
+@interface WCFinderMemberShipActivityViewController : NSObject
 {
     WCFinderMemberShipActivityViewModel *_viewModel;
     WCFinderTabSwitchView *_tabSwitchView;

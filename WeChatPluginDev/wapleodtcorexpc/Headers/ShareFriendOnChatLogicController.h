@@ -6,7 +6,7 @@
 @class CContact, CMessageWrap, ForwardMessageLogicController, NSString, SelectContactsViewController;
 @protocol ShareFriendOnChatDelegate;
 
-@interface ShareFriendOnChatLogicController
+@interface ShareFriendOnChatLogicController : NSObject
 {
     id <ShareFriendOnChatDelegate> m_delegate;
     CContact *m_contactToShare;

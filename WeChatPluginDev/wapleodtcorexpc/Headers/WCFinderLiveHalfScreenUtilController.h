@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, MMUILabel, NSString, RichTextView, UIButton, UIView;
 @protocol WCFinderLiveHalfScreenUtilControllerDelegate;
 
-@interface WCFinderLiveHalfScreenUtilController
+@interface WCFinderLiveHalfScreenUtilController : NSObject
 {
     _Bool _isShown;
     _Bool _isAgreementChecked;

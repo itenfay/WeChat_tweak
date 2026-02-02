@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, MMUIImageView, MMUILabel, NSString, NSURLConnection, TPVideoFrameBuffer, UIImage, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UITopTouchView, WAMediaCastingRoutePickerController, WAPlayerHttpMediaWrap, WAScreenBrightnessStateView, WAVideoLayer, WCNetworkMediaSlider, WCPlayerPlayArgs, WCPlayerView;
 @protocol WAVideoPlayerViewDelegate;
 
-@interface WAVideoPlayerView
+@interface WAVideoPlayerView : NSObject
 {
     WCPlayerView *_playerView;
     _Bool _disableScroll;

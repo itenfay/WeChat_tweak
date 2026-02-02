@@ -6,7 +6,7 @@
 @class NSString;
 @protocol PreviewContentViewControllerDelegate;
 
-@interface PreviewContentViewController
+@interface PreviewContentViewController : NSObject
 {
     id <PreviewContentViewControllerDelegate> _m_previewContentVCDelegate;
     NSString *_curAuthorID;

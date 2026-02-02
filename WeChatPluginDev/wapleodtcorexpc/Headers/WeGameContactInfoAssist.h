@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString;
 
-@interface WeGameContactInfoAssist
+@interface WeGameContactInfoAssist : NSObject
 {
     ForwardMessageLogicController *m_forwardLogic;
 }

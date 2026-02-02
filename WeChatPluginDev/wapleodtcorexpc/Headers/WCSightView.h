@@ -6,7 +6,7 @@
 @class MMUIWindow, NSString, UIImageView, UIView, WCADVideoPlayInfo, WCDataItem, WCMediaItem, WCPlayerPlayArgs, WCPlayerView, WCSNSADPlayerControlView, WCSightFullPlayViewController;
 @protocol WCSightViewDelegate;
 
-@interface WCSightView
+@interface WCSightView : NSObject
 {
     _Bool m_bIsLongPressHandled;
     WCDataItem *m_dataItem;

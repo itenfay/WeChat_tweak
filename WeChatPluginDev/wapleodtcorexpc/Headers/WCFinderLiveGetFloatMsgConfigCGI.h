@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetFloatMsgConfigCGI
+@interface WCFinderLiveGetFloatMsgConfigCGI : NSObject
 {
     id _extraInfo;
     NSData *_liveCookies;

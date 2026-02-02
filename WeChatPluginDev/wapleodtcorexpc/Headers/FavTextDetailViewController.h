@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView;
 
-@interface FavTextDetailViewController
+@interface FavTextDetailViewController : NSObject
 {
     RichTextView *m_textLabel;
     NSString *m_nsText;

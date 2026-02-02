@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMFinderLivePrepayTiersPanelViewModel, NSString;
 
-@interface MMFinderLiveNoticeDetailPayView
+@interface MMFinderLiveNoticeDetailPayView : NSObject
 {
     _Bool _isTicket;
     CDUnknownBlockType _actionButtonBlock;

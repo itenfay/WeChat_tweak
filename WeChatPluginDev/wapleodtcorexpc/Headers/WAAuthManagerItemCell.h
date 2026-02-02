@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, UIButton, UILabel, WAAuthManagerItemViewModel;
 
-@interface WAAuthManagerItemCell
+@interface WAAuthManagerItemCell : NSObject
 {
     WAAuthManagerItemViewModel *_viewDataModel;
     MMWebImageView *_iconView;

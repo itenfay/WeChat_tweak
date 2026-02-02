@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, ForwardMessageLogicController, JSEvent, NSDictionary, NSMutableData, NSString, NSURLConnection, WWKMsgForwarder, WebviewJSEventHandlerBase;
 
-@interface SendAppMessageBaseImpl
+@interface SendAppMessageBaseImpl : NSObject
 {
     CMessageWrap *m_wrapMsg;
     ForwardMessageLogicController *m_forwardMsgLogic;

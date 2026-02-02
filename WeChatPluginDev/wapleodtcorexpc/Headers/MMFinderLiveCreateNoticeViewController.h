@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderNewUserPrepareResponse, MMCommonActionSheetPicker, MMFInderLiveCreateNoticeSelectModeView, MMFinderHeaderInfoView, MMFinderLiveCreateNoticeReporter, MMFinderLiveModNoticeView, MMFinderLiveNoticeDetailChooseView, MMFinderLiveNoticeModReminderView, MMFinderLiveNoticeShowReminderBottomView, MMLiveScrollGradientMaskingView, MMTextView, MMUIActivityIndicatorView, MMUIButton, MMUIView, NSArray, NSDate, NSDateFormatter, NSMutableArray, NSString, UIButton, UICollectionView, UICollectionViewFlowLayout, UIGestureRecognizer, UIImageView, UILabel, UIScrollView, UIView, WCFinderContact, WCFinderCreateLiveViewModel;
 @protocol MMFinderLiveCreateNoticeViewControllerDelegate;
 
-@interface MMFinderLiveCreateNoticeViewController
+@interface MMFinderLiveCreateNoticeViewController : NSObject
 {
     _Bool _inAdaptedPageSheet;
     _Bool _ready;

@@ -5,7 +5,7 @@
 
 @protocol FaceRecogBindVideoLogicDelegate;
 
-@interface FaceRecogBindVideoLogic
+@interface FaceRecogBindVideoLogic : NSObject
 {
     id <FaceRecogBindVideoLogicDelegate> _delegate;
 }

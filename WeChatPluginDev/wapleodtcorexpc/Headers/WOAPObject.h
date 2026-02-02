@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WOAPObject
+@interface WOAPObject : NSObject
 {
     long long _objType;
     NSString *_appId;

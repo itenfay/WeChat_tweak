@@ -5,7 +5,7 @@
 
 @class AppFileCircleProgressView, AppFileMessageViewModel, MMLoadingIndicatorView, NSString, UIImageView, UILabel;
 
-@interface AppFileMessageCellView
+@interface AppFileMessageCellView : NSObject
 {
     int m_uiStatus;
     UILabel *m_titleLabel;

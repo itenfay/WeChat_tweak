@@ -5,7 +5,7 @@
 
 @class MMBadgeView;
 
-@interface FTSVertEntryButton
+@interface FTSVertEntryButton : NSObject
 {
     MMBadgeView *_reddotView;
 }

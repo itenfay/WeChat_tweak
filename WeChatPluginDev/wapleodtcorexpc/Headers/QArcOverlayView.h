@@ -5,7 +5,7 @@
 
 @class QArcOverlay;
 
-@interface QArcOverlayView
+@interface QArcOverlayView : NSObject
 {
 }
 

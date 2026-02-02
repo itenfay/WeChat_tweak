@@ -5,7 +5,7 @@
 
 @class BaseMessageCellView, NSString;
 
-@interface MsgRecordBaseNodeView
+@interface MsgRecordBaseNodeView : NSObject
 {
     BaseMessageCellView *_cellView;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_getBLEDeviceServices
+@interface WAJSEventHandler_getBLEDeviceServices : NSObject
 {
     NSString *m_uuid;
 }

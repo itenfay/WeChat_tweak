@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, QCustomLayerConfigItem;
 
-@interface QCustomLayerTileOverlay
+@interface QCustomLayerTileOverlay : NSObject
 {
     NSString *_businessKey;
     NSString *_url;

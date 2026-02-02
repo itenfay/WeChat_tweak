@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WWKFContentSendMsgInfo
+@interface WWKFContentSendMsgInfo : NSObject
 {
     NSString *_imageUrl;
     NSData *_imageData;

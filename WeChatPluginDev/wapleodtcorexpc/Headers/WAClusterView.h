@@ -6,7 +6,7 @@
 @class NSString, UIButton, WAMapAnnotationView;
 @protocol WAClusterViewDelegate;
 
-@interface WAClusterView
+@interface WAClusterView : NSObject
 {
     id <WAClusterViewDelegate> _delegate;
     UIButton *_tapButton;

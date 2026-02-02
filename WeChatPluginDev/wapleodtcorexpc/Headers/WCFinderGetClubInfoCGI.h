@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetClubInfoCGI
+@interface WCFinderGetClubInfoCGI : NSObject
 {
     int _role;
     NSString *_chatroomId;

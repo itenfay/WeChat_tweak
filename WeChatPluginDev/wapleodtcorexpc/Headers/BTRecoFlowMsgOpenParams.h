@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTRecoFlowMsgOpenParams
+@interface BTRecoFlowMsgOpenParams : NSObject
 {
     _Bool _isOpenAggregationUrl;
     _Bool _hasItemShowType;

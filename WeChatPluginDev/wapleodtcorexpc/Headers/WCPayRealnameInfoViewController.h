@@ -6,7 +6,7 @@
 @class NSIndexPath, NSString, RichTextView, UIButton, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCBizInfoGroup, WCPayAreaItem, WCPayGetProfessionItem, WCPayRealnameInfoViewV2, WCPayTenpaySecureCtrlItem;
 @protocol WCPayRealnameInfoViewControllerDelegate;
 
-@interface WCPayRealnameInfoViewController
+@interface WCPayRealnameInfoViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBaseTextFieldItem *m_textFieldNameItem;

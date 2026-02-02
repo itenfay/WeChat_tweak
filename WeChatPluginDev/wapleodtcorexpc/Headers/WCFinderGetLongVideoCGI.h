@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class LVReddotInfo, NSData;
 
-@interface WCFinderGetLongVideoCGI
+@interface WCFinderGetLongVideoCGI : NSObject
 {
     int _tabType;
     unsigned long long _pullType;

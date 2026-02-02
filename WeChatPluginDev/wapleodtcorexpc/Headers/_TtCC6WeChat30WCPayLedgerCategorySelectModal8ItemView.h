@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat30WCPayLedgerCategorySelectModal8ItemView
+@interface _TtCC6WeChat30WCPayLedgerCategorySelectModal8ItemView : NSObject
 {
     MISSING_TYPE *label;
     MISSING_TYPE *_selected;

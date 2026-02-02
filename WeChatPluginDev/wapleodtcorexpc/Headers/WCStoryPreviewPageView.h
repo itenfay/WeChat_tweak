@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIImageView, MMUILabel, NSMutableArray, NSMutableSet, NSString, UILabel, UIView, WCStoryBubbleOrCommentAnimationView, WCStoryDataItem, WCStoryPreviewReportObj;
 @protocol MMUIViewControllerDelegate, WCStoryPreviewPageViewDelegate, WCStoryVideoPlayerViewDelegate;
 
-@interface WCStoryPreviewPageView
+@interface WCStoryPreviewPageView : NSObject
 {
     _Bool m_isMyOwnWC;
     WCStoryBubbleOrCommentAnimationView *m_commentAnimationView;

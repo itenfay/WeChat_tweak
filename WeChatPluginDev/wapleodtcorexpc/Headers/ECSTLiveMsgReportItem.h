@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ECSTLiveMsgReportItem
+@interface ECSTLiveMsgReportItem : NSObject
 {
     _Bool _isClick;
     unsigned int _exposeTimestamp;

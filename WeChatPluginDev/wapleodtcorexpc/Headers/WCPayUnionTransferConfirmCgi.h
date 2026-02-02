@@ -5,7 +5,7 @@
 
 @protocol WCPayUnionTransferConfirmCgiDelegate;
 
-@interface WCPayUnionTransferConfirmCgi
+@interface WCPayUnionTransferConfirmCgi : NSObject
 {
     id <WCPayUnionTransferConfirmCgiDelegate> m_delegate;
 }

@@ -5,7 +5,7 @@
 
 @class FinderLivePromoteInfoRedPacketCover;
 
-@interface MMFinderLiveRedPacketAnchorPromoteInfo
+@interface MMFinderLiveRedPacketAnchorPromoteInfo : NSObject
 {
     FinderLivePromoteInfoRedPacketCover *_redPacketInfo;
 }

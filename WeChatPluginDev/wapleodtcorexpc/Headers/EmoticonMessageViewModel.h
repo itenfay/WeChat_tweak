@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface EmoticonMessageViewModel
+@interface EmoticonMessageViewModel : NSObject
 {
     _Bool _isSelfieEmoticon;
     unsigned long long _msgDownloadStatus;

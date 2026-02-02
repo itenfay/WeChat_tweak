@@ -5,7 +5,7 @@
 
 @class WCFinderFollowBtnConfig, WCFinderFollowBtnViewModel;
 
-@interface WCFinderFollowButton
+@interface WCFinderFollowButton : NSObject
 {
     WCFinderFollowBtnViewModel *_viewModel;
     WCFinderFollowBtnConfig *_config;

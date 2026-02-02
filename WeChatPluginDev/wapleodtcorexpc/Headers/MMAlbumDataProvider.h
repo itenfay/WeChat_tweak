@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMAlbumDataProvider
+@interface MMAlbumDataProvider : NSObject
 {
 }
 

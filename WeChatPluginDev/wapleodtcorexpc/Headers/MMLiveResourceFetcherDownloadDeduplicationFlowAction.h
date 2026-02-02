@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
-@interface MMLiveResourceFetcherDownloadDeduplicationFlowAction
+@interface MMLiveResourceFetcherDownloadDeduplicationFlowAction : NSObject
 {
     NSMutableDictionary *_entries;
 }

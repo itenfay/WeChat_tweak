@@ -5,7 +5,7 @@
 
 @class NSString, POIItem;
 
-@interface MMPOIAnnotation
+@interface MMPOIAnnotation : NSObject
 {
     POIItem *_poiItem;
     _Bool _isUserLocation;

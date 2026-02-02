@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface WXHighlightableVideoSlider
+@interface WXHighlightableVideoSlider : NSObject
 {
     _Bool _hasTouched;
     UIImage *_interactiveFrontgroundImage;

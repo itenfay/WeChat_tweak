@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWebOptimizationPrefetchRequest, MMWebPrefetchDownloadTask, MMWebPrefetchInjectTask, MMWebPrefetchResPkgDownloadTask, NSMutableArray, NSURLSession;
 @protocol MMWebOptimizationPrefetchTaskDelegate;
 
-@interface MMWebOptimizationPrefetchTask
+@interface MMWebOptimizationPrefetchTask : NSObject
 {
     _Bool _hasResPrefetchFail;
     _Bool _isTaskCancel;

@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPayF2FJSAPIAuthenCgi;
 
-@interface WCPayF2FJSApiAuthenticationControlLogic
+@interface WCPayF2FJSApiAuthenticationControlLogic : NSObject
 {
     JSEvent *_jsEvent;
     WCPayF2FJSAPIAuthenCgi *_jsapiAuthenCgi;

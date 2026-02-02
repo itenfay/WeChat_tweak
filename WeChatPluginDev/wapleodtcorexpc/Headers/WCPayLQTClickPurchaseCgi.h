@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTClickPurchaseCgiDelegate;
 
-@interface WCPayLQTClickPurchaseCgi
+@interface WCPayLQTClickPurchaseCgi : NSObject
 {
     id <WCPayLQTClickPurchaseCgiDelegate> _cgiDelegate;
 }

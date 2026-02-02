@@ -6,7 +6,7 @@
 @class NSArray, NSString, WCBlockMonitorConfiguration;
 @protocol WCCrashBlockMonitorDelegate;
 
-@interface WCCrashBlockMonitorConfig
+@interface WCCrashBlockMonitorConfig : NSObject
 {
     _Bool _enableCrash;
     _Bool _enableBlockMonitor;

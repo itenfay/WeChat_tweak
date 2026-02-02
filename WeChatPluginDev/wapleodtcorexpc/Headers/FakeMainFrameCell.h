@@ -5,7 +5,7 @@
 
 @class FakeMainFrameItemView;
 
-@interface FakeMainFrameCell
+@interface FakeMainFrameCell : NSObject
 {
     FakeMainFrameItemView *m_itemView;
 }

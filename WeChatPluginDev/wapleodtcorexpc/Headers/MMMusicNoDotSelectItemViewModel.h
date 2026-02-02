@@ -5,7 +5,7 @@
 
 @class MMAsset, MMMusicFinderVideoCellModel, NSString, WCFinderDataItem;
 
-@interface MMMusicNoDotSelectItemViewModel
+@interface MMMusicNoDotSelectItemViewModel : NSObject
 {
     NSString *_uniqueId;
     MMAsset *_asset;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface WAJSEventHandler_createBLEConnection
+@interface WAJSEventHandler_createBLEConnection : NSObject
 {
     MMTimer *m_timeOutTimer;
     NSString *m_uuid;

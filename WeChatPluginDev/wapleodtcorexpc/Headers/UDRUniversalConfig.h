@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UDRUniversalConfig
+@interface UDRUniversalConfig : NSObject
 {
 }
 

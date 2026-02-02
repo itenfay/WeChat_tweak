@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoObjcPageMonitorCpp
+@interface MegaVideoObjcPageMonitorCpp : NSObject
 {
 }
 

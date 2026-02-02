@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString;
 @protocol WCCardListViewControllerDelegate;
 
-@interface WCCardListViewController
+@interface WCCardListViewController : NSObject
 {
     MMTableView *m_tableView;
     id <WCCardListViewControllerDelegate> m_delegate;

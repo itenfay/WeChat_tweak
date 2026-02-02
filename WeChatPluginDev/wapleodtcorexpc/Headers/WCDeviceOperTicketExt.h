@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCDevice;
 
-@interface WCDeviceOperTicketExt
+@interface WCDeviceOperTicketExt : NSObject
 {
     WCDevice *_device;
     unsigned int _operType;

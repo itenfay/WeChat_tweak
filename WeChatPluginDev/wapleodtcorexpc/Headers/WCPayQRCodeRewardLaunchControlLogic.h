@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSString, WCPayQRCodeRewardGenCodeCgi, WCPayQRCodeRewardGetCodeCgi, WCPayQRCodeRewardReceiverDetailViewController, WCPayQRCodeRewardSetPhotoOrWordCgi;
 
-@interface WCPayQRCodeRewardLaunchControlLogic
+@interface WCPayQRCodeRewardLaunchControlLogic : NSObject
 {
     WCPayQRCodeRewardGetCodeCgi *_getRewardCodeCgi;
     WCPayQRCodeRewardGenCodeCgi *_genRewardCodeCgi;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIScrollView;
 @protocol BrandProfileFuwuContainerViewDelegate;
 
-@interface BrandProfileFuwuContainerView
+@interface BrandProfileFuwuContainerView : NSObject
 {
     double _maxContainerHeight;
     UIScrollView *_fuwuScrollView;

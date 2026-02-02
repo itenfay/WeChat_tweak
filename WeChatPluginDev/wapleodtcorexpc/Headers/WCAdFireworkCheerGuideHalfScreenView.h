@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, WCAdFireworkCheerGuideHalfScreenInfo, WCAdURLImageView;
 
-@interface WCAdFireworkCheerGuideHalfScreenView
+@interface WCAdFireworkCheerGuideHalfScreenView : NSObject
 {
     WCAdFireworkCheerGuideHalfScreenInfo *_halfScreenInfo;
     WCAdURLImageView *_iconView;

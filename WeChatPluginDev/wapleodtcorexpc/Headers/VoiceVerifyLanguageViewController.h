@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSString;
 @protocol VoiceVerifyLanguageDelegate;
 
-@interface VoiceVerifyLanguageViewController
+@interface VoiceVerifyLanguageViewController : NSObject
 {
     unsigned int m_uiCurIndex;
     unsigned int m_uiCurWorkingIndex;

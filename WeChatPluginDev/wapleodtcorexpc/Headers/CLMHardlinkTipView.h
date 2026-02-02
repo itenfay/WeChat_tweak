@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CLMHardlinkTipView
+@interface CLMHardlinkTipView : NSObject
 {
     NSString *_hardlinkTitle;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KindaListView
+@interface KindaListView : NSObject
 {
 }
 

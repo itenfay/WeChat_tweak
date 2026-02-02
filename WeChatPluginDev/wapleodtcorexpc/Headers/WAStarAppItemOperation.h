@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAStarAppItemOperation
+@interface WAStarAppItemOperation : NSObject
 {
     unsigned int _operAppType;
     unsigned int _preAppType;

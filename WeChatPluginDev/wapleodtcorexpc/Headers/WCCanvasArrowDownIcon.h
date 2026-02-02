@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCCanvasArrowDownIcon
+@interface WCCanvasArrowDownIcon : NSObject
 {
     UIImageView *_bottomMask;
 }

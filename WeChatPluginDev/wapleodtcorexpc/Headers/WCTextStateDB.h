@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString, WCTDatabase, WCTTable;
 
-@interface WCTextStateDB
+@interface WCTextStateDB : NSObject
 {
     WCTDatabase *_database;
     WCTTable *_doLikeInfoTable;

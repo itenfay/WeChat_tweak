@@ -5,7 +5,7 @@
 
 @class MMTextStateMediaUploadTaskInfo, NSString;
 
-@interface MMTextStateMediaDataPB
+@interface MMTextStateMediaDataPB : NSObject
 {
     MMTextStateMediaUploadTaskInfo *_textStateMediaUploadTaskInfo;
 }

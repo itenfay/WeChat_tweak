@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMAppMsgDownloadModel
+@interface MMAppMsgDownloadModel : NSObject
 {
     unsigned int _m_uiMesLocalID;
     unsigned int _appMsgState;

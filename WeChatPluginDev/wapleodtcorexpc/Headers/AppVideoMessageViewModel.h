@@ -5,7 +5,7 @@
 
 @class CContact, NSString, UIImage;
 
-@interface AppVideoMessageViewModel
+@interface AppVideoMessageViewModel : NSObject
 {
     double m_titleHeight;
     struct CGSize m_timeSize;

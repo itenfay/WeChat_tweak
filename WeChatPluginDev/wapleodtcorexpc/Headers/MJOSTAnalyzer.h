@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJMovieComposingASRProcessor;
 
-@interface MJOSTAnalyzer
+@interface MJOSTAnalyzer : NSObject
 {
     MJMovieComposingASRProcessor *_asrProcessor;
 }

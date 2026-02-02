@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAWebSocketConfig
+@interface WAWebSocketConfig : NSObject
 {
     _Bool _TLSSkipHostnameCheck;
     unsigned int _webSocketMaxConcurrentCount;

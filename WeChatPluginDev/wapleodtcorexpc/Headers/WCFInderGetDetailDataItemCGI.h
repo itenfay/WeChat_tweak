@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderGetCommentDetailDataItemCGIParams;
 
-@interface WCFInderGetDetailDataItemCGI
+@interface WCFInderGetDetailDataItemCGI : NSObject
 {
     int _scene;
     CDUnknownBlockType _preloadInfoUpdateBlock;

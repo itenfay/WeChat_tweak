@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPPageFriendInfo
+@interface MPPageFriendInfo : NSObject
 {
     unsigned int _friendReadCount;
     NSString *_friendReadCountStr;

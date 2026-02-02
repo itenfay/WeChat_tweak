@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GameCenterCommonDb, GameURLSessionWrapper, NSMutableDictionary, NSRecursiveLock, NSString, SafeMutableDictionary, WCTTable, WKHTTPCookieStore;
 
-@interface GameWebVideoCacheService
+@interface GameWebVideoCacheService : NSObject
 {
     NSRecursiveLock *m_lock;
     _Bool _isPreloading;

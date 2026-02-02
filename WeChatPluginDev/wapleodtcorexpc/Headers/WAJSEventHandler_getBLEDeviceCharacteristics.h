@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_getBLEDeviceCharacteristics
+@interface WAJSEventHandler_getBLEDeviceCharacteristics : NSObject
 {
     NSString *m_deviceId;
     NSString *m_serviceId;

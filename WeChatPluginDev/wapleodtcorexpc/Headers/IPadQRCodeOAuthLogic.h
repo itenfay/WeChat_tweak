@@ -6,7 +6,7 @@
 @class MMTimer, OpenSDKOAuthRequest, QRCodeOAuthData;
 @protocol IPadQRCodeOAuthLogicDelegate;
 
-@interface IPadQRCodeOAuthLogic
+@interface IPadQRCodeOAuthLogic : NSObject
 {
     _Bool _hasStartQuery;
     unsigned int _refreshQRcodeRetryCount;

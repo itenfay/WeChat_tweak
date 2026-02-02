@@ -5,7 +5,7 @@
 
 @class DelaySwitchSettingLogic, MMTableViewInfo, UIButton, UILabel;
 
-@interface PluginContactInfoAssist
+@interface PluginContactInfoAssist : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     long long m_pluginType;

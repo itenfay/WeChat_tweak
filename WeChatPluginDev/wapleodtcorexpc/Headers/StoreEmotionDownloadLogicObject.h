@@ -6,7 +6,7 @@
 @class EmotionSummary, NSArray, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary;
 @protocol StoreEmotionDownloadLogicObjectDelegate;
 
-@interface StoreEmotionDownloadLogicObject
+@interface StoreEmotionDownloadLogicObject : NSObject
 {
     _Bool _m_isActive;
     int _maxWWANDownloadPacks;

@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString, WavAudioPlayer;
 
-@interface SPXAudioRecorder
+@interface SPXAudioRecorder : NSObject
 {
     NSRecursiveLock *mPrepareSentLock;
     _Bool mIsPrepareSent;

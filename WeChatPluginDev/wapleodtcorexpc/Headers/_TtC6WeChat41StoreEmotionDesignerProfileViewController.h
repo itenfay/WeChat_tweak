@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreReportInfo, MISSING_TYPE, NSString, PersonalDesigner;
 
-@interface _TtC6WeChat41StoreEmotionDesignerProfileViewController
+@interface _TtC6WeChat41StoreEmotionDesignerProfileViewController : NSObject
 {
     MISSING_TYPE *reportInfo;
     MISSING_TYPE *closeBlock;

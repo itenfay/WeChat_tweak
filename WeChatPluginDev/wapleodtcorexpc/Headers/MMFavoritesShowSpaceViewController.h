@@ -5,7 +5,7 @@
 
 @class CleanBtn, MMUILabel, MMUIView, NSString;
 
-@interface MMFavoritesShowSpaceViewController
+@interface MMFavoritesShowSpaceViewController : NSObject
 {
     CleanBtn *m_cleanSpaceBtn;
     MMUILabel *m_warningLabel;

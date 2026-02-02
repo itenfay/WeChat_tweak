@@ -5,7 +5,7 @@
 
 @class GameMultiOptionItem, NSString;
 
-@interface GameDebugConfigManager
+@interface GameDebugConfigManager : NSObject
 {
     GameMultiOptionItem *_gameWkInterceptOptionItem;
     GameMultiOptionItem *_loadHtmlOptionItem;

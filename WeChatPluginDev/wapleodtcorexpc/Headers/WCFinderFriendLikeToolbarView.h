@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIView, WCFinderCustomImageRichTextView, WCFinderDynamicRichTextView, WCFinderFeedContentVM;
 @protocol WCFinderFriendLikeToolbarViewDelegate;
 
-@interface WCFinderFriendLikeToolbarView
+@interface WCFinderFriendLikeToolbarView : NSObject
 {
     _Bool _onlyShowRecommendReason;
     _Bool _isLikeAnimating;

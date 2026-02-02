@@ -6,7 +6,7 @@
 @class NSString, UILongPressGestureRecognizer;
 @protocol MMTransparentButtonDelegate;
 
-@interface MMTransparentButton
+@interface MMTransparentButton : NSObject
 {
     _Bool m_bScale;
     id <MMTransparentButtonDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface MMLiveNoticeSelectButton
+@interface MMLiveNoticeSelectButton : NSObject
 {
     double _maxWidth;
     UIImageView *_iconView;

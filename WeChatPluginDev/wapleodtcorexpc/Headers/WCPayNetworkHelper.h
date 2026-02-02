@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString;
 @protocol WCPayNetworkHelperDelegate;
 
-@interface WCPayNetworkHelper
+@interface WCPayNetworkHelper : NSObject
 {
     id <WCPayNetworkHelperDelegate> m_delegate;
     NSMutableDictionary *m_dicCGIStartedTime;

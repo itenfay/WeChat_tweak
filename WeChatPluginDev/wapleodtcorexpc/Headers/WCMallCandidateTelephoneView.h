@@ -6,7 +6,7 @@
 @class NSString, UIImageView, UITableView;
 @protocol WCMallCandidateTelephoneViewDelegate;
 
-@interface WCMallCandidateTelephoneView
+@interface WCMallCandidateTelephoneView : NSObject
 {
     UITableView *m_oTelFilterTableView;
     UIImageView *bgImageView;

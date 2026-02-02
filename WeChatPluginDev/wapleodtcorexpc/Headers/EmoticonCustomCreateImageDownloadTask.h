@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface EmoticonCustomCreateImageDownloadTask
+@interface EmoticonCustomCreateImageDownloadTask : NSObject
 {
     CDUnknownBlockType _finderProgressBlock;
     CDUnknownBlockType _finderSucBlock;

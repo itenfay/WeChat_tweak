@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, MMUIView, NSString, UIImageView;
 
-@interface MJSegmentTrimHandleView
+@interface MJSegmentTrimHandleView : NSObject
 {
     _Bool _isLeftExpandable;
     _Bool _isRightExpandable;

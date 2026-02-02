@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, TXCDispatchQueue, TXCDisplayLayerView, TXCGSensor, TXCVideoRenderConfig, UIView;
 @protocol TXILocalVideoRendererDelegate;
 
-@interface TXCDisplayLayerVideoRenderer
+@interface TXCDisplayLayerVideoRenderer : NSObject
 {
     atomic_d5d55d14 _mainThreadTaskCount;
     id <TXILocalVideoRendererDelegate> rendererDelegate;

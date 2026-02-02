@@ -6,7 +6,7 @@
 @class MMFinderLiveActivityTask, MMFinderLiveActivityTaskId, MMFinderLiveOlympicsOperationViewModel;
 @protocol MMFinderLiveWinterOlympicOperationViewDelegate;
 
-@interface MMFinderLiveWinterOlympicOperationView
+@interface MMFinderLiveWinterOlympicOperationView : NSObject
 {
     id <MMFinderLiveWinterOlympicOperationViewDelegate> _operationDelegate;
     MMFinderLiveOlympicsOperationViewModel *_olympicsOperationViewModel;

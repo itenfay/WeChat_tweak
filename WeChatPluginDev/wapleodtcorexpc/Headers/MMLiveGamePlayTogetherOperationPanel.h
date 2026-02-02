@@ -6,7 +6,7 @@
 @class FinderLiveGamePlayTogether, MMFinderLiveGameTeamInfo, MMFinderLiveTaskId, MMLiveGamePlayTogetherJoinTeamCell, MMLiveGamePlayTogetherJoinTeamItem, MMLiveGamePlayTogetherJoinTeamSettingCell, MMLiveGamePlayTogetherJoinTeamSettingItem, MMTableView, MMUIActivityIndicatorView, MMUILabel, MMUIView, NSMutableArray, NSString, UILabel;
 @protocol MMLiveGamePlayTogetherOperationPanelDataSource, MMLiveGamePlayTogetherOperationPanelDelegate;
 
-@interface MMLiveGamePlayTogetherOperationPanel
+@interface MMLiveGamePlayTogetherOperationPanel : NSObject
 {
     _Bool _hasData;
     _Bool _pendingHideLoading;

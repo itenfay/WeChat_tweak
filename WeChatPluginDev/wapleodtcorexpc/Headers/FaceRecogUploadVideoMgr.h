@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface FaceRecogUploadVideoMgr
+@interface FaceRecogUploadVideoMgr : NSObject
 {
     NSMutableDictionary *m_dicLogic;
 }

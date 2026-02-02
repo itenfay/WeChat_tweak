@@ -5,7 +5,7 @@
 
 @class CContact, NSString, UITableView, WCTogetherHistoryReportSession, WCTogetherHistoryViewModel;
 
-@interface WCTogetherHistoryViewController
+@interface WCTogetherHistoryViewController : NSObject
 {
     CContact *_contact;
     WCTogetherHistoryViewModel *_viewModel;

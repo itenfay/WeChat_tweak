@@ -5,7 +5,7 @@
 
 @class MMITransmitKvData, NSString, WABizF2FCancelPayCgi, WABizF2FPlaceOrderCgi, WABizF2FPlaceOrderResp, WABizF2FRequestPaymentCgi, WABizF2FRequestPaymentResp, WABizF2FSuccPageCgi, WCBizLoadingView, WCPayBizF2FPaidSuccViewController, WCPayControlData, WCPayJumpRemindControlLogic;
 
-@interface WAJSEventHandler_requestPersonalPay
+@interface WAJSEventHandler_requestPersonalPay : NSObject
 {
     NSString *_appId;
     NSString *_outPrepayId;

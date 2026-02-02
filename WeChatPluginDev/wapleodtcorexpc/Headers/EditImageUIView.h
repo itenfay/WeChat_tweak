@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface EditImageUIView
+@interface EditImageUIView : NSObject
 {
     UIImageView *_imageView;
     int _toolType;

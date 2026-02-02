@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCPayPwdCtrlPanelView;
 @protocol WCPayPayPwdViewControllerDelegate;
 
-@interface WCPayPayPwdViewController
+@interface WCPayPayPwdViewController : NSObject
 {
     UIButton *m_footerButton;
     WCPayPwdCtrlPanelView *m_VerifyView;

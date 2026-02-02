@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WePkgCheckUpdateMgr
+@interface WePkgCheckUpdateMgr : NSObject
 {
     NSMutableArray *_arrCheckingPkgIds;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingFuncDeclareCpp
+@interface TingFuncDeclareCpp : NSObject
 {
 }
 

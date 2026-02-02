@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderDataItem, WCFinderLiveShareItem;
 
-@interface MMFinderLiveMinimizationData
+@interface MMFinderLiveMinimizationData : NSObject
 {
     unsigned long long _liveId;
     WCFinderDataItem *_finderDataItem;

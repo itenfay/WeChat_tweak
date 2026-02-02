@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingMusicRecentLineMgrCpp
+@interface TingMusicRecentLineMgrCpp : NSObject
 {
 }
 

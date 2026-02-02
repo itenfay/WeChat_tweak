@@ -5,7 +5,7 @@
 
 @class EdgeComputingDBService;
 
-@interface EdgeComputingJsApiSaveToTable
+@interface EdgeComputingJsApiSaveToTable : NSObject
 {
     EdgeComputingDBService *_dBService;
 }

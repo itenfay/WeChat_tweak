@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSDate, NSString;
 
-@interface _TtC6WeChat34KaraProphetLiveSessionFlowBehavior
+@interface _TtC6WeChat34KaraProphetLiveSessionFlowBehavior : NSObject
 {
     MISSING_TYPE *session;
 }

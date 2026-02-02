@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCListVideoCellView
+@interface WCListVideoCellView : NSObject
 {
     UIView *m_tailView;
 }

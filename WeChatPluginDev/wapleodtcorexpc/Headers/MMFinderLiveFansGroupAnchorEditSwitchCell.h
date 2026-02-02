@@ -6,7 +6,7 @@
 @class UILabel, UISwitch;
 @protocol MMFinderLiveFansGroupAnchorEditSwitchCellDelegate;
 
-@interface MMFinderLiveFansGroupAnchorEditSwitchCell
+@interface MMFinderLiveFansGroupAnchorEditSwitchCell : NSObject
 {
     id <MMFinderLiveFansGroupAnchorEditSwitchCellDelegate> _delegate;
     UILabel *_titleLabel;

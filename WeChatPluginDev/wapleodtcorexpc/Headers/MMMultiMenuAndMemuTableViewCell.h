@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class UIView;
 @protocol MMMultiMenuAndMemuTableViewCellDelegate;
 
-@interface MMMultiMenuAndMemuTableViewCell
+@interface MMMultiMenuAndMemuTableViewCell : NSObject
 {
     UIView *coverView;
     _Bool m_selected;

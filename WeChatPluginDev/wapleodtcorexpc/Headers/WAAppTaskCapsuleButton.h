@@ -5,7 +5,7 @@
 
 @class UIImage, UIView;
 
-@interface WAAppTaskCapsuleButton
+@interface WAAppTaskCapsuleButton : NSObject
 {
     _Bool _isDisabled;
     UIView *_hightlightedView;

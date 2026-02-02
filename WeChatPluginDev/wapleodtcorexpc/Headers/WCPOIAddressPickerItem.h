@@ -5,7 +5,7 @@
 
 @class MMCommonActionSheetPicker, NSArray, NSString, WCAddressStageDataStruct;
 
-@interface WCPOIAddressPickerItem
+@interface WCPOIAddressPickerItem : NSObject
 {
     NSArray *m_arrStage;
     WCAddressStageDataStruct *m_selectProvince;

@@ -5,7 +5,7 @@
 
 @class FTSContext, UIView, WCTimeLineFooterView;
 
-@interface FTSBaseViewController
+@interface FTSBaseViewController : NSObject
 {
     FTSContext *_context;
     UIView *_emptyFooterView;

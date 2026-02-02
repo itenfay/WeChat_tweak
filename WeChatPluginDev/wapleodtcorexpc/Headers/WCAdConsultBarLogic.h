@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, WCAdConsultBarCarouselInfo, WCAdConsultBarView;
 
-@interface WCAdConsultBarLogic
+@interface WCAdConsultBarLogic : NSObject
 {
     _Bool _isFirstAnimation;
     long long _currentIndex;

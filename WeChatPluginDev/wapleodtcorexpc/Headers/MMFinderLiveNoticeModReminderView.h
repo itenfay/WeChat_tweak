@@ -6,7 +6,7 @@
 @class FinderLiveNoticeInfo, MMFinderLiveNoticeModReminderSubView, UIView;
 @protocol LiveNoticeModReminderViewDelegate;
 
-@interface MMFinderLiveNoticeModReminderView
+@interface MMFinderLiveNoticeModReminderView : NSObject
 {
     _Bool _isDisable;
     int _selectType;

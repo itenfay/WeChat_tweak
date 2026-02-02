@@ -6,7 +6,7 @@
 @class NSString, NSURLConnection;
 @protocol APAuthDelegate;
 
-@interface APAuth
+@interface APAuth : NSObject
 {
     int _retryCount;
     id <APAuthDelegate> delegate;

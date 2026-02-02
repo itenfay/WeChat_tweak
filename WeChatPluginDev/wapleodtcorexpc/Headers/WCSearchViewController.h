@@ -5,7 +5,7 @@
 
 @class MMPageSheetAdapter, NSString, UINavigationController, UIScreenEdgePanGestureRecognizer, UIView, UIViewController, WCSearchBar, _TtC6WeChat25WCSearchTransitionManager;
 
-@interface WCSearchViewController
+@interface WCSearchViewController : NSObject
 {
     _Bool _isPresentFromHeroAnimation;
     _Bool _forceFullScreenPresent;

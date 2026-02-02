@@ -5,7 +5,7 @@
 
 @class _TtC6WeChat26MagicWeAppCardJsApiContext;
 
-@interface MBWeAppCardCommonAdapter
+@interface MBWeAppCardCommonAdapter : NSObject
 {
     _TtC6WeChat26MagicWeAppCardJsApiContext *_jsapiContext;
 }

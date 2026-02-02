@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WSWebRecommendPerformanceMonitor
+@interface WSWebRecommendPerformanceMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_monitorQueue;
     double _webRecommendTLInitTime;

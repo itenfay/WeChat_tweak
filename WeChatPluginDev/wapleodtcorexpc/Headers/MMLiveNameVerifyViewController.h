@@ -6,7 +6,7 @@
 @class MMAcceptAgreementCommonHeadView, MMLiveTaskId, NSString, UIButton;
 @protocol MMLiveNameVerifyViewControllerDelegate;
 
-@interface MMLiveNameVerifyViewController
+@interface MMLiveNameVerifyViewController : NSObject
 {
     _Bool _needAutoRotateToPortrait;
     _Bool _isVerify;

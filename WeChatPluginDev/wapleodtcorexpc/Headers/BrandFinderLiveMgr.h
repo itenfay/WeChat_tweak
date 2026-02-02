@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, MemoryMappedKV, NSMutableSet, NSString, WCEliminatedSlotMMKV;
 
-@interface BrandFinderLiveMgr
+@interface BrandFinderLiveMgr : NSObject
 {
     _Bool _mainBizCellBrandLiveVisible;
     _Bool _redDotNotifyPullEnable;

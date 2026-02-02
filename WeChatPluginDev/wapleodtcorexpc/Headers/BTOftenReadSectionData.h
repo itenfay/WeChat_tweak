@@ -5,7 +5,7 @@
 
 @class BTOftenReadBarViewCell, MPChannelTopBarInfo, NSArray, NSString;
 
-@interface BTOftenReadSectionData
+@interface BTOftenReadSectionData : NSObject
 {
     NSArray *_itemViewModelArr;
     BTOftenReadBarViewCell *_barCellView;

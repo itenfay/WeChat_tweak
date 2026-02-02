@@ -5,7 +5,7 @@
 
 @class NSString, TPPlayerLayerViewContainer, TPPlayerLogContext, TPPlayerVideo;
 
-@interface TPSlicePlayer
+@interface TPSlicePlayer : NSObject
 {
     _Bool needToCacheNext;
     _Bool isPlayInPIP;

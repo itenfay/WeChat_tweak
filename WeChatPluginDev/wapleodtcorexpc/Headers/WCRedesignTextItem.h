@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSString, UIButton, WCUITextField;
 
-@interface WCRedesignTextItem
+@interface WCRedesignTextItem : NSObject
 {
     _Bool _isWarningStatus;
     _Bool _canButtonBreakLine;

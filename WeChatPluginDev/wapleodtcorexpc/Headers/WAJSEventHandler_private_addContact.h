@@ -5,7 +5,7 @@
 
 @class MMWebAddContactView;
 
-@interface WAJSEventHandler_private_addContact
+@interface WAJSEventHandler_private_addContact : NSObject
 {
     MMWebAddContactView *_addContactView;
 }

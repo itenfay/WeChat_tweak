@@ -5,7 +5,7 @@
 
 @class CADisplayLink, NSString;
 
-@interface CountDownTipViewController
+@interface CountDownTipViewController : NSObject
 {
     CADisplayLink *m_timer;
     unsigned int m_uiCurrentCount;

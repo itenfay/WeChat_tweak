@@ -6,7 +6,7 @@
 @class MMTableView, MMUISearchBar, NSArray, NSMutableArray, NSString, UILabel, UIView;
 @protocol MMFinderLiveConnectedMicUserCellViewDelegate;
 
-@interface MMFinderLiveConnectMicSearchAudienceView
+@interface MMFinderLiveConnectMicSearchAudienceView : NSObject
 {
     id <MMFinderLiveConnectedMicUserCellViewDelegate> _cellActionDelegate;
     UIView *_contentView;

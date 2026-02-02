@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WCFinderGetScreenCastCGI
+@interface WCFinderGetScreenCastCGI : NSObject
 {
     NSMutableArray *_objectIds;
     NSString *_username;

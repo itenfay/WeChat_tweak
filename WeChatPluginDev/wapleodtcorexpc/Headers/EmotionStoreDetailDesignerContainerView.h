@@ -5,7 +5,7 @@
 
 @class EmotionActivity, MMUIActivityIndicatorView, MMWebImageView, PersonalDesigner, UILabel, UIView;
 
-@interface EmotionStoreDetailDesignerContainerView
+@interface EmotionStoreDetailDesignerContainerView : NSObject
 {
     UIView *m_contentView;
     MMWebImageView *m_designerHeaderView;

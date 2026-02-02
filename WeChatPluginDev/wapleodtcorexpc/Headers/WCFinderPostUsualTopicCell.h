@@ -5,7 +5,7 @@
 
 @class MMUILabel, RichTextView;
 
-@interface WCFinderPostUsualTopicCell
+@interface WCFinderPostUsualTopicCell : NSObject
 {
     RichTextView *_topicTextView;
     MMUILabel *_useCountLabel;

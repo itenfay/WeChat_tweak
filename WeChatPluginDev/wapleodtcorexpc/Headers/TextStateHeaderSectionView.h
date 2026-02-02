@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMExpandImageView, MMHeadImageView, MMUIButton, MMUIImageView, MMUILabel, TextStateModel;
 @protocol WCStatusViewDelegate;
 
-@interface TextStateHeaderSectionView
+@interface TextStateHeaderSectionView : NSObject
 {
     _Bool _shouldShowLocationDistance;
     unsigned int _type;

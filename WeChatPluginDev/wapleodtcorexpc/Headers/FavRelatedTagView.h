@@ -6,7 +6,7 @@
 @class MMUILabel, NSMutableArray;
 @protocol FavRelatedTagDelegate;
 
-@interface FavRelatedTagView
+@interface FavRelatedTagView : NSObject
 {
     MMUILabel *m_title;
     NSMutableArray *m_tagList;

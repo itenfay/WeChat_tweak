@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface HoneyPaySelectCardTypeCell
+@interface HoneyPaySelectCardTypeCell : NSObject
 {
     UIView *_highlightView;
     double _highlightViewCornerRadius;

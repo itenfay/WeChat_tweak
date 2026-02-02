@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSRecursiveLock, NSString;
 
-@interface WCFinderIntentService
+@interface WCFinderIntentService : NSObject
 {
     NSRecursiveLock *m_lock;
     MMLRUCache *intentCache;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface SelectWWKFSubContactViewController
+@interface SelectWWKFSubContactViewController : NSObject
 {
     NSMutableArray *_contacts;
 }

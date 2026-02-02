@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, WCAudioModuleList;
 
-@interface WCAudioModuleMgr
+@interface WCAudioModuleMgr : NSObject
 {
     _Bool m_didSetActiveModule;
     int m_maxInterruptUnit;

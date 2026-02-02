@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageIntialView, NSString, UIImage;
 @protocol MMImageCropperDelegate;
 
-@interface MMImageCropperViewController
+@interface MMImageCropperViewController : NSObject
 {
     EditImageIntialView *_editImageInitialView;
     id <MMImageCropperDelegate> _delegate;

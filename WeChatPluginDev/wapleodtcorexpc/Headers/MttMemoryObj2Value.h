@@ -5,7 +5,7 @@
 
 @class MttMemory;
 
-@interface MttMemoryObj2Value
+@interface MttMemoryObj2Value : NSObject
 {
     int _parent;
     int _offset;

@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UINavigationController, UIView;
 @protocol WCSelectorViewDataSource, WCSelectorViewDelegate;
 
-@interface WCSelectorView
+@interface WCSelectorView : NSObject
 {
     _Bool _bNeedLayout;
     UIImageView *_backgroundImageView;

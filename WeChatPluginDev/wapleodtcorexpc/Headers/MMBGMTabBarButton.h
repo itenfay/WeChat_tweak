@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface MMBGMTabBarButton
+@interface MMBGMTabBarButton : NSObject
 {
     UIView *_bottomLine;
 }

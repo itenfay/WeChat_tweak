@@ -6,7 +6,7 @@
 @class MMTableView, MMUIView, NSArray, NSMutableDictionary, NSString;
 @protocol ContactSelectDropDownHalfScreenViewDelegate;
 
-@interface ContactSelectDropDownHalfScreenView
+@interface ContactSelectDropDownHalfScreenView : NSObject
 {
     MMTableView *m_tableView;
     MMUIView *m_contentView;

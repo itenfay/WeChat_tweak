@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSLocale, NSMutableArray, NSSet, NSString, Package, WCOutCountryCodeWrap;
 
-@interface WCOutCountryCodeLogic
+@interface WCOutCountryCodeLogic : NSObject
 {
     WCOutCountryCodeWrap *m_defaultCountryCodeWrap;
     unsigned int m_lastUpdateTime;

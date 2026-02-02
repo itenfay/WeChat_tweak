@@ -5,7 +5,7 @@
 
 @class MMHDHeadImageView, NSString, SettingMyAccountExtInfoLogic;
 
-@interface SettingHeadImgViewController
+@interface SettingHeadImgViewController : NSObject
 {
     MMHDHeadImageView *m_hdHeadImageView;
     SettingMyAccountExtInfoLogic *m_infoLogic;

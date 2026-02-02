@@ -5,7 +5,7 @@
 
 @class MMSafeModeReport, NSDictionary, NSMutableArray, NSString;
 
-@interface MMSafeModeMgr
+@interface MMSafeModeMgr : NSObject
 {
     NSString *m_crashUsrName;
     unsigned long long m_crashUin;

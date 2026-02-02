@@ -6,7 +6,7 @@
 @class BizAttrSyncCtrl, NSMutableDictionary, NSObject, NSString, WCPayGetCollAssistMenuCgi;
 @protocol OS_dispatch_queue;
 
-@interface BrandAttrMgr
+@interface BrandAttrMgr : NSObject
 {
     NSMutableDictionary *_syncBufList;
     BizAttrSyncCtrl *_syncCtrl;

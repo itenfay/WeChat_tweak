@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderFlutterManager
+@interface WCFinderFlutterManager : NSObject
 {
 }
 

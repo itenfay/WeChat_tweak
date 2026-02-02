@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportMPShortLinkTransferResultItem
+@interface WAReportMPShortLinkTransferResultItem : NSObject
 {
     _Bool _isCache;
     int _result;

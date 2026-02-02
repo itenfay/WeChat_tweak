@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface EmoticonStoreListCache
+@interface EmoticonStoreListCache : NSObject
 {
     unsigned int _m_topHotNum;
     unsigned int _m_recentHotNum;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol SlideTextDelegate;
 
-@interface SlideTextJSHandler
+@interface SlideTextJSHandler : NSObject
 {
     NSString *_fullText;
     long long _currentCharLength;

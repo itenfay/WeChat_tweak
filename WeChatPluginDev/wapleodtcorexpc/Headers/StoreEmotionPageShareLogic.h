@@ -6,7 +6,7 @@
 @class CContact, EmotionBannerSet, ForwardMessageLogicController, NSString, WCDataItem;
 @protocol StoreEmotionPageShareLogicDelegate;
 
-@interface StoreEmotionPageShareLogic
+@interface StoreEmotionPageShareLogic : NSObject
 {
     ForwardMessageLogicController *m_forwardMsgLogic;
     NSString *m_titleForShareToTimeline;

@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedContentVM, WCFinderFeedListView, WCFinderMemberShipConsumeViewModel, WCFinderMemberShipIntroduceListData, WCFinderMemberShipIntroducePlayViewModel, WCFinderMemberShipPreviewListViewModel, WCFinderShareCustomTransition;
 
-@interface WCFinderMemberShipIntroducePlayViewController
+@interface WCFinderMemberShipIntroducePlayViewController : NSObject
 {
     WCFinderFeedListView *_feedListView;
     WCFinderFeedContentVM *_preVCData;

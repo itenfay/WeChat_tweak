@@ -6,7 +6,7 @@
 @class KindaUIView, MMBadgeView, NSString, RichTextView, UIImageView, UILabel, UIView, WCPayCss;
 @protocol WCPayTransferPhoneEntryPageDelegate;
 
-@interface WCPayTransferPhoneEntryPage
+@interface WCPayTransferPhoneEntryPage : NSObject
 {
     id <WCPayTransferPhoneEntryPageDelegate> _m_delegate;
     WCPayCss *_css;

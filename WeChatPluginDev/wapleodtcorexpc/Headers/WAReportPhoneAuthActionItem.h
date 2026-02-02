@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPhoneAuthActionItem
+@interface WAReportPhoneAuthActionItem : NSObject
 {
     _Bool _isBindPhone;
     _Bool _bindSuccess;

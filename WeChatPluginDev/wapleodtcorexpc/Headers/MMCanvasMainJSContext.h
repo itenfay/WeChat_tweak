@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMBaseJsApiHandler, NSString;
 
-@interface MMCanvasMainJSContext
+@interface MMCanvasMainJSContext : NSObject
 {
     MMBaseJsApiHandler *_baseJsApiHandler;
     CDUnknownBlockType _postMessageCb;

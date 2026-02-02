@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString;
 
-@interface SettingGeneralViewController
+@interface SettingGeneralViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
 }

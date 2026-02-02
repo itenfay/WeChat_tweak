@@ -5,7 +5,7 @@
 
 @class MJDashLine, MMUIButton, NSString, UIView;
 
-@interface MJTransitionSegmentCell
+@interface MJTransitionSegmentCell : NSObject
 {
     MJDashLine *_dashLine;
     UIView *_transitionButtonContainer;

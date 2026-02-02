@@ -5,7 +5,7 @@
 
 @class POPAnimatableProperty;
 
-@interface POPPropertyAnimation
+@interface POPPropertyAnimation : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MainSessionMgr
+@interface MainSessionMgr : NSObject
 {
     long long _minTopCountToFold;
     NSMutableArray *_topSessions;

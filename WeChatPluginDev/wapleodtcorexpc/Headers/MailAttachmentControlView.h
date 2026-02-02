@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MailAttachment, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UINavigationController, UIView;
 @protocol MailAttachmentControlViewDelegate;
 
-@interface MailAttachmentControlView
+@interface MailAttachmentControlView : NSObject
 {
     NSMutableArray *m_arrAttachmentViews;
     UILabel *m_labelCol;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIButton;
 
-@interface WAAuthPageSheetLocationItemCell
+@interface WAAuthPageSheetLocationItemCell : NSObject
 {
     MMUILabel *_titleLabel;
     UIButton *_selectedView;

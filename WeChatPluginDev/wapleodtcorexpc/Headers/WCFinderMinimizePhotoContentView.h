@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView, WCFinderBGMPlayer;
 
-@interface WCFinderMinimizePhotoContentView
+@interface WCFinderMinimizePhotoContentView : NSObject
 {
     _Bool _needResetSeek;
     WCFinderBGMPlayer *_bgPlayer;

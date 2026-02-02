@@ -5,7 +5,7 @@
 
 @class CContact, EnterpriseBrandContactHelper, EnterpriseOpenWeworkBottomBar, MMTableView, MMTitleView, NSArray, NSObject, NSString, UIView, WCDataSearcher;
 
-@interface EnterpriseConvergeSessionListViewController
+@interface EnterpriseConvergeSessionListViewController : NSObject
 {
     unsigned int _fromScene;
     MMTableView *_tableView;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, TextStateIcon;
 
-@interface TextStatePublishEntryButton
+@interface TextStatePublishEntryButton : NSObject
 {
     TextStateIcon *_exposeIcon;
     MMWebImageView *_iconImageView;

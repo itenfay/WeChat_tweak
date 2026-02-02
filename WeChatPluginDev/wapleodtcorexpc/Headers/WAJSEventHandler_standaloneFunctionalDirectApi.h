@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_standaloneFunctionalDirectApi
+@interface WAJSEventHandler_standaloneFunctionalDirectApi : NSObject
 {
 }
 

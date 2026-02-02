@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebOptimizationA8keyLiteTaskRequest, NSMutableSet;
 
-@interface MMWebOptimizationA8keyLiteTask
+@interface MMWebOptimizationA8keyLiteTask : NSObject
 {
     _Bool _isCancel;
     MMWebOptimizationA8keyLiteTaskRequest *_request;

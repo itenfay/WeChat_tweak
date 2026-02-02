@@ -6,7 +6,7 @@
 @class BusiF2FFavorCommResp, FavorComposeInfo, InternalLoadingFavor, InternalTransferTask, MMTextView, NSString, UIButton, UIImageView, UILabel, UIView, WCPayBaseNetworkingError, WCPayBizF2FExtraBuyDataHelper, WCPayBizF2FTransferMoneyFaovrPageSheet, WCPayBusiF2FGetFavorCgi, WCPayDecimalKeyboardView, WCPayF2FTransferDiscountFavorItemView, WCPayF2FTransferFavorItemView, WCPayTextField, WCPayTransferMoneyAntiCheatUIView, WCUIAlertView;
 @protocol WCPayBizF2FTransferMoneyViewControllerDelegate;
 
-@interface WCPayBizF2FTransferMoneyViewController
+@interface WCPayBizF2FTransferMoneyViewController : NSObject
 {
     _Bool _m_userHasSelectCompose;
     id <WCPayBizF2FTransferMoneyViewControllerDelegate> _delegate;

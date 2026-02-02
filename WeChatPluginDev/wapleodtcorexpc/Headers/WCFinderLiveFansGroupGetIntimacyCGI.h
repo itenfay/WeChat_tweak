@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveFansGroupGetIntimacyCGI
+@interface WCFinderLiveFansGroupGetIntimacyCGI : NSObject
 {
     NSData *_liveCookies;
     CDUnknownBlockType _successBlock;

@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_os_log;
 
-@interface WALaunchTimeAxisMgr
+@interface WALaunchTimeAxisMgr : NSObject
 {
     _Bool _allowKV;
     NSObject<OS_os_log> *_osLog;

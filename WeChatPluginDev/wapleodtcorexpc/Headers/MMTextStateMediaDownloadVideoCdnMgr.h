@@ -5,7 +5,7 @@
 
 @class MMTextStateMediaDownloadTaskInfo, NSArray, NSMutableArray, NSMutableDictionary;
 
-@interface MMTextStateMediaDownloadVideoCdnMgr
+@interface MMTextStateMediaDownloadVideoCdnMgr : NSObject
 {
     unsigned int _lastPreloadChatRoomTime;
     NSMutableDictionary *_dicIplist;

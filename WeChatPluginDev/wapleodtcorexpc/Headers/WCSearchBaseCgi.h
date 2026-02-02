@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCSearchBaseCgi
+@interface WCSearchBaseCgi : NSObject
 {
     CDUnknownBlockType __successBlock;
     CDUnknownBlockType __failBlock;

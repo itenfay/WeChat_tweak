@@ -6,7 +6,7 @@
 @class MMFinderLiveSimpleSelectionSheetView, NSString, UITableView, UIView;
 @protocol MMFinderLiveFansGroupAnchorCardEditPanelDelegate;
 
-@interface MMFinderLiveFansGroupAnchorCardEditPanel
+@interface MMFinderLiveFansGroupAnchorCardEditPanel : NSObject
 {
     unsigned long long _currentVisibility;
     id <MMFinderLiveFansGroupAnchorCardEditPanelDelegate> _panelDelegate;

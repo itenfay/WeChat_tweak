@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CommonAmbDataReportListenerCpp
+@interface CommonAmbDataReportListenerCpp : NSObject
 {
 }
 

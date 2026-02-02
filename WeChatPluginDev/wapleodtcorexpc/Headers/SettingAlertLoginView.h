@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SettingAlertLoginView
+@interface SettingAlertLoginView : NSObject
 {
     NSString *_tipString;
     NSString *_titleString;

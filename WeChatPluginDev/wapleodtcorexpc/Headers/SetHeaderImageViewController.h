@@ -6,7 +6,7 @@
 @class CContact, MMHeadImageView, MMTableView, NSString, UIButton, UILabel, UIView;
 @protocol SetHeaderImageViewDelegate;
 
-@interface SetHeaderImageViewController
+@interface SetHeaderImageViewController : NSObject
 {
     MMTableView *m_tableView;
     MMHeadImageView *m_headView;

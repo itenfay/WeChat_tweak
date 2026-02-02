@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_publishWeChatState
+@interface WAJSEventHandler_publishWeChatState : NSObject
 {
 }
 

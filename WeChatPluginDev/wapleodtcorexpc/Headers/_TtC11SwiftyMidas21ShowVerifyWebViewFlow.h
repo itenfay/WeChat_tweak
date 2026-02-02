@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas21ShowVerifyWebViewFlow
+@interface _TtC11SwiftyMidas21ShowVerifyWebViewFlow : NSObject
 {
     MISSING_TYPE *logPrefix;
 }

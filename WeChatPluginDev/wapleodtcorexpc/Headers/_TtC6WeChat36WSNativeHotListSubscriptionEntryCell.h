@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat36WSNativeHotListSubscriptionEntryCell
+@interface _TtC6WeChat36WSNativeHotListSubscriptionEntryCell : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *data;

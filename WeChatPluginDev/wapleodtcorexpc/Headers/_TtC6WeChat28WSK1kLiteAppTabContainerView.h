@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, MMLiteAppView, NSArray;
 
-@interface _TtC6WeChat28WSK1kLiteAppTabContainerView
+@interface _TtC6WeChat28WSK1kLiteAppTabContainerView : NSObject
 {
     MISSING_TYPE *config;
     MISSING_TYPE *liteAppView;

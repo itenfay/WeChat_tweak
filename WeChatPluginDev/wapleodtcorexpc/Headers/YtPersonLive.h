@@ -6,7 +6,7 @@
 @class NSArray, NSDictionary, NSString, YtDataPack_OC;
 @protocol YtFaceFrame_OC;
 
-@interface YtPersonLive
+@interface YtPersonLive : NSObject
 {
     int _platform;
     NSArray<YtFaceFrame_OC> *_frames;

@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString, NavigateItem, QMapView, QPolyline;
 @protocol NavigateLogicControllerDelegate;
 
-@interface NavigateLogicController
+@interface NavigateLogicController : NSObject
 {
     int _scene;
     QMapView *_mapView;

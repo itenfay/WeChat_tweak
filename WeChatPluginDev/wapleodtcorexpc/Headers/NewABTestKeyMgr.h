@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface NewABTestKeyMgr
+@interface NewABTestKeyMgr : NSObject
 {
     NSMutableDictionary *cachedABTestItems;
     _Bool _bABTestCacheLoaded;

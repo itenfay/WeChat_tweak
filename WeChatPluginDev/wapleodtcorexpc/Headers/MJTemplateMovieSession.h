@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJAIAssetProcessor, NSArray, NSMutableDictionary, OMJMovieSession;
 
-@interface MJTemplateMovieSession
+@interface MJTemplateMovieSession : NSObject
 {
     _Bool _usesBuildAndSwitchOperation;
     OMJMovieSession *_maasMovieSession;

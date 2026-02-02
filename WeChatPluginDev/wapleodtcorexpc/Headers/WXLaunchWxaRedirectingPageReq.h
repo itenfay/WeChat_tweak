@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXLaunchWxaRedirectingPageReq
+@interface WXLaunchWxaRedirectingPageReq : NSObject
 {
     NSString *_ticket;
 }

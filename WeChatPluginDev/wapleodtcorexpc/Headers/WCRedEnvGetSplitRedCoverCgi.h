@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvGetSplitRedCoverCgiDelegate;
 
-@interface WCRedEnvGetSplitRedCoverCgi
+@interface WCRedEnvGetSplitRedCoverCgi : NSObject
 {
     id <WCRedEnvGetSplitRedCoverCgiDelegate> _cgiDelegate;
 }

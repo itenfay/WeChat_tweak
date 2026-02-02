@@ -5,7 +5,7 @@
 
 @class UIWindowScene;
 
-@interface MMWindowViewController
+@interface MMWindowViewController : NSObject
 {
     _Bool _isHidden;
     _Bool _isRequestKeyWindow;

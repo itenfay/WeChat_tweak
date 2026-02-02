@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WCFinderFeedLiveToolBarItemButton
+@interface WCFinderFeedLiveToolBarItemButton : NSObject
 {
     UIImageView *_itemImageView;
     UILabel *_itemTitleLabel;

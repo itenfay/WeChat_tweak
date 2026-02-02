@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface MMLiveGameJoinTeamSettingCoinViewCell
+@interface MMLiveGameJoinTeamSettingCoinViewCell : NSObject
 {
     unsigned int _value;
     UIImageView *_coin;

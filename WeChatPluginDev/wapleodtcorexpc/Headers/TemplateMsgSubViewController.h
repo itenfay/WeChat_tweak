@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, MMUILabel, NSString, TemplateMsgSearchHelper, UIButton, UIView;
 
-@interface TemplateMsgSubViewController
+@interface TemplateMsgSubViewController : NSObject
 {
     NSString *_templateSessionId;
     UIView *_headerBarView;

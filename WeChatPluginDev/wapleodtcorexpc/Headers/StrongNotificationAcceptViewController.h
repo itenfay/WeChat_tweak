@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UIButton, UIImageView, UILabel, UIView, WeToast;
 
-@interface StrongNotificationAcceptViewController
+@interface StrongNotificationAcceptViewController : NSObject
 {
     UIImageView *m_logoView;
     MMUILabel *m_titleView;

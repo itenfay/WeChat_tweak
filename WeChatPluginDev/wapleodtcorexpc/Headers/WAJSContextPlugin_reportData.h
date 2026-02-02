@@ -5,7 +5,7 @@
 
 @protocol IReportMiniProgramDelegate;
 
-@interface WAJSContextPlugin_reportData
+@interface WAJSContextPlugin_reportData : NSObject
 {
     id <IReportMiniProgramDelegate> _webDelegate;
     id <IReportMiniProgramDelegate> _weappDelegate;

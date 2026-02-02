@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC9WeAppCore30WAJSContextPlugin_ScreenRecord
+@interface _TtC9WeAppCore30WAJSContextPlugin_ScreenRecord : NSObject
 {
     MISSING_TYPE *webServer;
     MISSING_TYPE *$__lazy_storage_$_drmPlayer;

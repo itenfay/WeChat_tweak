@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCAdDynamicFeedInfluentElementInfo
+@interface WCAdDynamicFeedInfluentElementInfo : NSObject
 {
     NSString *_isNormalStyleString;
     NSArray *_propertiesToReset;

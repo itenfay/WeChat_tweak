@@ -6,7 +6,7 @@
 @class NSArray, NSObject, VideoStreamInfo, VideoStreamMoniterObject;
 @protocol NSObject><AVPlayerStateControlDelegate;
 
-@interface VideoStreamPlayerView
+@interface VideoStreamPlayerView : NSObject
 {
     _Bool _forbidAutoPlayWhenEnterForeGround;
     float _currentPlayedSec;

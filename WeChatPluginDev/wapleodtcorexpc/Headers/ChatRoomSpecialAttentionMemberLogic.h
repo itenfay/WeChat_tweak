@@ -6,7 +6,7 @@
 @class CContact;
 @protocol ChatRoomSpecialAttentionMemberLogicDelegate;
 
-@interface ChatRoomSpecialAttentionMemberLogic
+@interface ChatRoomSpecialAttentionMemberLogic : NSObject
 {
     CContact *_m_chatRoomContact;
     id <ChatRoomSpecialAttentionMemberLogicDelegate> _m_delegate;

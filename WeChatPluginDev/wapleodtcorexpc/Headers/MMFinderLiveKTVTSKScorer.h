@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, TSKScorer;
 @protocol TSKMidiScoreCalculator;
 
-@interface MMFinderLiveKTVTSKScorer
+@interface MMFinderLiveKTVTSKScorer : NSObject
 {
     TSKScorer *_audioScore;
     id <TSKMidiScoreCalculator> _calculator;

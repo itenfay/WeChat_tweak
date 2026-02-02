@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UIView;
 
-@interface WCFinderMSActivityLikeListCell
+@interface WCFinderMSActivityLikeListCell : NSObject
 {
     UIView *_containerView;
     RichTextView *_likeView;

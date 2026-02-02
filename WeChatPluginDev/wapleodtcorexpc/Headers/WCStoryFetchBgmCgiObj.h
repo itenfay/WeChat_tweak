@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray;
 
-@interface WCStoryFetchBgmCgiObj
+@interface WCStoryFetchBgmCgiObj : NSObject
 {
     int _businessId;
     NSMutableArray *_imageDatas;

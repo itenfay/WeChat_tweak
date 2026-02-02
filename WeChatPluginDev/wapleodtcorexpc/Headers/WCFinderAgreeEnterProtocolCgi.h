@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderAgreeEnterProtocolCgi
+@interface WCFinderAgreeEnterProtocolCgi : NSObject
 {
     _Bool _agreeFlag;
     NSString *_username;

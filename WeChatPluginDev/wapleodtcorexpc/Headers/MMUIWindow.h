@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWindowMgrObject, NSString;
 @protocol MMUIWindowPassThroughDelegate;
 
-@interface MMUIWindow
+@interface MMUIWindow : NSObject
 {
     _Bool _canMixWithOther;
     _Bool _shouldHandleStatusBarAppearance;

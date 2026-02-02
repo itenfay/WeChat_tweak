@@ -5,7 +5,7 @@
 
 @class FTSWebSearchMgr, LocalJSEventHandler_BaseEvent, MMContext, NSString;
 
-@interface LiteAppApiLocalJSBridge
+@interface LiteAppApiLocalJSBridge : NSObject
 {
     MMContext *m_context;
     LocalJSEventHandler_BaseEvent *_handler;

@@ -6,7 +6,7 @@
 @class CContact, DelaySwitchSettingLogic, MMTableViewInfo, NSString;
 @protocol ContactInfoAssistDelegate;
 
-@interface ContactSetPermissionsViewController
+@interface ContactSetPermissionsViewController : NSObject
 {
     DelaySwitchSettingLogic *m_delaySwitchLogic;
     id <ContactInfoAssistDelegate> m_delegate;

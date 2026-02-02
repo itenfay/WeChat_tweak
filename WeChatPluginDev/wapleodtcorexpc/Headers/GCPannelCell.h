@@ -5,7 +5,7 @@
 
 @class GCVerticalImgLabelView;
 
-@interface GCPannelCell
+@interface GCPannelCell : NSObject
 {
     GCVerticalImgLabelView *_imgLabelView;
 }

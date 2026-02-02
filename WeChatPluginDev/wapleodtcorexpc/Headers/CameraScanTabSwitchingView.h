@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CameraScanBlurEffectView, UILabel;
 
-@interface CameraScanTabSwitchingView
+@interface CameraScanTabSwitchingView : NSObject
 {
     double _tabViewHeight;
     CameraScanBlurEffectView *_blurView;

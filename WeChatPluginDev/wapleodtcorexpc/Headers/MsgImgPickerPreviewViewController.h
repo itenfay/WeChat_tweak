@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageIntialView, MMUIButton, MsgImgPickerSelectedCollectionView, MultiImageScrollView, NSString, UIButton, UIView;
 @protocol MsgImgPickerPreviewViewControllerDataSource, MsgImgPickerPreviewViewControllerDelegate;
 
-@interface MsgImgPickerPreviewViewController
+@interface MsgImgPickerPreviewViewController : NSObject
 {
     MMUIButton *_editButton;
     _Bool _previewSelectedOnly;

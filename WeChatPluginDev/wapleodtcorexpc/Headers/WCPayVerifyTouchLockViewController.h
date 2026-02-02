@@ -5,7 +5,7 @@
 
 @protocol WCPayVerifyTouchLockViewControllerDelegate;
 
-@interface WCPayVerifyTouchLockViewController
+@interface WCPayVerifyTouchLockViewController : NSObject
 {
     _Bool _bHasCheckShowTouchId;
     id <WCPayVerifyTouchLockViewControllerDelegate> _delegate;

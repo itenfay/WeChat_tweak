@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSString, UIImageView;
 
-@interface BrandFinderLiveCardView
+@interface BrandFinderLiveCardView : NSObject
 {
     MMUILabel *_categoryLabel;
     MMWebImageView *_coverImageView;

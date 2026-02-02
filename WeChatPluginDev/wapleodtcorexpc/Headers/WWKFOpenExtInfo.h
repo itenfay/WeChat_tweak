@@ -5,7 +5,7 @@
 
 @class NSData, NSString, WWKFContentSendMsgInfo;
 
-@interface WWKFOpenExtInfo
+@interface WWKFOpenExtInfo : NSObject
 {
     _Bool _bPopVCWhenLeave;
     _Bool _showPageSheet;

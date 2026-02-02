@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, RichTextView, UIButton, UIColor;
 
-@interface WCLiveHalfScreenView
+@interface WCLiveHalfScreenView : NSObject
 {
     _Bool _hasCancelButton;
     _Bool _isShorterHalfVC;

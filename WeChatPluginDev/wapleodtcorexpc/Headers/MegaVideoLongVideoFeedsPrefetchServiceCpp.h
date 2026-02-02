@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MegaVideoLongVideoFeedsPrefetchServiceCpp
+@interface MegaVideoLongVideoFeedsPrefetchServiceCpp : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WCPayJSApiSecurityCrosscutBackControlLogic
+@interface WCPayJSApiSecurityCrosscutBackControlLogic : NSObject
 {
     NSDictionary *m_param;
 }

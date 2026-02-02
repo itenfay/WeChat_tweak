@@ -6,7 +6,7 @@
 @class MMTimer, MMTimerLabel, NSString, UIButton, UILabel, UIView, WCOutDialPad, WavAudioPlayer;
 @protocol WcoMinimizeDelegate;
 
-@interface WCOutCallingViewController
+@interface WCOutCallingViewController : NSObject
 {
     _Bool m_buttonsEnable;
     long long m_lastAddKeyPadTime;

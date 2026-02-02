@@ -6,7 +6,7 @@
 @class NSString, UIView, WCFinderFeedContentVM, WCFinderFeedDetailContentView;
 @protocol WCFinderFeedDetailFullScreenVideoViewControllerDelegate;
 
-@interface WCFinderFeedDetailFullScreenVideoViewController
+@interface WCFinderFeedDetailFullScreenVideoViewController : NSObject
 {
     _Bool _rotating;
     _Bool _isPullingDown;

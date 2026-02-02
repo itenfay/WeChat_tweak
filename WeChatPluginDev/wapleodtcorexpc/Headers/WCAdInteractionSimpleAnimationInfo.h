@@ -5,7 +5,7 @@
 
 @class NSObject;
 
-@interface WCAdInteractionSimpleAnimationInfo
+@interface WCAdInteractionSimpleAnimationInfo : NSObject
 {
     NSObject *_value;
 }

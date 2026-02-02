@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedFlowView, WCFinderFeedFlowViewAdapter, WCFinderHistoryViewModel;
 
-@interface WCFinderHistoryViewController
+@interface WCFinderHistoryViewController : NSObject
 {
     WCFinderHistoryViewModel *_viewModel;
     WCFinderFeedFlowViewAdapter *_flowViewAdapter;

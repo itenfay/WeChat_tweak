@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MJGradientLabel
+@interface MJGradientLabel : NSObject
 {
     NSArray *_colors;
     NSArray *_locations;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat20MMURLDownloadService
+@interface _TtC6WeChat20MMURLDownloadService : NSObject
 {
     MISSING_TYPE *serial;
     MISSING_TYPE *lock;

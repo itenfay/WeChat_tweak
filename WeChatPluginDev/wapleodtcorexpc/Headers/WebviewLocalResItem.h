@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewLocalResItem
+@interface WebviewLocalResItem : NSObject
 {
     NSString *_localResId;
     NSString *_savePath;

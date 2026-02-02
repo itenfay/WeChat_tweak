@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, UIImageView, UILabel;
 
-@interface WASettingAccountCell
+@interface WASettingAccountCell : NSObject
 {
     MMWebImageView *_avatarView;
     UILabel *_nameLabel;

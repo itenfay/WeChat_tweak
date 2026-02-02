@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WAJSEventHandler_shareTextMessage
+@interface WAJSEventHandler_shareTextMessage : NSObject
 {
     MISSING_TYPE *forwardMessageLogic;
 }

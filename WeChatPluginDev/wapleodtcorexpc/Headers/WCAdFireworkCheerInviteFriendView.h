@@ -6,7 +6,7 @@
 @class MMUIView, UIButton, WCAdFireworkCheerInfo, WCAdSocialLikeLogic, WCDataItem;
 @protocol WCAdFireworkCheerInviteFriendViewDelegate;
 
-@interface WCAdFireworkCheerInviteFriendView
+@interface WCAdFireworkCheerInviteFriendView : NSObject
 {
     _Bool _contentShowFlag;
     id <WCAdFireworkCheerInviteFriendViewDelegate> _delegate;

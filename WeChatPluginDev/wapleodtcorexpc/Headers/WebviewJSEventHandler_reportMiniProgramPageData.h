@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_reportMiniProgramPageData
+@interface WebviewJSEventHandler_reportMiniProgramPageData : NSObject
 {
     JSEvent *_event;
 }

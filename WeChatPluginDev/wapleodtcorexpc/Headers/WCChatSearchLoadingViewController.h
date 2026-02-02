@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIImageView, UILabel, UIScreenEdgePanGestureRecognizer, WAAppDismissAnimateTransition, WCImageSearchLogic, WCStoryDismissInteractiveTransition;
 
-@interface WCChatSearchLoadingViewController
+@interface WCChatSearchLoadingViewController : NSObject
 {
     _Bool _isLoading;
     unsigned long long _status;

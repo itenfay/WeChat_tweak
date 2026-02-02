@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock, NSString, OrderedDictionary;
 
-@interface MMLiveMgr
+@interface MMLiveMgr : NSObject
 {
     NSMutableDictionary *_openedLiveItemDict;
     NSRecursiveLock *_lock;

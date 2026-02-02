@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface ResourceDeleteHalfScreenView
+@interface ResourceDeleteHalfScreenView : NSObject
 {
     _Bool _checkDeleteAll;
     CDUnknownBlockType _confirmCallBack;

@@ -6,7 +6,7 @@
 @class CAShapeLayer, FavFullScreenImageViewController, NSString, UIImageView, UITextField, UIView, WNTextAttachment;
 @protocol WNAttachmentBaseViewDelegate;
 
-@interface WNAttachmentBaseView
+@interface WNAttachmentBaseView : NSObject
 {
     id <WNAttachmentBaseViewDelegate> _wnDelegate;
     WNTextAttachment *_wnAttachment;

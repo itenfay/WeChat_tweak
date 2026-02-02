@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderUploadTask;
 
-@interface WCFinderMusicPostDraftCGI
+@interface WCFinderMusicPostDraftCGI : NSObject
 {
     WCFinderUploadTask *_task;
     CDUnknownBlockType _successBlock;

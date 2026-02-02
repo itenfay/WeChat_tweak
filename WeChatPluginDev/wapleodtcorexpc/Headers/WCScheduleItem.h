@@ -5,7 +5,7 @@
 
 @class NSDate, NSString;
 
-@interface WCScheduleItem
+@interface WCScheduleItem : NSObject
 {
     unsigned int _messageType;
     unsigned int _messageInnerType;

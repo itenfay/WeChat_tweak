@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, WCAdBreakFrameInfo, WCAdBreakFrameTagLogic, WCAdTypewriterLabel, WCAdURLImageView, WCDataItem;
 
-@interface WCAdBreakFrameTagView
+@interface WCAdBreakFrameTagView : NSObject
 {
     _Bool _isDetail;
     WCAdBreakFrameInfo *_adBreakFrameInfo;

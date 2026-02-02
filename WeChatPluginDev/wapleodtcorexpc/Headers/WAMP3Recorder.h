@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAMP3Recorder
+@interface WAMP3Recorder : NSObject
 {
     struct lame_global_struct *_lame;
 }

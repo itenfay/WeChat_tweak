@@ -6,7 +6,7 @@
 @class NSString;
 @protocol StoreEmotionRewardAskForRewardCgiDelegate;
 
-@interface StoreEmotionRewardAskForRewardCgi
+@interface StoreEmotionRewardAskForRewardCgi : NSObject
 {
     _Bool m_hasStartRequestOnce;
     NSString *m_pid;

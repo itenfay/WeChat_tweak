@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAJSEventHandler_verifyPaymentPassword
+@interface WAJSEventHandler_verifyPaymentPassword : NSObject
 {
     NSMutableDictionary *_param;
 }

@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMTableView, MMUIButton, MMUILabel, NSString, OrderedDictionary, UIView;
 @protocol MMLiveGameJoinTeamSettingViewDelegate;
 
-@interface MMLiveGameJoinTeamSettingView
+@interface MMLiveGameJoinTeamSettingView : NSObject
 {
     unsigned int _lastJoinTeamMode;
     unsigned int _curJoinTeamMode;

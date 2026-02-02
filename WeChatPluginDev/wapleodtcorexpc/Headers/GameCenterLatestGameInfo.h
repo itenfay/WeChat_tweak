@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterLatestGameInfo
+@interface GameCenterLatestGameInfo : NSObject
 {
     _Bool _isSubscribed;
     unsigned long long _downloadType;

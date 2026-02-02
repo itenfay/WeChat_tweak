@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface MMFinderLivePurchaseSuperfanClubCGI
+@interface MMFinderLivePurchaseSuperfanClubCGI : NSObject
 {
     int _consumeType;
     NSData *_liveCookies;

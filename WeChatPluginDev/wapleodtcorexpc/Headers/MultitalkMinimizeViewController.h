@@ -6,7 +6,7 @@
 @class BackgroundMoveView, MultitalkMinimizeView, NSString;
 @protocol MultitalkMinimizeViewControllerDelegate;
 
-@interface MultitalkMinimizeViewController
+@interface MultitalkMinimizeViewController : NSObject
 {
     BackgroundMoveView *m_backgroundImageView;
     id <MultitalkMinimizeViewControllerDelegate> m_delegate;

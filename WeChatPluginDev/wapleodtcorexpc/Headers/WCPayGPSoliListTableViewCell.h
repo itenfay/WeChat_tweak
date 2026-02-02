@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RichTextView, SolitaireObj, UIImageView, UIView;
 @protocol WCPayGPSoliListTableViewCellDelegate;
 
-@interface WCPayGPSoliListTableViewCell
+@interface WCPayGPSoliListTableViewCell : NSObject
 {
     id <WCPayGPSoliListTableViewCellDelegate> _delegate;
     SolitaireObj *_soliData;

@@ -5,7 +5,7 @@
 
 @class NSString, NewLifeSelectPhotoResp;
 
-@interface NewLifeSelectPhotoHandler
+@interface NewLifeSelectPhotoHandler : NSObject
 {
     NewLifeSelectPhotoResp *_response;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CSCScanSessionReportFFEInfo, CameraScanGoodsExtensionDetectorConfig, MMTimer, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSRecursiveLock, NSString;
 @protocol CameraScanGoodsExtensionDetectorDelegate, OS_dispatch_queue;
 
-@interface CameraScanGoodsExtensionDetector
+@interface CameraScanGoodsExtensionDetector : NSObject
 {
     _Bool _isActive;
     id <CameraScanGoodsExtensionDetectorDelegate> _delegate;

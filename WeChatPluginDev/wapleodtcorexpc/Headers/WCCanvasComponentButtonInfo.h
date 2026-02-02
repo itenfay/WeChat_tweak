@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, POIInfo, WCAdAppointmentInfo, WCAdCardBtnInfo, WCAdCombineFollowInfo, WCAdFinderFollowInfo, WCAdFinderInfo, WCAdQuicklyAddBrandInfo, WCAdRedPacketCoverInfo, WCAdStatePublishInfo, WCCanvasComponentItem;
 
-@interface WCCanvasComponentButtonInfo
+@interface WCCanvasComponentButtonInfo : NSObject
 {
     _Bool _bInternalJumpAppStore;
     _Bool _hideProductActionHeader;

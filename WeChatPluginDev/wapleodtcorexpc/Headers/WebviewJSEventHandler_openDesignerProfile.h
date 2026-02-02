@@ -5,7 +5,7 @@
 
 @class EmoticonStoreReportInfo, JSEvent, MMUIViewController, NSString;
 
-@interface WebviewJSEventHandler_openDesignerProfile
+@interface WebviewJSEventHandler_openDesignerProfile : NSObject
 {
     JSEvent *m_event;
     NSString *m_designerId;

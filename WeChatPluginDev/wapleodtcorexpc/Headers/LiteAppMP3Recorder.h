@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppMP3Recorder
+@interface LiteAppMP3Recorder : NSObject
 {
     struct lame_global_struct *_lame;
 }

@@ -6,7 +6,7 @@
 @class JumpToBizWebviewData, JumpToBizWebviewLogicHelper, MMLoadingView, NSString;
 @protocol JumpToBizWebviewBlockViewControllerDelegate;
 
-@interface JumpToBizWebviewBlockViewController
+@interface JumpToBizWebviewBlockViewController : NSObject
 {
     JumpToBizWebviewData *_infoData;
     JumpToBizWebviewLogicHelper *_logicHelper;

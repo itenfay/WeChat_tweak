@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface SendTdiAuthResp
+@interface SendTdiAuthResp : NSObject
 {
     NSString *_tdiExtInfo;
     NSData *_tdiAuthBuffer;

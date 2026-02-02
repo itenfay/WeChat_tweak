@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, UIColor, UIView;
 
-@interface BTFinderItemBlurView
+@interface BTFinderItemBlurView : NSObject
 {
     CAGradientLayer *_colorGradientLayer;
     CAGradientLayer *_blurGradientLayer;

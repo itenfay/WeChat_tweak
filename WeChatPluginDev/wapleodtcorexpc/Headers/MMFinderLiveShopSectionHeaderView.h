@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface MMFinderLiveShopSectionHeaderView
+@interface MMFinderLiveShopSectionHeaderView : NSObject
 {
     NSString *_title;
     NSString *_subTitle;

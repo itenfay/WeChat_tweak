@@ -6,7 +6,7 @@
 @class BrandFlowListBaseCellModel, MMUIButton, NSMutableArray, NSMutableSet, NSString, UIButton, UILabel, UITableView;
 @protocol BrandFlowListDislikeSelectionHalfViewControllerDelegate;
 
-@interface BrandFlowListDislikeSelectionHalfViewController
+@interface BrandFlowListDislikeSelectionHalfViewController : NSObject
 {
     id <BrandFlowListDislikeSelectionHalfViewControllerDelegate> _bizDelegate;
     MMUIButton *_closeBtn;

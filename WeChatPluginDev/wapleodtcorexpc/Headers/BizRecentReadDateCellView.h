@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface BizRecentReadDateCellView
+@interface BizRecentReadDateCellView : NSObject
 {
     MMUILabel *_dateLabel;
     long long _paddingTop;

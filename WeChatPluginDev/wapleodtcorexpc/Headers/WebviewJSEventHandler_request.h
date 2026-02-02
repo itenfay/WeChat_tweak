@@ -5,7 +5,7 @@
 
 @class NSURLSession;
 
-@interface WebviewJSEventHandler_request
+@interface WebviewJSEventHandler_request : NSObject
 {
     NSURLSession *_urlSession;
 }

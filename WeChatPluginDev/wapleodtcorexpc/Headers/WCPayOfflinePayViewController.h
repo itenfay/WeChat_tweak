@@ -6,7 +6,7 @@
 @class MMUILabel, MMUIView, NSDictionary, NSObject, NSString, RichTextView, UIAttachmentBehavior, UIButton, UIDynamicAnimator, WCPayBindCardInfo, WCPayOfflineBlockTipsView, WCPayOfflineDisableBlockTipsView, WCPayOfflineEnablePageTipsView, WCPayOfflinePayAddNewCardTipsView, WCPayOfflinePayBottomButton, WCPayOfflinePayCodeView, WCPayOfflinePayCreateOfflinePayTipsView, WCPayOfflinePayGuideBarView, WCPayOfflinePayInvalidCheckTipsView, WCPayOfflinePayNoCodeTipsView, WCPayOfflinePayPageJumpInfo, WCPayOfflinePaySelectPayCardView, WCPayOfflinePaymentTipsBarView, WCPayPickerView, WCPayWebImageView, WCUIAlertView;
 @protocol OS_dispatch_queue, WCPayOfflinePayViewControllerDelegate;
 
-@interface WCPayOfflinePayViewController
+@interface WCPayOfflinePayViewController : NSObject
 {
     id <WCPayOfflinePayViewControllerDelegate> m_delegate;
     _Bool m_bFreezeAlertShowed;

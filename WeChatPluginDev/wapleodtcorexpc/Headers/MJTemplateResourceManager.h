@@ -6,7 +6,7 @@
 @class MemoryMappedKV, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MJTemplateResourceManager
+@interface MJTemplateResourceManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_operationQueue;
     MemoryMappedKV *_mmkv;

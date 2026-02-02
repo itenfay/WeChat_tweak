@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCGiftCardInfo
+@interface WCGiftCardInfo : NSObject
 {
     unsigned int _bizUin;
     NSString *_orderId;

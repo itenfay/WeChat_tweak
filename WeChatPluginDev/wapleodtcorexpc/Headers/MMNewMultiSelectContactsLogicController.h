@@ -6,7 +6,7 @@
 @class CContact, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MMNewMultiSelectContactsLogicDelegate;
 
-@interface MMNewMultiSelectContactsLogicController
+@interface MMNewMultiSelectContactsLogicController : NSObject
 {
     id <MMNewMultiSelectContactsLogicDelegate> _delegate;
     NSMutableArray *_contactsKeyArray;

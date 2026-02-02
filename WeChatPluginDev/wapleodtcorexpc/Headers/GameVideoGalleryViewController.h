@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GameHaowanMediaWrap, MMAlbumForGameHaowan, MMProgressViewEx, NSString, UICollectionView, WCPlayerPlayArgs, WCPlayerView;
 @protocol GameVideoGalleryViewControllerDelagate;
 
-@interface GameVideoGalleryViewController
+@interface GameVideoGalleryViewController : NSObject
 {
     GameHaowanMediaWrap *_mediaWrap;
     WCPlayerPlayArgs *_playArgs;

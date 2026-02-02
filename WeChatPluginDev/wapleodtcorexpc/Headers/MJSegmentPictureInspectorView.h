@@ -5,7 +5,7 @@
 
 @class MJPictureAdjustmentValueItem, MJPublisherBidirectionalSlider, MJPublisherSlider, MJSegmentPictureInspectorViewModel, MMUILabel, NSString, UICollectionView, UIView;
 
-@interface MJSegmentPictureInspectorView
+@interface MJSegmentPictureInspectorView : NSObject
 {
     UICollectionView *_collectionView;
     MJPublisherSlider *_plainSlider;

@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, NSMutableData, NSString, NSURLConnection, UIButton, UIImage, UIImageView, UILabel, UIView, WCButtonListView;
 @protocol WCAccountLoginByQRCodeViewControllerDelegate;
 
-@interface WCAccountLoginByQRCodeViewController
+@interface WCAccountLoginByQRCodeViewController : NSObject
 {
     UIView *_scanQRCodeView;
     UIView *_qrCodeFrameView;

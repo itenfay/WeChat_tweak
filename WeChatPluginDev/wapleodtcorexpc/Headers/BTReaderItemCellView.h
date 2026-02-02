@@ -5,7 +5,7 @@
 
 @class BTFinderRecommendRedPacketView, BTReaderItemCellViewModel, BTReaderMsgSectionData, BTRichTextTagView, CAGradientLayer, MMUILabel, MMWebImageView, NSString, RichTextView, UIView;
 
-@interface BTReaderItemCellView
+@interface BTReaderItemCellView : NSObject
 {
     BTRichTextTagView *m_titleView;
     RichTextView *m_digestLabel;

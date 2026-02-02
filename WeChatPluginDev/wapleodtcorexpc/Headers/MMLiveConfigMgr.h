@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMLiveConfigMgr
+@interface MMLiveConfigMgr : NSObject
 {
     _Bool _isLiveUIPerfMonitorEnable;
     _Bool _isLiveBackgroundDecodeEnable;

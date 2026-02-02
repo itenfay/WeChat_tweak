@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString;
 @protocol BizTLPersonalCenterMainViewControllerDelegate;
 
-@interface BizTLPersonalCenterMainViewController
+@interface BizTLPersonalCenterMainViewController : NSObject
 {
     int _sessionId;
     int _personalizedOpt;

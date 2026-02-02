@@ -5,7 +5,7 @@
 
 @class UIButton, UILabel, UIView;
 
-@interface EditImageDeleteBarView
+@interface EditImageDeleteBarView : NSObject
 {
     UIView *_line;
     _Bool _isSelected;

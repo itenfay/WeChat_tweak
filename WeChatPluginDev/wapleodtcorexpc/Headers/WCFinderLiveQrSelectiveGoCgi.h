@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveQrSelectiveGoCgi
+@interface WCFinderLiveQrSelectiveGoCgi : NSObject
 {
     NSString *_qrCodeUri;
     CDUnknownBlockType _successBlock;

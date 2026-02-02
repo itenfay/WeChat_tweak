@@ -6,7 +6,7 @@
 @class MMLocationUISearchBar, MMTableView, NSMutableArray, NSString, UIViewController;
 @protocol MMLocationSearchBarDelegate, MMLocationSearchResultTableViewDelegate;
 
-@interface MMLocationSearchBar
+@interface MMLocationSearchBar : NSObject
 {
     _Bool _isSearching;
     MMLocationUISearchBar *_m_searchBar;

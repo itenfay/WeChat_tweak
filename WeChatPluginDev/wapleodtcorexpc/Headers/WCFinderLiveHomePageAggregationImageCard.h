@@ -5,7 +5,7 @@
 
 @class InfiniteLoopContainerView, MMTimer, NSString, UIView;
 
-@interface WCFinderLiveHomePageAggregationImageCard
+@interface WCFinderLiveHomePageAggregationImageCard : NSObject
 {
     UIView *_headInfoBgView;
     InfiniteLoopContainerView *_loopPageView;

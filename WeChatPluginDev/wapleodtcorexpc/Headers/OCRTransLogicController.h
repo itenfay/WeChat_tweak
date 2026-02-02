@@ -5,7 +5,7 @@
 
 @class CameraScanOCRContentView, EnhanceTranslatingLogic, EnhanceTranslatingView, NSArray, NSString, OCRTransReport, OCRTransScanner, UIImage;
 
-@interface OCRTransLogicController
+@interface OCRTransLogicController : NSObject
 {
     OCRTransScanner *_scanner;
     int _scene;

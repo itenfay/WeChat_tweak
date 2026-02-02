@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, MMTableView, MMUIButton, MMUILabel, MMUIView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIImageView, UITextField, WCPayGPMemberFillMoneyCell;
 
-@interface WCPayGPMemberFillMoneyView
+@interface WCPayGPMemberFillMoneyView : NSObject
 {
     _Bool _bIsFromImportSolitaire;
     _Bool _bIsSearching;

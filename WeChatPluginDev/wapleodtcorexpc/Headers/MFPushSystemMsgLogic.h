@@ -6,7 +6,7 @@
 @class MFBannerBtn, MMTimer, NetworkCheckViewController, UIButton, UIViewController;
 @protocol MFBanner, MFPushSystemMsgDelegate;
 
-@interface MFPushSystemMsgLogic
+@interface MFPushSystemMsgLogic : NSObject
 {
     MFBannerBtn *m_banner;
     NetworkCheckViewController *m_networkCheckViewController;

@@ -5,7 +5,7 @@
 
 @protocol MMUIHookViewDelegate;
 
-@interface MMUIHookView
+@interface MMUIHookView : NSObject
 {
     id <MMUIHookViewDelegate> m_delegate;
 }

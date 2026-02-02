@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportJSEvaluateDetailItem
+@interface WAReportJSEvaluateDetailItem : NSObject
 {
     _Bool _hasPreload;
     _Bool _isDownloadCode;

@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCBizLoadingView, WCPayGenDigitalCertCgi, WCPayTenpaySecureCtrlItem, WCPayUserInfo;
 @protocol WCPayDigitalCertInstallViewControllerDelegate;
 
-@interface WCPayDigitalCertInstallViewController
+@interface WCPayDigitalCertInstallViewController : NSObject
 {
     unsigned int _entryScene;
     int _cert_encrypt_type;

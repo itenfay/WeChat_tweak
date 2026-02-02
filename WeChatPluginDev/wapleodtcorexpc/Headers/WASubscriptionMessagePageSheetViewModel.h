@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSData, NSString, SubscribeMsgShowInfo;
 
-@interface WASubscriptionMessagePageSheetViewModel
+@interface WASubscriptionMessagePageSheetViewModel : NSObject
 {
     _Bool _keepOption;
     _Bool _keepOptionHide;

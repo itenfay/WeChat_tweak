@@ -6,7 +6,7 @@
 @class NSMutableSet, NSString, SugResult, UITableView;
 @protocol WebSearchLocalPageCellDelegate;
 
-@interface FTSWebSearchLocalPageCell
+@interface FTSWebSearchLocalPageCell : NSObject
 {
     SugResult *_resultWrap;
     UITableView *_resultTableView;

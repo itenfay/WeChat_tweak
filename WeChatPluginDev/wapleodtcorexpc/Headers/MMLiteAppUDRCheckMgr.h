@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMLiteAppUDRCheckMgr
+@interface MMLiteAppUDRCheckMgr : NSObject
 {
     NSArray *_liteAppProjectIdList;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ExitReportInfo
+@interface ExitReportInfo : NSObject
 {
     unsigned long long _exitTimeMs;
     NSString *_topVcName;

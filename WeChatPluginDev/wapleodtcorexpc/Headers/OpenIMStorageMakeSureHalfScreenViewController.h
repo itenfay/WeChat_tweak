@@ -5,7 +5,7 @@
 
 @class CContact, MMOpenIMStorageMakeSureMaskViewView, MMUIButton, MMUIImageView, MMUILabel, MMUIScrollView, MMUIView, NSString, OpenIMArchivePopUpInfo, UIButton;
 
-@interface OpenIMStorageMakeSureHalfScreenViewController
+@interface OpenIMStorageMakeSureHalfScreenViewController : NSObject
 {
     UIButton *m_makeSureButton;
     UIButton *m_makeRejectButton;

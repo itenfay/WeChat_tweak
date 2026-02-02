@@ -6,7 +6,7 @@
 @class JSEvent, KindaJSEvent, NSDictionary, NSString, WAJSEventHandler_BaseEvent;
 @protocol WCPayPayJSApiLogicParamDelegate;
 
-@interface WCPayVerifyUserIdentityControlLogic
+@interface WCPayVerifyUserIdentityControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     id <WCPayPayJSApiLogicParamDelegate> _paramDelegate;

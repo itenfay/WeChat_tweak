@@ -6,7 +6,7 @@
 @class MMGroupLiveTask, MMGroupLiveTaskId, NSString;
 @protocol MMGroupLiveOnlineUserLogicDelegate;
 
-@interface MMGroupLiveOnlineUserLogic
+@interface MMGroupLiveOnlineUserLogic : NSObject
 {
     id <MMGroupLiveOnlineUserLogicDelegate> logicDelegate;
     unsigned long long _onlineUserCount;

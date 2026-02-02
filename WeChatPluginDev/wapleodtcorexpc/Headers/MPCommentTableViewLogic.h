@@ -6,7 +6,7 @@
 @class MMTableView, MMUIViewController, MPCommentMsg, MPCommentReplyCellViewModel, MPLandingPageCgiHandler, MPLandingPageOpenParameter, MPLandingPageReportLogic, NSMutableArray, NSMutableSet, NSString;
 @protocol MPCommentTableViewLogicDelete;
 
-@interface MPCommentTableViewLogic
+@interface MPCommentTableViewLogic : NSObject
 {
     _Bool _isNoMoreComment;
     _Bool _onlyFansCanComment;

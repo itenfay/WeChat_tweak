@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, NSMutableArray, NSString, UIView;
 
-@interface BrandAuthListViewController
+@interface BrandAuthListViewController : NSObject
 {
     unsigned int _state;
     int _initialUpdatedTimeStamp;

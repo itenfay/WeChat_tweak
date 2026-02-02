@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIImage, UIImageView;
 
-@interface EditImageMosaicBrushView
+@interface EditImageMosaicBrushView : NSObject
 {
     UIImage *_img;
     UIImageView *_imageView;

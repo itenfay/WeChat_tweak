@@ -5,7 +5,7 @@
 
 @class NSURL;
 
-@interface MMLocalFileDetailLogicController
+@interface MMLocalFileDetailLogicController : NSObject
 {
     unsigned long long _fileSize;
     NSURL *_fileURL;

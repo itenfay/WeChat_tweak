@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MJVideoTemplate, NSIndexPath, NSMutableSet, NSString, UIButton, UICollectionView, UIPanGestureRecognizer, UIView, WCUnhittableView, WCVideoProducerDataSource, WCVideoProducerLoadMoreView;
 @protocol WCVideoProducerTemplateFlowDelegate;
 
-@interface WCVideoProducerTemplateFlowViewController
+@interface WCVideoProducerTemplateFlowViewController : NSObject
 {
     _Bool _isHangingStyleEnabled;
     _Bool _canRecreateWhileLoading;

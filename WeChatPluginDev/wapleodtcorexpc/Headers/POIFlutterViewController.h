@@ -6,7 +6,7 @@
 @class FavoritesItem, FinderPOIPlugin, ForwardMessageLogicController, MMFlutterViewController, MMLocatingPoiDataLogic, NSString, POIInfo, TakeCarServiceDataLogic, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView, WCFinderPOIParamsModel, WCFinderPOIRelatedStreamViewModel, WCFinderPoiBasicInfo, WCFinderStreamProfileDragBarView;
 @protocol WCFinderLocationPoiDetailViewDelegate;
 
-@interface POIFlutterViewController
+@interface POIFlutterViewController : NSObject
 {
     WCFinderPOIParamsModel *_paramsModel;
     WCFinderPOIRelatedStreamViewModel *_poiStreamModel;

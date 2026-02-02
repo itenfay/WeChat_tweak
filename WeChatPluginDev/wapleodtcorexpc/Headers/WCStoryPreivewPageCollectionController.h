@@ -6,7 +6,7 @@
 @class NSHashTable, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout, WCStoryDataUnit, WCStoryPreviewPageView, WCStoryPreviewReportObj;
 @protocol MMUIViewControllerDelegate, WCStoryPreivewPageCollectionControllerDelegate, WCStoryPreviewPageViewDelegate;
 
-@interface WCStoryPreivewPageCollectionController
+@interface WCStoryPreivewPageCollectionController : NSObject
 {
     UICollectionViewFlowLayout *m_collectionLayout;
     WCStoryPreviewPageView *m_playingPageView;

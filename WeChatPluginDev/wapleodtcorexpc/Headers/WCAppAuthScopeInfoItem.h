@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAppAuthScopeInfoItem
+@interface WCAppAuthScopeInfoItem : NSObject
 {
     _Bool _isUserEnable;
     unsigned int _state;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, CContact, EnterpriseConnectorLogic, ForwardMessageLogicController, GameWebReporter, MMJSApiVerifyMgr, MMLoadingView, MMScrollActionSheet, MMTimer, MMTipsViewController, MMUIButton, MMURLHandler, MMWebBottomToolBar, MMWebCoreConfig, MMWebCustomLog, MMWebHangTipsBar, MMWebLiveTitleView, MMWebMProfileTitleView, MMWebNaviErrorView, MMWebProgressBar, MMWebTopBar, MMWebTransHelpButton, MMWebViewFontFloatView, MMWebViewPageInfoModel, MMWebViewPerformance, MMWebViewPluginScheduler, MMWebViewPresetUI, MMWebViewPresetUILogic, MMWebViewSpaAuthContext, MMWebviewOAuthRemindHalfScreenView, MMWebviewPrefetchResult, MMWebviewSnapshotWrapper, MiniRecTransitionController, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL, NSURLRequest, TipsView, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView, UIViewController, WCDeepLinkHandler, WCPayDecimalKeyboardView, WCWebNavigationEventsStore, WKNavigation, WKWebView, WebPrefetcherJSApiLogic, WebViewA8KeyLogicImpl, WebViewJSLogicImpl, WebViewMenuCustomizeLogic, WebViewOAuthLogic, WebViewSanboxSessionLogic, WebViewTimeProfileData;
 @protocol MMWebViewDelegate, MMWebViewOAuthSnapShotDelegate, MMWebViewPreloadContentHandler, YYWebViewInterface;
 
-@interface MMWebViewController
+@interface MMWebViewController : NSObject
 {
     _Bool m_hasInitSameLayerSwitch;
     NSDictionary *m_sameLayerSwitchDict;

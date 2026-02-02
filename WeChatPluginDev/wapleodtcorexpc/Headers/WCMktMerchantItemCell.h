@@ -6,7 +6,7 @@
 @class CardHomePageElement, MMUILabel, NSString, UIButton, UIImageView, UIView, UrlLabel, WCMktCardItemView, WCPayWebImageView;
 @protocol WCMktMerchantItemCellDelegate;
 
-@interface WCMktMerchantItemCell
+@interface WCMktMerchantItemCell : NSObject
 {
     _Bool _bIsExpandCardList;
     _Bool _bIsLastItem;

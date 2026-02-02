@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKLoginManager;
 
-@interface FacebookAuth
+@interface FacebookAuth : NSObject
 {
     long long m_uiFacebookUsageType;
     FBSDKLoginManager *m_fbLogin;

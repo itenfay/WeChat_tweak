@@ -6,7 +6,7 @@
 @class NSString, WCPayPaySecurityCgi;
 @protocol WCPayWalletLockSettingViewControllerDelegate;
 
-@interface WCPayWalletLockSettingViewController
+@interface WCPayWalletLockSettingViewController : NSObject
 {
     id <WCPayWalletLockSettingViewControllerDelegate> _delegate;
     WCPayPaySecurityCgi *_m_securityCgi;

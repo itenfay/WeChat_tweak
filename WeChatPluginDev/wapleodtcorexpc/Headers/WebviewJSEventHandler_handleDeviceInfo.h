@@ -5,7 +5,7 @@
 
 @class UISlider;
 
-@interface WebviewJSEventHandler_handleDeviceInfo
+@interface WebviewJSEventHandler_handleDeviceInfo : NSObject
 {
     UISlider *m_volumeViewSlider;
 }

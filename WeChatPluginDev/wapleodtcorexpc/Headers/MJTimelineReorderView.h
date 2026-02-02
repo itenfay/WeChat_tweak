@@ -6,7 +6,7 @@
 @class MJPlaybackViewModel, MJTimelineViewModel, NSArray, NSString, OMCBatchThumbnailProvider, UICollectionView, UICollectionViewFlowLayout, UILabel, UILongPressGestureRecognizer;
 @protocol MJTimelineReorderViewDelegate;
 
-@interface MJTimelineReorderView
+@interface MJTimelineReorderView : NSObject
 {
     id <MJTimelineReorderViewDelegate> _delegate;
     MJTimelineViewModel *_timelineVM;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, ConcertTicketInfo, MMFinderLiveChooseClarityViewNavBar, MMFinderLivePrepayTiersPanelViewModel, MMFinderLivePurchaseTicketPayButton, MMUILabel, NSString, UIImageView, UIView;
 
-@interface MMFinderLivePurchaseConcertTicketView
+@interface MMFinderLivePurchaseConcertTicketView : NSObject
 {
     _Bool _needHalfScreen;
     _Bool _isTicket;

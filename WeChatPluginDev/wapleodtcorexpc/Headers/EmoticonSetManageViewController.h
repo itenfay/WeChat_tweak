@@ -5,7 +5,7 @@
 
 @class EmoticonManageDataLogic, EmoticonManageDataObject, EmoticonManageSectionInfo, MMTableView, NSString, StoreEmotionReplaceMyPanelListCgi;
 
-@interface EmoticonSetManageViewController
+@interface EmoticonSetManageViewController : NSObject
 {
     _Bool _isDeleteMode;
     _Bool _hasUndownload;

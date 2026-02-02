@@ -6,7 +6,7 @@
 @class ActionBase, MMWebImageView, UIButton;
 @protocol ProductMediaItemViewDelegate;
 
-@interface ProductMediaItemView
+@interface ProductMediaItemView : NSObject
 {
     id <ProductMediaItemViewDelegate> _delegate;
     ActionBase *_actionBase;

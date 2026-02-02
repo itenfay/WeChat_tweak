@@ -5,7 +5,7 @@
 
 @class NSArray, UIColor;
 
-@interface WCStoryLyricWaveView
+@interface WCStoryLyricWaveView : NSObject
 {
     NSArray *_animationLayers;
     UIColor *_waveColor;

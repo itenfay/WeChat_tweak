@@ -5,7 +5,7 @@
 
 @class WCUIAlertView;
 
-@interface WAJSEventHandler_editTextWithPopForm
+@interface WAJSEventHandler_editTextWithPopForm : NSObject
 {
     WCUIAlertView *_editTextView;
 }

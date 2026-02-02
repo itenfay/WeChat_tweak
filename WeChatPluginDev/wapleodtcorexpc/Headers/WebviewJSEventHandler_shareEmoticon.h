@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString;
 
-@interface WebviewJSEventHandler_shareEmoticon
+@interface WebviewJSEventHandler_shareEmoticon : NSObject
 {
     NSString *m_activityId;
     ForwardMessageLogicController *_forwardLogicController;

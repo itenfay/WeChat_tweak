@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero13PrototypeNode
+@interface _TtC4Hero13PrototypeNode : NSObject
 {
     MISSING_TYPE *argumentNames;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class UIView;
 @protocol FavMultiMenuTableViewCellDelegate;
 
-@interface FavMultiMenuTableViewCell
+@interface FavMultiMenuTableViewCell : NSObject
 {
     UIView *coverView;
     _Bool m_selected;

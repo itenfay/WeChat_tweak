@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero15HeroDebugPlugin
+@interface _TtC4Hero15HeroDebugPlugin : NSObject
 {
     MISSING_TYPE *debugView;
     MISSING_TYPE *zPositionMap;

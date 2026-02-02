@@ -6,7 +6,7 @@
 @class FinderShopShelfLabelClassifyInfo, NSMutableArray, NSString, UICollectionView;
 @protocol MMFinderLiveShopGoodsSectionHeaderClassifyViewDelegate;
 
-@interface MMFinderLiveShopGoodsSectionHeaderClassifyView
+@interface MMFinderLiveShopGoodsSectionHeaderClassifyView : NSObject
 {
     id <MMFinderLiveShopGoodsSectionHeaderClassifyViewDelegate> _delegate;
     NSMutableArray *_classifyInfos;

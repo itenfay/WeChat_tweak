@@ -5,7 +5,7 @@
 
 @class BTRecommendMsgCellViewModel, CALayer, MMUILabel, MMWebImageView, RichTextView, UIButton, UIImageView, UIView;
 
-@interface BTRecommendMsgCellView
+@interface BTRecommendMsgCellView : NSObject
 {
     _Bool _bizContentKeepHL;
     _Bool _appMsgKeepHL;

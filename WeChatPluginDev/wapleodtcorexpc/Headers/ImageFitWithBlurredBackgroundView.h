@@ -5,7 +5,7 @@
 
 @class UIImageView, UIVisualEffectView;
 
-@interface ImageFitWithBlurredBackgroundView
+@interface ImageFitWithBlurredBackgroundView : NSObject
 {
     UIImageView *_backgroundView;
     UIVisualEffectView *_blurView;

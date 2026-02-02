@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageCropGridView, EditImageCropOverlayView, EditImageCropToolBarView, EditImageCropToolBarViewModel, EditImageEmotionToolAttrView, EditImageMosaicToolAttrView, EditImagePenToolAttrView, EditImageTextToolV2, EditVideoBGMView, EditVideoMusicController, MMBGMSelectHalfScreenViewController, MMBGMSelectedConfig, MMTimer, MMUIButton, MMUIImageView, NSArray, NSMutableArray, NSMutableDictionary, NSString, RecommendedMusicInfo, UIButton, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, WCEditFilterToolAttrView, WCEditImageScrollView, WCEditLoadingModeButton, WCEditSelectedCollectionView, WCEditViewControllerUIConfig, WCFinderTemplateMusicSelectEntranceView;
 @protocol WCEditImageLayoutViewDelegate, WCFinderEditDataReportDelegate;
 
-@interface WCEditImageLayoutView
+@interface WCEditImageLayoutView : NSObject
 {
     UIView *_topEditImageBar;
     MMUIImageView *_topBackgroundView;

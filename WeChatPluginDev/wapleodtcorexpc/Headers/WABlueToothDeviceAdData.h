@@ -5,7 +5,7 @@
 
 @class NSArray, NSData, NSDictionary, NSString;
 
-@interface WABlueToothDeviceAdData
+@interface WABlueToothDeviceAdData : NSObject
 {
     _Bool _isConnectable;
     NSString *_localName;

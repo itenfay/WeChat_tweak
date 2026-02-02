@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface BTNotifySectionData
+@interface BTNotifySectionData : NSObject
 {
     unsigned int _notifyCount;
     CMessageWrap *_latestMsgWrap;

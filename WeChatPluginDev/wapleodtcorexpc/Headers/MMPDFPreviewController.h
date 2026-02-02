@@ -5,7 +5,7 @@
 
 @class NSString, NSURL, PDFDocument, PDFView, UIColor;
 
-@interface MMPDFPreviewController
+@interface MMPDFPreviewController : NSObject
 {
     PDFDocument *_pdfDocument;
     PDFView *_pdfView;

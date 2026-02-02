@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAMemoryPressureRecord
+@interface WAMemoryPressureRecord : NSObject
 {
     NSMutableArray *_records;
 }

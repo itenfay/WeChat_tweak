@@ -5,7 +5,7 @@
 
 @class NSString, StatusCommentMessageThumb;
 
-@interface TextStateLikeInfo
+@interface TextStateLikeInfo : NSObject
 {
     _Bool _bDeleted;
     _Bool _bNotify;

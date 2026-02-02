@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString, WCFinderTrigger, WeChatTabRedDotStruct;
 
-@interface WCSessionDataReporter
+@interface WCSessionDataReporter : NSObject
 {
     NSMutableArray *queue;
     _Bool *entryRedDotInfo;

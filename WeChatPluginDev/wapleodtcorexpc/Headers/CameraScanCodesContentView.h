@@ -6,7 +6,7 @@
 @class CAAnimationGroup, CABasicAnimation, CameraScanBlurButtonWrapView, CameraScanCodesCenterDotView, CameraScanCombineContentView, ImageFitWithBlurredBackgroundView, MMUIButton, NSMutableArray, NSString, UIImageView, UILabel, UIView;
 @protocol CameraScanCodesContentViewDelegate;
 
-@interface CameraScanCodesContentView
+@interface CameraScanCodesContentView : NSObject
 {
     _Bool m_bShowMyQRCode;
     _Bool m_bInfoLabelNeedShowAgain;

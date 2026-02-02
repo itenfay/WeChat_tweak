@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CMessageWrap, EmoticonBoardView, MMGrowTextView, MMTipsViewController, MMUILabel, NSMutableArray, NSMutableDictionary, NSString, ReportVoiceResultMgr, StreamVoiceInputControlView, StreamVoiceInputLogic, StreamVoiceInputPrepareView, UIButton, UIImageView, UILabel, UIView, WCInputController, WXKeyBoardTipsView;
 @protocol StreamVoiceInputViewControllerDelegate;
 
-@interface StreamVoiceInputViewController
+@interface StreamVoiceInputViewController : NSObject
 {
     NSMutableArray *_displayDataArray;
     double _textViewOffsetY;

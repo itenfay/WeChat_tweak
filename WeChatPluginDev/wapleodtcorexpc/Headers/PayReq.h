@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PayReq
+@interface PayReq : NSObject
 {
     unsigned int timeStamp;
     NSString *nonceStr;

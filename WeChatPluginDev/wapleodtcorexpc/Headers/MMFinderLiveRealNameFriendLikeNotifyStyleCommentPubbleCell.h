@@ -5,7 +5,7 @@
 
 @class MMFinderLiveRealNameFriendLikeCommentDataItem, MMFinderLiveRealNameFriendLikeNotificationView;
 
-@interface MMFinderLiveRealNameFriendLikeNotifyStyleCommentPubbleCell
+@interface MMFinderLiveRealNameFriendLikeNotifyStyleCommentPubbleCell : NSObject
 {
     MMFinderLiveRealNameFriendLikeNotificationView *_notificationView;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, ContactsItemView, UIButton, UIImageView, UIView;
 
-@interface WCMomentsHistoryGroupCell
+@interface WCMomentsHistoryGroupCell : NSObject
 {
     UIImageView *_leftCheckMark;
     ContactsItemView *_historyGroupItemView;

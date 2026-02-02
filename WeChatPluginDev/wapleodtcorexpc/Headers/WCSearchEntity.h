@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSearchEntity
+@interface WCSearchEntity : NSObject
 {
     NSString *_sessionID;
     unsigned long long _scene;

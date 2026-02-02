@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, PasswordLogic, UIButton, UIView, WCUITextField;
 
-@interface MMVerifyPasswordViewController
+@interface MMVerifyPasswordViewController : NSObject
 {
     MMUILabel *_titleLabel;
     WCUITextField *_passwordTextField;

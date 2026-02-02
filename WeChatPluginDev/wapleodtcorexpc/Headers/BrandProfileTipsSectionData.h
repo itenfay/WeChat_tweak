@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandProfileTipsSectionData
+@interface BrandProfileTipsSectionData : NSObject
 {
     _Bool _isLoading;
     NSString *_tipsWording;

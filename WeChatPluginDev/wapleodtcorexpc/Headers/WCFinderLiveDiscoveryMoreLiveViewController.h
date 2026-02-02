@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIView, WCFinderDiscoveryLiveTabPageViewModel, WCFinderLiveDiscoveryCacheModel, WCFinderRedDotCtrlInfo, WCFinderTabPageModel;
 @protocol WCFinderLiveDiscoveryMoreLiveViewControllerDelegate;
 
-@interface WCFinderLiveDiscoveryMoreLiveViewController
+@interface WCFinderLiveDiscoveryMoreLiveViewController : NSObject
 {
     _Bool _directlyOpenJumpInfoPage;
     _Bool _isLocationServiceAuthrized;

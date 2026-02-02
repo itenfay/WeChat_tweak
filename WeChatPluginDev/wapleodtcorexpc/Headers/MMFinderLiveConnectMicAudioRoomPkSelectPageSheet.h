@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBattleDurationItem, MMFinderLiveConnectMicPkSelectionModel, MMUIButton, NSString, UITableView;
 
-@interface MMFinderLiveConnectMicAudioRoomPkSelectPageSheet
+@interface MMFinderLiveConnectMicAudioRoomPkSelectPageSheet : NSObject
 {
     CDUnknownBlockType _selectAction;
     UITableView *_tableView;

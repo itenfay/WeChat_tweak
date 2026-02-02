@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CXCallObserver, FinderCoCertRewardInfo, MMFinderLiveFansGroupInfo, MMFinderLiveLogic, MMFinderLiveReadStatMgr, MMFinderLiveReplayViewController, MMFinderLiveUIStateInfo, MMGameLiveLaunchModel, MMLiveCDNLivePreloader, MMLiveContainerLogic, MMLiveFeedStreamTask, MMLiveLimitedBusinessMgr, MMLiveNameVerifyViewController, MMLivePivotViewController, MMLivePolicyViewForAudienceController, MMLiveRewardGiftNewCustomizationMagicEngineMemoryManager, MMLiveRewardGiftNewCustomizationMagicRewardResManager, MMLiveStopStateDisplayViewController, MMLiveTask, MMLiveTempCacheInfo, MMLiveVerifyViewController, MMLiveViewController, NSArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, PIPPerformanceComputeParamConfig, UINavigationController, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderLRUCache, WCFinderLivePreviewViewController, WCFinderTaskScheduler, _TtC6WeChat26FinderLiveStayTimeReporter;
 @protocol MMLiveConflictHandling;
 
-@interface MMLiveTaskMgr
+@interface MMLiveTaskMgr : NSObject
 {
     _Bool _isMinimizeMode;
     _Bool _supportLandScape;

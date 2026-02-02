@@ -5,7 +5,7 @@
 
 @class WAEJBindingGlobalUtils;
 
-@interface WAEJBindingBindingObject
+@interface WAEJBindingBindingObject : NSObject
 {
     _Bool stopRender;
     WAEJBindingGlobalUtils *global;

@@ -6,7 +6,7 @@
 @class MMImageScrollViewHelper, MMScrollViewZoomReporter, MMUIActivityIndicatorView, NSArray, NSString, UIView, WXFullScreenGestureRecognizer;
 @protocol WCImageScrollViewDelegate;
 
-@interface WCImageScrollView
+@interface WCImageScrollView : NSObject
 {
     UIView *imageView;
     unsigned long long index;

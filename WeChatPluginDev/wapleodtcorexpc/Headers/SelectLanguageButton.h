@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface SelectLanguageButton
+@interface SelectLanguageButton : NSObject
 {
     NSString *_name;
     NSString *_type;

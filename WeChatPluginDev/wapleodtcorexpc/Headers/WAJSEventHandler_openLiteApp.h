@@ -5,7 +5,7 @@
 
 @class MMLiteAppInfoItem, NSMutableDictionary, NSString;
 
-@interface WAJSEventHandler_openLiteApp
+@interface WAJSEventHandler_openLiteApp : NSObject
 {
     _Bool _syncCheckUpdate;
     _Bool _isHalfScreen;

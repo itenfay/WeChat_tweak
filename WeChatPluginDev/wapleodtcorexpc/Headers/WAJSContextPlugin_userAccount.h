@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject;
 @protocol WAJSContextPlugin_userAccountProtocol;
 
-@interface WAJSContextPlugin_userAccount
+@interface WAJSContextPlugin_userAccount : NSObject
 {
     NSMutableArray *_arrEvent;
     NSObject<WAJSContextPlugin_userAccountProtocol> *_runningEvent;

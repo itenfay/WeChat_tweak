@@ -6,7 +6,7 @@
 @class CContact, NSArray, NSData, NSMutableDictionary, NSNumber, NSString, PrivateInfo, PublicInfo, StatusEmoji, StatusLocation, TextStatePublishReportObject;
 @protocol TextState3rdPartyHandler;
 
-@interface TextStateModel
+@interface TextStateModel : NSObject
 {
     _Bool _expireFlag;
     _Bool _isLocal;

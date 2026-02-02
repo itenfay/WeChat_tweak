@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface TemplateMsgRecvMgr
+@interface TemplateMsgRecvMgr : NSObject
 {
     NSMutableDictionary *_dictTemplateMsgRecvState;
     NSMutableDictionary *_dictIdListOfUser;

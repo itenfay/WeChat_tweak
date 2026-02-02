@@ -6,7 +6,7 @@
 @class NSString, UILabel, UITextField;
 @protocol MailReceiverEditViewDelegate;
 
-@interface MailSubjectEditView
+@interface MailSubjectEditView : NSObject
 {
     id <MailReceiverEditViewDelegate> m_delegate;
     UITextField *m_textField;

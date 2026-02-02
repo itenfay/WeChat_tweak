@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderLiveShopWindowShareItem;
 
-@interface MMFinderLiveECShopWindowShareTask
+@interface MMFinderLiveECShopWindowShareTask : NSObject
 {
     _Bool _useShopWindowCardV2;
     NSString *_liteAppID;

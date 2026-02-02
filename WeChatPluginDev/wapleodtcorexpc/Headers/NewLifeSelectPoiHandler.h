@@ -5,7 +5,7 @@
 
 @class FinderLocation, NSString;
 
-@interface NewLifeSelectPoiHandler
+@interface NewLifeSelectPoiHandler : NSObject
 {
     FinderLocation *_location;
 }

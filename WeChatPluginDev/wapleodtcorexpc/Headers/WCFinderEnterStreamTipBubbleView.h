@@ -5,7 +5,7 @@
 
 @class FinderEnterStreamTips, UIImageView, WCFinderCustomImageRichTextView;
 
-@interface WCFinderEnterStreamTipBubbleView
+@interface WCFinderEnterStreamTipBubbleView : NSObject
 {
     _Bool _canJump;
     FinderEnterStreamTips *_tips;

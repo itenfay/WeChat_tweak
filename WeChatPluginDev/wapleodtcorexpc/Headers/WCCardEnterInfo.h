@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardEnterInfo
+@interface WCCardEnterInfo : NSObject
 {
     unsigned int _fromScene;
     unsigned int _statScene;

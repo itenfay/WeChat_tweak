@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSString;
 
-@interface MessageTipsViewModel
+@interface MessageTipsViewModel : NSObject
 {
     unsigned long long _tipsType;
     CMessageWrap *_msgWrap;

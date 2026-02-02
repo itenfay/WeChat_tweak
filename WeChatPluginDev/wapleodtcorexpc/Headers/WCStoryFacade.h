@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString, WCStoryCommentUploadMgr, WCStoryDataMgr, WCStoryDownloadImageCdnMgr, WCStoryDownloadVideoCdnMgr, WCStoryPostLimitObj, WCStorySetting, WCStoryUploadCdnMgr;
 
-@interface WCStoryFacade
+@interface WCStoryFacade : NSObject
 {
     WCStoryDataMgr *_dataMgr;
     WCStoryUploadCdnMgr *_uploadMgr;

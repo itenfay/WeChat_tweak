@@ -6,7 +6,7 @@
 @class DiscoverEntranceSettingReporter, DiscoverEntranceSettingSheetView, NSString, WCTableViewNormalCellManager;
 @protocol DiscoverEntranceSettingHandlerDelegate;
 
-@interface DiscoverEntranceSettingAbstractCellHandler
+@interface DiscoverEntranceSettingAbstractCellHandler : NSObject
 {
     _Bool _enabledEntrace;
     _Bool _enabledReddot;

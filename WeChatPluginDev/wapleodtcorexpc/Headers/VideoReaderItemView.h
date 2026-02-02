@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMUILabel, NSString, SightIconView, UIView;
 
-@interface VideoReaderItemView
+@interface VideoReaderItemView : NSObject
 {
     UIView *m_playIconTimeContainerView;
     SightIconView *m_playIconView;

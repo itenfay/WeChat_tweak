@@ -5,7 +5,7 @@
 
 @class CMessageWrap, DevicePresentCollectionView, NSArray, NSMutableArray, NSString;
 
-@interface DevicePresentSheetView
+@interface DevicePresentSheetView : NSObject
 {
     _Bool _didAppendDeviceView;
     CMessageWrap *_messageWrap;

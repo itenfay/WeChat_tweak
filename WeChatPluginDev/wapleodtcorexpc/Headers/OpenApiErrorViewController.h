@@ -5,7 +5,7 @@
 
 @class MMUILabel, OpenApiErrorParams, UIButton, UIImageView, UIView;
 
-@interface OpenApiErrorViewController
+@interface OpenApiErrorViewController : NSObject
 {
     OpenApiErrorParams *_params;
     UIView *_containerView;

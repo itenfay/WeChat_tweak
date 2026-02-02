@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface GroupNoticeDataUploader_Video
+@interface GroupNoticeDataUploader_Video : NSObject
 {
     _Bool _compressVideoFail;
     CDUnknownBlockType _completeBlock;

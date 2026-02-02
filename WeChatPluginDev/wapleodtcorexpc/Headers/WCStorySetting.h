@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCStorySetting
+@interface WCStorySetting : NSObject
 {
     _Bool _hasClearCameraRedDot;
     _Bool _hasShowCameraGuide;

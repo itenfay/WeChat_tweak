@@ -5,7 +5,7 @@
 
 @protocol WCPayGetCollAssistPluginCgiDelegate;
 
-@interface WCPayGetCollAssistPluginCgi
+@interface WCPayGetCollAssistPluginCgi : NSObject
 {
     id <WCPayGetCollAssistPluginCgiDelegate> _logicDelegate;
 }

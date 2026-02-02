@@ -5,7 +5,7 @@
 
 @class ContactsDataLogic, MMTableView, MMTitleView, NSDictionary, NSMutableArray, NSString, UISearchBar;
 
-@interface OpenIMBrandContactListViewController
+@interface OpenIMBrandContactListViewController : NSObject
 {
     MMTitleView *_titleView;
     MMTableView *_tableView;

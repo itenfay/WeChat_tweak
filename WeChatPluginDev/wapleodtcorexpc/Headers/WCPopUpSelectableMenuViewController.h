@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, UIView, WCSelectableMenuView;
 
-@interface WCPopUpSelectableMenuViewController
+@interface WCPopUpSelectableMenuViewController : NSObject
 {
     WCSelectableMenuView *_menuView;
     UIView *_menuContainerView;

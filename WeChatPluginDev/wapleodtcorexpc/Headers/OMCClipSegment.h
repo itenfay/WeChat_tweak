@@ -5,7 +5,7 @@
 
 @class CLLocation, NSDictionary, NSString, OMJAspectRatio;
 
-@interface OMCClipSegment
+@interface OMCClipSegment : NSObject
 {
 }
 

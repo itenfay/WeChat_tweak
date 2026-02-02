@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveKtvThemeRepository, MMLiveResourceFetcherFanoutFlowAction, NSMutableDictionary, NSObject, NSString, OrderedDictionary;
 @protocol OS_dispatch_queue;
 
-@interface MMFinderLiveKTVResourceMgr
+@interface MMFinderLiveKTVResourceMgr : NSObject
 {
     MMLiveResourceFetcherFanoutFlowAction *_downloadMgr;
     OrderedDictionary *_songBasicInfoDic;

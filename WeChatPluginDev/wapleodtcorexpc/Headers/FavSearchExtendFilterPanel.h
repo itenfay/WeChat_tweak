@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSString;
 @protocol FavSearchExtendFilterPanelDelegate;
 
-@interface FavSearchExtendFilterPanel
+@interface FavSearchExtendFilterPanel : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_tags;

@@ -6,7 +6,7 @@
 @class NSMutableArray, UIScrollView;
 @protocol WCFinderFeedPickerTabViewDelegate;
 
-@interface WCFinderFeedPickerTabView
+@interface WCFinderFeedPickerTabView : NSObject
 {
     _Bool _isUsingPlaneStyle;
     id <WCFinderFeedPickerTabViewDelegate> _delegate;

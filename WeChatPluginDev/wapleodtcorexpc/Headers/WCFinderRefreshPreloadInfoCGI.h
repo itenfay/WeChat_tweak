@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderRefreshPreloadInfoCGI
+@interface WCFinderRefreshPreloadInfoCGI : NSObject
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failureBlock;

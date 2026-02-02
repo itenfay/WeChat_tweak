@@ -6,7 +6,7 @@
 @class CMessageWrap, NSMutableArray;
 @protocol AutoplayControllerDelegate;
 
-@interface AutoplayController
+@interface AutoplayController : NSObject
 {
     NSMutableArray *m_arrMessageArray;
     _Bool _autoPlayEnabled;

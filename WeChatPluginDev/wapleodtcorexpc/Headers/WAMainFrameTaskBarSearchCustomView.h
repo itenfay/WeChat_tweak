@@ -6,7 +6,7 @@
 @class UIButton;
 @protocol WAMainFrameTaskBarSearchCustomViewDelegate;
 
-@interface WAMainFrameTaskBarSearchCustomView
+@interface WAMainFrameTaskBarSearchCustomView : NSObject
 {
     UIButton *_innerButton;
     id <WAMainFrameTaskBarSearchCustomViewDelegate> _taskBarViewDelegate;

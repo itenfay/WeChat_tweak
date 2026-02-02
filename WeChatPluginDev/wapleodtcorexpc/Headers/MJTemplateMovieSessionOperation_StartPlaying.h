@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MJTemplateMovieSessionOperation_StartPlaying
+@interface MJTemplateMovieSessionOperation_StartPlaying : NSObject
 {
     NSString *_specificSegmentId;
     CDStruct_e83c9415 _timeRange;

@@ -5,7 +5,7 @@
 
 @class CAAnimation, CALayer;
 
-@interface MMLiveUIAnimationPerfMonitorRecord
+@interface MMLiveUIAnimationPerfMonitorRecord : NSObject
 {
     CALayer *_animationLayer;
     CAAnimation *_animation;

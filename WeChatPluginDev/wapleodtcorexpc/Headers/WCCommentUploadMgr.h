@@ -6,7 +6,7 @@
 @class FIFOFileQueue, NSMutableArray, NSMutableDictionary, NSString;
 @protocol WCCommentUploadMgrDelegate;
 
-@interface WCCommentUploadMgr
+@interface WCCommentUploadMgr : NSObject
 {
     FIFOFileQueue *m_queue;
     NSMutableDictionary *m_inQueueCommentsForWCObject;

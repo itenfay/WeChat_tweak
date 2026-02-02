@@ -5,7 +5,7 @@
 
 @class MMCommonActionSheetPicker, MMFinderLivePaymentTrialTimeSettingCell, MMFinderLiveTaskId, MMUILabel, NSString, UITapGestureRecognizer, UIView;
 
-@interface MMFinderLivePaymentTrialTimeSettingView
+@interface MMFinderLivePaymentTrialTimeSettingView : NSObject
 {
     unsigned int _curTrialTimeHour;
     unsigned int _curTrialTimeMinute;

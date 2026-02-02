@@ -5,7 +5,7 @@
 
 @class ScanProductItem;
 
-@interface AppProductMessageViewModel
+@interface AppProductMessageViewModel : NSObject
 {
     ScanProductItem *m_productItem;
 }

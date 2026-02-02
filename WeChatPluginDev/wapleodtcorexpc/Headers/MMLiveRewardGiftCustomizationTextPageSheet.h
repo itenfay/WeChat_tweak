@@ -6,7 +6,7 @@
 @class MMFinderLiveGiftCustomizationModel, MMFinderLiveTaskId, MMLiveSlottedTextField, NSString, PAGFile, PAGView, UIButton, UILabel, UIScrollView, UITextField;
 @protocol MMFinderLiveGiftCustomizationTextValidating, MMLiveRewardGiftCustomizationTextPageSheetDelegate;
 
-@interface MMLiveRewardGiftCustomizationTextPageSheet
+@interface MMLiveRewardGiftCustomizationTextPageSheet : NSObject
 {
     _Bool _detaching;
     MMFinderLiveGiftCustomizationModel *_model;

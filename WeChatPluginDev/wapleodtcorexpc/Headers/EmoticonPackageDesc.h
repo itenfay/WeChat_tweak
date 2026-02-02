@@ -5,7 +5,7 @@
 
 @class EmotionLinkInfo, NSMutableArray, NSString;
 
-@interface EmoticonPackageDesc
+@interface EmoticonPackageDesc : NSObject
 {
     unsigned int _m_lastRequestTime;
     unsigned int _m_clickFlag;

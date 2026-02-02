@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString, WCLanTransferSSSQueue;
 @protocol OS_dispatch_queue;
 
-@interface WCLanTransferServerService
+@interface WCLanTransferServerService : NSObject
 {
     WCLanTransferSSSQueue *_sssQueue;
     NSObject<OS_dispatch_queue> *_lanTransferServerQueue;

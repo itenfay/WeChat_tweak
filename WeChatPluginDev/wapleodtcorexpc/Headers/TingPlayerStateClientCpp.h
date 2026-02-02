@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingPlayerStateClientCpp
+@interface TingPlayerStateClientCpp : NSObject
 {
 }
 

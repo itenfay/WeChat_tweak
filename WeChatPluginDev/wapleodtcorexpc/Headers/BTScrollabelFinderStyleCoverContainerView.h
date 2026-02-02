@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface BTScrollabelFinderStyleCoverContainerView
+@interface BTScrollabelFinderStyleCoverContainerView : NSObject
 {
     _Bool _forceSetHighlight;
     UIView *_highlightView;

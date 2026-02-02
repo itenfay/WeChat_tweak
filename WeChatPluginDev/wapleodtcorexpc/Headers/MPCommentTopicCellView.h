@@ -5,7 +5,7 @@
 
 @class MPCommentTopicCellViewModel;
 
-@interface MPCommentTopicCellView
+@interface MPCommentTopicCellView : NSObject
 {
 }
 

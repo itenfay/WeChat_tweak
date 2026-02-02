@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCSHmdtMgr
+@interface WCSHmdtMgr : NSObject
 {
     _Bool _isEnable;
     NSMutableDictionary *_dicSceneBehaviorID;

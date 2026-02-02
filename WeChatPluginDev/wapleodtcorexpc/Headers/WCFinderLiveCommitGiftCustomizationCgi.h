@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveCommitGiftCustomizationCgi
+@interface WCFinderLiveCommitGiftCustomizationCgi : NSObject
 {
     _Bool _styleChanged;
     NSData *_liveCookies;

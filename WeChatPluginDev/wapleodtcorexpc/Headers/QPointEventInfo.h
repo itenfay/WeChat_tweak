@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QPointEventInfo
+@interface QPointEventInfo : NSObject
 {
     NSString *_source;
     NSString *_eventName;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_uploadImage
+@interface WebviewJSEventHandler_uploadImage : NSObject
 {
     _Bool _isShowProgressTips;
 }

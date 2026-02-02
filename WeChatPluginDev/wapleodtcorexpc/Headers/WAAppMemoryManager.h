@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppMemoryManager
+@interface WAAppMemoryManager : NSObject
 {
 }
 

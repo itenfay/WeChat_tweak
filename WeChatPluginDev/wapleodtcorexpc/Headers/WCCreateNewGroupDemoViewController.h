@@ -6,7 +6,7 @@
 @class MMTableViewInfo, MMUILabel, NSString, UITextField;
 @protocol WCCreateNewGroupDemoViewControllerDelegate;
 
-@interface WCCreateNewGroupDemoViewController
+@interface WCCreateNewGroupDemoViewController : NSObject
 {
     _Bool bWaitParentViewControllerDismissWhenDone;
     _Bool _bIsTagNameOverLimit;

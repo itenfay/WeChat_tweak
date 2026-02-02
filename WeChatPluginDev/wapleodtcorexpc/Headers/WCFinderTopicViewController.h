@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, UIView, WCFinderAnimationLoadingView, WCFinderPostMgr, WCFinderTabPageView, WCFinderTopicRouteParams, WCFinderTopicViewModel;
 
-@interface WCFinderTopicViewController
+@interface WCFinderTopicViewController : NSObject
 {
     WCFinderTopicViewModel *_viewModel;
     WCFinderAnimationLoadingView *_loadingView;

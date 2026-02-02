@@ -5,7 +5,7 @@
 
 @class CMMDB, MassSendInfo, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface MassSendMgr
+@interface MassSendMgr : NSObject
 {
     MassSendInfo *m_info;
     unsigned int m_uiEventID;

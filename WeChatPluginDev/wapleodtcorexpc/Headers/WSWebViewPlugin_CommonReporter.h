@@ -5,7 +5,7 @@
 
 @class WSViewStayTimeReporter, _TtC6WeChat23WSSearchProcessReporter;
 
-@interface WSWebViewPlugin_CommonReporter
+@interface WSWebViewPlugin_CommonReporter : NSObject
 {
     WSViewStayTimeReporter *_stayTimeReporter;
     _TtC6WeChat23WSSearchProcessReporter *_processReporter;

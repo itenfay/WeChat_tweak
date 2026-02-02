@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetTopicSuggestCGI
+@interface WCFinderGetTopicSuggestCGI : NSObject
 {
     NSString *_topicQuery;
     CDUnknownBlockType _successful;

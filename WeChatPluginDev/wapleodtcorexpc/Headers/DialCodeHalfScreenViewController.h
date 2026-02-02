@@ -6,7 +6,7 @@
 @class MMCommonPickerView, MMUILabel, NSArray, NSString, WCRedesignButtonItem, WCSheetView;
 @protocol DialCodeHalfScreenViewControllerDelegate;
 
-@interface DialCodeHalfScreenViewController
+@interface DialCodeHalfScreenViewController : NSObject
 {
     _Bool _isPickingLanguage;
     id <DialCodeHalfScreenViewControllerDelegate> _delegate;

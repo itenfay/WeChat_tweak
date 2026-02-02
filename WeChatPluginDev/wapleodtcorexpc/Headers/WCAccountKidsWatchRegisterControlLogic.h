@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, WCAccountBindPhoneForRegCGI, WCPrivacyPolicyControlLogic;
 @protocol WCAccountKidsWatchRegisterControlLogicDelegate;
 
-@interface WCAccountKidsWatchRegisterControlLogic
+@interface WCAccountKidsWatchRegisterControlLogic : NSObject
 {
     _Bool _isRegistering;
     unsigned int _checkPhoneNumberRetryCount;

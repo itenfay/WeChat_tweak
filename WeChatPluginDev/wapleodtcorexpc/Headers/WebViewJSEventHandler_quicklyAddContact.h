@@ -5,7 +5,7 @@
 
 @class MMTimer;
 
-@interface WebViewJSEventHandler_quicklyAddContact
+@interface WebViewJSEventHandler_quicklyAddContact : NSObject
 {
     _Bool _isWaitContactSync;
     MMTimer *_timerContactSync;

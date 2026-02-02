@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat29KaraProphetFinderPostBehavior
+@interface _TtC6WeChat29KaraProphetFinderPostBehavior : NSObject
 {
     MISSING_TYPE *tid;
 }

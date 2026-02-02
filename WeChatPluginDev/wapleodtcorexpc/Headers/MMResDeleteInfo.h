@@ -5,7 +5,7 @@
 
 @class MMResDeleteUrlInfo, NSString;
 
-@interface MMResDeleteInfo
+@interface MMResDeleteInfo : NSObject
 {
     unsigned int _resType;
     unsigned int _subResType;

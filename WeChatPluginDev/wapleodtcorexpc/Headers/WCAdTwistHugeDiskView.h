@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UIImageView, UIImpactFeedbackGenerator, WCADCanvasEggAnimationHugeDisk;
 
-@interface WCAdTwistHugeDiskView
+@interface WCAdTwistHugeDiskView : NSObject
 {
     int _impactTimingIndex;
     WCADCanvasEggAnimationHugeDisk *_hugeDiskInfo;

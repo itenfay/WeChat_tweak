@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSMutableArray, NSNetServiceBrowser, NSString;
 
-@interface WAJSContextPlugin_mDNS
+@interface WAJSContextPlugin_mDNS : NSObject
 {
     int _serviceBrowserStatus;
     NSString *_serviceType;

@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString;
 @protocol WSSimilarEmotCellDelegate;
 
-@interface WSSimilarEmotCell
+@interface WSSimilarEmotCell : NSObject
 {
     id <WSSimilarEmotCellDelegate> _delegate;
     unsigned long long _startIndex;

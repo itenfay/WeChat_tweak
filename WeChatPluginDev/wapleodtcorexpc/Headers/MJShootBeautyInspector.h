@@ -6,7 +6,7 @@
 @class CAGradientLayer, MJPublisherSlider, MJShootBeautyInspectorViewModel, MMUIButton, NSString, UICollectionView;
 @protocol MJShootBeautyInspectorDelegate;
 
-@interface MJShootBeautyInspector
+@interface MJShootBeautyInspector : NSObject
 {
     _Bool _isInTemplateShootingMode;
     id <MJShootBeautyInspectorDelegate> _delegate;

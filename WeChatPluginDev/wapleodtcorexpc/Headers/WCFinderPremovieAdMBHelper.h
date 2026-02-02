@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface WCFinderPremovieAdMBHelper
+@interface WCFinderPremovieAdMBHelper : NSObject
 {
     _Bool _isReadyToShow;
     UIView *_containerView;

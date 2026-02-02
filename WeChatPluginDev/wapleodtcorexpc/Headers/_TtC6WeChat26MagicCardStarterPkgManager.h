@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26MagicCardStarterPkgManager
+@interface _TtC6WeChat26MagicCardStarterPkgManager : NSObject
 {
     MISSING_TYPE *path;
     MISSING_TYPE *bizName;

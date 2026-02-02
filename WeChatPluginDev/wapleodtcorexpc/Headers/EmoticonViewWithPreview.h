@@ -6,7 +6,7 @@
 @class CEmoticonWrap, MMEmoticonView, ThreeWayExpandImageView, UIImageView, UILabel, YYAsyncImageView;
 @protocol EmoticonViewWithPreviewDelegate;
 
-@interface EmoticonViewWithPreview
+@interface EmoticonViewWithPreview : NSObject
 {
     id <EmoticonViewWithPreviewDelegate> m_delegate;
     _Bool m_isPreviewing;

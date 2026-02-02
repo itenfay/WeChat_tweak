@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface WCPlayerProgressTimeLabel
+@interface WCPlayerProgressTimeLabel : NSObject
 {
     MMUILabel *_currentTimeLabel;
     MMUILabel *_splitLabel;

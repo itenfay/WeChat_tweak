@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface MMFinderLiveMusicDataMgr
+@interface MMFinderLiveMusicDataMgr : NSObject
 {
     _Bool _hasMusicInfo;
     _Bool _recentSynchronizeResult;

@@ -5,7 +5,7 @@
 
 @class WAEJTexture;
 
-@interface WAEJBindingWebGLTexture
+@interface WAEJBindingWebGLTexture : NSObject
 {
     WAEJTexture *texture;
 }

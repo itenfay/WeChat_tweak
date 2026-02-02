@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class UIView, UIViewPropertyAnimator;
 @protocol UITimingCurveProvider;
 
-@interface WCPopUpWindowViewController
+@interface WCPopUpWindowViewController : NSObject
 {
     UIView *_popUpView;
     CDUnknownBlockType _willShowCallback;

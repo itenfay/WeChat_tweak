@@ -6,7 +6,7 @@
 @class MMMultiSelectedContactDisplayView, MMNewMultiSelectContactsLogicController, MMTableView, MMUILabel, MMUIView, MultiTalkJumpAppInfo, NSString, UIButton, UIImage, UIImageView, UITextField;
 @protocol MMNewMultiSelectContactsViewControllerDelegate;
 
-@interface MMNewMultiSelectContactsViewController
+@interface MMNewMultiSelectContactsViewController : NSObject
 {
     _Bool _isSearching;
     _Bool _isAllowMultiSelect;

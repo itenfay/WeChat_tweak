@@ -5,7 +5,7 @@
 
 @class CContact, MMTableViewInfo;
 
-@interface BraceletProfilePrivacySettingViewController
+@interface BraceletProfilePrivacySettingViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     _Bool m_isSettingsChanged;

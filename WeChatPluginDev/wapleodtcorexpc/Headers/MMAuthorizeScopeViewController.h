@@ -6,7 +6,7 @@
 @class MMAuthorizeScopeTopView, MMTableView, NSArray, NSMutableArray, NSString, OauthScopeInfo, UIButton, UIView;
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface MMAuthorizeScopeViewController
+@interface MMAuthorizeScopeViewController : NSObject
 {
     unsigned int _fromScene;
     NSString *_appName;

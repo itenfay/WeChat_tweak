@@ -5,7 +5,7 @@
 
 @class UIImage, WCFinderDynamicIconFetchTask;
 
-@interface WCFinderDynamicIconGenerateDynamicIconTask
+@interface WCFinderDynamicIconGenerateDynamicIconTask : NSObject
 {
     WCFinderDynamicIconFetchTask *_darkIconTask;
     WCFinderDynamicIconFetchTask *_lightIconTask;

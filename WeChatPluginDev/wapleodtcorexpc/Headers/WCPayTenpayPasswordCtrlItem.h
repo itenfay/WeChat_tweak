@@ -5,7 +5,7 @@
 
 @class NSString, TenpayPasswordCtrl, UIColor, UIImage, UIView, WCPayInputView;
 
-@interface WCPayTenpayPasswordCtrlItem
+@interface WCPayTenpayPasswordCtrlItem : NSObject
 {
     TenpayPasswordCtrl *m_textField;
     UIImage *m_image;

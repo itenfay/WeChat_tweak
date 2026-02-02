@@ -6,7 +6,7 @@
 @class MMUIView, NSArray, NSMutableDictionary, NSString, UIView, WCPayControlData;
 @protocol WCPayBankListPanelViewDelegate;
 
-@interface WCPayBankListPanelView
+@interface WCPayBankListPanelView : NSObject
 {
     id <WCPayBankListPanelViewDelegate> _delegate;
     WCPayControlData *_controlData;

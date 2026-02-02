@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface _TtC6WeChat32MagicRewardJsApi_notifyResStatus
+@interface _TtC6WeChat32MagicRewardJsApi_notifyResStatus : NSObject
 {
 }
 

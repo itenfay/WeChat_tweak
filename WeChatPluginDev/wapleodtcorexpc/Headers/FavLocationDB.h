@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface FavLocationDB
+@interface FavLocationDB : NSObject
 {
     WCTDatabase *m_db;
     WCTTable *m_table;

@@ -5,7 +5,7 @@
 
 @class CdnComMediaInfo;
 
-@interface MMFinderLiveGiftResourceRequestCDNObject
+@interface MMFinderLiveGiftResourceRequestCDNObject : NSObject
 {
     _Bool _useProprietaryProtocol;
     CdnComMediaInfo *_cdnComInfo;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIView;
 
-@interface MMLiveLotteryGiftDistributeTypeCell
+@interface MMLiveLotteryGiftDistributeTypeCell : NSObject
 {
     unsigned int _optionValue;
     UIView *_bgView;

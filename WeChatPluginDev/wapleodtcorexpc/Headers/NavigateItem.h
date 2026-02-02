@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface NavigateItem
+@interface NavigateItem : NSObject
 {
     struct CLLocationCoordinate2D _coordinate;
     NSString *_name;

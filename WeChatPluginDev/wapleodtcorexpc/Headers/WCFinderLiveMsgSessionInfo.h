@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderLiveMsgSessionInfo
+@interface WCFinderLiveMsgSessionInfo : NSObject
 {
     unsigned int _liveIdentity;
     unsigned int _comparePriority;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentBackgroundMusicInfo
+@interface WCCanvasComponentBackgroundMusicInfo : NSObject
 {
     int _autoPlayType;
     NSString *_voiceUrl;

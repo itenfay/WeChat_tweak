@@ -6,7 +6,7 @@
 @class MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, TencentLBSLocationManager, WAMainFrameTaskBarSectionViewModel, WAMainFrameTaskBarSectionWeAppViewModel, WAPackageSweeperLogic, WAReportMainFrameTaskBarActionItem;
 @protocol WAMainFrameTaskBarLogicDelegate;
 
-@interface WAMainFrameTaskBarLogic
+@interface WAMainFrameTaskBarLogic : NSObject
 {
     _Bool _needForceReload;
     _Bool _isPullingWhyDragMe;

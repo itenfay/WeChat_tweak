@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAThreadSafeMutableDictionary;
 
-@interface WAMPLinkTransferer
+@interface WAMPLinkTransferer : NSObject
 {
     WAThreadSafeMutableDictionary *_transferCaches;
 }

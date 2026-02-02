@@ -5,7 +5,7 @@
 
 @class SubscribeMsgItem;
 
-@interface SubscribeMsgItemWrap
+@interface SubscribeMsgItemWrap : NSObject
 {
     _Bool _isHandling;
     SubscribeMsgItem *_msgItem;

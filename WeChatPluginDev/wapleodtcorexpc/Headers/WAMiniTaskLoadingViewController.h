@@ -5,7 +5,7 @@
 
 @class MinimizeTaskData, MinimizeTaskOpenContext, NSString, UIImageView, WAAppTansitionController, WAUINavigationController;
 
-@interface WAMiniTaskLoadingViewController
+@interface WAMiniTaskLoadingViewController : NSObject
 {
     WAAppTansitionController *m_transitionController;
     WAUINavigationController *_weappNav;

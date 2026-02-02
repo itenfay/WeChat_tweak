@@ -5,7 +5,7 @@
 
 @class NSString, WCSnsDelayShowInfo, WCSnsPreLoadInfo, WCSnsRepeatUrlInfo, WCSnsSocialInfluenceInfo;
 
-@interface WCSnsOperation
+@interface WCSnsOperation : NSObject
 {
     WCSnsSocialInfluenceInfo *_socialInfluenceInfo;
     WCSnsPreLoadInfo *_preloadInfo;

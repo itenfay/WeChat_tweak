@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAJSEventHandler_operateVideoPlayer
+@interface WAJSEventHandler_operateVideoPlayer : NSObject
 {
     _Bool _shouldRouteToService;
     long long _dest;

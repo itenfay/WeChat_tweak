@@ -5,7 +5,7 @@
 
 @class CContact, EnterpriseBrandContactHelper, ForwardMessageLogicController, MMScrollView, MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface EnterpriseBrandContactListViewController
+@interface EnterpriseBrandContactListViewController : NSObject
 {
     ForwardMessageLogicController *m_forwardLogic;
     NSMutableArray *_sectionKeyArray;

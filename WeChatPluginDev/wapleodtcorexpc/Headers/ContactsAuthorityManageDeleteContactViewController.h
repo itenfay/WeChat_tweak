@@ -6,7 +6,7 @@
 @class ContactTagData, ContactsAuthorityManageModifyContactLogic, NSMutableDictionary, NSMutableSet, NSString;
 @protocol ContactsAuthorityManageDeleteContactViewControllerDelegate;
 
-@interface ContactsAuthorityManageDeleteContactViewController
+@interface ContactsAuthorityManageDeleteContactViewController : NSObject
 {
     NSMutableDictionary *m_loadContactDataIDic;
     NSMutableSet *m_socialBlackSuccessModifyUsrNameSet;

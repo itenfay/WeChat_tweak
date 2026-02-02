@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveAnchorLiveMicReportHandler
+@interface MMLiveAnchorLiveMicReportHandler : NSObject
 {
     unsigned int waitCount;
     unsigned int allowConnect;

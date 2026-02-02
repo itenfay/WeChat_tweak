@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat28MagicNativeFinderCardService
+@interface _TtC6WeChat28MagicNativeFinderCardService : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$__frameSetRootConfig;
     MISSING_TYPE *$__lazy_storage_$__bizConfig;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGoodsViewModel, MMTimerLabel, MMUIActivityIndicatorView, MMUILabel, MMUIView, UIImageView, UIView;
 
-@interface MMFinderLiveGoodsPromotionReplayButton
+@interface MMFinderLiveGoodsPromotionReplayButton : NSObject
 {
     long long _currentState;
     CDUnknownBlockType _replayButtonDidClickedBlock;

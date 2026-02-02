@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMUILabel, NSString, UIView, WCFinderFeedImageCDNView, WCFinderLiveFeedGenericCoverReportInfo, WCFinderLiveGenericFeedVM;
 @protocol WCFinderLiveHomePageHistoryCellDelegate;
 
-@interface WCFinderLiveHomePageHistoryCell
+@interface WCFinderLiveHomePageHistoryCell : NSObject
 {
     id <WCFinderLiveHomePageHistoryCellDelegate> _delegate;
     WCFinderFeedImageCDNView *_liveImageView;

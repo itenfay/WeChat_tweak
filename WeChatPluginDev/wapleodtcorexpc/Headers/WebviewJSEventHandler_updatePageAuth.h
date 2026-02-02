@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WebviewJSEventHandler_updatePageAuth
+@interface WebviewJSEventHandler_updatePageAuth : NSObject
 {
     _Bool _isUpdating;
 }

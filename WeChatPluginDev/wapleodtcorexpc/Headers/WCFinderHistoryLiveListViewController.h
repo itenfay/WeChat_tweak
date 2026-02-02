@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, MMUIView, NSData, NSMutableArray, NSString, WCTimeLineFooterView;
 
-@interface WCFinderHistoryLiveListViewController
+@interface WCFinderHistoryLiveListViewController : NSObject
 {
     _Bool _isSelfAnchor;
     NSMutableArray *_historyLiveInfoList;

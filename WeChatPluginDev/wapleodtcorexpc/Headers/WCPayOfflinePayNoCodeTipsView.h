@@ -6,7 +6,7 @@
 @class MMUILabel, UIButton, UIImageView;
 @protocol WCPayOfflinePayNoCodeTipsViewDelegate;
 
-@interface WCPayOfflinePayNoCodeTipsView
+@interface WCPayOfflinePayNoCodeTipsView : NSObject
 {
     id <WCPayOfflinePayNoCodeTipsViewDelegate> _delegate;
     UIImageView *_iconImgView;

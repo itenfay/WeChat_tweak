@@ -6,7 +6,7 @@
 @class ImageBrowseButton, MMImageActionSheet, MultiImageScrollView, NSMutableArray, NSString, UIPageControl;
 @protocol CardImageBrowseViewControllerDelegate;
 
-@interface CardImageBrowseViewController
+@interface CardImageBrowseViewController : NSObject
 {
     unsigned int _startIndex;
     NSMutableArray *_imageList;

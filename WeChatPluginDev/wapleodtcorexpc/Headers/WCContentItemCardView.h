@@ -5,7 +5,7 @@
 
 @class MMWebImageView, SightIconView, UIImageView, UILabel, UIView, WCContentItemCardViewModel;
 
-@interface WCContentItemCardView
+@interface WCContentItemCardView : NSObject
 {
     WCContentItemCardViewModel *_viewModel;
     SightIconView *_playIconView;

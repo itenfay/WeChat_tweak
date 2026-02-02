@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, YYBaseWebView;
 @protocol WAVConsoleJSLogicImplDelegate;
 
-@interface WAVConsoleJSLogicImpl
+@interface WAVConsoleJSLogicImpl : NSObject
 {
     YYBaseWebView *_webView;
     id <WAVConsoleJSLogicImplDelegate> _delegate;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIImageView, MMUILabel, MMUIView, NSDate, UIView, WCStoryPreviewReportObj, WCStorysPreviewViewController;
 
-@interface WCStoryDragAnimationUtil
+@interface WCStoryDragAnimationUtil : NSObject
 {
     _Bool _isFullScreenShowStory;
     _Bool _hasTriggerDragShock;

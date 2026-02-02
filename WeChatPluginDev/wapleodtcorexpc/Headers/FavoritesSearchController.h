@@ -6,7 +6,7 @@
 @class FavBarButton, FavBaseTableDataController, FavClickStreamData, FavMultiSelectToolView, MMScrollView, MMSearchPanGestureController, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, UILabel, UITextField, UIView, WCSearcher;
 @protocol FavSearchControllerDelegate;
 
-@interface FavoritesSearchController
+@interface FavoritesSearchController : NSObject
 {
     FavMultiSelectToolView *m_multiSelectToolView;
     MMUIButton *m_multiSelectCancelBtn;

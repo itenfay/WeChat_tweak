@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWebViewMenuActionItem
+@interface WAReportWebViewMenuActionItem : NSObject
 {
     unsigned int _actionTimeStamp;
     int _errcode;

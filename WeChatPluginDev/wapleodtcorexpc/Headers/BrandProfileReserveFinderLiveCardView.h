@@ -6,7 +6,7 @@
 @class BizProfileV2Resp, ExpandableTextView, MMUIButton, NSString, UIAccessibilityElement, UIImageView, UILabel, UIView;
 @protocol BrandProfileReserveFinderLiveCardViewDelegate;
 
-@interface BrandProfileReserveFinderLiveCardView
+@interface BrandProfileReserveFinderLiveCardView : NSObject
 {
     _Bool _bReserved;
     id <BrandProfileReserveFinderLiveCardViewDelegate> _delegate;

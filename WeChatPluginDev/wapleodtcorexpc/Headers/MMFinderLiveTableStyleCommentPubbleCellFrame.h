@@ -6,7 +6,7 @@
 @class MMLiveBaseTask, NSMutableDictionary, NSString;
 @protocol MMFinderLiveTaskFunctionPlugin;
 
-@interface MMFinderLiveTableStyleCommentPubbleCellFrame
+@interface MMFinderLiveTableStyleCommentPubbleCellFrame : NSObject
 {
     long long _layoutResult;
     NSMutableDictionary *_extraLayoutInfoDict;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXOpenBusinessViewReq
+@interface WXOpenBusinessViewReq : NSObject
 {
     NSString *_businessType;
     NSString *_query;

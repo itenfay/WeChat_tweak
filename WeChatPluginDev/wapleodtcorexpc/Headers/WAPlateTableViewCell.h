@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIImageView;
 
-@interface WAPlateTableViewCell
+@interface WAPlateTableViewCell : NSObject
 {
     _Bool _enableToggle;
     double _edgeLeft;

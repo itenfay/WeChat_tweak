@@ -6,7 +6,7 @@
 @class MMMusicHorizontalScrollingView, MMMusicInfo, MMMusicListenLyricsViewController, MMMusicLyricsPanel, MMUIButton, MMWebImageView, NSString, UIButton, UILabel, UIPanGestureRecognizer, UIView;
 @protocol MMMusicLyricsViewControllerDelegate;
 
-@interface MMMusicLyricsViewController
+@interface MMMusicLyricsViewController : NSObject
 {
     MMMusicInfo *m_musicInfo;
     struct CGRect m_lyricsViewFrame;

@@ -6,7 +6,7 @@
 @class MMWormhole, NSSet, NSString;
 @protocol WXKeyBoardActiveReceiver;
 
-@interface WXKeyBoardMgr
+@interface WXKeyBoardMgr : NSObject
 {
     void *_sharedFile;
     MMWormhole *_wormhole;

@@ -5,7 +5,7 @@
 
 @class AVCaptureDevice, AVCaptureSession, NSMutableArray, NSString, UIColor, YTFaceHandle, YtTimerCounter;
 
-@interface ReflectLivenessState
+@interface ReflectLivenessState : NSObject
 {
     struct YTFullPack pack;
     UIColor *originShapeColor;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WebvViewWebComPublicLibInfo
+@interface WebvViewWebComPublicLibInfo : NSObject
 {
     unsigned int _libType;
     long long _version;

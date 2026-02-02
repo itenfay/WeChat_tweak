@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMusicEditVideoMediaWrap
+@interface MMMusicEditVideoMediaWrap : NSObject
 {
     NSString *_url;
     NSString *_identifier;

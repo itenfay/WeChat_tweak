@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_operateRecorder
+@interface WAJSEventHandler_operateRecorder : NSObject
 {
 }
 

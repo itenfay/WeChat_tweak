@@ -5,7 +5,7 @@
 
 @class EmotionRewardTipsStatisticsData, NSString;
 
-@interface StoreEmotionRewardTipsStatisticsLogicObject
+@interface StoreEmotionRewardTipsStatisticsLogicObject : NSObject
 {
     unsigned int m_notCountAfterDaysConfig;
     unsigned int m_contiousSendTimesConfig;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GPUImageFramebuffer, GPUImageOutput, NSArray, NSMutableArray, NSString;
 @protocol GPUImageInput;
 
-@interface GPUImageFilterGroup
+@interface GPUImageFilterGroup : NSObject
 {
     NSMutableArray *filters;
     _Bool isEndProcessing;

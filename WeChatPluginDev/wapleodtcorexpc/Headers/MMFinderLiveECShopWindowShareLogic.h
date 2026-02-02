@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, MMFinderLiveECShopWindowShareTask, NSString, WCLiveProductShareScrollActionSheet;
 
-@interface MMFinderLiveECShopWindowShareLogic
+@interface MMFinderLiveECShopWindowShareLogic : NSObject
 {
     WCLiveProductShareScrollActionSheet *_shareActionSheet;
     MMFinderLiveECShopWindowShareTask *_task;

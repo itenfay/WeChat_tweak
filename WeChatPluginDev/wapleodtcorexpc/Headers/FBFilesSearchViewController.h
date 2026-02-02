@@ -6,7 +6,7 @@
 @class MMTableView, NSString, UINavigationController;
 @protocol FBFilesSearchViewControllerDelegate;
 
-@interface FBFilesSearchViewController
+@interface FBFilesSearchViewController : NSObject
 {
     id <FBFilesSearchViewControllerDelegate> _delegate;
     unsigned long long _type;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFICMainFrameHeadImg
+@interface MMFICMainFrameHeadImg : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class FTSMultiContactSearchLogic, MMTableView, NSDictionary, NSMutableArray, NSString, NewContactsSearchPanelView, WCSTokenPickLogic;
 @protocol ContactPickerViewDelegate;
 
-@interface ContactPickerViewController
+@interface ContactPickerViewController : NSObject
 {
     NewContactsSearchPanelView *_panelView;
     MMTableView *_defaultTableView;

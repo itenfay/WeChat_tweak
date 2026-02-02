@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageCropGridView, EditImageCropOverlayView, EditImageCropToolBarView, EditImageEmotionToolAttrView, EditImageMosaicToolAttrView, EditImagePenToolAttrView, EditImageSNSBorderView, EditImageScrollView, MMMusicFadeOutLayer, MMTimer, MMUIButton, MMUIImageView, NSMutableArray, NSString, UIButton, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, WCEditViewControllerUIConfig;
 @protocol EditImageInitialViewDelegate;
 
-@interface EditImageIntialView
+@interface EditImageIntialView : NSObject
 {
     UIView *_topEditImageBar;
     MMUIImageView *_topBackgroundView;

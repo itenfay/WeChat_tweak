@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openRedPacketEditPage
+@interface WAJSEventHandler_openRedPacketEditPage : NSObject
 {
     NSString *_currentDownloadFeedId;
     long long _minSeconds;

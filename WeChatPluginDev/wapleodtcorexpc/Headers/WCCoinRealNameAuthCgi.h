@@ -6,7 +6,7 @@
 @class WecoinRealNameAuthRequest;
 @protocol WCCoinRealNameAuthCgiDelegate;
 
-@interface WCCoinRealNameAuthCgi
+@interface WCCoinRealNameAuthCgi : NSObject
 {
     id <WCCoinRealNameAuthCgiDelegate> _delegate;
 }

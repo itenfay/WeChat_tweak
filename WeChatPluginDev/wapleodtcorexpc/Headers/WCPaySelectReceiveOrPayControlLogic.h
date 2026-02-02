@@ -5,7 +5,7 @@
 
 @class LocationRetriever, NSString;
 
-@interface WCPaySelectReceiveOrPayControlLogic
+@interface WCPaySelectReceiveOrPayControlLogic : NSObject
 {
     LocationRetriever *locationRetriever;
 }

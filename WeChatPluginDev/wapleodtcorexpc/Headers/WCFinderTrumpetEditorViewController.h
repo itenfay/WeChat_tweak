@@ -5,7 +5,7 @@
 
 @class FinderLiveAliasInfo, MMWebImageView, NSString, UIButton, UILabel, UITextField, UIView;
 
-@interface WCFinderTrumpetEditorViewController
+@interface WCFinderTrumpetEditorViewController : NSObject
 {
     _Bool _hideTakePhotoAction;
     FinderLiveAliasInfo *_aliasInfo;

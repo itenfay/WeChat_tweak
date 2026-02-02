@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCMemoryCacheManager
+@interface WCMemoryCacheManager : NSObject
 {
 }
 

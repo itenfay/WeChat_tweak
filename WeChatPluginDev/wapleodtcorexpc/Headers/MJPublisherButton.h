@@ -5,7 +5,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel, UIStackView;
 
-@interface MJPublisherButton
+@interface MJPublisherButton : NSObject
 {
     UILabel *_customTitleLabel;
     UIImageView *_customImageView;

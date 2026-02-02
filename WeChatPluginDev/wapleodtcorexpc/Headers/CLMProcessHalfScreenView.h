@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIActivityIndicatorView, NSString, UIImageView, UILabel;
 
-@interface CLMProcessHalfScreenView
+@interface CLMProcessHalfScreenView : NSObject
 {
     CDUnknownBlockType _deleteLogic;
     unsigned long long _dataSize;

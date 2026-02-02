@@ -6,7 +6,7 @@
 @class MMTableView, NSString, UIButton, UIImageView, UILabel, UIView, WCFinderContact, WCFinderSDKFinderBindTopView;
 @protocol WCFinderSDKAuthorViewControllerDelegate;
 
-@interface WCFinderSDKAuthorViewController
+@interface WCFinderSDKAuthorViewController : NSObject
 {
     id <WCFinderSDKAuthorViewControllerDelegate> _delegate;
     NSString *_appName;

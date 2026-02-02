@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSDictionary;
 
-@interface WSWebViewPlugin_JSParams
+@interface WSWebViewPlugin_JSParams : NSObject
 {
     MISSING_TYPE *dynamicParams;
     MISSING_TYPE *extReqParamDict;

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WebViewTimeProfileData
+@interface WebViewTimeProfileData : NSObject
 {
     unsigned long long m_initTimeStamp;
     unsigned long long m_getA8KeyTimeStamp;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WATemplateMsgBanWrap
+@interface WATemplateMsgBanWrap : NSObject
 {
     _Bool _isBanned;
     NSString *_appUsername;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CdnSnsTaskInfo, NSString, WCUploadMedia;
 @protocol WCMediaUploaderDelegate;
 
-@interface WCMediaUploader
+@interface WCMediaUploader : NSObject
 {
     int currentPos;
     long long uploadResult;

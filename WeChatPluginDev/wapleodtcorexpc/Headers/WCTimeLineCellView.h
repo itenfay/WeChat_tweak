@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class InteractionLabel, MMHeadImageView, MMUIButton, NSString, RichTextView, TextStateItemView, UIButton, UILabel, UIView, UrlLabel, WCActionAreaVM, WCAdActionLinkDetailView, WCAdBreakFrameTagView, WCAdBreakFrameView, WCAdCommonBarContainerView, WCAdContinuousLikeTagView, WCAdHeadStateView, WCAdHighlightTagView, WCAdInteractionLabelView, WCAdInteractionTagView, WCAdPreviewMaskView, WCAdRandomPickCardContainerView, WCAdSocialLikeCheerPlayerView, WCAdSocialLikeView, WCAdStateSettingBarView, WCAdTagButton, WCAdWeGameGiftTagView, WCDataItem, WCMomentsAnimatedFireworksView, WCMomentsPageContext, WCMomentsSpringTextContainerView, WCMomentsWeAppLogoNameView, WCTimelineErrTipsView;
 @protocol ILinkEventExt, WCTimeLineCellViewDelegate;
 
-@interface WCTimeLineCellView
+@interface WCTimeLineCellView : NSObject
 {
     WCDataItem *m_dataItem;
     unsigned int m_row;

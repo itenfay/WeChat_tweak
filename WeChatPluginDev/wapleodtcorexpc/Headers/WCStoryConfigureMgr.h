@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCStoryConfigureMgr
+@interface WCStoryConfigureMgr : NSObject
 {
     _Bool _friendVisitSwitchOn;
     unsigned long long _headerShowLimitCount;

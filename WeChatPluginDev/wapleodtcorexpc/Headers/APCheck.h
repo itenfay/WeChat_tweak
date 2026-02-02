@@ -6,7 +6,7 @@
 @class NSMutableData, NSURLConnection, PublicWifiCache;
 @protocol APCheckDelegate;
 
-@interface APCheck
+@interface APCheck : NSObject
 {
     int _wifiProtoType;
     id <APCheckDelegate> _delegate;

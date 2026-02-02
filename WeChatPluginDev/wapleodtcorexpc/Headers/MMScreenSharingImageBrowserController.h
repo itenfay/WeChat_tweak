@@ -5,7 +5,7 @@
 
 @class ImageScrollView, NSArray;
 
-@interface MMScreenSharingImageBrowserController
+@interface MMScreenSharingImageBrowserController : NSObject
 {
     NSArray *_imageURLs;
     double _contentRatioY;

@@ -6,7 +6,7 @@
 @class UIButton, UIView;
 @protocol SetTrustedFriendTipsViewDelegate;
 
-@interface SetTrustedFriendTipsView
+@interface SetTrustedFriendTipsView : NSObject
 {
     id <SetTrustedFriendTipsViewDelegate> _m_delegate;
     UIView *_tipsView;

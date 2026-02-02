@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface FlutterPlatformViewSemanticsContainer
+@interface FlutterPlatformViewSemanticsContainer : NSObject
 {
     UIView *_platformView;
 }

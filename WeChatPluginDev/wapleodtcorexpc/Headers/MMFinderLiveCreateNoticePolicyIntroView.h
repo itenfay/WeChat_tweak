@@ -5,7 +5,7 @@
 
 @class RichTextView;
 
-@interface MMFinderLiveCreateNoticePolicyIntroView
+@interface MMFinderLiveCreateNoticePolicyIntroView : NSObject
 {
     RichTextView *_descLabel;
 }

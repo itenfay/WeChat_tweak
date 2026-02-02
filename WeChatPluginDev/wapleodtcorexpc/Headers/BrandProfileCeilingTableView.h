@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, UIGestureRecognizer;
 
-@interface BrandProfileCeilingTableView
+@interface BrandProfileCeilingTableView : NSObject
 {
     UIGestureRecognizer *_otherGestureRecognizer;
     CAGradientLayer *_backgroundLayer;

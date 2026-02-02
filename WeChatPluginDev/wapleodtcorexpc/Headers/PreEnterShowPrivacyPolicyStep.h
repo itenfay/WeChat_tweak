@@ -5,7 +5,7 @@
 
 @class NSString, WCPrivacyPolicyControlLogic;
 
-@interface PreEnterShowPrivacyPolicyStep
+@interface PreEnterShowPrivacyPolicyStep : NSObject
 {
     NSString *m_content;
     WCPrivacyPolicyControlLogic *m_privacyPolicyLogic;

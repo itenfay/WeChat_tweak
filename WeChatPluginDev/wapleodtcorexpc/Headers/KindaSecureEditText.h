@@ -5,7 +5,7 @@
 
 @class MMDynamicColor, MMKSecureEditTextOnTextChangedCallback, NSString, TenpaySecureCtrl;
 
-@interface KindaSecureEditText
+@interface KindaSecureEditText : NSObject
 {
     TenpaySecureCtrl *_m_textField;
     MMDynamicColor *_m_textColor;

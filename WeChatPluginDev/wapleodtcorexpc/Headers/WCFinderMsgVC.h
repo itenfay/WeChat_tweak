@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderContact, WCFinderPrivacySettingHelper, WCTableViewManager, WCTableViewSectionManager;
 
-@interface WCFinderMsgVC
+@interface WCFinderMsgVC : NSObject
 {
     WCFinderContact *_contact;
     WCTableViewManager *_tableViewManager;

@@ -5,7 +5,7 @@
 
 @class RTETextView;
 
-@interface RTEContentSection
+@interface RTEContentSection : NSObject
 {
     unsigned long long _length;
     double _cellHeight;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UICollectionView, UIScrollView, ZZFLEXAngel, ZZFLEXAngelIndexPathChainModel, ZZFLEXAngelViewBatchEditChainModel, ZZFLEXAngelViewEditChainModel;
 
-@interface ZZFLEXCollectionViewController
+@interface ZZFLEXCollectionViewController : NSObject
 {
     _Bool _sectionHeadersPinToVisibleBounds;
     _Bool _sectionFootersPinToVisibleBounds;

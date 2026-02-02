@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_addBLEPeripheralService
+@interface WAJSEventHandler_addBLEPeripheralService : NSObject
 {
     NSString *serverId;
     NSString *serviceUUID;

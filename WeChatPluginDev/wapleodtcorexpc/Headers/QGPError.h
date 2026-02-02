@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPError
+@interface QGPError : NSObject
 {
     long long _errorCode;
     NSString *_errorMsg;

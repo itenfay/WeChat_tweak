@@ -5,7 +5,7 @@
 
 @class MMWebViewController;
 
-@interface WCCanvasUltraWebViewComponent
+@interface WCCanvasUltraWebViewComponent : NSObject
 {
     MMWebViewController *_webViewController;
 }

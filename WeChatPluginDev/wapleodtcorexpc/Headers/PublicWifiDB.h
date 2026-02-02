@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface PublicWifiDB
+@interface PublicWifiDB : NSObject
 {
     WCTDatabase *_m_db;
     WCTTable *_m_table;

@@ -5,7 +5,7 @@
 
 @class FinderLiveTagInfo, UIImageView, UILabel;
 
-@interface MMLiveCategorySelectButton
+@interface MMLiveCategorySelectButton : NSObject
 {
     _Bool _hideLogo;
     double _maxWidth;

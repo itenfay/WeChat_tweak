@@ -5,7 +5,7 @@
 
 @class AVAudioPlayer, NSString;
 
-@interface SimpleCommonPlayer
+@interface SimpleCommonPlayer : NSObject
 {
     AVAudioPlayer *_m_audioPlayer;
 }

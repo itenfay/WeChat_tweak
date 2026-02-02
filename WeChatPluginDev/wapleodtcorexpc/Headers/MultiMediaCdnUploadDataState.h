@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiMediaCdnUploadDataState
+@interface MultiMediaCdnUploadDataState : NSObject
 {
     _Bool _enableHitCheck;
     int _retryCount;

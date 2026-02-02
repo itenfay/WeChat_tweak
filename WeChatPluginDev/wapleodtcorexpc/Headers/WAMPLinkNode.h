@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAMPLinkNode
+@interface WAMPLinkNode : NSObject
 {
     unsigned int _debugModeType;
     unsigned int _appVersion;

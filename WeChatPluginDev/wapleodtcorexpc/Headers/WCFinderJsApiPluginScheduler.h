@@ -5,7 +5,7 @@
 
 @class MMLiteAppViewController, MMUIViewController;
 
-@interface WCFinderJsApiPluginScheduler
+@interface WCFinderJsApiPluginScheduler : NSObject
 {
     MMUIViewController *_fromVC;
     MMLiteAppViewController *_toLiteAppVC;

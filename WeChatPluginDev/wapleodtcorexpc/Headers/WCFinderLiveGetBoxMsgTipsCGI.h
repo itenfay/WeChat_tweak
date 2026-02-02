@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 
-@interface WCFinderLiveGetBoxMsgTipsCGI
+@interface WCFinderLiveGetBoxMsgTipsCGI : NSObject
 {
     NSData *_liveCookies;
     unsigned long long _objectId;

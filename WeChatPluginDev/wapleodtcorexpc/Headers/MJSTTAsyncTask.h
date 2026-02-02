@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MJSTTAsyncTask
+@interface MJSTTAsyncTask : NSObject
 {
     NSString *_audioID;
 }

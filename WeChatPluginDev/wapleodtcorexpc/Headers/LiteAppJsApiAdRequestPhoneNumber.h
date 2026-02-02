@@ -5,7 +5,7 @@
 
 @class NSString, WCAdConfirmHalfScreenAdapter;
 
-@interface LiteAppJsApiAdRequestPhoneNumber
+@interface LiteAppJsApiAdRequestPhoneNumber : NSObject
 {
     NSString *_requestIcon;
     NSString *_requestName;

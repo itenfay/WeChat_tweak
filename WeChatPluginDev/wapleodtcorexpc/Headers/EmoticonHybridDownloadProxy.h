@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, EmoticonDownloadProxy;
 
-@interface EmoticonHybridDownloadProxy
+@interface EmoticonHybridDownloadProxy : NSObject
 {
     EmojiInfoObj *m_emojiInfoObj;
     EmoticonDownloadProxy *m_downloadProxy;

@@ -5,7 +5,7 @@
 
 @class QGPMaterialVariantsInfos;
 
-@interface QGPGetMaterialVariantsInfoReturn
+@interface QGPGetMaterialVariantsInfoReturn : NSObject
 {
     QGPMaterialVariantsInfos *_value;
 }

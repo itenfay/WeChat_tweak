@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PayResp
+@interface PayResp : NSObject
 {
     NSString *returnKey;
 }

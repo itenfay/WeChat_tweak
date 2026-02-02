@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, UIButton, UICollectionView, UIImage, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol EmoticonCustomManageSelectFromMultiImageViewControllerDelegate;
 
-@interface EmoticonCustomManageSelectFromMultiImageViewController
+@interface EmoticonCustomManageSelectFromMultiImageViewController : NSObject
 {
     _Bool _allMediaDownloaded;
     id <EmoticonCustomManageSelectFromMultiImageViewControllerDelegate> _delegate;

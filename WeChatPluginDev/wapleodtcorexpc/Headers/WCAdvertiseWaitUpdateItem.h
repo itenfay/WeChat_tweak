@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WCAdvertiseWaitUpdateItem
+@interface WCAdvertiseWaitUpdateItem : NSObject
 {
     unsigned int _uiFromScene;
     int _source;

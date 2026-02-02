@@ -5,7 +5,7 @@
 
 @protocol ChatMigrationGetConnectInfoDelegate;
 
-@interface ChatMigrationGetConnectInfo
+@interface ChatMigrationGetConnectInfo : NSObject
 {
     id <ChatMigrationGetConnectInfoDelegate> m_delegate;
 }

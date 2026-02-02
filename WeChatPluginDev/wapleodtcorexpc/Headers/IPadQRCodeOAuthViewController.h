@@ -6,7 +6,7 @@
 @class IPadAuthContainView, IPadAuthSuccessContainView, IPadQRCodeOAuthLogic, NSString;
 @protocol IPadQRCodeOAuthViewControllerDelegate;
 
-@interface IPadQRCodeOAuthViewController
+@interface IPadQRCodeOAuthViewController : NSObject
 {
     id <IPadQRCodeOAuthViewControllerDelegate> _delegate;
     IPadAuthContainView *_authContainView;

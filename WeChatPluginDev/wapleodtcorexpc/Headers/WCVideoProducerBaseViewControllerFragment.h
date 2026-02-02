@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCVideoProducerBaseViewControllerFragment
+@interface WCVideoProducerBaseViewControllerFragment : NSObject
 {
     struct CGRect _containerFrame;
 }

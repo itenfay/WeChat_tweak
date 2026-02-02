@@ -5,7 +5,7 @@
 
 @protocol MMWebViewPresetUIChildViewDelegate;
 
-@interface MMWebViewPresetUIChildViewConfig
+@interface MMWebViewPresetUIChildViewConfig : NSObject
 {
     _Bool _isShowProgress;
     _Bool _isAccessAllJsApiInvocation;

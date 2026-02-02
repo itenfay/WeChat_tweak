@@ -5,7 +5,7 @@
 
 @class NSString, VoIPIlinkSubCallCache;
 
-@interface VoIPIlinkSubCallService
+@interface VoIPIlinkSubCallService : NSObject
 {
     _Bool _isWaitingForAccept;
     VoIPIlinkSubCallCache *_cache;

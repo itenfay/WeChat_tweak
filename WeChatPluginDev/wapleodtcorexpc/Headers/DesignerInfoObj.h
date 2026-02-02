@@ -5,7 +5,7 @@
 
 @class NSString, PersonalDesigner;
 
-@interface DesignerInfoObj
+@interface DesignerInfoObj : NSObject
 {
     unsigned long long _updateTime;
     PersonalDesigner *_designer;

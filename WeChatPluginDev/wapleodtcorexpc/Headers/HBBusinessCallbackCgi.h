@@ -5,7 +5,7 @@
 
 @protocol HBBusinessCallbackCgiDelegate;
 
-@interface HBBusinessCallbackCgi
+@interface HBBusinessCallbackCgi : NSObject
 {
     unsigned long long _requestType;
     id <HBBusinessCallbackCgiDelegate> _m_cgiDelegate;

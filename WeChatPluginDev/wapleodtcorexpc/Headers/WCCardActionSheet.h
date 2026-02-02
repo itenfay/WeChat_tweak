@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardActionSheet
+@interface WCCardActionSheet : NSObject
 {
     NSString *_text;
     NSString *_url;

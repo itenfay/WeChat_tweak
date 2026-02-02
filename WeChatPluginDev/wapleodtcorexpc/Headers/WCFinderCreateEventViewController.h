@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMTextView, MMUIButton, MMWebImageView, NSString, RichTextView, UIButton, UIDatePicker, UIImage, UILabel, UIScrollView, UIView, WCFinderEventModel;
 @protocol WCFinderCreateEvenDelegate;
 
-@interface WCFinderCreateEventViewController
+@interface WCFinderCreateEventViewController : NSObject
 {
     id <WCFinderCreateEvenDelegate> _delegate;
     WCFinderEventModel *_event;

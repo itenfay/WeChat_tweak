@@ -6,7 +6,7 @@
 @class NSString, WCPayControlData, WCPayF2FDynamicCodeCgi;
 @protocol WCPayF2FMiddlePageSubLogicDelegate;
 
-@interface WCPayF2FMiddlePageSubLogic
+@interface WCPayF2FMiddlePageSubLogic : NSObject
 {
     WCPayControlData *_m_data;
     id <WCPayF2FMiddlePageSubLogicDelegate> _m_delegate;

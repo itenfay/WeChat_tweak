@@ -6,7 +6,7 @@
 @class MMFinderLiveGoodsCellSubInfosView, MMFinderLiveGoodsPromotionReplayFloatView, MMFinderLiveGoodsSKUSelectView, MMFinderLiveGoodsSerialNumberView, MMFinderLiveMultiPriceView, MMFinderLiveProductFreeGiftsView, MMFinderLiveProductPromotingMaskView, MMFinderLiveShowBoxItemsView, MMFinderLiveTagsLabel, MMUIButton, MMWebImageView, NSString, UIButton, UILabel;
 @protocol MMFinderLiveGoodsCellDelegate;
 
-@interface MMFinderLiveAudienceGoodsCell
+@interface MMFinderLiveAudienceGoodsCell : NSObject
 {
     UIButton *_addToShoppingCartButton;
     MMWebImageView *_goodsImageView;

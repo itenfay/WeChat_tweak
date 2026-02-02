@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderSearchEventRequestParams;
 
-@interface WCFinderSearchEventCGI
+@interface WCFinderSearchEventCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

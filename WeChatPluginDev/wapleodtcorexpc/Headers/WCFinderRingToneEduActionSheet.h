@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, WCFinderFeedContentVM;
 
-@interface WCFinderRingToneEduActionSheet
+@interface WCFinderRingToneEduActionSheet : NSObject
 {
     CDUnknownBlockType _setRingToneCgiBlock;
     WCFinderFeedContentVM *_contentVM;

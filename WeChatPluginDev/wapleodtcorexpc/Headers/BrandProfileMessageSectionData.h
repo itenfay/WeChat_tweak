@@ -5,7 +5,7 @@
 
 @class BizMessage, BrandProfileMsgFooterViewModel, NSArray, NSMutableArray, NSString;
 
-@interface BrandProfileMessageSectionData
+@interface BrandProfileMessageSectionData : NSObject
 {
     _Bool _didUnfoldItemList;
     _Bool _isTextMsg;

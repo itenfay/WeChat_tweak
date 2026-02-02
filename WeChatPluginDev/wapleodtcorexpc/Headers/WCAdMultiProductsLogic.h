@@ -6,7 +6,7 @@
 @class MMTimer, WCAdCardMultiProductsView, WCDataItem;
 @protocol WCAdMultiProductsLogicDelegate;
 
-@interface WCAdMultiProductsLogic
+@interface WCAdMultiProductsLogic : NSObject
 {
     WCAdCardMultiProductsView *_multiProductsView;
     id <WCAdMultiProductsLogicDelegate> _delegate;

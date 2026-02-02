@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAReportGetUrlCgiItem
+@interface WAReportGetUrlCgiItem : NSObject
 {
     _Bool _isParallel;
     _Bool _isUsed;

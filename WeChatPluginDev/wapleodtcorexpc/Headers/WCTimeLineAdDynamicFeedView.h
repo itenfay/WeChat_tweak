@@ -6,7 +6,7 @@
 @class MMUILabel, MMUIView, NSString, UIView, WCAdAppointmentLogic, WCAdBulletScreenLogic, WCAdBulletScreenView, WCAdCountdownView, WCAdCouponLogic, WCAdDynamicFeedContainerView, WCAdDynamicFeedMediaHolderView, WCAdDynamicFeedSightView, WCAdDynamicLayoutLogic, WCAdFinderFollowLogic, WCAdFinderLiveLogic, WCAdFinderLiveNoticeLogic, WCAdFinderLivePlayerView, WCAdLiveDisplayView, WCAdLiveLikeAnimationView, WCAdQuicklyAddBrandLogic, WCAdRollView, WCAdSubscriptionLogic, WCImageView;
 @protocol WCTimeLineAdDynamicFeedViewDelegate;
 
-@interface WCTimeLineAdDynamicFeedView
+@interface WCTimeLineAdDynamicFeedView : NSObject
 {
     unsigned int _liveStatus;
     id <WCTimeLineAdDynamicFeedViewDelegate> _delegate;

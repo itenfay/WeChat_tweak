@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWALocationService;
 
-@interface WAJSEventHandler_choosePoi
+@interface WAJSEventHandler_choosePoi : NSObject
 {
     id <IWALocationService> _locationService;
 }

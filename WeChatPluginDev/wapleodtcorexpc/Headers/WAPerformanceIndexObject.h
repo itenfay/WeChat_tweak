@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WAPerformanceIndexObject
+@interface WAPerformanceIndexObject : NSObject
 {
     _Bool _isGame;
     _Bool _shouldReport;

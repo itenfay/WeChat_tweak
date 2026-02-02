@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface BTReaderMsgSectionData
+@interface BTReaderMsgSectionData : NSObject
 {
     CContact *_contact;
     _Bool _bIsBrandSettingFold;

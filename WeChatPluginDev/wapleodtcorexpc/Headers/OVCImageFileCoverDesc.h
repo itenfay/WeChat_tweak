@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OVCImageFileCoverDesc
+@interface OVCImageFileCoverDesc : NSObject
 {
     NSString *_filePath;
     struct CGRect _contentCropRegion;

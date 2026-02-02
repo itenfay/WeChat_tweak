@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCNewClickPageItemData
+@interface WCNewClickPageItemData : NSObject
 {
     int _costTime;
     unsigned int _count;

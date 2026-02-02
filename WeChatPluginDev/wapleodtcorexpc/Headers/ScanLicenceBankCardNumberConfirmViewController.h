@@ -6,7 +6,7 @@
 @class MMTableViewInfo, MMUILabel, NSString, ScanLicenceBankCardEditView, UIImage, UIImageView;
 @protocol ScanLicenceBankCardNumberConfirmViewControllerDelegate;
 
-@interface ScanLicenceBankCardNumberConfirmViewController
+@interface ScanLicenceBankCardNumberConfirmViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     _Bool _didRenderViews;

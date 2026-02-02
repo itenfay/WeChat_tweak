@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AppFileMessageViewModel
+@interface AppFileMessageViewModel : NSObject
 {
     double m_titleHeight;
 }

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetSvrExptConfigRequest
+@interface WCFinderGetSvrExptConfigRequest : NSObject
 {
     int _expID;
     CDUnknownBlockType _successBlock;

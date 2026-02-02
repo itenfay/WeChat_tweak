@@ -6,7 +6,7 @@
 @class NSString, UILabel;
 @protocol IWARichTextViewHelper;
 
-@interface WAFullScreenPrivacyInfoViewController
+@interface WAFullScreenPrivacyInfoViewController : NSObject
 {
     NSString *_wording;
     UILabel *_titleLabel;

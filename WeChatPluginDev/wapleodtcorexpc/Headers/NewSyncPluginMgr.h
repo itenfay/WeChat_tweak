@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface NewSyncPluginMgr
+@interface NewSyncPluginMgr : NSObject
 {
     NSMutableDictionary *m_dicSelectorList;
     NSRecursiveLock *m_oMgrLock;

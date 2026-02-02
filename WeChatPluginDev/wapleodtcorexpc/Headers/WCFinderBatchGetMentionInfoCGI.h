@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
-@interface WCFinderBatchGetMentionInfoCGI
+@interface WCFinderBatchGetMentionInfoCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

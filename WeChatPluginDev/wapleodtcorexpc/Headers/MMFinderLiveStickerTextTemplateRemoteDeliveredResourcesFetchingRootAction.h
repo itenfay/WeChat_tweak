@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MMFinderLiveStickerTextTemplateRemoteDeliveredResourcesFetchingRootAction
+@interface MMFinderLiveStickerTextTemplateRemoteDeliveredResourcesFetchingRootAction : NSObject
 {
     NSMutableDictionary *_refreshEntries;
 }

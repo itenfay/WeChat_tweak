@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface AudioPlayingEventMgr
+@interface AudioPlayingEventMgr : NSObject
 {
     NSMutableArray *m_AVAudioPlayers;
     NSMutableArray *m_AVPlayers;

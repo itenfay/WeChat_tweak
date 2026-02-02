@@ -5,7 +5,7 @@
 
 @class MMLimitedModeConfigListView, MMLimitedModeGuardianEntryView, MMLimitedModeMaskViewView, MMUILabel, NSData, NSString, UIButton, UIImageView, UIScrollView, UIView, WCAgreementCheckBox;
 
-@interface MMLimitedModeEntryViewController
+@interface MMLimitedModeEntryViewController : NSObject
 {
     _Bool _isIndependentVerifyFlag;
     _Bool _isNeverUse;

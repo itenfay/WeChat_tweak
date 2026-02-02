@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIView;
 
-@interface WCFinderLiveStarterThemeGuideView
+@interface WCFinderLiveStarterThemeGuideView : NSObject
 {
     CDUnknownBlockType _themeGuideBlock;
     UIView *_contentView;

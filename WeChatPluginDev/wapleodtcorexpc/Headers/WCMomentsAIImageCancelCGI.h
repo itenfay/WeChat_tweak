@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSString;
 
-@interface WCMomentsAIImageCancelCGI
+@interface WCMomentsAIImageCancelCGI : NSObject
 {
     NSString *_taskID;
     CDUnknownBlockType _successHandler;

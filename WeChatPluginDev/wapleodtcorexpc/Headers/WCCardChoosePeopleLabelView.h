@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUIImageView, NSString, WCCardChooseSubPeopleLabelView;
 
-@interface WCCardChoosePeopleLabelView
+@interface WCCardChoosePeopleLabelView : NSObject
 {
     NSString *_mainWording;
     NSString *_mainText;

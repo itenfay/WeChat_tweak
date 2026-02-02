@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, WCAdOpenWeGameHalfScreenInfo, WCAdURLImageView;
 
-@interface WCAdHalfScreenConversionOpenWeGameView
+@interface WCAdHalfScreenConversionOpenWeGameView : NSObject
 {
     WCAdOpenWeGameHalfScreenInfo *_halfScreenInfo;
     CDUnknownBlockType _resultBlock;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCTimeLineEditImageOperationDelegate;
 
-@interface WCTimeLineEditImageScrollView
+@interface WCTimeLineEditImageScrollView : NSObject
 {
 }
 

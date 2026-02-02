@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiAdShowPhoneNumberMenu
+@interface LiteAppJsApiAdShowPhoneNumberMenu : NSObject
 {
 }
 

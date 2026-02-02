@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface WCDragToCloseViewController
+@interface WCDragToCloseViewController : NSObject
 {
     _Bool _enableDragToClose;
     _Bool _allowRotate;

@@ -6,7 +6,7 @@
 @class MMFinderLivePaymentTrialModeCell, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, NSString, UIView;
 @protocol MMFinderLivePaymentTrialModeSettingViewDelegate;
 
-@interface MMFinderLivePaymentTrialModeSettingView
+@interface MMFinderLivePaymentTrialModeSettingView : NSObject
 {
     id <MMFinderLivePaymentTrialModeSettingViewDelegate> _delegate;
     MMFinderLiveTaskId *_taskId;

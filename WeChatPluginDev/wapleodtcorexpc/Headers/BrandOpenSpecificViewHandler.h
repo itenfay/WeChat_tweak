@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString;
 @protocol BrandOpenSpecificViewHandlerDelegate;
 
-@interface BrandOpenSpecificViewHandler
+@interface BrandOpenSpecificViewHandler : NSObject
 {
     NSMutableDictionary *m_urlToViewController;
     id <BrandOpenSpecificViewHandlerDelegate> _delegate;

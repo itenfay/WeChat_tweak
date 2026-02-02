@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RequestContactReq, UIButton, UIImageView, UILabel, UIView, WCFinderHeadImageView, WCFinderPersonalCenterViewModel;
 
-@interface NewLifeCheckContactValidPageSheet
+@interface NewLifeCheckContactValidPageSheet : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failureBlock;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WeVisionCameraLogger
+@interface WeVisionCameraLogger : NSObject
 {
 }
 

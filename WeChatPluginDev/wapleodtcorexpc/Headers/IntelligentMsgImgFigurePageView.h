@@ -6,7 +6,7 @@
 @class MMScrollView, NSArray, NSMutableArray, NSString, UIPageControl;
 @protocol IntelligentMsgImgFigurePageViewDelegate;
 
-@interface IntelligentMsgImgFigurePageView
+@interface IntelligentMsgImgFigurePageView : NSObject
 {
     unsigned long long m_tempCurrentPages;
     _Bool m_isChangePage;

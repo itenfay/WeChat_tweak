@@ -5,7 +5,7 @@
 
 @class NSString, UIScrollView, WXGRoamBackupPackageDetailCell;
 
-@interface WXGRoamBackupPackageManagerViewController
+@interface WXGRoamBackupPackageManagerViewController : NSObject
 {
     _Bool _isDeleted;
     WXGRoamBackupPackageDetailCell *_sizeCell;

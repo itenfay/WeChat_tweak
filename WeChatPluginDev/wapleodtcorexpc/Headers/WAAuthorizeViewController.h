@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, WAAuthPageSheetViewModel, WAAuthorizeResultInfo, WAAuthorizeSheetInfo;
 @protocol WAAuthorizeViewControllerDelegate;
 
-@interface WAAuthorizeViewController
+@interface WAAuthorizeViewController : NSObject
 {
     id <WAAuthorizeViewControllerDelegate> _authDelegate;
     WAAuthorizeSheetInfo *_info;

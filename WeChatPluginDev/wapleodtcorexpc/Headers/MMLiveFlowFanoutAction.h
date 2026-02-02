@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveFlowFanoutAction
+@interface MMLiveFlowFanoutAction : NSObject
 {
 }
 

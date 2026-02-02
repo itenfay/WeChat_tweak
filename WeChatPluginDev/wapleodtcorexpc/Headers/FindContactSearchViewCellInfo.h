@@ -6,7 +6,7 @@
 @class MMLoadingView, MMUILabel, MMUIViewController, NSArray, NSString, SearchContactDataProvider, UITextField, UIView, WCDataSearcher;
 @protocol FindContactSearchViewCellInfoDelegate;
 
-@interface FindContactSearchViewCellInfo
+@interface FindContactSearchViewCellInfo : NSObject
 {
     UITextField *m_userNameTextField;
     MMLoadingView *m_loadingView;

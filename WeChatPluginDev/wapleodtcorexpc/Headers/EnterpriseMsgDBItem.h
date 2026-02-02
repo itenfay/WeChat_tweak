@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterpriseMsgDBItem
+@interface EnterpriseMsgDBItem : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int m_uiMesLocalId;

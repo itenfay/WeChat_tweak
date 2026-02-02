@@ -5,7 +5,7 @@
 
 @class MMPickerMaskView, NSString, WACommonPickerView;
 
-@interface WAJSEventHandler_showPickerView
+@interface WAJSEventHandler_showPickerView : NSObject
 {
     WACommonPickerView *_picker;
     MMPickerMaskView *_mask;

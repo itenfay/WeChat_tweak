@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface VideoHintFullViewController
+@interface VideoHintFullViewController : NSObject
 {
     UIView *_backgroundView;
     UILabel *_controlLabel;

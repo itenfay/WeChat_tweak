@@ -6,7 +6,7 @@
 @class MMTipsViewController, MMUIButton, NSString, RichTextView, TransferPhoneGetRcvrResp, UIImageView, UILabel, UIView, WCPayCss, WCPayDecimalKeyboardView, WCPayNavigationView, WCPayTextField, WCPayTransferDelayOptionView, WCPayWebImageView, WCUIAlertView;
 @protocol WCPayTransferPhoneMainPageDelegate;
 
-@interface WCPayTransferPhoneMainPage
+@interface WCPayTransferPhoneMainPage : NSObject
 {
     _Bool _bShowAlert;
     unsigned int _currentSelectedDelayOption;

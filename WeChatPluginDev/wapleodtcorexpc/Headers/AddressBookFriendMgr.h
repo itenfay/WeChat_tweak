@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface AddressBookFriendMgr
+@interface AddressBookFriendMgr : NSObject
 {
     NSMutableDictionary *m_friends;
 }

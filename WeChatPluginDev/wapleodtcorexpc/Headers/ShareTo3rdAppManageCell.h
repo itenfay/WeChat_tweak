@@ -6,7 +6,7 @@
 @class AppRegisterInfo, MMWebImageView, UILabel, UISwitch;
 @protocol ShareTo3rdAppManageCellDelegate;
 
-@interface ShareTo3rdAppManageCell
+@interface ShareTo3rdAppManageCell : NSObject
 {
     MMWebImageView *_iconImageView;
     UILabel *_nameLabel;

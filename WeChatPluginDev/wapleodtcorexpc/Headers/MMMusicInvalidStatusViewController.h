@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedDetailStatusView;
 
-@interface MMMusicInvalidStatusViewController
+@interface MMMusicInvalidStatusViewController : NSObject
 {
     unsigned long long _type;
     NSString *_msgText;

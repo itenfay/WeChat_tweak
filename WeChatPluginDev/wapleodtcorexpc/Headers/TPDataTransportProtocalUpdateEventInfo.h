@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPDataTransportProtocalUpdateEventInfo
+@interface TPDataTransportProtocalUpdateEventInfo : NSObject
 {
     NSString *_protocolVer;
 }

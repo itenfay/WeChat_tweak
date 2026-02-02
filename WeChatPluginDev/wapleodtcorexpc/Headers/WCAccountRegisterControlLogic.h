@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAccountRegisterControlLogic
+@interface WCAccountRegisterControlLogic : NSObject
 {
     unsigned int m_idc_redirect_count;
     unsigned int m_mmtls_set_count;

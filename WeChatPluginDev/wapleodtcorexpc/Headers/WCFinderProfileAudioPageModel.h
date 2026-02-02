@@ -6,7 +6,7 @@
 @class FinderLiteAppParam, NSArray, NSString, WCFinderStreamLoadingState;
 @protocol WCFinderProfileAudioPageModelDelegate;
 
-@interface WCFinderProfileAudioPageModel
+@interface WCFinderProfileAudioPageModel : NSObject
 {
     id <WCFinderProfileAudioPageModelDelegate> _delegate;
     NSArray *_sections;

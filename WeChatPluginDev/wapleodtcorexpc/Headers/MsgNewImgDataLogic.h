@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol MsgNewImgDataLogicDelegate;
 
-@interface MsgNewImgDataLogic
+@interface MsgNewImgDataLogic : NSObject
 {
     NSString *m_nsChatName;
     unsigned int m_uiLeastLoadCount;

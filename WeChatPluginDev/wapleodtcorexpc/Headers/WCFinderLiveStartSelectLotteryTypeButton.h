@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveStartSelectLotteryTypeButton
+@interface WCFinderLiveStartSelectLotteryTypeButton : NSObject
 {
     int _lotteryType;
     CDUnknownBlockType _selectButtonBlock;

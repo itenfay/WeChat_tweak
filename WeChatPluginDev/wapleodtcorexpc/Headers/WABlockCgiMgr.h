@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WABlockCgiMgr
+@interface WABlockCgiMgr : NSObject
 {
 }
 

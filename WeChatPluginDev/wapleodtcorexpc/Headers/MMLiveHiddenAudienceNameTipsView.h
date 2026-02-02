@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIView;
 
-@interface MMLiveHiddenAudienceNameTipsView
+@interface MMLiveHiddenAudienceNameTipsView : NSObject
 {
     CDUnknownBlockType _clickAction;
     UIView *_contentView;

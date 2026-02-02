@@ -5,7 +5,7 @@
 
 @class ChatroomMsgSheetCard;
 
-@interface GCMsgSheetCardCellModel
+@interface GCMsgSheetCardCellModel : NSObject
 {
     ChatroomMsgSheetCard *_sheetCard;
 }

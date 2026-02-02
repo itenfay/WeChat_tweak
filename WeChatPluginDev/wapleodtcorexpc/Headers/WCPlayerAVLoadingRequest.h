@@ -5,7 +5,7 @@
 
 @class AVAssetResourceLoadingRequest;
 
-@interface WCPlayerAVLoadingRequest
+@interface WCPlayerAVLoadingRequest : NSObject
 {
     AVAssetResourceLoadingRequest *_loadingRequest;
 }

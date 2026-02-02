@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveCommentDataItem, MMLiveCommentPubbleCellFrame, MMUIButton, RichTextView, UIColor;
 
-@interface MMLiveCommentPubbleCell
+@interface MMLiveCommentPubbleCell : NSObject
 {
     _Bool _isTop;
     _Bool _isNoticeSection;

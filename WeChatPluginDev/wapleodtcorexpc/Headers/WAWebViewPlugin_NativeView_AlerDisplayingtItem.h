@@ -6,7 +6,7 @@
 @class WAAlertDialog;
 @protocol IWAWebViewPluginDelegate;
 
-@interface WAWebViewPlugin_NativeView_AlerDisplayingtItem
+@interface WAWebViewPlugin_NativeView_AlerDisplayingtItem : NSObject
 {
     WAAlertDialog *_alert;
     id <IWAWebViewPluginDelegate> _delegate;

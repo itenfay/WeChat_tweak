@@ -5,7 +5,7 @@
 
 @class MJSpeechAudioData;
 
-@interface MJSTTRequestParams
+@interface MJSTTRequestParams : NSObject
 {
     MJSpeechAudioData *_audioData;
 }

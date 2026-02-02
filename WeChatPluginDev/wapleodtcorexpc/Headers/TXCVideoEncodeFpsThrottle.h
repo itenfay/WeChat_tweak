@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TXCDispatchQueue, TXCTimedOutput;
 
-@interface TXCVideoEncodeFpsThrottle
+@interface TXCVideoEncodeFpsThrottle : NSObject
 {
     _Bool _isRpsIdrMode;
     TXCDispatchQueue *_queue;

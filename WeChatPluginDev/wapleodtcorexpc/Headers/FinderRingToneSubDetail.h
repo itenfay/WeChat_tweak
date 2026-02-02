@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, RingToneBGMInfo, WCFinderDataItem;
 
-@interface FinderRingToneSubDetail
+@interface FinderRingToneSubDetail : NSObject
 {
     unsigned long long _objectId;
     NSString *_nonceId;

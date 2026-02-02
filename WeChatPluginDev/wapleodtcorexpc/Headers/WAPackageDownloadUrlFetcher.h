@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WAPackageDownloadPreConnectLogic;
 
-@interface WAPackageDownloadUrlFetcher
+@interface WAPackageDownloadUrlFetcher : NSObject
 {
     NSMutableArray *_arrFetching;
     NSMutableArray *_arrWaiting;

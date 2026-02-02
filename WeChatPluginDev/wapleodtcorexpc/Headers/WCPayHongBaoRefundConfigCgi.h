@@ -5,7 +5,7 @@
 
 @protocol WCPayHongBaoRefundConfigCgiDelegate;
 
-@interface WCPayHongBaoRefundConfigCgi
+@interface WCPayHongBaoRefundConfigCgi : NSObject
 {
     id <WCPayHongBaoRefundConfigCgiDelegate> m_delegate;
 }

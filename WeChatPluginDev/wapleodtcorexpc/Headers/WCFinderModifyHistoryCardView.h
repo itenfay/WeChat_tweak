@@ -5,7 +5,7 @@
 
 @class MMWebImageView, RichTextView;
 
-@interface WCFinderModifyHistoryCardView
+@interface WCFinderModifyHistoryCardView : NSObject
 {
     MMWebImageView *_coverImageView;
     RichTextView *_longDescTextView;

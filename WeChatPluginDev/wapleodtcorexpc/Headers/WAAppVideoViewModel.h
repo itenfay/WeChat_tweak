@@ -5,7 +5,7 @@
 
 @class CContact, NSData, NSString, UIImage;
 
-@interface WAAppVideoViewModel
+@interface WAAppVideoViewModel : NSObject
 {
     NSString *m_videoPath;
     struct CGSize m_thumbImageSize;

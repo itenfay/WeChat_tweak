@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSDictionary, NSMutableDictionary, NSString, WCAdInteractionContentView;
 @protocol WCAdInteractionViewDelegate;
 
-@interface WCAdInteractionView
+@interface WCAdInteractionView : NSObject
 {
     id <WCAdInteractionViewDelegate> _delegate;
     NSArray *_events;

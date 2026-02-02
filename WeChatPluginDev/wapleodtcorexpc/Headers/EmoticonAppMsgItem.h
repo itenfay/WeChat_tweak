@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonAppMsgItem
+@interface EmoticonAppMsgItem : NSObject
 {
     unsigned int _emojiType;
     unsigned int _length;

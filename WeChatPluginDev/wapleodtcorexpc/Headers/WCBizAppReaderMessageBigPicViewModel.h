@@ -5,7 +5,7 @@
 
 @class WCMediaItem;
 
-@interface WCBizAppReaderMessageBigPicViewModel
+@interface WCBizAppReaderMessageBigPicViewModel : NSObject
 {
     WCMediaItem *_mediaItem;
 }

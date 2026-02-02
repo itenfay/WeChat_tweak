@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCTSettingModel
+@interface WCTSettingModel : NSObject
 {
     _Bool _showArrow;
     NSString *_subTitle;

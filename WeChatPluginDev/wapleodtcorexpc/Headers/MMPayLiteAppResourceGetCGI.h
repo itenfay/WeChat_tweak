@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
-@interface MMPayLiteAppResourceGetCGI
+@interface MMPayLiteAppResourceGetCGI : NSObject
 {
     NSString *_appId;
     NSString *_resourceName;

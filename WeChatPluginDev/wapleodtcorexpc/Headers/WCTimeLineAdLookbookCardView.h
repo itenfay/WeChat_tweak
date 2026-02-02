@@ -5,7 +5,7 @@
 
 @class NSString, PAGView, UIView, WCAdLookbookCardInfo, WCAdLookbookLogic, WCTimeLineAdLookbookCollectionView;
 
-@interface WCTimeLineAdLookbookCardView
+@interface WCTimeLineAdLookbookCardView : NSObject
 {
     _Bool _isViewVisible;
     _Bool _isVideoReadyToPlay;

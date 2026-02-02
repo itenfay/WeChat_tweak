@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCWidgetReocordMgr
+@interface WCWidgetReocordMgr : NSObject
 {
     NSMutableArray *_eventList;
     struct CGPoint _touchBeginPoint;

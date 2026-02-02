@@ -5,7 +5,7 @@
 
 @class MMProgressView, MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView, WXGRoamBackupPackageDetailCell;
 
-@interface WXGRoamBackupPackageDetailViewController
+@interface WXGRoamBackupPackageDetailViewController : NSObject
 {
     MMProgressView *m_progressView;
     MMUILabel *m_progressLabel;

@@ -5,7 +5,7 @@
 
 @class MJCaptionLabel, MJSegmentViewModel;
 
-@interface MJCaptionSegmentCell
+@interface MJCaptionSegmentCell : NSObject
 {
     MJSegmentViewModel *_segmentVM;
     MJCaptionLabel *_captionLabel;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCFinderProfileOverviewNewLifeSectionCtrl
+@interface WCFinderProfileOverviewNewLifeSectionCtrl : NSObject
 {
     NSArray *_dataList;
 }

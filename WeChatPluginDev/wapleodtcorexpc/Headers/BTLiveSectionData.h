@@ -5,7 +5,7 @@
 
 @class BTLiveSectionBarCellView, BrandFinderLiveInfo, NSArray;
 
-@interface BTLiveSectionData
+@interface BTLiveSectionData : NSObject
 {
     _Bool _isLiveBarExpand;
     NSArray *_arrLiveInfo;

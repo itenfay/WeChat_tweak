@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UILongPressGestureRecognizer;
 
-@interface RCDraggableButton
+@interface RCDraggableButton : NSObject
 {
     _Bool _isDragging;
     _Bool _singleTapBeenCanceled;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, UILabel, WCFinderAnimationLoadingView, WCFinderStreamFooterView;
 
-@interface WCFinderProfileMJTemplatePage
+@interface WCFinderProfileMJTemplatePage : NSObject
 {
     WCFinderStreamFooterView *_footerView;
     UILabel *_statusTips;

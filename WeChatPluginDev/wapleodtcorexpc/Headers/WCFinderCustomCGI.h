@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderCustomCGI
+@interface WCFinderCustomCGI : NSObject
 {
     CDUnknownBlockType _errorInterceptor;
     CDUnknownBlockType _successful;

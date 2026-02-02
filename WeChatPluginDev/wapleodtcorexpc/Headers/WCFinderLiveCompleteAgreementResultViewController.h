@@ -6,7 +6,7 @@
 @class FinderJumpInfo, MMFinderLiveTaskId, NSString, UIButton, UIImage, UIView;
 @protocol WCFinderLiveCompleteAgreementResultViewControllerDelegate;
 
-@interface WCFinderLiveCompleteAgreementResultViewController
+@interface WCFinderLiveCompleteAgreementResultViewController : NSObject
 {
     UIButton *m_actionBtn;
     NSString *m_headTitle;

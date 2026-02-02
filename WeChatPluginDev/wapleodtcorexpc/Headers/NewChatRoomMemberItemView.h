@@ -6,7 +6,7 @@
 @class CContact, MMCPLabel, MMHeadImageView, NSString, UIButton, UIColor, UIImageView;
 @protocol NewChatRoomMemberItemViewDelegate;
 
-@interface NewChatRoomMemberItemView
+@interface NewChatRoomMemberItemView : NSObject
 {
     UIButton *m_addMemberBtn;
     UIButton *m_deleteMemberBtn;

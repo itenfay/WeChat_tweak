@@ -6,7 +6,7 @@
 @class MMLiteAppViewController;
 @protocol WCFinderGlobalStore;
 
-@interface WCFinderGlobalStoreHandler
+@interface WCFinderGlobalStoreHandler : NSObject
 {
     MMLiteAppViewController *_liteAppVC;
     id <WCFinderGlobalStore> _currentStore;

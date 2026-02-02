@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasDynamicDataLoader;
 
-@interface WCCanvasRedEnvelopComponent
+@interface WCCanvasRedEnvelopComponent : NSObject
 {
     int _animateState;
     WCCanvasDynamicDataLoader *_dataLoader;

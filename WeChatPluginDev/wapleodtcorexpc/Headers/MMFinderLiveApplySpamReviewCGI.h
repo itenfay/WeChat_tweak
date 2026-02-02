@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveApplySpamReviewCGIParam;
 
-@interface MMFinderLiveApplySpamReviewCGI
+@interface MMFinderLiveApplySpamReviewCGI : NSObject
 {
     MMFinderLiveApplySpamReviewCGIParam *_param;
     CDUnknownBlockType _successBlock;

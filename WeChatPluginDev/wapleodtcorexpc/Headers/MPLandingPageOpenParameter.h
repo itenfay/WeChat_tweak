@@ -5,7 +5,7 @@
 
 @class MPVideoPageOpenParameter, NSDate, NSString, UIImage, UINavigationController;
 
-@interface MPLandingPageOpenParameter
+@interface MPLandingPageOpenParameter : NSObject
 {
     unsigned int _itemShowType;
     unsigned int _scene;

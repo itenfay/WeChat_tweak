@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMToastParameter, MMToastView;
 
-@interface WeToast
+@interface WeToast : NSObject
 {
     _Bool _needEndEditing;
     _Bool _blockUserInteraction;

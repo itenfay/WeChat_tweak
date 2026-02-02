@@ -5,7 +5,7 @@
 
 @class NSString, NewLifeShareCoverImageView, NewLifeShareMessageViewModel;
 
-@interface NewLifeShareMessageView
+@interface NewLifeShareMessageView : NSObject
 {
     NewLifeShareCoverImageView *_coverView;
 }

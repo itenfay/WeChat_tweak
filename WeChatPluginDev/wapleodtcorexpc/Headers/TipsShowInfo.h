@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface TipsShowInfo
+@interface TipsShowInfo : NSObject
 {
     _Bool _bHadShow;
     unsigned int _tipsId;

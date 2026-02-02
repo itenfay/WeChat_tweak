@@ -5,7 +5,7 @@
 
 @class NSMutableArray, UIView;
 
-@interface SonicView
+@interface SonicView : NSObject
 {
     NSMutableArray *_headImageList;
     UIView *m_containView;

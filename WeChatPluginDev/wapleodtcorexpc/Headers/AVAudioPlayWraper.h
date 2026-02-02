@@ -5,7 +5,7 @@
 
 @class AVAudioPlayer, NSString;
 
-@interface AVAudioPlayWraper
+@interface AVAudioPlayWraper : NSObject
 {
     AVAudioPlayer *audioPlayer;
 }

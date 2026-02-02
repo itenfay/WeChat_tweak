@@ -6,7 +6,7 @@
 @class CountryCodeWrap, MMUIButton, MMUILabel, NSMutableArray, NSString, TakeOrSelectHeadImageLogic, UIButton, UIImage, WCAgreementCheckBox, WCFullPhoneNumInputHelper, WCRedesignTextItem;
 @protocol WCAccountRegisterViewControllerDelegate;
 
-@interface WCAccountRegisterViewController
+@interface WCAccountRegisterViewController : NSObject
 {
     id <WCAccountRegisterViewControllerDelegate> m_delegate;
     MMUILabel *_titleLabel;

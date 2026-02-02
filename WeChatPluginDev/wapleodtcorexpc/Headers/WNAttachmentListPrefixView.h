@@ -5,7 +5,7 @@
 
 @class UIButton, UILabel;
 
-@interface WNAttachmentListPrefixView
+@interface WNAttachmentListPrefixView : NSObject
 {
     UIButton *_checkBtn;
     UILabel *_listLabel;

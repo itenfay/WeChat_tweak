@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewSharedItem
+@interface WebviewSharedItem : NSObject
 {
     NSString *_m_nsJsAppId;
     NSString *_m_nsPublisherId;

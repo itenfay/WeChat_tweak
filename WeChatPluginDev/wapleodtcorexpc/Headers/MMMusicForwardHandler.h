@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMMusicVideoImageDownloader, NSString, SendAppMsgHandler;
 @protocol MMMusicForwardHandlerDataSource, MMMusicForwardHandlerDelegate;
 
-@interface MMMusicForwardHandler
+@interface MMMusicForwardHandler : NSObject
 {
     id <MMMusicForwardHandlerDataSource> _dataSource;
     id <MMMusicForwardHandlerDelegate> _delegate;

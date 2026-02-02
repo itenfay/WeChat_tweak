@@ -5,7 +5,7 @@
 
 @class MMFinderLivePurchasedFeedViewModel, MMFinderLiveTask, MMLoadingView, MMTableView, MMUILabel, NSString, WCTimeLineFooterView;
 
-@interface WCFinderLivePurchasedFeedViewController
+@interface WCFinderLivePurchasedFeedViewController : NSObject
 {
     _Bool _resetTableViewOnViewSizeChange;
     MMFinderLiveTask *_liveTask;

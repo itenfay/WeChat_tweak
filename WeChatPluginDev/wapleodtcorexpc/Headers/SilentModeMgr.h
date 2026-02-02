@@ -5,7 +5,7 @@
 
 @class MMNotificationViewController, NSString;
 
-@interface SilentModeMgr
+@interface SilentModeMgr : NSObject
 {
     _Bool _allowPlaySoundTemporary;
     _Bool _isUsingEarPhone;

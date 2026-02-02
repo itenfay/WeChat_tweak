@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_operateStar
+@interface WebviewJSEventHandler_operateStar : NSObject
 {
 }
 

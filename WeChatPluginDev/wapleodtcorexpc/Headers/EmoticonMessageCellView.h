@@ -5,7 +5,7 @@
 
 @class EmoticonCustomAddLogicController, EmoticonMessageViewModel, MMEmoticonView, MMUIActivityIndicatorView, NSString, UIImageView, UILabel, UIView;
 
-@interface EmoticonMessageCellView
+@interface EmoticonMessageCellView : NSObject
 {
     UIView *m_rewardTips;
     UILabel *m_downloadFailRetryLabel;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface WCC2CPlayerReporter
+@interface WCC2CPlayerReporter : NSObject
 {
     CMessageWrap *_mediaWrap;
 }

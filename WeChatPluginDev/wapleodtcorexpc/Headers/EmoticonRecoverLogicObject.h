@@ -6,7 +6,7 @@
 @class EmoticonDownloadMd5ListCgi, EmoticonDownloadProxy, NSString;
 @protocol EmoticonRecoverLogicObjectDelegate;
 
-@interface EmoticonRecoverLogicObject
+@interface EmoticonRecoverLogicObject : NSObject
 {
     _Bool _m_isActive;
     _Bool _m_hasStartLogic;

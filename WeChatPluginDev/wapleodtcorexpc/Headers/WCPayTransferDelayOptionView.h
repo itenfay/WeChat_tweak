@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIButton, UILabel, UIView, WCPayCss;
 @protocol WCPayTransferDelayOptionViewDelegate;
 
-@interface WCPayTransferDelayOptionView
+@interface WCPayTransferDelayOptionView : NSObject
 {
     unsigned int _selected;
     id <WCPayTransferDelayOptionViewDelegate> _m_delegate;

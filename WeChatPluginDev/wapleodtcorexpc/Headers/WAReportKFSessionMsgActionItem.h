@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportKFSessionMsgActionItem
+@interface WAReportKFSessionMsgActionItem : NSObject
 {
     unsigned int _eventTime;
     unsigned long long _eventID;

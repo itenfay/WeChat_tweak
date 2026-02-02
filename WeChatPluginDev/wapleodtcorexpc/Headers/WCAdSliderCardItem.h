@@ -5,7 +5,7 @@
 
 @class NSString, WCAdCardBtnInfo, WCAdSliderCardButton;
 
-@interface WCAdSliderCardItem
+@interface WCAdSliderCardItem : NSObject
 {
     unsigned int _markMaxAlpha;
     NSString *_title;

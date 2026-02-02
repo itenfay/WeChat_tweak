@@ -6,7 +6,7 @@
 @class MJShootBubbleSwitch, NSArray, NSString;
 @protocol MJShootRecordingTimerSwitchDelegate;
 
-@interface MJShootRecordingTimerSwitch
+@interface MJShootRecordingTimerSwitch : NSObject
 {
     id <MJShootRecordingTimerSwitchDelegate> _delegate;
     unsigned long long _selectedMode;

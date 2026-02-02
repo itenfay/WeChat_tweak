@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat27WSNativeHotListHistoryTitle
+@interface _TtC6WeChat27WSNativeHotListHistoryTitle : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *buttonStatus;

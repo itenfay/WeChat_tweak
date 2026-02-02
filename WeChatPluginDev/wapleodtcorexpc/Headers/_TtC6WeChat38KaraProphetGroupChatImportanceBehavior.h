@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat38KaraProphetGroupChatImportanceBehavior
+@interface _TtC6WeChat38KaraProphetGroupChatImportanceBehavior : NSObject
 {
     MISSING_TYPE *userName;
 }

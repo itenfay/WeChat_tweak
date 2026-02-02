@@ -5,7 +5,7 @@
 
 @class NSString, NSURLRequest, WAWxMaterialOpenInfo, WKWebSearchView;
 
-@interface WAOpenWxMaterialListController
+@interface WAOpenWxMaterialListController : NSObject
 {
     NSURLRequest *_request;
     WAWxMaterialOpenInfo *_openInfo;

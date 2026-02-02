@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface MMWebMenuWhiteListFliter
+@interface MMWebMenuWhiteListFliter : NSObject
 {
     NSMutableSet *_setAllowMenuItems;
 }

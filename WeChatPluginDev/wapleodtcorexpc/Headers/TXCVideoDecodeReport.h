@@ -5,7 +5,7 @@
 
 @protocol TXCVideoDecodeReportDelegate;
 
-@interface TXCVideoDecodeReport
+@interface TXCVideoDecodeReport : NSObject
 {
     id <TXCVideoDecodeReportDelegate> _delegate;
 }

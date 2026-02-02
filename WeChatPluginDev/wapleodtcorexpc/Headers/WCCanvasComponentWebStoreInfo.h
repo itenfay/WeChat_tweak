@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentWebStoreInfo
+@interface WCCanvasComponentWebStoreInfo : NSObject
 {
     NSString *_appJumpUrl;
 }

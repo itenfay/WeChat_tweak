@@ -6,7 +6,7 @@
 @class MMTipsViewController, NSMutableArray, NSString, RichTextView, UIButton, WCPayBindCardInfo;
 @protocol WCPayResetPwdBindedCardListViewControllerDelegate;
 
-@interface WCPayResetPwdBindedCardListViewController
+@interface WCPayResetPwdBindedCardListViewController : NSObject
 {
     UIButton *m_footerButton;
     NSMutableArray *m_cellInfoArray;

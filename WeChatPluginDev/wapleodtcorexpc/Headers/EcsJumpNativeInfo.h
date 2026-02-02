@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EcsJumpNativeInfo
+@interface EcsJumpNativeInfo : NSObject
 {
     NSString *_nativeUri;
     NSString *_params;

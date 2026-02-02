@@ -6,7 +6,7 @@
 @class NSObject;
 @protocol WCCameraModuleDelegate;
 
-@interface WCCameraModule
+@interface WCCameraModule : NSObject
 {
     long long _scene;
     id <WCCameraModuleDelegate> _delegate;

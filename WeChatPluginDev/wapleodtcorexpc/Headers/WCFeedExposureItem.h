@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFeedExposureItem
+@interface WCFeedExposureItem : NSObject
 {
     _Bool _isFold;
     unsigned int _uiCreateTime;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class TXCGlFrameBuffer, TXCGlProgram, UIImage;
 @protocol TXIGlContext;
 
-@interface TXCLookupFilter
+@interface TXCLookupFilter : NSObject
 {
     _Bool _isGroupLUT;
     _Bool _enableFilter1;

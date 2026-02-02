@@ -5,7 +5,7 @@
 
 @class MultiDeviceManageViewController, NSString, OnlineDeviceInfoViewController;
 
-@interface MMOnlineDeviceStatusMgr
+@interface MMOnlineDeviceStatusMgr : NSObject
 {
     OnlineDeviceInfoViewController *_viewController;
     MultiDeviceManageViewController *_multiDeviceViewController;

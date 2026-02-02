@@ -5,7 +5,7 @@
 
 @protocol ChatMigrationCreateQRCodeDelegate;
 
-@interface ChatMigrationCreateQRCode
+@interface ChatMigrationCreateQRCode : NSObject
 {
     id <ChatMigrationCreateQRCodeDelegate> m_delegate;
 }

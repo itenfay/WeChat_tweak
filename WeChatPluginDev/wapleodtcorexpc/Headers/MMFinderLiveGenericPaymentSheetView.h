@@ -6,7 +6,7 @@
 @class MMFinderLiveGenericPaymentConfig, MMUIButton, MMUIMaskContainerView, NSArray, NSString, RichTextView, UIButton, UILabel, UIScrollView;
 @protocol MMFinderLiveGenericPaymentSheetViewDelegate;
 
-@interface MMFinderLiveGenericPaymentSheetView
+@interface MMFinderLiveGenericPaymentSheetView : NSObject
 {
     id <MMFinderLiveGenericPaymentSheetViewDelegate> _sheetDelegate;
     MMFinderLiveGenericPaymentConfig *_config;

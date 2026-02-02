@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMusicVideoTransitionModel
+@interface MMMusicVideoTransitionModel : NSObject
 {
     NSString *_transitionEffectId;
     NSString *_transitionName;

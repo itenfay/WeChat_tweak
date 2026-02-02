@@ -6,7 +6,7 @@
 @class MMFinderLiveAnchorGoodsCellLeftCardView, MMFinderLiveGoodsCellSubInfosView, MMFinderLiveTagsLabel, MMUIView, NSString, UITapGestureRecognizer;
 @protocol MMFinderLiveAnchorGoodsCellManageDelegate;
 
-@interface MMFinderLiveAnchorGoodsManageCell
+@interface MMFinderLiveAnchorGoodsManageCell : NSObject
 {
     MMFinderLiveAnchorGoodsCellLeftCardView *_leftCardView;
     MMFinderLiveTagsLabel *_goodsTitleLabel;

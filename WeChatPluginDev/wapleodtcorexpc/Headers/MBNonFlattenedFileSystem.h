@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MBNonFlattenedFileSystem
+@interface MBNonFlattenedFileSystem : NSObject
 {
     NSString *mBizName;
     NSString *mPathPrefix;

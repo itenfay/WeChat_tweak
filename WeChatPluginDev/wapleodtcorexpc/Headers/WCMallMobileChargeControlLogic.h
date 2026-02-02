@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString, WCPayControlData;
 
-@interface WCMallMobileChargeControlLogic
+@interface WCMallMobileChargeControlLogic : NSObject
 {
     WCPayControlData *m_oPayData;
     _Bool m_bNeedFirstGotoWCMallProductView;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveGetMsgBaseCGI
+@interface WCFinderLiveGetMsgBaseCGI : NSObject
 {
     _Bool _asyncTransferData;
     _Bool _needExtraDirectDisplayMsgs;

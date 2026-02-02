@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPDataTransportCdnUrlUpdateEventInfo
+@interface TPDataTransportCdnUrlUpdateEventInfo : NSObject
 {
     NSString *_cdnIp;
     NSString *_userIp;

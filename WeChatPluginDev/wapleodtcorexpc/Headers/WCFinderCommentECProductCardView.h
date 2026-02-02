@@ -5,7 +5,7 @@
 
 @class MMECProductShowBoxItemsView, MMECSimpleShopView, MMFinderLiveMultiPriceView, MMWebImageView, UILabel;
 
-@interface WCFinderCommentECProductCardView
+@interface WCFinderCommentECProductCardView : NSObject
 {
     MMWebImageView *_imageView;
     UILabel *_titleLabel;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_getSetting
+@interface WAJSEventHandler_getSetting : NSObject
 {
 }
 

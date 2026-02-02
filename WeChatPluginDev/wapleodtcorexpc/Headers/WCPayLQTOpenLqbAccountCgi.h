@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTOpenLqbAccountCgiDelegate;
 
-@interface WCPayLQTOpenLqbAccountCgi
+@interface WCPayLQTOpenLqbAccountCgi : NSObject
 {
     id <WCPayLQTOpenLqbAccountCgiDelegate> _cgiDelegate;
 }

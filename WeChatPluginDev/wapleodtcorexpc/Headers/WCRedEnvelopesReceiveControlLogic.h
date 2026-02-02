@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, InterceptWin, NSString, UIView, WCPayComplianceHalfPage, WCPayInterceptWinLogic, WCPayJumpRemindControlLogic, WCRedEnvGetPacketStoryCgi, WCRedEnvelopesAtmospherePagView, WCRedEnvelopesReceiveHomeView;
 
-@interface WCRedEnvelopesReceiveControlLogic
+@interface WCRedEnvelopesReceiveControlLogic : NSObject
 {
     int m_scene;
     WCRedEnvelopesReceiveHomeView *introView;

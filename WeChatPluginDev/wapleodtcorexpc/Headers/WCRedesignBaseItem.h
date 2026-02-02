@@ -5,7 +5,7 @@
 
 @class WCRedesignBaseItemView;
 
-@interface WCRedesignBaseItem
+@interface WCRedesignBaseItem : NSObject
 {
     unsigned int _separators;
     WCRedesignBaseItemView *_itemView;

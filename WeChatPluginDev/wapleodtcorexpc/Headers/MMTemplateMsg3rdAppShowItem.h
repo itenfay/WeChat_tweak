@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMTemplateMsg3rdAppShowItem
+@interface MMTemplateMsg3rdAppShowItem : NSObject
 {
     NSString *_avatarUrl;
     NSString *_displayName;

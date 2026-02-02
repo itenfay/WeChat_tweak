@@ -5,7 +5,7 @@
 
 @class FinderMusicTopicInfo, MMMusicVCOpenParams, MMUIButton, MMWebImageView, NSString, RichTextView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderDataItem, WCFinderExpandHitTingPlayerContoller;
 
-@interface WCFinderMusicNonePostHeaderView
+@interface WCFinderMusicNonePostHeaderView : NSObject
 {
     FinderMusicTopicInfo *_musicTopicInfo;
     MMMusicVCOpenParams *_openMusicParams;

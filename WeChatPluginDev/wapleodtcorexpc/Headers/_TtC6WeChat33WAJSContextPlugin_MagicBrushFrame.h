@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat33WAJSContextPlugin_MagicBrushFrame
+@interface _TtC6WeChat33WAJSContextPlugin_MagicBrushFrame : NSObject
 {
     MISSING_TYPE *insertedAppids;
 }

@@ -6,7 +6,7 @@
 @class FavoritesItem, NSMutableArray;
 @protocol WeNoteAddFavListViewControllerDelegate;
 
-@interface WeNoteAddFavListViewController
+@interface WeNoteAddFavListViewController : NSObject
 {
     FavoritesItem *m_curNoteItem;
     NSMutableArray *m_getA8KeyReqArr;

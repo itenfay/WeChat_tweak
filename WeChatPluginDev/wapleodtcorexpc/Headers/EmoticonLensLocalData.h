@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface EmoticonLensLocalData
+@interface EmoticonLensLocalData : NSObject
 {
     NSMutableArray *_recentUsedLens;
     NSMutableArray *_allLens;

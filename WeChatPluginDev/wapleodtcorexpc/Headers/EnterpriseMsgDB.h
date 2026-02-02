@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSRecursiveLock, NSString, WCTDatabase;
 
-@interface EnterpriseMsgDB
+@interface EnterpriseMsgDB : NSObject
 {
     WCTDatabase *_db;
     NSMutableSet *_setCreatedTable;

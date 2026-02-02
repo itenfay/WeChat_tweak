@@ -6,7 +6,7 @@
 @class JSEvent, NSDictionary, NSString;
 @protocol WCPayJSLaunchGroupPayPfLogicDelegate;
 
-@interface WCPayJSLaunchGroupPayPfLogic
+@interface WCPayJSLaunchGroupPayPfLogic : NSObject
 {
     id <WCPayJSLaunchGroupPayPfLogicDelegate> _logicDelegate;
     JSEvent *_jsEvent;

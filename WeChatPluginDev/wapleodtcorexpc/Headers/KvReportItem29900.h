@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem29900
+@interface KvReportItem29900 : NSObject
 {
     unsigned int _appState;
     unsigned int _isJitMode;

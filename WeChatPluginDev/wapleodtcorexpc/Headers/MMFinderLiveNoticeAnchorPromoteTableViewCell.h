@@ -5,7 +5,7 @@
 
 @class MMFinderLiveNoticeAnchorPromoteInfo, MMPaddingView, MMUILabel, MMWebImageView, ZZLabelChainModel;
 
-@interface MMFinderLiveNoticeAnchorPromoteTableViewCell
+@interface MMFinderLiveNoticeAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleLabel;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ExportExternInfo, GCChatRoomInfo, GCRecursiveRunTask, GameCenterCommonDb, GetChatroomBaseInfoResponse, GetChatroomRealtimeInfoResponse, MMLockMutableDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSMutableString, NSString, WCTTable;
 @protocol GCChatRoomServerDelegate;
 
-@interface GCChatRoomServer
+@interface GCChatRoomServer : NSObject
 {
     _Bool _hasReceivedMesg;
     _Bool _shouldFullUpdateAtListTable;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayJSOpenLQTDepositPlanAddLogicDelegate;
 
-@interface WCPayJSOpenLQTDepositPlanAddLogic
+@interface WCPayJSOpenLQTDepositPlanAddLogic : NSObject
 {
     id <WCPayJSOpenLQTDepositPlanAddLogicDelegate> _m_delegate;
 }

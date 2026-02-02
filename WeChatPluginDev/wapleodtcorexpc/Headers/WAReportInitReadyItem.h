@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportInitReadyItem
+@interface WAReportInitReadyItem : NSObject
 {
     _Bool _isDownloadCode;
     _Bool _isPatch;

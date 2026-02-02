@@ -6,7 +6,7 @@
 @class EmoticonCustomManageWrap, MMAssetSelectCheckButton, MMBadgeView, UIImageView, UIView;
 @protocol EmoticonCustomManageViewDelegate;
 
-@interface EmoticonCustomManageView
+@interface EmoticonCustomManageView : NSObject
 {
     EmoticonCustomManageWrap *_wrap;
     UIView *_contentContainerView;

@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIView, WCFinderSelectPanelView;
 @protocol WCFinderLimitedContentActionSheetDelegate;
 
-@interface WCFinderLimitedContentActionSheet
+@interface WCFinderLimitedContentActionSheet : NSObject
 {
     id <WCFinderLimitedContentActionSheetDelegate> _finderDelegate;
     NSString *_titleContent;

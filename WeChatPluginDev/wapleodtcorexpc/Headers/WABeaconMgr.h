@@ -5,7 +5,7 @@
 
 @class NSString, WABeaconMgrUseInfoHandler;
 
-@interface WABeaconMgr
+@interface WABeaconMgr : NSObject
 {
     WABeaconMgrUseInfoHandler *_useInfoHandler;
 }

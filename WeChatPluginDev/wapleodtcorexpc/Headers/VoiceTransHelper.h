@@ -6,7 +6,7 @@
 @class CMessageWrap, MMTimer, NSString, WebviewLocalResItem;
 @protocol VoiceTransDelegate;
 
-@interface VoiceTransHelper
+@interface VoiceTransHelper : NSObject
 {
     unsigned int m_uNotifyId;
     unsigned int m_iCurVoiceResultSeq;

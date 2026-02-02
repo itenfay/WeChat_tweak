@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdCanvasExtraParams
+@interface WCAdCanvasExtraParams : NSObject
 {
     NSString *_canvasDynamicInfo;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UILabel;
 
-@interface MMFinderLiveMultiCouponReceiverView
+@interface MMFinderLiveMultiCouponReceiverView : NSObject
 {
     UIButton *_actionButton;
     UILabel *_validityPeriodLabel;

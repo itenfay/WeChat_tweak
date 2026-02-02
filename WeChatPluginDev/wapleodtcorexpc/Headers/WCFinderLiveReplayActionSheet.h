@@ -5,7 +5,7 @@
 
 @class MMFinderLiveReplayTask;
 
-@interface WCFinderLiveReplayActionSheet
+@interface WCFinderLiveReplayActionSheet : NSObject
 {
     MMFinderLiveReplayTask *_replayLiveTask;
 }

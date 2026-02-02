@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCStoryPostCgiObj
+@interface WCStoryPostCgiObj : NSObject
 {
     unsigned int _createTime;
     CDUnknownBlockType _postFailBlock;

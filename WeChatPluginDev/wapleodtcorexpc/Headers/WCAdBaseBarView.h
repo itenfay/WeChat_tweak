@@ -5,7 +5,7 @@
 
 @protocol WCAdBaseBarViewDelegate;
 
-@interface WCAdBaseBarView
+@interface WCAdBaseBarView : NSObject
 {
     id <WCAdBaseBarViewDelegate> _baseDelegate;
 }

@@ -6,7 +6,7 @@
 @class NSString, WCFinderProfileNewLifePageDataProvider;
 @protocol WCFinderProfileNewLifePageModelDelegate;
 
-@interface WCFinderProfileNewLifePageModel
+@interface WCFinderProfileNewLifePageModel : NSObject
 {
     _Bool _hasError;
     _Bool _loading;

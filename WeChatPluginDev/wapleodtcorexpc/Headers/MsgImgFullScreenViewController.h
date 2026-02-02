@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BrandMpVideoReporter, CAGradientLayer, CMessageWrap, CameraScanCodesMarkDotView, EditImageForwardAndEditLogicController, ForwardMessageLogicController, GetQRCodeInfoLogic, ImageBrowseButton, MMAdaptiveBubbleViewWithLabel, MMProgressViewEx, MMScrollActionSheet, MMTimer, MMUIActivityIndicatorView, MPCustomInteractiveHandler, MPDragDownGestureHandler, MsgImgDataLogic, MsgImgDelayEntryReporter, MsgImgFullScreenContainer, MsgImgPreviewData, MsgImgSearchPhashMemCache, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, OCRTransHalfScreenViewController, QRCodeInMultiDisplayView, ScanQRCodeLogicController, ShareDataToOpenSDKController, SightIconView, UILabel, UIView, WCActionSheet, WCImageTranslateLogic, WCMomentsBizOriginalArticleButton;
 @protocol MsgImgFullScreenTransitionComponent, MsgImgFullScreenTransitionDelegate, MsgImgFullScreenViewControllerDelegate;
 
-@interface MsgImgFullScreenViewController
+@interface MsgImgFullScreenViewController : NSObject
 {
     NSMutableDictionary *m_dicMsgStatus;
     NSMutableDictionary *m_dicTryshowTime;

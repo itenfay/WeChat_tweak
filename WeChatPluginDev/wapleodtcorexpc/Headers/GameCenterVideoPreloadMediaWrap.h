@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterVideoPreloadMediaWrap
+@interface GameCenterVideoPreloadMediaWrap : NSObject
 {
     NSString *_url;
 }

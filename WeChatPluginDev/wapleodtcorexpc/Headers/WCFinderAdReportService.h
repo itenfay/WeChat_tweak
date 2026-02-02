@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLRUCache, NSString;
 
-@interface WCFinderAdReportService
+@interface WCFinderAdReportService : NSObject
 {
     MMLRUCache *_adReportMetaCache;
 }

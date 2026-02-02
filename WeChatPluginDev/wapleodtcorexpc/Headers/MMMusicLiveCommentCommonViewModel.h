@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString;
 @protocol MMMusicLiveCommentLikeOperationHandler;
 
-@interface MMMusicLiveCommentCommonViewModel
+@interface MMMusicLiveCommentCommonViewModel : NSObject
 {
     _Bool _isLiked;
     id <MMMusicLiveCommentLikeOperationHandler> _likeHandler;

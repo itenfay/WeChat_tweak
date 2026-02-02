@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface MMQRCodeMgr
+@interface MMQRCodeMgr : NSObject
 {
     NSMutableSet *m_downloadSet;
     NSMutableSet *m_newDesignDownloadSet;

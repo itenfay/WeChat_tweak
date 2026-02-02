@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ConfAVMemberList, IConfSDKRegisterableCallbackHolder, MMConfSDKAudioMgr, MMConfSDKCGIImp, MMConfSDKMemberMgr, MMConfSDKNetworkMgr, MMConfSDKVideoHWdec, MMConfSDKVideoHWenc, MMContext, MMTimer, NSMutableArray, NSMutableDictionary, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol MultitalkApiDelegate, OS_dispatch_queue;
 
-@interface MMConfSDKService
+@interface MMConfSDKService : NSObject
 {
     NSObject<OS_dispatch_queue> *_workerQueue;
     MMConfSDKMemberMgr *_memberMgr;

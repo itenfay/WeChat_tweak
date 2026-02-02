@@ -5,7 +5,7 @@
 
 @class GetTransferWordingResponse, NSString, WCPayGetTransferWordingCgi;
 
-@interface WCPayJsOpenResetTransferDelayViewLogic
+@interface WCPayJsOpenResetTransferDelayViewLogic : NSObject
 {
     unsigned long long _fromScene;
     WCPayGetTransferWordingCgi *_wordingCgi;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AnimateEmojiConfig, DSMMatcher, NSArray, NSDictionary, NSMutableDictionary, NSString;
 
-@interface ExpressionMgr
+@interface ExpressionMgr : NSObject
 {
     NSString *m_nsTotalEmoticonRegex;
     NSArray *m_qqEmojiKeyList;

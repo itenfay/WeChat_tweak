@@ -6,7 +6,7 @@
 @class NSData, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface NewInitEventHandler
+@interface NewInitEventHandler : NSObject
 {
     NSData *m_curKey;
     NSData *m_maxKey;

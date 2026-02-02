@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteGameCapsuleOptionButtonView
+@interface LiteGameCapsuleOptionButtonView : NSObject
 {
     NSString *_appUserName;
 }

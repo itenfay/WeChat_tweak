@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FBDocumentViewController, FBFilesViewController, MMAssetPickerController, MMUIViewController, MMUnderlineTabsView, NSString, UIDocumentPickerViewController, UINavigationController, WCFileBrowserToolBar, WCFileBrowserToolBarViewModel;
 @protocol WCFileBrowseDelegate;
 
-@interface WCFileBrowser
+@interface WCFileBrowser : NSObject
 {
     _Bool _loadAlbumFinish;
     unsigned int _maxFileCount;

@@ -5,7 +5,7 @@
 
 @class GameCenterJSEventLogicHandler, JSContext, JSVirtualMachine, NSMutableDictionary, NSString, NSThread;
 
-@interface MMPrefetcherGameCenterJSContext
+@interface MMPrefetcherGameCenterJSContext : NSObject
 {
     JSContext *_jsContext;
     JSVirtualMachine *_jsVirtualMachine;

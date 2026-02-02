@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface BrandLiveStatusButton
+@interface BrandLiveStatusButton : NSObject
 {
     MMUILabel *_textLabel;
     UIImageView *_liveImageView;

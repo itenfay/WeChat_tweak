@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AppBrandExtInfo
+@interface AppBrandExtInfo : NSObject
 {
     int _priority;
     NSString *_liteGameInfo;

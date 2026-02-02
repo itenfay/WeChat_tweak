@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, UILabel, WCFinderStreamFooterView;
 
-@interface WCFinderStreamProfileDraftPage
+@interface WCFinderStreamProfileDraftPage : NSObject
 {
     WCFinderStreamFooterView *_footerView;
     UILabel *_statusTips;

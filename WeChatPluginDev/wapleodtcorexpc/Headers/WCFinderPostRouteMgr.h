@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderDataItem;
 
-@interface WCFinderPostRouteMgr
+@interface WCFinderPostRouteMgr : NSObject
 {
     int _fromScene;
     int _sceneKey;

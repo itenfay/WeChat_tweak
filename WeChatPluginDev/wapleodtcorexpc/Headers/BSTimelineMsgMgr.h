@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BEFlutterBrandNavigator, BSTLExptConfig, BSTLMainSessionExposeItem, BSTOftenReadBizCache, BTResortPerformanceItem, BrandMsgResortContext, BrandResortConfig, BrandSessionCache, MMBaseSessionStorage, MMFlutterInstance, MMTimer, MemoryMappedKV, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, WCEliminatedSlotMMKV;
 @protocol OS_dispatch_queue;
 
-@interface BSTimelineMsgMgr
+@interface BSTimelineMsgMgr : NSObject
 {
     _Bool _isMigratingData;
     _Bool _needUpdateMainSession;

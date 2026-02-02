@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_openProductViewWithPid
+@interface WebviewJSEventHandler_openProductViewWithPid : NSObject
 {
 }
 

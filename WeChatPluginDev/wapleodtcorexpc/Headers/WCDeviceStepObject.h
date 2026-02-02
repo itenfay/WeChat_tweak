@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCDeviceStepObject
+@interface WCDeviceStepObject : NSObject
 {
     unsigned int beginTime;
     unsigned int endTime;

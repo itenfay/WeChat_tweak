@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface EmotionRewardTipsStatisticsData
+@interface EmotionRewardTipsStatisticsData : NSObject
 {
     unsigned int _lastPidContiousSendTimes;
     NSString *_lastSendPid;

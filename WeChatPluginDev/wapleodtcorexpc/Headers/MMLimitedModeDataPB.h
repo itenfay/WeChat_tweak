@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMLimitedModeDataPB
+@interface MMLimitedModeDataPB : NSObject
 {
     NSMutableDictionary *_agreenAuthorizationDic;
     NSMutableDictionary *_becomeGuardianDic;

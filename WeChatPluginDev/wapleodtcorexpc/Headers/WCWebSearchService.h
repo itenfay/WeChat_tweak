@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSArray, NSMutableDictionary, NSString, WCFingertipSearchReportModel, WCImageSearchEntity, WCTextSearchEntity, WCWebSearchSyncLogic, _TtC6WeChat19ReusablePageManager;
 
-@interface WCWebSearchService
+@interface WCWebSearchService : NSObject
 {
     CMessageWrap *_sessionMsgWrap;
     WCFingertipSearchReportModel *_fingertipSearchReportModel;

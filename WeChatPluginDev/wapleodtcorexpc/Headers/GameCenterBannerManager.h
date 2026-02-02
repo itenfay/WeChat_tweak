@@ -6,7 +6,7 @@
 @class GCDragDecorateView, MMWebViewController, NSString;
 @protocol GameCenterBannerManagerDelegate, GameCenterBannerNavBarProtocol;
 
-@interface GameCenterBannerManager
+@interface GameCenterBannerManager : NSObject
 {
     _Bool _isBannerEnabled;
     _Bool _keepNavIconDark;

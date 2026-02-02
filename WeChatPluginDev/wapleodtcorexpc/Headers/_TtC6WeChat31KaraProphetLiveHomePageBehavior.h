@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat31KaraProphetLiveHomePageBehavior
+@interface _TtC6WeChat31KaraProphetLiveHomePageBehavior : NSObject
 {
     MISSING_TYPE *uuid;
 }

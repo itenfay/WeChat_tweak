@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCFPSMonitorConfig
+@interface WCFPSMonitorConfig : NSObject
 {
     _Bool _dumpStacks;
     _Bool _autoUpload;

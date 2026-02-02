@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPPlayerPrepareStartEventInfo
+@interface TPPlayerPrepareStartEventInfo : NSObject
 {
     NSString *_flowId;
 }

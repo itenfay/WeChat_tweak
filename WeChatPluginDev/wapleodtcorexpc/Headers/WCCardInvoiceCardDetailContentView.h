@@ -6,7 +6,7 @@
 @class NSString, WCShareCardInvoiceHeaderView;
 @protocol WCCardInvoiceCardContentViewDelegate;
 
-@interface WCCardInvoiceCardDetailContentView
+@interface WCCardInvoiceCardDetailContentView : NSObject
 {
     _Bool _bUserHasClickUnfoldBtn;
     _Bool _bIsShareCardMode;

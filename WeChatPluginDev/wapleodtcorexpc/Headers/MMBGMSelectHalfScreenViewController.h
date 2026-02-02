@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMBGMPanelPublishContext, MMBGMSelectedConfig, MMBGMSelectedView, NSMutableArray, NSString, UIColor;
 @protocol MMBGMSelectHalfScreenViewControllerDelegate;
 
-@interface MMBGMSelectHalfScreenViewController
+@interface MMBGMSelectHalfScreenViewController : NSObject
 {
     _Bool _isShowingInView;
     _Bool _useIphoneUIStyleInIpad;

@@ -6,7 +6,7 @@
 @class MMAssetInfo, MMAssetPickerBrowserStateInfo, NSString, UIButton, UIImageView, UITapGestureRecognizer, WCFinderFeedMediaWrap, WCPlayerPlayArgs, WCPlayerView;
 @protocol MMAssetPickerBrowserViewDelegate, MMImagePickerControlCenter;
 
-@interface MVImagePreviewVideoView
+@interface MVImagePreviewVideoView : NSObject
 {
     _Bool _requestUneditedAsset;
     _Bool _shouldPlayWithEditAttr;

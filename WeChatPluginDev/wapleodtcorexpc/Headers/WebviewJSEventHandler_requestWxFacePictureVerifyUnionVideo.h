@@ -5,7 +5,7 @@
 
 @class FaceRecogPrivateVerifyHandler, JSEvent, NSMutableDictionary, NSString;
 
-@interface WebviewJSEventHandler_requestWxFacePictureVerifyUnionVideo
+@interface WebviewJSEventHandler_requestWxFacePictureVerifyUnionVideo : NSObject
 {
     FaceRecogPrivateVerifyHandler *_handler;
     JSEvent *_cbEvent;

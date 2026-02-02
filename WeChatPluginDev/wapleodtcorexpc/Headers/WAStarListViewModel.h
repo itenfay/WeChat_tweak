@@ -5,7 +5,7 @@
 
 @protocol WAStarListViewModelDelegate;
 
-@interface WAStarListViewModel
+@interface WAStarListViewModel : NSObject
 {
     id <WAStarListViewModelDelegate> _delegate;
     unsigned long long _scene;

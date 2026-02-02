@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FeedsPreviewLiveMultiStyleInfo_StyleFive, FeedsPreviewLiveMultiStyleInfo_StyleOne, FeedsPreviewLiveMultiStyleInfo_StyleTwo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo, FinderWindowProductInfo, MMFinderLiveFeedStreamProductCardView, MMFinderLiveFeedStreamProductCouponView, MMFinderLiveFeedStreamProductExpandedCardView, MMFinderLiveFeedStreamProductGuideView, MMFinderLiveFeedStreamProductHotSellingView, MMFinderLiveFeedStreamWidgetBaseView, NSString;
 @protocol MMFinderLiveFeedStreamProductStyleViewDelegate;
 
-@interface MMFinderLiveFeedStreamProductStyleView
+@interface MMFinderLiveFeedStreamProductStyleView : NSObject
 {
     id <MMFinderLiveFeedStreamProductStyleViewDelegate> _delegate;
     unsigned long long _style;

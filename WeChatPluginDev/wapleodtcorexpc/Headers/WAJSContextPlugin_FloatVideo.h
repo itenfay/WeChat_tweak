@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString, UINavigationController, WAFloatingVideoView, WAFloatingViewBaseWrapper, WAWebViewController;
 
-@interface WAJSContextPlugin_FloatVideo
+@interface WAJSContextPlugin_FloatVideo : NSObject
 {
     _Bool _hasRecovered;
     _Bool _needRemoveFloatViewAfterTransitioning;

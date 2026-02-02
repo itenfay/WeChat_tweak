@@ -5,7 +5,7 @@
 
 @class NSString, UIScrollView;
 
-@interface MMReInitViewController
+@interface MMReInitViewController : NSObject
 {
     UIScrollView *m_mainScrollView;
 }

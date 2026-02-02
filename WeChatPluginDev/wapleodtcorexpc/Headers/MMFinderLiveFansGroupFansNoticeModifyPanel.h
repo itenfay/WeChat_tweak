@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveFansGroupAnchorEditFansNoticeInfo, MMFinderLiveFansGroupNoticeVisibilitySheet, MMFinderLiveTaskId, MMTextView, MMUIButton, MMUILabel, MMWebImageView, NSArray, NSString, UIImage, UIImageView, UIScrollView, UIView;
 @protocol MMFinderLiveFansGroupFansNoticeModifyPanelDelegate, MMFinderLiveFansGroupOperationReportDelegate;
 
-@interface MMFinderLiveFansGroupFansNoticeModifyPanel
+@interface MMFinderLiveFansGroupFansNoticeModifyPanel : NSObject
 {
     _Bool _isKeyBoardShow;
     id <MMFinderLiveFansGroupFansNoticeModifyPanelDelegate> _panelDelegate;

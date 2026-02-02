@@ -5,7 +5,7 @@
 
 @class StatusFooterJumpFinderFeedByExportId;
 
-@interface TextState3rdPartyFinderExportHandler
+@interface TextState3rdPartyFinderExportHandler : NSObject
 {
     StatusFooterJumpFinderFeedByExportId *_finderInfo;
 }

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol EmoticonStoreGridViewDelegate;
 
-@interface EmoticonStoreGridView
+@interface EmoticonStoreGridView : NSObject
 {
     NSString *m_emoticonPid;
     long long m_currentSelectIndex;

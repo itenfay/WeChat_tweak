@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel, WCContentItemPOIRelatedViewModel;
 
-@interface WCContentItemPOIRelatedView
+@interface WCContentItemPOIRelatedView : NSObject
 {
     WCContentItemPOIRelatedViewModel *_viewModel;
     MMWebImageView *_contentImageView;

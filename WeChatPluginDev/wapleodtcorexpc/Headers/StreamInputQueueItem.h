@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface StreamInputQueueItem
+@interface StreamInputQueueItem : NSObject
 {
     unsigned int _inputId;
     unsigned int _offset;

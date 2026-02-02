@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdQuicklyAddBrandBtnClickModel
+@interface WCAdQuicklyAddBrandBtnClickModel : NSObject
 {
     int _clickType;
     NSString *_brandUsername;

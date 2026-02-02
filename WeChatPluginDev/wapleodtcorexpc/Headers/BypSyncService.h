@@ -5,7 +5,7 @@
 
 @class BypSyncKeyBuff, NSMutableArray, NSMutableSet, NSSet, NSString;
 
-@interface BypSyncService
+@interface BypSyncService : NSObject
 {
     _Bool _syncPaused;
     _Bool _enableBypSync;

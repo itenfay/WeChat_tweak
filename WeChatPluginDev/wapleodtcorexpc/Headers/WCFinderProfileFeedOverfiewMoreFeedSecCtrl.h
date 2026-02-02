@@ -6,7 +6,7 @@
 @class NSString, WCFinderFeedArray, WCFinderProfileOverviewFeedSectionCtrl, WCFinderProfileTagFeedViewModel;
 @protocol WCFinderProfilePullableFeedViewModel;
 
-@interface WCFinderProfileFeedOverfiewMoreFeedSecCtrl
+@interface WCFinderProfileFeedOverfiewMoreFeedSecCtrl : NSObject
 {
     WCFinderProfileOverviewFeedSectionCtrl *_feedSecCtrl;
     WCFinderFeedArray *_displayFeedArray;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCInnerJumpMgr
+@interface WCInnerJumpMgr : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class AppWCCardMessageViewModel, MMProgressView, UIImageView, UILabel, UIView;
 
-@interface AppWCCardMessageCellView
+@interface AppWCCardMessageCellView : NSObject
 {
     MMProgressView *m_progressView;
     UIView *m_progressBkgView;

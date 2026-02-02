@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, NSString;
 
-@interface WAJSEventHandler_openSingleStickerView
+@interface WAJSEventHandler_openSingleStickerView : NSObject
 {
     _Bool _showEntry;
     long long _emoticonScene;

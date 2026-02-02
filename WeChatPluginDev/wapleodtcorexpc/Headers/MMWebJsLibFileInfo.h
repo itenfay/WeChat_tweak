@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebJsLibFileInfo
+@interface MMWebJsLibFileInfo : NSObject
 {
     unsigned int _offset;
     unsigned int _size;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol WCDataSearchDelegate;
 
-@interface WCDataSearcher
+@interface WCDataSearcher : NSObject
 {
     id <WCDataSearchDelegate> _dataDelegate;
     Class _resultCellClass;

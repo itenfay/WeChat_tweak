@@ -5,7 +5,7 @@
 
 @class MMLiteAppViewController, NSString, UIColor, UIPanGestureRecognizer, UIView;
 
-@interface MMLiteAppHalfScreenViewController
+@interface MMLiteAppHalfScreenViewController : NSObject
 {
     _Bool _enablePullUp;
     _Bool _enablePullDown;

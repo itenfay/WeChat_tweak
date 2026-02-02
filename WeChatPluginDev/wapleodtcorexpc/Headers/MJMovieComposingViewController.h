@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MJActionPanelViewController, MJAnalysisGuidanceManager, MJClippingPanel, MJExportProgressMaskView, MJGradientView, MJMovieComposingBottomBar, MJMovieComposingRecognitionGuideView, MJMovieComposingSession, MJMovieComposingTitleGuideView, MJMovieComposingViewModel, MJMovieTextEditInspector, MJMovieTextSuggestionContext, MJMovieTextSuggestionProcessor, MJMovieTextSuggestionSnapshotGenerator, MJMusicPickingViewModel, MJNarrationRecordingControlView, MJPassthroughView, MJPlaybackViewModel, MJPublisherPlaybackProgressSlider, MJSegmentCropBoxView, MJSegmentCropGestureCaptureView, MJSegmentViewModel, MJTimelineViewController, MJTimelineViewModel, MJVideoSafeAreaTipsView, MMBGMSelectHalfScreenViewController, MMUIButton, MMUILabel, NSMapTable, NSMutableArray, NSString, OMJHandleBoxBorderStyle, OMJPlaybackOverlayView, UIImageView, UIView;
 @protocol MJMovieComposingViewControllerDelegate;
 
-@interface MJMovieComposingViewController
+@interface MJMovieComposingViewController : NSObject
 {
     _Bool _isFirstAppear;
     _Bool _isRenderViewShrinked;

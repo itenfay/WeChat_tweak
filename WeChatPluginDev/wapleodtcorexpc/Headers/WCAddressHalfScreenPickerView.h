@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UICollectionView, UICollectionViewLayout, WCAddressPickerBtnGroupView, WCAddressPickerHeadView, WCAddressStageDataStruct;
 @protocol WCAddressHalfScreenDelegate;
 
-@interface WCAddressHalfScreenPickerView
+@interface WCAddressHalfScreenPickerView : NSObject
 {
     id <WCAddressHalfScreenDelegate> m_delegate;
     double m_originPickerY;

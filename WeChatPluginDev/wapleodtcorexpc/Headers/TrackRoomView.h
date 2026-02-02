@@ -6,7 +6,7 @@
 @class AnnotationLogicController, CAShapeLayer, MMFloorPickView, MMLoadingView, MMMapView, MMTimer, NSString, NavigateLogicController, POIInfo, TrackRoomReporter, TrackRoomTopBarView, UIButton, UIView, WCUIAlertView;
 @protocol TrackRoomViewDelegate;
 
-@interface TrackRoomView
+@interface TrackRoomView : NSObject
 {
     id <TrackRoomViewDelegate> _trackRoomViewDelegate;
     _Bool _isInit;

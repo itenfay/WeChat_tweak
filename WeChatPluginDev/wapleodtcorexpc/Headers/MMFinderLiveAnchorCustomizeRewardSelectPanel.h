@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnchorCustomizeRewardModifyPanel, MMFinderLiveAnchorCustomizeRewardViewModel, MMFinderLiveTaskId, NSString, UITableView;
 
-@interface MMFinderLiveAnchorCustomizeRewardSelectPanel
+@interface MMFinderLiveAnchorCustomizeRewardSelectPanel : NSObject
 {
     CDUnknownBlockType _didDismissCallback;
     MMFinderLiveTaskId *_taskId;

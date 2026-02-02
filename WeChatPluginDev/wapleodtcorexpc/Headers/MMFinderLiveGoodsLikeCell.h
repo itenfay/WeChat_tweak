@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, MMFinderLiveTagsLabel, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIView;
 
-@interface MMFinderLiveGoodsLikeCell
+@interface MMFinderLiveGoodsLikeCell : NSObject
 {
     MMWebImageView *_goodsImageView;
     MMUILabel *_serialNumLabel;

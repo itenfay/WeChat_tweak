@@ -5,7 +5,7 @@
 
 @class CADisplayLink, NSMutableArray, NSString, WARemoteDebugMaskView, WARemoteDebugPanelView;
 
-@interface WAJSContextPlugin_RemoteDebug
+@interface WAJSContextPlugin_RemoteDebug : NSObject
 {
     double _panelWidth;
     NSMutableArray *_printItemList;

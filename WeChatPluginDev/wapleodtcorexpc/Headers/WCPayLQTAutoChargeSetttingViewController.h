@@ -6,7 +6,7 @@
 @class NSString, WCPayLQTPickerPanelView;
 @protocol WCPayLQTAutoChargeSetttingViewControllerDelegate;
 
-@interface WCPayLQTAutoChargeSetttingViewController
+@interface WCPayLQTAutoChargeSetttingViewController : NSObject
 {
     id <WCPayLQTAutoChargeSetttingViewControllerDelegate> _delegate;
     WCPayLQTPickerPanelView *_pickerPanelView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMUIImageView, MMUILabel, NSMutableArray, UIButton, UILabel, UIView;
 
-@interface MMFinderLiveAudioRoomLocationGuideView
+@interface MMFinderLiveAudioRoomLocationGuideView : NSObject
 {
     CDUnknownBlockType _actionBlock;
     CDUnknownBlockType _dismissBlock;

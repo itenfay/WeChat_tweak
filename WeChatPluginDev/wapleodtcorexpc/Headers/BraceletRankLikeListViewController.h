@@ -5,7 +5,7 @@
 
 @class MMTableView, NSArray, NSString;
 
-@interface BraceletRankLikeListViewController
+@interface BraceletRankLikeListViewController : NSObject
 {
     MMTableView *_tableView;
     NSArray *_aryLikeUserList;

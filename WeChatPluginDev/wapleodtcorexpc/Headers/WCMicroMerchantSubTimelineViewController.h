@@ -6,7 +6,7 @@
 @class EGORefreshTableHeaderView, MMUIImageView, MMUILabel, MicroMerchantTableViewModel, NSString, UIView, WCActionButtonFloatView, WCDataItem, WCMomentsShareScopeMgr, WCOperateFloatView, WCPasteTextLengthLogic, WCSubTimelineSessionMgr, WCTimeLineFooterView;
 @protocol WCMicroMerchantSubTimelineViewControllerDelegate;
 
-@interface WCMicroMerchantSubTimelineViewController
+@interface WCMicroMerchantSubTimelineViewController : NSObject
 {
     _Bool _isViewDidAppear;
     _Bool _hasDataSourceChanged;

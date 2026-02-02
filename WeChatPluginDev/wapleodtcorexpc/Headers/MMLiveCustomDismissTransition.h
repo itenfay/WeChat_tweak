@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveCustomDismissTransition
+@interface MMLiveCustomDismissTransition : NSObject
 {
 }
 

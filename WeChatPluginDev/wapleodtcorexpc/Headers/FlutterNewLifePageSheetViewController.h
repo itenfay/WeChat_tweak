@@ -5,7 +5,7 @@
 
 @class UIViewController;
 
-@interface FlutterNewLifePageSheetViewController
+@interface FlutterNewLifePageSheetViewController : NSObject
 {
     UIViewController *_lastViewController;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface LiteAppJsApiStartWebView
+@interface LiteAppJsApiStartWebView : NSObject
 {
     CDUnknownBlockType _callbackBlock;
 }

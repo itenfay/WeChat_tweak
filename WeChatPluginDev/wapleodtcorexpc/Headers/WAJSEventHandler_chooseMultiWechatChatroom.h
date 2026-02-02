@@ -5,7 +5,7 @@
 
 @class MultiSelectChatRoomHalfScreenViewController, NSString;
 
-@interface WAJSEventHandler_chooseMultiWechatChatroom
+@interface WAJSEventHandler_chooseMultiWechatChatroom : NSObject
 {
     MultiSelectChatRoomHalfScreenViewController *_m_viewController;
 }

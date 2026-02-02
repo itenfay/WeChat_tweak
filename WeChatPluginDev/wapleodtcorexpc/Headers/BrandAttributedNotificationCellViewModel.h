@@ -5,7 +5,7 @@
 
 @class CContact, NSMutableArray;
 
-@interface BrandAttributedNotificationCellViewModel
+@interface BrandAttributedNotificationCellViewModel : NSObject
 {
     NSMutableArray *m_messageTextArr;
     CContact *m_brandContact;

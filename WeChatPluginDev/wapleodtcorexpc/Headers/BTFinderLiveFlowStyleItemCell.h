@@ -6,7 +6,7 @@
 @class BTFinderLiveItemViewModel, MMLiveCDNPlayerView, NSString, WCFinderLiveNowView;
 @protocol BTFinderLiveFlowStyleItemCellDelegate;
 
-@interface BTFinderLiveFlowStyleItemCell
+@interface BTFinderLiveFlowStyleItemCell : NSObject
 {
     id <BTFinderLiveFlowStyleItemCellDelegate> _liveDelegate;
     BTFinderLiveItemViewModel *_viewModel;

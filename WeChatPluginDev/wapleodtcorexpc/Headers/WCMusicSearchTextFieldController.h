@@ -5,7 +5,7 @@
 
 @class MMTagTextField, MMUIButton, NSString, UIColor, UIImageView, UIView;
 
-@interface WCMusicSearchTextFieldController
+@interface WCMusicSearchTextFieldController : NSObject
 {
     _Bool _showLeftBackButton;
     _Bool _showRightCancelButton;

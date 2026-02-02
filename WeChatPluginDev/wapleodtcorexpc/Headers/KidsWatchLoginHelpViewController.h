@@ -5,7 +5,7 @@
 
 @class KidsWatchInfoCardView;
 
-@interface KidsWatchLoginHelpViewController
+@interface KidsWatchLoginHelpViewController : NSObject
 {
     KidsWatchInfoCardView *_infoCardView;
 }

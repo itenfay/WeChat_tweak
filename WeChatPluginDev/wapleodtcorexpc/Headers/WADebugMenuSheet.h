@@ -5,7 +5,7 @@
 
 @class NSArray, UIButton, UICollectionView, WAWebViewController, ZZFLEXAngel;
 
-@interface WADebugMenuSheet
+@interface WADebugMenuSheet : NSObject
 {
     WAWebViewController *_webVC;
     UIButton *_cancelButton;

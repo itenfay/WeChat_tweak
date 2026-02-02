@@ -5,7 +5,7 @@
 
 @class MMScrollStack, UIStackView;
 
-@interface MMAutoLayoutSheetView
+@interface MMAutoLayoutSheetView : NSObject
 {
     UIStackView *_contentView;
     MMScrollStack *_scrollStack;

@@ -5,7 +5,7 @@
 
 @class NSString, NSURLRequest;
 
-@interface WSResultViewLogic
+@interface WSResultViewLogic : NSObject
 {
     NSString *_lastInputText;
     unsigned long long _lastInputTime;

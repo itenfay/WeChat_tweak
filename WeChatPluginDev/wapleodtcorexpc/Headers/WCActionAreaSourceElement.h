@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCActionAreaSourceElement
+@interface WCActionAreaSourceElement : NSObject
 {
     unsigned long long _sourceShowType;
     NSString *_sourceText;

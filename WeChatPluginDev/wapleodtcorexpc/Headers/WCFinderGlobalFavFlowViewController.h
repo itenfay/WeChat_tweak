@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, UILabel, UIView, WCFinderCustomImageRichTextView, WCFinderExtStatsReporter, WCFinderFeedFlowView, WCFinderGlobalFavFlowPageViewModel, WCFinderGlobalFavFlowViewModel, WCSearchBar;
 
-@interface WCFinderGlobalFavFlowViewController
+@interface WCFinderGlobalFavFlowViewController : NSObject
 {
     _Bool _disableSearch;
     double _topPadding;

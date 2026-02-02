@@ -5,7 +5,7 @@
 
 @class GameMessageViewModel, MMTimer, UIImageView;
 
-@interface GameMessageCellView
+@interface GameMessageCellView : NSObject
 {
     unsigned int m_uiCurrImageIndex;
     unsigned int m_uiAnimationTimes;

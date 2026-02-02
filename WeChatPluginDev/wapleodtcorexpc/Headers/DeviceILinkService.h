@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface DeviceILinkService
+@interface DeviceILinkService : NSObject
 {
     NSMutableArray *_iLinkDevices;
     NSMutableArray *_privateILinkDevices;

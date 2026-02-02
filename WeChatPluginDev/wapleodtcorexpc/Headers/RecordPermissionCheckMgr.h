@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RecordPermissionCheckMgr
+@interface RecordPermissionCheckMgr : NSObject
 {
     int m_CheckPermissionFlag;
 }

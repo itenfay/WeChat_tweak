@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, VoiceTransHelper, VoiceTransInfo, VoiceTransSessionInfo, VoiceTranslateUtil;
 
-@interface VoiceTranslateMsgMgr
+@interface VoiceTranslateMsgMgr : NSObject
 {
     VoiceTransInfo *_currTransInfo;
     VoiceTransHelper *_transHelper;

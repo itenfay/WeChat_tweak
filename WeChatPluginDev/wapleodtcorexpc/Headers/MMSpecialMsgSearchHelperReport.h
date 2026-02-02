@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMSpecialMsgSearchHelperReport
+@interface MMSpecialMsgSearchHelperReport : NSObject
 {
     unsigned int _action;
     unsigned int _pageType;

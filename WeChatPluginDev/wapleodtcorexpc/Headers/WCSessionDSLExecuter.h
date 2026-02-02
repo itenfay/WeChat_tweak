@@ -5,7 +5,7 @@
 
 @class WCSessionDSLExplainer;
 
-@interface WCSessionDSLExecuter
+@interface WCSessionDSLExecuter : NSObject
 {
     WCSessionDSLExplainer *_sessionDSLExplainer;
 }

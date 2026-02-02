@@ -5,7 +5,7 @@
 
 @class WAAppIdToUsernameTransfer;
 
-@interface WebviewJSEventHandler_launchMiniProgram
+@interface WebviewJSEventHandler_launchMiniProgram : NSObject
 {
     WAAppIdToUsernameTransfer *_appIDTransfer;
     _Bool _silentOpen;

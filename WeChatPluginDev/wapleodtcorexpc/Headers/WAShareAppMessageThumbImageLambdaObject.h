@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAShareAppMessageThumbImageLambdaObject
+@interface WAShareAppMessageThumbImageLambdaObject : NSObject
 {
 }
 

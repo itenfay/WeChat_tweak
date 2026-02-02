@@ -5,7 +5,7 @@
 
 @class CEmoticonWrap, CMessageWrap, NSString;
 
-@interface MMEmoticonBrowsePageContext
+@interface MMEmoticonBrowsePageContext : NSObject
 {
     CMessageWrap *_messageWrap;
     CEmoticonWrap *_emoticonWrap;

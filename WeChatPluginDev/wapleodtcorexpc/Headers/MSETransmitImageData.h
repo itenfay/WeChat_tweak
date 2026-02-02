@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MSETransmitImageData
+@interface MSETransmitImageData : NSObject
 {
     NSMutableArray *_selectedImageUrls;
 }

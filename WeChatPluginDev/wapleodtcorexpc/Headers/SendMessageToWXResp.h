@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SendMessageToWXResp
+@interface SendMessageToWXResp : NSObject
 {
     NSString *lang;
     NSString *country;

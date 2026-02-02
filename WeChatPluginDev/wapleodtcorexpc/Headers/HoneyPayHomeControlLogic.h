@@ -6,7 +6,7 @@
 @class HoneyPayHomeViewController, NSString, WCPayHoneyPayListCgi;
 @protocol HoneyPayHomeControlLogicDelegate;
 
-@interface HoneyPayHomeControlLogic
+@interface HoneyPayHomeControlLogic : NSObject
 {
     _Bool _createCardSuccess;
     id <HoneyPayHomeControlLogicDelegate> _delegate;

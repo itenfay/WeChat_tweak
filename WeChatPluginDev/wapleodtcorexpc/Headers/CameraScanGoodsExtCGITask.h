@@ -6,7 +6,7 @@
 @class CameraScanGoodsItemViewModel, NSData;
 @protocol CameraScanGoodsExtCGITaskDelegate;
 
-@interface CameraScanGoodsExtCGITask
+@interface CameraScanGoodsExtCGITask : NSObject
 {
     _Bool _isCancelled;
     _Bool _isNeedPreload;

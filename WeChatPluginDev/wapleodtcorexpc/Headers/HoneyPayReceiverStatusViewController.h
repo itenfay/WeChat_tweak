@@ -6,7 +6,7 @@
 @class NSString, QryHoneyUserDetailResp, UIView, WCPayAgreementView, WCPayNoticeItemView;
 @protocol HoneyPayReceiverStatusViewControllerDelegate;
 
-@interface HoneyPayReceiverStatusViewController
+@interface HoneyPayReceiverStatusViewController : NSObject
 {
     id <HoneyPayReceiverStatusViewControllerDelegate> _delegate;
     QryHoneyUserDetailResp *_detail;

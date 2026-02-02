@@ -5,7 +5,7 @@
 
 @class MMUIButton, MagicSclFrameSetView, NSString, UIView, _TtC25MagicCardStarterProtocols22MagicCardStarterHandle, _TtC25MagicCardStarterProtocols25MagicCardStarterBizConfig, _TtC6WeChat18MagicSclCustomView, _TtC6WeChat22MagicCardStarterSclBiz;
 
-@interface MagicCardNativeStarterDemoViewControlller
+@interface MagicCardNativeStarterDemoViewControlller : NSObject
 {
     _Bool _isResumed;
     MMUIButton *_preloadButton;

@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface TranslateInfo
+@interface TranslateInfo : NSObject
 {
     unsigned int mesLocalId;
     unsigned long long msgServerId;

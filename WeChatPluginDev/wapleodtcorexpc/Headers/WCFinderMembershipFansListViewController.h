@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UITapGestureRecognizer, WCFinderContact, WCFinderMembershipFansListViewModel, WCFinderRefreshTableFooterView, WCTableView;
 
-@interface WCFinderMembershipFansListViewController
+@interface WCFinderMembershipFansListViewController : NSObject
 {
     WCTableView *_tableView;
     WCFinderMembershipFansListViewModel *_viewModel;

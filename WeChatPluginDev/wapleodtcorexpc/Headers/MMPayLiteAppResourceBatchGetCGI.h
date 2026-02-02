@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface MMPayLiteAppResourceBatchGetCGI
+@interface MMPayLiteAppResourceBatchGetCGI : NSObject
 {
     NSArray *_pkgList;
     CDUnknownBlockType _success;

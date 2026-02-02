@@ -6,7 +6,7 @@
 @class HLActionButton, NSString, UIImage, UIImageView, UIView;
 @protocol EmoticonPreviewWindowViewControllerDelegate;
 
-@interface EmoticonPreviewWindowViewController
+@interface EmoticonPreviewWindowViewController : NSObject
 {
     int _aligment;
     id <EmoticonPreviewWindowViewControllerDelegate> _delegate;

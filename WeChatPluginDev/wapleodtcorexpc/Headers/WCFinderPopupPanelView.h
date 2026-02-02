@@ -6,7 +6,7 @@
 @class FinderPopupShowInfo, WCFinderPopupPanelReportModel, WCFinderPopupTipsView, WCFinderRedDotCtrlInfo;
 @protocol WCFinderPopupPanelViewProtocol;
 
-@interface WCFinderPopupPanelView
+@interface WCFinderPopupPanelView : NSObject
 {
     _Bool _willCheckSlideReport;
     id <WCFinderPopupPanelViewProtocol> _delegate;

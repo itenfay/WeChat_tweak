@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface LiteAppJsApiCompressImage
+@interface LiteAppJsApiCompressImage : NSObject
 {
     NSMutableArray *_localIds;
     unsigned long long _totalCount;

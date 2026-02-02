@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ColikeAppInfo, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIScrollView, WSWowShareReceiverVideoContentView;
 
-@interface WSWowShareGlobalReceiverViewController
+@interface WSWowShareGlobalReceiverViewController : NSObject
 {
     _Bool _disappearIsFromSubmit;
     UIScrollView *_contentView;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface MMLiveGamePrepareOptionCell
+@interface MMLiveGamePrepareOptionCell : NSObject
 {
     UIView *_contentView;
     UIImageView *_iconView;

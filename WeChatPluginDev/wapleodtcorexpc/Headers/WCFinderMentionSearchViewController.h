@@ -6,7 +6,7 @@
 @class MMUILabel, MMUISearchBar, NSString, UIImageView, UILabel, UITableView, UITapGestureRecognizer, UIView, WCFinderAnimationLoadingView, WCFinderMentionSearchContactViewModel, WCFinderRefreshTableFooterView;
 @protocol WCFinderMentionSearchViewControllerDelegate;
 
-@interface WCFinderMentionSearchViewController
+@interface WCFinderMentionSearchViewController : NSObject
 {
     _Bool _hideHistoryView;
     id <WCFinderMentionSearchViewControllerDelegate> _delegate;

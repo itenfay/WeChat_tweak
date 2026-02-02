@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMMusicUrlChecker
+@interface MMMusicUrlChecker : NSObject
 {
     CDUnknownBlockType _spamCheckCompleteHandler;
     CDUnknownBlockType _shakeMusicCheckCompleteHandler;

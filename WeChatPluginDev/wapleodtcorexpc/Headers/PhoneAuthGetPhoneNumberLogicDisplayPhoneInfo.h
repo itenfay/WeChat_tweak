@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PhoneAuthGetPhoneNumberLogicDisplayPhoneInfo
+@interface PhoneAuthGetPhoneNumberLogicDisplayPhoneInfo : NSObject
 {
     _Bool _isWxPhone;
     NSString *_phoneNumberString;

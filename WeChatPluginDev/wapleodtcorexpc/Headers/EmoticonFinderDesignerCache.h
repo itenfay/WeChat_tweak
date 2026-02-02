@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface EmoticonFinderDesignerCache
+@interface EmoticonFinderDesignerCache : NSObject
 {
     unsigned int _designerUin;
     NSMutableArray *_storeItemList;

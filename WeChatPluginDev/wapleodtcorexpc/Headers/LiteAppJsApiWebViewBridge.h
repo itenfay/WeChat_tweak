@@ -5,7 +5,7 @@
 
 @class NSString, WebviewJSEventHandlerFacade;
 
-@interface LiteAppJsApiWebViewBridge
+@interface LiteAppJsApiWebViewBridge : NSObject
 {
     NSString *_errorMsg;
     WebviewJSEventHandlerFacade *_jsEventHandler;

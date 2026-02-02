@@ -6,7 +6,7 @@
 @class MMScrollView, NSMutableArray, NSString, UIColor, UIView, WCFinderTabPageModel;
 @protocol WCFinderTabPageViewBasicProtocol;
 
-@interface WCFinderTabPageViewController
+@interface WCFinderTabPageViewController : NSObject
 {
     _Bool _enableScrollPage;
     WCFinderTabPageModel *_currentSelectPageModel;

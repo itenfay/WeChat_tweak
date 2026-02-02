@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTMissedSubsVideoItemViewModel
+@interface BTMissedSubsVideoItemViewModel : NSObject
 {
 }
 

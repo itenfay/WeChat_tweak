@@ -5,7 +5,7 @@
 
 @class CLLocation, LocationRetriever, NSArray, NSMutableDictionary, NSString, WCNewShareCardLayoutCache, WCShareCardBatchGetMgr, WCShareCardDB, WCShareCardSyncMgr;
 
-@interface WCShareCardMgr
+@interface WCShareCardMgr : NSObject
 {
     WCShareCardDB *_wcShareCardDB;
     WCShareCardSyncMgr *_wcShareCardSyncMgr;

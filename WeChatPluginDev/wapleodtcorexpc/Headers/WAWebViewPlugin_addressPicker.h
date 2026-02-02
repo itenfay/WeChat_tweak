@@ -6,7 +6,7 @@
 @class NSArray, NSDictionary, NSString, WCAddressHalfScreenPickerView;
 @protocol IWAWebViewPluginDelegate;
 
-@interface WAWebViewPlugin_addressPicker
+@interface WAWebViewPlugin_addressPicker : NSObject
 {
     int _pickerMode;
     id <IWAWebViewPluginDelegate> _resultDelegate;

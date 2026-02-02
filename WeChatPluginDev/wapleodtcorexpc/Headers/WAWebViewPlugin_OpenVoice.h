@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WAWebViewPlugin_OpenVoice
+@interface WAWebViewPlugin_OpenVoice : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class CContact, MMAcceptAgreementCommonHeadView, MMLimitedModeGuardianLogic, MMTableView, MMTableViewInfo, NSString, UIButton;
 
-@interface MMLimitedModeSettingGuardianViewController
+@interface MMLimitedModeSettingGuardianViewController : NSObject
 {
     UIButton *m_operateButton;
     CContact *m_guardianContact;

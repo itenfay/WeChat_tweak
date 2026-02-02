@@ -5,7 +5,7 @@
 
 @class SnsObjItem;
 
-@interface iWatchAppMsgItem
+@interface iWatchAppMsgItem : NSObject
 {
     SnsObjItem *_snsObj;
 }

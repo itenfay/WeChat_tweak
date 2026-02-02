@@ -6,7 +6,7 @@
 @class NSString, WCPayUnionTransferNotifyCgi;
 @protocol WCPayRetrySendTransferMessageLogicDelegate;
 
-@interface WCPayRetrySendTransferMessageControlLogic
+@interface WCPayRetrySendTransferMessageControlLogic : NSObject
 {
     id <WCPayRetrySendTransferMessageLogicDelegate> _logicDelegate;
     WCPayUnionTransferNotifyCgi *_unionNotifyCgi;

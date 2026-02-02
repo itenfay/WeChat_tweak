@@ -5,7 +5,7 @@
 
 @class MPVolumeView, NSString, WCPaySynthesizeSpeechCgi, WavAudioPlayer;
 
-@interface WCPaySynthesizeSpeechMgr
+@interface WCPaySynthesizeSpeechMgr : NSObject
 {
     float _m_lastVolume;
     WCPaySynthesizeSpeechCgi *_m_voiceCgi;

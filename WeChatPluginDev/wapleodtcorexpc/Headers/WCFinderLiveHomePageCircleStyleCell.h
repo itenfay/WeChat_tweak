@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel, UIView, WCFinderHeadImageView, WCFinderLiveGenericFeedVM;
 
-@interface WCFinderLiveHomePageCircleStyleCell
+@interface WCFinderLiveHomePageCircleStyleCell : NSObject
 {
     WCFinderLiveGenericFeedVM *_feedVM;
     WCFinderHeadImageView *_headImageView;

@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderRedDotDictionaryHelper;
 
-@interface WCFinderRedDotMgr
+@interface WCFinderRedDotMgr : NSObject
 {
     _Bool _GCDDicSafeThreadStrategy;
     WCFinderRedDotDictionaryHelper *_pathUuidsDic;

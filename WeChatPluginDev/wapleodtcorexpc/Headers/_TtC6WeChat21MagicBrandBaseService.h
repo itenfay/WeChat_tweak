@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat21MagicBrandBaseService
+@interface _TtC6WeChat21MagicBrandBaseService : NSObject
 {
     MISSING_TYPE *brandServiceBiz;
     MISSING_TYPE *cardHeightCachedMMKV;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PKAddPaymentPassViewController;
 
-@interface WAJSEventHandler_openNFCCard
+@interface WAJSEventHandler_openNFCCard : NSObject
 {
     PKAddPaymentPassViewController *_addPaymentPassViewController;
     NSString *_outOrderNo;

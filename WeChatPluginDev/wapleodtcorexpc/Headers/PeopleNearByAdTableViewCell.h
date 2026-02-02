@@ -6,7 +6,7 @@
 @class MMUIButton, UIImageView, UILabel;
 @protocol PeopleNearByAdTableViewCellDelegate;
 
-@interface PeopleNearByAdTableViewCell
+@interface PeopleNearByAdTableViewCell : NSObject
 {
     id <PeopleNearByAdTableViewCellDelegate> _delegate;
     UIImageView *_headerImageView;

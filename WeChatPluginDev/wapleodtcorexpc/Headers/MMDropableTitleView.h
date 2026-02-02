@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UIColor, UIImage, UIImageView;
 @protocol MMDropableTitleViewDelegate;
 
-@interface MMDropableTitleView
+@interface MMDropableTitleView : NSObject
 {
     UIColor *_buttonBackgroundColor;
     double _arrowImageViewAngle;

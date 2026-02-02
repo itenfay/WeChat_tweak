@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary;
 @protocol HeadImgDownloaderDelegate;
 
-@interface HeadImgBaseDownloader
+@interface HeadImgBaseDownloader : NSObject
 {
     NSMutableArray *m_aryRequest;
     NSMutableDictionary *m_mapLastGetTime;

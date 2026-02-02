@@ -5,7 +5,7 @@
 
 @class MMFinderLiveRealNameFriendLikeNotificationMsg;
 
-@interface MMFinderLiveRealNameFriendLikeCommentDataItem
+@interface MMFinderLiveRealNameFriendLikeCommentDataItem : NSObject
 {
     MMFinderLiveRealNameFriendLikeNotificationMsg *_notificationMsg;
 }

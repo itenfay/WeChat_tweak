@@ -6,7 +6,7 @@
 @class EmoticonManageDataObject, MMProgressView, MMWebImageView, NSString, UIButton, UILabel;
 @protocol EmoticonManageCellDelegate;
 
-@interface EmoticonManageCell
+@interface EmoticonManageCell : NSObject
 {
     UIButton *m_downloadButton;
     MMWebImageView *m_iconImageView;

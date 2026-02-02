@@ -6,7 +6,7 @@
 @class NSTimer, TextStateBlurButton, UIButton, WCFinderPlayerLoadingView, WCFinderPortraitProgressBar, WCFinderProgressBar;
 @protocol WCFinderPortraitProgressPanelViewDelegate;
 
-@interface WCFinderPortraitProgressPanelView
+@interface WCFinderPortraitProgressPanelView : NSObject
 {
     WCFinderPlayerLoadingView *_playerloadingView;
     WCFinderProgressBar *_progressBar;

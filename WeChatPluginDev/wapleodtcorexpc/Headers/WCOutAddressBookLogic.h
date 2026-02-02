@@ -6,7 +6,7 @@
 @class CNContactStore, NSArray, NSRecursiveLock;
 @protocol WCOutAddressBookLogicDelegate;
 
-@interface WCOutAddressBookLogic
+@interface WCOutAddressBookLogic : NSObject
 {
     CNContactStore *m_cnContactStore;
     _Bool m_isLoadingAddressBook;

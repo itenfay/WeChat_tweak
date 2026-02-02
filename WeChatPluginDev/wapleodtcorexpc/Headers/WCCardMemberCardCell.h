@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMWebImageView, NSString, UIButton, UIColor, UIImage, UIImageView, UILabel, UIView;
 
-@interface WCCardMemberCardCell
+@interface WCCardMemberCardCell : NSObject
 {
     unsigned int _layoutType;
     NSString *_backImageURL;

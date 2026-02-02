@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMUILabel, MMWebImageView, NSString, UIScrollView, UIView, WCFinderContact, WCFinderHeadImageView;
 
-@interface MMFinderLiveQuitLiveNoticeGuideView
+@interface MMFinderLiveQuitLiveNoticeGuideView : NSObject
 {
     FinderLiveNoticeInfo *_noticeInfo;
     WCFinderContact *_contact;

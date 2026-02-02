@@ -6,7 +6,7 @@
 @class GetUserGrantInfoBuffer, MMAuthorizeScopeTopView, MMTableView, NSMutableArray, NSString, RichTextView, SetUserGrantInfoBuffer, UIButton, UIView;
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface MMAuthorizeGameInfoViewController
+@interface MMAuthorizeGameInfoViewController : NSObject
 {
     id <MMAuthorizeViewControllerDelegate> _delegate;
     SetUserGrantInfoBuffer *_setUserGrantInfoBuffer;

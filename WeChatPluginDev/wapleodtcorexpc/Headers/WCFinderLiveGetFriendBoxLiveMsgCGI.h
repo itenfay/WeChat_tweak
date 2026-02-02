@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, NSData, NSString;
 
-@interface WCFinderLiveGetFriendBoxLiveMsgCGI
+@interface WCFinderLiveGetFriendBoxLiveMsgCGI : NSObject
 {
     NSData *_liveCookies;
     NSData *_lastBuffer;

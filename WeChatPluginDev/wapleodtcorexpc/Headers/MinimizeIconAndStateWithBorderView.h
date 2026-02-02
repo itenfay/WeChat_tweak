@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface MinimizeIconAndStateWithBorderView
+@interface MinimizeIconAndStateWithBorderView : NSObject
 {
     _Bool _isRoundMaskPathAfterAnimation;
     NSMutableArray *_lineLayerList;

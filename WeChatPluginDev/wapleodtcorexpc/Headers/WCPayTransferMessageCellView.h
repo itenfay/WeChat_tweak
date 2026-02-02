@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, WCPayTransferMessageViewModel;
 
-@interface WCPayTransferMessageCellView
+@interface WCPayTransferMessageCellView : NSObject
 {
     NSString *_bgImageName;
     NSString *_bgHighlightImageName;

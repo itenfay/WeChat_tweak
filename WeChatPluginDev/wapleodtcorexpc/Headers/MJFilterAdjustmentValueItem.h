@@ -5,7 +5,7 @@
 
 @class NSString, NSURL, OMJMaterialInfo;
 
-@interface MJFilterAdjustmentValueItem
+@interface MJFilterAdjustmentValueItem : NSObject
 {
     float _intensity;
     NSString *_filterID;

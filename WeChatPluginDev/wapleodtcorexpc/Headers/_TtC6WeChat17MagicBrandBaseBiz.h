@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MISSING_TYPE;
 @protocol _TtP6WeChat26IMBSclExternalViewDelegate_;
 
-@interface _TtC6WeChat17MagicBrandBaseBiz
+@interface _TtC6WeChat17MagicBrandBaseBiz : NSObject
 {
     MISSING_TYPE *flutterPlugin;
     MISSING_TYPE *mbCommonAdapter;

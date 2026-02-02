@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSMutableArray, NSMutableDictionary, NSString, WCActionSheet, WCPlayerView;
 
-@interface WAMediaPreviewViewController
+@interface WAMediaPreviewViewController : NSObject
 {
     NSMutableDictionary *m_dicVideoView;
     WCPlayerView *m_currentPlayerView;

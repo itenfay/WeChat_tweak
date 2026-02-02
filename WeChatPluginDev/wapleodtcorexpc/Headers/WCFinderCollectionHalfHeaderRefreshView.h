@@ -5,7 +5,7 @@
 
 @class UILabel, WCFinderAnimationLoadingView;
 
-@interface WCFinderCollectionHalfHeaderRefreshView
+@interface WCFinderCollectionHalfHeaderRefreshView : NSObject
 {
     double _triggerHeight;
     WCFinderAnimationLoadingView *_loadingView;

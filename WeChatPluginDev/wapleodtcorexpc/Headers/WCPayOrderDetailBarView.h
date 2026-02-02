@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, QBarCodeView;
 
-@interface WCPayOrderDetailBarView
+@interface WCPayOrderDetailBarView : NSObject
 {
     struct CGRect _oldFrame;
     _Bool _inAnimation;

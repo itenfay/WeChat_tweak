@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString, UIButton, UILabel, UIView;
 @protocol StorageCacheClassDelegate;
 
-@interface StorageCacheClassViewController
+@interface StorageCacheClassViewController : NSObject
 {
     _Bool _isFoldingWeAppInfo;
     id <StorageCacheClassDelegate> _delegate;

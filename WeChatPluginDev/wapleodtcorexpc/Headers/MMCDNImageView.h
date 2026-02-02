@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface MMCDNImageView
+@interface MMCDNImageView : NSObject
 {
     UIImage *_defaultImage;
     NSString *_localSrcPath;

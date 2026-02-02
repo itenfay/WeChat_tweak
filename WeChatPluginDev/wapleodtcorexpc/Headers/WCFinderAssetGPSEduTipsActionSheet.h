@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderAssetGPSEduTipsActionSheet
+@interface WCFinderAssetGPSEduTipsActionSheet : NSObject
 {
     NSString *_finderPostSessionid;
 }

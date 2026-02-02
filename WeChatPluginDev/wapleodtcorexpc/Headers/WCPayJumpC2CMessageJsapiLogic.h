@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCBaseControlLogic;
 
-@interface WCPayJumpC2CMessageJsapiLogic
+@interface WCPayJumpC2CMessageJsapiLogic : NSObject
 {
     JSEvent *m_jsEvent;
     NSString *m_bizId;

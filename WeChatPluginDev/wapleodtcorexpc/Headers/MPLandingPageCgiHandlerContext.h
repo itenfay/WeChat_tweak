@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MPLandingPageCgiHandlerContext
+@interface MPLandingPageCgiHandlerContext : NSObject
 {
     CDUnknownBlockType _getCommentCompletionHandler;
     CDUnknownBlockType _addCommentCompletionHandler;

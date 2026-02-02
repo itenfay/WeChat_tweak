@@ -6,7 +6,7 @@
 @class UIImage, UIImageView, UIView;
 @protocol MMMusicFlexEditBarTransitionCellDelegate;
 
-@interface MMMusicFlexEditBarTransitionCell
+@interface MMMusicFlexEditBarTransitionCell : NSObject
 {
     id <MMMusicFlexEditBarTransitionCellDelegate> _delegate;
     unsigned long long _preIndex;

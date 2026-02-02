@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString, _TtC6WeChat17WCDBIntegerNumber;
 
-@interface _TtC6WeChat26KaraProphetMessageBehavior
+@interface _TtC6WeChat26KaraProphetMessageBehavior : NSObject
 {
     MISSING_TYPE *identifier;
 }

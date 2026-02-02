@@ -5,7 +5,7 @@
 
 @class CaptureVideoInfo, NSString, UIImage, UINavigationController;
 
-@interface WebviewJSEventHandler_recordVideo
+@interface WebviewJSEventHandler_recordVideo : NSObject
 {
     UINavigationController *m_oVideoPicker;
     CaptureVideoInfo *m_oVideoInfo;

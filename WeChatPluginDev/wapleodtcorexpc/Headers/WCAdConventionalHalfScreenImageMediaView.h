@@ -5,7 +5,7 @@
 
 @class WCImageView, WCMediaItem;
 
-@interface WCAdConventionalHalfScreenImageMediaView
+@interface WCAdConventionalHalfScreenImageMediaView : NSObject
 {
     WCMediaItem *_mediaItem;
     WCImageView *_imageView;

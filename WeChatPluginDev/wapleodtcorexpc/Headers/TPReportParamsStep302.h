@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPReportParamsStep302
+@interface TPReportParamsStep302 : NSObject
 {
     NSString *_url;
     long long _vt;

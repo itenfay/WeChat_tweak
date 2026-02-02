@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveTableStyleCommentPubbleCell
+@interface MMFinderLiveTableStyleCommentPubbleCell : NSObject
 {
     NSString *_signAccessibilityStr;
     NSString *_selfAccessibilityStr;

@@ -5,7 +5,7 @@
 
 @class JSApiScopeAuthViewModel, UIButton;
 
-@interface JSApiScopeAuthAddAvatarView
+@interface JSApiScopeAuthAddAvatarView : NSObject
 {
     UIButton *_button;
 }

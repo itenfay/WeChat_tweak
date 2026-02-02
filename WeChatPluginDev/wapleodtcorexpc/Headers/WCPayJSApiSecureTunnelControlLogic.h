@@ -6,7 +6,7 @@
 @class JSEvent, NSDictionary;
 @protocol SecureTunnelLogicDelegate;
 
-@interface WCPayJSApiSecureTunnelControlLogic
+@interface WCPayJSApiSecureTunnelControlLogic : NSObject
 {
     NSDictionary *m_param;
     JSEvent *m_jsEvent;

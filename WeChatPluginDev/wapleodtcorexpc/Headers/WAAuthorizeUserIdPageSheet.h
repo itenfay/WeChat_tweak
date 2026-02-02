@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UserIdAuthorizePageInfo, WAUserIdPageSheetViewModel, WXAPhoneInfo;
 
-@interface WAAuthorizeUserIdPageSheet
+@interface WAAuthorizeUserIdPageSheet : NSObject
 {
     UserIdAuthorizePageInfo *_pageInfo;
     WXAPhoneInfo *_selectedItem;

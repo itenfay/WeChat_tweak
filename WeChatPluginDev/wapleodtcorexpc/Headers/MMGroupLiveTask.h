@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMGroupLiveCommentDataFetchEngine, MMGroupLiveInfoItem, MMLiveTaskId, NSString;
 
-@interface MMGroupLiveTask
+@interface MMGroupLiveTask : NSObject
 {
     unsigned int _anchorScene;
     unsigned int _audienceScene;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol MultiReaderMessageCellViewDelegate;
 
-@interface MultiReaderMessageViewModel
+@interface MultiReaderMessageViewModel : NSObject
 {
     NSMutableArray *m_titleSizeArr;
     NSMutableDictionary *m_titleStyleDic;

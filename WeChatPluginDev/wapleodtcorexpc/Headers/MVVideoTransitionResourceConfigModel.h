@@ -5,7 +5,7 @@
 
 @class MVVideoTransitionResourceConfigModelName, NSString;
 
-@interface MVVideoTransitionResourceConfigModel
+@interface MVVideoTransitionResourceConfigModel : NSObject
 {
     _Bool _isShowInPanel;
     NSString *_transitionId;

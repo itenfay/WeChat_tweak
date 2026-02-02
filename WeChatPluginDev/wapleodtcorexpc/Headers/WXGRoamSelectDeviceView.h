@@ -5,7 +5,7 @@
 
 @class MMLoadingView, NSMutableArray, NSString, UIButton, UITableView, UIView;
 
-@interface WXGRoamSelectDeviceView
+@interface WXGRoamSelectDeviceView : NSObject
 {
     double m_cellHeight;
     double m_cellHeightPortable;

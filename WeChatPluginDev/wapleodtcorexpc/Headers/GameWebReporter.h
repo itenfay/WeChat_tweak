@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GameWebViewTimeRecord, MMWebViewController, NSDictionary, NSMutableDictionary, NSString;
 
-@interface GameWebReporter
+@interface GameWebReporter : NSObject
 {
     GameWebViewTimeRecord *_webViewTimeRecord;
     MMWebViewController *_webViewController;

@@ -5,7 +5,7 @@
 
 @class FinderLiveNoticeInfo, FinderLiveNoticeListInfo, MMFinderLiveBuyTicketHandle, NSString, UIView;
 
-@interface MMFinderLiveNoticeLogicPlugin
+@interface MMFinderLiveNoticeLogicPlugin : NSObject
 {
     _Bool _isDisplayingNoticeBubble;
     unsigned int _delayDisappearDurationAfterReserve;

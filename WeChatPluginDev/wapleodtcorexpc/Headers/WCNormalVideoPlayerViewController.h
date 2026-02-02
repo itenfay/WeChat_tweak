@@ -5,7 +5,7 @@
 
 @class NSString, WCNormalVideoPlayerView;
 
-@interface WCNormalVideoPlayerViewController
+@interface WCNormalVideoPlayerViewController : NSObject
 {
     WCNormalVideoPlayerView *_videoPlayer;
     NSString *_videoUrl;

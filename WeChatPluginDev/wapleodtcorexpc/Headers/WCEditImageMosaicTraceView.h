@@ -5,7 +5,7 @@
 
 @class CALayer, CAShapeLayer, NSString;
 
-@interface WCEditImageMosaicTraceView
+@interface WCEditImageMosaicTraceView : NSObject
 {
     _Bool _highLight;
     CALayer *_contentLayer;

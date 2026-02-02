@@ -6,7 +6,7 @@
 @class MMNearbyPoiInfo, NSMutableArray, NSObject, NSString, UINavigationController;
 @protocol OS_dispatch_queue;
 
-@interface WAJSEventHandler_chooseMultiMedia
+@interface WAJSEventHandler_chooseMultiMedia : NSObject
 {
     UINavigationController *m_oVideoPicker;
     NSMutableArray *m_localIds;

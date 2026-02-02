@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class WCMusicSmartBoxWorker;
 @protocol WCMusicSmartBoxViewControllerDelegate;
 
-@interface WCMusicSmartBoxViewController
+@interface WCMusicSmartBoxViewController : NSObject
 {
     id <WCMusicSmartBoxViewControllerDelegate> _delegate;
     WCMusicSmartBoxWorker *_smartboxWorker;

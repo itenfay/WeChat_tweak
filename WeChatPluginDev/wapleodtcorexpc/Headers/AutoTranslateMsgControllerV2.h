@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol AutoTranslateMsgDelegate;
 
-@interface AutoTranslateMsgControllerV2
+@interface AutoTranslateMsgControllerV2 : NSObject
 {
     _Bool _bStopTranslateFlag;
     id <AutoTranslateMsgDelegate> _delegate;

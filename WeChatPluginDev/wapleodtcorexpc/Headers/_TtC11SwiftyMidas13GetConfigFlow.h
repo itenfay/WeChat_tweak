@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas13GetConfigFlow
+@interface _TtC11SwiftyMidas13GetConfigFlow : NSObject
 {
     MISSING_TYPE *logPrefix;
 }

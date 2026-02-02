@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIView, WCFinderFeedContentVM, WCFinderFriendLikeToolbarView, WCFinderFullToolbarView, WCFinderLandScapeCollectionDisplayView, WCFinderLandScapePlayerParam, WCFinderLandScapeVideoDisplayViewInitParams, WCFinderLandScapeVideoInteractivePlayerView, WCFinderPanelHotCommentView;
 @protocol WCFinderHeadInfoViewDelegate><WCFinderFullToolbarViewDelegate><WCFinderLandScapeVideoDisplayViewDelegate, WCFinderHeadInfoViewProtocol><WCFinderJumpInfoViewProtocol;
 
-@interface WCFinderLandScapeVideoDisplayView
+@interface WCFinderLandScapeVideoDisplayView : NSObject
 {
     _Bool _isPreOrientationLandScape;
     id <WCFinderHeadInfoViewDelegate><WCFinderFullToolbarViewDelegate><WCFinderLandScapeVideoDisplayViewDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class FinderUniCommentMediaView, MMUIButton, NSString, UIButton, UIColor, UIImageView, UITapGestureRecognizer, UIView, WCCommentLikeView, WCFinderComment, WCFinderFeedContentTextView;
 @protocol WCCommentDetailRootCommentCellDelegate;
 
-@interface WCCommentDetailRootCommentCell
+@interface WCCommentDetailRootCommentCell : NSObject
 {
     _Bool _profileSwitch;
     _Bool _isFriendIdentity;

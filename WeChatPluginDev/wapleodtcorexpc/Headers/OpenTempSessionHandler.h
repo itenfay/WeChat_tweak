@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface OpenTempSessionHandler
+@interface OpenTempSessionHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

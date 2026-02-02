@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderMessageGuaranteeItem
+@interface WCFinderMessageGuaranteeItem : NSObject
 {
     NSString *_title;
     NSString *_desc;

@@ -5,7 +5,7 @@
 
 @class ChatRoomFamilyEdcationDataPB, NSDictionary, NSRecursiveLock;
 
-@interface ChatRoomToolMgr
+@interface ChatRoomToolMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     NSDictionary *m_nativeWeAppIconUrlDic;

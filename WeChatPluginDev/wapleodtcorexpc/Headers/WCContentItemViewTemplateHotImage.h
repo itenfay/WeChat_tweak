@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCDataItem, WCImageView, WCMediaItem;
 
-@interface WCContentItemViewTemplateHotImage
+@interface WCContentItemViewTemplateHotImage : NSObject
 {
     WCDataItem *m_oDataItem;
     WCMediaItem *m_oMediaItem;

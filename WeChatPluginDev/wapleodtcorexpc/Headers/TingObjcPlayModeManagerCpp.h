@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface TingObjcPlayModeManagerCpp
+@interface TingObjcPlayModeManagerCpp : NSObject
 {
 }
 

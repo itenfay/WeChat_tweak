@@ -6,7 +6,7 @@
 @class NSString, WCPayTransferMoneyPaidSuccessViewV2;
 @protocol WCPayBizF2FPaidSuccViewControllerDelegate;
 
-@interface WCPayBizF2FPaidSuccViewController
+@interface WCPayBizF2FPaidSuccViewController : NSObject
 {
     id <WCPayBizF2FPaidSuccViewControllerDelegate> _delegate;
     WCPayTransferMoneyPaidSuccessViewV2 *_m_layoutV2;

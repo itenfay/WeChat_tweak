@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIView, NSMutableArray, NSString, UIButton, UICollectionView, UICollectionViewFlowLayout, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, WCStoryDismissInteractiveTransition, WCStoryFriendsCollectionDismissTransition, WCStoryReportUtil, WCStoryTimelineDataUnit, WCStoryTimelineDataVM;
 @protocol WCStoryFriendsCollectionViewControllerDelegate;
 
-@interface WCStoryFriendsCollectionViewController
+@interface WCStoryFriendsCollectionViewController : NSObject
 {
     _Bool _isCleanUnreadStory;
     id <WCStoryFriendsCollectionViewControllerDelegate> _delegate;

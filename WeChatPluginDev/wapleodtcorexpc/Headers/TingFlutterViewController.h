@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetAdapter, NSNumber, NSString, TingFlutterCommentInputController, TingInsertedContentCallBack, UIView;
 
-@interface TingFlutterViewController
+@interface TingFlutterViewController : NSObject
 {
     _Bool _allowRotation;
     _Bool _bSyncProgress;

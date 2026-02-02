@@ -5,7 +5,7 @@
 
 @class MMTextStateMediaDataPB, MMTextStateMediaDownloadImageCdnMgr, MMTextStateMediaDownloadVideoCdnMgr, MMTextStateMediaUploadCdnMgr, NSString;
 
-@interface MMTextStateMediaMgr
+@interface MMTextStateMediaMgr : NSObject
 {
     MMTextStateMediaDataPB *m_textStateMediaData;
     MMTextStateMediaDownloadVideoCdnMgr *_downloadVideoCdnMgr;

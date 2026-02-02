@@ -5,7 +5,7 @@
 
 @class FaceRecogPayHandler, JSEvent, NSString;
 
-@interface WebviewJSEventHandler_faceVerifyForPay
+@interface WebviewJSEventHandler_faceVerifyForPay : NSObject
 {
     JSEvent *_cbEvent;
     FaceRecogPayHandler *_faceHandler;

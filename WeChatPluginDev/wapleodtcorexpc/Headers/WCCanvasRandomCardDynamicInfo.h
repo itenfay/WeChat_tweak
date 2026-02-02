@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCanvasRandomCardDynamicInfo
+@interface WCCanvasRandomCardDynamicInfo : NSObject
 {
     int _cardType;
     int _subCardType;

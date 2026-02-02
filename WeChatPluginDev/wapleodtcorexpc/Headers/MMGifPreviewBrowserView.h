@@ -6,7 +6,7 @@
 @class MMAssetInfo, MMAssetPickerBrowserStateInfo, MMImageScrollViewHelper, MMWebImageView, NSArray, NSData, NSString, UIImageView, UILabel, UIView;
 @protocol MMAssetPickerBrowserViewDelegate, MMImagePickerControlCenter;
 
-@interface MMGifPreviewBrowserView
+@interface MMGifPreviewBrowserView : NSObject
 {
     MMWebImageView *m_gifView;
     UIView *m_gifViewBk;

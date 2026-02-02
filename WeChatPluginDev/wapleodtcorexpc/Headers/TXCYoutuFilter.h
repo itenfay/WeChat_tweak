@@ -5,7 +5,7 @@
 
 @class TXCTwoInputFilter, YTBeautyBlurFilter, YTBeautySmoothFilter;
 
-@interface TXCYoutuFilter
+@interface TXCYoutuFilter : NSObject
 {
     YTBeautyBlurFilter *_smoothBlurFilter;
     YTBeautyBlurFilter *_borderBlurFilter;

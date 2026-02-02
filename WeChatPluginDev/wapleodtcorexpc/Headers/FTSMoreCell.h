@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface FTSMoreCell
+@interface FTSMoreCell : NSObject
 {
     UIImageView *_moreIcon;
     UIImageView *_rightArrowIcon;

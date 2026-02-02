@@ -6,7 +6,7 @@
 @class EmoticonLensInfo, EmoticonStoreFootView, MMUIView, NSArray, NSIndexPath, NSString, UICollectionView, UILabel;
 @protocol EmoticonLensMoreViewDelegate;
 
-@interface EmoticonLensMoreView
+@interface EmoticonLensMoreView : NSObject
 {
     MMUIView *_backgroundView;
     MMUIView *_topNavBar;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
-@interface WCFinderStartLiveHalfScreenViewController
+@interface WCFinderStartLiveHalfScreenViewController : NSObject
 {
     unsigned int _startLiveScene;
     CDUnknownBlockType _startLiveAction;

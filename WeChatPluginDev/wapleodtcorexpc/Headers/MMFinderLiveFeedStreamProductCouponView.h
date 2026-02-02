@@ -5,7 +5,7 @@
 
 @class FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo, MMWebImageView, RichTextView;
 
-@interface MMFinderLiveFeedStreamProductCouponView
+@interface MMFinderLiveFeedStreamProductCouponView : NSObject
 {
     FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo *_bubble;
     MMWebImageView *_iconImageView;

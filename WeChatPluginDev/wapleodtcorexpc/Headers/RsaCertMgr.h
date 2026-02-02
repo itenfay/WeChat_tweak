@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString, RsaCertInfo;
 
-@interface RsaCertMgr
+@interface RsaCertMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     RsaCertInfo *m_oRsaCertInfo;

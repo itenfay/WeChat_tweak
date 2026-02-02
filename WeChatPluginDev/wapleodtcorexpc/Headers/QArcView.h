@@ -5,7 +5,7 @@
 
 @class NSArray, QArc, QTexturePolylineView, UIColor;
 
-@interface QArcView
+@interface QArcView : NSObject
 {
     _Bool _drawSymbol;
     _Bool _disableCollideLabel;

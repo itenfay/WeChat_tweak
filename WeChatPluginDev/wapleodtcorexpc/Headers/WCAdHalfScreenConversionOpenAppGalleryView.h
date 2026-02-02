@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FixTitleColorButton, MMUIButton, MMUILabel, WCAdAppImageGalleryView, WCAdSchemaJumpInfo, WCAdURLImageView;
 
-@interface WCAdHalfScreenConversionOpenAppGalleryView
+@interface WCAdHalfScreenConversionOpenAppGalleryView : NSObject
 {
     WCAdSchemaJumpInfo *_schemaJumpInfo;
     CDUnknownBlockType _resultBlock;

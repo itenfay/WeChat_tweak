@@ -6,7 +6,7 @@
 @class UIImageView, WCCardChooseInfo;
 @protocol WCCardChooseItemViewDelegate;
 
-@interface WCCardChooseItemView
+@interface WCCardChooseItemView : NSObject
 {
     WCCardChooseInfo *_chooseInfo;
     _Bool _select;

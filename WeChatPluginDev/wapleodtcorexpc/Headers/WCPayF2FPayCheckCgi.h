@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayF2FPayCheckCgiDelegate;
 
-@interface WCPayF2FPayCheckCgi
+@interface WCPayF2FPayCheckCgi : NSObject
 {
     unsigned int _amount;
     NSString *_f2fId;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderForeignRealNameVerifyPanelSheet
+@interface WCFinderForeignRealNameVerifyPanelSheet : NSObject
 {
     CDUnknownBlockType _okBlock;
 }

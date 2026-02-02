@@ -6,7 +6,7 @@
 @class MJShootComposingTemplateSinglePageViewModel, NSIndexPath, NSString, UICollectionView;
 @protocol MJShootComposingTemplatePageViewDelegate;
 
-@interface MJShootComposingTemplatePageView
+@interface MJShootComposingTemplatePageView : NSObject
 {
     UICollectionView *_collectionView;
     MJShootComposingTemplateSinglePageViewModel *_viewModel;

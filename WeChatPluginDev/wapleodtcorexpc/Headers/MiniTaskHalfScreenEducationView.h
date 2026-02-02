@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIView;
 
-@interface MiniTaskHalfScreenEducationView
+@interface MiniTaskHalfScreenEducationView : NSObject
 {
     UIView *_contentView;
     MMUILabel *_textLabel;

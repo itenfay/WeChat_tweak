@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem28651
+@interface KvReportItem28651 : NSObject
 {
     unsigned int _type_22;
     unsigned int _exptType_23;

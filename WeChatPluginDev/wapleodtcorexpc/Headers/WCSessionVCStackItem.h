@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionVCStackItem
+@interface WCSessionVCStackItem : NSObject
 {
     NSString *_pageName;
     unsigned long long _hashCode;

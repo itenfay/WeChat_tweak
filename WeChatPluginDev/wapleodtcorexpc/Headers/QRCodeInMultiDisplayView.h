@@ -6,7 +6,7 @@
 @class MMTimer, MMUIButton, MMUILabel, MMUIView, NSMutableArray;
 @protocol QRCodeInMultiDisplayViewDelegate;
 
-@interface QRCodeInMultiDisplayView
+@interface QRCodeInMultiDisplayView : NSObject
 {
     id <QRCodeInMultiDisplayViewDelegate> _delegate;
     NSMutableArray *_dotInfoList;

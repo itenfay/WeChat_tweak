@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet;
 
-@interface MsgImgSearchPhashMemCache
+@interface MsgImgSearchPhashMemCache : NSObject
 {
     NSMutableSet *_isGetingPhashStrSet;
     NSMutableDictionary *_localID2MemItemMap;

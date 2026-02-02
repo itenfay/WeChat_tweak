@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UITableView, UITapGestureRecognizer, WCFinderBlackListViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderBlackListViewController
+@interface WCFinderBlackListViewController : NSObject
 {
     UITableView *_tableView;
     WCFinderBlackListViewModel *_viewModel;

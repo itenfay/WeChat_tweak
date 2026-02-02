@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString, WKWebSearchView, WSLocalTemplateController, WSWebViewPluginScheduler, WSk1kViewConfig, _TtC6WeChat25WSWebviewExceptionCatcher;
 
-@interface WSTemplateContainerView
+@interface WSTemplateContainerView : NSObject
 {
     WSWebViewPluginScheduler *_pluginScheduler;
     WSk1kViewConfig *_config;

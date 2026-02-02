@@ -6,7 +6,7 @@
 @class MMUILabel, NSArray, NSObject, NSString, UIButton;
 @protocol WCDBSpecifiedRecoverViewControllerDelegate;
 
-@interface WCDBSpecifiedRecoverViewController
+@interface WCDBSpecifiedRecoverViewController : NSObject
 {
     MMUILabel *m_tipLabel;
     MMUILabel *m_commentLabel;

@@ -5,7 +5,7 @@
 
 @class InteractionLabel, MMHeadImageView, MMUILabel, TextStateItemView, UIView, WCTogetherFeedCellContentView, WCTogetherFeedViewItem;
 
-@interface WCTogetherBaseFeedCell
+@interface WCTogetherBaseFeedCell : NSObject
 {
     UIView *_infoView;
     WCTogetherFeedCellContentView *_itemContentView;

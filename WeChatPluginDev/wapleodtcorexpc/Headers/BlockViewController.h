@@ -6,7 +6,7 @@
 @class MMLoadingView, NSString;
 @protocol BlockViewControllerDelegate;
 
-@interface BlockViewController
+@interface BlockViewController : NSObject
 {
     MMLoadingView *_loadingView;
     NSString *_viewTitle;

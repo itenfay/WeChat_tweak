@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIImageView;
 @protocol VoIPMainWindowDelegate;
 
-@interface VoIPMainWindow
+@interface VoIPMainWindow : NSObject
 {
     _Bool _shouldIgnoreExtendFromCollapseFirstStepAnimation;
     _Bool _m_hasStartQuitAnimation;

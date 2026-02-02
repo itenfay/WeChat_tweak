@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXGChatSyncClientMgr
+@interface WXGChatSyncClientMgr : NSObject
 {
     NSString *_lastDownloadFileName;
     _Bool _isAuthFinish;

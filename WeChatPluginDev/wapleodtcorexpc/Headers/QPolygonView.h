@@ -5,7 +5,7 @@
 
 @class NSArray, QPolygon, UIImage;
 
-@interface QPolygonView
+@interface QPolygonView : NSObject
 {
     _Bool _userInteractionEnabled;
     _Bool _disableCollideLabel;

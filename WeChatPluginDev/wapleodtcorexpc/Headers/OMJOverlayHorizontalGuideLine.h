@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface OMJOverlayHorizontalGuideLine
+@interface OMJOverlayHorizontalGuideLine : NSObject
 {
     UIView *_lineLeft;
     UIView *_lineRight;

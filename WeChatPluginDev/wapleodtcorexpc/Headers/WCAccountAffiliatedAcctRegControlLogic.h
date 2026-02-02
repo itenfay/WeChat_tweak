@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCPrivacyPolicyControlLogic;
 
-@interface WCAccountAffiliatedAcctRegControlLogic
+@interface WCAccountAffiliatedAcctRegControlLogic : NSObject
 {
     _Bool _withoutBeginVC;
     int _affRegScene;

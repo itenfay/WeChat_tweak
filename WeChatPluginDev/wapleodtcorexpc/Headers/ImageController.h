@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CaptureVideoInfo, MMLoadingView, NSString, UINavigationController, UIViewController;
 @protocol ImageControllerDelegate;
 
-@interface ImageController
+@interface ImageController : NSObject
 {
     id <ImageControllerDelegate> m_delegate;
     CaptureVideoInfo *m_oVideoInfo;

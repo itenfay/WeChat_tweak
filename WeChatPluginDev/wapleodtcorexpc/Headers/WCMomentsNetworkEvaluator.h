@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCMomentsNetworkEvaluator
+@interface WCMomentsNetworkEvaluator : NSObject
 {
     unsigned int _networkConnectionStatus;
     long long _networkLinkCondition;

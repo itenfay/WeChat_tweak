@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAsset, AVMutableVideoComposition, NSString, NSURL, SightAssetPreviewView, SightDraft, UIButton, UIImage, UIImageView, UILabel, UIView;
 @protocol EVVideoPreviewBrowserViewDelegate;
 
-@interface EVVideoPreviewBrowserView
+@interface EVVideoPreviewBrowserView : NSObject
 {
     _Bool _isAssetMuted;
     NSString *_audioModuleIdentifier;

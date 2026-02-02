@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, WAAppIdToUsernameTransfer;
 
-@interface WAJSEventHandler_navigateToMiniProgram
+@interface WAJSEventHandler_navigateToMiniProgram : NSObject
 {
     WAAppIdToUsernameTransfer *_appID2UserNameTransfer;
     _Bool _customShowShareBtnOnTemplateNav;

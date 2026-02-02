@@ -6,7 +6,7 @@
 @class EditVideoBGMFetchFeedbackLogic, EditVideoBGMPlayer, EditVideoBGMSearchResultView, MMUIActivityIndicatorView, NSMutableArray, NSString, RecommendedMusicInfo, UIButton, UILabel, UITextField, UIView, WCStoryBgmSearchCgiObj;
 @protocol EditVideoBGMSearchViewDelegate;
 
-@interface EditVideoBGMSearchView
+@interface EditVideoBGMSearchView : NSObject
 {
     NSString *_audioModuleIdentifier;
     _Bool _isSearchingAfterInputEnabled;

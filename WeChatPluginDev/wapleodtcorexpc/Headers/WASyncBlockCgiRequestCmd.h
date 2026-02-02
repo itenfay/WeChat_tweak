@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WASyncBlockCgiRequestCmd
+@interface WASyncBlockCgiRequestCmd : NSObject
 {
     unsigned int _blockBeginTime;
     unsigned int _blockEndTime;

@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, NSString, WCCanvasComponentItem, WCStatTimerHelper;
 
-@interface WCCanvasMusicPlayInfo
+@interface WCCanvasMusicPlayInfo : NSObject
 {
     unsigned int _playCount;
     unsigned int _playCompletedCount;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface VoipAutoUpdateLabel
+@interface VoipAutoUpdateLabel : NSObject
 {
     unsigned int m_dotCountIncresement;
     MMTimer *m_actingTimer;

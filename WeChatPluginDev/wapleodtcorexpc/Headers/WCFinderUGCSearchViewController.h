@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderJumpSearchUGCParams;
 
-@interface WCFinderUGCSearchViewController
+@interface WCFinderUGCSearchViewController : NSObject
 {
     WCFinderJumpSearchUGCParams *_params;
     NSString *_requestId;

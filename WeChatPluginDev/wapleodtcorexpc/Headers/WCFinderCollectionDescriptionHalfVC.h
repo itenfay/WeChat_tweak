@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, RichTextView, UIScrollView;
 
-@interface WCFinderCollectionDescriptionHalfVC
+@interface WCFinderCollectionDescriptionHalfVC : NSObject
 {
     NSString *_descContent;
     double _heightRatio;

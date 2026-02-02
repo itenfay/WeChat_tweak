@@ -5,7 +5,7 @@
 
 @class NSString, WCCardDataCardInfo, WCCardDataCardTPInfo, WCCardDataShareInfo;
 
-@interface WCCardData
+@interface WCCardData : NSObject
 {
     _Bool isAutoIncrement;
     int uiLayoutType;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSData, NSDictionary, NSString, WCPayExtensionInfo;
 
-@interface WCPaySynthesizeSpeechMsg
+@interface WCPaySynthesizeSpeechMsg : NSObject
 {
     WCPayExtensionInfo *m_extensionInfo;
     NSDictionary *m_payload;

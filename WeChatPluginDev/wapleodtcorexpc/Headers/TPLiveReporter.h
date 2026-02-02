@@ -5,7 +5,7 @@
 
 @class TPLiveReportParamRecord, TPPlayerLogContext, TPTimer, TPWorkerQueue;
 
-@interface TPLiveReporter
+@interface TPLiveReporter : NSObject
 {
     _Bool _playDone;
     _Bool _buffering;

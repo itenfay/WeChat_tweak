@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
-@interface MMLiveScreenMapSelectButton
+@interface MMLiveScreenMapSelectButton : NSObject
 {
     _Bool _hideLogo;
     CDUnknownBlockType _screenMapSelectBlock;

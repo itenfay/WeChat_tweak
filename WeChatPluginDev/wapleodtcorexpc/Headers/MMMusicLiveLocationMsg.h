@@ -5,7 +5,7 @@
 
 @class FinderLocation;
 
-@interface MMMusicLiveLocationMsg
+@interface MMMusicLiveLocationMsg : NSObject
 {
     FinderLocation *_location;
 }

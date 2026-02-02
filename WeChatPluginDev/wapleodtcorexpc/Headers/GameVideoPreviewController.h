@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GameHaowanAlbumVideoItem, MMWebImageView, NSString, WCPlayerView;
 @protocol GameVideoPreviewControllerDelegate, GameVideoPreviewDataSource;
 
-@interface GameVideoPreviewController
+@interface GameVideoPreviewController : NSObject
 {
     GameHaowanAlbumVideoItem *_videoItem;
     CDUnknownBlockType _resultBlock;

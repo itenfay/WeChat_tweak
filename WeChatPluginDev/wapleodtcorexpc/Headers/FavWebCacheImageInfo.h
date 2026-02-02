@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavWebCacheImageInfo
+@interface FavWebCacheImageInfo : NSObject
 {
     _Bool _isGif;
     NSString *_dataPath;

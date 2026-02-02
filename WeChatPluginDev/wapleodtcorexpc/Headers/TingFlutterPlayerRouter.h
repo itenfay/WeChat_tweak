@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFlutterInstance, NSString, TingAppNavigationController, TingFlutterViewController, TingPlayerManager, UIViewController;
 @protocol ITingApp;
 
-@interface TingFlutterPlayerRouter
+@interface TingFlutterPlayerRouter : NSObject
 {
     TingAppNavigationController *_appContainer;
     MMFlutterInstance *_playerInstance;

@@ -6,7 +6,7 @@
 @class MMWebImageView, NSString, RichTextView, UILabel, UIView, WCFinderAuthorContactRecommendView, WCFinderFeedContentVM, WCFinderLandScapeCardCellStyle, WCFinderStaticCoverInfoView, _TtC6WeChat25WCFinderSimpleProgressBar;
 @protocol WCFinderLandScapeBidCardTableViewCellDelegate;
 
-@interface WCFinderLandScapeBidCardTableViewCell
+@interface WCFinderLandScapeBidCardTableViewCell : NSObject
 {
     id <WCFinderLandScapeBidCardTableViewCellDelegate> _bigCardCellDelegate;
     MMWebImageView *_coverView;

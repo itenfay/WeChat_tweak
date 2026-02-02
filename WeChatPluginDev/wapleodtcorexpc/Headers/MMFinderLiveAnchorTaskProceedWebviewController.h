@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveAnchorTaskProceedWebviewController
+@interface MMFinderLiveAnchorTaskProceedWebviewController : NSObject
 {
 }
 

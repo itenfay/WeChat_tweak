@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSIndexPath, NSString;
 @protocol MMFinderLiveConnectMicConditionChooseDelegate;
 
-@interface MMFinderLiveConnectMicConditionChoosePannel
+@interface MMFinderLiveConnectMicConditionChoosePannel : NSObject
 {
     id <MMFinderLiveConnectMicConditionChooseDelegate> _conditionDelegate;
     MMTableView *_tableView;

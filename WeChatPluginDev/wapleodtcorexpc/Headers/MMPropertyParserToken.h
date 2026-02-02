@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMPropertyParserToken
+@interface MMPropertyParserToken : NSObject
 {
     int _attributes;
     NSString *_name;

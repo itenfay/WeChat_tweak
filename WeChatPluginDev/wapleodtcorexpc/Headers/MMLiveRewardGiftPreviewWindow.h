@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, MMUIView, NSString, PAGView, UIImageView, UILongPressGestureRecognizer, WCFinderAnimationLoadingView;
 @protocol MMLiveRewardGiftPreviewWindowDelegate;
 
-@interface MMLiveRewardGiftPreviewWindow
+@interface MMLiveRewardGiftPreviewWindow : NSObject
 {
     _Bool _isMultipleReward;
     _Bool _isPrepared;

@@ -5,7 +5,7 @@
 
 @class MMPickerView, MMTableView, NSString, WCBaseTextFieldItem;
 
-@interface MMExptDebugViewController
+@interface MMExptDebugViewController : NSObject
 {
     MMTableView *_tableView;
     MMPickerView *m_pickerView;

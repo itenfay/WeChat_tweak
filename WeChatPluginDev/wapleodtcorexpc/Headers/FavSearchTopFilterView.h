@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray;
 @protocol FavSearchTopFilterViewDelegate;
 
-@interface FavSearchTopFilterView
+@interface FavSearchTopFilterView : NSObject
 {
     NSArray *m_types;
     NSArray *m_tags;

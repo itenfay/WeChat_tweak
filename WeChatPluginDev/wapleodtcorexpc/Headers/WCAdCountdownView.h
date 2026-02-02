@@ -6,7 +6,7 @@
 @class MMTimer, MMUILabel, NSString;
 @protocol WCAdCountdownViewDelegate;
 
-@interface WCAdCountdownView
+@interface WCAdCountdownView : NSObject
 {
     id <WCAdCountdownViewDelegate> _delegate;
     NSString *_title;

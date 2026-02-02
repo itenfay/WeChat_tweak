@@ -6,7 +6,7 @@
 @class MMFinderLiveActivityView, NSString, RichTextView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 @protocol WCFinderLiveHomePageBannerCellDelegate;
 
-@interface WCFinderLiveHomePageBannerCell
+@interface WCFinderLiveHomePageBannerCell : NSObject
 {
     _Bool _skipAsyncLoadLiveInfo;
     _Bool _hideAudienceNum;

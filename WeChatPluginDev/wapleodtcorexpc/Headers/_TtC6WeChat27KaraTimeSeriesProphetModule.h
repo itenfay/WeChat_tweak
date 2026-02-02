@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat27KaraTimeSeriesProphetModule
+@interface _TtC6WeChat27KaraTimeSeriesProphetModule : NSObject
 {
     MISSING_TYPE *featureCenter;
     MISSING_TYPE *repository;

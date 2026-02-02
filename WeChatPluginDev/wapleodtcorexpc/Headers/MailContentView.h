@@ -6,7 +6,7 @@
 @class NSString, UIView;
 @protocol MailContentViewDelegate;
 
-@interface MailContentView
+@interface MailContentView : NSObject
 {
     UIView *m_labelView;
     id <MailContentViewDelegate> m_delegate;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface GameLifeMsgContentLogicController
+@interface GameLifeMsgContentLogicController : NSObject
 {
     _Bool shouldShowSendPic;
     _Bool shouldShowCamera;

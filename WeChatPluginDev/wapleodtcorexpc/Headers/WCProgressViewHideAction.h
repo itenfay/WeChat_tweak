@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCProgressViewHideAction
+@interface WCProgressViewHideAction : NSObject
 {
     _Bool _needShowInfo;
     long long _currentInfoType;

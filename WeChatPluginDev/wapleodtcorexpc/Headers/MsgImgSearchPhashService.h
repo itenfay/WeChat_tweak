@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, WCEliminatedSlotMMKV;
 
-@interface MsgImgSearchPhashService
+@interface MsgImgSearchPhashService : NSObject
 {
     NSMutableSet *_needCallbackContextSets;
     WCEliminatedSlotMMKV *_searchPhashSlotKV;

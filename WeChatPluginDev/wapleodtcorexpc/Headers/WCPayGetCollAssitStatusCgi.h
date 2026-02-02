@@ -5,7 +5,7 @@
 
 @protocol WCPayGetCollAssitStatusCgiDelegate;
 
-@interface WCPayGetCollAssitStatusCgi
+@interface WCPayGetCollAssitStatusCgi : NSObject
 {
     id <WCPayGetCollAssitStatusCgiDelegate> _cgiDelegate;
 }

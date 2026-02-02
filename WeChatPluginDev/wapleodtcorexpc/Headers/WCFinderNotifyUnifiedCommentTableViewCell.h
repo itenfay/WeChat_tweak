@@ -5,7 +5,7 @@
 
 @class MMUIButton, RichTextView;
 
-@interface WCFinderNotifyUnifiedCommentTableViewCell
+@interface WCFinderNotifyUnifiedCommentTableViewCell : NSObject
 {
     RichTextView *_contentTextView;
     MMUIButton *_commentDeleteLabel;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, CMessageWrap, ImageBrowseButton, MMProgressView, MMScrollView, NSString, NSURL, UIImageView, UILabel, UIView, WCActionSheet, WCPlayerConfigControlView, WCPlayerView, WXFullScreenGestureRecognizer;
 
-@interface MMMoviePlayerController
+@interface MMMoviePlayerController : NSObject
 {
     NSURL *m_url;
     NSString *m_videoPath;

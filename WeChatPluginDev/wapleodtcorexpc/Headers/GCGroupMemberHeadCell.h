@@ -5,7 +5,7 @@
 
 @class GCStatusView, MMWebImageView, UILabel, UIView;
 
-@interface GCGroupMemberHeadCell
+@interface GCGroupMemberHeadCell : NSObject
 {
     MMWebImageView *_headImgView;
     GCStatusView *_statusView;

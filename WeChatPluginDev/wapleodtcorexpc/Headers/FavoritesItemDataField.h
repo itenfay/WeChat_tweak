@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FavBrandMpVideoItem, FavEmoticonItem, FavLocationItem, FavProductItem, FavReferMsgItem, FavStreamVideoItem, FavTVItem, FavURLItem, FavWeAppItem, FavoritesDataItemSource, LiteAppSharedItem, MMMusicShareItem, NSArray, NSString, TingShareCategoryItem, TingShareListenItem, WCFinderContentColumnSharedItem, WCFinderLiveProductShareItem, WCFinderLiveShareItem, WCFinderLiveShopWindowShareItem, WCFinderMessageShareNameCard, WCFinderShareToMomentsItem, WCFinderThemeLiveStreamShareItem, WCFinderTopicShareItem, WCMegaVideoShareItem;
 
-@interface FavoritesItemDataField
+@interface FavoritesItemDataField : NSObject
 {
     _Bool _isNeedUploadRawData;
     _Bool _isSmallImage;

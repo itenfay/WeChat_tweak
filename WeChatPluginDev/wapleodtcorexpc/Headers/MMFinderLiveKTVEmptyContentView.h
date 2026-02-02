@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSString, UIImageView;
 
-@interface MMFinderLiveKTVEmptyContentView
+@interface MMFinderLiveKTVEmptyContentView : NSObject
 {
     CDUnknownBlockType _clickActionBlock;
     MMUILabel *_titleLabel;

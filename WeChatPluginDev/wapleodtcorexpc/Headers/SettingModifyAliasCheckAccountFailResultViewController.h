@@ -5,7 +5,7 @@
 
 @class MMAcceptAgreementCommonHeadView, MMTableView, MMTableViewInfo, NSArray, NSMutableDictionary, NSString, UIButton;
 
-@interface SettingModifyAliasCheckAccountFailResultViewController
+@interface SettingModifyAliasCheckAccountFailResultViewController : NSObject
 {
     UIButton *m_helpCenterButton;
     NSMutableDictionary *m_cacheHeightDic;

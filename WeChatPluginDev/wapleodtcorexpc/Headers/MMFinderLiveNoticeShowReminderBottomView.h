@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, NSString;
 
-@interface MMFinderLiveNoticeShowReminderBottomView
+@interface MMFinderLiveNoticeShowReminderBottomView : NSObject
 {
     _Bool _showArr;
     int _selectType;

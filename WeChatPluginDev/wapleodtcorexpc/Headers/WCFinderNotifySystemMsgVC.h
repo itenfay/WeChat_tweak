@@ -5,7 +5,7 @@
 
 @class NSString, UITableView, UITableViewDiffableDataSource, WCFinderDataLoadTips, WCFinderNotifySystemMsgVM, WCFinderRefreshTableFooterView;
 
-@interface WCFinderNotifySystemMsgVC
+@interface WCFinderNotifySystemMsgVC : NSObject
 {
     UITableView *_tableView;
     WCFinderRefreshTableFooterView *_footerView;

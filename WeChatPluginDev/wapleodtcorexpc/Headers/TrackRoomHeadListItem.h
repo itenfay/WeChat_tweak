@@ -6,7 +6,7 @@
 @class MMHeadImageView, NSString, UIImageView, UITapGestureRecognizer;
 @protocol TrackRoomHeadListItemDelegate;
 
-@interface TrackRoomHeadListItem
+@interface TrackRoomHeadListItem : NSObject
 {
     _Bool _selected;
     id <TrackRoomHeadListItemDelegate> _delegate;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat18MagicRewardService
+@interface _TtC6WeChat18MagicRewardService : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_listeners;
     MISSING_TYPE *$__lazy_storage_$_prepareResCallbacksDict;

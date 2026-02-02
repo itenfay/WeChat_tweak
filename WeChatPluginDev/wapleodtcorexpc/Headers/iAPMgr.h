@@ -5,7 +5,7 @@
 
 @class JailBreakHelper, NSMutableArray, NSMutableSet, NSString, iAPCache;
 
-@interface iAPMgr
+@interface iAPMgr : NSObject
 {
     NSMutableSet *_setSKProductsRequests;
     NSMutableArray *_arrRestoredTransactions;

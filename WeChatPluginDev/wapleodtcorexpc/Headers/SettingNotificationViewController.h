@@ -6,7 +6,7 @@
 @class DelaySwitchSettingLogic, MMNotificationSetting, NSString, RingToneSettingCellHandler, UISwitch, WCActionSheet, WCTableViewCellManager;
 @protocol SettingNotificationViewControllerDelegate;
 
-@interface SettingNotificationViewController
+@interface SettingNotificationViewController : NSObject
 {
     WCActionSheet *m_remindSwitchActionSheet;
     DelaySwitchSettingLogic *m_delaySwitchLogic;

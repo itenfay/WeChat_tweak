@@ -5,7 +5,7 @@
 
 @class BTTextItemCellViewModel, MMUILabel, NSString, UrlController, WAAppIdToUsernameTransfer;
 
-@interface BTTextItemCellView
+@interface BTTextItemCellView : NSObject
 {
     UrlController *m_urlController;
     MMUILabel *m_foldLabel;

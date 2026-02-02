@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29WSWebViewPlugin_UniformReddot
+@interface _TtC6WeChat29WSWebViewPlugin_UniformReddot : NSObject
 {
     MISSING_TYPE *paths;
     MISSING_TYPE *tabType;

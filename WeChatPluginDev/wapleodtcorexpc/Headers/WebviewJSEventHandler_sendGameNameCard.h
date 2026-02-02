@@ -5,7 +5,7 @@
 
 @class CMessageWrap, ForwardMessageLogicController, JSEvent, NSDictionary, NSMutableData, NSString, NSURLConnection, WWKMsgForwarder;
 
-@interface WebviewJSEventHandler_sendGameNameCard
+@interface WebviewJSEventHandler_sendGameNameCard : NSObject
 {
     CMessageWrap *m_wrapMsg;
     ForwardMessageLogicController *m_forwardMsgLogic;

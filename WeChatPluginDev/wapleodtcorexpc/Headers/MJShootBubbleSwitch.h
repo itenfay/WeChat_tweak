@@ -6,7 +6,7 @@
 @class MMUIView, NSArray, UIImpactFeedbackGenerator;
 @protocol MJShootBubbleSwitchDelegate;
 
-@interface MJShootBubbleSwitch
+@interface MJShootBubbleSwitch : NSObject
 {
     id <MJShootBubbleSwitchDelegate> _delegate;
     NSArray *_items;

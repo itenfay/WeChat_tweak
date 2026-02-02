@@ -5,7 +5,7 @@
 
 @class FakeHeadImageView, FakeMainFrameCellData, MMCPLabel, UILabel;
 
-@interface FakeMainFrameItemView
+@interface FakeMainFrameItemView : NSObject
 {
     FakeHeadImageView *m_frameHeadView;
     MMCPLabel *m_nameLabel;

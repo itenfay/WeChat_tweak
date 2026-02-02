@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSRecursiveLock, NSString, WABleAdpterLogic;
 
-@interface WABluetoothDeviceMonitorMgr
+@interface WABluetoothDeviceMonitorMgr : NSObject
 {
     NSMutableArray *_monitoredDevices;
     WABleAdpterLogic *_bleAdapter;

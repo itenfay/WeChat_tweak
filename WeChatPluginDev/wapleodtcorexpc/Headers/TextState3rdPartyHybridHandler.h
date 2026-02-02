@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol TextState3rdPartyHandler;
 
-@interface TextState3rdPartyHybridHandler
+@interface TextState3rdPartyHybridHandler : NSObject
 {
     id <TextState3rdPartyHandler> _appearHandler;
     id <TextState3rdPartyHandler> _jumpHandler;

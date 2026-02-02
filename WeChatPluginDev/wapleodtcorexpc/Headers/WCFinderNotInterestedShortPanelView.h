@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderNotInterestedShortPanelView
+@interface WCFinderNotInterestedShortPanelView : NSObject
 {
     _Bool _highLight;
     UILabel *_tipsLabel;

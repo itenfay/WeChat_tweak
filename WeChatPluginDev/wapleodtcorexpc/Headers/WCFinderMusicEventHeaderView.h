@@ -5,7 +5,7 @@
 
 @class FinderMusicTopicInfo, MMMusicVCOpenParams, MMUIButton, MMUIView, MMWebImageView, NSString, RichTextView, UILabel, UIView, VideoTemplate, WCFinderAuthInfoIconView, WCFinderDataItem, WCFinderExpandHitTingPlayerContoller, WCFinderMusicEventHeaderRecommendListView, WCFinderShadowBubbleView, WCFinderShareItemInfo, WCFinderVideoTemplateView;
 
-@interface WCFinderMusicEventHeaderView
+@interface WCFinderMusicEventHeaderView : NSObject
 {
     MMUIButton *_ringBtn;
     MMUIButton *_likeBtn;

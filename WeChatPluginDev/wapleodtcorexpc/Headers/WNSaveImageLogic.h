@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTableView, MMTimer, NSArray, NSMutableArray, NSMutableAttributedString, UITextPosition, UIView, WNContentStorage, WNSaveImageConfiguration, WNSaveImageReportDataModel, WNTextView;
 @protocol WNSaveImageLogicDataSource;
 
-@interface WNSaveImageLogic
+@interface WNSaveImageLogic : NSObject
 {
     id <WNSaveImageLogicDataSource> m_dataController;
     MMTableView *m_tableView;

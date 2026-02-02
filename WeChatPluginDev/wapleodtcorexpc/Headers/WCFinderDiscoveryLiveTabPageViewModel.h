@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderDiscoveryLiveTabPageViewModelDelegate;
 
-@interface WCFinderDiscoveryLiveTabPageViewModel
+@interface WCFinderDiscoveryLiveTabPageViewModel : NSObject
 {
     id <WCFinderDiscoveryLiveTabPageViewModelDelegate> _delegate;
     NSString *_byPassInfo;

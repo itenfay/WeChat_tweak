@@ -5,7 +5,7 @@
 
 @class CContact, MMUIButton, NSArray, NSString, UIImage, UIImageView, UIView, WCAdCardBtnInfo, WCAdConventionalFullScreenViewController, WCAdConventionalHalfScreenDetailBaseView, WCAdConventionalHalfScreenMediaBaseView, WCAdConventionalHalfScreenReportManager, WCDataItem;
 
-@interface WCAdConventionalHalfScreenViewController
+@interface WCAdConventionalHalfScreenViewController : NSObject
 {
     _Bool _isReadyToDismiss;
     unsigned long long _scene;

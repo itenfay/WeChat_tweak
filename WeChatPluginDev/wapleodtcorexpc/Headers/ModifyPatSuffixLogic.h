@@ -5,7 +5,7 @@
 
 @protocol ModifyPatSuffixLogicDelegate;
 
-@interface ModifyPatSuffixLogic
+@interface ModifyPatSuffixLogic : NSObject
 {
     id <ModifyPatSuffixLogicDelegate> _m_delegate;
 }

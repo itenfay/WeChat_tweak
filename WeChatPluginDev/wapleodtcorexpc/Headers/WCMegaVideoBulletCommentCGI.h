@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCMegaVideoBulletCommentCGI
+@interface WCMegaVideoBulletCommentCGI : NSObject
 {
     _Bool _isAuthorView;
     CDUnknownBlockType _successful;

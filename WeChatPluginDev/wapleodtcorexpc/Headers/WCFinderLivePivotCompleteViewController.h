@@ -5,7 +5,7 @@
 
 @class UINavigationController;
 
-@interface WCFinderLivePivotCompleteViewController
+@interface WCFinderLivePivotCompleteViewController : NSObject
 {
     UINavigationController *_navController;
 }

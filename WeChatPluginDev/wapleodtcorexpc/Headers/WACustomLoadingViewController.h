@@ -6,7 +6,7 @@
 @class NSString, WAPackageConfig;
 @protocol WACustomLoadingViewControllerDelegate;
 
-@interface WACustomLoadingViewController
+@interface WACustomLoadingViewController : NSObject
 {
     _Bool _isFullScreen;
     id <WACustomLoadingViewControllerDelegate> _customLoadingDelegate;

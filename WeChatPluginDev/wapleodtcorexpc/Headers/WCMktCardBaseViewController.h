@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCMktCardBaseViewController
+@interface WCMktCardBaseViewController : NSObject
 {
     _Bool _isFromJsapi;
     NSString *_viewControllerTitle;

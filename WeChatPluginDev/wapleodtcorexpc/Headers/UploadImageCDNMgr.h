@@ -6,7 +6,7 @@
 @class CdnTaskInfo, MsgDataDownloadLogic, NSMutableArray, NSString;
 @protocol UploadImageCDNMgrDelegate;
 
-@interface UploadImageCDNMgr
+@interface UploadImageCDNMgr : NSObject
 {
     NSMutableArray *m_arrQueue;
     CdnTaskInfo *m_oCurTaskInfo;

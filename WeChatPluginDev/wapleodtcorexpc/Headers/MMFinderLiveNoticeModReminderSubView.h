@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIImageView, UIView;
 
-@interface MMFinderLiveNoticeModReminderSubView
+@interface MMFinderLiveNoticeModReminderSubView : NSObject
 {
     _Bool _isDisable;
     int _type;

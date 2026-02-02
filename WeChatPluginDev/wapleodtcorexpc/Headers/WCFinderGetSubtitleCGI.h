@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderGetSubtitleRequestParams;
 
-@interface WCFinderGetSubtitleCGI
+@interface WCFinderGetSubtitleCGI : NSObject
 {
     WCFinderGetSubtitleRequestParams *_params;
     CDUnknownBlockType _successBlock;

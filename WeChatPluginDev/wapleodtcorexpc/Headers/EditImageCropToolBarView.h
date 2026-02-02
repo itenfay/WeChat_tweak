@@ -6,7 +6,7 @@
 @class EditImageCropToolBarViewModel, UIButton, UIImageView, UIView, WCEditImageCropToolBarViewUIConfig;
 @protocol EditImageCropToolBarDelegate;
 
-@interface EditImageCropToolBarView
+@interface EditImageCropToolBarView : NSObject
 {
     _Bool _revertBtnEnable;
     UIImageView *_bottomBackgroundView;

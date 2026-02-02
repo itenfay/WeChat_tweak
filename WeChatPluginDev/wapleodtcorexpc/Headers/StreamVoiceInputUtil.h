@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface StreamVoiceInputUtil
+@interface StreamVoiceInputUtil : NSObject
 {
     NSMutableDictionary *_dicInputType;
     NSMutableArray *_arrInputLanguage;

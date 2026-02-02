@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderComment;
 
-@interface WCFinderDeleteCommentCGI
+@interface WCFinderDeleteCommentCGI : NSObject
 {
     int _commentScene;
     WCFinderComment *_comment;

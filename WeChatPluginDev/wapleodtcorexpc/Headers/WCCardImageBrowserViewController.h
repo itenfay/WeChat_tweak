@@ -6,7 +6,7 @@
 @class MMImageBrowseView, NSString, SightIconView, UIImage, UIImageView;
 @protocol WCCardImageBrowserDelegate;
 
-@interface WCCardImageBrowserViewController
+@interface WCCardImageBrowserViewController : NSObject
 {
     _Bool _needDeleteAction;
     _Bool _needActionSheet;

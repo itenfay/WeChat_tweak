@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableDictionary, NSString;
 
-@interface WCTimelineTrashMgr
+@interface WCTimelineTrashMgr : NSObject
 {
     _Bool _enable;
     NSMutableDictionary *_trashMap;

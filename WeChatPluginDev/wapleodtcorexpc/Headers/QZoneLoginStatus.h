@@ -5,7 +5,7 @@
 
 @protocol QZoneLoginStatusDelegate;
 
-@interface QZoneLoginStatus
+@interface QZoneLoginStatus : NSObject
 {
     id <QZoneLoginStatusDelegate> m_delegate;
 }

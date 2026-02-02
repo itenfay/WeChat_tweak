@@ -6,7 +6,7 @@
 @class NSString, NSURL;
 @protocol WebSearchImageTaskDelegate;
 
-@interface WebSearchImageTask
+@interface WebSearchImageTask : NSObject
 {
     NSURL *_url;
     id <WebSearchImageTaskDelegate> _delegate;

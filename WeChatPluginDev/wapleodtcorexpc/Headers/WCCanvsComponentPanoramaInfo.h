@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvsComponentPanoramaInfo
+@interface WCCanvsComponentPanoramaInfo : NSObject
 {
     NSString *_panoramaImageUrl;
 }

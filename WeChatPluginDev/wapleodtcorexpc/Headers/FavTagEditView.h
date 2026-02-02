@@ -6,7 +6,7 @@
 @class CAShapeLayer, FavTagTextField, NSMutableArray, NSMutableSet, NSSet, NSString, UIButton, UILabel, UIScrollView, UIView;
 @protocol FavTagEditViewDelegate;
 
-@interface FavTagEditView
+@interface FavTagEditView : NSObject
 {
     NSMutableArray *m_arrTagButtons;
     NSMutableSet *m_tagSet;

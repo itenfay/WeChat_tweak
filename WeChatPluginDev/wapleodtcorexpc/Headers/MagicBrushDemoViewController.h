@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MagicBrushDemoLogic, MagicBrushViewDelegateProxy, UIButton, UIView;
 
-@interface MagicBrushDemoViewController
+@interface MagicBrushDemoViewController : NSObject
 {
     UIView *_contentContainer;
     unsigned long long _incButtonTag;

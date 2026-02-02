@@ -5,7 +5,7 @@
 
 @class FindContactSearchViewCellInfo, MMTableView, NSArray, NSString, UIView;
 
-@interface SearchContactViewController
+@interface SearchContactViewController : NSObject
 {
     UIView *m_headerSearchView;
     FindContactSearchViewCellInfo *m_searchInfo;

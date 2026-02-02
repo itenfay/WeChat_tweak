@@ -5,7 +5,7 @@
 
 @class EditImageWidgetTool;
 
-@interface WCEditImageWidgetOperation
+@interface WCEditImageWidgetOperation : NSObject
 {
     unsigned long long _widgetOperationType;
     EditImageWidgetTool *_widget;

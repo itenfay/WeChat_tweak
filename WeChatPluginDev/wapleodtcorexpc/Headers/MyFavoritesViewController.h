@@ -6,7 +6,7 @@
 @class FavClickStreamData, FavMultiSelectToolView, FavWarningBannerView, MMTimer, MMUIButton, MMUIView, MMUIWindow, NSString, UIButton, UIView;
 @protocol MyFavoritesViewControllerDelegate;
 
-@interface MyFavoritesViewController
+@interface MyFavoritesViewController : NSObject
 {
     UIButton *m_bannerBtn;
     MMUIWindow *m_fullScreenWindow;

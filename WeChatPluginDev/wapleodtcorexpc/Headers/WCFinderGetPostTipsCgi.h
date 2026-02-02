@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetPostTipsCgi
+@interface WCFinderGetPostTipsCgi : NSObject
 {
     CDUnknownBlockType _successfulBlock;
     CDUnknownBlockType _failedBlock;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMAssetCompositeCrashProtectMgr
+@interface MMAssetCompositeCrashProtectMgr : NSObject
 {
     NSArray *_concernedRebootTypes;
 }

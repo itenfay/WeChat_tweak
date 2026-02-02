@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveGetShareGoodsInfoCGI
+@interface WCFinderLiveGetShareGoodsInfoCGI : NSObject
 {
     unsigned int _reqType;
     int _scene;

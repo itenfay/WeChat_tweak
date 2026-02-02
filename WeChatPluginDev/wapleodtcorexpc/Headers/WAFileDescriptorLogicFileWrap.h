@@ -5,7 +5,7 @@
 
 @class CBaseFile, NSString;
 
-@interface WAFileDescriptorLogicFileWrap
+@interface WAFileDescriptorLogicFileWrap : NSObject
 {
     _Bool _isTmpOrStoreFile;
     int _flag;

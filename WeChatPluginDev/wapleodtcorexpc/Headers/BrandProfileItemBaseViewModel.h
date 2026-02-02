@@ -5,7 +5,7 @@
 
 @class BizAppMsgDetailInfo, BizMessage, NSMutableArray, NSString;
 
-@interface BrandProfileItemBaseViewModel
+@interface BrandProfileItemBaseViewModel : NSObject
 {
     _Bool _hasDesc;
     _Bool _hasLandingPage;

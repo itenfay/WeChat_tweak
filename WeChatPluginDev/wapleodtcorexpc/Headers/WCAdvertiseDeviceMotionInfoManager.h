@@ -5,7 +5,7 @@
 
 @class CMDeviceMotion, CMMotionManager, NSMutableDictionary, NSObject;
 
-@interface WCAdvertiseDeviceMotionInfoManager
+@interface WCAdvertiseDeviceMotionInfoManager : NSObject
 {
     CMMotionManager *_motionManager;
     NSObject *_motionManagerLock;

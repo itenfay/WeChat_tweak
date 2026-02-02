@@ -6,7 +6,7 @@
 @class FinderWindowProductInfo, NSString, PAGView, UILabel, UIView;
 @protocol MMFinderLiveFeedStreamProductGuideViewDelegate;
 
-@interface MMFinderLiveFeedStreamProductGuideView
+@interface MMFinderLiveFeedStreamProductGuideView : NSObject
 {
     id <MMFinderLiveFeedStreamProductGuideViewDelegate> _delegate;
     FinderWindowProductInfo *_productInfo;

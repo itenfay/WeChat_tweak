@@ -5,7 +5,7 @@
 
 @protocol WCMktCardHomePageCgiDelegate;
 
-@interface WCMktCardHomePageCgi
+@interface WCMktCardHomePageCgi : NSObject
 {
     id <WCMktCardHomePageCgiDelegate> _cgiDelegate;
 }

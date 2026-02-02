@@ -5,7 +5,7 @@
 
 @class UIButton, WANickNameAndHeaderAuthViewModel;
 
-@interface WANickNameAndHeaderAddView
+@interface WANickNameAndHeaderAddView : NSObject
 {
     UIButton *_button;
 }

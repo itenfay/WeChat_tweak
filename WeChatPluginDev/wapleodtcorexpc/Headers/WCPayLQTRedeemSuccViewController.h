@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCPayLQTRedeemSuccViewController
+@interface WCPayLQTRedeemSuccViewController : NSObject
 {
     UIView *_redeemBackgroundView;
     UIImageView *_redeemImageView;

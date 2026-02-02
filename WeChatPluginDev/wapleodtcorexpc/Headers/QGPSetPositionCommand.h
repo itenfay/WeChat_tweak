@@ -5,7 +5,7 @@
 
 @class QGPLatLng;
 
-@interface QGPSetPositionCommand
+@interface QGPSetPositionCommand : NSObject
 {
     QGPLatLng *_params;
 }

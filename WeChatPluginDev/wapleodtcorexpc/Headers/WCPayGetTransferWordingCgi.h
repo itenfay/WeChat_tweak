@@ -5,7 +5,7 @@
 
 @protocol WCPayGetTransferWordingCgiDelegate;
 
-@interface WCPayGetTransferWordingCgi
+@interface WCPayGetTransferWordingCgi : NSObject
 {
 }
 

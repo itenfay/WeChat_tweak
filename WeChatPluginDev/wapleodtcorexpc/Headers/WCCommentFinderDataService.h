@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCCommentFinderDataService
+@interface WCCommentFinderDataService : NSObject
 {
     int _viewScene;
     unsigned long long _reportScene;

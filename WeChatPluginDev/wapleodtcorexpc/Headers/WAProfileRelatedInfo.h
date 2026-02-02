@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAProfileRelatedInfo
+@interface WAProfileRelatedInfo : NSObject
 {
     NSString *_title;
     NSString *_iconURL;

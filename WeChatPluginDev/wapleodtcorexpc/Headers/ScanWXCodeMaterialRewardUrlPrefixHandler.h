@@ -5,7 +5,7 @@
 
 @class NSString, WCPayQRCodeRewardPayControlLogic, WCPayScanMaterialRewardCodeCgi;
 
-@interface ScanWXCodeMaterialRewardUrlPrefixHandler
+@interface ScanWXCodeMaterialRewardUrlPrefixHandler : NSObject
 {
     WCPayQRCodeRewardPayControlLogic *_qrcodeRewardPayerLogic;
     WCPayScanMaterialRewardCodeCgi *_scanMaterialRewardCgi;

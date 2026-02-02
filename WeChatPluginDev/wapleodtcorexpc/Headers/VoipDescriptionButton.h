@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, NSString, UILabel;
 
-@interface VoipDescriptionButton
+@interface VoipDescriptionButton : NSObject
 {
     _Bool _isInScreenSharingAudienceMode;
     _Bool _isStatusLoading;

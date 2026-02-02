@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ContactTagData, MMUILabel, UIButton, UIImageView, UIView;
 
-@interface WCMomentsContactTagCell
+@interface WCMomentsContactTagCell : NSObject
 {
     UIImageView *_leftCheckMark;
     UIButton *_rightDetailBtn;

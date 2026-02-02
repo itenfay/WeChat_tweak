@@ -6,7 +6,7 @@
 @class NSString, WCCardPkgMsg;
 @protocol WCCardMsgViewDelegate;
 
-@interface WCCardMsgView
+@interface WCCardMsgView : NSObject
 {
     WCCardPkgMsg *_cardMsg;
     id <WCCardMsgViewDelegate> _delegate;

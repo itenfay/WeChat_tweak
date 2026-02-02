@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface TSKMidiScoreResult
+@interface TSKMidiScoreResult : NSObject
 {
     NSMutableArray *_allScores;
     int _totalScore;

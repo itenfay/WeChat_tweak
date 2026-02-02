@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WWKMessageLinkAttachment
+@interface WWKMessageLinkAttachment : NSObject
 {
     NSString *_title;
     NSString *_summary;

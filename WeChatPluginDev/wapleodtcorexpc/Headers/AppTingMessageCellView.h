@@ -5,7 +5,7 @@
 
 @class AppTingMessageViewModel, TingItem, TingSharedAudioView;
 
-@interface AppTingMessageCellView
+@interface AppTingMessageCellView : NSObject
 {
     TingSharedAudioView *_audioContentView;
     TingItem *_tingItem;

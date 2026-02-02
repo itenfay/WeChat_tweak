@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_0x105
+@interface WloginTlv_0x105 : NSObject
 {
     NSData *acSig;
     NSData *acPicData;

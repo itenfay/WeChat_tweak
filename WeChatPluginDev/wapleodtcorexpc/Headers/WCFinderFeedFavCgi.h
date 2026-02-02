@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
-@interface WCFinderFeedFavCgi
+@interface WCFinderFeedFavCgi : NSObject
 {
     _Bool _fav;
     int _scene;

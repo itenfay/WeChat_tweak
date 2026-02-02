@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, UILabel, WCFinderFullScrollTextView, WCFinderProgressBar;
 
-@interface WCFinderLandscapeProgressPanelView
+@interface WCFinderLandscapeProgressPanelView : NSObject
 {
     WCFinderProgressBar *_progressBar;
     WCFinderFullScrollTextView *_textView;

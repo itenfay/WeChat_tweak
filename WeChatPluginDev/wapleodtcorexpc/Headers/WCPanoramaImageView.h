@@ -5,7 +5,7 @@
 
 @class CMMotionManager, UIImage, UIImageView, UIScrollView;
 
-@interface WCPanoramaImageView
+@interface WCPanoramaImageView : NSObject
 {
     _Bool _shouldStartMonitoring;
     UIImage *_image;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayPaidSuccessLogic
+@interface WCPayPaidSuccessLogic : NSObject
 {
     long long m_eWCPayPaidSuccessLogicWCPaySituationType;
 }

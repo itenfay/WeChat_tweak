@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UITableView;
 
-@interface WCFinderLimitedModeConfigViewController
+@interface WCFinderLimitedModeConfigViewController : NSObject
 {
     RichTextView *_contentTitleLabel;
     UITableView *_contentTableView;

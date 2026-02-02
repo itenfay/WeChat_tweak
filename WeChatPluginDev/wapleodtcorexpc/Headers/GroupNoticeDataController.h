@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface GroupNoticeDataController
+@interface GroupNoticeDataController : NSObject
 {
     _Bool _needReloadForEditMode;
     NSMutableArray *_lastDataList;

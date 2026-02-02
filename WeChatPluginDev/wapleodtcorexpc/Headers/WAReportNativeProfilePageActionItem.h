@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportNativeProfilePageActionItem
+@interface WAReportNativeProfilePageActionItem : NSObject
 {
     unsigned int _eventTime;
     unsigned int _shareActionType;

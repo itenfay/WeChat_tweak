@@ -6,7 +6,7 @@
 @class NSString, UIColor, UILongPressGestureRecognizer;
 @protocol MMCPLabelDelegate;
 
-@interface MMCPLabel
+@interface MMCPLabel : NSObject
 {
     NSString *m_cpKey;
     UILongPressGestureRecognizer *m_recognizer;

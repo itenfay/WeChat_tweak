@@ -5,7 +5,7 @@
 
 @class CPushContact, FindContactSearchViewCellInfo, MMNearByHeaderView, MMTableView, MMTableViewInfo, NSMutableSet, NSString, SayHelloDataLogic, SeePeopleNearByLogicController, SendVerifyMsgLogicController, UILabel, UIView;
 
-@interface SayHelloViewController
+@interface SayHelloViewController : NSObject
 {
     MMTableView *m_tableView;
     MMTableViewInfo *m_tableViewInfoNoHello;

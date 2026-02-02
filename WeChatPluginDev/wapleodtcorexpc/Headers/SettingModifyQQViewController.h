@@ -6,7 +6,7 @@
 @class MMTableViewInfo, NSString, UIViewController;
 @protocol SettingModifyQQViewControllerDelegate;
 
-@interface SettingModifyQQViewController
+@interface SettingModifyQQViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     UIViewController *m_vcAccount;

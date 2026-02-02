@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJPublisherMovieCompositionTask, MMUIButton, MMUIImageView, NSString, UILabel, UIView, WCFinderFeedContentVM, WCFinderFullInteractivePanelView, WCFinderInteractivePanelConfigParamsModel, WCFinderLandscapeProgressPanelView, WCFinderPortraitProgressPanelView, WCFinderPostSessionModel, WCFinderProgressControlPanelConfigParamsModel, WCFinderTableViewParamModel;
 
-@interface MJClipBundlePlayerViewController
+@interface MJClipBundlePlayerViewController : NSObject
 {
     _Bool _isVideoPlaying;
     _Bool _isDragGREnding;

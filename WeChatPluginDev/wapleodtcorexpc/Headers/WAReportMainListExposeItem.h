@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportMainListExposeItem
+@interface WAReportMainListExposeItem : NSObject
 {
     unsigned int _enterListTimeStamp;
     unsigned int _leaveListTimeStamp;

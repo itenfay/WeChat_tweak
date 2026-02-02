@@ -6,7 +6,7 @@
 @class UILabel, WCFinderAnimationLoadingView;
 @protocol WCFinderPullDownRefreshHeaderViewStatusDelegate;
 
-@interface WCFinderPullDownRefreshHeaderView
+@interface WCFinderPullDownRefreshHeaderView : NSObject
 {
     id <WCFinderPullDownRefreshHeaderViewStatusDelegate> _statusDelegate;
     double _triggerHeight;

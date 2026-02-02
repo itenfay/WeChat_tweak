@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BussinessJDExtendItem
+@interface BussinessJDExtendItem : NSObject
 {
     NSString *nsIconUrl;
     NSString *nsName;

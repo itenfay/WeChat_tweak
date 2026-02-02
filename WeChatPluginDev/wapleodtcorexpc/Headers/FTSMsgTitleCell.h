@@ -5,7 +5,7 @@
 
 @class AttributeLabel, MMHeadImageView, UIView;
 
-@interface FTSMsgTitleCell
+@interface FTSMsgTitleCell : NSObject
 {
     AttributeLabel *_titleLabel;
     AttributeLabel *_subTitleLabel;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MFBackupBtn
+@interface MFBackupBtn : NSObject
 {
     unsigned long long _notifyCode;
     unsigned long long _currentSessionCount;

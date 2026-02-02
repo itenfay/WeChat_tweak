@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIButton, UILabel, UIView;
 @protocol StorageDeepCleanDelete;
 
-@interface StorageDeepCleanViewController
+@interface StorageDeepCleanViewController : NSObject
 {
     float _cleanProgress;
     float _estimatedTimeMins;

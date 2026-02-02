@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMGroupLiveCreateParamsModel
+@interface MMGroupLiveCreateParamsModel : NSObject
 {
     NSString *_roomId;
 }

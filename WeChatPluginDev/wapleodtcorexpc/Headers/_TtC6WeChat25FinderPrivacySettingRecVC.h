@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25FinderPrivacySettingRecVC
+@interface _TtC6WeChat25FinderPrivacySettingRecVC : NSObject
 {
     MISSING_TYPE *vm;
     MISSING_TYPE *cancellables;

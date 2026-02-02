@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel, UIScrollView, UISwitch, UIView, WXGRoamBackupPackageDetailCell;
 
-@interface WXGRoamBackupPackageCreateViewController
+@interface WXGRoamBackupPackageCreateViewController : NSObject
 {
     double m_cellHeight;
     _Bool _bTapCreateToSendNotify;

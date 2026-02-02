@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29MagicWxGameDynamicCardService
+@interface _TtC6WeChat29MagicWxGameDynamicCardService : NSObject
 {
     MISSING_TYPE *delegateMap;
     MISSING_TYPE *lastSendScrollTime;

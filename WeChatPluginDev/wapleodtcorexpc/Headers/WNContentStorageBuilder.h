@@ -6,7 +6,7 @@
 @class NSArray, NSData, NSString, RTEHTMLParser, WNContentStorage, WNHTMLTagNode;
 @protocol WNContentStorageBuilderDelegate;
 
-@interface WNContentStorageBuilder
+@interface WNContentStorageBuilder : NSObject
 {
     NSData *m_htmlData;
     NSArray *m_favDataList;

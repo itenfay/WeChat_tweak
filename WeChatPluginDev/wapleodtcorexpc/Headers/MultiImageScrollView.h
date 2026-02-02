@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIViewController, NSMutableDictionary, NSString;
 @protocol MultiImageScrollViewDelegate;
 
-@interface MultiImageScrollView
+@interface MultiImageScrollView : NSObject
 {
     NSMutableDictionary *dicVisiblePageIndex;
     int m_iNumberOfPages;

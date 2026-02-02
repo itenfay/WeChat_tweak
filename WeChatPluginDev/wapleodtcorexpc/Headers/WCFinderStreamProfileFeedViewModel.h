@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSData, NSMutableArray, NSString, WCFinderJustWatchCollectionFeedItem, WCFinderProfileCollectionListLayout, WCFinderProfileTagFeedViewModel, WCFinderTagListViewLayout, WCFinderTopicInfo;
 @protocol WCFinderStreamProfileFeedViewModelDelegate;
 
-@interface WCFinderStreamProfileFeedViewModel
+@interface WCFinderStreamProfileFeedViewModel : NSObject
 {
     _Bool _hasTags;
     _Bool _hasCollections;

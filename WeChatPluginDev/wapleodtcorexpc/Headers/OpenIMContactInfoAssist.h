@@ -6,7 +6,7 @@
 @class CContact, ContactRelatedGroupLogic, MMTableViewInfo, MMURLHandler, NSString, SendVerifyMsgLogicController, UILabel, UIView, WCFinderContactFinderAssist;
 @protocol ContactInfoAssistDelegate;
 
-@interface OpenIMContactInfoAssist
+@interface OpenIMContactInfoAssist : NSObject
 {
     _Bool m_bFirstBecomeFriend;
     MMTableViewInfo *m_tableViewInfo;

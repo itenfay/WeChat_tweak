@@ -5,7 +5,7 @@
 
 @class FinderUserPageSectionQAInfo;
 
-@interface WCFinderProfileQAPageModel
+@interface WCFinderProfileQAPageModel : NSObject
 {
     FinderUserPageSectionQAInfo *_qaInfo;
 }

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter7Message
+@interface _TtCC6WeChat17KaraFeatureCenter7Message : NSObject
 {
     MISSING_TYPE *_messageThatTriggerEnteringForeground;
     MISSING_TYPE *_leaveTimesOfSessions;

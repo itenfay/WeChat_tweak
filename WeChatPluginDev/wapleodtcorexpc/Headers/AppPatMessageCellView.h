@@ -5,7 +5,7 @@
 
 @class AppPatMessageViewModel, NSArray, NSMutableDictionary, NSString, UIButton, UIView;
 
-@interface AppPatMessageCellView
+@interface AppPatMessageCellView : NSObject
 {
     UIButton *_expandButton;
     NSArray *_patBackgroundViews;

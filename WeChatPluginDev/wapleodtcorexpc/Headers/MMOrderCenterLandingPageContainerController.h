@@ -6,7 +6,7 @@
 @class MMOrderCenterLandingPageContainerFilteringTitleView, MMOrderCenterLandingPageController, NSString;
 @protocol MMOrderCenterReporter;
 
-@interface MMOrderCenterLandingPageContainerController
+@interface MMOrderCenterLandingPageContainerController : NSObject
 {
     id <MMOrderCenterReporter> _reporter;
     MMOrderCenterLandingPageController *_primaryController;

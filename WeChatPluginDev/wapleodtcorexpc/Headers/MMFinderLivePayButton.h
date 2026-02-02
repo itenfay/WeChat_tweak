@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class LOTAnimationView, MMUIButton, MMUILabel, UIImageView, UIView;
 
-@interface MMFinderLivePayButton
+@interface MMFinderLivePayButton : NSObject
 {
     _Bool _isTrialTimeout;
     _Bool _isPayState;

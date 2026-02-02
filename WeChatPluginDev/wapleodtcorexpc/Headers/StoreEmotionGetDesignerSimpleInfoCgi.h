@@ -6,7 +6,7 @@
 @class NSString;
 @protocol StoreEmotionGetDesignerSimpleInfoCgiDelegate;
 
-@interface StoreEmotionGetDesignerSimpleInfoCgi
+@interface StoreEmotionGetDesignerSimpleInfoCgi : NSObject
 {
     NSString *m_designerId;
     id <StoreEmotionGetDesignerSimpleInfoCgiDelegate> _delegate;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSEvent, NSString, WCPayPayMoneyFromOverseaH5WalletLogic;
 
-@interface WebviewJSEventHandler_getH5TransactionRequest
+@interface WebviewJSEventHandler_getH5TransactionRequest : NSObject
 {
     _Bool _closeWebAfterPayDetailBack;
     WCPayPayMoneyFromOverseaH5WalletLogic *_controlLogic;

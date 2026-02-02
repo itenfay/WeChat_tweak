@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface FavoritesUploadVideoCompressor
+@interface FavoritesUploadVideoCompressor : NSObject
 {
     NSMutableSet *m_currentItemCompressingVideoSet;
 }

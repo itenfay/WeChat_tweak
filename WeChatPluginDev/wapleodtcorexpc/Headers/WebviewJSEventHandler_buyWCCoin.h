@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_buyWCCoin
+@interface WebviewJSEventHandler_buyWCCoin : NSObject
 {
 }
 

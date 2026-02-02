@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPReportParamsStepSecondBuffered
+@interface TPReportParamsStepSecondBuffered : NSObject
 {
     unsigned long long _scene;
     unsigned long long _levent;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoPlayerDetailModelCpp
+@interface MegaVideoPlayerDetailModelCpp : NSObject
 {
 }
 

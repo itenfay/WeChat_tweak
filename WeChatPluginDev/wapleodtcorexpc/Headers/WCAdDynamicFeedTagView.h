@@ -5,7 +5,7 @@
 
 @class WCAdDynamicFeedElementInfo, WCAdvertiseInfo;
 
-@interface WCAdDynamicFeedTagView
+@interface WCAdDynamicFeedTagView : NSObject
 {
     WCAdDynamicFeedElementInfo *_elementInfo;
     WCAdvertiseInfo *_adInfo;

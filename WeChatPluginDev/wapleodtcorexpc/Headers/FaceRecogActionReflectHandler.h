@@ -5,7 +5,7 @@
 
 @class CameraReflectDevice, FaceRecogCheckBrightnessLogic, FaceRecogFlashView, FaceRecogReflectGuideView, MMTimer, NSString;
 
-@interface FaceRecogActionReflectHandler
+@interface FaceRecogActionReflectHandler : NSObject
 {
     MMTimer *_reflectTimer;
     long long _triggerTimes;

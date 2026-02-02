@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, NSIndexPath, NSString, UICollectionView, UIView, WCVideoProducerDataSource;
 @protocol WCVideoProducerTemplateBarDelegate;
 
-@interface WCVideoProducerTemplateBarViewController
+@interface WCVideoProducerTemplateBarViewController : NSObject
 {
     _Bool _canRecreateWhileLoading;
     _Bool _isCollectionViewLoaded;

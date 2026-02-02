@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveGetAnchorCustomizeGiftListCGI
+@interface MMFinderLiveGetAnchorCustomizeGiftListCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

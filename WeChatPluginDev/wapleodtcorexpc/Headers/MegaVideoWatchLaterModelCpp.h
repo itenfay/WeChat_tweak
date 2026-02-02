@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MegaVideoWatchLaterModelCpp
+@interface MegaVideoWatchLaterModelCpp : NSObject
 {
 }
 

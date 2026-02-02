@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, EmoticonCustomManageAddLogic, NSData, NSString;
 
-@interface WebviewJSEventHandler_emoticonAPICollection
+@interface WebviewJSEventHandler_emoticonAPICollection : NSObject
 {
     _Bool _showDesignerEntry;
     EmoticonCustomManageAddLogic *_emoticonAddLogic;

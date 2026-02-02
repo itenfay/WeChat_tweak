@@ -6,7 +6,7 @@
 @class InvoiceFooterView, MyInvoiceData, NSMutableArray, NSString, PasswordLogic, UIView;
 @protocol MyInvoiceListViewControllerDelegate;
 
-@interface MyInvoiceListViewController
+@interface MyInvoiceListViewController : NSObject
 {
     PasswordLogic *m_passwordLogic;
     int m_enWCAddressAddressListScene;

@@ -5,7 +5,7 @@
 
 @class CircleToSearchOverlayView, MMUIView;
 
-@interface CircleToSearchPreviewView
+@interface CircleToSearchPreviewView : NSObject
 {
     CircleToSearchOverlayView *_overlayView;
     MMUIView *_fakeOverlayView;

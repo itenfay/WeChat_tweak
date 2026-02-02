@@ -6,7 +6,7 @@
 @class CBCentralManager, MMUIViewController, NSMutableArray, NSMutableDictionary, NSString;
 @protocol WXCustomWebViewControllerProtocol;
 
-@interface WCBeaconJSApiMgr
+@interface WCBeaconJSApiMgr : NSObject
 {
     MMUIViewController<WXCustomWebViewControllerProtocol> *m_currentWebViewController;
     NSString *m_ticket;

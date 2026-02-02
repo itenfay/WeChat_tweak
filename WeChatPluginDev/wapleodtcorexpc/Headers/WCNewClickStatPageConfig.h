@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCNewClickStatPageConfig
+@interface WCNewClickStatPageConfig : NSObject
 {
     _Bool _bNeedAction;
     NSString *_pageID;

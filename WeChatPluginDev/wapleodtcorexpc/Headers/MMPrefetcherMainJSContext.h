@@ -5,7 +5,7 @@
 
 @class JSValue, MMBaseJsApiHandler;
 
-@interface MMPrefetcherMainJSContext
+@interface MMPrefetcherMainJSContext : NSObject
 {
     MMBaseJsApiHandler *_baseJsApiHandler;
     JSValue *_cleanAtomCallback;

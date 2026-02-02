@@ -5,7 +5,7 @@
 
 @class EmoticonBoardView;
 
-@interface WCCommentEmotionBoardViewContainerView
+@interface WCCommentEmotionBoardViewContainerView : NSObject
 {
     EmoticonBoardView *_emotionBoardView;
 }

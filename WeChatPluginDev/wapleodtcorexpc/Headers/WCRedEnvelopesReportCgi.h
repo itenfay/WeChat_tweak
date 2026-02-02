@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvelopesReportCgiDelegate;
 
-@interface WCRedEnvelopesReportCgi
+@interface WCRedEnvelopesReportCgi : NSObject
 {
     id <WCRedEnvelopesReportCgiDelegate> m_delegate;
 }

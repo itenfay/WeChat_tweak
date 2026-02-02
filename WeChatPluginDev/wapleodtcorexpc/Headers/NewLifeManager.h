@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterNewLifeNavigator, FlutterNewLifeViewController, MMFlutterInstance, MMLRUCache, NSArray, NSData, NSMutableDictionary, NSObject, NSString, NewLifeCallbackProcessor, NewLifeMMKVKeyModel, NewLifePagePerformanceReporter, NewLifePostVerifyAssist, NewLifePrefetchManager, NewLifeProfilePrefetchLogic, NewLifeRegisterCmdIdHandler, NewLifeReporter, NewLifeSnapShotViewController, NewLifeSwitchLogic, NewLifeSyncLogic, NewLifeThumbUpLogic, NewLifeUploadCdnMgr, PrefetchStreamCallbackCmdIdReq;
 
-@interface NewLifeManager
+@interface NewLifeManager : NSObject
 {
     MMFlutterInstance *_maasEditorInstance;
     NewLifeUploadCdnMgr *_uploadMgr;

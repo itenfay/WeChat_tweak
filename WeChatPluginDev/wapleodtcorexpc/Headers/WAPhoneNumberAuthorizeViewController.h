@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, WAAuthorizeResultInfo, WAPhoneNumberAuthorizeSheetInfo, WAPhoneNumberPageSheetViewModel;
 @protocol WAPhoneNumberAuthorizeViewControllerDelegate;
 
-@interface WAPhoneNumberAuthorizeViewController
+@interface WAPhoneNumberAuthorizeViewController : NSObject
 {
     long long _selectedIndex;
     WAPhoneNumberPageSheetViewModel *_pnViewModel;

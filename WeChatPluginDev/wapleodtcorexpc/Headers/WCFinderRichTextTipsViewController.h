@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UIImageView, UILabel, UIView;
 @protocol WCFinderRictTextTipsViewControllerDelegate;
 
-@interface WCFinderRichTextTipsViewController
+@interface WCFinderRichTextTipsViewController : NSObject
 {
     id <WCFinderRictTextTipsViewControllerDelegate> _delegate;
     UIView *_backgroundView;

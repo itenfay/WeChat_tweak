@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceProfileButton
+@interface DeviceProfileButton : NSObject
 {
     NSString *_uiTitle;
     NSString *_nsUrl;

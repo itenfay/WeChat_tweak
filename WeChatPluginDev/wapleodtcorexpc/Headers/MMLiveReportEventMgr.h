@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMLiveReportEventMgr
+@interface MMLiveReportEventMgr : NSObject
 {
     NSMutableDictionary *_handlerObjects;
 }

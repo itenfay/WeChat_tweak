@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppAuthorizationDetailOptionItem
+@interface WAAppAuthorizationDetailOptionItem : NSObject
 {
     unsigned int _authState;
     NSString *_authStateString;

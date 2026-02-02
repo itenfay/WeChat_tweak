@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoiceReaderMessageViewModel
+@interface VoiceReaderMessageViewModel : NSObject
 {
 }
 

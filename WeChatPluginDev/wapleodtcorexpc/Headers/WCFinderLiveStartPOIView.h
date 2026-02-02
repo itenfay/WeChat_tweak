@@ -6,7 +6,7 @@
 @class UIImageView, UILabel;
 @protocol WCFinderLiveStartPOIViewDelegate;
 
-@interface WCFinderLiveStartPOIView
+@interface WCFinderLiveStartPOIView : NSObject
 {
     _Bool _hideLogo;
     id <WCFinderLiveStartPOIViewDelegate> _delegate;

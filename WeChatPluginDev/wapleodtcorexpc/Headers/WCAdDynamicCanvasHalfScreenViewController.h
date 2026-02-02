@@ -5,7 +5,7 @@
 
 @class NSString, UIPanGestureRecognizer, WCAdDynamicCanvasPageInfo, WCAdDynamicCanvasViewController, WCAdExpressionCanvasHalfScreenJumpInfo;
 
-@interface WCAdDynamicCanvasHalfScreenViewController
+@interface WCAdDynamicCanvasHalfScreenViewController : NSObject
 {
     _Bool _willJumpToHalfOtherContent;
     WCAdExpressionCanvasHalfScreenJumpInfo *_halfJumpInfo;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
-@interface WAJSEventHandler_openCustomerServiceChat
+@interface WAJSEventHandler_openCustomerServiceChat : NSObject
 {
     NSString *m_url;
     int m_scene;

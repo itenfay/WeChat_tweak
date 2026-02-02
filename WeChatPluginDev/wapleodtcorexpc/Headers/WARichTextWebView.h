@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString, NSURLRequest, YYBaseWebView;
 
-@interface WARichTextWebView
+@interface WARichTextWebView : NSObject
 {
     YYBaseWebView *_webView;
     NSString *_curApiName;

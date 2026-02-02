@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface WCFinderLiveStartLotteryGoodAddView
+@interface WCFinderLiveStartLotteryGoodAddView : NSObject
 {
     UIImageView *_goodsImageView;
     MMUILabel *_goodsTitleLabel;

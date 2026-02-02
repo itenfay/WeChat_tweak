@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCCanvasComponentReportMusicInfo
+@interface WCCanvasComponentReportMusicInfo : NSObject
 {
     unsigned int _musicDuration;
     unsigned int _playCount;

@@ -6,7 +6,7 @@
 @class NSString, PasswordLogic, UIView;
 @protocol WCAddressListViewControllerDelegate;
 
-@interface WCAddressListViewController
+@interface WCAddressListViewController : NSObject
 {
     id <WCAddressListViewControllerDelegate> m_delegate;
     PasswordLogic *m_passwordLogic;

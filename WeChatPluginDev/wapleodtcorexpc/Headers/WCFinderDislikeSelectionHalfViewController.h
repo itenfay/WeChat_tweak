@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSMutableArray, NSMutableSet, NSString, UIButton, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderFeedContentVM;
 
-@interface WCFinderDislikeSelectionHalfViewController
+@interface WCFinderDislikeSelectionHalfViewController : NSObject
 {
     _Bool _selectionWithoutConfirm;
     int _commentScene;

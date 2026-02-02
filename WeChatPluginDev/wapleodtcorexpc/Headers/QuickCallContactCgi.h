@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray;
 @protocol QuickCallContactCgiDelegate;
 
-@interface QuickCallContactCgi
+@interface QuickCallContactCgi : NSObject
 {
     _Bool _isRunning;
     _Bool _isAddContact;

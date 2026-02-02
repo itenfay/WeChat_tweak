@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, MMUIView, NSString, UIVisualEffectView, WCAdURLImageView, WCCanvasComponentMusicInfo, WCCanvasMusicPlayButton, WCCanvasMusicProgressBar, WCMarqueeLabel;
 
-@interface WCCanvasMusicComponent
+@interface WCCanvasMusicComponent : NSObject
 {
     MMUIView *_musicCardView;
     MMUIView *_bgView;

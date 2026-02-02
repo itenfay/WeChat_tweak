@@ -5,7 +5,7 @@
 
 @class GameLifeContact, NSString;
 
-@interface GameLifeConversation
+@interface GameLifeConversation : NSObject
 {
     unsigned int _digestFlag;
     NSString *talker;

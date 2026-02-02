@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCPayCardBinInfo, WCPayCardTypeItem;
 @protocol WCPayECardSelectCardTypeViewControllerDelegate;
 
-@interface WCPayECardSelectCardTypeViewController
+@interface WCPayECardSelectCardTypeViewController : NSObject
 {
     id <WCPayECardSelectCardTypeViewControllerDelegate> _delegate;
     WCPayCardTypeItem *_cardTypeItem;

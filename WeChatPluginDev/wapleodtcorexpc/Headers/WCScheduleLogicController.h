@@ -6,7 +6,7 @@
 @class MMActionSheetDatePicker, MMUIViewController, NSString, UIView, WCScheduleItem;
 @protocol WCScheduleLogicControllerDelegate;
 
-@interface WCScheduleLogicController
+@interface WCScheduleLogicController : NSObject
 {
     _Bool _isCancelSchedule;
     id <WCScheduleLogicControllerDelegate> _delegate;

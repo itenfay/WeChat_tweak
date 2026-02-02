@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface WCAdvertiseStatMgr
+@interface WCAdvertiseStatMgr : NSObject
 {
     NSMutableDictionary *_adID2BodyMap;
     NSMutableDictionary *_adID2CommentMap;

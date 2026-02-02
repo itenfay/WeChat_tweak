@@ -6,7 +6,7 @@
 @class MMHeadImageView, RichTextView, UIButton, UIImageView;
 @protocol WCFinderTimelineUnreadNewMsgBubbleViewProtocol;
 
-@interface WCFinderTimelineUnreadNewMsgBubbleView
+@interface WCFinderTimelineUnreadNewMsgBubbleView : NSObject
 {
     id <WCFinderTimelineUnreadNewMsgBubbleViewProtocol> _delegate;
     unsigned long long _unReadMsgCount;

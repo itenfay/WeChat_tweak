@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
-@interface WCCanvasCommonFileLoader
+@interface WCCanvasCommonFileLoader : NSObject
 {
     NSMutableDictionary *_requestObjectDict;
     NSMutableArray *_waittingRequestObjectQueue;

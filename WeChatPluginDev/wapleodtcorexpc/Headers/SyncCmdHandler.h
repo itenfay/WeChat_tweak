@@ -5,7 +5,7 @@
 
 @class CMMDB, NSMutableArray, NSMutableDictionary, NSRecursiveLock;
 
-@interface SyncCmdHandler
+@interface SyncCmdHandler : NSObject
 {
     NSMutableArray *m_arrMsgList;
     NSMutableDictionary *m_dicWebWxClearUnRead;

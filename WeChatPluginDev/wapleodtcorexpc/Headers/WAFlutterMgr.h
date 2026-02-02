@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WAFlutterMgr
+@interface WAFlutterMgr : NSObject
 {
     NSMutableArray *_skylineRuntimeArr;
 }

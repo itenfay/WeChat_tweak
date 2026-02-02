@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCMomentsAIAssetGenerateTask
+@interface WCMomentsAIAssetGenerateTask : NSObject
 {
 }
 

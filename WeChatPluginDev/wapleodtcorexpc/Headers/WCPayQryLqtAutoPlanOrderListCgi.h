@@ -6,7 +6,7 @@
 @class QryAutoPlanOrderListReq;
 @protocol WCPayQryLqtAutoPlanOrderListCgiDelegate;
 
-@interface WCPayQryLqtAutoPlanOrderListCgi
+@interface WCPayQryLqtAutoPlanOrderListCgi : NSObject
 {
     id <WCPayQryLqtAutoPlanOrderListCgiDelegate> _m_delegate;
     QryAutoPlanOrderListReq *_planDetailReq;

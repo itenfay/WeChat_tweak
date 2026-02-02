@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMECCustomerSearchOrderListCGI
+@interface MMECCustomerSearchOrderListCGI : NSObject
 {
     unsigned int _offset;
     unsigned int _pageSize;

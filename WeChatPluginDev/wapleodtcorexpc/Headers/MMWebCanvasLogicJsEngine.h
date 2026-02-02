@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, WACanvasFileHelper;
 @protocol MMWebCanvasLogicJsEngineDelegate, OS_dispatch_queue;
 
-@interface MMWebCanvasLogicJsEngine
+@interface MMWebCanvasLogicJsEngine : NSObject
 {
     _Bool _finishedSetup;
     _Bool _hasStopped;

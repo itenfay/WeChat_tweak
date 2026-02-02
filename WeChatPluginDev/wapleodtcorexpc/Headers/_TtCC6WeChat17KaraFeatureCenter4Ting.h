@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter4Ting
+@interface _TtCC6WeChat17KaraFeatureCenter4Ting : NSObject
 {
     MISSING_TYPE *entryMusicHistoryTable;
     MISSING_TYPE *entryAudioHistoryTable;

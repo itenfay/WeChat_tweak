@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, WCStoryPageControl, WCStoryPreivewPageCollectionController, WCStoryPreviewReportObj;
 @protocol WCStorysPreviewViewControllerDelegate;
 
-@interface WCStorysPreviewViewController
+@interface WCStorysPreviewViewController : NSObject
 {
     WCStoryPreivewPageCollectionController *m_collectionController;
     WCStoryPageControl *pageControl;

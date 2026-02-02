@@ -5,7 +5,7 @@
 
 @class MMLiveLikePostTask, NSMutableArray, NSString, SafeMutableDictionary;
 
-@interface MMLiveLikeDataMgr
+@interface MMLiveLikeDataMgr : NSObject
 {
     _Bool _isPosting;
     unsigned int _nextReqInterval;

@@ -5,7 +5,7 @@
 
 @class NSString, QGLOverlayRenderMode, QModelOverlayAnimationLayer;
 
-@interface QModelOverlay
+@interface QModelOverlay : NSObject
 {
     _Bool _unlit;
     QGLOverlayRenderMode *_renderMode;

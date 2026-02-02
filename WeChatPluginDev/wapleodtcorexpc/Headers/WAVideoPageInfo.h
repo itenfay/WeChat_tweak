@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAVideoPageInfo
+@interface WAVideoPageInfo : NSObject
 {
     _Bool _isFromOpenSDK;
     NSString *_videoSource;

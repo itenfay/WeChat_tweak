@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppBaseViewController
+@interface LiteAppBaseViewController : NSObject
 {
     _Bool _acceptSmallKeyboardHeightEvent;
     _Bool _keyboardShow;

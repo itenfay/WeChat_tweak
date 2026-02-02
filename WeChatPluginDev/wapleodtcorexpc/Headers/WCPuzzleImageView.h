@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, UIImageView, UILabel, WCDataItem;
 @protocol WCPuzzleImageViewDelegate;
 
-@interface WCPuzzleImageView
+@interface WCPuzzleImageView : NSObject
 {
     WCDataItem *m_dataItem;
     NSArray *m_arrMediaData;

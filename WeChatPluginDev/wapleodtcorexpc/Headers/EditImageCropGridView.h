@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface EditImageCropGridView
+@interface EditImageCropGridView : NSObject
 {
     _Bool _enableShowGridCorners;
     NSArray *_blLineView;

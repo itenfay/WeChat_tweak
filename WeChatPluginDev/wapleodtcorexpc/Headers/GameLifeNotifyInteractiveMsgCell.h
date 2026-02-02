@@ -5,7 +5,7 @@
 
 @class GameCenterBaseMsg, MMBadgeView, UIImageView, UILabel, UIView;
 
-@interface GameLifeNotifyInteractiveMsgCell
+@interface GameLifeNotifyInteractiveMsgCell : NSObject
 {
     _Bool _addSeperator;
     int _showType;

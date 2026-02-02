@@ -6,7 +6,7 @@
 @class WCPayOfflinePayDisableBlockLayer, WCPayOfflinePayDisableBlockLayerTextInfo;
 @protocol WCPayOfflineDisableBlockTipsViewDelegate;
 
-@interface WCPayOfflineDisableBlockTipsView
+@interface WCPayOfflineDisableBlockTipsView : NSObject
 {
     id <WCPayOfflineDisableBlockTipsViewDelegate> _delegate;
     WCPayOfflinePayDisableBlockLayer *_viewData;

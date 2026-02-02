@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdvertiseLogDBItem
+@interface WCAdvertiseLogDBItem : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int _m_uiLocalId;

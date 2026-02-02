@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface HomeWepkgDataCleaner
+@interface HomeWepkgDataCleaner : NSObject
 {
     _Bool _needReleasePreload;
 }

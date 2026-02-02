@@ -5,7 +5,7 @@
 
 @class BrandTemplateMsgContentViewController, NSString, TemplateMsgExposeLogic, TemplateMsgSubLogicEnterParams;
 
-@interface BrandTemplateMsgLogicController
+@interface BrandTemplateMsgLogicController : NSObject
 {
     TemplateMsgExposeLogic *m_exposeLogic;
     NSString *_templateSessionId;

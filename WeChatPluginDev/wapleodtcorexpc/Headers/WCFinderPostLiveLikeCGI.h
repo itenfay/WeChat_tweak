@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderPostLiveLikeCGI
+@interface WCFinderPostLiveLikeCGI : NSObject
 {
     int _msgType;
     unsigned long long _likeCount;

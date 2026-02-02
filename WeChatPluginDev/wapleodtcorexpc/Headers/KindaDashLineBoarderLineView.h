@@ -5,7 +5,7 @@
 
 @class NSString, TrueDashLineBoarderView;
 
-@interface KindaDashLineBoarderLineView
+@interface KindaDashLineBoarderLineView : NSObject
 {
     TrueDashLineBoarderView *_dashLineBoarderView;
 }

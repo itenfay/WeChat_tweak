@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMMVPlayer, MMMusicInfo, MMMusicLiveBaseMsg, MMMusicLiveCGIMgr, MMMusicLiveViewController, MMMusicMVEditorViewController, MMMusicMVRecommendViewController, MMMusicMVSwitchNewAnimator, MMMusicVCOpenParams, MinimizeNewTransitionController, MusicLiveCheckPermissionResp, MusicLiveGetSongStatusResp, NSArray, NSMutableArray, NSString, UIPanGestureRecognizer, UIView, UIViewController, WCCommentObject, WCFinderFeedContentVM;
 @protocol MusicInteractionStatistics;
 
-@interface MMMusicViewController
+@interface MMMusicViewController : NSObject
 {
     unsigned int m_uiCreateTime;
     _Bool m_hasPushedSystemInfo;

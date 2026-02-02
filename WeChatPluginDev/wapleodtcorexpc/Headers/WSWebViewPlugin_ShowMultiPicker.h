@@ -6,7 +6,7 @@
 @class MMPageSheetAdapter, NSMutableArray, NSString, UIPickerView;
 @protocol MMWebViewPluginShowMultiPickerDelegate;
 
-@interface WSWebViewPlugin_ShowMultiPicker
+@interface WSWebViewPlugin_ShowMultiPicker : NSObject
 {
     id <MMWebViewPluginShowMultiPickerDelegate> _resultDelegate;
     NSMutableArray *_arrPickerData;

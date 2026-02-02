@@ -5,7 +5,7 @@
 
 @class EmoticonBoardView, MMGrowTextView, NSMutableArray, NSString, UIButton, UIImageView, UIView, WCInputController, WCOutFeedbackCgi;
 
-@interface WCOFeedBackTips
+@interface WCOFeedBackTips : NSObject
 {
     _Bool _hasInputSth;
     int _roomid;

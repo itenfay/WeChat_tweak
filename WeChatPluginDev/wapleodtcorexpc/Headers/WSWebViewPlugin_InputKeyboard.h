@@ -5,7 +5,7 @@
 
 @class EmoticonBoardView, MISSING_TYPE;
 
-@interface WSWebViewPlugin_InputKeyboard
+@interface WSWebViewPlugin_InputKeyboard : NSObject
 {
     MISSING_TYPE *defaultAnimateDuration;
     MISSING_TYPE *storedAnimateDuration;

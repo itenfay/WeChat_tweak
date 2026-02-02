@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ForwardMessageLogicController, MMTimer, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMShareExtMgr
+@interface MMShareExtMgr : NSObject
 {
     ForwardMessageLogicController *m_forwardLogic;
     _Bool _sessionDidChanged;

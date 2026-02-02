@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WCCanvasReportInfo
+@interface WCCanvasReportInfo : NSObject
 {
     unsigned int _entranceType;
     unsigned int _exitType;

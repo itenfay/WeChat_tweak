@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMFlutterHybridNavStackCache
+@interface MMFlutterHybridNavStackCache : NSObject
 {
     NSMutableDictionary *_stackCache;
 }

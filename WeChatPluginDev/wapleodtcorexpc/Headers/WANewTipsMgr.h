@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WANewTipsMgr
+@interface WANewTipsMgr : NSObject
 {
     NSMutableDictionary *_id2NextUpdateTimeDic;
     NSMutableArray *_updatingTipsKeyList;

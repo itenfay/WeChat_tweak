@@ -5,7 +5,7 @@
 
 @class FinderLiveAdReportRequest, NSString;
 
-@interface MMLiveAdsReportCGI
+@interface MMLiveAdsReportCGI : NSObject
 {
     int _scene;
     unsigned long long _objectId;

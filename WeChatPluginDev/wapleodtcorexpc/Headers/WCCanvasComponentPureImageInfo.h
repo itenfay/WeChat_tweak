@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentPureImageInfo
+@interface WCCanvasComponentPureImageInfo : NSObject
 {
     _Bool _enableQRScan;
     _Bool _needUpdateQrUrl;

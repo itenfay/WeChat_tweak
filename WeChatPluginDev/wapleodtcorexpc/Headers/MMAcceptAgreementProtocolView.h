@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, RichTextView;
 @protocol MMAcceptAgreementProtocolViewDelegate;
 
-@interface MMAcceptAgreementProtocolView
+@interface MMAcceptAgreementProtocolView : NSObject
 {
     RichTextView *m_protocolTextView;
     _Bool m_isAgreedProtocol;

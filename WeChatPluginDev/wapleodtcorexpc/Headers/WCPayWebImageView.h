@@ -6,7 +6,7 @@
 @class NSString, NSURL, UIImage;
 @protocol WCPayWebImageViewDelegate;
 
-@interface WCPayWebImageView
+@interface WCPayWebImageView : NSObject
 {
     _Bool _loadImageOnMainThread;
     _Bool _isNeedResize;

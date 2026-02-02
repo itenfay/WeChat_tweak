@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMSelectContactHandler
+@interface MMSelectContactHandler : NSObject
 {
 }
 

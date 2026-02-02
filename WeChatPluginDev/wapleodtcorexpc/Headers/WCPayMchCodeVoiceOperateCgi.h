@@ -5,7 +5,7 @@
 
 @protocol WCPayMchCodeVoiceOperateCgiDelegate;
 
-@interface WCPayMchCodeVoiceOperateCgi
+@interface WCPayMchCodeVoiceOperateCgi : NSObject
 {
     id <WCPayMchCodeVoiceOperateCgiDelegate> _cgiDelegate;
 }

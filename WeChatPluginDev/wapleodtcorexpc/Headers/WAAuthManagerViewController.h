@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WAAppAuthRespData, WAContact;
 
-@interface WAAuthManagerViewController
+@interface WAAuthManagerViewController : NSObject
 {
     _Bool _isEditMode;
     WAContact *_contact;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSMutableArray, NSString;
 
-@interface WCAccountGatewayAgreementsPageSheet
+@interface WCAccountGatewayAgreementsPageSheet : NSObject
 {
     CDUnknownBlockType _onGoNextBlock;
     MMUILabel *_headerLabel;

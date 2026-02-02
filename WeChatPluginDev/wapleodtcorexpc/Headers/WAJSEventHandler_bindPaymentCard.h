@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAJSEventHandler_bindPaymentCard
+@interface WAJSEventHandler_bindPaymentCard : NSObject
 {
     NSMutableDictionary *_param;
 }

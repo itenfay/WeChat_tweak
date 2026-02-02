@@ -5,7 +5,7 @@
 
 @class MJTrimHandle, MMUIView, NSString;
 
-@interface MJAnotherSegmentTrimHandleView
+@interface MJAnotherSegmentTrimHandleView : NSObject
 {
     _Bool _isLeftExpandable;
     _Bool _isRightExpandable;

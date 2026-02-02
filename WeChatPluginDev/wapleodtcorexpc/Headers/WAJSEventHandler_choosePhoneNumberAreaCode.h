@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_choosePhoneNumberAreaCode
+@interface WAJSEventHandler_choosePhoneNumberAreaCode : NSObject
 {
 }
 

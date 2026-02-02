@@ -6,7 +6,7 @@
 @class CContact, NSString;
 @protocol DelAdminLogicDelegate;
 
-@interface DelAdminLogic
+@interface DelAdminLogic : NSObject
 {
     id <DelAdminLogicDelegate> m_delegate;
     _Bool m_bNeedReload;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoiceReminderConfirmViewModel
+@interface VoiceReminderConfirmViewModel : NSObject
 {
 }
 

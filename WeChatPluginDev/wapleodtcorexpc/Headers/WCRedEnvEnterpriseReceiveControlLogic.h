@@ -6,7 +6,7 @@
 @class JSEvent, NSError, NSString, WCAtomicRedEnvReceiveHomeView, WCAtomicRedEnvReceiveWelcomeView, WCFestivalRedEnvFinishView, WCFestivalRedEnvShareView, WCPayInterceptWinLogic, WCRedEnvelopesReceiveHomeView;
 @protocol WCRedEnvWeAppDelegate;
 
-@interface WCRedEnvEnterpriseReceiveControlLogic
+@interface WCRedEnvEnterpriseReceiveControlLogic : NSObject
 {
     int m_scene;
     WCRedEnvelopesReceiveHomeView *m_oIntroView;

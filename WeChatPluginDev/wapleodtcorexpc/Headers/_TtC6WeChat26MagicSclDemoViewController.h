@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26MagicSclDemoViewController
+@interface _TtC6WeChat26MagicSclDemoViewController : NSObject
 {
     MISSING_TYPE *biz;
     MISSING_TYPE *frameSetRoot;

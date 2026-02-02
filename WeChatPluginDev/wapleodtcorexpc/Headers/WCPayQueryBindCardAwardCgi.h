@@ -6,7 +6,7 @@
 @class WCPayQueryBindCardAwardCgiRequest;
 @protocol WCPayQueryBindCardAwardCgiDelegate;
 
-@interface WCPayQueryBindCardAwardCgi
+@interface WCPayQueryBindCardAwardCgi : NSObject
 {
     WCPayQueryBindCardAwardCgiRequest *_m_queryRequest;
     id <WCPayQueryBindCardAwardCgiDelegate> _m_delegate;

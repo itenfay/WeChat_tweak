@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportJSErrorItem
+@interface WAReportJSErrorItem : NSObject
 {
     unsigned int _developerMarkedScene;
     NSString *_name;

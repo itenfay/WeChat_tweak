@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCCanvasComponentReportBottomSwipeInfo
+@interface WCCanvasComponentReportBottomSwipeInfo : NSObject
 {
     unsigned int _jumpCount;
 }

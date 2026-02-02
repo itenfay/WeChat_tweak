@@ -5,7 +5,7 @@
 
 @class AppMsgShareItem, NSString;
 
-@interface MMWebViewMinimizationData
+@interface MMWebViewMinimizationData : NSObject
 {
     unsigned int _getA8KeyScene;
     NSString *_webViewUrl;

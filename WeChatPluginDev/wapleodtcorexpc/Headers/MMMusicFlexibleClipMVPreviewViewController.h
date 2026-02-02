@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMMVPlayer, MMMusicFlexEditBarThumbLoader, MMMusicFlexEditBarTransitionPanel, MMMusicLiveCGIMgr, MMMusicMVFlexClipEditBar, MMMusicMVModel, MMUIButton, NSArray, NSMutableArray, NSString, UILabel, UITapGestureRecognizer, WCDragDeleteBarView;
 
-@interface MMMusicFlexibleClipMVPreviewViewController
+@interface MMMusicFlexibleClipMVPreviewViewController : NSObject
 {
     NSArray *_arrSelectedItem;
     MMMVPlayer *_mvPlayer;

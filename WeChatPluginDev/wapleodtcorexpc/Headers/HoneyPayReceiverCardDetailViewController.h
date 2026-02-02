@@ -6,7 +6,7 @@
 @class QryHoneyPayCardDetailResp;
 @protocol HoneyPayReceiverCardDetailViewControllerDelegate;
 
-@interface HoneyPayReceiverCardDetailViewController
+@interface HoneyPayReceiverCardDetailViewController : NSObject
 {
     id <HoneyPayReceiverCardDetailViewControllerDelegate> _delegate;
     QryHoneyPayCardDetailResp *_detail;

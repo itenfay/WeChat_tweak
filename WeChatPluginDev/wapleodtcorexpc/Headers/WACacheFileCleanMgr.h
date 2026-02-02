@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject, NSString, WAFileSpaceTraceLogic;
 @protocol OS_dispatch_queue;
 
-@interface WACacheFileCleanMgr
+@interface WACacheFileCleanMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_workQueue;
     WAFileSpaceTraceLogic *_fileTraceLogic;

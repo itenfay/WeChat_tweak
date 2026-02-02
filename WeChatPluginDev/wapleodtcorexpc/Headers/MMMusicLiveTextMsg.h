@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMusicLiveTextMsg
+@interface MMMusicLiveTextMsg : NSObject
 {
     NSString *_text;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CADisplayLink, EmoticonPreviewWindowViewController, EmoticonRecommendBoardCgi, EmoticonSearchBoardView, EmoticonSearchInMessagePanelReporter, NSArray, NSString, UICollectionViewFlowLayout, UITableView;
 @protocol EmoticonSearchHalfScreenViewControllerDelegate;
 
-@interface EmoticonSearchHalfScreenViewController
+@interface EmoticonSearchHalfScreenViewController : NSObject
 {
     _Bool _disableWebSearch;
     _Bool _hasAddObserver;

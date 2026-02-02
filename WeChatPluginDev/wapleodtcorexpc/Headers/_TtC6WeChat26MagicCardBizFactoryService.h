@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26MagicCardBizFactoryService
+@interface _TtC6WeChat26MagicCardBizFactoryService : NSObject
 {
     MISSING_TYPE *TAG;
 }

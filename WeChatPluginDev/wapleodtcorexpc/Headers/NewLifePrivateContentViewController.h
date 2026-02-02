@@ -5,7 +5,7 @@
 
 @class MMUIScrollView, NSString, UIButton, UIImageView, UILabel;
 
-@interface NewLifePrivateContentViewController
+@interface NewLifePrivateContentViewController : NSObject
 {
     NSString *_message;
     MMUIScrollView *_backgroundView;

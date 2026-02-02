@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WAJSEventHandler_navigateTo
+@interface WAJSEventHandler_navigateTo : NSObject
 {
     NSDictionary *_singlePageData;
 }

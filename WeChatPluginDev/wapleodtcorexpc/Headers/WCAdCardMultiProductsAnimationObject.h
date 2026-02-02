@@ -5,7 +5,7 @@
 
 @class CAMediaTimingFunction, NSNumber, NSValue, UIView;
 
-@interface WCAdCardMultiProductsAnimationObject
+@interface WCAdCardMultiProductsAnimationObject : NSObject
 {
     UIView *_relatedView;
     double _duration;

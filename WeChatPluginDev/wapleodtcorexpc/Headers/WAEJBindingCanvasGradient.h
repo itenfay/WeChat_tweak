@@ -5,7 +5,7 @@
 
 @class WAEJCanvasGradient;
 
-@interface WAEJBindingCanvasGradient
+@interface WAEJBindingCanvasGradient : NSObject
 {
     WAEJCanvasGradient *gradient;
 }

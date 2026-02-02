@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MusicRingToneSubDetail
+@interface MusicRingToneSubDetail : NSObject
 {
     unsigned int _sid;
     NSString *_cover;

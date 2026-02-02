@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAcceptAgreementCommonHeadView, MMTableView, MMTableViewInfo, MMUILabel, MMUITextField, UIButton;
 
-@interface SettingModifyEmailOnEditViewController
+@interface SettingModifyEmailOnEditViewController : NSObject
 {
     double m_fKeyboardHeight;
     _Bool _hadVerifyEmail;

@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_jumpWCPayCardListLogic
+@interface WebviewJSEventHandler_jumpWCPayCardListLogic : NSObject
 {
     JSEvent *_m_jsEvent;
 }

@@ -6,7 +6,7 @@
 @class EmoticonBoardView, ImageSelectorController, MMGrowTextView, MMUIButton, MMUILabel, NSString, RichTextView, SightDraft, UIButton, UIImageView, UILabel, UIView, WCDragableSelectorView, WCFinderDataItem, WCFinderDynamicRichTextView, WCFinderHeadImageView, WCFinderMaskButton, WCInputController, WCTableViewManager;
 @protocol WCFinderMemberShipDiscussionPostViewControllerDelegate;
 
-@interface WCFinderMemberShipDiscussionPostViewController
+@interface WCFinderMemberShipDiscussionPostViewController : NSObject
 {
     _Bool _isAuthor;
     WCTableViewManager *_tableViewManager;

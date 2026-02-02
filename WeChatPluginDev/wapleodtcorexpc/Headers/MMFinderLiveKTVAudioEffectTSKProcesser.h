@@ -5,7 +5,7 @@
 
 @class TSKEffectGraph;
 
-@interface MMFinderLiveKTVAudioEffectTSKProcesser
+@interface MMFinderLiveKTVAudioEffectTSKProcesser : NSObject
 {
     TSKEffectGraph *_graph;
 }

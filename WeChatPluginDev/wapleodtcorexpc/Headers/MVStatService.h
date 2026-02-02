@@ -5,7 +5,7 @@
 
 @class MVStat22259, NSString;
 
-@interface MVStatService
+@interface MVStatService : NSObject
 {
     _Bool _needRefreshSameSongSessionidAfterMusicStop;
     NSString *_sessionId;

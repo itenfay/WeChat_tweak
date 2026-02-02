@@ -6,7 +6,7 @@
 @class NSString, OpenMinimchGuide, UIView;
 @protocol WCPayTransferOpenMiniGuidePageSheetDelegate;
 
-@interface WCPayTransferOpenMiniGuidePageSheet
+@interface WCPayTransferOpenMiniGuidePageSheet : NSObject
 {
     id <WCPayTransferOpenMiniGuidePageSheetDelegate> _m_delegate;
     UIView *_tipsContainerView;

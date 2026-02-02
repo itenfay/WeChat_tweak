@@ -6,7 +6,7 @@
 @class EditImageBorderView, EditImageModView, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer;
 @protocol EditImageWidgetToolDelegate;
 
-@interface EditImageWidgetTool
+@interface EditImageWidgetTool : NSObject
 {
     _Bool _activeTouches;
     unsigned int _gestureMonitor;

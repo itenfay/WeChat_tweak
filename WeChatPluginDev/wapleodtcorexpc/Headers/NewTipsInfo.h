@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString, TipsReportInfo;
 
-@interface NewTipsInfo
+@interface NewTipsInfo : NSObject
 {
     _Bool _disposed;
     _Bool _hadBeginShow;

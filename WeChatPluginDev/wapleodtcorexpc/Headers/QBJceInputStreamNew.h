@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface QBJceInputStreamNew
+@interface QBJceInputStreamNew : NSObject
 {
     int _headType;
     int _headTag;

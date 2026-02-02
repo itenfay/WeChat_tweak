@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface AppGiftCardMessageViewModel
+@interface AppGiftCardMessageViewModel : NSObject
 {
     double m_titleHeight;
     double m_detailHeight;

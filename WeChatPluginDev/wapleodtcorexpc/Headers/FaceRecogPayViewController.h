@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FaceRecogPayViewController
+@interface FaceRecogPayViewController : NSObject
 {
     _Bool _canRetry;
     NSString *_errorMsg;

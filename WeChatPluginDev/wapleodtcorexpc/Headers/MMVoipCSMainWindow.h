@@ -6,7 +6,7 @@
 @class UIImageView;
 @protocol MMVoipCSMainWindowDelegate;
 
-@interface MMVoipCSMainWindow
+@interface MMVoipCSMainWindow : NSObject
 {
     _Bool _m_hasStartQuitAnimation;
     id <MMVoipCSMainWindowDelegate> m_mainWindowDelegate;

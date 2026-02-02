@@ -5,7 +5,7 @@
 
 @class NSString, NewLifeEditImageLogicController;
 
-@interface NewLifeLaunchEditPageActionHandler
+@interface NewLifeLaunchEditPageActionHandler : NSObject
 {
     NewLifeEditImageLogicController *_editImageLogicController;
 }

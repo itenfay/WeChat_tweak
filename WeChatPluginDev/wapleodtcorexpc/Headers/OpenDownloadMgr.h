@@ -5,7 +5,7 @@
 
 @class EmoticonHybridDownloadProxy, NSMutableArray, NSString, OpenInfo;
 
-@interface OpenDownloadMgr
+@interface OpenDownloadMgr : NSObject
 {
     NSMutableArray *m_queDownload;
     unsigned int m_uiCurEventID;

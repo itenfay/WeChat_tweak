@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCBizInfoGroup, WCPayCredTypeItem, WCPayTenpaySecureCtrlItem;
 @protocol WCPayFillCredInfoViewControllerDelegate;
 
-@interface WCPayFillCredInfoViewController
+@interface WCPayFillCredInfoViewController : NSObject
 {
     id <WCPayFillCredInfoViewControllerDelegate> _delegate;
     double _minItemLeft;

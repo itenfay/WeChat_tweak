@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLoadingView, MMTableViewInfo, NSArray, WCDBRouterInfo;
 
-@interface WCDBRecoverViewController
+@interface WCDBRecoverViewController : NSObject
 {
     MMLoadingView *m_loadingView;
     _Bool m_isRecovering;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPluginVersionInfo
+@interface WAPluginVersionInfo : NSObject
 {
     NSString *_appId;
     unsigned long long _version;

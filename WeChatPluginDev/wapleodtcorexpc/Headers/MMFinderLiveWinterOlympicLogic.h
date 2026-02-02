@@ -6,7 +6,7 @@
 @class MMFinderLiveActivityTask, MMFinderLiveActivityTaskId;
 @protocol MMFinderLiveWinterOlympicLogicDelegate;
 
-@interface MMFinderLiveWinterOlympicLogic
+@interface MMFinderLiveWinterOlympicLogic : NSObject
 {
     _Bool _hasInitTorch;
     id <MMFinderLiveWinterOlympicLogicDelegate> _liveLogicDelegate;

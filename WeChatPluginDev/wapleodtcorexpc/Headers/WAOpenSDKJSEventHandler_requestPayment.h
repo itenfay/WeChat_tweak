@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAOpenSDKJSEventHandler_requestPayment
+@interface WAOpenSDKJSEventHandler_requestPayment : NSObject
 {
     NSMutableDictionary *_dic;
 }

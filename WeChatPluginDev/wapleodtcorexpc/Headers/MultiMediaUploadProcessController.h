@@ -6,7 +6,7 @@
 @class CMessageWrap, NSMutableArray, NSString, UploadStateProcessor;
 @protocol MultiMediaUploadProcessControllerDelegate;
 
-@interface MultiMediaUploadProcessController
+@interface MultiMediaUploadProcessController : NSObject
 {
     _Bool _bJustUploadDataWithoutMD5Hit;
     _Bool _isStopped;

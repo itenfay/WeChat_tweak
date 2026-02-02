@@ -6,7 +6,7 @@
 @class NSString;
 @protocol TextStateBaseMediaViewDelegate;
 
-@interface TextStateListenMediaView
+@interface TextStateListenMediaView : NSObject
 {
     NSString *_textStateId;
     double _startPlayTime;

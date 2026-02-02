@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SightAssetExportSession;
 
-@interface MMVideoHWEncodeTask
+@interface MMVideoHWEncodeTask : NSObject
 {
     SightAssetExportSession *_hwExportSession;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WANavigateLogicController;
 
-@interface WAJSEventHandler_openMapApp
+@interface WAJSEventHandler_openMapApp : NSObject
 {
     WANavigateLogicController *_navLogic;
 }

@@ -5,7 +5,7 @@
 
 @protocol WCCoinGetWecoinPageInfoCgiDelegate;
 
-@interface WCCoinGetWecoinPageInfoCgi
+@interface WCCoinGetWecoinPageInfoCgi : NSObject
 {
     id <WCCoinGetWecoinPageInfoCgiDelegate> _delegate;
 }

@@ -5,7 +5,7 @@
 
 @class AttributedReaderMessageViewModel, CTRichTextView, MMBrandHeadImageView, MMUIButton, MMUIImageView, MMWebImageView, UIImageView, UIView;
 
-@interface AttributedReaderMessageCellView
+@interface AttributedReaderMessageCellView : NSObject
 {
     UIView *m_lineViewTop;
     UIView *m_lineViewBot;

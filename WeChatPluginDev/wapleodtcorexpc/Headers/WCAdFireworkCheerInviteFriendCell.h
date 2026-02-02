@@ -6,7 +6,7 @@
 @class NSString, WCAdFireworkCheerInviteFriendView, WCDataItem;
 @protocol WCAdFireworkCheerInviteFriendCellDelegate;
 
-@interface WCAdFireworkCheerInviteFriendCell
+@interface WCAdFireworkCheerInviteFriendCell : NSObject
 {
     id <WCAdFireworkCheerInviteFriendCellDelegate> _delegate;
     WCDataItem *_dataItem;

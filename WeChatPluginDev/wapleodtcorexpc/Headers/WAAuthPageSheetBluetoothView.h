@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface WAAuthPageSheetBluetoothView
+@interface WAAuthPageSheetBluetoothView : NSObject
 {
     UIButton *_allowDuringUsageBtn;
     UIButton *_alwaysAllowBtn;

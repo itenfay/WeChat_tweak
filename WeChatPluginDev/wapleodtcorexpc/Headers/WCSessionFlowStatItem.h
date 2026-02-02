@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionFlowStatItem
+@interface WCSessionFlowStatItem : NSObject
 {
     _Bool _isReport;
     unsigned int _pId;

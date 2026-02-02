@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UILabel, UIScrollView;
 @protocol MMFinderLiveSwitchStreamGuidePanelDelegate;
 
-@interface MMFinderLiveSwitchStreamGuidePanel
+@interface MMFinderLiveSwitchStreamGuidePanel : NSObject
 {
     id <MMFinderLiveSwitchStreamGuidePanelDelegate> _actionDelegate;
     UIScrollView *_scrollContainerView;

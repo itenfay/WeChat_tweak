@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAsset, NSString, VideoCompositionAttr;
 
-@interface EmoticonCustomCreatePreProcessTask
+@interface EmoticonCustomCreatePreProcessTask : NSObject
 {
     CDUnknownBlockType _cropStartBlock;
     CDUnknownBlockType _cropSucBlock;

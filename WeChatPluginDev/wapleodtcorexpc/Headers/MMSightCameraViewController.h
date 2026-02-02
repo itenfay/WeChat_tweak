@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderVideoTemplateInfo, MMShortVideoParamModel, NSMutableArray, NSString, RecommendedMusicInfo, ShortVideoToolbar;
 @protocol MMSightCameraViewControllerDelegate;
 
-@interface MMSightCameraViewController
+@interface MMSightCameraViewController : NSObject
 {
     _Bool _needMaasEffect;
     _Bool _isLandscapeEnabled;

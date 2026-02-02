@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavReferMsgItem
+@interface FavReferMsgItem : NSObject
 {
     unsigned int _type;
     long long _svrId;

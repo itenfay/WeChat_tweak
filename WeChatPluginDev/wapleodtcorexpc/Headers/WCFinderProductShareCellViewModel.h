@@ -5,7 +5,7 @@
 
 @class AnyPromise, NSDate, NSString, WCFinderLiveProductShareItem, WCFinderProductShareViewBuilder;
 
-@interface WCFinderProductShareCellViewModel
+@interface WCFinderProductShareCellViewModel : NSObject
 {
     WCFinderProductShareViewBuilder *_builder;
     NSString *_livingFinderUsername;

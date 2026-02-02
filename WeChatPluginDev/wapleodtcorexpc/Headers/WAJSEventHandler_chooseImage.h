@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_chooseImage
+@interface WAJSEventHandler_chooseImage : NSObject
 {
     unsigned int m_imgCnt;
     long long m_sizeType;

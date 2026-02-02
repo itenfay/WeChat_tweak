@@ -5,7 +5,7 @@
 
 @class FavAudioRecorder, MMTimer, NSHashTable, NSString, WCRedEnvAudioTransLogic;
 
-@interface WCRedEnvAudioResMgr
+@interface WCRedEnvAudioResMgr : NSObject
 {
     _Bool _isStopHandled;
     _Bool _enableTransText;

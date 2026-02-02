@@ -6,7 +6,7 @@
 @class CAShapeLayer, FaceRecogResultView, FaceRecogRoundView, MMUILabel, NSString, UIColor, UIFont, UIView;
 @protocol FaceRecogBaseViewDelegate;
 
-@interface FaceRecogFlashView
+@interface FaceRecogFlashView : NSObject
 {
     _Bool _closeButtonStrongStyle;
     _Bool _showFacePositionBox;

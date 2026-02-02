@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ShakeMsgItem
+@interface ShakeMsgItem : NSObject
 {
     _Bool _bIsRead;
     unsigned int _uiType;

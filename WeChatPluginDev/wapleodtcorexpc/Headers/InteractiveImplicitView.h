@@ -6,7 +6,7 @@
 @class UIImpactFeedbackGenerator, UITapGestureRecognizer;
 @protocol InteractiveImplicitViewDelegate;
 
-@interface InteractiveImplicitView
+@interface InteractiveImplicitView : NSObject
 {
     double _shakeDistanceBetween;
     UITapGestureRecognizer *_tapGesture;

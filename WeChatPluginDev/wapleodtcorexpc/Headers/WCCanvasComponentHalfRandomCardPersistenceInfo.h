@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCCanvasComponentHalfRandomCardPersistenceInfo
+@interface WCCanvasComponentHalfRandomCardPersistenceInfo : NSObject
 {
     NSMutableDictionary *_subCardInfos;
 }

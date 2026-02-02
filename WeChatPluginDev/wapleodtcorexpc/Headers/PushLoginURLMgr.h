@@ -5,7 +5,7 @@
 
 @class GetA8KeyLogic, NSString;
 
-@interface PushLoginURLMgr
+@interface PushLoginURLMgr : NSObject
 {
     GetA8KeyLogic *_getA8KeyLogic;
 }

@@ -5,7 +5,7 @@
 
 @class FaceRecogPrivateVerifyHandler, NSString;
 
-@interface WAJSEventHandler_baseFacialRecognition
+@interface WAJSEventHandler_baseFacialRecognition : NSObject
 {
     FaceRecogPrivateVerifyHandler *_handler;
 }

@@ -5,7 +5,7 @@
 
 @class TPDynamicStatisticParams, TPGeneralPlayFlowParams;
 
-@interface TPPlayerPlayErrorEventInfo
+@interface TPPlayerPlayErrorEventInfo : NSObject
 {
     long long _errorType;
     long long _errorCode;

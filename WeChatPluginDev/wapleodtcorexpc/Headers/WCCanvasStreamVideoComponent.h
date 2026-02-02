@@ -5,7 +5,7 @@
 
 @class MMProgressViewEx, MMUILabel, NSString, UIButton, UIImageView, UIView, WCNetworkMediaCore, WCNetworkMediaSlider;
 
-@interface WCCanvasStreamVideoComponent
+@interface WCCanvasStreamVideoComponent : NSObject
 {
     _Bool _streamVideoThumbReady;
     _Bool _isFirstInit;

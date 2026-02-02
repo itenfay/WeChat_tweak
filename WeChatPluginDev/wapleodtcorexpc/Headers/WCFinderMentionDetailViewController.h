@@ -6,7 +6,7 @@
 @class NSString, UIViewController, WCFinderCommentDetailViewController, WCFinderCreateCoordinator, WCFinderFeedListView, WCFinderMentionDetailVCParams, WCFinderShareCustomTransition, WCFinderShareListReportModel;
 @protocol WCFinderCommentBaseViewProtocol;
 
-@interface WCFinderMentionDetailViewController
+@interface WCFinderMentionDetailViewController : NSObject
 {
     _Bool _showFromSystemMsg;
     _Bool _supportMinimize;

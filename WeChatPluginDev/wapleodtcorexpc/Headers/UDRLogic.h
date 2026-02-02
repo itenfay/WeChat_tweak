@@ -6,7 +6,7 @@
 @class MMIlinkCheckResourceMgr, NSMutableDictionary, NSObject, NSString, UDRResourceDBMgr;
 @protocol OS_dispatch_queue;
 
-@interface UDRLogic
+@interface UDRLogic : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_paramsMap;

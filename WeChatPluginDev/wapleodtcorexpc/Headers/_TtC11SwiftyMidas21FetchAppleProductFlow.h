@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas21FetchAppleProductFlow
+@interface _TtC11SwiftyMidas21FetchAppleProductFlow : NSObject
 {
     MISSING_TYPE *logPrefix;
 }

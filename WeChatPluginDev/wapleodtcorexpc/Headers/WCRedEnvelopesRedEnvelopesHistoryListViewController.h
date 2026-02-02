@@ -6,7 +6,7 @@
 @class MMTableView, NSString, WCPayPickerView;
 @protocol WCRedEnvelopesRedEnvelopesHistoryListViewControllerDelegate;
 
-@interface WCRedEnvelopesRedEnvelopesHistoryListViewController
+@interface WCRedEnvelopesRedEnvelopesHistoryListViewController : NSObject
 {
     id <WCRedEnvelopesRedEnvelopesHistoryListViewControllerDelegate> m_delegate;
     _Bool m_loadingMoreOrderList;

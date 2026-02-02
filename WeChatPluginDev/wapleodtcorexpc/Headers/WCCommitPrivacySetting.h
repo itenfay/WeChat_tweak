@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCommitPrivacySetting
+@interface WCCommitPrivacySetting : NSObject
 {
     _Bool _isDynamicTagEnabled;
     long long _privacy;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMNormalTipsViewCloseButtonConfig, MMUIButton, MMUILabel, NSAttributedString, NSString, UIColor, UIImageView;
 
-@interface MMNormalTipsView
+@interface MMNormalTipsView : NSObject
 {
     _Bool _showCloseButton;
     _Bool _showArrowImage;

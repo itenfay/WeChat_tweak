@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, _TtC6WeChat3HAR;
 
-@interface GCRequestRecordService
+@interface GCRequestRecordService : NSObject
 {
     _TtC6WeChat3HAR *_harObject;
     NSMutableDictionary *_requestModelDict;

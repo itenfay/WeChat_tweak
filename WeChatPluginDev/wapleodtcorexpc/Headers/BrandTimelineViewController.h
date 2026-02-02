@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BTBaseItemCellView, BTFeedbackPanel, BTLNavigationBarButton, BTRecoFlowLogic, BTScrollableFinderCellViewModel, BTVideoViewModelInfo, BrandMsgValidExposeConfig, BrandTLExptConfig, BrandTLTableView, BrandTimelineNotifyLogic, BrandTimelineRelatedInfoLogic, BrandTimelineReportLogic, BrandTimelineResortLogic, CMessageWrap, MMBadgeView, MMTimer, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TableViewCellExposureHelper, UIView, WCTimeLineFooterView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl;
 @protocol BTItemCellViewModelVideoPlayProtocol, WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
-@interface BrandTimelineViewController
+@interface BrandTimelineViewController : NSObject
 {
     _Bool isShowRedDotInMainFrameSession;
     _Bool _isLoadingData;

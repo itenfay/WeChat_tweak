@@ -6,7 +6,7 @@
 @class ContactsViewController, FindFriendEntryViewController, MMTabbarItem, MoreViewController, NSMutableArray, NSString, NewMainFrameViewController;
 @protocol MainTabBarControllerDelegate;
 
-@interface MainTabBarViewController
+@interface MainTabBarViewController : NSObject
 {
     unsigned int m_whatHasInit;
     NewMainFrameViewController *m_mainFrameViewController;

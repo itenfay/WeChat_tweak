@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAMainListReporter
+@interface WAMainListReporter : NSObject
 {
     long long _opType;
     long long _iconType;

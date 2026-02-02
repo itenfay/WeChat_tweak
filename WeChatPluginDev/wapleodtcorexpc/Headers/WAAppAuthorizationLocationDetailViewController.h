@@ -6,7 +6,7 @@
 @class LocationRetriever, MMLocatingCoordinateLogic, NSString, WAAppAuthorizationDetailViewModel;
 @protocol WAAppAuthorizationDetailViewControllerDelegate;
 
-@interface WAAppAuthorizationLocationDetailViewController
+@interface WAAppAuthorizationLocationDetailViewController : NSObject
 {
     id <WAAppAuthorizationDetailViewControllerDelegate> _delegate;
     WAAppAuthorizationDetailViewModel *_viewModel;

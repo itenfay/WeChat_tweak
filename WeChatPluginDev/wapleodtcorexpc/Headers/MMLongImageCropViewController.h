@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, MMImageCropTransitionContext, MMLongImageCropResult, MMLongImageCropSliderBarView, MMLongImageCropTipsView, MMUIButton, NSString, UIImage, UIImageView, UIScrollView, UIView;
 @protocol MMLongImageCropViewControllerDelelgate;
 
-@interface MMLongImageCropViewController
+@interface MMLongImageCropViewController : NSObject
 {
     _Bool _hasSetupOriginCropResult;
     _Bool _isTopCropTracking;

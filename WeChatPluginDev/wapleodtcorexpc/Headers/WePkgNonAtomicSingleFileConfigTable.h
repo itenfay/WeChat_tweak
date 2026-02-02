@@ -5,7 +5,7 @@
 
 @class NSString, WePkgNonAtomicSingleFileConfigExt;
 
-@interface WePkgNonAtomicSingleFileConfigTable
+@interface WePkgNonAtomicSingleFileConfigTable : NSObject
 {
     unsigned int _pkgType;
     NSString *_pkgId;

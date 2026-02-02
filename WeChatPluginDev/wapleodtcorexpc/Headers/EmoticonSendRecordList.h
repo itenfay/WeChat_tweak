@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface EmoticonSendRecordList
+@interface EmoticonSendRecordList : NSObject
 {
     NSMutableArray *_md5List;
 }

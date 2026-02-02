@@ -5,7 +5,7 @@
 
 @class DelaySwitchSettingLogic, MMTableViewInfo;
 
-@interface SettingAddMeWayViewController
+@interface SettingAddMeWayViewController : NSObject
 {
     _Bool m_allowFindMeByPhoneSwitchOpen;
     _Bool m_allowFindMeByContactConfigSwitchOpen;

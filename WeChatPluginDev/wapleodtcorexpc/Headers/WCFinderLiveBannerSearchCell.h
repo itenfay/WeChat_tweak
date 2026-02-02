@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMRollableLabelView, MMRollableLabelViewConfig;
 
-@interface WCFinderLiveBannerSearchCell
+@interface WCFinderLiveBannerSearchCell : NSObject
 {
     MMRollableLabelView *_masterTitleTextView;
     MMRollableLabelView *_subTitleTextView;

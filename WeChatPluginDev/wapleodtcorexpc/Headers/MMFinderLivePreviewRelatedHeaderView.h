@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSString, WCFinderContact, WCFinderHeadImageView;
 
-@interface MMFinderLivePreviewRelatedHeaderView
+@interface MMFinderLivePreviewRelatedHeaderView : NSObject
 {
     _Bool _hasRegisteredKeyExtensions;
     WCFinderHeadImageView *_anchorHeadImageView;

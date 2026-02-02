@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMEasterEggNativeWeAppActivityInfo
+@interface MMEasterEggNativeWeAppActivityInfo : NSObject
 {
     NSString *_weAppUsername;
 }

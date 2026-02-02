@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface QDirectionalLight
+@interface QDirectionalLight : NSObject
 {
     union _GLKVector3 _direction;
 }

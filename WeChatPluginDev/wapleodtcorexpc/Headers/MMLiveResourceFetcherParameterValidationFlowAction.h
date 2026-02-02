@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveResourceFetcherParameterValidationFlowAction
+@interface MMLiveResourceFetcherParameterValidationFlowAction : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class CContact, MMCommonActionSheetPicker, NSArray, NSMutableArray, NSString, UIBarButtonItem, UIButton, UIColor, WCCoverActionReporter, WCMomentsPageContext, WCTimeLineFooterView, WCTogetherHistoryReportSession;
 @protocol WCListViewProtocol;
 
-@interface WCListViewController
+@interface WCListViewController : NSObject
 {
     _Bool m_isMyWC;
     NSMutableArray *m_arrPhotoDatas;

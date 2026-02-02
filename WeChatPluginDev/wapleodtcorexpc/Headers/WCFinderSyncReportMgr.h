@@ -5,7 +5,7 @@
 
 @class EntranceExposeContent_ExposeRecord, NSString;
 
-@interface WCFinderSyncReportMgr
+@interface WCFinderSyncReportMgr : NSObject
 {
     unsigned int _lastEnterMomentsTs;
     unsigned int _lastEnterFinderTs;

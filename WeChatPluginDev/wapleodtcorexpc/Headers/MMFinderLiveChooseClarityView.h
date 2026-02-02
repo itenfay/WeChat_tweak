@@ -6,7 +6,7 @@
 @class CAShapeLayer, MMFinderLiveChooseClarityTableViewModel, MMFinderLiveChooseClarityViewNavBar, MMTableView, NSString, UIView;
 @protocol MMFinderLiveChooseClarityDelegate;
 
-@interface MMFinderLiveChooseClarityView
+@interface MMFinderLiveChooseClarityView : NSObject
 {
     MMFinderLiveChooseClarityTableViewModel *_clarityMethodTableViewModel;
     unsigned long long _fromScene;

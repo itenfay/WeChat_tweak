@@ -5,7 +5,7 @@
 
 @class JSEvent, VoicePrintVerifyLogic;
 
-@interface WebviewJSEventHandler_requestWxVoicePrintVerifyInternal
+@interface WebviewJSEventHandler_requestWxVoicePrintVerifyInternal : NSObject
 {
     JSEvent *_cbEvent;
     VoicePrintVerifyLogic *_voicePrintVerifyLogic;

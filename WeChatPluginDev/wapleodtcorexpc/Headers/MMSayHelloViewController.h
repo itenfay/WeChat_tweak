@@ -6,7 +6,7 @@
 @class CContact, NSString, UITextField;
 @protocol MMSayHelloViewControllerDelegate;
 
-@interface MMSayHelloViewController
+@interface MMSayHelloViewController : NSObject
 {
     UITextField *m_sayHelloTextView;
     NSString *m_helloContent;

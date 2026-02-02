@@ -6,7 +6,7 @@
 @class NSString, WCPayLQTMoneyControlLogic, WCPayPayMoneyLogic;
 @protocol WCPayBalanceSaveMoneyControlLogicDelegate;
 
-@interface WCPayBalanceSaveMoneyControlLogic
+@interface WCPayBalanceSaveMoneyControlLogic : NSObject
 {
     WCPayPayMoneyLogic *m_payLogic;
     _Bool _bIsFromSaveViewControllerBindQuery;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSOperation, NSString, NSThread, WAEJTexture;
 
-@interface WAEJBindingImage
+@interface WAEJBindingImage : NSObject
 {
     WAEJTexture *texture;
     NSString *path;

@@ -5,7 +5,7 @@
 
 @class NSString, TingItem, TingSharePlayButton, UIView;
 
-@interface WCListMusicCellViewNew
+@interface WCListMusicCellViewNew : NSObject
 {
     UIView *m_tailView;
     TingItem *_tingItem;

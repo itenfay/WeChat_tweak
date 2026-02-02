@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCGetBankListCgiDelegate;
 
-@interface WCPayT2BCGetBankListCgi
+@interface WCPayT2BCGetBankListCgi : NSObject
 {
     id <WCPayT2BCGetBankListCgiDelegate> m_delegate;
 }

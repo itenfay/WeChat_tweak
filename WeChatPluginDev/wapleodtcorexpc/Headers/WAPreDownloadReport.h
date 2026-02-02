@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPreDownloadReport
+@interface WAPreDownloadReport : NSObject
 {
     NSString *_appID;
     unsigned long long _appVersion;

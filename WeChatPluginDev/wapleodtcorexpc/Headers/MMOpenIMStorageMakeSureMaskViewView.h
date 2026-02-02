@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMOpenIMStorageMakeSureMaskViewView
+@interface MMOpenIMStorageMakeSureMaskViewView : NSObject
 {
     NSArray *_arrButton;
 }

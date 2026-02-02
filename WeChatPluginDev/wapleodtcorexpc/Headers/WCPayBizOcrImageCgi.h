@@ -5,7 +5,7 @@
 
 @protocol WCPayBizOcrImageCgiDelegate;
 
-@interface WCPayBizOcrImageCgi
+@interface WCPayBizOcrImageCgi : NSObject
 {
     id <WCPayBizOcrImageCgiDelegate> _m_delegate;
 }

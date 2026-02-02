@@ -5,7 +5,7 @@
 
 @class SendAppMessageBaseImpl;
 
-@interface WebviewJSEventHandler_sendAppMessagePrivate
+@interface WebviewJSEventHandler_sendAppMessagePrivate : NSObject
 {
     SendAppMessageBaseImpl *_sendMessageImpl;
 }

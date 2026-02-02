@@ -5,7 +5,7 @@
 
 @class MMLiteAppHalfScreenViewController;
 
-@interface MMLiteAppHalfScreenView
+@interface MMLiteAppHalfScreenView : NSObject
 {
     _Bool _enablePullUp;
     _Bool _enablePullDown;

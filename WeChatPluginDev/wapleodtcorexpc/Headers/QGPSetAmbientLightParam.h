@@ -6,7 +6,7 @@
 @class NSNumber, QGPColor;
 @protocol QTCOptional;
 
-@interface QGPSetAmbientLightParam
+@interface QGPSetAmbientLightParam : NSObject
 {
     QGPColor<QTCOptional> *_color;
     NSNumber<QTCOptional> *_intensity;

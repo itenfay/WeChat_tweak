@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, UIView;
 
-@interface PersonalInformationDeviceViewController
+@interface PersonalInformationDeviceViewController : NSObject
 {
     UIView *_contentHeaderView;
     MMTableViewInfo *_tableViewInfo;

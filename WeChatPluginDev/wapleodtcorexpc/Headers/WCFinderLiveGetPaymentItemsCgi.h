@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveGetPaymentItemsCgi
+@interface WCFinderLiveGetPaymentItemsCgi : NSObject
 {
     NSString *_eventTitle;
     NSString *_eventDescription;

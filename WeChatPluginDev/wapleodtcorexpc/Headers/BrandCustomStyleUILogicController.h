@@ -5,7 +5,7 @@
 
 @class BrandOpenSpecificViewHandler, ClickCommandRequestInfo, CustomMenuToolView, CustomSubMenuFloatView, MMBizMenuInfo, NSMutableArray, NSString;
 
-@interface BrandCustomStyleUILogicController
+@interface BrandCustomStyleUILogicController : NSObject
 {
     CustomMenuToolView *m_menuToolView;
     CustomSubMenuFloatView *m_subMenuFloatView;

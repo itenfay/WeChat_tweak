@@ -6,7 +6,7 @@
 @class MJTemplateCompositeTask, MJTemplateFullScreenControlView, MJTemplateFullScreenViewControllerParams, NSString, UIImageView, WCMomentsPlayerViewContainer, WCMomentsScrollActionSheet, WXFullScreenGestureRecognizer;
 @protocol MJTemplateFullScreenViewControllerDelegate, MJTemplateFullScreenViewControllerPostDelegate;
 
-@interface MJTemplateFullScreenViewController
+@interface MJTemplateFullScreenViewController : NSObject
 {
     _Bool m_isPresented;
     id <MJTemplateFullScreenViewControllerDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMWebImageView, NSMutableArray, UIButton, UILabel;
 
-@interface BTRecoFlowTopicHeaderCell
+@interface BTRecoFlowTopicHeaderCell : NSObject
 {
     UIButton *_aggregationLabel;
     MMUIButton *_xButton;

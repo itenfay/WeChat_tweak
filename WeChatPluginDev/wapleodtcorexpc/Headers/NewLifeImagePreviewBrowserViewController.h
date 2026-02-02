@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MultiImageScrollView, NSMutableArray, NSMutableSet, NSString, UIImageView, UIPageControl;
 
-@interface NewLifeImagePreviewBrowserViewController
+@interface NewLifeImagePreviewBrowserViewController : NSObject
 {
     _Bool _isZoomingFromText;
     long long _previewIndex;

@@ -6,7 +6,7 @@
 @class EmoticonBoardView, MMGrowTextView, NSString, UIButton, UIImage, UIImageView, UIView, WCInputController, WCPasteTextLengthLogic;
 @protocol ShareConfirmViewDelegate;
 
-@interface ShareConfirmView
+@interface ShareConfirmView : NSObject
 {
     UIImageView *_inputView;
     EmoticonBoardView *_emoticonBoardView;

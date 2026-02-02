@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel, UIView;
 
-@interface WAHomeMenuView
+@interface WAHomeMenuView : NSObject
 {
     MMWebImageView *_leftImageView;
     UILabel *_subTitleLabel;

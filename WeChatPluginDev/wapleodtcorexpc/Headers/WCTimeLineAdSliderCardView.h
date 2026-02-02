@@ -5,7 +5,7 @@
 
 @class NSString, WCAdSliderCardLogic, WCAdSliderCardOpeningAnimationView, WCAdSliderCardProductView, WCAdSliderCardView;
 
-@interface WCTimeLineAdSliderCardView
+@interface WCTimeLineAdSliderCardView : NSObject
 {
     WCAdSliderCardView *_sliderCard;
     WCAdSliderCardProductView *_productView;

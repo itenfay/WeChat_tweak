@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, UIImage;
 
-@interface MJThumbnailTileLayer
+@interface MJThumbnailTileLayer : NSObject
 {
     struct CGRect _separatorLineBounds;
     long long _taskID;

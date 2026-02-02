@@ -6,7 +6,7 @@
 @class CContact, NSMutableDictionary, SessionStat;
 @protocol BrandServiceEnterConversationLogicDelegate;
 
-@interface BrandServiceEnterConversationLogic
+@interface BrandServiceEnterConversationLogic : NSObject
 {
     CContact *m_contact;
     SessionStat *_sessionInfo;

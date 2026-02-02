@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo;
 
-@interface MMFinderReserveLiveNoticeTipsBubbleView
+@interface MMFinderReserveLiveNoticeTipsBubbleView : NSObject
 {
     CDUnknownBlockType _closeAction;
     CDUnknownBlockType _confirmAction;

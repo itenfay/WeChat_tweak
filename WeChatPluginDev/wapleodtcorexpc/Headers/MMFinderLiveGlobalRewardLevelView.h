@@ -6,7 +6,7 @@
 @class CAGradientLayer, CALayer, MMUIButton, MMUILabel, UIImageView;
 @protocol MMFinderLiveGlobalRewardLevelViewDelegate;
 
-@interface MMFinderLiveGlobalRewardLevelView
+@interface MMFinderLiveGlobalRewardLevelView : NSObject
 {
     _Bool _showEditButton;
     id <MMFinderLiveGlobalRewardLevelViewDelegate> _delegate;

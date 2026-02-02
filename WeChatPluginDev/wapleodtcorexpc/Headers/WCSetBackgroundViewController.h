@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableDictionary, NSString, WCBGStorage;
 
-@interface WCSetBackgroundViewController
+@interface WCSetBackgroundViewController : NSObject
 {
     MMTableView *m_tableView;
     WCBGStorage *m_backgroundData;

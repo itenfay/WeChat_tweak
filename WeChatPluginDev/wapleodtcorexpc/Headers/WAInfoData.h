@@ -5,7 +5,7 @@
 
 @class CommRequestSource, NSArray, NSString;
 
-@interface WAInfoData
+@interface WAInfoData : NSObject
 {
     _Bool _autoUpdateForPlugin;
     _Bool _semverSatisfied;

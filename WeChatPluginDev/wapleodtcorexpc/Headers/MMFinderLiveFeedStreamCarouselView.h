@@ -6,7 +6,7 @@
 @class FeedsPreviewLiveMultiStyleInfo_StyleSevenTeen, MMFinderLiveFeedStreamCarouselBaseItem, MMFinderLiveFeedStreamCarouselCell, NSMutableArray, NSString;
 @protocol MMFinderLiveFeedStreamCarouselItemProtocol, MMFinderLiveFeedStreamCarouselViewDelegate;
 
-@interface MMFinderLiveFeedStreamCarouselView
+@interface MMFinderLiveFeedStreamCarouselView : NSObject
 {
     _Bool _isCarouseling;
     _Bool _waitDataToCarousel;

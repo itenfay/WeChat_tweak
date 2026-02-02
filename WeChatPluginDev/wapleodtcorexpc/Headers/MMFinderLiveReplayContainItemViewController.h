@@ -5,7 +5,7 @@
 
 @class MMFinderLiveContentVM, MMFinderLiveReplayTask, MMFinderLiveReplayViewController;
 
-@interface MMFinderLiveReplayContainItemViewController
+@interface MMFinderLiveReplayContainItemViewController : NSObject
 {
     _Bool _isPreviewMuted;
     MMFinderLiveReplayViewController *_replayController;

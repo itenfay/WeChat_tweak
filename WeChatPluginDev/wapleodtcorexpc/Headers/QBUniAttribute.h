@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface QBUniAttribute
+@interface QBUniAttribute : NSObject
 {
     NSMutableDictionary *jcev2_p_0_r_uniAttributes__b0x9i_M09ONSStringM09ONSStringONSData;
 }

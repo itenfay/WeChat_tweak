@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdPullRecordItem
+@interface WCAdPullRecordItem : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int _localId;

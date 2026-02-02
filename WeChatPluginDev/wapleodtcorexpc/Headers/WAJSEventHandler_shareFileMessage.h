@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString;
 
-@interface WAJSEventHandler_shareFileMessage
+@interface WAJSEventHandler_shareFileMessage : NSObject
 {
     ForwardMessageLogicController *m_forwardMsgLogic;
 }

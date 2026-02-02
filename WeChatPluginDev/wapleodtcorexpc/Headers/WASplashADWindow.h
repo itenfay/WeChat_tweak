@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController, WAAppTansitionController, WASplashADViewController;
 
-@interface WASplashADWindow
+@interface WASplashADWindow : NSObject
 {
     WASplashADViewController *_adRootViewController;
     UIViewController *_firstScreenViewController;

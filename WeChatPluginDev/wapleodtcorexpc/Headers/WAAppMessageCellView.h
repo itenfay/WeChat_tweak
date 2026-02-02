@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UIImageView, UILabel, WAAppMessageViewModel;
 
-@interface WAAppMessageCellView
+@interface WAAppMessageCellView : NSObject
 {
     UILabel *_cardTitleLabel;
     MMWebImageView *_iconView;

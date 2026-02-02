@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASubscriptionMessagePageSheetMessageDetailItem
+@interface WASubscriptionMessagePageSheetMessageDetailItem : NSObject
 {
     NSString *_name;
     NSString *_value;

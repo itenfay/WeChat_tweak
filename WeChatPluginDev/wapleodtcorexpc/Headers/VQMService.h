@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VQMService
+@interface VQMService : NSObject
 {
 }
 

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class OMJMovieComposingSession;
 
-@interface MJMovieComposingSession
+@interface MJMovieComposingSession : NSObject
 {
     OMJMovieComposingSession *_movieComposingSession;
 }

@@ -6,7 +6,7 @@
 @class MMUIView, NSString, WCCardChoosePeopleLabelView, WCShareCardGeneralHeaderView, WCShareCardGeneralReceiveHeaderView;
 @protocol WCCardGeneralCardContentDelegate;
 
-@interface WCCardGeneralCardDetailContentView
+@interface WCCardGeneralCardDetailContentView : NSObject
 {
     _Bool _bIsShareCardMode;
     id <WCCardGeneralCardContentDelegate> _delegte;

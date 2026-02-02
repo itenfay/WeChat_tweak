@@ -5,7 +5,7 @@
 
 @class WCAdDynamicFeedElementPromotionInfo;
 
-@interface WCAdDynamicCountdownView
+@interface WCAdDynamicCountdownView : NSObject
 {
     WCAdDynamicFeedElementPromotionInfo *_styleInfo;
 }

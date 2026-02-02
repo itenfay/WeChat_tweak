@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMFinderLiveAccountInfo, MMUIButton, MMUILabel, MMWebImageView, UIButton, UILabel, UIView;
 
-@interface MMFinderLiveMessageAccountRemindPageSheet
+@interface MMFinderLiveMessageAccountRemindPageSheet : NSObject
 {
     _Bool _isContinue;
     UIView *_contentView;

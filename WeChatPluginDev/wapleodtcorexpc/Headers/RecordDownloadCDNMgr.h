@@ -5,7 +5,7 @@
 
 @class CMessageWrap, CdnRecordMediaInfo, NSMutableArray, NSString;
 
-@interface RecordDownloadCDNMgr
+@interface RecordDownloadCDNMgr : NSObject
 {
     CMessageWrap *m_curDownMsgWrap;
     CMessageWrap *m_waitDownMsgWrap;

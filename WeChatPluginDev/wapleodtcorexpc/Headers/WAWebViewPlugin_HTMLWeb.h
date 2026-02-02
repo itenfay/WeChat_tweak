@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSString, UIViewController;
 @protocol IWAHTMLWebVCHelper;
 
-@interface WAWebViewPlugin_HTMLWeb
+@interface WAWebViewPlugin_HTMLWeb : NSObject
 {
     NSMutableDictionary *_enableScrollDic;
     UIViewController<IWAHTMLWebVCHelper> *_htmlWebVC;

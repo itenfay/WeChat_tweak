@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface InteractionLabel
+@interface InteractionLabel : NSObject
 {
     UIColor *_normalBackgroundColor;
     UIColor *_highlightedBackgroundColor;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface StrangerContactMgr
+@interface StrangerContactMgr : NSObject
 {
     _Bool m_bMemCacheNeedReload;
     NSMutableDictionary *m_dicContacts;

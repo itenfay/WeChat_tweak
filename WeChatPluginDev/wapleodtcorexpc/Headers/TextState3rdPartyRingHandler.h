@@ -5,7 +5,7 @@
 
 @class RingToneDetail, StatusFooterJumpRingtone, UIViewController;
 
-@interface TextState3rdPartyRingHandler
+@interface TextState3rdPartyRingHandler : NSObject
 {
     StatusFooterJumpRingtone *_ring;
     RingToneDetail *_ringDetail;

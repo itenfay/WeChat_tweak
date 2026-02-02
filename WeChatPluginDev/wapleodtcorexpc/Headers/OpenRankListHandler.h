@@ -5,7 +5,7 @@
 
 @class MMUINavigationController, NSString, NSURL, OpenApiParameter;
 
-@interface OpenRankListHandler
+@interface OpenRankListHandler : NSObject
 {
     OpenApiParameter *_parameter;
     NSURL *_url;

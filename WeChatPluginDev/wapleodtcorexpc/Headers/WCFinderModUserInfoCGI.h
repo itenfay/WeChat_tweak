@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderModUserInfoParams;
 
-@interface WCFinderModUserInfoCGI
+@interface WCFinderModUserInfoCGI : NSObject
 {
     NSString *_username;
     WCFinderModUserInfoParams *_params;

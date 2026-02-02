@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface MainFrameHideSessionReporter
+@interface MainFrameHideSessionReporter : NSObject
 {
     NSString *_enterChatName;
     long long _enterScene;

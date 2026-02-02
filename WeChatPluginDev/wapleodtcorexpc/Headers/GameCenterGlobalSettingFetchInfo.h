@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterGlobalSettingFetchInfo
+@interface GameCenterGlobalSettingFetchInfo : NSObject
 {
     unsigned int _lastGlobalSettingFetchTime;
 }

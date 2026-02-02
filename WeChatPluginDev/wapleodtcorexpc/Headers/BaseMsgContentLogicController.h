@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AutoTranslateMsgController, AutoTranslateMsgControllerV2, BaseMsgContentViewController, BaseMsgLoaderLogic, CBaseContact, CContact, CContactVerifyLogic, CMessageWrap, ForwardMessageLogicController, ImageController, MMEasterEggController, MMLocatingPoiDataLogic, MMPickLocationViewController, MMUIViewController, MultiSelectController, MyFavoritesListViewController, NSArray, NSMutableDictionary, NSMutableSet, NSString, RecordController, SendVerifyMsgLogicController, ShareDataToOpenSDKController, ShareFriendOnChatLogicController, ShareMessageConfirmLogicHelper, TypingController, UINavigationController, UIViewController, UrlController, VoiceAutoTranslateHelper, WAAppIdToUsernameTransfer, WCScheduleLogicController, ilinkMultiSelectLogic;
 
-@interface BaseMsgContentLogicController
+@interface BaseMsgContentLogicController : NSObject
 {
     BaseMsgContentViewController *m_viewController;
     CBaseContact *m_contact;

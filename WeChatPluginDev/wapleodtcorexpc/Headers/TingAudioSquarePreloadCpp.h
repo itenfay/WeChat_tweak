@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingAudioSquarePreloadCpp
+@interface TingAudioSquarePreloadCpp : NSObject
 {
 }
 

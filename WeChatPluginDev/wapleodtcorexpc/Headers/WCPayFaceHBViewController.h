@@ -6,7 +6,7 @@
 @class UIView, WCPayFaceHBGetView, WCPayFaceHBPayView;
 @protocol WCPayFaceHBViewControllerDelegate;
 
-@interface WCPayFaceHBViewController
+@interface WCPayFaceHBViewController : NSObject
 {
     id <WCPayFaceHBViewControllerDelegate> m_delegate;
     UIView *_contentView;

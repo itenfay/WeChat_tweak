@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FinderChannelStartLiveHandler
+@interface FinderChannelStartLiveHandler : NSObject
 {
     NSString *_liveJsonInfo;
     NSString *_openId;

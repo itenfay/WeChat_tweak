@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SvrErrorInfo
+@interface SvrErrorInfo : NSObject
 {
     unsigned int _m_uiTime;
     unsigned int _m_uiStatus;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString, YTVideoRecorder;
 
-@interface ActionLivenessState
+@interface ActionLivenessState : NSObject
 {
     void *faceCheckLivePose;
     void * bestImgShape;

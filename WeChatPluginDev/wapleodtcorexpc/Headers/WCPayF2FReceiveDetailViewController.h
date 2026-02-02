@@ -6,7 +6,7 @@
 @class Announce, MMTableView, NSMutableArray, NSString, UIImageView, UISwitch, WCPayF2FReceiveDetailSummaryItem;
 @protocol WCPayF2FReceiveDetailViewControllerDelegate;
 
-@interface WCPayF2FReceiveDetailViewController
+@interface WCPayF2FReceiveDetailViewController : NSObject
 {
     double kRecordTableCellHeight;
     double kLeftMargin;

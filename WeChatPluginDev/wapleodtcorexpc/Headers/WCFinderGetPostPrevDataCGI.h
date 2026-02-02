@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetPostPrevDataCGI
+@interface WCFinderGetPostPrevDataCGI : NSObject
 {
     int _dataType;
     NSString *_finderUsername;

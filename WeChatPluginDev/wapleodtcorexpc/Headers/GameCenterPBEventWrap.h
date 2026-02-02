@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface GameCenterPBEventWrap
+@interface GameCenterPBEventWrap : NSObject
 {
     unsigned int _eventId;
     NSString *_svrpath;

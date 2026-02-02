@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChatP33_23C5565C68A6C86C92D10782EBF88B0813PriceTierView
+@interface _TtC6WeChatP33_23C5565C68A6C86C92D10782EBF88B0813PriceTierView : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_contentView;
     MISSING_TYPE *$__lazy_storage_$_title;

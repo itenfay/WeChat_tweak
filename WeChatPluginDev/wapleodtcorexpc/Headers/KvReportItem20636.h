@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem20636
+@interface KvReportItem20636 : NSObject
 {
     unsigned int _InsertRet_23;
     NSString *_AId_21;

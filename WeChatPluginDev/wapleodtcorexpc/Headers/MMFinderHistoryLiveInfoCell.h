@@ -6,7 +6,7 @@
 @class FinderHistoryLiveInfo, MMUIImageView, MMUILabel;
 @protocol MMFinderHistoryLiveInfoCellDelegate;
 
-@interface MMFinderHistoryLiveInfoCell
+@interface MMFinderHistoryLiveInfoCell : NSObject
 {
     _Bool _isSelfAnchor;
     MMUILabel *_liveTimeLabel;

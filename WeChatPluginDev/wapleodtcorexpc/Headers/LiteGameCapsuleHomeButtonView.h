@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteGameCapsuleHomeButtonView
+@interface LiteGameCapsuleHomeButtonView : NSObject
 {
     NSString *_appUserName;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
 
-@interface WCFinderLiveAnchorLogReporter
+@interface WCFinderLiveAnchorLogReporter : NSObject
 {
     unsigned long long m_shareScene;
     unsigned long long m_profileViewShowTime;

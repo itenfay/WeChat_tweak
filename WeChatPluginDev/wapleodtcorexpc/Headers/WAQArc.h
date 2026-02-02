@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface WAQArc
+@interface WAQArc : NSObject
 {
     long long _arcId;
     double _lineWidth;

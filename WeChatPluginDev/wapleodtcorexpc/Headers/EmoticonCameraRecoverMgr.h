@@ -5,7 +5,7 @@
 
 @class EmoticonRecoverLogicObject, NSMutableArray, NSString;
 
-@interface EmoticonCameraRecoverMgr
+@interface EmoticonCameraRecoverMgr : NSObject
 {
     _Bool _m_hasOnceStartRecover;
     _Bool _m_hasNotStartRecoverTaskInList;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingUserLifetimeExptConfigCpp
+@interface TingUserLifetimeExptConfigCpp : NSObject
 {
 }
 

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface WAPermissionMgr
+@interface WAPermissionMgr : NSObject
 {
     NSMutableDictionary *_reportInfos;
     NSMutableSet *_setParallelPrefetching;

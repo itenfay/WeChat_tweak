@@ -5,7 +5,7 @@
 
 @class AttributeLabel, FTSFeatureItem, MMBrandHeadImageView, SearchMatchTip;
 
-@interface FTSFeatureCell
+@interface FTSFeatureCell : NSObject
 {
     FTSFeatureItem *_featureItem;
     SearchMatchTip *_matchTip;

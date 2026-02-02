@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EditImageAttr, EditImageLogicController, NSURL, UIImage;
 
-@interface MMAssetForFakeFastSend
+@interface MMAssetForFakeFastSend : NSObject
 {
     _Bool _isNeedOriginImage;
     UIImage *_oImage;

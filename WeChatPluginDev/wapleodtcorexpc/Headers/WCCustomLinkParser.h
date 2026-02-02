@@ -5,7 +5,7 @@
 
 @class NSString, UIColor;
 
-@interface WCCustomLinkParser
+@interface WCCustomLinkParser : NSObject
 {
     NSString *_url;
     NSString *_sourceUrl;

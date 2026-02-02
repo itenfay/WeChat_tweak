@@ -6,7 +6,7 @@
 @class MMFinderLiveCouponItem, MMUIButton, NSString, UILabel, UIView;
 @protocol MMFinderLiveCouponViewDelegate;
 
-@interface MMFinderLiveCouponView
+@interface MMFinderLiveCouponView : NSObject
 {
     _Bool _actionButtonHidden;
     _Bool _isAnchor;

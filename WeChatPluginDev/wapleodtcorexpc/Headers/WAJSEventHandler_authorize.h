@@ -6,7 +6,7 @@
 @class NSDictionary, NSString, WAAlertModel, WADataPipePerformance, WAJSContextPlugin_userAccount, WAUserAuthorizeLogic;
 @protocol IWATransferProxyImplProtocol;
 
-@interface WAJSEventHandler_authorize
+@interface WAJSEventHandler_authorize : NSObject
 {
     NSString *_appID;
     WAUserAuthorizeLogic *_authLogic;

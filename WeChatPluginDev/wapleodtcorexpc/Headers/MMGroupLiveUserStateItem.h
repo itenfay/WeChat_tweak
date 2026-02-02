@@ -5,7 +5,7 @@
 
 @class CContact, NSString;
 
-@interface MMGroupLiveUserStateItem
+@interface MMGroupLiveUserStateItem : NSObject
 {
     NSString *_identityId;
     NSString *_roomId;

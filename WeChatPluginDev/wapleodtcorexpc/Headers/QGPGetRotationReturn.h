@@ -5,7 +5,7 @@
 
 @class QGPRotation;
 
-@interface QGPGetRotationReturn
+@interface QGPGetRotationReturn : NSObject
 {
     QGPRotation *_value;
 }

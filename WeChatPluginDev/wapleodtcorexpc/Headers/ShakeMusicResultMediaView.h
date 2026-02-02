@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, TingLiteMediaView;
 
-@interface ShakeMusicResultMediaView
+@interface ShakeMusicResultMediaView : NSObject
 {
     MMMusicInfo *_musicInfo;
     TingLiteMediaView *_mediaView;

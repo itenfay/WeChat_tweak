@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMUIButton, MMUILabel, NSString, UIScrollView, UIView;
 @protocol WSCommentInputDelegate;
 
-@interface WSCommentInputViewController
+@interface WSCommentInputViewController : NSObject
 {
     _Bool _forbidSubmitBlank;
     _Bool _forbidSubmitOverLength;

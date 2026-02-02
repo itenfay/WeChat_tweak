@@ -5,7 +5,7 @@
 
 @protocol WCShareCardGeneralCardHeaderDelegate;
 
-@interface WCShareCardGeneralHeaderView
+@interface WCShareCardGeneralHeaderView : NSObject
 {
     _Bool _bIsShowUseCodeBtn;
     _Bool _bIsIphone5ShareCardMode;

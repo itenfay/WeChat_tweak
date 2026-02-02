@@ -5,7 +5,7 @@
 
 @class UILabel, WCFinderEndorsementCellViewModel;
 
-@interface WCFinderEndorsementCellView
+@interface WCFinderEndorsementCellView : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_descLabel;

@@ -5,7 +5,7 @@
 
 @class BubbleInfo, NSString, UIColor, UIFont, UIImage, WCPayNetImageResource;
 
-@interface WCPayThirdC2CMessageViewModel
+@interface WCPayThirdC2CMessageViewModel : NSObject
 {
     UIImage *_m_miniIconImage;
     WCPayNetImageResource *_m_backgroundResource;

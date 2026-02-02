@@ -6,7 +6,7 @@
 @class UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderContact, WCFinderHeadImageView;
 @protocol WCFinderContactListCellDelegate;
 
-@interface WCFinderContactListCell
+@interface WCFinderContactListCell : NSObject
 {
     id <WCFinderContactListCellDelegate> _delegate;
     WCFinderHeadImageView *_headImageView;

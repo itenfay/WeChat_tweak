@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MJAdaptiveMovieTemplateExportSettingsLoader
+@interface MJAdaptiveMovieTemplateExportSettingsLoader : NSObject
 {
     _Bool _hasDecoration;
 }

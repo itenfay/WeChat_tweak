@@ -6,7 +6,7 @@
 @class MJShootBubbleSwitch, NSArray, NSString;
 @protocol MJShootFaceGenderSwitchDelegate;
 
-@interface MJShootFaceGenderSwitch
+@interface MJShootFaceGenderSwitch : NSObject
 {
     id <MJShootFaceGenderSwitchDelegate> _delegate;
     long long _selectedFaceGender;

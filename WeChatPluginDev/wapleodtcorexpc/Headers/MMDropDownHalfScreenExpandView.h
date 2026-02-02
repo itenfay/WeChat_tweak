@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, UIButton, UIView;
 @protocol MMDropDownHalfScreenViewDelegate;
 
-@interface MMDropDownHalfScreenExpandView
+@interface MMDropDownHalfScreenExpandView : NSObject
 {
     double m_maxHalfScreenHeight;
     _Bool _isHideSetupGradientEffect;

@@ -6,7 +6,7 @@
 @class MMFinderLiveTask, MMLiveCompleteViewController, MMLiveFullScreenTipsView, MMLivePivotItemViewController, NSString;
 @protocol MMFinderPivotLiveViewControllerDelegate;
 
-@interface MMFinderPivotLiveViewController
+@interface MMFinderPivotLiveViewController : NSObject
 {
     _Bool _postponeJoinLive;
     _Bool _supressMinimizeWindowAutoupdate;

@@ -6,7 +6,7 @@
 @class MemoryMappedKV, NSMutableArray, NSObject, NSString, WCNewClickStatItem, WCNewClickStatRecordPageItem, WCNewClickStatReportConfig;
 @protocol OS_dispatch_queue;
 
-@interface WCNewClickStatMgr
+@interface WCNewClickStatMgr : NSObject
 {
     WCNewClickStatItem *_reportItem;
     WCNewClickStatRecordPageItem *curPage;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMTimer, MMUIImageView, MMUILabel, NSData, NSMutableArray, NSString, UIButton, UICollectionView, UIView, WCFinderNavLiveStreamPreFetchParams;
 
-@interface MMLiveSquareGuideView
+@interface MMLiveSquareGuideView : NSObject
 {
     _Bool _squarePrefetchPerformed;
     _Bool _dataLoading;

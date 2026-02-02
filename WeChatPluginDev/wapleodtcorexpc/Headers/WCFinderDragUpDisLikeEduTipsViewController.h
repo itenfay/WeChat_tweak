@@ -5,7 +5,7 @@
 
 @class PAGView;
 
-@interface WCFinderDragUpDisLikeEduTipsViewController
+@interface WCFinderDragUpDisLikeEduTipsViewController : NSObject
 {
     PAGView *_pagView;
 }

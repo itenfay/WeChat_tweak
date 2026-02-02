@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, UIImpactFeedbackGenerator;
 @protocol MJShootSideToolbarDelegate;
 
-@interface MJShootSideToolbar
+@interface MJShootSideToolbar : NSObject
 {
     _Bool _isCaptionButtonEnabledShowing;
     _Bool _isDuetShootingEntry;

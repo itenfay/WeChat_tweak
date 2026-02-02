@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface MMMusicLiveVCTopBarMusicSourceButton
+@interface MMMusicLiveVCTopBarMusicSourceButton : NSObject
 {
     UIImageView *_musicSourceIconView;
     MMUILabel *_musicSourceLabel;

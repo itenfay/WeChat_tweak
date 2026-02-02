@@ -5,7 +5,7 @@
 
 @class MMUISearchBar, NSString, UILabel, UITapGestureRecognizer, WCFinderContact, WCFinderFansListVCParams, WCFinderFansListViewModel, WCFinderFollowSearchContactViewController, WCFinderRefreshTableFooterView, WCTableView;
 
-@interface WCFinderFansListViewController
+@interface WCFinderFansListViewController : NSObject
 {
     int _fromCommentScene;
     WCTableView *_tableView;

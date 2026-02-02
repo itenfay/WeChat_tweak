@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCFinderMinimizeLiveContentView
+@interface WCFinderMinimizeLiveContentView : NSObject
 {
     struct CGSize _originSize;
 }

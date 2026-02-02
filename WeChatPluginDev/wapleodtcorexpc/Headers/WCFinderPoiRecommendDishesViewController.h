@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSMutableDictionary, NSString, UITableView, WCFinderPoiRecommendDishesViewModel;
 
-@interface WCFinderPoiRecommendDishesViewController
+@interface WCFinderPoiRecommendDishesViewController : NSObject
 {
     WCFinderPoiRecommendDishesViewModel *_viewModel;
     NSMutableDictionary *_reportDict;

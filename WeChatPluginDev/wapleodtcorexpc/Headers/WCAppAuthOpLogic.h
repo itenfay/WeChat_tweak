@@ -5,7 +5,7 @@
 
 @protocol WCAppAuthOpLogicDelegate;
 
-@interface WCAppAuthOpLogic
+@interface WCAppAuthOpLogic : NSObject
 {
     id <WCAppAuthOpLogicDelegate> _delegate;
 }

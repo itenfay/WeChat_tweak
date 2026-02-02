@@ -5,7 +5,7 @@
 
 @class MMWebImageView;
 
-@interface BrandFinderLiveMpStyleCardView
+@interface BrandFinderLiveMpStyleCardView : NSObject
 {
     MMWebImageView *_backgroundCoverImageView;
 }

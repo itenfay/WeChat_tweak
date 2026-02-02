@@ -5,7 +5,7 @@
 
 @class NSString, WCBusinessJumpViewController;
 
-@interface OpenSDKOpenBusinessViewContext
+@interface OpenSDKOpenBusinessViewContext : NSObject
 {
     NSString *_appId;
     NSString *_businessType;

@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, WCFinderAnimationLoadingView;
 
-@interface WCFinderCommentListHeaderRefreshView
+@interface WCFinderCommentListHeaderRefreshView : NSObject
 {
     NSString *_normalTitle;
     double _triggerHeight;

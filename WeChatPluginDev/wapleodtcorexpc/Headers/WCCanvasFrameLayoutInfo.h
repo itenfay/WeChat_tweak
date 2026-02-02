@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCCanvasFrameLayoutInfo
+@interface WCCanvasFrameLayoutInfo : NSObject
 {
     unsigned int _cornerRadius;
     NSArray *_layoutItems;

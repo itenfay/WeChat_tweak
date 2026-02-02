@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionFlowSessionInfo
+@interface WCSessionFlowSessionInfo : NSObject
 {
     unsigned int _seq;
     NSString *_sessionId;

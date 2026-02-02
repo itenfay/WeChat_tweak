@@ -6,7 +6,7 @@
 @class CLLocation, LbsContactInfoList, LocationRetriever, NSString;
 @protocol SeePeopleNearByUIDelegate;
 
-@interface SeePeopleNearByLogicController
+@interface SeePeopleNearByLogicController : NSObject
 {
     unsigned int m_uiEventID;
     unsigned int m_lbsEventID;

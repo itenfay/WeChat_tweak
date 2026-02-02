@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIView;
 @protocol WCBaseInfoItemDelegate;
 
-@interface WCBaseInfoItem
+@interface WCBaseInfoItem : NSObject
 {
     NSString *m_title;
     NSString *m_tip;

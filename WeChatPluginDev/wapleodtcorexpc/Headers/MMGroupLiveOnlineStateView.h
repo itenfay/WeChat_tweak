@@ -5,7 +5,7 @@
 
 @class MMGroupLiveOnlineUserLogic, NSMutableArray, NSString, RichTextView, UICollectionView;
 
-@interface MMGroupLiveOnlineStateView
+@interface MMGroupLiveOnlineStateView : NSObject
 {
     MMGroupLiveOnlineUserLogic *onlineUserLogic;
     UICollectionView *_onlineUsersCollectionView;

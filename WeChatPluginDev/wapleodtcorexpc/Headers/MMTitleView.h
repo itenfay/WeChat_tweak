@@ -6,7 +6,7 @@
 @class UIFont, UIGestureRecognizer;
 @protocol MMTitleViewDelegate;
 
-@interface MMTitleView
+@interface MMTitleView : NSObject
 {
     _Bool _forceAccessibilityElementDisabled;
     id <MMTitleViewDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class GetHoneyPayCardReq;
 @protocol WCPayGetHoneyPayCardCgiDelegate;
 
-@interface WCPayGetHoneyPayCardCgi
+@interface WCPayGetHoneyPayCardCgi : NSObject
 {
 }
 

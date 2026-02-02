@@ -6,7 +6,7 @@
 @class CEmoticonWrap, EmoticonSearchInMessagePanelReporter, EmoticonSearchViewModel, KeyboardDismissProxy, MMUISearchBar, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout, UIControl, UILongPressGestureRecognizer;
 @protocol EmoticonSearchBoardViewDelegate;
 
-@interface EmoticonSearchBoardView
+@interface EmoticonSearchBoardView : NSObject
 {
     _Bool _disableWebSearch;
     id <EmoticonSearchBoardViewDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class BrandProfileTopicViewModel, MMUIButton, NSMutableArray;
 @protocol BrandProfileTopicViewDelegate;
 
-@interface BrandProfileTopicView
+@interface BrandProfileTopicView : NSObject
 {
     id <BrandProfileTopicViewDelegate> _delegate;
     BrandProfileTopicViewModel *_viewModel;

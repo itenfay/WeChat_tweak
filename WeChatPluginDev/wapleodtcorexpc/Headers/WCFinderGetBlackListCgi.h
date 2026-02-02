@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSData, NSString;
 @protocol WCFinderGetBlackListCgiDelegate;
 
-@interface WCFinderGetBlackListCgi
+@interface WCFinderGetBlackListCgi : NSObject
 {
     NSString *_username;
     NSData *_lastBuffer;

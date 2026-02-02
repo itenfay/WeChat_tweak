@@ -6,7 +6,7 @@
 @class MMUINavigationBar, NSArray, NSMutableArray, NSMutableSet, NSString, UINavigationItem, UITableView;
 @protocol WXGRoamChooseRangeTypeViewControllerDelegate;
 
-@interface WXGRoamChooseRangeTypeViewController
+@interface WXGRoamChooseRangeTypeViewController : NSObject
 {
     long long _enterScene;
     id <WXGRoamChooseRangeTypeViewControllerDelegate> _delegate;

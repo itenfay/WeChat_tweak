@@ -6,7 +6,7 @@
 @class MMLiveRewardGiftCoinButton, MMUIButton, MMUILabel, UIView;
 @protocol MMLiveJoinGameAudiencePaymentViewDelegate, MMLiveRewardGiftSelectionLogicDelegate;
 
-@interface MMLiveJoinGameAudiencePaymentView
+@interface MMLiveJoinGameAudiencePaymentView : NSObject
 {
     unsigned int _payment;
     id <MMLiveJoinGameAudiencePaymentViewDelegate> _delegate;

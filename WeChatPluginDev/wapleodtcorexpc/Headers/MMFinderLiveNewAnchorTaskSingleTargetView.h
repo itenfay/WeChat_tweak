@@ -5,7 +5,7 @@
 
 @class FinderLiveQuestInstance_StageItem_TargetItem, MMUILabel, MMUIView, UIButton;
 
-@interface MMFinderLiveNewAnchorTaskSingleTargetView
+@interface MMFinderLiveNewAnchorTaskSingleTargetView : NSObject
 {
     _Bool _shouldShowNote;
     float _progressPercentage;

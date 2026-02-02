@@ -5,7 +5,7 @@
 
 @class NSString, WCCardDataCardInfo, WCCardDataCardTPInfo;
 
-@interface WCShareCardData
+@interface WCShareCardData : NSObject
 {
     _Bool bNearby;
     _Bool isAutoIncrement;

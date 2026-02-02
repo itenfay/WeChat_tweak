@@ -5,7 +5,7 @@
 
 @class TextStateBrandLogic;
 
-@interface WAJSEventHandler_publishWechatStateActivity
+@interface WAJSEventHandler_publishWechatStateActivity : NSObject
 {
     TextStateBrandLogic *_brandLogic;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderKeepHolderTaskContext
+@interface WCFinderKeepHolderTaskContext : NSObject
 {
     double _playedPosition;
     NSString *_nonceId;

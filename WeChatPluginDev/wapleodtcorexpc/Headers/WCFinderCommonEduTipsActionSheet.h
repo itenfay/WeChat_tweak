@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, RichTextView, UIButton, UIImageView, UIView;
 @protocol WCFinderCommonEduTipsActionSheetDelegate;
 
-@interface WCFinderCommonEduTipsActionSheet
+@interface WCFinderCommonEduTipsActionSheet : NSObject
 {
     id <WCFinderCommonEduTipsActionSheetDelegate> _businessDelegate;
     MMUIButton *_acceptBtn;

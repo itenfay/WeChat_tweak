@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface H5VideoPlayInfo
+@interface H5VideoPlayInfo : NSObject
 {
     NSString *_videoUrl;
     NSString *_fileID;

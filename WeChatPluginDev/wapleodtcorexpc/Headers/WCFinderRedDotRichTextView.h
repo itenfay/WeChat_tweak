@@ -5,7 +5,7 @@
 
 @class WCFinderRedDotTextLayout;
 
-@interface WCFinderRedDotRichTextView
+@interface WCFinderRedDotRichTextView : NSObject
 {
     WCFinderRedDotTextLayout *_layout;
 }

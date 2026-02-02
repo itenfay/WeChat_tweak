@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel;
 
-@interface WeAppGameJoinTeamHistoryView
+@interface WeAppGameJoinTeamHistoryView : NSObject
 {
     MMUIImageView *_leftIconView;
     MMUILabel *_wordingLable;

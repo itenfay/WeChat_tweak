@@ -5,7 +5,7 @@
 
 @class NSString, UITextView;
 
-@interface WXGBackupAnalyseViewController
+@interface WXGBackupAnalyseViewController : NSObject
 {
     UITextView *_infoTextView;
     NSString *_infoString;

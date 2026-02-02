@@ -6,7 +6,7 @@
 @class GetUserSwitchRequest;
 @protocol WXGameGetUserSwitchCGIDelegate;
 
-@interface WXGameGetUserSwitchCGI
+@interface WXGameGetUserSwitchCGI : NSObject
 {
     id <WXGameGetUserSwitchCGIDelegate> _delegate;
 }

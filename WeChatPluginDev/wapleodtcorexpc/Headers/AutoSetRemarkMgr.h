@@ -5,7 +5,7 @@
 
 @class ContactRemarkLogic, NSMutableDictionary, NSString;
 
-@interface AutoSetRemarkMgr
+@interface AutoSetRemarkMgr : NSObject
 {
     NSMutableDictionary *m_dicMobileRemarkList;
     NSMutableDictionary *m_dicStrangerRemarkList;

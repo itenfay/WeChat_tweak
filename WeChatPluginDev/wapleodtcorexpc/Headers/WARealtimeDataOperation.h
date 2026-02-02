@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WARealtimeDataOperation
+@interface WARealtimeDataOperation : NSObject
 {
     int _operationId;
     int _type;

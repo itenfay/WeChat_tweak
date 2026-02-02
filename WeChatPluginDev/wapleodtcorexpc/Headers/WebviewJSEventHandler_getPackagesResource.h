@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_getPackagesResource
+@interface WebviewJSEventHandler_getPackagesResource : NSObject
 {
     JSEvent *_m_event;
 }

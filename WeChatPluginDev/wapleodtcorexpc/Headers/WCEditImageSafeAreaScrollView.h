@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIView;
 
-@interface WCEditImageSafeAreaScrollView
+@interface WCEditImageSafeAreaScrollView : NSObject
 {
     MMUIView *_topLine;
     MMUIView *_bottomLine;

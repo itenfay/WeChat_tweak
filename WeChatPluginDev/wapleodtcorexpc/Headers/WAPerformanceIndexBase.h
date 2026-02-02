@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPerformanceIndexBase
+@interface WAPerformanceIndexBase : NSObject
 {
     unsigned int _recordedCount;
     NSString *_appid;

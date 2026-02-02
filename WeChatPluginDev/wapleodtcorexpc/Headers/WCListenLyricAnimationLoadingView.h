@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface WCListenLyricAnimationLoadingView
+@interface WCListenLyricAnimationLoadingView : NSObject
 {
     int _repeatCount;
     UIView *_p1;

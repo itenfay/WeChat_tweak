@@ -5,7 +5,7 @@
 
 @class MJMaterialLoadingStatusCoordinator, MJPublisherSlider, MJSegmentFilterInspectorViewModel, MMUIActivityIndicatorView, MMUILabel, NSIndexPath, NSString, UICollectionView, UIView;
 
-@interface MJSegmentFilterInspectorView
+@interface MJSegmentFilterInspectorView : NSObject
 {
     _Bool _didSelectTitleItem;
     _Bool _didSelectFilterItem;

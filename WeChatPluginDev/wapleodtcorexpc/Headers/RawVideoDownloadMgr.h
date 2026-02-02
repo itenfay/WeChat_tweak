@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RawVideoDownloadMgr
+@interface RawVideoDownloadMgr : NSObject
 {
 }
 

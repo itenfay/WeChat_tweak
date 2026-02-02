@@ -5,7 +5,7 @@
 
 @class NSMutableString, NSSet, NSString;
 
-@interface ClickStreamMgr
+@interface ClickStreamMgr : NSObject
 {
     struct timeval m_tvStart;
     NSString *m_nsLastPageID;

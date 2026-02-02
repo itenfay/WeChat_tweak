@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, NSString;
 
-@interface KindaAvatarImageView
+@interface KindaAvatarImageView : NSObject
 {
     MMHeadImageView *_m_headImageView;
     NSString *_m_userName;

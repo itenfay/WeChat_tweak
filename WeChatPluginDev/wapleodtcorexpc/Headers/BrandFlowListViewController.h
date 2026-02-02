@@ -6,7 +6,7 @@
 @class BrandFlowListLogic, BrandFlowListReportHelperItem, NSMutableArray, NSMutableDictionary, NSString, UIScreenEdgePanGestureRecognizer, WCFinderFeedListView;
 @protocol BrandFlowListViewControllerDelegate;
 
-@interface BrandFlowListViewController
+@interface BrandFlowListViewController : NSObject
 {
     _Bool _hasSendExposeEventAfterEnter;
     _Bool _hasPreloadTemplateTypeCommonShare;

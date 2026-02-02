@@ -6,7 +6,7 @@
 @class SKBuiltinBuffer_t;
 @protocol StoreEmoticonGetPersonalDesignerCGIDelegate;
 
-@interface StoreEmoticonGetPersonalDesignerCGI
+@interface StoreEmoticonGetPersonalDesignerCGI : NSObject
 {
     unsigned int _designerUin;
     id <StoreEmoticonGetPersonalDesignerCGIDelegate> _delegate;

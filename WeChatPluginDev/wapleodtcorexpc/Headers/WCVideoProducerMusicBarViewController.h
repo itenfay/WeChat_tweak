@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, NSIndexPath, NSString, UICollectionView, UIView, WCVideoProducerDataSource;
 @protocol WCVideoProducerMusicBarDelegate;
 
-@interface WCVideoProducerMusicBarViewController
+@interface WCVideoProducerMusicBarViewController : NSObject
 {
     NSIndexPath *_focusedIndex;
     NSIndexPath *_selectedIndex;

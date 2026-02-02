@@ -5,7 +5,7 @@
 
 @class PreEnterShowWCOpenServiceConfig;
 
-@interface PreEnterShowWCOpenServiceStep
+@interface PreEnterShowWCOpenServiceStep : NSObject
 {
     PreEnterShowWCOpenServiceConfig *_configObj;
 }

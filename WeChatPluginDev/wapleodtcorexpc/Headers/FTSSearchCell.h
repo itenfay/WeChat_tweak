@@ -5,7 +5,7 @@
 
 @class AttributeLabel, NSString, UIImageView;
 
-@interface FTSSearchCell
+@interface FTSSearchCell : NSObject
 {
     UIImageView *_searchIcon;
     AttributeLabel *_searchLabel;

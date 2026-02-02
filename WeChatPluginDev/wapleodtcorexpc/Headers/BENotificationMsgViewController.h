@@ -5,7 +5,7 @@
 
 @class NSString, TemplateMsgSearchHelper;
 
-@interface BENotificationMsgViewController
+@interface BENotificationMsgViewController : NSObject
 {
     _Bool _isViewDidAppear;
     unsigned int _lastAutoPlayLocalID;

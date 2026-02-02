@@ -5,7 +5,7 @@
 
 @protocol imageViewDelegate;
 
-@interface MMImageView
+@interface MMImageView : NSObject
 {
     id <imageViewDelegate> m_delegate;
 }

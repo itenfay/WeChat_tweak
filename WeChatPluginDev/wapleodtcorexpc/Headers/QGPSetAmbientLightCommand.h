@@ -5,7 +5,7 @@
 
 @class QGPSetAmbientLightParam;
 
-@interface QGPSetAmbientLightCommand
+@interface QGPSetAmbientLightCommand : NSObject
 {
     QGPSetAmbientLightParam *_params;
 }

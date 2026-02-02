@@ -5,7 +5,7 @@
 
 @class NSDate, NSMutableDictionary, NSString;
 
-@interface CertInfoMgr
+@interface CertInfoMgr : NSObject
 {
     NSMutableDictionary *m_dicCertInfo;
     _Bool m_bUpdating;

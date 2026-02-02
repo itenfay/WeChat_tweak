@@ -5,7 +5,7 @@
 
 @class MMEmoticonView, MMUIActivityIndicatorView, NSString, UIImageView, UILabel;
 
-@interface GCEmoticonCell
+@interface GCEmoticonCell : NSObject
 {
     UILabel *m_downloadFailRetryLabel;
     UIImageView *m_downloadFailedImageView;

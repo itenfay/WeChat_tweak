@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVVideoDevice, CContact, CMessageWrap, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, VOIPVideoRender, XImageContext, XImageViewRenderer;
 @protocol IVOIPVideoDeviceDelegate, IlinkMultiTalkDelegate;
 
-@interface VoIPilinkMgr
+@interface VoIPilinkMgr : NSObject
 {
     char *mCameraBuf;
     char *mHWYUVbuffer;

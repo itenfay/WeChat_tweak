@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UILabel, WCGridView;
 
-@interface WCTogetherImageFeedCell
+@interface WCTogetherImageFeedCell : NSObject
 {
     WCGridView *_imageGridView;
     NSArray *_imageViews;

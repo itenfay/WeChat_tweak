@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingGlobalUtils
+@interface WAEJBindingGlobalUtils : NSObject
 {
     NSString *deviceName;
     int audioSession;

@@ -5,7 +5,7 @@
 
 @class MMTagTextField, MMTitleView, NSString, UICollectionView, UIImageView, UILabel, UIPanGestureRecognizer, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderMoreLiveSearchHistoryView, WCFinderMoreLiveSearchViewModel, WCFinderStreamFooterView, WCFinderStreamLayout;
 
-@interface WCFinderLiveMoreLiveSearchViewController
+@interface WCFinderLiveMoreLiveSearchViewController : NSObject
 {
     MMTagTextField *_navSearchTextField;
     MMTitleView *_titleView;

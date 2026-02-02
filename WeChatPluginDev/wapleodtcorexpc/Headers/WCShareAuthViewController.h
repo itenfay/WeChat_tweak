@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, OpenApiParameter, UIButton, UIImageView, UIView;
 @protocol WCShareAuthViewControllerDelegate;
 
-@interface WCShareAuthViewController
+@interface WCShareAuthViewController : NSObject
 {
     _Bool bIsFromSysCopy;
     int _type;

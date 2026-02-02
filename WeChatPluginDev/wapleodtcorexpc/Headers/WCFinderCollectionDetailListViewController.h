@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSArray, NSString, UITableView, WCFinderCollectionDetailListViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderCollectionDetailListViewController
+@interface WCFinderCollectionDetailListViewController : NSObject
 {
     int _commentScene;
     UITableView *_tableView;

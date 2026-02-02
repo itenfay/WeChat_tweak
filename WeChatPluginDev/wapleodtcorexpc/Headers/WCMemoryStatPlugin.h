@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSTimer, WCMemoryRecordManager, WCMemoryStatConfig, WCMemoryStatRecord;
 @protocol WCMemoryStatPluginDelegate;
 
-@interface WCMemoryStatPlugin
+@interface WCMemoryStatPlugin : NSObject
 {
     WCMemoryRecordManager *m_recordManager;
     WCMemoryStatRecord *m_lastRecord;

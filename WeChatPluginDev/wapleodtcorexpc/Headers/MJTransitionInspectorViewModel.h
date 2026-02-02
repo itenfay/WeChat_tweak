@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, OMCTransitionSegment;
 
-@interface MJTransitionInspectorViewModel
+@interface MJTransitionInspectorViewModel : NSObject
 {
     NSString *_selectedTransitionID;
     NSArray *_items;

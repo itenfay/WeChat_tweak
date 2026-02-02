@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderVideoTemplateInfo, MJPublisherPickerComposingButtonManager, MJSCPickerEditingMediator, MJShootComposingView, MJShootComposingViewModel, MMImagePickerManagerOptionObj, MMShortVideoParamModel, MMTipsViewController, NSMutableArray, NSString;
 @protocol MJShootComposingViewControllerDelegate;
 
-@interface MJShootComposingViewController
+@interface MJShootComposingViewController : NSObject
 {
     _Bool _isLandscapeEnabled;
     _Bool _isEditing;

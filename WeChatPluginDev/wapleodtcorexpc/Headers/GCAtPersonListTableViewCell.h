@@ -5,7 +5,7 @@
 
 @class ContactsItemView;
 
-@interface GCAtPersonListTableViewCell
+@interface GCAtPersonListTableViewCell : NSObject
 {
     ContactsItemView *m_contactsItemView;
 }

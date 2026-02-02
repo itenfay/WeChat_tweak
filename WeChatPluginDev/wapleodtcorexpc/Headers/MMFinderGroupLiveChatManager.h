@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderGroupLiveChatBoxId, MMFinderLiveTaskId, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSRecursiveLock, NSString, OrderedDictionary, WCFinderGroupLiveChatSaveToLocalManager;
 @protocol OS_dispatch_source;
 
-@interface MMFinderGroupLiveChatManager
+@interface MMFinderGroupLiveChatManager : NSObject
 {
     _Bool _isFetchingData;
     _Bool _isDataFetchedAfterSwitch;

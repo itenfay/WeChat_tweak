@@ -6,7 +6,7 @@
 @class AttributeLabel, CContact, MMCPLabel, MMHeadImageView, MMImageView, MMUIImageView, NSString, SearchMatchTip, TextStateItemView, UIButton, UIImageView, UILabel;
 @protocol ContactsItemViewDelegate;
 
-@interface ContactsItemView
+@interface ContactsItemView : NSObject
 {
     MMHeadImageView *m_headImage;
     MMCPLabel *m_nickNameLabel;

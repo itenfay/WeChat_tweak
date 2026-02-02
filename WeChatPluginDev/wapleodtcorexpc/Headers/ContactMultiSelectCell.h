@@ -5,7 +5,7 @@
 
 @class UIColor, UIImageView;
 
-@interface ContactMultiSelectCell
+@interface ContactMultiSelectCell : NSObject
 {
     _Bool _isEditing;
     _Bool _isSelected;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface QBPreferencesRsp
+@interface QBPreferencesRsp : NSObject
 {
     int jcev2_p_0_r_iRspTime;
     NSArray *jcev2_p_1_o_vPreferencesKeyValue__b0x9i_VOQBPreferencesKeyValue;

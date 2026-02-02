@@ -6,7 +6,7 @@
 @class CContact, MMTableViewInfo, NSDate, NSString, WCOpLog;
 @protocol WCSetPermissionsViewControllerDelegate;
 
-@interface WCSetPermissionsViewController
+@interface WCSetPermissionsViewController : NSObject
 {
     NSDate *m_pushInDate;
     unsigned int m_permissionOpCode;

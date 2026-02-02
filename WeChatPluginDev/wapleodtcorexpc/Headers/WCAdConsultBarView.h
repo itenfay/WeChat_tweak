@@ -5,7 +5,7 @@
 
 @class MMUILabel, WCAdAlphaButton, WCAdConsultBarCarouselInfo, WCAdConsultBarInfo, WCAdURLImageView, WCDataItem;
 
-@interface WCAdConsultBarView
+@interface WCAdConsultBarView : NSObject
 {
     WCDataItem *_dataItem;
     WCAdConsultBarCarouselInfo *_consultCarouselInfo;

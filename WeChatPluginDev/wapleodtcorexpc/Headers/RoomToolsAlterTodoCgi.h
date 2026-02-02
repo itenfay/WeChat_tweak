@@ -6,7 +6,7 @@
 @class CMessageWrap, ChatRoomToolMessageEventInfo, NSString;
 @protocol RoomToolsAlterTodoDelegate;
 
-@interface RoomToolsAlterTodoCgi
+@interface RoomToolsAlterTodoCgi : NSObject
 {
     id <RoomToolsAlterTodoDelegate> _delegate;
     NSString *_identifier;

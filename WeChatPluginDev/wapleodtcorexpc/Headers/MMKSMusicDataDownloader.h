@@ -5,7 +5,7 @@
 
 @class LZDownloadTaskItem, NSURLConnection;
 
-@interface MMKSMusicDataDownloader
+@interface MMKSMusicDataDownloader : NSObject
 {
     NSURLConnection *_urlConnection;
     LZDownloadTaskItem *_taskItem;

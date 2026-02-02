@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface GCDWebServerDataResponse
+@interface GCDWebServerDataResponse : NSObject
 {
     NSData *_data;
     _Bool _done;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GCAtCellModel
+@interface GCAtCellModel : NSObject
 {
     _Bool _selected;
     _Bool _showSeperatedLineInLeft;

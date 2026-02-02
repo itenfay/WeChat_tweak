@@ -5,7 +5,7 @@
 
 @class CircleToSearchPreviewView, NSString;
 
-@interface CircleToSearchScrollView
+@interface CircleToSearchScrollView : NSObject
 {
     double _bottomInset;
     double _maxBottomInset;

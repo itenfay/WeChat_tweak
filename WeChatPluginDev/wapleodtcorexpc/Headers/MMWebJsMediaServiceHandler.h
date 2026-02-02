@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMediaServiceWrapper, NSMutableDictionary;
 
-@interface MMWebJsMediaServiceHandler
+@interface MMWebJsMediaServiceHandler : NSObject
 {
     MMMediaServiceWrapper *_mediaService;
     NSMutableDictionary *_dicEvent2CallBackFunc;

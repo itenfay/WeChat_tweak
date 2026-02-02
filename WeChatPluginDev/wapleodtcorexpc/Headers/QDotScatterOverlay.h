@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QDotScatterOverlay
+@interface QDotScatterOverlay : NSObject
 {
     _Bool _enable3D;
     _Bool _animated;

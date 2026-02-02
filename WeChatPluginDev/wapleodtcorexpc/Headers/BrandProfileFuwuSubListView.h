@@ -5,7 +5,7 @@
 
 @class BrandProfileFuwuInfo, NSMutableArray, UILabel, UIView;
 
-@interface BrandProfileFuwuSubListView
+@interface BrandProfileFuwuSubListView : NSObject
 {
     BrandProfileFuwuInfo *_fuwuInfo;
     UIView *_topDividingView;

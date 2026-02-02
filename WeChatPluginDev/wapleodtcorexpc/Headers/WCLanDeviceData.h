@@ -5,7 +5,7 @@
 
 @class CMessageWrap, WCDataItem, WCLanDeviceKissFileMsg, WCMediaItem;
 
-@interface WCLanDeviceData
+@interface WCLanDeviceData : NSObject
 {
     CMessageWrap *m_nsMsgWrap;
     WCDataItem *m_nsDataItem;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QPolygonHandler
+@interface QPolygonHandler : NSObject
 {
     int _fillId;
     NSArray *_holeStrokeIds;

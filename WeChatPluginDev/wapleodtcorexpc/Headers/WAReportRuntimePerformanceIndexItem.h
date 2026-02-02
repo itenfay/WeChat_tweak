@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAReportRuntimePerformanceIndexItem
+@interface WAReportRuntimePerformanceIndexItem : NSObject
 {
     _Bool _isGame;
     _Bool _enableSkyline;

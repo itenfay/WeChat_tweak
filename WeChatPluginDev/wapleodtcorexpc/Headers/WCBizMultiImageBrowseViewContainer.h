@@ -6,7 +6,7 @@
 @class MMImageScrollViewHelper, MMLoadingView, MMProgressViewEx, NSArray, NSString, UIImage, UIImageView, WCActionSheet, WCBizImageBrowseItem;
 @protocol WCBizMultiImageBrowseViewContainerDelegate;
 
-@interface WCBizMultiImageBrowseViewContainer
+@interface WCBizMultiImageBrowseViewContainer : NSObject
 {
     WCBizImageBrowseItem *m_oImageBrowseItem;
     struct CGRect m_originImageRectInScreen;

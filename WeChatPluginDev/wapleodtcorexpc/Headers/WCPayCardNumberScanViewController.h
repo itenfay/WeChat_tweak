@@ -6,7 +6,7 @@
 @class AVCaptureDevice, AVCaptureSession, AVCaptureVideoPreviewLayer, MMTimer, MMUILabel, NSMutableArray, NSObject, NSRecursiveLock, NSString, ScanCardBackgroundViewV2, UIButton, UIImage, WCPayCardNumberScanForeView;
 @protocol WCPayCardNumberScanDelegate;
 
-@interface WCPayCardNumberScanViewController
+@interface WCPayCardNumberScanViewController : NSObject
 {
     ScanCardBackgroundViewV2 *m_backgroundView;
     WCPayCardNumberScanForeView *m_foreView;

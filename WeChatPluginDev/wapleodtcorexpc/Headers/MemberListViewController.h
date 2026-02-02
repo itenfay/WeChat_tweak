@@ -6,7 +6,7 @@
 @class MMTableView, NSObject, NSString, UILabel, UIView, WCDataSearcher;
 @protocol MemberDataLogicProtocol;
 
-@interface MemberListViewController
+@interface MemberListViewController : NSObject
 {
     MMTableView *m_tableView;
     UIView *m_viewLabel;

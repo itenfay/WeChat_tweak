@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, RichTextView, UILabel;
 
-@interface GCTextCollectionViewCell
+@interface GCTextCollectionViewCell : NSObject
 {
     NSMutableDictionary *_linkJumpInfoDict;
     RichTextView *_richTextView;

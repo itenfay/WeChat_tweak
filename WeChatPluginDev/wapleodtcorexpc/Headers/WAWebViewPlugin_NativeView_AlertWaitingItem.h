@@ -6,7 +6,7 @@
 @class NSDictionary;
 @protocol IWAWebViewPluginDelegate;
 
-@interface WAWebViewPlugin_NativeView_AlertWaitingItem
+@interface WAWebViewPlugin_NativeView_AlertWaitingItem : NSObject
 {
     NSDictionary *_param;
     id <IWAWebViewPluginDelegate> _delegate;

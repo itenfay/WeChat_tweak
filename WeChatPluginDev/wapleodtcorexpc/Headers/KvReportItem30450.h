@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem30450
+@interface KvReportItem30450 : NSObject
 {
     NSString *_bizType;
     NSString *_type;

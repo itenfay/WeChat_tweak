@@ -5,7 +5,7 @@
 
 @protocol MyUIScrollViewDelegate;
 
-@interface MyUIScrollView
+@interface MyUIScrollView : NSObject
 {
     id <MyUIScrollViewDelegate> m_delegate;
 }

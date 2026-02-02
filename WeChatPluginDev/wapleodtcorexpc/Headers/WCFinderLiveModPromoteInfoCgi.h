@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnchorPromoteInfo;
 
-@interface WCFinderLiveModPromoteInfoCgi
+@interface WCFinderLiveModPromoteInfoCgi : NSObject
 {
     int _opType;
     MMFinderLiveAnchorPromoteInfo *_modPromoteInfo;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveMilestoneLotteryViewModel, NSArray, NSString, UILabel, UIScrollView, UIView;
 
-@interface MMFinderLiveMilestoneLotteryDetailMenuView
+@interface MMFinderLiveMilestoneLotteryDetailMenuView : NSObject
 {
     _Bool _isFirstLayout;
     double _initScrollOffset;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4WCDB11MultiSelect
+@interface _TtC4WCDB11MultiSelect : NSObject
 {
     MISSING_TYPE *properties;
     MISSING_TYPE *$__lazy_storage_$_keys;

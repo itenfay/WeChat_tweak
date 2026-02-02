@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPPlayerSetDataSourceEventInfo
+@interface TPPlayerSetDataSourceEventInfo : NSObject
 {
     _Bool _useProxy;
     NSString *_url;

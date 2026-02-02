@@ -5,7 +5,7 @@
 
 @class MMKCountPickerViewOnSelectCallback, NSString, WCPaySelectCountItem;
 
-@interface KindaCountPickerView
+@interface KindaCountPickerView : NSObject
 {
     WCPaySelectCountItem *_countItem;
     MMKCountPickerViewOnSelectCallback *_callback;

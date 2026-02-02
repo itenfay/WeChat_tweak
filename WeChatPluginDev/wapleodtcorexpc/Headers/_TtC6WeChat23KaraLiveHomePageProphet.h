@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat23KaraLiveHomePageProphet
+@interface _TtC6WeChat23KaraLiveHomePageProphet : NSObject
 {
     MISSING_TYPE *enterLiveRoom;
 }

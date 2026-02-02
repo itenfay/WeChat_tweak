@@ -5,7 +5,7 @@
 
 @protocol TingFlowPlayerProtocol;
 
-@interface TingRadioChannelNowPlay
+@interface TingRadioChannelNowPlay : NSObject
 {
     id <TingFlowPlayerProtocol> _player;
 }

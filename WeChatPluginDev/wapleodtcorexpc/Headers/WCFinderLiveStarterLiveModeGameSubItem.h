@@ -5,7 +5,7 @@
 
 @class MMFinderLiveGameUserInfo, NSString;
 
-@interface WCFinderLiveStarterLiveModeGameSubItem
+@interface WCFinderLiveStarterLiveModeGameSubItem : NSObject
 {
     NSString *_appId;
     long long _gameEntryScene;

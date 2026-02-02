@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PreEnterChangQQLoginTypeStep
+@interface PreEnterChangQQLoginTypeStep : NSObject
 {
     _Bool _isForceShow;
     _Bool _needSyncEscape;

@@ -5,7 +5,7 @@
 
 @class FLVNetworkInfo, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary, TRTCDecoderFactory;
 
-@interface MMLiveCDNPlayerMgr
+@interface MMLiveCDNPlayerMgr : NSObject
 {
     _Bool _canReuseCdnPlayerItemWhenEnterLive;
     _Bool _canPreloadCdnPlayerItemInFeedList;

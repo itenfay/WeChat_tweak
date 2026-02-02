@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
-@interface FavWebCacheDownloadFileInfo
+@interface FavWebCacheDownloadFileInfo : NSObject
 {
     NSMutableSet *_mediaFiles;
     NSMutableSet *_textFiles;

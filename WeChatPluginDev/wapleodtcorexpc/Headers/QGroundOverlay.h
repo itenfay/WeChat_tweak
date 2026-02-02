@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface QGroundOverlay
+@interface QGroundOverlay : NSObject
 {
     CDStruct_02837cd9 _boundingRect;
     UIImage *_icon;

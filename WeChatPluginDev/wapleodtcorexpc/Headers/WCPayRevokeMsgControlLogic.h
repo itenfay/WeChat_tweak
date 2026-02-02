@@ -6,7 +6,7 @@
 @class CMessageWrap, MMWebViewController, NSString, WCPayRecallTransferCgi;
 @protocol WCPayRevokeMsgControlLogicDelegate;
 
-@interface WCPayRevokeMsgControlLogic
+@interface WCPayRevokeMsgControlLogic : NSObject
 {
     id <WCPayRevokeMsgControlLogicDelegate> _logicDelegate;
     CMessageWrap *_msgWrap;

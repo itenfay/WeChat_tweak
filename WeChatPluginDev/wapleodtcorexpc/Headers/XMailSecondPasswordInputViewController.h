@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UILabel, UIScrollView, WCUITextField;
 
-@interface XMailSecondPasswordInputViewController
+@interface XMailSecondPasswordInputViewController : NSObject
 {
     UIScrollView *m_scrollView;
     UILabel *m_errorInfoLabel;

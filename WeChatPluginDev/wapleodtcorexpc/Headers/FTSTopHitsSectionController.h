@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface FTSTopHitsSectionController
+@interface FTSTopHitsSectionController : NSObject
 {
     NSArray *_topHitItems;
 }

@@ -6,7 +6,7 @@
 @class FTSVoiceSearchBarController, MFBackupBtn, MFBannerBtn, MFMigrationBtn, MFMusicPlayBtn, MFPushBannerLogic, MFPushSystemMsgLogic, MFRoamBtn, MFRoamRemindBtn, MFWebMMBtn, MFWebViewVCKeepHoldBtn, NSMutableArray, NSString;
 @protocol MainFrameHeaderDelegate;
 
-@interface MainFrameHeaderLogic
+@interface MainFrameHeaderLogic : NSObject
 {
     FTSVoiceSearchBarController *m_searchBar;
     NSMutableArray *m_bannerAry;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceRankItem
+@interface DeviceRankItem : NSObject
 {
     unsigned int _uiRankNum;
     NSString *_nsRankId;

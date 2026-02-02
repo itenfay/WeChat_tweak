@@ -5,7 +5,7 @@
 
 @class CMessageWrap, UIView;
 
-@interface MsgImgPreviewData
+@interface MsgImgPreviewData : NSObject
 {
     CMessageWrap *_msgWrap;
     struct CGRect _nodeViewWindowFrame;

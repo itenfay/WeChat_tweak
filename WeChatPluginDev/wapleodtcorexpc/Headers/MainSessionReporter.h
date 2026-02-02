@@ -5,7 +5,7 @@
 
 @class NSIndexPath, NSMutableDictionary, NSString;
 
-@interface MainSessionReporter
+@interface MainSessionReporter : NSObject
 {
     _Bool _enableExitReport;
     _Bool _enableEntryReport;

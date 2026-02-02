@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderFetchFinderMemberShipHomePageListCGI
+@interface WCFinderFetchFinderMemberShipHomePageListCGI : NSObject
 {
     _Bool _seeAuthorOnly;
     NSString *_finderUsername;

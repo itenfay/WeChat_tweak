@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MagicPkgDownload
+@interface MagicPkgDownload : NSObject
 {
     NSMutableDictionary *_dicDownloadingItem;
     NSObject<OS_dispatch_queue> *_queue;

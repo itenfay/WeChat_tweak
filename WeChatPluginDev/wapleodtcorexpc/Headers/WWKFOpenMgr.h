@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WWKFContactOpLogic;
 
-@interface WWKFOpenMgr
+@interface WWKFOpenMgr : NSObject
 {
     WWKFContactOpLogic *_contactOpLogic;
 }

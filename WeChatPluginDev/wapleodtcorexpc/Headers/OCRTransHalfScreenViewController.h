@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, OCRTransJSHandler, OCRTransPanGestureAnimationElement, OCRTransZoomableScrollView, UIImage, UIImageView, UILabel, UIView, WSTemplateLogicController, WSWebViewPluginScheduler;
 @protocol OCRTransHalfScreenViewControllerDelegate;
 
-@interface OCRTransHalfScreenViewController
+@interface OCRTransHalfScreenViewController : NSObject
 {
     WSTemplateLogicController *m_logicController;
     OCRTransJSHandler *m_jsHandler;

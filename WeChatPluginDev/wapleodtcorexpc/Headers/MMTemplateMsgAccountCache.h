@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMTemplateMsgAccountCache
+@interface MMTemplateMsgAccountCache : NSObject
 {
     _Bool _isGlobalNotify;
     NSMutableArray *_weappList;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportOpenMaterialListItem
+@interface WAReportOpenMaterialListItem : NSObject
 {
     unsigned int _weapp_sum;
     unsigned int _weapp_index;

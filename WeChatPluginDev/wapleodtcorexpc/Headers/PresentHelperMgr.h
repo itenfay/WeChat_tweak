@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSCountedSet, NSMutableArray, NSString;
 
-@interface PresentHelperMgr
+@interface PresentHelperMgr : NSObject
 {
     NSMutableArray *_tmpCannotShowViewControllers;
     NSCountedSet *_slientlyPreparePresentStackVCSet;

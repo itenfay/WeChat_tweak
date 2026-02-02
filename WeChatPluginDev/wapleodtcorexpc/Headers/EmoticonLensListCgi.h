@@ -6,7 +6,7 @@
 @class NSData, NSString;
 @protocol EmoticonLensListCgiDelegate;
 
-@interface EmoticonLensListCgi
+@interface EmoticonLensListCgi : NSObject
 {
     NSString *_username;
     unsigned long long _enterTime;

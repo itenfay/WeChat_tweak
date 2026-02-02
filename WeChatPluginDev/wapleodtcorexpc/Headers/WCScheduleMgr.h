@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCClearScheduleCgi, WCGetScheduleCgi, WCTDatabase, WCTTable;
 
-@interface WCScheduleMgr
+@interface WCScheduleMgr : NSObject
 {
     _Bool _isXlabEnable;
     _Bool _canShowMainFrameEducation;

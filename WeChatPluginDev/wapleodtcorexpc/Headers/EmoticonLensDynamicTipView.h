@@ -5,7 +5,7 @@
 
 @class MMTimer, MMUILabel, MMUIView, NSArray, UIImageView;
 
-@interface EmoticonLensDynamicTipView
+@interface EmoticonLensDynamicTipView : NSObject
 {
     MMUIView *_tipContentView;
     UIImageView *_iconImageView;

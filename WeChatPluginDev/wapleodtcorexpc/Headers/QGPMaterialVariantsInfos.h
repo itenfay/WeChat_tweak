@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol QGPMaterialVariantsInfoOne;
 
-@interface QGPMaterialVariantsInfos
+@interface QGPMaterialVariantsInfos : NSObject
 {
     NSArray<QGPMaterialVariantsInfoOne> *_materialVariantsInfo;
 }

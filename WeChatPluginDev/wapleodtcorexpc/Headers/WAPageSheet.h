@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMPageSheetAdapter, NSString, UIView, WAPageSheetContentView;
 @protocol WAPageSheetDelegate;
 
-@interface WAPageSheet
+@interface WAPageSheet : NSObject
 {
     _Bool _forbidTapToDismiss;
     _Bool _bSupportRotate;

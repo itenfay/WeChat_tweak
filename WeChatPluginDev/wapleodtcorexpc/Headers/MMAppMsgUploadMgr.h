@@ -5,7 +5,7 @@
 
 @class MMAppMsgUploadDataBase, NSMutableDictionary, NSString;
 
-@interface MMAppMsgUploadMgr
+@interface MMAppMsgUploadMgr : NSObject
 {
     _Bool _shouldStopClean;
     NSMutableDictionary *_msgWrapDict;

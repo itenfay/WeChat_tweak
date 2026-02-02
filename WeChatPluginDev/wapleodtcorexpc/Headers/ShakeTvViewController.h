@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUIActivityIndicatorView, MMWebImageView, MMWebViewController, NSMutableArray, NSString, ScanTVHelper, SendAppMsgHandler, ShakeTvItem, UIButton, UILabel, UIView;
 
-@interface ShakeTvViewController
+@interface ShakeTvViewController : NSObject
 {
     _Bool _canShareToFriend;
     _Bool _canShareToWC;

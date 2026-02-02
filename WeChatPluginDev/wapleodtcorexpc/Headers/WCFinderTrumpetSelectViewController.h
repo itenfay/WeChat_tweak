@@ -6,7 +6,7 @@
 @class GameRankSwitchInfo, MMFinderLiveTaskId, NSNumber, NSString, WCFinderLiveAudienceRoleReporter, WCTableViewManager;
 @protocol WCFinderTrumpetSelectViewControllerDelegate;
 
-@interface WCFinderTrumpetSelectViewController
+@interface WCFinderTrumpetSelectViewController : NSObject
 {
     _Bool _selectRoleOnlyMode;
     _Bool _autoDismissAfterChanged;

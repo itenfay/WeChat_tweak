@@ -6,7 +6,7 @@
 @class CBaseContact, MMTableView, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NewContactsSearchPanelView, SearchHelpDataItem, UILabel, WCColorProxy, WCSearcher;
 @protocol TemplateContactSelectDelegate;
 
-@interface TemplateContactSelectViewController
+@interface TemplateContactSelectViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_arrRoomMembers;

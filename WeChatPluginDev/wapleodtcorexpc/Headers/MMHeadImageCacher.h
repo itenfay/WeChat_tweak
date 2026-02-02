@@ -5,7 +5,7 @@
 
 @class NSCache, NSMutableDictionary;
 
-@interface MMHeadImageCacher
+@interface MMHeadImageCacher : NSObject
 {
     NSMutableDictionary *_dictUseScene2MemoryCache;
     NSCache *_originContactsHeadImgCache;

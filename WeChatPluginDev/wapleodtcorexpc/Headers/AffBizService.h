@@ -5,7 +5,7 @@
 
 @class AffBizCgiProxy, NSString;
 
-@interface AffBizService
+@interface AffBizService : NSObject
 {
     AffBizCgiProxy *_cgiProxy;
 }

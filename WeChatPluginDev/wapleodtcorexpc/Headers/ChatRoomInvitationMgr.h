@@ -5,7 +5,7 @@
 
 @class ChatRoomInvitationDB, NSMutableDictionary, NSString;
 
-@interface ChatRoomInvitationMgr
+@interface ChatRoomInvitationMgr : NSObject
 {
     ChatRoomInvitationDB *_db;
     NSMutableDictionary *_dicLastReadTime;

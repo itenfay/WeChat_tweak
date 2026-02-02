@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMAppRefreshTokenAppInfo
+@interface MMAppRefreshTokenAppInfo : NSObject
 {
     NSString *_appID;
     NSString *_appIconUrl;

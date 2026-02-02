@@ -5,7 +5,7 @@
 
 @class NSString, SettingMyAccountExtInfoLogic, WCTableViewManager;
 
-@interface SettingSocialInfoViewController
+@interface SettingSocialInfoViewController : NSObject
 {
     WCTableViewManager *m_tableViewMgr;
     SettingMyAccountExtInfoLogic *m_infoLogic;

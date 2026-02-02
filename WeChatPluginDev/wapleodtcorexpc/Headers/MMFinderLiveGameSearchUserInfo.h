@@ -5,7 +5,7 @@
 
 @class FinderLiveSearchMoreGamesResponse_Weapp, NSString;
 
-@interface MMFinderLiveGameSearchUserInfo
+@interface MMFinderLiveGameSearchUserInfo : NSObject
 {
     _Bool _isAdded;
     NSString *_shortAppname;

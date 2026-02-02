@@ -6,7 +6,7 @@
 @class DiscoverEntranceSettingConfig;
 @protocol DiscoverEntranceSettingSheetViewDelegate;
 
-@interface DiscoverEntranceSettingSheetView
+@interface DiscoverEntranceSettingSheetView : NSObject
 {
     id <DiscoverEntranceSettingSheetViewDelegate> _delegate;
     DiscoverEntranceSettingConfig *_config;

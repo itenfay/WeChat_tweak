@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCFinderAudienceReserveLiveCGIExtentParams;
 
-@interface WCFinderAudienceReserveLiveCGI
+@interface WCFinderAudienceReserveLiveCGI : NSObject
 {
     unsigned int _optype;
     unsigned int _scene;

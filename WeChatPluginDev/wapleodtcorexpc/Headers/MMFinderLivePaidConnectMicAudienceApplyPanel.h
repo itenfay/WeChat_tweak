@@ -6,7 +6,7 @@
 @class MMFinderLivePaidConnectMicServiceInfo, MMFinderLiveTaskId, MMHeadImageView, MMTextView, MMUIButton, MMUILabel, MMUIMaskContainerView, NSArray, NSString, UIButton, UIScrollView, UIView;
 @protocol MMFinderLivePaidConnectMicAudienceApplyPanelDelegate;
 
-@interface MMFinderLivePaidConnectMicAudienceApplyPanel
+@interface MMFinderLivePaidConnectMicAudienceApplyPanel : NSObject
 {
     _Bool _allowAnonymous;
     _Bool _allowConsultInput;

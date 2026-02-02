@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface EcsGiftMessageMgr
+@interface EcsGiftMessageMgr : NSObject
 {
     ForwardMessageLogicController *_forwardLogicController;
     NSObject<OS_dispatch_queue> *_handleMsgQueue;

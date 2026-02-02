@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicSeatBaseInfo, MMUITextField, NSString, UIButton;
 @protocol MMFinderLiveModifyMicSeatNamePanelDelegate;
 
-@interface MMFinderLiveModifyMicSeatNamePanel
+@interface MMFinderLiveModifyMicSeatNamePanel : NSObject
 {
     id <MMFinderLiveModifyMicSeatNamePanelDelegate> _actionDelegate;
     NSString *_originalSeatName;

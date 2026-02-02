@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WARequestConfig
+@interface WARequestConfig : NSObject
 {
     unsigned int _requestMaxConcurrentCount;
 }

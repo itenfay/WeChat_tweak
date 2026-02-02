@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_chooseShareGroup
+@interface WAJSEventHandler_chooseShareGroup : NSObject
 {
 }
 

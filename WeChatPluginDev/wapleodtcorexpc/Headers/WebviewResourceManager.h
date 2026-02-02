@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, WebResourceCDNDownloadHelper, WebResourceCDNUploadHelper;
 
-@interface WebviewResourceManager
+@interface WebviewResourceManager : NSObject
 {
     NSRecursiveLock *_lock;
     NSMutableArray *_resItemArray;

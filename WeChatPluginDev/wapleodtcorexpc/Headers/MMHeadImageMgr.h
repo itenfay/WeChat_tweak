@@ -5,7 +5,7 @@
 
 @class CUploadHDHeadImg, MMHeadImageCacher, MMHeadImageDownloader, NSString;
 
-@interface MMHeadImageMgr
+@interface MMHeadImageMgr : NSObject
 {
     MMHeadImageCacher *_headImgCacher;
     MMHeadImageDownloader *_headImgDownloader;

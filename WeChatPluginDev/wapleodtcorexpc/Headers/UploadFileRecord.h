@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UploadFileRecord
+@interface UploadFileRecord : NSObject
 {
     unsigned int _type;
     NSString *_weburl;

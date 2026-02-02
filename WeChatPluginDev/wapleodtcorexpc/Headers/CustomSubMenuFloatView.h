@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString, UIView;
 @protocol CustomSubMenuFloatViewDelegate;
 
-@interface CustomSubMenuFloatView
+@interface CustomSubMenuFloatView : NSObject
 {
     UIView *m_contentView;
     MMTableView *m_tableView;

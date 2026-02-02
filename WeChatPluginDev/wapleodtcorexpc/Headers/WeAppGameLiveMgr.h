@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MemoryMappedKV, NSMutableArray, NSString;
 @protocol WAGameLiveServiceExt;
 
-@interface WeAppGameLiveMgr
+@interface WeAppGameLiveMgr : NSObject
 {
     unsigned long long _liveId;
     NSString *_finderUsername;

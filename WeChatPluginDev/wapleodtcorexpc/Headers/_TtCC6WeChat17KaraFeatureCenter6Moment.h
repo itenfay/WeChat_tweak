@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter6Moment
+@interface _TtCC6WeChat17KaraFeatureCenter6Moment : NSObject
 {
     MISSING_TYPE *imageHistoryTable;
     MISSING_TYPE *videoHistoryTable;

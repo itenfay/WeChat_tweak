@@ -6,7 +6,7 @@
 @class FinderUniCommentMediaView, NSIndexPath, NSString, UIButton, UIColor, UIImageView, UIView, WCFinderComment, WCFinderFeedContentTextView;
 @protocol TextStateSubCommentTableViewCellActionDelegate;
 
-@interface TextStateSubCommentTableViewCell
+@interface TextStateSubCommentTableViewCell : NSObject
 {
     _Bool _isLastSectionCell;
     _Bool _wechatAccountProfileSwitch;

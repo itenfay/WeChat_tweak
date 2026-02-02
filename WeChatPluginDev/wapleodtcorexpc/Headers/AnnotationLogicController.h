@@ -5,7 +5,7 @@
 
 @class MMAddressAnnotation, NSArray, NSMutableDictionary, QMapView;
 
-@interface AnnotationLogicController
+@interface AnnotationLogicController : NSObject
 {
     NSMutableDictionary *_annotationDic;
     QMapView *_mapView;

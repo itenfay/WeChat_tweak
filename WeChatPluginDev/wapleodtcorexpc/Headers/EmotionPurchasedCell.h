@@ -5,7 +5,7 @@
 
 @class EmoticonStoreItem, MMEmoticonStoreDownloadLogic, MMWebImageView, NSString, UILabel;
 
-@interface EmotionPurchasedCell
+@interface EmotionPurchasedCell : NSObject
 {
     EmoticonStoreItem *_item;
     MMEmoticonStoreDownloadLogic *_downloadLogic;

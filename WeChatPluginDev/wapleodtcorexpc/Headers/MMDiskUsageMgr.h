@@ -6,7 +6,7 @@
 @class MMDiskCommonUsageScanner, MMDiskUsageConfigHandler, MMDiskUsageReporter, MMDiskUsageScaner, MMDiskUsageStatus, MMFolderWrapCacheData, MMTimer, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMDiskUsageMgr
+@interface MMDiskUsageMgr : NSObject
 {
     _Bool _shouldToScan;
     _Bool _shouldReport;

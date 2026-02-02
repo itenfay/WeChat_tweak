@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLRUCache, NSMutableArray, NSString, NSURLSessionDownloadTask;
 
-@interface MJTemplateService
+@interface MJTemplateService : NSObject
 {
     MMLRUCache *_templateCacheFromSvr;
     MMLRUCache *_templateCacheFromSDK;

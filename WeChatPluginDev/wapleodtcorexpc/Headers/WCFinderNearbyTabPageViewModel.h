@@ -6,7 +6,7 @@
 @class FinderLiveLbsInfo, NSArray;
 @protocol WCFinderNearbyTabPageViewModelDelegate;
 
-@interface WCFinderNearbyTabPageViewModel
+@interface WCFinderNearbyTabPageViewModel : NSObject
 {
     FinderLiveLbsInfo *_nearbyVideoTabInfo;
     id <WCFinderNearbyTabPageViewModelDelegate> _delegate;

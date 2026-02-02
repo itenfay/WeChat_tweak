@@ -5,7 +5,7 @@
 
 @class MJTimecodeView, MMUIView;
 
-@interface MJPublisherPlaybackProgressSlider
+@interface MJPublisherPlaybackProgressSlider : NSObject
 {
     MJTimecodeView *_timeCodeView;
     MMUIView *_expandedCircleView;

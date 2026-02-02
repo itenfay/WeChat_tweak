@@ -6,7 +6,7 @@
 @class FinderLiveIncomePageItem, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MMUIView, MMWebImageView, UIImageView, UILabel, UIView;
 @protocol MMFinderLiveFetchMoneyTableCellDelegate;
 
-@interface MMFinderLiveFetchMoneyTableCell
+@interface MMFinderLiveFetchMoneyTableCell : NSObject
 {
     _Bool _isWaiting;
     unsigned int _businessId;

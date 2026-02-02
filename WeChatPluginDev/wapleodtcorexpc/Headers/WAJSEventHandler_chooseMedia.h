@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMImagePickerManagerOptionObj, NSMutableArray, NSString, UINavigationController;
 
-@interface WAJSEventHandler_chooseMedia
+@interface WAJSEventHandler_chooseMedia : NSObject
 {
     _Bool _isSwitch;
     _Bool _userDidSelect;

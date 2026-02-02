@@ -5,7 +5,7 @@
 
 @class MMFinderLivePromoteDisplayLease;
 
-@interface MMFinderLivePromoteDisplayLogicLeasedPubbleLifecycleCallbackParameter
+@interface MMFinderLivePromoteDisplayLogicLeasedPubbleLifecycleCallbackParameter : NSObject
 {
     MMFinderLivePromoteDisplayLease *_lease;
 }

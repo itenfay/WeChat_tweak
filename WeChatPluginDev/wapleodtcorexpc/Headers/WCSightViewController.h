@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, MMUIButton, MMUIViewController, NSString, SightView, UIImageView, UIView, WCDataItem, WCMediaItem, WXFullScreenGestureRecognizer;
 
-@interface WCSightViewController
+@interface WCSightViewController : NSObject
 {
     unsigned int _startTime;
     MMUIViewController *_fullScreenWindow;

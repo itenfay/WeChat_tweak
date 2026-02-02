@@ -5,7 +5,7 @@
 
 @protocol MMCameraTouchEventViewDelegate;
 
-@interface MMCameraTouchEventView
+@interface MMCameraTouchEventView : NSObject
 {
     id <MMCameraTouchEventViewDelegate> _delegate;
 }

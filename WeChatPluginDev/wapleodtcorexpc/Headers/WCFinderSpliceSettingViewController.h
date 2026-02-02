@@ -5,7 +5,7 @@
 
 @class FinderNewUserPrepareResponse, NSString, WCFinderPrivacySettingHelper, WCTableViewManager;
 
-@interface WCFinderSpliceSettingViewController
+@interface WCFinderSpliceSettingViewController : NSObject
 {
     WCTableViewManager *_tableViewManager;
     FinderNewUserPrepareResponse *_userPrepare;

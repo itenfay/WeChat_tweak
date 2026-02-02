@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicAnchorContainerView, MMFinderLiveConnectMicAudienceContainerView, MMFinderLiveConnectMicBaseContainerView, MMFinderLiveConnectMicIncomingAudienceSettingsPanel, MMFinderLiveConnectMicLayoutModeSubtitleWrap, MMFinderLiveConnectMicSearchAudienceView, MMFinderLiveConnectMicTabView, MMFinderLiveTaskId, MMUnderlineTabsView, NSString, UIView;
 @protocol MMFinderLiveConnectMicOperationPanelDelegate;
 
-@interface MMFinderLiveConnectMicOperationPanel
+@interface MMFinderLiveConnectMicOperationPanel : NSObject
 {
     _Bool _enableOperation;
     _Bool _isShowing;

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCStatTimerHelper
+@interface WCStatTimerHelper : NSObject
 {
     _Bool _bHadAddObserver;
     unsigned long long _u64ActiveTime;

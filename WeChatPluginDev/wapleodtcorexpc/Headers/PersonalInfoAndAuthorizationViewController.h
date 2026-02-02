@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo;
 
-@interface PersonalInfoAndAuthorizationViewController
+@interface PersonalInfoAndAuthorizationViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
 }

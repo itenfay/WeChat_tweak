@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, WCFinderLiveStreamContainerModel;
 @protocol WCFinderLiveHomePageTabLiveStreamSectionViewModelDelegate;
 
-@interface WCFinderLiveHomePageTabLiveStreamSectionViewModel
+@interface WCFinderLiveHomePageTabLiveStreamSectionViewModel : NSObject
 {
     _Bool _isLocationServiceAuthrized;
     id <WCFinderLiveHomePageTabLiveStreamSectionViewModelDelegate> _delegate;

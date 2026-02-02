@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceRankLikeDetailInfo
+@interface DeviceRankLikeDetailInfo : NSObject
 {
     unsigned int uiLikeTime;
     NSString *nsUserName;

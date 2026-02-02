@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderTopicListParamsModel;
 
-@interface WCFinderGetTopicListCGI
+@interface WCFinderGetTopicListCGI : NSObject
 {
     WCFinderTopicListParamsModel *_paramsModel;
     CDUnknownBlockType _successful;

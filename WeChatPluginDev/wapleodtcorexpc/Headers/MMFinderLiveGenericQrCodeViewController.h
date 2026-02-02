@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveShareLiveQRCodeInfo, ForwardMessageLogicController, MMFinderLiveGenericQrCodeView, MMFinderLiveNoticePosterModel, MMFinderLiveTaskId, MMLiveVerticalTextButtonView, MMScrollActionSheet, MMUIButton, NSString, UIView, WCFinderContact, WCForwardViewController;
 
-@interface MMFinderLiveGenericQrCodeViewController
+@interface MMFinderLiveGenericQrCodeViewController : NSObject
 {
     WCFinderContact *_anchorContact;
     MMFinderLiveTaskId *_taskId;

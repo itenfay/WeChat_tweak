@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor;
 
-@interface WAAppOpenSheetModeParameter
+@interface WAAppOpenSheetModeParameter : NSObject
 {
     _Bool _m_bEmbedModeAllowFullScreen;
     _Bool _m_bShouldForbidExitWhenTapBackground;

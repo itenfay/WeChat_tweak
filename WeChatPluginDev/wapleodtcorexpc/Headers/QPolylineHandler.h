@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface QPolylineHandler
+@interface QPolylineHandler : NSObject
 {
     UIImage *_styleTextureImage;
     UIImage *_symbolImage;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FTSIntelligentMsgItem
+@interface FTSIntelligentMsgItem : NSObject
 {
     NSString *_ocrText;
     NSString *_faceAlbumLabels;

@@ -6,7 +6,7 @@
 @class CContact, MMTableView, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, WCSearcher;
 @protocol WCPayContactSelectListBaseViewControllerDelegate;
 
-@interface WCPayContactSelectListBaseViewController
+@interface WCPayContactSelectListBaseViewController : NSObject
 {
     NSMutableArray *m_arrAllKey;
     _Bool m_bSearching;

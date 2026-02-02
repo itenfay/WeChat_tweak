@@ -5,7 +5,7 @@
 
 @class FinderSyncTipsShowInfo, NSString, NewLifeSwitchLogic, WCFinderRedDotCtrlInfo, WCFinderRedDotTipsShowInfo, WSRedPointCtrlInfo;
 
-@interface WebSearchRedotMgr
+@interface WebSearchRedotMgr : NSObject
 {
     WSRedPointCtrlInfo *_ctrlInfo;
     unsigned long long _reddotTriggerJumpColumn;

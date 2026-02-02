@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AAQueryDetailRes, CContact, MMUIView, NSString, RichTextView;
 
-@interface WCPayGPOrderStatusHeaderView
+@interface WCPayGPOrderStatusHeaderView : NSObject
 {
     _Bool _isExpandThemeContent;
     CContact *_chatroomContact;

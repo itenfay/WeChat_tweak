@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, TenpayEditableBankNum, UIImage, UIImageView;
 @protocol WCPayFillCardNumberViewControllerDelegate;
 
-@interface WCPayCardNumberConfirmViewController
+@interface WCPayCardNumberConfirmViewController : NSObject
 {
     _Bool _didRenderViews;
     NSString *_origin3DESText;

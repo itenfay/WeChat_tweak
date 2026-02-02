@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderGlobalPushJumpMgr
+@interface WCFinderGlobalPushJumpMgr : NSObject
 {
 }
 

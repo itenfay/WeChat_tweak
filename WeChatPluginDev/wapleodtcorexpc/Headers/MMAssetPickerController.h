@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMAlbum, MMAlbumAccessAuthView, MMAlbumAuthorizationReportObject, MMAlbumDropPickerController, MMAlbumDropableTitleWithMultipleSectionView, MMAsset, MMAssetDragSelectHelper, MMAssetPickerActionBottomView, MMAssetPickerControllerProxyObjectForAllAsset, MMAssetPickerControllerState, MMAssetPickerSlider, MMAssetUserActionTipsView, MMDropableTitleView, MMImagePickerVideoCompressQueue, MMScrollView, MMSightCameraViewController, MMTableView, MMUIButton, MMUIImageView, MMUILabel, NSDateFormatter, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIButton, UIImageView, UILabel, UIView, VideoEncodeTask, WCFinderFeedPickerViewController, WCFinderPreviewEditVideoCompositionTask, WCFinderSyncComposeResModel;
 @protocol MMAssetPickerControllerDelegate, MMImagePickerControlCenter, UIViewControllerPreviewing;
 
-@interface MMAssetPickerController
+@interface MMAssetPickerController : NSObject
 {
     NSMutableArray *_imageDictionaries;
     UIView *_bottomBarFloatView;

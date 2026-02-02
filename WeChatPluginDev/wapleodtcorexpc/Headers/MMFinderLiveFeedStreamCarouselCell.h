@@ -6,7 +6,7 @@
 @class MMFinderLiveFeedStreamCarouselBaseItem;
 @protocol MMFinderLiveFeedStreamCarouselCellDelegate, MMFinderLiveFeedStreamCarouselItemProtocol;
 
-@interface MMFinderLiveFeedStreamCarouselCell
+@interface MMFinderLiveFeedStreamCarouselCell : NSObject
 {
     id <MMFinderLiveFeedStreamCarouselCellDelegate> _delegate;
     MMFinderLiveFeedStreamCarouselBaseItem<MMFinderLiveFeedStreamCarouselItemProtocol> *_data;

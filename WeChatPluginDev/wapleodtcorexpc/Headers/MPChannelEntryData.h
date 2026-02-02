@@ -5,7 +5,7 @@
 
 @class MPChannelTimelineInfo, MPChannelTopBarInfo, NSString;
 
-@interface MPChannelEntryData
+@interface MPChannelEntryData : NSObject
 {
     unsigned long long _entryOption;
     MPChannelTopBarInfo *_topBarInfo;

@@ -5,7 +5,7 @@
 
 @class _TtC6WeChat23WSSearchProcessReporter;
 
-@interface _LocalJSEventHandler_getSearchData
+@interface _LocalJSEventHandler_getSearchData : NSObject
 {
     _Bool _isFingertipSearch;
     _TtC6WeChat23WSSearchProcessReporter *_processReporter;

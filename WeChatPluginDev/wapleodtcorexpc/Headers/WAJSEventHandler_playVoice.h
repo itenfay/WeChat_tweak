@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_playVoice
+@interface WAJSEventHandler_playVoice : NSObject
 {
 }
 

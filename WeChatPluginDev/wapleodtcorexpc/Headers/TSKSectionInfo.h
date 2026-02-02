@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TSKSectionInfo
+@interface TSKSectionInfo : NSObject
 {
     _Bool _roleChanged;
     int _sentenceId;

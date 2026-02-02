@@ -5,7 +5,7 @@
 
 @class CContact, NSMutableArray;
 
-@interface ContactRemarkLogic
+@interface ContactRemarkLogic : NSObject
 {
     NSMutableArray *_uploadedCardItem;
     CContact *_downloadingContact;

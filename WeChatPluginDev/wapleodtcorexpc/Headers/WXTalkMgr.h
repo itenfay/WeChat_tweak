@@ -5,7 +5,7 @@
 
 @class AVAudioPlayer, MMTimer, NSRecursiveLock, NSString, WXTalkDNSController, WXTalkRoomData, WXTalkStatusReportHelper, WXTalkieComponent;
 
-@interface WXTalkMgr
+@interface WXTalkMgr : NSObject
 {
     _Bool _isInTalkRoom;
     _Bool _isRealInTalkRoom;

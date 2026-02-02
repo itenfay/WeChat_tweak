@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, UILabel, WCFinderFeedImageCDNView, WCFinderStaticCoverInfoView;
 
-@interface WCFinderLandScapeCoverInfoView
+@interface WCFinderLandScapeCoverInfoView : NSObject
 {
     CAGradientLayer *_gradientLayer;
     WCFinderFeedImageCDNView *_coverView;

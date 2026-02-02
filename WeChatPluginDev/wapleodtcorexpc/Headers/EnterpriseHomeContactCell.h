@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView;
 
-@interface EnterpriseHomeContactCell
+@interface EnterpriseHomeContactCell : NSObject
 {
     MMWebImageView *_iconImageView;
     MMUILabel *_displayNameLabel;

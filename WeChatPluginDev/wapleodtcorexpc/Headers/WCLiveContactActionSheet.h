@@ -6,7 +6,7 @@
 @class MMCPLabel, MMHeadImageView, NSString, WCFinderContact;
 @protocol WCLiveContactActionSheetDelegate;
 
-@interface WCLiveContactActionSheet
+@interface WCLiveContactActionSheet : NSObject
 {
     id <WCLiveContactActionSheetDelegate> _liveContactActionSheetDelegate;
     MMHeadImageView *_headImageView;

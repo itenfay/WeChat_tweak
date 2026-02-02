@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, CALayer, MMFinderLiveLiveRoleSignView, MMUIView;
 
-@interface MMFinderLiveTableStyleCommentPubbleOfficialNoticeCell
+@interface MMFinderLiveTableStyleCommentPubbleOfficialNoticeCell : NSObject
 {
     unsigned int _lastRank;
     unsigned int _lastMsgSubtype;

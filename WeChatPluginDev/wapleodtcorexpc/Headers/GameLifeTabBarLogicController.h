@@ -5,7 +5,7 @@
 
 @class GameCenterTabSettingControl_TabConfiguration;
 
-@interface GameLifeTabBarLogicController
+@interface GameLifeTabBarLogicController : NSObject
 {
     GameCenterTabSettingControl_TabConfiguration *_defaultTabConfiguration;
 }

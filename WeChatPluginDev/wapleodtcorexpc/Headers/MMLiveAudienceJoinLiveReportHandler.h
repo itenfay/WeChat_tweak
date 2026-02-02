@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveAudienceJoinLiveReportHandler
+@interface MMLiveAudienceJoinLiveReportHandler : NSObject
 {
     unsigned int scene;
     unsigned int errCode;

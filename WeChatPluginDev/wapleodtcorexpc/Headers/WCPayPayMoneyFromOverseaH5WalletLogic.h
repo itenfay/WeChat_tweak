@@ -6,7 +6,7 @@
 @class CallbackRetryConf, MMVoidCallback, MMVoidITransmitKvDataCallback, NSMutableDictionary, NSString, WCPayDrawLotteryCgi, WCPayFollowCardBDMchCgi, WCPayGetLotteryCgi;
 @protocol WCPayPayMoneyFromOverseaH5WalletLogicDelegate;
 
-@interface WCPayPayMoneyFromOverseaH5WalletLogic
+@interface WCPayPayMoneyFromOverseaH5WalletLogic : NSObject
 {
     NSString *m_nsPayGateUrl;
     CallbackRetryConf *m_oCallbackRetryConf;

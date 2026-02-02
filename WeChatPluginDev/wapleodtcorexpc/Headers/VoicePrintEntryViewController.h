@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton, UIView, VoicePrintCreateLogic, VoicePrintHeaderView, VoicePrintVerifyLogic, WCSheetView;
 
-@interface VoicePrintEntryViewController
+@interface VoicePrintEntryViewController : NSObject
 {
     _Bool _voicePrintExists;
     _Bool _voicePrintSwitch;

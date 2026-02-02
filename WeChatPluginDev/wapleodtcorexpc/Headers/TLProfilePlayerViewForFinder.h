@@ -6,7 +6,7 @@
 @class NSString;
 @protocol TLProfileBaseMediaViewDelegate;
 
-@interface TLProfilePlayerViewForFinder
+@interface TLProfilePlayerViewForFinder : NSObject
 {
     _Bool _tl_muted;
     id <TLProfileBaseMediaViewDelegate> _tl_profileDelegate;

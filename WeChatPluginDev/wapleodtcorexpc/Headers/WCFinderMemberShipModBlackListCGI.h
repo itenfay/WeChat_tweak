@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderMemberShipModBlackListCGI
+@interface WCFinderMemberShipModBlackListCGI : NSObject
 {
     int _opType;
     int _acctType;

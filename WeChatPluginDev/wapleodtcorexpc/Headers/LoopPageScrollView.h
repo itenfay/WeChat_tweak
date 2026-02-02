@@ -6,7 +6,7 @@
 @class MMUIScrollView, NSString, UIPanGestureRecognizer;
 @protocol LoopPageScrollViewDataSourceDelegate;
 
-@interface LoopPageScrollView
+@interface LoopPageScrollView : NSObject
 {
     MMUIScrollView *m_scrollView;
     id <LoopPageScrollViewDataSourceDelegate> m_delegate;

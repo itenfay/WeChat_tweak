@@ -5,7 +5,7 @@
 
 @class MMDoodleToolbarItem, NSMutableArray, UIView;
 
-@interface MMDoodleToolbar
+@interface MMDoodleToolbar : NSObject
 {
     id _delegate;
     UIView *_itemBar;

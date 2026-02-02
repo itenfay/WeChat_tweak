@@ -5,7 +5,7 @@
 
 @class MMLoadingView, NSMutableArray, NSString, UITableView, UIView;
 
-@interface WXGRoamBackupPackageListViewController
+@interface WXGRoamBackupPackageListViewController : NSObject
 {
     double m_cellHeight;
     _Bool _bNeedScrollToDetailIndex;

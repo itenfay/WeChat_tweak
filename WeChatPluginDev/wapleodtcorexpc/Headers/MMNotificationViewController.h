@@ -6,7 +6,7 @@
 @class MMNotificationView, MMTimer;
 @protocol MMNotificationViewControllerDelegate;
 
-@interface MMNotificationViewController
+@interface MMNotificationViewController : NSObject
 {
     MMNotificationView *_notificationView;
     id <MMNotificationViewControllerDelegate> _delegate;

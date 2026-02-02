@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UILabel, WCFinderContact, WCFinderHeadImageView;
 @protocol WCFinderTimelinePrivateMsgBubbleViewDelegate;
 
-@interface WCFinderTimelinePrivateMsgBubbleView
+@interface WCFinderTimelinePrivateMsgBubbleView : NSObject
 {
     id <WCFinderTimelinePrivateMsgBubbleViewDelegate> _delegate;
     UIButton *_notifyButton;

@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCMallMobileChargeControlLogic;
 
-@interface WCMallJumpWCMallControlLogic
+@interface WCMallJumpWCMallControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     NSString *m_nsStepUrl;

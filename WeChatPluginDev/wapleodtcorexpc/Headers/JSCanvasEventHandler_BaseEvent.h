@@ -5,7 +5,7 @@
 
 @protocol JSCanvasEventHandlerContextDelegate;
 
-@interface JSCanvasEventHandler_BaseEvent
+@interface JSCanvasEventHandler_BaseEvent : NSObject
 {
     id <JSCanvasEventHandlerContextDelegate> _canvasContext;
 }

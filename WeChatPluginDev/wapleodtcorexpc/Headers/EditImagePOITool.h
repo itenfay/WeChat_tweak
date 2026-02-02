@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView, WCLocationInfo, WCTimelinePOIPickerViewController;
 
-@interface EditImagePOITool
+@interface EditImagePOITool : NSObject
 {
     WCLocationInfo *_locationInfo;
     NSString *_poiReportStr4Commit;

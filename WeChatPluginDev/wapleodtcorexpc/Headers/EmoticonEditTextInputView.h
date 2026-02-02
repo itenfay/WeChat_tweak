@@ -6,7 +6,7 @@
 @class EditImageColorBar, MMTextView, MMUIButton, NSString, UIButton, UIColor, UIView;
 @protocol EmoticonEditTextInputDelegate;
 
-@interface EmoticonEditTextInputView
+@interface EmoticonEditTextInputView : NSObject
 {
     UIView *m_bgView;
     UIButton *m_cancelBtn;

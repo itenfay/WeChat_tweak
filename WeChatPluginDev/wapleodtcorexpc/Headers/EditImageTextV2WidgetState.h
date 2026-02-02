@@ -5,7 +5,7 @@
 
 @class NSString, UIColor;
 
-@interface EditImageTextV2WidgetState
+@interface EditImageTextV2WidgetState : NSObject
 {
     NSString *_textContent;
     UIColor *_textColor;

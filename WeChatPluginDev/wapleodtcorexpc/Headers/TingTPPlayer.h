@@ -6,7 +6,7 @@
 @class MMTimer, NSString, TingSafeWeakProxy, TingTPResourceLoader, WCAudioInfo;
 @protocol ITPPlayer;
 
-@interface TingTPPlayer
+@interface TingTPPlayer : NSObject
 {
     _Bool _hasCallPrepared;
     _Bool _isPreload;

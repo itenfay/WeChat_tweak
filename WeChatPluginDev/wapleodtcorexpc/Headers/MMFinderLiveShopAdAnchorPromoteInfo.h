@@ -5,7 +5,7 @@
 
 @class FinderLiveShopWindowAdItem;
 
-@interface MMFinderLiveShopAdAnchorPromoteInfo
+@interface MMFinderLiveShopAdAnchorPromoteInfo : NSObject
 {
     FinderLiveShopWindowAdItem *_adItem;
 }

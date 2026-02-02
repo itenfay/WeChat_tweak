@@ -6,7 +6,7 @@
 @class MMGroupLiveTask, MMGroupLiveTaskId, MMLiveGroupConnectMicLogic, NSString;
 @protocol MMGroupLiveLogicDelegate;
 
-@interface MMGroupLiveLogic
+@interface MMGroupLiveLogic : NSObject
 {
     _Bool _isKeyRequesting;
     _Bool _isInUpdateLiveMicEnableCgiProcess;

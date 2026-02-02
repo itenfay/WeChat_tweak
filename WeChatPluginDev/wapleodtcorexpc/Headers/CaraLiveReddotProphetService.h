@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CaraCppLiveReddotProphet, NSString;
 
-@interface CaraLiveReddotProphetService
+@interface CaraLiveReddotProphetService : NSObject
 {
     CaraCppLiveReddotProphet *_underlying;
 }

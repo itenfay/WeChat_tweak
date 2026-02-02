@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCCardBaseCell
+@interface WCCardBaseCell : NSObject
 {
     UIView *_highlightView;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x118
+@interface WloginTlv_0x118 : NSObject
 {
     unsigned int dwFlag;
     NSString *sName;

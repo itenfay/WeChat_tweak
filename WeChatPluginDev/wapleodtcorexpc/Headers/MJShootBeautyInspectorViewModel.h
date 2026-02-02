@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootBeautyItem, MJShootBeautyMainPanelItem, NSArray, NSMutableDictionary, OMJBeautyAdjustmentDesc;
 
-@interface MJShootBeautyInspectorViewModel
+@interface MJShootBeautyInspectorViewModel : NSObject
 {
     _Bool _didAdjustBeautyParam;
     MJShootBeautyMainPanelItem *_selectedBeautyMainPanelItem;

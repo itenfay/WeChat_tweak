@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCTDatabase, WCTTable;
 
-@interface MMOrderCenterDataService
+@interface MMOrderCenterDataService : NSObject
 {
     _Bool _prefetchedOrderDetailsWeApp;
     NSArray *_prefetchedTabCountItems;

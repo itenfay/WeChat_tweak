@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, MPPageFastLoadEventMgr, NSArray, NSString, NSURLSession;
 
-@interface MPPageFastLoadTmplViewController
+@interface MPPageFastLoadTmplViewController : NSObject
 {
     _Bool _isInDownloadProcess;
     NSArray *_arrTmplNum;

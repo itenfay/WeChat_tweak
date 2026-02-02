@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EnhanceTranslatingImageCdnObject, NSString, OCRTransReport, UIButton, UIImage, UIImageView, UILabel, UIScrollView, WCImageTranslateLogic;
 
-@interface EnhanceTranslatingResultViewController
+@interface EnhanceTranslatingResultViewController : NSObject
 {
     unsigned int _sessionId;
     int _scene;

@@ -6,7 +6,7 @@
 @class NSData, NSString;
 @protocol FaceRecogPayConfigLogicDelegate;
 
-@interface FaceRecogPayConfigLogic
+@interface FaceRecogPayConfigLogic : NSObject
 {
     NSString *_actionBioId;
     NSString *_actionData;

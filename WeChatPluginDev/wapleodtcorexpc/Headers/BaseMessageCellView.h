@@ -5,7 +5,7 @@
 
 @class BaseMessageViewModel, NSArray, NSSet, NSString, UIView;
 
-@interface BaseMessageCellView
+@interface BaseMessageCellView : NSObject
 {
     NSArray *m_arrMenuItems;
     UIView *m_contentView;

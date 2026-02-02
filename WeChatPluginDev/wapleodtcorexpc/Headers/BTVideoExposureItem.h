@@ -6,7 +6,7 @@
 @class NSIndexPath;
 @protocol BTItemCellViewModelVideoPlayProtocol;
 
-@interface BTVideoExposureItem
+@interface BTVideoExposureItem : NSObject
 {
     NSIndexPath *_cellViewIndexPath;
     double _exposureRatio;

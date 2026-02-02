@@ -6,7 +6,7 @@
 @class FavActivityIndicatorView, FavAttributeCPLabel, MMUIButton, MMUILabel, NSMutableArray, NSString, UIImageView;
 @protocol MMFavCellComponentDelegate;
 
-@interface MMFavBaselineComponent
+@interface MMFavBaselineComponent : NSObject
 {
     UIImageView *m_logoImgView;
     FavAttributeCPLabel *m_authorNameLabel;

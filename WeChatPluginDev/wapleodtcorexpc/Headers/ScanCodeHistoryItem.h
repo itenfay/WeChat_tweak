@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScanCodeHistoryItem
+@interface ScanCodeHistoryItem : NSObject
 {
     _Bool _isFromAlbum;
     _Bool _isFromCombineTab;

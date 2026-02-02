@@ -5,7 +5,7 @@
 
 @protocol WAStreamPlayerInterface;
 
-@interface WAFloatingVideoPlayerWrapper
+@interface WAFloatingVideoPlayerWrapper : NSObject
 {
     _Bool _originEnablePageGesture;
     _Bool _originEnablePageGestureFull;

@@ -6,7 +6,7 @@
 @class AttributeLabel, MMTableView, MMUISearchBar, NSMutableArray, NSString, UIButton, UIImageView, UIView, WCTimeLineFooterView;
 @protocol EnterpriseContactSearchViewDelegate;
 
-@interface EnterpriseContactSearchView
+@interface EnterpriseContactSearchView : NSObject
 {
     NSString *_brandUserName;
     MMUISearchBar *_superSearchBar;

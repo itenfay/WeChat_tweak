@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel;
 
-@interface CLMDeleteOKHalfScreenView
+@interface CLMDeleteOKHalfScreenView : NSObject
 {
     unsigned long long _dataSize;
     UILabel *_titleLabel;

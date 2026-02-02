@@ -6,7 +6,7 @@
 @class JSEvent, NSData, NSString, WCPayCheckUserAuthJSApiCgi;
 @protocol WCPayJSApiVerifyDelegate;
 
-@interface WCPayJSApiVerifyPayPasswordControlLogic
+@interface WCPayJSApiVerifyPayPasswordControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     long long m_enWCPayCheckAuthorityScene;

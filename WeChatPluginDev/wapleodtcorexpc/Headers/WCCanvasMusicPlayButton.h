@@ -5,7 +5,7 @@
 
 @class MMUIImageView, UIColor, UIImage;
 
-@interface WCCanvasMusicPlayButton
+@interface WCCanvasMusicPlayButton : NSObject
 {
     _Bool _isAnimating;
     long long _playState;

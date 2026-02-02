@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVMutableVideoComposition, CALayer, NSMutableDictionary, NSString, UIImage;
 
-@interface VideoCompositionAttr
+@interface VideoCompositionAttr : NSObject
 {
     _Bool _hasOriginSound;
     _Bool _isPhotoCompositionVideo;

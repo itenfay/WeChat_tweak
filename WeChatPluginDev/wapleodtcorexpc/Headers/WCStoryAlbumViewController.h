@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UICollectionView, UICollectionViewFlowLayout, UIView, WCMomentsPageContext, WCStoryAlbumViewModel, WCStoryCollectionFooterView, WCStoryFloatTopBar;
 
-@interface WCStoryAlbumViewController
+@interface WCStoryAlbumViewController : NSObject
 {
     _Bool _isNoMoreData;
     WCMomentsPageContext *_pageContext;

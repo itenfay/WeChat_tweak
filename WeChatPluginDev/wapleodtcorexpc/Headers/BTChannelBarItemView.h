@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView;
 
-@interface BTChannelBarItemView
+@interface BTChannelBarItemView : NSObject
 {
     MMUILabel *m_dotLabel;
     MMWebImageView *m_smallIconImageView;

@@ -5,7 +5,7 @@
 
 @class MMAdaptiveLabel, MMImageGridView, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SightIconView, UIButton, WCAdCommonInteractionLogic, WCAdLiveDisplayView, WCMediaItem;
 
-@interface WCContentItemViewTemplateGrid
+@interface WCContentItemViewTemplateGrid : NSObject
 {
     MMAdaptiveLabel *_descriptionView;
     MMImageGridView *_imageGridView;

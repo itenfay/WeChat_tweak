@@ -6,7 +6,7 @@
 @class MJShootFavTemplateAuthorButton, MMUIButton, UIImpactFeedbackGenerator;
 @protocol MJShootFavTemplateEntranceViewDelegate;
 
-@interface MJShootFavTemplateEntranceView
+@interface MJShootFavTemplateEntranceView : NSObject
 {
     id <MJShootFavTemplateEntranceViewDelegate> _delegate;
     MJShootFavTemplateAuthorButton *_authorButton;

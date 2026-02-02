@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WXChannelBindResp
+@interface WXChannelBindResp : NSObject
 {
     NSString *_extMsg;
     NSData *_authBuffer;

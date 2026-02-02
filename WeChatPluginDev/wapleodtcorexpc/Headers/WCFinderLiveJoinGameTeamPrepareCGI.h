@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveJoinGameTeamPrepareCGI
+@interface WCFinderLiveJoinGameTeamPrepareCGI : NSObject
 {
     unsigned int _liveScene;
     int _reqType;

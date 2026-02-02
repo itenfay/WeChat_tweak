@@ -6,7 +6,7 @@
 @class HoneyPayReceiverStatusViewController, NSString, WCPayGetHoneyPayCardCgi, WCPayQryHoneyUserDetailCgi;
 @protocol HoneyPayReceiverDetailControlLogicDelegate;
 
-@interface HoneyPayReceiverDetailControlLogic
+@interface HoneyPayReceiverDetailControlLogic : NSObject
 {
     _Bool _receiveCardSuccess;
     id <HoneyPayReceiverDetailControlLogicDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class InteractionLabel, MMTerminatorViewParams, MMUIButton, UIView;
 @protocol MMTerminatorViewDelegate;
 
-@interface MMTerminatorView
+@interface MMTerminatorView : NSObject
 {
     MMTerminatorViewParams *_params;
     id <MMTerminatorViewDelegate> _delegate;

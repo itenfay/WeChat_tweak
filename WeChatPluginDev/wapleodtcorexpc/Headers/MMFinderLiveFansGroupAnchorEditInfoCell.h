@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel;
 
-@interface MMFinderLiveFansGroupAnchorEditInfoCell
+@interface MMFinderLiveFansGroupAnchorEditInfoCell : NSObject
 {
     unsigned long long _layoutStyle;
     UILabel *_lineLabel;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelOpenLiveReq
+@interface WXChannelOpenLiveReq : NSObject
 {
     NSString *_feedID;
     NSString *_nonceID;

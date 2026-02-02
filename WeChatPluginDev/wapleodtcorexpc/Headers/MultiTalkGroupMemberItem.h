@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiTalkGroupMemberItem
+@interface MultiTalkGroupMemberItem : NSObject
 {
     int _status;
     int _reason;

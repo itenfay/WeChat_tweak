@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderDataItem, WCFinderPlayerViewForTing;
 
-@interface TingFinderVideoPlayer
+@interface TingFinderVideoPlayer : NSObject
 {
     WCFinderPlayerViewForTing *_videoView;
     WCFinderDataItem *_fetchedDataItem;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportDiscoveryReddotItem
+@interface WAReportDiscoveryReddotItem : NSObject
 {
     _Bool _hasRedDot;
     unsigned int _actionType;

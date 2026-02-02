@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WADeviceVoipAuthService
+@interface WADeviceVoipAuthService : NSObject
 {
 }
 

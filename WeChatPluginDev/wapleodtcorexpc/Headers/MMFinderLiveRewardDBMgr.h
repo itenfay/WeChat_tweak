@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MMFinderLiveRewardDBMgr
+@interface MMFinderLiveRewardDBMgr : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_tableLiveRewardGift;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat30MagicSclBrandFlutterPluginBase
+@interface _TtC6WeChat30MagicSclBrandFlutterPluginBase : NSObject
 {
     MISSING_TYPE *biz;
 }

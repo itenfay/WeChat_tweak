@@ -5,7 +5,7 @@
 
 @class FavoritesItem, FavoritesItemDataField, NSString;
 
-@interface FavFileDetailLogicController
+@interface FavFileDetailLogicController : NSObject
 {
     _Bool _disableAutoDownload;
     FavoritesItem *_favItem;

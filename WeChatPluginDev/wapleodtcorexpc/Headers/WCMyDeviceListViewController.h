@@ -5,7 +5,7 @@
 
 @class MMLoadingView, MMTableView, NSMutableArray, NSString, WCDevice;
 
-@interface WCMyDeviceListViewController
+@interface WCMyDeviceListViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_myDeviceList;

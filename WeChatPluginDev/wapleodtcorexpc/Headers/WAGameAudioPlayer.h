@@ -6,7 +6,7 @@
 @class NSData, NSString, NSURL, WAOpenALAudioDecodeInfo;
 @protocol IWAAudioPlayerDelegate, WAAudioSource;
 
-@interface WAGameAudioPlayer
+@interface WAGameAudioPlayer : NSObject
 {
     long long _state;
     _Bool _autoLoop;

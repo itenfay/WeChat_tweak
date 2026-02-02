@@ -5,7 +5,7 @@
 
 @class MMImageCropperViewController, NSString;
 
-@interface WAJSEventHandler_cropImage
+@interface WAJSEventHandler_cropImage : NSObject
 {
     MMImageCropperViewController *_cropViewController;
 }

@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, WCCollectViewReorder, WCDragCollectionView;
 @protocol WCDragableSelectorViewDelegate;
 
-@interface WCDragableSelectorView
+@interface WCDragableSelectorView : NSObject
 {
     WCDragCollectionView *_collectionView;
     WCCollectViewReorder *_collectionViewReorder;

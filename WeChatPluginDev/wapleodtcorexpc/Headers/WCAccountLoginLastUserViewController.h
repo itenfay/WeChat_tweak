@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSMutableArray, NSString, UIButton, UIImageView, WCButtonListView, WCRedesignTextItem, WCRedesignVerifyCodeTextItem;
 @protocol WCAccountLoginLastUserViewControllerDelegate;
 
-@interface WCAccountLoginLastUserViewController
+@interface WCAccountLoginLastUserViewController : NSObject
 {
     id <WCAccountLoginLastUserViewControllerDelegate> m_delegate;
     _Bool _noPasswordLoginError;

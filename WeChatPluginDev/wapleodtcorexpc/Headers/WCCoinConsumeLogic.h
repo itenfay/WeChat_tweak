@@ -6,7 +6,7 @@
 @class NSString, PrepareWecoinConsumeResponse, WCCoinConsumePanel, WCCoinConsumeParameter, WCCoinInterceptLogic;
 @protocol WCCoinConsumeLogicDelegate;
 
-@interface WCCoinConsumeLogic
+@interface WCCoinConsumeLogic : NSObject
 {
     id <WCCoinConsumeLogicDelegate> _delegate;
     WCCoinInterceptLogic *_interceptLogic;

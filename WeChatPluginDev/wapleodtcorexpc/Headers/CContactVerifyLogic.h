@@ -6,7 +6,7 @@
 @class MMLoadingView, NSArray, NSData, NSString, NormalContactVerifyLogic, OpenIMContactVerifyLogic, UIView, WCUIAlertView;
 @protocol ContactVerifyPreCheckLogicDelegate, contactVerifyLogicDelegate;
 
-@interface CContactVerifyLogic
+@interface CContactVerifyLogic : NSObject
 {
     NSArray *m_arrVerifyContactWrap;
     UIView *m_parentView;

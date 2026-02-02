@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIView;
 @protocol WCFinderVeirfyNameTipsViewControllerDelegate;
 
-@interface WCFinderVeirfyNameTipsViewController
+@interface WCFinderVeirfyNameTipsViewController : NSObject
 {
     NSString *_tips;
     NSString *_tinyAppName;

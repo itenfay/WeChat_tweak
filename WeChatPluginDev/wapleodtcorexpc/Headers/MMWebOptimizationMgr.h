@@ -6,7 +6,7 @@
 @class MMWebOptimJSContextTaskMgr, MMWebOptimizationPrefetcher, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, WCEliminatedSlotMMKV;
 @protocol OS_dispatch_queue;
 
-@interface MMWebOptimizationMgr
+@interface MMWebOptimizationMgr : NSObject
 {
     NSMutableArray *_arrA8keyLiteWaitingQueue;
     NSMutableArray *_a8keyLiteTaskReqQueue;

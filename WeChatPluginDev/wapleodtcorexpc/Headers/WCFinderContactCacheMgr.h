@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderContactCacheMgr
+@interface WCFinderContactCacheMgr : NSObject
 {
     NSMutableDictionary *_contactCaches;
 }

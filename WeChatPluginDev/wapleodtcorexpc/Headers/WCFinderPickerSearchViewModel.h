@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedPickerParams;
 
-@interface WCFinderPickerSearchViewModel
+@interface WCFinderPickerSearchViewModel : NSObject
 {
     WCFinderFeedPickerParams *_params;
     NSString *_udfKVStr;

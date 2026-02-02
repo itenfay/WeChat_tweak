@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicSelectConnectModeItemView;
 @protocol MMFinderLiveConnectMicSelectConnectModeDelegate;
 
-@interface MMFinderLiveConnectMicSelectConnectModePanel
+@interface MMFinderLiveConnectMicSelectConnectModePanel : NSObject
 {
     _Bool _canAutoConnect;
     id <MMFinderLiveConnectMicSelectConnectModeDelegate> _actionDelegate;

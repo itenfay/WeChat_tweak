@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicFavHandler, MMMusicForwardHandler, MMMusicInfo, MMMusicOpenThirdAppHelper, MMUIButton, MMUILabel, MMWebImageView, NSString, RichTextView, ShakeMusicInfo, ShakeMusicPlayButton, ShakeMusicResultMediaView, UIScrollView, UIView;
 
-@interface ShakeMusicResultViewController
+@interface ShakeMusicResultViewController : NSObject
 {
     _Bool _shouldNotStopMusic;
     _Bool _shouldUseCustomPopAnimation;

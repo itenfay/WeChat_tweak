@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface MMLiveMorphTransitionVideoPresentParameters
+@interface MMLiveMorphTransitionVideoPresentParameters : NSObject
 {
     _Bool _targetHasBottomView;
     _Bool _hasScaledAudioRoomView;

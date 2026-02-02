@@ -5,7 +5,7 @@
 
 @class MMFinderLiveNotifyStyleTopCommentPubbleSignLabelContainer, UIScrollView, UIView;
 
-@interface MMFinderLiveNotifyStyleTopCommentPubbleCell
+@interface MMFinderLiveNotifyStyleTopCommentPubbleCell : NSObject
 {
     UIScrollView *_commentScrollView;
     MMFinderLiveNotifyStyleTopCommentPubbleSignLabelContainer *_labelContainer;

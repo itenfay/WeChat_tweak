@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiLaunchApplication
+@interface LiteAppJsApiLaunchApplication : NSObject
 {
     NSString *_appID;
     NSString *_launchAppID;

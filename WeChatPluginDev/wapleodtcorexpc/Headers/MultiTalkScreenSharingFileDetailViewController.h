@@ -5,7 +5,7 @@
 
 @class NSString, UIColor;
 
-@interface MultiTalkScreenSharingFileDetailViewController
+@interface MultiTalkScreenSharingFileDetailViewController : NSObject
 {
     _Bool _automaticallyAdjustsWebScrollViewInsets;
     _Bool _showsToastForSwitchingLandscape;

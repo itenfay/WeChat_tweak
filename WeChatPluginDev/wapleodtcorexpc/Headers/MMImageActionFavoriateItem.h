@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMImageActionFavoriateItem
+@interface MMImageActionFavoriateItem : NSObject
 {
     CDUnknownBlockType _modifyBlock;
 }

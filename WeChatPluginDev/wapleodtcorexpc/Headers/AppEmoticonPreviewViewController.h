@@ -5,7 +5,7 @@
 
 @class CMessageWrap, EmoticonCustomAddLogicController, MMImageBrowseView, MMUIActivityIndicatorView, NSString, UIButton, UIView, WCActionSheet;
 
-@interface AppEmoticonPreviewViewController
+@interface AppEmoticonPreviewViewController : NSObject
 {
     MMImageBrowseView *m_imageView;
     UIButton *m_srcBtn;

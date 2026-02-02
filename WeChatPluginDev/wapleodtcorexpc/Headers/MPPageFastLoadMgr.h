@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class JSVirtualMachine, MMWebOptimVideoCacheTask, MPPageFastLoadEventMgr, MPPageResourceDownloader, MPPageTemplateInfoContainer, MemoryMappedKV, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSString, NSURLSession;
 @protocol OS_dispatch_queue;
 
-@interface MPPageFastLoadMgr
+@interface MPPageFastLoadMgr : NSObject
 {
     NSMutableArray *_downloadingInfoList;
     MPPageTemplateInfoContainer *_templateInfoContainer;

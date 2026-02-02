@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class JSContext, JSVirtualMachine, MMContext, MMLockstepHandle, MMTCPHandle, MMTimer, MMUDPHandle, NSArray, NSCondition, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSThread, WAAppTaskExtInfo, WAApptaskPublicResLogic, WAContact, WAJSBindingUtilsAdaptor, WAJSCServiceInjectExtendScriptModel, WAJSContextPluginScheduler, WAJSCoreServiceOpenData, WAJSDebuggerConnection, WAJSThread, WAMagicARAdaptor, WAOpenGLView, WAPackageConfig, WAProvideApiConfig, WAWebViewController, WXAudioNative, WasmAdaptor, WeMediaApi, WeXNetAdaptor, WxaExternalInfo;
 @protocol IWASkylineRuntime, IWXCanvasAdaptorAPI, IWXPhysxAdaptorAPI, WAJSCoreServiceDelegate, WAJSCoreServiceRemoteDelegate, WAJSServiceProtocol;
 
-@interface WAJSCoreService
+@interface WAJSCoreService : NSObject
 {
     unsigned int _workerFlowId;
     unsigned int _debugModeType;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat27MagicFinderBaseEmojiService
+@interface _TtC6WeChat27MagicFinderBaseEmojiService : NSObject
 {
     MISSING_TYPE *emojiBiz;
     MISSING_TYPE *delegate;

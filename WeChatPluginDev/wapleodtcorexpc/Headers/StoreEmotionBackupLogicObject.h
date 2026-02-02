@@ -6,7 +6,7 @@
 @class NSArray, NSString, StoreEmotionUploadMyPanelListCgi;
 @protocol StoreEmotionBackupLogicObjectDelegate;
 
-@interface StoreEmotionBackupLogicObject
+@interface StoreEmotionBackupLogicObject : NSObject
 {
     _Bool m_hasCheckFileExist;
     _Bool _stopFileMagration;

@@ -5,7 +5,7 @@
 
 @class EnhanceTranslatingUtil, MMURLHandler, NSMutableDictionary, NSNumber, NSString;
 
-@interface OCRTransMgr
+@interface OCRTransMgr : NSObject
 {
     NSNumber *_isBottomBarAvaliable;
     NSNumber *_isNewOCRTransAvaliable;

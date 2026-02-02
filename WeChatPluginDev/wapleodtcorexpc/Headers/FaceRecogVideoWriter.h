@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetWriter, AVAssetWriterInput, NSString;
 
-@interface FaceRecogVideoWriter
+@interface FaceRecogVideoWriter : NSObject
 {
     _Bool _hadStartSession;
     AVAssetWriter *_writer;

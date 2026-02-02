@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUISearchBar, NSString, UILabel, UITableView, WCFinderProfilePOISearchViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderProfilePOISearchViewController
+@interface WCFinderProfilePOISearchViewController : NSObject
 {
     MMUIButton *_arrowButton;
     UILabel *_titleLabel;

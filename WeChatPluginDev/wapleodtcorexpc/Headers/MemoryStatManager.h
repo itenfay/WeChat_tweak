@@ -5,7 +5,7 @@
 
 @class MMTimer, MemoryStatAutoDumpConfig, MemoryStatPluginConfig, MemoryStatReporter, NSMutableDictionary, NSMutableString, NSRecursiveLock, NSString, WCMemoryStatPlugin, WCMemoryStatRecord;
 
-@interface MemoryStatManager
+@interface MemoryStatManager : NSObject
 {
     NSRecursiveLock *m_lock;
     NSString *m_rootDir;

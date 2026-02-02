@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WloginTlv_0x150
+@interface WloginTlv_0x150 : NSObject
 {
     unsigned int dwBitmap;
     BOOL cNet;

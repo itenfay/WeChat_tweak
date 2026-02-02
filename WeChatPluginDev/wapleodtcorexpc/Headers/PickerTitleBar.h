@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView;
 
-@interface PickerTitleBar
+@interface PickerTitleBar : NSObject
 {
     _Bool _isTitleInCenter;
     MMUILabel *_titleLabel;

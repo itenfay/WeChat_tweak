@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveOperationRedDotMgr
+@interface MMFinderLiveOperationRedDotMgr : NSObject
 {
 }
 

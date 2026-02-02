@@ -6,7 +6,7 @@
 @class WCCardUsedStoreInfo;
 @protocol WCCardUsedStoreViewDelegate;
 
-@interface WCCardUsedStoreView
+@interface WCCardUsedStoreView : NSObject
 {
     WCCardUsedStoreInfo *_usedStoreInfo;
     id <WCCardUsedStoreViewDelegate> _delegate;

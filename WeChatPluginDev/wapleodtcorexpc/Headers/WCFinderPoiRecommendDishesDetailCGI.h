@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderPoiRecommendDishesDetailRequestParams;
 
-@interface WCFinderPoiRecommendDishesDetailCGI
+@interface WCFinderPoiRecommendDishesDetailCGI : NSObject
 {
     WCFinderPoiRecommendDishesDetailRequestParams *_params;
     CDUnknownBlockType _successBlock;

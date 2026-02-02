@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableArray;
 
-@interface EmoticonStoreGetListBuff
+@interface EmoticonStoreGetListBuff : NSObject
 {
     unsigned int m_eventId;
     unsigned int m_reqType;

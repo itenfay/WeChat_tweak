@@ -5,7 +5,7 @@
 
 @class JSApiScopeConfirmWindow, NSArray, NSDictionary, NSString, WADataPipePerformance, WAJSContextPlugin_userAccount;
 
-@interface WAJSEventHandler_login
+@interface WAJSEventHandler_login : NSObject
 {
     NSString *_appID;
     NSArray *_arrConfirmScope;

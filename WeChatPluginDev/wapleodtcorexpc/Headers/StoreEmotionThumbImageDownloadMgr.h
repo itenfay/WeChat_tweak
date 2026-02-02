@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface StoreEmotionThumbImageDownloadMgr
+@interface StoreEmotionThumbImageDownloadMgr : NSObject
 {
     NSMutableDictionary *m_downloadTaskListDic;
 }

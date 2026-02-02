@@ -5,7 +5,7 @@
 
 @protocol WCMallNetworkHelperDelegate;
 
-@interface WCMallNetworkHelper
+@interface WCMallNetworkHelper : NSObject
 {
     id <WCMallNetworkHelperDelegate> m_oWCMallNetworkHelperDelegate;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJAudioFileManager, NSString;
 
-@interface MJSTSAsyncTask
+@interface MJSTSAsyncTask : NSObject
 {
     NSString *_audioID;
     NSString *_roleID;

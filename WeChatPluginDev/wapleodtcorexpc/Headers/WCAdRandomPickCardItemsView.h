@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString, WCAdRandomPickCardItemsInfo;
 @protocol WCAdRandomPickCardItemsViewDelegate;
 
-@interface WCAdRandomPickCardItemsView
+@interface WCAdRandomPickCardItemsView : NSObject
 {
     id <WCAdRandomPickCardItemsViewDelegate> _delegate;
     long long _viewStatus;

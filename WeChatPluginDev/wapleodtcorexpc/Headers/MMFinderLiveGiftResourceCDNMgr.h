@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTimer, NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMFinderLiveGiftResourceCDNMgr
+@interface MMFinderLiveGiftResourceCDNMgr : NSObject
 {
     NSRecursiveLock *_cacheLock;
     NSObject<OS_dispatch_queue> *_cacheQueue;

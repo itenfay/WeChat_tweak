@@ -6,7 +6,7 @@
 @class LocationRetriever, MMTableView, MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, ProductMediaItemView, ScanProductItem, UIView;
 @protocol ProductTableViewDelegate;
 
-@interface ProductTableView
+@interface ProductTableView : NSObject
 {
     MMTableView *_tableView;
     NSString *_epName;

@@ -5,7 +5,7 @@
 
 @class MMUINavigationBar, NSMutableArray, NSString, UINavigationItem, UITableView;
 
-@interface WXGRoamChooseRangeViewController
+@interface WXGRoamChooseRangeViewController : NSObject
 {
     double m_addButtonHeight;
     _Bool _isUpadte;

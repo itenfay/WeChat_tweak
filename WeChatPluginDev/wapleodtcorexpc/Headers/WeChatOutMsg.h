@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WeChatOutMsg
+@interface WeChatOutMsg : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int localID;

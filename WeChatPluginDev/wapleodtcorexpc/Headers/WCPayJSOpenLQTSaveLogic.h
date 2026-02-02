@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayJSOpenLQTSaveLogicDelegate;
 
-@interface WCPayJSOpenLQTSaveLogic
+@interface WCPayJSOpenLQTSaveLogic : NSObject
 {
     id <WCPayJSOpenLQTSaveLogicDelegate> _m_delegate;
     NSString *_traceInfo;

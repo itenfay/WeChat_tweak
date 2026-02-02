@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPackageDeleteActionItem
+@interface WAReportPackageDeleteActionItem : NSObject
 {
     unsigned int _deleteReason;
     unsigned int _debugType;

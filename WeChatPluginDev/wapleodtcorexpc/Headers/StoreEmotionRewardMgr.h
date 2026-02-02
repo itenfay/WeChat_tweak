@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, StoreEmotionRewardTipsStatisticsLogicObject;
 
-@interface StoreEmotionRewardMgr
+@interface StoreEmotionRewardMgr : NSObject
 {
     StoreEmotionRewardTipsStatisticsLogicObject *m_rewardTipsStatisticsLogic;
     NSMutableDictionary *_getAllRewardInfoCgiDic;

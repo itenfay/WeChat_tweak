@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openWCPayLQTSave
+@interface WAJSEventHandler_openWCPayLQTSave : NSObject
 {
 }
 

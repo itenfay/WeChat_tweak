@@ -6,7 +6,7 @@
 @class NSString, PasswordLogic, WCAccountBindPhoneControlLogic;
 @protocol WCAccountLogoutLogicDelegate;
 
-@interface WCAccountLogoutLogic
+@interface WCAccountLogoutLogic : NSObject
 {
     PasswordLogic *m_checkPasswdLogic;
     WCAccountBindPhoneControlLogic *m_bindPhoneLogic;

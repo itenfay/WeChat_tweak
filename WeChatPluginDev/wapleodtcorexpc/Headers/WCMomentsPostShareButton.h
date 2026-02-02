@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView, WCMomentsPostShareBaseViewModel;
 
-@interface WCMomentsPostShareButton
+@interface WCMomentsPostShareButton : NSObject
 {
     WCMomentsPostShareBaseViewModel *_viewModel;
     UIImageView *_iconImageView;

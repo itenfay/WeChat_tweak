@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSSet, NSString, WCCoinBusinessReporter, WCForeBackFlowMgr, WCSessionVCStack, WCSpecialEnteranceRepoter;
 
-@interface WCSessionFlowMonitorService
+@interface WCSessionFlowMonitorService : NSObject
 {
     WCSessionVCStack *m_stack;
     NSMutableDictionary *m_pushAndPopDic;

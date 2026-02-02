@@ -5,7 +5,7 @@
 
 @class JSApmABTestItem, NSDateFormatter, NSString;
 
-@interface WCJSApmManager
+@interface WCJSApmManager : NSObject
 {
     JSApmABTestItem *_abtest;
     NSDateFormatter *_dateFormatter;

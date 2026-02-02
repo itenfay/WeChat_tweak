@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIView;
 @protocol ProductKeyValueTableCellDelegate;
 
-@interface ProductKeyValueTableCell
+@interface ProductKeyValueTableCell : NSObject
 {
     NSString *_key;
     NSString *_value;

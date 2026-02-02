@@ -5,7 +5,7 @@
 
 @class CContact, NSMutableArray, NSString, UIColor;
 
-@interface BrandNotificationCellViewModel
+@interface BrandNotificationCellViewModel : NSObject
 {
     CContact *_brandContact;
     NSMutableArray *_messageLabelStyles;

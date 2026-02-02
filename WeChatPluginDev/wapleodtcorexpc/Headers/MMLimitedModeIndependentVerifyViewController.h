@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ForwardMessageLogicController, MMLimitedModeSetPasswordLogic, MMLimitedModeVerifyPasswordLogic, MMUIButton, MMUILabel, MMUITextField, NSString, WCPayInputView;
 @protocol MMLimitedModeIndependentVerifyViewControllerDelegate;
 
-@interface MMLimitedModeIndependentVerifyViewController
+@interface MMLimitedModeIndependentVerifyViewController : NSObject
 {
     double m_fKeyboardHeight;
     MMLimitedModeVerifyPasswordLogic *m_verifyPasswordLogic;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface EnterpriseContactDB
+@interface EnterpriseContactDB : NSObject
 {
     WCTDatabase *m_db;
     WCTTable *m_friendTable;

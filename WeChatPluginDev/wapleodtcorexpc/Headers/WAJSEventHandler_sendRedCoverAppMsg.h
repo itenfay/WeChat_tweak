@@ -5,7 +5,7 @@
 
 @class CContact, JSApiSelectContactsViewController, JSApiSelectSessionViewController, NSString, SharePreConfirmSheetView, SharePreConfirmView;
 
-@interface WAJSEventHandler_sendRedCoverAppMsg
+@interface WAJSEventHandler_sendRedCoverAppMsg : NSObject
 {
     NSString *_receiveUri;
     JSApiSelectSessionViewController *_selectSessionViewController;

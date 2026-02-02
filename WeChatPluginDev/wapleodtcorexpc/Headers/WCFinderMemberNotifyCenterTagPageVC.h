@@ -5,7 +5,7 @@
 
 @class NSArray, WCFinderContact, WCFinderRedDotCtrlInfo, WCFinderRedDotTipsShowInfo;
 
-@interface WCFinderMemberNotifyCenterTagPageVC
+@interface WCFinderMemberNotifyCenterTagPageVC : NSObject
 {
     _Bool _showMentionSwitchEntry;
     WCFinderRedDotTipsShowInfo *_rightEntryRedDotShowInfo;

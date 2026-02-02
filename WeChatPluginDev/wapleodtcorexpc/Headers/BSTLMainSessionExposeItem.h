@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface BSTLMainSessionExposeItem
+@interface BSTLMainSessionExposeItem : NSObject
 {
     unsigned int _position;
     unsigned int _uNewNotifyMsgCount;

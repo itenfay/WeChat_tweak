@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderPanMaskView
+@interface WCFinderPanMaskView : NSObject
 {
     UILabel *_currTimeLabel;
     UILabel *_speLabel;

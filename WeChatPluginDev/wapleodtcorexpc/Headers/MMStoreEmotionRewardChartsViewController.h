@@ -5,7 +5,7 @@
 
 @class EmoticonStoreItem, EmotionCollectionFooterView, EmotionRewardResponseInfo, EmotionStoreRewardDonorHeader, NSArray, NSString, StoreEmotionGetDonorListCgi, UICollectionView, UIImage;
 
-@interface MMStoreEmotionRewardChartsViewController
+@interface MMStoreEmotionRewardChartsViewController : NSObject
 {
     EmoticonStoreItem *m_storeItem;
     EmotionRewardResponseInfo *m_rewardInfo;

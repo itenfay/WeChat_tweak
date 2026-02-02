@@ -6,7 +6,7 @@
 @class LocationRetriever, NSString;
 @protocol CameraScanGoodsRemoteDetectorDelegate;
 
-@interface CameraScanGoodsRemoteDetector
+@interface CameraScanGoodsRemoteDetector : NSObject
 {
     id <CameraScanGoodsRemoteDetectorDelegate> _delegate;
     unsigned long long _sessionId;

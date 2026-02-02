@@ -5,7 +5,7 @@
 
 @class NSString, WCPayAddPayCardLogic;
 
-@interface WCPayCreateOfflinePayLogic
+@interface WCPayCreateOfflinePayLogic : NSObject
 {
     WCPayAddPayCardLogic *m_cardLogic;
     _Bool _bHasHandleBindQueryResp;

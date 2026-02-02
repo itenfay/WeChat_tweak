@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, SubscribeMsgResp;
 
-@interface WASubscriptionMessageSettingsViewModel
+@interface WASubscriptionMessageSettingsViewModel : NSObject
 {
     _Bool _dataReady;
     _Bool _globalSwitch;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameHaowanMediaInfo
+@interface GameHaowanMediaInfo : NSObject
 {
     unsigned int _mediaType;
     unsigned int _editFlag;

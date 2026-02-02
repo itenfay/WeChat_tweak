@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJSegmentViewModel, MJSpeechManager, NSArray, NSString;
 
-@interface MJTTSInspectorViewModel
+@interface MJTTSInspectorViewModel : NSObject
 {
     _Bool _shouldApplyToAll;
     _Bool _isVoiceCloneEnabledByConfig;

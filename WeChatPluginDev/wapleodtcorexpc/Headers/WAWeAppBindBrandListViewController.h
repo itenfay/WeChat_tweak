@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UITableView, UIView, WAProfileRelatedViewModel;
 
-@interface WAWeAppBindBrandListViewController
+@interface WAWeAppBindBrandListViewController : NSObject
 {
     UIView *_contentHeaderView;
     UILabel *_contentLabel;

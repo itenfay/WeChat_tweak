@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GCAtCellModelLayout
+@interface GCAtCellModelLayout : NSObject
 {
     double _headWidth;
     double _avatarToTitleSpace;

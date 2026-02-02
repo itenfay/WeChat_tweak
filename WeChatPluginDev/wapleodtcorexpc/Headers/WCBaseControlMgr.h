@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCBaseControlMgr
+@interface WCBaseControlMgr : NSObject
 {
     NSMutableArray *m_arrLogicStack;
 }

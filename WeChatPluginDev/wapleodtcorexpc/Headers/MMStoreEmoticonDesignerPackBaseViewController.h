@@ -5,7 +5,7 @@
 
 @class DesignerPortfolioCollectionViewProvider, EmoticonStoreFootView, NSString, UILabel;
 
-@interface MMStoreEmoticonDesignerPackBaseViewController
+@interface MMStoreEmoticonDesignerPackBaseViewController : NSObject
 {
     unsigned int _designerUin;
     DesignerPortfolioCollectionViewProvider *_provider;

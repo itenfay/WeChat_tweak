@@ -6,7 +6,7 @@
 @class MMTimer, MMUIButton, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIPageControl, UIPanGestureRecognizer, UIScrollView, UIView, WCPayWebImageView, WCPayWebPagView, WCRedEnvelopesControlData, WCRedEnvelopesStoryDargUtil, WCRedEnvelopesStoryPageView;
 @protocol WCRedEnvelopesStoryViewControllerDelegate;
 
-@interface WCRedEnvelopesStoryViewController
+@interface WCRedEnvelopesStoryViewController : NSObject
 {
     WCRedEnvelopesControlData *m_data;
     MMUIButton *m_closeBtn;

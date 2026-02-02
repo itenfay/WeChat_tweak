@@ -5,7 +5,7 @@
 
 @class MMBGMUniqueMutableArray, NSData;
 
-@interface MMBGMNewLIfeSelectedRecommendTabViewModel
+@interface MMBGMNewLIfeSelectedRecommendTabViewModel : NSObject
 {
     _Bool _hasMore;
     _Bool _loadingData;

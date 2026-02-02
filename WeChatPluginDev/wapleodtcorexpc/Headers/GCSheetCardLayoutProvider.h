@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GCSheetCardLayoutProvider
+@interface GCSheetCardLayoutProvider : NSObject
 {
     int _rowCnt;
     int _cowCnt;

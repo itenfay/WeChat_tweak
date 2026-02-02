@@ -5,7 +5,7 @@
 
 @class BSTLExptConfig, BSTimelineFlutterPlugin, BTLFinderLiveTexturePlugin, CMessageWrap, ECSTimelineReportLogic;
 
-@interface BSTimelineFlutterViewController
+@interface BSTimelineFlutterViewController : NSObject
 {
     _Bool isShowRedDotInMainFrameSession;
     _Bool _hasViewWillBePushedOnce;

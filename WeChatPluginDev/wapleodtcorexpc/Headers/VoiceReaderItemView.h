@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, TingItem, UILabel, UIView, WCBrandAudioPlayView;
 
-@interface VoiceReaderItemView
+@interface VoiceReaderItemView : NSObject
 {
     WCBrandAudioPlayView *m_playingImageView;
     UIView *m_titleTimeView;

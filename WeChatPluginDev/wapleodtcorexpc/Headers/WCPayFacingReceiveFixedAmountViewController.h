@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UITextField, UIView, WCPayDecimalKeyboardView, WCUIAlertView;
 @protocol WCPayFacingReceiveFixedAmountViewControllerDelegate;
 
-@interface WCPayFacingReceiveFixedAmountViewController
+@interface WCPayFacingReceiveFixedAmountViewController : NSObject
 {
     id <WCPayFacingReceiveFixedAmountViewControllerDelegate> m_delegate;
     NSString *_remark;

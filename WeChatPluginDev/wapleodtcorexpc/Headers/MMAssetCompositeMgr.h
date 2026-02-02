@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, OrderedDictionary;
 @protocol MMAssetCompositeTaskProtocol;
 
-@interface MMAssetCompositeMgr
+@interface MMAssetCompositeMgr : NSObject
 {
     NSString *_username;
     long long _currentMgrState;

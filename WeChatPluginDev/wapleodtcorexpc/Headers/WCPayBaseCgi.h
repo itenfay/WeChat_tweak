@@ -6,7 +6,7 @@
 @class NSString, WCPayIdKeyRegularReporter, WXPBGeneratedMessage;
 @protocol WCPayBaseCgiDelegate;
 
-@interface WCPayBaseCgi
+@interface WCPayBaseCgi : NSObject
 {
     unsigned char _routeInfo;
     _Bool _isAutoLifeCycle;

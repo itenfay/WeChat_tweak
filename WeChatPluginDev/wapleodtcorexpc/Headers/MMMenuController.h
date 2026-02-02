@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMenuContentView, MMMenuWindow, NSArray, NSString, UIColor, UIResponder, UIView, UIViewPropertyAnimator;
 
-@interface MMMenuController
+@interface MMMenuController : NSObject
 {
     _Bool _menuVisible;
     _Bool _isCheckMenuWindowValid;

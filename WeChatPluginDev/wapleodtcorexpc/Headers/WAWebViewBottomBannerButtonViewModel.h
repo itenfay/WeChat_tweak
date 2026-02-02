@@ -5,7 +5,7 @@
 
 @class NSString, UIColor, UIFont, UIImage;
 
-@interface WAWebViewBottomBannerButtonViewModel
+@interface WAWebViewBottomBannerButtonViewModel : NSObject
 {
     NSString *_title;
     double _cornerRadius;

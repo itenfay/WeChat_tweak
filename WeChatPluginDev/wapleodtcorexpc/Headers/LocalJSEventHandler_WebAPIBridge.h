@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSString, UIView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl, WebviewJSEventHandlerBase;
 @protocol WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
-@interface LocalJSEventHandler_WebAPIBridge
+@interface LocalJSEventHandler_WebAPIBridge : NSObject
 {
     WebviewJSEventHandlerBase *_handler;
 }

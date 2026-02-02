@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, UIImage, WSRecommendColikeStorage, WSRecommendColikeTempModel, WSRecommendSetting, WSTabInfoList, WSTabRedDotInfoCollector, _TtC6WeChat26WeSeePageRecoverController;
 
-@interface WSRecommendMgr
+@interface WSRecommendMgr : NSObject
 {
     _Bool _isAuthOK;
     _Bool _isRequestingOpenIdForOpenProfile;

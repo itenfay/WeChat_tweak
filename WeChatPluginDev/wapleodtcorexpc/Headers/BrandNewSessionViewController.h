@@ -5,7 +5,7 @@
 
 @class BrandSessionTableFooter, NSMutableSet, NSString;
 
-@interface BrandNewSessionViewController
+@interface BrandNewSessionViewController : NSObject
 {
     _Bool _canShowPersonalCenter;
     BrandSessionTableFooter *_tableFooter;

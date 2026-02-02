@@ -6,7 +6,7 @@
 @class CommitBindXmailRequest, MMUIViewController, NSString, XMailSecondPasswordInputViewController;
 @protocol XMailCommitBindCgiDelegate;
 
-@interface XMailCommitBindCgi
+@interface XMailCommitBindCgi : NSObject
 {
     XMailSecondPasswordInputViewController *m_secPwdInputVC;
     MMUIViewController *_rootViewController;

@@ -6,7 +6,7 @@
 @class NSMutableArray, WebviewLocalResItem;
 @protocol WebResourceCDNDownloadHelperDelegate;
 
-@interface WebResourceCDNDownloadHelper
+@interface WebResourceCDNDownloadHelper : NSObject
 {
     _Bool _isDownloading;
     NSMutableArray *_downloadArray;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMIlinkCheckResourceMgr, MMLiteAppCacheInfo, MMLiteAppDownloadMgr, MMLiteAppInfoItem, MMPageSheetAdapter, NSMutableArray, NSMutableDictionary, NSPointerArray, NSString, UIPanGestureRecognizer, WxaRouterConfig;
 
-@interface MMLiteAppMgr
+@interface MMLiteAppMgr : NSObject
 {
     NSMutableDictionary *_configKV;
     NSMutableDictionary *_startReports;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayTouchLockAuthenCgiDelegate;
 
-@interface WCPayTouchLockAuthenCgi
+@interface WCPayTouchLockAuthenCgi : NSObject
 {
     NSString *_password;
 }

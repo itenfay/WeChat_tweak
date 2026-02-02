@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UIView;
 @protocol WCRedEnvelopesMadeHBSuccessViewDelegate;
 
-@interface WCRedEnvelopesMadeHBSuccessView
+@interface WCRedEnvelopesMadeHBSuccessView : NSObject
 {
     id <WCRedEnvelopesMadeHBSuccessViewDelegate> m_delegate;
     UIImageView *m_backgroundView;

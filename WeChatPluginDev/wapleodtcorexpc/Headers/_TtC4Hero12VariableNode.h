@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface _TtC4Hero12VariableNode
+@interface _TtC4Hero12VariableNode : NSObject
 {
 }
 

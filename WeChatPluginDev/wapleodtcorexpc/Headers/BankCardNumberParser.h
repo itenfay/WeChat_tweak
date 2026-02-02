@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BankCardNumberParser
+@interface BankCardNumberParser : NSObject
 {
     NSString *_nsUrl;
     NSString *_nsSourceUrl;

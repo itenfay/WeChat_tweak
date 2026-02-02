@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCRedEnvelopesGreetingReportObject
+@interface WCRedEnvelopesGreetingReportObject : NSObject
 {
     int _emoticonType;
     unsigned int _changeAmountTimes;

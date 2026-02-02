@@ -6,7 +6,7 @@
 @class CheckExternalUrlAntiSpam, NSMutableArray, UIButton, UIImageView, UILabel, UIView, WCBizSchemeHandleContext;
 @protocol WCBizSchemeBlockViewControllerDelegate;
 
-@interface WCBizSchemeBlockViewController
+@interface WCBizSchemeBlockViewController : NSObject
 {
     _Bool _shouldDismissWhenAppear;
     id <WCBizSchemeBlockViewControllerDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdDynamicFeedSpecialContainerView
+@interface WCAdDynamicFeedSpecialContainerView : NSObject
 {
 }
 

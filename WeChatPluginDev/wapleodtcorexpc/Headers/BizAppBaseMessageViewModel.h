@@ -5,7 +5,7 @@
 
 @class CContact, NSMutableArray, NSString, UIColor, UIFont;
 
-@interface BizAppBaseMessageViewModel
+@interface BizAppBaseMessageViewModel : NSObject
 {
     struct CGSize _viewSize;
     struct CGSize _titleSize;

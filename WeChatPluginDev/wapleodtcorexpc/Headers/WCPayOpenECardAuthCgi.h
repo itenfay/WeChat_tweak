@@ -6,7 +6,7 @@
 @class OpenECardAuthReq;
 @protocol WCPayOpenECardAuthCgiDelegate;
 
-@interface WCPayOpenECardAuthCgi
+@interface WCPayOpenECardAuthCgi : NSObject
 {
     OpenECardAuthReq *_authRequest;
 }

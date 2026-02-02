@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CBaseContact, CMessageWrap, EmoticonBoardView, MMEmoticonView, MMGrowTextView, MMHeadImageView, MMInputMsgReferView, MMQuickSendEmoticonView, MMTransparentButton, MMUIButton, MsgFullScreenInputAnimationController, MsgFullScreenInputViewController, MsgSendOpEntry, NSSet, NSString, NewEmoticonSearchViewController, RecordAdapterView, RelatedEmoticonHalfScreenViewController, SelectAttachmentView, SelectAttachmentViewController, SolitaireTipsView, TranslateToolView, UIButton, UIImageView, UIImpactFeedbackGenerator, UIView, UIViewPropertyAnimator, WASendSessionMsgView, WCGroupUndoneActionBar, WWKFCustomToolBar;
 @protocol MMInputToolViewCustomizationDelegate, MMInputToolViewDelegate;
 
-@interface MMInputToolView
+@interface MMInputToolView : NSObject
 {
     MMUIButton *_inputModeChangeButton;
     UIView *_toolView;

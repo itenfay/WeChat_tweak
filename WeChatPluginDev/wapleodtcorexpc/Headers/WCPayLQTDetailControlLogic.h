@@ -6,7 +6,7 @@
 @class MMTipsViewController, NSString, WCPayLQTAutoChargeCloseCgi, WCPayLQTAutoChargeModifyTimeCgi, WCPayLQTAutoChargeOpenCgi, WCPayLQTAutoChargeQrySettingCgi, WCPayLQTCloseFundAccountCgi, WCPayLQTMoneyControlLogic, WCPayLQTOnClickRedDotCgi, WCPayLQTOpenLqbAccountCgi, WCPayLQTQryUserFundDetailCgi;
 @protocol WCPayLQTDetailControlLogicDelegate;
 
-@interface WCPayLQTDetailControlLogic
+@interface WCPayLQTDetailControlLogic : NSObject
 {
     _Bool _bIsLQTFetchOrSaveSucc;
     _Bool _bHasShowRealnameGuide;

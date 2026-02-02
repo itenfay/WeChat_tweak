@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvGetPacketStoryCgiDelegate;
 
-@interface WCRedEnvGetPacketStoryCgi
+@interface WCRedEnvGetPacketStoryCgi : NSObject
 {
     id <WCRedEnvGetPacketStoryCgiDelegate> _cgiDelegate;
 }

@@ -6,7 +6,7 @@
 @class MMTableView, MMUILabel, NSMutableArray, NSString;
 @protocol WCPayGPOrderHistoryControllerDelegate;
 
-@interface WCPayGPOrderHistoryViewController
+@interface WCPayGPOrderHistoryViewController : NSObject
 {
     _Bool _bIsLoadingMore;
     _Bool _bIsDataLoadEnd;

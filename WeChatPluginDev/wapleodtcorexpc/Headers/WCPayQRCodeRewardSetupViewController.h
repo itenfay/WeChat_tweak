@@ -6,7 +6,7 @@
 @class MMTableView, MMTextView, MMUIView, NSMutableArray, NSString, UIButton, UITextField, WCPayNoticeItemView, WCPayParamInvalidTipView;
 @protocol WCPayQRCodeRewardSetupViewControllerDelegate;
 
-@interface WCPayQRCodeRewardSetupViewController
+@interface WCPayQRCodeRewardSetupViewController : NSObject
 {
     id <WCPayQRCodeRewardSetupViewControllerDelegate> _delegate;
     MMTableView *_tableView;

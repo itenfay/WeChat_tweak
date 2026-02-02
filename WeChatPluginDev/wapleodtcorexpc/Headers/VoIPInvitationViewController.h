@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, RingToneMixPlayer, VoIPInvitationBreadthView, VoIPInvitationInfo;
 @protocol VoIPInvitationViewControllerDelegate;
 
-@interface VoIPInvitationViewController
+@interface VoIPInvitationViewController : NSObject
 {
     _Bool _isMultiTalking;
     _Bool _isRingPlayed;

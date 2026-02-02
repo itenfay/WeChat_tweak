@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, UIAccessibilityElement, UIButton, UIColor, UIImageView, UILabel, UITapGestureRecognizer, UIView, WCFinderCommentLikeView, WCFinderCommentTranslateView, WCFinderDataItem, WCFinderFeedContentTextView, WCFinderHeadImageView, WCFinderInteractionLabelGroupView, WCFinderJumpInfoPanelView, WCFinderTemplateVideoCommentView;
 @protocol WCFinderFeedDetailRootCommentCellDelegate;
 
-@interface WCFinderFeedDetailRootCommentCell
+@interface WCFinderFeedDetailRootCommentCell : NSObject
 {
     multimap_b3919d51 _keywordsMap;
     _Bool _profileSwitch;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat24CarPlayVoIPingController
+@interface _TtC6WeChat24CarPlayVoIPingController : NSObject
 {
     MISSING_TYPE *contactTemplate;
     MISSING_TYPE *roomID;

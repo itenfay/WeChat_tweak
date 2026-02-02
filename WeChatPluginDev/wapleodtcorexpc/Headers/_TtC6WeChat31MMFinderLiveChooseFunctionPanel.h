@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31MMFinderLiveChooseFunctionPanel
+@interface _TtC6WeChat31MMFinderLiveChooseFunctionPanel : NSObject
 {
     MISSING_TYPE *contentViewHeight;
     MISSING_TYPE *tableViewContentHeight;

@@ -6,7 +6,7 @@
 @class NSString, PhoneAuthManagePhoneLogic, RichTextView, UILabel, UITableView, UIView, WAReportPhoneAuthActionItem;
 @protocol PhoneAuthManagePhoneViewControllerDataSource, PhoneAuthManagePhoneviewControllerDelegate;
 
-@interface PhoneAuthManagePhoneViewController
+@interface PhoneAuthManagePhoneViewController : NSObject
 {
     _Bool _editMode;
     id <PhoneAuthManagePhoneViewControllerDataSource> _dataSource;

@@ -6,7 +6,7 @@
 @class NSString, UILabel, UIView, WCPayCss, WCPayDecimalKeyboardView, WCPayTextField;
 @protocol WCPayBizF2FConfirmViewControllerDelegate;
 
-@interface WCPayBizF2FConfirmViewController
+@interface WCPayBizF2FConfirmViewController : NSObject
 {
     NSString *_titleText;
     NSString *_descText;

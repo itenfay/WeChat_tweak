@@ -5,7 +5,7 @@
 
 @class MMLiveCDNPlayerView, NSString, WCFinderDataItem;
 
-@interface WSWebLiveVideoPlayerLogic
+@interface WSWebLiveVideoPlayerLogic : NSObject
 {
     MMLiveCDNPlayerView *_playerView;
     WCFinderDataItem *_finderDataItem;

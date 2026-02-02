@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WAOverallAuthListCgiDelegate;
 
-@interface WAOverallAuthListCgi
+@interface WAOverallAuthListCgi : NSObject
 {
     unsigned int _lastUpdateTime;
     unsigned int _recordCount;

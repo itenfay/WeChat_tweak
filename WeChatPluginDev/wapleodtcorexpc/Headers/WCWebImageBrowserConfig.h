@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCWebImageBrowserConfig
+@interface WCWebImageBrowserConfig : NSObject
 {
     _Bool _enableBottomBar;
     NSMutableArray *_arrImageSourceInfos;

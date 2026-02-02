@@ -6,7 +6,7 @@
 @class ConsumeWecoinRequest, ConsumeWecoinResponse;
 @protocol WCCoinConsumeCGIDelegate;
 
-@interface WCCoinConsumeCGI
+@interface WCCoinConsumeCGI : NSObject
 {
     ConsumeWecoinResponse *_response;
     id <WCCoinConsumeCGIDelegate> _delegate;

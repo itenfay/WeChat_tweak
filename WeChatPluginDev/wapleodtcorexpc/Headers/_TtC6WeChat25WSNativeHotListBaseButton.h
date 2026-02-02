@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25WSNativeHotListBaseButton
+@interface _TtC6WeChat25WSNativeHotListBaseButton : NSObject
 {
     MISSING_TYPE *activeHandler;
 }

@@ -5,7 +5,7 @@
 
 @class WCAdDynamicFeedElementRollTextInfo;
 
-@interface WCAdDynamicRollTextView
+@interface WCAdDynamicRollTextView : NSObject
 {
     _Bool _didLayoutOnce;
     WCAdDynamicFeedElementRollTextInfo *_styleInfo;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_startRecord
+@interface WAJSEventHandler_startRecord : NSObject
 {
 }
 

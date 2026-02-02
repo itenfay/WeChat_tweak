@@ -5,7 +5,7 @@
 
 @class NSIndexPath;
 
-@interface UITableViewCellExposureInfo
+@interface UITableViewCellExposureInfo : NSObject
 {
     NSIndexPath *_cellViewIndexPath;
     double _exposureRatio;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiSendSms
+@interface LiteAppJsApiSendSms : NSObject
 {
 }
 

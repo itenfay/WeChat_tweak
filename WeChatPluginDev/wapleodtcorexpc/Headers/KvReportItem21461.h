@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem21461
+@interface KvReportItem21461 : NSObject
 {
     _Bool _UseServerTime_34;
     unsigned int _Mid_22;

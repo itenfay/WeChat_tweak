@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface WCTBaseMenuModel
+@interface WCTBaseMenuModel : NSObject
 {
     _Bool _showArrow;
     UIImage *_icon;

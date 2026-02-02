@@ -6,7 +6,7 @@
 @class MMUIButton;
 @protocol MJExportProgressMaskViewDelegate;
 
-@interface MJExportProgressMaskView
+@interface MJExportProgressMaskView : NSObject
 {
     id <MJExportProgressMaskViewDelegate> _mj_delegate;
     MMUIButton *_cancelButton;

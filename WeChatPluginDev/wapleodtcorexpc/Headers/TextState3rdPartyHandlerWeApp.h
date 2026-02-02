@@ -5,7 +5,7 @@
 
 @class TextStateWeAppBuffer;
 
-@interface TextState3rdPartyHandlerWeApp
+@interface TextState3rdPartyHandlerWeApp : NSObject
 {
     TextStateWeAppBuffer *_buffer;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSnsSocialInfluenceInfo
+@interface WCSnsSocialInfluenceInfo : NSObject
 {
     int _maxLikeCount;
     int _maxCommentCount;

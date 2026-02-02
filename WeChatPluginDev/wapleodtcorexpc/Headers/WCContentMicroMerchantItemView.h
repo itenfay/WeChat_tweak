@@ -5,7 +5,7 @@
 
 @class MMUILabel, RichTextView, WCDataItem, WCMicroMerchantFeedsGroup;
 
-@interface WCContentMicroMerchantItemView
+@interface WCContentMicroMerchantItemView : NSObject
 {
     WCDataItem *_dataItem;
     WCMicroMerchantFeedsGroup *_wsGroup;

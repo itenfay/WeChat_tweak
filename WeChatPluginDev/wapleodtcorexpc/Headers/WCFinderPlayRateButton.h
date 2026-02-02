@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderPlayRateButton
+@interface WCFinderPlayRateButton : NSObject
 {
     NSArray *_playRatePairs;
     CDUnknownBlockType _playRateChangeBlock;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIImageView, WCAdConventionalHalfScreenDetailBaseView, WCAdConventionalHalfScreenMediaBaseView;
 
-@interface WCAdConventionalFullScreenViewController
+@interface WCAdConventionalFullScreenViewController : NSObject
 {
     UIImageView *_topMaskView;
     MMUIButton *_leftBarButton;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_shareAppMessageDirectly
+@interface WAJSEventHandler_shareAppMessageDirectly : NSObject
 {
     _Bool _isSharing;
 }

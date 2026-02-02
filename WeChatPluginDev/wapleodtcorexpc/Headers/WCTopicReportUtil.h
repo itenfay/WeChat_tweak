@@ -5,7 +5,7 @@
 
 @class NSString, WCTopicReportSessionInputItem;
 
-@interface WCTopicReportUtil
+@interface WCTopicReportUtil : NSObject
 {
     WCTopicReportSessionInputItem *_reportSessionInputItem;
     NSString *_timelineTopicActionSessionId;

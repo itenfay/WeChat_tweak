@@ -6,7 +6,7 @@
 @class LiveInfo, MMUIButton, MMUILabel, NSString, UIButton, UIImageView, UIView;
 @protocol MMGroupLiveReplaySettingPickerControllerDelegate;
 
-@interface MMGroupLiveReplaySettingPickerController
+@interface MMGroupLiveReplaySettingPickerController : NSObject
 {
     _Bool _enableLiveReplay;
     id <MMGroupLiveReplaySettingPickerControllerDelegate> _settingDelegate;

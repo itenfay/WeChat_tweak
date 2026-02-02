@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, MMWebImageView, NSString, NotifyMessageViewModel, UILabel, UIView, WCFinderGetLiveInfoModel, WCFinderLiveInfo, WCFinderLiveNowView;
 
-@interface TemplateNotifyMessageCellView
+@interface TemplateNotifyMessageCellView : NSObject
 {
     _Bool _liveImageLoaded;
     WCFinderLiveInfo *_liveInfo;

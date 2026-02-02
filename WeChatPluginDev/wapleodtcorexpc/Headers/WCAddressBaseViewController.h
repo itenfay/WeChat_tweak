@@ -5,7 +5,7 @@
 
 @class WCAddressControlData;
 
-@interface WCAddressBaseViewController
+@interface WCAddressBaseViewController : NSObject
 {
     WCAddressControlData *m_data;
 }

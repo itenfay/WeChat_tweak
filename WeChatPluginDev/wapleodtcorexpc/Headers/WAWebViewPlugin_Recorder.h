@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWAWebViewPluginDelegate;
 
-@interface WAWebViewPlugin_Recorder
+@interface WAWebViewPlugin_Recorder : NSObject
 {
     _Bool _isCheckingPermission;
     id <IWAWebViewPluginDelegate> _resultDelegate;

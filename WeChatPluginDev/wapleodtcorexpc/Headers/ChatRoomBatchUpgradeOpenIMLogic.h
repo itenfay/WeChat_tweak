@@ -6,7 +6,7 @@
 @class NSArray, NSMutableDictionary, NSString;
 @protocol ChatRoomBatchUpgradeOpenIMLogicDelegate;
 
-@interface ChatRoomBatchUpgradeOpenIMLogic
+@interface ChatRoomBatchUpgradeOpenIMLogic : NSObject
 {
     NSMutableDictionary *m_upgradeChatRoomDicResult;
     id <ChatRoomBatchUpgradeOpenIMLogicDelegate> m_delegate;

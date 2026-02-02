@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableDictionary, NSString;
 
-@interface WebViewSanboxTaskAuthInfo
+@interface WebViewSanboxTaskAuthInfo : NSObject
 {
     NSData *_permissionData;
     NSString *_fullUrl;

@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface GCDWebServerURLEncodedFormRequest
+@interface GCDWebServerURLEncodedFormRequest : NSObject
 {
     NSDictionary *_arguments;
 }

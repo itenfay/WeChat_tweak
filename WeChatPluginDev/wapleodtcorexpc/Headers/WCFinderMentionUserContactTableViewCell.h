@@ -5,7 +5,7 @@
 
 @class AttributeLabel, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 
-@interface WCFinderMentionUserContactTableViewCell
+@interface WCFinderMentionUserContactTableViewCell : NSObject
 {
     WCFinderHeadImageView *_avatarImageView;
     AttributeLabel *_nickNameLabel;

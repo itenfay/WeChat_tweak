@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WCCanvasComponentReportRedEnvelopInfo
+@interface WCCanvasComponentReportRedEnvelopInfo : NSObject
 {
     NSMutableDictionary *_hbCards;
 }

@@ -5,7 +5,7 @@
 
 @class UILabel, WCTogetherFeedViewSection;
 
-@interface WCTogetherFeedHeaderView
+@interface WCTogetherFeedHeaderView : NSObject
 {
     UILabel *_yearTextLabel;
     UILabel *_dayTextLabel;

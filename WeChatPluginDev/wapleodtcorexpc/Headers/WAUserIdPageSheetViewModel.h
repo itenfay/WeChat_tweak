@@ -5,7 +5,7 @@
 
 @class UserIdAuthorizePageInfo;
 
-@interface WAUserIdPageSheetViewModel
+@interface WAUserIdPageSheetViewModel : NSObject
 {
     UserIdAuthorizePageInfo *_userIdPageInfo;
 }

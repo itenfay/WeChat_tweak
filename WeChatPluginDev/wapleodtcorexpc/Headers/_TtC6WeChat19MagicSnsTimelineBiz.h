@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat19MagicSnsTimelineBiz
+@interface _TtC6WeChat19MagicSnsTimelineBiz : NSObject
 {
     MISSING_TYPE *snsEmojiDelegate;
     MISSING_TYPE *snsCurrentScene;

@@ -6,7 +6,7 @@
 @class NSString, WABasePickerView;
 @protocol WAWebViewPluginPickerDelegate;
 
-@interface WAWebViewPlugin_multiPicker
+@interface WAWebViewPlugin_multiPicker : NSObject
 {
     WABasePickerView *_pickerView;
     id <WAWebViewPluginPickerDelegate> _resultDelegate;

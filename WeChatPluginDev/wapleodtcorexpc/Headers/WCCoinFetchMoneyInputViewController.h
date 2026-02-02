@@ -6,7 +6,7 @@
 @class KindaUIView, LiveRewardIncomeBizInfo, MMTableView, MMUIButton, MMUILabel, NSString, RichTextView, TrueKindaOnePxLineView, UIButton, UIImageView, UILabel, UITextField, UIView, WCPayDecimalKeyboardView, WCPayWebImageView, WecoinTaxCutEntranceInfo;
 @protocol WCCoinFetchMoneyInputViewControllerDelegate;
 
-@interface WCCoinFetchMoneyInputViewController
+@interface WCCoinFetchMoneyInputViewController : NSObject
 {
     id <WCCoinFetchMoneyInputViewControllerDelegate> _delegate;
     long long _incomeBalance;

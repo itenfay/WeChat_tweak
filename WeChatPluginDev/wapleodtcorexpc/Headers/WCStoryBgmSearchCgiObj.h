@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCStoryBgmSearchCgiObj
+@interface WCStoryBgmSearchCgiObj : NSObject
 {
     CDUnknownBlockType _completionBlock;
 }

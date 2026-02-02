@@ -5,7 +5,7 @@
 
 @class FinderJumpInfo;
 
-@interface MMFinderLiveJumpInfoAnchorPromoteInfo
+@interface MMFinderLiveJumpInfoAnchorPromoteInfo : NSObject
 {
     FinderJumpInfo *_jumpInfo;
 }

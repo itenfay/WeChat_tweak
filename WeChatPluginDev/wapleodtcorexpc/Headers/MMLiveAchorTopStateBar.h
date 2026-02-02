@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTimerLabel, MMUILabel, NSString, UIImageView;
 @protocol MMLiveAchorTopStateBarDelegate;
 
-@interface MMLiveAchorTopStateBar
+@interface MMLiveAchorTopStateBar : NSObject
 {
     UIImageView *_networkStateImageView;
     UIImageView *_likedImageView;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCAdRandomPickCardView, WCDataItem;
 
-@interface WCAdRandomPickCardLogic
+@interface WCAdRandomPickCardLogic : NSObject
 {
     WCDataItem *_dataItem;
     unsigned long long _contentItemScene;

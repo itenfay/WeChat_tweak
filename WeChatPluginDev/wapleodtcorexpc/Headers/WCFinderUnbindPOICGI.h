@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderUnbindPOICGI
+@interface WCFinderUnbindPOICGI : NSObject
 {
     NSString *_poiId;
     NSString *_finderUsername;

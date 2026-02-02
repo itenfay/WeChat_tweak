@@ -5,7 +5,7 @@
 
 @class WeToast;
 
-@interface VolumeCheckHelper
+@interface VolumeCheckHelper : NSObject
 {
     _Bool m_bHasShowVolumeTip;
     WeToast *_toast;

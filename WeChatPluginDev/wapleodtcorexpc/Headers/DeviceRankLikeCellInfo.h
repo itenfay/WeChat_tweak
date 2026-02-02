@@ -5,7 +5,7 @@
 
 @class NSString, SportRecord;
 
-@interface DeviceRankLikeCellInfo
+@interface DeviceRankLikeCellInfo : NSObject
 {
     unsigned int uiScore;
     unsigned int uiRankNum;

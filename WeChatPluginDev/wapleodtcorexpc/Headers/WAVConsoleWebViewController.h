@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, WAJSContextPlugin_vConsole, WAVConsoleWebLogicController, YYBaseWebView;
 
-@interface WAVConsoleWebViewController
+@interface WAVConsoleWebViewController : NSObject
 {
     WAVConsoleWebLogicController *_logicController;
     NSDictionary *_dictExtInfo;

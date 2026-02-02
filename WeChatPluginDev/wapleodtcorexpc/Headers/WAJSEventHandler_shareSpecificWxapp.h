@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString, WAContact;
 
-@interface WAJSEventHandler_shareSpecificWxapp
+@interface WAJSEventHandler_shareSpecificWxapp : NSObject
 {
     WAContact *_contact;
     ForwardMessageLogicController *_forwardLogic;

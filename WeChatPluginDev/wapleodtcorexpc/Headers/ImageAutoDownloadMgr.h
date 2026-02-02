@@ -5,7 +5,7 @@
 
 @class CMessageWrap, ImageAutoControl, NSMutableArray, NSString;
 
-@interface ImageAutoDownloadMgr
+@interface ImageAutoDownloadMgr : NSObject
 {
     NSMutableArray *m_arrChatQueue;
     NSMutableArray *m_arrBackGroundQueue;

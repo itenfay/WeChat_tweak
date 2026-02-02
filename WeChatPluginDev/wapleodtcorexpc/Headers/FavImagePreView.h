@@ -6,7 +6,7 @@
 @class MMUIView, MMWebImageView, NSString, UIView;
 @protocol FavImagePreViewDelegate, RecordNodeDataSource;
 
-@interface FavImagePreView
+@interface FavImagePreView : NSObject
 {
     UIView *m_maskView;
     MMWebImageView *m_imgPreView;

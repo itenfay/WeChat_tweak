@@ -6,7 +6,7 @@
 @class JSEvent, NSString, UIView;
 @protocol WCPayCheckoutCounterLogicDelegate;
 
-@interface WCPayJSApiGetWebPayCheckoutCounterControlLogic
+@interface WCPayJSApiGetWebPayCheckoutCounterControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     long long m_enWCPayCheckAuthorityScene;

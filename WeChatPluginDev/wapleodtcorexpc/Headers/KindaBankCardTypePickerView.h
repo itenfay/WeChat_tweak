@@ -5,7 +5,7 @@
 
 @class MMBankCardType, MMKBankCardTypePickerViewOnSelectCallback, MMKViewOnClickCallback, NSArray, NSMutableArray, NSMutableDictionary, NSString, WCBizPickerView, WCUITextField;
 
-@interface KindaBankCardTypePickerView
+@interface KindaBankCardTypePickerView : NSObject
 {
     WCBizPickerView *m_pickerView;
     WCUITextField *m_textField;

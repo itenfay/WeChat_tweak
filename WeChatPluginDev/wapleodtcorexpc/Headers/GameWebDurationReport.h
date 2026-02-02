@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableString, NSNumber, NSString, UIViewController;
 
-@interface GameWebDurationReport
+@interface GameWebDurationReport : NSObject
 {
     _Bool _visible;
     _Bool _gcReportIsVisible;

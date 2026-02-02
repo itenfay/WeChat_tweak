@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionSpecialPageData
+@interface WCSessionSpecialPageData : NSObject
 {
     unsigned int _logID;
     NSString *_sid;

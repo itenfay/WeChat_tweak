@@ -6,7 +6,7 @@
 @class MISSING_TYPE;
 @protocol _TtP6WeChat26IMBSclExternalViewDelegate_;
 
-@interface _TtC6WeChat22MagicSclFlutterDemoBiz
+@interface _TtC6WeChat22MagicSclFlutterDemoBiz : NSObject
 {
     MISSING_TYPE *mbPlugin;
     MISSING_TYPE *$__lazy_storage_$_bizPlugin;

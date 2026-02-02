@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4WCDB6Select
+@interface _TtC4WCDB6Select : NSObject
 {
     MISSING_TYPE *properties;
     MISSING_TYPE *$__lazy_storage_$_keys;

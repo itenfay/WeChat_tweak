@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MJTemplateMovieSessionOperation_StartAssetClipping
+@interface MJTemplateMovieSessionOperation_StartAssetClipping : NSObject
 {
 }
 

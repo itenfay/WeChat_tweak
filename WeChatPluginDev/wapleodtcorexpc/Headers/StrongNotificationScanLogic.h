@@ -5,7 +5,7 @@
 
 @class MMUIViewController;
 
-@interface StrongNotificationScanLogic
+@interface StrongNotificationScanLogic : NSObject
 {
     MMUIViewController *m_sourceViewController;
 }

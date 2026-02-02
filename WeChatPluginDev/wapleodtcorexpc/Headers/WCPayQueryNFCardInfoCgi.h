@@ -5,7 +5,7 @@
 
 @protocol WCPayQueryNFCardInfoCgiDelegate;
 
-@interface WCPayQueryNFCardInfoCgi
+@interface WCPayQueryNFCardInfoCgi : NSObject
 {
     id <WCPayQueryNFCardInfoCgiDelegate> _m_delegate;
 }

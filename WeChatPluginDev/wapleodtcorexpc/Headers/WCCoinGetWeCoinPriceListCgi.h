@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCCoinGetWeCoinPriceListCgiDelegate;
 
-@interface WCCoinGetWeCoinPriceListCgi
+@interface WCCoinGetWeCoinPriceListCgi : NSObject
 {
     unsigned int _diffWecoinCount;
     unsigned int _scene;

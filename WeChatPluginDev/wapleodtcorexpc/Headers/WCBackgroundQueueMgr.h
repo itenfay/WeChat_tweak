@@ -6,7 +6,7 @@
 @class NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCBackgroundQueueMgr
+@interface WCBackgroundQueueMgr : NSObject
 {
     _Bool _memoryExceeded;
     _Bool _isEnabled;

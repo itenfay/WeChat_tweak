@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton, UIView;
 
-@interface MMFinderLivePromoteAddPanel
+@interface MMFinderLivePromoteAddPanel : NSObject
 {
     CDUnknownBlockType _addButtonBlock;
     UIButton *_actionButton;

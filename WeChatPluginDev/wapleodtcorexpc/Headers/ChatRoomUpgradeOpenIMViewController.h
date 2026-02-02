@@ -5,7 +5,7 @@
 
 @class CContact, MMHeadImageView, MMImageView, MMUILabel, NSString;
 
-@interface ChatRoomUpgradeOpenIMViewController
+@interface ChatRoomUpgradeOpenIMViewController : NSObject
 {
     MMHeadImageView *m_headImageView;
     MMUILabel *m_nickNameTextLabel;

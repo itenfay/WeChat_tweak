@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton, UIView;
 
-@interface MMFinderLiveOlympicsReserveConfirmView
+@interface MMFinderLiveOlympicsReserveConfirmView : NSObject
 {
     UIView *_dialogView;
     MMUILabel *_title;

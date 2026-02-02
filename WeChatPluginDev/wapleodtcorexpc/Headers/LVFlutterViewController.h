@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface LVFlutterViewController
+@interface LVFlutterViewController : NSObject
 {
     NSDictionary *_params;
 }

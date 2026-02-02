@@ -6,7 +6,7 @@
 @class NSData;
 @protocol StoreEmoticonGetDesginerIPListCgiDelegate;
 
-@interface StoreEmoticonGetDesginerIPListCgi
+@interface StoreEmoticonGetDesginerIPListCgi : NSObject
 {
     unsigned int _designerUin;
     id <StoreEmoticonGetDesginerIPListCgiDelegate> _delegate;

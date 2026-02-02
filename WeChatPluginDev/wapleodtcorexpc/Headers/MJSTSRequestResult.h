@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MJSTSRequestResult
+@interface MJSTSRequestResult : NSObject
 {
     NSData *_pcmData;
     NSString *_audioFilePath;

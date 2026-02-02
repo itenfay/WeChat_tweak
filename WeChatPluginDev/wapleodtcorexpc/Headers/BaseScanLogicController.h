@@ -6,7 +6,7 @@
 @class CameraScanBaseContentView, CameraScanTabSwitchingView, CameraScannerViewWrapper, NSString;
 @protocol BaseScanLogicDelegate, CameraScanLogicDelegate;
 
-@interface BaseScanLogicController
+@interface BaseScanLogicController : NSObject
 {
     id <BaseScanLogicDelegate> _delegate;
     id <CameraScanLogicDelegate> _reportDelegate;

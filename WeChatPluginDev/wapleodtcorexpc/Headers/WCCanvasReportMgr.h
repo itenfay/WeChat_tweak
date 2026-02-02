@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCCanvasDynamicDataLoader, WCCanvasReportInfo, WCStatTimerHelper;
 
-@interface WCCanvasReportMgr
+@interface WCCanvasReportMgr : NSObject
 {
     _Bool _bSearchCanvas;
     _Bool _hasReportInit;

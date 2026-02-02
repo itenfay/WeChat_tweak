@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSMutableDictionary, NSString;
 
-@interface MMWebViewPlugin_NativeVideo
+@interface MMWebViewPlugin_NativeVideo : NSObject
 {
     NSMutableDictionary *m_viewsDict;
     NSMutableDictionary *m_contextDict;

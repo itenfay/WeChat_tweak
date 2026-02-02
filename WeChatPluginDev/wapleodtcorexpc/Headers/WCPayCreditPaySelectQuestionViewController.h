@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol WCPayCreditPaySelectQuestionViewControllerDelegate;
 
-@interface WCPayCreditPaySelectQuestionViewController
+@interface WCPayCreditPaySelectQuestionViewController : NSObject
 {
     id <WCPayCreditPaySelectQuestionViewControllerDelegate> m_delegate;
     long long m_uiLastSelectedQuestionID;

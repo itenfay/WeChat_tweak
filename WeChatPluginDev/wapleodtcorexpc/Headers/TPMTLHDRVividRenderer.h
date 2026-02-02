@@ -5,7 +5,7 @@
 
 @protocol MTLTexture;
 
-@interface TPMTLHDRVividRenderer
+@interface TPMTLHDRVividRenderer : NSObject
 {
     unsigned long long rendererType;
     struct __CVMetalTextureCache *_textureCache;

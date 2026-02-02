@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UIImageView, UILabel, UIScrollView, UIView, WCPayRealnameGuideInfo;
 @protocol WCPayUploadIDCardTipsViewControllerDelegate;
 
-@interface WCPayUploadIDCardTipsViewController
+@interface WCPayUploadIDCardTipsViewController : NSObject
 {
     id <WCPayUploadIDCardTipsViewControllerDelegate> _delegate;
     WCPayRealnameGuideInfo *_realNameInfo;

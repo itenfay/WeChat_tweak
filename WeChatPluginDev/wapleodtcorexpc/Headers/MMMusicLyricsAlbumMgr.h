@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMMusicLyricsAlbumMgr
+@interface MMMusicLyricsAlbumMgr : NSObject
 {
     NSMutableArray *m_arrMusicItems;
     NSString *m_nsLyricsRootPath;

@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSMutableDictionary, NSString, TrackRoomHeadListItem, UILabel, UIScrollView, UIView;
 @protocol TrackRoomTopBarViewDelegate;
 
-@interface TrackRoomTopBarView
+@interface TrackRoomTopBarView : NSObject
 {
     id <TrackRoomTopBarViewDelegate> _delegate;
     MMUIButton *_closeButton;

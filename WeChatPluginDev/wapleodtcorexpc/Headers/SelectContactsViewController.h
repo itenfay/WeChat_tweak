@@ -6,7 +6,7 @@
 @class ContactSelectView, NSMutableDictionary, NSString, UIView;
 @protocol SelectContactsViewControllerDelegate;
 
-@interface SelectContactsViewController
+@interface SelectContactsViewController : NSObject
 {
     id <SelectContactsViewControllerDelegate> m_delegate;
     UIView *m_titleView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBDomainWhiteListReq
+@interface QBDomainWhiteListReq : NSObject
 {
     int jcev2_p_0_r_iDomainTime;
     NSString *jcev2_p_1_r_sQUA;

@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, WCFinderAnimationLoadingView, WCFinderFeedFlowView, WCFinderFeedFlowViewAdapter, WCFinderRecommendCollectionViewModel;
 
-@interface WCFinderRecommendCollectionViewController
+@interface WCFinderRecommendCollectionViewController : NSObject
 {
     int _customCommentScene;
     WCFinderFeedFlowViewAdapter *_flowViewAdapter;

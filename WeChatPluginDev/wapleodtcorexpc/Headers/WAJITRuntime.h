@@ -5,7 +5,7 @@
 
 @class MMTimer, WAJITBindingEnv;
 
-@interface WAJITRuntime
+@interface WAJITRuntime : NSObject
 {
     WAJITBindingEnv *_bindingEnv;
     MMTimer *_perfTimer;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootVisageInspectorItem, NSArray, NSIndexPath;
 
-@interface MJShootMakeupInspectorViewModel
+@interface MJShootMakeupInspectorViewModel : NSObject
 {
     NSArray *_makeupItems;
     MJShootVisageInspectorItem *_selectedMakeupItem;

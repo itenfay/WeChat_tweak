@@ -5,7 +5,7 @@
 
 @class FinderNewUserPrepareResponse, NSString, WCTableViewManager;
 
-@interface WCFinderAccountSettingViewController
+@interface WCFinderAccountSettingViewController : NSObject
 {
     FinderNewUserPrepareResponse *_prepareResponse;
     WCTableViewManager *_tableViewManager;

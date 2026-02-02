@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BTOftenReadBizCache, BTResortPerformanceItem, BrandMsgResortContext, BrandResortConfig, BrandSessionCache, BrandTLExptConfig, BrandTLMainSessionExposeItem, BrandTimelineMsgDB, FlutterBrandNavigator, MMBaseSessionStorage, MMFlutterInstance, MMTimer, MemoryMappedKV, NSData, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, WCEliminatedSlotMMKV;
 @protocol OS_dispatch_queue;
 
-@interface BrandTimelineMsgMgr
+@interface BrandTimelineMsgMgr : NSObject
 {
     _Bool _isMigratingData;
     _Bool _needUpdateMainSession;

@@ -6,7 +6,7 @@
 @class WCPayGPLaunchParamInvalidTipsView, WCPayGPMemberFillMoneyView;
 @protocol WCPayGPMemberFillMoneyControllerDelegate;
 
-@interface WCPayGPMemberFillMoneyController
+@interface WCPayGPMemberFillMoneyController : NSObject
 {
     _Bool _bIsAmountInvalid;
     id <WCPayGPMemberFillMoneyControllerDelegate> _delegate;

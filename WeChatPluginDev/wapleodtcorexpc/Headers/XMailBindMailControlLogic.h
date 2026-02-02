@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIViewController, NSString, XMailCommitBindCgi;
 @protocol XMailBindMailControlLogicDelegate;
 
-@interface XMailBindMailControlLogic
+@interface XMailBindMailControlLogic : NSObject
 {
     id <XMailBindMailControlLogicDelegate> _delegate;
     MMUIViewController *_rootViewController;

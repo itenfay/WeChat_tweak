@@ -6,7 +6,7 @@
 @class MMTimer, NSMutableArray, NSObject, UIImageView, UILabel, UIView, VoIPToast;
 @protocol MMStringToastViewDelegate;
 
-@interface MMStringToastView
+@interface MMStringToastView : NSObject
 {
     _Bool _isUsingMPUI;
     _Bool _noNeedTips;

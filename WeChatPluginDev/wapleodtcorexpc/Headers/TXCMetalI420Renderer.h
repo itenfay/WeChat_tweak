@@ -5,7 +5,7 @@
 
 @class NSArray, TXCMetalRenderKernel;
 
-@interface TXCMetalI420Renderer
+@interface TXCMetalI420Renderer : NSObject
 {
     TXCMetalRenderKernel *_renderKernel;
     const struct SimdColorConversion *_colorConversion;

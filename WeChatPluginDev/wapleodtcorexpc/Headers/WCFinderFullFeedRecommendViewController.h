@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonCustomCreateLogic, MMFinderHandOffItem, MMScrollViewProxy, MMUILabel, NSIndexPath, NSMutableDictionary, NSString, PAGView, UIImage, UIImageView, UILabel, UITableView, UITapGestureRecognizer, UIView, UIViewController, WCFinderCustomPaging, WCFinderFeedDragUpDislikeController, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListBannderView, WCFinderFeedRecommendVM, WCFinderLandscapeReportInfo, WCFinderLeadToMachineTableViewCell, WCFinderMsgBubbleMgrPanelView, WCFinderOpenTimelineParams, WCFinderPlayRateOperationView, WCFinderPlayRateOperationViewV3, WCFinderPullDownRefreshHeaderView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet, WCFinderTLUnreadModel, WCFinderTimelineJumpView, WCFinderTipBarView, WCStoryTouchToDismissView, _TtC6WeChat25WCFinderFeedFastSlipLogic;
 @protocol WCFinderCommentBaseViewProtocol, WCFinderFullFeedRecommendViewControllerDelegate;
 
-@interface WCFinderFullFeedRecommendViewController
+@interface WCFinderFullFeedRecommendViewController : NSObject
 {
     _Bool _hasReportCreateEvent;
     _Bool _isDisableVideoAutoPlay;

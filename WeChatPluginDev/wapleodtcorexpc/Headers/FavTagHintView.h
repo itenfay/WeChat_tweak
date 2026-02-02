@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol FavTagEditViewDelegate;
 
-@interface FavTagHintView
+@interface FavTagHintView : NSObject
 {
     NSMutableArray *m_arrHints;
     NSString *m_currentInput;

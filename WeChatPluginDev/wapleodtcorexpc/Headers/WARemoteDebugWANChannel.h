@@ -5,7 +5,7 @@
 
 @class NSString, SRWebSocket;
 
-@interface WARemoteDebugWANChannel
+@interface WARemoteDebugWANChannel : NSObject
 {
     SRWebSocket *_webSocket;
 }

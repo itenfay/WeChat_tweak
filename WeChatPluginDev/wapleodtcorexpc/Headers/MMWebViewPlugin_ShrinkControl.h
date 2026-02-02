@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MMWebViewPlugin_ShrinkControl
+@interface MMWebViewPlugin_ShrinkControl : NSObject
 {
     _Bool _isBottomBarShow;
     _Bool _shouldHandleScrollEvent;

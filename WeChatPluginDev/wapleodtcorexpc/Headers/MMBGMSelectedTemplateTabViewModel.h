@@ -5,7 +5,7 @@
 
 @class NSString, OrderedDictionary;
 
-@interface MMBGMSelectedTemplateTabViewModel
+@interface MMBGMSelectedTemplateTabViewModel : NSObject
 {
     NSString *_templateID;
     OrderedDictionary *_musicInfoDictionary;

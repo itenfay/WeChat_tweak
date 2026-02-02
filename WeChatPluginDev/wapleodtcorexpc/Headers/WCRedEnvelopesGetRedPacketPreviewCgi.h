@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvelopesGetRedPacketPreviewCgiDelegate;
 
-@interface WCRedEnvelopesGetRedPacketPreviewCgi
+@interface WCRedEnvelopesGetRedPacketPreviewCgi : NSObject
 {
     id <WCRedEnvelopesGetRedPacketPreviewCgiDelegate> m_delegate;
 }

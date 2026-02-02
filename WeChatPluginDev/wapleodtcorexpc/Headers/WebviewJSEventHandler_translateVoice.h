@@ -5,7 +5,7 @@
 
 @class NSString, VoiceTransHelper;
 
-@interface WebviewJSEventHandler_translateVoice
+@interface WebviewJSEventHandler_translateVoice : NSObject
 {
     VoiceTransHelper *_transHelper;
     NSString *_transResult;

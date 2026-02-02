@@ -6,7 +6,7 @@
 @class MMTableView, MMUIButton, NSArray, NSString, UILabel;
 @protocol WCMomentsUserListHalfScreenViewControllerDelegate;
 
-@interface WCMomentsUserListHalfScreenViewController
+@interface WCMomentsUserListHalfScreenViewController : NSObject
 {
     NSArray *_userContacts;
     MMTableView *_tableView;

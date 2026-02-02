@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionConfigModel
+@interface WCSessionConfigModel : NSObject
 {
     NSString *_sid;
     NSMutableArray *_pageNames;

@@ -5,7 +5,7 @@
 
 @class MultiTalkMessageViewModel, UIImageView;
 
-@interface MultiTalkMessageCellView
+@interface MultiTalkMessageCellView : NSObject
 {
     UIImageView *m_backgroundImageView;
 }

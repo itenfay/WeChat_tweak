@@ -5,7 +5,7 @@
 
 @class ContactTagData, MMUIButton, MMUILabel, NSAttributedString, NSString, UIImageView;
 
-@interface ContactTagListTableViewCell
+@interface ContactTagListTableViewCell : NSObject
 {
     _Bool _showMemberList;
     _Bool _showSelectControl;

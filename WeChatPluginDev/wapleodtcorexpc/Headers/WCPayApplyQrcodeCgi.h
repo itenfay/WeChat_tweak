@@ -6,7 +6,7 @@
 @class NSData;
 @protocol WCPayApplyQrcodeCgiDelegate;
 
-@interface WCPayApplyQrcodeCgi
+@interface WCPayApplyQrcodeCgi : NSObject
 {
     id <WCPayApplyQrcodeCgiDelegate> _m_delegate;
     NSData *_saveNotifyInfo;

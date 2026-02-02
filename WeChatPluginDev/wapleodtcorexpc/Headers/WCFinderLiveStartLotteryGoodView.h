@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUITextField, MMUIView, NSString, UIImageView, UIView, WCFinderLiveStartLotteryGoodAddView, WCFinderLiveStartLotteryProductInfo;
 @protocol WCFinderLiveStartLotteryGoodViewDelegate;
 
-@interface WCFinderLiveStartLotteryGoodView
+@interface WCFinderLiveStartLotteryGoodView : NSObject
 {
     _Bool _isOnlyShopProduct;
     _Bool _needFilterWhiteSpace;

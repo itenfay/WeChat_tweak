@@ -5,7 +5,7 @@
 
 @class BackupAnalyseInfo, NSString, WCTDatabase, WXGBackupRecoverAnalyseInfo, WXGImportAnalyseInfo;
 
-@interface WXGBackupAnalyseService
+@interface WXGBackupAnalyseService : NSObject
 {
     _Bool _hasPause;
     WCTDatabase *_infoDB;

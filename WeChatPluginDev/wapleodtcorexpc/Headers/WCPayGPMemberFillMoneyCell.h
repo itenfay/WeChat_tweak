@@ -6,7 +6,7 @@
 @class CContact, MMHeadImageView, MMUILabel, MMUIView, NSString, UIButton, UIImageView, WCUITextField;
 @protocol WCPayGPMemberFillMoneyCellDelegate;
 
-@interface WCPayGPMemberFillMoneyCell
+@interface WCPayGPMemberFillMoneyCell : NSObject
 {
     _Bool _disableEdit;
     id <WCPayGPMemberFillMoneyCellDelegate> _delegate;

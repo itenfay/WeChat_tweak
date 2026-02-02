@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel;
 @protocol WCShareCardGeneralReceiveHeaderDelegate;
 
-@interface WCShareCardGeneralReceiveHeaderView
+@interface WCShareCardGeneralReceiveHeaderView : NSObject
 {
     MMUIButton *_sureButton;
     MMUILabel *_vaildDateLabel;

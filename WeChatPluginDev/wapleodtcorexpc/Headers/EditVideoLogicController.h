@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSLock, NSMutableDictionary;
 
-@interface EditVideoLogicController
+@interface EditVideoLogicController : NSObject
 {
     NSMutableDictionary *_dicEditAsset;
     NSLock *_lock;

@@ -5,7 +5,7 @@
 
 @class TempAccessibilityElement;
 
-@interface WCPayTransferMoneyStatusViewCellContainer
+@interface WCPayTransferMoneyStatusViewCellContainer : NSObject
 {
     TempAccessibilityElement *_tempElement;
 }

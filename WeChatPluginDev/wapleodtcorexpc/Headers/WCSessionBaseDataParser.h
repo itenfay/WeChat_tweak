@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionBaseDataParser
+@interface WCSessionBaseDataParser : NSObject
 {
 }
 

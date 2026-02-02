@@ -6,7 +6,7 @@
 @class FaceRecogPayHandler, MMVoidCallback, NSString, WCPayGenDigitalCertCgi, WCPayResetPwdByFaceCgi, WCPayVerifyUserRealNameInfoCgi;
 @protocol WCPayResetPayPwdLogicDelegate;
 
-@interface WCPayResetPayPwdLogic
+@interface WCPayResetPayPwdLogic : NSObject
 {
     _Bool _bIsResetingPwdByFaceRecog;
     id <WCPayResetPayPwdLogicDelegate> _delegate;

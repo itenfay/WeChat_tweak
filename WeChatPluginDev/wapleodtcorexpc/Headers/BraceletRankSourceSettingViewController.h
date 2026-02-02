@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface BraceletRankSourceSettingViewController
+@interface BraceletRankSourceSettingViewController : NSObject
 {
     NSMutableArray *m_DataSourcList;
     struct map<unsigned long, unsigned int, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned int>>> m_mapSectionType;

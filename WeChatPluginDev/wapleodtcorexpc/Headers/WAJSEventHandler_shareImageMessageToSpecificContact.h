@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, NSString, WAReportImageEntranceShareItem, WAScreenshotContextInfo;
 
-@interface WAJSEventHandler_shareImageMessageToSpecificContact
+@interface WAJSEventHandler_shareImageMessageToSpecificContact : NSObject
 {
     NSString *_imagePath;
     NSString *_cacheKey;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCAudioModule, WCPictureInPictureController, WCPipContentSourcePlayer, WCPlayerPipSessionInfo;
 
-@interface WCPlayerPipMgr
+@interface WCPlayerPipMgr : NSObject
 {
     _Bool _enablePictureInPictureSeekButton;
     WCPlayerPipSessionInfo *_sessionInfo;

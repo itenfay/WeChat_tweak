@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel;
 
-@interface WXGDownloadSessionItemCell
+@interface WXGDownloadSessionItemCell : NSObject
 {
     UIImageView *_selectedImage;
     UIImageView *_resourceIcon;

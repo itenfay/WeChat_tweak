@@ -5,7 +5,7 @@
 
 @class CALayer, UIColor;
 
-@interface MJPublisherBidirectionalSlider
+@interface MJPublisherBidirectionalSlider : NSObject
 {
     UIColor *_highlightedTrackTintColor;
     CALayer *_highlightedTrackLayer;

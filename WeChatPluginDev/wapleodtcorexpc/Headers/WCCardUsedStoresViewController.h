@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSString;
 @protocol WCCardDataSource;
 
-@interface WCCardUsedStoresViewController
+@interface WCCardUsedStoresViewController : NSObject
 {
     id <WCCardDataSource> _cardDataSource;
     NSArray *_tableDatas;

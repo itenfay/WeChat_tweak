@@ -5,7 +5,7 @@
 
 @class WCAdBreakFrameView;
 
-@interface WCAdFullCardBreakFrameSightView
+@interface WCAdFullCardBreakFrameSightView : NSObject
 {
     _Bool _intentToPlay;
     WCAdBreakFrameView *_adBreakFrameView;

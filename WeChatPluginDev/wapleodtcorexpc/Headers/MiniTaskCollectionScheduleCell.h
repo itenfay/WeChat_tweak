@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, MMUIButton, MMUILabel, UIView;
 
-@interface MiniTaskCollectionScheduleCell
+@interface MiniTaskCollectionScheduleCell : NSObject
 {
     MMUILabel *_contentLabel;
     MMUILabel *_nameLabel;

@@ -6,7 +6,7 @@
 @class Announcement, FinderEncashPrepareInfo, FinderGetLiveIncomePageResponse, MMFinderLiveFetchMoneyAnnouncementView, MMUILabel, NSMutableArray, NSString, PrepareIncomeEncashResponse, SecurityInfoAuthrizeLogic, SettleToAgencyRelateInfo, UIView, WCCoinFetchMoneyInputViewController, WCCoinFetchMoneySuccessViewController, WCCoinInterceptLogic, WCPayJSApiVerifyPayPasswordControlLogic, WCTableViewManager;
 @protocol WCCoinFetchMoneyViewControllerDelegate;
 
-@interface WCCoinFetchMoneyViewController
+@interface WCCoinFetchMoneyViewController : NSObject
 {
     _Bool _needGetSettleInfo;
     _Bool _isCocertActivate;

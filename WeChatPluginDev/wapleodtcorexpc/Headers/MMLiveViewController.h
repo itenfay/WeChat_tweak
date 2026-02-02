@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveCompleteViewController, MMLiveConnectMicLogic, MMLiveLogic, MMLiveOperationView, MMLivePivotViewController, MMLiveStarterViewController, MMLiveTask, MMLiveTaskId, MMLiveView, NSMutableDictionary, NSString, UIImageView, UINavigationController, UIView;
 @protocol MMLiveContainerDisplayViewProtocol, MMLiveViewControllerDelegate;
 
-@interface MMLiveViewController
+@interface MMLiveViewController : NSObject
 {
     _Bool _isForcePortraitForExtend;
     _Bool _isPresentingWithCustomTransition;

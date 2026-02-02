@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLiveVoteChoice, NSString;
 
-@interface MMFinderLiveCreateVoteChoiceTableViewCell
+@interface MMFinderLiveCreateVoteChoiceTableViewCell : NSObject
 {
     MMFinderLiveLiveVoteChoice *_choice;
 }

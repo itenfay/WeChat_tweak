@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface WCCanvasRadarChartComponent
+@interface WCCanvasRadarChartComponent : NSObject
 {
     UIImageView *_bgImageView;
     UIImageView *_maskImageView;

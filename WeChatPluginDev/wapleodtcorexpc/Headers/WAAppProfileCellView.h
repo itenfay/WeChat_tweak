@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSDate, UIView, WAAppProfileViewModel, WCTagsView;
 
-@interface WAAppProfileCellView
+@interface WAAppProfileCellView : NSObject
 {
     MMWebImageView *_iconView;
     UIView *_infoView;

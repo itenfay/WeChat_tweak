@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UISwitch, WCPayEntrustPayInfo, WCPayOrderDetail;
 @protocol WCPayAutoDeductSettingViewControllerDelegate;
 
-@interface WCPayAutoDeductSettingViewController
+@interface WCPayAutoDeductSettingViewController : NSObject
 {
     id <WCPayAutoDeductSettingViewControllerDelegate> m_delegate;
     UISwitch *_switchButton;

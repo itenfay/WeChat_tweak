@@ -5,7 +5,7 @@
 
 @class FinderGetWindowProductProfileCardInfoResponse_ReputationInfo, NSArray, NSString;
 
-@interface WCFinderLiveShopWindowShareItem
+@interface WCFinderLiveShopWindowShareItem : NSObject
 {
     _Bool _isWxShop;
     NSString *_finderUsername;

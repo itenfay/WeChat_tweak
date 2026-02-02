@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, WCPayBaseViewController, WCPayPayMoneyFromOverseaH5WalletLogic, WCPayPayMoneyLogic;
 
-@interface WCPayPayMoneyFromWAPPayLogic
+@interface WCPayPayMoneyFromWAPPayLogic : NSObject
 {
     NSDictionary *m_payInfo;
     NSString *m_bundleId;

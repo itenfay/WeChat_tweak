@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderRealNameVerifyCGI
+@interface WCFinderRealNameVerifyCGI : NSObject
 {
     int _optype;
     NSString *_authToken;

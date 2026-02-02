@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CustomMMWebImageView
+@interface CustomMMWebImageView : NSObject
 {
     NSString *_taskKey;
 }

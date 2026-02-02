@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTaskId, MMLiveKtvThemeItem, NSArray, NSString, UIButton, UICollectionView, UICollectionViewFlowLayout;
 
-@interface MMLiveKtvThemesSelectionPageSheet
+@interface MMLiveKtvThemesSelectionPageSheet : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     NSArray *_themes;

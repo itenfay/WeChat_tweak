@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MMMessageAssetIDMgr
+@interface MMMessageAssetIDMgr : NSObject
 {
     WCTDatabase *_database;
     WCTTable *_table;

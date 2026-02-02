@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat24MagicBrushFlutterService
+@interface _TtC6WeChat24MagicBrushFlutterService : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_mbPlugin;
     MISSING_TYPE *$__lazy_storage_$_brandPlugin;

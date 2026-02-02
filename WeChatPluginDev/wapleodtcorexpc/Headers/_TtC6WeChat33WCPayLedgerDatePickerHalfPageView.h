@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat33WCPayLedgerDatePickerHalfPageView
+@interface _TtC6WeChat33WCPayLedgerDatePickerHalfPageView : NSObject
 {
     MISSING_TYPE *pickerView;
     MISSING_TYPE *startDate;

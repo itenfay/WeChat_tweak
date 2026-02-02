@@ -5,7 +5,7 @@
 
 @class MMFinderLiveCastViewModel, MMFinderLiveCastingView, MMUIButton, NSString, UILabel, UITableView, UIView;
 
-@interface MMFinderLiveCastViewController
+@interface MMFinderLiveCastViewController : NSObject
 {
     _Bool _hasReportedThatDevicesDisplaying;
     _Bool _castingDeviceViewItemDidChanged;

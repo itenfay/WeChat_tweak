@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdCombineFollowReportModel
+@interface WCAdCombineFollowReportModel : NSObject
 {
     int _brandOpenType;
     int _brandResult;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveNormalTextSignView, WCFinderMsgSessionBadgeLabel, WCFinderMsgSessionUserTagLabel;
 
-@interface WCFinderMsgSessionBadgeGroupView
+@interface WCFinderMsgSessionBadgeGroupView : NSObject
 {
     MMFinderLiveGlobalRankSignView *_rankSignView;
     MMFinderLiveFansGroupSignView *_fansGroupSignView;

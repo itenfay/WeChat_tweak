@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WeChatEmotionSectionInfo
+@interface WeChatEmotionSectionInfo : NSObject
 {
     unsigned long long _sectionType;
     long long _numOfItems;

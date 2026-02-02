@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WAFileDescriptorLogic
+@interface WAFileDescriptorLogic : NSObject
 {
     NSMutableDictionary *m_dicAppId2DicFileWrap;
     NSObject<OS_dispatch_queue> *m_workQueue;

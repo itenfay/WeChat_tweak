@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderNetPagViewDelegate;
 
-@interface WCFinderNetPagView
+@interface WCFinderNetPagView : NSObject
 {
     _Bool _disableAutoUpate;
     id <WCFinderNetPagViewDelegate> _delegate;

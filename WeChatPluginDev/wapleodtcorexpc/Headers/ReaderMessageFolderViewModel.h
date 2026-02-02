@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface ReaderMessageFolderViewModel
+@interface ReaderMessageFolderViewModel : NSObject
 {
     unsigned long long _status;
     NSMutableArray *_viewModelList;

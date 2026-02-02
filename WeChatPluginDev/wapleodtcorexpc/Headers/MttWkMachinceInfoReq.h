@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MttWkMachinceInfoReq
+@interface MttWkMachinceInfoReq : NSObject
 {
     NSString *jcev2_p_0_r_phoneID;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WWKFContentSendMsgInfo;
 
-@interface WWKFContentLogicController
+@interface WWKFContentLogicController : NSObject
 {
     _Bool _bHasShowQuickSendMsg;
     NSString *_sessionTitle;

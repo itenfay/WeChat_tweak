@@ -5,7 +5,7 @@
 
 @class GetA8KeyLogic, NSString;
 
-@interface HandleScanResultHandler
+@interface HandleScanResultHandler : NSObject
 {
     GetA8KeyLogic *_geta8KeyLogic;
 }

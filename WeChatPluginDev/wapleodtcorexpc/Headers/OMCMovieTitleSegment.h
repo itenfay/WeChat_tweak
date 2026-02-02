@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OMCMovieTitleSegment
+@interface OMCMovieTitleSegment : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, WCAdURLImageView, WCAdWeGameGiftTagInfo, WCDataItem;
 @protocol WCAdWeGameGiftTagViewDelegate;
 
-@interface WCAdWeGameGiftTagView
+@interface WCAdWeGameGiftTagView : NSObject
 {
     id <WCAdWeGameGiftTagViewDelegate> _delegate;
     WCAdWeGameGiftTagInfo *_tagInfo;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WAPrefetchGetCodeLogic
+@interface WAPrefetchGetCodeLogic : NSObject
 {
     NSMutableArray *_arrRequestingCmd;
     NSMutableArray *_arrWaitingCmd;

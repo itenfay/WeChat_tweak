@@ -6,7 +6,7 @@
 @class MMUIView, NSString, WAAppTaskCapsuleButton, WACapsuleView;
 @protocol WACapsuleMenuDelegate;
 
-@interface WAAppTaskCapsuleMenu
+@interface WAAppTaskCapsuleMenu : NSObject
 {
     _Bool _hidden;
     _Bool _needAdaptIpad;

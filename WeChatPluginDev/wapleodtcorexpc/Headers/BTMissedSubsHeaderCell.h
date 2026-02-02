@@ -5,7 +5,7 @@
 
 @class BTMissedSubsHeaderViewModel, BrandLiveStatusButton, MMHeadImageView, MMUILabel, UIImageView, UILongPressGestureRecognizer;
 
-@interface BTMissedSubsHeaderCell
+@interface BTMissedSubsHeaderCell : NSObject
 {
     _Bool _forceHighlight;
     MMHeadImageView *_headView;

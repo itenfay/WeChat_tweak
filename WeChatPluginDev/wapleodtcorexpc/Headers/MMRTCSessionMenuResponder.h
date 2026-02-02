@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface MMRTCSessionMenuResponder
+@interface MMRTCSessionMenuResponder : NSObject
 {
     _Bool _bFromTranlateText;
     CMessageWrap *_msgWrap;

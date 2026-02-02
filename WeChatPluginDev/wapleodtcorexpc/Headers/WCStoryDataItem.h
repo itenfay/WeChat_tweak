@@ -5,7 +5,7 @@
 
 @class NSArray, NSData, NSMutableArray, NSString, WCLocationInfo, WCStoryBubbleMutableArray, WCStoryCommentMutableArray, WCStoryMediaItem, WCStoryVisitorMutableArray;
 
-@interface WCStoryDataItem
+@interface WCStoryDataItem : NSObject
 {
     _Bool _bChatRoomSyc;
     _Bool _isUploading;

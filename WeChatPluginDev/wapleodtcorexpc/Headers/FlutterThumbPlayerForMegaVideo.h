@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderSimplePlayerView;
 
-@interface FlutterThumbPlayerForMegaVideo
+@interface FlutterThumbPlayerForMegaVideo : NSObject
 {
     WCFinderSimplePlayerView *_finderPlayer;
     double _initStartPlayTime;

@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, MainFrameFoldReporter, MainSessionEditingLogic, NSString;
 
-@interface ChatBoxSessionListViewController
+@interface ChatBoxSessionListViewController : NSObject
 {
     unsigned long long _lastEnterMainTabTime;
     MainSessionEditingLogic *_sessionEditingLogic;

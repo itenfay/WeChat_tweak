@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface YtRawImgData_OC
+@interface YtRawImgData_OC : NSObject
 {
     int _x;
     int _y;

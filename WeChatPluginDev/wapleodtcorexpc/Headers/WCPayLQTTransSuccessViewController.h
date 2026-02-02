@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayLQTTransSuccessViewControllerDelegate;
 
-@interface WCPayLQTTransSuccessViewController
+@interface WCPayLQTTransSuccessViewController : NSObject
 {
     _Bool _hasResportGuideCell;
     id <WCPayLQTTransSuccessViewControllerDelegate> _delegate;

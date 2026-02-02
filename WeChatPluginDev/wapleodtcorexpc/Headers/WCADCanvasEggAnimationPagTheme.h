@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCADCanvasEggAnimationPagTheme
+@interface WCADCanvasEggAnimationPagTheme : NSObject
 {
     NSString *_simpleTransitionAnimationUrl;
     NSString *_simpleTransitionAnimationMD5;

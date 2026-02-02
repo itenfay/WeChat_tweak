@@ -5,7 +5,7 @@
 
 @class NSString, WAMainListStarLogic;
 
-@interface WAMyStarListViewModel
+@interface WAMyStarListViewModel : NSObject
 {
     NSString *m_showSessionId;
     WAMainListStarLogic *_starLogic;

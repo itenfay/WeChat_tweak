@@ -6,7 +6,7 @@
 @class MMImageOpenWeAppLogic, NSMutableArray, NSString;
 @protocol FavActionSheetDelegate;
 
-@interface FavActionSheet
+@interface FavActionSheet : NSObject
 {
     NSMutableArray *m_itemArray;
     NSMutableArray *m_firstRow;

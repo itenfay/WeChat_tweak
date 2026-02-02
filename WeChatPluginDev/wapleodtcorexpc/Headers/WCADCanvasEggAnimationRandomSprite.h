@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCADCanvasEggAnimationRandomSprite
+@interface WCADCanvasEggAnimationRandomSprite : NSObject
 {
     unsigned long long _spriteDuration;
     NSString *_spriteImageUrl;

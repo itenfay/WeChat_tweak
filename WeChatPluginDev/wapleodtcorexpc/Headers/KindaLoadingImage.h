@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, NSString;
 
-@interface KindaLoadingImage
+@interface KindaLoadingImage : NSObject
 {
     MMUIActivityIndicatorView *_m_loadingImage;
     long long _m_loadingImageStyle;

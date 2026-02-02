@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSDate, NSString, UIImageView, WAAppPageSystemMsgView, WAAppPageViewModel, WCTagsView, YYAsyncImageView;
 
-@interface WAAppPageCellView
+@interface WAAppPageCellView : NSObject
 {
     _Bool _isUpdatingContentLabel;
     _Bool _isVisible;

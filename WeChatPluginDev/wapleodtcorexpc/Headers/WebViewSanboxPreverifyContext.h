@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WebViewSanboxPreverifyContext
+@interface WebViewSanboxPreverifyContext : NSObject
 {
     _Bool _bConfigRequestResult;
     _Bool _bNotCheckIfUrlMatchToSessionUrl;

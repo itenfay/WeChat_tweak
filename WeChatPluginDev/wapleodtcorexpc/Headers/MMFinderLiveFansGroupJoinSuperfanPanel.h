@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, NSString, UIImageView, UILabel, UIView;
 
-@interface MMFinderLiveFansGroupJoinSuperfanPanel
+@interface MMFinderLiveFansGroupJoinSuperfanPanel : NSObject
 {
     CDUnknownBlockType _onJoinSuperfanCallback;
     MMFinderLiveTaskId *_taskId;

@@ -5,7 +5,7 @@
 
 @class FinderLiveShopWindowAdItem, MMLiveGradientLayerView, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveAdPromotePubbleContentView
+@interface MMFinderLiveAdPromotePubbleContentView : NSObject
 {
     MMLiveGradientLayerView *_titleImgContainerView;
     MMWebImageView *_titleImgView;

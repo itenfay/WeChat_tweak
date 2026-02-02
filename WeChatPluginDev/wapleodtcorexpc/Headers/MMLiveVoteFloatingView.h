@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMUIImageView, MMUILabel, NSString, UIView;
 
-@interface MMLiveVoteFloatingView
+@interface MMLiveVoteFloatingView : NSObject
 {
     _Bool _disabledDisplay;
     _Bool _layoutSubviewsAtCenter;

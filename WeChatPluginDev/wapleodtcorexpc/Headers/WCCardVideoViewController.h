@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIWindow, NSString, SightIconView, SightView, UIImageView;
 
-@interface WCCardVideoViewController
+@interface WCCardVideoViewController : NSObject
 {
     SightView *_sightView;
     SightIconView *_iconView;

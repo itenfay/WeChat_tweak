@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString;
 
-@interface WCStoragePlainSettingViewController
+@interface WCStoragePlainSettingViewController : NSObject
 {
     unsigned long long _maxChatLogSize;
     unsigned long long _maxChatLogDBSize;

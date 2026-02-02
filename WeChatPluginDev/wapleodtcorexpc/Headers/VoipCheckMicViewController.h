@@ -5,7 +5,7 @@
 
 @class NSString, StreamVoiceInputControlView, UIButton, UIImageView, UILabel, WCUIAlertView;
 
-@interface VoipCheckMicViewController
+@interface VoipCheckMicViewController : NSObject
 {
     _Bool _isProcessForConfirmation;
     _Bool _isCheckingPermission;

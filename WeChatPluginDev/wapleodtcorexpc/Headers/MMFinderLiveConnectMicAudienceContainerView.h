@@ -5,7 +5,7 @@
 
 @class MMFinderLiveConnectMicAudienceTableViewDataModel, MMFinderLiveMicInviteAudienceViewModel, MMFinderLivePaidConnectMicAnchorOperationPanelInfo, MMTableView, NSArray, NSString, UIView;
 
-@interface MMFinderLiveConnectMicAudienceContainerView
+@interface MMFinderLiveConnectMicAudienceContainerView : NSObject
 {
     _Bool _isAudiencePkEnable;
     _Bool _isKTVSectionReported;

@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebViewJSEventHandler_openECard
+@interface WebViewJSEventHandler_openECard : NSObject
 {
     JSEvent *_jsEvent;
 }

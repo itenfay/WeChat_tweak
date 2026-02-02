@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface SightDraftMgr
+@interface SightDraftMgr : NSObject
 {
     NSMutableArray *m_draftList;
 }

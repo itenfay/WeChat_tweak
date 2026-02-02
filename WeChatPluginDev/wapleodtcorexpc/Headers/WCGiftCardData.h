@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCGiftCardData
+@interface WCGiftCardData : NSObject
 {
     _Bool _needJump;
     unsigned int _picDataLength;

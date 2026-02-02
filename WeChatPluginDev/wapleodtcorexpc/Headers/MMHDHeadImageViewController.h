@@ -5,7 +5,7 @@
 
 @class MMHDHeadImageView;
 
-@interface MMHDHeadImageViewController
+@interface MMHDHeadImageViewController : NSObject
 {
     MMHDHeadImageView *_headImageView;
 }

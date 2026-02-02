@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCListYearCellView
+@interface WCListYearCellView : NSObject
 {
     UILabel *_yearLabel;
 }

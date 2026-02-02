@@ -5,7 +5,7 @@
 
 @class NSString, ShakeMsgNotifyMgr, ShakeMusicStorage, ShakePeopleStorage, ShakeTvStorage;
 
-@interface ShakeMgr
+@interface ShakeMgr : NSObject
 {
     long long m_shakeType;
     ShakePeopleStorage *m_peopleStorage;

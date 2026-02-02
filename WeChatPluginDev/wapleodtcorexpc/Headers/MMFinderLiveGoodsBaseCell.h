@@ -6,7 +6,7 @@
 @class UIImageView, UIView;
 @protocol MMFinderLiveGoodsBaseCellDelegate;
 
-@interface MMFinderLiveGoodsBaseCell
+@interface MMFinderLiveGoodsBaseCell : NSObject
 {
     _Bool m_bIsEditting;
     _Bool m_bShowSelectedFlag;

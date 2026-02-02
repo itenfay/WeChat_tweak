@@ -5,7 +5,7 @@
 
 @class FeedsPreviewLiveMultiStyleInfo_StyleOne, FinderWindowProductInfo, NSString;
 
-@interface MMFinderLiveFeedStreamCarouselProductGuideItem
+@interface MMFinderLiveFeedStreamCarouselProductGuideItem : NSObject
 {
     _Bool _showRecommendTag;
     FinderWindowProductInfo *_productInfo;

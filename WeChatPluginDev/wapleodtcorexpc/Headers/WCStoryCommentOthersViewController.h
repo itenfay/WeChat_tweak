@@ -6,7 +6,7 @@
 @class CAGradientLayer, EmoticonBoardView, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIButton, UILabel, UITableView, UIView, WCInputController, WCStoryComment, WCStoryCommentOthersViewModel, WCStoryPreviewReportObj;
 @protocol WCStoryCommentOthersViewControllerDelegate;
 
-@interface WCStoryCommentOthersViewController
+@interface WCStoryCommentOthersViewController : NSObject
 {
     id <WCStoryCommentOthersViewControllerDelegate> _delegate;
     double _contentViewHeight;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiSession
+@interface LiteAppJsApiSession : NSObject
 {
 }
 

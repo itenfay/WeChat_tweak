@@ -6,7 +6,7 @@
 @class NSArray, NSString, UITableView;
 @protocol MMFinderLiveSimpleSelectionSheetViewDelegate;
 
-@interface MMFinderLiveSimpleSelectionSheetView
+@interface MMFinderLiveSimpleSelectionSheetView : NSObject
 {
     id <MMFinderLiveSimpleSelectionSheetViewDelegate> _sheetDelegate;
     NSArray *_items;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveWeComContactAnchorPromoteInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveWeComContactAnchorPromoteTableViewCell
+@interface MMFinderLiveWeComContactAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_companyLabel;

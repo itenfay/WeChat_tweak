@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString;
 
-@interface UpdateProfileMgr
+@interface UpdateProfileMgr : NSObject
 {
     NSRecursiveLock *m_lock;
     long long m_profileUpdateEvent;

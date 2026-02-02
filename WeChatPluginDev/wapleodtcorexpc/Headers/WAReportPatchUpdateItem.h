@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPatchUpdateItem
+@interface WAReportPatchUpdateItem : NSObject
 {
     _Bool _canUsePatchUpdate;
     _Bool _isUpdateComplete;

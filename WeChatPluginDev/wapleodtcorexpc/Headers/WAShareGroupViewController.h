@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSMutableSet, NSString, WCCreateNewGroupDemoViewController;
 @protocol WAShareGroupViewControllerDelegate;
 
-@interface WAShareGroupViewController
+@interface WAShareGroupViewController : NSObject
 {
     NSMutableArray *m_arrAllLabelName;
     MMTableView *m_tableView;

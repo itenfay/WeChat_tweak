@@ -6,7 +6,7 @@
 @class NSString, UILabel;
 @protocol MMWebHalfScreenDelegate;
 
-@interface MMWebTransNoticeHalfScreen
+@interface MMWebTransNoticeHalfScreen : NSObject
 {
     id <MMWebHalfScreenDelegate> _delegate;
     UILabel *_textLabel;

@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UIImage, UIImageView;
 
-@interface MMScrollActionSheetIconView
+@interface MMScrollActionSheetIconView : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_subTitleLabel;

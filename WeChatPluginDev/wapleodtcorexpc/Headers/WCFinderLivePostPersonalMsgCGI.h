@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveAppMsg, NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderLivePostPersonalMsgCGI
+@interface WCFinderLivePostPersonalMsgCGI : NSObject
 {
     unsigned int _msgType;
     NSString *_localClientMsgId;

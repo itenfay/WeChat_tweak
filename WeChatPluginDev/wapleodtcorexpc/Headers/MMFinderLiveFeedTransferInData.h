@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveFeedTransferInData
+@interface MMFinderLiveFeedTransferInData : NSObject
 {
     NSString *_currentPkSessionId;
 }

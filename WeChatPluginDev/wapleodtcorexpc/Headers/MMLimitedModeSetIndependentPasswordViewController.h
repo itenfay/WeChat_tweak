@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, MMUITextField, NSString, WCPayInputView;
 
-@interface MMLimitedModeSetIndependentPasswordViewController
+@interface MMLimitedModeSetIndependentPasswordViewController : NSObject
 {
     double m_fKeyboardHeight;
     _Bool _isShowErrorTip;

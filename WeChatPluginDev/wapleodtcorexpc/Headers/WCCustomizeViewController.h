@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString, WCCoverPostReporter, WCFinderDataItem, WCTableViewManager;
 
-@interface WCCustomizeViewController
+@interface WCCustomizeViewController : NSObject
 {
     _Bool m_isUploading;
     WCTableViewManager *m_tableViewMgr;

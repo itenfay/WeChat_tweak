@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UILabel, UIPickerView, WCPayNavigationView;
 
-@interface WCPaySelectCountItem
+@interface WCPaySelectCountItem : NSObject
 {
     UIPickerView *m_pickerView;
     long long m_iStartCount;

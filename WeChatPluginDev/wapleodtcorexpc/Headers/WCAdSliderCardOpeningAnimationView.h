@@ -6,7 +6,7 @@
 @class NSString, PAGView, WCAdSliderCardOpeningAnimationInfo, WCAdURLImageView, WCDataItem;
 @protocol WCAdSliderCardOpeningAnimationViewDelegate;
 
-@interface WCAdSliderCardOpeningAnimationView
+@interface WCAdSliderCardOpeningAnimationView : NSObject
 {
     _Bool _isDetail;
     _Bool _hasPlayedFlag;

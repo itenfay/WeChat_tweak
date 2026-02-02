@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface HealthKitSampleSource
+@interface HealthKitSampleSource : NSObject
 {
     _Bool _bIsAppleWatch;
     _Bool _bIsLocalDevice;

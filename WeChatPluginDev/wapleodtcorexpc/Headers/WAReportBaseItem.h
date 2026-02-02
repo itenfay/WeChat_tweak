@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WAReportItemParamChainModel;
 
-@interface WAReportBaseItem
+@interface WAReportBaseItem : NSObject
 {
     _Bool _isEntrance;
     unsigned int _uiNetworkType;

@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSString, WCSearcher;
 @protocol WCOutCountryCodeDelegate;
 
-@interface WCOutCountryCodePicker
+@interface WCOutCountryCodePicker : NSObject
 {
     id <WCOutCountryCodeDelegate> m_delegate;
     NSArray *m_arrData;

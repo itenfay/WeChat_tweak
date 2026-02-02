@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UITableView, UITableViewDiffableDataSource, UIView, WCFinderAnimationLoadingView, WCFinderCollectionFeedListViewModel, WCFinderCollectionHalfDescHeader, WCFinderCollectionHalfHeaderRefreshView, WCFinderCollectionHalfViewParams, WCFinderPaidCollectionConsumeLogic, WCFinderPaymentBottomView, WCFinderRefreshTableFooterView, WCFinderStreamProfileDragBarView;
 @protocol WCFinderCollectionHalfScreenViewControllerDelegate;
 
-@interface WCFinderCollectionHalfScreenViewController
+@interface WCFinderCollectionHalfScreenViewController : NSObject
 {
     _Bool _headerViewRefreshing;
     _Bool _shouldShowHighlight;

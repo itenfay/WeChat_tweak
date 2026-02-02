@@ -5,7 +5,7 @@
 
 @class AnnotationSelectContentView, AnnotationUnSelectContentView, CADisplayLink, RoundRingView, UIView;
 
-@interface PickLocationAnnotationView
+@interface PickLocationAnnotationView : NSObject
 {
     _Bool _isUnSelectContentDisplay;
     _Bool _isSelectContentDisplay;

@@ -5,7 +5,7 @@
 
 @protocol WCPayOverseaRedEnvelopesDetailCgiDelegate;
 
-@interface WCPayOverseaRedEnvelopesDetailCgi
+@interface WCPayOverseaRedEnvelopesDetailCgi : NSObject
 {
     id <WCPayOverseaRedEnvelopesDetailCgiDelegate> m_delegate;
 }

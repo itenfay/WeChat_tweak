@@ -6,7 +6,7 @@
 @class CUsrInfo, NSString, UIImage, UIViewController;
 @protocol settingMyAccountExtInfoLogicDelegate;
 
-@interface SettingMyAccountExtInfoLogic
+@interface SettingMyAccountExtInfoLogic : NSObject
 {
     id <settingMyAccountExtInfoLogicDelegate> m_delegate;
     UIViewController *m_viewController;

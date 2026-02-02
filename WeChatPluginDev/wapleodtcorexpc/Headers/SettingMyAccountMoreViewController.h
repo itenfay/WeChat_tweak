@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString;
 
-@interface SettingMyAccountMoreViewController
+@interface SettingMyAccountMoreViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
 }

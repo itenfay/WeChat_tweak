@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, SightIconView, UIView;
 
-@interface WCTimeLineAdFinderView
+@interface WCTimeLineAdFinderView : NSObject
 {
     SightIconView *_playIconView;
     MMWebImageView *_contentImageView;

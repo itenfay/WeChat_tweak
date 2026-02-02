@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMFinderLiveNotifyStyleHasBoughtProductInAnchorLiveCommentPubbleCell
+@interface MMFinderLiveNotifyStyleHasBoughtProductInAnchorLiveCommentPubbleCell : NSObject
 {
     UILabel *_label;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCFinderLongVideoPlayViewController;
 
-@interface WCFinderLongVideoKeepMgr
+@interface WCFinderLongVideoKeepMgr : NSObject
 {
     WCFinderLongVideoPlayViewController *_vcContext;
     NSMutableDictionary *_caches;

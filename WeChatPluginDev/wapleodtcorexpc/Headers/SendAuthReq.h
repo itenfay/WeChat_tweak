@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SendAuthReq
+@interface SendAuthReq : NSObject
 {
     NSString *scope;
     NSString *state;

@@ -5,7 +5,7 @@
 
 @class MPCommentReply, NSMutableArray, NSString;
 
-@interface MPCommentMsg
+@interface MPCommentMsg : NSObject
 {
     _Bool _isLike;
     _Bool _isFromFriend;

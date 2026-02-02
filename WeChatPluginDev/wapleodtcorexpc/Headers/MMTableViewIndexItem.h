@@ -5,7 +5,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel, UIView;
 
-@interface MMTableViewIndexItem
+@interface MMTableViewIndexItem : NSObject
 {
     UILabel *_label;
     UIImageView *_imageView;

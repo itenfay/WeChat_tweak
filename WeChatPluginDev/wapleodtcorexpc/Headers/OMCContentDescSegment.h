@@ -5,7 +5,7 @@
 
 @class NSString, OMJID;
 
-@interface OMCContentDescSegment
+@interface OMCContentDescSegment : NSObject
 {
 }
 

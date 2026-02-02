@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSRecursiveLock;
 
-@interface WABlueToothDevicePool
+@interface WABlueToothDevicePool : NSObject
 {
     NSMutableArray *m_devicePool;
     NSRecursiveLock *m_oLock;

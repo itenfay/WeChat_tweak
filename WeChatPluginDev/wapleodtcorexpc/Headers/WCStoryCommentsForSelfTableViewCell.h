@@ -6,7 +6,7 @@
 @class NSString, WCStoryBubbleHeadView, WCStoryComment, WCStoryDataItem;
 @protocol WCStoryCommentsForSelfTableViewCellDelegate;
 
-@interface WCStoryCommentsForSelfTableViewCell
+@interface WCStoryCommentsForSelfTableViewCell : NSObject
 {
     id <WCStoryCommentsForSelfTableViewCellDelegate> _delegate;
     WCStoryComment *_comment;

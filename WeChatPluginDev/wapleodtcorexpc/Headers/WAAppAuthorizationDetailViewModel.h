@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WAAppAuthorizationDetailViewModel
+@interface WAAppAuthorizationDetailViewModel : NSObject
 {
     unsigned int _choosenState;
     NSString *_titleString;

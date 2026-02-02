@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableSet, NSString, SimpleMsgInfo, UICollectionView;
 @protocol MsgImgPickerSelectedCollectionViewDelegate;
 
-@interface MsgImgPickerSelectedCollectionView
+@interface MsgImgPickerSelectedCollectionView : NSObject
 {
     id <MsgImgPickerSelectedCollectionViewDelegate> _delegate;
     NSMutableArray *_previewMsgInfos;

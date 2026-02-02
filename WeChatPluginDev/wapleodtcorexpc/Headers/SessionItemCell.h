@@ -5,7 +5,7 @@
 
 @class UIButton, UIImageView, UILabel;
 
-@interface SessionItemCell
+@interface SessionItemCell : NSObject
 {
     UIImageView *_selectedImage;
     UIImageView *_resourceIcon;

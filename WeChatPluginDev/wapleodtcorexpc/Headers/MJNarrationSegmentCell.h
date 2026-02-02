@@ -5,7 +5,7 @@
 
 @class MJCaptionErrorTipLabel, MJMuteLabel, MJNarrationSegmentViewModel, MJVoiceLabel;
 
-@interface MJNarrationSegmentCell
+@interface MJNarrationSegmentCell : NSObject
 {
     MJNarrationSegmentViewModel *_narrationSegmentVM;
     MJVoiceLabel *_recognizingTipLabel;

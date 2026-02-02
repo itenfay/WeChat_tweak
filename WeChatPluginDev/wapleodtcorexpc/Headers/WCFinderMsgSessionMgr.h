@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, WCFinderMsgAuthorSessionMgr, WCFinderMsgSessionInfoStorage, WCFinderMsgSessionStatusStorage;
 
-@interface WCFinderMsgSessionMgr
+@interface WCFinderMsgSessionMgr : NSObject
 {
     NSMutableOrderedSet *m_asFansSessionIdListWithNewArrivalMsg;
     WCFinderMsgSessionInfoStorage *_asFansSessionStorage;

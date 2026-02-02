@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCAddressHalfScreenPickerView;
 
-@interface WCAddressMultiPickerItem
+@interface WCAddressMultiPickerItem : NSObject
 {
     NSArray *m_arrStage;
     NSString *m_selectProvince;

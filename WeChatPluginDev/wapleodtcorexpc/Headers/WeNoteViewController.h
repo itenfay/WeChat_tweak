@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, FavoritesItemDataField, MMScrollActionSheet, MMTimer, MMWebTransHelpButton, MiniRecTransitionController, NSString, RTEAttachmentViewProvider, RTEAttributeNode, StreamVoiceInputViewController, UIBarButtonItem, UIButton, UIImage, UIView, WNAttachmentBaseView, WNContentSearchBar, WNRTEToolView, WNSaveImageLogic, WNSearchLogic, WNSelectionView, WNTableview, WNTranslateLogic, WNTranslateTopView, WeNoteDataController;
 
-@interface WeNoteViewController
+@interface WeNoteViewController : NSObject
 {
     WeNoteDataController *m_dataController;
     MMScrollActionSheet *m_scrollActionSheet;

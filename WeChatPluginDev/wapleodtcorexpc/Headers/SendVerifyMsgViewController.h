@@ -6,7 +6,7 @@
 @class CContact, CContactVerifyLogic, CMessageWrap, ContactProfileRecommendInfo, MMTableViewInfo, MMTextView, MMUILabel, MMUITextField, NSArray, NSDate, NSMutableArray, NSMutableSet, NSString, SendVerifyMsgLogicController, UIButton, UIView, WCTableViewNormalCellManager;
 @protocol SendVerifyMsgViewControllerDelegate;
 
-@interface SendVerifyMsgViewController
+@interface SendVerifyMsgViewController : NSObject
 {
     CContact *m_oVerifyContact;
     CContactVerifyLogic *m_oContactVerifyLogic;

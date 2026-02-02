@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetBulletCommentCGI
+@interface WCFinderGetBulletCommentCGI : NSObject
 {
     int _selectedSource;
     int _commentScene;

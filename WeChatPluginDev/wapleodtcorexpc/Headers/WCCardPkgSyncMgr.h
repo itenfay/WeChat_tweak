@@ -6,7 +6,7 @@
 @class NSData, WCCardPkgDB;
 @protocol WCCardSyncMgrDelegate;
 
-@interface WCCardPkgSyncMgr
+@interface WCCardPkgSyncMgr : NSObject
 {
     NSData *_syncKeyBuffer;
     WCCardPkgDB *_wcCardPkgDB;

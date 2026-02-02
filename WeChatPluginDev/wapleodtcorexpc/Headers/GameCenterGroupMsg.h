@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterGroupMsg
+@interface GameCenterGroupMsg : NSObject
 {
     int _subType;
     NSString *_topicTitle;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAReportBaseItem;
 
-@interface WAReportItemParamChainModel
+@interface WAReportItemParamChainModel : NSObject
 {
     WAReportBaseItem *_item;
 }

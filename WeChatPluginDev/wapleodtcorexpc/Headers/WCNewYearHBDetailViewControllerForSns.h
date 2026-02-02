@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUIWindow, MMWebImageView, NSString, UILabel, UIView, WCMediaItem, WCNewYearHBDetailDataForSns;
 
-@interface WCNewYearHBDetailViewControllerForSns
+@interface WCNewYearHBDetailViewControllerForSns : NSObject
 {
     WCMediaItem *_mediaItem;
     MMUIWindow *_fullScreenWindow;

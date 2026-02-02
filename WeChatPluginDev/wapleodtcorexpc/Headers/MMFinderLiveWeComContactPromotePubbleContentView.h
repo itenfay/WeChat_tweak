@@ -5,7 +5,7 @@
 
 @class FinderLivePromoteInfoListWecomContact, MMUIButton, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveWeComContactPromotePubbleContentView
+@interface MMFinderLiveWeComContactPromotePubbleContentView : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_companyLabel;

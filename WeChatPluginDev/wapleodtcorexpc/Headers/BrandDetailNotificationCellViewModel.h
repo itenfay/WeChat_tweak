@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, CContactVerifyLogic, NSArray, NSAttributedString, NSMutableArray, NSString, UIColor;
 
-@interface BrandDetailNotificationCellViewModel
+@interface BrandDetailNotificationCellViewModel : NSObject
 {
     NSMutableArray *m_messageTextArr;
     CContact *m_brandContact;

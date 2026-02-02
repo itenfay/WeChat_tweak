@@ -6,7 +6,7 @@
 @class CEmoticonWrap, EmoticonBoardView, EmoticonCustomAddLogicController, MMBadgeView, MMEmoticonView, MMTextView, MMUIButton, NSString, RichTextView, SequenceAnimationObject, UIButton, UILabel, UIView, WCBaseKeyboardToolBar, WCPayDecimalKeyboardView, WCPayNoticeItemView, WCPayWebImageView, WCPayWebPagView, WCRedEnvelopesMakeRedEnvelopesViewLayout, WCRedEnvelopesSelectSkinRedDotInfo, WCRedEnvelopesSpringFestivalActivtyEntryView, WCUITextField;
 @protocol WCRedEnvelopesMakeRedEnvelopesViewControllerDelegate;
 
-@interface WCRedEnvelopesMakeRedEnvelopesViewController
+@interface WCRedEnvelopesMakeRedEnvelopesViewController : NSObject
 {
     id <WCRedEnvelopesMakeRedEnvelopesViewControllerDelegate> m_delegate;
     int m_enMakeRedEnvelopesScene;

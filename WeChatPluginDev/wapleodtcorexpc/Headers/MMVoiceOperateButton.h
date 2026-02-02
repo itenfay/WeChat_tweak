@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface MMVoiceOperateButton
+@interface MMVoiceOperateButton : NSObject
 {
     _Bool _isAnimating;
     UIColor *_normalColor;

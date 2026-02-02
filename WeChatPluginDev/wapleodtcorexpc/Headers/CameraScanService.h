@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CameraScanService
+@interface CameraScanService : NSObject
 {
 }
 

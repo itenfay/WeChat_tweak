@@ -5,7 +5,7 @@
 
 @class NSString, WCDeviceAccountWCDB;
 
-@interface WCDeviceAccountMgr
+@interface WCDeviceAccountMgr : NSObject
 {
     WCDeviceAccountWCDB *m_devAccountDB;
 }

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString, QMUClusterManager, QUserLocationPresentation, UIImageView, WABaseView;
 @protocol WAMapViewDelegate;
 
-@interface WAMapView
+@interface WAMapView : NSObject
 {
     QMUClusterManager *_clusterMgr;
     _Bool _isEnableDarkmode;

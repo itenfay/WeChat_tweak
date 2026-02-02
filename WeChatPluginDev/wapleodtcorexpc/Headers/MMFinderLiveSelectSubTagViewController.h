@@ -6,7 +6,7 @@
 @class FinderLiveTagInfo, MMTableView, NSArray, NSString;
 @protocol MMFinderLiveSelectSubTagViewControllerDelegate;
 
-@interface MMFinderLiveSelectSubTagViewController
+@interface MMFinderLiveSelectSubTagViewController : NSObject
 {
     _Bool _postAfterSelect;
     id <MMFinderLiveSelectSubTagViewControllerDelegate> _actionDelegate;

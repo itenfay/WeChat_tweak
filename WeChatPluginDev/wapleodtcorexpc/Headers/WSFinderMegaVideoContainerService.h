@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderRedDotCtrlInfo;
 
-@interface WSFinderMegaVideoContainerService
+@interface WSFinderMegaVideoContainerService : NSObject
 {
     _Bool _isChangeTab;
     NSString *_enterRedDotTipsUuid;

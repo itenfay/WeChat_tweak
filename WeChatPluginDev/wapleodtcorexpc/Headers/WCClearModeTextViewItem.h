@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface WCClearModeTextViewItem
+@interface WCClearModeTextViewItem : NSObject
 {
     UIButton *m_clearButton;
 }

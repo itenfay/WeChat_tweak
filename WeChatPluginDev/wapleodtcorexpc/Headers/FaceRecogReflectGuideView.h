@@ -6,7 +6,7 @@
 @class MMUILabel, MVideoPlayerView, UIButton;
 @protocol FaceRecogGuideViewDelegate;
 
-@interface FaceRecogReflectGuideView
+@interface FaceRecogReflectGuideView : NSObject
 {
     MVideoPlayerView *m_view;
     MMUILabel *m_bigTitle;

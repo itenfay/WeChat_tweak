@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWebViewReadyItem
+@interface WAReportWebViewReadyItem : NSObject
 {
     _Bool _isPreloadPageFrame;
     _Bool _isFirstPageRenderingCacheAccepted;

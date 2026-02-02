@@ -5,7 +5,7 @@
 
 @class NSArray, QAnimation, QHeatGradient;
 
-@interface QHeatOverlay
+@interface QHeatOverlay : NSObject
 {
     CDStruct_02837cd9 _boundingRect;
     _Bool _enable3D;

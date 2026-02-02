@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMFinderLiveUploadMgr
+@interface MMFinderLiveUploadMgr : NSObject
 {
     NSMutableArray *_uploadWaitingArray;
     NSMutableArray *_retryWaitingArray;

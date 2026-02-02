@@ -5,7 +5,7 @@
 
 @protocol WCMktInvalidTicketHomePageCgiDelegate;
 
-@interface WCMktInvalidTicketHomePageCgi
+@interface WCMktInvalidTicketHomePageCgi : NSObject
 {
     id <WCMktInvalidTicketHomePageCgiDelegate> _cgiDelegate;
 }

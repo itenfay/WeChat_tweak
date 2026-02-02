@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UDRFeatureService
+@interface UDRFeatureService : NSObject
 {
 }
 

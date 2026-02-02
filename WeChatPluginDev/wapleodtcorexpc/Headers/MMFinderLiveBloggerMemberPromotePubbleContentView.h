@@ -5,7 +5,7 @@
 
 @class FinderMemberZonePromoteInfo, MMUIButton, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveBloggerMemberPromotePubbleContentView
+@interface MMFinderLiveBloggerMemberPromotePubbleContentView : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_companyLabel;

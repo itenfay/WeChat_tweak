@@ -5,7 +5,7 @@
 
 @class WCBizLoadingView;
 
-@interface WCBizControlLogic
+@interface WCBizControlLogic : NSObject
 {
     WCBizLoadingView *m_loadView;
     _Bool m_isLoading;

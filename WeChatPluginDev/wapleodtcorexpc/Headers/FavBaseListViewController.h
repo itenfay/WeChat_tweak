@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FavAddressDataController, FavBaseTableDataController, FavSearchBar, FavSearchExtendFilterPanel, FavSearchTopFilterView, MMTableView, MMUIActivityIndicatorView, MMUILabel, MMUIView, MsgFastBrowseView, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIColor, UIView, WCFinderBusinessCustomListDetailViewController, WCFinderFeedFlowView;
 
-@interface FavBaseListViewController
+@interface FavBaseListViewController : NSObject
 {
     unsigned int m_curMinItemUpdateTime;
     NSString *m_searchTaskKey;

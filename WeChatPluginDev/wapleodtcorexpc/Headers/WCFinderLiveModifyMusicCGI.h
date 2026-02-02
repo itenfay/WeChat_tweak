@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSData, NSMutableArray;
 
-@interface WCFinderLiveModifyMusicCGI
+@interface WCFinderLiveModifyMusicCGI : NSObject
 {
     NSMutableArray *_songIdList;
     NSMutableArray *_briefMusicInfos;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WXGChatLogSessionItemCell
+@interface WXGChatLogSessionItemCell : NSObject
 {
     UIImageView *_selectedImage;
     UIImageView *_resourceIcon;

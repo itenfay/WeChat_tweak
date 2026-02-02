@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIColor, UIFont, UIScrollView, UIView;
 @protocol CameraScanTabViewDelegate;
 
-@interface CameraScanTabView
+@interface CameraScanTabView : NSObject
 {
     _Bool _isForceUpdatingContentOffset;
     unsigned long long _currTabIndex;

@@ -6,7 +6,7 @@
 @class MMTimer, UIView;
 @protocol WCAdInteractionLabelLogicDelegate;
 
-@interface WCAdInteractionLabelLogic
+@interface WCAdInteractionLabelLogic : NSObject
 {
     id <WCAdInteractionLabelLogicDelegate> _delegate;
     unsigned long long _itemCount;

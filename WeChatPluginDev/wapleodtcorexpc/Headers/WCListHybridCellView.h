@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCListHybridCellView
+@interface WCListHybridCellView : NSObject
 {
     UIView *_itemContainerView;
 }

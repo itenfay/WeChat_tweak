@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface EdgeComputingScriptConfigModel
+@interface EdgeComputingScriptConfigModel : NSObject
 {
     unsigned int _dataSourceType;
     unsigned int _dataSourceID;

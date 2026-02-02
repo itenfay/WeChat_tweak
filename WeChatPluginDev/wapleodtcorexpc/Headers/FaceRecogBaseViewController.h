@@ -5,7 +5,7 @@
 
 @class FaceRecogBaseView;
 
-@interface FaceRecogBaseViewController
+@interface FaceRecogBaseViewController : NSObject
 {
     _Bool _bUseBlackStatusbar;
     FaceRecogBaseView *_baseView;

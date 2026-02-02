@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MPLandingPageCgiHandler, NSString, WCEliminatedSlotMMKV;
 
-@interface BTVideoAutoPlayMgr
+@interface BTVideoAutoPlayMgr : NSObject
 {
     MPLandingPageCgiHandler *_m_brandCgiHandler;
     WCEliminatedSlotMMKV *_videoDataSlotMMKV;

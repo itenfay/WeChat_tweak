@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveFeedStreamCommentContentView, NSString;
 
-@interface MMFinderLiveFeedStreamCommentView
+@interface MMFinderLiveFeedStreamCommentView : NSObject
 {
     _Bool _isCloseComment;
     _Bool _hasAppendComment;

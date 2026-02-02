@@ -5,7 +5,7 @@
 
 @class FinderLiveUserAttrUserSetting, MMFinderLiveTaskId, WCTableViewManager;
 
-@interface MMFinderLiveRecommandSettingSheet
+@interface MMFinderLiveRecommandSettingSheet : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     WCTableViewManager *_tableViewManager;

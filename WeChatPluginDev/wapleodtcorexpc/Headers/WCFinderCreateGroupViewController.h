@@ -6,7 +6,7 @@
 @class CContact, FinderNicknameVerifyInfo, MMGrowTextView, MMUIButton, NSString, RichTextView, UIButton, UIImage, UILabel, UIScrollView, UIView, WCFinderBannerView, WCFinderContact, WCFinderCreateUserVerifyPhoneLogic, WCFinderCreateUserViewModel, WCFinderGetWechatHDHeadFetcher;
 @protocol WCFinderCreateGroupViewControllerDelegate;
 
-@interface WCFinderCreateGroupViewController
+@interface WCFinderCreateGroupViewController : NSObject
 {
     _Bool _loading;
     id <WCFinderCreateGroupViewControllerDelegate> _delegate;

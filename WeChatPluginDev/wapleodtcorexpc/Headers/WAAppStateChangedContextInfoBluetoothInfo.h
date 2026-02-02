@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAAppStateChangedContextInfoBluetoothInfo
+@interface WAAppStateChangedContextInfoBluetoothInfo : NSObject
 {
     _Bool _canKeepAliveByBluetooth;
     _Bool _isBluetoothBackgroundEnabled;

@@ -5,7 +5,7 @@
 
 @class FinderLivePromoteInfoListMpArticleInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveArticlePromotePubbleContentView
+@interface MMFinderLiveArticlePromotePubbleContentView : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleLabel;

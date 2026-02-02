@@ -5,7 +5,7 @@
 
 @protocol XMailPrepareBindCgiDelegate;
 
-@interface XMailPrepareBindCgi
+@interface XMailPrepareBindCgi : NSObject
 {
     id <XMailPrepareBindCgiDelegate> _delegate;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiveNoticeInfo, ForwardMessageLogicController, MMFinderLiveBuyTicketHandle, MMFinderLiveCancelNoticeView, MMFinderLiveCreateNoticeReporter, MMFinderLiveNoticeDetailsPreviewModel, MMFinderLiveNoticeDetailsReservationParameters, MMFinderLiveNoticeDetailsView, MMFinderLiveNoticePosterModel, MMLiveIconButton, MMLiveVerticalTextButtonView, MMScrollActionSheet, MMUIButton, NSString, UIBarButtonItem, UIView, WCFinderContact, WCFinderCreateLiveViewModel, WCFinderLiveAudienceNoticeReporter;
 @protocol MMFinderLiveNoticeDetailsViewControllerDelegate;
 
-@interface MMFinderLiveNoticeDetailsViewController
+@interface MMFinderLiveNoticeDetailsViewController : NSObject
 {
     id <MMFinderLiveNoticeDetailsViewControllerDelegate> _delegate;
     FinderLiveNoticeInfo *_noticeInfo;

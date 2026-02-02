@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UIFont, UIImage, WAContact;
 
-@interface WAWebViewBottomBannerViewModel
+@interface WAWebViewBottomBannerViewModel : NSObject
 {
     _Bool _roundImage;
     _Bool _originalGame;

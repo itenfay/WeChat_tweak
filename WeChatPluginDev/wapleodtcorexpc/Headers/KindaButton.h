@@ -6,7 +6,7 @@
 @class KindaUIButton, MMDynamicColor, MMKViewOnClickCallback, NSString;
 @protocol MMKImage;
 
-@interface KindaButton
+@interface KindaButton : NSObject
 {
     float _m_textSize;
     MMKViewOnClickCallback *_m_onButtonClickCallback;

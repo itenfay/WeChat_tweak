@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCFinderFeedContentVM;
 
-@interface WCFinderLiveHomePageScrollActionSheet
+@interface WCFinderLiveHomePageScrollActionSheet : NSObject
 {
     _Bool _forceDarkMode;
     unsigned long long _containerId;

@@ -5,7 +5,7 @@
 
 @class EnterReportInfo, ExitReportInfo, NSMutableDictionary;
 
-@interface SessionReportInfo
+@interface SessionReportInfo : NSObject
 {
     EnterReportInfo *_enterInfo;
     ExitReportInfo *_exitInfo;

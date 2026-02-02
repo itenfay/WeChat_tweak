@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MsgDataDownloadLogic;
 
-@interface WAMsgSelectInfo
+@interface WAMsgSelectInfo : NSObject
 {
     _Bool _selected;
     _Bool _expired;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSData, NSString, VoiceTimeSlice;
 
-@interface VoiceTransInfo
+@interface VoiceTransInfo : NSObject
 {
     _Bool _bAutoScrollUp;
     _Bool _bAutoTranslate;

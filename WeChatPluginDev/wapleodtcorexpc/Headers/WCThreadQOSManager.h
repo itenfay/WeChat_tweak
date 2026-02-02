@@ -5,7 +5,7 @@
 
 @class NSString, WCThreadQOSManagerConfig;
 
-@interface WCThreadQOSManager
+@interface WCThreadQOSManager : NSObject
 {
     NSString *m_configPath;
     WCThreadQOSManagerConfig *m_config;

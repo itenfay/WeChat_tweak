@@ -5,7 +5,7 @@
 
 @protocol MoveWithTouchAlgorithmDelegate;
 
-@interface MoveWithTouchAlgorithm
+@interface MoveWithTouchAlgorithm : NSObject
 {
     _Bool m_hasMoved;
     _Bool m_hasStart;

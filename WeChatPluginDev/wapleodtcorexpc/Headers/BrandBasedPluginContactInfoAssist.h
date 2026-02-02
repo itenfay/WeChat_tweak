@@ -5,7 +5,7 @@
 
 @class CContactVerifyLogic, NSString;
 
-@interface BrandBasedPluginContactInfoAssist
+@interface BrandBasedPluginContactInfoAssist : NSObject
 {
     CContactVerifyLogic *_contactVerifyLogic;
 }

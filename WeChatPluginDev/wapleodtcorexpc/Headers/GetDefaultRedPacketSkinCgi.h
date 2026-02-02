@@ -5,7 +5,7 @@
 
 @protocol GetDefaultRedPacketSkinCgiDelegate;
 
-@interface GetDefaultRedPacketSkinCgi
+@interface GetDefaultRedPacketSkinCgi : NSObject
 {
     id <GetDefaultRedPacketSkinCgiDelegate> _m_delegate;
 }

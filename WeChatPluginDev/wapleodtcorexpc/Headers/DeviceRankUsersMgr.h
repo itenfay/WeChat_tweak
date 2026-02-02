@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface DeviceRankUsersMgr
+@interface DeviceRankUsersMgr : NSObject
 {
     NSMutableArray *m_deviceRankUserList;
     _Bool m_bLoaded;

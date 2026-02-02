@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, NSString, UIButton, UIImageView, UILabel, UIView, VoiceReminderConfirmViewModel;
 
-@interface VoiceReminderConfirmCellView
+@interface VoiceReminderConfirmCellView : NSObject
 {
     int m_playCount;
     _Bool m_playing;

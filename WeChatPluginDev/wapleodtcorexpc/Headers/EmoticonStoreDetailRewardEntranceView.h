@@ -6,7 +6,7 @@
 @class NSArray, NSString, RichTextView, UIButton, UICollectionView, UILabel;
 @protocol EmotionStoreDetailRewardEntranceDelegate;
 
-@interface EmoticonStoreDetailRewardEntranceView
+@interface EmoticonStoreDetailRewardEntranceView : NSObject
 {
     UILabel *m_begWordLabel;
     UIButton *m_redRewardBtn;

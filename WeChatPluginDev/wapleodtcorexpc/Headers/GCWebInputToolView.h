@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CEmoticonWrap, EmojiInputView, MMImage, NSArray, NSString, UIButton, UIImageView, UIView;
 
-@interface GCWebInputToolView
+@interface GCWebInputToolView : NSObject
 {
     _Bool _stickBtmIfNonEmpty;
     _Bool _isEmptyInput;

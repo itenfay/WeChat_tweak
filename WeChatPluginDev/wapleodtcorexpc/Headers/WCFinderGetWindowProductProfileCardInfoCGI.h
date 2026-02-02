@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetWindowProductProfileCardInfoCGI
+@interface WCFinderGetWindowProductProfileCardInfoCGI : NSObject
 {
     NSString *_finderUsername;
     CDUnknownBlockType _successBlock;

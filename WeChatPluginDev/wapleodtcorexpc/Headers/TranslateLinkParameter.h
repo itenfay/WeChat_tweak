@@ -5,7 +5,7 @@
 
 @class AppmsgSignature3rd, NSString, SdkFinderInfo;
 
-@interface TranslateLinkParameter
+@interface TranslateLinkParameter : NSObject
 {
     _Bool _isWXLaunchByUniversalLink;
     _Bool _isAutoResend;

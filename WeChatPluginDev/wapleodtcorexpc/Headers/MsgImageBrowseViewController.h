@@ -6,7 +6,7 @@
 @class CMessageWrap, MMImageBrowseView, MMLoadingView, NSString, UIImage, WCActionSheet;
 @protocol ImageBrowseDelegate;
 
-@interface MsgImageBrowseViewController
+@interface MsgImageBrowseViewController : NSObject
 {
     MMImageBrowseView *m_imageView;
     CMessageWrap *m_wrapMsg;

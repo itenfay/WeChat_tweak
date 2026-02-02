@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, UIButton, UIColor, WCCardDetailContentViewLogicController;
 
-@interface WCCardBaseCardDetailContentView
+@interface WCCardBaseCardDetailContentView : NSObject
 {
     _Bool _bIsSelectFollowContact;
     WCCardDetailContentViewLogicController *_logicController;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface FTSMsgSearchTalkerCell
+@interface FTSMsgSearchTalkerCell : NSObject
 {
     UIImageView *_magnifier;
     MMUILabel *_titleLabel;

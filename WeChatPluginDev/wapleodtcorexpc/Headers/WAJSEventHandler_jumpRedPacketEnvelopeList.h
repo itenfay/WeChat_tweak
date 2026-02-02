@@ -5,7 +5,7 @@
 
 @class NSString, WCRedEnvelopesConfirmShowResourcesCgi, WCRedEnvelopesControlData, WCRedEnvelopesDeleteResourceCgi, WCRedEnvelopesExpiredSkinViewController, WCRedEnvelopesGetShowResourcesCgi, WCRedEnvelopesSelectSkinViewController;
 
-@interface WAJSEventHandler_jumpRedPacketEnvelopeList
+@interface WAJSEventHandler_jumpRedPacketEnvelopeList : NSObject
 {
     _Bool _bIsFromLoadingMoreInvalidData;
     WCRedEnvelopesGetShowResourcesCgi *_getShowResourcesCgi;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLimitedModeDataPB, NSString;
 
-@interface MMLimitedModeMgr
+@interface MMLimitedModeMgr : NSObject
 {
     MMLimitedModeDataPB *m_limitedModeData;
     _Bool _isLimitedModeOn;

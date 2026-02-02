@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, NSThread, WAContact, WAJITRuntime;
 @protocol IWXEngineAPI, OS_dispatch_queue;
 
-@interface WAJSGameService
+@interface WAJSGameService : NSObject
 {
     NSObject<OS_dispatch_queue> *_jitProxyQueue;
     NSMutableDictionary *_jitProxyPendingTask;

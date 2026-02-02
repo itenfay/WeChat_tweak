@@ -5,7 +5,7 @@
 
 @class GCInteractView;
 
-@interface GCInteractCell
+@interface GCInteractCell : NSObject
 {
     GCInteractView *_interActView;
 }

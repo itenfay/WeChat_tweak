@@ -6,7 +6,7 @@
 @class NSString, OrderedDictionary, UIView;
 @protocol MMAlbumDropableTitleWithMultipleSectionViewDelegate;
 
-@interface MMAlbumDropableTitleWithMultipleSectionView
+@interface MMAlbumDropableTitleWithMultipleSectionView : NSObject
 {
     id <MMAlbumDropableTitleWithMultipleSectionViewDelegate> _titleViewDelegate;
     OrderedDictionary *_sectionViews;

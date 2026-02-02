@@ -5,7 +5,7 @@
 
 @class MMLockMutableDictionary, NSMapTable, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, WePkgCheckUpdateMgr, WePkgCleanMgr, WePkgConfigMgr, WePkgDownloadMgr, WePkgOperateUpdateMgr;
 
-@interface WePkgFacade
+@interface WePkgFacade : NSObject
 {
     NSRecursiveLock *_createPackageLock;
     id _clearWePkgAllDataNotificationToken;

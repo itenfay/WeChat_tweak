@@ -6,7 +6,7 @@
 @class FavSightInfo, FavSightView, MMScrollActionSheet, MMUIWindow, NSString, UIButton, WXFullScreenGestureRecognizer;
 @protocol FavSightFullScreenViewControllerDelegate;
 
-@interface FavSightFullScreenViewController
+@interface FavSightFullScreenViewController : NSObject
 {
     FavSightInfo *m_sightInfo;
     FavSightView *m_sightView;

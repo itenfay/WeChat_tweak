@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface FavVideoCompressMgr
+@interface FavVideoCompressMgr : NSObject
 {
     NSMutableArray *m_compressingQueue;
     _Bool m_compressing;

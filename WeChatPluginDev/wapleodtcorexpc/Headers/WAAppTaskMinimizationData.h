@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppTaskMinimizationData
+@interface WAAppTaskMinimizationData : NSObject
 {
     _Bool _isGameAPP;
     NSString *_username;

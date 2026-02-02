@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMAlbum, MMAlbumDropPickerController, MMAssetForPHAssetFramework, MMDropableTitleView, MMMusicPostVideoImagePickerControlCenter, NSMutableArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol MMMusicPostVideoTabAlbumControllerDataSource, MMMusicPostVideoTabAlbumControllerDelegate, OS_dispatch_queue;
 
-@interface MMMusicPostVideoTabAlbumController
+@interface MMMusicPostVideoTabAlbumController : NSObject
 {
     MMAlbumDropPickerController *_dropController;
     MMMusicPostVideoImagePickerControlCenter *_controlCenter;

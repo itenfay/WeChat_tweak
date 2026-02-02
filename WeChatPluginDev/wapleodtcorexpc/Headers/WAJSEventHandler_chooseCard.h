@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_chooseCard
+@interface WAJSEventHandler_chooseCard : NSObject
 {
 }
 

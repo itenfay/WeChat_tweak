@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, MailAttachment, UIButton, UILabel;
 @protocol MailAttachmentsViewDelegate;
 
-@interface MailAttachmentsView
+@interface MailAttachmentsView : NSObject
 {
     MMUIActivityIndicatorView *m_loadingView;
     UILabel *m_labelName;

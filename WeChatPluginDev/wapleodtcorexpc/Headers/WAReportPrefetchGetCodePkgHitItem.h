@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPrefetchGetCodePkgHitItem
+@interface WAReportPrefetchGetCodePkgHitItem : NSObject
 {
     unsigned int _isFirstHit;
     unsigned int _reportId;

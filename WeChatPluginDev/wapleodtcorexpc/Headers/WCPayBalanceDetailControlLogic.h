@@ -5,7 +5,7 @@
 
 @class NSString, WCPayAddPayCardLogic, WCPayBalanceSaveMoneyControlLogic, WCPayLQTDetailControlLogic, WCPayLQTMoneyControlLogic;
 
-@interface WCPayBalanceDetailControlLogic
+@interface WCPayBalanceDetailControlLogic : NSObject
 {
     int m_eWCPayBalanceDetailControlLogicScene;
     WCPayAddPayCardLogic *m_oWCPayAddPayCardLogic;

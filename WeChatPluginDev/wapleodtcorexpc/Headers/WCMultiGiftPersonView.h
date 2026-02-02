@@ -5,7 +5,7 @@
 
 @class MMTableView, NSArray, NSString, WCGiftCardData;
 
-@interface WCMultiGiftPersonView
+@interface WCMultiGiftPersonView : NSObject
 {
     double _maxWidth;
     double _minHeight;

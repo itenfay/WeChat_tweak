@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton;
 
-@interface WCRedesignVerifyCodeTextItem
+@interface WCRedesignVerifyCodeTextItem : NSObject
 {
     _Bool _useShortWording;
     long long _iCount;

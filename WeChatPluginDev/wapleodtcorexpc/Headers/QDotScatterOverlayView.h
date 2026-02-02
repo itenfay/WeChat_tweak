@@ -5,7 +5,7 @@
 
 @class QDotScatterOverlay;
 
-@interface QDotScatterOverlayView
+@interface QDotScatterOverlayView : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface GameCenterPromotedGamesFeedsItem
+@interface GameCenterPromotedGamesFeedsItem : NSObject
 {
     NSArray *_usernameList;
     NSString *_detail;

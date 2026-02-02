@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_dispatchLiteAppAction
+@interface WebviewJSEventHandler_dispatchLiteAppAction : NSObject
 {
     int _callbackId;
     JSEvent *_jsEvent;

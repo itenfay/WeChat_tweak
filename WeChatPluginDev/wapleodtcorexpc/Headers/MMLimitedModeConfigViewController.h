@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSArray, NSString, RichTextView, UIImageView, UITableView;
 
-@interface MMLimitedModeConfigViewController
+@interface MMLimitedModeConfigViewController : NSObject
 {
     NSString *_ticket;
     long long _bizType;

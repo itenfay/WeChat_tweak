@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScanStatMgr
+@interface ScanStatMgr : NSObject
 {
     unsigned int _networkType;
     NSString *_UUID;

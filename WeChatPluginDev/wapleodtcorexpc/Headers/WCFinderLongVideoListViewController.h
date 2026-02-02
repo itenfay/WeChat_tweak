@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class LVFeedListCostReport, MMTimer, MegaVideoPageMonitorHelper, NSData, NSDate, NSMutableDictionary, NSNumber, NSString, NSValue, UICollectionView, UICollectionViewDiffableDataSource, UIView, WCFinderEmptyTipsView, WCFinderLongVideoListCell, WCFinderLongVideoListViewModel, WCFinderPullDownRefreshHeaderView, WCFinderStreamFooterView, WCFinderStreamHotAreaTrigger;
 
-@interface WCFinderLongVideoListViewController
+@interface WCFinderLongVideoListViewController : NSObject
 {
     _Bool _isFirstLoad;
     _Bool _isViewExposing;

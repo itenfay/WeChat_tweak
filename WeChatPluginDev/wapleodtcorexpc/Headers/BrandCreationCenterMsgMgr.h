@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSString;
 
-@interface BrandCreationCenterMsgMgr
+@interface BrandCreationCenterMsgMgr : NSObject
 {
     MMLRUCache *_notifyUUIDCache;
 }

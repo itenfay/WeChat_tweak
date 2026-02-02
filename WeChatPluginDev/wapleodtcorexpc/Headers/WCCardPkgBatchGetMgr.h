@@ -6,7 +6,7 @@
 @class NSMutableArray, WCCardPkgDB;
 @protocol WCCardPkgBatchGetMgrDelegate;
 
-@interface WCCardPkgBatchGetMgr
+@interface WCCardPkgBatchGetMgr : NSObject
 {
     WCCardPkgDB *_wcCardPkgDB;
     NSMutableArray *_batchGetArray;

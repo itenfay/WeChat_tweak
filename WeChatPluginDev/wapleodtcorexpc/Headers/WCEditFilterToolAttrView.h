@@ -6,7 +6,7 @@
 @class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout, UIImage, WCEditFilterHeaderView, XEffectEffectManager;
 @protocol WCEditFilterToolAttrViewDelegate;
 
-@interface WCEditFilterToolAttrView
+@interface WCEditFilterToolAttrView : NSObject
 {
     _Bool _didChangeFilter;
     UIImage *_originalImage;

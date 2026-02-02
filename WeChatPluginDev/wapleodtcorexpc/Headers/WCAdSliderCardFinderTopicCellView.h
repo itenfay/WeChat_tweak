@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, MMWebImageView, NSString, WCAdFinderTopicResInfo;
 
-@interface WCAdSliderCardFinderTopicCellView
+@interface WCAdSliderCardFinderTopicCellView : NSObject
 {
     MMWebImageView *_avatarView;
     MMUILabel *_nicknameView;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ContainerView, FlutterMethodChannel, MMWebViewController, NSString;
 @protocol UIScrollViewDelegate;
 
-@interface WCAdPlatformViewCommonWebView
+@interface WCAdPlatformViewCommonWebView : NSObject
 {
     _Bool _showProgress;
     _Bool _bgTransparent;

@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, NSArray, UIColor;
 
-@interface MJDashLine
+@interface MJDashLine : NSObject
 {
     _Bool _isVertical;
 }

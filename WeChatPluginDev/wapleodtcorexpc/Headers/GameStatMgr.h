@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface GameStatMgr
+@interface GameStatMgr : NSObject
 {
     unsigned int _networkType;
     NSString *_UUID;

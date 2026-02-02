@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCFinderStreamProfileContainer
+@interface WCFinderStreamProfileContainer : NSObject
 {
     _Bool _displayCover;
     _Bool _isHalfModel;

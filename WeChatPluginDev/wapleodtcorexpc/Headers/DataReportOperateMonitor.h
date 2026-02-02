@@ -5,7 +5,7 @@
 
 @class NSHashTable, NSNumber, NSString, UIView;
 
-@interface DataReportOperateMonitor
+@interface DataReportOperateMonitor : NSObject
 {
     NSNumber *m_monitorSwitch;
     NSNumber *m_isOpenDebugToast;

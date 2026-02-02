@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_sdk_openGrowthCare
+@interface WAJSEventHandler_sdk_openGrowthCare : NSObject
 {
 }
 

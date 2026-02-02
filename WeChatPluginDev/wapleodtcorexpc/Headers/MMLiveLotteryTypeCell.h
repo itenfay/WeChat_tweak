@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIImageView, UIView;
 
-@interface MMLiveLotteryTypeCell
+@interface MMLiveLotteryTypeCell : NSObject
 {
     _Bool _enable;
     unsigned int _optionValue;

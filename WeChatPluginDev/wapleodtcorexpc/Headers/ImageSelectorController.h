@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, SightDraft, UINavigationController, WCSelectorView;
 @protocol SelectorControllerDelegate;
 
-@interface ImageSelectorController
+@interface ImageSelectorController : NSObject
 {
     NSMutableArray *_arrImages;
     WCSelectorView *_selectorView;

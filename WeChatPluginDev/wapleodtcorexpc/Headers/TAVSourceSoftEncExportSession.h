@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAssetReaderAudioMixOutput, AVAssetReaderVideoCompositionOutput, AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, NSCondition, NSError, NSObject, NSURL, TAVExportReportData, TAVSourceExportReader;
 @protocol OS_dispatch_queue;
 
-@interface TAVSourceSoftEncExportSession
+@interface TAVSourceSoftEncExportSession : NSObject
 {
     char *mCameraBuf;
     void * pts;

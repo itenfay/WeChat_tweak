@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface GCChanellTitleCell
+@interface GCChanellTitleCell : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_numberLabel;

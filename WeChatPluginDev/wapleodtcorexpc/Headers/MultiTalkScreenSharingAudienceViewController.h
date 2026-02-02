@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MultiTalkBottomOperatePanel, MultiTalkScreenSharingAudienceView, NSObject, UIView, WCVideoOpenglRender;
 @protocol MultiTalkMemberProtocol, MultiTalkScreenSharingAudienceViewControllerDelegate;
 
-@interface MultiTalkScreenSharingAudienceViewController
+@interface MultiTalkScreenSharingAudienceViewController : NSObject
 {
     _Bool _isLandscapeModeAllowed;
     _Bool _isEnable;

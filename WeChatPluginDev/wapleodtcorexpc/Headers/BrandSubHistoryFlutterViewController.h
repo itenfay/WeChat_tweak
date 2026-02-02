@@ -5,7 +5,7 @@
 
 @class BrandTLExptConfig, CMessageWrap, FlutterBrandTLApiImplementation, NSString;
 
-@interface BrandSubHistoryFlutterViewController
+@interface BrandSubHistoryFlutterViewController : NSObject
 {
     _Bool isShowRedDotInMainFrameSession;
     _Bool _didAppear;

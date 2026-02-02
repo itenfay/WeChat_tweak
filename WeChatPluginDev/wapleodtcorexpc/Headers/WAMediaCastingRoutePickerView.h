@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UITableView, WAMediaCastingRoutePickerDeviceItem, WAMediaCastingRoutePickerTableHeaderView, WAMediaCastingRoutePickerViewModel;
 @protocol WAMediaCastingRoutePickerViewDelegate;
 
-@interface WAMediaCastingRoutePickerView
+@interface WAMediaCastingRoutePickerView : NSObject
 {
     id <WAMediaCastingRoutePickerViewDelegate> _pickerViewDelegate;
     WAMediaCastingRoutePickerViewModel *_viewModel;

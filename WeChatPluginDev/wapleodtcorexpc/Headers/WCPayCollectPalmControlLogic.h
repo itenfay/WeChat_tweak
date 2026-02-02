@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayCollectPalmControlLogicDelegate;
 
-@interface WCPayCollectPalmControlLogic
+@interface WCPayCollectPalmControlLogic : NSObject
 {
     _Bool _isCdnUploading;
     _Bool _isNeedUploadBypass;

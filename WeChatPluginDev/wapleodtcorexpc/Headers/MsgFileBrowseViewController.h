@@ -6,7 +6,7 @@
 @class CBaseContact, MMMsgFileBrowseMenuAndMemuTableViewCell, MMTableView, MsgNewImgDataLogic, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIView, ViewAppMsgController, WCFinderBusinessCustomListDetailViewController, WCFinderFeedFlowView, WCTimeLineFooterView;
 @protocol MMUIViewControllerDelegate, MsgFileBrowseViewControllerDelegate;
 
-@interface MsgFileBrowseViewController
+@interface MsgFileBrowseViewController : NSObject
 {
     WCFinderFeedFlowView *m_feedFlowView;
     NSMutableArray *m_arrFinderItems;

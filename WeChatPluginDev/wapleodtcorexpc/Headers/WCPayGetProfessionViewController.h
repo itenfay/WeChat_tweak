@@ -6,7 +6,7 @@
 @class NSArray, WCPayProfession;
 @protocol WCPayGetProfessionViewControllerDelegate;
 
-@interface WCPayGetProfessionViewController
+@interface WCPayGetProfessionViewController : NSObject
 {
     WCPayProfession *_selectedProfession;
     NSArray *_professions;

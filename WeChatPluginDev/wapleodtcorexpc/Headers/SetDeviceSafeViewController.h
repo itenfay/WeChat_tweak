@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, RichTextView, SafeDeviceData, UIView;
 
-@interface SetDeviceSafeViewController
+@interface SetDeviceSafeViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     SafeDeviceData *_currentDevice;

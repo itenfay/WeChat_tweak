@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, PHFetchResult, WAAppTask;
 
-@interface WAScreenshotMgr
+@interface WAScreenshotMgr : NSObject
 {
     NSMutableDictionary *_infoDic;
     NSMutableArray *_pendingInfoList;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAJSEventHandler_addMapCircles
+@interface WAJSEventHandler_addMapCircles : NSObject
 {
     NSMutableArray *_overlays;
 }

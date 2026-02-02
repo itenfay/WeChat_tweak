@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCImageFullScreenViewController, WCMediaItemWrap;
 
-@interface WCImageFullScreanViewMgr
+@interface WCImageFullScreanViewMgr : NSObject
 {
     _Bool _isFullScreenPresented;
     NSString *_nsFromVCName;

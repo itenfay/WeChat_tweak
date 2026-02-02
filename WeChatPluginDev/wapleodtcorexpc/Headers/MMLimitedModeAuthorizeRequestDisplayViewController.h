@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, CMessageWrap, MMAcceptAgreementCommonHeadView, MMLimitedModeAuthorizationUtilLogic, MMLimitedModeGuardianLogic, MMTableView, MMTableViewInfo, NSString, UIButton, UIColor, UIImage;
 
-@interface MMLimitedModeAuthorizeRequestDisplayViewController
+@interface MMLimitedModeAuthorizeRequestDisplayViewController : NSObject
 {
     UIButton *m_operateButton;
     CContact *m_guardianContact;

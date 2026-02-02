@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedContentVM;
 
-@interface WCFinderUsedTaskMgr
+@interface WCFinderUsedTaskMgr : NSObject
 {
     WCFinderFeedContentVM *_contentVM;
 }

@@ -6,7 +6,7 @@
 @class CADisplayLink, CEmoticonWrap, EmoticonPreviewWindowViewController, EmoticonRecommendMessageContext, FTSWebSearchMgr, MMUIActivityIndicatorView, MMUILabel, NSIndexPath, NSMutableArray, NSString, RelatedEmoticonCollectionFooterView, RelatedEmoticonReportObject, UICollectionView, UICollectionViewFlowLayout, UILongPressGestureRecognizer, WSSImilarPageModel;
 @protocol RelatedEmoticonHalfScreenViewControllerDelegate;
 
-@interface RelatedEmoticonHalfScreenViewController
+@interface RelatedEmoticonHalfScreenViewController : NSObject
 {
     _Bool _hasAddObserver;
     EmoticonRecommendMessageContext *_relatedEmoticonMessageContext;

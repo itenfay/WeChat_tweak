@@ -6,7 +6,7 @@
 @class MMFinderLiveGoodsItem, MMFinderLiveGoodsViewModel, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMTableView, MMUILabel, MMUIView, NSMutableArray, NSString, UIView;
 @protocol MMFinderLiveGoodsSelectionPanelDelegate;
 
-@interface MMFinderLiveGoodsSelectionPanel
+@interface MMFinderLiveGoodsSelectionPanel : NSObject
 {
     long long _openFromSrc;
     id <MMFinderLiveGoodsSelectionPanelDelegate> _delegate;

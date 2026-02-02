@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveGetBalanceCGI
+@interface WCFinderLiveGetBalanceCGI : NSObject
 {
     unsigned int _scene;
     CDUnknownBlockType _successBlock;

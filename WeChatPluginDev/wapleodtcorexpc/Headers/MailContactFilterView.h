@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString;
 @protocol MailContactFilterViewDelegate;
 
-@interface MailContactFilterView
+@interface MailContactFilterView : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_filterArray;

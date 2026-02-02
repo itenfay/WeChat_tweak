@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMFinderLiveFeedPreviewKTVMgr
+@interface MMFinderLiveFeedPreviewKTVMgr : NSObject
 {
     NSMutableDictionary *_ktvBoxDict;
 }

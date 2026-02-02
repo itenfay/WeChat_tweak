@@ -6,7 +6,7 @@
 @class BrandProfileFuwuContainerView, NSString, UIView;
 @protocol BrandProfileFuwuActionSheetDelegate;
 
-@interface BrandProfileFuwuActionSheet
+@interface BrandProfileFuwuActionSheet : NSObject
 {
     id <BrandProfileFuwuActionSheetDelegate> _delegate;
     UIView *_transparentView;

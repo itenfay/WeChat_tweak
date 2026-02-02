@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCNewClickStatPageData
+@interface WCNewClickStatPageData : NSObject
 {
     unsigned int appearTimeStamp;
     unsigned int disappearTimeStamp;

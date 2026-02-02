@@ -6,7 +6,7 @@
 @class NSString, NSURLRequest;
 @protocol WCCanvasJSLogicDelegate, YYWebViewDelegate;
 
-@interface WCCanvasJSLogic
+@interface WCCanvasJSLogic : NSObject
 {
     _Bool _hasInjected;
     id <WCCanvasJSLogicDelegate> _delegate;

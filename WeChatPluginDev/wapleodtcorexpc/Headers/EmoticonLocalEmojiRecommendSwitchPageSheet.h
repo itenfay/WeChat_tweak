@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonLocalEmojiRecommendSwitchPageSheet
+@interface EmoticonLocalEmojiRecommendSwitchPageSheet : NSObject
 {
     int _reportExtranceScene;
 }

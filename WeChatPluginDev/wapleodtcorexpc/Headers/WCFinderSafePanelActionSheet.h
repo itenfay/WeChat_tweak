@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString, UIButton, UILabel, UIView;
 
-@interface WCFinderSafePanelActionSheet
+@interface WCFinderSafePanelActionSheet : NSObject
 {
     NSString *_titleContent;
     NSString *_subTitleContent;

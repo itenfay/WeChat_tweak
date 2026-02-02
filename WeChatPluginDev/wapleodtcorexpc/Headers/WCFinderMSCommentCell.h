@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UILabel, UIView, WCFinderComment;
 
-@interface WCFinderMSCommentCell
+@interface WCFinderMSCommentCell : NSObject
 {
     UIView *_containerView;
     RichTextView *_contentLabel;

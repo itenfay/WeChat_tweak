@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
-@interface WAWebViewPlugin_CustomCanvas
+@interface WAWebViewPlugin_CustomCanvas : NSObject
 {
     long long _tagMax;
     NSMutableDictionary *_cachedImage;

@@ -5,7 +5,7 @@
 
 @class LVDiffableDataSource, NSString, UITableView, WCFinderDataLoadTips, WCFinderLongVideoSeeLaterListVM, WCFinderStreamFooterView;
 
-@interface WCFinderLongVideoSeeLaterListVC
+@interface WCFinderLongVideoSeeLaterListVC : NSObject
 {
     UITableView *_tableView;
     LVDiffableDataSource *_tableViewSource;

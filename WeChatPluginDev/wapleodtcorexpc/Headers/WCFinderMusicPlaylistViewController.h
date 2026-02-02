@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UICollectionView, WCFinderStreamFooterView;
 @protocol WCFindeProfileMusicSectionBase;
 
-@interface WCFinderMusicPlaylistViewController
+@interface WCFinderMusicPlaylistViewController : NSObject
 {
     _Bool _isAuthor;
     UICollectionView *_collectionView;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMPageSheetConfig, NSString, UIView;
 @protocol MMPageSheetContainer;
 
-@interface MMPageSheetBaseViewController
+@interface MMPageSheetBaseViewController : NSObject
 {
     MMPageSheetConfig *_pageSheetConfig;
     UIView *_detailView;

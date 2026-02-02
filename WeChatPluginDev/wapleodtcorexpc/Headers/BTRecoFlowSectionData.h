@@ -5,7 +5,7 @@
 
 @class GetRecommendFeedsResp_RecommendCardMsg, NSMutableDictionary, NSString;
 
-@interface BTRecoFlowSectionData
+@interface BTRecoFlowSectionData : NSObject
 {
     _Bool _isExposed;
     GetRecommendFeedsResp_RecommendCardMsg *_cardMsg;

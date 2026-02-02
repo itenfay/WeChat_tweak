@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoFuncDeclareCpp
+@interface MegaVideoFuncDeclareCpp : NSObject
 {
 }
 

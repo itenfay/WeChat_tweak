@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCChatImageSearchMPDataCGI
+@interface WCChatImageSearchMPDataCGI : NSObject
 {
     NSString *_requestID;
     CDUnknownBlockType _successBlock;

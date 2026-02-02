@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OpenFinderEventHandler
+@interface OpenFinderEventHandler : NSObject
 {
 }
 

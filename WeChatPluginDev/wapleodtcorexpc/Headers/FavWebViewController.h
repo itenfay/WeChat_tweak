@@ -5,7 +5,7 @@
 
 @class FavDataItemWrap, FavWebCacheContext, FavWebCacheScriptMessageHandler, FavoritesItem, NSDictionary, NSString;
 
-@interface FavWebViewController
+@interface FavWebViewController : NSObject
 {
     FavoritesItem *m_favItem;
     FavDataItemWrap *m_favDataItemWrap;

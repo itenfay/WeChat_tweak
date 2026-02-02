@@ -5,7 +5,7 @@
 
 @class LiteAppJsApiPluginScheduler, NSString;
 
-@interface LiteAppJsApiPluginBase
+@interface LiteAppJsApiPluginBase : NSObject
 {
     LiteAppJsApiPluginScheduler *_liteAppPluginScheduler;
 }

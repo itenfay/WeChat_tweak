@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCStoryUserPageCgiObj
+@interface WCStoryUserPageCgiObj : NSObject
 {
     unsigned int _source;
     CDUnknownBlockType _dataCallBack;

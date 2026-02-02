@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMHeadImageView, MMSessionInfo, MMUIButton, MMUILabel;
 
-@interface WCFinderUnreadPushTableViewCell
+@interface WCFinderUnreadPushTableViewCell : NSObject
 {
     CDUnknownBlockType _closeAction;
     MMUILabel *_subTitleLabel;

@@ -6,7 +6,7 @@
 @class MMFinderLiveMusicDataItem, MMUILabel, MMUIView, MMWebImageView, PAGView, UIImageView;
 @protocol MMFinderLiveMusicTableViewCellDelegate;
 
-@interface MMFinderLiveMusicTableViewCell
+@interface MMFinderLiveMusicTableViewCell : NSObject
 {
     MMFinderLiveMusicDataItem *_musicDataItem;
     id <MMFinderLiveMusicTableViewCellDelegate> _musicTableCellDelegate;

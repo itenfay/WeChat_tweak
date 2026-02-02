@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, WCEliminatedSlotMMKV;
 
-@interface BrandProfileCacher
+@interface BrandProfileCacher : NSObject
 {
     _Bool _needShowRecommendFollowView;
     WCEliminatedSlotMMKV *_bizProfileSlotKV;

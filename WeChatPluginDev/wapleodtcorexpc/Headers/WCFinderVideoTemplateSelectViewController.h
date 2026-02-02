@@ -6,7 +6,7 @@
 @class AVPlayer, AVPlayerLayer, NSString;
 @protocol WCFinderVideoTemplateSelectVCDelegate;
 
-@interface WCFinderVideoTemplateSelectViewController
+@interface WCFinderVideoTemplateSelectViewController : NSObject
 {
     id <WCFinderVideoTemplateSelectVCDelegate> _delegate;
     unsigned long long _enterScene;

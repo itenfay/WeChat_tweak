@@ -5,7 +5,7 @@
 
 @class NSString, WSContactSearchLogic;
 
-@interface LocalJSEventHandler_getSearchSuggestionData
+@interface LocalJSEventHandler_getSearchSuggestionData : NSObject
 {
     WSContactSearchLogic *_searchContactLogic;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface BrandDatabaseMgr
+@interface BrandDatabaseMgr : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_tableMPPageCacheItem;

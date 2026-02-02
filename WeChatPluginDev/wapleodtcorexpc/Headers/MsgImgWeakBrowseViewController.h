@@ -6,7 +6,7 @@
 @class CMessageWrap, ForwardMessageLogicController, MMImageBrowseView, MsgDataDownloadLogic, NSString, SightIconView;
 @protocol MsgImgWeakBrowseViewControllerDelegate;
 
-@interface MsgImgWeakBrowseViewController
+@interface MsgImgWeakBrowseViewController : NSObject
 {
     _Bool _playSound;
     id <MsgImgWeakBrowseViewControllerDelegate> _delegate;

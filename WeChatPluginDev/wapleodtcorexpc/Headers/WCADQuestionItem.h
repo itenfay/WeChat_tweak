@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCADQuestionItem
+@interface WCADQuestionItem : NSObject
 {
     unsigned int actionType;
     NSString *itemId;

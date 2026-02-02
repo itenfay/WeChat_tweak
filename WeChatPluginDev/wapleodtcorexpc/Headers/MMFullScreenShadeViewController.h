@@ -5,7 +5,7 @@
 
 @class MMFullScreenShadeConfig, MMUILabel;
 
-@interface MMFullScreenShadeViewController
+@interface MMFullScreenShadeViewController : NSObject
 {
     MMUILabel *_remindTextLabel;
     MMFullScreenShadeConfig *_shadeConfig;

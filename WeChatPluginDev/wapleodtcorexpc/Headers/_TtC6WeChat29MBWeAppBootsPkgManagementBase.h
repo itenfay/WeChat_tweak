@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29MBWeAppBootsPkgManagementBase
+@interface _TtC6WeChat29MBWeAppBootsPkgManagementBase : NSObject
 {
     MISSING_TYPE *pkgLogic;
     MISSING_TYPE *debugInfo;

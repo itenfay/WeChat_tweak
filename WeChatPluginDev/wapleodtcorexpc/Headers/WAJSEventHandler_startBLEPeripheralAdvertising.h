@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_startBLEPeripheralAdvertising
+@interface WAJSEventHandler_startBLEPeripheralAdvertising : NSObject
 {
     NSString *m_serverId;
 }

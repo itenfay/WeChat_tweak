@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WAJSContextPlugin_NativeViews
+@interface WAJSContextPlugin_NativeViews : NSObject
 {
     _Bool _dragging;
 }

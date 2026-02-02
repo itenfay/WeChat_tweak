@@ -5,7 +5,7 @@
 
 @class WCCanvasComponentReportUrlInfo, WCCanvasComponentReportVideoFloatAreaInfo;
 
-@interface WCCanvasComponentReportStreamVideoInfo
+@interface WCCanvasComponentReportStreamVideoInfo : NSObject
 {
     unsigned int _streamVideoDuraion;
     unsigned int _playTimeInterval;

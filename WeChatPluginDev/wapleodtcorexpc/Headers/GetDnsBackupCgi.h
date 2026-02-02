@@ -5,7 +5,7 @@
 
 @class Get3rdDnsReq;
 
-@interface GetDnsBackupCgi
+@interface GetDnsBackupCgi : NSObject
 {
     struct weak_ptr<mars::cdn::Get3rdDnsCallback> callback_;
     Get3rdDnsReq *get3rdDnsReq;

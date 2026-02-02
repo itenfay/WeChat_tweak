@@ -5,7 +5,7 @@
 
 @protocol MMStoreEmotionDesignerPackSelectViewControllerDelegate;
 
-@interface MMStoreEmotionDesignerPackSelectViewController
+@interface MMStoreEmotionDesignerPackSelectViewController : NSObject
 {
     id <MMStoreEmotionDesignerPackSelectViewControllerDelegate> _delegate;
 }

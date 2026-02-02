@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ShakeTvHistoryItem
+@interface ShakeTvHistoryItem : NSObject
 {
     unsigned int _createTime;
     NSString *_iconUrl;

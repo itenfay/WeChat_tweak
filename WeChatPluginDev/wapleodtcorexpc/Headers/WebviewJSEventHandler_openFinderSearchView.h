@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_openFinderSearchView
+@interface WebviewJSEventHandler_openFinderSearchView : NSObject
 {
     JSEvent *_event;
 }

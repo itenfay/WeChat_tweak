@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayGetUserExInfoCgiDelegate;
 
-@interface WCPayGetUserExInfoCgi
+@interface WCPayGetUserExInfoCgi : NSObject
 {
     NSString *_scene;
 }

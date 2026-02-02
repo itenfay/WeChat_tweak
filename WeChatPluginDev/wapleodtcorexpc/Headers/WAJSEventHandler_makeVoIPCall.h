@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_makeVoIPCall
+@interface WAJSEventHandler_makeVoIPCall : NSObject
 {
     _Bool _m_bAllowBackCamera;
     _Bool _m_bShowCSVideo;

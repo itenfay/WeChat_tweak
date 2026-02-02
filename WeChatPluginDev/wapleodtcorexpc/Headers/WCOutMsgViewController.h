@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString, WCTimeLineFooterView;
 
-@interface WCOutMsgViewController
+@interface WCOutMsgViewController : NSObject
 {
     _Bool _bHasMoreItems;
     MMTableView *_tableView;

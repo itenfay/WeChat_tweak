@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIView;
 
-@interface WCStoryActionToolBar
+@interface WCStoryActionToolBar : NSObject
 {
     UIView *_toolBar;
     NSMutableArray *_toolbarItemList;

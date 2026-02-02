@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAMemoryReleaseAction
+@interface WAMemoryReleaseAction : NSObject
 {
     unsigned int _triggerMemoryEvent;
     unsigned int _foregroundWeAppCount;

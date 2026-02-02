@@ -6,7 +6,7 @@
 @class MMRefreshTableFooterView, MMTableView, MMUIActivityIndicatorView, NSString, TransferPhoneGetHisRcvrsResp, UILabel, UIView, WCPayCss;
 @protocol WCPayTransferPhoneHistoryPageDelegate;
 
-@interface WCPayTransferPhoneHistoryPage
+@interface WCPayTransferPhoneHistoryPage : NSObject
 {
     MMRefreshTableFooterView *_footerView;
     id <WCPayTransferPhoneHistoryPageDelegate> _m_delegate;

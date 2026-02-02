@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface SettingLanguageViewController
+@interface SettingLanguageViewController : NSObject
 {
     unsigned int m_uiCurIndex;
     unsigned int m_uiCurWorkingIndex;

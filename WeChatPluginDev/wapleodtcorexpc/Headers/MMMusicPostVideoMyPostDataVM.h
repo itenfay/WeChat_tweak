@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray, NSString;
 @protocol MMMusicPostVideoMyPostDataVMDelegate;
 
-@interface MMMusicPostVideoMyPostDataVM
+@interface MMMusicPostVideoMyPostDataVM : NSObject
 {
     NSString *finderUsername;
     NSMutableArray *_arrData;

@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel;
 
-@interface WNAttachmentChatVoiceView
+@interface WNAttachmentChatVoiceView : NSObject
 {
     UILabel *titleLabel;
     UIImageView *playingImageView;

@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WAAuthPageSheetDescView
+@interface WAAuthPageSheetDescView : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_subTitleLabel;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCTimelineTipViewDelegate;
 
-@interface WCTimelineTipView
+@interface WCTimelineTipView : NSObject
 {
     id <WCTimelineTipViewDelegate> _delegate;
     _Bool _showTipNow;

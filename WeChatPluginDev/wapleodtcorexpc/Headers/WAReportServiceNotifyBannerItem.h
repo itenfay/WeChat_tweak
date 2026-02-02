@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportServiceNotifyBannerItem
+@interface WAReportServiceNotifyBannerItem : NSObject
 {
     unsigned int _opType;
     unsigned int _noticeType;

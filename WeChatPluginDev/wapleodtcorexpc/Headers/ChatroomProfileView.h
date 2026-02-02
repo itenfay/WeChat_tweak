@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol ChatroomProfileViewLayoutDelegate;
 
-@interface ChatroomProfileView
+@interface ChatroomProfileView : NSObject
 {
     NSArray *m_arrContacts;
     _Bool _wrapItemAccessibilityElement;

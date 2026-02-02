@@ -5,7 +5,7 @@
 
 @class InitLogicController;
 
-@interface PreEnterInitStep
+@interface PreEnterInitStep : NSObject
 {
     InitLogicController *m_initLogicController;
     _Bool m_bInitOK;

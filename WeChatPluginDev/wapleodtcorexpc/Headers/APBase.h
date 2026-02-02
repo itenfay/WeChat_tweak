@@ -5,7 +5,7 @@
 
 @class NSString, PublicWifiCache, PublicWifiPageInfo;
 
-@interface APBase
+@interface APBase : NSObject
 {
     NSString *ssid;
     NSString *mac;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveEntranceExposeReportHandler
+@interface MMLiveEntranceExposeReportHandler : NSObject
 {
     unsigned int scene;
     unsigned int redDot;

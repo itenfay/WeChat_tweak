@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCViewOperationConfigModel
+@interface WCViewOperationConfigModel : NSObject
 {
     NSString *_pageName;
     NSString *_viewId;

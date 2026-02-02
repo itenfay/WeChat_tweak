@@ -5,7 +5,7 @@
 
 @class FavWebCacheContext, FavWebCacheDownloadFileInfo, FavWebCacheScriptMessageHandler, FavoritesItem, MMTimer, NSMutableArray, NSMutableCharacterSet, NSMutableSet, NSString, WKWebView;
 
-@interface FavWebCacheMgr
+@interface FavWebCacheMgr : NSObject
 {
     WKWebView *m_webView;
     NSMutableArray *m_loadingQueue;

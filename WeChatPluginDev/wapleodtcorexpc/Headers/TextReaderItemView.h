@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextReaderItemView
+@interface TextReaderItemView : NSObject
 {
 }
 

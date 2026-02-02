@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface FTSMessageSectionController
+@interface FTSMessageSectionController : NSObject
 {
     NSMutableDictionary *m_dicWeakMedia;
 }

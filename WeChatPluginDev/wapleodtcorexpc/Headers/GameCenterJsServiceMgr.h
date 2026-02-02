@@ -5,7 +5,7 @@
 
 @class GameCenterJsService, NSString;
 
-@interface GameCenterJsServiceMgr
+@interface GameCenterJsServiceMgr : NSObject
 {
     GameCenterJsService *_jsService;
 }

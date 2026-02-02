@@ -5,7 +5,7 @@
 
 @class EmotionFinderLinkInfo, NSMutableArray, NSString;
 
-@interface EmoticonUploadInfoObj
+@interface EmoticonUploadInfoObj : NSObject
 {
     _Bool _isUploadWxam;
     _Bool _isSelfie;

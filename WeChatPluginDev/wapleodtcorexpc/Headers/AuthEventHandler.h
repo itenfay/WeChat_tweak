@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface AuthEventHandler
+@interface AuthEventHandler : NSObject
 {
     struct ec_key_st *ecdh_key;
     unsigned int ct1;

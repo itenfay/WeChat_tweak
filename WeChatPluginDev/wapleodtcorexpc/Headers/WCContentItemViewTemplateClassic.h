@@ -5,7 +5,7 @@
 
 @class MMMusicPlayerContoller, MMUIWindow, NSString, UIImageView, UILabel, WCImageView, WCTimeLineCellMusicPlayerView;
 
-@interface WCContentItemViewTemplateClassic
+@interface WCContentItemViewTemplateClassic : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_descLabel;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openSetting
+@interface WAJSEventHandler_openSetting : NSObject
 {
     _Bool _withSubscriptions;
 }

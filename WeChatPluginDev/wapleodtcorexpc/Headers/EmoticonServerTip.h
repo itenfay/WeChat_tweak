@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonServerTip
+@interface EmoticonServerTip : NSObject
 {
     _Bool _m_isNeedBadge;
     unsigned int _m_newCount;

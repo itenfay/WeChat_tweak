@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary;
 @protocol ContactBatchModifyLogicDelegate;
 
-@interface ContactBatchModifyLogic
+@interface ContactBatchModifyLogic : NSObject
 {
     NSMutableArray *m_arrBatchModifyRequest;
     NSMutableArray *m_arrFailBatchModifyInfo;

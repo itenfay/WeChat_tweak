@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUIActivityIndicatorView, MMUILabel, NSDate, NSString, StorageFootPanelView, WCFilterView;
 
-@interface WCChatLogManageViewController
+@interface WCChatLogManageViewController : NSObject
 {
     struct vector<std::shared_ptr<ChatLogSessionItem>, std::allocator<std::shared_ptr<ChatLogSessionItem>>> m_sessionItemArray;
     struct vector<std::shared_ptr<ChatLogSessionItem>, std::allocator<std::shared_ptr<ChatLogSessionItem>>> m_selectedSessionArray;

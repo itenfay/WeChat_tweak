@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCRealTimeKVReportMgr
+@interface WCRealTimeKVReportMgr : NSObject
 {
     NSMutableDictionary *m_realTimeReport;
 }

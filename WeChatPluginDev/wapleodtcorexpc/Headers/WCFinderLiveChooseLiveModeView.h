@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAShapeLayer, MMTableView, NSString, UIView, WCFinderLiveChooseLiveModeViewModel, WCFinderLiveStarterSwitchModeItem;
 @protocol MMFinderLiveChooseLiveModeDelegate;
 
-@interface WCFinderLiveChooseLiveModeView
+@interface WCFinderLiveChooseLiveModeView : NSObject
 {
     WCFinderLiveChooseLiveModeViewModel *_chooseOrientationViewModel;
     _Bool _animateDismissOnSelection;

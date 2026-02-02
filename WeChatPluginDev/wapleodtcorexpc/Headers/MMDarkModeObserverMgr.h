@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMDarkModeObserverMgr
+@interface MMDarkModeObserverMgr : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class MMPageSheetAdapter, NSString;
 
-@interface WCAdHalfScreenContainerLiteAppView
+@interface WCAdHalfScreenContainerLiteAppView : NSObject
 {
     MMPageSheetAdapter *_sheetAdapter;
 }

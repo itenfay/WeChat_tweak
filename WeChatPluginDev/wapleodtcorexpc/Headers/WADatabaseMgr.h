@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface WADatabaseMgr
+@interface WADatabaseMgr : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_tableWeAppInfo;

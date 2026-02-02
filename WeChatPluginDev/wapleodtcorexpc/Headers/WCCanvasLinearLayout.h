@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WCCanvasLinearLayout
+@interface WCCanvasLinearLayout : NSObject
 {
     _Bool _needRelayout;
     NSMutableDictionary *_viewContainer;

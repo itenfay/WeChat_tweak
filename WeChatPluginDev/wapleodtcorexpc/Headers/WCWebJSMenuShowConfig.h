@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCWebJSMenuShowConfig
+@interface WCWebJSMenuShowConfig : NSObject
 {
     unsigned int _forbigFlag;
     NSArray *_arrMenuItems;

@@ -5,7 +5,7 @@
 
 @class MMFlutterAutoReleaseEngineGroupHelper, MMFlutterEngineGroup, NSString;
 
-@interface MMFlutterEngineService
+@interface MMFlutterEngineService : NSObject
 {
     _Bool _recreateEngineGroup;
     MMFlutterEngineGroup *_sharedEngineGroup;

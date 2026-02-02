@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface MultiDeleteNotRegularContactsMaskViewView
+@interface MultiDeleteNotRegularContactsMaskViewView : NSObject
 {
     UIButton *_operateButton;
 }

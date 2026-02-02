@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasPageViewController;
 
-@interface WCCanvasPageMiddleViewController
+@interface WCCanvasPageMiddleViewController : NSObject
 {
     _Bool _hasJumped;
     WCCanvasPageViewController *_canvasPageVC;

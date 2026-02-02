@@ -5,7 +5,7 @@
 
 @class MMFinderLivePaidCollectionAnchorPromoteInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLivePaidCollectionAnchorPromoteTableViewCell
+@interface MMFinderLivePaidCollectionAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleLabel;

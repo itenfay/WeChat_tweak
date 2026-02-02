@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WebviewJSEventHandler_openUrlWithExtraWebview
+@interface WebviewJSEventHandler_openUrlWithExtraWebview : NSObject
 {
     CDUnknownBlockType _callbackBlock;
 }

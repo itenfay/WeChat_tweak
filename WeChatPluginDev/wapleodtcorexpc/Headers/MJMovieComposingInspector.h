@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, UIView, UIViewController;
 @protocol MJMovieComposingInspectorDelegate;
 
-@interface MJMovieComposingInspector
+@interface MJMovieComposingInspector : NSObject
 {
     id <MJMovieComposingInspectorDelegate> _delegate;
     MMUILabel *_titleLabel;

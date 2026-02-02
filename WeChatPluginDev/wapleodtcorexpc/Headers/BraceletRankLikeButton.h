@@ -5,7 +5,7 @@
 
 @class DeviceRankInfo;
 
-@interface BraceletRankLikeButton
+@interface BraceletRankLikeButton : NSObject
 {
     DeviceRankInfo *m_rankInfo;
 }

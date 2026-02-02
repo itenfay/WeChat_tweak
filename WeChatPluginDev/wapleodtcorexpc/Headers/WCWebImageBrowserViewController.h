@@ -5,7 +5,7 @@
 
 @class ImageBrowseButton, WCImageSearchEntity, WCWebImageBrowserConfig, WCWebImageButtonsContainerView, WCWebImageSourceInfoButton;
 
-@interface WCWebImageBrowserViewController
+@interface WCWebImageBrowserViewController : NSObject
 {
     WCImageSearchEntity *_searchEntity;
     WCWebImageButtonsContainerView *_bottomBarContainerView;

@@ -6,7 +6,7 @@
 @class MMWebViewController, NSString;
 @protocol WCPayRealnameSuccessViewControllerDelegate;
 
-@interface WCPayRealnameSuccessViewController
+@interface WCPayRealnameSuccessViewController : NSObject
 {
     id <WCPayRealnameSuccessViewControllerDelegate> _m_delegate;
     MMWebViewController *_uploadIdWebVC;

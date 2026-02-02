@@ -5,7 +5,7 @@
 
 @class MMAcceptAgreementCommonHeadView, MMTableView, MMTableViewInfo, MMUIActivityIndicatorView, NSString, UIColor;
 
-@interface MMAcceptAgreementBaseViewController
+@interface MMAcceptAgreementBaseViewController : NSObject
 {
     MMUIActivityIndicatorView *m_buttonLoadingView;
     MMTableViewInfo *_m_tableViewInfo;

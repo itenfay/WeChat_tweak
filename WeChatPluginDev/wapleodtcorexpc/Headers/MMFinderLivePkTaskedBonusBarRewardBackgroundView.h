@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLivePkTaskedBonusBarRewardBackgroundView
+@interface MMFinderLivePkTaskedBonusBarRewardBackgroundView : NSObject
 {
 }
 

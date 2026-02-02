@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MMStoreEmotionDesignerPackBrowseViewControllerDelegate;
 
-@interface MMStoreEmoticonDesignerPackBrowseViewController
+@interface MMStoreEmoticonDesignerPackBrowseViewController : NSObject
 {
     _Bool _needStaticsInfo;
     id <MMStoreEmotionDesignerPackBrowseViewControllerDelegate> _delegate;

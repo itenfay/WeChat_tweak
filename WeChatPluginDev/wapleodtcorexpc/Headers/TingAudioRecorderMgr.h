@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TingAudioRecorder;
 
-@interface TingAudioRecorderMgr
+@interface TingAudioRecorderMgr : NSObject
 {
     _Bool _recording;
     _Bool _hasPermission;

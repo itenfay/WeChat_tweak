@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, UILabel;
 
-@interface WCFinderSearchEventTableViewCell
+@interface WCFinderSearchEventTableViewCell : NSObject
 {
     UILabel *_eventNameLabel;
     UILabel *_participateNumLabel;

@@ -5,7 +5,7 @@
 
 @class POPSpringAnimation, UIImageView;
 
-@interface CameraScanGoodsPinView
+@interface CameraScanGoodsPinView : NSObject
 {
     UIImageView *_fgImageView;
     UIImageView *_bgImageView;

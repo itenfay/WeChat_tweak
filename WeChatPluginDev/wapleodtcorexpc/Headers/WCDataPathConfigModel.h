@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCDataPathConfigModel
+@interface WCDataPathConfigModel : NSObject
 {
     _Bool _encrypt;
     unsigned int _action;

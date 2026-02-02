@@ -5,7 +5,7 @@
 
 @class NSString, WCDataItem;
 
-@interface LocalJSEventHandler_startCommonSearchItemDetailPage
+@interface LocalJSEventHandler_startCommonSearchItemDetailPage : NSObject
 {
     WCDataItem *_oDataItem;
 }

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMOpenIMAddContactRemindViewView
+@interface MMOpenIMAddContactRemindViewView : NSObject
 {
     NSArray *_arrButton;
 }

@@ -5,7 +5,7 @@
 
 @class BTRichTextTagView, BrandProfileItemBaseViewModel, MMUILabel, MMWebImageView, UIView;
 
-@interface BrandProfileItemBaseCell
+@interface BrandProfileItemBaseCell : NSObject
 {
     MMWebImageView *_coverImageView;
     BTRichTextTagView *_titleView;

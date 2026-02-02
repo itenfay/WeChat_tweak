@@ -6,7 +6,7 @@
 @class ContactUpdateHelper, MMWebImageView, NSDictionary, UIButton, UIImageView, UIView;
 @protocol WCRedEnvelopesReceiveHomeViewDelegate;
 
-@interface WARedEnvelopesReceiveHomeView
+@interface WARedEnvelopesReceiveHomeView : NSObject
 {
     id <WCRedEnvelopesReceiveHomeViewDelegate> m_delegate;
     UIImageView *m_backgroundView;

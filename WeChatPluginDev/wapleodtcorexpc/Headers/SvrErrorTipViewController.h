@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface SvrErrorTipViewController
+@interface SvrErrorTipViewController : NSObject
 {
     UILabel *_tipsLabel;
     NSString *_errTip;

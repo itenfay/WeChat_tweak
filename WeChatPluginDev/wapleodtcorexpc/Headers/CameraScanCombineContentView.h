@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CameraScanBlurEffectView, CameraScanCombineCropImageView, CameraScanCombineGoodsListView, MMTimer, NSString, UIView;
 @protocol CameraScanCombineContentViewDelegate, CameraScanGoodsMarkDotViewInterface;
 
-@interface CameraScanCombineContentView
+@interface CameraScanCombineContentView : NSObject
 {
     _Bool _isAppendItemAnimating;
     id <CameraScanCombineContentViewDelegate> _delegate;

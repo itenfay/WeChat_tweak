@@ -6,7 +6,7 @@
 @class MMOrderCenterPivotViewController, NSArray, NSString, WCSearcher;
 @protocol MMOrderCenterReporter;
 
-@interface MMOrderCenterLandingPageController
+@interface MMOrderCenterLandingPageController : NSObject
 {
     id <MMOrderCenterReporter> _reporter;
     NSArray *_pivotTabControllers;

@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPayJSOpenOfflinePayControlLogic;
 
-@interface WebviewJSEventHandler_openOfflinePayView
+@interface WebviewJSEventHandler_openOfflinePayView : NSObject
 {
     JSEvent *_jsEvent;
     WCPayJSOpenOfflinePayControlLogic *_openOfflinePayLogic;

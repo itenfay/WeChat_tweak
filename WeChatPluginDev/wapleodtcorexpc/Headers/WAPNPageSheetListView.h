@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, WAPhoneNumberPageSheetViewModel;
 
-@interface WAPNPageSheetListView
+@interface WAPNPageSheetListView : NSObject
 {
     MMTableView *_tableView;
 }

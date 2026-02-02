@@ -5,7 +5,7 @@
 
 @class MMNotificationViewController;
 
-@interface MMNotificationWindow
+@interface MMNotificationWindow : NSObject
 {
     MMNotificationViewController *m_viewController;
 }

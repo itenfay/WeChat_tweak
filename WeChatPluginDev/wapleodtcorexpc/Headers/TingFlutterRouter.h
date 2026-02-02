@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFlutterInstance, MMFlutterViewController, NSArray, NSMutableArray, NSString, TingAppNavigationController, TingPlayerManager, UIViewController;
 @protocol ITingApp;
 
-@interface TingFlutterRouter
+@interface TingFlutterRouter : NSObject
 {
     _Bool _hasWarmUp;
     _Bool _doingWarmUp;

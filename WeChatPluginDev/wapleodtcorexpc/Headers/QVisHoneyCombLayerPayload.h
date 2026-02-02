@@ -5,7 +5,7 @@
 
 @class NSArray, QAnimation, QVectorHeatOverlayOption;
 
-@interface QVisHoneyCombLayerPayload
+@interface QVisHoneyCombLayerPayload : NSObject
 {
     int _type;
     NSArray *_nodes;

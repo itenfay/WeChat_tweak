@@ -5,7 +5,7 @@
 
 @class ChatroomMsgShareLink;
 
-@interface GCShareLinkCellModel
+@interface GCShareLinkCellModel : NSObject
 {
     ChatroomMsgShareLink *_shareLink;
 }

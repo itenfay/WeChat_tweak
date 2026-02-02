@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class OMJMovieOptions;
 
-@interface MJTemplateMovieSessionOperation_Update
+@interface MJTemplateMovieSessionOperation_Update : NSObject
 {
     OMJMovieOptions *_movieOptions;
 }

@@ -5,7 +5,7 @@
 
 @class AppleIDBindLogic, NSString, WCAccountManualAuthControlLogic;
 
-@interface WCAccountAppleControlLogic
+@interface WCAccountAppleControlLogic : NSObject
 {
     WCAccountManualAuthControlLogic *_manualAuthLogic;
     AppleIDBindLogic *_appleIDBindLogic;

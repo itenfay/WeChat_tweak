@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, MMWebImageView;
 
-@interface GameCenterMsgListNoticeMsgCell
+@interface GameCenterMsgListNoticeMsgCell : NSObject
 {
     MMWebImageView *_postImageView;
     MMUIView *_textBackView;

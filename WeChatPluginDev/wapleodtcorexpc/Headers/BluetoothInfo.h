@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BluetoothInfo
+@interface BluetoothInfo : NSObject
 {
     unsigned long long _uploadTimeInterval;
     NSString *_peripheralName;

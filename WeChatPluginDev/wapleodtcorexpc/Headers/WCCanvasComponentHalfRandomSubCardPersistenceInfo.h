@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCCanvasComponentHalfRandomSubCardPersistenceInfo
+@interface WCCanvasComponentHalfRandomSubCardPersistenceInfo : NSObject
 {
     NSString *_redPacketCoverUrl;
     NSMutableDictionary *_sendBulletComments;

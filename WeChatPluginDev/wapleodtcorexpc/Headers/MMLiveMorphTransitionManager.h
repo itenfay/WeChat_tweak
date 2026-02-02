@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMLiveMorphTransitionManager
+@interface MMLiveMorphTransitionManager : NSObject
 {
     unsigned long long _status;
     unsigned long long _mode;

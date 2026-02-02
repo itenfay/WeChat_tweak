@@ -5,7 +5,7 @@
 
 @class NSString, WCCrashBlockHandler, WCCrashBlockMonitorPlugin, WCFPSMonitorPlugin, WCMemoryStatPlugin, WCSQLiteLintPlugin;
 
-@interface WCMatrixManager
+@interface WCMatrixManager : NSObject
 {
     WCCrashBlockMonitorPlugin *_crashBlockPlugin;
     WCCrashBlockHandler *_crashBlockHandler;

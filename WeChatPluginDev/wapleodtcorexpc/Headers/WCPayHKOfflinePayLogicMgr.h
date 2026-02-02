@@ -5,7 +5,7 @@
 
 @class MMPageSheetAdapter, MMVoidBoolCallback, NSString, TenpayHKCertUtil;
 
-@interface WCPayHKOfflinePayLogicMgr
+@interface WCPayHKOfflinePayLogicMgr : NSObject
 {
     TenpayHKCertUtil *_hkCertUtil;
     NSString *_mmkvID;

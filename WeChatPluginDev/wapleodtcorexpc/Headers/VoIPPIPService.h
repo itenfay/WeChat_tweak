@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVPictureInPictureController, AVPictureInPictureVideoCallViewController, NSObject, NSString, VoIPCanvas, VoIPPIPView;
 @protocol MTLBuffer, MTLDepthStencilState, MTLDevice, MTLRenderPipelineState, OS_dispatch_queue;
 
-@interface VoIPPIPService
+@interface VoIPPIPService : NSObject
 {
     float _windowVertexData[16];
     float _smallWindowVertexData[16];

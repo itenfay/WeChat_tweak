@@ -5,7 +5,7 @@
 
 @class MMFinderLiveNewCustomGiftStyleObj;
 
-@interface MMLiveRewardGiftStyleTabLabel
+@interface MMLiveRewardGiftStyleTabLabel : NSObject
 {
     MMFinderLiveNewCustomGiftStyleObj *_style;
 }

@@ -5,7 +5,7 @@
 
 @class LocationRetriever, NSString;
 
-@interface LocalJSEventHandler_getCurrentLocation
+@interface LocalJSEventHandler_getCurrentLocation : NSObject
 {
     LocationRetriever *_locationRetriever;
 }

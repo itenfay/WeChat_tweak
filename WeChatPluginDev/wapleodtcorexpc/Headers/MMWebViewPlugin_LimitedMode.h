@@ -5,7 +5,7 @@
 
 @class MMLimitedModeAuthorizationUtilLogic, MMWebLimitedModeUrlData, NSString;
 
-@interface MMWebViewPlugin_LimitedMode
+@interface MMWebViewPlugin_LimitedMode : NSObject
 {
     MMWebLimitedModeUrlData *_outlinkBlockedInitUrlData;
     unsigned long long _lastRequestActionTime;

@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface WCDurationLogDB
+@interface WCDurationLogDB : NSObject
 {
     NSString *_filePath;
     WCTDatabase *_dataBase;

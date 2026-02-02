@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UnitRCService
+@interface UnitRCService : NSObject
 {
 }
 

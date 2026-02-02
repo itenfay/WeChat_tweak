@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayBeforeTransferCgiDelegate;
 
-@interface WCPayBeforeTransferCgi
+@interface WCPayBeforeTransferCgi : NSObject
 {
     NSString *_username;
     NSString *_groupUsername;

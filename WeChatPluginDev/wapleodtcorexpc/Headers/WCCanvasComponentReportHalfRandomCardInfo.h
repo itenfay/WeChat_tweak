@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentReportHalfRandomCardInfo
+@interface WCCanvasComponentReportHalfRandomCardInfo : NSObject
 {
     NSString *_cardId;
 }

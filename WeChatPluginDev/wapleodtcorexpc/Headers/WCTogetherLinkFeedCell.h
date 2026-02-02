@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, UIImageView, UIView, WCImageView;
 
-@interface WCTogetherLinkFeedCell
+@interface WCTogetherLinkFeedCell : NSObject
 {
     UIView *_iconContainerView;
     WCImageView *_iconImageView;

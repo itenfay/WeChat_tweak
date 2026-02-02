@@ -5,7 +5,7 @@
 
 @class NSData, NSString, UIImage;
 
-@interface ImageMessageViewModel
+@interface ImageMessageViewModel : NSObject
 {
     struct CGSize m_thumbImageSize;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJPublisher, MMAsset, NSString, WCFinderCreateCoordinator;
 
-@interface WAJSEventHandler_openChannelsRedPacketPublish
+@interface WAJSEventHandler_openChannelsRedPacketPublish : NSObject
 {
     _Bool _isUsingNewPublisher;
     MJPublisher *_mjPublisher;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AppCatchCrashMgr
+@interface AppCatchCrashMgr : NSObject
 {
     _Bool _hasCrashAppId;
     unsigned int _callMonitorCount;

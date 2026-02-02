@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, WCFinderRedDotCtrlInfo;
 
-@interface FinderLvChannelFlowCGI
+@interface FinderLvChannelFlowCGI : NSObject
 {
     int _tabType;
     unsigned long long _pullType;

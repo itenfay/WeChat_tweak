@@ -5,7 +5,7 @@
 
 @class BTMissedSubsVideoItemViewModel, MMUILabel, MMWebImageView, SightIconView;
 
-@interface BTMissedSubsVideoItemCell
+@interface BTMissedSubsVideoItemCell : NSObject
 {
     MMWebImageView *_coverImgView;
     MMUILabel *_titleLabel;

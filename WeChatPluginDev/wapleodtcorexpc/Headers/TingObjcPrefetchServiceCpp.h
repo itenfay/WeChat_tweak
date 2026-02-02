@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingObjcPrefetchServiceCpp
+@interface TingObjcPrefetchServiceCpp : NSObject
 {
 }
 

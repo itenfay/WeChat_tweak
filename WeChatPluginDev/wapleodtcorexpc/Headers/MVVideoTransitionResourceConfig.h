@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MVVideoTransitionResourceConfig
+@interface MVVideoTransitionResourceConfig : NSObject
 {
     NSArray *_transitionConfigArr;
 }

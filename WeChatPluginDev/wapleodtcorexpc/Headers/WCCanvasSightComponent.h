@@ -5,7 +5,7 @@
 
 @class NSString, SightView, UIButton, UIView, WCCanvasDynamicDataLoader;
 
-@interface WCCanvasSightComponent
+@interface WCCanvasSightComponent : NSObject
 {
     _Bool _sightReady;
     _Bool _sightPlaying;

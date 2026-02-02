@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class XImageViewRenderer;
 
-@interface CdnRciRenderView
+@interface CdnRciRenderView : NSObject
 {
     unsigned long long _renderFrameCount;
     long long _format;

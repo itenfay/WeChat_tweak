@@ -5,7 +5,7 @@
 
 @class BTRecommendFeedbackInfo, BTRecommendSectionData;
 
-@interface BTBaseRecommendMsgCellViewModel
+@interface BTBaseRecommendMsgCellViewModel : NSObject
 {
     unsigned int _itemIndex;
     BTRecommendSectionData *_sectionData;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EdgeComputingCacheDataModel
+@interface EdgeComputingCacheDataModel : NSObject
 {
     NSString *_configID;
     unsigned long long _reportTimeEC;

@@ -5,7 +5,7 @@
 
 @class MMListenCategoryItem, TingItem, TingSharedAudioView;
 
-@interface WCContentItemTingAudioView
+@interface WCContentItemTingAudioView : NSObject
 {
     TingSharedAudioView *_audioContentView;
     TingItem *_tingItem;

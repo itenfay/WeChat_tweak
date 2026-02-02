@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCAccountTextFieldItem
+@interface WCAccountTextFieldItem : NSObject
 {
     _Bool m_bUseGrayColor;
     UILabel *m_labelTip;

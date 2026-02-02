@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, RichTextView, UIView, WCFinderContact, WCFinderHeadImageView;
 
-@interface WCFinderGroupMemberCreateMasterSheet
+@interface WCFinderGroupMemberCreateMasterSheet : NSObject
 {
     NSString *_titleDesc;
     CDUnknownBlockType _complectionBlock;

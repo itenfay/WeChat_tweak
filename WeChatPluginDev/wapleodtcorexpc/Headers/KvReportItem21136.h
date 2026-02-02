@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem21136
+@interface KvReportItem21136 : NSObject
 {
     _Bool _IsClick_26;
     unsigned int _ExposeTimes_21;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCNotificationArrivalReportService
+@interface WCNotificationArrivalReportService : NSObject
 {
 }
 

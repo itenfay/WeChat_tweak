@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderLiveRefreshMicWithAudienceCGI
+@interface WCFinderLiveRefreshMicWithAudienceCGI : NSObject
 {
     WCFinderDataItem *_dataItem;
     NSString *_sdkUserId;

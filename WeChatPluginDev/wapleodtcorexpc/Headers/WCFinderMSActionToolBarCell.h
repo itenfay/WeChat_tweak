@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, MMUIButton, NSString, UIImageView, UILabel, UIStackView, UIView;
 
-@interface WCFinderMSActionToolBarCell
+@interface WCFinderMSActionToolBarCell : NSObject
 {
     UIView *_progressView;
     CAShapeLayer *_ovalShapeLayer;

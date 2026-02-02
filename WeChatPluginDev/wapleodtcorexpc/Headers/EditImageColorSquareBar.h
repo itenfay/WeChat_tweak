@@ -6,7 +6,7 @@
 @class NSArray, UIScrollView;
 @protocol EditImageColorSquareBarDelegate;
 
-@interface EditImageColorSquareBar
+@interface EditImageColorSquareBar : NSObject
 {
     _Bool _layoutsVertically;
     id <EditImageColorSquareBarDelegate> _m_delegate;

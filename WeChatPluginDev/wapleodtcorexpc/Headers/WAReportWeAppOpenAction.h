@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWeAppOpenAction
+@interface WAReportWeAppOpenAction : NSObject
 {
     unsigned int _isLaunch;
     unsigned int _loadingType;

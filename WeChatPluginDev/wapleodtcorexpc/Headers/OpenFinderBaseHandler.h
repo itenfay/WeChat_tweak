@@ -5,7 +5,7 @@
 
 @class FinderBlockViewController, NSDictionary, NSString, OpenApiParameter;
 
-@interface OpenFinderBaseHandler
+@interface OpenFinderBaseHandler : NSObject
 {
     OpenApiParameter *_parameter;
     NSDictionary *_paramsDict;

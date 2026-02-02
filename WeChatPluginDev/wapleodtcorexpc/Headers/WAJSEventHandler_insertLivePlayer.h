@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WAJSEventHandler_insertLivePlayer
+@interface WAJSEventHandler_insertLivePlayer : NSObject
 {
     NSDictionary *_eventDic;
 }

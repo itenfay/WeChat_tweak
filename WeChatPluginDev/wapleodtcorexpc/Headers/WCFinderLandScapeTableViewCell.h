@@ -5,7 +5,7 @@
 
 @class RichTextView, UILabel, UIView, WCFinderDataItem, WCFinderLandScapeCoverInfoView;
 
-@interface WCFinderLandScapeTableViewCell
+@interface WCFinderLandScapeTableViewCell : NSObject
 {
     _Bool _showMaskView;
     WCFinderLandScapeCoverInfoView *_coverView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, NSString, UIColor, UITapGestureRecognizer, UIView;
 
-@interface TextStatePublishSourceView
+@interface TextStatePublishSourceView : NSObject
 {
     _Bool _preferCustomView;
     UIColor *_textColor;

@@ -5,7 +5,7 @@
 
 @class NSMutableSet, WXPBGeneratedMessage;
 
-@interface MMECOrderBaseCgi
+@interface MMECOrderBaseCgi : NSObject
 {
     _Bool _cancelTask;
     WXPBGeneratedMessage *_request;

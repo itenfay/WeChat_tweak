@@ -6,7 +6,7 @@
 @class MISSING_TYPE;
 @protocol _TtP6WeChat26CarPlayVoIPReceiveDelegate_;
 
-@interface _TtC6WeChat28CarPlayVoIPReceiveController
+@interface _TtC6WeChat28CarPlayVoIPReceiveController : NSObject
 {
     MISSING_TYPE *delegate;
 }

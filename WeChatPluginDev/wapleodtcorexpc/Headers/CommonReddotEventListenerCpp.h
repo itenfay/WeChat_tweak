@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CommonReddotEventListenerCpp
+@interface CommonReddotEventListenerCpp : NSObject
 {
 }
 

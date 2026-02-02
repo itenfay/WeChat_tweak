@@ -5,7 +5,7 @@
 
 @class NSMutableArray, UIImage;
 
-@interface WAHeaderStackDisplayView
+@interface WAHeaderStackDisplayView : NSObject
 {
     double _coverGap;
     double _headerSize;

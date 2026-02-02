@@ -5,7 +5,7 @@
 
 @class MMGroupLiveWordingInfo, NSMutableDictionary, NSRecursiveLock, NSString, OrderedDictionary;
 
-@interface MMGroupLiveMgr
+@interface MMGroupLiveMgr : NSObject
 {
     NSMutableDictionary *_liveInfoWrapDict;
     NSMutableDictionary *_openedLiveItemDict;

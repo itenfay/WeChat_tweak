@@ -6,7 +6,7 @@
 @class EncashIncomeRequest, EncashIncomeResponse;
 @protocol WCCoinEncashIncomeCgiDelegate;
 
-@interface WCCoinEncashIncomeCgi
+@interface WCCoinEncashIncomeCgi : NSObject
 {
     EncashIncomeResponse *_response;
     id <WCCoinEncashIncomeCgiDelegate> _delegate;

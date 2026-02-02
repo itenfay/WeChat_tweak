@@ -5,7 +5,7 @@
 
 @class LVDelayingGestureRecognizer;
 
-@interface LVMainFeedViewController
+@interface LVMainFeedViewController : NSObject
 {
     LVDelayingGestureRecognizer *_delayingGestureRecognizer;
 }

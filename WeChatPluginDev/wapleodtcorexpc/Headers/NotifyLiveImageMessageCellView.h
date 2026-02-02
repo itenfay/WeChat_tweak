@@ -5,7 +5,7 @@
 
 @class BrandTemplateMsgAuthMessageBubbleModel, FinderLiveMessageCellMainContentView, FinderNotifyGetMoreLiveResponse, FinderNotifyMoreLiveInfo, MMLiveCDNPlayerView, MMUIButton, NSString, UIView, WCFinderDataItem;
 
-@interface NotifyLiveImageMessageCellView
+@interface NotifyLiveImageMessageCellView : NSObject
 {
     FinderLiveMessageCellMainContentView *m_mainContentView;
     MMLiveCDNPlayerView *m_playerView;

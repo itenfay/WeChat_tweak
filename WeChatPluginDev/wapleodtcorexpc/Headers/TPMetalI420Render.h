@@ -6,7 +6,7 @@
 @class MTLTextureDescriptor;
 @protocol MTLTexture;
 
-@interface TPMetalI420Render
+@interface TPMetalI420Render : NSObject
 {
     id <MTLTexture> _yTexture;
     id <MTLTexture> _uTexture;

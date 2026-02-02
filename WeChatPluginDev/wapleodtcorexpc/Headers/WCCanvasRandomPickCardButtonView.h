@@ -5,7 +5,7 @@
 
 @class CustomVisualEffectView, NSString, UIView, WCCanvasRandomLayoutEncorePickInfo;
 
-@interface WCCanvasRandomPickCardButtonView
+@interface WCCanvasRandomPickCardButtonView : NSObject
 {
     WCCanvasRandomLayoutEncorePickInfo *_encoreInfo;
     UIView *_highlightedCoverView;

@@ -6,7 +6,7 @@
 @class AVPlayerItem, AVPlayerLayer, AVURLAsset, NSString, WXAVPlayerView;
 @protocol WCNetworkMediaCoreDelegate;
 
-@interface WCNetworkMediaCore
+@interface WCNetworkMediaCore : NSObject
 {
     WCNetworkMediaCore *weakSelf;
     _Bool hasPlayed;

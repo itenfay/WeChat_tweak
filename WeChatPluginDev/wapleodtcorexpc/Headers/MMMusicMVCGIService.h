@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMMusicMVCGIService
+@interface MMMusicMVCGIService : NSObject
 {
     NSMutableDictionary *_postingMVModeldDic;
 }

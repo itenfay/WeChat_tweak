@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MPPageRelatedInfoCgiTaskResult
+@interface MPPageRelatedInfoCgiTaskResult : NSObject
 {
     unsigned int _refreshIntervalSec;
     unsigned int _maxRequestUrlCount;

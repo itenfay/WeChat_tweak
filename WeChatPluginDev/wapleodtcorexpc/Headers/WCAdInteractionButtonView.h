@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString;
 
-@interface WCAdInteractionButtonView
+@interface WCAdInteractionButtonView : NSObject
 {
     MMUIButton *_button;
 }

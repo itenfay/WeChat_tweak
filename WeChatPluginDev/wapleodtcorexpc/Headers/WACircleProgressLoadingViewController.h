@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSString, UIImageView, UILabel, UIView, WACircleLoadingView, WCTagsView, _TtC9WeAppCore41WALoadingNetWorkInvalidTipsViewController;
 
-@interface WACircleProgressLoadingViewController
+@interface WACircleProgressLoadingViewController : NSObject
 {
     _Bool _showWeAppBrand;
     _Bool _isInDarkMode;

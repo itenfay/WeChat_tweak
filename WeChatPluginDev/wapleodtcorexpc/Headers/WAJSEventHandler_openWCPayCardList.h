@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openWCPayCardList
+@interface WAJSEventHandler_openWCPayCardList : NSObject
 {
 }
 

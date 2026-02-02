@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIImageView, UILabel, WCFinderDataItem, WCFinderFeedContentVM, WCFinderFeedImageView, WCFinderFeedMediaWrap, WCFinderMediaInfo, WCFinderPlayerControlView, WCFinderSimplePlayerInitParam, WCPlayerView;
 @protocol WCFinderFeedContentMediaActionProtocol;
 
-@interface WCFinderSimplePlayerView
+@interface WCFinderSimplePlayerView : NSObject
 {
     _Bool _canPlayMegaVideo;
     _Bool _bDisableAudioModule;

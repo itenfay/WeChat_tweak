@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKSKitMusicSong, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveStorageCleanupPinningToken, MMLiveTaskId, MMTimer, MMUILabel, MMWebImageView, UIButton, UIView, WCFinderAnimationLoadingView;
 
-@interface MMFinderLiveKTVPrepareGuidePanel
+@interface MMFinderLiveKTVPrepareGuidePanel : NSObject
 {
     _Bool _isSongNotifyToPlay;
     _Bool _isSingSessionPrepared;

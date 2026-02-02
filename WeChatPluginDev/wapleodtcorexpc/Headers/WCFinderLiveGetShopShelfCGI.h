@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetShopShelfCGI
+@interface WCFinderLiveGetShopShelfCGI : NSObject
 {
     unsigned int _pullScene;
     CDUnknownBlockType _successBlock;

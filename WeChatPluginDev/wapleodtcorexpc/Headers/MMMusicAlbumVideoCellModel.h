@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAsset, NSString;
 
-@interface MMMusicAlbumVideoCellModel
+@interface MMMusicAlbumVideoCellModel : NSObject
 {
     int _pos;
     NSString *_uniqueId;

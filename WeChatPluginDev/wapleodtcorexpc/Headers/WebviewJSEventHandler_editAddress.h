@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_editAddress
+@interface WebviewJSEventHandler_editAddress : NSObject
 {
     JSEvent *_jsEvent;
 }

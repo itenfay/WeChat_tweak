@@ -6,7 +6,7 @@
 @class AVAsset, MMMusicEditVideoCellModel, MMMusicEditVideoCropView, MMMusicEditVideoPlayerContainerView, MMMusicFinderVideoDownloadHelper, MMMusicLiveLyricDisplayView, MMTimer, NSString, UIView;
 @protocol MMMusicEditVideoCellViewDelegate;
 
-@interface MMMusicEditVideoCellView
+@interface MMMusicEditVideoCellView : NSObject
 {
     _Bool _isDownloadSuccess;
     id <MMMusicEditVideoCellViewDelegate> _delegate;

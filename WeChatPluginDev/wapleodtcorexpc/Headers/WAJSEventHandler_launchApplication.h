@@ -5,7 +5,7 @@
 
 @class NSString, WCSKAdNetworkItem;
 
-@interface WAJSEventHandler_launchApplication
+@interface WAJSEventHandler_launchApplication : NSObject
 {
     NSString *_appID;
     NSString *_launchAppID;

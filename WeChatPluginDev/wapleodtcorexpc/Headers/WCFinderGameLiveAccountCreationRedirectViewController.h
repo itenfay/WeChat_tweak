@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UIView, WCFinderCreateCoordinator, WCFinderLiveStarterReporter;
 
-@interface WCFinderGameLiveAccountCreationRedirectViewController
+@interface WCFinderGameLiveAccountCreationRedirectViewController : NSObject
 {
     UIView *_errorIconView;
     MMUILabel *_titleLabel;

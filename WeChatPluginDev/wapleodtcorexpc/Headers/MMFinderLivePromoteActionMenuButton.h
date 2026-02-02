@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface MMFinderLivePromoteActionMenuButton
+@interface MMFinderLivePromoteActionMenuButton : NSObject
 {
     UIButton *_deleteButton;
 }

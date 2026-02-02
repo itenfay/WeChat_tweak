@@ -5,7 +5,7 @@
 
 @class MAVCopyRendererMetal;
 
-@interface MAVVLogDirectorMultiVideoCompositionEffect
+@interface MAVVLogDirectorMultiVideoCompositionEffect : NSObject
 {
     _Bool _outputSizeChanged;
     float _outputWidth;

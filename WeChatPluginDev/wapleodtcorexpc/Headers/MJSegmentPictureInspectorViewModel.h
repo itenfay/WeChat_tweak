@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MJSegmentPictureInspectorViewModel
+@interface MJSegmentPictureInspectorViewModel : NSObject
 {
     float _brightnessOriginalValue;
     float _contrastOriginalValue;

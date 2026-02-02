@@ -6,7 +6,7 @@
 @class WADeviceVoipAuthDeviceItem;
 @protocol WADeviceVoipAuthModCgiDelegate;
 
-@interface WADeviceVoipAuthModCgi
+@interface WADeviceVoipAuthModCgi : NSObject
 {
     id <WADeviceVoipAuthModCgiDelegate> _delegate;
     WADeviceVoipAuthDeviceItem *_deviceItem;

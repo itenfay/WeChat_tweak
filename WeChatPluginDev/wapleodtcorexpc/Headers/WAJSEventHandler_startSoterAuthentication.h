@@ -5,7 +5,7 @@
 
 @class NSString, SoterSignHelper, SoterUpdateMPAuthKeyCgi;
 
-@interface WAJSEventHandler_startSoterAuthentication
+@interface WAJSEventHandler_startSoterAuthentication : NSObject
 {
     SoterSignHelper *_m_soterSignHelper;
     SoterUpdateMPAuthKeyCgi *_m_cgi;

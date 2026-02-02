@@ -5,7 +5,7 @@
 
 @class MMUIViewController, WAContactGetter;
 
-@interface TemplateMsgExposeLogic
+@interface TemplateMsgExposeLogic : NSObject
 {
     MMUIViewController *_vc;
     WAContactGetter *_contactGetter;

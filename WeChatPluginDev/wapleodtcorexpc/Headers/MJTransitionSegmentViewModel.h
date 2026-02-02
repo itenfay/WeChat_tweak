@@ -5,7 +5,7 @@
 
 @class NSString, OMCTransitionDesc, OMCTransitionSegment;
 
-@interface MJTransitionSegmentViewModel
+@interface MJTransitionSegmentViewModel : NSObject
 {
     OMCTransitionSegment *_transitionSegment;
     _Bool _isBlankTransition;

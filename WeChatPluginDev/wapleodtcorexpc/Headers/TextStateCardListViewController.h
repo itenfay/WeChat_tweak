@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, MultipleTextStateCardCollectionCell, MultipleTextStateCardView, NSIndexPath, NSString, TextStateCardListCollectionView, TextStateCardListFooterView, TextStateCardListSlidingWindowRefreshTask, TextStateModel, TextStateMusicPlayerCoordinator, TextStatePrivacyMgr, UICollectionViewFlowLayout, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, _TtC6WeChat31TextStateFriendSquareTransition;
 @protocol TextStateCardListDataProvider, TextStateCardListDelegate;
 
-@interface TextStateCardListViewController
+@interface TextStateCardListViewController : NSObject
 {
     _Bool _showFooter;
     _Bool _showPublishEntryWhenNoValidTextState;

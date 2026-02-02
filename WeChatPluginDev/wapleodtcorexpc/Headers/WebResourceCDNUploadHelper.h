@@ -6,7 +6,7 @@
 @class NSMutableArray, WebviewLocalResItem;
 @protocol WebResourceCDNUploadHelperDelegate;
 
-@interface WebResourceCDNUploadHelper
+@interface WebResourceCDNUploadHelper : NSObject
 {
     _Bool _isUploading;
     NSMutableArray *_uploadArray;

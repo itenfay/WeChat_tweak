@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MsgDataSaveLogic, MsgFastBrowseView, MsgNewImgDataLogic, MultiSelectController, NSArray, NSMutableDictionary, NSMutableSet, NSString, UIButton, UIView;
 @protocol MsgImgPickerViewControllerDelegate;
 
-@interface MsgImgPickerViewController
+@interface MsgImgPickerViewController : NSObject
 {
     MsgFastBrowseView *m_msgFastBrowseView;
     UIView *m_filterFooterView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BaseMsgContentLogicController, NSMutableArray, NSString;
 
-@interface MMMsgLogicManager
+@interface MMMsgLogicManager : NSObject
 {
     NSMutableArray *_arrLogicControllers;
     BaseMsgContentLogicController *_topLogicController;

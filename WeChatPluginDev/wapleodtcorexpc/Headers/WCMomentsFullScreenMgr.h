@@ -5,7 +5,7 @@
 
 @class NSString, WCDataItem;
 
-@interface WCMomentsFullScreenMgr
+@interface WCMomentsFullScreenMgr : NSObject
 {
     NSString *_fullScreenTid;
     NSString *_fullScreenMid;

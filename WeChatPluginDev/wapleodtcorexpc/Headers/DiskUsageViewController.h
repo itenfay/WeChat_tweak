@@ -5,7 +5,7 @@
 
 @class MMFolder, MMUIActivityIndicatorView, NSString, UIButton;
 
-@interface DiskUsageViewController
+@interface DiskUsageViewController : NSObject
 {
     _Bool _bPro;
     _Bool _isChecking;

@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, GroupNoticeItem, GroupNoticeItemDataField, NSString;
 
-@interface GNFileDetailLogicController
+@interface GNFileDetailLogicController : NSObject
 {
     GroupNoticeItem *m_downloadItem;
     GroupNoticeItem *_item;

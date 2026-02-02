@@ -6,7 +6,7 @@
 @class HoneyPayGetCreateTokenSignCgi, HoneyPaySelectCardTypeViewController, NSString, WCPayCheckHoneyPayerCgi, WCPayCheckHoneyUserCgi, WCPayCreateHoneyPayCardCgi, WCPayGetPayPwdTokenCgi, WCPayPayPwdViewController;
 @protocol HoneyPayCreateControlLogicDelegate;
 
-@interface HoneyPayCreateControlLogic
+@interface HoneyPayCreateControlLogic : NSObject
 {
     id <HoneyPayCreateControlLogicDelegate> _delegate;
     WCPayCheckHoneyPayerCgi *_checkPayerCgi;

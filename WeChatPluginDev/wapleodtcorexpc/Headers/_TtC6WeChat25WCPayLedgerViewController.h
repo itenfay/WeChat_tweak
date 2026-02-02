@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25WCPayLedgerViewController
+@interface _TtC6WeChat25WCPayLedgerViewController : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *dateFormatter;

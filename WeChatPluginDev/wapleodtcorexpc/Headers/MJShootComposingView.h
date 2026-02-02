@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, CALayer, EditImageAttr, EditVideoAttr, MJAIAssetProcessor, MJBubbleTouchCaptureView, MJCamChangeTemplateParams, MJCameraTemplateReportObject, MJPublisherBubbleView, MJShootAlbumEntryView, MJShootBeautyInspector, MJShootBeautyMainPanelView, MJShootBubbleSwitchTouchCaptureView, MJShootComposingRecordButton, MJShootComposingTemplateListView, MJShootComposingTemplatePanelHalfScreenViewController, MJShootComposingViewModel, MJShootCountdownTimerSwitch, MJShootCountdownView, MJShootFaceEffectInspector, MJShootFaceGenderSwitch, MJShootFavTemplateEntranceView, MJShootFilterInspector, MJShootFocusView, MJShootMakeupInspector, MJShootMusicEntryView, MJShootRecordingTimerSwitch, MJShootSideToolbar, MJShootToastManager, MJShootVisagePanelViewController, MMBGMSelectHalfScreenViewController, MMCameraTouchEventView, MMLoadingView, MMShortVideoParamModel, MMSightRecordView, MMTimer, MMUIButton, MMUILabel, MMUIView, NSData, NSString, OMJAIGCParams, OMJCamGestureRecognizerSettings, OMJRecordingResultTraits, UIImage, UIImageView, UIStackView, UIView, UIVisualEffectView, WCShortVideoToolBarInitParams;
 @protocol MJShootComposingViewDelegate;
 
-@interface MJShootComposingView
+@interface MJShootComposingView : NSObject
 {
     _Bool _isPostEditing;
     _Bool _isTakingPicture;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat35WSWebViewPlugin_WeSeeProcessMonitor
+@interface _TtC6WeChat35WSWebViewPlugin_WeSeeProcessMonitor : NSObject
 {
     MISSING_TYPE *didRenderView;
     MISSING_TYPE *$__lazy_storage_$_reporter;

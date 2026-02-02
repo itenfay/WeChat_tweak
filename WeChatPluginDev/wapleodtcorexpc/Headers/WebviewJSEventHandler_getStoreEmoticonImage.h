@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_getStoreEmoticonImage
+@interface WebviewJSEventHandler_getStoreEmoticonImage : NSObject
 {
     NSString *m_md5;
     JSEvent *m_event;

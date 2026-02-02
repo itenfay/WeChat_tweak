@@ -6,7 +6,7 @@
 @class MMUIButton, UIButton, UILabel, WCFinderDataItem, WCFinderLandScapePlayerParam, WCFinderNormalProgressBar, WCFinderPlayRateButton;
 @protocol WCFinderLandScapeVideoProgressDisplayViewDelegate;
 
-@interface WCFinderLandScapeVideoProgressDisplayView
+@interface WCFinderLandScapeVideoProgressDisplayView : NSObject
 {
     id <WCFinderLandScapeVideoProgressDisplayViewDelegate> _delegate;
     WCFinderDataItem *_dataItem;

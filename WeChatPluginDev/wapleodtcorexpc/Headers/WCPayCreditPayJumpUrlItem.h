@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayCreditPayJumpUrlItem
+@interface WCPayCreditPayJumpUrlItem : NSObject
 {
     NSString *m_nsTitle;
     NSString *m_nsJumpUrl;

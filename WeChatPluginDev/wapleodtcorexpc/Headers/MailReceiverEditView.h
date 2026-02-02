@@ -6,7 +6,7 @@
 @class HackUITextField, NSMutableArray, NSString, UIButton, UILabel;
 @protocol MailReceiverEditViewDelegate;
 
-@interface MailReceiverEditView
+@interface MailReceiverEditView : NSObject
 {
     NSMutableArray *m_arrReceiverButtons;
     long long m_uiReceiverEditViewTag;

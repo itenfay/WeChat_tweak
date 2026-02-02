@@ -5,7 +5,7 @@
 
 @class MMUIView;
 
-@interface MaskButtonView
+@interface MaskButtonView : NSObject
 {
     MMUIView *_maskButtonHighlightedView;
 }

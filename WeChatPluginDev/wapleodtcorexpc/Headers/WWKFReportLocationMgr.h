@@ -5,7 +5,7 @@
 
 @class LocationRetriever, NSMutableDictionary, NSString;
 
-@interface WWKFReportLocationMgr
+@interface WWKFReportLocationMgr : NSObject
 {
     _Bool _retrieveringLocation;
     LocationRetriever *_locationRetriever;

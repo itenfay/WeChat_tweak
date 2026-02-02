@@ -5,7 +5,7 @@
 
 @class MMUIButton;
 
-@interface ContactTagSearchBottomBar
+@interface ContactTagSearchBottomBar : NSObject
 {
     MMUIButton *_multiSelectButton;
     MMUIButton *_cancelMultiSelectButton;

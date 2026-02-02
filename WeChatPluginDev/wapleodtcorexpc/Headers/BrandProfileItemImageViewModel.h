@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandProfileItemImageViewModel
+@interface BrandProfileItemImageViewModel : NSObject
 {
     struct CGSize _coverImgSize;
 }

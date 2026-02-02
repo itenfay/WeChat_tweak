@@ -5,7 +5,7 @@
 
 @class MsgDataDownloadLogic, NSString, ThumbImageUploader, VideoEncodeParams;
 
-@interface CompressVideoUploadTask
+@interface CompressVideoUploadTask : NSObject
 {
     _Bool _isSkipTransH264;
     _Bool _bTryHevcConvert;

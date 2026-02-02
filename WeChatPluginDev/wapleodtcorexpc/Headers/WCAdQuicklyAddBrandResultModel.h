@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdQuicklyAddBrandResultModel
+@interface WCAdQuicklyAddBrandResultModel : NSObject
 {
     int _enterType;
     int _result;

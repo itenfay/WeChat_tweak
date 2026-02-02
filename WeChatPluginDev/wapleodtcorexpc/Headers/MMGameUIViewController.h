@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface MMGameUIViewController
+@interface MMGameUIViewController : NSObject
 {
     _Bool _bTopWhiteStyle;
     _Bool _noNeedReport;

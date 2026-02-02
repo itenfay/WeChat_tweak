@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x141
+@interface WloginTlv_0x141 : NSObject
 {
     unsigned short wDataVer;
     NSString *sOperator;

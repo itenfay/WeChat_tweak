@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMGameAudioMixWrapper, MMGameOffTexture, MMMediaServiceWrapper, NSString;
 
-@interface WAWebViewPlugin_MediaService
+@interface WAWebViewPlugin_MediaService : NSObject
 {
     struct mutex mReaderMutex;
     struct map<unsigned int, ReaderTask, std::less<unsigned int>, std::allocator<std::pair<const unsigned int, ReaderTask>>> mReaders;

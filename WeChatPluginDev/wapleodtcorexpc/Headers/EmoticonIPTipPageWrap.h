@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface EmoticonIPTipPageWrap
+@interface EmoticonIPTipPageWrap : NSObject
 {
     NSArray *_tipDataArray;
     NSString *_ipSetKey;

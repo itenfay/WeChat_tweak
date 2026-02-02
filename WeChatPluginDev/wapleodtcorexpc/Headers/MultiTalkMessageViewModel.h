@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface MultiTalkMessageViewModel
+@interface MultiTalkMessageViewModel : NSObject
 {
     NSDictionary *m_contentJsonDict;
     double m_headerContentHeight;

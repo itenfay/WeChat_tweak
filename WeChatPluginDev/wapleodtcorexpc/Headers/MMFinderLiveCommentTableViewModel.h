@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCommentDataAppendLogic;
 
-@interface MMFinderLiveCommentTableViewModel
+@interface MMFinderLiveCommentTableViewModel : NSObject
 {
     _Bool _needTableViewAutoScrollToRereshBeforeUnDisplay;
     _Bool _hasSuccessLoadLocalDataAfterDisplay;

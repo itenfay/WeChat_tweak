@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAssetExportSession;
 
-@interface MMVideoNotCompressTask
+@interface MMVideoNotCompressTask : NSObject
 {
     MMAssetExportSession *_mmAssetExportSession;
 }

@@ -5,7 +5,7 @@
 
 @class LiveInfo, MMLivePlayerProgressBar, MMLiveTaskId, MMUIButton, MMUILabel, NSString, WCPlayerConfigControlView, WCPlayerPlayArgs, WCPlayerView, WXFullScreenGestureRecognizer;
 
-@interface MMLiveReplayViewController
+@interface MMLiveReplayViewController : NSObject
 {
     _Bool _toolViewHidden;
     MMLiveTaskId *_liveTaskId;

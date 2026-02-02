@@ -5,7 +5,7 @@
 
 @class WAEJTexture;
 
-@interface WAEJCanvasContext2DTexture
+@interface WAEJCanvasContext2DTexture : NSObject
 {
     WAEJTexture *texture;
 }

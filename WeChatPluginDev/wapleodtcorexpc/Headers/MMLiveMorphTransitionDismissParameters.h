@@ -6,7 +6,7 @@
 @class UIView;
 @protocol MMLiveMorphDismissSource;
 
-@interface MMLiveMorphTransitionDismissParameters
+@interface MMLiveMorphTransitionDismissParameters : NSObject
 {
     UIView *_customSnapView;
     id <MMLiveMorphDismissSource> _sourceContext;

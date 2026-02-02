@@ -5,7 +5,7 @@
 
 @class MMTimer, MMUILabel, UIView, WCPlayerConfigFullScreenProgressBarParams, WXHighlightableVideoSlider;
 
-@interface WCPlayerConfigFullScreenProgressBar
+@interface WCPlayerConfigFullScreenProgressBar : NSObject
 {
     _Bool _isPlaying;
     _Bool _isMinimized;

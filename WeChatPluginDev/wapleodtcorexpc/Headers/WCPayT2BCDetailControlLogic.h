@@ -6,7 +6,7 @@
 @class NSString, WCPayT2BCQueryDetailCgi;
 @protocol WCPayT2BCDetailControlLogicDelegate;
 
-@interface WCPayT2BCDetailControlLogic
+@interface WCPayT2BCDetailControlLogic : NSObject
 {
     id <WCPayT2BCDetailControlLogicDelegate> _t2bcDetailLogicDelegate;
     WCPayT2BCQueryDetailCgi *_m_queryDetailCgi;

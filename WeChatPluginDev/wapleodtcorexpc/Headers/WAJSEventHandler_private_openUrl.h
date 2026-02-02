@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_private_openUrl
+@interface WAJSEventHandler_private_openUrl : NSObject
 {
 }
 

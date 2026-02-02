@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIViewController, WAMapAppNavigateItem;
 @protocol WANavigateLogicControllerDelegate;
 
-@interface WANavigateLogicController
+@interface WANavigateLogicController : NSObject
 {
     id <WANavigateLogicControllerDelegate> _delegate;
     NSArray *_allMaps;

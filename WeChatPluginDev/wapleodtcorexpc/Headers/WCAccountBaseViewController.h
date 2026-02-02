@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, WCAccountControlData, WCSheetView;
 
-@interface WCAccountBaseViewController
+@interface WCAccountBaseViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WCAccountControlData *m_data;

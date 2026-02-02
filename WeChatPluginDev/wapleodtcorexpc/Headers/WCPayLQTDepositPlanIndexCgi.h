@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTDepositPlanIndexCgiDelegate;
 
-@interface WCPayLQTDepositPlanIndexCgi
+@interface WCPayLQTDepositPlanIndexCgi : NSObject
 {
     _Bool _fromServer;
     id <WCPayLQTDepositPlanIndexCgiDelegate> _m_delegate;

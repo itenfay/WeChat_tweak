@@ -5,7 +5,7 @@
 
 @class ColorGradientView, MMUILabel, NSString, WCAdClickBarView, WCAdIconView;
 
-@interface WCAdFullCardContentContainerView
+@interface WCAdFullCardContentContainerView : NSObject
 {
     _Bool _hasClickBar;
     _Bool _doOnce;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCanvasComponentScrollGroupInfo
+@interface WCCanvasComponentScrollGroupInfo : NSObject
 {
     NSArray *_componentItemList;
     NSString *_indicatorColor;

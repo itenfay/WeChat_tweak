@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, WADynamicBackgroundSystem;
 @protocol WADynamicBackgroundGLViewControllerDelegate;
 
-@interface WADynamicBackgroundGLViewController
+@interface WADynamicBackgroundGLViewController : NSObject
 {
     _Bool _canDraw;
     _Bool _isTryingDrawFirstFrame;

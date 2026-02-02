@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveModShelfPinProductToTopCGI
+@interface WCFinderLiveModShelfPinProductToTopCGI : NSObject
 {
     _Bool _cancel;
     unsigned long long _productId;

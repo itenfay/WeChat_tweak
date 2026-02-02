@@ -6,7 +6,7 @@
 @class CertInfo, MMBrandHeadImageView, MMTableView, NSArray, NSMutableArray, NSString, UIButton, WCADPageWrap, WOAPPrivacyConfirmLogic;
 @protocol ContactInfoAssistDelegate;
 
-@interface BrandUserContactInfoAssist
+@interface BrandUserContactInfoAssist : NSObject
 {
     UIButton *_viewMsgBtn;
     UIButton *_followBtn;

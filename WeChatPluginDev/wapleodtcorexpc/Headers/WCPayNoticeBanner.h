@@ -6,7 +6,7 @@
 @class MMUILabel, NSString;
 @protocol WCPayNoticeBannerDelegate;
 
-@interface WCPayNoticeBanner
+@interface WCPayNoticeBanner : NSObject
 {
     id <WCPayNoticeBannerDelegate> _delegate;
     MMUILabel *_titleLabel;

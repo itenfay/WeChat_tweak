@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, WSPersonalizedRecommendManager;
 
-@interface WSWowBlackListSettingViewController
+@interface WSWowBlackListSettingViewController : NSObject
 {
     _Bool _isRequestingHide;
     _Bool _isRequestingBlock;

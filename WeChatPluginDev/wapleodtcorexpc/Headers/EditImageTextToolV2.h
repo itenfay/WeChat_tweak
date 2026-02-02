@@ -6,7 +6,7 @@
 @class CATextLayer, EditImageTextView, NSString, UIColor, UIView, WCEditViewControllerUIConfig;
 @protocol EditImageTextToolV2Delegate;
 
-@interface EditImageTextToolV2
+@interface EditImageTextToolV2 : NSObject
 {
     CATextLayer *_tlayer;
     double _strWidth;

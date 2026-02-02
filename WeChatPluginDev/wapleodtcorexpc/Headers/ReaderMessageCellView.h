@@ -6,7 +6,7 @@
 @class BTRichTextTagView, CALayer, MMWebImageView, NSArray, NSMutableArray, NSString, ReaderMessageViewModel, RichTextView, UIView;
 @protocol ReaderMessageFolderCellViewDelegate;
 
-@interface ReaderMessageCellView
+@interface ReaderMessageCellView : NSObject
 {
     NSArray *m_arrBtnList;
     BTRichTextTagView *m_titleView;

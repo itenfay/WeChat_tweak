@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface AppHardWareNotifyMessageCellView
+@interface AppHardWareNotifyMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
     UIImageView *m_arrowImageView;

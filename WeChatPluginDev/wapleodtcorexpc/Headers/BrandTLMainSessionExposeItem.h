@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface BrandTLMainSessionExposeItem
+@interface BrandTLMainSessionExposeItem : NSObject
 {
     unsigned int _position;
     unsigned int _uNewNotifyMsgCount;

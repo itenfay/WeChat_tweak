@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UITableView;
 
-@interface WCLabSettingViewControllerNew
+@interface WCLabSettingViewControllerNew : NSObject
 {
     NSArray *_onlineLabsItems;
     NSArray *_offlineLabsItems;

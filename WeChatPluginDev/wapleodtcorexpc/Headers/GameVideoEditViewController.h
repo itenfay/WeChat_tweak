@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditVideoLogicItem, MMAsset, NSDictionary, NSNumber, NSString, UIImage, WAAppActionSheet;
 @protocol GameVideoEditViewControllerDelegate;
 
-@interface GameVideoEditViewController
+@interface GameVideoEditViewController : NSObject
 {
     NSNumber *_videoFileSize;
     _Bool _needExtUrl;

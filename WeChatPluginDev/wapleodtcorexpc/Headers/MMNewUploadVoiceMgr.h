@@ -6,7 +6,7 @@
 @class CMMDB, MMTimer, NSMutableDictionary, NSRecursiveLock;
 @protocol UploadVoiceDelegate;
 
-@interface MMNewUploadVoiceMgr
+@interface MMNewUploadVoiceMgr : NSObject
 {
     CMMDB *m_oMMDB;
     NSRecursiveLock *m_oLock;

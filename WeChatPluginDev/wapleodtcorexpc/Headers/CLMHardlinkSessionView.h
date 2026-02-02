@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString, UINavigationController;
 
-@interface CLMHardlinkSessionView
+@interface CLMHardlinkSessionView : NSObject
 {
     MMTableView *_mainTableView;
     NSMutableArray *_chatLogInfoArray;

@@ -6,7 +6,7 @@
 @class CContact, NSMutableArray, NSString, WCColorProxy;
 @protocol ChatRoomMemberGridViewDelegate;
 
-@interface NewChatRoomMemberContainView
+@interface NewChatRoomMemberContainView : NSObject
 {
     NSMutableArray *m_arrItemViews;
     CContact *m_groupContact;

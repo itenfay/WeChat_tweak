@@ -6,7 +6,7 @@
 @class MISSING_TYPE;
 @protocol IMBFileSystem, _TtP6WeChat28MagicSclJsApiContextDelegate_;
 
-@interface _TtC6WeChat20MagicSclJsApiContext
+@interface _TtC6WeChat20MagicSclJsApiContext : NSObject
 {
     MISSING_TYPE *sclDelegate;
     MISSING_TYPE *fileSystem;

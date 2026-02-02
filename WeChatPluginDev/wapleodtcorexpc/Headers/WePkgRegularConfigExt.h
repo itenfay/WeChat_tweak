@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WePkgRegularConfigExt
+@interface WePkgRegularConfigExt : NSObject
 {
     unsigned int _lastUnusedSeconds;
     unsigned int _checkIntervalSeconds;

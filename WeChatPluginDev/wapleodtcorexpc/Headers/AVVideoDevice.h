@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, CMMotionManager, NSMutableArray, NSObject, NSRecursiveLock, NSString, WeVisVoipEffectMgr, XImageContext;
 @protocol AVVideoDataSource, AVVideoDeviceDelegate, AVVideoDeviceFrameDelegate, AVVideoDeviceSessionDelegate, OS_dispatch_queue;
 
-@interface AVVideoDevice
+@interface AVVideoDevice : NSObject
 {
     _Bool _m_usingBackCamera;
     _Bool _enableClipBeforePreprocessing;

@@ -5,7 +5,7 @@
 
 @class AVPlayer, MPVolumeView, NSMutableArray, NSString;
 
-@interface WATemplateAudioPlayer
+@interface WATemplateAudioPlayer : NSObject
 {
     float _m_lastVolume;
     NSMutableArray *_queue;

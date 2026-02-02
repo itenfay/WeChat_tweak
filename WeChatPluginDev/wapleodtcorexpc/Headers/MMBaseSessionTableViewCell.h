@@ -6,7 +6,7 @@
 @class MMBadgeView, MMBaseSessionCellData, MMCPLabel, MMHeadImageView, NSString, SessionCellLayoutParam, UIImageView, UILabel, UIView;
 @protocol MMBaseSessionCellDelegate;
 
-@interface MMBaseSessionTableViewCell
+@interface MMBaseSessionTableViewCell : NSObject
 {
     UILabel *m_msgLabel;
     MMBaseSessionCellData *m_cellData;

@@ -5,7 +5,7 @@
 
 @class NSAttributedString;
 
-@interface AttributedReaderMessageViewModel
+@interface AttributedReaderMessageViewModel : NSObject
 {
     NSAttributedString *m_digestAttrString;
     _Bool _forceHideRightCoverImage;

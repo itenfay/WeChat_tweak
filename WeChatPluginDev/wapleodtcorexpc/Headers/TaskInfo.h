@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TaskInfo
+@interface TaskInfo : NSObject
 {
     _Bool _bIsPresented;
     double taskAddTime;

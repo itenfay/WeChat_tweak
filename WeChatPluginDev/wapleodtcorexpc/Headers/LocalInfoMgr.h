@@ -5,7 +5,7 @@
 
 @class CLocalInfo, NSRecursiveLock, NSString;
 
-@interface LocalInfoMgr
+@interface LocalInfoMgr : NSObject
 {
     NSRecursiveLock *m_lock;
     CLocalInfo *m_localInfo;

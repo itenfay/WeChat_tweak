@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString, UILabel, WCPayTransToBankCardReceiver, WCUIAlertView;
 @protocol WCPaySelectReceiverViewControllerDelegate;
 
-@interface WCPaySelectReceiverViewController
+@interface WCPaySelectReceiverViewController : NSObject
 {
     MMTableView *m_tableView;
     id <WCPaySelectReceiverViewControllerDelegate> _delegate;

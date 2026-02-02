@@ -6,7 +6,7 @@
 @class JSEvent, NSDictionary, NSString;
 @protocol WCPayJumpPayCardListLogicDelegate;
 
-@interface WCPayJumpPayCardListLogic
+@interface WCPayJumpPayCardListLogic : NSObject
 {
     JSEvent *_m_jsEvent;
     id <WCPayJumpPayCardListLogicDelegate> _m_delegate;

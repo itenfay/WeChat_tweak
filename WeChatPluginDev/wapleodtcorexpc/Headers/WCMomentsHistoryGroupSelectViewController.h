@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableSet, NSString, UILabel, WCMomentsHistoryGroupViewModel;
 @protocol WCMomentsHistoryGroupSelectViewControllerDelegate;
 
-@interface WCMomentsHistoryGroupSelectViewController
+@interface WCMomentsHistoryGroupSelectViewController : NSObject
 {
     id <WCMomentsHistoryGroupSelectViewControllerDelegate> _delegate;
     WCMomentsHistoryGroupViewModel *_historyGroupVM;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveTextStickerRecordAttributes
+@interface MMFinderLiveTextStickerRecordAttributes : NSObject
 {
     NSString *_text;
     double _colorR;

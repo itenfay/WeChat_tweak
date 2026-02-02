@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UITextField, UIWindow;
 @protocol GraphicVerifyWindowDelegate;
 
-@interface GraphicVerifyWindow
+@interface GraphicVerifyWindow : NSObject
 {
     UIImageView *m_codeImageView;
     UIButton *m_changeImgBtn;

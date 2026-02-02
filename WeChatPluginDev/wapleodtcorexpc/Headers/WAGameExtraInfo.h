@@ -5,7 +5,7 @@
 
 @class GetWxaGameConfigResponse_WxagGameOriginalReviewConfig, GetWxaGameConfigResponse_WxagGameReviewsConfig, WxaGameBaseInfo;
 
-@interface WAGameExtraInfo
+@interface WAGameExtraInfo : NSObject
 {
     GetWxaGameConfigResponse_WxagGameOriginalReviewConfig *_gameEvaluateConfig;
     GetWxaGameConfigResponse_WxagGameReviewsConfig *_gameReviewConfig;

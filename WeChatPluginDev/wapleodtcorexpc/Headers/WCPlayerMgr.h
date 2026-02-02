@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCPlayerMgr
+@interface WCPlayerMgr : NSObject
 {
     _Bool _bDownloadProxyInitFail;
     _Bool _isAppResignActive;

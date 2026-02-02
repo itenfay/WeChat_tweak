@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMFinderLiveConnectMicInviteAudienceCellView
+@interface MMFinderLiveConnectMicInviteAudienceCellView : NSObject
 {
     UILabel *_rightLabel;
 }

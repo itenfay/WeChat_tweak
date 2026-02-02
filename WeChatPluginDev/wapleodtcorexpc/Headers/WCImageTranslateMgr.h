@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCImageTranslateMgr
+@interface WCImageTranslateMgr : NSObject
 {
 }
 

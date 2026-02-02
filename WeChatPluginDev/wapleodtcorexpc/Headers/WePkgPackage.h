@@ -5,7 +5,7 @@
 
 @class NSHashTable, NSMutableDictionary, NSString, WePkgMetaInfo, WePkgParser, WePkgRegularConfig;
 
-@interface WePkgPackage
+@interface WePkgPackage : NSObject
 {
     _Bool _isCheckPackage;
     NSString *_pkgId;

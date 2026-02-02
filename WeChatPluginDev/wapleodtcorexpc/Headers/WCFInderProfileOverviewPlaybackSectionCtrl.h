@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFInderProfileOverviewPlaybackSectionCtrl
+@interface WCFInderProfileOverviewPlaybackSectionCtrl : NSObject
 {
 }
 

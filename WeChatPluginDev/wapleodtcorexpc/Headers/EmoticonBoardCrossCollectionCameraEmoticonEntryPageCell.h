@@ -6,7 +6,7 @@
 @class NSString;
 @protocol EmoticonBoardCrossCollectionCameraEmoticonEntryPageDelegate;
 
-@interface EmoticonBoardCrossCollectionCameraEmoticonEntryPageCell
+@interface EmoticonBoardCrossCollectionCameraEmoticonEntryPageCell : NSObject
 {
 }
 

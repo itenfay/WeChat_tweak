@@ -6,7 +6,7 @@
 @class NSString, UnifyAuthResponse, WCAccountErrorHandleLogic, WCAccountGraphicVerifyControlLogic;
 @protocol WCAccountManualAuthControlLogicDelegate;
 
-@interface WCAccountManualAuthControlLogic
+@interface WCAccountManualAuthControlLogic : NSObject
 {
     WCAccountGraphicVerifyControlLogic *m_graphicVerifyLogic;
     id <WCAccountManualAuthControlLogicDelegate> m_delegate;

@@ -6,7 +6,7 @@
 @class MMWebImageView, NSString, UILabel;
 @protocol MMLocationAttributeBannerDelegate;
 
-@interface MMLocationAttributeBanner
+@interface MMLocationAttributeBanner : NSObject
 {
     NSString *_title;
     NSString *_logoUrl;

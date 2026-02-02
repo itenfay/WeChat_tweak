@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, FavDataItemWrap, FavoritesItem, FavoritesItemDataField, MMScrollActionSheet, MiniRecTransitionController, NSMutableArray, NSString, RTEAttachmentViewProvider, UIImage, WCDataItem, WNContentStorage, WNSaveImageLogic, WeNoteAffDelegateLogic, WeNoteFlutterInstance, WeNoteReportLogic;
 
-@interface WeNoteFlutterViewController
+@interface WeNoteFlutterViewController : NSObject
 {
     unsigned int m_oriVersion;
     WeNoteFlutterInstance *m_flutterInstance;

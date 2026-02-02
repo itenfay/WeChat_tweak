@@ -5,7 +5,7 @@
 
 @class MJVideoTemplate, NSMutableSet, NSString;
 
-@interface WCMomentsTemplateManager
+@interface WCMomentsTemplateManager : NSObject
 {
     _Bool _isCheckingUpdatesForDefaulteTemplates;
     NSMutableSet *_preloadingTemplateIDs;

@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel, UIView, WCFinderFeedContentVM, WCFinderFeedImageCDNView, WCFinderLiveNowView;
 
-@interface WAMainFrameTaskBarSectionLiveViewCell
+@interface WAMainFrameTaskBarSectionLiveViewCell : NSObject
 {
     WCFinderFeedImageCDNView *_finderCoverView;
     UIView *_liveNowView;

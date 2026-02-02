@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UILabel, UIView;
 
-@interface MMFinderLiveFreeMicFeatureDescriptionPanel
+@interface MMFinderLiveFreeMicFeatureDescriptionPanel : NSObject
 {
     CDUnknownBlockType _freeMicFeatureDescriptionPanelDidCloseBlock;
     UIView *_contentView;

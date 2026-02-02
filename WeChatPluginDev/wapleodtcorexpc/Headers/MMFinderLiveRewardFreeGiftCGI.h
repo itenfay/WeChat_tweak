@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardFreeGiftParams;
 
-@interface MMFinderLiveRewardFreeGiftCGI
+@interface MMFinderLiveRewardFreeGiftCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

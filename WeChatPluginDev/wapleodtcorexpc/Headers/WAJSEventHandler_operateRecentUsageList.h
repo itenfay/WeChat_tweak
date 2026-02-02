@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_operateRecentUsageList
+@interface WAJSEventHandler_operateRecentUsageList : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class TXCSharpFilter;
 
-@interface TXCSoftBeautifyFilter
+@interface TXCSoftBeautifyFilter : NSObject
 {
     TXCSharpFilter *_sharpFilter;
 }

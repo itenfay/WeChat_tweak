@@ -5,7 +5,7 @@
 
 @class NSString, PhoneNumberFormatLogic, WCAccountManualAuthControlLogic, WCAccountNewPhoneVerifyViewController, WCAccountVerifyCodeHandler;
 
-@interface WCAccountNewPhoneLoginControlLogic
+@interface WCAccountNewPhoneLoginControlLogic : NSObject
 {
     WCAccountVerifyCodeHandler *_verifyCodeHandler;
     WCAccountManualAuthControlLogic *_manualAuthLogic;

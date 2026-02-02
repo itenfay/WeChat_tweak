@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface KvReportItem29582
+@interface KvReportItem29582 : NSObject
 {
     unsigned int _action_21;
     unsigned int _topPageAfterDraggingDown_22;

@@ -5,7 +5,7 @@
 
 @class MMFinderLivePromoteDisplayLeaseToken;
 
-@interface MMFinderLivePromoteDisplayWeakTokenLease
+@interface MMFinderLivePromoteDisplayWeakTokenLease : NSObject
 {
     MMFinderLivePromoteDisplayLeaseToken *_weakToken;
 }

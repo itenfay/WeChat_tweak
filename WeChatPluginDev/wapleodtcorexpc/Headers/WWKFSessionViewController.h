@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, NSString, WWKFContactOpLogic;
 
-@interface WWKFSessionViewController
+@interface WWKFSessionViewController : NSObject
 {
     MMUILabel *_emptyTipsLabel;
     MMTableView *_tableView;

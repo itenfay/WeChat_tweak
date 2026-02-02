@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString;
 
-@interface MMLiveBaseOnlineStateBar
+@interface MMLiveBaseOnlineStateBar : NSObject
 {
     _Bool _removeAvatarIcon;
     _Bool _showingRunningBank;

@@ -5,7 +5,7 @@
 
 @class AnyPromise, MMTableView, NSString, RingToneDetail, RingToneHomePageActionReporter_23612, RingToneMixPlayer, RingTonePickerViewController, RingToneSettingHeaderView, RingToneVideoFeedViewController, VideoRingExclusiveFriendsViewModel, VideoRingMediaModel, VideoRingNetProvider, WCTimeLineFooterView;
 
-@interface RingToneSettingViewController
+@interface RingToneSettingViewController : NSObject
 {
     AnyPromise *_preload_friendsRingPromise;
     AnyPromise *_preload_globalRingPromise;

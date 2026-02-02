@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCPayWordingHelpMgr
+@interface WCPayWordingHelpMgr : NSObject
 {
     unsigned int _lastUpdateTime;
     NSMutableDictionary *_serverDefaultWordingDict;

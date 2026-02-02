@@ -5,7 +5,7 @@
 
 @class MMResDecryptUrlInfo, NSString;
 
-@interface MMResDecryptInfo
+@interface MMResDecryptInfo : NSObject
 {
     unsigned int _resType;
     unsigned int _subResType;

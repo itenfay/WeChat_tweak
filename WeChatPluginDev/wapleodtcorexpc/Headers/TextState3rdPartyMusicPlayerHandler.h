@@ -5,7 +5,7 @@
 
 @class MMMusicVideoStatusOpenParams;
 
-@interface TextState3rdPartyMusicPlayerHandler
+@interface TextState3rdPartyMusicPlayerHandler : NSObject
 {
     MMMusicVideoStatusOpenParams *_params;
 }

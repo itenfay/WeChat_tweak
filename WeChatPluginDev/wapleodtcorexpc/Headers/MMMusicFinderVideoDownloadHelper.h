@@ -5,7 +5,7 @@
 
 @protocol MMMusicFinderVideoDownloadHelperDelegate;
 
-@interface MMMusicFinderVideoDownloadHelper
+@interface MMMusicFinderVideoDownloadHelper : NSObject
 {
     id <MMMusicFinderVideoDownloadHelperDelegate> _delegate;
 }

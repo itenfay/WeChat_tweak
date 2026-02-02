@@ -6,7 +6,7 @@
 @class NSIndexPath, NSString, WCFinderCarouselCollectionView, WCFinderCarouselFlowLayout;
 @protocol WCFinderCarouseDelegate, WCFinderCarouselDatasource;
 
-@interface WCFinderCarouselView
+@interface WCFinderCarouselView : NSObject
 {
     _Bool _endless;
     unsigned long long _style;

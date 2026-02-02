@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebViewPlugin_WebNavigationPerf
+@interface MMWebViewPlugin_WebNavigationPerf : NSObject
 {
     unsigned long long _viewControllerCreateTimeInMs;
     unsigned long long _viewControllerCreateEndTimeInMs;

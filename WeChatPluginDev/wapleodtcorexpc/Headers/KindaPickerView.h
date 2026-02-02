@@ -5,7 +5,7 @@
 
 @class MMVoidListCallback, NSArray, NSString, UIPickerView;
 
-@interface KindaPickerView
+@interface KindaPickerView : NSObject
 {
     UIPickerView *_pickerView;
     MMVoidListCallback *_callback;

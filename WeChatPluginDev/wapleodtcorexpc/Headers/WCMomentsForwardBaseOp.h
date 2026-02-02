@@ -6,7 +6,7 @@
 @class CMessageWrap, ForwardMessageLogicController, NSString, WCDataItem, WCMediaItem;
 @protocol WCMomentsForwardBaseOpDelegate;
 
-@interface WCMomentsForwardBaseOp
+@interface WCMomentsForwardBaseOp : NSObject
 {
     _Bool _isToCustomContact;
     ForwardMessageLogicController *_forwardMsgLogic;

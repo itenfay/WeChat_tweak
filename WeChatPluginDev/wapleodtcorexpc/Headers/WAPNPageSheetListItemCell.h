@@ -5,7 +5,7 @@
 
 @class PhoneAuthGetPhoneNumberLogicDisplayPhoneInfo, UIImageView, UILabel, UIView;
 
-@interface WAPNPageSheetListItemCell
+@interface WAPNPageSheetListItemCell : NSObject
 {
     UILabel *_phoneNumberLabel;
     UILabel *_describeLabel;

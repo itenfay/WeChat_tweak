@@ -5,7 +5,7 @@
 
 @class TSTrackedMotionSequence, TSTrackedSlideItem;
 
-@interface TSTrackedTouchMotionItem
+@interface TSTrackedTouchMotionItem : NSObject
 {
     TSTrackedSlideItem *_slideItem;
     TSTrackedMotionSequence *_motionSequence;

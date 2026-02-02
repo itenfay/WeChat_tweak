@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandTimelineMsgDBDigestInfoItem
+@interface BrandTimelineMsgDBDigestInfoItem : NSObject
 {
     _Bool _isBold;
     NSString *_digest;

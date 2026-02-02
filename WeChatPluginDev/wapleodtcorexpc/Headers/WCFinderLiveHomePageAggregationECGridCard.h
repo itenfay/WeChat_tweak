@@ -5,7 +5,7 @@
 
 @class InfiniteLoopContainerView, MMLiveColorfulLabel, MMTimer, NSString;
 
-@interface WCFinderLiveHomePageAggregationECGridCard
+@interface WCFinderLiveHomePageAggregationECGridCard : NSObject
 {
     MMLiveColorfulLabel *_titleLabel;
     MMLiveColorfulLabel *_subTitleLabel;

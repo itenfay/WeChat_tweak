@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSString, UIColor, UIScrollView, UIView;
 @protocol WCActionSheetDelegate;
 
-@interface WCActionSheet
+@interface WCActionSheet : NSObject
 {
     _Bool _shouldHide;
     _Bool _shortIntervalLine;

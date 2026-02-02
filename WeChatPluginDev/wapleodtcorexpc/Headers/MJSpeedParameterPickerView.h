@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface MJSpeedParameterPickerView
+@interface MJSpeedParameterPickerView : NSObject
 {
     double _indicatorHeight;
     UIView *_indicatorView;

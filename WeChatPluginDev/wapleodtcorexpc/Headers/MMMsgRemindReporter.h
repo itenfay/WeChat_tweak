@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableSet, NSString;
 
-@interface MMMsgRemindReporter
+@interface MMMsgRemindReporter : NSObject
 {
     _Bool _isRecording;
     _Bool _hasLeavePageAtRecording;

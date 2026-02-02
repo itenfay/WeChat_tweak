@@ -5,7 +5,7 @@
 
 @class WCFinderAnimationLoadingView;
 
-@interface WCFinderProfileNormalTopRefreshView
+@interface WCFinderProfileNormalTopRefreshView : NSObject
 {
     WCFinderAnimationLoadingView *_loadingView;
 }

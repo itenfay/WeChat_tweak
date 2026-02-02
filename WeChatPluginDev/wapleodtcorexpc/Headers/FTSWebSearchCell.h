@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, UIImageView, UIStackView, UIView;
 
-@interface FTSWebSearchCell
+@interface FTSWebSearchCell : NSObject
 {
     MMUILabel *_keyLabel;
     MMWebImageView *_searchIcon;

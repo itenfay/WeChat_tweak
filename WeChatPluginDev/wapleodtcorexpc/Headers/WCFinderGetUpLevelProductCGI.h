@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetUpLevelProductCGI
+@interface WCFinderGetUpLevelProductCGI : NSObject
 {
     _Bool _useForLottery;
     unsigned int _targetLevel;

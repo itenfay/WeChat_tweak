@@ -5,7 +5,7 @@
 
 @class MMUINavigationController, NSArray, NSMutableDictionary, NSString;
 
-@interface WAJSEventHandler_chooseMessageFile
+@interface WAJSEventHandler_chooseMessageFile : NSObject
 {
     _Bool _showingLoading;
     _Bool _selectCanceled;

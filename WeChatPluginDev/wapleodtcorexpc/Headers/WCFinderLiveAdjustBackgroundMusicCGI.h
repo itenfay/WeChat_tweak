@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBriefMusicInfo, NSData, NSString;
 
-@interface WCFinderLiveAdjustBackgroundMusicCGI
+@interface WCFinderLiveAdjustBackgroundMusicCGI : NSObject
 {
     unsigned int _bizScene;
     unsigned int _curVolume;

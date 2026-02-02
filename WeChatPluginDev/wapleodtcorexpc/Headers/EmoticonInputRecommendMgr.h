@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonGetWordListCGI, EmoticonRemoteRecommendTable, EmoticonWordListMeta, MMAsyncBlockOperation, MemoryMappedKV, NSArray, NSMutableDictionary, NSMutableSet, NSNumber, NSObject, NSOperationQueue, NSString;
 @protocol OS_dispatch_queue;
 
-@interface EmoticonInputRecommendMgr
+@interface EmoticonInputRecommendMgr : NSObject
 {
     _Bool _enableRemoteRecommend;
     _Bool _loading;

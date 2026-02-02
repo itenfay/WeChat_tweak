@@ -5,7 +5,7 @@
 
 @class NSString, SessionSelectController;
 
-@interface WAJSEventHandler_shareFinderEndorsementToFriend
+@interface WAJSEventHandler_shareFinderEndorsementToFriend : NSObject
 {
     int _scene;
     SessionSelectController *_sessionSelectController;

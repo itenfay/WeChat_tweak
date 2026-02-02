@@ -5,7 +5,7 @@
 
 @class CALayer, UIColor, UISelectionFeedbackGenerator;
 
-@interface MJPublisherDefaultValueSlider
+@interface MJPublisherDefaultValueSlider : NSObject
 {
     struct map<float, double, std::less<float>, std::allocator<std::pair<const float, double>>> _gearXCoordsByValue;
     _Bool _isSnapFeedbackEnabled;

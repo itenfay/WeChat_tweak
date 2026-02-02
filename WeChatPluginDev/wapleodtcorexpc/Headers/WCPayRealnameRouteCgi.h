@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCPayRealnameRouteCgi
+@interface WCPayRealnameRouteCgi : NSObject
 {
     int _fromScene;
     int _payScene;

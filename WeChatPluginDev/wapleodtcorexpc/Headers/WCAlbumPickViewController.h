@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIImageView, MMUILabel, MMUIView, NSMutableArray, NSString, UIButton, UICollectionView, UICollectionViewFlowLayout, UIImageView, UIView, WCAlbumPickViewModel, WCAlbumPickerFooterView, WCFinderSnsPostProcessMgr;
 @protocol WCAlbumPickViewControllerDelegate;
 
-@interface WCAlbumPickViewController
+@interface WCAlbumPickViewController : NSObject
 {
     _Bool _isOriginalImageForSend;
     _Bool _needThumbImage;

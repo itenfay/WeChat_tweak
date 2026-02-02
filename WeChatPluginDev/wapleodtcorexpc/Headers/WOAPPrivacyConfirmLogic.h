@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebViewController, NSString, UIViewController, WOAPObject;
 
-@interface WOAPPrivacyConfirmLogic
+@interface WOAPPrivacyConfirmLogic : NSObject
 {
     CDUnknownBlockType _completionBlock;
     UIViewController *_viewController;

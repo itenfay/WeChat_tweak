@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface LiveLotteryTextMessageCellView
+@interface LiveLotteryTextMessageCellView : NSObject
 {
     UIButton *m_sourceButton;
 }

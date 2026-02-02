@@ -6,7 +6,7 @@
 @class NSData, NSMutableDictionary, NSObject, NSString, WXGBackupImportMessageHelper, WXGBackupRecoverHelper;
 @protocol OS_dispatch_group;
 
-@interface WXGBackupMigrateMobileLogic
+@interface WXGBackupMigrateMobileLogic : NSObject
 {
     _Bool _bStopService;
     _Bool _bFirstTag;

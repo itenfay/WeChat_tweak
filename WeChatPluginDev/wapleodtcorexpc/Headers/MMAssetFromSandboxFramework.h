@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMAssetFromSandboxFramework
+@interface MMAssetFromSandboxFramework : NSObject
 {
     NSString *_localAssetURL;
 }

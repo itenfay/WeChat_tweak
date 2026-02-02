@@ -5,7 +5,7 @@
 
 @class FavCdnTaskInfo, NSMutableArray, NSMutableSet, NSString;
 
-@interface FavCdnDownloadMgr
+@interface FavCdnDownloadMgr : NSObject
 {
     NSMutableSet *m_set;
     NSMutableArray *m_queue;

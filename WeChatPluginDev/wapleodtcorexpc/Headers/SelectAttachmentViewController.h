@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString;
 @protocol SelectAttachmentViewControllerDelegate;
 
-@interface SelectAttachmentViewController
+@interface SelectAttachmentViewController : NSObject
 {
     int _iCurSelection;
     id <SelectAttachmentViewControllerDelegate> m_delegate;

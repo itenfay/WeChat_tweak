@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCMomentsBizOriginalArticleButton
+@interface WCMomentsBizOriginalArticleButton : NSObject
 {
     UIImageView *_leftImageView;
     UIImageView *_rightImageView;

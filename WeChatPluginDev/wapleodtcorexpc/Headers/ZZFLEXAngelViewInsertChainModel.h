@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ZZFLEXSectionModel;
 
-@interface ZZFLEXAngelViewInsertChainModel
+@interface ZZFLEXAngelViewInsertChainModel : NSObject
 {
     ZZFLEXSectionModel *_sectionModel;
     long long _insertTag;

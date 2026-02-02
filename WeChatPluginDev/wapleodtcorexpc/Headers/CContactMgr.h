@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContactCacheOptimizeMgr, CContactDB, CContactOPLog, CContactUpdateMgr, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, NewContactDB, OpenImContactMgr;
 
-@interface CContactMgr
+@interface CContactMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     unsigned int m_uiLoadedType;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface MMFinderLiveConnectMicConditionCell
+@interface MMFinderLiveConnectMicConditionCell : NSObject
 {
     UILabel *_typeTitle;
     UIView *_separator;

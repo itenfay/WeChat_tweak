@@ -6,7 +6,7 @@
 @class NSIndexPath, NSMutableArray, NSString, UIButton, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCPayAreaItem, WCPayCVVItem, WCPayCardBinInfo, WCPayCardTypeItem, WCPayCountryCodeAndPhoneNumberItem, WCPayCountryCodeItem, WCPayCredTypeItem, WCPayFillCardInfoSelectBankItem, WCPayFillCardInfoSelectCardTypeItem, WCPayGetProfessionItem, WCPaySelectCountItem, WCPaySelectDateItem, WCPaySelectGenderItem, WCPayTenpaySecureCtrlItem, WCPayValidDateItem;
 @protocol WCPayFillCardInfoViewControllerDelegate;
 
-@interface WCPayFillCardInfoViewController
+@interface WCPayFillCardInfoViewController : NSObject
 {
     UIButton *m_footerButton;
     WCPayCardTypeItem *m_pikerCardTypeItem;

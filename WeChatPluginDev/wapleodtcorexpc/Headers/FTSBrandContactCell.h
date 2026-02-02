@@ -5,7 +5,7 @@
 
 @class AttributeLabel, CContact, MMBrandHeadImageView, NSArray, NSString, SearchMatchTip, UIView, WCTagsView;
 
-@interface FTSBrandContactCell
+@interface FTSBrandContactCell : NSObject
 {
     _Bool _bHideCerIcon;
     _Bool _bAsTopHit;

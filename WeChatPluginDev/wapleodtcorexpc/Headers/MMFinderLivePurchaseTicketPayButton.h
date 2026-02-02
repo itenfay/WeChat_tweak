@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, NSString, UIColor;
 
-@interface MMFinderLivePurchaseTicketPayButton
+@interface MMFinderLivePurchaseTicketPayButton : NSObject
 {
     NSString *_rightText;
     UIColor *_labelColor;

@@ -5,7 +5,7 @@
 
 @protocol WCPayF2FModifyExposureCgiDelegate;
 
-@interface WCPayF2FModifyExposureCgi
+@interface WCPayF2FModifyExposureCgi : NSObject
 {
     id <WCPayF2FModifyExposureCgiDelegate> m_delegate;
 }

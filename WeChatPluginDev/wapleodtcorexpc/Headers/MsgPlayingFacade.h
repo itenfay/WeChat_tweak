@@ -5,7 +5,7 @@
 
 @class AutoplayController, CBaseContact, CMessageWrap, MinimizeNewTransitionController, MsgPlayingMinimizeController, NSString, PlayingController;
 
-@interface MsgPlayingFacade
+@interface MsgPlayingFacade : NSObject
 {
     PlayingController *m_playingController;
     AutoplayController *m_autoplayController;

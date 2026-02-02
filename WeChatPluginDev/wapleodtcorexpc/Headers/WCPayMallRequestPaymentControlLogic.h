@@ -6,7 +6,7 @@
 @class GenMallPrepayResponse, NSDictionary, NSString, WCPayGenMallPrePayCgi, WCPayPayMoneyLogic;
 @protocol WCPayMallRequestPaymentControlLogicDelegate;
 
-@interface WCPayMallRequestPaymentControlLogic
+@interface WCPayMallRequestPaymentControlLogic : NSObject
 {
     id <WCPayMallRequestPaymentControlLogicDelegate> _logicDelegate;
     NSDictionary *_jsParams;

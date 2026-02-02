@@ -5,7 +5,7 @@
 
 @class UIFont;
 
-@interface MJRulerMarkTextStyle
+@interface MJRulerMarkTextStyle : NSObject
 {
     UIFont *_font;
 }

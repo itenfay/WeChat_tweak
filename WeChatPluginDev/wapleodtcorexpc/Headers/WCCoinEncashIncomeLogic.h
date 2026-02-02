@@ -6,7 +6,7 @@
 @class KindaProgressDialog, NSString, PrepareIncomeEncashResponse, SecurityInfoAuthrizeLogic, WCCoinEncashParameter, WCCoinFetchMoneyInputViewController, WCCoinInterceptLogic;
 @protocol WCCoinEncashIncomeLogicDelegate;
 
-@interface WCCoinEncashIncomeLogic
+@interface WCCoinEncashIncomeLogic : NSObject
 {
     WCCoinEncashParameter *_parameter;
     id <WCCoinEncashIncomeLogicDelegate> _delegate;

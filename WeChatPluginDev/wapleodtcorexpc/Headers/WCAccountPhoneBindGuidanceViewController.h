@@ -6,7 +6,7 @@
 @class NSString, WCAccountPhoneBindGuidanceData;
 @protocol WCAccountPhoneBindGuidanceViewControllerDelegate;
 
-@interface WCAccountPhoneBindGuidanceViewController
+@interface WCAccountPhoneBindGuidanceViewController : NSObject
 {
     id <WCAccountPhoneBindGuidanceViewControllerDelegate> _delegate;
     WCAccountPhoneBindGuidanceData *_m_guidanceData;

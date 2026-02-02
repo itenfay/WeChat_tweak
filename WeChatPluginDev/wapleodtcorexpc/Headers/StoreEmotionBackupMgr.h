@@ -5,7 +5,7 @@
 
 @class NSString, StoreEmotionBackupLogicObject;
 
-@interface StoreEmotionBackupMgr
+@interface StoreEmotionBackupMgr : NSObject
 {
     StoreEmotionBackupLogicObject *_backupLogicObject;
     unsigned long long _scene;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MinimizeTaskContainerInfo, MinimizeTaskExtInfo, NSArray, NSData, NSString;
 
-@interface MinimizeTaskData
+@interface MinimizeTaskData : NSObject
 {
     _Bool _shouldIgnoreSubtitleWhenRecoverTask;
     _Bool _bForbidAddDuplicateTask;

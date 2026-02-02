@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPPagePageUrlInfo
+@interface MPPagePageUrlInfo : NSObject
 {
     _Bool _isPaySubscribe;
     unsigned int _itemShowType;

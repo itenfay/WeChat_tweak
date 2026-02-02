@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface ClassMethodDispatchCenter
+@interface ClassMethodDispatchCenter : NSObject
 {
     NSMutableDictionary *m_dictClsMethodObservers;
     NSMutableDictionary *m_dictClsMethodKeyObservers;

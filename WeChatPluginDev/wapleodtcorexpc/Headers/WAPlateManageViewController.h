@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSMutableArray, NSObject, NSString, UITableView, WAReportPlateManageActionItem;
 @protocol WAPlateManageViewControllerDelegate;
 
-@interface WAPlateManageViewController
+@interface WAPlateManageViewController : NSObject
 {
     _Bool _firstIn;
     NSObject<WAPlateManageViewControllerDelegate> *_delegate;

@@ -5,7 +5,7 @@
 
 @class DSMMatcher, ExpressMatcher, FSDSMModelPreparer, NSHashTable, NSString, RegexMatcher;
 
-@interface FingertipSearchMgr
+@interface FingertipSearchMgr : NSObject
 {
     ExpressMatcher *_expressMatcher;
     RegexMatcher *_regexMatcher;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat35MagicBrushFlutterDemoViewController
+@interface _TtC6WeChat35MagicBrushFlutterDemoViewController : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_biz;
 }

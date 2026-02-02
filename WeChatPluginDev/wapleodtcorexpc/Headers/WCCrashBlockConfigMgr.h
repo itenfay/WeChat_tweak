@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCCrashBlockConfigMgr
+@interface WCCrashBlockConfigMgr : NSObject
 {
     NSMutableDictionary *_dicMainThreadMonitorCongfig;
 }

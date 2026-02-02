@@ -6,7 +6,7 @@
 @class NSArray, NSString, UICollectionView;
 @protocol MJPageViewDataSource, MJPageViewInnerProtocol;
 
-@interface MJPageViewContentView
+@interface MJPageViewContentView : NSObject
 {
     _Bool _bScrollEnable;
     id <MJPageViewDataSource> _dataSource;

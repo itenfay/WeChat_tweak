@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderLiveModShelfReorderProductListCGI
+@interface WCFinderLiveModShelfReorderProductListCGI : NSObject
 {
     unsigned int _modCmdId;
     unsigned long long _productId;

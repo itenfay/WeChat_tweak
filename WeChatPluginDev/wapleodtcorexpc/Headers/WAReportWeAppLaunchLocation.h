@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWeAppLaunchLocation
+@interface WAReportWeAppLaunchLocation : NSObject
 {
     unsigned int _cacheTime;
     NSString *_longitude;

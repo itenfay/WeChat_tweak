@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject, NSString, UIImageView, UILabel, WAPlateItem, WAPlateLabel;
 @protocol WAPlateInputViewDelegate;
 
-@interface WAPlateInputView
+@interface WAPlateInputView : NSObject
 {
     NSObject<WAPlateInputViewDelegate> *_delegate;
     NSMutableArray *_labelArr;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat35MagicCardStarterSclBizFlutterPlugin
+@interface _TtC6WeChat35MagicCardStarterSclBizFlutterPlugin : NSObject
 {
     MISSING_TYPE *biz;
     MISSING_TYPE *callback;

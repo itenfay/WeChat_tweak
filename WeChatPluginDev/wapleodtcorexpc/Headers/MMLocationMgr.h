@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AESEncryptObject, CLLocationManager, MMLocationCacheItem, MMLocationCacheStorage, MMLocationDB, MMLocationMgrUseInfoHandle, MMLocationPoiDetailDB, NSMutableArray, NSString, RSAEncryptObject;
 
-@interface MMLocationMgr
+@interface MMLocationMgr : NSObject
 {
     MMLocationDB *m_locationDB;
     MMLocationPoiDetailDB *m_poidetailDB;

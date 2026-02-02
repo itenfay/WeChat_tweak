@@ -6,7 +6,7 @@
 @class EmoticonStoreReportInfo, MMUIViewController;
 @protocol StoreEmoticonLiteAppDownloadLogicDelegate;
 
-@interface StoreEmoticonLiteAppDownloadLogic
+@interface StoreEmoticonLiteAppDownloadLogic : NSObject
 {
     long long _scene;
     long long _downloadType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJAIAssetProcessor, MJAITemplateReporter, NSString, OMJMovieOptions, OMJMovieOutroInfo, OMJTemplateBuildResult;
 
-@interface MJTemplateMovieSessionOperation_BuildAndSwitchAI
+@interface MJTemplateMovieSessionOperation_BuildAndSwitchAI : NSObject
 {
     unsigned long long _scene;
     NSString *_templateID;

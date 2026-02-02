@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIFont;
 
-@interface TextReaderMessageViewModel
+@interface TextReaderMessageViewModel : NSObject
 {
     struct CGSize _mainTitleSize;
     NSMutableArray *_mainTitleStyles;

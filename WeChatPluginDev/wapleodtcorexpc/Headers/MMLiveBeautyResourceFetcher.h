@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveBeautyResourceFetcherRootAction, NSString;
 
-@interface MMLiveBeautyResourceFetcher
+@interface MMLiveBeautyResourceFetcher : NSObject
 {
     MMLiveBeautyResourceFetcherRootAction *_flowInstance;
 }

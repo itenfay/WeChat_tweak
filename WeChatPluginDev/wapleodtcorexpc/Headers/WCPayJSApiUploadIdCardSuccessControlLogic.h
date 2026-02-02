@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WCPayJSApiUploadIdCardSuccessControlLogic
+@interface WCPayJSApiUploadIdCardSuccessControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     long long m_enWCPayCheckAuthorityScene;

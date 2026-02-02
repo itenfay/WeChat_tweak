@@ -6,7 +6,7 @@
 @class MMScrollView, MMUIWindow, NSArray, NSMutableArray, NSString, UIPageControl, UIView;
 @protocol WCImageFullScreenViewControllerDelegateV4;
 
-@interface WCImageFullScreenViewControllerForHBV4
+@interface WCImageFullScreenViewControllerForHBV4 : NSObject
 {
     UIView *m_fakeScreenView;
     struct CGRect m_originImageRectInScreen;

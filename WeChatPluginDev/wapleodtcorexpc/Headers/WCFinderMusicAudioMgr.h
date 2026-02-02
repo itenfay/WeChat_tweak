@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface WCFinderMusicAudioMgr
+@interface WCFinderMusicAudioMgr : NSObject
 {
     NSMutableSet *_pages;
 }

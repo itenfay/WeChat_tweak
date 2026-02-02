@@ -6,7 +6,7 @@
 @class MMUILabel, MMWebImageView, NSString, OauthScopeInfo, UIButton, UIScrollView;
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface MMAuthorizeFriendsViewController
+@interface MMAuthorizeFriendsViewController : NSObject
 {
     unsigned int _fromScene;
     NSString *_appName;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveActionSheetFlowLayoutView, MMLiveShopShelfDragBar, MMScrollActionSheetItemView, NSArray, NSString, UIPanGestureRecognizer, WCFinderLiveAnchorLogReporter, WCLiveScrollActionSheetViewModel;
 
-@interface WCLiveScrollActionSheet
+@interface WCLiveScrollActionSheet : NSObject
 {
     _Bool _isInStopState;
     _Bool _isAnchorShare;

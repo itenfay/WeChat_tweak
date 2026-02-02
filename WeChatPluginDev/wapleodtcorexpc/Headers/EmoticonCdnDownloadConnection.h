@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj;
 
-@interface EmoticonCdnDownloadConnection
+@interface EmoticonCdnDownloadConnection : NSObject
 {
     _Bool _m_isActive;
     _Bool _disableExternUrl;

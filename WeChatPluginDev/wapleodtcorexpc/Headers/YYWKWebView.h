@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, UIScreenEdgePanGestureRecognizer;
 
-@interface YYWKWebView
+@interface YYWKWebView : NSObject
 {
     NSMutableDictionary *m_containerDict;
     _Bool _isSettingAllowsBackForwardNavigationGestures;

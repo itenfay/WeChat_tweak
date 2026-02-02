@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface QGPOnClickEvent
+@interface QGPOnClickEvent : NSObject
 {
     NSArray *_clickedPosition;
     NSString *_identifier;

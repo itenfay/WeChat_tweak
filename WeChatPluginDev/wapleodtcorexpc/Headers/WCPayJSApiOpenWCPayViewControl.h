@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPayBalanceFetchMoneyControlLogic, WCPayF2FJSApiAuthenticationControlLogic, WCPayF2FReceiveDetailControlLogic, WCPayJSApiAuthenticationControlLogic, WCPayJumpC2CMessageJsapiLogic, WCPayJumpHbRefundJsapiLogic, WCPayLQTDepositControlLogic, WCPayLQTDetailControlLogic, WCPayLQTMoneyControlLogic, WCPayOverseaFacingReceiveControlLogic, WCPayT2BCDetailControlLogic, WCPayT2BCTransferControlLogic;
 
-@interface WCPayJSApiOpenWCPayViewControl
+@interface WCPayJSApiOpenWCPayViewControl : NSObject
 {
     JSEvent *m_jsEvent;
     WCPayJSApiAuthenticationControlLogic *m_oAuthenticationLogic;

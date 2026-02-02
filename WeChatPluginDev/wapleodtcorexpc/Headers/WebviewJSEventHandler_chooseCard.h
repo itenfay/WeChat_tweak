@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_chooseCard
+@interface WebviewJSEventHandler_chooseCard : NSObject
 {
     JSEvent *_jsEvent;
 }

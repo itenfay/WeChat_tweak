@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentReportUrlInfo
+@interface WCCanvasComponentReportUrlInfo : NSObject
 {
     unsigned int _needDownload;
     NSString *_urlMd5;

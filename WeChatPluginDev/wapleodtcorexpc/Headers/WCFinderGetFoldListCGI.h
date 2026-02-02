@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetFoldListCGI
+@interface WCFinderGetFoldListCGI : NSObject
 {
     NSString *_targetUsername;
     NSString *_tid;

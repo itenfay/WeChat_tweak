@@ -5,7 +5,7 @@
 
 @class WCEditVideoPushPopTransition;
 
-@interface WCEmotionEditImageViewController
+@interface WCEmotionEditImageViewController : NSObject
 {
     WCEditVideoPushPopTransition *_customTransitionDelegate;
 }

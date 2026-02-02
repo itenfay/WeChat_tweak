@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WNSaveImageReportDataModel
+@interface WNSaveImageReportDataModel : NSObject
 {
     int _action;
     unsigned long long _outputStyle;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentFullScreenImageInfo
+@interface WCCanvasComponentFullScreenImageInfo : NSObject
 {
     int _scaleType;
     NSString *_fullScreenImageUrl;

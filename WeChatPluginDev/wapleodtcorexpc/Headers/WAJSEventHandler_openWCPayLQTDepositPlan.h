@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openWCPayLQTDepositPlan
+@interface WAJSEventHandler_openWCPayLQTDepositPlan : NSObject
 {
 }
 

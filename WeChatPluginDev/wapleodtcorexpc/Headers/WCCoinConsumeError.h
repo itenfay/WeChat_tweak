@@ -5,7 +5,7 @@
 
 @class ConsumeWecoinResponse, NSString, PrepareWecoinConsumeResponse;
 
-@interface WCCoinConsumeError
+@interface WCCoinConsumeError : NSObject
 {
     int _errorCode;
     unsigned long long _errorType;

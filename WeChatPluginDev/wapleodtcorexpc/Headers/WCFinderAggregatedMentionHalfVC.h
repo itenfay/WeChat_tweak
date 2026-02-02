@@ -5,7 +5,7 @@
 
 @class NSString, UITableView, UITableViewDiffableDataSource, WCFinderAggregatedMentionHalfVM, WCFinderDataLoadTips, WCFinderRefreshTableFooterView;
 
-@interface WCFinderAggregatedMentionHalfVC
+@interface WCFinderAggregatedMentionHalfVC : NSObject
 {
     WCFinderAggregatedMentionHalfVM *_vm;
     UITableViewDiffableDataSource *_dataSource;

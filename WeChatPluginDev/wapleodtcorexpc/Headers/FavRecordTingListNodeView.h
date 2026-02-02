@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavRecordTingListNodeView
+@interface FavRecordTingListNodeView : NSObject
 {
 }
 

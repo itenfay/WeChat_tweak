@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveActionSheetFlowLayoutView, MMLiveShopShelfDragBar, MMScrollActionSheetItemView, NSArray, NSString, UIPanGestureRecognizer, WCFinderLiveAnchorLogReporter, WCFinderLiveStarterReporter, WCLiveStarterScrollActionSheetViewModel;
 
-@interface WCLiveStarterScrollActionSheet
+@interface WCLiveStarterScrollActionSheet : NSObject
 {
     _Bool _isCommentEnable;
     _Bool _isMicEnable;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RingBackPlaySoundReporter_23653
+@interface RingBackPlaySoundReporter_23653 : NSObject
 {
     unsigned int _playDuration;
     unsigned int _startPlayTimeStamp;

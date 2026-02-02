@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GameVideoAlbumController, MMAssetPickerController, MMImagePickerManagerOptionObj, MMUIButton, MMUIViewController, NSArray, NSString, UINavigationController, UIView;
 @protocol GameVideoAlbumControllerDelegate, MMImagePickerManagerDelegate;
 
-@interface GameHaowanTabViewController
+@interface GameHaowanTabViewController : NSObject
 {
     NSArray *_albumInfos;
     MMImagePickerManagerOptionObj *_imagePickerManagerOptionObj;

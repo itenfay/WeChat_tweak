@@ -5,7 +5,7 @@
 
 @class NSString, WCSnsMenuItem;
 
-@interface WCSnsRepeatUrlInfo
+@interface WCSnsRepeatUrlInfo : NSObject
 {
     _Bool _isShowMenuItem;
     _Bool _isMpUrl;

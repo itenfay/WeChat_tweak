@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface VoIPStatusExtensionSyncService
+@interface VoIPStatusExtensionSyncService : NSObject
 {
     CDUnknownBlockType _updateAppStatusBlock;
 }

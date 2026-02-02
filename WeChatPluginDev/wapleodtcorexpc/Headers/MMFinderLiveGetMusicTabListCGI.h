@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface MMFinderLiveGetMusicTabListCGI
+@interface MMFinderLiveGetMusicTabListCGI : NSObject
 {
     unsigned int _tabType;
     CDUnknownBlockType _success;

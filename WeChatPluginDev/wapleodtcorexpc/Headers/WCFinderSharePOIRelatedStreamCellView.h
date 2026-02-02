@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel, WCFinderSharePOIRelatedStreamCellViewModel;
 
-@interface WCFinderSharePOIRelatedStreamCellView
+@interface WCFinderSharePOIRelatedStreamCellView : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_descLabel;

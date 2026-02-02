@@ -5,7 +5,7 @@
 
 @class NSString, RingToneDetail;
 
-@interface RingTone
+@interface RingTone : NSObject
 {
     _Bool _isPlaying;
     unsigned int _musicSid;

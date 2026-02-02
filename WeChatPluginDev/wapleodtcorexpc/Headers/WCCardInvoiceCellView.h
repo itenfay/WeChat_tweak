@@ -5,7 +5,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel, UIView, WCCardData;
 
-@interface WCCardInvoiceCellView
+@interface WCCardInvoiceCellView : NSObject
 {
     NSString *_backImageURL;
     NSString *_topText;

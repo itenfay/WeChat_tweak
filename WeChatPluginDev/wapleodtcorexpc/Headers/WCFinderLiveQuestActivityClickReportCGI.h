@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveQuestActivityClickReportCGI
+@interface WCFinderLiveQuestActivityClickReportCGI : NSObject
 {
     NSString *_activityID;
     CDUnknownBlockType _sucessBlock;

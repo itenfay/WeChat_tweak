@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MMBarButton
+@interface MMBarButton : NSObject
 {
     unsigned long long eBarButtonStyle;
     double _extendWidth;

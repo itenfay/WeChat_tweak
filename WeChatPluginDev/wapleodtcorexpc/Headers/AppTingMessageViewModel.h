@@ -5,7 +5,7 @@
 
 @class TingItem, TingShareListenItem;
 
-@interface AppTingMessageViewModel
+@interface AppTingMessageViewModel : NSObject
 {
     double _titleHeight;
     double _detailHeight;

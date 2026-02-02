@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameShareNameCardViewModel
+@interface GameShareNameCardViewModel : NSObject
 {
     NSString *m_sharedUsername;
     NSString *m_sharedNickname;

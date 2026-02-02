@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderLivePurchaseChargeableLiveCGI
+@interface WCFinderLivePurchaseChargeableLiveCGI : NSObject
 {
     unsigned int _wecoinAmount;
     CDUnknownBlockType _successBlock;

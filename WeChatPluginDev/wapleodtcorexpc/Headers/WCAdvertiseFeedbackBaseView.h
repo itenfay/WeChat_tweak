@@ -5,7 +5,7 @@
 
 @protocol WCAdvertiseFeedbackViewDelegate;
 
-@interface WCAdvertiseFeedbackBaseView
+@interface WCAdvertiseFeedbackBaseView : NSObject
 {
     id <WCAdvertiseFeedbackViewDelegate> _delegate;
 }

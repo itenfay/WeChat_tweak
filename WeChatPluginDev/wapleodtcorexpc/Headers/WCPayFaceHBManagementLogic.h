@@ -6,7 +6,7 @@
 @class FFHBRequestResp, HBBusinessCallbackCgi, NSString, WCPayControlData, WCPayFaceHBCgi, WCPayInterceptWinLogic, WCPayPayMoneyLogic;
 @protocol WCPayFaceHBManagementLogicDelegate;
 
-@interface WCPayFaceHBManagementLogic
+@interface WCPayFaceHBManagementLogic : NSObject
 {
     id <WCPayFaceHBManagementLogicDelegate> m_delegate;
     WCPayFaceHBCgi *m_faceHBCgi;

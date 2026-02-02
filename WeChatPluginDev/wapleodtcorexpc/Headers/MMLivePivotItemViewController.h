@@ -5,7 +5,7 @@
 
 @class LiveSdkInfo, MMFinderLiveContentVM, MMFinderLiveTask, MMFinderPivotLiveViewController, MMLivePivotViewController, NSString, UINavigationController, UIView, WCFinderDataItem;
 
-@interface MMLivePivotItemViewController
+@interface MMLivePivotItemViewController : NSObject
 {
     _Bool _isWatchHistoryLive;
     _Bool _isPlaying;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem22718
+@interface KvReportItem22718 : NSObject
 {
     unsigned int _ActionType_21;
     unsigned int _Position_22;

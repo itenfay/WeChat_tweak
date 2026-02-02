@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSMutableArray, NSMutableDictionary, NSString, TTCollectionView, UICollectionViewFlowLayout, WCStoryCollectionFooterView, WCStoryFloatTopBar;
 
-@interface WCStoryHistoryViewController
+@interface WCStoryHistoryViewController : NSObject
 {
     _Bool _isFetchingData;
     _Bool _hasNoMoreLocalData;

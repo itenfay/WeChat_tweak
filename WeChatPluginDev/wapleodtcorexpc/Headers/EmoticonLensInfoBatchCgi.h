@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol EmoticonLensInfoBatchCgiDelegate;
 
-@interface EmoticonLensInfoBatchCgi
+@interface EmoticonLensInfoBatchCgi : NSObject
 {
     _Bool _isRunning;
     NSMutableArray *_waitingQueue;

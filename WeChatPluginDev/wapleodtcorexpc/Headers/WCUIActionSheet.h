@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCUIActionSheetLogic;
 
-@interface WCUIActionSheet
+@interface WCUIActionSheet : NSObject
 {
     WCUIActionSheetLogic *logic;
     id m_userData;

@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_openFinderTimeLineView
+@interface WebviewJSEventHandler_openFinderTimeLineView : NSObject
 {
     JSEvent *_event;
 }

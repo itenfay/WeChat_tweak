@@ -5,7 +5,7 @@
 
 @class NSString, WXMediaMessage;
 
-@interface ShowMessageFromWXReq
+@interface ShowMessageFromWXReq : NSObject
 {
     WXMediaMessage *message;
     NSString *country;

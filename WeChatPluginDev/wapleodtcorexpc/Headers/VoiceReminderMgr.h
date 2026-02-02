@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface VoiceReminderMgr
+@interface VoiceReminderMgr : NSObject
 {
     NSMutableDictionary *_dicRemindId;
 }

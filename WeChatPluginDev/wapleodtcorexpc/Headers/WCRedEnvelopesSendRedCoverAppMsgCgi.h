@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvelopesSendRedCoverAppMsgCgiDelegate;
 
-@interface WCRedEnvelopesSendRedCoverAppMsgCgi
+@interface WCRedEnvelopesSendRedCoverAppMsgCgi : NSObject
 {
     id <WCRedEnvelopesSendRedCoverAppMsgCgiDelegate> m_delegate;
 }

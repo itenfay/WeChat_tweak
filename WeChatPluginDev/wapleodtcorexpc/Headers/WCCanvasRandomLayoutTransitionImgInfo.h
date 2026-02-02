@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasRandomLayoutTransitionImgInfo
+@interface WCCanvasRandomLayoutTransitionImgInfo : NSObject
 {
     NSString *_transitionImgUrl;
     NSString *_transitionColor;

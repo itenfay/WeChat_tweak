@@ -6,7 +6,7 @@
 @class MMHorizontalTableView, NSMutableArray, NSString, UIButton, UIView;
 @protocol CustomMenuToolViewDelegate;
 
-@interface CustomMenuToolView
+@interface CustomMenuToolView : NSObject
 {
     NSMutableArray *m_menuList;
     UIButton *_changeBtn;

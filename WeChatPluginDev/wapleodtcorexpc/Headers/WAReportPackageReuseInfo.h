@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPackageReuseInfo
+@interface WAReportPackageReuseInfo : NSObject
 {
     unsigned int _packageType;
     NSString *_packageMd5;

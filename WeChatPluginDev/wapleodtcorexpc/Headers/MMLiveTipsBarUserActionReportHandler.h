@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveTipsBarUserActionReportHandler
+@interface MMLiveTipsBarUserActionReportHandler : NSObject
 {
     unsigned int livesCnt;
     unsigned int action;

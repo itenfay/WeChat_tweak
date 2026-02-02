@@ -6,7 +6,7 @@
 @class GameTeamUpSpecialGiftSettingDetail, MMFinderLiveMusicSettingOperationPanel, MMFinderLiveReplayKitManager, MMFinderLiveSongSettingOperationPanel, MMFinderScreenRecordGuideView, MMGrowTextView, MMLiveCountdownTipsView, MMLiveTaskId, NSDictionary, NSString, RPSystemBroadcastPickerView, WCFinderHeadImageView, WCFinderLiveStarterChooseGamePanelView, WCFinderLiveStarterReporter, WCFinderStarterLiveViewModel, WCLiveStarterScrollActionSheet;
 @protocol MMLiveStarterViewControllerDelegate;
 
-@interface MMLiveStarterViewController
+@interface MMLiveStarterViewController : NSObject
 {
     _Bool _isRecordPermissionCheckOK;
     _Bool _isInRecordPermissionCheckProcess;

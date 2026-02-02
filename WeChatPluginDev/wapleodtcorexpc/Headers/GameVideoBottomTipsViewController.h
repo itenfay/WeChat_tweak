@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface GameVideoBottomTipsViewController
+@interface GameVideoBottomTipsViewController : NSObject
 {
     UIView *_backgroundView;
 }

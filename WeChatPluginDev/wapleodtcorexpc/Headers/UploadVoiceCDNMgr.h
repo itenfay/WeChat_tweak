@@ -6,7 +6,7 @@
 @class MMTimer, MemoryMappedKV, NSMutableDictionary, NSRecursiveLock, UploadVoiceWrap;
 @protocol UploadVoiceDelegate;
 
-@interface UploadVoiceCDNMgr
+@interface UploadVoiceCDNMgr : NSObject
 {
     _Bool _bSending;
     id <UploadVoiceDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, AVCaptureVideoDataOutput, CALayer, NSObject, NSString;
 @protocol CvVideoCameraDelegate, OS_dispatch_queue;
 
-@interface CvVideoCamera
+@interface CvVideoCamera : NSObject
 {
     AVCaptureVideoDataOutput *videoDataOutput;
     NSObject<OS_dispatch_queue> *videoDataOutputQueue;

@@ -5,7 +5,7 @@
 
 @class UIColor, UIImageView;
 
-@interface CircleProcessView
+@interface CircleProcessView : NSObject
 {
     double width;
     double height;

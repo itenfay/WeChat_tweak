@@ -5,7 +5,7 @@
 
 @class EdgeComputingJSScriptEngine;
 
-@interface EdgeComputingScriptService
+@interface EdgeComputingScriptService : NSObject
 {
     EdgeComputingJSScriptEngine *scriptEngine;
 }

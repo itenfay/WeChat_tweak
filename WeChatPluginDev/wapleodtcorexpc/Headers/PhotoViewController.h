@@ -6,7 +6,7 @@
 @class CMessageWrap, MMImageActionSheet, MMUILabel, MultiImageScrollView, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 @protocol PhotoViewControllerDelegate;
 
-@interface PhotoViewController
+@interface PhotoViewController : NSObject
 {
     MultiImageScrollView *pagingScrollView;
     NSMutableArray *m_arrayImageUrl;

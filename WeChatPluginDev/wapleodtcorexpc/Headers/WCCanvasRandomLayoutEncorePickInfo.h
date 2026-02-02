@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasRandomLayoutEncorePickInfo
+@interface WCCanvasRandomLayoutEncorePickInfo : NSObject
 {
     NSString *_titleIconUrl;
     NSString *_titlePrefix;

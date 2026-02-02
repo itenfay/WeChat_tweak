@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_addImageToFavorites
+@interface WAJSEventHandler_addImageToFavorites : NSObject
 {
     NSString *_cacheKey;
 }

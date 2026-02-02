@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKMessageLocationAttachment
+@interface WWKMessageLocationAttachment : NSObject
 {
     NSString *_title;
     NSString *_address;

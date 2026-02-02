@@ -6,7 +6,7 @@
 @class CAGradientLayer, UIButton;
 @protocol MMScrollableActionSheetContainerDownStableViewDelegate;
 
-@interface MMScrollableActionSheetContainerDownStableView
+@interface MMScrollableActionSheetContainerDownStableView : NSObject
 {
     UIButton *_cancelButton;
     id <MMScrollableActionSheetContainerDownStableViewDelegate> _delegate;

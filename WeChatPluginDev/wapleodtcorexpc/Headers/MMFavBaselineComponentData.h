@@ -5,7 +5,7 @@
 
 @class FavoritesItem, NSArray, NSString, UIImage;
 
-@interface MMFavBaselineComponentData
+@interface MMFavBaselineComponentData : NSObject
 {
     _Bool _bShowDataSize;
     _Bool _shouldHideSourceNameLabel;

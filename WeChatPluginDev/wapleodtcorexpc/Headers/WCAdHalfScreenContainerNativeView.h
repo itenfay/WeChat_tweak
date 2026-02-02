@@ -5,7 +5,7 @@
 
 @class MMPageSheetBaseView, MMUILabel, NSString, WCAdURLImageView;
 
-@interface WCAdHalfScreenContainerNativeView
+@interface WCAdHalfScreenContainerNativeView : NSObject
 {
     MMPageSheetBaseView *_sheetView;
     WCAdURLImageView *_head;

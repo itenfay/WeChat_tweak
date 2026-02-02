@@ -6,7 +6,7 @@
 @class MMBGMCategoryDetailTabViewModel, MMBGMPanelPublishContext, MMBGMSelectedConfig, MMBGMSelectedTabManager, MMUIButton, NSString, UILabel;
 @protocol MMBGMCategoryDetailViewDelegate;
 
-@interface MMBGMCategoryDetailView
+@interface MMBGMCategoryDetailView : NSObject
 {
     id <MMBGMCategoryDetailViewDelegate> _delegate;
     MMBGMSelectedTabManager *_tabMgr;

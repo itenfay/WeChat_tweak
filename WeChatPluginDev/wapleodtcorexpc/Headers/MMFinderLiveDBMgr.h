@@ -6,7 +6,7 @@
 @class NSObject, NSString, WCTDatabase, WCTTable;
 @protocol OS_dispatch_queue;
 
-@interface MMFinderLiveDBMgr
+@interface MMFinderLiveDBMgr : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_historyListTable;

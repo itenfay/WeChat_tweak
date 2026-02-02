@@ -6,7 +6,7 @@
 @class CBaseContact, CalendarWeeklyView, CalendarYearMonthDate, MMCommonActionSheetPicker, MMListYearMonthFlowView, MMTableViewInfo, NSArray, NSCalendar, NSDate, NSDateComponents, NSString, UIButton, UIImage;
 @protocol MMUIViewControllerDelegate;
 
-@interface ChatMsgCalendarViewController
+@interface ChatMsgCalendarViewController : NSObject
 {
     CBaseContact *m_oContact;
     MMTableViewInfo *m_tableViewInfo;

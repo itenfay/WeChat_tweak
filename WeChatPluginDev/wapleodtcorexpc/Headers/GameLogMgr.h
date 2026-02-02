@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameLogMgr
+@interface GameLogMgr : NSObject
 {
 }
 

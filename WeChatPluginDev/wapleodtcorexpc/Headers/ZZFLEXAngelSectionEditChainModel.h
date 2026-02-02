@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface ZZFLEXAngelSectionEditChainModel
+@interface ZZFLEXAngelSectionEditChainModel : NSObject
 {
 }
 

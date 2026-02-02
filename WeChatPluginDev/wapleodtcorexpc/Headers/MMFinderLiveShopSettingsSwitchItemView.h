@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UISwitch, UIView;
 
-@interface MMFinderLiveShopSettingsSwitchItemView
+@interface MMFinderLiveShopSettingsSwitchItemView : NSObject
 {
     UISwitch *_switchView;
     UIView *_switchTapView;

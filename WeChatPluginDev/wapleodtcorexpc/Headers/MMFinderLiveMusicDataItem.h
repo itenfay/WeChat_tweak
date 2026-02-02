@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveMusicDataItem
+@interface MMFinderLiveMusicDataItem : NSObject
 {
     _Bool _playable;
     _Bool _isInBgMusicList;

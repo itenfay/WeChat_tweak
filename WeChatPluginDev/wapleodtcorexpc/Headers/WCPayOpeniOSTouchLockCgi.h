@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayOpeniOSTouchLockCgiDelegate;
 
-@interface WCPayOpeniOSTouchLockCgi
+@interface WCPayOpeniOSTouchLockCgi : NSObject
 {
     NSString *_usertoken;
     NSString *_model;

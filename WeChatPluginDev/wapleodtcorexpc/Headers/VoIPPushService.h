@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, PKPushRegistry;
 
-@interface VoIPPushService
+@interface VoIPPushService : NSObject
 {
     NSData *m_token;
     PKPushRegistry *m_tokenRetriver;

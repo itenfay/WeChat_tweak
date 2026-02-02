@@ -5,7 +5,7 @@
 
 @class ExtDeviceLoginConfirmOKRequest, KidsWatchLoginReportObject, NSString, WCAccountKidsWatchRegisterControlLogic;
 
-@interface WCAccountKidsWatchControlLogic
+@interface WCAccountKidsWatchControlLogic : NSObject
 {
     unsigned int _sessionListMaxCount;
     ExtDeviceLoginConfirmOKRequest *_cachedConfirmOKRequest;

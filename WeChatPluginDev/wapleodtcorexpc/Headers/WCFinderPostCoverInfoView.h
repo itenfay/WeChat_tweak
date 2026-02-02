@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMUIButton, MMUIView, UIPageControl, UIView, WCFinderDataItem, WCFinderFeedStaticCoverView;
 @protocol WCFinderPostCoverInfoViewProtocol;
 
-@interface WCFinderPostCoverInfoView
+@interface WCFinderPostCoverInfoView : NSObject
 {
     id <WCFinderPostCoverInfoViewProtocol> _delegate;
     MMUIButton *_chooseCoverBtn;

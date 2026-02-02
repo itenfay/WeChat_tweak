@@ -5,7 +5,7 @@
 
 @class MsgFileDetailLogicController, NSString;
 
-@interface TingLocalPlayer
+@interface TingLocalPlayer : NSObject
 {
     NSString *_filePath;
     MsgFileDetailLogicController *_msgFileLogicController;

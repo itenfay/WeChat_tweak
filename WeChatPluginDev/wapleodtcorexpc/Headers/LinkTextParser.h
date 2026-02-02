@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LinkTextParser
+@interface LinkTextParser : NSObject
 {
     NSString *_url;
     NSString *_sourceUrl;

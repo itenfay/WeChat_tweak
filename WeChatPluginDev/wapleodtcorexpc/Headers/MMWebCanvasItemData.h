@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebCanvasItemData
+@interface MMWebCanvasItemData : NSObject
 {
     NSString *_canvasId;
     NSString *_bizType;

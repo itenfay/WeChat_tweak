@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageForwardAndEditLogicController, FavFullScreenImageButtonsContainerView, MMFullScreenItemView, MMImageActionSheet, MMScrollActionSheet, MMScrollView, NSMutableArray, NSMutableSet, NSString, ScanQRCodeLogicController, ScanQRCodeLogicParams, SimpleImgInfo, UIView, WCActionSheetWithScanWXCode;
 @protocol FavFullScreenImageViewControllerDelegate;
 
-@interface FavFullScreenImageViewController
+@interface FavFullScreenImageViewController : NSObject
 {
     struct CGRect m_originImageRectInScreen;
     _Bool m_isAnimating;

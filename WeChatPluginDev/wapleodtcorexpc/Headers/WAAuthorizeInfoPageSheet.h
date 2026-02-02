@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIButton, UILabel, UIScreenEdgePanGestureRecognizer, UIScrollView, WAMenuPopInteractiveTransition;
 @protocol IWARichTextViewHelper;
 
-@interface WAAuthorizeInfoPageSheet
+@interface WAAuthorizeInfoPageSheet : NSObject
 {
     CDUnknownBlockType _openUrlAction;
     double _pageSheetHeight;

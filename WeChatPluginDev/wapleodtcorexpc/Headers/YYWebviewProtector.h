@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface YYWebviewProtector
+@interface YYWebviewProtector : NSObject
 {
     long long _xpcFailWkCount;
 }

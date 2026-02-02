@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ChatLogDataStat, NSMutableArray, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
-@interface ChatLogDataMgr
+@interface ChatLogDataMgr : NSObject
 {
     NSMutableArray *_arrSessionInfo;
     unsigned long long _startLoadDataTime;

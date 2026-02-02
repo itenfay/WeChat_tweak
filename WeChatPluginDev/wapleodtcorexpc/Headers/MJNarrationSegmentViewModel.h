@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSString, OMCNarrationSegment;
 @protocol MJMovieComposingContext;
 
-@interface MJNarrationSegmentViewModel
+@interface MJNarrationSegmentViewModel : NSObject
 {
     id <MJMovieComposingContext> _composingContext;
     NSString *_audioFileID;

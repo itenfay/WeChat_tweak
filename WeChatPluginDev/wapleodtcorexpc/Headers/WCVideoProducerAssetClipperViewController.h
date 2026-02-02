@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSIndexPath, NSString, SightLocalVideoImageSlider, UICollectionView, WCVideoProducerBaseSheetView, WCVideoProducerDataSource;
 @protocol WCVideoProducerAssetClipperDelegate;
 
-@interface WCVideoProducerAssetClipperViewController
+@interface WCVideoProducerAssetClipperViewController : NSObject
 {
     _Bool _isMJAppLauncherEnabled;
     id <WCVideoProducerAssetClipperDelegate> _delegate;

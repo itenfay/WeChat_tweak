@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageAttr, MMAsset, NSMutableArray, NSString, RecommendedMusicInfo, UIImage, UIView, WCEditImageLayoutView, WCEditViewControllerUIConfig;
 @protocol WCEditImageViewControllerDelegate;
 
-@interface WCEditImageViewController
+@interface WCEditImageViewController : NSObject
 {
     _Bool _isEmoticonBoardSearchEnabled;
     unsigned long long _fromScene;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppProfileViewModel
+@interface WAAppProfileViewModel : NSObject
 {
     NSString *_sessionId;
 }

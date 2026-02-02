@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderMessageShareNameCard
+@interface WCFinderMessageShareNameCard : NSObject
 {
     NSString *_username;
     NSString *_avatar;

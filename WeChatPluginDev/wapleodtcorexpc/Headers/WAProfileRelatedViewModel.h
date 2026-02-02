@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WAProfileRelatedViewModel
+@interface WAProfileRelatedViewModel : NSObject
 {
     unsigned long long _type;
     NSString *_registerTitle;

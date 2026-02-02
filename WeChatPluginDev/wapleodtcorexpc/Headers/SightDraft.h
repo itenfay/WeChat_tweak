@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJMovieTemplateInfo, MMImageExifLogInfo, NSArray, NSData, NSError, NSMutableArray, NSMutableDictionary, NSString, VideoUploadStatInfo, WCEditVideoPostReportInfo, WCFinderVideoQualityScoreModel, WCMomentsTemplateInfo, WCSightVideoCompositeTask;
 
-@interface SightDraft
+@interface SightDraft : NSObject
 {
     _Bool _isUseFFmpegHevcEncoding;
     int _draftID;

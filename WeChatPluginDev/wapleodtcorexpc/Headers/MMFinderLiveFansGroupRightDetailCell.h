@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, UIView;
 
-@interface MMFinderLiveFansGroupRightDetailCell
+@interface MMFinderLiveFansGroupRightDetailCell : NSObject
 {
     MMUILabel *_levelLabel;
     MMUILabel *_descLabel;

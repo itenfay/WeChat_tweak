@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveRewardQuotaSwitchInfo, MMTableView, NSString, OrderedDictionary;
 
-@interface WCFinderLivePersonalCenterRewardNoticeAmountViewController
+@interface WCFinderLivePersonalCenterRewardNoticeAmountViewController : NSObject
 {
     CDUnknownBlockType _onVCWillPop;
     MMTableView *_rewardQuotaOptionTableView;

@@ -5,7 +5,7 @@
 
 @class NSString, TemplateMsgExposeLogic, TemplateMsgSubViewController, WAContactGetter;
 
-@interface TemplateMsgSubLogicController
+@interface TemplateMsgSubLogicController : NSObject
 {
     WAContactGetter *m_contactGetter;
     TemplateMsgExposeLogic *m_exposeLogic;

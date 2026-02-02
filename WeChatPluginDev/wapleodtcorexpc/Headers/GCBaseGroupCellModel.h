@@ -6,7 +6,7 @@
 @class ChatroomData, NSString, UIColor;
 @protocol GCBaseGroupCellModelDelegate;
 
-@interface GCBaseGroupCellModel
+@interface GCBaseGroupCellModel : NSObject
 {
     _Bool _showRedDot;
     id <GCBaseGroupCellModelDelegate> _groupCellModelDelegate;

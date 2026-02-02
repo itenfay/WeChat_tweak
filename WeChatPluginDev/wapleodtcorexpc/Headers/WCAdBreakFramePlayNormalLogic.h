@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCAdBreakFramePlayNormalLogic
+@interface WCAdBreakFramePlayNormalLogic : NSObject
 {
     _Bool _alreadyPlayed;
     _Bool _isOnceMorePlaying;

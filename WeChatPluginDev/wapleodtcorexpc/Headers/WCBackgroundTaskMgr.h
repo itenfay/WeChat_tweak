@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCBackgroundTaskMgr
+@interface WCBackgroundTaskMgr : NSObject
 {
     _Bool _isEnabled;
     NSMutableArray *_runners;

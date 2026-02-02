@@ -6,7 +6,7 @@
 @class NSString;
 @protocol StoreEmotionDeleteTaskDelegate;
 
-@interface StoreEmotionDeleteTask
+@interface StoreEmotionDeleteTask : NSObject
 {
     NSString *_productID;
     id <StoreEmotionDeleteTaskDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class BTLFinderLiveTexturePlugin, BrandTLExptConfig, BrandTimelineReportLogic, CMessageWrap, FlutterBrandTLApiImplementation, MusicCallbackApi, NSString;
 
-@interface BrandTLFlutterViewController
+@interface BrandTLFlutterViewController : NSObject
 {
     _Bool isShowRedDotInMainFrameSession;
     _Bool _hasViewWillBePushedOnce;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26WSWebViewPlugin_navControl
+@interface _TtC6WeChat26WSWebViewPlugin_navControl : NSObject
 {
     MISSING_TYPE *controlStatus;
 }

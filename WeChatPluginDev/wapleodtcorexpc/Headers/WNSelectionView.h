@@ -6,7 +6,7 @@
 @class MMMagnifiterView, MMSelectCoverView, MMTableView, NSString, UIMenuItem, UIPanGestureRecognizer, UITapGestureRecognizer, WeNoteDataController;
 @protocol WNSelectionViewDelegate;
 
-@interface WNSelectionView
+@interface WNSelectionView : NSObject
 {
     UIPanGestureRecognizer *m_oPanGestureRecognizer;
     UITapGestureRecognizer *m_tapGestureRecognizer;

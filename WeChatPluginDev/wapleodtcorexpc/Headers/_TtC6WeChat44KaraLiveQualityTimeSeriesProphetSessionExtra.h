@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat44KaraLiveQualityTimeSeriesProphetSessionExtra
+@interface _TtC6WeChat44KaraLiveQualityTimeSeriesProphetSessionExtra : NSObject
 {
     MISSING_TYPE *predictFDLag2LagModel;
     MISSING_TYPE *predictHDNormal2LagModel;

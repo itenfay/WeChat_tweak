@@ -6,7 +6,7 @@
 @class MMTimer, NSMutableSet, NSString, PAGFile, WCFinderLiveEntertainmentChannelsViewController;
 @protocol WCFinderLiveHomePageFeedAggregationCardVMDelegate;
 
-@interface WCFinderLiveHomePageFeedAggregationCardVM
+@interface WCFinderLiveHomePageFeedAggregationCardVM : NSObject
 {
     _Bool _hasLoadHotSalePag;
     WCFinderLiveEntertainmentChannelsViewController *_cacheChannelsVC;

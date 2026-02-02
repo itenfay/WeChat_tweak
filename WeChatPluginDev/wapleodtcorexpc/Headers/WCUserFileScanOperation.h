@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray;
 
-@interface WCUserFileScanOperation
+@interface WCUserFileScanOperation : NSObject
 {
     _Bool _shouldQuickIgnoreScan;
     _Bool _backgroundTaskEnabled;

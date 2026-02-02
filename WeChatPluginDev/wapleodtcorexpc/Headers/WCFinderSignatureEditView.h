@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderSignatureEditView
+@interface WCFinderSignatureEditView : NSObject
 {
     CDUnknownBlockType _textShouldChangeChecker;
 }

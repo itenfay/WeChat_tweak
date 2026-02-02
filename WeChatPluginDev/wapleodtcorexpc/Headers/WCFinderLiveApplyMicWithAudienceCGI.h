@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveLocation, NSData, WCFinderContact, WCFinderDataItem;
 
-@interface WCFinderLiveApplyMicWithAudienceCGI
+@interface WCFinderLiveApplyMicWithAudienceCGI : NSObject
 {
     _Bool _isAnchor;
     _Bool _withVideo;

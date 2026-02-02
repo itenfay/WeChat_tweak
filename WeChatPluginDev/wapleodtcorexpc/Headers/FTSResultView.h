@@ -6,7 +6,7 @@
 @class AttributeLabel, MMTableView, MMUISearchBar, MMUIViewController, NSMutableArray, NSString, UIImageView, UIView, WCTimeLineFooterView, WSTagSearchLogic;
 @protocol FTSResultPage, FTSResultViewDelegate;
 
-@interface FTSResultView
+@interface FTSResultView : NSObject
 {
     NSString *m_keyword;
     NSString *m_defaultKeyword;

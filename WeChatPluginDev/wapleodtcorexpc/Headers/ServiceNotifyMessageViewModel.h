@@ -5,7 +5,7 @@
 
 @class ServiceNotifyMessageItem;
 
-@interface ServiceNotifyMessageViewModel
+@interface ServiceNotifyMessageViewModel : NSObject
 {
     ServiceNotifyMessageItem *_serviceNotifyMsgItem;
 }

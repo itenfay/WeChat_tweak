@@ -5,7 +5,7 @@
 
 @class FavoritesItem, FavoritesItemDataField, NSString;
 
-@interface SimpleFavImgInfo
+@interface SimpleFavImgInfo : NSObject
 {
     FavoritesItemDataField *_m_favData;
     FavoritesItem *_m_favItem;

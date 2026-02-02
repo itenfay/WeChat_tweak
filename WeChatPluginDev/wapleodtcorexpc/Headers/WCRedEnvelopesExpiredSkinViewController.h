@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout, WCRedEnvelopesAtmospherePagView, WCRedEnvelopesExpiredSkinViewControllerFooter, WCRedEnvelopesReceiveHomeView;
 @protocol WCRedEnvelopesExpiredSkinViewControllerDelegate;
 
-@interface WCRedEnvelopesExpiredSkinViewController
+@interface WCRedEnvelopesExpiredSkinViewController : NSObject
 {
     WCRedEnvelopesReceiveHomeView *introView;
     _Bool _viewDidBack;

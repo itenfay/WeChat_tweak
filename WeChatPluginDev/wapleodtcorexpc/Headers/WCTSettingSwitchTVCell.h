@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTSettingSwitchView;
 
-@interface WCTSettingSwitchTVCell
+@interface WCTSettingSwitchTVCell : NSObject
 {
     WCTSettingSwitchView *_view;
 }

@@ -6,7 +6,7 @@
 @class IntelligentRefreshTableFooterView, MMTableView, MMUIView, NSMutableArray, NSMutableDictionary, NSString, SimpleImgInfo;
 @protocol IntelligentMsgBrowseResultTableViewLogicDelegate, IntelligentMsgBrowseViewDelegate;
 
-@interface IntelligentMsgBrowseResultTableViewLogic
+@interface IntelligentMsgBrowseResultTableViewLogic : NSObject
 {
     SimpleImgInfo *m_curImgInfo;
     NSMutableArray *m_arrImgInfo;

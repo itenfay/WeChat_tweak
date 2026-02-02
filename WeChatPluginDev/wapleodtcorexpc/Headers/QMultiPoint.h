@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QMultiPoint
+@interface QMultiPoint : NSObject
 {
     CDStruct_c3b9c2ee *_points;
     unsigned long long _pointCount;

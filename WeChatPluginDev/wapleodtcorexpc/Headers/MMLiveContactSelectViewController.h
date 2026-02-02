@@ -6,7 +6,7 @@
 @class MMLiveContactSelectView, NSString;
 @protocol MMLiveContactSelectViewControllerDelegate;
 
-@interface MMLiveContactSelectViewController
+@interface MMLiveContactSelectViewController : NSObject
 {
     long long _currentSelectType;
     MMLiveContactSelectView *_selectView;

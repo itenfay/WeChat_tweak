@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCStoryHistoryPageCgiObj
+@interface WCStoryHistoryPageCgiObj : NSObject
 {
     int _timeZone;
     CDUnknownBlockType _dataBlock;

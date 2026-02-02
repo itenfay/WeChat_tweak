@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_predownloadMiniProgramPackage
+@interface WAJSEventHandler_predownloadMiniProgramPackage : NSObject
 {
     NSString *_requestKey;
 }

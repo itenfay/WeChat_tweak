@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCAdConsecutiveAdReportModel
+@interface WCAdConsecutiveAdReportModel : NSObject
 {
     unsigned long long _totalCount;
     NSArray *_reportItemList;

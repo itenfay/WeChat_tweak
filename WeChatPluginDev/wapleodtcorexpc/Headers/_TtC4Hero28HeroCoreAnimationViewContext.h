@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero28HeroCoreAnimationViewContext
+@interface _TtC4Hero28HeroCoreAnimationViewContext : NSObject
 {
     MISSING_TYPE *state;
     MISSING_TYPE *timingFunction;

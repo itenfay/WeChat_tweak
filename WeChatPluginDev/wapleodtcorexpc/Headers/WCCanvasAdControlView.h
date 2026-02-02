@@ -6,7 +6,7 @@
 @class MMTimer, NSObject, NSString, SightIconView, UIView, WCCanvasAdVideoProgressBar;
 @protocol WCCanvasAdControlViewDelegate;
 
-@interface WCCanvasAdControlView
+@interface WCCanvasAdControlView : NSObject
 {
     _Bool _ignoreEdgeInset;
     _Bool _withAudioButton;

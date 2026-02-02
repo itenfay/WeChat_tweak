@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LocalJSEventHandler_emoticonImg
+@interface LocalJSEventHandler_emoticonImg : NSObject
 {
     unsigned long long _operation;
 }

@@ -6,7 +6,7 @@
 @class FavoritesItemDB, NSMutableArray, NSObject;
 @protocol FavoritesBatchGetMgrDelegate, OS_dispatch_queue;
 
-@interface FavoritesBatchGetMgr
+@interface FavoritesBatchGetMgr : NSObject
 {
     FavoritesItemDB *_favItemDB;
     NSMutableArray *_batchGetArray;

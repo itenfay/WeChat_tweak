@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCCoinGetWecoinBalanceCgi
+@interface WCCoinGetWecoinBalanceCgi : NSObject
 {
     CDUnknownBlockType _callback;
 }

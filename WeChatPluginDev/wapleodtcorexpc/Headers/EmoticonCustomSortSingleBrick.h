@@ -5,7 +5,7 @@
 
 @class CAShapeLayer;
 
-@interface EmoticonCustomSortSingleBrick
+@interface EmoticonCustomSortSingleBrick : NSObject
 {
     CAShapeLayer *_shadowLayer;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class KSSongInfo, NSMutableDictionary, NSString;
 @protocol KSAudioPlayerProtocol;
 
-@interface MMKSMusicPlayer
+@interface MMKSMusicPlayer : NSObject
 {
     id <KSAudioPlayerProtocol> m_audioPlayer;
     _Bool m_isQQMusicWifiPlay;

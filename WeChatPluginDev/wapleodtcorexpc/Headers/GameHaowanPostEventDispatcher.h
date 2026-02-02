@@ -5,7 +5,7 @@
 
 @class NSHashTable, NSString;
 
-@interface GameHaowanPostEventDispatcher
+@interface GameHaowanPostEventDispatcher : NSObject
 {
     NSHashTable *_webviewControllers;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonBoardView, NSString, UIView;
 @protocol EmoticonBoardViewDelegate><BaseEmoticonViewDelegate;
 
-@interface WSEmoticonPadViewController
+@interface WSEmoticonPadViewController : NSObject
 {
     _Bool _emoticonBoardUp;
     id <EmoticonBoardViewDelegate><BaseEmoticonViewDelegate> _delegate;

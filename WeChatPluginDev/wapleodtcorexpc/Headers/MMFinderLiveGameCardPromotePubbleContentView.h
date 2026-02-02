@@ -5,7 +5,7 @@
 
 @class GameDynamicBubbleContent, MMUIView, MagicSclFrameSetView, NSString;
 
-@interface MMFinderLiveGameCardPromotePubbleContentView
+@interface MMFinderLiveGameCardPromotePubbleContentView : NSObject
 {
     MMUIView *_dynamicCardContainer;
     GameDynamicBubbleContent *_gamePlayTogetherDynamicContent;

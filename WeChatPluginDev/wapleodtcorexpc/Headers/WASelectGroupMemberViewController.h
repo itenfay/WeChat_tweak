@@ -6,7 +6,7 @@
 @class CContact, MMTableView, MMUILabel, MMUIView, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIButton, UICollectionView, UIImageView, UITextField;
 @protocol WASelectGroupMemberControllerDelegate;
 
-@interface WASelectGroupMemberViewController
+@interface WASelectGroupMemberViewController : NSObject
 {
     _Bool _bIsAllSelect;
     _Bool _bIsSearching;

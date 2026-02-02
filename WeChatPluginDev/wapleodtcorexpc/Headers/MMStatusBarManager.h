@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMStatusBarCustomInfo, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MMStatusBarManager
+@interface MMStatusBarManager : NSObject
 {
     _Bool _isRunningStatusBarAction;
     MMStatusBarCustomInfo *_globalOverrideInfo;

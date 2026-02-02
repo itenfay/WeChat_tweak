@@ -5,7 +5,7 @@
 
 @class MMFinderLiveNewCustomGiftComponent, MMLiveRewardGiftNewCustomizationComponentTagView, NSMutableArray, UIScrollView;
 
-@interface MMLiveRewardGiftNewCustomizationStyleComponentSelectContentView
+@interface MMLiveRewardGiftNewCustomizationStyleComponentSelectContentView : NSObject
 {
     MMFinderLiveNewCustomGiftComponent *_component;
     UIScrollView *_componentContainerView;

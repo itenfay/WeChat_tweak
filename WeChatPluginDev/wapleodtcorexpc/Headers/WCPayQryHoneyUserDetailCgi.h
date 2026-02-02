@@ -6,7 +6,7 @@
 @class QryHoneyUserDetailReq;
 @protocol WCPayQryHoneyUserDetailCgiDelegate;
 
-@interface WCPayQryHoneyUserDetailCgi
+@interface WCPayQryHoneyUserDetailCgi : NSObject
 {
 }
 

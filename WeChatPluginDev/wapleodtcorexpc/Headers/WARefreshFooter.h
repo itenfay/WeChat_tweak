@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WARefreshFooter
+@interface WARefreshFooter : NSObject
 {
     double _ignoredScrollViewContentInsetBottom;
 }

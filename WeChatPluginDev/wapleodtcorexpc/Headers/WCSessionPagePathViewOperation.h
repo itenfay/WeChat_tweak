@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionPagePathViewOperation
+@interface WCSessionPagePathViewOperation : NSObject
 {
     NSString *_pageName;
     NSString *_viewId;

@@ -5,7 +5,7 @@
 
 @class GameCenterTabBarLogicControllerV5, MMUIView, MMUIViewController, NSArray, NSMutableDictionary;
 
-@interface MMGameTabBarViewController
+@interface MMGameTabBarViewController : NSObject
 {
     _Bool _bHasH5FloatLayer;
     int _currentSelectedIndex;

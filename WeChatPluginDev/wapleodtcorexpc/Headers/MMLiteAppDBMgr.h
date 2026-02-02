@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MMLiteAppDBMgr
+@interface MMLiteAppDBMgr : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_tableLiteAppInfo;

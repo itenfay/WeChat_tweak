@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSiriContactEncode
+@interface WCSiriContactEncode : NSObject
 {
     long long _type;
     NSString *_originUsername;

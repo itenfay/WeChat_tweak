@@ -5,7 +5,7 @@
 
 @protocol WCBGRecommendMgrDelegate;
 
-@interface WCBGRecommendMgr
+@interface WCBGRecommendMgr : NSObject
 {
     id <WCBGRecommendMgrDelegate> m_delegate;
 }

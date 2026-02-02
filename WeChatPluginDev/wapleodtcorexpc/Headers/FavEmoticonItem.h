@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavEmoticonItem
+@interface FavEmoticonItem : NSObject
 {
     _Bool _showRewardTips;
     unsigned int _uiEmoticonType;

@@ -6,7 +6,7 @@
 @class MMTimer, NSDate, NSString, WXGSpeedFilter;
 @protocol LocalAreaNetworkClientDelegate;
 
-@interface LocalAreaNetworkClient
+@interface LocalAreaNetworkClient : NSObject
 {
     unsigned long long m_totalReciveLength;
     unsigned long long m_totalSendLength;

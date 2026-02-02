@@ -6,7 +6,7 @@
 @class NSIndexPath, NSString, UICollectionView, WCVideoProducerDataSource;
 @protocol WCMomentsCompositorTemplateTableDelegate;
 
-@interface WCMomentsCompositorTemplateTableViewController
+@interface WCMomentsCompositorTemplateTableViewController : NSObject
 {
     struct CGSize _size;
     NSIndexPath *_focusedIndex;

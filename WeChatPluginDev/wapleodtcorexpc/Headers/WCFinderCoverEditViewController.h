@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageTextToolV2, MMUIButton, MMUIView, NSString, NSURL, UIButton, UIImageView, UILabel, WCEditImageSafeAreaScrollView, WCFinderContact, WCFinderCoverBackGroundView, WCFinderCoverEditOptionModel, WCFinderCoverPhotoPreviewView, WCFinderCoverSelectAlbumView, WCFinderCoverVideoPreviewView, WCFinderCropRectModel, WCFinderEditTextWidgetStateArray, WCFinderVideoSliderView;
 @protocol WCFinderCoverEditViewControllerDelegate;
 
-@interface WCFinderCoverEditViewController
+@interface WCFinderCoverEditViewController : NSObject
 {
     _Bool _xlabShowSelectAlbumCover;
     _Bool _xlabShowPreviewBtn;

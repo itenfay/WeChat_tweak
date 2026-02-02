@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIView;
 
-@interface WCFinderLiveStarterRecordLiveGuideView
+@interface WCFinderLiveStarterRecordLiveGuideView : NSObject
 {
     CDUnknownBlockType _recordGuideBlock;
     UIView *_contentView;

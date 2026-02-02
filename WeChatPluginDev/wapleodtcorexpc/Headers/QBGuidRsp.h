@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface QBGuidRsp
+@interface QBGuidRsp : NSObject
 {
     NSData *jcev2_p_0_o_vGuid;
     NSData *jcev2_p_1_o_vValidation;

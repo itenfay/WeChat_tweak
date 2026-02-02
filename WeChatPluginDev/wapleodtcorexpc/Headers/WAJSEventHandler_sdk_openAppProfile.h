@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_sdk_openAppProfile
+@interface WAJSEventHandler_sdk_openAppProfile : NSObject
 {
 }
 

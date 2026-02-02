@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PublicWifiPageInfo
+@interface PublicWifiPageInfo : NSObject
 {
     unsigned int _hasMobile;
     unsigned int _finishActionCode;

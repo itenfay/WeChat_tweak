@@ -5,7 +5,7 @@
 
 @protocol GetSafetyInfoLogicDelegate;
 
-@interface GetSafetyInfoLogic
+@interface GetSafetyInfoLogic : NSObject
 {
     _Bool m_bRunning;
     unsigned int _m_uiHasVoice;

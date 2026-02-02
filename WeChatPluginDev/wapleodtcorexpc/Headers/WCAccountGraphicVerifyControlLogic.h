@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCAccountGraphicVerifyControlLogicDelegate;
 
-@interface WCAccountGraphicVerifyControlLogic
+@interface WCAccountGraphicVerifyControlLogic : NSObject
 {
     _Bool m_bFromManualAuth;
     id <WCAccountGraphicVerifyControlLogicDelegate> m_delegate;

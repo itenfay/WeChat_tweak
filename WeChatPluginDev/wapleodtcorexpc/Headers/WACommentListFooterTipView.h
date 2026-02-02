@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIView;
 
-@interface WACommentListFooterTipView
+@interface WACommentListFooterTipView : NSObject
 {
     UIView *_leftLineView;
     UIView *_rightLineView;

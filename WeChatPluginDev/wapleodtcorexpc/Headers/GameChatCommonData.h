@@ -5,7 +5,7 @@
 
 @class BanAction, GameChatErrorTipBar, NSMutableArray, NSMutableDictionary, NSString, SafeMutableDictionary;
 
-@interface GameChatCommonData
+@interface GameChatCommonData : NSObject
 {
     NSString *_topGroupName;
     BanAction *_banJoinGroup;

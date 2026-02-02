@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView;
 
-@interface MJShootFavTemplateAuthorButton
+@interface MJShootFavTemplateAuthorButton : NSObject
 {
     MMWebImageView *_authorIcon;
     MMUILabel *_authorNameLabel;

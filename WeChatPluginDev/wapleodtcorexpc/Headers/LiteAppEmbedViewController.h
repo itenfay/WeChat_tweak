@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class LiteAppEmbedViewConsumer, LiteAppPageConfig, LiteAppReferrerInfo, LiteAppStore, MMLiteAppReporter, NSMutableDictionary, NSString, UIColor, UIViewController, WxaLiteAppStartReport;
 @protocol LiteAppEmbedViewControllerDelegate, LiteAppParentViewControllerDelegate, UIGestureRecognizerDelegate;
 
-@interface LiteAppEmbedViewController
+@interface LiteAppEmbedViewController : NSObject
 {
     struct shared_ptr<LVUICallback> lvUICallback;
     void * _sourceType;

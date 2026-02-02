@@ -5,7 +5,7 @@
 
 @class ColorGradientView, NSString, WCAdCardMultiProductsDisplayLink, WCAdCardMultiProductsScreenOneView, WCAdCardMultiProductsScreenTwoView, WCDataItem;
 
-@interface WCAdCardMultiProductsView
+@interface WCAdCardMultiProductsView : NSObject
 {
     WCDataItem *_dataItem;
     unsigned long long _currentScreenIndex;

@@ -5,7 +5,7 @@
 
 @class ICCollectionView, ICFlowModel, NSString;
 
-@interface ICFlowViewController
+@interface ICFlowViewController : NSObject
 {
     ICFlowModel *_model;
     ICCollectionView *_collectionView;

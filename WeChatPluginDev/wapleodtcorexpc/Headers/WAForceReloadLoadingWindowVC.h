@@ -5,7 +5,7 @@
 
 @class MMLoadingView, UIView;
 
-@interface WAForceReloadLoadingWindowVC
+@interface WAForceReloadLoadingWindowVC : NSObject
 {
     UIView *_backView;
     MMLoadingView *_loadingView;

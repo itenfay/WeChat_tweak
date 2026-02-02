@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderLiveHomePageViewController;
 
-@interface MMFinderNotifyGetMoreLiveMgr
+@interface MMFinderNotifyGetMoreLiveMgr : NSObject
 {
     NSMutableDictionary *_getMoreLiveCacheRespDict;
     NSMutableSet *_requestingGetMoreLiveKeys;

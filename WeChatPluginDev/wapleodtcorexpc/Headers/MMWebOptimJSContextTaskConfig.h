@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MMWebOptimJSContextTaskConfig
+@interface MMWebOptimJSContextTaskConfig : NSObject
 {
     unsigned int _bizScene;
     unsigned int _subBizScene;

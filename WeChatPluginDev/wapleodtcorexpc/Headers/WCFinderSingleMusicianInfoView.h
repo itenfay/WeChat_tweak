@@ -6,7 +6,7 @@
 @class FinderContact, NSString, UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderFittingWidthRichView, WCFinderHeadImageView;
 @protocol WCFinderSingleMusicianInfoViewDelegate;
 
-@interface WCFinderSingleMusicianInfoView
+@interface WCFinderSingleMusicianInfoView : NSObject
 {
     id <WCFinderSingleMusicianInfoViewDelegate> _delegate;
     UIView *_headerView;

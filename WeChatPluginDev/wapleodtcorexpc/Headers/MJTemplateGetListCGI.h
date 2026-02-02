@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MJTemplateGetListCGI
+@interface MJTemplateGetListCGI : NSObject
 {
     unsigned long long _scene;
     CDUnknownBlockType _successBlock;

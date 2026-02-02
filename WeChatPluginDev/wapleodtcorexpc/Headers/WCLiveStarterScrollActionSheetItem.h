@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCLiveStarterScrollActionSheetItem
+@interface WCLiveStarterScrollActionSheetItem : NSObject
 {
     long long _reportElementId;
     NSString *_redDotPath;

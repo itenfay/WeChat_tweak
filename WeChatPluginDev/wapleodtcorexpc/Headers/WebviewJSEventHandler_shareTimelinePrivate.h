@@ -5,7 +5,7 @@
 
 @class NSData, ShareTimelineBaseImpl;
 
-@interface WebviewJSEventHandler_shareTimelinePrivate
+@interface WebviewJSEventHandler_shareTimelinePrivate : NSObject
 {
     ShareTimelineBaseImpl *_shareTimelineImpl;
     NSData *_coverImageData;

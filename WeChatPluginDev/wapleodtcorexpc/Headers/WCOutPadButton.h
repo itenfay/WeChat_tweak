@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCOutPadButton
+@interface WCOutPadButton : NSObject
 {
     UIView *m_iconView;
     UIView *m_coverView;

@@ -5,7 +5,7 @@
 
 @protocol EGORefreshTableHeaderDelegate;
 
-@interface EGORefreshTableHeaderView
+@interface EGORefreshTableHeaderView : NSObject
 {
     int m_pulldownHeight;
     int _state;

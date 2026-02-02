@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderQRCodeCgiDelegate;
 
-@interface WCFinderQRCodeCgi
+@interface WCFinderQRCodeCgi : NSObject
 {
     id <WCFinderQRCodeCgiDelegate> _delegate;
     NSString *_username;

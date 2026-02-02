@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCADCanvasEggAnimationHugeDisk
+@interface WCADCanvasEggAnimationHugeDisk : NSObject
 {
     _Bool _clockwise;
     NSString *_transitionImg;

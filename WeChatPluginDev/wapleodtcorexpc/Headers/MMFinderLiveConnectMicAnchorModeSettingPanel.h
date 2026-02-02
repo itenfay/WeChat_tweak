@@ -6,7 +6,7 @@
 @class FinderLiveMicInfo, MMFinderLivePaidConnectMicAnchorSetting, MMFinderLivePaidConnectMicAnchorSettingConfig, MMFinderLiveTaskId, MMTableViewInfo, MMUIButton, MicSetting_PurchaseMicSetting, NSString;
 @protocol MMFinderLiveConnectMicAnchorModeSettingPanelDelegate, MMFinderLiveConnectMicAnchorModeSettingPanelReportDelegate;
 
-@interface MMFinderLiveConnectMicAnchorModeSettingPanel
+@interface MMFinderLiveConnectMicAnchorModeSettingPanel : NSObject
 {
     _Bool _directOpenPaidMicSettingOnSelection;
     id <MMFinderLiveConnectMicAnchorModeSettingPanelDelegate> _delegate;

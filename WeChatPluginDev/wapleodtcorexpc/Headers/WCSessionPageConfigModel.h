@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCSessionPageConfigModel
+@interface WCSessionPageConfigModel : NSObject
 {
     NSMutableArray *_pagePaths;
     NSMutableDictionary *_pagePathsDicForKey;

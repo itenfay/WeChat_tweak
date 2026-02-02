@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveMicInfo_Wording, MMTableView, NSString;
 
-@interface MMFinderLiveConnectMicPkSelectSheetView
+@interface MMFinderLiveConnectMicPkSelectSheetView : NSObject
 {
     CDUnknownBlockType _selectAction;
     MMTableView *_tableView;

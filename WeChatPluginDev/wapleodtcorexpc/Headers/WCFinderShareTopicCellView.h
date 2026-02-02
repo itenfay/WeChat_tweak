@@ -5,7 +5,7 @@
 
 @class RichTextView, UIImageView, UILabel, UIView, WCFinderShareTopicCellViewModel;
 
-@interface WCFinderShareTopicCellView
+@interface WCFinderShareTopicCellView : NSObject
 {
     RichTextView *m_titleLabel;
     RichTextView *m_detailLabel;

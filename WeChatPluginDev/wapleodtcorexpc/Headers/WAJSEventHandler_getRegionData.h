@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWALocationService;
 
-@interface WAJSEventHandler_getRegionData
+@interface WAJSEventHandler_getRegionData : NSObject
 {
     id <IWALocationService> _locationService;
 }

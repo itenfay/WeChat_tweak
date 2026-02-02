@@ -5,7 +5,7 @@
 
 @class GCTextCellLayoutInfo;
 
-@interface GCTextCellModel
+@interface GCTextCellModel : NSObject
 {
     unsigned long long _textCellModelType;
     GCTextCellLayoutInfo *_textLayoutInfo;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WCFinderTabPageModel;
 
-@interface WCFinderWechatMentionTabPageViewController
+@interface WCFinderWechatMentionTabPageViewController : NSObject
 {
     NSMutableArray *_childModelArray;
     WCFinderTabPageModel *_likeTabPageModel;

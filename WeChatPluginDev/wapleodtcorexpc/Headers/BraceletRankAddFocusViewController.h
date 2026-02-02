@@ -6,7 +6,7 @@
 @class ContactsDataLogic, MMTableView, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NewContactsSearchPanelView, UIBarButtonItem, UIButton, UIView;
 @protocol BraceletRankAddFocusViewControllerDelegate;
 
-@interface BraceletRankAddFocusViewController
+@interface BraceletRankAddFocusViewController : NSObject
 {
     id <BraceletRankAddFocusViewControllerDelegate> m_delegate;
     MMTableView *m_tableView;

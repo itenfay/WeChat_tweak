@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPageFlowSessionInfo
+@interface WAPageFlowSessionInfo : NSObject
 {
     _Bool _isTriggerDownloaded;
     int _hostScene;

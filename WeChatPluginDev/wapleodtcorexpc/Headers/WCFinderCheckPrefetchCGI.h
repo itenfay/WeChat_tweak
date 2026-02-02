@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray;
 
-@interface WCFinderCheckPrefetchCGI
+@interface WCFinderCheckPrefetchCGI : NSObject
 {
     int _prefetchType;
     int _commentScene;

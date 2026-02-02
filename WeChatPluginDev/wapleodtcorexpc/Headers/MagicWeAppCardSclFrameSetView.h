@@ -5,7 +5,7 @@
 
 @class MBExternalViewStub, NSString;
 
-@interface MagicWeAppCardSclFrameSetView
+@interface MagicWeAppCardSclFrameSetView : NSObject
 {
     _Bool _haveNewNativeViewTexture;
     struct __CVBuffer *_pixelBuffer;

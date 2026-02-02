@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayOrderActivityControlItem
+@interface WCPayOrderActivityControlItem : NSObject
 {
     _Bool isButtonEnable;
     _Bool isButtonHidden;

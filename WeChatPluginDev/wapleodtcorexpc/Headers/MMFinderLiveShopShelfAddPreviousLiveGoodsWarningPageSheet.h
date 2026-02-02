@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLiveShopShelfAddPreviousLiveGoodsWarningPageSheet
+@interface MMFinderLiveShopShelfAddPreviousLiveGoodsWarningPageSheet : NSObject
 {
     _Bool _hasClickedConfirm;
     CDUnknownBlockType _completion;

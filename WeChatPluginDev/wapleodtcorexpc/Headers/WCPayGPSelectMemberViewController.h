@@ -6,7 +6,7 @@
 @class MMTableView, MMUILabel, MMUIView, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIButton, UICollectionView, UIImageView, UITextField;
 @protocol WCPayGPSelectMemberControllerDelegate;
 
-@interface WCPayGPSelectMemberViewController
+@interface WCPayGPSelectMemberViewController : NSObject
 {
     _Bool _bIsAllSelect;
     _Bool _bIsSearching;

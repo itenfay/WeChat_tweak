@@ -5,7 +5,7 @@
 
 @class BrandOpenSpecificViewHandler, NSString;
 
-@interface WebviewJSEventHandler_openSpecificView
+@interface WebviewJSEventHandler_openSpecificView : NSObject
 {
     BrandOpenSpecificViewHandler *_openSpecificViewHandler;
     _Bool _isDismissCurrentViewController;

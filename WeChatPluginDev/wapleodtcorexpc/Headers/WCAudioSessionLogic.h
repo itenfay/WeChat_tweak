@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAudioSessionLogic
+@interface WCAudioSessionLogic : NSObject
 {
 }
 

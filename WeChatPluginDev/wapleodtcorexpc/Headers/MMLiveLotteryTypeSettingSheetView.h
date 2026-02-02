@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMTableView, MMUIButton, MMUILabel, NSArray, NSString, PrizeData, UIView;
 @protocol MMLiveLotteryTypeSettingSheetViewDelegate;
 
-@interface MMLiveLotteryTypeSettingSheetView
+@interface MMLiveLotteryTypeSettingSheetView : NSObject
 {
     _Bool _joinTeamDisable;
     unsigned int _curJoinTeamMode;

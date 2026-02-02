@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIView;
 
-@interface MMFinderLiveFansGroupSettingTableCell
+@interface MMFinderLiveFansGroupSettingTableCell : NSObject
 {
     _Bool _isSwitchOn;
     _Bool _isReserved;

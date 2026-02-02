@@ -5,7 +5,7 @@
 
 @class FavAudioInfo, NSString, UIImageView, UILabel, UIView;
 
-@interface FavAudioPlayerController
+@interface FavAudioPlayerController : NSObject
 {
     FavAudioInfo *m_audioInfo;
     UIView *m_backgroundView;

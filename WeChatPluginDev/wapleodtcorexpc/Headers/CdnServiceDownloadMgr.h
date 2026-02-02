@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface CdnServiceDownloadMgr
+@interface CdnServiceDownloadMgr : NSObject
 {
     NSMutableDictionary *_dicDownloadArgsWrap;
 }

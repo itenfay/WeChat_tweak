@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUIImageView, MMUILabel, WCFinderHeadImageView;
 
-@interface MMFinderLiveKTVSongRequestedCell
+@interface MMFinderLiveKTVSongRequestedCell : NSObject
 {
     unsigned long long _state;
     long long _position;

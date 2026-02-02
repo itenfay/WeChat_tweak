@@ -5,7 +5,7 @@
 
 @class CContact, ChatRoomMemMsgDataLogic, MMTableView, NSMutableArray, NSMutableDictionary, NSString, WCTimeLineFooterView;
 
-@interface ChatRoomMemMsgListViewController
+@interface ChatRoomMemMsgListViewController : NSObject
 {
     MMTableView *m_tableView;
     WCTimeLineFooterView *m_footerView;

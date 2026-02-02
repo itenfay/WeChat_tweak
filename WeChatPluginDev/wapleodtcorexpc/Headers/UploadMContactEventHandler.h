@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface UploadMContactEventHandler
+@interface UploadMContactEventHandler : NSObject
 {
     NSMutableArray *m_arrMobileList;
     NSMutableArray *m_arrEmailList;

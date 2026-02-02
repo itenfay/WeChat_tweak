@@ -5,7 +5,7 @@
 
 @class WCNewShareCardLayoutCacheItem;
 
-@interface WCNewShareCardLayoutCache
+@interface WCNewShareCardLayoutCache : NSObject
 {
     WCNewShareCardLayoutCacheItem *_cacheItem;
 }

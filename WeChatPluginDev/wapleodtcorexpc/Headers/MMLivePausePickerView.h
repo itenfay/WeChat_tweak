@@ -6,7 +6,7 @@
 @class MMCommonPickerView, NSNumber, NSString, UIView;
 @protocol MMLivePausePickerViewDelegate;
 
-@interface MMLivePausePickerView
+@interface MMLivePausePickerView : NSObject
 {
     id <MMLivePausePickerViewDelegate> _delegate;
     UIView *_contentView;

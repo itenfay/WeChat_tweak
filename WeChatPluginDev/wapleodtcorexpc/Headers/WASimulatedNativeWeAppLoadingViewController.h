@@ -5,7 +5,7 @@
 
 @class MMUIButton, UIColor, WATitleView;
 
-@interface WASimulatedNativeWeAppLoadingViewController
+@interface WASimulatedNativeWeAppLoadingViewController : NSObject
 {
     MMUIButton *_returnButton;
     WATitleView *_titleView;

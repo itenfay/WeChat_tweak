@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MagicBrushDemoListCell
+@interface MagicBrushDemoListCell : NSObject
 {
 }
 

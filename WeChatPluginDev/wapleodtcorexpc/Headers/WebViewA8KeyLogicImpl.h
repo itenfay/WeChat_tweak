@@ -6,7 +6,7 @@
 @class JumpEmoticonDetailCgi, NSMutableDictionary, NSMutableSet, NSString, NSURL, SKBuiltinBuffer_t, UIView, WebviewAskAuthorizationLogic;
 @protocol WebViewA8KeyLogicDelegate, YYWebViewInterface;
 
-@interface WebViewA8KeyLogicImpl
+@interface WebViewA8KeyLogicImpl : NSObject
 {
     unsigned int _firstGetA8KeyOpCode;
     NSString *_firstGetA8KeyAppId;

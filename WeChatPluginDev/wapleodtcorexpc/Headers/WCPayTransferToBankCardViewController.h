@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UILabel, UIScrollView, UIView, WCPayDecimalKeyboardView, WCPayRemarkPageSheet, WCPayTextField, WCPayTransferMoneyAntiCheatUIView, WCPayWebImageView;
 @protocol WCPayTransferToBankCardViewControllerDelegate;
 
-@interface WCPayTransferToBankCardViewController
+@interface WCPayTransferToBankCardViewController : NSObject
 {
     UIScrollView *_m_backgroundView;
     id <WCPayTransferToBankCardViewControllerDelegate> _m_delegate;

@@ -6,7 +6,7 @@
 @class AnyPromise, MMTimer, NSString, UIImageView, UIView, VOIPVideoRender, VoipDescriptionButton, VoipRecentStatusCardView, VoipRecentStatusFoldButton, VoipRecentStatusUnFoldButton, XImageViewRenderer;
 @protocol VoipRecentStatusProperties;
 
-@interface VoIPCallerViewController
+@interface VoIPCallerViewController : NSObject
 {
     _Bool _shouldPlayRecentStatusSound;
     _Bool _disableToPlayRecentStatusSound;

@@ -5,7 +5,7 @@
 
 @class RichTextView, UIImageView, UIView;
 
-@interface WCPlayerShareableButton
+@interface WCPlayerShareableButton : NSObject
 {
     RichTextView *_richTitle;
     UIImageView *_indicator;

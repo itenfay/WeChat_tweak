@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, WCPayF2FMiniProgramConfirmRcvrCgi, WCPayTransferMoneyControlLogic;
 
-@interface WAJSEventHandler_requestFacetoFacePayment
+@interface WAJSEventHandler_requestFacetoFacePayment : NSObject
 {
     WCPayF2FMiniProgramConfirmRcvrCgi *_confirmRcvrCgi;
     WCPayTransferMoneyControlLogic *_transferMoneyControlLogic;

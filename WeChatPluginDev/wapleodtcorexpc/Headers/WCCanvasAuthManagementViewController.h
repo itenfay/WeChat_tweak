@@ -5,7 +5,7 @@
 
 @class NSDictionary, WCTableViewManager;
 
-@interface WCCanvasAuthManagementViewController
+@interface WCCanvasAuthManagementViewController : NSObject
 {
     NSDictionary *_userInfo;
     WCTableViewManager *_tableViewMgr;

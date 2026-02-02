@@ -6,7 +6,7 @@
 @class CContact, ChangeOwnerLogic, ChatRoomAdminSettingLogic, ChatRoomUpgradeOpenIMLogic, MMTableViewInfo, NSString;
 @protocol ChatRoomManagementDelegate;
 
-@interface ChatRoomManagementViewController
+@interface ChatRoomManagementViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     ChangeOwnerLogic *m_changeOwnerLogic;

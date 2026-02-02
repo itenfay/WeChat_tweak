@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIView;
 
-@interface MMLaconButton
+@interface MMLaconButton : NSObject
 {
     _Bool _bUseMaskHighlightedEffect;
     UIView *_leftImage;

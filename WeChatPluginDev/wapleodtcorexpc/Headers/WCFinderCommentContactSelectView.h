@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UIView, WCContactSelectFixedSearcher;
 
-@interface WCFinderCommentContactSelectView
+@interface WCFinderCommentContactSelectView : NSObject
 {
     NSArray *_latestCommentMentionedContacts;
     WCContactSelectFixedSearcher *_contactSearcher;

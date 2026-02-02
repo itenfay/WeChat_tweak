@@ -5,7 +5,7 @@
 
 @protocol WCPayUnCheckMchPosCgiDelegate;
 
-@interface WCPayUnCheckMchPosCgi
+@interface WCPayUnCheckMchPosCgi : NSObject
 {
     id <WCPayUnCheckMchPosCgiDelegate> _cgiDelegate;
 }

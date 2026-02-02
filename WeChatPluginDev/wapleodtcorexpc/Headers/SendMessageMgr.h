@@ -5,7 +5,7 @@
 
 @class CMMDB, NSDate, NSMutableArray, NSRecursiveLock, NSString;
 
-@interface SendMessageMgr
+@interface SendMessageMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     _Bool m_isSending;

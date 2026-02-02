@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJAudioFileManager, NSString;
 
-@interface MJTTSAsyncTask
+@interface MJTTSAsyncTask : NSObject
 {
     _Bool _isCloneTimbre;
     NSString *_text;

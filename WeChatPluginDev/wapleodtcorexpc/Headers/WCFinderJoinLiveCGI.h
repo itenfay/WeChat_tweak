@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderJoinLiveCGI
+@interface WCFinderJoinLiveCGI : NSObject
 {
     int _commentScene;
     WCFinderDataItem *_dataItem;

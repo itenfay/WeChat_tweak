@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCardDetailInfo
+@interface WCCardDetailInfo : NSObject
 {
     NSString *_detailTitle;
     NSString *_detailDesc;

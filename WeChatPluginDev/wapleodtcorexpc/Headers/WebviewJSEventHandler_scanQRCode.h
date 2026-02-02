@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_scanQRCode
+@interface WebviewJSEventHandler_scanQRCode : NSObject
 {
     _Bool _bGotScanResult;
 }

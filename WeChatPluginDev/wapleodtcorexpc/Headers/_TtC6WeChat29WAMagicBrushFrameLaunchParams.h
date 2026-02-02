@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat29WAMagicBrushFrameLaunchParams
+@interface _TtC6WeChat29WAMagicBrushFrameLaunchParams : NSObject
 {
     MISSING_TYPE *bizType;
     MISSING_TYPE *host;

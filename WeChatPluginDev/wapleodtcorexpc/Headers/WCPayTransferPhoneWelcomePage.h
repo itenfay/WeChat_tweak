@@ -6,7 +6,7 @@
 @class ComplianceItem, UIButton, UIImageView, UILabel, UIView, WCPayCss, WCPayTransferPhoneProtocalHalfPage;
 @protocol WCPayTransferPhoneWelcomePageDelegate><WCPayTransferPhoneProtocalHalfPageDelegate;
 
-@interface WCPayTransferPhoneWelcomePage
+@interface WCPayTransferPhoneWelcomePage : NSObject
 {
     ComplianceItem *_complianceItem;
     UIView *_containerView;

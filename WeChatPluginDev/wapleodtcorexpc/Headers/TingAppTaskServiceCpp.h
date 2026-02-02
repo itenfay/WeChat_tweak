@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingAppTaskServiceCpp
+@interface TingAppTaskServiceCpp : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WebviewJSEventHandler_openSecurityView
+@interface WebviewJSEventHandler_openSecurityView : NSObject
 {
     NSDictionary *_m_handlers;
 }

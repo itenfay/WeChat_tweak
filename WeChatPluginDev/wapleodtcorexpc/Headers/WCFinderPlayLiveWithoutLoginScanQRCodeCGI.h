@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderPlayLiveWithoutLoginScanQRCodeCGI
+@interface WCFinderPlayLiveWithoutLoginScanQRCodeCGI : NSObject
 {
     NSString *_finderUsername;
     unsigned long long _objectId;

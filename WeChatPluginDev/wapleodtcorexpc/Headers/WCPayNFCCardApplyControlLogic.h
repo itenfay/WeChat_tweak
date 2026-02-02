@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ApplyNFCCardResponse, EXTPKG_mmpayapplynfccardbo_CardPasskitInfo, NSString, OrderCreateOrderResponse, OrderQueryOrderResponse, WCPayNFCCardPlaceOrderCgi, WCPayNFCCardQueryOrderCgi;
 @protocol WCPayNFCCardApplyControlLogicDelegate;
 
-@interface WCPayNFCCardApplyControlLogic
+@interface WCPayNFCCardApplyControlLogic : NSObject
 {
     id <WCPayNFCCardApplyControlLogicDelegate> _logicDelegate;
     OrderCreateOrderResponse *_placeOrderResponse;

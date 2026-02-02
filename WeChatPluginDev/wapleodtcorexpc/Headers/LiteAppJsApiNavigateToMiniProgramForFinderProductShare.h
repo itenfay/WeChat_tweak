@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface LiteAppJsApiNavigateToMiniProgramForFinderProductShare
+@interface LiteAppJsApiNavigateToMiniProgramForFinderProductShare : NSObject
 {
     CDUnknownBlockType _customShareBtnActionBlock;
 }

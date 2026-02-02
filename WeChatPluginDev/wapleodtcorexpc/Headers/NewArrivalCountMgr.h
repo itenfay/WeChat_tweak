@@ -5,7 +5,7 @@
 
 @class NSString, NewArrivalCountData;
 
-@interface NewArrivalCountMgr
+@interface NewArrivalCountMgr : NSObject
 {
     NewArrivalCountData *m_data;
 }

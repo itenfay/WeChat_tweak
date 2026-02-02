@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportJSApiActionItem
+@interface WAReportJSApiActionItem : NSObject
 {
     _Bool _shouldRoute13542To27220;
     int _result;

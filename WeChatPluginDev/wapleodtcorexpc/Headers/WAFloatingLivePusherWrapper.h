@@ -5,7 +5,7 @@
 
 @protocol ITXLivePushJSAdapter;
 
-@interface WAFloatingLivePusherWrapper
+@interface WAFloatingLivePusherWrapper : NSObject
 {
     id <ITXLivePushJSAdapter> _livePusher;
 }

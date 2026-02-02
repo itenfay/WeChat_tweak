@@ -5,7 +5,7 @@
 
 @class CMessageWrap, ForwardMessageLogicController, NSString;
 
-@interface MMRTCTextMsgFloatMenuResponder
+@interface MMRTCTextMsgFloatMenuResponder : NSObject
 {
     CMessageWrap *_messageWrap;
     ForwardMessageLogicController *_forwardLogicController;

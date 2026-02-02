@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingDiscoverTapesServiceCpp
+@interface TingDiscoverTapesServiceCpp : NSObject
 {
 }
 

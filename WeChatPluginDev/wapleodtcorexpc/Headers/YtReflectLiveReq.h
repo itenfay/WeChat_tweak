@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, YtDataPack_OC, YtImageInfo;
 
-@interface YtReflectLiveReq
+@interface YtReflectLiveReq : NSObject
 {
     int _platform;
     NSString *_app_id;

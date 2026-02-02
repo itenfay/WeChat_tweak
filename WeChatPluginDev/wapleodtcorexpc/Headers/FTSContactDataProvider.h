@@ -5,7 +5,7 @@
 
 @class ContactsDataLogic, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString;
 
-@interface FTSContactDataProvider
+@interface FTSContactDataProvider : NSObject
 {
     NSMutableDictionary *_dicContact;
     NSMutableArray *_arrSessionContact;

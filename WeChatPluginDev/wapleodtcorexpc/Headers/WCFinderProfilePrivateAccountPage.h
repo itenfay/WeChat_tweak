@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WCFinderProfilePrivateAccountPage
+@interface WCFinderProfilePrivateAccountPage : NSObject
 {
     UIImageView *_lockIconView;
     UILabel *_textLabel;

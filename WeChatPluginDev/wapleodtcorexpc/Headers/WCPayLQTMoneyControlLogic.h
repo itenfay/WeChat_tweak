@@ -6,7 +6,7 @@
 @class MMPanelView, MMTipsViewController, MMWebViewController, NSString, PreRedeemFundRes, PurchaseFundRes, WCPayComplianceHalfPage, WCPayLQTClickPurchaseCgi, WCPayLQTClickRedeemCgi, WCPayLQTGetDistributePreviewCgi, WCPayLQTPreRedeemFundCgi, WCPayLQTPurchaseFromBankGuideCgi, WCPayLQTPurchaseFundCgi, WCPayLQTQryPurchaseResultCgi, WCPayLQTQryUserFundDetailCgi, WCPayLQTRedeemFundCgi, WCPayPayMoneyLogic;
 @protocol WCPayLQTMoneyControlLogicDelegate;
 
-@interface WCPayLQTMoneyControlLogic
+@interface WCPayLQTMoneyControlLogic : NSObject
 {
     _Bool _bIsFetchOrSaveSucc;
     unsigned int _entranceType;

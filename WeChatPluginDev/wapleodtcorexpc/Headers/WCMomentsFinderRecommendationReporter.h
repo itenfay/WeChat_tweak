@@ -5,7 +5,7 @@
 
 @class MFRTimelineReportInfo, NSString;
 
-@interface WCMomentsFinderRecommendationReporter
+@interface WCMomentsFinderRecommendationReporter : NSObject
 {
     MFRTimelineReportInfo *_timelineReportInfo;
 }

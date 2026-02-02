@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WAIssueLaunchPermissionInfo
+@interface WAIssueLaunchPermissionInfo : NSObject
 {
     unsigned int _beginTime;
     unsigned int _endTime;

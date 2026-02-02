@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupSignView, MMFinderLiveGameEsportSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMUILabel, MMWebImageView, NSMutableArray;
 
-@interface MMFinderLiveTableStyleComboLiveRewardCell
+@interface MMFinderLiveTableStyleComboLiveRewardCell : NSObject
 {
     unsigned long long _badgeSignCnt;
     MMFinderLiveGlobalRankSignView *_globalRankSignView;

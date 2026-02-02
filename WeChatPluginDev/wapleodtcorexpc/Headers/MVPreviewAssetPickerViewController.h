@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicPostAssetPickerHandler, MMUIButton, NSMutableArray, UIView;
 
-@interface MVPreviewAssetPickerViewController
+@interface MVPreviewAssetPickerViewController : NSObject
 {
     CDUnknownBlockType _onFinishPickAssetsHandler;
     CDUnknownBlockType _onCancelPickAssetsHandler;

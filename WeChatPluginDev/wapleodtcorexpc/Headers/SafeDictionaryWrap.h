@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSRecursiveLock;
 
-@interface SafeDictionaryWrap
+@interface SafeDictionaryWrap : NSObject
 {
     NSRecursiveLock *_lock;
     NSDictionary *_dic;

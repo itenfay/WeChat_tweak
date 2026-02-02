@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32MBEventHandler_getSystemInfoSync
+@interface _TtC6WeChat32MBEventHandler_getSystemInfoSync : NSObject
 {
     MISSING_TYPE *impl;
 }

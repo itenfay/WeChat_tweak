@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardFollowBoxInfo
+@interface WCCardFollowBoxInfo : NSObject
 {
     NSString *_text;
     long long _follow;

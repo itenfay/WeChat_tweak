@@ -5,7 +5,7 @@
 
 @class LiveInfo, MMLiveTask, MMUILabel, NSString, UIButton, UIView;
 
-@interface MMGroupLiveReplaySettingViewController
+@interface MMGroupLiveReplaySettingViewController : NSObject
 {
     _Bool _needAutoRotateToPortrait;
     _Bool _enableLiveReplay;

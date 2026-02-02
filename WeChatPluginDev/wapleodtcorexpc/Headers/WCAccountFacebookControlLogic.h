@@ -5,7 +5,7 @@
 
 @class NSString, WCAccountManualAuthControlLogic;
 
-@interface WCAccountFacebookControlLogic
+@interface WCAccountFacebookControlLogic : NSObject
 {
     WCAccountManualAuthControlLogic *m_manualAuthLogic;
 }

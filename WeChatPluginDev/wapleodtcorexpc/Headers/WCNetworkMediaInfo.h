@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCNetworkMediaInfoDelegate;
 
-@interface WCNetworkMediaInfo
+@interface WCNetworkMediaInfo : NSObject
 {
     WCNetworkMediaInfo *weakSelf;
     int _source;

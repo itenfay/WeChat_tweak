@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, UILabel, WCPayC2CFestivalMsgViewModel;
 
-@interface WCPayC2CFestivalMsgCellView
+@interface WCPayC2CFestivalMsgCellView : NSObject
 {
     UILabel *m_descLabel;
     UILabel *m_titleLabel;

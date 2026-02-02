@@ -5,7 +5,7 @@
 
 @class KindaJSEvent;
 
-@interface WebviewJSEventHandler_requestEntrustAuthorization
+@interface WebviewJSEventHandler_requestEntrustAuthorization : NSObject
 {
     KindaJSEvent *_kindaJSEvent;
 }

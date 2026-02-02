@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GWHaowanAlbumBadNetView, GameRecommendVideoListView, MMAlbumForGameHaowan, MMUIButton, NSArray, NSMutableArray, NSMutableSet, NSString, UICollectionView, UIView;
 @protocol GameVideoAlbumControllerDelegate;
 
-@interface GameVideoAlbumController
+@interface GameVideoAlbumController : NSObject
 {
     MMAlbumForGameHaowan *_haowanAlum;
     NSMutableArray *_sectionInfos;

@@ -5,7 +5,7 @@
 
 @class AppMMScheduleMessageViewModel, UIImageView;
 
-@interface AppMMScheduleMessageCellView
+@interface AppMMScheduleMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
 }

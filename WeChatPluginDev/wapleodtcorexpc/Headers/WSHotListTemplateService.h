@@ -5,7 +5,7 @@
 
 @class NSString, WSHotListContainerView;
 
-@interface WSHotListTemplateService
+@interface WSHotListTemplateService : NSObject
 {
     WSHotListContainerView *_hotListView;
 }

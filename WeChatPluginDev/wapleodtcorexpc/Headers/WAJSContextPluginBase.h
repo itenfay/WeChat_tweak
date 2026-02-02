@@ -6,7 +6,7 @@
 @class NSString, WAJSContextPluginDelegateCenter;
 @protocol WAJSServicePluginContextProtocol;
 
-@interface WAJSContextPluginBase
+@interface WAJSContextPluginBase : NSObject
 {
     _Bool _usingLocation;
     _Bool _usingLocationBackground;

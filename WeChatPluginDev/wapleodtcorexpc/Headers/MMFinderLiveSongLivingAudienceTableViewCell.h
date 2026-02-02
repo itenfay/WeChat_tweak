@@ -5,7 +5,7 @@
 
 @class WCLiveBlurButton;
 
-@interface MMFinderLiveSongLivingAudienceTableViewCell
+@interface MMFinderLiveSongLivingAudienceTableViewCell : NSObject
 {
     WCLiveBlurButton *_giftButton;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WARenderCacheInfo
+@interface WARenderCacheInfo : NSObject
 {
     unsigned int _debugType;
     unsigned int _appVersion;

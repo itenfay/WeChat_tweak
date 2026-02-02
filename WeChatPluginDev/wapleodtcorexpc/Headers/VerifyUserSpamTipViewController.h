@@ -6,7 +6,7 @@
 @class MMUIImageView, MMUILabel, MMUIView, NSString, RichTextView, UIButton;
 @protocol VerifyUserSpamTipViewControllerDelegate;
 
-@interface VerifyUserSpamTipViewController
+@interface VerifyUserSpamTipViewController : NSObject
 {
     MMUIView *m_contentView;
     MMUILabel *m_titleView;

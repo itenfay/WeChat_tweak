@@ -6,7 +6,7 @@
 @class NSData, NSString, WCPayCloseWalletLockCgi, WCPayTouchLockAuthenCgi;
 @protocol WCPayTouchLockVerifyLogicDelegate;
 
-@interface WCPayTouchLockVerifyLogic
+@interface WCPayTouchLockVerifyLogic : NSObject
 {
     unsigned int _patternLockLogicTag;
     id <WCPayTouchLockVerifyLogicDelegate> _delegate;

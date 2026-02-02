@@ -5,7 +5,7 @@
 
 @class DiscoverEntranceSetSwitchInfo;
 
-@interface DiscoverEntranceSettingCellHandler_NearbyLive
+@interface DiscoverEntranceSettingCellHandler_NearbyLive : NSObject
 {
     _Bool _nearbyPeopleEntranceEnabled;
     DiscoverEntranceSetSwitchInfo *_nearByPeopleSwitchInfo;

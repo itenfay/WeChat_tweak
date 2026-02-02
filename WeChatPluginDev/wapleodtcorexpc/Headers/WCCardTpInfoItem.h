@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardTpInfoItem
+@interface WCCardTpInfoItem : NSObject
 {
     NSString *_cardTpID;
     NSString *_cardCode;

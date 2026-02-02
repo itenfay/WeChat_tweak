@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCCoinLinkRichTextView
+@interface WCCoinLinkRichTextView : NSObject
 {
     UIImageView *_arrow;
 }

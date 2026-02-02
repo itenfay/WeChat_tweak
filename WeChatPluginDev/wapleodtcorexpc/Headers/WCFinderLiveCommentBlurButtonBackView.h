@@ -5,7 +5,7 @@
 
 @class UIImageView, UIView;
 
-@interface WCFinderLiveCommentBlurButtonBackView
+@interface WCFinderLiveCommentBlurButtonBackView : NSObject
 {
     _Bool _isOpenPivateMsg;
     _Bool _isDisplayPivateMsg;

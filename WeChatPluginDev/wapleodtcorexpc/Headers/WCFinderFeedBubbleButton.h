@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WCFinderFeedBubbleButton
+@interface WCFinderFeedBubbleButton : NSObject
 {
     UIImageView *_iconImageView;
     UILabel *_titleLabel;

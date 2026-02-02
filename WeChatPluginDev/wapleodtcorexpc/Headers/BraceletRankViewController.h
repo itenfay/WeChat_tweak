@@ -5,7 +5,7 @@
 
 @class BraceletChampionTailView, BraceletRankUtils, CAGradientLayer, DeviceRankInfo, ForwardMessageLogicController, MMHeadImageView, MMTableView, MMUILabel, MMWebImageView, NSDictionary, NSMutableArray, NSMutableSet, NSString, NSTimer, RankExtInfo, UIImage, UIImageView, UILabel, UIView;
 
-@interface BraceletRankViewController
+@interface BraceletRankViewController : NSObject
 {
     MMTableView *_tableView;
     UIView *_tableHeaderView;

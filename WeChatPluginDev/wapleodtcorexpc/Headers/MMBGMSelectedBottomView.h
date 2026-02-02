@@ -6,7 +6,7 @@
 @class MMBGMPanelPublishContext, MMBGMSelectedBottomViewModel, MMBGMSelectedConfig, MMUIButton, UIView;
 @protocol MMBGMSelectedBottomViewDelegate;
 
-@interface MMBGMSelectedBottomView
+@interface MMBGMSelectedBottomView : NSObject
 {
     _Bool _notCallDelegateOnManualSetMusicButton;
     id <MMBGMSelectedBottomViewDelegate> _delegate;

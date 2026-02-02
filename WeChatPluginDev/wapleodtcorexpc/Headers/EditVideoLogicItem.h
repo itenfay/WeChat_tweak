@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAsset, EditImageAttr, EditVideoAttr, EditVideoInitialView, MMAsset, NSString, UIImage, WCEditViewControllerUIConfig;
 @protocol EditVideoLogicItemDelegate, EditVideoOptionsDelegate;
 
-@interface EditVideoLogicItem
+@interface EditVideoLogicItem : NSObject
 {
     EditVideoAttr *_videoAttr;
     UIImage *_thumbImage;

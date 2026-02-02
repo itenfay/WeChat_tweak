@@ -5,7 +5,7 @@
 
 @class ContactsImportLogic, NSString, UIButton, UIImageView, UILabel;
 
-@interface ContactsImportGuideViewController
+@interface ContactsImportGuideViewController : NSObject
 {
     ContactsImportLogic *_contactsImportLogic;
     UIImageView *_iconImageView;

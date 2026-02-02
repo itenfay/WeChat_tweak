@@ -6,7 +6,7 @@
 @class NSString;
 @protocol TextStateBaseMediaViewDelegate;
 
-@interface TextStatePlayerViewForFinder
+@interface TextStatePlayerViewForFinder : NSObject
 {
     _Bool _muted;
     id <TextStateBaseMediaViewDelegate> _textStateDelegate;

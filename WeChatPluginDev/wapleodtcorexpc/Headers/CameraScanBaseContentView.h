@@ -6,7 +6,7 @@
 @class CameraScanTabView, UIButton, UILabel, UIView;
 @protocol CameraScanBaseContentViewDelegate;
 
-@interface CameraScanBaseContentView
+@interface CameraScanBaseContentView : NSObject
 {
     id <CameraScanBaseContentViewDelegate> _delegate;
     UILabel *_centerLabel;

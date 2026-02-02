@@ -6,7 +6,7 @@
 @class MMUILabel, MMUISearchBar, NSArray, NSString, UIImageView, UILabel, UITableView, UITapGestureRecognizer, UIView, WCFinderAnimationLoadingView, WCFinderRefreshTableFooterView;
 @protocol WCFinderAuthorityListViewModelProtocol, WCFinderShieldOtherLiedSearchFeedViewControllerDelegate;
 
-@interface WCFinderAuthoritySearchListViewController
+@interface WCFinderAuthoritySearchListViewController : NSObject
 {
     id <WCFinderShieldOtherLiedSearchFeedViewControllerDelegate> _delegate;
     UIView *_navigationView;

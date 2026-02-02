@@ -6,7 +6,7 @@
 @class MultitalkMinimizeViewController, NSString, SequenceAnimationObject;
 @protocol MultitalkMinimizeWindowDelegate;
 
-@interface MultitalkMinimizeWindow
+@interface MultitalkMinimizeWindow : NSObject
 {
     SequenceAnimationObject *m_animationObject;
     MultitalkMinimizeViewController *m_viewController;

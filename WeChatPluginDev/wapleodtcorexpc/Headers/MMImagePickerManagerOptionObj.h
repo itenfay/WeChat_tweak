@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveImagePickerParams, MMNearbyPoiInfo, NSArray, NSMutableDictionary, NSNumber, NSString, WCFinderEditOptionModel, WCFinderPickerTemplateParams;
 @protocol MMAssetPickerUserActionTipsProtocol;
 
-@interface MMImagePickerManagerOptionObj
+@interface MMImagePickerManagerOptionObj : NSObject
 {
     _Bool _isCamera;
     _Bool _isFrontCameraDevice;

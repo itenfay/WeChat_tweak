@@ -5,7 +5,7 @@
 
 @class FavAudioPlayerController, MMUIView, NSString;
 
-@interface FavVoiceDetaiViewController
+@interface FavVoiceDetaiViewController : NSObject
 {
     MMUIView *m_contentView;
     FavAudioPlayerController *m_audioPlayerCtrl;

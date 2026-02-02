@@ -5,7 +5,7 @@
 
 @class NSString, TranslateLinkReq, TranslateLinkResp;
 
-@interface TranslateLinkCacheWrap
+@interface TranslateLinkCacheWrap : NSObject
 {
     TranslateLinkReq *_req;
     TranslateLinkResp *_resp;

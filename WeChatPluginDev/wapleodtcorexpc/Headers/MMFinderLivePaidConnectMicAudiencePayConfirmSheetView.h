@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, RichTextView;
 
-@interface MMFinderLivePaidConnectMicAudiencePayConfirmSheetView
+@interface MMFinderLivePaidConnectMicAudiencePayConfirmSheetView : NSObject
 {
     _Bool _wecoinEnough;
     CDUnknownBlockType _clickCommonQuestionAction;

@@ -5,7 +5,7 @@
 
 @class NSString, WebStorageConfigExt;
 
-@interface WebStorageConfigTable
+@interface WebStorageConfigTable : NSObject
 {
     unsigned int _valueSize;
     unsigned int _expireTimestamp;

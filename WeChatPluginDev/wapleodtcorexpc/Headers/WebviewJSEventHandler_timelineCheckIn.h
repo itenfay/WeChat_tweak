@@ -5,7 +5,7 @@
 
 @class JSEvent, NSMutableData, NSString, NSURLConnection;
 
-@interface WebviewJSEventHandler_timelineCheckIn
+@interface WebviewJSEventHandler_timelineCheckIn : NSObject
 {
     NSURLConnection *_m_connecttion;
     JSEvent *_m_curEvent;

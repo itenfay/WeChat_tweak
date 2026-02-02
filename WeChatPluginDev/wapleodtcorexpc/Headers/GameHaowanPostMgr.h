@@ -5,7 +5,7 @@
 
 @class GameHaowanDatabaseHelper, NSMutableDictionary, NSString;
 
-@interface GameHaowanPostMgr
+@interface GameHaowanPostMgr : NSObject
 {
     NSMutableDictionary *_reportEditProps;
     GameHaowanDatabaseHelper *_databaseHelper;

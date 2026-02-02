@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem30755
+@interface KvReportItem30755 : NSObject
 {
     _Bool _isRecommand_34;
     _Bool _isSubscribed_36;

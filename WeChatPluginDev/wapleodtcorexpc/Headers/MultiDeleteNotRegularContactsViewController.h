@@ -5,7 +5,7 @@
 
 @class ContactBatchModifyLogic, MMAcceptAgreementCommonHeadView, MMDeleteNotRegularContactLogic, MMTableView, MMTableViewInfo, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MMUIView, MultiDeleteNotRegularContactsMaskViewView, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MultiDeleteNotRegularContactsViewController
+@interface MultiDeleteNotRegularContactsViewController : NSObject
 {
     NSMutableArray *m_arrNeedDeleteNotRegularContact;
     NSMutableDictionary *m_dicMultiSelect;

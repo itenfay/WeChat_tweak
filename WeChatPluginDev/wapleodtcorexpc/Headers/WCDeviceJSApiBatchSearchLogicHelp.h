@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol WCDeviceJSApiBatchSearchLogicHelpDelegate;
 
-@interface WCDeviceJSApiBatchSearchLogicHelp
+@interface WCDeviceJSApiBatchSearchLogicHelp : NSObject
 {
     NSString *_brandUserName;
     NSMutableArray *_batchSearchRunningQueue;

@@ -5,7 +5,7 @@
 
 @class LZDownloadTaskItem;
 
-@interface MMKSBasicMusicDownloader
+@interface MMKSBasicMusicDownloader : NSObject
 {
     LZDownloadTaskItem *_taskItem;
     long long _statusCode;

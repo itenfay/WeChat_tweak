@@ -6,7 +6,7 @@
 @class ContactsCreateChatRoomLogic, GetDefaultRedpacketResponse, HbEnvelopSource, MemoryMappedKV, NSDictionary, NSMutableArray, NSString, WCPayControlData, WCPayJumpRemindControlLogic, WCPayPayMoneyLogic, WCRedEnvelopesConfirmShowResourcesCgi, WCRedEnvelopesDeleteResourceCgi, WCRedEnvelopesGreetingControlLogic, WCRedEnvelopesMadeHBSuccessView, WCRedEnvelopesReportCgi;
 @protocol WCRedEnvelopesSendControlLogicDelegate;
 
-@interface WCRedEnvelopesSendControlLogic
+@interface WCRedEnvelopesSendControlLogic : NSObject
 {
     WCPayPayMoneyLogic *m_payMoneyLogic;
     WCPayControlData *oPayData;

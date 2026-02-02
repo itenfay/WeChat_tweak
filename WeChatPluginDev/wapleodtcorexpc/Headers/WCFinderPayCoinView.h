@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderPayCoinView
+@interface WCFinderPayCoinView : NSObject
 {
     _Bool _isSelected;
     UILabel *_headerLabel;

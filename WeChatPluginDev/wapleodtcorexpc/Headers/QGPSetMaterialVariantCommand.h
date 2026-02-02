@@ -5,7 +5,7 @@
 
 @class QGPIndex;
 
-@interface QGPSetMaterialVariantCommand
+@interface QGPSetMaterialVariantCommand : NSObject
 {
     QGPIndex *_params;
 }

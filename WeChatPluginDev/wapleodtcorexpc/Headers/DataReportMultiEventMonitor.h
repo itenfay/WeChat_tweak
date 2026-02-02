@@ -6,7 +6,7 @@
 @class NSNumber, NSString;
 @protocol DataReportMultiEventDelegate;
 
-@interface DataReportMultiEventMonitor
+@interface DataReportMultiEventMonitor : NSObject
 {
     NSNumber *m_monitorSwitch;
     _Bool m_isOpenMonitor;

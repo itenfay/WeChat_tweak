@@ -5,7 +5,7 @@
 
 @class AAListRecord, MMHeadImageView, MMUILabel, UIView;
 
-@interface WCPayGPOrderHistoryTableCell
+@interface WCPayGPOrderHistoryTableCell : NSObject
 {
     AAListRecord *_recordData;
     MMHeadImageView *_headImgView;

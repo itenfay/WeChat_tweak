@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMUILabel, MMWebImageView, NSString, UIButton;
 
-@interface MMLiveKTVLeaveGuideView
+@interface MMLiveKTVLeaveGuideView : NSObject
 {
     unsigned int _scene;
     CDUnknownBlockType _ktvLeaveGuideBlock;

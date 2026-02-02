@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary;
 @protocol WAAppOperateLogicDelegate;
 
-@interface WAAppOperateLogic
+@interface WAAppOperateLogic : NSObject
 {
     NSMutableDictionary *m_operationInfo;
     NSMutableArray *m_starOperations;

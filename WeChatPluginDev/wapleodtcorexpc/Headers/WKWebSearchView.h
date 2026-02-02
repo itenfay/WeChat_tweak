@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSString, NSURLRequest, UIScrollView;
 @protocol YYWebViewDelegate;
 
-@interface WKWebSearchView
+@interface WKWebSearchView : NSObject
 {
     _Bool _forceDarkModeMark;
     unsigned int _enterReusablePoolTime;

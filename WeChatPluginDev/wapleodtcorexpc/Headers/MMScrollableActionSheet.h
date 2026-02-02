@@ -6,7 +6,7 @@
 @class MMScrollableActionSheetContainerView, NSString, UIView;
 @protocol MMScrollableActionSheetDelegate;
 
-@interface MMScrollableActionSheet
+@interface MMScrollableActionSheet : NSObject
 {
     id <MMScrollableActionSheetDelegate> _delegate;
     MMScrollableActionSheetContainerView *_containerView;

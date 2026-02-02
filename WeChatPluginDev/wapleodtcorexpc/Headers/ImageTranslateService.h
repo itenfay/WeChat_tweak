@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ImageTranslateRequest, NSString;
 
-@interface ImageTranslateService
+@interface ImageTranslateService : NSObject
 {
     struct ConfigMode _configMode;
     ImageTranslateRequest *_currentRequest;

@@ -5,7 +5,7 @@
 
 @class AppFileNodeProgressView, CMessageWrap, MMUIActivityIndicatorView, MMWebImageView, NSString, SimpleImgInfo, UIImageView, UILabel, UIProgressView, UIView, YYImage;
 
-@interface MsgImageSquareThumbView
+@interface MsgImageSquareThumbView : NSObject
 {
     SimpleImgInfo *m_imgInfo;
     NSString *m_imageLocalPath;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderLiveStarterLiveModeVideoSubItem
+@interface WCFinderLiveStarterLiveModeVideoSubItem : NSObject
 {
     _Bool _isPureAudioMode;
     _Bool _disableVideoLandscape;

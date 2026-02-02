@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveHalfScreenTitleBarView, MMLiveOnlineUserLogic, MMLoadingView, NSString, UIScrollView, UIView;
 @protocol MMLiveOnlineStateViewDelegate;
 
-@interface MMLiveOnlineStateView
+@interface MMLiveOnlineStateView : NSObject
 {
     UIScrollView *_onlineUsersScrollView;
     UIView *_onlineContentView;

@@ -5,7 +5,7 @@
 
 @class ContactsItemView, NSString;
 
-@interface NewContactsItemCell
+@interface NewContactsItemCell : NSObject
 {
     ContactsItemView *m_contactsItemView;
     _Bool _m_bHideOpenIMDesc;

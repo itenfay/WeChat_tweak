@@ -6,7 +6,7 @@
 @class NSString, UICollectionView, UICollectionViewFlowLayout, WAMainFrameTaskBarSectionMyWeAppView, WAMainFrameTaskBarSectionWeAppView;
 @protocol WAMainFrameTaskBarSectionWeAppContainerDelegate><WAMainFrameTaskBarSectionWeAppViewDelegate;
 
-@interface WAMainFrameTaskBarSectionWeAppContainerView
+@interface WAMainFrameTaskBarSectionWeAppContainerView : NSObject
 {
     _Bool _cellOnceCreated;
     id <WAMainFrameTaskBarSectionWeAppContainerDelegate><WAMainFrameTaskBarSectionWeAppViewDelegate> _delegate;

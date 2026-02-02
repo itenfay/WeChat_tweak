@@ -5,7 +5,7 @@
 
 @class MMWebImageView;
 
-@interface WCAdInteractionImageView
+@interface WCAdInteractionImageView : NSObject
 {
     MMWebImageView *_imageView;
 }

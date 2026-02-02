@@ -5,7 +5,7 @@
 
 @class NSString, WCMallControlData;
 
-@interface WCMallBaseViewController
+@interface WCMallBaseViewController : NSObject
 {
     WCMallControlData *m_data;
 }

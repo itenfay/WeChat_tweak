@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x146
+@interface WloginTlv_0x146 : NSObject
 {
     unsigned short wErrorVer;
     unsigned short wErrorCode;

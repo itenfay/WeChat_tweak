@@ -5,7 +5,7 @@
 
 @protocol WCPaySetMchQRCodeFixedCgiDelegate;
 
-@interface WCPaySetMchQRCodeFixedCgi
+@interface WCPaySetMchQRCodeFixedCgi : NSObject
 {
     id <WCPaySetMchQRCodeFixedCgiDelegate> _cgiDelegate;
 }

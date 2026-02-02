@@ -5,7 +5,7 @@
 
 @class MMTableView, ZZFLEXAngel;
 
-@interface WASMPageSheetAudioListView
+@interface WASMPageSheetAudioListView : NSObject
 {
     MMTableView *_tableView;
     ZZFLEXAngel *_angel;

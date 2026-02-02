@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCPayInterceptWinLogic, WCRedEnvelopes2019GreetingViewController;
 
-@interface WCRedEnvelopesGreetingReceiveControlLogic
+@interface WCRedEnvelopesGreetingReceiveControlLogic : NSObject
 {
     int m_scene;
     _Bool m_bDidStopCoinAnimation;

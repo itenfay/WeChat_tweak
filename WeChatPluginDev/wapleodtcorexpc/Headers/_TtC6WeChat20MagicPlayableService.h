@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat20MagicPlayableService
+@interface _TtC6WeChat20MagicPlayableService : NSObject
 {
     MISSING_TYPE *mainScriptCallback;
     MISSING_TYPE *mainScriptJSContext;

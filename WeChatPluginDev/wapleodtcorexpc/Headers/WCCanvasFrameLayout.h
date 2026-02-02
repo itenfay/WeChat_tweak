@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WCCanvasFrameLayout
+@interface WCCanvasFrameLayout : NSObject
 {
     _Bool _needRelayout;
     NSMutableDictionary *_viewContainer;

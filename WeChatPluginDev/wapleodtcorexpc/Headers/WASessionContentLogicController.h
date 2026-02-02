@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, WASessionContentLogicHandler;
 
-@interface WASessionContentLogicController
+@interface WASessionContentLogicController : NSObject
 {
     WASessionContentLogicHandler *_sessionLogichandler;
     _Bool _isQuickSendSessionMsgViewHide;

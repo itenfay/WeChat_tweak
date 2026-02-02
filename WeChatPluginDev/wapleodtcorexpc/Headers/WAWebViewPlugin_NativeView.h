@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, NSString;
 
-@interface WAWebViewPlugin_NativeView
+@interface WAWebViewPlugin_NativeView : NSObject
 {
     _Bool _didAppear;
     unsigned long long _alertDisplayingCount;

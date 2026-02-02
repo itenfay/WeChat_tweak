@@ -6,7 +6,7 @@
 @class DownloadImageCDNMgr, EnterpriseSendMsgMgr, EnterpriseVoiceMsgMgr, MessagePatternCacheMgr, MultiMediaUploadUnifyMgr, NSMutableDictionary, NSObject, NSString, OpenDownloadCDNMgr, OpenUploadCDNMgr, OpenUploadMgr, RecordUploadCDNMgr, ThumbDownloadMgr, UploadImageCDNMgr;
 @protocol OS_dispatch_queue;
 
-@interface EnterpriseMsgMgr
+@interface EnterpriseMsgMgr : NSObject
 {
     NSMutableDictionary *_dicMsgDB;
     NSObject<OS_dispatch_queue> *m_dispatchQueue;

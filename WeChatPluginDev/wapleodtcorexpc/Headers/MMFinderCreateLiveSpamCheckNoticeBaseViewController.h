@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderCreateLiveSpamCheckReportSession, MMUILabel, MMUIMaskContainerView, NSString, UIScrollView;
 
-@interface MMFinderCreateLiveSpamCheckNoticeBaseViewController
+@interface MMFinderCreateLiveSpamCheckNoticeBaseViewController : NSObject
 {
     _Bool _hideNav;
     NSString *_detailTitle;

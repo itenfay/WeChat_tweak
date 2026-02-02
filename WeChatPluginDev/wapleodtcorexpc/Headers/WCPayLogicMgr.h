@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, MMTipsViewController, NSCache, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TenpayCertificate, WCPayApplePayAuthorizationLogic, WCPayAuthenticationPay, WCPayAuthenticationPayVerifySMSStruct, WCPayAvalibleBankCardBinInfo, WCPayBindCardInfo, WCPayBindInfo, WCPayBindInfoSMS, WCPayLocalCachedData, WCPayNetworkHelper, WCPayRealNameTipsViewController, WCPayResetPasswordInfo, WCRedEnvelopesSendControlLogic, WalletRequestInfo, WxSmCertUtil;
 
-@interface WCPayLogicMgr
+@interface WCPayLogicMgr : NSObject
 {
     WCPayLocalCachedData *m_oWCPayLocalCachedData;
     WCPayNetworkHelper *m_oWCPayNetworkHelper;

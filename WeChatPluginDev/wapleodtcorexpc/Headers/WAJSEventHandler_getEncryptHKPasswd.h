@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_getEncryptHKPasswd
+@interface WAJSEventHandler_getEncryptHKPasswd : NSObject
 {
 }
 

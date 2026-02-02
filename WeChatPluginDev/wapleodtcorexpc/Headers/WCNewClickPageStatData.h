@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCNewClickPageStatData
+@interface WCNewClickPageStatData : NSObject
 {
     unsigned int _errType;
     unsigned int _errCnt;

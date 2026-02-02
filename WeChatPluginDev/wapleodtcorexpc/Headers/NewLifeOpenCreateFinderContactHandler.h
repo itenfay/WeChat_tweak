@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderContact;
 
-@interface NewLifeOpenCreateFinderContactHandler
+@interface NewLifeOpenCreateFinderContactHandler : NSObject
 {
     WCFinderContact *_contact;
 }

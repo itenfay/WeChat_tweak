@@ -6,7 +6,7 @@
 @class ContactTagData, ContactsAuthorityManageModifyContactLogic, ContactsSearchController, MMTableView, MMUIButton, MMUIView, MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, RichTextView, UIView;
 @protocol ContactsAuthorityManageDetailViewControllerDelegate;
 
-@interface ContactsAuthorityManageDetailViewController
+@interface ContactsAuthorityManageDetailViewController : NSObject
 {
     double m_tagDetailEditHeaderHeight;
     MMUIView *m_tableViewFooterView;

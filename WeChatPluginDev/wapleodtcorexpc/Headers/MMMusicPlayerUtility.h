@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMMusicPlayerUtility
+@interface MMMusicPlayerUtility : NSObject
 {
 }
 

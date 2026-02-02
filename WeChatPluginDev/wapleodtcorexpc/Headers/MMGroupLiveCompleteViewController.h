@@ -5,7 +5,7 @@
 
 @class LiveInfo, MMLiveTask, MMUIButton, MMUILabel, NSString, StatViewCell, UIButton, UIView;
 
-@interface MMGroupLiveCompleteViewController
+@interface MMGroupLiveCompleteViewController : NSObject
 {
     _Bool _isAudience;
     LiveInfo *_liveInfo;

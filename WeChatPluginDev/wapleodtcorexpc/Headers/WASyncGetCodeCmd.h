@@ -5,7 +5,7 @@
 
 @class NSString, WAInfoData;
 
-@interface WASyncGetCodeCmd
+@interface WASyncGetCodeCmd : NSObject
 {
     _Bool _isEncrypt;
     _Bool _isRetry;

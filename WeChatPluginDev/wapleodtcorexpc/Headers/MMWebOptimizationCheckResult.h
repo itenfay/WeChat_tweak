@@ -5,7 +5,7 @@
 
 @class MMWebviewPrefetchResult, NSString;
 
-@interface MMWebOptimizationCheckResult
+@interface MMWebOptimizationCheckResult : NSObject
 {
     _Bool _hasAllowanceAsyncA8Key;
     _Bool _hasCacheDnsResult;

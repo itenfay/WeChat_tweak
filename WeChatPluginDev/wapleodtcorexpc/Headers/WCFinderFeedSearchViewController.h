@@ -5,7 +5,7 @@
 
 @class FavTagSearchFilter, NSMutableSet, NSString, UIView, WCFinderFeedFlowView, WCFinderFeedSearchViewModel;
 
-@interface WCFinderFeedSearchViewController
+@interface WCFinderFeedSearchViewController : NSObject
 {
     int _commentScene;
     int _interactionScene;

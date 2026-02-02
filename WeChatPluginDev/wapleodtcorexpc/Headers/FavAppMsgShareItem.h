@@ -5,7 +5,7 @@
 
 @class NSDate, NSString;
 
-@interface FavAppMsgShareItem
+@interface FavAppMsgShareItem : NSObject
 {
     _Bool _nativePage;
     _Bool _isPaySubscribe;

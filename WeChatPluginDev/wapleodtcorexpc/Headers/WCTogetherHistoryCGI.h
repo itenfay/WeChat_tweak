@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SnsWithTaPageRequest, SnsWithTaPageResponse, WCBaseNetworkingError;
 
-@interface WCTogetherHistoryCGI
+@interface WCTogetherHistoryCGI : NSObject
 {
     SnsWithTaPageResponse *_response;
     WCBaseNetworkingError *_error;

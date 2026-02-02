@@ -6,7 +6,7 @@
 @class NSString, WCPayOpeniOSTouchLockCgi;
 @protocol WCPayTouchLockSettingLogicDelegate;
 
-@interface WCPayTouchLockSettingLogic
+@interface WCPayTouchLockSettingLogic : NSObject
 {
     id <WCPayTouchLockSettingLogicDelegate> _delegate;
     WCPayOpeniOSTouchLockCgi *_openCgi;

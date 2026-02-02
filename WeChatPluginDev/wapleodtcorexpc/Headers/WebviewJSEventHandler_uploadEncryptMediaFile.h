@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_uploadEncryptMediaFile
+@interface WebviewJSEventHandler_uploadEncryptMediaFile : NSObject
 {
     NSString *_localId;
     _Bool _isShowProgressTips;

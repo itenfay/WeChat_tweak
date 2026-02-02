@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface FriendAsistSessionMgr
+@interface FriendAsistSessionMgr : NSObject
 {
     NSMutableDictionary *m_dicUnReadCount;
 }

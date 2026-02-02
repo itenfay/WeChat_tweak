@@ -5,7 +5,7 @@
 
 @class CaraCppJoinLiveQualityProphet, NSString;
 
-@interface CaraJoinLiveQualityProphetService
+@interface CaraJoinLiveQualityProphetService : NSObject
 {
     CaraCppJoinLiveQualityProphet *_underlying;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WADownloadFileConfig
+@interface WADownloadFileConfig : NSObject
 {
     unsigned int _downloadFileMaxConcurrentCount;
     unsigned long long _downloadFileMaxFileSize;

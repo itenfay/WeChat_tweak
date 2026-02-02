@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSString, NSTimer, UICollectionView, UIImageView, UILabel, UITapGestureRecognizer, WCFinderExtStatsReporter, WCFinderNearbyViewModel, WCFinderStreamFooterView, WCFinderStreamHeaderView, WCFinderStreamLayout, WCFinderStreamLiveCollectionViewCell;
 @protocol WCFinderNearbyViewControllerDelegate;
 
-@interface WCFinderNearbyViewController
+@interface WCFinderNearbyViewController : NSObject
 {
     _Bool _isSelected;
     _Bool _hasAppear;

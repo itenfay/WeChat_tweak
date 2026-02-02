@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat23MagicNewPlayableService
+@interface _TtC6WeChat23MagicNewPlayableService : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_jsApiContext;
     MISSING_TYPE *initConfig;

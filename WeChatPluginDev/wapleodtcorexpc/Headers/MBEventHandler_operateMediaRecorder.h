@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MBEventHandler_operateMediaRecorder
+@interface MBEventHandler_operateMediaRecorder : NSObject
 {
 }
 

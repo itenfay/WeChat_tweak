@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ServiceWorkerManager
+@interface ServiceWorkerManager : NSObject
 {
     _Bool _shouldCancelTask;
     NSString *_currLiteAppId;

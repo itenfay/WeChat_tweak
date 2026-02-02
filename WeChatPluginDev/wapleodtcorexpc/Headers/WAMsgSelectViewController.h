@@ -6,7 +6,7 @@
 @class CMessageWrap, MsgFastBrowseView, MsgImgFullScreenWindow, MsgNewImgDataLogic, NSMutableDictionary, NSMutableSet, NSString, UIButton, UILabel, UIView, ViewAppMsgController, WAAlertDialog;
 @protocol WAMsgSelectViewControllerDelegate;
 
-@interface WAMsgSelectViewController
+@interface WAMsgSelectViewController : NSObject
 {
     id <WAMsgSelectViewControllerDelegate> m_delegate;
     MsgFastBrowseView *m_msgFastBrowseView;

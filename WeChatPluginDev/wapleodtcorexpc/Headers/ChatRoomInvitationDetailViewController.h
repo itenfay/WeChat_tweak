@@ -6,7 +6,7 @@
 @class CContact, CMessageWrap, ChatRoomInvitationContactProfileLogic, MMHeadImageView, MMTableView, MMTableViewInfo, MMUILabel, NSString, UILabel, UIView;
 @protocol ChatRoomInvitationDetailDelegate;
 
-@interface ChatRoomInvitationDetailViewController
+@interface ChatRoomInvitationDetailViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     MMTableView *m_tableView;

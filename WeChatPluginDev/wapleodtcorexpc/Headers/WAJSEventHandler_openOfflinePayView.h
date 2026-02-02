@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCPayJSOpenOfflinePayControlLogic;
 
-@interface WAJSEventHandler_openOfflinePayView
+@interface WAJSEventHandler_openOfflinePayView : NSObject
 {
     NSMutableDictionary *_params;
     WCPayJSOpenOfflinePayControlLogic *_openOfflinePayLogic;

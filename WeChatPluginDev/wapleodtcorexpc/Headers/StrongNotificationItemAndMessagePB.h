@@ -5,7 +5,7 @@
 
 @class MMSessionInfo, NSString, StrongNotificationItemPB, WCFinderGlobalPushInfo;
 
-@interface StrongNotificationItemAndMessagePB
+@interface StrongNotificationItemAndMessagePB : NSObject
 {
     _Bool _hideStrongNotificationTop;
     _Bool _ignorePlaySoundAndAppVibration;

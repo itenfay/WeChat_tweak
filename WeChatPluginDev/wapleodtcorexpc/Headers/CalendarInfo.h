@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CalendarInfo
+@interface CalendarInfo : NSObject
 {
     unsigned int _ds;
     unsigned int _exposeCount;

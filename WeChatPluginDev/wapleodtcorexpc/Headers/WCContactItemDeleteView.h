@@ -6,7 +6,7 @@
 @class CContact, UIButton, UILabel, UIView;
 @protocol WCContactItemDeleteViewDelegate;
 
-@interface WCContactItemDeleteView
+@interface WCContactItemDeleteView : NSObject
 {
     UILabel *_displayNameLabel;
     UIView *_headImageView;

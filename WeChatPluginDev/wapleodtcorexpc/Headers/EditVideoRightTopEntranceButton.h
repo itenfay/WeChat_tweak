@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface EditVideoRightTopEntranceButton
+@interface EditVideoRightTopEntranceButton : NSObject
 {
     UIImageView *_logoImageView;
     UILabel *_textLabel;

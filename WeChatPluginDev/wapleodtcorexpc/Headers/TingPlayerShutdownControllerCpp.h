@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingPlayerShutdownControllerCpp
+@interface TingPlayerShutdownControllerCpp : NSObject
 {
 }
 

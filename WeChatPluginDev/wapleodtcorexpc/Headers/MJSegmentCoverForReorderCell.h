@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, UILabel;
 
-@interface MJSegmentCoverForReorderCell
+@interface MJSegmentCoverForReorderCell : NSObject
 {
     CAShapeLayer *_flagLayer;
     UILabel *_numberLabel;

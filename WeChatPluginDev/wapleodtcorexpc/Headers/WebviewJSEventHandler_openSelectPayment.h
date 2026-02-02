@@ -5,7 +5,7 @@
 
 @class KindaJSEvent;
 
-@interface WebviewJSEventHandler_openSelectPayment
+@interface WebviewJSEventHandler_openSelectPayment : NSObject
 {
     KindaJSEvent *_kindaJSEvent;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayC2CFestivalMsgViewModel
+@interface WCPayC2CFestivalMsgViewModel : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class AttributeLabel, UIImageView, UIView;
 
-@interface FTSVerticalSearchTableViewCell
+@interface FTSVerticalSearchTableViewCell : NSObject
 {
     AttributeLabel *_tipsLabel;
     UIImageView *_searchIcon;

@@ -5,7 +5,7 @@
 
 @class NSString, ReportObj16171;
 
-@interface WePkgStatReport
+@interface WePkgStatReport : NSObject
 {
     ReportObj16171 *_reportObj16171;
 }

@@ -5,7 +5,7 @@
 
 @class EcsGiftJumpInfo, NSDictionary, NSString;
 
-@interface EcsGiftMsgItem
+@interface EcsGiftMsgItem : NSObject
 {
     unsigned int _subtype;
     NSDictionary *_giftList;

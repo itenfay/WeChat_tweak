@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GameHaowanImageUploadTask
+@interface GameHaowanImageUploadTask : NSObject
 {
     float _lastPercent;
     NSString *_fileKey;

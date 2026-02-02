@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString;
 
-@interface ConfSDKServiceMgr
+@interface ConfSDKServiceMgr : NSObject
 {
     NSRecursiveLock *_mEngineLock;
 }

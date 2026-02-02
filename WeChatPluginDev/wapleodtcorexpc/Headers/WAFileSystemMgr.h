@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject, NSString, WAFileDescriptorLogic;
 @protocol OS_dispatch_queue;
 
-@interface WAFileSystemMgr
+@interface WAFileSystemMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *m_workQueue;
     WAFileDescriptorLogic *m_fdLogic;

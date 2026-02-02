@@ -5,7 +5,7 @@
 
 @class FTSWebSearchMgr, NSString;
 
-@interface WSWebViewPlugin_webSearchMgrContainer
+@interface WSWebViewPlugin_webSearchMgrContainer : NSObject
 {
     FTSWebSearchMgr *_webSearchMgr;
 }

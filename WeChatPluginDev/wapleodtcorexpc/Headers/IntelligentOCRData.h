@@ -5,7 +5,7 @@
 
 @class IntelligentOCRItem;
 
-@interface IntelligentOCRData
+@interface IntelligentOCRData : NSObject
 {
     unsigned int _ocrTime;
     IntelligentOCRItem *_ocrItem;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSArray;
 
-@interface _TtC6WeChat20FTSNormalSectionData
+@interface _TtC6WeChat20FTSNormalSectionData : NSObject
 {
     MISSING_TYPE *rows;
 }

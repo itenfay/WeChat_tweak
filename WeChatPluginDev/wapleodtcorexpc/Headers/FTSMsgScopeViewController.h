@@ -6,7 +6,7 @@
 @class FTSMsgScopeView, NSString;
 @protocol FTSMsgScopeViewControllerDelegate;
 
-@interface FTSMsgScopeViewController
+@interface FTSMsgScopeViewController : NSObject
 {
     FTSMsgScopeView *_msgScopeView;
     id <FTSMsgScopeViewControllerDelegate> _delegate;

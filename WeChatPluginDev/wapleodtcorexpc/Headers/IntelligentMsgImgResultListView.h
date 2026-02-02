@@ -6,7 +6,7 @@
 @class NSArray, OrderedDictionary;
 @protocol IntelligentMsgImgResultListViewDelegate;
 
-@interface IntelligentMsgImgResultListView
+@interface IntelligentMsgImgResultListView : NSObject
 {
     OrderedDictionary *m_dicLabelButtonInfo;
     unsigned int _m_style;

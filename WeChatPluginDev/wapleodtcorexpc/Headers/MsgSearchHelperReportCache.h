@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MsgSearchHelperReportCache
+@interface MsgSearchHelperReportCache : NSObject
 {
     _Bool _isHadReportSearch;
     NSString *_searchSessionId;

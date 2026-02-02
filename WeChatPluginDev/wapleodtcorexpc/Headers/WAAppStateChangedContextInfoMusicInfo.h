@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAAppStateChangedContextInfoMusicInfo
+@interface WAAppStateChangedContextInfoMusicInfo : NSObject
 {
     _Bool _canKeepAliveByAudioPlay;
     _Bool _isPlayingMusic;

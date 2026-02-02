@@ -5,7 +5,7 @@
 
 @class MMFinderLiveShopAdAnchorPromoteInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveShopAdAnchorPromoteTableViewCell
+@interface MMFinderLiveShopAdAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleTagLabel;

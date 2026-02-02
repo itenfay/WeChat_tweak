@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, WCSearcher;
 @protocol contactsDelegate;
 
-@interface ContactsGenericViewController
+@interface ContactsGenericViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableDictionary *m_dicAllContacts;

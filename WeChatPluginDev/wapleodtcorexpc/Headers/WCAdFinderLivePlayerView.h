@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFeedPreviewLogic, MMFinderLiveSnsAdStreamInfo, MMLiveCDNPlayerView, MMTimer, MMUIView, NSString, SightIconView, WCAdFinderLiveStreamInfo, WCAdURLImageView, WCDataItem;
 
-@interface WCAdFinderLivePlayerView
+@interface WCAdFinderLivePlayerView : NSObject
 {
     _Bool _bTimelineScene;
     _Bool _intentToPlay;

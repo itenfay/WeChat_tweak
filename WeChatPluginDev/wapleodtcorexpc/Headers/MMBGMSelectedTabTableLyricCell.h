@@ -6,7 +6,7 @@
 @class MMBGMCoverImageView, MMBGMSelectedMarqueeTextView, MMBGMSelectedTabTableViewCellConfig, NSString, UIImageView, UIView, WCProgressCircleView;
 @protocol MMBGMSelectedMusicDataProtocol;
 
-@interface MMBGMSelectedTabTableLyricCell
+@interface MMBGMSelectedTabTableLyricCell : NSObject
 {
     _Bool _isSelected;
     _Bool _isLoading;

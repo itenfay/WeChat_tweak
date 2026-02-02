@@ -6,7 +6,7 @@
 @class BlueManager, NSMutableArray, NSMutableDictionary, NSObject, NSString, WCDeviceAuthLogic, WCDeviceM7Logic, WCDeviceNetworkLogicMgr, WCDeviceSendDataToManufacturSvrLogic, WCDeviceWifiStateLogic, WCHKActivitySummaryLogic, WCHKWorkoutLogic;
 @protocol OS_dispatch_queue;
 
-@interface WCDeviceBrandMgr
+@interface WCDeviceBrandMgr : NSObject
 {
     WCDeviceAuthLogic *_authLogic;
     WCDeviceSendDataToManufacturSvrLogic *_sendDataLogic;

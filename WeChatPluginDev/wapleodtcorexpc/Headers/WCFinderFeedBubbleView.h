@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSObject, UIImageView, UILabel, UIView, WCFinderFeedBubbleButton;
 
-@interface WCFinderFeedBubbleView
+@interface WCFinderFeedBubbleView : NSObject
 {
     UIView *_textViewBox;
     NSObject *_model;

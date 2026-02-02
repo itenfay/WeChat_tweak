@@ -5,7 +5,7 @@
 
 @class WCAddressStageDataStruct;
 
-@interface POIAddressDataPickerItem
+@interface POIAddressDataPickerItem : NSObject
 {
     WCAddressStageDataStruct *_addressData;
 }

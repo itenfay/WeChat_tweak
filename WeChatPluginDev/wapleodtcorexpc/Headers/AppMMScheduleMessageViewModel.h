@@ -5,7 +5,7 @@
 
 @class AppMMScheduleItem;
 
-@interface AppMMScheduleMessageViewModel
+@interface AppMMScheduleMessageViewModel : NSObject
 {
     AppMMScheduleItem *_scheduleItem;
     double _contentWidth;

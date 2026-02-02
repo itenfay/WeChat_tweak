@@ -5,7 +5,7 @@
 
 @class WAAppStateChangedContextInfo, WAAppTask;
 
-@interface WAAppTaskRunningStateEnterBackgroundContext
+@interface WAAppTaskRunningStateEnterBackgroundContext : NSObject
 {
     WAAppTask *_task;
     unsigned long long _reason;

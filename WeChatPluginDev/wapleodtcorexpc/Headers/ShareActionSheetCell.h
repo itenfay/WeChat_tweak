@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, NSURL, ShareOpenSDKStateItem, UIImage, UILabel, UIView, WCLanDeviceStateItemProgressView;
 
-@interface ShareActionSheetCell
+@interface ShareActionSheetCell : NSObject
 {
     UIView *m_contentView;
     UIView *m_header;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAsset, CMessageWrap, ImageBrowseButton, MMUIButton, MMUILabel, NSString, NSURL, SightIconView, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WCC2CPlayerProgressBar, WCC2CShadowLabel, WCC2CVideoPlayerReporter;
 @protocol WCC2CPlayerControlViewDelegate;
 
-@interface WCC2CPlayerControlView
+@interface WCC2CPlayerControlView : NSObject
 {
     _Bool _bVideoBlocked;
     _Bool _bPreventHiddenTool;

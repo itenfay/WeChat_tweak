@@ -5,7 +5,7 @@
 
 @class MMLiveStorageCleanupPinningToken, NSString;
 
-@interface MMFinderLiveUploadImageMediaItem
+@interface MMFinderLiveUploadImageMediaItem : NSObject
 {
     NSString *_imageFilePath;
     NSString *_thumbFilePath;

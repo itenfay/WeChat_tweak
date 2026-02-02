@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, SlideTextJSHandler, UIButton, UILabel, UIScreenEdgePanGestureRecognizer, WCFinderGuideLinkBubbleView, WCFinderSlideTextForRemarkVCParams, WSTemplateLogicController, WSWebViewPluginScheduler;
 
-@interface WCFinderSlideTextForRemarkViewController
+@interface WCFinderSlideTextForRemarkViewController : NSObject
 {
     WSWebViewPluginScheduler *pluginScheduler;
     CDUnknownBlockType _doneBlock;

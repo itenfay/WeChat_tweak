@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface WCADQuestionExp
+@interface WCADQuestionExp : NSObject
 {
     NSString *nsExpId;
     NSMutableArray *aryQuestions;

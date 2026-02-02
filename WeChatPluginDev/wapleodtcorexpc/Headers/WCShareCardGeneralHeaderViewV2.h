@@ -6,7 +6,7 @@
 @class CALayer, MMUIButton, MMUILabel, MMUIView, MMWebImageView, NSMutableArray, NSString, UIImage, UIImageView, WCShareCardJumpToFinderView;
 @protocol WCShareCardGeneralCardHeaderV2Delegate;
 
-@interface WCShareCardGeneralHeaderViewV2
+@interface WCShareCardGeneralHeaderViewV2 : NSObject
 {
     _Bool _bIsGiftFromUserHeaderView;
     int _cardType;

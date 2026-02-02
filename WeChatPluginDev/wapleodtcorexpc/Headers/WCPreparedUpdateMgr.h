@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCPreparedUpdateMgr
+@interface WCPreparedUpdateMgr : NSObject
 {
     NSMutableDictionary *_downloadTaskDict;
     NSObject<OS_dispatch_queue> *_ppDownloadQueue;

@@ -5,7 +5,7 @@
 
 @class CContact, MMUIButton, NSIndexPath, NSMutableArray, NSMutableSet, NSString, UICollectionView, UICollectionViewFlowLayout, UIImageView, UIScreenEdgePanGestureRecognizer, UIView, WAAppDismissAnimateTransition, WCStoryDismissInteractiveTransition, WCStoryMultiContactPreviewCell, WCStoryPreivewPageCollectionController, WCStoryPreviewContactIndicatorView, WCStoryPreviewReportObj;
 
-@interface WCStoryMultiContactPreviewViewController
+@interface WCStoryMultiContactPreviewViewController : NSObject
 {
     UIView *m_contentView;
     UICollectionView *m_collectionView;

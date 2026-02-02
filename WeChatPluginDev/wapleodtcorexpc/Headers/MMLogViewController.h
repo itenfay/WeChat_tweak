@@ -6,7 +6,7 @@
 @class MMPickerView, MMProgressView, MMTableViewInfo, NSMutableArray, NSString, UILabel;
 @protocol MMLogViewControllerDelegate;
 
-@interface MMLogViewController
+@interface MMLogViewController : NSObject
 {
     MMProgressView *m_progressView;
     UILabel *m_labelProgress;

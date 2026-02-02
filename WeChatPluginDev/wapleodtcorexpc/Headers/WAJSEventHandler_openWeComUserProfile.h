@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WAJSEventHandler_openWeComUserProfile
+@interface WAJSEventHandler_openWeComUserProfile : NSObject
 {
     NSDictionary *_reqDic;
     unsigned long long _scene;

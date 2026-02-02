@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveComplaintReportHandler
+@interface MMLiveComplaintReportHandler : NSObject
 {
     unsigned int scene;
     unsigned int roomRole;

@@ -5,7 +5,7 @@
 
 @class AuthorizeInfoWithPhone, NSMutableArray, NSString, UserIdAuthorizePageJumpItem, VerifyWxPayReqInfo;
 
-@interface UserIdAuthorizePageInfo
+@interface UserIdAuthorizePageInfo : NSObject
 {
     _Bool _authChecked;
     _Bool _showPrivacyInfo;

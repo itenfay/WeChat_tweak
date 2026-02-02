@@ -5,7 +5,7 @@
 
 @class CEnterpriseContact, MMTableViewInfo, NSMutableArray, NSString;
 
-@interface EnterpriseContactInfoViewController
+@interface EnterpriseContactInfoViewController : NSObject
 {
     CEnterpriseContact *_enterpriseContact;
     NSString *_myUserName;

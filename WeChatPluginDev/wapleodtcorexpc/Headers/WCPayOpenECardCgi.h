@@ -6,7 +6,7 @@
 @class OpenECardReq;
 @protocol WCPayOpenECardCgiDelegate;
 
-@interface WCPayOpenECardCgi
+@interface WCPayOpenECardCgi : NSObject
 {
 }
 

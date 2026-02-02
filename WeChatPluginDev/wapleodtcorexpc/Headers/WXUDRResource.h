@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WXUDRResource
+@interface WXUDRResource : NSObject
 {
     NSArray *_extInfoArray;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveCameraOperationItem, MMLiveTaskId, MMUIButton, MMUILabel, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol MMLiveCameraOperationPanelDelegate;
 
-@interface MMLiveCameraOperationPageSheet
+@interface MMLiveCameraOperationPageSheet : NSObject
 {
     _Bool _disableSwitchToAudioMode;
     _Bool _hasMultipleRedDot;

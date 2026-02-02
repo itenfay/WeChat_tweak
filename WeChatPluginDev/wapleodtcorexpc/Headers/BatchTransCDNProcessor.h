@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSArray, NSMutableArray;
 
-@interface BatchTransCDNProcessor
+@interface BatchTransCDNProcessor : NSObject
 {
     NSArray *_dataList;
     CMessageWrap *_msgWrap;

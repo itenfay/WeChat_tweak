@@ -5,7 +5,7 @@
 
 @class BizAppMsgDetailInfo, NSString, NSURL, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView, UIViewController, WCFileBrowseInfo;
 
-@interface MMLiveScreenSharingBaseViewController
+@interface MMLiveScreenSharingBaseViewController : NSObject
 {
     _Bool _blocksSingleTapInContentView;
     _Bool _blocksLongPressInContentView;

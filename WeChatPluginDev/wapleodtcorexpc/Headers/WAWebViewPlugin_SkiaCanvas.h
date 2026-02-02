@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSNumber, NSString, WAJSContextPlugin_NativeRender;
 
-@interface WAWebViewPlugin_SkiaCanvas
+@interface WAWebViewPlugin_SkiaCanvas : NSObject
 {
     NSNumber *_oldScrollEnabled;
     WAJSContextPlugin_NativeRender *_nativeRender;

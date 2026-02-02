@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton;
 
-@interface FBDocumentViewController
+@interface FBDocumentViewController : NSObject
 {
     CDUnknownBlockType _onOpeniCloud;
     MMUILabel *_descLabel;

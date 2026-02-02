@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCCOService
+@interface WCCCOService : NSObject
 {
 }
 

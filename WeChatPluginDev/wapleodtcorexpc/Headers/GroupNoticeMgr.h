@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GroupNoticeDB, NSString;
 
-@interface GroupNoticeMgr
+@interface GroupNoticeMgr : NSObject
 {
     CDUnknownBlockType m_updateCompletionHandler;
     GroupNoticeDB *_groupNoticeDB;

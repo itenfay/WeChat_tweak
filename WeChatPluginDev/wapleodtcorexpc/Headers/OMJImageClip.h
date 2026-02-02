@@ -5,7 +5,7 @@
 
 @class OMJContentSpatialDesc;
 
-@interface OMJImageClip
+@interface OMJImageClip : NSObject
 {
     OMJContentSpatialDesc *_contentSpatialDesc;
     CDStruct_1b6d18a9 _duration;

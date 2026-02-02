@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EcsGiftAddress
+@interface EcsGiftAddress : NSObject
 {
     NSString *_userName;
     NSString *_postalCode;

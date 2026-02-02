@@ -5,7 +5,7 @@
 
 @class NSString, PayPluginResponse, WCPayGetPluginCgi;
 
-@interface WeChatPayContactInfoAssist
+@interface WeChatPayContactInfoAssist : NSObject
 {
     _Bool _bHasGetPluginSectionData;
     WCPayGetPluginCgi *_getPluginCgi;

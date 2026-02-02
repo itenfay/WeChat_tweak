@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class WCMusicListenHistoryTitleView, WCMusicSearchReporter;
 @protocol WCMusicListenHistoryViewControllerDelegate;
 
-@interface WCMusicListenHistoryViewController
+@interface WCMusicListenHistoryViewController : NSObject
 {
     double _collectionViewTopPadding;
     id <WCMusicListenHistoryViewControllerDelegate> _delegate;

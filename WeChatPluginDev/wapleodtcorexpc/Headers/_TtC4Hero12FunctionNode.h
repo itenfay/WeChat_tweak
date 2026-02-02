@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero12FunctionNode
+@interface _TtC4Hero12FunctionNode : NSObject
 {
     MISSING_TYPE *prototype;
     MISSING_TYPE *body;

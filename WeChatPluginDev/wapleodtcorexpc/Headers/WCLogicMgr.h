@@ -6,7 +6,7 @@
 @class NSMutableSet;
 @protocol WCLogicMgrDelegate;
 
-@interface WCLogicMgr
+@interface WCLogicMgr : NSObject
 {
     id <WCLogicMgrDelegate> m_delegate;
     NSMutableSet *setWorkingItems;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderCommByPass, FinderRelatedRecommendTips, FinderStreamLayoutInfo, MMTimer, NSArray, NSData, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderAbstractTask, WCFinderOpenTimelineParams, WCFinderRedDotCtrlInfo;
 @protocol WCFinderFeedMachineVMDelegate;
 
-@interface WCFinderFeedMachineVM
+@interface WCFinderFeedMachineVM : NSObject
 {
     _Bool _stopFetchNextPage;
     _Bool _hasFetchEnterData;

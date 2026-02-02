@@ -5,7 +5,7 @@
 
 @class WebRecordDB;
 
-@interface WebviewJSEventHandler_recordHistory
+@interface WebviewJSEventHandler_recordHistory : NSObject
 {
     WebRecordDB *_db;
 }

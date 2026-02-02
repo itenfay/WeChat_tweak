@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WAGameLiveExitNoteHalfScreenViewController
+@interface WAGameLiveExitNoteHalfScreenViewController : NSObject
 {
     CDUnknownBlockType _confirmBlock;
 }

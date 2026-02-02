@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUIImageView, MMUILabel, UIScrollView, UIView;
 
-@interface MMFinderLiveFeedHideNoticeTipView
+@interface MMFinderLiveFeedHideNoticeTipView : NSObject
 {
     CDUnknownBlockType _actionBlock;
     UIScrollView *_scrollView;

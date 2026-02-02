@@ -6,7 +6,7 @@
 @class MMTimer, UIView;
 @protocol WABaseInfoToastDelegate;
 
-@interface WABaseInfoToast
+@interface WABaseInfoToast : NSObject
 {
     _Bool m_isMoving;
     MMTimer *m_autoDismissTimer;

@@ -5,7 +5,7 @@
 
 @class MJTemplateMoviePlayer, NSString, UIView, WCAudioModuleProxy;
 
-@interface MJTemplatePlayerManager
+@interface MJTemplatePlayerManager : NSObject
 {
     MJTemplateMoviePlayer *_playingPlayer;
     UIView *_playingContainerView;

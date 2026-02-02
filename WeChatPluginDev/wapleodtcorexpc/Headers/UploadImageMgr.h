@@ -5,7 +5,7 @@
 
 @class MessageCommonUploader, NSMutableArray, NSString, UploadImageInfo;
 
-@interface UploadImageMgr
+@interface UploadImageMgr : NSObject
 {
     NSMutableArray *m_arrQueue;
     UploadImageInfo *m_oCurUpload;

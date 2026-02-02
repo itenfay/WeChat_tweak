@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBCommonFileInfo
+@interface QBCommonFileInfo : NSObject
 {
     NSString *jcev2_p_0_r_sFileName;
     NSString *jcev2_p_1_r_sFileUrl;

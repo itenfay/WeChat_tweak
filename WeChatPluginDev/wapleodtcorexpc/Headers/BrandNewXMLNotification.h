@@ -5,7 +5,7 @@
 
 @class BrandNewXMLNotificationAccountInfo, BrandNewXMLNotificationMsgInfo, NSString;
 
-@interface BrandNewXMLNotification
+@interface BrandNewXMLNotification : NSObject
 {
     NSString *_plain;
     BrandNewXMLNotificationAccountInfo *_accountInfo;

@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, NSString, RadarSearchMember, UIImageView, UILabel;
 
-@interface RSAnimationHeadImgView
+@interface RSAnimationHeadImgView : NSObject
 {
     UILabel *_displayName;
     UIImageView *_avatarView;

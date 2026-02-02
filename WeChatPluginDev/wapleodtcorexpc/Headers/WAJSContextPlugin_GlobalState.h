@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAJSContextPlugin_GlobalState
+@interface WAJSContextPlugin_GlobalState : NSObject
 {
     NSMutableDictionary *_dicState;
 }

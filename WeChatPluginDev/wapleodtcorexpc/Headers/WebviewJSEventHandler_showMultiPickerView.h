@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_showMultiPickerView
+@interface WebviewJSEventHandler_showMultiPickerView : NSObject
 {
 }
 

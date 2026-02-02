@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface VoiceTransSessionInfo
+@interface VoiceTransSessionInfo : NSObject
 {
     NSString *_userName;
     NSMutableDictionary *_dicVoiceTransInfo;

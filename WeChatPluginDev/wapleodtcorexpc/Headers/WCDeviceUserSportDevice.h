@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCDeviceUserSportDevice
+@interface WCDeviceUserSportDevice : NSObject
 {
     _Bool m_isHealThkitOrApp;
     unsigned int m_stepCount;

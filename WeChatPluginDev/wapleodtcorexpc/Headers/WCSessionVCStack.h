@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCSessionVCStack
+@interface WCSessionVCStack : NSObject
 {
     NSMutableArray *m_container;
 }

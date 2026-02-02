@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface ChatRoomFamilyEdcationDataPB
+@interface ChatRoomFamilyEdcationDataPB : NSObject
 {
     NSMutableArray *_familyEdcationHadGetContactUserNameList;
 }

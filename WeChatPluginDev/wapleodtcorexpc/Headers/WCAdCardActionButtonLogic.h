@@ -6,7 +6,7 @@
 @class WCAdCardActionButton, WCDataItem;
 @protocol WCAdCardActionButtonLogicDelegate;
 
-@interface WCAdCardActionButtonLogic
+@interface WCAdCardActionButtonLogic : NSObject
 {
     id <WCAdCardActionButtonLogicDelegate> _delegate;
     long long _buttonStyle;

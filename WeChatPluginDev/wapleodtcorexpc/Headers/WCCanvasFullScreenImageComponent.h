@@ -5,7 +5,7 @@
 
 @class WCAdURLImageView;
 
-@interface WCCanvasFullScreenImageComponent
+@interface WCCanvasFullScreenImageComponent : NSObject
 {
     WCAdURLImageView *_imageView;
 }

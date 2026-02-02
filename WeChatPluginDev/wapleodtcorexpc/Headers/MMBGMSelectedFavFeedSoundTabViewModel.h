@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMBGMUniqueMutableArray, NSData;
 @protocol MMBGMSelectedFavFeedSoundTabViewModelDelegate;
 
-@interface MMBGMSelectedFavFeedSoundTabViewModel
+@interface MMBGMSelectedFavFeedSoundTabViewModel : NSObject
 {
     _Bool _hasMore;
     id <MMBGMSelectedFavFeedSoundTabViewModelDelegate> _bgmFavVMDelegate;

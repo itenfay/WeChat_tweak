@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GroupNoticeItem, NSString;
 
-@interface WNPasteMgr
+@interface WNPasteMgr : NSObject
 {
     GroupNoticeItem *_downloadingItem;
     CDUnknownBlockType _downloadCallback;

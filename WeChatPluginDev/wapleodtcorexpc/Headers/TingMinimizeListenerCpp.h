@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingMinimizeListenerCpp
+@interface TingMinimizeListenerCpp : NSObject
 {
 }
 

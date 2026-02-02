@@ -5,7 +5,7 @@
 
 @class EmoticonServerTip, NSString;
 
-@interface EmoticonRecommendMgr
+@interface EmoticonRecommendMgr : NSObject
 {
     EmoticonServerTip *m_serverTip;
     NSString *m_lastEmotionStoreNodePid;

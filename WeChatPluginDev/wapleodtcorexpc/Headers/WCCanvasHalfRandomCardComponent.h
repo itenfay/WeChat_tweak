@@ -5,7 +5,7 @@
 
 @class NSString, UIView, WCAdURLImageView, WCAdvertiseInfo, WCCanvasComponentHalfRandomCardItemInfo, WCCanvasDynamicDataLoader, WCCanvasHalfRandomSubCard;
 
-@interface WCCanvasHalfRandomCardComponent
+@interface WCCanvasHalfRandomCardComponent : NSObject
 {
     WCCanvasDynamicDataLoader *_dynamicLoader;
     unsigned long long _cardState;

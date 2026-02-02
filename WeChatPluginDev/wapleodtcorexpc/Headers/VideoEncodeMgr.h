@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSObject, NSString, VideoEncodeTask;
 
-@interface VideoEncodeMgr
+@interface VideoEncodeMgr : NSObject
 {
     VideoEncodeTask *_currentTask;
     NSMutableArray *_normalTaskQueue;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayChangeOfflinePayFeeLimitLogic
+@interface WCPayChangeOfflinePayFeeLimitLogic : NSObject
 {
     int m_enWCPayChangeOfflinePayFeeLimitLogicScene;
 }

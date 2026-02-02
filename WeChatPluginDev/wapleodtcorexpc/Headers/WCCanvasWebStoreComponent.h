@@ -5,7 +5,7 @@
 
 @class NSString, SKStoreProductViewController;
 
-@interface WCCanvasWebStoreComponent
+@interface WCCanvasWebStoreComponent : NSObject
 {
     SKStoreProductViewController *_productViewController;
 }

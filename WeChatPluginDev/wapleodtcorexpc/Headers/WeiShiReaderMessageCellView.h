@@ -5,7 +5,7 @@
 
 @class NSString, WeShiReaderItemView, WeiShiReaderMessageViewModel;
 
-@interface WeiShiReaderMessageCellView
+@interface WeiShiReaderMessageCellView : NSObject
 {
     WeShiReaderItemView *itemView;
 }

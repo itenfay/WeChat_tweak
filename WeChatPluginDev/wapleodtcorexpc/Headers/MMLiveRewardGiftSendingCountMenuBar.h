@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, NSArray, NSIndexPath, NSMutableArray;
 
-@interface MMLiveRewardGiftSendingCountMenuBar
+@interface MMLiveRewardGiftSendingCountMenuBar : NSObject
 {
     CDUnknownBlockType _tapAction;
     MMFinderLiveRewardGiftItem *_giftItem;

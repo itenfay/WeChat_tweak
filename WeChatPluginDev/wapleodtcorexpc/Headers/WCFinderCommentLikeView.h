@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WCFinderCommentLikeView
+@interface WCFinderCommentLikeView : NSObject
 {
     _Bool _isLiked;
     UIImageView *_likeImageView;

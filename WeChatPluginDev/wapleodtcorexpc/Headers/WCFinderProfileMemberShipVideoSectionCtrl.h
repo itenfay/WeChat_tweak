@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderProfileMemberShipVideoSectionCtrl
+@interface WCFinderProfileMemberShipVideoSectionCtrl : NSObject
 {
     NSMutableDictionary *_cellHeightMap;
 }

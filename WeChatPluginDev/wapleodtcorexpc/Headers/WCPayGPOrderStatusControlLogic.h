@@ -6,7 +6,7 @@
 @class CContact, NSString, WCPayPayMoneyLogic;
 @protocol WCPayGPOrderStatusControlLogicDelegate;
 
-@interface WCPayGPOrderStatusControlLogic
+@interface WCPayGPOrderStatusControlLogic : NSObject
 {
     _Bool _bIsLaunchSucc;
     unsigned int _msgLocalID;

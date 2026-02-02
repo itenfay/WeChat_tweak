@@ -6,7 +6,7 @@
 @class NSString, WCCardBatchImportViewController, WCNewCardDetailViewController;
 @protocol WCCardAddHelperDelegate;
 
-@interface WCCardAddHelper
+@interface WCCardAddHelper : NSObject
 {
     id <WCCardAddHelperDelegate> _delegate;
     _Bool _isBatchReturn;

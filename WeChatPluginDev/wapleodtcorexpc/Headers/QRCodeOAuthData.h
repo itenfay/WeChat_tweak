@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface QRCodeOAuthData
+@interface QRCodeOAuthData : NSObject
 {
     unsigned int _lpTimeout;
     unsigned int _lpInterval;

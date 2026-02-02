@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentRedEnvelopStatusInfo;
 
-@interface WCAdCanvasHbCardBtnClickModel
+@interface WCAdCanvasHbCardBtnClickModel : NSObject
 {
     int _btnType;
     NSString *_canvasId;

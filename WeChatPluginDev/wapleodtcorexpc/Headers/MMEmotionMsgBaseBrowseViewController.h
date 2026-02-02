@@ -5,7 +5,7 @@
 
 @class CEmoticonWrap, EmoticonCustomAddLogicController, EmoticonMixedPreviewGridView, EmoticonStoreItem, EmoticonStoreLensDesignerView, EmoticonWeAppCellView, EmotionActivity, EmotionLink, EmotionStoreDetailDesignerContainerView, MMImageBrowseView, MMScrollActionSheet, MMStoreEmoticonPreviewCell, MMUIActivityIndicatorView, MMUIButton, MMUILabel, NSString, RelatedEmoticonActivityCell, RichTextView, UIButton, UIImageView, UIView;
 
-@interface MMEmotionMsgBaseBrowseViewController
+@interface MMEmotionMsgBaseBrowseViewController : NSObject
 {
     struct LinkReportData _linkReportData;
     _Bool _isFullScreen;

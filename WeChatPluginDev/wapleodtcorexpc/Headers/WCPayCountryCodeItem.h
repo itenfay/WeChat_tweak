@@ -6,7 +6,7 @@
 @class CountryCodeWrap, NSArray, NSString, UILabel;
 @protocol WCPayCountryCodeItemDelegate;
 
-@interface WCPayCountryCodeItem
+@interface WCPayCountryCodeItem : NSObject
 {
     _Bool _hideCode;
     id <WCPayCountryCodeItemDelegate> _delegate;

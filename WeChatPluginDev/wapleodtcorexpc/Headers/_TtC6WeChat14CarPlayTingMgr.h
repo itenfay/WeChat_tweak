@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat14CarPlayTingMgr
+@interface _TtC6WeChat14CarPlayTingMgr : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_tapeListController;
     MISSING_TYPE *$__lazy_storage_$_audioListController;

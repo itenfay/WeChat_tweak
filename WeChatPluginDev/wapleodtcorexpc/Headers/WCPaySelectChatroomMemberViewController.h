@@ -6,7 +6,7 @@
 @class CContact, NSString, WCPayUnionTransferBeforeCgi;
 @protocol WCPaySelectChatroomMemberViewControllerDelegate;
 
-@interface WCPaySelectChatroomMemberViewController
+@interface WCPaySelectChatroomMemberViewController : NSObject
 {
     id <WCPaySelectChatroomMemberViewControllerDelegate> _delegate;
     WCPayUnionTransferBeforeCgi *_unionBeforeCgi;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCImageCache
+@interface WCImageCache : NSObject
 {
     NSMutableDictionary *m_WCImagesOfType;
 }

@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RingToneDetail, RingToneImageView, UIView;
 @protocol RingToneHistoryViewCellDelegate;
 
-@interface RingToneHistoryViewCell
+@interface RingToneHistoryViewCell : NSObject
 {
     _Bool _isPlaying;
     RingToneDetail *_ring;

@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface MMFinderLiveFansGroupAnchorEditTitleDetailCell
+@interface MMFinderLiveFansGroupAnchorEditTitleDetailCell : NSObject
 {
     NSString *_title;
     NSString *_detail;

@@ -5,7 +5,7 @@
 
 @class BrandProfileItemReaderCell;
 
-@interface BrandProfileItemReaderViewModel
+@interface BrandProfileItemReaderViewModel : NSObject
 {
 }
 

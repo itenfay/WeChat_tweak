@@ -5,7 +5,7 @@
 
 @protocol WCCardPkgBatchGetCardItemByTpInfoMgrDelegate;
 
-@interface WCCardPkgBatchGetCardItemByTpInfoMgr
+@interface WCCardPkgBatchGetCardItemByTpInfoMgr : NSObject
 {
     id <WCCardPkgBatchGetCardItemByTpInfoMgrDelegate> _delegate;
 }

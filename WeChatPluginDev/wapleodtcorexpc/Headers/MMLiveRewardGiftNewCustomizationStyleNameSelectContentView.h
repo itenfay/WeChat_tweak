@@ -5,7 +5,7 @@
 
 @class MMFinderLiveNewCustomGiftText, MMLiveRewardGiftNewCustomizationEditLogic, MMLiveRewardGiftNewCustomizationInputToolView;
 
-@interface MMLiveRewardGiftNewCustomizationStyleNameSelectContentView
+@interface MMLiveRewardGiftNewCustomizationStyleNameSelectContentView : NSObject
 {
     MMLiveRewardGiftNewCustomizationEditLogic *_customizationEditLogic;
     MMLiveRewardGiftNewCustomizationInputToolView *_inputToolView;

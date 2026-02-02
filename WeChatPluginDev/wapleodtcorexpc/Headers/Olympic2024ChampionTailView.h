@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UIImageView, UILabel, UIView;
 
-@interface Olympic2024ChampionTailView
+@interface Olympic2024ChampionTailView : NSObject
 {
     MMWebImageView *_iconView;
     UILabel *_titleView;

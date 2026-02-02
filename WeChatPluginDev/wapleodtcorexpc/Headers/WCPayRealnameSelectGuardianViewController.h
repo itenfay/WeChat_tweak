@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CContact, ContactsDataLogic, NSString, SharePreConfirmSheetView, SharePreConfirmView, WCPayNetImageResource, WCPayRealnameAuthenResp, WCPayRealnameVerifyGuardianCgi, WCPayRealnameVerifyParentCgi;
 @protocol WCPayRealnameSelectGuardianViewControllerDelegate;
 
-@interface WCPayRealnameSelectGuardianViewController
+@interface WCPayRealnameSelectGuardianViewController : NSObject
 {
     _Bool _fromLiteApp;
     WCPayRealnameAuthenResp *_authenResp;

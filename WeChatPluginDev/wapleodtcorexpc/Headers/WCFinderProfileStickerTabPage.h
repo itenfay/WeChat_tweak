@@ -5,7 +5,7 @@
 
 @class NSString, UICollectionView, UILabel, UITapGestureRecognizer, WCFinderStreamFooterView;
 
-@interface WCFinderProfileStickerTabPage
+@interface WCFinderProfileStickerTabPage : NSObject
 {
     _Bool _didScrollToSingleEmoji;
     UILabel *_statusTips;

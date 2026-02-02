@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLivePIPPerformanceReportObj, MMFinderLivePIPRenderSpaceObject, MMFinderLivePictureInPictureReporter, MMFinderLiveTask, MMFinderLiveTaskId, MMFinderLiveViewController, NSMutableArray, NSMutableDictionary, NSObject, NSString, WCLoopMetricsCollector, WCPIPTextStateDescription;
 @protocol OS_dispatch_semaphore;
 
-@interface MMFinderLivePIPCustomHandleLogic
+@interface MMFinderLivePIPCustomHandleLogic : NSObject
 {
     _Bool _isLiveVCAppear;
     _Bool _isLivePlayerNeedStopRenderPixel;

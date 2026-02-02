@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportForwardMessageItem
+@interface WAReportForwardMessageItem : NSObject
 {
     unsigned int _destinationType;
     NSString *_currentTitle;

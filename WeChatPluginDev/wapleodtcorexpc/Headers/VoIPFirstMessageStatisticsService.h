@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoIPFirstMessageStatisticsService
+@interface VoIPFirstMessageStatisticsService : NSObject
 {
     _Bool _isReceivedNewsSyncMessagesOnce;
     _Bool _isHandledOnce;

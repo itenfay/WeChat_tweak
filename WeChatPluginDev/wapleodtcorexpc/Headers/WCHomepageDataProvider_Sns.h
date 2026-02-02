@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCHomePageDataProviderDelegate, WCHomePageDataProviderStarDelegate;
 
-@interface WCHomepageDataProvider_Sns
+@interface WCHomepageDataProvider_Sns : NSObject
 {
     NSString *fpHash;
     _Bool isWorking;

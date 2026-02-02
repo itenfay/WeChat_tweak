@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavStreamVideoItem
+@interface FavStreamVideoItem : NSObject
 {
     unsigned int _streamVideoTotalTime;
     NSString *_streamVideoUrl;

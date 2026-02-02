@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface WAJSEventHandler_setTabBarItem
+@interface WAJSEventHandler_setTabBarItem : NSObject
 {
     _Bool _download;
     long long _iconIndex;

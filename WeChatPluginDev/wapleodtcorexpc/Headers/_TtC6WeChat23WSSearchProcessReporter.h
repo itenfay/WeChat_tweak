@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat23WSSearchProcessReporter
+@interface _TtC6WeChat23WSSearchProcessReporter : NSObject
 {
     MISSING_TYPE *actionType;
     MISSING_TYPE *scene;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface OpenApiHandler
+@interface OpenApiHandler : NSObject
 {
 }
 

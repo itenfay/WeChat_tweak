@@ -6,7 +6,7 @@
 @class MMAssetICloudLoadingView, MMAssetInfo, MMAssetPickerController, MMAssetSelectCheckButton, MMUILabel, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView, WCLivePhotoButton;
 @protocol MMAssetPickerControllerFinderAssetDelegate, MMAssetViewDelegate, MMImagePickerControlCenter;
 
-@interface MMAssetView
+@interface MMAssetView : NSObject
 {
     _Bool m_isSelected;
     _Bool m_isPreviewStyle;

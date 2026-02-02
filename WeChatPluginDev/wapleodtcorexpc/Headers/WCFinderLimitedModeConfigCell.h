@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIFont, UIImageView, UIView;
 
-@interface WCFinderLimitedModeConfigCell
+@interface WCFinderLimitedModeConfigCell : NSObject
 {
     UIFont *m_titleLabelFont;
     UIImageView *_backgroundImageView;

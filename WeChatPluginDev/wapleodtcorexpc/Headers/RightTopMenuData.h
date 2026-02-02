@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
-@interface RightTopMenuData
+@interface RightTopMenuData : NSObject
 {
     _Bool m_bShowNew;
     NSMutableArray *m_arrShowIDs;

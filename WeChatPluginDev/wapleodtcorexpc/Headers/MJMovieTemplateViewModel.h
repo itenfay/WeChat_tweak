@@ -5,7 +5,7 @@
 
 @class MJPublisherContext, OMJPublisherSessionMetrics, OrderedDictionary;
 
-@interface MJMovieTemplateViewModel
+@interface MJMovieTemplateViewModel : NSObject
 {
     OMJPublisherSessionMetrics *_publisherSessionMetrics;
     MJPublisherContext *_publisherContext;

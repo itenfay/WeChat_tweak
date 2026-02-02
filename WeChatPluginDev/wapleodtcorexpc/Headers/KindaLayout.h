@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface KindaLayout
+@interface KindaLayout : NSObject
 {
     long long flexDirection;
     long long justifyContent;

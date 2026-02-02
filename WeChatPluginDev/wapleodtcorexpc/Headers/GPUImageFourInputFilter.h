@@ -5,7 +5,7 @@
 
 @class GPUImageFramebuffer;
 
-@interface GPUImageFourInputFilter
+@interface GPUImageFourInputFilter : NSObject
 {
     GPUImageFramebuffer *fourthInputFramebuffer;
     int filterFourthTextureCoordinateAttribute;

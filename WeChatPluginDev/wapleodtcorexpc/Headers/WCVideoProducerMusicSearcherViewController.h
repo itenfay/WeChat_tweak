@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditVideoBGMPlayer, NSData, NSIndexPath, NSString, UIButton, UICollectionView, UITextField, UIView, WCVideoProducerDataSource, WCVideoProducerLoadMoreView;
 @protocol WCVideoProducerMusicSearcherDelegate;
 
-@interface WCVideoProducerMusicSearcherViewController
+@interface WCVideoProducerMusicSearcherViewController : NSObject
 {
     _Bool _isSearchingAfterInputEnabled;
     _Bool _isSearching;

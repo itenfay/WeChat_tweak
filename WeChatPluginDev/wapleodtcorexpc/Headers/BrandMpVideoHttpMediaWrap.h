@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandMpVideoHttpMediaWrap
+@interface BrandMpVideoHttpMediaWrap : NSObject
 {
     NSString *_vid;
 }

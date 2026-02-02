@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMFinderLiveMinimizeAudioMicUserHeadImageAttachWidgetObj
+@interface MMFinderLiveMinimizeAudioMicUserHeadImageAttachWidgetObj : NSObject
 {
     UIImageView *_contentImageView;
     struct CGRect _normalizedFrame;

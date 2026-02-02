@@ -5,7 +5,7 @@
 
 @class UIColor, UIFont;
 
-@interface FavAttributeCPLabel
+@interface FavAttributeCPLabel : NSObject
 {
     UIFont *m_font;
     UIColor *m_textColor;

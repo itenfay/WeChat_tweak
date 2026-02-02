@@ -6,7 +6,7 @@
 @class EmojiInfoObj, InterceptWin, NSString, UIView, WCPayComplianceHalfPage, WCPayInterceptWinLogic, WCPayJumpRemindControlLogic, WCRedEnvelopesAtmospherePagView, WCRedEnvelopesReceiveHomeView;
 @protocol WCRedEnvelopesLiveStreamReceiveControlLogicDelegate;
 
-@interface WCRedEnvelopesLiveStreamReceiveControlLogic
+@interface WCRedEnvelopesLiveStreamReceiveControlLogic : NSObject
 {
     int m_scene;
     _Bool _bHasStartDownloadEmoticon;

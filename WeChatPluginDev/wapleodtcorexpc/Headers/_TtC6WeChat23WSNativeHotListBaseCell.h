@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat23WSNativeHotListBaseCell
+@interface _TtC6WeChat23WSNativeHotListBaseCell : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_container;
 }

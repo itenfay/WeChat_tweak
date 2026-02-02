@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, MMTagTextField, NSDictionary, NSMutableDictionary, NSString, UIButton, UIScreenEdgePanGestureRecognizer, UIView, WAAppDismissAnimateTransition, WCSearchPageState, WCSearchUIConfig, WCStoryDismissInteractiveTransition, WCWebSearchBar, WCWebSearchInputProvider, WCWebSearchPresenter, WSLocalTemplateController, WSTagSearchLogic, WSWebViewPluginScheduler, WebSearchContext, _TtC6WeChat21WSTextFieldInteractor, _TtC6WeChat25WSWebviewExceptionCatcher;
 
-@interface WCWebSearchViewControllerNewH5
+@interface WCWebSearchViewControllerNewH5 : NSObject
 {
     WSTagSearchLogic *_tagSearchLogic;
     NSMutableDictionary *_jumpWebParams;

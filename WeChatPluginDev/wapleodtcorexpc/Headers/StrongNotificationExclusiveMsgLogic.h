@@ -6,7 +6,7 @@
 @class NSString, StrongNotificationViewController;
 @protocol StrongNotificationExclusiveMsgLogicDelegate;
 
-@interface StrongNotificationExclusiveMsgLogic
+@interface StrongNotificationExclusiveMsgLogic : NSObject
 {
     StrongNotificationViewController *m_strongNotificationViewController;
     id <StrongNotificationExclusiveMsgLogicDelegate> m_delegate;

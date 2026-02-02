@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameHaowanMediaWrap
+@interface GameHaowanMediaWrap : NSObject
 {
     NSString *_videoUrl;
 }

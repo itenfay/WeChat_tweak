@@ -6,7 +6,7 @@
 @class MMImagePickerManagerOptionObj, NSMutableArray, NSString;
 @protocol MMImagePickerManagerDelegate;
 
-@interface MMImagePickerManager
+@interface MMImagePickerManager : NSObject
 {
     _Bool _statusBarHidden;
     id <MMImagePickerManagerDelegate> m_delegate;

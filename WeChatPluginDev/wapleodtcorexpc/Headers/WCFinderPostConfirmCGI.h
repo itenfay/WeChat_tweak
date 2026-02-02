@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderPostTraceInfo, NSString, WCFinderDataItem;
 
-@interface WCFinderPostConfirmCGI
+@interface WCFinderPostConfirmCGI : NSObject
 {
     NSString *_username;
     NSString *_clientid;

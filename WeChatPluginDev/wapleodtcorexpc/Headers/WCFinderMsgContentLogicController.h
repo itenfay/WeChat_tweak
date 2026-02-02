@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMInputToolView, NSString, WCFinderAuthInfo, WCFinderInteractionLimitWarningView, WCFinderMsgChatContentReporter, WCFinderUserBindPhoneAssist;
 
-@interface WCFinderMsgContentLogicController
+@interface WCFinderMsgContentLogicController : NSObject
 {
     _Bool _canSendAttachment;
     _Bool _canShowChangeRoleTips;

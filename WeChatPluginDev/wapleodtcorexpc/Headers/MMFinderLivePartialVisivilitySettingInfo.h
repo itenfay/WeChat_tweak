@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface MMFinderLivePartialVisivilitySettingInfo
+@interface MMFinderLivePartialVisivilitySettingInfo : NSObject
 {
     NSArray *_originalChoosedContactList;
     NSMutableArray *_chooseContactChatroomList;

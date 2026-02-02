@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CIImage, UIView;
 
-@interface WCPIPAttachWidgetObj
+@interface WCPIPAttachWidgetObj : NSObject
 {
     UIView *_rootView;
     CIImage *_widgetCIImage;

@@ -6,7 +6,7 @@
 @class NSString, QueryWalletEntranceBalanceSwitchResp, UIImageView, UILabel, UISwitch, UIView, WCPayLineSeparatorView, WCPayQueryWalletEntranceBalanceSwitchStateCgi, WCPaySetWalletEntranceBalanceSwitchStateCgi;
 @protocol WCPayWalletEntranceStateViewControllerDelegate;
 
-@interface WCPayWalletEntranceStateViewController
+@interface WCPayWalletEntranceStateViewController : NSObject
 {
     id <WCPayWalletEntranceStateViewControllerDelegate> _m_delegate;
     WCPayQueryWalletEntranceBalanceSwitchStateCgi *_m_getStateCgi;

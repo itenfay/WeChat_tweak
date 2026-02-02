@@ -5,7 +5,7 @@
 
 @class GetWCOCallInfoResponse, MMUILabel, NSMutableString, NSString, UIButton, UILabel, WCOutDialPad, WCOutGetCallInfoCgi;
 
-@interface WCOutDialViewController
+@interface WCOutDialViewController : NSObject
 {
     UIButton *m_deleteBtn;
     UIButton *m_countryCodeBtn;

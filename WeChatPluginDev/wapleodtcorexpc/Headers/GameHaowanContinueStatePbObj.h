@@ -6,7 +6,7 @@
 @class NSObject, NSString;
 @protocol PBCoding;
 
-@interface GameHaowanContinueStatePbObj
+@interface GameHaowanContinueStatePbObj : NSObject
 {
     unsigned int _createTime;
     unsigned int _retryCount;

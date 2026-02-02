@@ -6,7 +6,7 @@
 @class NSIndexPath, NSString, WCFinderBrandStreamProfileViewModel, WCFinderExtStatsReporter, WCFinderFeedFlowView, WCFinderProfileJustWatchTipsView;
 @protocol WCFinderBrandStreamProfileVCDelegate;
 
-@interface WCFinderBrandStreamProfileViewController
+@interface WCFinderBrandStreamProfileViewController : NSObject
 {
     _Bool _displayThreeColumnSwitch;
     id <WCFinderBrandStreamProfileVCDelegate> _delegate;

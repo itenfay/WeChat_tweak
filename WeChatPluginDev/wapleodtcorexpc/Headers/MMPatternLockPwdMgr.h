@@ -5,7 +5,7 @@
 
 @class MMPatternLockBufferData, NSString;
 
-@interface MMPatternLockPwdMgr
+@interface MMPatternLockPwdMgr : NSObject
 {
     _Bool _isLocalVerify;
     _Bool _isNeedVerifyPwd;

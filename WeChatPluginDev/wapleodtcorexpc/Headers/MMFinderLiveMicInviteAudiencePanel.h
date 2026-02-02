@@ -6,7 +6,7 @@
 @class MMFinderLiveMicInviteAudienceViewModel, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, NSString, UILabel;
 @protocol MMFinderLiveMicInviteAudiencePanelDelegate;
 
-@interface MMFinderLiveMicInviteAudiencePanel
+@interface MMFinderLiveMicInviteAudiencePanel : NSObject
 {
     _Bool _showLoading;
     id <MMFinderLiveMicInviteAudiencePanelDelegate> _actionDelegate;

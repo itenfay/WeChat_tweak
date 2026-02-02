@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, MMUIButton, MMUIViewController, MultipleTextStateCardView, NSString, TextStateCompositeCardView, TextStateMusicPlayerCoordinator, TextStatePrivacyMgr;
 
-@interface TextStateCardPageSheetViewController
+@interface TextStateCardPageSheetViewController : NSObject
 {
     _Bool _transitioning;
     CContact *_contact;

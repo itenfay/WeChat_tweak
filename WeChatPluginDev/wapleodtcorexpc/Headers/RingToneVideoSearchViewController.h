@@ -5,7 +5,7 @@
 
 @class CContact, NSString, RingToneRecommendReporter_23604, RingToneSearchHistoryListView, RingToneSearchLayout, RingToneVideoSearchViewModel, WCFinderFeedFlowView;
 
-@interface RingToneVideoSearchViewController
+@interface RingToneVideoSearchViewController : NSObject
 {
     _Bool _shouldNotShowFriendSettings;
     _Bool _isViewAppearing;

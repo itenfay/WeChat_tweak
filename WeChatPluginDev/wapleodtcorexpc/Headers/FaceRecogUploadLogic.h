@@ -6,7 +6,7 @@
 @class FaceRecogBindVideoLogic, FaceRecogReporter, NSString;
 @protocol FaceRecogUploadLogicDelegate;
 
-@interface FaceRecogUploadLogic
+@interface FaceRecogUploadLogic : NSObject
 {
     _Bool _uploading;
     unsigned int _scene;

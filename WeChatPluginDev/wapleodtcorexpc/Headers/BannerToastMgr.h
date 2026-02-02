@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface BannerToastMgr
+@interface BannerToastMgr : NSObject
 {
     NSMutableArray *m_msgDic;
     NSMutableDictionary *m_friendRecommandMsgs;

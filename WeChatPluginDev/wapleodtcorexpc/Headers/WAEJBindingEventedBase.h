@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAEJBindingEventedBase
+@interface WAEJBindingEventedBase : NSObject
 {
     NSMutableDictionary *eventListeners;
     NSMutableDictionary *onCallbacks;

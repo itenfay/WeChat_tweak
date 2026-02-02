@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdOpenSDKJumpCanvasModel
+@interface WCAdOpenSDKJumpCanvasModel : NSObject
 {
     NSString *_appId;
     NSString *_canvasId;

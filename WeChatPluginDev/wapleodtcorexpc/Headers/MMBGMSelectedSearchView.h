@@ -6,7 +6,7 @@
 @class MMBGMCategoryView, MMBGMPanelPublishContext, MMBGMSearchViewModel, MMBGMSelectedConfig, MMUIButton, NSString, UITableView, UITableViewDiffableDataSource, WCSearchBar, WCTimeLineFooterView;
 @protocol MMBGMSelectedSearchViewDelegate;
 
-@interface MMBGMSelectedSearchView
+@interface MMBGMSelectedSearchView : NSObject
 {
     id <MMBGMSelectedSearchViewDelegate> _delegate;
     long long _currentIndex;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandPaySubcribePayInfo
+@interface BrandPaySubcribePayInfo : NSObject
 {
     _Bool _isPaid;
     NSString *_pageIdentifier;

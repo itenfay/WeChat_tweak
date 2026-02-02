@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, WCMusicSearchWorker;
 @protocol WCMusicSearchContentViewControllerDelegate;
 
-@interface WCMusicSearchContentViewController
+@interface WCMusicSearchContentViewController : NSObject
 {
     _Bool _isLiteMode;
     id <WCMusicSearchContentViewControllerDelegate> _delegate;

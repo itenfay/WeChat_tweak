@@ -6,7 +6,7 @@
 @class NSArray, NSString, WCFinderHorizontalSlideView;
 @protocol WCFinderMultiMusicianInfoViewDelegate;
 
-@interface WCFinderMultiMusicianInfoView
+@interface WCFinderMultiMusicianInfoView : NSObject
 {
     id <WCFinderMultiMusicianInfoViewDelegate> _delegate;
     WCFinderHorizontalSlideView *_collectionView;

@@ -5,7 +5,7 @@
 
 @class NSString, UIColor;
 
-@interface MMEasterEggNewYearActivityInfo
+@interface MMEasterEggNewYearActivityInfo : NSObject
 {
     _Bool _useLightStyle;
     UIColor *_backgroundColor;

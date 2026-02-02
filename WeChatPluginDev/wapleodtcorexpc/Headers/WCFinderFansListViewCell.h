@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView, WCFinderHeadImageView, WCFinderUserRelationshipTagLabel;
 
-@interface WCFinderFansListViewCell
+@interface WCFinderFansListViewCell : NSObject
 {
     UILabel *_nickName;
     WCFinderHeadImageView *_headImageView;

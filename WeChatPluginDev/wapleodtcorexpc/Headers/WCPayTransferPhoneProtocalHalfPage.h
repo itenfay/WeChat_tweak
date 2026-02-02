@@ -6,7 +6,7 @@
 @class NSString, WCPayTransferPhoneProtocaDetailView;
 @protocol WCPayTransferPhoneProtocalHalfPageDelegate;
 
-@interface WCPayTransferPhoneProtocalHalfPage
+@interface WCPayTransferPhoneProtocalHalfPage : NSObject
 {
     id <WCPayTransferPhoneProtocalHalfPageDelegate> _m_delegate;
     WCPayTransferPhoneProtocaDetailView *_contentView;

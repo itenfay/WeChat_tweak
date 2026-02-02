@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol WCDeviceWifiStateLogicDelegate;
 
-@interface WCDeviceWifiStateLogic
+@interface WCDeviceWifiStateLogic : NSObject
 {
     NSMutableArray *m_devices;
     id <WCDeviceWifiStateLogicDelegate> _delegate;

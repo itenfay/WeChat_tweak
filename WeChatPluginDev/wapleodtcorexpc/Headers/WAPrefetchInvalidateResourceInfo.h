@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAPrefetchInvalidateResourceInfo
+@interface WAPrefetchInvalidateResourceInfo : NSObject
 {
     NSMutableDictionary *_invalidateCodeTokens;
     NSMutableDictionary *_invalidateContactTokens;

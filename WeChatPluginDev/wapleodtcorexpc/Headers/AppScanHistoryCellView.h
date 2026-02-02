@@ -5,7 +5,7 @@
 
 @class AppScanCodeRetryMessageViewModel, UIImageView;
 
-@interface AppScanHistoryCellView
+@interface AppScanHistoryCellView : NSObject
 {
     UIImageView *m_bgImageView;
 }

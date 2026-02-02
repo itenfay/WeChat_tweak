@@ -5,7 +5,7 @@
 
 @class NSString, SKBuiltinBuffer_t;
 
-@interface GetPOIListMgr
+@interface GetPOIListMgr : NSObject
 {
     SKBuiltinBuffer_t *_nearBuff;
     SKBuiltinBuffer_t *_searchBuff;

@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface AppOpenSDKAppBrandMessageViewModel
+@interface AppOpenSDKAppBrandMessageViewModel : NSObject
 {
     double _cacheTitleHeight;
     double _cacheDescHeight;

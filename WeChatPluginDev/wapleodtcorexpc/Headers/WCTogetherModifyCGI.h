@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SnsWithTaOpResponse, WCBaseNetworkingError;
 
-@interface WCTogetherModifyCGI
+@interface WCTogetherModifyCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failureBlock;

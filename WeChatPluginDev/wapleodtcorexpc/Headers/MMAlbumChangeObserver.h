@@ -5,7 +5,7 @@
 
 @class NSString, NSURL;
 
-@interface MMAlbumChangeObserver
+@interface MMAlbumChangeObserver : NSObject
 {
     _Bool _observerRegistered;
     unsigned int _lastChangeTime;

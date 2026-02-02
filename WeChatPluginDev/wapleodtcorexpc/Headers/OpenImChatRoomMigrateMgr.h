@@ -5,7 +5,7 @@
 
 @class ContactsDataLogic, NSMutableDictionary, NSOperationQueue, NSRecursiveLock, NSString, OpenImChatRoomMigrateDataPB;
 
-@interface OpenImChatRoomMigrateMgr
+@interface OpenImChatRoomMigrateMgr : NSObject
 {
     OpenImChatRoomMigrateDataPB *m_openImChatRoomMigrateData;
     NSOperationQueue *m_queue;

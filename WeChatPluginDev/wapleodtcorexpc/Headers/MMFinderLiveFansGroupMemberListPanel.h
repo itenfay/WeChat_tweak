@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupMemberLogic, MMFinderLiveFansGroupMemberSelfIntimacyView, MMFinderLiveFansGroupMemberTableViewModel, MMFinderLiveTaskId, MMTableView, MMUILabel, MMUIMaskContainerView, NSString, UIView, WCTimeLineFooterView;
 
-@interface MMFinderLiveFansGroupMemberListPanel
+@interface MMFinderLiveFansGroupMemberListPanel : NSObject
 {
     long long _openMode;
     MMFinderLiveTaskId *_taskId;

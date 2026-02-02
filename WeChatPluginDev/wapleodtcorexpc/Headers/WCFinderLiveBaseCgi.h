@@ -6,7 +6,7 @@
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveBaseTask, NSString;
 @protocol MMFinderLiveTaskFunctionPlugin;
 
-@interface WCFinderLiveBaseCgi
+@interface WCFinderLiveBaseCgi : NSObject
 {
     _Bool _isForbidCancelCGI;
     MMFinderLiveTaskId *_liveTaskId;

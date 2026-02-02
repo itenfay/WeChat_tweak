@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableSet, NSString;
 
-@interface MMFinderLiveHistoryMgr
+@interface MMFinderLiveHistoryMgr : NSObject
 {
     NSArray *_dataItems;
     long long _expireWatchHistoryDuration;

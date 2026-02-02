@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSnsPreLoadInfo
+@interface WCSnsPreLoadInfo : NSObject
 {
     _Bool _sightAutoDownloadOn3GPlus;
     _Bool _sightAutoDownloadOnWifi;

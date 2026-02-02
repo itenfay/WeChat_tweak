@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WAMainFrameTaskBarSearchCustomViewButton
+@interface WAMainFrameTaskBarSearchCustomViewButton : NSObject
 {
     UIView *_maskView;
 }

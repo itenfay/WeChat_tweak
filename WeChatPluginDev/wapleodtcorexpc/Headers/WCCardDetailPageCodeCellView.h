@@ -6,7 +6,7 @@
 @class NSString, UIView, WCCardDataCardInfo, WCCardDataCardTPInfo;
 @protocol WCCardDataSource, WCCardDetailPageCodeCellViewDelegate;
 
-@interface WCCardDetailPageCodeCellView
+@interface WCCardDetailPageCodeCellView : NSObject
 {
     WCCardDataCardTPInfo *_cardTpInfo;
     WCCardDataCardInfo *_cardInfo;

@@ -5,7 +5,7 @@
 
 @class MJPublisherContext, NSString;
 
-@interface WCFinderRootEditVideoViewController
+@interface WCFinderRootEditVideoViewController : NSObject
 {
     unsigned long long _enterScene;
     MJPublisherContext *_publisherContext;

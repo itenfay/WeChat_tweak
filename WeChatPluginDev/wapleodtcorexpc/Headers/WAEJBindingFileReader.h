@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingFileReader
+@interface WAEJBindingFileReader : NSObject
 {
     NSString *encoding;
     unsigned int workerId;

@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WloginTlv_0x128
+@interface WloginTlv_0x128 : NSObject
 {
     unsigned short wVer;
     unsigned char cNewInstall;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnchorStatusItem, NSString, WCFinderDataItem;
 
-@interface WCFinderSetAnchorStatusCGI
+@interface WCFinderSetAnchorStatusCGI : NSObject
 {
     _Bool _onStartLive;
     unsigned int _liveStatus;

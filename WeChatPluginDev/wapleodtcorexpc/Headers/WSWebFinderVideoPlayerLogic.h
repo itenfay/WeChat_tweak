@@ -5,7 +5,7 @@
 
 @class NSString, WCPlayerPlayArgs, WCPlayerView;
 
-@interface WSWebFinderVideoPlayerLogic
+@interface WSWebFinderVideoPlayerLogic : NSObject
 {
     WCPlayerView *playerView;
     WCPlayerView *_retainPlayerView;

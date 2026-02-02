@@ -5,7 +5,7 @@
 
 @class NSArray, NSNumber, WCDragBarButtonView;
 
-@interface WCDragDeleteBarView
+@interface WCDragDeleteBarView : NSObject
 {
     _Bool _isMoveIn;
     long long _option;

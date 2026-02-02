@@ -5,7 +5,7 @@
 
 @class GameCenterMsgListInteractTabViewController, MMUIButton, MMUIViewController, NSString, UIView;
 
-@interface GameLifeChatViewControllerV3
+@interface GameLifeChatViewControllerV3 : NSObject
 {
     _Bool _isInTab;
     unsigned int _sourceScene;

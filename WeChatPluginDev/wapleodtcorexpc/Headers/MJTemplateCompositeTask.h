@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateAsyncExportInfo, NSString, OMJMaasCore, OMJMusicInfo, OMJTemplateInfo, UIImage;
 
-@interface MJTemplateCompositeTask
+@interface MJTemplateCompositeTask : NSObject
 {
     MJTemplateAsyncExportInfo *_asyncExportInfo;
     NSString *_exportFilePath;

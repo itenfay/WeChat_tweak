@@ -6,7 +6,7 @@
 @class ImageScrollView, MMUIActivityIndicatorView, NSString, WCActionSheetWithScanWXCode;
 @protocol GCImgPreviewDelegate;
 
-@interface GCImgPreviewController
+@interface GCImgPreviewController : NSObject
 {
     ImageScrollView *imageScrollView;
     _Bool _oriNavhidden;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWACameraScanViewControllerHelper, IWAWAGetA8KeyLogicHelper;
 
-@interface WAJSEventHandler_scanCode
+@interface WAJSEventHandler_scanCode : NSObject
 {
     id <IWACameraScanViewControllerHelper> _viewControllerHelper;
     id <IWAWAGetA8KeyLogicHelper> _getA8KeyHelper;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveFootageReplayModel, MMFinderLiveFootageReplayOperationView, MMFinderLiveFootageReplayReporter, MMFinderLiveReplayView, MMFinderLiveTaskId, MMUIButton, NSDictionary, NSString, UIImageView, UINavigationController;
 @protocol MMLiveViewControllerDelegate;
 
-@interface MMFinderLiveFootageReplayViewController
+@interface MMFinderLiveFootageReplayViewController : NSObject
 {
     _Bool _replayStartReported;
     unsigned int _viewStartTime;

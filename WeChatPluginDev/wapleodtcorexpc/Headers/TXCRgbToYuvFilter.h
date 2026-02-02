@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class TXCGlFrameBuffer, TXCGlProgram, TXCPixelBufferPool;
 @protocol TXCPixelTransferSession, TXIGlContext;
 
-@interface TXCRgbToYuvFilter
+@interface TXCRgbToYuvFilter : NSObject
 {
     unsigned long long _outputFormat;
     id <TXIGlContext> _context;

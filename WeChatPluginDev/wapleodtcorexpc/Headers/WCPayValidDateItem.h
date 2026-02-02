@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSString, UIButton, UIPickerView;
 
-@interface WCPayValidDateItem
+@interface WCPayValidDateItem : NSObject
 {
     UIPickerView *m_pickerView;
     int m_iStartYear;

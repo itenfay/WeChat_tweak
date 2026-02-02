@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiPlugin_MusicEvent
+@interface LiteAppJsApiPlugin_MusicEvent : NSObject
 {
     _Bool _isNotifyMusicStateChange;
     _Bool _isSeeking;

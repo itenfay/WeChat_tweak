@@ -5,7 +5,7 @@
 
 @class AirKissConfData, NSString, UIScrollView, UIView, WCDevice;
 
-@interface WCDeviceSearchGuideViewController
+@interface WCDeviceSearchGuideViewController : NSObject
 {
     WCDevice *m_device;
     AirKissConfData *m_confData;

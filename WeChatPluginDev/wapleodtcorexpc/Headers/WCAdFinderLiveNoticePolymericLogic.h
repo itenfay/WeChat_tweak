@@ -6,7 +6,7 @@
 @class NSString, WCAdvertiseInfo;
 @protocol WCAdFinderLiveNoticePolymericLogicDelegate;
 
-@interface WCAdFinderLiveNoticePolymericLogic
+@interface WCAdFinderLiveNoticePolymericLogic : NSObject
 {
     unsigned int _finderLiveStartTime;
     id <WCAdFinderLiveNoticePolymericLogicDelegate> _delegate;

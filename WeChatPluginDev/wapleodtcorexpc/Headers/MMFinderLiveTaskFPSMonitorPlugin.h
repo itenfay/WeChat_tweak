@@ -5,7 +5,7 @@
 
 @class _TtC6WeChat22MMFinderLiveFPSMonitor;
 
-@interface MMFinderLiveTaskFPSMonitorPlugin
+@interface MMFinderLiveTaskFPSMonitorPlugin : NSObject
 {
     _Bool _started;
     _TtC6WeChat22MMFinderLiveFPSMonitor *_monitor;

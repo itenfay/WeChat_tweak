@@ -5,7 +5,7 @@
 
 @class FinderSyncRequest, NSData, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCFinderSyncManager
+@interface WCFinderSyncManager : NSObject
 {
     NSMutableDictionary *_md5List;
     NSMutableArray *_syncRequestArray;

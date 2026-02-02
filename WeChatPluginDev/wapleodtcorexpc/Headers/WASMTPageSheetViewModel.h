@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WASMTPageSheetViewModel
+@interface WASMTPageSheetViewModel : NSObject
 {
     NSString *_title;
     long long _backButtonType;

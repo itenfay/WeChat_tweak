@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSMutableArray, NSString, UIButton, UIImage, UILabel, UIView, UIVisualEffectView, WAContact;
 @protocol WAAppActionSheetDelegate;
 
-@interface WAAppActionSheet
+@interface WAAppActionSheet : NSObject
 {
     WAContact *m_contact;
     unsigned long long m_appType;

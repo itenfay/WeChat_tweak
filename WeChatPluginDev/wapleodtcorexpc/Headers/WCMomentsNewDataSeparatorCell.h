@@ -6,7 +6,7 @@
 @class MMUILabel, WCMomentsFinderRecommendationButton, WCMomentsNewDataSeparatorViewModel;
 @protocol WCMomentsNewDataSeparatorCellDelegate;
 
-@interface WCMomentsNewDataSeparatorCell
+@interface WCMomentsNewDataSeparatorCell : NSObject
 {
     struct CGSize _lastLayoutedSize;
     id <WCMomentsNewDataSeparatorCellDelegate> _delegate;

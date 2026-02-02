@@ -6,7 +6,7 @@
 @class GetTransferWordingResponse, MMTipsViewController, NSMutableDictionary, NSMutableSet, NSString, OpenMinimchGuide, RecvChannel, UIView, WCActionSheet, WCPayGetTransferWordingCgi, WCPayNoticeItemView;
 @protocol WCPayTransferMoneyStatusViewControllerDelegate;
 
-@interface WCPayTransferMoneyStatusViewController
+@interface WCPayTransferMoneyStatusViewController : NSObject
 {
     id <WCPayTransferMoneyStatusViewControllerDelegate> m_delegate;
     _Bool _m_shouldRefreshDataOnAppear;

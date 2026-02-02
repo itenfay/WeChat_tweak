@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModHelpPromotionCgi
+@interface WCFinderModHelpPromotionCgi : NSObject
 {
     unsigned int _opType;
     NSString *_username;

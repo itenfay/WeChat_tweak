@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveGiftNotificationItem, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveNotifyGiftNotificationView, MMFinderLivePkTaskedBonusGiftNotificationIndicatorView, MMLiveScrollNumView, MMUILabel, NSNumberFormatter, NSString, PAGView, RfxPagView, UIImageView, UIView;
 
-@interface MMLiveRewardGiftNotificationView
+@interface MMLiveRewardGiftNotificationView : NSObject
 {
     _Bool _isUseRfxPagView;
     _Bool _isMultiRecipentMode;

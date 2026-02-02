@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASessionInfo
+@interface WASessionInfo : NSObject
 {
 }
 

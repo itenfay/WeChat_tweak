@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAccountThirdAppRegisterControlLogic
+@interface WCAccountThirdAppRegisterControlLogic : NSObject
 {
     _Bool m_hasStartDownloadImage;
     _Bool m_fromLoginToReg;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, NSMutableDictionary, NSString, WxaFlutterViewLifeCycle;
 
-@interface WxaFlutterViewController
+@interface WxaFlutterViewController : NSObject
 {
     _Bool _disableScroll;
     _Bool _needKeepAlive;

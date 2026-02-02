@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIScreenEdgePanGestureRecognizer, UIView, WCFinderAnimationLoadingView, WCFinderGoodsInfo, WCFinderJumpInfo;
 @protocol WCFinderCommentGoodsSelectVCDelegate;
 
-@interface WCFinderCommentGoodsSelectVC
+@interface WCFinderCommentGoodsSelectVC : NSObject
 {
     _Bool _miniAppHasSet;
     UIView *_containerView;

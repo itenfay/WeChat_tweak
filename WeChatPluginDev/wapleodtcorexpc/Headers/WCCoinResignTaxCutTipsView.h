@@ -6,7 +6,7 @@
 @class NSString, WecoinTaxReConfirmHalfPageInfo;
 @protocol WCCoinResignTaxCutTipsViewDelegate;
 
-@interface WCCoinResignTaxCutTipsView
+@interface WCCoinResignTaxCutTipsView : NSObject
 {
     WecoinTaxReConfirmHalfPageInfo *_taxReconfirmInfo;
     id <WCCoinResignTaxCutTipsViewDelegate> _delegate;

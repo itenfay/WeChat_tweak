@@ -5,7 +5,7 @@
 
 @class JSEvent, NSDictionary, NSMutableData, NSURLConnection;
 
-@interface WebviewJSEventHandler_sendEnterpriseChat
+@interface WebviewJSEventHandler_sendEnterpriseChat : NSObject
 {
     NSURLConnection *_connection;
     JSEvent *_curEvent;

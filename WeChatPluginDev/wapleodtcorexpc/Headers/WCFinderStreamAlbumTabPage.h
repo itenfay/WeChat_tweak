@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderStreamFooterView;
 
-@interface WCFinderStreamAlbumTabPage
+@interface WCFinderStreamAlbumTabPage : NSObject
 {
     WCFinderStreamFooterView *_footerView;
 }

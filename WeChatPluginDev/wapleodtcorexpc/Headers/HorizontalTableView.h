@@ -6,7 +6,7 @@
 @class MMUIScrollView, NSMutableArray, NSMutableDictionary, NSString;
 @protocol HorizontalTableViewDataSource, HorizontalTableViewDelegate;
 
-@interface HorizontalTableView
+@interface HorizontalTableView : NSObject
 {
     MMUIScrollView *m_scrollView;
     NSMutableArray *m_cellFrames;

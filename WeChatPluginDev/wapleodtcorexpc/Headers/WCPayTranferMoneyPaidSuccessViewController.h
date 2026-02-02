@@ -6,7 +6,7 @@
 @class NSString, WCPaySelectVerifyTypeLogic, WCPayTransferMoneyPaidSuccessViewV2;
 @protocol WCPayTranferMoneyPaidSuccessViewControllerDelegate;
 
-@interface WCPayTranferMoneyPaidSuccessViewController
+@interface WCPayTranferMoneyPaidSuccessViewController : NSObject
 {
     _Bool m_bNeedBindCard;
     id <WCPayTranferMoneyPaidSuccessViewControllerDelegate> m_delegate;

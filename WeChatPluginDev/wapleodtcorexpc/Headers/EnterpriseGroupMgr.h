@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterpriseGroupMgr
+@interface EnterpriseGroupMgr : NSObject
 {
 }
 

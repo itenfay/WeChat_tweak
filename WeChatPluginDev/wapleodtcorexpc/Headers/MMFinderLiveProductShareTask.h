@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderDataItem, WCFinderLiveProductShareItem;
 
-@interface MMFinderLiveProductShareTask
+@interface MMFinderLiveProductShareTask : NSObject
 {
     _Bool _tryCurrentLiveIfSameAnchor;
     _Bool _ignoreClickShareCommodityReport;

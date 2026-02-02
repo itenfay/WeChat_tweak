@@ -6,7 +6,7 @@
 @class MMLocationSearchBar, MMPickLocationContentView, MMPickLocationTopView, MMUIViewController, NSString, WCTimeLineFooterView;
 @protocol MMPickLocationActionDelegate;
 
-@interface MMPickLocationSearchView
+@interface MMPickLocationSearchView : NSObject
 {
     _Bool _isFoldAnimating;
     _Bool _expandViewForSearchBecomeActive;

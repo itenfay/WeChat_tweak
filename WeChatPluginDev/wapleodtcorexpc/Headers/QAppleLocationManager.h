@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocationManager, NSString;
 
-@interface QAppleLocationManager
+@interface QAppleLocationManager : NSObject
 {
     CLLocationManager *_manager;
 }

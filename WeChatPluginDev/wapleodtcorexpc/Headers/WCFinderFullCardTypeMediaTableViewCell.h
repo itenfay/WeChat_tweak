@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMWebImageButton, MMWebImageView, NSString, UIButton, UILabel, UIView, WCFinderFeedContentVM, WCFinderSimplePlayerView;
 
-@interface WCFinderFullCardTypeMediaTableViewCell
+@interface WCFinderFullCardTypeMediaTableViewCell : NSObject
 {
     WCFinderSimplePlayerView *_playerView;
     UIView *_bottomContainerView;

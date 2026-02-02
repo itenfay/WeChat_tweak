@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableDictionary, NSString, WCOPackageItem, WCOutGetPackageProductListCgi, WCOutPurchasePackageCgi;
 
-@interface WCOutPackageViewController
+@interface WCOutPackageViewController : NSObject
 {
     int _purchaseRetCode;
     NSMutableDictionary *_WCOPkgItemsDict;

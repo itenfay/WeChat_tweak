@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIButton, UITextField;
 
-@interface WXGRoamRemoteConfigViewController
+@interface WXGRoamRemoteConfigViewController : NSObject
 {
     NSString *path;
     UITextField *_deviceText;

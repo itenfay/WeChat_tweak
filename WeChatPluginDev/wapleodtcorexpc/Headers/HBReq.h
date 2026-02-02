@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface HBReq
+@interface HBReq : NSObject
 {
     unsigned int timeStamp;
     NSString *nonceStr;

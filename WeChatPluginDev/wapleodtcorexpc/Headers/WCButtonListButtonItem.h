@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString;
 
-@interface WCButtonListButtonItem
+@interface WCButtonListButtonItem : NSObject
 {
     NSString *_key;
     MMUIButton *_button;

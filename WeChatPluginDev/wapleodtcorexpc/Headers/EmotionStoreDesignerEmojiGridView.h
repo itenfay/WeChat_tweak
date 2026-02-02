@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol EmotionStoreDesignerEmojiGridViewDelegate;
 
-@interface EmotionStoreDesignerEmojiGridView
+@interface EmotionStoreDesignerEmojiGridView : NSObject
 {
     NSArray *m_designerEmojiCells;
     long long m_numOfItemInOneLine;

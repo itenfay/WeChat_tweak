@@ -5,7 +5,7 @@
 
 @class ColorGradientView, MMUIButton, MMUILabel, NSString, WCAdSliderCardDecorationView, WCAdSliderCardItem, WCAdSliderCardLogic, WCAdURLImageView;
 
-@interface WCAdSliderCardNormalCellView
+@interface WCAdSliderCardNormalCellView : NSObject
 {
     WCAdURLImageView *_backBorderView;
     WCAdURLImageView *_frontBorderView;

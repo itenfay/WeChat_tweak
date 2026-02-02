@@ -5,7 +5,7 @@
 
 @class DelaySwitchSettingLogic, DiscoverEntranceSettingReporter, NSString;
 
-@interface SettingDiscoverEntranceViewControllerV2
+@interface SettingDiscoverEntranceViewControllerV2 : NSObject
 {
     DelaySwitchSettingLogic *_delaySwitchSettingLogic;
     DiscoverEntranceSettingReporter *_reporter;

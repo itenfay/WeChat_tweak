@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface WASettingAccoutMaxTipsCell
+@interface WASettingAccoutMaxTipsCell : NSObject
 {
     UILabel *_titleLabel;
 }

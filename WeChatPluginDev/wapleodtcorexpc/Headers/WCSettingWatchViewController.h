@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo;
 
-@interface WCSettingWatchViewController
+@interface WCSettingWatchViewController : NSObject
 {
     MMTableViewInfo *_mainTableViewInfo;
 }

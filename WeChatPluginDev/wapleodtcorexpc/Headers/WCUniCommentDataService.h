@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCCommentPostManager, WCCommentWCDB;
 
-@interface WCUniCommentDataService
+@interface WCUniCommentDataService : NSObject
 {
     WCCommentPostManager *_postManager;
     WCCommentWCDB *_dataBase;

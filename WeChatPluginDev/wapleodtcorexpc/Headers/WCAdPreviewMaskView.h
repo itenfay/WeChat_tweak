@@ -5,7 +5,7 @@
 
 @class MMUIImageView, WCDataItem;
 
-@interface WCAdPreviewMaskView
+@interface WCAdPreviewMaskView : NSObject
 {
     WCDataItem *_dataItem;
     MMUIImageView *_maskImageView;

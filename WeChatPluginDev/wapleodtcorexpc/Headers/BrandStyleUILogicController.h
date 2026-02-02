@@ -6,7 +6,7 @@
 @class CContact, NSMutableDictionary;
 @protocol BrandStyleUILogicControllerDelegate;
 
-@interface BrandStyleUILogicController
+@interface BrandStyleUILogicController : NSObject
 {
     CContact *m_contact;
     id <BrandStyleUILogicControllerDelegate> m_delegate;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCTInsert
+@interface WCTInsert : NSObject
 {
     struct SyntaxList<WCTProperty> _properties;
     struct StatementInsert _statement;

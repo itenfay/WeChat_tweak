@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderGetDetailCacheMgr
+@interface WCFinderGetDetailCacheMgr : NSObject
 {
     NSMutableDictionary *_cache;
 }

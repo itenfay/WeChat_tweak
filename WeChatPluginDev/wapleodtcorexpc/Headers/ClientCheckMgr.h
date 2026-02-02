@@ -5,7 +5,7 @@
 
 @class NSLock, NSMutableSet, NSString;
 
-@interface ClientCheckMgr
+@interface ClientCheckMgr : NSObject
 {
     NSLock *_lock;
     NSMutableSet *_setImageList;

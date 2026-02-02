@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MJGradientView
+@interface MJGradientView : NSObject
 {
 }
 

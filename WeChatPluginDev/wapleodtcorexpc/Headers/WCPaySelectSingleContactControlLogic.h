@@ -6,7 +6,7 @@
 @class JSApiSelectSessionViewController, NSString;
 @protocol WCPaySelectSingleContactControlLogicDelegate;
 
-@interface WCPaySelectSingleContactControlLogic
+@interface WCPaySelectSingleContactControlLogic : NSObject
 {
     _Bool _pushVC;
     _Bool _onlyShowContactList;

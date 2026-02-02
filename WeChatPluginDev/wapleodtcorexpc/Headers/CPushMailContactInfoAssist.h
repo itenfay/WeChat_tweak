@@ -5,7 +5,7 @@
 
 @class NSString, XMailBindMailControlLogic;
 
-@interface CPushMailContactInfoAssist
+@interface CPushMailContactInfoAssist : NSObject
 {
     struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> m_mapPushMailCellToCellType;
     XMailBindMailControlLogic *_bindMailControlLogic;

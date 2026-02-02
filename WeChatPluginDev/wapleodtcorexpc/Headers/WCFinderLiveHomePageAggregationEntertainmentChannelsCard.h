@@ -5,7 +5,7 @@
 
 @class CADisplayLink, MMLiveColorfulLabel, NSArray, UIView;
 
-@interface WCFinderLiveHomePageAggregationEntertainmentChannelsCard
+@interface WCFinderLiveHomePageAggregationEntertainmentChannelsCard : NSObject
 {
     MMLiveColorfulLabel *_titleLabel;
     MMLiveColorfulLabel *_subTitleLabel;

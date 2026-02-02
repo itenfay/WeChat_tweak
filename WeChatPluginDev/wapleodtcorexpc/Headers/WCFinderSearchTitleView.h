@@ -5,7 +5,7 @@
 
 @class MMTagTextField, MMUIButton, NSString, UIImageView;
 
-@interface WCFinderSearchTitleView
+@interface WCFinderSearchTitleView : NSObject
 {
     long long _style;
     UIImageView *_searchIconView;

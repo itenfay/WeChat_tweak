@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMTableView, MMUILabel, NSData, NSMutableArray, NSString, WCFinderLivePageStayReporter, WCTimeLineFooterView;
 
-@interface WCFinderLiveLotteryWinRecordViewController
+@interface WCFinderLiveLotteryWinRecordViewController : NSObject
 {
     _Bool _fetchRecordInAllLives;
     _Bool _isPushed;

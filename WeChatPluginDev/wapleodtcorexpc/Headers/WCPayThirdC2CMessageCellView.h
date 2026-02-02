@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, UIView, WCPayThirdC2CMessageViewModel, WCPayWebImageView;
 
-@interface WCPayThirdC2CMessageCellView
+@interface WCPayThirdC2CMessageCellView : NSObject
 {
     NSMutableDictionary *_showResourceMaskImageViewCache;
     WCPayWebImageView *_showResourceImageView;

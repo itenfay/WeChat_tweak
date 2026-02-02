@@ -5,7 +5,7 @@
 
 @class NSCache, NSString, NSURLSession;
 
-@interface WCSightLoader
+@interface WCSightLoader : NSObject
 {
     NSString *_sightCacheDirectory;
     NSURLSession *_session;

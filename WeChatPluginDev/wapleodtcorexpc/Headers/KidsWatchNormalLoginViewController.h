@@ -6,7 +6,7 @@
 @class KidsWatchButton, KidsWatchSwitchCardView, KidsWatchTipsButton, MMUIButton;
 @protocol KidsWatchNormalLoginViewControllerDelegate;
 
-@interface KidsWatchNormalLoginViewController
+@interface KidsWatchNormalLoginViewController : NSObject
 {
     _Bool _showSyncChat;
     KidsWatchSwitchCardView *_switchCardView;

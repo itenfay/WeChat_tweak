@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IUdrBizFeature
+@interface IUdrBizFeature : NSObject
 {
 }
 

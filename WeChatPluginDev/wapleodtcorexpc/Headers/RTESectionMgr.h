@@ -6,7 +6,7 @@
 @class MMTimer, NSMutableArray, NSMutableString, NSString, RTEContentStorage;
 @protocol RTESectionMgrDelegate;
 
-@interface RTESectionMgr
+@interface RTESectionMgr : NSObject
 {
     NSMutableString *m_contentString;
     RTEContentStorage *m_storage;

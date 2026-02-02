@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIButton, UIImageView, UIStackView, UIView, WCWebSearchInputProvider, WSLocalTemplateController, WSWebViewPluginScheduler, WebSearchHomePagePresenter;
 
-@interface WebSearchHomePageViewController
+@interface WebSearchHomePageViewController : NSObject
 {
     _Bool _isPreload;
     WSWebViewPluginScheduler *_pluginScheduler;

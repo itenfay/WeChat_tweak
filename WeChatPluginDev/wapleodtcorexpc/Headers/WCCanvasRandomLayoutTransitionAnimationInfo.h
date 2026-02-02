@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasRandomLayoutTransitionAnimationInfo
+@interface WCCanvasRandomLayoutTransitionAnimationInfo : NSObject
 {
     NSString *_url;
     NSString *_fileMD5;

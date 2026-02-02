@@ -6,7 +6,7 @@
 @class NSString, WACapsuleView, WASplashAdRootView, WAWebViewMutiFuncMenuView;
 @protocol WASplashADViewControllerDelegate;
 
-@interface WASplashADViewController
+@interface WASplashADViewController : NSObject
 {
     _Bool _didAppear;
     unsigned long long _scene;

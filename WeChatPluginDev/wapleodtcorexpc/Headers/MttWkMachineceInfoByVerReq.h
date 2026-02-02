@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MttWkMachineceInfoByVerReq
+@interface MttWkMachineceInfoByVerReq : NSObject
 {
     _Bool jcev2_p_1_o_b64;
     NSString *jcev2_p_0_o_sSysVer;

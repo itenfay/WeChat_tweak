@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasRadarChartItemInfo
+@interface WCCanvasRadarChartItemInfo : NSObject
 {
     NSString *_label;
     NSString *_score;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class OMJCamResourceManager, OMJCamSession;
 
-@interface MJTemplateCameraSession
+@interface MJTemplateCameraSession : NSObject
 {
     OMJCamSession *_maasCameraSession;
 }

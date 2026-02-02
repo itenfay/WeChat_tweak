@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WePkgDownloader, WePkgFileDownloadInfo;
 
-@interface WePkgDownloadMgr
+@interface WePkgDownloadMgr : NSObject
 {
     NSMutableArray *_arrWaitingDownloadList;
     WePkgFileDownloadInfo *_currDownladInfo;

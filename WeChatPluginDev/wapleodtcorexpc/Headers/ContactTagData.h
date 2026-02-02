@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface ContactTagData
+@interface ContactTagData : NSObject
 {
     NSArray *m_arrContactNameList;
 }

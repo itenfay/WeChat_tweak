@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_configWXDeviceWiFi
+@interface WebviewJSEventHandler_configWXDeviceWiFi : NSObject
 {
     JSEvent *m_event;
 }

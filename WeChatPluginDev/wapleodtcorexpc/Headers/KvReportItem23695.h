@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem23695
+@interface KvReportItem23695 : NSObject
 {
     unsigned long long _SvrId_21;
     unsigned long long _BrandTimelineSequenceId_22;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WSWebviewErrorReporter14928
+@interface WSWebviewErrorReporter14928 : NSObject
 {
     _Bool _useReusePool;
     _Bool _isWebviewOnForeground;

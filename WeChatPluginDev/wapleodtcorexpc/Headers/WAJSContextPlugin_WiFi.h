@@ -6,7 +6,7 @@
 @class NEHotspotConfigurationManager, NEHotspotHelperCommand, NSMutableArray, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface WAJSContextPlugin_WiFi
+@interface WAJSContextPlugin_WiFi : NSObject
 {
     _Bool m_registed;
     _Bool m_hasPreSet;

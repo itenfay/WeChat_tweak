@@ -6,7 +6,7 @@
 @class JSContext, MMWebCanvasViewProxy, NSString;
 @protocol MMWebCanvasViewDataDelegate, MMWebCanvasViewEventDelegate;
 
-@interface MMWebCanvasView
+@interface MMWebCanvasView : NSObject
 {
     _Bool _hasStopped;
     JSContext *_jsContext;

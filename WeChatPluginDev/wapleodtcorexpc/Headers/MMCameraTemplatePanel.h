@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMCameraEffectPanelViewModel, NSString, UICollectionView, UIView;
 @protocol MMCameraTemplatePanelPanelDelegate;
 
-@interface MMCameraTemplatePanel
+@interface MMCameraTemplatePanel : NSObject
 {
     id <MMCameraTemplatePanelPanelDelegate> _delegate;
     unsigned long long _currentSelectedIndex;

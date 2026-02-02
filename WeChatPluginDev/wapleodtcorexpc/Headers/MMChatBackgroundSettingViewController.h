@@ -6,7 +6,7 @@
 @class ChatBackgroundView, MMTableView, NSMutableArray, NSString;
 @protocol MMChatBackgroundSettingViewControllerDelegate;
 
-@interface MMChatBackgroundSettingViewController
+@interface MMChatBackgroundSettingViewController : NSObject
 {
     MMTableView *m_tableView;
     long long m_columnCount;

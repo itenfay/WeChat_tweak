@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, WCAdvertiseInfo, WCCanvasDynamicDataLoader;
 
-@interface WAJSEventHandler_openADCanvas
+@interface WAJSEventHandler_openADCanvas : NSObject
 {
     NSDictionary *_param;
     WCCanvasDynamicDataLoader *_dataLoader;

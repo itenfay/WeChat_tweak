@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface TrackPresentMgr
+@interface TrackPresentMgr : NSObject
 {
     NSMutableDictionary *_trackRoomList;
     _Bool _isTrackRoomListLoaded;

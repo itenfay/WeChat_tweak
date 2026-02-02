@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWATimelineService, IWAWebViewPluginDelegate;
 
-@interface WAWebViewPlugin_Timeline
+@interface WAWebViewPlugin_Timeline : NSObject
 {
     _Bool _shouldShowShareTimelineMenu;
     id <IWAWebViewPluginDelegate> _resultDelegate;

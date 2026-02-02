@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebViewWebComVerifyInfo
+@interface WebViewWebComVerifyInfo : NSObject
 {
     unsigned int _taskReportId;
     unsigned int _taskJsCtxReportId;

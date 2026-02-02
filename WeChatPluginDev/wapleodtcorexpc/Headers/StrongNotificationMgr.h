@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableDictionary, NSString, StrongNotificationDataPB, StrongNotificationExclusiveMsgLogic, StrongNotificationItemAndMessagePB;
 
-@interface StrongNotificationMgr
+@interface StrongNotificationMgr : NSObject
 {
     StrongNotificationDataPB *m_strongNotificationData;
     StrongNotificationExclusiveMsgLogic *m_exclusiveMsgLogic;

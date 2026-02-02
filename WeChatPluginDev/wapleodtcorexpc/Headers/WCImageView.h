@@ -6,7 +6,7 @@
 @class MMDragManager, MMUIControl, NSString, UIDragInteraction, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView, WCImageViewModel;
 @protocol WCImageViewDelegate;
 
-@interface WCImageView
+@interface WCImageView : NSObject
 {
     _Bool _imageReady;
     _Bool _canShowInvisibleTipsInFullScreen;

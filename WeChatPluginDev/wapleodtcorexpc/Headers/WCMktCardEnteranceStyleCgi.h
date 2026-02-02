@@ -5,7 +5,7 @@
 
 @protocol WCMktCardEnteranceStyleCgiDelegate;
 
-@interface WCMktCardEnteranceStyleCgi
+@interface WCMktCardEnteranceStyleCgi : NSObject
 {
     id <WCMktCardEnteranceStyleCgiDelegate> _cgiDelegate;
 }

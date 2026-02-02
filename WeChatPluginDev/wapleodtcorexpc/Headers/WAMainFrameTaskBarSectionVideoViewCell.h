@@ -5,7 +5,7 @@
 
 @class MMImageView, WCFinderFeedImageCDNView;
 
-@interface WAMainFrameTaskBarSectionVideoViewCell
+@interface WAMainFrameTaskBarSectionVideoViewCell : NSObject
 {
     MMImageView *_playIcon;
     WCFinderFeedImageCDNView *_finderCoverView;

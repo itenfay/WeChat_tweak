@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWKWebViewTerminateItem
+@interface WAReportWKWebViewTerminateItem : NSObject
 {
     long long _publicLibVersion;
     unsigned long long _runningState;

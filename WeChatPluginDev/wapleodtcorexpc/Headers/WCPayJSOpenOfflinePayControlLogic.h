@@ -6,7 +6,7 @@
 @class NSDictionary, NSString;
 @protocol WCPayJSOpenOfflinePayControlLogicDelegate;
 
-@interface WCPayJSOpenOfflinePayControlLogic
+@interface WCPayJSOpenOfflinePayControlLogic : NSObject
 {
     id <WCPayJSOpenOfflinePayControlLogicDelegate> _logicDelegate;
     NSDictionary *_paramDict;

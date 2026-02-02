@@ -5,7 +5,7 @@
 
 @class CMessageWrap, FavoritesItem, UILabel, UIView, WCDataItem;
 
-@interface FavDetailHeaderView
+@interface FavDetailHeaderView : NSObject
 {
     UILabel *m_sourceTimeLabel;
     UILabel *m_sourceTitleLabel;

@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, UITapGestureRecognizer, UIView;
 @protocol MMLivePromoteOperationPanelDelegate;
 
-@interface MMLivePromoteOperationPanel
+@interface MMLivePromoteOperationPanel : NSObject
 {
     id <MMLivePromoteOperationPanelDelegate> _delegate;
     double _contentHeight;

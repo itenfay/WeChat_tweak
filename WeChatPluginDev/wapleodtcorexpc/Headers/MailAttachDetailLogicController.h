@@ -6,7 +6,7 @@
 @class CAttach, ForwardMessageLogicController, MMUIViewController, NSString;
 @protocol MailAttachDelegate;
 
-@interface MailAttachDetailLogicController
+@interface MailAttachDetailLogicController : NSObject
 {
     CAttach *m_oAttach;
     unsigned int m_uiStartPos;

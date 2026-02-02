@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString, WCFinderMPInterestData;
 @protocol BTScrollableFinderCellViewModelDelegate;
 
-@interface BTScrollableFinderCellViewModel
+@interface BTScrollableFinderCellViewModel : NSObject
 {
     NSMutableArray *_finderItemViewModelArr;
     NSMutableArray *_finderItemViewModelArrForDisplay;

@@ -5,7 +5,7 @@
 
 @class NSString, WCOutCouponCgi, WCOutGetProductListCgi;
 
-@interface WCOutCgiMgr
+@interface WCOutCgiMgr : NSObject
 {
     WCOutCouponCgi *_couponCgi;
     WCOutGetProductListCgi *_getproductlistCgi;

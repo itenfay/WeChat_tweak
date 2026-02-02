@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCMomentsAnimatedFireworksManager
+@interface WCMomentsAnimatedFireworksManager : NSObject
 {
     NSArray *_animationFireworkImages;
 }

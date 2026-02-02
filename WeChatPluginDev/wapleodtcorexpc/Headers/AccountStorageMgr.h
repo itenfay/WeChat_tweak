@@ -5,7 +5,7 @@
 
 @class CSetting, CSettingExt, CUpdateInfo, NSRecursiveLock, NSString, SyncBufferInfo;
 
-@interface AccountStorageMgr
+@interface AccountStorageMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     SyncBufferInfo *m_oSyncBufferInfo;

@@ -6,7 +6,7 @@
 @class CdnInfo, NSDictionary, NSString;
 @protocol FaceRecogConfigLogicDelegate;
 
-@interface FaceRecogConfigLogic
+@interface FaceRecogConfigLogic : NSObject
 {
     CdnInfo *_cdnInfo;
     _Bool _bRSA;

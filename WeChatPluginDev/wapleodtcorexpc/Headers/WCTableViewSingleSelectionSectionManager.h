@@ -5,7 +5,7 @@
 
 @protocol WCTableViewSingleSelectionSectionManagerDelegate;
 
-@interface WCTableViewSingleSelectionSectionManager
+@interface WCTableViewSingleSelectionSectionManager : NSObject
 {
     id <WCTableViewSingleSelectionSectionManagerDelegate> _delegate;
     long long _selectedIndex;

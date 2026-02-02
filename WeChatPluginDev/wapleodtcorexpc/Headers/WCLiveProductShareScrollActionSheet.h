@@ -5,7 +5,7 @@
 
 @class MMFinderLiveECBaseShareTask;
 
-@interface WCLiveProductShareScrollActionSheet
+@interface WCLiveProductShareScrollActionSheet : NSObject
 {
     MMFinderLiveECBaseShareTask *_shareTask;
 }

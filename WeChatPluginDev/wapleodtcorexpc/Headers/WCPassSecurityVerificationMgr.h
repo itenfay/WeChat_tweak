@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPassSecurityVerificationMgr
+@interface WCPassSecurityVerificationMgr : NSObject
 {
 }
 

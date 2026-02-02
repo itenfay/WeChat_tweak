@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, ForwardMessageLogicController, MMLimitedModeVerifyPasswordUtilLogic, MMUILabel, NSString, UIButton, WCFinderLimitAgreementCommonHeadView, WCFinderLimitCheckPanelView;
 
-@interface WCFinderCheckAntiAddictViewController
+@interface WCFinderCheckAntiAddictViewController : NSObject
 {
     ForwardMessageLogicController *m_forwardMsgLogic;
     _Bool _controlExitState;

@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, NSMutableArray, NSString;
 
-@interface BrandSingleAuthHistoryViewController
+@interface BrandSingleAuthHistoryViewController : NSObject
 {
     unsigned int _state;
     int _initialUpdatedTimeStamp;

@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_getEncryptHKPasswd
+@interface WebviewJSEventHandler_getEncryptHKPasswd : NSObject
 {
     JSEvent *_jsEvent;
 }

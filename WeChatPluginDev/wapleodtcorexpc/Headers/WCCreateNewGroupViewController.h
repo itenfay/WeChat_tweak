@@ -6,7 +6,7 @@
 @class MMTableView, NSString, UITextField;
 @protocol WCCreateNewGroupViewControllerDelegate;
 
-@interface WCCreateNewGroupViewController
+@interface WCCreateNewGroupViewController : NSObject
 {
     MMTableView *m_tableView;
     UITextField *m_textField;

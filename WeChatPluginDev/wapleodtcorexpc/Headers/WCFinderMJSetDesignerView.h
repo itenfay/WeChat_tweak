@@ -5,7 +5,7 @@
 
 @class UILabel, WCFinderAuthInfoIconView, WCFinderFollowButton, WCFinderHeadImageView;
 
-@interface WCFinderMJSetDesignerView
+@interface WCFinderMJSetDesignerView : NSObject
 {
     UILabel *_topTitleLabel;
     WCFinderHeadImageView *_headImageView;

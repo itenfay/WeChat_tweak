@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, ForwardMessageLogicController, MMMsgCommonTipsView, MMMusicDotMVDataSource, MMMusicFavHandler, MMMusicForwardHandler, MMMusicInfo, MMMusicLiveCommentModel, MMMusicLiveCommentView, MMMusicLiveInputView, MMMusicLiveLyricDisplayView, MMMusicLiveMVAuthorInfoView, MMMusicLiveMusicOperationView, MMMusicLiveSendLocationBubbleView, MMMusicLiveVCTopBarView, MMMusicLyricsViewController, MMMusicMVPostingStateView, MMMusicOpenThirdAppHelper, MMMusicSetStatusBubbleView, MMMusicVideoImageDownloader, MMScrollActionSheet, MMUIActivityIndicatorView, MMUIButton, NSString, SendAppMsgHandler, UIButton, UILabel, UIView, WCLocationInfo, WCUIAlertView;
 @protocol MMMusicLiveViewControllerDelegate;
 
-@interface MMMusicLiveViewController
+@interface MMMusicLiveViewController : NSObject
 {
     unsigned long long _pushedFromType;
     CAGradientLayer *m_topMaskLayer;

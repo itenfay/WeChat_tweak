@@ -5,7 +5,7 @@
 
 @class WebviewJSEventHandlerTingBase;
 
-@interface LiteAppJsApiTingBase
+@interface LiteAppJsApiTingBase : NSObject
 {
     WebviewJSEventHandlerTingBase *_tingHandler;
 }

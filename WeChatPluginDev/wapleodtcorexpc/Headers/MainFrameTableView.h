@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, NSIndexPath;
 
-@interface MainFrameTableView
+@interface MainFrameTableView : NSObject
 {
     CADisplayLink *_displayLink;
     double _animationPointsPerSecond;

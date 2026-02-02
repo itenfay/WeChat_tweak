@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardDataShareInfo
+@interface WCCardDataShareInfo : NSObject
 {
     NSString *_giftMsgTitle;
 }

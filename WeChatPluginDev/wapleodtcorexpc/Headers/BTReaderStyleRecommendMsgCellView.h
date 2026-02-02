@@ -5,7 +5,7 @@
 
 @class BTReaderStyleRecommendMsgCellViewModel, CAGradientLayer, MMUILabel, MMWebImageView, RichTextView;
 
-@interface BTReaderStyleRecommendMsgCellView
+@interface BTReaderStyleRecommendMsgCellView : NSObject
 {
     MMWebImageView *m_coverImageView;
     RichTextView *m_titleLabel;

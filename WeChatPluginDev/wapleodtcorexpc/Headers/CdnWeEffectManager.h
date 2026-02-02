@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface CdnWeEffectManager
+@interface CdnWeEffectManager : NSObject
 {
     _Bool _needLimitFPS;
     _Bool _isWeEffectProcessStart;

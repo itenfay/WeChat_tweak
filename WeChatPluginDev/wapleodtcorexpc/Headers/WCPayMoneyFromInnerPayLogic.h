@@ -5,7 +5,7 @@
 
 @class NSString, WCPayInnerPayRequestStruct, WCPayPayMoneyLogic;
 
-@interface WCPayMoneyFromInnerPayLogic
+@interface WCPayMoneyFromInnerPayLogic : NSObject
 {
     WCPayPayMoneyLogic *m_payLogic;
     WCPayInnerPayRequestStruct *m_oWCPayInnerPayRequestStruct;

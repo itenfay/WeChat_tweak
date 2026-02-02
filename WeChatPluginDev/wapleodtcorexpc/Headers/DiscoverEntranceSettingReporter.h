@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DiscoverEntranceSettingReporter
+@interface DiscoverEntranceSettingReporter : NSObject
 {
     NSString *_sessionId;
     unsigned long long _action;

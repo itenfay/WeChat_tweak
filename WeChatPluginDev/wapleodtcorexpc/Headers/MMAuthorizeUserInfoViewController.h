@@ -6,7 +6,7 @@
 @class MMAuthorizeScopeTopView, MMTableView, MMTipsViewController, NSMutableArray, NSString, OauthScopeInfo, UIButton, UIView;
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface MMAuthorizeUserInfoViewController
+@interface MMAuthorizeUserInfoViewController : NSObject
 {
     _Bool _isBanModifyAvatar;
     _Bool _canAddNewAvatar;

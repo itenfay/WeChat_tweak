@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QSubPoiInfo
+@interface QSubPoiInfo : NSObject
 {
     NSString *_parentID;
 }

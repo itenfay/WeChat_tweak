@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class TXCGlFrameBuffer, TXCGlProgram, UIImage;
 @protocol TXIGlContext;
 
-@interface TXCImageBlendFilter
+@interface TXCImageBlendFilter : NSObject
 {
     float _vertices[8];
     float _imageTexCoords[8];

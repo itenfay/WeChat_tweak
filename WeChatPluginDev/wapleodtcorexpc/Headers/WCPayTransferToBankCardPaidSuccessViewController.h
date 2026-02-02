@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UILabel, UIScrollView, UIView;
 @protocol WCPayTransferToBankCardPaidSuccessViewControllerDelegate;
 
-@interface WCPayTransferToBankCardPaidSuccessViewController
+@interface WCPayTransferToBankCardPaidSuccessViewController : NSObject
 {
     id <WCPayTransferToBankCardPaidSuccessViewControllerDelegate> m_delegate;
     unsigned long long _vcType;

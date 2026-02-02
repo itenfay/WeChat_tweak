@@ -5,7 +5,7 @@
 
 @class CBaseContact, NSDictionary, NSString, UIViewController;
 
-@interface MMPhoneNumberHandler
+@interface MMPhoneNumberHandler : NSObject
 {
     NSString *_phoneNumber;
     UIViewController *_viewController;

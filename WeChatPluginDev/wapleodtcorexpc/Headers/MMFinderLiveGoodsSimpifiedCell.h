@@ -5,7 +5,7 @@
 
 @class MMFinderLiveGoodsSerialNumberView, MMFinderLiveTagsLabel, MMWebImageView, NSString, UILabel;
 
-@interface MMFinderLiveGoodsSimpifiedCell
+@interface MMFinderLiveGoodsSimpifiedCell : NSObject
 {
     MMFinderLiveTagsLabel *_goodsTitleLabel;
     MMWebImageView *_goodsImageView;

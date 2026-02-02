@@ -5,7 +5,7 @@
 
 @class CContact, NSString, UIBarButtonItem;
 
-@interface GroupNoticeViewController
+@interface GroupNoticeViewController : NSObject
 {
     _Bool m_bTextDidChange;
     double m_defaultFooterHeight;

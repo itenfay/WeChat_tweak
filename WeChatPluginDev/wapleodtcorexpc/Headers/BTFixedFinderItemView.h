@@ -5,7 +5,7 @@
 
 @class CAGradientLayer;
 
-@interface BTFixedFinderItemView
+@interface BTFixedFinderItemView : NSObject
 {
     CAGradientLayer *_colorMaskLayer;
 }

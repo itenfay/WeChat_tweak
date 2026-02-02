@@ -5,7 +5,7 @@
 
 @class WCDataItem, WCMediaItem;
 
-@interface WCAdDynamicFeedMediaHolderView
+@interface WCAdDynamicFeedMediaHolderView : NSObject
 {
     WCDataItem *_dataItem;
     WCMediaItem *_mediaItem;

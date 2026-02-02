@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFloatMsg, NSString;
 
-@interface MMFinderLiveQuickReplyBarrageModel
+@interface MMFinderLiveQuickReplyBarrageModel : NSObject
 {
     _Bool _selected;
     id _payload;

@@ -6,7 +6,7 @@
 @class NSDate, NSString, WXGSpeedFilter;
 @protocol LocalAreaNetworkServerDelegate;
 
-@interface LocalAreaNetworkServer
+@interface LocalAreaNetworkServer : NSObject
 {
     NSString *client_ip;
     unsigned short client_port;

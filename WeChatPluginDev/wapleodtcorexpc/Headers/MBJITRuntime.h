@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JITRuntime, JITRuntimeView, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface MBJITRuntime
+@interface MBJITRuntime : NSObject
 {
     _Bool _isWKTerminated;
     JITRuntime *_jitRuntime;

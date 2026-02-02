@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiTalkBannerItem
+@interface MultiTalkBannerItem : NSObject
 {
     unsigned int routeid;
     unsigned int createtime;

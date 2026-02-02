@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
-@interface WCTempChatMgr
+@interface WCTempChatMgr : NSObject
 {
     NSMutableSet *_tempSessionUsrNameSet;
     NSMutableDictionary *_getContactInfoDict;

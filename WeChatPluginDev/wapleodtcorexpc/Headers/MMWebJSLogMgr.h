@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MMWebJSLogMgr
+@interface MMWebJSLogMgr : NSObject
 {
     NSMutableArray *logList;
     NSMutableDictionary *invalidLogDic;

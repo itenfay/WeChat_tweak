@@ -6,7 +6,7 @@
 @class NSMutableArray, NSRecursiveLock, NSString, WCPayWebImageView, WCRedEnvelopesGetRedPacketPreviewCgi;
 @protocol PreviewContentLogicControllerDelegate;
 
-@interface PreviewContentLogicController
+@interface PreviewContentLogicController : NSObject
 {
     _Bool _hasCallPreviewCgi;
     _Bool _bubbleImageDownloadOK;

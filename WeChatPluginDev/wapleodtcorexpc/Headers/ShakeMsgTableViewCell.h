@@ -5,7 +5,7 @@
 
 @class MMWebImageView, ShakeMsgItem, UILabel;
 
-@interface ShakeMsgTableViewCell
+@interface ShakeMsgTableViewCell : NSObject
 {
     MMWebImageView *oThumbImageView;
     UILabel *oTitleLabel;

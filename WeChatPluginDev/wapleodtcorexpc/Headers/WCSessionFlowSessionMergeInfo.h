@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionFlowSessionMergeInfo
+@interface WCSessionFlowSessionMergeInfo : NSObject
 {
     NSString *_sid;
     unsigned long long _count;

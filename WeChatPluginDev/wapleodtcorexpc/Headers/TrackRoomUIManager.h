@@ -5,7 +5,7 @@
 
 @class NSString, TrackRoomView;
 
-@interface TrackRoomUIManager
+@interface TrackRoomUIManager : NSObject
 {
     TrackRoomView *_trackRoomView;
     _Bool _exitAtHidden;

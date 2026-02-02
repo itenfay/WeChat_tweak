@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MMWebviewPrefetchResult
+@interface MMWebviewPrefetchResult : NSObject
 {
     unsigned int _prefetchResourseOption;
     unsigned int _maxCacheTime;

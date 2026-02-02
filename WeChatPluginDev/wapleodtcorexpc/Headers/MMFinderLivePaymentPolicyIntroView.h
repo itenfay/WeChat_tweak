@@ -6,7 +6,7 @@
 @class CAShapeLayer, NSString, RichTextView, UIButton, UILabel, UIView, UIVisualEffectView;
 @protocol MMFinderLivePaymentPolicyIntroViewDelegate;
 
-@interface MMFinderLivePaymentPolicyIntroView
+@interface MMFinderLivePaymentPolicyIntroView : NSObject
 {
     _Bool _forAnchor;
     id <MMFinderLivePaymentPolicyIntroViewDelegate> _operationDelegate;

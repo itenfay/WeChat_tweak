@@ -5,7 +5,7 @@
 
 @class UITextField;
 
-@interface WCFinderFeedPickerDebugViewController
+@interface WCFinderFeedPickerDebugViewController : NSObject
 {
     UITextField *_sceneTextView;
 }

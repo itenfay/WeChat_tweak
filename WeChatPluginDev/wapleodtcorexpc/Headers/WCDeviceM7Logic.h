@@ -6,7 +6,7 @@
 @class CMPedometer, HKHealthStore, HKObserverQuery, NSMutableArray, WCDeviceStepObject;
 @protocol WCDeviceM7LogicDelegate;
 
-@interface WCDeviceM7Logic
+@interface WCDeviceM7Logic : NSObject
 {
     id <WCDeviceM7LogicDelegate> _delegate;
     _Bool m_bStepGetting;

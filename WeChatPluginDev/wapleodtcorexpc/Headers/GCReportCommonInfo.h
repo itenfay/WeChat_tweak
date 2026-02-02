@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GCReportCommonInfo
+@interface GCReportCommonInfo : NSObject
 {
     NSString *_noticeId;
 }

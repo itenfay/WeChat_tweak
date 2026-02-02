@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, NSMutableDictionary, NSString, UIImageView, UIView, WCPayC2CMessageViewModel, WCPayWebImageView, WCPayWebPagView;
 
-@interface WCPayC2CMessageCellView
+@interface WCPayC2CMessageCellView : NSObject
 {
     WCPayWebImageView *_showResourceImageView;
     UIImageView *_showResourceMaskView;

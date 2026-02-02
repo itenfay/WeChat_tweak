@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary;
 
-@interface WAJSContextPlugin_Crypto
+@interface WAJSContextPlugin_Crypto : NSObject
 {
     NSMutableDictionary *_contexts;
     NSMutableArray *_keyAliasList;

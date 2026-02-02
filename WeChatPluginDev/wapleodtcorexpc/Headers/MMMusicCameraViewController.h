@@ -5,7 +5,7 @@
 
 @class MMImagePickerManagerOptionObj, WCFinderCameraViewModel;
 
-@interface MMMusicCameraViewController
+@interface MMMusicCameraViewController : NSObject
 {
     WCFinderCameraViewModel *_viewModel;
     MMImagePickerManagerOptionObj *_optionObj;

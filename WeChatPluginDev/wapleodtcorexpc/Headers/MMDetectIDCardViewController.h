@@ -6,7 +6,7 @@
 @class AVCaptureSession, AVCaptureVideoPreviewLayer, MMUILabel, NSMutableArray, NSString, ScanLicenceBackgroundView, SequenceAnimationObject, UIImageView, UILabel, UIView;
 @protocol MMDetectIDCardViewControllerDelegate;
 
-@interface MMDetectIDCardViewController
+@interface MMDetectIDCardViewController : NSObject
 {
     struct MyImage *origImg;
     struct MyImage *grayImg;

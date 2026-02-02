@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceModelRequestData
+@interface DeviceModelRequestData : NSObject
 {
     unsigned int _m_lastRequestTime;
 }

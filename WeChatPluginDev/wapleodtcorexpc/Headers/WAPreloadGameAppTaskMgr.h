@@ -5,7 +5,7 @@
 
 @class NSString, WAPreloadAppTask;
 
-@interface WAPreloadGameAppTaskMgr
+@interface WAPreloadGameAppTaskMgr : NSObject
 {
     WAPreloadAppTask *_preloadTask;
     long long _wkFeatureVersion;

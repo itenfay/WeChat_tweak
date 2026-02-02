@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedListView, WCFinderInteractiveSearchListViewModel;
 
-@interface WCFinderInteractiveSearchListViewController
+@interface WCFinderInteractiveSearchListViewController : NSObject
 {
     WCFinderInteractiveSearchListViewModel *_viewModel;
     WCFinderFeedListView *_listView;

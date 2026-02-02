@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameLocalAlbumInfo
+@interface GameLocalAlbumInfo : NSObject
 {
     NSString *_appId;
     NSString *_gameName;

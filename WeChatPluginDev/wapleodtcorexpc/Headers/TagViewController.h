@@ -5,7 +5,7 @@
 
 @class FavTagEditView, FavTagHintView, FavTagTableView, MMTableView, NSArray, NSMutableArray, NSString, UILabel;
 
-@interface TagViewController
+@interface TagViewController : NSObject
 {
     NSMutableArray *m_currentTags;
     NSMutableArray *m_allTags;

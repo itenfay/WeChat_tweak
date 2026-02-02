@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionPerformanceModel
+@interface WCSessionPerformanceModel : NSObject
 {
     NSString *_pageName;
     unsigned long long _caseId;

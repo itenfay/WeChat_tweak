@@ -5,7 +5,7 @@
 
 @class GameCenterMsgListBaseTabViewController, GameCenterMsgListInteractTabViewController, GameCenterMsgListNoticeTabViewController, MMUIButton, NSIndexPath, NSString, UIView;
 
-@interface GameCenterMsgListViewController
+@interface GameCenterMsgListViewController : NSObject
 {
     unsigned int _sourceScene;
     int _msgShowType;

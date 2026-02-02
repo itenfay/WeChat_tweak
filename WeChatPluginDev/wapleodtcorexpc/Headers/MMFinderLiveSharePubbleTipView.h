@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMTimer, MMUIButton, MMUIImageView, MMUILabel, NSString, UIFont, UITapGestureRecognizer, UIView;
 
-@interface MMFinderLiveSharePubbleTipView
+@interface MMFinderLiveSharePubbleTipView : NSObject
 {
     CDUnknownBlockType _clickCloseBlock;
     CDUnknownBlockType _clickPubbleBlock;

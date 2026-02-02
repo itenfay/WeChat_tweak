@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSString;
 
-@interface FlutterFuncCallEngineKV
+@interface FlutterFuncCallEngineKV : NSObject
 {
     MMLRUCache *_kvMap;
 }

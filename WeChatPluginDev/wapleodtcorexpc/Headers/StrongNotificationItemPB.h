@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface StrongNotificationItemPB
+@interface StrongNotificationItemPB : NSObject
 {
     _Bool _isCustomizationNotify;
     unsigned int _uiStatue;

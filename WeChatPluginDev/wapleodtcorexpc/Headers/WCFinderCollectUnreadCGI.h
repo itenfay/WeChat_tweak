@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCFinderCollectUnreadCGI
+@interface WCFinderCollectUnreadCGI : NSObject
 {
     int _commentScene;
     NSMutableArray *_unreadItems;

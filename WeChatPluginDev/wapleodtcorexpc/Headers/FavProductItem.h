@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavProductItem
+@interface FavProductItem : NSObject
 {
     NSString *_productTitle;
     NSString *_productDesc;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMLiveViewController, MMUIButton, NSString, UIColor, UIImage, UIImageView, UILabel, UIView, WCLiveBlurButtonAnimationHandler, WCLiveBlurButtonBackView;
 
-@interface WCLiveBlurButton
+@interface WCLiveBlurButton : NSObject
 {
     _Bool _removeBlurBacked;
     _Bool _isExposed;

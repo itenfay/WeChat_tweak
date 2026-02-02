@@ -5,7 +5,7 @@
 
 @class NSData, NSString, SdkFinderInfoResult, TranslateLinkCacheWrap, TranslateLinkResultShareInfo;
 
-@interface TranslateLinkResult
+@interface TranslateLinkResult : NSObject
 {
     _Bool _isFromLocalCache;
     int _errcode;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCLanDeviceJsonKissLogic
+@interface WCLanDeviceJsonKissLogic : NSObject
 {
     NSMutableDictionary *m_sendTaskMap;
 }

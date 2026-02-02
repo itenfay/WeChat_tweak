@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, GameHaowanAlbumVideoItem, NSString, NSURL, NSURLSessionTask;
 
-@interface MMAssetForGameHaowanOfVideoItem
+@interface MMAssetForGameHaowanOfVideoItem : NSObject
 {
     GameHaowanAlbumVideoItem *_videoItem;
     CDUnknownBlockType _imageResultBlock;

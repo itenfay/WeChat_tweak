@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString;
 
-@interface WCLiveBottomTextButton
+@interface WCLiveBottomTextButton : NSObject
 {
     _Bool _bBottomDescLabelNoLimitedWidth;
     _Bool _hideDescLabel;

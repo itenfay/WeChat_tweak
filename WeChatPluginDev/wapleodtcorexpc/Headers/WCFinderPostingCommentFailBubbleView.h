@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UILabel, WCFinderComment;
 @protocol WCFinderPostingCommentFailBubbleViewDelegate;
 
-@interface WCFinderPostingCommentFailBubbleView
+@interface WCFinderPostingCommentFailBubbleView : NSObject
 {
     id <WCFinderPostingCommentFailBubbleViewDelegate> _delegate;
     WCFinderComment *_commentFailInfo;

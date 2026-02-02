@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAAppTaskQualityIssue
+@interface WAAppTaskQualityIssue : NSObject
 {
     unsigned int _subType;
     unsigned long long _type;

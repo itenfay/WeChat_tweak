@@ -6,7 +6,7 @@
 @class FavoritesItemDataField, MMHeadImageView, MMUILabel, NSSet, UILabel, UIView;
 @protocol FavRecordNodeViewDelegate, RecordNodeDataSource;
 
-@interface FavRecordBaseNodeView
+@interface FavRecordBaseNodeView : NSObject
 {
     UILabel *m_srcTitleLabel;
     MMUILabel *m_srcTimeLabel;

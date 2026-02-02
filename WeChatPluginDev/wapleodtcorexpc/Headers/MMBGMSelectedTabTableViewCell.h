@@ -6,7 +6,7 @@
 @class MMBGMSelectedTabTableViewCellConfig, MMWebImageView, PAGView, UILabel, UIView;
 @protocol MMBGMSelectedMusicDataProtocol;
 
-@interface MMBGMSelectedTabTableViewCell
+@interface MMBGMSelectedTabTableViewCell : NSObject
 {
     _Bool _isCellSelected;
     _Bool _isPlayable;

@@ -5,7 +5,7 @@
 
 @protocol ContactInfoAssistDelegate;
 
-@interface FileHelperContactInfoAssist
+@interface FileHelperContactInfoAssist : NSObject
 {
 }
 

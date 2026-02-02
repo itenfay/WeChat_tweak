@@ -6,7 +6,7 @@
 @class NSObject, NSString, WXGMigrationInfoDB;
 @protocol OS_dispatch_queue;
 
-@interface WXGMigrationMgr
+@interface WXGMigrationMgr : NSObject
 {
     WXGMigrationInfoDB *m_infoDB;
     NSObject<OS_dispatch_queue> *m_updateTimeQueue;

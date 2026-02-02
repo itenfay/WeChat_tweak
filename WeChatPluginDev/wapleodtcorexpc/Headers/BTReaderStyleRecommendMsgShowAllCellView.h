@@ -5,7 +5,7 @@
 
 @class BTReaderStyleRecommendMsgShowAllCellViewModel, MMUILabel, UIImageView;
 
-@interface BTReaderStyleRecommendMsgShowAllCellView
+@interface BTReaderStyleRecommendMsgShowAllCellView : NSObject
 {
     MMUILabel *m_titleLabel;
     UIImageView *m_arrowView;

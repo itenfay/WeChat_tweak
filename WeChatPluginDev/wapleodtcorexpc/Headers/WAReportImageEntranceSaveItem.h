@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportImageEntranceSaveItem
+@interface WAReportImageEntranceSaveItem : NSObject
 {
     unsigned int _saveTimeStamp;
     NSString *_userName;

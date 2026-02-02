@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCTSettingSwitchModel
+@interface WCTSettingSwitchModel : NSObject
 {
     _Bool _on;
     CDUnknownBlockType _switchAction;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x140
+@interface WloginTlv_0x140 : NSObject
 {
     unsigned short wDataVer;
     NSString *sLoginHost;

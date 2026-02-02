@@ -6,7 +6,7 @@
 @class CContact, NSString;
 @protocol SetPermissionsViewControllerDelegate;
 
-@interface ContactBaseSetPermissionsViewController
+@interface ContactBaseSetPermissionsViewController : NSObject
 {
     _Bool _m_bIsDisableAllPermissionContact;
     CContact *_m_contact;

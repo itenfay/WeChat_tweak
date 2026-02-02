@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKSKitAudioEngine, MMFinderLiveKSKitLyricContainerView, MMFinderLiveKSKitNoteAdjustProgressView, MMFinderLiveKTVReporter, MMUILabel, NSString, PAGView;
 
-@interface MMFinderLiveKTVSingingContentView
+@interface MMFinderLiveKTVSingingContentView : NSObject
 {
     int _currScore;
     int _realtimeScoreSentenceIndex;

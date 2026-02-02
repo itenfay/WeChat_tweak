@@ -6,7 +6,7 @@
 @class NSString, UITableView, UIView;
 @protocol MMFinderLiveConnectMicAudienceApplyPageSheetDelegate;
 
-@interface MMFinderLiveConnectMicAudienceApplyPageSheet
+@interface MMFinderLiveConnectMicAudienceApplyPageSheet : NSObject
 {
     id <MMFinderLiveConnectMicAudienceApplyPageSheetDelegate> _delegate;
     UITableView *_tableView;

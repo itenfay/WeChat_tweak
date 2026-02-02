@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSString, UIImageView, WAAuthorizeTableViewCellInfo;
 
-@interface WAAuthorizeTableViewCell
+@interface WAAuthorizeTableViewCell : NSObject
 {
     WAAuthorizeTableViewCellInfo *_viewDataModel;
     MMWebImageView *_iconView;

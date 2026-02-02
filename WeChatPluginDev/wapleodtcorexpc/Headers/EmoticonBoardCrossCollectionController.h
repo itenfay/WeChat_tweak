@@ -6,7 +6,7 @@
 @class EmoticonBoardCrossSectionInfo, MMUIView, NSArray, NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol EmoticonBoardCrossCollectionControllerDelegate;
 
-@interface EmoticonBoardCrossCollectionController
+@interface EmoticonBoardCrossCollectionController : NSObject
 {
     _Bool _darkMode;
     _Bool _shouldShowRecentUseEmoji;

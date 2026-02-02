@@ -5,7 +5,7 @@
 
 @class BrandEcsPrivateMsgViewModel, MMBrandHeadImageView, UILabel;
 
-@interface BrandEcsPrivateMsgCellView
+@interface BrandEcsPrivateMsgCellView : NSObject
 {
     MMBrandHeadImageView *m_headerView;
     UILabel *m_digestLabel;

@@ -5,7 +5,7 @@
 
 @class NSString, WASessionNotifyInfo;
 
-@interface WASessionNotifyMgr
+@interface WASessionNotifyMgr : NSObject
 {
     WASessionNotifyInfo *_notifyInfo;
 }

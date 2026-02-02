@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMAnimatedImageDecoder, MMWebImageRequest, MMWebImageViewChainModel, NSObject, UIImage, UIView;
 @protocol MMWebImageViewDelegate, OS_dispatch_queue;
 
-@interface MMWebImageView
+@interface MMWebImageView : NSObject
 {
     UIImage *_defaultImage;
     _Bool _loadCachedImageFileOnMainThread;

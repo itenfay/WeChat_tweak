@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMSpecialMsgClickMoreSearchResult
+@interface MMSpecialMsgClickMoreSearchResult : NSObject
 {
     NSString *_m_title;
 }

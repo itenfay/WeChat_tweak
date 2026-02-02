@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, MMProgressViewEx, MMTimer, MMUILabel, NSString, UIButton, UINavigationController, UIView, WCNetworkMediaCore, WCNetworkMediaSlider;
 @protocol MMMediaRecorderPlayerDelegate;
 
-@interface MMMediaRecorderPlayer
+@interface MMMediaRecorderPlayer : NSObject
 {
     UINavigationController *_shareToUserNavController;
     UINavigationController *_shareToTimelineNavController;

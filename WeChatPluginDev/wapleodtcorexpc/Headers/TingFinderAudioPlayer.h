@@ -5,7 +5,7 @@
 
 @class WCFinderDataItem;
 
-@interface TingFinderAudioPlayer
+@interface TingFinderAudioPlayer : NSObject
 {
     WCFinderDataItem *_fetchedDataItem;
 }

@@ -6,7 +6,7 @@
 @class MMMusicFadeOutLayer, MMUIButton, UIView, UIViewController, WCFinderBGMPlayer, WCFinderDataItem, WCFinderFeedImageCDNView, WCFinderSimplePlayerView;
 @protocol WCFinderFeedPickerPreviewViewControllerDelegate;
 
-@interface WCFinderFeedPickerPreviewViewController
+@interface WCFinderFeedPickerPreviewViewController : NSObject
 {
     id <WCFinderFeedPickerPreviewViewControllerDelegate> _delegate;
     UIViewController *_weakVC;

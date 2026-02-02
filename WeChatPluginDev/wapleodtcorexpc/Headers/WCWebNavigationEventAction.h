@@ -5,7 +5,7 @@
 
 @class WCWebNavigationEventActionContext;
 
-@interface WCWebNavigationEventAction
+@interface WCWebNavigationEventAction : NSObject
 {
     WCWebNavigationEventActionContext *_actionContext;
 }

@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface WCScheduleManageViewController
+@interface WCScheduleManageViewController : NSObject
 {
     MMTableView *_tableView;
     NSMutableArray *_todoItemArr;

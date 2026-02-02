@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31KaraLiveEnergyTimeSeriesProphet
+@interface _TtC6WeChat31KaraLiveEnergyTimeSeriesProphet : NSObject
 {
     MISSING_TYPE *lastThermalState;
 }

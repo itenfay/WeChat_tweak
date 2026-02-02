@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WAWebViewPlugin_Favorite
+@interface WAWebViewPlugin_Favorite : NSObject
 {
 }
 

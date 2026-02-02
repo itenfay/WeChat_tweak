@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, NSURL, NewLifeShareCoverImageView, NewLifeShareCoverImageViewModel, SightIconView, UIImage, UIImageView, UILabel, UIView, WCContentItemFinderViewModel, WCFinderDataItem, WCFinderFeedMediaWrap, WCFinderMediaInfo;
 
-@interface WCContentItemFinderView
+@interface WCContentItemFinderView : NSObject
 {
     _Bool _ignoresRequestFinderRelatedFeeds;
     _Bool _playFullScreen;

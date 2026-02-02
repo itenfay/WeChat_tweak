@@ -5,7 +5,7 @@
 
 @class CMMotionManager, NSString;
 
-@interface VoIPOrientationService
+@interface VoIPOrientationService : NSObject
 {
     _Bool _isSystemLockActived;
     double _deviceAngleDegree;

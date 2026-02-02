@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMTemplateMsgKeyValue
+@interface MMTemplateMsgKeyValue : NSObject
 {
     NSString *_key;
     NSString *_value;

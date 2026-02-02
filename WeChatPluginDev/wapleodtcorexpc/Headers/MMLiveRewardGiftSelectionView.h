@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, CALayer, CAShapeLayer, FanClubPanelInfo, FinderLiveRewardGiftExtInfo, MMCPLabel, MMFinderLiveGlobalRankSignView, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMHeadImageView, MMLiveHalfScreenTitleBarView, MMLiveRewardGiftAttackContactBubbleView, MMLiveRewardGiftCoinButton, MMLiveRewardGiftCustomizationTipView, MMLiveRewardGiftLayout, MMLiveRewardGiftNewCustomizationSettingPanel, MMLiveRewardGiftNewCustomizationTipView, MMLiveRewardGiftPreviewWindow, MMLiveRewardGiftSendingCountMenuBar, MMNormalTipsView, MMScrollView, MMUILabel, MMUIView, NSArray, NSIndexPath, NSMutableArray, NSMutableSet, NSString, UICollectionView, UIImageView, UILabel, UIPageControl, UIScrollView, UIView;
 @protocol MMLiveRewardGiftSelectionLogicDelegate, MMLiveRewardGiftSelectionViewDelegate;
 
-@interface MMLiveRewardGiftSelectionView
+@interface MMLiveRewardGiftSelectionView : NSObject
 {
     _Bool _isRewardOpening;
     _Bool _isScrollDirectionVerticalEnabled;

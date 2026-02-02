@@ -6,7 +6,7 @@
 @class NSString, UIImageView, WCPayTenpayPasswordCtrlItem;
 @protocol WCPayOfflinePayConfirmViewDelegate;
 
-@interface WCPayOfflinePayConfirmView
+@interface WCPayOfflinePayConfirmView : NSObject
 {
     UIImageView *m_backgroundView;
     WCPayTenpayPasswordCtrlItem *m_textFieldItemPwd;

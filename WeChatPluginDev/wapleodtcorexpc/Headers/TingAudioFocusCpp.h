@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingAudioFocusCpp
+@interface TingAudioFocusCpp : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WAAppIdToUsernameTransfer;
 
-@interface WAJSEventHandler_requestPayment
+@interface WAJSEventHandler_requestPayment : NSObject
 {
     WAAppIdToUsernameTransfer *_appID2UserNameTransfer;
     _Bool _finallyUseCustomAppId;

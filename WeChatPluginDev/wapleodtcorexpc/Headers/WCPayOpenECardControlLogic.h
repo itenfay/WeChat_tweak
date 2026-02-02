@@ -6,7 +6,7 @@
 @class MMTipsViewController, NSString, OpenECardReq, WCPayBindECardCgi, WCPayEcardModelView, WCPayLQTDetailControlLogic, WCPayLQTOpenLqbAccountCgi, WCPayOpenECardAuthCgi, WCPayOpenECardCgi, WCPayQryBankList4BindCgi;
 @protocol WCPayOpenECardControlLogicDelegate;
 
-@interface WCPayOpenECardControlLogic
+@interface WCPayOpenECardControlLogic : NSObject
 {
     _Bool _bIsOpenECardSucc;
     _Bool _bIsReuseExistingEcard;

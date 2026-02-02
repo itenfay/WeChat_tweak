@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SnsObjItem
+@interface SnsObjItem : NSObject
 {
     NSString *_tid;
     NSString *_userName;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCOutRecentCallItem
+@interface WCOutRecentCallItem : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int localID;

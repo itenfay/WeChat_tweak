@@ -5,7 +5,7 @@
 
 @class NSNumber;
 
-@interface TextStateFavoriteButton
+@interface TextStateFavoriteButton : NSObject
 {
     _Bool _notify;
     unsigned int _funcType;

@@ -5,7 +5,7 @@
 
 @class NSString, VOIPModeSwitchStateMachine;
 
-@interface VOIPModeSwitchMgr
+@interface VOIPModeSwitchMgr : NSObject
 {
     _Bool mIsWeakSessionActive;
     _Bool mIsSessionActive;

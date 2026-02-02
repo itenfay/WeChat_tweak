@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, TextStatePublishConfiguration, TextStatePublishSourceInfo;
 
-@interface WebviewJSEventHandler_publishTextState
+@interface WebviewJSEventHandler_publishTextState : NSObject
 {
     TextStatePublishSourceInfo *_sourceInfo;
     TextStatePublishConfiguration *_configuration;

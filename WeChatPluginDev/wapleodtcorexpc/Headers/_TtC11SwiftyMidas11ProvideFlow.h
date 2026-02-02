@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas11ProvideFlow
+@interface _TtC11SwiftyMidas11ProvideFlow : NSObject
 {
     MISSING_TYPE *hasBeenInDowngrade;
     MISSING_TYPE *logPrefix;

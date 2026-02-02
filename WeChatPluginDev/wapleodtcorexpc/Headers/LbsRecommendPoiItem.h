@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface LbsRecommendPoiItem
+@interface LbsRecommendPoiItem : NSObject
 {
     NSString *nsTitle;
     NSString *nsSubTitle;

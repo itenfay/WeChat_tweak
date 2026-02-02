@@ -5,7 +5,7 @@
 
 @class MMCommonActionSheetPicker, MMFinderLivePaymentSettingView, MMFinderLivePaymentTrialModeSettingView, MMFinderLivePaymentVisivilitySettingInfo, NSString;
 
-@interface MMFinderLivePaymentVisivilityShareSettingView
+@interface MMFinderLivePaymentVisivilityShareSettingView : NSObject
 {
     MMFinderLivePaymentVisivilitySettingInfo *_paymentSettingInfo;
     MMFinderLivePaymentSettingView *_paymentSettingPanel;

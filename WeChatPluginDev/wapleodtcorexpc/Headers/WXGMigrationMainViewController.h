@@ -6,7 +6,7 @@
 @class CTRichTextView, MMProgressView, MMUIActivityIndicatorView, MMUILabel, MMUINavigationBar, NSString, UIButton, UIImage, UIImageView, UILabel, UINavigationItem, UIScrollView, UIView;
 @protocol WXGMigrationMainViewControllerDelegate;
 
-@interface WXGMigrationMainViewController
+@interface WXGMigrationMainViewController : NSObject
 {
     UIImageView *m_iconImageView;
     UIImage *m_qrcodeImage;

@@ -5,7 +5,7 @@
 
 @class JSVirtualMachine, MMCanvasMainJSContext, MMWebJsBasePkgInfo, NSMutableDictionary, NSString;
 
-@interface MMWebCanvasBaseJsEngine
+@interface MMWebCanvasBaseJsEngine : NSObject
 {
     JSVirtualMachine *_jsVM;
     MMCanvasMainJSContext *_mainContext;

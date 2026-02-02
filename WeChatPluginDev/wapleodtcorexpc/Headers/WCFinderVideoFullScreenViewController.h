@@ -5,7 +5,7 @@
 
 @class NSString, UIPercentDrivenInteractiveTransition, WCFinderMegaVideo, WCFinderPlayBar, WCPlayerView;
 
-@interface WCFinderVideoFullScreenViewController
+@interface WCFinderVideoFullScreenViewController : NSObject
 {
     WCFinderMegaVideo *_videoSource;
     WCPlayerView *_playerView;

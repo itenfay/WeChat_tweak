@@ -5,7 +5,7 @@
 
 @class EmoticonCustomAddLogicController, NSString;
 
-@interface LiteAppJsApiEmoticonOpenSelfie
+@interface LiteAppJsApiEmoticonOpenSelfie : NSObject
 {
     EmoticonCustomAddLogicController *_emoticonAddLogicController;
 }

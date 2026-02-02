@@ -5,7 +5,7 @@
 
 @class MMTimer, MMUILabel, NSArray;
 
-@interface WCAdRollTextView
+@interface WCAdRollTextView : NSObject
 {
     _Bool _pauseFlag;
     NSArray *_textList;

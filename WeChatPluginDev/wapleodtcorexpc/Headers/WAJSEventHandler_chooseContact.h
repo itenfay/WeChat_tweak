@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_chooseContact
+@interface WAJSEventHandler_chooseContact : NSObject
 {
 }
 

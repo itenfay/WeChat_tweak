@@ -5,7 +5,7 @@
 
 @class EmoticonDataDB, EmoticonSortSetting, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface EmoticonPackageMgr
+@interface EmoticonPackageMgr : NSObject
 {
     _Bool _isInstallingTusiji;
     EmoticonDataDB *m_oEmoticonPackageDB;

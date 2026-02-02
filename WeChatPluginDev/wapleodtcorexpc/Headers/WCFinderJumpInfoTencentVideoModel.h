@@ -5,7 +5,7 @@
 
 @class WCFinderFeedContentVM;
 
-@interface WCFinderJumpInfoTencentVideoModel
+@interface WCFinderJumpInfoTencentVideoModel : NSObject
 {
     WCFinderFeedContentVM *_contentVM;
 }

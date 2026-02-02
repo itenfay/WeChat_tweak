@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UserIdAuthorizePageUserIdItem
+@interface UserIdAuthorizePageUserIdItem : NSObject
 {
     NSString *_key;
     NSString *_value;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGlobalFavListCGI
+@interface WCFinderGlobalFavListCGI : NSObject
 {
     CDUnknownBlockType _completionBlock;
     CDUnknownBlockType _failedBlock;

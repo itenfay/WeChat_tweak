@@ -7,7 +7,7 @@
 
 @class NSDictionary, NSString, WCBizSchemeBlockViewController;
 
-@interface WCBizCommonSchemeUrlMgr <WCBizSchemeBlockViewControllerDelegate>
+@interface WCBizCommonSchemeUrlMgr : NSObject <WCBizSchemeBlockViewControllerDelegate>
 {
     WCBizSchemeBlockViewController *_blockViewController;
     NSDictionary *_handlerDictionary;

@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol WCShareCardBatchGetMgrDelegate;
 
-@interface WCShareCardBatchGetMgr
+@interface WCShareCardBatchGetMgr : NSObject
 {
     NSMutableArray *_waitArray;
     NSMutableArray *_gettingArray;

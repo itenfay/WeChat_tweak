@@ -6,7 +6,7 @@
 @class MMHeadImageView, MMLiveUserStateItem, MMUIImageView, MMUILabel;
 @protocol MMLiveContactTableViewCellDelegate;
 
-@interface MMLiveContactTableViewCell
+@interface MMLiveContactTableViewCell : NSObject
 {
     id <MMLiveContactTableViewCellDelegate> _cellDelegate;
     double _seperatorStartX;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GameVideoAlbumDataFetcher, NSArray, NSMutableArray, NSString;
 @protocol GameDataChangedObserver;
 
-@interface MMAlbumForGameHaowan
+@interface MMAlbumForGameHaowan : NSObject
 {
     NSArray *_albumInfos;
     GameVideoAlbumDataFetcher *_dataFetcher;

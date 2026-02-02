@@ -5,7 +5,7 @@
 
 @class CaptureVideoInfo, MMLoadingView, NSString, UINavigationController;
 
-@interface WebviewJSEventHandler_chooseVideo
+@interface WebviewJSEventHandler_chooseVideo : NSObject
 {
     UINavigationController *m_oVideoPicker;
     CaptureVideoInfo *m_oVideoInfo;

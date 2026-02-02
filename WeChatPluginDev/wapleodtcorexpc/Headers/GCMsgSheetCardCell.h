@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSMutableArray, UILabel;
 
-@interface GCMsgSheetCardCell
+@interface GCMsgSheetCardCell : NSObject
 {
     MMWebImageView *_cardBgView;
     MMWebImageView *_rightImgView;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26MagicBrandCommonPkgManager
+@interface _TtC6WeChat26MagicBrandCommonPkgManager : NSObject
 {
     MISSING_TYPE *bizName;
 }

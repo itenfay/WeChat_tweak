@@ -5,7 +5,7 @@
 
 @class GCChatCellPublishBottomView, GCChatCellVoteView, GCRoleInfoView, MMUIActivityIndicatorView, MMWebImageView, NSString, PAGView, UIButton, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
-@interface GCChatBaseCell
+@interface GCChatBaseCell : NSObject
 {
     MMWebImageView *_headImgView;
     UIView *_nameLineView;

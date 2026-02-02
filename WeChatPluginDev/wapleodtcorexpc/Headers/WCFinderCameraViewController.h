@@ -6,7 +6,7 @@
 @class MMImagePickerManagerOptionObj, NSString, WCFinderCameraViewModel;
 @protocol WCFinderCameraViewControllerDelegate;
 
-@interface WCFinderCameraViewController
+@interface WCFinderCameraViewController : NSObject
 {
     WCFinderCameraViewModel *_viewModel;
     id <WCFinderCameraViewControllerDelegate> _cameraDelegate;

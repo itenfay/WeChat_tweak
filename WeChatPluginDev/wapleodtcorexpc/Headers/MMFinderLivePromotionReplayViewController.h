@@ -6,7 +6,7 @@
 @class MMFinderLivePromotionReplayOperationView, MMFinderLiveReplayView, MMFinderLiveTaskId, MMUIButton, NSDictionary, NSString, UIImageView, UINavigationController;
 @protocol MMLiveViewControllerDelegate;
 
-@interface MMFinderLivePromotionReplayViewController
+@interface MMFinderLivePromotionReplayViewController : NSObject
 {
     unsigned int _viewStartTime;
     MMFinderLiveTaskId *_taskId;

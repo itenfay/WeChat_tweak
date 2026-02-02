@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIActivityIndicatorView;
 
-@interface WCShareCardListRefreshHeader
+@interface WCShareCardListRefreshHeader : NSObject
 {
     double _insetTDelta;
     MMUIActivityIndicatorView *_loadingView;

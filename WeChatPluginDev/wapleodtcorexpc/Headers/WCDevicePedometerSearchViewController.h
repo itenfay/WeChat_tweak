@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableSet, NSString, UILabel, UIView;
 @protocol NSObject><IWCDevicePedometerSearchViewControllerExt;
 
-@interface WCDevicePedometerSearchViewController
+@interface WCDevicePedometerSearchViewController : NSObject
 {
     UIView *m_footerView;
     UILabel *m_linkHelpBlackLabel;

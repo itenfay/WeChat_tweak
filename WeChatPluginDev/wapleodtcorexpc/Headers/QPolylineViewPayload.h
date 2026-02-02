@@ -5,7 +5,7 @@
 
 @class UIColor, UIImage;
 
-@interface QPolylineViewPayload
+@interface QPolylineViewPayload : NSObject
 {
     _Bool _drawSymbol;
     _Bool _useGradient;

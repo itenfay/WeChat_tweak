@@ -6,7 +6,7 @@
 @class MMUIViewController, WCSearchPageState, WCWebSearchViewControllerNewH5;
 @protocol WCWebSearchPageInterface;
 
-@interface WebSearchPluginBase
+@interface WebSearchPluginBase : NSObject
 {
 }
 

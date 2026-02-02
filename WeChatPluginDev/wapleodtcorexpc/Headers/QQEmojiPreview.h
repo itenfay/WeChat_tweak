@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIImageView, UILabel;
 
-@interface QQEmojiPreview
+@interface QQEmojiPreview : NSObject
 {
     UIImageView *_backgroundView;
     UIButton *_previewView;

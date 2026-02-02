@@ -5,7 +5,7 @@
 
 @class AppCommunicateData, NSString, OpenApiAppMsgGenerator;
 
-@interface WXKBOpenSDKMessageAction
+@interface WXKBOpenSDKMessageAction : NSObject
 {
     _Bool _hasFetchedAppRegisterInfo;
     AppCommunicateData *_communicateData;

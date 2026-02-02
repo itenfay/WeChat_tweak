@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWidgetIDKeyItem
+@interface WAReportWidgetIDKeyItem : NSObject
 {
     unsigned int _idkey_id;
     unsigned int _idkey_key;

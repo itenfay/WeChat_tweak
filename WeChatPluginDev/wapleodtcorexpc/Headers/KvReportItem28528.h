@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem28528
+@interface KvReportItem28528 : NSObject
 {
     unsigned int _numberOfSections_21;
     unsigned int _offsetDiff_22;

@@ -5,7 +5,7 @@
 
 @class UIColor, UIImage, UIImageView, UILabel, UIView;
 
-@interface MMAssetSelectCheckButton
+@interface MMAssetSelectCheckButton : NSObject
 {
     long long m_selectedIndex;
     UILabel *m_selectedIndexView;

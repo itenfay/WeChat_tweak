@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WCFinderCreateLivePrepareCGI
+@interface WCFinderCreateLivePrepareCGI : NSObject
 {
     NSString *_finderUsername;
     NSString *_micFinderUsername;

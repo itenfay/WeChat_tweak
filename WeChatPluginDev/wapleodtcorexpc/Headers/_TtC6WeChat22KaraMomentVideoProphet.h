@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat22KaraMomentVideoProphet
+@interface _TtC6WeChat22KaraMomentVideoProphet : NSObject
 {
     MISSING_TYPE *peakPeriodModel;
 }

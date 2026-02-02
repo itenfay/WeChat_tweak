@@ -6,7 +6,7 @@
 @class AppFileNodeProgressView, AttributeLabel, MMHeadImageView, MMUIActivityIndicatorView, MMUILabel, MMUIView, MMWebImageView, NSString, UIImageView, UILabel, UIView;
 @protocol MsgFileBrowseItemViewDelegate;
 
-@interface MsgFileBrowseItemView
+@interface MsgFileBrowseItemView : NSObject
 {
     MMHeadImageView *_headImgView;
     AttributeLabel *_nameLabel;

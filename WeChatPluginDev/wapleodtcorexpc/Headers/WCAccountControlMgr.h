@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCAccountAutoLoginControlLogic, WCAccountCloseMainFrameLogic, WCAccountSignHelper, WCAccountSwitchLogic;
 
-@interface WCAccountControlMgr
+@interface WCAccountControlMgr : NSObject
 {
     NSString *m_reportClientID;
     WCAccountAutoLoginControlLogic *m_autoLoginLogic;

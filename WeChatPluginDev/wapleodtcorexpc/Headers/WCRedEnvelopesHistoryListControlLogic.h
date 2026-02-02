@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCRedEnvelopesHistoryListControlLogic
+@interface WCRedEnvelopesHistoryListControlLogic : NSObject
 {
     int m_enWCRedEnvelopesHistoryType;
 }

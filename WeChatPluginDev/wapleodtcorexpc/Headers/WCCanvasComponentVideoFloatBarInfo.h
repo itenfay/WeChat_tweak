@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentItem;
 
-@interface WCCanvasComponentVideoFloatBarInfo
+@interface WCCanvasComponentVideoFloatBarInfo : NSObject
 {
     _Bool _isFullClickable;
     NSString *_descText;

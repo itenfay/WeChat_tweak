@@ -5,7 +5,7 @@
 
 @class MMCPLabel, UIImageView, UILabel;
 
-@interface MMLiveGameJoinTeamSettingViewCell
+@interface MMLiveGameJoinTeamSettingViewCell : NSObject
 {
     unsigned int _joinTeamMode;
     UIImageView *_selectionIndicatorView;

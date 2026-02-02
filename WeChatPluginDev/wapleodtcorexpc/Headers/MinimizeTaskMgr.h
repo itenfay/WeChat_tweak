@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, MinimizationWindow, MinimizeTaskData, MinimizeTaskNewSessionInfoSmall, NSMutableArray, NSMutableDictionary, NSString, UIViewController;
 
-@interface MinimizeTaskMgr
+@interface MinimizeTaskMgr : NSObject
 {
     _Bool _isMainWindowResignKeyWindow;
     _Bool _isFullScreenPlaying;

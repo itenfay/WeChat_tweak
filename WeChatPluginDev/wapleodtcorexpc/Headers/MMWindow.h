@@ -5,7 +5,7 @@
 
 @protocol WindowDelegate;
 
-@interface MMWindow
+@interface MMWindow : NSObject
 {
     id <WindowDelegate> m_delegate;
 }

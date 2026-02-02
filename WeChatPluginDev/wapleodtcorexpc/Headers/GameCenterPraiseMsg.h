@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterPraiseMsg
+@interface GameCenterPraiseMsg : NSObject
 {
     NSString *_praiseContent;
     NSString *_rankDesc;

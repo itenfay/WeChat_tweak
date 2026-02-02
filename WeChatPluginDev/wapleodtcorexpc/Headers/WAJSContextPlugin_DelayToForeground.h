@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface WAJSContextPlugin_DelayToForeground
+@interface WAJSContextPlugin_DelayToForeground : NSObject
 {
     NSMutableArray *_delayPerformArr;
 }

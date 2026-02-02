@@ -5,7 +5,7 @@
 
 @class FaceRecogInternelHandler, JSEvent, NSString;
 
-@interface WebviewJSEventHandler_internelWxFaceVerify
+@interface WebviewJSEventHandler_internelWxFaceVerify : NSObject
 {
     JSEvent *_cbEvent;
     FaceRecogInternelHandler *_verifyHandler;

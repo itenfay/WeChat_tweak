@@ -5,7 +5,7 @@
 
 @class BTRecommendMsgData, NSArray, NSMutableDictionary;
 
-@interface BTRecommendSectionData
+@interface BTRecommendSectionData : NSObject
 {
     BTRecommendMsgData *_recommendData;
     NSMutableDictionary *_cachedRowHeightMap;

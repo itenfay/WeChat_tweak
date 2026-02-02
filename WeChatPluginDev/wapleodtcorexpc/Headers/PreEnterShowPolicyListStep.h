@@ -5,7 +5,7 @@
 
 @class NSString, PreEnterShowPolicyListConfig, WCPolicyListControlLogic;
 
-@interface PreEnterShowPolicyListStep
+@interface PreEnterShowPolicyListStep : NSObject
 {
     PreEnterShowPolicyListConfig *_configObj;
     NSString *_userName;

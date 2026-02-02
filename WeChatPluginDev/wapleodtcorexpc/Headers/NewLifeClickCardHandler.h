@@ -5,7 +5,7 @@
 
 @class NewLifeScrollActionSheet;
 
-@interface NewLifeClickCardHandler
+@interface NewLifeClickCardHandler : NSObject
 {
     NewLifeScrollActionSheet *_scrollActionSheet;
 }

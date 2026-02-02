@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_makePhoneCall
+@interface WebviewJSEventHandler_makePhoneCall : NSObject
 {
 }
 

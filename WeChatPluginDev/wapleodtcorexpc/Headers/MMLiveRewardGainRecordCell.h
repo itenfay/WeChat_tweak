@@ -6,7 +6,7 @@
 @class MMCPLabel, MMFinderLiveFansGroupSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveRewardGainsInfo, MMFinderLiveTask, UIImageView;
 @protocol MMLiveRewardGainRecordCellDelegate;
 
-@interface MMLiveRewardGainRecordCell
+@interface MMLiveRewardGainRecordCell : NSObject
 {
     _Bool _forceDarkMode;
     id <MMLiveRewardGainRecordCellDelegate> _cellDelegate;

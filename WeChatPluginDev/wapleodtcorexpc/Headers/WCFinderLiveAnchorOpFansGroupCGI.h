@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveAnchorCustomGiftInfo_CustomItem, NSString;
 
-@interface WCFinderLiveAnchorOpFansGroupCGI
+@interface WCFinderLiveAnchorOpFansGroupCGI : NSObject
 {
     unsigned long long _opType;
     NSString *_fansGroupName;

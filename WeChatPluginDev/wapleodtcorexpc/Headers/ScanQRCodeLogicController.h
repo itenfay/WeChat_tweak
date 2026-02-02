@@ -6,7 +6,7 @@
 @class BizScanTabBarInfo, CameraScanCodesContentView, CameraScanCombineConfig, CameraScanCombineContentView, CameraScanCombineDetectorRouter, GetA8KeyLogic, MMUIViewController, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSOperationQueue, NSRecursiveLock, NSString, NewQRCodeScanner, ScanCodeOcrHandler, ScanQRCodeLogicParams, ScanQRCodeResultInfo, ScanQRCodeUrlPrefixRule, ScanWXCodeUrlPrefixRule;
 @protocol OS_dispatch_semaphore;
 
-@interface ScanQRCodeLogicController
+@interface ScanQRCodeLogicController : NSObject
 {
     _Bool _hasCamera;
     GetA8KeyLogic *_logic;

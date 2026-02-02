@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTaskId, MMLiveActionSheetFlowLayoutView, NSString, WCFinderLiveAnchorLogReporter;
 
-@interface MMFinderLiveActivityScrollActionSheet
+@interface MMFinderLiveActivityScrollActionSheet : NSObject
 {
     _Bool _isInStopState;
     _Bool _isLiveBannerMore;

@@ -5,7 +5,7 @@
 
 @class NSString, WCPayMallRequestPaymentControlLogic;
 
-@interface WAJSEventHandler_requestMallPayment
+@interface WAJSEventHandler_requestMallPayment : NSObject
 {
     WCPayMallRequestPaymentControlLogic *_mallRequestPaymentControlLogic;
 }

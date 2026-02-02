@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppConfigInfo
+@interface LiteAppConfigInfo : NSObject
 {
     unsigned int ilinkVersion;
     NSString *appId;

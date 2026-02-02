@@ -5,7 +5,7 @@
 
 @protocol WCPayRealnameVerifySMSCgiDelegate;
 
-@interface WCPayRealnameVerifySMSCgi
+@interface WCPayRealnameVerifySMSCgi : NSObject
 {
     id <WCPayRealnameVerifySMSCgiDelegate> _m_delegate;
 }

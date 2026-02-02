@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface EnterpriseContactMgr
+@interface EnterpriseContactMgr : NSObject
 {
     NSMutableDictionary *_dicContactDB;
     NSMutableDictionary *_contactCache;

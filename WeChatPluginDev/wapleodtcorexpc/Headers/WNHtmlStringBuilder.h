@@ -5,7 +5,7 @@
 
 @class FavoritesItem, NSMutableArray, NSString, WNContentStorage;
 
-@interface WNHtmlStringBuilder
+@interface WNHtmlStringBuilder : NSObject
 {
     FavoritesItem *m_favItem;
     WNContentStorage *m_content;

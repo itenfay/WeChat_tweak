@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface LocalJSEventHandler_shareImage
+@interface LocalJSEventHandler_shareImage : NSObject
 {
     _Bool _isDownloadingImage;
     _Bool _willShareToFriend;

@@ -5,7 +5,7 @@
 
 @class WAJSContextPlugin_SyncWaiter;
 
-@interface WAJSEventHandler_createLoadSubPackageTaskForWaiter
+@interface WAJSEventHandler_createLoadSubPackageTaskForWaiter : NSObject
 {
     WAJSContextPlugin_SyncWaiter *_syncWaiter;
 }

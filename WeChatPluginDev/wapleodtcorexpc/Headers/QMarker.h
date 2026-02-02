@@ -5,7 +5,7 @@
 
 @class NSString, QMarkerManager, UIImage;
 
-@interface QMarker
+@interface QMarker : NSObject
 {
     _Bool _isHidden;
     _Bool _enabled;

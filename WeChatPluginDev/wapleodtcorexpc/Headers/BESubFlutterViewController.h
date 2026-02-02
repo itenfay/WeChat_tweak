@@ -5,7 +5,7 @@
 
 @class BSTLExptConfig, BSTimelineFlutterPlugin;
 
-@interface BESubFlutterViewController
+@interface BESubFlutterViewController : NSObject
 {
     _Bool _didAppear;
     BSTLExptConfig *_exptConfig;

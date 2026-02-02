@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface LbsAdvertismentsMgr
+@interface LbsAdvertismentsMgr : NSObject
 {
     NSMutableDictionary *_adInfos;
     NSMutableDictionary *_adActionInfos;

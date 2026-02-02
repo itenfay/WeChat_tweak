@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x149
+@interface WloginTlv_0x149 : NSObject
 {
     unsigned short wTipsType;
     NSString *sTipsTitle;

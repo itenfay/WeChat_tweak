@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMLiveGamePrepareRedPacketCell
+@interface MMLiveGamePrepareRedPacketCell : NSObject
 {
     NSArray *_roomContacts;
 }

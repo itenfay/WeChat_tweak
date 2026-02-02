@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveReportAnchorActionCGI
+@interface WCFinderLiveReportAnchorActionCGI : NSObject
 {
     int _actionType;
     CDUnknownBlockType _successBlock;

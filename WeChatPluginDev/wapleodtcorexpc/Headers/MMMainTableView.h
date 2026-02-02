@@ -5,7 +5,7 @@
 
 @protocol MainTableDelegate;
 
-@interface MMMainTableView
+@interface MMMainTableView : NSObject
 {
     _Bool _enableDeselection;
     id <MainTableDelegate> _m_mainTableDelegate;

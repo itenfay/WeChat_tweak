@@ -5,7 +5,7 @@
 
 @class NSString, WAJSContextPlugin_NativeViewsComponent;
 
-@interface WASplashAdRootView
+@interface WASplashAdRootView : NSObject
 {
     WAJSContextPlugin_NativeViewsComponent *_component;
 }

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas9OrderFlow
+@interface _TtC11SwiftyMidas9OrderFlow : NSObject
 {
     MISSING_TYPE *logPrefix;
 }

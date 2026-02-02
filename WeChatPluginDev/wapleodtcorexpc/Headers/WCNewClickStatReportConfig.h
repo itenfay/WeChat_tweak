@@ -5,7 +5,7 @@
 
 @class NSArray, NSData, NSString;
 
-@interface WCNewClickStatReportConfig
+@interface WCNewClickStatReportConfig : NSObject
 {
     unsigned int _configVersion;
     unsigned int _nextUpdateInterval;

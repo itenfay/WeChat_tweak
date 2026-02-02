@@ -6,7 +6,7 @@
 @class MMFinderLiveRewardWishView, MMUIButton, MMUILabel, MMUITextField, NSString, UIView;
 @protocol MMFinderLiveRewardWishInputViewDelegate;
 
-@interface MMFinderLiveRewardWishInputView
+@interface MMFinderLiveRewardWishInputView : NSObject
 {
     UIView *_contentView;
     UIView *_rewardCountTextFieldBackgroundView;

@@ -6,7 +6,7 @@
 @class NSString, WCFinderLiveFeedGenericAutoPlayModel;
 @protocol WCFinderLiveHomePageBannerSectionViewDelegate;
 
-@interface WCFinderLiveHomePageBannerSectionView
+@interface WCFinderLiveHomePageBannerSectionView : NSObject
 {
     WCFinderLiveFeedGenericAutoPlayModel *_autoPlayModel;
     id <WCFinderLiveHomePageBannerSectionViewDelegate> _delegate;

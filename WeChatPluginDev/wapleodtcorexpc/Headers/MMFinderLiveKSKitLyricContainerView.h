@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKSKitLyricPreparingView, MMFinderLiveKSKitLyricSentence, MMFinderLiveKSKitLyricWrapper, NSMutableArray, NSString;
 
-@interface MMFinderLiveKSKitLyricContainerView
+@interface MMFinderLiveKSKitLyricContainerView : NSObject
 {
     _Bool _isStart;
     _Bool _isStartDisplay;

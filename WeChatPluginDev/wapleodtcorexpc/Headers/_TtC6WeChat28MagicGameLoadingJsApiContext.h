@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, _TtC6WeChat19MagicGameLoadingBiz;
 
-@interface _TtC6WeChat28MagicGameLoadingJsApiContext
+@interface _TtC6WeChat28MagicGameLoadingJsApiContext : NSObject
 {
     MISSING_TYPE *biz;
 }

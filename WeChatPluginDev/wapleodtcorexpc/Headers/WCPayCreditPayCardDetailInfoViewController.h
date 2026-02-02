@@ -6,7 +6,7 @@
 @class NSString, UIButton;
 @protocol WCPayCreditPayCardDetailInfoViewControllerDelegate;
 
-@interface WCPayCreditPayCardDetailInfoViewController
+@interface WCPayCreditPayCardDetailInfoViewController : NSObject
 {
     id <WCPayCreditPayCardDetailInfoViewControllerDelegate> m_delegate;
     UIButton *m_footerButton;

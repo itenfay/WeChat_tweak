@@ -5,7 +5,7 @@
 
 @class NSNumber;
 
-@interface FilterEffectAdapter
+@interface FilterEffectAdapter : NSObject
 {
     NSNumber *_alpha;
 }

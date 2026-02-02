@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSString;
 
-@interface MMActionNotifyCommBizService
+@interface MMActionNotifyCommBizService : NSObject
 {
     MMLRUCache *_notifyUUIDCache;
 }

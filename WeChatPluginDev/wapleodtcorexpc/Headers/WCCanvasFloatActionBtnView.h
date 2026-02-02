@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasFloatActionBtnView
+@interface WCCanvasFloatActionBtnView : NSObject
 {
     _Bool _isDisappearing;
     _Bool _didAppearFirstTime;

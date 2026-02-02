@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIView;
 
-@interface WCWebSearchBar
+@interface WCWebSearchBar : NSObject
 {
     _Bool _didExposedCancelButton;
     _Bool _didExposedClearButton;

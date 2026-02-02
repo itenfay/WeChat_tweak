@@ -5,7 +5,7 @@
 
 @class NSString, WCAdRandomPickCardItemsView, WCCanvasComponentRandomPickCardInfo;
 
-@interface WCCanvasRandomPickCardComponent
+@interface WCCanvasRandomPickCardComponent : NSObject
 {
     _Bool _didShowImpressiveAnimation;
     WCCanvasComponentRandomPickCardInfo *_cardsInfo;

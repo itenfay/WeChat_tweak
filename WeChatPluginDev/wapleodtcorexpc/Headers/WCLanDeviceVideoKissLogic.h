@@ -5,7 +5,7 @@
 
 @class CdnUploadTaskInfo, NSMutableArray, NSMutableDictionary, WCLanDeviceData;
 
-@interface WCLanDeviceVideoKissLogic
+@interface WCLanDeviceVideoKissLogic : NSObject
 {
     NSMutableDictionary *m_sendTaskMap;
     WCLanDeviceData *m_deviceData;

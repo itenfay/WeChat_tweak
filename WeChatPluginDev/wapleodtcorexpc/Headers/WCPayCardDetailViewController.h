@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIView, WCActionSheet;
 @protocol WCPayCardDetailViewControllerDelegate;
 
-@interface WCPayCardDetailViewController
+@interface WCPayCardDetailViewController : NSObject
 {
     UIButton *m_footerButton;
     WCActionSheet *m_actionSheet;

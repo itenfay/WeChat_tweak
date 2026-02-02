@@ -5,7 +5,7 @@
 
 @class AppLimitedModeGuardianMessageViewModel, UIImageView, UILabel;
 
-@interface AppLimitedModeGuardianMessageCellView
+@interface AppLimitedModeGuardianMessageCellView : NSObject
 {
     UIImageView *m_thumbImageView;
     UILabel *m_titleLabel;

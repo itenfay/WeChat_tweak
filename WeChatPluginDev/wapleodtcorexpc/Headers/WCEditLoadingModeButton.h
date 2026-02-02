@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, UIImageView, UIView;
 
-@interface WCEditLoadingModeButton
+@interface WCEditLoadingModeButton : NSObject
 {
     _Bool _loading;
     UIView *_loadingView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QArc
+@interface QArc : NSObject
 {
     int _pointCount;
     CDStruct_c3b9c2ee *_internalArcPoints;

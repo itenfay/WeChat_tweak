@@ -6,7 +6,7 @@
 @class MMPickerView, NSString, SettingMyAccountExtInfoLogic;
 @protocol settingMyAccountExtInfoDelegate;
 
-@interface SettingMyAccountExtInfoViewController
+@interface SettingMyAccountExtInfoViewController : NSObject
 {
     struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> m_mapAccountCellToCellType;
     struct map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<const unsigned long, unsigned long>>> m_mapSessionType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString, WCFinderDataItem;
 
-@interface BTFinderLiveItemViewModel
+@interface BTFinderLiveItemViewModel : NSObject
 {
     _Bool _updateDataItemFinished;
     NSString *_mediaUrl;

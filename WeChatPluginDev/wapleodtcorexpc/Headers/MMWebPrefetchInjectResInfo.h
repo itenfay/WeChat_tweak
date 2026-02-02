@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MMWebPrefetchInjectResInfo
+@interface MMWebPrefetchInjectResInfo : NSObject
 {
     NSString *_url;
     NSDictionary *_respHeaderFields;

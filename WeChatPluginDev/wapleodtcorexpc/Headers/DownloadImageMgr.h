@@ -5,7 +5,7 @@
 
 @class DownloadImageInfo, NSMutableArray;
 
-@interface DownloadImageMgr
+@interface DownloadImageMgr : NSObject
 {
     NSMutableArray *m_arrQueue;
     DownloadImageInfo *m_oCurInfo;

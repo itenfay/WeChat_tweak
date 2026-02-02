@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, NSString, PushLoginURLCGI, UIButton, UIImageView, UILabel, WCButtonListView;
 @protocol WCAccountOneClickLoginViewControllerDelegate;
 
-@interface WCAccountOneClickLoginViewController
+@interface WCAccountOneClickLoginViewController : NSObject
 {
     UIImageView *_headImgView;
     UILabel *_tipsLabel;

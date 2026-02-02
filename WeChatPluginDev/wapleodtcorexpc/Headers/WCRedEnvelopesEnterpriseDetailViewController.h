@@ -6,7 +6,7 @@
 @class ContactUpdateHelper, MMTableView, NSString, UIButton, UIImageView, UIView, WCRedEnvelopesCommentInputToolView, WCUITextField;
 @protocol WCRedEnvelopesEnterpriseDetailViewControllerDelegate;
 
-@interface WCRedEnvelopesEnterpriseDetailViewController
+@interface WCRedEnvelopesEnterpriseDetailViewController : NSObject
 {
     id <WCRedEnvelopesEnterpriseDetailViewControllerDelegate> m_delegate;
     _Bool m_loadingMoreOrderList;

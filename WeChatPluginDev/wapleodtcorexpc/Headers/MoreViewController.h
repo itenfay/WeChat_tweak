@@ -5,7 +5,7 @@
 
 @class MMCPLabel, MMHeadImageView, MMTimer, MMUIButton, MMUIView, MyFavoritesViewController, NSString, TextStateFriendTopicButton, TextStatePrivacyMgr, TextStateProfileCardContentView, TextStateProfileDragAnimateHelper, TextStatePublishEntryButton, TextStateSquareButton, TextStateTopicModel, UITableView, UIView, UpdateWechatRedDotConfig, WCBizLoadingView, WCFinderCreateCoordinator, WCTableViewManager;
 
-@interface MoreViewController
+@interface MoreViewController : NSObject
 {
     UpdateWechatRedDotConfig *m_oUpdateWechatRedDotConfig;
     MyFavoritesViewController *m_favViewController;

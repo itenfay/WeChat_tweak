@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebButtonChainModel, NSString, NSURL, UIImage;
 
-@interface MMWebImageButton
+@interface MMWebImageButton : NSObject
 {
     UIImage *_defaultImage;
     NSURL *_url;

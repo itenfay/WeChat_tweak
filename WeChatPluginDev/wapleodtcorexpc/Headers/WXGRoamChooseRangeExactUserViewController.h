@@ -6,7 +6,7 @@
 @class MMLoadingView, MMUINavigationBar, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NewContactsSearchPanelView, SearchHelpDataItem, UIButton, UIImageView, UILabel, UINavigationItem, UITableView, UIView, WCFilterView;
 @protocol OS_dispatch_queue, WXGRoamChooseRangeExactUserViewControllerDelegate;
 
-@interface WXGRoamChooseRangeExactUserViewController
+@interface WXGRoamChooseRangeExactUserViewController : NSObject
 {
     _Bool _isInSearchState;
     int _pageId;

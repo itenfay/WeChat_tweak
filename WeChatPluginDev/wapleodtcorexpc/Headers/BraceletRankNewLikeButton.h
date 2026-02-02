@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface BraceletRankNewLikeButton
+@interface BraceletRankNewLikeButton : NSObject
 {
     _Bool _isSelf;
     _Bool _hasLike;

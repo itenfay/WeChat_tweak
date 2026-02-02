@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, WAAppIdToUsernameTransfer;
 
-@interface LiteAppJsApiLaunchMiniProgram
+@interface LiteAppJsApiLaunchMiniProgram : NSObject
 {
     WAAppIdToUsernameTransfer *_appIDTransfer;
     NSMutableArray *_widgetParameters;

@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface WAMapPOIMarker
+@interface WAMapPOIMarker : NSObject
 {
     UIImage *_image;
     double _rotate;

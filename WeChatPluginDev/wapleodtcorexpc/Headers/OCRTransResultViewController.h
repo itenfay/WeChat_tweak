@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLoadingView, NSArray, NSMutableDictionary, NSString, OCRTransReport, UIButton, UIColor, UIImage, UIImageView, UILabel, UIScrollView, UIView, WCImageTranslateLogic;
 
-@interface OCRTransResultViewController
+@interface OCRTransResultViewController : NSObject
 {
     UIImageView *_souceImageView;
     UIView *_resultView;

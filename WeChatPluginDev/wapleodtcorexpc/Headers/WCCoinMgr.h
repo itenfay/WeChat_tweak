@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCCoinLogger;
 
-@interface WCCoinMgr
+@interface WCCoinMgr : NSObject
 {
     WCCoinLogger *_logger;
     NSMutableArray *_logics;

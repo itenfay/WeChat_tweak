@@ -5,7 +5,7 @@
 
 @class ContactUpdateHelper, MMTableView, NSString, UIView, WARedEnvelopesDetailViewModel;
 
-@interface WARedEnvelopesDetailViewController
+@interface WARedEnvelopesDetailViewController : NSObject
 {
     MMTableView *m_tableView;
     UIView *m_oHeaderView;

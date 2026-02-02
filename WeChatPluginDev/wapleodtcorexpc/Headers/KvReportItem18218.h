@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem18218
+@interface KvReportItem18218 : NSObject
 {
     _Bool _FirstTimeExpose_24;
     _Bool _IsRedDot_33;

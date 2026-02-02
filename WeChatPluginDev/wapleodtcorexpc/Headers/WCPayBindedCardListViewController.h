@@ -6,7 +6,7 @@
 @class BalanceMobileInfo, NSString, UIView, WCPayBindCardInfo;
 @protocol WCPayBindedCardListViewControllerDelegate;
 
-@interface WCPayBindedCardListViewController
+@interface WCPayBindedCardListViewController : NSObject
 {
     WCPayBindCardInfo *selectedPayCardInfo;
     id <WCPayBindedCardListViewControllerDelegate> m_delegate;

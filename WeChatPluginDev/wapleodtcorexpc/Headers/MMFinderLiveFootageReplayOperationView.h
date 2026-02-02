@@ -6,7 +6,7 @@
 @class MMFinderLiveFootageReplayModel, MMFinderLiveReplayBarrageView, MMFinderLiveReplayMessageSource, MMUIButton, NSString;
 @protocol MMFinderLiveFootageReplayOperationViewDelegate;
 
-@interface MMFinderLiveFootageReplayOperationView
+@interface MMFinderLiveFootageReplayOperationView : NSObject
 {
     _Bool _supressMessageUpdate;
     _Bool _replayExplicitlyPaused;

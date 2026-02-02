@@ -6,7 +6,7 @@
 @class NSString, WCAccountLogoutLogic;
 @protocol WCAccountSwitchLogicDelegate;
 
-@interface WCAccountSwitchLogic
+@interface WCAccountSwitchLogic : NSObject
 {
     WCAccountLogoutLogic *m_logoutLogic;
     id <WCAccountSwitchLogicDelegate> _delegate;

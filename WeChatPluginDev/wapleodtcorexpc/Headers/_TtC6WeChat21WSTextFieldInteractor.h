@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString, UITextField;
 
-@interface _TtC6WeChat21WSTextFieldInteractor
+@interface _TtC6WeChat21WSTextFieldInteractor : NSObject
 {
     MISSING_TYPE *textField;
     MISSING_TYPE *forbidNotifyTextChanged;

@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentScrollGroupInfo;
 
-@interface WCCanvasComponentNewScrollInfo
+@interface WCCanvasComponentNewScrollInfo : NSObject
 {
     WCCanvasComponentScrollGroupInfo *_componentGroupList;
     NSString *_bgColorTheme;

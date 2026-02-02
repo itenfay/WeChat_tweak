@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveStorageCleanupPinningToken;
 
-@interface MMLiveResourceFetcherFilePinningAction
+@interface MMLiveResourceFetcherFilePinningAction : NSObject
 {
     MMLiveStorageCleanupPinningToken *_pinningToken;
 }

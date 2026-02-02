@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_handleEcsAction
+@interface WAJSEventHandler_handleEcsAction : NSObject
 {
 }
 

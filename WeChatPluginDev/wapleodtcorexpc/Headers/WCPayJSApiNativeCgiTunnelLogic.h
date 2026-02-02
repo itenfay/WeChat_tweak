@@ -6,7 +6,7 @@
 @class NSDictionary;
 @protocol WCPayJSApiNativeCgiTunnelLogicDelegate;
 
-@interface WCPayJSApiNativeCgiTunnelLogic
+@interface WCPayJSApiNativeCgiTunnelLogic : NSObject
 {
     id <WCPayJSApiNativeCgiTunnelLogicDelegate> _logicDelegate;
     NSDictionary *_paramDict;

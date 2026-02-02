@@ -6,7 +6,7 @@
 @class BrandTLExptConfig, ECSTLNotifyBarReportItem, ECSTLReportMainSessionInfo, ECSTLTopBarReportItem, KvReportItem29480, NSMutableArray, NSMutableDictionary, NSMutableSet;
 @protocol ECSTimelineReportLogicDelegate;
 
-@interface ECSTimelineReportLogic
+@interface ECSTimelineReportLogic : NSObject
 {
     unsigned int m_stayTimeStart;
     unsigned int m_listStayTimeStart;

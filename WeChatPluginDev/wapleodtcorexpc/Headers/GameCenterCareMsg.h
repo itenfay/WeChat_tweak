@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterCareMsg
+@interface GameCenterCareMsg : NSObject
 {
     NSString *_pictureUrl;
 }

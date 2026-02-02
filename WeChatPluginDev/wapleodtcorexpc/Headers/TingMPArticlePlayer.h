@@ -5,7 +5,7 @@
 
 @class MMListenTTSInfo, NSString, WCAudioPlayer;
 
-@interface TingMPArticlePlayer
+@interface TingMPArticlePlayer : NSObject
 {
     WCAudioPlayer *_player;
     MMListenTTSInfo *_ttsInfo;

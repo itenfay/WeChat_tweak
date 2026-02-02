@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCStoryDataItem;
 
-@interface WCStoryPostDeleteCgiObj
+@interface WCStoryPostDeleteCgiObj : NSObject
 {
     WCStoryDataItem *_dataItem;
     CDUnknownBlockType _deletePostBlock;

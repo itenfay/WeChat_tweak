@@ -5,7 +5,7 @@
 
 @class NSObject;
 
-@interface MBDictJSObject
+@interface MBDictJSObject : NSObject
 {
     NSObject *_data;
 }

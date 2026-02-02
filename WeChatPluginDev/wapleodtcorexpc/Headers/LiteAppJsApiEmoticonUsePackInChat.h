@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiEmoticonUsePackInChat
+@interface LiteAppJsApiEmoticonUsePackInChat : NSObject
 {
     NSString *_pid;
 }

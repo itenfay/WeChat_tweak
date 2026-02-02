@@ -5,7 +5,7 @@
 
 @protocol WCPaySaveMchQRCodeCgiDelegate;
 
-@interface WCPaySaveMchQRCodeCgi
+@interface WCPaySaveMchQRCodeCgi : NSObject
 {
     id <WCPaySaveMchQRCodeCgiDelegate> _cgiDelegate;
 }

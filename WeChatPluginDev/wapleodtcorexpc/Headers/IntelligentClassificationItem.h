@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentClassificationItem
+@interface IntelligentClassificationItem : NSObject
 {
     unsigned int _labelId;
     float _score;

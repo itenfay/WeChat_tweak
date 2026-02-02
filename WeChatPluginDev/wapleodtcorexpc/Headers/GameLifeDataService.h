@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GameLifeDb, GameLifeEnteredRedDotCache, MMBaseSessionStorage, NSString, WCTTable;
 
-@interface GameLifeDataService
+@interface GameLifeDataService : NSObject
 {
     int _notShowAppPanelItemIndex;
     GameLifeDb *_db;

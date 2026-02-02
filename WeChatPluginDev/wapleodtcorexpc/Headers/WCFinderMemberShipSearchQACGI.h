@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderMemberShipSearchQACGI
+@interface WCFinderMemberShipSearchQACGI : NSObject
 {
     NSString *_queryStr;
     NSString *_finderUsername;

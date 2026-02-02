@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, MMAssetPickerSliderThumbView, MMUILabel, NSDate;
 @protocol MMAssetPickerSliderDelegate;
 
-@interface MMAssetPickerSlider
+@interface MMAssetPickerSlider : NSObject
 {
     _Bool _isActive;
     _Bool _isThumbViewDragging;

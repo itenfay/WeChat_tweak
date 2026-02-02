@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_getBrandIAPPayRequest
+@interface WebviewJSEventHandler_getBrandIAPPayRequest : NSObject
 {
     JSEvent *jsEvent;
     NSString *productExtInfo;

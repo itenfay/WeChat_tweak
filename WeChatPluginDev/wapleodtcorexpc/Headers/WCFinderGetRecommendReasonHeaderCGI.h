@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderGetRecommendReasonHeaderRequestParams;
 
-@interface WCFinderGetRecommendReasonHeaderCGI
+@interface WCFinderGetRecommendReasonHeaderCGI : NSObject
 {
     WCFinderGetRecommendReasonHeaderRequestParams *_params;
     CDUnknownBlockType _successBlock;

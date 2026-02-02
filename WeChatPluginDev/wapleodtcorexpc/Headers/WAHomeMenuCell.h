@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAHomeMenuView;
 
-@interface WAHomeMenuCell
+@interface WAHomeMenuCell : NSObject
 {
     WAHomeMenuView *_view;
 }

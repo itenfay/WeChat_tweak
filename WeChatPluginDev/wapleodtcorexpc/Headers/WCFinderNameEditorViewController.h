@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIScrollView, UITextField, UIView, WCFinderBannerView, WCFinderContact, WCFinderCreateUserViewModel;
 @protocol WCFinderNameEditorViewControllerDelegate;
 
-@interface WCFinderNameEditorViewController
+@interface WCFinderNameEditorViewController : NSObject
 {
     WCFinderContact *_contact;
     NSString *_tips;

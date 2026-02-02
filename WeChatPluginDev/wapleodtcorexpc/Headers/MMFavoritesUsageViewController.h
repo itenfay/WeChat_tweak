@@ -5,7 +5,7 @@
 
 @class FavBaseTableDataController, MMTableView, MMUIButton, MMUIView, MMUIWindow, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIActivityIndicatorView, UIView;
 
-@interface MMFavoritesUsageViewController
+@interface MMFavoritesUsageViewController : NSObject
 {
     FavBaseTableDataController *m_dataController;
     UIView *m_multiSelectActionView;

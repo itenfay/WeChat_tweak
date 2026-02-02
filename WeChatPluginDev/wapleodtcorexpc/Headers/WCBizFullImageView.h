@@ -6,7 +6,7 @@
 @class MMScrollView, NSMutableArray, NSString, UIPageControl, UIView, WCBizMultiImageBrowseData;
 @protocol WCBizFullImageViewDelegate;
 
-@interface WCBizFullImageView
+@interface WCBizFullImageView : NSObject
 {
     UIView *m_fakeScreenView;
     struct CGRect m_originImageRectInScreen;

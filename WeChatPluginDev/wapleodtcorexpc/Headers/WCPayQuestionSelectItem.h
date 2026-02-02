@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, WCBizPickerView;
 
-@interface WCPayQuestionSelectItem
+@interface WCPayQuestionSelectItem : NSObject
 {
     UILabel *m_textLabel;
     WCBizPickerView *m_pickerView;

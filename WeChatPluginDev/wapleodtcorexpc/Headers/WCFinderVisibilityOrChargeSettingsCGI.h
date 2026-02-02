@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WCFinderVisibilityOrChargeSettingsCGI
+@interface WCFinderVisibilityOrChargeSettingsCGI : NSObject
 {
     NSString *_qrCodeUrl;
     NSMutableArray *_selectChatroomArr;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SolitaireJoinReport
+@interface SolitaireJoinReport : NSObject
 {
     unsigned int _addCount;
     unsigned int _removeCount;

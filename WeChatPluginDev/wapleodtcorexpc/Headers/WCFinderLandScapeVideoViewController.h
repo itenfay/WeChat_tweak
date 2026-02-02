@@ -5,7 +5,7 @@
 
 @class MegaVideoPageMonitorHelper, MinimizeEdgeGestureHandler, MinimizeNewTransitionController, NSString, UIScreenEdgePanGestureRecognizer, WCFinderFeedDetailStatusView, WCFinderLandScapeVCParams, WCFinderLandScapeVideoView, WCFinderLandScapeVideoViewModel;
 
-@interface WCFinderLandScapeVideoViewController
+@interface WCFinderLandScapeVideoViewController : NSObject
 {
     _Bool _hasReportPageAction;
     MinimizeEdgeGestureHandler *_edgeGesHandler;

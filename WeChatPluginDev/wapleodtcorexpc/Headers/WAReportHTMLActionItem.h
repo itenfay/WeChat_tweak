@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportHTMLActionItem
+@interface WAReportHTMLActionItem : NSObject
 {
     unsigned int _clientTimestamp;
     unsigned int _publiclibversion;

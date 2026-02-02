@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WANearByPreViewItem;
 
-@interface WANearByInfo
+@interface WANearByInfo : NSObject
 {
     _Bool _disappearOneClick;
     _Bool _openWxa;

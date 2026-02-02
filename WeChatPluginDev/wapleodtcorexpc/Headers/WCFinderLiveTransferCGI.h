@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WXPBGeneratedMessage;
 
-@interface WCFinderLiveTransferCGI
+@interface WCFinderLiveTransferCGI : NSObject
 {
     WXPBGeneratedMessage *_requestObject;
     WXPBGeneratedMessage *_responseObject;

@@ -6,7 +6,7 @@
 @class NSString, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIView;
 @protocol MJSegmentCropGestureCaptureViewDelegate;
 
-@interface MJSegmentCropGestureCaptureView
+@interface MJSegmentCropGestureCaptureView : NSObject
 {
     id <MJSegmentCropGestureCaptureViewDelegate> _delegate;
     UIView *_leftCropMaskView;

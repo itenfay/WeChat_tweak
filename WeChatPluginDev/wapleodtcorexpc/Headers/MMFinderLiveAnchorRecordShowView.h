@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, PAGView, UIButton, UIImageView;
 
-@interface MMFinderLiveAnchorRecordShowView
+@interface MMFinderLiveAnchorRecordShowView : NSObject
 {
     _Bool _hideOpenGame;
     _Bool _isCaptured;

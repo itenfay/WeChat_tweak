@@ -6,7 +6,7 @@
 @class NSArray, NSString, UITableView;
 @protocol WCFinderPostUsualTopicViewDelegate;
 
-@interface WCFinderPostUsualTopicView
+@interface WCFinderPostUsualTopicView : NSObject
 {
     id <WCFinderPostUsualTopicViewDelegate> _delegate;
     NSArray *_usualTopicsArray;

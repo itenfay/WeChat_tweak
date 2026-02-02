@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvelopesConfirmShowResourcesCgiDelegate;
 
-@interface WCRedEnvelopesConfirmShowResourcesCgi
+@interface WCRedEnvelopesConfirmShowResourcesCgi : NSObject
 {
     id <WCRedEnvelopesConfirmShowResourcesCgiDelegate> m_delegate;
 }

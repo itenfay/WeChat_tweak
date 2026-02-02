@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPayNativeCgiTunnelImpl;
 
-@interface WebviewJSEventHandler_nativeWXPayCgiTunnel
+@interface WebviewJSEventHandler_nativeWXPayCgiTunnel : NSObject
 {
     WCPayNativeCgiTunnelImpl *_cgiLogic;
     JSEvent *_jsEvent;

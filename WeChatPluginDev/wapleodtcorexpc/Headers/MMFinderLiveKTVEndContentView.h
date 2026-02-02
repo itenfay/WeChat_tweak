@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, WCFinderHeadImageView;
 
-@interface MMFinderLiveKTVEndContentView
+@interface MMFinderLiveKTVEndContentView : NSObject
 {
     NSString *_currUniqueId;
     WCFinderHeadImageView *_singerHeadImageView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPaySimpleUserSetPassGuideInfo
+@interface WCPaySimpleUserSetPassGuideInfo : NSObject
 {
     unsigned int _m_uiSendPwdMsg;
     NSString *_m_nsGuideWording;

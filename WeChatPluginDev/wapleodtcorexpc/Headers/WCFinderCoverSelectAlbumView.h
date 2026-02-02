@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, UILabel;
 
-@interface WCFinderCoverSelectAlbumView
+@interface WCFinderCoverSelectAlbumView : NSObject
 {
     NSString *_iconName;
     NSString *_text;

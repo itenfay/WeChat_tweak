@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, WeVisFace;
 @protocol OS_dispatch_queue;
 
-@interface WAJSContextPlugin_faceDetect
+@interface WAJSContextPlugin_faceDetect : NSObject
 {
     NSMutableDictionary *_faceRect;
     NSObject<OS_dispatch_queue> *_queue;

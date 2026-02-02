@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface WAAuthPageSheetFooterView
+@interface WAAuthPageSheetFooterView : NSObject
 {
     UIButton *_acceptButton;
     UIButton *_rejectButton;

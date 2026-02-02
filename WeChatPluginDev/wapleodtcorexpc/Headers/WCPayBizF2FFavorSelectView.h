@@ -6,7 +6,7 @@
 @class BusiF2FFavorCommResp, MMTableView, NSMutableArray, NSString, UIButton, UIView;
 @protocol WCPayBizF2FFavorSelectViewDelegate;
 
-@interface WCPayBizF2FFavorSelectView
+@interface WCPayBizF2FFavorSelectView : NSObject
 {
     UIButton *_m_rightButton;
     UIView *_m_lineView;

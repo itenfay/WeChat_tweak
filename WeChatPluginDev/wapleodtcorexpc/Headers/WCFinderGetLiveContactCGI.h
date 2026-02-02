@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveContactExtRelationInfo, NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderGetLiveContactCGI
+@interface WCFinderGetLiveContactCGI : NSObject
 {
     NSString *_userName;
     CDUnknownBlockType _successBlock;

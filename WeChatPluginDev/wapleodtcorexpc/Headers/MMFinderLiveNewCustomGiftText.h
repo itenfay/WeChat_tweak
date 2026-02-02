@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLiveNewCustomGiftText
+@interface MMFinderLiveNewCustomGiftText : NSObject
 {
     _Bool _supportCustomText;
     _Bool _specificCustomText;

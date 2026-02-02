@@ -6,7 +6,7 @@
 @class NSString, UIImage, UIImageView, UIView, WCStoryMediaItem;
 @protocol WCStoryVideoControlViewDelegate;
 
-@interface WCStoryVideoControlView
+@interface WCStoryVideoControlView : NSObject
 {
     UIView *_toolPanView;
     UIImageView *_thumbImageView;

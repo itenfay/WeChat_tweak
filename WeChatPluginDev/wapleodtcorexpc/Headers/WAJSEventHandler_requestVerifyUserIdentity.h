@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAJSEventHandler_requestVerifyUserIdentity
+@interface WAJSEventHandler_requestVerifyUserIdentity : NSObject
 {
     NSMutableDictionary *_dic;
 }

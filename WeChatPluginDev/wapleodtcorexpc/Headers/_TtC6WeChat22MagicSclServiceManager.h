@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat22MagicSclServiceManager
+@interface _TtC6WeChat22MagicSclServiceManager : NSObject
 {
     MISSING_TYPE *sclService;
     MISSING_TYPE *sclDelegate;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MsgFastBrowseView, NSMutableArray, NSString, UIButton, UILabel, UIView;
 
-@interface MsgResourceBrowseViewController
+@interface MsgResourceBrowseViewController : NSObject
 {
     NSMutableArray *m_arrMsg;
     void * _arrSelectedData;

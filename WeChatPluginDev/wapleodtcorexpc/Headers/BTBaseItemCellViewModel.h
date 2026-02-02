@@ -5,7 +5,7 @@
 
 @class BTBaseItemCellView, BTMsgSectionData, CContact, CMessageWrap;
 
-@interface BTBaseItemCellViewModel
+@interface BTBaseItemCellViewModel : NSObject
 {
     double _viewWidth;
     double _viewHeight;

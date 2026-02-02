@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSMutableArray, NSString, UIStackView, UIView;
 
-@interface SystemAuthorizationPresentViewController
+@interface SystemAuthorizationPresentViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     NSMutableArray *m_authItems;

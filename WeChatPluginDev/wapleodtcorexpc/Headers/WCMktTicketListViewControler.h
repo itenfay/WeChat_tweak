@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, UIView, WCMktTicketListLogicController;
 
-@interface WCMktTicketListViewControler
+@interface WCMktTicketListViewControler : NSObject
 {
     WCMktTicketListLogicController *_logicController;
     MMTableView *_tableView;

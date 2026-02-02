@@ -5,7 +5,7 @@
 
 @class ContactTagCacheMgr, NSArray, NSMutableDictionary, NSString;
 
-@interface ContactTagMgr
+@interface ContactTagMgr : NSObject
 {
     _Bool isCompleteLoadCache;
     _Bool isManulAuthOK;

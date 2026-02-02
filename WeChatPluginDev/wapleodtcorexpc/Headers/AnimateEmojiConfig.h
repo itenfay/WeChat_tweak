@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface AnimateEmojiConfig
+@interface AnimateEmojiConfig : NSObject
 {
     unsigned long long _emojiAnimVersion;
     NSMutableDictionary *_nodes;

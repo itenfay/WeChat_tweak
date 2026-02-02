@@ -6,7 +6,7 @@
 @class BrandServiceContinueLocationReportLogic, BrandServiceEnterConversationLogic, CContact, NSMutableDictionary, NSString, SessionStat;
 @protocol BrandActionReportLogicControllerDelegate;
 
-@interface BrandActionReportLogicController
+@interface BrandActionReportLogicController : NSObject
 {
     CContact *m_contact;
     BrandServiceEnterConversationLogic *m_enterConversationLogic;

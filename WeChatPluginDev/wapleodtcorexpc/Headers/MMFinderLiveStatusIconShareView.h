@@ -5,7 +5,7 @@
 
 @class WCFinderLiveIconImageView;
 
-@interface MMFinderLiveStatusIconShareView
+@interface MMFinderLiveStatusIconShareView : NSObject
 {
     WCFinderLiveIconImageView *_statusView;
 }

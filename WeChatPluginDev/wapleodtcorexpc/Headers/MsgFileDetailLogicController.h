@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CMessageWrap, NSString, ShareDataToOpenSDKController, UINavigationController, WCUIAlertView;
 @protocol AppDetailDelegate;
 
-@interface MsgFileDetailLogicController
+@interface MsgFileDetailLogicController : NSObject
 {
     CMessageWrap *m_wrapMsg;
     NSString *m_nsUsrName;

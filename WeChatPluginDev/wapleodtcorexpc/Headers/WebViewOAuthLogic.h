@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSApiScopeAuthorizeInfo, JSApiScopeAuthorizePageSheet, JSApiScopeConfirmWindow, MMUIViewController, NSMutableArray, NSString, WOAPPrivacyConfirmLogic;
 
-@interface WebViewOAuthLogic
+@interface WebViewOAuthLogic : NSObject
 {
     CDUnknownBlockType _completeBlock;
     JSApiScopeConfirmWindow *_confirmWindow;

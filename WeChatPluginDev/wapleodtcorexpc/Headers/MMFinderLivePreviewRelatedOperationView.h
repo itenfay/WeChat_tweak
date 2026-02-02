@@ -5,7 +5,7 @@
 
 @class MMFinderLiveConnectMicAllUserInfoView, MMFinderLiveMinifyRoomControlBanner, MMFinderLivePreviewRelatedHeaderView, MMUIButton, NSString;
 
-@interface MMFinderLivePreviewRelatedOperationView
+@interface MMFinderLivePreviewRelatedOperationView : NSObject
 {
     MMFinderLiveConnectMicAllUserInfoView *_connectMicAllUserInfoView;
     MMFinderLivePreviewRelatedHeaderView *_previewRelatedHeaderView;

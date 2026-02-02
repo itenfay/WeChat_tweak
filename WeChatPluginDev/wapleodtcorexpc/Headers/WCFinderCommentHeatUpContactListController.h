@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableArray, NSString, UICollectionView, UICollectionViewDiffableDataSource, UILabel, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderStreamFooterView;
 
-@interface WCFinderCommentHeatUpContactListController
+@interface WCFinderCommentHeatUpContactListController : NSObject
 {
     _Bool _continueFlag;
     _Bool _isFetchingData;

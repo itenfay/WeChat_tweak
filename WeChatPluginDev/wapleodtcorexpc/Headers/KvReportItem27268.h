@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem27268
+@interface KvReportItem27268 : NSObject
 {
     unsigned int _IsRetrieved_21;
     unsigned int _Style_22;

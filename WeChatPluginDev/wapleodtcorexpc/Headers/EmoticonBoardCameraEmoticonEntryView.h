@@ -6,7 +6,7 @@
 @class UIButton, UIImageView, UILabel, UIView;
 @protocol EmoticonBoardCameraEmoticonEntryViewDelegate;
 
-@interface EmoticonBoardCameraEmoticonEntryView
+@interface EmoticonBoardCameraEmoticonEntryView : NSObject
 {
     _Bool shouldShowNewYearUI;
     id <EmoticonBoardCameraEmoticonEntryViewDelegate> _delegate;

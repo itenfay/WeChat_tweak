@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface ChooseInvoiceHandler
+@interface ChooseInvoiceHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

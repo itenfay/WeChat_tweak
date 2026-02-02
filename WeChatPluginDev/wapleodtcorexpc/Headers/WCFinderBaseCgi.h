@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableSet, NSString, WCFinderCGIProfile, WCFinderPrefetchCache, WXPBGeneratedMessage;
 
-@interface WCFinderBaseCgi
+@interface WCFinderBaseCgi : NSObject
 {
     _Bool _needMonitorCGIProfile;
     _Bool _attachCGIProfileToResp;

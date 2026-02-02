@@ -6,7 +6,7 @@
 @class CLLocation, LocationRetriever, NSMutableArray, NSString, ShakeGetResponse, ShakeReportResponse;
 @protocol ShakeLogicProxyDelegate;
 
-@interface ShakePeopleLogicController
+@interface ShakePeopleLogicController : NSObject
 {
     unsigned int m_uiEventID;
     unsigned int m_uiTryCount;

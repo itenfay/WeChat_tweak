@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetCameraTemplateCGI
+@interface WCFinderGetCameraTemplateCGI : NSObject
 {
     _Bool _isPrefetchReq;
     CDUnknownBlockType _successfulBlock;

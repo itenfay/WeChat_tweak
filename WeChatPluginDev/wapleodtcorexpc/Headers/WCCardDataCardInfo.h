@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCCardDetailTable, WCCardFieldItem;
 
-@interface WCCardDataCardInfo
+@interface WCCardDataCardInfo : NSObject
 {
     _Bool _isCommomCard;
     _Bool _isLocationAuthorized;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WebviewAuthorizationCache, WebviewAuthorizationInfo;
 
-@interface WebviewAskAuthorizationLogic
+@interface WebviewAskAuthorizationLogic : NSObject
 {
     WebviewAuthorizationCache *_authCache;
     NSMutableArray *_needCheckQueue;

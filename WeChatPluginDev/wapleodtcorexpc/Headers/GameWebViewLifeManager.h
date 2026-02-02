@@ -5,7 +5,7 @@
 
 @class GameWebViewRecord, NSString;
 
-@interface GameWebViewLifeManager
+@interface GameWebViewLifeManager : NSObject
 {
     GameWebViewRecord *_webviewRecord;
 }

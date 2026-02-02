@@ -6,7 +6,7 @@
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMClientCacheManager
+@interface MMClientCacheManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_curDownloadUrl;

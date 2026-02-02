@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MultiColumnReaderMessageViewModel
+@interface MultiColumnReaderMessageViewModel : NSObject
 {
     _Bool _footerLabelHasClicked;
     _Bool _isMuted;

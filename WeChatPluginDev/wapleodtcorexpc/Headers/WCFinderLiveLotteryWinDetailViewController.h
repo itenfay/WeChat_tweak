@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLotteryGetPrizeMethodView, MMFinderLiveLotteryInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveLotteryDetailCardGiftView, MMUIButton, MMUILabel, NSString, RichTextView, UIImageView, UIScrollView, UIView, WCAddressBaseAddress, WCFinderContact;
 
-@interface WCFinderLiveLotteryWinDetailViewController
+@interface WCFinderLiveLotteryWinDetailViewController : NSObject
 {
     int _fromScene;
     unsigned long long _sourceType;

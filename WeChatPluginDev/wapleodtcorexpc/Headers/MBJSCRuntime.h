@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSContext, JSVirtualMachine, MBJSCJSBridgeImpl, MagicBrushCore, NSMutableDictionary, NSMutableSet, NSString, NSThread, WAOpenGLView, WXAudioNative, WasmAdaptor, WeMediaApi;
 
-@interface MBJSCRuntime
+@interface MBJSCRuntime : NSObject
 {
     void *bindingBizMap;
     void *onBizConnectedFunc;

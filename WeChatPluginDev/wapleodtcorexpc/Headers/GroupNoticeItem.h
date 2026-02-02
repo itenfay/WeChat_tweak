@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface GroupNoticeItem
+@interface GroupNoticeItem : NSObject
 {
     NSString *_itemID;
     NSArray *_skipDownloadType;

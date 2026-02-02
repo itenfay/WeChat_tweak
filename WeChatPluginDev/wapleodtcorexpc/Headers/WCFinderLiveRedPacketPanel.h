@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, WCFinderLiveRedPacketItemView;
 
-@interface WCFinderLiveRedPacketPanel
+@interface WCFinderLiveRedPacketPanel : NSObject
 {
     WCFinderLiveRedPacketItemView *_redPacketItemView;
     WCFinderLiveRedPacketItemView *_lotteryItemView;

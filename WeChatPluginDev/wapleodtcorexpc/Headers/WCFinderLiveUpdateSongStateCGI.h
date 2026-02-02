@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveUpdateSongStateCGI
+@interface WCFinderLiveUpdateSongStateCGI : NSObject
 {
     _Bool _singing;
     unsigned long long _seq;

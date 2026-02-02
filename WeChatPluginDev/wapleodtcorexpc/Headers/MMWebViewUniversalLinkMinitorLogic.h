@@ -5,7 +5,7 @@
 
 @class NSString, WKWebView;
 
-@interface MMWebViewUniversalLinkMinitorLogic
+@interface MMWebViewUniversalLinkMinitorLogic : NSObject
 {
     unsigned int _navigateActionMatchControlAction;
     WKWebView *_webview;

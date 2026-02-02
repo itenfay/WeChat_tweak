@@ -6,7 +6,7 @@
 @class AVAsset, MMUIButton, MMUIView, NSString, SightLocalVideoImageSlider, UILabel;
 @protocol MMMusicEditVideoCropViewDelegate;
 
-@interface MMMusicEditVideoCropView
+@interface MMMusicEditVideoCropView : NSObject
 {
     _Bool _needToShowStartLine;
     _Bool _ignoreShock;

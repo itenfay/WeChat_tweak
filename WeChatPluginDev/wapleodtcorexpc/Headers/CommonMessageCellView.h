@@ -5,7 +5,7 @@
 
 @class AppMessageBlockButton, CADisplayLink, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIView, UIVisualEffectView, YYAsyncImageView;
 
-@interface CommonMessageCellView
+@interface CommonMessageCellView : UIView
 {
     struct CGRect m_bubbleBorderFrame;
     MMHeadImageView *m_headImageView;

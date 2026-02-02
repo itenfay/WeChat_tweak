@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, UILabel;
 
-@interface BTRecoFlowMsgBigPicCell
+@interface BTRecoFlowMsgBigPicCell : NSObject
 {
     UILabel *_videoDurationLabel;
     CAGradientLayer *_maskLayer;

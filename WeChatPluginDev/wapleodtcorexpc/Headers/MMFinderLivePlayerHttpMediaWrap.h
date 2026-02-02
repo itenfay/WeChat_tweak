@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLivePlayerHttpMediaWrap
+@interface MMFinderLivePlayerHttpMediaWrap : NSObject
 {
     NSString *_url;
 }

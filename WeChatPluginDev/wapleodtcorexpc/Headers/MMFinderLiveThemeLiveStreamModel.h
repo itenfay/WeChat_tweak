@@ -5,7 +5,7 @@
 
 @class FinderThemeLiveStreamResponse;
 
-@interface MMFinderLiveThemeLiveStreamModel
+@interface MMFinderLiveThemeLiveStreamModel : NSObject
 {
     FinderThemeLiveStreamResponse *_resp;
 }

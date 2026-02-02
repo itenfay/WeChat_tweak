@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCProxyServer
+@interface WCProxyServer : NSObject
 {
     NSMutableArray *_arrGuests;
 }

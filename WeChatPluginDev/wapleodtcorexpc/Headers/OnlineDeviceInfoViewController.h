@@ -6,7 +6,7 @@
 @class NSString, OnlineInfo, UIButton, UIImage, UIImageView, UILabel, UIView;
 @protocol OnlineDeviceInfoViewControllerDelegate;
 
-@interface OnlineDeviceInfoViewController
+@interface OnlineDeviceInfoViewController : NSObject
 {
     UIImage *_deviceImg;
     UIImageView *_deviceView;

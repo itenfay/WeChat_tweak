@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAReportOperateRealtimeItem
+@interface WAReportOperateRealtimeItem : NSObject
 {
     unsigned int _itemId;
     unsigned int _itemType;

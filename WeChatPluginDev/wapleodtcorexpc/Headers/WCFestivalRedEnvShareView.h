@@ -6,7 +6,7 @@
 @class NSDictionary, UIButton, UIImageView, UIView, WCRedEnvelopesControlData;
 @protocol WCFestivalRedEnvShareViewDelegate;
 
-@interface WCFestivalRedEnvShareView
+@interface WCFestivalRedEnvShareView : NSObject
 {
     id <WCFestivalRedEnvShareViewDelegate> m_delegate;
     UIImageView *m_backgroundView;

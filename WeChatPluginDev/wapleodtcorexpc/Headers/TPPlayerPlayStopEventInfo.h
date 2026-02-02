@@ -5,7 +5,7 @@
 
 @class TPDynamicStatisticParams, TPGeneralPlayFlowParams;
 
-@interface TPPlayerPlayStopEventInfo
+@interface TPPlayerPlayStopEventInfo : NSObject
 {
     TPGeneralPlayFlowParams *_generalPlayFlowParams;
     TPDynamicStatisticParams *_dynamicStatisticParams;

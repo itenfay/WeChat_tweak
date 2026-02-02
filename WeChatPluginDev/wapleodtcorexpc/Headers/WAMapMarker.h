@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, QMUClusterAnnotation, UIImage, UIView, WAMapAnnotationView;
 
-@interface WAMapMarker
+@interface WAMapMarker : NSObject
 {
     _Bool _valid;
     _Bool _calloutUseCoverView;

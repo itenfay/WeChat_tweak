@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderUserPOIRequest
+@interface WCFinderUserPOIRequest : NSObject
 {
     NSString *_queryText;
     NSString *_finderUserName;

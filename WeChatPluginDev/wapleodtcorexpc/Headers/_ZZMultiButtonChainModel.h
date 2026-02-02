@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
-@interface _ZZMultiButtonChainModel
+@interface _ZZMultiButtonChainModel : NSObject
 {
 }
 

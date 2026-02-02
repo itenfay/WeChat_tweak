@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 @protocol FavForwardLogicDelegate;
 
-@interface FavForwardLogicController
+@interface FavForwardLogicController : NSObject
 {
     ForwardMessageLogicController *m_forwardMsgLogic;
     NSArray *m_forwardingItems;

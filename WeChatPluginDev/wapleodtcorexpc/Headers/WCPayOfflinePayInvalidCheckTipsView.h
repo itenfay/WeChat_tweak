@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RichTextView, UIButton, UIImageView;
 @protocol WCPayOfflinePayInvalidCheckTipsViewDelegate;
 
-@interface WCPayOfflinePayInvalidCheckTipsView
+@interface WCPayOfflinePayInvalidCheckTipsView : NSObject
 {
     _Bool _bIsInitFromScreenCapturing;
     id <WCPayOfflinePayInvalidCheckTipsViewDelegate> _delegate;

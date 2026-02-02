@@ -5,7 +5,7 @@
 
 @class CContact, ContactRelatedGroupLogic, MMTableViewInfo, NSString, QZoneLoginStatus;
 
-@interface SocialInfomationViewController
+@interface SocialInfomationViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     QZoneLoginStatus *m_qzone;

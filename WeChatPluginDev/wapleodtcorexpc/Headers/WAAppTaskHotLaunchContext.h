@@ -5,7 +5,7 @@
 
 @class NSString, UINavigationController, WAAppOpenParameter, WAAppTaskExtInfo;
 
-@interface WAAppTaskHotLaunchContext
+@interface WAAppTaskHotLaunchContext : NSObject
 {
     _Bool _redirectPage;
     _Bool _keepContextPage;

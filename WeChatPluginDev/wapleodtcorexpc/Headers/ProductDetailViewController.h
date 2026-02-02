@@ -6,7 +6,7 @@
 @class MMWebImageView, NSString, ProductDetailLogicHelper, ProductTableView, ScanProductItem, SendAppMsgHandler, UIButton, UIImage, UIImageView, UIView;
 @protocol ProductDetailViewControllerDelegate;
 
-@interface ProductDetailViewController
+@interface ProductDetailViewController : NSObject
 {
     _Bool _canShareToFriend;
     _Bool _canShareToWC;

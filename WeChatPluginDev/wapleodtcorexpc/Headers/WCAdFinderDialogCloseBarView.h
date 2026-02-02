@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCAdFinderDialogCloseBarView
+@interface WCAdFinderDialogCloseBarView : NSObject
 {
     UIImageView *_closeIcon;
 }

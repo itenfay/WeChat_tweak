@@ -5,7 +5,7 @@
 
 @class EmojiInfo, EmojiTag, EmoticonStoreReportInfo, EmotionBannerSet, EmotionCollectionFooterView, NSArray, NSString, StoreEmotionGetDesignerEmojiListCgi, StoreEmotionPageShareLogic, UICollectionView;
 
-@interface MMStoreEmotionDesignerEmojiViewController
+@interface MMStoreEmotionDesignerEmojiViewController : NSObject
 {
     UICollectionView *m_collectionView;
     EmotionCollectionFooterView *m_collectionFooterView;

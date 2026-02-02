@@ -5,7 +5,7 @@
 
 @class NSArray, QAnimation, QHeatGradient;
 
-@interface QVisHeatLayerPayload
+@interface QVisHeatLayerPayload : NSObject
 {
     NSArray *_nodes;
     double _minIntensity;

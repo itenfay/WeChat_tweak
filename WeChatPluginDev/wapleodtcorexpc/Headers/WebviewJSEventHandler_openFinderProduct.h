@@ -5,7 +5,7 @@
 
 @class WAAppIdToUsernameTransfer;
 
-@interface WebviewJSEventHandler_openFinderProduct
+@interface WebviewJSEventHandler_openFinderProduct : NSObject
 {
     WAAppIdToUsernameTransfer *_appIDTransfer;
 }

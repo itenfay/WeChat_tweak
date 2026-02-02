@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChatP33_DAC0688140F732B87046E2C66DAA136B10CgiCleaner
+@interface _TtC6WeChatP33_DAC0688140F732B87046E2C66DAA136B10CgiCleaner : NSObject
 {
     MISSING_TYPE *cleanActions;
 }

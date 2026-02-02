@@ -5,7 +5,7 @@
 
 @class UIButton, UILabel;
 
-@interface MMFinderLivePaidConnectMicAudiencePayConfirmNeedToKnowSheetView
+@interface MMFinderLivePaidConnectMicAudiencePayConfirmNeedToKnowSheetView : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_contentLabel;

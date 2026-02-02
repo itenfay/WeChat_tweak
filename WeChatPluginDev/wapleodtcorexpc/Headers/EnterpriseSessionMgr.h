@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface EnterpriseSessionMgr
+@interface EnterpriseSessionMgr : NSObject
 {
     NSMutableDictionary *m_brandStorages;
     NSMutableDictionary *m_mainSessionInfoItems;

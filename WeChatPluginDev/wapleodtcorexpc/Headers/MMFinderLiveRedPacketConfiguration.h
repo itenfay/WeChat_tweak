@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveRedPacketConfiguration
+@interface MMFinderLiveRedPacketConfiguration : NSObject
 {
 }
 

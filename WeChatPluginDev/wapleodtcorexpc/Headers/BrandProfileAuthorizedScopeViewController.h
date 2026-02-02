@@ -5,7 +5,7 @@
 
 @class CContact, MMTableView, MMUILabel, MMWebImageView, NSMutableArray, NSString, UIButton, UIView;
 
-@interface BrandProfileAuthorizedScopeViewController
+@interface BrandProfileAuthorizedScopeViewController : NSObject
 {
     _Bool _isManaging;
     UIView *_tableHeaderView;

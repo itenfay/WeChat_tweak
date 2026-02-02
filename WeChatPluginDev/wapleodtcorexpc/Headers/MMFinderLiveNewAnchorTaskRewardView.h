@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMUIView, NSString, UIButton;
 
-@interface MMFinderLiveNewAnchorTaskRewardView
+@interface MMFinderLiveNewAnchorTaskRewardView : NSObject
 {
     _Bool _shouldShowBtn;
     CDUnknownBlockType _jumpRewardHomeBlock;

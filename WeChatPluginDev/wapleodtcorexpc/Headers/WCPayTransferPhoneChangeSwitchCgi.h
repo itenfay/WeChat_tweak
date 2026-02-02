@@ -5,7 +5,7 @@
 
 @protocol WCPayTransferPhoneChangeSwitchCgiDelegate;
 
-@interface WCPayTransferPhoneChangeSwitchCgi
+@interface WCPayTransferPhoneChangeSwitchCgi : NSObject
 {
     id <WCPayTransferPhoneChangeSwitchCgiDelegate> _m_delegate;
 }

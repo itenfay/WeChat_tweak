@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GCChatRoomVcLayout
+@interface GCChatRoomVcLayout : NSObject
 {
     GCLabelDynamicLayout *_channelTitleLabelLayout;
     GCLabelDynamicLayout *_channelTitleNumberLayout;

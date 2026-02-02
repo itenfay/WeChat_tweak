@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat22KaraMomentVideoFeature
+@interface _TtC6WeChat22KaraMomentVideoFeature : NSObject
 {
     MISSING_TYPE *preview;
     MISSING_TYPE *last64RecalledFeeds;

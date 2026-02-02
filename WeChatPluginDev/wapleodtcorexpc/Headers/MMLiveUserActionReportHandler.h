@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveUserActionReportHandler
+@interface MMLiveUserActionReportHandler : NSObject
 {
     unsigned int liveRole;
     unsigned int roomRole;

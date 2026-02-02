@@ -5,7 +5,7 @@
 
 @class EdgeComputingConfigParser, NSMutableDictionary;
 
-@interface EdgeComputingConfigService
+@interface EdgeComputingConfigService : NSObject
 {
     NSMutableDictionary *scriptConfigModels;
     NSMutableDictionary *sqlConfigModels;

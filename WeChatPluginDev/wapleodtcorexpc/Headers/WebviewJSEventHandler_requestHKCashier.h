@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPayJSRequestHKCashierLogic;
 
-@interface WebviewJSEventHandler_requestHKCashier
+@interface WebviewJSEventHandler_requestHKCashier : NSObject
 {
     JSEvent *_jsEvent;
     WCPayJSRequestHKCashierLogic *_requestHKCashierLogic;

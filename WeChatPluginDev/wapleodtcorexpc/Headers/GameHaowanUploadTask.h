@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSDictionary, NSObject, NSString;
 @protocol GameHaowanUploadTaskDelegate;
 
-@interface GameHaowanUploadTask
+@interface GameHaowanUploadTask : NSObject
 {
     NSArray *_fileList;
     _Bool _isStarted;

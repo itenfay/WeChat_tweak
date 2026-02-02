@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, RedPointCtrlInfo;
 
-@interface WCSettingRedPointMgr
+@interface WCSettingRedPointMgr : NSObject
 {
     RedPointCtrlInfo *_ctrlInfo;
     NSArray *_validRedPointPathArray;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CommentInputRequest, EmoticonBoardView, FinderCommentInfo, NSArray, NSMutableArray, NSString, TingMusicCommentCallBack, UIButton, UIImageView, UIView, WCCommentInputView, WCFinderCommentDetailTextView, WCFinderCommentIdentityActionSheetView, WCFinderHeadImageView, WCInputController;
 @protocol FlutterCommentMentionDelegate;
 
-@interface TingFlutterCommentInputController
+@interface TingFlutterCommentInputController : NSObject
 {
     _Bool _quickEmojiSend;
     _Bool _enableMention;

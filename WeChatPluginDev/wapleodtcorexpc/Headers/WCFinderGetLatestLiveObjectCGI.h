@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetLatestLiveObjectCGI
+@interface WCFinderGetLatestLiveObjectCGI : NSObject
 {
     NSString *_username;
     CDUnknownBlockType _successBlock;

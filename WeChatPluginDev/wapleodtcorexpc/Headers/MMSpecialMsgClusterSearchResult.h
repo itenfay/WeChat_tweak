@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMSpecialMsgClusterSearchResult
+@interface MMSpecialMsgClusterSearchResult : NSObject
 {
     NSString *_clusterUsername;
     NSArray *_arrClusterMsgItem;

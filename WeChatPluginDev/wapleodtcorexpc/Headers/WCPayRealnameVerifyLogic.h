@@ -6,7 +6,7 @@
 @class FaceRecogPayHandler, GetRealnameWordingRsp, NSString, RealNameSendSmsResp, RealNameVerifySmsResp, WCPayGetUserExInfoCgi, WCPayRealnameAuthenReq, WCPayRealnameAuthenResp, WCPayRealnameHalfPageSheetView, WCPayRealnameRegResp, WCPayRealnameSendSMSCgi, WCPayRealnameVerifySMSCgi, WCPaySetUserExInfoCgi;
 @protocol WCPayRealnameVerifyLogicDelegate;
 
-@interface WCPayRealnameVerifyLogic
+@interface WCPayRealnameVerifyLogic : NSObject
 {
     _Bool _rename;
     _Bool _directVerifySMS;

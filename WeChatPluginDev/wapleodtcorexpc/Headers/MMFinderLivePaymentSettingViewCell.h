@@ -5,7 +5,7 @@
 
 @class MMCPLabel, UIImageView;
 
-@interface MMFinderLivePaymentSettingViewCell
+@interface MMFinderLivePaymentSettingViewCell : NSObject
 {
     _Bool _forceDarkMode;
     unsigned int _priceInWecoin;

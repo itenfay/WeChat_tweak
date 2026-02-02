@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_openEnterpriseContact
+@interface WebviewJSEventHandler_openEnterpriseContact : NSObject
 {
 }
 

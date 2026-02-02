@@ -5,7 +5,7 @@
 
 @class BTImageItemCellViewModel, CAGradientLayer, MMUILabel, NSMutableArray, UIImageView, UIView;
 
-@interface BTImageItemCellView
+@interface BTImageItemCellView : NSObject
 {
     CAGradientLayer *m_maskLayer;
     UIView *m_maskView;

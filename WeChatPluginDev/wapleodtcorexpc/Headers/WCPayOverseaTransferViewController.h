@@ -6,7 +6,7 @@
 @class MMHeadImageView, MMTipsViewController, MMUILabel, NSDictionary, NSString, UIButton, UILabel, UIScrollView, UIView, WCBizLoadingView, WCPayBannerNotice, WCPayCommentTextView, WCPayCurrencyInputView, WCPayNoticeBannerView, WCPayWebImageView;
 @protocol WCPayOverseaTransferViewControllerDelegate;
 
-@interface WCPayOverseaTransferViewController
+@interface WCPayOverseaTransferViewController : NSObject
 {
     id <WCPayOverseaTransferViewControllerDelegate> m_delegate;
     _Bool m_bIsViewHidden;

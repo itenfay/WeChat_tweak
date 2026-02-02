@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
-@interface WAJSContextPlugin_SyncWaiter
+@interface WAJSContextPlugin_SyncWaiter : NSObject
 {
     NSMutableDictionary *_syncMap;
 }

@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString;
 @protocol WCPayMallFuncManageViewControllerDelegate;
 
-@interface WCPayMallFuncManageViewController
+@interface WCPayMallFuncManageViewController : NSObject
 {
     id <WCPayMallFuncManageViewControllerDelegate> m_delegate;
     MMTableView *m_tableView;

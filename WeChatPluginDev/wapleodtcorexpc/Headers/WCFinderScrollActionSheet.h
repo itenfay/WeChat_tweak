@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString, WCFinderFeedContentVM, WCFinderScrollActionGridView, WCFinderScrollActionSheetDelegate;
 @protocol WCFinderScrollActionSheetDelegate;
 
-@interface WCFinderScrollActionSheet
+@interface WCFinderScrollActionSheet : NSObject
 {
     _Bool _fromMoreButton;
     _Bool _isAutoPlayNextFeedSwitchOn;

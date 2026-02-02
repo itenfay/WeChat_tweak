@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MMExptItem
+@interface MMExptItem : NSObject
 {
     unsigned int _exptId;
     unsigned int _groupId;

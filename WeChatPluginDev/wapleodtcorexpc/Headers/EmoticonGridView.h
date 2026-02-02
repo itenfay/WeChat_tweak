@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString;
 @protocol EmoticonGridViewDelegate;
 
-@interface EmoticonGridView
+@interface EmoticonGridView : NSObject
 {
     _Bool _darkMode;
     _Bool _needAdjustPreviewColor;

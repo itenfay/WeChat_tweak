@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayOfflineAckMsgCgiDelegate;
 
-@interface WCPayOfflineAckMsgCgi
+@interface WCPayOfflineAckMsgCgi : NSObject
 {
     _Bool _bIsProcessed;
     _Bool _bIsPosEnabled;

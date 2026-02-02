@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPPageCommentParam
+@interface MPPageCommentParam : NSObject
 {
     _Bool _isSubReply;
     unsigned int _personalCommentId;

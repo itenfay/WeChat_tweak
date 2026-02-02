@@ -6,7 +6,7 @@
 @class MMFinderLiveFansGroupCreateContentView, MMFinderLiveFansGroupManageContentView, MMFinderLiveTaskId, NSString, UIView;
 @protocol MMFinderLiveFansGroupOperationReportDelegate;
 
-@interface MMFinderLiveFansGroupOperationPanel
+@interface MMFinderLiveFansGroupOperationPanel : NSObject
 {
     _Bool _isKeyBoardShow;
     _Bool _isPageWillClose;

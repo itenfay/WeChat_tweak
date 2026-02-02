@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSMutableArray, NSString;
 
-@interface WSVideoModel
+@interface WSVideoModel : NSObject
 {
     _Bool _hasReorderUrl;
     _Bool _isGoodLook;

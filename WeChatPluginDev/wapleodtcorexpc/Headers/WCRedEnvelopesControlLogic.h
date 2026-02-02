@@ -5,7 +5,7 @@
 
 @class NSString, WCRedEnvelopesControlData;
 
-@interface WCRedEnvelopesControlLogic
+@interface WCRedEnvelopesControlLogic : NSObject
 {
     WCRedEnvelopesControlData *m_data;
 }

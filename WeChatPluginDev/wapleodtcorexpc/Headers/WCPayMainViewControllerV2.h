@@ -5,7 +5,7 @@
 
 @class GetEUInfoResp, NSArray, NSString, NoticeItem, UICollectionView, UIImageView, UIView, WCPayComplianceHalfPage, WCPayMainViewLogicController, WCPayMainViewTipsPageSheet, WCPayWalletEntryHeaderView;
 
-@interface WCPayMainViewControllerV2
+@interface WCPayMainViewControllerV2 : NSObject
 {
     _Bool _bHasNewOrRedDotWhenOpen;
     _Bool _bHasShowUploadIdImageAlert;

@@ -5,7 +5,7 @@
 
 @class NSMutableString;
 
-@interface TPMediaAssetOrderedMap
+@interface TPMediaAssetOrderedMap : NSObject
 {
     NSMutableString *_orderedMap;
 }

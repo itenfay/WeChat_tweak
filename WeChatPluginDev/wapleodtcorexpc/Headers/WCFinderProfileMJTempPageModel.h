@@ -6,7 +6,7 @@
 @class NSArray, NSData, NSMutableArray, NSString;
 @protocol WCFinderProfileMJTempPageModelDelegate;
 
-@interface WCFinderProfileMJTempPageModel
+@interface WCFinderProfileMJTempPageModel : NSObject
 {
     _Bool _hasMore;
     _Bool _hasError;

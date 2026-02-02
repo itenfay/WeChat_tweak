@@ -6,7 +6,7 @@
 @class CBCentralManager, NSArray, NSDictionary, NSMutableDictionary, NSObject, NSRecursiveLock, NSString, WABlueToothDevicePool;
 @protocol OS_dispatch_queue, WABleAdpterLogicDelegate;
 
-@interface WABleAdpterLogic
+@interface WABleAdpterLogic : NSObject
 {
     CBCentralManager *m_bleAdapter;
     NSObject<OS_dispatch_queue> *m_blueQueue;

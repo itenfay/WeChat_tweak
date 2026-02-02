@@ -5,7 +5,7 @@
 
 @class MMChatContentUploadLogic, MMSessionDB, NSArray, NSMutableArray, NSMutableDictionary, NSString, SessionForwardRecordLogic, SessionSortLogic;
 
-@interface MMNewSessionMgr
+@interface MMNewSessionMgr : NSObject
 {
     NSMutableArray *m_arrSession;
     MMSessionDB *m_sessionStorage;

@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIImageView, NSString, UITapGestureRecognizer;
 @protocol MMFinderLivePreviewExitButtonDelegate;
 
-@interface MMFinderLivePreviewExitButton
+@interface MMFinderLivePreviewExitButton : NSObject
 {
     id <MMFinderLivePreviewExitButtonDelegate> _delegate;
     MMUIImageView *_imageView;

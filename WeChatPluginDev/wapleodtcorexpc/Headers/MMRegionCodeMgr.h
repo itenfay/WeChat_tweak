@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, SafeDictionaryWrap;
 
-@interface MMRegionCodeMgr
+@interface MMRegionCodeMgr : NSObject
 {
     SafeDictionaryWrap *m_regionDict;
     NSMutableArray *m_pickedRegionAry;

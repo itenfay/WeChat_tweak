@@ -6,7 +6,7 @@
 @class UIButton, UILabel, WCBaseTextFieldItem;
 @protocol WCPayChangeOfflinePayLimitFeeViewControllerDelegate;
 
-@interface WCPayChangeOfflinePayLimitFeeViewController
+@interface WCPayChangeOfflinePayLimitFeeViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBaseTextFieldItem *m_textFieldLimitItem;

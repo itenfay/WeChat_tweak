@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderCustomImageRichTextView
+@interface WCFinderCustomImageRichTextView : NSObject
 {
     NSMutableDictionary *_respCache;
 }

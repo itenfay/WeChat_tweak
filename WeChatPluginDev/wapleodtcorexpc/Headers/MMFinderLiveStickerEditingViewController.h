@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveStickerEditingViewControllerConfiguration, MMFinderLiveStickerItemBase, MMFinderLiveStickerTextTemplatesPageSheet, MMFinderLiveTaskId, MMLiveObjectManipulationView, NSString, UIButton, UIImageView, UILabel, UIView;
 @protocol MMFinderLiveStickerContentPicking, MMFinderLiveStickerEditingViewControllerDelegate, MMFinderLiveStickerReporting;
 
-@interface MMFinderLiveStickerEditingViewController
+@interface MMFinderLiveStickerEditingViewController : NSObject
 {
     _Bool _deleteHighlighted;
     _Bool _needRecoverPreferOrientationMask;

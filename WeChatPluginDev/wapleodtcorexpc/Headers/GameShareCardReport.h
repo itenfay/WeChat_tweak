@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface GameShareCardReport
+@interface GameShareCardReport : NSObject
 {
     NSMutableSet *_snsExposedSet;
     NSMutableSet *_chatExposedSet;

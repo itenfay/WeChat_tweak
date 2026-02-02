@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface BTLFlutterOftenReadMgr
+@interface BTLFlutterOftenReadMgr : NSObject
 {
     MemoryMappedKV *_autoExpiredKV;
 }

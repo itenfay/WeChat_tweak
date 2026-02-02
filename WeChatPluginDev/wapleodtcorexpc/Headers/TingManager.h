@@ -6,7 +6,7 @@
 @class MemoryMappedKV, NSString, TingAppTaskManager, TingAudioTabDataManager, TingCdnImageUploadManager, TingCrossplatformManager, TingImageDownloader, TingLyricsManager, TingMembershipManager, TingMinimizeMgr, TingNowPlayingInfoCenter, TingPlayCenterMgr, TingPlayerManager, TingPlayerUIManager, TingShareManager, _TtC6WeChat13TingEntryKara;
 @protocol ITingReportManager;
 
-@interface TingManager
+@interface TingManager : NSObject
 {
     _Bool _isFilePlayEnabled;
     _Bool _isFlutterWarmUpEnabled;

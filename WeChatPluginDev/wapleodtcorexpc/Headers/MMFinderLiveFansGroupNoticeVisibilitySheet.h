@@ -6,7 +6,7 @@
 @class MMFinderLiveFansGroupAnchorEditFansNoticeInfo, MMFinderLivePickerView, MMTableView, NSArray, NSString;
 @protocol MMFinderLiveFansGroupNoticeVisibilitySheetDelegate;
 
-@interface MMFinderLiveFansGroupNoticeVisibilitySheet
+@interface MMFinderLiveFansGroupNoticeVisibilitySheet : NSObject
 {
     id <MMFinderLiveFansGroupNoticeVisibilitySheetDelegate> _delegate;
     MMTableView *_tableView;

@@ -5,7 +5,7 @@
 
 @class NSString, OpenIMContactOPCodePB;
 
-@interface OpenIMContactOPService
+@interface OpenIMContactOPService : NSObject
 {
     _Bool m_bSyncOplogIng;
     OpenIMContactOPCodePB *m_openImContactOPlogCache;

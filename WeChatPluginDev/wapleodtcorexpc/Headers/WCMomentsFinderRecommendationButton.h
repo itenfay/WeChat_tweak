@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSMutableArray, RichTextView, SightIconView, UIImageView, UIView, WCMomentsFinderRecommendationViewModel;
 
-@interface WCMomentsFinderRecommendationButton
+@interface WCMomentsFinderRecommendationButton : NSObject
 {
     WCMomentsFinderRecommendationViewModel *_viewModel;
     NSMutableArray *_headImageViews;

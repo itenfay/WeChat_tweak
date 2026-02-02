@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIImageView;
 
-@interface WCFinderLiveEditImageLayoutView
+@interface WCFinderLiveEditImageLayoutView : NSObject
 {
     _Bool _shouldEnterCropModeAfterSafeAreaUpdate;
     _Bool _shouldAutoEnterCropMode;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSError, NSString;
 
-@interface WCMomentsAIImageGenerateCGI
+@interface WCMomentsAIImageGenerateCGI : NSObject
 {
     unsigned int _nextQueryInterval;
     unsigned int _maxRetryTimes;

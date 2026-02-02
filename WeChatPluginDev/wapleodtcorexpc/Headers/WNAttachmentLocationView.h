@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WNAttachmentLocationView
+@interface WNAttachmentLocationView : NSObject
 {
 }
 

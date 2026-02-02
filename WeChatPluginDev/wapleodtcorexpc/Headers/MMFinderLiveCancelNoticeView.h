@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIView;
 
-@interface MMFinderLiveCancelNoticeView
+@interface MMFinderLiveCancelNoticeView : NSObject
 {
     _Bool _isPaidNotice;
     _Bool _isKeyboardShow;

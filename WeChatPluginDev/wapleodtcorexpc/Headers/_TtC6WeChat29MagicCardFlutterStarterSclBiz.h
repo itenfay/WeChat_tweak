@@ -6,7 +6,7 @@
 @class MISSING_TYPE;
 @protocol _TtP6WeChat26IMBSclExternalViewDelegate_;
 
-@interface _TtC6WeChat29MagicCardFlutterStarterSclBiz
+@interface _TtC6WeChat29MagicCardFlutterStarterSclBiz : NSObject
 {
     MISSING_TYPE *_bizName;
     MISSING_TYPE *jsapiList;

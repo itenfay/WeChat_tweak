@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol StreamAudioCodecProtocol, StreamAudioPlayerDelegate;
 
-@interface StreamAudioQueuePlayer
+@interface StreamAudioQueuePlayer : NSObject
 {
     _Bool mAppendDataEnd;
     NSMutableArray *mEmptyBuffers;

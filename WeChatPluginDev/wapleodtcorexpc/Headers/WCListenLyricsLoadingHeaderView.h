@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, WCListenLyricAnimationLoadingView;
 
-@interface WCListenLyricsLoadingHeaderView
+@interface WCListenLyricsLoadingHeaderView : NSObject
 {
     CDUnknownBlockType _onClickBlock;
     WCListenLyricAnimationLoadingView *_loadingView;

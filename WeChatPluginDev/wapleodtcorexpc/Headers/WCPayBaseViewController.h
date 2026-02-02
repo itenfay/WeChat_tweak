@@ -6,7 +6,7 @@
 @class NSString, WCPayControlData;
 @protocol WCPayBaseViewControllerDelegate, WCPayBaseViewControllerRemoveDelegate;
 
-@interface WCPayBaseViewController
+@interface WCPayBaseViewController : NSObject
 {
     WCPayControlData *m_data;
     id <WCPayBaseViewControllerDelegate> _payBaseDelegate;

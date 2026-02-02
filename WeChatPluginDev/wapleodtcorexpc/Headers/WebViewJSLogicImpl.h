@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSString, WKWebView, WebviewJSEventHandlerFacade;
 @protocol WebViewJSLogicDelegate, YYWebViewInterface;
 
-@interface WebViewJSLogicImpl
+@interface WebViewJSLogicImpl : NSObject
 {
     NSString *_curRandomUUID;
     NSString *_curContextUUID;

@@ -5,7 +5,7 @@
 
 @class FacebookAuth, NSString;
 
-@interface MMFacebookMgr
+@interface MMFacebookMgr : NSObject
 {
     FacebookAuth *m_facebookAuth;
 }

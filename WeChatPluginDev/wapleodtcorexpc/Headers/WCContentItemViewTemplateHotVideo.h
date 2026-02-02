@@ -5,7 +5,7 @@
 
 @class NSString, WCDataItem, WCImageView, WCMediaItem, WCPlayerConfigViewController;
 
-@interface WCContentItemViewTemplateHotVideo
+@interface WCContentItemViewTemplateHotVideo : NSObject
 {
     WCDataItem *m_oDataItem;
     WCMediaItem *m_oMediaItem;

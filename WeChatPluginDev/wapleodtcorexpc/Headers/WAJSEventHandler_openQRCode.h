@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openQRCode
+@interface WAJSEventHandler_openQRCode : NSObject
 {
     _Bool _bGotScanResult;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, UIImage;
 
-@interface IntelligentFaceAlbumData
+@interface IntelligentFaceAlbumData : NSObject
 {
     _Bool _bIsPoliticalLeader;
     unsigned int _faceClusterTime;

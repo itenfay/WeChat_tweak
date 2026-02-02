@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMUILabel, PageTicketElement, PageTicketJumpElement, UIImageView, UIView, WCPayWebImageView;
 @protocol WCMktTicketItemCellDelegate;
 
-@interface WCMktTicketItemCell
+@interface WCMktTicketItemCell : NSObject
 {
     id <WCMktTicketItemCellDelegate> _delegate;
     PageTicketElement *_elemData;

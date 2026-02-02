@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x148
+@interface WloginTlv_0x148 : NSObject
 {
     NSString *sAppName;
     unsigned int dwSSOVer;

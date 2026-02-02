@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebOptimizationRedirectInfo
+@interface MMWebOptimizationRedirectInfo : NSObject
 {
     unsigned int _maxCacheTime;
     unsigned int _lastModifiedTime;

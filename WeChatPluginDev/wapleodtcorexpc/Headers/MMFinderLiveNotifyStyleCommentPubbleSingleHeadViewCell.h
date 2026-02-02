@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, CALayer, MMFinderLiveFansGroupSignView, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveNormalTextSignView, MMUIImageView, MMUILabel, MMUIView, NSArray, NSMutableArray, NSString, UIImageView, UIView;
 
-@interface MMFinderLiveNotifyStyleCommentPubbleSingleHeadViewCell
+@interface MMFinderLiveNotifyStyleCommentPubbleSingleHeadViewCell : NSObject
 {
     _Bool _isGradientOnlyOnXAxis;
     _Bool _canLayout;

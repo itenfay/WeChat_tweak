@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAudioRouteManager, AVVideoDevice, CContact, MMTimer, MMTipsViewController, MMVoipToastWindow, NSDate, NSObject, NSString, UIView, VOIPVideoRender, VoIPCallerViewController, VoIPMainWindow, VoIPReceiverViewController, VoipCheckAudioDeviceObj, WavAudioPlayer;
 @protocol VoIPUIManagerWindowInfo;
 
-@interface VoipUIManager
+@interface VoipUIManager : NSObject
 {
     _Bool _isAudioMode;
     _Bool _speakerStatusOnTalking;

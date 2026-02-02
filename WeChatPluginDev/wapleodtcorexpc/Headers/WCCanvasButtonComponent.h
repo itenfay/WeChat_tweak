@@ -5,7 +5,7 @@
 
 @class NSString, UILongPressGestureRecognizer, WCAdURLImageView, WCCanvasClickEventManager, WCHighLightButton;
 
-@interface WCCanvasButtonComponent
+@interface WCCanvasButtonComponent : NSObject
 {
     _Bool _dynamicButtonSize;
     WCHighLightButton *_button;

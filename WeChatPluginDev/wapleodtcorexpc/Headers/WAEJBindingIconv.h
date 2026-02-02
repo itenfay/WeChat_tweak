@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingIconv
+@interface WAEJBindingIconv : NSObject
 {
     NSString *_from;
     NSString *_to;

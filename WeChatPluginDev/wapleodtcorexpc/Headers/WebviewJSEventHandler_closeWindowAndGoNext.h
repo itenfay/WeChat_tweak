@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_closeWindowAndGoNext
+@interface WebviewJSEventHandler_closeWindowAndGoNext : NSObject
 {
     JSEvent *_cbEvent;
 }

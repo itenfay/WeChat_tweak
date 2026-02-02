@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSCache, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMLiveCacheMgr
+@interface MMLiveCacheMgr : NSObject
 {
     NSCache *_imageCache;
     NSObject<OS_dispatch_queue> *_imageIOQueue;

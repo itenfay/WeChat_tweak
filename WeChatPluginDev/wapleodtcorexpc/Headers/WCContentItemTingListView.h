@@ -5,7 +5,7 @@
 
 @class TingSharedListView;
 
-@interface WCContentItemTingListView
+@interface WCContentItemTingListView : NSObject
 {
     TingSharedListView *_listContentView;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CBaseContact, MMTableViewInfo, NSString, WCFinderMsgChatInfoReporter;
 @protocol WCFinderMsgChatInfoViewControllerDelegate;
 
-@interface WCFinderMsgChatInfoViewController
+@interface WCFinderMsgChatInfoViewController : NSObject
 {
     id <WCFinderMsgChatInfoViewControllerDelegate> _delegate;
     CBaseContact *_myRoleContact;

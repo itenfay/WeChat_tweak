@@ -5,7 +5,7 @@
 
 @class NSMutableData, NSString;
 
-@interface WAAACRecorder
+@interface WAAACRecorder : NSObject
 {
     unsigned int _recordPacket;
     unsigned int _pcmBufferPacket;

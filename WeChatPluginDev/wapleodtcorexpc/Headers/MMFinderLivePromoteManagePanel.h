@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLivePromoteLogic, MMFinderLivePromoteTableViewModel, MMFinderLiveTask, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUILabel, NSString, UIView, WCFinderCreateLiveViewModel;
 @protocol MMFinderLivePromoteManagePanelDelegate, MMFinderLivePromoteManageReportDelegate;
 
-@interface MMFinderLivePromoteManagePanel
+@interface MMFinderLivePromoteManagePanel : NSObject
 {
     _Bool _loading;
     id <MMFinderLivePromoteManagePanelDelegate> _delegate;

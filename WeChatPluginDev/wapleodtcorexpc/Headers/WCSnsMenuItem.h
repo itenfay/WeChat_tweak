@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSnsMenuItem
+@interface WCSnsMenuItem : NSObject
 {
     unsigned int _menuActionType;
     unsigned int _alertActionType;

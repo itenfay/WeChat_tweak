@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OMCFancyTextSegment
+@interface OMCFancyTextSegment : NSObject
 {
 }
 

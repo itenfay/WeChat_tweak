@@ -6,7 +6,7 @@
 @class WAPlateAuthPageSheetViewModel, WAPlateAuthorizeSheetInfo;
 @protocol WAPlateAuthorizePageSheetDelegate;
 
-@interface WAPlateAuthorizePageSheet
+@interface WAPlateAuthorizePageSheet : NSObject
 {
     WAPlateAuthPageSheetViewModel *_paViewModel;
 }

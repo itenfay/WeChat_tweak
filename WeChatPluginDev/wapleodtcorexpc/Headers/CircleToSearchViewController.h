@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CircleToSearchEntity, CircleToSearchLoadingView, CircleToSearchScrollView, MMUIButton, MMUIView, NSString, ShowFullScreenAnimationController, WCWebSearchViewControllerNewH5;
 
-@interface CircleToSearchViewController
+@interface CircleToSearchViewController : NSObject
 {
     int _halfScreenType;
     CircleToSearchEntity *_entity;

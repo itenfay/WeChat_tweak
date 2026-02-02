@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, WebResourceCDNUploadHelper;
 
-@interface WAJSEventHandler_uploadEncryptedFileToCDN
+@interface WAJSEventHandler_uploadEncryptedFileToCDN : NSObject
 {
     WebResourceCDNUploadHelper *_cdnUploadHelper;
     MMTimer *uploadTimer;

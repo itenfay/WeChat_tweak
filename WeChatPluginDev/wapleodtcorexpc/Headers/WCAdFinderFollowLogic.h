@@ -6,7 +6,7 @@
 @class NSString, WCAdFinderFollowInfo, WCAdHalfScreenContainerBaseView, WCAdvertiseInfo;
 @protocol WCAdFinderFollowLogicDelegate;
 
-@interface WCAdFinderFollowLogic
+@interface WCAdFinderFollowLogic : NSObject
 {
     int _source;
     id <WCAdFinderFollowLogicDelegate> _delegate;

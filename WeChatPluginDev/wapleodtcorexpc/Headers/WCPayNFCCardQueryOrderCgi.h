@@ -6,7 +6,7 @@
 @class OrderQueryOrderRequest;
 @protocol WCPayNFCCardQueryOrderCgiDelegate;
 
-@interface WCPayNFCCardQueryOrderCgi
+@interface WCPayNFCCardQueryOrderCgi : NSObject
 {
     id <WCPayNFCCardQueryOrderCgiDelegate> _m_delegate;
     unsigned long long _m_retryDelay;

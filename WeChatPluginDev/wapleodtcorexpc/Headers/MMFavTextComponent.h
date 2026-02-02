@@ -5,7 +5,7 @@
 
 @class FavAttributeCPLabel, RichTextView;
 
-@interface MMFavTextComponent
+@interface MMFavTextComponent : NSObject
 {
     RichTextView *m_titleLabel;
     FavAttributeCPLabel *m_titleSearchLabel;

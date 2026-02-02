@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayOfflinePayShareCardLogic
+@interface WCPayOfflinePayShareCardLogic : NSObject
 {
     int _patternLockLogicTag;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MFWebMMBtn
+@interface MFWebMMBtn : NSObject
 {
 }
 

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, EmoticonBoardView, MMCPLabel, MMGrowTextView, MMHeadImageView, MMTableView, MMUILabel, NSString, UIButton, UILabel, UIView, UIVisualEffectView, WCInputController, WCStoryComment, WCStoryCommentsForSelfShowViewModel, WCStoryPreviewReportObj;
 
-@interface WCStoryCommentsForSelfViewController
+@interface WCStoryCommentsForSelfViewController : NSObject
 {
     _Bool _isKeyboardPushedByPreviousVC;
     _Bool _showingInputView;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSString;
 
-@interface MMFileHandOffItem
+@interface MMFileHandOffItem : NSObject
 {
     unsigned int _sdkversion;
     NSString *_filetype;

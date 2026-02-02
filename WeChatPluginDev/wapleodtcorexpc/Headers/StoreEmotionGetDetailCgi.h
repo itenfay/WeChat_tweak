@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreItem, GetEmotionDetailRequest, NSString;
 
-@interface StoreEmotionGetDetailCgi
+@interface StoreEmotionGetDetailCgi : NSObject
 {
     _Bool _forceUpdate;
     _Bool _isActive;

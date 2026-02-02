@@ -5,7 +5,7 @@
 
 @class FeedsPreviewLiveMultiStyleInfo, MMFinderJoinLiveContext, MMFinderLiveAccountInfo, MMFinderLiveConnectMicUsersInfo, MMFinderLiveContext, MMFinderLiveFansGroupInfo, MMFinderLiveFeedStreamMicLogic, MMFinderLiveShopContext, MMFinderLiveTaskPluginObj, MMLiveCDNPlayerView, MMLiveFeedStreamCommentDataFetchEngine, NSArray, NSData, NSMutableDictionary, NSString, WCFinderDataItem, WCFinderExtStatsReporter;
 
-@interface MMLiveFeedStreamTask
+@interface MMLiveFeedStreamTask : NSObject
 {
     _Bool _isForceUseServerNickName;
     _Bool _isAssistantRole;

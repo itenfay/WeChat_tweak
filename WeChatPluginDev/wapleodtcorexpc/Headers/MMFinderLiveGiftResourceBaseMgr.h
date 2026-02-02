@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveGiftResourceBaseMgr
+@interface MMFinderLiveGiftResourceBaseMgr : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString, NewLifeSelectLinkReq;
 
-@interface NewLifeSelectLinkHandler
+@interface NewLifeSelectLinkHandler : NSObject
 {
     _Bool _preventEndForDismissingActionSheet;
     NewLifeSelectLinkReq *_requset;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, NSData, NSString;
 
-@interface WCFinderGetLikeListCGI
+@interface WCFinderGetLikeListCGI : NSObject
 {
     int _tabType;
     NSString *_targetUsername;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface MMFinderLivePaymentVisivilitySettingInfo
+@interface MMFinderLivePaymentVisivilitySettingInfo : NSObject
 {
     _Bool _hasTrialTimeManuallyModified;
     unsigned int _curPriceInWecoin;

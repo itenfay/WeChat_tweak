@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface MMFinderLiveFansGroupCustomizeRewardTableCell
+@interface MMFinderLiveFansGroupCustomizeRewardTableCell : NSObject
 {
     UIView *_fansGroupLabelBackgroundView;
     UILabel *_fansGroupLabelView;

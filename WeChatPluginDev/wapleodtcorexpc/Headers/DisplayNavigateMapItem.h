@@ -5,7 +5,7 @@
 
 @class NSString, NavigateMap;
 
-@interface DisplayNavigateMapItem
+@interface DisplayNavigateMapItem : NSObject
 {
     NavigateMap *_map;
     NSString *_displayName;

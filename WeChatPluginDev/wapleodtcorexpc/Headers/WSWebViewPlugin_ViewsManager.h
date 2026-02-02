@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WSWebViewPlugin_ViewsManager
+@interface WSWebViewPlugin_ViewsManager : NSObject
 {
     MISSING_TYPE *pageType;
     MISSING_TYPE *screenShot;

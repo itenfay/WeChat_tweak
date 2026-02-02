@@ -5,7 +5,7 @@
 
 @class NSString, UIColor, VoIPBubbleMsg;
 
-@interface VoIPBubbleMessageViewModel
+@interface VoIPBubbleMessageViewModel : NSObject
 {
     VoIPBubbleMsg *_bubbleMsg;
 }

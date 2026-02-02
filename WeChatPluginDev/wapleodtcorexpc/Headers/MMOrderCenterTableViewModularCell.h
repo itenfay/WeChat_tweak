@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIView;
 @protocol MMOrderCenterTableViewCellComponent, MMOrderCenterTableViewModularCellDelegate;
 
-@interface MMOrderCenterTableViewModularCell
+@interface MMOrderCenterTableViewModularCell : NSObject
 {
     id <MMOrderCenterTableViewModularCellDelegate> _delegate;
     UIView<MMOrderCenterTableViewCellComponent> *_headerView;

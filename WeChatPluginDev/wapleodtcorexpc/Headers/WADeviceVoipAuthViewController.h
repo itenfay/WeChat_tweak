@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableSet;
 
-@interface WADeviceVoipAuthViewController
+@interface WADeviceVoipAuthViewController : NSObject
 {
     NSArray *_deviceList;
     NSMutableSet *_statusChangedDevice;

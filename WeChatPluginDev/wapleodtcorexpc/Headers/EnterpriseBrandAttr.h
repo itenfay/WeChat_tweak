@@ -5,7 +5,7 @@
 
 @class NSArray, NSData, NSSet, NSString;
 
-@interface EnterpriseBrandAttr
+@interface EnterpriseBrandAttr : NSObject
 {
     _Bool _chatOpen;
     _Bool _showConfirm;

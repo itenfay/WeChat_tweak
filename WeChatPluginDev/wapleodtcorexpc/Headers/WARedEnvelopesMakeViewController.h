@@ -6,7 +6,7 @@
 @class MMTableView, MMTextView, NSArray, NSString, RichTextView, UIButton, UILabel, UIView, WCBizPickerView, WCRedEnvelopesMakeRedEnvelopesViewLayout, WCUITextField;
 @protocol WARedEnvelopesMakeViewControllerDelegate;
 
-@interface WARedEnvelopesMakeViewController
+@interface WARedEnvelopesMakeViewController : NSObject
 {
     _Bool m_bCanHandleScrollViewDidChangedEvent;
     _Bool m_bError;

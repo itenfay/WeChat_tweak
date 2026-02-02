@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC9WeAppCore41WALoadingNetWorkInvalidTipsViewController
+@interface _TtC9WeAppCore41WALoadingNetWorkInvalidTipsViewController : NSObject
 {
     MISSING_TYPE *tipIcon;
     MISSING_TYPE *tipMsgLabel;

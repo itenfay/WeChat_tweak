@@ -6,7 +6,7 @@
 @class MMFinderLiveTrumpetSelectCellInfo, MMUIImageView, MMUILabel, MMUIView, UIImageView, WCFinderHeadImageView;
 @protocol MMFinderLiveTrumpetSelectCellDelegate;
 
-@interface MMFinderLiveTrumpetSelectCell
+@interface MMFinderLiveTrumpetSelectCell : NSObject
 {
     MMFinderLiveTrumpetSelectCellInfo *_info;
     id <MMFinderLiveTrumpetSelectCellDelegate> _delegate;

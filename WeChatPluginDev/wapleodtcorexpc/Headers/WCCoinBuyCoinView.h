@@ -6,7 +6,7 @@
 @class GetWecoinPriceListResponse, NSString, WCPayBuyCoinDetailView;
 @protocol WCCoinBuyCoinViewDelegate;
 
-@interface WCCoinBuyCoinView
+@interface WCCoinBuyCoinView : NSObject
 {
     _Bool _alwaysDarkMode;
     unsigned int _diffWecoinCount;

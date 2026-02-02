@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, UIImage;
 
-@interface EmoticonCreateImageUploadTask
+@interface EmoticonCreateImageUploadTask : NSObject
 {
     _Bool _isMultiImage;
     CDUnknownBlockType _prepareFailBlock;

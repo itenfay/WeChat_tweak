@@ -5,7 +5,7 @@
 
 @class MMUIButton, RichTextView, UILabel, UIScrollView, UIView, WCFinderFeedContentVM, WCFinderHeadImageView;
 
-@interface WCFinderPickerListDetailViewController
+@interface WCFinderPickerListDetailViewController : NSObject
 {
     UIView *_contentContainderView;
     WCFinderFeedContentVM *_contentVM;

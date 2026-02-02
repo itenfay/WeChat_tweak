@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageView, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, WCEditViewControllerUIConfig;
 @protocol EditImageOperationDelegate;
 
-@interface EditImageScrollView
+@interface EditImageScrollView : NSObject
 {
     double _naturalTopLength;
     _Bool _isZooming;

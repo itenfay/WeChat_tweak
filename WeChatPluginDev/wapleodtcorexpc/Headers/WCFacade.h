@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, MyWCDB, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, WCAccessSecurityVerificationSessionMgr, WCAdvertiseCommentUploadMgr, WCAdvertiseDataHelper, WCAdvertiseLogicMgr, WCBGImgLogic, WCBGRecommendMgr, WCBrowseInfo, WCCanvasCommonFileLoader, WCCanvasTypeMgr, WCCommentUploadMgr, WCDataItem, WCDownloadMgr, WCFacadeDynamicConfig, WCGroupMgr, WCInputTextCacheMgr, WCLogicMgr, WCMicroMerchantFoldMgr, WCMomentsContentDiscoverer, WCMomentsFinderRecommendationManager, WCMomentsFinderShareManager, WCMomentsForwardMgr, WCMomentsNewLifeShareManager, WCMomentsStarManager, WCNotificationCenterMgr, WCOperationSetting, WCPatternCacheMgr, WCPreloadLogicMgr, WCRealFeedExposureItem, WCSnsABTestMgr, WCSnsLocalCacheMgr, WCStrangerCommentMgr, WCTimelineMgr, WCUploadMgr;
 
-@interface WCFacade
+@interface WCFacade : NSObject
 {
     MyWCDB *m_database;
     WCAdvertiseDataHelper *m_adDataHelper;

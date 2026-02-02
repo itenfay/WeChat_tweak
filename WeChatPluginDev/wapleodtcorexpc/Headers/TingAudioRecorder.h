@@ -6,7 +6,7 @@
 @class NSString, WABaseRecorder;
 @protocol TingAudioRecorderDelegate;
 
-@interface TingAudioRecorder
+@interface TingAudioRecorder : NSObject
 {
     id <TingAudioRecorderDelegate> _delegate;
     WABaseRecorder *_recorder;

@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface WCFinderProfilePrivateViewModel
+@interface WCFinderProfilePrivateViewModel : NSObject
 {
     UIImage *_errorIcon;
     NSString *_errorTips;

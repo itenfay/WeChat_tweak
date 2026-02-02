@@ -5,7 +5,7 @@
 
 @class WCFinderStreamProfileHeaderView;
 
-@interface WCFinderStreamProfileHeaderViewController
+@interface WCFinderStreamProfileHeaderViewController : NSObject
 {
     _Bool _alawayDarkModel;
 }

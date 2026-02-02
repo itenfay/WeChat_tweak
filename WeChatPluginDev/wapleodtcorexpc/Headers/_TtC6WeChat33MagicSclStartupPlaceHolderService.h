@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat33MagicSclStartupPlaceHolderService
+@interface _TtC6WeChat33MagicSclStartupPlaceHolderService : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_cacheRootDir;
 }

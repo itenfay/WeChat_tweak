@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, UIButton, UIImageView, UILabel;
 
-@interface NetworkCheckViewController
+@interface NetworkCheckViewController : NSObject
 {
     UIButton *m_cancelBtn;
     UIImageView *m_iconView;

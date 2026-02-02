@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ChatRoomToolWeAppInfo
+@interface ChatRoomToolWeAppInfo : NSObject
 {
     NSString *_userName;
     NSString *_appUserName;

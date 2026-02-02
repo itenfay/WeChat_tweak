@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCanvasComponentSidebarInfo
+@interface WCCanvasComponentSidebarInfo : NSObject
 {
     NSString *_textColor;
     double _cornerRadius;

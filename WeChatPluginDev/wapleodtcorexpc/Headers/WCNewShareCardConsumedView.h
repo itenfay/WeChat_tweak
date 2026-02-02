@@ -6,7 +6,7 @@
 @class MMLoadingView, MMUILabel, MMUIView, NSArray, NSMutableArray, NSString, UIButton, UIImageView, UIScrollView, WCShareCardData;
 @protocol WCNewShareCardConsumedViewDelegate;
 
-@interface WCNewShareCardConsumedView
+@interface WCNewShareCardConsumedView : NSObject
 {
     double _enterTimeForState;
     _Bool _followCheckBoxSelected;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface IntelligentMsgImgConfigurationMgr
+@interface IntelligentMsgImgConfigurationMgr : NSObject
 {
     NSArray *m_arrFigureClassificationLabelId;
     NSArray *m_arrFaceAlbumClassificationLabelId;

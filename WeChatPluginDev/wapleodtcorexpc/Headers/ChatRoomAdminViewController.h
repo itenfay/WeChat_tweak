@@ -5,7 +5,7 @@
 
 @class AddAdminLogic, CContact, ChatRoomAdminMgrLogic, DelAdminLogic, MMAcceptAgreementCommonHeadView, MMTableView, MMTableViewInfo, NSArray, NSString;
 
-@interface ChatRoomAdminViewController
+@interface ChatRoomAdminViewController : NSObject
 {
     _Bool m_needReload;
     ChatRoomAdminMgrLogic *m_adminMgrLogic;

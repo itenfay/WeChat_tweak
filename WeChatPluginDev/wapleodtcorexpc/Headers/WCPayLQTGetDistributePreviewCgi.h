@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTGetDistributePreviewCgiDelegate;
 
-@interface WCPayLQTGetDistributePreviewCgi
+@interface WCPayLQTGetDistributePreviewCgi : NSObject
 {
     id <WCPayLQTGetDistributePreviewCgiDelegate> _cgiDelegate;
 }

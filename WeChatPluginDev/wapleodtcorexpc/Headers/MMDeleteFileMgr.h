@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMDeleteFileMgr
+@interface MMDeleteFileMgr : NSObject
 {
 }
 

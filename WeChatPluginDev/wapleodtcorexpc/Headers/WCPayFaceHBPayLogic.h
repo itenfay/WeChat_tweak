@@ -6,7 +6,7 @@
 @class NSString, WCPayFaceHBCgi, WCPayFaceHBManagementLogic, WCPayFaceHBPayView, WCPayFaceHBQRCodeInfo;
 @protocol WCPayFaceHBPayLogicDelegate;
 
-@interface WCPayFaceHBPayLogic
+@interface WCPayFaceHBPayLogic : NSObject
 {
     id <WCPayFaceHBPayLogicDelegate> m_delegate;
     WCPayFaceHBPayView *m_view;

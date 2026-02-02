@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMCPLabel, MMHeadImageView, MMUIViewController, NSString, TLProfileDragAnimateHelper, TLProfileModel, TLProfileNicknameContainerView, UIImageView, UITableView, UIView;
 
-@interface TLProfileExpandableHeaderView
+@interface TLProfileExpandableHeaderView : NSObject
 {
     shared_ptr_448daa3e _config;
     _Bool _isNicknameUnsafe;

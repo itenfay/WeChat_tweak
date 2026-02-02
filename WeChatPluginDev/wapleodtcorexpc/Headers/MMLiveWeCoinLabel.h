@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface MMLiveWeCoinLabel
+@interface MMLiveWeCoinLabel : NSObject
 {
     UIImageView *_wecoinIconView;
     MMUILabel *_wecoinIconLabel;

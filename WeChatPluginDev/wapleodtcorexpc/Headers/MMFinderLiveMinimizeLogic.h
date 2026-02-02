@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveMinimizeLogic
+@interface MMFinderLiveMinimizeLogic : NSObject
 {
 }
 

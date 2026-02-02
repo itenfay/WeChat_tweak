@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCTSettingDescSelectView
+@interface WCTSettingDescSelectView : NSObject
 {
     UILabel *_descLabel;
 }

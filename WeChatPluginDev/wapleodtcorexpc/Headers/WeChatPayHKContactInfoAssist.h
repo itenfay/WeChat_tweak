@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class HKPayPluginResponse, NSString, WCPayHKGetPluginCgi;
 
-@interface WeChatPayHKContactInfoAssist
+@interface WeChatPayHKContactInfoAssist : NSObject
 {
     _Bool _hasPushedUninstallVC;
     _Bool _hasRequestedPluginData;

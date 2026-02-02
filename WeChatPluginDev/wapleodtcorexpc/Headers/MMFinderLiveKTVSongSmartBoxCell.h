@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface MMFinderLiveKTVSongSmartBoxCell
+@interface MMFinderLiveKTVSongSmartBoxCell : NSObject
 {
     MMUILabel *_actionLabel;
 }

@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSMutableDictionary, NSString, WCFinderAnimationLoadingView, WCFinderPOIRelatedStreamViewModel, WCFinderTabPageView;
 
-@interface WCFinderPOIRelatedStreamViewController
+@interface WCFinderPOIRelatedStreamViewController : NSObject
 {
     WCFinderPOIRelatedStreamViewModel *_viewModel;
     unsigned long long _entryScene;

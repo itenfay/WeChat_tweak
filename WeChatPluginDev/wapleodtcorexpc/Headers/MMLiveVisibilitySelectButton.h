@@ -5,7 +5,7 @@
 
 @class NSArray, UIImageView, UILabel;
 
-@interface MMLiveVisibilitySelectButton
+@interface MMLiveVisibilitySelectButton : NSObject
 {
     _Bool _hideLogo;
     int _liveMode;

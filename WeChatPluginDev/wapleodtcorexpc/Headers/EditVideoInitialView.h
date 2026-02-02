@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAsset, EVVideoPreviewBrowserView, EditImageEmotionToolAttrView, EditImagePenToolAttrView, EditImageScrollView, EditStoryImageAttr, EditVideoBGMView, EditVideoCropView, EditVideoMusicController, MMLoadingView, MMUIButton, MMUIImageView, MMUIView, NSMutableArray, NSString, UIImageView, UIView, WCEditLoadingModeButton, WCEditViewControllerUIConfig, WCStoryPublishReportObj;
 @protocol EditVideoInitialViewDelegate, EditVideoOptionsDelegate;
 
-@interface EditVideoInitialView
+@interface EditVideoInitialView : NSObject
 {
     EVVideoPreviewBrowserView *_videoPreview;
     EditImageScrollView *_eIScrollView;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat4Kara
+@interface _TtC6WeChat4Kara : NSObject
 {
     MISSING_TYPE *_prophets;
     MISSING_TYPE *_timeSeriesProphets;

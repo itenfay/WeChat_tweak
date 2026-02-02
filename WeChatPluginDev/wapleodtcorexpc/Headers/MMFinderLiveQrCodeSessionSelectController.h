@@ -5,7 +5,7 @@
 
 @class NSString, UINavigationController;
 
-@interface MMFinderLiveQrCodeSessionSelectController
+@interface MMFinderLiveQrCodeSessionSelectController : NSObject
 {
     UINavigationController *_navVC;
     NSString *_qrCodeUri;

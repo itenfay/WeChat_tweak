@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiEmoticonPackButtonDesc
+@interface LiteAppJsApiEmoticonPackButtonDesc : NSObject
 {
     NSString *_pid;
 }

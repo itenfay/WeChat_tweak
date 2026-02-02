@@ -6,7 +6,7 @@
 @class TXCDispatchQueue, TXCVideoEncodeConfig, TXCVideoEncodeFpsThrottle, TXCVideoEncodeReport, TXCVideoEncoderSupervisor, TXCVideoResolutionConstraint;
 @protocol TXCVideoEncodeControllerDelegate, TXIVideoEncoderInterface, TXIVideoRpsEncoderInterface;
 
-@interface TXCVideoEncodeController
+@interface TXCVideoEncodeController : NSObject
 {
     struct shared_ptr<liteav::video::TXCVideoRpsFramerateCallback> _rpsFramerateCallback;
     TXCVideoEncodeConfig *_config;

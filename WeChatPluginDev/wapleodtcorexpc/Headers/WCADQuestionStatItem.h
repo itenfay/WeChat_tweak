@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCADQuestionStatItem
+@interface WCADQuestionStatItem : NSObject
 {
     unsigned int uiBeginTime;
     unsigned int uiEndTime;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCreateParamsModel;
 
-@interface WCFinderCreateLiveCGI
+@interface WCFinderCreateLiveCGI : NSObject
 {
     _Bool _isLiveCanceled;
     MMFinderLiveCreateParamsModel *_createLiveParamsModel;

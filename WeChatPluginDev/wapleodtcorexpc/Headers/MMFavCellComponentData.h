@@ -5,7 +5,7 @@
 
 @class MMFavBaselineComponentData, MMFavImageComponentData, MMFavTextComponentData, NSArray;
 
-@interface MMFavCellComponentData
+@interface MMFavCellComponentData : NSObject
 {
     _Bool _onlyImageOrVideo;
     MMFavBaselineComponentData *m_baselineComData;

@@ -5,7 +5,7 @@
 
 @class MMMVPlayer, MMMusicMVPreviewEpisodeSelectView, MMTimer, MMUIButton, NSString, UIButton, UILabel;
 
-@interface MMMusicMVPreviewViewController
+@interface MMMusicMVPreviewViewController : NSObject
 {
     _Bool _markedVideoOffsetDirty;
     MMMVPlayer *_mvPlayer;

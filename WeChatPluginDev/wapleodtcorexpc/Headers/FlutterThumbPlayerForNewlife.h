@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderPlayerViewForTing;
 
-@interface FlutterThumbPlayerForNewlife
+@interface FlutterThumbPlayerForNewlife : NSObject
 {
     WCFinderPlayerViewForTing *_finderPlayer;
 }

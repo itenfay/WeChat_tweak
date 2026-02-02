@@ -6,7 +6,7 @@
 @class FavoritesDownloadCDNInfo, FavoritesItem, NSMutableArray, NSString;
 @protocol FavoritesDownloaderDelegate;
 
-@interface FavoritesDownloader
+@interface FavoritesDownloader : NSObject
 {
     FavoritesItem *_favItem;
     id <FavoritesDownloaderDelegate> _delegate;

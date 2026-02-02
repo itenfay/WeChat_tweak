@@ -5,7 +5,7 @@
 
 @class QIconScatterOverlay;
 
-@interface QIconScatterOverlayView
+@interface QIconScatterOverlayView : NSObject
 {
 }
 

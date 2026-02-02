@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASyncInvalidateContactCmd
+@interface WASyncInvalidateContactCmd : NSObject
 {
 }
 

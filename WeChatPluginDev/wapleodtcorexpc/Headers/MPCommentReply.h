@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPCommentReply
+@interface MPCommentReply : NSObject
 {
     _Bool _isLike;
     _Bool _isDelete;

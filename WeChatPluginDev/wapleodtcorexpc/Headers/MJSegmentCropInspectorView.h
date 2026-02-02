@@ -5,7 +5,7 @@
 
 @class MJSegmentCropInspectorViewModel, MJTimelineThumbnailView, UILabel;
 
-@interface MJSegmentCropInspectorView
+@interface MJSegmentCropInspectorView : NSObject
 {
     UILabel *_descLabel;
     MJTimelineThumbnailView *_thumbnailView;

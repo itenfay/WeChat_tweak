@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetImageGenerator, MMUIView, UIImage, UIImageView, UIImpactFeedbackGenerator;
 
-@interface WCFinderVideoSliderView
+@interface WCFinderVideoSliderView : NSObject
 {
     AVAssetImageGenerator *_coverGenerator;
     MMUIView *_sliderBarView;

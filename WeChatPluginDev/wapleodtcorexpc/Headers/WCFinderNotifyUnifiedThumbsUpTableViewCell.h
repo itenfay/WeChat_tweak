@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCFinderNotifyUnifiedThumbsUpTableViewCell
+@interface WCFinderNotifyUnifiedThumbsUpTableViewCell : NSObject
 {
     UIImageView *_thumbsUpImageView;
 }

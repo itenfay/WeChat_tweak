@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSMutableArray, NSString, UIColor;
 
-@interface WAAppOpenCustomUIParameter
+@interface WAAppOpenCustomUIParameter : NSObject
 {
     _Bool _m_bHideSimulatedNativeLeftReturnButton;
     _Bool _m_bForceLightMode;

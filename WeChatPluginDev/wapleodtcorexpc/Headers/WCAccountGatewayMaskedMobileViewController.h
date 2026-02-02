@@ -5,7 +5,7 @@
 
 @protocol WCAccountGatewayMaskedMobileViewControllerDelegate;
 
-@interface WCAccountGatewayMaskedMobileViewController
+@interface WCAccountGatewayMaskedMobileViewController : NSObject
 {
     id <WCAccountGatewayMaskedMobileViewControllerDelegate> _delegate;
 }

@@ -5,7 +5,7 @@
 
 @protocol WCPayRealnameVerifyGuardianCgiCgiDelegate;
 
-@interface WCPayRealnameVerifyGuardianCgi
+@interface WCPayRealnameVerifyGuardianCgi : NSObject
 {
     id <WCPayRealnameVerifyGuardianCgiCgiDelegate> _cgiDelegate;
 }

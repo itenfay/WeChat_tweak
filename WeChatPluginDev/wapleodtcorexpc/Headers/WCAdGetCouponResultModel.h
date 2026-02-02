@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdGetCouponResultModel
+@interface WCAdGetCouponResultModel : NSObject
 {
     int _source;
     int _actionType;

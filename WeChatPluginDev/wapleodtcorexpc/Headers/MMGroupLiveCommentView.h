@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderAnimationLoadingView;
 
-@interface MMGroupLiveCommentView
+@interface MMGroupLiveCommentView : NSObject
 {
     WCFinderAnimationLoadingView *_forbiddCommentLoadingView;
 }

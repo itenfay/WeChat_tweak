@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface OMJTextOverlayDesc
+@interface OMJTextOverlayDesc : NSObject
 {
     NSString *_text;
     double _maximumWidth;

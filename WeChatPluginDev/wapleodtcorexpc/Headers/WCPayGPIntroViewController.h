@@ -6,7 +6,7 @@
 @class MMScrollView, NSString;
 @protocol WCPayGPIntroViewControllerDelegate;
 
-@interface WCPayGPIntroViewController
+@interface WCPayGPIntroViewController : NSObject
 {
     id <WCPayGPIntroViewControllerDelegate> _delegate;
     MMScrollView *_contentView;

@@ -5,7 +5,7 @@
 
 @class MMBGMCategoryItem, MMBGMUniqueMutableArray, NSData;
 
-@interface MMBGMCategoryDetailTabViewModel
+@interface MMBGMCategoryDetailTabViewModel : NSObject
 {
     _Bool _hasMore;
     MMBGMCategoryItem *_categoryItem;

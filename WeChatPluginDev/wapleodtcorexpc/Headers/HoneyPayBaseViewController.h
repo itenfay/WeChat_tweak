@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface HoneyPayBaseViewController
+@interface HoneyPayBaseViewController : NSObject
 {
     UIView *_navBackground;
 }

@@ -6,7 +6,7 @@
 @class MMBGMSelectHalfScreenViewController, NSMutableDictionary;
 @protocol NewLifePostEndDelegate;
 
-@interface FlutterNewLifeImageSelectViewController
+@interface FlutterNewLifeImageSelectViewController : NSObject
 {
     MMBGMSelectHalfScreenViewController *_selectMusicVc;
     NSMutableDictionary *_idMusicMap;

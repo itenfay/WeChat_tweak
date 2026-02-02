@@ -6,7 +6,7 @@
 @class MMLiveMinimizeBackgroundMoveView, NSString, UIView;
 @protocol MMLiveMinimizeViewControllerDelegate;
 
-@interface MMLiveMinimizeViewController
+@interface MMLiveMinimizeViewController : NSObject
 {
     UIView *_liveView;
     id <MMLiveMinimizeViewControllerDelegate> _liveMinimizeDelegate;

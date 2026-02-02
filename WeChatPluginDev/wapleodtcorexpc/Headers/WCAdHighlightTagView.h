@@ -5,7 +5,7 @@
 
 @class MMUILabel, WCAdHighlightTagInfo, WCDataItem;
 
-@interface WCAdHighlightTagView
+@interface WCAdHighlightTagView : NSObject
 {
     WCDataItem *_dataItem;
     WCAdHighlightTagInfo *_tagInfo;

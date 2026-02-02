@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface TPVodReportInfo
+@interface TPVodReportInfo : NSObject
 {
     _Bool _hasSubtitles;
     long long _optimizedPlay;

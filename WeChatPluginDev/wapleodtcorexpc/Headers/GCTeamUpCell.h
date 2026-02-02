@@ -5,7 +5,7 @@
 
 @class JumpInfo, MMWebImageView, UIButton, UILabel, UIView;
 
-@interface GCTeamUpCell
+@interface GCTeamUpCell : NSObject
 {
     UIView *_containerView;
     MMWebImageView *_backGroundImgView;

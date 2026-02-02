@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _ZZScrollViewChainModel
+@interface _ZZScrollViewChainModel : NSObject
 {
 }
 

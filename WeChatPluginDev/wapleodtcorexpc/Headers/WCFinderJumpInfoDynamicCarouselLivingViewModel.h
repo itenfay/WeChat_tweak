@@ -5,7 +5,7 @@
 
 @class FinderJumpLiveNecessaryParams;
 
-@interface WCFinderJumpInfoDynamicCarouselLivingViewModel
+@interface WCFinderJumpInfoDynamicCarouselLivingViewModel : NSObject
 {
     FinderJumpLiveNecessaryParams *_livingParams;
 }

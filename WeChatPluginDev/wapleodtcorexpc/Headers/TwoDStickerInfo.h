@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface TwoDStickerInfo
+@interface TwoDStickerInfo : NSObject
 {
     NSArray *_pos;
 }

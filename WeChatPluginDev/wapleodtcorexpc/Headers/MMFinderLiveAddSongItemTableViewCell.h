@@ -5,7 +5,7 @@
 
 @class MMFinderLiveSongItem, NSString, UILabel;
 
-@interface MMFinderLiveAddSongItemTableViewCell
+@interface MMFinderLiveAddSongItemTableViewCell : NSObject
 {
     MMFinderLiveSongItem *_item;
     UILabel *_warningLabel;

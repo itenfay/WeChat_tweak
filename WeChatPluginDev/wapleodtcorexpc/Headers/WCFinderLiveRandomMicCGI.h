@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, WCFinderDataItem;
 
-@interface WCFinderLiveRandomMicCGI
+@interface WCFinderLiveRandomMicCGI : NSObject
 {
     WCFinderDataItem *_dataItem;
     NSData *_liveCookies;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAddressControlMgr
+@interface WCAddressControlMgr : NSObject
 {
 }
 

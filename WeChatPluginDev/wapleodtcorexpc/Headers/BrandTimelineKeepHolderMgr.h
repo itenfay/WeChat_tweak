@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OrderedDictionary;
 
-@interface BrandTimelineKeepHolderMgr
+@interface BrandTimelineKeepHolderMgr : NSObject
 {
     OrderedDictionary *_cachedWebVCDict;
 }

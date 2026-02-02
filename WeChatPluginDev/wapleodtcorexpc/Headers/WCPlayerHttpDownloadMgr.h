@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCPlayerHttpDownloadMgr
+@interface WCPlayerHttpDownloadMgr : NSObject
 {
     int _videoPreloadQueueMaxCount;
     unsigned int _maxHttpConcurrent;

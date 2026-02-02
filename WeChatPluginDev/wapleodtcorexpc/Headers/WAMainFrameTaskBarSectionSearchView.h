@@ -6,7 +6,7 @@
 @class UIView, WAMainFrameTaskBarSearchBar;
 @protocol WAMainFrameTaskBarSectionSearchViewDelegate;
 
-@interface WAMainFrameTaskBarSectionSearchView
+@interface WAMainFrameTaskBarSectionSearchView : NSObject
 {
     UIView *_searchArea;
     WAMainFrameTaskBarSearchBar *_searchBar;

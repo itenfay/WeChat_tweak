@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMUploadLogHandler
+@interface MMUploadLogHandler : NSObject
 {
 }
 

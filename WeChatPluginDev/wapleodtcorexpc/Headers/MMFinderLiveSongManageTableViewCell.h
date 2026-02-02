@@ -6,7 +6,7 @@
 @class MMFinderLiveSongItem, MMUILabel, UILabel;
 @protocol MMFinderLiveSongManageTableViewCellDelegate;
 
-@interface MMFinderLiveSongManageTableViewCell
+@interface MMFinderLiveSongManageTableViewCell : NSObject
 {
     _Bool _disable;
     _Bool _shouldAdaptToDarkLight;

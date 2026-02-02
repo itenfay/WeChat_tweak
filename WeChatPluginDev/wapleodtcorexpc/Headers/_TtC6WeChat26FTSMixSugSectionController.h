@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26FTSMixSugSectionController
+@interface _TtC6WeChat26FTSMixSugSectionController : NSObject
 {
     MISSING_TYPE *sectionModel;
     MISSING_TYPE *sugs;

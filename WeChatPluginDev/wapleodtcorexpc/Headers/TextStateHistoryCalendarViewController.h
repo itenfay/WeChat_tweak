@@ -5,7 +5,7 @@
 
 @class NSString, TextStateCardListViewController, TextStateHistoryCalendarCollectionView, TextStateHistoryLogic, WCStoryFloatTopBar;
 
-@interface TextStateHistoryCalendarViewController
+@interface TextStateHistoryCalendarViewController : NSObject
 {
     _Bool _canSelect;
     TextStateHistoryCalendarCollectionView *_collectionView;

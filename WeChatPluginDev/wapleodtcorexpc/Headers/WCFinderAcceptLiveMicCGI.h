@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class LiveRoomImg, NSData, NSString, WCFinderContact, WCFinderDataItem;
 
-@interface WCFinderAcceptLiveMicCGI
+@interface WCFinderAcceptLiveMicCGI : NSObject
 {
     unsigned int _sdkRoomId;
     WCFinderDataItem *_dataItem;

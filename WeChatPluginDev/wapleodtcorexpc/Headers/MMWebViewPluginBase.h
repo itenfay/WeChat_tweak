@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSString;
 
-@interface MMWebViewPluginBase
+@interface MMWebViewPluginBase : NSObject
 {
     MMWebViewController *_webViewController;
 }

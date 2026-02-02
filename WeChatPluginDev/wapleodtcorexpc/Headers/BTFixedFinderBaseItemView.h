@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BTFinderItemBackgroundImageView, BTFinderItemCoverContainerView, BTFinderItemHeaderContainerView, BTFinderItemViewModel, MMUIButton, MMUILabel, MMWebImageView, NSString, RichTextView, SightIconView, UIImageView, WCFinderTagView;
 
-@interface BTFixedFinderBaseItemView
+@interface BTFixedFinderBaseItemView : NSObject
 {
     BTFinderItemViewModel *_viewModel;
     MMWebImageView *_coverImageView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSMutableArray, NSString, WCFinderLiveBaseCgi;
 
-@interface MMFinderLiveSensitiveLogic
+@interface MMFinderLiveSensitiveLogic : NSObject
 {
     _Bool _isInvokeingAction;
     CDUnknownBlockType _onSensitiveDataItemListUpdateCallback;

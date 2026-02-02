@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface MMCheckExpandStyleTableViewCell
+@interface MMCheckExpandStyleTableViewCell : NSObject
 {
     UIImageView *_leftCheckMark;
     UIImageView *_rightArrow;

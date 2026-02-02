@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMLiveGamePrepareVisibilityCell
+@interface MMLiveGamePrepareVisibilityCell : NSObject
 {
     int _liveMode;
     long long _lastSelectMode;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCDebugConfigActionSheet
+@interface WCDebugConfigActionSheet : NSObject
 {
     CDUnknownBlockType _clickBlock;
 }

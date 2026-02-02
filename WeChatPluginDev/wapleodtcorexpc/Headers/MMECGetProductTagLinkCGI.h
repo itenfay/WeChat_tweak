@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMECGetProductTagLinkCGI
+@interface MMECGetProductTagLinkCGI : NSObject
 {
     NSString *_appId;
     unsigned long long _productId;

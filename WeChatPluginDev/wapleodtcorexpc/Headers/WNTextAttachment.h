@@ -5,7 +5,7 @@
 
 @class FavLocationItem, FavoritesItemDataField, NSString;
 
-@interface WNTextAttachment
+@interface WNTextAttachment : NSObject
 {
     unsigned int _headIndex;
     unsigned int _audioOffsetMs;

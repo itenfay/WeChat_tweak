@@ -6,7 +6,7 @@
 @class NSString, UIDatePicker, UIPickerView;
 @protocol WADateTimePickerDelegate;
 
-@interface WADateTimePickerView
+@interface WADateTimePickerView : NSObject
 {
     UIDatePicker *_picker;
     UIPickerView *_customPicker;

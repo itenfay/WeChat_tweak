@@ -6,7 +6,7 @@
 @class MMTimer, NSArray, NSMutableArray, NSString, WCCardData, WCCardDataCardInfo, WCCardDataCardTPInfo, WCCardDynamicCodeGenerator, WCCardEnterInfo, WCCardOfflineCodeConfigData, WCCardUsedStoreInfo, WCShareCardData;
 @protocol WCNewCardDetailLogicDelegate;
 
-@interface WCNewCardDetailLogicController
+@interface WCNewCardDetailLogicController : NSObject
 {
     double _oldBrightness;
     double _toBrightness;

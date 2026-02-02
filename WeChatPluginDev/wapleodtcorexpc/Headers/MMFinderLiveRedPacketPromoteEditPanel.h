@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLiveRedPacketPromoteEditPanel
+@interface MMFinderLiveRedPacketPromoteEditPanel : NSObject
 {
     CDUnknownBlockType _completion;
     NSString *_finderUserName;

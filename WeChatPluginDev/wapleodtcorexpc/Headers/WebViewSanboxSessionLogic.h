@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, WKWebView, WebvViewSanboxSessionInfo;
 @protocol WebViewSanboxSessionLogicDelegate, YYWebViewInterface;
 
-@interface WebViewSanboxSessionLogic
+@interface WebViewSanboxSessionLogic : NSObject
 {
     id <WebViewSanboxSessionLogicDelegate> _delegate;
     WKWebView<YYWebViewInterface> *_webView;

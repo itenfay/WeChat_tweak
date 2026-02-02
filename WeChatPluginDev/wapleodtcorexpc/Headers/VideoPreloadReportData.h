@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VideoPreloadReportData
+@interface VideoPreloadReportData : NSObject
 {
     unsigned int _preloadVideoPercent;
     unsigned int _preloadDuration;

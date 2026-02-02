@@ -5,7 +5,7 @@
 
 @class MJVideoTemplate, NSMutableArray, OrderedDictionary, WCVideoProducerEditSegmentOperation, WCVideoProducerMusicPlayingOperation, WCVideoProducerMusicSearchingOperation;
 
-@interface WCVideoProducerTemplatePlayingOperation
+@interface WCVideoProducerTemplatePlayingOperation : NSObject
 {
     _Bool _isBGMEnabled;
     _Bool _isOSTEnabled;

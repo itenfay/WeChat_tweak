@@ -5,7 +5,7 @@
 
 @protocol WCPayTransferPhoneSuccPageCgiDelegate;
 
-@interface WCPayTransferPhoneSuccPageCgi
+@interface WCPayTransferPhoneSuccPageCgi : NSObject
 {
     id <WCPayTransferPhoneSuccPageCgiDelegate> _m_delegate;
 }

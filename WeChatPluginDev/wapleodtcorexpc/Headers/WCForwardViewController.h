@@ -6,7 +6,7 @@
 @class NSData, NSObject, NSString, OpenApiImageCdnUploader, UIView, WCContentItemBaseView, WCDataItem, WCMomentsPageContext;
 @protocol WCCommitViewResultDelegate;
 
-@interface WCForwardViewController
+@interface WCForwardViewController : NSObject
 {
     WCDataItem *_forwardDataItem;
     UIView *_mediaViewBkgView;

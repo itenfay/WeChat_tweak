@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCMegaVideoUserPageCGI
+@interface WCMegaVideoUserPageCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

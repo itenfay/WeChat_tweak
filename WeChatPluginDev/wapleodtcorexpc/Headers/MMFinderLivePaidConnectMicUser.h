@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLivePaidConnectMicUser
+@interface MMFinderLivePaidConnectMicUser : NSObject
 {
     _Bool _isOnline;
     _Bool _expandContentIfNeeded;

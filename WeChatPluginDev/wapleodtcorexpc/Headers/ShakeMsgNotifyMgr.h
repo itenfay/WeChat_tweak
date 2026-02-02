@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol ShakeMsgNotifyMgrDelegate;
 
-@interface ShakeMsgNotifyMgr
+@interface ShakeMsgNotifyMgr : NSObject
 {
     NSMutableArray *_messageQueue;
     NSMutableArray *_unreadMsgQueue;

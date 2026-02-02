@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveCloseMicReportHandler
+@interface MMLiveCloseMicReportHandler : NSObject
 {
     unsigned int closeRole;
     unsigned int hasVideo;

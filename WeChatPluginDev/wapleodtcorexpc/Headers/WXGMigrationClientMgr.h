@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ChatMigrationGetConnectInfo, NSArray, NSData, NSString, WXGMigrationClientEntryViewController, WXGMigrationClientLogic, WXGMigrationImportMessageHelper;
 
-@interface WXGMigrationClientMgr
+@interface WXGMigrationClientMgr : NSObject
 {
     _Bool m_isWorking;
     id m_kickOutLogicObj;

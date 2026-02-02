@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WCLabsCommonInfo;
 
-@interface WCLabsMgr
+@interface WCLabsMgr : NSObject
 {
     NSMutableDictionary *_labsAppItemDic;
     NSMutableArray *_onlineLabsItems;

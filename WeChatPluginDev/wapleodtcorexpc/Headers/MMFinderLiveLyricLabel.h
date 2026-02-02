@@ -5,7 +5,7 @@
 
 @class MMFinderLiveKSKitLyricWord;
 
-@interface MMFinderLiveLyricLabel
+@interface MMFinderLiveLyricLabel : NSObject
 {
     MMFinderLiveKSKitLyricWord *_lyricWord;
 }

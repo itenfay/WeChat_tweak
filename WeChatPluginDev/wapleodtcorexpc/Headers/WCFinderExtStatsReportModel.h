@@ -5,7 +5,7 @@
 
 @class NSArray, NSNumber, NSString;
 
-@interface WCFinderExtStatsReportModel
+@interface WCFinderExtStatsReportModel : NSObject
 {
     NSString *_searchData;
     NSArray *_resultList;

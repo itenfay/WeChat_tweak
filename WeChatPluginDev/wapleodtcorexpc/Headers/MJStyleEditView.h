@@ -6,7 +6,7 @@
 @class MJCollectionView, MJMaterialLoadingStatusCoordinator, MJStyleEditData, NSString, UIButton;
 @protocol MJStyleEditViewDelegate;
 
-@interface MJStyleEditView
+@interface MJStyleEditView : NSObject
 {
     id <MJStyleEditViewDelegate> _delegate;
     MJMaterialLoadingStatusCoordinator *_coordinator;

@@ -5,7 +5,7 @@
 
 @class NSDate, NSString;
 
-@interface CdnComMgr
+@interface CdnComMgr : NSObject
 {
     unsigned int m_uiGetCdnDnsInfoEventID;
     unsigned int m_uiGetCdnCount;

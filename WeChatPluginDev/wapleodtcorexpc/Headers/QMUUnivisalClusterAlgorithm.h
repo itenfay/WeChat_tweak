@@ -5,7 +5,7 @@
 
 @class QMUInScreenClusterAlgorithm, QMUWorldClusterAlgorithm;
 
-@interface QMUUnivisalClusterAlgorithm
+@interface QMUUnivisalClusterAlgorithm : NSObject
 {
     int _thresholdZoomlevel;
     QMUInScreenClusterAlgorithm *_highLevel;

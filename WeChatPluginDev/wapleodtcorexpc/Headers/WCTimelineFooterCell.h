@@ -6,7 +6,7 @@
 @class UIView, WCMomentsPostShareButton, WCTimelineFooterViewModel;
 @protocol WCTimelineFooterCellDelegate;
 
-@interface WCTimelineFooterCell
+@interface WCTimelineFooterCell : NSObject
 {
     WCTimelineFooterViewModel *_viewModel;
     id <WCTimelineFooterCellDelegate> _delegate;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class OMJCamoSession;
 
-@interface MJTemplateCamoSession
+@interface MJTemplateCamoSession : NSObject
 {
     OMJCamoSession *_camoSession;
 }

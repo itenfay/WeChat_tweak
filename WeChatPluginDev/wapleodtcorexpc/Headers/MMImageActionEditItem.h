@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EditImageForwardAndEditLogicController, NSString, UIImageView;
 
-@interface MMImageActionEditItem
+@interface MMImageActionEditItem : NSObject
 {
     EditImageForwardAndEditLogicController *_logicController;
     CDUnknownBlockType _onShowEditView;

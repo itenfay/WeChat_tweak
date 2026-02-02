@@ -5,7 +5,7 @@
 
 @class MinimizeEdgeGestureHandler, MinimizeNewTransitionController, NSString, UIScreenEdgePanGestureRecognizer;
 
-@interface LVFlutterNavigationController
+@interface LVFlutterNavigationController : NSObject
 {
     MinimizeEdgeGestureHandler *_edgeGesHandler;
     MinimizeNewTransitionController *_transitionController;

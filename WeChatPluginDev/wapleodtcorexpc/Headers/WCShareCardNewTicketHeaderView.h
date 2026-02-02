@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCShareCardNewTicketHeaderDelegate;
 
-@interface WCShareCardNewTicketHeaderView
+@interface WCShareCardNewTicketHeaderView : NSObject
 {
     double _viewWidth;
     id <WCShareCardNewTicketHeaderDelegate> _delegate;

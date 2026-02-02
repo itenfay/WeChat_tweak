@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MMTableView, NSMutableArray, NSString;
 
-@interface ShareTo3rdAppSettingViewController
+@interface ShareTo3rdAppSettingViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *_arrSortedAppinfo;

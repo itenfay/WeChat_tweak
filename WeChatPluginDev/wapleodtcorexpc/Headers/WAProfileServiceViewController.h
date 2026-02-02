@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GetProfileInfoResponse_RelievedBuyInfo, UIView, WAProfileServiceHeaderView;
 
-@interface WAProfileServiceViewController
+@interface WAProfileServiceViewController : NSObject
 {
     GetProfileInfoResponse_RelievedBuyInfo *_buyInfo;
     WAProfileServiceHeaderView *_headerView;

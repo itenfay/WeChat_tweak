@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderCustomPaging, WCFinderCustomPanelSheet, WCFinderEventHeaderActionHandler, WCFinderFeedListView, WCFinderSearchArrowTitleView, WCFinderSearchHistoryListView, WCFinderSearchListViewModel, WCFinderSearchTitleView, WCFinderShareCustomTransition;
 
-@interface WCFinderSearchItemListViewController
+@interface WCFinderSearchItemListViewController : NSObject
 {
     WCFinderSearchTitleView *_customTitleView;
     WCFinderSearchArrowTitleView *_arrowTitleView;

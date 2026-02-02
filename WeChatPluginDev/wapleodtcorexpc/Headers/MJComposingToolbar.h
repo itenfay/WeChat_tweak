@@ -5,7 +5,7 @@
 
 @class MJTimecodeView, MMUIButton, NSArray, UIStackView;
 
-@interface MJComposingToolbar
+@interface MJComposingToolbar : NSObject
 {
     MJTimecodeView *_timecodeLabel;
     MMUIButton *_playButton;

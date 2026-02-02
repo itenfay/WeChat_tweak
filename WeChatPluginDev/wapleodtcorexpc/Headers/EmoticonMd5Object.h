@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, NSString;
 
-@interface EmoticonMd5Object
+@interface EmoticonMd5Object : NSObject
 {
     _Bool _needRecoverHighPriority;
     unsigned int _m_status;

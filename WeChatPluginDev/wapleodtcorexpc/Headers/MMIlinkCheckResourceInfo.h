@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMIlinkCheckResourceInfo
+@interface MMIlinkCheckResourceInfo : NSObject
 {
     NSString *projectId;
     NSString *resourceName;

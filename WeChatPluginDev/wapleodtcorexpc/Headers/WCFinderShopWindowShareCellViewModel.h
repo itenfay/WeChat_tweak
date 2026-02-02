@@ -5,7 +5,7 @@
 
 @class AnyPromise, NSString, WCFinderLiveAudienceComodityLogReporter, WCFinderLiveDisplayWindowShareViewBuilder, WCFinderLiveShopWindowShareItem;
 
-@interface WCFinderShopWindowShareCellViewModel
+@interface WCFinderShopWindowShareCellViewModel : NSObject
 {
     WCFinderLiveDisplayWindowShareViewBuilder *_builder;
     WCFinderLiveShopWindowShareItem *_loadedItem;

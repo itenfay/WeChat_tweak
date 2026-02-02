@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCCreateNewGroupDemoViewController;
 @protocol WCGroupTagViewControllerDelegate;
 
-@interface WCGroupTagDemoViewController
+@interface WCGroupTagDemoViewController : NSObject
 {
     long long m_originPrivacy;
     long long m_currentPrivacy;

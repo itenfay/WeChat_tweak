@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedFlowView, WCFinderInteractiveSearchViewModel;
 
-@interface WCFinderInteractiveSearchViewController
+@interface WCFinderInteractiveSearchViewController : NSObject
 {
     CDUnknownBlockType _closeCallback;
     WCFinderInteractiveSearchViewModel *_viewModel;

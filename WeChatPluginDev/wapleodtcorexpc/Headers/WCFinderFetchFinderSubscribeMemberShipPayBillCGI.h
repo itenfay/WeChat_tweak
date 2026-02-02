@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderFetchFinderSubscribeMemberShipPayBillCGI
+@interface WCFinderFetchFinderSubscribeMemberShipPayBillCGI : NSObject
 {
     NSString *_finderUsername;
     unsigned long long _monthCount;

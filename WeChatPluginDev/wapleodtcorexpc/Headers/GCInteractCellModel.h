@@ -6,7 +6,7 @@
 @class GameCenterMsgSender, GameJumpInfo, NSArray, NSString;
 @protocol GCInteractCellDelegate;
 
-@interface GCInteractCellModel
+@interface GCInteractCellModel : NSObject
 {
     _Bool _isVoted;
     int _quickResponseFlag;

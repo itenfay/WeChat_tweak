@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderSearchGetHotWordListCgi
+@interface WCFinderSearchGetHotWordListCgi : NSObject
 {
     NSString *_searchRequestId;
     CDUnknownBlockType _successful;

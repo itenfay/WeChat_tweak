@@ -5,7 +5,7 @@
 
 @class CEmoticonUploadInfo, EmoticonUploader, NSMutableArray, NSString;
 
-@interface CEmoticonUploadMgr
+@interface CEmoticonUploadMgr : NSObject
 {
     unsigned int m_uiCurEventID;
     NSMutableArray *m_uploadInfoQueue;

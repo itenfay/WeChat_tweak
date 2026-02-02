@@ -5,7 +5,7 @@
 
 @class EAAccessoryManager, NSRunLoop, NSString;
 
-@interface BlueEAAdapter
+@interface BlueEAAdapter : NSObject
 {
     EAAccessoryManager *m_eaAdapter;
     NSRunLoop *m_runLoop;

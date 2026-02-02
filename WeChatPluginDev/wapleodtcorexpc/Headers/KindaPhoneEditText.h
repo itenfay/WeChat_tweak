@@ -5,7 +5,7 @@
 
 @class MMKEditTextOnTextChangedCallback, NSString, TPIDKeyboardView, WCPayPhoneTextItem;
 
-@interface KindaPhoneEditText
+@interface KindaPhoneEditText : NSObject
 {
     TPIDKeyboardView *keyboardView;
     MMKEditTextOnTextChangedCallback *m_callback;

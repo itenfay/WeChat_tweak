@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMCPLabel, MMFinderLiveReserveViewModel, MMPageSheetAdapter, MMUIButton, MMUILabel, NSMutableArray, NSString, UIButton, UIImageView, UIScrollView, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 
-@interface MMFinderLiveReservePageSheet
+@interface MMFinderLiveReservePageSheet : NSObject
 {
     CDUnknownBlockType _jsapiSuccessBlock;
     UIView *_backgroundView;

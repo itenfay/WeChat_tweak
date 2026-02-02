@@ -5,7 +5,7 @@
 
 @class ChatRoomToolMessageEventInfo, NSDictionary, NSMutableDictionary, NSString, WCGroupUndoneDatabase;
 
-@interface WCGroupUndoneMgr
+@interface WCGroupUndoneMgr : NSObject
 {
     ChatRoomToolMessageEventInfo *_checkingUndoneItem;
     NSMutableDictionary *_dicMsgRecord;

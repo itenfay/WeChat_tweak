@@ -6,7 +6,7 @@
 @class MBFileSpaceTraceLogic, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MBLocalFileStorageMgr
+@interface MBLocalFileStorageMgr : NSObject
 {
     MBFileSpaceTraceLogic *_usrFileTraceLogic;
     NSObject<OS_dispatch_queue> *_fileTraceQueue;

@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UIImageView, UILabel, UIView, WCMarqueeLabel;
 
-@interface WAMainFrameAudioCenterView_V4
+@interface WAMainFrameAudioCenterView_V4 : NSObject
 {
     MMUILabel *_mainTitle;
     UIView *_recentPlayArea;

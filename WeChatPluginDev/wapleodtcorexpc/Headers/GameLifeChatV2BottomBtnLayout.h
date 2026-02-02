@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GameLifeChatV2BottomBtnLayout
+@interface GameLifeChatV2BottomBtnLayout : NSObject
 {
     double _imgTitleMargin;
     GCLabelDynamicLayout *_btnLabelLayout;

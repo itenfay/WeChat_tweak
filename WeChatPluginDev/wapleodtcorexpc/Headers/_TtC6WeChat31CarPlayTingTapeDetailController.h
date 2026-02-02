@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31CarPlayTingTapeDetailController
+@interface _TtC6WeChat31CarPlayTingTapeDetailController : NSObject
 {
     MISSING_TYPE *playListLogic;
     MISSING_TYPE *pageIndex;

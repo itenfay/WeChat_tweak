@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FPManager
+@interface FPManager : NSObject
 {
     void * devToken;
     unsigned int fpcgi_count;

@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIButton, UIView;
 @protocol WCFinderMultiSelectedRedPacketSheetDelegate;
 
-@interface WCFinderMultiSelectedRedPacketSheet
+@interface WCFinderMultiSelectedRedPacketSheet : NSObject
 {
     id <WCFinderMultiSelectedRedPacketSheetDelegate> _sheetDelegate;
     UIView *_contentView;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface QBRouteIpListRsp
+@interface QBRouteIpListRsp : NSObject
 {
     BOOL jcev2_p_2_o_bProxy;
     int jcev2_p_4_o_iSubType;

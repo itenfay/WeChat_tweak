@@ -6,7 +6,7 @@
 @class NSString, NSURLRequest, UIScrollView;
 @protocol YYWebViewDelegate;
 
-@interface WKBaseTemplateWebView
+@interface WKBaseTemplateWebView : NSObject
 {
 }
 

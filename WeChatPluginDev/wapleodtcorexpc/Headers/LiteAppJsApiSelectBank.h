@@ -5,7 +5,7 @@
 
 @class NSString, WCPaySelectBankViewController, WCPayT2BCGetBankListCgi;
 
-@interface LiteAppJsApiSelectBank
+@interface LiteAppJsApiSelectBank : NSObject
 {
     WCPaySelectBankViewController *_selectBankVC;
     WCPayT2BCGetBankListCgi *_getBankListCgi;

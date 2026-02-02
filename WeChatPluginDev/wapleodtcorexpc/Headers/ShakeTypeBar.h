@@ -6,7 +6,7 @@
 @class MMUIButton;
 @protocol ShakeTypeBarDelegate;
 
-@interface ShakeTypeBar
+@interface ShakeTypeBar : NSObject
 {
     MMUIButton *m_shakePeopleBtn;
     MMUIButton *m_shakeMusicBtn;

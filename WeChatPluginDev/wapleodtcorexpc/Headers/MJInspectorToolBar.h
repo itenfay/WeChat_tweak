@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel;
 
-@interface MJInspectorToolBar
+@interface MJInspectorToolBar : NSObject
 {
     _Bool _canPassthroughGesture;
     CDUnknownBlockType _cancelBlock;

@@ -6,7 +6,7 @@
 @class CAGradientLayer, NSString, RichTextView, UIButton, UIImageView, UILabel, UIScrollView, UIView;
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface MMAuthorizeOverseasViewController
+@interface MMAuthorizeOverseasViewController : NSObject
 {
     id <MMAuthorizeViewControllerDelegate> _delegate;
     UIButton *_comfirmBtn;

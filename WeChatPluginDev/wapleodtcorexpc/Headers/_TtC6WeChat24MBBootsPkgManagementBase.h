@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat24MBBootsPkgManagementBase
+@interface _TtC6WeChat24MBBootsPkgManagementBase : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_enableDebug;
     MISSING_TYPE *$__lazy_storage_$_appConfig;

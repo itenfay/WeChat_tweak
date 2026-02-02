@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ECSTLTopBarReportItem
+@interface ECSTLTopBarReportItem : NSObject
 {
     _Bool _hasDotNotice;
     _Bool _isLogoCache;

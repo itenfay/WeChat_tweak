@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CBaseContact, MMTableViewInfo, NSString;
 @protocol GameLifeMsgChatInfoViewControllerDelegate;
 
-@interface GameLifeMsgChatInfoViewController
+@interface GameLifeMsgChatInfoViewController : NSObject
 {
     _Bool _isInBlackList;
     _Bool _isAssociateWithWxGame;

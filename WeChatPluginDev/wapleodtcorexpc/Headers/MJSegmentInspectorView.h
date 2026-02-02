@@ -5,7 +5,7 @@
 
 @class MJPublisherButton, MJSegmentInspectorViewModel, MMUIButton, MMUILabel, UIView;
 
-@interface MJSegmentInspectorView
+@interface MJSegmentInspectorView : NSObject
 {
     MJSegmentInspectorViewModel *_viewModel;
     UIView *_topBar;

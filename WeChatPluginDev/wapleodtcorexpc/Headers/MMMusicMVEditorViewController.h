@@ -6,7 +6,7 @@
 @class MMImagePreviewBrowserController, MMMusicEditVideoCellView, MMMusicEditorModeView, MMMusicLiveCGIMgr, MMMusicLiveLyricDisplayView, MMMusicMVEditorCardCell, MMMusicMVEditorCollectionView, MMMusicMVModel, MMMusicNoDotSelectItemDisplayView, MMMusicPostVideoAnimHelper, MMMusicPostVideoViewController, MMTimer, MMUIButton, MVImagePreviewControlCenter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIView;
 @protocol MMImagePreviewBrowserControllerDataSource, MMMusicMVEditorViewControllerDelegate;
 
-@interface MMMusicMVEditorViewController
+@interface MMMusicMVEditorViewController : NSObject
 {
     _Bool _seekSpecifyTimeFlag;
     _Bool _isEditVideoMode;

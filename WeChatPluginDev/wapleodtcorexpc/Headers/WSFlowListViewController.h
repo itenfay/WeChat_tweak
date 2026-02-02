@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UIView, WCFinderFeedListView, _TtC6WeChat15WSFlowListLogic, _TtC6WeChat21WSFlowListLiteAppCell, _TtC6WeChat24WSFlowListLiteAppAdapter;
 
-@interface WSFlowListViewController
+@interface WSFlowListViewController : NSObject
 {
     _Bool _hasLoadFirstLiteAppCell;
     _TtC6WeChat15WSFlowListLogic *_flowListLogic;

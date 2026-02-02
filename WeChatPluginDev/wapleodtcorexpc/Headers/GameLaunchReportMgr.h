@@ -5,7 +5,7 @@
 
 @class CRReportAPIClient, NSMutableDictionary, NSString;
 
-@interface GameLaunchReportMgr
+@interface GameLaunchReportMgr : NSObject
 {
     CRReportAPIClient *_reportClient;
     NSMutableDictionary *_reportModelDict;

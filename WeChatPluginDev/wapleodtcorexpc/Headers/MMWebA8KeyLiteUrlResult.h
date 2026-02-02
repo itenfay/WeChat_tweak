@@ -5,7 +5,7 @@
 
 @class MMWebOptimizationAuthLiteControlData, NSDictionary, NSString;
 
-@interface MMWebA8KeyLiteUrlResult
+@interface MMWebA8KeyLiteUrlResult : NSObject
 {
     unsigned int _scene;
     long long _subBizScene;

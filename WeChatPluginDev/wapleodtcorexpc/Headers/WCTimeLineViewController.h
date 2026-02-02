@@ -6,7 +6,7 @@
 @class CContact, CEmoticonWrap, MMHeadImageView, MMTipsViewController, MMUIButton, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SharePreConfirmSheetView, SharePreConfirmView, TLProfileDragAnimateHelper, TLProfileExpandableHeaderView, TLProfileModel, UIButton, UIPanGestureRecognizer, UIView, WCADPageWrap, WCAdvertiseActionFloatView, WCAdvertiseFeedbackBaseView, WCCommentEmotionFloatView, WCCoverActionReporter, WCDataItem, WCFinderSnSShareLiveLogicController, WCListHeaderView, WCMomentsPostReportSession, WCMomentsShareScopeMgr, WCMomentsTemplateShareInfo, WCMomentsTigerReporter, WCOperateFloatView, WCPasteTextLengthLogic, WCPlainTextTipFullScreenView, WCScrollViewMonitor, WCTimeLineFooterView, WCTimeLineHeaderView, WCTimeLineVideoPreloadMgr, WCTimelineDeleteDataItemWrap, WCTimelineFPSLabel, WCTimelineFPSMonitor, WCTogetherTailReporter;
 @protocol WCTimeLineViewControllerDelegate;
 
-@interface WCTimeLineViewController
+@interface WCTimeLineViewController : NSObject
 {
     _Bool m_isReflashingHead;
     _Bool m_isDelayStopFooterLoading;

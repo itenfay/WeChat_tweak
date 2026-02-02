@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentHalfRandomCardRotateAnimInfo
+@interface WCCanvasComponentHalfRandomCardRotateAnimInfo : NSObject
 {
     NSString *_animationImg;
     double _imgWidth;

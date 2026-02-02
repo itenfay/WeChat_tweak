@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WAAppPackageInfo, WADynamicPageInfo, WANativeAppMsgInfo, WAScreenVideoInfo, WAUpdatableMsgInfo, WAVideoPageInfo;
 
-@interface WAAppMsgItem
+@interface WAAppMsgItem : NSObject
 {
     _Bool _isPrivateMessage;
     _Bool _disableForward;

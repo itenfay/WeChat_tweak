@@ -6,7 +6,7 @@
 @class ContactsDataLogic, MMTableView, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NewContactsSearchPanelView, UIBarButtonItem, UIButton, UIView;
 @protocol WCRedEnvelopesMultiSelectContactsViewControllerDelegate;
 
-@interface WCRedEnvelopesMultiSelectContactsViewController
+@interface WCRedEnvelopesMultiSelectContactsViewController : NSObject
 {
     id <WCRedEnvelopesMultiSelectContactsViewControllerDelegate> m_delegate;
     MMTableView *m_tableView;

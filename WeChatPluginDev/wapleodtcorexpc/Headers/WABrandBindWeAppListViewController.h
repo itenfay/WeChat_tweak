@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UILabel, UITableView, UIView;
 
-@interface WABrandBindWeAppListViewController
+@interface WABrandBindWeAppListViewController : NSObject
 {
     UIView *_contentHeaderView;
     UILabel *_contentLabel;

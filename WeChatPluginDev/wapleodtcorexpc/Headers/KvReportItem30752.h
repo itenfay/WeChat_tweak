@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem30752
+@interface KvReportItem30752 : NSObject
 {
     _Bool _hasNewMsg_25;
     unsigned int _scene_21;

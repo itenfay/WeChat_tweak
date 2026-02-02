@@ -5,7 +5,7 @@
 
 @class MMLiteAppView;
 
-@interface WCFinderPremovieAdLiteAppHelper
+@interface WCFinderPremovieAdLiteAppHelper : NSObject
 {
     _Bool _isReadyToShow;
     MMLiteAppView *_liteAppView;

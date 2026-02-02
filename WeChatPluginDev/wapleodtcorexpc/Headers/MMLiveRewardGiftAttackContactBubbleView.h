@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMCPLabel, MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMUILabel, NSArray, NSIndexPath, UIImageView;
 
-@interface MMLiveRewardGiftAttackContactBubbleView
+@interface MMLiveRewardGiftAttackContactBubbleView : NSObject
 {
     CDUnknownBlockType _tapAction;
     MMFinderLiveRewardGiftItem *_giftItem;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCCardCDNDownloadHelper;
 
-@interface WCGiftCardMgr
+@interface WCGiftCardMgr : NSObject
 {
     NSMutableDictionary *_successDic;
     NSMutableDictionary *_failureDic;

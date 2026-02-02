@@ -6,7 +6,7 @@
 @class WCPaySetUserExInfoCgiRequest;
 @protocol WCPaySetUserExInfoCgiDelegate;
 
-@interface WCPaySetUserExInfoCgi
+@interface WCPaySetUserExInfoCgi : NSObject
 {
     WCPaySetUserExInfoCgiRequest *_cgiRequest;
 }

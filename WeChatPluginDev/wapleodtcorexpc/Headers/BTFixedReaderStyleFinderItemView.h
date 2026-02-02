@@ -5,7 +5,7 @@
 
 @class BTFinderRecommendRedPacketView, CAGradientLayer;
 
-@interface BTFixedReaderStyleFinderItemView
+@interface BTFixedReaderStyleFinderItemView : NSObject
 {
     BTFinderRecommendRedPacketView *_redPacketView;
     CAGradientLayer *_maskLayer;

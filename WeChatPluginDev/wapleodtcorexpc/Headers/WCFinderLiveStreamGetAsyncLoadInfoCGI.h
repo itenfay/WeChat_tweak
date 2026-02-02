@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderLiveStreamGetAsyncLoadInfoCGI
+@interface WCFinderLiveStreamGetAsyncLoadInfoCGI : NSObject
 {
     int _triggerScene;
     long long _reportScene;

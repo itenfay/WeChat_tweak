@@ -5,7 +5,7 @@
 
 @class CBPeripheral, NSMutableDictionary, NSNumber, NSString, WABlueToothDeviceAdData;
 
-@interface WABlueToothDevice
+@interface WABlueToothDevice : NSObject
 {
     NSMutableDictionary *m_services;
     NSMutableDictionary *m_characteristics;

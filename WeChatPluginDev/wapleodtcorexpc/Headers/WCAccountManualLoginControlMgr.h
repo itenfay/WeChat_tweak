@@ -5,7 +5,7 @@
 
 @class UIViewController, UIWindow;
 
-@interface WCAccountManualLoginControlMgr
+@interface WCAccountManualLoginControlMgr : NSObject
 {
     UIViewController *m_firstViewController;
     UIWindow *m_window;

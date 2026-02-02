@@ -5,7 +5,7 @@
 
 @class ImageController, MMInputToolView, MMLoadingView, MMTableView, MassSendHighlightedView, NSArray, NSMutableArray, NSString, RecordController, StreamVoiceInputViewController, UIBarButtonItem, UIView, UIWindow;
 
-@interface MMMassSendWriteMessageViewController
+@interface MMMassSendWriteMessageViewController : NSObject
 {
     MMTableView *_tableView;
     MassSendHighlightedView *_receiverView;

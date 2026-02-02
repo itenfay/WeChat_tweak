@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, TrustedFriendsCgi;
 @protocol TrustedFriendsLogicDelegate;
 
-@interface TrustedFriendsLogic
+@interface TrustedFriendsLogic : NSObject
 {
     _Bool _m_isListHadChanged;
     unsigned int _m_maxTrustedFriendCount;

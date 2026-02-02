@@ -5,7 +5,7 @@
 
 @class NSString, WXStateJumpInfo;
 
-@interface WXStateSceneDataObject
+@interface WXStateSceneDataObject : NSObject
 {
     NSString *_stateId;
     NSString *_stateTitle;

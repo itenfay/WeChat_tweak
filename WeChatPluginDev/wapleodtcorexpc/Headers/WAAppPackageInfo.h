@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppPackageInfo
+@interface WAAppPackageInfo : NSObject
 {
     unsigned int _type;
     NSString *_md5;

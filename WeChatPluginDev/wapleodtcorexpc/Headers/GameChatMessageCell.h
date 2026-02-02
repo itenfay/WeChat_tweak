@@ -5,7 +5,7 @@
 
 @class MMBadgeView, MMWebImageView, UILabel;
 
-@interface GameChatMessageCell
+@interface GameChatMessageCell : NSObject
 {
     MMWebImageView *_iconImgView;
     UILabel *_bottomLabel;

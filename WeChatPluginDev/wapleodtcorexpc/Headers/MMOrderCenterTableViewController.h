@@ -6,7 +6,7 @@
 @class MMOrderCenterTableView, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView, WCFinderRefreshTableFooterView;
 @protocol MMOrderCenterOrderDataProvider, MMOrderCenterReporter;
 
-@interface MMOrderCenterTableViewController
+@interface MMOrderCenterTableViewController : NSObject
 {
     _Bool _loading;
     MMOrderCenterTableView *_tableView;

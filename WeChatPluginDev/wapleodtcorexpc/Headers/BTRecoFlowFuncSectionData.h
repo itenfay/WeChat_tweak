@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTRecoFlowFuncSectionData
+@interface BTRecoFlowFuncSectionData : NSObject
 {
     unsigned long long _funcType;
     NSString *_flowHeaderTitle;

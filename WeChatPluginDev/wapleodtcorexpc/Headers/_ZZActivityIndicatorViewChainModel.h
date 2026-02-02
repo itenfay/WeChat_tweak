@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _ZZActivityIndicatorViewChainModel
+@interface _ZZActivityIndicatorViewChainModel : NSObject
 {
 }
 

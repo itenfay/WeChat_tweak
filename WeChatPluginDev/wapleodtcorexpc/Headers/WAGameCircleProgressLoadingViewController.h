@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIScreenEdgePanGestureRecognizer, WAGameRollProgressView, WAMenuPopInteractiveTransition, WCTagsView;
 
-@interface WAGameCircleProgressLoadingViewController
+@interface WAGameCircleProgressLoadingViewController : NSObject
 {
     _Bool _hasCustomImgReady;
     _Bool _hasSlashReady;

@@ -5,7 +5,7 @@
 
 @class WCCanvasComponentReportVideoFloatAreaButtonInfo;
 
-@interface WCCanvasComponentReportVideoFloatAreaInfo
+@interface WCCanvasComponentReportVideoFloatAreaInfo : NSObject
 {
     unsigned int _exposureCount;
     unsigned int _clickCount;

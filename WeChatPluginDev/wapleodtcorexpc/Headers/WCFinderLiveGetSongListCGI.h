@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSongItem;
 
-@interface WCFinderLiveGetSongListCGI
+@interface WCFinderLiveGetSongListCGI : NSObject
 {
     _Bool _isAudience;
     CDUnknownBlockType _successBlock;

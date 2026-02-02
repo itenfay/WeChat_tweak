@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString, ScanGoodsJSHandler, UIView, WSTemplateLogicController, WSWebViewPluginScheduler;
 
-@interface ScanGoodsHalfScreenViewController
+@interface ScanGoodsHalfScreenViewController : NSObject
 {
     NSString *_reqKey;
     WSTemplateLogicController *m_logicController;

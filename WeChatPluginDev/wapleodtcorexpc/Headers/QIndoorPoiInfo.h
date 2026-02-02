@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QIndoorPoiInfo
+@interface QIndoorPoiInfo : NSObject
 {
     NSString *_levelName;
     NSString *_buildingGUID;

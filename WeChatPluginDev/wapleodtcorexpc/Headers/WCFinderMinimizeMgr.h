@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MiniAudioTaskContentView, NSDictionary, NSHashTable, NSString, UIImage, WCFinderMinimizeFloatingView, WCFinderMinimizeLogic, WCFinderMinimizeSilenceMonitor, WCFinderTransaction;
 
-@interface WCFinderMinimizeMgr
+@interface WCFinderMinimizeMgr : NSObject
 {
     _Bool _isPresentingPage;
     _Bool _limitModeOn;

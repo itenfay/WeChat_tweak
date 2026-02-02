@@ -6,7 +6,7 @@
 @class MMPatternLockViewController, MMUINavigationController, NSString;
 @protocol MMPatternLockLogicDelegate;
 
-@interface MMPatternLockLogic
+@interface MMPatternLockLogic : NSObject
 {
     _Bool _isNeedOut2BizMain;
     _Bool _isPresent;

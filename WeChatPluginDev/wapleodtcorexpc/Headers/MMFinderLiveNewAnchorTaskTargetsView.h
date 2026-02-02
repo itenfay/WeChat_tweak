@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveNewAnchorTaskViewModel, NSString;
 
-@interface MMFinderLiveNewAnchorTaskTargetsView
+@interface MMFinderLiveNewAnchorTaskTargetsView : NSObject
 {
     _Bool _isMultiStage;
     CDUnknownBlockType _actionBlock;

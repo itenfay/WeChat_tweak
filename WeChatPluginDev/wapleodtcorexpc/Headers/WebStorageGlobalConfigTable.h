@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebStorageGlobalConfigTable
+@interface WebStorageGlobalConfigTable : NSObject
 {
     unsigned int _realWeight;
     NSString *_appId;

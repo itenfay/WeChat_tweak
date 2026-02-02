@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveCastMoreViewItem
+@interface MMLiveCastMoreViewItem : NSObject
 {
     _Bool _isSelectable;
     NSString *_richTextTitle;

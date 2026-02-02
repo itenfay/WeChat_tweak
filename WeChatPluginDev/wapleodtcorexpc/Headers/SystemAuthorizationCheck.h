@@ -5,7 +5,7 @@
 
 @class CLLocationManager, LocationAuthorizationInfo, NSString;
 
-@interface SystemAuthorizationCheck
+@interface SystemAuthorizationCheck : NSObject
 {
     CLLocationManager *_locationManager;
     LocationAuthorizationInfo *_locationAuthorizationInfo;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MJTemplateMoviePlayerOperation_StopPlaying
+@interface MJTemplateMoviePlayerOperation_StopPlaying : NSObject
 {
 }
 

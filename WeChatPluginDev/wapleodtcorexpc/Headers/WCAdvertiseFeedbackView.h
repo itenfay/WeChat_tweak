@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, MMUIView, NSMutableArray, NSString, UIButton, WCDataItem;
 
-@interface WCAdvertiseFeedbackView
+@interface WCAdvertiseFeedbackView : NSObject
 {
     _Bool _hasDislikeInfo;
     _Bool _onAnimation;

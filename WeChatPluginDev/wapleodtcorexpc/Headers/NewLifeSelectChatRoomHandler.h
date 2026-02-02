@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableSet, NSString, SessionSelectController;
 
-@interface NewLifeSelectChatRoomHandler
+@interface NewLifeSelectChatRoomHandler : NSObject
 {
     _Bool _confirmed;
     NSMutableArray *_selectChatRoomList;

@@ -6,7 +6,7 @@
 @class FinderLiveContact, MMFinderLiveLiveRoleSignView, MMUIImageView, MMUILabel, NSString, WCFinderHeadImageView;
 @protocol MMFinderLiveGloryTopItemViewDelegate;
 
-@interface MMFinderLiveGloryTopItemView
+@interface MMFinderLiveGloryTopItemView : NSObject
 {
     _Bool _alwaysDark;
     id <MMFinderLiveGloryTopItemViewDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class MMEmoticonView, NSString, UIImageView, WCFinderAnimationLoadingView, WCFinderComment;
 
-@interface WCFinderCommentEmoticonView
+@interface WCFinderCommentEmoticonView : NSObject
 {
     MMEmoticonView *_emoticonView;
     UIImageView *_emptyTipsView;

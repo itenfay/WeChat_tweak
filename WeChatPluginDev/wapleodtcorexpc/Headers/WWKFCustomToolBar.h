@@ -6,7 +6,7 @@
 @class CAGradientLayer, NSMutableArray, NSString, UICollectionView;
 @protocol WWKFCustomToolBarDelegate;
 
-@interface WWKFCustomToolBar
+@interface WWKFCustomToolBar : NSObject
 {
     NSMutableArray *m_arrHadExposureToolBarItemTitile;
     id <WWKFCustomToolBarDelegate> _delegate;

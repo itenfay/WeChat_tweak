@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSNumber, NSString, WAJSCoreService, WAOpenGLView;
 
-@interface WAWebViewPlugin_WebGLCanvas
+@interface WAWebViewPlugin_WebGLCanvas : NSObject
 {
     NSNumber *_oldScrollEnabled;
     WAJSCoreService *_service;

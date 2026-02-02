@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveKtvGetMusicBoardTypeListCGI
+@interface WCFinderLiveKtvGetMusicBoardTypeListCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failureBlock;

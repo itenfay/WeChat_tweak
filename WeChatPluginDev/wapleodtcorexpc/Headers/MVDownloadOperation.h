@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MVDownloadOperation
+@interface MVDownloadOperation : NSObject
 {
     NSString *_requestId;
     NSString *_uuid;

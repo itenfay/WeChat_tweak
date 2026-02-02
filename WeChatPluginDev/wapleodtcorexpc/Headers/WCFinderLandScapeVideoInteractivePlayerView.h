@@ -6,7 +6,7 @@
 @class CAGradientLayer, NSString, WCFinderAnimationLoadingView, WCFinderBlurBubbleView, WCFinderFeedContentVM, WCFinderLandScapePlayCompleteTipsView, WCFinderLandScapePlayerParam, WCFinderLandScapeVideoInteractivePlayerViewInitParams, WCFinderLandScapeVideoProgressDisplayView, WCFinderNormalProgressBar, WCFinderPanMaskView, WCFinderPlaybackSpeedView, WCFinderSimplePlayerView;
 @protocol WCFinderLandScapeVideoInteractivePlayerViewDelegate;
 
-@interface WCFinderLandScapeVideoInteractivePlayerView
+@interface WCFinderLandScapeVideoInteractivePlayerView : NSObject
 {
     id <WCFinderLandScapeVideoInteractivePlayerViewDelegate> _delegate;
     WCFinderSimplePlayerView *_playerView;

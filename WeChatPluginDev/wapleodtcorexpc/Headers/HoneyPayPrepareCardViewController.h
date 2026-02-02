@@ -6,7 +6,7 @@
 @class HoneyPayPrepareCardView, NSString, RichTextView, UIButton, UITextField, WCPayNavigationBarBottomBanner, WCPayNoticeItemView;
 @protocol HoneyPayPrepareCardViewControllerDelegate;
 
-@interface HoneyPayPrepareCardViewController
+@interface HoneyPayPrepareCardViewController : NSObject
 {
     id <HoneyPayPrepareCardViewControllerDelegate> _delegate;
     UIButton *_confirmButton;

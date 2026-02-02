@@ -6,7 +6,7 @@
 @class MMTableView, WCPayNoticeItemView;
 @protocol WCPayQRCodeRewardPayerDetailViewControllerDelegate;
 
-@interface WCPayQRCodeRewardPayerDetailViewController
+@interface WCPayQRCodeRewardPayerDetailViewController : NSObject
 {
     id <WCPayQRCodeRewardPayerDetailViewControllerDelegate> _delegate;
     MMTableView *_tableView;

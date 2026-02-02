@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveTaskId, MMUIButton, MMUILabel, NSNumber, NSString, WCTableViewManager;
 @protocol MMFinderLiveTrumpetSelectSheetDelegate;
 
-@interface MMFinderLiveTrumpetSelectSheet
+@interface MMFinderLiveTrumpetSelectSheet : NSObject
 {
     CDUnknownBlockType _trumpetSelectDidDoneBlock;
     MMFinderLiveTaskId *_taskId;

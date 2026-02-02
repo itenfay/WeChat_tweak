@@ -5,7 +5,7 @@
 
 @class AttributeLabel, MMHeadImageView, UIView;
 
-@interface EnterpriseSearchContactCell
+@interface EnterpriseSearchContactCell : NSObject
 {
     MMHeadImageView *_headImageView;
     AttributeLabel *_displayNameLabel;

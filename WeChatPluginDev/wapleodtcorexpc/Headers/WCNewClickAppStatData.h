@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCNewClickAppStatData
+@interface WCNewClickAppStatData : NSObject
 {
     unsigned int _firstEnterTS;
     unsigned int _lastQuitTS;

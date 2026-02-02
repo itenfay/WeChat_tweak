@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSArray, NSString, UIImageView, UIView;
 
-@interface MassSendConfirmSheetView
+@interface MassSendConfirmSheetView : NSObject
 {
     CDUnknownBlockType _cancelBlock;
     CDUnknownBlockType _confirmBlock;

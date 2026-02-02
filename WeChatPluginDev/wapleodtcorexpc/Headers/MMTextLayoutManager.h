@@ -5,7 +5,7 @@
 
 @class MMTextLayoutABKey, NSMutableSet, NSString;
 
-@interface MMTextLayoutManager
+@interface MMTextLayoutManager : NSObject
 {
     unsigned int _os;
     MMTextLayoutABKey *_abkey;

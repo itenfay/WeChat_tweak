@@ -6,7 +6,7 @@
 @class MMCommonPickerView, NSArray, NSString, PickerTitleBar, PickerToolBar, UIButton, UIView;
 @protocol MMCommonActionSheetPickerDelegate;
 
-@interface MMCommonActionSheetPicker
+@interface MMCommonActionSheetPicker : NSObject
 {
     _Bool _shouldManualDismiss;
     _Bool _showInView;

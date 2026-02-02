@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, RingBackAddToTingSheetView, RingToneHistoryModel, RingToneMixPlayer, RingToneRecommendReporter_23604, UILabel, WCTimeLineFooterView;
 
-@interface RingToneHistoryViewController
+@interface RingToneHistoryViewController : NSObject
 {
     _Bool _isFetchingData;
     unsigned long long _setType;

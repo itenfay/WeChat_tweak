@@ -5,7 +5,7 @@
 
 @class ExpandableTextView, MMUIActivityIndicatorView, NSString, RichTextView, TextTranslateCgi, UIButton, UIImageView, UILabel, UIScrollView, UIView;
 
-@interface TextTranslatePageSheet
+@interface TextTranslatePageSheet : NSObject
 {
     _Bool _disableLongPressMenu;
     UIView *_containerView;

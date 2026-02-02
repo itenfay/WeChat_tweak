@@ -6,7 +6,7 @@
 @class MemoryMappedKV, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCSiriMgr
+@interface WCSiriMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *m_updateContactQueue;
     _Bool _needRefreshSessionKey;

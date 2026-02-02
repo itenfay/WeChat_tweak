@@ -5,7 +5,7 @@
 
 @class EmoticonCustomCreateLogic, EmoticonCustomManageAddLogic, EmoticonCustomManageCollectionLayout, EmoticonCustomManageCollectionView, EmoticonCustomManageDataLogic, EmoticonCustomManagePopInteractiveTransition, EmoticonCustomManageSwipeSelectGestureRecognizer, EmoticonCustomSortBGView, EmoticonCustomSortInsertBrickView, EmoticonLoadMoreFooterView, NSString, UIButton, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView;
 
-@interface EmoticonCustomManageViewController
+@interface EmoticonCustomManageViewController : NSObject
 {
     _Bool _isConflictViewClosed;
     _Bool _shouldShowConflictView;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface FavLocationItem
+@interface FavLocationItem : NSObject
 {
     _Bool _isFromPoiList;
     double _lng;

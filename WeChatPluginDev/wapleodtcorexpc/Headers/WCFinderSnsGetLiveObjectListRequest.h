@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray;
 
-@interface WCFinderSnsGetLiveObjectListRequest
+@interface WCFinderSnsGetLiveObjectListRequest : NSObject
 {
     NSData *_lastBuffer;
     CDUnknownBlockType _successful;

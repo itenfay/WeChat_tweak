@@ -5,7 +5,7 @@
 
 @class MMUIView;
 
-@interface MJPageViewCursorView
+@interface MJPageViewCursorView : NSObject
 {
     MMUIView *_cursor;
 }

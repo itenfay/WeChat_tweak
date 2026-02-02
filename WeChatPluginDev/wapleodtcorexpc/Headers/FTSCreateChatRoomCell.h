@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface FTSCreateChatRoomCell
+@interface FTSCreateChatRoomCell : NSObject
 {
     UIImageView *_imageView;
     MMUILabel *_intentLabel;

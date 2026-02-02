@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AUAudioDevice, AVVideoDevice, CMMotionManager, MMTimer, NSArray, NSMutableArray, NSRecursiveLock, NSString, VOIPComponent, VOIPDialData, VOIPKernelLog, VOIPVideoRender, XImageContext, XImageViewRenderer;
 @protocol IVOIPVideoDeviceDelegate;
 
-@interface VOIPMgr
+@interface VOIPMgr : NSObject
 {
     _Bool mIsInterrupted;
     _Bool mIsGotRelayData;

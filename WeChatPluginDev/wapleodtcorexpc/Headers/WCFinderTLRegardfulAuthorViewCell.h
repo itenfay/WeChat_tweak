@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UILabel, UIView, WCFinderHeadImageView, WCFinderTLRegardfulAuthorCellViewModel;
 
-@interface WCFinderTLRegardfulAuthorViewCell
+@interface WCFinderTLRegardfulAuthorViewCell : NSObject
 {
     WCFinderTLRegardfulAuthorCellViewModel *_viewModel;
     CDUnknownBlockType _exposeCallback;

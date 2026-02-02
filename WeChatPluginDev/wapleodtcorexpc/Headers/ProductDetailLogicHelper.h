@@ -6,7 +6,7 @@
 @class LocationRetriever, NSString, ScanProductItem;
 @protocol ProductDetailLogicHelperDelegate;
 
-@interface ProductDetailLogicHelper
+@interface ProductDetailLogicHelper : NSObject
 {
     LocationRetriever *m_locationRetriver;
     ScanProductItem *m_productItem;

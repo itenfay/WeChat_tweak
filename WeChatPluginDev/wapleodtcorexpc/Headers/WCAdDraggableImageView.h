@@ -6,7 +6,7 @@
 @class AdExposureTimerHelper, UIPanGestureRecognizer, WCAdFullCardDragImageGestureInfo, WCAdURLImageView;
 @protocol WCAdDraggableImageViewDelegate;
 
-@interface WCAdDraggableImageView
+@interface WCAdDraggableImageView : NSObject
 {
     _Bool _bOutFrameMode;
     _Bool _isAnimating;

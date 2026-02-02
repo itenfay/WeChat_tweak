@@ -5,7 +5,7 @@
 
 @class WAMediaPreviewViewController;
 
-@interface WAJSEventHandler_previewMedia
+@interface WAJSEventHandler_previewMedia : NSObject
 {
     WAMediaPreviewViewController *m_mediaViewController;
 }

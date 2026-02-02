@@ -5,7 +5,7 @@
 
 @class UIButton, UILabel;
 
-@interface MMFinderLiveMultiCouponSenderView
+@interface MMFinderLiveMultiCouponSenderView : NSObject
 {
     UIButton *_actionButton;
     UILabel *_countLabel;

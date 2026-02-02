@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnniversaryDecorationViewModel, MMFinderLiveClarityHeaderButton, MMFinderLiveFansGroupSignView, MMFinderLiveHeaderFollowButton, MMFinderLiveMusicHeaderButton, MMFinderLiveTask, MMUIButton, MMUIImageView, MMUILabel, MMWebImageView, NSString, PAGView, WCFinderContact, WCFinderHeadImageView, WCLiveBlurButton;
 
-@interface MMFinderLiveHeaderView
+@interface MMFinderLiveHeaderView : NSObject
 {
     _Bool _hideActionButton;
     _Bool _hideCloseButton;

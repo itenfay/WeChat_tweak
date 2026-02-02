@@ -5,7 +5,7 @@
 
 @protocol WCRedEnvelopesDeleteResourceCgiDelegate;
 
-@interface WCRedEnvelopesDeleteResourceCgi
+@interface WCRedEnvelopesDeleteResourceCgi : NSObject
 {
     id <WCRedEnvelopesDeleteResourceCgiDelegate> m_delegate;
 }

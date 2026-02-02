@@ -5,7 +5,7 @@
 
 @class MPCommentReply;
 
-@interface MPCommentReplyCellViewModel
+@interface MPCommentReplyCellViewModel : NSObject
 {
     _Bool _isPreReplyFromSameAuthor;
     MPCommentReply *_commentReply;

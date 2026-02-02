@@ -6,7 +6,7 @@
 @class NSDateFormatter, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCMetricKitDiagnosticMgr
+@interface WCMetricKitDiagnosticMgr : NSObject
 {
     _Bool _crashShouldReport;
     _Bool _hangShouldReport;

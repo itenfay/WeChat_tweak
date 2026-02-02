@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, UILabel;
 
-@interface MMShowHelpViewController
+@interface MMShowHelpViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     NSString *m_userName;

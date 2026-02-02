@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface StrongNotificationDataPB
+@interface StrongNotificationDataPB : NSObject
 {
     NSMutableDictionary *_configDic;
     NSMutableArray *_itemAndMessageList;

@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, NSString, UIButton, UIImageView;
 
-@interface MMHeadImageAnnotationView
+@interface MMHeadImageAnnotationView : NSObject
 {
     UIImageView *_annotationView;
     MMHeadImageView *_headImageView;

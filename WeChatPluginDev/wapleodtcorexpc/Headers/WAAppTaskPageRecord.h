@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WAAppTaskPageRecord
+@interface WAAppTaskPageRecord : NSObject
 {
     _Bool _isRecoverReloaded;
     _Bool _hasHtmlWeb;

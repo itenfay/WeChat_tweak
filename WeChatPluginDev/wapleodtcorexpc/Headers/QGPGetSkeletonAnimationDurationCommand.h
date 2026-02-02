@@ -5,7 +5,7 @@
 
 @class QGPIndex;
 
-@interface QGPGetSkeletonAnimationDurationCommand
+@interface QGPGetSkeletonAnimationDurationCommand : NSObject
 {
     QGPIndex *_params;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, VoicePrintVerifyLogic, WCAccountBaseControlLogic, WCAccountLoginLastUserViewController, WCAccountManualAuthControlLogic, WCAccountVerifyCodeHandler;
 
-@interface WCAccountLastUserLoginControlLogic
+@interface WCAccountLastUserLoginControlLogic : NSObject
 {
     _Bool m_bFromLogout;
     unsigned int m_uiPwdErrCount;

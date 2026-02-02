@@ -6,7 +6,7 @@
 @class EnterpriseMemberViewItem;
 @protocol EnterpriseMemberViewDelegate;
 
-@interface EnterpriseMemberView
+@interface EnterpriseMemberView : NSObject
 {
     EnterpriseMemberViewItem *_viewItem;
     id <EnterpriseMemberViewDelegate> delegate;

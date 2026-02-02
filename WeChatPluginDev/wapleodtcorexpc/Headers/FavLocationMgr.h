@@ -5,7 +5,7 @@
 
 @class FavLocationDB, NSString;
 
-@interface FavLocationMgr
+@interface FavLocationMgr : NSObject
 {
     _Bool _isRunningReverse;
     FavLocationDB *_locationDB;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCStoryInteractiveHeatCgiObj
+@interface WCStoryInteractiveHeatCgiObj : NSObject
 {
     CDUnknownBlockType _dbSyncBlock;
     CDUnknownBlockType _successBlcok;

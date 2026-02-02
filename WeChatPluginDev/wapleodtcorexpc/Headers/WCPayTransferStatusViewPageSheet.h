@@ -5,7 +5,7 @@
 
 @class NSString, TipsInfo, UIView;
 
-@interface WCPayTransferStatusViewPageSheet
+@interface WCPayTransferStatusViewPageSheet : NSObject
 {
     UIView *_tipsContainerView;
     TipsInfo *_viewData;

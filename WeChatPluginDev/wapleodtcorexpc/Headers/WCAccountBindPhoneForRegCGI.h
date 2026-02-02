@@ -6,7 +6,7 @@
 @class NSNumber, NSString;
 @protocol WCAccountBindPhoneForRegCGIDelegate;
 
-@interface WCAccountBindPhoneForRegCGI
+@interface WCAccountBindPhoneForRegCGI : NSObject
 {
     id <WCAccountBindPhoneForRegCGIDelegate> _delegate;
     int _accountRegMode;

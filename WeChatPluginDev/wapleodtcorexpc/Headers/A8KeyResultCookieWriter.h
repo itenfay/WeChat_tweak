@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSHTTPCookie, NSString, UIView;
 
-@interface A8KeyResultCookieWriter
+@interface A8KeyResultCookieWriter : NSObject
 {
     NSString *_domain;
     UIView *_webView;

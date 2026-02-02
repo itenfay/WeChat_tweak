@@ -6,7 +6,7 @@
 @class CgiF2FDynamicCodeResp, MMHeadImageView, MMTimer, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIView, WCPayF2FDynamicCodeCgi, WCPayWebImageView;
 @protocol WCPayF2FMiddleViewControllerDelegate;
 
-@interface WCPayF2FMiddleViewController
+@interface WCPayF2FMiddleViewController : NSObject
 {
     unsigned int _m_amount;
     id <WCPayF2FMiddleViewControllerDelegate> _m_delegate;

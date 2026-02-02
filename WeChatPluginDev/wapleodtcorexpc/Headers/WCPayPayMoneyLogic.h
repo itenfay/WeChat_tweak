@@ -6,7 +6,7 @@
 @class ABTestItem, CgiF2FPaySucPageResp, DrawLotteryResponse, ExposureInfo, ExposureInfoModifyResponse, GetLotteryResponse, LocationRetriever, MMLoadingView, MMWebViewController, NSCache, NSString, UIView, WCPayAddPayCardLogic, WCPayAvaliablePayCardListView, WCPayCancelPayCgi, WCPayCustomModalView, WCPayDrawLotteryCgi, WCPayF2FDrawLotteryCgi, WCPayF2FGetLotteryCgi, WCPayF2FModifyExposureCgi, WCPayF2FPaySucPageCgi, WCPayFollowCardBDMchCgi, WCPayGenDigitalCertCgi, WCPayGetLotteryCgi, WCPayJumpRemindControlLogic, WCPayModifyExposureCgi, WCPayOverseasCardTipView, WCPayPayResponseRetryInfo, WCPaySetUserExInfoCgi;
 @protocol WCPayPayMoneyLogicDelegate;
 
-@interface WCPayPayMoneyLogic
+@interface WCPayPayMoneyLogic : NSObject
 {
     id <WCPayPayMoneyLogicDelegate> m_payMoneyLogicDelegate;
     WCPayOverseasCardTipView *m_overseasCardTipView;

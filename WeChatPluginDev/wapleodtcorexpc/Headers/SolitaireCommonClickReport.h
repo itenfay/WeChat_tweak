@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface SolitaireCommonClickReport
+@interface SolitaireCommonClickReport : NSObject
 {
     unsigned long long _clickType;
     unsigned long long _expandType;

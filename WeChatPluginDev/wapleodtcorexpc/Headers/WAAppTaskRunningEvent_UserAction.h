@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAAppTaskRunningEvent_UserAction
+@interface WAAppTaskRunningEvent_UserAction : NSObject
 {
     unsigned long long _action;
 }

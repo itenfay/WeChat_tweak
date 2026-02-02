@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceRankAddFocusMgr
+@interface DeviceRankAddFocusMgr : NSObject
 {
 }
 

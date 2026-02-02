@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLoadingView, WCTopicJumpInfo;
 
-@interface WCTopicService
+@interface WCTopicService : NSObject
 {
     _Bool _isAvaliableForTextFeaturesInChat;
     _Bool _isAvaliableForTextFeaturesInTimeline;

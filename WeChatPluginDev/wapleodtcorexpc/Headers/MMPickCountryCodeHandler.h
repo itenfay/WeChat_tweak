@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMPickCountryCodeHandler
+@interface MMPickCountryCodeHandler : NSObject
 {
 }
 

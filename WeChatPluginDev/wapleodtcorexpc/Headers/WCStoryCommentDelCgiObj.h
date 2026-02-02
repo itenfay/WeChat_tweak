@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCStoryComment;
 
-@interface WCStoryCommentDelCgiObj
+@interface WCStoryCommentDelCgiObj : NSObject
 {
     WCStoryComment *_comment;
     CDUnknownBlockType _successBlock;

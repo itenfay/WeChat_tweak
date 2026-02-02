@@ -6,7 +6,7 @@
 @class FinderLiveLotteryContact, MMCPLabel, MMFinderLiveLotteryInfo, MMHeadImageView, MMLiveLotteryDetailCardGiftFlowLayout, MMUIButton, MMUILabel, NSMutableArray, NSString, UICollectionView;
 @protocol MMLiveLotteryWinnerRecordCellDelegate;
 
-@interface MMLiveLotteryWinnerRecordCell
+@interface MMLiveLotteryWinnerRecordCell : NSObject
 {
     _Bool _isAudience;
     id <MMLiveLotteryWinnerRecordCellDelegate> _cellDelegate;

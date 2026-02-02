@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29WebSearchPlugin_ReportManager
+@interface _TtC6WeChat29WebSearchPlugin_ReportManager : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_featureReporter;
     MISSING_TYPE *$__lazy_storage_$_stayTimeReporter;

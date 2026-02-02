@@ -5,7 +5,7 @@
 
 @class LQTDepositPlanDelete, LQTDepositPlanIndexAfterDelete, LQTDepositPlanIndexAfterDetail, LQTDepositPlanIndexAfterModify, LQTDepositPlanIndexlAfterManage, LQTDepositPreAddPlanAfterDelete, NSString, PlanIndexResp_PlanItem, QryAutoPlanOrderListResp, WCPayLQTDepositAddPlanCgi, WCPayLQTDepositManagePlanCgi, WCPayLQTDepositModifyPlanCgi, WCPayLQTDepositPlanIndexCgi, WCPayLQTDepositPreAddPlanCgi, WCPayPayPwdViewController, WCPayQryLqtAutoPlanOrderListCgi;
 
-@interface WCPayLQTDepositControlLogic
+@interface WCPayLQTDepositControlLogic : NSObject
 {
     long long m_logicState;
     _Bool _hasDeleteAllPlan;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface FlutterFuncCallEngineParams
+@interface FlutterFuncCallEngineParams : NSObject
 {
     NSMutableDictionary *_paramsMap;
 }

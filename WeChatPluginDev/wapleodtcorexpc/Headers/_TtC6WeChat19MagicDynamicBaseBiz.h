@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat19MagicDynamicBaseBiz
+@interface _TtC6WeChat19MagicDynamicBaseBiz : NSObject
 {
     MISSING_TYPE *magicbrush;
     MISSING_TYPE *mbCommonAdapter;

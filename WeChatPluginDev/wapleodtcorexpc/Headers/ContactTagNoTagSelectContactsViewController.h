@@ -5,7 +5,7 @@
 
 @class ContactTagData, NSArray;
 
-@interface ContactTagNoTagSelectContactsViewController
+@interface ContactTagNoTagSelectContactsViewController : NSObject
 {
     ContactTagData *_m_contactTagData;
     NSArray *_arrContactNameList;

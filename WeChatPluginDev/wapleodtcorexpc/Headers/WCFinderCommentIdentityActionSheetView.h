@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCFinderCommentIdentityActionSheetView
+@interface WCFinderCommentIdentityActionSheetView : NSObject
 {
     unsigned long long _initizlizeSelectedType;
     UIView *_tipsCustomView;

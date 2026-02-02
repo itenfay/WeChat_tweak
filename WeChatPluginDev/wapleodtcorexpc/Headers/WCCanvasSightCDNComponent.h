@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasSightCDNComponent
+@interface WCCanvasSightCDNComponent : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class GCInteractView;
 
-@interface GameCenterMsgListNewInteractMsgCell
+@interface GameCenterMsgListNewInteractMsgCell : NSObject
 {
     GCInteractView *_interactView;
 }

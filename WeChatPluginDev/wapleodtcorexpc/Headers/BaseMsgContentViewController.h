@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BadRoomLogicController, BaseChatViewModel, CADisplayLink, CMessageWrap, ChatRoomHistoryShareStat, FirstUnReadTipView, MMDropManager, MMEdgeTipsView, MMInputMsgReferView, MMInputToolView, MMLoadingView, MMMsgContentNavBar, MMMsgMenuReporter, MMMultiSelectToolView, MMNewMsgContentNavBar, MMRichTextCoverView, MMScrollActionSheet, MMSpecialMsgSearchHelper, MMTableView, MMTimer, MMUIActivityIndicatorView, MMUIWindow, MessagePageSheetAdapter, MiniRecTransitionController, MsgImgFullScreenWindow, MsgSearchHelper, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, ReaderReporter, RichTextView, ShareMessageConfirmLogicHelper, SpeakTextLogicController, StreamVoiceInputViewController, UIColor, UIImageView, UIScreenEdgePanGestureRecognizer, UIView, VoiceTransTipsHelper;
 @protocol BaseMsgContentDelgate, MMMsgInputPresenter, MMRecordUIManager, UIViewControllerPreviewing;
 
-@interface BaseMsgContentViewController
+@interface BaseMsgContentViewController : NSObject
 {
     NSMutableArray *m_arrMessageNodeData;
     unsigned int m_uLastTime;

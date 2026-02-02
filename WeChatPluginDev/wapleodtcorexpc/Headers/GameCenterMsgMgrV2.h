@@ -5,7 +5,7 @@
 
 @class GCCommonServer, GCMRedpointExposureControlModel, GameCenterBaseMsg, GamePullMsgControlInfo, MessageExposureStrategyControl, NSMutableSet, NSString;
 
-@interface GameCenterMsgMgrV2
+@interface GameCenterMsgMgrV2 : NSObject
 {
     _Bool _dataHasLoaded;
     _Bool _userHasLogout;

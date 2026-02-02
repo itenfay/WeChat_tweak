@@ -6,7 +6,7 @@
 @class DepositQueryDepositRequest;
 @protocol WCPayNFCCardQueryDepositCgiDelegate;
 
-@interface WCPayNFCCardQueryDepositCgi
+@interface WCPayNFCCardQueryDepositCgi : NSObject
 {
     id <WCPayNFCCardQueryDepositCgiDelegate> _m_delegate;
     unsigned long long _m_retryDelay;

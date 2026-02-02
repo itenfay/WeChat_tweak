@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLocation, FinderMedia, GameTeamUpSpecialGiftSettingDetail, MMFinderLiveCreateParamsModel, MMLiveTaskId, NSString;
 
-@interface WCFinderCreateGameLivePrepareCGI
+@interface WCFinderCreateGameLivePrepareCGI : NSObject
 {
     int _liveScene;
     unsigned int _joinTeamMode;

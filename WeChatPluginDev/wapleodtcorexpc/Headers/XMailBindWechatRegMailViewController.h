@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIScrollView;
 
-@interface XMailBindWechatRegMailViewController
+@interface XMailBindWechatRegMailViewController : NSObject
 {
     UIScrollView *m_scrollView;
     NSString *_mailAddr;

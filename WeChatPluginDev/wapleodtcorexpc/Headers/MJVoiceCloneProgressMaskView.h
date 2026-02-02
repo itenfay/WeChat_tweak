@@ -6,7 +6,7 @@
 @class MMUIButton;
 @protocol MJVoiceCloneProgressMaskViewDelegate;
 
-@interface MJVoiceCloneProgressMaskView
+@interface MJVoiceCloneProgressMaskView : NSObject
 {
     id <MJVoiceCloneProgressMaskViewDelegate> _mj_delegate;
     MMUIButton *_cancelButton;

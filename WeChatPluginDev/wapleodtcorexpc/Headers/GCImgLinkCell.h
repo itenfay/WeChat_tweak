@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UIImageView, UILabel, UIView;
 
-@interface GCImgLinkCell
+@interface GCImgLinkCell : NSObject
 {
     MMWebImageView *_coverImgView;
     UIImageView *_playBtn;

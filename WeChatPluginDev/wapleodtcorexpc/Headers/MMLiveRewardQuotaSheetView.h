@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiveRewardGiftExtInfo, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, RichTextView, UILabel, UIView, UIVisualEffectView;
 @protocol MMLiveRewardQuotaSheetViewDelegate;
 
-@interface MMLiveRewardQuotaSheetView
+@interface MMLiveRewardQuotaSheetView : NSObject
 {
     _Bool _wecoinBalanceUpdated;
     _Bool _needFaceVerify;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUIImageView, MMUILabel, MMUIView, NSString;
 
-@interface WCFinderLiveRedPacketItemView
+@interface WCFinderLiveRedPacketItemView : NSObject
 {
     CDUnknownBlockType _actionBlock;
     MMUIImageView *_imageView;

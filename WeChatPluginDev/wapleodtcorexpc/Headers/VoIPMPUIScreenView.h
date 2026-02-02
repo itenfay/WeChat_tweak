@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel, UIView, VoIPMPUIScreenWindowView;
 
-@interface VoIPMPUIScreenView
+@interface VoIPMPUIScreenView : NSObject
 {
     _Bool _isOrientationServiceEnable;
     _Bool _isVideoMode;

@@ -6,7 +6,7 @@
 @class MJShootBubbleSwitch, NSArray, NSString;
 @protocol MJShootCountdownTimerSwitchDelegate;
 
-@interface MJShootCountdownTimerSwitch
+@interface MJShootCountdownTimerSwitch : NSObject
 {
     id <MJShootCountdownTimerSwitchDelegate> _delegate;
     unsigned long long _selectedMode;

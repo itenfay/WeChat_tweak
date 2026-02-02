@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ContactSearchLogic, NSString, OpenIMContactInfoForThirdReqFetchContext;
 
-@interface OpenIMContactInfoForThirdMgr
+@interface OpenIMContactInfoForThirdMgr : NSObject
 {
     ContactSearchLogic *m_contactSearchLogic;
     OpenIMContactInfoForThirdReqFetchContext *m_reqContext;

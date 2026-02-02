@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface ServiceAppsLogicImpl
+@interface ServiceAppsLogicImpl : NSObject
 {
     NSArray *_serviceAppsList;
     NSMutableArray *_tempList;

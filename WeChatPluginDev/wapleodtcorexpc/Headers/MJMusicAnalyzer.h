@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MJMusicAnalyzer
+@interface MJMusicAnalyzer : NSObject
 {
     long long _queryCount;
 }

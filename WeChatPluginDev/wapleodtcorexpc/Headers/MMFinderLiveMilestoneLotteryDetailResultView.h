@@ -5,7 +5,7 @@
 
 @class FinderLiveMilestoneLotteryInfo, MMFinderLiveMilestoneLotteryDetailWinnerResultView, NSString;
 
-@interface MMFinderLiveMilestoneLotteryDetailResultView
+@interface MMFinderLiveMilestoneLotteryDetailResultView : NSObject
 {
     _Bool _hasCheckedGiftAnimation;
     FinderLiveMilestoneLotteryInfo *_lotteryInfo;

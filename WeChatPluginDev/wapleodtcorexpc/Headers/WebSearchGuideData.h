@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebSearchGuideData
+@interface WebSearchGuideData : NSObject
 {
     _Bool _isPreloadData;
     unsigned long long _expiredTime;

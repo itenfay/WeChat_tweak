@@ -5,7 +5,7 @@
 
 @class JSEvent, LocationRetriever, NSString;
 
-@interface WebviewJSEventHandler_geoLocation
+@interface WebviewJSEventHandler_geoLocation : NSObject
 {
     long long m_geoLocationType;
     LocationRetriever *_locationRetriever;

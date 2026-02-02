@@ -6,7 +6,7 @@
 @class ColorGradientView, MMAssetICloudLoadingView, MMAssetInfo, MMAssetPickerBrowserStateInfo, NSString, WCLivePhotoButton;
 @protocol MMAssetPickerBrowserViewDelegate, MMImagePickerControlCenter;
 
-@interface MMImagePreviewBrowserView
+@interface MMImagePreviewBrowserView : NSObject
 {
     _Bool requestUneditedAsset;
     _Bool shouldPlayWithEditAttr;

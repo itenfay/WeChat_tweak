@@ -6,7 +6,7 @@
 @class UIView, WCFinderRedPacketCropSliderPanView;
 @protocol WCFinderRedPacketCropFrameViewDelegate;
 
-@interface WCFinderRedPacketCropFrameView
+@interface WCFinderRedPacketCropFrameView : NSObject
 {
     WCFinderRedPacketCropSliderPanView *_leftPanView;
     WCFinderRedPacketCropSliderPanView *_rightPanView;

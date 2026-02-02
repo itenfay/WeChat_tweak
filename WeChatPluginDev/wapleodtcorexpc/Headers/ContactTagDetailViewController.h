@@ -6,7 +6,7 @@
 @class ContactTagData, MMTableViewInfo, NSMutableArray, NSMutableSet, NSString, UILabel, UITextField;
 @protocol ContactTagDetailViewControllerDelegate;
 
-@interface ContactTagDetailViewController
+@interface ContactTagDetailViewController : NSObject
 {
     ContactTagData *_contactTagData;
     int _actionType;

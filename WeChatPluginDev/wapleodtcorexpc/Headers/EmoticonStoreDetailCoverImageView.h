@@ -5,7 +5,7 @@
 
 @class MMRedHeadLiner, MMWebImageView;
 
-@interface EmoticonStoreDetailCoverImageView
+@interface EmoticonStoreDetailCoverImageView : NSObject
 {
     MMRedHeadLiner *m_tagImageView;
     MMWebImageView *m_webImageView;

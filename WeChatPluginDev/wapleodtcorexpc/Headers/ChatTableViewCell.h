@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BaseChatCellView, UIView;
 
-@interface ChatTableViewCell
+@interface ChatTableViewCell : NSObject
 {
     BaseChatCellView *m_cellView;
     _Bool m_willBeDisplayed;

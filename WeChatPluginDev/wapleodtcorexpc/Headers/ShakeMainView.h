@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CirclesView, MMSayHelloButton, MMUILabel, ShakeMsgUnreadButton, UIImageView, UIView;
 @protocol ShakeMainFrameDelegate;
 
-@interface ShakeMainView
+@interface ShakeMainView : NSObject
 {
     UIView *m_hideView;
     _Bool m_bAnimating;

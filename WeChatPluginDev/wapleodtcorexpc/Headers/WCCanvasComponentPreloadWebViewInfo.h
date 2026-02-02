@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentPreloadWebViewInfo
+@interface WCCanvasComponentPreloadWebViewInfo : NSObject
 {
     NSString *_webviewUrl;
     double _webviewWidth;

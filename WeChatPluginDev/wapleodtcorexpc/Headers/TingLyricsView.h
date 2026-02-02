@@ -5,7 +5,7 @@
 
 @class MMMusicLiveLyricDisplayView, MMMusicLyricResolver, NSString;
 
-@interface TingLyricsView
+@interface TingLyricsView : NSObject
 {
     NSString *_lyricsId;
     MMMusicLyricResolver *_resolver;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString;
 
-@interface WCPasskeyDeletePageSheet
+@interface WCPasskeyDeletePageSheet : NSObject
 {
     CDUnknownBlockType _onGoDeleteBlock;
     MMUILabel *_headerLabel;

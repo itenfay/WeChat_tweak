@@ -5,7 +5,7 @@
 
 @class BrandDetailNotificationCellViewModel, MMHeadImageView, UIButton, UILabel, WCTagsView, YYLabel;
 
-@interface BrandDetailNotificationCellView
+@interface BrandDetailNotificationCellView : NSObject
 {
     MMHeadImageView *_headView;
     UILabel *_nameLabel;

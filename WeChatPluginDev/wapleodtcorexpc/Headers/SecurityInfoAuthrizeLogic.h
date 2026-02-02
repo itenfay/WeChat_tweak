@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, UINavigationController, UIScreenEdgePanGestureRecognizer, UserIdAuthorizePageInfo, WAAuthorizeUserIdPageSheet, WAMenuPopInteractiveTransition, WXAPhoneInfo;
 
-@interface SecurityInfoAuthrizeLogic
+@interface SecurityInfoAuthrizeLogic : NSObject
 {
     CDUnknownBlockType _completion;
     _Bool _forbidShowPrivacyInfo;

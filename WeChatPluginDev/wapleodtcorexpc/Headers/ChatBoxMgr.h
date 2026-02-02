@@ -5,7 +5,7 @@
 
 @class MMSessionInfo, NSMutableArray, NSMutableSet, NSString;
 
-@interface ChatBoxMgr
+@interface ChatBoxMgr : NSObject
 {
     _Bool _isChatBoxEnable;
     NSMutableSet *_chatboxSessionUsernames;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface FIFOFileQueue
+@interface FIFOFileQueue : NSObject
 {
     NSMutableArray *m_arrItems;
 }

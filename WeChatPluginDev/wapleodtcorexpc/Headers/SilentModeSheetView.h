@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIButton, UIImageView;
 
-@interface SilentModeSheetView
+@interface SilentModeSheetView : NSObject
 {
     UIImageView *_imageView;
     MMUILabel *_titleLabel;

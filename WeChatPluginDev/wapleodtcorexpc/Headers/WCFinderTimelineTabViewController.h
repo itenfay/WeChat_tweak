@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderNewUserPrepareResponse, FinderRecommendCloseConfig, FinderTeenagerInfo, MMScrollView, MMUIButton, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIButton, UIImageView, UIView, WCFinderAppendTabDatasModel, WCFinderCreateCoordinator, WCFinderFeedAudioHelper, WCFinderLeadToMachineCellState, WCFinderNavTeenagerView, WCFinderOpenTimelineParams, WCFinderPlaybackSpeedView, WCFinderPostMgr, WCFinderRecommendTabsView, WCFinderSearchStatReportShim, WCFinderTLUnreadModel, WCFinderTimelineTabBubbleController;
 @protocol WCFinderTabViewControllerProtocol><WCFinderFeedBaseViewControllerProtocol, WCFinderTimelineTabViewControllerDelegate;
 
-@interface WCFinderTimelineTabViewController
+@interface WCFinderTimelineTabViewController : NSObject
 {
     _Bool _isNeedCheckFastLeave;
     _Bool _hasReportCreateEvent;

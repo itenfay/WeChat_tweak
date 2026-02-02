@@ -5,7 +5,7 @@
 
 @class QGPStartTranslateAnimationParam;
 
-@interface QGPStartTranslateAnimationCommand
+@interface QGPStartTranslateAnimationCommand : NSObject
 {
     QGPStartTranslateAnimationParam *_params;
 }

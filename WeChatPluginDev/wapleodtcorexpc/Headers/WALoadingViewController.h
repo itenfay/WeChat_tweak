@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UIColor, UIScreenEdgePanGestureRecognizer, WAContact;
 @protocol WALoadingViewControllerDelegate, WAMinimizeDelegate;
 
-@interface WALoadingViewController
+@interface WALoadingViewController : NSObject
 {
     _Bool m_isBlackStatusBar;
     _Bool _isViewDidAppear;

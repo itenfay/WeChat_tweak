@@ -5,7 +5,7 @@
 
 @class MMBaseSessionStorage, NSMutableDictionary, NSString, WCTDatabase;
 
-@interface TemplateSessionMgr
+@interface TemplateSessionMgr : NSObject
 {
     _Bool _showTemplateSessionList;
     _Bool _scanOver;

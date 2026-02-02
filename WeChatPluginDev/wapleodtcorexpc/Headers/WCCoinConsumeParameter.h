@@ -6,7 +6,7 @@
 @class NSArray, NSData, NSString;
 @protocol MMPageSheetProvider;
 
-@interface WCCoinConsumeParameter
+@interface WCCoinConsumeParameter : NSObject
 {
     _Bool _agreementSelected;
     int _businessId;

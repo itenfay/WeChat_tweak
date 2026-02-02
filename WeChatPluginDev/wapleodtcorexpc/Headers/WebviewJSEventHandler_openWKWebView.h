@@ -5,7 +5,7 @@
 
 @class H5GameViewController, NSString;
 
-@interface WebviewJSEventHandler_openWKWebView
+@interface WebviewJSEventHandler_openWKWebView : NSObject
 {
     _Bool m_bFullScreen;
     NSString *m_orientation;

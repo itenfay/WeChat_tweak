@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiGetThemeColorForImage
+@interface LiteAppJsApiGetThemeColorForImage : NSObject
 {
     _Bool _hasCallback;
     NSString *_scene;

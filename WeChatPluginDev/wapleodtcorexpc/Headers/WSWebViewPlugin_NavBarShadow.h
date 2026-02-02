@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WSWebViewPlugin_NavBarShadow
+@interface WSWebViewPlugin_NavBarShadow : NSObject
 {
     _Bool _enableAddShadow;
     UIView *_navShadowView;

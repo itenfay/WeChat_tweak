@@ -6,7 +6,7 @@
 @class CgiTransferPayCheckReq;
 @protocol WCPayTransferPayCheckCgiDelegate;
 
-@interface WCPayTransferPayCheckCgi
+@interface WCPayTransferPayCheckCgi : NSObject
 {
     id <WCPayTransferPayCheckCgiDelegate> _cgiDelegate;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveEditImagePreviewPageSheet, MMUIButton, NSString, UIView;
 
-@interface WCFinderLiveEditImageViewController
+@interface WCFinderLiveEditImageViewController : NSObject
 {
     _Bool _showPreviewButton;
     _Bool _currentNavBarHidden;

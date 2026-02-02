@@ -5,7 +5,7 @@
 
 @class UIColor, WCAdDynamicFeedElementInfo;
 
-@interface WCAdDynamicFeedUIButton
+@interface WCAdDynamicFeedUIButton : NSObject
 {
     _Bool _isDisabledStyle;
     WCAdDynamicFeedElementInfo *_elementInfo;

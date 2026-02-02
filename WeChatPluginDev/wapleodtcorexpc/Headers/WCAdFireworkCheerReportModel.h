@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdFireworkCheerReportModel
+@interface WCAdFireworkCheerReportModel : NSObject
 {
     unsigned int _totalLikeCount;
     NSString *_numberRequestId;

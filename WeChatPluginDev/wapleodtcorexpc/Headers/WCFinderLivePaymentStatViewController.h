@@ -5,7 +5,7 @@
 
 @class MMFinderLiveOnlineUserProfileView, MMFinderLiveTask, MMLoadingView, MMTableView, MMUIButton, MMUILabel, NSData, NSMutableArray, NSString, UIView, WCTimeLineFooterView;
 
-@interface WCFinderLivePaymentStatViewController
+@interface WCFinderLivePaymentStatViewController : NSObject
 {
     unsigned int _totalNum;
     MMFinderLiveTask *_liveTask;

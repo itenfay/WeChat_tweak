@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionPerformanceService
+@interface WCSessionPerformanceService : NSObject
 {
     NSMutableArray *performanceModels;
     unsigned int pId;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTestLivePartialVisivilitySettingInfo;
 
-@interface MMFinderLiveTestLivePartialVisivilityShareSettingView
+@interface MMFinderLiveTestLivePartialVisivilityShareSettingView : NSObject
 {
     MMFinderLiveTestLivePartialVisivilitySettingInfo *_testLiveSettingInfo;
 }

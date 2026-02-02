@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIColor, UIFont;
 
-@interface MMFinderLiveAnchorDropGiftDetailCardView
+@interface MMFinderLiveAnchorDropGiftDetailCardView : NSObject
 {
     MMUILabel *_titleLabel;
     UIFont *_titleFont;

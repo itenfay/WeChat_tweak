@@ -6,7 +6,7 @@
 @class EnterTimeItem, MMUIViewController, NSString, UILabel, UITableViewCell, WCPayTransBankItem;
 @protocol WCPaySelectArriveTimeItemDelegate;
 
-@interface WCPaySelectArriveTimeItem
+@interface WCPaySelectArriveTimeItem : NSObject
 {
     UILabel *m_arriveTimeLabel;
     EnterTimeItem *m_enterTimeItem;

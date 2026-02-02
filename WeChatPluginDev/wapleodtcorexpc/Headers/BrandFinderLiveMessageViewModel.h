@@ -6,7 +6,7 @@
 @class BrandFinderLiveCardViewModel, NSString;
 @protocol BrandFinderLiveMessageCellViewDelegate;
 
-@interface BrandFinderLiveMessageViewModel
+@interface BrandFinderLiveMessageViewModel : NSObject
 {
     _Bool _isShouldLayout;
     id <BrandFinderLiveMessageCellViewDelegate> _finderLiveDelegate;

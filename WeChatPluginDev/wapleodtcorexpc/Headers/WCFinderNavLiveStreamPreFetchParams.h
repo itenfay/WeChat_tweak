@@ -5,7 +5,7 @@
 
 @class FinderLiveDiscoverPreloadConfig, NSData, NSMutableArray, NSString, WCFinderRedDotCtrlInfo;
 
-@interface WCFinderNavLiveStreamPreFetchParams
+@interface WCFinderNavLiveStreamPreFetchParams : NSObject
 {
     _Bool _isPreRecommendRequest;
     _Bool _isKaraPredicted;

@@ -5,7 +5,7 @@
 
 @class NSString, WAAppTaskCapsuleMenu, WACircleProgressLoadingViewController, WAPreloadAppTask, WASimulatedNativeWeAppLoadingViewController;
 
-@interface WAPreloadAppTaskMgr
+@interface WAPreloadAppTaskMgr : NSObject
 {
     WAPreloadAppTask *_preloadTask;
     _Bool _preloadTaskTerminatedToAvoidBOOM;

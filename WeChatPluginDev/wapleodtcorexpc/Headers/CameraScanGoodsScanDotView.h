@@ -5,7 +5,7 @@
 
 @class CAAnimationGroup, NSString;
 
-@interface CameraScanGoodsScanDotView
+@interface CameraScanGoodsScanDotView : NSObject
 {
     _Bool _isAnimating;
     CAAnimationGroup *_groupAnimation;

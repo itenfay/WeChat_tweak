@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMHeadImageView, MMUIButton, UIButton, UIImageView, UILabel, UIView;
 
-@interface MMFinderLiveRealNameFriendLikeGuideSheet
+@interface MMFinderLiveRealNameFriendLikeGuideSheet : NSObject
 {
     UIButton *_actionButton;
     MMUIButton *_cancelRecommendButton;

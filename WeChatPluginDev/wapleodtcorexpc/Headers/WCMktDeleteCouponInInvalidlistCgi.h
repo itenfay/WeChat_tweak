@@ -5,7 +5,7 @@
 
 @protocol WCMktDeleteCouponInInvalidlistCgiDelegate;
 
-@interface WCMktDeleteCouponInInvalidlistCgi
+@interface WCMktDeleteCouponInInvalidlistCgi : NSObject
 {
     id <WCMktDeleteCouponInInvalidlistCgiDelegate> _cgiDelegate;
 }

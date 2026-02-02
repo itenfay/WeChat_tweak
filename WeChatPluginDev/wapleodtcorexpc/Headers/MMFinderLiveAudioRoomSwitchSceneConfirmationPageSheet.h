@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UILabel;
 
-@interface MMFinderLiveAudioRoomSwitchSceneConfirmationPageSheet
+@interface MMFinderLiveAudioRoomSwitchSceneConfirmationPageSheet : NSObject
 {
     unsigned long long _scenario;
     CDUnknownBlockType _confirmBlock;

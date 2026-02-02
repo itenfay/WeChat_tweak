@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, UITableView, UITableViewDiffableDataSource, UIView, WCFinderDataLoadTips, WCFinderPaidCollectionConsumeLogic, WCFinderPaidCollectionDetailHeaderView, WCFinderPaidCollectionDetailVCParams, WCFinderPaidCollectionDetailVM, WCFinderPaymentBottomView, WCFinderRefreshTableFooterView, WCFinderStreamProfileDragBarView;
 
-@interface WCFinderPaidCollectionDetailVC
+@interface WCFinderPaidCollectionDetailVC : NSObject
 {
     UIView *_globalBackgroundView;
     UIView *_contentContainerView;

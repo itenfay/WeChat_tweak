@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString, UIViewController;
 
-@interface WALocalFileDetailLogicController
+@interface WALocalFileDetailLogicController : NSObject
 {
     _Bool b_forbidOperation;
     _Bool b_enableJS;

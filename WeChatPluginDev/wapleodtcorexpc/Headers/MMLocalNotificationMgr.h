@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface MMLocalNotificationMgr
+@interface MMLocalNotificationMgr : NSObject
 {
     _Bool m_isInBackground;
     MemoryMappedKV *m_pushInfos;

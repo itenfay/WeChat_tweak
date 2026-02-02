@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCMomentsContactMgr
+@interface WCMomentsContactMgr : NSObject
 {
     NSMutableDictionary *_usernameUpdateTimeDictionary;
 }

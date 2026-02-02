@@ -5,7 +5,7 @@
 
 @class WAEJCanvasContextWebGL;
 
-@interface WAEJBindingGfx
+@interface WAEJBindingGfx : NSObject
 {
     WAEJCanvasContextWebGL *renderingContext;
     struct GfxHandler _handler;

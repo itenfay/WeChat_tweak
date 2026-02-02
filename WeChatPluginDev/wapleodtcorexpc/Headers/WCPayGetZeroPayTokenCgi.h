@@ -6,7 +6,7 @@
 @class NSString, TokeMess;
 @protocol WCPayGetZeroPayTokenCgiDelegate;
 
-@interface WCPayGetZeroPayTokenCgi
+@interface WCPayGetZeroPayTokenCgi : NSObject
 {
     unsigned int _use_touch;
     NSString *_password;

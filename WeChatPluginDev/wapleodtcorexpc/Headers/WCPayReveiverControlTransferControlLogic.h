@@ -5,7 +5,7 @@
 
 @class InterceptWin, NSDictionary, NSString, WCPayComplianceHalfPage, WCPayInterceptWinLogic, WCPayJumpRemindControlLogic, WCPayUnionTransferConfirmCgi, WCPayUnionTransferQueryCgi;
 
-@interface WCPayReveiverControlTransferControlLogic
+@interface WCPayReveiverControlTransferControlLogic : NSObject
 {
     _Bool _bIsOpenIM;
     WCPayJumpRemindControlLogic *_m_jumpRemindControlLogic;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface MttMemory
+@interface MttMemory : NSObject
 {
     int _memorySize;
     NSMutableArray *_values;

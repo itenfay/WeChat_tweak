@@ -5,7 +5,7 @@
 
 @class NSString, NSURL, UIView;
 
-@interface WXGRoamOutBoxService
+@interface WXGRoamOutBoxService : NSObject
 {
     NSURL *_autoTestUrl;
     UIView *_tipsView;

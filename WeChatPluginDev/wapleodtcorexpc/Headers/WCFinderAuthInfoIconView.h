@@ -5,7 +5,7 @@
 
 @class WCFinderAuthInfo;
 
-@interface WCFinderAuthInfoIconView
+@interface WCFinderAuthInfoIconView : NSObject
 {
     WCFinderAuthInfo *_authInfo;
 }

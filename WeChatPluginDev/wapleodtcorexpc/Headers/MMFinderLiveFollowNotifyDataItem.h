@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFollowNotifyMsgInfo, NSString;
 
-@interface MMFinderLiveFollowNotifyDataItem
+@interface MMFinderLiveFollowNotifyDataItem : NSObject
 {
     MMFinderLiveFollowNotifyMsgInfo *_followNotifyMsgInfo;
     NSString *_suffixContent;

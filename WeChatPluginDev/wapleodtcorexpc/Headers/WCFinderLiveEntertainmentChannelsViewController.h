@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFeedExtraInfoFetchLogic, MMUIButton, NSMutableDictionary, NSString, UIView, WCFinderCreateCoordinator, WCFinderEmptyTipsView, WCFinderLiveEntertainmentChannelsViewModel, WCFinderLivePageStayReporter, WCFinderTabPageView;
 
-@interface WCFinderLiveEntertainmentChannelsViewController
+@interface WCFinderLiveEntertainmentChannelsViewController : NSObject
 {
     _Bool _isBottomButtonFold;
     CDUnknownBlockType _onPageReturnBlock;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderFetchFinderMemberShipHomeInfoCGI
+@interface WCFinderFetchFinderMemberShipHomeInfoCGI : NSObject
 {
     NSString *_finderUsername;
     CDUnknownBlockType _successful;

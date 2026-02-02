@@ -5,7 +5,7 @@
 
 @class MMUICellSwitch, NSArray, NSString, PhoneAuthManagePhoneLogic, UIButton, UILabel, UIView, WAReportPhoneAuthActionItem, WCAccountTextFieldItem;
 
-@interface PhoneAuthAddNewPhoneViewController
+@interface PhoneAuthAddNewPhoneViewController : NSObject
 {
     _Bool _phoneNumberEntered;
     _Bool _confirmCodeRequested;

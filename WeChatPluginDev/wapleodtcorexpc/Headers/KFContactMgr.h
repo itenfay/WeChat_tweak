@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCTDatabase;
 
-@interface KFContactMgr
+@interface KFContactMgr : NSObject
 {
     WCTDatabase *_db;
     NSMutableDictionary *_dictBrandUsrName2Cacher;

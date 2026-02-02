@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, UIColor, UIFont, UIView;
 @protocol BrandProfileTabViewDelegate;
 
-@interface BrandProfileTabView
+@interface BrandProfileTabView : NSObject
 {
     id <BrandProfileTabViewDelegate> _delegate;
     NSArray *_itemInfoList;

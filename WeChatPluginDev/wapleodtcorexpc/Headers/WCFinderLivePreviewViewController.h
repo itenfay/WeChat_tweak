@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveContentVM, MMFinderLiveHeaderView, MMFinderLiveTask, MMFinderLiveView, MMLiveAudienceAccountIntroView, MMLiveTaskId, MMLiveView, NSString, UIImageView, UIView;
 @protocol MMLiveContainerDisplayViewProtocol;
 
-@interface WCFinderLivePreviewViewController
+@interface WCFinderLivePreviewViewController : NSObject
 {
     _Bool _showCloseButton;
     _Bool _showFullScreenLoading;

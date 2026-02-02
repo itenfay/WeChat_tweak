@@ -6,7 +6,7 @@
 @class TXCVideoEncodeConfig;
 @protocol TXCVideoEncodeReportDelegate;
 
-@interface TXCVideoEncodeReport
+@interface TXCVideoEncodeReport : NSObject
 {
     int _streamType;
     id <TXCVideoEncodeReportDelegate> _delegate;

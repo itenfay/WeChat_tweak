@@ -6,7 +6,7 @@
 @class CContact, MMTableViewInfo, NSString;
 @protocol WWKFContactSettingViewControllerDelegate;
 
-@interface WWKFContactSettingViewController
+@interface WWKFContactSettingViewController : NSObject
 {
     id <WWKFContactSettingViewControllerDelegate> _delegate;
     MMTableViewInfo *_tableInfo;

@@ -5,7 +5,7 @@
 
 @class MPGetSystemInfoImpl;
 
-@interface MPEventHandler_getSystemInfo
+@interface MPEventHandler_getSystemInfo : NSObject
 {
     MPGetSystemInfoImpl *_impl;
 }

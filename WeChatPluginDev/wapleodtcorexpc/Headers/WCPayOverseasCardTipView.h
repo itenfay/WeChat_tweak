@@ -6,7 +6,7 @@
 @class MMWebViewController, NSString, UIButton, UIImageView;
 @protocol WCPayOverseasCarTipDelegate;
 
-@interface WCPayOverseasCardTipView
+@interface WCPayOverseasCardTipView : NSObject
 {
     UIImageView *_backgroundView;
     UIButton *_selectBtn;

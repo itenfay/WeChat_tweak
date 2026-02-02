@@ -6,7 +6,7 @@
 @class MMUILabel, MMWebImageView, NSString, UIButton, UIImageView, UIView;
 @protocol MMWebMenuHeaderViewDelegate;
 
-@interface MMWebMenuHeaderView
+@interface MMWebMenuHeaderView : NSObject
 {
     id <MMWebMenuHeaderViewDelegate> _menuHeaderDelegate;
     NSString *_brandNanme;

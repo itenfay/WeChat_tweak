@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface NewLifeSelectMusicHandler
+@interface NewLifeSelectMusicHandler : NSObject
 {
 }
 

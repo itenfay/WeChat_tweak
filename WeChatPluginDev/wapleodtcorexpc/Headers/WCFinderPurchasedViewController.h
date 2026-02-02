@@ -5,7 +5,7 @@
 
 @class MMFinderLivePurchasedComposedViewControllerOpenParams, NSString;
 
-@interface WCFinderPurchasedViewController
+@interface WCFinderPurchasedViewController : NSObject
 {
     _Bool _shouldHideMemberTab;
     _Bool _shouldHidePaidCollectionTab;

@@ -6,7 +6,7 @@
 @class FaceRecogPayHandler, JSEvent, MMVoidCallback, NSString, WCBaseControlLogic, WCPayBankElementQueryCgi, WCPayBindCardSuccessResponse, WCPayControlData, WCPayRealnameAuthenReq, WCPayRealnameAuthenResp, WCPayRealnameRegResp, WCPaySetUserExInfoCgi, WCRedEnvelopesControlData;
 @protocol WCPayAddPayCardDelegate;
 
-@interface WCPayAddPayCardLogic
+@interface WCPayAddPayCardLogic : NSObject
 {
     int m_uiLogicFinishedStatus;
     long long m_uiWCPayAddPayCardLogicScene;

@@ -5,7 +5,7 @@
 
 @class FavAudioInfo, NSString;
 
-@interface FavRecordVoiceNodeView
+@interface FavRecordVoiceNodeView : NSObject
 {
     FavAudioInfo *m_audioInfo;
 }

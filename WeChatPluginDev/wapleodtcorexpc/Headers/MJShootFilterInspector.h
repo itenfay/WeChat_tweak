@@ -6,7 +6,7 @@
 @class CAGradientLayer, MJMaterialLoadingStatusCoordinator, MJPublisherSlider, MJShootFilterInspectorViewModel, MMUIButton, NSIndexPath, NSString, UICollectionView, UILabel, UIView;
 @protocol MJShootFilterInspectorDelegate;
 
-@interface MJShootFilterInspector
+@interface MJShootFilterInspector : NSObject
 {
     id <MJShootFilterInspectorDelegate> _delegate;
     MMUIButton *_dismissButton;

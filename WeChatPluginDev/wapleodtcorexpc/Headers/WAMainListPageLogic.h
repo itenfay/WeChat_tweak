@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol WAMainListPageLogicDelegate;
 
-@interface WAMainListPageLogic
+@interface WAMainListPageLogic : NSObject
 {
     _Bool _hasNoMore;
     _Bool _needStarData;

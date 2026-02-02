@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary;
 
-@interface OMJLyricOverlayDesc
+@interface OMJLyricOverlayDesc : NSObject
 {
     NSArray *_lyricInfos;
     double _maximumWidth;

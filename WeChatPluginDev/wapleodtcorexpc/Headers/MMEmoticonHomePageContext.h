@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMEmoticonHomePageContext
+@interface MMEmoticonHomePageContext : NSObject
 {
     _Bool _cannotOpenInLimitedMode;
     unsigned int _scene;

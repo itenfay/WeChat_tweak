@@ -6,7 +6,7 @@
 @class MJSegmentSpeedInspectorViewModel, MJSpeedParameterPickerView, NSDictionary, NSString, UIImage, UISelectionFeedbackGenerator;
 @protocol MJSegmentSpeedInspectorViewDelegate;
 
-@interface MJSegmentSpeedInspectorView
+@interface MJSegmentSpeedInspectorView : NSObject
 {
     id <MJSegmentSpeedInspectorViewDelegate> _delegate;
     MJSpeedParameterPickerView *_parameterPickerView;

@@ -6,7 +6,7 @@
 @class NSString, UIButton, UrlLabel, WCCardDataCardInfo, WCCardDataCardTPInfo;
 @protocol WCCardDataSource, WCShareCardBaseCardHeaderDelegate;
 
-@interface WCShareCardBaseHeaderView
+@interface WCShareCardBaseHeaderView : NSObject
 {
     _Bool _bIsShareCard;
     _Bool _bIsNeedHideAcceptBtn;

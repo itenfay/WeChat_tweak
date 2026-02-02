@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterCountryInfo
+@interface GameCenterCountryInfo : NSObject
 {
     unsigned int _lastFetchTime;
     NSString *_productID;

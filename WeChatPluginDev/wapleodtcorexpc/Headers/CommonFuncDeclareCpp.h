@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CommonFuncDeclareCpp
+@interface CommonFuncDeclareCpp : NSObject
 {
 }
 

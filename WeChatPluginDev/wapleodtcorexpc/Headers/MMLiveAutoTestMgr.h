@@ -6,7 +6,7 @@
 @class MMTimer, NSMutableDictionary, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMLiveAutoTestMgr
+@interface MMLiveAutoTestMgr : NSObject
 {
     NSRecursiveLock *_lock;
     NSMutableDictionary *_logQueues;

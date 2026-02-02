@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, UIImageView, UIScrollView;
 
-@interface MMLocationAccuracyAuthorizationTipView
+@interface MMLocationAccuracyAuthorizationTipView : NSObject
 {
     MMUIView *_contentView;
     MMUIView *_sepLineView;

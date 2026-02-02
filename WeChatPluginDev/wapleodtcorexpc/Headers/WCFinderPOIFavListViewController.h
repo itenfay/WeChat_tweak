@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderPOIFavListViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderPOIFavListViewController
+@interface WCFinderPOIFavListViewController : NSObject
 {
     WCFinderPOIFavListViewModel *_viewModel;
     UITableView *_tableView;

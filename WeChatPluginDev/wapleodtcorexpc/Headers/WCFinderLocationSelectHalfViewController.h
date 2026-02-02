@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, NSMutableArray, NSString, UILabel, UITableView, UIView, WCFinderLocationSelectItem, WCTimelinePOIPickerViewController;
 @protocol WCFinderLocationSelectHalfVCDelegate;
 
-@interface WCFinderLocationSelectHalfViewController
+@interface WCFinderLocationSelectHalfViewController : NSObject
 {
     _Bool _submitting;
     _Bool _viewHasAppeared;

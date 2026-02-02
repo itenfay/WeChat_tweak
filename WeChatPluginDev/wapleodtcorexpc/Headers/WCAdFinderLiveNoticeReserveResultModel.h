@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdFinderLiveNoticeReserveResultModel
+@interface WCAdFinderLiveNoticeReserveResultModel : NSObject
 {
     int _source;
     NSString *_finderUsername;

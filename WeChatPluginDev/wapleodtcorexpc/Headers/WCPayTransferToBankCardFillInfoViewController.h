@@ -6,7 +6,7 @@
 @class MMUIButton, NSDictionary, NSString, UIButton, WCBaseKeyboardToolBar, WCBizInfoGroup, WCPayBankCardNumberItem, WCPayNavigationView, WCPayNoticeItemView, WCPaySelectArriveTimeItem, WCPaySelectBankItem, WCPaySelectNameItem, WCPayT2BCCandidateSugBar, WCPayTransferDelayOptionView;
 @protocol WCPayTransferToBankCardFillInfoViewControllerDelegate;
 
-@interface WCPayTransferToBankCardFillInfoViewController
+@interface WCPayTransferToBankCardFillInfoViewController : NSObject
 {
     WCBaseKeyboardToolBar *m_keyboardBar;
     id <WCPayTransferToBankCardFillInfoViewControllerDelegate> m_delegate;

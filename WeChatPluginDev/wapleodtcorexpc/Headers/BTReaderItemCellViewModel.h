@@ -6,7 +6,7 @@
 @class BTReaderMsgSectionData, MPPageRelatedInfo, NSMutableArray, NSString, ReaderWrap, UIFont, UIImage;
 @protocol BTReaderItemCellViewModelDelegate;
 
-@interface BTReaderItemCellViewModel
+@interface BTReaderItemCellViewModel : NSObject
 {
     ReaderWrap *_readerWrap;
     unsigned int _itemIndex;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveTopicTemplateTabPageView
+@interface WCFinderLiveTopicTemplateTabPageView : NSObject
 {
     CDUnknownBlockType _onWillSwitchToIndex;
 }

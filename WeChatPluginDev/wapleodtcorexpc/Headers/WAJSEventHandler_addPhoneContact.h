@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WAJSEventHandler_addPhoneContact
+@interface WAJSEventHandler_addPhoneContact : NSObject
 {
     NSDictionary *_contact;
 }

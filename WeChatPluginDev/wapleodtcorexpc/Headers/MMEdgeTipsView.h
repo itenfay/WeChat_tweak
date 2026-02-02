@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUILabel, UIButton, UIImageView;
 @protocol MMEdgeTipsViewDelegate;
 
-@interface MMEdgeTipsView
+@interface MMEdgeTipsView : NSObject
 {
     int _position;
     id <MMEdgeTipsViewDelegate> _delegate;

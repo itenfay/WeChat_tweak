@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportDestopShowItem
+@interface WAReportDestopShowItem : NSObject
 {
     unsigned long long _destopEnterScene;
     NSString *_appidList;

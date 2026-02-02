@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandFinderLiveCardViewModel
+@interface BrandFinderLiveCardViewModel : NSObject
 {
     _Bool _isLive;
     unsigned long long _style;

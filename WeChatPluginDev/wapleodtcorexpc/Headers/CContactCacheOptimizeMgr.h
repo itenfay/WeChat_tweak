@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock, WCContactCacheOptimizeInfo, WCContactCacheSliceRecordInfo;
 
-@interface CContactCacheOptimizeMgr
+@interface CContactCacheOptimizeMgr : NSObject
 {
     WCContactCacheSliceRecordInfo *m_contactCacheSliceRecordInfo;
     WCContactCacheOptimizeInfo *m_contactCacheOptimizeInfo;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface IntelligentSimWord
+@interface IntelligentSimWord : NSObject
 {
     unsigned int _searchCount;
     NSString *_word;

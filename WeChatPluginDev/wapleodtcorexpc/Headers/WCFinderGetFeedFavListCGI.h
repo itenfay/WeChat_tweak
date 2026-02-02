@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetFeedFavListCGI
+@interface WCFinderGetFeedFavListCGI : NSObject
 {
     int _requestType;
     NSString *_finderUsername;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMImageDetectMediaInfo
+@interface MMImageDetectMediaInfo : NSObject
 {
     _Bool _mayUseCDNCache;
     _Bool _isReuploadFileOK;

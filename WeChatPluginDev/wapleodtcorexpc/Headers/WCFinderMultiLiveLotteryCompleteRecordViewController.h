@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTask, MMTableView, MMUILabel, NSData, NSMutableArray, NSString, WCTimeLineFooterView;
 
-@interface WCFinderMultiLiveLotteryCompleteRecordViewController
+@interface WCFinderMultiLiveLotteryCompleteRecordViewController : NSObject
 {
     _Bool _isAssistant;
     NSMutableArray *_completedRecordList;

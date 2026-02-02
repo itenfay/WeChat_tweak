@@ -5,7 +5,7 @@
 
 @class BrandServiceHeadImageProvider, CContact, ContactsDataLogic, FTSWebSearchLocalPageCell, MMLoadingView, MMTableView, NSMutableArray, NSMutableDictionary, NSString, UILabel, WCDataSearcher;
 
-@interface BrandContactsViewController
+@interface BrandContactsViewController : NSObject
 {
     MMTableView *_tableView;
     UILabel *m_countLabel;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RightTopMenuItemBtnData
+@interface RightTopMenuItemBtnData : NSObject
 {
     NSString *m_nsID;
     NSString *m_nsTitleID;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPLiveReportInfo
+@interface TPLiveReportInfo : NSObject
 {
     _Bool _isUserPay;
     _Bool _isLookBack;

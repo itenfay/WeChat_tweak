@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, RichTextView, UIImageView;
 
-@interface WCFinderPostTopBaseView
+@interface WCFinderPostTopBaseView : NSObject
 {
     NSString *_reportEId;
     UIImageView *_iconImageView;

@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentItem;
 
-@interface WCCanvasComponentHalfRandomCardItemInfo
+@interface WCCanvasComponentHalfRandomCardItemInfo : NSObject
 {
     _Bool _isDefaultCard;
     NSString *_cardId;

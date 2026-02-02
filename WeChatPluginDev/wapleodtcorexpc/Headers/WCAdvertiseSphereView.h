@@ -6,7 +6,7 @@
 @class CMDeviceMotion, NSObject, NSString, SCNNode, SCNView, UIButton, UIImageView, UIPanGestureRecognizer, WCAdSphereCardInfo, WCMediaItem;
 @protocol WCAdvertiseSphereViewDelegate;
 
-@interface WCAdvertiseSphereView
+@interface WCAdvertiseSphereView : NSObject
 {
     _Bool _showFullCoverButton;
     _Bool _forbidVerticalPan;

@@ -5,7 +5,7 @@
 
 @class FaceRecogCheckBrightnessLogic, FaceRecogFlashHandler, NSString;
 
-@interface FaceRecogInternelHandler
+@interface FaceRecogInternelHandler : NSObject
 {
     unsigned int _checkAliveType;
     float _lightThreshold;

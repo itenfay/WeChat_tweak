@@ -6,7 +6,7 @@
 @class MMUIButton, MMUIView, NSString, UIView, WCAdContinuousLikeButtonView, WCAdSocialLikeCheerPlayerView, WCAdSocialLikeInfo, WCAdSocialLikeLogic, WCDataItem;
 @protocol WCAdSocialLikeViewDelegate;
 
-@interface WCAdSocialLikeView
+@interface WCAdSocialLikeView : NSObject
 {
     _Bool _bTimelineScene;
     _Bool _isLikeIconAnimating;

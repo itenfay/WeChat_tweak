@@ -5,7 +5,7 @@
 
 @class NSMutableData;
 
-@interface WADynamicBackgroundGLGeometry
+@interface WADynamicBackgroundGLGeometry : NSObject
 {
     unsigned int vbo;
     _Bool vboValid;

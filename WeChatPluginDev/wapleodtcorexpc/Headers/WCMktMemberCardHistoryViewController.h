@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, UIView, WCMktMemberCardHistoryLogicController;
 
-@interface WCMktMemberCardHistoryViewController
+@interface WCMktMemberCardHistoryViewController : NSObject
 {
     WCMktMemberCardHistoryLogicController *_logicController;
     MMTableView *_tableView;

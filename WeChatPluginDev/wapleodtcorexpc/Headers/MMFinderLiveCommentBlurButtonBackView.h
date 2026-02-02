@@ -5,7 +5,7 @@
 
 @class MMUIButton, UIView;
 
-@interface MMFinderLiveCommentBlurButtonBackView
+@interface MMFinderLiveCommentBlurButtonBackView : NSObject
 {
     _Bool _canShowTalkButton;
     UIView *_seperateLineView;

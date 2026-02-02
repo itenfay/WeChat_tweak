@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderGetLiveOnlineMemberCGI
+@interface WCFinderGetLiveOnlineMemberCGI : NSObject
 {
     unsigned int _boardType;
     CDUnknownBlockType _successBlock;

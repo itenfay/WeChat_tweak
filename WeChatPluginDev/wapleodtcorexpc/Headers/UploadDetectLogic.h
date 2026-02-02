@@ -5,7 +5,7 @@
 
 @class MotionDetector, NSString;
 
-@interface UploadDetectLogic
+@interface UploadDetectLogic : NSObject
 {
     int _retryTimes;
     struct CGSize _qmpSize;

@@ -5,7 +5,7 @@
 
 @class WAAppMessageBaseViewModel;
 
-@interface WAAppMessageBaseCellView
+@interface WAAppMessageBaseCellView : NSObject
 {
 }
 

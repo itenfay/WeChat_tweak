@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIScrollView, UIView, WCFinderCropRectModel;
 @protocol WCFinderCoverBasePreviewViewDelegate;
 
-@interface WCFinderCoverBasePreviewView
+@interface WCFinderCoverBasePreviewView : NSObject
 {
     id <WCFinderCoverBasePreviewViewDelegate> _delegate;
     MMUIScrollView *_scrollView;

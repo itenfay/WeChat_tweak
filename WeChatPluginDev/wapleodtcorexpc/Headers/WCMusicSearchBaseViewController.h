@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCMusicFooterHintView, WCMusicSearchContext, WCMusicSearchHintView;
 
-@interface WCMusicSearchBaseViewController
+@interface WCMusicSearchBaseViewController : NSObject
 {
     WCMusicSearchContext *_searchContext;
     unsigned long long _lastRequestId;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveKTVAudioEffectSettingCell, MMFinderLiveTaskId, NSString, UIView, WCFinderLiveAnchorLogReporter, WCTableViewManager;
 
-@interface MMFinderLiveKTVAudioEffectOperatingPanel
+@interface MMFinderLiveKTVAudioEffectOperatingPanel : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     UIView *_contentView;

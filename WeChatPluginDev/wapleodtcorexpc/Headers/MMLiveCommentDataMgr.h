@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, SafeMutableDictionary;
 
-@interface MMLiveCommentDataMgr
+@interface MMLiveCommentDataMgr : NSObject
 {
     SafeMutableDictionary *_commentDataDict;
     SafeMutableDictionary *_commentDataCacheDict;

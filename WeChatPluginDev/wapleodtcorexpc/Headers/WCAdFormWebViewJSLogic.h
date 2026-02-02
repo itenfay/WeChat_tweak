@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, WCAdDynamicCanvasPageInfo;
 @protocol WCAdFormWebViewJSLogicDelegate;
 
-@interface WCAdFormWebViewJSLogic
+@interface WCAdFormWebViewJSLogic : NSObject
 {
     id <WCAdFormWebViewJSLogicDelegate> _delegate;
     WCAdDynamicCanvasPageInfo *_pageInfo;

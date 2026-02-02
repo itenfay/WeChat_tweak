@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView;
 
-@interface SharePreConfirmSuccessView
+@interface SharePreConfirmSuccessView : NSObject
 {
     UIImageView *m_backgroundView;
     long long m_previousOrientation;

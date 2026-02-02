@@ -5,7 +5,7 @@
 
 @class MMImageView, MMMusicInfo, MMMusicPlayerContoller;
 
-@interface WAMainFrameTaskBarSectionMusicViewCell
+@interface WAMainFrameTaskBarSectionMusicViewCell : NSObject
 {
     MMImageView *_playIcon;
     MMMusicInfo *_curMusicInfo;

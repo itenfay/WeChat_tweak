@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MSETransmitVideoData
+@interface MSETransmitVideoData : NSObject
 {
     NSString *_videoUrl;
     NSString *_filePath;

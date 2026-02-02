@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface PAGFileImpl
+@interface PAGFileImpl : NSObject
 {
 }
 

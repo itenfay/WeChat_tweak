@@ -6,7 +6,7 @@
 @class CAGradientLayer, EditImageColorSquareBar, MMUIButton, NSString, TextStateBlurButton, UIButton, UIColor, UIView;
 @protocol EditImagePenToolAttrDelegate;
 
-@interface EditImagePenToolAttrView
+@interface EditImagePenToolAttrView : NSObject
 {
     UIButton *_undoBtn;
     _Bool _enable;

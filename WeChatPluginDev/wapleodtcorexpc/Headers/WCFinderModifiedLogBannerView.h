@@ -6,7 +6,7 @@
 @class MMUIView, RichTextView, UIImageView, WCFinderPostModifyModel;
 @protocol WCFinderModifiedLogBannerViewDelegate;
 
-@interface WCFinderModifiedLogBannerView
+@interface WCFinderModifiedLogBannerView : NSObject
 {
     id <WCFinderModifiedLogBannerViewDelegate> _delegate;
     WCFinderPostModifyModel *_modifyModel;

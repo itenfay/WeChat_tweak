@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIImageView;
 
-@interface WCRedesignButtonItem
+@interface WCRedesignButtonItem : NSObject
 {
     NSString *_subtitle;
     CDUnknownBlockType _tapHandler;

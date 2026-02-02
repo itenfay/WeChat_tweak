@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, OrderedDictionary;
 
-@interface EmoticonCustomManageDataLogic
+@interface EmoticonCustomManageDataLogic : NSObject
 {
     _Bool _startMultiSelectStatus;
     unsigned long long _type;

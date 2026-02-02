@@ -5,7 +5,7 @@
 
 @class NSString, WCAccountControlData, WCAccountErrorHandleLogic;
 
-@interface WCAccountBaseControlLogic
+@interface WCAccountBaseControlLogic : NSObject
 {
     WCAccountControlData *m_data;
     WCAccountErrorHandleLogic *m_errorHandleLogic;

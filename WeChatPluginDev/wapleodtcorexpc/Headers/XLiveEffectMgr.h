@@ -5,7 +5,7 @@
 
 @class SpatiotemporalDenosingPreProcess, XImage, XLiveRenderTargetPool, XMMGPUClarityPreProcess;
 
-@interface XLiveEffectMgr
+@interface XLiveEffectMgr : NSObject
 {
     struct CGSize _renderTargetSizeWithoutRotation;
     struct CGSize _renderTargetSize;

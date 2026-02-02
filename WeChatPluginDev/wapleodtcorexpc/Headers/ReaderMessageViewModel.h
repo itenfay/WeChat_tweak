@@ -5,7 +5,7 @@
 
 @class CContact, NSArray, NSMutableArray, NSString, TingItem, UIImage;
 
-@interface ReaderMessageViewModel
+@interface ReaderMessageViewModel : NSObject
 {
     struct CGSize m_titleViewSize;
     NSMutableArray *m_titleStyles;

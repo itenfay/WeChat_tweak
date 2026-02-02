@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, TextStyleAttributeObj, UIColor, UIFont;
 
-@interface TextParser
+@interface TextParser : NSObject
 {
     UIFont *_font;
     UIColor *_color;

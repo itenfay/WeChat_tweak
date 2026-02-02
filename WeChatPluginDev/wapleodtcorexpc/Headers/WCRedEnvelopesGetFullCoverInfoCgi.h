@@ -6,7 +6,7 @@
 @class CMessageWrap;
 @protocol WCRedEnvelopesGetFullCoverInfoCgiDelegate;
 
-@interface WCRedEnvelopesGetFullCoverInfoCgi
+@interface WCRedEnvelopesGetFullCoverInfoCgi : NSObject
 {
     id <WCRedEnvelopesGetFullCoverInfoCgiDelegate> _cgiDelegate;
     CMessageWrap *_messageWrap;

@@ -5,7 +5,7 @@
 
 @class RTEAttributeNode;
 
-@interface WNAttachmentImgInfo
+@interface WNAttachmentImgInfo : NSObject
 {
     RTEAttributeNode *_attribute;
 }

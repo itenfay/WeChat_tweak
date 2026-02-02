@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderGetCommentListCtx, NSData, NSString;
 
-@interface WCFinderCommentListCGI
+@interface WCFinderCommentListCGI : NSObject
 {
     _Bool _fetchObject;
     int _scene;

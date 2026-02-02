@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString, UILabel, UIView;
 
-@interface WCActionSheetWithWeApp
+@interface WCActionSheetWithWeApp : NSObject
 {
     NSString *_weAppButtonTitle;
     NSMutableArray *_m_WeAppItemList;

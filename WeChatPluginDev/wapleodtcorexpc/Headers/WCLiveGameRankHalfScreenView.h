@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, NSString;
 
-@interface WCLiveGameRankHalfScreenView
+@interface WCLiveGameRankHalfScreenView : NSObject
 {
     CDUnknownBlockType _jumpCallback;
     MMWebImageView *_webImageView;

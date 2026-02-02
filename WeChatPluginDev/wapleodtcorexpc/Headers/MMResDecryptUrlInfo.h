@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMResDecryptUrlInfo
+@interface MMResDecryptUrlInfo : NSObject
 {
     NSString *_resUrl;
     NSString *_version;

@@ -5,7 +5,7 @@
 
 @class CALayer;
 
-@interface MMLiveScrollGradientMaskingView
+@interface MMLiveScrollGradientMaskingView : NSObject
 {
     _Bool _enableFadeoutAtBeginning;
     _Bool _enableFadeoutAtEnding;

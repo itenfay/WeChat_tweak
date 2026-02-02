@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderCommByPass, MMFinderLivePivotEducationView, MMFinderLivePreviewExitButton, MMFinderLiveRelatedLiveParams, MMLiveDisplayLinkAnimator, MMLivePivotAutoSwipeInfo, MMLivePivotCollectionView, MMLivePivotView, MMLivePreviewRelatedViewModel, MMLiveTaskId, MMLiveView, MMTimer, MMUILabel, MMUIView, NSArray, NSData, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionView, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, WCFinderFullShareListTemplatePlugin, WCFinderLiveBaseLogReporter, WCFinderLiveHomePageViewController, WCLiveBlurButton;
 @protocol MMLiveContainerDisplayViewProtocol, MMLiveMorphDismissTarget;
 
-@interface MMLivePivotViewController
+@interface MMLivePivotViewController : NSObject
 {
     _Bool isPresentingWithCustomTransition;
     _Bool _isScrolling;

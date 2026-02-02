@@ -5,7 +5,7 @@
 
 @class NSString, PhotoViewController;
 
-@interface WebviewJSEventHandler_imagePreview
+@interface WebviewJSEventHandler_imagePreview : NSObject
 {
     PhotoViewController *m_photoViewController;
     long long _webViewInterfaceOrientation;

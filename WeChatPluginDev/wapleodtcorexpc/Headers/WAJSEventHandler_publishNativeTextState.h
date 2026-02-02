@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_publishNativeTextState
+@interface WAJSEventHandler_publishNativeTextState : NSObject
 {
 }
 

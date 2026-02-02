@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonBoardView, MMGrowTextView, MMTableView, MMUILabel, MMURLHandler, NSMutableDictionary, NSString, UIButton, UIImageView, UIView, WCDataItem, WCInputController, WCMomentsClickHandler, WCMomentsInputAreaReportInfo, WCMomentsPageContext, WCUserComment;
 @protocol UIViewControllerPreviewing;
 
-@interface WCBaseTimelineViewController
+@interface WCBaseTimelineViewController : NSObject
 {
     _Bool _actionAreaWrapEnabled;
     _Bool _dynamicTagEnabled;

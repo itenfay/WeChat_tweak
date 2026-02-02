@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTableView, MMUIButton, NSMutableSet, NSString, UILabel, UINavigationController, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderDynamicRichTextView, WCFinderFeedFriendsLikeListViewModel, WCFinderRefreshTableFooterView;
 @protocol WCFinderFeedFriendsLikeListViewControllerDelegate;
 
-@interface WCFinderFeedFriendsLikeListViewController
+@interface WCFinderFeedFriendsLikeListViewController : NSObject
 {
     _Bool _showBackgroundMask;
     _Bool _showFinderIdentifier;

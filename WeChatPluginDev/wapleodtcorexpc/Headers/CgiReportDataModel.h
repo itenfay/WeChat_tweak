@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface CgiReportDataModel
+@interface CgiReportDataModel : NSObject
 {
     unsigned int _businessId;
     unsigned int _reqCount;

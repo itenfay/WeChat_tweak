@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMPageSheetAdapter, MMTableView, MMUILabel, NSArray, NSDictionary, NSMutableArray, NSString, UIButton, UIView, WCPayBottomPanelView, WCPayGPLaunchConfirmPageSheet, WCPayGPLaunchModeDetailView, WCPayGPLaunchParamInvalidTipsView, WCPayNoticeItemView, WCPayWebImageView;
 @protocol WCPayGPLaunchViewControllerV2Delegate;
 
-@interface WCPayGPLaunchViewControllerV2
+@interface WCPayGPLaunchViewControllerV2 : NSObject
 {
     _Bool _bNeedDismissSessionListView;
     _Bool _bHasShowTotalAmountTips;

@@ -5,7 +5,7 @@
 
 @protocol WCAccountCloseMainFrameLogicDelegate;
 
-@interface WCAccountCloseMainFrameLogic
+@interface WCAccountCloseMainFrameLogic : NSObject
 {
     unsigned int m_uiScene;
     unsigned long long m_lastAutoAuthTime;

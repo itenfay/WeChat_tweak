@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FavLiteAppItem, FavLocationItem, FavProductItem, FavTVItem, FavURLItem, FavWeAppItem, MMMusicShareItem, NSArray, NSDate, NSMutableArray, NSString, WCFinderContentColumnSharedItem, WCFinderLiveShareItem, WCFinderMessageShareNameCard, WCFinderShareToMomentsItem, WCFinderThemeLiveStreamShareItem, WCFinderTopicShareItem, WCMegaVideoShareItem;
 
-@interface FavoritesItem
+@interface FavoritesItem : NSObject
 {
     NSMutableArray *_dataList;
     NSMutableArray *_tagList;

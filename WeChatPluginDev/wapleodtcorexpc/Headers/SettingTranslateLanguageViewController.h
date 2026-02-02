@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface SettingTranslateLanguageViewController
+@interface SettingTranslateLanguageViewController : NSObject
 {
     unsigned int m_uiCurIndex;
     unsigned int m_uiCurWorkingIndex;

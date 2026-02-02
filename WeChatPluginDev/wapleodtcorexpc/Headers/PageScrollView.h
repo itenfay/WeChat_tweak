@@ -6,7 +6,7 @@
 @class NSMutableSet, NSString;
 @protocol PageScrollViewDataSource, PageScrollViewDelegate;
 
-@interface PageScrollView
+@interface PageScrollView : NSObject
 {
     NSMutableSet *_recycledPages;
     NSMutableSet *_visiblePages;

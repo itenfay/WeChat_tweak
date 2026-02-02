@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSMutableAttributedString, NSRegularExpression, NSString, UIColor, WCFinderHighlightedInfoModel;
 @protocol WCFinderFilterTextViewDelegate;
 
-@interface WCFinderFilterTextView
+@interface WCFinderFilterTextView : NSObject
 {
     _Bool _forbidWXEmoji;
     _Bool _forbidEmoji;

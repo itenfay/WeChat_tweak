@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView, UIView;
 
-@interface FavBarButton
+@interface FavBarButton : NSObject
 {
     UIView *_divTopLine;
     UIImageView *_arrowIcon;

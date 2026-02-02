@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, WCCanvasComponent;
 
-@interface WCCanvasFloatJumpComponent
+@interface WCCanvasFloatJumpComponent : NSObject
 {
     MMUILabel *_titleView;
     MMUIImageView *_iconView;

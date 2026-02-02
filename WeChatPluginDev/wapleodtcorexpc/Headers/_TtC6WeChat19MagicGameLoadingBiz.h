@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat19MagicGameLoadingBiz
+@interface _TtC6WeChat19MagicGameLoadingBiz : NSObject
 {
     MISSING_TYPE *mbCommonAdapter;
     MISSING_TYPE *mbVConsoleHelper;

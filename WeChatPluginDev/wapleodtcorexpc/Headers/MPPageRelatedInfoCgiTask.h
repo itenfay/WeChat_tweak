@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableSet;
 
-@interface MPPageRelatedInfoCgiTask
+@interface MPPageRelatedInfoCgiTask : NSObject
 {
     NSArray *_urlInfoArr;
     NSMutableSet *_pageIdentifierSet;

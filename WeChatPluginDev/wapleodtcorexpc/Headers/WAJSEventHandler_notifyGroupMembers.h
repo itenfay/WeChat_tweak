@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WAJSEventHandler_notifyGroupMembers
+@interface WAJSEventHandler_notifyGroupMembers : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_preConfirmSheetView;
     MISSING_TYPE *$__lazy_storage_$_preConfirmView;

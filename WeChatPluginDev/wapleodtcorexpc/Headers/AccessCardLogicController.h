@@ -6,7 +6,7 @@
 @class CBCentralManager, CLLocation, DeviceInfoData, LocationRetriever, MMTimer, NSString, WCCardDataCardInfo, WCCardDataCardTPInfo;
 @protocol AccessCardLogicDelegate;
 
-@interface AccessCardLogicController
+@interface AccessCardLogicController : NSObject
 {
     MMTimer *_uploadTimer;
     CBCentralManager *_centralManager;

@@ -5,7 +5,7 @@
 
 @class CContact, JSEvent, NSString, SessionSelectController, SharePreConfirmSheetView, SharePreConfirmView;
 
-@interface WebviewJSEventHandler_sendRedCoverAppMsg
+@interface WebviewJSEventHandler_sendRedCoverAppMsg : NSObject
 {
     NSString *_receiveUri;
     SessionSelectController *_sessionSelectVC;

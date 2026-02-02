@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WAMediaCastingAirPlayDetector;
 
-@interface WAWebViewPlugin_LivePlayer
+@interface WAWebViewPlugin_LivePlayer : NSObject
 {
     struct CGRect _webViewFrame;
     _Bool _tabBarVisible;

@@ -6,7 +6,7 @@
 @class BTNotifySectionData, MMHeadImageView, UIButton;
 @protocol BTNotifyMsgCellViewDelegate;
 
-@interface BTNotifyMsgCellView
+@interface BTNotifyMsgCellView : NSObject
 {
     id <BTNotifyMsgCellViewDelegate> _delegate;
     BTNotifySectionData *_viewModel;

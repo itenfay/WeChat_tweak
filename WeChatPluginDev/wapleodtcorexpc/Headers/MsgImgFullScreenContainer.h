@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIViewController, NSMutableDictionary, NSString;
 @protocol MsgImgFullScreenContainerDelegate;
 
-@interface MsgImgFullScreenContainer
+@interface MsgImgFullScreenContainer : NSObject
 {
     NSMutableDictionary *dicVisiblePageIndex;
     int m_iNumberOfPages;

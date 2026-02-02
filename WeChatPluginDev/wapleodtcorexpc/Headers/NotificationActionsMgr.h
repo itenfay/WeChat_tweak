@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UNNotificationSettings, WeToast;
 
-@interface NotificationActionsMgr
+@interface NotificationActionsMgr : NSObject
 {
     NSMutableDictionary *_actionCompletions;
     WeToast *_toastView;

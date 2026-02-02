@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString, UITableView;
 
-@interface SettingGeneralChatLogViewController
+@interface SettingGeneralChatLogViewController : NSObject
 {
     NSArray *_iconArray;
     NSArray *_titleArray;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
-@interface WCFinderResUpdateMgr
+@interface WCFinderResUpdateMgr : NSObject
 {
     NSDictionary *_currentResourceItems;
     NSDictionary *_cleanupResourceItems;

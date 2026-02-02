@@ -6,7 +6,7 @@
 @class MMTableViewInfo, MMUILabel, NSArray, NSString, UITextField;
 @protocol ContactTagNameEditViewControllerDelegate;
 
-@interface ContactTagNameEditViewController
+@interface ContactTagNameEditViewController : NSObject
 {
     _Bool _bIsTagNameOverLimit;
     _Bool _bIsShowWarningText;

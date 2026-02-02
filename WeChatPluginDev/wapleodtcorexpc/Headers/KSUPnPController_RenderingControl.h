@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface KSUPnPController_RenderingControl
+@interface KSUPnPController_RenderingControl : NSObject
 {
 }
 

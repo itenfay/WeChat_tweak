@@ -6,7 +6,7 @@
 @class NSString;
 @protocol UIGestureRecognizerDelegate;
 
-@interface FileDetailPDFPreviewViewController
+@interface FileDetailPDFPreviewViewController : NSObject
 {
     id <UIGestureRecognizerDelegate> _recognizeDelegate;
 }

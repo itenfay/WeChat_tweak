@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderContact, WCFinderDataItem;
 
-@interface WCFinderLiveCloseMicWithAudienceCGI
+@interface WCFinderLiveCloseMicWithAudienceCGI : NSObject
 {
     _Bool _isAnchor;
     int _closeScene;

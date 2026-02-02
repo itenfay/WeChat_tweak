@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, WCAdCombineFollowInfo, WCAdFollowItemView, WCAdURLImageView;
 @protocol WCAdHalfScreenCombineFollowViewDelegate;
 
-@interface WCAdHalfScreenCombineFollowView
+@interface WCAdHalfScreenCombineFollowView : NSObject
 {
     _Bool _isBrandFollowed;
     _Bool _isFinderFollowed;

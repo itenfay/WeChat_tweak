@@ -5,7 +5,7 @@
 
 @class CContact, MMHeadImageView, MMTableViewInfo, MMUITextField, NSString, UIButton;
 
-@interface ChatRoomMemberDisplayNameViewController
+@interface ChatRoomMemberDisplayNameViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     MMUITextField *m_tfMemberDisplayName;

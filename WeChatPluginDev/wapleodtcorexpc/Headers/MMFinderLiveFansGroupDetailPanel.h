@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupDetailNavBar, MMFinderLiveFansGroupIntimacyInfo, MMFinderLiveFansGroupSignView, MMFinderLiveTask, MMFinderLiveTaskId, MMUILabel, NSMutableArray, NSString, RichTextView, UICollectionView, UIView, WCFinderAnimationLoadingView;
 
-@interface MMFinderLiveFansGroupDetailPanel
+@interface MMFinderLiveFansGroupDetailPanel : NSObject
 {
     _Bool _useDefaultIntimacy;
     _Bool _isFetching;

@@ -5,7 +5,7 @@
 
 @class NSString, ShareConfirmView;
 
-@interface JoinChatRoomHandler
+@interface JoinChatRoomHandler : NSObject
 {
     NSString *_groupId;
     NSString *_openId;

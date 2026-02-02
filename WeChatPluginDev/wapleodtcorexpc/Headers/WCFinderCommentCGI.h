@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderComment;
 
-@interface WCFinderCommentCGI
+@interface WCFinderCommentCGI : NSObject
 {
     unsigned int _bypassBufferType;
     WCFinderComment *_comment;

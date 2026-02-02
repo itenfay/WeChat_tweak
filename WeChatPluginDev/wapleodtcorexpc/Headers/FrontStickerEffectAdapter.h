@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface FrontStickerEffectAdapter
+@interface FrontStickerEffectAdapter : NSObject
 {
     NSMutableArray *_stickerArr;
 }

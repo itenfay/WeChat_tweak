@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, WXGBackupDataMgr;
 @protocol OS_dispatch_queue;
 
-@interface WXGBackupMigratePCLogic
+@interface WXGBackupMigratePCLogic : NSObject
 {
     _Bool _bStopService;
     _Bool _bFirstTag;

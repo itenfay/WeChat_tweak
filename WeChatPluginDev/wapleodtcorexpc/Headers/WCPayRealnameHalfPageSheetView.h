@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RealnameHalfPageDialog, RichTextView, UIImageView, UILabel, UIView;
 
-@interface WCPayRealnameHalfPageSheetView
+@interface WCPayRealnameHalfPageSheetView : NSObject
 {
     CDUnknownBlockType _cancelCallback;
     CDUnknownBlockType _confirmCallback;

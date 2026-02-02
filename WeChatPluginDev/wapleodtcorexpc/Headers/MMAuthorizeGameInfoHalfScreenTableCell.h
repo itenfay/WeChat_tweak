@@ -5,7 +5,7 @@
 
 @class UIImageView, UIView;
 
-@interface MMAuthorizeGameInfoHalfScreenTableCell
+@interface MMAuthorizeGameInfoHalfScreenTableCell : NSObject
 {
     UIImageView *_selectImageView;
     UIView *_highlightMaskView;

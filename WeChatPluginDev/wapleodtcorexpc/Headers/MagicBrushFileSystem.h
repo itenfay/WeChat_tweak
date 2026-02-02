@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol IMBFileSystem;
 
-@interface MagicBrushFileSystem
+@interface MagicBrushFileSystem : NSObject
 {
     id <IMBFileSystem> _mAssetsFS;
     id <IMBFileSystem> _mWxaPkgFS;

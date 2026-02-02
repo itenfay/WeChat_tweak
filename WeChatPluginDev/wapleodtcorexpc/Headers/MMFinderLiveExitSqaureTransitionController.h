@@ -5,7 +5,7 @@
 
 @class MMFinderLiveEnterSqaureTransitionContext, NSString;
 
-@interface MMFinderLiveExitSqaureTransitionController
+@interface MMFinderLiveExitSqaureTransitionController : NSObject
 {
     double _currentPlayerBottonHeight;
     struct CGRect _originPlayerControlViewFrame;

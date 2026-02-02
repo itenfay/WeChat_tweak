@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, WCFinderAdFeedbackParams;
 
-@interface WCFinderAdFeedbackCGI
+@interface WCFinderAdFeedbackCGI : NSObject
 {
     int _feedbackType;
     NSMutableArray *_reasonArray;

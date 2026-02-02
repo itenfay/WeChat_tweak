@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableData, NSString;
 
-@interface GCDWebServerDataRequest
+@interface GCDWebServerDataRequest : NSObject
 {
     NSMutableData *_data;
     NSString *_text;

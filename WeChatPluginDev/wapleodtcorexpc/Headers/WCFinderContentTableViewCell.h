@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class InteractionLabel, NSString, UIButton, UIImageView, WCFinderFeedContentTouchExpandTextView, WCFinderFeedContentVM;
 @protocol WCFinderContentTableViewCellDelegate;
 
-@interface WCFinderContentTableViewCell
+@interface WCFinderContentTableViewCell : NSObject
 {
     int _scene;
     id <WCFinderContentTableViewCellDelegate> _delegate;

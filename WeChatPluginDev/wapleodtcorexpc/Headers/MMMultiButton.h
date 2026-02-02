@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, ZZMultiButtonChainModel;
 
-@interface MMMultiButton
+@interface MMMultiButton : NSObject
 {
     long long _multiButtonState;
     UIView *_normalView;

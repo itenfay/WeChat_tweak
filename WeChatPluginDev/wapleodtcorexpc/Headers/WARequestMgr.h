@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WARequestMgr
+@interface WARequestMgr : NSObject
 {
     NSMutableDictionary *_dicAppID2RequestHandler;
     NSObject<OS_dispatch_queue> *_workerQueue;

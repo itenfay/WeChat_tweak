@@ -5,7 +5,7 @@
 
 @protocol WCCardDataSource;
 
-@interface WCCardMoneyView
+@interface WCCardMoneyView : NSObject
 {
     id <WCCardDataSource> _cardDataSource;
 }

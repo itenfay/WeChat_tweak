@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppItemOperation
+@interface WAAppItemOperation : NSObject
 {
     _Bool _excuteSync;
     _Bool _isOperating;

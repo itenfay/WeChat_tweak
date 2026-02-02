@@ -6,7 +6,7 @@
 @class NSData, NSString;
 @protocol WCAppAuthSearchLogicDelegate;
 
-@interface WCAppAuthSearchLogic
+@interface WCAppAuthSearchLogic : NSObject
 {
     unsigned int _nextPageFlag;
     unsigned int _eventID;

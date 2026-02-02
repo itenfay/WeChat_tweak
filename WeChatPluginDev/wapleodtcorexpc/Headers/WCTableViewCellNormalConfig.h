@@ -5,7 +5,7 @@
 
 @class WCTableViewCellCustomConfig, WCTableViewCellLeftConfig, WCTableViewCellRightConfig;
 
-@interface WCTableViewCellNormalConfig
+@interface WCTableViewCellNormalConfig : NSObject
 {
     _Bool _isLoading;
     _Bool _isSelectionMode;

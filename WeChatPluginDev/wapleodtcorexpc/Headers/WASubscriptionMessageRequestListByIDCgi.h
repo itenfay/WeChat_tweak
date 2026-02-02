@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
-@interface WASubscriptionMessageRequestListByIDCgi
+@interface WASubscriptionMessageRequestListByIDCgi : NSObject
 {
     unsigned int _appType;
     unsigned int _popupScene;

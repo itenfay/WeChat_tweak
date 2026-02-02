@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiveGiftWallInfo, MMFinderLiveSharePubbleTipView, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIScrollView, UIView;
 @protocol MMFinderLiveWishListDetailForAudiencePanelDelegate;
 
-@interface MMFinderLiveWishListDetailForAudiencePanel
+@interface MMFinderLiveWishListDetailForAudiencePanel : NSObject
 {
     _Bool _wecoinBalanceUpdated;
     id <MMFinderLiveWishListDetailForAudiencePanelDelegate> _operationDelegate;

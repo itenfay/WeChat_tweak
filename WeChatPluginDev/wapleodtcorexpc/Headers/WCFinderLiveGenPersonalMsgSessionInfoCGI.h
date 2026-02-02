@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGenPersonalMsgSessionInfoCGI
+@interface WCFinderLiveGenPersonalMsgSessionInfoCGI : NSObject
 {
     unsigned int _sourceType;
     NSData *_liveCookies;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSMutableSet, NSString;
 
-@interface WCFinderMarkReadReporter
+@interface WCFinderMarkReadReporter : NSObject
 {
     NSMutableArray *_waitingReportPool;
     MMTimer *_reportTimer;

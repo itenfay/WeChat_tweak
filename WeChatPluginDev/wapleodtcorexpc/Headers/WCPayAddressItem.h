@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UILabel;
 @protocol WCPayAddressItemDelegate;
 
-@interface WCPayAddressItem
+@interface WCPayAddressItem : NSObject
 {
     _Bool _disableLocation;
     _Bool _chinaFirst;

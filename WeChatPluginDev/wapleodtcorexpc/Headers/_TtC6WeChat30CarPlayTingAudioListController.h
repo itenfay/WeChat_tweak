@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat30CarPlayTingAudioListController
+@interface _TtC6WeChat30CarPlayTingAudioListController : NSObject
 {
     MISSING_TYPE *listenLaterPlayListLogic;
     MISSING_TYPE *recommendPlayListLogic;

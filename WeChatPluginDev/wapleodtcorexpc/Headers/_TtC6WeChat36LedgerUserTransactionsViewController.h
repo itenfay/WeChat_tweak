@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat36LedgerUserTransactionsViewController
+@interface _TtC6WeChat36LedgerUserTransactionsViewController : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *context;

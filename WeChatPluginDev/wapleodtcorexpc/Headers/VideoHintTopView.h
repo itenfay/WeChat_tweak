@@ -5,7 +5,7 @@
 
 @protocol VideoHintTopViewDelegate;
 
-@interface VideoHintTopView
+@interface VideoHintTopView : NSObject
 {
     id <VideoHintTopViewDelegate> _delegate;
 }

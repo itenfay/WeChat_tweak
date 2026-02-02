@@ -5,7 +5,7 @@
 
 @class EditVideoBGMPlayer, FinderTopicBgmInfo, MMUIButton, NSString, UIImageView, UILabel, UIView, WCFinderAnimationLoadingView;
 
-@interface WCFinderPatMusicCollectionReusableView
+@interface WCFinderPatMusicCollectionReusableView : NSObject
 {
     MMUIButton *_patButton;
     UILabel *_patMusicTitleLabel;

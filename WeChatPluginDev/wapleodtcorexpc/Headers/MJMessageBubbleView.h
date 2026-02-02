@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIColor, UIFont;
 
-@interface MJMessageBubbleView
+@interface MJMessageBubbleView : NSObject
 {
     double _bubbleTailHeight;
     double _bubbleCornerRadius;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCLabsAppItem
+@interface WCLabsAppItem : NSObject
 {
     _Bool _bNoReport;
     _Bool _bAllVersion;

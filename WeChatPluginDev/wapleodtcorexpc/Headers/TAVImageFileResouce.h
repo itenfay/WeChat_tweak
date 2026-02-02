@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CIImage, NSObject, NSString;
 @protocol OS_dispatch_semaphore;
 
-@interface TAVImageFileResouce
+@interface TAVImageFileResouce : NSObject
 {
     NSString *_filePath;
     CIImage *_tempImage;

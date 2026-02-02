@@ -6,7 +6,7 @@
 @class FinderNicknameVerifyInfo, MMGrowTextView, MMUIButton, NSMutableArray, NSString, RichTextView, UIButton, UIImage, UIImageView, UILabel, UIScrollView, UISwitch, UIView, WCFinderBannerView, WCFinderContact, WCFinderCreateUserVerifyPhoneLogic, WCFinderCreateUserViewModel, WCFinderGetWechatHDHeadFetcher;
 @protocol WCFinderCreateUserViewControllerDelegate;
 
-@interface WCFinderCreateUserViewController
+@interface WCFinderCreateUserViewController : NSObject
 {
     _Bool _loading;
     unsigned int _createSceneUserType;

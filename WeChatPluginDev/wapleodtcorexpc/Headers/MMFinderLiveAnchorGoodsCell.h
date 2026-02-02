@@ -6,7 +6,7 @@
 @class MMFinderLiveAnchorGoodsCellLeftCardView, MMFinderLiveGoodsAskedForPromotingView, MMFinderLiveGoodsCellSubInfosView, MMFinderLiveGoodsPromotionReplayButton, MMFinderLiveShowBoxItemsView, MMFinderLiveTagsLabel, MMUIButton, NSString, UILabel;
 @protocol MMFinderLiveAnchorGoodsCellDelegate;
 
-@interface MMFinderLiveAnchorGoodsCell
+@interface MMFinderLiveAnchorGoodsCell : NSObject
 {
     MMFinderLiveAnchorGoodsCellLeftCardView *_leftCardView;
     UILabel *_saleCountsLabel;

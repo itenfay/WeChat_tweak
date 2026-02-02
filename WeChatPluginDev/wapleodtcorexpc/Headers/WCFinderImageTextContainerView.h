@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIImageView;
 @protocol WCFinderImageTextContainerViewDelegate;
 
-@interface WCFinderImageTextContainerView
+@interface WCFinderImageTextContainerView : NSObject
 {
     RichTextView *_richTextView;
     UIImageView *_imageView;

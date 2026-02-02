@@ -6,7 +6,7 @@
 @class MMFinderLiveFansGroupAnchorEditFansNoticeInfo, MMFinderLiveFansGroupAnchorEditViewModel, MMFinderLiveTaskId, NSArray, NSString, UITableView;
 @protocol MMFinderLiveFansGroupAnchorEditPanelDelegate, MMFinderLiveFansGroupOperationReportDelegate;
 
-@interface MMFinderLiveFansGroupAnchorEditPanel
+@interface MMFinderLiveFansGroupAnchorEditPanel : NSObject
 {
     _Bool _cardDebugSwitch;
     id <MMFinderLiveFansGroupAnchorEditPanelDelegate> _delegate;

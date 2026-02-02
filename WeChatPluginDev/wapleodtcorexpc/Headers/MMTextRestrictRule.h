@@ -6,7 +6,7 @@
 @class NSString;
 @protocol UITextFieldDelegate;
 
-@interface MMTextRestrictRule
+@interface MMTextRestrictRule : NSObject
 {
     unsigned long long _maxLength;
     long long _restricyType;

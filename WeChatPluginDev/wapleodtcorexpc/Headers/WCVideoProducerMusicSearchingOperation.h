@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WCVideoProducerMusicSearchRequest;
 
-@interface WCVideoProducerMusicSearchingOperation
+@interface WCVideoProducerMusicSearchingOperation : NSObject
 {
     NSMutableArray *_searchRequestList;
     WCVideoProducerMusicSearchRequest *_currentSearchRequest;

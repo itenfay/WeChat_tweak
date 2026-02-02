@@ -6,7 +6,7 @@
 @class CAGradientLayer, MJMaterialLoadingStatusCoordinator, MJShootFaceEffectInspectorViewModel, MMUIButton, MMUILabel, NSString, UICollectionView;
 @protocol MJShootFaceEffectInspectorDelegate;
 
-@interface MJShootFaceEffectInspector
+@interface MJShootFaceEffectInspector : NSObject
 {
     id <MJShootFaceEffectInspectorDelegate> _delegate;
     MJShootFaceEffectInspectorViewModel *_viewModel;

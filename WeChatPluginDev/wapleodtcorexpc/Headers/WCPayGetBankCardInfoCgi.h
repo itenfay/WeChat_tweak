@@ -5,7 +5,7 @@
 
 @protocol WCPayGetBankCardInfoCgiDelegate;
 
-@interface WCPayGetBankCardInfoCgi
+@interface WCPayGetBankCardInfoCgi : NSObject
 {
     id <WCPayGetBankCardInfoCgiDelegate> _m_cgiDelegate;
 }

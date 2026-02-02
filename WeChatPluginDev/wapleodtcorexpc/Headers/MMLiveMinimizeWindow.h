@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveMinimizeViewController, NSString, SequenceAnimationObject;
 @protocol MMLiveMinimizeWindowDelegate;
 
-@interface MMLiveMinimizeWindow
+@interface MMLiveMinimizeWindow : NSObject
 {
     id <MMLiveMinimizeWindowDelegate> _liveMinimizeWindowDelegate;
     SequenceAnimationObject *_animationObject;

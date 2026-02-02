@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiTalkMoreMemberMgr
+@interface MultiTalkMoreMemberMgr : NSObject
 {
     unsigned long long _maxMultiTalkMemCount;
 }

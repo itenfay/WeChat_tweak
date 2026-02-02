@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MagicAdvertiseBaseService
+@interface MagicAdvertiseBaseService : NSObject
 {
 }
 

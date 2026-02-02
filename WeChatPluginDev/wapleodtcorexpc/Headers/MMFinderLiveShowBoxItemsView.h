@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveShowBoxItemsViewConfig, NSArray;
 
-@interface MMFinderLiveShowBoxItemsView
+@interface MMFinderLiveShowBoxItemsView : NSObject
 {
     MMFinderLiveShowBoxItemsViewConfig *_config;
     CDUnknownBlockType _onSecKillArriveTime;

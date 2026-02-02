@@ -5,7 +5,7 @@
 
 @class MMTimer;
 
-@interface LiteAppJsApiAdFollowBrandUser
+@interface LiteAppJsApiAdFollowBrandUser : NSObject
 {
     int _brandUIScene;
     int _brandUISubScene;

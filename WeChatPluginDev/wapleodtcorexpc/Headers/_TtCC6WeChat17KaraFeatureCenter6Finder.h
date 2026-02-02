@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter6Finder
+@interface _TtCC6WeChat17KaraFeatureCenter6Finder : NSObject
 {
     MISSING_TYPE *postHistoryTable;
 }

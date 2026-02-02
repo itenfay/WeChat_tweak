@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WNSaveImageCgi;
 
-@interface WNSaveImageResourceMgr
+@interface WNSaveImageResourceMgr : NSObject
 {
     _Bool _bDownload;
     unsigned int _localId;

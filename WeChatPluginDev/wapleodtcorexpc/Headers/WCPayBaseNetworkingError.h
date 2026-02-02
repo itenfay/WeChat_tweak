@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayBaseNetworkingError
+@interface WCPayBaseNetworkingError : NSObject
 {
     int _errorCode;
     NSString *_errorDesc;

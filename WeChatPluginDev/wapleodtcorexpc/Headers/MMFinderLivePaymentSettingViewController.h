@@ -6,7 +6,7 @@
 @class MMCommonActionSheetPicker, MMFinderLivePaymentSettingView, MMFinderLivePaymentTrialModeSettingView, MMTableViewInfo, NSArray, NSMutableArray, NSString;
 @protocol MMFinderLivePaymentSettingViewControllerDelegate;
 
-@interface MMFinderLivePaymentSettingViewController
+@interface MMFinderLivePaymentSettingViewController : NSObject
 {
     _Bool _forceDarkMode;
     _Bool _isPaymentSwitchOn;

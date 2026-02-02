@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GCKeyValueSettingModel
+@interface GCKeyValueSettingModel : NSObject
 {
     _Bool _isNumber;
     NSString *_key;

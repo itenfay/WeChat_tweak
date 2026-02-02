@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTLTopBarReportItem
+@interface BTLTopBarReportItem : NSObject
 {
     _Bool _hasDotNotice;
     _Bool _isLogoCache;

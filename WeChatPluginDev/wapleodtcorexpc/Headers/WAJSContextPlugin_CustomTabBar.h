@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, UIColor, UIView, WeAppCustomTabbar;
 
-@interface WAJSContextPlugin_CustomTabBar
+@interface WAJSContextPlugin_CustomTabBar : NSObject
 {
     _Bool _m_IsChangeTab;
     _Bool _needAnimation;

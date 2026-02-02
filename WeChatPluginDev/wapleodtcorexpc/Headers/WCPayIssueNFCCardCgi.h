@@ -5,7 +5,7 @@
 
 @protocol WCPayIssueNFCCardCgiDelegate;
 
-@interface WCPayIssueNFCCardCgi
+@interface WCPayIssueNFCCardCgi : NSObject
 {
     id <WCPayIssueNFCCardCgiDelegate> _m_delegate;
 }

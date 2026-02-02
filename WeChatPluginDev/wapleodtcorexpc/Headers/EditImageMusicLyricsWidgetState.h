@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface EditImageMusicLyricsWidgetState
+@interface EditImageMusicLyricsWidgetState : NSObject
 {
     NSArray *_lyricsList;
     double _lyricsTimeInterval;

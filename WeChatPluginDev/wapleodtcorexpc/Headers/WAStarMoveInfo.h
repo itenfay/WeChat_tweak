@@ -5,7 +5,7 @@
 
 @class WAAppItemData;
 
-@interface WAStarMoveInfo
+@interface WAStarMoveInfo : NSObject
 {
     unsigned long long _moveType;
     WAAppItemData *_moveItem;

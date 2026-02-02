@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, NSArray, NSString, UIImage, UIView, WAHomeTableViewCellDescView, WCTagsView;
 
-@interface WAHomeTableViewCell
+@interface WAHomeTableViewCell : NSObject
 {
     _Bool _isNeedLogoGray;
     long long _runningState;

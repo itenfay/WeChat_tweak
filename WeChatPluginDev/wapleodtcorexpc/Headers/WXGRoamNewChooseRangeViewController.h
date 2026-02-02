@@ -5,7 +5,7 @@
 
 @class MMUINavigationBar, NSString, UIImageView, UILabel, UINavigationItem, UIScrollView, UISwitch, UIView, WXGRoamBackupPackageDetailCell;
 
-@interface WXGRoamNewChooseRangeViewController
+@interface WXGRoamNewChooseRangeViewController : NSObject
 {
     _Bool _isUpadte;
     UINavigationItem *_customNavigationItem;

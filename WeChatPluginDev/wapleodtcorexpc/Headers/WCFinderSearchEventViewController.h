@@ -6,7 +6,7 @@
 @class MMUISearchBar, NSString, UITableView, WCFinderEmptyTipsView, WCFinderRefreshTableFooterView, WCFinderSearchEventViewModel;
 @protocol WCFinderSearchEventViewControllerDelegate;
 
-@interface WCFinderSearchEventViewController
+@interface WCFinderSearchEventViewController : NSObject
 {
     id <WCFinderSearchEventViewControllerDelegate> _delegate;
     WCFinderSearchEventViewModel *_viewModel;

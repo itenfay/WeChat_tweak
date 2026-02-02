@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJPublisherPlaybackProgressSlider, MMUIButton, UIStackView;
 
-@interface MJMovieComposingBottomBar
+@interface MJMovieComposingBottomBar : NSObject
 {
     CDUnknownBlockType _didClickButtonAction;
     MJPublisherPlaybackProgressSlider *_playbackProgressSlider;

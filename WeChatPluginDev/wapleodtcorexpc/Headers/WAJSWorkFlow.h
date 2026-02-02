@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSContext, NSArray, NSMutableDictionary, NSString, NSThread, WAJSCoreService, WasmAdaptor;
 
-@interface WAJSWorkFlow
+@interface WAJSWorkFlow : NSObject
 {
     _Bool _runningApi;
     unsigned int _workerId;

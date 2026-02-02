@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ContactTagCreateTagHalfScreenViewController, ContactTagListBottomBar, ContactTagSearchPanel, MMTableView, MMTableViewMultipleReorder, NSArray, NSMutableArray, NSMutableSet, NSString, UIBarButtonItem, UIButton, UILabel, UIView, WCDataSearcher;
 
-@interface ContactTagListViewController
+@interface ContactTagListViewController : NSObject
 {
     ContactTagCreateTagHalfScreenViewController *m_tagHalfScreenviewController;
     _Bool _needReload;

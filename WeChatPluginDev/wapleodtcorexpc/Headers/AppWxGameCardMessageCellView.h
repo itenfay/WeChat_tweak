@@ -5,7 +5,7 @@
 
 @class AppWxGameCardMessageViewModel, UIView;
 
-@interface AppWxGameCardMessageCellView
+@interface AppWxGameCardMessageCellView : NSObject
 {
     UIView *m_sclView;
 }

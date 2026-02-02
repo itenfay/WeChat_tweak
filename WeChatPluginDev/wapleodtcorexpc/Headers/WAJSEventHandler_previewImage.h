@@ -5,7 +5,7 @@
 
 @class PhotoViewController;
 
-@interface WAJSEventHandler_previewImage
+@interface WAJSEventHandler_previewImage : NSObject
 {
     PhotoViewController *m_photoViewController;
 }

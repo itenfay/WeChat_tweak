@@ -5,7 +5,7 @@
 
 @class NSString, UILongPressGestureRecognizer, UIViewController, WSLocalTemplateConfig;
 
-@interface WSFinderLongVideoContainerView
+@interface WSFinderLongVideoContainerView : NSObject
 {
     _Bool _isCurWSWebView;
     _Bool _needCreateContextId;

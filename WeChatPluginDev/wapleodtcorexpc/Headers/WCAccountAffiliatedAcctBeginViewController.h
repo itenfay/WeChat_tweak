@@ -6,7 +6,7 @@
 @class MMUIButton;
 @protocol WCAccountAffiliatedAcctDelegate;
 
-@interface WCAccountAffiliatedAcctBeginViewController
+@interface WCAccountAffiliatedAcctBeginViewController : NSObject
 {
     id <WCAccountAffiliatedAcctDelegate> _delegate;
     MMUIButton *_helpButton;

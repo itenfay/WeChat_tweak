@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardGiftSeed
+@interface WCCardGiftSeed : NSObject
 {
     NSString *_cardId;
     NSString *_toUserName;

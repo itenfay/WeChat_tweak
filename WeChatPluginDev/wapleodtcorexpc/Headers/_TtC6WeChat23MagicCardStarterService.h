@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat23MagicCardStarterService
+@interface _TtC6WeChat23MagicCardStarterService : NSObject
 {
     MISSING_TYPE *handleToBiz;
     MISSING_TYPE *handleToBizCreator;

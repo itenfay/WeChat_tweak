@@ -5,7 +5,7 @@
 
 @class BrandProfileItemReaderViewModel, CAGradientLayer;
 
-@interface BrandProfileItemReaderCell
+@interface BrandProfileItemReaderCell : NSObject
 {
     CAGradientLayer *_coverMaskLayer;
 }

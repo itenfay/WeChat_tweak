@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveTaskId
+@interface MMFinderLiveTaskId : NSObject
 {
     NSString *_taskKey;
     _Bool _isEnableComment;

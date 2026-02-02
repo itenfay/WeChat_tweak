@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCTimelineFeedExposureInfo
+@interface WCTimelineFeedExposureInfo : NSObject
 {
     _Bool _isAd;
     int _likeCount;

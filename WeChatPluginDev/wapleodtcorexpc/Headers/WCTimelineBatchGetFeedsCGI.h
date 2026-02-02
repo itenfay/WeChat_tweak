@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCTimelineBatchGetFeedsCGI
+@interface WCTimelineBatchGetFeedsCGI : NSObject
 {
     int _scene;
     unsigned int _startTime;

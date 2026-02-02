@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCPCSizeNotEnounghPageSheet
+@interface WCPCSizeNotEnounghPageSheet : NSObject
 {
     CDUnknownBlockType _confirmCallBack;
     CDUnknownBlockType _cancelCallBack;

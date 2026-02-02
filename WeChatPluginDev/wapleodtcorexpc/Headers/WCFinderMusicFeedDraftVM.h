@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedDraft;
 
-@interface WCFinderMusicFeedDraftVM
+@interface WCFinderMusicFeedDraftVM : NSObject
 {
     WCFinderFeedDraft *_draftVM;
 }

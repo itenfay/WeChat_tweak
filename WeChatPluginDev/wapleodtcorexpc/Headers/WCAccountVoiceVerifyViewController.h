@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIButton, WCRedesignButtonItem;
 @protocol WCAccountVoiceVerifyViewControllerDelegate;
 
-@interface WCAccountVoiceVerifyViewController
+@interface WCAccountVoiceVerifyViewController : NSObject
 {
     id <WCAccountVoiceVerifyViewControllerDelegate> _delegate;
     NSString *_code;

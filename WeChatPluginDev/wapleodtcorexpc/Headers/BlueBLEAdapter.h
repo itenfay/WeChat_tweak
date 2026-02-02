@@ -5,7 +5,7 @@
 
 @class CBCentralManager, NSMutableArray, NSString;
 
-@interface BlueBLEAdapter
+@interface BlueBLEAdapter : NSObject
 {
     CBCentralManager *m_bleAdapter;
     NSMutableArray *m_data;

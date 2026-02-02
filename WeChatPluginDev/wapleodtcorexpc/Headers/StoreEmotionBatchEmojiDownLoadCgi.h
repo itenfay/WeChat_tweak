@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface StoreEmotionBatchEmojiDownLoadCgi
+@interface StoreEmotionBatchEmojiDownLoadCgi : NSObject
 {
     unsigned int _maxCountPerRequest;
     CDUnknownBlockType _onFinishBlock;

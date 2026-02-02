@@ -5,7 +5,7 @@
 
 @class MultiReaderMessageViewModel, NSMutableArray, NSString;
 
-@interface MultiReaderMessageCellView
+@interface MultiReaderMessageCellView : NSObject
 {
     unsigned int m_selectIndex;
     NSMutableArray *m_itemViewArr;

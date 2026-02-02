@@ -6,7 +6,7 @@
 @class MJShootCropGuidelineMaskView, MJShootCropToolBar, MMUIImageView, MMUIView, NSString, OMJCamSpatialDesc, UIPanGestureRecognizer, UIPinchGestureRecognizer, UISelectionFeedbackGenerator;
 @protocol MJShootCropViewControllerDelegate;
 
-@interface MJShootCropViewController
+@interface MJShootCropViewController : NSObject
 {
     _Bool _isStandardCanvas;
     id <MJShootCropViewControllerDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class MonoServiceMsgHistory, NSMutableArray, NSString, VibrationRepeatObject;
 
-@interface MonoServiceMsgMgr
+@interface MonoServiceMsgMgr : NSObject
 {
     NSMutableArray *m_queue;
     MonoServiceMsgHistory *m_msgHistory;

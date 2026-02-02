@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCDumpReporterMgr
+@interface WCDumpReporterMgr : NSObject
 {
     NSMutableArray *_uploadedIssueArray;
     NSMutableArray *_uploadingIssueArray;

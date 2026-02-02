@@ -5,7 +5,7 @@
 
 @class CommonMessageCellView, MMInputMsgReferView, MMTipsViewController, MMUIActivityIndicatorView, NSArray, NSDate, NSString, NavigateLogicController, RichTextView, TextFloatViewController, TextMessageViewModel, UIButton, UIImageView, UILabel, UIView, WCUIActionSheet;
 
-@interface TextMessageCellView
+@interface TextMessageCellView : NSObject
 {
     RichTextView *m_richTextView;
     MMTipsViewController *m_oTranslateIntroView;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31CarPlayCommonTapeListController
+@interface _TtC6WeChat31CarPlayCommonTapeListController : NSObject
 {
     MISSING_TYPE *commonTapeList;
 }

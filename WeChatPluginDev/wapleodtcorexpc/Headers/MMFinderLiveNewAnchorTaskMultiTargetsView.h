@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, NSMutableArray, NSString, UICollectionView, UIScrollView;
 
-@interface MMFinderLiveNewAnchorTaskMultiTargetsView
+@interface MMFinderLiveNewAnchorTaskMultiTargetsView : NSObject
 {
     _Bool _shouldShowNote;
     unsigned int _rewardProvideType;

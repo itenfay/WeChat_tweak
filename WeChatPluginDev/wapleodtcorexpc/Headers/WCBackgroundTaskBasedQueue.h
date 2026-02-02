@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock;
 
-@interface WCBackgroundTaskBasedQueue
+@interface WCBackgroundTaskBasedQueue : NSObject
 {
     struct queue<void (^)(), std::deque<void (^)()>> _queue;
     NSRecursiveLock *_lock;

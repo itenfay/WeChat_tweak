@@ -6,7 +6,7 @@
 @class MMTableView, NSString, UIButton, UILabel, UIView, WCFinderCommonSearchBar, WCFinderLocationFooterView, WCFinderLocationReportModel, WCFinderLocationViewModel, WCFinderMultiSelectSearchBar;
 @protocol WCFinderLocationViewControllerDelegate;
 
-@interface WCFinderLocationViewController
+@interface WCFinderLocationViewController : NSObject
 {
     id <WCFinderLocationViewControllerDelegate> _delegate;
     NSString *_postSessionId;

@@ -5,7 +5,7 @@
 
 @class JSApiScopeAuthViewModel, JSApiScopeAuthorizeInfo, NSString;
 
-@interface JSApiScopeAuthorizePageSheet
+@interface JSApiScopeAuthorizePageSheet : NSObject
 {
     unsigned int _selectedAvatarId;
     unsigned int _sessionId;

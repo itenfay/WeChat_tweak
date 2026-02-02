@@ -5,7 +5,7 @@
 
 @class ContactsItemView;
 
-@interface SayHelloContactsItemCell
+@interface SayHelloContactsItemCell : NSObject
 {
     ContactsItemView *_contactItemView;
 }

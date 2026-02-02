@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UIColor, UIImageView, WCFinderDataItem;
 
-@interface WCFinderLivePurchasedFeedHandleViewController
+@interface WCFinderLivePurchasedFeedHandleViewController : NSObject
 {
     _Bool _showTicket;
     int _scene;

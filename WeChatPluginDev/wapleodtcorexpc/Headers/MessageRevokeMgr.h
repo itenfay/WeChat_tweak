@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MessageRevokeMgr
+@interface MessageRevokeMgr : NSObject
 {
     NSMutableArray *_arrRevokeInfo;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface MMWindowMgr
+@interface MMWindowMgr : NSObject
 {
     NSMutableArray *m_WindowMgrObjArr;
 }

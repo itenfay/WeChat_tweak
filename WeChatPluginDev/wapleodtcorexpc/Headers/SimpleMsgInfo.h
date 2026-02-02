@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSString;
 
-@interface SimpleMsgInfo
+@interface SimpleMsgInfo : NSObject
 {
     unsigned int m_uiMsgLocalID;
     unsigned int m_uiMsgType;

@@ -5,7 +5,7 @@
 
 @class MMHeadImageAnnotationView, NSString, UserPositionItem;
 
-@interface MMHeadImageAnnotation
+@interface MMHeadImageAnnotation : NSObject
 {
     UserPositionItem *_userPositionItem;
     MMHeadImageAnnotationView *_annotationView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonUploader, NSMutableDictionary, NSString, WKWebView;
 
-@interface WCTopicSearchActionLogic
+@interface WCTopicSearchActionLogic : NSObject
 {
     EmoticonUploader *_uploader;
     WKWebView *_resultWebView;

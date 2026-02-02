@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveLegalPromotConfig, NSString, RichTextView, UIButton, UILabel, UIView;
 
-@interface MMFinderLiveGiftPolicyIntroView
+@interface MMFinderLiveGiftPolicyIntroView : NSObject
 {
     RichTextView *_introDetailLabel;
     UIView *_contentView;

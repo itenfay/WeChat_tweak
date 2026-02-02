@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate;
 
-@interface WCSelectTimeHalfScreenView
+@interface WCSelectTimeHalfScreenView : NSObject
 {
     CDUnknownBlockType _confirmCallBack;
     CDUnknownBlockType _cancelCallBack;

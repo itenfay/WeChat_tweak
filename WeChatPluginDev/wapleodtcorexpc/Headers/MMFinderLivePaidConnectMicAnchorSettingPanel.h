@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveGenericPickerView, MMFinderLivePaidConnectMicAnchorInfo, MMFinderLivePaidConnectMicAnchorSetting, MMFinderLivePaidConnectMicAnchorSettingConfig, MMFinderLiveTaskId, MMTableViewInfo, MMUIButton, MMUILabel, MMUIMaskContainerView, NSString, UIButton;
 @protocol MMFinderLivePaidConnectMicAnchorSettingPanelDelegate;
 
-@interface MMFinderLivePaidConnectMicAnchorSettingPanel
+@interface MMFinderLivePaidConnectMicAnchorSettingPanel : NSObject
 {
     _Bool _isDismissedByConfirm;
     id <MMFinderLivePaidConnectMicAnchorSettingPanelDelegate> _delegate;

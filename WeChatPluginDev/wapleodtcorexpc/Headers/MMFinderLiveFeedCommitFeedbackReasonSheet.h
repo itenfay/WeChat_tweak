@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIButton, UITableView, UIView, WCFinderAnimationLoadingView, WCFinderFeedContentVM;
 
-@interface MMFinderLiveFeedCommitFeedbackReasonSheet
+@interface MMFinderLiveFeedCommitFeedbackReasonSheet : NSObject
 {
     _Bool _isClosing;
     int _commentScene;

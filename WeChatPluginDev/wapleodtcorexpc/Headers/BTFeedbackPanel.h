@@ -6,7 +6,7 @@
 @class BTFeedbackPanelCoordinateParams, BTFeedbackPanelInitParams, MMUIImageView, MMUILabel, MMUIView, NSMutableArray, NSString, UIButton;
 @protocol BTFeedbackPanelDelegate;
 
-@interface BTFeedbackPanel
+@interface BTFeedbackPanel : NSObject
 {
     BTFeedbackPanelInitParams *m_initParams;
     BTFeedbackPanelCoordinateParams *m_coordinateParams;

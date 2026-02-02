@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIButton, UIImageView, UILabel, WCPayControlData, WCPayFavorComposeInfo;
 @protocol WCPayCouponsListViewDelegate;
 
-@interface WCPayCouponsListView
+@interface WCPayCouponsListView : NSObject
 {
     WCPayFavorComposeInfo *m_oOldSelectedComposeInfo;
     UIImageView *m_backgroundView;

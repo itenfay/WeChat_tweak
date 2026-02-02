@@ -5,7 +5,7 @@
 
 @class LiveOnlineInfo, MMUILabel, MMUIView, NSMutableArray, NSString, UIImageView;
 
-@interface MMFinderLiveOnlineInfoBar
+@interface MMFinderLiveOnlineInfoBar : NSObject
 {
     LiveOnlineInfo *_currentUserLiveOnlineInfo;
     NSMutableArray *_onlineTopRewarderInfoFacedes;

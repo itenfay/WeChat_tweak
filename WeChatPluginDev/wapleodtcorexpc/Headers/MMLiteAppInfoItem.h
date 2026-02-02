@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiteAppInfoItem
+@interface MMLiteAppInfoItem : NSObject
 {
     unsigned int ilinkVersion;
     NSString *appId;

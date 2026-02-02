@@ -6,7 +6,7 @@
 @class MMUIView, NSString, WCPayTenpayPasswordCtrlItem;
 @protocol WCPayLQTOrderConfirmViewDelegate;
 
-@interface WCPayLQTOrderConfirmView
+@interface WCPayLQTOrderConfirmView : NSObject
 {
     unsigned int _money;
     id <WCPayLQTOrderConfirmViewDelegate> _delegate;

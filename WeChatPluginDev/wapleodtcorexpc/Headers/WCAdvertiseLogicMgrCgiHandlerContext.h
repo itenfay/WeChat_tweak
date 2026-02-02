@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCAdvertiseLogicMgrCgiHandlerContext
+@interface WCAdvertiseLogicMgrCgiHandlerContext : NSObject
 {
     CDUnknownBlockType _appointmentCompletionHandler;
 }

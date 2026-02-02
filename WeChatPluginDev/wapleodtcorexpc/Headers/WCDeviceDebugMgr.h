@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, WCDevicedebugSettingData;
 
-@interface WCDeviceDebugMgr
+@interface WCDeviceDebugMgr : NSObject
 {
     NSMutableArray *m_logs;
     NSMutableArray *m_contacts;

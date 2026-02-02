@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMAsset
+@interface MMAsset : NSObject
 {
     _Bool _m_isNeedOriginImage;
     _Bool _m_isSupportHeif;

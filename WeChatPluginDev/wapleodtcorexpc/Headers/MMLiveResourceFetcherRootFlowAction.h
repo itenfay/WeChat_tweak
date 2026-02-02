@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveResourceFetcherRootFlowAction
+@interface MMLiveResourceFetcherRootFlowAction : NSObject
 {
     unsigned long long _pendingTasksCount;
 }

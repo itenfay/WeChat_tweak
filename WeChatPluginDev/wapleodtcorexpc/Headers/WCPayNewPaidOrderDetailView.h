@@ -6,7 +6,7 @@
 @class CShakeChecker, MMUILabel, MMUIView, NSMutableArray, NSString, UIBezierPath, UIButton, UIImageView, UILabel, UIScrollView, UIView, WCPayCheckMchPosCgi, WCPayControlData, WCPayImageMaskView, WCPayLotteryView, WCPayMchFavView, WCPayPaidDetailFinderInfoView, WCPayPaidDetailLeadTailView, WCPayUnCheckMchPosCgi, WCPayWebImageView;
 @protocol WCPayNewPaidOrderDetailViewDelegate;
 
-@interface WCPayNewPaidOrderDetailView
+@interface WCPayNewPaidOrderDetailView : NSObject
 {
     _Bool _isShaking;
     _Bool _bCanShake;

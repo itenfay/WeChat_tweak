@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_openAddress
+@interface WAJSEventHandler_openAddress : NSObject
 {
     _Bool _isForbidDarkMode;
     _Bool _isDirectOpenEditor;

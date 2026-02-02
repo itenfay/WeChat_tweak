@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveShareLiveQRCodeInfo, NSString, WCFinderContact;
 
-@interface MMFinderLiveLegacyGenericQrCodeViewController
+@interface MMFinderLiveLegacyGenericQrCodeViewController : NSObject
 {
     unsigned int _isSpamModPic;
     WCFinderContact *_anchorContact;

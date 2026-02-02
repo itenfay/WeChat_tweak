@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCardDetailTable
+@interface WCCardDetailTable : NSObject
 {
     unsigned int _showNum;
     NSString *_title;

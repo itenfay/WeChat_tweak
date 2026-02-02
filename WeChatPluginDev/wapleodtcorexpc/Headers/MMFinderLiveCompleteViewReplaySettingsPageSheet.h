@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiveInfo, MMFinderLiveCompleteViewReplaySettingsCoverPickingLogic, MMFinderLiveTask, MMLiveScrollGradientMaskingView, MMWebImageView, NSString, RichTextView, UIImage, UILabel, UIScrollView, UITableView, UIView;
 @protocol MMFinderLiveCompleteViewReplaySettingsStrategy;
 
-@interface MMFinderLiveCompleteViewReplaySettingsPageSheet
+@interface MMFinderLiveCompleteViewReplaySettingsPageSheet : NSObject
 {
     CDUnknownBlockType _commitBlock;
     MMLiveScrollGradientMaskingView *_scrollMaskingView;

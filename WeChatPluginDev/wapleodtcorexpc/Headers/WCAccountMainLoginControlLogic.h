@@ -5,7 +5,7 @@
 
 @class NSString, WCAccountBaseControlLogic, WCAccountManualAuthControlLogic, WCPlayLiveWithoutLoginControlLogic;
 
-@interface WCAccountMainLoginControlLogic
+@interface WCAccountMainLoginControlLogic : NSObject
 {
     WCAccountBaseControlLogic *m_subFBLogic;
     WCAccountBaseControlLogic *m_subAppleLogic;

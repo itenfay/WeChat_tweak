@@ -5,7 +5,7 @@
 
 @class BrandFinderLiveBaseCardView, BrandFinderLiveMessageViewModel, NSString;
 
-@interface BrandFinderLiveMessageCellView
+@interface BrandFinderLiveMessageCellView : NSObject
 {
     BrandFinderLiveBaseCardView *_cardView;
 }

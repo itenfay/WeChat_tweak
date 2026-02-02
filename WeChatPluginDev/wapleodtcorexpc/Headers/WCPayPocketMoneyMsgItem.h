@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayPocketMoneyMsgItem
+@interface WCPayPocketMoneyMsgItem : NSObject
 {
     _Bool _ishalfscreen;
     _Bool _transparent;

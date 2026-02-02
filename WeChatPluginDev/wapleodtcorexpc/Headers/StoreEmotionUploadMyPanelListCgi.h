@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol StoreEmotionUploadMyPanelListCgiDelegate;
 
-@interface StoreEmotionUploadMyPanelListCgi
+@interface StoreEmotionUploadMyPanelListCgi : NSObject
 {
     _Bool m_hasStartRequestOnce;
     _Bool m_ignoreLimit;

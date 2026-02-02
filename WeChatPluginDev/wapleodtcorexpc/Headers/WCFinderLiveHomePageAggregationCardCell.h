@@ -6,7 +6,7 @@
 @class NSString, WCFinderLiveHomePageAggregationBaseCard, WCFinderLiveHomePageFeedAggregationCardVM;
 @protocol WCFinderLiveHomePageAggregationCardCellDelegate;
 
-@interface WCFinderLiveHomePageAggregationCardCell
+@interface WCFinderLiveHomePageAggregationCardCell : NSObject
 {
     id <WCFinderLiveHomePageAggregationCardCellDelegate> _delegate;
     WCFinderLiveHomePageFeedAggregationCardVM *_feedVM;

@@ -6,7 +6,7 @@
 @class NSString, PasswordLogic, WCAccountBindPhoneControlLogic;
 @protocol WCAccountForgetPasswordControlLogicDelegate;
 
-@interface WCAccountForgetPasswordControlLogic
+@interface WCAccountForgetPasswordControlLogic : NSObject
 {
     _Bool _shouldQueryHasPasswd;
     id <WCAccountForgetPasswordControlLogicDelegate> _delegate;

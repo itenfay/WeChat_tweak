@@ -6,7 +6,7 @@
 @class MMProgressView, MMUIActivityIndicatorView, MMUILabel, MMUINavigationBar, NSString, UIButton, UIImageView, UILabel, UINavigationItem, UIScrollView, UIView, WXGDotDotDotLabel;
 @protocol WCPCMigrationEntryViewControllerDelegate;
 
-@interface WCPCMigrationEntryViewController
+@interface WCPCMigrationEntryViewController : NSObject
 {
     UIScrollView *m_scrollView;
     UIButton *m_leftTopCornerButton;

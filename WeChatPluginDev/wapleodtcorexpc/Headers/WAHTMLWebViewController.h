@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWebProgressBar, NSCache, NSString, UIColor, UIImageView, UILabel, WAWebViewController, WAWebViewPlugin_HTMLWeb, WebTransWebpageLogic;
 @protocol IWAHTMLWebVCDelegate;
 
-@interface WAHTMLWebViewController
+@interface WAHTMLWebViewController : NSObject
 {
     NSString *m_oLoadingUrl;
     long long m_nHttpRspCode;

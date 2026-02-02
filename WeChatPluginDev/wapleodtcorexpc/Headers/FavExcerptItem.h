@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavExcerptItem
+@interface FavExcerptItem : NSObject
 {
     NSString *_excerptKey;
     NSString *_content;

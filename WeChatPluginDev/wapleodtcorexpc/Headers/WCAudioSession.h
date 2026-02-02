@@ -6,7 +6,7 @@
 @class AVAudioSessionRouteDescription, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue, WCAudioSessionDelegate;
 
-@interface WCAudioSession
+@interface WCAudioSession : NSObject
 {
     _Bool _m_otherPlayingBeforeActive;
     NSObject<OS_dispatch_queue> *_audioSessionQueue;

@@ -5,7 +5,7 @@
 
 @class CameraScanCombineConfig, CameraScanCombineModelInfo, NSString;
 
-@interface CameraScanGoodsExtensionDetectorConfig
+@interface CameraScanGoodsExtensionDetectorConfig : NSObject
 {
     NSString *_svrConfigData;
     long long _svrRequestInterval;

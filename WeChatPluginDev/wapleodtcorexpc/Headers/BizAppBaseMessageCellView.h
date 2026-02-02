@@ -5,7 +5,7 @@
 
 @class BizAppBaseMessageViewModel, MMHeadImageView, MMUIImageView, MMUILabel, MMWebImageView, RichTextView, UIView;
 
-@interface BizAppBaseMessageCellView
+@interface BizAppBaseMessageCellView : NSObject
 {
     RichTextView *m_titleLabel;
     RichTextView *m_digestLabel;

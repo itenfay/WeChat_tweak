@@ -5,7 +5,7 @@
 
 @class MMProgressViewEx, NSString, WCPanoramaImageView;
 
-@interface WCAdPanoramaContainerView
+@interface WCAdPanoramaContainerView : NSObject
 {
     _Bool _showLoading;
     NSString *_imageUrl;

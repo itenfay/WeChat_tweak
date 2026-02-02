@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicRandomHintTableFooterView, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUISearchBar, NSArray, NSDictionary, NSMutableArray, NSString, UILabel, UIView;
 @protocol MMFinderLiveConnectMicInviteAnchorViewDelegate;
 
-@interface MMFinderLiveConnectMicInviteAnchorView
+@interface MMFinderLiveConnectMicInviteAnchorView : NSObject
 {
     _Bool _footerViewHasBeenExposed;
     id <MMFinderLiveConnectMicInviteAnchorViewDelegate> _actionDelegate;

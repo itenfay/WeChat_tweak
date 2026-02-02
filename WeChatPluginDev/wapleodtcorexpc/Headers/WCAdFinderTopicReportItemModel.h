@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdFinderTopicReportItemModel
+@interface WCAdFinderTopicReportItemModel : NSObject
 {
     NSString *_finderType;
 }

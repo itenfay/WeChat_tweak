@@ -6,7 +6,7 @@
 @class MMBadgeView, MMBarButton, NSMutableDictionary, NSString, RightTopMenuData;
 @protocol NewMainFrameRightTopMenuBtnDelegate;
 
-@interface NewMainFrameRightTopMenuBtn
+@interface NewMainFrameRightTopMenuBtn : NSObject
 {
     MMBadgeView *m_showNewView;
     RightTopMenuData *m_data;

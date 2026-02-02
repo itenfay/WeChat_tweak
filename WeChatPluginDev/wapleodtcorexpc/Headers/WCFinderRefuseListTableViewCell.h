@@ -5,7 +5,7 @@
 
 @class UILabel, UIView, WCFinderHeadImageView;
 
-@interface WCFinderRefuseListTableViewCell
+@interface WCFinderRefuseListTableViewCell : NSObject
 {
     UILabel *_nickName;
     WCFinderHeadImageView *_headImageView;

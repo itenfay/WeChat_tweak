@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString, WCAppAuthFetchLogic, WCAppAuthOpLogic, WCAppAuthSearchLogic;
 @protocol WCAppAuthLogicDelegate;
 
-@interface WCAppAuthLogicController
+@interface WCAppAuthLogicController : NSObject
 {
     NSMutableDictionary *_dicFetchResult;
     id <WCAppAuthLogicDelegate> _delegate;

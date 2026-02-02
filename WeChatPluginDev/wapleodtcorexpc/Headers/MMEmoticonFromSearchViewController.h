@@ -5,7 +5,7 @@
 
 @class EmoticonCustomManageAddLogic, MMEmoticonView, MMSearchEmotWrap, MMUIActivityIndicatorView, MMWebImageView, NSString, UIButton, UILabel, UIView;
 
-@interface MMEmoticonFromSearchViewController
+@interface MMEmoticonFromSearchViewController : NSObject
 {
     MMSearchEmotWrap *m_emotWrap;
     UIView *m_emotContentView;

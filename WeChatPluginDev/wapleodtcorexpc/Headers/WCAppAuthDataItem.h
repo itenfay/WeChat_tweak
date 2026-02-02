@@ -5,7 +5,7 @@
 
 @class NSString, WCAppAuthAppMetaInfo, WCAppAuthAuthInfo;
 
-@interface WCAppAuthDataItem
+@interface WCAppAuthDataItem : NSObject
 {
     WCAppAuthAppMetaInfo *_appInfo;
     WCAppAuthAuthInfo *_authInfo;

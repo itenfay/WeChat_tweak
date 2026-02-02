@@ -6,7 +6,7 @@
 @class MJShootComposingTemplatePanelView, MJShootComposingTemplatePanelViewModel, NSString, UIColor;
 @protocol MJShootComposingTemplatePanelHalfScreenViewControllerDelegate;
 
-@interface MJShootComposingTemplatePanelHalfScreenViewController
+@interface MJShootComposingTemplatePanelHalfScreenViewController : NSObject
 {
     _Bool _useIphoneUIStyleInIpad;
     UIColor *_maskBackgroundColor;

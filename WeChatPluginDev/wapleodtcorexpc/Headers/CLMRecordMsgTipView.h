@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CLMRecordMsgTipView
+@interface CLMRecordMsgTipView : NSObject
 {
 }
 

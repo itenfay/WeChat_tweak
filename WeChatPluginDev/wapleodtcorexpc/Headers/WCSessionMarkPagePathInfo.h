@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionMarkPagePathInfo
+@interface WCSessionMarkPagePathInfo : NSObject
 {
     unsigned int _index;
     NSString *_pagePathId;

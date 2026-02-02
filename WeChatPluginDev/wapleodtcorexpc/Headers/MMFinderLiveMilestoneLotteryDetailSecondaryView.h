@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
-@interface MMFinderLiveMilestoneLotteryDetailSecondaryView
+@interface MMFinderLiveMilestoneLotteryDetailSecondaryView : NSObject
 {
     CDUnknownBlockType _secondaryViewDidPop;
     MMUIButton *_backButton;

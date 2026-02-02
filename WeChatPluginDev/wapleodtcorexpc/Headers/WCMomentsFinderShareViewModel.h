@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EditVideoAttr, NSArray, NSString, SightDraft, VideoCompositionAttr;
 
-@interface WCMomentsFinderShareViewModel
+@interface WCMomentsFinderShareViewModel : NSObject
 {
     _Bool _hasRecordedDisplay;
     _Bool _hasRecordedClick;

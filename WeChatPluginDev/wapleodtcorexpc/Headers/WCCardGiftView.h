@@ -6,7 +6,7 @@
 @class NSString, UIColor;
 @protocol WCCardGiftViewDelegate;
 
-@interface WCCardGiftView
+@interface WCCardGiftView : NSObject
 {
     NSString *_userName;
     NSString *_displayName;

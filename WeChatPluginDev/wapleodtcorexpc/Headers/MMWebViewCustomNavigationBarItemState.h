@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage;
 
-@interface MMWebViewCustomNavigationBarItemState
+@interface MMWebViewCustomNavigationBarItemState : NSObject
 {
     _Bool _isRightBarItemJSApiDefined;
     _Bool _isRightBarItemHidden;

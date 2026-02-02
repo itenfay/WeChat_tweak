@@ -5,7 +5,7 @@
 
 @class RightTopMenuItemBtnData;
 
-@interface RightTopMenuItemBtn
+@interface RightTopMenuItemBtn : NSObject
 {
     RightTopMenuItemBtnData *m_data;
 }

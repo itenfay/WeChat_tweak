@@ -5,7 +5,7 @@
 
 @class FavRecordReferView, MMTipsViewController, MMUIActivityIndicatorView, NSArray, NSString, RichTextView, UIButton, UIImageView, UILabel, UIView;
 
-@interface FavRecordTextNodeView
+@interface FavRecordTextNodeView : NSObject
 {
     RichTextView *m_textDescLabel;
     MMTipsViewController *m_oTranslateIntroView;

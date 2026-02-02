@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface FriendListMgr
+@interface FriendListMgr : NSObject
 {
     NSMutableSet *m_downliadingPackageLists;
 }

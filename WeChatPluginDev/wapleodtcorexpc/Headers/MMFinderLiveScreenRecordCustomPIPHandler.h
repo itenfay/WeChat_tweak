@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderJumpInfo, MMGameLiveAccessoryTipView, MMLiteAppViewController, MMUIView, NSString;
 
-@interface MMFinderLiveScreenRecordCustomPIPHandler
+@interface MMFinderLiveScreenRecordCustomPIPHandler : NSObject
 {
     _Bool _isGameLiveAccessoryLiteAppCardVCInitating;
     _Bool _isAudioSessionInterrupted;

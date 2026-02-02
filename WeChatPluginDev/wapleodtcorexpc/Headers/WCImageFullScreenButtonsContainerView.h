@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ImageBrowseButton, WCMomentsBizOriginalArticleButton;
 
-@interface WCImageFullScreenButtonsContainerView
+@interface WCImageFullScreenButtonsContainerView : NSObject
 {
     unsigned long long _contentItemScene;
     CDUnknownBlockType _originalArticleBlock;

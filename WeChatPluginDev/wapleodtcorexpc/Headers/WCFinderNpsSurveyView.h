@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderNpsSurveyQuestion, FinderNpsSurveyTaskConf, MMStarRatingView, NSMutableArray, NSString, UILabel;
 
-@interface WCFinderNpsSurveyView
+@interface WCFinderNpsSurveyView : NSObject
 {
     CDUnknownBlockType _answerButtonClickedBlock;
     CDUnknownBlockType _starRatingViewClickedBlock;

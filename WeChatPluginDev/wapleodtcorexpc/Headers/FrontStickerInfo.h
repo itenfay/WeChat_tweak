@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface FrontStickerInfo
+@interface FrontStickerInfo : NSObject
 {
     NSArray *_pos;
 }

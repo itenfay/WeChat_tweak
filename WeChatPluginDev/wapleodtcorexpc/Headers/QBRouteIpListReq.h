@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, QBWupUserBase;
 
-@interface QBRouteIpListReq
+@interface QBRouteIpListReq : NSObject
 {
     int jcev2_p_3_o_iSubType;
     QBWupUserBase *jcev2_p_0_r_stUB;

@@ -6,7 +6,7 @@
 @class MISSING_TYPE;
 @protocol _TtP6WeChat41WCImageSearchCameraViewControllerDelegate_;
 
-@interface WCImageSearchCameraViewController
+@interface WCImageSearchCameraViewController : NSObject
 {
     MISSING_TYPE *searchDelegate;
 }

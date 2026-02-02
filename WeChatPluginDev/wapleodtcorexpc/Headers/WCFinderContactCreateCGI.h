@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderContactCreateCGIParam;
 
-@interface WCFinderContactCreateCGI
+@interface WCFinderContactCreateCGI : NSObject
 {
     WCFinderContactCreateCGIParam *_params;
     CDUnknownBlockType _successBlock;

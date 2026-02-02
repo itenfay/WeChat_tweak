@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, UITableView, UIView;
 @protocol MMLiveSystemMentionsViewDelegate;
 
-@interface MMLiveSystemMentionsView
+@interface MMLiveSystemMentionsView : NSObject
 {
     _Bool _isFolded;
     id <MMLiveSystemMentionsViewDelegate> _delegate;

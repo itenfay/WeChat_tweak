@@ -5,7 +5,7 @@
 
 @class EnterpriseRoomData, NSString;
 
-@interface CEnterpriseContact
+@interface CEnterpriseContact : NSObject
 {
     _Bool m_bHeadImageUpdateFlag;
     _Bool m_bUpdateFlag;

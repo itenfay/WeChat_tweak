@@ -5,7 +5,7 @@
 
 @class CBCentralManager, CLLocationManager, MMFullScreenShadeViewController, MMTimer, NSDictionary, NSMutableArray, NSString;
 
-@interface WASystemInfo
+@interface WASystemInfo : NSObject
 {
     _Bool _started;
     _Bool _checkBlueTooth;

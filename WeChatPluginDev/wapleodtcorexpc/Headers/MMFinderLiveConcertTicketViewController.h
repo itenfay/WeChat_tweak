@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, MMFinderLiveConcertRecentForwardScrollViewDelegateProxy, MMFinderLiveConcertTicketStyleItem, MMFinderLiveConcertTicketView, MMFinderLiveConcertTicketViewControllerReportingContext, MMScrollActionSheet, MMUIButton, NSArray, NSString, UIImageView, UIView;
 @protocol MMFinderLiveConcertTicketViewControllerDelegate;
 
-@interface MMFinderLiveConcertTicketViewController
+@interface MMFinderLiveConcertTicketViewController : NSObject
 {
     MMFinderLiveConcertTicketStyleItem *_styleItem;
     id <MMFinderLiveConcertTicketViewControllerDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, UIImageView;
 
-@interface MMFinderLiveTableStyleCommentPubbleSubscribeCell
+@interface MMFinderLiveTableStyleCommentPubbleSubscribeCell : NSObject
 {
     MMUIView *_signBackView;
     MMUILabel *_signLabel;

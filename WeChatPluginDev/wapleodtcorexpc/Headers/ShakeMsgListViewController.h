@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIView, WCTimeLineFooterView;
 
-@interface ShakeMsgListViewController
+@interface ShakeMsgListViewController : NSObject
 {
     MMTableView *_tableView;
     WCTimeLineFooterView *_footerView;

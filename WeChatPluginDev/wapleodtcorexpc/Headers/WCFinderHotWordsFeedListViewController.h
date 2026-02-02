@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedListView, WCFinderHotWordsFeedViewModel;
 
-@interface WCFinderHotWordsFeedListViewController
+@interface WCFinderHotWordsFeedListViewController : NSObject
 {
     long long _scrollToIndexWhenViewDidAppear;
     WCFinderHotWordsFeedViewModel *_viewModel;

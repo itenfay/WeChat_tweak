@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMFinderLiveAnchorCustomizeRewardTableCell
+@interface MMFinderLiveAnchorCustomizeRewardTableCell : NSObject
 {
     UILabel *_attachedTextLabel;
 }

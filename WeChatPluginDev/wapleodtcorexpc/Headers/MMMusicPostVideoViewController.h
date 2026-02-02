@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMMusicMVModel, MMMusicPostVideoTabAlbumController, MMMusicPostVideoTabFinderController, MMMusicPostVideoTabView, MMScrollView, MMUIButton, NSMutableArray, NSString;
 @protocol MMMusicPostVideoDelegate, MMMusicPostVideoVCDataSource;
 
-@interface MMMusicPostVideoViewController
+@interface MMMusicPostVideoViewController : NSObject
 {
     MMMusicPostVideoTabView *_tabView;
     MMScrollView *_scrollView;

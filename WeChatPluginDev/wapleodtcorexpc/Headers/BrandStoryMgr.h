@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandStoryMgr
+@interface BrandStoryMgr : NSObject
 {
 }
 

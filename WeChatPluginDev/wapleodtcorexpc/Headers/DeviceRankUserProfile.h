@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceRankUserProfile
+@interface DeviceRankUserProfile : NSObject
 {
     NSString *_nsUsername;
     NSString *_nsCoverUrl;

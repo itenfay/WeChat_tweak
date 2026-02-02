@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCBootsUpdateInfo
+@interface WCBootsUpdateInfo : NSObject
 {
     unsigned int _fileSize;
     NSString *_baseID;

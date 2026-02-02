@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCNativeExtMgr
+@interface WCNativeExtMgr : NSObject
 {
     _Bool _bLoad;
     NSArray *_arrPBCgi;

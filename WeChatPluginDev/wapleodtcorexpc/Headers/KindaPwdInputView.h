@@ -6,7 +6,7 @@
 @class MMKPwdInputViewOnEndEnterPasswordCallback, MMKPwdInputViewOnPasswordChangeCallback, NSString, UIView, WCPayTenpayPasswordCtrlItem;
 @protocol MMKImage;
 
-@interface KindaPwdInputView
+@interface KindaPwdInputView : NSObject
 {
     unsigned int _solfEncryptVersion;
     WCPayTenpayPasswordCtrlItem *_m_passwordTextField;

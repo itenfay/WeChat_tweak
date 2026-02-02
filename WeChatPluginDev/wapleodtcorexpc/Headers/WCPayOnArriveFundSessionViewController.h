@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface WCPayOnArriveFundSessionViewController
+@interface WCPayOnArriveFundSessionViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_arrSessionInfo;

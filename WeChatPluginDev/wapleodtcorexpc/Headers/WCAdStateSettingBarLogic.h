@@ -5,7 +5,7 @@
 
 @class NSString, WCAdStateSettingBarInfo;
 
-@interface WCAdStateSettingBarLogic
+@interface WCAdStateSettingBarLogic : NSObject
 {
     _Bool _timerStarted;
     unsigned long long _barStyle;

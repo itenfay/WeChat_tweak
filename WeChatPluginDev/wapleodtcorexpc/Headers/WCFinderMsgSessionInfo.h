@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderMsgContactExtInfo;
 
-@interface WCFinderMsgSessionInfo
+@interface WCFinderMsgSessionInfo : NSObject
 {
     _Bool _canSendAttachment;
     _Bool _isGreetMsgSession;

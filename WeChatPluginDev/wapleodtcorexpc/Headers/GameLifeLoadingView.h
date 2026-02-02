@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIImageView;
 @protocol GameLifeLoadingViewDelegate;
 
-@interface GameLifeLoadingView
+@interface GameLifeLoadingView : NSObject
 {
     UIImageView *_loadingImageView;
     MMUILabel *_loadingTextLabel;

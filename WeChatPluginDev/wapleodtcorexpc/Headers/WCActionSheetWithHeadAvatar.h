@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSString, UIView, WCFinderContact;
 @protocol WCActionSheetWithHeadAvatarDelegate;
 
-@interface WCActionSheetWithHeadAvatar
+@interface WCActionSheetWithHeadAvatar : NSObject
 {
     NSString *_shootEntryExtInfo;
     id <WCActionSheetWithHeadAvatarDelegate> _m_delegate;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface POILocationDisplayMgr
+@interface POILocationDisplayMgr : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class NSString, WCAccountLoginUsersViewController, WCAccountManualAuthControlLogic;
 @protocol WCAccountNoPwdAuthLogicDelegate;
 
-@interface WCAccountNoPwdAuthLogic
+@interface WCAccountNoPwdAuthLogic : NSObject
 {
     WCAccountManualAuthControlLogic *m_manualAuthLogic;
     id <WCAccountNoPwdAuthLogicDelegate> m_delegate;

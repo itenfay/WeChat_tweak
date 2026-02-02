@@ -5,7 +5,7 @@
 
 @class NSURL, UIView, UIViewController, WCFileBrowseInfo;
 
-@interface MultiTalkScreenSharingBaseViewController
+@interface MultiTalkScreenSharingBaseViewController : NSObject
 {
     _Bool _showsCancelBarButtonItem;
     _Bool _showsOrientationLockedToast;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WAContactGetter;
 
-@interface WAAppIdToUsernameTransfer
+@interface WAAppIdToUsernameTransfer : NSObject
 {
     WAContactGetter *_contactGetter;
 }

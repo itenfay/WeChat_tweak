@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WACanvasDataSampleMgr, WAThreadSafeMutableDictionary;
 
-@interface WAOpenEventSpeedStatMgr
+@interface WAOpenEventSpeedStatMgr : NSObject
 {
     NSMutableDictionary *m_timeStampCache;
     unsigned long long m_beginTime;

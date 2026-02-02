@@ -6,7 +6,7 @@
 @class LocationRetriever, NSDictionary, NSString, NSURLRequest, WCAdConfirmHalfScreenAdapter, WCAdDetermineHalfScreenView, WCAdWheelPickerLogic, WCCanvasJSLogic, WKWebView;
 @protocol YYWebViewInterface;
 
-@interface WCCanvasPreloadWebviewComponent
+@interface WCCanvasPreloadWebviewComponent : NSObject
 {
     WKWebView<YYWebViewInterface> *_webView;
     WCCanvasJSLogic *_jsLogic;

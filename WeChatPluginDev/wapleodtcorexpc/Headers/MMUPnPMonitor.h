@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMUPnPMonitor
+@interface MMUPnPMonitor : NSObject
 {
 }
 

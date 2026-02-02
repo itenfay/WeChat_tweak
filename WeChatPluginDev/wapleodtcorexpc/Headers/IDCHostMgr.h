@@ -5,7 +5,7 @@
 
 @class HostList, NSSet, NSString;
 
-@interface IDCHostMgr
+@interface IDCHostMgr : NSObject
 {
     HostList *_axHostList;
     NSSet *_axHostSet;

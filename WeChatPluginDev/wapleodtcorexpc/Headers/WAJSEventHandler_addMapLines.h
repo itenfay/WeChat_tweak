@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAJSEventHandler_addMapLines
+@interface WAJSEventHandler_addMapLines : NSObject
 {
     NSMutableArray *_overlays;
 }

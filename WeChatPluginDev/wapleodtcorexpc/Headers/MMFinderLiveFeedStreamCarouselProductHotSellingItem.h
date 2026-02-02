@@ -5,7 +5,7 @@
 
 @class FeedsPreviewLiveMultiStyleInfo_StyleTwelve, FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo, NSString;
 
-@interface MMFinderLiveFeedStreamCarouselProductHotSellingItem
+@interface MMFinderLiveFeedStreamCarouselProductHotSellingItem : NSObject
 {
     FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo *_hotSellingBubble;
     FeedsPreviewLiveMultiStyleInfo_StyleTwelve *_hotSellingStyleConf;

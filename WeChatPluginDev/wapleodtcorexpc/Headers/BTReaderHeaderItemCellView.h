@@ -5,7 +5,7 @@
 
 @class BTReaderHeaderItemCellViewModel, BTReaderMsgSectionData, BrandLiveStatusButton, CContact, MMHeadImageView, MMUIButton, MMUILabel, NSString, RichTextView, UIImageView, UILongPressGestureRecognizer;
 
-@interface BTReaderHeaderItemCellView
+@interface BTReaderHeaderItemCellView : NSObject
 {
     _Bool _forceSetHighlight;
     BTReaderMsgSectionData *_sectionData;

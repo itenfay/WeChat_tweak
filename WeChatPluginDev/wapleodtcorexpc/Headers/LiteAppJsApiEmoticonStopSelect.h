@@ -5,7 +5,7 @@
 
 @class LiteAppJsApiCallback, UIViewController;
 
-@interface LiteAppJsApiEmoticonStopSelect
+@interface LiteAppJsApiEmoticonStopSelect : NSObject
 {
     LiteAppJsApiCallback *_callBack;
     UIViewController *_controller;

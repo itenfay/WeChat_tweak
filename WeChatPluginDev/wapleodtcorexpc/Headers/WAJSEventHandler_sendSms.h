@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_sendSms
+@interface WAJSEventHandler_sendSms : NSObject
 {
 }
 

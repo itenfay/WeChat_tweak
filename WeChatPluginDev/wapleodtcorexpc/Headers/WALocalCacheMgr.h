@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString, WAPackageDownloadLogic, WAPackageInfoCacheLogic;
 
-@interface WALocalCacheMgr
+@interface WALocalCacheMgr : NSObject
 {
     WAPackageDownloadLogic *_pkgDownloadLogic;
     WAPackageInfoCacheLogic *_pkgInfoCacheLogic;

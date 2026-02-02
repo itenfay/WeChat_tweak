@@ -5,7 +5,7 @@
 
 @protocol QuickReplyMsgWindowDelegate;
 
-@interface QuickReplyMsgWindow
+@interface QuickReplyMsgWindow : NSObject
 {
     id <QuickReplyMsgWindowDelegate> _delegate;
 }

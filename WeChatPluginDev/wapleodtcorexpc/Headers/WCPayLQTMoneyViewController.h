@@ -6,7 +6,7 @@
 @class MMTableView, MMUIButton, MMUILabel, NSString, RichTextView, UIButton, UIImageView, UILabel, UITextField, UIView, WCPayBankListPanelView, WCPayDecimalKeyboardView, WCPayLQTBelowAmountHintView, WCPayLQTInvalidTipsView, WCPayLQTKeyboardToolView, WCPayLQTOrderConfirmView, WCPayLQTPageSheet, WCPayLQTPromptTipsView, WCPayLQTTipsModal, WCPayLQTTipsNewModal, WCPayLimitCashierModal, WCPayWebImageView;
 @protocol WCPayLQTMoneyViewControllerDelegate;
 
-@interface WCPayLQTMoneyViewController
+@interface WCPayLQTMoneyViewController : NSObject
 {
     _Bool _bHasEnterOrChangeCard;
     _Bool _bIsShowingCardInfoView;

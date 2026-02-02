@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WAAppAuthInfoData, WAContact;
 
-@interface WAAppAuthorizationPayViewController
+@interface WAAppAuthorizationPayViewController : NSObject
 {
     WAContact *_contact;
     WAAppAuthInfoData *_authInfo;

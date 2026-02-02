@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue, NSString, WSTemplatePackageManager, _TtC6WeChat21WSTemplateMgrReporter;
 
-@interface WSTemplateBaseMgr
+@interface WSTemplateBaseMgr : NSObject
 {
     NSOperationQueue *m_updateResourceQueue;
     NSString *_debugModuleName;

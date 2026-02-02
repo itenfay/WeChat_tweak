@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, ResourceBrowseCollectionView, StorageFootPanelView;
 
-@interface WCSessionResourceViewController
+@interface WCSessionResourceViewController : NSObject
 {
     NSMutableArray *_sessionMsgInfos;
     ResourceBrowseCollectionView *_sessionBrowseView;

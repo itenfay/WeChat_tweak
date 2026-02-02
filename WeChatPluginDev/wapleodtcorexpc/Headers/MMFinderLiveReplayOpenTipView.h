@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUIImageView, MMUILabel, UIView;
 
-@interface MMFinderLiveReplayOpenTipView
+@interface MMFinderLiveReplayOpenTipView : NSObject
 {
     _Bool _isChargableLive;
     _Bool _isMemberLive;

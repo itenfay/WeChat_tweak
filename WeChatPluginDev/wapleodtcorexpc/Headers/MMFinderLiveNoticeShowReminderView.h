@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMFinderLiveNoticeShowReminderBottomView, MMUILabel, NSString, UIView, WCFinderLiveNoticeView;
 
-@interface MMFinderLiveNoticeShowReminderView
+@interface MMFinderLiveNoticeShowReminderView : NSObject
 {
     int _selectType;
     CDUnknownBlockType _selectBlock;

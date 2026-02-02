@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCWidgetEventItem
+@interface WCWidgetEventItem : NSObject
 {
     unsigned int _touchInterval;
     long long _eventType;

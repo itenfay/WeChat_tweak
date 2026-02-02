@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, WCCanvasAdControlView, WCMediaItem, WCPlayerPlayArgs, WCPlayerView;
 
-@interface WCAdConventionalHalfScreenVideoMediaView
+@interface WCAdConventionalHalfScreenVideoMediaView : NSObject
 {
     WCMediaItem *_mediaItem;
     WCPlayerPlayArgs *_playInfo;

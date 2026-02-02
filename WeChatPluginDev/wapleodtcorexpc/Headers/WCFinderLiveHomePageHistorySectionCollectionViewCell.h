@@ -6,7 +6,7 @@
 @class NSString, WCFinderLiveHomePageHistorySectionView;
 @protocol WCFinderLiveHomePageHistorySectionViewDelegate;
 
-@interface WCFinderLiveHomePageHistorySectionCollectionViewCell
+@interface WCFinderLiveHomePageHistorySectionCollectionViewCell : NSObject
 {
     id <WCFinderLiveHomePageHistorySectionViewDelegate> _delegate;
     WCFinderLiveHomePageHistorySectionView *_liveCollectionView;

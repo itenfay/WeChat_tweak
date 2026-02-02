@@ -5,7 +5,7 @@
 
 @class DeviceRankDetailResonse, MMTableView, NSMutableArray, NSString, UILabel;
 
-@interface BraceletFocusListViewController
+@interface BraceletFocusListViewController : NSObject
 {
     DeviceRankDetailResonse *_detailResp;
     NSMutableArray *_arrFollowItems;

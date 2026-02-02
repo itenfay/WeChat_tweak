@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSString, UIButton;
 
-@interface WCBaseTextFieldWithTipItem
+@interface WCBaseTextFieldWithTipItem : NSObject
 {
     UIButton *m_tipBtn;
     MMUIViewController *m_viewController;

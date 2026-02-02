@@ -5,7 +5,7 @@
 
 @class MMCPLabel, MMHeadImageView, MMUILabel, NSString;
 
-@interface GameCenterMsgListBaseCell
+@interface GameCenterMsgListBaseCell : NSObject
 {
     MMHeadImageView *_headView;
     MMCPLabel *_nickView;

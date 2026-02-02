@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_startVoipCall
+@interface WebviewJSEventHandler_startVoipCall : NSObject
 {
     _Bool _m_bAllowBackCamera;
     _Bool _m_bShowCSVideo;

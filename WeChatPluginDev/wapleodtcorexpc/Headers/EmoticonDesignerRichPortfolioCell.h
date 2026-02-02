@@ -6,7 +6,7 @@
 @class EmoticonPreviewWindowViewController, EmoticonStoreReportInfo, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout, UIImageView, UILabel, UILongPressGestureRecognizer, UIView;
 @protocol EmoticonDesignerRichPortfolioCellDelegate;
 
-@interface EmoticonDesignerRichPortfolioCell
+@interface EmoticonDesignerRichPortfolioCell : NSObject
 {
     _Bool _showDownloadView;
     _Bool _needStaticsInfo;

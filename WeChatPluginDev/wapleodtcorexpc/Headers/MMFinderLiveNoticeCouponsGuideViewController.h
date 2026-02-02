@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveNoticeCouponsGuideViewController
+@interface MMFinderLiveNoticeCouponsGuideViewController : NSObject
 {
     CDUnknownBlockType _completion;
 }

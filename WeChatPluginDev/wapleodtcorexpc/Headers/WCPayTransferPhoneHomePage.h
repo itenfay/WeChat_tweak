@@ -6,7 +6,7 @@
 @class KindaUIView, NSString, TransferPhoneHomePageResp, UIButton, UILabel, UITextField, UIView, WCPayCss, WCPayNoticeItemView;
 @protocol WCPayTransferPhoneHomePageDelegate;
 
-@interface WCPayTransferPhoneHomePage
+@interface WCPayTransferPhoneHomePage : NSObject
 {
     id <WCPayTransferPhoneHomePageDelegate> _m_delegate;
     UIView *_containerView;

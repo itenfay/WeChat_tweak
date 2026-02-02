@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CSearchedContact
+@interface CSearchedContact : NSObject
 {
     unsigned int matchType;
     NSString *searchString;

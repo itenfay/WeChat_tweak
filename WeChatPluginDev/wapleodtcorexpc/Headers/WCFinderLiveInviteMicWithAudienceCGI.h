@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, WCFinderContact, WCFinderDataItem;
 
-@interface WCFinderLiveInviteMicWithAudienceCGI
+@interface WCFinderLiveInviteMicWithAudienceCGI : NSObject
 {
     _Bool _withVideo;
     unsigned int _seatId;

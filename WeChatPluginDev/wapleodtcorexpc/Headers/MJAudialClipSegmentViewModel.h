@@ -5,7 +5,7 @@
 
 @class OMCAudioWaveformProvider, OMCClipSegment, OMCDecibelHeightCalculator;
 
-@interface MJAudialClipSegmentViewModel
+@interface MJAudialClipSegmentViewModel : NSObject
 {
     void * _decibels;
     struct shared_ptr<std::vector<float>> _normalizedDecibelHeights;

@@ -5,7 +5,7 @@
 
 @class WCFinderSearchHotWord;
 
-@interface WCFinderFeedHotWordSplitLayoutVM
+@interface WCFinderFeedHotWordSplitLayoutVM : NSObject
 {
     _Bool _ignoreUpdateCell;
     WCFinderSearchHotWord *_preHotword;

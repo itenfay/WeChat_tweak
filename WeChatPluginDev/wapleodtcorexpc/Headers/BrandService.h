@@ -5,7 +5,7 @@
 
 @class BrandLemmaTable, NSDictionary, NSMutableDictionary, NSRegularExpression, NSString;
 
-@interface BrandService
+@interface BrandService : NSObject
 {
     int _agreementId;
     int _wordAgreementId;

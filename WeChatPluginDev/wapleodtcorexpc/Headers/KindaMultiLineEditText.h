@@ -5,7 +5,7 @@
 
 @class MMDynamicColor, MMTextView, MMVoidBoolCallback, MMVoidCallback, MMVoidStringCallback, NSString;
 
-@interface KindaMultiLineEditText
+@interface KindaMultiLineEditText : NSObject
 {
     double _textSize;
     MMDynamicColor *_textColor;

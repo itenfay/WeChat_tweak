@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UILabel, UIView;
 @protocol FaceRecogPayContractConfirmViewDelegate;
 
-@interface FaceRecogPayContractConfirmView
+@interface FaceRecogPayContractConfirmView : NSObject
 {
     id <FaceRecogPayContractConfirmViewDelegate> _delegate;
     UIView *_contentView;

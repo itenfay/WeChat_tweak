@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, TrackPOIItem;
 
-@interface TrackRoomMgr
+@interface TrackRoomMgr : NSObject
 {
     _Bool _isJoining;
     _Bool _isRefreshing;

@@ -5,7 +5,7 @@
 
 @class MMLiveStorageCleanupPinningToken, NSString;
 
-@interface MMFinderLiveReplayStopgapPlayerViewModel
+@interface MMFinderLiveReplayStopgapPlayerViewModel : NSObject
 {
     NSString *_filename;
     MMLiveStorageCleanupPinningToken *_resourcesPinningToken;

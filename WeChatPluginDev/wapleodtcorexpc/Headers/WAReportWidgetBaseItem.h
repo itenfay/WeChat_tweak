@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportWidgetBaseItem
+@interface WAReportWidgetBaseItem : NSObject
 {
     unsigned int _widgetType;
     NSString *_requestKey;

@@ -6,7 +6,7 @@
 @class MMScrollView, NSMutableArray, NSString, UIImageView, UIPageControl;
 @protocol SelectAttachmentViewDataSource, SelectAttachmentViewDelegate;
 
-@interface SelectAttachmentView
+@interface SelectAttachmentView : NSObject
 {
     id <SelectAttachmentViewDelegate> _delegate;
     id <SelectAttachmentViewDataSource> _dataSource;

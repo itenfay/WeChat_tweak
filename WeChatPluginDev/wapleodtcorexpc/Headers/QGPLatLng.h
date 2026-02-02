@@ -6,7 +6,7 @@
 @class NSNumber;
 @protocol QTCOptional;
 
-@interface QGPLatLng
+@interface QGPLatLng : NSObject
 {
     double _lat;
     double _lng;

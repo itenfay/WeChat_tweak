@@ -5,7 +5,7 @@
 
 @class NSString, PasswordLogic;
 
-@interface VerifyQQPwdMgr
+@interface VerifyQQPwdMgr : NSObject
 {
     unsigned long long m_lastCanOldWTBufTime;
     PasswordLogic *m_pswLogic;

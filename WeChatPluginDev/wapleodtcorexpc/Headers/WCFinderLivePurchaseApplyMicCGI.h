@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLivePurchaseApplyMicParam;
 
-@interface WCFinderLivePurchaseApplyMicCGI
+@interface WCFinderLivePurchaseApplyMicCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

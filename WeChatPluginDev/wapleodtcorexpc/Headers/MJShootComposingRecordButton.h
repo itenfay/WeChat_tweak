@@ -6,7 +6,7 @@
 @class CAShapeLayer, UIView;
 @protocol MJShootComposingRecordButtonDelegate;
 
-@interface MJShootComposingRecordButton
+@interface MJShootComposingRecordButton : NSObject
 {
     _Bool _isRecording;
     id <MJShootComposingRecordButtonDelegate> _delegate;

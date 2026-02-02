@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MMWebOptimPrefetchResInfo
+@interface MMWebOptimPrefetchResInfo : NSObject
 {
     unsigned int _opType;
     NSString *_domain;

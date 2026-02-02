@@ -5,7 +5,7 @@
 
 @class MMTimer, NSData, NSMutableArray, NSRecursiveLock, NSString;
 
-@interface VOIPSyncMgr
+@interface VOIPSyncMgr : NSObject
 {
     _Bool mIsWeakSessionActive;
     _Bool mIsSessionActive;

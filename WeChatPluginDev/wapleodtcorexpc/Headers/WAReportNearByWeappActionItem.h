@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportNearByWeappActionItem
+@interface WAReportNearByWeappActionItem : NSObject
 {
     unsigned int _appCount;
     unsigned int _clicktime;

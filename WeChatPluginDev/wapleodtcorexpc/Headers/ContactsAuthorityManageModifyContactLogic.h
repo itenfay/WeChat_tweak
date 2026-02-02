@@ -6,7 +6,7 @@
 @class ContactBatchModifyLogic, ContactTagData, MMUIViewController, NSMutableDictionary, NSString, WCFinderBatchModContactTypeTask;
 @protocol ContactsAuthorityManageModifyContactLogicDelegate;
 
-@interface ContactsAuthorityManageModifyContactLogic
+@interface ContactsAuthorityManageModifyContactLogic : NSObject
 {
     ContactBatchModifyLogic *m_contactBatchModifyLogic;
     WCFinderBatchModContactTypeTask *m_finderBatchContactTask;

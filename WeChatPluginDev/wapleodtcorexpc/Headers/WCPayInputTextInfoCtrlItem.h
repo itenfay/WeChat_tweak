@@ -5,7 +5,7 @@
 
 @class TPIDKeyboardView;
 
-@interface WCPayInputTextInfoCtrlItem
+@interface WCPayInputTextInfoCtrlItem : NSObject
 {
     TPIDKeyboardView *keyboardView;
 }

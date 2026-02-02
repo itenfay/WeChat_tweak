@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTaskId, MMTableView, NSData, NSMutableArray, NSString, WCTimeLineFooterView;
 
-@interface MMFinderLiveVoteHistoryViewController
+@interface MMFinderLiveVoteHistoryViewController : NSObject
 {
     _Bool _isFetchingData;
     MMTableView *_tableView;

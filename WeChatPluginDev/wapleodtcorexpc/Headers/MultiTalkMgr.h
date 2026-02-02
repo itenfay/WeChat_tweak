@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAudioPlayer, AVAudioRouteManager, AVVideoDevice, MMTimer, MMViewCapture, MinimizeTaskData, MultiTalkMainViewController, MultiTalkWindow, MultitalkMiniInAppView, NSArray, NSMutableDictionary, NSRecursiveLock, NSString, RingBackSoundCoordinator, SafeMutableDictionary, VoipCheckAudioDeviceObj;
 
-@interface MultiTalkMgr
+@interface MultiTalkMgr : NSObject
 {
     char *cameraBuf;
     int cameraBufSize;

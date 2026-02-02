@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem18644
+@interface KvReportItem18644 : NSObject
 {
     unsigned int _SessionId_24;
     unsigned int _Pos_25;

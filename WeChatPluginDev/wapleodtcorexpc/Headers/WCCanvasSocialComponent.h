@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, NSMutableArray, UILabel, UIView, WCAdURLImageView, WCCanvasComponentSocialInfo, WCCanvasSocialComponentFriendAvatarView;
 
-@interface WCCanvasSocialComponent
+@interface WCCanvasSocialComponent : NSObject
 {
     UILabel *_titleLabel;
     UILabel *_descLabel;

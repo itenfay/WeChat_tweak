@@ -5,7 +5,7 @@
 
 @class EmoticonRecoverLogicObject, NSMutableArray, NSString;
 
-@interface EmoticonBackUpMgr
+@interface EmoticonBackUpMgr : NSObject
 {
     _Bool _m_hasOnceStartRecover;
     _Bool _m_hasNotStartRecoverTaskInList;

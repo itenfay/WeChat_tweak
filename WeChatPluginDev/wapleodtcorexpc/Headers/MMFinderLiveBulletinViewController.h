@@ -6,7 +6,7 @@
 @class FinderNewUserPrepareResponse, MMFinderLiveTask, MMGrowTextView, MMUIButton, MMUILabel, MMWebImageView, NSArray, NSString, UIButton, UIImage, UILabel, UIView, WCFinderCreateLiveViewModel;
 @protocol MMFinderLiveBulletinViewControllerDelegate;
 
-@interface MMFinderLiveBulletinViewController
+@interface MMFinderLiveBulletinViewController : NSObject
 {
     _Bool _isFromThemeGuide;
     _Bool _isEdit;

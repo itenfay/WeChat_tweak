@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderHistoryActionSheet
+@interface WCFinderHistoryActionSheet : NSObject
 {
     UILabel *_header;
 }

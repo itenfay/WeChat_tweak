@@ -6,7 +6,7 @@
 @class NSString, UICollectionView;
 @protocol WCFinderTemplateChooseViewDelegate;
 
-@interface WCFinderTemplateChooseView
+@interface WCFinderTemplateChooseView : NSObject
 {
     id <WCFinderTemplateChooseViewDelegate> _delegate;
     unsigned long long _currentIndex;

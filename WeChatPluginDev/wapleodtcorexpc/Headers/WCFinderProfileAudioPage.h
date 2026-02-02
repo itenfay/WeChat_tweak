@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderStreamFooterView;
 
-@interface WCFinderProfileAudioPage
+@interface WCFinderProfileAudioPage : NSObject
 {
     WCFinderStreamFooterView *_footerView;
 }

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UITableView;
 @protocol WCPayTransferToBankCardCandidateViewDelegate;
 
-@interface WCPayTransferToBankCardCandidateView
+@interface WCPayTransferToBankCardCandidateView : NSObject
 {
     UITableView *m_candidateTableView;
     id <WCPayTransferToBankCardCandidateViewDelegate> m_delegate;

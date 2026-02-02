@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WAAppTrialInfoLoader
+@interface WAAppTrialInfoLoader : NSObject
 {
     CDUnknownBlockType m_completeBlock;
     unsigned int _appServiceType;

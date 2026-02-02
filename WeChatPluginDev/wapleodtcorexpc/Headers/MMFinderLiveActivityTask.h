@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveActivityTaskId, MMFinderLiveBackgroundMusicLogic, MMFinderLiveEventInfo, MMFinderLiveWinterOlympicTorchInfo, MMFinderLiveWinterOlympicView, NSString;
 
-@interface MMFinderLiveActivityTask
+@interface MMFinderLiveActivityTask : NSObject
 {
     _Bool _isLiveCdnPlayerMuted;
     unsigned int _activityResVersion;

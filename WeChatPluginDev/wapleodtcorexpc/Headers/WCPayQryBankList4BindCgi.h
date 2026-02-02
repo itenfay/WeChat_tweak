@@ -6,7 +6,7 @@
 @class QryBankList4BindReq;
 @protocol WCPayQryBankList4BindCgiDelegate;
 
-@interface WCPayQryBankList4BindCgi
+@interface WCPayQryBankList4BindCgi : NSObject
 {
 }
 

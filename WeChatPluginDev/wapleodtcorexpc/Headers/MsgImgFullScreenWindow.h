@@ -6,7 +6,7 @@
 @class CMessageWrap, NSString;
 @protocol MsgImgFullScreenWindowDelegate;
 
-@interface MsgImgFullScreenWindow
+@interface MsgImgFullScreenWindow : NSObject
 {
     NSString *_chatname;
     id <MsgImgFullScreenWindowDelegate> m_delegate;

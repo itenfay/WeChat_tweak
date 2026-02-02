@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WAContactMgr
+@interface WAContactMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_worker_queue;
     NSMutableDictionary *_dicContactCache;

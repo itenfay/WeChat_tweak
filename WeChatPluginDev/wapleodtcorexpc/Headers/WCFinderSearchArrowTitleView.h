@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSString;
 
-@interface WCFinderSearchArrowTitleView
+@interface WCFinderSearchArrowTitleView : NSObject
 {
     MMUIButton *_titleButton;
 }

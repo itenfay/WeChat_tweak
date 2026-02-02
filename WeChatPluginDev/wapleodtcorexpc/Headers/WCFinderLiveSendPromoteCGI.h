@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveSendPromoteCGI
+@interface WCFinderLiveSendPromoteCGI : NSObject
 {
     int _opScene;
     unsigned long long _promoteId;

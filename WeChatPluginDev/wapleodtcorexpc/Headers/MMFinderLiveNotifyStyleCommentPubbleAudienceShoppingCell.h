@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMFinderLiveNotifyStyleCommentPubbleAudienceShoppingCell
+@interface MMFinderLiveNotifyStyleCommentPubbleAudienceShoppingCell : NSObject
 {
     UIImageView *_imageView;
 }

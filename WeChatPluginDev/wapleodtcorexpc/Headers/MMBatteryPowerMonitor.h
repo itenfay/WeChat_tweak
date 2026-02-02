@@ -5,7 +5,7 @@
 
 @class MMLiveTask, MMMetricsInfo, MMPowerABTest, NSString;
 
-@interface MMBatteryPowerMonitor
+@interface MMBatteryPowerMonitor : NSObject
 {
     _Bool _isMonitoring;
     _Bool _isLive;

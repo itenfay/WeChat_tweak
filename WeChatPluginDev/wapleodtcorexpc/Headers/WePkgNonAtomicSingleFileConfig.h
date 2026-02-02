@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WePkgNonAtomicSingleFileConfig
+@interface WePkgNonAtomicSingleFileConfig : NSObject
 {
     _Bool _bClearAllPkgExceptCurrentEnabledVersion;
     _Bool _bIsReadyForOperationAfterCheckUpdate;

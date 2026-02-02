@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportTradeCommentItem
+@interface WAReportTradeCommentItem : NSObject
 {
     unsigned int _action;
     unsigned int _type;

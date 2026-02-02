@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCTimelineActionSheet
+@interface WCTimelineActionSheet : NSObject
 {
     _Bool _shownWithBadge;
     _Bool _oversea;

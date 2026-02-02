@@ -5,7 +5,7 @@
 
 @class MMLiveCommentDataItem, NSString;
 
-@interface WCLiveCommentActionSheet
+@interface WCLiveCommentActionSheet : NSObject
 {
     MMLiveCommentDataItem *_commentItem;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MailRTEAttachment
+@interface MailRTEAttachment : NSObject
 {
     unsigned int _dataStatus;
     unsigned int _dataSize;

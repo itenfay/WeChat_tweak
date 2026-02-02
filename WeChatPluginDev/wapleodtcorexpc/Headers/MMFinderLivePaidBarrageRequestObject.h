@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLivePaidBarrageRequestObject
+@interface MMFinderLivePaidBarrageRequestObject : NSObject
 {
     unsigned int _rewardCount;
     NSString *_clientMsgId;

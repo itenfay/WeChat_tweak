@@ -6,7 +6,7 @@
 @class MMImageScrollViewHelper, MMLoadingView, MMProgressViewEx, MMScrollViewZoomReporter, MMUIButton, NSArray, NSString, OCRTransHalfScreenViewController, QRCodeInMultiDisplayView, ScanQRCodeLogicController, SessionForwardRecordLogic, SharePreConfirmView, UIImage, UIImageView, UIView, UIViewPropertyAnimator, WCImageFullScreenTagView, WCImageTranslateLogic, WCMediaItem, WCMediaItemWrap, WCMomentsPageContext, WCMomentsScrollActionSheet, WXFullScreenGestureRecognizer;
 @protocol WCImageFullScreenViewContainerDelegate;
 
-@interface WCImageFullScreenViewContainer
+@interface WCImageFullScreenViewContainer : NSObject
 {
     WCMediaItem *m_mediaData;
     WCMediaItemWrap *m_mediaDataWrap;

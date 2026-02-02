@@ -5,7 +5,7 @@
 
 @class JSVirtualMachine, MMPrefetcherMainJSContext, MMWebJsBasePkgInfo, NSDictionary, NSMutableDictionary;
 
-@interface MMWebPrefecherJsEngine
+@interface MMWebPrefecherJsEngine : NSObject
 {
     JSVirtualMachine *_jsVM;
     MMPrefetcherMainJSContext *_mainContext;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MMFinderLiveGestureCache
+@interface MMFinderLiveGestureCache : NSObject
 {
     NSArray *_gestureDefaultEnabledLiveTags;
     NSMutableDictionary *_gesturesDict;

@@ -5,7 +5,7 @@
 
 @class MJVideoTemplate, NSMutableArray;
 
-@interface WCVideoProducerEditSegmentOperation
+@interface WCVideoProducerEditSegmentOperation : NSObject
 {
     MJVideoTemplate *_templateInfo;
     NSMutableArray *_editAssetClipOperationList;

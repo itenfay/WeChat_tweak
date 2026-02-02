@@ -5,7 +5,7 @@
 
 @class FlutterSemanticsScrollView;
 
-@interface FlutterScrollableSemanticsObject
+@interface FlutterScrollableSemanticsObject : NSObject
 {
     FlutterSemanticsScrollView *_scrollView;
 }

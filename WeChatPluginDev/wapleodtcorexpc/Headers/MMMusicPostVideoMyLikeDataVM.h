@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray, NSString;
 @protocol MMMusicPostVideoMyLikeDataVMDelegate;
 
-@interface MMMusicPostVideoMyLikeDataVM
+@interface MMMusicPostVideoMyLikeDataVM : NSObject
 {
     NSMutableArray *_arrData;
     id <MMMusicPostVideoMyLikeDataVMDelegate> _delegate;

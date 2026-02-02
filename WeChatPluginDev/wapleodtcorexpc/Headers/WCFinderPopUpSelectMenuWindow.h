@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderPopUpSelectMenuWindow
+@interface WCFinderPopUpSelectMenuWindow : NSObject
 {
     CDUnknownBlockType _nonContentAreaTouchHandler;
     struct CGRect _menuContentFrame;

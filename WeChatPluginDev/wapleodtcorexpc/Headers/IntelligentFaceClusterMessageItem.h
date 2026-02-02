@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentFaceClusterMessageItem
+@interface IntelligentFaceClusterMessageItem : NSObject
 {
     unsigned int _msgLocalId;
     float _zScore;

@@ -5,7 +5,7 @@
 
 @class UIButton, UIImageView, UILabel, UIScrollView, UISwitch, UIView;
 
-@interface MMMSMainViewController
+@interface MMMSMainViewController : NSObject
 {
     UIImageView *m_imgvRecover;
     UILabel *m_tipLabel;

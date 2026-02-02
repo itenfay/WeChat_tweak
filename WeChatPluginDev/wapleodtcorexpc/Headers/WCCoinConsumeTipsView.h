@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol WCCoinConsumeTipsViewDelegate;
 
-@interface WCCoinConsumeTipsView
+@interface WCCoinConsumeTipsView : NSObject
 {
     NSArray *_wording;
     id <WCCoinConsumeTipsViewDelegate> _delegate;

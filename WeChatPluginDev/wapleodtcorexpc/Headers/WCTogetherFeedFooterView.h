@@ -5,7 +5,7 @@
 
 @class UIView, WCTogetherFeedViewSection;
 
-@interface WCTogetherFeedFooterView
+@interface WCTogetherFeedFooterView : NSObject
 {
     UIView *_bottomLine;
 }

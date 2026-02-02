@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MinimizeTaskExtInfo
+@interface MinimizeTaskExtInfo : NSObject
 {
     unsigned int _generateScene;
     unsigned long long _generateType;

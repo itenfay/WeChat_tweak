@@ -6,7 +6,7 @@
 @class GetA8KeyLogic, MMLoadingView, NSString, OpenProfileData, OpenProfileLogicHelper;
 @protocol OpenProfileBlockViewControllerDelegate;
 
-@interface OpenProfileBlockViewController
+@interface OpenProfileBlockViewController : NSObject
 {
     OpenProfileData *_infoData;
     OpenProfileLogicHelper *_logicHelper;

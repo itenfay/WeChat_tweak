@@ -6,7 +6,7 @@
 @class MMEasterEggActivityChatReportObject, MMEasterEggEffect, MMEasterEggMatch, NSMutableArray, NSString;
 @protocol MMEasterEggActivity, MMEasterEggControllerDelegate;
 
-@interface MMEasterEggController
+@interface MMEasterEggController : NSObject
 {
     id <MMEasterEggControllerDelegate> _delegate;
     NSString *_chatUsername;

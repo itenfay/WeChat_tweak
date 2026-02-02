@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveTagLabel
+@interface MMLiveTagLabel : NSObject
 {
     NSString *_tagName;
 }

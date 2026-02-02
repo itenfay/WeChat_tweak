@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, UIImage;
 
-@interface MMPHAlbumCacheObj
+@interface MMPHAlbumCacheObj : NSObject
 {
     _Bool _isThumbUpdated;
     _Bool _isPhotoCountUpdated;

@@ -6,7 +6,7 @@
 @class FinderUserPagePoi, NSString, UIImageView, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderPOIRelatedListHalfTableViewSearchHeader, WCFinderPOIRelatedListHalfViewModel, WCFinderRefreshTableFooterView;
 @protocol WCFinderPOIRelatedListHalfViewControllerDelegate;
 
-@interface WCFinderPOIRelatedListHalfViewController
+@interface WCFinderPOIRelatedListHalfViewController : NSObject
 {
     id <WCFinderPOIRelatedListHalfViewControllerDelegate> _actionDelegate;
     UITableView *_tableView;

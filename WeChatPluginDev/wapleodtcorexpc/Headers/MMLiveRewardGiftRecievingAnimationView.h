@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, MMFinderLiveBatchRewardAnimationWeVisionRenderer, MMFinderLiveGiftAttackRenderLogic, MMFinderLiveGiftPlayItem, MMFinderLiveNotifyGiftNotificationView, MMFinderLivePlayGiftAnimationCommand, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveGiftMagicRewardHandler, MMLiveHapticsPlayer, MMLiveInteractionGiftRenderLogic, MMTimer, MMUILabel, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PAGView, RfxPagView, UIImageView, UILabel, UIView, _TtC6WeChat15MagicRewardView;
 @protocol MMLiveRewardGiftRecievingAnimationViewDelegate;
 
-@interface MMLiveRewardGiftRecievingAnimationView
+@interface MMLiveRewardGiftRecievingAnimationView : NSObject
 {
     _Bool _disableTopSlotNotification;
     _Bool _isUseRfxPagView;

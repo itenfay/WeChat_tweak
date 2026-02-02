@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WCAdvertiseStorage
+@interface WCAdvertiseStorage : NSObject
 {
     unsigned int _uiAdCreateTime;
     unsigned int _uiAdDisplayTime;

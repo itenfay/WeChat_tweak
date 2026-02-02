@@ -5,7 +5,7 @@
 
 @class QGPSetScaleParam;
 
-@interface QGPSetScaleCommand
+@interface QGPSetScaleCommand : NSObject
 {
     QGPSetScaleParam *_params;
 }

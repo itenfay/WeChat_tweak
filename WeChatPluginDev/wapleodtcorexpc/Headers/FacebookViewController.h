@@ -6,7 +6,7 @@
 @class MMTableViewInfo, NSString, UIButton;
 @protocol FacebookViewControllerDelegate;
 
-@interface FacebookViewController
+@interface FacebookViewController : NSObject
 {
     UIButton *m_bindBtn;
     UIButton *m_unBindBtn;

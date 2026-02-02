@@ -6,7 +6,7 @@
 @class CreateChatLogic, MMTableView, NSMutableArray, NSObject, NSString, WCDataSearcher, WCRedEnvelopesMultiSelectContactsViewController;
 @protocol WCRedEnvelopesSessionSelectViewControllerDelegate;
 
-@interface WCRedEnvelopesSessionSelectViewController
+@interface WCRedEnvelopesSessionSelectViewController : NSObject
 {
     long long m_iSessionType;
     id <WCRedEnvelopesSessionSelectViewControllerDelegate> m_delegate;

@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface OMJOverlayVerticalGuideLine
+@interface OMJOverlayVerticalGuideLine : NSObject
 {
     UIView *_lineTop;
     UIView *_lineBottom;

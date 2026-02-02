@@ -6,7 +6,7 @@
 @class BrandSessionTableFooter, NSArray, NSMutableSet, NSString;
 @protocol IBrandEcsSessionViewControllerDelegate;
 
-@interface BrandServiceSessionViewController
+@interface BrandServiceSessionViewController : NSObject
 {
     _Bool _canShowPersonalCenter;
     id <IBrandEcsSessionViewControllerDelegate> _delegate;

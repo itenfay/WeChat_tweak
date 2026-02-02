@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WANearByPreViewItem
+@interface WANearByPreViewItem : NSObject
 {
     unsigned int _appVersion;
     unsigned int _debugMode;

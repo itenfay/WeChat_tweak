@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCState;
 
-@interface WCEvent
+@interface WCEvent : NSObject
 {
     NSString *_name;
     NSArray *_sourceStates;

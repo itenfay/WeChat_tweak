@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface WAUniversalAudioPlayerCachePool
+@interface WAUniversalAudioPlayerCachePool : NSObject
 {
     NSMutableDictionary *_cachePool;
     NSObject<OS_dispatch_queue> *_synchronizationQueue;

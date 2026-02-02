@@ -5,7 +5,7 @@
 
 @class WSTabInfo;
 
-@interface WSk1kViewConfig
+@interface WSk1kViewConfig : NSObject
 {
     WSTabInfo *_tabInfo;
 }

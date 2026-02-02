@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VideoReaderMessageViewModel
+@interface VideoReaderMessageViewModel : NSObject
 {
 }
 

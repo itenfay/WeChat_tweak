@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPReturn
+@interface QGPReturn : NSObject
 {
     NSString *_status;
 }

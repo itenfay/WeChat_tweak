@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSObject, NSString, UIWindow, WCTimelineSessionStatItem;
 @protocol OS_dispatch_queue;
 
-@interface WCTimelineSessionMgr
+@interface WCTimelineSessionMgr : NSObject
 {
     MMTableView *m_tableView;
     WCTimelineSessionStatItem *sessionStatItem;

@@ -6,7 +6,7 @@
 @class GetWxaGameConfigResponse_WxagGameOriginalReviewConfig, MMUIButton, MMUILabel, MMUIView, NSString, UIImageView, UIView;
 @protocol WAGameEvaluatePopSheetDelegate;
 
-@interface WAGameEvaluatePopSheet
+@interface WAGameEvaluatePopSheet : NSObject
 {
     NSString *_appId;
     NSString *_weAppName;

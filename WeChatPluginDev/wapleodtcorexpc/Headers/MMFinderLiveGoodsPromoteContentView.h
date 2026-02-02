@@ -5,7 +5,7 @@
 
 @class FinderLiveProductHintAnimationInfo, MMFinderLiveECHotSaleLikeAnimationMaskView, MMFinderLiveTaskId, MMUILabel;
 
-@interface MMFinderLiveGoodsPromoteContentView
+@interface MMFinderLiveGoodsPromoteContentView : NSObject
 {
     MMFinderLiveTaskId *_taskID;
     MMFinderLiveECHotSaleLikeAnimationMaskView *_hotSaleLikeAnimationMaskView;

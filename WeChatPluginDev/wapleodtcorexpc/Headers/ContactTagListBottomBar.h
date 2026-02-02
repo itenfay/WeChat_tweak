@@ -6,7 +6,7 @@
 @class MMUILabel, UIButton;
 @protocol ContactTagListBottomBarDelegate;
 
-@interface ContactTagListBottomBar
+@interface ContactTagListBottomBar : NSObject
 {
     _Bool _isEditing;
     UIButton *_createTagButton;

@@ -6,7 +6,7 @@
 @class NSString, SKBuiltinBuffer_t;
 @protocol StoreEmotionGetEmotionListCgiDelegate;
 
-@interface StoreEmotionGetEmotionListCgi
+@interface StoreEmotionGetEmotionListCgi : NSObject
 {
     unsigned int m_reqType;
     unsigned int m_scene;

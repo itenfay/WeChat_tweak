@@ -5,7 +5,7 @@
 
 @protocol WCPayF2fShortTermQrcodeCgiDelegate;
 
-@interface WCPayF2fShortTermQrcodeCgi
+@interface WCPayF2fShortTermQrcodeCgi : NSObject
 {
     id <WCPayF2fShortTermQrcodeCgiDelegate> _m_delegate;
     long long _request_scene;

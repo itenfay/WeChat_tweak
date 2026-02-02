@@ -6,7 +6,7 @@
 @class NSString, WCAdBaseBarView;
 @protocol WCAdCommonBarContainerViewDelegate;
 
-@interface WCAdCommonBarContainerView
+@interface WCAdCommonBarContainerView : NSObject
 {
     id <WCAdCommonBarContainerViewDelegate> _viewDelegate;
     WCAdBaseBarView *_baseBarView;

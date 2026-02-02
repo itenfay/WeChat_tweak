@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCAdDynamicFeedInfluentAnimationInfo
+@interface WCAdDynamicFeedInfluentAnimationInfo : NSObject
 {
     NSString *_commonStartDelayString;
     NSString *_commonDurationString;

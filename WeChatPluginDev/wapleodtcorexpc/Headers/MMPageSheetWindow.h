@@ -5,7 +5,7 @@
 
 @protocol MMPageSheetWindowDelegate;
 
-@interface MMPageSheetWindow
+@interface MMPageSheetWindow : NSObject
 {
     id <MMPageSheetWindowDelegate> _delegate;
 }

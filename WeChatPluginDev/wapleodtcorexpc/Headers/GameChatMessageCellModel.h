@@ -5,7 +5,7 @@
 
 @class GameLifeConversation, GameLifeConversationCellDataSource, NSString, UIImage;
 
-@interface GameChatMessageCellModel
+@interface GameChatMessageCellModel : NSObject
 {
     _Bool _showAsRedDot;
     int _msgShowType;

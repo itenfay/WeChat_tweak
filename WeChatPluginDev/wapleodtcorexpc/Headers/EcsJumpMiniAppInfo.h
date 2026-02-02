@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EcsJumpMiniAppInfo
+@interface EcsJumpMiniAppInfo : NSObject
 {
     unsigned int _scene;
     unsigned int _versionType;

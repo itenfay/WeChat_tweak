@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdFinderDialogDirectToAppInfo
+@interface WCAdFinderDialogDirectToAppInfo : NSObject
 {
     _Bool _internalJumpAppStore;
     NSString *_openSdkAppId;

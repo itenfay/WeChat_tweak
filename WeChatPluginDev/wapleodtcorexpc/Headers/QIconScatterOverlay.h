@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QIconScatterOverlay
+@interface QIconScatterOverlay : NSObject
 {
     _Bool _enable3D;
     NSArray *_nodes;

@@ -6,7 +6,7 @@
 @class MMTableViewInfo, NSString, UIButton, UIImageView, WCAccountBindPhoneControlLogic;
 @protocol VerifyPhoneDelegate;
 
-@interface BindPhoneInfoViewController
+@interface BindPhoneInfoViewController : NSObject
 {
     UIImageView *m_bindImageView;
     UIButton *m_unChangeButton;

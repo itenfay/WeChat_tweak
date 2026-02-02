@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView, WCFinderAdCountdownBannerView, WCFinderAdDislikeReasonPanelView, WCFinderAdFeedbackPanelView, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListView, WCFinderNearByDescriptionTableViewCell, WCFinderRewardAdViewModel, WCFinderShareCustomTransition, WCFinderShareListReportModel;
 
-@interface WCFinderRewardAdViewController
+@interface WCFinderRewardAdViewController : NSObject
 {
     WCFinderShareListReportModel *_reportModel;
     WCFinderShareCustomTransition *_animator;

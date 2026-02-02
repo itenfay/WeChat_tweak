@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSIndexPath, NSMutableArray, NSString, UIColor, UIGestureRecognizer, UIImageView, UIView;
 
-@interface MMBaseMultiMenuTableViewCell
+@interface MMBaseMultiMenuTableViewCell : NSObject
 {
     UIView *_menuContentView;
     UIView *_actualContentView;

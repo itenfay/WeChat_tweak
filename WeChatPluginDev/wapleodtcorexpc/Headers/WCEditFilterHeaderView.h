@@ -6,7 +6,7 @@
 @class MMTimer, UILabel, UISlider;
 @protocol WCEditFilterHeaderViewDelegate;
 
-@interface WCEditFilterHeaderView
+@interface WCEditFilterHeaderView : NSObject
 {
     int _lastSliderValue;
     id <WCEditFilterHeaderViewDelegate> _delegate;

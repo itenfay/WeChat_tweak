@@ -5,7 +5,7 @@
 
 @class MMFinderLiveRedPacketAnchorPromoteInfo, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveRedPacketAnchorPromoteTableViewCell
+@interface MMFinderLiveRedPacketAnchorPromoteTableViewCell : NSObject
 {
     MMWebImageView *_redPacketImageView;
     MMUILabel *_titleLabel;

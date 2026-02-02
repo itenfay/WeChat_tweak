@@ -5,7 +5,7 @@
 
 @class CContact, CMessageWrap, ContactsDataLogic, ForwardMessageLogicController, MMLimitedModeGuardianLogic, NSString, UINavigationController;
 
-@interface MMLimitedModeGuardianSelectContactViewController
+@interface MMLimitedModeGuardianSelectContactViewController : NSObject
 {
     MMLimitedModeGuardianLogic *m_guardianLogic;
     ForwardMessageLogicController *m_forwardMsgLogic;

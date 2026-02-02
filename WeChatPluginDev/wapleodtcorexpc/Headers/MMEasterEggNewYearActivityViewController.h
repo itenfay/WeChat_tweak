@@ -6,7 +6,7 @@
 @class MMEasterEggNewYearActivityCardView, MMEasterEggNewYearActivityInfo, MMEasterEggNewYearActivityMaterialInfo, MMEasterEggNewYearActivityReportObject, NSString, UIButton, UIImageView, UILabel, UIScreenEdgePanGestureRecognizer, UIScrollView, UIView;
 @protocol MMEasterEggNewYearActivityViewControllerDelegate;
 
-@interface MMEasterEggNewYearActivityViewController
+@interface MMEasterEggNewYearActivityViewController : NSObject
 {
     _Bool _isFromChatRoom;
     _Bool _canShowCard;

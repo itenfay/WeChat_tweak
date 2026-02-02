@@ -5,7 +5,7 @@
 
 @class MMScrollableActionSheetHorizontalItemView, NSString, UIImage;
 
-@interface MMScrollableActionSheetHorizontalItemInfo
+@interface MMScrollableActionSheetHorizontalItemInfo : NSObject
 {
     unsigned int _itemType;
     UIImage *_iconImage;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMImageActionSnsShareItem
+@interface MMImageActionSnsShareItem : NSObject
 {
     _Bool _isFromFav;
     unsigned int _favLocalId;

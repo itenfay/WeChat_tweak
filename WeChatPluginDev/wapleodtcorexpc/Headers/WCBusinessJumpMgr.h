@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WAOpenSDKJSEventHandleLogic;
 
-@interface WCBusinessJumpMgr
+@interface WCBusinessJumpMgr : NSObject
 {
     NSMutableDictionary *_dictCallBackInfo;
     WAOpenSDKJSEventHandleLogic *_openSDKJSEventHandler;

@@ -5,7 +5,7 @@
 
 @class EmoticonCellLikeButton, EmotionCollectionFooterView, InfiniteLoopContainerView, MMTimer, NSMutableArray, NSString, StoreEmoticonTopicProxyLogic, UICollectionView, UICollectionViewFlowLayout, UIImageView, UIView, UIViewController;
 
-@interface MMPersonalEmotionsViewController
+@interface MMPersonalEmotionsViewController : NSObject
 {
     UICollectionView *_collectionView;
     UICollectionViewFlowLayout *_layout;

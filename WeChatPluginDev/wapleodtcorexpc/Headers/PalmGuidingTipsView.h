@@ -5,7 +5,7 @@
 
 @class MMLoadingIndicatorView, NSString, PAGView, UIImageView, UILabel, UIView;
 
-@interface PalmGuidingTipsView
+@interface PalmGuidingTipsView : NSObject
 {
     _Bool _needFlippedLeft;
     int _currentTipCode;

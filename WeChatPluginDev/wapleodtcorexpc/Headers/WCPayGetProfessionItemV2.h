@@ -5,7 +5,7 @@
 
 @class MMPanelView, NSArray, NSString, UILabel, UIPickerView, WCPayProfession;
 
-@interface WCPayGetProfessionItemV2
+@interface WCPayGetProfessionItemV2 : NSObject
 {
     NSArray *_professions;
     UILabel *_label;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMCompatibleCGIDB, NSString;
 
-@interface MMCompatibleCGIMgr
+@interface MMCompatibleCGIMgr : NSObject
 {
     MMCompatibleCGIDB *m_compatibleCGIDB;
 }

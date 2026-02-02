@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel;
 
-@interface WCFinderPopupTipsView
+@interface WCFinderPopupTipsView : NSObject
 {
     _Bool _isMainStatus;
     double _rawWidth;

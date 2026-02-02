@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_writeBLECharacteristicValue
+@interface WAJSEventHandler_writeBLECharacteristicValue : NSObject
 {
     NSString *m_deviceId;
     NSString *m_serviceId;

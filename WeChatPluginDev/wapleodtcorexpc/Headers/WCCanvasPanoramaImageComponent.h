@@ -5,7 +5,7 @@
 
 @class MMProgressViewEx, NSString, WCPanoramaImageView;
 
-@interface WCCanvasPanoramaImageComponent
+@interface WCCanvasPanoramaImageComponent : NSObject
 {
     WCPanoramaImageView *_panoramaImageView;
     MMProgressViewEx *_loadingView;

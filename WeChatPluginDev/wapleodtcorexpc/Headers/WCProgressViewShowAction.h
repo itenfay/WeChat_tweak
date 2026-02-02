@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCProgressViewShowAction
+@interface WCProgressViewShowAction : NSObject
 {
     long long _currentStepMode;
 }

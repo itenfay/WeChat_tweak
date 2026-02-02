@@ -5,7 +5,7 @@
 
 @class NSString, PassKeyVerifyInfo, PasskeyEntitlementProvider, WCAccountManualAuthControlLogic;
 
-@interface WCAccountPasskeyControlLogic
+@interface WCAccountPasskeyControlLogic : NSObject
 {
     WCAccountManualAuthControlLogic *_manualAuthLogic;
     PasskeyEntitlementProvider *_passkeyProvider;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface PreViewMsgContentLogic
+@interface PreViewMsgContentLogic : NSObject
 {
     NSMutableArray *m_msgs;
 }

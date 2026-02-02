@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, UIButton, UILabel, WCPreGiftCardData;
 
-@interface WCGiftCardEnvelopeView
+@interface WCGiftCardEnvelopeView : NSObject
 {
     WCPreGiftCardData *_preCardData;
     MMWebImageView *_headImageView;

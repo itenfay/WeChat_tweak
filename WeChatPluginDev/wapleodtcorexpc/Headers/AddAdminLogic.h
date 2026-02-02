@@ -6,7 +6,7 @@
 @class CContact, NSArray, NSMutableDictionary, NSString, RoomContactSelectViewController;
 @protocol AddAdminLogicDelegate;
 
-@interface AddAdminLogic
+@interface AddAdminLogic : NSObject
 {
     id <AddAdminLogicDelegate> m_delegate;
     _Bool m_bNeedReload;

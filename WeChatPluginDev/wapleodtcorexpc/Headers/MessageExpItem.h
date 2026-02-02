@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MessageExpItem
+@interface MessageExpItem : NSObject
 {
     _Bool bNeedUpdateTitle;
     _Bool bNeedUpdateDesc;

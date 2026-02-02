@@ -6,7 +6,7 @@
 @class NSString, SimpleAudioPlayer;
 @protocol AudioDataRead;
 
-@interface AMRAudioPlayerV2
+@interface AMRAudioPlayerV2 : NSObject
 {
     int _m_currentPcmBytePos;
     struct AMRDecodeFloat *m_decoder;

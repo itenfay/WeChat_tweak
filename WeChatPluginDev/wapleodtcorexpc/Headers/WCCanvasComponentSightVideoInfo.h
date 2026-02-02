@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentVideoFloatBarInfo;
 
-@interface WCCanvasComponentSightVideoInfo
+@interface WCCanvasComponentSightVideoInfo : NSObject
 {
     _Bool _useNewSightPlayer;
     _Bool _forbiddenControlView;

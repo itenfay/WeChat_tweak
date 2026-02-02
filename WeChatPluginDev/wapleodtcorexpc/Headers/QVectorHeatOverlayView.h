@@ -5,7 +5,7 @@
 
 @class QVectorHeatOverlay;
 
-@interface QVectorHeatOverlayView
+@interface QVectorHeatOverlayView : NSObject
 {
 }
 

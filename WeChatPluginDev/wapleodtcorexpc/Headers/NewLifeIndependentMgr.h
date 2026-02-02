@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSString;
 
-@interface NewLifeIndependentMgr
+@interface NewLifeIndependentMgr : NSObject
 {
     MMLRUCache *_localGlobalFavFlagCache;
 }

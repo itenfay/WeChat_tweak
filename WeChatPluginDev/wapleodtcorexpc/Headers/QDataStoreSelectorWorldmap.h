@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QDataStoreSelectorWorldmap
+@interface QDataStoreSelectorWorldmap : NSObject
 {
     NSString *_type;
 }

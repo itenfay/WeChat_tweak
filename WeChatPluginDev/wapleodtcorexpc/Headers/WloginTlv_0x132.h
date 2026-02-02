@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_0x132
+@interface WloginTlv_0x132 : NSObject
 {
     NSData *accessToken;
     unsigned int dwExpireTime;

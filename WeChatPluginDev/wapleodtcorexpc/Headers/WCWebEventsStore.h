@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, WKWebView;
 
-@interface WCWebEventsStore
+@interface WCWebEventsStore : NSObject
 {
     WKWebView *_webView;
     NSMutableArray *_curNavigationEventsQueue;

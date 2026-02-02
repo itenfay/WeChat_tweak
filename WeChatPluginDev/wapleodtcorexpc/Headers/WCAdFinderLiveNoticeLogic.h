@@ -5,7 +5,7 @@
 
 @class NSString, WCAdFinderLiveNoticeInfo, WCAdHalfScreenFinderLiveNoticeView, WCDataItem;
 
-@interface WCAdFinderLiveNoticeLogic
+@interface WCAdFinderLiveNoticeLogic : NSObject
 {
     _Bool _isDetail;
     WCAdFinderLiveNoticeInfo *_adFinderLiveNoticeInfo;

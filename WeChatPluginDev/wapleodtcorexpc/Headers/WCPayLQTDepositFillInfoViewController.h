@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UITextField, UIView, WCBaseKeyboardToolBar, WCPayDecimalKeyboardView, WCPayLQTDepositProtocolPageSheet, WCPayLQTSelectCardItem, WCPayLQTSelectDateItem, WCPayRecommendItemView;
 @protocol WCPayLQTDepositFillInfoViewControllerDelegate;
 
-@interface WCPayLQTDepositFillInfoViewController
+@interface WCPayLQTDepositFillInfoViewController : NSObject
 {
     id <WCPayLQTDepositFillInfoViewControllerDelegate> m_delegate;
     WCBaseKeyboardToolBar *m_keyboardBar;

@@ -5,7 +5,7 @@
 
 @class UIView, VoIPBubbleMessageViewModel;
 
-@interface VoIPBubbleMessageCellView
+@interface VoIPBubbleMessageCellView : NSObject
 {
     UIView *m_unreadImageView;
 }

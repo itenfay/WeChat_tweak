@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, NSString, RichTextView, UIImageView, UISwitch, UIView;
 
-@interface MMFinderLiveMoreFunctionSwitchCell
+@interface MMFinderLiveMoreFunctionSwitchCell : NSObject
 {
     _Bool _showSepLine;
     UIView *_functionContentView;

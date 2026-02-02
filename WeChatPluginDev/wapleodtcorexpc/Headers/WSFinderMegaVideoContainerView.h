@@ -5,7 +5,7 @@
 
 @class MMLiteAppView, MMTimer, NSDictionary, NSString, OpenLiteAppInfo;
 
-@interface WSFinderMegaVideoContainerView
+@interface WSFinderMegaVideoContainerView : NSObject
 {
     _Bool _needCreateContextId;
     _Bool _appearBySelectTab;

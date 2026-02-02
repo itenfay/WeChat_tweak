@@ -6,7 +6,7 @@
 @class DelaySwitchSettingLogic, GetTransferWordingResponse, NSString, UIButton, WCPayResetDelayTipsNewModal;
 @protocol WCPayResetDelayTransferDurationViewControllerDelegate;
 
-@interface WCPayResetDelayTransferDurationViewController
+@interface WCPayResetDelayTransferDurationViewController : NSObject
 {
     GetTransferWordingResponse *_wordingResponse;
     unsigned long long _entryScene;

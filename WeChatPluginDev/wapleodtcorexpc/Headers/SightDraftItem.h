@@ -5,7 +5,7 @@
 
 @class EditVideoAttr, NSString, UIImage, VideoCompositionAttr;
 
-@interface SightDraftItem
+@interface SightDraftItem : NSObject
 {
     unsigned long long _mode;
     NSString *_videoPath;

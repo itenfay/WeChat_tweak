@@ -5,7 +5,7 @@
 
 @class LensIcon, NSString;
 
-@interface EmoticonLensIconTask
+@interface EmoticonLensIconTask : NSObject
 {
     LensIcon *_iconInfo;
     NSString *_lensId;

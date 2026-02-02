@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject;
 @protocol OS_dispatch_queue;
 
-@interface WePkgOperateUpdateMgr
+@interface WePkgOperateUpdateMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }

@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSMutableArray, NSMutableSet, TemplateMsgExposeLogic, WAContactGetter;
 
-@interface TemplateMsgLogicController
+@interface TemplateMsgLogicController : NSObject
 {
     WAContactGetter *m_contactGetter;
     TemplateMsgExposeLogic *m_exposeLogic;

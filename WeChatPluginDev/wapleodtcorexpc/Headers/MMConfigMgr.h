@@ -5,7 +5,7 @@
 
 @class FullScreenMpLinkPrefixList, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MMConfigMgr
+@interface MMConfigMgr : NSObject
 {
     NSMutableDictionary *m_dicCacheConfigSeperator;
     NSMutableDictionary *m_dicConfig;

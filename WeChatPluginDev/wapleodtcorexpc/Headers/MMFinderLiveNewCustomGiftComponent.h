@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
-@interface MMFinderLiveNewCustomGiftComponent
+@interface MMFinderLiveNewCustomGiftComponent : NSObject
 {
     unsigned int _seq;
     NSString *_componentName;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MuteBrandMgr
+@interface MuteBrandMgr : NSObject
 {
     NSArray *_openBrandList;
 }

@@ -6,7 +6,7 @@
 @class LocationRetriever, NSString, WCAdAppointmentLogic, WCAdCombineFollowLogic, WCAdConfirmHalfScreenAdapter, WCAdDetermineHalfScreenView, WCAdFinderFollowLogic, WCAdFinderLiveNoticePolymericLogic, WCAdQuicklyAddBrandLogic, WCCanvasComponentItem, WCCanvasDynamicDataLoader;
 @protocol WCCanvasClickEventManagerDelegate, WCCanvasComponentDelegate;
 
-@interface WCCanvasClickEventManager
+@interface WCCanvasClickEventManager : NSObject
 {
     _Bool _qrCodeProcessing;
     WCCanvasComponentItem *_componentItem;

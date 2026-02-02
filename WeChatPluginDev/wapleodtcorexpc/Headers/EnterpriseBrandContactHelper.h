@@ -6,7 +6,7 @@
 @class NSString;
 @protocol EnterpriseBrandContactHelperDelegate;
 
-@interface EnterpriseBrandContactHelper
+@interface EnterpriseBrandContactHelper : NSObject
 {
     NSString *_contextBrandUserName;
     unsigned int _contextScene;

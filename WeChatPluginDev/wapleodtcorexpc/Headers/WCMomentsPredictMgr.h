@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, OrderedDictionary;
 
-@interface WCMomentsPredictMgr
+@interface WCMomentsPredictMgr : NSObject
 {
     OrderedDictionary *_pendingTasks;
     OrderedDictionary *_runningTasks;

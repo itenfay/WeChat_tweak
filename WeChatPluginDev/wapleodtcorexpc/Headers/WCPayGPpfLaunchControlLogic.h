@@ -6,7 +6,7 @@
 @class CContact, NSString, WCPayGppfQueryInfoCgi;
 @protocol WCPayGppfLaunchControlLogicDelegate;
 
-@interface WCPayGPpfLaunchControlLogic
+@interface WCPayGPpfLaunchControlLogic : NSObject
 {
     _Bool _bIsLaunchSucc;
     id <WCPayGppfLaunchControlLogicDelegate> _launchDelegate;

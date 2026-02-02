@@ -5,7 +5,7 @@
 
 @class NSArray, NSNumber, NSString;
 
-@interface WASemver
+@interface WASemver : NSObject
 {
     _Bool _isValid;
     NSString *_originalStr;

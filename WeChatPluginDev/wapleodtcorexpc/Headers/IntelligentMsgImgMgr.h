@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class IntelligentClassification, IntelligentFaceAlbum, IntelligentMessageDataPB, IntelligentOCR, NSMutableDictionary, NSMutableSet, NSNumber, NSRecursiveLock, NSString;
 
-@interface IntelligentMsgImgMgr
+@interface IntelligentMsgImgMgr : NSObject
 {
     NSRecursiveLock *_lock;
     NSRecursiveLock *_faceClusterSequenceLock;

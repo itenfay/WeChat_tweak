@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLivePromoteMsgInfo, FinderShopCouponInfo, MMFinderLiveAdsItem, MMFinderLiveGoodsItem, MMFinderLiveProductPromotePubbleContentView, MMFinderLivePromotePubbleContentView, MMFinderLiveTaskId, MMUIButton;
 @protocol MMFinderLiveOperationViewDelegate;
 
-@interface MMFinderLivePromotePubbleContainerView
+@interface MMFinderLivePromotePubbleContainerView : NSObject
 {
     _Bool _shouldHidden;
     _Bool _hideCloseButton;

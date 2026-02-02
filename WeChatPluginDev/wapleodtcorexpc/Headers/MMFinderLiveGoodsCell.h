@@ -6,7 +6,7 @@
 @class MMFinderLiveECHotSaleLikeAnimationMaskView, MMFinderLiveGoodsViewModel, MMFinderLiveTaskId, NSString, UIView;
 @protocol MMFinderLiveGoodsCellBaseDelegate;
 
-@interface MMFinderLiveGoodsCell
+@interface MMFinderLiveGoodsCell : NSObject
 {
     id <MMFinderLiveGoodsCellBaseDelegate> _cellDelegate;
     MMFinderLiveTaskId *_taskId;

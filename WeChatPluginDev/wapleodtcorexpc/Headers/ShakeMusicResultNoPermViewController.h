@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, MMTimer, MMUIButton, MMUILabel, MMWebImageView, NSArray, NSString, ShakeMusicInfo, UIImageView, UIView;
 
-@interface ShakeMusicResultNoPermViewController
+@interface ShakeMusicResultNoPermViewController : NSObject
 {
     _Bool _shouldUseCustomPopAnimation;
     _Bool _shouldLayoutHeaderView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmotionSendCountWrap
+@interface EmotionSendCountWrap : NSObject
 {
     _Bool _hasRewarded;
     unsigned int _totalSendTimes;

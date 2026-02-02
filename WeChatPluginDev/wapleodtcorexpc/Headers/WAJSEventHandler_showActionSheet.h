@@ -5,7 +5,7 @@
 
 @class NSString, WAWebActionSheet;
 
-@interface WAJSEventHandler_showActionSheet
+@interface WAJSEventHandler_showActionSheet : NSObject
 {
     WAWebActionSheet *_actionSheet;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderExtStatsLiveNotifyExposeReportModel
+@interface WCFinderExtStatsLiveNotifyExposeReportModel : NSObject
 {
     unsigned long long _autoPlayDurationMS;
     NSString *_noticeID;

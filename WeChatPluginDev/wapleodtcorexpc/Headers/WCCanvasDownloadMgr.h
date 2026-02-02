@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasDownloadMgr
+@interface WCCanvasDownloadMgr : NSObject
 {
 }
 

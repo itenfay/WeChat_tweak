@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat22MagicCardStarterSclBiz
+@interface _TtC6WeChat22MagicCardStarterSclBiz : NSObject
 {
     MISSING_TYPE *mbCommonAdapter;
     MISSING_TYPE *mbVConsoleHelper;

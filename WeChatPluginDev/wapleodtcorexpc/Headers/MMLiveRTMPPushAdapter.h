@@ -5,7 +5,7 @@
 
 @class NSString, TXLivePush;
 
-@interface MMLiveRTMPPushAdapter
+@interface MMLiveRTMPPushAdapter : NSObject
 {
     TXLivePush *_txLivePusher;
 }

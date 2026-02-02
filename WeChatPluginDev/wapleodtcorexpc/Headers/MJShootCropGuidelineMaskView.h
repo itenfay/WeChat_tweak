@@ -6,7 +6,7 @@
 @class CALayer, MJDashLine, MMUIView;
 @protocol MJShootCropGuidelineMaskViewDelegate;
 
-@interface MJShootCropGuidelineMaskView
+@interface MJShootCropGuidelineMaskView : NSObject
 {
     id <MJShootCropGuidelineMaskViewDelegate> _delegate;
     MMUIView *_guidelineFrameContainerView;

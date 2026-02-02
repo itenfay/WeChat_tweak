@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, YtExtraOptions;
 
-@interface NetworkConfigFetchState
+@interface NetworkConfigFetchState : NSObject
 {
     _Bool needLocalConfig;
     NSString *appId;

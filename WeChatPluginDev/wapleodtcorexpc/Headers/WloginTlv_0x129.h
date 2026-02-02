@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x129
+@interface WloginTlv_0x129 : NSObject
 {
     unsigned int dwHoldTime;
     unsigned int dwTimeout;

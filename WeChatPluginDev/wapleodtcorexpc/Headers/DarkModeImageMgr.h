@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSString;
 
-@interface DarkModeImageMgr
+@interface DarkModeImageMgr : NSObject
 {
     NSMapTable *_darkToLightMapTable;
     NSMapTable *_lightToDarkMapTable;

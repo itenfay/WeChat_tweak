@@ -5,7 +5,7 @@
 
 @class LbsRecommendPoiItem, MMUILabel, MMWebImageView, NSMutableArray, UIImageView;
 
-@interface PoiNearbyItemTableViewCell
+@interface PoiNearbyItemTableViewCell : NSObject
 {
     LbsRecommendPoiItem *_poiItem;
     MMWebImageView *_iconView;

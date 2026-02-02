@@ -6,7 +6,7 @@
 @class NSString;
 @protocol StoreEmotionAddTaskDelegate;
 
-@interface StoreEmotionAddTask
+@interface StoreEmotionAddTask : NSObject
 {
     NSString *_productID;
     id <StoreEmotionAddTaskDelegate> _delegate;

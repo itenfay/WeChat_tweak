@@ -5,7 +5,7 @@
 
 @class MMDynamicColor, MMKBankEditViewOnSeletBankCallback, NSMutableArray, NSString, UITextField, WCPaySelectBankViewController, WCPaySingleSelectTableViewController;
 
-@interface KindaBankEditView
+@interface KindaBankEditView : NSObject
 {
     WCPaySelectBankViewController *m_selectBankVC;
     UITextField *m_view;

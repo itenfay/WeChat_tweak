@@ -6,7 +6,7 @@
 @class MMPageSheetAdapter, MMTagTextField, MMUIButton, NSString, UIImageView, UIView, WCWebSearchPresenter, WSLocalTemplateController, WSWebViewPluginScheduler, _TtC6WeChat21WSTextFieldInteractor;
 @protocol YYWebViewInterface;
 
-@interface WSHalfScreenWebSearchBaseViewController
+@interface WSHalfScreenWebSearchBaseViewController : NSObject
 {
     _Bool _isDetailPage;
     _Bool _hasFirstWebviewJsbridgeReady;

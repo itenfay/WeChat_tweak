@@ -6,7 +6,7 @@
 @class NSString;
 @protocol ScanTVDelegate;
 
-@interface ScanTVHelper
+@interface ScanTVHelper : NSObject
 {
     NSString *m_nsTVID;
     unsigned int m_uiTVDetailScene;

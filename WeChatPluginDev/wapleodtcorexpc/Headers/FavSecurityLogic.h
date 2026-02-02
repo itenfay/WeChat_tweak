@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol FavSecurityDelegate;
 
-@interface FavSecurityLogic
+@interface FavSecurityLogic : NSObject
 {
     NSMutableArray *_infoArray;
     unsigned int _curCheckingId;

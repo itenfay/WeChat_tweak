@@ -5,7 +5,7 @@
 
 @class MMFinderLiveConnectMicRandomHintTableFooterView, MMTableView, NSArray, NSMutableArray, NSString, UILabel, UITableViewDiffableDataSource;
 
-@interface MMFinderLiveConnectMicAnchorContainerView
+@interface MMFinderLiveConnectMicAnchorContainerView : NSObject
 {
     _Bool _forceDisableApplySectionCellButton;
     _Bool _footerViewHasBeenExposed;

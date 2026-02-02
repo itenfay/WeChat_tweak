@@ -5,7 +5,7 @@
 
 @class QGPEnabled;
 
-@interface QGPEnableClickCommand
+@interface QGPEnableClickCommand : NSObject
 {
     QGPEnabled *_params;
 }

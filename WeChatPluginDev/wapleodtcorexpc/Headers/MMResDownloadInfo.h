@@ -5,7 +5,7 @@
 
 @class MMResDownloadUrlInfo, NSString;
 
-@interface MMResDownloadInfo
+@interface MMResDownloadInfo : NSObject
 {
     unsigned int resType;
     unsigned int networkType;

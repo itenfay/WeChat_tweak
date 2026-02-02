@@ -5,7 +5,7 @@
 
 @class DotLoadingView, MMUILabel, NSString, UIColor, UIView;
 
-@interface WARefreshAutoAnimatingFooter
+@interface WARefreshAutoAnimatingFooter : NSObject
 {
     NSString *_noMoreTips;
     DotLoadingView *_loadingView;

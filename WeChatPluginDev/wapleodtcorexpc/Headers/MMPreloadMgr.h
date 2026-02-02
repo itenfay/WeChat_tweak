@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMPreloadMgr
+@interface MMPreloadMgr : NSObject
 {
 }
 

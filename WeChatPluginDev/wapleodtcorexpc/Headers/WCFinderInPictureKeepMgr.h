@@ -6,7 +6,7 @@
 @class NSString, UIView, UIViewController;
 @protocol WCFinderInPictureProtocol;
 
-@interface WCFinderInPictureKeepMgr
+@interface WCFinderInPictureKeepMgr : NSObject
 {
     UIViewController<WCFinderInPictureProtocol> *_vcContext;
     UIViewController<WCFinderInPictureProtocol> *_cache;

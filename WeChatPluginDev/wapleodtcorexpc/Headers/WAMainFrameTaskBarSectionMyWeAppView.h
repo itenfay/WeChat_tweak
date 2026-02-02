@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, MMWebImageView, SightIconView, UILabel, UIView;
 
-@interface WAMainFrameTaskBarSectionMyWeAppView
+@interface WAMainFrameTaskBarSectionMyWeAppView : NSObject
 {
     UIView *_dragMaskView;
     CAShapeLayer *_maskBorder;

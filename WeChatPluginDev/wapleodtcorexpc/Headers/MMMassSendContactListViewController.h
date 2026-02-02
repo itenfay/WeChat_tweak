@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UITableView;
 
-@interface MMMassSendContactListViewController
+@interface MMMassSendContactListViewController : NSObject
 {
     UITableView *_tableView;
     NSArray *_contacts;

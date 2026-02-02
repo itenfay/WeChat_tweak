@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSRecursiveLock;
 
-@interface WCAdWebStorePreloadMgr
+@interface WCAdWebStorePreloadMgr : NSObject
 {
     NSRecursiveLock *_preloadLock;
     NSMutableArray *_timelineAdInfoList;

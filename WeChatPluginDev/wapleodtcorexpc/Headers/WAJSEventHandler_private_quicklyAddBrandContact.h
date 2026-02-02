@@ -5,7 +5,7 @@
 
 @class MMTimer;
 
-@interface WAJSEventHandler_private_quicklyAddBrandContact
+@interface WAJSEventHandler_private_quicklyAddBrandContact : NSObject
 {
     _Bool _isWaitContactSync;
     MMTimer *_timerContactSync;

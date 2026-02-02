@@ -6,7 +6,7 @@
 @class EmoticonStoreItem, MMEmoticonStoreDownloadLogic, MMWebImageView, NSString, UILabel;
 @protocol MMEmotionChartsCellDelegate;
 
-@interface MMEmotionChartsCell
+@interface MMEmotionChartsCell : NSObject
 {
     long long _type;
     long long _scene;

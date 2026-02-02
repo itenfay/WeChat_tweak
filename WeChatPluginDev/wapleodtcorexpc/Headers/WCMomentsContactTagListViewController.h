@@ -6,7 +6,7 @@
 @class MMPageSheetAdapter, MMTableView, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, UILabel, WCMomentsContactTagEditView, WCSearchBar;
 @protocol WCMomentsContactTagListViewControllerDelegate;
 
-@interface WCMomentsContactTagListViewController
+@interface WCMomentsContactTagListViewController : NSObject
 {
     _Bool _canEditTagLabel;
     id <WCMomentsContactTagListViewControllerDelegate> _delegate;

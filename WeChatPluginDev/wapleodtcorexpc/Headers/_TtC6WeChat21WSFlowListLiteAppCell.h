@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, MMLiteAppView, UIView, _TtC6WeChat19WSFlowListCellModel;
 
-@interface _TtC6WeChat21WSFlowListLiteAppCell
+@interface _TtC6WeChat21WSFlowListLiteAppCell : NSObject
 {
     MISSING_TYPE *contentViewMarginLeftRight;
     MISSING_TYPE *contentViewMarginTop;

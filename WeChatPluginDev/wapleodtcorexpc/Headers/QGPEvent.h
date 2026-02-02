@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPEvent
+@interface QGPEvent : NSObject
 {
     NSString *_eventType;
     NSString *_layerId;

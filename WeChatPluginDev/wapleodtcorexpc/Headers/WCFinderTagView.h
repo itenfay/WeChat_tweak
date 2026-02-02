@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface WCFinderTagView
+@interface WCFinderTagView : NSObject
 {
     UIImageView *_iconView;
     UILabel *_label;

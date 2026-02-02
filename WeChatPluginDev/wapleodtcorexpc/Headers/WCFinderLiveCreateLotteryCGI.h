@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveLotteryCreateInfo, NSData, WCFinderDataItem;
 
-@interface WCFinderLiveCreateLotteryCGI
+@interface WCFinderLiveCreateLotteryCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

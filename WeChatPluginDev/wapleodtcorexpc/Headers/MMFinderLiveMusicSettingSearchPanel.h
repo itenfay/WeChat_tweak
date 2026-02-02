@@ -5,7 +5,7 @@
 
 @class MMFinderLiveMusicSettingSearchTableViewModel, MMFinderLiveMusicSettingSearchViewModel, MMFinderLiveTaskId, MMTableView, MMUIActivityIndicatorView, MMUILabel, MMUISearchBar, NSArray, NSString, OrderedDictionary, UILabel, UIScrollView, UIView, WCFinderTabPageHeaderView, WCTimeLineFooterView;
 
-@interface MMFinderLiveMusicSettingSearchPanel
+@interface MMFinderLiveMusicSettingSearchPanel : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     NSArray *_tingLists;

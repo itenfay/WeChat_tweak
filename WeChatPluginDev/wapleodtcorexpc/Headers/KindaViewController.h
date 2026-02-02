@@ -6,7 +6,7 @@
 @class KindaLayout, KindaProxy, MMIUIPage, MMVoidBoolI32Callback, MMVoidCallback, NSString, UIView, WCPayBlurViewHelper;
 @protocol KindaViewControllerControlDelegate;
 
-@interface KindaViewController
+@interface KindaViewController : NSObject
 {
     MMIUIPage *_m_page;
     KindaLayout *_m_layout;

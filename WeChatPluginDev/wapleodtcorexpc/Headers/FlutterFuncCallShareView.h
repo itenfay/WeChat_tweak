@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface FlutterFuncCallShareView
+@interface FlutterFuncCallShareView : NSObject
 {
     NSMutableDictionary *_viewMap;
 }

@@ -6,7 +6,7 @@
 @class AAQueryDetailRes, MMTableView, MMTipsViewController, NSMutableArray, NSString, WCActionSheet, WCPayGPOrderStatusHeaderView, WCPayGPPhotoViewController, WCPayNoticeItemView, WCPayRemarkPageSheet, WCPayWebImageView;
 @protocol WCPayGPOrderStatusViewControllerDelegate;
 
-@interface WCPayGPOrderStatusViewController
+@interface WCPayGPOrderStatusViewController : NSObject
 {
     _Bool _bIsAllPayerHasPay;
     _Bool _bIsLoadingImage;

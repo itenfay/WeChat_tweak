@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat39SearchVoiceInputAccessoryViewController
+@interface _TtC6WeChat39SearchVoiceInputAccessoryViewController : NSObject
 {
     MISSING_TYPE *heightWhenNotRecording;
 }

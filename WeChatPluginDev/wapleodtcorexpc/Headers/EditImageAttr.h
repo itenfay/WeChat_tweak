@@ -5,7 +5,7 @@
 
 @class CALayer, EditFinderImageAttr, EditStoryImageAttr, EditVideoBGMSelectedMusicInfo, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSURL, UIImage, WCLocationInfo;
 
-@interface EditImageAttr
+@interface EditImageAttr : NSObject
 {
     _Bool _isEdited;
     NSString *_url;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LinkWeAppJumpWrap
+@interface LinkWeAppJumpWrap : NSObject
 {
     _Bool _isForbidSSignal;
     unsigned int _appState;

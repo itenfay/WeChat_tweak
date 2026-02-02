@@ -5,7 +5,7 @@
 
 @class AnyPromise, NSString, WCFinderFeedArray, WCFinderProfileOverviewSection;
 
-@interface WCFinderProfilePluginMemberShip
+@interface WCFinderProfilePluginMemberShip : NSObject
 {
     WCFinderFeedArray *_feedArray;
     AnyPromise *_firstPageFetcher;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveModShelfReplaySettingCGI
+@interface WCFinderLiveModShelfReplaySettingCGI : NSObject
 {
     int _replaySwitch;
     int _replayType;

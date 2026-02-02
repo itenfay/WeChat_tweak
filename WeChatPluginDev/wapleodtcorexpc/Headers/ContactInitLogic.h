@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol ContactInitLogicExt;
 
-@interface ContactInitLogic
+@interface ContactInitLogic : NSObject
 {
     id <ContactInitLogicExt> m_delegate;
     NSMutableArray *m_usernames;

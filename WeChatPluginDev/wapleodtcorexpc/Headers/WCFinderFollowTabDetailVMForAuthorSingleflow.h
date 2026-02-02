@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableArray, NSMutableSet, WCFinderFeedFollowVM;
 
-@interface WCFinderFollowTabDetailVMForAuthorSingleflow
+@interface WCFinderFollowTabDetailVMForAuthorSingleflow : NSObject
 {
     _Bool _noMoreData;
     WCFinderFeedFollowVM *_followVM;

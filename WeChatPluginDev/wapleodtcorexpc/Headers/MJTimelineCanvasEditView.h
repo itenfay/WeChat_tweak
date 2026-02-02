@@ -6,7 +6,7 @@
 @class MJTimelineCanvasEditViewModel, MMUIButton, NSString, UICollectionView;
 @protocol MJTimelineCanvasEditViewDelegate;
 
-@interface MJTimelineCanvasEditView
+@interface MJTimelineCanvasEditView : NSObject
 {
     id <MJTimelineCanvasEditViewDelegate> _delegate;
     MJTimelineCanvasEditViewModel *_viewModel;

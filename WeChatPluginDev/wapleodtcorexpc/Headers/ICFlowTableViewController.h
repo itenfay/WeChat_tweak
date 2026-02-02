@@ -5,7 +5,7 @@
 
 @class ICFlowModel, ICFlowTableView, NSString;
 
-@interface ICFlowTableViewController
+@interface ICFlowTableViewController : NSObject
 {
     ICFlowModel *_model;
     ICFlowTableView *_tableView;

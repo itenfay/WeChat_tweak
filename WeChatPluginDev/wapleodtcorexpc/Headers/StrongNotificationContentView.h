@@ -5,7 +5,7 @@
 
 @class MMUIView, UIView;
 
-@interface StrongNotificationContentView
+@interface StrongNotificationContentView : NSObject
 {
     MMUIView *m_maskContainerView;
     UIView *_contentView;

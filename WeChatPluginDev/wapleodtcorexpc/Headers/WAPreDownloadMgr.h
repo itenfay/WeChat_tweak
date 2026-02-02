@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSNumber, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WAPreDownloadMgr
+@interface WAPreDownloadMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_workerQueue;
     NSMutableDictionary *_dicAppID2PreDownloadHandler;

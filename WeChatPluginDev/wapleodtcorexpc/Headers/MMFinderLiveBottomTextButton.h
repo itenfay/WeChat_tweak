@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLiveBottomTextButton
+@interface MMFinderLiveBottomTextButton : NSObject
 {
     _Bool _exposed;
     _Bool _hideServerRedDot;

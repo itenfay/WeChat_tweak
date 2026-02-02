@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUIViewController, NSMutableArray, NSString;
 
-@interface DataReportPageDebugInfoViewController
+@interface DataReportPageDebugInfoViewController : NSObject
 {
     MMUIViewController *_debugViewController;
     NSMutableArray *_debugPageParams;

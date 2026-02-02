@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel;
 
-@interface MMECSimpleShopView
+@interface MMECSimpleShopView : NSObject
 {
     MMWebImageView *_platformIconView;
     MMWebImageView *_brandIconView;

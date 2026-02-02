@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, UIColor, UIFont;
 
-@interface _TtC6WeChat17WCSearchTextField
+@interface _TtC6WeChat17WCSearchTextField : NSObject
 {
     MISSING_TYPE *isGradientCanShow;
     MISSING_TYPE *labelBackgroundColor;

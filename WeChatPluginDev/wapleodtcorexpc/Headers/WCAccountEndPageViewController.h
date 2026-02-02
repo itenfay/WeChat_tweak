@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCAccountEndPageViewController
+@interface WCAccountEndPageViewController : NSObject
 {
     NSString *_headlineText;
     NSString *_headTipsText;

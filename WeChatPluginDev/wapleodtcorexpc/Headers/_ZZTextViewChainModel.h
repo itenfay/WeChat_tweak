@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _ZZTextViewChainModel
+@interface _ZZTextViewChainModel : NSObject
 {
 }
 

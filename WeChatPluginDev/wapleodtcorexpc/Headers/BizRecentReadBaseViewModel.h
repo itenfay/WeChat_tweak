@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BizRecentReadBaseViewModel
+@interface BizRecentReadBaseViewModel : NSObject
 {
     unsigned int _readTime;
     NSString *_title;

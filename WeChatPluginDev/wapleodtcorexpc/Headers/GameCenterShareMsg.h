@@ -5,7 +5,7 @@
 
 @class GameCenterMsgShareInfo;
 
-@interface GameCenterShareMsg
+@interface GameCenterShareMsg : NSObject
 {
     GameCenterMsgShareInfo *_shareInfo;
 }

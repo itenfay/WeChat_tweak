@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveGetPersonalMsgSessionInfoCGI
+@interface WCFinderLiveGetPersonalMsgSessionInfoCGI : NSObject
 {
     NSString *_sessionId;
     CDUnknownBlockType _successBlock;

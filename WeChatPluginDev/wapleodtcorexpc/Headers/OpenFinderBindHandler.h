@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderSDKAuthorViewController;
 
-@interface OpenFinderBindHandler
+@interface OpenFinderBindHandler : NSObject
 {
     WCFinderSDKAuthorViewController *_bindVC;
 }

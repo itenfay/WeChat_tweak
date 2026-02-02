@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface TXCVideoDumper
+@interface TXCVideoDumper : NSObject
 {
     struct __sFILE *_file;
 }

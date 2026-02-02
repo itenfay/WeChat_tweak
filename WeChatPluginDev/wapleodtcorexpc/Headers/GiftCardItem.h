@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GiftCardItem
+@interface GiftCardItem : NSObject
 {
     unsigned int _bizUin;
     unsigned int _ver;

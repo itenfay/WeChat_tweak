@@ -6,7 +6,7 @@
 @class MMUIButton, NSArray, NSString, UILabel, UITableView, UIView, WCFinderCollectionDetailListViewModel, WCFinderMaskButton, WCFinderRefreshTableFooterView, WCFinderStreamProfileDragBarView;
 @protocol WCFinderMemberShipIntroduceCollectionListViewControllerDelegate;
 
-@interface WCFinderMemberShipIntroduceCollectionListViewController
+@interface WCFinderMemberShipIntroduceCollectionListViewController : NSObject
 {
     int _commentScene;
     id <WCFinderMemberShipIntroduceCollectionListViewControllerDelegate> _previewDelegate;

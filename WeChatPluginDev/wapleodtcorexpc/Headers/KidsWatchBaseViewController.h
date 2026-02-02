@@ -6,7 +6,7 @@
 @class NSString, UITapGestureRecognizer, WCSheetView;
 @protocol KidsWatchBaseViewControllerDelegate;
 
-@interface KidsWatchBaseViewController
+@interface KidsWatchBaseViewController : NSObject
 {
     _Bool _allowTapEndEditing;
     _Bool _firstResponderOnceToken;

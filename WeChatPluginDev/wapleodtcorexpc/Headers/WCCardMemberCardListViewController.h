@@ -5,7 +5,7 @@
 
 @class NSString, ShareMessageConfirmLogicHelper, UICollectionViewFlowLayout, UIScrollView, WCCardCollectionView, WCCardEmptyBackView, WCCardMemberCardListLogicController;
 
-@interface WCCardMemberCardListViewController
+@interface WCCardMemberCardListViewController : NSObject
 {
     WCCardCollectionView *_collectionView;
     UIScrollView *_emptyScrollView;

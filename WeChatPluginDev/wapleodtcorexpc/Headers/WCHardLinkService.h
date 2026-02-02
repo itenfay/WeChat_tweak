@@ -5,7 +5,7 @@
 
 @class NSString, WCHardLinkMergeOperation;
 
-@interface WCHardLinkService
+@interface WCHardLinkService : NSObject
 {
     WCHardLinkMergeOperation *_mergeOperation;
 }

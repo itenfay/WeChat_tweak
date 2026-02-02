@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
-@interface WCFinderGameLiveJumpGameGuideTipsViewController
+@interface WCFinderGameLiveJumpGameGuideTipsViewController : NSObject
 {
     _Bool _checked;
     _Bool _enableGuide;

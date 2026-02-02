@@ -6,7 +6,7 @@
 @class NSArray, NSURLSessionDataTask, QBrandPromotionContext, QPolyline;
 @protocol QBrandPromotionGridModelDelegate;
 
-@interface QBrandPromotionGridModel
+@interface QBrandPromotionGridModel : NSObject
 {
     id <QBrandPromotionGridModelDelegate> _delegate;
     NSArray *_items;

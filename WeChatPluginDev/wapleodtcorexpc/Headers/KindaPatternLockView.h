@@ -5,7 +5,7 @@
 
 @class MMKPatternLockViewEndWithPatternCallback, MMKPatternLockViewOnInputInvalidPatternCallback, MMPatternLockView, NSString;
 
-@interface KindaPatternLockView
+@interface KindaPatternLockView : NSObject
 {
     MMPatternLockView *_lockView;
     MMKPatternLockViewEndWithPatternCallback *_callback;

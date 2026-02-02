@@ -5,7 +5,7 @@
 
 @protocol MMLiveRewardGiftNotificationContainerViewDelegate;
 
-@interface MMLiveRewardGiftNotificationContainerView
+@interface MMLiveRewardGiftNotificationContainerView : NSObject
 {
     _Bool _expandForSubNotification;
     id <MMLiveRewardGiftNotificationContainerViewDelegate> _containerDelegate;

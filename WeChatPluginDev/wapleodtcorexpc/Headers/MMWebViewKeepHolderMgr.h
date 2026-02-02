@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, MMWebViewController, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary, WCEliminatedSlotMMKV;
 
-@interface MMWebViewKeepHolderMgr
+@interface MMWebViewKeepHolderMgr : NSObject
 {
     MMWebViewController *_webViewVCForNewMainFrameBanner;
     MMWebViewController *_webViewVCForArticleReadingBanner;

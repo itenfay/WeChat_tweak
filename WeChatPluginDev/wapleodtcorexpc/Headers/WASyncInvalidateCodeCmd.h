@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASyncInvalidateCodeCmd
+@interface WASyncInvalidateCodeCmd : NSObject
 {
 }
 

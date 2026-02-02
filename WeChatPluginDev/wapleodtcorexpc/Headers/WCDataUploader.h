@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class WCDataUploaderResult, WCUploadTask;
 @protocol WCDataUploaderDelegate;
 
-@interface WCDataUploader
+@interface WCDataUploader : NSObject
 {
     long long currentPos;
     WCDataUploaderResult *uploadResult;

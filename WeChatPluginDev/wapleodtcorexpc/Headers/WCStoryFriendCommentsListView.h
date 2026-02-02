@@ -6,7 +6,7 @@
 @class NSString, UILabel, UITableView;
 @protocol WCStoryFriendCommentsListViewDataSource, WCStoryFriendCommentsListViewDelegate;
 
-@interface WCStoryFriendCommentsListView
+@interface WCStoryFriendCommentsListView : NSObject
 {
     id <WCStoryFriendCommentsListViewDelegate> _delegate;
     id <WCStoryFriendCommentsListViewDataSource> _dataSource;

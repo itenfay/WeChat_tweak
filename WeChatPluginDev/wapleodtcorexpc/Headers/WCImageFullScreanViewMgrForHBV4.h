@@ -5,7 +5,7 @@
 
 @class NSString, WCImageFullScreenWindowForHBV4;
 
-@interface WCImageFullScreanViewMgrForHBV4
+@interface WCImageFullScreanViewMgrForHBV4 : NSObject
 {
     WCImageFullScreenWindowForHBV4 *m_view;
 }

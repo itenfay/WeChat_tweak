@@ -5,7 +5,7 @@
 
 @class MJPageItem, MJSegmentViewModel, NSArray;
 
-@interface MJComposingPagePanelViewModel
+@interface MJComposingPagePanelViewModel : NSObject
 {
     NSArray *_pageItems;
     long long _selectedTabIndex;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MMAddressAnnotationDelegate;
 
-@interface MMAddressAnnotation
+@interface MMAddressAnnotation : NSObject
 {
     unsigned long long _geoTag;
     NSString *_title;

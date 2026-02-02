@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveHomePageBottomPlayerView, MMFinderLiveHomePageBottomPlayerViewModel, MMFinderLiveIconTransitionCarouselView, MMUIButton, NSString, UIImage, UILabel, UIView, WCFinderFeedFlowView, WCFinderLiveHomePageInitialParams, WCFinderLiveHomePageScrollActionSheet, WCFinderLiveHomePageTabLiveStreamSectionCollectionViewCell, WCFinderLiveHomePageViewModel, WCFinderRedDotCtrlInfo, _TtC6WeChat22MMFinderLiveFPSMonitor;
 @protocol WCFinderLiveHomePageViewControllerDelegate;
 
-@interface WCFinderLiveHomePageViewController
+@interface WCFinderLiveHomePageViewController : NSObject
 {
     _Bool _directlyOpenJumpInfoPage;
     _Bool _selfCached;

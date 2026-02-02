@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, NSString, NSValue, UIColor, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, WCFinderCustomImageRichTextView, WCFinderStreamProfileDragBarView;
 @protocol WCFinderFeedBaseViewControllerProtocol;
 
-@interface WCFinderCustomPanelSheet
+@interface WCFinderCustomPanelSheet : NSObject
 {
     _Bool _enableLandscapeMode;
     _Bool _enableEdgePan;

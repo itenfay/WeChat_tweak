@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WXMASCompositeConstraint
+@interface WXMASCompositeConstraint : NSObject
 {
     id _mas_key;
     NSMutableArray *_childConstraints;

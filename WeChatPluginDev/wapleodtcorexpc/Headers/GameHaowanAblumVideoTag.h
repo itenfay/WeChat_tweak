@@ -5,7 +5,7 @@
 
 @class NSString, UIColor;
 
-@interface GameHaowanAblumVideoTag
+@interface GameHaowanAblumVideoTag : NSObject
 {
     NSString *_name;
     NSString *_imageUrl;

@@ -5,7 +5,7 @@
 
 @class MMLiteAppDownloadMgr, NSString;
 
-@interface LiteAppJsApiPreloadPag
+@interface LiteAppJsApiPreloadPag : NSObject
 {
     MMLiteAppDownloadMgr *_downloadMgr;
 }

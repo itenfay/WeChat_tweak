@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCAddressAuthenticationSturct, WCAddressBaseAddress;
 
-@interface WCGetLatestAddressControlLogic
+@interface WCGetLatestAddressControlLogic : NSObject
 {
     JSEvent *m_jsEvent;
     WCAddressAuthenticationSturct *m_oWCAddressAuthenticationSturct;

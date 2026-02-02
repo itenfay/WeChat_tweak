@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, NSMutableArray, NSString, UIScrollView, UIView;
 @protocol WCPayFaceReceiverViewDelegate;
 
-@interface WCPayFaceReceiverView
+@interface WCPayFaceReceiverView : NSObject
 {
     _Bool _bScrollViewAnimating;
     NSMutableArray *_arrReceiverInfos;

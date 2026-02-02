@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface WCMemoryStatConfig
+@interface WCMemoryStatConfig : NSObject
 {
     _Bool _loggerZoneEnable;
     _Bool _allocationsMemgraphEnable;

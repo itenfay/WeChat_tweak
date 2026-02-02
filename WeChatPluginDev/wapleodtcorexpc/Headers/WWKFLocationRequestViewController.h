@@ -5,7 +5,7 @@
 
 @class CContact, NSString, WWKFLocationRequestView;
 
-@interface WWKFLocationRequestViewController
+@interface WWKFLocationRequestViewController : NSObject
 {
     CContact *_contact;
     WWKFLocationRequestView *_contentView;

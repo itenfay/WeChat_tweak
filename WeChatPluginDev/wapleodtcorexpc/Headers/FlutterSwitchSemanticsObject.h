@@ -5,7 +5,7 @@
 
 @class UISwitch;
 
-@interface FlutterSwitchSemanticsObject
+@interface FlutterSwitchSemanticsObject : NSObject
 {
     UISwitch *_nativeSwitch;
 }

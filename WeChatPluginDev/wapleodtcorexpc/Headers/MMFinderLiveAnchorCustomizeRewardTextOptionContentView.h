@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSString, UITextField, UIView;
 
-@interface MMFinderLiveAnchorCustomizeRewardTextOptionContentView
+@interface MMFinderLiveAnchorCustomizeRewardTextOptionContentView : NSObject
 {
     _Bool _keyboardShowing;
     CDUnknownBlockType _isInputTextInvalid;

@@ -6,7 +6,7 @@
 @class MMUITextField, NSString, UILabel, UIView;
 @protocol WCFinderSpecialTopicCreateViewControllerDelegate;
 
-@interface WCFinderHighlightTopicCreateViewController
+@interface WCFinderHighlightTopicCreateViewController : NSObject
 {
     id <WCFinderSpecialTopicCreateViewControllerDelegate> _delegate;
     NSString *_originalHighlightTopicName;

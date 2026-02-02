@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCFinderBulletInputView, WCFinderFeedContentVM;
 @protocol WCFinderBulletCommentViewControllerDelegate;
 
-@interface WCFinderBulletCommentViewController
+@interface WCFinderBulletCommentViewController : NSObject
 {
     _Bool _shouldShowSwitchButton;
     id <WCFinderBulletCommentViewControllerDelegate> _delegate;

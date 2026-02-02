@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, MsgRecordDataWrap, NSObject, NSString, UIImage, UIView, WCPlayerConfigControlView, WCPlayerPlayArgs, WCPlayerView, WXFullScreenGestureRecognizer;
 @protocol WCPlayerConfigViewControllerDelegate, WCPlayerMediaExt;
 
-@interface WCPlayerConfigViewController
+@interface WCPlayerConfigViewController : NSObject
 {
     _Bool m_isPresented;
     _Bool _isNeedChangeContentModeAtExist;

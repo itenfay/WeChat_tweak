@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMFinderLiveActivityTask, MMFinderLiveActivityTaskId, MMFinderLiveOlympicsReserveConfirmView, MMFinderLiveWinterOlympicOperationView, MMFinderLiveWinterOlympicView, NSString, WCUIAlertView;
 
-@interface MMFinderLiveWinterOlympicViewController
+@interface MMFinderLiveWinterOlympicViewController : NSObject
 {
     _Bool _shouldForcePortrait;
     MMFinderLiveOlympicsReserveConfirmView *_reserveConfirmView;

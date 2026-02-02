@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface JumpToBizWebviewData
+@interface JumpToBizWebviewData : NSObject
 {
     int webType;
     NSString *toUsername;

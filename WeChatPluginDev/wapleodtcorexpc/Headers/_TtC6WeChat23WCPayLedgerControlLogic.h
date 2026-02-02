@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat23WCPayLedgerControlLogic
+@interface _TtC6WeChat23WCPayLedgerControlLogic : NSObject
 {
     MISSING_TYPE *context;
 }

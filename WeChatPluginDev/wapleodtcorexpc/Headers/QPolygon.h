@@ -5,7 +5,7 @@
 
 @class NSArray, WAMapPolygonData;
 
-@interface QPolygon
+@interface QPolygon : NSObject
 {
     NSArray *_interiorPolygons;
 }

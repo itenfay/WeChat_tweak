@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetUserContactCgi
+@interface WCFinderGetUserContactCgi : NSObject
 {
     NSString *_nickname;
     NSString *_exportUsername;

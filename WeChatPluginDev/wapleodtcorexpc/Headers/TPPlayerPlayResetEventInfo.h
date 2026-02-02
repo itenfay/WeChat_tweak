@@ -5,7 +5,7 @@
 
 @class TPDynamicStatisticParams, TPGeneralPlayFlowParams;
 
-@interface TPPlayerPlayResetEventInfo
+@interface TPPlayerPlayResetEventInfo : NSObject
 {
     TPGeneralPlayFlowParams *_generalPlayFlowParams;
     TPDynamicStatisticParams *_dynamicStatisticParams;

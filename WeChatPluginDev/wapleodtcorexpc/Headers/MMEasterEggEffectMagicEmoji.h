@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface MMEasterEggEffectMagicEmoji
+@interface MMEasterEggEffectMagicEmoji : NSObject
 {
     _Bool _running;
     NSString *_magicEmojiEffectId;

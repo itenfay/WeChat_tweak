@@ -5,7 +5,7 @@
 
 @class FileDetailLogicController, MMListenLocalFileInfo, MMMultipleMusicViewController, MMMusicInfo, NSString;
 
-@interface MMMusicLocalFileDataInfo
+@interface MMMusicLocalFileDataInfo : NSObject
 {
     MMListenLocalFileInfo *_tingFileInfo;
     MMMusicInfo *_musicInfo;

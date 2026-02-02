@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, TextStatusGetSelfLikedsResp, UILabel, UITableView, WCFinderAnimationLoadingView, WCTimeLineFooterView;
 
-@interface TextStateLikeListViewController
+@interface TextStateLikeListViewController : NSObject
 {
     _Bool _isDarkMode;
     _Bool _isRemoteData;

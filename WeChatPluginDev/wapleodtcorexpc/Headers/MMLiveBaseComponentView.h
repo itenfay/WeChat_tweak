@@ -5,7 +5,7 @@
 
 @class MMLiveTask, MMLiveTaskId, MMLiveViewController, NSArray, NSMutableDictionary, NSString, OrderedDictionary;
 
-@interface MMLiveBaseComponentView
+@interface MMLiveBaseComponentView : NSObject
 {
     MMLiveBaseComponentView *_parentComponentView;
     MMLiveTaskId *_taskId;

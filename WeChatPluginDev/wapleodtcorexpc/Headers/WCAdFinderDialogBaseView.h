@@ -6,7 +6,7 @@
 @class MMUILabel, UIButton, WCAdFinderDialogBaseInfo, WCAdURLImageView;
 @protocol WCAdFinderDialogBaseViewDelegate;
 
-@interface WCAdFinderDialogBaseView
+@interface WCAdFinderDialogBaseView : NSObject
 {
     WCAdFinderDialogBaseInfo *_dialogInfo;
     WCAdURLImageView *_iconView;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface UDRCheckListener
+@interface UDRCheckListener : NSObject
 {
     NSMutableArray *_projectIdArray;
     NSMutableDictionary *_paramsMap;

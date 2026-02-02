@@ -5,7 +5,7 @@
 
 @class LocationRetriever, NSString, WCAdDetermineHalfScreenView;
 
-@interface LiteAppJsApiAdGetLocation
+@interface LiteAppJsApiAdGetLocation : NSObject
 {
     WCAdDetermineHalfScreenView *_determineHalfScreenView;
     LocationRetriever *_locationRetriever;

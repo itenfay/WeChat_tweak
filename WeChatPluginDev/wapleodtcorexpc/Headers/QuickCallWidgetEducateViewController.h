@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QuickCallWidgetEducateViewController
+@interface QuickCallWidgetEducateViewController : NSObject
 {
 }
 

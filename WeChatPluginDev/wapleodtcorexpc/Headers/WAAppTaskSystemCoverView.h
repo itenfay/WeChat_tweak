@@ -5,7 +5,7 @@
 
 @class NSString, WAJSContextPlugin_NativeViewsComponent, WASystemCoverView;
 
-@interface WAAppTaskSystemCoverView
+@interface WAAppTaskSystemCoverView : NSObject
 {
     WASystemCoverView *_view;
     WAJSContextPlugin_NativeViewsComponent *_component;

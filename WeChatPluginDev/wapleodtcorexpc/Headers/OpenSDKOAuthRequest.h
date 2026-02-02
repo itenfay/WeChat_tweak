@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OpenSDKOAuthRequest
+@interface OpenSDKOAuthRequest : NSObject
 {
     _Bool _isWXLaunchByUniversalLink;
     _Bool _isOption1;

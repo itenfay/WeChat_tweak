@@ -6,7 +6,7 @@
 @class AVMutableVideoComposition, AVPlayerItemVideoOutput, CADisplayLink, NSString, WCADVideoPlayInfo, WCAdAlphaVideoMetalRender, WCDataItem, WCMediaItem, WCPlayerPlayArgs, WCPlayerView, WCSNSADPlayerControlView;
 @protocol WCAdAlphaVideoViewDelegate;
 
-@interface WCAdAlphaVideoView
+@interface WCAdAlphaVideoView : NSObject
 {
     _Bool _bTimelineScene;
     _Bool _readyToAddPlayCount;

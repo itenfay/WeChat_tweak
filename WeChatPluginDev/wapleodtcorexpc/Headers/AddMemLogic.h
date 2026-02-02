@@ -6,7 +6,7 @@
 @class CContact, CContactVerifyLogic, NSArray, NSMutableArray, NSString;
 @protocol AddMemLogicDelegate;
 
-@interface AddMemLogic
+@interface AddMemLogic : NSObject
 {
     id <AddMemLogicDelegate> m_delegate;
     NSMutableArray *m_arrNeedVerifyUsrName;

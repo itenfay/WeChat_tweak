@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface MMFinderLiveTableStyleAudienceSubmitOrderCommentPubbleCell
+@interface MMFinderLiveTableStyleAudienceSubmitOrderCommentPubbleCell : NSObject
 {
     UIImageView *_iconView;
     UILabel *_buttonLabel;

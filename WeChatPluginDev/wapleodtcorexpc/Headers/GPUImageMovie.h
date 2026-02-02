@@ -6,7 +6,7 @@
 @class AVAsset, AVAssetReader, AVPlayerItem, AVPlayerItemVideoOutput, CADisplayLink, GLProgram, GPUImageMovieWriter, NSString, NSURL;
 @protocol GPUImageMovieDelegate;
 
-@interface GPUImageMovie
+@interface GPUImageMovie : NSObject
 {
     _Bool audioEncodingIsFinished;
     _Bool videoEncodingIsFinished;

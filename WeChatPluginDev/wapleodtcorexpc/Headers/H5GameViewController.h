@@ -6,7 +6,7 @@
 @class MMUIButton, NSString;
 @protocol H5GameViewControllerDelegate;
 
-@interface H5GameViewController
+@interface H5GameViewController : NSObject
 {
     MMUIButton *menuButton;
     _Bool m_bFullscreen;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface MMWebCoreConfig
+@interface MMWebCoreConfig : NSObject
 {
     _Bool _enableOauthSnapShotMode;
     NSString *_referer;

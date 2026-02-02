@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface EmoticonCustomCreateEditTask
+@interface EmoticonCustomCreateEditTask : NSObject
 {
     CDUnknownBlockType _createFailBlock;
     CDUnknownBlockType _createSucBlock;

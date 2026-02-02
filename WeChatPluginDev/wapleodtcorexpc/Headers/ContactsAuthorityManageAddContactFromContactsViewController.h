@@ -6,7 +6,7 @@
 @class ContactTagData, ContactsAuthorityManageModifyContactLogic, NSString;
 @protocol ContactsAuthorityManageAddContactFromContactsViewControllerDelegate;
 
-@interface ContactsAuthorityManageAddContactFromContactsViewController
+@interface ContactsAuthorityManageAddContactFromContactsViewController : NSObject
 {
     ContactsAuthorityManageModifyContactLogic *m_newContactFunctionTagAddContactLogic;
     ContactTagData *_m_contactTagData;

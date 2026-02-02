@@ -5,7 +5,7 @@
 
 @class NSString, NSURL, UIImage;
 
-@interface MMScreenShotService
+@interface MMScreenShotService : NSObject
 {
     _Bool _isCaptured;
     NSURL *_fakeScreenShotUrl;

@@ -5,7 +5,7 @@
 
 @class CGroupDB, CGroupOpLog, ChatRoomPanelDynamicWeAppCache, ChatRoomToolMgr, NSMutableArray, NSMutableDictionary, NSString, OpenImChatRoomMigrateMgr;
 
-@interface CGroupMgr
+@interface CGroupMgr : NSObject
 {
     CGroupDB *m_oGroupDB;
     CGroupOpLog *m_oGroupOpLog;

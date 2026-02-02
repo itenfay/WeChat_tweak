@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupUpgradeInfo, MMUILabel;
 
-@interface MMFinderLiveFansGroupUpgradeInfoTableCell
+@interface MMFinderLiveFansGroupUpgradeInfoTableCell : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_upgradeConditionLabel;

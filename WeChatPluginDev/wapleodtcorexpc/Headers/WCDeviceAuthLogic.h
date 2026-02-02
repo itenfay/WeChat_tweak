@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol WCDeviceAuthLogicDelegate;
 
-@interface WCDeviceAuthLogic
+@interface WCDeviceAuthLogic : NSObject
 {
     NSMutableArray *m_deviceInfos;
     int m_appState;

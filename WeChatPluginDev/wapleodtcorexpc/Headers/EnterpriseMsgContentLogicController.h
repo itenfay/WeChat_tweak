@@ -5,7 +5,7 @@
 
 @class MMLoadingView, NSString;
 
-@interface EnterpriseMsgContentLogicController
+@interface EnterpriseMsgContentLogicController : NSObject
 {
     _Bool m_bStartShowRoomContactSelector;
     _Bool m_bPresentRoomContactSelector;

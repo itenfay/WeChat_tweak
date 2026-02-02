@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMCPLabel, MMLiveHalfScreenTitleBarView, MMLiveTaskId, MMLoadingView, MMTableView, MMUIButton, MMUILabel, NSData, NSMutableArray, NSString, UIImageView, UIView, WCTimeLineFooterView;
 @protocol MMLiveRewardGainRecordsViewDelegate;
 
-@interface MMLiveRewardGainRecordsView
+@interface MMLiveRewardGainRecordsView : NSObject
 {
     MMTableView *_giftGainRecordsTableView;
     id <MMLiveRewardGainRecordsViewDelegate> _delegate;

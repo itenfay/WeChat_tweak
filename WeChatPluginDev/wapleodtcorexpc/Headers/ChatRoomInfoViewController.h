@@ -6,7 +6,7 @@
 @class AddMemLogic, CContact, ChangeOwnerLogic, DelMemLogic, DelaySwitchSettingLogic, MMTableViewInfo, MMUIView, MsgSearchHelper, NSArray, NSIndexPath, NSString, RichTextView, UIButton, UIView, ViewMemLogic;
 @protocol chatRoomInfoDelegate><chatRoomSettingDelegate;
 
-@interface ChatRoomInfoViewController
+@interface ChatRoomInfoViewController : NSObject
 {
     CContact *m_chatRoomContact;
     NSArray *m_arrMemberList;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MJSpeechCloneResult
+@interface MJSpeechCloneResult : NSObject
 {
     NSString *_roleID;
     NSDictionary *_extraInfos;

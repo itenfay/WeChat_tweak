@@ -5,7 +5,7 @@
 
 @class NSString, WCAudioPlayer;
 
-@interface TingAudioPlayer
+@interface TingAudioPlayer : NSObject
 {
     WCAudioPlayer *_player;
 }

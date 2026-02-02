@@ -5,7 +5,7 @@
 
 @class AddEmoticonWrap, EmoticonCameraReportObject, EmoticonOperateCgi, EmoticonUploadCgi, EmoticonUploader, NSString, OrderedDictionary;
 
-@interface EmoticonBackupOperateMgr
+@interface EmoticonBackupOperateMgr : NSObject
 {
     _Bool m_hasAddBackupSuccessAfterInit;
     _Bool m_isLastSuccessAddEmoticonCustom;

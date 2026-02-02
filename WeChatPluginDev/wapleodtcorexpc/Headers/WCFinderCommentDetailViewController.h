@@ -6,7 +6,7 @@
 @class EmojiInputView, EmoticonBoardView, EmoticonCustomManageAddLogic, MMUIButton, MMUILabel, NSIndexPath, NSMutableDictionary, NSMutableSet, NSString, RecommendedMusicInfo, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITableView, UITapGestureRecognizer, UIView, WCFinderAdReportInfo, WCFinderAnimationLoadingView, WCFinderComment, WCFinderCommentDetailAvatarView, WCFinderCommentDetailHeaderView, WCFinderCommentDetailViewModel, WCFinderCommentDetailViewReporter, WCFinderCommentIdentityActionSheetView, WCFinderCommentInputBackView, WCFinderCommentListHeaderRefreshView, WCFinderCommentSelfActionSheet, WCFinderContentHeaderView, WCFinderCreateCoordinator, WCFinderFeedAudioHelper, WCFinderFeedContentVM, WCFinderFeedbackView, WCFinderFilterTextView, WCFinderOperateEntranceTipsView, WCFinderPostMgr, WCFinderRefreshTableFooterView, WCInputController, WeToast, YYLabel;
 @protocol WCFinderCommentDetailViewControllerDelegate, WCFinderPostMgrDelegate;
 
-@interface WCFinderCommentDetailViewController
+@interface WCFinderCommentDetailViewController : NSObject
 {
     _Bool _statusBarHidden;
     _Bool _disableCommentFunctions;

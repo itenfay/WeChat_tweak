@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingAudioExptServiceCpp
+@interface TingAudioExptServiceCpp : NSObject
 {
 }
 

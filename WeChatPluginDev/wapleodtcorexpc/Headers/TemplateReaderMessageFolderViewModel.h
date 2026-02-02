@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface TemplateReaderMessageFolderViewModel
+@interface TemplateReaderMessageFolderViewModel : NSObject
 {
     unsigned long long _status;
     NSMutableArray *_viewModelList;

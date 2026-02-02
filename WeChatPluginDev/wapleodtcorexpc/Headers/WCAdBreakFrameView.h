@@ -6,7 +6,7 @@
 @class MMUIButton, UIView, WCAdAlphaVideoView, WCAdBreakFrameInfo, WCAdBreakFramePlayBaseLogic, WCDataItem;
 @protocol WCAdBreakFrameViewDelegate;
 
-@interface WCAdBreakFrameView
+@interface WCAdBreakFrameView : NSObject
 {
     _Bool _bTimelineScene;
     UIView *_playerControlViewContainer;

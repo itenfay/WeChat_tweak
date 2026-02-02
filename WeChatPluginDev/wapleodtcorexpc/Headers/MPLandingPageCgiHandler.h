@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MPLandingPageCgiHandler
+@interface MPLandingPageCgiHandler : NSObject
 {
     unsigned int _enterId;
 }

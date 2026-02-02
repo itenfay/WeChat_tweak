@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_0x11d
+@interface WloginTlv_0x11d : NSObject
 {
     unsigned int dwAppid;
     NSData *acSigKey;

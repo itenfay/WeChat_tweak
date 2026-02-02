@@ -5,7 +5,7 @@
 
 @class CMMotionManager, NSHashTable, NSRecursiveLock, NSString;
 
-@interface WCProximityStateMgr
+@interface WCProximityStateMgr : NSObject
 {
     _Bool _isInProximityState;
     _Bool _startProximityState;

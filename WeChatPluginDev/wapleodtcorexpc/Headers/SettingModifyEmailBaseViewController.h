@@ -5,7 +5,7 @@
 
 @class NSString, SettingModifyEmailLogic;
 
-@interface SettingModifyEmailBaseViewController
+@interface SettingModifyEmailBaseViewController : NSObject
 {
     SettingModifyEmailLogic *_emailLogic;
 }

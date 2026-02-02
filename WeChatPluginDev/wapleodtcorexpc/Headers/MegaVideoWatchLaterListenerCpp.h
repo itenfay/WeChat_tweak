@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoWatchLaterListenerCpp
+@interface MegaVideoWatchLaterListenerCpp : NSObject
 {
 }
 

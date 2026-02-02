@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, UIFont, UILabel, UIView, WCFinderTabSwitchCustomViewInfo;
 
-@interface WCFinderTabSwitchViewButton
+@interface WCFinderTabSwitchViewButton : NSObject
 {
     long long _index;
     NSNumber *_uniqueId;

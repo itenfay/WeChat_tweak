@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureDevice, MMAppRunningInfo, MMAudioMonitor, MMAudioMonitorConfig, MMCPUTimeProfiler, MMCPUTimeProfilerConfig, MMGPUMonitor, MMGPUMonitorConfig, MMLocationMonitor, MMLocationMonitorConfig, MMMetricsDB, MMMetricsInfo, MMMetricsMonitorConfig, MMNetworkMonitor, MMNetworkMonitorConfig, MMStackReportConnection, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, NSThread;
 
-@interface MMMetricsMonitor
+@interface MMMetricsMonitor : NSObject
 {
     MMAppRunningInfo *m_runningInfo;
     unsigned int m_checkCountMax;

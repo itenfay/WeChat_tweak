@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUIActivityIndicatorView, NSDate, NSMutableArray, NSString, UIButton, UILabel, UIView, WCFilterView;
 
-@interface ResourceBrowserViewController
+@interface ResourceBrowserViewController : NSObject
 {
     UIView *_footerView;
     UIButton *_selectAllButton;

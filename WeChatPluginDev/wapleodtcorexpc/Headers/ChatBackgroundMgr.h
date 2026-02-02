@@ -5,7 +5,7 @@
 
 @class ChatBackgroundSettings, NSMutableArray, NSMutableDictionary, NSString, UIImage;
 
-@interface ChatBackgroundMgr
+@interface ChatBackgroundMgr : NSObject
 {
     ChatBackgroundSettings *m_settings;
     NSMutableArray *m_serverItems;

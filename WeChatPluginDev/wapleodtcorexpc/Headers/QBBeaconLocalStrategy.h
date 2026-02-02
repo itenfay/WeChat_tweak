@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface QBBeaconLocalStrategy
+@interface QBBeaconLocalStrategy : NSObject
 {
     int zipAlg;
     int encAlg;

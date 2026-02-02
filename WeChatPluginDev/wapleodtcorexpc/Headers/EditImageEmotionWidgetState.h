@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EditImageEmotionWidgetState
+@interface EditImageEmotionWidgetState : NSObject
 {
     _Bool _isEmotionAnimated;
     NSString *_emotionMd5;

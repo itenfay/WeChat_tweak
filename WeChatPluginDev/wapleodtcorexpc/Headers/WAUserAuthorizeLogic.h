@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AlertPrivacyInfo, NSMutableArray, NSString, UINavigationController, UIScreenEdgePanGestureRecognizer, UserAvatarInfo, UserPrivacyProtectInfo, WAMenuPopInteractiveTransition;
 @protocol IWAAuthorizePage, WAAuthorizeDelegate;
 
-@interface WAUserAuthorizeLogic
+@interface WAUserAuthorizeLogic : NSObject
 {
     NSMutableArray *_scopeInfoList;
     NSString *_appID;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WAJSEventHandler_openChatTool
+@interface WAJSEventHandler_openChatTool : NSObject
 {
     MISSING_TYPE *entryPagePath;
     MISSING_TYPE *sessionSelectController;

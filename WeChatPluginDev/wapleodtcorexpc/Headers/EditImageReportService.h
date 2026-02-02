@@ -5,7 +5,7 @@
 
 @class EditImageReportObj, NSMutableArray, NSString;
 
-@interface EditImageReportService
+@interface EditImageReportService : NSObject
 {
     _Bool _isSightBeautyEffect;
     unsigned int _seekBarDragCount;

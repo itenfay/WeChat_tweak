@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFrontEndPreviewView, NSString;
 
-@interface WAFinderLiveView
+@interface WAFinderLiveView : NSObject
 {
     MMFinderLiveFrontEndPreviewView *_liveView;
 }

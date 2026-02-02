@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSURLRequest, NSURLSession, NSURLSessionTask;
 
-@interface CRURLRequestOperation
+@interface CRURLRequestOperation : NSObject
 {
     NSURLSessionTask *_task;
     NSURLSession *_session;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface MMTextStateEditVideoLayoutView
+@interface MMTextStateEditVideoLayoutView : NSObject
 {
     NSMutableArray *_currentMusicLyrics;
     double _currentLyricTotalTime;

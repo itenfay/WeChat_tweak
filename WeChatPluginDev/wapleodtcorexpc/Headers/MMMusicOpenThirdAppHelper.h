@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol MMMusicOpenThirdAppHelperDataSource, MMMusicOpenThirdAppHelperDelegate;
 
-@interface MMMusicOpenThirdAppHelper
+@interface MMMusicOpenThirdAppHelper : NSObject
 {
     id <MMMusicOpenThirdAppHelperDataSource> _dataSource;
     id <MMMusicOpenThirdAppHelperDelegate> _delegate;

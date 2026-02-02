@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MMLiveMinimizationAnimateDelegate;
 
-@interface MMLiveMinimizationAnimation
+@interface MMLiveMinimizationAnimation : NSObject
 {
     id <MMLiveMinimizationAnimateDelegate> _minimizeDelegate;
 }

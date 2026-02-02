@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMsgImgResultButton
+@interface IntelligentMsgImgResultButton : NSObject
 {
     _Bool m_isChosen;
     unsigned int _m_searchType;

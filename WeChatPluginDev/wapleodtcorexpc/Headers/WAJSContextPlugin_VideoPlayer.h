@@ -5,7 +5,7 @@
 
 @class WAPluginComponent_VideoPlayer;
 
-@interface WAJSContextPlugin_VideoPlayer
+@interface WAJSContextPlugin_VideoPlayer : NSObject
 {
     WAPluginComponent_VideoPlayer *_sysCoverViewVideoComponent;
     WAPluginComponent_VideoPlayer *_splashAdVideoComponent;

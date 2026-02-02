@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel, UIView, WCFinderFeedContentVM, WCFinderNormalProgressBar;
 
-@interface WCFinderPlayRateOperationViewV3
+@interface WCFinderPlayRateOperationViewV3 : NSObject
 {
     _Bool _currentIsTouchingBtn;
     CDUnknownBlockType _shownAction;

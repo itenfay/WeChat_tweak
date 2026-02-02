@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicFinderVideoCellModel, MVImageLoader, WCFinderDataItem;
 
-@interface MVFinderAsset
+@interface MVFinderAsset : NSObject
 {
     unsigned long long _type;
     MMMusicFinderVideoCellModel *_finderVideoModel;

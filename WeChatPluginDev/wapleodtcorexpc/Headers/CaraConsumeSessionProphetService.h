@@ -5,7 +5,7 @@
 
 @class CaraCppConsumeSessionProphet, NSString;
 
-@interface CaraConsumeSessionProphetService
+@interface CaraConsumeSessionProphetService : NSObject
 {
     CaraCppConsumeSessionProphet *_underlying;
 }

@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface QBBeaconWupCommonStrategy
+@interface QBBeaconWupCommonStrategy : NSObject
 {
     int _jcev2_p_1_r_queryInterval;
     NSArray *_jcev2_p_0_o_moduleList__b0x9i_VOQBBeaconWupModuleStrategy;

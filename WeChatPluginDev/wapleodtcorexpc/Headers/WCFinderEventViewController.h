@@ -5,7 +5,7 @@
 
 @class FinderEventInfo, FinderGetTopicListResponse, FinderLocation, MJPublisher, MMWebImageView, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, RecommendedMusicInfo, UIBarButtonItem, UIView, WCActionSheet, WCActionSheetWithHeadAvatar, WCFinderAnimationLoadingView, WCFinderCreateCoordinator, WCFinderEventViewModel, WCFinderScrollActionSheet, WCFinderSectionInfo, WCFinderTabPageView, WCFinderTagHeaderCollectionReusableView, WCFinderTopicRouteParams;
 
-@interface WCFinderEventViewController
+@interface WCFinderEventViewController : NSObject
 {
     _Bool _showTotalTags;
     _Bool _enablePostFeed;

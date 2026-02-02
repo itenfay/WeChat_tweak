@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MBEventHandler_makePhoneCall
+@interface MBEventHandler_makePhoneCall : NSObject
 {
     NSString *_number;
 }

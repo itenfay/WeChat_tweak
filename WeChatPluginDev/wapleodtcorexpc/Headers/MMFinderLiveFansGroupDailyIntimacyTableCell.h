@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupIntimacyInfo, MMUILabel;
 
-@interface MMFinderLiveFansGroupDailyIntimacyTableCell
+@interface MMFinderLiveFansGroupDailyIntimacyTableCell : NSObject
 {
     MMUILabel *_dailyTaskLabel;
     MMUILabel *_speedupLabel;

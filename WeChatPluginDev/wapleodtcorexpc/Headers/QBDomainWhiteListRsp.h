@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface QBDomainWhiteListRsp
+@interface QBDomainWhiteListRsp : NSObject
 {
     int jcev2_p_0_r_iDomainTime;
     NSDictionary *jcev2_p_1_o_mTypeDomain__b0x9i_M09ONSNumberVONSString;

@@ -6,7 +6,7 @@
 @class MMTableView, MMUILabel, NSArray, NSString, OrderedDictionary, UIColor, UIView;
 @protocol ContactSelectorViewControllerDelegate;
 
-@interface ContactSelectorViewController
+@interface ContactSelectorViewController : NSObject
 {
     _Bool _isMultiplyMode;
     NSArray *_contacts;

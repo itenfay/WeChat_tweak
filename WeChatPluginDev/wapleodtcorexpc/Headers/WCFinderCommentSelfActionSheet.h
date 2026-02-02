@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderCommentSelfActionSheet
+@interface WCFinderCommentSelfActionSheet : NSObject
 {
     NSString *_musicTitle;
     NSString *_musicSubTitle;

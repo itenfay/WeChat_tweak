@@ -6,7 +6,7 @@
 @class ChatRoomToolMessageEventInfo, NSString;
 @protocol RoomToolsReplyTodoDelegate;
 
-@interface RoomToolsReplyTodoCgi
+@interface RoomToolsReplyTodoCgi : NSObject
 {
     id <RoomToolsReplyTodoDelegate> _delegate;
     NSString *_identifier;

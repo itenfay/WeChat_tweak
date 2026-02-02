@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderDelFeedCGI
+@interface WCFinderDelFeedCGI : NSObject
 {
     int _delScene;
     int _feedSourceScene;

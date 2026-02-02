@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface SolitaireActiveReport
+@interface SolitaireActiveReport : NSObject
 {
     unsigned long long _headerLength;
     unsigned long long _tailLength;

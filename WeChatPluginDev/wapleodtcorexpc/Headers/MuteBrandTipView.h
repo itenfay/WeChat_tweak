@@ -5,7 +5,7 @@
 
 @class NSMutableArray, UIView;
 
-@interface MuteBrandTipView
+@interface MuteBrandTipView : NSObject
 {
     NSMutableArray *_displayContactNameArr;
     UIView *_headView;

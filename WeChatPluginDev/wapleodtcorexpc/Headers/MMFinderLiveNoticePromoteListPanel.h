@@ -6,7 +6,7 @@
 @class MMFinderLiveCreateNoticeReporter, MMFinderLiveTask, MMRefreshTableFooterView, MMUIActivityIndicatorView, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UITableView, WCFinderContact;
 @protocol MMFinderLiveNoticePromoteListPanelDelegate;
 
-@interface MMFinderLiveNoticePromoteListPanel
+@interface MMFinderLiveNoticePromoteListPanel : NSObject
 {
     _Bool _hasMoreNotices;
     unsigned int _totalNoticeCount;

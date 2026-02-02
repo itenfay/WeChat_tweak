@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveKtvSearchMusicCGI
+@interface WCFinderLiveKtvSearchMusicCGI : NSObject
 {
     unsigned int _scene;
     NSData *_lastBuffer;

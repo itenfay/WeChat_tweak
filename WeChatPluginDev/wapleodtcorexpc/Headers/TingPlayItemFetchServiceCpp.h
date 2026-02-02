@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface TingPlayItemFetchServiceCpp
+@interface TingPlayItemFetchServiceCpp : NSObject
 {
 }
 

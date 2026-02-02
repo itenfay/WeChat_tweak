@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat17MagicFireworkInfo
+@interface _TtC6WeChat17MagicFireworkInfo : NSObject
 {
     MISSING_TYPE *fireworkType;
     MISSING_TYPE *fireworkText;

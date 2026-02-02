@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCCanvasSidebarComponent
+@interface WCCanvasSidebarComponent : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject, NSString;
 @protocol ILinkAudioFrameDelegate, OS_dispatch_queue;
 
-@interface ILinkPusher
+@interface ILinkPusher : NSObject
 {
     NSString *_rtmpUrl;
     int _videoFPS;

@@ -5,7 +5,7 @@
 
 @class MMGradientView, UILabel;
 
-@interface MMFinderLiveNotifyStyleSimpleProductPubbleCell
+@interface MMFinderLiveNotifyStyleSimpleProductPubbleCell : NSObject
 {
     MMGradientView *_gradientView;
     UILabel *_descriptionLabel;

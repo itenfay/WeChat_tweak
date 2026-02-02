@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface WeAppTransferAPIHandler
+@interface WeAppTransferAPIHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

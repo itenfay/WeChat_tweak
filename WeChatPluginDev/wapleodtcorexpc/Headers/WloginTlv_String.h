@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_String
+@interface WloginTlv_String : NSObject
 {
     NSString *sString;
 }

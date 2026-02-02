@@ -6,7 +6,7 @@
 @class GetMCreditLineTokenSignReq;
 @protocol HoneyPayGetMCreditLineTokenCgiDelegate;
 
-@interface HoneyPayGetMCreditLineTokenCgi
+@interface HoneyPayGetMCreditLineTokenCgi : NSObject
 {
 }
 

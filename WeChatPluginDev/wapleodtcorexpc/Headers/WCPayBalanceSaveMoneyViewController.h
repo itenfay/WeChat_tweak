@@ -6,7 +6,7 @@
 @class UIButton;
 @protocol WCPayBalanceSaveMoneyViewControllerDelegate;
 
-@interface WCPayBalanceSaveMoneyViewController
+@interface WCPayBalanceSaveMoneyViewController : NSObject
 {
     id <WCPayBalanceSaveMoneyViewControllerDelegate> m_delegate;
     UIButton *_selectBtn;

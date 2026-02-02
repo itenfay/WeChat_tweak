@@ -6,7 +6,7 @@
 @class GetA8KeyLogic, MMPhoneNumberHandler, MMURLHandler, NSString;
 @protocol UrlControllerDelegate;
 
-@interface UrlController
+@interface UrlController : NSObject
 {
     MMURLHandler *m_urlHandler;
     MMPhoneNumberHandler *m_phoneNumberHandler;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebViewPlugin_MusicEvent
+@interface MMWebViewPlugin_MusicEvent : NSObject
 {
     _Bool _isNotifyMusicStateChange;
     _Bool _isSeeking;

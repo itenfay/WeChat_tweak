@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView;
 
-@interface MMLiveAnchorScreenRecordPIPHandleLogic
+@interface MMLiveAnchorScreenRecordPIPHandleLogic : NSObject
 {
     CDUnknownBlockType _getCustomViewBlock;
     CDUnknownBlockType _getPIPRenderSizeBlock;

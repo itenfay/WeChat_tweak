@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetPkWinningConditionArgumentOptionsCgi
+@interface WCFinderLiveGetPkWinningConditionArgumentOptionsCgi : NSObject
 {
     unsigned int _battleScene;
     unsigned long long _winningCondition;

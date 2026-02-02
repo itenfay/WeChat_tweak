@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface WAJSContextPlugin_BlueTooth_Peripheral
+@interface WAJSContextPlugin_BlueTooth_Peripheral : NSObject
 {
     _Bool m_hasInit;
     NSMutableDictionary *m_adapterDic;

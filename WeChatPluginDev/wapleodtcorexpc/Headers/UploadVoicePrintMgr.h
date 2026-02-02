@@ -6,7 +6,7 @@
 @class MMTimer, NSMutableArray, NSString;
 @protocol UploadVoicePrintMgrDelegate;
 
-@interface UploadVoicePrintMgr
+@interface UploadVoicePrintMgr : NSObject
 {
     unsigned int _uploadType;
     unsigned int _curVoiceId;

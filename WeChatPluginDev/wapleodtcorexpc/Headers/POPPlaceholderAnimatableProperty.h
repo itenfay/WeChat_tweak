@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface POPPlaceholderAnimatableProperty
+@interface POPPlaceholderAnimatableProperty : NSObject
 {
     NSString *name;
     CDUnknownBlockType readBlock;

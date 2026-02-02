@@ -5,7 +5,7 @@
 
 @class MMFinderLiveActivityView, MMFinderLiveLimitModeLiveInfoEnsurer, MMUIViewController, MMWebImageView, NSString, RichTextView, UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderLiveNowView, WCFinderLiveShareCellFullStatusView, WCFinderShareLiveCellViewModel;
 
-@interface WCFinderShareLiveCellView
+@interface WCFinderShareLiveCellView : NSObject
 {
     _Bool _canShowLiveActivityView;
     _Bool _isVisible;

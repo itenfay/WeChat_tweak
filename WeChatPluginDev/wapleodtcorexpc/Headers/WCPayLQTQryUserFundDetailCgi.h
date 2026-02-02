@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTQryUserFundDetailCgiDelegate;
 
-@interface WCPayLQTQryUserFundDetailCgi
+@interface WCPayLQTQryUserFundDetailCgi : NSObject
 {
     _Bool _fromServer;
     id <WCPayLQTQryUserFundDetailCgiDelegate> _cgiDelegate;

@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, ServiceAuthConfig, ServiceAuthExtBlockWrapper;
 @protocol ServiceAuthDelegate, ServiceAuthExt;
 
-@interface ServiceAuthViewController
+@interface ServiceAuthViewController : NSObject
 {
     NSMutableDictionary *m_dictToLink;
     id <ServiceAuthDelegate> _delegate;

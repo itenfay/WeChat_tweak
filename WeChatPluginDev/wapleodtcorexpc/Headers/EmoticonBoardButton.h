@@ -5,7 +5,7 @@
 
 @class MMBadgeView, UIImage, UIImageView;
 
-@interface EmoticonBoardButton
+@interface EmoticonBoardButton : NSObject
 {
     MMBadgeView *m_badgeView;
     UIImageView *m_effectView;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMTemplateMsgScopeItem
+@interface MMTemplateMsgScopeItem : NSObject
 {
     _Bool _isScopeRecv;
     _Bool _isShowInSetting;

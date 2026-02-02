@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMMusicRoundCorneredBarButton, UIImageView, UILabel, WCPlayerView;
 @protocol MMMusicNoAnyVideoViewPlayerDelegate;
 
-@interface MMMusicNoAnyVideoView
+@interface MMMusicNoAnyVideoView : NSObject
 {
     WCPlayerView *_playerView;
     UIImageView *_imageView;

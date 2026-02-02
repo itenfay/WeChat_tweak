@@ -5,7 +5,7 @@
 
 @class BTRecoFlowSeparatorLineView, MMUILabel, MMWebImageView;
 
-@interface BTRecoFlowTopicMsgCell
+@interface BTRecoFlowTopicMsgCell : NSObject
 {
     _Bool _isFirstRow;
     _Bool _isLastRow;

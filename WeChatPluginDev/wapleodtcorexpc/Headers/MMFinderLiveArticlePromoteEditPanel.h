@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLiveArticlePromoteEditPanel
+@interface MMFinderLiveArticlePromoteEditPanel : NSObject
 {
     CDUnknownBlockType _completion;
 }

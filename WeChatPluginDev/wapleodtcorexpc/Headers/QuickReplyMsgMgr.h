@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetAdapter, NSMutableArray, NSString, QuickReplyMsgReporter, QuickReplyMsgViewController;
 
-@interface QuickReplyMsgMgr
+@interface QuickReplyMsgMgr : NSObject
 {
     _Bool _recordingUnreadMsg;
     _Bool _isShowingNotifyView;

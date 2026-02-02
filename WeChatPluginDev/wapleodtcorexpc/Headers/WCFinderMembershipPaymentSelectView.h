@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIImageView, WCCoinConsumeParameter, WCFinderMembershipPaymentNoticeView, WCFinderMembershipPaymentSelectDetailView;
 @protocol WCFinderMembershipPaymentSelectViewDelegate;
 
-@interface WCFinderMembershipPaymentSelectView
+@interface WCFinderMembershipPaymentSelectView : NSObject
 {
     id <WCFinderMembershipPaymentSelectViewDelegate> _delegate;
     WCCoinConsumeParameter *_parameter;

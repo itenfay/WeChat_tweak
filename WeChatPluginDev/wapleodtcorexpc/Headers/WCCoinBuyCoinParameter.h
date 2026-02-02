@@ -6,7 +6,7 @@
 @class GetWecoinPriceListResponse, NSString;
 @protocol MMFinderLivePayMgrExt, MMPageSheetProvider;
 
-@interface WCCoinBuyCoinParameter
+@interface WCCoinBuyCoinParameter : NSObject
 {
     _Bool _panelAlwaysDarkMode;
     _Bool _shouldStartNewSession;

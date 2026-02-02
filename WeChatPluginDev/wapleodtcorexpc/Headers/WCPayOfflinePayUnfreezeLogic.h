@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayOfflinePayUnfreezeLogic
+@interface WCPayOfflinePayUnfreezeLogic : NSObject
 {
 }
 

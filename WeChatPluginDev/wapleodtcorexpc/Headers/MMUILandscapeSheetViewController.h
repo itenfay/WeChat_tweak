@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMUILandscapeSheetViewController
+@interface MMUILandscapeSheetViewController : NSObject
 {
     CDUnknownBlockType _onRequirePortrait;
     unsigned long long _overrideOrientationMask;

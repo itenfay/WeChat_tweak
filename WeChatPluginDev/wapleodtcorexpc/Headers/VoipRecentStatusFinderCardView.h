@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderObject, NSString, RichTextView, UIImageView, UILabel, UIView, WCFinderDataItem;
 @protocol VoipRecentStatusProperties><VoipRecentStatusFinderBackgroundProtocol;
 
-@interface VoipRecentStatusFinderCardView
+@interface VoipRecentStatusFinderCardView : NSObject
 {
     _Bool _isSoundBtnHidden;
     _Bool _shouldPlaySound;

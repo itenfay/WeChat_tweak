@@ -6,7 +6,7 @@
 @class MJCollectionView, MJPlaybackViewModel, MJSegmentCellBorderView, MJTimelineViewModel, MMUIView, NSString, OMCBatchThumbnailProvider, UICollectionView, UICollectionViewFlowLayout, UIPanGestureRecognizer, UIView;
 @protocol MJTimelineContentRangeEditViewDelegate, OMCThumbnailProvider;
 
-@interface MJTimelineContentRangeEditView
+@interface MJTimelineContentRangeEditView : NSObject
 {
     MJTimelineViewModel *_timelineVM;
     MJPlaybackViewModel *_playbackVM;

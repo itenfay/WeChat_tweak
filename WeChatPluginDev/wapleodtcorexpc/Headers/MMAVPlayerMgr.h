@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMAVPlayerMgr
+@interface MMAVPlayerMgr : NSObject
 {
     NSMutableArray *m_arrItem;
     NSMutableArray *m_clearQueue;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29CarPlayTingBaseListController
+@interface _TtC6WeChat29CarPlayTingBaseListController : NSObject
 {
     MISSING_TYPE *listTemplate;
     MISSING_TYPE *isLoading;

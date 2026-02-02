@@ -5,7 +5,7 @@
 
 @class MMDynamicColor, NSString, UILabel, UIView;
 
-@interface KindaOpenIMInfoView
+@interface KindaOpenIMInfoView : NSObject
 {
     int _m_textSize;
     long long _fontStyle;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMNearbyPoiInfo
+@interface MMNearbyPoiInfo : NSObject
 {
     double _latitude;
     double _longitude;

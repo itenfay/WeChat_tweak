@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WABluetoothAuthorizeSheetInfo
+@interface WABluetoothAuthorizeSheetInfo : NSObject
 {
     NSArray *_scopeDescList;
 }

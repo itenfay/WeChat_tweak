@@ -6,7 +6,7 @@
 @class CMMotionManager, CSCScanSessionReportFFEInfo, CameraScanCombineConfig, CameraScanGoodsExtensionDetector, CameraScanGoodsImageProcessResult, CameraScanGoodsRemoteDetector, GoodsReqRemoteDetectLogic, NSMutableArray, NSObject, NSRecursiveLock, NSString;
 @protocol CameraScanCombineDetectorRouterDelegate, OS_dispatch_queue;
 
-@interface CameraScanCombineDetectorRouter
+@interface CameraScanCombineDetectorRouter : NSObject
 {
     _Bool _isDetectorsWorking;
     id <CameraScanCombineDetectorRouterDelegate> _delegate;

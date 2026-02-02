@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiteAppBaseLibInfo
+@interface MMLiteAppBaseLibInfo : NSObject
 {
     unsigned int ilinkVersion;
     NSString *majorVersion;

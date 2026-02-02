@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface OpenMiniProgramHandler
+@interface OpenMiniProgramHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

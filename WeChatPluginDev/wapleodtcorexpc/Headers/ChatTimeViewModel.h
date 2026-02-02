@@ -5,7 +5,7 @@
 
 @class ChatTimeNodeRightButtonInfo, NSString;
 
-@interface ChatTimeViewModel
+@interface ChatTimeViewModel : NSObject
 {
     NSString *m_timeText;
     double m_labelWidth;

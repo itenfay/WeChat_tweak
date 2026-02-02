@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiMediaDownloadFavDataState
+@interface MultiMediaDownloadFavDataState : NSObject
 {
     NSString *_thumbFileKey;
     NSString *_dataFileKey;

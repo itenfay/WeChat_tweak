@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, UICollectionView, UILabel, UIView;
 @protocol WCFinderSnSLiveSectionTableViewCellDelegate;
 
-@interface WCFinderSnSLiveSectionTableViewCell
+@interface WCFinderSnSLiveSectionTableViewCell : NSObject
 {
     id <WCFinderSnSLiveSectionTableViewCellDelegate> _delegate;
     unsigned long long _displayType;

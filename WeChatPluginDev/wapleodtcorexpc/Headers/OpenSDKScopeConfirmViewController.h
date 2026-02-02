@@ -6,7 +6,7 @@
 @class MMBrandHeadImageView, NSArray, NSMutableArray, NSString, OauthScopeInfo, UIButton, UILabel, UITableView, UIView;
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface OpenSDKScopeConfirmViewController
+@interface OpenSDKScopeConfirmViewController : NSObject
 {
     UILabel *_titleLabel;
     UIView *_titleSplitLine;

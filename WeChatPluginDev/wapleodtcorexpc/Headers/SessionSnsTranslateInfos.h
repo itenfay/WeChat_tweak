@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface SessionSnsTranslateInfos
+@interface SessionSnsTranslateInfos : NSObject
 {
     NSString *_userName;
     NSMutableDictionary *_dicTransInfo;

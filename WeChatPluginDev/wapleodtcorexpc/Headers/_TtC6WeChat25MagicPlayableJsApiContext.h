@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25MagicPlayableJsApiContext
+@interface _TtC6WeChat25MagicPlayableJsApiContext : NSObject
 {
     MISSING_TYPE *containerWidth;
     MISSING_TYPE *containerHeight;

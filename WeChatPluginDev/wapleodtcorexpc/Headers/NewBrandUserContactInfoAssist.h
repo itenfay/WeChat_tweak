@@ -6,7 +6,7 @@
 @class BizProfileV2Resp, BizServiceMenuButton, BrandProfileCgiContext, BrandProfileEnterInfo, BrandProfileFuwuActionSheet, BrandProfileHeaderView, BrandProfileMsgTabViewController, BrandProfileNaviLiveBar, BrandProfileReporter, BrandProfileTabView, BrandProfileVideoTabViewController, MMHDHeadImageView, MMUIButton, NSArray, NSMutableArray, NSString, UIScreenEdgePanGestureRecognizer, UIScrollView, WCADPageWrap, WCBrandPageSheetTitleView, WCFinderBrandStreamProfileViewController, _TtC6WeChat34BrandProfileAudioTabViewController;
 @protocol ContactInfoAssistDelegate;
 
-@interface NewBrandUserContactInfoAssist
+@interface NewBrandUserContactInfoAssist : NSObject
 {
     _Bool _isFocusBeforeFetchFirstPkg;
     _Bool _isJustAddedContact;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EdgeComputingDBFieldModel
+@interface EdgeComputingDBFieldModel : NSObject
 {
     unsigned int _index;
     NSString *_name;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMEasterEggNewYearActivityPlayerHttpMediaWrap
+@interface MMEasterEggNewYearActivityPlayerHttpMediaWrap : NSObject
 {
     NSString *_resourceURL;
 }

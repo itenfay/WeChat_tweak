@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMHandOffAttributes
+@interface MMHandOffAttributes : NSObject
 {
     NSString *_type;
     NSString *_id;

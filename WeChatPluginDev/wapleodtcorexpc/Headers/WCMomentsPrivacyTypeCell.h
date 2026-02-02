@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCMomentsPrivacyTypeCell
+@interface WCMomentsPrivacyTypeCell : NSObject
 {
     UIImageView *_leftCheckMark;
     UILabel *_titleLabel;

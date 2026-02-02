@@ -5,7 +5,7 @@
 
 @class FinderMediaAndPlayerQoEInfo, FinderMediaSpec, FinderObjectScalingInfo, NSData, NSMutableArray, NSString, WCFinderFeedPreloadObjectInfo, WCFinderFullScreenEditRectModel, WCFinderVideoPreDownloadInfo, WCPlayerReporter;
 
-@interface WCFinderFeedMediaWrap
+@interface WCFinderFeedMediaWrap : NSObject
 {
     _Bool _isHLS;
     _Bool _isPlayUnifiedURL;

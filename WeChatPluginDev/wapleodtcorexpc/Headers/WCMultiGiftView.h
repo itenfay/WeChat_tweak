@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSString, UIButton, WCGiftCardData;
 @protocol WCMultiGiftDelegate;
 
-@interface WCMultiGiftView
+@interface WCMultiGiftView : NSObject
 {
     _Bool _isHide;
     double _maxWidth;

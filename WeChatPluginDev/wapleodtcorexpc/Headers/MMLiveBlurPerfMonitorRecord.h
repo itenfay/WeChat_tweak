@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface MMLiveBlurPerfMonitorRecord
+@interface MMLiveBlurPerfMonitorRecord : NSObject
 {
     UIView *_blurView;
 }

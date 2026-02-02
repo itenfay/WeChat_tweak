@@ -6,7 +6,7 @@
 @class NSString, WCPayCloseWalletLockCgi, WCPayWalletLockSettingViewController;
 @protocol WCPayWalletLockSettingLogicDelegate;
 
-@interface WCPayWalletLockSettingLogic
+@interface WCPayWalletLockSettingLogic : NSObject
 {
     unsigned int _entryScene;
     unsigned int _patternLockLogicTag;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveScreenshotPosterImages, NSString;
 
-@interface MMFinderLiveScreenshotPosterViewController
+@interface MMFinderLiveScreenshotPosterViewController : NSObject
 {
     MMFinderLiveScreenshotPosterImages *_images;
 }

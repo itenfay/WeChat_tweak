@@ -5,7 +5,7 @@
 
 @class UILabel, UIView, WCFinderHeadImageView;
 
-@interface WCFinderRefuseLikeListTableViewCell
+@interface WCFinderRefuseLikeListTableViewCell : NSObject
 {
     _Bool _separatorAlignAvatarLeft;
     UILabel *_nickName;

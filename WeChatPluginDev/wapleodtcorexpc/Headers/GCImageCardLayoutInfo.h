@@ -5,7 +5,7 @@
 
 @class UIFont;
 
-@interface GCImageCardLayoutInfo
+@interface GCImageCardLayoutInfo : NSObject
 {
     double _innerContentWidth;
     UIFont *_titleFont;

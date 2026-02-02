@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WCPlayerView;
 
-@interface WCPlayerQueueMgr
+@interface WCPlayerQueueMgr : NSObject
 {
     _Bool _isMulinstance;
     int _maxPreloadCount;

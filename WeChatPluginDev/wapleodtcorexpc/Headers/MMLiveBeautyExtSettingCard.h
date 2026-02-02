@@ -6,7 +6,7 @@
 @class MMUILabel, UISwitch;
 @protocol MMLiveBeautyExtSettingCardDelegate;
 
-@interface MMLiveBeautyExtSettingCard
+@interface MMLiveBeautyExtSettingCard : NSObject
 {
     id <MMLiveBeautyExtSettingCardDelegate> _delegate;
     MMUILabel *_titleLabel;

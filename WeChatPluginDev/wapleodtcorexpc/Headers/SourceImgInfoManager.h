@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface SourceImgInfoManager
+@interface SourceImgInfoManager : NSObject
 {
     MemoryMappedKV *_sourceInfoKv;
 }

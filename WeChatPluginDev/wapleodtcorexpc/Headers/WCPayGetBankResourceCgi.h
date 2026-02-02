@@ -5,7 +5,7 @@
 
 @protocol WCPayGetBankResourceCgiDelegate;
 
-@interface WCPayGetBankResourceCgi
+@interface WCPayGetBankResourceCgi : NSObject
 {
     id <WCPayGetBankResourceCgiDelegate> m_delegate;
 }

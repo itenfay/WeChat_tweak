@@ -5,7 +5,7 @@
 
 @class NSDictionary, WCEvent, WCState;
 
-@interface WCTransition
+@interface WCTransition : NSObject
 {
     WCEvent *_event;
     WCState *_sourceState;

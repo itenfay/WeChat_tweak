@@ -6,7 +6,7 @@
 @class NSMutableArray, UIColor;
 @protocol FavTagEditViewDelegate;
 
-@interface FavTagListView
+@interface FavTagListView : NSObject
 {
     NSMutableArray *m_arrTagButtons;
     UIColor *m_defaultButtonTextColor;

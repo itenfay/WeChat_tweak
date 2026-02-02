@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, WXMASLayoutConstraint, WXMASViewAttribute;
 
-@interface WXMASViewConstraint
+@interface WXMASViewConstraint : NSObject
 {
     _Bool _hasLayoutRelation;
     _Bool _useAnimator;

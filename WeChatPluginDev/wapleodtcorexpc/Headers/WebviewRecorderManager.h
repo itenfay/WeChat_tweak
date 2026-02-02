@@ -5,7 +5,7 @@
 
 @class FavAudioRecorder, MMTimer, NSString;
 
-@interface WebviewRecorderManager
+@interface WebviewRecorderManager : NSObject
 {
     FavAudioRecorder *_recorder;
     int _recordStatus;

@@ -5,7 +5,7 @@
 
 @class CALayer, MMUILabel, MMWebImageView, OauthAvatarInfo, UIImageView;
 
-@interface MMScopeUserInfoTableViewCell
+@interface MMScopeUserInfoTableViewCell : NSObject
 {
     _Bool _isSelect;
     _Bool _isBottom;

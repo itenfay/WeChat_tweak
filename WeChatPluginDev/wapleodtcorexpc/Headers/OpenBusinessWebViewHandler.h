@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface OpenBusinessWebViewHandler
+@interface OpenBusinessWebViewHandler : NSObject
 {
     unsigned int _type;
     OpenApiParameter *_parameter;

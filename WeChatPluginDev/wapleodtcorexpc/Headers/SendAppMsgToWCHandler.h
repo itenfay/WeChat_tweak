@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AppCommunicateData, MMTipsViewController, NSString, OpenApiParameter, UINavigationController;
 
-@interface SendAppMsgToWCHandler
+@interface SendAppMsgToWCHandler : NSObject
 {
     OpenApiParameter *_parameter;
     UINavigationController *m_confirmViewController;

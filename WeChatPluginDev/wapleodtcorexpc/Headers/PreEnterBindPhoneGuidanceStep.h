@@ -5,7 +5,7 @@
 
 @class NSString, WCAccountBindPhoneControlLogic, WCAccountPhoneBindGuidanceData;
 
-@interface PreEnterBindPhoneGuidanceStep
+@interface PreEnterBindPhoneGuidanceStep : NSObject
 {
     _Bool _isForceShow;
     _Bool _needSyncEscape;

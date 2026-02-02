@@ -5,7 +5,7 @@
 
 @class MMFinderLivePromotePubbleContainerView;
 
-@interface MMFinderLivePromoteDisplayLogicPromotionPubbleLifecycleCallbackParameter
+@interface MMFinderLivePromoteDisplayLogicPromotionPubbleLifecycleCallbackParameter : NSObject
 {
     MMFinderLivePromotePubbleContainerView *_promotePubbleContainerView;
 }

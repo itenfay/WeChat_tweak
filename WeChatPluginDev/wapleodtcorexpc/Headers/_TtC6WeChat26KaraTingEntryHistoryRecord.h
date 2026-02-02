@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSDate, NSString;
 
-@interface _TtC6WeChat26KaraTingEntryHistoryRecord
+@interface _TtC6WeChat26KaraTingEntryHistoryRecord : NSObject
 {
     MISSING_TYPE *session;
 }

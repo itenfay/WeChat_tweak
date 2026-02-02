@@ -5,7 +5,7 @@
 
 @class MinimizeTaskData, NSString, VoIPMiniInAppView;
 
-@interface VoIPMiniInAppService
+@interface VoIPMiniInAppService : NSObject
 {
     _Bool _isViewVisable;
     _Bool _isCameraPrevInterruptAndResume;

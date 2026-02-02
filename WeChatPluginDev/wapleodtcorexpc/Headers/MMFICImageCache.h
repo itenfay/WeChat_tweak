@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface MMFICImageCache
+@interface MMFICImageCache : NSObject
 {
     NSRecursiveLock *_tableLock;
     NSMutableDictionary *_imageTables;

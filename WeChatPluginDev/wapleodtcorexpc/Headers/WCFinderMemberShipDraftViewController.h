@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderMemberShipDraftViewModel;
 
-@interface WCFinderMemberShipDraftViewController
+@interface WCFinderMemberShipDraftViewController : NSObject
 {
     WCFinderMemberShipDraftViewModel *_viewModel;
 }

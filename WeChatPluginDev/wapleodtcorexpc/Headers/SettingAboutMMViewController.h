@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, MMUILabel, NSString, UILabel;
 
-@interface SettingAboutMMViewController
+@interface SettingAboutMMViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     UILabel *m_labelProduct;

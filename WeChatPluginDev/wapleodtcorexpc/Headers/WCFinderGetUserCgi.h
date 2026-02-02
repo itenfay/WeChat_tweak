@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderGetUserCgiDelegate;
 
-@interface WCFinderGetUserCgi
+@interface WCFinderGetUserCgi : NSObject
 {
     id <WCFinderGetUserCgiDelegate> _delegate;
     NSString *_username;

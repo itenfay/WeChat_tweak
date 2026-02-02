@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveWecoinLabelView, MMUIButton, UIButton;
 
-@interface MMFinderLivePaidConnectMicAudienceBidPanel
+@interface MMFinderLivePaidConnectMicAudienceBidPanel : NSObject
 {
     CDUnknownBlockType _onConfirmBidCallback;
     unsigned long long _minPrice;

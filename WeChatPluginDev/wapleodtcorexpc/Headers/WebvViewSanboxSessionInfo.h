@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WebvViewWebComPublicLibInfo;
 
-@interface WebvViewSanboxSessionInfo
+@interface WebvViewSanboxSessionInfo : NSObject
 {
     _Bool _hasInjectSessionOpenTagFrame;
     NSString *_sanboxId;

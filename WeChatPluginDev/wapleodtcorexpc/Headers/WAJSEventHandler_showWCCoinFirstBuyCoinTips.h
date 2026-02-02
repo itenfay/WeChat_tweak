@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_showWCCoinFirstBuyCoinTips
+@interface WAJSEventHandler_showWCCoinFirstBuyCoinTips : NSObject
 {
 }
 

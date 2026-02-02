@@ -5,7 +5,7 @@
 
 @class WCFinderContact;
 
-@interface MMFinderLiveAudioRoomCurrentAnchorView
+@interface MMFinderLiveAudioRoomCurrentAnchorView : NSObject
 {
     WCFinderContact *_anchorContact;
 }

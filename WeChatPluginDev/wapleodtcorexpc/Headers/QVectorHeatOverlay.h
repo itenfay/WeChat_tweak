@@ -5,7 +5,7 @@
 
 @class NSArray, QVectorHeatOverlayOption;
 
-@interface QVectorHeatOverlay
+@interface QVectorHeatOverlay : NSObject
 {
     CDStruct_02837cd9 _boundingRect;
     _Bool _toBuildData;

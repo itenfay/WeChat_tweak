@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RingToneSystemMsgExposureReporter
+@interface RingToneSystemMsgExposureReporter : NSObject
 {
     unsigned int _titleType;
     unsigned long long _type;

@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCFullPhoneNumInputHelper;
 @protocol WCAccountFillPhoneViewControllerDelegate;
 
-@interface WCAccountFillPhoneViewController
+@interface WCAccountFillPhoneViewController : NSObject
 {
     NSString *_restrictiveISOContryCode;
     id <WCAccountFillPhoneViewControllerDelegate> _delegate;

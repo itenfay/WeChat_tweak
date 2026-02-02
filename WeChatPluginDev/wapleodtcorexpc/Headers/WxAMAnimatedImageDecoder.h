@@ -5,7 +5,7 @@
 
 @class MMAnimatedImageDecodeConfig, NSData, NSString, UIImage;
 
-@interface WxAMAnimatedImageDecoder
+@interface WxAMAnimatedImageDecoder : NSObject
 {
     NSData *m_data;
     void *m_decoder;

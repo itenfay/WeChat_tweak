@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MsgImgSearchPhashInfo
+@interface MsgImgSearchPhashInfo : NSObject
 {
     _Bool _hasShowOnce;
     unsigned int _expiredTime;

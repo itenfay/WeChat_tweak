@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString, WCFinderStreamLoadingState;
 
-@interface WCFinderStreamProfileMusicPlaylist
+@interface WCFinderStreamProfileMusicPlaylist : NSObject
 {
     NSString *_username;
     WCFinderStreamLoadingState *_state;

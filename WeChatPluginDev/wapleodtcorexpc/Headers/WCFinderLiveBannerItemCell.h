@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMRollableLabelView, MMRollableLabelViewConfig, MMWebImageView;
 
-@interface WCFinderLiveBannerItemCell
+@interface WCFinderLiveBannerItemCell : NSObject
 {
     MMRollableLabelView *_masterTitleTextView;
     MMRollableLabelView *_subTitleTextView;

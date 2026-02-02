@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, WCCanvasAdControlView, WCCanvasClickEventManager, WCCanvasFullScreenVideoViewController, WCMediaItem, WCPlayerPlayArgs, WCPlayerView;
 
-@interface WCCanvasGeneralVideoComponent
+@interface WCCanvasGeneralVideoComponent : NSObject
 {
     _Bool _isInFullScreen;
     _Bool _componentHasInit;

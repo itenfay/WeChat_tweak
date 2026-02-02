@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31WSNativeHotListEmptyHistoryCell
+@interface _TtC6WeChat31WSNativeHotListEmptyHistoryCell : NSObject
 {
     MISSING_TYPE *desc;
     MISSING_TYPE *$__lazy_storage_$_descLabel;

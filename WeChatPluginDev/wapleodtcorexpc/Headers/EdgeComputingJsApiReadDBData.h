@@ -5,7 +5,7 @@
 
 @class EdgeComputingDBService;
 
-@interface EdgeComputingJsApiReadDBData
+@interface EdgeComputingJsApiReadDBData : NSObject
 {
     EdgeComputingDBService *_dBService;
 }

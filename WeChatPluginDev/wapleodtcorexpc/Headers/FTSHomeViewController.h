@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FTSVoiceSearchBarController, MMTListAdapter, NSArray, NSString, UITableView, WCWebSearchBar, WCWebSearchInputProvider, _TtC6WeChat19FTSHomePageReporter;
 @protocol FTSHomeViewControllerDelegate, WSHotListTeachView;
 
-@interface FTSHomeViewController
+@interface FTSHomeViewController : NSObject
 {
     _Bool _isFromVoice;
     id <FTSHomeViewControllerDelegate> _delegate;

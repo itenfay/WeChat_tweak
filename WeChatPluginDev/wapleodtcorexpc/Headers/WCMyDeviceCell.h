@@ -5,7 +5,7 @@
 
 @class MMDeviceHeadImageView, NSString, UILabel;
 
-@interface WCMyDeviceCell
+@interface WCMyDeviceCell : NSObject
 {
     _Bool _isInited;
     NSString *_iconUrl;

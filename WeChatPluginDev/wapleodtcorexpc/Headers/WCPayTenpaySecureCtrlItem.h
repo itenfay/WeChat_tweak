@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TenpaySecureCtrl;
 
-@interface WCPayTenpaySecureCtrlItem
+@interface WCPayTenpaySecureCtrlItem : NSObject
 {
     TenpaySecureCtrl *m_textField;
     int m_eEncryptType;

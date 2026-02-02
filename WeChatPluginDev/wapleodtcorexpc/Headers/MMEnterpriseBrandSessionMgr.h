@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MMEnterpriseBrandSessionMgr
+@interface MMEnterpriseBrandSessionMgr : NSObject
 {
     NSMutableDictionary *_dictMainUsr2SubSessionCacher;
 }

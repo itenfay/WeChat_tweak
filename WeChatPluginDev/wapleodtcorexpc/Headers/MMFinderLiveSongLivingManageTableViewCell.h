@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, PAGView;
 
-@interface MMFinderLiveSongLivingManageTableViewCell
+@interface MMFinderLiveSongLivingManageTableViewCell : NSObject
 {
     _Bool _isPreparedToSing;
     PAGView *_playingAnimationView;

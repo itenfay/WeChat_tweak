@@ -6,7 +6,7 @@
 @class Announcement, MMUIImageView, MMUILabel;
 @protocol MMFinderLiveFetchMoneyAnnouncementViewDelegate;
 
-@interface MMFinderLiveFetchMoneyAnnouncementView
+@interface MMFinderLiveFetchMoneyAnnouncementView : NSObject
 {
     Announcement *_announcement;
     id <MMFinderLiveFetchMoneyAnnouncementViewDelegate> _delegate;

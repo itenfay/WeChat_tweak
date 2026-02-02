@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardConfigInfo
+@interface WCCardConfigInfo : NSObject
 {
     _Bool _isShowShoppingMall;
     NSString *_emptyTips;

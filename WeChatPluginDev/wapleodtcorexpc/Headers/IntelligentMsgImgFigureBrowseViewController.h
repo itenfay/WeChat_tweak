@@ -6,7 +6,7 @@
 @class IntelligentFaceClusterMessageItem, IntelligentMessageReport, IntelligentMsgBrowseResultTableViewLogic, IntelligentMsgImgFigureHeaderView, IntelligentMsgImgFullScreenMsgImgClickLogic, MMTableView, MMUIView, NSMutableArray, NSString;
 @protocol IntelligentMsgImgFigureBrowseViewControllerController;
 
-@interface IntelligentMsgImgFigureBrowseViewController
+@interface IntelligentMsgImgFigureBrowseViewController : NSObject
 {
     NSMutableArray *m_arrSearchResultMessageLocalId;
     NSMutableArray *m_arrResultMessagr;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, SubscribeMsgItem;
 
-@interface WASubscriptionMessageSettingsViewItem
+@interface WASubscriptionMessageSettingsViewItem : NSObject
 {
     _Bool _selected;
     int _templateType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderFetchSelfCGI
+@interface WCFinderFetchSelfCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

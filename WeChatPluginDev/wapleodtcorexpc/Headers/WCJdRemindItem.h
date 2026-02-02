@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCJdRemindItem
+@interface WCJdRemindItem : NSObject
 {
     unsigned long long ui64SvrMsgId;
     unsigned int uiBizType;

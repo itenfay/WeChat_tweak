@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface GCSpaceCellModel
+@interface GCSpaceCellModel : NSObject
 {
     UIColor *_backgroundColor;
     double _cellHeight;

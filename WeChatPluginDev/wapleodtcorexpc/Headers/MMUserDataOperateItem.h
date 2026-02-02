@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMUserDataOperateItem
+@interface MMUserDataOperateItem : NSObject
 {
     unsigned int _dataType;
     unsigned int _businessType;

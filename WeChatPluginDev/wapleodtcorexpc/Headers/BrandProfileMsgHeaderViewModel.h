@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIFont;
 
-@interface BrandProfileMsgHeaderViewModel
+@interface BrandProfileMsgHeaderViewModel : NSObject
 {
     NSMutableArray *_titleLabelStyles;
     struct CGSize _titleSize;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderSecurityMonitor
+@interface WCFinderSecurityMonitor : NSObject
 {
     NSMutableDictionary *_screenShotBlockDict;
 }

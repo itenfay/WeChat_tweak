@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UILabel, UITapGestureRecognizer, UIView;
 
-@interface MMLiveGamePlayTogetherJoinTeamCell
+@interface MMLiveGamePlayTogetherJoinTeamCell : NSObject
 {
     _Bool _enableTeamUp;
     UIView *_containerView;

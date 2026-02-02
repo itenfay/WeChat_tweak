@@ -6,7 +6,7 @@
 @class FIFOFileQueue, NSDate, NSMutableArray, NSString, WCTaskUploader;
 @protocol WCUploadMgrDelegate;
 
-@interface WCUploadMgr
+@interface WCUploadMgr : NSObject
 {
     FIFOFileQueue *m_taskQueue;
     NSMutableArray *m_failedQueue;

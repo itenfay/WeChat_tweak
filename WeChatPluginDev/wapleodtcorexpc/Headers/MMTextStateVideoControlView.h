@@ -6,7 +6,7 @@
 @class MMTextStateMediaItem, NSString, UIImage, UIImageView, UIView;
 @protocol MMTextStateVideoControlViewDelegate;
 
-@interface MMTextStateVideoControlView
+@interface MMTextStateVideoControlView : NSObject
 {
     UIView *_toolPanView;
     UIImageView *_thumbImageView;

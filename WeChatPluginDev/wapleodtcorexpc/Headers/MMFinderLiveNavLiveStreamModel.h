@@ -5,7 +5,7 @@
 
 @class FinderNavLiveStreamRequest, FinderNavLiveStreamResponse, WCFinderPrefetchCache;
 
-@interface MMFinderLiveNavLiveStreamModel
+@interface MMFinderLiveNavLiveStreamModel : NSObject
 {
     FinderNavLiveStreamResponse *_resp;
     WCFinderPrefetchCache *_prefetchCache;

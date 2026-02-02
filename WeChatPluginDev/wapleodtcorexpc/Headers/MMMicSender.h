@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol MMMicReceiver;
 
-@interface MMMicSender
+@interface MMMicSender : NSObject
 {
     long long startByteIndex;
     _Bool _needRestartMusic;

@@ -5,7 +5,7 @@
 
 @class CdnUploadTaskInfo, ChatRoomHistoryShareStat, HistoryMsgUploadMgr, HistoryMsgUploadTask, NSString;
 
-@interface NewChatRoomHistoryUploadLogic
+@interface NewChatRoomHistoryUploadLogic : NSObject
 {
     _Bool _isUploadFail;
     NSString *_uploadingTaskID;

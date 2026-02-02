@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, ForwardMessageLogicController, NSArray, NSData, NSString, NewLifeFeedScrollActionDelegateObject, RecentForwardScrollView, WCFinderDataItem;
 
-@interface NewLifeScrollActionSheet
+@interface NewLifeScrollActionSheet : NSObject
 {
     _Bool _isRecentForward;
     _Bool _author;

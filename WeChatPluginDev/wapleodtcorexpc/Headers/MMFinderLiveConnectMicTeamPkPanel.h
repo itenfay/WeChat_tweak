@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicPKInfo, NSString, UICollectionView, UICollectionViewDiffableDataSource;
 
-@interface MMFinderLiveConnectMicTeamPkPanel
+@interface MMFinderLiveConnectMicTeamPkPanel : NSObject
 {
     _Bool _isApplicant;
     CDUnknownBlockType _pkBlock;

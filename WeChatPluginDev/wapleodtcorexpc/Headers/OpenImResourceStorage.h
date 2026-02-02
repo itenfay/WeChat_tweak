@@ -5,7 +5,7 @@
 
 @class OpenImResourceStorageCacheInfo;
 
-@interface OpenImResourceStorage
+@interface OpenImResourceStorage : NSObject
 {
     OpenImResourceStorageCacheInfo *_defaultResCacheInfo;
     OpenImResourceStorageCacheInfo *_kefuResCacheInfo;

@@ -5,7 +5,7 @@
 
 @class TingShareCategoryItem;
 
-@interface AppTingListMessageViewModel
+@interface AppTingListMessageViewModel : NSObject
 {
 }
 

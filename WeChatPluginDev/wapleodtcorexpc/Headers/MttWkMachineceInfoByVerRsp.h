@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MttWkMachineceInfoByVerRsp
+@interface MttWkMachineceInfoByVerRsp : NSObject
 {
     int jcev2_p_0_o_iRetCode;
     NSArray *jcev2_p_1_o_vWkMachinceInfo__b0x9i_VOMttWkMachinceInfo;

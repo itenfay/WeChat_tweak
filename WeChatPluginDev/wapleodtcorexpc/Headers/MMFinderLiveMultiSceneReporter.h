@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveMultiSceneReporter
+@interface MMFinderLiveMultiSceneReporter : NSObject
 {
 }
 

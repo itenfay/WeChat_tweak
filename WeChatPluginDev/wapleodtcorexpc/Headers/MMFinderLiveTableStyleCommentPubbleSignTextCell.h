@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView;
 
-@interface MMFinderLiveTableStyleCommentPubbleSignTextCell
+@interface MMFinderLiveTableStyleCommentPubbleSignTextCell : NSObject
 {
     MMUIView *_signBackView;
     MMUILabel *_signLabel;

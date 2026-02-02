@@ -6,7 +6,7 @@
 @class FavoritesItem, NSArray, NSString;
 @protocol FavTagViewDelegate;
 
-@interface FavTagViewController
+@interface FavTagViewController : NSObject
 {
     FavoritesItem *m_favItem;
     NSArray *m_arrFavItems;

@@ -5,7 +5,7 @@
 
 @class MMTableView, ZZFLEXAngel;
 
-@interface WAAuthPageSheetLocationView
+@interface WAAuthPageSheetLocationView : NSObject
 {
     MMTableView *_tableView;
     ZZFLEXAngel *_angel;

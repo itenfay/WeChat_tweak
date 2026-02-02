@@ -5,7 +5,7 @@
 
 @class NSString, WCPayIBGCheckJSAPICgi;
 
-@interface WebviewJSEventHandler_handleWCPayWalletBuffer
+@interface WebviewJSEventHandler_handleWCPayWalletBuffer : NSObject
 {
     NSString *_action;
     long long _region;

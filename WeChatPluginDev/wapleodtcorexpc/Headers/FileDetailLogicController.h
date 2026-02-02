@@ -6,7 +6,7 @@
 @class NSString;
 @protocol FileDetailLogicDelegate;
 
-@interface FileDetailLogicController
+@interface FileDetailLogicController : NSObject
 {
     id <FileDetailLogicDelegate> _m_fileDetailLogicDelegate;
     NSString *_tmpFilePath;

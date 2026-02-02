@@ -5,7 +5,7 @@
 
 @class MMFinderLiveMilestoneLotteryDetailAttendView, MMFinderLiveMilestoneLotteryDetailMenuView, MMFinderLiveMilestoneLotteryDetailQuestionView, MMFinderLiveMilestoneLotteryDetailWinnerResultView, MMFinderLiveTaskId, NSString;
 
-@interface MMFinderLiveMilestoneLotteryDetailView
+@interface MMFinderLiveMilestoneLotteryDetailView : NSObject
 {
     MMFinderLiveMilestoneLotteryDetailMenuView *_mainMenuView;
     MMFinderLiveMilestoneLotteryDetailAttendView *_attendView;

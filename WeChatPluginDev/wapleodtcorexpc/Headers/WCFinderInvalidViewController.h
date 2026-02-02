@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderInvalidTipsInfo, WCFinderInvalidTipsView;
 
-@interface WCFinderInvalidViewController
+@interface WCFinderInvalidViewController : NSObject
 {
     WCFinderInvalidTipsInfo *_tipsInfo;
     WCFinderInvalidTipsView *_invalidTipsView;

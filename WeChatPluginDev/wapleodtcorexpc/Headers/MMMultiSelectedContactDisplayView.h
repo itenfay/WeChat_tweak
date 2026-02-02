@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UICollectionView;
 @protocol MMMultiSelectedContactDisplayViewDelegate;
 
-@interface MMMultiSelectedContactDisplayView
+@interface MMMultiSelectedContactDisplayView : NSObject
 {
     id <MMMultiSelectedContactDisplayViewDelegate> _delegate;
     NSMutableArray *_contactList;

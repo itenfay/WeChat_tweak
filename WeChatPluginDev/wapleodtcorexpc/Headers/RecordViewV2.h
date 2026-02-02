@@ -5,7 +5,7 @@
 
 @class NSString, VoiceRecordView;
 
-@interface RecordViewV2
+@interface RecordViewV2 : NSObject
 {
     VoiceRecordView *_recordView;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateAsyncExportInfo;
 
-@interface MJTemplateSessionExportAsyncOperation
+@interface MJTemplateSessionExportAsyncOperation : NSObject
 {
     MJTemplateAsyncExportInfo *_asyncExportInfo;
 }

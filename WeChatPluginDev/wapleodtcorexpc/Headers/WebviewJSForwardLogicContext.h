@@ -5,7 +5,7 @@
 
 @class CContact;
 
-@interface WebviewJSForwardLogicContext
+@interface WebviewJSForwardLogicContext : NSObject
 {
     CContact *_targetContact;
 }

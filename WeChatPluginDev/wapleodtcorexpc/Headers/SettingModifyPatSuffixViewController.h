@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMTableView, MMTableViewInfo, MMTimer, MMUILabel, MMUITextField, ModifyPatSuffixLogic, NSString, UIButton, UIView, WCCommonInputPanelLogic;
 @protocol SettingModifyPatSuffixViewControllerDelegate;
 
-@interface SettingModifyPatSuffixViewController
+@interface SettingModifyPatSuffixViewController : NSObject
 {
     double m_fKeyboardHeight;
     MMUITextField *m_patSuffixTextField;

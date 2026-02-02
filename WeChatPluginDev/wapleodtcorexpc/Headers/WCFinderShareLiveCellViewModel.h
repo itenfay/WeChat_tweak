@@ -6,7 +6,7 @@
 @class NSString, WCFinderAuthInfo, WCFinderLiveShareCardExposeReportAdapter;
 @protocol WCFinderShareLiveCellViewDelegate;
 
-@interface WCFinderShareLiveCellViewModel
+@interface WCFinderShareLiveCellViewModel : NSObject
 {
     _Bool _isShareBySelf;
     int _cellViewType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
-@interface MMWebViewPlugin_CustomNavigationBar
+@interface MMWebViewPlugin_CustomNavigationBar : NSObject
 {
     CDUnknownBlockType _onClickRightNavItem;
     NSMutableDictionary *_dictNavBarItemStateStorage;

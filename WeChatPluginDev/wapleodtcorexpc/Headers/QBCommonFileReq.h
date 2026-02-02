@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBCommonFileReq
+@interface QBCommonFileReq : NSObject
 {
     NSString *jcev2_p_0_r_sGUID;
     NSString *jcev2_p_1_r_sQUA2;

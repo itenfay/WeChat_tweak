@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface YTBeautySmoothFilter
+@interface YTBeautySmoothFilter : NSObject
 {
     double _blurStrength;
     double _whitenStrength;

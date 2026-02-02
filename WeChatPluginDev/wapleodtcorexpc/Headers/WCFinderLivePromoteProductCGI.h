@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLivePromoteProductCGI
+@interface WCFinderLivePromoteProductCGI : NSObject
 {
     unsigned int _actionType;
     unsigned int _promoteType;

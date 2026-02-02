@@ -5,7 +5,7 @@
 
 @class MMFinderLiveStickerTextTemplateItem, NSString, UIColor;
 
-@interface MMFinderLiveTextStickerItem
+@interface MMFinderLiveTextStickerItem : NSObject
 {
     NSString *_text;
     UIColor *_color;

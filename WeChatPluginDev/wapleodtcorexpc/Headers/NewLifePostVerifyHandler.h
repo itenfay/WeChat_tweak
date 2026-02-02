@@ -5,7 +5,7 @@
 
 @class SecurityInfoAuthrizeLogic;
 
-@interface NewLifePostVerifyHandler
+@interface NewLifePostVerifyHandler : NSObject
 {
     SecurityInfoAuthrizeLogic *_authLogic;
 }

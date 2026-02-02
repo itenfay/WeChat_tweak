@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportMediaCastingItem
+@interface WAReportMediaCastingItem : NSObject
 {
     unsigned int _eventTimeMs;
     NSString *_videoURI;

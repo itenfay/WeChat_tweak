@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol FavSearchHelperDelegate;
 
-@interface FavSearchHelper
+@interface FavSearchHelper : NSObject
 {
     unsigned int _currentEventID;
     id <FavSearchHelperDelegate> _delegate;

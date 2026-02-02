@@ -5,7 +5,7 @@
 
 @class UIView, WCTimeLineAdLookbookCardBrandNewAnimationDisplayLink;
 
-@interface WCAdLookbookLogic
+@interface WCAdLookbookLogic : NSObject
 {
     _Bool _effectPagPlayedFlag;
     UIView *_effectPagViewCache;

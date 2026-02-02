@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderEditLogger
+@interface WCFinderEditLogger : NSObject
 {
 }
 

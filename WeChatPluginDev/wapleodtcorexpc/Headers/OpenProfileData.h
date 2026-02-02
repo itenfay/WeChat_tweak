@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OpenProfileData
+@interface OpenProfileData : NSObject
 {
     int scene;
     int profileType;

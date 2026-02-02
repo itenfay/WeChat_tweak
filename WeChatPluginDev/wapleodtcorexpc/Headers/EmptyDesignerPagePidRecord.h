@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface EmptyDesignerPagePidRecord
+@interface EmptyDesignerPagePidRecord : NSObject
 {
     NSMutableSet *_recordSet;
 }

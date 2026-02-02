@@ -5,7 +5,7 @@
 
 @class MMImageGridView, NSString, SightIconView, UIImageView, UILabel, WCBizAppReaderMessageBigPicView, WCBizAppReaderMessageBigPicViewModel;
 
-@interface WCContentItemViewTemplateNews
+@interface WCContentItemViewTemplateNews : NSObject
 {
     MMImageGridView *_imageGridView;
     UIImageView *_defaultImageView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelStartLiveReq
+@interface WXChannelStartLiveReq : NSObject
 {
     NSString *_liveJsonInfo;
 }

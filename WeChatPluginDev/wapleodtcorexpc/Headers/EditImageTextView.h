@@ -5,7 +5,7 @@
 
 @class EditImageTextBgView, UIColor, WCEditVideoColorConfig;
 
-@interface EditImageTextView
+@interface EditImageTextView : NSObject
 {
     unsigned long long _textStyle;
     UIColor *_mainColor;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFootageReplayModel, NSData;
 
-@interface WCFinderLiveGetLiveMsgWithOffsetCGI
+@interface WCFinderLiveGetLiveMsgWithOffsetCGI : NSObject
 {
     _Bool _isContinualRequest;
     unsigned int _offsetInSecond;

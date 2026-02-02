@@ -5,7 +5,7 @@
 
 @class NSString, PasswordLogic;
 
-@interface MMChangeQQLoginTypeHandler
+@interface MMChangeQQLoginTypeHandler : NSObject
 {
     int _lastLoginAcountType;
     PasswordLogic *_pwdLogic;

@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString;
 
-@interface EyeShadowEffectAdapter
+@interface EyeShadowEffectAdapter : NSObject
 {
     NSNumber *_alpha;
     NSNumber *_faceModel;

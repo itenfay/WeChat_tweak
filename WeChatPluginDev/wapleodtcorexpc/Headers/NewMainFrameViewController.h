@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BSTimelineFlutterViewController, CreateChatLogic, MFTitleView, MMLoadingView, MMSessionInfo, MMTimer, MMUIViewController, MainFrameCustomBarView, MainFrameHeaderLogic, MainFrameLogicController, MainFrameSectionFoldView, MainFrameTableView, MainFrameUnreadReporter, MainSessionEditingLogic, NSIndexPath, NSString, UIColor, UIDynamicAnimator, UIImageView, UIView, WAMainFrameTaskBarLogic, WAMainFrameTaskBarView, WAMainFrameTopHeaderView, WCSearchBar;
 @protocol BrandTLViewControllerProtocol, UIViewControllerPreviewing;
 
-@interface NewMainFrameViewController
+@interface NewMainFrameViewController : NSObject
 {
     MainFrameLogicController *m_mainFrameLogicController;
     MainFrameTableView *m_tableView;

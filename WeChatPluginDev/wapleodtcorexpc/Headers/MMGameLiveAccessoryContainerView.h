@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MMGameLiveAccessoryContainerView
+@interface MMGameLiveAccessoryContainerView : NSObject
 {
     unsigned long long _currControlState;
     struct CGSize _selfSize;

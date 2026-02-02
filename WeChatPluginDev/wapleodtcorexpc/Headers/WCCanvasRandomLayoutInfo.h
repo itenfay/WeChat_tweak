@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCCanvasRandomLayoutEncoreInfo, WCCanvasRandomLayoutEncorePickInfo, WCCanvasRandomLayoutTransitionAnimationInfo;
 
-@interface WCCanvasRandomLayoutInfo
+@interface WCCanvasRandomLayoutInfo : NSObject
 {
     unsigned int _cornerRadius;
     NSArray *_layoutItems;

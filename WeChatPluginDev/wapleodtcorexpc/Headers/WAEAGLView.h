@@ -6,7 +6,7 @@
 @class UIImageView;
 @protocol WAEAGLViewGestureDelegate;
 
-@interface WAEAGLView
+@interface WAEAGLView : NSObject
 {
     int _interactionMode;
     id <WAEAGLViewGestureDelegate> _gestureDelegate;

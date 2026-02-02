@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ExtraDeviceLoginMgr
+@interface ExtraDeviceLoginMgr : NSObject
 {
     unsigned int _uiFromScene;
     unsigned int _extDevice;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCLanDeviceMgr
+@interface WCLanDeviceMgr : NSObject
 {
     long long m_taskId;
     NSMutableArray *m_tasks;

@@ -6,7 +6,7 @@
 @class ContactsSearchController, MMPageSheetAdapter, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, OpenIMContactSelectView, WCSearchBar;
 @protocol SelectOpenIMContactsViewControllerDelegate;
 
-@interface SelectOpenIMContactsViewController
+@interface SelectOpenIMContactsViewController : NSObject
 {
     OpenIMContactSelectView *m_selectView;
     _Bool _m_bMultiSelect;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, FinderLiveClientStatus, FinderLiveReportBaseInfo, NSData, NSString;
 
-@interface WCFinderQuitLiveNavCGI
+@interface WCFinderQuitLiveNavCGI : NSObject
 {
     _Bool _preload;
     float _longitude;

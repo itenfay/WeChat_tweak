@@ -5,7 +5,7 @@
 
 @class LinkWeAppJumpWrap, NSString, UIColor;
 
-@interface LinkStyle
+@interface LinkStyle : NSObject
 {
     NSString *_nsUrl;
     NSString *_nsSourceUrl;

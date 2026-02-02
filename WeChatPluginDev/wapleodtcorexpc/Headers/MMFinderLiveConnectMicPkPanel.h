@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicPkPanelMasterView, MMFinderLiveTaskId, MMUIButton, UIView;
 @protocol MMFinderLiveConnectMicPkPanelDelegate;
 
-@interface MMFinderLiveConnectMicPkPanel
+@interface MMFinderLiveConnectMicPkPanel : NSObject
 {
     _Bool _isShowing;
     id <MMFinderLiveConnectMicPkPanelDelegate> _delegate;

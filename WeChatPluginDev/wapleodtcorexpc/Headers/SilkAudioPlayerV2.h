@@ -6,7 +6,7 @@
 @class NSString, SimpleAudioPlayer;
 @protocol AudioDataRead;
 
-@interface SilkAudioPlayerV2
+@interface SilkAudioPlayerV2 : NSObject
 {
     int _m_sampleRate;
     int _m_currentPcmBytePos;

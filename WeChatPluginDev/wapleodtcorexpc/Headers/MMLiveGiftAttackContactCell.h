@@ -6,7 +6,7 @@
 @class MMCPLabel, MMFinderLiveTaskId, MMHeadImageView, UIImageView, WCFinderContact;
 @protocol MMLiveGiftAttackContactCellDelegate;
 
-@interface MMLiveGiftAttackContactCell
+@interface MMLiveGiftAttackContactCell : NSObject
 {
     MMHeadImageView *_headImageView;
     MMCPLabel *_displayNameLabel;

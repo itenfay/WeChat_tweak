@@ -5,7 +5,7 @@
 
 @class NSMutableArray, UIColor;
 
-@interface WCFinderArrangeView
+@interface WCFinderArrangeView : NSObject
 {
     _Bool _horizontal;
     _Bool _showSeparator;

@@ -5,7 +5,7 @@
 
 @class CAppBrandInfo, COpenIMInfo, ChatRoomData, ChatRoomDetail, EncryptSecretInfo, NSArray, NSDictionary, NSRecursiveLock, NSString, RingTone;
 
-@interface CContact
+@interface CContact : NSObject
 {
     unsigned int m_uiChatRoomStatus;
     NSString *m_nsChatRoomMemList;

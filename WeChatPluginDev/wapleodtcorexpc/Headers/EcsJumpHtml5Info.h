@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EcsJumpHtml5Info
+@interface EcsJumpHtml5Info : NSObject
 {
     NSString *_url;
 }

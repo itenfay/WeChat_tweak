@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, NSMutableArray, NSString, WCFinderContact, WCFinderMemberShipActivityViewModel, WCFinderMemberShipDraftViewModel, WCFinderMemberShipFeedTabViewModel, WCFinderMemberShipHomePageViewModel, WCFinderMemberShipPlaybackTabViewModel, WCFinderMemberShipZoneHeaderData, WCFinderMemberShipZonePushParams;
 @protocol WCFinderMemberShipZoneViewModelDelegate;
 
-@interface WCFinderMemberShipZoneViewModel
+@interface WCFinderMemberShipZoneViewModel : NSObject
 {
     _Bool _isBlocked;
     NSMutableArray *_tabModels;

@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString;
 @protocol WCFinderPageViewContainerDelegate;
 
-@interface WCFinderPageViewContainer
+@interface WCFinderPageViewContainer : NSObject
 {
     _Bool _delayPageViewCreateTime;
     _Bool _lazyLoadingDisabled;

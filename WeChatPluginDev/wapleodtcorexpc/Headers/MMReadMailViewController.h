@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAttach, CMail, CMessageWrap, MMLoadingView, MMTableView, NSMutableArray, NSString, NSURLRequest, PushMailWrap, UIButton, UILabel, UIView, WebViewJSLogicImpl, YYWKWebView;
 @protocol MMReadMailViewDelegate;
 
-@interface MMReadMailViewController
+@interface MMReadMailViewController : NSObject
 {
     MMTableView *_tableView;
     WebViewJSLogicImpl *_jsLogicImpl;

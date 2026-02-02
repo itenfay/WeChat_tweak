@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, RichTextView, UIButton, UINavigationController, UIView, WCDataItem, WCMomentsFireworksIconView, WCUserComment;
 @protocol ILinkEventExt, WCCommentViewFBDelegate;
 
-@interface WCCommentViewFB
+@interface WCCommentViewFB : NSObject
 {
     RichTextView *_contentView;
     id <ILinkEventExt> _urlLabelDelegate;

@@ -5,7 +5,7 @@
 
 @class MMUIScrollView, NSString, SightIconView, UIButton, UIImageView, UILabel;
 
-@interface SettingClearLocalDataViewController
+@interface SettingClearLocalDataViewController : NSObject
 {
     unsigned int _totalSessionNumber;
     unsigned int _clearSessionNumber;

@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMUILabel, MMWebImageView, NSArray, RichTextView, UIImageView;
 @protocol WeiShiMsgCardMenuDelegate;
 
-@interface WeShiMsgCardView
+@interface WeShiMsgCardView : NSObject
 {
     MMWebImageView *_coverView;
     RichTextView *_titleView;

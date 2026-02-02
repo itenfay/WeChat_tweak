@@ -5,7 +5,7 @@
 
 @class MPPageFriendInfo, MPPagePayInfo, NSString;
 
-@interface MPPageRelatedInfo
+@interface MPPageRelatedInfo : NSObject
 {
     unsigned int _lastUpdatTimeStamp;
     NSString *_originUrl;

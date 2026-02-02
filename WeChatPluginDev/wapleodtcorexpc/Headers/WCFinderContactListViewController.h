@@ -5,7 +5,7 @@
 
 @class MMUISearchBar, NSString, UILabel, UITapGestureRecognizer, UIView, WCFinderContactListViewModel, WCFinderFollowSearchContactViewController, WCFinderRefreshTableFooterView, WCTableView;
 
-@interface WCFinderContactListViewController
+@interface WCFinderContactListViewController : NSObject
 {
     _Bool _disableSearch;
     int _finderProfileDefaultJumpTab;

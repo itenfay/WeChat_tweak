@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage, UIImageView, UILabel, UIView;
 
-@interface WCLiveAcceptAgreementPageSheetView
+@interface WCLiveAcceptAgreementPageSheetView : NSObject
 {
     UIView *_contentView;
     UIImageView *_iconImageView;

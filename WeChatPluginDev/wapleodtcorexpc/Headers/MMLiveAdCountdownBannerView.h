@@ -5,7 +5,7 @@
 
 @class MMUIImageView;
 
-@interface MMLiveAdCountdownBannerView
+@interface MMLiveAdCountdownBannerView : NSObject
 {
     MMUIImageView *_doneIcon;
 }

@@ -6,7 +6,7 @@
 @class FavTagListView, MMUIButton, NSArray, NSMutableArray, NSString, UILabel;
 @protocol FavTagSearchFilterDelegate;
 
-@interface FavTagSearchFilter
+@interface FavTagSearchFilter : NSObject
 {
     UILabel *m_label;
     MMUIButton *m_tagEditButton;

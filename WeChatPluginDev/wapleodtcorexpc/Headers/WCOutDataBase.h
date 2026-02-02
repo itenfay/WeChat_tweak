@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface WCOutDataBase
+@interface WCOutDataBase : NSObject
 {
     WCTDatabase *_dbBase;
     WCTTable *_recentCallTable;

@@ -5,7 +5,7 @@
 
 @class QGPWHSize;
 
-@interface QGPSetPixelBoundCommand
+@interface QGPSetPixelBoundCommand : NSObject
 {
     QGPWHSize *_params;
 }

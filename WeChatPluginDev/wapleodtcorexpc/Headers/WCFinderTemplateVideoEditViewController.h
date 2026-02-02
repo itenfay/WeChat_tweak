@@ -6,7 +6,7 @@
 @class NSString, UIImage, UIImageView, WCFinderMusicSelectView, WCFinderTemplateMusicSelectEntranceView, WCFinderTemplateVideoEditViewModel;
 @protocol WCFinderTemplateVideoEditVCDelegate;
 
-@interface WCFinderTemplateVideoEditViewController
+@interface WCFinderTemplateVideoEditViewController : NSObject
 {
     _Bool _exporting;
     id <WCFinderTemplateVideoEditVCDelegate> _delegate;

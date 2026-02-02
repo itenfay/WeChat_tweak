@@ -6,7 +6,7 @@
 @class AVAudioPlayer, CContact, CMessageWrap, MMTimer, MultiTalkHDHeadView, NSString, UIImageView, UILabel, VideoVoipCSTalkingView, VoipMinimizeReportObject, WCUIAlertView, WavAudioPlayer;
 @protocol VideoVoipCSViewDelegate;
 
-@interface VideoVoipCSView
+@interface VideoVoipCSView : NSObject
 {
     unsigned int _status;
     NSString *m_nsAppId;

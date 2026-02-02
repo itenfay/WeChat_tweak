@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface EnterpriseRoomContactRemoveViewController
+@interface EnterpriseRoomContactRemoveViewController : NSObject
 {
     NSString *_groupName;
     NSString *_removingUserName;

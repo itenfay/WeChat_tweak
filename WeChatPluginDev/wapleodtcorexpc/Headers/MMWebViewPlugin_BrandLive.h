@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface MMWebViewPlugin_BrandLive
+@interface MMWebViewPlugin_BrandLive : NSObject
 {
     _Bool _hasLiveTitleViewReport;
     _Bool _hasProfileTitleViewLiveReport;

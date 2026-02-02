@@ -5,7 +5,7 @@
 
 @class MMFlutterViewController, NSString, WCFinderFlutterHalfScreenPlugin, WCFinderFlutterHalfScreenVCConfig;
 
-@interface WCFinderFlutterHalfScreenVC
+@interface WCFinderFlutterHalfScreenVC : NSObject
 {
     WCFinderFlutterHalfScreenVCConfig *_config;
     WCFinderFlutterHalfScreenPlugin *_halfScreenPlugin;

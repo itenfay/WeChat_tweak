@@ -6,7 +6,7 @@
 @class MMTimer, NSString, QuickReplyMsgNotifyView, QuickReplyMsgReporter, QuickReplyNotifyItem, UIView;
 @protocol QuickReplyMsgViewControllerDelegate;
 
-@interface QuickReplyMsgViewController
+@interface QuickReplyMsgViewController : NSObject
 {
     _Bool _isPreviewEnable;
     id <QuickReplyMsgViewControllerDelegate> _delegate;

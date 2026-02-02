@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WloginTlv_0x126
+@interface WloginTlv_0x126 : NSObject
 {
     unsigned short wVer;
     NSData *randData;

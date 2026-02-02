@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TPVideoFrameBuffer, WCTPPlayer;
 
-@interface WCThumbPlayer
+@interface WCThumbPlayer : NSObject
 {
     _Bool _isNoCallbackSeek;
     _Bool _isLocalServerReinit;

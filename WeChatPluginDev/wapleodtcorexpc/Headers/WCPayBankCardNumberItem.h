@@ -5,7 +5,7 @@
 
 @class NSString, UILabel;
 
-@interface WCPayBankCardNumberItem
+@interface WCPayBankCardNumberItem : NSObject
 {
     UILabel *m_bankcardLabel;
     NSString *m_value;

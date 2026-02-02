@@ -6,7 +6,7 @@
 @class NSString, UIScrollView, WCFinderCoverEditViewController, WCFinderHoriPreviewCardView, WCFinderPostSessionModel;
 @protocol WCFinderCoverHoriPreviewViewControllerDelegate;
 
-@interface WCFinderCoverHoriPreviewViewController
+@interface WCFinderCoverHoriPreviewViewController : NSObject
 {
     _Bool _xlabShowPreviewBtn;
     _Bool _hasChooseCoverUrl;

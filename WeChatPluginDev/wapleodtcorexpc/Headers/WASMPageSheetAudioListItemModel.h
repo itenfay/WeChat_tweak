@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WASMPageSheetAudioListItemModel
+@interface WASMPageSheetAudioListItemModel : NSObject
 {
     CDUnknownBlockType _playAudioAction;
 }

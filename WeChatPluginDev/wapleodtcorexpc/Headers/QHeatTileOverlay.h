@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, QHeatTileCreationData, QHeatTileGradient, QQuadTree;
 
-@interface QHeatTileOverlay
+@interface QHeatTileOverlay : NSObject
 {
     unsigned long long _minimumZoomIntensity;
     unsigned long long _maximumZoomIntensity;

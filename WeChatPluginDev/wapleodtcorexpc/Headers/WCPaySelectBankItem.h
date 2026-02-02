@@ -6,7 +6,7 @@
 @class MMUIViewController, MMWebImageView, NSString, UILabel, UITableViewCell, WCPaySelectBankViewController, WCPayT2BCGetBankListCgi, WCPayTransBankItem;
 @protocol WCPaySelectBankItemDelegate;
 
-@interface WCPaySelectBankItem
+@interface WCPaySelectBankItem : NSObject
 {
     MMUIViewController *m_currentViewController;
     WCPayTransBankItem *m_value;

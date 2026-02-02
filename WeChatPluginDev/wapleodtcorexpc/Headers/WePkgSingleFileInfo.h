@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WePkgSingleFileInfo
+@interface WePkgSingleFileInfo : NSObject
 {
     unsigned int _downloadNetworkType;
     unsigned int _sizeInBytes;

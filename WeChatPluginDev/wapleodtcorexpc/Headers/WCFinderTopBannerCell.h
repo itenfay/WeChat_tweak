@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderTopBannerCell
+@interface WCFinderTopBannerCell : NSObject
 {
     UILabel *_titleLabel;
 }

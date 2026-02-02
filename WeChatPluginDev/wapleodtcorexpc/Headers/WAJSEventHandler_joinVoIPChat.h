@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_joinVoIPChat
+@interface WAJSEventHandler_joinVoIPChat : NSObject
 {
     NSString *busiAppId;
     int lastJoinSuccTicks;

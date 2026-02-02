@@ -5,7 +5,7 @@
 
 @class EmoticonStoreItem, EmotionRewardExtInfo, EmotionRewardResponseInfo, MMUIViewController, NSString, StoreEmotionRewardAskForRewardCgi, WCPayPayMoneyLogic;
 
-@interface StoreEmotionRewardLogicObject
+@interface StoreEmotionRewardLogicObject : NSObject
 {
     EmoticonStoreItem *m_storeItem;
     EmotionRewardResponseInfo *m_rewardInfo;

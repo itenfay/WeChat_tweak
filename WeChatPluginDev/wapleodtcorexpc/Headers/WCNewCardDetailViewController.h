@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AccessCardLogicController, NSIndexPath, NSMutableArray, NSString, ShareMessageConfirmLogicHelper, UIScrollView, WCActionSheet, WCCardBaseCardDetailContentView, WCNewCardDetailLogicController, WCNewShareCardConsumedView, WCShareCardCodeView, WeToast;
 @protocol WCNewCardDetailViewControllerDelegate;
 
-@interface WCNewCardDetailViewController
+@interface WCNewCardDetailViewController : NSObject
 {
     AccessCardLogicController *_accessCardLogic;
     _Bool _isFromScanQRCode;

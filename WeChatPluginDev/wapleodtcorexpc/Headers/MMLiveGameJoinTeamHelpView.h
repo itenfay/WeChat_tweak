@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, UIView;
 @protocol MMLiveGameJoinTeamHelpViewDelegate;
 
-@interface MMLiveGameJoinTeamHelpView
+@interface MMLiveGameJoinTeamHelpView : NSObject
 {
     _Bool _model;
     id <MMLiveGameJoinTeamHelpViewDelegate> _delegate;

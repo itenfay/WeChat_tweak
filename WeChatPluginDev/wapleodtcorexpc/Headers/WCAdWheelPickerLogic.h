@@ -6,7 +6,7 @@
 @class MMCommonActionSheetPicker, NSMutableDictionary, NSString, WCAdPickerDataInfo;
 @protocol WCAdWheelPickerLogicDelegate;
 
-@interface WCAdWheelPickerLogic
+@interface WCAdWheelPickerLogic : NSObject
 {
     unsigned int _columnCount;
     id <WCAdWheelPickerLogicDelegate> _delegate;

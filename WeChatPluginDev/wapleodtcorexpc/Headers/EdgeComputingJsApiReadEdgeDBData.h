@@ -5,7 +5,7 @@
 
 @class EdgeComputingDBService, NSMutableArray, NSMutableDictionary;
 
-@interface EdgeComputingJsApiReadEdgeDBData
+@interface EdgeComputingJsApiReadEdgeDBData : NSObject
 {
     EdgeComputingDBService *_dBService;
     NSMutableArray *_dbQueryKeyCache;

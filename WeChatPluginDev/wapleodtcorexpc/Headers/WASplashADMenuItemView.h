@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMWebImageView, NSDictionary, UIImageView;
 @protocol WASplashADMenuItemViewDelegate;
 
-@interface WASplashADMenuItemView
+@interface WASplashADMenuItemView : NSObject
 {
     id <WASplashADMenuItemViewDelegate> _delegate;
     NSDictionary *_itemDict;

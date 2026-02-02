@@ -5,7 +5,7 @@
 
 @class MMLiteAppView;
 
-@interface WCFinderProfileQATabPage
+@interface WCFinderProfileQATabPage : NSObject
 {
     MMLiteAppView *_liteAppView;
 }

@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCBaseKeyboardToolBar, WCPayCVVItem, WCPayValidDateItem;
 @protocol WCPayResetBindedCardInfoViewControllerDelegate;
 
-@interface WCPayResetBindedCardInfoViewController
+@interface WCPayResetBindedCardInfoViewController : NSObject
 {
     _Bool m_bCVV;
     _Bool m_bValidDate;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAcceptAgreementCommonHeadView, WCButtonListView;
 
-@interface SettingModifyEmailOnVerifyViewController
+@interface SettingModifyEmailOnVerifyViewController : NSObject
 {
     MMAcceptAgreementCommonHeadView *m_commonHeadView;
     CDUnknownBlockType _onSendVerifyEmail;

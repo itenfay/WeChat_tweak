@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, ForwardMessageLogicController, MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView;
 
-@interface EmoticonCustomCreateResultViewController
+@interface EmoticonCustomCreateResultViewController : NSObject
 {
     _Bool _didBatchDownloadEmojiInfo;
     _Bool _isExceedLimit;

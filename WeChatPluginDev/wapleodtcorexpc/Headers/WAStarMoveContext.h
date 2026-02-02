@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAStarMoveContext
+@interface WAStarMoveContext : NSObject
 {
     unsigned int _moveScene;
     NSMutableArray *_infos;

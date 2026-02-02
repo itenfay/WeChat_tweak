@@ -5,7 +5,7 @@
 
 @class CalendarInfo, NSMutableArray, NSString;
 
-@interface CalendarStatisticsArgs
+@interface CalendarStatisticsArgs : NSObject
 {
     _Bool isEnterFinderWithRedDot;
     unsigned int _dropRedDotCount;

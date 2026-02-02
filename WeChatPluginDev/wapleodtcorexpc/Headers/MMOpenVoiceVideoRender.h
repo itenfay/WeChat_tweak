@@ -6,7 +6,7 @@
 @class NSObject, OpenVoiceVideoRender;
 @protocol OS_dispatch_queue;
 
-@interface MMOpenVoiceVideoRender
+@interface MMOpenVoiceVideoRender : NSObject
 {
     unsigned int frameCount;
     _Bool _notifyFirstFrame;

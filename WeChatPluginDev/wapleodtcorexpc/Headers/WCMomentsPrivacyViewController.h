@@ -6,7 +6,7 @@
 @class NSMutableSet, NSString, UITableView, WCCreateNewGroupDemoViewController, WCMomentsPrivacyParams;
 @protocol WCMomentsPrivacyViewControllerDelegate;
 
-@interface WCMomentsPrivacyViewController
+@interface WCMomentsPrivacyViewController : NSObject
 {
     _Bool _showFastItem;
     unsigned int _createTagEventId;

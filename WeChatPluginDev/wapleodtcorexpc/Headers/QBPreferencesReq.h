@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBPreferencesReq
+@interface QBPreferencesReq : NSObject
 {
     int jcev2_p_0_r_iReqTime;
     NSString *jcev2_p_1_o_sQUA;

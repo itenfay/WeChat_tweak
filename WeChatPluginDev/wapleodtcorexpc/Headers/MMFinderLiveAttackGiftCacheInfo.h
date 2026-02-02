@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveAttackGiftCacheInfo
+@interface MMFinderLiveAttackGiftCacheInfo : NSObject
 {
     NSString *_path;
 }

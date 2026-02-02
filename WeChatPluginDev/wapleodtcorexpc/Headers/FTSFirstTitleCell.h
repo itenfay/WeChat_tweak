@@ -6,7 +6,7 @@
 @class MMUIButton, UILabel, UIView;
 @protocol FTSFirstTitleCellDelegate;
 
-@interface FTSFirstTitleCell
+@interface FTSFirstTitleCell : NSObject
 {
     _Bool _showRightButton;
     id <FTSFirstTitleCellDelegate> _m_delegate;

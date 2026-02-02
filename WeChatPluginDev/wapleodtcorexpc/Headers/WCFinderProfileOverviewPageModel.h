@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AnyPromise, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderCGIProfile, WCFinderFeedArray, WCFinderStreamLoadingState;
 @protocol WCFinderProfileOverviewPageModelDelegate, WCFinderProfilePullableFeedViewModel;
 
-@interface WCFinderProfileOverviewPageModel
+@interface WCFinderProfileOverviewPageModel : NSObject
 {
     long long *layoutIdx;
     _Bool _isPullingMode;

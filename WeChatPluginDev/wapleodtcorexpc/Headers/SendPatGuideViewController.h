@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton;
 
-@interface SendPatGuideViewController
+@interface SendPatGuideViewController : NSObject
 {
     unsigned long long _guideType;
     CDUnknownBlockType _dismissBlock;

@@ -6,7 +6,7 @@
 @class FinderPreloadGlobalInfo, MMLRUCache, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCFinderVideoDownLoadMgr
+@interface WCFinderVideoDownLoadMgr : NSObject
 {
     _Bool _canDownload265;
     _Bool _canUsePCDN;

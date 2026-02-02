@@ -5,7 +5,7 @@
 
 @class CContactVerifyLogic, NSString;
 
-@interface LiteAppJsApiOpenWeRun
+@interface LiteAppJsApiOpenWeRun : NSObject
 {
     CContactVerifyLogic *m_oLogic;
 }

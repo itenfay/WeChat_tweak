@@ -5,7 +5,7 @@
 
 @protocol WABizF2FSuccPageCgiDelegate;
 
-@interface WABizF2FSuccPageCgi
+@interface WABizF2FSuccPageCgi : NSObject
 {
     id <WABizF2FSuccPageCgiDelegate> m_delegate;
 }

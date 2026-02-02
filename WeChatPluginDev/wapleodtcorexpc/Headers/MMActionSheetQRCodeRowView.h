@@ -6,7 +6,7 @@
 @class GetQRCodeInfoLogic, MMScrollableActionSheetVerticalRowInfo, MMWebImageView, NSString, UIButton, UIImageView, UILabel;
 @protocol MMActionSheetQRCodeRowViewDelegate;
 
-@interface MMActionSheetQRCodeRowView
+@interface MMActionSheetQRCodeRowView : NSObject
 {
     _Bool _isUrlInfoHasUpdated;
     unsigned int _businessType;

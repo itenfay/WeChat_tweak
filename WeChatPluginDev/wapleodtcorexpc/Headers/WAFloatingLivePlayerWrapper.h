@@ -5,7 +5,7 @@
 
 @protocol ITXLivePlayJSAdapter;
 
-@interface WAFloatingLivePlayerWrapper
+@interface WAFloatingLivePlayerWrapper : NSObject
 {
     id <ITXLivePlayJSAdapter> _livePlayer;
 }

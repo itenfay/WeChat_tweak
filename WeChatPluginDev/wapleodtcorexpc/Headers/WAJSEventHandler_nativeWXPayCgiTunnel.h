@@ -5,7 +5,7 @@
 
 @class NSString, WCPayNativeCgiTunnelImpl;
 
-@interface WAJSEventHandler_nativeWXPayCgiTunnel
+@interface WAJSEventHandler_nativeWXPayCgiTunnel : NSObject
 {
     WCPayNativeCgiTunnelImpl *_cgiLogic;
 }

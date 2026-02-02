@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSApiScopeAuthorizeInfo, JSApiScopeAuthorizePageSheet;
 
-@interface JSApiScopeAuthViewModel
+@interface JSApiScopeAuthViewModel : NSObject
 {
     CDUnknownBlockType _scrollToAvatarAction;
 }

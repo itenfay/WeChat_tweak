@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface WCTogetherGuideView
+@interface WCTogetherGuideView : NSObject
 {
     UIImageView *_guideImageView;
     MMUILabel *_guideAlbumLabel;

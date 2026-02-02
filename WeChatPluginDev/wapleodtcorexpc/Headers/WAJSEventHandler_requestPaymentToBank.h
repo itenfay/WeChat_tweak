@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WAJSEventHandler_requestPaymentToBank
+@interface WAJSEventHandler_requestPaymentToBank : NSObject
 {
     NSDictionary *_param;
 }

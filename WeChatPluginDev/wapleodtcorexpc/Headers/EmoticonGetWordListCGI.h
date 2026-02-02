@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface EmoticonGetWordListCGI
+@interface EmoticonGetWordListCGI : NSObject
 {
     unsigned int _startTime;
     CDUnknownBlockType _completion;

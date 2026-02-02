@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCardUseConditionInfo
+@interface WCCardUseConditionInfo : NSObject
 {
     NSString *_title;
     NSArray *_outerTagList;

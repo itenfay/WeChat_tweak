@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel;
 
-@interface IntelligentMsgLabelTipCell
+@interface IntelligentMsgLabelTipCell : NSObject
 {
     MMUIImageView *m_leftImageView;
     MMUILabel *m_titleLabel;

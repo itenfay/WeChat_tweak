@@ -5,7 +5,7 @@
 
 @class WCTableViewManager;
 
-@interface EmoticonManagePrivacySettingViewController
+@interface EmoticonManagePrivacySettingViewController : NSObject
 {
     WCTableViewManager *_tableViewMgr;
 }

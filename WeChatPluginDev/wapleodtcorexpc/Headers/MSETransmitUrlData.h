@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MSETransmitUrlData
+@interface MSETransmitUrlData : NSObject
 {
     NSString *_title;
     NSString *_desc;

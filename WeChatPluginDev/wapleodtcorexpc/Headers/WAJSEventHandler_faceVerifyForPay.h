@@ -5,7 +5,7 @@
 
 @class FaceRecogPayHandler, NSString;
 
-@interface WAJSEventHandler_faceVerifyForPay
+@interface WAJSEventHandler_faceVerifyForPay : NSObject
 {
     FaceRecogPayHandler *_faceHandler;
 }

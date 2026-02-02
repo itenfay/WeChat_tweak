@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMessageError
+@interface IntelligentMessageError : NSObject
 {
     _Bool _isError;
     NSString *_desc;

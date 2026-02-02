@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSString;
 
-@interface MMLiveGameJoinTeamTipsView
+@interface MMLiveGameJoinTeamTipsView : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     CDUnknownBlockType _showAction;

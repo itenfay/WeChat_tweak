@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveCDNPlayerView, NSString, UILabel, UIView, WCFinderDataItem;
 @protocol TextStateBaseMediaViewDelegate;
 
-@interface MMFinderLiveSharePlayerView
+@interface MMFinderLiveSharePlayerView : NSObject
 {
     _Bool _muted;
     _Bool _playing;

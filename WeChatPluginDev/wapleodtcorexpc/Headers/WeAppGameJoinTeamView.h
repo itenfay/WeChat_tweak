@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveTaskId, MMUIButton, MMUILabel, NSDictionary, NSString, UIView, WeAppGameJoinTeamConditionView, WeAppGameJoinTeamDescView, WeAppGameJoinTeamHistoryView, WeAppGameJoinTeamSectionView;
 @protocol WeAppGameJoinTeamViewDelegate;
 
-@interface WeAppGameJoinTeamView
+@interface WeAppGameJoinTeamView : NSObject
 {
     _Bool _canJoin;
     int _actionMode;

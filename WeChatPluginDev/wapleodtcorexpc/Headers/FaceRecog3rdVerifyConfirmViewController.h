@@ -6,7 +6,7 @@
 @class CAGradientLayer, FaceRecog3rdVerifyConfirmLogic, FaceRecogResultView, MMUILabel, MMWebImageView, NSString, UIButton, UIScrollView, UIView, WCAgreementCheckBox;
 @protocol FaceRecog3rdVerifyConfirmViewControllerDelegate;
 
-@interface FaceRecog3rdVerifyConfirmViewController
+@interface FaceRecog3rdVerifyConfirmViewController : NSObject
 {
     _Bool _agreementSelected;
     _Bool _overseaAgreementSelected;

@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCBizInfoGroup, WCPayCreditPayQuestionNode, WCPayQuestionSelectItem;
 @protocol WCPayCreditPayAnswerQuestionViewControllerDelegate;
 
-@interface WCPayCreditPayAnswerQuestionViewController
+@interface WCPayCreditPayAnswerQuestionViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBaseKeyboardToolBar *m_keyboardBar;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, WCAdCombineFollowInfo, WCAdHalfScreenCombineFollowView, WCAdvertiseInfo, WCDataItem;
 
-@interface WCAdCombineFollowLogic
+@interface WCAdCombineFollowLogic : NSObject
 {
     _Bool _isWorking;
     int _source;

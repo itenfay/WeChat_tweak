@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class ForwardMessageLogicController, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveVerticalTextButtonView, MMLiveVerticalTextButtonViewConfig, MMScrollActionSheet, NSString, UIColor, UIView;
 @protocol MMFinderLiveQrCodeReporter, MMFinderLiveQrCodeViewBase;
 
-@interface MMFinderLiveQrCodeViewController
+@interface MMFinderLiveQrCodeViewController : NSObject
 {
     CDUnknownBlockType _dismissBlock;
     CDUnknownBlockType _portraitEnsuranceDelegationBlock;

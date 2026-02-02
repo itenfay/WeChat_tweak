@@ -6,7 +6,7 @@
 @class CADisplayLink, NSDictionary, NSMutableDictionary, NSObject, NSString, WCFPSMonitorConfig, WCFPSRecorder;
 @protocol OS_dispatch_queue, WCFPSMonitorPluginDelegate, WCReportStrategyDelegate;
 
-@interface WCFPSMonitorPlugin
+@interface WCFPSMonitorPlugin : NSObject
 {
     int m_nextRecordID;
     WCFPSRecorder *m_currRecorder;

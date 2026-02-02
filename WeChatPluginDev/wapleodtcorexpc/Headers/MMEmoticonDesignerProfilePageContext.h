@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreReportInfo, NSString, PersonalDesigner;
 
-@interface MMEmoticonDesignerProfilePageContext
+@interface MMEmoticonDesignerProfilePageContext : NSObject
 {
     _Bool _needLeftNavReturn;
     _Bool _needJmp2SingleEmoji;

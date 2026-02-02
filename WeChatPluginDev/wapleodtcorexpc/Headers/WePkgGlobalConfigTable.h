@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WePkgGlobalConfigTable
+@interface WePkgGlobalConfigTable : NSObject
 {
     unsigned int _lastCheckUpdateTimestamp;
     NSString *_pkgId;

@@ -5,7 +5,7 @@
 
 @protocol TXCVideoRenderReportDelegate;
 
-@interface TXCVideoRenderReport
+@interface TXCVideoRenderReport : NSObject
 {
     _Bool _isRenderedInView;
     id <TXCVideoRenderReportDelegate> _delegate;

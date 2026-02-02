@@ -5,7 +5,7 @@
 
 @class GameCenterJsEventInfo, MMScrollActionSheet, NSMutableDictionary, NSString;
 
-@interface MMWebViewPlugin_GameShare
+@interface MMWebViewPlugin_GameShare : NSObject
 {
     _Bool _needUploadFirst;
     GameCenterJsEventInfo *_currentEventInfo;

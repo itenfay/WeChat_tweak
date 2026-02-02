@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject, NSString, TXCDispatchQueue, TXCGSensor, TXCMTKView, TXCMetalContext, TXCMetalDisplayConfig, TXCMetalRenderTargetView, TXCMetalRenderer, TXCRenderFrameCoords, TXCVideoRenderConfig, UIView;
 @protocol MTLTexture, OS_dispatch_semaphore, TXILocalVideoRendererDelegate;
 
-@interface TXCMetalVideoRenderer
+@interface TXCMetalVideoRenderer : NSObject
 {
     id <MTLTexture> _rgbTexture;
     atomic_d5d55d14 _mainThreadTaskCount;

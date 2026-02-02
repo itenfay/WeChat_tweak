@@ -5,7 +5,7 @@
 
 @class GameCenterMessageRedPointInfo, GameLifeChatEmptyView, GameLifeConversationCellDataSource, GameLifeLoadingView, MMLoadMoreTableView, NSString;
 
-@interface GameLifeChatViewController
+@interface GameLifeChatViewController : NSObject
 {
     GameLifeLoadingView *_loadingView;
     GameLifeLoadingView *_loadingMoreView;

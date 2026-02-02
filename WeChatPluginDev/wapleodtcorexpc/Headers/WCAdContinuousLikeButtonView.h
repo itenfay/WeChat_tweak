@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, WCAdContinuousLikeButtonInfo, WCAdSocialLikeLogic, WCAdURLImageView, WCDataItem;
 
-@interface WCAdContinuousLikeButtonView
+@interface WCAdContinuousLikeButtonView : NSObject
 {
     _Bool _forTransformAnimation;
     WCAdContinuousLikeButtonInfo *_buttonInfo;

@@ -6,7 +6,7 @@
 @class MMFinderLiveActivityView, MMFinderLiveLimitModeLiveInfoEnsurer, MMLiveCDNPlayerView, NSDate, NSString, RichTextView, UIImageView, UILabel, UIView, WCDataItem, WCFinderLiveNowView, WCFinderLiveShareCardExposeReportAdapter, WCFinderLiveShareCellFullStatusView;
 @protocol WCFinderShareLiveViewDelegate;
 
-@interface WCFinderShareLiveView
+@interface WCFinderShareLiveView : NSObject
 {
     _Bool _canShowLiveActivityView;
     _Bool _isAutoPlayingPeriod;

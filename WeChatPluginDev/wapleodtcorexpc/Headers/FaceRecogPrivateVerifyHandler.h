@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FaceRecog3rdVerifyConfirmLogic, FaceRecog3rdVerifyConfirmViewController, FaceRecog3rdVerifyHandler, MMUIViewController, NSString;
 @protocol FaceRecogPrivateVerifyHandlerDelegate;
 
-@interface FaceRecogPrivateVerifyHandler
+@interface FaceRecogPrivateVerifyHandler : NSObject
 {
     _Bool _needConfirmView;
     _Bool _needVideo;

@@ -5,7 +5,7 @@
 
 @class UITextView;
 
-@interface MJMovieTextButton
+@interface MJMovieTextButton : NSObject
 {
     unsigned long long _style;
     UITextView *_textView;

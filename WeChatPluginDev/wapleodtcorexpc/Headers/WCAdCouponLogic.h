@@ -6,7 +6,7 @@
 @class NSString, WCAdConfirmHalfScreenBaseView, WCAdCouponInfo, WCAdvertiseInfo, WCCanvasDynamicDataLoader;
 @protocol WCAdCouponLogicDelegate;
 
-@interface WCAdCouponLogic
+@interface WCAdCouponLogic : NSObject
 {
     id <WCAdCouponLogicDelegate> _delegate;
     WCAdCouponInfo *_adCouponInfo;

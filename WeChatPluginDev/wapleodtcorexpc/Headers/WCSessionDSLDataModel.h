@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionDSLDataModel
+@interface WCSessionDSLDataModel : NSObject
 {
     unsigned int _chainIndex;
     NSString *_fieldName;

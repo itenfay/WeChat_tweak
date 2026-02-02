@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiTalkFileBrowser
+@interface MultiTalkFileBrowser : NSObject
 {
     NSString *_chatName;
 }

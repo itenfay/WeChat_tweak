@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableSet, NSString, WAWorkerRuntime;
 
-@interface WeAppWorkerManager
+@interface WeAppWorkerManager : NSObject
 {
     NSMutableDictionary *_noRetainingDelegate;
     NSMutableSet *_waitingDelegate;

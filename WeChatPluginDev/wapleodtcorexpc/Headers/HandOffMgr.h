@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class HandOffMsgFileUploadMgr, HandOffRecordFileUploadMgr, MMHandOffItem, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary;
 
-@interface HandOffMgr
+@interface HandOffMgr : NSObject
 {
     _Bool _isBackDeviceLogin;
     _Bool _manuallyForceSendAllList;

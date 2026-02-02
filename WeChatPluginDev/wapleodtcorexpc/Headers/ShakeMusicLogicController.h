@@ -6,7 +6,7 @@
 @class NSString;
 @protocol ShakeLogicProxyDelegate;
 
-@interface ShakeMusicLogicController
+@interface ShakeMusicLogicController : NSObject
 {
     id <ShakeLogicProxyDelegate> m_delegate;
     unsigned int m_sessionId;

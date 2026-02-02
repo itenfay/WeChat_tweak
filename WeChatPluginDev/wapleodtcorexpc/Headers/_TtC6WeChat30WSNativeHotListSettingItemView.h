@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat30WSNativeHotListSettingItemView
+@interface _TtC6WeChat30WSNativeHotListSettingItemView : NSObject
 {
     MISSING_TYPE *item;
     MISSING_TYPE *isLastSubItem;

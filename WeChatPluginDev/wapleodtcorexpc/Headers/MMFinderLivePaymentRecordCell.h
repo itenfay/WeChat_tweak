@@ -6,7 +6,7 @@
 @class MMCPLabel, MMFinderLivePaymentInfo, UIImageView;
 @protocol MMFinderLivePaymentRecordCellDelegate;
 
-@interface MMFinderLivePaymentRecordCell
+@interface MMFinderLivePaymentRecordCell : NSObject
 {
     _Bool _forceDarkMode;
     id <MMFinderLivePaymentRecordCellDelegate> _cellDelegate;

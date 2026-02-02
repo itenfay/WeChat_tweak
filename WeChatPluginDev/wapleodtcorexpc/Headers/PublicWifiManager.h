@@ -5,7 +5,7 @@
 
 @class APAccess, APAuth, APCheck, APCheckPwd, APPortal, CContact, MMUIViewController, MMWebViewController, NSArray, NSMutableDictionary, NSString, PublicWifiCache;
 
-@interface PublicWifiManager
+@interface PublicWifiManager : NSObject
 {
     _Bool _isOnWifi;
     _Bool _isWifiChanged;

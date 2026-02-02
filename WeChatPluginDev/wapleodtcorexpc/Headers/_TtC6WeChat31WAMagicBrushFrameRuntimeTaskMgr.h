@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31WAMagicBrushFrameRuntimeTaskMgr
+@interface _TtC6WeChat31WAMagicBrushFrameRuntimeTaskMgr : NSObject
 {
     MISSING_TYPE *dicRuntime;
 }

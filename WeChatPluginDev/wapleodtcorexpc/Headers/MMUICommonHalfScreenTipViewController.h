@@ -6,7 +6,7 @@
 @class MMCommonHalfScreenTipViewConfigParam, MMUIButton, MMUILabel, MMUIView, UIButton;
 @protocol MMUICommonHalfScreenTipViewControllerDelegate;
 
-@interface MMUICommonHalfScreenTipViewController
+@interface MMUICommonHalfScreenTipViewController : NSObject
 {
     MMUIButton *m_backgroundButton;
     MMUIView *m_contentView;

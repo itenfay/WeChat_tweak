@@ -6,7 +6,7 @@
 @class MMBGMCategoryViewModel, MMBGMPanelPublishContext, MMBGMSelectedConfig, NSString, UICollectionViewDiffableDataSource, WCFinderAnimationLoadingView;
 @protocol MMBGMCategoryViewDelegate;
 
-@interface MMBGMCategoryView
+@interface MMBGMCategoryView : NSObject
 {
     id <MMBGMCategoryViewDelegate> _delegate;
     MMBGMCategoryViewModel *_viewModel;

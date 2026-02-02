@@ -5,7 +5,7 @@
 
 @class MMMusicBlurCardView, MMMusicMVModel, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImage;
 
-@interface MMMusicPublishViewController
+@interface MMMusicPublishViewController : NSObject
 {
     MMWebImageView *m_headImageView;
     MMUILabel *m_nickLabel;

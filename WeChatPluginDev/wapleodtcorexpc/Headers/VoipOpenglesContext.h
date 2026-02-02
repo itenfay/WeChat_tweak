@@ -6,7 +6,7 @@
 @class CAEAGLLayer, EAGLContext, glVideoSharpen;
 @protocol VoipOpenglesContextDelegate;
 
-@interface VoipOpenglesContext
+@interface VoipOpenglesContext : NSObject
 {
     char *m_pData[3];
     int srcWidth;

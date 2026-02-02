@@ -5,7 +5,7 @@
 
 @class GetQRCodeInfoLogic, MMUIImageView, MMWebImageView, NSString, UILabel, UIView;
 
-@interface WCActionSheetWithScanWXCode
+@interface WCActionSheetWithScanWXCode : NSObject
 {
     NSString *_appId;
     NSString *_codeNickname;

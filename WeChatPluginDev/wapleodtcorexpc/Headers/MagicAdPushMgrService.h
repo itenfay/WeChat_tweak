@@ -5,7 +5,7 @@
 
 @class AdPushMsgDBMgr, NSString;
 
-@interface MagicAdPushMgrService
+@interface MagicAdPushMgrService : NSObject
 {
     AdPushMsgDBMgr *_dbMgr;
 }

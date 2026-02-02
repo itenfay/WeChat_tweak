@@ -5,7 +5,7 @@
 
 @class DelaySwitchSettingLogic, MMTableViewInfo, NSString, WCOpLog;
 
-@interface SettingPrivateSecondConfigViewController
+@interface SettingPrivateSecondConfigViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WCOpLog *m_wcOpLog;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WAPreGetLaunchLogic, WAPrefetchGetCodeLogic, WAPrefetchInvalidateResourceLogic, WAPrefetchRegisterationMark;
 
-@interface WAPrefetchMgr
+@interface WAPrefetchMgr : NSObject
 {
     NSMutableDictionary *_queue;
     WAPrefetchGetCodeLogic *_getCodeLogic;

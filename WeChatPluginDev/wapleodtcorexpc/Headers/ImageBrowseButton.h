@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface ImageBrowseButton
+@interface ImageBrowseButton : NSObject
 {
     UIView *_roundBackView;
     UIView *_coverBackView;

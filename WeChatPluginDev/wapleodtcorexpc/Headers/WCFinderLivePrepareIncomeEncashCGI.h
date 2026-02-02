@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLivePrepareIncomeEncashCGI
+@interface WCFinderLivePrepareIncomeEncashCGI : NSObject
 {
     CDUnknownBlockType _completionBlock;
     CDUnknownBlockType _failedBlock;

@@ -6,7 +6,7 @@
 @class NSString, UICollectionView, WCFinderRedPacketCropFrameView, WCFinderRedPacketCropSliderModel;
 @protocol WCFinderRedPacketCropSliderViewDelegate;
 
-@interface WCFinderRedPacketCropSliderView
+@interface WCFinderRedPacketCropSliderView : NSObject
 {
     id <WCFinderRedPacketCropSliderViewDelegate> _delegate;
     WCFinderRedPacketCropSliderModel *_sliderModel;

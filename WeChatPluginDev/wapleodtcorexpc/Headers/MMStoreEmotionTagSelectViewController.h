@@ -6,7 +6,7 @@
 @class FavTagListView, MMUIScrollView, NSArray, NSDictionary, NSString, UIView, UIViewController;
 @protocol MMStoreEmotionTagSelectDelegate;
 
-@interface MMStoreEmotionTagSelectViewController
+@interface MMStoreEmotionTagSelectViewController : NSObject
 {
     UIViewController *m_blurViewController;
     UIView *m_backgroundView;

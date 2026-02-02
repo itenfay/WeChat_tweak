@@ -5,7 +5,7 @@
 
 @protocol WCPayF2FAnnouncementCgiDelegate;
 
-@interface WCPayF2FAnnouncementCgi
+@interface WCPayF2FAnnouncementCgi : NSObject
 {
     id <WCPayF2FAnnouncementCgiDelegate> _m_delegate;
 }

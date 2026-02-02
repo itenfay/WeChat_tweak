@@ -5,7 +5,7 @@
 
 @class CMessageWrap;
 
-@interface MMEmotionMsgBrowseViewController
+@interface MMEmotionMsgBrowseViewController : NSObject
 {
     CMessageWrap *_wrapMsg;
 }

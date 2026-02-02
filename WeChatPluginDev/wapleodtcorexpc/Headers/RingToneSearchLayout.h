@@ -5,7 +5,7 @@
 
 @class RingToneVideoSearchViewController;
 
-@interface RingToneSearchLayout
+@interface RingToneSearchLayout : NSObject
 {
     RingToneVideoSearchViewController *_currentVC;
     unsigned long long _autoPlaySection;

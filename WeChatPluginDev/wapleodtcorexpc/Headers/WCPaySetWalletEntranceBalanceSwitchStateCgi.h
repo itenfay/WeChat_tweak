@@ -5,7 +5,7 @@
 
 @protocol WCPaySetWalletEntranceBalanceSwitchStateCgiDelegate;
 
-@interface WCPaySetWalletEntranceBalanceSwitchStateCgi
+@interface WCPaySetWalletEntranceBalanceSwitchStateCgi : NSObject
 {
     id <WCPaySetWalletEntranceBalanceSwitchStateCgiDelegate> _m_delegate;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMTemplateMsgAccountItem
+@interface MMTemplateMsgAccountItem : NSObject
 {
     NSString *_userName;
     NSString *_nickName;

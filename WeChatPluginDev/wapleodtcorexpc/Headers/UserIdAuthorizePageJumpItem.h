@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UserIdAuthorizePageJumpItem
+@interface UserIdAuthorizePageJumpItem : NSObject
 {
     NSString *_name;
     NSString *_url;

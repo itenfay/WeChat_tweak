@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GameCenterBaseMsg, GameCenterTabSettingControl_TabConfiguration, GameCenterTabSettingControl_TabSetting, GameLifeTabBarConfig, GameLifeTabBarLogicController, JumpInfo, MMTabBar, MMUIViewController, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PAGView, UIImageView, UIView;
 @protocol UIViewControllerAnimatedTransitioning;
 
-@interface GameLifeTabBarViewController
+@interface GameLifeTabBarViewController : NSObject
 {
     MMUIViewController *_currentVc;
     _Bool _useBlackNav;

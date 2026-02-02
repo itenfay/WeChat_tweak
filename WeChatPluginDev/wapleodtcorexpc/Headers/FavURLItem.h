@@ -5,7 +5,7 @@
 
 @class FavAppMsgShareItem, NSArray, NSString;
 
-@interface FavURLItem
+@interface FavURLItem : NSObject
 {
     unsigned int _forwardFlag;
     NSString *_pageTitle;

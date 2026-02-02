@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface ChatRoomToolMessageEventInfo
+@interface ChatRoomToolMessageEventInfo : NSObject
 {
     unsigned int _eventTime;
     unsigned int _createTime;

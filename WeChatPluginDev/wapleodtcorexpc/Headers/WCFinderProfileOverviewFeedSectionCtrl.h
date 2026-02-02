@@ -5,7 +5,7 @@
 
 @class NSMutableSet;
 
-@interface WCFinderProfileOverviewFeedSectionCtrl
+@interface WCFinderProfileOverviewFeedSectionCtrl : NSObject
 {
     NSMutableSet *_deleteFeedIds;
 }

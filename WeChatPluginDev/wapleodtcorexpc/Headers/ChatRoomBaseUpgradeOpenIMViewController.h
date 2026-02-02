@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, RichTextView, UIButton;
 
-@interface ChatRoomBaseUpgradeOpenIMViewController
+@interface ChatRoomBaseUpgradeOpenIMViewController : NSObject
 {
     MMUILabel *m_topTitleLabel;
     RichTextView *m_titleTextView;

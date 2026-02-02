@@ -6,7 +6,7 @@
 @class MMUILabel, MMUIView, NSString, QBarCodeView, UIView;
 @protocol WCPayOfflinePayCodeViewDelegate;
 
-@interface WCPayOfflinePayCodeView
+@interface WCPayOfflinePayCodeView : NSObject
 {
     double _secondsToRefresh;
     _Bool _inAnimation;

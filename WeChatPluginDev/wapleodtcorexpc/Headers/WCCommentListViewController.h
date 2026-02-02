@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIView, WCCommentEmotionFloatView, WCCommentListTipsView, WCImageView, WCMomentsPageContext, WCSNSMessage, WCStatTimerHelper, WCTimeLineFooterView;
 
-@interface WCCommentListViewController
+@interface WCCommentListViewController : NSObject
 {
     MMTableView *_tableView;
     WCTimeLineFooterView *_footerView;

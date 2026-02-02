@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMFavBigImageFieldComponentData
+@interface MMFavBigImageFieldComponentData : NSObject
 {
     NSArray *_imgComDataArr;
     unsigned long long _cellStyle;

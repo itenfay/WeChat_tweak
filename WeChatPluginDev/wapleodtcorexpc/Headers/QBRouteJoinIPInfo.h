@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QBRouteJoinIPInfo
+@interface QBRouteJoinIPInfo : NSObject
 {
     int jcev2_p_2_o_iTotalPollNum;
     int jcev2_p_3_o_iLifePeriod;

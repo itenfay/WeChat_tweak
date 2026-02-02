@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WNContentStorage
+@interface WNContentStorage : NSObject
 {
     _Bool _isSmallImageMode;
     _Bool _enableNewOrderList;

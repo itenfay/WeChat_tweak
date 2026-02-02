@@ -5,7 +5,7 @@
 
 @class BTRecommendAccountData, NSString;
 
-@interface BTMissedSubsHeaderViewModel
+@interface BTMissedSubsHeaderViewModel : NSObject
 {
     BTRecommendAccountData *_accountData;
 }

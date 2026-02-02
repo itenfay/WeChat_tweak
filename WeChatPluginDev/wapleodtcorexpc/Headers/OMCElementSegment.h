@@ -5,7 +5,7 @@
 
 @class NSString, OMCContentDescSegment, OMJID;
 
-@interface OMCElementSegment
+@interface OMCElementSegment : NSObject
 {
     struct XTMTime _minElementSegmentPreservedDuration;
     struct XTMTime _imageOriginDuration;

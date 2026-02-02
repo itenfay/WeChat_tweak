@@ -5,7 +5,7 @@
 
 @class NSString, UIProgressView;
 
-@interface MMSMClearDataViewController
+@interface MMSMClearDataViewController : NSObject
 {
     int m_percent;
     UIProgressView *m_progressView;

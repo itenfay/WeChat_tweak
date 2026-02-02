@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetLotteryRecordCGI
+@interface WCFinderLiveGetLotteryRecordCGI : NSObject
 {
     _Bool _isAudience;
     long long _opType;

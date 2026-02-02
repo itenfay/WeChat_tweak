@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCLabsCommonInfo
+@interface WCLabsCommonInfo : NSObject
 {
     _Bool _hasShowNewRedDotInLabEntrance;
     _Bool _shouldShowGerneralRedDotInLabEntrance;

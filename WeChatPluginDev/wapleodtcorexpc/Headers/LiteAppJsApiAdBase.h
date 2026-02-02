@@ -5,7 +5,7 @@
 
 @class MMLoadingView, NSString, WCAdDynamicCanvasPageInfo, WCCanvasDynamicDataLoader;
 
-@interface LiteAppJsApiAdBase
+@interface LiteAppJsApiAdBase : NSObject
 {
     WCCanvasDynamicDataLoader *_dataLoader;
     MMLoadingView *_loadingView;

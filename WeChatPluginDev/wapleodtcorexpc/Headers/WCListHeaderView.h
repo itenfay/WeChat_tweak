@@ -6,7 +6,7 @@
 @class CContact, MMCPLabel, MMHeadImageView, MMUIViewController, NSString, TLProfileNicknameContainerView, UIImageView, UILabel, UITableView;
 @protocol WCListHeaderViewDelegate;
 
-@interface WCListHeaderView
+@interface WCListHeaderView : NSObject
 {
     CContact *m_contact;
     _Bool m_isMyWC;

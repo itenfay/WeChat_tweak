@@ -5,7 +5,7 @@
 
 @class FinderLiveRealnameLikeClientBubble, MMFinderLiveRealNameFriendLikeBubble, MMFinderLiveRealNameFriendLikeBubbleView, MMFinderLiveRealNameFriendLikeMenuInfo, MMFinderLiveRealNameFriendLikeNotificationMsg, NSString;
 
-@interface MMFinderLiveRealNameFriendLikeLogicPlugin
+@interface MMFinderLiveRealNameFriendLikeLogicPlugin : NSObject
 {
     _Bool _isLiked;
     _Bool _hasBubbleShowed;

@@ -6,7 +6,7 @@
 @class FinderEventInfo, MMUIButton, MMUILabel, NSString, RichTextView, UILabel, UIScrollView, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 @protocol WCFinderEventDescriptionViewControllerDelegate;
 
-@interface WCFinderEventDescriptionViewController
+@interface WCFinderEventDescriptionViewController : NSObject
 {
     id <WCFinderEventDescriptionViewControllerDelegate> _descriptionDelegate;
     MMUIButton *_exitBtn;

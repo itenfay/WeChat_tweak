@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCFinderLiveRosterSelectCell
+@interface WCFinderLiveRosterSelectCell : NSObject
 {
     UILabel *_groupName;
     UIView *_separator;

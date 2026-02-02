@@ -5,7 +5,7 @@
 
 @protocol WCMktMemberCardHistoryPageCgiDelegate;
 
-@interface WCMktMemberCardHistoryPageCgi
+@interface WCMktMemberCardHistoryPageCgi : NSObject
 {
     id <WCMktMemberCardHistoryPageCgiDelegate> _cgiDelegate;
 }

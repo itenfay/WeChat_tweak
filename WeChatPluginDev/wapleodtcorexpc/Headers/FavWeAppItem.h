@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavWeAppItem
+@interface FavWeAppItem : NSObject
 {
     unsigned int _type;
     unsigned int _pkgType;

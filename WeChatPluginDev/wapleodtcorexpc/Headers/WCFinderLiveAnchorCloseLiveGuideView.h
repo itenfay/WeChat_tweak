@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveSyncAnchorCloseLiveGuideInfoResp, MMUIButton, NSString, RichTextView, UIView;
 
-@interface WCFinderLiveAnchorCloseLiveGuideView
+@interface WCFinderLiveAnchorCloseLiveGuideView : NSObject
 {
     CDUnknownBlockType _closeLiveGuideBlock;
     CDUnknownBlockType _learnMoreBlock;

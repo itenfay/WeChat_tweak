@@ -5,7 +5,7 @@
 
 @class MMFinderLiveRedPacketMessage, MemoryMappedKV, NSMutableDictionary, NSString;
 
-@interface MMFinderLiveRedPacketCache
+@interface MMFinderLiveRedPacketCache : NSObject
 {
     MMFinderLiveRedPacketMessage *_taggedRedPacketMessage;
     NSMutableDictionary *_redPacketDictionary;

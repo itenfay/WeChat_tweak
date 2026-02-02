@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTSettingDescSelectView;
 
-@interface WCTSettingDescSelectTVCell
+@interface WCTSettingDescSelectTVCell : NSObject
 {
     WCTSettingDescSelectView *_view;
 }

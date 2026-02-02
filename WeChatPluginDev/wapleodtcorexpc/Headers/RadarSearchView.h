@@ -6,7 +6,7 @@
 @class AVAudioPlayer, NSMutableArray, NSString, RSVerifyView, SonicView, UIButton, UIImageView, UIView, WCUIAlertView;
 @protocol RadarSearchViewDelegate;
 
-@interface RadarSearchView
+@interface RadarSearchView : NSObject
 {
     UIView *_backgroundView;
     UIView *_tipsView;

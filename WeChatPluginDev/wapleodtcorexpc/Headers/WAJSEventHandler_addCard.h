@@ -5,7 +5,7 @@
 
 @class WCCardAddHelper;
 
-@interface WAJSEventHandler_addCard
+@interface WAJSEventHandler_addCard : NSObject
 {
     WCCardAddHelper *_addHelper;
 }

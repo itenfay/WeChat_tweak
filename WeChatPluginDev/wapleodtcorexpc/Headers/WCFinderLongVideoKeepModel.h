@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderContact, WCFinderDataItem, WCFinderMediaInfo, WCFinderMegaVideo;
 
-@interface WCFinderLongVideoKeepModel
+@interface WCFinderLongVideoKeepModel : NSObject
 {
     WCFinderMegaVideo *_megaVideo;
     WCFinderContact *_contact;

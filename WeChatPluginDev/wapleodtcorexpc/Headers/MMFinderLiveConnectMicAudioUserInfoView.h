@@ -5,7 +5,7 @@
 
 @class PAGView;
 
-@interface MMFinderLiveConnectMicAudioUserInfoView
+@interface MMFinderLiveConnectMicAudioUserInfoView : NSObject
 {
     PAGView *_volumeAnimationView;
 }

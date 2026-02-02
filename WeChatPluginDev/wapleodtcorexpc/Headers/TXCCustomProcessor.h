@@ -5,7 +5,7 @@
 
 @class TXCCustomConvertFilter;
 
-@interface TXCCustomProcessor
+@interface TXCCustomProcessor : NSObject
 {
     TXCCustomConvertFilter *_convertFilter;
 }

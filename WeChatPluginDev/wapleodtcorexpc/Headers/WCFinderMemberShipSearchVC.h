@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UILabel, UITableView, UIView, WCFinderAnimationLoadingView, WCFinderFeedContentTextViewConfig, WCFinderMemberShipSearchViewModel;
 
-@interface WCFinderMemberShipSearchVC
+@interface WCFinderMemberShipSearchVC : NSObject
 {
     CDUnknownBlockType _closeCallback;
     WCFinderMemberShipSearchViewModel *_viewModel;

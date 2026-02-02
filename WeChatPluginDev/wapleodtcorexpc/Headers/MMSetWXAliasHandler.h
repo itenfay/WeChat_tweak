@@ -5,7 +5,7 @@
 
 @class NSString, WCAccountBindPhoneControlLogic;
 
-@interface MMSetWXAliasHandler
+@interface MMSetWXAliasHandler : NSObject
 {
     WCAccountBindPhoneControlLogic *_logic;
 }

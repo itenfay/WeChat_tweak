@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface UserIdAuthorizeSmsPageInfo
+@interface UserIdAuthorizeSmsPageInfo : NSObject
 {
     NSString *_title;
     NSString *_desc;

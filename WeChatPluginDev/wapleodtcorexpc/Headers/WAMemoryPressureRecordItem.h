@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAMemoryPressureRecordItem
+@interface WAMemoryPressureRecordItem : NSObject
 {
     unsigned long long _level;
     unsigned long long _timeStamp;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface DeviceModelConfigMgr
+@interface DeviceModelConfigMgr : NSObject
 {
     int _m_oldVersion;
     NSDictionary *m_dicFromModelJson;

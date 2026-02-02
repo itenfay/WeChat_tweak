@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIView;
 @protocol MMAssetPickerBrowserViewProtocol;
 
-@interface MMScreenSharingAssetBrowserController
+@interface MMScreenSharingAssetBrowserController : NSObject
 {
     NSArray *_assetInfos;
     double _contentRatioY;

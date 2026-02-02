@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIImageView;
 
-@interface WALoadErrorViewController
+@interface WALoadErrorViewController : NSObject
 {
     UIImageView *_errorLogo;
     MMUILabel *_titleLabel;

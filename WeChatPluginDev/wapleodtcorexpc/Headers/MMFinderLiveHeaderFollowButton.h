@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMFinderLiveHeaderFollowButton
+@interface MMFinderLiveHeaderFollowButton : NSObject
 {
     UIImageView *_icon;
 }

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero10NumberNode
+@interface _TtC4Hero10NumberNode : NSObject
 {
     MISSING_TYPE *value;
 }

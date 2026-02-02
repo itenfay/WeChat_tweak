@@ -5,7 +5,7 @@
 
 @class AppHardWareRankMessageLogicController, AppHardWareRankMessageViewModel, UIButton, UIImageView, UILabel;
 
-@interface AppHardWareRankMessageCellView
+@interface AppHardWareRankMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
     UILabel *m_scoreDisplay;

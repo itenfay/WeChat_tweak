@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString, WCFinderPriorityQueue, WCFinderPriorityTask;
 
-@interface WCFinderIdleMonitor
+@interface WCFinderIdleMonitor : NSObject
 {
     WCFinderPriorityQueue *_priorityQueue;
     WCFinderPriorityTask *_currentTask;

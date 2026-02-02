@@ -5,7 +5,7 @@
 
 @class NSString, WCAdvertiseInfo, WCCanvasDynamicDataLoader;
 
-@interface WebviewJSEventHandler_openADCanvas
+@interface WebviewJSEventHandler_openADCanvas : NSObject
 {
     WCCanvasDynamicDataLoader *_dataLoader;
     WCAdvertiseInfo *_adInfo;

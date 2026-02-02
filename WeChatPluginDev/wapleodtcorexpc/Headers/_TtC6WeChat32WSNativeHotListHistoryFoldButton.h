@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32WSNativeHotListHistoryFoldButton
+@interface _TtC6WeChat32WSNativeHotListHistoryFoldButton : NSObject
 {
     MISSING_TYPE *isArrowUp;
     MISSING_TYPE *$__lazy_storage_$_customTitleLabel;

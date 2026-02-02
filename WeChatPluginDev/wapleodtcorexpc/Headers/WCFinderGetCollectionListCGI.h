@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetCollectionListCGI
+@interface WCFinderGetCollectionListCGI : NSObject
 {
     unsigned int _scene;
     unsigned int _businessType;

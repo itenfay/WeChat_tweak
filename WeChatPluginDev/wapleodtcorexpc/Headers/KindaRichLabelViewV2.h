@@ -6,7 +6,7 @@
 @class KindaUILabel, MMDynamicColor, MMVoidCallback, NSMutableArray, NSMutableAttributedString, NSString, RichTextView;
 @protocol MMKText;
 
-@interface KindaRichLabelViewV2
+@interface KindaRichLabelViewV2 : NSObject
 {
     int _m_lines;
     float _m_textSize;

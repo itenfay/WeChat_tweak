@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UIButton, UILabel;
 
-@interface WAAuthPageSheetHeaderView
+@interface WAAuthPageSheetHeaderView : NSObject
 {
     MMWebImageView *_iconView;
     UILabel *_nameLabel;

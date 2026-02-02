@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSString;
 
-@interface MMFlutterEngineCache
+@interface MMFlutterEngineCache : NSObject
 {
     NSMapTable *_cachedEngines;
 }

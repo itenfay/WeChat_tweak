@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface LiveLuckyBagTextMessageCellView
+@interface LiveLuckyBagTextMessageCellView : NSObject
 {
     UIButton *m_sourceButton;
 }

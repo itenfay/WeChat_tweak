@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingRedDotServiceCpp
+@interface TingRedDotServiceCpp : NSObject
 {
 }
 

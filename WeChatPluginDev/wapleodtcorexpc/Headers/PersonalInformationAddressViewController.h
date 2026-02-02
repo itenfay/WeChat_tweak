@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSArray, NSString, UIView;
 
-@interface PersonalInformationAddressViewController
+@interface PersonalInformationAddressViewController : NSObject
 {
     _Bool _loadingData;
     NSArray *_arrAddress;

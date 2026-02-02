@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UITextField;
 
-@interface WXGRoamPackageNameChangeHalfView
+@interface WXGRoamPackageNameChangeHalfView : NSObject
 {
     UITextField *_textField;
     UIButton *_completeBtn;

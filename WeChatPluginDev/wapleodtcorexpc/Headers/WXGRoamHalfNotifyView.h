@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UILabel;
 
-@interface WXGRoamHalfNotifyView
+@interface WXGRoamHalfNotifyView : NSObject
 {
     CDUnknownBlockType _buttonBlock;
     unsigned long long _curPackageId;

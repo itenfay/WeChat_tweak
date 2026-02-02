@@ -6,7 +6,7 @@
 @class NSString, UIImageView, UITapGestureRecognizer, UIView, WCFinderFeedImageCDNView;
 @protocol WCFinderLandScapePlayCompleteCoverInfoViewDelegate;
 
-@interface WCFinderLandScapePlayCompleteCoverInfoView
+@interface WCFinderLandScapePlayCompleteCoverInfoView : NSObject
 {
     id <WCFinderLandScapePlayCompleteCoverInfoViewDelegate> _delegate;
     WCFinderFeedImageCDNView *_coverView;

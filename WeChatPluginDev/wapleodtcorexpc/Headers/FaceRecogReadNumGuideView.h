@@ -6,7 +6,7 @@
 @class FaceRecogGuideInfo, MMUILabel, NSString, UIButton, UIImageView, UIScrollView, UIView;
 @protocol FaceRecogGuideViewDelegate;
 
-@interface FaceRecogReadNumGuideView
+@interface FaceRecogReadNumGuideView : NSObject
 {
     UIScrollView *_pageScrollView;
     MMUILabel *_guideTitleLabel;

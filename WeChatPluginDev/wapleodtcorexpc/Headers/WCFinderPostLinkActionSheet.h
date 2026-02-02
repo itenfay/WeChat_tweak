@@ -6,7 +6,7 @@
 @class UIView;
 @protocol WCFinderPostLinkActionSheetDelegate;
 
-@interface WCFinderPostLinkActionSheet
+@interface WCFinderPostLinkActionSheet : NSObject
 {
     int _commentScene;
     id <WCFinderPostLinkActionSheetDelegate> _m_delegate;

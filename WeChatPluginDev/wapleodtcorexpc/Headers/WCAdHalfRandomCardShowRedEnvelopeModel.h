@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdHalfRandomCardShowRedEnvelopeModel
+@interface WCAdHalfRandomCardShowRedEnvelopeModel : NSObject
 {
     int _cardIdType;
     NSString *_canvasId;

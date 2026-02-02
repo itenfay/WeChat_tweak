@@ -6,7 +6,7 @@
 @class MMUILabel, NSIndexPath, NSString, UIButton, WCBaseKeyboardToolBar, WCPayBindedCardPikerItem, WCPayTenpayPasswordCtrlItem;
 @protocol WCPayOrderDetailViewControllerDelegate;
 
-@interface WCPayOrderDetailViewController
+@interface WCPayOrderDetailViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBaseKeyboardToolBar *m_keyboardBar;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UITableView;
 
-@interface WCFinderAccountSelectedShowInWXViewController
+@interface WCFinderAccountSelectedShowInWXViewController : NSObject
 {
     UITableView *_tableView;
     NSArray *_selfContactArry;

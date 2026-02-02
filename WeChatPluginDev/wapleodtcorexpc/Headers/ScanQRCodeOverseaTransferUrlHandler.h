@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ScanQRCodeOverseaTransferUrlHandler
+@interface ScanQRCodeOverseaTransferUrlHandler : NSObject
 {
 }
 

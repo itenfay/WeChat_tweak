@@ -5,7 +5,7 @@
 
 @class UIButton, VoiceReminderRemindViewModel;
 
-@interface VoiceReminderRemindCellView
+@interface VoiceReminderRemindCellView : NSObject
 {
     UIButton *m_playButton;
     long long m_playCount;

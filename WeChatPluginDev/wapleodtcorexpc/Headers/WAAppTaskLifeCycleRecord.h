@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WAAppTaskLifeCycleRecord
+@interface WAAppTaskLifeCycleRecord : NSObject
 {
     _Bool _bytecodeEnabled;
     _Bool _hasSkylineRuntime;

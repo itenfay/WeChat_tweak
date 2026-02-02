@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel;
 
-@interface IntelligentMsgImgFigureHeaderView
+@interface IntelligentMsgImgFigureHeaderView : NSObject
 {
     MMUILabel *m_titleLabel;
     MMUIImageView *m_figureImageView;

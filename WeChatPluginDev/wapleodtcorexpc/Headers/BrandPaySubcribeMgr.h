@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface BrandPaySubcribeMgr
+@interface BrandPaySubcribeMgr : NSObject
 {
     _Bool _isPaySubscribeOpen;
     MemoryMappedKV *_mappedKV;

@@ -5,7 +5,7 @@
 
 @class WCFinderCustomPanelSheet, WCTableViewManager;
 
-@interface WCFinderPersonalizedSettingViewController
+@interface WCFinderPersonalizedSettingViewController : NSObject
 {
     unsigned long long _options;
     WCTableViewManager *_tableViewManager;

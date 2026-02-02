@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSDictionary, NSString;
 
-@interface WCBusinessJumpViewController
+@interface WCBusinessJumpViewController : NSObject
 {
     NSString *_url;
     NSString *_jumpUrl;

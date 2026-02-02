@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MemoryMappedKV, NSDate, NSDictionary, NSMutableArray, NSObject, NSString, WCSession;
 @protocol OS_dispatch_queue;
 
-@interface WCWatchNativeMgr
+@interface WCWatchNativeMgr : NSObject
 {
     _Bool _isRefreshingSessionKey;
     _Bool _needRefreshSessionKey;

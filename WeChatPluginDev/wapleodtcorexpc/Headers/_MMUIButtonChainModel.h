@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _MMUIButtonChainModel
+@interface _MMUIButtonChainModel : NSObject
 {
 }
 

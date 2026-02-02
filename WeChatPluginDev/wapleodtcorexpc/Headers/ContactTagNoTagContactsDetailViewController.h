@@ -6,7 +6,7 @@
 @class ContactTagNoTagBatchSetTagViewController, ContactTagNoTagSelectContactsViewController, NSMutableString, NSString;
 @protocol ContactTagNoTagContactsDetailViewControllerDelegate;
 
-@interface ContactTagNoTagContactsDetailViewController
+@interface ContactTagNoTagContactsDetailViewController : NSObject
 {
     NSMutableString *m_batchAddLabelFriOpStr;
     ContactTagNoTagSelectContactsViewController *m_noTagContactsSelectContactsVC;

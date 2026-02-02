@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface StoreEmotionDesignerInfoMgr
+@interface StoreEmotionDesignerInfoMgr : NSObject
 {
     NSMutableDictionary *m_getDesignerSimpleInfoCgiDic;
     NSMutableDictionary *_designerIdDecodeDic;

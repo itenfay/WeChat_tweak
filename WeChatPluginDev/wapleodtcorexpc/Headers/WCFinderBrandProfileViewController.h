@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderBrandProfileViewModel, WCFinderFeedListView, WCFinderShareCustomTransition;
 
-@interface WCFinderBrandProfileViewController
+@interface WCFinderBrandProfileViewController : NSObject
 {
     WCFinderBrandProfileViewModel *_viewModel;
     WCFinderFeedListView *_feedListView;

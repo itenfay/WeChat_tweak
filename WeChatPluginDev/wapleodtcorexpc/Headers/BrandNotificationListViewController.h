@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUILabel, NSMutableArray, NSString, UIView, WCTimeLineFooterView;
 
-@interface BrandNotificationListViewController
+@interface BrandNotificationListViewController : NSObject
 {
     UIView *m_topNavView;
     MMTableView *m_tableView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetBulletCommentUserInfoCGI
+@interface WCFinderGetBulletCommentUserInfoCGI : NSObject
 {
     int _commentScene;
     NSString *_objectId;

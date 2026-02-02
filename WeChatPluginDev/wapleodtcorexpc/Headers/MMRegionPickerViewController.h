@@ -6,7 +6,7 @@
 @class LocationRetriever, MMRegionCodeMgr, MMTableView, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIViewController;
 @protocol MMRegionPickerReturnDelegate, MMRegionPickerViewControllerDelegate;
 
-@interface MMRegionPickerViewController
+@interface MMRegionPickerViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableDictionary *m_dataDict;

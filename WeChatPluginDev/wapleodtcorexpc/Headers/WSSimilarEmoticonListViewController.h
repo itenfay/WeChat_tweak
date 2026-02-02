@@ -6,7 +6,7 @@
 @class CEmoticonWrap, CMessageWrap, EmoticonCustomAddLogicController, EmoticonCustomManageAddLogic, FTSWebSearchMgr, MMTableView, NSMutableArray, NSMutableDictionary, NSString, SharePreConfirmSheetView, SharePreConfirmView, WCTimeLineFooterView, WSEmoticonModel, WSSImilarPageModel;
 @protocol WSSimilarEmoticonListViewControllerDelegate;
 
-@interface WSSimilarEmoticonListViewController
+@interface WSSimilarEmoticonListViewController : NSObject
 {
     _Bool _usedForEmoticonBoardView;
     unsigned int _interactionMode;

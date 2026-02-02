@@ -5,7 +5,7 @@
 
 @class NSArray, NSNumber;
 
-@interface LipStickEffectAdapter
+@interface LipStickEffectAdapter : NSObject
 {
     NSNumber *_alpha;
     NSNumber *_faceModel;

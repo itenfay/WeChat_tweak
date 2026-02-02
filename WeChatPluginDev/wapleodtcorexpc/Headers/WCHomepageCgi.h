@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SnsUserPageRequest, SnsUserPageResponse;
 
-@interface WCHomepageCgi
+@interface WCHomepageCgi : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

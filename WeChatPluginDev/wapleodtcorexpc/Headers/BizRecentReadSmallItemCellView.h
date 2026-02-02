@@ -5,7 +5,7 @@
 
 @class BizPersonalCenterRecentReadCover, MMUILabel, MMUIView, UIView;
 
-@interface BizRecentReadSmallItemCellView
+@interface BizRecentReadSmallItemCellView : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_nicknameLabel;

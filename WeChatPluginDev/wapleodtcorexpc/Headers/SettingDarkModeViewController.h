@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo;
 
-@interface SettingDarkModeViewController
+@interface SettingDarkModeViewController : NSObject
 {
     MMTableViewInfo *_tableViewInfo;
 }

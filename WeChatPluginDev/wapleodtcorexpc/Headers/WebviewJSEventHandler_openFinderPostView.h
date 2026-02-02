@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_openFinderPostView
+@interface WebviewJSEventHandler_openFinderPostView : NSObject
 {
     JSEvent *_event;
 }

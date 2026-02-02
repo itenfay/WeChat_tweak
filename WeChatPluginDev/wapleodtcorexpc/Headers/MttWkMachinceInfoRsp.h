@@ -5,7 +5,7 @@
 
 @class MttWkMachinceInfo;
 
-@interface MttWkMachinceInfoRsp
+@interface MttWkMachinceInfoRsp : NSObject
 {
     int jcev2_p_0_o_rspCode;
     MttWkMachinceInfo *jcev2_p_1_o_stWkMachinceInfo;

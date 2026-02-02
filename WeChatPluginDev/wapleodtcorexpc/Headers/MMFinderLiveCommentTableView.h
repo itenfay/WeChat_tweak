@@ -5,7 +5,7 @@
 
 @class NSString, UIPanGestureRecognizer;
 
-@interface MMFinderLiveCommentTableView
+@interface MMFinderLiveCommentTableView : NSObject
 {
     UIPanGestureRecognizer *_specialLiveAnimatorGestureRecognizer;
 }

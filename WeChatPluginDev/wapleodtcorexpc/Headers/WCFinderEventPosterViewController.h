@@ -6,7 +6,7 @@
 @class FinderEventInfo, MMUIButton, MMWebImageView, NSString, UIView, WCFinderEventHeaderView;
 @protocol WCFinderEventPosterViewControllerDelegate;
 
-@interface WCFinderEventPosterViewController
+@interface WCFinderEventPosterViewController : NSObject
 {
     id <WCFinderEventPosterViewControllerDelegate> _delegate;
     unsigned long long _actionType;

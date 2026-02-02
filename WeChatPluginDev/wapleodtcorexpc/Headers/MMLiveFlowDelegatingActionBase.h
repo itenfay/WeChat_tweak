@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
-@interface MMLiveFlowDelegatingActionBase
+@interface MMLiveFlowDelegatingActionBase : NSObject
 {
     NSMutableDictionary *_downstreamActions;
 }

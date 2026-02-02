@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTableViewInfo, WCTableViewSectionManager, WCTimeLineFooterView;
 @protocol BrandTimelineSettingViewControllerDelegate;
 
-@interface BrandTimelineSettingViewController
+@interface BrandTimelineSettingViewController : NSObject
 {
     _Bool _personalRecommendSwitch;
     _Bool _personalRecommendSwitchClickLimit;

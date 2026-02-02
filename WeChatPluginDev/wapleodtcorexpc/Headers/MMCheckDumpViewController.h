@@ -5,7 +5,7 @@
 
 @class MMPickerView, MMProgressView, MMUILabel, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIScrollView, UISwitch, UITextField, UIView;
 
-@interface MMCheckDumpViewController
+@interface MMCheckDumpViewController : NSObject
 {
     UITextField *m_textFiled;
     unsigned long long m_nTimeInterval;

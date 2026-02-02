@@ -5,7 +5,7 @@
 
 @class QGPSetZoomLevelRangeParam;
 
-@interface QGPSetZoomLevelRangeCommand
+@interface QGPSetZoomLevelRangeCommand : NSObject
 {
     QGPSetZoomLevelRangeParam *_params;
 }

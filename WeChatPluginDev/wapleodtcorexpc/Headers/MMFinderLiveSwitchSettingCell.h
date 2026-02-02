@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveShopSettingsSwitchItemView;
 
-@interface MMFinderLiveSwitchSettingCell
+@interface MMFinderLiveSwitchSettingCell : NSObject
 {
     MMFinderLiveShopSettingsSwitchItemView *_contentView;
     CDUnknownBlockType _onSwitchChange;

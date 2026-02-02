@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetFavPOIListCGI
+@interface WCFinderGetFavPOIListCGI : NSObject
 {
     NSString *_username;
     NSData *_lastBuffer;

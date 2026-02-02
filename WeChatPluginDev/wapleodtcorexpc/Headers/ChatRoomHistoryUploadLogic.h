@@ -5,7 +5,7 @@
 
 @class CMessageWrap, CdnUploadTaskInfo, ChatRoomHistoryShareStat, MMTimer, NSArray, NSString, RecordUploadCDNMgr;
 
-@interface ChatRoomHistoryUploadLogic
+@interface ChatRoomHistoryUploadLogic : NSObject
 {
     RecordUploadCDNMgr *_recordUploadCDNMgr;
     CMessageWrap *_uploadingRecordMsg;

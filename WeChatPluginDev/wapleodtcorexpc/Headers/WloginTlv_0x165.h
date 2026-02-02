@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WloginTlv_0x165
+@interface WloginTlv_0x165 : NSObject
 {
     NSMutableDictionary *picWordings;
 }

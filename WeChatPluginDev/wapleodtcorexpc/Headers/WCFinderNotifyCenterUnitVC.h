@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, UITableView, UITableViewDiffableDataSource, UIView, WCFinderDataLoadTips, WCFinderFeedInputView, WCFinderMagicAnimationLogic, WCFinderNotifyCenterCellViewModel, WCFinderNotifyCenterUnitVM, WCFinderRefreshTableFooterView;
 
-@interface WCFinderNotifyCenterUnitVC
+@interface WCFinderNotifyCenterUnitVC : NSObject
 {
     _Bool _shouldRefetchDataAfterPopOrDismiss;
     _Bool _showMentionSwitchEntry;

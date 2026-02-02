@@ -5,7 +5,7 @@
 
 @class NSString, NewABTestXMLParser;
 
-@interface NewABTestLogic
+@interface NewABTestLogic : NSObject
 {
     _Bool _isUpdatingABTestFromSvr;
     unsigned int _uiNextUpdateTime;

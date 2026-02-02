@@ -6,7 +6,7 @@
 @class NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol ScrollItemSelectionDelegate;
 
-@interface DevicePresentCollectionView
+@interface DevicePresentCollectionView : NSObject
 {
     _Bool _changeIconColorOnAppearanceChange;
     id <ScrollItemSelectionDelegate> _selectDelegate;

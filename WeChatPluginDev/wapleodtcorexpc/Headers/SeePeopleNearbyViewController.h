@@ -6,7 +6,7 @@
 @class LBSErrorViewController, MMLocationAccuracyAuthorizationTipView, MMSystemAuthCancellableToken, MMTipsViewController, NSString, PeopleNearByListViewController, SeePeopleNearByLogicController, SettingMyAccountExtInfoViewController, UIView, WCUIAlertView;
 @protocol SeePeopleNearbyViewControllerDelegate;
 
-@interface SeePeopleNearbyViewController
+@interface SeePeopleNearbyViewController : NSObject
 {
     PeopleNearByListViewController *m_peopleListView;
     SeePeopleNearByLogicController *m_logicController;

@@ -5,7 +5,7 @@
 
 @class FinderLiveListenPromoteInfo;
 
-@interface MMFinderLiveLisTenAnchorPromoteInfo
+@interface MMFinderLiveLisTenAnchorPromoteInfo : NSObject
 {
     FinderLiveListenPromoteInfo *_liveListenPromoteInfo;
 }

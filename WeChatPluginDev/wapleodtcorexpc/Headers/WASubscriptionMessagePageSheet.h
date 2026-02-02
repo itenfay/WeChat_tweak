@@ -6,7 +6,7 @@
 @class WASubscriptionMessagePageSheetViewModel, WATemplateAudioPlayer;
 @protocol WASubscriptionMessagePageSheetDelegate;
 
-@interface WASubscriptionMessagePageSheet
+@interface WASubscriptionMessagePageSheet : NSObject
 {
     WASubscriptionMessagePageSheetViewModel *_viewModel;
     WATemplateAudioPlayer *_audioPlayer;

@@ -6,7 +6,7 @@
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface VoIPPhysicalFeedbackService
+@interface VoIPPhysicalFeedbackService : NSObject
 {
     _Bool _isActived;
     _Bool _isVideoMode;

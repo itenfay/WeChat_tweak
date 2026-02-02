@@ -5,7 +5,7 @@
 
 @class MMGroupLiveInfoItem, NSData, NSString, WCFinderLiveShareItem;
 
-@interface MMLiveInfoItem
+@interface MMLiveInfoItem : NSObject
 {
     _Bool useDefaultLiveName;
     unsigned int createTime;

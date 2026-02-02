@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WloginTlv_0x147
+@interface WloginTlv_0x147 : NSObject
 {
     unsigned int dwAppVerID;
     unsigned short wAppVerLen;

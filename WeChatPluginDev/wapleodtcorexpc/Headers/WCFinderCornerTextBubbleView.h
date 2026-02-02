@@ -5,7 +5,7 @@
 
 @class RichTextView;
 
-@interface WCFinderCornerTextBubbleView
+@interface WCFinderCornerTextBubbleView : NSObject
 {
     RichTextView *_richTextView;
 }

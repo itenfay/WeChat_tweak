@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class DotLoadingView, MMAppRefreshTokenAppInfo, MMWebImageView, UIImageView, UILabel;
 
-@interface MMAppRefreshTokenLinkingViewController
+@interface MMAppRefreshTokenLinkingViewController : NSObject
 {
     unsigned int _scene;
     UIImageView *_wxIconImageView;

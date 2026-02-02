@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CContact, CContactVerifyPreCheckBusinessLogic, CMessageWrap, ContactRelatedGroupLogic, MMTableViewInfo, NSDictionary, NSString, SendVerifyMsgLogicController, UIButton, UILabel, UIStackView, WCFinderContactFinderAssist;
 @protocol ContactInfoAssistDelegate, WeixinContactInfoAssistDelegate;
 
-@interface WeixinContactInfoAssist
+@interface WeixinContactInfoAssist : NSObject
 {
     _Bool m_bFirstBecomeFriend;
     MMTableViewInfo *m_tableViewInfo;

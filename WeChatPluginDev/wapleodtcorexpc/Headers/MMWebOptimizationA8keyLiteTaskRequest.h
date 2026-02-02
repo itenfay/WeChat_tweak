@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMWebOptimizationA8keyLiteTaskRequest
+@interface MMWebOptimizationA8keyLiteTaskRequest : NSObject
 {
     NSArray *_arrA8KeyLiteParams;
     NSArray *_arrPrefetchDomainInfo;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXJointPayResp
+@interface WXJointPayResp : NSObject
 {
     NSString *_returnKey;
 }

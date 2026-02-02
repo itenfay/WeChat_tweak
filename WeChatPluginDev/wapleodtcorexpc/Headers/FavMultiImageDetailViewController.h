@@ -5,7 +5,7 @@
 
 @class FavActionSheet, FavImagePreView, NSString, WCActionSheetWithScanWXCode;
 
-@interface FavMultiImageDetailViewController
+@interface FavMultiImageDetailViewController : NSObject
 {
     unsigned int m_uiLongPressedIndex;
     _Bool m_hasIllegalData;

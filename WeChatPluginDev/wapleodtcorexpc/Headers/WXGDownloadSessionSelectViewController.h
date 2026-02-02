@@ -6,7 +6,7 @@
 @class MMTableView, MMUIActivityIndicatorView, NSArray, NSDate, NSMutableDictionary, NSString, UIButton, UIImageView, UILabel, UIView, WCFilterView;
 @protocol WXGDownloadSessionViewControllerDelegate;
 
-@interface WXGDownloadSessionSelectViewController
+@interface WXGDownloadSessionSelectViewController : NSObject
 {
     _Bool _isDelete;
     _Bool _hideFilterView;

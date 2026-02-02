@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSMutableArray;
 
-@interface BTMsgSectionData
+@interface BTMsgSectionData : NSObject
 {
     CMessageWrap *_msgWrap;
     NSMutableArray *_arrItemCellViewModel;

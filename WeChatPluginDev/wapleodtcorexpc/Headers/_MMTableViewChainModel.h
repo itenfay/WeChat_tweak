@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _MMTableViewChainModel
+@interface _MMTableViewChainModel : NSObject
 {
 }
 

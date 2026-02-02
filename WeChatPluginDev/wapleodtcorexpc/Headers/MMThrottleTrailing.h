@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSDate, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface MMThrottleTrailing
+@interface MMThrottleTrailing : NSObject
 {
     double _interval;
     CDUnknownBlockType _taskBlock;

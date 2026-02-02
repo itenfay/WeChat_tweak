@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSMutableSet, NSString, UICollectionReusableView, UICollectionView, UICollectionViewFlowLayout, UILabel, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderDynamicRichTextView, WCFinderFeedContentVM, WCFinderFeedLikeListViewModel, WCFinderLikeInfo, WCFinderMagicAnimationLogic, WCFinderStreamFooterView;
 
-@interface WCFinderFeedLikeListViewController
+@interface WCFinderFeedLikeListViewController : NSObject
 {
     _Bool _showBackgroundMask;
     _Bool _hidePrivateMessage;

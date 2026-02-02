@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BERedDotMgr
+@interface BERedDotMgr : NSObject
 {
 }
 

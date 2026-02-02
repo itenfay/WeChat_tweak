@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableArray;
 
-@interface TwoDStickerEffectAdapter
+@interface TwoDStickerEffectAdapter : NSObject
 {
     NSMutableArray *_stickerArr;
     NSDictionary *_templateTransSet;

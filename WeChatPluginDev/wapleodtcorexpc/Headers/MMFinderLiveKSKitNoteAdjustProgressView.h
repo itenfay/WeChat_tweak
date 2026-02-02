@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKSKitMusicNoteContentView, MMFinderLiveKSKitMusicNoteScrollView, MMFinderLiveKSKitProgessPreparingView, NSMutableArray, NSString, PAGView, UIImageView, UIView;
 
-@interface MMFinderLiveKSKitNoteAdjustProgressView
+@interface MMFinderLiveKSKitNoteAdjustProgressView : NSObject
 {
     _Bool _isStart;
     _Bool _isNoteDotAnimating;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveShopShelfHintInfo, MMWebImageView, UILabel;
 
-@interface MMFinderLiveShopShelfTipsView
+@interface MMFinderLiveShopShelfTipsView : NSObject
 {
     MMFinderLiveShopShelfHintInfo *_info;
     UILabel *_label;

@@ -5,7 +5,7 @@
 
 @class CContact, MMTListAdapter, MMTableView, MMUIActivityIndicatorView, NSString, RingToneDetail, RingToneMixPlayer, RingTonePickerViewModel, RingToneRecommendReporter_23604, RingToneSearchProxy, WCSearcher, WCTimeLineFooterView;
 
-@interface RingTonePickerViewController
+@interface RingTonePickerViewController : NSObject
 {
     _Bool _shouldNotShowFriendSettings;
     _Bool _isFetchingData;

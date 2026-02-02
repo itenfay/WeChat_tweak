@@ -5,7 +5,7 @@
 
 @class NSString, RingBackSoundCoordinator, VibrationRepeatObject, WACampusVoipMsg, WACampusVoipNotiView, WXLocalNotificationInfo;
 
-@interface WACampusVoipMsgMgr
+@interface WACampusVoipMsgMgr : NSObject
 {
     WACampusVoipMsg *_currentMsg;
     WXLocalNotificationInfo *_currentLocalNotificationInfo;

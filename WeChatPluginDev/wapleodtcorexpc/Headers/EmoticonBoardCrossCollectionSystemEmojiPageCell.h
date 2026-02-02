@@ -6,7 +6,7 @@
 @class NSMutableSet, NSString, UIButton, UILongPressGestureRecognizer, UIView;
 @protocol EmoticonBoardCrossCollectionEmojiPageDelegate;
 
-@interface EmoticonBoardCrossCollectionSystemEmojiPageCell
+@interface EmoticonBoardCrossCollectionSystemEmojiPageCell : NSObject
 {
     NSMutableSet *_emojiHiddenSet;
     UIButton *_deleteButton;

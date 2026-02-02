@@ -6,7 +6,7 @@
 @class MMUILabel, UIColor, WXVideoSlider;
 @protocol WCCanvasMusicProgressBarDelegate;
 
-@interface WCCanvasMusicProgressBar
+@interface WCCanvasMusicProgressBar : NSObject
 {
     _Bool _isSliderScrubbing;
     id <WCCanvasMusicProgressBarDelegate> _delegate;

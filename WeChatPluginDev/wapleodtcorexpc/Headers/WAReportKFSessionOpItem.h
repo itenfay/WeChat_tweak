@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportKFSessionOpItem
+@interface WAReportKFSessionOpItem : NSObject
 {
     unsigned int _actionTime;
     unsigned long long _enterScene;

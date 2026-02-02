@@ -5,7 +5,7 @@
 
 @class MMLiveLikeAnimationUtil, MMTimer, NSArray;
 
-@interface WCAdLiveLikeAnimationView
+@interface WCAdLiveLikeAnimationView : NSObject
 {
     _Bool _pauseFlag;
     MMLiveLikeAnimationUtil *_liveLikeAnimationUtil;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem21314
+@interface KvReportItem21314 : NSObject
 {
     unsigned int _RecycleStatus_22;
     NSString *_ExtraData_21;

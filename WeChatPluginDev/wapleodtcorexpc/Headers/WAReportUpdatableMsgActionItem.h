@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString;
 
-@interface WAReportUpdatableMsgActionItem
+@interface WAReportUpdatableMsgActionItem : NSObject
 {
     unsigned int _subscribeState;
     NSString *_shareTicket;

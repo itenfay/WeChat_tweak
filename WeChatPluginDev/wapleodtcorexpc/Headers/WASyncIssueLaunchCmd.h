@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WASyncIssueLaunchCmd
+@interface WASyncIssueLaunchCmd : NSObject
 {
     unsigned int _useBeginTime;
     unsigned int _useEndTime;

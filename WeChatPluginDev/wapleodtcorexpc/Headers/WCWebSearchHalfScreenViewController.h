@@ -5,7 +5,7 @@
 
 @class NSString, UIViewController, WCFinderSteramProfileBarView, WCWebSearchViewControllerNewH5;
 
-@interface WCWebSearchHalfScreenViewController
+@interface WCWebSearchHalfScreenViewController : NSObject
 {
     _Bool _isFullScreen;
     WCFinderSteramProfileBarView *_headerView;

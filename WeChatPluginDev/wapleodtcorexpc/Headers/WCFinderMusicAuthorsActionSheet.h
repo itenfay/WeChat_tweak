@@ -6,7 +6,7 @@
 @class FinderMusicTopicInfo, NSString, UIView;
 @protocol WCFinderMusicAuthorsActionSheetDelegate;
 
-@interface WCFinderMusicAuthorsActionSheet
+@interface WCFinderMusicAuthorsActionSheet : NSObject
 {
     int _commentScene;
     id <WCFinderMusicAuthorsActionSheetDelegate> _authorDelegate;

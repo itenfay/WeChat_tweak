@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface HeadImgDownloaderByUrl
+@interface HeadImgDownloaderByUrl : NSObject
 {
     NSMutableArray *m_userRequestList;
 }

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIButton, WCCardAcceptCardListInfo, WCCardChooseEmptyView, WCCardChoosePeopleLabelView, WCCardPkgBackView, WeToast;
 @protocol WCCardBatchImportViewControllerDelegate;
 
-@interface WCCardBatchImportViewController
+@interface WCCardBatchImportViewController : NSObject
 {
     id <WCCardBatchImportViewControllerDelegate> _delegate;
     _Bool _isLoading;

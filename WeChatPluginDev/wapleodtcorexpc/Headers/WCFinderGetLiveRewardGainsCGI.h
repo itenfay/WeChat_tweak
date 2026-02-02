@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, WCFinderDataItem;
 
-@interface WCFinderGetLiveRewardGainsCGI
+@interface WCFinderGetLiveRewardGainsCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

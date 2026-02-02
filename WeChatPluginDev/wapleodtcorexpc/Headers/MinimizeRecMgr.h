@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSString, WCTDatabase, WCTTable;
 @protocol MinimizeEventRouteDelegate><MinimizeTransitionInterface;
 
-@interface MinimizeRecMgr
+@interface MinimizeRecMgr : NSObject
 {
     id <MinimizeEventRouteDelegate><MinimizeTransitionInterface> _eventRouteDelegate;
     WCTDatabase *_db;

@@ -6,7 +6,7 @@
 @class MMTipsViewController, NSIndexPath, NSMutableDictionary, NSString, UITableView, UIView, WCFinderExtStatsReporter, WCFinderFeedFlowView, WCFinderFeedFollowVM, WCFinderFlowFollowTabVCParam, WCFinderOpenTimelineParams;
 @protocol WCFinderFollowViewControllerDelegate;
 
-@interface WCFinderFlowFollowTabViewController
+@interface WCFinderFlowFollowTabViewController : NSObject
 {
     _Bool _postFeedInsertMachineTab;
     _Bool _hasReportCreateEvent;

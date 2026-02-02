@@ -5,7 +5,7 @@
 
 @class WCFinderCustomImageRichTextView;
 
-@interface WCFinderNotifyUnifiedFollowTableViewCell
+@interface WCFinderNotifyUnifiedFollowTableViewCell : NSObject
 {
     WCFinderCustomImageRichTextView *_contentTextView;
 }

@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, UIImage, UIImageView, UIViewController, WCFinderMusicSelectView, WCFinderTemplateChooseView, WCFinderTemplateMusicSelectEntranceView, WCFinderTemplateProcessVCParams, WCFinderTemplateVideoEditViewModel;
 @protocol WCFinderTemplateProcessViewControllerDelegate;
 
-@interface WCFinderTemplateProcessViewController
+@interface WCFinderTemplateProcessViewController : NSObject
 {
     _Bool _exporting;
     id <WCFinderTemplateProcessViewControllerDelegate> _delegate;

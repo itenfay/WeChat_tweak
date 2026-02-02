@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, NSData, NSString;
 
-@interface WCFinderAdUserPageCGI
+@interface WCFinderAdUserPageCGI : NSObject
 {
     _Bool _needFansCount;
     CDUnknownBlockType _successful;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCADCanvasEggAnimationHugeDiskImproved
+@interface WCADCanvasEggAnimationHugeDiskImproved : NSObject
 {
     NSString *_transitionImg;
     NSString *_transitionColor;

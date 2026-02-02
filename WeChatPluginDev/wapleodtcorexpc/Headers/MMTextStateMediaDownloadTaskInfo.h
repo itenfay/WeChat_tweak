@@ -5,7 +5,7 @@
 
 @class MMTextStateMediaItem, NSArray, NSString;
 
-@interface MMTextStateMediaDownloadTaskInfo
+@interface MMTextStateMediaDownloadTaskInfo : NSObject
 {
     struct C2CDownloadResult result;
     _Bool _bSourceChanged;

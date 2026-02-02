@@ -5,7 +5,7 @@
 
 @class NSString, UITableView;
 
-@interface WCLiveDebugViewController
+@interface WCLiveDebugViewController : NSObject
 {
     UITableView *_tableView;
 }

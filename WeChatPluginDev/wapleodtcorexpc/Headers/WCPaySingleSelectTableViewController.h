@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSIndexPath, NSString;
 @protocol WCPaySingleSelectedTableViewControllerDelegate;
 
-@interface WCPaySingleSelectTableViewController
+@interface WCPaySingleSelectTableViewController : NSObject
 {
     id <WCPaySingleSelectedTableViewControllerDelegate> _delegate;
     NSString *_viewControllerTitle;

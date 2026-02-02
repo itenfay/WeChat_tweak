@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface QGPVector3
+@interface QGPVector3 : NSObject
 {
     double _x;
     double _y;

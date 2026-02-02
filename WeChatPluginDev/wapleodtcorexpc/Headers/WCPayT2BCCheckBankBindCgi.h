@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCCheckBankBindCgiDelegate;
 
-@interface WCPayT2BCCheckBankBindCgi
+@interface WCPayT2BCCheckBankBindCgi : NSObject
 {
     id <WCPayT2BCCheckBankBindCgiDelegate> m_delegate;
 }

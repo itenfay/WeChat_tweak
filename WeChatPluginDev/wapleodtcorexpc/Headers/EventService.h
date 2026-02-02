@@ -5,7 +5,7 @@
 
 @class CMultiEvent, NSData, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface EventService
+@interface EventService : NSObject
 {
     CMultiEvent *m_oEventMgr;
     NSMutableDictionary *m_usbCmdHandler;

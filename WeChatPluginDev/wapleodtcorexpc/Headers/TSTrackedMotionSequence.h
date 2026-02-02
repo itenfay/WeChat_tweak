@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface TSTrackedMotionSequence
+@interface TSTrackedMotionSequence : NSObject
 {
     NSArray *_accelerationItems;
     NSArray *_gyroItems;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MJSTTRequestResult
+@interface MJSTTRequestResult : NSObject
 {
     NSArray *_captionItems;
 }

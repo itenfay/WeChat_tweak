@@ -6,7 +6,7 @@
 @class NSDate;
 @protocol EVADProcessorDelegate;
 
-@interface EVADProcessor
+@interface EVADProcessor : NSObject
 {
     _Bool _hasSpeak;
     NSDate *m_dtLastChangeToSilence;

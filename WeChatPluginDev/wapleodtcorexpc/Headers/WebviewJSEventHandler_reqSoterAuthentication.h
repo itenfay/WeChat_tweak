@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, SoterSignHelper, SoterUpdateMPAuthKeyCgi;
 
-@interface WebviewJSEventHandler_reqSoterAuthentication
+@interface WebviewJSEventHandler_reqSoterAuthentication : NSObject
 {
     JSEvent *_m_event;
     SoterSignHelper *_m_soterSignHelper;

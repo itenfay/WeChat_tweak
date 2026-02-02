@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VerifyWxPayReqInfo
+@interface VerifyWxPayReqInfo : NSObject
 {
     NSString *_appid;
     NSString *_timeStamp;

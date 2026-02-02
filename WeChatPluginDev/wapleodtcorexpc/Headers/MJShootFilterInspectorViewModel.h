@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootFilterItem, NSArray;
 
-@interface MJShootFilterInspectorViewModel
+@interface MJShootFilterInspectorViewModel : NSObject
 {
     NSArray *_titleItems;
     NSArray *_filterItems;

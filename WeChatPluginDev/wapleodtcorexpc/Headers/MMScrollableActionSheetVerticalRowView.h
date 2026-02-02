@@ -6,7 +6,7 @@
 @class MMScrollableActionSheetVerticalRowInfo, MMWebImageView, UIButton, UIImageView, UILabel;
 @protocol MMScrollableActionSheetVerticalRowViewDelegate;
 
-@interface MMScrollableActionSheetVerticalRowView
+@interface MMScrollableActionSheetVerticalRowView : NSObject
 {
     MMScrollableActionSheetVerticalRowInfo *_rowInfo;
     id <MMScrollableActionSheetVerticalRowViewDelegate> _delegate;

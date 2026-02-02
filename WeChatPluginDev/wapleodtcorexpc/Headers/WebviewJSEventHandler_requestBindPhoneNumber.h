@@ -5,7 +5,7 @@
 
 @class JSEvent, MMPageSheetAdapter, NSString;
 
-@interface WebviewJSEventHandler_requestBindPhoneNumber
+@interface WebviewJSEventHandler_requestBindPhoneNumber : NSObject
 {
     MMPageSheetAdapter *_adapter;
     NSString *_bindPhoneNum;

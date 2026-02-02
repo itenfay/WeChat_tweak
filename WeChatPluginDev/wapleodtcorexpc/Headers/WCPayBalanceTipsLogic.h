@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIView;
 
-@interface WCPayBalanceTipsLogic
+@interface WCPayBalanceTipsLogic : NSObject
 {
     UIView *m_containerView;
     CDUnknownBlockType _m_rightBtnBlock;

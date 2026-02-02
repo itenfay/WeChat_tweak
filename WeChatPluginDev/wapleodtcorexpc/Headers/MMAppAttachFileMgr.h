@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMAppAttachFileMgr
+@interface MMAppAttachFileMgr : NSObject
 {
     NSMutableDictionary *_msgWrapDict;
     NSMutableDictionary *_msgAttachUrlDict;

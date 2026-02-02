@@ -6,7 +6,7 @@
 @class CgiBindQueryRecord, MMTableView, MMUIViewController, NSArray, NSString, UIButton, UIView;
 @protocol WCPayLQTSelectCardItemDelegate;
 
-@interface WCPayLQTSelectCardItem
+@interface WCPayLQTSelectCardItem : NSObject
 {
     MMUIViewController *currentViewController;
     id <WCPayLQTSelectCardItemDelegate> delegate;

@@ -6,7 +6,7 @@
 @class NSArray, NSMapTable, NSMutableDictionary, NSString, UICollectionView, WCFinderFeedFlowView, WCFinderLiveHomePageTabLiveStreamSectionViewModel, WCFinderTabPageView;
 @protocol WCFinderLiveHomePageTabLiveStreamSectionDelegate;
 
-@interface WCFinderLiveHomePageTabLiveStreamSectionCollectionViewCell
+@interface WCFinderLiveHomePageTabLiveStreamSectionCollectionViewCell : NSObject
 {
     WCFinderLiveHomePageTabLiveStreamSectionViewModel *_vm;
     id <WCFinderLiveHomePageTabLiveStreamSectionDelegate> _delegate;

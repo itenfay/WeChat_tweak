@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_showDatePickerView
+@interface WAJSEventHandler_showDatePickerView : NSObject
 {
 }
 

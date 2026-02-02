@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
-@interface WACampusVoipTipsPageSheet
+@interface WACampusVoipTipsPageSheet : NSObject
 {
     CDUnknownBlockType _okAction;
     UILabel *_titlelLabel;

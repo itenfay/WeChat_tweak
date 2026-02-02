@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, SetTrustedFriendTipsView, TrustedFriendsLogic, WeToast;
 
-@interface SetTrustedFriendsViewController
+@interface SetTrustedFriendsViewController : NSObject
 {
     _Bool _m_isDeleting;
     NSString *_tipWording;

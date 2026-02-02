@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface SelectChatBoxSubContactViewController
+@interface SelectChatBoxSubContactViewController : NSObject
 {
     NSMutableArray *_contacts;
 }

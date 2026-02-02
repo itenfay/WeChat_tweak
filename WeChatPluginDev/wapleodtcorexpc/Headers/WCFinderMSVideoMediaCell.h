@@ -5,7 +5,7 @@
 
 @class SightIconView, UILabel, UIView, WCFinderFeedStaticCoverView;
 
-@interface WCFinderMSVideoMediaCell
+@interface WCFinderMSVideoMediaCell : NSObject
 {
     WCFinderFeedStaticCoverView *_coverView;
     UIView *_timeBGView;

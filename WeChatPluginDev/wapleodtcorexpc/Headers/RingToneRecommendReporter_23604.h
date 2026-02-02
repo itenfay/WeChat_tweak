@@ -5,7 +5,7 @@
 
 @class NSString, RingToneDetail;
 
-@interface RingToneRecommendReporter_23604
+@interface RingToneRecommendReporter_23604 : NSObject
 {
     _Bool _reportedExposed;
     unsigned int _previewTimeMs;

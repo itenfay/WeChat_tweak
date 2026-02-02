@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAsset;
 
-@interface WCLivePhotoView
+@interface WCLivePhotoView : NSObject
 {
     _Bool _isPendingToPlay;
     MMAsset *_asset;

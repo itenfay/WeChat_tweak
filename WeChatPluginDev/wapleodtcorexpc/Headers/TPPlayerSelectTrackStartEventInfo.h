@@ -5,7 +5,7 @@
 
 @class TPTrackInfo;
 
-@interface TPPlayerSelectTrackStartEventInfo
+@interface TPPlayerSelectTrackStartEventInfo : NSObject
 {
     long long _trackIndex;
     long long _opaque;

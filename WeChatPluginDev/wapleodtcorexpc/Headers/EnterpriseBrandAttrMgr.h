@@ -5,7 +5,7 @@
 
 @class BannerTips, EnterpriseBrandAttrDB, NSCache, NSMutableSet, NSString;
 
-@interface EnterpriseBrandAttrMgr
+@interface EnterpriseBrandAttrMgr : NSObject
 {
     EnterpriseBrandAttrDB *_db;
     NSCache *_cache;

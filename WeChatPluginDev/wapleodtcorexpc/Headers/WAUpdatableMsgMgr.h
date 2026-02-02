@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, WAUpdatableMsgStorage;
 
-@interface WAUpdatableMsgMgr
+@interface WAUpdatableMsgMgr : NSObject
 {
     WAUpdatableMsgStorage *_updatableMsgStorage;
     NSMutableSet *_runningReq;

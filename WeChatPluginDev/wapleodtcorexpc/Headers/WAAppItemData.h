@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppItemData
+@interface WAAppItemData : NSObject
 {
     _Bool beStared;
     _Bool _isFromOuter;

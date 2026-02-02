@@ -5,7 +5,7 @@
 
 @class MMPanelView, NSString, TenpaySecureCtrl, UILabel, UIPickerView, WCPaySelectDateItemData;
 
-@interface WCPaySelectDateItemV2
+@interface WCPaySelectDateItemV2 : NSObject
 {
     UIPickerView *m_pickerView;
     long long m_iStartYear;

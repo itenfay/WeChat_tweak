@@ -5,7 +5,7 @@
 
 @class NSData, WCDevice;
 
-@interface WCDeviceScanExt
+@interface WCDeviceScanExt : NSObject
 {
     WCDevice *_device;
     NSData *_extData;

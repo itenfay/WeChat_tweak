@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLivePageSheetNoticeConfig, NSArray, UILabel;
 
-@interface MMFinderLivePageSheetNoticeView
+@interface MMFinderLivePageSheetNoticeView : NSObject
 {
     CDUnknownBlockType _disappearCallback;
     MMFinderLivePageSheetNoticeConfig *_config;

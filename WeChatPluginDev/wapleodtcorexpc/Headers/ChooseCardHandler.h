@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface ChooseCardHandler
+@interface ChooseCardHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

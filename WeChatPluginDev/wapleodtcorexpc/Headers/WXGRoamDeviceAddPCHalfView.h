@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXGRoamDeviceAddPCHalfView
+@interface WXGRoamDeviceAddPCHalfView : NSObject
 {
 }
 

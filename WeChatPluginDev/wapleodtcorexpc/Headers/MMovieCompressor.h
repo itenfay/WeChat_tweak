@@ -6,7 +6,7 @@
 @class AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, MMovieDecoder, NSObject, NSString;
 @protocol MMovieCompressorDelegate, OS_dispatch_queue;
 
-@interface MMovieCompressor
+@interface MMovieCompressor : NSObject
 {
     MMovieDecoder *m_decoder;
     id <MMovieCompressorDelegate> m_delegate;

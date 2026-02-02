@@ -6,7 +6,7 @@
 @class NSString, StoreEmotionRecoverMyPanelListCgi;
 @protocol StoreEmotionRecoverLogicObjectDelegate;
 
-@interface StoreEmotionRecoverLogicObject
+@interface StoreEmotionRecoverLogicObject : NSObject
 {
     _Bool _m_isActive;
     _Bool _m_hasStartLogic;

@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, WCFinderMelodyView;
 
-@interface WCFinderEditImageMusicView
+@interface WCFinderEditImageMusicView : NSObject
 {
     WCFinderMelodyView *_melodyImageView;
     UIImageView *_arrowImageView;

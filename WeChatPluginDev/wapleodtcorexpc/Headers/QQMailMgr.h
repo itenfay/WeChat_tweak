@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, XMailSearchMailAddrLogic, XMailUploadAttachmentLogic;
 
-@interface QQMailMgr
+@interface QQMailMgr : NSObject
 {
     _Bool m_bSyncingContact;
     unsigned int m_uiSyncCount;

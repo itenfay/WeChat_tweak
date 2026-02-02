@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPChannelStrategyInfo
+@interface MPChannelStrategyInfo : NSObject
 {
     _Bool _brandCellExposeUpdate;
     _Bool _mainSessionExposeUpdate;

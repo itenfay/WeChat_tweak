@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, OMCClipSegment;
 @protocol OMCClipSpeedAdjustable, OMCColorAdjustable, OMCContentSpatialAdjustable, OMCFilterAdjustable, OMCPictureEnhancable, OMCSpeedAdjustable, OMCThumbnailProvider, OMCVolumeAdjustable;
 
-@interface MJVisualClipSegmentViewModel
+@interface MJVisualClipSegmentViewModel : NSObject
 {
     struct {
         _Bool isExecuting;

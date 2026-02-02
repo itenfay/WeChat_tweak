@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModMentionOpLogCGI
+@interface WCFinderModMentionOpLogCGI : NSObject
 {
     _Bool _silent;
     unsigned long long _svrMentionID;

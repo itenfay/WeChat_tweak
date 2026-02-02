@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, NSObject;
 
-@interface MJPageViewTitleItem
+@interface MJPageViewTitleItem : NSObject
 {
     _Bool _selected;
     long long _index;

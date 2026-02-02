@@ -5,7 +5,7 @@
 
 @class CContact, MMTableView, NSArray, NSString, UIView;
 
-@interface EnterpriseFavContactListViewController
+@interface EnterpriseFavContactListViewController : NSObject
 {
     CContact *_chatBrandContact;
     NSArray *_aryFav;

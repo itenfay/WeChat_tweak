@@ -6,7 +6,7 @@
 @class NSString;
 @protocol CommonAffServiceCenter;
 
-@interface AffBizRootServiceCenter
+@interface AffBizRootServiceCenter : NSObject
 {
     id <CommonAffServiceCenter> _serviceCenter;
 }

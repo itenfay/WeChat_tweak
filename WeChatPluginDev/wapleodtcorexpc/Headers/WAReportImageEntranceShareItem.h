@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportImageEntranceShareItem
+@interface WAReportImageEntranceShareItem : NSObject
 {
     int _isSuccess;
     int _chatType;

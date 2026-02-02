@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderBgmGetLyricCgi
+@interface WCFinderBgmGetLyricCgi : NSObject
 {
     int _type;
     unsigned long long _identifier;

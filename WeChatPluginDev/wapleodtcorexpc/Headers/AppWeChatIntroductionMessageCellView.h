@@ -5,7 +5,7 @@
 
 @class AppWeChatIntroductionMessageViewModel;
 
-@interface AppWeChatIntroductionMessageCellView
+@interface AppWeChatIntroductionMessageCellView : NSObject
 {
 }
 

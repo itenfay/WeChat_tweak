@@ -6,7 +6,7 @@
 @class MMImageDetectUploader, MsgDataDownloadLogic, NSString, WCImageSearchEntity, WCWebSearchViewControllerNewH5;
 @protocol WCImageSearchEventDelegate;
 
-@interface WCImageSearchLogic
+@interface WCImageSearchLogic : NSObject
 {
     int _detectImageEventID;
     id <WCImageSearchEventDelegate> _delegate;

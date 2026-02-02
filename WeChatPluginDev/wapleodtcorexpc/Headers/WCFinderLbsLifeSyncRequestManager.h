@@ -5,7 +5,7 @@
 
 @class NSData, NSMutableArray, NSString, WCFinderLbsLifeSyncTask;
 
-@interface WCFinderLbsLifeSyncRequestManager
+@interface WCFinderLbsLifeSyncRequestManager : NSObject
 {
     NSData *_lastBuffer;
     NSMutableArray *_taskQueue;

@@ -6,7 +6,7 @@
 @class CheckQRCodeLoginCGI, NSString, WCAccountManualAuthControlLogic;
 @protocol PushLoginURLCGIDelegate;
 
-@interface PushLoginURLCGI
+@interface PushLoginURLCGI : NSObject
 {
     WCAccountManualAuthControlLogic *m_manualAuthLogic;
     int _loginType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetMilestoneLotteryInfoCGI
+@interface WCFinderLiveGetMilestoneLotteryInfoCGI : NSObject
 {
     NSString *_lotteryId;
     NSData *_liveCookies;

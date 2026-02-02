@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat31WSNativeHotListSectionTitleCell
+@interface _TtC6WeChat31WSNativeHotListSectionTitleCell : NSObject
 {
     MISSING_TYPE *titleLabel;
     MISSING_TYPE *bottomLine;

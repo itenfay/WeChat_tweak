@@ -5,7 +5,7 @@
 
 @class NSString, WKProcessPool;
 
-@interface YYWKWebViewProcessPoolMgr
+@interface YYWKWebViewProcessPoolMgr : NSObject
 {
     WKProcessPool *m_processPool;
 }

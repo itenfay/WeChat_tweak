@@ -6,7 +6,7 @@
 @class FinderStreamCard, FinderStreamTxtCard, NSArray, NSData, NSMutableSet, NSString;
 @protocol WCFinderFeedLayoutContentVMDelegate;
 
-@interface WCFinderFeedLayoutContentVM
+@interface WCFinderFeedLayoutContentVM : NSObject
 {
     _Bool _continueFlag;
     _Bool _isRefreshing;

@@ -5,7 +5,7 @@
 
 @class EmotionActivity, MMUILabel, MMWebImageView, UIImageView;
 
-@interface RelatedEmoticonActivityCell
+@interface RelatedEmoticonActivityCell : NSObject
 {
     EmotionActivity *_activity;
     MMUILabel *_mainLabel;

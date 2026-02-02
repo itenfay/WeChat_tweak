@@ -5,7 +5,7 @@
 
 @class CMessageWrap, ChatRoomHistoryDB, NSMutableArray, NSRecursiveLock, NSString;
 
-@interface ChatRoomHistoryMgr
+@interface ChatRoomHistoryMgr : NSObject
 {
     NSRecursiveLock *_lock;
     CMessageWrap *_currMsgWrap;

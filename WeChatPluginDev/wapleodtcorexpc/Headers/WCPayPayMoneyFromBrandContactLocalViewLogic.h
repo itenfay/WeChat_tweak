@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayPayMoneyFromBrandContactLocalViewLogic
+@interface WCPayPayMoneyFromBrandContactLocalViewLogic : NSObject
 {
     NSString *m_nsHandleURL;
 }

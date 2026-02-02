@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPlainTextTipFullScreenViewDelegate;
 
-@interface WCPlainTextTipFullScreenView
+@interface WCPlainTextTipFullScreenView : NSObject
 {
     id <WCPlainTextTipFullScreenViewDelegate> _delegate;
 }

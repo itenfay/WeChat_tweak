@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCPayPaidOrderActivityMgr
+@interface WCPayPaidOrderActivityMgr : NSObject
 {
     NSMutableDictionary *dicUrlToControlItem;
 }

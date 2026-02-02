@@ -5,7 +5,7 @@
 
 @class CContact, NSArray, NSMutableArray, NSMutableDictionary, NSString, SearchMatchTip;
 
-@interface FTSMsgScopeView
+@interface FTSMsgScopeView : NSObject
 {
     CContact *_session;
     NSArray *_arrTargetSessionMsgItems;

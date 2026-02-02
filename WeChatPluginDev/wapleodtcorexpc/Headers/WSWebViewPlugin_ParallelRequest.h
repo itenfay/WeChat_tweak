@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WSWebViewPlugin_ParallelRequest
+@interface WSWebViewPlugin_ParallelRequest : NSObject
 {
     MISSING_TYPE *pRequestID;
     MISSING_TYPE *parallelHandlerDict;

@@ -6,7 +6,7 @@
 @class MMUILabel, MMWebImageView, UIButton;
 @protocol WCAccountRegByOldPhoneViewControllerDelegate;
 
-@interface WCAccountRegByOldPhoneViewController
+@interface WCAccountRegByOldPhoneViewController : NSObject
 {
     id <WCAccountRegByOldPhoneViewControllerDelegate> m_delegate;
     MMWebImageView *_headImageView;

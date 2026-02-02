@@ -5,7 +5,7 @@
 
 @class UIFont;
 
-@interface GCShareLinkLayoutInfo
+@interface GCShareLinkLayoutInfo : NSObject
 {
     double _imageSize;
     UIFont *_titleFont;

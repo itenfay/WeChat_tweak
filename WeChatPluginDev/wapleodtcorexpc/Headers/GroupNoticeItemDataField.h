@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GroupNoticeItemDataField
+@interface GroupNoticeItemDataField : NSObject
 {
     NSString *_sourceId;
     NSString *_chatRoomName;

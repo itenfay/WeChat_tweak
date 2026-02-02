@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface StoreEmotionProductIdListObject
+@interface StoreEmotionProductIdListObject : NSObject
 {
     NSMutableArray *_pids;
 }

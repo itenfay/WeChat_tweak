@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class InteractionLabel, MMTimer, MMUIButton, NSString, UIImageView;
 
-@interface MMAssetUserActionTipsView
+@interface MMAssetUserActionTipsView : NSObject
 {
     CDUnknownBlockType _clickBlock;
     CDUnknownBlockType _closeBlock;

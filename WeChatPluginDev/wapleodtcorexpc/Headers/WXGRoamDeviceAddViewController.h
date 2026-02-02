@@ -5,7 +5,7 @@
 
 @class NSString, UITableView;
 
-@interface WXGRoamDeviceAddViewController
+@interface WXGRoamDeviceAddViewController : NSObject
 {
     UITableView *_mainTable;
 }

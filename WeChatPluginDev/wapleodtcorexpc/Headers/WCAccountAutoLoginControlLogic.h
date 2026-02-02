@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CountDownTipViewController, MMUIWindow, NSString, WCAccountControlData, WCAccountGraphicVerifyControlLogic, WCAccountManualAuthControlLogic;
 @protocol WCAccountAutoLoginControlLogicDelegate;
 
-@interface WCAccountAutoLoginControlLogic
+@interface WCAccountAutoLoginControlLogic : NSObject
 {
     WCAccountControlData *m_data;
     MMUIWindow *m_window;

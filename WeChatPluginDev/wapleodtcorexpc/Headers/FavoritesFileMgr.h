@@ -5,7 +5,7 @@
 
 @class FavoritesFileRetainCountDB, NSMutableArray, NSString;
 
-@interface FavoritesFileMgr
+@interface FavoritesFileMgr : NSObject
 {
     FavoritesFileRetainCountDB *_frcDB;
     NSMutableArray *m_checkFileItemIdList;

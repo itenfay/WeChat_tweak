@@ -6,7 +6,7 @@
 @class NSString, RichTextView, WCPayDecimalKeyboardView, WCPayRemarkPageSheet, WCPayTextField;
 @protocol WCPayGPMoneyInputViewControllerDelegate;
 
-@interface WCPayGPMoneyInputViewController
+@interface WCPayGPMoneyInputViewController : NSObject
 {
     id <WCPayGPMoneyInputViewControllerDelegate> _delegate;
     WCPayTextField *_moneyTextField;

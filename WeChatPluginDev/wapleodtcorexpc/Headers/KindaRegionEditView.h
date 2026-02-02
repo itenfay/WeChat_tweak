@@ -5,7 +5,7 @@
 
 @class MMKRegionEditViewOnRegionSelectedCallback, NSArray, NSString, UITextField;
 
-@interface KindaRegionEditView
+@interface KindaRegionEditView : NSObject
 {
     UITextField *m_view;
     NSString *m_country;

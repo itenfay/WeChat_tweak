@@ -5,7 +5,7 @@
 
 @class BrandProfileMsgFooterViewModel, MMUILabel, UIImageView;
 
-@interface BrandProfileMsgFooterCell
+@interface BrandProfileMsgFooterCell : NSObject
 {
     MMUILabel *_label;
     UIImageView *_iconImgView;

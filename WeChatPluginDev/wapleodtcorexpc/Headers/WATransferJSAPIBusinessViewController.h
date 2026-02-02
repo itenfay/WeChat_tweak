@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WATransferJSAPIBusinessViewController
+@interface WATransferJSAPIBusinessViewController : NSObject
 {
     _Bool _isDidAppear;
     CDUnknownBlockType _callback;

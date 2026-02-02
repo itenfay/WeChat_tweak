@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MpShareTraceItem
+@interface MpShareTraceItem : NSObject
 {
     _Bool _hasFinderElement;
     NSString *_lastGMsgID;

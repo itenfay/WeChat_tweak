@@ -6,7 +6,7 @@
 @class HeadImgDownloaderByUrl, HeadImgDownloaderByUsrName, MMHDHeadImgDownloader, NSCache, NSString;
 @protocol HeadImgDelegate;
 
-@interface MMHeadImageDownloader
+@interface MMHeadImageDownloader : NSObject
 {
     HeadImgDownloaderByUrl *_urlDownloader;
     HeadImgDownloaderByUsrName *_usrNameDownloader;

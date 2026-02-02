@@ -5,7 +5,7 @@
 
 @class BrandProfileItemVideoViewModel, CAGradientLayer, MMUILabel, SightIconView;
 
-@interface BrandProfileItemVideoCell
+@interface BrandProfileItemVideoCell : NSObject
 {
     SightIconView *_playIconView;
     MMUILabel *_timeLabel;

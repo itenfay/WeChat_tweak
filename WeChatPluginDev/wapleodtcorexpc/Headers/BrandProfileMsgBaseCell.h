@@ -6,7 +6,7 @@
 @class BrandProfileMsgBaseViewModel, UIView;
 @protocol BrandProfileMsgCellDelegate;
 
-@interface BrandProfileMsgBaseCell
+@interface BrandProfileMsgBaseCell : NSObject
 {
     _Bool _isDisplaying;
     UIView *_highlightMaskView;

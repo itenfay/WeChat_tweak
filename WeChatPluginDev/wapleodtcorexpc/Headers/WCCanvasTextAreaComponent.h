@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView;
 
-@interface WCCanvasTextAreaComponent
+@interface WCCanvasTextAreaComponent : NSObject
 {
     RichTextView *_contentLabel;
 }

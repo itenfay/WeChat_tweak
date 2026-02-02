@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, NewLifeRedDotTipsShowInfo, UIViewController;
 @protocol NewLifePostEndDelegate;
 
-@interface NewLifeProfilePostGuidePageSheet
+@interface NewLifeProfilePostGuidePageSheet : NSObject
 {
     id <NewLifePostEndDelegate> _postEndDelegate;
     UIViewController *_viewController;

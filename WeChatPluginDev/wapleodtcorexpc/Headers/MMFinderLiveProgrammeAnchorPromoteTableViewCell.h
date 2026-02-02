@@ -5,7 +5,7 @@
 
 @class MMFinderLiveProgrammeAnchorPromoteInfo, MMUILabel, UIImageView, UIView;
 
-@interface MMFinderLiveProgrammeAnchorPromoteTableViewCell
+@interface MMFinderLiveProgrammeAnchorPromoteTableViewCell : NSObject
 {
     UIImageView *_iconImageView;
     MMUILabel *_titleLabel;

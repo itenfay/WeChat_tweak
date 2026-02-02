@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMWebImageView, NSObject, NSString, UIButton, WAContact;
 @protocol WAWebErrorViewDelegate;
 
-@interface WAWebErrorView
+@interface WAWebErrorView : NSObject
 {
     WAContact *m_contact;
     NSString *m_title;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat27CarPlayNowPlayingController
+@interface _TtC6WeChat27CarPlayNowPlayingController : NSObject
 {
     MISSING_TYPE *nowPlayingTemplate;
     MISSING_TYPE *repeatBtn;

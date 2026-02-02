@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMFinderLiveActivityView, MMFinderLiveFeedHighlightTagView, MMLiveCDNPlayerView, NSString, RichTextView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderFeedImageCDNView, WCFinderHeadImageView, WCFinderLiveFeedContentVM;
 @protocol WCFinderLiveDiscoveryRelatedLiveCellDelegate;
 
-@interface WCFinderLiveDiscoveryRelatedLiveCell
+@interface WCFinderLiveDiscoveryRelatedLiveCell : NSObject
 {
     _Bool _canShowLiveActivityView;
     _Bool _isJustTappedByUser;

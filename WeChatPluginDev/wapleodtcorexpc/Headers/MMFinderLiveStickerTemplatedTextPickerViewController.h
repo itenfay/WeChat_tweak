@@ -6,7 +6,7 @@
 @class MMFinderLiveTemplatedTextStickerImageProvider, MMFinderLiveTextStickerItem, MMUITextField, NSString, UIButton, UIImageView, UIView;
 @protocol MMFinderLiveStickerContentPickerDelegate;
 
-@interface MMFinderLiveStickerTemplatedTextPickerViewController
+@interface MMFinderLiveStickerTemplatedTextPickerViewController : NSObject
 {
     id <MMFinderLiveStickerContentPickerDelegate> _delegate;
     unsigned long long _overrideOrientationMask;

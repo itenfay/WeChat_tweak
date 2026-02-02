@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, WCPayControlData;
 
-@interface WCPayAvaliableFavorView
+@interface WCPayAvaliableFavorView : NSObject
 {
     WCPayControlData *m_data;
     struct CGRect m_frame;

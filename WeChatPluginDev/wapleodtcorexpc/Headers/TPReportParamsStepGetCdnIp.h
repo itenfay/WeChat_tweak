@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPReportParamsStepGetCdnIp
+@interface TPReportParamsStepGetCdnIp : NSObject
 {
     NSString *_ip;
 }

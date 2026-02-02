@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface FTSPopUpSelectableMenuWindow
+@interface FTSPopUpSelectableMenuWindow : NSObject
 {
     CDUnknownBlockType _nonContentAreaTouchHandler;
     struct CGRect _menuContentFrame;

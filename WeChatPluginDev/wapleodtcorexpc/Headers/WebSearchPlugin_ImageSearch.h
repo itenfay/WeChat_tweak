@@ -5,7 +5,7 @@
 
 @class WCImageSearchReportModel;
 
-@interface WebSearchPlugin_ImageSearch
+@interface WebSearchPlugin_ImageSearch : NSObject
 {
     WCImageSearchReportModel *_reporter;
 }

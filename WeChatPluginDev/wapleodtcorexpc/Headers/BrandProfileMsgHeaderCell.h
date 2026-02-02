@@ -5,7 +5,7 @@
 
 @class BrandProfileMsgHeaderViewModel, MMUILabel, UIImageView;
 
-@interface BrandProfileMsgHeaderCell
+@interface BrandProfileMsgHeaderCell : NSObject
 {
     MMUILabel *_titleLabel;
     UIImageView *_foldImgView;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayCloseWalletLockCgiDelegate;
 
-@interface WCPayCloseWalletLockCgi
+@interface WCPayCloseWalletLockCgi : NSObject
 {
     NSString *_password;
 }

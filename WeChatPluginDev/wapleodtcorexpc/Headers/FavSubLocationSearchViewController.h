@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface FavSubLocationSearchViewController
+@interface FavSubLocationSearchViewController : NSObject
 {
     NSMutableArray *_arrCityDatas;
 }

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMHeadImageView, MMUIButton, UIImageView, UILabel, UIView, WCFinderLikeInfo;
 @protocol WCFinderFeedFriendsLikeListTableViewCellDelegate;
 
-@interface WCFinderFeedFriendsLikeListTableViewCell
+@interface WCFinderFeedFriendsLikeListTableViewCell : NSObject
 {
     _Bool _showFinderIdentifier;
     id <WCFinderFeedFriendsLikeListTableViewCellDelegate> _delegate;

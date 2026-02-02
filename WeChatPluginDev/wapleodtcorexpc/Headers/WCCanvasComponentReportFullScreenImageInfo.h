@@ -5,7 +5,7 @@
 
 @class WCCanvasComponentReportUrlInfo;
 
-@interface WCCanvasComponentReportFullScreenImageInfo
+@interface WCCanvasComponentReportFullScreenImageInfo : NSObject
 {
     WCCanvasComponentReportUrlInfo *_imgUrlInfo;
 }

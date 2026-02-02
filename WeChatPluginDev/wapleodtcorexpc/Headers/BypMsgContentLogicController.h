@@ -5,7 +5,7 @@
 
 @class CBaseContact;
 
-@interface BypMsgContentLogicController
+@interface BypMsgContentLogicController : NSObject
 {
     CBaseContact *_realChatContact;
     CBaseContact *_myRoleContact;

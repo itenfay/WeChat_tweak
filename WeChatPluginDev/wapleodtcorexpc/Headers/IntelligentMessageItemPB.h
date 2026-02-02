@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface IntelligentMessageItemPB
+@interface IntelligentMessageItemPB : NSObject
 {
     _Bool _hadUpdateFaceCluster;
     NSMutableArray *_hadUpdateModelKeyList;

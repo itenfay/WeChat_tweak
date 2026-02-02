@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoMinimizeListenerCpp
+@interface MegaVideoMinimizeListenerCpp : NSObject
 {
 }
 

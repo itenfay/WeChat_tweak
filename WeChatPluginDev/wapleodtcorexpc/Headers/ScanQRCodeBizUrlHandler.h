@@ -5,7 +5,7 @@
 
 @class NSString, WCPayPayAuthNativeCgi;
 
-@interface ScanQRCodeBizUrlHandler
+@interface ScanQRCodeBizUrlHandler : NSObject
 {
     unsigned int _m_sourceType;
     NSString *_m_sourceInfo;

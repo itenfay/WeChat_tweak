@@ -6,7 +6,7 @@
 @class CContact, CrossfadeAnimationController, MMGrowTextView, MMHeadImageView, MMTableView, MMTextView, MMUIView, NSMutableArray, NSMutableSet, NSString, SolitaireObj, SolitaireToolLogicController, SolitaireToolView, UIButton, UILabel, UIView;
 @protocol SolitaireDisplayViewControllerDelegate;
 
-@interface SolitaireDisplayViewController
+@interface SolitaireDisplayViewController : NSObject
 {
     _Bool _bAddNewLine;
     _Bool _bFocusTitle;

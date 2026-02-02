@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, CATextLayer, UIFont, UIImageView;
 
-@interface MJTemplateComposingButton
+@interface MJTemplateComposingButton : NSObject
 {
     UIImageView *_iconView;
     CATextLayer *_textLayer;

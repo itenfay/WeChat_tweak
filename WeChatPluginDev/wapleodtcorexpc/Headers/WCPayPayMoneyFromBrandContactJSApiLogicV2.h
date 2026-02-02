@@ -6,7 +6,7 @@
 @class JSEvent, KindaJSEvent, NSString, WAJSEventHandler_BaseEvent;
 @protocol WCPayPayJSApiLogicParamDelegate;
 
-@interface WCPayPayMoneyFromBrandContactJSApiLogicV2
+@interface WCPayPayMoneyFromBrandContactJSApiLogicV2 : NSObject
 {
     JSEvent *m_jsEvent;
     NSString *m_stepInURL;

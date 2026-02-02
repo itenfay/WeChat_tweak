@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCStoryMediaItem;
 
-@interface WCStoryDownloadTaskInfo
+@interface WCStoryDownloadTaskInfo : NSObject
 {
     struct C2CDownloadResult result;
     _Bool _bSourceChanged;

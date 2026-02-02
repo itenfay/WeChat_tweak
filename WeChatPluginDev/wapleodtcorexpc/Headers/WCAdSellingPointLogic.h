@@ -6,7 +6,7 @@
 @class MMTimer;
 @protocol WCAdSellingPointLogicDelegate;
 
-@interface WCAdSellingPointLogic
+@interface WCAdSellingPointLogic : NSObject
 {
     id <WCAdSellingPointLogicDelegate> _delegate;
     unsigned long long _itemCount;

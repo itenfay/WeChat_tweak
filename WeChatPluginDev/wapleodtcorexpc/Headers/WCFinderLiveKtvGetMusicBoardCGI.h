@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveKtvGetMusicBoardCGI
+@interface WCFinderLiveKtvGetMusicBoardCGI : NSObject
 {
     unsigned int _boardType;
     unsigned int _subBoardType;

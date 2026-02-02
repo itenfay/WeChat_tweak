@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderNewUserPrepareResponse, MMFinderLiveBuyTicketHandle, MMUIButton, NSMapTable, NSMutableArray, NSString, UIButton, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIView, WCFinderAnimationLoadingView, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderFullScreenAnimatedTransitioning, WCFinderLiveAudienceNoticeReporter, WCFinderMultiMenuItemHelper, WCFinderPostMgr, WCFinderProfileCoverView, WCFinderProfileJustWatchTipsView, WCFinderProfileLogoutView, WCFinderProfileReporter, WCFinderPushProfileParams, WCFinderStreamBackGroundView, WCFinderStreamProfileContainer, WCFinderStreamProfileDragBarView, WCFinderStreamProfileHeaderView, WCFinderStreamProfileHeaderViewController, WCFinderStreamProfileTitleView, WCFinderStreamProfileViewModel, WCFinderTabSwitchView;
 @protocol UIViewControllerAnimatedTransitioning;
 
-@interface WCFinderStreamProfileViewController
+@interface WCFinderStreamProfileViewController : NSObject
 {
     _Bool _skipLoadData;
     _Bool _cameraLongPressRightButton;

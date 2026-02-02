@@ -6,7 +6,7 @@
 @class WCPayOfflinePayEnablePageData;
 @protocol WCPayOfflineEnablePageTipsViewDelegate;
 
-@interface WCPayOfflineEnablePageTipsView
+@interface WCPayOfflineEnablePageTipsView : NSObject
 {
     id <WCPayOfflineEnablePageTipsViewDelegate> _delegate;
     WCPayOfflinePayEnablePageData *_viewData;

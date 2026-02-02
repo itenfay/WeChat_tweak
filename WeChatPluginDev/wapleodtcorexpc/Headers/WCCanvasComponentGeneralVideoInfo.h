@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentVideoFloatBarInfo;
 
-@interface WCCanvasComponentGeneralVideoInfo
+@interface WCCanvasComponentGeneralVideoInfo : NSObject
 {
     _Bool _forbiddenControlView;
     _Bool _hideVoiceIcon;

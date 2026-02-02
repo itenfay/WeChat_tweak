@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, NSMutableSet, NSString, WAContactGetter;
 
-@interface WASessionViewController
+@interface WASessionViewController : NSObject
 {
     MMTableView *_tableView;
     NSMutableSet *_setCheckUpdateUserName;

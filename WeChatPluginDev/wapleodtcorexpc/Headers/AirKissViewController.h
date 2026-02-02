@@ -6,7 +6,7 @@
 @class MMTableViewInfo, MMUILabel, MMUIScrollView, NSData, NSDate, NSString, UIButton, UIImageView, UILabel, UITextField, UIView, WCDevice;
 @protocol AirKissViewControllerDelegate;
 
-@interface AirKissViewController
+@interface AirKissViewController : NSObject
 {
     UIImageView *m_imageView;
     MMUILabel *m_ssidView;

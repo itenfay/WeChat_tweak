@@ -6,7 +6,7 @@
 @class InfiniteLoopContainerView, MMTimer, NSString, RichTextView, UIView, WCFinderAuthInfoIconView, WCFinderFeedImageCDNView, WCFinderHeadImageView, WCFinderLiveHomePageEntertainmentAudioRoomTeamupListView, WCFinderLiveHomePageFeedEntertainmentAudioRoomVM;
 @protocol WCFinderLiveHomePageEntertainmentAudioRoomCellDelegate;
 
-@interface WCFinderLiveHomePageEntertainmentAudioRoomCell
+@interface WCFinderLiveHomePageEntertainmentAudioRoomCell : NSObject
 {
     id <WCFinderLiveHomePageEntertainmentAudioRoomCellDelegate> _delegate;
     WCFinderLiveHomePageFeedEntertainmentAudioRoomVM *_feedVM;

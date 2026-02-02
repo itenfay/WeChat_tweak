@@ -5,7 +5,7 @@
 
 @class EnterpriseSessionCellData, EnterpriseSessionCellLayoutParam, MMBadgeView, MMHeadImageView, UIImageView, UILabel, UIView;
 
-@interface EnterpriseSessionItemView
+@interface EnterpriseSessionItemView : NSObject
 {
     EnterpriseSessionCellData *_cellData;
     EnterpriseSessionCellLayoutParam *_layoutParam;

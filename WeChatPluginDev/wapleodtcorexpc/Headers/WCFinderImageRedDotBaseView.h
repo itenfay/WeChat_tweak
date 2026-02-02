@@ -5,7 +5,7 @@
 
 @class MMUIButton;
 
-@interface WCFinderImageRedDotBaseView
+@interface WCFinderImageRedDotBaseView : NSObject
 {
     MMUIButton *_imageBtn;
 }

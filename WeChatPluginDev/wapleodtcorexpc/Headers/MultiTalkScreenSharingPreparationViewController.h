@@ -6,7 +6,7 @@
 @class NSString, UIButton;
 @protocol MultiTalkScreenSharingPreparationViewControllerDelegate;
 
-@interface MultiTalkScreenSharingPreparationViewController
+@interface MultiTalkScreenSharingPreparationViewController : NSObject
 {
     _Bool _startButtonClicked;
     id <MultiTalkScreenSharingPreparationViewControllerDelegate> _delegate;

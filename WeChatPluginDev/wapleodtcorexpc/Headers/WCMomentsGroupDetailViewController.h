@@ -5,7 +5,7 @@
 
 @class MMPageSheetAdapter, NSArray, NSString;
 
-@interface WCMomentsGroupDetailViewController
+@interface WCMomentsGroupDetailViewController : NSObject
 {
     NSArray *_contactDataList;
     NSString *_viewControllerTitle;

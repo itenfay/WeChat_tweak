@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface LocationThumbTask
+@interface LocationThumbTask : NSObject
 {
     double _extraHeight;
     NSString *_initialChatname;

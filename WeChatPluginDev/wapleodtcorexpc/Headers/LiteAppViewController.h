@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class LiteAppPageConfig, LiteAppReferrerInfo, LiteAppStore, LiteAppViewConsumer, LiteAppWindow, MMLiteAppReporter, NSMutableDictionary, NSString, UIColor, UIImage, UIViewController, WxaLiteAppStartReport;
 @protocol LiteAppParentViewControllerDelegate, UIGestureRecognizerDelegate;
 
-@interface LiteAppViewController
+@interface LiteAppViewController : NSObject
 {
     struct shared_ptr<LVUICallback> lvUICallback;
     int lastFlags;

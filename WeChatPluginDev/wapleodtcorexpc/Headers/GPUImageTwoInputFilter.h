@@ -5,7 +5,7 @@
 
 @class GPUImageFramebuffer;
 
-@interface GPUImageTwoInputFilter
+@interface GPUImageTwoInputFilter : NSObject
 {
     GPUImageFramebuffer *secondInputFramebuffer;
     int filterSecondTextureCoordinateAttribute;

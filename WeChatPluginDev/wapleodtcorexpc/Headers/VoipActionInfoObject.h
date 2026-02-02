@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoipActionInfoObject
+@interface VoipActionInfoObject : NSObject
 {
     _Bool _m_hasClickIgnoreCallOnce;
     _Bool _m_hasClickVoiceMinimizeWithEarMode;

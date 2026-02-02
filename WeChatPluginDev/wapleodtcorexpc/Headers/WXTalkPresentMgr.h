@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WXTalkPresentMgr
+@interface WXTalkPresentMgr : NSObject
 {
     NSMutableDictionary *_infoList;
     _Bool _isInfoListLoaded;

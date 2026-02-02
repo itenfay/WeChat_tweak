@@ -5,7 +5,7 @@
 
 @class NSString, WeMediaApi;
 
-@interface WAJSContextPlugin_WeMedia
+@interface WAJSContextPlugin_WeMedia : NSObject
 {
     _Bool _isAudioInterrupt;
     WeMediaApi *_wemedia_api;

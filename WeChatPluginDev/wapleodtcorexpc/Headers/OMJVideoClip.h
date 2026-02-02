@@ -5,7 +5,7 @@
 
 @class OMJContentSpatialDesc;
 
-@interface OMJVideoClip
+@interface OMJVideoClip : NSObject
 {
     OMJContentSpatialDesc *_contentSpatialDesc;
     struct CGRect _contentCropRect;

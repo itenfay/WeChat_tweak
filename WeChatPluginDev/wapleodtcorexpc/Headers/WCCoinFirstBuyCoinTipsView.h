@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCCoinFirstBuyCoinTipsViewDelegate;
 
-@interface WCCoinFirstBuyCoinTipsView
+@interface WCCoinFirstBuyCoinTipsView : NSObject
 {
     _Bool _alwaysDarkMode;
     id <WCCoinFirstBuyCoinTipsViewDelegate> _delegate;

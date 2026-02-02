@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCPlayerDownloadMgr
+@interface WCPlayerDownloadMgr : NSObject
 {
     NSMutableDictionary *_dicTaskInfo;
 }

@@ -6,7 +6,7 @@
 @class CContact, NSMutableArray, NSMutableSet, NSString;
 @protocol BrandDeviceConnectLogicControllerDelegate;
 
-@interface BrandDeviceConnectLogicController
+@interface BrandDeviceConnectLogicController : NSObject
 {
     CContact *m_contact;
     int m_brandDeviceConnectedCount;

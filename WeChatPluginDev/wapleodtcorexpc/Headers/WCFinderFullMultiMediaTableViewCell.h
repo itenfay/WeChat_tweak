@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, FinderNpsSurveyQuestion, FinderNpsSurveyTaskConf, MMUIButton, NPSFlutterVC, NSHashTable, NSString, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WCFinderAdReportInfo, WCFinderAnimationLoadingView, WCFinderBulletGroupView, WCFinderCommonBottomBannerView, WCFinderCustomPanelSheet, WCFinderFeedContentVM, WCFinderFeedSubtitleView, WCFinderFeedbackView, WCFinderFullInteractivePanelView, WCFinderFullNewMultiMediaView, WCFinderHalfMoveModel, WCFinderInteractivePanelConfigParamsModel, WCFinderLandscapeBackButton, WCFinderLandscapeProgressPanelView, WCFinderLongPressRateEduView, WCFinderLongPressRatePlayStateModel, WCFinderMemberShipPaymentGuideView, WCFinderMoreRelatedContentView, WCFinderNpsSurveyView, WCFinderPlaybackSpeedView, WCFinderPortraitPressRateEduView, WCFinderPortraitProgressPanelView, WCFinderPremovieAdBaseHelper, WCFinderProgressControlPanelConfigParamsModel, WCFinderProgressGuideView, WCFinderShortTapGestureRecognizer, WCFinderTLRedCoverBubbleView, WCFinderTableViewParamModel, WCFinderTipBarView;
 @protocol WCFinderFullMultiMediaTableViewCellDelegate, WCFinderNpsSurveyContextInfoDelegate;
 
-@interface WCFinderFullMultiMediaTableViewCell
+@interface WCFinderFullMultiMediaTableViewCell : NSObject
 {
     _Bool _isForceDisableLikeAction;
     _Bool _isEnableMediaHeaderShowFollowTips;

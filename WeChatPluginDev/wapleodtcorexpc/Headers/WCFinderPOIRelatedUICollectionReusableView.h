@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RichTextView, SnsPoiDetail, UIImageView, UIView, WCFinderAuthInfoIconView, WCFinderContact, WCFinderHeadImageView;
 @protocol WCFinderPOIRelatedUICollectionReusableViewDelegate;
 
-@interface WCFinderPOIRelatedUICollectionReusableView
+@interface WCFinderPOIRelatedUICollectionReusableView : NSObject
 {
     _Bool _onlyShowPoiName;
     int _addressSubType;

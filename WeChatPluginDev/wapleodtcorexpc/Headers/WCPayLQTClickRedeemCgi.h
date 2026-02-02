@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTClickRedeemCgiDelegate;
 
-@interface WCPayLQTClickRedeemCgi
+@interface WCPayLQTClickRedeemCgi : NSObject
 {
     _Bool _fromServer;
     id <WCPayLQTClickRedeemCgiDelegate> _cgiDelegate;

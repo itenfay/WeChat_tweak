@@ -5,7 +5,7 @@
 
 @class UIView, WAMainFrameTaskbarOperationViewController;
 
-@interface WAMainFrameTaskBarDeleteActionWindow
+@interface WAMainFrameTaskBarDeleteActionWindow : NSObject
 {
     WAMainFrameTaskbarOperationViewController *_operationVC;
     UIView *_containerView;

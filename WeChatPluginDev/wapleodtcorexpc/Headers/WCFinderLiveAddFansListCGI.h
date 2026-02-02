@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveAddFansListCGI
+@interface WCFinderLiveAddFansListCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

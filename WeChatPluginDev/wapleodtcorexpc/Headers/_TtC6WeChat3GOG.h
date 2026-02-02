@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat3GOG
+@interface _TtC6WeChat3GOG : NSObject
 {
     MISSING_TYPE *main;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WeVisEffectConfigResponse;
 
-@interface WeVisSettingsMgr
+@interface WeVisSettingsMgr : NSObject
 {
     unsigned long long _lastMs;
     struct map<std::string, std::map<std::string, std::string>, std::less<std::string>, std::allocator<std::pair<const std::string, std::map<std::string, std::string>>>> _paramsMap;

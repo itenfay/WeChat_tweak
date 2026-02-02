@@ -5,7 +5,7 @@
 
 @class EdgeComputingWCDBManager, NSArray, NSString;
 
-@interface EdgeComputingDataDao
+@interface EdgeComputingDataDao : NSObject
 {
     NSString *configID;
     NSArray *fieldConfigModels;

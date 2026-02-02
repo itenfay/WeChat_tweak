@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportOuterMenuActionItem
+@interface WAReportOuterMenuActionItem : NSObject
 {
     unsigned int _actionTimeStamp;
     int _errcode;

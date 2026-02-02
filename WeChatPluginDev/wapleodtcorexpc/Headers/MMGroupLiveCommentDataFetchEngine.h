@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMGroupLiveCommentDataFetchEngine
+@interface MMGroupLiveCommentDataFetchEngine : NSObject
 {
 }
 

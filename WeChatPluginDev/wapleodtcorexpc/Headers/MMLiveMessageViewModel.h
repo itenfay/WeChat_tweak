@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveMessageViewModel
+@interface MMLiveMessageViewModel : NSObject
 {
     double _cacheTitleHeight;
     unsigned int _currentLiveStatus;

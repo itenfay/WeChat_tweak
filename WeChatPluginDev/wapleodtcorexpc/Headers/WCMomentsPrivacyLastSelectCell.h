@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface WCMomentsPrivacyLastSelectCell
+@interface WCMomentsPrivacyLastSelectCell : NSObject
 {
     UILabel *_titleLabel;
     UIView *_lineView;

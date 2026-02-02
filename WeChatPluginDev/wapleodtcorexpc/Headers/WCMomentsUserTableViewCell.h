@@ -5,7 +5,7 @@
 
 @class CContact, MMHeadImageView, UILabel, UIView;
 
-@interface WCMomentsUserTableViewCell
+@interface WCMomentsUserTableViewCell : NSObject
 {
     CContact *_userContact;
     MMHeadImageView *_headerView;

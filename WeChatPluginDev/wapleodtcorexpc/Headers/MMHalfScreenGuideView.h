@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAShapeLayer, MMUILabel, UIButton, UIView;
 @protocol MMHalfScreenGuideViewDelegate;
 
-@interface MMHalfScreenGuideView
+@interface MMHalfScreenGuideView : NSObject
 {
     _Bool _dismissesWhenCancelButtonClicked;
     _Bool _dismissesWhenAcceptButtonClicked;

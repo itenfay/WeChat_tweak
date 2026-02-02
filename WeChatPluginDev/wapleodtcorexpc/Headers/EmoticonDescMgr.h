@@ -5,7 +5,7 @@
 
 @class EmoticonDescRecommandLogic, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface EmoticonDescMgr
+@interface EmoticonDescMgr : NSObject
 {
     NSMutableSet *_m_requestPidSet;
     NSMutableDictionary *_m_emoticonDescCache;

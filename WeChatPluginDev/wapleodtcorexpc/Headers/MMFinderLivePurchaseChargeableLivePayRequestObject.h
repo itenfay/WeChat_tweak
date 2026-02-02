@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLivePurchaseChargeableLivePayRequestObject
+@interface MMFinderLivePurchaseChargeableLivePayRequestObject : NSObject
 {
 }
 

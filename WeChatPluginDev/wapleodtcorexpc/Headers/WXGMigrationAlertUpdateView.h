@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WXGMigrationAlertUpdateViewDelegate;
 
-@interface WXGMigrationAlertUpdateView
+@interface WXGMigrationAlertUpdateView : NSObject
 {
     id <WXGMigrationAlertUpdateViewDelegate> _delegate;
     NSString *_tipString;

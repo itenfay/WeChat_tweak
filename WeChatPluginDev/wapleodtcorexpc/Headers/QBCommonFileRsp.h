@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface QBCommonFileRsp
+@interface QBCommonFileRsp : NSObject
 {
     NSDictionary *jcev2_p_0_o_mCommonFile__b0x9i_M09ONSStringVOQBCommonFileInfo;
     NSString *jcev2_p_1_o_sModuleName;

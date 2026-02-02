@@ -5,7 +5,7 @@
 
 @class FavDataItemWrap, FavoritesItem;
 
-@interface FavProductDetailViewController
+@interface FavProductDetailViewController : NSObject
 {
     FavoritesItem *m_favItem;
     FavDataItemWrap *m_favDataWrap;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderGetRelatedListParams;
 
-@interface WCFinderGetRelatedListCGI
+@interface WCFinderGetRelatedListCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

@@ -5,7 +5,7 @@
 
 @class MMSilentPushReporter, NSString;
 
-@interface SPLogUploadMgr
+@interface SPLogUploadMgr : NSObject
 {
     MMSilentPushReporter *_logReporter;
     NSString *_m_realReportUrl;

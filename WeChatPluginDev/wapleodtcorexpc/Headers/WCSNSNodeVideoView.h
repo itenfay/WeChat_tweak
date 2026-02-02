@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMDragManager, NSString, SessionForwardRecordLogic, SharePreConfirmView, SightIconView, UIDragInteraction, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer, WCDataItem, WCMediaItem, WCMomentsPlayerSourceController, WCMomentsScrollActionSheet, WCPlayerConfigControlView, WCPlayerConfigFullScreenViewController, WCPlayerView;
 @protocol WCSNSNodeVideoViewDelegate;
 
-@interface WCSNSNodeVideoView
+@interface WCSNSNodeVideoView : NSObject
 {
     _Bool _isImageReady;
     _Bool _bIgnoreLongPress;

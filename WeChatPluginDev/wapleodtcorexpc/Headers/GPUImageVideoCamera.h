@@ -6,7 +6,7 @@
 @class AVCaptureAudioDataOutput, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, GLProgram, NSDate, NSObject, NSString;
 @protocol GPUImageVideoCameraDelegate, OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface GPUImageVideoCamera
+@interface GPUImageVideoCamera : NSObject
 {
     unsigned long long numberOfFramesCaptured;
     double totalFrameTimeDuringCapture;

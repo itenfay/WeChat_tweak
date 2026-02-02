@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCGetFinderPOIListCGI
+@interface WCGetFinderPOIListCGI : NSObject
 {
     unsigned int _pullType;
     NSData *_lastBuffer;

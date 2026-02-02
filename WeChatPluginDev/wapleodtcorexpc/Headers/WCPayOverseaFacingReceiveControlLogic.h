@@ -5,7 +5,7 @@
 
 @class NSString, WCPayOverseaGetFacingReceiveQRCodeCgi, WCPayOverseaGetFacingReceiveQRCodeResponse;
 
-@interface WCPayOverseaFacingReceiveControlLogic
+@interface WCPayOverseaFacingReceiveControlLogic : NSObject
 {
     NSString *m_nsFacingAmountTotalMoney;
     NSString *m_nsFacingAmountDesc;

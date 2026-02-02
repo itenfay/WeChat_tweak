@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, SKBuiltinBuffer_t;
 @protocol StoreEmotionGetDonorListCgiDelegate;
 
-@interface StoreEmotionGetDonorListCgi
+@interface StoreEmotionGetDonorListCgi : NSObject
 {
     NSString *m_pid;
     NSMutableArray *m_donorList;

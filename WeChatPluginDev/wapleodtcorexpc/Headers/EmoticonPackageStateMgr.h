@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface EmoticonPackageStateMgr
+@interface EmoticonPackageStateMgr : NSObject
 {
     NSMutableDictionary *m_dicState;
 }

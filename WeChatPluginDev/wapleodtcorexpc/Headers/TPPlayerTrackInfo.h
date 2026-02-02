@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface TPPlayerTrackInfo
+@interface TPPlayerTrackInfo : NSObject
 {
     NSString *_urlString;
     NSString *_mimeType;

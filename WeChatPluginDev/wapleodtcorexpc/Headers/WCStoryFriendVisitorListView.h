@@ -6,7 +6,7 @@
 @class NSString, UICollectionView, UILabel;
 @protocol WCStoryFriendVisitorListViewDataSource, WCStoryFriendVisitorListViewDelegate;
 
-@interface WCStoryFriendVisitorListView
+@interface WCStoryFriendVisitorListView : NSObject
 {
     id <WCStoryFriendVisitorListViewDelegate> _delegate;
     id <WCStoryFriendVisitorListViewDataSource> _dataSource;

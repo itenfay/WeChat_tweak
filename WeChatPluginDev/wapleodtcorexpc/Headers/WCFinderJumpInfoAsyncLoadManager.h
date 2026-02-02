@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderJumpInfoAsyncLoadManager
+@interface WCFinderJumpInfoAsyncLoadManager : NSObject
 {
     NSMutableDictionary *_records;
 }

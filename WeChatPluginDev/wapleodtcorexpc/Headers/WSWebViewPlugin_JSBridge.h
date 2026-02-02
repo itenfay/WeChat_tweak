@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WSWebViewPlugin_JSBridge
+@interface WSWebViewPlugin_JSBridge : NSObject
 {
     _Bool _autoSendOnUIInit;
     _Bool _bViewAppear;

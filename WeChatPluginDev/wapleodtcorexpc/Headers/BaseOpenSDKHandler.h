@@ -5,7 +5,7 @@
 
 @class BlockViewController, NSDictionary, NSString, OpenApiParameter;
 
-@interface BaseOpenSDKHandler
+@interface BaseOpenSDKHandler : NSObject
 {
     OpenApiParameter *_parameter;
     BlockViewController *_blockView;

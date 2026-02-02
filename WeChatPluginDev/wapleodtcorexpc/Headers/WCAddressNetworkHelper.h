@@ -5,7 +5,7 @@
 
 @protocol WCAddressNetworkDelegate;
 
-@interface WCAddressNetworkHelper
+@interface WCAddressNetworkHelper : NSObject
 {
     id <WCAddressNetworkDelegate> m_delegate;
 }

@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface EmotionStoreRewardDonorHeader
+@interface EmotionStoreRewardDonorHeader : NSObject
 {
     UIImageView *m_donorsNumView;
 }

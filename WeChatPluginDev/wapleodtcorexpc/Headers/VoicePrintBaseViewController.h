@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, UIButton, UIScreenEdgePanGestureRecognizer, VoicePrintDigitView, VoicePrintHeaderView, VoicePrintLoadingView, VoicePrintRecordButton, WCSheetView;
 
-@interface VoicePrintBaseViewController
+@interface VoicePrintBaseViewController : NSObject
 {
     WCSheetView *_sheetView;
     VoicePrintHeaderView *_headerView;

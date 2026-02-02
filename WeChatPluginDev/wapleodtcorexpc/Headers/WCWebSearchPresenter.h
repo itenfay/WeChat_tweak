@@ -5,7 +5,7 @@
 
 @class WCSearchPageState;
 
-@interface WCWebSearchPresenter
+@interface WCWebSearchPresenter : NSObject
 {
 }
 

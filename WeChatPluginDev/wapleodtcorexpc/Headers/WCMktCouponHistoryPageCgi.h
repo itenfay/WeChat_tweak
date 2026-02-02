@@ -5,7 +5,7 @@
 
 @protocol WCMktCouponHistoryPageCgiDelegate;
 
-@interface WCMktCouponHistoryPageCgi
+@interface WCMktCouponHistoryPageCgi : NSObject
 {
     id <WCMktCouponHistoryPageCgiDelegate> _cgiDelegate;
 }

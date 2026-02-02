@@ -6,7 +6,7 @@
 @class MMUIButton;
 @protocol MJShootCropToolBarDelegate;
 
-@interface MJShootCropToolBar
+@interface MJShootCropToolBar : NSObject
 {
     _Bool _resetEnabled;
     id <MJShootCropToolBarDelegate> _delegate;

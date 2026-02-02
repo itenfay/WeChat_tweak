@@ -6,7 +6,7 @@
 @class NSString, WCAdFinderLiveNoticeInfo;
 @protocol WCAdHalfScreenFinderLiveNoticeViewDelegate;
 
-@interface WCAdHalfScreenFinderLiveNoticeView
+@interface WCAdHalfScreenFinderLiveNoticeView : NSObject
 {
     id <WCAdHalfScreenFinderLiveNoticeViewDelegate> _delegate;
     WCAdFinderLiveNoticeInfo *_finderLiveNoticeInfo;

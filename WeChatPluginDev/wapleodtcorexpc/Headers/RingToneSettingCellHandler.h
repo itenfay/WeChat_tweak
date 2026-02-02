@@ -5,7 +5,7 @@
 
 @class AnyPromise;
 
-@interface RingToneSettingCellHandler
+@interface RingToneSettingCellHandler : NSObject
 {
     AnyPromise *_globalRingPromise;
     AnyPromise *_friendsRingPromise;

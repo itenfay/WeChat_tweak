@@ -6,7 +6,7 @@
 @class AddAvatarUploadImageTask, MMTableViewInfo, MMTipsViewController, NSString, OauthAvatarInfo, UIBarButtonItem, UIImage, UILabel, UIView, WCTableViewNormalCellManager, WCUITextField;
 @protocol MMAuthorizeAddAvatarViewControllerDelegate;
 
-@interface MMAuthorizeAddAvatarViewController
+@interface MMAuthorizeAddAvatarViewController : NSObject
 {
     _Bool _isEdit;
     _Bool _isBlockingToSave;

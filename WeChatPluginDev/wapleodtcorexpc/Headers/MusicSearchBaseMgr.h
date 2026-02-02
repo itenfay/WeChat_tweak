@@ -5,7 +5,7 @@
 
 @class NSString, SimpleAudioRecorder, UploadShakeMusicMgr;
 
-@interface MusicSearchBaseMgr
+@interface MusicSearchBaseMgr : NSObject
 {
     unsigned long long m_offsetBytes;
     _Bool m_bStopRecord;

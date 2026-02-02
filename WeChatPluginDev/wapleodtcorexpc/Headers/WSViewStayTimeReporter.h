@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WSViewStayTimeReporter
+@interface WSViewStayTimeReporter : NSObject
 {
     unsigned int _searchScene;
     unsigned long long _scene;

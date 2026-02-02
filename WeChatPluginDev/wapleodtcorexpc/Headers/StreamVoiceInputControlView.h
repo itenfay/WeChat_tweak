@@ -6,7 +6,7 @@
 @class CAShapeLayer, UIButton, UIColor, UIImage, UIView;
 @protocol StreamVoiceInputControlViewDelegate;
 
-@interface StreamVoiceInputControlView
+@interface StreamVoiceInputControlView : NSObject
 {
     id <StreamVoiceInputControlViewDelegate> _delegate;
     double _buttonLen;

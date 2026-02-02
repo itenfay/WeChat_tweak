@@ -5,7 +5,7 @@
 
 @class MultiTalkJumpAppWordingInfo, NSString;
 
-@interface MultiTalkJumpAppMgr
+@interface MultiTalkJumpAppMgr : NSObject
 {
     int _type;
     NSString *_schemePrefix;

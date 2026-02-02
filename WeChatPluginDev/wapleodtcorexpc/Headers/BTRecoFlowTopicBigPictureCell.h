@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSMutableArray;
 
-@interface BTRecoFlowTopicBigPictureCell
+@interface BTRecoFlowTopicBigPictureCell : NSObject
 {
     MMWebImageView *_coverView;
     NSMutableArray *_webImageViewList;

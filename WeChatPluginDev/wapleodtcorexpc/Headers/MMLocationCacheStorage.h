@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMLocationCacheStorage
+@interface MMLocationCacheStorage : NSObject
 {
     NSMutableArray *_caches;
 }

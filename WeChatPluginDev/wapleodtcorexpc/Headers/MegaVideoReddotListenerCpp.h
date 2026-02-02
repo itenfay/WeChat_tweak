@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoReddotListenerCpp
+@interface MegaVideoReddotListenerCpp : NSObject
 {
 }
 

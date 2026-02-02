@@ -5,7 +5,7 @@
 
 @class NSData, NSDictionary, NSString;
 
-@interface MJTTSRequestResult
+@interface MJTTSRequestResult : NSObject
 {
     NSData *_responseData;
     NSData *_pcmData;

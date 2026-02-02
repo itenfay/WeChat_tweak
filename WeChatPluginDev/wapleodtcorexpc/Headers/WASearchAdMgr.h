@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASearchAdMgr
+@interface WASearchAdMgr : NSObject
 {
 }
 

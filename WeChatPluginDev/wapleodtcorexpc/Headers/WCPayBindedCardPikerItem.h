@@ -6,7 +6,7 @@
 @class NSArray, NSMutableDictionary, NSString, UILabel, WCBizPickerView, WCPayBindCardInfo;
 @protocol WCPayBindedCardPikerItemDelegate;
 
-@interface WCPayBindedCardPikerItem
+@interface WCPayBindedCardPikerItem : NSObject
 {
     UILabel *m_textLabel;
     WCBizPickerView *m_pickerView;

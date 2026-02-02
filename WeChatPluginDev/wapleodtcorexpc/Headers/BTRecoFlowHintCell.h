@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface BTRecoFlowHintCell
+@interface BTRecoFlowHintCell : NSObject
 {
     UILabel *_hintLabel;
 }

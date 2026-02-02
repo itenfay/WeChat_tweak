@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface GameHaowanPostInfoTableItem
+@interface GameHaowanPostInfoTableItem : NSObject
 {
     _Bool _isMiniGameVideo;
     _Bool _needDelAfterPost;

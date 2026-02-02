@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveAnchorStartLiveReportHandler
+@interface MMLiveAnchorStartLiveReportHandler : NSObject
 {
     unsigned int scene;
     unsigned int rulePop;

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface TXCBGRADrawer
+@interface TXCBGRADrawer : NSObject
 {
     struct __CVBuffer *_textureRef;
     _Bool _preferGPUUpload;

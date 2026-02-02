@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveAudioRoomMicUserView
+@interface MMFinderLiveAudioRoomMicUserView : NSObject
 {
     _Bool _forceShowPersonIcon;
 }

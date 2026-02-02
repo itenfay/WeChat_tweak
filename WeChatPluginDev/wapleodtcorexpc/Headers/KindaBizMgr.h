@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class KindaAppModuleManager, MMLocatingCoordinateLogic, NSString;
 
-@interface KindaBizMgr
+@interface KindaBizMgr : NSObject
 {
     KindaAppModuleManager *_moduleManager;
     MMLocatingCoordinateLogic *_locatingLogic;

@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface MMSightCameraFilterBtn
+@interface MMSightCameraFilterBtn : NSObject
 {
     UIView *_colorView;
     UILabel *_filterTitleLabel;

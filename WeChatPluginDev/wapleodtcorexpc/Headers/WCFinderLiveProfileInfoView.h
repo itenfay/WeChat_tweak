@@ -5,7 +5,7 @@
 
 @class FinderAudienceLiveInfoItem, MMUILabel, UIView;
 
-@interface WCFinderLiveProfileInfoView
+@interface WCFinderLiveProfileInfoView : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_valueLabel;

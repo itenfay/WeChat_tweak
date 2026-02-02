@@ -5,7 +5,7 @@
 
 @class EmoticonWeAppInfo, MMWebImageView, UIButton, UILabel, UIView;
 
-@interface EmoticonWeAppCellView
+@interface EmoticonWeAppCellView : NSObject
 {
     _Bool _isWeAppClicked;
     UIView *_contentView;

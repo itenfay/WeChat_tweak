@@ -5,7 +5,7 @@
 
 @class CEmoticonWrap, EmoticonCustomAddLogicController, MMEmoticonView, NSString, UIImageView;
 
-@interface FavRecordEmojiNodeView
+@interface FavRecordEmojiNodeView : NSObject
 {
     MMEmoticonView *_emojiView;
     UIImageView *_gameEmojiView;

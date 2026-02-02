@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface WNSaveImageEditInfoMgr
+@interface WNSaveImageEditInfoMgr : NSObject
 {
     NSMutableArray *_arrDataSource;
 }

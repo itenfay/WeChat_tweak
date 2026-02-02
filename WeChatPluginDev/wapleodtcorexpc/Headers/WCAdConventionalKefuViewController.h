@@ -5,7 +5,7 @@
 
 @class CContact, NSString, UIButton, WCAdConventionalKefuDetailView;
 
-@interface WCAdConventionalKefuViewController
+@interface WCAdConventionalKefuViewController : NSObject
 {
     CContact *_contact;
     WCAdConventionalKefuDetailView *_detailView;

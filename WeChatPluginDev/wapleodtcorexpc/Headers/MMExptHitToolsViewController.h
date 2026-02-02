@@ -5,7 +5,7 @@
 
 @class UITextView, WCBaseTextFieldItem;
 
-@interface MMExptHitToolsViewController
+@interface MMExptHitToolsViewController : NSObject
 {
     unsigned int m_selectedExptId;
     WCBaseTextFieldItem *m_inputExptId;

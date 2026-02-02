@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WNSaveImageCgi
+@interface WNSaveImageCgi : NSObject
 {
     unsigned int _curVersion;
     NSMutableArray *_fontInfoList;

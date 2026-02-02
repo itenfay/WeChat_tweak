@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMPowerMgr
+@interface MMPowerMgr : NSObject
 {
     _Bool m_bLowPowerMode;
     NSMutableArray *m_minuteCPUUsageArray;

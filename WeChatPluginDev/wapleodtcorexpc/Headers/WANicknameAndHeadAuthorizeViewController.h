@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UITableView, WAAuthorizeResultInfo, WANickNameAndHeaderAuthViewModel, WANicknameAndHeadAuthorizeSheetInfo;
 @protocol IWAAuthorizeAddAvatarService, WAAuthorizePageDelegate;
 
-@interface WANicknameAndHeadAuthorizeViewController
+@interface WANicknameAndHeadAuthorizeViewController : NSObject
 {
     unsigned int _selectedAvatarId;
     unsigned int _sessionId;

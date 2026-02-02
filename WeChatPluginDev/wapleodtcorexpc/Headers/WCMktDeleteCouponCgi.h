@@ -5,7 +5,7 @@
 
 @protocol WCMktDeleteCouponCgiDelegate;
 
-@interface WCMktDeleteCouponCgi
+@interface WCMktDeleteCouponCgi : NSObject
 {
     id <WCMktDeleteCouponCgiDelegate> _cgiDelegate;
 }

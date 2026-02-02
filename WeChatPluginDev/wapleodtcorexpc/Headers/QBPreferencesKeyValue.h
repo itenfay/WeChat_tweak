@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBPreferencesKeyValue
+@interface QBPreferencesKeyValue : NSObject
 {
     NSString *jcev2_p_0_o_sKey;
     NSString *jcev2_p_1_o_sValue;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MyFavoritesListViewControllerDelegate;
 
-@interface MyFavoritesListViewController
+@interface MyFavoritesListViewController : NSObject
 {
     id <MyFavoritesListViewControllerDelegate> _delegate;
 }

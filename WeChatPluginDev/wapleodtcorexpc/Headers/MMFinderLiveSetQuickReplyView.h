@@ -6,7 +6,7 @@
 @class CAShapeLayer, FinderLiveQuickReplyWordingInfo, MMFinderLiveQuickReplyViewNavBar, MMFinderLiveSetQuickReplyTableViewModel, MMTableView, NSString, UIView;
 @protocol MMFinderLiveSetQuickReplyViewDelegate;
 
-@interface MMFinderLiveSetQuickReplyView
+@interface MMFinderLiveSetQuickReplyView : NSObject
 {
     MMFinderLiveSetQuickReplyTableViewModel *_tableViewModel;
     _Bool _hasContent;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderUtilsCGI
+@interface WCFinderUtilsCGI : NSObject
 {
     _Bool _isLiveArticle;
     int _cmdId;

@@ -6,7 +6,7 @@
 @class MMLiveContactSelectView, NSString;
 @protocol RingToneContactSelectViewController;
 
-@interface RingToneContactSelectViewController
+@interface RingToneContactSelectViewController : NSObject
 {
     MMLiveContactSelectView *_selectView;
     id <RingToneContactSelectViewController> _liveContactDelegate;

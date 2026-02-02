@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface AppDefaultMessageViewModel
+@interface AppDefaultMessageViewModel : NSObject
 {
     double m_titleHeight;
 }

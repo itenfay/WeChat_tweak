@@ -5,7 +5,7 @@
 
 @class NSString, VoipGetRoomInfoCgi;
 
-@interface VOIPMessageMgr
+@interface VOIPMessageMgr : NSObject
 {
     VoipGetRoomInfoCgi *m_getRoomInfoCgi;
 }

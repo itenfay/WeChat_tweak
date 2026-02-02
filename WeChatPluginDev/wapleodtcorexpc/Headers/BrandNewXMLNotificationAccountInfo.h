@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandNewXMLNotificationAccountInfo
+@interface BrandNewXMLNotificationAccountInfo : NSObject
 {
     NSString *_userName;
     NSString *_nickName;

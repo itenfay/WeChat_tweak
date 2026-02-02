@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter11SessionFlow
+@interface _TtCC6WeChat17KaraFeatureCenter11SessionFlow : NSObject
 {
     MISSING_TYPE *discoverHistoryTable;
     MISSING_TYPE *actionFlow;

@@ -5,7 +5,7 @@
 
 @class NSString, UITableView, WCFinderAnimationLoadingView, WCFinderFriendsAlsoFollowViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderFriendsAlsoFollowViewController
+@interface WCFinderFriendsAlsoFollowViewController : NSObject
 {
     unsigned long long _enterTime;
     WCFinderFriendsAlsoFollowViewModel *_viewModel;

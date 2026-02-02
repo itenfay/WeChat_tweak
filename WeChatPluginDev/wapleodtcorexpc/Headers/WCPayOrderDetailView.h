@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIView;
 @protocol WCPayOrderDetailViewDelegate;
 
-@interface WCPayOrderDetailView
+@interface WCPayOrderDetailView : NSObject
 {
     double m_fBodyViewHeight;
     UIButton *m_btnFold;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface PhoneNumberParser
+@interface PhoneNumberParser : NSObject
 {
     NSString *_nsUrl;
     NSString *_nsSourceUrl;

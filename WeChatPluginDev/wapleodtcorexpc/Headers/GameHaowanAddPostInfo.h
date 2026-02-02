@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface GameHaowanAddPostInfo
+@interface GameHaowanAddPostInfo : NSObject
 {
     NSArray *_mediaList;
 }

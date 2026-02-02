@@ -5,7 +5,7 @@
 
 @class EmoticonTabRecommendItem, NSString, OrderedDictionary;
 
-@interface EmoticonBoardPageWrap
+@interface EmoticonBoardPageWrap : NSObject
 {
     unsigned long long _pageType;
     NSString *_pid;

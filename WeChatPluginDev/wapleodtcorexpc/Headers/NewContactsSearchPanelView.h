@@ -6,7 +6,7 @@
 @class CAGradientLayer, FavTagTableView, MMTableView, MMUIView, MyUIScrollView, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIImageView, UILabel, UIScrollView, UITextField, UIView, WCColorProxy, WCSTokenPickLogic;
 @protocol NewContactsSearchPanelViewDelegate;
 
-@interface NewContactsSearchPanelView
+@interface NewContactsSearchPanelView : NSObject
 {
     NSMutableArray *m_arrKeys;
     NSMutableArray *m_arrImages;

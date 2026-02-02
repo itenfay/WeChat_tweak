@@ -5,7 +5,7 @@
 
 @class ChatroomMsgApp, JumpInfo, NSString;
 
-@interface GCTeamUpCellModel
+@interface GCTeamUpCellModel : NSObject
 {
     NSString *_backgroundImgUrl;
     NSString *_topTitle;

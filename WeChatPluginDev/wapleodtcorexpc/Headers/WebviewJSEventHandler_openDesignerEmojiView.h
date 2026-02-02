@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, UINavigationController;
 
-@interface WebviewJSEventHandler_openDesignerEmojiView
+@interface WebviewJSEventHandler_openDesignerEmojiView : NSObject
 {
     JSEvent *m_event;
     NSString *m_designerId;

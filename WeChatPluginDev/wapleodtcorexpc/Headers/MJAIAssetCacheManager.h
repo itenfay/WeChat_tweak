@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MJAIAssetCacheManager
+@interface MJAIAssetCacheManager : NSObject
 {
     NSMutableDictionary *_uploadResultCache;
 }

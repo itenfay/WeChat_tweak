@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, FinderLiveNoticeInfo, MMUIButton, MMUILabel, MMUIView, WCFinderLiveBindingNoticeMainView;
 
-@interface WCFinderLiveBindingNoticeView
+@interface WCFinderLiveBindingNoticeView : NSObject
 {
     CDUnknownBlockType _createButtonBlock;
     CDUnknownBlockType _bindButtonBlock;

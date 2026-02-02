@@ -5,7 +5,7 @@
 
 @class BTAudioItemCellViewModel, MMUILabel, NSString, UIView, WCBrandAudioPlayView;
 
-@interface BTAudioItemCellView
+@interface BTAudioItemCellView : NSObject
 {
     WCBrandAudioPlayView *m_audioPlayView;
     MMUILabel *m_timeLabel;

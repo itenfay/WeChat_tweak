@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCFinderNotInterestedPanelView
+@interface WCFinderNotInterestedPanelView : NSObject
 {
     _Bool _highLight;
     UIImageView *_iconView;

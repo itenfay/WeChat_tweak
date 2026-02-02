@@ -5,7 +5,7 @@
 
 @class QMapContext, QTileOverlay, QTileOverlayHandler, QTileOverlayManager;
 
-@interface QTileOverlayView
+@interface QTileOverlayView : NSObject
 {
     int _zIndex;
     QTileOverlay *_tileOverlay;

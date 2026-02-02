@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OMCCaptionSegment
+@interface OMCCaptionSegment : NSObject
 {
 }
 

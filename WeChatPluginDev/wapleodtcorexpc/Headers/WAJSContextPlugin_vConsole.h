@@ -6,7 +6,7 @@
 @class UIViewController;
 @protocol IWAVConsoleWebVCHelper;
 
-@interface WAJSContextPlugin_vConsole
+@interface WAJSContextPlugin_vConsole : NSObject
 {
     UIViewController<IWAVConsoleWebVCHelper> *_vConsoleWebVC;
 }

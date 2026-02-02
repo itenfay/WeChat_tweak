@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CXCallObserver, NSString, TRTCCdnPlayerManager, UIView, WCLiveBlurButton, WCPlayLiveWithoutLoginHeadView, WCPlayLiveWithoutLoginViewModel;
 
-@interface WCPlayLiveWithoutLoginViewController
+@interface WCPlayLiveWithoutLoginViewController : NSObject
 {
     _Bool _isIdleTimerDisabledBefore;
     _Bool _hasSetIdleTimerDisabled;

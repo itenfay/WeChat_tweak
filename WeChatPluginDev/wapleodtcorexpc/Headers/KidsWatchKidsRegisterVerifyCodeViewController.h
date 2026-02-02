@@ -6,7 +6,7 @@
 @class KidsWatchButton, KidsWatchFlexibleImageView, KidsWatchRegisterVerifyCodeCardView, NSString;
 @protocol KidsWatchKidsRegisterVerifyCodeViewControllerDelegate;
 
-@interface KidsWatchKidsRegisterVerifyCodeViewController
+@interface KidsWatchKidsRegisterVerifyCodeViewController : NSObject
 {
     _Bool _hasSentVerifyCode;
     KidsWatchRegisterVerifyCodeCardView *_verifyCodeCardView;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCPopUpWindow
+@interface WCPopUpWindow : NSObject
 {
     CDUnknownBlockType _nonViewAreaTouchHandler;
     struct CGRect _viewFrame;

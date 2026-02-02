@@ -6,7 +6,7 @@
 @class MMGrowTextView, NSString, UIButton, UIImageView;
 @protocol WCRedEnvelopesCommentInputToolViewDelegate;
 
-@interface WCRedEnvelopesCommentInputToolView
+@interface WCRedEnvelopesCommentInputToolView : NSObject
 {
     long long _keyboardHeight;
     UIImageView *_toolView;

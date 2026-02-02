@@ -6,7 +6,7 @@
 @class UIButton;
 @protocol MMLiveScreenSharingViewControllerDelegate;
 
-@interface MMLiveScreenSharingViewController
+@interface MMLiveScreenSharingViewController : NSObject
 {
     _Bool _navigationBarHidden;
     id <MMLiveScreenSharingViewControllerDelegate> _delegate;

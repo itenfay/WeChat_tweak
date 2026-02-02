@@ -5,7 +5,7 @@
 
 @class MMDiskUsageScaner, MMFreeSpaceCheckConfig, MMTimer, NSString, NSURL;
 
-@interface MMFreeSpaceCheckMgr
+@interface MMFreeSpaceCheckMgr : NSObject
 {
     MMFreeSpaceCheckConfig *m_config;
     MMTimer *m_checkFreeSpaceTimer;

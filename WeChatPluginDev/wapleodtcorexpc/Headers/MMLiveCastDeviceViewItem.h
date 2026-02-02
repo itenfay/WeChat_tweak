@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class KSUPnPController_AVTransport, KSUPnPDevice;
 
-@interface MMLiveCastDeviceViewItem
+@interface MMLiveCastDeviceViewItem : NSObject
 {
     KSUPnPDevice *_device;
     KSUPnPController_AVTransport *_AVTransportController;

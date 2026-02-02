@@ -6,7 +6,7 @@
 @class MMUILabel, UIView;
 @protocol WCFinderRecommendTagTableViewCellDelegate;
 
-@interface WCFinderRecommendTagTableViewCell
+@interface WCFinderRecommendTagTableViewCell : NSObject
 {
     id <WCFinderRecommendTagTableViewCellDelegate> _delegate;
     UIView *_seperateLine;

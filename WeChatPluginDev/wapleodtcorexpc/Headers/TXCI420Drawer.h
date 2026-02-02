@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface TXCI420Drawer
+@interface TXCI420Drawer : NSObject
 {
     unsigned int _yTexture;
     unsigned int _uTexture;

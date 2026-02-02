@@ -6,7 +6,7 @@
 @class AVAsset, AVPlayer, AVPlayerItem, AVPlayerLayer, MMUIScrollView, NSString, NSURL, UIImageView, UILabel, UIView, WCFinderHeadImageView;
 @protocol WCFinderRedPacketCoverCropViewDelegate;
 
-@interface WCFinderRedPacketCoverCropView
+@interface WCFinderRedPacketCoverCropView : NSObject
 {
     _Bool _shouldIgnoreScrollEvent;
     id <WCFinderRedPacketCoverCropViewDelegate> _delegate;

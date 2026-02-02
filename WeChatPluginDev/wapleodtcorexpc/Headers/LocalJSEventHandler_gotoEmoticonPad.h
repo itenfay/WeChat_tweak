@@ -5,7 +5,7 @@
 
 @class NSString, WSEmoticonPadViewController;
 
-@interface LocalJSEventHandler_gotoEmoticonPad
+@interface LocalJSEventHandler_gotoEmoticonPad : NSObject
 {
     WSEmoticonPadViewController *_emoticonPad;
 }

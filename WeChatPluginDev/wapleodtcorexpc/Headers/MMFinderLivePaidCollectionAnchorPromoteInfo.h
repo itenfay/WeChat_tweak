@@ -5,7 +5,7 @@
 
 @class FinderPaidCollectionInfo;
 
-@interface MMFinderLivePaidCollectionAnchorPromoteInfo
+@interface MMFinderLivePaidCollectionAnchorPromoteInfo : NSObject
 {
     FinderPaidCollectionInfo *_paidCollectionInfo;
 }

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat21FTSWebSearchTitleCell
+@interface _TtC6WeChat21FTSWebSearchTitleCell : NSObject
 {
     MISSING_TYPE *titleCellDelegate;
     MISSING_TYPE *$__lazy_storage_$_hStack;

@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface BTCanvasNewReport26632
+@interface BTCanvasNewReport26632 : NSObject
 {
     NSMutableSet *_cardIdSet;
     NSMutableSet *_cardIdSetV2;

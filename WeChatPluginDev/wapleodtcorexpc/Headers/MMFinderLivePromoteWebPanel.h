@@ -5,7 +5,7 @@
 
 @class MMFinderLiveWebPageSheetParams, MMUIButton, MMWebViewController, NSString, UIView;
 
-@interface MMFinderLivePromoteWebPanel
+@interface MMFinderLivePromoteWebPanel : NSObject
 {
     NSString *_adapterUrl;
     MMWebViewController *_webVC;

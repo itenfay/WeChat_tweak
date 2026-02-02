@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAppViewControllerManager, MMTimer, MMUIWindow, NSRecursiveLock, NSString, UIWindow;
 
-@interface MicroMessengerAppDelegate
+@interface MicroMessengerAppDelegate : NSObject
 {
     CAppViewControllerManager *m_appViewControllerMgr;
     NSString *m_nsToken;

@@ -5,7 +5,7 @@
 
 @class UIButton, UILabel;
 
-@interface PickerToolBar
+@interface PickerToolBar : NSObject
 {
     _Bool _autoExpandWithText;
     UIButton *_cancelButton;

@@ -5,7 +5,7 @@
 
 @class CLLocationManager, NSArray, NSMutableArray;
 
-@interface WABeaconMgrUseInfo
+@interface WABeaconMgrUseInfo : NSObject
 {
     unsigned long long _tag;
     CLLocationManager *_locationMgr;

@@ -5,7 +5,7 @@
 
 @class MMWebViewController, MMWebViewKeepHolderMgr;
 
-@interface WebDelayTransactionContext
+@interface WebDelayTransactionContext : NSObject
 {
     MMWebViewController *_webViewVC;
     MMWebViewKeepHolderMgr *_webKeeper;

@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface WCFinderMSActivityFullCommentsCell
+@interface WCFinderMSActivityFullCommentsCell : NSObject
 {
     UIView *_containerView;
     UILabel *_fullCommentsLabel;

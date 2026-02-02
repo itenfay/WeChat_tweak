@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
 
-@interface WCFinderLiveAudienceLogReporter
+@interface WCFinderLiveAudienceLogReporter : NSObject
 {
     _Bool m_isQuit;
     unsigned int m_commentsCount;

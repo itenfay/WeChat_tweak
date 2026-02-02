@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface PublicWifiCache
+@interface PublicWifiCache : NSObject
 {
     NSMutableDictionary *_notRegisterDict;
 }

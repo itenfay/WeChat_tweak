@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, NSString, WCFinderFavListDetailViewModel, WCFinderFeedListView, WCFinderShareCustomTransition;
 
-@interface WCFinderFavListDetailViewController
+@interface WCFinderFavListDetailViewController : NSObject
 {
     CDUnknownBlockType _backBlock;
     NSNumber *_givingCommentScene;

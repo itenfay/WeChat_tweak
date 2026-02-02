@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMUIView, MMWebImageView, WCFinderDataItem, WCFinderFeedImageCDNView, WCFinderHeadImageView, WCFinderPurchasedItem;
 
-@interface MMFinderLivePurchasedFeedCell
+@interface MMFinderLivePurchasedFeedCell : NSObject
 {
     MMUIView *_bubbleContentView;
     WCFinderFeedImageCDNView *_coverImageView;

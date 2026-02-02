@@ -6,7 +6,7 @@
 @class MMAcceptAgreementProtocolView, MMUIButton, MMUILabel, MMWebViewController, NSString, NSURLRequest, UIButton, UIImageView, UIView;
 @protocol MMLivePolicyViewForAudienceControllerDelegate, YYWebViewInterface;
 
-@interface MMLivePolicyViewForAudienceController
+@interface MMLivePolicyViewForAudienceController : NSObject
 {
     id <MMLivePolicyViewForAudienceControllerDelegate> _policyDelegate;
     MMUIButton *_cancelButton;

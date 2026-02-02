@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveGetPurchasedFeedListCGI
+@interface WCFinderLiveGetPurchasedFeedListCGI : NSObject
 {
     NSData *_lastBuffer;
     CDUnknownBlockType _successBlock;

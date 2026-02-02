@@ -6,7 +6,7 @@
 @class NSDictionary, NSMutableArray, NSString, UIButton;
 @protocol WCPayCardListViewControllerDelegate;
 
-@interface WCPayCardListViewController
+@interface WCPayCardListViewController : NSObject
 {
     NSMutableArray *m_arrPayCardDetailView;
     unsigned int totalHeight;

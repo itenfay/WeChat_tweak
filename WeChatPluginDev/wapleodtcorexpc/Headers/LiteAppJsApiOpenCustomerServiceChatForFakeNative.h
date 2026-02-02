@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURLSessionDataTask;
 
-@interface LiteAppJsApiOpenCustomerServiceChatForFakeNative
+@interface LiteAppJsApiOpenCustomerServiceChatForFakeNative : NSObject
 {
     NSString *m_url;
     int m_scene;

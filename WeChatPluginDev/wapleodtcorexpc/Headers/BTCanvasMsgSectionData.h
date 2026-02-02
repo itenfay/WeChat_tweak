@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTCanvasMsgSectionData
+@interface BTCanvasMsgSectionData : NSObject
 {
     NSString *_canvasId;
 }

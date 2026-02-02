@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat24WCCoinSubscribeTipsPanel
+@interface _TtC6WeChat24WCCoinSubscribeTipsPanel : NSObject
 {
     MISSING_TYPE *paramer;
     MISSING_TYPE *$__lazy_storage_$__detailView;

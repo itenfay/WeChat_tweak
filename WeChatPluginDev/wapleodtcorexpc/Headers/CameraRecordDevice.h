@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVCaptureDataOutputSynchronizer, AVCaptureDepthDataOutput, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface CameraRecordDevice
+@interface CameraRecordDevice : NSObject
 {
     AVCaptureMovieFileOutput *movieFileOutput;
     NSObject<OS_dispatch_queue> *videoProcessingQueue;

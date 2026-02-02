@@ -6,7 +6,7 @@
 @class CContact, MMAdaptiveLabel, MMTableView, MMTipsViewController, MMUIButton, MMURLHandler, NSArray, NSMutableArray, NSMutableDictionary, NSString, TLProfileDragAnimateHelper, TLProfileExpandableHeaderView, TLProfileModel, UIView, WCDataItem, WCListHeaderView, WCListViewController, WCListYearFlowView, WCMomentsPageContext, WCMomentsPostReportSession, WCPhotoMutipleImageViewController, WCTimeLineFooterView;
 @protocol WCListViewDelegate;
 
-@interface WCListView
+@interface WCListView : NSObject
 {
     _Bool m_isMyWC;
     CContact *m_contact;

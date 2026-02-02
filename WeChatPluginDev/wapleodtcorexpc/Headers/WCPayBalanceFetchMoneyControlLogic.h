@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, WCPayAddPayCardLogic, WCPayBalanceTipsLogic, WCPayFetchBalanceReport, WCPayPayMoneyLogic, WCPayPayResponseRetryInfo;
 
-@interface WCPayBalanceFetchMoneyControlLogic
+@interface WCPayBalanceFetchMoneyControlLogic : NSObject
 {
     WCPayPayMoneyLogic *m_payLogic;
     WCPayAddPayCardLogic *m_oWCPayAddPayCardLogic;

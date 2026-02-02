@@ -5,7 +5,7 @@
 
 @class NSString, TPAssetResourceLoadingRequest;
 
-@interface WCPlayerTPLoadingRequest
+@interface WCPlayerTPLoadingRequest : NSObject
 {
     _Bool _bUseNotifyMode;
     NSString *_filePath;

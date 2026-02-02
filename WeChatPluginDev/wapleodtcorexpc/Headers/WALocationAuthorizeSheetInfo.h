@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WALocationAuthorizeSheetInfo
+@interface WALocationAuthorizeSheetInfo : NSObject
 {
     NSArray *_scopeDescList;
 }

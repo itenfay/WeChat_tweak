@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderDataItem;
 
-@interface WCFinderLiveGamePopSceneCGI
+@interface WCFinderLiveGamePopSceneCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

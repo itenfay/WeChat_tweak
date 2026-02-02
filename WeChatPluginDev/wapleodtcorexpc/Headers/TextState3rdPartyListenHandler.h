@@ -5,7 +5,7 @@
 
 @class StatusFooterJumpListen, TextStateListenMediaView;
 
-@interface TextState3rdPartyListenHandler
+@interface TextState3rdPartyListenHandler : NSObject
 {
     StatusFooterJumpListen *_jumpInfo;
     TextStateListenMediaView *_mediaView;

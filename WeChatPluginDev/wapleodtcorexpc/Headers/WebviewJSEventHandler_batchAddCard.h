@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCCardAddHelper;
 
-@interface WebviewJSEventHandler_batchAddCard
+@interface WebviewJSEventHandler_batchAddCard : NSObject
 {
     JSEvent *_jsEvent;
     WCCardAddHelper *_addHelper;

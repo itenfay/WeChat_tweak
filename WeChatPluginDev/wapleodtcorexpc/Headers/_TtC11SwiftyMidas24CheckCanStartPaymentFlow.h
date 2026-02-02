@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas24CheckCanStartPaymentFlow
+@interface _TtC11SwiftyMidas24CheckCanStartPaymentFlow : NSObject
 {
     MISSING_TYPE *logPrefix;
 }

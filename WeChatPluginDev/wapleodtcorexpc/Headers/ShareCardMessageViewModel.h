@@ -5,7 +5,7 @@
 
 @class BizNameCardProtectedInfo, CCardContact, NSString;
 
-@interface ShareCardMessageViewModel
+@interface ShareCardMessageViewModel : NSObject
 {
     CCardContact *m_sharedContact;
     NSString *m_sharedUsername;

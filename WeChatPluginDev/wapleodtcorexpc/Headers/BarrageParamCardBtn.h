@@ -5,7 +5,7 @@
 
 @class BarrageParamCard;
 
-@interface BarrageParamCardBtn
+@interface BarrageParamCardBtn : NSObject
 {
     BarrageParamCard *_paramCard;
 }

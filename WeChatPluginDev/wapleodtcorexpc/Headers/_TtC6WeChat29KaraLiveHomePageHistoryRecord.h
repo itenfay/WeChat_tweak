@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat29KaraLiveHomePageHistoryRecord
+@interface _TtC6WeChat29KaraLiveHomePageHistoryRecord : NSObject
 {
     MISSING_TYPE *identifier;
     MISSING_TYPE *unreadAtOtherCell;

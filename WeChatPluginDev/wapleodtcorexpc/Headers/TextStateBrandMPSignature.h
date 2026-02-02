@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextStateBrandMPSignature
+@interface TextStateBrandMPSignature : NSObject
 {
     NSString *_mpSignature;
 }

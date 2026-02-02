@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString, UIView, WCTimeLineFooterView;
 @protocol RingBackAddToTingSheetViewDelegate;
 
-@interface RingBackAddToTingSheetView
+@interface RingBackAddToTingSheetView : NSObject
 {
     id <RingBackAddToTingSheetViewDelegate> _delegate;
     UIView *_contentView;

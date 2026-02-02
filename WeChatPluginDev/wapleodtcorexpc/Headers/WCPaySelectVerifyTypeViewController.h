@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GetRealnameWordingRsp, InternalTask, NSString, UIButton, UIImageView, UILabel, UIView, WCPayJumpRemindControlLogic, WCPayJumpRemindInfo, WCPaySelectVerifyTypeViewV2;
 @protocol WCPaySelectVerifyTypeViewControllerDelegate;
 
-@interface WCPaySelectVerifyTypeViewController
+@interface WCPaySelectVerifyTypeViewController : NSObject
 {
     id <WCPaySelectVerifyTypeViewControllerDelegate> m_delegate;
     NSString *bindCardTitle;

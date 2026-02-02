@@ -5,7 +5,7 @@
 
 @class MMLiveCommentDataItem, MMLiveCommentTableViewCellFrame;
 
-@interface MMLiveCommentTableViewCell
+@interface MMLiveCommentTableViewCell : NSObject
 {
     _Bool _supportDisplayStatus;
     MMLiveCommentTableViewCellFrame *_cellFrame;

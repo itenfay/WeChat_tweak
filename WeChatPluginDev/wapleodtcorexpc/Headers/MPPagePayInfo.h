@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPPagePayInfo
+@interface MPPagePayInfo : NSObject
 {
     _Bool _isPaid;
     _Bool _isPaySubscribe;

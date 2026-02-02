@@ -6,7 +6,7 @@
 @class BrandProfileReporter, CContact, JSAPIGetAllUseUserInfoResponse, MMTableViewInfo, MMUILabel, NSMutableDictionary, NSString;
 @protocol BrandProfileSettingViewControllerDelegate;
 
-@interface BrandProfileSettingViewController
+@interface BrandProfileSettingViewController : NSObject
 {
     _Bool _isNewMessageNotifySwitchOn;
     _Bool _isReceiveMessageSwitchOn;

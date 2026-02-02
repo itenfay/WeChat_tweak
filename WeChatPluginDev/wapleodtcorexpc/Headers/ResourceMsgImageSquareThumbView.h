@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CMessageWrap, NSString, SimpleChatLogInfo, UIImageView, UILabel, UIView, YYImage;
 
-@interface ResourceMsgImageSquareThumbView
+@interface ResourceMsgImageSquareThumbView : NSObject
 {
     _Bool _bIsSelected;
     _Bool _bUsePureColorBackground;

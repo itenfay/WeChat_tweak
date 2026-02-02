@@ -5,7 +5,7 @@
 
 @class CContact, JSApiSelectContactsViewController, JSApiSelectSessionViewController, JSEvent, NSString;
 
-@interface WebviewJSEventHandler_sendSingleAppMessage
+@interface WebviewJSEventHandler_sendSingleAppMessage : NSObject
 {
     JSApiSelectSessionViewController *m_oSelectSessionViewController;
     JSApiSelectContactsViewController *m_oSelectContactViewController;

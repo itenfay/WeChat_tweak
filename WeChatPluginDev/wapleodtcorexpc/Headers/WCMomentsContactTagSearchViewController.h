@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTableView, NSArray, NSMutableOrderedSet, NSMutableSet, NSString, WCMomentsContactTagSearchBottomBar;
 @protocol WCMomentsContactTagSearchViewControllerDelegate;
 
-@interface WCMomentsContactTagSearchViewController
+@interface WCMomentsContactTagSearchViewController : NSObject
 {
     _Bool _isMultiSelectEnabled;
     id <WCMomentsContactTagSearchViewControllerDelegate> _delegate;

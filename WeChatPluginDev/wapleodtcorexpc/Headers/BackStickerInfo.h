@@ -5,7 +5,7 @@
 
 @class NSNumber;
 
-@interface BackStickerInfo
+@interface BackStickerInfo : NSObject
 {
     NSNumber *_segType;
 }

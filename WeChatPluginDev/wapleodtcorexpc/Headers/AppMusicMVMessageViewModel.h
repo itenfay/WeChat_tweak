@@ -5,7 +5,7 @@
 
 @class MMMusicShareItem;
 
-@interface AppMusicMVMessageViewModel
+@interface AppMusicMVMessageViewModel : NSObject
 {
     double m_titleHeight;
     double m_detailHeight;

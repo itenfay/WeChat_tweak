@@ -5,7 +5,7 @@
 
 @class MMUIWindow, MMWebImageView, NSMutableArray, NSString, RichTextView, UIImageView, UILabel, UIView, WCCardImageBrowserViewController, WCCardVideoViewController, WCGiftCardData;
 
-@interface WCGiftCardLetterView
+@interface WCGiftCardLetterView : NSObject
 {
     double _maxWidth;
     WCGiftCardData *_giftCardData;

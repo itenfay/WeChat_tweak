@@ -6,7 +6,7 @@
 @class MMLiveScrollActionSheetItem;
 @protocol MMLiveScrollActionSheetItemViewDelegate;
 
-@interface MMLiveScrollActionSheetItemView
+@interface MMLiveScrollActionSheetItemView : NSObject
 {
     id <MMLiveScrollActionSheetItemViewDelegate> _delegate;
     MMLiveScrollActionSheetItem *_item;

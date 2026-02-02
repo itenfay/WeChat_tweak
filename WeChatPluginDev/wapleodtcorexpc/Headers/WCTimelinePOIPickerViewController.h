@@ -6,7 +6,7 @@
 @class CLLocation, LbsLife, LocationRetriever, MMAutoSearchLogic, MMLocationAccuracyAuthorizationTipView, MMTableView, NSIndexPath, NSMutableArray, NSString, UIColor, UILabel, UIView, WCDataSearcher, WCTimeLineFooterView, WCUIAlertView;
 @protocol WCTimelinePOIPickerViewControllerDelegate;
 
-@interface WCTimelinePOIPickerViewController
+@interface WCTimelinePOIPickerViewController : NSObject
 {
     id <WCTimelinePOIPickerViewControllerDelegate> _delegate;
     _Bool _bSightScene;

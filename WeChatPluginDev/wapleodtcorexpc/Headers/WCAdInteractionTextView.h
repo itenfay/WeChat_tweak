@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface WCAdInteractionTextView
+@interface WCAdInteractionTextView : NSObject
 {
     MMUILabel *_labelView;
 }

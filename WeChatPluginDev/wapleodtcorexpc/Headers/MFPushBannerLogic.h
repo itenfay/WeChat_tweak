@@ -6,7 +6,7 @@
 @class MFBannerBtn, NSString;
 @protocol MFPushBannerDelegate;
 
-@interface MFPushBannerLogic
+@interface MFPushBannerLogic : NSObject
 {
     MFBannerBtn *m_bannerBtn;
     id <MFPushBannerDelegate> _delegate;

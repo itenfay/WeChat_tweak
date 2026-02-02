@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GameChatReporter
+@interface GameChatReporter : NSObject
 {
     _Bool _isReporting;
     NSMutableArray *_reportQueue;

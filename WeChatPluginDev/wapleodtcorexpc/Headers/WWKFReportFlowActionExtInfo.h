@@ -5,7 +5,7 @@
 
 @class COpenIMCustomToolBarItem, NSString;
 
-@interface WWKFReportFlowActionExtInfo
+@interface WWKFReportFlowActionExtInfo : NSObject
 {
     long long _shareScene;
     NSString *_shareToUser;

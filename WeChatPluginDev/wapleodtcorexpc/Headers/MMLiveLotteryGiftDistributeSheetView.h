@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMTableView, MMUIButton, MMUILabel, NSArray, NSString, UIView;
 @protocol MMLiveLotteryGiftDistributeSheetViewDelegate;
 
-@interface MMLiveLotteryGiftDistributeSheetView
+@interface MMLiveLotteryGiftDistributeSheetView : NSObject
 {
     id <MMLiveLotteryGiftDistributeSheetViewDelegate> _operationDelegate;
     MMFinderLiveTaskId *_taskId;

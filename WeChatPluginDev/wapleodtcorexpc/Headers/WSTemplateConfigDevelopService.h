@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSMutableDictionary, NSString;
 
-@interface WSTemplateConfigDevelopService
+@interface WSTemplateConfigDevelopService : NSObject
 {
     NSMutableDictionary *m_matchPatternDic;
     NSMutableDictionary *m_actionSheetButtonTitleDic;

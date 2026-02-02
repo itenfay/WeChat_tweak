@@ -5,7 +5,7 @@
 
 @protocol WCMktCouponHomePageV2CgiDelegate;
 
-@interface WCMktCouponHomePageV2Cgi
+@interface WCMktCouponHomePageV2Cgi : NSObject
 {
     id <WCMktCouponHomePageV2CgiDelegate> _cgiDelegate;
 }

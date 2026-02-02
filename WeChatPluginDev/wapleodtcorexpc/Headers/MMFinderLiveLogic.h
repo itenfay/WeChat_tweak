@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveAppMsgInfoCacheLogic, MMFinderLiveConnectMicLogic, MMFinderLiveImageOcrOp, MMFinderLiveOperationViewModel, MMFinderLiveRedPacketLogic, MMFinderLiveRedPacketMessage, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveScreenSharingLogic, NSString, WCFinderCreateLiveCGI, WCFinderLiveInfo, WeAvatarLogic;
 @protocol MMFinderLiveLogicDelegate;
 
-@interface MMFinderLiveLogic
+@interface MMFinderLiveLogic : NSObject
 {
     _Bool _isLiveClosed;
     _Bool _isKeyRequesting;

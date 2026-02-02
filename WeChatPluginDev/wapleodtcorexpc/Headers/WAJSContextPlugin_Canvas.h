@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MagicBrushCore, NSMapTable, NSMutableDictionary, NSString, WAOpenGLView;
 @protocol WALivePusherPixelBufferDelegate, WAMagicARPixelBufferDelegate;
 
-@interface WAJSContextPlugin_Canvas
+@interface WAJSContextPlugin_Canvas : NSObject
 {
     id <WALivePusherPixelBufferDelegate> _livePusherDelegate;
     id <WAMagicARPixelBufferDelegate> _magicARDelegate;

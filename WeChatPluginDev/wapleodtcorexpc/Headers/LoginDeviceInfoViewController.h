@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, SafeDeviceData, WCTableViewNormalCellManager;
 
-@interface LoginDeviceInfoViewController
+@interface LoginDeviceInfoViewController : NSObject
 {
     SafeDeviceData *m_info;
     MMTableViewInfo *m_tableViewInfo;

@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString;
 
-@interface WAJSEventHandler_shareVideoMessage
+@interface WAJSEventHandler_shareVideoMessage : NSObject
 {
     ForwardMessageLogicController *m_forwardMsgLogic;
     NSString *m_tempVideoPath;

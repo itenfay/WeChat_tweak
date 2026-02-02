@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedListView, WCFinderPoiDetailViewModel, WCFinderShareCustomTransition;
 
-@interface WCFinderPoiDetailViewController
+@interface WCFinderPoiDetailViewController : NSObject
 {
     WCFinderPoiDetailViewModel *_viewModel;
     unsigned long long _firstOffset;

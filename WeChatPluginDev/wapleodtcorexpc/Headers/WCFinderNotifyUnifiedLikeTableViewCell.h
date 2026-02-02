@@ -5,7 +5,7 @@
 
 @class UIImageView, WCFinderDynamicRichTextView;
 
-@interface WCFinderNotifyUnifiedLikeTableViewCell
+@interface WCFinderNotifyUnifiedLikeTableViewCell : NSObject
 {
     UIImageView *_likeImageView;
     WCFinderDynamicRichTextView *_contentTextView;

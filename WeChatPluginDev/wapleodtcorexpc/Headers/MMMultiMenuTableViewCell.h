@@ -5,7 +5,7 @@
 
 @class MMDropManager, NSString, UIColor;
 
-@interface MMMultiMenuTableViewCell
+@interface MMMultiMenuTableViewCell : NSObject
 {
     MMDropManager *m_dropManager;
     UIColor *_bkgColor;

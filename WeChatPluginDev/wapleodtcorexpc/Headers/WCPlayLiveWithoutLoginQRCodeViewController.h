@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIActivityIndicatorView, UIButton, UIImageView, UILabel;
 
-@interface WCPlayLiveWithoutLoginQRCodeViewController
+@interface WCPlayLiveWithoutLoginQRCodeViewController : NSObject
 {
     CDUnknownBlockType _cancelCompletion;
     CDUnknownBlockType _didAppearCompletion;

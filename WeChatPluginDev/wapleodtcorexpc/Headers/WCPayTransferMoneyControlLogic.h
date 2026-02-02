@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CgiUnionTransferPlaceOrderResp, JSEvent, MMTipsViewController, NSString, WCPayBizF2FTransferControlLogic, WCPayF2FMiddlePageSubLogic, WCPayF2FPayCheckCgi, WCPayInterceptWinLogic, WCPayPayMoneyLogic, WCPayTipsPageSheet, WCPayTransferAmountReInputPageStruct, WCPayTransferPayCheckCgi, WCPayTransferPrepayResponseStruct, WCPayUnionTransferPayCheckCgi, WCPayUnionTransferPlaceOrderCgi;
 
-@interface WCPayTransferMoneyControlLogic
+@interface WCPayTransferMoneyControlLogic : NSObject
 {
     WCPayPayMoneyLogic *m_payLogic;
     int m_enWCPayTransferMoneyControlLogicScene;

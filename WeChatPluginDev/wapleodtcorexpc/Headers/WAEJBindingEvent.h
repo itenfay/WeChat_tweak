@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingEvent
+@interface WAEJBindingEvent : NSObject
 {
     NSString *type;
     struct OpaqueJSValue *jsTarget;

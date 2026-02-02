@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RichTextView, TextStateCardReporter, TextStateModel, UIImageView, UILabel, UIView, VoipRecentStatusFadeView, VoipRecentStatusTextStatePublishIconButton, VoipRecentStatusTextStatePublishSourceView;
 
-@interface VoipRecentStatusTextStateCardView
+@interface VoipRecentStatusTextStateCardView : NSObject
 {
     _Bool _isSoundBtnHidden;
     _Bool _shouldPlaySound;

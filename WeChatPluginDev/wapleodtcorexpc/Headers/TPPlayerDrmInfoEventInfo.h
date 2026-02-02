@@ -5,7 +5,7 @@
 
 @class TPPlayerDrmParams;
 
-@interface TPPlayerDrmInfoEventInfo
+@interface TPPlayerDrmInfoEventInfo : NSObject
 {
     TPPlayerDrmParams *_drmParams;
 }

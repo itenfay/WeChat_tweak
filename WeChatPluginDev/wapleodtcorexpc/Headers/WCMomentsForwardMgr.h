@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCMomentsForwardMgr
+@interface WCMomentsForwardMgr : NSObject
 {
     NSMutableArray *_forwardArray;
 }

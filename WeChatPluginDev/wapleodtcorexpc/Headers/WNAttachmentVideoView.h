@@ -5,7 +5,7 @@
 
 @class FavSightView, NSString;
 
-@interface WNAttachmentVideoView
+@interface WNAttachmentVideoView : NSObject
 {
     FavSightView *_videoPlayer;
 }

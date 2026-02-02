@@ -5,7 +5,7 @@
 
 @class WCFinderMsgSessionBadgeLabelViewModel;
 
-@interface WCFinderMsgSessionBadgeLabel
+@interface WCFinderMsgSessionBadgeLabel : NSObject
 {
     WCFinderMsgSessionBadgeLabelViewModel *_viewModel;
 }

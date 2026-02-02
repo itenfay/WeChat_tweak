@@ -5,7 +5,7 @@
 
 @class GetHbRefundConfigResp, JSEvent, NSString, WCPayHongBaoRefundConfigCgi;
 
-@interface WCPayJumpHbRefundJsapiLogic
+@interface WCPayJumpHbRefundJsapiLogic : NSObject
 {
     JSEvent *m_jsEvent;
     WCPayHongBaoRefundConfigCgi *_hbRefundConfigCgi;

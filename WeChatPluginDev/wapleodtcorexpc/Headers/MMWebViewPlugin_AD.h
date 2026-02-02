@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface MMWebViewPlugin_AD
+@interface MMWebViewPlugin_AD : NSObject
 {
     NSObject<OS_dispatch_queue> *_gcdQueue;
     _Bool _isFetchingToken;

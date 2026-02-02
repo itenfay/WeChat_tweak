@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFinderLiveFeedStreamCarouselTextLineItem
+@interface MMFinderLiveFeedStreamCarouselTextLineItem : NSObject
 {
     _Bool _hideTitle;
     _Bool _showHardAdLogo;

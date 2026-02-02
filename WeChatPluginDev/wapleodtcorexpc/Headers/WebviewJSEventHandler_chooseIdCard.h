@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_chooseIdCard
+@interface WebviewJSEventHandler_chooseIdCard : NSObject
 {
     unsigned long long _sourceType;
 }

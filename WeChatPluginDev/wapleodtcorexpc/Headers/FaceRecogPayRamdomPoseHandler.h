@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FaceRecogBaseView, FaceRecogPayConfigLogic, NSData, NSString;
 
-@interface FaceRecogPayRamdomPoseHandler
+@interface FaceRecogPayRamdomPoseHandler : NSObject
 {
     FaceRecogBaseView *_verifyView;
     _Bool _hasClickBizButton;

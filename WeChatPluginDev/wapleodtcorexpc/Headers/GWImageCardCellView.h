@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GWImageCardCellView
+@interface GWImageCardCellView : NSObject
 {
     _Bool _hidePlayBtn;
     _Bool _hideDesc;

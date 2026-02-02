@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAppAuthAppMetaInfo
+@interface WCAppAuthAppMetaInfo : NSObject
 {
     unsigned int _appType;
     NSString *_appId;

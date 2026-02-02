@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EditSingleVideoAttr
+@interface EditSingleVideoAttr : NSObject
 {
     NSString *_assetURL;
     CDStruct_1b6d18a9 _originDuration;

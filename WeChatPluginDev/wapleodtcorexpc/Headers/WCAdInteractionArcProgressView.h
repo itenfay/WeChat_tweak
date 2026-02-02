@@ -5,7 +5,7 @@
 
 @class CAShapeLayer;
 
-@interface WCAdInteractionArcProgressView
+@interface WCAdInteractionArcProgressView : NSObject
 {
     double _currentProgress;
     CAShapeLayer *_progressArcLayer;

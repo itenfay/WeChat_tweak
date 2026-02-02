@@ -5,7 +5,7 @@
 
 @protocol WCCanvasDynamicDataLoaderDelegate;
 
-@interface WCCanvasDynamicDataLoader
+@interface WCCanvasDynamicDataLoader : NSObject
 {
     id <WCCanvasDynamicDataLoaderDelegate> _delegate;
 }

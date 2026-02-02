@@ -5,7 +5,7 @@
 
 @class LinkWeAppJumpWrap, NSString, UIColor;
 
-@interface LinkAnchorParser
+@interface LinkAnchorParser : NSObject
 {
     NSString *_url;
     NSString *_sourceUrl;

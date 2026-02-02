@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface MMFinderLiveAudienceCheckFanClubCGI
+@interface MMFinderLiveAudienceCheckFanClubCGI : NSObject
 {
     int _opCode;
     NSData *_liveCookies;

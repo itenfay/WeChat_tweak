@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VoIPAPNSPushSyncService
+@interface VoIPAPNSPushSyncService : NSObject
 {
 }
 

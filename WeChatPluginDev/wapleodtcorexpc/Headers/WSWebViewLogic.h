@@ -5,7 +5,7 @@
 
 @class NSString, NSURLRequest;
 
-@interface WSWebViewLogic
+@interface WSWebViewLogic : NSObject
 {
 }
 

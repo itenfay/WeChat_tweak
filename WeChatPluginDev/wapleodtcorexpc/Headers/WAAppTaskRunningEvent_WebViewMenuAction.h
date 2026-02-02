@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAAppTaskRunningEvent_WebViewMenuAction
+@interface WAAppTaskRunningEvent_WebViewMenuAction : NSObject
 {
     _Bool _shareMenuCanBeOperated;
     unsigned long long _menuAction;

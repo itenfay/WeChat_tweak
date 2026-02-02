@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CMMDB, NSDate, NSObject, NSRecursiveLock, NSString, OplogDataLogic;
 @protocol OS_dispatch_queue;
 
-@interface NewSyncService
+@interface NewSyncService : NSObject
 {
     _Bool m_bHasInit;
     unsigned int m_uiSelector;

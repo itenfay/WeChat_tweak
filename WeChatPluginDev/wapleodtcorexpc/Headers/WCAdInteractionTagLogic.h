@@ -5,7 +5,7 @@
 
 @class WCAdPagView, WCDataItem;
 
-@interface WCAdInteractionTagLogic
+@interface WCAdInteractionTagLogic : NSObject
 {
     _Bool _isInteractionActive;
     WCAdPagView *_activeIconPagViewCache;

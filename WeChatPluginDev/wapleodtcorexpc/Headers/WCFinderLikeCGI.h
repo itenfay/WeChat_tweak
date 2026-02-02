@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLikeCGIParam;
 
-@interface WCFinderLikeCGI
+@interface WCFinderLikeCGI : NSObject
 {
     int _likeFlag;
     CDUnknownBlockType _successBlock;

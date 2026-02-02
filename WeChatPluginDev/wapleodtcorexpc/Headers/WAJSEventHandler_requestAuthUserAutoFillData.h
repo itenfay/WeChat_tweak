@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString, WAAppConfirmWindow, WAAutoFillDataAuthorizePageSheet;
 
-@interface WAJSEventHandler_requestAuthUserAutoFillData
+@interface WAJSEventHandler_requestAuthUserAutoFillData : NSObject
 {
     WAAppConfirmWindow *_confirmWindow;
     WAAutoFillDataAuthorizePageSheet *_pageSheet;

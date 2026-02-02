@@ -5,7 +5,7 @@
 
 @class NSString, WCPayPassKitFacade;
 
-@interface WAJSEventHandler_getNFCCardList
+@interface WAJSEventHandler_getNFCCardList : NSObject
 {
     WCPayPassKitFacade *_passKitFacade;
 }

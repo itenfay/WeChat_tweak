@@ -5,7 +5,7 @@
 
 @class CgiReportDataController, CgiReportDataSender, CgiReportFlowGuarder, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface CgiReportDataService
+@interface CgiReportDataService : NSObject
 {
     _Bool _needRptKv;
     _Bool _useMMKV;

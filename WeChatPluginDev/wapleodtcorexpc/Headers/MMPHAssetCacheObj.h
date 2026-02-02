@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
-@interface MMPHAssetCacheObj
+@interface MMPHAssetCacheObj : NSObject
 {
     _Bool _isVideoAsset;
     _Bool _isGifAsset;

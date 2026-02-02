@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppSharedItem
+@interface LiteAppSharedItem : NSObject
 {
     unsigned int _sourceType;
     NSString *_appId;

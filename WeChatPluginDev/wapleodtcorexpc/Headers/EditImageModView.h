@@ -5,7 +5,7 @@
 
 @class EditImageUIView, NSString, UIColor;
 
-@interface EditImageModView
+@interface EditImageModView : NSObject
 {
     _Bool _hide;
     unsigned int _modProperty;

@@ -5,7 +5,7 @@
 
 @protocol WCCardDataSource, WCCardSecondaryViewDelegate;
 
-@interface WCCardSecondaryView
+@interface WCCardSecondaryView : NSObject
 {
     id <WCCardDataSource> _cardDataSource;
     id <WCCardSecondaryViewDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class MMUIViewController, NSMutableArray, NSString;
 @protocol WCBatchViewCardHelpDelegate;
 
-@interface WCBatchViewCardHelper
+@interface WCBatchViewCardHelper : NSObject
 {
     NSString *_templateMsgId;
     unsigned long long _appBrandModeType;

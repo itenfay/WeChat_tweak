@@ -6,7 +6,7 @@
 @class MMFinderLiveTask, MMFinderLiveTaskId, NSMutableDictionary, NSString;
 @protocol MMFinderLiveOnlineUserLogicDelegate;
 
-@interface MMFinderLiveOnlineUserLogic
+@interface MMFinderLiveOnlineUserLogic : NSObject
 {
     id <MMFinderLiveOnlineUserLogicDelegate> logicDelegate;
     NSMutableDictionary *_userCommentDisableDict;

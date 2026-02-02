@@ -5,7 +5,7 @@
 
 @class FaceRecogPayConfigLogic, NSData, NSString;
 
-@interface FaceRecogPayActionReflectHandler
+@interface FaceRecogPayActionReflectHandler : NSObject
 {
     _Bool _hasClickBizButton;
     FaceRecogPayConfigLogic *_config;

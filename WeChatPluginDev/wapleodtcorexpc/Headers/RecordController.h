@@ -6,7 +6,7 @@
 @class MMTimer, NSString;
 @protocol RecordControllerDelegate;
 
-@interface RecordController
+@interface RecordController : NSObject
 {
     MMTimer *m_TimeoutTimer;
     id <RecordControllerDelegate> m_delegate;

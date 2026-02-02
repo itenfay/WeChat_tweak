@@ -5,7 +5,7 @@
 
 @class AnyPromise, MMFinderLiveContentVM, NSDate, NotifyMsgItem, WCFinderLiveShareCardExposeReportAdapter;
 
-@interface NotifyMessageViewModel
+@interface NotifyMessageViewModel : NSObject
 {
     NotifyMsgItem *_notifyMsgItem;
     WCFinderLiveShareCardExposeReportAdapter *_exposeReportAdapter;

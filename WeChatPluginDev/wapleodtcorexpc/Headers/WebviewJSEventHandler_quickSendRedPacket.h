@@ -5,7 +5,7 @@
 
 @class CContact, NSString, SessionSelectController, SharePreConfirmView;
 
-@interface WebviewJSEventHandler_quickSendRedPacket
+@interface WebviewJSEventHandler_quickSendRedPacket : NSObject
 {
     SessionSelectController *_sessionSelectVC;
     SharePreConfirmView *_m_confirmView;

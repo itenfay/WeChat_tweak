@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface WCTSettingView
+@interface WCTSettingView : NSObject
 {
     MMUILabel *_subTitleLabel;
     UIImageView *_arrowView;

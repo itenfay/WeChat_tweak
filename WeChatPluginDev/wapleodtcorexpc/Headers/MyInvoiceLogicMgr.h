@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MyInvoiceLogicMgr
+@interface MyInvoiceLogicMgr : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WARenderCacheMgr
+@interface WARenderCacheMgr : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class ContactUpdateHelper, NSString, WCRedEnvelopesGetShowResourcesCgi, WCRedEnvelopesNetworkHelper;
 
-@interface WCRedEnvelopesLogicMgr
+@interface WCRedEnvelopesLogicMgr : NSObject
 {
     WCRedEnvelopesNetworkHelper *m_networkHelper;
     _Bool _m_isDownloadingNewYearRes;

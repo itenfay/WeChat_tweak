@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, NSData, NSMutableArray, NSString, WCFinderLocationInfo;
 
-@interface WCFinderFetchEnhanceCGI
+@interface WCFinderFetchEnhanceCGI : NSObject
 {
     int _viewScene;
     int _eventType;

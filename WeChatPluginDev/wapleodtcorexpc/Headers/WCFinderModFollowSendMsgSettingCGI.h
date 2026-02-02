@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModFollowSendMsgSettingCGI
+@interface WCFinderModFollowSendMsgSettingCGI : NSObject
 {
     _Bool _isSwitchOn;
     NSString *_userName;

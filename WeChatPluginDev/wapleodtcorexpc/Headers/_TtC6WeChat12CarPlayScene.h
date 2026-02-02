@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat12CarPlayScene
+@interface _TtC6WeChat12CarPlayScene : NSObject
 {
     MISSING_TYPE *interfaceController;
 }

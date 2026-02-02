@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderPOIStreamRequestParams;
 
-@interface WCFinderPOIStreamCGI
+@interface WCFinderPOIStreamCGI : NSObject
 {
     WCFinderPOIStreamRequestParams *_params;
     CDUnknownBlockType _successful;

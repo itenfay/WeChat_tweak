@@ -6,7 +6,7 @@
 @class EmotionBannerSet, NSArray, NSMutableArray, NSString, SKBuiltinBuffer_t;
 @protocol StoreEmotionGetDesignerEmojiListCgiDelegate;
 
-@interface StoreEmotionGetDesignerEmojiListCgi
+@interface StoreEmotionGetDesignerEmojiListCgi : NSObject
 {
     NSMutableArray *m_designerEmojiList;
     unsigned int m_designerUin;

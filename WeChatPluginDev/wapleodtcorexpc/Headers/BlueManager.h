@@ -6,7 +6,7 @@
 @class BlueAdapterBase, CBCentralManager, NSObject, NSString;
 @protocol BlueAdapterDelegate, OS_dispatch_queue;
 
-@interface BlueManager
+@interface BlueManager : NSObject
 {
     CBCentralManager *_bleManager;
     _Bool _stateUpdateFlag;

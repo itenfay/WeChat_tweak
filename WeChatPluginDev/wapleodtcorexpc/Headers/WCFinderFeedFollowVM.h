@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderCommByPass, FinderRelatedRecommendTips, FinderStreamLayoutInfo, FinderStreamOftenReadBar, MMTimer, NSArray, NSData, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderAbstractTask, WCFinderFeedLayoutContentVM, WCFinderRedDotCtrlInfo;
 @protocol WCFinderFeedFollowVMDelegate;
 
-@interface WCFinderFeedFollowVM
+@interface WCFinderFeedFollowVM : NSObject
 {
     _Bool _stopFetchNextPage;
     _Bool _hasProcessLocalData;

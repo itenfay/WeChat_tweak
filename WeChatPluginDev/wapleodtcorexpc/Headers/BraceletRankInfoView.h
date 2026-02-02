@@ -5,7 +5,7 @@
 
 @class BraceletRankLikeButton, DeviceBrandJumpInfo, DeviceRankInfo, MMHeadImageView, MMUIButton, MMUIViewController, MMWebImageView, NSString, UILabel, WAContact, WAContactGetter;
 
-@interface BraceletRankInfoView
+@interface BraceletRankInfoView : NSObject
 {
     DeviceRankInfo *m_rankInfo;
     _Bool m_isBotton;

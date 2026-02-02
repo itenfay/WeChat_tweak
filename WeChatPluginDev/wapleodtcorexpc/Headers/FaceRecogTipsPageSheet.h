@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView;
 
-@interface FaceRecogTipsPageSheet
+@interface FaceRecogTipsPageSheet : NSObject
 {
     UIView *_tipsContainerView;
     CDUnknownBlockType _onDismiss;

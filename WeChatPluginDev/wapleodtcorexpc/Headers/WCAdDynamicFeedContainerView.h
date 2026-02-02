@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface WCAdDynamicFeedContainerView
+@interface WCAdDynamicFeedContainerView : NSObject
 {
     UIImageView *_animationCoverView;
 }

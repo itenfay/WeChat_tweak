@@ -5,7 +5,7 @@
 
 @class NSString, NavigateLogicController;
 
-@interface WebviewJSEventHandler_openMapNavigateMenu
+@interface WebviewJSEventHandler_openMapNavigateMenu : NSObject
 {
     NavigateLogicController *_navigateLogicController;
 }

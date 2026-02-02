@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCTimelineMissReadBreakLayerExposureRecord
+@interface WCTimelineMissReadBreakLayerExposureRecord : NSObject
 {
     _Bool _isGenNewBreakLayer;
     unsigned int _exposureCount;

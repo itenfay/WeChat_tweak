@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSMutableDictionary, NSNumber, NSString, UIBarButtonItem, UILabel, WCFinderAnimationLoadingView, WCFinderMJSetBriefCardView, WCFinderMJSetInitParams, WCFinderMJSetTemplateViewModel, WCFinderScrollActionSheet, WCFinderTabPageView;
 
-@interface WCFinderMJSetViewController
+@interface WCFinderMJSetViewController : NSObject
 {
     WCFinderMJSetTemplateViewModel *_viewModel;
     WCFinderTabPageView *_tabPageView;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSNumber, NSString;
 
-@interface WASafeKeyboard
+@interface WASafeKeyboard : NSObject
 {
     long long _passwordLen;
     NSString *_papramCert;

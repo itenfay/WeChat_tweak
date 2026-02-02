@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMMLiveRewardQuotaSettingDetailCell, MMUILabel, NSString, UISwitch, UIView;
 @protocol MMLiveRewardQuotaSettingSheetViewDelegate;
 
-@interface MMLiveRewardQuotaSettingSheetView
+@interface MMLiveRewardQuotaSettingSheetView : NSObject
 {
     id <MMLiveRewardQuotaSettingSheetViewDelegate> _operationDelegate;
     CDUnknownBlockType _closedBlock;

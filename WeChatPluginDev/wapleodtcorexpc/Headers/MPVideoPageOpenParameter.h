@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString;
 
-@interface MPVideoPageOpenParameter
+@interface MPVideoPageOpenParameter : NSObject
 {
     unsigned int _duration;
     unsigned int _videoWidth;

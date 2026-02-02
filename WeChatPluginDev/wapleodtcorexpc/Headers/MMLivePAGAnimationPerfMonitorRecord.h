@@ -5,7 +5,7 @@
 
 @class PAGView;
 
-@interface MMLivePAGAnimationPerfMonitorRecord
+@interface MMLivePAGAnimationPerfMonitorRecord : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMImageActionSaveItem
+@interface MMImageActionSaveItem : NSObject
 {
     NSString *_messageUuid;
 }

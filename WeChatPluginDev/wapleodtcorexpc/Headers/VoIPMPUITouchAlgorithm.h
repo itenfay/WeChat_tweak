@@ -5,7 +5,7 @@
 
 @protocol VoIPMPUITouchAlgorithmDelegate;
 
-@interface VoIPMPUITouchAlgorithm
+@interface VoIPMPUITouchAlgorithm : NSObject
 {
     _Bool m_hasMoved;
     _Bool m_hasStart;

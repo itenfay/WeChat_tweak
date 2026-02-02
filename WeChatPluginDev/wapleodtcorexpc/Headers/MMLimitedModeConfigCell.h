@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIImageView, UIView;
 
-@interface MMLimitedModeConfigCell
+@interface MMLimitedModeConfigCell : NSObject
 {
     _Bool _showBottomLine;
     _Bool _showRightArrow;

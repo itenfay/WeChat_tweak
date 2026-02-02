@@ -6,7 +6,7 @@
 @class MMUIWindow, NSDate, NSObject, NSString;
 @protocol WCYoDelegate;
 
-@interface WCYoWindowController
+@interface WCYoWindowController : NSObject
 {
     unsigned int _yoTime;
     MMUIWindow *_window;

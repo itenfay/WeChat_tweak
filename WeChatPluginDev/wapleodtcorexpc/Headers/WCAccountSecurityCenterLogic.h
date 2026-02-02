@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAccountSecurityCenterLogic
+@interface WCAccountSecurityCenterLogic : NSObject
 {
     NSString *_rid;
 }

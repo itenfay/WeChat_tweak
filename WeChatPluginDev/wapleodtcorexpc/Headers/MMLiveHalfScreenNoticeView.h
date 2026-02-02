@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveMsgBoxInfo, MMUILabel, MMWebImageView, UIButton, UIView;
 
-@interface MMLiveHalfScreenNoticeView
+@interface MMLiveHalfScreenNoticeView : NSObject
 {
     CDUnknownBlockType _completeBlock;
     FinderLiveMsgBoxInfo *_msgBox;

@@ -6,7 +6,7 @@
 @class MMTimer, NSMutableData, NSString, NSURLConnection;
 @protocol MMHttpConnectionDelegate><NSObject;
 
-@interface MMHttpConnection
+@interface MMHttpConnection : NSObject
 {
     unsigned int mStatusCode;
     NSString *m_nsFileName;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCPayGPLaunchParamInvalidTipsView
+@interface WCPayGPLaunchParamInvalidTipsView : NSObject
 {
     _Bool _bHasShow;
 }

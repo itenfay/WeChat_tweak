@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMCPLabel, MMLiveRewardGiftCoinButton, MMUIButton, NSString, UIImageView, UILabel, UIView;
 
-@interface MMFinderLiveGenericPayConfirmSheetView
+@interface MMFinderLiveGenericPayConfirmSheetView : NSObject
 {
     _Bool _hasClickActionButton;
     _Bool _isFromFeed;

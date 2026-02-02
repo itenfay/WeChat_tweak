@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderClientStatus, FinderLiveClientStatus, FinderLiveReportBaseInfo, NSData, NSString;
 
-@interface WCFinderLiveEndNavRequestCGI
+@interface WCFinderLiveEndNavRequestCGI : NSObject
 {
     float _longitude;
     float _latitude;

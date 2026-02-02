@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderBatchGetObjectsCGI
+@interface WCFinderBatchGetObjectsCGI : NSObject
 {
     int _batchLoadScene;
     NSArray *_objectRequestArray;

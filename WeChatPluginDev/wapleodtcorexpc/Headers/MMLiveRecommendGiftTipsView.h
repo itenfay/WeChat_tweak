@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMUILabel, MMUIView, NSString, UIImageView, UIView;
 
-@interface MMLiveRecommendGiftTipsView
+@interface MMLiveRecommendGiftTipsView : NSObject
 {
     unsigned long long _scene;
     MMFinderLiveRewardGiftItem *_giftItem;

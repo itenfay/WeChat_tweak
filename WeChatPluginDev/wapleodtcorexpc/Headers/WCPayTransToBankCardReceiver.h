@@ -5,7 +5,7 @@
 
 @class NSString, WCPayTransBankItem;
 
-@interface WCPayTransToBankCardReceiver
+@interface WCPayTransToBankCardReceiver : NSObject
 {
     NSString *_m_nsRemarkName;
     NSString *_m_nsUserTrueName;

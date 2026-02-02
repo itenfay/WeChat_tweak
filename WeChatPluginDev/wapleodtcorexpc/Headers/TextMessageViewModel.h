@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AnimateEmojiNode, MessageInterceptReporter, NSArray, NSMutableArray, NSString, UIColor, UIFont;
 
-@interface TextMessageViewModel
+@interface TextMessageViewModel : NSObject
 {
     NSMutableArray *m_subViewModels;
     NSString *m_contentText;

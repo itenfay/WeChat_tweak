@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GetProfileInfoResponse, NSMutableDictionary, NSString, WAContact;
 
-@interface WAProfileLogicController
+@interface WAProfileLogicController : NSObject
 {
     NSString *_userName;
     NSMutableDictionary *_sectonType2RowNum;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC11SwiftyMidas12CallbackFlow
+@interface _TtC11SwiftyMidas12CallbackFlow : NSObject
 {
     MISSING_TYPE *logPrefix;
 }

@@ -5,7 +5,7 @@
 
 @class MMGroupLiveOnlineUserProfileView, MMGroupLiveTask, MMLiveFullScreenTipsView, NSString;
 
-@interface MMGroupLiveViewController
+@interface MMGroupLiveViewController : NSObject
 {
     MMGroupLiveOnlineUserProfileView *_profileView;
     MMLiveFullScreenTipsView *_kickedOutTipsView;

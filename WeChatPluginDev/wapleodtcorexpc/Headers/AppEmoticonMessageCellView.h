@@ -5,7 +5,7 @@
 
 @class AppEmoticonMessageViewModel, EmoticonCustomAddLogicController, MMEmoticonView, NSString, SightIconView, UIImageView;
 
-@interface AppEmoticonMessageCellView
+@interface AppEmoticonMessageCellView : NSObject
 {
     MMEmoticonView *m_emoticonView;
     SightIconView *m_sightIconView;

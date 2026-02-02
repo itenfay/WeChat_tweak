@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMImagePickerCacheObj, NSRecursiveLock, NSString;
 
-@interface MMImagePickerCacheMgr
+@interface MMImagePickerCacheMgr : NSObject
 {
     _Bool _isEnableCache;
     MMImagePickerCacheObj *_cacheObj;

@@ -5,7 +5,7 @@
 
 @class MMUIImageView, UIImageView;
 
-@interface WCTBaseMenuView
+@interface WCTBaseMenuView : NSObject
 {
     MMUIImageView *_iconView;
     UIImageView *_arrowView;

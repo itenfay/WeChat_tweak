@@ -5,7 +5,7 @@
 
 @class NSString, UITableView, UITableViewDiffableDataSource, WCFinderDataLoadTips, WCFinderPaidCollectionListVM, WCFinderRefreshTableFooterView;
 
-@interface WCFinderPaidCollectionListVC
+@interface WCFinderPaidCollectionListVC : NSObject
 {
     WCFinderPaidCollectionListVM *_viewModel;
     UITableView *_tableView;

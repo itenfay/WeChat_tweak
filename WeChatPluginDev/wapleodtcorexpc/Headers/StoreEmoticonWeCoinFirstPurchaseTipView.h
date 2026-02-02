@@ -6,7 +6,7 @@
 @class UIButton, UILabel;
 @protocol StoreEmoticonWeCoinFirstPurchaseTipViewDelegate;
 
-@interface StoreEmoticonWeCoinFirstPurchaseTipView
+@interface StoreEmoticonWeCoinFirstPurchaseTipView : NSObject
 {
     id <StoreEmoticonWeCoinFirstPurchaseTipViewDelegate> _delegate;
     UILabel *_titleLabel;

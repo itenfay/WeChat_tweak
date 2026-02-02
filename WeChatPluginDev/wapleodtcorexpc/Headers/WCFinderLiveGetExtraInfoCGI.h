@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 
-@interface WCFinderLiveGetExtraInfoCGI
+@interface WCFinderLiveGetExtraInfoCGI : NSObject
 {
     NSString *_anchorFinderusername;
     NSString *_audiencefinderusername;

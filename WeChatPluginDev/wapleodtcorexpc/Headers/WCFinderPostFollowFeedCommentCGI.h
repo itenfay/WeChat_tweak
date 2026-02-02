@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderPostTemplateCommentParams;
 
-@interface WCFinderPostFollowFeedCommentCGI
+@interface WCFinderPostFollowFeedCommentCGI : NSObject
 {
     WCFinderPostTemplateCommentParams *_params;
     CDUnknownBlockType _successBlock;

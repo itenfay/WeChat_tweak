@@ -5,7 +5,7 @@
 
 @class MMDragManager, MainFrameCellData, MainFrameItemView, NSString, UIDragInteraction, UIImage, UIImageView, UIView;
 
-@interface NewMainFrameCell
+@interface NewMainFrameCell : NSObject
 {
     MainFrameItemView *m_itemView;
     UIImageView *m_backGroundViewOfCell;

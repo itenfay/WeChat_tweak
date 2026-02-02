@@ -6,7 +6,7 @@
 @class MyWCDB, NSMutableArray, NSObject, NSString, WCHomepageDataProvider_Sns;
 @protocol OS_dispatch_queue, WCHomepageDelegate;
 
-@interface WCHomepageMgr
+@interface WCHomepageMgr : NSObject
 {
     NSString *m_username;
     id <WCHomepageDelegate> m_delegate;

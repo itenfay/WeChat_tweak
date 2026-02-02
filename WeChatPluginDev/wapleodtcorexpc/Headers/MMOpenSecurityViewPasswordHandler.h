@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMOpenSecurityViewPasswordHandler
+@interface MMOpenSecurityViewPasswordHandler : NSObject
 {
 }
 

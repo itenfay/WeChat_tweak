@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface WCTSettingSelectView
+@interface WCTSettingSelectView : NSObject
 {
     UIButton *_selectedButton;
 }

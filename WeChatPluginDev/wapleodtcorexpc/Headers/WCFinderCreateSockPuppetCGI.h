@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderCreateSockPuppetCGI
+@interface WCFinderCreateSockPuppetCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failure;

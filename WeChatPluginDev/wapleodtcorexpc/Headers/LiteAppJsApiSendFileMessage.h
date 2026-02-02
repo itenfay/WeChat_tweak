@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, MMLiteAppDownloadMgr, NSDictionary, NSMutableDictionary, NSString;
 
-@interface LiteAppJsApiSendFileMessage
+@interface LiteAppJsApiSendFileMessage : NSObject
 {
     ForwardMessageLogicController *_forwardMsgLogic;
     NSMutableDictionary *_result;

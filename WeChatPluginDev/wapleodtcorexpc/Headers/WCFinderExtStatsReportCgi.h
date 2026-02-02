@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderExtStatsReportCgi
+@interface WCFinderExtStatsReportCgi : NSObject
 {
     int _commentScene;
     NSString *_extraKey;

@@ -6,7 +6,7 @@
 @class MMTimer, NSDate, NSMutableArray, NSMutableData;
 @protocol UploadShakeMusicMgrDelegate;
 
-@interface UploadShakeMusicMgr
+@interface UploadShakeMusicMgr : NSObject
 {
     unsigned int m_inputId;
     NSMutableArray *m_uploadQueue;

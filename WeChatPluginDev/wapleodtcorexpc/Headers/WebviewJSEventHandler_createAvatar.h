@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_createAvatar
+@interface WebviewJSEventHandler_createAvatar : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TPReportParamsStepLoadSubTitle
+@interface TPReportParamsStepLoadSubTitle : NSObject
 {
     long long _bufferduration;
     NSString *_url;

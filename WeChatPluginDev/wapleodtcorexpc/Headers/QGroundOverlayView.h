@@ -5,7 +5,7 @@
 
 @class QGroundOverlay;
 
-@interface QGroundOverlayView
+@interface QGroundOverlayView : NSObject
 {
 }
 

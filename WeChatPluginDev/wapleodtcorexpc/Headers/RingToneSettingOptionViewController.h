@@ -6,7 +6,7 @@
 @class MMTableViewInfo;
 @protocol RingRecommendSwitchDelegate;
 
-@interface RingToneSettingOptionViewController
+@interface RingToneSettingOptionViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     _Bool m_ringRecommendSwitch;

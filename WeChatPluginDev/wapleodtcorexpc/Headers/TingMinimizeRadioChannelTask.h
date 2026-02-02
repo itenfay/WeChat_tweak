@@ -5,7 +5,7 @@
 
 @class MiniAudioTaskContentView, NSString, TingRadioChannelMiniView;
 
-@interface TingMinimizeRadioChannelTask
+@interface TingMinimizeRadioChannelTask : NSObject
 {
     _Bool _disableOpen;
     MiniAudioTaskContentView *_contentView;

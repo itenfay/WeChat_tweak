@@ -5,7 +5,7 @@
 
 @protocol WCPayTransferPhoneHomePageCgiDelegate;
 
-@interface WCPayTransferPhoneHomePageCgi
+@interface WCPayTransferPhoneHomePageCgi : NSObject
 {
     id <WCPayTransferPhoneHomePageCgiDelegate> _m_delegate;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVBeginContentView, MMFinderLiveKTVEmptyContentView, MMFinderLiveKTVEndContentView, MMFinderLiveKTVSingingContentView, MMLiveKtvUserView, NSString, WCFinderLiveAnchorLogReporter;
 
-@interface MMFinderLiveKTVMusicContainerView
+@interface MMFinderLiveKTVMusicContainerView : NSObject
 {
     _Bool _isUserViewAnimating;
     _Bool _isStateVisivilityChangeAnimating;

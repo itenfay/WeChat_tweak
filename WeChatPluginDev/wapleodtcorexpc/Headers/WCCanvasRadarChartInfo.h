@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCanvasRadarChartInfo
+@interface WCCanvasRadarChartInfo : NSObject
 {
     NSString *_coverColor;
     NSString *_borderImg;

@@ -6,7 +6,7 @@
 @class NSNumber, QGPColor, QGPVector3;
 @protocol QTCOptional;
 
-@interface QGPSetSpotOrDirectionalLightParam
+@interface QGPSetSpotOrDirectionalLightParam : NSObject
 {
     long long _type;
     QGPColor<QTCOptional> *_color;

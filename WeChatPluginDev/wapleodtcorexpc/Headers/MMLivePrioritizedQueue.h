@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLivePrioritizedQueue
+@interface MMLivePrioritizedQueue : NSObject
 {
     CDUnknownBlockType _comparator;
 }

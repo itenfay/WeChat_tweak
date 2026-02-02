@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface MMLiveHeatAndIconButton
+@interface MMLiveHeatAndIconButton : NSObject
 {
     UIImageView *_iconView;
     UILabel *_heatLabel;

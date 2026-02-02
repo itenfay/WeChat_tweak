@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCAddressNetworkHelper;
 
-@interface WCAddressLogicMgr
+@interface WCAddressLogicMgr : NSObject
 {
     NSMutableArray *m_arrAddress;
     NSMutableArray *m_arrAddressStageData;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WxGameCardItem
+@interface WxGameCardItem : NSObject
 {
     unsigned int _msgtype;
     NSString *_frameSetName;

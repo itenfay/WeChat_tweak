@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMResInfoMgr, MMResourceDownloadMgr, NSArray, NSString;
 
-@interface MMResourceService
+@interface MMResourceService : NSObject
 {
     NSString *KEY_UPDATE_RES_KEY;
     NSString *ACCESS_RES_GROUP;

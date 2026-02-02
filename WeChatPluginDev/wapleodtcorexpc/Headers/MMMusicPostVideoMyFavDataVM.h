@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray, NSString, WCFinderLastestPlayVideoInfoMgr;
 @protocol MMMusicPostVideoMyFavDataVMDelegate;
 
-@interface MMMusicPostVideoMyFavDataVM
+@interface MMMusicPostVideoMyFavDataVM : NSObject
 {
     NSMutableArray *_arrData;
     WCFinderLastestPlayVideoInfoMgr *lastestPlayVideoInfoMgr;

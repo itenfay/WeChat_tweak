@@ -6,7 +6,7 @@
 @class CEnterpriseContact, MMCPLabel, MMHeadImageView, UIButton, UILabel;
 @protocol EnterpriseContactItemViewDelegate;
 
-@interface EnterpriseContactItemView
+@interface EnterpriseContactItemView : NSObject
 {
     CEnterpriseContact *_contact;
     MMCPLabel *_nickNameLabel;

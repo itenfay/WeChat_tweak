@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderPassReportCGI
+@interface WCFinderPassReportCGI : NSObject
 {
     int _passReportScene;
     NSString *_reportData;

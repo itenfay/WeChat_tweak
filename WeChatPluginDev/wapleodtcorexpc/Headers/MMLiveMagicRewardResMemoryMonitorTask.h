@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class _TtC6WeChat15MagicRewardView;
 
-@interface MMLiveMagicRewardResMemoryMonitorTask
+@interface MMLiveMagicRewardResMemoryMonitorTask : NSObject
 {
     _Bool _isResMemoryLoaded;
     _Bool _isUnLoading;

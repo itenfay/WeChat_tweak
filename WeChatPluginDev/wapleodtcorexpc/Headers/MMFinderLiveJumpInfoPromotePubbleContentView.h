@@ -5,7 +5,7 @@
 
 @class FinderJumpInfo, MMUIButton, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveJumpInfoPromotePubbleContentView
+@interface MMFinderLiveJumpInfoPromotePubbleContentView : NSObject
 {
     MMWebImageView *_titleImgView;
     MMUILabel *_titleTagLabel;

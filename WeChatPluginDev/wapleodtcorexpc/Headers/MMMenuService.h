@@ -5,7 +5,7 @@
 
 @class MMMenuController, NSString;
 
-@interface MMMenuService
+@interface MMMenuService : NSObject
 {
     MMMenuController *_menuController;
 }

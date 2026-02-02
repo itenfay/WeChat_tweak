@@ -5,7 +5,7 @@
 
 @class C2CReportController, ChatUnavailableTipsView, MMInputToolView, NSString, OpenIMSucceedContactLogic, UIImageView, WCTopicSearchViewController, XMailBindMailControlLogic;
 
-@interface WeixinContentLogicController
+@interface WeixinContentLogicController : NSObject
 {
     _Bool m_bTipsShow;
     OpenIMSucceedContactLogic *m_openIMSucceedContactLogic;

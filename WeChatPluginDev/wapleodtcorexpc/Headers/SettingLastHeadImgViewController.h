@@ -6,7 +6,7 @@
 @class ImageScrollView, NSString, UIImage;
 @protocol SettingLastHeadImgViewControllerDelegate;
 
-@interface SettingLastHeadImgViewController
+@interface SettingLastHeadImgViewController : NSObject
 {
     id <SettingLastHeadImgViewControllerDelegate> _delegate;
     UIImage *_originalImage;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebA8KeyLiteParams
+@interface MMWebA8KeyLiteParams : NSObject
 {
     _Bool _skipPrefetch;
     _Bool _fromKara;

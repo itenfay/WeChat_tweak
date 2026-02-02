@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface WCFinderLiveUpdateSongListCGI
+@interface WCFinderLiveUpdateSongListCGI : NSObject
 {
     unsigned long long _seq;
     NSMutableArray *_songNameList;

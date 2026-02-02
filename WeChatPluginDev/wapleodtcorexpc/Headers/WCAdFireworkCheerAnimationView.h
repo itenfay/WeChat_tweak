@@ -6,7 +6,7 @@
 @class NSString, PAGView, UIButton, WCAdPagInfo, WCDataItem;
 @protocol WCAdFireworkCheerAnimationViewDelegate;
 
-@interface WCAdFireworkCheerAnimationView
+@interface WCAdFireworkCheerAnimationView : NSObject
 {
     _Bool _isHideAnimating;
     _Bool _closedFlag;

@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSString, UrlController;
 
-@interface WeSportContactInfoAssist
+@interface WeSportContactInfoAssist : NSObject
 {
     UrlController *m_urlController;
     ForwardMessageLogicController *m_forwardLogic;

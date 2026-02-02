@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString, UILabel, WACommentListFooterTipView, WCTimeLineFooterView;
 
-@interface TextStateNotifyMsgListViewController
+@interface TextStateNotifyMsgListViewController : NSObject
 {
     _Bool _isUnReadMode;
     _Bool _hasMoreReadMessage;

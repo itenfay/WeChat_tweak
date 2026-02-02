@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSRecursiveLock;
 
-@interface FiltersBaseLogic
+@interface FiltersBaseLogic : NSObject
 {
     NSRecursiveLock *_lock;
     NSMutableArray *_arrFilters;

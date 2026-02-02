@@ -6,7 +6,7 @@
 @class NSIndexPath, NSString, UIButton, UICollectionView, UIImageView, UILabel, UIView, WAMainFrameTaskBarDeleteActionWindow, WAMainFrameTaskBarSectionWeAppViewModel, WAStarCollectionViewLayout;
 @protocol WAMainFrameTaskBarSectionWeAppViewDelegate;
 
-@interface WAMainFrameTaskBarSectionWeAppView
+@interface WAMainFrameTaskBarSectionWeAppView : NSObject
 {
     WAStarCollectionViewLayout *_layout;
     UIView *_line;

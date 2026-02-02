@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXOpenBusinessViewResp
+@interface WXOpenBusinessViewResp : NSObject
 {
     NSString *_businessType;
     NSString *_extMsg;

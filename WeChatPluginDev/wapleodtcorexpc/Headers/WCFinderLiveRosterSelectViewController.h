@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSString, UIView;
 @protocol WCFinderLiveRosterSelectDelegate;
 
-@interface WCFinderLiveRosterSelectViewController
+@interface WCFinderLiveRosterSelectViewController : NSObject
 {
     _Bool _isInPageSheetMode;
     _Bool _forceDarkMode;

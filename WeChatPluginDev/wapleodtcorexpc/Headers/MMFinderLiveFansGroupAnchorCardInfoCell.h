@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFansGroupInvisibleTipView, MMUIButton, MMUILabel, MMWebImageView, NSString;
 
-@interface MMFinderLiveFansGroupAnchorCardInfoCell
+@interface MMFinderLiveFansGroupAnchorCardInfoCell : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_nickLabel;

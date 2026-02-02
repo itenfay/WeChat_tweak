@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTableView, NSString, UIView;
 @protocol UITableViewDelegate><UITableViewDataSource;
 
-@interface MMLiveAnchorMoreFunctionOperationView
+@interface MMLiveAnchorMoreFunctionOperationView : NSObject
 {
     CDUnknownBlockType _functionOperationViewWillDisappear;
     id <UITableViewDelegate><UITableViewDataSource> _operationDelegate;

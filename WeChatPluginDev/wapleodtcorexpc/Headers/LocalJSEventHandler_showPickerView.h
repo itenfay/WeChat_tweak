@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LocalJSEventHandler_showPickerView
+@interface LocalJSEventHandler_showPickerView : NSObject
 {
 }
 

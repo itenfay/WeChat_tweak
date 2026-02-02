@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WXKBSendCommunicateDataRequest
+@interface WXKBSendCommunicateDataRequest : NSObject
 {
     long long _type;
     NSData *_data;

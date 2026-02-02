@@ -5,7 +5,7 @@
 
 @protocol WCPayCreditPayIncreaseLimitSucViewControllerDelegate;
 
-@interface WCPayCreditPayIncreaseLimitSucViewController
+@interface WCPayCreditPayIncreaseLimitSucViewController : NSObject
 {
     id <WCPayCreditPayIncreaseLimitSucViewControllerDelegate> m_delegate;
 }

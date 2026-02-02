@@ -6,7 +6,7 @@
 @class MMUIButton, UILabel, UITapGestureRecognizer;
 @protocol MJMovieComposingTitleGuideViewDelegate;
 
-@interface MJMovieComposingTitleGuideView
+@interface MJMovieComposingTitleGuideView : NSObject
 {
     _Bool _hasBeenTouched;
     MMUIButton *_closeButton;

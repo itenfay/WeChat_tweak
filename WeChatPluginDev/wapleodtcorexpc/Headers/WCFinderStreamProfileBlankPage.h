@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, WCFinderAnimationLoadingView;
 
-@interface WCFinderStreamProfileBlankPage
+@interface WCFinderStreamProfileBlankPage : NSObject
 {
     UILabel *_textLabel;
     WCFinderAnimationLoadingView *_loadingView;

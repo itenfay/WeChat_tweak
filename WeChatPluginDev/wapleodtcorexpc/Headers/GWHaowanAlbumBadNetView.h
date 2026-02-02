@@ -6,7 +6,7 @@
 @class NSString;
 @protocol GWHaowanAlbumBadNetViewDelegate;
 
-@interface GWHaowanAlbumBadNetView
+@interface GWHaowanAlbumBadNetView : NSObject
 {
     id <GWHaowanAlbumBadNetViewDelegate> _delegate;
     NSString *_badNetTip;

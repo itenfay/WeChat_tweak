@@ -6,7 +6,7 @@
 @class MMCopyLabel;
 @protocol SettingModifyAliasProtocolHeadViewDelegate;
 
-@interface SettingModifyAliasProtocolHeadView
+@interface SettingModifyAliasProtocolHeadView : NSObject
 {
     MMCopyLabel *_m_aliasLabel;
 }

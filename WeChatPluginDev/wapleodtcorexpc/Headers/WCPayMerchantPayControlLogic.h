@@ -5,7 +5,7 @@
 
 @class GetUrlInfoReqSession, NSString, WCPayInterceptWinLogic;
 
-@interface WCPayMerchantPayControlLogic
+@interface WCPayMerchantPayControlLogic : NSObject
 {
     _Bool _isStopLogicWhenCloseWebview;
     unsigned int _getA8keyScene;

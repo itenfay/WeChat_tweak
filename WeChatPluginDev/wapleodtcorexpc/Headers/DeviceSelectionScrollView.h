@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol ScrollItemSelectionDelegate;
 
-@interface DeviceSelectionScrollView
+@interface DeviceSelectionScrollView : NSObject
 {
     id <ScrollItemSelectionDelegate> _selectDelegate;
     NSArray *_deviceArray;

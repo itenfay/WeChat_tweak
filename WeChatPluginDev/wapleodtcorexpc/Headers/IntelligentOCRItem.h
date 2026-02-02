@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentOCRItem
+@interface IntelligentOCRItem : NSObject
 {
     NSString *_ocrText;
 }

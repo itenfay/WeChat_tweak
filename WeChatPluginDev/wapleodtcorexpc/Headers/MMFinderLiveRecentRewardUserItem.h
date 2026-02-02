@@ -5,7 +5,7 @@
 
 @class FinderLiveContact, NSMutableArray;
 
-@interface MMFinderLiveRecentRewardUserItem
+@interface MMFinderLiveRecentRewardUserItem : NSObject
 {
     _Bool _unfold;
     FinderLiveContact *_liveContact;

@@ -6,7 +6,7 @@
 @class NSString;
 @protocol QGLOverlayDelegate, QOverlayProtocol;
 
-@interface QGLOverlay
+@interface QGLOverlay : NSObject
 {
     _Bool _visible;
     _Bool _interactive;

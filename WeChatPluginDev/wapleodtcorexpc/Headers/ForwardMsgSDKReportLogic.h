@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSString;
 
-@interface ForwardMsgSDKReportLogic
+@interface ForwardMsgSDKReportLogic : NSObject
 {
     unsigned int _lastGetSdkInfoTimeSec;
     MMLRUCache *_sdkCacheInfo;

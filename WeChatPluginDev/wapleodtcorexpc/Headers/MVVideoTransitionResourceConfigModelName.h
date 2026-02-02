@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MVVideoTransitionResourceConfigModelName
+@interface MVVideoTransitionResourceConfigModelName : NSObject
 {
     NSString *_enName;
     NSString *_zhHKName;

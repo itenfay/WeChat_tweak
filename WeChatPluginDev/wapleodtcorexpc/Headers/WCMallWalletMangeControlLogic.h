@@ -6,7 +6,7 @@
 @class NSString, WCPayWalletBatchFunctionOperateCgi, WCPayWalletGetFunctionSwitchListCgi;
 @protocol WCMallWalletMangeControlLogicDelegate;
 
-@interface WCMallWalletMangeControlLogic
+@interface WCMallWalletMangeControlLogic : NSObject
 {
     id <WCMallWalletMangeControlLogicDelegate> m_delegate;
     WCPayWalletGetFunctionSwitchListCgi *_getListCgi;

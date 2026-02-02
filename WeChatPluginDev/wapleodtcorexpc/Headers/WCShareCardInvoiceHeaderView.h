@@ -6,7 +6,7 @@
 @class MMUIView;
 @protocol WCShareCardInvoiceCardHeaderDelegate;
 
-@interface WCShareCardInvoiceHeaderView
+@interface WCShareCardInvoiceHeaderView : NSObject
 {
     id <WCShareCardInvoiceCardHeaderDelegate> _delegate;
     MMUIView *_cardContentView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVSongItem, NSData, WCFinderDataItem;
 
-@interface WCFinderLiveKtvGetSongPlayInfoCGI
+@interface WCFinderLiveKtvGetSongPlayInfoCGI : NSObject
 {
     int _commentScene;
     MMFinderLiveKTVSongItem *_songItem;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC9WeAppCore22WAConcurrentJSEventMgr
+@interface _TtC9WeAppCore22WAConcurrentJSEventMgr : NSObject
 {
     MISSING_TYPE *arrConcurrentWaitingEvent;
     MISSING_TYPE *arrConcurrentRunningEvent;

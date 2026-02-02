@@ -6,7 +6,7 @@
 @class MMTimer, MMUIButton, NSString, RichTextView, WCFinderDataItem, WCFinderLandScapePlayCompleteCoverInfoView;
 @protocol WCFinderLandScapePlayCompleteTipsViewDelegate;
 
-@interface WCFinderLandScapePlayCompleteTipsView
+@interface WCFinderLandScapePlayCompleteTipsView : NSObject
 {
     int _scene;
     id <WCFinderLandScapePlayCompleteTipsViewDelegate> _delegate;

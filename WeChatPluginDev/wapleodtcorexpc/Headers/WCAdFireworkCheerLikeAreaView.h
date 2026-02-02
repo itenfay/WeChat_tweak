@@ -5,7 +5,7 @@
 
 @class MMUIView, NSString, PAGView, WCAdFireworkCheerInfo, WCAdSocialLikeLogic, WCAdURLImageView, WCDataItem;
 
-@interface WCAdFireworkCheerLikeAreaView
+@interface WCAdFireworkCheerLikeAreaView : NSObject
 {
     _Bool _contentShowFlag;
     WCDataItem *_dataItem;

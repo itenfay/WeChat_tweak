@@ -5,7 +5,7 @@
 
 @class LiteAppDynamicModuleCallback, NSDictionary, UIViewController;
 
-@interface StartNativeUseCaseImpl
+@interface StartNativeUseCaseImpl : NSObject
 {
     LiteAppDynamicModuleCallback *_callBack;
     UIViewController *_vc;

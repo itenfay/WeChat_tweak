@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UIColor, UILabel, UIView;
 
-@interface GameChatBaseGroupCell
+@interface GameChatBaseGroupCell : NSObject
 {
     MMWebImageView *_webImageView;
     UILabel *_groupNameLabel;

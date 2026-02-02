@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface TranslateMsgMgr
+@interface TranslateMsgMgr : NSObject
 {
     NSMutableDictionary *_dicSessionTransInfos;
     NSMutableDictionary *_dicSequenceWaitTask;

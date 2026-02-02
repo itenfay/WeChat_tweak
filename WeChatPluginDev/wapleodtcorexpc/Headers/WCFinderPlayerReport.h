@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderPlayBufferingInfo;
 
-@interface WCFinderPlayerReport
+@interface WCFinderPlayerReport : NSObject
 {
     _Bool _downloadSuccessful;
     _Bool _isDownloadH265;

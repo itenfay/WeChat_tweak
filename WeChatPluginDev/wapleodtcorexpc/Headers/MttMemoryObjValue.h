@@ -5,7 +5,7 @@
 
 @class MttMemory;
 
-@interface MttMemoryObjValue
+@interface MttMemoryObjValue : NSObject
 {
     int _tag;
     int _pos;

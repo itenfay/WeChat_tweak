@@ -5,7 +5,7 @@
 
 @class OMCBatchThumbnailProvider, UIImageView, UILabel;
 
-@interface MJSegmentCoverCell
+@interface MJSegmentCoverCell : NSObject
 {
     UIImageView *_imageView;
     UILabel *_titleLabel;

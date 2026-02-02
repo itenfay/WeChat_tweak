@@ -5,7 +5,7 @@
 
 @class MMFinderLivePurchasedComposedViewControllerOpenParams, MMLiteAppViewController, NSString, WCFinderNavTabTitleView;
 
-@interface MMFinderLivePurchasedComposedViewController
+@interface MMFinderLivePurchasedComposedViewController : NSObject
 {
     MMFinderLivePurchasedComposedViewControllerOpenParams *_openParam;
     WCFinderNavTabTitleView *_customTitleView;

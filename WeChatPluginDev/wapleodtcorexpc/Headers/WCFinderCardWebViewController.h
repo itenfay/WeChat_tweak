@@ -6,7 +6,7 @@
 @class MMWebViewController, NSDictionary, NSString, WCFinderEmptyTipsView, WCFinderJumpInfo;
 @protocol WCFinderCardWebViewControllerDelegate;
 
-@interface WCFinderCardWebViewController
+@interface WCFinderCardWebViewController : NSObject
 {
     id <WCFinderCardWebViewControllerDelegate> _finderDelegate;
     NSDictionary *_envDict;

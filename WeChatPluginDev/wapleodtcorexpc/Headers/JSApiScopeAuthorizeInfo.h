@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface JSApiScopeAuthorizeInfo
+@interface JSApiScopeAuthorizeInfo : NSObject
 {
     _Bool _isBanModifyAvatar;
     unsigned int _avatarLimit;

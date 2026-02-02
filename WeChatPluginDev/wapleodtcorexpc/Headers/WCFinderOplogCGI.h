@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
-@interface WCFinderOplogCGI
+@interface WCFinderOplogCGI : NSObject
 {
     NSMutableDictionary *_handlerMap;
 }

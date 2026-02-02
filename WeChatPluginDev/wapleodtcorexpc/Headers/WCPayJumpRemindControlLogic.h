@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWebViewController, NSString, WCPayJumpRemindInfo;
 @protocol MMUIViewControllerDelegate;
 
-@interface WCPayJumpRemindControlLogic
+@interface WCPayJumpRemindControlLogic : NSObject
 {
     unsigned int _clientScene;
     unsigned int _payScene;

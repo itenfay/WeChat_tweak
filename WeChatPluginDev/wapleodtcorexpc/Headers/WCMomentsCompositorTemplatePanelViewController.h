@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MJVideoTemplate, MMUIButton, NSIndexPath, NSMutableDictionary, NSString, UICollectionView, UIView, WCMomentsCompositorTemplateTableViewController, WCVideoProducerDataSource;
 @protocol WCMomentsCompositorTemplatePanelDelegate;
 
-@interface WCMomentsCompositorTemplatePanelViewController
+@interface WCMomentsCompositorTemplatePanelViewController : NSObject
 {
     NSIndexPath *_selectedTabIndex;
     WCMomentsCompositorTemplateTableViewController *_currentTemplateTableVC;

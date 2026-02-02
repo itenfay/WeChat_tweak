@@ -6,7 +6,7 @@
 @class NSString, UIViewController;
 @protocol NewSettingModifyEmailViewControllerDelegate;
 
-@interface NewSettingModifyEmailViewController
+@interface NewSettingModifyEmailViewController : NSObject
 {
     int _displayType;
     id <NewSettingModifyEmailViewControllerDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPOnLayerLoadFinishEvent
+@interface QGPOnLayerLoadFinishEvent : NSObject
 {
     long long _errorCode;
     NSString *_errorMsg;

@@ -5,7 +5,7 @@
 
 @class MMUIViewController;
 
-@interface NewLifeSelectEnvelopHandler
+@interface NewLifeSelectEnvelopHandler : NSObject
 {
     MMUIViewController *_vc;
 }

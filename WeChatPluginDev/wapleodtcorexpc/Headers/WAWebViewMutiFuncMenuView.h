@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, MMUILabel, MMUIView, NSString, UIButton, UILongPressGestureRecognizer, UIView, WANavAlertTitleView, WAPopOverTaskBarlogic, WAPopOverView, WAWebViewController;
 @protocol WAWebViewMutiFuncMenuViewDataSource, WAWebViewMutiFuncMenuViewDelegate;
 
-@interface WAWebViewMutiFuncMenuView
+@interface WAWebViewMutiFuncMenuView : NSObject
 {
     NSString *_normalLastNavTitle;
     MMUILabel *_normalTitleView;

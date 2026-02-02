@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, UIImageView, UIView;
 
-@interface MMLiveRewardGiftCoinButton
+@interface MMLiveRewardGiftCoinButton : NSObject
 {
     UIView *_loadingContainerView;
     UIView *_loadingBkgView;

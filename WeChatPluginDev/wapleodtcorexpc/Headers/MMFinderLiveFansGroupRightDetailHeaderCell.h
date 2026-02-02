@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMFinderLiveFansGroupRightDetailHeaderCell
+@interface MMFinderLiveFansGroupRightDetailHeaderCell : NSObject
 {
     UILabel *_titleLabel;
 }

@@ -5,7 +5,7 @@
 
 @class MMMusicViewController, NSString;
 
-@interface MMMusicVCCacheMgr
+@interface MMMusicVCCacheMgr : NSObject
 {
     NSString *_curCachedKey;
     MMMusicViewController *_curCachedVC;

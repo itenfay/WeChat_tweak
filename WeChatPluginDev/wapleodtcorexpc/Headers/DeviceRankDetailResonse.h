@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface DeviceRankDetailResonse
+@interface DeviceRankDetailResonse : NSObject
 {
     _Bool _uiIsFollower;
     _Bool _isLikedCover;

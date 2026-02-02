@@ -6,7 +6,7 @@
 @class AVAudioPlayer, CContact, MMHDHeadImageView, MMTimerLabel, MMUIButton, MultiTalkHDHeadView, NSString, SmallCameraView, UIImageView, UILabel, UIView, VOIPVideoRender, VOIPVideoToVoiceView, VoipDescriptionButton;
 @protocol NSObject><VideoVoipCSTalkingViewDelegate;
 
-@interface VideoVoipCSTalkingView
+@interface VideoVoipCSTalkingView : NSObject
 {
     CContact *_contact;
     unsigned int _status;

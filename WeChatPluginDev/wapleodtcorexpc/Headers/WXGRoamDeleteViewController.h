@@ -5,7 +5,7 @@
 
 @class MMUIScrollView, NSString, SightIconView, UIButton, UIImageView, UILabel;
 
-@interface WXGRoamDeleteViewController
+@interface WXGRoamDeleteViewController : NSObject
 {
     _Bool _bDeleteAbort;
     long long _enterScene;

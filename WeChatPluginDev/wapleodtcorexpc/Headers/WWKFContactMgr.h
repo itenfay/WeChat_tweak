@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WCEliminatedSlotMMKV, WCTDatabase, WCTTable;
 
-@interface WWKFContactMgr
+@interface WWKFContactMgr : NSObject
 {
     NSMutableDictionary *_userName2ContactMap;
     NSMutableDictionary *_appId2ContactsMap;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSArray, NSMutableDictionary, NSString;
 
-@interface MMFinderLiveDNSMgr
+@interface MMFinderLiveDNSMgr : NSObject
 {
     _Bool _resolveBeforeUsage;
     _Bool _isInBackground;

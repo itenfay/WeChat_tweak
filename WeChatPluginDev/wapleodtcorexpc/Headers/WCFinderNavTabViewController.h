@@ -5,7 +5,7 @@
 
 @class NSArray, NSMapTable, NSString, UICollectionView;
 
-@interface WCFinderNavTabViewController
+@interface WCFinderNavTabViewController : NSObject
 {
     double _navTabPaddingButton;
     UICollectionView *_collectionView;

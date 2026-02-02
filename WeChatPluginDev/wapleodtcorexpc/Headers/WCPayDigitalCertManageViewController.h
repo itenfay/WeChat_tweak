@@ -6,7 +6,7 @@
 @class NSString, TenpayCertificate, UIButton, UIImageView, UILabel, WCBizLoadingView, WCPayDeleteDigitalCertCgi, WCPayDigitalCertPayManageResp, WCPayUserInfo;
 @protocol WCPayDigitalCertManageViewControllerDelegate;
 
-@interface WCPayDigitalCertManageViewController
+@interface WCPayDigitalCertManageViewController : NSObject
 {
     unsigned int _entryScene;
     UIImageView *_m_iconView;

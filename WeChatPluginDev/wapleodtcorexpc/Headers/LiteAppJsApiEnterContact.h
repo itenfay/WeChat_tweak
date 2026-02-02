@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LiteAppJsApiEnterContact
+@interface LiteAppJsApiEnterContact : NSObject
 {
     _Bool _showMessageCard;
     NSString *_targetAppId;

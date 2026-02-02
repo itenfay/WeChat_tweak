@@ -6,7 +6,7 @@
 @class MMFinderLiveFansGroupCustomizableGiftColorVariant, MMFinderLiveFansGroupCustomizableGiftItem, MMFinderLiveFansGroupGiftCustomizationPanelTextFieldGradientView, MMUITextField, NSString, PAGFile, PAGView, UIButton, UICollectionView, UIView;
 @protocol MMFinderLiveFansGroupGiftCustomizationPanelDelegate;
 
-@interface MMFinderLiveFansGroupGiftCustomizationPanel
+@interface MMFinderLiveFansGroupGiftCustomizationPanel : NSObject
 {
     _Bool _textEditing;
     _Bool _changeCommiting;

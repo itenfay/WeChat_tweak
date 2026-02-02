@@ -5,7 +5,7 @@
 
 @class WAContactGetter;
 
-@interface WebviewJSEventHandler_openWeAppPage
+@interface WebviewJSEventHandler_openWeAppPage : NSObject
 {
     WAContactGetter *_contactGetter;
     _Bool _useEmbedMode;

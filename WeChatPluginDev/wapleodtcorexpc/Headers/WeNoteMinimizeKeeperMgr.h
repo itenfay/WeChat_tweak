@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString, OrderedDictionary;
 
-@interface WeNoteMinimizeKeeperMgr
+@interface WeNoteMinimizeKeeperMgr : NSObject
 {
     NSRecursiveLock *_lock;
     OrderedDictionary *_vcDic;

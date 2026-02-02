@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MMFinderLiveOlyBarragePubbleDataMgr
+@interface MMFinderLiveOlyBarragePubbleDataMgr : NSObject
 {
     NSData *_lastBuffer;
 }

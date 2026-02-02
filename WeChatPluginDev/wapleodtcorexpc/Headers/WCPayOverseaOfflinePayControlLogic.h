@@ -5,7 +5,7 @@
 
 @class NSString, WCPayOverseaGetOfflinePayUrlCgi;
 
-@interface WCPayOverseaOfflinePayControlLogic
+@interface WCPayOverseaOfflinePayControlLogic : NSObject
 {
     WCPayOverseaGetOfflinePayUrlCgi *_getOfflinePayUrlCgi;
 }

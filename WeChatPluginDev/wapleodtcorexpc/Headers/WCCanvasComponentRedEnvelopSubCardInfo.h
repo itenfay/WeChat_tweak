@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCCanvasComponentRedEnvelopSubCardInfo
+@interface WCCanvasComponentRedEnvelopSubCardInfo : NSObject
 {
     int _subType;
     unsigned int _expireTime;

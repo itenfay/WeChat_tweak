@@ -6,7 +6,7 @@
 @class CContact, NSMutableArray, NSMutableDictionary, WCCardDataCardInfo, WCCardDataCardTPInfo, WCCardUsedStoreInfo;
 @protocol WCCardDataSource, WCCardDetailContentLogicDelegate;
 
-@interface WCCardDetailContentViewLogicController
+@interface WCCardDetailContentViewLogicController : NSObject
 {
     _Bool _bIsShareCardMode;
     int _cardStatus;

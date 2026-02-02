@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ServiceAppData
+@interface ServiceAppData : NSObject
 {
     NSString *_appID;
     NSString *_appName;

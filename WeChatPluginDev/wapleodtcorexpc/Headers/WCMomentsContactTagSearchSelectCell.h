@@ -5,7 +5,7 @@
 
 @class ContactTagData, MMUILabel, NSString, UIImageView, UIView;
 
-@interface WCMomentsContactTagSearchSelectCell
+@interface WCMomentsContactTagSearchSelectCell : NSObject
 {
     unsigned long long _checkType;
     UIView *_seperatorLine;

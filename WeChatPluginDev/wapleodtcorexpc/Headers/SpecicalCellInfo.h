@@ -5,7 +5,7 @@
 
 @class CContact;
 
-@interface SpecicalCellInfo
+@interface SpecicalCellInfo : NSObject
 {
     unsigned long long m_cellType;
     CContact *m_Contact;

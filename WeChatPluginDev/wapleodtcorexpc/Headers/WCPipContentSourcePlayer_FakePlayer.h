@@ -5,7 +5,7 @@
 
 @class AVPlayerItem, NSString, WCPipSupportPlayer, WCPlayerLayerView;
 
-@interface WCPipContentSourcePlayer_FakePlayer
+@interface WCPipContentSourcePlayer_FakePlayer : NSObject
 {
     _Bool _isCreatingFakeAsset;
     WCPipSupportPlayer *_player;

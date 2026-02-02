@@ -6,7 +6,7 @@
 @class MMUIViewController, NSString, UICollectionView, UIView, WAPopOverTaskBarlogic;
 @protocol WAPopOverTaskBarViewDelegate;
 
-@interface WAPopOverTaskBarView
+@interface WAPopOverTaskBarView : NSObject
 {
     _Bool _isNeedBackToChatButton;
     id <WAPopOverTaskBarViewDelegate> _taskBarViewDelegate;

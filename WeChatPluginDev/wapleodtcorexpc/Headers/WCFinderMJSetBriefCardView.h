@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, RichTextView, UIImageView, UILabel, UIView;
 
-@interface WCFinderMJSetBriefCardView
+@interface WCFinderMJSetBriefCardView : NSObject
 {
     UIView *_line;
     UIImageView *_mediaBkgImage;

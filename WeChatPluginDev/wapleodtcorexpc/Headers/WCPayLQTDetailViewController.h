@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, TimeoutNumber, UIImageView, UIView, WCPayFirstPurchaseModal, WCPayLQTPageSheet, WCPayLQTTipsPanelView, WCPayTitleAlignLeftPageSheet;
 @protocol WCPayLQTDetailViewControllerDelegate;
 
-@interface WCPayLQTDetailViewController
+@interface WCPayLQTDetailViewController : NSObject
 {
     _Bool _bIsClosingAccount;
     _Bool _bHasReportLctOperationShow;

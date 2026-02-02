@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WATemplateMsgMngViewController
+@interface WATemplateMsgMngViewController : NSObject
 {
     unsigned long long _notifyStatus;
     unsigned long long _audioNotifyStatus;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OrientationSafePageSheetContainer;
 
-@interface HintWithJumpWebViewHalfScreenViewController
+@interface HintWithJumpWebViewHalfScreenViewController : NSObject
 {
     NSString *_title;
     NSString *_url;

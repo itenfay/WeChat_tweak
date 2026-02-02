@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MagicWeAppCardService
+@interface MagicWeAppCardService : NSObject
 {
     NSMutableDictionary *_frameSetItems;
     NSMutableDictionary *_host2biz;

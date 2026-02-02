@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderLiveShopWindowShareModel
+@interface WCFinderLiveShopWindowShareModel : NSObject
 {
     NSString *_finderUsername;
     NSString *_commodityInStockCount;

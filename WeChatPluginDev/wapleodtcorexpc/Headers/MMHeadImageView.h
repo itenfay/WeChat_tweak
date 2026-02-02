@@ -5,7 +5,7 @@
 
 @class MMUILongPressImageView, NSString, UIImage, UIImageView;
 
-@interface MMHeadImageView
+@interface MMHeadImageView : NSObject
 {
     UIImageView *_borderImageView;
     NSString *_nsHeadImgUrl;

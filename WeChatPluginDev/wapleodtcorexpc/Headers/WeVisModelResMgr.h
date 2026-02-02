@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WeVisModelResMgr
+@interface WeVisModelResMgr : NSObject
 {
 }
 

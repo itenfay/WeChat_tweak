@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCGestureVector
+@interface WCGestureVector : NSObject
 {
     NSMutableArray *_doubleValueArray;
 }

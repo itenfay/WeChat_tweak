@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, WCAdDetermineHalfScreenInfo, WCAdURLImageView;
 @protocol WCAdDetermineHalfScreenViewDelegate;
 
-@interface WCAdDetermineHalfScreenView
+@interface WCAdDetermineHalfScreenView : NSObject
 {
     id <WCAdDetermineHalfScreenViewDelegate> _delegate;
     WCAdDetermineHalfScreenInfo *_determineInfo;

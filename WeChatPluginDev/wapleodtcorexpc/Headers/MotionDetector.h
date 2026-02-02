@@ -6,7 +6,7 @@
 @class AVCaptureDevice;
 @protocol MotionDetectorDelegate;
 
-@interface MotionDetector
+@interface MotionDetector : NSObject
 {
     id <MotionDetectorDelegate> _delegate;
     _Bool _isInit;

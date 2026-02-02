@@ -5,7 +5,7 @@
 
 @class CMMDB, NSMutableArray, NSMutableDictionary;
 
-@interface SendMessageEventHandler
+@interface SendMessageEventHandler : NSObject
 {
     NSMutableDictionary *m_dicMsgList;
     NSMutableArray *m_arrMsgList;

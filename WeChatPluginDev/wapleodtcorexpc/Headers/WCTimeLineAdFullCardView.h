@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, NSArray, NSMutableArray, NSString, UIBezierPath, UIButton, UIColor, UILongPressGestureRecognizer, UIPanGestureRecognizer, WCAdDraggableImageView, WCAdFinderLiveLogic, WCAdFinderLivePlayerView, WCAdFullCardContentContainerView, WCAdFullCardDragImageGestureInfo, WCAdInteractionLabelLogic, WCAdInteractionTagLogic, WCAdLiveDisplayView, WCAdLiveLikeAnimationView, WCGestureReportInfo, WCGestureSet, WCTimeLineAdFullCardSightView;
 
-@interface WCTimeLineAdFullCardView
+@interface WCTimeLineAdFullCardView : NSObject
 {
     _Bool _isGestureAd;
     _Bool _isDragImageAd;

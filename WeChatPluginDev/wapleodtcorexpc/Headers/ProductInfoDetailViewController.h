@@ -5,7 +5,7 @@
 
 @class MMScrollView, MMTableViewInfo, NSArray, NSString, ScanProductItem, UIPageControl, UIView;
 
-@interface ProductInfoDetailViewController
+@interface ProductInfoDetailViewController : NSObject
 {
     MMTableViewInfo *_mainTableViewInfo;
     ScanProductItem *_productItem;

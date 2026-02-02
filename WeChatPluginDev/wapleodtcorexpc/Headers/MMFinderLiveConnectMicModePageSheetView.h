@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicLayoutModeSubtitleWrap, MMFinderLiveConnectMicModePreviewView, MMFinderLiveTaskId, NSArray, NSString, UITableView;
 @protocol MMFinderLiveConnectMicModePageSheetViewDelegate;
 
-@interface MMFinderLiveConnectMicModePageSheetView
+@interface MMFinderLiveConnectMicModePageSheetView : NSObject
 {
     _Bool _modeSelectionEnabled;
     _Bool _focusEnabled;

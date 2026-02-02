@@ -5,7 +5,7 @@
 
 @class MMUIWindow;
 
-@interface WebviewJSEventHandler_previewVideo
+@interface WebviewJSEventHandler_previewVideo : NSObject
 {
     MMUIWindow *_fullScreenWindow;
 }

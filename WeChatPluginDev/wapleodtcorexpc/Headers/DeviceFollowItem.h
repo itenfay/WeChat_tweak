@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DeviceFollowItem
+@interface DeviceFollowItem : NSObject
 {
     unsigned int _uiStep;
     unsigned int _uiIndex;

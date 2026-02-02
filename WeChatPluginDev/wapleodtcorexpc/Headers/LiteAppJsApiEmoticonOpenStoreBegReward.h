@@ -5,7 +5,7 @@
 
 @class EmoticonStoreItem, EmotionRewardResponseInfo, NSString;
 
-@interface LiteAppJsApiEmoticonOpenStoreBegReward
+@interface LiteAppJsApiEmoticonOpenStoreBegReward : NSObject
 {
     _Bool _didOpenBegVC;
     NSString *_pid;

@@ -5,7 +5,7 @@
 
 @class UIButton, WAPlateAuthPageSheetViewModel;
 
-@interface WAPlateAuthPageSheetManagerView
+@interface WAPlateAuthPageSheetManagerView : NSObject
 {
     UIButton *_button;
 }

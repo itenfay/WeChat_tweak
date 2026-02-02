@@ -5,7 +5,7 @@
 
 @class CLLocation, NSString;
 
-@interface BrandServiceSearchMgr
+@interface BrandServiceSearchMgr : NSObject
 {
     CLLocation *_location;
 }

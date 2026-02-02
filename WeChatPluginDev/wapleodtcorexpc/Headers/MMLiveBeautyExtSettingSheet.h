@@ -5,7 +5,7 @@
 
 @class MMLiveBeautyExtSettingCard, MMLiveTaskId, NSString;
 
-@interface MMLiveBeautyExtSettingSheet
+@interface MMLiveBeautyExtSettingSheet : NSObject
 {
     int _entry;
     MMLiveTaskId *_taskId;

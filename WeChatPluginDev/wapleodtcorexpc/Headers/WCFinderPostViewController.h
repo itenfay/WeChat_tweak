@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AnyPromise, EmoticonBoardView, FinderLocation, MJPublisher, MMBarButtonItem, MMMenuController, MMTipsViewController, MMUIButton, NSMutableDictionary, NSString, UIButton, UIControl, UIImageView, UILabel, UIScrollView, UIView, WCActionSheet, WCActionSheetItem, WCFiderEidtMusicPostingAudioAdapter, WCFinderAdCommentApplyActionSheet, WCFinderAnimationLoadingView, WCFinderCoverEditViewController, WCFinderCoverHoriPreviewViewController, WCFinderCreateCoordinator, WCFinderEditExtensionReadView, WCFinderFilterTextView, WCFinderForbidBannerView, WCFinderHeadImageView, WCFinderLayoutView, WCFinderLocationSelectHalfViewController, WCFinderModifiedPanelView, WCFinderModifyEditInputView, WCFinderPostCoverInfoView, WCFinderPostInputView, WCFinderPostModifiedEduTipsPannel, WCFinderPostNetResourceAssistCancelToken, WCFinderPostPOICustomControl, WCFinderPostTopBaseView, WCFinderPostVerifyAssist, WCFinderPostViewModel, WCFinderRecommendBubbleView, WCFinderWarningPanelView, WCInputController, WCTimelinePOIPickerViewController;
 @protocol WCFinderPostViewControllerDelegate;
 
-@interface WCFinderPostViewController
+@interface WCFinderPostViewController : NSObject
 {
     _Bool _keyboardShowYet;
     _Bool _extLinkIsFromRestore;

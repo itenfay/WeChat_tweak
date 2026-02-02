@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAAnimation, CADisplayLink, CALayer, NSMutableDictionary, NSString, UIColor, UIImage;
 
-@interface ImageStyle
+@interface ImageStyle : NSObject
 {
     UIImage *_oImage;
     _Bool _alwaysTemplate;

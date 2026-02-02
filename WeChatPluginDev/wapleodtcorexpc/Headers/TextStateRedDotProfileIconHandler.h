@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSCalendar, NSString, TextStateRedDotProfileIconConfig;
 
-@interface TextStateRedDotProfileIconHandler
+@interface TextStateRedDotProfileIconHandler : NSObject
 {
     NSCalendar *_calendar;
     MemoryMappedKV *_mmkv;

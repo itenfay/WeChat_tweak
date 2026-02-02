@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FinderLiteAppParam, FinderMusicBaikeSummary, MMListenCategoryItem, NSArray, NSString, WCFinderStreamLoadingState, WCFinderStreamProfileMusicPlaylist;
 @protocol WCFinderStreamProfileMusicPlaylistDelegate;
 
-@interface WCFinderMusicPlaylistTabPageModel
+@interface WCFinderMusicPlaylistTabPageModel : NSObject
 {
     id <WCFinderStreamProfileMusicPlaylistDelegate> _delegate;
     WCFinderStreamLoadingState *_state;

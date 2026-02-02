@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface MMAppMsgUploadDataBase
+@interface MMAppMsgUploadDataBase : NSObject
 {
     WCTDatabase *_database;
     WCTTable *_uploadfileTable;

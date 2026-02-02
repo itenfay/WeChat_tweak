@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderDataItem;
 
-@interface WCFinderBanLiveCommentCGI
+@interface WCFinderBanLiveCommentCGI : NSObject
 {
     _Bool _enable;
     WCFinderDataItem *_dataItem;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class GLProgram, GPUImageFramebuffer, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_semaphore;
 
-@interface GPUImageFilter
+@interface GPUImageFilter : NSObject
 {
     GPUImageFramebuffer *firstInputFramebuffer;
     GLProgram *filterProgram;

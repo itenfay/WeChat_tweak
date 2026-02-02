@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat49EmoticonStoreDesignerProfileCrossEmoticonPackCell
+@interface _TtC6WeChat49EmoticonStoreDesignerProfileCrossEmoticonPackCell : NSObject
 {
     MISSING_TYPE *delegate;
     MISSING_TYPE *cellIdentifier;

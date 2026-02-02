@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WAErrorCodeMgr
+@interface WAErrorCodeMgr : NSObject
 {
     NSMutableArray *_arrRecord;
 }

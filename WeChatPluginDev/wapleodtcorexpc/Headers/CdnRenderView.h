@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAEAGLLayer, CALayer, EAGLContext, MMLiveRemoteCdnCustomRenderMetricsMonitor, MMLiveTextureBuffer, MMWeEffectFrame, NSObject, glVideoSharpen;
 @protocol OS_dispatch_queue;
 
-@interface CdnRenderView
+@interface CdnRenderView : NSObject
 {
     unsigned long long _renderFrameCount;
     _Bool _isInitOpenglParam;

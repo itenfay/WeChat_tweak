@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WCMemoryStatRecordBaseInfo
+@interface WCMemoryStatRecordBaseInfo : NSObject
 {
     _Bool _isValid;
     unsigned long long _launchTime;

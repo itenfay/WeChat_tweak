@@ -5,7 +5,7 @@
 
 @class AppGameRecordVideoMessageViewModel, MMUILabel, MMUIWindow, MMWebImageView, NSString, UIImageView;
 
-@interface AppGameRecordVideoMessageCellView
+@interface AppGameRecordVideoMessageCellView : NSObject
 {
     MMWebImageView *_imageView;
     MMWebImageView *_maskView;

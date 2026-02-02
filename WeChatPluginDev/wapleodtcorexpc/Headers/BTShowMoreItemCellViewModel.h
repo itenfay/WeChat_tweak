@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface BTShowMoreItemCellViewModel
+@interface BTShowMoreItemCellViewModel : NSObject
 {
     struct CGSize _showMoreLabelSize;
     NSMutableArray *_showMoreLabelStyles;

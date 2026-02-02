@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAContactRemoteVersion
+@interface WAContactRemoteVersion : NSObject
 {
     unsigned int _lastVersion;
     unsigned int _launchFallbackDirectlyMinVersion;

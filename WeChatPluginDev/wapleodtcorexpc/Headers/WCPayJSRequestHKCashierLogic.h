@@ -5,7 +5,7 @@
 
 @protocol WCPayJSRequestHKCashierLogicDelegate;
 
-@interface WCPayJSRequestHKCashierLogic
+@interface WCPayJSRequestHKCashierLogic : NSObject
 {
     id <WCPayJSRequestHKCashierLogicDelegate> _delegate;
 }

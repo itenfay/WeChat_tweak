@@ -6,7 +6,7 @@
 @class MMCanvasJsApiHandler, MMCanvasRenderClientContextParams, NSString;
 @protocol MMCanvasRenderClientContextDelegate;
 
-@interface MMCanvasRenderClientContext
+@interface MMCanvasRenderClientContext : NSObject
 {
     MMCanvasRenderClientContextParams *_params;
     NSString *_canvasId;

@@ -6,7 +6,7 @@
 @class MoveWithTouchAlgorithm, NSDictionary, NSMutableDictionary, NSNumber, NSString, UIColor, UILabel, UIView;
 @protocol WABaseViewDelegate;
 
-@interface WABaseView
+@interface WABaseView : NSObject
 {
     UILabel *_label;
     UIView *_background;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, OpenglRenderView, UIImageView, UILabel, UIView, VoipOpenglesContext;
 
-@interface WCVideoOpenglRender
+@interface WCVideoOpenglRender : NSObject
 {
     _Bool _m_frontCamera;
     _Bool _hideBlurWhenRenderSizeChanged;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderMPVideoService
+@interface WCFinderMPVideoService : NSObject
 {
     NSMutableDictionary *_exportIdToTidDict;
     NSMutableDictionary *_eposeDict;

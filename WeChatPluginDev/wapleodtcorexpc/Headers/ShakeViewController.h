@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CShakeChecker, MMHDHeadImageView, MMTipsViewController, NSString, ShakeLogicProxy, ShakeMainView, ShakeSingleView, ShakeTvHistoryView, ShakeTypeBar;
 @protocol ShakeViewDelegate;
 
-@interface ShakeViewController
+@interface ShakeViewController : NSObject
 {
     ShakeLogicProxy *m_logicProxy;
     ShakeSingleView *m_shakeSingleView;

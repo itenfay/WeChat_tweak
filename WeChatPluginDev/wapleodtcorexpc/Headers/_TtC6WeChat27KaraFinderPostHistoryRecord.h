@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat27KaraFinderPostHistoryRecord
+@interface _TtC6WeChat27KaraFinderPostHistoryRecord : NSObject
 {
     MISSING_TYPE *identifier;
 }

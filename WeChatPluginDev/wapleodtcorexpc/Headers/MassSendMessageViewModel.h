@@ -5,7 +5,7 @@
 
 @class CEmoticonWrap, NSArray, NSMutableArray, NSString, UIImage;
 
-@interface MassSendMessageViewModel
+@interface MassSendMessageViewModel : NSObject
 {
     NSMutableArray *m_receivers;
     _Bool _isPlaying;

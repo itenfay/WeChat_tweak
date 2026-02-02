@@ -5,7 +5,7 @@
 
 @class GCImageMsgWrapper, NSString;
 
-@interface GCImageCellModel
+@interface GCImageCellModel : NSObject
 {
     _Bool _oriNaviHidden;
     int _icountPointProgress;

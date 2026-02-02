@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingAudioPageMixLoadMgrCpp
+@interface TingAudioPageMixLoadMgrCpp : NSObject
 {
 }
 

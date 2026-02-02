@@ -5,7 +5,7 @@
 
 @class NSString, WCEliminatedSlotMMKV;
 
-@interface MMWebPrefetchDataStorageMgr
+@interface MMWebPrefetchDataStorageMgr : NSObject
 {
     WCEliminatedSlotMMKV *_slotMMKV;
 }

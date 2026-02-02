@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem17149
+@interface KvReportItem17149 : NSObject
 {
     int _NetType_21;
     unsigned int _MsgId_23;

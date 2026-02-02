@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayFaceHBCgiDelegate;
 
-@interface WCPayFaceHBCgi
+@interface WCPayFaceHBCgi : NSObject
 {
     id <WCPayFaceHBCgiDelegate> m_delegate;
     NSString *m_key;

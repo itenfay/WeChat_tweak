@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat25WSWebviewExceptionCatcher
+@interface _TtC6WeChat25WSWebviewExceptionCatcher : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_dispatcher;
     MISSING_TYPE *$__lazy_storage_$_reloadHandler;

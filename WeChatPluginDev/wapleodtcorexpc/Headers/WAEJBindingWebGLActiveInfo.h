@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingWebGLActiveInfo
+@interface WAEJBindingWebGLActiveInfo : NSObject
 {
     int size;
     unsigned int type;

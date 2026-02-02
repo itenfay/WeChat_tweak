@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UIView, WXGRoamBackupPackageDetailCell;
 
-@interface WXGRoamChooseRangeHalfView
+@interface WXGRoamChooseRangeHalfView : NSObject
 {
     _Bool _isUpdate;
     WXGRoamBackupPackageDetailCell *_selectAllView;

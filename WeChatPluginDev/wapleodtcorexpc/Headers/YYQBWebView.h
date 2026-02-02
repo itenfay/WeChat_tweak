@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSString, NSURLRequest, UIScrollView, YYQBWebViewScriptMessageHandler;
 @protocol YYWebViewDelegate;
 
-@interface YYQBWebView
+@interface YYQBWebView : NSObject
 {
     _Bool disablePreviewElement;
     _Bool _bDisablePopup;

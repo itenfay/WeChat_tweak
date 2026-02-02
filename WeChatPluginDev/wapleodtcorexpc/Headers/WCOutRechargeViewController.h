@@ -5,7 +5,7 @@
 
 @class MMLoadingView, MMTableView, MMUIView, NSMutableDictionary, NSString, WCOutChargeLogic, WCOutProductInfo;
 
-@interface WCOutRechargeViewController
+@interface WCOutRechargeViewController : NSObject
 {
     _Bool _canChangeCurrency;
     _Bool _needCheckCurrency;

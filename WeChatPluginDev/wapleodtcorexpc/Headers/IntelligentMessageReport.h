@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMessageReport
+@interface IntelligentMessageReport : NSObject
 {
     _Bool _isPopUp;
     unsigned int _action;

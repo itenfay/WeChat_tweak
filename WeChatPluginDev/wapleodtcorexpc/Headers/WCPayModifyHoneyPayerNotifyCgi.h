@@ -6,7 +6,7 @@
 @class ModifyHoneyPayerNotifyReq;
 @protocol WCPayModifyHoneyPayerNotifyCgiDelegate;
 
-@interface WCPayModifyHoneyPayerNotifyCgi
+@interface WCPayModifyHoneyPayerNotifyCgi : NSObject
 {
 }
 

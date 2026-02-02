@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocation, FinderLiveBoxId, MMFinderGroupLiveChatRoomDataProvider, MMFinderLiveCommentContentScrollView, MMFinderLiveCommentEntranceTabBar, MMFinderLiveCommentInputEmoticonView, MMFinderLiveCommentPostInfo, MMFinderLiveCommentTableViewModel, MMFinderLiveFloatMsgConfigRequestLogic, MMFinderLiveNotifyCommentLogic, MMFinderLivePrivateCommentContentView, MMFinderLiveProductQuestionBoxDataProvider, MMFinderLivePublicCommentContentView, MMFinderLiveSFBarrageView, MMFinderLiveTask, MMFinderLiveTaskId, MMFinderLiveTopCommentContentView, MMFinderLiveTopCommentLogic, MMLiveCommentDataItem, MMLiveCommentTableViewModel, MMLocatingCoordinateLogic, MMNormalTipsView, MMTableView, NSArray, NSData, NSMutableDictionary, NSString, PickLocationManager, RichTextView, WCBulletinInfo, WCLocationInfo, WCUIAlertView;
 
-@interface MMFinderLiveCommentView
+@interface MMFinderLiveCommentView : NSObject
 {
     unsigned long long _commentState;
     _Bool _hideTopCommentContent;

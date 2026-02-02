@@ -5,7 +5,7 @@
 
 @class BluetoothInfo, DynamicQrCodeInfo, NSArray, NSString, WCCardActionSheet, WCCardDetailInfo, WCCardFieldItem, WCCardFollowBoxInfo, WCCardOperationRegion, WCCardUseConditionInfo, WCCardUsedStoreInfo;
 
-@interface WCCardDataCardTPInfo
+@interface WCCardDataCardTPInfo : NSObject
 {
     _Bool _isCardCodeExposed;
     _Bool _dismissQrcodeIconOnCard;

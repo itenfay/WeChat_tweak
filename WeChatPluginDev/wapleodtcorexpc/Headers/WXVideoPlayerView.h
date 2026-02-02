@@ -6,7 +6,7 @@
 @class CMessageWrap, NSString, SightView, UIButton, UIImageView, UILabel, VideoProgressBar, WXFullScreenGestureRecognizer;
 @protocol WXVideoPlayerViewDelegate, WXVideoPlayerViewTouchDelegate;
 
-@interface WXVideoPlayerView
+@interface WXVideoPlayerView : NSObject
 {
     unsigned long long m_ui64PlayStartTime;
     WXFullScreenGestureRecognizer *_gestureView;

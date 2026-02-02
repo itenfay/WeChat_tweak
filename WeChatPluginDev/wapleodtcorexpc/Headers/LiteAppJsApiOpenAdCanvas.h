@@ -5,7 +5,7 @@
 
 @class MMLoadingView, NSString, WCAdOpenAdCanvasJsLogic;
 
-@interface LiteAppJsApiOpenAdCanvas
+@interface LiteAppJsApiOpenAdCanvas : NSObject
 {
     WCAdOpenAdCanvasJsLogic *_openAdCanvasJsLogic;
     MMLoadingView *_loadingView;

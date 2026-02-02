@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoFeedFlowModelListenerCpp
+@interface MegaVideoFeedFlowModelListenerCpp : NSObject
 {
 }
 

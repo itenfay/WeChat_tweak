@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_chooseInvoice
+@interface WAJSEventHandler_chooseInvoice : NSObject
 {
 }
 

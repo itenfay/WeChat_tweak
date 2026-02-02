@@ -6,7 +6,7 @@
 @class MMHeadImageView, MMUILabel, MMWebImageView, NSString, RichTextView, UIButton;
 @protocol MMAcceptAgreementCommonHeadViewDelegate;
 
-@interface MMAcceptAgreementCommonHeadView
+@interface MMAcceptAgreementCommonHeadView : NSObject
 {
     MMHeadImageView *m_headImageView;
     _Bool _largeContentFont;

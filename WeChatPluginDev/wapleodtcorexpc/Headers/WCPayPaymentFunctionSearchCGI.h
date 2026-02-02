@@ -5,7 +5,7 @@
 
 @protocol WCPayPaymentFunctionSearchCGIDelegate;
 
-@interface WCPayPaymentFunctionSearchCGI
+@interface WCPayPaymentFunctionSearchCGI : NSObject
 {
     id <WCPayPaymentFunctionSearchCGIDelegate> _cgiDelegate;
 }

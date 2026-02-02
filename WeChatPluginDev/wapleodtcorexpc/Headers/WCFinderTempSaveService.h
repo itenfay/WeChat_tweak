@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString, WCFinderDataItem, WCFinderPostSessionModel;
 
-@interface WCFinderTempSaveService
+@interface WCFinderTempSaveService : NSObject
 {
     WCFinderDataItem *_dataItemModel;
     WCFinderPostSessionModel *_postSession;

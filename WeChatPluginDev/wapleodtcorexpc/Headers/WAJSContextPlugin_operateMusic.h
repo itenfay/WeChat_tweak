@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSContextPlugin_operateMusic
+@interface WAJSContextPlugin_operateMusic : NSObject
 {
     NSString *_currentMusic;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_scanLicense
+@interface WebviewJSEventHandler_scanLicense : NSObject
 {
     unsigned long long _scanType;
     NSString *_scanTypeName;

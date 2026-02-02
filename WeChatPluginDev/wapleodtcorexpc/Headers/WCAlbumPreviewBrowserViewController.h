@@ -6,7 +6,7 @@
 @class CContact, MMAssetSelectCheckButton, MMScrollView, NSMutableArray, NSMutableSet, NSString, UIButton, UIView;
 @protocol WCAlbumPreviewBrowserViewControllerDelegate;
 
-@interface WCAlbumPreviewBrowserViewController
+@interface WCAlbumPreviewBrowserViewController : NSObject
 {
     int firstVisiblePageIndexBeforeRotation;
     double percentScrolledIntoFirstVisiblePage;

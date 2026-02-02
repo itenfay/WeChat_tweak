@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface WePkgConfigMgr
+@interface WePkgConfigMgr : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_tablePkgRegularConfig;

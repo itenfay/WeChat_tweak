@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveSwitchIdentityCGI
+@interface WCFinderLiveSwitchIdentityCGI : NSObject
 {
     unsigned int _targetAliasRole;
     CDUnknownBlockType _successBlock;

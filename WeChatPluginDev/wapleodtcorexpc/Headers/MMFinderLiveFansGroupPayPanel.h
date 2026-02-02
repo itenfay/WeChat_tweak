@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMLiveRewardGiftCoinButton, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIView;
 
-@interface MMFinderLiveFansGroupPayPanel
+@interface MMFinderLiveFansGroupPayPanel : NSObject
 {
     _Bool _wecoinBalanceUpdated;
     _Bool _fetchWecoinBalanceFinished;

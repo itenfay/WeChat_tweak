@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, WCFinderLocationInfo;
 
-@interface WCFinderStreamRerankCGI
+@interface WCFinderStreamRerankCGI : NSObject
 {
     int _commentScene;
     NSArray *_feedArray;

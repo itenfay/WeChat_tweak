@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat14CalWidthButton
+@interface _TtC6WeChat14CalWidthButton : NSObject
 {
     MISSING_TYPE *imageWidth;
     MISSING_TYPE *leftRigntMargin;

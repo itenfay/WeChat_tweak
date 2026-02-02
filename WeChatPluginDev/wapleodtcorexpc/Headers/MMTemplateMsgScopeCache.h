@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface MMTemplateMsgScopeCache
+@interface MMTemplateMsgScopeCache : NSObject
 {
     _Bool _isGlobalRecv;
     _Bool _hasSettingEntry;

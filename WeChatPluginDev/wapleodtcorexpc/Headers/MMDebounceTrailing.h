@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject;
 @protocol OS_dispatch_queue;
 
-@interface MMDebounceTrailing
+@interface MMDebounceTrailing : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     CDUnknownBlockType _block;

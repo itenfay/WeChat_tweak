@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCPayTenpaySecureCtrlItem;
 @protocol WCPayResetPwdBindCardViewControllerDelegate;
 
-@interface WCPayResetPwdBindCardViewController
+@interface WCPayResetPwdBindCardViewController : NSObject
 {
     UIButton *m_footerButton;
     WCPayTenpaySecureCtrlItem *m_textFieldItem;

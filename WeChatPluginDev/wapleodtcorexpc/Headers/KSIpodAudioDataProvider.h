@@ -5,7 +5,7 @@
 
 @class AVAssetExportSession, NSArray;
 
-@interface KSIpodAudioDataProvider
+@interface KSIpodAudioDataProvider : NSObject
 {
     _Bool _isReady;
     AVAssetExportSession *_exportSession;

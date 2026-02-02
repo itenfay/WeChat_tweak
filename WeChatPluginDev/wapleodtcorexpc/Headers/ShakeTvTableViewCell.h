@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, MMWebImageView, UILabel;
 
-@interface ShakeTvTableViewCell
+@interface ShakeTvTableViewCell : NSObject
 {
     MMWebImageView *_thumbImageView;
     MMHeadImageView *_headImageView;

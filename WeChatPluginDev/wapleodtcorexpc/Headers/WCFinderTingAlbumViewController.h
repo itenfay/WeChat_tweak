@@ -5,7 +5,7 @@
 
 @class NSString, UICollectionView, WCFinderStreamFooterView, WCFinderTingAlbumViewModel;
 
-@interface WCFinderTingAlbumViewController
+@interface WCFinderTingAlbumViewController : NSObject
 {
     WCFinderTingAlbumViewModel *_viewModel;
     UICollectionView *_collectionView;

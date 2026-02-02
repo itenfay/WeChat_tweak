@@ -6,7 +6,7 @@
 @class MMAcceptAgreementCommonHeadView, MMWebViewController, NSString, SettingModifyAliasLogic, UIButton;
 @protocol SettingModifyAliasViewControllerDelegate;
 
-@interface SettingModifyAliasProtocolViewController
+@interface SettingModifyAliasProtocolViewController : NSObject
 {
     UIButton *m_modifyAliasButton;
     SettingModifyAliasLogic *m_modifyAliasCheckAccountLogic;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMProgressViewEx, MMWebImageView, NSString, NSURLSession, NSURLSessionTask;
 
-@interface GameVideoOnlineEditViewController
+@interface GameVideoOnlineEditViewController : NSObject
 {
     NSString *_videoUrl;
     NSString *_thumbUrl;

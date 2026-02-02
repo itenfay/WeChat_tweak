@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSString, SwitchBlockList, UILabel, WXGameGetUserSwitchCGI, WXGameSetUserSwitchCGI;
 
-@interface WXGamePushSettingViewController
+@interface WXGamePushSettingViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WXGameGetUserSwitchCGI *_getUserSwitchCGI;

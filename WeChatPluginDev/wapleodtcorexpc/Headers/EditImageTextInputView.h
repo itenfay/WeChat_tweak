@@ -6,7 +6,7 @@
 @class EditImageColorSquareBar, EditImageTextInputViewParams, EditImageTextView, EditVideoSecondCutPromotionButton, MMUIButton, MMUIView, NSString, UIButton, UIColor, UILabel, UIView;
 @protocol EditImageTextInputDelegate;
 
-@interface EditImageTextInputView
+@interface EditImageTextInputView : NSObject
 {
     EditImageTextView *_inputView;
     MMUIButton *_cancelBtn;

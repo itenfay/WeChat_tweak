@@ -5,7 +5,7 @@
 
 @class WAAppStateChangedContextInfoBluetoothInfo, WAAppStateChangedContextInfoLocationInfo, WAAppStateChangedContextInfoMusicInfo, WAAppStateChangedContextInfoWXABGAudioInfo;
 
-@interface WAAppStateChangedContextInfo
+@interface WAAppStateChangedContextInfo : NSObject
 {
     WAAppStateChangedContextInfoMusicInfo *_musicInfo;
     WAAppStateChangedContextInfoLocationInfo *_locationInfo;

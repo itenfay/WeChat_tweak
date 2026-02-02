@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveCommonUIDefineMgr
+@interface MMLiveCommonUIDefineMgr : NSObject
 {
     unsigned long long _liveBusinessType;
 }

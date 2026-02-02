@@ -5,7 +5,7 @@
 
 @class MMUIButton, NSMutableArray, NSString, TemplateReaderMessageFolderViewModel;
 
-@interface TemplateReaderMessageFolderCellView
+@interface TemplateReaderMessageFolderCellView : NSObject
 {
     MMUIButton *_hotSpotButton;
     NSMutableArray *_cellViewList;

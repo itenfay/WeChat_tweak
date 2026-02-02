@@ -5,7 +5,7 @@
 
 @class PocketMoneyMessageViewModel, RichTextView, UIImageView;
 
-@interface PocketMoneyMessageCellView
+@interface PocketMoneyMessageCellView : NSObject
 {
     RichTextView *_titleLabel;
     RichTextView *_descLabel;

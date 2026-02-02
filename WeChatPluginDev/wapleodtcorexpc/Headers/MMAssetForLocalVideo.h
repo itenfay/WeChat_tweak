@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, NSString;
 
-@interface MMAssetForLocalVideo
+@interface MMAssetForLocalVideo : NSObject
 {
     NSString *_localAssetId;
     NSString *_localFilePath;

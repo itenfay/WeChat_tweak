@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPreFetchInfo
+@interface WAPreFetchInfo : NSObject
 {
     unsigned int _scene;
     unsigned int _lastModifyTime;

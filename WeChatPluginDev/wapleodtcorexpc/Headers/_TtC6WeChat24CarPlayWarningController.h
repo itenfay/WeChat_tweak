@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat24CarPlayWarningController
+@interface _TtC6WeChat24CarPlayWarningController : NSObject
 {
     MISSING_TYPE *type;
 }

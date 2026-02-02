@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, UIViewController, WCBaseTextFieldItem;
 
-@interface SettingBindQQViewController
+@interface SettingBindQQViewController : NSObject
 {
     MMTableView *m_tableView;
     NSString *m_nsUsrName;

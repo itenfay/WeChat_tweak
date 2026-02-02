@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetOrderInfoCGI
+@interface WCFinderGetOrderInfoCGI : NSObject
 {
     NSString *_orderID;
     CDUnknownBlockType _successBlock;

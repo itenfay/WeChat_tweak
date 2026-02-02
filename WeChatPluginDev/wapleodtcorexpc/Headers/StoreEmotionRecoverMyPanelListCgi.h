@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray;
 @protocol StoreEmotionRecoverMyPanelListCgiDelegate;
 
-@interface StoreEmotionRecoverMyPanelListCgi
+@interface StoreEmotionRecoverMyPanelListCgi : NSObject
 {
     unsigned int _m_eventId;
     unsigned long long _scene;

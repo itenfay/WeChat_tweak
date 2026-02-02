@@ -5,7 +5,7 @@
 
 @class CDownloadVoiceMgr, DownloadVoiceCDNMgr, NSMutableSet, NSString;
 
-@interface VoiceMsgDownloader
+@interface VoiceMsgDownloader : NSObject
 {
     CDownloadVoiceMgr *_cgiDownloader;
     DownloadVoiceCDNMgr *_cdnDownloader;

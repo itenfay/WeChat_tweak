@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WAMainFrameTaskBarDotLoadingView
+@interface WAMainFrameTaskBarDotLoadingView : NSObject
 {
     double _zoomOutBeginOffset;
     double _zoomOutEndOffset;

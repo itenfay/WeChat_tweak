@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WeEffectLogger
+@interface WeEffectLogger : NSObject
 {
 }
 

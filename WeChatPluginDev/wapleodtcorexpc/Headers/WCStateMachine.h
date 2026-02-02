@@ -6,7 +6,7 @@
 @class NSMutableSet, NSRecursiveLock, WCState;
 @protocol WCStateMachineDelegate;
 
-@interface WCStateMachine
+@interface WCStateMachine : NSObject
 {
     NSRecursiveLock *_lock;
     _Bool _active;

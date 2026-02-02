@@ -5,7 +5,7 @@
 
 @class NSString, RingToneDetail, RingToneVibrateController, UIImage, UIImageView, WCFinderDataItem, WCFinderFeedContentVM, WCFinderFeedMediaWrap, WCFinderMediaInfo, WCFinderPlayerControlView, WCPlayerView;
 
-@interface RingToneFinderPlayerView
+@interface RingToneFinderPlayerView : NSObject
 {
     _Bool _customVibrateEnabled;
     _Bool _readyToVibrateFlag;

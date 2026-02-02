@@ -5,7 +5,7 @@
 
 @class NSString, WCAdFinderDialogBaseInfo, WCAdFinderDialogClickManager, WCAdFinderDialogCloseBarView, WCAdFinderDialogContainView, WCFinderJumpInfoParams;
 
-@interface WCAdFinderDialogViewController
+@interface WCAdFinderDialogViewController : NSObject
 {
     WCAdFinderDialogBaseInfo *_dialogInfo;
     WCFinderJumpInfoParams *_jumpParams;

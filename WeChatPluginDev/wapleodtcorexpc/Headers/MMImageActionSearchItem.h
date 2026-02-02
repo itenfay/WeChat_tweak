@@ -5,7 +5,7 @@
 
 @class WCImageSearchEntity;
 
-@interface MMImageActionSearchItem
+@interface MMImageActionSearchItem : NSObject
 {
     WCImageSearchEntity *_searchEntity;
 }

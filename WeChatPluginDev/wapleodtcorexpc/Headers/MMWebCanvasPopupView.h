@@ -5,7 +5,7 @@
 
 @class MMWebCanvasPopupParamas, MMWebCanvasView, NSString, UIView;
 
-@interface MMWebCanvasPopupView
+@interface MMWebCanvasPopupView : NSObject
 {
     MMWebCanvasView *_canvasView;
     MMWebCanvasPopupParamas *_params;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ZidlBuildService
+@interface ZidlBuildService : NSObject
 {
 }
 

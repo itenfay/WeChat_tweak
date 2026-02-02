@@ -5,7 +5,7 @@
 
 @class ActiveSessionContext, MMListenCategoryItem, TingItem;
 
-@interface TingSharePlayButton
+@interface TingSharePlayButton : NSObject
 {
     _Bool _enterPlayer;
     int _scene;

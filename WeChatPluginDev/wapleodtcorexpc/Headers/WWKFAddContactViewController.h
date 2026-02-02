@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, MMCPLabel, MMHeadImageView, MMPageSheetAdapter, MMUIButton, MMUILabel, NSString, UIButton;
 
-@interface WWKFAddContactViewController
+@interface WWKFAddContactViewController : NSObject
 {
     _Bool _bHalfScreen;
     MMPageSheetAdapter *_adapter;

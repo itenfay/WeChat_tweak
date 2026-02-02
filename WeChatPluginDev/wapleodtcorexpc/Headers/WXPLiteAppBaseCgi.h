@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WXPLiteAppBaseCgi
+@interface WXPLiteAppBaseCgi : NSObject
 {
     _Bool _needNotify;
     int _cgiId;

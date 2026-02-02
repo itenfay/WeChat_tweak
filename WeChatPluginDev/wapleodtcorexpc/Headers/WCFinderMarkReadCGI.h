@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderMarkReadCGI
+@interface WCFinderMarkReadCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

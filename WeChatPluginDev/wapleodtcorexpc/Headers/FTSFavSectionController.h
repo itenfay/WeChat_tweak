@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface FTSFavSectionController
+@interface FTSFavSectionController : NSObject
 {
     NSArray *_favItems;
 }

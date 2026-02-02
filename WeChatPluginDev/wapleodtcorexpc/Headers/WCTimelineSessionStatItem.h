@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface WCTimelineSessionStatItem
+@interface WCTimelineSessionStatItem : NSObject
 {
     _Bool _lastStayed;
     _Bool _isReport;

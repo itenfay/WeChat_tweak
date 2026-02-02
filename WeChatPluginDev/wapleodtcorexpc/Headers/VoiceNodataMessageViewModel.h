@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface VoiceNodataMessageViewModel
+@interface VoiceNodataMessageViewModel : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString;
 @protocol WCAdFollowItemViewDelegate;
 
-@interface WCAdFollowItemView
+@interface WCAdFollowItemView : NSObject
 {
     _Bool _isFollowed;
     NSString *_title;

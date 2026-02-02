@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetHistoryCGI
+@interface WCFinderGetHistoryCGI : NSObject
 {
     int _tabType;
     int _commentscene;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RingToneHomePageActionReporter_23612
+@interface RingToneHomePageActionReporter_23612 : NSObject
 {
     unsigned long long _action;
     NSString *_feedID;

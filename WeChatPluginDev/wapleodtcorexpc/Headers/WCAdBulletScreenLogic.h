@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCAdBulletScreenLogic
+@interface WCAdBulletScreenLogic : NSObject
 {
     UIView *_adBulletScreenView;
 }

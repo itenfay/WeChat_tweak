@@ -5,7 +5,7 @@
 
 @class ChatTimeViewModel, MMTimer, MMUIButton, UIImageView, UILabel;
 
-@interface ChatTimeCellView
+@interface ChatTimeCellView : NSObject
 {
     MMTimer *m_updateTimeLabelTimer;
     UILabel *m_timeLabel;

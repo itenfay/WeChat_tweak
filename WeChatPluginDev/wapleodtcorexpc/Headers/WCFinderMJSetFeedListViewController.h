@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedListView, WCFinderMJSetTabModel;
 
-@interface WCFinderMJSetFeedListViewController
+@interface WCFinderMJSetFeedListViewController : NSObject
 {
     WCFinderMJSetTabModel *_viewModel;
     long long _viewIndex;

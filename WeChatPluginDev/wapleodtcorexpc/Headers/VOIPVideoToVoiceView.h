@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CContact, MMHeadImageView, MMTimerLabel, MMUIButton, MultiTalkHDHeadView, NSString, UIImageView, UILabel, UIView, VoipDescriptionButton, VoipRecentStatusCardView, VoipRecentStatusFoldButton, VoipRecentStatusUnFoldButton;
 @protocol VOIPVideoToVoiceViewDelegate, VoipRecentStatusProperties;
 
-@interface VOIPVideoToVoiceView
+@interface VOIPVideoToVoiceView : NSObject
 {
     _Bool m_isOperating;
     _Bool _isCaller;

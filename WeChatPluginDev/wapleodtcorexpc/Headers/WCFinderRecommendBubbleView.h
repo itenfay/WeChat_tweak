@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, UILabel;
 
-@interface WCFinderRecommendBubbleView
+@interface WCFinderRecommendBubbleView : NSObject
 {
     UIImageView *_leftImageView;
     UILabel *_recommendTipsLabel;

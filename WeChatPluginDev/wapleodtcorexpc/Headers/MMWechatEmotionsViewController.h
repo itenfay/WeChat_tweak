@@ -5,7 +5,7 @@
 
 @class EmoticonStoreMoreManualFetchFooterView, EmotionCollectionFooterView, InfiniteLoopContainerView, MMLoadMoreCollectionView, MMTimer, MMUIViewController, NSArray, NSMutableArray, NSString, StoreEmoticonTopicProxyLogic, UICollectionViewFlowLayout, UIView;
 
-@interface MMWechatEmotionsViewController
+@interface MMWechatEmotionsViewController : NSObject
 {
     UICollectionViewFlowLayout *_layout;
     UIView *m_collectionHeaderView;

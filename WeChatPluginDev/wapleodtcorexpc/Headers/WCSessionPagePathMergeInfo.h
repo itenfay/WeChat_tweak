@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionPagePathMergeInfo
+@interface WCSessionPagePathMergeInfo : NSObject
 {
     unsigned int _count;
     NSString *_sid;

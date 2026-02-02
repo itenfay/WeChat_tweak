@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView, UILabel;
 
-@interface WCAdIconView
+@interface WCAdIconView : NSObject
 {
     long long _iconType;
     UIImageView *_icon;

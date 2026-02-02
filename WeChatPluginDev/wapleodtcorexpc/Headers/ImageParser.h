@@ -5,7 +5,7 @@
 
 @class NSString, UIColor, UIFont;
 
-@interface ImageParser
+@interface ImageParser : NSObject
 {
     UIFont *_font;
     NSString *_nsImgSrc;

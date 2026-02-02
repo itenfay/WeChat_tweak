@@ -6,7 +6,7 @@
 @class MMAuthorizeGameInfoHalfScreenViewModel, MMTableView, NSString, UIView;
 @protocol MMAuthorizeGameInfoHalfScreenViewDelegate;
 
-@interface MMAuthorizeGameInfoHalfScreenView
+@interface MMAuthorizeGameInfoHalfScreenView : NSObject
 {
     id <MMAuthorizeGameInfoHalfScreenViewDelegate> _delegate;
     MMAuthorizeGameInfoHalfScreenViewModel *_halfScreenViewModel;

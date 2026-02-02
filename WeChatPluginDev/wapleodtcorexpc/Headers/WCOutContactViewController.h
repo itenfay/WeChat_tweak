@@ -5,7 +5,7 @@
 
 @class MMTableView, MMTimer, MMUIImageView, MMUILabel, MMUIView, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIImageView, UIView, WCOActivityMsgInfo, WCOutInviteFriendLogic, WCOutPhoneContact, WCSearcher;
 
-@interface WCOutContactViewController
+@interface WCOutContactViewController : NSObject
 {
     MMTableView *m_tableView;
     MMUIView *m_noDataView;

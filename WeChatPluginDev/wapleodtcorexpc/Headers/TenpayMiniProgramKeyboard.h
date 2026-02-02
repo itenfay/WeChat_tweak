@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray, NSString, TenpaySMCertificate, TenpaySMSecureObject, UITextField;
 @protocol TenpayMiniProgramKeyboardDelegate;
 
-@interface TenpayMiniProgramKeyboard
+@interface TenpayMiniProgramKeyboard : NSObject
 {
     TenpaySMCertificate *_certificateHandler;
     TenpaySMSecureObject *_smSecureHandler;

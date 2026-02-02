@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString;
 @protocol WCPayOfflineLogicDelegate;
 
-@interface WCPayControlMgr
+@interface WCPayControlMgr : NSObject
 {
     id <WCPayOfflineLogicDelegate> _offlineLogicDelegate;
 }

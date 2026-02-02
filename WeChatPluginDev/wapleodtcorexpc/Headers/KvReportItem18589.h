@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface KvReportItem18589
+@interface KvReportItem18589 : NSObject
 {
     unsigned int _opType;
     unsigned int _scene;

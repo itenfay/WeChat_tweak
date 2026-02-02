@@ -5,7 +5,7 @@
 
 @class CTRichTextView, MMBadgeView, MMTimer, MMUIActivityIndicatorView, NSArray, NSString, RichTextView, UIButton, UIImageView, UILabel, UIView, VoiceMessageViewModel;
 
-@interface VoiceMessageCellView
+@interface VoiceMessageCellView : NSObject
 {
     UIView *m_translateView;
     UILabel *m_secLabel;

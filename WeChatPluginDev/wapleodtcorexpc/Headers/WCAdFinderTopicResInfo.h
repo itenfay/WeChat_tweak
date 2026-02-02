@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdFinderTopicResInfo
+@interface WCAdFinderTopicResInfo : NSObject
 {
     NSString *_avatar;
     NSString *_nickname;

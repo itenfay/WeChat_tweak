@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLotteryCommentInputView;
 
-@interface MMFinderLiveLotteryCommentInputViewController
+@interface MMFinderLiveLotteryCommentInputViewController : NSObject
 {
     MMFinderLiveLotteryCommentInputView *_commentInputView;
 }

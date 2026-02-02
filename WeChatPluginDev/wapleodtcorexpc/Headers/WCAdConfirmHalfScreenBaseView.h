@@ -6,7 +6,7 @@
 @class MMUILabel, MMWebImageView, NSString, WCAdConfirmHalfScreenBaseInfo;
 @protocol WCAdConfirmHalfScreenBaseViewDelegate;
 
-@interface WCAdConfirmHalfScreenBaseView
+@interface WCAdConfirmHalfScreenBaseView : NSObject
 {
     id <WCAdConfirmHalfScreenBaseViewDelegate> _delegate;
     WCAdConfirmHalfScreenBaseInfo *_confirmInfo;

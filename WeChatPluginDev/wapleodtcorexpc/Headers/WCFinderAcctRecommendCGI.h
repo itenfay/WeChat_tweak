@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderAcctRecommendCGI
+@interface WCFinderAcctRecommendCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failedBlock;

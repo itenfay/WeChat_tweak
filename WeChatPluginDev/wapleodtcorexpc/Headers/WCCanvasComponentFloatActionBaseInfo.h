@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentItem;
 
-@interface WCCanvasComponentFloatActionBaseInfo
+@interface WCCanvasComponentFloatActionBaseInfo : NSObject
 {
     _Bool _backgroundBlurEffect;
     _Bool _isFullClickable;

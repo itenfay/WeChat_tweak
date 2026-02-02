@@ -6,7 +6,7 @@
 @class NSMutableArray;
 @protocol WCDeviceSendDataToManufacturSvrLogicDelegate;
 
-@interface WCDeviceSendDataToManufacturSvrLogic
+@interface WCDeviceSendDataToManufacturSvrLogic : NSObject
 {
     NSMutableArray *m_tasks;
     int m_appState;

@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIImageView, UILabel, UIView, WAAppItemData, WAMainListStarLogic, WAPackageSweeperLogic, WAStarMoveContext, WeToast;
 
-@interface WAStarLinearListViewController
+@interface WAStarLinearListViewController : NSObject
 {
     NSString *m_showSessionId;
     NSMutableArray *m_menuArray;

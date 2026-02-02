@@ -6,7 +6,7 @@
 @class MMBottomBarButton;
 @protocol ContactsAllSelectPanelViewDelegate;
 
-@interface ContactsAllSelectPanelView
+@interface ContactsAllSelectPanelView : NSObject
 {
     _Bool _isSelectAll;
     id <ContactsAllSelectPanelViewDelegate> _m_delegate;

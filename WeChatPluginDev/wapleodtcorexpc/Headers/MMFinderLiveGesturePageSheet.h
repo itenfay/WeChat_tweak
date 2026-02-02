@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, NSArray, NSString, UICollectionView, UIImageView, UILabel, UISwitch, UIView;
 @protocol MMFinderLiveGesturePageSheetDelegate;
 
-@interface MMFinderLiveGesturePageSheet
+@interface MMFinderLiveGesturePageSheet : NSObject
 {
     _Bool _showHint;
     id <MMFinderLiveGesturePageSheetDelegate> _delegate;

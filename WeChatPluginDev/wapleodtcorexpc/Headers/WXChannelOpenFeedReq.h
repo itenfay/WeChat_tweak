@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelOpenFeedReq
+@interface WXChannelOpenFeedReq : NSObject
 {
     _Bool _notGetReleatedList;
     NSString *_feedID;

@@ -6,7 +6,7 @@
 @class NSString, UILabel, UITableView, UITableViewDiffableDataSource, WCFinderMusicEventHeaderRecommendListVM;
 @protocol WCFinderMusicEventHeaderRecommendListViewDelegate;
 
-@interface WCFinderMusicEventHeaderRecommendListView
+@interface WCFinderMusicEventHeaderRecommendListView : NSObject
 {
     id <WCFinderMusicEventHeaderRecommendListViewDelegate> _delegate;
     UILabel *_titleLabel;

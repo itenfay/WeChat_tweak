@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SessionActionItem
+@interface SessionActionItem : NSObject
 {
     _Bool _bNotifyOpen;
     unsigned int _uiEnterTime;

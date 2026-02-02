@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface ChatRoomSpecialAttentionMemberSelectViewController
+@interface ChatRoomSpecialAttentionMemberSelectViewController : NSObject
 {
     NSArray *_arrAdminOrOwnerUserName;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter, WapPayParameter;
 
-@interface OpenApiRootHolderMgr
+@interface OpenApiRootHolderMgr : NSObject
 {
     OpenApiParameter *_openApiParameter;
     WapPayParameter *_wapPayParameter;

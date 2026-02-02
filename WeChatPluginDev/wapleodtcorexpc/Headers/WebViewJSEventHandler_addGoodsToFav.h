@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebViewJSEventHandler_addGoodsToFav
+@interface WebViewJSEventHandler_addGoodsToFav : NSObject
 {
     JSEvent *_m_curEvent;
 }

@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTDepositManagePlanCgiDelegate;
 
-@interface WCPayLQTDepositManagePlanCgi
+@interface WCPayLQTDepositManagePlanCgi : NSObject
 {
     id <WCPayLQTDepositManagePlanCgiDelegate> m_delegate;
 }

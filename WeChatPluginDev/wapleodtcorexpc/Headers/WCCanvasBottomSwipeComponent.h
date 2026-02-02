@@ -5,7 +5,7 @@
 
 @class UIButton, UIImageView, UILabel;
 
-@interface WCCanvasBottomSwipeComponent
+@interface WCCanvasBottomSwipeComponent : NSObject
 {
     UIImageView *_swipeUpIcon;
     UILabel *_swipeUpText;

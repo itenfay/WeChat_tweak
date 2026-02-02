@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCFinderPlayerCacheMgr
+@interface WCFinderPlayerCacheMgr : NSObject
 {
     NSMutableDictionary *_playerCaches;
 }

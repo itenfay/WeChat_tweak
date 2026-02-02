@@ -5,7 +5,7 @@
 
 @class GameCgiGetInfoAndJump;
 
-@interface WebviewJSEventHandler_openGameDetail
+@interface WebviewJSEventHandler_openGameDetail : NSObject
 {
     GameCgiGetInfoAndJump *_launchGame;
 }

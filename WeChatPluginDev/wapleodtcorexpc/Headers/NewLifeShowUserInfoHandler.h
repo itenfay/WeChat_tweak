@@ -5,7 +5,7 @@
 
 @class FinderLikeInfo, JumpToShowUserInfoReq, MMUIViewController, NSString, NewLifeThumbUpInfo, WCFinderComment, WCFinderCommentDetailViewModel, WCFinderDataItem, WCFinderMention;
 
-@interface NewLifeShowUserInfoHandler
+@interface NewLifeShowUserInfoHandler : NSObject
 {
     MMUIViewController *_viewController;
     JumpToShowUserInfoReq *_request;

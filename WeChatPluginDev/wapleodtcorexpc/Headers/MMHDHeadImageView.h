@@ -6,7 +6,7 @@
 @class CBaseContact, ImageScrollView, MMHDHeadImageViewController, MMUIActivityIndicatorView, NSString, UIImageView, UIView;
 @protocol HDHeadImageViewDelegate;
 
-@interface MMHDHeadImageView
+@interface MMHDHeadImageView : NSObject
 {
     UIImageView *m_backgroundView;
     MMUIActivityIndicatorView *m_activityIndicatorView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardChooseInfo
+@interface WCCardChooseInfo : NSObject
 {
     unsigned int _cardType;
     unsigned int _endTime;

@@ -6,7 +6,7 @@
 @class MMScrollView, MMUIButton, MMUIImageView, MMUILabel, MMUIView, NSString, UIButton;
 @protocol IntelligentMsgImgStartUsingViewControllerDelegate;
 
-@interface IntelligentMsgImgStartUsingViewController
+@interface IntelligentMsgImgStartUsingViewController : NSObject
 {
     UIButton *m_makeSureButton;
     UIButton *m_makeRejectButton;

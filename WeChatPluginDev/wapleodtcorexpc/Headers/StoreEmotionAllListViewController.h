@@ -5,7 +5,7 @@
 
 @class EmoticonLoadMoreFooterView, EmotionBannerSet, EmotionSetInfo, MMLoadMoreCollectionView, NSMutableArray, NSString, StoreEmotionAllListReportInfo, StoreEmotionGetEmotionListCgi, StoreEmotionPageShareLogic, UICollectionViewFlowLayout, UIView;
 
-@interface StoreEmotionAllListViewController
+@interface StoreEmotionAllListViewController : NSObject
 {
     StoreEmotionAllListReportInfo *_reportInfo;
     EmotionBannerSet *_bannerSet;

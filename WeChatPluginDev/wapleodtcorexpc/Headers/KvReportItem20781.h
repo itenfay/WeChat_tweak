@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem20781
+@interface KvReportItem20781 : NSObject
 {
     unsigned int _WxaVersion_22;
     unsigned int _PkgVersion_23;

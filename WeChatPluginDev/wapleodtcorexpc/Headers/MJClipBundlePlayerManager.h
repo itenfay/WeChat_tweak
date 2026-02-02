@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateMoviePlayer, NSString, UIView, WCAudioModuleProxy;
 
-@interface MJClipBundlePlayerManager
+@interface MJClipBundlePlayerManager : NSObject
 {
     MJTemplateMoviePlayer *_playingPlayer;
     UIView *_playingContainerView;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface MVImagePreviewDataSourceForDraft
+@interface MVImagePreviewDataSourceForDraft : NSObject
 {
     NSMutableArray *_draftItems;
 }

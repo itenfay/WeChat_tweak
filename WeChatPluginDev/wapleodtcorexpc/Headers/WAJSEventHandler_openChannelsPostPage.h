@@ -5,7 +5,7 @@
 
 @class MMAsset, NSString, WCFinderCreateCoordinator;
 
-@interface WAJSEventHandler_openChannelsPostPage
+@interface WAJSEventHandler_openChannelsPostPage : NSObject
 {
     WCFinderCreateCoordinator *_createCoordinator;
     MMAsset *_finderAsset;

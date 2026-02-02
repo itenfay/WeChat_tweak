@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UILabel, UIScrollView, UITextView, WCDataItem, WCPasteTextLengthLogic;
 @protocol WCCommentStrangerViewControllerDelegate;
 
-@interface WCCommentStrangerViewController
+@interface WCCommentStrangerViewController : NSObject
 {
     UIScrollView *m_scrollView;
     UITextView *m_textView;

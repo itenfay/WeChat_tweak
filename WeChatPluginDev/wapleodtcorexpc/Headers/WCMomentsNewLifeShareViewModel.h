@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NewLifePostInfo;
 
-@interface WCMomentsNewLifeShareViewModel
+@interface WCMomentsNewLifeShareViewModel : NSObject
 {
     _Bool _hasRecordedDisplay;
     _Bool _hasRecordedClick;

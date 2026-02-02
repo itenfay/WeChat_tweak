@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString, WCPayUnionTransferNotifyCgi;
 
-@interface WebviewJSEventHandler_resendRemittanceMsg
+@interface WebviewJSEventHandler_resendRemittanceMsg : NSObject
 {
     _Bool _bIsOpenIM;
     JSEvent *_event;

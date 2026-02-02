@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportMainFrameTaskBarActionItem
+@interface WAReportMainFrameTaskBarActionItem : NSObject
 {
     unsigned int _openTime;
     unsigned int _appCountWhenOpen;

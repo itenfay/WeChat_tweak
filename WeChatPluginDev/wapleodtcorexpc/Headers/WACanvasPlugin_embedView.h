@@ -5,7 +5,7 @@
 
 @class NSString, WACanvasCoverViewContainer;
 
-@interface WACanvasPlugin_embedView
+@interface WACanvasPlugin_embedView : NSObject
 {
     WACanvasCoverViewContainer *_coverViewContainer;
     NSString *_frameSetId;

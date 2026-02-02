@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WATemplateMsgInfoWrap
+@interface WATemplateMsgInfoWrap : NSObject
 {
     _Bool _globalSwitchOFF;
     _Bool _globalAudioSwitchOFF;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelOpenEventReq
+@interface WXChannelOpenEventReq : NSObject
 {
     NSString *_userName;
     NSString *_eventId;

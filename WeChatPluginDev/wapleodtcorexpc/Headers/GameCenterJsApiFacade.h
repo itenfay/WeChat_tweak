@@ -6,7 +6,7 @@
 @class NSDictionary, NSMutableDictionary;
 @protocol WebviewJSEventHandlerBaseDelegate;
 
-@interface GameCenterJsApiFacade
+@interface GameCenterJsApiFacade : NSObject
 {
     NSDictionary *_funcMap;
     NSMutableDictionary *_funcHandlerMap;

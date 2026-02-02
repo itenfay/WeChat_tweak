@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, NSString, WCAdPanoramaContainerView;
 
-@interface WCAdPlatformViewPanoramaImageView
+@interface WCAdPlatformViewPanoramaImageView : NSObject
 {
     _Bool _showLoading;
     NSString *_imageUrl;

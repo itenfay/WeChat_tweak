@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UILabel, UIScrollView, WXGRoamBackendHandler;
 
-@interface WXGRoamPanelViewController
+@interface WXGRoamPanelViewController : NSObject
 {
     UIScrollView *_scrollView;
     UILabel *_showInfoLabel;

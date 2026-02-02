@@ -5,7 +5,7 @@
 
 @class MMListenFinderInfo, NSError, WCFinderDataItem;
 
-@interface TingFinderInfoDataItemWrapper
+@interface TingFinderInfoDataItemWrapper : NSObject
 {
     WCFinderDataItem *_dataItem;
     NSError *_error;

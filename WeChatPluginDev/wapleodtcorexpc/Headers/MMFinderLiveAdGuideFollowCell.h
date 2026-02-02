@@ -6,7 +6,7 @@
 @class FinderLiveGuideFollowAdInfoItem, MMUIButton, MMUILabel, MMUIView, MMWebImageView, WCFinderHeadImageView;
 @protocol MMFinderLiveAdGuideFollowCellDelegate;
 
-@interface MMFinderLiveAdGuideFollowCell
+@interface MMFinderLiveAdGuideFollowCell : NSObject
 {
     _Bool _isAnchor;
     FinderLiveGuideFollowAdInfoItem *_info;

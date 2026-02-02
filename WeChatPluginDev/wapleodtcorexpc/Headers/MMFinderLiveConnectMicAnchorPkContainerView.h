@@ -6,7 +6,7 @@
 @class MMFinderLiveConnectMicPKInfo, MMTableView, NSArray, NSString, UIButton, UIImageView, UILabel, UIView;
 @protocol MMFinderLiveConnectMicAnchorPkContainerViewDelegate;
 
-@interface MMFinderLiveConnectMicAnchorPkContainerView
+@interface MMFinderLiveConnectMicAnchorPkContainerView : NSObject
 {
     _Bool _isPkDisabled;
     _Bool _isApplicant;

@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCMomentsLivePhotoRegularGuideView
+@interface WCMomentsLivePhotoRegularGuideView : NSObject
 {
     UIImageView *_guideImageView;
 }

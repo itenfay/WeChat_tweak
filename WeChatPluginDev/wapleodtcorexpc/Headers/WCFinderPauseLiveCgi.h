@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSString;
 
-@interface WCFinderPauseLiveCgi
+@interface WCFinderPauseLiveCgi : NSObject
 {
     int _action;
     MMFinderLiveTaskId *_taskId;

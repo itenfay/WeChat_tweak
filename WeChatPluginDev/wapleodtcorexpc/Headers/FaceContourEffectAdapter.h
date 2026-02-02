@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString;
 
-@interface FaceContourEffectAdapter
+@interface FaceContourEffectAdapter : NSObject
 {
     NSNumber *_alpha;
     NSNumber *_faceModel;

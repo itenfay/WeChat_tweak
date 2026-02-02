@@ -5,7 +5,7 @@
 
 @class MMWebCanvasBasePkgInfo, MMWebCanvasBizPkgInfo, MemoryMappedKV, NSString;
 
-@interface MMWebCanvasPkgMgr
+@interface MMWebCanvasPkgMgr : NSObject
 {
     MemoryMappedKV *_mappedKV;
     MMWebCanvasBasePkgInfo *_builtInBasePkgInfo;

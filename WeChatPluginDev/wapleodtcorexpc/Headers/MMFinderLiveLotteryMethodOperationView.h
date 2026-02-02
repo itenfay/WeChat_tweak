@@ -6,7 +6,7 @@
 @class CAShapeLayer, MMFinderLiveLotteryMethodOperationTableViewModel, MMFinderLiveLotteryMethodOperationViewNavBar, MMTableView, NSIndexPath, NSString, UIView;
 @protocol MMFinderLiveLotteryMethodOperationViewDelegate;
 
-@interface MMFinderLiveLotteryMethodOperationView
+@interface MMFinderLiveLotteryMethodOperationView : NSObject
 {
     id <MMFinderLiveLotteryMethodOperationViewDelegate> _operationDelegate;
     MMFinderLiveLotteryMethodOperationTableViewModel *_lotteryMethodTableViewModel;

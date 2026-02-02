@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, WCFinderDataItem;
 
-@interface WCFinderLiveKtvGetPlayMemberCGI
+@interface WCFinderLiveKtvGetPlayMemberCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

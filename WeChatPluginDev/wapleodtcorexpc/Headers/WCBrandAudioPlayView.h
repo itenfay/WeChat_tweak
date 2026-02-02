@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCBrandAudioPlayView
+@interface WCBrandAudioPlayView : NSObject
 {
     UIImageView *_bgImageView;
     UIImageView *_fgImageView;

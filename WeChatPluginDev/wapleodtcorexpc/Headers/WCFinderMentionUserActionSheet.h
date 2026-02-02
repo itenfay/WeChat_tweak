@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUISearchBar, NSString, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderMentionUserActionSheetViewModel;
 
-@interface WCFinderMentionUserActionSheet
+@interface WCFinderMentionUserActionSheet : NSObject
 {
     _Bool _tapDeleteKey;
     WCFinderMentionUserActionSheetViewModel *_viewModel;

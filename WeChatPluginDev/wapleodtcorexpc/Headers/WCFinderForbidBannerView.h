@@ -5,7 +5,7 @@
 
 @class RichTextView, UIImageView, UIView;
 
-@interface WCFinderForbidBannerView
+@interface WCFinderForbidBannerView : NSObject
 {
     UIView *_containerView;
     UIImageView *_infoImageView;

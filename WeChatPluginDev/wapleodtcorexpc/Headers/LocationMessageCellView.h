@@ -5,7 +5,7 @@
 
 @class LocationMessageViewModel, MMImageView, MMUIActivityIndicatorView, MMUILabel, NSString, UIImageView;
 
-@interface LocationMessageCellView
+@interface LocationMessageCellView : NSObject
 {
     unsigned long long m_geotag;
     MMUILabel *m_titleLabel;

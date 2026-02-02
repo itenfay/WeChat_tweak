@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MMUserDataOperateDB
+@interface MMUserDataOperateDB : NSObject
 {
     WCTDatabase *m_database;
     WCTTable *m_userDataOperateItemTable;

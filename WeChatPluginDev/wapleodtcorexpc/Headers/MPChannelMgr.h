@@ -5,7 +5,7 @@
 
 @class MPChannelGetEntryDataTask, MemoryMappedKV, NSString;
 
-@interface MPChannelMgr
+@interface MPChannelMgr : NSObject
 {
     MemoryMappedKV *_mappedKV;
     MPChannelGetEntryDataTask *_currentTask;

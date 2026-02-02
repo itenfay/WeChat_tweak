@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString;
 @protocol IJumpEmoticonDetailCgiDelegate;
 
-@interface JumpEmoticonDetailCgi
+@interface JumpEmoticonDetailCgi : NSObject
 {
     unsigned int m_eventId;
     id <IJumpEmoticonDetailCgiDelegate> m_delegate;

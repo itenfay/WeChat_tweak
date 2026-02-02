@@ -6,7 +6,7 @@
 @class UnbindHoneyPayCardReq;
 @protocol WCPayUnbindHoneyPayCardCgiDelegate;
 
-@interface WCPayUnbindHoneyPayCardCgi
+@interface WCPayUnbindHoneyPayCardCgi : NSObject
 {
 }
 

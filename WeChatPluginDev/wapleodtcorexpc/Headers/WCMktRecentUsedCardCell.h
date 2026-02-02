@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, CardHomePageRecentlyUsedCell, MMUILabel, NSString, UIView, WCPayWebImageView;
 
-@interface WCMktRecentUsedCardCell
+@interface WCMktRecentUsedCardCell : NSObject
 {
     CardHomePageRecentlyUsedCell *_cellData;
     UIView *_containerView;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet;
 
-@interface WAEJBindingWebGLVertexArray
+@interface WAEJBindingWebGLVertexArray : NSObject
 {
     _Bool _allEnableVertexAttribBufferBound;
     int _elementArrayBuffer;

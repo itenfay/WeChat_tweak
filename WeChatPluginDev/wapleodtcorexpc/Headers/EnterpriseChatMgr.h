@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface EnterpriseChatMgr
+@interface EnterpriseChatMgr : NSObject
 {
     NSMutableSet *m_markingMsgRead;
     NSMutableSet *m_pendingMarkMsgRead;

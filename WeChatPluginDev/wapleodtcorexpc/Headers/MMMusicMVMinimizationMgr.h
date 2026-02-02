@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, MMMusicViewController, MMUIButton, MiniAudioTaskContentView, NSString, UIView;
 
-@interface MMMusicMVMinimizationMgr
+@interface MMMusicMVMinimizationMgr : NSObject
 {
     MMMusicViewController *_nativePlayerViewController;
     _Bool _hasAlertWhenPlayFail;

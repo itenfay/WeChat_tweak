@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageAttr, EditVideoAttr, NSArray, NSMutableArray, NSString, RecommendedMusicInfo, WCEditVideoLayoutView, WCEditViewControllerUIConfig;
 @protocol WCEditVideoViewControllerDelegate;
 
-@interface WCEditVideoViewController
+@interface WCEditVideoViewController : NSObject
 {
     EditImageAttr *_originImageAttr;
     _Bool _defaultOriginalSoundMute;

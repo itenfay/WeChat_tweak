@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAEJGLProgram2DRadialGradient
+@interface WAEJGLProgram2DRadialGradient : NSObject
 {
     unsigned int inner;
     unsigned int diff;

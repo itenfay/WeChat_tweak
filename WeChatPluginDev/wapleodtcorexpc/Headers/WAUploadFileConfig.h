@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAUploadFileConfig
+@interface WAUploadFileConfig : NSObject
 {
     unsigned int _uploadFileMaxConcurrentCount;
 }

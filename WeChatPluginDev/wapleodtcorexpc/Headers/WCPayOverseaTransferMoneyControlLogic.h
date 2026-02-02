@@ -5,7 +5,7 @@
 
 @class NSString, WCPayOverseaFacingReceiveTransferCancelCgi, WCPayOverseaFacingTransferOrderCgi, WCPayOverseaFacingTransferOrderResponse, WCPayOverseaGetTransferNameCgi, WCPayOverseaGetTransferNameResponse, WCPayOverseaTransferGetCurrencyCgi, WCPayOverseaTransferGetCurrencyCgiRespObject, WCPayOverseaTransferOrderCgi, WCPayOverseaTransferOrderResp, WCPayTransferMoneyControlLogic;
 
-@interface WCPayOverseaTransferMoneyControlLogic
+@interface WCPayOverseaTransferMoneyControlLogic : NSObject
 {
     int m_enWCPayTransferMoneyControlLogicScene;
     NSString *_m_nsQRCodeResponseUrl;

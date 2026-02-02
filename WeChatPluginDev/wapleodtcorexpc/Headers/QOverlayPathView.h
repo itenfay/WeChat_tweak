@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface QOverlayPathView
+@interface QOverlayPathView : NSObject
 {
     UIColor *_strokeColor;
     UIColor *_fillColor;

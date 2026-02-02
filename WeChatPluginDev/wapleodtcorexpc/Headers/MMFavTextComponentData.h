@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMFavTextComponentData
+@interface MMFavTextComponentData : NSObject
 {
     _Bool _leftHasImage;
     _Bool _isFromExcerpt;

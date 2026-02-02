@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
-@interface MMLivePollingFetchEngineMgr
+@interface MMLivePollingFetchEngineMgr : NSObject
 {
     NSMutableDictionary *_engineMap;
 }

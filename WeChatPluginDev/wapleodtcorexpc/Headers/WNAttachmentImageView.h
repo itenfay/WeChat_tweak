@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, SightIconView, UIGestureRecognizer, WNImageView;
 
-@interface WNAttachmentImageView
+@interface WNAttachmentImageView : NSObject
 {
     unsigned char _status;
     SightIconView *_loadingView;

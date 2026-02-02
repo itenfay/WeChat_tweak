@@ -5,7 +5,7 @@
 
 @class NSString, NewLifeDetailCollectionViewAnimator;
 
-@interface WCFinderEventNewLifePageViewManager
+@interface WCFinderEventNewLifePageViewManager : NSObject
 {
     NewLifeDetailCollectionViewAnimator *_animator;
 }

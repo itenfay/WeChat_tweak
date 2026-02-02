@@ -5,7 +5,7 @@
 
 @class MMTableView, NSArray, NSString, NSTimer;
 
-@interface WCWatchTipsTableViewController
+@interface WCWatchTipsTableViewController : NSObject
 {
     NSArray *_tips;
     NSTimer *_animationTimer;

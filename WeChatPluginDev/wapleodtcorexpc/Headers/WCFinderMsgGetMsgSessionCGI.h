@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface WCFinderMsgGetMsgSessionCGI
+@interface WCFinderMsgGetMsgSessionCGI : NSObject
 {
     NSMutableArray *_sessionItemArray;
     CDUnknownBlockType _sucBlock;

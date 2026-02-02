@@ -5,7 +5,7 @@
 
 @class CancelWecoinRechargeRequest;
 
-@interface WCCoinCancelRechargeCgi
+@interface WCCoinCancelRechargeCgi : NSObject
 {
 }
 

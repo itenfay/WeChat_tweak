@@ -6,7 +6,7 @@
 @class EmoticonBoardCrossCollectionEmoticonHeaderModel, EmoticonBoardCrossCollectionEmoticonHeaderView, EmoticonLoadMoreFooterView, MMUIActivityIndicatorView, NSArray, NSIndexPath, NSMutableArray, NSString, UILongPressGestureRecognizer, UIView;
 @protocol EmoticonBoardCrossCollectionEmoticonPageDelegate;
 
-@interface EmoticonBoardCrossCollectionEmoticonPageCell
+@interface EmoticonBoardCrossCollectionEmoticonPageCell : NSObject
 {
     _Bool _hasDescription;
     NSArray *_emoticonList;

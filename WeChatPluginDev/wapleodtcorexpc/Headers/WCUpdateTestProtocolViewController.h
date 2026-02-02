@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UITextView;
 
-@interface WCUpdateTestProtocolViewController
+@interface WCUpdateTestProtocolViewController : NSObject
 {
     UITextView *_interpretTextView;
     UIButton *_convertButton;

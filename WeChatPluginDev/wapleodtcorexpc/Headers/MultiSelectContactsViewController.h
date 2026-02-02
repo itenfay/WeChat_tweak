@@ -6,7 +6,7 @@
 @class ChatRoomHistoryShareStat, ContactSelectDropDownHalfScreenView, ContactSelectToolView, ContactSelectView, ContactsSearchController, ContactsSelectionPreviewViewController, GroupSelectContactsViewController, MMPageSheetAdapter, MultiSelectContactsInChatRoomReport, MultiSelectContactsSelectionOperation, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NewContactsSearchPanelView, SelectOpenIMContactsViewController, UIBarButtonItem, UIButton, UIView, WCColorProxy, WCSearchBar;
 @protocol MultiSelectContactsViewControllerDelegate;
 
-@interface MultiSelectContactsViewController
+@interface MultiSelectContactsViewController : NSObject
 {
     id <MultiSelectContactsViewControllerDelegate> m_delegate;
     NSDictionary *m_dicExistContact;

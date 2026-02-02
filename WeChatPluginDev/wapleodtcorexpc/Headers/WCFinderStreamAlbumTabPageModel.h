@@ -6,7 +6,7 @@
 @class NSString, WCFinderStreamLoadingState, WCFinderStreamProfileMusicPlaylist;
 @protocol WCFinderStreamAlbumTabPageModelDelegate;
 
-@interface WCFinderStreamAlbumTabPageModel
+@interface WCFinderStreamAlbumTabPageModel : NSObject
 {
     id <WCFinderStreamAlbumTabPageModelDelegate> _delegate;
     WCFinderStreamLoadingState *_state;

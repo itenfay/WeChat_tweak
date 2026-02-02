@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RemoteControlCheck
+@interface RemoteControlCheck : NSObject
 {
     _Bool mIsCondRecordCheck;
     _Bool mIsForceRecordCheck;

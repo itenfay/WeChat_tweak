@@ -5,7 +5,7 @@
 
 @class NSString, RecommendedMusicInfo;
 
-@interface EditVideoBGMSelectedMusicInfo
+@interface EditVideoBGMSelectedMusicInfo : NSObject
 {
     int _isSearchMusic;
     int _isFromMusicTag;

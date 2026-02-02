@@ -5,7 +5,7 @@
 
 @class CContact, GetSafetyInfoLogic, MMTableViewInfo, NSArray, NSString, NSURL, UIView;
 
-@interface PersonalInformationPreviewViewController
+@interface PersonalInformationPreviewViewController : NSObject
 {
     UIView *_contentHeaderView;
     UIView *_contentFooterView;

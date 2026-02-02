@@ -5,7 +5,7 @@
 
 @class AppBrandExtInfo, LiteAppExtInfo, NSString;
 
-@interface GameShareCardItem
+@interface GameShareCardItem : NSObject
 {
     unsigned int _isExposed;
     unsigned int _isVideo;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCAdDB, WCAdDynamicCanvasLogic, WCAdDynamicUpdateLogic, WCAdLoadCanvasLogic, WCAdQrCodeScanLogic, WCAdStatePublishReportData, WCCanvasDynamicDataLoader, WCEliminatedSlotMMKV, WWKFContactOpLogic;
 @protocol WCLogicMgrDelegate;
 
-@interface WCAdvertiseLogicMgr
+@interface WCAdvertiseLogicMgr : NSObject
 {
     NSMutableArray *arrUpdateItemList;
     _Bool bUpdating;

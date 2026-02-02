@@ -5,7 +5,7 @@
 
 @class NSString, WCEliminatedSlotMMKV;
 
-@interface MPPageMessageMgr
+@interface MPPageMessageMgr : NSObject
 {
     WCEliminatedSlotMMKV *_messageSlotMMKV;
 }

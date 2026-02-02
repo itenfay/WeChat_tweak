@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedFlowView, WCFinderHotWordsFeedViewModel;
 
-@interface WCFinderHotWordsFeedFlowViewController
+@interface WCFinderHotWordsFeedFlowViewController : NSObject
 {
     WCFinderHotWordsFeedViewModel *_viewModel;
     WCFinderFeedFlowView *_feedFlowView;

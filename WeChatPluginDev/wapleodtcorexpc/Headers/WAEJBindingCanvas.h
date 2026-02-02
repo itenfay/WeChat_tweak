@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIView, WAEJBindingCanvasStyle, WAEJBindingTouchInput, WAEJCanvasContext, WAEJTexture;
 
-@interface WAEJBindingCanvas
+@interface WAEJBindingCanvas : NSObject
 {
     struct OpaqueJSValue *jsCanvasContext;
     int contextMode;

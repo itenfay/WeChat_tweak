@@ -6,7 +6,7 @@
 @class CameraScanCombineModelGetter, CameraScanCombineModelInfo, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface CameraScanCombineService
+@interface CameraScanCombineService : NSObject
 {
     _Bool _ffeSvrConfigDetectBlock;
     _Bool _ffeSvrConfigPreloadBlock;

@@ -5,7 +5,7 @@
 
 @class MMStepSlider, NSArray, NSString, UITableView, UIView;
 
-@interface NewSettingFontSizeViewController
+@interface NewSettingFontSizeViewController : NSObject
 {
     unsigned int m_curLevel;
     double m_uiCurSize;

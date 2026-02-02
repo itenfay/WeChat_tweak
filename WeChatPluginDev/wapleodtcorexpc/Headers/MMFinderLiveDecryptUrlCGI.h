@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMFinderLiveDecryptUrlCGI
+@interface MMFinderLiveDecryptUrlCGI : NSObject
 {
     unsigned int _decryptUrlScene;
     NSString *_finderUsername;

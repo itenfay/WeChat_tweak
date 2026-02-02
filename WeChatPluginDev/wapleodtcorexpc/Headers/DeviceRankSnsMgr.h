@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface DeviceRankSnsMgr
+@interface DeviceRankSnsMgr : NSObject
 {
     NSArray *m_focusArray;
 }

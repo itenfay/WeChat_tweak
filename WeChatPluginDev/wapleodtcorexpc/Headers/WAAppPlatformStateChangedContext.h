@@ -5,7 +5,7 @@
 
 @class WAAppStateChangedContextInfo;
 
-@interface WAAppPlatformStateChangedContext
+@interface WAAppPlatformStateChangedContext : NSObject
 {
     unsigned int _changeReason;
     unsigned long long _platformType;

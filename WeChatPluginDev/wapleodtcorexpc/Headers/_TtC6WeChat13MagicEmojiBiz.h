@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, UIView;
 
-@interface _TtC6WeChat13MagicEmojiBiz
+@interface _TtC6WeChat13MagicEmojiBiz : NSObject
 {
     MISSING_TYPE *createdTime;
     MISSING_TYPE *delegate;

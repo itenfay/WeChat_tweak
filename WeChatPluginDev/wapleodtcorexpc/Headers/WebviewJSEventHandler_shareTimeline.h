@@ -5,7 +5,7 @@
 
 @class ShareTimelineBaseImpl;
 
-@interface WebviewJSEventHandler_shareTimeline
+@interface WebviewJSEventHandler_shareTimeline : NSObject
 {
     ShareTimelineBaseImpl *_shareTimelineImpl;
 }

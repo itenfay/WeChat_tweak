@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray, NSString, UIImageView, WCPayBindCardInfo;
 @protocol WCPaySpecifySelectePayCardListViewDelegate;
 
-@interface WCPaySpecifySelectePayCardListView
+@interface WCPaySpecifySelectePayCardListView : NSObject
 {
     WCPayBindCardInfo *selectedPayCardInfo;
     NSArray *m_arrBindCard;

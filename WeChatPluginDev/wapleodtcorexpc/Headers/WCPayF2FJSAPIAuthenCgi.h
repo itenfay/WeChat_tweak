@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayF2FJSAPIAuthCgiDelegate;
 
-@interface WCPayF2FJSAPIAuthenCgi
+@interface WCPayF2FJSAPIAuthenCgi : NSObject
 {
     NSString *_appId;
     NSString *_package;

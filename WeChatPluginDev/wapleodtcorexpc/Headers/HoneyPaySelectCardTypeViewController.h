@@ -6,7 +6,7 @@
 @class NSString, UITableView;
 @protocol HoneyPaySelectCardTypeViewControllerDelegate;
 
-@interface HoneyPaySelectCardTypeViewController
+@interface HoneyPaySelectCardTypeViewController : NSObject
 {
     id <HoneyPaySelectCardTypeViewControllerDelegate> _delegate;
     UITableView *_tableView;

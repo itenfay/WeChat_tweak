@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface WAJSEventHandler_sendBizRedPacket
+@interface WAJSEventHandler_sendBizRedPacket : NSObject
 {
     NSDictionary *_dicParam;
 }

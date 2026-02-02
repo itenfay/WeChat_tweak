@@ -5,7 +5,7 @@
 
 @class MMTimer, MMUIButton, MMUILabel, NSArray, NSMutableArray, UIImageView, UIView, WCPlayerConfigFullScreenProgressBarParams, WXVideoSlider;
 
-@interface WCPlayerConfigFullScreenProgressBarWithMultiSpeed
+@interface WCPlayerConfigFullScreenProgressBarWithMultiSpeed : NSObject
 {
     _Bool _isPlaying;
     _Bool _isMinimized;

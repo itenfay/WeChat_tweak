@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AQAudioPlayer
+@interface AQAudioPlayer : NSObject
 {
     _Bool mIsBindMuteSwitch;
     NSString *mCachedTag;

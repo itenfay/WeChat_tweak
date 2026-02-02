@@ -5,7 +5,7 @@
 
 @class BizAppReaderMessageBigPicViewModel, NSMutableArray, NSString, UIImage;
 
-@interface BizAppReaderMessageViewModel
+@interface BizAppReaderMessageViewModel : NSObject
 {
     _Bool _isNearbyNativeAppMsg;
     BizAppReaderMessageBigPicViewModel *_bigPicViewModel;

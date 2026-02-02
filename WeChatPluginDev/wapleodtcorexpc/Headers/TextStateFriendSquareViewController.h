@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TextStateCardListViewController, TextStateHistoryLogic, TextStateMessageBoxInfo, UICollectionView, UICollectionViewFlowLayout, UITapGestureRecognizer, UIView, _TtC6WeChat31TextStateFriendSquareTransition, _TtC6WeChat42TextStateSquareMixHeaderCollectionViewCell;
 
-@interface TextStateFriendSquareViewController
+@interface TextStateFriendSquareViewController : NSObject
 {
     _Bool _hasRedDot;
     _Bool _enableCustomTransition;

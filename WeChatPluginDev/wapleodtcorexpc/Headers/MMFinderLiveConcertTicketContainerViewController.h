@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ConcertTicketInfo, MMFinderLiveConcertTicketFailureView, MMFinderLiveConcertTicketViewController, MMFinderLiveConcertTicketViewControllerReportingContext, MMUIButton, NSArray, NSMutableDictionary, NSString, UIImageView, UILabel, UIView;
 
-@interface MMFinderLiveConcertTicketContainerViewController
+@interface MMFinderLiveConcertTicketContainerViewController : NSObject
 {
     _Bool _showingLoadingToast;
     CDUnknownBlockType _ticketFetchBlock;

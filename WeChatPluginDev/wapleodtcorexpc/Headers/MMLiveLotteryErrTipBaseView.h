@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UIImageView, UILabel, UIView;
 
-@interface MMLiveLotteryErrTipBaseView
+@interface MMLiveLotteryErrTipBaseView : NSObject
 {
     CDUnknownBlockType _actionButtonBlock;
     long long _previousOrientation;

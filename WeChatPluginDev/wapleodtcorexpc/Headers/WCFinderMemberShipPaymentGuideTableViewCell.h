@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIButton, UIImageView, UILabel, WCFinderAuthInfoIconView, WCFinderContact, WCFinderFeedFlowView, WCFinderHeadImageView, WCFinderMemberShipPreviewListViewModel;
 @protocol WCFinderMemberShipPaymentGuideTableViewCellDelegate;
 
-@interface WCFinderMemberShipPaymentGuideTableViewCell
+@interface WCFinderMemberShipPaymentGuideTableViewCell : NSObject
 {
     id <WCFinderMemberShipPaymentGuideTableViewCellDelegate> _delegate;
     WCFinderContact *_contact;

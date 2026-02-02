@@ -10,7 +10,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 struct XmlReaderNode_t;
 
-@interface CMessageMgr
+@interface CMessageMgr : NSObject
 {
     CMessageDB *m_oMsgDB;
     CDownloadVideoMgr *m_oDownloadVideoMgr;

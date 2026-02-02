@@ -5,7 +5,7 @@
 
 @class YYWKGameSchemeHandler, YYWKGameWebViewConfig;
 
-@interface YYWKGameWebView
+@interface YYWKGameWebView : NSObject
 {
     _Bool _didSuccessUseSchemeMethod;
     _Bool _isFirstLoad;

@@ -5,7 +5,7 @@
 
 @class MMLiveEnergyRule, NSArray, NSString;
 
-@interface MMFinderLiveConfigurations
+@interface MMFinderLiveConfigurations : NSObject
 {
     _Bool _EnergyController_lowPowerModeAvailable;
     _Bool _Cast_allowsUsingUPnP;

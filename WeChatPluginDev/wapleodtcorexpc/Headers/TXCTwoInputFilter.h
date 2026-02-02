@@ -5,7 +5,7 @@
 
 @class TXCVideoFrameCoords;
 
-@interface TXCTwoInputFilter
+@interface TXCTwoInputFilter : NSObject
 {
     TXCVideoFrameCoords *_frameCoords2;
 }

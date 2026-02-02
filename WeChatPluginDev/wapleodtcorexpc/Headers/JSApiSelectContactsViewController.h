@@ -6,7 +6,7 @@
 @class ContactsDataLogic, MMTableView, NSString, UIView, WCDataSearcher;
 @protocol JSApiSelectContactsViewControllerDelegate;
 
-@interface JSApiSelectContactsViewController
+@interface JSApiSelectContactsViewController : NSObject
 {
     id <JSApiSelectContactsViewControllerDelegate> m_delegate;
     MMTableView *m_tableView;

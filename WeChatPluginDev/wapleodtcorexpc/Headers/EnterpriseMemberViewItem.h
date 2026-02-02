@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterpriseMemberViewItem
+@interface EnterpriseMemberViewItem : NSObject
 {
     unsigned int m_uiViewType;
     NSString *m_nsUsrName;

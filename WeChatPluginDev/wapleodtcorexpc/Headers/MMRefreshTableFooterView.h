@@ -5,7 +5,7 @@
 
 @protocol MMRefreshTableFooterDelegate;
 
-@interface MMRefreshTableFooterView
+@interface MMRefreshTableFooterView : NSObject
 {
     unsigned long long m_state;
     double m_heightLimit;

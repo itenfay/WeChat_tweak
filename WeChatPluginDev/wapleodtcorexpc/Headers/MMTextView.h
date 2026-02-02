@@ -6,7 +6,7 @@
 @class MMInputAccessoryView, MMTextPlaceholderView, NSArray, NSAttributedString, NSMutableSet, NSString, UIColor, UIFont, UIImage, UIResponder;
 @protocol textViewDelegate;
 
-@interface MMTextView
+@interface MMTextView : NSObject
 {
     NSString *placeholder;
     _Bool _shouldDrawPlaceholder;

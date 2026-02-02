@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
-@interface WASubscriptionTipsPageSheet
+@interface WASubscriptionTipsPageSheet : NSObject
 {
     CDUnknownBlockType _okAction;
     UIImageView *_iconView;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveModShelfStartRecordReplayCGI
+@interface WCFinderLiveModShelfStartRecordReplayCGI : NSObject
 {
     unsigned long long _productId;
     CDUnknownBlockType _successBlock;

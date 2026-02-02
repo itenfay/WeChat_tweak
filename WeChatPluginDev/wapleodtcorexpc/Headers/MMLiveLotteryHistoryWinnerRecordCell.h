@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton;
 
-@interface MMLiveLotteryHistoryWinnerRecordCell
+@interface MMLiveLotteryHistoryWinnerRecordCell : NSObject
 {
     _Bool _enableToChat;
     CDUnknownBlockType _chatButtonClickBlock;

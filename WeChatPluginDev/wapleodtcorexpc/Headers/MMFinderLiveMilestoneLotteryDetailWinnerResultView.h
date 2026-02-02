@@ -5,7 +5,7 @@
 
 @class FinderLiveMilestoneLotteryInfo, MMFinderLiveMilestoneLotteryViewModel, MMHeadImageView, MMUIButton, MMWebImageView, NSString, RichTextView, UIImageView, UILabel;
 
-@interface MMFinderLiveMilestoneLotteryDetailWinnerResultView
+@interface MMFinderLiveMilestoneLotteryDetailWinnerResultView : NSObject
 {
     _Bool _forceHideReceiveButton;
     _Bool _shouldPlayPrizeGiftAnimation;

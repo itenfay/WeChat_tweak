@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveMagicEngineMemoryMonitorTask
+@interface MMLiveMagicEngineMemoryMonitorTask : NSObject
 {
     CDUnknownBlockType _finalCheckEnableFreeMemoryCallback;
 }

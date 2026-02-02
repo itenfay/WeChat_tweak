@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreItem, EmoticonStoreReportInfo, NSString, UserOpInfo, WCDataItem;
 
-@interface MMEmoticonDetailPageContext
+@interface MMEmoticonDetailPageContext : NSObject
 {
     _Bool _needScrollToBottom;
     _Bool _fromDesigner;

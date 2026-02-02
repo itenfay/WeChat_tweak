@@ -5,7 +5,7 @@
 
 @class BTBaseRecommendMsgCellViewModel, BTRecommendSectionData, MMUIButton, UILongPressGestureRecognizer, UIView;
 
-@interface BTBaseRecommendMsgCellView
+@interface BTBaseRecommendMsgCellView : NSObject
 {
     UIView *m_highlightMaskView;
     UILongPressGestureRecognizer *m_longPressGestureRecognizer;

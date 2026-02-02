@@ -5,7 +5,7 @@
 
 @class NSString, UIScrollView, UIView, WCImageTranslateLogic;
 
-@interface MMImageActionTranslateItem
+@interface MMImageActionTranslateItem : NSObject
 {
     WCImageTranslateLogic *_imgTranslateLogic;
     UIScrollView *_animationScrollView;

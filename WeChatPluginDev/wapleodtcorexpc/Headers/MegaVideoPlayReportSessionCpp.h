@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoPlayReportSessionCpp
+@interface MegaVideoPlayReportSessionCpp : NSObject
 {
 }
 

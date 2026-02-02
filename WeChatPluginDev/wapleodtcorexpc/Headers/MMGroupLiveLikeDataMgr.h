@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMGroupLiveLikeDataMgr
+@interface MMGroupLiveLikeDataMgr : NSObject
 {
 }
 

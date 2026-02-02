@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, UIColor, UIView;
 
-@interface MinimizeRecordFloatingView
+@interface MinimizeRecordFloatingView : NSObject
 {
     UIColor *_gradientBackgroundColor;
     UIView *_redDotView;

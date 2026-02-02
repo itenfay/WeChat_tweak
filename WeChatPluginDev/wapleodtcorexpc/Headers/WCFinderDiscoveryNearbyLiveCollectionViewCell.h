@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMFinderLiveActivityView, MMFinderLiveFeedHighlightTagView, MMLiveCDNPlayerView, NSString, RichTextView, UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderDiscoveryNearbyLiveCollectionViewCellConfig, WCFinderFeedContentVM, WCFinderHeadImageView;
 @protocol WCFinderDiscoveryNearbyLiveCollectionViewCellDelegate;
 
-@interface WCFinderDiscoveryNearbyLiveCollectionViewCell
+@interface WCFinderDiscoveryNearbyLiveCollectionViewCell : NSObject
 {
     _Bool _hiddenVideo;
     _Bool _hideAudienceNum;

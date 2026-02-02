@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol MPLandingPageReportLogicDelegate;
 
-@interface MPLandingPageReportLogic
+@interface MPLandingPageReportLogic : NSObject
 {
     unsigned int _itemShowType;
     unsigned int _sessionId;

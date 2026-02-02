@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIButton, UIColor, UIImageView, UILabel, UIView, WCPayPaidSuccessStatusModel;
 @protocol WCPayPaidSuccessStatusViewControllerDelegate;
 
-@interface WCPayPaidSuccessStatusViewController
+@interface WCPayPaidSuccessStatusViewController : NSObject
 {
     id <WCPayPaidSuccessStatusViewControllerDelegate> _delegate;
     NSString *_nsTitle;

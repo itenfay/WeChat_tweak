@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface BTFinderRecommendRedPacketView
+@interface BTFinderRecommendRedPacketView : NSObject
 {
     UIImageView *_redPacketImageView;
     MMUILabel *_label;

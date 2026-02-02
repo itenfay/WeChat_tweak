@@ -5,7 +5,7 @@
 
 @class FTSContactDB, FTSContactIndexInfo, NSMutableSet;
 
-@interface FTSContactIndexMgr
+@interface FTSContactIndexMgr : NSObject
 {
     NSMutableSet *m_invalidUsernames;
     int *m_unIndexContactCount;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAJSEventHandler_profile
+@interface WAJSEventHandler_profile : NSObject
 {
     NSMutableDictionary *_param;
     NSString *_scene;

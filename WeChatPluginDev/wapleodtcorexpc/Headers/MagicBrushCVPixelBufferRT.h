@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MagicBrushCVPixelBufferRTDelegate;
 
-@interface MagicBrushCVPixelBufferRT
+@interface MagicBrushCVPixelBufferRT : NSObject
 {
     id <MagicBrushCVPixelBufferRTDelegate> _delegate;
 }

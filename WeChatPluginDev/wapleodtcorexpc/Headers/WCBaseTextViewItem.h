@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UITextView;
 
-@interface WCBaseTextViewItem
+@interface WCBaseTextViewItem : NSObject
 {
     UITextView *m_textView;
     UILabel *placeHolderLabel;

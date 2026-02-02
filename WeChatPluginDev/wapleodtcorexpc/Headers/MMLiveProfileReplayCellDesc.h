@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel, MMUIView;
 
-@interface MMLiveProfileReplayCellDesc
+@interface MMLiveProfileReplayCellDesc : NSObject
 {
     MMUIView *_background;
     MMUIImageView *_iconView;

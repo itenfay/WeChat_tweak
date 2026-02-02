@@ -5,7 +5,7 @@
 
 @class GroupNoticeItem, NSMutableArray, NSMutableSet, NSString;
 
-@interface GroupNoticeUploadMgr
+@interface GroupNoticeUploadMgr : NSObject
 {
     GroupNoticeItem *_currentUploadItem;
     NSMutableSet *_uploadedDataList;

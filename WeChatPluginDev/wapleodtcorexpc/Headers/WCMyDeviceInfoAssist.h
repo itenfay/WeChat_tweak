@@ -6,7 +6,7 @@
 @class MMLoadingView, MMTableView, NSMutableArray, NSString, UIButton, UIView, WCDevice;
 @protocol WCMyDeviceInfoAssistDelegate;
 
-@interface WCMyDeviceInfoAssist
+@interface WCMyDeviceInfoAssist : NSObject
 {
     id <WCMyDeviceInfoAssistDelegate> m_delegate;
     MMTableView *m_tableView;

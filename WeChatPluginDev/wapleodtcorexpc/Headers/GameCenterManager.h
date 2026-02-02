@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EntranceRedDot, GameLifeFindMoreFriendEntranceInfo, GameSearchRecommendList, GetGameCenterGlobalSettingResponse, GetGameIndex4Response, GetGameIndex4TabNavResponse, JumpInfo, MMWebViewController, MemoryMappedKV, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WAAppIdToUsernameTransfer;
 
-@interface GameCenterManager
+@interface GameCenterManager : NSObject
 {
     NSMutableArray *_gameIntroList;
     NSMutableDictionary *_gameDetailDict;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString;
 
-@interface VoIPVideoStreamRemoteService
+@interface VoIPVideoStreamRemoteService : NSObject
 {
     struct __CVBuffer *_pixelBuffer;
     struct __CVBuffer *_YMetalTexture;

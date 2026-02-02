@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface WCTimelineMissReadJumpBtnClickReportRecord
+@interface WCTimelineMissReadJumpBtnClickReportRecord : NSObject
 {
     unsigned int _jumpBtnId;
     unsigned int _jumpSkipCount;

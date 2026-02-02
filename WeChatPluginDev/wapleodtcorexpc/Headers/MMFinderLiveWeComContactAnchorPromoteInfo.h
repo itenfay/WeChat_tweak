@@ -5,7 +5,7 @@
 
 @class FinderLivePromoteInfoListWecomContact;
 
-@interface MMFinderLiveWeComContactAnchorPromoteInfo
+@interface MMFinderLiveWeComContactAnchorPromoteInfo : NSObject
 {
     FinderLivePromoteInfoListWecomContact *_wecomContact;
 }

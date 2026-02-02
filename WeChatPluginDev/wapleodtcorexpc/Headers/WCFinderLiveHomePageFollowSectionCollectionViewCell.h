@@ -6,7 +6,7 @@
 @class NSString, WCFinderLiveHomePageFollowSectionView;
 @protocol WCFinderLiveHomePageFollowSectionViewDelegate;
 
-@interface WCFinderLiveHomePageFollowSectionCollectionViewCell
+@interface WCFinderLiveHomePageFollowSectionCollectionViewCell : NSObject
 {
     id <WCFinderLiveHomePageFollowSectionViewDelegate> _delegate;
     WCFinderLiveHomePageFollowSectionView *_liveCollectionView;

@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface MMLimitedModeMaskViewView
+@interface MMLimitedModeMaskViewView : NSObject
 {
     UIButton *_closeButton;
 }

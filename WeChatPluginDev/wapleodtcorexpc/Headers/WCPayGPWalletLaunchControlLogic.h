@@ -6,7 +6,7 @@
 @class AAOperationRes, CContact, NSMutableArray, NSString, WCPayGPLaunchControlLogic, WCPayGPOperationCgi;
 @protocol WCPayGPWalletLaunchControlLogicDelegate;
 
-@interface WCPayGPWalletLaunchControlLogic
+@interface WCPayGPWalletLaunchControlLogic : NSObject
 {
     _Bool _bHasLaunchSucc;
     _Bool _bIsFromJSAPI;

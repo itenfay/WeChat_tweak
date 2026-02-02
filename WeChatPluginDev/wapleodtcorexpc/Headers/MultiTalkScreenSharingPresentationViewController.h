@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMDoodleController, MMDoodleToolbarItem, MultiTalkCornerContainerView, MultiTalkHDHeadView, NSString, UIButton, UIImageView, UITapGestureRecognizer, UIView;
 @protocol MultiTalkScreenSharingPresentationViewControllerDelegate;
 
-@interface MultiTalkScreenSharingPresentationViewController
+@interface MultiTalkScreenSharingPresentationViewController : NSObject
 {
     _Bool _barsHidden;
     id <MultiTalkScreenSharingPresentationViewControllerDelegate> _delegate;

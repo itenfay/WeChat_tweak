@@ -5,7 +5,7 @@
 
 @class MMIconItemView, MMIotNavigateInfo, MMUIActivityIndicatorView, MMUILabel, MsgToDeviceLogic, NSString, SSVMiniAppRedirectInfo, UIButton, UIImageView, UIStackView, WCDevice;
 
-@interface SendToDeviceSheetView
+@interface SendToDeviceSheetView : NSObject
 {
     MMIconItemView *_itemView;
     UIButton *_sendButton;

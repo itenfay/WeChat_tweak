@@ -5,7 +5,7 @@
 
 @class NSString, WCSKAdNetworkItem;
 
-@interface WebViewJSEventHandler_launchApplication
+@interface WebViewJSEventHandler_launchApplication : NSObject
 {
     NSString *_appID;
     NSString *_launchAppID;

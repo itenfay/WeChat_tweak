@@ -6,7 +6,7 @@
 @class NSString;
 @protocol TXLivePushJSAdapterProtocol;
 
-@interface TXLiveBaseAdapter
+@interface TXLiveBaseAdapter : NSObject
 {
     _Bool _isWXTalking;
     _Bool _isInVoIP;

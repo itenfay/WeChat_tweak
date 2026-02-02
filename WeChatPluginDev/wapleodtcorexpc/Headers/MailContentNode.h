@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MailContentNode
+@interface MailContentNode : NSObject
 {
     long long m_n64MsgId;
     int m_uiType;

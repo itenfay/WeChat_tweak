@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebViewJSEventHandler_openEnterpriseChat
+@interface WebViewJSEventHandler_openEnterpriseChat : NSObject
 {
     NSString *_enterpriseChatScene;
 }

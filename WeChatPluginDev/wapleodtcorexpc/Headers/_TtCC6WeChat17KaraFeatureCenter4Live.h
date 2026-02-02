@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter4Live
+@interface _TtCC6WeChat17KaraFeatureCenter4Live : NSObject
 {
     MISSING_TYPE *homePageHistoryTable;
 }

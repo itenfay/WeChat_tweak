@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString;
 
-@interface MMFinderLiveAlertView
+@interface MMFinderLiveAlertView : NSObject
 {
     _Bool _viewDismissCountDownRegistered;
     _Bool _displayCountDownInTitleTag;

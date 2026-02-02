@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdFinderFollowResultModel
+@interface WCAdFinderFollowResultModel : NSObject
 {
     int _source;
     NSString *_finderUsername;

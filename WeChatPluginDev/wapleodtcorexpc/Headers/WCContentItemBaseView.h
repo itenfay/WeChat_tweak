@@ -6,7 +6,7 @@
 @class NSString, ShareDataToOpenSDKController, UINavigationController, WCContentItemViewOptions, WCDataItem, WCMomentsPageContext;
 @protocol WCContentItemBaseViewDelegate;
 
-@interface WCContentItemBaseView
+@interface WCContentItemBaseView : NSObject
 {
     UINavigationController *_navigationController;
     WCDataItem *_oDataItem;

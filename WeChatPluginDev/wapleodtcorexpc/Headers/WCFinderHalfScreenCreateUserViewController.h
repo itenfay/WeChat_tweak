@@ -6,7 +6,7 @@
 @class MMUIButton, NSString, RichTextView, UIButton, UILabel, WCFinderGetWechatHDHeadFetcher, WCFinderHalfScreenCreateUserVCAcctView;
 @protocol WCFinderHalfScreenCreateUserViewControllerDelegate;
 
-@interface WCFinderHalfScreenCreateUserViewController
+@interface WCFinderHalfScreenCreateUserViewController : NSObject
 {
     NSString *_reccommendCreateAcctNickName;
     NSString *_confirmBtnTitle;

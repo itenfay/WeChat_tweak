@@ -5,7 +5,7 @@
 
 @class MMLiveActionSheetFlowLayoutView, MMLiveShopShelfDragBar, NSArray, NSString, UIPanGestureRecognizer;
 
-@interface MMFinderLiveAudienceFolderActionSheet
+@interface MMFinderLiveAudienceFolderActionSheet : NSObject
 {
     UIPanGestureRecognizer *_panGesture;
     MMLiveShopShelfDragBar *_dragBar;

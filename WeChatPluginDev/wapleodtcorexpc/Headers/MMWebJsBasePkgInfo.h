@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSString, WAInfoData;
 
-@interface MMWebJsBasePkgInfo
+@interface MMWebJsBasePkgInfo : NSObject
 {
     _Bool _isDebug;
     NSDictionary *_dicMetaInfo;

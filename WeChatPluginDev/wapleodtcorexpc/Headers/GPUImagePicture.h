@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSObject;
 @protocol OS_dispatch_semaphore;
 
-@interface GPUImagePicture
+@interface GPUImagePicture : NSObject
 {
     struct CGSize pixelSizeOfImage;
     _Bool hasProcessedImage;

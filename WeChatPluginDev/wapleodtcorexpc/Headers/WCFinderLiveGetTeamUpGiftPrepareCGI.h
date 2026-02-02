@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetTeamUpGiftPrepareCGI
+@interface WCFinderLiveGetTeamUpGiftPrepareCGI : NSObject
 {
     unsigned int _liveScene;
     CDUnknownBlockType _successBlock;

@@ -6,7 +6,7 @@
 @class AddMemLogic, CBaseContact, CContact, DelMemLogic, MMPageSheetAdapter, MMTableView, MMTableViewInfo, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NewContactsSearchPanelView, OrderedDictionary, SearchHelpDataItem, UILabel, WCColorProxy, WCSearcher;
 @protocol RoomContactSelectDelegate;
 
-@interface RoomContactSelectViewController
+@interface RoomContactSelectViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_arrRoomMembers;

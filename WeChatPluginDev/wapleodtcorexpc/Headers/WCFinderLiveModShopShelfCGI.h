@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderCmdItem;
 
-@interface WCFinderLiveModShopShelfCGI
+@interface WCFinderLiveModShopShelfCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

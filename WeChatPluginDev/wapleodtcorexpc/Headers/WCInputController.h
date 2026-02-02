@@ -6,7 +6,7 @@
 @class EmoticonBoardView, MMGrowTextView, MMLiveAddBoardView, NSString, UIScrollView, UIView;
 @protocol InputControllerDelegate;
 
-@interface WCInputController
+@interface WCInputController : NSObject
 {
     double _fKeyboardAnimationDuration;
     double _fKeyboardHeight;

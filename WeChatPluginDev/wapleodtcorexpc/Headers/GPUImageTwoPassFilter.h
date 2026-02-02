@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class GLProgram, GPUImageFramebuffer, NSMutableDictionary;
 
-@interface GPUImageTwoPassFilter
+@interface GPUImageTwoPassFilter : NSObject
 {
     GPUImageFramebuffer *secondOutputFramebuffer;
     GLProgram *secondFilterProgram;

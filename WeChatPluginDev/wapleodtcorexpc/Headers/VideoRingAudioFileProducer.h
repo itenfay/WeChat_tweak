@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, VideoRingNetProvider;
 
-@interface VideoRingAudioFileProducer
+@interface VideoRingAudioFileProducer : NSObject
 {
     NSMutableDictionary *_downloadTasks;
     NSMutableDictionary *_transferTasks;

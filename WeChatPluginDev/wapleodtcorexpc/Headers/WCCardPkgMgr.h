@@ -6,7 +6,7 @@
 @class CLLocation, LocationRetriever, NSDictionary, NSObject, NSString, WCCardBulkImportMgr, WCCardLayoutMgr, WCCardMsgCenterMgr, WCCardPkgBatchDelMgr, WCCardPkgBatchGetCardItemByTpInfoMgr, WCCardPkgBatchGetMgr, WCCardPkgDB, WCCardPkgSyncMgr, WCCardTipController, WCMktCardEnteranceStyleCgi;
 @protocol OS_dispatch_queue;
 
-@interface WCCardPkgMgr
+@interface WCCardPkgMgr : NSObject
 {
     WCCardPkgDB *_wcCardPkgDB;
     NSObject<OS_dispatch_queue> *_queue_handleCheckCard;

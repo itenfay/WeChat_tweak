@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface WAMapGroundOverlay
+@interface WAMapGroundOverlay : NSObject
 {
     int _zIndex;
     long long _overlayId;

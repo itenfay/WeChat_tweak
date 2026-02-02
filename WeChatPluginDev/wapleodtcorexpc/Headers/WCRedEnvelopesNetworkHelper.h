@@ -6,7 +6,7 @@
 @class NSMutableDictionary;
 @protocol WCRedEnvelopesNetworkHelperDelegate;
 
-@interface WCRedEnvelopesNetworkHelper
+@interface WCRedEnvelopesNetworkHelper : NSObject
 {
     id <WCRedEnvelopesNetworkHelperDelegate> m_delegate;
     NSMutableDictionary *m_dicCGIStartedTime;

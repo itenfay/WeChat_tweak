@@ -5,7 +5,7 @@
 
 @class WCCanvasComponentMusicItem;
 
-@interface WCCanvasComponentMusicInfo
+@interface WCCanvasComponentMusicInfo : NSObject
 {
     int _displayType;
     WCCanvasComponentMusicItem *_musicItem;

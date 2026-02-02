@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAcceptAgreementCommonHeadView, MMUIButton, MMUILabel, MMWebImageView, NSString, UIButton, UIView;
 
-@interface WCFinderGameLiveAuthViewController
+@interface WCFinderGameLiveAuthViewController : NSObject
 {
     unsigned int _platformId;
     MMUILabel *_titleLabel;

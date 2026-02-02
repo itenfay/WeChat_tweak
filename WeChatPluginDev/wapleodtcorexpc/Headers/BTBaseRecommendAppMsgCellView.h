@@ -5,7 +5,7 @@
 
 @class BTBaseRecommendAppMsgCellViewModel;
 
-@interface BTBaseRecommendAppMsgCellView
+@interface BTBaseRecommendAppMsgCellView : NSObject
 {
 }
 

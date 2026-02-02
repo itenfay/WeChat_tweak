@@ -5,7 +5,7 @@
 
 @protocol MFTitleViewDelegate;
 
-@interface MFTitleView
+@interface MFTitleView : NSObject
 {
 }
 

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveGetFaceVerifyUrlCGI
+@interface WCFinderLiveGetFaceVerifyUrlCGI : NSObject
 {
     int _scene;
     NSString *_anchorFinderUsername;

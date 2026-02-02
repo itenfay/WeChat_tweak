@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableDictionary, NSRecursiveLock, NSString, WABleAdpterLogic;
 
-@interface WAJSContextPlugin_BlueTooth
+@interface WAJSContextPlugin_BlueTooth : NSObject
 {
     _Bool m_hasInit;
     WABleAdpterLogic *m_bleAdpter;

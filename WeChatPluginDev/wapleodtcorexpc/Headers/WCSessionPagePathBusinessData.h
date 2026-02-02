@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSessionPagePathBusinessData
+@interface WCSessionPagePathBusinessData : NSObject
 {
     NSString *_businessId;
     NSString *_value;

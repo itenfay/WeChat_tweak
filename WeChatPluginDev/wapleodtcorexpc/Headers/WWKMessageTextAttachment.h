@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKMessageTextAttachment
+@interface WWKMessageTextAttachment : NSObject
 {
     NSString *_text;
 }

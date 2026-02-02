@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMAcceptAgreementCommonHeadView, NSString, UIButton, UIImage;
 @protocol MMAcceptAgreementResultViewControllerDelegate;
 
-@interface MMAcceptAgreementResultViewController
+@interface MMAcceptAgreementResultViewController : NSObject
 {
     MMAcceptAgreementCommonHeadView *m_commonHeadView;
     UIButton *m_actionBtn;

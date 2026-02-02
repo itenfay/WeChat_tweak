@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC4Hero27HeroViewPropertyViewContext
+@interface _TtC4Hero27HeroViewPropertyViewContext : NSObject
 {
     MISSING_TYPE *viewPropertyAnimator;
     MISSING_TYPE *endEffect;

@@ -5,7 +5,7 @@
 
 @class NSString, TencentLBSLocationManager;
 
-@interface WAJSEventHandler_getLocation
+@interface WAJSEventHandler_getLocation : NSObject
 {
     unsigned long long m_geoLocationType;
     NSString *_subKey;

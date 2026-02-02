@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, EditImageAttr, EditImageIntialView, EditVideoAttr, EditVideoBGMPlayer, EditVideoLogicItem, MJCamChangeTemplateParams, MJCameraTemplateReportObject, MMCameraTemplatePanel, MMCameraTopBarView, MMCameraTouchEventView, MMCircularProgressView, MMImageCropperViewController, MMLoadingView, MMShortVideoParamModel, MMSightCameraOptionManager, MMSightRecordView, MMUIButton, MMUIImageView, MMUILabel, NSArray, NSMutableArray, NSString, OMCGeographicInfo, OMJRecordingResultTraits, RecommendedMusicInfo, ShortVideoToolbarPreviewView, SightBeautyOperationPanel, SightCameraPreviewView, SightShootingModeSwitchView, UIButton, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView, WCFinderEditImageMusicView, WCFinderMusicSelectView, WCFinderTemplateMusicSelectEntranceView, WCShortVideoToolBarInitParams, WCUIAlertView;
 @protocol ShortVideoBarDelegate;
 
-@interface ShortVideoToolbar
+@interface ShortVideoToolbar : NSObject
 {
     _Bool m_isActive;
     double m_topPositon;

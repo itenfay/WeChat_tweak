@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString;
 
-@interface _TtC6WeChat17FTSWebSectionData
+@interface _TtC6WeChat17FTSWebSectionData : NSObject
 {
     MISSING_TYPE *searchID;
     MISSING_TYPE *position;

@@ -6,7 +6,7 @@
 @class AppTingListMessageViewModel, TingSharedListView;
 @protocol TingFlowPlayerProtocol;
 
-@interface AppTingListMessageCellView
+@interface AppTingListMessageCellView : NSObject
 {
     TingSharedListView *_listContentView;
     id <TingFlowPlayerProtocol> _player;

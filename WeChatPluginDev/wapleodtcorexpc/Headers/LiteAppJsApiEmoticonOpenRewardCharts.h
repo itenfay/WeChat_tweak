@@ -5,7 +5,7 @@
 
 @class EmoticonStoreItem, EmotionRewardResponseInfo, NSString;
 
-@interface LiteAppJsApiEmoticonOpenRewardCharts
+@interface LiteAppJsApiEmoticonOpenRewardCharts : NSObject
 {
     _Bool _didOpenChartsVC;
     NSString *_pid;

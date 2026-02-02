@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface TXCiOSNV12Drawer
+@interface TXCiOSNV12Drawer : NSObject
 {
     struct __CVBuffer *_yTextureRef;
     struct __CVBuffer *_uvTextureRef;

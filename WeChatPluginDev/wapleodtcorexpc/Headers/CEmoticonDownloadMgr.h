@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock, NSString, OrderedDictionary;
 
-@interface CEmoticonDownloadMgr
+@interface CEmoticonDownloadMgr : NSObject
 {
     NSMutableDictionary *m_downloadCgiDic;
     OrderedDictionary *m_notDownloadQueue;

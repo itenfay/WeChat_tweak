@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject, NSString, WCFileBrowseBuildIndexOperation, WCFileBrowseInfoDB, WCFileBrowseKVLog;
 @protocol OS_dispatch_queue;
 
-@interface WCFileBrowseService
+@interface WCFileBrowseService : NSObject
 {
     _Bool _bOpen;
     _Bool _bLoadingChatLogFile;

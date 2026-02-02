@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportKFSessionActionItem
+@interface WAReportKFSessionActionItem : NSObject
 {
     int _unreadcount;
     int _unreadappcount;

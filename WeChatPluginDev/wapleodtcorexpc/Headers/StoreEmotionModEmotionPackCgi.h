@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface StoreEmotionModEmotionPackCgi
+@interface StoreEmotionModEmotionPackCgi : NSObject
 {
     CDUnknownBlockType _onFinishBlock;
 }

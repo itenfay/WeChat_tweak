@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton;
 
-@interface MMFinderLiveShopShelfMainTableHeaderItemTextButtonView
+@interface MMFinderLiveShopShelfMainTableHeaderItemTextButtonView : NSObject
 {
     CDUnknownBlockType _onButtonClicked;
     UIButton *_button;

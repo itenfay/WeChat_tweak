@@ -5,7 +5,7 @@
 
 @protocol WCAdCardMultiProductsScreenDelegate;
 
-@interface WCAdCardMultiProductsBaseView
+@interface WCAdCardMultiProductsBaseView : NSObject
 {
     id <WCAdCardMultiProductsScreenDelegate> _delegate;
     struct CGSize _previousSize;

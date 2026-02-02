@@ -6,7 +6,7 @@
 @class MMEmoticonView, MMImageScrollViewHelper, NSArray, NSString, UIView;
 @protocol MMImgageBrowseViewDelegate;
 
-@interface MMImageBrowseView
+@interface MMImageBrowseView : NSObject
 {
     id <MMImgageBrowseViewDelegate> m_delegate;
     UIView *m_vImage;

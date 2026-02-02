@@ -5,7 +5,7 @@
 
 @class ContactSearchLogic, MMTableView, MMUILabel, NSString, UIButton, UIImageView, UIView, WCSearchBar, WCTimeLineFooterView;
 
-@interface OpenIMFriendViewController
+@interface OpenIMFriendViewController : NSObject
 {
     ContactSearchLogic *_contactSearchLogic;
     UIImageView *_searchBarWrap;

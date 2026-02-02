@@ -5,7 +5,7 @@
 
 @class WCDevice;
 
-@interface WCDeviceConnectExt
+@interface WCDeviceConnectExt : NSObject
 {
     WCDevice *_device;
     int _connectState;

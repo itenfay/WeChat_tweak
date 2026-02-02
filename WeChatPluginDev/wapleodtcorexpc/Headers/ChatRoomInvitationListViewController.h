@@ -5,7 +5,7 @@
 
 @class CContact, ChatRoomInvitationContactProfileLogic, MMTableView, NSMutableArray, NSString, UILabel, UIView;
 
-@interface ChatRoomInvitationListViewController
+@interface ChatRoomInvitationListViewController : NSObject
 {
     unsigned int _unReadCount;
     CContact *_roomContact;

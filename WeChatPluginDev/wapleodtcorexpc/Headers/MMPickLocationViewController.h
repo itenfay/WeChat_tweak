@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CLLocation, MMAutoSearchLogic, MMFloorPickView, MMLocationAttributeBanner, MMLocationPinView, MMMapView, MMPickLocationReporter, MMPickLocationSearchView, NSMutableArray, NSString, POIItem, PickLocationManager, QPoiInfo, UIBarButtonItem, UIButton, UIImageView, UIPinchGestureRecognizer, UIView, WCUIAlertView;
 @protocol MMPickLocationViewControllerDelegate;
 
-@interface MMPickLocationViewController
+@interface MMPickLocationViewController : NSObject
 {
     id <MMPickLocationViewControllerDelegate> _delegate;
     NSString *_openID;

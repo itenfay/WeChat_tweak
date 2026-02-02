@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString;
 @protocol WCFinderStreamProfileBlankModelDelegate;
 
-@interface WCFinderStreamProfileBlankModel
+@interface WCFinderStreamProfileBlankModel : NSObject
 {
     long long _blankType;
     NSString *_displayTips;

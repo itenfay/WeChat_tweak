@@ -5,7 +5,7 @@
 
 @class WCTableViewManager;
 
-@interface WCFinderInteractiveInformationViewController
+@interface WCFinderInteractiveInformationViewController : NSObject
 {
     WCTableViewManager *_tableViewManager;
 }

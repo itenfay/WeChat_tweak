@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SimplePreviewMsgInfo
+@interface SimplePreviewMsgInfo : NSObject
 {
     NSString *_imagePath;
 }

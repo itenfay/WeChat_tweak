@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface MMAdaptiveBubbleShapeView
+@interface MMAdaptiveBubbleShapeView : NSObject
 {
     UIImageView *_mainPartBgImageView;
     UIImageView *_arrowImageView;

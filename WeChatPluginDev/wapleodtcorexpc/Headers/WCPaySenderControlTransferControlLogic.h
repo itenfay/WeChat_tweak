@@ -5,7 +5,7 @@
 
 @class NSString, WCPayUnionTransferQueryCgi;
 
-@interface WCPaySenderControlTransferControlLogic
+@interface WCPaySenderControlTransferControlLogic : NSObject
 {
     _Bool _bIsOpenIM;
     WCPayUnionTransferQueryCgi *_unionQueryCgi;

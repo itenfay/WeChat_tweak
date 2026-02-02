@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GCDWebServerFileResponse
+@interface GCDWebServerFileResponse : NSObject
 {
     NSString *_path;
     unsigned long long _offset;

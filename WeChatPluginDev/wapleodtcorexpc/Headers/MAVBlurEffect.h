@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MAVBlurEffect
+@interface MAVBlurEffect : NSObject
 {
     float _radius;
     float _sampleFactor;

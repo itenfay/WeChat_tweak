@@ -6,7 +6,7 @@
 @class MMUIViewController, NSString, UILabel, WCPayLQTPickerView, WCPayNavigationView;
 @protocol WCPayLQTSelectDateItemDelegate;
 
-@interface WCPayLQTSelectDateItem
+@interface WCPayLQTSelectDateItem : NSObject
 {
     id <WCPayLQTSelectDateItemDelegate> _pickerDelegate;
     WCPayNavigationView *_navigationView;

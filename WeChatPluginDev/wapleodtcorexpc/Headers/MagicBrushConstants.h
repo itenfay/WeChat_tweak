@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
-@interface MagicBrushConstants
+@interface MagicBrushConstants : NSObject
 {
     NSMutableSet *_bizNameList;
     NSMutableSet *_publicServiceList;

@@ -6,7 +6,7 @@
 @class NSString, WCFinderLiveFeedGenericAutoPlayModel, WCFinderLiveHomePageFooterView, WCFinderLiveHomePageRecommendGuideFooterView;
 @protocol WCFinderLiveHomePageSpecialColumnSectionViewDelegate;
 
-@interface WCFinderLiveHomePageSpecialColumnSectionView
+@interface WCFinderLiveHomePageSpecialColumnSectionView : NSObject
 {
     WCFinderLiveFeedGenericAutoPlayModel *_autoPlayModel;
     id <WCFinderLiveHomePageSpecialColumnSectionViewDelegate> _delegate;

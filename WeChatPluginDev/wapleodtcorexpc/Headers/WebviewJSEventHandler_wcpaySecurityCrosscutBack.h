@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_wcpaySecurityCrosscutBack
+@interface WebviewJSEventHandler_wcpaySecurityCrosscutBack : NSObject
 {
     JSEvent *_m_jsEvent;
 }

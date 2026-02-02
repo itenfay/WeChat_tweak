@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, WCFinderAnimationLoadingView, WCFinderProfileNewLifeHeaderView, WCFinderProfileNewLifeHeaderViewModel, WCFinderStreamFooterView;
 
-@interface WCFinderProfileNewLifePage
+@interface WCFinderProfileNewLifePage : NSObject
 {
     _Bool _firstAppear;
     int _newlifetabEnterType;

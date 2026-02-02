@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSString, UIViewController;
 
-@interface MMURLHandler
+@interface MMURLHandler : NSObject
 {
     UIViewController *m_viewController;
     NSMutableDictionary *m_urlToViewController;

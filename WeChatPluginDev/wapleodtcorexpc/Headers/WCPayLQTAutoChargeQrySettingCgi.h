@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTAutoChargeQrySettingCgiDelegate;
 
-@interface WCPayLQTAutoChargeQrySettingCgi
+@interface WCPayLQTAutoChargeQrySettingCgi : NSObject
 {
     id <WCPayLQTAutoChargeQrySettingCgiDelegate> _cgiDelegate;
 }

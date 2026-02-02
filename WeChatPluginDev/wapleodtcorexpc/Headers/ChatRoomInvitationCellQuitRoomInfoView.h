@@ -6,7 +6,7 @@
 @class CContact, NSString, RichTextView, UIImageView;
 @protocol ChatRoomInvitationCellQuitRoomInfoViewDelegate;
 
-@interface ChatRoomInvitationCellQuitRoomInfoView
+@interface ChatRoomInvitationCellQuitRoomInfoView : NSObject
 {
     id <ChatRoomInvitationCellQuitRoomInfoViewDelegate> _delegate;
     CContact *_contact;

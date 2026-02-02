@@ -6,7 +6,7 @@
 @class EnterTimeItem, WCPayTransBankItem;
 @protocol WCPaySelectArriveTimeViewControllerDelegate;
 
-@interface WCPaySelectArriveTimeViewController
+@interface WCPaySelectArriveTimeViewController : NSObject
 {
     id <WCPaySelectArriveTimeViewControllerDelegate> _delegate;
     EnterTimeItem *_m_arriveTimeItem;

@@ -5,7 +5,7 @@
 
 @class MMLiveColorfulLabel, WCFinderLiveHomePageAggregationAnchorHeaderInfoView;
 
-@interface WCFinderLiveHomePageAggregationImageInfoCard
+@interface WCFinderLiveHomePageAggregationImageInfoCard : NSObject
 {
     MMLiveColorfulLabel *_titleLabel;
     WCFinderLiveHomePageAggregationAnchorHeaderInfoView *_headerInfoView;

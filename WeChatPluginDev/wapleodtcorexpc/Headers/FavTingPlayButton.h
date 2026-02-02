@@ -5,7 +5,7 @@
 
 @protocol FavTingPlayButtonDelegate;
 
-@interface FavTingPlayButton
+@interface FavTingPlayButton : NSObject
 {
     id <FavTingPlayButtonDelegate> _favTingBtnDelegate;
 }

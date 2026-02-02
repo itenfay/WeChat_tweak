@@ -5,7 +5,7 @@
 
 @class NSMutableArray, OpenBufferUploadInfo;
 
-@interface OpenBufferUploadMgr
+@interface OpenBufferUploadMgr : NSObject
 {
     unsigned int m_uiCurEventID;
     NSMutableArray *m_queUpload;

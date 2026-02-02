@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSMutableArray, NSString, WAPopOverView;
 
-@interface WAPopOverTaskBarlogic
+@interface WAPopOverTaskBarlogic : NSObject
 {
     unsigned int _currentDebugMode;
     NSMutableArray *_arrTaskItem;

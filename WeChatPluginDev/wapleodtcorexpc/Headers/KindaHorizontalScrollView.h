@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KindaHorizontalScrollView
+@interface KindaHorizontalScrollView : NSObject
 {
 }
 

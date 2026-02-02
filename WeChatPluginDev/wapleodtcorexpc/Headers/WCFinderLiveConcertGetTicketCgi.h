@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveConcertGetTicketCgi
+@interface WCFinderLiveConcertGetTicketCgi : NSObject
 {
     _Bool _receive;
     _Bool _needPageItem;

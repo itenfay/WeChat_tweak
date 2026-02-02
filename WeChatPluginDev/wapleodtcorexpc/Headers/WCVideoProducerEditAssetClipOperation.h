@@ -5,7 +5,7 @@
 
 @class MMAssetInfo, OMJClipSegment;
 
-@interface WCVideoProducerEditAssetClipOperation
+@interface WCVideoProducerEditAssetClipOperation : NSObject
 {
     MMAssetInfo *_assetInfo;
     long long _assetIndex;

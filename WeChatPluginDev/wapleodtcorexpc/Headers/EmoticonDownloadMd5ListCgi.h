@@ -6,7 +6,7 @@
 @class NSData, NSDictionary, NSMutableArray, NSMutableSet, NSString, OrderedDictionary;
 @protocol EmoticonDownloadMd5ListCgiDelegate;
 
-@interface EmoticonDownloadMd5ListCgi
+@interface EmoticonDownloadMd5ListCgi : NSObject
 {
     _Bool _isActive;
     _Bool _m_hasStartRequestOnce;

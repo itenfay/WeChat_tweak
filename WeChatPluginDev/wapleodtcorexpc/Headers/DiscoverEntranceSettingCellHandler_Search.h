@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface DiscoverEntranceSettingCellHandler_Search
+@interface DiscoverEntranceSettingCellHandler_Search : NSObject
 {
 }
 

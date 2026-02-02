@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, MMTipsViewController, NSString, WCAccountLogoutLogic, WCAccountSwitchLogic, WCTableViewManager, WCTableViewNormalCellManager;
 
-@interface NewSettingViewController
+@interface NewSettingViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WCAccountSwitchLogic *m_switchLogic;

@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableDictionary, NSString;
 
-@interface MMMusicLyricService
+@interface MMMusicLyricService : NSObject
 {
     NSMutableDictionary *_infoDic;
     MMTimer *_timer;

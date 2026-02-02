@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MJTemplateSessionQueue, MMContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, OMJMaasCore;
 @protocol OS_dispatch_queue;
 
-@interface MJTemplateCoreManager
+@interface MJTemplateCoreManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_cleanClipBundleQueue;
     NSMutableSet *_finishedClipBundleRelativePathSet;

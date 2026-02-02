@@ -6,7 +6,7 @@
 @class NSString, WCRedEnvTextStateDetailViewController, WCRedEnvTextStateInfo;
 @protocol WCRedEnvTextStateDetailControlLogicDelegate;
 
-@interface WCRedEnvTextStateDetailControlLogic
+@interface WCRedEnvTextStateDetailControlLogic : NSObject
 {
     WCRedEnvTextStateInfo *_detailInfo;
     id <WCRedEnvTextStateDetailControlLogicDelegate> _delegate;

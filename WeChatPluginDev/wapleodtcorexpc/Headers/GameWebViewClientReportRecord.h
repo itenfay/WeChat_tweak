@@ -5,7 +5,7 @@
 
 @class NSNumber, NSString;
 
-@interface GameWebViewClientReportRecord
+@interface GameWebViewClientReportRecord : NSObject
 {
     _Bool _reportOnExit;
     _Bool _isReportNow;

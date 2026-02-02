@@ -5,7 +5,7 @@
 
 @class MMLiveColorfulLabel, NSMutableArray, UIImageView, UIView;
 
-@interface WCFinderLiveHomePageAggregationTextCard
+@interface WCFinderLiveHomePageAggregationTextCard : NSObject
 {
     NSMutableArray *_headInfoViews;
     UIView *_headInfoBgView;

@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSString;
 
-@interface CPushContact
+@interface CPushContact : NSObject
 {
     NSString *m_nsSource;
     _Bool m_bReaded;

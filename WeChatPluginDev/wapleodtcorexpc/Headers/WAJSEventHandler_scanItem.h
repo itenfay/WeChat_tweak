@@ -6,7 +6,7 @@
 @class NSString;
 @protocol IWACameraScanViewControllerHelper;
 
-@interface WAJSEventHandler_scanItem
+@interface WAJSEventHandler_scanItem : NSObject
 {
     id <IWACameraScanViewControllerHelper> _viewControllerHelper;
     NSString *_scanResult;

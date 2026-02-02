@@ -6,7 +6,7 @@
 @class MMTimer, MMUIActivityIndicatorView, MMUILabel, MMUIView, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView, WCCardDataCardInfo, WCCardDataCardTPInfo, WCCardDynamicCodeGenerator;
 @protocol WCCardDataSource, WCShareCardCodeViewDelegate;
 
-@interface WCShareCardCodeView
+@interface WCShareCardCodeView : NSObject
 {
     NSString *_shareUserName;
     WCCardDataCardInfo *_cardInfo;

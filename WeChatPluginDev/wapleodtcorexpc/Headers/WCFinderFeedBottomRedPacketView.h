@@ -5,7 +5,7 @@
 
 @class UIImageView;
 
-@interface WCFinderFeedBottomRedPacketView
+@interface WCFinderFeedBottomRedPacketView : NSObject
 {
     UIImageView *_topImageView;
 }

@@ -5,7 +5,7 @@
 
 @class MMUIImageView;
 
-@interface CircleToSearchLoadingView
+@interface CircleToSearchLoadingView : NSObject
 {
     MMUIImageView *_scanLineView;
 }

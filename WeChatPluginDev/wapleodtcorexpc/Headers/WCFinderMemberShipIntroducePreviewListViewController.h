@@ -6,7 +6,7 @@
 @class NSString, UILabel, UIView, WCFinderFeedFlowView, WCFinderMaskButton, WCFinderMemberShipPreviewListViewModel, WCFinderStreamProfileDragBarView;
 @protocol WCFinderMemberShipIntroducePreviewListViewControllerDelegate;
 
-@interface WCFinderMemberShipIntroducePreviewListViewController
+@interface WCFinderMemberShipIntroducePreviewListViewController : NSObject
 {
     id <WCFinderMemberShipIntroducePreviewListViewControllerDelegate> _previewDelegate;
     NSString *_finderUsername;

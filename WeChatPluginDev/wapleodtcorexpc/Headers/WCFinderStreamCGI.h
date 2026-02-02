@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, WCFinderStreamRequestParams;
 
-@interface WCFinderStreamCGI
+@interface WCFinderStreamCGI : NSObject
 {
     _Bool _isCancel;
     int _tabType;

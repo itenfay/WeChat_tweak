@@ -6,7 +6,7 @@
 @class EmojiInfoObj, EmoticonCustomManageAddLogic, EmoticonHalfScreenSendViewReportInfo, EmoticonStoreItem, ForwardMessageLogicController, MMUIActivityIndicatorView, NSString, PersonalDesigner, RichTextView, UIButton, UIImageView, UILabel;
 @protocol EmoticonHalfScreenSendViewDelegate;
 
-@interface EmoticonHalfScreenSendView
+@interface EmoticonHalfScreenSendView : NSObject
 {
     _Bool _shouldShowEntry;
     _Bool _isSendPrimary;

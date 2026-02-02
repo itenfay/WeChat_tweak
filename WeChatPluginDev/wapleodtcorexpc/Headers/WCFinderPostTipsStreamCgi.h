@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderPostTipsStreamCgi
+@interface WCFinderPostTipsStreamCgi : NSObject
 {
     _Bool _isPrefetch;
     int _scene;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextState3rdPartyH5Handler
+@interface TextState3rdPartyH5Handler : NSObject
 {
     _Bool _confidence;
     NSString *_URLString;

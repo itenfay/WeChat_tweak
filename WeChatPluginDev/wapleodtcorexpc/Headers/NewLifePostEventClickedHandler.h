@@ -5,7 +5,7 @@
 
 @class FinderEventInfo, NSString;
 
-@interface NewLifePostEventClickedHandler
+@interface NewLifePostEventClickedHandler : NSObject
 {
     FinderEventInfo *_selectedEvent;
 }

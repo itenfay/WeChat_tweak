@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface QBBeaconWupRequestPackage
+@interface QBBeaconWupRequestPackage : NSObject
 {
     BOOL _jcev2_p_0_r_platformId;
     BOOL _jcev2_p_7_r_encryType;

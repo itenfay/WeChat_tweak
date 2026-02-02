@@ -6,7 +6,7 @@
 @class MMCommonPickerView, MMFinderLiveBattleDurationItem, NSArray, NSString, UIView;
 @protocol MMFinderLiveConnectMicPkDurationSelectionPageSheetDelegate;
 
-@interface MMFinderLiveConnectMicPkDurationSelectionPageSheet
+@interface MMFinderLiveConnectMicPkDurationSelectionPageSheet : NSObject
 {
     id <MMFinderLiveConnectMicPkDurationSelectionPageSheetDelegate> _delegate;
     NSArray *_options;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AmountRemindPage, BusiF2FPlaceOrderResp, DrawLotteryResponse, ExposureInfo, ExposureInfoModifyResponse, GetLotteryResponse, MMTipsViewController, MMWebViewController, NSString, WCPayBizF2FPayCheckCgi, WCPayBizF2FPlaceOrderCgi, WCPayBizF2FZeroCallBackAutoRetryCgi, WCPayBizF2FZeroPayConfirmView, WCPayBusiF2FSucPageCgiWithRetry, WCPayBusiF2FUnlockFavorCgi, WCPayF2FDrawLotteryCgi, WCPayF2FGetLotteryCgi, WCPayF2FMiddlePageSubLogic, WCPayF2FModifyExposureCgi, WCPayGetZeroPayTokenCgi, WCPayPayMoneyLogic;
 @protocol WCPayBizF2FTransferControlLogicDelegate;
 
-@interface WCPayBizF2FTransferControlLogic
+@interface WCPayBizF2FTransferControlLogic : NSObject
 {
     _Bool _bHasPaySucc;
     _Bool _isModifyExposureInfo;

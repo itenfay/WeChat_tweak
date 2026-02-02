@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderGetLiveInfoReq_FinderGetLiveInfoSceneNotificationInfo, FinderGetLiveInfoReq_LiveADBypassInfo, NSString;
 
-@interface WCFinderGetLiveInfoCGI
+@interface WCFinderGetLiveInfoCGI : NSObject
 {
     unsigned int _scene;
     unsigned long long _liveId;

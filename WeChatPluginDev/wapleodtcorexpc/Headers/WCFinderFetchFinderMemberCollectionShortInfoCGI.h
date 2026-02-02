@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderFetchFinderMemberCollectionShortInfoCGI
+@interface WCFinderFetchFinderMemberCollectionShortInfoCGI : NSObject
 {
     NSString *_finderUsername;
     unsigned long long _collectionTopicId;

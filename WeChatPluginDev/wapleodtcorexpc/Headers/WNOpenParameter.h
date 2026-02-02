@@ -5,7 +5,7 @@
 
 @class CMessageWrap, FavoritesItem, FavoritesItemDataField, UINavigationController, WCDataItem;
 
-@interface WNOpenParameter
+@interface WNOpenParameter : NSObject
 {
     _Bool _bEditable;
     _Bool _bForbidShowMoreMenu;

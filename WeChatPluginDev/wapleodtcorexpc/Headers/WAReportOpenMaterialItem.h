@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportOpenMaterialItem
+@interface WAReportOpenMaterialItem : NSObject
 {
     unsigned int _action_type;
     unsigned int _scene_type;

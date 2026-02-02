@@ -5,7 +5,7 @@
 
 @class WCMediaItem;
 
-@interface WCMediaImageViewModel_WCMediaItem
+@interface WCMediaImageViewModel_WCMediaItem : NSObject
 {
     WCMediaItem *_mediaItem;
 }

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UIView, WCCommentViewFB, WCDataItem;
 @protocol ILinkEventExt, WCTimeLineCommentCellViewDelegate;
 
-@interface WCTimeLineCommentCellView
+@interface WCTimeLineCommentCellView : NSObject
 {
     long long _iSection;
     long long _iRow;

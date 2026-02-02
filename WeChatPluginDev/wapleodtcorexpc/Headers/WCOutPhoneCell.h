@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCOutPhoneCell
+@interface WCOutPhoneCell : NSObject
 {
     UILabel *_phoneLabelLabel;
     UILabel *_phoneNumLabel;

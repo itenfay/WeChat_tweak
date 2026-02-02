@@ -6,7 +6,7 @@
 @class NSArray, NSMutableArray;
 @protocol WAMenuHeaderTagsViewDelegate;
 
-@interface WAMenuHeaderTagsView
+@interface WAMenuHeaderTagsView : NSObject
 {
     id <WAMenuHeaderTagsViewDelegate> _delegate;
     long long _maxWidth;

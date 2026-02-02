@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCPagePathUnitConfigModel
+@interface WCPagePathUnitConfigModel : NSObject
 {
     NSString *_pageName;
     NSMutableArray *_businessParams;

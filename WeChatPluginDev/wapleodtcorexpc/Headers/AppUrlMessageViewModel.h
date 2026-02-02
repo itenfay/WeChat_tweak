@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIFont, UIImage;
 
-@interface AppUrlMessageViewModel
+@interface AppUrlMessageViewModel : NSObject
 {
     double m_titleHeight;
     double m_descHeight;

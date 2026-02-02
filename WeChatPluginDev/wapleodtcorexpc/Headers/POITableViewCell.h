@@ -6,7 +6,7 @@
 @class NSIndexPath, NSString, POITapGestureRecognizer, UIButton, UITableView, UIView;
 @protocol POITableViewCellDelegate;
 
-@interface POITableViewCell
+@interface POITableViewCell : NSObject
 {
     id <POITableViewCellDelegate> _actionDelegate;
     UITableView *_myTableView;

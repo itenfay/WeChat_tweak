@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVMutableComposition, AVMutableVideoComposition, CAGradientLayer, EVVideoPreviewBrowserView, EditImageCropGridView, EditImageCropOverlayView, EditImageCropToolBarView, EditImageCropToolBarViewModel, EditImageEmotionToolAttrView, EditImagePenToolAttrView, EditImageTextInputView, EditImageTextToolV2, EditVideoBGMView, EditVideoCompositionBrowserView, EditVideoCropView, EditVideoLogicController, EditVideoMusicController, EditVideoSecondCutPromotionButtonShadowWrapper, MMBGMSelectHalfScreenViewController, MMBGMSelectedConfig, MMLoadingView, MMMusicFadeOutLayer, MMTimer, MMUIButton, MMUIImageView, MMUIView, NSArray, NSMutableArray, NSString, RecommendedMusicInfo, UIImageView, UILabel, UIPanGestureRecognizer, UIScrollView, UIView, WCEditImageScrollView, WCEditLoadingModeButton, WCEditVideoShareLongVideoModel, WCEditVideoToolListDelegateProxy, WCEditViewControllerUIConfig, WCFinderTemplateMusicSelectEntranceView;
 @protocol WCEditVideoLayoutViewDelegate, WCFinderEditDataReportDelegate;
 
-@interface WCEditVideoLayoutView
+@interface WCEditVideoLayoutView : NSObject
 {
     MMUIImageView *_topBackgroundView;
     MMUIButton *_doneBtn;

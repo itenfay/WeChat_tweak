@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UILabel, WCBaseTextFieldItem, WCBizInfoGroup, WCBizTipView, WCPayCVVItem, WCPayCountryCodeAndPhoneNumberItem, WCPayCountryCodeItem, WCPayPhoneTextItem, WCPayValidDateItem;
 @protocol WCPayResetBalanceTelephoneViewControllerDelegate;
 
-@interface WCPayResetBalanceTelephoneViewController
+@interface WCPayResetBalanceTelephoneViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBizInfoGroup *m_group;

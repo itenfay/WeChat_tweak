@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WARealtimeDataOperationBufferPool
+@interface WARealtimeDataOperationBufferPool : NSObject
 {
     NSMutableArray *_immediatePriorityBuffer;
     NSMutableArray *_highPriorityBuffer;

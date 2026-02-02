@@ -5,7 +5,7 @@
 
 @class MMVoipCSMainWindow, MMVoipToastWindow, NSString, VideoVoipCSCallerView;
 
-@interface VoipCSUIManager
+@interface VoipCSUIManager : NSObject
 {
     MMVoipCSMainWindow *m_mainWindow;
     MMVoipToastWindow *m_voipCSToastWindow;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCUploader
+@interface WCUploader : NSObject
 {
     long long eventID;
     _Bool isCancelled;

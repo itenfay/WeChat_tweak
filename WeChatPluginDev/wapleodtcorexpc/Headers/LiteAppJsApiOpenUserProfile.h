@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface LiteAppJsApiOpenUserProfile
+@interface LiteAppJsApiOpenUserProfile : NSObject
 {
     NSDictionary *_param;
 }

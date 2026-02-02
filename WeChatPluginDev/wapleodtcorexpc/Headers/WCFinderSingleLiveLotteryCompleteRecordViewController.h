@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLotteryRecord, MMFinderLiveTaskId, MMLiveLotteryCompleteInfoHeaderView, MMTableView, MMUILabel, NSData, NSMutableArray, NSString, WCTimeLineFooterView;
 
-@interface WCFinderSingleLiveLotteryCompleteRecordViewController
+@interface WCFinderSingleLiveLotteryCompleteRecordViewController : NSObject
 {
     _Bool _isLeftBarItemCloseStyle;
     _Bool _isInLive;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebCanvasLayoutData
+@interface MMWebCanvasLayoutData : NSObject
 {
     NSString *_layoutStr;
     struct CGRect _frame;

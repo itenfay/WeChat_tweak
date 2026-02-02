@@ -6,7 +6,7 @@
 @class MMFinderLivePaymentSettingInputView, MMTableView, MMUIButton, MMUILabel, NSString, OrderedDictionary, UIView;
 @protocol MMFinderLivePaymentSettingViewDelegate;
 
-@interface MMFinderLivePaymentSettingView
+@interface MMFinderLivePaymentSettingView : NSObject
 {
     _Bool _forceDarkMode;
     unsigned int _chargeUnitPriceInWecoin;

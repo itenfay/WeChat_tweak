@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MiniRecTransitionController, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIScreenEdgePanGestureRecognizer, UIScrollView, UITableView, UIViewController, WCFinderLongVideoPlayerViewModel, WCFinderMegaVideoViewModel;
 @protocol WCFinderCommentBaseViewProtocol;
 
-@interface WCFinderLongVideoPlayViewController
+@interface WCFinderLongVideoPlayViewController : NSObject
 {
     _Bool _fromInPicture;
     _Bool _isRotating;

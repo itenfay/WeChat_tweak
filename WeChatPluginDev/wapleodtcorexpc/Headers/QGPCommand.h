@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QGPCommand
+@interface QGPCommand : NSObject
 {
     NSString *_function;
 }

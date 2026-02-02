@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class BaseMsgContentLogicController, ChatroomProfileView, EmoticonBoardView, MMGrowTextView, MMUILabel, MMUIViewController, NSArray, NSString, SharePreConfirmHeadView, SharePreConfirmSuccessView, UIButton, UIScrollView, UITapGestureRecognizer, UIView, WCGroupUndoneShareReport, WCInputController;
 @protocol SharePreConfirmSheetViewDelegate;
 
-@interface SharePreConfirmSheetView
+@interface SharePreConfirmSheetView : NSObject
 {
     NSString *m_nsLastTextViewText;
     SharePreConfirmSuccessView *m_successView;

@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSMutableArray, NSMutableDictionary, NSString, OauthScopeInfo, QRConnectAuthorizeResp, ScanCodeAuthorizeBaseViewController;
 
-@interface ScanCodeAuthorizeLoginMgr
+@interface ScanCodeAuthorizeLoginMgr : NSObject
 {
     _Bool _isBanModifyAvatar;
     unsigned int _avatarLimit;

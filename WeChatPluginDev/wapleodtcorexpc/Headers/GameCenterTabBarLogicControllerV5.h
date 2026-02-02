@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface GameCenterTabBarLogicControllerV5
+@interface GameCenterTabBarLogicControllerV5 : NSObject
 {
     CDUnknownBlockType _tabItemCompleteBlock;
 }

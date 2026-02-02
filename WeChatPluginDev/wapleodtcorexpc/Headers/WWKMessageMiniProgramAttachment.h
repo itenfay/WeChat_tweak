@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WWKMessageMiniProgramAttachment
+@interface WWKMessageMiniProgramAttachment : NSObject
 {
     NSString *_userName;
     NSString *_path;

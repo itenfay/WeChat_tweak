@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveFlowRetryAction
+@interface MMLiveFlowRetryAction : NSObject
 {
     unsigned long long _maximumRetryCount;
     CDUnknownBlockType _backoffDelayFunction;

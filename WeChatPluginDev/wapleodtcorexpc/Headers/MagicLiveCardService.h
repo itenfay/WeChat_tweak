@@ -5,7 +5,7 @@
 
 @class NSString, _TtC6WeChat16MagicLiveCardBiz;
 
-@interface MagicLiveCardService
+@interface MagicLiveCardService : NSObject
 {
     _TtC6WeChat16MagicLiveCardBiz *_biz;
 }

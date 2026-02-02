@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WARefreshAutoFooter
+@interface WARefreshAutoFooter : NSObject
 {
     _Bool _automaticallyRefresh;
     double _triggerAutomaticallyRefreshPercent;

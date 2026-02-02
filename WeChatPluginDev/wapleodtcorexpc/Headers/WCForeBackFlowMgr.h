@@ -6,7 +6,7 @@
 @class MemoryMappedKV, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCForeBackFlowMgr
+@interface WCForeBackFlowMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *queue;
     unsigned int pid;

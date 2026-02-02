@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderModBlockPosterCGI
+@interface WCFinderModBlockPosterCGI : NSObject
 {
     _Bool _setBlock;
     CDUnknownBlockType _successful;

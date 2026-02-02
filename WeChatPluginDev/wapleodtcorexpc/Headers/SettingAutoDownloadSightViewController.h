@@ -5,7 +5,7 @@
 
 @class DelaySwitchSettingLogic, MMTableViewInfo, NSIndexPath;
 
-@interface SettingAutoDownloadSightViewController
+@interface SettingAutoDownloadSightViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     unsigned int curImgSettingValue;

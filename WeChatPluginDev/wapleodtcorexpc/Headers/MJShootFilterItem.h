@@ -5,7 +5,7 @@
 
 @class NSString, NSURL, OMJMaterialInfo;
 
-@interface MJShootFilterItem
+@interface MJShootFilterItem : NSObject
 {
     float _intensity;
     OMJMaterialInfo *_material;

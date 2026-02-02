@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveLotteryFillClaimInfoRequest_ClaimInfo, NSData, NSString;
 
-@interface WCFinderLiveLotteryFillClaimInfoCGI
+@interface WCFinderLiveLotteryFillClaimInfoCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

@@ -6,7 +6,7 @@
 @class FavoritesItemDB, NSData, NSObject;
 @protocol FavoritesSyncMgrDelegate, OS_dispatch_queue;
 
-@interface FavoritesSyncMgr
+@interface FavoritesSyncMgr : NSObject
 {
     NSData *_syncKeyBuffer;
     FavoritesItemDB *_favItemDB;

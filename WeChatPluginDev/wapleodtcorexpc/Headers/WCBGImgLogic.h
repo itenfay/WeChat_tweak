@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, WCDataItem, WCLogicMgr;
 @protocol WCBGImgLogicNotity;
 
-@interface WCBGImgLogic
+@interface WCBGImgLogic : NSObject
 {
     id <WCBGImgLogicNotity> m_delFacade;
     WCDataItem *m_lastUploadingDataItem;

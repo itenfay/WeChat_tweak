@@ -5,7 +5,7 @@
 
 @class NSArray, UIView;
 
-@interface WCHeaderActionSheet
+@interface WCHeaderActionSheet : NSObject
 {
     NSArray *_headerArr;
     UIView *_headerView;

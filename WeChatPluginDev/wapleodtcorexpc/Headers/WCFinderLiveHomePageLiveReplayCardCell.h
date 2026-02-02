@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RichTextView, UIView, WCFinderAuthInfoIconView, WCFinderFeedStaticCoverCollectionViewCell, WCFinderHeadImageView, WCFinderLiveGenericFeedVM;
 @protocol WCFinderLiveHomePageLiveReplayCardCellDelegate;
 
-@interface WCFinderLiveHomePageLiveReplayCardCell
+@interface WCFinderLiveHomePageLiveReplayCardCell : NSObject
 {
     _Bool _viewInitialized;
     id <WCFinderLiveHomePageLiveReplayCardCellDelegate> _delegate;

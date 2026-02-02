@@ -5,7 +5,7 @@
 
 @class NEHotspotNetwork, NSString;
 
-@interface WAHotspotWiFiObject
+@interface WAHotspotWiFiObject : NSObject
 {
     _Bool _secure;
     _Bool _autoJoined;

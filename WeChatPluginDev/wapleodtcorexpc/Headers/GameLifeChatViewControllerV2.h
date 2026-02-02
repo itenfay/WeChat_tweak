@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocation, GCBaseCellModel, GCBaseScrollView, GCCollectionView, GCCollectionViewManager, GCCollectionViewSectionModel, GCGroupSectionModel, GCGroupServer, GCMyGroupCellExpandBtnView, GCViewHolderCellModel, GameChatNoticeAndMessageView, GetCanJoinChatroomResponse, GetFirstEnterInfoResponse, GetMyChatroomResponse, MyChatroomNotice, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIButton, UIView;
 
-@interface GameLifeChatViewControllerV2
+@interface GameLifeChatViewControllerV2 : NSObject
 {
     _Bool _isInTab;
     _Bool _useAsChildVc;

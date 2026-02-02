@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonCustomCreateLogic, MMFinderHandOffItem, MMScrollViewProxy, MMTipsViewController, MMUILabel, NSIndexPath, NSMutableDictionary, NSString, PAGView, UIImage, UIImageView, UILabel, UITableView, UITapGestureRecognizer, UIView, UIViewController, WCFinderCustomPaging, WCFinderFeedDragUpDislikeController, WCFinderFeedFollowVM, WCFinderFeedFriendsLikeListViewController, WCFinderFeedListBannderView, WCFinderLandscapeReportInfo, WCFinderOpenTimelineParams, WCFinderPlayRateOperationView, WCFinderPlayRateOperationViewV3, WCFinderPullDownRefreshHeaderView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet, WCFinderTLRegardfulAuthorView, WCStoryTouchToDismissView, _TtC6WeChat25WCFinderFeedFastSlipLogic;
 @protocol WCFinderCommentBaseViewProtocol, WCFinderFollowViewControllerDelegate;
 
-@interface WCFinderFullFeedFollowViewController
+@interface WCFinderFullFeedFollowViewController : NSObject
 {
     _Bool _postFeedInsertMachineTab;
     _Bool _hasReportCreateEvent;

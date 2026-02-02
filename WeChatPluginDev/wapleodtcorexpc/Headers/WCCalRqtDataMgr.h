@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCalRqtDataMgr
+@interface WCCalRqtDataMgr : NSObject
 {
 }
 

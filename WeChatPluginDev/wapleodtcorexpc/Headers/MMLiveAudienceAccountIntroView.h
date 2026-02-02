@@ -6,7 +6,7 @@
 @class CAShapeLayer, MMFinderLiveTaskId, MMUILabel, NSString, UIButton, UILabel, UIView, UIVisualEffectView;
 @protocol MMLiveAudienceAccountIntroViewDelegate;
 
-@interface MMLiveAudienceAccountIntroView
+@interface MMLiveAudienceAccountIntroView : NSObject
 {
     id <MMLiveAudienceAccountIntroViewDelegate> _operationDelegate;
     MMFinderLiveTaskId *_taskId;

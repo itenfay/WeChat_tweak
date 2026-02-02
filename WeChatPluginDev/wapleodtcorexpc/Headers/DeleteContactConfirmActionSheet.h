@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, UIButton;
 
-@interface DeleteContactConfirmActionSheet
+@interface DeleteContactConfirmActionSheet : NSObject
 {
     CDUnknownBlockType _confirmBlock;
     CContact *_contact;

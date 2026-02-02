@@ -5,7 +5,7 @@
 
 @class EmoticonCustomManageAddLogic, NSData, NSString, UIImage, UIImageView, UIView;
 
-@interface EmoticonPickViewController
+@interface EmoticonPickViewController : NSObject
 {
     NSData *m_imageData;
     UIImage *m_image;

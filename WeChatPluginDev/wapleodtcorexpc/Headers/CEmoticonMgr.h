@@ -5,7 +5,7 @@
 
 @class EmoticonDataDB, EmoticonSendRecordList, NSMutableSet, NSRecursiveLock, NSString;
 
-@interface CEmoticonMgr
+@interface CEmoticonMgr : NSObject
 {
     EmoticonDataDB *m_oEmoticonDB;
     NSMutableSet *_savingCustomEmotThumbs;

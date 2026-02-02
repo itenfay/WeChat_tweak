@@ -6,7 +6,7 @@
 @class FixTitleColorButton, GameNoticeAdditionalInfoView, GameNoticeInfo, MMWebImageView, NSString, UIButton, UILabel;
 @protocol GameNoticeHalfScreenViewDelegate;
 
-@interface GameNoticeHalfScreenView
+@interface GameNoticeHalfScreenView : NSObject
 {
     GameNoticeInfo *_noticeInfo;
     id <GameNoticeHalfScreenViewDelegate> _delegate;

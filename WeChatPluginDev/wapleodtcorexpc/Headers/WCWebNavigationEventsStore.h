@@ -5,7 +5,7 @@
 
 @class NSURL, WKNavigation, WKWebView;
 
-@interface WCWebNavigationEventsStore
+@interface WCWebNavigationEventsStore : NSObject
 {
     WKWebView *_curWebView;
     WKNavigation *_curNavigation;

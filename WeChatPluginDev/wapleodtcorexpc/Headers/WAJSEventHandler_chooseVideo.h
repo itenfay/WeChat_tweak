@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CaptureVideoInfo, MMLoadingView, NSString, UINavigationController;
 
-@interface WAJSEventHandler_chooseVideo
+@interface WAJSEventHandler_chooseVideo : NSObject
 {
     UINavigationController *m_oVideoPicker;
     CaptureVideoInfo *m_oVideoInfo;

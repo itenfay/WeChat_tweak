@@ -5,7 +5,7 @@
 
 @class MMTipsViewController, NSString, OpenApiParameter, OpenSDKAuthorizeLoginManager, UINavigationController;
 
-@interface NewAuthHandler
+@interface NewAuthHandler : NSObject
 {
     OpenApiParameter *m_parameter;
     UINavigationController *m_oAuthViewController;

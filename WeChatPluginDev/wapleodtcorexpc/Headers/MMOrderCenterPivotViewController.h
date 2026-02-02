@@ -6,7 +6,7 @@
 @class NSArray, NSString, UIScrollView, UIView;
 @protocol MMOrderCenterTabNumberingDataProvider;
 
-@interface MMOrderCenterPivotViewController
+@interface MMOrderCenterPivotViewController : NSObject
 {
     NSArray *_items;
     UIScrollView *_tabScrollView;

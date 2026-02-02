@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UITextField, WCPayControlData, WCPayWebImageView;
 @protocol WCPayQRCodeRewardCodeViewDelegate;
 
-@interface WCPayQRCodeRewardCodeView
+@interface WCPayQRCodeRewardCodeView : NSObject
 {
     id <WCPayQRCodeRewardCodeViewDelegate> _delegate;
     WCPayControlData *_controlData;

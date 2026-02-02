@@ -5,7 +5,7 @@
 
 @class NSString, SearchCgiConfigData;
 
-@interface SearchCgiConfigMgr
+@interface SearchCgiConfigMgr : NSObject
 {
     SearchCgiConfigData *_cgiConfig;
     _Bool _bProtectRequst;

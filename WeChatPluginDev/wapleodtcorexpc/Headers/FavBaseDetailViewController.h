@@ -5,7 +5,7 @@
 
 @class FavoritesItem, MMTableView, NSString;
 
-@interface FavBaseDetailViewController
+@interface FavBaseDetailViewController : NSObject
 {
     MMTableView *m_tableView;
     FavoritesItem *m_favItem;

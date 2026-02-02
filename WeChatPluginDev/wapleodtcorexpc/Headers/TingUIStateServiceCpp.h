@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingUIStateServiceCpp
+@interface TingUIStateServiceCpp : NSObject
 {
 }
 

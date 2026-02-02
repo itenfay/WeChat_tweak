@@ -5,7 +5,7 @@
 
 @class MMCPLabel, MMHeadImageView, MMUIView, WCStoryComment;
 
-@interface WCStoryFriendVisitTableViewCell
+@interface WCStoryFriendVisitTableViewCell : NSObject
 {
     WCStoryComment *_comment;
     MMHeadImageView *_headView;

@@ -5,7 +5,7 @@
 
 @class MMLRUCache, NSString;
 
-@interface EditVideoBGMCommon
+@interface EditVideoBGMCommon : NSObject
 {
     MMLRUCache *_urlToFilePathMap;
 }

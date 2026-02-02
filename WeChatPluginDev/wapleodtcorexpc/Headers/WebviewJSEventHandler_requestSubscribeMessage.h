@@ -5,7 +5,7 @@
 
 @class BrandTemplateMsgAuthLogic, JSEvent, NSString;
 
-@interface WebviewJSEventHandler_requestSubscribeMessage
+@interface WebviewJSEventHandler_requestSubscribeMessage : NSObject
 {
     JSEvent *_event;
     BrandTemplateMsgAuthLogic *_logic;

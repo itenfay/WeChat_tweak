@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
-@interface WCShortVideoToolbarResultPreviewBottomView
+@interface WCShortVideoToolbarResultPreviewBottomView : NSObject
 {
     MMUIButton *_cancalBtn;
     MMUIButton *_confirmBtn;

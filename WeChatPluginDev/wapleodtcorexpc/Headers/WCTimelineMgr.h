@@ -6,7 +6,7 @@
 @class MyWCDB, NSArray, NSCache, NSDate, NSMutableArray, NSMutableDictionary, NSString, WCAdvertiseDataHelper, WCAdvertiseLogicMgr, WCMicroMerchantFeedsMgr, WCMicroMerchantFoldMgr, WCTimelineDataProvider;
 @protocol WCTimelineDelegate;
 
-@interface WCTimelineMgr
+@interface WCTimelineMgr : NSObject
 {
     NSCache *_dataItemCacheForPrediction;
     _Bool _hasUpdateHead;

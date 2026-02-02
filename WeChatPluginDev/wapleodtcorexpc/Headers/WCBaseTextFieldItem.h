@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCUITextField;
 
-@interface WCBaseTextFieldItem
+@interface WCBaseTextFieldItem : NSObject
 {
     WCUITextField *m_textField;
     int m_iMaxInputLen;

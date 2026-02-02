@@ -6,7 +6,7 @@
 @class MMTextView, MMUIView, NSString, UIButton, UITextField, WCPayNoticeItemView, WCPayParamInvalidTipView;
 @protocol WCPayQRCodeRewardEditMoneyViewControllerDelegate;
 
-@interface WCPayQRCodeRewardEditMoneyViewController
+@interface WCPayQRCodeRewardEditMoneyViewController : NSObject
 {
     _Bool _bIsCheckBoxSelected;
     id <WCPayQRCodeRewardEditMoneyViewControllerDelegate> _delegate;

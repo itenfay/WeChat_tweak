@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface BTRecoFlowTopicFooterCell
+@interface BTRecoFlowTopicFooterCell : NSObject
 {
     UILabel *_hintLabel;
     UIImageView *_arrowImageView;

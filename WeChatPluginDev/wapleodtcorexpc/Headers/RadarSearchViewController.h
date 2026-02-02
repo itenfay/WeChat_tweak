@@ -5,7 +5,7 @@
 
 @class NSString, RadarSearchView;
 
-@interface RadarSearchViewController
+@interface RadarSearchViewController : NSObject
 {
     RadarSearchView *m_radarView;
 }

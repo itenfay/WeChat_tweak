@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCTDatabase;
 
-@interface MusicHistoryManager
+@interface MusicHistoryManager : NSObject
 {
     WCTDatabase *_database;
     NSArray *_approvedAppidList;

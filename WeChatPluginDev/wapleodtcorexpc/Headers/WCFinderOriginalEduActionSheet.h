@@ -6,7 +6,7 @@
 @class FinderOriginalTypeItem, MMCommonActionSheetPicker, MMUIButton, NSArray, NSString, UIView;
 @protocol WCFinderOriginalEduActionSheetDelegate;
 
-@interface WCFinderOriginalEduActionSheet
+@interface WCFinderOriginalEduActionSheet : NSObject
 {
     _Bool _agreementSelect;
     _Bool _isLoadingOriginal;

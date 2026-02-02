@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandNewXMLNotificationMsgInfo
+@interface BrandNewXMLNotificationMsgInfo : NSObject
 {
     NSString *_title;
     NSString *_webPageUrl;

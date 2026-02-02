@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, NotifyMsgDB;
 
-@interface ServiceNotifyMsgMgr
+@interface ServiceNotifyMsgMgr : NSObject
 {
     _Bool _isServerNotifyBoxExposed;
     NSMutableDictionary *_dicClientReqInfo;

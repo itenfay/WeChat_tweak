@@ -5,7 +5,7 @@
 
 @class MMUIWindow, NSString, WCNetworkMediaPlayer, WCNetworkMediaStreamVideoInfo;
 
-@interface WebviewJSEventHandler_streamingVideoPlay
+@interface WebviewJSEventHandler_streamingVideoPlay : NSObject
 {
     MMUIWindow *m_fullScreenWindow;
     WCNetworkMediaPlayer *m_player;

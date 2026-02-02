@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface ShakeTvHistoryViewController
+@interface ShakeTvHistoryViewController : NSObject
 {
     MMTableView *_tableView;
     NSMutableArray *_arrTvItem;

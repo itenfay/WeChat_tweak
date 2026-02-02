@@ -5,7 +5,7 @@
 
 @class NSString, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderGroupMemberViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderGroupMemberViewController
+@interface WCFinderGroupMemberViewController : NSObject
 {
     UITableView *_tableView;
     WCFinderRefreshTableFooterView *_footerView;

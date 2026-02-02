@@ -5,7 +5,7 @@
 
 @class MMKCountryCallingCodeViewOnSelectCallback, NSString, UITextField, WCPayCountryCodeItem;
 
-@interface KindaCountryCallingCodeView
+@interface KindaCountryCallingCodeView : NSObject
 {
     UITextField *m_textField;
     MMKCountryCallingCodeViewOnSelectCallback *m_callback;

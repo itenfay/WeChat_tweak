@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageForwardAndEditLogicController, ForwardMessageLogicController, MMScrollView, NSArray, NSMutableArray, NSSet, NSString, ShareDataToOpenSDKController, UINavigationController, UIPageControl, UIView, WCImageFullScreenButtonsContainerView, WCImageFullScreenViewContainer, WCMomentsInvisibleTipsView, WCMomentsPageContext;
 @protocol WCImageFullScreenViewControllerDelegate, WCImageFullScreenViewControllerNavigatingDelegate;
 
-@interface WCImageFullScreenViewController
+@interface WCImageFullScreenViewController : NSObject
 {
     UIView *m_fakeScreenView;
     NSArray *m_arrOriginView;

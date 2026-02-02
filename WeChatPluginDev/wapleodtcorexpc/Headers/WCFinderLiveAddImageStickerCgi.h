@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface WCFinderLiveAddImageStickerCgi
+@interface WCFinderLiveAddImageStickerCgi : NSObject
 {
     NSMutableArray *_stickers;
     CDUnknownBlockType _successBlock;

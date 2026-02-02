@@ -5,7 +5,7 @@
 
 @class MMImage;
 
-@interface WCMediaImageViewModel_MMImage
+@interface WCMediaImageViewModel_MMImage : NSObject
 {
     MMImage *_mmImage;
 }

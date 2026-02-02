@@ -6,7 +6,7 @@
 @class MJTransitionInspectorViewModel, MMUIActivityIndicatorView, NSString, UICollectionView;
 @protocol MJTransitionInspectorViewDelegate;
 
-@interface MJTransitionInspectorView
+@interface MJTransitionInspectorView : NSObject
 {
     id <MJTransitionInspectorViewDelegate> _delegate;
     UICollectionView *_collectionView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayHtml5WalletLogic
+@interface WCPayHtml5WalletLogic : NSObject
 {
 }
 

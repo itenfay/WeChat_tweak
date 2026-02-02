@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCListCPWarningCellView
+@interface WCListCPWarningCellView : NSObject
 {
 }
 

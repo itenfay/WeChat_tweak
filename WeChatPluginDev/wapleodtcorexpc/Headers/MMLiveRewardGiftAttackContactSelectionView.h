@@ -6,7 +6,7 @@
 @class MMCPLabel, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMTableView, MMUIView, NSString;
 @protocol MMLiveRewardGiftAttackContactSelectionLogicDelegate;
 
-@interface MMLiveRewardGiftAttackContactSelectionView
+@interface MMLiveRewardGiftAttackContactSelectionView : NSObject
 {
     MMFinderLiveTaskId *_taskId;
     MMTableView *_contactTableView;

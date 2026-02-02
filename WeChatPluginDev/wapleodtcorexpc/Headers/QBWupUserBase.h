@@ -5,7 +5,7 @@
 
 @class NSArray, NSData, NSString;
 
-@interface QBWupUserBase
+@interface QBWupUserBase : NSObject
 {
     _Bool jcev2_p_8_o_bSave;
     short jcev2_p_13_o_iMCC;

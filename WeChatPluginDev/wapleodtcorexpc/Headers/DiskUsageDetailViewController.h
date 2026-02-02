@@ -5,7 +5,7 @@
 
 @class MMFolder, MMTableView, NSString;
 
-@interface DiskUsageDetailViewController
+@interface DiskUsageDetailViewController : NSObject
 {
     _Bool _bPro;
     _Bool _showForMyself;

@@ -5,7 +5,7 @@
 
 @class MMLoadingView, NSString, UIButton;
 
-@interface MMMSReportViewController
+@interface MMMSReportViewController : NSObject
 {
     UIButton *m_uploadButton;
     UIButton *m_nextButton;

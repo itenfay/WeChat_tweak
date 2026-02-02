@@ -5,7 +5,7 @@
 
 @class MMFinderLiveGameTeamInfo, MMFinderLiveTaskId, MMUIImageView, MMUILabel, NSString, NSURL, UIView;
 
-@interface MMLiveGameJoinTeamShowGiftView
+@interface MMLiveGameJoinTeamShowGiftView : NSObject
 {
     _Bool _showReddot;
     _Bool _checkStatsShowed;

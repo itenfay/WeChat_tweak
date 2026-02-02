@@ -5,7 +5,7 @@
 
 @class NSMutableArray, WAEJJavaScriptView, WAEJSharedOpenGLContext, WAEJTexture;
 
-@interface WAEJCanvasContextSkia2D
+@interface WAEJCanvasContextSkia2D : NSObject
 {
     unsigned int _offscreenFbo;
     WAEJJavaScriptView *_scriptView;

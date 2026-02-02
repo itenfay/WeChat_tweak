@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMFinderLiveKTVUserHeatInfo
+@interface MMFinderLiveKTVUserHeatInfo : NSObject
 {
     NSString *_liveMeetId;
     unsigned long long _anchorHeatValue;

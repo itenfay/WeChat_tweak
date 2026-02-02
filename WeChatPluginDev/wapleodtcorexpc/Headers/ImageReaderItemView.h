@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, CALayer, MMUILabel, NSString, UIImageView;
 
-@interface ImageReaderItemView
+@interface ImageReaderItemView : NSObject
 {
     UIImageView *m_imageIcon;
     MMUILabel *m_imageNumLabel;

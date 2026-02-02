@@ -5,7 +5,7 @@
 
 @protocol WCAdConventionalHalfScreenCustomBackgroundViewDelegate;
 
-@interface WCAdConventionalHalfScreenCustomBackgroundView
+@interface WCAdConventionalHalfScreenCustomBackgroundView : NSObject
 {
     id <WCAdConventionalHalfScreenCustomBackgroundViewDelegate> _delegate;
 }

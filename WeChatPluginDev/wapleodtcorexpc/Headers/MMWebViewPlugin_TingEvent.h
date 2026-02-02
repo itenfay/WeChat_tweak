@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebViewPlugin_TingEvent
+@interface MMWebViewPlugin_TingEvent : NSObject
 {
     _Bool _isNotifyTingStateChange;
     _Bool _lastVituralPlayerForegroundState;

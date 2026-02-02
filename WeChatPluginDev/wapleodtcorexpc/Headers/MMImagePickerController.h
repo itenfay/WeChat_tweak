@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageLogicController, EditVideoLogicController, MMAssetPickerController, MMFinderLiveImagePickerParams, MMImagePickerControllerPreviewReportObject, NSArray, NSMutableDictionary, NSNumber, NSString, WCFinderEditOptionModel, WCFinderPickerTemplateParams;
 @protocol MMAssetPickerUserActionTipsProtocol, MMImagePickerControllerDelegate;
 
-@interface MMImagePickerController
+@interface MMImagePickerController : NSObject
 {
     _Bool _isOpenSendOriginVideo;
     _Bool _canSendOriginImage;

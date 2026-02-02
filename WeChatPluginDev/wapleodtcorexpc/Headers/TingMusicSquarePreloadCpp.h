@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface TingMusicSquarePreloadCpp
+@interface TingMusicSquarePreloadCpp : NSObject
 {
 }
 

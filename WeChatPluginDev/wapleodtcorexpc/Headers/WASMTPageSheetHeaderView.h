@@ -5,7 +5,7 @@
 
 @class UIButton, UILabel;
 
-@interface WASMTPageSheetHeaderView
+@interface WASMTPageSheetHeaderView : NSObject
 {
     UIButton *_backButton;
     UILabel *_titleLabel;

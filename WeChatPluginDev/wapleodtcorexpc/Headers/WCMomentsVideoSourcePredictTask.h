@@ -5,7 +5,7 @@
 
 @class NSDate, NSNumber, WCDataItem, WCMediaItem;
 
-@interface WCMomentsVideoSourcePredictTask
+@interface WCMomentsVideoSourcePredictTask : NSObject
 {
     WCDataItem *_dataItem;
     WCMediaItem *_mediaItem;

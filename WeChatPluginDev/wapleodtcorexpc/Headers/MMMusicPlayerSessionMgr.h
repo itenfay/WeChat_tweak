@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMusicPlayerSessionMgr
+@interface MMMusicPlayerSessionMgr : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface WCFinderBothSideIconButton
+@interface WCFinderBothSideIconButton : NSObject
 {
     _Bool _revertLayout;
     _Bool _hiddenImageView;

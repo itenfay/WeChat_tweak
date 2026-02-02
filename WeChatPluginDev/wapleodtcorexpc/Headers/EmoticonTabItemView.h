@@ -5,7 +5,7 @@
 
 @class MMBadgeView, MMWebImageView, NSString;
 
-@interface EmoticonTabItemView
+@interface EmoticonTabItemView : NSObject
 {
     _Bool _needConvertToGrayImage;
     _Bool _hasRedPoint;

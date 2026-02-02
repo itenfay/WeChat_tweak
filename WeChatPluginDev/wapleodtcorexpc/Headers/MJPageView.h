@@ -6,7 +6,7 @@
 @class MJPageViewConfig, MJPageViewContentView, MJPageViewLayout, MJPageViewTitleView, NSString;
 @protocol MJPageViewDataSource, MJPageViewDelegate;
 
-@interface MJPageView
+@interface MJPageView : NSObject
 {
     id <MJPageViewDelegate> _delegate;
     id <MJPageViewDataSource> _dataSource;

@@ -5,7 +5,7 @@
 
 @class NSString, UIColor;
 
-@interface VoIPSignalMessageViewModel
+@interface VoIPSignalMessageViewModel : NSObject
 {
 }
 

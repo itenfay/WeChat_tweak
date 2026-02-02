@@ -5,7 +5,7 @@
 
 @class MMFinderLiveClockCountdownView, MMLiveViewHiddenStatusContainer, PAGView, UILabel, UIView;
 
-@interface MMFinderLiveConnectMicFocusedUserInfoView
+@interface MMFinderLiveConnectMicFocusedUserInfoView : NSObject
 {
     PAGView *_volumeAnimationView;
     UIView *_heatValueLabelContainerView;

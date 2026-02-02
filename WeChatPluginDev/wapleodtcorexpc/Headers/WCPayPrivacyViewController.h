@@ -6,7 +6,7 @@
 @class GetPayUserDutyResp, NSString, NSURLRequest, WCPayGetPayUserDutyCgi, WCPayPrivacyToolView, WCPaySetPayUserDutyCgi;
 @protocol WCPayPrivacyViewControllerDelegate;
 
-@interface WCPayPrivacyViewController
+@interface WCPayPrivacyViewController : NSObject
 {
     id <WCPayPrivacyViewControllerDelegate> _m_privacyDelegate;
     WCPaySetPayUserDutyCgi *_m_setDutyCgi;

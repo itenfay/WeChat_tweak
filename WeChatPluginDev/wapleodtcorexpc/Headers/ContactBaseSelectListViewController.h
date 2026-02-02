@@ -6,7 +6,7 @@
 @class MMTableView, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, WCSearcher;
 @protocol ContactSelectListViewControllerDelegate;
 
-@interface ContactBaseSelectListViewController
+@interface ContactBaseSelectListViewController : NSObject
 {
     NSMutableArray *m_arrAllKey;
     _Bool m_bSearching;

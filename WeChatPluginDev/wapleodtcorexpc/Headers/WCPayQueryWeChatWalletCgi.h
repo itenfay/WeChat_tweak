@@ -5,7 +5,7 @@
 
 @protocol WCPayQueryWeChatWalletCgiDelegate;
 
-@interface WCPayQueryWeChatWalletCgi
+@interface WCPayQueryWeChatWalletCgi : NSObject
 {
     _Bool _m_isServerResponse;
     id <WCPayQueryWeChatWalletCgiDelegate> _m_delegate;

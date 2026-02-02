@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGiftWallInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIImageView, UIScrollView, UIView;
 
-@interface MMFinderLiveWishListDetailForAnchorPanel
+@interface MMFinderLiveWishListDetailForAnchorPanel : NSObject
 {
     _Bool _isAchieved;
     _Bool _isActive;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CreateChatRoomReq
+@interface CreateChatRoomReq : NSObject
 {
     NSString *groupId;
     NSString *chatRoomName;

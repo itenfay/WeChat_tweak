@@ -5,7 +5,7 @@
 
 @class EmoticonBoardView, GCInputAtModel, GCSelfUnTouchableView, GCWebInputToolView, GameChatRoomViewController, GameSkStoreController, NSDictionary, NSMutableDictionary, NSString, UIControl;
 
-@interface WebviewJSEventHandler_gameCenterFacade
+@interface WebviewJSEventHandler_gameCenterFacade : NSObject
 {
     double _collapseChildHeight;
     double _expandChildHeight;

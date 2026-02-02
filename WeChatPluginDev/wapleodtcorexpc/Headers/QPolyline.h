@@ -5,7 +5,7 @@
 
 @class QIndoorInfo, WAMapPolyLineData;
 
-@interface QPolyline
+@interface QPolyline : NSObject
 {
     QIndoorInfo *_indoorInfo;
 }

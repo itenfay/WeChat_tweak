@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface GCReportSessionIdManager
+@interface GCReportSessionIdManager : NSObject
 {
     NSString *_sessionId;
     double _sessionIdGenTime;

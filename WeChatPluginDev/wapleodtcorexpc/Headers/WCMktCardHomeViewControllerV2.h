@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, WCMktCardHomeLogicControllerV2;
 
-@interface WCMktCardHomeViewControllerV2
+@interface WCMktCardHomeViewControllerV2 : NSObject
 {
     WCMktCardHomeLogicControllerV2 *_logicController;
     MMTableView *_tableView;

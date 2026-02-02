@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, NSString, WCAdSliderCardView;
 
-@interface WCTimeLineAdFinderTopicView
+@interface WCTimeLineAdFinderTopicView : NSObject
 {
     WCAdSliderCardView *_sliderCard;
     MMUIButton *_topicInfoBar;

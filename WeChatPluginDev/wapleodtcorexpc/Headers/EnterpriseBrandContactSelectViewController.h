@@ -6,7 +6,7 @@
 @class CContact, MMScrollView, MMTableView, NSArray, NSString;
 @protocol EnterpriseBrandContactSelectViewControllerDelegate;
 
-@interface EnterpriseBrandContactSelectViewController
+@interface EnterpriseBrandContactSelectViewController : NSObject
 {
     CContact *_mainBrandContact;
     NSArray *_arySubContact;

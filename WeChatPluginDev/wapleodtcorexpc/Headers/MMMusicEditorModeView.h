@@ -6,7 +6,7 @@
 @class UILabel;
 @protocol MMMusicEditorModeViewDelegate;
 
-@interface MMMusicEditorModeView
+@interface MMMusicEditorModeView : NSObject
 {
     id <MMMusicEditorModeViewDelegate> _delegate;
     UILabel *_dotLabel;

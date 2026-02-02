@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCFinderPinchContentView
+@interface WCFinderPinchContentView : NSObject
 {
     _Bool _isTriggerBySetZoomAnimated;
     double _scaleBeforeZoom;

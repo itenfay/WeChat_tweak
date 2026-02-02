@@ -6,7 +6,7 @@
 @class ContactsDataLogic, MMTableView, NSMutableDictionary, NSString, UIView, WCDataSearcher;
 @protocol JSApiSelectSessionViewControllerDelegate;
 
-@interface JSApiSelectSessionViewController
+@interface JSApiSelectSessionViewController : NSObject
 {
     id <JSApiSelectSessionViewControllerDelegate> m_delegate;
     MMTableView *m_tableView;

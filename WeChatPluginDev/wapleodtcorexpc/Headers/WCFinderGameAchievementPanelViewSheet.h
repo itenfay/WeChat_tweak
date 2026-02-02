@@ -5,7 +5,7 @@
 
 @class AchievementInfo, MMUIButton, NSString, UICollectionView, UIPageControl, UIView;
 
-@interface WCFinderGameAchievementPanelViewSheet
+@interface WCFinderGameAchievementPanelViewSheet : NSObject
 {
     AchievementInfo *_achievementInfo;
     UICollectionView *_collectionView;

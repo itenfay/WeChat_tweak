@@ -5,7 +5,7 @@
 
 @class NSString, SightIconView, UIImageView, UILabel, UIView, YYAsyncImageView;
 
-@interface GCImageCell
+@interface GCImageCell : NSObject
 {
     YYAsyncImageView *m_imageView;
     UIImageView *m_imageDownloadFailView;

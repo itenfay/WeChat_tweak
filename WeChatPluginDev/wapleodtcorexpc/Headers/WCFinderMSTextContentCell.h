@@ -5,7 +5,7 @@
 
 @class NSString, RichTextView, UILabel;
 
-@interface WCFinderMSTextContentCell
+@interface WCFinderMSTextContentCell : NSObject
 {
     RichTextView *_textView;
     UILabel *_closureLabel;

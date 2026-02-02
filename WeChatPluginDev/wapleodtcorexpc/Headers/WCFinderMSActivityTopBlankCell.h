@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCFinderMSActivityTopBlankCell
+@interface WCFinderMSActivityTopBlankCell : NSObject
 {
     UIView *_separatorLine;
 }

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveSensitiveDataItem, RichTextView;
 
-@interface MMFinderLiveSensitiveItemTableViewCell
+@interface MMFinderLiveSensitiveItemTableViewCell : NSObject
 {
     RichTextView *_sensitiveTextView;
     MMFinderLiveSensitiveDataItem *_sensitiveDataItem;

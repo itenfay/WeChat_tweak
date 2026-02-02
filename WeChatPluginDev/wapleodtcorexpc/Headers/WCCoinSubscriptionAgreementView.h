@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCCoinSubscriptionAgreementDetailView, WecoinSubscriptionAgreementHalfPage;
 
-@interface WCCoinSubscriptionAgreementView
+@interface WCCoinSubscriptionAgreementView : NSObject
 {
     WecoinSubscriptionAgreementHalfPage *_pageData;
     CDUnknownBlockType _clickConfirmCallback;

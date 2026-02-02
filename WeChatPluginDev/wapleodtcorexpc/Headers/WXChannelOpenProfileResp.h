@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXChannelOpenProfileResp
+@interface WXChannelOpenProfileResp : NSObject
 {
     NSString *_extMsg;
 }

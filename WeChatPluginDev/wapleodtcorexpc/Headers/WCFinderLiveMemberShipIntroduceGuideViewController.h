@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveContentVM, MMFinderLiveMemberTipsFullScreenView, MMFinderLiveTask;
 
-@interface WCFinderLiveMemberShipIntroduceGuideViewController
+@interface WCFinderLiveMemberShipIntroduceGuideViewController : NSObject
 {
     CDUnknownBlockType _becomeMemberConfirmCallback;
     MMFinderLiveContentVM *_liveContentVM;

@@ -6,7 +6,7 @@
 @class EmoticonStoreItem;
 @protocol StoreEmotionExchangeEmotionPackCgiDelegate;
 
-@interface StoreEmotionExchangeEmotionPackCgi
+@interface StoreEmotionExchangeEmotionPackCgi : NSObject
 {
     EmoticonStoreItem *m_storeItem;
     int _exchangeScence;

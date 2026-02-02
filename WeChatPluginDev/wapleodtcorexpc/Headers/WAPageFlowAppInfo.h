@@ -5,7 +5,7 @@
 
 @class NSString, WAPageFlowObject, WAPageFlowSessionInfo;
 
-@interface WAPageFlowAppInfo
+@interface WAPageFlowAppInfo : NSObject
 {
     unsigned int _serviceAppType;
     unsigned int _preEntranceWebviewID;

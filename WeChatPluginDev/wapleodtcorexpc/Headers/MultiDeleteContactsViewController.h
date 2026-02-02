@@ -6,7 +6,7 @@
 @class CContact, ContactBatchModifyLogic, MMTableView, MMUIButton, MMUIView, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MultiDeleteContactsViewControllerDelegate;
 
-@interface MultiDeleteContactsViewController
+@interface MultiDeleteContactsViewController : NSObject
 {
     unsigned long long _type;
     NSDictionary *_dicSearchMatchTips;

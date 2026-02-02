@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAEJBindingCanvasContextWebGL2
+@interface WAEJBindingCanvasContextWebGL2 : NSObject
 {
     NSMutableDictionary *samplers;
     NSMutableDictionary *queries;

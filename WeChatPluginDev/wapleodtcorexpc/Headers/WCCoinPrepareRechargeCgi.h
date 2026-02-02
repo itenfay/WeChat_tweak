@@ -6,7 +6,7 @@
 @class PrepareWecoinRechargeRequest, PrepareWecoinRechargeResponse;
 @protocol WCCoinPrepareRechargeCgiDelegate;
 
-@interface WCCoinPrepareRechargeCgi
+@interface WCCoinPrepareRechargeCgi : NSObject
 {
     PrepareWecoinRechargeResponse *_response;
     id <WCCoinPrepareRechargeCgiDelegate> _delegate;

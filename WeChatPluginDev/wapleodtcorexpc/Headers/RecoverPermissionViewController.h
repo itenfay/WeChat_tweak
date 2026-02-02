@@ -5,7 +5,7 @@
 
 @class MMActivityIndicator, UIButton, UILabel;
 
-@interface RecoverPermissionViewController
+@interface RecoverPermissionViewController : NSObject
 {
     int m_percent;
     MMActivityIndicator *m_loadingView;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSMutableString, NSString, NSURL;
 
-@interface FavWebCacheContext
+@interface FavWebCacheContext : NSObject
 {
     NSURL *_currentUrl;
     NSMutableString *_htmlString;

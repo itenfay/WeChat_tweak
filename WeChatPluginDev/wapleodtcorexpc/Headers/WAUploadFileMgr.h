@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WAUploadFileMgr
+@interface WAUploadFileMgr : NSObject
 {
     NSMutableDictionary *_dicAppID2UploadHandler;
     NSObject<OS_dispatch_queue> *_workerQueue;

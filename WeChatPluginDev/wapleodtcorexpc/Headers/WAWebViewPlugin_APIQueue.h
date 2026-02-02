@@ -6,7 +6,7 @@
 @class NSMutableArray, NSObject;
 @protocol WAWebViewPlugin_ApiQueueProtocol;
 
-@interface WAWebViewPlugin_APIQueue
+@interface WAWebViewPlugin_APIQueue : NSObject
 {
     NSMutableArray *_arrEvent;
     NSObject<WAWebViewPlugin_ApiQueueProtocol> *_runningEvent;

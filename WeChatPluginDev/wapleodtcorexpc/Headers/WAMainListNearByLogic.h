@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, WAMainListNearByLocationLogic, WANearByInfo;
 @protocol WAMainListNearByLogicDelegate;
 
-@interface WAMainListNearByLogic
+@interface WAMainListNearByLogic : NSObject
 {
     _Bool _clicked;
     _Bool _isFirstTimeFetch;

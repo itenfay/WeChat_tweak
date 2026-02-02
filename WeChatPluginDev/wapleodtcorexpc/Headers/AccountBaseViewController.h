@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AccountBaseViewController
+@interface AccountBaseViewController : NSObject
 {
     unsigned int m_uiAccountID;
     NSString *m_unbindOKTip;

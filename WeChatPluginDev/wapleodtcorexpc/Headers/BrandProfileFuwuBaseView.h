@@ -5,7 +5,7 @@
 
 @protocol BrandProfileFuwuBaseViewDelegate;
 
-@interface BrandProfileFuwuBaseView
+@interface BrandProfileFuwuBaseView : NSObject
 {
     _Bool _shouldHideTopDividingLine;
     id <BrandProfileFuwuBaseViewDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface FTSBrandContactSectionController
+@interface FTSBrandContactSectionController : NSObject
 {
     NSArray *_contacts;
 }

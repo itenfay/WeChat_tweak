@@ -6,7 +6,7 @@
 @class FlutterInactiveTextInput, NSDictionary, NSString, UITextInputPasswordRules, UITextPosition, UITextRange, UIView;
 @protocol UITextInputDelegate, UITextInputTokenizer;
 
-@interface TextInputSemanticsObject
+@interface TextInputSemanticsObject : NSObject
 {
     FlutterInactiveTextInput *_inactive_text_input;
 }

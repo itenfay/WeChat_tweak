@@ -5,7 +5,7 @@
 
 @class LocationRetriever, MMLocatingCoordinateLogic, MMUILabel, NSString, SystemAuthBizInfo, _TtC6WeChat24SystemAuthCapabilityInfo;
 
-@interface SystemAuthSettingSheetView
+@interface SystemAuthSettingSheetView : NSObject
 {
     _TtC6WeChat24SystemAuthCapabilityInfo *_capabilityInfo;
     SystemAuthBizInfo *_bizInfo;

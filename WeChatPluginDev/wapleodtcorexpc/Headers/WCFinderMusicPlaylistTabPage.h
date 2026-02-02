@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderMusicPlaylistTabPage
+@interface WCFinderMusicPlaylistTabPage : NSObject
 {
 }
 

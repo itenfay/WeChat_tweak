@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WXGChatSyncService
+@interface WXGChatSyncService : NSObject
 {
     unsigned int m_pcVersion;
     unsigned int m_macVersion;

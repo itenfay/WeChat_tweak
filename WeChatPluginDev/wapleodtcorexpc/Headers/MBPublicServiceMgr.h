@@ -5,7 +5,7 @@
 
 @class MagicBrushService, NSMapTable, NSString;
 
-@interface MBPublicServiceMgr
+@interface MBPublicServiceMgr : NSObject
 {
     NSMapTable *_extServicesMap;
     MagicBrushService *_magicbrush;

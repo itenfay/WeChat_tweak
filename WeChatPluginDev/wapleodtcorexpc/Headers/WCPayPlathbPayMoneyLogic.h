@@ -6,7 +6,7 @@
 @class NSString, WCPayPayMoneyLogic;
 @protocol WCPayPlathbPayMoneyLogicDelegate;
 
-@interface WCPayPlathbPayMoneyLogic
+@interface WCPayPlathbPayMoneyLogic : NSObject
 {
     _Bool _bIsPayMoneySucc;
     id <WCPayPlathbPayMoneyLogicDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class NSArray, NSString, UICollectionView;
 @protocol WCFinderSelectPanelViewDelegate;
 
-@interface WCFinderSelectPanelView
+@interface WCFinderSelectPanelView : NSObject
 {
     id <WCFinderSelectPanelViewDelegate> _delegate;
     UICollectionView *_collectionView;

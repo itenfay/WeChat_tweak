@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCHomepageStarDataProvider
+@interface WCHomepageStarDataProvider : NSObject
 {
     NSString *fpHash;
     _Bool isWorking;

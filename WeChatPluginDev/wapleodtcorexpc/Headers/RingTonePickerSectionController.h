@@ -6,7 +6,7 @@
 @class NSString, RingToneDetail, RingToneRecommendReporter_23604;
 @protocol RingTonePickerSectionControllerDelegate;
 
-@interface RingTonePickerSectionController
+@interface RingTonePickerSectionController : NSObject
 {
     unsigned long long _scene;
     RingToneRecommendReporter_23604 *_reporter;

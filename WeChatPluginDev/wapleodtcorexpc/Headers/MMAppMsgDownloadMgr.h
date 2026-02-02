@@ -5,7 +5,7 @@
 
 @class MMAppMsgDownloadDataBase, NSString;
 
-@interface MMAppMsgDownloadMgr
+@interface MMAppMsgDownloadMgr : NSObject
 {
     _Bool _shouldStopClean;
     MMAppMsgDownloadDataBase *_database;

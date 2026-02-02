@@ -5,7 +5,7 @@
 
 @class NSString, NSThread;
 
-@interface MMXNetImageApplication
+@interface MMXNetImageApplication : NSObject
 {
     NSThread *_thread;
     shared_ptr_772c274f _model;

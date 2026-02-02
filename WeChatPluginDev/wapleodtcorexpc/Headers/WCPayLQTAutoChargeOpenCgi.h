@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTAutoChargeOpenCgiDelegate;
 
-@interface WCPayLQTAutoChargeOpenCgi
+@interface WCPayLQTAutoChargeOpenCgi : NSObject
 {
     id <WCPayLQTAutoChargeOpenCgiDelegate> _cgiDelegate;
 }

@@ -5,7 +5,7 @@
 
 @class MMActivityIndicator, UIImageView;
 
-@interface WCTimeLineHeaderView
+@interface WCTimeLineHeaderView : NSObject
 {
     MMActivityIndicator *m_reflashImageView;
     UIImageView *m_tipBkg;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC9WeAppCore32WAReportCapsuleMutationEventItem
+@interface _TtC9WeAppCore32WAReportCapsuleMutationEventItem : NSObject
 {
     MISSING_TYPE *action;
     MISSING_TYPE *type;

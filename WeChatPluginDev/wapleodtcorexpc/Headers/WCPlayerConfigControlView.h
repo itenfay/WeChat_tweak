@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSObject, NSString, SightIconView, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WCC2CPlayerProgressBar, WCPlayerConfig;
 @protocol WCPlayerConfigDelegate;
 
-@interface WCPlayerConfigControlView
+@interface WCPlayerConfigControlView : NSObject
 {
     _Bool _fullScreen;
     _Bool _shrink;

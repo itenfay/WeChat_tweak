@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface MFRoamBtn
+@interface MFRoamBtn : NSObject
 {
     unsigned long long m_notifyCode;
     NSString *_lastImageName;

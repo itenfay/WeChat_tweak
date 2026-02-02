@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, StoreEmotionDownloadLogicObject, StoreEmotionFetchFollowedDesignersUpdateLogic, StoreEmotionRecoverLogicObject;
 
-@interface StoreEmotionRecoverMgr
+@interface StoreEmotionRecoverMgr : NSObject
 {
     unsigned int _wwanAutoDownloadThreshold;
     unsigned long long _scene;

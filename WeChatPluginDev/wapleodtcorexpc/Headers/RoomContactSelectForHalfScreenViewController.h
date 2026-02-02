@@ -6,7 +6,7 @@
 @class CContact, ContactsItemView, MMTableView, MMUIButton, MMUISearchBar, MultiSelectContactsInChatRoomReport, NSMutableArray, NSMutableDictionary, NSString, NewContactsSearchPanelView, OrderedDictionary, SearchHelpDataItem, UIView, WCSearchBar, _TtC6WeChat13DNDReportItem;
 @protocol RoomContactSelectDelegate;
 
-@interface RoomContactSelectForHalfScreenViewController
+@interface RoomContactSelectForHalfScreenViewController : NSObject
 {
     id <RoomContactSelectDelegate> m_delegate;
     SearchHelpDataItem *m_searchHelpDataItem;

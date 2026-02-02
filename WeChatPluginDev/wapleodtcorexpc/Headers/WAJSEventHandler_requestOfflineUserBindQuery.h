@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_requestOfflineUserBindQuery
+@interface WAJSEventHandler_requestOfflineUserBindQuery : NSObject
 {
 }
 

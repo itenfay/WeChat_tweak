@@ -5,7 +5,7 @@
 
 @class JSEvent, StoreEmoticonTopicProxyLogic;
 
-@interface WebviewJSEventHandler_openEmoticonTopicList
+@interface WebviewJSEventHandler_openEmoticonTopicList : NSObject
 {
     JSEvent *m_event;
     StoreEmoticonTopicProxyLogic *_proxyLogic;

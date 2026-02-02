@@ -6,7 +6,7 @@
 @class MMHeadImageView, ShakeGetItem, UIImageView, UILabel, UIView;
 @protocol shakeSingleViewDelegate;
 
-@interface ShakeSingleView
+@interface ShakeSingleView : NSObject
 {
     UIView *m_bkgView;
     UIImageView *m_indicatorImageView;

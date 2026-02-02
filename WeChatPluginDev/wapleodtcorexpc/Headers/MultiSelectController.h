@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CContact, ForwardMessageLogicController, MMPageSheetBaseView, MsgDataSaveLogic, NSMutableArray, NSString;
 @protocol MultiSelectContollerDelegate;
 
-@interface MultiSelectController
+@interface MultiSelectController : NSObject
 {
     NSString *m_nsChatUserName;
     NSMutableArray *m_arrSelectMsg;

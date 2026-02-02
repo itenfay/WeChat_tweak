@@ -5,7 +5,7 @@
 
 @class FavAudioRecorder, MMTimer, NSString;
 
-@interface WNAudioMgr
+@interface WNAudioMgr : NSObject
 {
     int _recordStatus;
     FavAudioRecorder *_recorder;

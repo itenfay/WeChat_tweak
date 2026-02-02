@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayReporter
+@interface WCPayReporter : NSObject
 {
     _Bool _switchEnabled;
     _Bool _sessionStartedFromVC;

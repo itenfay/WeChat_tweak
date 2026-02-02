@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveResourceFetcherCacheWritebackFlowAction
+@interface MMLiveResourceFetcherCacheWritebackFlowAction : NSObject
 {
 }
 

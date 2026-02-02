@@ -6,7 +6,7 @@
 @class MMImageBrowseView, MMUILabel, NSString, UIImage, UINavigationController, UIView, WCImageTranslateLogic;
 @protocol WCTranslateImgViewControllerDelegate;
 
-@interface WCTranslateImgViewController
+@interface WCTranslateImgViewController : NSObject
 {
     UIImage *_translateImage;
     _Bool _popOrDismissWithFadeOutAnimation;

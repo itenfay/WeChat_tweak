@@ -6,7 +6,7 @@
 @class MAVVideoComposition, MAVVideoCompositionPlayer, NSString;
 @protocol EditVideoCompositionBrowserViewDelegate;
 
-@interface EditVideoCompositionBrowserView
+@interface EditVideoCompositionBrowserView : NSObject
 {
     _Bool _isPlayingBeforeEnterBackground;
     id <EditVideoCompositionBrowserViewDelegate> _delegate;

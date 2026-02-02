@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSMutableArray, NSMutableDictionary, NSString, UIViewController;
 
-@interface ForwardMessageMgr
+@interface ForwardMessageMgr : NSObject
 {
     ForwardMessageLogicController *m_forwardLogicController;
     UIViewController *m_forwardFromViewController;

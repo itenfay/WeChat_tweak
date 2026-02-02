@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class ButtonAttachManager, FixTitleColorButtonChainModel, MMUIActivityIndicatorView, NSMutableDictionary, NSMutableSet, UIColor, UIView;
 
-@interface FixTitleColorButton
+@interface FixTitleColorButton : NSObject
 {
     NSMutableSet *m_titleColorStateSet;
     NSMutableSet *m_backgroundImageStateSet;

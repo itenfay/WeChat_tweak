@@ -5,7 +5,7 @@
 
 @class NSString, WCSnsOperation;
 
-@interface WCSnsLocalCacheData
+@interface WCSnsLocalCacheData : NSObject
 {
     unsigned int _updateTime;
     NSString *_itemId;

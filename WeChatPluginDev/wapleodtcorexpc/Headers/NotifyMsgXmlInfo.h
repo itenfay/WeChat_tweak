@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface NotifyMsgXmlInfo
+@interface NotifyMsgXmlInfo : NSObject
 {
     _Bool _bHadRead;
     _Bool _bLiveEnd;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class DataReportConfiguration, DataReportPageContext, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIViewController;
 
-@interface DataReportService
+@interface DataReportService : NSObject
 {
     NSNumber *m_localSwitch;
     NSNumber *m_cloudSwitch;

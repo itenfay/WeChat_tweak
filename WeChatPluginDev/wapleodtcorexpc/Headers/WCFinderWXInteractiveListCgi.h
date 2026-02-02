@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderWXInteractiveListCgi
+@interface WCFinderWXInteractiveListCgi : NSObject
 {
     long long _flag;
     NSData *_lastBuffer;

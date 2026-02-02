@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface WAMainListNearByInvalidViewController
+@interface WAMainListNearByInvalidViewController : NSObject
 {
     unsigned long long _invalidType;
     UIView *_contentView;

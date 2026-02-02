@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureVideoPreviewLayer, CameraReflectDevice, FaceRecogAVRecorder, FaceRecogFlashParamProcessor, MMTimer, NSString;
 
-@interface FaceRecogFlashHandler
+@interface FaceRecogFlashHandler : NSObject
 {
     _Bool _isRecogingFace;
     _Bool _isPipelineInited;

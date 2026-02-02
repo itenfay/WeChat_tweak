@@ -6,7 +6,7 @@
 @class EmoticonStoreReportInfo, MMBadgeView, UIColor;
 @protocol DesignerPortfolioCellDelegate;
 
-@interface DesignerPortfolioCell
+@interface DesignerPortfolioCell : NSObject
 {
     _Bool _showDownloadView;
     id <DesignerPortfolioCellDelegate> _delegate;

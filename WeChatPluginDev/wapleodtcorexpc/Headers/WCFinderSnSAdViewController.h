@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIView, WCFinderFeedListView, WCFinderNearByDescriptionTableViewCell, WCFinderShareListReportModel, WCFinderSnSAdListViewModel;
 
-@interface WCFinderSnSAdViewController
+@interface WCFinderSnSAdViewController : NSObject
 {
     WCFinderShareListReportModel *_reportModel;
     WCFinderFeedListView *_feedListView;

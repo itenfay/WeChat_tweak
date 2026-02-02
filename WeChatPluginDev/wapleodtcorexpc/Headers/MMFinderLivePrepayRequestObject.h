@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMFinderLivePrepayRequestObject
+@interface MMFinderLivePrepayRequestObject : NSObject
 {
     unsigned int _rewardType;
 }

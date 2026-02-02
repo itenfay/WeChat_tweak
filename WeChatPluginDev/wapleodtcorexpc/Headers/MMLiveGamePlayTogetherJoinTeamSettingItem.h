@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLiveGamePlayTogetherJoinTeamSettingItem
+@interface MMLiveGamePlayTogetherJoinTeamSettingItem : NSObject
 {
     unsigned int _curJoinTeamMode;
     unsigned int _curCoinValue;

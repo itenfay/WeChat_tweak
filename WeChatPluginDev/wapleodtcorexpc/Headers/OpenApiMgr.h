@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AppAddCardHandler, AppJumpLogicHelper, AppRefreshTokenErrorHandler, BaseOpenSDKHandler, ChooseCardHandler, ChooseInvoiceHandler, FinderChannelStartLiveHandler, JumpToBizWebviewHandler, MMFullScreenShadeViewController, MemoryMappedKV, NSMutableDictionary, NSString, NSURL, NewAuthHandler, OnGotAppMsgHandler, OpenBusinessViewHandler, OpenBusinessWebViewHandler, OpenCustomerServiceHandler, OpenFinderBindHandler, OpenFinderEventHandler, OpenFinderFeedHandler, OpenFinderLiveHandler, OpenFinderProfileHandler, OpenFinderShareVideoHandler, OpenMiniProgramHandler, OpenProfileHandler, OpenRankListHandler, OpenTempSessionHandler, OpenTypeWebViewHandler, OpenWebviewHandler, SMSAddCardHandler, SendAppMsgHandler, SendAppMsgHandlerV2, SendAppMsgToFavoritesHandler, SendAppMsgToStateHandler, SendAppMsgToWCHandler, WCTDatabase, WCTTable, WeAppTransferAPIHandler, WeChatHBHandler, WeChatOfflinePayHandler, WeChatPayHandler;
 
-@interface OpenApiMgr
+@interface OpenApiMgr : NSObject
 {
     SendAppMsgHandler *m_oSendAppMsgHandler;
     SendAppMsgHandlerV2 *m_oSendAppMsgHandlerV2;

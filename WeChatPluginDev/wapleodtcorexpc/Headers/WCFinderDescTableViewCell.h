@@ -6,7 +6,7 @@
 @class MMTimer, UIButton, UIImageView, UILabel, UIView, WCFinderFeedContentVM;
 @protocol WCFinderDescTableViewCellDelegate;
 
-@interface WCFinderDescTableViewCell
+@interface WCFinderDescTableViewCell : NSObject
 {
     id <WCFinderDescTableViewCellDelegate> _delegate;
     WCFinderFeedContentVM *_contentVM;

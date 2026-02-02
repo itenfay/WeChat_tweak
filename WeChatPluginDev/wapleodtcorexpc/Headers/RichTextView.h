@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMRichTextCoverView, NSArray, NSMutableArray, NSRecursiveLock, NSString, TextStyleAttributeObj, UIColor, UIFont, UIImage, UITouch;
 @protocol ILinkEventExt, RichTextLayoutDelegate;
 
-@interface RichTextView
+@interface RichTextView : NSObject
 {
     NSMutableArray *_arrParserObjects;
     _Bool _bWholeField;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GCGroupSectionModel
+@interface GCGroupSectionModel : NSObject
 {
     NSString *_groupName;
 }

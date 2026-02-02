@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingPlayListListenerCpp
+@interface TingPlayListListenerCpp : NSObject
 {
 }
 

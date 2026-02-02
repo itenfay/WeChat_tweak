@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLivePayRequestObject, NSMutableDictionary, NSString;
 
-@interface MMFinderLivePayMgr
+@interface MMFinderLivePayMgr : NSObject
 {
     NSMutableDictionary *_requestId2PayRequests;
     MMFinderLivePayRequestObject *_currentBuyCoinPayRequest;

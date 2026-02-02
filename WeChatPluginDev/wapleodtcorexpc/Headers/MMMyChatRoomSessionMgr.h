@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMMyChatRoomSessionMgr
+@interface MMMyChatRoomSessionMgr : NSObject
 {
     _Bool _hasPreLoadCache;
     NSMutableDictionary *_dicMyChatTimeInfo;

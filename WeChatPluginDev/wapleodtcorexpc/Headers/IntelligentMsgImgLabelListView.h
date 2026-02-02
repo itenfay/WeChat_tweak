@@ -6,7 +6,7 @@
 @class MMUIScrollView, NSArray, OrderedDictionary;
 @protocol IntelligentMsgImgLabelListViewDelegate;
 
-@interface IntelligentMsgImgLabelListView
+@interface IntelligentMsgImgLabelListView : NSObject
 {
     MMUIScrollView *m_scrollView;
     OrderedDictionary *m_dicLabelButtonInfo;

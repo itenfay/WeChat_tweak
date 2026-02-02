@@ -6,7 +6,7 @@
 @class MMAcceptAgreementCommonHeadView, MMTableView, MMTableViewInfo, MMUILabel, MMUITextField, NSString, SettingModifyAliasLogic, UIButton, UIFont;
 @protocol SettingModifyAliasViewControllerDelegate;
 
-@interface SettingModifyAliasInputViewController
+@interface SettingModifyAliasInputViewController : NSObject
 {
     UIButton *m_forgetPasswordButton;
     MMUITextField *m_tfAlias;

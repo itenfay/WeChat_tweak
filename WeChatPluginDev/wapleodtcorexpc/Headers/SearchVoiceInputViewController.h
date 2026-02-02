@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMTipsViewController, MMUILabel, NSMutableArray, NSMutableDictionary, NSString, StreamVoiceInputControlView, StreamVoiceInputLogic, StreamVoiceInputPrepareView, UIButton, UIImageView, UILabel, UIView;
 @protocol SearchVoiceInputViewControllerDelegate;
 
-@interface SearchVoiceInputViewController
+@interface SearchVoiceInputViewController : NSObject
 {
     NSMutableArray *_displayDataArray;
     unsigned long long _longClickTime;

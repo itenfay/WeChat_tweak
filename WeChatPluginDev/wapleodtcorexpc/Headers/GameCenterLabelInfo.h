@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterLabelInfo
+@interface GameCenterLabelInfo : NSObject
 {
     NSString *_labelName;
     NSString *_labelBgColor;

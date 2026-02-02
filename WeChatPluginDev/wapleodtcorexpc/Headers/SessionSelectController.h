@@ -6,7 +6,7 @@
 @class CContact, ContactSelectDropDownHalfScreenView, CreateChatLogic, MMTipsViewController, MultiSelectContactsInChatRoomReport, MultiSelectContactsViewController, NSDictionary, NSMutableArray, NSObject, NSString, NewContactsSearchPanelView, SessionSelectView, UIColor, UIView;
 @protocol SessionSelectControllerDelegate;
 
-@interface SessionSelectController
+@interface SessionSelectController : NSObject
 {
     long long m_iSessionType;
     id <SessionSelectControllerDelegate> m_delegate;

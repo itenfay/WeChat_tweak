@@ -5,7 +5,7 @@
 
 @class NSString, WCAccountForgetPasswordControlLogic;
 
-@interface MMForgetPasswordHandler
+@interface MMForgetPasswordHandler : NSObject
 {
     WCAccountForgetPasswordControlLogic *_forgetPwdLogic;
 }

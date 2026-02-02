@@ -5,7 +5,7 @@
 
 @class EmoticonLensIconDownloader, EmoticonLensInfoBatchCgi, EmoticonLensListCgi, EmoticonLensLocalData, NSString;
 
-@interface EmoticonLensMgr
+@interface EmoticonLensMgr : NSObject
 {
     EmoticonLensLocalData *_localData;
     EmoticonLensListCgi *_lensListCgi;

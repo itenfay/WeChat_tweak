@@ -6,7 +6,7 @@
 @class PersonalDesigner, UIButton, UILabel;
 @protocol EmoticonLensDesignerViewDelegate;
 
-@interface EmoticonLensDesignerView
+@interface EmoticonLensDesignerView : NSObject
 {
     id <EmoticonLensDesignerViewDelegate> _delegate;
     UILabel *_tipLabel;

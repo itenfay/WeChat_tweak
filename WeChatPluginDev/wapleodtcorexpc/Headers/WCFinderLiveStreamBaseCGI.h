@@ -5,7 +5,7 @@
 
 @class FinderClientStatus, FinderLbsTabTipsInfo, FinderLiveBeforeJoinLiveRoomStatus, FinderLiveClientStatus, NSData, NSMutableArray, NSString, WCFinderLiveTabInfo, WCFinderRedDotCtrlInfo;
 
-@interface WCFinderLiveStreamBaseCGI
+@interface WCFinderLiveStreamBaseCGI : NSObject
 {
     int _fromScene;
     int _commentScene;

@@ -5,7 +5,7 @@
 
 @class NSMutableData, NSString;
 
-@interface LiteAppAACRecorder
+@interface LiteAppAACRecorder : NSObject
 {
     unsigned int _recordPacket;
     unsigned int _pcmBufferPacket;

@@ -6,7 +6,7 @@
 @class NSString, UIButton;
 @protocol IWARichTextViewHelper;
 
-@interface WAAuthPageSheetProtocolView
+@interface WAAuthPageSheetProtocolView : NSObject
 {
     UIButton *_checkButton;
     id <IWARichTextViewHelper> _richTextHelper;

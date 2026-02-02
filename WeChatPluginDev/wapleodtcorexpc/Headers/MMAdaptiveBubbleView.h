@@ -5,7 +5,7 @@
 
 @class MMAdaptiveBubbleParams, MMAdaptiveBubbleShapeView, UIView;
 
-@interface MMAdaptiveBubbleView
+@interface MMAdaptiveBubbleView : NSObject
 {
     UIView *_mainPartContentView;
     MMAdaptiveBubbleParams *_parames;

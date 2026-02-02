@@ -6,7 +6,7 @@
 @class CameraScannerViewWrapper, NSRecursiveLock, NSString, UIImage;
 @protocol NewQRCodeScannerDelegate;
 
-@interface NewQRCodeScanner
+@interface NewQRCodeScanner : NSObject
 {
     _Bool oneDMode;
     _Bool decoding;

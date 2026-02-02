@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSPointerArray, NSString;
 
-@interface MBPublicService
+@interface MBPublicService : NSObject
 {
     _Bool _invalid;
     _Bool _isPrepared;

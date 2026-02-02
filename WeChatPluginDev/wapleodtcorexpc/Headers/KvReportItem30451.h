@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem30451
+@interface KvReportItem30451 : NSObject
 {
     unsigned int _blueLinkRedirectionType;
     unsigned int _opType;

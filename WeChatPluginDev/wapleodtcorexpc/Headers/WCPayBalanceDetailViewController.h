@@ -6,7 +6,7 @@
 @class MMUIButton, NSDictionary, NSString, RichTextView, TimeoutNumber, UIButton, UIImageView, UILabel, UIView, WCActionSheet, WCPayNoticeItemView, WCPayWebImageView;
 @protocol WCPayBalanceDetailViewControllerDelegate;
 
-@interface WCPayBalanceDetailViewController
+@interface WCPayBalanceDetailViewController : NSObject
 {
     WCActionSheet *m_actionSheet;
     id <WCPayBalanceDetailViewControllerDelegate> m_delegate;

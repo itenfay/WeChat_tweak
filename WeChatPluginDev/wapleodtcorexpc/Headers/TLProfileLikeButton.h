@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
-@interface TLProfileLikeButton
+@interface TLProfileLikeButton : NSObject
 {
     _Bool _isLiked;
     CDUnknownBlockType _tapBlock;

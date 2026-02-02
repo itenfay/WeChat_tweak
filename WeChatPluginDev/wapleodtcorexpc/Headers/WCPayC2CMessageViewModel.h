@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WCPayC2CMessageViewModel
+@interface WCPayC2CMessageViewModel : NSObject
 {
     _Bool _hasGetFullCoverInfoDetail;
 }

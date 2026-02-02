@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class RichTextView, UIButton, UIImageView, UILabel;
 @protocol WCFinderFinderSettingCloseEduViewControllerDelegate;
 
-@interface WCFinderFinderSettingCloseEduViewController
+@interface WCFinderFinderSettingCloseEduViewController : NSObject
 {
     CDUnknownBlockType _closeBlock;
     id <WCFinderFinderSettingCloseEduViewControllerDelegate> _delegate;

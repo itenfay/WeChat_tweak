@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdHalfScreenLiteAppModel
+@interface WCAdHalfScreenLiteAppModel : NSObject
 {
     NSString *_appId;
     NSString *_pid;

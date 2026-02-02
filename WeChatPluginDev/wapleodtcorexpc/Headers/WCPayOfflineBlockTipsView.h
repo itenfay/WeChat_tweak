@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCPayOfflinePayBlockLayer;
 @protocol WCPayOfflinePayBlockTipsViewDelegate;
 
-@interface WCPayOfflineBlockTipsView
+@interface WCPayOfflineBlockTipsView : NSObject
 {
     id <WCPayOfflinePayBlockTipsViewDelegate> _delegate;
     WCPayOfflinePayBlockLayer *_viewData;

@@ -6,7 +6,7 @@
 @class MMUIButton, WCDataItem;
 @protocol WCAdConventionalHalfScreenMediaViewDelegate;
 
-@interface WCAdConventionalHalfScreenMediaBaseView
+@interface WCAdConventionalHalfScreenMediaBaseView : NSObject
 {
     id <WCAdConventionalHalfScreenMediaViewDelegate> _delegate;
     long long _visibleType;

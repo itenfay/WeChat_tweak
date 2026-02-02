@@ -6,7 +6,7 @@
 @class MMWebImageView, NSMutableArray, UIButton, UIImageView, UILabel;
 @protocol EmoticonBoardIPMergeTipViewDelegate;
 
-@interface EmoticonBoardIPMergeTipView
+@interface EmoticonBoardIPMergeTipView : NSObject
 {
     id <EmoticonBoardIPMergeTipViewDelegate> _delegate;
     double _bottomInset;

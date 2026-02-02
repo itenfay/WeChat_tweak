@@ -5,7 +5,7 @@
 
 @class RichTextView, UILabel, WCFinderFeedStaticCoverView;
 
-@interface WCFinderModHistoryCardView
+@interface WCFinderModHistoryCardView : NSObject
 {
     WCFinderFeedStaticCoverView *_coverView;
     RichTextView *_longDescTextView;

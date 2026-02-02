@@ -5,7 +5,7 @@
 
 @class NSString, WCFingertipSearchReportModel;
 
-@interface WCTextSearchEntity
+@interface WCTextSearchEntity : NSObject
 {
     NSString *_queryText;
     WCFingertipSearchReportModel *_reporter;

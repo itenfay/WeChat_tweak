@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout, UIFont;
 
-@interface GCChatBaseCellModelCommonLayout
+@interface GCChatBaseCellModelCommonLayout : NSObject
 {
     double _headImgTopOffset;
     double _nameLineHeight;

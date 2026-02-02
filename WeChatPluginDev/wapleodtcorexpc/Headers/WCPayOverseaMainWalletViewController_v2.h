@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSString, UICollectionView, WCBizLoadingView, WCPayComplianceHalfPage, WCPayOverseaIBGGetWalletCgi, WCPayOverseaIBGGetWalletCgiCache, WCPayOverseaMainWalletDataSource, WCPayOverseaPayFunctionListCgi_v2, WCPayOverseaPayFunctionListRespObject, WCPayOverseaReadActivityList;
 
-@interface WCPayOverseaMainWalletViewController_v2
+@interface WCPayOverseaMainWalletViewController_v2 : NSObject
 {
     _Bool _m_hasShownKeyInfo;
     _Bool _m_disableResetAccessibilityFocus;

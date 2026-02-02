@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel;
 
-@interface WCFinderTemplateCommentArrowButton
+@interface WCFinderTemplateCommentArrowButton : NSObject
 {
     MMWebImageView *_iconView;
     UILabel *_textLabel;

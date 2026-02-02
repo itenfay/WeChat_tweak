@@ -6,7 +6,7 @@
 @class MMScrollableActionSheetContainerDownStableView, MMScrollableActionSheetContainerUpScrollView, NSString;
 @protocol MMScrollableActionSheetContainerViewDelegate;
 
-@interface MMScrollableActionSheetContainerView
+@interface MMScrollableActionSheetContainerView : NSObject
 {
     double _maxContainerHeight;
     id <MMScrollableActionSheetContainerViewDelegate> _delegate;

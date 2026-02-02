@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface MMLimitedModeSecondVerifyViewController
+@interface MMLimitedModeSecondVerifyViewController : NSObject
 {
     MMUILabel *m_descLabel;
     long long _scene;

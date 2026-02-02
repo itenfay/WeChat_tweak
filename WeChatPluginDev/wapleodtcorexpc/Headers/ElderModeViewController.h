@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIScrollView, UIStackView, UIView;
 
-@interface ElderModeViewController
+@interface ElderModeViewController : NSObject
 {
     _Bool _disableAutoJumpWhenElderModeOpen;
     _Bool _showInWeCheck;

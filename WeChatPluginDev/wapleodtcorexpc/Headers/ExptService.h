@@ -5,7 +5,7 @@
 
 @class ExptAppLogic, ExptDebugReportLogic, ExptLogic, MMLRUCache, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface ExptService
+@interface ExptService : NSObject
 {
     _Bool _hadLoadedExpt;
     _Bool _hadLoadedAppExpt;

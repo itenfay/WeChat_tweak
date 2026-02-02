@@ -5,7 +5,7 @@
 
 @class BlockViewController, NSString, NSURL;
 
-@interface SMSAddCardHandler
+@interface SMSAddCardHandler : NSObject
 {
     NSURL *_infoUrl;
     BlockViewController *_blockView;

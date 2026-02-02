@@ -6,7 +6,7 @@
 @class NSString, PaySecurityResp, WCPayDigitalCertManageViewController, WCPayPaySecurityCgi;
 @protocol WCPaySecuritySettingViewControllerDelegate;
 
-@interface WCPaySecuritySettingViewController
+@interface WCPaySecuritySettingViewController : NSObject
 {
     unsigned int _entryScene;
     id <WCPaySecuritySettingViewControllerDelegate> _m_delegate;

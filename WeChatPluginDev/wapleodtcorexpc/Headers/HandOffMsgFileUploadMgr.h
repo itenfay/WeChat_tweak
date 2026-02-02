@@ -6,7 +6,7 @@
 @class CdnTaskInfo, NSMutableArray, NSMutableDictionary, NSString;
 @protocol HandOffCDNUploadMgrDelegate;
 
-@interface HandOffMsgFileUploadMgr
+@interface HandOffMsgFileUploadMgr : NSObject
 {
     id <HandOffCDNUploadMgrDelegate> _delegate;
     NSMutableArray *_fileInfoQueue;

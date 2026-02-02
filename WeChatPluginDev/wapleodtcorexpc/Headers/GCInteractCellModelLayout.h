@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GCInteractCellModelLayout
+@interface GCInteractCellModelLayout : NSObject
 {
     double _topMargin;
     double _headWidth;

@@ -5,7 +5,7 @@
 
 @class NSString, UIView;
 
-@interface WCFacingReceiveMoneyDisplayView
+@interface WCFacingReceiveMoneyDisplayView : NSObject
 {
     UIView *backgroundView;
     id userInfo;

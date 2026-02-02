@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock;
 
-@interface ContactProfileRecommendLogic
+@interface ContactProfileRecommendLogic : NSObject
 {
     struct XSummary m_profileRecommendSummary;
     _Bool m_profileRecommendSummaryInitSuccess;

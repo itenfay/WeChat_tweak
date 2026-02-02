@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMUILabel, NSArray, NSString, UIButton, UIImageView, UILabel, UIView;
 @protocol WCFinderEditExtensionReadViewDataSource, WCFinderEditExtensionReadViewDelegate;
 
-@interface WCFinderEditExtensionReadView
+@interface WCFinderEditExtensionReadView : NSObject
 {
     long long _supportType;
     id <WCFinderEditExtensionReadViewDelegate> _m_delegate;

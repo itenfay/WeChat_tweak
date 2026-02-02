@@ -6,7 +6,7 @@
 @class EmoticonCameraDynamiFlowLayout, NSArray, NSMutableArray, NSString, UICollectionView, UIView;
 @protocol EmoticonLensDynamicToolViewDelegate;
 
-@interface EmoticonLensDynamicToolView
+@interface EmoticonLensDynamicToolView : NSObject
 {
     UIView *m_selectedMaterialBox;
     NSMutableArray *m_emoticonLensList;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MacLoginMgr
+@interface MacLoginMgr : NSObject
 {
 }
 

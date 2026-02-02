@@ -6,7 +6,7 @@
 @class NSString, WCUIAlertView;
 @protocol WCPayCommentTextViewDelegate;
 
-@interface WCPayCommentTextView
+@interface WCPayCommentTextView : NSObject
 {
     _Bool _isShowingAlertView;
     unsigned int _m_maxCommentLength;

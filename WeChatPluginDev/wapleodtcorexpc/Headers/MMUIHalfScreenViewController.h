@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIButton, MMUIHalfScreenViewDismissInteractiveTransition, MMUIHalfScreenViewPresentationAnimateTransition, MMUIView, NSString, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIScrollView, UIView;
 @protocol MMUIHalfScreenViewControllerDelegate;
 
-@interface MMUIHalfScreenViewController
+@interface MMUIHalfScreenViewController : NSObject
 {
     MMUIView *m_maskView;
     double m_maxHalfScreenHeight;

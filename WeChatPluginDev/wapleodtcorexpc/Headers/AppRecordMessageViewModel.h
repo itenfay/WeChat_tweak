@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface AppRecordMessageViewModel
+@interface AppRecordMessageViewModel : NSObject
 {
     double m_titleHeight;
     double m_descHeight;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMAlbumFetchResult, NSArray, NSDictionary, NSMutableDictionary, PHAssetCollection;
 
-@interface MMALbumForPHAssetFramework
+@interface MMALbumForPHAssetFramework : NSObject
 {
     _Bool _m_shouldIncludeVideo;
     _Bool _m_isOnlyShowVideo;

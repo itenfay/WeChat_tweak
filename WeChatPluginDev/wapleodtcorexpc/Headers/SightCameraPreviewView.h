@@ -5,7 +5,7 @@
 
 @class CALayer;
 
-@interface SightCameraPreviewView
+@interface SightCameraPreviewView : NSObject
 {
     CALayer *_previewLayer;
     struct CGSize _videoSize;

@@ -5,7 +5,7 @@
 
 @class MMMsgContentTipsItem, MMTimer;
 
-@interface MMMsgCommonTipsView
+@interface MMMsgCommonTipsView : NSObject
 {
     _Bool _shouldDisableAccessibility;
     MMTimer *_timer;

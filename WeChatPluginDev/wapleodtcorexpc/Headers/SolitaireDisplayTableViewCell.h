@@ -6,7 +6,7 @@
 @class MMGrowTextView, MMUILabel, NSString, SolitaireItem, UIView;
 @protocol SolitaireDisplayTableViewCellDelegate;
 
-@interface SolitaireDisplayTableViewCell
+@interface SolitaireDisplayTableViewCell : NSObject
 {
     id <SolitaireDisplayTableViewCellDelegate> _delegate;
     MMUILabel *_orderNumberLabel;

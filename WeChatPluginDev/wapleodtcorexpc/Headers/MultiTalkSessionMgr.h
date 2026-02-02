@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MultiTalkSessionMgr
+@interface MultiTalkSessionMgr : NSObject
 {
     WCTDatabase *_dataBase;
     WCTTable *_contactTable;

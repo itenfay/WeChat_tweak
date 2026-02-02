@@ -5,7 +5,7 @@
 
 @class FavoritesCDNInfo, MsgDataDownloadLogic, NSMutableArray, NSMutableSet, NSString;
 
-@interface FavoritesAsyncUploader
+@interface FavoritesAsyncUploader : NSObject
 {
     NSMutableArray *m_needDownloadMsgList;
     NSMutableSet *m_downloadedMsg;

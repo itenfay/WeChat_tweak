@@ -6,7 +6,7 @@
 @class WAPhoneNumberAuthorizeSheetInfo;
 @protocol IWAPhoneNumberAuthorizePageSheet;
 
-@interface WAPhoneNumberPageSheetViewModel
+@interface WAPhoneNumberPageSheetViewModel : NSObject
 {
     double _maxListHeight;
 }

@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCFinderPostAliveTipsActionSheet
+@interface WCFinderPostAliveTipsActionSheet : NSObject
 {
     UIView *_tipsView;
 }

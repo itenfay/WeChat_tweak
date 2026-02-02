@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WASubscriptionMessagePageSheetViewModel;
 
-@interface WASubscriptionMessageRequestSubscribeCgi
+@interface WASubscriptionMessageRequestSubscribeCgi : NSObject
 {
     unsigned int _popupScene;
     CDUnknownBlockType _successBlock;

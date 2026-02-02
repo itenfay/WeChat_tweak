@@ -6,7 +6,7 @@
 @class FTSWebSearchMgr, NSString;
 @protocol FTSJSEventDelegate, FTSWebSearchDataSource;
 
-@interface WXSearchJSLogicImpl
+@interface WXSearchJSLogicImpl : NSObject
 {
     id <FTSJSEventDelegate> _delegate;
     id <FTSWebSearchDataSource> _dataSource;

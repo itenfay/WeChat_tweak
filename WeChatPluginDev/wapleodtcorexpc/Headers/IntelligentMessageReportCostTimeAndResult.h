@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMessageReportCostTimeAndResult
+@interface IntelligentMessageReportCostTimeAndResult : NSObject
 {
     _Bool _m_isSearchStartHadPriorityBuildIndex;
     _Bool _m_isHadReportSearchResult;

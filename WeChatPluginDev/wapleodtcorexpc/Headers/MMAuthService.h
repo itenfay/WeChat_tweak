@@ -5,7 +5,7 @@
 
 @class MMAuthInfo, MMMultiHostAuthInfo, NSData, NSMutableDictionary, NSSet, NSString;
 
-@interface MMAuthService
+@interface MMAuthService : NSObject
 {
     _Bool m_hasLoadUseAesGcmSessionKeyConfig;
     _Bool m_useAesGcmSessionKey;

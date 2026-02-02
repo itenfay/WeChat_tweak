@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupInvisibleTipView, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveFansGroupFanNoticeCell
+@interface MMFinderLiveFansGroupFanNoticeCell : NSObject
 {
     CDUnknownBlockType _onViewImageCallback;
     MMUILabel *_titleLabel;

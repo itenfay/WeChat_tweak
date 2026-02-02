@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OccupyMsgRevokeInfo
+@interface OccupyMsgRevokeInfo : NSObject
 {
     unsigned int _localID;
     unsigned int _createTime;

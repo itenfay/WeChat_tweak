@@ -6,7 +6,7 @@
 @class WAOpenLocationViewControllerHandler;
 @protocol WAOpenLocationViewControllerDelegate;
 
-@interface WAOpenLocationViewController
+@interface WAOpenLocationViewController : NSObject
 {
     WAOpenLocationViewControllerHandler *_handler;
     id <WAOpenLocationViewControllerDelegate> _waDelegate;

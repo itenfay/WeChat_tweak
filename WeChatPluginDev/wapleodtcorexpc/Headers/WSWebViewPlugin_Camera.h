@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WSWebViewPlugin_Camera
+@interface WSWebViewPlugin_Camera : NSObject
 {
     MISSING_TYPE *searchEntity;
     MISSING_TYPE *isInitiativeSearch;

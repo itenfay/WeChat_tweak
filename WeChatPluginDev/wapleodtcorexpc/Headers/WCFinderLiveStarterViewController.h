@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, FinderCreateLiveWarnPage, MMFinderLiveAudioRoomInfoView, MMFinderLiveBannerView, MMFinderLiveNewAnchorTaskEntranceView, MMFinderLiveNoticeModReminderView, MMFinderLiveNoticeShowReminderView, MMFinderLiveSetQuickReplyView, MMFinderLiveSharePubbleTipView, MMFinderLiveSpeedTestNotifyModel, MMFinderLiveTask, MMLiveBeautyOperationContainerView, MMLiveCameraOperationPageSheet, MMLiveCategorySelectButton, MMLiveControlItem, MMLiveCountdownTipsView, MMLiveDecorationOperationPanel, MMLiveFilterOperationPanel, MMLiveMakeupOperationPanel, MMLiveMusicOperationPanel, MMLiveNoticeSelectButton, MMLiveRoomSelectButton, MMLiveScreenMapSelectButton, MMLiveStarterTestSpeedManager, MMLiveStarterWeakNetTipView, MMLiveSystemMentionsView, MMLiveVisibilitySelectButton, MMLiveVisionEffectsOperationPanel, MMStarterLiveMoreFunctionManager, MMTimer, MMUIButton, MMUIMaskContainerView, NSMutableArray, NSMutableSet, NSSet, NSString, RichTextView, UIPinchGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, WCActionSheet, WCFinderLiveChooseLiveModeView, WCFinderLiveControlItemCell, WCFinderLiveStartPOIView, WCFinderLiveStarterSwitchModeView, WCFinderLiveStarterThemeGuideView;
 @protocol WCFinderLiveStarterViewControllerDelegate;
 
-@interface WCFinderLiveStarterViewController
+@interface WCFinderLiveStarterViewController : NSObject
 {
     _Bool _allowLandscapeLive;
     _Bool _shouldStartLiveAfterSelectTag;

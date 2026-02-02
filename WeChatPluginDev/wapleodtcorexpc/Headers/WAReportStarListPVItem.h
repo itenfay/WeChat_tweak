@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportStarListPVItem
+@interface WAReportStarListPVItem : NSObject
 {
     unsigned int _showTimestamp;
     unsigned long long _starListEnterScene;

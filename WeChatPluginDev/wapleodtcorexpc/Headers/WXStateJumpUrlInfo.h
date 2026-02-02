@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXStateJumpUrlInfo
+@interface WXStateJumpUrlInfo : NSObject
 {
     NSString *_url;
 }

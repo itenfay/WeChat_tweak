@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, UIView;
 
-@interface _TtC6WeChat17MagicEmojiBaseBiz
+@interface _TtC6WeChat17MagicEmojiBaseBiz : NSObject
 {
     MISSING_TYPE *runtimeView;
     MISSING_TYPE *frame;

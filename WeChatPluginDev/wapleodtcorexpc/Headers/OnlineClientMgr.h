@@ -5,7 +5,7 @@
 
 @class MMOnlineSilentDownloadLogicController, MMTimer, NSMutableArray, NSMutableSet, NSNumber, NSString;
 
-@interface OnlineClientMgr
+@interface OnlineClientMgr : NSObject
 {
     NSNumber *m_isRunningAsBakDevice;
     _Bool m_hasGetChatList;

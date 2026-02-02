@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCAdSliderCardReportModel
+@interface WCAdSliderCardReportModel : NSObject
 {
     int _sliderCardStyle;
     unsigned int _slideJumpCount;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat42WSWebViewPlugin_AdInteractionDeviceMonitor
+@interface _TtC6WeChat42WSWebViewPlugin_AdInteractionDeviceMonitor : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_monitor;
     MISSING_TYPE *amplitude;

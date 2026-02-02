@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderSearchSuggestionCGI
+@interface WCFinderSearchSuggestionCGI : NSObject
 {
     unsigned int _scene;
     CDUnknownBlockType _successBlock;

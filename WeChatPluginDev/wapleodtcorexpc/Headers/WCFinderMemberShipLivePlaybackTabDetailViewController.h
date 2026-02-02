@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderFeedContentVM, WCFinderFeedListView, WCFinderMemberShipPlaybackTabDetailViewModel, WCFinderShareCustomTransition;
 
-@interface WCFinderMemberShipLivePlaybackTabDetailViewController
+@interface WCFinderMemberShipLivePlaybackTabDetailViewController : NSObject
 {
     WCFinderFeedListView *_feedListView;
     WCFinderMemberShipPlaybackTabDetailViewModel *_viewModel;

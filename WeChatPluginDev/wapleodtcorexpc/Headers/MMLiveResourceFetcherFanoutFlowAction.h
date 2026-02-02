@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface MMLiveResourceFetcherFanoutFlowAction
+@interface MMLiveResourceFetcherFanoutFlowAction : NSObject
 {
     unsigned long long _pendingBatchesCount;
 }

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderContact;
 
-@interface WCFinderNewAcceptMicCGI
+@interface WCFinderNewAcceptMicCGI : NSObject
 {
     WCFinderContact *_toFinderContact;
     CDUnknownBlockType _successBlock;

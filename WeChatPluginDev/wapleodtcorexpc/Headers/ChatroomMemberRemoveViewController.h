@@ -6,7 +6,7 @@
 @class CContact, MMTableView, NSMutableArray, NSString, RoomDelMemController;
 @protocol ChatroomMemberRemoveViewControllerDelegate;
 
-@interface ChatroomMemberRemoveViewController
+@interface ChatroomMemberRemoveViewController : NSObject
 {
     NSString *_groupName;
     NSString *_removingUserName;

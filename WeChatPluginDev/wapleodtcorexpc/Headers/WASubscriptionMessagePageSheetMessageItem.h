@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WASubscriptionMessagePageSheetMessageItem
+@interface WASubscriptionMessagePageSheetMessageItem : NSObject
 {
     _Bool _isAudioTemplate;
     _Bool _isAcceptWithAudio;

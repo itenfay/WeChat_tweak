@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionMatchPagePathInfo
+@interface WCSessionMatchPagePathInfo : NSObject
 {
     NSString *_sessionId;
     NSString *_lastSessionId;

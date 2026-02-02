@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterPageCacheCleaner
+@interface GameCenterPageCacheCleaner : NSObject
 {
 }
 

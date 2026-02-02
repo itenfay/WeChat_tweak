@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
-@interface WAProfileService
+@interface WAProfileService : NSObject
 {
     unsigned int _lastStayDuration;
     _Bool _localDataLoaded;

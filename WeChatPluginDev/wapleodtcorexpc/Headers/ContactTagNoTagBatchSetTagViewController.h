@@ -6,7 +6,7 @@
 @class ContactTagNoTagBatchMaskBottomView, ContactTagNoTagBatchSetEditLogic, NSArray, NSString, UIButton;
 @protocol ContactTagNoTagBatchSetTagViewControllerDelegate;
 
-@interface ContactTagNoTagBatchSetTagViewController
+@interface ContactTagNoTagBatchSetTagViewController : NSObject
 {
     _Bool _bIsNeedReloadView;
     _Bool isAlreadyDisMissSelf;

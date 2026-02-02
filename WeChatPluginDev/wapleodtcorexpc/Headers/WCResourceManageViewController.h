@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, MMUILabel, NSDate, NSMutableArray, NSString, ResourceBrowseCollectionView, StorageFootPanelView, UIView, WCFilterView;
 
-@interface WCResourceManageViewController
+@interface WCResourceManageViewController : NSObject
 {
     unsigned int _eFilterStartTime;
     unsigned int _eFilterEndTime;

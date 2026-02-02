@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMWebCustomLog
+@interface MMWebCustomLog : NSObject
 {
     NSString *_preMsgUrl;
     NSString *_preMsgTitle;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface OMCNarrationSegment
+@interface OMCNarrationSegment : NSObject
 {
 }
 

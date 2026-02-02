@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, NSMutableDictionary, NSString;
 
-@interface ScanGoodsJSHandler
+@interface ScanGoodsJSHandler : NSObject
 {
     unsigned int _enterSessionID;
     unsigned int _tabSessionID;

@@ -5,7 +5,7 @@
 
 @class MMTimer, MemoryMappedKV, NSMutableArray, NSMutableSet, NSString, WCEliminatedSlotMMKV;
 
-@interface MPPageRelatedInfoMgr
+@interface MPPageRelatedInfoMgr : NSObject
 {
     unsigned int _refreshIntervalSec;
     unsigned int _maxRequestUrlCount;

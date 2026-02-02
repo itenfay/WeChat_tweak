@@ -5,7 +5,7 @@
 
 @class CommRequestSource, NSString;
 
-@interface WAContactUpdateTaskWrap
+@interface WAContactUpdateTaskWrap : NSObject
 {
     _Bool _isForce;
     unsigned long long _updateType;

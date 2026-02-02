@@ -5,7 +5,7 @@
 
 @class SightAssetExportSession;
 
-@interface WAJSEventHandler_compressVideo
+@interface WAJSEventHandler_compressVideo : NSObject
 {
     SightAssetExportSession *_session;
 }

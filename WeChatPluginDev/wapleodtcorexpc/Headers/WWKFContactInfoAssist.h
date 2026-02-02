@@ -6,7 +6,7 @@
 @class CContact, ContactRelatedGroupLogic, MMTableViewInfo, MMURLHandler, NSString, WCFinderContactFinderAssist;
 @protocol ContactInfoAssistDelegate;
 
-@interface WWKFContactInfoAssist
+@interface WWKFContactInfoAssist : NSObject
 {
     _Bool m_bFirstBecomeFriend;
     MMTableViewInfo *m_tableViewInfo;

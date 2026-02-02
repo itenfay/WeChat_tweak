@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveEntranceVerifyCGI
+@interface WCFinderLiveEntranceVerifyCGI : NSObject
 {
     CDUnknownBlockType _completionBlock;
     long long _status;

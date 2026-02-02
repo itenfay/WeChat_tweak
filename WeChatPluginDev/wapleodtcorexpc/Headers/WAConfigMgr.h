@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, NSDictionary, NSMutableDictionary, NSRecursiveLock, NSString, WAAppBrandNotifyStorage, WAAppBrandPluginNotifyStorage, WAEnableCopyPathMenuNotifyStorage, WAPackageSweeperLogic;
 
-@interface WAConfigMgr
+@interface WAConfigMgr : NSObject
 {
     NSMutableDictionary *_dicAppID2ConfigJSON;
     NSMutableDictionary *_dicAppID2ConfigDarkJSON;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CADisplayLink, MMEasterEggTopAnimation, NSArray, NSMutableArray, NSOperationQueue, NSString, PAGView;
 @protocol MMEasterEggEffectDelegateImplicitAnimation;
 
-@interface MMEasterEggEffectImplicitAnimation
+@interface MMEasterEggEffectImplicitAnimation : NSObject
 {
     NSArray *_animations;
     MMEasterEggTopAnimation *_topAnimation;

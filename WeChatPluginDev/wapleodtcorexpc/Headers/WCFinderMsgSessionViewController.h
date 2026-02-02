@@ -5,7 +5,7 @@
 
 @class MMBaseSessionCellData, MMTableView, NSString, WCFinderMsgSessionCellDataSource, WCFinderMsgSessionListReporter, WCFinderProcessTimeRecorder;
 
-@interface WCFinderMsgSessionViewController
+@interface WCFinderMsgSessionViewController : NSObject
 {
     WCFinderMsgSessionCellDataSource *_cellDataSource;
     MMTableView *_tableView;

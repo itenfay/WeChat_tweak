@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface ContactGetPluginSwitchCgi
+@interface ContactGetPluginSwitchCgi : NSObject
 {
     CDUnknownBlockType _onGetSwitchBlock;
 }

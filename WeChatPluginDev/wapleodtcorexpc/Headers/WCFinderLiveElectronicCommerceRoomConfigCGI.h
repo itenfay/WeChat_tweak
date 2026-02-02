@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveElectronicCommerceRoomConfigCGI
+@interface WCFinderLiveElectronicCommerceRoomConfigCGI : NSObject
 {
     int _reqScene;
     CDUnknownBlockType _successBlock;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVSingingPrepareLogic, MMUILabel, NSString;
 
-@interface MMFinderLiveKTVBeginContentView
+@interface MMFinderLiveKTVBeginContentView : NSObject
 {
     CDUnknownBlockType _requestSingerHeaderUIDescCallback;
     NSString *_currUniqueId;

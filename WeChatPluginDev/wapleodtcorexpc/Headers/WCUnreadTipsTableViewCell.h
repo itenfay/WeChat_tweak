@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, UILabel, WCUnreadTipsViewModel;
 @protocol WCUnreadTipsTableViewCellDelegate;
 
-@interface WCUnreadTipsTableViewCell
+@interface WCUnreadTipsTableViewCell : NSObject
 {
     id <WCUnreadTipsTableViewCellDelegate> _delegate;
     NSMutableArray *_headerViews;

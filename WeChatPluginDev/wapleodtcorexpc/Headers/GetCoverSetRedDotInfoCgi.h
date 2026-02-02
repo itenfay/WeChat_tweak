@@ -5,7 +5,7 @@
 
 @protocol GetCoverSetRedDotInfoCgiDelegate;
 
-@interface GetCoverSetRedDotInfoCgi
+@interface GetCoverSetRedDotInfoCgi : NSObject
 {
     id <GetCoverSetRedDotInfoCgiDelegate> _m_delegate;
 }

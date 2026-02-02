@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UIView;
 @protocol WCAccountLoginFirstViewControllerDelegate;
 
-@interface WCAccountLoginFirstViewController
+@interface WCAccountLoginFirstViewController : NSObject
 {
     id <WCAccountLoginFirstViewControllerDelegate> m_delegate;
     UIView *m_view;

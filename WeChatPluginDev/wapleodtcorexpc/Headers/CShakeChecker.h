@@ -6,7 +6,7 @@
 @class CMMotionManager, HighpassFilter, NSOperationQueue;
 @protocol ShakeCheckerDelegate;
 
-@interface CShakeChecker
+@interface CShakeChecker : NSObject
 {
     id <ShakeCheckerDelegate> m_delegate;
     CMMotionManager *m_motionMgr;

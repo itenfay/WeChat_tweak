@@ -5,7 +5,7 @@
 
 @class NSString, UIView, WCContactSelectFixedSearcher;
 
-@interface MMLiveContactSelectView
+@interface MMLiveContactSelectView : NSObject
 {
     unsigned long long _enterType;
     long long _preferredCellAccessoryType;

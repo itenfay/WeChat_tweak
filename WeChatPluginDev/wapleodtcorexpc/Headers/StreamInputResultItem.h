@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface StreamInputResultItem
+@interface StreamInputResultItem : NSObject
 {
     unsigned int _m_uiSequence;
     unsigned int _m_uiEndFlag;

@@ -5,7 +5,7 @@
 
 @class NSString, PersonalDesigner, StoreEmotionPageShareLogic;
 
-@interface LiteAppJsApiEmoticonDesignerProfileShare
+@interface LiteAppJsApiEmoticonDesignerProfileShare : NSObject
 {
     StoreEmotionPageShareLogic *_shareLogic;
     PersonalDesigner *_personalDesigner;

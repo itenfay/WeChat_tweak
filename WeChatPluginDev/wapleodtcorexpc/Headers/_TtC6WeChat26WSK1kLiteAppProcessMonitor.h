@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat26WSK1kLiteAppProcessMonitor
+@interface _TtC6WeChat26WSK1kLiteAppProcessMonitor : NSObject
 {
     MISSING_TYPE *category;
     MISSING_TYPE *reporter;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface QBBeaconModuleStrategy
+@interface QBBeaconModuleStrategy : NSObject
 {
     int moduleKey;
     _Bool onOff;

@@ -5,7 +5,7 @@
 
 @class WCDevice;
 
-@interface DeviceIconItemView
+@interface DeviceIconItemView : NSObject
 {
     WCDevice *_device;
 }

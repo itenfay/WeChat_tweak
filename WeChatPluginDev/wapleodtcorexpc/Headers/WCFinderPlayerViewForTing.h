@@ -5,7 +5,7 @@
 
 @protocol WCFinderPlayerViewForTingDelegate;
 
-@interface WCFinderPlayerViewForTing
+@interface WCFinderPlayerViewForTing : NSObject
 {
     id <WCFinderPlayerViewForTingDelegate> _tingDelegate;
 }

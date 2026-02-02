@@ -5,7 +5,7 @@
 
 @class MMPanelView, NSString, UILabel, UIPickerView;
 
-@interface WCPaySelectGenderItem
+@interface WCPaySelectGenderItem : NSObject
 {
     UILabel *_label;
     MMPanelView *_panelView;

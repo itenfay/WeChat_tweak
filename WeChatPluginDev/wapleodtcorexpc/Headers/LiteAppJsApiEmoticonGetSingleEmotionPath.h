@@ -5,7 +5,7 @@
 
 @class EmoticonLiteAppSingleDownloadLogic;
 
-@interface LiteAppJsApiEmoticonGetSingleEmotionPath
+@interface LiteAppJsApiEmoticonGetSingleEmotionPath : NSObject
 {
     EmoticonLiteAppSingleDownloadLogic *_downloadLogic;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WASessionContentSendMsgInfo;
 
-@interface WATempSessionInfo
+@interface WATempSessionInfo : NSObject
 {
     _Bool _isInWeAppSheetMode;
     unsigned int _debugMode;

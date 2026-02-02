@@ -5,7 +5,7 @@
 
 @class MMFinderLiveFeedStreamProductStyleView, NSString;
 
-@interface MMFinderLiveFeedStreamCarouselProductGuideCell
+@interface MMFinderLiveFeedStreamCarouselProductGuideCell : NSObject
 {
     MMFinderLiveFeedStreamProductStyleView *_guideStyleView;
 }

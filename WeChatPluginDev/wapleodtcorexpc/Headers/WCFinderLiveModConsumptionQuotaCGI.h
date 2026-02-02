@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId;
 
-@interface WCFinderLiveModConsumptionQuotaCGI
+@interface WCFinderLiveModConsumptionQuotaCGI : NSObject
 {
     _Bool _enableNotice;
     MMFinderLiveTaskId *_taskId;

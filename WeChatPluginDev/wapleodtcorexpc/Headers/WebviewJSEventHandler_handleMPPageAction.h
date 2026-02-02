@@ -5,7 +5,7 @@
 
 @class ForwardMessageLogicController, JSAPIHandleMPPageActionFavContext, JSAPIHandleMPPageActionShareFriendContext, JSAPIHandleMPPageActionShareTimelineContext, JSAPIHandleMPPageActionShowActionSheetContext, MMShareExcerptPreviewView, NSMutableDictionary, NSString, RecentForwardScrollView, UIImage, WCMomentsScrollActionSheet;
 
-@interface WebviewJSEventHandler_handleMPPageAction
+@interface WebviewJSEventHandler_handleMPPageAction : NSObject
 {
     ForwardMessageLogicController *m_forwardLogicController;
     JSAPIHandleMPPageActionShareFriendContext *m_shareFriendContext;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString, UILabel;
 @protocol WNTextViewDataDelegate, WNTextViewOperationDelegate;
 
-@interface WNTextView
+@interface WNTextView : NSObject
 {
     NSMutableArray *m_accessiblityElement;
     NSMutableArray *m_accessiblityMenuItems;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdCanvasControlFloatComponentReportModel
+@interface WCAdCanvasControlFloatComponentReportModel : NSObject
 {
     NSString *_action;
     NSString *_result;

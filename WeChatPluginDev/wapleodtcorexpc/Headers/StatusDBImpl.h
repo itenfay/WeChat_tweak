@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV;
 
-@interface StatusDBImpl
+@interface StatusDBImpl : NSObject
 {
     MemoryMappedKV *_mmkv;
 }

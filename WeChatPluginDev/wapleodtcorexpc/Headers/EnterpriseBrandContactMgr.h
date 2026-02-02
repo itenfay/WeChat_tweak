@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterpriseBrandContactMgr
+@interface EnterpriseBrandContactMgr : NSObject
 {
 }
 

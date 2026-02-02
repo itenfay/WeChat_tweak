@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WALocationAuthorizePageSheet
+@interface WALocationAuthorizePageSheet : NSObject
 {
     long long _selectIndex;
 }

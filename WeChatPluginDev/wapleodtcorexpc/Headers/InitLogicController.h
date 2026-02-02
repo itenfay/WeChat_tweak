@@ -6,7 +6,7 @@
 @class ContactInitLogic, MMTimer, NSString;
 @protocol initLogicControllerDelegate;
 
-@interface InitLogicController
+@interface InitLogicController : NSObject
 {
     id <initLogicControllerDelegate> m_delegate;
     _Bool m_bIsIniting;

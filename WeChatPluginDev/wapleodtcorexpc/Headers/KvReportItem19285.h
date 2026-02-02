@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface KvReportItem19285
+@interface KvReportItem19285 : NSObject
 {
     unsigned int _scene_21;
     unsigned int _occasion_22;

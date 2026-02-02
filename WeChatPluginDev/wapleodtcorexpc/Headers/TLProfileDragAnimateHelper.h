@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, CContact, NSDate, NSHashTable, NSString, TLProfileDragDownView, TLProfileMediaContainerView, TLProfileModel, UIButton, UILongPressGestureRecognizer, UITableView, UITapGestureRecognizer, UIView;
 @protocol TLProfileDragAnimateHelperDelegate;
 
-@interface TLProfileDragAnimateHelper
+@interface TLProfileDragAnimateHelper : NSObject
 {
     _Bool _disableHover;
     _Bool _isAtHoverState;

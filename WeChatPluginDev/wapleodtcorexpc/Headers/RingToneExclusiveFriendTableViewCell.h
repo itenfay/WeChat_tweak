@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, RingTone, RingToneDetail, RingToneToolView, UIImageView, UIView, VideoRingNetProvider;
 @protocol RingToneExclusiveFriendTableViewCellDelegate;
 
-@interface RingToneExclusiveFriendTableViewCell
+@interface RingToneExclusiveFriendTableViewCell : NSObject
 {
     _Bool _expanded;
     _Bool _isPlaying;

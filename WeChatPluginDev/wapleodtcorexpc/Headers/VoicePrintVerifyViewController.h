@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTimer, NSString;
 @protocol VoicePrintVerifyViewControllerDelegate;
 
-@interface VoicePrintVerifyViewController
+@interface VoicePrintVerifyViewController : NSObject
 {
     _Bool _recordButtonPressed;
     _Bool _recording;

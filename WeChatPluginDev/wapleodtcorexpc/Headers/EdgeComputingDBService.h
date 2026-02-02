@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface EdgeComputingDBService
+@interface EdgeComputingDBService : NSObject
 {
     NSMutableDictionary *_dBMgrCache;
 }

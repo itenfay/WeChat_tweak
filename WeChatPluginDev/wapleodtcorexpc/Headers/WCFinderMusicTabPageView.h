@@ -5,7 +5,7 @@
 
 @protocol WCFinderMusicTabPageViewDelegate;
 
-@interface WCFinderMusicTabPageView
+@interface WCFinderMusicTabPageView : NSObject
 {
 }
 

@@ -6,7 +6,7 @@
 @class MMUIButton, UILabel, WCCanvasRandomLayoutEncorePickInfo, WCCanvasRandomPickCardBottomIntroduceView, WCCanvasRandomPickCardButtonView;
 @protocol WCCanvasRandomPickCardBottomViewDelegate;
 
-@interface WCCanvasRandomPickCardBottomView
+@interface WCCanvasRandomPickCardBottomView : NSObject
 {
     _Bool _didShowSwitchAnimation;
     WCCanvasRandomLayoutEncorePickInfo *_encoreInfo;

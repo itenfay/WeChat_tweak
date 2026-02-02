@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMAppMsgUploadModel
+@interface MMAppMsgUploadModel : NSObject
 {
     unsigned int _m_uiCreateTime;
     unsigned int _uploadSize;

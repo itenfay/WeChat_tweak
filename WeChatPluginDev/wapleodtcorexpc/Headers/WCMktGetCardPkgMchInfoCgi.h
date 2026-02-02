@@ -5,7 +5,7 @@
 
 @protocol WCMktGetCardPkgMchInfoCgiDelegate;
 
-@interface WCMktGetCardPkgMchInfoCgi
+@interface WCMktGetCardPkgMchInfoCgi : NSObject
 {
     id <WCMktGetCardPkgMchInfoCgiDelegate> _cgiDelegate;
 }

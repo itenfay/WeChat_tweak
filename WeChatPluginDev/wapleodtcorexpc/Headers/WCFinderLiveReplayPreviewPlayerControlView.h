@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveReplayPreviewPlayerControlView
+@interface WCFinderLiveReplayPreviewPlayerControlView : NSObject
 {
     _Bool _startLoaded;
     CDUnknownBlockType _seekEndCallback;

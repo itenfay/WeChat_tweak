@@ -6,7 +6,7 @@
 @class NSMutableArray, NSString;
 @protocol MMUIViewControllerDelegate, WCBaseControlLogicDeleagte;
 
-@interface WCBaseControlLogic
+@interface WCBaseControlLogic : NSObject
 {
     NSMutableArray *m_arrVC;
     unsigned int m_uiLogicStatus;

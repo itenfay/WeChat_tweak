@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAuthorizePageSheetReportItem
+@interface WAAuthorizePageSheetReportItem : NSObject
 {
     unsigned int _isShowUserPrivacyUserAgreementView;
     unsigned int _isUserPrivacyUserAgreementChecked;

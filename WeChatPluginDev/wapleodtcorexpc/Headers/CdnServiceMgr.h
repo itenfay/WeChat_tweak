@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface CdnServiceMgr
+@interface CdnServiceMgr : NSObject
 {
     struct shared_ptr<CdnCallback> m_spCallback;
     NSRecursiveLock *_lock;

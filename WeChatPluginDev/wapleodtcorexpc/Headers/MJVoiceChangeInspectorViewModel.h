@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJNarrationSegmentViewModel, MJSpeechManager, NSArray, NSString;
 
-@interface MJVoiceChangeInspectorViewModel
+@interface MJVoiceChangeInspectorViewModel : NSObject
 {
     _Bool _isVoiceCloneEnabledByConfig;
     CDUnknownBlockType updateSelectionHandler;

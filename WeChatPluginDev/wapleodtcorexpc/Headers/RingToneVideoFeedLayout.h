@@ -5,7 +5,7 @@
 
 @class RingToneVideoFeedViewController;
 
-@interface RingToneVideoFeedLayout
+@interface RingToneVideoFeedLayout : NSObject
 {
     RingToneVideoFeedViewController *_currentVC;
     unsigned long long _autoPlaySection;

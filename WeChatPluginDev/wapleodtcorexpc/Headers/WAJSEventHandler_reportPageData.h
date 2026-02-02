@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_reportPageData
+@interface WAJSEventHandler_reportPageData : NSObject
 {
 }
 

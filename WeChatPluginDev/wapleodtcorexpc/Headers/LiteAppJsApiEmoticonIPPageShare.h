@@ -5,7 +5,7 @@
 
 @class NSString, StoreEmotionPageShareLogic;
 
-@interface LiteAppJsApiEmoticonIPPageShare
+@interface LiteAppJsApiEmoticonIPPageShare : NSObject
 {
     StoreEmotionPageShareLogic *_shareLogic;
 }

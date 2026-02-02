@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WCSCheckBehaviorMgr
+@interface WCSCheckBehaviorMgr : NSObject
 {
     NSMutableDictionary *_dicTextFieldCheck;
     _Bool _bEnableEventMonitor;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMGroupLiveTaskId
+@interface MMGroupLiveTaskId : NSObject
 {
     NSString *_roomId;
 }

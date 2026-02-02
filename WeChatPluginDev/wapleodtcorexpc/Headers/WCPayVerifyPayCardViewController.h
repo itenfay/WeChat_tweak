@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UIImageView, UILabel, WCBaseKeyboardToolBar, WCPaySMSCodeItem;
 @protocol WCPayVerifyPayCardViewControllerDelegate;
 
-@interface WCPayVerifyPayCardViewController
+@interface WCPayVerifyPayCardViewController : NSObject
 {
     UIButton *m_footerButton;
     WCPaySMSCodeItem *m_textFieldItem;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CMessageWrap, ForwardMessageLogicController, MMBarButtonItem, MMLoadingView, MMProgressViewEx, MMTableView, MMTimer, MMUIView, MMUIWindow, MMWebImageView, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURLRequest, PAGView, ScanQRCodeLogicController, UIButton, UIImage, UIImageView, UIView, WCActionSheetWithScanWXCode, WCAdCanvasExtraParams, WCAdExpressionGestureJumpExtInfo, WCAdRandomPickCardLogic, WCAdvertiseInfo, WCCanvasActionSheet, WCCanvasArrowDownIcon, WCCanvasComponent, WCCanvasComponentItem, WCCanvasDynamicDataLoader, WCCanvasFloatActionBaseView, WCCanvasFloatActionBtnView, WCCanvasFloatConversionBarView, WCCanvasFloatJumpView, WCCanvasFloatScrollView, WCCanvasFloatSidebarView, WCCanvasFloatView, WCCanvasMusicMgr, WCCanvasPassthroughContainerView, WCCanvasRandomEncoreView, WCCanvasRandomPickCardBottomView, WCCanvasReportMgr, WCDataItem, WCStatTimerHelper, WCWeAppBizTempSessionHelper;
 @protocol WCCanvasPageViewControllerDelegate;
 
-@interface WCCanvasPageViewController
+@interface WCCanvasPageViewController : NSObject
 {
     WCDataItem *m_dataItem;
     MMTableView *m_tableView;

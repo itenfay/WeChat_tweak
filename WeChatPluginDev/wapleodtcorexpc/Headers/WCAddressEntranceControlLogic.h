@@ -6,7 +6,7 @@
 @class NSString, WCAddressControlData;
 @protocol WCAddressEntranceControlLogicDelegate;
 
-@interface WCAddressEntranceControlLogic
+@interface WCAddressEntranceControlLogic : NSObject
 {
     WCAddressControlData *m_data;
     id <WCAddressEntranceControlLogicDelegate> _logicDelegate;

@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter;
 
-@interface JumpToBizWebviewHandler
+@interface JumpToBizWebviewHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

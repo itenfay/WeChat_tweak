@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MBFileSpaceTraceLogic, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MBCacheFileCleanMgr
+@interface MBCacheFileCleanMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_workQueue;
     MBFileSpaceTraceLogic *_fileTraceLogic;

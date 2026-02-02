@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel;
 
-@interface QMUClusterAnnotationView
+@interface QMUClusterAnnotationView : NSObject
 {
     UIImageView *_background;
     UILabel *_displayText;

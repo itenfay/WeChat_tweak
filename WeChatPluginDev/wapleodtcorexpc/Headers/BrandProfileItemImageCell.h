@@ -5,7 +5,7 @@
 
 @class BrandProfileItemImageViewModel, CAGradientLayer, MMUILabel, UIImageView;
 
-@interface BrandProfileItemImageCell
+@interface BrandProfileItemImageCell : NSObject
 {
     UIImageView *_imageIconView;
     MMUILabel *_imageCountLabel;

@@ -6,7 +6,7 @@
 @class MMUIButton, NSIndexPath, NSMutableArray, NSString, UIAccessibilityElement, UIButton, UIImageView, UILabel, UIView, WCFinderCommentLikeView, WCFinderCommentTranslateView, WCFinderFeedContentTextView, WCFinderFeedSubCommentCellStyleConfig, WCFinderHeadImageView, WCFinderInteractionLabelGroupView;
 @protocol WCFinderFeedDetailCommentCellActionDelegate;
 
-@interface WCFinderFeedSubCommentTableViewCell
+@interface WCFinderFeedSubCommentTableViewCell : NSObject
 {
     multimap_b3919d51 _keywordsMap;
     _Bool _wechatAccountProfileSwitch;

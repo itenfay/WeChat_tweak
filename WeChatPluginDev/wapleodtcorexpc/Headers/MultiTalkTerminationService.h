@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MultiTalkTerminationService
+@interface MultiTalkTerminationService : NSObject
 {
 }
 

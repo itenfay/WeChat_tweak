@@ -5,7 +5,7 @@
 
 @class MMPrivacyInfomationApplyTipsViewConfig, NSString;
 
-@interface MMPrivacyInfomationApplyTipsView
+@interface MMPrivacyInfomationApplyTipsView : NSObject
 {
     MMPrivacyInfomationApplyTipsViewConfig *_config;
 }

@@ -6,7 +6,7 @@
 @class CContact, JSEvent, MMLoadingView, NSString, WOAPPrivacyConfirmLogic;
 @protocol WebAddContactDelegate;
 
-@interface MMWebAddContactView
+@interface MMWebAddContactView : NSObject
 {
     NSString *m_nsUsrName;
     JSEvent *m_nsCallBack;

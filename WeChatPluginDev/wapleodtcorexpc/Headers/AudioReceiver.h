@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MsgAudioPlayerProtocol;
 
-@interface AudioReceiver
+@interface AudioReceiver : NSObject
 {
     id <MsgAudioPlayerProtocol> m_audioPlayer;
 }

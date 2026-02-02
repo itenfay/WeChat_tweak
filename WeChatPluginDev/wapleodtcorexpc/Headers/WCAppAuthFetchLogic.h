@@ -6,7 +6,7 @@
 @class NSData;
 @protocol WCAppAuthFetchLogicDelegate;
 
-@interface WCAppAuthFetchLogic
+@interface WCAppAuthFetchLogic : NSObject
 {
     unsigned int _nextPageFlag;
     id <WCAppAuthFetchLogicDelegate> _delegate;

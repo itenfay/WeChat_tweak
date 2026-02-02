@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface AddressTextParser
+@interface AddressTextParser : NSObject
 {
     NSString *_nsUrl;
     NSString *_nsSourceUrl;

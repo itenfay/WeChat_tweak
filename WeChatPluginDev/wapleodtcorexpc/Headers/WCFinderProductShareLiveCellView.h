@@ -5,7 +5,7 @@
 
 @class WCFinderProductShareCellViewModel;
 
-@interface WCFinderProductShareLiveCellView
+@interface WCFinderProductShareLiveCellView : NSObject
 {
 }
 

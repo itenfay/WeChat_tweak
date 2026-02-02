@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WCFinderLongVideoService
+@interface WCFinderLongVideoService : NSObject
 {
     NSMutableDictionary *_compressWatch;
     NSObject<OS_dispatch_queue> *_ioQueue;

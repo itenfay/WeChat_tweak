@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveECProductShareLogic, MMFinderLiveECShopWindowShareLogic, NSString;
 
-@interface MMFinderLiveECShareManager
+@interface MMFinderLiveECShareManager : NSObject
 {
     MMFinderLiveECProductShareLogic *_productShareLogic;
     MMFinderLiveECShopWindowShareLogic *_shopWindowShareLogic;

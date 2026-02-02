@@ -5,7 +5,7 @@
 
 @class GameCenterMsgActionInfo, GameCenterMsgAppInfo, GameCenterMsgBubbleInfoOld, GameCenterMsgControlInfo, NSString;
 
-@interface GameCenterOldBaseMsg
+@interface GameCenterOldBaseMsg : NSObject
 {
     NSString *_noticeId;
     GameCenterMsgAppInfo *_appInfo;

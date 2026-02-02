@@ -6,7 +6,7 @@
 @class NSObject;
 @protocol WCYoWindowDelegate;
 
-@interface WCYoWindowContainer
+@interface WCYoWindowContainer : NSObject
 {
     NSObject<WCYoWindowDelegate> *_yoWindowDelegate;
 }

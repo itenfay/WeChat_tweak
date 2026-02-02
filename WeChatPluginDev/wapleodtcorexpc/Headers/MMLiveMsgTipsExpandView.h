@@ -6,7 +6,7 @@
 @class CContact, MMTableView, NSMutableArray, NSString;
 @protocol MMLiveMsgTipsExpandViewDelegate;
 
-@interface MMLiveMsgTipsExpandView
+@interface MMLiveMsgTipsExpandView : NSObject
 {
     id <MMLiveMsgTipsExpandViewDelegate> _delegate;
     CContact *_groupContact;

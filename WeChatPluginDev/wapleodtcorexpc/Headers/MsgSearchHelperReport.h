@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MsgSearchHelperReport
+@interface MsgSearchHelperReport : NSObject
 {
     unsigned int _action;
     unsigned int _tab;

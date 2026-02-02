@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderContact, WCFinderPersonalSettingParams, WCFinderPrivacySettingHelper;
 
-@interface WCFinderPrivacySettingViewController
+@interface WCFinderPrivacySettingViewController : NSObject
 {
     WCFinderPersonalSettingParams *_params;
     WCFinderContact *_contact;

@@ -6,7 +6,7 @@
 @class MMTimer, NSString, WALocationGetter;
 @protocol WAMainListNearByLocationLogicDelegate;
 
-@interface WAMainListNearByLocationLogic
+@interface WAMainListNearByLocationLogic : NSObject
 {
     id <WAMainListNearByLocationLogicDelegate> _delegate;
     WALocationGetter *_locationGetter;

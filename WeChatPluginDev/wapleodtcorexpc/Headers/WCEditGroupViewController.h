@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface WCEditGroupViewController
+@interface WCEditGroupViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableArray *m_arrMyGroup;

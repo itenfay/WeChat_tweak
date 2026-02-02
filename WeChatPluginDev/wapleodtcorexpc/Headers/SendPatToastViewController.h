@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMTimer, NSString, PatWrap, RichTextView, SendPatToastWindow, UIView;
 
-@interface SendPatToastViewController
+@interface SendPatToastViewController : NSObject
 {
     _Bool _hideAfterShown;
     PatWrap *_patWrap;

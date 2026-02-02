@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat21WCFinderRewardTipsMgr
+@interface _TtC6WeChat21WCFinderRewardTipsMgr : NSObject
 {
     MISSING_TYPE *rewardTipsInfoList;
 }

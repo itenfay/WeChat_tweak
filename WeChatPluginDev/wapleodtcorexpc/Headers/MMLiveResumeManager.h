@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSString, UIViewController, WCFinderDataItem;
 
-@interface MMLiveResumeManager
+@interface MMLiveResumeManager : NSObject
 {
     _Bool _hasCheckedAbnormal;
     WCFinderDataItem *_finderDataItem;

@@ -5,7 +5,7 @@
 
 @class AUAudioDevice, MMTimer, NSRecursiveLock, NSString, PSTNComponent, PSTNDialData, VOIPKernelLog;
 
-@interface PSTNMgr
+@interface PSTNMgr : NSObject
 {
     int mStatus;
     _Bool mIsInterrupted;

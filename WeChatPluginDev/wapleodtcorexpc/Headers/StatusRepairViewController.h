@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo;
 
-@interface StatusRepairViewController
+@interface StatusRepairViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     struct CGPoint _layoutOrigin;

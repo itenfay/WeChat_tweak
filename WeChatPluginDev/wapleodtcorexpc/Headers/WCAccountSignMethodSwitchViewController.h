@@ -6,7 +6,7 @@
 @class AppleStyleLoginRegisterButton, UILabel, UIView;
 @protocol WCAccountSignMethodSwitchViewControllerDelegate;
 
-@interface WCAccountSignMethodSwitchViewController
+@interface WCAccountSignMethodSwitchViewController : NSObject
 {
     id <WCAccountSignMethodSwitchViewControllerDelegate> _delegate;
     unsigned long long _signMethod;

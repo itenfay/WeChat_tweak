@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveBannerCellViewModel, NSArray, NSString;
 @protocol MMFinderLiveBannerAngelDelegate;
 
-@interface MMFinderLiveBannerAngel
+@interface MMFinderLiveBannerAngel : NSObject
 {
     _Bool _isAnimation;
     _Bool _disablePagAnimation;

@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface WAAppTaskDBMgr
+@interface WAAppTaskDBMgr : NSObject
 {
     NSMutableDictionary *_dicAppID2TaskDB;
     NSObject<OS_dispatch_queue> *_queue;

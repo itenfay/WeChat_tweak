@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMEmoticonRewardPageContext
+@interface MMEmoticonRewardPageContext : NSObject
 {
     unsigned long long _rewardScene;
     NSString *_productId;

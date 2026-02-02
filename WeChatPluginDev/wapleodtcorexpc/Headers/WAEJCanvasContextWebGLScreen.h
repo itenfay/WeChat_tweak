@@ -5,7 +5,7 @@
 
 @class EAGLView, UIView;
 
-@interface WAEJCanvasContextWebGLScreen
+@interface WAEJCanvasContextWebGLScreen : NSObject
 {
     EAGLView *glview;
     struct CGRect style;

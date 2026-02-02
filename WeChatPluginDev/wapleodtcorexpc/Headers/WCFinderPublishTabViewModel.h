@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderPublishTabViewModel
+@interface WCFinderPublishTabViewModel : NSObject
 {
     unsigned long long _maxId;
 }

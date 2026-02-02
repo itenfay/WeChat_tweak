@@ -6,7 +6,7 @@
 @class CAGradientLayer, FavoritesItem, ForwardMessageLogicController, ImageBrowseButton, MMLongImageCropResult, MMLongImagePreviewBottomView, MMLongImagePreviewContext, MMUIButton, NSString, UIImage, UIImageView, UIScrollView;
 @protocol MMLongImagePreviewViewControllerDelegate;
 
-@interface MMLongImagePreviewViewController
+@interface MMLongImagePreviewViewController : NSObject
 {
     _Bool _hasEdit;
     _Bool _disableForward;

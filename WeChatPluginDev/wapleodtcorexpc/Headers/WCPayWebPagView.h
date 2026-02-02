@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSString, PAGImage, WCPaySingleDownloadLogic;
 @protocol WCPayWebPagViewDelegate;
 
-@interface WCPayWebPagView
+@interface WCPayWebPagView : NSObject
 {
     _Bool _isNeedFlush;
     _Bool _isForceUpdate;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameHaowanQueryPostInfo
+@interface GameHaowanQueryPostInfo : NSObject
 {
     _Bool _isBroken;
     NSString *_postId;

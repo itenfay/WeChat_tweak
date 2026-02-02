@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSString, TXCDispatchQueue, TXCHardwareVideoFrameSorter, TXCVideoDecodeConfig;
 @protocol TXIVideoDecoderSupervisorInterface;
 
-@interface TXCHardwareVideoDecoder
+@interface TXCHardwareVideoDecoder : NSObject
 {
     _Bool _isHevc;
     id <TXIVideoDecoderSupervisorInterface> supervisor;

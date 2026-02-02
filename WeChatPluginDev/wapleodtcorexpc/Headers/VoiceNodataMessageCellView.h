@@ -5,7 +5,7 @@
 
 @class VoiceNodataMessageViewModel;
 
-@interface VoiceNodataMessageCellView
+@interface VoiceNodataMessageCellView : NSObject
 {
 }
 

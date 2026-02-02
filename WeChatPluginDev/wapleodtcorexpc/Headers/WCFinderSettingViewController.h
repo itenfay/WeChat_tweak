@@ -5,7 +5,7 @@
 
 @class FinderNewUserPrepareResponse, NSString, WCFinderContact, WCFinderGetWechatHDHeadFetcher, WCFinderHeadImageView, WCTableViewManager;
 
-@interface WCFinderSettingViewController
+@interface WCFinderSettingViewController : NSObject
 {
     FinderNewUserPrepareResponse *_userPrepareResponse;
     WCTableViewManager *_tableViewManager;

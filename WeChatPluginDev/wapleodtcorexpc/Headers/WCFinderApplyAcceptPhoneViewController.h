@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface WCFinderApplyAcceptPhoneViewController
+@interface WCFinderApplyAcceptPhoneViewController : NSObject
 {
     CDUnknownBlockType _complete;
     UIView *_bgView;

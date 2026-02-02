@@ -6,7 +6,7 @@
 @class MJShootVisagePanelViewModel, MMUILabel, MMUIView, NSString, UICollectionView;
 @protocol MJShootVisagePanelViewControllerDelegate;
 
-@interface MJShootVisagePanelViewController
+@interface MJShootVisagePanelViewController : NSObject
 {
     id <MJShootVisagePanelViewControllerDelegate> _delegate;
     MJShootVisagePanelViewModel *_viewModel;

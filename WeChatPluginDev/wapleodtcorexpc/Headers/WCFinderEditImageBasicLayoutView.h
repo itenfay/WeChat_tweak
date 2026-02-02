@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderEditImageBasicLayoutView
+@interface WCFinderEditImageBasicLayoutView : NSObject
 {
     _Bool _hiddenCropBtn;
 }

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat29CarPlayTingItemListController
+@interface _TtC6WeChat29CarPlayTingItemListController : NSObject
 {
     MISSING_TYPE *currentPlayingListItem;
     MISSING_TYPE *nextDetailPage;

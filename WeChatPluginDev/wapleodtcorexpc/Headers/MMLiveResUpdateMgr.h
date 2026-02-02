@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
-@interface MMLiveResUpdateMgr
+@interface MMLiveResUpdateMgr : NSObject
 {
     NSDictionary *_currentResourceItems;
     NSDictionary *_cleanupResourceItems;

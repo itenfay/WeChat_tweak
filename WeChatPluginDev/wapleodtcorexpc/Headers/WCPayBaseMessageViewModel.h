@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCPayNetImageResource;
 
-@interface WCPayBaseMessageViewModel
+@interface WCPayBaseMessageViewModel : NSObject
 {
     NSString *_iconUrl;
     unsigned long long _bubbleType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface PasskeyNoCredentialsPageSheet
+@interface PasskeyNoCredentialsPageSheet : NSObject
 {
     CDUnknownBlockType _onFinishBlock;
 }

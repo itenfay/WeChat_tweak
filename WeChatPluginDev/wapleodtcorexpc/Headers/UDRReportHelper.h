@@ -6,7 +6,7 @@
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface UDRReportHelper
+@interface UDRReportHelper : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     double randomNum;

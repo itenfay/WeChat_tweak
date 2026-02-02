@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMAsset, NSString;
 @protocol GameHaowanAsset;
 
-@interface MMAssetForGameHaowan
+@interface MMAssetForGameHaowan : NSObject
 {
     MMAsset<GameHaowanAsset> *_impl;
 }

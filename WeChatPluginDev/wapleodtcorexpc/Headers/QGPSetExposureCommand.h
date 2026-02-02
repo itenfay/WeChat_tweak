@@ -5,7 +5,7 @@
 
 @class QGPSetExposureParam;
 
-@interface QGPSetExposureCommand
+@interface QGPSetExposureCommand : NSObject
 {
     QGPSetExposureParam *_params;
 }

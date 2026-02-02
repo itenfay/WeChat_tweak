@@ -5,7 +5,7 @@
 
 @class WCCanvasComponent, WCCanvasComponentItem;
 
-@interface WCCanvasRandomLayout
+@interface WCCanvasRandomLayout : NSObject
 {
     WCCanvasComponentItem *_theChosenItem;
     WCCanvasComponent *_theChosenComponent;

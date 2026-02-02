@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, NSString, _TtC6WeChat17WCDBIntegerNumber;
 
-@interface _TtC6WeChat31KaraPrivateMessageHistoryRecord
+@interface _TtC6WeChat31KaraPrivateMessageHistoryRecord : NSObject
 {
     MISSING_TYPE *identifier;
     MISSING_TYPE *isWeComContact;

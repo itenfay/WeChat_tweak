@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCPIPTextStateDescription;
 
-@interface MMFinderLiveStateTextWidgetObj
+@interface MMFinderLiveStateTextWidgetObj : NSObject
 {
     CDUnknownBlockType _getStateTextContainerSizeCallback;
     NSString *_text;

@@ -5,7 +5,7 @@
 
 @class LZDownloadTaskItem, NSURLConnection, NSURLRequest;
 
-@interface KSHttpAudioDataDownload
+@interface KSHttpAudioDataDownload : NSObject
 {
     NSURLRequest *_urlRequest;
     NSURLConnection *_urlConnection;

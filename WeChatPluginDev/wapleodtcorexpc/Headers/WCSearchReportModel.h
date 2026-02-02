@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCSearchReportModel
+@interface WCSearchReportModel : NSObject
 {
     NSString *_sessionId;
     unsigned long long _scene;

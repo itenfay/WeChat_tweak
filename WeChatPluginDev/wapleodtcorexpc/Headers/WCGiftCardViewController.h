@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIScrollView, WCBatchViewCardHelper, WCGiftCardData, WCGiftCardDetailView, WCGiftCardEnvelopeView, WCPreGiftCardData;
 
-@interface WCGiftCardViewController
+@interface WCGiftCardViewController : NSObject
 {
     unsigned int _bizUin;
     NSString *_currentUserName;

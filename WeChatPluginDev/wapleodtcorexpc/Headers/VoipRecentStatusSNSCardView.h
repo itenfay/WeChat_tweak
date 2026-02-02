@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, RichTextView, UIImageView, UILabel, UIView, WCDataItem;
 @protocol VoipRecentStatusProperties;
 
-@interface VoipRecentStatusSNSCardView
+@interface VoipRecentStatusSNSCardView : NSObject
 {
     _Bool _isSoundBtnHidden;
     _Bool _shouldPlaySound;

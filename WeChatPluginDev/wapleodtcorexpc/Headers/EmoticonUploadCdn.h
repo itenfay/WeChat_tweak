@@ -6,7 +6,7 @@
 @class CdnUploadEmojiInfo;
 @protocol EmoticonUploadCdnDelegate;
 
-@interface EmoticonUploadCdn
+@interface EmoticonUploadCdn : NSObject
 {
     id <EmoticonUploadCdnDelegate> _delegate;
     CdnUploadEmojiInfo *_cdnInfo;

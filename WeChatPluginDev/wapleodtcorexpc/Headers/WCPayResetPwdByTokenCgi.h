@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCPayResetPwdByTokenCgiDelegate;
 
-@interface WCPayResetPwdByTokenCgi
+@interface WCPayResetPwdByTokenCgi : NSObject
 {
     NSString *_token;
     NSString *_password;

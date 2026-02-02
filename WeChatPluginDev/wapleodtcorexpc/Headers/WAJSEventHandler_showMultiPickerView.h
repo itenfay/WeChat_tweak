@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_showMultiPickerView
+@interface WAJSEventHandler_showMultiPickerView : NSObject
 {
 }
 

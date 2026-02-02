@@ -5,7 +5,7 @@
 
 @class CContact, NSMutableArray;
 
-@interface WANativeAppViewModel
+@interface WANativeAppViewModel : NSObject
 {
     struct CGSize _viewSize;
     struct CGSize _titleSize;

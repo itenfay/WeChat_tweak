@@ -6,7 +6,7 @@
 @class FBSDKLoginManager, NSArray, NSDictionary, NSString;
 @protocol FBSDKLoginButtonDelegate;
 
-@interface FBSDKLoginButton
+@interface FBSDKLoginButton : NSObject
 {
     _Bool _hasShownTooltipBubble;
     FBSDKLoginManager *_loginManager;

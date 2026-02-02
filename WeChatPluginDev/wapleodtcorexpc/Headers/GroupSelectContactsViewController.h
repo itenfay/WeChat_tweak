@@ -6,7 +6,7 @@
 @class ContactsDataLogic, MMTableView, NSDictionary, NSMutableDictionary, NSNumber, NSString, WCDataSearcher;
 @protocol GroupSelectContactsViewControllerDelegate;
 
-@interface GroupSelectContactsViewController
+@interface GroupSelectContactsViewController : NSObject
 {
     id <GroupSelectContactsViewControllerDelegate> m_delegate;
     MMTableView *m_tableView;

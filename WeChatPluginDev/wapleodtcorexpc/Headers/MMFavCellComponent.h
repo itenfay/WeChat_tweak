@@ -6,7 +6,7 @@
 @class FavMultiMenuTableViewCell, FavoritesItem, MMFavBaselineComponent, MMFavBigImageFieldComponent, MMFavImageComponent, MMFavTextComponent, MMUIImageView, NSString, UIView;
 @protocol MMFavCellComponentDelegate;
 
-@interface MMFavCellComponent
+@interface MMFavCellComponent : NSObject
 {
     MMUIImageView *m_selectedView;
     MMUIImageView *m_deselectedView;

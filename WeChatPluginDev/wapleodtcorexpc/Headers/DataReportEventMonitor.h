@@ -6,7 +6,7 @@
 @class DataReportSubstitutePage, DataReportSubstitutePageStack, NSMutableArray, NSMutableDictionary, NSString;
 @protocol DataReportStandardEventDelegate;
 
-@interface DataReportEventMonitor
+@interface DataReportEventMonitor : NSObject
 {
     NSMutableArray *m_backgroudEventBuffers;
     NSMutableDictionary *m_viewExposeTime;

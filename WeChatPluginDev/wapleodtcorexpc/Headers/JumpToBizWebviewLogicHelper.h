@@ -5,7 +5,7 @@
 
 @protocol JumpToBizWebviewLogicHelperDelegate;
 
-@interface JumpToBizWebviewLogicHelper
+@interface JumpToBizWebviewLogicHelper : NSObject
 {
     id <JumpToBizWebviewLogicHelperDelegate> _delegate;
 }

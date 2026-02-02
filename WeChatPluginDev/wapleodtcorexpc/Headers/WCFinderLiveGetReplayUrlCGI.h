@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveGetReplayUrlCGI
+@interface WCFinderLiveGetReplayUrlCGI : NSObject
 {
     unsigned long long _replayId;
     CDUnknownBlockType _successBlock;

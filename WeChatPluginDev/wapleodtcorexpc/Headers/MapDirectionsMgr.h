@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MapDirectionsMgr
+@interface MapDirectionsMgr : NSObject
 {
 }
 

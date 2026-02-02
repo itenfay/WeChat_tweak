@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFlutterUpdateInfo
+@interface MMFlutterUpdateInfo : NSObject
 {
     NSString *appId;
     NSString *baseId;

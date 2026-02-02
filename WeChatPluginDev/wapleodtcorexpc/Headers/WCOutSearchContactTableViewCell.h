@@ -5,7 +5,7 @@
 
 @class AttributeLabel, MMHeadImageView;
 
-@interface WCOutSearchContactTableViewCell
+@interface WCOutSearchContactTableViewCell : NSObject
 {
     MMHeadImageView *_headImageView;
     AttributeLabel *_nameLabel;

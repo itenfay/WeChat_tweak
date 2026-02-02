@@ -5,7 +5,7 @@
 
 @class MMUINavigationController, NSString;
 
-@interface AppRefreshTokenErrorHandler
+@interface AppRefreshTokenErrorHandler : NSObject
 {
     MMUINavigationController *_navigationController;
 }

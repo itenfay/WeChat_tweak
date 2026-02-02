@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface GCWebViewCacheManager
+@interface GCWebViewCacheManager : NSObject
 {
     NSMutableDictionary *_cacheDict;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableAttributedString, NSString, UIColor, UILabel, UIView;
 
-@interface WCFlowLyricsView
+@interface WCFlowLyricsView : NSObject
 {
     _Bool _isRepeatByReplay;
     _Bool _hasStart;

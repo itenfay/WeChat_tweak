@@ -5,7 +5,7 @@
 
 @protocol WCPayScanMaterialRewardCodeCgiDelegate;
 
-@interface WCPayScanMaterialRewardCodeCgi
+@interface WCPayScanMaterialRewardCodeCgi : NSObject
 {
     id <WCPayScanMaterialRewardCodeCgiDelegate> _cgiDelegate;
 }

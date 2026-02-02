@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCEasyBoolValueEditViewController
+@interface WCEasyBoolValueEditViewController : NSObject
 {
     NSMutableArray *_configItemArray;
 }

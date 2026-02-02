@@ -6,7 +6,7 @@
 @class NSString, RichTextView, UIButton, UIImageView, UILabel, UIView, WCPayDecimalKeyboardView, WCPayTextField, WCPayWebImageView, WCUIAlertView;
 @protocol WCPayMerchantPayViewControllerDelegate;
 
-@interface WCPayMerchantPayViewController
+@interface WCPayMerchantPayViewController : NSObject
 {
     _Bool _isShouldShowPlaceHolder;
     double _keyboardHeight;

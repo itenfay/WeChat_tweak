@@ -6,7 +6,7 @@
 @class NSMutableSet, NSString;
 @protocol MMKvStatIgnoreField;
 
-@interface WCBrowseInfo
+@interface WCBrowseInfo : NSObject
 {
     unsigned int _browseFeedCount;
     unsigned int _commentOrLikeFeedCount;

@@ -6,7 +6,7 @@
 @class CameraScannerViewWrapper, NSString, UIImage, UploadDetectLogic;
 @protocol OCRTransScannerDelegate;
 
-@interface OCRTransScanner
+@interface OCRTransScanner : NSObject
 {
     struct CGRect _cropRect;
     int _imageType;

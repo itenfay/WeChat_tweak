@@ -5,7 +5,7 @@
 
 @class MMCommonActionSheetPicker, MMFinderLiveGlobalRewardLevelView, MMFinderLiveRewardLevelConfigs, MMFinderLiveTaskId, MMUIActivityIndicatorView, MMUIButton, MMUILabel, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIImageView;
 
-@interface MMFinderLiveBuyGiftPacketViewController
+@interface MMFinderLiveBuyGiftPacketViewController : NSObject
 {
     _Bool _wecoinBalanceUpdated;
     _Bool _fetchWecoinBalanceFinished;

@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderPostSessionModel;
 
-@interface CaraFinderPublishProphetContext
+@interface CaraFinderPublishProphetContext : NSObject
 {
     WCFinderPostSessionModel *_postSession;
 }

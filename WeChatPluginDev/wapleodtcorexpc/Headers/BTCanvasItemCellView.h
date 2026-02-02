@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BTCanvasItemCellViewModel, MMWebCanvasView, NSMutableDictionary, NSString;
 
-@interface BTCanvasItemCellView
+@interface BTCanvasItemCellView : NSObject
 {
     NSString *_canvasId;
     double _navigationBarHeight;

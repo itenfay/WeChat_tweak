@@ -6,7 +6,7 @@
 @class NSString, WCPayPayMoneyLogic, WCPayQRCodeRewardPayCheckCgi, WCPayQRCodeRewardPlaceOrderCgi, WCPayQRCodeRewardScanCodeCgi;
 @protocol WCPayQRCodeRewardPayControlLogicDelegate;
 
-@interface WCPayQRCodeRewardPayControlLogic
+@interface WCPayQRCodeRewardPayControlLogic : NSObject
 {
     id <WCPayQRCodeRewardPayControlLogicDelegate> _logicDelegate;
     WCPayPayMoneyLogic *_payMoneyLogic;

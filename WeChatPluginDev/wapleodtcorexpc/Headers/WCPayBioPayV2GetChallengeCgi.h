@@ -5,7 +5,7 @@
 
 @protocol WCPayBioPayV2GetChallengeCgiDelegate;
 
-@interface WCPayBioPayV2GetChallengeCgi
+@interface WCPayBioPayV2GetChallengeCgi : NSObject
 {
     id <WCPayBioPayV2GetChallengeCgiDelegate> m_delegate;
 }

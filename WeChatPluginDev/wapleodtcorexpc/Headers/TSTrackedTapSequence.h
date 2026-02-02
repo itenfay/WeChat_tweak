@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface TSTrackedTapSequence
+@interface TSTrackedTapSequence : NSObject
 {
     NSArray *_taps;
 }

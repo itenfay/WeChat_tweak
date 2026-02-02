@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetAuthorizationCGI
+@interface WCFinderLiveGetAuthorizationCGI : NSObject
 {
     _Bool _isReject;
     unsigned int _platform;

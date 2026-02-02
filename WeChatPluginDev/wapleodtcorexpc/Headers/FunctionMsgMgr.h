@@ -5,7 +5,7 @@
 
 @class FunctionNewXml, NSMutableArray, NSRecursiveLock, NSString;
 
-@interface FunctionMsgMgr
+@interface FunctionMsgMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     _Bool m_bGettingMsg;

@@ -6,7 +6,7 @@
 @class MMTimer, NSDate, NSMutableArray, NSMutableDictionary, NSString;
 @protocol RTEAttachmentViewProviderDelegate;
 
-@interface RTEAttachmentViewProvider
+@interface RTEAttachmentViewProvider : NSObject
 {
     NSMutableDictionary *m_registerViewDictionary;
     NSMutableDictionary *m_activeAttachmentViews;

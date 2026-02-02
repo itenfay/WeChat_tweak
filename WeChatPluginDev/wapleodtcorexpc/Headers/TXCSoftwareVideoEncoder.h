@@ -5,7 +5,7 @@
 
 @class NSString, TXCDispatchQueue, TXCVideoEncoderSupervisor;
 
-@interface TXCSoftwareVideoEncoder
+@interface TXCSoftwareVideoEncoder : NSObject
 {
 }
 

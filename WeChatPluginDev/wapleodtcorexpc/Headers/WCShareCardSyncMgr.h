@@ -6,7 +6,7 @@
 @class WCShareCardDB;
 @protocol WCShareCardSyncMgrDelegate;
 
-@interface WCShareCardSyncMgr
+@interface WCShareCardSyncMgr : NSObject
 {
     unsigned long long _syncMaxSeq;
     WCShareCardDB *_wcShareCardDB;

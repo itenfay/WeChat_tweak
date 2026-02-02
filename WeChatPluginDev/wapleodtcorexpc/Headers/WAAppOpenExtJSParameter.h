@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAAppOpenExtJSParameter
+@interface WAAppOpenExtJSParameter : NSObject
 {
     NSMutableArray *_jsModels;
 }

@@ -5,7 +5,7 @@
 
 @class NSArray, WCPayOverseaReadActivityList, WCPayOverseaTypeInfoObject;
 
-@interface WCPayOverseaMainWalletPayFunctionData
+@interface WCPayOverseaMainWalletPayFunctionData : NSObject
 {
     _Bool _m_hasFooterView;
     _Bool _m_rightTopNew;

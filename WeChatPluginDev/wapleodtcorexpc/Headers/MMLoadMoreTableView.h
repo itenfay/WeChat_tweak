@@ -6,7 +6,7 @@
 @class UIView;
 @protocol MMLoadMoreTableViewDelegate;
 
-@interface MMLoadMoreTableView
+@interface MMLoadMoreTableView : NSObject
 {
     struct UIEdgeInsets _insetsBefore;
     _Bool _disableLoadMore;

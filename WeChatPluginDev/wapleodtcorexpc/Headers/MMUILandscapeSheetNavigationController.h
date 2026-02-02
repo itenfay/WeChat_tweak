@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer;
 
-@interface MMUILandscapeSheetNavigationController
+@interface MMUILandscapeSheetNavigationController : NSObject
 {
     _Bool _wasPortrait;
     CAShapeLayer *_maskLayer;

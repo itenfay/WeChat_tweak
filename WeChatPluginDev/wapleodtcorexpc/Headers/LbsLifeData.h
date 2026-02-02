@@ -5,7 +5,7 @@
 
 @class CLLocation, NSArray, NSString;
 
-@interface LbsLifeData
+@interface LbsLifeData : NSObject
 {
     CLLocation *_location;
     NSArray *_lbsLifeList;

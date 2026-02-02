@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCPOIStarView
+@interface WCPOIStarView : NSObject
 {
     NSMutableArray *m_arrPOIStars;
     unsigned int _poiScore;

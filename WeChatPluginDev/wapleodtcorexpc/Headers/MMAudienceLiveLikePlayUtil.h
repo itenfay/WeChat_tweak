@@ -5,7 +5,7 @@
 
 @class MMLiveLikeButton;
 
-@interface MMAudienceLiveLikePlayUtil
+@interface MMAudienceLiveLikePlayUtil : NSObject
 {
     MMLiveLikeButton *_likeButton;
 }

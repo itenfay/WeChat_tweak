@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32WAColdLaunchRuntimeLoaderContext
+@interface _TtC6WeChat32WAColdLaunchRuntimeLoaderContext : NSObject
 {
     MISSING_TYPE *versionRouterRet;
     MISSING_TYPE *contact;

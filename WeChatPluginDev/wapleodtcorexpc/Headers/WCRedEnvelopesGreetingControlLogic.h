@@ -5,7 +5,7 @@
 
 @class MMWebViewController, NSDictionary, NSString, WCPayControlData, WCPayJumpRemindControlLogic, WCPayPayMoneyLogic, WCRedEnvelopes2019GreetingViewController, WCRedEnvelopes2022HKGreetingViewController, WCRedEnvelopesReportCgi;
 
-@interface WCRedEnvelopesGreetingControlLogic
+@interface WCRedEnvelopesGreetingControlLogic : NSObject
 {
     WCPayControlData *m_oPayData;
     WCPayPayMoneyLogic *m_oPayMoneyLogic;

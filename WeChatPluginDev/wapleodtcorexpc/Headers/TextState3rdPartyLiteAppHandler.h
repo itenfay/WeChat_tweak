@@ -5,7 +5,7 @@
 
 @class JSJumpLiteappInfo, MMLiteAppInfoItem, NSMutableDictionary, NSString, UIViewController;
 
-@interface TextState3rdPartyLiteAppHandler
+@interface TextState3rdPartyLiteAppHandler : NSObject
 {
     _Bool _syncCheckUpdate;
     _Bool _isHalfScreen;

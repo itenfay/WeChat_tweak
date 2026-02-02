@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, WCFinderContact, WCTableViewManager;
 
-@interface WCFinderInteractionLimitCommentBulletVC
+@interface WCFinderInteractionLimitCommentBulletVC : NSObject
 {
     CDUnknownBlockType _complectionBlock;
     WCTableViewManager *_tableViewManager;

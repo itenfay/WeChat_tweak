@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCGetTransHistroyCgiDelegate;
 
-@interface WCPayT2BCGetTransHistroyCgi
+@interface WCPayT2BCGetTransHistroyCgi : NSObject
 {
     id <WCPayT2BCGetTransHistroyCgiDelegate> m_delegate;
 }

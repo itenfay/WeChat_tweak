@@ -5,7 +5,7 @@
 
 @class NSData, NSDictionary, NSNumber, NSString;
 
-@interface QBRequestPacket
+@interface QBRequestPacket : NSObject
 {
     NSNumber *_iVersion;
     NSNumber *_cPacketType;

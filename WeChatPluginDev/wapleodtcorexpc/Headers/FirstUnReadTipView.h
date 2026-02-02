@@ -5,7 +5,7 @@
 
 @protocol FirstUnReadTipViewDelegate;
 
-@interface FirstUnReadTipView
+@interface FirstUnReadTipView : NSObject
 {
     id <FirstUnReadTipViewDelegate> _delegate;
 }

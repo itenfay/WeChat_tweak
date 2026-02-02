@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
-@interface WCFinderFullCollectionToolbarItemButton
+@interface WCFinderFullCollectionToolbarItemButton : NSObject
 {
     _Bool _itemTitleAnimating;
     UIImageView *_itemImageView;

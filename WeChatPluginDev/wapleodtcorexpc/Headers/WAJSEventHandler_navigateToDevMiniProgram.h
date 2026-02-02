@@ -5,7 +5,7 @@
 
 @class WAAppIdToUsernameTransfer;
 
-@interface WAJSEventHandler_navigateToDevMiniProgram
+@interface WAJSEventHandler_navigateToDevMiniProgram : NSObject
 {
     WAAppIdToUsernameTransfer *_appID2UserNameTransfer;
 }

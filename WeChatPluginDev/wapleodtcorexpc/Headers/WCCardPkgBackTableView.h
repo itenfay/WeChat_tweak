@@ -5,7 +5,7 @@
 
 @protocol WCCardPkgBackTableViewDelegate;
 
-@interface WCCardPkgBackTableView
+@interface WCCardPkgBackTableView : NSObject
 {
     double _maxHeight;
     id <WCCardPkgBackTableViewDelegate> _wx_delegate;

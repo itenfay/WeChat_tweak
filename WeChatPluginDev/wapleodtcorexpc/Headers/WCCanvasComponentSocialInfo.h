@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCCanvasComponentSocialInfo
+@interface WCCanvasComponentSocialInfo : NSObject
 {
     NSString *_titlePrefix;
     NSString *_titleInfix;

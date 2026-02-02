@@ -6,7 +6,7 @@
 @class CContact, CEnterpriseContact, MMScrollView, MMTableView, NSString;
 @protocol EnterpriseSessionSelectViewControllerDelegate;
 
-@interface EnterpriseSessionSelectViewController
+@interface EnterpriseSessionSelectViewController : NSObject
 {
     unsigned int _scene;
     CContact *_brandContact;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE, _TtC6WeChat17MagicWeAppCardBiz;
 
-@interface _TtC6WeChat26MagicWeAppCardJsApiContext
+@interface _TtC6WeChat26MagicWeAppCardJsApiContext : NSObject
 {
     MISSING_TYPE *permissionDelegate;
     MISSING_TYPE *biz;

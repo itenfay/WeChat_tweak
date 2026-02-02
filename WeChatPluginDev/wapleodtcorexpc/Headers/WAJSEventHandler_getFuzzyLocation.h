@@ -5,7 +5,7 @@
 
 @class NSString, TencentLBSLocationManager;
 
-@interface WAJSEventHandler_getFuzzyLocation
+@interface WAJSEventHandler_getFuzzyLocation : NSObject
 {
     unsigned long long m_geoLocationType;
     NSString *_openId;

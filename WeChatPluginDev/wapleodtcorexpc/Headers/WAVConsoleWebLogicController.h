@@ -6,7 +6,7 @@
 @class NSString, NSURL, NSURLRequest, UIViewController, WAJSContextPlugin_vConsole, WAVConsoleJSLogicImpl, YYBaseWebView;
 @protocol WAVConsoleWebLogicControllerDelegate;
 
-@interface WAVConsoleWebLogicController
+@interface WAVConsoleWebLogicController : NSObject
 {
     _Bool _isWebviewFirstLoad;
     unsigned int _htmlId;

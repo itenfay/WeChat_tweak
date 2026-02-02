@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MMResPackageMgr
+@interface MMResPackageMgr : NSObject
 {
     NSMutableDictionary *m_resMap;
 }

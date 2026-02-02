@@ -5,7 +5,7 @@
 
 @class MMImageDetectUploader, NSMutableSet, NSString;
 
-@interface MMImageDetectOCRService
+@interface MMImageDetectOCRService : NSObject
 {
     _Bool _enableLocalOCR;
     MMImageDetectUploader *_uploader;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface MonoServiceMgr
+@interface MonoServiceMgr : NSObject
 {
     NSMutableDictionary *_monoServiceAppSceneDict;
     NSMutableDictionary *_mainSceneAudioMonoServiceDict;

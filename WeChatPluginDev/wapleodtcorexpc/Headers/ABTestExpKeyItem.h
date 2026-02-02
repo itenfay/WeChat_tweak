@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface ABTestExpKeyItem
+@interface ABTestExpKeyItem : NSObject
 {
     _Bool _bNoReport;
     unsigned int _uiSeq;

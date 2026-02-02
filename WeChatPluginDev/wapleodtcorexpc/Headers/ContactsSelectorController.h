@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString, UINavigationController, UIView, WCMomentsPostReportSession, WCSelectorView;
 @protocol ContactsSelectorControllerDelegate, SelectorControllerDelegate;
 
-@interface ContactsSelectorController
+@interface ContactsSelectorController : NSObject
 {
     NSMutableArray *_arrFilteredContacts;
     NSMutableArray *_arrContacts;

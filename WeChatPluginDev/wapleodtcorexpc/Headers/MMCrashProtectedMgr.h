@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface MMCrashProtectedMgr
+@interface MMCrashProtectedMgr : NSObject
 {
     _Bool m_isDebuging;
     _Bool m_stopRemovingUnsedCPKey;

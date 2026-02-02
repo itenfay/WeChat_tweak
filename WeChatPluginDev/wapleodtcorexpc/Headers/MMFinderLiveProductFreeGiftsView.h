@@ -5,7 +5,7 @@
 
 @class NSArray, UILabel;
 
-@interface MMFinderLiveProductFreeGiftsView
+@interface MMFinderLiveProductFreeGiftsView : NSObject
 {
     NSArray *_imageViews;
     UILabel *_label;

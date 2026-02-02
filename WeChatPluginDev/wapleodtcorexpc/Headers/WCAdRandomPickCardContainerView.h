@@ -5,7 +5,7 @@
 
 @class WCAdRandomPickCardView, WCDataItem;
 
-@interface WCAdRandomPickCardContainerView
+@interface WCAdRandomPickCardContainerView : NSObject
 {
     WCDataItem *_dataItem;
     unsigned long long _contentItemScene;

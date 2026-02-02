@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetMemberCardListCGI
+@interface WCFinderGetMemberCardListCGI : NSObject
 {
     _Bool _continueFlag;
     NSString *_finderUsername;

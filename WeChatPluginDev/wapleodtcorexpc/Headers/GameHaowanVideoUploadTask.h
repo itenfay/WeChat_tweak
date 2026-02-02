@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameHaowanVideoUploadTask
+@interface GameHaowanVideoUploadTask : NSObject
 {
     NSString *_videoMd5;
     long long _videoFileSize;

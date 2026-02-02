@@ -5,7 +5,7 @@
 
 @class NSString, TemplateMsgSearchHelper;
 
-@interface TemplateMsgViewController
+@interface TemplateMsgViewController : NSObject
 {
     _Bool _isViewDidAppear;
     unsigned int _lastAutoPlayLocalID;

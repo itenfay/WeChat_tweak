@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIViewController, NSData, NSMutableArray, NSString, PhoneAuthGetPhoneNumberLogicPhoneInfo, WAPhoneNumberAuthorizeSheetInfo, WAPhoneVerifyWindow, WAReportPhoneAuthActionItem, WCAccountBindPhoneControlLogic;
 @protocol IWAPhoneNumberAuthorizePageSheet;
 
-@interface PhoneAuthGetPhoneNumberLogic
+@interface PhoneAuthGetPhoneNumberLogic : NSObject
 {
     _Bool _isAcceptProtocol;
     _Bool _bindPhoneReturn;

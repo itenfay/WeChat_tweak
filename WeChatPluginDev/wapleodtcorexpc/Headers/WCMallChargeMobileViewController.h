@@ -6,7 +6,7 @@
 @class NSDictionary, NSString, UIButton, UILabel, UIView, WCMallCandidateTelephoneView, WCMallOldTelephoneView, WCUITextField;
 @protocol WCMallChargeMobileViewControllerDelegate;
 
-@interface WCMallChargeMobileViewController
+@interface WCMallChargeMobileViewController : NSObject
 {
     id <WCMallChargeMobileViewControllerDelegate> m_delegate;
     WCUITextField *m_textInputTextField;

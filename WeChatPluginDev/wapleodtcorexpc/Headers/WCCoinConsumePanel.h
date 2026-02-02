@@ -6,7 +6,7 @@
 @class WCCoinConsumePanelDetailView, WCCoinConsumeParameter;
 @protocol WCCoinConsumePanelDelegate;
 
-@interface WCCoinConsumePanel
+@interface WCCoinConsumePanel : NSObject
 {
     id <WCCoinConsumePanelDelegate> _delegate;
     WCCoinConsumeParameter *_parameter;

@@ -5,7 +5,7 @@
 
 @protocol WCCardBulkImportMgrDelegate;
 
-@interface WCCardBulkImportMgr
+@interface WCCardBulkImportMgr : NSObject
 {
     id <WCCardBulkImportMgrDelegate> _delegate;
 }

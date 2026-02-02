@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WAMemoryStatMgr
+@interface WAMemoryStatMgr : NSObject
 {
     NSMutableDictionary *_appid2MemStatInfo;
     NSMutableDictionary *_appid2KillInfo;

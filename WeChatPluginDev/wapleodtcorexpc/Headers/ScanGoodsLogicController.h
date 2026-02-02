@@ -5,7 +5,7 @@
 
 @class CameraScanGoodsContentView, GoodsScanner, NSString;
 
-@interface ScanGoodsLogicController
+@interface ScanGoodsLogicController : NSObject
 {
     GoodsScanner *_scanner;
     _Bool _isSearching;

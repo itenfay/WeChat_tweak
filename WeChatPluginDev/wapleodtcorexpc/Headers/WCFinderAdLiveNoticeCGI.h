@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderAdLiveNoticeCGI
+@interface WCFinderAdLiveNoticeCGI : NSObject
 {
     NSString *_username;
     NSString *_noticeId;

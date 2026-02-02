@@ -5,7 +5,7 @@
 
 @class CADisplayLink, CMDeviceMotion;
 
-@interface WCAdInteractionDeviceMotionView
+@interface WCAdInteractionDeviceMotionView : NSObject
 {
     _Bool _shouldResumeTimer;
     CMDeviceMotion *_oriMotion;

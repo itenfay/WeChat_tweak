@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModProfileStickySettingCGI
+@interface WCFinderModProfileStickySettingCGI : NSObject
 {
     _Bool _isStickyTop;
     unsigned long long _feedID;

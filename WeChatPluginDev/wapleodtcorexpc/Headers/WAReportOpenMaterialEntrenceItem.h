@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportOpenMaterialEntrenceItem
+@interface WAReportOpenMaterialEntrenceItem : NSObject
 {
     unsigned int _scene_id;
     NSString *_session;

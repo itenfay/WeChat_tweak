@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLiveRewardPrepareParams;
 
-@interface WCFinderLiveRewardPrepareCGI
+@interface WCFinderLiveRewardPrepareCGI : NSObject
 {
     WCFinderLiveRewardPrepareParams *_params;
     CDUnknownBlockType _successBlock;

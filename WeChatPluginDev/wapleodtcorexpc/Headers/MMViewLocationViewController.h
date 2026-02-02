@@ -6,7 +6,7 @@
 @class AnnotationLogicController, CAGradientLayer, CLLocation, FavDataItemWrap, FavoritesItem, ForwardMessageLogicController, MMFloorPickView, MMMapView, MMScrollActionSheet, MMTimer, NSString, NavigateLogicController, POIInfo, PickLocationAnnotationView, UIButton, UIView, UnderLineLabel;
 @protocol IFinderPOIDetailViewController, ViewLocationDelegate;
 
-@interface MMViewLocationViewController
+@interface MMViewLocationViewController : NSObject
 {
     _Bool _canAddToFav;
     _Bool _canSendToFriend;

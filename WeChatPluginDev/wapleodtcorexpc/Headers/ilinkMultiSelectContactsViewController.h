@@ -6,7 +6,7 @@
 @class MMUILabel, MultiTalkJumpAppInfo, NSMutableDictionary, NSString, UIView;
 @protocol ilinkMultiSelectContactsViewControllerDelegate;
 
-@interface ilinkMultiSelectContactsViewController
+@interface ilinkMultiSelectContactsViewController : NSObject
 {
     _Bool m_needToFixPanelViewLayout;
     _Bool _doNotShowContactsSelect;

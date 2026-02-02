@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, UIButton, UIImageView, UILabel, UIView;
 
-@interface MMActionSheetGeneralRowView
+@interface MMActionSheetGeneralRowView : NSObject
 {
     UIButton *_backgroundButton;
     MMWebImageView *_iconImageView;

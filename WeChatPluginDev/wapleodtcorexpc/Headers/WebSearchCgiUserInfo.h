@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebSearchCgiUserInfo
+@interface WebSearchCgiUserInfo : NSObject
 {
     NSString *_requestId;
     NSString *_tagId;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTVideoItemCellAutoPlayReportData
+@interface BTVideoItemCellAutoPlayReportData : NSObject
 {
     NSString *_mpUrl;
     NSString *_vid;

@@ -5,7 +5,7 @@
 
 @class TXCVideoFrameCoords;
 
-@interface TXCThreeInputFilter
+@interface TXCThreeInputFilter : NSObject
 {
     TXCVideoFrameCoords *_frameCoords2;
     TXCVideoFrameCoords *_frameCoords3;

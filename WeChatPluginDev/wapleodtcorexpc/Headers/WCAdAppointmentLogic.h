@@ -6,7 +6,7 @@
 @class NSString, WCAdAppointmentInfo, WCAdConfirmHalfScreenBaseView;
 @protocol WCAdAppointmentLogicDelegate;
 
-@interface WCAdAppointmentLogic
+@interface WCAdAppointmentLogic : NSObject
 {
     id <WCAdAppointmentLogicDelegate> _delegate;
     WCAdAppointmentInfo *_appointmentInfo;

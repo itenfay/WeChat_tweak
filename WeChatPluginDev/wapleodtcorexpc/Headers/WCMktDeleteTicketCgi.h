@@ -5,7 +5,7 @@
 
 @protocol WCMktDeleteTicketCgiDelegate;
 
-@interface WCMktDeleteTicketCgi
+@interface WCMktDeleteTicketCgi : NSObject
 {
     id <WCMktDeleteTicketCgiDelegate> _cgiDelegate;
 }

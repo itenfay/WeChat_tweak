@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
-@interface WCFinderScrollActionSheetItem
+@interface WCFinderScrollActionSheetItem : NSObject
 {
     CDUnknownBlockType _selection;
     unsigned long long _itemType;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveProductHintAnimationInfo, MMFinderLiveGoodsHotSaleAnimationView, MMFinderLiveGoodsItem, MMFinderLiveGoodsPromoteContentView, MMFinderLiveHotSaleAnimationLogic, NSString;
 
-@interface MMFinderLiveProductPromotePubbleContentView
+@interface MMFinderLiveProductPromotePubbleContentView : NSObject
 {
     _Bool _closeBySelf;
     unsigned int _startExposingTime;

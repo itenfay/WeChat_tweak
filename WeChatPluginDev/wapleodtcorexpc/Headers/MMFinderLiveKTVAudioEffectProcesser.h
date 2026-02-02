@@ -5,7 +5,7 @@
 
 @class NSMutableData;
 
-@interface MMFinderLiveKTVAudioEffectProcesser
+@interface MMFinderLiveKTVAudioEffectProcesser : NSObject
 {
     _Bool _writeToNewBuffer;
     _Bool _isProcessedDataSizeChanged;

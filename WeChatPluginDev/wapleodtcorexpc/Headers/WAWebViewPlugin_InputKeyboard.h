@@ -6,7 +6,7 @@
 @class NSDictionary, NSMutableDictionary, NSString, NSTimer, WACustomKeyboard, WAJSEventHandler_BaseEvent, WANativeKeyboardAccessoryView;
 @protocol InputKeyboardDelegate, WATextInputInterface;
 
-@interface WAWebViewPlugin_InputKeyboard
+@interface WAWebViewPlugin_InputKeyboard : NSObject
 {
     double _toolBarHeight;
     long long _orientation;

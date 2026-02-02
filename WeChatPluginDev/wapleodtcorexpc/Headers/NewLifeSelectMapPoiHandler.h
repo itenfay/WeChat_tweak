@@ -5,7 +5,7 @@
 
 @class MMPickLocationViewController;
 
-@interface NewLifeSelectMapPoiHandler
+@interface NewLifeSelectMapPoiHandler : NSObject
 {
     MMPickLocationViewController *_locationViewController;
 }

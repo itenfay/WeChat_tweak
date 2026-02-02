@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPreGiftCardData
+@interface WCPreGiftCardData : NSObject
 {
     _Bool _ignore;
     unsigned int _bizUin;

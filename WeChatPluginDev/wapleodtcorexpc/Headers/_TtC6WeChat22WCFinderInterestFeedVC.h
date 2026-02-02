@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat22WCFinderInterestFeedVC
+@interface _TtC6WeChat22WCFinderInterestFeedVC : NSObject
 {
     MISSING_TYPE *vm;
     MISSING_TYPE *appearance;

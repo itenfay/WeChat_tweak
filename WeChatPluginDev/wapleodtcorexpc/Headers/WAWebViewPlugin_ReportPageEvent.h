@@ -5,7 +5,7 @@
 
 @class NSString, WAReportBaseItem;
 
-@interface WAWebViewPlugin_ReportPageEvent
+@interface WAWebViewPlugin_ReportPageEvent : NSObject
 {
     unsigned long long m_clickTimeStamp;
     WAReportBaseItem *_baseItem;

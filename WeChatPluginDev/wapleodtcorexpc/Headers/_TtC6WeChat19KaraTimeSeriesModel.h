@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat19KaraTimeSeriesModel
+@interface _TtC6WeChat19KaraTimeSeriesModel : NSObject
 {
     MISSING_TYPE *$__lazy_storage_$_inputGroup;
 }

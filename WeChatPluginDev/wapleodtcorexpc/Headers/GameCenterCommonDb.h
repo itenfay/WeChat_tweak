@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCTDatabase;
 
-@interface GameCenterCommonDb
+@interface GameCenterCommonDb : NSObject
 {
     WCTDatabase *_dataBase;
     NSMutableDictionary *_tableDict;

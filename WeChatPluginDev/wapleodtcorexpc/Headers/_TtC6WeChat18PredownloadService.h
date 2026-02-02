@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat18PredownloadService
+@interface _TtC6WeChat18PredownloadService : NSObject
 {
     MISSING_TYPE *C2C;
 }

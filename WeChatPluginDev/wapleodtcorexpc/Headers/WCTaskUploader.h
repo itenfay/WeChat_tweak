@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableSet, NSString, WCUploadTask, WCUploader;
 @protocol WCTaskUploaderDelegate;
 
-@interface WCTaskUploader
+@interface WCTaskUploader : NSObject
 {
     WCUploadTask *_uploadTask;
     WCUploader *_uploader;

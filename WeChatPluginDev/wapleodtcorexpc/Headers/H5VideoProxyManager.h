@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WXCustomWebViewControllerProtocol;
 
-@interface H5VideoProxyManager
+@interface H5VideoProxyManager : NSObject
 {
     _Bool _isInit;
     _Bool _isNeedReInitFromSuspend;

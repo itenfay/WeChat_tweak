@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface StoreEmotionSearchResMgr
+@interface StoreEmotionSearchResMgr : NSObject
 {
 }
 

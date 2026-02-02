@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _ZZButtonChainModel
+@interface _ZZButtonChainModel : NSObject
 {
     CDUnknownBlockType _titleFont_O;
 }

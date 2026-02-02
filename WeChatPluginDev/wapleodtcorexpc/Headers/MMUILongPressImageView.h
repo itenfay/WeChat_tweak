@@ -6,7 +6,7 @@
 @class MMUIFastTapGestureRecognizer, NSString, UIImageView, UILongPressGestureRecognizer;
 @protocol LongPressImageViewDelegate;
 
-@interface MMUILongPressImageView
+@interface MMUILongPressImageView : NSObject
 {
     _Bool _enableHighlighted;
     _Bool _showsTouchWhenHighlighted;

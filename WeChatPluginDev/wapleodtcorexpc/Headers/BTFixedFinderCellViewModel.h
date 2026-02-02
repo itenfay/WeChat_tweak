@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTFixedFinderCellViewModel
+@interface BTFixedFinderCellViewModel : NSObject
 {
     NSString *_curRecommendReason;
 }

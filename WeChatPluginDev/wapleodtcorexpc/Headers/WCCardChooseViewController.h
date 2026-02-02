@@ -6,7 +6,7 @@
 @class MMTableView, MMUIView, NSData, NSMutableArray, NSString, UIButton, UILabel, UIScrollView, UIView, UrlLabel, WCCardAvailableSeed, WCCardChooseEmptyView, WCTimeLineFooterView;
 @protocol WCCardChooseViewControllerDelegate;
 
-@interface WCCardChooseViewController
+@interface WCCardChooseViewController : NSObject
 {
     WCCardAvailableSeed *_availableSeed;
     _Bool _isLoading;

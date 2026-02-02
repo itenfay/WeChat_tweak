@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCEditImageViewController;
 
-@interface LiteAppJsApiEditImage
+@interface LiteAppJsApiEditImage : NSObject
 {
     NSMutableArray *_localIds;
     long long _totalCount;

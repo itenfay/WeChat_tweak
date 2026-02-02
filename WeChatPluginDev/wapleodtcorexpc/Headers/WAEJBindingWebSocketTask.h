@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAEJBindingWebSocketTask
+@interface WAEJBindingWebSocketTask : NSObject
 {
     NSString *taskId;
     unsigned int workerId;

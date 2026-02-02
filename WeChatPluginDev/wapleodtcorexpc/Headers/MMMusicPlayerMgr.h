@@ -5,7 +5,7 @@
 
 @class MMMusicInfo, MMMusicListMgr, MMMusicLyricResolver, MMMusicUrlChecker, MusicLogInfo, MusicPlayerActionReporter, NSMutableArray, NSString;
 
-@interface MMMusicPlayerMgr
+@interface MMMusicPlayerMgr : NSObject
 {
     _Bool _shouldTurnRepeatNoneMode;
     _Bool _isManualPaused;

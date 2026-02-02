@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FaceRecogGuideInfo
+@interface FaceRecogGuideInfo : NSObject
 {
     NSString *_guideTitle;
     NSString *_firstStepNumberIconName;

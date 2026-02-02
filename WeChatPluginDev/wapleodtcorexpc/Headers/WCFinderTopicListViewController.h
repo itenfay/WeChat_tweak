@@ -5,7 +5,7 @@
 
 @class FinderGetTopicListResponse, FinderLocation, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSString, RecommendedMusicInfo, UIBarButtonItem, UICollectionReusableView, UICollectionView, UIImageView, UILabel, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderCreateCoordinator, WCFinderPostMgr, WCFinderSectionInfo, WCFinderStreamFooterView, WCFinderStreamLayout, WCFinderTagHeaderCollectionReusableView, WCFinderTopicListViewModel;
 
-@interface WCFinderTopicListViewController
+@interface WCFinderTopicListViewController : NSObject
 {
     _Bool _showTotalTags;
     _Bool _enablePostFeed;

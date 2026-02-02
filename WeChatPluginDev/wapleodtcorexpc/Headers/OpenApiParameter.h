@@ -5,7 +5,7 @@
 
 @class AppCommunicateData, NSString, NSURL;
 
-@interface OpenApiParameter
+@interface OpenApiParameter : NSObject
 {
     _Bool _isLaunchByUniversalLink;
     _Bool _isDegradeLaunchByScheme;

@@ -5,7 +5,7 @@
 
 @class MMKDatePickerViewOnSelectCallback, NSString, WCPaySelectDateItem;
 
-@interface KindaDatePickerView
+@interface KindaDatePickerView : NSObject
 {
     long long m_type;
     MMKDatePickerViewOnSelectCallback *m_onSelectCallback;

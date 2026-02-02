@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, CMessageWrap, MMPageSheetAdapter, UIView, UIVisualEffectView;
 
-@interface QuickReplyFullscreenAnimateViewController
+@interface QuickReplyFullscreenAnimateViewController : NSObject
 {
     UIView *_animateTopView;
     UIView *_customBackgroundView;

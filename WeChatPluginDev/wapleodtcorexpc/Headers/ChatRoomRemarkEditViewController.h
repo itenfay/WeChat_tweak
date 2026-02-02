@@ -5,7 +5,7 @@
 
 @class CContact, MMHeadImageView, MMTableViewInfo, MMUILabel, MMUITextField, NSString, RichTextView, UIButton;
 
-@interface ChatRoomRemarkEditViewController
+@interface ChatRoomRemarkEditViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     UIButton *m_acceptBtn;

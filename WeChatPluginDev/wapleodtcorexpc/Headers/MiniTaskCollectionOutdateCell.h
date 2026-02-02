@@ -5,7 +5,7 @@
 
 @class MMUIButton, MMUILabel, UIImageView, UIView;
 
-@interface MiniTaskCollectionOutdateCell
+@interface MiniTaskCollectionOutdateCell : NSObject
 {
     UIImageView *_coverImageView;
     MMUILabel *_titleLabel;

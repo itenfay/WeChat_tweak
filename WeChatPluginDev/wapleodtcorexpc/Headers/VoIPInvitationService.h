@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTipsViewController, NSString, VoIPInvitationInfo, VoIPInvitationViewController;
 @protocol VoIPInvitationViewInfo;
 
-@interface VoIPInvitationService
+@interface VoIPInvitationService : NSObject
 {
     VoIPInvitationViewController *_viewController;
     VoIPInvitationInfo *_acceptedInvitationInfo;

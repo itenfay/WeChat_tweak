@@ -5,7 +5,7 @@
 
 @class KindaView, MMDynamicColor, MMKEditTextOnEditorActionCallback, MMKEditTextOnFocusChangeCallback, MMKEditTextOnTextBeginChangeCallback, MMKEditTextOnTextChangedCallback, MMKEditTextOnTextEndEditingCallback, NSString, UILabel, UITextField, WCPayDecimalKeyboardView;
 
-@interface KindaEditText
+@interface KindaEditText : NSObject
 {
     _Bool _m_bRealLen;
     _Bool _showFloatButton;

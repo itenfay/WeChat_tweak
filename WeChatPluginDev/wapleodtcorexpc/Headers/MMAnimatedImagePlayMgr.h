@@ -5,7 +5,7 @@
 
 @class NSMapTable, NSMutableDictionary, NSMutableSet, NSTimer;
 
-@interface MMAnimatedImagePlayMgr
+@interface MMAnimatedImagePlayMgr : NSObject
 {
     NSTimer *m_timer;
     NSMutableDictionary *m_playTimerDic;

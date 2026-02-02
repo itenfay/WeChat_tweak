@@ -5,7 +5,7 @@
 
 @class WXPBGeneratedMessage;
 
-@interface WCFinderLiveActivityBaseCgi
+@interface WCFinderLiveActivityBaseCgi : NSObject
 {
     WXPBGeneratedMessage *_innerRequest;
 }

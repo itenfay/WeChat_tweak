@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface MMLiveRewardQuotaCell
+@interface MMLiveRewardQuotaCell : NSObject
 {
     unsigned int _rewardQuota;
     UIImageView *_selectionIndicatorView;

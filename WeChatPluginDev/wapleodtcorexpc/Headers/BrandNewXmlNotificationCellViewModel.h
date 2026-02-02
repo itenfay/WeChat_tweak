@@ -5,7 +5,7 @@
 
 @class BrandNewXMLNotification, NSString;
 
-@interface BrandNewXmlNotificationCellViewModel
+@interface BrandNewXmlNotificationCellViewModel : NSObject
 {
     BrandNewXMLNotification *_notification;
 }

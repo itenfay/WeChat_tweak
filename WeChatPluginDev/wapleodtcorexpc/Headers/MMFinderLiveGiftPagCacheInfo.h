@@ -5,7 +5,7 @@
 
 @class PAGFile;
 
-@interface MMFinderLiveGiftPagCacheInfo
+@interface MMFinderLiveGiftPagCacheInfo : NSObject
 {
     PAGFile *_pagFile;
 }

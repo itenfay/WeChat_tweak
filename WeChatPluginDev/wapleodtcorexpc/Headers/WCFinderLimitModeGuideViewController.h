@@ -5,7 +5,7 @@
 
 @class MMLimitedModeVerifyPasswordUtilLogic, NSString, UINavigationController, UIView, UIViewController;
 
-@interface WCFinderLimitModeGuideViewController
+@interface WCFinderLimitModeGuideViewController : NSObject
 {
     MMLimitedModeVerifyPasswordUtilLogic *m_limitedModeVerifyPasswordUtilLogic;
     int _commenScene;

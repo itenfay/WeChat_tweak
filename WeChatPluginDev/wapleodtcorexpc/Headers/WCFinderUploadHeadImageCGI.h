@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderUploadHeadImageCGI
+@interface WCFinderUploadHeadImageCGI : NSObject
 {
     unsigned int _imageDataTotalLength;
     unsigned int _currentTaskStartPos;

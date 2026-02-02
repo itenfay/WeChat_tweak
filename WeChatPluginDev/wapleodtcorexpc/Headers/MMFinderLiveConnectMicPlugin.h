@@ -5,7 +5,7 @@
 
 @class FinderLiveBattleSettingInfo;
 
-@interface MMFinderLiveConnectMicPlugin
+@interface MMFinderLiveConnectMicPlugin : NSObject
 {
     _Bool _isMultiAnchorMicEnabled;
     _Bool _isAudiencePkEnable;

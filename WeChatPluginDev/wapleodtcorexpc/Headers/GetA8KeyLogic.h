@@ -6,7 +6,7 @@
 @class CContact, ContactSearchLogic, DeepLinkBitSet, GeneralControlBitSet, JSAPIPermissionBitSet, JumpEmoticonDetailCgi, MMTipsViewController, MMUIViewController, NSData, NSDictionary, NSMutableDictionary, NSNumber, NSString, NewLifeDetailLinkJumper, SKBuiltinBuffer_t, StrongNotificationScanLogic, WCFinderCreateLiveViewModel, WCFinderQRCodeViewModel, WCRedEnvelopesGetRedPacketPreviewCgi;
 @protocol GetA8KeyLogicDelegate;
 
-@interface GetA8KeyLogic
+@interface GetA8KeyLogic : NSObject
 {
     MMUIViewController *m_viewController;
     id <GetA8KeyLogicDelegate> m_delegate;

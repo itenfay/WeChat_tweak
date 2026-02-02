@@ -5,7 +5,7 @@
 
 @class SightIconView;
 
-@interface SightFileMaskView
+@interface SightFileMaskView : NSObject
 {
     SightIconView *_iconView;
 }

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMediaItem
+@interface IntelligentMediaItem : NSObject
 {
     unsigned int _mesLocalID;
     long long _mesSvrID;

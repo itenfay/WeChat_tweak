@@ -5,7 +5,7 @@
 
 @protocol EditImageAnimatedDelegate;
 
-@interface EditImageAnimatedWidgetTool
+@interface EditImageAnimatedWidgetTool : NSObject
 {
     _Bool _isSticky;
     id <EditImageAnimatedDelegate> _animatedDelegate;

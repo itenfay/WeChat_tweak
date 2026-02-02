@@ -6,7 +6,7 @@
 @class CardSortInfo, MMUILabel, UIButton, UIImageView, UIView;
 @protocol WCMktStoreSectionCellDelegate;
 
-@interface WCMktStoreSectionCell
+@interface WCMktStoreSectionCell : NSObject
 {
     id <WCMktStoreSectionCellDelegate> _delegate;
     UIImageView *_iconImgView;

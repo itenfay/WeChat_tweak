@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class RichTextView, UIButton, UIImageView, UIView;
 
-@interface WCFinderShadowOptionBubbleView
+@interface WCFinderShadowOptionBubbleView : NSObject
 {
     UIButton *_actionBtn;
     UIButton *_closeBtn;

@@ -5,7 +5,7 @@
 
 @class NSObject, NSString;
 
-@interface WCWebviewEvent
+@interface WCWebviewEvent : NSObject
 {
     _Bool _bCanceled;
     NSObject *_eventContext;

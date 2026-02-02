@@ -5,7 +5,7 @@
 
 @class NSString, WCAdRollTextView, WCAdURLImageView, WCDataItem;
 
-@interface WCAdRollView
+@interface WCAdRollView : NSObject
 {
     WCDataItem *_dataItem;
     NSString *_iconUrl;

@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WAReportAllFileSize
+@interface WAReportAllFileSize : NSObject
 {
     NSArray *m_arrDirPrefixes;
     _Bool _isTriggerSingleAppClean;

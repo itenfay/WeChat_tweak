@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CardTicketItem
+@interface CardTicketItem : NSObject
 {
     _Bool _isRecommend;
     unsigned int _fromScene;

@@ -5,7 +5,7 @@
 
 @protocol WCPayOfflineGetMsgCgiDelegate;
 
-@interface WCPayOfflineGetMsgCgi
+@interface WCPayOfflineGetMsgCgi : NSObject
 {
 }
 

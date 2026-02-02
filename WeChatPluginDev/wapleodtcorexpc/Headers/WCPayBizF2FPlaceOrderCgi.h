@@ -5,7 +5,7 @@
 
 @protocol WCPayBizF2FPlaceOrderCgiDelegate;
 
-@interface WCPayBizF2FPlaceOrderCgi
+@interface WCPayBizF2FPlaceOrderCgi : NSObject
 {
     id <WCPayBizF2FPlaceOrderCgiDelegate> _cgiDelegate;
 }

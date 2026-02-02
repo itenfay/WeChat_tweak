@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAScreenVideoInfo
+@interface WAScreenVideoInfo : NSObject
 {
     NSString *_videobuttontext;
     NSString *_videomd5;

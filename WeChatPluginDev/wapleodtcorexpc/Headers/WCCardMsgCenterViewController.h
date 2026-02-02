@@ -5,7 +5,7 @@
 
 @class MMTableView, MMUIActivityIndicatorView, MMUIButton, MMUILabel, NSMutableArray, NSMutableDictionary, NSString, UIScrollView, WCNewShareCardConsumedView;
 
-@interface WCCardMsgCenterViewController
+@interface WCCardMsgCenterViewController : NSObject
 {
     NSMutableArray *_msgList;
     NSMutableDictionary *_cellHeightDic;

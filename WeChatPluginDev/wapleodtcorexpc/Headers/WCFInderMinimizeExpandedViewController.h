@@ -5,7 +5,7 @@
 
 @class WCFinderMinimizeGestureAnimator;
 
-@interface WCFInderMinimizeExpandedViewController
+@interface WCFInderMinimizeExpandedViewController : NSObject
 {
     WCFinderMinimizeGestureAnimator *_animator;
 }

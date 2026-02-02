@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView;
 
-@interface GameLifeChatEmptyView
+@interface GameLifeChatEmptyView : NSObject
 {
     UIImageView *_imageView;
     MMUILabel *_textLabel;

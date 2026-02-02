@@ -5,7 +5,7 @@
 
 @class MMTimer, NSData, NSString;
 
-@interface ScanBookMgr
+@interface ScanBookMgr : NSObject
 {
     unsigned int _scanBookId;
     unsigned int _sessionId;

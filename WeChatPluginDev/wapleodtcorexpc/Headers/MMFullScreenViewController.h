@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMFullScreenViewController
+@interface MMFullScreenViewController : NSObject
 {
 }
 

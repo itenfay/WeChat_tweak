@@ -5,7 +5,7 @@
 
 @class MMWebViewController;
 
-@interface ContainerView
+@interface ContainerView : NSObject
 {
     MMWebViewController *_webViewController;
 }

@@ -5,7 +5,7 @@
 
 @class WCAdSliderCardOpeningAnimationView, WCAdSliderCardProductView, WCAdSliderCardView, WCDataItem;
 
-@interface WCAdSliderCardLogic
+@interface WCAdSliderCardLogic : NSObject
 {
     _Bool _isOpeningAnimationVisible;
     WCAdSliderCardView *_sliderCardViewCache;

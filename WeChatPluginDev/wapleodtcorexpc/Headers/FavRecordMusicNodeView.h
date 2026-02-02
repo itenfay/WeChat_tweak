@@ -5,7 +5,7 @@
 
 @class MMMusicPlayerContoller, NSString, UIImage;
 
-@interface FavRecordMusicNodeView
+@interface FavRecordMusicNodeView : NSObject
 {
     MMMusicPlayerContoller *m_musicPlayButton;
     UIImage *_mvThumbImage;

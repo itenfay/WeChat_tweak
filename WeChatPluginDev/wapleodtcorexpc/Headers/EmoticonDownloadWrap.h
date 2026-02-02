@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonDownloadWrap
+@interface EmoticonDownloadWrap : NSObject
 {
     NSString *_md5;
     NSString *_aesKey;

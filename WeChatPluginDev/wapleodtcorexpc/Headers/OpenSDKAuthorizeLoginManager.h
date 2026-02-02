@@ -6,7 +6,7 @@
 @class GetUserGrantInfoBuffer, MMUIViewController, NSData, NSMutableArray, NSString, OauthScopeInfo, OpenSDKOAuthRequest, SdkOauthAuthorizeResp, SetUserGrantInfoBuffer;
 @protocol OpenSDKAuthorizeLoginManagerDelegate;
 
-@interface OpenSDKAuthorizeLoginManager
+@interface OpenSDKAuthorizeLoginManager : NSObject
 {
     _Bool _isBanModifyAvatar;
     _Bool _isUseNewPage;

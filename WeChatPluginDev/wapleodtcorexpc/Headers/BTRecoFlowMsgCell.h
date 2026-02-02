@@ -5,7 +5,7 @@
 
 @class BTRecoFlowSeparatorLineView, MMUIButton, MMUILabel, MMWebImageView, NSMutableArray, UIButton;
 
-@interface BTRecoFlowMsgCell
+@interface BTRecoFlowMsgCell : NSObject
 {
     MMUIButton *_xButton;
     MMUILabel *_titleLabel;

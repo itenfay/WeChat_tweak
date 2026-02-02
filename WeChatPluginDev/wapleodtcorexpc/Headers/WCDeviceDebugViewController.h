@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface WCDeviceDebugViewController
+@interface WCDeviceDebugViewController : NSObject
 {
     NSMutableArray *m_data;
     MMTableView *m_tableView;

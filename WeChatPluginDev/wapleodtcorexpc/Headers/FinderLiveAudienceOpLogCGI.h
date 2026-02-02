@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray;
 
-@interface FinderLiveAudienceOpLogCGI
+@interface FinderLiveAudienceOpLogCGI : NSObject
 {
     unsigned int _scene;
     NSMutableArray *_cmdItemRequestWrapList;

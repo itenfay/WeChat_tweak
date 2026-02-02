@@ -6,7 +6,7 @@
 @class NSObject, NSString, WARealtimeDataOperationBufferPool;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface WARealtimeDataOperateManager
+@interface WARealtimeDataOperateManager : NSObject
 {
     _Bool _isRequesting;
     unsigned int _lastUploadTimeStamp;

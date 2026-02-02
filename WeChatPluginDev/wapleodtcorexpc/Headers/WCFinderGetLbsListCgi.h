@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLbsLocation, NSData, NSString;
 
-@interface WCFinderGetLbsListCgi
+@interface WCFinderGetLbsListCgi : NSObject
 {
     int _requestScene;
     NSString *_keyword;

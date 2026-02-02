@@ -5,7 +5,7 @@
 
 @class WAEJBindingCanvasContextWebGLBase;
 
-@interface WAEJBindingWebGLObject
+@interface WAEJBindingWebGLObject : NSObject
 {
     unsigned int index;
     WAEJBindingCanvasContextWebGLBase *webglContext;

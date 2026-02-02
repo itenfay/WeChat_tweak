@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class SWTranscoding;
 
-@interface MMVideoSWEncodeTask
+@interface MMVideoSWEncodeTask : NSObject
 {
     SWTranscoding *_softExportSession;
 }

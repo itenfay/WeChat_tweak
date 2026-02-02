@@ -5,7 +5,7 @@
 
 @class MMTimer, NSMutableArray, NSString, ReportDeviceInfo;
 
-@interface WARealTimeReportMgr
+@interface WARealTimeReportMgr : NSObject
 {
     MMTimer *_timerReportCheck;
     NSMutableArray *_arrReportInfo;

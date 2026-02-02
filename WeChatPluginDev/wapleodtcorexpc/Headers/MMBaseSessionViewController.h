@@ -5,7 +5,7 @@
 
 @class MMSpecialMsgSearchHelper, NSString;
 
-@interface MMBaseSessionViewController
+@interface MMBaseSessionViewController : NSObject
 {
     MMSpecialMsgSearchHelper *m_specialMsgSearchHelper;
     unsigned int m_detailSearchResultCount;

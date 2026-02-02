@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAMainFrameTaskItemMgr
+@interface WAMainFrameTaskItemMgr : NSObject
 {
 }
 

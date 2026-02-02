@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderMsgSessionCellViewModel, WCFinderMsgSessionNicknameTailView;
 
-@interface WCFinderMsgSessionCell
+@interface WCFinderMsgSessionCell : NSObject
 {
     WCFinderMsgSessionCellViewModel *_viewModel;
     WCFinderMsgSessionNicknameTailView *_tailView;

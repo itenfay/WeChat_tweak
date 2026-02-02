@@ -5,7 +5,7 @@
 
 @class GCMRedpointExposureControlModel, GCRedPointLogicTypeModel, GameCenterMessageRedPointInfo, GameCenterMsgDb, GameFindEntryRedDotInfo, GameMessageDBCleaner, GameReddotManager, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface GameCenterMsgMgr
+@interface GameCenterMsgMgr : NSObject
 {
     _Bool shouldClearDb;
     _Bool shouldClearNotify;

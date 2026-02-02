@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUIView, NSString, RichTextView, UIButton;
 @protocol MMLimitedModeEntryProtocolViewControllerDelegate;
 
-@interface MMLimitedModeEntryProtocolViewController
+@interface MMLimitedModeEntryProtocolViewController : NSObject
 {
     MMUIView *m_contentView;
     MMUILabel *m_titleView;

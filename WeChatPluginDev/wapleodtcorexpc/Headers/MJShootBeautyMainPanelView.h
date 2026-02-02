@@ -6,7 +6,7 @@
 @class CAGradientLayer, MJMaterialLoadingStatusCoordinator, MJShootBeautyInspectorViewModel, MMUIButton, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel;
 @protocol MJShootBeautyMainPanelViewDelegate;
 
-@interface MJShootBeautyMainPanelView
+@interface MJShootBeautyMainPanelView : NSObject
 {
     id <MJShootBeautyMainPanelViewDelegate> _delegate;
     UICollectionView *_collectionView;

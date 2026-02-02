@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class TXCBeautifyBaseFilter;
 @protocol TXIGlContext;
 
-@interface TXCBeautifyFilter
+@interface TXCBeautifyFilter : NSObject
 {
     _Bool _enableSharpnessEnhancement;
     float _beautyLevel;

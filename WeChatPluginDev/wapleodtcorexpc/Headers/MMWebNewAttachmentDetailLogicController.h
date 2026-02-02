@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, NSURL, WKDownload;
 
-@interface MMWebNewAttachmentDetailLogicController
+@interface MMWebNewAttachmentDetailLogicController : NSObject
 {
     _Bool _isObservingDownload;
     unsigned int _currentDownloadState;

@@ -5,7 +5,7 @@
 
 @class NSString, OMJMusicInfo;
 
-@interface OMCMusicSegment
+@interface OMCMusicSegment : NSObject
 {
 }
 

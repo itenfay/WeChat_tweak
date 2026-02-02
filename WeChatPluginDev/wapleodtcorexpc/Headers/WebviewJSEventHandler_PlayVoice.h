@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_PlayVoice
+@interface WebviewJSEventHandler_PlayVoice : NSObject
 {
     _Bool _stopVoiceFlag;
 }

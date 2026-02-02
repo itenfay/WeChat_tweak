@@ -6,7 +6,7 @@
 @class NSObject, NSString, SightFocusView, UIColor;
 @protocol SightQRCodeScannerDelegate;
 
-@interface SightPreviewViewF2
+@interface SightPreviewViewF2 : NSObject
 {
     double m_zoomLevel;
     _Bool m_isReady;

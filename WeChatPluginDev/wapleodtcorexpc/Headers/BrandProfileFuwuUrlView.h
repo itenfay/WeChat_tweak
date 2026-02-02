@@ -5,7 +5,7 @@
 
 @class BrandProfileFuwuInfo, MMUIButton, UIImageView, UIView;
 
-@interface BrandProfileFuwuUrlView
+@interface BrandProfileFuwuUrlView : NSObject
 {
     BrandProfileFuwuInfo *_fuwuInfo;
     UIView *_topDividingView;

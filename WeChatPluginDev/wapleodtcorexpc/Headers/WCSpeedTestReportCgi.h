@@ -5,7 +5,7 @@
 
 @class SpeedTestReportReq;
 
-@interface WCSpeedTestReportCgi
+@interface WCSpeedTestReportCgi : NSObject
 {
     SpeedTestReportReq *speedTestReportRequest;
 }

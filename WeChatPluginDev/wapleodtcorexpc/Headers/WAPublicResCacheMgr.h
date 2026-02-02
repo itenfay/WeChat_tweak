@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WAAppBrandNotifyInfo, WAPackageDownloadLogic, WAPackageInfoCacheLogic, WAPublicResInfo, WAPublicResInfoStorage, WAPublicResModel;
 
-@interface WAPublicResCacheMgr
+@interface WAPublicResCacheMgr : NSObject
 {
     WAPackageDownloadLogic *_pkgDownloadLogic;
     WAPackageInfoCacheLogic *_pkgInfoCacheLogic;

@@ -5,7 +5,7 @@
 
 @class MMScrollView, MMUIActivityIndicatorView, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UITextField, UIView, WCUIAlertView;
 
-@interface RadarCreateRoomViewController
+@interface RadarCreateRoomViewController : NSObject
 {
     NSMutableArray *m_arrHeads;
     NSMutableArray *m_arrWillShowMember;

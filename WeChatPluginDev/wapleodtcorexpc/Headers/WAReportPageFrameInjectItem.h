@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportPageFrameInjectItem
+@interface WAReportPageFrameInjectItem : NSObject
 {
     _Bool _isFromTaskPreload;
     unsigned int _appServiceType;

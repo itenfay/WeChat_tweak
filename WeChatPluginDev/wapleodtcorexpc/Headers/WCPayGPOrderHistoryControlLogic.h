@@ -5,7 +5,7 @@
 
 @class AAQueryListRes, NSString;
 
-@interface WCPayGPOrderHistoryControlLogic
+@interface WCPayGPOrderHistoryControlLogic : NSObject
 {
     _Bool _bIsFromTop;
     unsigned long long _curHistoryScene;

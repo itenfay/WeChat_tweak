@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveLotteryInfo, MMUILabel, MMUIView, UIImageView, UITapGestureRecognizer;
 
-@interface MMLiveLotteryCardGoodsView
+@interface MMLiveLotteryCardGoodsView : NSObject
 {
     CDUnknownBlockType _cardGoodsViewBlock;
     UIImageView *_goodsImageView;

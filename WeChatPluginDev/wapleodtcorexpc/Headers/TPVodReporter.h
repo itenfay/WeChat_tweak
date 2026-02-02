@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, TPPlayerLogContext;
 
-@interface TPVodReporter
+@interface TPVodReporter : NSObject
 {
     _Bool _playDone;
     _Bool _seeking;

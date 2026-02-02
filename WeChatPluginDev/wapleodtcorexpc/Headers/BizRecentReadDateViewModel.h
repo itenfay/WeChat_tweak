@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BizRecentReadDateViewModel
+@interface BizRecentReadDateViewModel : NSObject
 {
     NSString *_dataText;
 }

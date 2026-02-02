@@ -5,7 +5,7 @@
 
 @class GCCollectionViewManager, GCCollectionViewSectionModel, GCGroupServer, GCLoadingMoreCellModel, NSString, UICollectionView;
 
-@interface GCMoreCommendGroupViewController
+@interface GCMoreCommendGroupViewController : NSObject
 {
     GCCollectionViewManager *_collectionViewManager;
     UICollectionView *_collectionView;

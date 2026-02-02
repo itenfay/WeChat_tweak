@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface TemplateMsgService
+@interface TemplateMsgService : NSObject
 {
     MemoryMappedKV *_mmkv;
 }

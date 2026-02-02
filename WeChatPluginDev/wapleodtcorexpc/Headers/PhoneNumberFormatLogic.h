@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface PhoneNumberFormatLogic
+@interface PhoneNumberFormatLogic : NSObject
 {
     NSMutableDictionary *m_dicConfig;
 }

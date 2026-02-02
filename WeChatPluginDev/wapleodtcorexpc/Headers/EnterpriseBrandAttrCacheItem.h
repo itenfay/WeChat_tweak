@@ -5,7 +5,7 @@
 
 @class EnterpriseBrandAttr;
 
-@interface EnterpriseBrandAttrCacheItem
+@interface EnterpriseBrandAttrCacheItem : NSObject
 {
     unsigned int _updateTime;
     EnterpriseBrandAttr *_attr;

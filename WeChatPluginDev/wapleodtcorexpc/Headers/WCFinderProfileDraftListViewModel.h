@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSData, NSMutableArray, NSString, WCFinderBaseCgi;
 @protocol WCFinderProfileDraftListViewModelDelegate;
 
-@interface WCFinderProfileDraftListViewModel
+@interface WCFinderProfileDraftListViewModel : NSObject
 {
     _Bool _continueFlag;
     _Bool _forbidenModifyMVDraft;

@@ -6,7 +6,7 @@
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, QueryWeChatWalletResponse, TimeoutNumber, UITableView, WCPayControlData, WCPayCustomModalView, WCPayLQTOnClickRedDotCgi, WCPayQueryWeChatWalletCgi;
 @protocol WCPayWalletViewControllerDelegate;
 
-@interface WCPayWalletViewController
+@interface WCPayWalletViewController : NSObject
 {
     _Bool _m_hasShowModalView;
     _Bool _hasConfigNumber;

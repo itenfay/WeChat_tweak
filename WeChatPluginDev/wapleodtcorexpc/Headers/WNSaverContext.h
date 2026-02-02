@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FavoritesItem, NSDate, NSString, RTESectionMgr, WNContentStorage, WNHtmlStringBuilder;
 
-@interface WNSaverContext
+@interface WNSaverContext : NSObject
 {
     _Bool _inList;
     NSDate *_modifyTime;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface YtRgbRequestJsonModel
+@interface YtRgbRequestJsonModel : NSObject
 {
     int _platform;
     NSString *_app_id;

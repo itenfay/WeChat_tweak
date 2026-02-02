@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, WCStoryDownloadTaskInfo;
 
-@interface WCStoryDownloadVideoCdnMgr
+@interface WCStoryDownloadVideoCdnMgr : NSObject
 {
     unsigned int _lastPreloadChatRoomTime;
     NSMutableDictionary *_dicIplist;

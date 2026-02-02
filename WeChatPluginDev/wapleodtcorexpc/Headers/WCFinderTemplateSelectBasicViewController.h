@@ -5,7 +5,7 @@
 
 @class MJTemplateListParams, NSString, UICollectionView, UILabel, UIView, WCFinderVideoTemplateSelectBasicViewModel;
 
-@interface WCFinderTemplateSelectBasicViewController
+@interface WCFinderTemplateSelectBasicViewController : NSObject
 {
     int _fromScene;
     UILabel *_templateTitleLabel;

@@ -5,7 +5,7 @@
 
 @class MBWxaPkgCacheMgr, NSString;
 
-@interface MBWxaPkgFileSystem
+@interface MBWxaPkgFileSystem : NSObject
 {
     MBWxaPkgCacheMgr *pkgInfoCacheMgr;
     NSString *_mBizName;

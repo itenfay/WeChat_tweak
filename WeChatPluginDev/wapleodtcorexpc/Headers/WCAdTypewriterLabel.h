@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface WCAdTypewriterLabel
+@interface WCAdTypewriterLabel : NSObject
 {
     MMTimer *_typewriterTimer;
     NSString *_typewriterText;

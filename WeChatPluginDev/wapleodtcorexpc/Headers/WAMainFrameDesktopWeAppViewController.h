@@ -6,7 +6,7 @@
 @class NSString, WADesktopStarListViewModel, WARecentStarListViewModel;
 @protocol WAMainFrameDesktopWeAppViewControllerDelegate;
 
-@interface WAMainFrameDesktopWeAppViewController
+@interface WAMainFrameDesktopWeAppViewController : NSObject
 {
     WADesktopStarListViewModel *_myViewModel;
     WARecentStarListViewModel *_recentViewModel;

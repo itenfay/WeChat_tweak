@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, WCAdContinuousLikeTagInfo, WCAdSocialLikeLogic, WCAdURLImageView, WCDataItem;
 @protocol WCAdContinuousLikeTagViewDelegate;
 
-@interface WCAdContinuousLikeTagView
+@interface WCAdContinuousLikeTagView : NSObject
 {
     id <WCAdContinuousLikeTagViewDelegate> _delegate;
     WCDataItem *_dataItem;

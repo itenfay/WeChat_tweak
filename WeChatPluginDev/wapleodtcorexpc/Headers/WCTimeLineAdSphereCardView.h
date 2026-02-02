@@ -5,7 +5,7 @@
 
 @class NSString, SightIconView, UIImageView, UILabel, WCAdvertiseSphereView;
 
-@interface WCTimeLineAdSphereCardView
+@interface WCTimeLineAdSphereCardView : NSObject
 {
     WCAdvertiseSphereView *_sphereView;
     SightIconView *_sightIconView;

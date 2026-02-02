@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIImageView, UILabel, UIPanGestureRecognizer;
 @protocol MMTableViewIndexViewDelegate;
 
-@interface MMTableViewIndexView
+@interface MMTableViewIndexView : NSObject
 {
     MMTableView *_mmtableView;
     id <MMTableViewIndexViewDelegate> _delegate;

@@ -6,7 +6,7 @@
 @class MJTileStripView, NSString;
 @protocol MJTileStripViewManager;
 
-@interface MJVisualClipSegmentCell
+@interface MJVisualClipSegmentCell : NSObject
 {
     _Bool _isSegmentInfoOverlayVisible;
     MJTileStripView *_tileStripView;

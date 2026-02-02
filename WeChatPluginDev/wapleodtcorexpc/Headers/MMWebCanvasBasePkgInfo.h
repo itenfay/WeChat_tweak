@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface MMWebCanvasBasePkgInfo
+@interface MMWebCanvasBasePkgInfo : NSObject
 {
     NSDictionary *_dicContextMetaInfo;
     NSDictionary *_dicRenderMetaInfo;

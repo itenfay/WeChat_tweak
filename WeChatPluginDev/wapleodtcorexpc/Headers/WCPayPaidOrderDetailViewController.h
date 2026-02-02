@@ -6,7 +6,7 @@
 @class MMUILabel, MMWebImageView, NSMutableArray, NSMutableDictionary, NSString, RichTextView, TextStateBrandLogic, UIButton, UIView, WCPayNewPaidOrderDetailView, WCPayPaidDetailQueryAwardCgi, WCPaySelectVerifyTypeLogic;
 @protocol WCPayPaidOrderDetailViewControllerDelegate;
 
-@interface WCPayPaidOrderDetailViewController
+@interface WCPayPaidOrderDetailViewController : NSObject
 {
     id <WCPayPaidOrderDetailViewControllerDelegate> m_delegate;
     NSString *m_nsCompleteBtnTitle;

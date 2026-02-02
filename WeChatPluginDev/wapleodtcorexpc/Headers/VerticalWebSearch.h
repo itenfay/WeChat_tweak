@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIViewController;
 
-@interface VerticalWebSearch
+@interface VerticalWebSearch : NSObject
 {
     UIViewController *_fromViewController;
 }

@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface WAReportJsApiInfoCgiItem
+@interface WAReportJsApiInfoCgiItem : NSObject
 {
     unsigned int _costTimeMs;
     unsigned int _ret;

@@ -6,7 +6,7 @@
 @class NSString, UILabel, UIView, WCPayControlData, WCPayPhoneTextItem;
 @protocol WCPayCountryCodeAndPhoneNumberItemDelegate;
 
-@interface WCPayCountryCodeAndPhoneNumberItem
+@interface WCPayCountryCodeAndPhoneNumberItem : NSObject
 {
     _Bool _bIsAutoFill;
     WCPayControlData *_data;

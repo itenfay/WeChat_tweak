@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMMusicHorizontalScrollingView, MMMusicInfo, MMMusicOpenThirdAppHelper, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MVWebViewController, NSString, UIButton, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol MMMusicInfoNewHalfViewControllerDelegate;
 
-@interface MMMusicInfoNewHalfViewController
+@interface MMMusicInfoNewHalfViewController : NSObject
 {
     MMMusicInfo *_musicInfo;
     UIView *_containerView;

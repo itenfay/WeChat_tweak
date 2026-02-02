@@ -6,7 +6,7 @@
 @class NSString, StrokeView;
 @protocol WCCameraPreviewDelegate;
 
-@interface WCCameraPreview
+@interface WCCameraPreview : NSObject
 {
     double m_zoomLevel;
     _Bool m_isReady;

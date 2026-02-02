@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicUser, MMUIButton, UILabel;
 
-@interface MMFinderLivePaidConnectMicKeepAliveTipsView
+@interface MMFinderLivePaidConnectMicKeepAliveTipsView : NSObject
 {
     CDUnknownBlockType _onTapKeepAlive;
     MMFinderLiveConnectMicUser *_micUser;

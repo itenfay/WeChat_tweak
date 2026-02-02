@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdvertisePushService
+@interface WCAdvertisePushService : NSObject
 {
 }
 

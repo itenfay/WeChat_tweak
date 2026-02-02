@@ -5,7 +5,7 @@
 
 @protocol WCPayNFCCardPlaceOrderCgiDelegate;
 
-@interface WCPayNFCCardPlaceOrderCgi
+@interface WCPayNFCCardPlaceOrderCgi : NSObject
 {
     id <WCPayNFCCardPlaceOrderCgiDelegate> _m_delegate;
 }

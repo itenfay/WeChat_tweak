@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString, WCEliminatedSlotMMKV;
 
-@interface MPPageUrlInfoMgr
+@interface MPPageUrlInfoMgr : NSObject
 {
     WCEliminatedSlotMMKV *_slotMMKV;
     NSRecursiveLock *_dataLock;

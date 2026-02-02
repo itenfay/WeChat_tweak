@@ -5,7 +5,7 @@
 
 @class MMPageSheetAdapter;
 
-@interface MMWebViewPlugin_PageSheetAdapter
+@interface MMWebViewPlugin_PageSheetAdapter : NSObject
 {
     MMPageSheetAdapter *_pageSheetAdapter;
 }

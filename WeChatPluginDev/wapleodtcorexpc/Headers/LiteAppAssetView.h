@@ -6,7 +6,7 @@
 @class LiteAppAssetInfo, MMAssetICloudLoadingView, MMAssetSelectCheckButton, MMUILabel, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView, WCLivePhotoButton, WCLivePhotoButtonModel;
 @protocol LiteAppAssetPickerControlCenter, LiteAppAssetViewDelegate;
 
-@interface LiteAppAssetView
+@interface LiteAppAssetView : NSObject
 {
     _Bool m_isSelected;
     _Bool m_isPreviewStyle;

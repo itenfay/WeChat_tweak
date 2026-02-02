@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVMutableComposition, AVMutableVideoComposition, AVPictureInPictureController, AVPlayer, AVPlayerItem, AVPlayerLayer, MMLiveCustomRenderPIPHandleLogic, MMLiveCustomRenderPIPStartParam, MMLiveCustomRenderPIPView, MMLiveCustomRenderView, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMLiveCustomRenderPIPManager
+@interface MMLiveCustomRenderPIPManager : NSObject
 {
     _Bool _startPIPAutomaticallyFromInlineAbility;
     _Bool _isOpenPIP;

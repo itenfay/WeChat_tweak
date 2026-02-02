@@ -5,7 +5,7 @@
 
 @class BTReaderMsgSectionData, NSMutableArray, NSString, UIFont;
 
-@interface BTReaderHeaderItemCellViewModel
+@interface BTReaderHeaderItemCellViewModel : NSObject
 {
     NSMutableArray *_contactLabelStyles;
     UIFont *_contactLabelFont;

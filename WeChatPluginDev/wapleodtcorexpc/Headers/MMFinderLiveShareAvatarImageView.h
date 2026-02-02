@@ -5,7 +5,7 @@
 
 @class MMWebImageView;
 
-@interface MMFinderLiveShareAvatarImageView
+@interface MMFinderLiveShareAvatarImageView : NSObject
 {
     MMWebImageView *_webImageView;
 }

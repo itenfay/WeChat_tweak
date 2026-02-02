@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView, WCLivePhotoButtonModel;
 
-@interface WCLivePhotoButton
+@interface WCLivePhotoButton : NSObject
 {
     _Bool _isShowBtn;
     WCLivePhotoButtonModel *_viewModel;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderWindowProductImgButtonInfo, MMUILabel, UIImageView, UIView;
 
-@interface MMFinderLiveGoodsPromotionReplayFloatView
+@interface MMFinderLiveGoodsPromotionReplayFloatView : NSObject
 {
     unsigned long long _uiType;
     CDUnknownBlockType _replayFloatViewDidClickedBlock;

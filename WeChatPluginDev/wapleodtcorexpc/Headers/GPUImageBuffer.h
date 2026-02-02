@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface GPUImageBuffer
+@interface GPUImageBuffer : NSObject
 {
     NSMutableArray *bufferedFramebuffers;
     unsigned long long _bufferSize;

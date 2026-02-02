@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SolitaireItem
+@interface SolitaireItem : NSObject
 {
     _Bool _isHeader;
     _Bool _isExample;

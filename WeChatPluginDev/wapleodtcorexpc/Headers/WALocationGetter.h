@@ -6,7 +6,7 @@
 @class LocationRetriever, NSString, WALocationCacheInfo;
 @protocol WALocationGetterDelegate;
 
-@interface WALocationGetter
+@interface WALocationGetter : NSObject
 {
     _Bool _retrivingLocation;
     id <WALocationGetterDelegate> _delegate;

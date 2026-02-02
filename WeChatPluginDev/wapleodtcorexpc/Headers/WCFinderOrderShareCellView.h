@@ -5,7 +5,7 @@
 
 @class WCFinderOrderShareCellViewModel;
 
-@interface WCFinderOrderShareCellView
+@interface WCFinderOrderShareCellView : NSObject
 {
 }
 

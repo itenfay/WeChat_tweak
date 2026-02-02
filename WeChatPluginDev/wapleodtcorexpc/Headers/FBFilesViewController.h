@@ -6,7 +6,7 @@
 @class FBFilesSearchViewController, MMTableView, MMUILabel, NSArray, NSMutableArray, NSString, UIColor, UIImageView, WCDataSearcher;
 @protocol FBFilesViewControllerDelegate;
 
-@interface FBFilesViewController
+@interface FBFilesViewController : NSObject
 {
     _Bool _bLoadingChatLogFile;
     _Bool _bLoadingFavFile;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveAnchorGetJumpInfoListCGI
+@interface WCFinderLiveAnchorGetJumpInfoListCGI : NSObject
 {
     unsigned int _type;
     NSString *_anchorFinderUsername;

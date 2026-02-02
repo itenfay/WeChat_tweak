@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface QTCAutoCodingCLLocationCoordinate2DWrapper
+@interface QTCAutoCodingCLLocationCoordinate2DWrapper : NSObject
 {
     double _latitude;
     double _longitude;

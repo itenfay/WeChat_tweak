@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderUniCommentImageView, FinderUniCommentMediaItem, MMUIButton, MMUILabel, SightIconView;
 
-@interface FinderUniCommentMediaView
+@interface FinderUniCommentMediaView : NSObject
 {
     unsigned long long _mode;
     CDUnknownBlockType _deleteHandler;

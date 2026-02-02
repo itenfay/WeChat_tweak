@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat27XRVisionLoginViewController
+@interface _TtC6WeChat27XRVisionLoginViewController : NSObject
 {
     MISSING_TYPE *viewModel;
     MISSING_TYPE *deviceLoginLogic;

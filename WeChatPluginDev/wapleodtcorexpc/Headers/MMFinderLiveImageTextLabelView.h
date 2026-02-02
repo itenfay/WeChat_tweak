@@ -5,7 +5,7 @@
 
 @class MMFinderLiveImageTextLabelParams, MMWebImageView, UIImageView, UILabel;
 
-@interface MMFinderLiveImageTextLabelView
+@interface MMFinderLiveImageTextLabelView : NSObject
 {
     MMFinderLiveImageTextLabelParams *_params;
     MMWebImageView *_leftImageView;

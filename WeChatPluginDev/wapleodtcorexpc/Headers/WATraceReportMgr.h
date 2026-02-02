@@ -5,7 +5,7 @@
 
 @class JsVMInitInfo, MagicBrushCore, MemoryMappedKV, NSFileHandle, NSMutableArray, NSMutableDictionary, NSString, WAOpenGLView;
 
-@interface WATraceReportMgr
+@interface WATraceReportMgr : NSObject
 {
     NSString *_appId;
     _Bool _stopped;

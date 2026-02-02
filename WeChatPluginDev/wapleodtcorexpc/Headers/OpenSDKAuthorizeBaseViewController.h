@@ -5,7 +5,7 @@
 
 @protocol MMAuthorizeViewControllerDelegate;
 
-@interface OpenSDKAuthorizeBaseViewController
+@interface OpenSDKAuthorizeBaseViewController : NSObject
 {
     id <MMAuthorizeViewControllerDelegate> _delegate;
 }

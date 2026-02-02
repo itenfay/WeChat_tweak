@@ -5,7 +5,7 @@
 
 @class NSString, WCAddressControlData, WCAddressControlLogic;
 
-@interface WCAddressGetAddressControlLogic
+@interface WCAddressGetAddressControlLogic : NSObject
 {
     WCAddressControlData *m_data;
     WCAddressControlLogic *m_oWCAddressControlLogic;

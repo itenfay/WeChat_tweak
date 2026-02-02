@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderGetPostRecommendTitleContext, NSData, NSString;
 
-@interface WCFinderGetPostRecommendWordingCGI
+@interface WCFinderGetPostRecommendWordingCGI : NSObject
 {
     int _scene;
     NSData *_lastBuffer;

@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, UIColor, UIImageView, UIVisualEffectView, WCCanvasComponent;
 
-@interface WCCanvasFloatConversionBarComponent
+@interface WCCanvasFloatConversionBarComponent : NSObject
 {
     WCCanvasComponent *_buttonComponent;
     UIImageView *_backgroundContentView;

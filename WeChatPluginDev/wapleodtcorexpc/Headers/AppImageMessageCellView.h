@@ -5,7 +5,7 @@
 
 @class AppImageMessageViewModel;
 
-@interface AppImageMessageCellView
+@interface AppImageMessageCellView : NSObject
 {
 }
 

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIButton, UITableView, UIView, WCFinderMsgChangeRoleViewItem;
 
-@interface WCFinderMsgChangeRoleView
+@interface WCFinderMsgChangeRoleView : NSObject
 {
     CDUnknownBlockType _changeSuccessfulBlock;
     UITableView *_tableView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, UIButton, UIImageView, UIView;
 
-@interface MMFinderScreenRecordGuideView
+@interface MMFinderScreenRecordGuideView : NSObject
 {
     CDUnknownBlockType _actionBlock;
     UIView *_contentView;

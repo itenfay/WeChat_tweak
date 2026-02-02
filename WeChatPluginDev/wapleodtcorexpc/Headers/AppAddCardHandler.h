@@ -5,7 +5,7 @@
 
 @class NSString, OpenApiParameter, WCCardAddHelper;
 
-@interface AppAddCardHandler
+@interface AppAddCardHandler : NSObject
 {
     NSString *_cardID;
     OpenApiParameter *_parameter;

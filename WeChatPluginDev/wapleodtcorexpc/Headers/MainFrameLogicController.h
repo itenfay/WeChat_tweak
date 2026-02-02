@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTimer, MainFrameCellDataManager, MainFrameFoldReporter, NSMutableArray, NSMutableDictionary, NSString, WAContactGetter;
 @protocol MainFrameLogicControllerDelegate;
 
-@interface MainFrameLogicController
+@interface MainFrameLogicController : NSObject
 {
     id <MainFrameLogicControllerDelegate> m_delegate;
     _Bool m_bPlayNewMsgDuringOneSync;

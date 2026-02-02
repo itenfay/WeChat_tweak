@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CADisplayLink, NSMutableArray, NSMutableDictionary, NSString, WANonRetainingProxy;
 @protocol NativeRenderDelegate;
 
-@interface WAJSContextPlugin_NativeRender
+@interface WAJSContextPlugin_NativeRender : NSObject
 {
     _Bool _paused;
     _Bool _destroyed;

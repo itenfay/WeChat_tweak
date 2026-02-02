@@ -6,7 +6,7 @@
 @class MMUIButton, WCAdLookbookBrandNewItem;
 @protocol WCTimeLineAdLookbookCardBrandNewMediaViewDelegate;
 
-@interface WCTimeLineAdLookbookCardBrandNewMediaView
+@interface WCTimeLineAdLookbookCardBrandNewMediaView : NSObject
 {
     id <WCTimeLineAdLookbookCardBrandNewMediaViewDelegate> _brandNewMediaDelegate;
     WCAdLookbookBrandNewItem *_brandNewItemInfo;

@@ -6,7 +6,7 @@
 @class AVPlayer, NSString;
 @protocol IWAAudioPlayerDelegate;
 
-@interface WAAudioPlayer
+@interface WAAudioPlayer : NSObject
 {
     long long _state;
     _Bool _autoLoop;

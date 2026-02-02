@@ -5,7 +5,7 @@
 
 @class AVAudioMix, AVComposition, AVVideoComposition;
 
-@interface GPUImageMovieComposition
+@interface GPUImageMovieComposition : NSObject
 {
     AVComposition *_compositon;
     AVVideoComposition *_videoComposition;

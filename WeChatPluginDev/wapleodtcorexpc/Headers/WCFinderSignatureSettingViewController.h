@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMGrowTextView, NSRegularExpression, NSString, UIButton, UILabel, UIScrollView, UIView, WCFinderContact;
 @protocol WCFinderSignatureSettingViewControllerDelegate;
 
-@interface WCFinderSignatureSettingViewController
+@interface WCFinderSignatureSettingViewController : NSObject
 {
     _Bool _updateTextByMentionVC;
     _Bool _showSafePanelAlready;

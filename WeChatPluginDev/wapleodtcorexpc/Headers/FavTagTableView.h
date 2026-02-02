@@ -6,7 +6,7 @@
 @class NSMutableArray, UIScrollView;
 @protocol FavTagEditViewDelegate;
 
-@interface FavTagTableView
+@interface FavTagTableView : NSObject
 {
     NSMutableArray *m_arrTagListView;
     NSMutableArray *m_arrHeaders;

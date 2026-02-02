@@ -6,7 +6,7 @@
 @class CContact, FinderContactExtRelationInfo, FinderGetContactListReq, MMUIButton, NSData, NSString, RichTextView, UIButton, UILabel, UIScrollView, UIView, WCFinderComment, WCFinderContact, WCFinderHalfProfileInfoView, WCFinderHalfProfileInteractionInfoView, WCFinderHeadImageView, WCFinderMention;
 @protocol WCFinderFansProfileViewControllerDelegate;
 
-@interface WCFinderFansProfileViewController
+@interface WCFinderFansProfileViewController : NSObject
 {
     _Bool _showMsgButton;
     _Bool _hasShowFinderView;

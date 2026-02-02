@@ -5,7 +5,7 @@
 
 @class GetNetworkInfoReq, NSString;
 
-@interface WCGetNetworkIdCgi
+@interface WCGetNetworkIdCgi : NSObject
 {
     GetNetworkInfoReq *getNetworkInfoReq;
     NSString *_localNetId;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface POPStaticAnimatableProperty
+@interface POPStaticAnimatableProperty : NSObject
 {
     struct {
         id _field1;

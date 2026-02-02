@@ -5,7 +5,7 @@
 
 @protocol MMInputAccessoryViewDelegate;
 
-@interface MMInputAccessoryView
+@interface MMInputAccessoryView : NSObject
 {
     id <MMInputAccessoryViewDelegate> _delegate;
 }

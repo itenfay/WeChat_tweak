@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCVolumeController;
 
-@interface VoIPAudioService
+@interface VoIPAudioService : NSObject
 {
     _Bool _isWorking;
     _Bool _isActived;

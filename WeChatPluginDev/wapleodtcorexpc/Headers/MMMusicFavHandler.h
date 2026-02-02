@@ -6,7 +6,7 @@
 @class MMMusicVideoImageDownloader;
 @protocol MMMusicFavHandlerDataSource, MMMusicFavHandlerDelegate;
 
-@interface MMMusicFavHandler
+@interface MMMusicFavHandler : NSObject
 {
     _Bool _isFromShake;
     id <MMMusicFavHandlerDataSource> _dataSource;

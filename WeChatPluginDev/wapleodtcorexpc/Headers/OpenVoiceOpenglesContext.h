@@ -6,7 +6,7 @@
 @class CAEAGLLayer, EAGLContext;
 @protocol OpenVoiceOpenglesContextDelegate;
 
-@interface OpenVoiceOpenglesContext
+@interface OpenVoiceOpenglesContext : NSObject
 {
     char *m_pData[3];
     int srcWidth;

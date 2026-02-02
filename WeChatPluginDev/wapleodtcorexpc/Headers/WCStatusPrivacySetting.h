@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCStatusPrivacySetting
+@interface WCStatusPrivacySetting : NSObject
 {
     long long _privacy;
     NSArray *_selectUserNames;

@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, MMUIButton, MMWebImageView, NSString, SightIconView, UIImage, UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderLiveNowView, WCFinderShareFeedCellViewModel;
 
-@interface WCFinderShareFeedCellView
+@interface WCFinderShareFeedCellView : NSObject
 {
     MMWebImageView *_avatarImageView;
     UILabel *_nameLabel;

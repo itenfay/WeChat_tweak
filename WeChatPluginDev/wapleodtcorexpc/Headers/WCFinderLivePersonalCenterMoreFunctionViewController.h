@@ -5,7 +5,7 @@
 
 @class FinderLiveRewardQuotaSwitchInfo, MMTableView, NSMutableArray, NSString;
 
-@interface WCFinderLivePersonalCenterMoreFunctionViewController
+@interface WCFinderLivePersonalCenterMoreFunctionViewController : NSObject
 {
     _Bool _openRewardLimitNotify;
     MMTableView *_mainTableView;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCADCanvasEggAnimationDropCard
+@interface WCADCanvasEggAnimationDropCard : NSObject
 {
     NSArray *_transitionImgs;
     NSString *_transitionAnimationUrl;

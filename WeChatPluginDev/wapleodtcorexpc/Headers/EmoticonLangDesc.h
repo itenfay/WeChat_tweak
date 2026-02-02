@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonLangDesc
+@interface EmoticonLangDesc : NSObject
 {
     NSString *_m_languageCode;
     NSString *_m_desc;

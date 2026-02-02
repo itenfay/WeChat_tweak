@@ -6,7 +6,7 @@
 @class ExpandableTextViewConfig, NSString;
 @protocol ExpandableTextViewDelegate;
 
-@interface ExpandableTextView
+@interface ExpandableTextView : NSObject
 {
     _Bool _isExpand;
     id <ExpandableTextViewDelegate> _expandDelegate;

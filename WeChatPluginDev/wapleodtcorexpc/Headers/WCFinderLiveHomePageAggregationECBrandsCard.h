@@ -5,7 +5,7 @@
 
 @class MMLiveColorfulLabel, NSArray;
 
-@interface WCFinderLiveHomePageAggregationECBrandsCard
+@interface WCFinderLiveHomePageAggregationECBrandsCard : NSObject
 {
     MMLiveColorfulLabel *_titleLabel;
     MMLiveColorfulLabel *_subTitleLabel;

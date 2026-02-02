@@ -5,7 +5,7 @@
 
 @class RingToneAvPlayer, WCTableViewSectionManager;
 
-@interface NewMessageRingSettingViewController
+@interface NewMessageRingSettingViewController : NSObject
 {
     unsigned long long _ringType;
     WCTableViewSectionManager *_section;

@@ -6,7 +6,7 @@
 @class FTSMessageDB, FTSMsgSearchMgr, FTSMsgSearchTask, MMLoadingView, MMUILabel, MMUIView, MMUIViewController, NSMutableArray, NSMutableDictionary, NSObject, NSString, UIButton, UITextField, UIView, WCDataSearcher, WCPayBrandMsgSearchRelatedFuncViewModel;
 @protocol MMSpecialMsgSearchHelperDelegate, OS_dispatch_semaphore;
 
-@interface MMSpecialMsgSearchHelper
+@interface MMSpecialMsgSearchHelper : NSObject
 {
     _Bool m_bStartSearch;
     _Bool m_bSearchBarBecomeFirstRespones;

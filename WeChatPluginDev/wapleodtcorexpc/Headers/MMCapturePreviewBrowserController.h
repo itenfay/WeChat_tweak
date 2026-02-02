@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageIntialView, EditImageLogicController, MMAsset, MMLoadingView, MultiImageScrollView, NSMutableArray, NSString, UIActivityIndicatorView, UIButton, UIImage, UILabel, UIView;
 @protocol ImageBrowseDelegate;
 
-@interface MMCapturePreviewBrowserController
+@interface MMCapturePreviewBrowserController : NSObject
 {
     UIView *_bottomBar;
     UIButton *_sendButton;

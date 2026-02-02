@@ -5,7 +5,7 @@
 
 @class BTVideoItemCellAutoPlayReportData;
 
-@interface BTVideoItemCellAutoPlayReporter
+@interface BTVideoItemCellAutoPlayReporter : NSObject
 {
     BTVideoItemCellAutoPlayReportData *m_data;
     unsigned int m_autoPlayId;

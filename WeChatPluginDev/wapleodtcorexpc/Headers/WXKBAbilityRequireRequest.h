@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WXKBAbilityRequireRequest
+@interface WXKBAbilityRequireRequest : NSObject
 {
     NSArray *_supportTypes;
 }

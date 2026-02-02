@@ -5,7 +5,7 @@
 
 @class NSString, UIColor, UIScrollView;
 
-@interface WAWebViewPlugin_CustomNavigationBar
+@interface WAWebViewPlugin_CustomNavigationBar : NSObject
 {
     _Bool _webAppear;
     UIScrollView *_scrollListener;

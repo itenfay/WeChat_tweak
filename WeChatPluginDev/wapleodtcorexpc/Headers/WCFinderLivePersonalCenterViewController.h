@@ -5,7 +5,7 @@
 
 @class FinderLivePersonalCenterPrepareInfo, FinderNewUserPrepareResponse, NSArray, NSString, UICollectionView, WCActionSheet, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderLivePageStayReporter, WCFinderPersonalCenterLayout;
 
-@interface WCFinderLivePersonalCenterViewController
+@interface WCFinderLivePersonalCenterViewController : NSObject
 {
     _Bool _isCompleCheck;
     _Bool _isClickStartLive;

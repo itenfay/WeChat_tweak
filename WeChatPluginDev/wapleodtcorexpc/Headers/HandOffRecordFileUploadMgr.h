@@ -6,7 +6,7 @@
 @class CdnRecordMediaInfo, NSMutableArray, NSString;
 @protocol HandOffCDNUploadMgrDelegate;
 
-@interface HandOffRecordFileUploadMgr
+@interface HandOffRecordFileUploadMgr : NSObject
 {
     id <HandOffCDNUploadMgrDelegate> _delegate;
     NSMutableArray *_fileInfoQueue;

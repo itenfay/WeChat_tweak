@@ -5,7 +5,7 @@
 
 @class CContact, ColorGradientView, MMHeadImageView, UILabel, WCAdCustomerServiceConfirmInfo;
 
-@interface WCAdConventionalKefuDetailView
+@interface WCAdConventionalKefuDetailView : NSObject
 {
     _Bool _isInHalfScreenMode;
     WCAdCustomerServiceConfirmInfo *_confirmInfo;

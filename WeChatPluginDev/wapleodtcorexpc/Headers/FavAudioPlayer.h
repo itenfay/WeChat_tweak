@@ -6,7 +6,7 @@
 @class FavAudioInfo, MMTimer, NSDate, NSString;
 @protocol AudioPlayerProtocol;
 
-@interface FavAudioPlayer
+@interface FavAudioPlayer : NSObject
 {
     FavAudioInfo *m_curAudioInfo;
     FavAudioInfo *m_lastAudioInfo;

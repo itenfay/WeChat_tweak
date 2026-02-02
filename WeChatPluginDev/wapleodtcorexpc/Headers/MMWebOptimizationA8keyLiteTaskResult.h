@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface MMWebOptimizationA8keyLiteTaskResult
+@interface MMWebOptimizationA8keyLiteTaskResult : NSObject
 {
     unsigned int _costTime;
     NSArray *_arrDomainControlData;

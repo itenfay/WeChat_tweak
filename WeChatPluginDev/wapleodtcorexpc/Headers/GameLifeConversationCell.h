@@ -6,7 +6,7 @@
 @class GameLifeConversationCellViewModel;
 @protocol GameLifeConversationCellDelegate;
 
-@interface GameLifeConversationCell
+@interface GameLifeConversationCell : NSObject
 {
     GameLifeConversationCellViewModel *_viewModel;
     id <GameLifeConversationCellDelegate> _gameLifeDelegate;

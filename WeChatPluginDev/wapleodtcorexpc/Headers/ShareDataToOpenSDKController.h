@@ -6,7 +6,7 @@
 @class CMessageWrap, MMScrollActionSheet, MsgToDeviceLogic, NSArray, NSMutableArray, NSString, ShareTo3rdAppSettingViewController, UIDocumentInteractionController, UIView, UIViewController, WCDataItem;
 @protocol ShareDataToOpenSDKControllerDelegate;
 
-@interface ShareDataToOpenSDKController
+@interface ShareDataToOpenSDKController : NSObject
 {
     MMScrollActionSheet *m_shareSheet;
     NSMutableArray *m_deviceSheetSection;

@@ -5,7 +5,7 @@
 
 @class ContactsDataLogic, NSMutableArray, NSString;
 
-@interface ContactsAuthorityManageViewMgr
+@interface ContactsAuthorityManageViewMgr : NSObject
 {
     NSMutableArray *m_arSocialBlackFunctionTagContact;
     NSMutableArray *m_arSnsBlackFunctionTagContact;

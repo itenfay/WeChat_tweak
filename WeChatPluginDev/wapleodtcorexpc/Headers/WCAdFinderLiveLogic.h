@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface WCAdFinderLiveLogic
+@interface WCAdFinderLiveLogic : NSObject
 {
     UIView *_likeAnimationViewCache;
     UIView *_liveStreamPlayerCache;

@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface ilinkMultiTalkMsgViewController
+@interface ilinkMultiTalkMsgViewController : NSObject
 {
     unsigned long long _roomID;
     MMTableView *_tableView;

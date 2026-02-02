@@ -5,7 +5,7 @@
 
 @class UIButton, UIImageView, UILabel, UIView;
 
-@interface FaceRecogResultView
+@interface FaceRecogResultView : NSObject
 {
     UILabel *_waitLabel;
     UIImageView *_loadingBlurView;

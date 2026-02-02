@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class RTEAttributeNode, RTELinkedListNode;
 
-@interface RTELinkedList
+@interface RTELinkedList : NSObject
 {
     RTELinkedListNode *_headNode;
     RTELinkedListNode *_cacheNode;

@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, UIButton, UIImageView, UILabel, UIView, WCUITextField;
 @protocol MMLiveGameJoinTeamSettingCoinValueViewDelegate, MMLiveGameJoinTeamSettingViewDelegate;
 
-@interface MMLiveGameJoinTeamSettingCoinValueView
+@interface MMLiveGameJoinTeamSettingCoinValueView : NSObject
 {
     _Bool _finished;
     _Bool _dismissForHelp;

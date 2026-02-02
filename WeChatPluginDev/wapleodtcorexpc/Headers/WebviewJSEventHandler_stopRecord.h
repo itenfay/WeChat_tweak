@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WebviewJSEventHandler_stopRecord
+@interface WebviewJSEventHandler_stopRecord : NSObject
 {
 }
 

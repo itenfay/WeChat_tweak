@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CommUseAppInfo_CommUseConfig, NSString, WAAppOperateLogic, WAGetWxaUsageRecordRequestInfo;
 
-@interface WAAppItemManager
+@interface WAAppItemManager : NSObject
 {
     WAAppOperateLogic *m_operateLogic;
     unsigned int m_localUpdateTimeOfLastVisibleItem;

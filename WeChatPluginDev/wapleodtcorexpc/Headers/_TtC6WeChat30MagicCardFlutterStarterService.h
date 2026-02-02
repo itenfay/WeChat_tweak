@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat30MagicCardFlutterStarterService
+@interface _TtC6WeChat30MagicCardFlutterStarterService : NSObject
 {
     MISSING_TYPE *TAG;
     MISSING_TYPE *engine2BizContext;

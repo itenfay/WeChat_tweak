@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnchorPromoteInfo, MMUIButton, UIView, WCFinderAnimationLoadingView;
 
-@interface MMFinderLiveAnchorPromoteTableViewCell
+@interface MMFinderLiveAnchorPromoteTableViewCell : NSObject
 {
     _Bool _alwaysHidePushButton;
     _Bool _enablePushPromote;

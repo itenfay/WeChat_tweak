@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableSet, NSString, RichTextView, UICollectionViewDiffableDataSource, WCFinderAnimationLoadingView, WCFinderExtStatsReporter, WCFinderFeedArray, WCFinderFeedStaticCoverCollectionViewCell, WCFinderProfileCollectionListLayout, WCFinderProfileFeedPageHeaderContainerView, WCFinderProfileTagFeedViewModel, WCFinderStreamFooterView;
 
-@interface WCFinderStreamProfileFeedPage
+@interface WCFinderStreamProfileFeedPage : NSObject
 {
     _Bool _showProfilePostFromSnsAlbumEntry;
     _Bool _collectionListButtonAnimationPlayed;

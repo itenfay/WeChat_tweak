@@ -5,7 +5,7 @@
 
 @class MMLiveMessageViewModel, MMUIImageView, MMUILabel, UIView;
 
-@interface MMLiveMessageCellView
+@interface MMLiveMessageCellView : NSObject
 {
     MMUILabel *_liveNameLabel;
     MMUILabel *_liveStatusLabel;

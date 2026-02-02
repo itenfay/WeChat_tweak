@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTableViewCellNormalConfig;
 
-@interface WCTableViewNormalCellManager
+@interface WCTableViewNormalCellManager : NSObject
 {
     double titleRight;
     _Bool _dr_isRtReport;

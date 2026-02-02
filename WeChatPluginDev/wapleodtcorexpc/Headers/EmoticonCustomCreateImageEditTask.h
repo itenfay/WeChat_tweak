@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSData, NSString;
 @protocol EmoticonCustomCreateImageEditTaskDelegate;
 
-@interface EmoticonCustomCreateImageEditTask
+@interface EmoticonCustomCreateImageEditTask : NSObject
 {
     id <EmoticonCustomCreateImageEditTaskDelegate> _delegate;
     CDUnknownBlockType _editSucBlock;

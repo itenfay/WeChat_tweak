@@ -5,7 +5,7 @@
 
 @class MMFinderLiveTableStyleCommentPubbleCellFrame, MMLiveCommentPubbleCellFrame, NSNumber, NSString;
 
-@interface MMFinderLiveCommentTableViewCellFrame
+@interface MMFinderLiveCommentTableViewCellFrame : NSObject
 {
     long long _layoutResult;
     _Bool _isHidePubbleCell;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter6Device
+@interface _TtCC6WeChat17KaraFeatureCenter6Device : NSObject
 {
     MISSING_TYPE *_sizeOfWeChatDataInMB;
     MISSING_TYPE *_sizeOfChatHistoriesInMB;

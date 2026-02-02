@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCGestureReportInfo
+@interface WCGestureReportInfo : NSObject
 {
     unsigned int _distance;
     NSString *_snsId;

@@ -5,7 +5,7 @@
 
 @class ChatroomRecInfo, GCBulletMsgFlowView, NSMutableArray, NSString;
 
-@interface GCRecommendGroupCellModel
+@interface GCRecommendGroupCellModel : NSObject
 {
     _Bool _isLocked;
     _Bool _canOnlooker;

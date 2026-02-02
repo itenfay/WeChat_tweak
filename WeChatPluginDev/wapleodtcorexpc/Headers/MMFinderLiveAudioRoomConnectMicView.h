@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMUIImageView, MMUILabel, RichTextView, UIButton;
 
-@interface MMFinderLiveAudioRoomConnectMicView
+@interface MMFinderLiveAudioRoomConnectMicView : NSObject
 {
     _Bool _isLocationAuthorized;
     CDUnknownBlockType _onClickedConnectMic;

@@ -5,7 +5,7 @@
 
 @class OpenApiParameter;
 
-@interface OpenProfileHandler
+@interface OpenProfileHandler : NSObject
 {
     OpenApiParameter *_parameter;
 }

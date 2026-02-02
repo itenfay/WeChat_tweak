@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableSet, UITableView;
 @protocol TableViewCellExposureDelegate, UITableViewDelegate;
 
-@interface TableViewCellExposureHelper
+@interface TableViewCellExposureHelper : NSObject
 {
     double m_navBarAndStatusBarHeight;
     UITableView *m_tableView;

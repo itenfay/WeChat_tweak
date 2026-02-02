@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface CCardContact
+@interface CCardContact : NSObject
 {
     NSString *_m_nsCardDesc;
     NSString *_m_nsCardDescIcon;

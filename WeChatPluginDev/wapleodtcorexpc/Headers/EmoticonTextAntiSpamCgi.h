@@ -6,7 +6,7 @@
 @class NSString;
 @protocol EmoticonTextAntiSpamCgiDelegate;
 
-@interface EmoticonTextAntiSpamCgi
+@interface EmoticonTextAntiSpamCgi : NSObject
 {
     _Bool m_shouldBlock;
     NSString *_text;

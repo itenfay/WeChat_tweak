@@ -5,7 +5,7 @@
 
 @class MMAuthInfo, NSRecursiveLock, NSString, ProtobufCGIWrap, ProtobufEventHandler, ProtobufPrtlChannel;
 
-@interface ProtobufEvent
+@interface ProtobufEvent : NSObject
 {
     ProtobufPrtlChannel *m_ptrl;
     ProtobufCGIWrap *m_pbCGIWrap;

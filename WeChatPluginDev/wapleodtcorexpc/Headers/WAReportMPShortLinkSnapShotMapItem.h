@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportMPShortLinkSnapShotMapItem
+@interface WAReportMPShortLinkSnapShotMapItem : NSObject
 {
     NSString *_mpShortLink;
     NSString *_snapshotCDNUrl;

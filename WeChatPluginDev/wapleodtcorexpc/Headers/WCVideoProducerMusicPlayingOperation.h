@@ -5,7 +5,7 @@
 
 @class OMJMusicInfo;
 
-@interface WCVideoProducerMusicPlayingOperation
+@interface WCVideoProducerMusicPlayingOperation : NSObject
 {
     OMJMusicInfo *_omjMusicInfo;
     long long _musicOrder;

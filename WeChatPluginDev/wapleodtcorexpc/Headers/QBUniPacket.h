@@ -5,7 +5,7 @@
 
 @class QBUniAttribute;
 
-@interface QBUniPacket
+@interface QBUniPacket : NSObject
 {
     QBUniAttribute *_attributes;
 }

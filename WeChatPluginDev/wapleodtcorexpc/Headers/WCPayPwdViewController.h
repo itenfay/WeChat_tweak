@@ -6,7 +6,7 @@
 @class GetHbRefundConfigResp, GetTransferWordingResponse, MMWebViewController, NSDictionary, NSString, TransferPhoneGetSwitchResp, WCPayGetTransferWordingCgi, WCPayHongBaoRefundConfigCgi, WCPayTransferPhoneChangeSwitchCgi, WCPayTransferPhoneGetSwitchCgi, WCPayTransferPhoneProtocalHalfPage;
 @protocol WCPayPwdViewControllerDelegate;
 
-@interface WCPayPwdViewController
+@interface WCPayPwdViewController : NSObject
 {
     id <WCPayPwdViewControllerDelegate> m_delegate;
     _Bool _shouldUpdateWhenAppear;

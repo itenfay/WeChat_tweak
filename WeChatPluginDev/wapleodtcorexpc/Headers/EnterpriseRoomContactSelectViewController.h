@@ -6,7 +6,7 @@
 @class CEnterpriseContact, MMTableView, NSMutableArray, NSString, WCDataSearcher;
 @protocol EnterpriseRoomContactSelectDelegate;
 
-@interface EnterpriseRoomContactSelectViewController
+@interface EnterpriseRoomContactSelectViewController : NSObject
 {
     CEnterpriseContact *_contact;
     NSMutableArray *_aryMemberContact;

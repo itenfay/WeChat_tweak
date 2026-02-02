@@ -5,7 +5,7 @@
 
 @class NSData;
 
-@interface WCFinderPrefetchStreamReportCGI
+@interface WCFinderPrefetchStreamReportCGI : NSObject
 {
     unsigned long long _tabType;
     NSData *_lastBuffer;

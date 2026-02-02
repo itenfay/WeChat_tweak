@@ -5,7 +5,7 @@
 
 @class FavImagePreView, NSString;
 
-@interface FavRecordImgNodeView
+@interface FavRecordImgNodeView : NSObject
 {
     FavImagePreView *m_imgPreView;
 }

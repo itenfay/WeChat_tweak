@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, WAPackageUpdateLogic;
 
-@interface WACacheVersionPreCheckerMgr
+@interface WACacheVersionPreCheckerMgr : NSObject
 {
     WAPackageUpdateLogic *_pluginPkgUpdateLogic;
     NSMutableArray *_arrReportUseWeappPlugins;

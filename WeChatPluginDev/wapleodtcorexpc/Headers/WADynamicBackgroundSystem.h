@@ -6,7 +6,7 @@
 @class DynamicBackgroundSystemConfig, NSMutableArray, NSString;
 @protocol DynamicBackgroundSystemDelegate;
 
-@interface WADynamicBackgroundSystem
+@interface WADynamicBackgroundSystem : NSObject
 {
     unsigned int colorStep;
     float colorRatio;

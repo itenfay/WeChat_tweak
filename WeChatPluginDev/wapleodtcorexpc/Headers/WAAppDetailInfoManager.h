@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAppDetailInfoManager
+@interface WAAppDetailInfoManager : NSObject
 {
 }
 

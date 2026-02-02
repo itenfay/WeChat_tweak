@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentUltraWebViewInfo
+@interface WCCanvasComponentUltraWebViewInfo : NSObject
 {
     _Bool _hideWebViewProgress;
     NSString *_webViewUrl;

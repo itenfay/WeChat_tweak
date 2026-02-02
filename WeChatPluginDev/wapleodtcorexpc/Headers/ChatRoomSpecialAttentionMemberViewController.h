@@ -5,7 +5,7 @@
 
 @class CContact, ChatRoomSpecialAttentionAddMemberLogic, ChatRoomSpecialAttentionDeleteMemberLogic, MMAcceptAgreementCommonHeadView, MMTableView, MMTableViewInfo, NSMutableArray, NSString;
 
-@interface ChatRoomSpecialAttentionMemberViewController
+@interface ChatRoomSpecialAttentionMemberViewController : NSObject
 {
     NSMutableArray *m_attentionMemberContactList;
     NSMutableArray *m_chatRoomMemContactList;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderModEventCGI
+@interface WCFinderModEventCGI : NSObject
 {
     unsigned int _scene;
     NSString *_username;

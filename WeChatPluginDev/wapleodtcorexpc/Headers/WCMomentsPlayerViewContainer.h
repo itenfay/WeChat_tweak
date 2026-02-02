@@ -6,7 +6,7 @@
 @class MMImageScrollViewHelper, MMScrollViewZoomReporter, NSArray, NSString, UIView;
 @protocol WCMomentsPlayerViewContainerDelegate;
 
-@interface WCMomentsPlayerViewContainer
+@interface WCMomentsPlayerViewContainer : NSObject
 {
     long long _browseScene;
     id <WCMomentsPlayerViewContainerDelegate> _containerDelegate;

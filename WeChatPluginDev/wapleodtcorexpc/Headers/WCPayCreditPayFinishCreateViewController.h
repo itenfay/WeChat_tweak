@@ -5,7 +5,7 @@
 
 @protocol WCPayCreditPayFinishCreateViewControllerDelegate;
 
-@interface WCPayCreditPayFinishCreateViewController
+@interface WCPayCreditPayFinishCreateViewController : NSObject
 {
     id <WCPayCreditPayFinishCreateViewControllerDelegate> m_delegate;
 }

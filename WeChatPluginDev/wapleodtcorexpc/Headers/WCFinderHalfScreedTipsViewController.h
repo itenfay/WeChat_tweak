@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderHalfScreedTipsViewController
+@interface WCFinderHalfScreedTipsViewController : NSObject
 {
     NSString *_titleTips;
     NSString *_detail;

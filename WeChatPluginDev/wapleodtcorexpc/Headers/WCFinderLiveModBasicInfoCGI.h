@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray;
 
-@interface WCFinderLiveModBasicInfoCGI
+@interface WCFinderLiveModBasicInfoCGI : NSObject
 {
     unsigned int _scene;
     NSMutableArray *_cmdItemRequestWrapList;

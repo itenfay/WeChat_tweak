@@ -6,7 +6,7 @@
 @class NSObject, NSString, OrderedDictionary;
 @protocol OS_dispatch_queue;
 
-@interface MMAssetMessageUUIDMgr
+@interface MMAssetMessageUUIDMgr : NSObject
 {
     OrderedDictionary *_assetIDToMessageUUIDMap;
     NSObject<OS_dispatch_queue> *_queue;

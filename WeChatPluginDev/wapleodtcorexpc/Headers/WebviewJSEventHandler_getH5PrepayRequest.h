@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_getH5PrepayRequest
+@interface WebviewJSEventHandler_getH5PrepayRequest : NSObject
 {
     NSString *_jsInjectCode;
     JSEvent *m_jsEvent;

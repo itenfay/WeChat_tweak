@@ -6,7 +6,7 @@
 @class MMMusicNoDotSelectItemDisplayViewBgView, MMMusicNoDotSelectItemDisplayViewCustomLayout, MMMusicNoDotSelectItemView, NSString, UICollectionView;
 @protocol MMMusicNoDotSelectItemDisplayViewDataSource, MMMusicNoDotSelectItemDisplayViewDelegate;
 
-@interface MMMusicNoDotSelectItemDisplayView
+@interface MMMusicNoDotSelectItemDisplayView : NSObject
 {
     _Bool _isInLongSelectedStatus;
     id <MMMusicNoDotSelectItemDisplayViewDataSource> _dataSource;

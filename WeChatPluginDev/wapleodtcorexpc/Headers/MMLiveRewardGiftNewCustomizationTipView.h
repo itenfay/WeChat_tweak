@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftNewCustomizationModel, MMFinderLiveRewardGiftItem, MMUILabel;
 
-@interface MMLiveRewardGiftNewCustomizationTipView
+@interface MMLiveRewardGiftNewCustomizationTipView : NSObject
 {
     CDUnknownBlockType _selfSizeChangeCallback;
     CDUnknownBlockType _onTapCallback;

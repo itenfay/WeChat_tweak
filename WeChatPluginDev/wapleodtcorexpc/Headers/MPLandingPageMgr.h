@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPLandingPageMgr
+@interface MPLandingPageMgr : NSObject
 {
 }
 

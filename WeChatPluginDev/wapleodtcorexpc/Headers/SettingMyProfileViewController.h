@@ -5,7 +5,7 @@
 
 @class GetWecoinBalanceResponse, MMHeadImageView, NSString, NameEditorViewController, RingToneSettingCellHandler, WCTableViewManager;
 
-@interface SettingMyProfileViewController
+@interface SettingMyProfileViewController : NSObject
 {
     MMHeadImageView *m_headImage;
     NameEditorViewController *m_CurrentVC;

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class JSContext, NSArray, NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString, NSURLSession, WebViewSanboxSessionTaskDebugControl, WebViewSanboxTaskAuthInfo, WebViewWebComVerifyInfo, WebvViewWebComPublicLibInfo;
 @protocol OS_dispatch_queue, WebViewSanboxSessionTaskDelegate;
 
-@interface WebViewSanboxSessionTask
+@interface WebViewSanboxSessionTask : NSObject
 {
     _Bool _hasSetupTask;
     _Bool _isWorkQueueUnload;

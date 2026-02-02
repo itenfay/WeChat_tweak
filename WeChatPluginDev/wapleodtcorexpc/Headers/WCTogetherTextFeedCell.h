@@ -5,7 +5,7 @@
 
 @class RichTextView;
 
-@interface WCTogetherTextFeedCell
+@interface WCTogetherTextFeedCell : NSObject
 {
     RichTextView *_richTextView;
 }

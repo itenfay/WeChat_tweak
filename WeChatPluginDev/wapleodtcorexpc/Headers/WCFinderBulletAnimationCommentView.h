@@ -5,7 +5,7 @@
 
 @class RichTextView, UIImageView, UILabel, UIView, WCFinderComment;
 
-@interface WCFinderBulletAnimationCommentView
+@interface WCFinderBulletAnimationCommentView : NSObject
 {
     RichTextView *_richText;
     WCFinderComment *_comment;

@@ -5,7 +5,7 @@
 
 @class CALayer, NSString, UIImageView, UILabel, WCAdIconView;
 
-@interface WCAdClickBarView
+@interface WCAdClickBarView : NSObject
 {
     _Bool _stopArrorAnimation;
     NSString *_title;

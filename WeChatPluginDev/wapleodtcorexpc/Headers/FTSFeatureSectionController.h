@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface FTSFeatureSectionController
+@interface FTSFeatureSectionController : NSObject
 {
     NSArray *_features;
 }

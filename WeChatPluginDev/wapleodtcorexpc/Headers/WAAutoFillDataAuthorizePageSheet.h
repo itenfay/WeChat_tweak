@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, _WAAutoFillDataTextView;
 @protocol WAAutoFillDataAuthorizePageSheetDelegate;
 
-@interface WAAutoFillDataAuthorizePageSheet
+@interface WAAutoFillDataAuthorizePageSheet : NSObject
 {
     id <WAAutoFillDataAuthorizePageSheetDelegate> _afda_delegate;
     NSString *_contentString;

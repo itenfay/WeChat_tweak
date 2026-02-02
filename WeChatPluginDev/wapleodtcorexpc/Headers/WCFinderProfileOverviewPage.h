@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCFinderCollectionViewDataSource, WCFinderFeedStaticCoverCollectionViewCell, WCFinderStreamFooterView;
 
-@interface WCFinderProfileOverviewPage
+@interface WCFinderProfileOverviewPage : NSObject
 {
     unsigned long long _refreshTime;
     WCFinderStreamFooterView *_footerView;

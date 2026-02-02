@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32WSWebViewPlugin_ExceptionHandler
+@interface _TtC6WeChat32WSWebViewPlugin_ExceptionHandler : NSObject
 {
     MISSING_TYPE *maxReloadTimes;
     MISSING_TYPE *reloadTimes;

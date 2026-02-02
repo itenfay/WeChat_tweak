@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WAJSEventHandler_addMapVisualLayer
+@interface WAJSEventHandler_addMapVisualLayer : NSObject
 {
     NSMutableArray *_markersAddMap;
     NSMutableArray *_markersAddCluster;

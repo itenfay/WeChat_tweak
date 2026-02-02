@@ -5,7 +5,7 @@
 
 @class MJPlaybackViewModel, MJTimelineViewModel;
 
-@interface MJSegmentCropInspectorViewModel
+@interface MJSegmentCropInspectorViewModel : NSObject
 {
     MJTimelineViewModel *_timelineVM;
     MJPlaybackViewModel *_playbackVM;

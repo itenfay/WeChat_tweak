@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WCYoWindowController;
 
-@interface WCWatchNotificationMgr
+@interface WCWatchNotificationMgr : NSObject
 {
     unsigned int _yoTime;
     NSMutableArray *_yoCounts;

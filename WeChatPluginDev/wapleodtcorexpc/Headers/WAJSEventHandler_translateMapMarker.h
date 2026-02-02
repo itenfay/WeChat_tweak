@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableArray, WAMapAnnotationView;
 
-@interface WAJSEventHandler_translateMapMarker
+@interface WAJSEventHandler_translateMapMarker : NSObject
 {
     int _workingAnim;
     NSMutableArray *_keyFrames;

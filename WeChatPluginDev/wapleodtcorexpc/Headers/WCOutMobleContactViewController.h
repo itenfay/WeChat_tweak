@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, UITableView, WCSearcher;
 
-@interface WCOutMobleContactViewController
+@interface WCOutMobleContactViewController : NSObject
 {
     _Bool _isSearching;
     NSArray *_fliterContacts;

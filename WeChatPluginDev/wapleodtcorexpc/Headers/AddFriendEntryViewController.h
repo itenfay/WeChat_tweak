@@ -5,7 +5,7 @@
 
 @class CrossfadeAnimationController, FindContactSearchViewCellInfo, InviteFriendLogic, MMTableViewInfo, NSString, NewPersonalQRCodeViewController, UIButton, UILabel, UIView;
 
-@interface AddFriendEntryViewController
+@interface AddFriendEntryViewController : NSObject
 {
     FindContactSearchViewCellInfo *m_headerSearchView;
     UIView *m_searchFooterView;

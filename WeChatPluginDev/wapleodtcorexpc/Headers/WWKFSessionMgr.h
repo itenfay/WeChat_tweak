@@ -5,7 +5,7 @@
 
 @class MMBaseSessionStorage, NSMutableDictionary, NSString;
 
-@interface WWKFSessionMgr
+@interface WWKFSessionMgr : NSObject
 {
     MMBaseSessionStorage *_sessionStorage;
     NSMutableDictionary *_dicUserName2CellData;

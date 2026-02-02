@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCSessionUBAConfigModel
+@interface WCSessionUBAConfigModel : NSObject
 {
     NSMutableArray *_sessionUBAConfigs;
     NSString *_originalJson;

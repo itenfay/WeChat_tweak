@@ -5,7 +5,7 @@
 
 @class NSString, UIImage;
 
-@interface WCWebJSMenuShowConfigMenuItem
+@interface WCWebJSMenuShowConfigMenuItem : NSObject
 {
     NSString *_menuTitle;
     UIImage *_menuIconImage;

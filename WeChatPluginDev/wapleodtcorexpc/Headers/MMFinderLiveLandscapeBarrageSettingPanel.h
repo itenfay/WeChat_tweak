@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveLandscapeBarrageEntranceItemView, MMFinderLiveLandscapeBarrageParamCardItemView, MMFinderLiveTask, MMLiveTaskId, MMUIButton, MMUILabel, UIScrollView, UIView;
 
-@interface MMFinderLiveLandscapeBarrageSettingPanel
+@interface MMFinderLiveLandscapeBarrageSettingPanel : NSObject
 {
     CDUnknownBlockType _settingPanelCloseCallback;
     MMLiveTaskId *_taskId;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat24WAWebViewPlugin_Playable
+@interface _TtC6WeChat24WAWebViewPlugin_Playable : NSObject
 {
     MISSING_TYPE *playableContainerView;
     MISSING_TYPE *viewId;

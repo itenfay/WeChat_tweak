@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UIImageView, UIView;
 
-@interface WCWebImageSourceInfoButton
+@interface WCWebImageSourceInfoButton : NSObject
 {
     UIView *_roundBackView;
     UIView *_coverBackView;

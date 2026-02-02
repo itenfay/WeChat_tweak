@@ -5,7 +5,7 @@
 
 @class FinderLivePromoteInfoRedPacketCover_PromoteRedPacketCoverInfo, MMUIButton, MMUILabel, MMWebImageView;
 
-@interface MMFinderLiveHonCoverPromotePubbleContentView
+@interface MMFinderLiveHonCoverPromotePubbleContentView : NSObject
 {
     _Bool _received;
     _Bool _isAnchor;

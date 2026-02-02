@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIView, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIView, WCFilterBasePanel;
 @protocol WCFilterViewDelegate;
 
-@interface WCFilterView
+@interface WCFilterView : NSObject
 {
     NSMutableArray *m_sections;
     MMUIView *m_titlePanel;

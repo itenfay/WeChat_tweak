@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCTimelineReceivedAdIdMgr
+@interface WCTimelineReceivedAdIdMgr : NSObject
 {
     NSMutableArray *_receivedAdList;
 }

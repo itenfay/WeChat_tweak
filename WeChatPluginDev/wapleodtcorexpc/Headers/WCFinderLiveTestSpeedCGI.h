@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderLiveTestSpeedCGI
+@interface WCFinderLiveTestSpeedCGI : NSObject
 {
     unsigned int _sceneCode;
     unsigned int _opCode;

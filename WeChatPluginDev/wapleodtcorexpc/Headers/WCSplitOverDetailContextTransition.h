@@ -6,7 +6,7 @@
 @class NSString, WCSplitOverDetailContextPresentationController;
 @protocol WCSplitBaseTransitionDelegate;
 
-@interface WCSplitOverDetailContextTransition
+@interface WCSplitOverDetailContextTransition : NSObject
 {
     _Bool _isPresent;
     id <WCSplitBaseTransitionDelegate> _baseDelegate;

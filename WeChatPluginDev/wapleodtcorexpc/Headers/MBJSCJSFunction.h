@@ -5,7 +5,7 @@
 
 @class JSContext, MBJSCRuntime;
 
-@interface MBJSCJSFunction
+@interface MBJSCJSFunction : NSObject
 {
     JSContext *_context;
     MBJSCRuntime *_runtime;

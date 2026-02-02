@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface WAJSEventHandler_shareEmojiMessage
+@interface WAJSEventHandler_shareEmojiMessage : NSObject
 {
     MISSING_TYPE *forwardMessageLogic;
     MISSING_TYPE *needShowEntrance;

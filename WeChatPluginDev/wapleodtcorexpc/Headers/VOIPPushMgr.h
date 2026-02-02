@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface VOIPPushMgr
+@interface VOIPPushMgr : NSObject
 {
 }
 

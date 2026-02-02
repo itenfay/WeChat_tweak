@@ -6,7 +6,7 @@
 @class MMUIButton, NSMutableArray, NSString, UIImageView, UILabel, UITextField, UIView, WCFinderPopUpSelectMenuViewController;
 @protocol WCFinderMultiSelectSearchBarDelegate;
 
-@interface WCFinderMultiSelectSearchBar
+@interface WCFinderMultiSelectSearchBar : NSObject
 {
     _Bool _isEditing;
     UITextField *_textField;

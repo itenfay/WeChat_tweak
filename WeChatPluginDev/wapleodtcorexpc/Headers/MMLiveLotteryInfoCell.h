@@ -5,7 +5,7 @@
 
 @class MMCPLabel, MMFinderLiveLotteryInfo, MMFinderLiveRecordListLotteryInfo;
 
-@interface MMLiveLotteryInfoCell
+@interface MMLiveLotteryInfoCell : NSObject
 {
     unsigned int _supportMultiType;
     MMCPLabel *_lotteryInfoTitleLabel;

@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat38WSNativeHotListVerticalItemSettingItem
+@interface _TtC6WeChat38WSNativeHotListVerticalItemSettingItem : NSObject
 {
     MISSING_TYPE *businessType;
 }

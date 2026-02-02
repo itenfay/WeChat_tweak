@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderFavTemplateCgi
+@interface WCFinderFavTemplateCgi : NSObject
 {
     unsigned int _opType;
     unsigned int _fromScene;

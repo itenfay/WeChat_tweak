@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSDictionary, NSString, ScanQRCodeLogicController, UIImage, WCActionSheetWithScanWXCode, WCImageTranslateLogic;
 
-@interface WebviewJSEventHandler_saveImage
+@interface WebviewJSEventHandler_saveImage : NSObject
 {
     NSString *m_imgUrl;
     NSString *m_base64Data;

@@ -5,7 +5,7 @@
 
 @class EditImageMusicLyricsWidgetTool, WCTimeLineEditImageScrollView;
 
-@interface WCTimeLineEditImageView
+@interface WCTimeLineEditImageView : NSObject
 {
     EditImageMusicLyricsWidgetTool *_musicLyricsWidget;
 }

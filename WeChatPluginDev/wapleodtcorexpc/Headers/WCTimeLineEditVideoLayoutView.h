@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCTimeLineEditVideoLayoutView
+@interface WCTimeLineEditVideoLayoutView : NSObject
 {
     _Bool _shouldRecoverLyricsWidget;
     _Bool _shouldShowNewBGMPanel;

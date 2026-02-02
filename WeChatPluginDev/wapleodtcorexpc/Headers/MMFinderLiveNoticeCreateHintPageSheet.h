@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel;
 
-@interface MMFinderLiveNoticeCreateHintPageSheet
+@interface MMFinderLiveNoticeCreateHintPageSheet : NSObject
 {
     CDUnknownBlockType _onCreateNotice;
     UILabel *_titleLabel;

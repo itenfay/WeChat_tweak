@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_chooseInvoiceTitle
+@interface WebviewJSEventHandler_chooseInvoiceTitle : NSObject
 {
     JSEvent *_jsEvent;
 }

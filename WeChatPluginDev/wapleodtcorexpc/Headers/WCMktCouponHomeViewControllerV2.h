@@ -5,7 +5,7 @@
 
 @class MMTableView, NSString, UIView, WCMktCouponHomeLogicControllerV2;
 
-@interface WCMktCouponHomeViewControllerV2
+@interface WCMktCouponHomeViewControllerV2 : NSObject
 {
     WCMktCouponHomeLogicControllerV2 *_logicController;
     MMTableView *_tableView;

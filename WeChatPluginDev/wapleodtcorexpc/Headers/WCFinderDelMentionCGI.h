@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderDelMentionCGI
+@interface WCFinderDelMentionCGI : NSObject
 {
     CDUnknownBlockType _successful;
     CDUnknownBlockType _failure;

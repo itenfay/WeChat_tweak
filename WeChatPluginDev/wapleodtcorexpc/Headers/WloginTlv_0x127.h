@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WloginTlv_0x127
+@interface WloginTlv_0x127 : NSObject
 {
     unsigned short wVer;
     NSString *msgCode;

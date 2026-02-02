@@ -5,7 +5,7 @@
 
 @class MMScrollStack;
 
-@interface MMStackViewController
+@interface MMStackViewController : NSObject
 {
     MMScrollStack *_stackView;
 }

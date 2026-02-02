@@ -5,7 +5,7 @@
 
 @class BTReaderStyleRecommendMsgHeaderCellViewModel, MMUILabel, UILabel;
 
-@interface BTReaderStyleRecommendMsgHeaderCellView
+@interface BTReaderStyleRecommendMsgHeaderCellView : NSObject
 {
     UILabel *m_headerLabel;
     MMUILabel *m_aggregationLabel;

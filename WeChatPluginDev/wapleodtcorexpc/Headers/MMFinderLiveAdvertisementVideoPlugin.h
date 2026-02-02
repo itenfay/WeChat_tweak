@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMFinderLiveAdvertisementVideoPlugin
+@interface MMFinderLiveAdvertisementVideoPlugin : NSObject
 {
     unsigned long long _adScene;
     NSString *_advertisingLiveId;

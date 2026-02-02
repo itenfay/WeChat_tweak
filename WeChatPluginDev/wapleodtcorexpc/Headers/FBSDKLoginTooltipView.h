@@ -5,7 +5,7 @@
 
 @protocol FBSDKLoginTooltipViewDelegate;
 
-@interface FBSDKLoginTooltipView
+@interface FBSDKLoginTooltipView : NSObject
 {
     _Bool _forceDisplay;
     id <FBSDKLoginTooltipViewDelegate> _delegate;

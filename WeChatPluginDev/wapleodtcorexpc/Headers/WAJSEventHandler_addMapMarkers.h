@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
-@interface WAJSEventHandler_addMapMarkers
+@interface WAJSEventHandler_addMapMarkers : NSObject
 {
     NSMutableArray *_markersAddMap;
     NSMutableArray *_markersAddCluster;

@@ -5,7 +5,7 @@
 
 @class NSObject, NSString, NSURL;
 
-@interface WCWebImageSourceInfo
+@interface WCWebImageSourceInfo : NSObject
 {
     unsigned int _type;
     NSString *_sourceName;

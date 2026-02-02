@@ -5,7 +5,7 @@
 
 @class MMAsset, MMUINavigationController, NSString, OpenApiParameter, WAContactGetter;
 
-@interface OpenBusinessViewHandler
+@interface OpenBusinessViewHandler : NSObject
 {
     _Bool _isBizCompleted;
     _Bool _dismissModalByBiz;

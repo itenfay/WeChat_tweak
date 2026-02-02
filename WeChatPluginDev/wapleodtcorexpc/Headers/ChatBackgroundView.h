@@ -6,7 +6,7 @@
 @class ChatBackgroundItem, NSIndexPath;
 @protocol ChatBackgroundViewDelegate;
 
-@interface ChatBackgroundView
+@interface ChatBackgroundView : NSObject
 {
     ChatBackgroundItem *m_cbItem;
     NSIndexPath *m_indexPath;

@@ -5,7 +5,7 @@
 
 @class PreEnterShowLimitedModeEntryConfig;
 
-@interface PreEnterShowLimitedModeEntryStep
+@interface PreEnterShowLimitedModeEntryStep : NSObject
 {
     PreEnterShowLimitedModeEntryConfig *_configObj;
 }

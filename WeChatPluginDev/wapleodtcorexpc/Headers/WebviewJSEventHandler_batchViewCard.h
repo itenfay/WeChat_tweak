@@ -5,7 +5,7 @@
 
 @class NSString, WCBatchViewCardHelper;
 
-@interface WebviewJSEventHandler_batchViewCard
+@interface WebviewJSEventHandler_batchViewCard : NSObject
 {
     WCBatchViewCardHelper *_viewCardHelp;
 }

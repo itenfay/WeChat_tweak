@@ -6,7 +6,7 @@
 @class MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSString, WCSearcher;
 @protocol CountryCodePickerDelegate;
 
-@interface CountryCodePickerViewController
+@interface CountryCodePickerViewController : NSObject
 {
     id <CountryCodePickerDelegate> m_delegate;
     NSArray *m_arrData;

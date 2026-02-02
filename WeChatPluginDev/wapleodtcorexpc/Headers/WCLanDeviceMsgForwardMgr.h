@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSMutableSet, NSString, WCLanDeviceBaseKissLogic, WCLanDeviceData;
 
-@interface WCLanDeviceMsgForwardMgr
+@interface WCLanDeviceMsgForwardMgr : NSObject
 {
     WCLanDeviceData *m_forwardData;
     NSMutableArray *m_currentDeviceList;

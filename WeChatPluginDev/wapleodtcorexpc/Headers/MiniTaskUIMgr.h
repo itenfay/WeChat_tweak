@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, MiniTaskNavigationController, MiniTaskViewController, MinimizeTaskData, NSString, WADynamicBackgroundGLViewController;
 
-@interface MiniTaskUIMgr
+@interface MiniTaskUIMgr : NSObject
 {
     _Bool _canUseDynamicBackground;
     _Bool _lastMiniTaskEntryState;

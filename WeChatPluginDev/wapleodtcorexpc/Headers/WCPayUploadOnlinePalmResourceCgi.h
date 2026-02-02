@@ -5,7 +5,7 @@
 
 @protocol WCPayUploadOnlinePalmResourceCgiDelegate;
 
-@interface WCPayUploadOnlinePalmResourceCgi
+@interface WCPayUploadOnlinePalmResourceCgi : NSObject
 {
     id <WCPayUploadOnlinePalmResourceCgiDelegate> _cgiDelegate;
 }

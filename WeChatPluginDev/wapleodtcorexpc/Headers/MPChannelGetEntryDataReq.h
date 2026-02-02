@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPChannelGetEntryDataReq
+@interface MPChannelGetEntryDataReq : NSObject
 {
     unsigned int _scene;
     NSString *_syncBuffer;

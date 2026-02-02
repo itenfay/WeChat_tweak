@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCStoryWCDB;
 
-@interface WCStoryDataMgr
+@interface WCStoryDataMgr : NSObject
 {
     WCStoryWCDB *_dataBase;
 }

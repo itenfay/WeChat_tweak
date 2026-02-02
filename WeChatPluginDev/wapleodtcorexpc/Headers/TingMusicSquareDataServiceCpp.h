@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingMusicSquareDataServiceCpp
+@interface TingMusicSquareDataServiceCpp : NSObject
 {
 }
 

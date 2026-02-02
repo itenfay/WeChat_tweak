@@ -6,7 +6,7 @@
 @class NSString, UIGestureRecognizer;
 @protocol MMLiveObjectManipulationViewCornerAction, MMLiveObjectManipulationViewCornerActionButtonDelegate;
 
-@interface MMLiveObjectManipulationViewCornerActionButton
+@interface MMLiveObjectManipulationViewCornerActionButton : NSObject
 {
     _Bool _forManipulationAction;
     id <MMLiveObjectManipulationViewCornerActionButtonDelegate> _delegate;

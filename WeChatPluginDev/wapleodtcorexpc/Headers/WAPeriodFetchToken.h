@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAPeriodFetchToken
+@interface WAPeriodFetchToken : NSObject
 {
     unsigned int _lastSaveTime;
     NSString *_userName;

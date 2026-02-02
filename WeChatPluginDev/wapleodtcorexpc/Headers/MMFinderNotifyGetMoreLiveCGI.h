@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderNotifyGetMoreLiveCGIParam;
 
-@interface MMFinderNotifyGetMoreLiveCGI
+@interface MMFinderNotifyGetMoreLiveCGI : NSObject
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;

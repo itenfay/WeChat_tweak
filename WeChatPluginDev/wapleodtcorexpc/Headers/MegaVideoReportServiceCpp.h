@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MegaVideoReportServiceCpp
+@interface MegaVideoReportServiceCpp : NSObject
 {
 }
 

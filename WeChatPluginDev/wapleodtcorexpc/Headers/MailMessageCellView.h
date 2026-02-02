@@ -5,7 +5,7 @@
 
 @class MailMessageViewModel, UIImageView;
 
-@interface MailMessageCellView
+@interface MailMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
 }

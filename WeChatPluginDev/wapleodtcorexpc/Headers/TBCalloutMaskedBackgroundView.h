@@ -5,7 +5,7 @@
 
 @class UIImageView, UIView;
 
-@interface TBCalloutMaskedBackgroundView
+@interface TBCalloutMaskedBackgroundView : NSObject
 {
     UIView *_containerView;
     UIView *_containerBorderView;

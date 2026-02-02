@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString, RingToneDetail, VideoRingDataBase, VideoRingNetProvider;
 
-@interface VideoRingDataService
+@interface VideoRingDataService : NSObject
 {
     _Bool _shouldOpenRingBackSwitch;
     _Bool _needReportCallKitRing;

@@ -6,7 +6,7 @@
 @class MMDynamicColor, MMKSwitchViewOnChangeSwitchCallback, NSString, UISwitch;
 @protocol MMKImage;
 
-@interface KindaSwitchView
+@interface KindaSwitchView : NSObject
 {
     MMKSwitchViewOnChangeSwitchCallback *_m_changeSwitchCallback;
     UISwitch *_m_switch;

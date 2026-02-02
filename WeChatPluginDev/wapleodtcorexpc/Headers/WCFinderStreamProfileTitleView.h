@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, WCFinderHeadImageView;
 
-@interface WCFinderStreamProfileTitleView
+@interface WCFinderStreamProfileTitleView : NSObject
 {
     UILabel *_nickNameLabel;
     UIImageView *_arrowIconView;

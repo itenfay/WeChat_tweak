@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveMusicRelatedSettingTableFooterView, MMFinderLiveMusicSettingOperationNavBar, MMFinderLiveMusicTableViewBottomEditingBar, MMFinderLiveSongSettingOperationTableViewModel, MMFinderLiveSongSettingTableView, MMFinderLiveTaskId, MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView, UISwitch, UIView;
 
-@interface MMFinderLiveSongSettingOperationPanel
+@interface MMFinderLiveSongSettingOperationPanel : NSObject
 {
     _Bool _isDataEnd;
     _Bool _isAutoPausing;

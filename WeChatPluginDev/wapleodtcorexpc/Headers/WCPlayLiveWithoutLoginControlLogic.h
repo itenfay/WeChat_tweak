@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveContact, FinderLiveInfo, MMTimer, NSString, WCPlayLiveWithoutLoginCheckQRCodeStatusCGI, WCPlayLiveWithoutLoginGetQRCodeCGI, WCPlayLiveWithoutLoginQRCodeViewController, WCPlayLiveWithoutLoginViewController;
 
-@interface WCPlayLiveWithoutLoginControlLogic
+@interface WCPlayLiveWithoutLoginControlLogic : NSObject
 {
     _Bool _isInCheckQRCodeStatus;
     WCPlayLiveWithoutLoginGetQRCodeCGI *_getQRCodeCGI;

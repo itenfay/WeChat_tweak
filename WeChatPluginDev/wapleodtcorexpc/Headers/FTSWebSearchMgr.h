@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSString, PardusSearchRequest, PardusSearchResponse, ProtobufCGIWrap, WebSearchBoxCtrlInfo;
 @protocol WebSearchMgrDelegate;
 
-@interface FTSWebSearchMgr
+@interface FTSWebSearchMgr : NSObject
 {
     _Bool _isActive;
     _Bool _isWorkingForSuggestion;

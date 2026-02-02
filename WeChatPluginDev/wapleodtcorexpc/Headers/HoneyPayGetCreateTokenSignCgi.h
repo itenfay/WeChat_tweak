@@ -6,7 +6,7 @@
 @class GetCreateTokenSignReq;
 @protocol HoneyPayGetCreateTokenSignCgiDelegate;
 
-@interface HoneyPayGetCreateTokenSignCgi
+@interface HoneyPayGetCreateTokenSignCgi : NSObject
 {
 }
 

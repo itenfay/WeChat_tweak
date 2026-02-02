@@ -5,7 +5,7 @@
 
 @class NSString, UIDatePicker, UILabel;
 
-@interface WXGRoamChooseRangeTimeDetailView
+@interface WXGRoamChooseRangeTimeDetailView : NSObject
 {
     _Bool _isStartTime;
     UIDatePicker *_datePicker;

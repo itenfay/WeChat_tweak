@@ -6,7 +6,7 @@
 @class CAGradientLayer, FinderWindowProductInfo, MMWebImageView, UILabel;
 @protocol MMFinderLiveFeedStreamProductExpandedCardViewDelegate;
 
-@interface MMFinderLiveFeedStreamProductExpandedCardView
+@interface MMFinderLiveFeedStreamProductExpandedCardView : NSObject
 {
     id <MMFinderLiveFeedStreamProductExpandedCardViewDelegate> _delegate;
     FinderWindowProductInfo *_productInfo;

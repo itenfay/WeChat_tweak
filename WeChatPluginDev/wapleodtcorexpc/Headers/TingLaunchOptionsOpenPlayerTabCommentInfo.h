@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingLaunchOptionsOpenPlayerTabCommentInfo
+@interface TingLaunchOptionsOpenPlayerTabCommentInfo : NSObject
 {
     NSString *_commentId;
 }

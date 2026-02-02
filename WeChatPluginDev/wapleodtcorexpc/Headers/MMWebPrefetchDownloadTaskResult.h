@@ -5,7 +5,7 @@
 
 @class MMWebPrefetchDownloadTaskRequest, NSDictionary, NSString;
 
-@interface MMWebPrefetchDownloadTaskResult
+@interface MMWebPrefetchDownloadTaskResult : NSObject
 {
     _Bool _notModified;
     _Bool _isRedirect;

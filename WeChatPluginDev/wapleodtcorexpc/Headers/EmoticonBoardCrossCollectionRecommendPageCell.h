@@ -6,7 +6,7 @@
 @class NSString;
 @protocol EmoticonBoardCrossCollectionRecommendPageDelegate;
 
-@interface EmoticonBoardCrossCollectionRecommendPageCell
+@interface EmoticonBoardCrossCollectionRecommendPageCell : NSObject
 {
 }
 

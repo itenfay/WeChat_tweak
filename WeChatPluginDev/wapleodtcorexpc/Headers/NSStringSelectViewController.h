@@ -5,7 +5,7 @@
 
 @class MMTableViewInfo, NSArray, NSString, WCTableViewNormalCellManager;
 
-@interface NSStringSelectViewController
+@interface NSStringSelectViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     id m_targetOnSelect;

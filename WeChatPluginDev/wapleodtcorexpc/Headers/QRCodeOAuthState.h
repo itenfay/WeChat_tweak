@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QRCodeOAuthState
+@interface QRCodeOAuthState : NSObject
 {
     unsigned int _errCode;
     NSString *_redirectUrl;

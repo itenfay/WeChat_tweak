@@ -6,7 +6,7 @@
 @class NSString, QryCancelECardDescRes, UIButton, WCPayQryCancelECardDescCgi;
 @protocol WCPayECardDetailViewControllerDelegate;
 
-@interface WCPayECardDetailViewController
+@interface WCPayECardDetailViewController : NSObject
 {
     id <WCPayECardDetailViewControllerDelegate> _delegate;
     WCPayQryCancelECardDescCgi *_descCgi;

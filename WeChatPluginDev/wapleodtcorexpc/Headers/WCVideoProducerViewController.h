@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CAGradientLayer, MMBGMSelectHalfScreenViewController, MMUIButton, NSMutableArray, NSString, UIImageView, UIView, WCColorProxy, WCMomentsCompositorTemplatePanelViewController, WCVideoProducerAssetClipperViewController, WCVideoProducerMusicBarViewController, WCVideoProducerMusicInfoMarqueeView, WCVideoProducerMusicSearcherViewController, WCVideoProducerTemplateBarViewController, WCVideoProducerTemplateFlowViewController, WCVideoProducerViewModel;
 @protocol WCVideoProducerViewControllerDelegate;
 
-@interface WCVideoProducerViewController
+@interface WCVideoProducerViewController : NSObject
 {
     WCVideoProducerViewModel *_privateVideoProducerVM;
     UIView *_proxyRootView;

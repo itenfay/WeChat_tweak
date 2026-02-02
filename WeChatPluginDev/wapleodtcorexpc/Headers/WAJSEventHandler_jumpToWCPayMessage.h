@@ -5,7 +5,7 @@
 
 @class NSString, WCPayJumpC2CMessageJsapiLogic;
 
-@interface WAJSEventHandler_jumpToWCPayMessage
+@interface WAJSEventHandler_jumpToWCPayMessage : NSObject
 {
     WCPayJumpC2CMessageJsapiLogic *_m_jumpC2CMessageJsapiLogic;
 }

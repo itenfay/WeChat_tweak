@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString, UIScreenEdgePanGestureRecognizer, WAMenuPopInteractiveTransition, WAPlateAuthorizePageSheet, WAPlateAuthorizeSheetInfo, WAPlateManageViewController, WAReportPlateManageActionItem;
 
-@interface WAJSContextPlugin_PlateManager
+@interface WAJSContextPlugin_PlateManager : NSObject
 {
     _Bool _pageSheetDidShow;
     _Bool _managerVCDidShow;

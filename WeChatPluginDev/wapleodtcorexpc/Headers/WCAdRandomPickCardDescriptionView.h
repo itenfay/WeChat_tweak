@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UILabel, WCAdRandomPickCardInfo, WCAdURLImageView;
 @protocol WCAdRandomPickCardDescriptionViewDelegate;
 
-@interface WCAdRandomPickCardDescriptionView
+@interface WCAdRandomPickCardDescriptionView : NSObject
 {
     WCAdRandomPickCardInfo *_randomPickCardInfo;
     id <WCAdRandomPickCardDescriptionViewDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WXQRCodePayReq
+@interface WXQRCodePayReq : NSObject
 {
     NSString *_codeContent;
     NSString *_extraMsg;

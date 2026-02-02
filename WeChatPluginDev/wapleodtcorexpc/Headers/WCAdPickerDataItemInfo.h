@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface WCAdPickerDataItemInfo
+@interface WCAdPickerDataItemInfo : NSObject
 {
     NSArray *_children;
 }

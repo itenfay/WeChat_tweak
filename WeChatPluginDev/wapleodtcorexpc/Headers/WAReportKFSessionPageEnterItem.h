@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportKFSessionPageEnterItem
+@interface WAReportKFSessionPageEnterItem : NSObject
 {
     int _unreadcount;
     unsigned int _entryTime;

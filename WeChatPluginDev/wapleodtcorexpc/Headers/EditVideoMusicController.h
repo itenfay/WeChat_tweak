@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, EditVideoBGMPlayer, NSMutableArray, NSString, RecommendedMusicInfo;
 
-@interface EditVideoMusicController
+@interface EditVideoMusicController : NSObject
 {
     _Bool _isBGMPlaying;
     NSString *_audioModuleIdentifier;

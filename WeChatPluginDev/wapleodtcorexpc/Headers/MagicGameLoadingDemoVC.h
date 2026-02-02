@@ -5,7 +5,7 @@
 
 @class MMUIButton, MagicSclFrameSetView, UIView;
 
-@interface MagicGameLoadingDemoVC
+@interface MagicGameLoadingDemoVC : NSObject
 {
     _Bool _isResumed;
     MMUIButton *_preloadButton;

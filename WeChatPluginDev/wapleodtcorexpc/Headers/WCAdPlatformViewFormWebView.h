@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, NSString, NSURLRequest, WCAdFormWebViewJSLogic, YYWKWebView;
 
-@interface WCAdPlatformViewFormWebView
+@interface WCAdPlatformViewFormWebView : NSObject
 {
     _Bool _hiddenBeforeLoad;
     _Bool _bgTransparent;

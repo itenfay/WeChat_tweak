@@ -5,7 +5,7 @@
 
 @class NSString, UIImageView;
 
-@interface EditImageEmotionTool
+@interface EditImageEmotionTool : NSObject
 {
     double _imgWidth;
     double _imgHeight;

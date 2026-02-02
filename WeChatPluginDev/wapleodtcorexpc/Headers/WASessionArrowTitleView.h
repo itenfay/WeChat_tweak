@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIButton, UIImageView, UIView;
 @protocol WASessionArrowTitleViewDelegate;
 
-@interface WASessionArrowTitleView
+@interface WASessionArrowTitleView : NSObject
 {
     _Bool _isFromBusiness;
     id <WASessionArrowTitleViewDelegate> _delegate;

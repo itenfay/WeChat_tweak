@@ -6,7 +6,7 @@
 @class NSRecursiveLock;
 @protocol DownloadVoiceDelegate;
 
-@interface CDownloadVoiceMgr
+@interface CDownloadVoiceMgr : NSObject
 {
     NSRecursiveLock *m_oLock;
     unsigned int m_uiCurDownloadID;

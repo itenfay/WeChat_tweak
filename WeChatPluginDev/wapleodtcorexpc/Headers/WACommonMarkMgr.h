@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface WACommonMarkMgr
+@interface WACommonMarkMgr : NSObject
 {
     NSMutableDictionary *m_commonMarkDict;
 }

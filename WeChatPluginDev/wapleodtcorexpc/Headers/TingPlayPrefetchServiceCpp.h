@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingPlayPrefetchServiceCpp
+@interface TingPlayPrefetchServiceCpp : NSObject
 {
 }
 

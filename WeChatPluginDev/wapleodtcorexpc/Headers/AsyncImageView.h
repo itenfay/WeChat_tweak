@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, NSMutableData, NSString, NSURLConnection, UIImageView;
 @protocol AsyncImageViewDelegate;
 
-@interface AsyncImageView
+@interface AsyncImageView : NSObject
 {
     NSURLConnection *connection;
     NSMutableData *m_data;

@@ -5,7 +5,7 @@
 
 @class NSString, VoIPDB;
 
-@interface VoIPDBService
+@interface VoIPDBService : NSObject
 {
     VoIPDB *_voipBaseDB;
 }

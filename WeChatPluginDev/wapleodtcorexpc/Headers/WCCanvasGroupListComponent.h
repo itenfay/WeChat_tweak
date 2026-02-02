@@ -5,7 +5,7 @@
 
 @class MMScrollView, MMTimer, NSMutableArray, NSString, UILabel, UIView, WCCanvasAdPageIndicator, WCCanvasArrowRightIcon;
 
-@interface WCCanvasGroupListComponent
+@interface WCCanvasGroupListComponent : NSObject
 {
     _Bool _needRelayout;
     _Bool _shouldFixSearchCanvas;

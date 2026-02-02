@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SectionInfo
+@interface SectionInfo : NSObject
 {
     long long _start;
     long long _size;

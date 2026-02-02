@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
-@interface WCFinderLiveSensitiveManageCGI
+@interface WCFinderLiveSensitiveManageCGI : NSObject
 {
     int _opType;
     NSArray *_operateSensitiveDataItemList;

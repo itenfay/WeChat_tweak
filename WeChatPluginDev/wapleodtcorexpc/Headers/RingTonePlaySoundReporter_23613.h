@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RingTonePlaySoundReporter_23613
+@interface RingTonePlaySoundReporter_23613 : NSObject
 {
     unsigned int _playDuration;
     unsigned int _startPlayTimeStamp;

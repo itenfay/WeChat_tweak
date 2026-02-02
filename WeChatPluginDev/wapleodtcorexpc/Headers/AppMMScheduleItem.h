@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, ScheduleOPWrap;
 
-@interface AppMMScheduleItem
+@interface AppMMScheduleItem : NSObject
 {
     NSString *_displayName;
     NSString *_iconUrl;

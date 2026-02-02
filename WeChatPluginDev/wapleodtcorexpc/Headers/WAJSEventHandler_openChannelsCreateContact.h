@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderCreateCoordinator;
 
-@interface WAJSEventHandler_openChannelsCreateContact
+@interface WAJSEventHandler_openChannelsCreateContact : NSObject
 {
     WCFinderCreateCoordinator *_createCoordinator;
 }

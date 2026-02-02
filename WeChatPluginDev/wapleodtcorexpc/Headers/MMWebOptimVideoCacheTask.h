@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class JSContext, JSVirtualMachine, NSMutableDictionary, NSString, VideoPreloadReporter;
 
-@interface MMWebOptimVideoCacheTask
+@interface MMWebOptimVideoCacheTask : NSObject
 {
     _Bool _isInitSuccess;
     NSString *_taskId;

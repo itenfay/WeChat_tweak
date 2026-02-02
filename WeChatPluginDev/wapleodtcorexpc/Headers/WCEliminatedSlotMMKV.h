@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCEliminatedSlotMMKV
+@interface WCEliminatedSlotMMKV : NSObject
 {
     unsigned int _slotCount;
     unsigned int _slotTimeSize;

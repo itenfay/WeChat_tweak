@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface LocalJSEventHandler_setComments
+@interface LocalJSEventHandler_setComments : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class FinderLiveContact, NSString;
 
-@interface MMFinderLiveKTVSingerHeatInfo
+@interface MMFinderLiveKTVSingerHeatInfo : NSObject
 {
     unsigned int _boardType;
     NSString *_sdkUserId;

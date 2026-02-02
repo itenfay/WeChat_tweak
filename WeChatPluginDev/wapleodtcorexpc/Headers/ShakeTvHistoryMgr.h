@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface ShakeTvHistoryMgr
+@interface ShakeTvHistoryMgr : NSObject
 {
     _Bool _hadLoadCache;
     NSMutableArray *_shakeTvList;

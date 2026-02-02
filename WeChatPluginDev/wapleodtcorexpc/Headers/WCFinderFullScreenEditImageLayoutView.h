@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderFullScreenEditImageLayoutViewDelegate;
 
-@interface WCFinderFullScreenEditImageLayoutView
+@interface WCFinderFullScreenEditImageLayoutView : NSObject
 {
     _Bool _hiddenCropBtn;
     _Bool _needAdjustThumbItemSize;

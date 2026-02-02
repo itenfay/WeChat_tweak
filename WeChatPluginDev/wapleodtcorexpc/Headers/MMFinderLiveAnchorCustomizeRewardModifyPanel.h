@@ -6,7 +6,7 @@
 @class MMFinderLiveAnchorCustomizeRewardItem, MMFinderLiveAnchorCustomizeRewardNavBar, MMFinderLiveAnchorCustomizeRewardStylePreviewView, MMFinderLiveAnchorCustomizeRewardStyleSelectLogic, MMFinderLiveAnchorCustomizeRewardStyleSelectPanel, MMFinderLiveTaskId, NSObject, UIView;
 @protocol MMFinderLiveAnchorCustomizeRewardModifyPanelDelegate;
 
-@interface MMFinderLiveAnchorCustomizeRewardModifyPanel
+@interface MMFinderLiveAnchorCustomizeRewardModifyPanel : NSObject
 {
     _Bool _isShowing;
     NSObject<MMFinderLiveAnchorCustomizeRewardModifyPanelDelegate> *_delegate;

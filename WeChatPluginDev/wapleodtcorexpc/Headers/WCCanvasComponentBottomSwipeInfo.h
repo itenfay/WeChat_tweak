@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentBottomSwipeInfo
+@interface WCCanvasComponentBottomSwipeInfo : NSObject
 {
     int _swipeActionType;
     NSString *_swipeText;

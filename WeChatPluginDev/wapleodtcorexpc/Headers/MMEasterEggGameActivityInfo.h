@@ -6,7 +6,7 @@
 @class MMWebViewController, NSString, OpenLiteAppInfo;
 @protocol MMEasterEggActivity;
 
-@interface MMEasterEggGameActivityInfo
+@interface MMEasterEggGameActivityInfo : NSObject
 {
     _Bool _needPreload;
     _Bool _isWebviewCached;

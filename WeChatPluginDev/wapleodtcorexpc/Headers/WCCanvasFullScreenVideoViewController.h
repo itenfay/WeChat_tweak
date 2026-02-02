@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIView, WCAdInteractionView, WCAdvertiseInfo, WCCanvasAdControlView, WCCanvasComponentItem, WCPlayerView, WCStatTimerHelper;
 @protocol WCCanvasFullScreenVideoViewControllerDelegate;
 
-@interface WCCanvasFullScreenVideoViewController
+@interface WCCanvasFullScreenVideoViewController : NSObject
 {
     _Bool _bPlay;
     _Bool _forceLanscapeWhenTurnToFullscreen;

@@ -5,7 +5,7 @@
 
 @class TingPlayerAudioModuleHelper;
 
-@interface TingPlayTaskImplementation
+@interface TingPlayTaskImplementation : NSObject
 {
     TingPlayerAudioModuleHelper *_audioModuleHelper;
 }

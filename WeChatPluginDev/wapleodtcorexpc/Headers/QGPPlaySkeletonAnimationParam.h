@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface QGPPlaySkeletonAnimationParam
+@interface QGPPlaySkeletonAnimationParam : NSObject
 {
     _Bool _repeat;
     long long _index;

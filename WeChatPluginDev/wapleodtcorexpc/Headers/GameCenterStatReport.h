@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameCenterStatReport
+@interface GameCenterStatReport : NSObject
 {
 }
 

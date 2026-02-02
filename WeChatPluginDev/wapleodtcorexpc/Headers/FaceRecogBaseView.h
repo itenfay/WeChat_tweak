@@ -6,7 +6,7 @@
 @class FaceRecogBaseViewController;
 @protocol FaceRecogBaseViewDelegate;
 
-@interface FaceRecogBaseView
+@interface FaceRecogBaseView : NSObject
 {
     id <FaceRecogBaseViewDelegate> _delegate;
     FaceRecogBaseViewController *_vc;

@@ -5,7 +5,7 @@
 
 @class CAShapeLayer, MMUIButton, MMUILabel, NSString, UIView;
 
-@interface MMFinderLiveLotteryRecordExpiredTipView
+@interface MMFinderLiveLotteryRecordExpiredTipView : NSObject
 {
     MMUILabel *_titleLabel;
     MMUILabel *_detailLabel;

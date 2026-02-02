@@ -5,7 +5,7 @@
 
 @protocol WCPayGPCustomizeLaunchCgiDelegate;
 
-@interface WCPayGPCustomizeLaunchCgi
+@interface WCPayGPCustomizeLaunchCgi : NSObject
 {
     id <WCPayGPCustomizeLaunchCgiDelegate> _cgiDelegate;
 }

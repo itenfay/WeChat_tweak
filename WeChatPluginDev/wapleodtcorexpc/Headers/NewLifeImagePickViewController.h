@@ -6,7 +6,7 @@
 @class MMAssetPickerController, MMImagePickerManagerOptionObj, MMSightCameraViewController, MMUIButton, NSString, UINavigationController, UIView, UIViewController, WCAlbumPickViewController;
 @protocol NewLifeImagePickViewControllerDelegate;
 
-@interface NewLifeImagePickViewController
+@interface NewLifeImagePickViewController : NSObject
 {
     id <NewLifeImagePickViewControllerDelegate> _delegate;
     unsigned long long _limitCount;

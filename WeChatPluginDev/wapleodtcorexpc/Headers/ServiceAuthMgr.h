@@ -5,7 +5,7 @@
 
 @class MMUIViewController, NSMutableDictionary, NSString, ServiceAuthViewController;
 
-@interface ServiceAuthMgr
+@interface ServiceAuthMgr : NSObject
 {
     ServiceAuthViewController *m_authController;
     NSMutableDictionary *m_runningTasks;

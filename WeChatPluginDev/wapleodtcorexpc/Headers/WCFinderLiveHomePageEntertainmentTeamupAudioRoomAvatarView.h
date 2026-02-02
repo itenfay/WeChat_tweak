@@ -5,7 +5,7 @@
 
 @class MMFinderLiveAudioRoomMicAudioAnimationView, UIColor, UIImageView, UIView, WCFinderLiveHomePageEntertainmentTeamupAudioRoomAvatarInfo;
 
-@interface WCFinderLiveHomePageEntertainmentTeamupAudioRoomAvatarView
+@interface WCFinderLiveHomePageEntertainmentTeamupAudioRoomAvatarView : NSObject
 {
     _Bool _userIsTalking;
     UIView *_imageContainerView;

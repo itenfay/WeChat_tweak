@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextStateBrandPaySignature
+@interface TextStateBrandPaySignature : NSObject
 {
     NSString *_payTransactionId;
     NSString *_paySignature;

@@ -5,7 +5,7 @@
 
 @class MMFinderLiveAnniversaryDecorationViewModel, NSString, PAGView;
 
-@interface MMFinderLiveAnniversaryDecorationView
+@interface MMFinderLiveAnniversaryDecorationView : NSObject
 {
     unsigned long long _status;
     PAGView *_decorationView;

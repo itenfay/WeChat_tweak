@@ -5,7 +5,7 @@
 
 @protocol WABizF2FPlaceOrderCgiDelegate;
 
-@interface WABizF2FPlaceOrderCgi
+@interface WABizF2FPlaceOrderCgi : NSObject
 {
     id <WABizF2FPlaceOrderCgiDelegate> m_delegate;
 }

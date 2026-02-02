@@ -6,7 +6,7 @@
 @class MMFinderLiveReplayGoodsPromoteContentView, MMFinderLiveReplayMessageSource, NSString;
 @protocol MMFinderLivePromotionReplayOperationViewDelegate;
 
-@interface MMFinderLivePromotionReplayOperationView
+@interface MMFinderLivePromotionReplayOperationView : NSObject
 {
     _Bool _supressMessageUpdate;
     id <MMFinderLivePromotionReplayOperationViewDelegate> _promotionReplayOperationDelegate;

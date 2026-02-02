@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BrandTemplateMsgAuthSettingPageModel, NSMutableArray, NSString, WAContactGetter;
 
-@interface MMTemplateMsgAuthScopesViewController
+@interface MMTemplateMsgAuthScopesViewController : NSObject
 {
     NSMutableArray *_scopeList;
     WAContactGetter *_contactGetter;

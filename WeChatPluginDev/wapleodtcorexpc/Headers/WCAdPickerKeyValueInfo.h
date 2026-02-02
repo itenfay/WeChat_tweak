@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdPickerKeyValueInfo
+@interface WCAdPickerKeyValueInfo : NSObject
 {
     NSString *_value;
 }

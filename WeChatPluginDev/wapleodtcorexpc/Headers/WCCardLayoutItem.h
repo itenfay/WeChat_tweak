@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardLayoutItem
+@interface WCCardLayoutItem : NSObject
 {
     unsigned int _layoutEndTime;
     unsigned int _itemType;

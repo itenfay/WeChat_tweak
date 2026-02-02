@@ -5,7 +5,7 @@
 
 @class NSString, SPXAudioRecorder, UploadVoicePrintMgr;
 
-@interface VoicePrintMgr
+@interface VoicePrintMgr : NSObject
 {
     unsigned int _curVoiceID;
     SPXAudioRecorder *_recoder;

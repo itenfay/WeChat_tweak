@@ -5,7 +5,7 @@
 
 @class NSMutableArray, QTextStyle;
 
-@interface QRouteOverlay
+@interface QRouteOverlay : NSObject
 {
     NSMutableArray *_arrStyle;
     NSMutableArray *_arrColor;

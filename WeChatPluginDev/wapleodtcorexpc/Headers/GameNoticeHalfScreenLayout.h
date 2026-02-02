@@ -5,7 +5,7 @@
 
 @class GCLabelDynamicLayout;
 
-@interface GameNoticeHalfScreenLayout
+@interface GameNoticeHalfScreenLayout : NSObject
 {
     GCLabelDynamicLayout *_titleLabelLayout;
     GCLabelDynamicLayout *_headLabelLayout;

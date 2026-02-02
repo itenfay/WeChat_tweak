@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, MMLiteAppViewController, NSString;
 
-@interface MMFinderLiveLiteAppPreviewView
+@interface MMFinderLiveLiteAppPreviewView : NSObject
 {
     MMLiteAppViewController *_liteApp;
     FlutterMethodChannel *_channel;

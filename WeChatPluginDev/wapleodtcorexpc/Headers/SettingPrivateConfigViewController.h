@@ -5,7 +5,7 @@
 
 @class DelaySwitchSettingLogic, MMTableViewInfo, NSMutableDictionary, WCOpLog;
 
-@interface SettingPrivateConfigViewController
+@interface SettingPrivateConfigViewController : NSObject
 {
     NSMutableDictionary *m_changesOnExitMap;
     _Bool m_applySettingNow;

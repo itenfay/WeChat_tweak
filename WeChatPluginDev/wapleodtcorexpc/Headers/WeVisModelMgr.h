@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MemoryMappedKV, NSMutableArray, NSMutableSet, NSString, WeVisModelResponse;
 
-@interface WeVisModelMgr
+@interface WeVisModelMgr : NSObject
 {
     MemoryMappedKV *_mmkv;
     NSMutableArray *_checkResTypeList;

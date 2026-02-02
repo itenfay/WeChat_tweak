@@ -5,7 +5,7 @@
 
 @protocol WCPayBusiF2FUnlockFavorCgiDelegate;
 
-@interface WCPayBusiF2FUnlockFavorCgi
+@interface WCPayBusiF2FUnlockFavorCgi : NSObject
 {
     id <WCPayBusiF2FUnlockFavorCgiDelegate> _m_cgiDelegate;
 }

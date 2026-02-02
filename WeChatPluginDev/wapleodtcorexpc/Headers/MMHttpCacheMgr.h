@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMHttpCacheMgr
+@interface MMHttpCacheMgr : NSObject
 {
 }
 

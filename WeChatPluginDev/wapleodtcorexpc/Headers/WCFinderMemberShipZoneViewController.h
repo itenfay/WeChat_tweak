@@ -5,7 +5,7 @@
 
 @class MMFinderLiveBuyTicketHandle, NSString, WCFinderArbitraryPageView, WCFinderCreateLiveViewModel, WCFinderInvalidTipsView, WCFinderLiveAudienceNoticeReporter, WCFinderMemberShipBlockView, WCFinderMemberShipZoneHeader, WCFinderMemberShipZonePushParams, WCFinderMemberShipZoneReporter, WCFinderMemberShipZoneViewModel, WCFinderPostMgr;
 
-@interface WCFinderMemberShipZoneViewController
+@interface WCFinderMemberShipZoneViewController : NSObject
 {
     WCFinderMemberShipZonePushParams *_params;
     WCFinderArbitraryPageView *_pageView;

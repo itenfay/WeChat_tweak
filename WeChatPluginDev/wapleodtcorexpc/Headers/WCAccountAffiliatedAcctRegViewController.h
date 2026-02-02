@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, TakeOrSelectHeadImageLogic, UIButton, WCAccountTextFieldItem, WCAgreementCheckBox;
 @protocol WCAccountAffiliatedAcctDelegate;
 
-@interface WCAccountAffiliatedAcctRegViewController
+@interface WCAccountAffiliatedAcctRegViewController : NSObject
 {
     id <WCAccountAffiliatedAcctDelegate> _delegate;
     MMUILabel *_titleView;

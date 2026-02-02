@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString, WAAppPackageInfo, WAUpdatableMsgInfo;
 
-@interface OpenSDKAppBrandItem
+@interface OpenSDKAppBrandItem : NSObject
 {
     _Bool _disableForward;
     _Bool _isPrivateMessage;

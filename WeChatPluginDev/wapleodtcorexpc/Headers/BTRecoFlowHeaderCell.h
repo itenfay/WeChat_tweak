@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface BTRecoFlowHeaderCell
+@interface BTRecoFlowHeaderCell : NSObject
 {
     UILabel *_titleLabel;
 }

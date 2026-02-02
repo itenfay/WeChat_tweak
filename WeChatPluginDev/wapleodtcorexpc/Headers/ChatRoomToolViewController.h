@@ -6,7 +6,7 @@
 @class CContact, ChatRoomToolLastUseWeAppLogic, NSMutableArray, NSString, UICollectionView;
 @protocol ChatRoomToolViewControllerDelegate;
 
-@interface ChatRoomToolViewController
+@interface ChatRoomToolViewController : NSObject
 {
     NSMutableArray *m_toolWeAppAr;
     NSMutableArray *m_latestUseInGroupWeAppAr;

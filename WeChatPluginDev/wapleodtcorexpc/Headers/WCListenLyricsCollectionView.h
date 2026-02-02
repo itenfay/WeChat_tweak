@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCListenLyricsCollectionView
+@interface WCListenLyricsCollectionView : NSObject
 {
     CDUnknownBlockType _reloadDataCompletionBlock;
 }

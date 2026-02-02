@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderDynamicIconFetchConfig;
 
-@interface WCFinderDynamicIconFetchSingleTask
+@interface WCFinderDynamicIconFetchSingleTask : NSObject
 {
     WCFinderDynamicIconFetchConfig *_config;
     NSString *_dynamicKey;

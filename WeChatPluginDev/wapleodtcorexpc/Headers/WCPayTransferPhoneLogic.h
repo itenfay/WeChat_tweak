@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMTipsViewController, NSString, TransferPhoneCheckNameReq, TransferPhoneCheckNameResp, TransferPhoneDelHisRcvrReq, TransferPhoneGetHisRcvrsResp, TransferPhoneGetRcvrReq, TransferPhoneGetRcvrResp, TransferPhoneHomePageResp, TransferPhonePlaceOrderReq, TransferPhonePlaceOrderResp, TransferPhoneSuccPageResp, WCPayPayMoneyLogic, WCPayTransferPhoneCheckNameCgi, WCPayTransferPhoneDelHisRcvrCgi, WCPayTransferPhoneGetHisRcvrsCgi, WCPayTransferPhoneGetRcvrCgi, WCPayTransferPhoneHomePageCgi, WCPayTransferPhonePayCheckCgi, WCPayTransferPhonePlaceOrderCgi, WCPayTransferPhoneSuccPageCgi;
 @protocol WCPayTransferPhoneLogicDelegate;
 
-@interface WCPayTransferPhoneLogic
+@interface WCPayTransferPhoneLogic : NSObject
 {
     _Bool _bIsCheckNameFromPlaceOrder;
     int _forceCheckNameStatus;

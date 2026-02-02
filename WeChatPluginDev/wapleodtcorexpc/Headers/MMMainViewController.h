@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString, UITraitCollection;
 @protocol AppUserInterfaceSizeDelegate;
 
-@interface MMMainViewController
+@interface MMMainViewController : NSObject
 {
     id <AppUserInterfaceSizeDelegate> _interfaceSizeDelegate;
 }

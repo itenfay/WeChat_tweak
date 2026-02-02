@@ -6,7 +6,7 @@
 @class KindaJSEvent, NSString, QryHoneyPayerDetailResp, UIButton, UISwitch, WCPayNoticeItemView;
 @protocol HoneyPayPayerCardDetailViewControllerDelegate;
 
-@interface HoneyPayPayerCardDetailViewController
+@interface HoneyPayPayerCardDetailViewController : NSObject
 {
     KindaJSEvent *_kindaJSEvent;
     unsigned long long _entrance;

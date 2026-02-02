@@ -5,7 +5,7 @@
 
 @class UIViewController;
 
-@interface WAMenuPopAnimatedTransition
+@interface WAMenuPopAnimatedTransition : NSObject
 {
     _Bool _isInteracting;
     UIViewController *animatedTransitionRespondViewController;

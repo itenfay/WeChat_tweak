@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MiaoJianShareReportModel
+@interface MiaoJianShareReportModel : NSObject
 {
     unsigned int _type;
     unsigned int _outcome;

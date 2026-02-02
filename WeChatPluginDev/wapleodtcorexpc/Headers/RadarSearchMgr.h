@@ -5,7 +5,7 @@
 
 @class CLLocation, LocationRetriever, MMTimer, NSString, RadarSearchSetting;
 
-@interface RadarSearchMgr
+@interface RadarSearchMgr : NSObject
 {
     _Bool _isStartReport;
     LocationRetriever *_locationRetrieve;

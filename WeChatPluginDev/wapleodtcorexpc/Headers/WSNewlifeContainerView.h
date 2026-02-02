@@ -5,7 +5,7 @@
 
 @class FlutterNewLifeMainTabViewController, NSNumber, NSString, WSLocalTemplateConfig;
 
-@interface WSNewlifeContainerView
+@interface WSNewlifeContainerView : NSObject
 {
     _Bool _enablePageCache;
     _Bool _active;

@@ -5,7 +5,7 @@
 
 @class NSString, WXGBackupRecoverHelper;
 
-@interface WXGBackupRecoverLogic
+@interface WXGBackupRecoverLogic : NSObject
 {
     unsigned long long m_currentSessionCount;
     unsigned long long m_totalSessionCount;

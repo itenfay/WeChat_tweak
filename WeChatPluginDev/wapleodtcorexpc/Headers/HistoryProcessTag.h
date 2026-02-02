@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface HistoryProcessTag
+@interface HistoryProcessTag : NSObject
 {
     unsigned long long _historyId;
     NSString *_chatRoomName;

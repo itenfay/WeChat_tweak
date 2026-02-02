@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmptyDesignerPagePidRecord, NSMutableDictionary, NSRecursiveLock, NSString;
 
-@interface StoreEmotionDesignerReddotMgr
+@interface StoreEmotionDesignerReddotMgr : NSObject
 {
     NSMutableDictionary *_modelMap;
     NSRecursiveLock *_lock;

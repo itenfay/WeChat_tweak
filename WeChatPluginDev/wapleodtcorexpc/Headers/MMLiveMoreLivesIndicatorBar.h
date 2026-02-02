@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMWebImageView, UIImageView;
 
-@interface MMLiveMoreLivesIndicatorBar
+@interface MMLiveMoreLivesIndicatorBar : NSObject
 {
     CDUnknownBlockType _moreLiveClickedCallBlock;
     MMUILabel *_moreLiveLabel;

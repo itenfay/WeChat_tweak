@@ -6,7 +6,7 @@
 @class MyWCDB, WCDataItem;
 @protocol WCNotificationCenterMgrDelegate;
 
-@interface WCNotificationCenterMgr
+@interface WCNotificationCenterMgr : NSObject
 {
     WCDataItem *m_lastDataItem;
     MyWCDB *m_database;

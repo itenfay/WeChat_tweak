@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class PageSheetBottomDelegate;
 
-@interface EditVideoJumpMorePageSheet
+@interface EditVideoJumpMorePageSheet : NSObject
 {
     PageSheetBottomDelegate *_sheetBottomDelegate;
 }

@@ -5,7 +5,7 @@
 
 @class CContact, CContactVerifyLogic, ContactsImportLogic, MMTableView, MMUIViewController, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, OldAccountContact, SendVerifyMsgLogicController;
 
-@interface ContactsImportViewController
+@interface ContactsImportViewController : NSObject
 {
     MMUIViewController *_guideViewController;
     ContactsImportLogic *_contactsImportLogic;

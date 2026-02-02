@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSString;
 
-@interface WCFinderLivePresentationFileValidationCGI
+@interface WCFinderLivePresentationFileValidationCGI : NSObject
 {
     unsigned int _fileType;
     MMFinderLiveTaskId *_taskId;

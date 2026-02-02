@@ -5,7 +5,7 @@
 
 @class MMUILabel, MMWebImageView, RichTextView;
 
-@interface GameCenterMsgListInteractMsgCell
+@interface GameCenterMsgListInteractMsgCell : NSObject
 {
     RichTextView *_commentView;
     MMUILabel *_descLabel;

@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSMapTable, NSString;
 
-@interface MagicBrushFileSystemFactory
+@interface MagicBrushFileSystemFactory : NSObject
 {
     NSMapTable *_mBizFsMap;
     NSMapTable *_mPublicServiceFsMap;

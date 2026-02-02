@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WWKMessageGroupAttachment
+@interface WWKMessageGroupAttachment : NSObject
 {
     NSArray *_contents;
     NSString *_title;

@@ -5,7 +5,7 @@
 
 @class MultiRoomContactSelectViewController, NSMutableArray, NSString;
 
-@interface WebviewJSEventHandler_chooseChatRoomMember
+@interface WebviewJSEventHandler_chooseChatRoomMember : NSObject
 {
     NSMutableArray *m_customMemberList;
     MultiRoomContactSelectViewController *_m_viewController;

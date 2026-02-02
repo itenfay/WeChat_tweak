@@ -5,7 +5,7 @@
 
 @class MMUIImageView, MMUILabel;
 
-@interface MMFinderLiveNoticeDetailChooseView
+@interface MMFinderLiveNoticeDetailChooseView : NSObject
 {
     _Bool _showArr;
     MMUILabel *_topLabel;

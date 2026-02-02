@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @protocol MMPageSheetProvider;
 
-@interface WCCoinInterceptLogic
+@interface WCCoinInterceptLogic : NSObject
 {
     id <MMPageSheetProvider> _pageSheetProvider;
 }

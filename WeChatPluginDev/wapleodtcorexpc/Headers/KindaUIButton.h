@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface KindaUIButton
+@interface KindaUIButton : NSObject
 {
     _Bool _enableHignLight;
     UIColor *_m_highlighBorderColor;

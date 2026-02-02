@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderMusicTemplateSelectViewModel
+@interface WCFinderMusicTemplateSelectViewModel : NSObject
 {
 }
 

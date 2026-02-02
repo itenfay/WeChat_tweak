@@ -6,7 +6,7 @@
 @class InteractionLabel, MMUIButton, UIView, WCFinderLocationTerminatorViewParams;
 @protocol WCFinderLocationTerminatorViewDelegate;
 
-@interface WCFinderLocationTerminatorView
+@interface WCFinderLocationTerminatorView : NSObject
 {
     WCFinderLocationTerminatorViewParams *_params;
     id <WCFinderLocationTerminatorViewDelegate> _delegate;

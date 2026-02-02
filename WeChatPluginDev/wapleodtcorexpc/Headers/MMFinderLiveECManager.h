@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveECLocalSwitchManager, NSString;
 
-@interface MMFinderLiveECManager
+@interface MMFinderLiveECManager : NSObject
 {
     MMFinderLiveECLocalSwitchManager *_localSwitchManager;
 }

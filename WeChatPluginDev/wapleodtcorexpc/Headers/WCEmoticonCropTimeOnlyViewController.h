@@ -5,7 +5,7 @@
 
 @class WCEditVideoPushPopTransition;
 
-@interface WCEmoticonCropTimeOnlyViewController
+@interface WCEmoticonCropTimeOnlyViewController : NSObject
 {
     WCEditVideoPushPopTransition *_customTransitionDelegate;
     struct CGSize _videoSize;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasRandomLayoutEncoreInfo
+@interface WCCanvasRandomLayoutEncoreInfo : NSObject
 {
     int _encoreType;
     NSString *_title;

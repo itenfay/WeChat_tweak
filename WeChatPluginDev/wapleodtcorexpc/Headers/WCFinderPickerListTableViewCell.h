@@ -6,7 +6,7 @@
 @class CAGradientLayer, NSString, RichTextView, UIImageView, UILabel, WCFinderAuthInfoIconView, WCFinderFeedContentVM, WCFinderFullNewMultiMediaView, WCFinderHeadImageView, WCFinderNormalProgressBar;
 @protocol WCFinderPickerListTableViewCellDelegate;
 
-@interface WCFinderPickerListTableViewCell
+@interface WCFinderPickerListTableViewCell : NSObject
 {
     _Bool _isPaused;
     id <WCFinderPickerListTableViewCellDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class WCMomentsMenuActionReportForwardInfo, WCMomentsMenuActionReportSnsInfo;
 
-@interface WCMomentsMenuActionReportSession
+@interface WCMomentsMenuActionReportSession : NSObject
 {
     long long _scene;
     WCMomentsMenuActionReportSnsInfo *_snsInfo;

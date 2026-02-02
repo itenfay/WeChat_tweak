@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAReportImageEntranceLaunchItem
+@interface WAReportImageEntranceLaunchItem : NSObject
 {
     unsigned int _exposeUserUin;
     int _chatType;

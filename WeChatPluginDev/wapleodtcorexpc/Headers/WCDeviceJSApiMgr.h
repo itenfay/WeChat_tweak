@@ -6,7 +6,7 @@
 @class JSEvent, MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, WCDeviceJSApiBatchSearchLogicHelp;
 @protocol WXCustomWebViewControllerProtocol;
 
-@interface WCDeviceJSApiMgr
+@interface WCDeviceJSApiMgr : NSObject
 {
     _Bool m_hasInit;
     _Bool m_hasInitLan;

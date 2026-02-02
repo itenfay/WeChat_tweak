@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MatrixAppRebootInfo
+@interface MatrixAppRebootInfo : NSObject
 {
     _Bool _isAppEnterForeground;
     _Bool _isAppEnterBackground;

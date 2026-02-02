@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableArray, NSString, UIButton, UILabel, UIView, WCBaseTextFieldItem, WCPayAreaItem, WCPayCss;
 @protocol WCPayAddressViewControllerDelegate;
 
-@interface WCPayAddressViewController
+@interface WCPayAddressViewController : NSObject
 {
     id <WCPayAddressViewControllerDelegate> _m_delegate;
     UIView *_containerView;

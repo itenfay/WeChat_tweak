@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, NSTimer;
 
-@interface WCCardDynamicCodeGenerator
+@interface WCCardDynamicCodeGenerator : NSObject
 {
     NSString *_nsCardId;
     NSMutableArray *_arrCodes;

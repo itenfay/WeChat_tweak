@@ -5,7 +5,7 @@
 
 @class DataReportNewUBACacheWCDB, NSNumber, NSString;
 
-@interface DataReportNewUBAReporter
+@interface DataReportNewUBAReporter : NSObject
 {
     DataReportNewUBACacheWCDB *m_cacheDB;
     NSNumber *m_openNewUBASwitch;

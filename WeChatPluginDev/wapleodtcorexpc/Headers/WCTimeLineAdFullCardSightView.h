@@ -5,7 +5,7 @@
 
 @class MMTimer, MMUIImageView, NSString, UIView, WCAdFullCardContentContainerView, WCAdInteractionCoverView, WCAdInteractionView, WCStatTimerHelper;
 
-@interface WCTimeLineAdFullCardSightView
+@interface WCTimeLineAdFullCardSightView : NSObject
 {
     _Bool _stopCheckingTimerForMaskImg;
     _Bool _stopCheckingTimerForCoverImg;

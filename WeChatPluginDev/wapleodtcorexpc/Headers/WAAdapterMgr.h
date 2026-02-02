@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAAdapterMgr
+@interface WAAdapterMgr : NSObject
 {
     _Bool _isCallInterruption;
 }

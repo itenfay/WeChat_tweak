@@ -6,7 +6,7 @@
 @class MMUIViewController, NSArray, NSString;
 @protocol WCPayAreaItemDelegate;
 
-@interface WCPayAreaItem
+@interface WCPayAreaItem : NSObject
 {
     MMUIViewController *m_currentViewController;
     NSString *m_country;

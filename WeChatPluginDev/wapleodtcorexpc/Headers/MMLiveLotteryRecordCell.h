@@ -5,7 +5,7 @@
 
 @class MMCPLabel, MMFinderLiveLotteryRecord, MMUIImageView;
 
-@interface MMLiveLotteryRecordCell
+@interface MMLiveLotteryRecordCell : NSObject
 {
     MMCPLabel *_liveRecordNameLabel;
     MMUIImageView *_arrowImageView;

@@ -6,7 +6,7 @@
 @class IntelligentMsgImgFigurePageView, MMUILabel, NSArray, NSString;
 @protocol IntelligentMsgImgFigurePageHeaderViewDelegate;
 
-@interface IntelligentMsgImgFigurePageHeaderView
+@interface IntelligentMsgImgFigurePageHeaderView : NSObject
 {
     MMUILabel *m_titleLabel;
     IntelligentMsgImgFigurePageView *m_figurePageView;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCURLSession, WCURLSessionDownloadTask;
 
-@interface MMKSWCSessionDownloader
+@interface MMKSWCSessionDownloader : NSObject
 {
     WCURLSession *_urlSession;
     WCURLSessionDownloadTask *_downloadTask;

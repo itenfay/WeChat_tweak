@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSLock, NSMutableArray, NSObject, NSString, WCFImageCache, WCFImageDownloader;
 @protocol OS_dispatch_queue;
 
-@interface WCFImageManager
+@interface WCFImageManager : NSObject
 {
     NSLock *_operationsLock;
     _Bool _fromShare;

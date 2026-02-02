@@ -6,7 +6,7 @@
 @class BTBrandBarScrollView, BTLiveSectionBarHeaderView, BTLiveSectionData, NSMutableArray, NSString, UITapGestureRecognizer, UIView;
 @protocol BTLiveSectionBarCellViewDelegate;
 
-@interface BTLiveSectionBarCellView
+@interface BTLiveSectionBarCellView : NSObject
 {
     _Bool _isTitleUp;
     BTLiveSectionData *_sectionData;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayExtensionInfo
+@interface WCPayExtensionInfo : NSObject
 {
     _Bool _m_isNeedFailover;
     unsigned int _m_uiFee;

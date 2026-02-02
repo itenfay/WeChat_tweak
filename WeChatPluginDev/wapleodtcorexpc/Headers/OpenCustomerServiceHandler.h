@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface OpenCustomerServiceHandler
+@interface OpenCustomerServiceHandler : NSObject
 {
     NSString *_wwkfUrl;
     NSString *_corpid;

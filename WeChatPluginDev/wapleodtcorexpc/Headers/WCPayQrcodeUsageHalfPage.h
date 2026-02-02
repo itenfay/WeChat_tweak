@@ -6,7 +6,7 @@
 @class CgiApplyQrcodeResp, MMTableView, MMUILabel, NSString, WCPayQrcodeUsagehalfPageCell;
 @protocol WCPayQrcodeUsageHalfPage;
 
-@interface WCPayQrcodeUsageHalfPage
+@interface WCPayQrcodeUsageHalfPage : NSObject
 {
     _Bool _isKeyboardShowing;
     id <WCPayQrcodeUsageHalfPage> _delegate;

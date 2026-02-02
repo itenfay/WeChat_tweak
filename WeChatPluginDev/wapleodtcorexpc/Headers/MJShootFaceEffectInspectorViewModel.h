@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootVisageInspectorItem, NSArray, NSIndexPath;
 
-@interface MJShootFaceEffectInspectorViewModel
+@interface MJShootFaceEffectInspectorViewModel : NSObject
 {
     NSArray *_faceEffectItems;
     MJShootVisageInspectorItem *_selectedFaceEffectItem;

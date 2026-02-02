@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCStoryDateDetailCgiObj
+@interface WCStoryDateDetailCgiObj : NSObject
 {
     int _timeZone;
     CDUnknownBlockType _dataBlock;

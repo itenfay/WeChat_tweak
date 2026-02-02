@@ -6,7 +6,7 @@
 @class MMLocatingCoordinateLogic, MMPickLocationViewController, NSIndexPath, NSMutableArray, NSString, POIItem, UIButton, UILabel, UITextView, WCAddressMultiPickerItem, WCBaseKeyboardToolBar, WCBaseTextFieldItem, WCBaseTextViewItem;
 @protocol WCAddressInfoViewControllerDelegate;
 
-@interface WCAddressInfoViewController
+@interface WCAddressInfoViewController : NSObject
 {
     UIButton *m_footerButton;
     WCBaseTextFieldItem *m_textFieldNameItem;

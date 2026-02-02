@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTAutoChargeCloseCgiDelegate;
 
-@interface WCPayLQTAutoChargeCloseCgi
+@interface WCPayLQTAutoChargeCloseCgi : NSObject
 {
     id <WCPayLQTAutoChargeCloseCgiDelegate> _cgiDelegate;
 }

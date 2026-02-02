@@ -6,7 +6,7 @@
 @class EmoticonBoardCrossCollectionEmoticonHeaderModel, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UILongPressGestureRecognizer;
 @protocol EmoticonBoardCrossCollectionIPSetPageDelegate;
 
-@interface EmoticonBoardCrossCollectionIPSetPageCell
+@interface EmoticonBoardCrossCollectionIPSetPageCell : NSObject
 {
     _Bool _isReloadingSections;
     id <EmoticonBoardCrossCollectionIPSetPageDelegate> _delegate;

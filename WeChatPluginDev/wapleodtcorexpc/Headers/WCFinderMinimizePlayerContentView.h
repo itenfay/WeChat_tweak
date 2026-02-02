@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCPlayerView;
 
-@interface WCFinderMinimizePlayerContentView
+@interface WCFinderMinimizePlayerContentView : NSObject
 {
     WCPlayerView *_playerView;
     CDUnknownBlockType _playerGenerator;

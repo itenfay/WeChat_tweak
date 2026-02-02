@@ -5,7 +5,7 @@
 
 @class UIColor;
 
-@interface WAHighLightedButton
+@interface WAHighLightedButton : NSObject
 {
     UIColor *_hightlightedColor;
 }

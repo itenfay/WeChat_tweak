@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface MVimagePreviewDataSourceForAlbum
+@interface MVimagePreviewDataSourceForAlbum : NSObject
 {
     NSMutableArray *_modelList;
 }

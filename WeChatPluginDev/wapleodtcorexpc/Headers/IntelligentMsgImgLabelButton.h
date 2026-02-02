@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMsgImgLabelButton
+@interface IntelligentMsgImgLabelButton : NSObject
 {
     _Bool m_isChosen;
     NSString *_m_labelName;

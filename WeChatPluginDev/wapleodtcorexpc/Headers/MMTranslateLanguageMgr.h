@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMTranslateLanguageMgr
+@interface MMTranslateLanguageMgr : NSObject
 {
 }
 

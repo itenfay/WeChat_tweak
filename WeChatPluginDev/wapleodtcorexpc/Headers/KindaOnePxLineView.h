@@ -5,7 +5,7 @@
 
 @class NSString, TrueKindaOnePxLineView;
 
-@interface KindaOnePxLineView
+@interface KindaOnePxLineView : NSObject
 {
     TrueKindaOnePxLineView *_line;
 }

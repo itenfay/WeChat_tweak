@@ -5,7 +5,7 @@
 
 @class CIImage, MMLivePixelBuffer, NSString;
 
-@interface WCPIPVideoFrame
+@interface WCPIPVideoFrame : NSObject
 {
     _Bool _flipX;
     MMLivePixelBuffer *_pixelBufferObj;

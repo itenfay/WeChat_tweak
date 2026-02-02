@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderFetchSubCommentCGI
+@interface WCFinderFetchSubCommentCGI : NSObject
 {
     int _scene;
     int _pullScene;

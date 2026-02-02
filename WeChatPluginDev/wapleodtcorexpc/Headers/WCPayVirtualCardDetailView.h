@@ -5,7 +5,7 @@
 
 @class MMWebImageView, UILabel, WCPayVirtualNoBindCard;
 
-@interface WCPayVirtualCardDetailView
+@interface WCPayVirtualCardDetailView : NSObject
 {
     WCPayVirtualNoBindCard *m_info;
     MMWebImageView *m_logoView;

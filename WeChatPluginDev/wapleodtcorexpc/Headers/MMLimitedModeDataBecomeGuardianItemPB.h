@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLimitedModeDataBecomeGuardianItemPB
+@interface MMLimitedModeDataBecomeGuardianItemPB : NSObject
 {
     unsigned int _becomeGuardianTime;
     NSString *_guardianUserName;

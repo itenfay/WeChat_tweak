@@ -6,7 +6,7 @@
 @class NSMutableDictionary, NSObject, NSString;
 @protocol WCGroupMgrExt;
 
-@interface WCGroupMgr
+@interface WCGroupMgr : NSObject
 {
     _Bool m_bMemCacheNeedReload;
     NSMutableDictionary *m_groups;

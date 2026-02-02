@@ -5,7 +5,7 @@
 
 @class NSString, WCCoinNewUserTipsDetailView, WecoinNewUserTips;
 
-@interface WCCoinNewUserTipsView
+@interface WCCoinNewUserTipsView : NSObject
 {
     WecoinNewUserTips *_tips;
     WCCoinNewUserTipsDetailView *_tipsDetailView;

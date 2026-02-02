@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableArray, NSNumber, NSString, UITableView, WAContactGetter;
 
-@interface WASessionNotifySettingViewController
+@interface WASessionNotifySettingViewController : NSObject
 {
     NSNumber *_originGlobalOpenStatus;
     NSArray *_arrOriginCloseItem;

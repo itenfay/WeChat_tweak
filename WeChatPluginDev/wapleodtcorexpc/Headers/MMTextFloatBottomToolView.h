@@ -6,7 +6,7 @@
 @class NSString, UIButton;
 @protocol MMTextFloatBottomToolViewDelegate;
 
-@interface MMTextFloatBottomToolView
+@interface MMTextFloatBottomToolView : NSObject
 {
     UIButton *m_btnDetail;
     NSString *m_nsTipsUrl;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface WCMusicSearchCgi
+@interface WCMusicSearchCgi : NSObject
 {
     int _batchCount;
     long long _minBatchSize;

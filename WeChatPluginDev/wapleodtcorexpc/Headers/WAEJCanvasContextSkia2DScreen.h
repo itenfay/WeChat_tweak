@@ -5,7 +5,7 @@
 
 @class EAGLView, UIView;
 
-@interface WAEJCanvasContextSkia2DScreen
+@interface WAEJCanvasContextSkia2DScreen : NSObject
 {
     EAGLView *glview;
     struct CGRect style;

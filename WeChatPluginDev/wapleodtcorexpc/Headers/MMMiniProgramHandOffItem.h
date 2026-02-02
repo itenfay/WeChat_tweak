@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMMiniProgramHandOffItem
+@interface MMMiniProgramHandOffItem : NSObject
 {
     NSString *_icon;
     NSString *_appid;

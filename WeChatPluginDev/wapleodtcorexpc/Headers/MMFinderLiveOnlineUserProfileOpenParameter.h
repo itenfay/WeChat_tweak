@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBadgeInfo, FinderLiveContact, MMFinderLiveConnectMicUser, MMFinderLiveTask, MMFinderLiveTaskId, NSData, NSString, UIColor, UIView, WCFinderContact;
 
-@interface MMFinderLiveOnlineUserProfileOpenParameter
+@interface MMFinderLiveOnlineUserProfileOpenParameter : NSObject
 {
     _Bool _isOfflineOperation;
     _Bool _isSendPrivateMsgEnable;

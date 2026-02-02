@@ -5,7 +5,7 @@
 
 @class NSString, NSURL, UIButton, UIImageView, UILabel, UIScrollView;
 
-@interface WXGRoamBackupPackageTipsViewController
+@interface WXGRoamBackupPackageTipsViewController : NSObject
 {
     UILabel *_titleLabel;
     UIImageView *_mainIcon;

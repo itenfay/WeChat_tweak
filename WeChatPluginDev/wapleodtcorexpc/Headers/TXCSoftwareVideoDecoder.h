@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSString;
 @protocol TXIVideoDecoderSupervisorInterface;
 
-@interface TXCSoftwareVideoDecoder
+@interface TXCSoftwareVideoDecoder : NSObject
 {
     id <TXIVideoDecoderSupervisorInterface> supervisor;
 }

@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface TextStateNotifyButton
+@interface TextStateNotifyButton : NSObject
 {
     unsigned int _notifyCount;
     UIView *_borderView;

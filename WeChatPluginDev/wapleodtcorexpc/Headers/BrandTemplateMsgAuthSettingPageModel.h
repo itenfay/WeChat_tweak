@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BrandTemplateMsgAuthSettingPageModel
+@interface BrandTemplateMsgAuthSettingPageModel : NSObject
 {
     unsigned int _opType;
     unsigned int _totalSwitch;

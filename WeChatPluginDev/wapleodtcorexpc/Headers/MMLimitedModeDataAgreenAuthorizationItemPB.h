@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLimitedModeDataAgreenAuthorizationItemPB
+@interface MMLimitedModeDataAgreenAuthorizationItemPB : NSObject
 {
     unsigned int _businessType;
     unsigned int _agreenAuthorizationTime;

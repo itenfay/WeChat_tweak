@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderAffRedDotBridge
+@interface WCFinderAffRedDotBridge : NSObject
 {
 }
 

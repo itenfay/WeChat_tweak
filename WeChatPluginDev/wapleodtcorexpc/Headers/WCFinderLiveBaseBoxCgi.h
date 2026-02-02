@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface WCFinderLiveBaseBoxCgi
+@interface WCFinderLiveBaseBoxCgi : NSObject
 {
     NSMutableArray *_boxIdList;
 }

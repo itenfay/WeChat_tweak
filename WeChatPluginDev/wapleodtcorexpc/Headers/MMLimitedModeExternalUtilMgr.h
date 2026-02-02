@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLimitedModeVerifyPasswordUtilLogic, MMUIViewController, NSString;
 
-@interface MMLimitedModeExternalUtilMgr
+@interface MMLimitedModeExternalUtilMgr : NSObject
 {
     MMLimitedModeVerifyPasswordUtilLogic *m_verifyPasswordUtilLogic;
     unsigned int m_scene;

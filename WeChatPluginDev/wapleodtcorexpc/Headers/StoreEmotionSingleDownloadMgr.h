@@ -5,7 +5,7 @@
 
 @class EmoticonDownloadProxy, NSMutableOrderedSet, NSString;
 
-@interface StoreEmotionSingleDownloadMgr
+@interface StoreEmotionSingleDownloadMgr : NSObject
 {
     NSMutableOrderedSet *m_downloadQueue;
     EmoticonDownloadProxy *m_downloadCgi;

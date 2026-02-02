@@ -5,7 +5,7 @@
 
 @class CADisplayLink;
 
-@interface EmoticonCustomManageCollectionView
+@interface EmoticonCustomManageCollectionView : NSObject
 {
     unsigned long long _autoScrollType;
     double _speedPercent;

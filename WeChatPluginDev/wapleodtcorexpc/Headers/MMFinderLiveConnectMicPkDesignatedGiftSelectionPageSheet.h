@@ -6,7 +6,7 @@
 @class MMFinderLiveTaskId, MMLoadingIndicatorView, NSArray, NSString, UILabel, UITableView;
 @protocol MMFinderLiveConnectMicPkDesignatedGiftSelectionPageSheetDelegate;
 
-@interface MMFinderLiveConnectMicPkDesignatedGiftSelectionPageSheet
+@interface MMFinderLiveConnectMicPkDesignatedGiftSelectionPageSheet : NSObject
 {
     id <MMFinderLiveConnectMicPkDesignatedGiftSelectionPageSheetDelegate> _delegate;
     MMFinderLiveTaskId *_taskId;

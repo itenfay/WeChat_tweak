@@ -5,7 +5,7 @@
 
 @class FavSightView, NSString;
 
-@interface FavSightDetailViewController
+@interface FavSightDetailViewController : NSObject
 {
     FavSightView *m_sightView;
     _Bool m_hasIllegalData;

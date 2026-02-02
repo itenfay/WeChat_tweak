@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCAccountBindPhoneControlLogicDelegate;
 
-@interface WCAccountBindPhoneControlLogic
+@interface WCAccountBindPhoneControlLogic : NSObject
 {
     unsigned long long m_scene;
     NSString *m_nsOldPhone;

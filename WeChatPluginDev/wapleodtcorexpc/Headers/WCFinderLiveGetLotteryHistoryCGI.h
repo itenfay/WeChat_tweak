@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderLiveGetLotteryHistoryCGI
+@interface WCFinderLiveGetLotteryHistoryCGI : NSObject
 {
     int _supportMultiType;
     CDUnknownBlockType _successBlock;

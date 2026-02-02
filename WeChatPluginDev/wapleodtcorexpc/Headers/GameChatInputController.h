@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameChatInputController
+@interface GameChatInputController : NSObject
 {
     _Bool _isShowingSearchView;
 }

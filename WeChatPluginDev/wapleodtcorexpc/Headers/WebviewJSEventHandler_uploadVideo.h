@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WebviewJSEventHandler_uploadVideo
+@interface WebviewJSEventHandler_uploadVideo : NSObject
 {
     _Bool _isShowProgressTips;
     NSMutableArray *arrLocalIDs;

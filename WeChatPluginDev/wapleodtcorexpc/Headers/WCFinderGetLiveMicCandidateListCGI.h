@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderGetLiveMicCandidateListCGI
+@interface WCFinderGetLiveMicCandidateListCGI : NSObject
 {
     NSData *_lastBuffer;
     NSData *_liveCookies;

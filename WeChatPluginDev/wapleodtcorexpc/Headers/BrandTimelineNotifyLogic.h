@@ -6,7 +6,7 @@
 @class CMessageWrap;
 @protocol BrandTimelineNotifyLogicDelegate;
 
-@interface BrandTimelineNotifyLogic
+@interface BrandTimelineNotifyLogic : NSObject
 {
     unsigned int _notifyCount;
     id <BrandTimelineNotifyLogicDelegate> _delegate;

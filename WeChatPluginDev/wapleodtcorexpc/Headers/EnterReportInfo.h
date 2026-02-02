@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterReportInfo
+@interface EnterReportInfo : NSObject
 {
     unsigned long long _enterTimeMs;
     NSString *_topVcName;

@@ -5,7 +5,7 @@
 
 @class StatusFooterJumpFinderProfile;
 
-@interface TextState3rdPartyFinderProfileHandler
+@interface TextState3rdPartyFinderProfileHandler : NSObject
 {
     StatusFooterJumpFinderProfile *_finderProfile;
 }

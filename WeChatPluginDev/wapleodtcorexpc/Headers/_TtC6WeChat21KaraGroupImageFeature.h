@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat21KaraGroupImageFeature
+@interface _TtC6WeChat21KaraGroupImageFeature : NSObject
 {
     MISSING_TYPE *thumbnail;
     MISSING_TYPE *_containsHD;

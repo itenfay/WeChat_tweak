@@ -6,7 +6,7 @@
 @class MMTimer, NSObject, NSRecursiveLock, NSString, PCMAudioFile;
 @protocol AUAudioDataSource, OS_dispatch_queue;
 
-@interface AUAudioDevice
+@interface AUAudioDevice : NSObject
 {
     struct {
         struct OpaqueAudioComponentInstance *ioUnit;

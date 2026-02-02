@@ -6,7 +6,7 @@
 @class HoneyPayListResp, NSDictionary, NSString, UIButton, WCPayAgreementView, WCPayNoticeItemView;
 @protocol HoneyPayHomeViewControllerDelegate;
 
-@interface HoneyPayHomeViewController
+@interface HoneyPayHomeViewController : NSObject
 {
     id <HoneyPayHomeViewControllerDelegate> _delegate;
     HoneyPayListResp *_response;

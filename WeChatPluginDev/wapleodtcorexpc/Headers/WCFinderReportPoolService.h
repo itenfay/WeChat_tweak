@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderEditVideoReportInfo;
 
-@interface WCFinderReportPoolService
+@interface WCFinderReportPoolService : NSObject
 {
     NSString *_clickPostTimeStamp;
     WCFinderEditVideoReportInfo *_editReportInfo;

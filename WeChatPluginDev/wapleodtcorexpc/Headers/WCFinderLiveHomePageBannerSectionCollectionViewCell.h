@@ -6,7 +6,7 @@
 @class NSArray, NSString, UICollectionView, WCFinderLiveHomePageBannerSectionView;
 @protocol WCFinderLiveHomePageBannerSectionViewDelegate;
 
-@interface WCFinderLiveHomePageBannerSectionCollectionViewCell
+@interface WCFinderLiveHomePageBannerSectionCollectionViewCell : NSObject
 {
     id <WCFinderLiveHomePageBannerSectionViewDelegate> _delegate;
     WCFinderLiveHomePageBannerSectionView *_liveCollectionView;

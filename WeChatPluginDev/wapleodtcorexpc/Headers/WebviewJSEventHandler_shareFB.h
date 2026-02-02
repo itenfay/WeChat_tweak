@@ -5,7 +5,7 @@
 
 @class JSShareFBLogicHelper, NSDictionary, NSString;
 
-@interface WebviewJSEventHandler_shareFB
+@interface WebviewJSEventHandler_shareFB : NSObject
 {
     JSShareFBLogicHelper *m_jsShareFBHelper;
     NSDictionary *m_eventParamsDic;

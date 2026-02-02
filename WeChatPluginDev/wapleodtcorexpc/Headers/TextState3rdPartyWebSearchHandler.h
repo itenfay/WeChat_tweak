@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TextState3rdPartyWebSearchHandler
+@interface TextState3rdPartyWebSearchHandler : NSObject
 {
     NSString *_keyword;
 }

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface EdgeComputingRunRecord
+@interface EdgeComputingRunRecord : NSObject
 {
     NSMutableDictionary *runRecords;
 }

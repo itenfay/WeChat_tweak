@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface QBGuidReq
+@interface QBGuidReq : NSObject
 {
     NSString *jcev2_p_0_o_sQua;
     NSString *jcev2_p_1_o_sImei;

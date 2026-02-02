@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat21MagicBrushNanoService
+@interface _TtC6WeChat21MagicBrushNanoService : NSObject
 {
     MISSING_TYPE *exptId;
 }

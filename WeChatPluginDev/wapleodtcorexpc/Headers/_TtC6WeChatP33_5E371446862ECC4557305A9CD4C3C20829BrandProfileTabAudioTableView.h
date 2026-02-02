@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChatP33_5E371446862ECC4557305A9CD4C3C20829BrandProfileTabAudioTableView
+@interface _TtC6WeChatP33_5E371446862ECC4557305A9CD4C3C20829BrandProfileTabAudioTableView : NSObject
 {
     MISSING_TYPE *otherGestureRecognizer;
 }

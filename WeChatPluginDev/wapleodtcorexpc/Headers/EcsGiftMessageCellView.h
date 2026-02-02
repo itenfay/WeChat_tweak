@@ -5,7 +5,7 @@
 
 @class EcsGiftMessageViewModel, UILabel;
 
-@interface EcsGiftMessageCellView
+@interface EcsGiftMessageCellView : NSObject
 {
     UILabel *_m_tagLabel;
     UILabel *_m_wishLabel;

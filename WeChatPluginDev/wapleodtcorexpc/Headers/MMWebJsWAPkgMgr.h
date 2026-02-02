@@ -5,7 +5,7 @@
 
 @class MemoryMappedKV, NSString;
 
-@interface MMWebJsWAPkgMgr
+@interface MMWebJsWAPkgMgr : NSObject
 {
     MemoryMappedKV *_mappedKV;
 }

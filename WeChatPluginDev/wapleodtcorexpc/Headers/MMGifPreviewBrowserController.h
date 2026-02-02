@@ -6,7 +6,7 @@
 @class MMAsset, MMGifPreviewBrowserView, NSString, UIButton, UIImageView, UILabel;
 @protocol MMImagePickerControlCenter, MMImagePickerManagerDelegate;
 
-@interface MMGifPreviewBrowserController
+@interface MMGifPreviewBrowserController : NSObject
 {
     UIImageView *m_bottomBar;
     UIButton *m_sendButton;

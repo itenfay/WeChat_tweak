@@ -5,7 +5,7 @@
 
 @class TextMessageViewModel;
 
-@interface TextMessageSubViewModel
+@interface TextMessageSubViewModel : NSObject
 {
     TextMessageViewModel *_parentModel;
     double _startHeight;

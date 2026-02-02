@@ -5,7 +5,7 @@
 
 @class NSDictionary;
 
-@interface EmotionPageSharedItem
+@interface EmotionPageSharedItem : NSObject
 {
     NSDictionary *_params;
 }

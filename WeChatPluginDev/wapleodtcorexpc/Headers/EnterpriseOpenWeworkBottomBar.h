@@ -5,7 +5,7 @@
 
 @class NSString, UIButton;
 
-@interface EnterpriseOpenWeworkBottomBar
+@interface EnterpriseOpenWeworkBottomBar : NSObject
 {
     UIButton *_weworkButton;
     NSString *_iconUrl;

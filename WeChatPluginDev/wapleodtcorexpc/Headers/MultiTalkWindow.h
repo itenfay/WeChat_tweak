@@ -5,7 +5,7 @@
 
 @class MultiTalkMonoMsg;
 
-@interface MultiTalkWindow
+@interface MultiTalkWindow : NSObject
 {
     MultiTalkMonoMsg *_m_monoMsg;
 }

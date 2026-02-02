@@ -5,7 +5,7 @@
 
 @class AVAsset, AVAssetReader, AVAssetReaderOutput, AVVideoComposition;
 
-@interface TAVAVAssetReaderImageResource
+@interface TAVAVAssetReaderImageResource : NSObject
 {
     AVAsset *_asset;
     AVVideoComposition *_videoComposition;

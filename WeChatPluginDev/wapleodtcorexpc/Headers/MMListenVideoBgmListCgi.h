@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSData, NSString;
 
-@interface MMListenVideoBgmListCgi
+@interface MMListenVideoBgmListCgi : NSObject
 {
     int _type;
     int _businessId;

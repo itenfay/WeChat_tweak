@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
-@interface WAAppOpenCustomUIWidgetParameter
+@interface WAAppOpenCustomUIWidgetParameter : NSObject
 {
     _Bool _hasAlreadyAddToSuperview;
     unsigned long long _pageTarget;

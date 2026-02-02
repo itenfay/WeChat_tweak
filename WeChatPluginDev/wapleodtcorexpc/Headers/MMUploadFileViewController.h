@@ -5,7 +5,7 @@
 
 @class MMDeleteFileModel, MMLoadingView, MMProgressView, NSArray, NSString, UIButton, UIImageView, UILabel, UITapGestureRecognizer;
 
-@interface MMUploadFileViewController
+@interface MMUploadFileViewController : NSObject
 {
     NSArray *_uploadFileNames;
     NSString *_attachDataName;

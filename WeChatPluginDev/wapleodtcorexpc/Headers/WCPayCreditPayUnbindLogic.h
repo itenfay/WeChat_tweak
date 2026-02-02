@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCPayCreditPayUnbindLogic
+@interface WCPayCreditPayUnbindLogic : NSObject
 {
 }
 

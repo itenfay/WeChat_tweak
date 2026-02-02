@@ -5,7 +5,7 @@
 
 @class MMUILabel, UIImageView, UIView;
 
-@interface MMFinderLiveGloryGiftWallTipsSheet
+@interface MMFinderLiveGloryGiftWallTipsSheet : NSObject
 {
     UIView *_gloryLine;
     MMUILabel *_gloryTitleLabel;

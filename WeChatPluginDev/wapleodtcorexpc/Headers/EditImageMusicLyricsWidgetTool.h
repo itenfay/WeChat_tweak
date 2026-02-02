@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIImageView, UITextView, WCStoryLyricWaveView;
 
-@interface EditImageMusicLyricsWidgetTool
+@interface EditImageMusicLyricsWidgetTool : NSObject
 {
     _Bool _dragToDelete;
     UIImageView *_imageView;

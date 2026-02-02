@@ -5,7 +5,7 @@
 
 @class NSMutableArray, UIColor;
 
-@interface MMMultiSelectToolView
+@interface MMMultiSelectToolView : NSObject
 {
     NSMutableArray *_buttonArray;
     UIColor *_itemColor;

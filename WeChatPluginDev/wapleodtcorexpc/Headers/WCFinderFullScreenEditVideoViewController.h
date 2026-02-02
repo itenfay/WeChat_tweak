@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCFinderFullScreenEditVideoViewControllerDelegate;
 
-@interface WCFinderFullScreenEditVideoViewController
+@interface WCFinderFullScreenEditVideoViewController : NSObject
 {
     id <WCFinderFullScreenEditVideoViewControllerDelegate> _finderDelegate;
 }

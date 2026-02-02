@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface ModEmotionRecordCgi
+@interface ModEmotionRecordCgi : NSObject
 {
     _Bool _active;
     CDUnknownBlockType _onFailBlock;

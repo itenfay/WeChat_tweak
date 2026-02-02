@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface BTRecoFlowMsgContentBigCell
+@interface BTRecoFlowMsgContentBigCell : NSObject
 {
     UILabel *_videoDurationLabel;
 }

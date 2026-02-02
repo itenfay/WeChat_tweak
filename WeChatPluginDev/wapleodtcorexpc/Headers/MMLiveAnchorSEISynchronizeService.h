@@ -5,7 +5,7 @@
 
 @class MMLiveTask, MMLiveTaskId, NSMutableArray, NSString;
 
-@interface MMLiveAnchorSEISynchronizeService
+@interface MMLiveAnchorSEISynchronizeService : NSObject
 {
     NSMutableArray *_synchronizeObjList;
     MMLiveTaskId *_taskId;

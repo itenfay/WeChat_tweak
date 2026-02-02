@@ -6,7 +6,7 @@
 @class NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MMUserDataOperateMgr
+@interface MMUserDataOperateMgr : NSObject
 {
     NSArray *m_arrCombineReportForUserDataType;
     unsigned int m_oneHadExecuteNumber;

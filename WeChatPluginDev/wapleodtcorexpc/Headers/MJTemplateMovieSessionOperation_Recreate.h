@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OMJMovieOptions, OMJMovieOutroInfo;
 
-@interface MJTemplateMovieSessionOperation_Recreate
+@interface MJTemplateMovieSessionOperation_Recreate : NSObject
 {
     NSString *_templateID;
     NSString *_musicID;

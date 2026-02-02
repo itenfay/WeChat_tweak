@@ -5,7 +5,7 @@
 
 @class FinderLiveMessageCellMainContentView, MMWebImageView, NSString, ServiceNotifyMessageViewModel, UILabel, UIView;
 
-@interface FinderLiveServiceNotifyMessageCellView
+@interface FinderLiveServiceNotifyMessageCellView : NSObject
 {
     FinderLiveMessageCellMainContentView *_mainContentView;
     MMWebImageView *_avatarImageView;

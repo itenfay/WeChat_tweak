@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat14MMPurgeService
+@interface _TtC6WeChat14MMPurgeService : NSObject
 {
     MISSING_TYPE *purgers;
 }

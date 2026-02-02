@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, WAEJBindingWebGLVertexArray, WAEJCanvasContextWebGL;
 
-@interface WAEJBindingCanvasContextWebGLBase
+@interface WAEJBindingCanvasContextWebGLBase : NSObject
 {
     _Bool unpackFlipY;
     _Bool premultiplyAlpha;

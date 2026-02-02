@@ -5,7 +5,7 @@
 
 @class CALayer, UIView;
 
-@interface GPUImageUIElement
+@interface GPUImageUIElement : NSObject
 {
     UIView *view;
     CALayer *layer;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class TranslateLinkParameter;
 
-@interface TranslateLinkCgiHandler
+@interface TranslateLinkCgiHandler : NSObject
 {
     TranslateLinkParameter *_parameter;
     CDUnknownBlockType _completion;

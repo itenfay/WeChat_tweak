@@ -6,7 +6,7 @@
 @class MJPlaybackViewModel, MJTimelineViewModel, MMUIView, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel;
 @protocol MJTimelineThumbnailViewDelegate, OMCThumbnailProvider;
 
-@interface MJTimelineThumbnailView
+@interface MJTimelineThumbnailView : NSObject
 {
     MJTimelineViewModel *_timelineVM;
     MJPlaybackViewModel *_playbackVM;

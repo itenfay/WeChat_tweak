@@ -6,7 +6,7 @@
 @class EditVideoAttr, NSMutableArray, NSString, UICollectionView, UIView, WCFinderEditVideoPorgressInfoViewModel;
 @protocol WCFinderEditVideoProgressInfoViewDelegate;
 
-@interface WCFinderEditVideoProgressInfoView
+@interface WCFinderEditVideoProgressInfoView : NSObject
 {
     _Bool _isScrollingTriggerByPlayer;
     id <WCFinderEditVideoProgressInfoViewDelegate> _delegate;

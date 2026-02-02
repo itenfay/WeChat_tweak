@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, UIImageView, UILabel, UIView;
 
-@interface GCAtInfoCell
+@interface GCAtInfoCell : NSObject
 {
     UIView *_leftSeperateLineView;
     MMHeadImageView *_headView;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem29322
+@interface KvReportItem29322 : NSObject
 {
     unsigned int _action;
     unsigned int _hitCache;

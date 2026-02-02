@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WASyncIssueDecryptCmd
+@interface WASyncIssueDecryptCmd : NSObject
 {
     unsigned int _appVersion;
     NSString *_decryptKey;

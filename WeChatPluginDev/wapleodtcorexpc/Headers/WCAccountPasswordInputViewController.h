@@ -6,7 +6,7 @@
 @class NSString, UIButton, WCRedesignTextItem;
 @protocol WCAccountPasswordInputViewControllerDelegate;
 
-@interface WCAccountPasswordInputViewController
+@interface WCAccountPasswordInputViewController : NSObject
 {
     id <WCAccountPasswordInputViewControllerDelegate> _delegate;
     WCRedesignTextItem *_passwordTextItem;

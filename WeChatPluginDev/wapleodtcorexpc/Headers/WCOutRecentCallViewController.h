@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UITableView, WCOutPhoneContact;
 
-@interface WCOutRecentCallViewController
+@interface WCOutRecentCallViewController : NSObject
 {
     WCOutPhoneContact *m_contact;
     NSArray *m_recentCallLists;

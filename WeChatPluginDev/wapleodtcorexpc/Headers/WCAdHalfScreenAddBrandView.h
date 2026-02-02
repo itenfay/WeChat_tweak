@@ -5,7 +5,7 @@
 
 @class MMPageSheetBaseView, MMUILabel, NSString, UIImageView, WCAdURLImageView;
 
-@interface WCAdHalfScreenAddBrandView
+@interface WCAdHalfScreenAddBrandView : NSObject
 {
     MMPageSheetBaseView *_sheetView;
     UIImageView *_tipImageView;

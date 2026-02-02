@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface VoIPDB
+@interface VoIPDB : NSObject
 {
     WCTDatabase *m_db;
     WCTTable *m_table;

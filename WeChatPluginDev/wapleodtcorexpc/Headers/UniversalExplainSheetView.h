@@ -5,7 +5,7 @@
 
 @class NSString, UIButton;
 
-@interface UniversalExplainSheetView
+@interface UniversalExplainSheetView : NSObject
 {
     UIButton *_settingButton;
     NSString *_title;

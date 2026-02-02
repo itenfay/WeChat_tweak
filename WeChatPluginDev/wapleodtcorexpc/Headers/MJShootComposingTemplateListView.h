@@ -6,7 +6,7 @@
 @class MJCircleProgressView, MJShootComposingTemplatePanelViewModel, NSString, UICollectionView, UILabel, UIView;
 @protocol MJShootComposingTemplateListViewDelegate;
 
-@interface MJShootComposingTemplateListView
+@interface MJShootComposingTemplateListView : NSObject
 {
     _Bool _loadMoreTemplateDisabled;
     id <MJShootComposingTemplateListViewDelegate> _delegate;

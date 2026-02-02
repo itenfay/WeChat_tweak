@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface MMCompatibleCGI
+@interface MMCompatibleCGI : NSObject
 {
     unsigned int _uiCgi;
     unsigned int _cgiType;

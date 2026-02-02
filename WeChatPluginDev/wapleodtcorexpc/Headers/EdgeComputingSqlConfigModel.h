@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EdgeComputingSqlConfigModel
+@interface EdgeComputingSqlConfigModel : NSObject
 {
     unsigned int _reportID;
     unsigned int _reportMethod;

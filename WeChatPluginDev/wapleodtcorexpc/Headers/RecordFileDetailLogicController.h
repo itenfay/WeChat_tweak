@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, MMUIViewController, MsgRecordDataWrap, NSString;
 @protocol MsgRecordFileDetailDelegate;
 
-@interface RecordFileDetailLogicController
+@interface RecordFileDetailLogicController : NSObject
 {
     MsgRecordDataWrap *m_recordDataWrap;
     ForwardMessageLogicController *m_forwardMsgLogic;

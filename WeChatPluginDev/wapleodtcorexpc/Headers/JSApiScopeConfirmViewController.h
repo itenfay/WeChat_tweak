@@ -5,7 +5,7 @@
 
 @class JSAPIScopeConfirmContainterView, JSApiScopeConfirmWindow;
 
-@interface JSApiScopeConfirmViewController
+@interface JSApiScopeConfirmViewController : NSObject
 {
     JSAPIScopeConfirmContainterView *_containerView;
     JSApiScopeConfirmWindow *_weakConfirmWindow;

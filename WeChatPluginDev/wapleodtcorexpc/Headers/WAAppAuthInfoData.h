@@ -5,7 +5,7 @@
 
 @class NSString, UserAvatarInfo, UserAvatarItem;
 
-@interface WAAppAuthInfoData
+@interface WAAppAuthInfoData : NSObject
 {
     unsigned int _state;
     NSString *_appid;

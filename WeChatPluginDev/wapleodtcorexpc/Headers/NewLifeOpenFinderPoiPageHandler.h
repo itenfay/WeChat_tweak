@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface NewLifeOpenFinderPoiPageHandler
+@interface NewLifeOpenFinderPoiPageHandler : NSObject
 {
 }
 

@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj, NSString, UIView, WCRedEnvelopesAtmospherePagView, WCRedEnvelopesReceiveHomeView;
 
-@interface WCRedEnvelopesPreviewControlLogic
+@interface WCRedEnvelopesPreviewControlLogic : NSObject
 {
     WCRedEnvelopesReceiveHomeView *introView;
     _Bool _bHasStartDownloadEmoticon;

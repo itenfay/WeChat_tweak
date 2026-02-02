@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUILabel, NSArray, NSString, UIButton, UITableView;
 @protocol SolitaireGetPhoneNumberSheetDelegate;
 
-@interface SolitaireGetPhoneNumberSheet
+@interface SolitaireGetPhoneNumberSheet : NSObject
 {
     id <SolitaireGetPhoneNumberSheetDelegate> _phoneSheetDelegate;
     MMUILabel *_infoLabel;

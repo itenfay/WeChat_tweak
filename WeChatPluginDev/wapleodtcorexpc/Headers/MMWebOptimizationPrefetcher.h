@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, NSURLSession;
 
-@interface MMWebOptimizationPrefetcher
+@interface MMWebOptimizationPrefetcher : NSObject
 {
     NSMutableArray *_waitingQueue;
     NSMutableDictionary *_waitingDic;

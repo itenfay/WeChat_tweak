@@ -5,7 +5,7 @@
 
 @protocol WCFinderJoinGroupBuyEduActionSheetDelegate;
 
-@interface WCFinderJoinGroupBuyEduActionSheet
+@interface WCFinderJoinGroupBuyEduActionSheet : NSObject
 {
     id <WCFinderJoinGroupBuyEduActionSheetDelegate> _reportDelegate;
 }

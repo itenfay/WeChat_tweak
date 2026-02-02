@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UITextView;
 
-@interface WCUserFileScanHardlinkViewController
+@interface WCUserFileScanHardlinkViewController : NSObject
 {
     UITextView *_infoTextView;
     NSString *_infoString;

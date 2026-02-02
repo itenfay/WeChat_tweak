@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WARelatedAppViewController
+@interface WARelatedAppViewController : NSObject
 {
     NSString *_teamName;
     NSMutableArray *_relateWeappList;

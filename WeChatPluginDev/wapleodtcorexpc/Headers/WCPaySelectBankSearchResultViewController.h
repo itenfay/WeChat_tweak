@@ -6,7 +6,7 @@
 @class NSArray, UISearchController;
 @protocol WCPaySelectBankSearchResultViewControllerDelegate;
 
-@interface WCPaySelectBankSearchResultViewController
+@interface WCPaySelectBankSearchResultViewController : NSObject
 {
     id <WCPaySelectBankSearchResultViewControllerDelegate> _delegate;
     NSArray *_results;

@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface WAJSContextPlugin_H5SendData
+@interface WAJSContextPlugin_H5SendData : NSObject
 {
     NSMutableDictionary *_webDic;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WCMomentsPostReportSession;
 
-@interface WCMomentsPostReportSessionManager
+@interface WCMomentsPostReportSessionManager : NSObject
 {
     WCMomentsPostReportSession *_currentActiveSession;
 }

@@ -5,7 +5,7 @@
 
 @class NSString, WCPayFaceHBGetLogic, WCPayFaceHBPayLogic;
 
-@interface WCPayFaceHBMgr
+@interface WCPayFaceHBMgr : NSObject
 {
     WCPayFaceHBPayLogic *m_faceHBPayLogic;
     WCPayFaceHBGetLogic *m_faceHBGetLogic;

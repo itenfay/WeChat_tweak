@@ -6,7 +6,7 @@
 @class MMUIActivityIndicatorView, NSString, UIColor, UIFont, UILabel, UIView, WCFinderLocationReportModel, WCFinderLocationTerminatorViewParams;
 @protocol WCFinderLocationFooterViewDelegate;
 
-@interface WCFinderLocationFooterView
+@interface WCFinderLocationFooterView : NSObject
 {
     _Bool _centerAlignLabel;
     _Bool _labelSingleLine;

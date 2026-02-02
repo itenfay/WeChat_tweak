@@ -6,7 +6,7 @@
 @class AVSampleBufferDisplayLayer, CAGradientLayer, CContact, MMHDHeadImageView, MMTimerLabel, MMUIButton, NSString, SmallCameraView, UIImageView, UILabel, UIView, VOIPVideoRender, VOIPVideoToVoiceView, VideoHintTopView, VoIPHeadImageBlurView, VoIPMPUIScreenView, VoipDescriptionButton, VoipRecentStatusCardView, VoipRecentStatusUnFoldButton, XImageViewRenderer;
 @protocol NSObject><VoIPTalkingViewDelegate;
 
-@interface VoIPTalkingView
+@interface VoIPTalkingView : NSObject
 {
     CContact *_contact;
     unsigned int _status;

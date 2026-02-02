@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUINavigationBar, NSMutableArray, UIView, UIViewController, WAMenuPopInteractiveTransition;
 @protocol WAUINavigationControllerDelegate;
 
-@interface WAUINavigationController
+@interface WAUINavigationController : NSObject
 {
     _Bool _isInSheetMode;
     _Bool _hasLoadResizable;

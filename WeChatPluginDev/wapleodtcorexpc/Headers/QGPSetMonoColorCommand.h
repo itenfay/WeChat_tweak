@@ -5,7 +5,7 @@
 
 @class QGPColor;
 
-@interface QGPSetMonoColorCommand
+@interface QGPSetMonoColorCommand : NSObject
 {
     QGPColor *_params;
 }

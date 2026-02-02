@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMWebPrefetchInjectTaskRequest, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface MMWebPrefetchInjectTask
+@interface MMWebPrefetchInjectTask : NSObject
 {
     _Bool _isCancel;
     MMWebPrefetchInjectTaskRequest *_request;

@@ -5,7 +5,7 @@
 
 @class QGPPlaySkeletonAnimationParam;
 
-@interface QGPPlaySkeletonAnimationCommand
+@interface QGPPlaySkeletonAnimationCommand : NSObject
 {
     QGPPlaySkeletonAnimationParam *_params;
 }

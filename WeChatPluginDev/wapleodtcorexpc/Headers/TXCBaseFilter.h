@@ -5,7 +5,7 @@
 
 @class NSNumber, NSValue, TXCVideoFrameCoords;
 
-@interface TXCBaseFilter
+@interface TXCBaseFilter : NSObject
 {
     TXCVideoFrameCoords *_frameCoords;
     NSNumber *_outputRatio;

@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSString, WCAdStateSettingBarInfo, WCAdURLImageView, WCDataItem;
 @protocol WCAdStateSettingBarViewDelegate;
 
-@interface WCAdStateSettingBarView
+@interface WCAdStateSettingBarView : NSObject
 {
     WCDataItem *_dataItem;
     WCAdStateSettingBarInfo *_barInfo;

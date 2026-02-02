@@ -6,7 +6,7 @@
 @class FavoritesCDNInfoDB, FavoritesItemDB, FavoritesUploadBaseProccessor, FavoritesUploadFileSaver, FavoritesUploadVideoCompressor, NSMutableArray, NSString;
 @protocol FavoritesUploadMgrDelegate;
 
-@interface FavoritesUploadMgr
+@interface FavoritesUploadMgr : NSObject
 {
     NSMutableArray *m_failedQueue;
     FavoritesCDNInfoDB *m_favCdnDB;

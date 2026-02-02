@@ -5,7 +5,7 @@
 
 @class NSRecursiveLock, NSString;
 
-@interface MMIntelligentToolMgr
+@interface MMIntelligentToolMgr : NSObject
 {
     NSRecursiveLock *_ocrLock;
 }

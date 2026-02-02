@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveAppMsgGameInvitationInfo, MMFinderLiveGameTeamInfo, MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, UIView, WCFinderGameLiveJumpGameGuideTipsViewController;
 
-@interface MMLiveGameInviteJoinTeamView
+@interface MMLiveGameInviteJoinTeamView : NSObject
 {
     unsigned int _curJoinTeamMode;
     MMFinderLiveTaskId *_taskId;

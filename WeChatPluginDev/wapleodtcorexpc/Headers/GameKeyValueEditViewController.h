@@ -5,7 +5,7 @@
 
 @class GCCollectionViewManager, NSMutableArray, UICollectionView;
 
-@interface GameKeyValueEditViewController
+@interface GameKeyValueEditViewController : NSObject
 {
     UICollectionView *_collectionView;
     GCCollectionViewManager *_viewManager;

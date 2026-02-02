@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableOrderedSet, NSString;
 
-@interface WCCardMemberCardListLogicController
+@interface WCCardMemberCardListLogicController : NSObject
 {
     NSMutableOrderedSet *_allSortedMemberCardsList;
     CDUnknownBlockType _fetchDataCompleteBlcok;

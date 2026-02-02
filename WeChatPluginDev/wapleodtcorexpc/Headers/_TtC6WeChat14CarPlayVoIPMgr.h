@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat14CarPlayVoIPMgr
+@interface _TtC6WeChat14CarPlayVoIPMgr : NSObject
 {
     MISSING_TYPE *currentController;
     MISSING_TYPE *rootVoIPTalkingController;

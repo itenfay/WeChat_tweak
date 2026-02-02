@@ -5,7 +5,7 @@
 
 @class NSMutableSet, NSString;
 
-@interface EmoticonCustomAddMgr
+@interface EmoticonCustomAddMgr : NSObject
 {
     NSMutableSet *_addEmoticonTasks;
 }

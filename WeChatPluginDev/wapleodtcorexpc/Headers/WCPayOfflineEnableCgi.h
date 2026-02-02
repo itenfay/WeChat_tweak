@@ -5,7 +5,7 @@
 
 @protocol WCPayOfflineEnableCgiDelegate;
 
-@interface WCPayOfflineEnableCgi
+@interface WCPayOfflineEnableCgi : NSObject
 {
     id <WCPayOfflineEnableCgiDelegate> _cgiDelegate;
 }

@@ -5,7 +5,7 @@
 
 @class EcsJumpHtml5Info, EcsJumpLiteAppInfo, EcsJumpMiniAppInfo, EcsJumpNativeInfo;
 
-@interface EcsGiftJumpInfo
+@interface EcsGiftJumpInfo : NSObject
 {
     unsigned int _jumpBizType;
     EcsJumpMiniAppInfo *_miniAppInfo;

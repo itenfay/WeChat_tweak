@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, WCSessionDSLExecuter, WCSessionFlowConfiger, WCSessionFlowSessionInfo, WCSessionFlowStatItem;
 
-@interface WCSessionFlowMgr
+@interface WCSessionFlowMgr : NSObject
 {
     WCSessionFlowStatItem *sessionFlowStatItem;
     unsigned int pId;

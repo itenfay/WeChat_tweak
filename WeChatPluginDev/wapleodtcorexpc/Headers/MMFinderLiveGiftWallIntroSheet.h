@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, MMWebImageView, NSString, UIImageView, UIScrollView, UIView;
 @protocol MMFinderLiveGiftWallIntroSheetDelegate;
 
-@interface MMFinderLiveGiftWallIntroSheet
+@interface MMFinderLiveGiftWallIntroSheet : NSObject
 {
     int _showSource;
     MMFinderLiveTaskId *_taskId;

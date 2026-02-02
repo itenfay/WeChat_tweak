@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _ZZTableViewChainModel
+@interface _ZZTableViewChainModel : NSObject
 {
 }
 

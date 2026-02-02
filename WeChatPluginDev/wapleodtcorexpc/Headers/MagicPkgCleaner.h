@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MagicPkgCleaner
+@interface MagicPkgCleaner : NSObject
 {
 }
 

@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMUIActivityIndicatorView, NFCCardTipsUIViewData, UIButton, UIImageView, UILabel, UIView, WCPayWebImageView;
 @protocol WCPayNFCCardTipsViewControllerDelegate;
 
-@interface WCPayNFCCardTipsViewController
+@interface WCPayNFCCardTipsViewController : NSObject
 {
     _Bool _needCheckTime;
     int _currentCountDownSec;

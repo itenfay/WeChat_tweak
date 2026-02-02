@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, UIFont;
 
-@interface BTRecommendMsgCellViewModel
+@interface BTRecommendMsgCellViewModel : NSObject
 {
     NSMutableArray *_signatureLabelStyles;
     NSMutableArray *_appMsgTitleLabelStyles;

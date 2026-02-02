@@ -5,7 +5,7 @@
 
 @class CXCallObserver, NSString;
 
-@interface SysCallCheck
+@interface SysCallCheck : NSObject
 {
     _Bool mIsNeedRestartAudioTalk;
     _Bool mIsInterrupting;

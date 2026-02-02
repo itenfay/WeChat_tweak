@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EditImageIntialView, EditVideoLogicItem, MMAsset, MMAssetSelectCheckButton, MMAssetSelectedCollectionView, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MultiImageScrollView, NSMutableDictionary, NSString, UIButton, UIImageView, UILabel, UIView, VideoEncodeTask, WCFinderCreateCoordinator, WCFinderPreviewEditVideoCompositionTask, WCFinderSyncComposeResModel;
 @protocol MMImagePickerControlCenter, MMImagePreviewBrowserControllerDataSource, MMImagePreviewBrowserControllerDelegate;
 
-@interface MMImagePreviewBrowserController
+@interface MMImagePreviewBrowserController : NSObject
 {
     MMAssetSelectCheckButton *m_selectCheckButton;
     MultiImageScrollView *_pagingScrollView;

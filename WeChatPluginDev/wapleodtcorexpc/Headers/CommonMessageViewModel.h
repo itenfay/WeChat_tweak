@@ -5,7 +5,7 @@
 
 @class NSString, PatRevokeTipsView;
 
-@interface CommonMessageViewModel
+@interface CommonMessageViewModel : NSObject
 {
     unsigned long long m_bgBubbleType;
     unsigned long long m_maskBubbleType;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IntelligentMsgImgResultItem
+@interface IntelligentMsgImgResultItem : NSObject
 {
     unsigned int _m_searchType;
     NSString *_m_labelName;

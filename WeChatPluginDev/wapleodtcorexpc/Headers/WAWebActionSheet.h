@@ -6,7 +6,7 @@
 @class NSMutableArray, UIButton, UILabel, UIScrollView, UIView, WAWebViewController;
 @protocol WAWebActionSheetDelegate;
 
-@interface WAWebActionSheet
+@interface WAWebActionSheet : NSObject
 {
     UIScrollView *_containerView;
     NSMutableArray *_buttonArray;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableDictionary;
 
-@interface WCFinderTranslateCGI
+@interface WCFinderTranslateCGI : NSObject
 {
     NSArray *_translateInfoArray;
     NSMutableDictionary *_keyMap;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString, PackageResourceInfo_ProductBatchInfo, WCFinderDataItem;
 
-@interface WCFinderLiveRewardCGI
+@interface WCFinderLiveRewardCGI : NSObject
 {
     _Bool _comboFinished;
     unsigned int _rewardProductCount;

@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MMWebPrefetchDownloadTaskRequest
+@interface MMWebPrefetchDownloadTaskRequest : NSObject
 {
     _Bool _isUsingSingtonVM;
     unsigned int _requestId;

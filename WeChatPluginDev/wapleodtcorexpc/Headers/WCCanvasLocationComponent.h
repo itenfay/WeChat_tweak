@@ -5,7 +5,7 @@
 
 @class UIImageView, UILabel, UIView;
 
-@interface WCCanvasLocationComponent
+@interface WCCanvasLocationComponent : NSObject
 {
     UIImageView *_m_lbsIcon;
     UIImageView *_m_rightIcon;

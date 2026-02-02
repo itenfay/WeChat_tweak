@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface IntelligentClassificationData
+@interface IntelligentClassificationData : NSObject
 {
     unsigned int _classificationTime;
     NSArray *_arrClassificationItem;

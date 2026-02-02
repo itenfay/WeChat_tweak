@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderLiveNoticeInfo, MMFinderLiveFeedNoticeColumnView, MMFinderLiveMultiCouponForNoticeView, MMFinderLiveNoticeDetailPayView, MMLiveShopShelfDragBar, MMPaddingView, MMUIButton, MMUIImageView, MMUILabel, MMWebImageView, NSString, UILabel, UIScrollView, UIView, WCFinderContact, WCFinderHeadImageView;
 
-@interface MMFinderLiveFeedNoticeDetailView
+@interface MMFinderLiveFeedNoticeDetailView : NSObject
 {
     _Bool _isLive;
     _Bool _showHideButton;

@@ -5,7 +5,7 @@
 
 @class UILabel, UIView;
 
-@interface MMDetailDescriptionStyleTableViewCell
+@interface MMDetailDescriptionStyleTableViewCell : NSObject
 {
     _Bool _centerTitleIfNeeded;
     UILabel *_titleLabel;

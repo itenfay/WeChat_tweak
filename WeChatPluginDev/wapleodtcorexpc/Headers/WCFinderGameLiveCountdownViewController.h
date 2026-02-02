@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMLiveCountdownTipsView, NSString;
 @protocol WCFinderGameLiveCountdownViewControllerDelegate;
 
-@interface WCFinderGameLiveCountdownViewController
+@interface WCFinderGameLiveCountdownViewController : NSObject
 {
     CDUnknownBlockType _cancelCallback;
     CDUnknownBlockType _timeoutCallback;

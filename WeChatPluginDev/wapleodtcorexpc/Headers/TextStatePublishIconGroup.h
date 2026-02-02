@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface TextStatePublishIconGroup
+@interface TextStatePublishIconGroup : NSObject
 {
     NSMutableArray *_iconArray;
 }

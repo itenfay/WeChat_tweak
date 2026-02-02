@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCAppAuthAuthInfo
+@interface WCAppAuthAuthInfo : NSObject
 {
     unsigned int _allScopeState;
     unsigned int _isShowAllscope;

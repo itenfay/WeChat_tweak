@@ -5,7 +5,7 @@
 
 @class NSString, WCSetting;
 
-@interface WCCommonService
+@interface WCCommonService : NSObject
 {
     WCSetting *_setting;
 }

@@ -6,7 +6,7 @@
 @class MMLiveIconButton, MMWebImageView, NSString, UIImageView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView, WCFinderLiveFeedGenericCoverReportInfo, WCFinderLiveGenericFeedVM;
 @protocol WCFinderLiveHomePageNoticeCellDelegate;
 
-@interface WCFinderLiveHomePageNoticeCell
+@interface WCFinderLiveHomePageNoticeCell : NSObject
 {
     int _commentScene;
     id <WCFinderLiveHomePageNoticeCellDelegate> _delegate;

@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString, WAAppTaskVersionFallBackMarkItem;
 
-@interface WAAppTaskVersionFallBackMgr
+@interface WAAppTaskVersionFallBackMgr : NSObject
 {
     NSString *_appid;
     NSString *_username;

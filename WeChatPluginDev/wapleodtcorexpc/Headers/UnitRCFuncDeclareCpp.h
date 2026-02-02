@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface UnitRCFuncDeclareCpp
+@interface UnitRCFuncDeclareCpp : NSObject
 {
 }
 

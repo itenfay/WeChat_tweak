@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface WebRecordDB
+@interface WebRecordDB : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_webRecordTable;

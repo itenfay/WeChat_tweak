@@ -6,7 +6,7 @@
 @class MMFinderLiveShopShelfCoordinator, MMUIButton, MMUILabel, NSString;
 @protocol MMFinderLiveShopGoodsManageSectionHeaderViewDelegate;
 
-@interface MMFinderLiveShopGoodsManageSectionHeaderView
+@interface MMFinderLiveShopGoodsManageSectionHeaderView : NSObject
 {
     _Bool _shouldHideFlashSale;
     _Bool _shouldHideOthersExceptFlashSale;

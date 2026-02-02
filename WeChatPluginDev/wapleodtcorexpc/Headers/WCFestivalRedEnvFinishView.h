@@ -6,7 +6,7 @@
 @class NSDictionary, UIButton, UIImageView, UIView, WCRedEnvelopesControlData;
 @protocol WCFestivalRedEnvFinishViewDelegate;
 
-@interface WCFestivalRedEnvFinishView
+@interface WCFestivalRedEnvFinishView : NSObject
 {
     id <WCFestivalRedEnvFinishViewDelegate> m_delegate;
     UIImageView *m_backgroundView;

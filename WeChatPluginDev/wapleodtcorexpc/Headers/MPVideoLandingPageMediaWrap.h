@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MPVideoLandingPageMediaWrap
+@interface MPVideoLandingPageMediaWrap : NSObject
 {
     NSString *_url;
     NSString *_identifier;

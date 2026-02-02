@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface BTFinderItemCoverContainerView
+@interface BTFinderItemCoverContainerView : NSObject
 {
     _Bool _forceSetHighlight;
     UIView *_highlightView;

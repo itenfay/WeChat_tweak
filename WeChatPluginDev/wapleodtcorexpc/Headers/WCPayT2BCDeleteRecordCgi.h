@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCDeleteRecordCgiDelegate;
 
-@interface WCPayT2BCDeleteRecordCgi
+@interface WCPayT2BCDeleteRecordCgi : NSObject
 {
     id <WCPayT2BCDeleteRecordCgiDelegate> m_delegate;
 }

@@ -6,7 +6,7 @@
 @class NSString, TextStateSectionView, UIView;
 @protocol TextStateProfileCardContentViewDelegate;
 
-@interface TextStateProfileCardContentView
+@interface TextStateProfileCardContentView : NSObject
 {
     _Bool _showSameFriendDescription;
     _Bool _needsCreateOrUpdateLayout;

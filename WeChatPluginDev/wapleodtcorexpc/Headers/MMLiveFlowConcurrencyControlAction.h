@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
-@interface MMLiveFlowConcurrencyControlAction
+@interface MMLiveFlowConcurrencyControlAction : NSObject
 {
     unsigned long long _degreeOfParallelism;
     unsigned long long _currentExecutingCount;

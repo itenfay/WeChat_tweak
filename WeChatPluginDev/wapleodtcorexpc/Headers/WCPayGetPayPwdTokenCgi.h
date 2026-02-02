@@ -6,7 +6,7 @@
 @class NSString, TokeMess;
 @protocol WCPayGetPayPwdTokenCgiDelegate;
 
-@interface WCPayGetPayPwdTokenCgi
+@interface WCPayGetPayPwdTokenCgi : NSObject
 {
     NSString *_password;
     TokeMess *_tokenMess;

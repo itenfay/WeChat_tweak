@@ -6,7 +6,7 @@
 @class FinderMusicTopicInfo, MMUIButton, MMWebImageView, RichTextView, UILabel, UIView, WCFinderAuthInfoIconView, WCFinderDataItem;
 @protocol WCFinderMusicCardBriefViewDelegate;
 
-@interface WCFinderMusicCardBriefView
+@interface WCFinderMusicCardBriefView : NSObject
 {
     id <WCFinderMusicCardBriefViewDelegate> _delegate;
     MMUIButton *_joinButton;

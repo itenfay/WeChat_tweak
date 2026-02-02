@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString, UIView, VoipDescriptionButton;
 
-@interface VideoVoipCSCallerView
+@interface VideoVoipCSCallerView : NSObject
 {
     _Bool _m_hasHangup;
     unsigned int m_dotCountIncresement;

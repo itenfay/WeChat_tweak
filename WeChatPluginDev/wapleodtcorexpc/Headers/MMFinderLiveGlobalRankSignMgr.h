@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveTask, NSMutableDictionary, NSString;
 
-@interface MMFinderLiveGlobalRankSignMgr
+@interface MMFinderLiveGlobalRankSignMgr : NSObject
 {
     unsigned long long _currAnimatedRankSignCnt;
     NSMutableDictionary *_animatingRankSignDict;

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface _MMWebImageViewChainModel
+@interface _MMWebImageViewChainModel : NSObject
 {
 }
 

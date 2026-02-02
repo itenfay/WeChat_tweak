@@ -5,7 +5,7 @@
 
 @class FacingMember, UIImageView;
 
-@interface RSCreateRoomHeadImageView
+@interface RSCreateRoomHeadImageView : NSObject
 {
     UIImageView *m_statusView;
     FacingMember *m_facingMember;

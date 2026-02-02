@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, MAVVideoComposition, NSArray, VideoEncodeTask;
 
-@interface WCFinderPreviewEditVideoCompositionTask
+@interface WCFinderPreviewEditVideoCompositionTask : NSObject
 {
     _Bool _shouldUseMAVCompositionLib;
     _Bool _isPreCompressUpload;

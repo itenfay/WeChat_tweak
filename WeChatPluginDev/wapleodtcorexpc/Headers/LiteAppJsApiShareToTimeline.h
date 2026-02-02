@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableData, NSString, NSURLConnection;
 
-@interface LiteAppJsApiShareToTimeline
+@interface LiteAppJsApiShareToTimeline : NSObject
 {
     NSURLConnection *_m_connection;
     NSMutableData *_m_recData;

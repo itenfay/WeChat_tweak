@@ -5,7 +5,7 @@
 
 @class BTMissedSubsReaderItemViewModel, BTRichTextTagView, MMWebImageView;
 
-@interface BTMissedSubsReaderItemCell
+@interface BTMissedSubsReaderItemCell : NSObject
 {
     MMWebImageView *_coverImgView;
     BTRichTextTagView *_titleTextView;

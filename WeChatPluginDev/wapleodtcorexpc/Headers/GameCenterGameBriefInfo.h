@@ -5,7 +5,7 @@
 
 @class GameCenterLabelInfo, GameCenterLatestGameInfo, NSArray, NSString;
 
-@interface GameCenterGameBriefInfo
+@interface GameCenterGameBriefInfo : NSObject
 {
     _Bool _hasEnableChatRoom;
     unsigned int _tag;

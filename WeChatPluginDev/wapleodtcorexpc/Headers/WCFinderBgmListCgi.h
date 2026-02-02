@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderBgmListParams;
 
-@interface WCFinderBgmListCgi
+@interface WCFinderBgmListCgi : NSObject
 {
     WCFinderBgmListParams *_params;
     CDUnknownBlockType _successfulBlock;

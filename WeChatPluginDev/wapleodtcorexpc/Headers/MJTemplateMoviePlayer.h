@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, OMJMoviePlayer, UIView;
 
-@interface MJTemplateMoviePlayer
+@interface MJTemplateMoviePlayer : NSObject
 {
     _Bool _isAudioEnabled;
     int _loopCount;

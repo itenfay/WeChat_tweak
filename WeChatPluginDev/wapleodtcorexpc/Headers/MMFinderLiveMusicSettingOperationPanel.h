@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class MMFinderLiveMusicSettingOperationNavBar, MMFinderLiveMusicSettingOperationTableViewModel, MMFinderLiveMusicTableViewBottomEditingBar, MMFinderLiveMusicVolumnBar, MMFinderLiveTaskId, MMLiveMusicPlayLogic, MMTableView, MMUIActivityIndicatorView, MMUILabel, NSString, UIButton, UIImageView, UIView;
 @protocol MMFinderLiveMusicSettingOperationDelegate, MMFinderLiveMusicSettingReportDelegate;
 
-@interface MMFinderLiveMusicSettingOperationPanel
+@interface MMFinderLiveMusicSettingOperationPanel : NSObject
 {
     _Bool _needcheckSongOptSource;
     _Bool _isAutoPausing;

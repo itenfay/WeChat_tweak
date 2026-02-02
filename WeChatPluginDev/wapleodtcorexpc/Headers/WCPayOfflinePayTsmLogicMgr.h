@@ -5,7 +5,7 @@
 
 @class NSString, WxSmCertUtil;
 
-@interface WCPayOfflinePayTsmLogicMgr
+@interface WCPayOfflinePayTsmLogicMgr : NSObject
 {
     WxSmCertUtil *_smCertUtil;
 }

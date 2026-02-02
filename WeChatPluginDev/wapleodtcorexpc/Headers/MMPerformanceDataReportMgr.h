@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSString, Package;
 
-@interface MMPerformanceDataReportMgr
+@interface MMPerformanceDataReportMgr : NSObject
 {
     NSMutableDictionary *m_dicCostTimeItems;
     NSMutableDictionary *m_dicCostMemoryItems;

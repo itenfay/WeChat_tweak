@@ -5,7 +5,7 @@
 
 @class NSMutableArray;
 
-@interface FavMultiSelectToolView
+@interface FavMultiSelectToolView : NSObject
 {
     NSMutableArray *m_btnArray;
 }

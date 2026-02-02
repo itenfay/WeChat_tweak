@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NewWAWebSocketMgr
+@interface NewWAWebSocketMgr : NSObject
 {
     NSMutableDictionary *_dicAppID2WebSocketHandler;
     NSObject<OS_dispatch_queue> *_workerQueue;

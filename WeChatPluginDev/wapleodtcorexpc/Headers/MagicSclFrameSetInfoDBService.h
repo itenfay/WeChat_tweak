@@ -5,7 +5,7 @@
 
 @class NSString, WCTDatabase, WCTTable;
 
-@interface MagicSclFrameSetInfoDBService
+@interface MagicSclFrameSetInfoDBService : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_frameSetInfoTable;

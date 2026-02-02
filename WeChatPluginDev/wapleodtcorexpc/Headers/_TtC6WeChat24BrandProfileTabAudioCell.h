@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat24BrandProfileTabAudioCell
+@interface _TtC6WeChat24BrandProfileTabAudioCell : NSObject
 {
     MISSING_TYPE *coverView;
     MISSING_TYPE *titleLabel;

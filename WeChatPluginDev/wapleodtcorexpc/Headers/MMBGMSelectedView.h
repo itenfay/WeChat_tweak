@@ -6,7 +6,7 @@
 @class MMBGMPanelPublishContext, MMBGMSelectedBottomView, MMBGMSelectedConfig, MMBGMSelectedContentView, NSString;
 @protocol MMBGMSelectedViewDelegate;
 
-@interface MMBGMSelectedView
+@interface MMBGMSelectedView : NSObject
 {
     id <MMBGMSelectedViewDelegate> _delegate;
     MMBGMPanelPublishContext *_publishContext;

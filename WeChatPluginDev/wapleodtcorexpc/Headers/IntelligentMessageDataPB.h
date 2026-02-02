@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface IntelligentMessageDataPB
+@interface IntelligentMessageDataPB : NSObject
 {
     unsigned int _currentIntelligentMsgVersion;
     unsigned int _strartRepairIntelligentMsgCurrentVersion;

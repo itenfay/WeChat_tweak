@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveKtvGetSongSungListCGI
+@interface WCFinderLiveKtvGetSongSungListCGI : NSObject
 {
     _Bool _onlyMysong;
     unsigned int _scene;

@@ -5,7 +5,7 @@
 
 @protocol WCPayGPOperationCgiDelegate;
 
-@interface WCPayGPOperationCgi
+@interface WCPayGPOperationCgi : NSObject
 {
     id <WCPayGPOperationCgiDelegate> _cgiDelegate;
 }

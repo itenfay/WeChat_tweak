@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FTSExternalRouter, FTSVoiceSearchBarController, NSString, _TtC6WeChat14FTSSectionData;
 @protocol FTSResultPage;
 
-@interface FTSBaseSectionController
+@interface FTSBaseSectionController : NSObject
 {
     id <FTSResultPage> _resultPage;
     FTSVoiceSearchBarController *_ftsPresenter;

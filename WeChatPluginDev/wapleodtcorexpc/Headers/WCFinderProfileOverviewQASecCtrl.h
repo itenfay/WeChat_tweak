@@ -5,7 +5,7 @@
 
 @class FinderLiteAppParam, NSString, OpenLiteAppInfo, UIView, WCFinderLiteAppFixedEmbdaView;
 
-@interface WCFinderProfileOverviewQASecCtrl
+@interface WCFinderProfileOverviewQASecCtrl : NSObject
 {
     _Bool _needSaveCacheHeight;
     UIView *_maskView;

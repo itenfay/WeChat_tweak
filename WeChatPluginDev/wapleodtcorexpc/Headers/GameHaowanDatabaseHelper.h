@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface GameHaowanDatabaseHelper
+@interface GameHaowanDatabaseHelper : NSObject
 {
     WCTDatabase *_db;
     WCTTable *_postInfoTable;

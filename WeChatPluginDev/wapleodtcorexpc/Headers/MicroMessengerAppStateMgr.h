@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MicroMessengerAppStateMgr
+@interface MicroMessengerAppStateMgr : NSObject
 {
     _Bool _bForegroundActive;
     long long _lastResignActiveTime;

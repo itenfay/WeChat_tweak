@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString, WXGBackupDataInfo, WXGBackupDataMgr;
 @protocol OS_dispatch_queue;
 
-@interface WXGBackupBackupLogic
+@interface WXGBackupBackupLogic : NSObject
 {
     WXGBackupDataMgr *m_dataMgr;
     WXGBackupDataInfo *m_backupDataInfo;

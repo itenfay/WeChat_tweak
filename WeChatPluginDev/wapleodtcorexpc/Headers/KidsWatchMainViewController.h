@@ -6,7 +6,7 @@
 @class KidsWatchActionCardView, MMUILabel, NSString, RichTextView, SightIconView, UIImageView;
 @protocol KidsWatchMainViewControllerDelegate;
 
-@interface KidsWatchMainViewController
+@interface KidsWatchMainViewController : NSObject
 {
     MMUILabel *_titleLabel;
     KidsWatchActionCardView *_loginCardView;

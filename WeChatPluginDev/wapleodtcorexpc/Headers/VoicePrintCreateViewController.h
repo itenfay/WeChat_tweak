@@ -6,7 +6,7 @@
 @class NSString;
 @protocol VoicePrintCreateViewControllerDelegate;
 
-@interface VoicePrintCreateViewController
+@interface VoicePrintCreateViewController : NSObject
 {
     _Bool _recordButtonPressed;
     id <VoicePrintCreateViewControllerDelegate> _delegate;

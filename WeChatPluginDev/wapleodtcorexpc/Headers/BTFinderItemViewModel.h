@@ -5,7 +5,7 @@
 
 @class BTRecommendFinderData, NSString, UIColor;
 
-@interface BTFinderItemViewModel
+@interface BTFinderItemViewModel : NSObject
 {
     _Bool _isTitleUp;
     unsigned int _showRedPacketFlag;

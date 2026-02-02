@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface FavFileDetailViewController
+@interface FavFileDetailViewController : NSObject
 {
     unsigned int m_favId;
     _Bool _needReload;

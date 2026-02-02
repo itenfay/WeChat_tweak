@@ -6,7 +6,7 @@
 @class NSString;
 @protocol MMFinderLiveConnectMicPkPanelCellDelegate;
 
-@interface MMFinderLiveConnectMicPkPanelInviteAudienceCell
+@interface MMFinderLiveConnectMicPkPanelInviteAudienceCell : NSObject
 {
     id <MMFinderLiveConnectMicPkPanelCellDelegate> cellDelegate;
 }

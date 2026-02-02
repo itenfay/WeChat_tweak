@@ -6,7 +6,7 @@
 @class ForwardMessageLogicController, GetSearchShareResponse_SearchShareContext, NSDictionary, NSString, WCTopicSearchActionLogic, WCTopicSearchContext;
 @protocol WCTopicSearchViewControllerDelegate;
 
-@interface WCTopicSearchViewController
+@interface WCTopicSearchViewController : NSObject
 {
     _Bool _hasEndTranscationInVC;
     id <WCTopicSearchViewControllerDelegate> _delegate;

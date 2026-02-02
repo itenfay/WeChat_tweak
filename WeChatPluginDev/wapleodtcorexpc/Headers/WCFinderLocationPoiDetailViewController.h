@@ -6,7 +6,7 @@
 @class CALayer, FavoritesItem, ForwardMessageLogicController, MMLocatingPoiDataLogic, MMLocationPoiDetailModel, MMLocationPoiHeadView, NSMutableDictionary, NSString, POIInfo, TakeCarServiceDataLogic, UIScreenEdgePanGestureRecognizer, UIView, WCFinderFeedFlowView, WCFinderLocationPoiDetailDelegateObj, WCFinderPOIParamsModel, WCFinderPOIRelatedStreamViewModel, WCFinderPoiBasicInfo, WCFinderPoiHeadView, WCFinderStreamProfileDragBarView, WCFinderTabPageView;
 @protocol WCFinderLocationPoiDetailViewDelegate;
 
-@interface WCFinderLocationPoiDetailViewController
+@interface WCFinderLocationPoiDetailViewController : NSObject
 {
     MMLocationPoiDetailModel *_poiDetailModel;
     WCFinderPOIParamsModel *_paramsModel;

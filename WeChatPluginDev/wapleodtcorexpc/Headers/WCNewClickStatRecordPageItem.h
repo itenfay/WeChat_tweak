@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCNewClickStatRecordPageItem
+@interface WCNewClickStatRecordPageItem : NSObject
 {
     unsigned int pageAction;
     unsigned int timeStamp;

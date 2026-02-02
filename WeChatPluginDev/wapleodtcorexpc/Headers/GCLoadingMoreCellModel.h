@@ -6,7 +6,7 @@
 @class UIView;
 @protocol GCLoadMoreProtocol, GCLoadingViewProtocol;
 
-@interface GCLoadingMoreCellModel
+@interface GCLoadingMoreCellModel : NSObject
 {
     _Bool _isLoading;
     id <GCLoadMoreProtocol> _loadMoreDelegate;

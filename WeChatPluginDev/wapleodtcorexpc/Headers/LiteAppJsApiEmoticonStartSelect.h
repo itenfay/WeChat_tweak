@@ -5,7 +5,7 @@
 
 @class LiteAppJsApiCallback, NSString, UIViewController;
 
-@interface LiteAppJsApiEmoticonStartSelect
+@interface LiteAppJsApiEmoticonStartSelect : NSObject
 {
     LiteAppJsApiCallback *_callBack;
     UIViewController *_controller;

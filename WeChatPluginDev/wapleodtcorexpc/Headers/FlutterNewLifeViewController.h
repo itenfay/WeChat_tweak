@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TingFlutterCommentInputController;
 
-@interface FlutterNewLifeViewController
+@interface FlutterNewLifeViewController : NSObject
 {
     TingFlutterCommentInputController *_commentInputController;
 }

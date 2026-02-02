@@ -5,7 +5,7 @@
 
 @class CContactVerifyLogic, MMHDHeadImageView, MMTableView, NSArray, NSMutableArray, NSString, WCOutInviteFriendLogic, WCOutPhoneContact;
 
-@interface WCOutContactProfileViewController
+@interface WCOutContactProfileViewController : NSObject
 {
     WCOutPhoneContact *m_contact;
     MMTableView *m_tableView;

@@ -5,7 +5,7 @@
 
 @class FinderLiveVotingInfo, UIScrollView;
 
-@interface MMFinderLiveVoteHistoryDetailViewController
+@interface MMFinderLiveVoteHistoryDetailViewController : NSObject
 {
     FinderLiveVotingInfo *_votingInfo;
     UIScrollView *_scrollView;

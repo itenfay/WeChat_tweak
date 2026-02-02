@@ -6,7 +6,7 @@
 @class MMLiveCommentView, MMLiveConnectedMicAudienceView, MMLiveGradientView, MMLiveOnlineStateView, NSString;
 @protocol MMLiveOperationViewDelegate, MMLiveOperationViewUIDelegate, MMUIViewControllerDelegate;
 
-@interface MMLiveOperationView
+@interface MMLiveOperationView : NSObject
 {
     _Bool _isLiveNameEdited;
     _Bool _isAnchor;

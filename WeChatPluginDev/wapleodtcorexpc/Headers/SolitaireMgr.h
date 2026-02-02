@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSMutableDictionary, NSMutableSet, NSObject, NSString, SolitaireAnalysiser;
 @protocol OS_dispatch_queue;
 
-@interface SolitaireMgr
+@interface SolitaireMgr : NSObject
 {
     NSMutableDictionary *_dicSessionHandlers;
     NSMutableDictionary *_dicFoldInfo;

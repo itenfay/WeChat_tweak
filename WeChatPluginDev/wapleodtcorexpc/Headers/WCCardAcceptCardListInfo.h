@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface WCCardAcceptCardListInfo
+@interface WCCardAcceptCardListInfo : NSObject
 {
     unsigned int _fromScene;
     unsigned int _statScene;

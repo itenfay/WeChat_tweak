@@ -5,7 +5,7 @@
 
 @class BrandNotificationCellViewModel, CALayer, MMHeadImageView, MMUILabel, RichTextView;
 
-@interface BrandNotificationCellView
+@interface BrandNotificationCellView : NSObject
 {
     BrandNotificationCellViewModel *_viewModel;
     RichTextView *_messageLabel;

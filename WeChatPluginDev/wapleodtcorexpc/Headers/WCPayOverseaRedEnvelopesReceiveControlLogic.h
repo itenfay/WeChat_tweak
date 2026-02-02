@@ -5,7 +5,7 @@
 
 @class ForeignHbDetailResp, ForeignHbOpenResp, ForeignHbReceiveResp, NSString, WCPayInterceptWinLogic, WCPayJumpRemindControlLogic, WCPayOverseaRedEnvelopesDetailCgi, WCPayOverseaRedEnvelopesOpenCgi, WCPayOverseaRedEnvelopesReceiveCgi, WCRedEnvelopesReceiveHomeView;
 
-@interface WCPayOverseaRedEnvelopesReceiveControlLogic
+@interface WCPayOverseaRedEnvelopesReceiveControlLogic : NSObject
 {
     int m_scene;
     WCPayJumpRemindControlLogic *_m_jumpRemindControlLogic;

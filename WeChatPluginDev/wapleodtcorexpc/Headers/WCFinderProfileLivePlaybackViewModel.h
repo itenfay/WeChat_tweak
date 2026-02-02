@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSString, WCFinderFeedArray, WCFinderProfileLiveDataFetcher, WCFinderStreamLoadingState;
 @protocol WCFinderProfileLivePlaybackViewModelDelegate, WCFinderProfileLivePlaybackViewModelShowTabDelegate;
 
-@interface WCFinderProfileLivePlaybackViewModel
+@interface WCFinderProfileLivePlaybackViewModel : NSObject
 {
     _Bool _isFetchingData;
     int _commentScene;

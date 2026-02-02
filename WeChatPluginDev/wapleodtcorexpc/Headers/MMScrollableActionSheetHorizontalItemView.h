@@ -6,7 +6,7 @@
 @class MMScrollableActionSheetHorizontalItemInfo, UIButton, UIImageView, UILabel;
 @protocol MMScrollableActionSheetHorizontalItemViewDelegate;
 
-@interface MMScrollableActionSheetHorizontalItemView
+@interface MMScrollableActionSheetHorizontalItemView : NSObject
 {
     MMScrollableActionSheetHorizontalItemInfo *_itemInfo;
     UIButton *_iconButton;

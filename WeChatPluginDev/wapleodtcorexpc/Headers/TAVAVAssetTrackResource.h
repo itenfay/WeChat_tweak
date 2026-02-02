@@ -5,7 +5,7 @@
 
 @class AVAsset;
 
-@interface TAVAVAssetTrackResource
+@interface TAVAVAssetTrackResource : NSObject
 {
     AVAsset *_asset;
 }

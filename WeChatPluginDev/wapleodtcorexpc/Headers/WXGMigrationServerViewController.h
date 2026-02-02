@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView, MMUILabel, NSString, UIImage, UIImageView, UILabel;
 
-@interface WXGMigrationServerViewController
+@interface WXGMigrationServerViewController : NSObject
 {
     UIImageView *m_qrCodeImageView;
     UILabel *m_qrCodeTipLabel;

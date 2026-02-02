@@ -6,7 +6,7 @@
 @class NSString, WCPayBioPayV2GetChallengeCgi, WCPayBioPayV2UpdateAuthKeyCgi;
 @protocol WCPayOpenTouchIDAuthLogicDelegate;
 
-@interface WCPayOpenTouchIDAuthLogic
+@interface WCPayOpenTouchIDAuthLogic : NSObject
 {
     unsigned long long _action;
     id <WCPayOpenTouchIDAuthLogicDelegate> _m_delegate;

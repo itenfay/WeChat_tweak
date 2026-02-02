@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class CameraScanBlurEffectView, CameraScanGoodsPinView, NSMutableArray, UIImageView, UIView;
 @protocol CameraScanGoodsContentViewDelegate, CameraScanGoodsMarkDotViewInterface;
 
-@interface CameraScanGoodsContentView
+@interface CameraScanGoodsContentView : NSObject
 {
     _Bool _bShouldHideCaptureView;
     UIView<CameraScanGoodsMarkDotViewInterface> *_markDotView;

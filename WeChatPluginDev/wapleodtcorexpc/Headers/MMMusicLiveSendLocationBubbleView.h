@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface MMMusicLiveSendLocationBubbleView
+@interface MMMusicLiveSendLocationBubbleView : NSObject
 {
     MMUILabel *_hintLabel;
     double _triangleRightMargin;

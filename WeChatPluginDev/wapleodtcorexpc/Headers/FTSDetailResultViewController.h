@@ -6,7 +6,7 @@
 @class FTSBaseSectionController, FTSVoiceSearchBarController, MMTListAdapter, MMTableView, NSArray, NSString;
 @protocol FTSDetailResultViewControllerDelegate;
 
-@interface FTSDetailResultViewController
+@interface FTSDetailResultViewController : NSObject
 {
     FTSVoiceSearchBarController *_ftsPresenter;
     id <FTSDetailResultViewControllerDelegate> _delegate;

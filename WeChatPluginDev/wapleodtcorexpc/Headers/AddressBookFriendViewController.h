@@ -5,7 +5,7 @@
 
 @class AddressBookFriend, CContactVerifyLogic, CContactVerifyPreCheckBusinessLogic, ContactInfoViewController, MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UITextField, WCSearcher;
 
-@interface AddressBookFriendViewController
+@interface AddressBookFriendViewController : NSObject
 {
     MMTableView *m_tableView;
     UITextField *m_searchTextField;

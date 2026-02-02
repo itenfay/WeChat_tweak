@@ -6,7 +6,7 @@
 @class NSString, UITableView;
 @protocol MMFinderLiveConnectMicIncomingAudienceSettingsPanelDelegate;
 
-@interface MMFinderLiveConnectMicIncomingAudienceSettingsPanel
+@interface MMFinderLiveConnectMicIncomingAudienceSettingsPanel : NSObject
 {
     _Bool _canAutoConnect;
     id <MMFinderLiveConnectMicIncomingAudienceSettingsPanelDelegate> _delegate;

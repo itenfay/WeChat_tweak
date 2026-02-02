@@ -5,7 +5,7 @@
 
 @class MMMusicLyricVcCalculator, NSString;
 
-@interface MMMusicListenLyricsViewController
+@interface MMMusicListenLyricsViewController : NSObject
 {
     MMMusicLyricVcCalculator *m_lyricCalcuator;
     long long _curState;

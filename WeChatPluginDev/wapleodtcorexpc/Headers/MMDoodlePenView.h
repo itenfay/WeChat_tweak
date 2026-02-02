@@ -5,7 +5,7 @@
 
 @class UIButton;
 
-@interface MMDoodlePenView
+@interface MMDoodlePenView : NSObject
 {
     UIButton *_closeButton;
 }

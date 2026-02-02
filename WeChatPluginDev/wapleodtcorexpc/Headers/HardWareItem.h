@@ -5,7 +5,7 @@
 
 @class NSDictionary, NSString;
 
-@interface HardWareItem
+@interface HardWareItem : NSObject
 {
     unsigned int uiHardWareShowType;
     NSString *nsRankID;

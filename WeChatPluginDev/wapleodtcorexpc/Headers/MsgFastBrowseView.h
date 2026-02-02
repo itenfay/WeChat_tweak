@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, SimpleImgInfo, UILabel, UIView, WCTimeLineFooterView;
 @protocol MsgFastBrowseViewDelegate;
 
-@interface MsgFastBrowseView
+@interface MsgFastBrowseView : NSObject
 {
     SimpleImgInfo *m_curImgInfo;
     NSMutableArray *m_arrImgInfo;

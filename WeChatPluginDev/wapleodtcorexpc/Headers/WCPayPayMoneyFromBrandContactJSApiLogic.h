@@ -6,7 +6,7 @@
 @class JSEvent, NSString, WCPayPayMoneyFromOverseaH5WalletLogic, WCPayPayMoneyLogic;
 @protocol WCPayPayJSApiLogicParamDelegate;
 
-@interface WCPayPayMoneyFromBrandContactJSApiLogic
+@interface WCPayPayMoneyFromBrandContactJSApiLogic : NSObject
 {
     JSEvent *m_jsEvent;
     NSString *m_stepInURL;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
-@interface MMAssetForFLTSelectPhotoInfo
+@interface MMAssetForFLTSelectPhotoInfo : NSObject
 {
     NSString *_assetId;
     NSString *_assetPath;

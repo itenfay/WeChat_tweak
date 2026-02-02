@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVCaptureVideoPreviewLayer, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface WCCameraCapture
+@interface WCCameraCapture : NSObject
 {
     _Bool _isActive;
     _Bool _isAudioActive;

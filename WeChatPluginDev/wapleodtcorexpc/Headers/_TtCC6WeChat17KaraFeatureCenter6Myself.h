@@ -5,7 +5,7 @@
 
 @class MISSING_TYPE;
 
-@interface _TtCC6WeChat17KaraFeatureCenter6Myself
+@interface _TtCC6WeChat17KaraFeatureCenter6Myself : NSObject
 {
     MISSING_TYPE *_avatar;
 }

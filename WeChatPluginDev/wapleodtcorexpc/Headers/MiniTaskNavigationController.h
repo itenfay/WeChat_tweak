@@ -5,7 +5,7 @@
 
 @class MiniTaskNavEdgeGestureHandler, MiniTaskTransitionContext, MiniTaskTransitionHelper, MultiTaskItemPageBrowseInfo, MultiTaskPageActionInfo, NSString;
 
-@interface MiniTaskNavigationController
+@interface MiniTaskNavigationController : NSObject
 {
     _Bool _shouldAutoRotate;
     MiniTaskTransitionContext *_transitionContext;

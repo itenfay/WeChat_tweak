@@ -6,7 +6,7 @@
 @class BusiF2FGetFavorReq;
 @protocol WCPayBusiF2FGetFavorCgiDelegate;
 
-@interface WCPayBusiF2FGetFavorCgi
+@interface WCPayBusiF2FGetFavorCgi : NSObject
 {
     _Bool _m_isLoading;
     id <WCPayBusiF2FGetFavorCgiDelegate> _m_cgiDelegate;

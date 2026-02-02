@@ -6,7 +6,7 @@
 @class ContentReddotBubbleView, HbEnvelopSource, MMBadgeView, MMLiteAppViewController, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIButton, UICollectionView, UILabel, UIScrollView, UIView, WCRedEnvelopeSelectSkinFlowView, WCRedEnvelopesReceiveHomeTemplateView, WCRedEnvelopesSelectSkinFlowLayout, WCRedEnvelopesSelectSkinRedDotInfo;
 @protocol WCRedEnvelopesSelectSkinViewControllerDelegate;
 
-@interface WCRedEnvelopesSelectSkinViewController
+@interface WCRedEnvelopesSelectSkinViewController : NSObject
 {
     id <WCRedEnvelopesSelectSkinViewControllerDelegate> m_delegate;
     _Bool m_bDidBack;

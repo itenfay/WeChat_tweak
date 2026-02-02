@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AVAsset, AVAssetReader, AVAssetReaderOutput, AVVideoComposition, NSMutableArray, NSObject;
 @protocol OS_dispatch_queue;
 
-@interface TAVAVAssetReverseImageResource
+@interface TAVAVAssetReverseImageResource : NSObject
 {
     _Bool _isPreloading;
     AVAsset *_asset;

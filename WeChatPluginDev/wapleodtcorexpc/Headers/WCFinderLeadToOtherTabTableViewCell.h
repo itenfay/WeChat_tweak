@@ -6,7 +6,7 @@
 @class FinderObjectPlaceHolderInfo, NSString, RichTextView, UIImageView, UIView, WCFinderAuthInfoIconView, WCFinderCustomImageRichTextView, WCFinderFeedContentVM, WCFinderGradientView, WCFinderHeadImageView, WCFinderSimplePlayerView;
 @protocol WCFinderLeadToOtherTabTableViewCellDelegate;
 
-@interface WCFinderLeadToOtherTabTableViewCell
+@interface WCFinderLeadToOtherTabTableViewCell : NSObject
 {
     id <WCFinderLeadToOtherTabTableViewCellDelegate> _delegate;
     WCFinderFeedContentVM *_playableContentVM;

@@ -5,7 +5,7 @@
 
 @class FinderLiveNoticeInfo, MMFinderLiveBuyTicketHandle, NSString, UIButton, UIScrollView, UIView, WCFinderAnimationLoadingView, WCFinderCollectionHalfScreenViewController, WCFinderInvalidTipsView, WCFinderLiveAudienceNoticeReporter, WCFinderMaskButton, WCFinderMemberShipBlockView, WCFinderMemberShipConsumeViewModel, WCFinderMemberShipIntroduceReporter, WCFinderMemberShipZoneIntroduceHeader, WCFinderMembershipIntroduceViewModel, WCFinderMembershipPaymentBottomView;
 
-@interface WCFinderMembershipIntroduceViewController
+@interface WCFinderMembershipIntroduceViewController : NSObject
 {
     UIScrollView *_containerView;
     WCFinderMembershipPaymentBottomView *_payBottomView;

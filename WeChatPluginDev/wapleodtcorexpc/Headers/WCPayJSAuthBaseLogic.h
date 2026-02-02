@@ -5,7 +5,7 @@
 
 @class JSEvent, NSDictionary;
 
-@interface WCPayJSAuthBaseLogic
+@interface WCPayJSAuthBaseLogic : NSObject
 {
     _Bool _hideLoading;
     JSEvent *_m_jsEvent;

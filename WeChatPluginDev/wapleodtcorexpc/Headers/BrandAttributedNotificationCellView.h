@@ -5,7 +5,7 @@
 
 @class BrandAttributedNotificationCellViewModel, NSMutableArray;
 
-@interface BrandAttributedNotificationCellView
+@interface BrandAttributedNotificationCellView : NSObject
 {
     NSMutableArray *m_attributedMsgLabelArr;
 }

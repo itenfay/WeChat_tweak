@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderLiveConcertTicketStyleSwitchCgi
+@interface WCFinderLiveConcertTicketStyleSwitchCgi : NSObject
 {
     NSString *_activityId;
     NSString *_resourceId;

@@ -5,7 +5,7 @@
 
 @class NSArray, QPolyline, QText, UIColor;
 
-@interface QPolylineView
+@interface QPolylineView : NSObject
 {
     _Bool _disableCollideLabel;
     double _borderWidth;

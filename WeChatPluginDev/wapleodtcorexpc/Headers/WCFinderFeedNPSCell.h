@@ -6,7 +6,7 @@
 @class FinderNpsSurveyQuestion, NPSFlutterVC, WCFinderFeedContentVM;
 @protocol WCFinderFeedNPSCellDelegate, WCFinderNpsSurveyContextInfoDelegate;
 
-@interface WCFinderFeedNPSCell
+@interface WCFinderFeedNPSCell : NSObject
 {
     id <WCFinderFeedNPSCellDelegate> _delegate;
     id <WCFinderNpsSurveyContextInfoDelegate> _npsDelegate;

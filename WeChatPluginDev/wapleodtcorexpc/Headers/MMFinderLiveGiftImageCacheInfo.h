@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface MMFinderLiveGiftImageCacheInfo
+@interface MMFinderLiveGiftImageCacheInfo : NSObject
 {
     UIImage *_imageObj;
 }

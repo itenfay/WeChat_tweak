@@ -5,7 +5,7 @@
 
 @class BaseMessageViewModel, CMessageWrap, FavoritesItemDataField, NSArray, NSString;
 
-@interface MsgRecordDataWrap
+@interface MsgRecordDataWrap : NSObject
 {
     CMessageWrap *m_parent;
     FavoritesItemDataField *m_dataItem;

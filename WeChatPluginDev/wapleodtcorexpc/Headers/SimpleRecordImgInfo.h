@@ -5,7 +5,7 @@
 
 @class CMessageWrap, FavoritesItemDataField;
 
-@interface SimpleRecordImgInfo
+@interface SimpleRecordImgInfo : NSObject
 {
     FavoritesItemDataField *_m_recordData;
     CMessageWrap *_m_msgWrap;

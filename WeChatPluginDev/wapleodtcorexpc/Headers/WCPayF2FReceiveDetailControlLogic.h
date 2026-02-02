@@ -5,7 +5,7 @@
 
 @class NSString, WCPayF2FAnnouncementCgi, WCPayF2FDeleteRecordCgi, WCPayF2FGetReceiveHistoryCgi, WCPayF2FReceiveHistoryResponse, WCPayGetF2FReceiveDetailDataCgi;
 
-@interface WCPayF2FReceiveDetailControlLogic
+@interface WCPayF2FReceiveDetailControlLogic : NSObject
 {
     _Bool _bIsBackFromRootDetailViewController;
     _Bool _bNeedUpdateHistoryList;

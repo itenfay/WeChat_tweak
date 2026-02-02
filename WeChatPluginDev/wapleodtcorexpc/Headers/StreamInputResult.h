@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary;
 
-@interface StreamInputResult
+@interface StreamInputResult : NSObject
 {
     NSMutableDictionary *_results;
 }

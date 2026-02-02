@@ -5,7 +5,7 @@
 
 @class AppPatMessageRefreshContext, NSArray, PatMessageWrap;
 
-@interface AppPatMessageViewModel
+@interface AppPatMessageViewModel : NSObject
 {
     _Bool _needFold;
     NSArray *_patStylesArray;

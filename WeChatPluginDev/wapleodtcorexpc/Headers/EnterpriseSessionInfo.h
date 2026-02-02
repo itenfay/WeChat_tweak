@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EnterpriseSessionInfo
+@interface EnterpriseSessionInfo : NSObject
 {
     unsigned int atMeCount;
     unsigned int newUnreadCount;

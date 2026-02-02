@@ -5,7 +5,7 @@
 
 @class BTVideoItemCellAutoPlayReporter, BTVideoItemCellAutoPlayerView, NSString;
 
-@interface BTReaderStyleRecommendVideoCellViewModel
+@interface BTReaderStyleRecommendVideoCellViewModel : NSObject
 {
     _Bool m_gotUrl;
     _Bool m_isGettingUrl;

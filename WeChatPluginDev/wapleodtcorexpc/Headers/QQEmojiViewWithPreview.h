@@ -5,7 +5,7 @@
 
 @class NSString, UIButton, UIImageView, UILabel;
 
-@interface QQEmojiViewWithPreview
+@interface QQEmojiViewWithPreview : NSObject
 {
     _Bool _needReloadPreview;
     UIImageView *_m_emojiImageView;

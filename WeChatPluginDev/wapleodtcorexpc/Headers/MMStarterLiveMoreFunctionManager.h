@@ -5,7 +5,7 @@
 
 @class WCFinderLiveStarterReporter;
 
-@interface MMStarterLiveMoreFunctionManager
+@interface MMStarterLiveMoreFunctionManager : NSObject
 {
     WCFinderLiveStarterReporter *_starterReporter;
 }

@@ -5,7 +5,7 @@
 
 @class WAEJBindingCanvasContextWebGLBase;
 
-@interface WAEJBindingWebGLExtension
+@interface WAEJBindingWebGLExtension : NSObject
 {
     WAEJBindingCanvasContextWebGLBase *webglContext;
 }

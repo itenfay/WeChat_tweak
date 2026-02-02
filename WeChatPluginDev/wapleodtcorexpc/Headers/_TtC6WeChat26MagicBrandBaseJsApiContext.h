@@ -6,7 +6,7 @@
 @class MISSING_TYPE;
 @protocol _TtP6WeChat30MagicBrandJsApiContextDelegate_;
 
-@interface _TtC6WeChat26MagicBrandBaseJsApiContext
+@interface _TtC6WeChat26MagicBrandBaseJsApiContext : NSObject
 {
     MISSING_TYPE *brandDelegate;
     MISSING_TYPE *viewHolderContainer;

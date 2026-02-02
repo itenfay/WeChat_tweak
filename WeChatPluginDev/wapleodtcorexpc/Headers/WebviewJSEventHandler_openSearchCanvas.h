@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasDynamicDataLoader;
 
-@interface WebviewJSEventHandler_openSearchCanvas
+@interface WebviewJSEventHandler_openSearchCanvas : NSObject
 {
     WCCanvasDynamicDataLoader *_dataLoader;
 }

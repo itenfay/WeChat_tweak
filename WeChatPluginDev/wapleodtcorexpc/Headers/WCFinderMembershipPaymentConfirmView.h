@@ -6,7 +6,7 @@
 @class MMHeadImageView, MMUIButton, MMUIView, UILabel, WCFinderMaskButton;
 @protocol WCFinderMembershipPaymentConfirmViewDelegate;
 
-@interface WCFinderMembershipPaymentConfirmView
+@interface WCFinderMembershipPaymentConfirmView : NSObject
 {
     id <WCFinderMembershipPaymentConfirmViewDelegate> _delegate;
     WCFinderMaskButton *_confirmButton;

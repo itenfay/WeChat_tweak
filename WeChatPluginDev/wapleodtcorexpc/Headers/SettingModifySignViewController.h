@@ -6,7 +6,7 @@
 @class MMTableView, NSString, UILabel, UITextView;
 @protocol settingModifySignDelegate;
 
-@interface SettingModifySignViewController
+@interface SettingModifySignViewController : NSObject
 {
     UITextView *m_textView;
     NSString *m_nsLastSign;

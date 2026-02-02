@@ -6,7 +6,7 @@
 @class MJComposingPagePanelViewModel, MJPageView, NSString, UIView;
 @protocol MJComposingPagePanelViewDelegate;
 
-@interface MJComposingPagePanelView
+@interface MJComposingPagePanelView : NSObject
 {
     id <MJComposingPagePanelViewDelegate> _delegate;
     MJPageView *_pageView;

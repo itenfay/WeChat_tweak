@@ -5,7 +5,7 @@
 
 @class MMTableView, MMVcardItem, NSString;
 
-@interface VcardViewController
+@interface VcardViewController : NSObject
 {
     MMVcardItem *_vcardItem;
     MMTableView *_tableView;

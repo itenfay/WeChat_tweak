@@ -6,7 +6,7 @@
 @class CContact, NSArray, NSData, NSDictionary, NSMutableArray, NSString, SessionSelectController, SharePreConfirmSheetView, SharePreConfirmView, UIView, WWKMsgForwarder;
 @protocol ForwardMessageLogicDelegate;
 
-@interface ForwardMessageLogicController
+@interface ForwardMessageLogicController : NSObject
 {
     id <ForwardMessageLogicDelegate> m_delegate;
     NSMutableArray *m_msgList;

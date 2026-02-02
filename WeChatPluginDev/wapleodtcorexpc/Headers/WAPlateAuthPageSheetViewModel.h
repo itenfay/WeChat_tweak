@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WAPlateAuthorizePageSheet, WAPlateAuthorizeSheetInfo;
 
-@interface WAPlateAuthPageSheetViewModel
+@interface WAPlateAuthPageSheetViewModel : NSObject
 {
     CDUnknownBlockType _scrollToPlateAction;
 }

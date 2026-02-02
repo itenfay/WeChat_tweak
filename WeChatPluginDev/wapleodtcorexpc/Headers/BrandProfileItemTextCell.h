@@ -5,7 +5,7 @@
 
 @class BrandProfileItemTextViewModel, MMUIButton, MMURLHandler, NSString, RichTextView, WAAppIdToUsernameTransfer;
 
-@interface BrandProfileItemTextCell
+@interface BrandProfileItemTextCell : NSObject
 {
     RichTextView *_textView;
     MMUIButton *_bottomButton;

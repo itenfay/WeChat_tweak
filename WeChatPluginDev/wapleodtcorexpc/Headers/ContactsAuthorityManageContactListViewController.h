@@ -5,7 +5,7 @@
 
 @class ContactTagData, NSString;
 
-@interface ContactsAuthorityManageContactListViewController
+@interface ContactsAuthorityManageContactListViewController : NSObject
 {
     ContactTagData *_m_tagData;
 }

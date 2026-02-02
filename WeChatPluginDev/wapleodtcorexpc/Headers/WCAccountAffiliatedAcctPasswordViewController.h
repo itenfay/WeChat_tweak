@@ -6,7 +6,7 @@
 @class MMUILabel, NSString, UIButton, WCAccountTextFieldItem;
 @protocol WCAccountAffiliatedAcctDelegate;
 
-@interface WCAccountAffiliatedAcctPasswordViewController
+@interface WCAccountAffiliatedAcctPasswordViewController : NSObject
 {
     id <WCAccountAffiliatedAcctDelegate> _delegate;
     MMUILabel *_titleLabel;

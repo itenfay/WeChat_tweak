@@ -6,7 +6,7 @@
 @class MMTableViewInfo, NSString, UIView, WCCanvasComponentItem;
 @protocol WCCanvasActionSheetDelegate, WCCanvasComponentDelegate;
 
-@interface WCCanvasActionSheet
+@interface WCCanvasActionSheet : NSObject
 {
     UIView *_backgroundMask;
     UIView *_headerView;

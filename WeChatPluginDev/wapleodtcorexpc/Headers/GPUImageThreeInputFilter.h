@@ -5,7 +5,7 @@
 
 @class GPUImageFramebuffer;
 
-@interface GPUImageThreeInputFilter
+@interface GPUImageThreeInputFilter : NSObject
 {
     GPUImageFramebuffer *thirdInputFramebuffer;
     int filterThirdTextureCoordinateAttribute;

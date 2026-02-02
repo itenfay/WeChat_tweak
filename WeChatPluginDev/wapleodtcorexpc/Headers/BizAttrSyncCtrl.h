@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BizAttrSyncCtrl
+@interface BizAttrSyncCtrl : NSObject
 {
     unsigned long long _requestInterval;
 }

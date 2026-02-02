@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderFollowCGIRequestParams;
 
-@interface WCFinderFollowCGI
+@interface WCFinderFollowCGI : NSObject
 {
     unsigned int _enterType;
     unsigned int _enhanceFollowBtn;

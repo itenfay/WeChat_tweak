@@ -5,7 +5,7 @@
 
 @class FTSTalkerEntryInfo;
 
-@interface FTSTalkerEntrySectionController
+@interface FTSTalkerEntrySectionController : NSObject
 {
     FTSTalkerEntryInfo *_info;
 }

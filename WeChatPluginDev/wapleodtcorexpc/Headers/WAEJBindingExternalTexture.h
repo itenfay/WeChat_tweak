@@ -5,7 +5,7 @@
 
 @class NSString, WAEJTexture;
 
-@interface WAEJBindingExternalTexture
+@interface WAEJBindingExternalTexture : NSObject
 {
     int _viewId;
     NSString *_type;

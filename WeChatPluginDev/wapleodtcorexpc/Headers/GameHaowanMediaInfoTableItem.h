@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface GameHaowanMediaInfoTableItem
+@interface GameHaowanMediaInfoTableItem : NSObject
 {
     unsigned int _mediaType;
     int _uploadState;

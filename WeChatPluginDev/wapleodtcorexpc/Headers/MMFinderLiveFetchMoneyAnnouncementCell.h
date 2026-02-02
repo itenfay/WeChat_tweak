@@ -6,7 +6,7 @@
 @class MMFinderLiveFetchMoneyAnnouncementView, NSString;
 @protocol MMFinderLiveFetchMoneyAnnouncementCellDelegate;
 
-@interface MMFinderLiveFetchMoneyAnnouncementCell
+@interface MMFinderLiveFetchMoneyAnnouncementCell : NSObject
 {
     MMFinderLiveFetchMoneyAnnouncementView *_announcementView;
     id <MMFinderLiveFetchMoneyAnnouncementCellDelegate> _delegate;

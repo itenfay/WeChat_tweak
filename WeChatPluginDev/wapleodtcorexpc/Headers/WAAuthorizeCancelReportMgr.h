@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WAAuthorizeCancelReportMgr
+@interface WAAuthorizeCancelReportMgr : NSObject
 {
 }
 

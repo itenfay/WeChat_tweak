@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasComponentMusicItem
+@interface WCCanvasComponentMusicItem : NSObject
 {
     _Bool _isDarkColor;
     NSString *_voiceUrl;

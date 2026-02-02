@@ -6,7 +6,7 @@
 @class MMAcceptAgreementCommonHeadView, MMUIButton, MMUILabel, MMUIView, NSString, SettingModifyAliasLogic, UIButton, WCAgreementCheckBox;
 @protocol SettingModifyAliasViewControllerDelegate;
 
-@interface SettingModifyAliasMakeSurelViewController
+@interface SettingModifyAliasMakeSurelViewController : NSObject
 {
     UIButton *m_modifyAliasButton;
     WCAgreementCheckBox *m_agreementCheckBox;

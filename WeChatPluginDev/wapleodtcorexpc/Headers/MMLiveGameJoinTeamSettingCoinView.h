@@ -6,7 +6,7 @@
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveGameJoinTeamSettingCoinValueView, MMTableView, MMUIButton, MMUILabel, NSMutableArray, NSString, UIView;
 @protocol MMLiveGameJoinTeamSettingViewDelegate;
 
-@interface MMLiveGameJoinTeamSettingCoinView
+@interface MMLiveGameJoinTeamSettingCoinView : NSObject
 {
     id <MMLiveGameJoinTeamSettingViewDelegate> _operationDelegate;
     MMFinderLiveTaskId *_taskId;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString, UITableView;
 
-@interface SettingMigrationViewController
+@interface SettingMigrationViewController : NSObject
 {
     UITableView *_mainTableView;
     NSArray *_iconNameArray;

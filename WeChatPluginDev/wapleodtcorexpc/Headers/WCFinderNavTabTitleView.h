@@ -6,7 +6,7 @@
 @class NSMutableArray, UIView, WCFinderNavTabTitleViewLayout;
 @protocol WCFinderNavTabTitleViewDelegate;
 
-@interface WCFinderNavTabTitleView
+@interface WCFinderNavTabTitleView : NSObject
 {
     _Bool _autoAdjustSize;
     UIView *_container;

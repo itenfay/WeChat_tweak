@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BizRecentReadFooter, BizRecentReadTipsBar, GetTimelineSettingResp, MMTableView, MMUILabel, NSMutableArray, NSMutableSet, NSString, RichTextView;
 
-@interface BizTLRecentReadViewController
+@interface BizTLRecentReadViewController : NSObject
 {
     _Bool _hasLoadAllData;
     _Bool _loadLock;

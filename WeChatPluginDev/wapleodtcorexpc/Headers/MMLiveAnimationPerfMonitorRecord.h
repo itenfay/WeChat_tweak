@@ -5,7 +5,7 @@
 
 @class UIView;
 
-@interface MMLiveAnimationPerfMonitorRecord
+@interface MMLiveAnimationPerfMonitorRecord : NSObject
 {
     _Bool _isInfinity;
     float _animFrameRate;

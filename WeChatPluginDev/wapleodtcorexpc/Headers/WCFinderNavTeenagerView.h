@@ -6,7 +6,7 @@
 @class RichTextView, UIImageView;
 @protocol WCFinderNavTeenagerViewDelegate;
 
-@interface WCFinderNavTeenagerView
+@interface WCFinderNavTeenagerView : NSObject
 {
     double _maxWidth;
     UIImageView *_teenagerImageView;

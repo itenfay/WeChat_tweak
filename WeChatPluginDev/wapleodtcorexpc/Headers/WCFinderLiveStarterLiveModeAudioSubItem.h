@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderLiveStarterLiveModeAudioSubItem
+@interface WCFinderLiveStarterLiveModeAudioSubItem : NSObject
 {
     unsigned long long _audioSubType;
 }

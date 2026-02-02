@@ -5,7 +5,7 @@
 
 @protocol WCPayLQTAutoChargeModifyTimeCgiDelegate;
 
-@interface WCPayLQTAutoChargeModifyTimeCgi
+@interface WCPayLQTAutoChargeModifyTimeCgi : NSObject
 {
     id <WCPayLQTAutoChargeModifyTimeCgiDelegate> _cgiDelegate;
 }

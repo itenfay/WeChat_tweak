@@ -5,7 +5,7 @@
 
 @class CAGradientLayer, FinderLiveKtvPlayCountInfo, MMFinderLiveKTVBoardItem, MMFinderLiveKTVSongItem, MMFinderLiveTaskId, MMTableView, MMUIButton, MMUILabel, MMWebImageView, NSMutableArray, NSMutableSet, NSString, PAGView, UICollectionView, UIView, WCFinderHeadImageView, WCFinderLiveAnchorLogReporter, WCTimeLineFooterView;
 
-@interface MMFinderLiveKTVRequestedSongPanel
+@interface MMFinderLiveKTVRequestedSongPanel : NSObject
 {
     _Bool _currPauseState;
     _Bool _isShowing;

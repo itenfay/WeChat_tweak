@@ -5,7 +5,7 @@
 
 @class MMUIView, NSString, PendantPreviewLogic, PendantPreviewSelectView, PendantPreviewView, PreviewBottomButton, UIImageView;
 
-@interface PendantPreviewViewController
+@interface PendantPreviewViewController : NSObject
 {
     _Bool _isInterrupt;
     UIImageView *_topMaskView;

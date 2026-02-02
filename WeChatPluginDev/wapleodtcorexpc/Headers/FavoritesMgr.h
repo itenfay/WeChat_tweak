@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FavForwardLogicController, FavSecurityLogic, FavoritesBatchDelMgr, FavoritesBatchGetMgr, FavoritesDownloadMgr, FavoritesItemDB, FavoritesRepairSvrDataLogic, FavoritesReportLogic, FavoritesSetting, FavoritesSyncMgr, FavoritesTagMgr, FavoritesUploadMgr, MyFavoritesDB, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_semaphore;
 
-@interface FavoritesMgr
+@interface FavoritesMgr : NSObject
 {
     NSMutableDictionary *_dispatchQueueDic;
     NSMutableDictionary *_dispatchQueueRerefenceDic;

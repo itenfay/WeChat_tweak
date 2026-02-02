@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMLocationCacheItem
+@interface MMLocationCacheItem : NSObject
 {
     _Bool _isMarsLocation;
     double _horizontalAccuracy;

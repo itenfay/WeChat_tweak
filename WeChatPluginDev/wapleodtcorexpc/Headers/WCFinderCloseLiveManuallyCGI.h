@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderDataItem;
 
-@interface WCFinderCloseLiveManuallyCGI
+@interface WCFinderCloseLiveManuallyCGI : NSObject
 {
     WCFinderDataItem *_dataItem;
     CDUnknownBlockType _successBlock;

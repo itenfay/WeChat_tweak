@@ -5,7 +5,7 @@
 
 @class CMMotionManager, NSString, TencentLBSLocationManager;
 
-@interface WAJSContextPlugin_coreMotion
+@interface WAJSContextPlugin_coreMotion : NSObject
 {
     CMMotionManager *_motionMgr;
     TencentLBSLocationManager *m_locationMgr;

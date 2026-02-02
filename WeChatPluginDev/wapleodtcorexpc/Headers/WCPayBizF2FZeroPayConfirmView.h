@@ -6,7 +6,7 @@
 @class NSString, UIButton, UILabel, UIView, WCPayTenpayPasswordCtrlItem;
 @protocol WCPayBizF2FZeroPayConfirmViewDelegate;
 
-@interface WCPayBizF2FZeroPayConfirmView
+@interface WCPayBizF2FZeroPayConfirmView : NSObject
 {
     _Bool _m_usingBiotric;
     id <WCPayBizF2FZeroPayConfirmViewDelegate> _m_delegate;

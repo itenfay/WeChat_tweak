@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderDeletePurchasedContentCGI
+@interface WCFinderDeletePurchasedContentCGI : NSObject
 {
     unsigned int _objectType;
     NSString *_contentId;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface MMWebPrefetchInjectTaskRequest
+@interface MMWebPrefetchInjectTaskRequest : NSObject
 {
     _Bool _htmlStringInPkg;
     unsigned int _requestId;

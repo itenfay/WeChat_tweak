@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSString, WCBGStorage;
 
-@interface WCCoverMasterStorageCGI
+@interface WCCoverMasterStorageCGI : NSObject
 {
     _Bool _usesOldDataForcibly;
     NSString *_language;

@@ -6,7 +6,7 @@
 @class CAGradientLayer, MMUIButton, NSArray, NSString, WCCardPkgBackTableView;
 @protocol WCCardPkgBackViewDelegate;
 
-@interface WCCardPkgBackView
+@interface WCCardPkgBackView : NSObject
 {
     NSArray *_sameTpCardDataListList;
     id <WCCardPkgBackViewDelegate> _delegate;

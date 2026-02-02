@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGetUserGameConfigRequest_GameCategoryInfo, NSString, PagingGetGamePlayTogetherDynamicItem;
 
-@interface WCFinderLiveGetUserGameConfigCGI
+@interface WCFinderLiveGetUserGameConfigCGI : NSObject
 {
     _Bool _onlyNeedPlayTogetherInfo;
     unsigned int _opensdkVersion;

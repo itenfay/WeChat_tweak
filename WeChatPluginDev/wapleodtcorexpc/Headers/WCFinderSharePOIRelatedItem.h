@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderSharePOIRelatedItem
+@interface WCFinderSharePOIRelatedItem : NSObject
 {
     NSString *_latitudeString;
     NSString *_longitudeString;

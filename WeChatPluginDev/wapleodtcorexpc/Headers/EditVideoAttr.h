@@ -5,7 +5,7 @@
 
 @class EditImageAttr, EditVideoBGMSelectedMusicInfo, NSMutableArray, NSMutableDictionary, NSString, RecommendedMusicInfo;
 
-@interface EditVideoAttr
+@interface EditVideoAttr : NSObject
 {
     _Bool _isSelectFromAlbum;
     _Bool _isOriginSoundOff;

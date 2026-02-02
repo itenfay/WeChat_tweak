@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface WCFinderGetFavTemplateListCGI
+@interface WCFinderGetFavTemplateListCGI : NSObject
 {
     _Bool _isPrefetchReq;
     CDUnknownBlockType _successfulBlock;

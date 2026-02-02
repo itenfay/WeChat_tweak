@@ -5,7 +5,7 @@
 
 @class FinderLiveLayerAnchorVerificationShowInfo, MicSetting_PurchaseMicSetting, NSString;
 
-@interface MMFinderLiveAnchorStatusItem
+@interface MMFinderLiveAnchorStatusItem : NSObject
 {
     FinderLiveLayerAnchorVerificationShowInfo *_anchorVerificationShowInfo;
     unsigned long long _layerDisplayType;

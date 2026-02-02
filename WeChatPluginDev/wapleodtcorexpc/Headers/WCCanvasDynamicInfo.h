@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCanvasDynamicInfo
+@interface WCCanvasDynamicInfo : NSObject
 {
     NSString *_key;
     NSString *_keypath;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveHeaderView, MMFinderLiveTask, MMLiveMoreLivesIndicatorBar, MMLiveTask, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView, WCLiveScrollActionSheet;
 
-@interface MMLiveStopStateDisplayViewController
+@interface MMLiveStopStateDisplayViewController : NSObject
 {
     _Bool _isMovingToNewScene;
     int _commentScene;

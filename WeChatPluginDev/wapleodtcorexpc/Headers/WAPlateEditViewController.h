@@ -6,7 +6,7 @@
 @class MMUILabel, NSObject, NSString, UILabel, WAPlateInputView, WAPlateItem;
 @protocol WAPlateEditViewControllerDelegate;
 
-@interface WAPlateEditViewController
+@interface WAPlateEditViewController : NSObject
 {
     _Bool _firstIn;
     NSString *_createSubDesc;

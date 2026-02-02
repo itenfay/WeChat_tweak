@@ -6,7 +6,7 @@
 @class MMUIViewController, NSString, RingToneContactSelectViewController, RingToneDetail, RingToneImageView, RingToneMixPlayer, RingTonePickTableViewCell, UIImageView, UIView;
 @protocol RingBackInfoDisplaySheetViewDelegate;
 
-@interface RingBackInfoDisplaySheetView
+@interface RingBackInfoDisplaySheetView : NSObject
 {
     _Bool _shouldShowUserStatus;
     _Bool _shouldShowFriendSettings;

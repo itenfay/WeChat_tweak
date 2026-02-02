@@ -5,7 +5,7 @@
 
 @protocol WCPayCheckUserAuthJSApiCgiDelegate;
 
-@interface WCPayCheckUserAuthJSApiCgi
+@interface WCPayCheckUserAuthJSApiCgi : NSObject
 {
     id <WCPayCheckUserAuthJSApiCgiDelegate> m_delegate;
 }

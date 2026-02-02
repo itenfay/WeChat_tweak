@@ -6,7 +6,7 @@
 @class AttributeLabel, FTSMessageDB, FTSMsgSearchTask, IntelligentMsgBrowseResultTableViewLogic, IntelligentMsgImgFullScreenMsgImgClickLogic, IntelligentMsgImgNetWorkLogic, IntelligentMsgImgResultListView, MMLoadingView, MMMsgFileBrowseMenuAndMemuTableViewCell, MMMsgSearchTabViewContainer, MMTimer, MMUILabel, MMUIView, MMUIViewController, MsgSearchHelperReportCache, NSHashTable, NSMutableArray, NSMutableDictionary, NSNumber, NSSet, NSString, UIButton, UITextField, UIView, WCDataSearcher, WCFinderBusinessCustomListDetailViewController, WCFinderFeedFlowView;
 @protocol MsgSearchHelperDelegate;
 
-@interface MsgSearchHelper
+@interface MsgSearchHelper : NSObject
 {
     _Bool m_bStartSearch;
     _Bool m_bSearchBarBecomeFirstRespones;

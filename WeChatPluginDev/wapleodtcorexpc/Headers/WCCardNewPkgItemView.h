@@ -5,7 +5,7 @@
 
 @class CALayer, MMUIImageView, MMUILabel, MMWebImageView, NSArray;
 
-@interface WCCardNewPkgItemView
+@interface WCCardNewPkgItemView : NSObject
 {
     long long _state;
     MMWebImageView *_headImageView;

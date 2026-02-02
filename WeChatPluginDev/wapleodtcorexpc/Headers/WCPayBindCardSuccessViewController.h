@@ -6,7 +6,7 @@
 @class NSString, UIButton, UIImageView, UILabel, UIView, WCPayBindCardSuccessResponse, WCPayQueryBindCardAwardCgi, WCPaySendBindCardAwardCgi, WCPayWebImageView;
 @protocol WCPayBindCardSuccessViewControllerDelegate;
 
-@interface WCPayBindCardSuccessViewController
+@interface WCPayBindCardSuccessViewController : NSObject
 {
     _Bool _m_disableAwardButton;
     _Bool _m_needQuery;

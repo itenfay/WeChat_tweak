@@ -5,7 +5,7 @@
 
 @class AppRingBackMessageViewModel, UIImageView;
 
-@interface AppRingBackMessageCellView
+@interface AppRingBackMessageCellView : NSObject
 {
     UIImageView *_bubbleView;
 }

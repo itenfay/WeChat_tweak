@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderPostLiveMsgCGI
+@interface WCFinderPostLiveMsgCGI : NSObject
 {
     int _msgType;
     unsigned int _isFloatMsg;

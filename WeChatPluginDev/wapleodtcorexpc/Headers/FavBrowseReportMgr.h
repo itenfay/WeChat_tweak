@@ -5,7 +5,7 @@
 
 @class FavBrowseDetailData, NSMutableArray, NSString;
 
-@interface FavBrowseReportMgr
+@interface FavBrowseReportMgr : NSObject
 {
     _Bool m_needClickStream;
     NSMutableArray *m_arrClickStreamData;

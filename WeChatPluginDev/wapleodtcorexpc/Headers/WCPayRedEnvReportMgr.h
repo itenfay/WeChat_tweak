@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
-@interface WCPayRedEnvReportMgr
+@interface WCPayRedEnvReportMgr : NSObject
 {
     unsigned int _previewStartTime;
     unsigned int _redEnvStoryStartTime;

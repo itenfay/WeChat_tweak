@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface FavBrandMpVideoItem
+@interface FavBrandMpVideoItem : NSObject
 {
     NSString *_bizUsrName;
     NSString *_bizNickName;

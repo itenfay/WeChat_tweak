@@ -6,7 +6,7 @@
 @class NSString, SightIconView;
 @protocol WCSNSADPlayerControlViewDelegate;
 
-@interface WCSNSADPlayerControlView
+@interface WCSNSADPlayerControlView : NSObject
 {
     SightIconView *_iconView;
     id <WCSNSADPlayerControlViewDelegate> _delegate;

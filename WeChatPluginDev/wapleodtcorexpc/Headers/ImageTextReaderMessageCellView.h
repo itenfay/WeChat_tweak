@@ -5,7 +5,7 @@
 
 @class ImageTextReaderMessageViewModel, UIImageView;
 
-@interface ImageTextReaderMessageCellView
+@interface ImageTextReaderMessageCellView : NSObject
 {
     UIImageView *m_bgImageView;
 }

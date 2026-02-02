@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
-@interface EmoticonOperateCgi
+@interface EmoticonOperateCgi : NSObject
 {
     CDUnknownBlockType _onFailBlock;
     CDUnknownBlockType _onSuccessBlock;

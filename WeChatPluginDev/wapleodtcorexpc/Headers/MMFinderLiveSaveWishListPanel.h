@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGiftWallSettingView, MMFinderLiveRewardWishInputView, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMLiveRewardGiftSelectionView, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, UIImageView, UIScrollView;
 
-@interface MMFinderLiveSaveWishListPanel
+@interface MMFinderLiveSaveWishListPanel : NSObject
 {
     _Bool _isModify;
     _Bool _isDeleted;

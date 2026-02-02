@@ -5,7 +5,7 @@
 
 @class FTS5FavMigrationInfo, FTSFavDB, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface FTSFavIndexMgr
+@interface FTSFavIndexMgr : NSObject
 {
     _Bool _hasNewIndexTask;
     _Bool _hasValidateTask;

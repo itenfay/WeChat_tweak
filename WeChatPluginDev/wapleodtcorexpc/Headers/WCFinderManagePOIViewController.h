@@ -5,7 +5,7 @@
 
 @class MMPickLocationViewController, NSString, UIImageView, UILabel, UITableView, WCFinderAddPOIViewController, WCFinderAnimationLoadingView, WCFinderManagePOIViewModel, WCFinderRefreshTableFooterView;
 
-@interface WCFinderManagePOIViewController
+@interface WCFinderManagePOIViewController : NSObject
 {
     _Bool _reloadFlag;
     _Bool _emptyFlag;

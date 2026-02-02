@@ -5,7 +5,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface AppmsgExposureService
+@interface AppmsgExposureService : NSObject
 {
     NSMutableDictionary *_uid2HasExposuredMap;
 }

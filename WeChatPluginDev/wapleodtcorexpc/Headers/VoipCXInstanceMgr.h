@@ -5,7 +5,7 @@
 
 @class CXCallController, CXProvider, NSString;
 
-@interface VoipCXInstanceMgr
+@interface VoipCXInstanceMgr : NSObject
 {
     CXCallController *_cxController;
     CXProvider *_provider;

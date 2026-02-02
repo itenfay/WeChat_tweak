@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSString, WCAdBulletScreenTextStyleInfo;
 
-@interface WCAdBulletTextView
+@interface WCAdBulletTextView : NSObject
 {
     NSString *_bulletText;
     WCAdBulletScreenTextStyleInfo *_bulletTextStyle;

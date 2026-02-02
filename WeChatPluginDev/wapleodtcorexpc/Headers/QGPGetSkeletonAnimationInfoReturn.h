@@ -5,7 +5,7 @@
 
 @class QGPSkeletonAnimationInfos;
 
-@interface QGPGetSkeletonAnimationInfoReturn
+@interface QGPGetSkeletonAnimationInfoReturn : NSObject
 {
     QGPSkeletonAnimationInfos *_value;
 }

@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WWKMessageFileAttachment
+@interface WWKMessageFileAttachment : NSObject
 {
     NSString *_filename;
     NSString *_path;

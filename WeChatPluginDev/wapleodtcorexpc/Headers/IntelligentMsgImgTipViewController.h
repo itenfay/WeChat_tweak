@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, MMUIView, NSString;
 @protocol IntelligentMsgImgTipViewControllerDelegate;
 
-@interface IntelligentMsgImgTipViewController
+@interface IntelligentMsgImgTipViewController : NSObject
 {
     MMUIButton *m_backgroundButton;
     MMUIView *m_contentView;

@@ -5,7 +5,7 @@
 
 @class NSString, WCFinderLivePageStayReporter, WCFinderLiveTabInfo, WCFinderNearbyMoreLivePageViewManager;
 
-@interface WCFinderLiveMoreLiveCityViewController
+@interface WCFinderLiveMoreLiveCityViewController : NSObject
 {
     _Bool _hasRefreshLiveTabInfo;
     int _reportScene;

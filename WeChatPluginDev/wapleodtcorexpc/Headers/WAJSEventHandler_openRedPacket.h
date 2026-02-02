@@ -5,7 +5,7 @@
 
 @class NSString, WARedEnvelopesOpenLogic;
 
-@interface WAJSEventHandler_openRedPacket
+@interface WAJSEventHandler_openRedPacket : NSObject
 {
     WARedEnvelopesOpenLogic *m_openLogic;
 }

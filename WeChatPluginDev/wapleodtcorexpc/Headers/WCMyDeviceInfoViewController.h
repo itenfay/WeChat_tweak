@@ -5,7 +5,7 @@
 
 @class NSString, WCDevice, WCMyDeviceInfoAssist;
 
-@interface WCMyDeviceInfoViewController
+@interface WCMyDeviceInfoViewController : NSObject
 {
     WCMyDeviceInfoAssist *m_oDeviceInfoAssist;
     id m_deviceData;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EmoticonRecommendMessageContext
+@interface EmoticonRecommendMessageContext : NSObject
 {
     _Bool _isSelf;
     _Bool _isRelatedEmoticon;

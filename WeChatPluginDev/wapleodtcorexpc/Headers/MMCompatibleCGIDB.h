@@ -5,7 +5,7 @@
 
 @class WCTDatabase, WCTTable;
 
-@interface MMCompatibleCGIDB
+@interface MMCompatibleCGIDB : NSObject
 {
     WCTDatabase *m_compatibleCGIDB;
     WCTTable *_m_tableCompatibleCGI;

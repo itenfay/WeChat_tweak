@@ -6,7 +6,7 @@
 @class MMGrowTextViewExtConfig, MMTextView, NSAttributedString, NSMutableArray, NSString, UIFont, UIImageView, UIResponder;
 @protocol MMGrowTextViewCustomeTagDelegate, MMGrowTextViewDelegate;
 
-@interface MMGrowTextView
+@interface MMGrowTextView : NSObject
 {
     id <MMGrowTextViewDelegate> m_delegate;
     UIImageView *_backgroundView;

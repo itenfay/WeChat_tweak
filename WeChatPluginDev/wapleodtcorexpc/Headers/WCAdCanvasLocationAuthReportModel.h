@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdCanvasLocationAuthReportModel
+@interface WCAdCanvasLocationAuthReportModel : NSObject
 {
     NSString *_name;
     NSString *_status;

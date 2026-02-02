@@ -5,7 +5,7 @@
 
 @class CMessageWrap, NSMutableArray, NSString;
 
-@interface BigFileCheckProcessor
+@interface BigFileCheckProcessor : NSObject
 {
     CMessageWrap *_msgWrap;
     NSMutableArray *_bigFileTasks;

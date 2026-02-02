@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface EdgeComputingDataSourceService
+@interface EdgeComputingDataSourceService : NSObject
 {
 }
 

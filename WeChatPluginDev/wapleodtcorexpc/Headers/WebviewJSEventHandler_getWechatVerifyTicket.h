@@ -5,7 +5,7 @@
 
 @class JSEvent;
 
-@interface WebviewJSEventHandler_getWechatVerifyTicket
+@interface WebviewJSEventHandler_getWechatVerifyTicket : NSObject
 {
     JSEvent *_jsEvent;
 }

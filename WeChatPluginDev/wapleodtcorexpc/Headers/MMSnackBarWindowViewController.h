@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMSnackBarConfig, NSString, UIViewController;
 
-@interface MMSnackBarWindowViewController
+@interface MMSnackBarWindowViewController : NSObject
 {
     MMSnackBarConfig *_config;
     CDUnknownBlockType _actionHandlerBlock;

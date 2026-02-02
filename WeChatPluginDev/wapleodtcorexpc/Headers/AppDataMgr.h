@@ -5,7 +5,7 @@
 
 @class AppIconItem, NSMutableArray, NSMutableDictionary, NSString, ServiceAppsLogicImpl;
 
-@interface AppDataMgr
+@interface AppDataMgr : NSObject
 {
     _Bool _appDataChecked;
     _Bool _appSettingLoaded;

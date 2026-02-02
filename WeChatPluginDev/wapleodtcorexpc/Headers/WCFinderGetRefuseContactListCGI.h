@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface WCFinderGetRefuseContactListCGI
+@interface WCFinderGetRefuseContactListCGI : NSObject
 {
     int _scene;
     CDUnknownBlockType _successBlock;

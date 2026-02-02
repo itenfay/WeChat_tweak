@@ -5,7 +5,7 @@
 
 @class WAEJBindingCanvas;
 
-@interface WAEJBindingCanvasStyle
+@interface WAEJBindingCanvasStyle : NSObject
 {
     WAEJBindingCanvas *binding;
 }

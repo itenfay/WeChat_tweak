@@ -5,7 +5,7 @@
 
 @class MMTimer, NSString;
 
-@interface VoIPTerminationService
+@interface VoIPTerminationService : NSObject
 {
     _Bool _isWorking;
     _Bool _isCaller;

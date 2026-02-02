@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TranslateLinkResultShareInfo
+@interface TranslateLinkResultShareInfo : NSObject
 {
     unsigned int _videoTime;
     unsigned int _skipCompress;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class QUniversalMapCounter, QWorldTileOverlayDataProvider;
 
-@interface QWorldTileOverlay
+@interface QWorldTileOverlay : NSObject
 {
     _Bool _darkEnabled;
     int _sceneType;

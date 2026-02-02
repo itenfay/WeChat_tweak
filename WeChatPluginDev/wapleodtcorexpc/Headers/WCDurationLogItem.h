@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCDurationLogItem
+@interface WCDurationLogItem : NSObject
 {
     _Bool isAutoIncrement;
     unsigned int localId;

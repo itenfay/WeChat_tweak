@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingMembershipListenerCpp
+@interface TingMembershipListenerCpp : NSObject
 {
 }
 

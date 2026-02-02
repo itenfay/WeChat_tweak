@@ -5,7 +5,7 @@
 
 @class EmojiInfoObj;
 
-@interface SingleEmotionDownloadWrap
+@interface SingleEmotionDownloadWrap : NSObject
 {
     _Bool _isTempFirst;
     _Bool _addToFirst;

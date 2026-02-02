@@ -5,7 +5,7 @@
 
 @class EmoticonListUpdateLogic, EmoticonStoreMainTabExptSetting, EmoticonStoreSecondTabExptSetting, EmoticonStoreSession, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
 
-@interface EmoticonStoreMgr
+@interface EmoticonStoreMgr : NSObject
 {
     NSMutableSet *m_requestDetailForPids;
     NSMutableDictionary *m_getListEventIdDic;

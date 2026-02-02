@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMSpecialMsgFirstTitleSearchResult
+@interface MMSpecialMsgFirstTitleSearchResult : NSObject
 {
     NSString *_m_firstTitle;
 }

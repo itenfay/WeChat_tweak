@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@interface MMGPUClarityFilter
+@interface MMGPUClarityFilter : NSObject
 {
     int uniform_location_clarity_flag;
     int uniform_location_pixel_mapping;

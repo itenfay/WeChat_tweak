@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCAdContinuousLikeReportModel
+@interface WCAdContinuousLikeReportModel : NSObject
 {
     unsigned int _totalLikeCount;
     unsigned int _continuousLikeCount;

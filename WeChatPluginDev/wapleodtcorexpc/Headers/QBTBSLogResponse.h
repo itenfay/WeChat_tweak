@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QBTBSLogResponse
+@interface QBTBSLogResponse : NSObject
 {
     long long jcev2_p_0_r_eRet;
     NSString *jcev2_p_1_o_sMsg;

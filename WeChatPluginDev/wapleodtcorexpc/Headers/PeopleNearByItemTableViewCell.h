@@ -5,7 +5,7 @@
 
 @class MMHeadImageView, UIImageView, UILabel, UIView;
 
-@interface PeopleNearByItemTableViewCell
+@interface PeopleNearByItemTableViewCell : NSObject
 {
     UILabel *m_nickNameLabel;
     UILabel *m_personalRemarkLabel;

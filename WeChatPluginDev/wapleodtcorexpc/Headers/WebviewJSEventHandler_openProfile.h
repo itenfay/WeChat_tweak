@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WebviewJSEventHandler_openProfile
+@interface WebviewJSEventHandler_openProfile : NSObject
 {
     JSEvent *_curEvent;
 }

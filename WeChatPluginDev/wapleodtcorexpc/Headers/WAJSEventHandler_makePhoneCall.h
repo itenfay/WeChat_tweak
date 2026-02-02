@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_makePhoneCall
+@interface WAJSEventHandler_makePhoneCall : NSObject
 {
     NSString *_number;
 }

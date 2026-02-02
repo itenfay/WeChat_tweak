@@ -5,7 +5,7 @@
 
 @class FinderLiveContact, NSString;
 
-@interface MMFinderLiveUserStateItem
+@interface MMFinderLiveUserStateItem : NSObject
 {
     _Bool _isKtvPlayMember;
     unsigned int _rank;

@@ -5,7 +5,7 @@
 
 @class NSString, QIndoorInfo;
 
-@interface QPointAnnotation
+@interface QPointAnnotation : NSObject
 {
     _Bool _lockedToScreen;
     NSString *_title;

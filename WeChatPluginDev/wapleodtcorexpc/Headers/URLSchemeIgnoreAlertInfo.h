@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface URLSchemeIgnoreAlertInfo
+@interface URLSchemeIgnoreAlertInfo : NSObject
 {
     unsigned int _updateTime;
     NSString *_appID;

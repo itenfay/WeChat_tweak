@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCoinButton, MMFinderLiveTaskId, NSString, UIButton, UILabel, UIView;
 
-@interface MMFinderLiveExposedGiftIntroView
+@interface MMFinderLiveExposedGiftIntroView : NSObject
 {
     unsigned int _wecoinCount;
     CDUnknownBlockType _cancelButtonClickedCallback;

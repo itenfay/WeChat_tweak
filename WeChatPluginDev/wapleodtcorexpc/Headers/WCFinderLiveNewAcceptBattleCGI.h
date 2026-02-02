@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCFinderDataItem;
 
-@interface WCFinderLiveNewAcceptBattleCGI
+@interface WCFinderLiveNewAcceptBattleCGI : NSObject
 {
     WCFinderDataItem *_dataItem;
     NSString *_battleSessionId;

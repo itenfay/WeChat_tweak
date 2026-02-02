@@ -5,7 +5,7 @@
 
 @class MMFinderLiveLikeMsgInfo, NSString;
 
-@interface MMFinderLiveLikeNotifyDataItem
+@interface MMFinderLiveLikeNotifyDataItem : NSObject
 {
     MMFinderLiveLikeMsgInfo *_likeMsgInfo;
     NSString *_suffixContent;

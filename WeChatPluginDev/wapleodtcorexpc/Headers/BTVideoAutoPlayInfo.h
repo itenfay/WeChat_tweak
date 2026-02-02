@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface BTVideoAutoPlayInfo
+@interface BTVideoAutoPlayInfo : NSObject
 {
     double _lastPlayedTime;
     double _lastPlayedTimeExpiredTime;

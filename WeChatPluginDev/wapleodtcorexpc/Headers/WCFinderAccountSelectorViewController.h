@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCFinderAccountSelectorViewController
+@interface WCFinderAccountSelectorViewController : NSObject
 {
 }
 

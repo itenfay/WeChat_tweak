@@ -6,7 +6,7 @@
 @class NSArray, NSString;
 @protocol ShakeTvHistoryViewDelegate;
 
-@interface ShakeTvHistoryView
+@interface ShakeTvHistoryView : NSObject
 {
     NSArray *_arrTVItem;
     id <ShakeTvHistoryViewDelegate> delegate;

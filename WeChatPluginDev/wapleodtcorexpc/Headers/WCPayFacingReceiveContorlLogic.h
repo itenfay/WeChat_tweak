@@ -5,7 +5,7 @@
 
 @class MMTimer, MMWebViewController, NSString, WCPayApplyQrcodeCgi, WCPayF2FQrcodeCgi, WCPayF2fShortTermQrcodeCgi, WCPayFacingReceiveQRCodeViewController, WCPayGetMchQRCodeCgi, WCPayMchCodeVoiceOperateCgi, WCPayMchShortTermQrcodeCgi, WCPayNotifyMchQRCodeSaveCgi, WCPayQrcodeSaveNotifyCgi, WCPaySaveMchQRCodeCgi, WCPaySaveQrcodeCgi;
 
-@interface WCPayFacingReceiveContorlLogic
+@interface WCPayFacingReceiveContorlLogic : NSObject
 {
     NSString *m_nsFacingAmountTotalMoney;
     NSString *m_nsFacingAmountDesc;

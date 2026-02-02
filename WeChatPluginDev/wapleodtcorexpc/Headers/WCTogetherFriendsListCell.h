@@ -5,7 +5,7 @@
 
 @class InteractionLabel, UIImageView, UILabel, UIView, WCTogetherFriendsListViewItem;
 
-@interface WCTogetherFriendsListCell
+@interface WCTogetherFriendsListCell : NSObject
 {
     UILabel *_titleLabel;
     UIView *_togetherFriendsListView;

@@ -5,7 +5,7 @@
 
 @class WAEJBindingGfx;
 
-@interface WAEJBindingGfxObject
+@interface WAEJBindingGfxObject : NSObject
 {
     struct _sg_state_t *_sg;
     WAEJBindingGfx *_gfx;

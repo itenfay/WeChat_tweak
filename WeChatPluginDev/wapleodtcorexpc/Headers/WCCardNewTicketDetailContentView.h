@@ -6,7 +6,7 @@
 @class NSString;
 @protocol WCCardNewTicketContentDelegate;
 
-@interface WCCardNewTicketDetailContentView
+@interface WCCardNewTicketDetailContentView : NSObject
 {
     id <WCCardNewTicketContentDelegate> _delegte;
 }

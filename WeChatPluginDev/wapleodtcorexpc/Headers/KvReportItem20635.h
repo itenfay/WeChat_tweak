@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KvReportItem20635
+@interface KvReportItem20635 : NSObject
 {
     unsigned int _RecallType_23;
     unsigned int _IsMsgExposed_24;

@@ -5,7 +5,7 @@
 
 @class WCPIPAudioOnlyIndicatorDescription;
 
-@interface MMFinderLiveAudioOnlyIndicatorWidgetObj
+@interface MMFinderLiveAudioOnlyIndicatorWidgetObj : NSObject
 {
     WCPIPAudioOnlyIndicatorDescription *_indicatorDescription;
 }

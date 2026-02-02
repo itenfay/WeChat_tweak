@@ -5,7 +5,7 @@
 
 @class FavWebCacheScriptMessageHandler, MMScrollActionSheet, NSData, NSDictionary, NSString, NSURL, UILongPressGestureRecognizer, WCActionSheet, WKWebView;
 
-@interface FavOfflineWebViewController
+@interface FavOfflineWebViewController : NSObject
 {
     MMScrollActionSheet *m_scrollActionSheet;
     NSDictionary *m_mimeTypeDic;

@@ -5,7 +5,7 @@
 
 @class JSEvent, NSString;
 
-@interface WCPaySendC2CMessageJSApiLogicControl
+@interface WCPaySendC2CMessageJSApiLogicControl : NSObject
 {
     JSEvent *m_jsEvent;
     NSString *m_setInUrl;

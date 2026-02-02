@@ -5,7 +5,7 @@
 
 @class NSMutableData;
 
-@interface LZLargeFileCache
+@interface LZLargeFileCache : NSObject
 {
     long long _curFileOffset;
     NSMutableData *_readBufData;

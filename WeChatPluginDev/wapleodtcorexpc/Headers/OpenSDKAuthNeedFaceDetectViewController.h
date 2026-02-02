@@ -6,7 +6,7 @@
 @class AuthorizeCheckBox, FaceRecogPrivateVerifyHandler, MMURLHandler, NSString, OpenSdkFaceDetectInfo, RichTextView, UIButton, UILabel, UITextField, UIView;
 @protocol OpenSDKAuthNeedFaceDetectViewControllerDelegate;
 
-@interface OpenSDKAuthNeedFaceDetectViewController
+@interface OpenSDKAuthNeedFaceDetectViewController : NSObject
 {
     id <OpenSDKAuthNeedFaceDetectViewControllerDelegate> _delegate;
     OpenSdkFaceDetectInfo *_faceDetectInfo;

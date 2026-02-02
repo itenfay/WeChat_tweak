@@ -5,7 +5,7 @@
 
 @class ContactTagData, MMUILabel, NSString, UIView;
 
-@interface WCMomentsContactTagSearchCell
+@interface WCMomentsContactTagSearchCell : NSObject
 {
     UIView *_seperatorLine;
     MMUILabel *_nameLabel;

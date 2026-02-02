@@ -5,7 +5,7 @@
 
 @class MMUIButton, UILabel, UIView, WCFinderContact, WCFinderHeadImageView;
 
-@interface WCFinderPublishActionSheetAvatarHeadView
+@interface WCFinderPublishActionSheetAvatarHeadView : NSObject
 {
     UILabel *_headTips;
     WCFinderHeadImageView *_avatarImageView;

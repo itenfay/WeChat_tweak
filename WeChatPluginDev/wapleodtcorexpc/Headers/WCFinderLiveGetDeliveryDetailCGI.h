@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLiveGetDeliveryDetailRequestModel;
 
-@interface WCFinderLiveGetDeliveryDetailCGI
+@interface WCFinderLiveGetDeliveryDetailCGI : NSObject
 {
     WCFinderLiveGetDeliveryDetailRequestModel *_model;
     CDUnknownBlockType _successBlock;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WCCardAvailableSeed
+@interface WCCardAvailableSeed : NSObject
 {
     unsigned int _shopID;
     unsigned int _canMultiSelect;

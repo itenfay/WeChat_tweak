@@ -6,7 +6,7 @@
 @class NSData, NSMutableArray;
 @protocol WCGetScheduleCgiDelegate;
 
-@interface WCGetScheduleCgi
+@interface WCGetScheduleCgi : NSObject
 {
     _Bool _firstPageOnly;
     _Bool _isRunning;

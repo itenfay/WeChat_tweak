@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class FaceRecogBaseViewController, FaceRecogConfigLogic, FaceRecogReporter, FaceRecogUploadLogic, LocationRetriever, MMUIViewController, NSString, UIColor;
 @protocol FaceRecogBaseHandlerDelegate, FaceRecogHandlerDelegate;
 
-@interface FaceRecogBaseHandler
+@interface FaceRecogBaseHandler : NSObject
 {
     _Bool _needGuide;
     _Bool _needUploadVideo;

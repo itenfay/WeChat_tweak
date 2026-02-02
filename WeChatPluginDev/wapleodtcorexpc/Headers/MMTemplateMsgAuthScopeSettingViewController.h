@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class BrandTemplateMsgAuthSettingPageModel, MMTemplateMsgScopeItem, NSString, WATemplateAudioPlayer;
 
-@interface MMTemplateMsgAuthScopeSettingViewController
+@interface MMTemplateMsgAuthScopeSettingViewController : NSObject
 {
     unsigned int _uiType;
     MMTemplateMsgScopeItem *_scopeItem;

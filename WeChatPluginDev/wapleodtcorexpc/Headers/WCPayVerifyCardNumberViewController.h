@@ -6,7 +6,7 @@
 @class NSString, UILabel, WCPayInputView;
 @protocol WCPayVerifyCardNumberViewControllerDelegate;
 
-@interface WCPayVerifyCardNumberViewController
+@interface WCPayVerifyCardNumberViewController : NSObject
 {
     id <WCPayVerifyCardNumberViewControllerDelegate> _delegate;
     WCPayInputView *_payInputView;

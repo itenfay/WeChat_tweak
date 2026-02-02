@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCBusinessCallBackCgiDelegate;
 
-@interface WCPayT2BCBusinessCallBackCgi
+@interface WCPayT2BCBusinessCallBackCgi : NSObject
 {
     id <WCPayT2BCBusinessCallBackCgiDelegate> m_delegate;
 }

@@ -5,7 +5,7 @@
 
 @class MMKProfessionEditViewOnSelectProfessionCallback, NSArray, NSMutableArray, NSString, UITextField, WCPayGetProfessionItem, WCPayProfession;
 
-@interface KindaProfessionEditView
+@interface KindaProfessionEditView : NSObject
 {
     NSArray *professions;
     WCPayProfession *_profession;

@@ -6,7 +6,7 @@
 @class NSMutableArray, NSMutableDictionary, NSObject, WCAdvertiseCommentUploadMgr;
 @protocol OS_dispatch_queue;
 
-@interface WCAdvertiseDataHelper
+@interface WCAdvertiseDataHelper : NSObject
 {
     NSMutableArray *m_advertiseList;
     NSMutableArray *m_advertiseMsgXmlList;

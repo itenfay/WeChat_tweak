@@ -5,7 +5,7 @@
 
 @class CContact, ContactProfileRecommendInfo, ContactRemarkLogic, CustomDescTableViewCell, MMTableView, MMTableViewInfo, MMTextView, MMUILabel, MMUITextField, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, RichTextView, UILabel, UIView, WCTableViewSectionManager;
 
-@interface NewRemarkViewController
+@interface NewRemarkViewController : NSObject
 {
     MMTableViewInfo *m_tableViewInfo;
     WCTableViewSectionManager *m_phoneSection;

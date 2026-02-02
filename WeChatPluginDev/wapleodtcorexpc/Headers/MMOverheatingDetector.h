@@ -5,7 +5,7 @@
 
 @class MMOverheatingCharacteristics, NSString;
 
-@interface MMOverheatingDetector
+@interface MMOverheatingDetector : NSObject
 {
     MMOverheatingCharacteristics *_currentCharacteristics;
 }

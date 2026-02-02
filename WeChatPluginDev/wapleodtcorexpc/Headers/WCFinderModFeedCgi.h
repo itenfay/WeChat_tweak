@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderModFeedOptionModel;
 
-@interface WCFinderModFeedCgi
+@interface WCFinderModFeedCgi : NSObject
 {
     NSString *_feedId;
     NSString *_fromUsername;

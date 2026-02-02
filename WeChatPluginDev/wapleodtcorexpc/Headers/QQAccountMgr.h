@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface QQAccountMgr
+@interface QQAccountMgr : NSObject
 {
 }
 

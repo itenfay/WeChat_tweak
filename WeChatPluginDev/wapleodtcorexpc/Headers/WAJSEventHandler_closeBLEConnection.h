@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_closeBLEConnection
+@interface WAJSEventHandler_closeBLEConnection : NSObject
 {
 }
 

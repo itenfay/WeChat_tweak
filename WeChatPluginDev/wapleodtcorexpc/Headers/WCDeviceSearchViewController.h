@@ -5,7 +5,7 @@
 
 @class MMLoadingView, MMTableView, NSMutableArray, NSString, UILabel, WCDevice, WCDeviceSearchLogic;
 
-@interface WCDeviceSearchViewController
+@interface WCDeviceSearchViewController : NSObject
 {
     MMTableView *m_tableView;
     UILabel *m_headerLbl;

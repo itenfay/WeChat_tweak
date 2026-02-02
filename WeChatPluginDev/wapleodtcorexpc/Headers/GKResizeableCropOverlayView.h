@@ -5,7 +5,7 @@
 
 @class GKCropBorderView, UIView;
 
-@interface GKResizeableCropOverlayView
+@interface GKResizeableCropOverlayView : NSObject
 {
     struct CGSize _initialContentSize;
     _Bool _resizingEnabled;

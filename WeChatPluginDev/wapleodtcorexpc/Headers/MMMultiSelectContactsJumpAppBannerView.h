@@ -5,7 +5,7 @@
 
 @class MMWebImageView, NSString, UIImageView, UILabel, UIView;
 
-@interface MMMultiSelectContactsJumpAppBannerView
+@interface MMMultiSelectContactsJumpAppBannerView : NSObject
 {
     UIView *_contentView;
     MMWebImageView *_iconView;

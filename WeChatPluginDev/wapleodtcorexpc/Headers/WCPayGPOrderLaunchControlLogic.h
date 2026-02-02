@@ -6,7 +6,7 @@
 @class CContact, NSMutableArray, NSString, WCPayGPLaunchControlLogic;
 @protocol WCPayGPOrderLaunchControlLogicDelegate;
 
-@interface WCPayGPOrderLaunchControlLogic
+@interface WCPayGPOrderLaunchControlLogic : NSObject
 {
     _Bool _bHasSelectMemberFinish;
     id <WCPayGPOrderLaunchControlLogicDelegate> _orderLaunchDelegate;

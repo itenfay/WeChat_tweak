@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class AQAudioRecorder, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, GPUImageFramebuffer, NSObject, NSString, NSURL;
 @protocol OS_dispatch_queue, WCCameraWriterDelegate;
 
-@interface WCCameraWriter
+@interface WCCameraWriter : NSObject
 {
     NSObject<OS_dispatch_queue> *m_movieWritingQueue;
     GPUImageFramebuffer *inputFramebufferForDisplay;

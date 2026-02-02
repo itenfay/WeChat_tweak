@@ -5,7 +5,7 @@
 
 @class FinderLivePromoteInfoListMpArticleInfo;
 
-@interface MMFinderLiveMpArticleAnchorPromoteInfo
+@interface MMFinderLiveMpArticleAnchorPromoteInfo : NSObject
 {
     FinderLivePromoteInfoListMpArticleInfo *_articleInfo;
 }

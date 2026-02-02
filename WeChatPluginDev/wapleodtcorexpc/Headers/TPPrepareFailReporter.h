@@ -5,7 +5,7 @@
 
 @class TPPlayerLogContext;
 
-@interface TPPrepareFailReporter
+@interface TPPrepareFailReporter : NSObject
 {
     TPPlayerLogContext *_logCtx;
 }

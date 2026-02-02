@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class EmoticonOperateCgi, EmoticonUploadCdn, EmoticonUploadInfoObj, EmoticonUploadPrepareCgi, NSString;
 @protocol EmoticonUploaderDelegate;
 
-@interface EmoticonUploader
+@interface EmoticonUploader : NSObject
 {
     _Bool _isActive;
     _Bool _shouldOperateAdd;

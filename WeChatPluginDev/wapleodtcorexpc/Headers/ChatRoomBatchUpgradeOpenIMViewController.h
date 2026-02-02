@@ -5,7 +5,7 @@
 
 @class ChatRoomBatchUpgradeOpenIMLogic, ContactsDataLogic, GroupSelectContactsViewController, MMTableView, NSMutableArray, NSMutableDictionary, NSString, UIButton;
 
-@interface ChatRoomBatchUpgradeOpenIMViewController
+@interface ChatRoomBatchUpgradeOpenIMViewController : NSObject
 {
     ChatRoomBatchUpgradeOpenIMLogic *m_chatRoomBatchUpgradeOpenIMLogic;
     MMTableView *m_tableView;

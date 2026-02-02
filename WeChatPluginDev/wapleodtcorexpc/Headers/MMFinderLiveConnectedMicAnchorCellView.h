@@ -5,7 +5,7 @@
 
 @class MMWebImageView, WCFinderHeadImageView;
 
-@interface MMFinderLiveConnectedMicAnchorCellView
+@interface MMFinderLiveConnectedMicAnchorCellView : NSObject
 {
     _Bool _forceDisableOperationButton;
     WCFinderHeadImageView *_avatarView;

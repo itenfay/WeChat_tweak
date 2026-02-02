@@ -5,7 +5,7 @@
 
 @class PhoneAuthGetPhoneNumberLogic;
 
-@interface WAJSEventHandler_getPhoneNumber
+@interface WAJSEventHandler_getPhoneNumber : NSObject
 {
     PhoneAuthGetPhoneNumberLogic *_getPhoneNumberLogic;
 }

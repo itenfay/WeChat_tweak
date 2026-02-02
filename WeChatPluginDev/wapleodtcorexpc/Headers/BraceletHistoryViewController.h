@@ -5,7 +5,7 @@
 
 @class MMTableView, NSMutableArray, NSString;
 
-@interface BraceletHistoryViewController
+@interface BraceletHistoryViewController : NSObject
 {
     _Bool _isSelf;
     NSString *_username;

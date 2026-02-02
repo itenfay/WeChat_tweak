@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface MMSnsMusicInfo
+@interface MMSnsMusicInfo : NSObject
 {
     NSString *m_tid;
     NSString *m_username;

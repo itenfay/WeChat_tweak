@@ -6,7 +6,7 @@
 @class FavoritesItemDB, NSMutableArray;
 @protocol FavoritesBatchDelMgrDelegate;
 
-@interface FavoritesBatchDelMgr
+@interface FavoritesBatchDelMgr : NSObject
 {
     FavoritesItemDB *_favItemDB;
     NSMutableArray *_batchDelArray;

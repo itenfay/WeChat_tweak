@@ -5,7 +5,7 @@
 
 @class MMTagTextField, MMTitleView, NSString, UIImageView, UILabel, UITableView, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderMoreLiveSearchHistoryView, WCFinderRefreshTableFooterView, WCFinderSearchContactViewModel;
 
-@interface WCFinderMoreLiveSearchContactViewController
+@interface WCFinderMoreLiveSearchContactViewController : NSObject
 {
     _Bool _hideHistoryView;
     MMTagTextField *_navSearchTextField;

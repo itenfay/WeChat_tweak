@@ -6,7 +6,7 @@
 @class NSDictionary, NSMutableArray, NSString, UIColor;
 @protocol FaceRecog3rdVerifyConfirmLogicDelegate;
 
-@interface FaceRecog3rdVerifyConfirmLogic
+@interface FaceRecog3rdVerifyConfirmLogic : NSObject
 {
     _Bool _bDefaultConfirm;
     unsigned int _sourceType;

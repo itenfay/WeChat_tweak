@@ -5,7 +5,7 @@
 
 @protocol WCPayT2BCOperationCgiDelegate;
 
-@interface WCPayT2BCOperationCgi
+@interface WCPayT2BCOperationCgi : NSObject
 {
     id <WCPayT2BCOperationCgiDelegate> m_delegate;
 }

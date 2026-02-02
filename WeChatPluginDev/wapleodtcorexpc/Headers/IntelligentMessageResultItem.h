@@ -5,7 +5,7 @@
 
 @class IntelligentClassificationData, IntelligentFaceAlbumData, IntelligentOCRData;
 
-@interface IntelligentMessageResultItem
+@interface IntelligentMessageResultItem : NSObject
 {
     IntelligentClassificationData *_classificationData;
     IntelligentOCRData *_ocrData;

@@ -6,7 +6,7 @@
 @class ImageScrollView, NSString, UIImage, UIImageView, UIView;
 @protocol WCPayGPPhotoViewControllerDelegate;
 
-@interface WCPayGPPhotoViewController
+@interface WCPayGPPhotoViewController : NSObject
 {
     id <WCPayGPPhotoViewControllerDelegate> _delegate;
     UIImage *_originImage;

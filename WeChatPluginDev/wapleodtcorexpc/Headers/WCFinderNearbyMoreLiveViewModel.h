@@ -5,7 +5,7 @@
 
 @protocol WCFinderNearbyMoreLiveViewModelDelegate;
 
-@interface WCFinderNearbyMoreLiveViewModel
+@interface WCFinderNearbyMoreLiveViewModel : NSObject
 {
     _Bool _hasRefreshLiveTabList;
     int _fromScene;

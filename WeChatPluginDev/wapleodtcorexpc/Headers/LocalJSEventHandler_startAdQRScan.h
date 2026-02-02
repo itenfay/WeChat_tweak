@@ -5,7 +5,7 @@
 
 @class NSString, ScanQRCodeLogicController;
 
-@interface LocalJSEventHandler_startAdQRScan
+@interface LocalJSEventHandler_startAdQRScan : NSObject
 {
     NSString *_scanUrl;
     NSString *_uxInfo;

@@ -5,7 +5,7 @@
 
 @class LSMFileStorage, NSMutableDictionary, NSString;
 
-@interface MainFrameCellDataManager
+@interface MainFrameCellDataManager : NSObject
 {
     NSMutableDictionary *m_dictMainFrameCellData;
     LSMFileStorage *m_fileStorage;

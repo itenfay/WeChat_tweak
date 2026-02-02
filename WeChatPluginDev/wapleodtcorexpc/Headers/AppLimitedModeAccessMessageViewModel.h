@@ -5,7 +5,7 @@
 
 @class UIImage;
 
-@interface AppLimitedModeAccessMessageViewModel
+@interface AppLimitedModeAccessMessageViewModel : NSObject
 {
     double m_titleHeight;
 }

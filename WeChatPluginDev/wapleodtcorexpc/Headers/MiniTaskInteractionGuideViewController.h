@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, MiniTaskDurantionCounter, MiniTaskPanGestureHandler, NSString, UIImageView, UIView;
 
-@interface MiniTaskInteractionGuideViewController
+@interface MiniTaskInteractionGuideViewController : NSObject
 {
     NSString *_educationTips;
     UIImageView *_fakeMainFrameSnapshotView;

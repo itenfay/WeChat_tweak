@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface MMPRConfigCGI
+@interface MMPRConfigCGI : NSObject
 {
     CDUnknownBlockType _completion;
     CDUnknownBlockType _failed;

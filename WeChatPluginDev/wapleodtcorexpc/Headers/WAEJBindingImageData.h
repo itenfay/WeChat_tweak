@@ -5,7 +5,7 @@
 
 @class WAEJImageData, WAEJTexture;
 
-@interface WAEJBindingImageData
+@interface WAEJBindingImageData : NSObject
 {
     WAEJImageData *imageData;
     struct OpaqueJSValue *dataArray;

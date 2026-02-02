@@ -5,7 +5,7 @@
 
 @protocol WCCoinGetIncomePageInfoCgiDelegate;
 
-@interface WCCoinGetIncomePageInfoCgi
+@interface WCCoinGetIncomePageInfoCgi : NSObject
 {
     id <WCCoinGetIncomePageInfoCgiDelegate> _delegate;
 }

@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@interface ZZFLEXAngelViewBatchInsertChainModel
+@interface ZZFLEXAngelViewBatchInsertChainModel : NSObject
 {
     long long _status;
     long long _insertTag;

@@ -5,7 +5,7 @@
 
 @class NSString, WCNewShareCardConsumedView;
 
-@interface WebviewJSEventHandler_consumedShareCard
+@interface WebviewJSEventHandler_consumedShareCard : NSObject
 {
     NSString *_consumedCardId;
     NSString *_consumedCode;

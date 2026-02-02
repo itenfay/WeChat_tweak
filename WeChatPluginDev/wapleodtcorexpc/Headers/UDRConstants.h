@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface UDRConstants
+@interface UDRConstants : NSObject
 {
     NSMutableArray *_kUDRBizMetaArray;
 }

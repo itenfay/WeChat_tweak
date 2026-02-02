@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WASMPageSheetAudioListItemView;
 
-@interface WASMPageSheetAudioListItemCell
+@interface WASMPageSheetAudioListItemCell : NSObject
 {
     WASMPageSheetAudioListItemView *_view;
 }

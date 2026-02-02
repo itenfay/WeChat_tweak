@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface SendAuthResp
+@interface SendAuthResp : NSObject
 {
     NSString *code;
     NSString *state;

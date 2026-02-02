@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface WCFinderTimeLabel
+@interface WCFinderTimeLabel : NSObject
 {
     UILabel *_currentTimeLabel;
     UILabel *_splitLabel;

@@ -6,7 +6,7 @@
 @class CContact, NSString, WCAdCardBtnInfo, WCAdContactInfoHalfScreenViewController, WCAdConventionalDetailContainerViewController, WCAdConventionalHalfScreenScrollView, WCDataItem;
 @protocol WCAdConventionalHalfScreenDetailViewDelegate;
 
-@interface WCAdConventionalHalfScreenDetailBaseView
+@interface WCAdConventionalHalfScreenDetailBaseView : NSObject
 {
     CContact *_contactInfo;
     id <WCAdConventionalHalfScreenDetailViewDelegate> _delegate;

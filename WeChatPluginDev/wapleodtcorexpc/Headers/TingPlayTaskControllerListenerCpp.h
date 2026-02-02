@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface TingPlayTaskControllerListenerCpp
+@interface TingPlayTaskControllerListenerCpp : NSObject
 {
 }
 

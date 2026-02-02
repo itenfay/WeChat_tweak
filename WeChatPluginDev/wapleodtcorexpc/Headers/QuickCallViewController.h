@@ -5,7 +5,7 @@
 
 @class ElderModeViewController, MMUILabel, MultiSelectContactsViewController, NSString, QuickCallLogic, RichTextView, UIButton, UICollectionView, UICollectionViewFlowLayout, UIView;
 
-@interface QuickCallViewController
+@interface QuickCallViewController : NSObject
 {
     _Bool _enableJumpToElderMode;
     _Bool _hasShowEducation;

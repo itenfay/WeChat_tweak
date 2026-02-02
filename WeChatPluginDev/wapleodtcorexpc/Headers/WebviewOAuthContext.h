@@ -5,7 +5,7 @@
 
 @class NSArray, WAAuthorizeResultInfo;
 
-@interface WebviewOAuthContext
+@interface WebviewOAuthContext : NSObject
 {
     NSArray *_scopeList;
     WAAuthorizeResultInfo *_resultInfo;

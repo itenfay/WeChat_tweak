@@ -5,7 +5,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface StylesArrayGenerator
+@interface StylesArrayGenerator : NSObject
 {
     struct _NSParserPosition _stPosition;
     NSMutableArray *_arrStyles;

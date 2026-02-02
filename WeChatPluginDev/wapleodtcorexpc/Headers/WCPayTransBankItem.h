@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface WCPayTransBankItem
+@interface WCPayTransBankItem : NSObject
 {
     unsigned int _m_uiBankFlag;
     unsigned int _m_uiChargeFee;

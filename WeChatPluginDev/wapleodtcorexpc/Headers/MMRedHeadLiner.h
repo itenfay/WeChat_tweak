@@ -5,7 +5,7 @@
 
 @class UILabel;
 
-@interface MMRedHeadLiner
+@interface MMRedHeadLiner : NSObject
 {
     UILabel *m_label;
 }

@@ -5,7 +5,7 @@
 
 @class NSArray, NSMutableDictionary, NSString, WCFinderExtStatsReporter, WCFinderStreamFooterView;
 
-@interface WCFinderProfileLivePlaybackPage
+@interface WCFinderProfileLivePlaybackPage : NSObject
 {
     WCFinderStreamFooterView *_footerView;
     long long _contentSection;

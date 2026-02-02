@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIButton, UIImageView;
 
-@interface PlaySoundTipsNotificationView
+@interface PlaySoundTipsNotificationView : NSObject
 {
     CDUnknownBlockType _onClickPlaySoundButton;
     UIImageView *_imageView;

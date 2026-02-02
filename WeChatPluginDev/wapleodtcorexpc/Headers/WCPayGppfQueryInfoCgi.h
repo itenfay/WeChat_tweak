@@ -5,7 +5,7 @@
 
 @protocol WCPayGppfQueryInfoCgiDelegate;
 
-@interface WCPayGppfQueryInfoCgi
+@interface WCPayGppfQueryInfoCgi : NSObject
 {
     id <WCPayGppfQueryInfoCgiDelegate> _cgiDelegate;
 }

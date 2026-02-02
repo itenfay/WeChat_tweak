@@ -5,7 +5,7 @@
 
 @class WAAppTaskReferrerInfo;
 
-@interface WAAppTaskRunningEvent_EnterBackground
+@interface WAAppTaskRunningEvent_EnterBackground : NSObject
 {
     long long _mode;
     long long _action;

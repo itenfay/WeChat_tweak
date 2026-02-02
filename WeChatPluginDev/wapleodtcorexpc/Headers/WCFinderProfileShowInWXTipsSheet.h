@@ -6,7 +6,7 @@
 @class NSString, UIView, WCFinderFittingWidthRichView;
 @protocol WCFinderProfileShowInWXTipsSheetDelegate;
 
-@interface WCFinderProfileShowInWXTipsSheet
+@interface WCFinderProfileShowInWXTipsSheet : NSObject
 {
     id <WCFinderProfileShowInWXTipsSheetDelegate> _delegate;
     WCFinderFittingWidthRichView *_detailRichTextView;

@@ -5,7 +5,7 @@
 
 @class CADisplayLink, NSMutableArray;
 
-@interface WCAdCardMultiProductsDisplayLink
+@interface WCAdCardMultiProductsDisplayLink : NSObject
 {
     CADisplayLink *_animationLink;
     NSMutableArray *_animationObjects;

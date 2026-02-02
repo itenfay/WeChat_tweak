@@ -6,7 +6,7 @@
 @class EditImageUIView, NSString, UIColor;
 @protocol MosaicToolDelegate;
 
-@interface EditImageMosaicTool
+@interface EditImageMosaicTool : NSObject
 {
     struct CGPoint _initialPoint;
     _Bool _initial;

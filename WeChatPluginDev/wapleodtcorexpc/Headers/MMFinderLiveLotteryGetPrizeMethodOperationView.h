@@ -6,7 +6,7 @@
 @class CAShapeLayer, MMFinderLiveLotteryGetPrizeMethodDataItem, MMFinderLiveLotteryGetPrizeMethodViewModel, MMFinderLiveLotteryMethodOperationViewNavBar, MMTableView, NSIndexPath, NSString, UIView;
 @protocol MMFinderLiveLotteryGetPrizeMethodOperationViewDelegate;
 
-@interface MMFinderLiveLotteryGetPrizeMethodOperationView
+@interface MMFinderLiveLotteryGetPrizeMethodOperationView : NSObject
 {
     MMFinderLiveLotteryGetPrizeMethodDataItem *_selectItem;
     id <MMFinderLiveLotteryGetPrizeMethodOperationViewDelegate> _operationDelegate;

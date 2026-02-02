@@ -5,7 +5,7 @@
 
 @class MMImagePickerReportInfo;
 
-@interface MMImagePickerControllerPreviewReportObject
+@interface MMImagePickerControllerPreviewReportObject : NSObject
 {
     unsigned int m_previewCount;
     MMImagePickerReportInfo *_reportInfo;

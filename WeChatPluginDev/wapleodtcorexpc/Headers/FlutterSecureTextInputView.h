@@ -5,7 +5,7 @@
 
 @class UITextField;
 
-@interface FlutterSecureTextInputView
+@interface FlutterSecureTextInputView : NSObject
 {
     UITextField *_textField;
 }

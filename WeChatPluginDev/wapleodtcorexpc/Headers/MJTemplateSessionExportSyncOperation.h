@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class UIImage;
 
-@interface MJTemplateSessionExportSyncOperation
+@interface MJTemplateSessionExportSyncOperation : NSObject
 {
     UIImage *_coverImage;
 }

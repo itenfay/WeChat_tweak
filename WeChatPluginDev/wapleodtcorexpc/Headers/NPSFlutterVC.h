@@ -5,7 +5,7 @@
 
 @class FinderNPSPlugin, NSString;
 
-@interface NPSFlutterVC
+@interface NPSFlutterVC : NSObject
 {
     FinderNPSPlugin *_finderNPSPlugin;
     NSString *_tid;

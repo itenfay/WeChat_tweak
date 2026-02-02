@@ -5,7 +5,7 @@
 
 @class JSContext, NSMutableArray, NSString;
 
-@interface EdgeComputingJSScriptEngine
+@interface EdgeComputingJSScriptEngine : NSObject
 {
     JSContext *context;
     NSMutableArray *jsApis;

@@ -6,7 +6,7 @@
 @class NSArray;
 @protocol BTItemCellViewModelVideoPlayProtocol;
 
-@interface BTVideoViewModelInfo
+@interface BTVideoViewModelInfo : NSObject
 {
     _Bool _isDragging;
     _Bool _isScrolling;

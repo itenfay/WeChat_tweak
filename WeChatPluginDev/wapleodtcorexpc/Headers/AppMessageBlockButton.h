@@ -5,7 +5,7 @@
 
 @class CMessageWrap, MMUIViewController, NSString;
 
-@interface AppMessageBlockButton
+@interface AppMessageBlockButton : NSObject
 {
     CMessageWrap *_messageWrap;
     MMUIViewController *_baseViewController;

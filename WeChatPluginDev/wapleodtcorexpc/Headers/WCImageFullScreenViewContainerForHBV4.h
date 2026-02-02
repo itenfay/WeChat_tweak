@@ -6,7 +6,7 @@
 @class MMImageScrollViewHelper, MMLoadingView, MMProgressViewEx, MMTimer, MMWebImageView, NSArray, NSString, ScanQRCodeLogicController, UIButton, UIImage, UIImageView, UILabel, UIView, WCActionSheet, WCMediaItem, WCMediaItemWrap, ZCWScrollNumView;
 @protocol WCImageFullScreenViewContainerDelegateForHBV4;
 
-@interface WCImageFullScreenViewContainerForHBV4
+@interface WCImageFullScreenViewContainerForHBV4 : NSObject
 {
     WCMediaItem *m_mediaData;
     WCMediaItemWrap *m_mediaDataWrap;

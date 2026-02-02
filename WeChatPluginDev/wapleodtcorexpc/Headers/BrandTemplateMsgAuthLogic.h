@@ -8,7 +8,7 @@ typedef void (^CDUnknownBlockType)(void);
 @class NSArray, NSString, WASubscriptionMessageRequestListByIDCgi, WASubscriptionMessageRequestSubscribeCgi;
 @protocol BrandTemplateMsgAuthLogicDelegate;
 
-@interface BrandTemplateMsgAuthLogic
+@interface BrandTemplateMsgAuthLogic : NSObject
 {
     _Bool _cancel;
     unsigned int _popupScene;

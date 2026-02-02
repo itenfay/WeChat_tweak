@@ -6,7 +6,7 @@
 @class NSMutableDictionary;
 @protocol WCAdDynamicUpdateLogicDelegate, WCLogicMgrDelegate;
 
-@interface WCAdDynamicUpdateLogic
+@interface WCAdDynamicUpdateLogic : NSObject
 {
     id <WCAdDynamicUpdateLogicDelegate> _delegate;
     id <WCLogicMgrDelegate> _wcLogicMgrDelegate;

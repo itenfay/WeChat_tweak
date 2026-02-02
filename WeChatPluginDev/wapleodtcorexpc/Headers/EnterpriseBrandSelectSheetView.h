@@ -6,7 +6,7 @@
 @class CContact, MMScrollView, NSArray, NSString, UIPageControl;
 @protocol EnterpriseBrandSelectSheetViewDelegate;
 
-@interface EnterpriseBrandSelectSheetView
+@interface EnterpriseBrandSelectSheetView : NSObject
 {
     unsigned int _scene;
     CContact *_mainBrandContact;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonBoardView, MMGrowTextView, MMUILabel, ModifyPatSuffixLogic, NSString, PatSuffixWrap, UIButton, UIImpactFeedbackGenerator, UIView, WCInputController, WCSingleEmoticonInputView;
 
-@interface ModifyPatSuffixPageSheetViewController
+@interface ModifyPatSuffixPageSheetViewController : NSObject
 {
     CDUnknownBlockType _beginCommitHandler;
     CDUnknownBlockType _endCommitHandler;

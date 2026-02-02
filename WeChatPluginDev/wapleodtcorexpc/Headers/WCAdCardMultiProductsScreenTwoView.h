@@ -5,7 +5,7 @@
 
 @class MMUILabel, NSArray, NSMutableArray, NSString;
 
-@interface WCAdCardMultiProductsScreenTwoView
+@interface WCAdCardMultiProductsScreenTwoView : NSObject
 {
     NSArray *_imageUrls;
     NSString *_productDesc;

@@ -5,7 +5,7 @@
 
 @class NSArray, NSString;
 
-@interface YtImageInfo
+@interface YtImageInfo : NSObject
 {
     NSString *_image;
     NSArray *_five_points;

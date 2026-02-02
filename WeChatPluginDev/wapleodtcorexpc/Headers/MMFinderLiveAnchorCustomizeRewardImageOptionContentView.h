@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnchorCustomizeRewardOptionsHighlightView, NSArray, UIView;
 
-@interface MMFinderLiveAnchorCustomizeRewardImageOptionContentView
+@interface MMFinderLiveAnchorCustomizeRewardImageOptionContentView : NSObject
 {
     CDUnknownBlockType _onImageClickedAtIndexBlock;
     UIView *_imageContainerView;

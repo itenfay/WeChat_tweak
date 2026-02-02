@@ -5,7 +5,7 @@
 
 @class NSArray, QArcOverlayAnimation, QArcStyle;
 
-@interface QVisArcLineLayerPayload
+@interface QVisArcLineLayerPayload : NSObject
 {
     QArcStyle *_style;
     NSArray *_lines;

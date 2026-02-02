@@ -5,7 +5,7 @@
 
 @class PopItem;
 
-@interface WCPayECardCgiError
+@interface WCPayECardCgiError : NSObject
 {
     PopItem *_popItem;
 }

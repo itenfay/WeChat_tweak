@@ -5,7 +5,7 @@
 
 @class AnnotationSelectContentView, MMUIActivityIndicatorView, ThreeWayExpandImageView, UIImageView, UILabel, UIView;
 
-@interface MMLocationPinView
+@interface MMLocationPinView : NSObject
 {
     AnnotationSelectContentView *m_pinView;
     UIImageView *m_shadowView;

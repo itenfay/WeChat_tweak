@@ -5,7 +5,7 @@
 
 @class MMUILabel;
 
-@interface WCCardChooseSubPeopleLabelView
+@interface WCCardChooseSubPeopleLabelView : NSObject
 {
     MMUILabel *_mainLabel;
     MMUILabel *_subLabel;

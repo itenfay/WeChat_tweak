@@ -6,7 +6,7 @@
 @class FavoritesItem, NSData, NSDictionary, NSString, ShareConfirmView;
 @protocol ShareFavoritesConfirmLogicHelperDelegate;
 
-@interface ShareFavoritesConfirmLogicHelper
+@interface ShareFavoritesConfirmLogicHelper : NSObject
 {
     ShareConfirmView *_confirmView;
     FavoritesItem *_favItem;

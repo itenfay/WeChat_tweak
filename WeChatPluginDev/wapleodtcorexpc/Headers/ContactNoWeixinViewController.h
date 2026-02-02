@@ -5,7 +5,7 @@
 
 @class CBaseContact, NSArray, NSString, QZoneLoginStatus, UIButton, UIView;
 
-@interface ContactNoWeixinViewController
+@interface ContactNoWeixinViewController : NSObject
 {
     UIView *m_TipsView;
     CBaseContact *m_contact;

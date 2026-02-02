@@ -5,7 +5,7 @@
 
 @class NSArray;
 
-@interface QuartzDrawPath
+@interface QuartzDrawPath : NSObject
 {
     _Bool _fill;
     _Bool _clip;

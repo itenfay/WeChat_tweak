@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface RightTopMenuItem
+@interface RightTopMenuItem : NSObject
 {
     NSString *m_nsID;
     _Bool m_bShowNew;

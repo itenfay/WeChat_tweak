@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WWKFSessionContentViewController
+@interface WWKFSessionContentViewController : NSObject
 {
     NSString *_chatSessionId;
 }

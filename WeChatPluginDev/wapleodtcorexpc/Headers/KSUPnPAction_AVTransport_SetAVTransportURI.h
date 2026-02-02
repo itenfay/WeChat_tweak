@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface KSUPnPAction_AVTransport_SetAVTransportURI
+@interface KSUPnPAction_AVTransport_SetAVTransportURI : NSObject
 {
     NSString *_transportURI;
     NSString *_title;

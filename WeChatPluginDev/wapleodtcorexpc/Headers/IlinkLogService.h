@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface IlinkLogService
+@interface IlinkLogService : NSObject
 {
     NSString *app_dir_;
     struct IlinkLogCallback *log_callback_;

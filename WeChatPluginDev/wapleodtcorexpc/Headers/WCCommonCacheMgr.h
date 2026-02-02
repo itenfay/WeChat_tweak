@@ -6,7 +6,7 @@
 @class NSObject, NSString, WCCommonCacheDB;
 @protocol OS_dispatch_queue;
 
-@interface WCCommonCacheMgr
+@interface WCCommonCacheMgr : NSObject
 {
     NSObject<OS_dispatch_queue> *_processQueue;
     WCCommonCacheDB *_cacheDB;

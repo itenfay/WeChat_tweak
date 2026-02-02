@@ -6,7 +6,7 @@
 @class NSData, NSString, ProtobufCGIProfile, WXPBGeneratedMessage;
 @protocol WCBaseCgiDelegate;
 
-@interface WCBaseCgi
+@interface WCBaseCgi : NSObject
 {
     _Bool _isDataReportMonitor;
     _Bool _isNeedNotify;

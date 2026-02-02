@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
-@interface GetVideoUrlFromMpUrlWrapper
+@interface GetVideoUrlFromMpUrlWrapper : NSObject
 {
     NSString *_mpUrl;
     CDUnknownBlockType _handler;

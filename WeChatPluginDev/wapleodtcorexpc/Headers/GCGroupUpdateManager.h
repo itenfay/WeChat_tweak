@@ -5,7 +5,7 @@
 
 @class GCGroupServer, GameLifeTabBarViewController, GetMyChatroomResponse, NSString;
 
-@interface GCGroupUpdateManager
+@interface GCGroupUpdateManager : NSObject
 {
     int _previousSceneType;
     GameLifeTabBarViewController *_willPushTabVc;

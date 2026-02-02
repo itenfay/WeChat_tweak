@@ -6,7 +6,7 @@
 @class NSString, UICollectionView, UILabel, WCMomentsShareScopeBottomView, WCMomentsShareScopeDataSource, WCMomentsShareScopeViewModel, WCTextStatusShareScopeBottomView;
 @protocol WCMomentsShareScopeViewControllerDelegate;
 
-@interface WCMomentsShareScopeViewController
+@interface WCMomentsShareScopeViewController : NSObject
 {
     _Bool _hasLoadMoreForTagClicked;
     _Bool _hasLoadMoreForContactClicked;

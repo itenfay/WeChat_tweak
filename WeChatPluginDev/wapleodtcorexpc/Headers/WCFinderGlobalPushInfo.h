@@ -5,7 +5,7 @@
 
 @class NSData, NSString;
 
-@interface WCFinderGlobalPushInfo
+@interface WCFinderGlobalPushInfo : NSObject
 {
     _Bool _forceOpenFinderEntrance;
     _Bool _receivedInBackground;

@@ -5,7 +5,7 @@
 
 @class MMAudienceLiveLikePlayUtil, MMLiveLikeAnimationUtil, WCLiveBottomTextButton;
 
-@interface MMFinderLiveFeedLikeAnimationView
+@interface MMFinderLiveFeedLikeAnimationView : NSObject
 {
     WCLiveBottomTextButton *_likeUnClickableButton;
     MMAudienceLiveLikePlayUtil *_likePlayUtil;

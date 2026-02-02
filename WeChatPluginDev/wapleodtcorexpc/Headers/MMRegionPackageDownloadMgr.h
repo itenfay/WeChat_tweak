@@ -5,7 +5,7 @@
 
 @class NSString, Package;
 
-@interface MMRegionPackageDownloadMgr
+@interface MMRegionPackageDownloadMgr : NSObject
 {
     Package *_cachedPackage;
     unsigned int uiInterval;

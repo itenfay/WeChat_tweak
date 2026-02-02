@@ -6,7 +6,7 @@
 @class QryCancelECardDescReq;
 @protocol WCPayQryCancelECardDescCgiDelegate;
 
-@interface WCPayQryCancelECardDescCgi
+@interface WCPayQryCancelECardDescCgi : NSObject
 {
 }
 

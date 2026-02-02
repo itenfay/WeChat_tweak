@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
-@interface WCFinderLiveGetReplayThumbCGI
+@interface WCFinderLiveGetReplayThumbCGI : NSObject
 {
     NSData *_lastBuffer;
     CDUnknownBlockType _successBlock;

@@ -5,7 +5,7 @@
 
 @class InterceptPopUp;
 
-@interface WCCoinCgiError
+@interface WCCoinCgiError : NSObject
 {
     InterceptPopUp *_interceptInfo;
 }

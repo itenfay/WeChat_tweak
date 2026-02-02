@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentButtonInfo, WCCanvasComponentTextAreaInfo, WCCanvasComponentVideoFloatBarInfo;
 
-@interface WCCanvasComponentStreamVideoInfo
+@interface WCCanvasComponentStreamVideoInfo : NSObject
 {
     _Bool _useNewStreamPlayer;
     _Bool _forbiddenLoopPlay;

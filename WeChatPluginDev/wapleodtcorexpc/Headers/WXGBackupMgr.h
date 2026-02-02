@@ -5,7 +5,7 @@
 
 @class ChatMigrationGetConnectInfo, NSArray, NSData, NSString, WCBackupEntryViewController, WCPCMigrationEntryViewController, WXGBackupImportMessageHelper, WXGBackupLogic;
 
-@interface WXGBackupMgr
+@interface WXGBackupMgr : NSObject
 {
     unsigned long long m_sessionCount;
     unsigned long long m_msgCount;

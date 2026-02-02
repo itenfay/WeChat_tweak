@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
-@interface WCFinderGetFeedFriendsLikeListCGI
+@interface WCFinderGetFeedFriendsLikeListCGI : NSObject
 {
     NSString *_username;
     unsigned long long _scene;

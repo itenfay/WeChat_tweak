@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveMilestoneLotteryDetailQuestionOptionView, MMFinderLiveMilestoneLotteryViewModel, MMUIButton, NSString, UILabel, UIScrollView, UIView;
 
-@interface MMFinderLiveMilestoneLotteryDetailQuestionView
+@interface MMFinderLiveMilestoneLotteryDetailQuestionView : NSObject
 {
     CDUnknownBlockType _onSubmitAction;
     MMFinderLiveMilestoneLotteryViewModel *_vm;

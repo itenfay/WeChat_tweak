@@ -6,7 +6,7 @@
 @class ModifyHoneyPayerCreditLineReq;
 @protocol WCPayModifyHoneyPayerCreditLineCgiDelegate;
 
-@interface WCPayModifyHoneyPayerCreditLineCgi
+@interface WCPayModifyHoneyPayerCreditLineCgi : NSObject
 {
 }
 

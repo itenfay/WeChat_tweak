@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveShopSettingsSelectItemView;
 
-@interface MMFinderLiveCommonSettingCell
+@interface MMFinderLiveCommonSettingCell : NSObject
 {
     MMFinderLiveShopSettingsSelectItemView *_contentView;
     CDUnknownBlockType _selectCallback;

@@ -5,7 +5,7 @@
 
 @class NSString;
 
-@interface WAJSEventHandler_jumpRedPacketEnvelopePreview
+@interface WAJSEventHandler_jumpRedPacketEnvelopePreview : NSObject
 {
 }
 

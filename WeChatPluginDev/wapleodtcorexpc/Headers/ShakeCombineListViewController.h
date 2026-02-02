@@ -6,7 +6,7 @@
 @class MMTableView, NSMutableArray, NSMutableDictionary, NSString, UILabel;
 @protocol ShakeListDelegate;
 
-@interface ShakeCombineListViewController
+@interface ShakeCombineListViewController : NSObject
 {
     MMTableView *m_tableView;
     NSMutableDictionary *m_userHeaderImageCache;

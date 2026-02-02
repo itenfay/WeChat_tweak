@@ -5,7 +5,7 @@
 
 @class CADisplayLink, NSMutableArray, NSMutableDictionary, NSMutableSet, UILabel, UIView, WAPerformanceLabel;
 
-@interface WAJSContextPlugin_Performance
+@interface WAJSContextPlugin_Performance : NSObject
 {
     _Bool _enabled;
     double _containerWidth;

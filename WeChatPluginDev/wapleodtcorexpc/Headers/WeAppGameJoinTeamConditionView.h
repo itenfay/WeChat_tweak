@@ -6,7 +6,7 @@
 @class MMUIButton, MMUILabel, NSDictionary, NSString, UIView, WeAppGameJoinTeamConditionItemView;
 @protocol WeAppGameJoinTeamConditionCheckedDelegate;
 
-@interface WeAppGameJoinTeamConditionView
+@interface WeAppGameJoinTeamConditionView : NSObject
 {
     int _conditionId;
     id <WeAppGameJoinTeamConditionCheckedDelegate> _delegate;

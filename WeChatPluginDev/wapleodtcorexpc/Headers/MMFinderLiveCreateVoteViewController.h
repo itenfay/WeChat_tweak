@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class FixTitleColorButton, MMFinderLiveCreateVoteHeaderTableViewCell, MMFinderLiveLiveVoteChoice, MMFinderLiveLiveVoteItem, MMFinderLiveTaskId, MMFinderLiveVoteDurationPickerView, MMTableView, NSIndexPath, NSString, UIView;
 
-@interface MMFinderLiveCreateVoteViewController
+@interface MMFinderLiveCreateVoteViewController : NSObject
 {
     MMTableView *_tableView;
     UIView *_tableViewHeaderBackgroundView;

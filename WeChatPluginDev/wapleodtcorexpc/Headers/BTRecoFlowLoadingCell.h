@@ -5,7 +5,7 @@
 
 @class MMUIActivityIndicatorView;
 
-@interface BTRecoFlowLoadingCell
+@interface BTRecoFlowLoadingCell : NSObject
 {
     MMUIActivityIndicatorView *_indicatorView;
 }

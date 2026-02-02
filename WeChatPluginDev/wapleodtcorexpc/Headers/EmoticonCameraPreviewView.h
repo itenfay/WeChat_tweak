@@ -5,7 +5,7 @@
 
 @class CAEAGLLayer;
 
-@interface EmoticonCameraPreviewView
+@interface EmoticonCameraPreviewView : NSObject
 {
     CAEAGLLayer *_previewLayer;
     struct CGSize _videoSize;

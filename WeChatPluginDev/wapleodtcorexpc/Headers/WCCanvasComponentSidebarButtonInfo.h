@@ -5,7 +5,7 @@
 
 @class NSString, WCCanvasComponentItem;
 
-@interface WCCanvasComponentSidebarButtonInfo
+@interface WCCanvasComponentSidebarButtonInfo : NSObject
 {
     NSString *_imageUrl;
     NSString *_wording;

@@ -7,7 +7,7 @@ typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
-@interface _TtC6WeChat32MagicBrushNanoDemoViewController
+@interface _TtC6WeChat32MagicBrushNanoDemoViewController : NSObject
 {
     MISSING_TYPE *rt;
     MISSING_TYPE *canvasMap;

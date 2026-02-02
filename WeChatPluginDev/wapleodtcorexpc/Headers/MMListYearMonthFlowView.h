@@ -6,7 +6,7 @@
 @class MMUIImageView, MMUILabel, UITapGestureRecognizer;
 @protocol MMListYearMonthFlowViewDelegate;
 
-@interface MMListYearMonthFlowView
+@interface MMListYearMonthFlowView : NSObject
 {
     id <MMListYearMonthFlowViewDelegate> _delegate;
     MMUILabel *_yearMonthLabel;
