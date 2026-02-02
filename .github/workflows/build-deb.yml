@@ -115,19 +115,19 @@ jobs:
             exit 1
           fi
 
-          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
-            TAG="${GITHUB_REF#refs/tags/}"
-            TAG="${TAG#v}"
-            NEW_VERSION="$TAG"
-          else
-            BASE_VERSION="$(awk -F': ' '$1 == \"Version\" { print $2 }' \"$CONTROL_FILE\")"
-            if [ -z "$BASE_VERSION" ]; then
-              echo "failed to parse Version from $CONTROL_FILE"
-              exit 1
-            fi
-            SHORT_SHA="${GITHUB_SHA:0:7}"
-            NEW_VERSION="${BASE_VERSION}+${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}.g${SHORT_SHA}"
-          fi
+	          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+	            TAG="${GITHUB_REF#refs/tags/}"
+	            TAG="${TAG#v}"
+	            NEW_VERSION="$TAG"
+	          else
+	            BASE_VERSION="$(grep -E '^Version: ' "$CONTROL_FILE" | head -n 1 | cut -d' ' -f2-)"
+	            if [ -z "$BASE_VERSION" ]; then
+	              echo "failed to parse Version from $CONTROL_FILE"
+	              exit 1
+	            fi
+	            SHORT_SHA="${GITHUB_SHA:0:7}"
+	            NEW_VERSION="${BASE_VERSION}+${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}.g${SHORT_SHA}"
+	          fi
 
           sed -i '' -E "s/^Version: .*/Version: ${NEW_VERSION}/" "$CONTROL_FILE"
           echo "CI package version: ${NEW_VERSION}"
