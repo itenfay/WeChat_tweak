@@ -138,7 +138,7 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
-                                                                           version:@"1.0"
+                                                                           version:@"1.8.1"
                                                                         controller:@"WCPLSettingViewController"];
         didRegisterWCPLPlugin = YES;
         NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
@@ -715,12 +715,12 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 - (void)didMoveToWindow {
     %orig;
 
-    // 图片消息不支持滑动手势复读
-    // if (self.window) {
-    //     [self wchook_setupSwipeGestureIfNeeded];
-    // } else {
-    //     [self wchook_resetSwipeAnimated:NO];
-    // }
+    // 图片消息支持手势（复读除外）
+    if (self.window) {
+        [self wchook_setupSwipeGestureIfNeeded];
+    } else {
+        [self wchook_resetSwipeAnimated:NO];
+    }
 }
 
 %end
@@ -947,6 +947,11 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     BOOL isFromOther = [[WCPLMessageReplyManager sharedManager] isMessageFromOther:msgWrap];
     BOOL isSelf = !isFromOther;
 
+    unsigned int msgType = msgWrap.m_uiMessageType;
+    NSString *cellClassName = NSStringFromClass([self class]);
+    BOOL isImageMessage = (msgType == 3) || [cellClassName isEqualToString:@"ImageMessageCellView"];
+    BOOL isVideoMessage = (msgType == 43 || msgType == 62) || [cellClassName isEqualToString:@"VideoMessageCellView"];
+
     // 获取配置
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSInteger action = 0;
@@ -956,6 +961,12 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
         action = isSelf ? config.swipeLeftSelfAction : config.swipeLeftOtherAction;
     } else {
         action = isSelf ? config.swipeRightSelfAction : config.swipeRightOtherAction;
+    }
+
+    // 复读不支持图片/视频消息
+    if (action == 1 && (isImageMessage || isVideoMessage)) {
+        NSLog(@"[WCPL] Swipe repeat not supported for image/video message");
+        return;
     }
 
     // 执行对应操作
@@ -1098,15 +1109,14 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 
     unsigned int msgType = msgWrap.m_uiMessageType;
 
-    // 处理表情包消息（类型47）
-    if (msgType == 47) {
-        [[WCPLMessageReplyManager sharedManager] handleRepeatEmoticonMessage:msgWrap viewController:chatVC];
+    if (msgType == 3 || msgType == 43 || msgType == 62) {
+        NSLog(@"[WCPL] Repeat not supported for image/video message");
         return;
     }
 
-    // 处理图片消息（类型3）
-    if (msgType == 3) {
-        [[WCPLMessageReplyManager sharedManager] handleRepeatImageMessage:msgWrap viewController:chatVC];
+    // 处理表情包消息（类型47）
+    if (msgType == 47) {
+        [[WCPLMessageReplyManager sharedManager] handleRepeatEmoticonMessage:msgWrap viewController:chatVC];
         return;
     }
 

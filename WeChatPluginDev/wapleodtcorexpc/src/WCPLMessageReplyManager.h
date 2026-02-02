@@ -32,7 +32,7 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
                           viewController:(BaseMsgContentViewController *)viewController
                                  msgWrap:(CMessageWrap *)msgWrap;
 
-// 判断消息是否可以复读（文本/图片/表情/引用回复）
+// 判断消息是否可以复读（文本/表情/引用回复）
 - (BOOL)canRepeatMessage:(CMessageWrap *)msgWrap;
 
 // 判断消息是否是对方发送的（非自己发送）

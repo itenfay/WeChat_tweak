@@ -5,7 +5,7 @@
 // Copyright © 2017 dyf. All rights reserved.
 //
 // Updated: Real repeat message feature (复读机功能)
-// 在别人发送的消息气泡旁边显示 +1 按钮，点击后复读该消息
+// 在消息气泡旁边显示 +1 按钮，点击后复读该消息
 //
 
 #import "WCPLMessageReplyManager.h"
@@ -869,20 +869,14 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!msgWrap) return NO;
 
-        // 只在别人发送的消息上显示复读按钮
-        if (![self isMessageFromOther:msgWrap]) {
-            return NO;
-        }
-
         // 获取消息类型
         // 1 = 文本消息
-        // 3 = 图片消息
         // 47 = 表情包消息
         // 49 = 应用消息（包括引用回复）
         unsigned int msgType = msgWrap.m_uiMessageType;
 
-        // 支持文本消息、图片消息、表情包消息和引用回复消息
-        if (msgType != 1 && msgType != 3 && msgType != 47 && msgType != 49) {
+        // 支持文本消息、表情包消息和引用回复消息
+        if (msgType != 1 && msgType != 47 && msgType != 49) {
             return NO;
         }
 
@@ -895,11 +889,6 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 表情包消息不检查文本内容，直接允许复读
         if (msgType == 47) {
-            return YES;
-        }
-
-        // 图片消息直接允许显示按钮（图片数据可能还在加载中）
-        if (msgType == 3) {
             return YES;
         }
 
@@ -1681,17 +1670,19 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                 return;
             }
 
-            BOOL isEmoticonMessage = (msgWrap.m_uiMessageType == 47);
-            if (isEmoticonMessage) {
-                NSString *execLog = [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
-                WCPLLog(@"Emoticon repeat executed:\n%@", execLog);
+            unsigned int msgType = msgWrap.m_uiMessageType;
+            BOOL isEmoticonMessage = (msgType == 47);
+            BOOL isImageMessage = (msgType == 3);
+            BOOL isVideoMessage = (msgType == 43 || msgType == 62);
+
+            if (isImageMessage || isVideoMessage) {
+                WCPLLog(@"Repeat not supported for image/video message");
                 return;
             }
 
-            BOOL isImageMessage = (msgWrap.m_uiMessageType == 3);
-            if (isImageMessage) {
-                NSString *execLog = [self handleRepeatImageMessage:msgWrap viewController:viewController];
-                WCPLLog(@"Image repeat executed:\n%@", execLog);
+            if (isEmoticonMessage) {
+                NSString *execLog = [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+                WCPLLog(@"Emoticon repeat executed:\n%@", execLog);
                 return;
             }
 
@@ -1715,11 +1706,19 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         // 检查是否是表情包/图片消息
         BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
         BOOL isImageMessage = (msgWrap && msgWrap.m_uiMessageType == 3);
+        BOOL isVideoMessage = (msgWrap && (msgWrap.m_uiMessageType == 43 || msgWrap.m_uiMessageType == 62));
         [debugInfo appendFormat:@"4. 是否表情包: %@\n", isEmoticonMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.1 是否图片: %@\n", isImageMessage ? @"是" : @"否"];
+        [debugInfo appendFormat:@"4.2 是否视频: %@\n", isVideoMessage ? @"是" : @"否"];
 
-        if (!isEmoticonMessage && !isImageMessage && (!content || content.length == 0)) {
-            [debugInfo appendString:@"\n❌ 错误: 非表情包/图片消息且无文本内容"];
+        if (isImageMessage || isVideoMessage) {
+            [debugInfo appendString:@"\n❌ 图片/视频消息暂不支持复读"];
+            [self showDebugAlert:debugInfo];
+            return;
+        }
+
+        if (!isEmoticonMessage && (!content || content.length == 0)) {
+            [debugInfo appendString:@"\n❌ 错误: 非表情包消息且无文本内容"];
             [self showDebugAlert:debugInfo];
             return;
         }
