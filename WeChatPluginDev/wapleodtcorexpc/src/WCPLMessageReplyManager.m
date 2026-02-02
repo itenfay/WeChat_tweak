@@ -2010,6 +2010,95 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             [execLog appendFormat:@"✓ 图片数据长度: %lu\n", (unsigned long)imageData.length];
         }
 
+        // 如果找不到图片数据/路径,输出完整的 msgWrap 属性诊断
+        if (expandedPath.length == 0 && imageData.length == 0) {
+            [execLog appendString:@"\n=== 开始 msgWrap 对象完整诊断 ===\n"];
+
+            // 获取所有属性
+            unsigned int propertyCount = 0;
+            objc_property_t *properties = class_copyPropertyList([msgWrap class], &propertyCount);
+
+            [execLog appendFormat:@"msgWrap 类名: %@\n", NSStringFromClass([msgWrap class])];
+            [execLog appendFormat:@"属性总数: %u\n\n", propertyCount];
+
+            // 列出所有包含 "img", "image", "path", "data" 的属性
+            NSMutableArray *relevantProps = [NSMutableArray array];
+            for (unsigned int i = 0; i < propertyCount; i++) {
+                const char *propName = property_getName(properties[i]);
+                NSString *propNameStr = [NSString stringWithUTF8String:propName];
+                NSString *lowerProp = [propNameStr lowercaseString];
+
+                if ([lowerProp containsString:@"img"] ||
+                    [lowerProp containsString:@"image"] ||
+                    [lowerProp containsString:@"path"] ||
+                    [lowerProp containsString:@"data"] ||
+                    [lowerProp containsString:@"pic"] ||
+                    [lowerProp containsString:@"photo"]) {
+
+                    @try {
+                        id value = [msgWrap valueForKey:propNameStr];
+                        NSString *valueDesc = @"nil";
+                        if ([value isKindOfClass:[NSString class]]) {
+                            NSString *strVal = (NSString *)value;
+                            valueDesc = strVal.length > 100 ?
+                                [NSString stringWithFormat:@"String(len=%lu)", (unsigned long)strVal.length] :
+                                strVal;
+                        } else if ([value isKindOfClass:[NSData class]]) {
+                            valueDesc = [NSString stringWithFormat:@"Data(%lu bytes)", (unsigned long)[(NSData *)value length]];
+                        } else if (value) {
+                            valueDesc = [NSString stringWithFormat:@"%@ (%@)", value, NSStringFromClass([value class])];
+                        }
+                        [relevantProps addObject:[NSString stringWithFormat:@"  %@: %@", propNameStr, valueDesc]];
+                    } @catch (NSException *e) {
+                        [relevantProps addObject:[NSString stringWithFormat:@"  %@: [访问异常]", propNameStr]];
+                    }
+                }
+            }
+            free(properties);
+
+            [execLog appendString:@"相关属性:\n"];
+            if (relevantProps.count > 0) {
+                [execLog appendString:[relevantProps componentsJoinedByString:@"\n"]];
+                [execLog appendString:@"\n"];
+            } else {
+                [execLog appendString:@"  (未找到相关属性)\n"];
+            }
+
+            // 检查 m_oImgInfo
+            @try {
+                id imgInfo = [msgWrap valueForKey:@"m_oImgInfo"];
+                if (imgInfo) {
+                    [execLog appendFormat:@"\nm_oImgInfo 类型: %@\n", NSStringFromClass([imgInfo class])];
+
+                    unsigned int imgInfoPropCount = 0;
+                    objc_property_t *imgInfoProps = class_copyPropertyList([imgInfo class], &imgInfoPropCount);
+                    [execLog appendFormat:@"m_oImgInfo 属性数: %u\n", imgInfoPropCount];
+
+                    for (unsigned int i = 0; i < imgInfoPropCount; i++) {
+                        const char *propName = property_getName(imgInfoProps[i]);
+                        NSString *propNameStr = [NSString stringWithUTF8String:propName];
+                        @try {
+                            id val = [imgInfo valueForKey:propNameStr];
+                            if ([val isKindOfClass:[NSString class]]) {
+                                [execLog appendFormat:@"  %@: %@\n", propNameStr, val];
+                            } else if ([val isKindOfClass:[NSData class]]) {
+                                [execLog appendFormat:@"  %@: Data(%lu bytes)\n", propNameStr, (unsigned long)[(NSData *)val length]];
+                            } else if (val) {
+                                [execLog appendFormat:@"  %@: %@\n", propNameStr, NSStringFromClass([val class])];
+                            }
+                        } @catch (NSException *e) {
+                            // 忽略
+                        }
+                    }
+                    free(imgInfoProps);
+                }
+            } @catch (NSException *e) {
+                [execLog appendFormat:@"\nm_oImgInfo 访问异常: %@\n", e];
+            }
+
+            [execLog appendString:@"\n=== msgWrap 诊断结束 ===\n\n"];
+        }
+
         UIImage *image = nil;
         if (expandedPath.length > 0) {
             image = [UIImage imageWithContentsOfFile:expandedPath];
