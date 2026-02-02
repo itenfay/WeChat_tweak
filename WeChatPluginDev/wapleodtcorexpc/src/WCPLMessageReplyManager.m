@@ -2060,11 +2060,53 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                         [execLog appendFormat:@"✗ XML中缺少必要字段(encryptUrl/aesKey)\n"];
                     }
                 }
+            } else {
+                [execLog appendString:@"✗ CEmoticonMgr不可用或不支持getEmoticonWrapByMd5\n"];
             }
         }
 
-        // 方法2: 通过 InputToolView 发送文本形式（表情包发送失败的回退方案已禁用，避免发送 XML）
-        [execLog appendString:@"\n❌ 方法1和1.5均失败，表情包复读不可用\n"];
+        // 方法2: 通过 CMessageMgr 发送（不依赖本地缓存）
+        if ((content && content.length > 0) || (emoticonMD5 && emoticonMD5.length > 0)) {
+            [execLog appendString:@"\n尝试方法2: CMessageMgr\n"];
+            id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
+            if (!msgMgr) {
+                [execLog appendString:@"❌ 无法获取CMessageMgr\n"];
+            } else {
+                [execLog appendString:@"✓ 获取到CMessageMgr\n"];
+                CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
+                if (!newMsgWrap) {
+                    [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
+                } else {
+                    newMsgWrap.m_uiMessageType = 47;
+                    newMsgWrap.m_nsToUsr = toUserName;
+                    if (content && content.length > 0) {
+                        newMsgWrap.m_nsContent = content;
+                    }
+                    if (emoticonMD5 && emoticonMD5.length > 0) {
+                        [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMD5:" value:emoticonMD5];
+                        [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMd5:" value:emoticonMD5];
+                    }
+
+                    if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+                        [execLog appendString:@"✓ 调用AddEmoticonMsg\n"];
+                        [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
+                        [execLog appendString:@"✅ AddEmoticonMsg执行完成\n"];
+                        return execLog;
+                    }
+
+                    if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+                        [execLog appendString:@"✓ 调用AddLocalMsg\n"];
+                        [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
+                        [execLog appendString:@"✅ AddLocalMsg执行完成\n"];
+                        return execLog;
+                    }
+
+                    [execLog appendString:@"❌ 没有可用的发送方法\n"];
+                }
+            }
+        }
+
+        [execLog appendString:@"\n❌ 方法1/1.5/2均失败，表情包复读不可用\n"];
         [execLog appendString:@"提示: 该表情包可能未下载或已过期\n"];
 
         return execLog;
