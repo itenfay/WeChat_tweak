@@ -91,25 +91,91 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     }
 }
 
-// 安全获取 MMServiceCenter（兼容不同版本的单例入口）
-- (id)wcpl_getServiceCenter {
-    Class serviceCenterClass = objc_getClass("MMServiceCenter");
-    if (!serviceCenterClass) return nil;
+// 安全获取服务中心（兼容不同版本的单例入口）
+- (id)wcpl_trySingletonFromClass:(Class)cls selectors:(NSArray<NSString *> *)selectorNames {
+    if (!cls || selectorNames.count == 0) return nil;
+    for (NSString *name in selectorNames) {
+        SEL selector = NSSelectorFromString(name);
+        if (selector && [(id)cls respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            id instance = [(id)cls performSelector:selector];
+#pragma clang diagnostic pop
+            if (instance) return instance;
+        }
+    }
+    return nil;
+}
 
-    NSArray<NSString *> *selectorNames = @[
+- (id)wcpl_serviceCenterFromObject:(id)obj {
+    if (!obj) return nil;
+    if ([obj respondsToSelector:@selector(getService:)]) return obj;
+
+    id center =
+        [self wcpl_safeValueForObject:obj keyName:@"serviceCenter"] ?:
+        [self wcpl_safeValueForObject:obj keyName:@"m_serviceCenter"] ?:
+        [self wcpl_safeValueForObject:obj keyName:@"serviceCenterForApp"];
+    if (center && [center respondsToSelector:@selector(getService:)]) {
+        return center;
+    }
+    return nil;
+}
+
+- (id)wcpl_getServiceCenter {
+    NSArray<NSString *> *centerSelectors = @[
         @"defaultCenter",
         @"defaultServiceCenter",
         @"sharedCenter",
-        @"sharedInstance"
+        @"sharedInstance",
+        @"sharedServiceCenter"
     ];
 
-    for (NSString *name in selectorNames) {
-        SEL selector = NSSelectorFromString(name);
-        if (selector && [(id)serviceCenterClass respondsToSelector:selector]) {
+    id center = [self wcpl_trySingletonFromClass:objc_getClass("MMServiceCenter") selectors:centerSelectors];
+    center = [self wcpl_serviceCenterFromObject:center];
+    if (center) return center;
+
+    center = [self wcpl_trySingletonFromClass:objc_getClass("ServiceCenter") selectors:centerSelectors];
+    center = [self wcpl_serviceCenterFromObject:center];
+    if (center) return center;
+
+    NSArray<NSString *> *contextClassNames = @[
+        @"MMContext",
+        @"MMAppContext",
+        @"MMCore",
+        @"MMAppController",
+        @"MicroMessengerAppDelegate"
+    ];
+    NSArray<NSString *> *contextSelectors = @[
+        @"sharedInstance",
+        @"sharedContext",
+        @"defaultContext",
+        @"currentContext",
+        @"mainContext",
+        @"defaultInstance"
+    ];
+
+    for (NSString *className in contextClassNames) {
+        Class cls = objc_getClass([className UTF8String]);
+        if (!cls) continue;
+        id ctx = [self wcpl_trySingletonFromClass:cls selectors:contextSelectors];
+        center = [self wcpl_serviceCenterFromObject:ctx];
+        if (center) return center;
+    }
+
+    // 尝试从 UIApplication delegate 获取
+    Class uiAppClass = objc_getClass("UIApplication");
+    if (uiAppClass && [uiAppClass respondsToSelector:@selector(sharedApplication)]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            return [(id)serviceCenterClass performSelector:selector];
+        id application = [uiAppClass performSelector:@selector(sharedApplication)];
 #pragma clang diagnostic pop
+        if (application && [application respondsToSelector:@selector(delegate)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            id delegate = [application performSelector:@selector(delegate)];
+#pragma clang diagnostic pop
+            center = [self wcpl_serviceCenterFromObject:delegate];
+            if (center) return center;
         }
     }
 
@@ -118,9 +184,22 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
 - (id)wcpl_getService:(Class)serviceClass {
     if (!serviceClass) return nil;
+
     id serviceCenter = [self wcpl_getServiceCenter];
-    if (!serviceCenter || ![serviceCenter respondsToSelector:@selector(getService:)]) return nil;
-    return [serviceCenter getService:serviceClass];
+    if (serviceCenter && [serviceCenter respondsToSelector:@selector(getService:)]) {
+        return [serviceCenter getService:serviceClass];
+    }
+
+    NSArray<NSString *> *serviceSelectors = @[
+        @"sharedInstance",
+        @"sharedManager",
+        @"defaultManager",
+        @"defaultInstance",
+        @"manager",
+        @"service",
+        @"getInstance"
+    ];
+    return [self wcpl_trySingletonFromClass:serviceClass selectors:serviceSelectors];
 }
 
 - (NSString *)wcpl_safeStringValueForObject:(id)obj selectorName:(NSString *)selectorName {
