@@ -696,11 +696,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             return YES;
         }
 
-        // 图片消息检查是否存在有效数据
+        // 图片消息直接允许显示按钮（图片数据可能还在加载中）
         if (msgType == 3) {
-            NSString *imagePath = [self wcpl_imagePathFromMessageWrap:msgWrap];
-            NSData *imageData = [self wcpl_imageDataFromMessageWrap:msgWrap];
-            return (imagePath.length > 0 || imageData.length > 0);
+            return YES;
         }
 
         // 检查消息内容是否为空
@@ -1841,88 +1839,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             }
         }
 
-        // 方法2: 直接通过 CMessageMgr 发送
-        if (content && content.length > 0) {
-            [execLog appendString:@"\n尝试方法2: CMessageMgr\n"];
-            id msgMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
-
-            if (!msgMgr) {
-                [execLog appendString:@"❌ 无法获取CMessageMgr\n"];
-                return execLog;
-            }
-            [execLog appendString:@"✓ 获取到CMessageMgr\n"];
-
-            // 创建新消息
-            Class CMessageWrapClass = objc_getClass("CMessageWrap");
-            if (!CMessageWrapClass) {
-                [execLog appendString:@"❌ 无法获取CMessageWrap类\n"];
-                return execLog;
-            }
-
-            CMessageWrap *newMsgWrap = nil;
-            if ([CMessageWrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
-                newMsgWrap = [[CMessageWrapClass alloc] initWithMsgType:47];
-            } else {
-                newMsgWrap = [[CMessageWrapClass alloc] init];
-            }
-            if (!newMsgWrap) {
-                [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
-                return execLog;
-            }
-            [execLog appendString:@"✓ 创建CMessageWrap成功\n"];
-
-            newMsgWrap.m_uiMessageType = 47;
-            newMsgWrap.m_nsToUsr = toUserName;
-            newMsgWrap.m_nsContent = content;
-            newMsgWrap.m_uiStatus = 1; // 消息状态：发送中（让微信自行更新状态）
-
-            // 设置创建时间
-            newMsgWrap.m_uiCreateTime = (unsigned int)[[NSDate date] timeIntervalSince1970];
-
-            // 设置发信人（尽量补齐字段，提升不同版本兼容性）
-            if (selfUserName && selfUserName.length > 0) {
-                newMsgWrap.m_nsFromUsr = selfUserName;
-                [execLog appendFormat:@"✓ 设置FromUsr: %@\n", selfUserName];
-            }
-
-            // 复制缩略图/数据大小（部分版本发送表情包依赖这些字段）
-            if (msgWrap.m_dtThumbnail && [newMsgWrap respondsToSelector:@selector(setM_dtThumbnail:)]) {
-                newMsgWrap.m_dtThumbnail = msgWrap.m_dtThumbnail;
-                [execLog appendFormat:@"✓ 复制缩略图(len=%lu)\n", (unsigned long)msgWrap.m_dtThumbnail.length];
-            }
-            if ([msgWrap respondsToSelector:@selector(m_uiAppDataSize)] &&
-                [newMsgWrap respondsToSelector:@selector(setM_uiAppDataSize:)]) {
-                newMsgWrap.m_uiAppDataSize = msgWrap.m_uiAppDataSize;
-                [execLog appendFormat:@"✓ 复制AppDataSize=%u\n", msgWrap.m_uiAppDataSize];
-            }
-
-            if (emoticonMD5 && emoticonMD5.length > 0) {
-                // 兼容：不同版本 setter 名可能不同
-                [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMD5:" value:emoticonMD5];
-                [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMd5:" value:emoticonMD5];
-                [execLog appendFormat:@"✓ 设置MD5: %@\n", emoticonMD5];
-            }
-
-            // 尝试 AddEmoticonMsg
-            if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
-                [execLog appendString:@"✓ 调用AddEmoticonMsg\n"];
-                [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
-                [execLog appendString:@"✅ AddEmoticonMsg执行完成\n"];
-                return execLog;
-            }
-
-            // 尝试 AddLocalMsg
-            if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-                [execLog appendString:@"✓ 调用AddLocalMsg\n"];
-                [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
-                [execLog appendString:@"✅ AddLocalMsg执行完成（可能仅本地插入，不保证发出）\n"];
-                return execLog;
-            }
-
-            [execLog appendString:@"❌ 没有可用的发送方法\n"];
-        } else {
-            [execLog appendString:@"❌ 消息内容为空\n"];
-        }
+        // 方法2: 通过 InputToolView 发送文本形式（表情包发送失败的回退方案已禁用，避免发送 XML）
+        [execLog appendString:@"\n❌ 方法1失败，表情包复读不可用\n"];
+        [execLog appendString:@"提示: 该表情包可能未下载或已过期\n"];
 
         return execLog;
     }

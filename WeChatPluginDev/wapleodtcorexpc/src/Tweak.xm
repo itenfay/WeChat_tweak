@@ -1123,6 +1123,14 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     }
 
     unsigned int msgType = msgWrap.m_uiMessageType;
+
+    // 处理表情包消息（类型47）
+    if (msgType == 47) {
+        [[WCPLMessageReplyManager sharedManager] handleRepeatEmoticonMessage:msgWrap viewController:chatVC];
+        return;
+    }
+
+    // 处理图片消息（类型3）
     if (msgType == 3) {
         [[WCPLMessageReplyManager sharedManager] handleRepeatImageMessage:msgWrap viewController:chatVC];
         return;
@@ -1135,7 +1143,7 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
         return;
     }
 
-    // 调用复读功能
+    // 调用复读功能（文本消息和其他类型）
     [[WCPLMessageReplyManager sharedManager] handleRepeatButtonTapWithContent:content
                                                                viewController:chatVC
                                                                       msgWrap:msgWrap];
