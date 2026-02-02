@@ -21,9 +21,6 @@ static char kRepeatMsgWrapKey;
 static char kRepeatButtonForCellViewKey;
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
 
-// 日志宏定义 - 同时输出到系统日志和本地文件
-#define WCPLLog(fmt, ...) [[WCPLLogger sharedLogger] logFormat:fmt, ##__VA_ARGS__]
-
 @implementation WCPLMessageReplyManager
 
 + (WCPLMessageReplyManager *)sharedManager {
