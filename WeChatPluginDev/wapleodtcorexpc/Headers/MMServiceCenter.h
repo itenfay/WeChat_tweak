@@ -17,6 +17,7 @@
     unsigned long long m_userState;
 }
 
++ (instancetype)defaultCenter;
 - (void)userDidLogout;
 - (void)userWillLogin;
 - (void)commonInClearData:(id)arg1;
@@ -39,4 +40,3 @@
 - (id)initWithContext:(id)arg1;
 
 @end
-
