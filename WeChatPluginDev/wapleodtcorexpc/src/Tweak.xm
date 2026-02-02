@@ -1251,11 +1251,17 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
         return;
     }
 
-    // 创建新的 section 并添加屏蔽开关
+    // 创建新的 section 并添加屏蔽开关，插入到靠前的位置（第1个section之后）
     WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
     WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreChatRoom:) target:self title:@"屏蔽群消息" on:config.chatIgnoreInfo[usrName].boolValue];
     [sectionMgr addCell:ignoreCell];
-    [tableViewInfo addSection:sectionMgr];
+
+    // 插入到第1个位置（在群头像section之后），使选项更显眼
+    if ([tableViewInfo respondsToSelector:@selector(insertSection:At:)]) {
+        [tableViewInfo insertSection:sectionMgr At:1];
+    } else {
+        [tableViewInfo addSection:sectionMgr];
+    }
 
     MMTableView *tableView = [tableViewInfo getTableView];
     [tableView reloadData];
@@ -1310,27 +1316,58 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     // ContactInfoViewController 使用 m_oContactInfoAssist 管理表格
     // m_oContactInfoAssist (WeixinContactInfoAssist) 中包含 m_tableViewInfo
     id tableViewInfo = nil;
+    id assist = nil;
 
-    // 尝试从 m_oContactInfoAssist 获取 m_tableViewInfo
-    Ivar assistIvar = class_getInstanceVariable([self class], "m_oContactInfoAssist");
-    if (assistIvar) {
-        id assist = object_getIvar(self, assistIvar);
-        if (assist) {
-            Ivar tableViewInfoIvar = class_getInstanceVariable([assist class], "m_tableViewInfo");
-            if (tableViewInfoIvar) {
-                tableViewInfo = object_getIvar(assist, tableViewInfoIvar);
-            }
+    // 方法1: 尝试使用 MSHookIvar 获取 m_oContactInfoAssist
+    @try {
+        assist = MSHookIvar<id>(self, "m_oContactInfoAssist");
+    } @catch (__unused NSException *exception) {
+        assist = nil;
+    }
+
+    // 方法2: 如果方法1失败，使用 class_getInstanceVariable
+    if (!assist) {
+        Ivar assistIvar = class_getInstanceVariable([self class], "m_oContactInfoAssist");
+        if (assistIvar) {
+            assist = object_getIvar(self, assistIvar);
+        }
+    }
+
+    if (!assist) {
+        NSLog(@"[WCPL] ContactInfoViewController: Failed to get m_oContactInfoAssist");
+        return;
+    }
+
+    // 从 assist 获取 m_tableViewInfo
+    @try {
+        tableViewInfo = MSHookIvar<id>(assist, "m_tableViewInfo");
+    } @catch (__unused NSException *exception) {
+        tableViewInfo = nil;
+    }
+
+    // 备用方法：使用 Ivar
+    if (!tableViewInfo) {
+        Ivar tableViewInfoIvar = class_getInstanceVariable([assist class], "m_tableViewInfo");
+        if (tableViewInfoIvar) {
+            tableViewInfo = object_getIvar(assist, tableViewInfoIvar);
         }
     }
 
     if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
+        NSLog(@"[WCPL] ContactInfoViewController: Failed to get m_tableViewInfo or invalid tableViewInfo");
         return;
     }
 
     WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
     WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreUser:) target:self title:@"屏蔽此人消息" on:config.userIgnoreInfo[usrName].boolValue];
     [sectionMgr addCell:ignoreCell];
-    [tableViewInfo addSection:sectionMgr];
+
+    // 插入到第1个位置，使选项更显眼
+    if ([tableViewInfo respondsToSelector:@selector(insertSection:At:)]) {
+        [tableViewInfo insertSection:sectionMgr At:1];
+    } else {
+        [tableViewInfo addSection:sectionMgr];
+    }
 
     MMTableView *tableView = [tableViewInfo getTableView];
     [tableView reloadData];
