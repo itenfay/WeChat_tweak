@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebCanvasItemData;
 @protocol MMBizCanvasJsApiHandlerDelegate;
@@ -15,7 +16,6 @@
     CDUnknownBlockType _callbackBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
 @property(nonatomic) __weak id <MMBizCanvasJsApiHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMWebCanvasItemData *canvasItemData; // @synthesize canvasItemData=_canvasItemData;
@@ -34,4 +34,3 @@
 - (void)dealloc;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 + (id)getResultDic:(id)arg1 dic:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(nonatomic) __weak id <WAOpenSDKJSEventHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WAOpenSDKJSEventHandlerContext *context; // @synthesize context=_context;

@@ -14,7 +14,6 @@
     NSNumber *_positive;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *positive; // @synthesize positive=_positive;
 @property(retain, nonatomic) NSDate *datetime; // @synthesize datetime=_datetime;
 @property(retain, nonatomic) NSNumber *customPredictionConfidence; // @synthesize customPredictionConfidence=_customPredictionConfidence;

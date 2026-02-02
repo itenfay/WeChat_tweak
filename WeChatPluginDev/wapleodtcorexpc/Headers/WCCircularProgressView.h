@@ -26,7 +26,6 @@
     double _radius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(nonatomic) double realProgress; // @synthesize realProgress=_realProgress;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;

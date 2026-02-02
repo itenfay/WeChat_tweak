@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCPrivacyPolicyControlLogic;
 
 @interface WCAccountAffiliatedAcctRegControlLogic
@@ -14,7 +16,6 @@
     NSString *_clientSessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool withoutBeginVC; // @synthesize withoutBeginVC=_withoutBeginVC;
 @property(nonatomic) int affRegScene; // @synthesize affRegScene=_affRegScene;
 @property(retain, nonatomic) NSString *clientSessionId; // @synthesize clientSessionId=_clientSessionId;
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

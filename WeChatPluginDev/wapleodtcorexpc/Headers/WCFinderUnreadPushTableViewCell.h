@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMHeadImageView, MMSessionInfo, MMUIButton, MMUILabel;
 
 @interface WCFinderUnreadPushTableViewCell
@@ -18,7 +20,6 @@
     MMUILabel *_secondLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUILabel *secondLabel; // @synthesize secondLabel=_secondLabel;
 @property(nonatomic) __weak MMUILabel *firstLabel; // @synthesize firstLabel=_firstLabel;
 @property(retain, nonatomic) MMSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
@@ -36,4 +37,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

@@ -14,7 +14,6 @@
     UIView<MMFinderLiveShopShelfHeaderViewModelView> *_view;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView<MMFinderLiveShopShelfHeaderViewModelView> *view; // @synthesize view=_view;
 @property(nonatomic) __weak MMFinderLiveShopShelfCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 - (_Bool)shouldAnchorSettingButtonHidden;

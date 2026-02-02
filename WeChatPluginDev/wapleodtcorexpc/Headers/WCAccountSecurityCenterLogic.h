@@ -10,7 +10,6 @@
     NSString *_rid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rid; // @synthesize rid=_rid;
 - (void)accessDeepLink:(id)arg1 Url:(id)arg2 Webview:(id)arg3;
 - (_Bool)canAccessDeepLink:(id)arg1 Url:(id)arg2 Webview:(id)arg3;

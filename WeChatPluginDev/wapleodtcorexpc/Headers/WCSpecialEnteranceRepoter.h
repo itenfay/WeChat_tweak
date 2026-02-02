@@ -23,7 +23,6 @@
     unsigned long long _cacheAppearHashCode;
 }
 
-- (void).cxx_destruct;
 - (void)onFinderPOIDisappear:(id)arg1;
 - (void)onFinderPOIAppear:(id)arg1;
 - (void)onFinderPOIPop:(id)arg1;

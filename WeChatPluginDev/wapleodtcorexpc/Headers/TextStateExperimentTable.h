@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_entryList;
 + (void)PBArrayAdd_key;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *keyToEntryDict; // @synthesize keyToEntryDict=_keyToEntryDict;
 @property(retain, nonatomic) NSMutableArray *entryList; // @synthesize entryList=_entryList;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;

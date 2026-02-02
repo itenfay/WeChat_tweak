@@ -17,7 +17,6 @@
     unsigned long long _traits;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasSubTask; // @synthesize hasSubTask=_hasSubTask;
 @property(readonly, nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(readonly, nonatomic) unsigned long long traits; // @synthesize traits=_traits;

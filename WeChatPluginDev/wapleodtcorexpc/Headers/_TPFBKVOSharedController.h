@@ -14,7 +14,6 @@
 }
 
 + (id)sharedController;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)unobserve:(id)arg1 infos:(id)arg2;
 - (void)unobserve:(id)arg1 info:(id)arg2;

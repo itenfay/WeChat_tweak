@@ -18,7 +18,6 @@
     WCMktDeleteCouponInInvalidlistCgi *_deleteCardCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNeedUpdateDataAfterViewControllerWillApper; // @synthesize bNeedUpdateDataAfterViewControllerWillApper=_bNeedUpdateDataAfterViewControllerWillApper;
 @property(retain, nonatomic) WCMktDeleteCouponInInvalidlistCgi *deleteCardCgi; // @synthesize deleteCardCgi=_deleteCardCgi;
 @property(retain, nonatomic) WCMktCouponHistoryPageCgi *historyHomePageCgi; // @synthesize historyHomePageCgi=_historyHomePageCgi;

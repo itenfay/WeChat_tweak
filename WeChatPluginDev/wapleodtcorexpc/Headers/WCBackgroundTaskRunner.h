@@ -14,7 +14,6 @@
     NSThread *_nsThread;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSThread *nsThread; // @synthesize nsThread=_nsThread;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)routine;

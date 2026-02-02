@@ -13,7 +13,6 @@
     id <FavTagEditViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_currentInput; // @synthesize m_currentInput;
 @property(retain, nonatomic) NSMutableArray *m_arrHints; // @synthesize m_arrHints;
 @property(nonatomic) __weak id <FavTagEditViewDelegate> m_delegate; // @synthesize m_delegate;

@@ -12,7 +12,6 @@
     NSMutableDictionary *_setInfoDic;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *setInfoDic; // @synthesize setInfoDic=_setInfoDic;
 @property(retain, nonatomic) EmoticonDataDB *oEmoticonPackageDB; // @synthesize oEmoticonPackageDB=_oEmoticonPackageDB;
 @property(retain, nonatomic) NSRecursiveLock *oLock; // @synthesize oLock=_oLock;

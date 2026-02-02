@@ -13,7 +13,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CEmoticonWrap *emoticonWrap; // @synthesize emoticonWrap=_emoticonWrap;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 - (void)onMessageStopPlaying;

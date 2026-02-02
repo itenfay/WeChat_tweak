@@ -11,7 +11,6 @@
     MISSING_TYPE *isInitiativeSearch;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)openCameraForImageSearch;
 - (void)nativeImageSearchWithSource:(unsigned long long)arg1;

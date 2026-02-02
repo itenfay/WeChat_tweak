@@ -17,7 +17,6 @@
 
 + (id)itemsWithSuggestions:(id)arg1;
 + (id)itemWithSuggestion:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double viewerNumberLabelWidth; // @synthesize viewerNumberLabelWidth=_viewerNumberLabelWidth;
 @property(readonly, nonatomic) double titleLabelWidth; // @synthesize titleLabelWidth=_titleLabelWidth;
 @property(readonly, nonatomic) NSString *viewerNumber; // @synthesize viewerNumber=_viewerNumber;

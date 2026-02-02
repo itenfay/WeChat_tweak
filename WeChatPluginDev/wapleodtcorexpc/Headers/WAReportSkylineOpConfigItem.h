@@ -17,7 +17,6 @@
 }
 
 + (id)createWithAppId:(id)arg1 appVersion:(unsigned long long)arg2 appState:(unsigned long long)arg3 libVersion:(id)arg4 libUpdateTime:(id)arg5 exptGroupId:(unsigned int)arg6 exptParam:(id)arg7 hitSrcType:(unsigned int)arg8 appUin:(unsigned int)arg9 jsDataType:(unsigned int)arg10;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jsDataType; // @synthesize jsDataType=_jsDataType;
 @property(nonatomic) unsigned int appUin; // @synthesize appUin=_appUin;
 @property(nonatomic) unsigned int hitSrcType; // @synthesize hitSrcType=_hitSrcType;

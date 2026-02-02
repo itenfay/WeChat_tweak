@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIColor;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _didTapBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didTapBlock; // @synthesize didTapBlock=_didTapBlock;
 @property(nonatomic) _Bool showsBorder; // @synthesize showsBorder=_showsBorder;
 @property(retain, nonatomic) UIColor *highlightedBackgroundColor; // @synthesize highlightedBackgroundColor=_highlightedBackgroundColor;
@@ -28,4 +28,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

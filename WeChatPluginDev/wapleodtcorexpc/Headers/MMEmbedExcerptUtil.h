@@ -14,7 +14,6 @@
 
 + (void)reportWithMsg:(id)arg1 operateType:(unsigned int)arg2;
 + (id)createEmbedExcerptWebview:(id)arg1 scene:(unsigned int)arg2 visibleViewController:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposeReportStrSet; // @synthesize exposeReportStrSet=_exposeReportStrSet;
 
 @end

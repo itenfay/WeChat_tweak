@@ -14,7 +14,6 @@
     NSDictionary *_extraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) NSString *sceneId; // @synthesize sceneId=_sceneId;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

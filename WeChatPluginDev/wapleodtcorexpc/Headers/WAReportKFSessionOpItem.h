@@ -13,7 +13,6 @@
     unsigned long long _action;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int actionTime; // @synthesize actionTime=_actionTime;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;

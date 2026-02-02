@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ChatLogDataStat, NSMutableArray, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
@@ -78,7 +80,6 @@
 + (_Bool)isTmpFile:(id)arg1;
 + (id)getSessionNickName:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType chatLogFilterCalCompletion; // @synthesize chatLogFilterCalCompletion=_chatLogFilterCalCompletion;
 @property(copy, nonatomic) CDUnknownBlockType chatLogCalCompletion; // @synthesize chatLogCalCompletion=_chatLogCalCompletion;
 @property(retain, nonatomic) ChatLogDataStat *stat; // @synthesize stat=_stat;
@@ -180,4 +181,3 @@
 @property(readonly) Class superclass;
 
 @end
-

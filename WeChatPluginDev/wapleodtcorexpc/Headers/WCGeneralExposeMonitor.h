@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSHashTable, NSMapTable, NSNumber, NSString, UIViewController;
 
 @interface WCGeneralExposeMonitor
@@ -29,7 +31,6 @@
     NSMapTable *m_delayExpViewsQueue;
 }
 
-- (void).cxx_destruct;
 - (void)checkDelayExpViewsQueue;
 - (void)clearDelayExpViewsQueue;
 - (void)removeDelayExpViewsQueue:(id)arg1;
@@ -82,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

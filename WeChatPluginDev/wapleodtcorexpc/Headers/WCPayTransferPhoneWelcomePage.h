@@ -26,7 +26,6 @@
     id <WCPayTransferPhoneWelcomePageDelegate><WCPayTransferPhoneProtocalHalfPageDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <WCPayTransferPhoneWelcomePageDelegate><WCPayTransferPhoneProtocalHalfPageDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) WCPayTransferPhoneProtocalHalfPage *halfPage; // @synthesize halfPage=_halfPage;
 @property(retain, nonatomic) UIImageView *dotImageView2; // @synthesize dotImageView2=_dotImageView2;

@@ -13,7 +13,6 @@
     NSString *logStr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int logId; // @synthesize logId;
 @property(retain, nonatomic) NSString *logStr; // @synthesize logStr;
 - (void)dealloc;

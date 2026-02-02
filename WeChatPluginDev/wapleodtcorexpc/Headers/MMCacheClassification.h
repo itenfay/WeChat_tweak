@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -17,7 +18,6 @@
     NSMutableArray *_childClassification;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *childClassification; // @synthesize childClassification=_childClassification;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(copy, nonatomic) CDUnknownBlockType cleanBlock; // @synthesize cleanBlock=_cleanBlock;
@@ -28,4 +28,3 @@
 - (_Bool)isEqual:(id)arg1;
 
 @end
-

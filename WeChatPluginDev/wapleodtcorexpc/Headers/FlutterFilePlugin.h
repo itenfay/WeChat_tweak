@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -29,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

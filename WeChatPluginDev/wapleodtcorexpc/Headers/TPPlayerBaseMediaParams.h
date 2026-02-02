@@ -26,7 +26,6 @@
     long long _subtitleEncodeFormat;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long subtitleEncodeFormat; // @synthesize subtitleEncodeFormat=_subtitleEncodeFormat;
 @property(nonatomic) long long audioRendererType; // @synthesize audioRendererType=_audioRendererType;
 @property(nonatomic) long long audioDecoderType; // @synthesize audioDecoderType=_audioDecoderType;

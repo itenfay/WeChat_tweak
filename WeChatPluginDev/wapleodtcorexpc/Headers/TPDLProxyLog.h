@@ -13,7 +13,6 @@
 }
 
 + (id)getInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TPDLProxyLogDelegate> logDelegate; // @synthesize logDelegate=_logDelegate;
 - (void)logDebug:(id)arg1 line:(int)arg2 tag:(id)arg3 msg:(id)arg4;
 - (void)logError:(id)arg1 line:(int)arg2 tag:(id)arg3 msg:(id)arg4;

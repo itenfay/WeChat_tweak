@@ -12,7 +12,6 @@
     id <WAOpenLocationViewControllerDelegate> _waDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAOpenLocationViewControllerDelegate> waDelegate; // @synthesize waDelegate=_waDelegate;
 @property(retain, nonatomic) WAOpenLocationViewControllerHandler *handler; // @synthesize handler=_handler;
 - (void)viewDidBePopedOrDismissed:(_Bool)arg1;

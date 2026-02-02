@@ -24,7 +24,6 @@
     unsigned long long _activityMchId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long activityMchId; // @synthesize activityMchId=_activityMchId;
 @property(nonatomic) unsigned int userRecordId; // @synthesize userRecordId=_userRecordId;
 @property(nonatomic) unsigned int sendRecordId; // @synthesize sendRecordId=_sendRecordId;

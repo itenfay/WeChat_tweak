@@ -15,7 +15,6 @@
     FinderLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) WCFinderJumperPoiParams *poiJumpParams; // @synthesize poiJumpParams=_poiJumpParams;
 @property(retain, nonatomic) NSString *paramsJson; // @synthesize paramsJson=_paramsJson;

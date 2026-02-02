@@ -18,7 +18,6 @@
     long long _itemShowCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long itemShowCount; // @synthesize itemShowCount=_itemShowCount;
 @property(nonatomic) long long arrItemViewModelCount; // @synthesize arrItemViewModelCount=_arrItemViewModelCount;
 @property(nonatomic) long long arrReaderWrapCount; // @synthesize arrReaderWrapCount=_arrReaderWrapCount;

@@ -24,7 +24,6 @@
     struct CGRect _editViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowSecondCutPromotionEntry; // @synthesize shouldShowSecondCutPromotionEntry=_shouldShowSecondCutPromotionEntry;
 @property(nonatomic) unsigned long long entranceType; // @synthesize entranceType=_entranceType;
 @property(nonatomic) unsigned long long maxNumberOfFullWidthCharactersPerLayoutLine; // @synthesize maxNumberOfFullWidthCharactersPerLayoutLine=_maxNumberOfFullWidthCharactersPerLayoutLine;

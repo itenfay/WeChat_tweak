@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_expireSeconds;
 + (void)PBArrayAdd_recvTime;
 + (void)PBArrayAdd_appid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int expireSeconds; // @synthesize expireSeconds=_expireSeconds;
 @property(nonatomic) unsigned int recvTime; // @synthesize recvTime=_recvTime;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;

@@ -45,7 +45,6 @@
     NSString *_truncatedPostfixText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *truncatedPostfixText; // @synthesize truncatedPostfixText=_truncatedPostfixText;
 @property(retain, nonatomic) NSString *postfixText; // @synthesize postfixText=_postfixText;
 @property(nonatomic) double cachedNickNameMinMaxWidth; // @synthesize cachedNickNameMinMaxWidth=_cachedNickNameMinMaxWidth;

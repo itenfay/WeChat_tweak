@@ -21,7 +21,6 @@
 }
 
 + (double)estimatedHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *quitRoomInfoViews; // @synthesize quitRoomInfoViews=_quitRoomInfoViews;
 @property(retain, nonatomic) NSMutableArray *reasonViews; // @synthesize reasonViews=_reasonViews;
 @property(retain, nonatomic) UIView *separatorLineView; // @synthesize separatorLineView=_separatorLineView;

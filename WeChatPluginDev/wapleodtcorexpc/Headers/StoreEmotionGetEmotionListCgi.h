@@ -17,7 +17,6 @@
     NSString *_setKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *setKey; // @synthesize setKey=_setKey;
 @property(nonatomic) __weak id <StoreEmotionGetEmotionListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

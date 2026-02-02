@@ -44,7 +44,6 @@
     NSString *_createSameAIModelType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int activityEventType; // @synthesize activityEventType=_activityEventType;
 @property(nonatomic) _Bool isAssetClipperEnabled; // @synthesize isAssetClipperEnabled=_isAssetClipperEnabled;
 @property(nonatomic) _Bool canExportInBackground; // @synthesize canExportInBackground=_canExportInBackground;

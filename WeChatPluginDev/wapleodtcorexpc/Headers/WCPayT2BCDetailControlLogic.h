@@ -14,7 +14,6 @@
     unsigned long long _m_status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_status; // @synthesize m_status=_m_status;
 @property(nonatomic) unsigned long long m_fromScene; // @synthesize m_fromScene=_m_fromScene;
 @property(retain, nonatomic) WCPayT2BCQueryDetailCgi *m_queryDetailCgi; // @synthesize m_queryDetailCgi=_m_queryDetailCgi;

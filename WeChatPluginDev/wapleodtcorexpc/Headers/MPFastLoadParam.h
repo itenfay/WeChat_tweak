@@ -15,7 +15,6 @@
     NSString *_urlForReport;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *urlForReport; // @synthesize urlForReport=_urlForReport;
 @property(nonatomic) unsigned int enterType; // @synthesize enterType=_enterType;
 @property(nonatomic) unsigned int itemShowType; // @synthesize itemShowType=_itemShowType;

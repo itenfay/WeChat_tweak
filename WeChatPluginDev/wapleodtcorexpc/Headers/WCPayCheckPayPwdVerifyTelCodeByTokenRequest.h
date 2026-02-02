@@ -15,7 +15,6 @@
     NSString *m_nsRelationKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsVerifyCode; // @synthesize m_nsVerifyCode;
 @property(retain, nonatomic) NSString *m_nsToken; // @synthesize m_nsToken;
 @property(retain, nonatomic) NSString *m_nsPayPwd; // @synthesize m_nsPayPwd;

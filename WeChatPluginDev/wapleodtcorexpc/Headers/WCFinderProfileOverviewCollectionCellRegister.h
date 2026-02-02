@@ -13,7 +13,6 @@
 }
 
 + (id)newWithCollectionView:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)registerHeader:(Class)arg1 identifier:(id)arg2;
 - (void)registerFooter:(Class)arg1 identifier:(id)arg2;

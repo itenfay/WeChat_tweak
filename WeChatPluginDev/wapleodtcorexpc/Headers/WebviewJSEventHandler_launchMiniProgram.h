@@ -11,7 +11,6 @@
     _Bool _silentOpen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool silentOpen; // @synthesize silentOpen=_silentOpen;
 - (void)launchMiniProgramWithUserName:(id)arg1 pagePath:(id)arg2 referrerAppID:(id)arg3 currentURL:(id)arg4 debugMode:(unsigned long long)arg5 adUxInfo:(id)arg6 commonUxInfo:(id)arg7 launchParam:(id)arg8;
 - (void)launchMiniProgramWithAppID:(id)arg1 pagePath:(id)arg2 referrerAppID:(id)arg3 currentURL:(id)arg4 debugMode:(unsigned long long)arg5 adUxInfo:(id)arg6 commonUxInfo:(id)arg7 launchParam:(id)arg8;

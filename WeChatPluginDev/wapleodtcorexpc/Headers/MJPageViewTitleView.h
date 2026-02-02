@@ -16,7 +16,6 @@
     double _progress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) MJPageViewCursorView *cursor; // @synthesize cursor=_cursor;
 @property(retain, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;

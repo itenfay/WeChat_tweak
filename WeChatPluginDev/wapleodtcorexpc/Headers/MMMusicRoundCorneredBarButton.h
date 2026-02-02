@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImage, UIImageView, UILabel;
 
@@ -19,7 +20,6 @@
     UIImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *highlightedImage; // @synthesize highlightedImage=_highlightedImage;
@@ -38,4 +38,3 @@
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 
 @end
-

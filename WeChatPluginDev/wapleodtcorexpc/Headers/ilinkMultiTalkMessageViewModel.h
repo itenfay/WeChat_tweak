@@ -13,7 +13,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long roomID; // @synthesize roomID=_roomID;
 @property(nonatomic) long long ilinkMsgType; // @synthesize ilinkMsgType=_ilinkMsgType;
 @property(readonly, nonatomic) NSMutableArray *allTalkedMembers; // @synthesize allTalkedMembers=m_allTalkedMembers;

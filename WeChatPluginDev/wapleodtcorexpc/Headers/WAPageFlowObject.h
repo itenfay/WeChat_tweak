@@ -21,7 +21,6 @@
     unsigned long long _stayTimeAtFunctionalPageEnterGame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stayTimeAtFunctionalPageEnterGame; // @synthesize stayTimeAtFunctionalPageEnterGame=_stayTimeAtFunctionalPageEnterGame;
 @property(nonatomic) _Bool isReportBePoped; // @synthesize isReportBePoped=_isReportBePoped;
 @property(nonatomic) _Bool isEntrance; // @synthesize isEntrance=_isEntrance;

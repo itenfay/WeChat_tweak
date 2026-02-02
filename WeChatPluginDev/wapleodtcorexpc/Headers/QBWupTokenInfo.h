@@ -19,7 +19,6 @@
 @property(nonatomic) long long maxage; // @synthesize maxage=_maxage;
 @property(retain, nonatomic) NSString *aesKey; // @synthesize aesKey=_aesKey;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

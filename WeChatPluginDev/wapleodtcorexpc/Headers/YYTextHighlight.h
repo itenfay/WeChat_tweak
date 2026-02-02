@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary;
 
@@ -17,7 +18,6 @@
 
 + (id)highlightWithBackgroundColor:(id)arg1;
 + (id)highlightWithAttributes:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType longPressAction; // @synthesize longPressAction=_longPressAction;
 @property(copy, nonatomic) CDUnknownBlockType tapAction; // @synthesize tapAction=_tapAction;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
@@ -40,4 +40,3 @@
 - (void)encodeWithCoder:(id)arg1;
 
 @end
-

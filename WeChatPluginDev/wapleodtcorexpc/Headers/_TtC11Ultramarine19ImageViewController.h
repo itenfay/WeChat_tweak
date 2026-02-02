@@ -13,7 +13,6 @@
     MISSING_TYPE *curImageTaskWrap;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

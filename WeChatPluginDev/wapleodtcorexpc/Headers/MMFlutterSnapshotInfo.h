@@ -14,7 +14,6 @@
     struct CGRect _contentFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

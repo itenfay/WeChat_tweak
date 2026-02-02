@@ -32,7 +32,6 @@
     NSMutableDictionary *_pathRedDotDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pathRedDotDic; // @synthesize pathRedDotDic=_pathRedDotDic;
 @property(nonatomic) long long lastFastSwipeTabType; // @synthesize lastFastSwipeTabType=_lastFastSwipeTabType;
 @property(nonatomic) long long lastFastSwipeFeedIndex; // @synthesize lastFastSwipeFeedIndex=_lastFastSwipeFeedIndex;

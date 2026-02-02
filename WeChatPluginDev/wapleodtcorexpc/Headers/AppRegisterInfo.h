@@ -46,7 +46,6 @@
     unsigned long long appSupportContentTypeBy3rdApp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppWatermarkUrlChanged; // @synthesize isAppWatermarkUrlChanged;
 @property(nonatomic) _Bool isAppIconUrlChanged; // @synthesize isAppIconUrlChanged;
 @property(nonatomic) unsigned long long appSupportContentTypeBy3rdApp; // @synthesize appSupportContentTypeBy3rdApp;

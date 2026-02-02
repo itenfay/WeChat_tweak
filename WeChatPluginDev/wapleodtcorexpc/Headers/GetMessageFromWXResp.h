@@ -12,7 +12,6 @@
     WXMediaMessage *message;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bText; // @synthesize bText;
 @property(retain, nonatomic) WXMediaMessage *message; // @synthesize message;
 @property(retain, nonatomic) NSString *text; // @synthesize text;

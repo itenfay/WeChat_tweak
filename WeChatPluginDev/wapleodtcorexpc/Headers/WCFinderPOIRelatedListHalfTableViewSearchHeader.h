@@ -14,7 +14,6 @@
     id <WCFinderPOIRelatedListHalfTableViewSearchHeaderDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderPOIRelatedListHalfTableViewSearchHeaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMUISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 - (void)mmsearchBarResignActive;

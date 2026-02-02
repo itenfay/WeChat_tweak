@@ -13,7 +13,6 @@
     NSObject *_viewComponent;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSObject *viewComponent; // @synthesize viewComponent=_viewComponent;
 - (id)getObjectFromChange:(id)arg1 forKey:(id)arg2;
 - (void)_viewModel:(id)arg1 didChangeProperty:(id)arg2 fromOldValue:(id)arg3 toNewValue:(id)arg4;

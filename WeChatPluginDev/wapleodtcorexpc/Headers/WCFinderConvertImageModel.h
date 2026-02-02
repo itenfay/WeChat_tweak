@@ -13,7 +13,6 @@
     NSArray *_imagesArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imagesArray; // @synthesize imagesArray=_imagesArray;
 @property(retain, nonatomic) NSArray *imageAssetArray; // @synthesize imageAssetArray=_imageAssetArray;
 

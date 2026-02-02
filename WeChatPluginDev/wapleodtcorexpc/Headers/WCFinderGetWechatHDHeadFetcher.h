@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, NSString;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 @property(nonatomic) _Bool allowNormalImg; // @synthesize allowNormalImg=_allowNormalImg;
@@ -33,4 +33,3 @@
 - (id)initWithNormalImageIfHDNotFound:(_Bool)arg1;
 
 @end
-

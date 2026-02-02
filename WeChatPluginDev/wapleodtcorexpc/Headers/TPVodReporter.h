@@ -27,7 +27,6 @@
     long long _bufferingTotalDurationMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long bufferingTotalDurationMs; // @synthesize bufferingTotalDurationMs=_bufferingTotalDurationMs;
 @property(nonatomic) int bufferingTotalCount; // @synthesize bufferingTotalCount=_bufferingTotalCount;
 @property(nonatomic) long long bufferingStartTimeSinceBootMs; // @synthesize bufferingStartTimeSinceBootMs=_bufferingStartTimeSinceBootMs;

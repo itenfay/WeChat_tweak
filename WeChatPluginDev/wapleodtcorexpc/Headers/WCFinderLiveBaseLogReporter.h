@@ -48,7 +48,6 @@
 + (id)supplyLiveCommonInfo:(id)arg1 toChannelExtra:(id)arg2;
 + (id)getLiveCommonActionInfo:(id)arg1;
 + (id)genSwitchExtraDic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *channelExtraDict; // @synthesize channelExtraDict=_channelExtraDict;
 @property(retain, nonatomic) NSString *channelExtra; // @synthesize channelExtra=_channelExtra;
 @property(nonatomic) unsigned int minizaionCount; // @synthesize minizaionCount=_minizaionCount;

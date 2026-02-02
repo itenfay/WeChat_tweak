@@ -21,7 +21,6 @@
     UIButton *_coverBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *coverBtn; // @synthesize coverBtn=_coverBtn;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;

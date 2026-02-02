@@ -22,7 +22,6 @@
 + (void)notifyPackageChanged:(id)arg1;
 + (void)cleanPkgStatus;
 + (id)packageWithPkgId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicRid2PreloadDataItem; // @synthesize dicRid2PreloadDataItem=_dicRid2PreloadDataItem;
 @property(retain, nonatomic) NSMutableDictionary *dicRid2DataItem; // @synthesize dicRid2DataItem=_dicRid2DataItem;
 @property(retain, nonatomic) NSMutableDictionary *dicRid2SingleFileInfo; // @synthesize dicRid2SingleFileInfo=_dicRid2SingleFileInfo;

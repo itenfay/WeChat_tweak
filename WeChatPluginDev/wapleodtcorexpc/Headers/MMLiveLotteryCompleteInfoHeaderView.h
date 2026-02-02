@@ -15,7 +15,6 @@
 }
 
 + (double)headerHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCPLabel *lotteryInfoDescLabel; // @synthesize lotteryInfoDescLabel=_lotteryInfoDescLabel;
 @property(retain, nonatomic) MMCPLabel *lotteryInfoTitleLabel; // @synthesize lotteryInfoTitleLabel=_lotteryInfoTitleLabel;
 @property(retain, nonatomic) MMFinderLiveLotteryRecord *lotteryRecord; // @synthesize lotteryRecord=_lotteryRecord;

@@ -12,7 +12,6 @@
     NSMutableArray *_canvasViews;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *canvasViews; // @synthesize canvasViews=_canvasViews;
 - (void)onLongPress:(id)arg1 canvas:(id)arg2;
 - (void)onTouchCancel:(id)arg1 canvas:(id)arg2;

@@ -20,7 +20,6 @@
 + (unsigned int)transferPBFloatMsgTypeToFinderLiveFloatMsgType:(unsigned int)arg1;
 + (unsigned int)transferLiveFloatMsgTypeToPBFloatMsgType:(unsigned int)arg1;
 + (id)createFinderLiveFloatMsgWithPBFloatMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFreeFloatMsgConfig *freeMsgConfig; // @synthesize freeMsgConfig=_freeMsgConfig;
 @property(retain, nonatomic) MMFinderLiveFloatMsgDecorationInfo *decorationInfo; // @synthesize decorationInfo=_decorationInfo;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;

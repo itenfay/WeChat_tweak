@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (_Bool)isNeedOverseaPrivacyConfirm;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completeAction; // @synthesize completeAction=_completeAction;
 - (void)onCancelServiceAuth;
 - (void)onOpenService:(unsigned long long)arg1 config:(id)arg2 error:(id)arg3;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

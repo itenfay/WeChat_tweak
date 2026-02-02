@@ -24,7 +24,6 @@
 }
 
 + (double)heightForNormalStateWithConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *priceSuffixDescriptionLabel; // @synthesize priceSuffixDescriptionLabel=_priceSuffixDescriptionLabel;
 @property(retain, nonatomic) UILabel *listPriceLabel; // @synthesize listPriceLabel=_listPriceLabel;
 @property(retain, nonatomic) UILabel *currentPriceDescriptionLabel; // @synthesize currentPriceDescriptionLabel=_currentPriceDescriptionLabel;

@@ -14,7 +14,6 @@
 + (double)getUsualTopicHeight;
 + (id)createLabel;
 + (id)createRichTextView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *useCountLabel; // @synthesize useCountLabel=_useCountLabel;
 @property(retain, nonatomic) RichTextView *topicTextView; // @synthesize topicTextView=_topicTextView;
 - (void)layoutElements;

@@ -12,7 +12,6 @@
     NSArray *_funcList;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *funcList; // @synthesize funcList=_funcList;
 
 @end

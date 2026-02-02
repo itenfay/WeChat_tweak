@@ -15,7 +15,6 @@
     UIImageView *_audioOnlyBGView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *audioOnlyBGView; // @synthesize audioOnlyBGView=_audioOnlyBGView;
 @property(nonatomic) _Bool audioOnlyMode; // @synthesize audioOnlyMode=_audioOnlyMode;
 @property(retain, nonatomic) UIImageView *snapshotImageView; // @synthesize snapshotImageView=_snapshotImageView;

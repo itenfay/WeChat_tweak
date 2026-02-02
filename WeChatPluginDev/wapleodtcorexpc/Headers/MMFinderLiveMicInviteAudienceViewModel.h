@@ -22,7 +22,6 @@
     NSSet *_removedAudienceSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *removedAudienceSet; // @synthesize removedAudienceSet=_removedAudienceSet;
 @property(retain, nonatomic) NSSet *waitConnectAudienceSet; // @synthesize waitConnectAudienceSet=_waitConnectAudienceSet;
 @property(retain, nonatomic) NSDictionary *invitedMicAudienceDict; // @synthesize invitedMicAudienceDict=_invitedMicAudienceDict;

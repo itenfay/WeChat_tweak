@@ -28,7 +28,6 @@
     long long _CostTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long CostTime; // @synthesize CostTime=_CostTime;
 @property(nonatomic) long long EndTime; // @synthesize EndTime=_EndTime;
 @property(nonatomic) long long StartTime; // @synthesize StartTime=_StartTime;

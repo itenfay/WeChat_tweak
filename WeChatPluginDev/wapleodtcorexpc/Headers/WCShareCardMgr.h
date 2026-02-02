@@ -23,7 +23,6 @@
     CLLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSArray *arrNeedAnimtionCardData; // @synthesize arrNeedAnimtionCardData=_arrNeedAnimtionCardData;
 - (void)saveShareCardsToDB:(id)arg1;

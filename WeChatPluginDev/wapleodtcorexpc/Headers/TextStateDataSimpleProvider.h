@@ -13,7 +13,6 @@
     TextStateModel *_textState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool visable; // @synthesize visable=_visable;
 @property(retain, nonatomic) TextStateModel *textState; // @synthesize textState=_textState;
 - (void)configureCardView:(id)arg1 atIndex:(unsigned long long)arg2;

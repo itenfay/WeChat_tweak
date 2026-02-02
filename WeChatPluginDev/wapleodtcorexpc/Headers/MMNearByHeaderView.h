@@ -14,7 +14,6 @@
     UIView *m_lineView;
 }
 
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)init;
 - (void)dealloc;

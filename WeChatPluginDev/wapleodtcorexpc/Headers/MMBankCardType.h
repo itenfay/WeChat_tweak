@@ -18,7 +18,6 @@
 }
 
 + (id)BankCardTypeWithBankType:(id)arg1 bankName:(id)arg2 bankaccType:(id)arg3 bankaccTypeName:(id)arg4 isMaintainance:(_Bool)arg5 forbidWord:(id)arg6;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *forbidWord; // @synthesize forbidWord=_forbidWord;
 @property(readonly, nonatomic) _Bool isMaintainance; // @synthesize isMaintainance=_isMaintainance;
 @property(readonly, nonatomic) NSString *bankaccTypeName; // @synthesize bankaccTypeName=_bankaccTypeName;

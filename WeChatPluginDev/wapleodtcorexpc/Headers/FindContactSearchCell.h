@@ -17,7 +17,6 @@
     AttributeLabel *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;

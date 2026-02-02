@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUIImageView, MMUILabel, MMUIView, NSString;
 
 @interface WCFinderLiveRedPacketItemView
@@ -16,7 +18,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -32,4 +33,3 @@
 - (id)initWithImageName:(id)arg1 title:(id)arg2;
 
 @end
-

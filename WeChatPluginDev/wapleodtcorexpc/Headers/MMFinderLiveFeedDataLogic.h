@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FeedsPreviewLiveMultiStyleInfo, FinderLiveCheerInfo, FinderLiveEcGetLiveConfigResponse, FinderLiveMilestoneLotteryInfo, FinderLivePromoteMsgInfo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo, FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo, FinderWindowProductInfo, MMFinderLiveAnchorStatusItem, MMFinderLiveFeedProductGuideRecommendInfo, MMFinderLiveFeedStreamCarouselBaseItem, MMFinderLiveFeedStreamCarouselProductGuideItem, MMFinderLiveFeedTransferLogic, MMFinderLiveLotteryInfo, MMLiveFeedStreamTask, NSArray, NSData, NSString, WCFinderDataItem, WCFinderFeedContentVM, WCFinderFeedStreamPreviewLiveCGI, WCFinderGetFeedAsyncInfoCGI, WCFinderLiveElectronicCommerceRoomConfigCGI, _TtC6WeChat36MMFinderLiveUIComponentLoadingReport;
 @protocol MMFinderLiveFeedDataLogicDelegate, MMFinderLiveFeedStreamCarouselItemProtocol;
@@ -50,7 +51,6 @@
     unsigned long long _loadingReportedFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadingReportedFlag; // @synthesize loadingReportedFlag=_loadingReportedFlag;
 @property(nonatomic) _Bool hasReceiveGetLiveMsg; // @synthesize hasReceiveGetLiveMsg=_hasReceiveGetLiveMsg;
 @property(nonatomic) _Bool hasReceivePollingExtraInfo; // @synthesize hasReceivePollingExtraInfo=_hasReceivePollingExtraInfo;
@@ -234,4 +234,3 @@
 @property(readonly) Class superclass;
 
 @end
-

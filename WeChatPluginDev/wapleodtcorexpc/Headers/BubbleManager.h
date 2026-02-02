@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)bubbleInfoWithType:(unsigned long long)arg1 position:(unsigned long long)arg2 isSender:(_Bool)arg3;
 - (id)init;
 

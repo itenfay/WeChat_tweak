@@ -16,7 +16,6 @@
     WCPayRemarkPageSheet *_remarkPageSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayRemarkPageSheet *remarkPageSheet; // @synthesize remarkPageSheet=_remarkPageSheet;
 @property(retain, nonatomic) NSString *remarkContent; // @synthesize remarkContent=_remarkContent;
 @property(retain, nonatomic) WCPayDecimalKeyboardView *keyboardView; // @synthesize keyboardView=_keyboardView;

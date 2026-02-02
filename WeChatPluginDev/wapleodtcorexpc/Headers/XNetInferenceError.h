@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)descriptionWithoutCallStack;
 - (id)description;
 - (id)initWithUnderlying:(const void *)arg1;

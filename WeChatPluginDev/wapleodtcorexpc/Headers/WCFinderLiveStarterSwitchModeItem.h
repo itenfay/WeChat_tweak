@@ -21,7 +21,6 @@
 
 + (id)getLiveStarterCacheItem;
 + (id)cleanLiveStarterGameCacheItem;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needHideKTVLiveMode; // @synthesize needHideKTVLiveMode=_needHideKTVLiveMode;
 @property(nonatomic) _Bool needHideAudioLiveMode; // @synthesize needHideAudioLiveMode=_needHideAudioLiveMode;
 @property(retain, nonatomic) WCFinderLiveStarterLiveModeCacheItem *cacheItem; // @synthesize cacheItem=_cacheItem;

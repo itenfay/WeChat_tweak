@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
@@ -25,7 +26,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastCheckTimeMs; // @synthesize lastCheckTimeMs=_lastCheckTimeMs;
 @property(retain, nonatomic) NSRecursiveLock *serviceLock; // @synthesize serviceLock=_serviceLock;
 @property(nonatomic) _Bool isReinitFinish; // @synthesize isReinitFinish=_isReinitFinish;
@@ -80,4 +80,3 @@
 - (id)init;
 
 @end
-

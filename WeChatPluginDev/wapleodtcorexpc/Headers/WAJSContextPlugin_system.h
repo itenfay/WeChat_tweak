@@ -16,7 +16,6 @@
     WAWebActionSheet *_actionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebActionSheet *actionSheet; // @synthesize actionSheet=_actionSheet;
 @property(nonatomic) long long capsuleTranslateState; // @synthesize capsuleTranslateState=_capsuleTranslateState;
 @property(nonatomic) long long pageTranslateState; // @synthesize pageTranslateState=_pageTranslateState;

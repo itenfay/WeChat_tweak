@@ -16,7 +16,6 @@
 }
 
 + (_Bool)validateDict:(id)arg1 withAPIKey:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *services; // @synthesize services=_services;
 @property(retain, nonatomic) QBusinessConf *business_conf; // @synthesize business_conf=_business_conf;
 @property(retain, nonatomic) NSString *_private_partner; // @synthesize _private_partner=__private_partner;

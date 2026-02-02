@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FaceRecogBaseHandler, FaceRecogPayContractViewController, MMUIViewController, NSString, WCPayGetFaceCheckLiveTypeCgi;
 @protocol FaceRecogPayHandlerDelegate, FaceRecogPayHandlerProtocol;
@@ -38,7 +39,6 @@
     long long _faceRecogStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long faceRecogStartTime; // @synthesize faceRecogStartTime=_faceRecogStartTime;
 @property(nonatomic) _Bool hasClickFrontChangeVerifyWayButton; // @synthesize hasClickFrontChangeVerifyWayButton=_hasClickFrontChangeVerifyWayButton;
 @property(retain, nonatomic) WCPayGetFaceCheckLiveTypeCgi *getFaceCheckLiveTypeCgi; // @synthesize getFaceCheckLiveTypeCgi=_getFaceCheckLiveTypeCgi;
@@ -110,4 +110,3 @@
 @property(readonly) Class superclass;
 
 @end
-

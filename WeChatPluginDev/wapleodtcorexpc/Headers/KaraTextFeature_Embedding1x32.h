@@ -14,7 +14,6 @@
 
 + (unsigned long long)columnType;
 + (id)unarchiveWithWCTValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
 - (id)archivedWCTValue;
 - (id)initWithValues:(id)arg1;

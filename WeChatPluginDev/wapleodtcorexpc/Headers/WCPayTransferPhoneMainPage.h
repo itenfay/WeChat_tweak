@@ -45,7 +45,6 @@
     UIView *_tailView;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIView *tailView; // @synthesize tailView=_tailView;
 @property(retain) WCPayTransferDelayOptionView *delayOption; // @synthesize delayOption=_delayOption;
 @property(retain) WCPayNavigationView *navigationView; // @synthesize navigationView=_navigationView;

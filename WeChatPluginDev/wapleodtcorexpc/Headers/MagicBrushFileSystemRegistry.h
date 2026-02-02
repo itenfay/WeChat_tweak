@@ -16,7 +16,6 @@
     NSObject<OS_dispatch_queue> *_orderListQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *orderListQueue; // @synthesize orderListQueue=_orderListQueue;
 @property(retain, nonatomic) OrderedDictionary *mCustomOrderedList; // @synthesize mCustomOrderedList=_mCustomOrderedList;
 @property(retain, nonatomic) OrderedDictionary *mOrderedList; // @synthesize mOrderedList=_mOrderedList;

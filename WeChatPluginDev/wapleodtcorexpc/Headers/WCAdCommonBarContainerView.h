@@ -14,7 +14,6 @@
 
 + (double)totalHeight:(id)arg1;
 + (Class)barViewClass:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBaseBarView *baseBarView; // @synthesize baseBarView=_baseBarView;
 @property(nonatomic) __weak id <WCAdCommonBarContainerViewDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 - (id)fetchAdOriginView;

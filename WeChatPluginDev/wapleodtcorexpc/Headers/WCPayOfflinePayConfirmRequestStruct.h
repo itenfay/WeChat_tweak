@@ -14,7 +14,6 @@
     NSString *m_nsPasswd;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPasswd; // @synthesize m_nsPasswd;
 @property(retain, nonatomic) NSString *m_nsMessageID; // @synthesize m_nsMessageID;
 @property(nonatomic) int m_enWCPayOfflinePayConfirmRequestButtonType; // @synthesize m_enWCPayOfflinePayConfirmRequestButtonType;

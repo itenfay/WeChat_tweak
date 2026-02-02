@@ -17,7 +17,6 @@
     NSString *m_topTitleText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_scene; // @synthesize m_scene=_m_scene;
 - (void)setM_topTitleText:(id)arg1;
 - (id)m_topTitleText;

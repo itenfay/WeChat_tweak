@@ -14,7 +14,6 @@
     WCFinderLongVideoSeeLaterListVM *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLongVideoSeeLaterListVM *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCFinderStreamFooterView *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) WCFinderDataLoadTips *dataLoadTips; // @synthesize dataLoadTips=_dataLoadTips;

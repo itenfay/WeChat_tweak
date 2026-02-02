@@ -11,7 +11,6 @@
     WebviewJSEventHandlerFacade *_jsEventHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebviewJSEventHandlerFacade *jsEventHandler; // @synthesize jsEventHandler=_jsEventHandler;
 - (void)callbackWithId:(id)arg1 callback:(id)arg2 params:(id)arg3;
 - (id)webviewController;

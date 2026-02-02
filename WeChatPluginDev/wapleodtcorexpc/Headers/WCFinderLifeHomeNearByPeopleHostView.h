@@ -14,7 +14,6 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool alreadyCheckLBS; // @synthesize alreadyCheckLBS=_alreadyCheckLBS;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(retain, nonatomic) SeePeopleNearbyViewController *seePeopleVC; // @synthesize seePeopleVC=_seePeopleVC;

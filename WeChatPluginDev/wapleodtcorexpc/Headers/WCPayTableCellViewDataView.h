@@ -33,7 +33,6 @@
 + (double)contentHeightWithViewData:(id)arg1 width:(double)arg2 titleLinesOfNonSubTitle:(int)arg3 sizeAdaptFont:(_Bool)arg4;
 + (double)contentHeightWithViewData:(id)arg1 width:(double)arg2 titleLinesOfNonSubTitle:(int)arg3;
 + (double)dyCellHeight:(double)arg1 sizeAdaptFont:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain) UIView *m_numberView; // @synthesize m_numberView=_m_numberView;
 @property(retain) UIImage *m_rightIconImage; // @synthesize m_rightIconImage=_m_rightIconImage;
 @property __weak id <WCPayVoidCallbackDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

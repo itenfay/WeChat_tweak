@@ -19,7 +19,6 @@
     CContact *_chatRoomContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *chatRoomContact; // @synthesize chatRoomContact=_chatRoomContact;
 - (void)setM_tableView:(id)arg1;
 - (id)m_tableView;

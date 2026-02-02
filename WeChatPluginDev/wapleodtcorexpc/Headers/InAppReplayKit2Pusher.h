@@ -14,7 +14,6 @@
     TRTCCloud *_trtcCloud;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStarting; // @synthesize isStarting=_isStarting;
 @property(nonatomic) _Bool isPushing; // @synthesize isPushing=_isPushing;
 @property(retain, nonatomic) TRTCCloud *trtcCloud; // @synthesize trtcCloud=_trtcCloud;

@@ -13,7 +13,6 @@
     UIView *_topLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 - (void)layoutUI;

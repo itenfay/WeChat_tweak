@@ -12,7 +12,6 @@
     id <LongPressMenuViewDelegate> menu_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <LongPressMenuViewDelegate> menu_delegate; // @synthesize menu_delegate;
 - (void)copy:(id)arg1;
 - (_Bool)canBecomeFirstResponder;

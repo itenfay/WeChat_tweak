@@ -11,7 +11,6 @@
     NSString *m_unbindOKTip;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onSetPwd;

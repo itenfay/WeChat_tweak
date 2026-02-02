@@ -11,7 +11,6 @@
     unsigned long long _lastInputTime;
 }
 
-- (void).cxx_destruct;
 - (void)frequencyLimitCheck;
 - (void)onJsEvaluateError:(id)arg1;
 - (void)onWebViewTerminal:(id)arg1;

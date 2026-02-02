@@ -24,7 +24,6 @@
 + (void)MMLiveReportFieldAdd_waitCount;
 + (void)MMLiveReportFieldAdd_liveId;
 + (void)MMLiveReportFieldAdd_roomId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int linkCount; // @synthesize linkCount;
 @property(nonatomic) unsigned int actionCode; // @synthesize actionCode;
 @property(retain, nonatomic) NSString *audienceUin; // @synthesize audienceUin;

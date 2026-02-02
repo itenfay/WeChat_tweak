@@ -22,7 +22,6 @@
     WCFinderFlowEventReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFlowEventReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(retain, nonatomic) WCFinderBaseCgi *requestCgi; // @synthesize requestCgi=_requestCgi;
 @property(nonatomic) _Bool hasNoMoreData; // @synthesize hasNoMoreData=_hasNoMoreData;

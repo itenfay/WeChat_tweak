@@ -14,7 +14,6 @@
     id <MMMsgTipsExpandViewDelegate> _expandViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(nonatomic) _Bool showBottomGradientMask; // @synthesize showBottomGradientMask=_showBottomGradientMask;
 @property(nonatomic) __weak id <MMMsgTipsExpandViewDelegate> expandViewDelegate; // @synthesize expandViewDelegate=_expandViewDelegate;

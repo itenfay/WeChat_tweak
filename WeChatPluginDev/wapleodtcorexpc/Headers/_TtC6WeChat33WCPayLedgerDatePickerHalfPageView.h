@@ -13,7 +13,6 @@
     MISSING_TYPE *confirmAction;
 }
 
-- (void).cxx_destruct;
 - (void)onClickPageSheetCancelButton;
 - (void)onClickPageSheetConfirmButton;
 - (void)sizeToFit;

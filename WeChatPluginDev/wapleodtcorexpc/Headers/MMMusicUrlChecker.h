@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMMusicUrlChecker
@@ -12,7 +14,6 @@
     NSString *m_nsMusicUrl;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)cancelCheckMusicUrl:(unsigned int)arg1;
 - (unsigned int)checkMusicUrlWithMusicInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -27,4 +28,3 @@
 - (void)checkSpamMusicInfo:(id)arg1 completeHandler:(CDUnknownBlockType)arg2;
 
 @end
-

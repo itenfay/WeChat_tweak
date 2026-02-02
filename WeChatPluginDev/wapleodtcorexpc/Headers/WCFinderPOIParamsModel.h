@@ -24,7 +24,6 @@
     NSString *_jumpInfoToPoiStreamBypass;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpInfoToPoiStreamBypass; // @synthesize jumpInfoToPoiStreamBypass=_jumpInfoToPoiStreamBypass;
 @property(nonatomic) _Bool isPrefetch; // @synthesize isPrefetch=_isPrefetch;
 @property(nonatomic) int fromScene; // @synthesize fromScene=_fromScene;

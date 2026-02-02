@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_locationArr;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *locationArr; // @synthesize locationArr=_locationArr;
 - (id)getPBPropertyTable;
 

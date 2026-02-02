@@ -36,7 +36,6 @@
     unsigned long long _transferSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transferSize; // @synthesize transferSize=_transferSize;
 @property(nonatomic) unsigned long long speedCount; // @synthesize speedCount=_speedCount;
 @property(nonatomic) unsigned long long curSpeed; // @synthesize curSpeed=_curSpeed;

@@ -18,7 +18,6 @@
 }
 
 + (void)applyPAGImage:(id)arg1 forIndex:(unsigned long long)arg2 tmpl:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedMaskView; // @synthesize highlightedMaskView=_highlightedMaskView;
 @property(retain, nonatomic) PAGFile *tmplFile; // @synthesize tmplFile=_tmplFile;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;

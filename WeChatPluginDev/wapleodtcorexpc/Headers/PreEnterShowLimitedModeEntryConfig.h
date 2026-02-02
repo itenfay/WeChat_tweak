@@ -12,7 +12,6 @@
     NSString *_deviceid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceid; // @synthesize deviceid=_deviceid;
 
 @end

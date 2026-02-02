@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiteAppViewController, MMLiveCDNPlayerView, NSString, WCFinderDataItem;
 @protocol MMFinderLiveFrontEndPreviewViewChannel;
@@ -20,7 +21,6 @@
 }
 
 + (id)viewStartIfNeededWithFrame:(struct CGRect)arg1 params:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long lastControlAction; // @synthesize lastControlAction=_lastControlAction;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

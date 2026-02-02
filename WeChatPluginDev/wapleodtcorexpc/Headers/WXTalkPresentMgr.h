@@ -11,7 +11,6 @@
     _Bool _isInfoListLoaded;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *infoList; // @synthesize infoList=_infoList;
 - (_Bool)isTrackMode:(id)arg1;
 - (_Bool)isTalkRoomEmpty:(id)arg1;

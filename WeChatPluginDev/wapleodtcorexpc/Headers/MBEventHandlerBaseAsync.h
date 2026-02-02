@@ -10,7 +10,6 @@
     MBJSFunction *_callbackFunc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MBJSFunction *callbackFunc; // @synthesize callbackFunc=_callbackFunc;
 - (void)callback:(id)arg1;
 - (void)invoke:(id)arg1;

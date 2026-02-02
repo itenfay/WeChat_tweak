@@ -15,7 +15,6 @@
 }
 
 + (id)changeQuickReplyModelFromInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(nonatomic) unsigned int flag; // @synthesize flag=_flag;
 @property(retain, nonatomic) NSMutableArray *modelList; // @synthesize modelList=_modelList;

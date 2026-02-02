@@ -14,7 +14,6 @@
     _Bool m_bCloseForViewDetail;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatname; // @synthesize chatname=_chatname;
 - (void)onShareVideoToTimeline:(_Bool)arg1;
 - (void)onShareVideoToFriend:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJOCRProcessor, MJVideoFrameExtractor;
 
@@ -17,7 +18,6 @@
 
 + (id)calcTimestampsFromTimeRange:(CDStruct_e83c9415)arg1 videoFrameSampleRate:(double)arg2;
 + (id)getClipSegmentPHLocalIdentifier:(id)arg1;
-- (void).cxx_destruct;
 @property _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property(nonatomic) _Bool textFound; // @synthesize textFound=_textFound;
 @property(readonly, nonatomic) MJVideoFrameExtractor *videoFrameExtractor; // @synthesize videoFrameExtractor=_videoFrameExtractor;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

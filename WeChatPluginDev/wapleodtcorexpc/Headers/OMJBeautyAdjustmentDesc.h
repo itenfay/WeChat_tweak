@@ -53,7 +53,6 @@
 + (id)naturalBeautyAdjustmentDesc;
 + (id)classicBeautyAdjustmentDesc;
 + (id)nullBeautyAdjustmentDesc;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBeautyEnabled; // @synthesize isBeautyEnabled=_isBeautyEnabled;
 @property(nonatomic) float makeupContour; // @synthesize makeupContour=_makeupContour;
 @property(nonatomic) float makeupBlusher; // @synthesize makeupBlusher=_makeupBlusher;

@@ -14,7 +14,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_filePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (id)archivedWCTValue;
 - (id)getPBPropertyTable;

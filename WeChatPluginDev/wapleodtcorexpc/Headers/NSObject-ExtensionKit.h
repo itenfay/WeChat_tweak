@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSObject (ExtensionKit)
 + (void)doExtensionKitHook;
@@ -14,4 +15,3 @@
 - (id)XPCAttachment;
 - (void)setXPCAttachment:(id)arg1;
 @end
-

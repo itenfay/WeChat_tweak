@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_m_uiLocalID;
 + (void)PBArrayAdd_m_nsChatName;
 + (void)PBArrayAdd_m_nsMD5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiLastReadTime; // @synthesize m_uiLastReadTime=_m_uiLastReadTime;
 @property(nonatomic) unsigned int m_uiLocalID; // @synthesize m_uiLocalID=_m_uiLocalID;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName=_m_nsChatName;

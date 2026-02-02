@@ -10,7 +10,6 @@
     NSString *_protocolVer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *protocolVer; // @synthesize protocolVer=_protocolVer;
 - (id)init;
 

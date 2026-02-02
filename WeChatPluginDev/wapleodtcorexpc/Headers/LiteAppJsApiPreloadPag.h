@@ -10,7 +10,6 @@
     MMLiteAppDownloadMgr *_downloadMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppDownloadMgr *downloadMgr; // @synthesize downloadMgr=_downloadMgr;
 - (void)onDownloadTaskCompletion:(id)arg1 errType:(unsigned long long)arg2 errCode:(int)arg3;
 - (void)invokeJsApi:(id)arg1 param:(id)arg2 isFromView:(_Bool)arg3;

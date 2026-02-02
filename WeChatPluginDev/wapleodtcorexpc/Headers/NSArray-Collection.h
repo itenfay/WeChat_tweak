@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (Collection)
 + (id)cartesianProduct:(id)arg1;
@@ -105,4 +106,3 @@
 - (id)objectsNotKindsOf:(Class)arg1;
 - (id)objectsKindsOf:(Class)arg1;
 @end
-

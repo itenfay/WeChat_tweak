@@ -18,7 +18,6 @@
     UIPercentDrivenInteractiveTransition *_interactiveTransition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *interactiveTransition; // @synthesize interactiveTransition=_interactiveTransition;
 @property(nonatomic) unsigned int panGestureType; // @synthesize panGestureType=_panGestureType;
 @property(nonatomic) double resistanceParam; // @synthesize resistanceParam=_resistanceParam;

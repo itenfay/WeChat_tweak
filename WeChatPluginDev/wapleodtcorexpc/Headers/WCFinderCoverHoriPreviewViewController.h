@@ -20,7 +20,6 @@
     WCFinderCoverEditViewController *_shareCoverVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool alreadyShowReuseAlert; // @synthesize alreadyShowReuseAlert=_alreadyShowReuseAlert;
 @property(nonatomic) _Bool hasChooseCoverUrl; // @synthesize hasChooseCoverUrl=_hasChooseCoverUrl;
 @property(nonatomic) _Bool xlabShowPreviewBtn; // @synthesize xlabShowPreviewBtn=_xlabShowPreviewBtn;

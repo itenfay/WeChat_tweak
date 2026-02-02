@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *gridItems; // @synthesize gridItems=_gridItems;
 @property(retain, nonatomic) WCAdCardBtnInfo *clickActionInfo; // @synthesize clickActionInfo=_clickActionInfo;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;

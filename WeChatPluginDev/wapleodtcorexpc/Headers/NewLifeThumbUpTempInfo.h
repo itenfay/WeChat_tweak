@@ -13,7 +13,6 @@
     NSString *_feedId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool thumbUp; // @synthesize thumbUp=_thumbUp;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 

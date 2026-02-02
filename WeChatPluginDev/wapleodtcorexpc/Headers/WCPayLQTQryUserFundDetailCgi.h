@@ -11,7 +11,6 @@
     id <WCPayLQTQryUserFundDetailCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fromServer; // @synthesize fromServer=_fromServer;
 @property(nonatomic) __weak id <WCPayLQTQryUserFundDetailCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)cacheResponse:(id)arg1;

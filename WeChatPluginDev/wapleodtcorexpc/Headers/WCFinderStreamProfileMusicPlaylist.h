@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray, NSString, WCFinderStreamLoadingState;
 
 @interface WCFinderStreamProfileMusicPlaylist
@@ -16,7 +18,6 @@
 }
 
 + (void)removeAllObserver:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutCategoryItems; // @synthesize mutCategoryItems=_mutCategoryItems;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
 @property(copy, nonatomic) CDUnknownBlockType fillFromResponseBlock; // @synthesize fillFromResponseBlock=_fillFromResponseBlock;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

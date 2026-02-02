@@ -32,7 +32,6 @@
     double _expandPanGesLastPosY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isProgramScroll; // @synthesize isProgramScroll=_isProgramScroll;
 @property(nonatomic) _Bool shouldIgnoreScroll; // @synthesize shouldIgnoreScroll=_shouldIgnoreScroll;
 @property(nonatomic) _Bool isExpandBarEnabled; // @synthesize isExpandBarEnabled=_isExpandBarEnabled;

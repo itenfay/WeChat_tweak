@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage;
 
@@ -27,7 +28,6 @@
     CDUnknownBlockType _buttonExtraConfigBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType buttonExtraConfigBlock; // @synthesize buttonExtraConfigBlock=_buttonExtraConfigBlock;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 @property(copy, nonatomic) CDUnknownBlockType getMenuButtonCallback; // @synthesize getMenuButtonCallback=_getMenuButtonCallback;
@@ -46,4 +46,3 @@
 @property(nonatomic) long long editingStyle; // @synthesize editingStyle=_editingStyle;
 
 @end
-

@@ -17,7 +17,6 @@
     MISSING_TYPE *modalDisappearCallBack;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)pageSheetWillDisappear:(id)arg1;
 

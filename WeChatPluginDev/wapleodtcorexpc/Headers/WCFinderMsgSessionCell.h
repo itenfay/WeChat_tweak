@@ -11,7 +11,6 @@
     WCFinderMsgSessionNicknameTailView *_tailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgSessionNicknameTailView *tailView; // @synthesize tailView=_tailView;
 @property(retain, nonatomic) WCFinderMsgSessionCellViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)onTailViewNeedLayout;

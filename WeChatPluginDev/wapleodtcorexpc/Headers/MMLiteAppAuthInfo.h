@@ -35,7 +35,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headerMap; // @synthesize headerMap;
 @property(nonatomic) long long updateTime; // @synthesize updateTime;
 @property(retain, nonatomic) NSString *paramMap; // @synthesize paramMap;

@@ -24,7 +24,6 @@
 }
 
 + (void)reportForGameReview:(id)arg1 appVersion:(unsigned int)arg2 appState:(unsigned int)arg3 positionID:(unsigned long long)arg4 actionID:(unsigned long long)arg5 reportData:(id)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *ExternInfo; // @synthesize ExternInfo=_ExternInfo;
 @property(nonatomic) unsigned int SSID; // @synthesize SSID=_SSID;
 @property(retain, nonatomic) NSString *FuncID; // @synthesize FuncID=_FuncID;

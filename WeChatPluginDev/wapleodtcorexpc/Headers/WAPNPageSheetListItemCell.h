@@ -17,7 +17,6 @@
 
 + (double)edgeLR;
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PhoneAuthGetPhoneNumberLogicDisplayPhoneInfo *info; // @synthesize info=_info;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;

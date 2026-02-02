@@ -12,7 +12,6 @@
 
 + (struct CGSize)calculateDisplaySize:(struct CGSize)arg1 forVM:(id)arg2 cellIdentifier:(id)arg3 showSceneIntroduce:(_Bool)arg4;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 - (void)onContentVMChanged;
 - (void)prepareForReuse;

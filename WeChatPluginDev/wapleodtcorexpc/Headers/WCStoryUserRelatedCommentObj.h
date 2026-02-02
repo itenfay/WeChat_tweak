@@ -47,7 +47,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryMediaItem *thumbURLItem; // @synthesize thumbURLItem=_thumbURLItem;
 @property(nonatomic) _Bool isConcerned; // @synthesize isConcerned=_isConcerned;
 @property(nonatomic) unsigned int commentCreateTime; // @synthesize commentCreateTime=_commentCreateTime;

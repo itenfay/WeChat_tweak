@@ -16,7 +16,6 @@
     NSString *_selected;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *selected; // @synthesize selected=_selected;
 @property(nonatomic) _Bool bPresentModel; // @synthesize bPresentModel=_bPresentModel;
 - (void)OnSelectCell:(id)arg1;

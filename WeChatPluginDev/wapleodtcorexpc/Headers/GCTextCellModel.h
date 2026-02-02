@@ -12,7 +12,6 @@
     unsigned long long _subType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long subType; // @synthesize subType=_subType;
 @property(retain, nonatomic) GCTextCellLayoutInfo *textLayoutInfo; // @synthesize textLayoutInfo=_textLayoutInfo;
 @property(nonatomic) unsigned long long textCellModelType; // @synthesize textCellModelType=_textCellModelType;

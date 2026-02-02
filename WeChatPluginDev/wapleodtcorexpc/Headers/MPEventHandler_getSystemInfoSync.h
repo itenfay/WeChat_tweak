@@ -10,7 +10,6 @@
     MPGetSystemInfoImpl *_impl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPGetSystemInfoImpl *impl; // @synthesize impl=_impl;
 - (id)invoke:(id)arg1;
 - (id)apiName;

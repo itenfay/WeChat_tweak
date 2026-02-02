@@ -14,7 +14,6 @@
     NSString *_sectionTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(copy, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;
 @property(copy, nonatomic) NSString *sectionId; // @synthesize sectionId=_sectionId;

@@ -14,7 +14,6 @@
     struct CGRect _lastCellRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect lastCellRect; // @synthesize lastCellRect=_lastCellRect;
 @property(retain, nonatomic) NSArray *gridModelArray; // @synthesize gridModelArray=_gridModelArray;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

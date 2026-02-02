@@ -12,7 +12,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 - (id)shareSelfCardMessage;
 - (void)updateContact:(id)arg1;

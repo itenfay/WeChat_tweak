@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MPLandingPageCgiHandler, NSString, WCEliminatedSlotMMKV;
 
 @interface BTVideoAutoPlayMgr
@@ -14,7 +16,6 @@
 + (long long)getAutoPlayerViewContentModeByVideoInfo:(unsigned int)arg1 videoHeight:(unsigned int)arg2 viewWidth:(double)arg3 viewHeight:(double)arg4;
 + (unsigned long long)calcStatusFromAction:(unsigned long long)arg1 andCurStatus:(unsigned long long)arg2;
 + (id)genVideoAutoPlayInfoWebviewExtraInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *videoDataSlotMMKV; // @synthesize videoDataSlotMMKV=_videoDataSlotMMKV;
 @property(retain, nonatomic) MPLandingPageCgiHandler *m_brandCgiHandler; // @synthesize m_brandCgiHandler=_m_brandCgiHandler;
 - (void)clearAllData;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

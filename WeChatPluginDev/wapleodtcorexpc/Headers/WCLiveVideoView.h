@@ -16,7 +16,6 @@
     struct CGPoint _currentOrigin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MoveWithTouchAlgorithm *moveAlgorithm; // @synthesize moveAlgorithm=_moveAlgorithm;
 @property(nonatomic) __weak UIView *frontView; // @synthesize frontView=_frontView;
 @property(nonatomic) struct CGPoint currentOrigin; // @synthesize currentOrigin=_currentOrigin;

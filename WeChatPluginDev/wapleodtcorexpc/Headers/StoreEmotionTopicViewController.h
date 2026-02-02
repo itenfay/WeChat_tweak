@@ -22,7 +22,6 @@
     unsigned long long _sessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didLoadData; // @synthesize didLoadData=_didLoadData;
 @property(nonatomic) unsigned long long sessionId; // @synthesize sessionId=_sessionId;
 - (void)OnEmotionChartsCellTapButton:(id)arg1;

@@ -15,7 +15,6 @@
     TPPlayerGeneralTrackingParams *_playerGeneralTrackingParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerGeneralTrackingParams *playerGeneralTrackingParams; // @synthesize playerGeneralTrackingParams=_playerGeneralTrackingParams;
 @property(retain, nonatomic) TPPlayerDrmParams *playerDrmParams; // @synthesize playerDrmParams=_playerDrmParams;
 @property(retain, nonatomic) TPPlayerBaseMediaParams *playerBaseMediaParams; // @synthesize playerBaseMediaParams=_playerBaseMediaParams;

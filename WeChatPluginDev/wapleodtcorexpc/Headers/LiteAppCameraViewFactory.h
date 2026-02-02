@@ -13,7 +13,6 @@
     NSObject<FlutterBinaryMessenger> *_messenger;
 }
 
-- (void).cxx_destruct;
 - (id)createArgsCodec;
 - (id)createWithFrame:(struct CGRect)arg1 viewIdentifier:(long long)arg2 arguments:(id)arg3;
 - (id)initWithMessenger:(id)arg1;

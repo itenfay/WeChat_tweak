@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_isHadNotSave;
 + (void)PBArrayAdd_setUserName;
 + (void)PBArrayAdd_recordTime;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHadNotSave; // @synthesize isHadNotSave=_isHadNotSave;
 @property(retain, nonatomic) NSMutableSet *setUserName; // @synthesize setUserName=_setUserName;
 @property(nonatomic) unsigned int recordTime; // @synthesize recordTime=_recordTime;

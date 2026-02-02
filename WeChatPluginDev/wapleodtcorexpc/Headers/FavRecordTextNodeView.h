@@ -19,7 +19,6 @@
     FavRecordReferView *m_referView;
 }
 
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)onLongPressMsgReplyView;
 - (void)onTapMsgReferView;

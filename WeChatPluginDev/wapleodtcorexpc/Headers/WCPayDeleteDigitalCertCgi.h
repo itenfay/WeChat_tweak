@@ -15,7 +15,6 @@
     WCPayIdKeyRegularReporter *_m_cgiReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayIdKeyRegularReporter *m_cgiReporter; // @synthesize m_cgiReporter=_m_cgiReporter;
 @property(nonatomic) __weak id <WCPayDeleteDigitalCertCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *m_crtNo; // @synthesize m_crtNo=_m_crtNo;

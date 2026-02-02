@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_keyAliasList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyAliasList; // @synthesize keyAliasList=_keyAliasList;
 - (id)getPBPropertyTable;
 

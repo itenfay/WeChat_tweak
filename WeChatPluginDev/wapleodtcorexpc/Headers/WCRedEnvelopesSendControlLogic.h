@@ -37,7 +37,6 @@
     MemoryMappedKV *_skinNewLogicMMKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *skinNewLogicMMKV; // @synthesize skinNewLogicMMKV=_skinNewLogicMMKV;
 @property(retain, nonatomic) GetDefaultRedpacketResponse *defaultRedpacketCacheResponse; // @synthesize defaultRedpacketCacheResponse=_defaultRedpacketCacheResponse;
 @property(nonatomic) _Bool bIsFromWebScene; // @synthesize bIsFromWebScene=_bIsFromWebScene;

@@ -29,7 +29,6 @@
 + (struct Expression)unreadCommentInfoCondition;
 + (struct Expression)unreadReferenceInfoCondition;
 + (struct Expression)unreadDoLikeInfoCondition;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 @property(retain, nonatomic) WCTTable *textStateTable; // @synthesize textStateTable=_textStateTable;
 @property(retain, nonatomic) WCTTable *readInfoTable; // @synthesize readInfoTable=_readInfoTable;

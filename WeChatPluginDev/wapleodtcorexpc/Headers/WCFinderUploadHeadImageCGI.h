@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderUploadHeadImageCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failureBolck;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBolck; // @synthesize failureBolck=_failureBolck;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) unsigned int currentTaskStartPos; // @synthesize currentTaskStartPos=_currentTaskStartPos;
@@ -30,4 +31,3 @@
 - (id)initWithScene:(unsigned long long)arg1 avatarData:(id)arg2 successful:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

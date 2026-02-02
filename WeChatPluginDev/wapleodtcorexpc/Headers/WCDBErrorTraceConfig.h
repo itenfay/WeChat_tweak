@@ -16,7 +16,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showTableUsage; // @synthesize showTableUsage=_showTableUsage;
 @property(retain, nonatomic) NSString *messageMatchReg; // @synthesize messageMatchReg=_messageMatchReg;
 @property(retain, nonatomic) NSSet *dbTag; // @synthesize dbTag=_dbTag;

@@ -38,7 +38,6 @@
 + (struct CGRect)calculateEmotionEditContentDisplayFrameWithViewW:(double)arg1 height:(double)arg2 imageSize:(struct CGSize)arg3;
 + (id)configForEmotionEditWithContentDisplayFrame:(struct CGRect)arg1;
 + (id)configForEmotionEditWithContentDisplayFrame:(struct CGRect)arg1 isCropTimeOnly:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *launchMiaoJianBtnReportParams; // @synthesize launchMiaoJianBtnReportParams=_launchMiaoJianBtnReportParams;
 @property(nonatomic) unsigned long long launchMiaoJianBtnReportPolicy; // @synthesize launchMiaoJianBtnReportPolicy=_launchMiaoJianBtnReportPolicy;
 @property(nonatomic) unsigned long long launchMiaoJianBtnReportLogId; // @synthesize launchMiaoJianBtnReportLogId=_launchMiaoJianBtnReportLogId;

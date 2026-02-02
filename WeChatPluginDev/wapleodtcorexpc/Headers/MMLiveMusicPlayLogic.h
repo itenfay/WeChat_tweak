@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, MMLiveMusicDataItem, NSString, TXAudioEffectManager;
 @protocol MMLiveMusicPlayLogicDelegate;
@@ -21,7 +22,6 @@
     TXAudioEffectManager *_audioEffectMgr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak TXAudioEffectManager *audioEffectMgr; // @synthesize audioEffectMgr=_audioEffectMgr;
 @property(nonatomic) _Bool hasCreatedTXAudioEffectMgr; // @synthesize hasCreatedTXAudioEffectMgr=_hasCreatedTXAudioEffectMgr;
 @property(nonatomic) unsigned long long lastSyncVolumeTime; // @synthesize lastSyncVolumeTime=_lastSyncVolumeTime;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

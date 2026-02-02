@@ -15,7 +15,6 @@
     UIColor *_bkgColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *bkgColor; // @synthesize bkgColor=_bkgColor;
 @property(retain, nonatomic) UIView *wnTextView; // @synthesize wnTextView=_wnTextView;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;

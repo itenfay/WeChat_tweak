@@ -18,7 +18,6 @@
 }
 
 + (id)infoWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long moreButtonFirstClickTimeStamp; // @synthesize moreButtonFirstClickTimeStamp=_moreButtonFirstClickTimeStamp;
 @property(nonatomic) unsigned long long topButtonFirstClickTimeStamp; // @synthesize topButtonFirstClickTimeStamp=_topButtonFirstClickTimeStamp;
 @property(retain, nonatomic) NSMutableArray *foldDetailInfos; // @synthesize foldDetailInfos=_foldDetailInfos;

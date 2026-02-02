@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJTemplateComposingDelegateImpl : NSObject
 {
@@ -16,4 +17,3 @@
 - (void)handleFinishActionWithProducerVC:(id)arg1 sightDraft:(id)arg2 isAsyncComposite:(_Bool)arg3 publisher:(id)arg4 succeedHandler:(CDUnknownBlockType)arg5 failedHandler:(CDUnknownBlockType)arg6;
 
 @end
-

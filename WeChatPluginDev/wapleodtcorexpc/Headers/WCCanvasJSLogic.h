@@ -13,7 +13,6 @@
     id <YYWebViewDelegate> _wvDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <YYWebViewDelegate> wvDelegate; // @synthesize wvDelegate=_wvDelegate;
 @property(nonatomic) __weak id <WCCanvasJSLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool hasInjected; // @synthesize hasInjected=_hasInjected;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMPickerMaskView : UIView
 {
@@ -15,4 +16,3 @@
 - (void)showPicker:(id)arg1 block:(CDUnknownBlockType)arg2;
 
 @end
-

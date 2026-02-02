@@ -31,7 +31,6 @@
     NSMutableArray *_nextPageLocations;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nextPageLocations; // @synthesize nextPageLocations=_nextPageLocations;
 @property(retain, nonatomic) NSMutableArray *adSessionIDs; // @synthesize adSessionIDs=_adSessionIDs;
 @property(nonatomic) unsigned int scrollErrorCount; // @synthesize scrollErrorCount=_scrollErrorCount;

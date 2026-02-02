@@ -25,7 +25,6 @@
     UIButton *_m_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *m_cancelButton; // @synthesize m_cancelButton=_m_cancelButton;
 @property(retain, nonatomic) UIView *m_exclusiveView; // @synthesize m_exclusiveView=_m_exclusiveView;
 @property(retain, nonatomic) UIView *m_setWXStatusView; // @synthesize m_setWXStatusView=_m_setWXStatusView;

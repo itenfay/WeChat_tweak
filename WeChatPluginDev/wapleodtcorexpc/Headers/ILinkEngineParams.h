@@ -19,7 +19,6 @@
     NSString *_idcInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDebug; // @synthesize isDebug=_isDebug;
 @property(nonatomic) unsigned int videoLength; // @synthesize videoLength=_videoLength;
 @property(nonatomic) unsigned int videoRatio; // @synthesize videoRatio=_videoRatio;

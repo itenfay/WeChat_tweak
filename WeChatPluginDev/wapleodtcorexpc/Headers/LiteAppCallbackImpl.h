@@ -18,7 +18,6 @@
     NSString *_AlbumResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *AlbumResult; // @synthesize AlbumResult=_AlbumResult;
 @property(retain, nonatomic) NSArray *internationalCountries; // @synthesize internationalCountries=_internationalCountries;
 @property(retain, nonatomic) NSArray *regionData; // @synthesize regionData=_regionData;

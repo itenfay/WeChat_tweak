@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBBuildConfig, MagicBrushBiz, MagicBrushService, NSThread;
 @protocol MagicBrushDelegate;
@@ -20,7 +21,6 @@
     MagicBrushService *_service;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MagicBrushService *service; // @synthesize service=_service;
 @property(retain, nonatomic) MBBuildConfig *config; // @synthesize config=_config;
 @property(nonatomic) __weak NSThread *jsThread; // @synthesize jsThread=_jsThread;
@@ -53,4 +53,3 @@
 - (id)createView:(struct CGRect)arg1 config:(id)arg2;
 
 @end
-

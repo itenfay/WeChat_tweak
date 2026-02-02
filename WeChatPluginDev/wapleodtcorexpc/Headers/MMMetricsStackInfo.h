@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 - (id)generateOfflineStackReportItem;
 - (id)generateStackReportItem;
 - (_Bool)isEqual:(id)arg1;

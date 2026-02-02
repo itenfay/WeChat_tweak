@@ -11,7 +11,6 @@
     NSMutableSet *_runningReq;
 }
 
-- (void).cxx_destruct;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)callExtAndTryUpdateShareKey:(id)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, UIScrollView, UIView;
 
 @interface MMFinderLivePromoteArticleAlertPageSheetView
@@ -17,7 +19,6 @@
     NSString *_alertContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *alertContent; // @synthesize alertContent=_alertContent;
 @property(retain, nonatomic) MMUIButton *confirmBtn; // @synthesize confirmBtn=_confirmBtn;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
@@ -45,4 +46,3 @@
 - (id)initWithAlertContent:(id)arg1;
 
 @end
-

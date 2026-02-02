@@ -23,7 +23,6 @@
 }
 
 + (double)heightRatio;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLocationReportModel *reportModel; // @synthesize reportModel=_reportModel;
 @property(retain, nonatomic) UIView *topSeparateLine; // @synthesize topSeparateLine=_topSeparateLine;
 @property(retain, nonatomic) WCFinderLocationFooterView *listTableFooterView; // @synthesize listTableFooterView=_listTableFooterView;

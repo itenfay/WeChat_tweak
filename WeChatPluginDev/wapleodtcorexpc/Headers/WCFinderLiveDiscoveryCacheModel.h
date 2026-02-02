@@ -16,7 +16,6 @@
     unsigned long long _selectTabId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectTabId; // @synthesize selectTabId=_selectTabId;
 @property(nonatomic) _Bool hasAlreadyExposed; // @synthesize hasAlreadyExposed=_hasAlreadyExposed;
 @property(nonatomic) _Bool isLocationServiceAuthrized; // @synthesize isLocationServiceAuthrized=_isLocationServiceAuthrized;

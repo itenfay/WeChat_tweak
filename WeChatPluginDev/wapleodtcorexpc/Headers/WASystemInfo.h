@@ -23,7 +23,6 @@
     double _allInfoUpdateTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double allInfoUpdateTime; // @synthesize allInfoUpdateTime=_allInfoUpdateTime;
 @property(nonatomic) _Bool isAllInfoUpdated; // @synthesize isAllInfoUpdated=_isAllInfoUpdated;
 @property(retain, nonatomic) MMFullScreenShadeViewController *fullScreenShadeVC; // @synthesize fullScreenShadeVC=_fullScreenShadeVC;

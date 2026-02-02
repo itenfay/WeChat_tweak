@@ -77,7 +77,6 @@
     WCMomentsShareScopeMgr *_shareScopeMgr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShareEmbedExcerptEnabled; // @synthesize isShareEmbedExcerptEnabled=_isShareEmbedExcerptEnabled;
 @property(nonatomic) _Bool isStarBrowsingEnabled; // @synthesize isStarBrowsingEnabled=_isStarBrowsingEnabled;
 @property(nonatomic) _Bool isStarModificationEnabled; // @synthesize isStarModificationEnabled=_isStarModificationEnabled;

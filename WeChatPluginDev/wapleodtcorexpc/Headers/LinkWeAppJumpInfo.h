@@ -21,7 +21,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppId:(id)arg1 pagePath:(id)arg2 appState:(id)arg3 isForbidSSignal:(id)arg4 shareKey:(id)arg5 scene:(id)arg6 sceneNote:(id)arg7;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
 @property(retain, nonatomic) NSNumber *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *shareKey; // @synthesize shareKey=_shareKey;

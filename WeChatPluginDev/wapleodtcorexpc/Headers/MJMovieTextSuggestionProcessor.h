@@ -22,7 +22,6 @@
 }
 
 + (id)seqBufferInResponse:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastSnapshotReceivedByServer; // @synthesize isLastSnapshotReceivedByServer=_isLastSnapshotReceivedByServer;
 @property(retain, nonatomic) MJMovieTextSuggestionSnapshot *lastSnapshotInRequest; // @synthesize lastSnapshotInRequest=_lastSnapshotInRequest;
 @property(nonatomic) unsigned long long minWordCountChangeForRequest; // @synthesize minWordCountChangeForRequest=_minWordCountChangeForRequest;

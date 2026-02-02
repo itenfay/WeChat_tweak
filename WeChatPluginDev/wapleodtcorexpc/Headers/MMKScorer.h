@@ -22,7 +22,6 @@
 }
 
 + (id)parseNormalizedNotesOrig:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int totalScore; // @synthesize totalScore=_totalScore;
 @property(nonatomic) int sentenceIndex; // @synthesize sentenceIndex=_sentenceIndex;
 @property(retain, nonatomic) NSArray *sentenceTimeArray; // @synthesize sentenceTimeArray=_sentenceTimeArray;

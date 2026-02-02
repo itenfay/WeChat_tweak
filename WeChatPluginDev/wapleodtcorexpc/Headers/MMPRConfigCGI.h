@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMPRConfigCGI
@@ -14,7 +16,6 @@
     NSString *_pid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSString *baseId; // @synthesize baseId=_baseId;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
@@ -28,4 +29,3 @@
 - (id)initWithAppId:(id)arg1 baseId:(id)arg2 pid:(id)arg3 isAutoCheck:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5 failed:(CDUnknownBlockType)arg6;
 
 @end
-

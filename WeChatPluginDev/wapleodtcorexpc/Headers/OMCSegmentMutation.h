@@ -13,7 +13,6 @@
     OMJID *_segmentID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isVisualClipChanged; // @synthesize isVisualClipChanged=_isVisualClipChanged;
 @property(readonly, nonatomic) OMJID *segmentID; // @synthesize segmentID=_segmentID;
 - (id)description;

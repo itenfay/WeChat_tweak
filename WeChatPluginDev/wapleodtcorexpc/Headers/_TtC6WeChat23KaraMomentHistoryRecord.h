@@ -80,7 +80,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) KaraTextFeature_Embedding1x32 *textEmbedding1x32;
 @property(nonatomic) _Bool isTemplateFromMiaojian; // @synthesize isTemplateFromMiaojian;

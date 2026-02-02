@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) unsigned int userHash; // @synthesize userHash=_userHash;
 @property(copy, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
@@ -26,4 +26,3 @@
 - (void)setupApiWithJSContext:(id)arg1;
 
 @end
-

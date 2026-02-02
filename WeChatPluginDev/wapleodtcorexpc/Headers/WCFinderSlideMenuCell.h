@@ -17,7 +17,6 @@
     struct CGPoint _gestureOrigin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool closedOtherMenu; // @synthesize closedOtherMenu=_closedOtherMenu;
 @property(nonatomic) _Bool menuOpened; // @synthesize menuOpened=_menuOpened;
 @property(nonatomic) struct CGPoint gestureOrigin; // @synthesize gestureOrigin=_gestureOrigin;

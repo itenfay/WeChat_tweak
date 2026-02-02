@@ -13,7 +13,6 @@
     NSNumber<QTCOptional> *_altitude;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber<QTCOptional> *altitude; // @synthesize altitude=_altitude;
 @property(nonatomic) double lng; // @synthesize lng=_lng;
 @property(nonatomic) double lat; // @synthesize lat=_lat;

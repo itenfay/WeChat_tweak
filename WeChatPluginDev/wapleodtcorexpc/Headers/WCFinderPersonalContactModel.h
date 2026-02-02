@@ -14,7 +14,6 @@
     WCFinderUserMessage *_userMessage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderUserMessage *userMessage; // @synthesize userMessage=_userMessage;
 @property(retain, nonatomic) PrepareFinder *prepare; // @synthesize prepare=_prepare;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

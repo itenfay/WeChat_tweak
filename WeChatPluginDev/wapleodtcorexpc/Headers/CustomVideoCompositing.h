@@ -26,7 +26,6 @@
     unsigned long long _lastPIPRenderTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastPIPRenderTime; // @synthesize lastPIPRenderTime=_lastPIPRenderTime;
 @property(nonatomic) _Bool isDefaultPixelTimeToRefresh; // @synthesize isDefaultPixelTimeToRefresh=_isDefaultPixelTimeToRefresh;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;

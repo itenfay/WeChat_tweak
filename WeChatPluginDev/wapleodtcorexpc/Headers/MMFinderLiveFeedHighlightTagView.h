@@ -20,7 +20,6 @@
     struct CGSize _loadImgSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedHighlightTagBackgroundGradientView *bgGradientView; // @synthesize bgGradientView=_bgGradientView;
 @property(retain, nonatomic) FinderLiveCardHighlightTag *highlightTag; // @synthesize highlightTag=_highlightTag;
 @property(retain, nonatomic) MMLiveColorfulLabel *textLabel; // @synthesize textLabel=_textLabel;

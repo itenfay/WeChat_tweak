@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BaseMsgContentLogicController, ChatroomProfileView, DotLoadingView, EmoticonBoardView, MMGrowTextView, MMLoadingIndicatorView, MMUIButton, MMUILabel, NSArray, NSMutableSet, NSString, NamePreLabel, SharePreConfirmDynamicContainer, UIButton, UIImage, UIImageView, UILabel, UIScrollView, UISwitch, UIView, UIViewController, WCFinderLiveDisplayWindowShareViewBuilder, WCGroupUndoneShareReport, WCInputController, WCPasteTextLengthLogic;
 @protocol SharePreConfirmViewDelegate;
 
@@ -83,7 +85,6 @@
     WCFinderLiveDisplayWindowShareViewBuilder *_shopShareBuilder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveDisplayWindowShareViewBuilder *shopShareBuilder; // @synthesize shopShareBuilder=_shopShareBuilder;
 @property(retain, nonatomic) NSArray *subviewsExceptPreview; // @synthesize subviewsExceptPreview=_subviewsExceptPreview;
 @property(nonatomic) double componentsHeightWithoutBottomButtons; // @synthesize componentsHeightWithoutBottomButtons=_componentsHeightWithoutBottomButtons;
@@ -291,4 +292,3 @@
 @property(readonly) Class superclass;
 
 @end
-

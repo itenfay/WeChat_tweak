@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)update:(id)arg1;
 - (id)initWithCallback:(function_ffe40f9b)arg1;
 

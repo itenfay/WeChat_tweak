@@ -22,7 +22,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *secTitleLabel; // @synthesize secTitleLabel=_secTitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

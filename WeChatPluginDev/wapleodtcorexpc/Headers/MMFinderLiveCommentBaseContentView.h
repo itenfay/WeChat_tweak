@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderLiveBoxId, MMFinderLiveCommentDirectDisplayCellWrapper, MMLiveCommentDataItem, MMLiveCommentPubbleView, MMLiveCommentTableViewModel, MMLiveTaskId, MMLiveUnReadCountView, MMTableView, MMUIButton, NSString, UIPanGestureRecognizer;
 @protocol MMFinderLiveCommentBaseContentDelegate;
@@ -53,7 +54,6 @@
 + (double)commentTableWidthLandScape:(id)arg1;
 + (double)commentTableWidthPortrait:(id)arg1;
 + (double)commentTableWidth:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double previousCommentContentTop; // @synthesize previousCommentContentTop=_previousCommentContentTop;
 @property(nonatomic) struct CGPoint panBeginContentOffset; // @synthesize panBeginContentOffset=_panBeginContentOffset;
 @property(retain, nonatomic) MMFinderLiveCommentDirectDisplayCellWrapper *currDirectDisplayCell; // @synthesize currDirectDisplayCell=_currDirectDisplayCell;
@@ -198,4 +198,3 @@
 @property(readonly) Class superclass;
 
 @end
-

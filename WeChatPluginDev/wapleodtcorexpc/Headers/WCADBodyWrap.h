@@ -51,7 +51,6 @@
     AdExposureTimerHelper *_adFullExposureTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AdExposureTimerHelper *adFullExposureTimer; // @synthesize adFullExposureTimer=_adFullExposureTimer;
 @property(retain, nonatomic) AdExposureTimerHelper *adHalfExposureTimer; // @synthesize adHalfExposureTimer=_adHalfExposureTimer;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;

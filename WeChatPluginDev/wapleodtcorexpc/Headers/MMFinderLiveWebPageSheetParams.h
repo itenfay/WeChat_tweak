@@ -26,7 +26,6 @@
 + (id)paramsWithUri:(id)arg1 showDislike:(_Bool)arg2 supportSharing:(_Bool)arg3 screenRatio:(double)arg4 overrideCache:(_Bool)arg5;
 + (id)paramsWithUri:(id)arg1 showDislike:(_Bool)arg2 supportSharing:(_Bool)arg3 screenRatio:(double)arg4;
 + (id)paramsWithUri:(id)arg1 showDislike:(_Bool)arg2 supportSharing:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool restrictVideoRect; // @synthesize restrictVideoRect=_restrictVideoRect;
 @property(nonatomic) _Bool fixOrientation; // @synthesize fixOrientation=_fixOrientation;
 @property(retain, nonatomic) UIColor *navButtonTintColor; // @synthesize navButtonTintColor=_navButtonTintColor;

@@ -96,7 +96,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClickPriorityNotificationInTL; // @synthesize isClickPriorityNotificationInTL=_isClickPriorityNotificationInTL;
 @property(nonatomic) _Bool shouldShowPriorityNotification; // @synthesize shouldShowPriorityNotification=_shouldShowPriorityNotification;
 @property(nonatomic) unsigned int exposeTotalTimeInMainSession; // @synthesize exposeTotalTimeInMainSession=_exposeTotalTimeInMainSession;

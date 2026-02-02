@@ -18,7 +18,6 @@
     NSObject<OS_dispatch_queue> *_taskQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int currentPriority; // @synthesize currentPriority=_currentPriority;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(nonatomic) unsigned long long iFTSIndexingType; // @synthesize iFTSIndexingType=_iFTSIndexingType;

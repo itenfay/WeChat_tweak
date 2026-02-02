@@ -15,7 +15,6 @@
     UIView *_seperatorLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperatorLineView; // @synthesize seperatorLineView=_seperatorLineView;
 @property(retain, nonatomic) MMUILabel *liveSourceLabel; // @synthesize liveSourceLabel=_liveSourceLabel;
 @property(retain, nonatomic) MMUIImageView *liveIconView; // @synthesize liveIconView=_liveIconView;

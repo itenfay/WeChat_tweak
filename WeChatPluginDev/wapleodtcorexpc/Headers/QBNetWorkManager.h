@@ -27,7 +27,6 @@
 @property(nonatomic) int apnSubtype; // @synthesize apnSubtype=_apnSubtype;
 @property(nonatomic) long long mncCode; // @synthesize mncCode=_mncCode;
 @property(nonatomic) long long mccCode; // @synthesize mccCode=_mccCode;
-- (void).cxx_destruct;
 - (_Bool)isReachable;
 - (void)checkAPNType;
 - (void)stopListenNetworkChange;

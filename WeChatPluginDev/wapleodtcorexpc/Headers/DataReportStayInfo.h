@@ -14,7 +14,6 @@
     DataReportSubstitutePage *_page;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DataReportSubstitutePage *page; // @synthesize page=_page;
 @property(nonatomic) unsigned long long stayTime; // @synthesize stayTime=_stayTime;
 @property(nonatomic) unsigned long long inTime; // @synthesize inTime=_inTime;

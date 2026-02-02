@@ -14,7 +14,6 @@
 }
 
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *labelViewArray; // @synthesize labelViewArray=_labelViewArray;
 @property(retain, nonatomic) UILabel *headLabel; // @synthesize headLabel=_headLabel;
 @property(retain, nonatomic) MMWebImageView *rightImgView; // @synthesize rightImgView=_rightImgView;

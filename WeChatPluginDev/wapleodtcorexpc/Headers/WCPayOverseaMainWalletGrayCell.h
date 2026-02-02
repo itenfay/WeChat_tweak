@@ -16,7 +16,6 @@
     WalletGrayAreaItem *_m_item;
 }
 
-- (void).cxx_destruct;
 @property int radius; // @synthesize radius=_radius;
 @property(retain, nonatomic) WalletGrayAreaItem *m_item; // @synthesize m_item=_m_item;
 @property(retain, nonatomic) UILabel *m_extraInfoLabel; // @synthesize m_extraInfoLabel=_m_extraInfoLabel;

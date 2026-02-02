@@ -14,7 +14,6 @@
     MISSING_TYPE *kTotalMaxRequestConcurrentCount;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)removeConcurrentUserAccountJSEvent:(id)arg1;
 - (void)addConcurrentUserAccountJSEvent:(id)arg1 forAppId:(id)arg2 param:(id)arg3;

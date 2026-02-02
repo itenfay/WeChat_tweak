@@ -28,7 +28,6 @@
 }
 
 + (id)setupWindow:(id)arg1 title:(id)arg2 content:(id)arg3 authGroupList:(id)arg4 link:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAAppConfirmWindowDelegate> confirmWindowDelegate; // @synthesize confirmWindowDelegate=_confirmWindowDelegate;
 @property(retain, nonatomic) NSString *linkTitle; // @synthesize linkTitle=_linkTitle;
 @property(retain, nonatomic) NSArray *authItems; // @synthesize authItems=_authItems;

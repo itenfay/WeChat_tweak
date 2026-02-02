@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView, UILabel;
 
 @interface WCFinderFullCollectionToolbarItemButton
@@ -16,7 +18,6 @@
 + (id)generateStaticIconImage:(id)arg1 iconColor:(id)arg2;
 + (id)whiteColorWithAlphaComponent;
 + (id)toolbarItemButton;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool itemTitleAnimating; // @synthesize itemTitleAnimating=_itemTitleAnimating;
 @property(retain, nonatomic) UILabel *additionalInfoLabel; // @synthesize additionalInfoLabel=_additionalInfoLabel;
 @property(retain, nonatomic) UILabel *itemTitleLabel; // @synthesize itemTitleLabel=_itemTitleLabel;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

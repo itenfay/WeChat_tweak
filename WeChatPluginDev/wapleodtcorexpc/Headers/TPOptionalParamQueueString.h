@@ -13,7 +13,6 @@
     NSArray *_value;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *value; // @synthesize value=_value;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
 

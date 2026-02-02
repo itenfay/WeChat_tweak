@@ -20,7 +20,6 @@
 }
 
 + (id)adapterWithMsgViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currUsername; // @synthesize currUsername=_currUsername;
 @property(nonatomic) _Bool isPageSheetPresented; // @synthesize isPageSheetPresented=_isPageSheetPresented;
 @property(nonatomic) _Bool markUnreadAtClose; // @synthesize markUnreadAtClose=_markUnreadAtClose;

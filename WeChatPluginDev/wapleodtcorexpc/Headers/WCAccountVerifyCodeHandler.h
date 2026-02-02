@@ -19,7 +19,6 @@
     NSString *_phoneNumberWithCC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phoneNumberWithCC; // @synthesize phoneNumberWithCC=_phoneNumberWithCC;
 - (void)onCheckLoginVerifyCode:(id)arg1 StyleKeyValue:(id)arg2 Response:(id)arg3;
 - (void)onGetVerifyCode:(id)arg1 StyleKeyValue:(id)arg2 Response:(id)arg3;

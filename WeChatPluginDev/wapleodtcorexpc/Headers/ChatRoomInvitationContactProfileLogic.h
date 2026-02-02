@@ -15,7 +15,6 @@
     CMessageWrap *_currentInvitationMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *currentInvitationMsg; // @synthesize currentInvitationMsg=_currentInvitationMsg;
 @property(nonatomic) __weak id <MMUIViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CContact *roomContact; // @synthesize roomContact=_roomContact;

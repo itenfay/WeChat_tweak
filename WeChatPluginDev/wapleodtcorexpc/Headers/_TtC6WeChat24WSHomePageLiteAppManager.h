@@ -14,7 +14,6 @@
 + (void)preloadLiteAppSearchPageWithScene:(unsigned long long)arg1;
 + (void)preloadMainSearchPageWithScene:(unsigned long long)arg1 forceDarkMode:(_Bool)arg2;
 + (id)routeItemFor:(unsigned long long)arg1;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

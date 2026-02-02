@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_directShowInterval;
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_nsJson;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int redDotTimeStamp; // @synthesize redDotTimeStamp=_redDotTimeStamp;
 @property(retain, nonatomic) NSMutableSet *filterDocIdSet; // @synthesize filterDocIdSet=_filterDocIdSet;
 @property(retain, nonatomic) NSArray *docIdList; // @synthesize docIdList=_docIdList;

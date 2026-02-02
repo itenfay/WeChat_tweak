@@ -14,7 +14,6 @@
     WCTTable *_tableMPPageOfflineCacheItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *tableMPPageOfflineCacheItem; // @synthesize tableMPPageOfflineCacheItem=_tableMPPageOfflineCacheItem;
 @property(retain, nonatomic) WCTDatabase *offlineCacheDB; // @synthesize offlineCacheDB=_offlineCacheDB;
 @property(retain) WCTTable *tableMPPageReportItem; // @synthesize tableMPPageReportItem=_tableMPPageReportItem;

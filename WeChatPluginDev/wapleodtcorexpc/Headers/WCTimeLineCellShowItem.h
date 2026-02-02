@@ -36,7 +36,6 @@
     TingShareLyricsItem *_tingLyricsItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingShareLyricsItem *tingLyricsItem; // @synthesize tingLyricsItem=_tingLyricsItem;
 @property(retain, nonatomic) TingShareCategoryItem *tingCategoryItem; // @synthesize tingCategoryItem=_tingCategoryItem;
 @property(retain, nonatomic) TingShareListenItem *tingListenItem; // @synthesize tingListenItem=_tingListenItem;

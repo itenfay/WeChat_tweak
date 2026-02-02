@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, WASubscriptionMessageDataReporter, WASubscriptionMessagePageSheet;
 @protocol WASubscriptionMessageLogicDataSource, WASubscriptionMessageLogicDelegate;
 
@@ -18,7 +20,6 @@
     WASubscriptionMessagePageSheet *_pageSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WASubscriptionMessagePageSheet *pageSheet; // @synthesize pageSheet=_pageSheet;
 @property(retain, nonatomic) WASubscriptionMessageDataReporter *dataReporter; // @synthesize dataReporter=_dataReporter;
 @property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

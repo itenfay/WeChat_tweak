@@ -17,7 +17,6 @@
     UIView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

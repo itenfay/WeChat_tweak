@@ -15,7 +15,6 @@
     NSArray *_previousContactTagNameList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *previousContactTagNameList; // @synthesize previousContactTagNameList=_previousContactTagNameList;
 @property(nonatomic) _Bool needReloadWhenAppear; // @synthesize needReloadWhenAppear=_needReloadWhenAppear;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;

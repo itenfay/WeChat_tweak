@@ -14,7 +14,6 @@
     AVAudioMix *_audioMix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioMix *audioMix; // @synthesize audioMix=_audioMix;
 @property(retain, nonatomic) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;

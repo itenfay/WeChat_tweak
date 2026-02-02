@@ -28,7 +28,6 @@
 + (id)createButtonWithIconName:(id)arg1;
 + (struct CGPoint)scaleFactorWithFlipMode:(unsigned long long)arg1;
 + (double)rotationRadiansWithRotationMode:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) UIPinchGestureRecognizer *pinchGR; // @synthesize pinchGR=_pinchGR;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGR; // @synthesize panGR=_panGR;

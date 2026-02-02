@@ -30,7 +30,6 @@
     NSMutableArray *_stayPausePlayers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *stayPausePlayers; // @synthesize stayPausePlayers=_stayPausePlayers;
 @property(nonatomic) _Bool bStayPause; // @synthesize bStayPause=_bStayPause;
 @property(retain, nonatomic) NSMutableArray *arrPlay; // @synthesize arrPlay=_arrPlay;

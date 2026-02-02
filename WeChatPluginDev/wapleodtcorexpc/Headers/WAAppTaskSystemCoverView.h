@@ -11,7 +11,6 @@
     WAJSContextPlugin_NativeViewsComponent *_component;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAJSContextPlugin_NativeViewsComponent *component; // @synthesize component=_component;
 @property(retain, nonatomic) WASystemCoverView *view; // @synthesize view=_view;
 - (id)getChildViewsByClass:(Class)arg1;

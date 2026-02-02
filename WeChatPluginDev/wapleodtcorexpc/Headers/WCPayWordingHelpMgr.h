@@ -14,7 +14,6 @@
     NSMutableDictionary *_cvvCodeDynamicWordingDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cvvCodeDynamicWordingDict; // @synthesize cvvCodeDynamicWordingDict=_cvvCodeDynamicWordingDict;
 @property(retain, nonatomic) NSMutableDictionary *phoneNumberDynamicWordingDict; // @synthesize phoneNumberDynamicWordingDict=_phoneNumberDynamicWordingDict;
 @property(retain, nonatomic) NSMutableDictionary *validityDynamicWordingDict; // @synthesize validityDynamicWordingDict=_validityDynamicWordingDict;

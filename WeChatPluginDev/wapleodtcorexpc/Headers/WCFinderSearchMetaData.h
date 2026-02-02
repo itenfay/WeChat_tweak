@@ -17,7 +17,6 @@
     long long _tabId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long tabId; // @synthesize tabId=_tabId;
 @property(nonatomic) unsigned long long reportSearchScene; // @synthesize reportSearchScene=_reportSearchScene;
 @property(nonatomic) unsigned long long searchSourceType; // @synthesize searchSourceType=_searchSourceType;

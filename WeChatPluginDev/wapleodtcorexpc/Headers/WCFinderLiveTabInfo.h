@@ -39,7 +39,6 @@
 + (void)PBArrayAdd_prefechThisTab;
 + (void)PBArrayAdd_tabName;
 + (void)PBArrayAdd_tabId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *liveSquareWordingColor; // @synthesize liveSquareWordingColor=_liveSquareWordingColor;
 @property(retain, nonatomic) NSString *liveSquareIconUrl; // @synthesize liveSquareIconUrl=_liveSquareIconUrl;
 @property(retain, nonatomic) NSString *iconWording; // @synthesize iconWording=_iconWording;

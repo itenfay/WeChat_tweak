@@ -18,7 +18,6 @@
     long long _startSpeakTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long startSpeakTime; // @synthesize startSpeakTime=_startSpeakTime;
 @property(nonatomic) long long receiveDataTime; // @synthesize receiveDataTime=_receiveDataTime;
 @property(nonatomic) long long requestDataTime; // @synthesize requestDataTime=_requestDataTime;

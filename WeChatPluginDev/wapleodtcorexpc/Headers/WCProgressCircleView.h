@@ -18,7 +18,6 @@
     double _currentProgress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;
 @property(retain, nonatomic) CAShapeLayer *progressFrontShapeLayer; // @synthesize progressFrontShapeLayer=_progressFrontShapeLayer;
 @property(retain, nonatomic) CAShapeLayer *progressBackShapeLayer; // @synthesize progressBackShapeLayer=_progressBackShapeLayer;

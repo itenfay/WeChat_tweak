@@ -17,7 +17,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBreakFramePlayStateInfo *playStateInfo; // @synthesize playStateInfo=_playStateInfo;
 @property(nonatomic) double loopEndTime; // @synthesize loopEndTime=_loopEndTime;
 @property(nonatomic) double loopStartTime; // @synthesize loopStartTime=_loopStartTime;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, MyWCDB, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, WCAccessSecurityVerificationSessionMgr, WCAdvertiseCommentUploadMgr, WCAdvertiseDataHelper, WCAdvertiseLogicMgr, WCBGImgLogic, WCBGRecommendMgr, WCBrowseInfo, WCCanvasCommonFileLoader, WCCanvasTypeMgr, WCCommentUploadMgr, WCDataItem, WCDownloadMgr, WCFacadeDynamicConfig, WCGroupMgr, WCInputTextCacheMgr, WCLogicMgr, WCMicroMerchantFoldMgr, WCMomentsContentDiscoverer, WCMomentsFinderRecommendationManager, WCMomentsFinderShareManager, WCMomentsForwardMgr, WCMomentsNewLifeShareManager, WCMomentsStarManager, WCNotificationCenterMgr, WCOperationSetting, WCPatternCacheMgr, WCPreloadLogicMgr, WCRealFeedExposureItem, WCSnsABTestMgr, WCSnsLocalCacheMgr, WCStrangerCommentMgr, WCTimelineMgr, WCUploadMgr;
 
 @interface WCFacade
@@ -89,7 +91,6 @@
 + (_Bool)saveReportStrOfSnsPostDragPic:(int)arg1 snsPostSave:(int)arg2 draftSaveType:(unsigned long long)arg3 sessionType:(long long)arg4;
 + (id)genReportStrOfSnsPostDragPic:(int)arg1 snsPostSave:(int)arg2 draftSaveType:(unsigned long long)arg3 sessionType:(long long)arg4;
 + (void)reportSnsPostDragPic:(int)arg1 snsPostSave:(int)arg2 draftSaveType:(unsigned long long)arg3 sessionType:(long long)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timelineListLogIdentifier; // @synthesize timelineListLogIdentifier=_timelineListLogIdentifier;
 @property long long lastReadMessageCreateTime; // @synthesize lastReadMessageCreateTime=_lastReadMessageCreateTime;
 @property(retain, nonatomic) WCDataItem *badgeDataItemThatEnteredTimeline; // @synthesize badgeDataItemThatEnteredTimeline=_badgeDataItemThatEnteredTimeline;
@@ -716,4 +717,3 @@
 @property(readonly) Class superclass;
 
 @end
-

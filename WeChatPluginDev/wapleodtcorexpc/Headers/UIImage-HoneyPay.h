@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImage.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -169,4 +170,3 @@
 - (id)resizedImage:(struct CGSize)arg1 interpolationQuality:(int)arg2;
 - (id)croppedSquareImage;
 @end
-

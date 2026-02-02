@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, UIButton, WCFinderProgressBar, WCFinderProgressControlPanelConfigParamsModel, WCFinderTimeLabel;
 @protocol WCFinderProgressPanelViewDelegate;
@@ -22,7 +23,6 @@
     WCFinderProgressControlPanelConfigParamsModel *_paramsModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProgressControlPanelConfigParamsModel *paramsModel; // @synthesize paramsModel=_paramsModel;
 @property(retain, nonatomic) WCFinderTimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UIButton *playButton; // @synthesize playButton=_playButton;
@@ -65,4 +65,3 @@
 - (_Bool)responseToHitGes:(struct CGPoint)arg1;
 
 @end
-

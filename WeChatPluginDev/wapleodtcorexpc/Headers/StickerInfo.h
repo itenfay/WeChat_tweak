@@ -17,7 +17,6 @@
     NSNumber *_active;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isProcessed; // @synthesize isProcessed=_isProcessed;
 @property(retain, nonatomic) NSNumber *active; // @synthesize active=_active;
 @property(retain, nonatomic) NSNumber *len; // @synthesize len=_len;

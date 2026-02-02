@@ -19,7 +19,6 @@
     NSData *_objHotwordInfoBuff;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *objHotwordInfoBuff; // @synthesize objHotwordInfoBuff=_objHotwordInfoBuff;
 @property(retain, nonatomic) WCFinderSearchDataProvider *feedProvider; // @synthesize feedProvider=_feedProvider;
 @property(retain, nonatomic) WCFinderSearchKVReporter *reporter; // @synthesize reporter=_reporter;

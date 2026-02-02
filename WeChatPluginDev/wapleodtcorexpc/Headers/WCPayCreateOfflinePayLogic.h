@@ -11,7 +11,6 @@
     _Bool _bHasHandleBindQueryResp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasHandleBindQueryResp; // @synthesize bHasHandleBindQueryResp=_bHasHandleBindQueryResp;
 - (void)OnAddCardBtnDonw:(id)arg1;
 - (void)OnAddCardError:(id)arg1 ErrorType:(unsigned int)arg2;

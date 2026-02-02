@@ -4,17 +4,16 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WAContainerHookView : UIView
 {
     CDUnknownBlockType _wa_removeFromSuperviewHookAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType wa_removeFromSuperviewHookAction; // @synthesize wa_removeFromSuperviewHookAction=_wa_removeFromSuperviewHookAction;
 - (void)removeFromSuperviewWithoutHook;
 - (void)removeFromSuperview;
 - (id)initWithHookAction:(CDUnknownBlockType)arg1;
 
 @end
-

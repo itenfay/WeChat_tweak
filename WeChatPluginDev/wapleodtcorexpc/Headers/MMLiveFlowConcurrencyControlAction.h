@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface MMLiveFlowConcurrencyControlAction
@@ -16,7 +18,6 @@
 + (id)createConcurrentUnlimited;
 + (id)createConcurrentDefault;
 + (id)createSerial;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
 @property(nonatomic) unsigned long long currentExecutingCount; // @synthesize currentExecutingCount=_currentExecutingCount;
 @property(nonatomic) unsigned long long degreeOfParallelism; // @synthesize degreeOfParallelism=_degreeOfParallelism;
@@ -26,4 +27,3 @@
 - (id)initWithDegreeOfParallelism:(unsigned long long)arg1;
 
 @end
-

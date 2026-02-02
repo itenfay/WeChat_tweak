@@ -14,7 +14,6 @@
     NSObject<OS_dispatch_queue> *m_worker;
 }
 
-- (void).cxx_destruct;
 - (void)OnMemoryWarning;
 - (void)onFontSizeChange;
 - (void)onLanguageChange;

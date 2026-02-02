@@ -64,7 +64,6 @@
     NSString *_p2pSdkVersion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *p2pSdkVersion; // @synthesize p2pSdkVersion=_p2pSdkVersion;
 @property(nonatomic) unsigned int init_sdk_time; // @synthesize init_sdk_time=_init_sdk_time;
 @property(nonatomic) unsigned int checkout_subscribe_c; // @synthesize checkout_subscribe_c=_checkout_subscribe_c;

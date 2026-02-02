@@ -12,7 +12,6 @@
     WCFinderLiveShareItem *_shareItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareItem *shareItem; // @synthesize shareItem=_shareItem;
 - (void)onFinderLiveCloseWithTid:(id)arg1;
 - (void)updateLiveStatusIfNeededFromServer;

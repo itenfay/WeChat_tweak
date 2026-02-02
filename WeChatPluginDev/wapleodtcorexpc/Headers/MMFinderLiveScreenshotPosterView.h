@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveScreenshotPosterInfo, MMWebImageView, NSMutableDictionary, NSString, UIImage, UIImageView, UILabel;
 
@@ -26,7 +27,6 @@
     UIImageView *_qrCodeImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *qrCodeImageView; // @synthesize qrCodeImageView=_qrCodeImageView;
 @property(retain, nonatomic) MMWebImageView *anchorVerificationStatusView; // @synthesize anchorVerificationStatusView=_anchorVerificationStatusView;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -67,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

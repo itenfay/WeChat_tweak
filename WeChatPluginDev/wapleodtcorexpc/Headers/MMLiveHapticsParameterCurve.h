@@ -19,7 +19,6 @@
 + (id)attackTimeParameterCurve;
 + (id)sharpnessParameterCurve;
 + (id)intensityParameterCurve;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *controlPoints; // @synthesize controlPoints=_controlPoints;
 @property(nonatomic) double beginTimeOffset; // @synthesize beginTimeOffset=_beginTimeOffset;
 @property(nonatomic) unsigned long long parameterType; // @synthesize parameterType=_parameterType;

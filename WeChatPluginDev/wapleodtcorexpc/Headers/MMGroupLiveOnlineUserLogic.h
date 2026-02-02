@@ -12,7 +12,6 @@
     unsigned long long _onlineUserCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long onlineUserCount; // @synthesize onlineUserCount=_onlineUserCount;
 @property(nonatomic) __weak id <MMGroupLiveOnlineUserLogicDelegate> logicDelegate; // @synthesize logicDelegate;
 - (void)onKickAudienceResult:(id)arg1 userName:(id)arg2 liveId:(unsigned long long)arg3 roomId:(id)arg4;

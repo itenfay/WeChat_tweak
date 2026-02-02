@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIViewController, WAAppTansitionController, WASplashADViewController;
 
 @interface WASplashADWindow
@@ -12,7 +14,6 @@
     WAAppTansitionController *_transitionController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppTansitionController *transitionController; // @synthesize transitionController=_transitionController;
 @property(retain, nonatomic) UIViewController *firstScreenViewController; // @synthesize firstScreenViewController=_firstScreenViewController;
 @property(retain, nonatomic) WASplashADViewController *adRootViewController; // @synthesize adRootViewController=_adRootViewController;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

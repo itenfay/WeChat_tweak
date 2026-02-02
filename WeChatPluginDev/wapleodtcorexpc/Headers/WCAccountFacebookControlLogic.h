@@ -10,7 +10,6 @@
     WCAccountManualAuthControlLogic *m_manualAuthLogic;
 }
 
-- (void).cxx_destruct;
 - (_Bool)onManualAuthControlLogicError:(id)arg1;
 - (void)onManualAuthControlLogicStop:(unsigned long long)arg1 response:(id)arg2;
 - (void)onLoginFacebookBegan:(id)arg1;

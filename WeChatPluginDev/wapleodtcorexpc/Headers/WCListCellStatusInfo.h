@@ -20,7 +20,6 @@
 }
 
 + (id)statusInfoWithDataItem:(id)arg1 inGroup:(id)arg2 groupItem:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showsLivePhotoStatus; // @synthesize showsLivePhotoStatus=_showsLivePhotoStatus;
 @property(readonly, nonatomic) _Bool showsFailureStatus; // @synthesize showsFailureStatus=_showsFailureStatus;
 @property(readonly, nonatomic) _Bool showsStarredStatus; // @synthesize showsStarredStatus=_showsStarredStatus;

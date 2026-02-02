@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, WCFinderLiveBaseCgi;
 
@@ -16,7 +17,6 @@
     WCFinderLiveBaseCgi *_sendPromoteCGI;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveBaseCgi *sendPromoteCGI; // @synthesize sendPromoteCGI=_sendPromoteCGI;
 @property(retain, nonatomic) WCFinderLiveBaseCgi *addPromoteCGI; // @synthesize addPromoteCGI=_addPromoteCGI;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -31,4 +31,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

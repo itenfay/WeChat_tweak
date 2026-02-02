@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMetricsBusinessDataContent *content; // @synthesize content=_content;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) double time; // @synthesize time=_time;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveResDownloadManagerUtilities : NSObject
 {
@@ -15,4 +16,3 @@
 + (void)validateFileAtPathWithComputedDigest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GetProfileInfoResponse_RelievedBuyInfo, UILabel, WAProfileEasyBuyIconView, YYLabel;
 
@@ -17,7 +18,6 @@
 }
 
 + (double)viewHeightByBuyInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) YYLabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) WAProfileEasyBuyIconView *iconView; // @synthesize iconView=_iconView;
@@ -29,4 +29,3 @@
 - (id)initWithButtonClickAction:(CDUnknownBlockType)arg1;
 
 @end
-

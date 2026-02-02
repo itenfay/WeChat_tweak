@@ -21,7 +21,6 @@
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)opWrapWithJSON:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *navBarTitle; // @synthesize navBarTitle=_navBarTitle;
 @property(nonatomic) _Bool hideSearchBar; // @synthesize hideSearchBar=_hideSearchBar;
 @property(nonatomic) _Bool isHomePage; // @synthesize isHomePage=_isHomePage;

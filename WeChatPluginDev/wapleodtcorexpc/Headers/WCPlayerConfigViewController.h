@@ -31,7 +31,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClosingFullScreenWindow; // @synthesize isClosingFullScreenWindow=_isClosingFullScreenWindow;
 @property(nonatomic) _Bool bDismissSelfOnPresentOther; // @synthesize bDismissSelfOnPresentOther=_bDismissSelfOnPresentOther;
 @property(retain, nonatomic) id context; // @synthesize context=_context;

@@ -17,7 +17,6 @@
     id <WCPayNoticeBannerViewDelegate> _m_noticeDelegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <WCPayNoticeBannerViewDelegate> m_noticeDelegate; // @synthesize m_noticeDelegate=_m_noticeDelegate;
 @property(retain) WCPayOverseaIBGGetWalletCgiCache *m_walletResp; // @synthesize m_walletResp=_m_walletResp;
 @property(retain) WCPayNoticeBannerView *m_noticeBannerView; // @synthesize m_noticeBannerView=_m_noticeBannerView;

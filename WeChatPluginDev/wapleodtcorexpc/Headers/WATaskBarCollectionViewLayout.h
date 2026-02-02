@@ -23,7 +23,6 @@
     struct UIEdgeInsets _scrollingExtendedEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) struct CGPoint panTranslationInCollectionView; // @synthesize panTranslationInCollectionView=_panTranslationInCollectionView;
 @property(retain, nonatomic) UIView *scaleView; // @synthesize scaleView=_scaleView;

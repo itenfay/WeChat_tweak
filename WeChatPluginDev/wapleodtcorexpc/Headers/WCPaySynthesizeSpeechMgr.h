@@ -15,7 +15,6 @@
     WavAudioPlayer *_m_wavAudioPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WavAudioPlayer *m_wavAudioPlayer; // @synthesize m_wavAudioPlayer=_m_wavAudioPlayer;
 @property(nonatomic) double m_volumeViewSupportMaxVersion; // @synthesize m_volumeViewSupportMaxVersion=_m_volumeViewSupportMaxVersion;
 @property(nonatomic) double m_volumeViewSupportMinVersion; // @synthesize m_volumeViewSupportMinVersion=_m_volumeViewSupportMinVersion;

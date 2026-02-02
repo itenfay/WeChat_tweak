@@ -18,7 +18,6 @@
     LiveLandscapeBarrageDisplaySettingInfo *_displaySetting;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiveLandscapeBarrageDisplaySettingInfo *displaySetting; // @synthesize displaySetting=_displaySetting;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMFinderLiveLandscapeBarrageState *barrageState; // @synthesize barrageState=_barrageState;

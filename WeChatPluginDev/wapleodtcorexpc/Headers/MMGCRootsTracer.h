@@ -14,7 +14,6 @@
     NSMutableSet *_objectSet;
 }
 
-- (void).cxx_destruct;
 - (id)_shiftBufferToLowestAddress:(id)arg1;
 - (long long)_compareStringArray:(id)arg1 withArray:(id)arg2;
 - (id)_shiftToLowestLexicographically:(id)arg1;

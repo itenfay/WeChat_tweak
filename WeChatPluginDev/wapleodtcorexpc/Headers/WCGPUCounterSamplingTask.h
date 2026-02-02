@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_reportSuccess;
 + (void)PBArrayAdd_reportTime;
 + (void)PBArrayAdd_reportID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportData; // @synthesize reportData=_reportData;
 @property(nonatomic) int reportRetryCount; // @synthesize reportRetryCount=_reportRetryCount;
 @property(nonatomic) _Bool isReportDirectly; // @synthesize isReportDirectly=_isReportDirectly;

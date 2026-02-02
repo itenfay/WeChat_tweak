@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TingCdnImageUploadTask;
 
@@ -14,10 +15,8 @@
     TingCdnImageUploadTask *_uploadTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingCdnImageUploadTask *uploadTask; // @synthesize uploadTask=_uploadTask;
 @property(copy, nonatomic) CDUnknownBlockType complection; // @synthesize complection=_complection;
 @property(copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 
 @end
-

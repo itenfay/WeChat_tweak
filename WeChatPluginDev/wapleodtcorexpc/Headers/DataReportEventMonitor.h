@@ -21,7 +21,6 @@
     id <DataReportStandardEventDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <DataReportStandardEventDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cgiResp:(id)arg1 errCode:(unsigned int)arg2 errMsg:(id)arg3 cgiParams:(id)arg4 routeRules:(id)arg5 time:(unsigned long long)arg6;
 - (void)cgiReq:(id)arg1 cgiParams:(id)arg2 routeRules:(id)arg3 time:(unsigned long long)arg4;

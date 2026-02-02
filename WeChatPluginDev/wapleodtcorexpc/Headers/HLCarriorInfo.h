@@ -13,7 +13,6 @@
     NSString *_carriorName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *carriorName; // @synthesize carriorName=_carriorName;
 @property(nonatomic) long long netType; // @synthesize netType=_netType;
 - (id)tag;

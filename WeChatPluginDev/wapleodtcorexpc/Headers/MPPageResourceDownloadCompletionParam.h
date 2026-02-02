@@ -17,7 +17,6 @@
     NSError *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned int downloadedSize; // @synthesize downloadedSize=_downloadedSize;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

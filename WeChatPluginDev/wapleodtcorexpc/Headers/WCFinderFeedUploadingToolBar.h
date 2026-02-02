@@ -26,7 +26,6 @@
     double _lastProgress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastProgress; // @synthesize lastProgress=_lastProgress;
 @property(retain, nonatomic) UIColor *loadingColor; // @synthesize loadingColor=_loadingColor;
 @property(retain, nonatomic) UIColor *normalColor; // @synthesize normalColor=_normalColor;

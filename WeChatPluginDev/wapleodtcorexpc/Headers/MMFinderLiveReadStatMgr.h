@@ -12,7 +12,6 @@
     NSMutableDictionary *_records;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *records; // @synthesize records=_records;
 - (_Bool)checkReadRecord:(unsigned long long)arg1 commentScenes:(id)arg2;
 - (_Bool)checkReadRecord:(unsigned long long)arg1 commentScene:(int)arg2;

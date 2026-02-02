@@ -13,7 +13,6 @@
     EmoticonFinderDesignerContentLogic *_contentLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int designerUin; // @synthesize designerUin=_designerUin;
 @property(retain, nonatomic) EmoticonFinderDesignerContentLogic *contentLogic; // @synthesize contentLogic=_contentLogic;
 

@@ -20,7 +20,6 @@
     double _leftRightMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double leftRightMargin; // @synthesize leftRightMargin=_leftRightMargin;
 @property(nonatomic) double maxDistance; // @synthesize maxDistance=_maxDistance;
 @property(nonatomic) double minDistance; // @synthesize minDistance=_minDistance;

@@ -23,7 +23,6 @@
     EmoticonCustomManageAddLogic *m_emoticonAddLogic;
 }
 
-- (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onGetDesignerForDesignerId:(id)arg1 AndDesigner:(id)arg2;
 - (void)onSingleEmotionDownloadFailedWithMd5:(id)arg1;

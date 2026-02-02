@@ -69,7 +69,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showThirdBusiTips; // @synthesize showThirdBusiTips=_showThirdBusiTips;
 @property(nonatomic) long long updateCostTime; // @synthesize updateCostTime=_updateCostTime;
 @property(retain, nonatomic) NSString *openId; // @synthesize openId=_openId;

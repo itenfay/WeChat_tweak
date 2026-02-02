@@ -32,7 +32,6 @@
 + (void)setRfxTargetView:(void *)arg1;
 + (void *)getPagTargetView;
 + (void)setPagTargetView:(void *)arg1;
-- (void).cxx_destruct;
 @property double lastTargetPAGPlayInterval; // @synthesize lastTargetPAGPlayInterval=_lastTargetPAGPlayInterval;
 @property double lastTargetPAGPlayTime; // @synthesize lastTargetPAGPlayTime=_lastTargetPAGPlayTime;
 @property _Bool isTargetViewPlaying; // @synthesize isTargetViewPlaying=_isTargetViewPlaying;

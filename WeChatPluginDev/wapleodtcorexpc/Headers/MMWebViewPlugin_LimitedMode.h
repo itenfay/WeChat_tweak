@@ -24,7 +24,6 @@
 + (_Bool)isLimitedModeOn;
 + (_Bool)isBrandUrlTemporaryAuthorizationWithUrl:(id)arg1;
 + (_Bool)isOutlinkUrlTemporaryAuthorizationWithUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebLimitedModeUrlData *requestUrlData; // @synthesize requestUrlData=_requestUrlData;
 @property(retain, nonatomic) MMLimitedModeAuthorizationUtilLogic *requestAuthLogic; // @synthesize requestAuthLogic=_requestAuthLogic;
 @property(nonatomic) unsigned long long lastRequestActionTime; // @synthesize lastRequestActionTime=_lastRequestActionTime;

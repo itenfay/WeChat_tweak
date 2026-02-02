@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_allLens;
 + (void)PBArrayAdd_recentUsedLens;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allLens; // @synthesize allLens=_allLens;
 @property(retain, nonatomic) NSMutableArray *recentUsedLens; // @synthesize recentUsedLens=_recentUsedLens;
 - (id)init;

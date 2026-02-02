@@ -19,7 +19,6 @@
     CDStruct_1b6d18a9 _duration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVTransition *transition; // @synthesize transition=_transition;
 @property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(nonatomic) CDStruct_1b6d18a9 startTime; // @synthesize startTime=_startTime;

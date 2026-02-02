@@ -13,7 +13,6 @@
 }
 
 + (id)musicVideoOpenParamsFromMessage:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFetchedAppRegisterInfo; // @synthesize hasFetchedAppRegisterInfo=_hasFetchedAppRegisterInfo;
 @property(retain, nonatomic) OpenApiAppMsgGenerator *messageGenerator; // @synthesize messageGenerator=_messageGenerator;
 @property(retain, nonatomic) AppCommunicateData *communicateData; // @synthesize communicateData=_communicateData;

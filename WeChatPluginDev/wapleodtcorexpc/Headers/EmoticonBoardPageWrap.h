@@ -15,7 +15,6 @@
     OrderedDictionary *_packedIPDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *packedIPDictionary; // @synthesize packedIPDictionary=_packedIPDictionary;
 @property(retain, nonatomic) EmoticonTabRecommendItem *recommendItem; // @synthesize recommendItem=_recommendItem;
 @property(nonatomic) unsigned long long packEmoticonCount; // @synthesize packEmoticonCount=_packEmoticonCount;

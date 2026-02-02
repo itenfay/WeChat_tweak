@@ -12,7 +12,6 @@
 
 + (id)stateWithState:(unsigned long long)arg1;
 + (id)stateNameOfState:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -13,7 +13,6 @@
     NSMutableArray *_writeRanges;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *writeRanges; // @synthesize writeRanges=_writeRanges;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 - (id)initWithCoder:(id)arg1;

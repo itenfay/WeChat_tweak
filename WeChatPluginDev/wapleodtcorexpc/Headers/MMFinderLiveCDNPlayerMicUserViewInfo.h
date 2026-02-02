@@ -14,7 +14,6 @@
     UIImageView *_coverImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) MMFinderLiveCDNPlayerSingleAudioMicUserView *userView; // @synthesize userView=_userView;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *userInfo; // @synthesize userInfo=_userInfo;

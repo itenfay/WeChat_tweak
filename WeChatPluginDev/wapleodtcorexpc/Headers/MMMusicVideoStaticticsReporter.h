@@ -29,7 +29,6 @@
     double _didFetchTrackItemTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocalVideo; // @synthesize isLocalVideo=_isLocalVideo;
 @property(nonatomic) _Bool isVariableBitrate; // @synthesize isVariableBitrate=_isVariableBitrate;
 @property(nonatomic) int videoQualityFormat; // @synthesize videoQualityFormat=_videoQualityFormat;

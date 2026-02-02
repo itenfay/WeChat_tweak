@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderTaskFIFOTask : NSObject
 {
@@ -13,11 +14,9 @@
     unsigned long long _priority;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool asyncEnd; // @synthesize asyncEnd=_asyncEnd;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(copy, nonatomic) CDUnknownBlockType taskBlock; // @synthesize taskBlock=_taskBlock;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, WASMPageSheetBellringView, WASMPageSheetCellSwitch, WASubscriptionMessagePageSheetMessageItem;
 
@@ -17,7 +18,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WASMPageSheetBellringView *bellingView; // @synthesize bellingView=_bellingView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) WASMPageSheetCellSwitch *switchView; // @synthesize switchView=_switchView;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

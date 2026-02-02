@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_avatarURLString;
 + (void)PBArrayAdd_appNickname;
 + (void)PBArrayAdd_appUsername;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBanned; // @synthesize isBanned=_isBanned;
 @property(copy, nonatomic) NSString *avatarURLString; // @synthesize avatarURLString=_avatarURLString;
 @property(copy, nonatomic) NSString *appNickname; // @synthesize appNickname=_appNickname;

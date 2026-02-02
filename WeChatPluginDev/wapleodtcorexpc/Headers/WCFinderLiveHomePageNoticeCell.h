@@ -26,7 +26,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveFeedGenericCoverReportInfo *coverReportInfo; // @synthesize coverReportInfo=_coverReportInfo;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) unsigned long long containerId; // @synthesize containerId=_containerId;

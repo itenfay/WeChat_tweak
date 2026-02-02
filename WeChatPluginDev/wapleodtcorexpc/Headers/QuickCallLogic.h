@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableSet, QuickCallContactCgi;
 @protocol QuickCallLogicDelegate;
@@ -16,7 +17,6 @@
     NSMutableSet *_contactSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *contactSet; // @synthesize contactSet=_contactSet;
 @property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
 @property(retain, nonatomic) QuickCallContactCgi *quickCallCgi; // @synthesize quickCallCgi=_quickCallCgi;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

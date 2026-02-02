@@ -18,7 +18,6 @@
     unsigned long long m_rewardResult;
 }
 
-- (void).cxx_destruct;
 - (void)call:(id)arg1;
 - (id)getViewController;
 - (void)onWCBaseLogicDidStop:(unsigned int)arg1;

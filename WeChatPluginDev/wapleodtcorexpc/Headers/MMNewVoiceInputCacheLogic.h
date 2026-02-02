@@ -29,7 +29,6 @@
     unsigned long long _transState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transState; // @synthesize transState=_transState;
 @property(retain, nonatomic) NSMutableArray *arrInputQueueItemWhenPausing; // @synthesize arrInputQueueItemWhenPausing=_arrInputQueueItemWhenPausing;
 @property(retain, nonatomic) NSMutableArray *arrInputQueueItem; // @synthesize arrInputQueueItem=_arrInputQueueItem;

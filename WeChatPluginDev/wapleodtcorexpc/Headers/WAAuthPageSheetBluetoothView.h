@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rejectBtn; // @synthesize rejectBtn=_rejectBtn;
 @property(retain, nonatomic) UIButton *alwaysAllowBtn; // @synthesize alwaysAllowBtn=_alwaysAllowBtn;
 @property(retain, nonatomic) UIButton *allowDuringUsageBtn; // @synthesize allowDuringUsageBtn=_allowDuringUsageBtn;

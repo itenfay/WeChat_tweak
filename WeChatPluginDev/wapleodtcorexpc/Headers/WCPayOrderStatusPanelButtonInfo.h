@@ -13,7 +13,6 @@
     NSString *m_nsButtonJumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsButtonName; // @synthesize m_nsButtonName;
 @property(retain, nonatomic) NSString *m_nsButtonJumpUrl; // @synthesize m_nsButtonJumpUrl;
 

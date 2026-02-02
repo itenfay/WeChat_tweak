@@ -50,7 +50,6 @@
     long long _puzzleImageViewLayoutStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long puzzleImageViewLayoutStyle; // @synthesize puzzleImageViewLayoutStyle=_puzzleImageViewLayoutStyle;
 @property(readonly, nonatomic) TLProfileModel *profileModel; // @synthesize profileModel=_profileModel;
 @property(retain, nonatomic) TLProfileExpandableHeaderView *expandableHeader; // @synthesize expandableHeader=_expandableHeader;

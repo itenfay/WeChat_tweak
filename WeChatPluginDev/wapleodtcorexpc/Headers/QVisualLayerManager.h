@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, QDataLayerConfigData, QVisCacheManager, QVisualLayerDataDownloader;
 
 @interface QVisualLayerManager
@@ -16,7 +18,6 @@
     QVisCacheManager *_cacheManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QVisCacheManager *cacheManager; // @synthesize cacheManager=_cacheManager;
 @property(retain, nonatomic) QVisualLayerDataDownloader *engine; // @synthesize engine=_engine;
 @property(retain, nonatomic) NSMutableDictionary *glOverlayDict; // @synthesize glOverlayDict=_glOverlayDict;
@@ -105,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

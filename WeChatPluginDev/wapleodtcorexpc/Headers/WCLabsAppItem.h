@@ -120,7 +120,6 @@
 + (void)PBArrayAdd_uiBeginTime;
 + (void)PBArrayAdd_uiSeq;
 + (void)PBArrayAdd_nsExpId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bItemFromXExpt; // @synthesize bItemFromXExpt=_bItemFromXExpt;
 @property(retain, nonatomic) NSString *nsImgUrl_en3; // @synthesize nsImgUrl_en3=_nsImgUrl_en3;
 @property(retain, nonatomic) NSString *nsImgUrl_tw3; // @synthesize nsImgUrl_tw3=_nsImgUrl_tw3;

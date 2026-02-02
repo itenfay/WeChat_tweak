@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIFont;
 
@@ -20,7 +21,6 @@
     NSString *_oAccessibilityStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *oAccessibilityStr; // @synthesize oAccessibilityStr=_oAccessibilityStr;
 @property(retain, nonatomic) NSString *nsImgName; // @synthesize nsImgName=_nsImgName;
 @property(retain, nonatomic) NSString *oTitle; // @synthesize oTitle=_oTitle;
@@ -41,4 +41,3 @@
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end
-

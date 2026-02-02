@@ -31,7 +31,6 @@
     NSIndexPath *_currentIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
 @property(retain, nonatomic) NSMutableArray *actionTraceArray; // @synthesize actionTraceArray=_actionTraceArray;
 @property(retain, nonatomic) NSString *lastBrowserTid; // @synthesize lastBrowserTid=_lastBrowserTid;

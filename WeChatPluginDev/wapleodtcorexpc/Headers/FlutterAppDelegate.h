@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIResponder.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterPluginAppLifeCycleDelegate, NSString, UIWindow;
 
@@ -63,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

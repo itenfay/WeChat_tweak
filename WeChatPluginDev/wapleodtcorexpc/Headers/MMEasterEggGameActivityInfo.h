@@ -19,7 +19,6 @@
 }
 
 + (id)activityNodeName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenLiteAppInfo *openLiteAppInfo; // @synthesize openLiteAppInfo=_openLiteAppInfo;
 @property(nonatomic) _Bool isWebviewCached; // @synthesize isWebviewCached=_isWebviewCached;
 @property(nonatomic) double delaySeconds; // @synthesize delaySeconds=_delaySeconds;

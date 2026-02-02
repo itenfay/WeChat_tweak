@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableSendmsgNeedFollow; // @synthesize disableSendmsgNeedFollow=_disableSendmsgNeedFollow;
 @property(nonatomic) _Bool canSendAttachment; // @synthesize canSendAttachment=_canSendAttachment;
 @property(nonatomic) _Bool isInNormalSession; // @synthesize isInNormalSession=_isInNormalSession;

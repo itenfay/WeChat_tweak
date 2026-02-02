@@ -18,7 +18,6 @@
     MMUILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *cardImageView; // @synthesize cardImageView=_cardImageView;
 @property(retain, nonatomic) ScanLicenceBankCardEditView *editBankNumView; // @synthesize editBankNumView=_editBankNumView;

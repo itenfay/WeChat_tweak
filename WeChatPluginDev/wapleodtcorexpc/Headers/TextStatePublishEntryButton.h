@@ -12,7 +12,6 @@
     MMUILabel *_descriptionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) TextStateIcon *exposeIcon; // @synthesize exposeIcon=_exposeIcon;

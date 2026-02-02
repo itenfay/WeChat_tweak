@@ -12,7 +12,6 @@
     MMFinderLiveOlympicsOperationViewModel *_olympicsOperationViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveOlympicsOperationViewModel *olympicsOperationViewModel; // @synthesize olympicsOperationViewModel=_olympicsOperationViewModel;
 @property(nonatomic) __weak id <MMFinderLiveWinterOlympicOperationViewDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;
 - (void)prepareForCertificateHiding;

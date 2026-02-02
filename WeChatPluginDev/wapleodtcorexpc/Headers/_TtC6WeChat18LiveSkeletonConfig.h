@@ -15,7 +15,6 @@
     MISSING_TYPE *transition;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) _TtCV6WeChat21LiveSkeletonAnimation4Conf *animation; // @synthesize animation;
 @property(nonatomic, retain) UIColor *globalColor; // @synthesize globalColor;

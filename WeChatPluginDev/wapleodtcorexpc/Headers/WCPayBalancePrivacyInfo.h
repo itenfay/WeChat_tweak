@@ -16,7 +16,6 @@
     NSString *_switch_state_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *switch_state_info; // @synthesize switch_state_info=_switch_state_info;
 @property(nonatomic) unsigned int switch_state; // @synthesize switch_state=_switch_state;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;

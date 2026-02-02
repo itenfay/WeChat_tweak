@@ -12,7 +12,6 @@
     _Bool _swapColorChannels;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)rendererType;
 - (id)drawMetalTexture:(id)arg1 toTarget:(id)arg2 coordinate:(id)arg3;
 - (id)drawToTarget:(id)arg1 coordinate:(id)arg2;

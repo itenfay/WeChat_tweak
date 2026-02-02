@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OVBAnalyticsManager : NSObject
 {
@@ -16,4 +17,3 @@
 + (void)initReporter;
 
 @end
-

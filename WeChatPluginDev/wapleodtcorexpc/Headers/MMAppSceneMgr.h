@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMapTable, NSMutableArray, NSString, UIViewController;
 
 @interface MMAppSceneMgr
@@ -14,7 +16,6 @@
     UIViewController *_subSceneViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *subSceneViewController; // @synthesize subSceneViewController=_subSceneViewController;
 @property(nonatomic) _Bool closeSubSceneWhenDismissToRoot; // @synthesize closeSubSceneWhenDismissToRoot=_closeSubSceneWhenDismissToRoot;
 @property(retain, nonatomic) NSMutableArray *unscenedMainWindows; // @synthesize unscenedMainWindows=_unscenedMainWindows;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

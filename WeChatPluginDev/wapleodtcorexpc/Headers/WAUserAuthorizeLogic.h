@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AlertPrivacyInfo, NSMutableArray, NSString, UINavigationController, UIScreenEdgePanGestureRecognizer, UserAvatarInfo, UserPrivacyProtectInfo, WAMenuPopInteractiveTransition;
 @protocol IWAAuthorizePage, WAAuthorizeDelegate;
 
@@ -27,7 +29,6 @@
     unsigned long long _currentScopeIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentScopeIndex; // @synthesize currentScopeIndex=_currentScopeIndex;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popBackGesture; // @synthesize popBackGesture=_popBackGesture;
 @property(retain, nonatomic) WAMenuPopInteractiveTransition *interactiveTransition; // @synthesize interactiveTransition=_interactiveTransition;
@@ -91,4 +92,3 @@
 @property(readonly) Class superclass;
 
 @end
-

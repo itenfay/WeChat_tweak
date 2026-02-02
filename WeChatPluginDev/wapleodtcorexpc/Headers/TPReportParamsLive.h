@@ -72,7 +72,6 @@
 }
 
 + (id)modelCustomPropertyMapper;
-- (void).cxx_destruct;
 @property(nonatomic) long long get_sync_frame_duration; // @synthesize get_sync_frame_duration=_get_sync_frame_duration;
 @property(nonatomic) long long get_stream_data_duration; // @synthesize get_stream_data_duration=_get_stream_data_duration;
 @property(retain, nonatomic) NSString *code; // @synthesize code=_code;

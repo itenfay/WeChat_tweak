@@ -16,7 +16,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, copy, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;

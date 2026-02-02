@@ -23,7 +23,6 @@
     MISSING_TYPE *$__lazy_storage_$_bottomDesc;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)onTextClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

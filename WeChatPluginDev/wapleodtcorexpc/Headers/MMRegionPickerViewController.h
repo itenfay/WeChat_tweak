@@ -29,7 +29,6 @@
     unsigned long long _authScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long authScene; // @synthesize authScene=_authScene;
 @property(nonatomic) int regionType; // @synthesize regionType=_regionType;
 @property(retain, nonatomic) NSMutableArray *pickedRegionAry; // @synthesize pickedRegionAry=_pickedRegionAry;

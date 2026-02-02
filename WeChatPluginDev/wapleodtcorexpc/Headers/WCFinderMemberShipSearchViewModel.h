@@ -18,7 +18,6 @@
     NSData *_lastBuff;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

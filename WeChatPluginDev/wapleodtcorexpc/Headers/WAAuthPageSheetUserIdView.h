@@ -20,7 +20,6 @@
 
 + (double)tableViewHeightByDataModel:(id)arg1 hostView:(id)arg2;
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *protocolJumpRichText; // @synthesize protocolJumpRichText=_protocolJumpRichText;
 @property(retain, nonatomic) MMCheckBox *protocolJumpCheckBox; // @synthesize protocolJumpCheckBox=_protocolJumpCheckBox;
 @property(retain, nonatomic) UIView *protocolView; // @synthesize protocolView=_protocolView;

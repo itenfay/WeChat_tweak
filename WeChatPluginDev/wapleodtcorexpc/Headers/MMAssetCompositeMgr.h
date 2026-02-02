@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OrderedDictionary;
 @protocol MMAssetCompositeTaskProtocol;
 
@@ -26,7 +28,6 @@
 + (void)_saveBackupAssetByCopyWithAVAsset:(id)arg1 assetUrl:(id)arg2 maxSizeLimitMB:(long long)arg3 resultBlock:(CDUnknownBlockType)arg4;
 + (void)saveBackupAsset:(id)arg1 andCrop:(_Bool)arg2 forTimeRange:(CDStruct_e83c9415)arg3 withMaxSizeMB:(long long)arg4 resultBlock:(CDUnknownBlockType)arg5;
 + (id)genErrorForCode:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMAssetCompositeTaskProtocol> currentTask; // @synthesize currentTask=_currentTask;
 @property(retain) OrderedDictionary *taskListMap; // @synthesize taskListMap=_taskListMap;
 @property(nonatomic) long long currentMgrState; // @synthesize currentMgrState=_currentMgrState;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

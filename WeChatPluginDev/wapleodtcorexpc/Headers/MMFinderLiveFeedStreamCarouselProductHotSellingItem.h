@@ -11,7 +11,6 @@
     FeedsPreviewLiveMultiStyleInfo_StyleTwelve *_hotSellingStyleConf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FeedsPreviewLiveMultiStyleInfo_StyleTwelve *hotSellingStyleConf; // @synthesize hotSellingStyleConf=_hotSellingStyleConf;
 @property(retain, nonatomic) FinderLiveSyncFeedPreviewMultiStyleInfoResp_HotShopInfo *hotSellingBubble; // @synthesize hotSellingBubble=_hotSellingBubble;
 @property(readonly, copy) NSString *description;

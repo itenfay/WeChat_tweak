@@ -14,7 +14,6 @@
 }
 
 + (id)infoWithType:(unsigned long long)arg1 contact:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 

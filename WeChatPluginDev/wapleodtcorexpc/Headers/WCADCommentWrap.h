@@ -24,7 +24,6 @@
     NSString *_cacheKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(retain, nonatomic) NSString *adInfoAddress; // @synthesize adInfoAddress=_adInfoAddress;
 @property(retain, nonatomic) NSString *snsStatExt; // @synthesize snsStatExt=_snsStatExt;

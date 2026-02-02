@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *m_myQueue;
 }
 
-- (void).cxx_destruct;
 - (void)sendAsync:(long long)arg1 DeviceType:(id)arg2 DeviceID:(id)arg3 MSG:(id)arg4;
 - (id)getDictionaryFromJson:(id)arg1;
 - (id)getTaskForSubTaskId:(int)arg1;

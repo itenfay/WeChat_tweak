@@ -16,7 +16,6 @@
     unsigned long long _revokeTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long revokeTime; // @synthesize revokeTime=_revokeTime;
 @property(nonatomic) unsigned long long revokeType; // @synthesize revokeType=_revokeType;
 @property(retain, nonatomic) NSString *chatUserName; // @synthesize chatUserName=_chatUserName;

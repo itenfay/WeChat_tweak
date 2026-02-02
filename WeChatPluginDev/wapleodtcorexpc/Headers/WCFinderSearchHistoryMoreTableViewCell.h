@@ -15,7 +15,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellType; // @synthesize cellType=_cellType;
 @property(nonatomic) __weak UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;

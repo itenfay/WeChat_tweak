@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -14,7 +15,6 @@
     NSMutableArray *_allCellModelList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allCellModelList; // @synthesize allCellModelList=_allCellModelList;
 @property(copy, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;
 @property(copy, nonatomic) NSString *sectionId; // @synthesize sectionId=_sectionId;
@@ -33,4 +33,3 @@
 - (id)initWithId:(id)arg1 sectionTitle:(id)arg2;
 
 @end
-

@@ -17,7 +17,6 @@
     UIButton *_jumpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *jumpButton; // @synthesize jumpButton=_jumpButton;
 @property(retain, nonatomic) UIImageView *rightArrowImageView; // @synthesize rightArrowImageView=_rightArrowImageView;
 @property(retain, nonatomic) WCPayWebImageView *leftIconImageView; // @synthesize leftIconImageView=_leftIconImageView;

@@ -14,7 +14,6 @@
     double _pointOfInterestInLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double pointOfInterestInLabel; // @synthesize pointOfInterestInLabel=_pointOfInterestInLabel;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UIView *scaleContainer; // @synthesize scaleContainer=_scaleContainer;

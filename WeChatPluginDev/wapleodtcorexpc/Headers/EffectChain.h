@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (float)latencyMs;
 - (void)reset;
 - (_Bool)processWithBuffer:(char *)arg1 bufferLen:(unsigned long long *)arg2;

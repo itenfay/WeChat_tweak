@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBannerCellViewModel, MMFinderLiveBannerInfo, MMWebImageView, NSString, UIButton, UIImageView, UILabel;
 
@@ -21,7 +22,6 @@
 + (struct CGSize)viewSizeByDataModel:(id)arg1 hostView:(id)arg2;
 + (struct CGSize)bannerSizeByInfo:(id)arg1;
 + (long long)titleWidthByInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

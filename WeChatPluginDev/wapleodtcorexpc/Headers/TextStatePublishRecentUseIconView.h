@@ -20,7 +20,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *privateRecentUseIconList; // @synthesize privateRecentUseIconList=_privateRecentUseIconList;
 @property(retain, nonatomic) UILongPressGestureRecognizer *itemLongPressGesture; // @synthesize itemLongPressGesture=_itemLongPressGesture;
 @property(retain, nonatomic) CAGradientLayer *gradientMaskLayer; // @synthesize gradientMaskLayer=_gradientMaskLayer;

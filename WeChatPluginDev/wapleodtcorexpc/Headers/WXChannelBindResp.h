@@ -11,7 +11,6 @@
     NSData *_authBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *authBuffer; // @synthesize authBuffer=_authBuffer;
 @property(copy, nonatomic) NSString *extMsg; // @synthesize extMsg=_extMsg;
 

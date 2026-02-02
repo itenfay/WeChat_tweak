@@ -20,7 +20,6 @@
     NSString *_taskUploadingShouldDeletePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *taskUploadingShouldDeletePath; // @synthesize taskUploadingShouldDeletePath=_taskUploadingShouldDeletePath;
 @property(retain, nonatomic) NSString *taskUploadingPath; // @synthesize taskUploadingPath=_taskUploadingPath;
 @property(retain, nonatomic) NSString *taskRetryPath; // @synthesize taskRetryPath=_taskRetryPath;

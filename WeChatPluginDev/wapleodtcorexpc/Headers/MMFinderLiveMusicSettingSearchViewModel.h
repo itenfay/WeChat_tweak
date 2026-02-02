@@ -17,7 +17,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(copy, nonatomic) NSString *currentSearchText; // @synthesize currentSearchText=_currentSearchText;
 @property(nonatomic) _Bool beginSearching; // @synthesize beginSearching=_beginSearching;

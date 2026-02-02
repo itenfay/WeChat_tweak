@@ -15,7 +15,6 @@
     NSNumber *_lastButtonOption;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *lastButtonOption; // @synthesize lastButtonOption=_lastButtonOption;
 @property(retain, nonatomic) WCDragBarButtonView *deleteBtn; // @synthesize deleteBtn=_deleteBtn;
 @property(retain, nonatomic) WCDragBarButtonView *starBtn; // @synthesize starBtn=_starBtn;

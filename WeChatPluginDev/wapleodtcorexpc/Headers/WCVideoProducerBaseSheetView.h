@@ -20,7 +20,6 @@
     UIView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) WCVideoProducerBaseSheetViewConfig *viewConfig; // @synthesize viewConfig=_viewConfig;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;

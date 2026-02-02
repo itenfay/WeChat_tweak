@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UISwitch, UIView;
 
 @interface MMFinderLiveShopSettingsSwitchItemView
@@ -13,7 +15,6 @@
     CDUnknownBlockType _onSwitchTap;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onSwitchTap; // @synthesize onSwitchTap=_onSwitchTap;
 @property(copy, nonatomic) CDUnknownBlockType onSwitchChange; // @synthesize onSwitchChange=_onSwitchChange;
 @property(retain, nonatomic) UIView *switchTapView; // @synthesize switchTapView=_switchTapView;
@@ -24,4 +25,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

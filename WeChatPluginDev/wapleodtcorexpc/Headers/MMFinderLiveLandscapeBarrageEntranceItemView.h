@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UISwitch;
 
@@ -17,7 +18,6 @@
 
 + (double)staticHeight;
 + (double)staticWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *entranceSwitch; // @synthesize entranceSwitch=_entranceSwitch;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) CDUnknownBlockType onBarrageEntranceOnChanged; // @synthesize onBarrageEntranceOnChanged=_onBarrageEntranceOnChanged;
@@ -30,4 +30,3 @@
 - (id)initWithEntranceOn:(_Bool)arg1;
 
 @end
-

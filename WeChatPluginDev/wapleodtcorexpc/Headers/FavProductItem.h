@@ -16,7 +16,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productUrl; // @synthesize productUrl=_productUrl;
 @property(retain, nonatomic) NSString *productSellerName; // @synthesize productSellerName=_productSellerName;
 @property(retain, nonatomic) NSString *productInfo; // @synthesize productInfo=_productInfo;

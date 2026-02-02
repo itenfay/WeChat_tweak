@@ -19,7 +19,6 @@
     SEL _touchSelCancelled;
 }
 
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

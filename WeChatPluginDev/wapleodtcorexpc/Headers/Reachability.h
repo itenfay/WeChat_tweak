@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue;
 
@@ -25,7 +26,6 @@
 + (id)reachabilityWithAddress:(void *)arg1;
 + (id)reachabilityWithHostname:(id)arg1;
 + (id)reachabilityWithHostName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id reachabilityObject; // @synthesize reachabilityObject=_reachabilityObject;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reachabilitySerialQueue; // @synthesize reachabilitySerialQueue=_reachabilitySerialQueue;
 @property(nonatomic) struct __SCNetworkReachability *reachabilityRef; // @synthesize reachabilityRef=_reachabilityRef;
@@ -53,4 +53,3 @@
 - (id)initWithReachabilityRef:(struct __SCNetworkReachability *)arg1;
 
 @end
-

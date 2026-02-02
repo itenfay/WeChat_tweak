@@ -17,7 +17,6 @@
     UIColor *_bgColorDisabled;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisabledStyle; // @synthesize isDisabledStyle=_isDisabledStyle;
 @property(retain, nonatomic) UIColor *bgColorDisabled; // @synthesize bgColorDisabled=_bgColorDisabled;
 @property(retain, nonatomic) UIColor *titleColorDisabled; // @synthesize titleColorDisabled=_titleColorDisabled;

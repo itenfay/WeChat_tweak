@@ -23,7 +23,6 @@
     double _delayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double delayTime; // @synthesize delayTime=_delayTime;
 @property(nonatomic) _Bool isForbidRightGesture; // @synthesize isForbidRightGesture=_isForbidRightGesture;
 @property(nonatomic) _Bool isRedirect; // @synthesize isRedirect=_isRedirect;

@@ -12,7 +12,6 @@
     EmoticonBoardCameraEmoticonEntryView *_cameraEmoticonEntryView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonBoardCameraEmoticonEntryView *cameraEmoticonEntryView; // @synthesize cameraEmoticonEntryView=_cameraEmoticonEntryView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

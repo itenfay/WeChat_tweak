@@ -13,7 +13,6 @@
     MMBadgeView *_badgeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) MMWebImageView *m_webImageView; // @synthesize m_webImageView=_m_webImageView;
 @property(nonatomic) _Bool hasRedPoint; // @synthesize hasRedPoint=_hasRedPoint;

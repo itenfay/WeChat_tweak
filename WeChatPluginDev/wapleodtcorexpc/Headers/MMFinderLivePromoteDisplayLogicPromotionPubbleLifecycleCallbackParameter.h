@@ -10,7 +10,6 @@
     MMFinderLivePromotePubbleContainerView *_promotePubbleContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePromotePubbleContainerView *promotePubbleContainerView; // @synthesize promotePubbleContainerView=_promotePubbleContainerView;
 - (void)setOperationDelegate:(id)arg1;
 - (id)operationDelegate;

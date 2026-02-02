@@ -25,7 +25,6 @@
     unsigned long long _selectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSMutableArray *omjTemplates; // @synthesize omjTemplates=_omjTemplates;
 @property(copy, nonatomic) NSString *followFeedId; // @synthesize followFeedId=_followFeedId;

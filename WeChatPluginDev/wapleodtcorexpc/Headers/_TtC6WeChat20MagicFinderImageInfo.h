@@ -13,7 +13,6 @@
     MISSING_TYPE *imageToken;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithImageUrl:(id)arg1 imageToken:(id)arg2;
 @property(nonatomic, copy) NSString *imageToken;

@@ -30,7 +30,6 @@
 }
 
 + (id)genProductIdFromTimelineUserData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDataItem *timeLineDataItem; // @synthesize timeLineDataItem=_timeLineDataItem;
 @property(nonatomic) __weak id <StoreEmotionPageShareLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onDoneForwardForForwardView:(id)arg1;

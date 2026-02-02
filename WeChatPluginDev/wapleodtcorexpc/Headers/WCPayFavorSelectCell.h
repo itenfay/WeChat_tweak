@@ -26,7 +26,6 @@
     UIView *_m_firstLineView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isLastCell; // @synthesize m_isLastCell=_m_isLastCell;
 @property(nonatomic) _Bool m_isFirstCell; // @synthesize m_isFirstCell=_m_isFirstCell;
 @property(retain, nonatomic) UIView *m_firstLineView; // @synthesize m_firstLineView=_m_firstLineView;

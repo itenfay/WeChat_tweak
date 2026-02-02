@@ -11,7 +11,6 @@
     UITextField *_textFiled;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *textFiled; // @synthesize textFiled=_textFiled;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)textFieldDidEndEditing:(id)arg1;

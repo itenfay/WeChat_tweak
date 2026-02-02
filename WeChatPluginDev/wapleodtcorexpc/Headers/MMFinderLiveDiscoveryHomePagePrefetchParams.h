@@ -15,7 +15,6 @@
     FinderRedDotExtInfo *_redDotExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderRedDotExtInfo *redDotExtInfo; // @synthesize redDotExtInfo=_redDotExtInfo;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *redDotCtrlInfo; // @synthesize redDotCtrlInfo=_redDotCtrlInfo;
 @property(nonatomic) _Bool isHomePageVCCached; // @synthesize isHomePageVCCached=_isHomePageVCCached;

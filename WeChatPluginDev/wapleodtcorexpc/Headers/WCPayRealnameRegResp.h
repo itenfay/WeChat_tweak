@@ -22,7 +22,6 @@
     NSString *_bottom_username;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bottom_username; // @synthesize bottom_username=_bottom_username;
 @property(retain, nonatomic) NSString *bottom_url; // @synthesize bottom_url=_bottom_url;
 @property(retain, nonatomic) NSString *bottom_wording; // @synthesize bottom_wording=_bottom_wording;

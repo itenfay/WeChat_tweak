@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSMutableArray, NSString, UIView, WCFinderCreateCoordinator, WCFinderLiveNearbyReporter, WCFinderNearbyTabPageCacheModel, WCFinderNearbyTabPageViewModel, WCFinderRedDotCtrlInfo, WCFinderTabPageModel;
 @protocol WCFinderNearbyTabPageViewControllerDelegate;
 
@@ -28,7 +30,6 @@
     WCFinderNearbyTabPageViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNearbyTabPageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) unsigned long long selectedSubTabId; // @synthesize selectedSubTabId=_selectedSubTabId;
 @property(nonatomic) _Bool isLocationServiceAuthrized; // @synthesize isLocationServiceAuthrized=_isLocationServiceAuthrized;
@@ -102,4 +103,3 @@
 @property(readonly) Class superclass;
 
 @end
-

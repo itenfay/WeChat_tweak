@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCStoryDataItem;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)viewModelWithDataItemId:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(copy, nonatomic) CDUnknownBlockType configBlock; // @synthesize configBlock=_configBlock;
 @property(nonatomic) _Bool hadBubble; // @synthesize hadBubble=_hadBubble;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

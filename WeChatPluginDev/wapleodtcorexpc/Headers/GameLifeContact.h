@@ -49,7 +49,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(nonatomic) unsigned long long updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) WCGameLifeProfileJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;

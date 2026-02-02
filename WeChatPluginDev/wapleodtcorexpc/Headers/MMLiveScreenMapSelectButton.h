@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView, UILabel;
 
 @interface MMLiveScreenMapSelectButton
@@ -15,7 +17,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) _Bool hideLogo; // @synthesize hideLogo=_hideLogo;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
@@ -33,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

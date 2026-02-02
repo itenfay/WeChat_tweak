@@ -10,7 +10,6 @@
     WCAdDynamicFeedElementPromotionInfo *_styleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementPromotionInfo *styleInfo; // @synthesize styleInfo=_styleInfo;
 - (void)setDynamicMaxWidth:(double)arg1;
 - (void)updateDynamicStyle;

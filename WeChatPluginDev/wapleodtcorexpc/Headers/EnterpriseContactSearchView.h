@@ -34,7 +34,6 @@
     NSString *_emptyTipSuffix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *emptyTipSuffix; // @synthesize emptyTipSuffix=_emptyTipSuffix;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 - (double)getSearchTextFieldWidth;

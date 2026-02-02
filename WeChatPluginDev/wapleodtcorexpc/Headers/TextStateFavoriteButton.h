@@ -12,7 +12,6 @@
     NSNumber *_typeNumber;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=hasNotify) _Bool notify; // @synthesize notify=_notify;
 @property(nonatomic) unsigned int funcType; // @synthesize funcType=_funcType;
 @property(retain, nonatomic) NSNumber *typeNumber; // @synthesize typeNumber=_typeNumber;

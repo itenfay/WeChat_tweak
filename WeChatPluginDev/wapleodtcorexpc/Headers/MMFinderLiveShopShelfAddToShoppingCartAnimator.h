@@ -21,7 +21,6 @@
     struct CGPoint _part2To;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) struct CGPoint part2To; // @synthesize part2To=_part2To;
 @property(nonatomic) struct CGPoint part2From; // @synthesize part2From=_part2From;

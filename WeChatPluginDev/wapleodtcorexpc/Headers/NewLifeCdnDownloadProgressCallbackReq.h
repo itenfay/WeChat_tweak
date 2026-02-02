@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMediaId:(id)arg1 finishedLength:(long long)arg2 totalLength:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long totalLength; // @synthesize totalLength=_totalLength;
 @property(nonatomic) long long finishedLength; // @synthesize finishedLength=_finishedLength;
 @property(copy, nonatomic) NSString *mediaId; // @synthesize mediaId=_mediaId;

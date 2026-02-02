@@ -14,7 +14,6 @@
     id <WCFinderLiveChooseLiveModeViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderLiveChooseLiveModeViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSMutableArray *dataArray;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

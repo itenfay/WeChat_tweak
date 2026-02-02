@@ -21,7 +21,6 @@
     NSMutableArray *_bindedLayoutCallbacks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bindedLayoutCallbacks; // @synthesize bindedLayoutCallbacks=_bindedLayoutCallbacks;
 @property(nonatomic) __weak MMViewLayoutManager *layoutMgr; // @synthesize layoutMgr=_layoutMgr;
 @property(retain, nonatomic) NSHashTable *visitedParentsDuringDescendencyCheck; // @synthesize visitedParentsDuringDescendencyCheck=_visitedParentsDuringDescendencyCheck;

@@ -15,7 +15,6 @@
     StoreEmotionExchangeEmotionPackCgi *_packCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmotionExchangeEmotionPackCgi *packCgi; // @synthesize packCgi=_packCgi;
 @property(retain, nonatomic) EmoticonStoreItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <EmoticonStorePackDownloadLogicDelegate> delegate; // @synthesize delegate=_delegate;

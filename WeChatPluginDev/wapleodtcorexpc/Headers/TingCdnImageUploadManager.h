@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary;
 
@@ -13,7 +14,6 @@
     NSMutableArray *_uploadWaitingArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadWaitingArray; // @synthesize uploadWaitingArray=_uploadWaitingArray;
 @property(retain, nonatomic) NSMutableDictionary *uploadingMetaDict; // @synthesize uploadingMetaDict=_uploadingMetaDict;
 - (void)OnCdnUpload:(id)arg1;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

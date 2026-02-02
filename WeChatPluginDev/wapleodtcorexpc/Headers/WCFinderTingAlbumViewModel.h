@@ -15,7 +15,6 @@
     WCFinderMusicTopicDataProvider *_dataProvider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMusicTopicDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic) __weak id <WCFinderTingAlbumViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int innerType; // @synthesize innerType=_innerType;

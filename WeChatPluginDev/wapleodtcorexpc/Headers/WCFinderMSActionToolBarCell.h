@@ -21,7 +21,6 @@
 
 + (struct CGSize)calculateDisplaySize:(struct CGSize)arg1 forVM:(id)arg2 cellIdentifier:(id)arg3 showSceneIntroduce:(_Bool)arg4;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *commentButton; // @synthesize commentButton=_commentButton;
 @property(retain, nonatomic) MMUIButton *likeButton; // @synthesize likeButton=_likeButton;
 @property(retain, nonatomic) UIStackView *actionStackView; // @synthesize actionStackView=_actionStackView;

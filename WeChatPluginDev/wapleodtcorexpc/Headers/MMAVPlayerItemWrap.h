@@ -18,7 +18,6 @@
     _Bool _shouldSkipStackOrResume;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSkipStackOrResume; // @synthesize shouldSkipStackOrResume=_shouldSkipStackOrResume;
 @property(nonatomic) int targetStatus; // @synthesize targetStatus;
 @property(nonatomic) int status; // @synthesize status;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, NSString;
 
 @interface TingAudioTabDataManager
@@ -11,7 +13,6 @@
     MemoryMappedKV *_mmkv;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 @property(nonatomic) _Bool hasShowAudioTab; // @synthesize hasShowAudioTab=_hasShowAudioTab;
 - (void)jumpToAudioTabAndTopWithScene:(int)arg1;
@@ -34,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

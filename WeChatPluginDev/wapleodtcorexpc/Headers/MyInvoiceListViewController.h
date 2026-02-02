@@ -18,7 +18,6 @@
     InvoiceFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) InvoiceFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <MyInvoiceListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnDelInvoiceRet:(_Bool)arg1 andGroupId:(long long)arg2;

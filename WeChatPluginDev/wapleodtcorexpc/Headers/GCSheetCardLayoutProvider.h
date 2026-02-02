@@ -17,7 +17,6 @@
     struct UIEdgeInsets _labelGroupEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
 @property(nonatomic) int cowCnt; // @synthesize cowCnt=_cowCnt;
 @property(nonatomic) int rowCnt; // @synthesize rowCnt=_rowCnt;

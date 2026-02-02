@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJVideoTemplate, WCDownloadArgsWrap;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)taskWithTemplateInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) WCDownloadArgsWrap *downloadArgs; // @synthesize downloadArgs=_downloadArgs;
 @property(retain, nonatomic) MJVideoTemplate *templateInfo; // @synthesize templateInfo=_templateInfo;
@@ -28,4 +28,3 @@
 - (id)initWithTemplateInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

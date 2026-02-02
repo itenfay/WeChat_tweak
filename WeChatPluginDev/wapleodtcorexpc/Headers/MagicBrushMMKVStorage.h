@@ -14,7 +14,6 @@
     unsigned long long _mMaxStorageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mMaxStorageSize; // @synthesize mMaxStorageSize=_mMaxStorageSize;
 @property(retain, nonatomic) MemoryMappedKV *mMemoryMappedKV; // @synthesize mMemoryMappedKV=_mMemoryMappedKV;
 @property(copy, nonatomic) NSString *mBizName; // @synthesize mBizName=_mBizName;

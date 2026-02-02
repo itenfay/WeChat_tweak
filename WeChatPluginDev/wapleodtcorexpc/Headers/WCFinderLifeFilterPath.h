@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, WCFinderLifeFilterTag;
 
@@ -13,7 +14,6 @@
     NSArray *_tags;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(nonatomic) long long level; // @synthesize level=_level;
 - (id)tagEnumerator;
@@ -25,4 +25,3 @@
 - (unsigned long long)hash;
 
 @end
-

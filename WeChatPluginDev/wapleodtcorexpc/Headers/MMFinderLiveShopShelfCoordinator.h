@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGetShopShelfResponse, MMFinderLiveShopContext, MMFinderLiveShopShelfHeaderViewModel, MMFinderLiveShopShelfView, MMFinderLiveTask, MMFinderLiveTaskId, NSArray, NSString, WCFinderLiveAudienceLogReporter;
 @protocol MMFinderLiveShopShelfViewDelegate;
@@ -17,7 +18,6 @@
     FinderLiveGetShopShelfResponse *_shopShelfInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveGetShopShelfResponse *shopShelfInfo; // @synthesize shopShelfInfo=_shopShelfInfo;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSArray *coupons; // @synthesize coupons=_coupons;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

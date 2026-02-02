@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)build:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *downloadParamDataArray; // @synthesize downloadParamDataArray=_downloadParamDataArray;
 @property(copy, nonatomic) NSString *downloadFileID; // @synthesize downloadFileID=_downloadFileID;
 @property(nonatomic) long long videoCodecId; // @synthesize videoCodecId=_videoCodecId;
@@ -25,4 +25,3 @@
 @property(nonatomic) long long width; // @synthesize width=_width;
 
 @end
-

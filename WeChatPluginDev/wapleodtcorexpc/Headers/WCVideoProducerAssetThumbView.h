@@ -16,7 +16,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectedMaskView; // @synthesize selectedMaskView=_selectedMaskView;
 @property(retain, nonatomic) UIImageView *assetTypeIconView; // @synthesize assetTypeIconView=_assetTypeIconView;
 @property(retain, nonatomic) UIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;

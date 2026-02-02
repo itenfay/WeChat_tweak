@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, WCFinderRedDotTipsShowInfo;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _clickBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 @property(copy, nonatomic) NSString *cameraTemplateTitle; // @synthesize cameraTemplateTitle=_cameraTemplateTitle;
 @property(retain, nonatomic) WCFinderRedDotTipsShowInfo *showInfo; // @synthesize showInfo=_showInfo;
@@ -26,4 +26,3 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 
 @end
-

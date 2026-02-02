@@ -20,7 +20,6 @@
     id <WCCardDataSource> _cardDataSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <WCCardDataSource> cardDataSource; // @synthesize cardDataSource=_cardDataSource;
 @property(retain, nonatomic) UrlLabel *guidanceLabel; // @synthesize guidanceLabel=_guidanceLabel;
 @property(retain, nonatomic) UIButton *acceptCardBtn; // @synthesize acceptCardBtn=_acceptCardBtn;

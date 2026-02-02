@@ -13,7 +13,6 @@
     long long _editAssetClipType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long editAssetClipType; // @synthesize editAssetClipType=_editAssetClipType;
 @property(retain, nonatomic) OMJClipSegment *clipSegment; // @synthesize clipSegment=_clipSegment;
 @property(nonatomic) long long assetIndex; // @synthesize assetIndex=_assetIndex;

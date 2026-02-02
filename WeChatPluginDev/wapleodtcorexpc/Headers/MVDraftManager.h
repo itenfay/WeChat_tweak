@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MVDraftManager : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)fetchDraftToModel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

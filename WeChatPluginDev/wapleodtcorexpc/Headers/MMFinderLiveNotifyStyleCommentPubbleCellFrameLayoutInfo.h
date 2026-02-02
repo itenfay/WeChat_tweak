@@ -12,7 +12,6 @@
     UIFont *_topCommentContentFont;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *topCommentContentFont; // @synthesize topCommentContentFont=_topCommentContentFont;
 
 @end

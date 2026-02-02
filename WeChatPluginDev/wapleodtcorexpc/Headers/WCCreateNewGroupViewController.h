@@ -18,7 +18,6 @@
     NSString *_groupId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 @property(retain, nonatomic) NSString *m_hintText; // @synthesize m_hintText;
 @property(retain, nonatomic) NSString *m_originText; // @synthesize m_originText;

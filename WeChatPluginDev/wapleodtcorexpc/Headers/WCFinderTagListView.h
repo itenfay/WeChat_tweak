@@ -22,7 +22,6 @@
 
 + (double)displayHeightWithLayout:(id)arg1 options:(id)arg2 width:(double)arg3;
 + (double)displayHeightWithItems:(id)arg1 options:(id)arg2 width:(double)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long mmUIUserInterfaceStyle; // @synthesize mmUIUserInterfaceStyle=_mmUIUserInterfaceStyle;
 @property(nonatomic) double allTagNoWrapWidth; // @synthesize allTagNoWrapWidth=_allTagNoWrapWidth;
 @property(retain, nonatomic) UIButton *expandButton; // @synthesize expandButton=_expandButton;

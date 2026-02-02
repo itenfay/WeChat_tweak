@@ -16,7 +16,6 @@
 }
 
 + (id)getUserBlurEffectImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *backgroundHeadImage; // @synthesize backgroundHeadImage=_backgroundHeadImage;
 @property(retain, nonatomic) UIView *audioUserBlurView; // @synthesize audioUserBlurView=_audioUserBlurView;
 @property(retain, nonatomic) WCFinderHeadImageView *backgroundHeadImageView; // @synthesize backgroundHeadImageView=_backgroundHeadImageView;

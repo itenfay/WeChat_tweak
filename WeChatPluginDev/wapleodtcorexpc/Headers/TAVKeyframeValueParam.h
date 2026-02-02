@@ -16,7 +16,6 @@
     TAVVideoCompositionRenderInfo *_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVVideoCompositionRenderInfo *info; // @synthesize info=_info;
 @property(nonatomic) double tween; // @synthesize tween=_tween;
 @property(retain, nonatomic) id <TAVKeyframeValue> toValue; // @synthesize toValue=_toValue;

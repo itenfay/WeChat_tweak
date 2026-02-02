@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonBoardView, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIButton, UILabel, UIView, WCInputController;
 
 @interface MMWebViewPlugin_InputKeyboard
@@ -32,7 +34,6 @@
     double _buttonMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double buttonMargin; // @synthesize buttonMargin=_buttonMargin;
 @property(nonatomic) double textViewMargin; // @synthesize textViewMargin=_textViewMargin;
 @property(nonatomic) double editBoxHeight; // @synthesize editBoxHeight=_editBoxHeight;
@@ -92,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

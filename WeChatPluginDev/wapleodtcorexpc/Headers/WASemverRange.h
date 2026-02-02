@@ -13,7 +13,6 @@
     unsigned long long _op;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long op; // @synthesize op=_op;
 @property(retain, nonatomic) WASemver *semver; // @synthesize semver=_semver;
 - (_Bool)isSatisfiedBy:(id)arg1;

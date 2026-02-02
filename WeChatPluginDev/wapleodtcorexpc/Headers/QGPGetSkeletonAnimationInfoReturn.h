@@ -10,7 +10,6 @@
     QGPSkeletonAnimationInfos *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPSkeletonAnimationInfos *value; // @synthesize value=_value;
 
 @end

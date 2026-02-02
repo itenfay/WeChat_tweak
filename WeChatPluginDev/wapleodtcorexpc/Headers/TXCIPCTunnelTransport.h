@@ -18,7 +18,6 @@
     id <TXCIPCTunnelTransportDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int current_packet_type; // @synthesize current_packet_type=_current_packet_type;
 @property(nonatomic) __weak id <TXCIPCTunnelTransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TXCIPCTunnelEndPoint *endpoint; // @synthesize endpoint=_endpoint;

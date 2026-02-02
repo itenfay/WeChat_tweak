@@ -13,7 +13,6 @@
 }
 
 + (void)installSchemeTo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *taskDic; // @synthesize taskDic=_taskDic;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
 - (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;

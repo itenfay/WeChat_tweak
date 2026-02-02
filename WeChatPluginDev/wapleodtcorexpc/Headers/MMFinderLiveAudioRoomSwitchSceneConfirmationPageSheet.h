@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UILabel;
 
 @interface MMFinderLiveAudioRoomSwitchSceneConfirmationPageSheet
@@ -13,7 +15,6 @@
     UILabel *_descriptionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(copy, nonatomic) CDUnknownBlockType confirmBlock; // @synthesize confirmBlock=_confirmBlock;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

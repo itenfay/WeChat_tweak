@@ -22,7 +22,6 @@
     long long _selectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSMutableArray *poiCategoryItemArray; // @synthesize poiCategoryItemArray=_poiCategoryItemArray;

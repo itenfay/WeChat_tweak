@@ -18,7 +18,6 @@
     id <WASessionNotifyTableViewCellDelegate> _cellViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WASessionNotifyTableViewCellDelegate> cellViewDelegate; // @synthesize cellViewDelegate=_cellViewDelegate;
 - (void)onClickOpenButton:(id)arg1;
 - (void)updateData;

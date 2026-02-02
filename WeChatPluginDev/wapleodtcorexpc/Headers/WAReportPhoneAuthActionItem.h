@@ -36,7 +36,6 @@
     NSString *_phoneNumber;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(nonatomic) unsigned long long verifyCodeFailedCount; // @synthesize verifyCodeFailedCount=_verifyCodeFailedCount;
 @property(nonatomic) unsigned long long verifyCodeSuccessCount; // @synthesize verifyCodeSuccessCount=_verifyCodeSuccessCount;

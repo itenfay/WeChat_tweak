@@ -11,7 +11,6 @@
     NSMutableDictionary *m_dictClsMethodKeyObservers;
 }
 
-- (void).cxx_destruct;
 - (Class)getClsMethodKeyObserver:(id)arg1 withKey:(id)arg2;
 - (id)getClsMethodObservers:(id)arg1 selector:(SEL)arg2;
 - (void)unregisterClsMethodKeyObserver:(Class)arg1 onProtocol:(id)arg2 withKey:(id)arg3;

@@ -18,7 +18,6 @@
     NSArray *_sectionDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionDatas; // @synthesize sectionDatas=_sectionDatas;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;

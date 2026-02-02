@@ -17,7 +17,6 @@
     NSString *_pathForRespData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingSingtonVM; // @synthesize isUsingSingtonVM=_isUsingSingtonVM;
 @property(nonatomic) unsigned int subScene; // @synthesize subScene=_subScene;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

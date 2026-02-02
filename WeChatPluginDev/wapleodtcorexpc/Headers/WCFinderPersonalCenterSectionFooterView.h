@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionReusableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class RichTextView;
 
@@ -14,7 +15,6 @@
 }
 
 + (double)footerViewHeightWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickActionBlock; // @synthesize clickActionBlock=_clickActionBlock;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;
 - (void)layoutSubviews;
@@ -24,4 +24,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

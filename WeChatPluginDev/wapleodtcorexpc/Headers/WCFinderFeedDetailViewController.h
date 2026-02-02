@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonCustomManageAddLogic, MMFinderHandOffItem, NSMutableDictionary, NSString, UILabel, UIScrollView, UITableView, UIView, WCFinderAnimationLoadingView, WCFinderCommentDetailViewModel, WCFinderExtStatsReporter, WCFinderFeedDetailCommentInputCell, WCFinderFeedDetailContentView, WCFinderFeedDetailVCParams, WCFinderFeedDetailVCReporter, WCFinderFeedInputView, WCFinderFeedbackView, WCFinderFullToolbarView, WCFinderJumpInfoLBSCardMiniView, WCFinderPhotoFeedDetailViewModel, WCFinderPhotoFeedHeaderView, WCFinderRefreshTableFooterView, WCFinderScrollActionSheet;
 @protocol WCFinderFeedDetailViewControllerDelegate, WCFinderHeadInfoViewProtocol><WCFinderJumpInfoViewProtocol;
 
@@ -55,7 +57,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderHandOffItem *finderHandoffItem; // @synthesize finderHandoffItem=_finderHandoffItem;
 @property(retain, nonatomic) NSMutableDictionary *adPlayerDict; // @synthesize adPlayerDict=_adPlayerDict;
 @property(retain, nonatomic) WCFinderFeedDetailVCParams *vcParams; // @synthesize vcParams=_vcParams;
@@ -361,4 +362,3 @@
 @property(readonly) Class superclass;
 
 @end
-

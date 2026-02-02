@@ -15,7 +15,6 @@
     id <FTSExternalRouterEntry> _entry;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FTSExternalRouterEntry> entry; // @synthesize entry=_entry;
 @property(nonatomic) __weak id <contactInfoDelegate> contactInfoDelegate; // @synthesize contactInfoDelegate=_contactInfoDelegate;
 - (void)onDidFinishedMultiDeleteContacts;

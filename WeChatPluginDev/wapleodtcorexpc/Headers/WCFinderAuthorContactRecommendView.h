@@ -19,7 +19,6 @@
     UILabel *_recommendTextLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *recommendTextLabel; // @synthesize recommendTextLabel=_recommendTextLabel;
 @property(retain, nonatomic) UIView *followStateView; // @synthesize followStateView=_followStateView;
 @property(retain, nonatomic) UILabel *followTextLabel; // @synthesize followTextLabel=_followTextLabel;

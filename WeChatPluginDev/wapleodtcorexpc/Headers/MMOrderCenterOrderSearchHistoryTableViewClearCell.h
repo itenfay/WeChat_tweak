@@ -14,7 +14,6 @@
     UIView *_separatorBarView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorBarView; // @synthesize separatorBarView=_separatorBarView;
 @property(retain, nonatomic) UILabel *clearLabelView; // @synthesize clearLabelView=_clearLabelView;
 @property(retain, nonatomic) UIImageView *clearIconView; // @synthesize clearIconView=_clearIconView;

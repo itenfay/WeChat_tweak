@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FaceRecogBaseViewController, FaceRecogConfigLogic, FaceRecogReporter, FaceRecogUploadLogic, LocationRetriever, MMUIViewController, NSString, UIColor;
 @protocol FaceRecogBaseHandlerDelegate, FaceRecogHandlerDelegate;
 
@@ -38,7 +40,6 @@
     LocationRetriever *_locationRetriver;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LocationRetriever *locationRetriver; // @synthesize locationRetriver=_locationRetriver;
 @property(nonatomic) _Bool userCancel; // @synthesize userCancel=_userCancel;
 @property(retain, nonatomic) NSString *verifyResult; // @synthesize verifyResult=_verifyResult;
@@ -129,4 +130,3 @@
 @property(readonly) Class superclass;
 
 @end
-

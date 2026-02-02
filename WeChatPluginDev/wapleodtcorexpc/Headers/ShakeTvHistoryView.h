@@ -12,7 +12,6 @@
     id <ShakeTvHistoryViewDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ShakeTvHistoryViewDelegate> delegate; // @synthesize delegate;
 - (void)onClcikIconBtn:(id)arg1;
 - (void)layoutAllView;

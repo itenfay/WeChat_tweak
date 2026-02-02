@@ -20,7 +20,6 @@
 }
 
 + (_Bool)stopgapInfoValid:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preloadInvoked; // @synthesize preloadInvoked=_preloadInvoked;
 @property(retain, nonatomic) MMFinderLiveReplayStopgapPreloadRecord *preloadRecord; // @synthesize preloadRecord=_preloadRecord;
 @property(retain, nonatomic) MMFinderLiveReplayStopgapConfiguration *stopgapConfig; // @synthesize stopgapConfig=_stopgapConfig;

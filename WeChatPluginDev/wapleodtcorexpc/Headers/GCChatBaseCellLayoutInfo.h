@@ -23,7 +23,6 @@
     struct UIEdgeInsets _innerContentInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint nameLineLabelOffset; // @synthesize nameLineLabelOffset=_nameLineLabelOffset;
 @property(nonatomic) struct UIEdgeInsets innerContentInset; // @synthesize innerContentInset=_innerContentInset;
 @property(nonatomic) struct CGSize innerContentSize; // @synthesize innerContentSize=_innerContentSize;

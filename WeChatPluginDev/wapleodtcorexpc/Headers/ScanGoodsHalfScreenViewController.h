@@ -31,7 +31,6 @@
     struct CGPoint _customViewPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int resultOpenScene; // @synthesize resultOpenScene=_resultOpenScene;
 @property(nonatomic) _Bool isPreload; // @synthesize isPreload=_isPreload;
 @property(copy, nonatomic) NSString *detectSessionId; // @synthesize detectSessionId=_detectSessionId;

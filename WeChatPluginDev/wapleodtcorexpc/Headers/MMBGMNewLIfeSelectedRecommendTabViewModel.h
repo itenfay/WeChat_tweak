@@ -13,7 +13,6 @@
     NSData *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isLoadingData) _Bool loadingData; // @synthesize loadingData=_loadingData;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;

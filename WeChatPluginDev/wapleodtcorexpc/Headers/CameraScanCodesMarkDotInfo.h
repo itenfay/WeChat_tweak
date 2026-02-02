@@ -20,7 +20,6 @@
 }
 
 + (id)copy:(id)arg1 newCenter:(struct CGPoint)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long yunyingType; // @synthesize yunyingType=_yunyingType;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;

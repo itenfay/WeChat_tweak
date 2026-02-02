@@ -13,7 +13,6 @@
     WCCoinResignTaxCutTipsView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCCoinResignTaxCutTipsView *parentView; // @synthesize parentView=_parentView;
 @property(retain, nonatomic) WecoinTaxReConfirmHalfPageInfo *taxReconfirmInfo; // @synthesize taxReconfirmInfo=_taxReconfirmInfo;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

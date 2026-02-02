@@ -18,7 +18,6 @@
     struct CGSize _uploadImageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize uploadImageSize; // @synthesize uploadImageSize=_uploadImageSize;
 @property(retain, nonatomic) NSData *uploadImageData; // @synthesize uploadImageData=_uploadImageData;
 @property(nonatomic) unsigned long long sessionId; // @synthesize sessionId=_sessionId;

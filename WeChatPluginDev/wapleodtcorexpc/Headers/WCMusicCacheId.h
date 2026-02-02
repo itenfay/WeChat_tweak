@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_musicId;
 + (void)PBArrayAdd_ignoreCache;
 + (void)PBArrayAdd_innerCacheId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *musicId; // @synthesize musicId=_musicId;
 @property(nonatomic) _Bool ignoreCache; // @synthesize ignoreCache=_ignoreCache;
 @property(copy, nonatomic) NSString *innerCacheId; // @synthesize innerCacheId=_innerCacheId;

@@ -14,7 +14,6 @@
     WCStoryDataItem *_parent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) WCStoryDataItem *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) WCStoryMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;

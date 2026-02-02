@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class HandOffMsgFileUploadMgr, HandOffRecordFileUploadMgr, MMHandOffItem, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary;
 
 @interface HandOffMgr
@@ -18,7 +20,6 @@
     NSMutableArray *_receiveCommandQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *receiveCommandQueue; // @synthesize receiveCommandQueue=_receiveCommandQueue;
 @property(nonatomic) _Bool manuallyForceSendAllList; // @synthesize manuallyForceSendAllList=_manuallyForceSendAllList;
 @property(nonatomic) _Bool isBackDeviceLogin; // @synthesize isBackDeviceLogin=_isBackDeviceLogin;
@@ -90,4 +91,3 @@
 @property(readonly) Class superclass;
 
 @end
-

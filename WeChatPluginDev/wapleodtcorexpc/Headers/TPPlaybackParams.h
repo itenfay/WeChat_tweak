@@ -31,7 +31,6 @@
     NSMutableDictionary *_selectedTrackOpaque;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *selectedTrackOpaque; // @synthesize selectedTrackOpaque=_selectedTrackOpaque;
 @property(retain, nonatomic) NSMutableDictionary *selectedTrackInfo; // @synthesize selectedTrackInfo=_selectedTrackInfo;
 @property(retain, nonatomic) NSMutableArray *trackList; // @synthesize trackList=_trackList;

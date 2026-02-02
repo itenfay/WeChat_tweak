@@ -24,7 +24,6 @@
 + (double)heightForMedia:(id)arg1 pageContext:(id)arg2 showDetail:(_Bool)arg3;
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (id)getTrimDesc:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long bizMpDispalyStyle; // @synthesize bizMpDispalyStyle=_bizMpDispalyStyle;
 @property(retain, nonatomic) WCBizAppReaderMessageBigPicViewModel *bizAppBigPicViewModel; // @synthesize bizAppBigPicViewModel=_bizAppBigPicViewModel;
 @property(retain, nonatomic) WCBizAppReaderMessageBigPicView *bizAppBigPicView; // @synthesize bizAppBigPicView=_bizAppBigPicView;

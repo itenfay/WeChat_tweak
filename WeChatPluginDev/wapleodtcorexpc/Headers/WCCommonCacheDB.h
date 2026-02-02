@@ -16,7 +16,6 @@
 
 + (id)GetDBPath;
 + (id)GetDBConfigPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *cacheTable; // @synthesize cacheTable=_cacheTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 @property(nonatomic) long long cacheLimitCount; // @synthesize cacheLimitCount=_cacheLimitCount;

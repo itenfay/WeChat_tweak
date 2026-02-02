@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MJAdaptiveMovieTemplateExportSettingsLoader
 {
     _Bool _hasDecoration;
@@ -16,4 +18,3 @@
 - (void)loadExportSettingsWithVideoTemplate:(id)arg1 assetInfoList:(id)arg2 videoAspectRatio:(double)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
 
 @end
-

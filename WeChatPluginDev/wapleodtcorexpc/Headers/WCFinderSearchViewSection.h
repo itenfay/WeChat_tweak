@@ -19,7 +19,6 @@
 + (id)sectionWithFeedGroup:(id)arg1;
 + (id)sectionWithSectionInfos:(id)arg1;
 + (id)sectionWithSecurityTips:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long displayCountLimit; // @synthesize displayCountLimit=_displayCountLimit;
 @property(retain, nonatomic) WCFinderSearchFeedTabGroupSession *feedTabGroup; // @synthesize feedTabGroup=_feedTabGroup;
 @property(retain, nonatomic) WCFinderSearchFeedInfoSession *infoSession; // @synthesize infoSession=_infoSession;

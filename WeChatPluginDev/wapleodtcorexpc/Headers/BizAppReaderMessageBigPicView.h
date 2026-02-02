@@ -19,7 +19,6 @@
     BizAppReaderMessageBigPicViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BizAppReaderMessageBigPicViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) RichTextView *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UILabel *picCountLabel; // @synthesize picCountLabel=_picCountLabel;

@@ -14,7 +14,6 @@
     double _radius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(nonatomic) _Bool enable3D; // @synthesize enable3D=_enable3D;
 @property(nonatomic) double radius; // @synthesize radius=_radius;

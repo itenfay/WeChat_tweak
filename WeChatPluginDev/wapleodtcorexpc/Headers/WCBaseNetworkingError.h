@@ -17,7 +17,6 @@
 + (id)errorWithBaseResponse:(id)arg1;
 + (id)errorWithErrorDesc:(id)arg1 errorCode:(int)arg2 isNetworkError:(_Bool)arg3;
 + (id)errorWithErrorDesc:(id)arg1 errorCode:(int)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canRetry; // @synthesize canRetry=_canRetry;
 @property(nonatomic) _Bool isNetworkError; // @synthesize isNetworkError=_isNetworkError;
 @property(nonatomic) int m_uiMessage; // @synthesize m_uiMessage=_m_uiMessage;

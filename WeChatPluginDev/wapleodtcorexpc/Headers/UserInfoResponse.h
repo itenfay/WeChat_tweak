@@ -20,7 +20,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUsername:(id)arg1 avatarPath:(id)arg2 displayName:(id)arg3 gender:(id)arg4 isOpenIM:(_Bool)arg5 subName:(id)arg6;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subName; // @synthesize subName=_subName;
 @property(nonatomic) _Bool isOpenIM; // @synthesize isOpenIM=_isOpenIM;
 @property(copy, nonatomic) NSString *gender; // @synthesize gender=_gender;

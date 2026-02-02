@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_lastPageJsError;
 + (void)PBArrayAdd_pagePath;
 + (void)PBArrayAdd_webviewId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadedModulesWhenRoute; // @synthesize downloadedModulesWhenRoute=_downloadedModulesWhenRoute;
 @property(nonatomic) _Bool isSkyline; // @synthesize isSkyline=_isSkyline;
 @property(nonatomic) _Bool hasHtmlWeb; // @synthesize hasHtmlWeb=_hasHtmlWeb;

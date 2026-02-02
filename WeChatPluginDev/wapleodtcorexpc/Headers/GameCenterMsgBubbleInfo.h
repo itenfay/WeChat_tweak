@@ -14,7 +14,6 @@
     GameJumpInfo *_bubbleJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameJumpInfo *bubbleJumpInfo; // @synthesize bubbleJumpInfo=_bubbleJumpInfo;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

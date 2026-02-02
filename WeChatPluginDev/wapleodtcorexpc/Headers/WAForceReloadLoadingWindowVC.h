@@ -12,7 +12,6 @@
     _Bool _needLoading;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needLoading; // @synthesize needLoading=_needLoading;
 - (void)hideWithAnimated:(int)arg1;
 - (void)delayHide:(id)arg1;

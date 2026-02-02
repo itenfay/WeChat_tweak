@@ -36,7 +36,6 @@
 
 + (id)sharedInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property int internalRemotePlaySoureceNumber; // @synthesize internalRemotePlaySoureceNumber=_internalRemotePlaySoureceNumber;
 @property(retain, nonatomic) WXVoIPAudioUnitThreadDaemon *audioUnitThreadDaemon; // @synthesize audioUnitThreadDaemon=_audioUnitThreadDaemon;
 @property(nonatomic) _Bool isEarMonitoringEnabled; // @synthesize isEarMonitoringEnabled=_isEarMonitoringEnabled;

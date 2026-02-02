@@ -22,7 +22,6 @@
     unsigned long long _currentServerTs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needNoRelaunch; // @synthesize needNoRelaunch=_needNoRelaunch;
 @property(nonatomic) unsigned long long currentServerTs; // @synthesize currentServerTs=_currentServerTs;
 @property(retain, nonatomic) GameWelfareInfo *welfareInfo; // @synthesize welfareInfo=_welfareInfo;

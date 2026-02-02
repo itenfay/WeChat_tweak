@@ -19,7 +19,6 @@
 }
 
 + (id)getEmptyStateCellModelWithSize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCBulletMsgFlowView *bulletFlowView; // @synthesize bulletFlowView=_bulletFlowView;
 @property(retain, nonatomic) NSMutableArray *bulletMsgList; // @synthesize bulletMsgList=_bulletMsgList;
 @property(retain, nonatomic) ChatroomRecInfo *chatroomRecInfo; // @synthesize chatroomRecInfo=_chatroomRecInfo;

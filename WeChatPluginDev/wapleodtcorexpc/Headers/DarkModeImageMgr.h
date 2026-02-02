@@ -12,7 +12,6 @@
     struct _opaque_pthread_rwlock_t _lock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_rwlock_t lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMapTable *lightToDarkMapTable; // @synthesize lightToDarkMapTable=_lightToDarkMapTable;
 @property(retain, nonatomic) NSMapTable *darkToLightMapTable; // @synthesize darkToLightMapTable=_darkToLightMapTable;

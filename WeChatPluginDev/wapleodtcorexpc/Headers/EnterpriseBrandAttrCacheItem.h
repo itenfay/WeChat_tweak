@@ -11,7 +11,6 @@
     EnterpriseBrandAttr *_attr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) EnterpriseBrandAttr *attr; // @synthesize attr=_attr;
 

@@ -13,7 +13,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *emoticonData; // @synthesize emoticonData;
 - (id)init;
 

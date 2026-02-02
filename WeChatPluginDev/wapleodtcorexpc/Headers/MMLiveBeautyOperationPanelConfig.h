@@ -16,7 +16,6 @@
 }
 
 + (id)config;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveBeautySuite *suite; // @synthesize suite=_suite;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) id <MMLiveBeautyLogicProvider> beautyLogicProvider; // @synthesize beautyLogicProvider=_beautyLogicProvider;

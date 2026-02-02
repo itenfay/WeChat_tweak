@@ -13,7 +13,6 @@
     _Bool _enablePersonalQrCodeUrlAppendStyleWhenLocalGen;
 }
 
-- (void).cxx_destruct;
 - (id)getPersonalQRCodeUrlMMKVID;
 - (id)getPersonalQRCodeUrl;
 - (void)setPersonalQRCodeUrl:(id)arg1;

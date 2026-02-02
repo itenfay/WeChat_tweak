@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_picVideoPath;
 + (void)PBArrayAdd_localPicPath;
 + (void)PBArrayAdd_localId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *picVideoThumbPath; // @synthesize picVideoThumbPath=_picVideoThumbPath;
 @property(retain, nonatomic) NSString *picVideoPath; // @synthesize picVideoPath=_picVideoPath;
 @property(retain, nonatomic) NSString *localPicPath; // @synthesize localPicPath=_localPicPath;

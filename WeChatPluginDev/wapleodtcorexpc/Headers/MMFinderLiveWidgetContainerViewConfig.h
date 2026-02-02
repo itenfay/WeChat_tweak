@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveWidgetContainerViewConfig : NSObject
 {
@@ -13,11 +14,9 @@
     CDUnknownBlockType _paddingForStyleQueryBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType paddingForStyleQueryBlock; // @synthesize paddingForStyleQueryBlock=_paddingForStyleQueryBlock;
 @property(nonatomic) double shortEnterAnimationDuration; // @synthesize shortEnterAnimationDuration=_shortEnterAnimationDuration;
 @property(nonatomic) double fullEnterAnimationDuration; // @synthesize fullEnterAnimationDuration=_fullEnterAnimationDuration;
 @property(nonatomic) double padding; // @synthesize padding=_padding;
 
 @end
-

@@ -16,7 +16,6 @@
     WCPayLQTMoneyControlLogic *_lqtMoneyControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsChargeBalanceSucc; // @synthesize bIsChargeBalanceSucc=_bIsChargeBalanceSucc;
 @property(retain, nonatomic) WCPayLQTMoneyControlLogic *lqtMoneyControlLogic; // @synthesize lqtMoneyControlLogic=_lqtMoneyControlLogic;
 @property(nonatomic) _Bool bShouldRefreshSelect; // @synthesize bShouldRefreshSelect=_bShouldRefreshSelect;

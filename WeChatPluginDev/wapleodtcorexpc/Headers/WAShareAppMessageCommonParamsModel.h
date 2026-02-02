@@ -45,7 +45,6 @@
 }
 
 + (id)fromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *WAShareAppMessageCommonParamsModel_OriginDictionary; // @synthesize WAShareAppMessageCommonParamsModel_OriginDictionary=_WAShareAppMessageCommonParamsModel_OriginDictionary;
 @property(nonatomic) _Bool sdk_isFromMenu; // @synthesize sdk_isFromMenu=_sdk_isFromMenu;
 @property(copy, nonatomic) NSString *mode; // @synthesize mode=_mode;

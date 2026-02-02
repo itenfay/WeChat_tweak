@@ -21,7 +21,6 @@
 @property(retain, nonatomic) NSString *uploadUrl; // @synthesize uploadUrl;
 @property(nonatomic) int moduleKey; // @synthesize moduleKey;
 @property(nonatomic) _Bool onOff; // @synthesize onOff;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isEventCanReport:(id)arg1;
 - (id)initWithWUPMSModel:(id)arg1;

@@ -43,7 +43,6 @@
     struct CGPoint _originalContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long flowLoadingTime; // @synthesize flowLoadingTime=_flowLoadingTime;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgeRecognizer; // @synthesize edgeRecognizer=_edgeRecognizer;

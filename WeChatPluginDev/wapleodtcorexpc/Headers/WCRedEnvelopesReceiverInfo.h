@@ -22,7 +22,6 @@
     NSString *_m_nsSendNameSuffix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsSendNameSuffix; // @synthesize m_nsSendNameSuffix=_m_nsSendNameSuffix;
 @property(retain, nonatomic) NSString *m_nsReceiveAmountDesc; // @synthesize m_nsReceiveAmountDesc=_m_nsReceiveAmountDesc;
 @property(retain, nonatomic) NSString *m_nsReceiverUserName; // @synthesize m_nsReceiverUserName;

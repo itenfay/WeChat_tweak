@@ -17,7 +17,6 @@
     MISSING_TYPE *dataItem;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)initWithCoder:(id)arg1;

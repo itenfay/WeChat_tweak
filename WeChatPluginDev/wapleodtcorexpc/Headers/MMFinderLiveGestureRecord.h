@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(retain, nonatomic) MMFinderLiveGestureInfo *gestureInfo; // @synthesize gestureInfo=_gestureInfo;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;

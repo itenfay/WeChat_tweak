@@ -10,7 +10,6 @@
     UITableView *_mainTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *mainTable; // @synthesize mainTable=_mainTable;
 - (id)makeCellForRow:(long long)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

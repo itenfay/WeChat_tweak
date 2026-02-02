@@ -17,7 +17,6 @@
     _Bool _useLightStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useLightStyle; // @synthesize useLightStyle=_useLightStyle;
 @property(nonatomic) _Bool isLayouting; // @synthesize isLayouting=m_isLayouting;
 @property(readonly, nonatomic) BaseChatViewModel *viewModel; // @synthesize viewModel=m_viewModel;

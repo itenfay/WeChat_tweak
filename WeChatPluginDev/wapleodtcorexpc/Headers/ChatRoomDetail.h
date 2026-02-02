@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_m_nsChatRoomDesc;
 + (void)PBArrayAdd_m_uiChatRoomInfoSvrVersion;
 + (void)PBArrayAdd_m_uiChatRoomInfoVersion;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *richChatRoomDesc; // @synthesize richChatRoomDesc=_richChatRoomDesc;
 @property(nonatomic) unsigned int m_uiChatRoomSpamStatus; // @synthesize m_uiChatRoomSpamStatus=_m_uiChatRoomSpamStatus;
 @property(retain, nonatomic) NSString *m_nsAssociateOpenIMRoomName; // @synthesize m_nsAssociateOpenIMRoomName=_m_nsAssociateOpenIMRoomName;

@@ -20,7 +20,6 @@
     NSMutableArray *_testArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showingSoundQualityToBadTip; // @synthesize showingSoundQualityToBadTip=_showingSoundQualityToBadTip;
 @property(nonatomic) _Bool showingFeverTip; // @synthesize showingFeverTip=_showingFeverTip;
 @property(nonatomic) _Bool showingSilentTip; // @synthesize showingSilentTip=_showingSilentTip;

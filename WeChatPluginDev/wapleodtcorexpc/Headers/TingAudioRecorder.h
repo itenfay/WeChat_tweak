@@ -17,7 +17,6 @@
     unsigned long long _recordEndTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long recordEndTime; // @synthesize recordEndTime=_recordEndTime;
 @property(nonatomic) unsigned long long recordStartTime; // @synthesize recordStartTime=_recordStartTime;
 @property(nonatomic) double maxTime; // @synthesize maxTime=_maxTime;

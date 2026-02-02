@@ -15,7 +15,6 @@
     RichTextView *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) __weak id <WCFinderProfileMusicFullPostViewCellDelegate> delegate; // @synthesize delegate=_delegate;

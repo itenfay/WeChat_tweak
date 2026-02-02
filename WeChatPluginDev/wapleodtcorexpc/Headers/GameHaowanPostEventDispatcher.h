@@ -10,7 +10,6 @@
     NSHashTable *_webviewControllers;
 }
 
-- (void).cxx_destruct;
 - (void)onGameHaowanPostCanceled:(id)arg1;
 - (void)onGameHaowanPostFailed:(id)arg1 error:(id)arg2;
 - (void)onGameHaowanPostSucceed:(id)arg1;

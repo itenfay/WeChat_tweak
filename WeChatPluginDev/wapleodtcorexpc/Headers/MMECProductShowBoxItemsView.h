@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMECProductShowBoxItemsViewConfig, NSArray;
 
@@ -27,7 +28,6 @@
 + (_Bool)canShowAtLeastOneForSize:(struct CGSize)arg1 config:(id)arg2 items:(id)arg3;
 + (double)borderImageLabelImageToText;
 + (double)spacing;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *views; // @synthesize views=_views;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) CDUnknownBlockType onSecKillArriveTime; // @synthesize onSecKillArriveTime=_onSecKillArriveTime;
@@ -43,4 +43,3 @@
 - (void)layoutSubviews;
 
 @end
-

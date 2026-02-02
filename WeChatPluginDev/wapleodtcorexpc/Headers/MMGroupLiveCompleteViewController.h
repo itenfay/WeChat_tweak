@@ -31,7 +31,6 @@
     long long _closeButtonStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long closeButtonStyle; // @synthesize closeButtonStyle=_closeButtonStyle;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIView *replayStatusRightArrow; // @synthesize replayStatusRightArrow=_replayStatusRightArrow;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol MJMaterialLoadingStatusViewModel;
@@ -15,7 +16,6 @@
     NSString *_lastSelectedID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastSelectedID; // @synthesize lastSelectedID=_lastSelectedID;
 @property(retain, nonatomic) NSMutableDictionary *loadingViews; // @synthesize loadingViews=_loadingViews;
 @property(nonatomic) __weak id <MJMaterialLoadingStatusViewModel> viewModel; // @synthesize viewModel=_viewModel;
@@ -28,4 +28,3 @@
 - (id)initWithViewModel:(id)arg1;
 
 @end
-

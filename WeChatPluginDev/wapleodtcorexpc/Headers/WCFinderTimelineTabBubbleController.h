@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString, UILabel, UIView, WCFinderBubbleActionItem, WCFinderCornerTextBubbleView, WCFinderEnterStreamTipBubbleView, WCFinderPopupPanelView, WCFinderShadowBubbleView, WCFinderTLTabBubble, WCFinderTimelineRedDotBubbleDisplayInfo, WCFinderTimelineScrollTipsView;
 @protocol WCFinderTimelineTabBubbleDelegate;
@@ -36,7 +37,6 @@
 + (_Bool)curEnterStreamTipCanJump;
 + (long long)curEnterStreamTipSwitch;
 + (int)convertTimelineTabTypeToTabFlag:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShadowBubbleView *refreshBubbleView; // @synthesize refreshBubbleView=_refreshBubbleView;
 @property(nonatomic) long long currentSelectedTabType; // @synthesize currentSelectedTabType=_currentSelectedTabType;
 @property(retain, nonatomic) NSMutableArray *exposedTabTypes; // @synthesize exposedTabTypes=_exposedTabTypes;
@@ -124,4 +124,3 @@
 @property(readonly) Class superclass;
 
 @end
-

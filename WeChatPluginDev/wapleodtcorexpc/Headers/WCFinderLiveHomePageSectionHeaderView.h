@@ -21,7 +21,6 @@
 
 + (id)cellIdentifier;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMUIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain, nonatomic) UIView *verticalLineView; // @synthesize verticalLineView=_verticalLineView;

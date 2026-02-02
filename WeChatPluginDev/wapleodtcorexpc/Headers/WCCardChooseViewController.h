@@ -28,7 +28,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardChooseViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLinkClicked:(id)arg1 backupUrl:(id)arg2 withRect:(struct CGRect)arg3;
 - (void)showEmptyView;

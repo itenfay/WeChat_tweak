@@ -29,7 +29,6 @@
     VideoRingNetProvider *_net;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VideoRingNetProvider *net; // @synthesize net=_net;
 @property(nonatomic) _Bool highLighted; // @synthesize highLighted=_highLighted;
 @property(retain, nonatomic) RingToneDetail *ring; // @synthesize ring=_ring;

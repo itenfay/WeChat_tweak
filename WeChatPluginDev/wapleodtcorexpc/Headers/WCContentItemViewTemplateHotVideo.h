@@ -15,7 +15,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long legalityType; // @synthesize legalityType=_legalityType;
 @property(retain, nonatomic) WCPlayerConfigViewController *videoPlayerVC; // @synthesize videoPlayerVC=_videoPlayerVC;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;

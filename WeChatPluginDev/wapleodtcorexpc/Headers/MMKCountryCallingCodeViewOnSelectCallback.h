@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onSelect:(id)arg1 nationality:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

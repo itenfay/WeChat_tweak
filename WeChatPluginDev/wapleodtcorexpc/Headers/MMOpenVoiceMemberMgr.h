@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSMutableArray;
 
@@ -16,7 +17,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isSpeakersEqual:(id)arg1;
 - (void)onTimerExpired;
 - (void)updateAvMembers:(id)arg1;
@@ -32,4 +32,3 @@
 - (id)init;
 
 @end
-

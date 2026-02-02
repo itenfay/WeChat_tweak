@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSString;
 
@@ -16,7 +17,6 @@
     MMUIButton *_publishButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *publishButton; // @synthesize publishButton=_publishButton;
 @property(retain, nonatomic) MMUILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(copy, nonatomic) CDUnknownBlockType tapPublishButtonHandler; // @synthesize tapPublishButtonHandler=_tapPublishButtonHandler;
@@ -28,4 +28,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

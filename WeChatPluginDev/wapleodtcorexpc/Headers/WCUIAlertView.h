@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTipsViewController;
 
@@ -31,7 +32,6 @@
 + (id)showAlertWithTitle:(id)arg1 message:(id)arg2 btnTitle:(id)arg3;
 + (id)showAlertWithTitle:(id)arg1 message:(id)arg2;
 + (id)showAlertWithTitle:(id)arg1 message:(id)arg2 cancelBtnTitle:(id)arg3 target:(id)arg4 sel:(SEL)arg5 btnTitle:(id)arg6 target:(id)arg7 sel:(SEL)arg8;
-- (void).cxx_destruct;
 - (_Bool)isVisible;
 - (void)dismissAnimated:(_Bool)arg1;
 - (void)show;
@@ -52,4 +52,3 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 
 @end
-

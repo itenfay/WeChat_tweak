@@ -13,7 +13,6 @@
     EmojiInfoObj *_emojiInfoObj;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForWebDisplay; // @synthesize isForWebDisplay=_isForWebDisplay;
 @property(nonatomic) _Bool addToFirst; // @synthesize addToFirst=_addToFirst;
 @property(nonatomic) _Bool isTempFirst; // @synthesize isTempFirst=_isTempFirst;

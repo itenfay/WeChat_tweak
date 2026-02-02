@@ -30,7 +30,6 @@
     struct CGSize _itemTargetSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasShowTipsPageSheet; // @synthesize hasShowTipsPageSheet=_hasShowTipsPageSheet;
 @property(retain, nonatomic) WCPayMainViewTipsPageSheet *tipsPageSheet; // @synthesize tipsPageSheet=_tipsPageSheet;
 @property(nonatomic) _Bool hasShownComplianceHalfPage; // @synthesize hasShownComplianceHalfPage=_hasShownComplianceHalfPage;

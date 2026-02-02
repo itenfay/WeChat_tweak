@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long exposeCount; // @synthesize exposeCount=_exposeCount;
 @property(nonatomic) unsigned long long exposeDate; // @synthesize exposeDate=_exposeDate;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

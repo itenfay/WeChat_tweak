@@ -19,7 +19,6 @@
     long long _liveDelay;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long liveDelay; // @synthesize liveDelay=_liveDelay;
 @property(nonatomic) _Bool isLookBack; // @synthesize isLookBack=_isLookBack;
 @property(retain, nonatomic) NSString *cdnServer; // @synthesize cdnServer=_cdnServer;

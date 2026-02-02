@@ -18,7 +18,6 @@
 
 + (double)heightForDataItem:(id)arg1 width:(double)arg2;
 + (double)heightForViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsErrTipsViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) RichTextView *errTipsView; // @synthesize errTipsView=_errTipsView;
 @property(retain, nonatomic) UIImageView *errImageView; // @synthesize errImageView=_errImageView;

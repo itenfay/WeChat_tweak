@@ -12,7 +12,6 @@
     WCPayOpeniOSTouchLockCgi *_openCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOpeniOSTouchLockCgi *openCgi; // @synthesize openCgi=_openCgi;
 @property(nonatomic) __weak id <WCPayTouchLockSettingLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)openiOSTouchLockCgi:(id)arg1 didFailWithError:(id)arg2;

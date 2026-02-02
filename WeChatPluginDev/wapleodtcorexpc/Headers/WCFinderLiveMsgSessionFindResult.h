@@ -14,7 +14,6 @@
     WCTableLiveSessionStorage *_sessionStorage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTableLiveSessionStorage *sessionStorage; // @synthesize sessionStorage=_sessionStorage;
 @property(retain, nonatomic) NSArray *sessionInfos; // @synthesize sessionInfos=_sessionInfos;
 @property(retain, nonatomic) WCFinderLiveMsgSessionInfo *sessionInfoById; // @synthesize sessionInfoById=_sessionInfoById;

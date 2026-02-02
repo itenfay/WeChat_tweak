@@ -30,7 +30,6 @@
     ExposureInfo *_m_exposureInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ExposureInfo *m_exposureInfo; // @synthesize m_exposureInfo=_m_exposureInfo;
 @property(retain, nonatomic) NSString *m_queryAwardStatusParams; // @synthesize m_queryAwardStatusParams=_m_queryAwardStatusParams;
 @property(retain, nonatomic) NSString *m_getAwardParams; // @synthesize m_getAwardParams=_m_getAwardParams;

@@ -10,7 +10,6 @@
     WCNewShareCardLayoutCacheItem *_cacheItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCNewShareCardLayoutCacheItem *cacheItem; // @synthesize cacheItem=_cacheItem;
 - (void)saveLayoutCache;
 - (void)initForSave;

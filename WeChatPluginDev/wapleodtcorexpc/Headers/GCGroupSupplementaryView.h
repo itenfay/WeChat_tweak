@@ -10,7 +10,6 @@
     UILabel *_groupNameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *groupNameLabel; // @synthesize groupNameLabel=_groupNameLabel;
 - (void)configureWithSectionModel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

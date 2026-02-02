@@ -12,7 +12,6 @@
     struct CGPoint _lastPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint lastPoint; // @synthesize lastPoint=_lastPoint;
 @property(retain, nonatomic) MMKalmanFilter *yFilter; // @synthesize yFilter=_yFilter;
 @property(retain, nonatomic) MMKalmanFilter *xFilter; // @synthesize xFilter=_xFilter;

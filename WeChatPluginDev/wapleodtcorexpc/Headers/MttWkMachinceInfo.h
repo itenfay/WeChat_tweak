@@ -29,7 +29,6 @@
 @property(retain, nonatomic, getter=segName, setter=setSegName:) NSString *jcev2_p_2_o_segName; // @synthesize jcev2_p_2_o_segName;
 @property(nonatomic, getter=is64os, setter=setIs64os:) _Bool jcev2_p_1_o_is64os; // @synthesize jcev2_p_1_o_is64os;
 @property(retain, nonatomic, getter=phoneID, setter=setPhoneID:) NSString *jcev2_p_0_r_phoneID; // @synthesize jcev2_p_0_r_phoneID;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

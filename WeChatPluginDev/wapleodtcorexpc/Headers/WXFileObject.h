@@ -14,7 +14,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *fileData; // @synthesize fileData;
 @property(retain, nonatomic) NSString *fileExtension; // @synthesize fileExtension;
 - (id)init;

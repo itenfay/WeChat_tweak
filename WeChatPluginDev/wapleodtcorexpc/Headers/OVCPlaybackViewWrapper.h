@@ -12,7 +12,6 @@
     OVCPlaybackView *_backingPlaybackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OVCPlaybackView *backingPlaybackView; // @synthesize backingPlaybackView=_backingPlaybackView;
 - (void)teardown;
 - (void)layoutSubviews;

@@ -22,7 +22,6 @@
     NSMutableDictionary *_onEventCallbacksDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *onEventCallbacksDict; // @synthesize onEventCallbacksDict=_onEventCallbacksDict;
 @property(retain, nonatomic) NSMutableDictionary *extJsApiAsyncCallbacks; // @synthesize extJsApiAsyncCallbacks=_extJsApiAsyncCallbacks;
 @property(retain, nonatomic) NSMutableDictionary *extJsApiCallbackResults; // @synthesize extJsApiCallbackResults=_extJsApiCallbackResults;

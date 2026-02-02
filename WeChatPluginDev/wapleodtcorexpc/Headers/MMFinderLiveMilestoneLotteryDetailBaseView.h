@@ -25,7 +25,6 @@
     double _lotteryUIAdaptedPercent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lotteryUIAdaptedPercent; // @synthesize lotteryUIAdaptedPercent=_lotteryUIAdaptedPercent;
 @property(retain, nonatomic) MMFinderLiveMilestoneLotteryViewModel *vm; // @synthesize vm=_vm;
 @property(retain, nonatomic) MMFinderLiveSpringCardContainerView *containerView; // @synthesize containerView=_containerView;

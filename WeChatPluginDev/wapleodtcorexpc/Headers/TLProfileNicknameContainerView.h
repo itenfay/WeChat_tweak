@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, InteractionLabel, MMWebImageView;
 
@@ -16,7 +17,6 @@
     MMWebImageView *_textStateImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *textStateImageView; // @synthesize textStateImageView=_textStateImageView;
 @property(retain, nonatomic) InteractionLabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
@@ -33,4 +33,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 contact:(id)arg2;
 
 @end
-

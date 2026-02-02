@@ -14,7 +14,6 @@
     struct CGRect _richTextRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(nonatomic) struct CGRect richTextRect; // @synthesize richTextRect=_richTextRect;
 @property(retain, nonatomic) NSString *richTextQuery; // @synthesize richTextQuery=_richTextQuery;

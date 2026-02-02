@@ -10,7 +10,6 @@
     WebviewJSEventHandlerTingBase *_tingHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebviewJSEventHandlerTingBase *tingHandler; // @synthesize tingHandler=_tingHandler;
 - (id)GetCurrentWebviewViewController;
 - (void)onEndEvent:(id)arg1 withResult:(id)arg2;

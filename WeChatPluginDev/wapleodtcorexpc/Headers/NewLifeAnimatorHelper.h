@@ -16,7 +16,6 @@
 + (void)RebindDetailAnimationBehavior:(id)arg1;
 + (id)DetailAnimatorForKey:(id)arg1;
 + (id)shareData;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *animatorMap; // @synthesize animatorMap=_animatorMap;
 - (id)init;
 

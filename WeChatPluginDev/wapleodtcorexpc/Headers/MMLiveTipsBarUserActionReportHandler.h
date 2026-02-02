@@ -20,7 +20,6 @@
 + (void)MMLiveReportFieldAdd_actionToLiveId;
 + (void)MMLiveReportFieldAdd_livesCnt;
 + (void)MMLiveReportFieldAdd_chatName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionTS; // @synthesize actionTS;
 @property(nonatomic) unsigned int action; // @synthesize action;
 @property(retain, nonatomic) NSString *actionToLiveId; // @synthesize actionToLiveId;

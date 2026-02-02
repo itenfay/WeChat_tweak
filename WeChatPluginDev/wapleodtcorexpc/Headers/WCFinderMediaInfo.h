@@ -122,7 +122,6 @@
 + (void)PBArrayAdd_mediaType;
 + (void)PBArrayAdd_thumbURL;
 + (void)PBArrayAdd_mediaURL;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoTitle; // @synthesize videoTitle=_videoTitle;
 @property(retain, nonatomic) FinderCoverScalingInfo *coverScalingInfo; // @synthesize coverScalingInfo=_coverScalingInfo;
 @property(copy, nonatomic) NSString *originalVideoPath; // @synthesize originalVideoPath=_originalVideoPath;

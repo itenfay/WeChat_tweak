@@ -17,7 +17,6 @@
     struct CGSize _dotSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) double dotCornerRadius; // @synthesize dotCornerRadius=_dotCornerRadius;

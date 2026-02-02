@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_layoutTip;
 + (void)PBArrayAdd_unreadCount;
 + (void)PBArrayAdd_tipType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shareUsername; // @synthesize shareUsername=_shareUsername;
 @property(nonatomic) unsigned int layoutEndTime; // @synthesize layoutEndTime=_layoutEndTime;
 @property(retain, nonatomic) NSString *layoutTip; // @synthesize layoutTip=_layoutTip;

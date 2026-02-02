@@ -22,7 +22,6 @@
     UILongPressGestureRecognizer *_longPressGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;

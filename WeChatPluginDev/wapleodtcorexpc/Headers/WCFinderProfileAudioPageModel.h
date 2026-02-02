@@ -22,7 +22,6 @@
 + (_Bool)allowLimitMode;
 + (int)tabId;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) FinderLiteAppParam *manageAudioLiteAppParams; // @synthesize manageAudioLiteAppParams=_manageAudioLiteAppParams;
 @property(retain, nonatomic) FinderLiteAppParam *postAudioLiteAppParams; // @synthesize postAudioLiteAppParams=_postAudioLiteAppParams;

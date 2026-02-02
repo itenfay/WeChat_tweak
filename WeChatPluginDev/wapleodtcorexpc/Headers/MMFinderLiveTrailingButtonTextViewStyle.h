@@ -17,7 +17,6 @@
     unsigned long long _lineLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lineLimit; // @synthesize lineLimit=_lineLimit;
 @property(retain, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(retain, nonatomic) UIColor *buttonColor; // @synthesize buttonColor=_buttonColor;

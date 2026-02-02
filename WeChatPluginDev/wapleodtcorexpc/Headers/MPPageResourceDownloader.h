@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, NSURLSession;
 
@@ -17,7 +18,6 @@
 
 + (id)downloadIdWithTemplateType:(unsigned int)arg1 version:(unsigned int)arg2 fullVersion:(id)arg3;
 + (id)downloadIdPrefixWithTemplateType:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fileSequence; // @synthesize fileSequence=_fileSequence;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(retain, nonatomic) NSMutableDictionary *contextDic; // @synthesize contextDic=_contextDic;
@@ -37,4 +37,3 @@
 - (id)init;
 
 @end
-

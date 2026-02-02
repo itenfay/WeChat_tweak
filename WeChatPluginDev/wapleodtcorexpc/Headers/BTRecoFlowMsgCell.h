@@ -21,7 +21,6 @@
     NSMutableArray *_webImageViewList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *webImageViewList; // @synthesize webImageViewList=_webImageViewList;
 @property(nonatomic) double bottomSeparatorRightPadding; // @synthesize bottomSeparatorRightPadding=_bottomSeparatorRightPadding;
 @property(nonatomic) double bottomSeparatorLeftPadding; // @synthesize bottomSeparatorLeftPadding=_bottomSeparatorLeftPadding;

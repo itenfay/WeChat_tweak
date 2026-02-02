@@ -11,7 +11,6 @@
     NSMutableDictionary *_dicLastReadTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicLastReadTime; // @synthesize dicLastReadTime=_dicLastReadTime;
 @property(retain, nonatomic) ChatRoomInvitationDB *db; // @synthesize db=_db;
 - (void)updateSessionGreenLabel:(id)arg1;

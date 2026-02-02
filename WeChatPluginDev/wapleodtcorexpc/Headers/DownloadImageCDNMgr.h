@@ -14,7 +14,6 @@
     long long _m_type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_type; // @synthesize m_type=_m_type;
 @property(retain, nonatomic) CdnTaskInfo *m_oCurTaskInfo; // @synthesize m_oCurTaskInfo;
 - (void)onRoamBackupPackageServiceLoadMediaResult:(id)arg1 errorCode:(unsigned int)arg2 dataID:(id)arg3;

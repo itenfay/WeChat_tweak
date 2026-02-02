@@ -14,7 +14,6 @@
     NSString *m_nsTipViewMessage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id m_userData; // @synthesize m_userData;
 @property(nonatomic) unsigned int m_uiCountDown; // @synthesize m_uiCountDown;
 @property(retain, nonatomic) NSString *m_nsTipViewMessage; // @synthesize m_nsTipViewMessage;

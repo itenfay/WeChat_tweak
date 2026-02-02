@@ -18,7 +18,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) MMUIView *blurView; // @synthesize blurView=_blurView;

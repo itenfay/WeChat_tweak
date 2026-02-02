@@ -34,7 +34,6 @@
     NSString *_pid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int emotionEntrace; // @synthesize emotionEntrace=_emotionEntrace;
 @property(nonatomic) int emotionScene; // @synthesize emotionScene=_emotionScene;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;

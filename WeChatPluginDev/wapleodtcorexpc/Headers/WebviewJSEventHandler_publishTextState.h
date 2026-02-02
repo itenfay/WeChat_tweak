@@ -14,7 +14,6 @@
 }
 
 + (unsigned int)dataTypeForString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *attachInfo; // @synthesize attachInfo=_attachInfo;
 @property(retain, nonatomic) NSString *imageURLString; // @synthesize imageURLString=_imageURLString;
 @property(retain, nonatomic) TextStatePublishConfiguration *configuration; // @synthesize configuration=_configuration;

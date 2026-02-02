@@ -13,7 +13,6 @@
     UIImageView *_iconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void)_startLiveAnimation;

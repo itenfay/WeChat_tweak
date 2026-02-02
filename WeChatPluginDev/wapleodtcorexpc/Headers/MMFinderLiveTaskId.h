@@ -14,7 +14,6 @@
     NSString *_uniqueId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 @property(nonatomic) unsigned long long lastTaskKeyLiveId; // @synthesize lastTaskKeyLiveId=_lastTaskKeyLiveId;
 @property(nonatomic) _Bool isEnableComment; // @synthesize isEnableComment=_isEnableComment;

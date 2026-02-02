@@ -14,7 +14,6 @@
     NSArray *_buildingList;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *buildingList; // @synthesize buildingList=_buildingList;
 @property(readonly, nonatomic) long long keyType; // @synthesize keyType=_keyType;
 @property(readonly, nonatomic) _Bool indoorMapEnabled; // @synthesize indoorMapEnabled=_indoorMapEnabled;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderGetHistoryCGI
@@ -15,7 +17,6 @@
     NSString *_fluencyReportSceneKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fluencyReportSceneKey; // @synthesize fluencyReportSceneKey=_fluencyReportSceneKey;
 @property(nonatomic) int commentscene; // @synthesize commentscene=_commentscene;
 @property(nonatomic) int tabType; // @synthesize tabType=_tabType;
@@ -31,4 +32,3 @@
 - (id)initWithLastBuff:(id)arg1 clientStatus:(id)arg2 username:(id)arg3 tabType:(int)arg4 commentscene:(int)arg5 fluencyReportSceneKey:(id)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

@@ -14,7 +14,6 @@
     WCDataItem *parent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int index; // @synthesize index;
 @property(retain, nonatomic) WCDataItem *parent; // @synthesize parent;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem;

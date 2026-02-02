@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_compressType;
 + (void)PBArrayAdd_content;
 + (void)PBArrayAdd_version;
-- (void).cxx_destruct;
 @property(nonatomic) long long compressType; // @synthesize compressType=_compressType;
 @property(retain, nonatomic) NSData *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;

@@ -28,7 +28,6 @@
     struct CGSize _desireViewSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize desireViewSize; // @synthesize desireViewSize=_desireViewSize;
 @property(nonatomic) _Bool popCurrentVc; // @synthesize popCurrentVc=_popCurrentVc;
 @property(nonatomic) _Bool backToGameLifeTab; // @synthesize backToGameLifeTab=_backToGameLifeTab;

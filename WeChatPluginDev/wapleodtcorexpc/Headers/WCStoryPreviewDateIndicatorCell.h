@@ -14,7 +14,6 @@
     MMUILabel *_dayLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *dayLabel; // @synthesize dayLabel=_dayLabel;
 @property(retain, nonatomic) MMUILabel *monthLabel; // @synthesize monthLabel=_monthLabel;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;

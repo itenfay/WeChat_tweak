@@ -12,7 +12,6 @@
     MMVoidStringCallback *_callBack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidStringCallback *callBack; // @synthesize callBack=_callBack;
 - (void)jumpToBankcardList;
 - (void)selectSingleContactLogic:(id)arg1 didSelectContact:(id)arg2;

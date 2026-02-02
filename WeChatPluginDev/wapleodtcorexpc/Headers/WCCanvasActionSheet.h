@@ -21,7 +21,6 @@
     id <WCCanvasActionSheetDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideHeader; // @synthesize hideHeader=_hideHeader;
 @property(nonatomic) _Bool showCancelAction; // @synthesize showCancelAction=_showCancelAction;
 @property(nonatomic) __weak id <WCCanvasActionSheetDelegate> delegate; // @synthesize delegate=_delegate;

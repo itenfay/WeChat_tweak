@@ -39,7 +39,6 @@
 
 + (_Bool)setVCardItem:(id)arg1 byXml:(id)arg2;
 + (_Bool)setVcardAddress:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSData *soundBuffer; // @synthesize soundBuffer=_soundBuffer;
 @property(retain, nonatomic) NSString *soundType; // @synthesize soundType=_soundType;

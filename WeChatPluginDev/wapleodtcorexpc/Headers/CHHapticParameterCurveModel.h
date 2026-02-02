@@ -14,7 +14,6 @@
     AACWeakTimer *_cuveModeltimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AACWeakTimer *cuveModeltimer; // @synthesize cuveModeltimer=_cuveModeltimer;
 @property(nonatomic) float time; // @synthesize time=_time;
 @property(retain, nonatomic) CHHapticParameterCurve *parameters; // @synthesize parameters=_parameters;

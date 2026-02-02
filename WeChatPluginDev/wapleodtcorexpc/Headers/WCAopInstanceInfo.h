@@ -16,7 +16,6 @@
     NSArray *_afterActions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *afterActions; // @synthesize afterActions=_afterActions;
 @property(retain, nonatomic) WCAopBlockImp *replaceBlock; // @synthesize replaceBlock=_replaceBlock;
 @property(retain, nonatomic) NSArray *beforeActions; // @synthesize beforeActions=_beforeActions;

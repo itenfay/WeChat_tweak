@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_showTimeStampArray;
 + (void)PBArrayAdd_businessType;
 + (void)PBArrayAdd_feedId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *showTimeStampArray; // @synthesize showTimeStampArray=_showTimeStampArray;
 @property(nonatomic) int businessType; // @synthesize businessType=_businessType;
 @property(copy, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

@@ -14,7 +14,6 @@
     unsigned long long _initTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long initTime; // @synthesize initTime=_initTime;
 @property(retain, nonatomic) NSMutableArray *dailySportList; // @synthesize dailySportList=_dailySportList;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

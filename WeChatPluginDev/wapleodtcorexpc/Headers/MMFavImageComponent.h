@@ -17,7 +17,6 @@
 }
 
 + (double)calHeightWithComData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFavImageComponentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didClickPlay:(id)arg1;
 - (void)onClickToPlayMusic:(id)arg1 playState:(long long)arg2;

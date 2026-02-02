@@ -15,7 +15,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithErrorCode:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *errorCode; // @synthesize errorCode=_errorCode;
 - (id)toList;
 

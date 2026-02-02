@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMKScorer, NSString;
 
 @interface MMFinderLiveKTVMMKScorer
@@ -11,7 +13,6 @@
     MMKScorer *_audioScore;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool scoreBegin; // @synthesize scoreBegin=_scoreBegin;
 @property(retain, nonatomic) MMKScorer *audioScore; // @synthesize audioScore=_audioScore;
 - (void)scorerCallback:(id)arg1 targetHitIn:(double)arg2 duration:(double)arg3 isHit:(_Bool)arg4 noteValue:(int)arg5 noteHeight:(int)arg6;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFlutterAppForegroundState, MMFlutterEngine, MMFlutterEngineGroup, MMFlutterHybridNavPageState, NSMutableArray, NSString;
 
@@ -23,7 +24,6 @@
     NSMutableArray *_plugins;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *plugins; // @synthesize plugins=_plugins;
 @property(nonatomic) long long createCost; // @synthesize createCost=_createCost;
 @property(retain, nonatomic) NSString *route; // @synthesize route=_route;
@@ -55,4 +55,3 @@
 - (id)initWithEngineGroup:(id)arg1 plugin:(id)arg2;
 
 @end
-

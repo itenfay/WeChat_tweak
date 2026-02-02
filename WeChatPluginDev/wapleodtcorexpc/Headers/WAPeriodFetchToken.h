@@ -26,7 +26,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fetchToken; // @synthesize fetchToken=_fetchToken;
 @property(nonatomic) unsigned int lastSaveTime; // @synthesize lastSaveTime=_lastSaveTime;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

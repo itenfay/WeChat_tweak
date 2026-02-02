@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class _TtC6WeChat15MagicRewardView;
 
 @interface MMLiveMagicRewardResMemoryMonitorTask
@@ -15,7 +17,6 @@
     CDUnknownBlockType _onResMemoryUnLoadedCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onResMemoryUnLoadedCallback; // @synthesize onResMemoryUnLoadedCallback=_onResMemoryUnLoadedCallback;
 @property(copy, nonatomic) CDUnknownBlockType onResMemoryLoadedCallback; // @synthesize onResMemoryLoadedCallback=_onResMemoryLoadedCallback;
 @property(nonatomic) _Bool enableAutoUnload; // @synthesize enableAutoUnload=_enableAutoUnload;
@@ -38,4 +39,3 @@
 - (id)initWithRewardView:(id)arg1 enableAutoUnLoad:(_Bool)arg2;
 
 @end
-

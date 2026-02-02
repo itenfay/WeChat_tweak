@@ -15,7 +15,6 @@
     MISSING_TYPE *$__lazy_storage_$_discoverTapeMgr;
 }
 
-- (void).cxx_destruct;
 - (void)onSelectedTabController:(id)arg1;
 - (void)onCarPlayDisconnected;
 - (void)onCarPlayConnected;

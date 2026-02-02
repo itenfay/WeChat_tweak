@@ -16,7 +16,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *btnPortaritModeIcon; // @synthesize btnPortaritModeIcon=_btnPortaritModeIcon;
 @property(retain, nonatomic) WCElasticLayoutView *elasticLayoutView; // @synthesize elasticLayoutView=_elasticLayoutView;
 @property(nonatomic) struct CGRect containerFrame; // @synthesize containerFrame=_containerFrame;

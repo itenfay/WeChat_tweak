@@ -29,7 +29,6 @@
 + (double)signIconWidthForStyle:(long long)arg1;
 + (id)signLabelFontForStyle:(long long)arg1;
 + (struct CGSize)getGameRankSizeWithRank:(id)arg1 uiStyle:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) double currentLayoutFontScale; // @synthesize currentLayoutFontScale=_currentLayoutFontScale;
 @property(retain, nonatomic) CALayer *colorLayer; // @synthesize colorLayer=_colorLayer;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

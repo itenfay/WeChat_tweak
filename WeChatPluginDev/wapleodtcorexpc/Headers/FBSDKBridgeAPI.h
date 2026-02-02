@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKBridgeAPIRequest, NSString, UIViewController;
 @protocol FBSDKAuthenticationSession, FBSDKURLOpening;
@@ -25,7 +26,6 @@
 
 + (id)sharedInstance;
 + (void)load;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (id)presentationAnchorForWebAuthenticationSession:(id)arg1;
 - (void)_cancelBridgeRequest;
@@ -52,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

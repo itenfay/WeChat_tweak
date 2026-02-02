@@ -15,7 +15,6 @@
     WCTTable *_processingMsgTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *processingMsgTable; // @synthesize processingMsgTable=_processingMsgTable;
 @property(retain, nonatomic) WCTTable *historyMsgTable; // @synthesize historyMsgTable=_historyMsgTable;
 @property(retain, nonatomic) WCTTable *processTagTable; // @synthesize processTagTable=_processTagTable;

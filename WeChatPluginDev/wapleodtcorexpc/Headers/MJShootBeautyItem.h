@@ -16,7 +16,6 @@
     NSString *_iconName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(nonatomic) float defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(retain, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;

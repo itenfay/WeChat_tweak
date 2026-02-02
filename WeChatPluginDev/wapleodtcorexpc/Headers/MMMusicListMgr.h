@@ -16,7 +16,6 @@
     NSString *m_curUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_musicInfoArr; // @synthesize m_musicInfoArr;
 - (long long)getMusicListSource;
 - (void)onHomepageUpdate:(long long)arg1 withAdded:(id)arg2 andChanged:(id)arg3 andDeleted:(id)arg4 andTip:(id)arg5;

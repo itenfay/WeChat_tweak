@@ -13,7 +13,6 @@
 
 + (id)resourcePathAppid:(id)arg1 subType:(unsigned int)arg2;
 + (id)resourceRootPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenImResourceStorageCacheInfo *kefuResCacheInfo; // @synthesize kefuResCacheInfo=_kefuResCacheInfo;
 @property(retain, nonatomic) OpenImResourceStorageCacheInfo *defaultResCacheInfo; // @synthesize defaultResCacheInfo=_defaultResCacheInfo;
 - (void)saveOpenImResourceToCacheAndFile:(id)arg1 appid:(id)arg2 subType:(unsigned int)arg3;

@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCRedesignBaseItemContentView : UIView
 {
     CDUnknownBlockType _subviewLayoutHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType subviewLayoutHandler; // @synthesize subviewLayoutHandler=_subviewLayoutHandler;
 - (void)layoutSubviews;
 
 @end
-

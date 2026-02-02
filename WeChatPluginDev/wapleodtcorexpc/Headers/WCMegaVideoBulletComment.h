@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_videoTimestamp;
 + (void)PBArrayAdd_content;
 + (void)PBArrayAdd_commentId;
-- (void).cxx_destruct;
 @property(nonatomic) int extFlag; // @synthesize extFlag=_extFlag;
 @property(nonatomic) unsigned long long createTime; // @synthesize createTime=_createTime;
 @property(nonatomic) unsigned long long videoTimestamp; // @synthesize videoTimestamp=_videoTimestamp;

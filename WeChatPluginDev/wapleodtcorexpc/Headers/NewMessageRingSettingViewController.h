@@ -12,7 +12,6 @@
     RingToneAvPlayer *_ringPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneAvPlayer *ringPlayer; // @synthesize ringPlayer=_ringPlayer;
 @property(retain, nonatomic) WCTableViewSectionManager *section; // @synthesize section=_section;
 @property(nonatomic) unsigned long long ringType; // @synthesize ringType=_ringType;

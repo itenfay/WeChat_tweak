@@ -13,7 +13,6 @@
 + (double)heightForItemContentViewWithViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)createRichTextView;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 - (void)contentDidTap;
 - (void)layoutItemContentView;

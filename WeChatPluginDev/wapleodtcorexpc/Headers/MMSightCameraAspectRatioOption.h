@@ -25,7 +25,6 @@
 }
 
 + (id)aspectRatioTitleWithType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(retain, nonatomic) MMUIButton *ratioButton_16_9; // @synthesize ratioButton_16_9=_ratioButton_16_9;
 @property(retain, nonatomic) MMUIButton *ratioButton_4_3; // @synthesize ratioButton_4_3=_ratioButton_4_3;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, AVAssetExportSession, EditImageAttr, EditImageLogicController, EditVideoAttr, NSNumber, NSString, NSURL, PHAsset;
 
 @interface MMAssetForPHAssetFramework
@@ -25,7 +27,6 @@
 }
 
 + (id)genSquareThumbnailImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 @property(nonatomic) _Bool hasCheckSpatialMedia; // @synthesize hasCheckSpatialMedia=_hasCheckSpatialMedia;
 @property(nonatomic) _Bool isSpatialMedia; // @synthesize isSpatialMedia=_isSpatialMedia;
@@ -118,4 +119,3 @@
 - (id)initWithPHAsset:(id)arg1 IsNeedOrigin:(_Bool)arg2;
 
 @end
-

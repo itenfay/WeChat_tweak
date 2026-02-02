@@ -28,7 +28,6 @@
     NSString *_chnlExtra;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int screenType; // @synthesize screenType=_screenType;
 @property(retain, nonatomic) NSString *chnlExtra; // @synthesize chnlExtra=_chnlExtra;
 @property(nonatomic) unsigned long long startSourceScene; // @synthesize startSourceScene=_startSourceScene;

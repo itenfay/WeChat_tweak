@@ -12,7 +12,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) MMUILabel *subLabel; // @synthesize subLabel=_subLabel;
 @property(retain, nonatomic) MMUILabel *mainLabel; // @synthesize mainLabel=_mainLabel;

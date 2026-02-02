@@ -11,7 +11,6 @@
     NSArray *_validRedPointPathArray;
 }
 
-- (void).cxx_destruct;
 - (_Bool)canPluginReceiveRedPoint:(id)arg1;
 - (void)parseRedPointCtrlMsg:(id)arg1;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

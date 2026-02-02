@@ -18,7 +18,6 @@
     MISSING_TYPE *promotionalID;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) NSString *promotionalID;

@@ -12,7 +12,6 @@
     NSDictionary *_launchOptions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *launchOptions; // @synthesize launchOptions=_launchOptions;
 
 @end

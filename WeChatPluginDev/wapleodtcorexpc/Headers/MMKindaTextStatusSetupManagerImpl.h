@@ -15,7 +15,6 @@
     NSString *_transId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *transId; // @synthesize transId=_transId;
 @property(nonatomic) __weak MMUIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(retain, nonatomic) TextStateBrandLogic *brandLogic; // @synthesize brandLogic=_brandLogic;

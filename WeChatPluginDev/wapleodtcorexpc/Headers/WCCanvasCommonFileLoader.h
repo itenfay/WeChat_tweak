@@ -16,7 +16,6 @@
 + (unsigned long long)cleanCacheMgrMakeToClean;
 + (id)fetchCommonFileDownloadTmpPath;
 + (id)fetchCommonFileBasePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadingRequestObjectQueue; // @synthesize downloadingRequestObjectQueue=_downloadingRequestObjectQueue;
 @property(retain, nonatomic) NSMutableArray *waittingRequestObjectQueue; // @synthesize waittingRequestObjectQueue=_waittingRequestObjectQueue;
 @property(retain, nonatomic) NSMutableDictionary *requestObjectDict; // @synthesize requestObjectDict=_requestObjectDict;

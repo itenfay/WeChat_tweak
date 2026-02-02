@@ -32,7 +32,6 @@
     WCMktCardEnteranceStyleCgi *_mktCardStyleCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMktCardEnteranceStyleCgi *mktCardStyleCgi; // @synthesize mktCardStyleCgi=_mktCardStyleCgi;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 - (void)onGetCardEnteranceStyleCgiResp:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     NSString *_scopeKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *scopeKey; // @synthesize scopeKey=_scopeKey;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 - (void)requestDeleteAcctountById:(id)arg1 completeAction:(CDUnknownBlockType)arg2;
@@ -21,4 +21,3 @@
 - (id)initWithAppId:(id)arg1 scopeKey:(id)arg2;
 
 @end
-

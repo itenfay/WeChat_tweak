@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderRelatedRecommendTips, NSArray, NSData, NSMutableArray, NSString, WCFinderFeedArray, WCFinderGetRelatedListParams, WCFinderPushFeedViewProductParams, WCFinderTaskQueue;
 @protocol WCFinderShareFeedDataProviderDelegate;
@@ -32,7 +33,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool appendingPlaceholderDataItems; // @synthesize appendingPlaceholderDataItems=_appendingPlaceholderDataItems;
 @property(nonatomic) _Bool hasRequestPlaceholderDataItems; // @synthesize hasRequestPlaceholderDataItems=_hasRequestPlaceholderDataItems;
 @property(copy, nonatomic) NSArray *needCollectionDataItemList; // @synthesize needCollectionDataItemList=_needCollectionDataItemList;
@@ -81,4 +81,3 @@
 - (id)initWithParams:(id)arg1 feedMapper:(CDUnknownBlockType)arg2;
 
 @end
-

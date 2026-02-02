@@ -15,7 +15,6 @@
 }
 
 + (id)fetchHalfScreenMediaViewWithFrame:(struct CGRect)arg1 dataItem:(id)arg2 clickIndex:(long long)arg3 delegate:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) long long visibleType; // @synthesize visibleType=_visibleType;

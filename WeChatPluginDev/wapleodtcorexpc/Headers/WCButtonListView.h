@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, UIColor;
 
@@ -22,7 +23,6 @@
 + (id)generateSeparatorLine;
 + (id)generateBottomButton;
 + (id)keyForButton:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsLayoutButtons; // @synthesize needsLayoutButtons=_needsLayoutButtons;
 @property(retain, nonatomic) NSMutableArray *itemList; // @synthesize itemList=_itemList;
 @property(retain, nonatomic) NSMutableDictionary *keyToButtonItemDict; // @synthesize keyToButtonItemDict=_keyToButtonItemDict;
@@ -42,4 +42,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

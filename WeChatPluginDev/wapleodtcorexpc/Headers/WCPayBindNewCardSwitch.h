@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_forbid_word;
 + (void)PBArrayAdd_forbid_bind_card;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *forbid_word; // @synthesize forbid_word=_forbid_word;
 @property(nonatomic) long long forbid_bind_card; // @synthesize forbid_bind_card=_forbid_bind_card;
 - (void)genFromDic:(id)arg1;

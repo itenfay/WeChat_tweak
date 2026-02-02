@@ -11,7 +11,6 @@
     EmoticonDownloadProxy *m_downloadCgi;
 }
 
-- (void).cxx_destruct;
 - (void)onEmoticonDownloadMd5Failed:(id)arg1 withUserInfo:(id)arg2;
 - (void)onEmoticonDownloadMd5Ok:(id)arg1 AndFilePath:(id)arg2 withUserInfo:(id)arg3;
 - (void)finishDownloadEmotionWrap:(id)arg1;

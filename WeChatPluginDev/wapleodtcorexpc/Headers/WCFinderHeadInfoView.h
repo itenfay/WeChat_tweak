@@ -40,7 +40,6 @@
 
 + (double)defaultHeight;
 + (_Bool)useRefactorView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *customeAccessibleElements; // @synthesize customeAccessibleElements=_customeAccessibleElements;
 @property(retain, nonatomic) NSMutableDictionary *ele_layoutMap; // @synthesize ele_layoutMap=_ele_layoutMap;
 @property(retain, nonatomic) UIView *benchMarkElement; // @synthesize benchMarkElement=_benchMarkElement;

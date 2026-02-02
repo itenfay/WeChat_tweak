@@ -11,7 +11,6 @@
     CMessageWrap *_msgWrap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bFromTranlateText; // @synthesize bFromTranlateText=_bFromTranlateText;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 - (id)getSelectMenuItem;

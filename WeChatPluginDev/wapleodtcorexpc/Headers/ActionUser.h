@@ -17,7 +17,6 @@
     NSString *_strAfterFollow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *strAfterFollow; // @synthesize strAfterFollow=_strAfterFollow;
 @property(retain, nonatomic) NSString *strBeforeFollow; // @synthesize strBeforeFollow=_strBeforeFollow;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

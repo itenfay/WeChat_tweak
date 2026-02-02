@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveResChecker, NSString, NSURL;
 
@@ -24,7 +25,6 @@
     unsigned long long _state;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useProprietaryProtocol; // @synthesize useProprietaryProtocol=_useProprietaryProtocol;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(copy, nonatomic) CDUnknownBlockType downloadCompletion; // @synthesize downloadCompletion=_downloadCompletion;
@@ -40,4 +40,3 @@
 @property(retain, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 
 @end
-

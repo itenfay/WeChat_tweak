@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CirclesView, MMSayHelloButton, MMUILabel, ShakeMsgUnreadButton, UIImageView, UIView;
 @protocol ShakeMainFrameDelegate;
 
@@ -25,7 +27,6 @@
     MMUILabel *_stateLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *stateLabel; // @synthesize stateLabel=_stateLabel;
 @property(retain, nonatomic) CirclesView *circlesView; // @synthesize circlesView=_circlesView;
 @property(retain, nonatomic) UIImageView *defaultImageView; // @synthesize defaultImageView=_defaultImageView;
@@ -65,4 +66,3 @@
 - (void)setM_Delegate:(id)arg1;
 
 @end
-

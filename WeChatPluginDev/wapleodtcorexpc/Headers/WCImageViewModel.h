@@ -27,7 +27,6 @@
 + (id)centerSmall:(id)arg1 parent:(id)arg2;
 + (id)centerSmallAndGridPreview:(id)arg1;
 + (id)centerSmall:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canGridPreview; // @synthesize canGridPreview=_canGridPreview;
 @property(nonatomic) int photoType; // @synthesize photoType=_photoType;
 @property(nonatomic) int style; // @synthesize style=_style;

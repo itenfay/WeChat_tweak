@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, CContact, EnterpriseConnectorLogic, ForwardMessageLogicController, GameWebReporter, MMJSApiVerifyMgr, MMLoadingView, MMScrollActionSheet, MMTimer, MMTipsViewController, MMUIButton, MMURLHandler, MMWebBottomToolBar, MMWebCoreConfig, MMWebCustomLog, MMWebHangTipsBar, MMWebLiveTitleView, MMWebMProfileTitleView, MMWebNaviErrorView, MMWebProgressBar, MMWebTopBar, MMWebTransHelpButton, MMWebViewFontFloatView, MMWebViewPageInfoModel, MMWebViewPerformance, MMWebViewPluginScheduler, MMWebViewPresetUI, MMWebViewPresetUILogic, MMWebViewSpaAuthContext, MMWebviewOAuthRemindHalfScreenView, MMWebviewPrefetchResult, MMWebviewSnapshotWrapper, MiniRecTransitionController, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL, NSURLRequest, TipsView, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView, UIViewController, WCDeepLinkHandler, WCPayDecimalKeyboardView, WCWebNavigationEventsStore, WKNavigation, WKWebView, WebPrefetcherJSApiLogic, WebViewA8KeyLogicImpl, WebViewJSLogicImpl, WebViewMenuCustomizeLogic, WebViewOAuthLogic, WebViewSanboxSessionLogic, WebViewTimeProfileData;
 @protocol MMWebViewDelegate, MMWebViewOAuthSnapShotDelegate, MMWebViewPreloadContentHandler, YYWebViewInterface;
 
@@ -283,7 +285,6 @@
 + (unsigned int)genSnapshotSessionId;
 + (_Bool)shouldInjectVConsole;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *a8keyUrlForPageFeature; // @synthesize a8keyUrlForPageFeature=_a8keyUrlForPageFeature;
 @property(nonatomic) unsigned int secCtrlMode; // @synthesize secCtrlMode=_secCtrlMode;
 @property(nonatomic) _Bool reloadFromLoadHtmlString; // @synthesize reloadFromLoadHtmlString=_reloadFromLoadHtmlString;
@@ -1403,4 +1404,3 @@
 @property(readonly) Class superclass;
 
 @end
-

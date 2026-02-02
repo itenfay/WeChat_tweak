@@ -220,7 +220,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool tingSourceTypeLoaded; // @synthesize tingSourceTypeLoaded=_tingSourceTypeLoaded;
 @property(nonatomic) unsigned long long tingSourceType; // @synthesize tingSourceType=_tingSourceType;
 @property(retain, nonatomic) FinderContact *_finderAuthorContact; // @synthesize _finderAuthorContact=__finderAuthorContact;

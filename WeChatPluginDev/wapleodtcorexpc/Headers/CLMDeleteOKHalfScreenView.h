@@ -15,7 +15,6 @@
     NSString *_finishTip;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finishTip; // @synthesize finishTip=_finishTip;
 @property(copy, nonatomic) NSString *finishTitle; // @synthesize finishTitle=_finishTitle;
 @property(retain, nonatomic) UIImageView *finishIconView; // @synthesize finishIconView=_finishIconView;

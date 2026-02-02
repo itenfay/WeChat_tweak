@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveMsgBoxInfo, MMUILabel, MMWebImageView, UIButton, UIView;
 
 @interface MMLiveHalfScreenNoticeView
@@ -15,7 +17,6 @@
     UIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMWebImageView *icon; // @synthesize icon=_icon;
@@ -35,4 +36,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

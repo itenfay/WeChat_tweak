@@ -15,7 +15,6 @@
     unsigned long long _reddotEnabled;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reddotEnabled; // @synthesize reddotEnabled=_reddotEnabled;
 @property(nonatomic) unsigned long long entrySwitch; // @synthesize entrySwitch=_entrySwitch;
 @property(retain, nonatomic) NSString *clickShellKey; // @synthesize clickShellKey=_clickShellKey;

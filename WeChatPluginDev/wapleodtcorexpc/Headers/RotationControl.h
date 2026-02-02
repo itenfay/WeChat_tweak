@@ -43,7 +43,6 @@
     CMMotionManager *_mMotionManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMMotionManager *mMotionManager; // @synthesize mMotionManager=_mMotionManager;
 - (void)setMaxMinHalfFOVVer:(float)arg1 MaxVal:(float)arg2;
 - (void)setMaxMinHalfFOVHor:(float)arg1 MaxVal:(float)arg2;

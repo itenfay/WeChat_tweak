@@ -20,7 +20,6 @@
     struct CGRect _rect;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *image; // @synthesize image=_image;
 @property(nonatomic) int renderMode; // @synthesize renderMode=_renderMode;
 @property(nonatomic) unsigned long long inputType; // @synthesize inputType=_inputType;

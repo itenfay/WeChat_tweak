@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_cardType;
 + (void)PBArrayAdd_fromScene;
 + (void)PBArrayAdd_fromUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recommendCardId; // @synthesize recommendCardId=_recommendCardId;
 @property(nonatomic) _Bool isRecommend; // @synthesize isRecommend=_isRecommend;
 @property(nonatomic) unsigned int cardShareFrom; // @synthesize cardShareFrom=_cardShareFrom;

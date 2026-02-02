@@ -11,7 +11,6 @@
     OpenECardAuthReq *_authRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenECardAuthReq *authRequest; // @synthesize authRequest=_authRequest;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

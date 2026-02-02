@@ -21,7 +21,6 @@
     unsigned long long _clearUnReadTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long clearUnReadTime; // @synthesize clearUnReadTime=_clearUnReadTime;
 @property(nonatomic) unsigned long long addMsgTime; // @synthesize addMsgTime=_addMsgTime;
 @property(nonatomic) unsigned int syncMsgNum; // @synthesize syncMsgNum=_syncMsgNum;

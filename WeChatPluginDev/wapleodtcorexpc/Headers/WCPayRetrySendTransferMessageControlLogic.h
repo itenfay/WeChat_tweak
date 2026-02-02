@@ -12,7 +12,6 @@
     WCPayUnionTransferNotifyCgi *_unionNotifyCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayUnionTransferNotifyCgi *unionNotifyCgi; // @synthesize unionNotifyCgi=_unionNotifyCgi;
 @property(nonatomic) __weak id <WCPayRetrySendTransferMessageLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 - (void)delayStopLogic;

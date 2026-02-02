@@ -16,7 +16,6 @@
     AppHardWareRankMessageLogicController *_logicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AppHardWareRankMessageLogicController *logicController; // @synthesize logicController=_logicController;
 - (id)removeAllNumberAndComma:(id)arg1;
 - (void)setupAccessibility;

@@ -12,7 +12,6 @@
     MISSING_TYPE *urlParams;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (id)initWithUrlParams:(id)arg1;

@@ -13,7 +13,6 @@
     id _translateItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id translateItem; // @synthesize translateItem=_translateItem;
 @property(nonatomic) __weak UIView *disableInteractWhenTranslateAnimatingView; // @synthesize disableInteractWhenTranslateAnimatingView=_disableInteractWhenTranslateAnimatingView;
 @property(nonatomic) __weak UIScrollView *animationScrollView; // @synthesize animationScrollView=_animationScrollView;

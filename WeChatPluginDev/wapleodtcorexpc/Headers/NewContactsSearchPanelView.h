@@ -65,7 +65,6 @@
     UIColor *_moreCellImageColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *moreCellImageColor; // @synthesize moreCellImageColor=_moreCellImageColor;
 @property(retain, nonatomic) WCSTokenPickLogic *tokenPickLogic; // @synthesize tokenPickLogic=_tokenPickLogic;
 @property(retain, nonatomic) WCColorProxy *colorProxy; // @synthesize colorProxy=_colorProxy;

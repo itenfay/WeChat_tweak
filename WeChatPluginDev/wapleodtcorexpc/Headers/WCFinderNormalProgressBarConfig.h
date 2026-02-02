@@ -25,7 +25,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dragShowLargebar; // @synthesize dragShowLargebar=_dragShowLargebar;
 @property(nonatomic) _Bool enablePanProgessIcon; // @synthesize enablePanProgessIcon=_enablePanProgessIcon;
 @property(nonatomic) _Bool barCornerRounded; // @synthesize barCornerRounded=_barCornerRounded;

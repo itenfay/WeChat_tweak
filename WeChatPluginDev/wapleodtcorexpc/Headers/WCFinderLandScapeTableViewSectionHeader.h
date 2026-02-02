@@ -14,7 +14,6 @@
 
 + (id)headerID;
 + (double)headerH;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void)layoutSubviews;
 - (void)updateWithTitle:(id)arg1;

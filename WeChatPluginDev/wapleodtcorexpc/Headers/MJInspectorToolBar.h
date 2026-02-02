@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel;
 
 @interface MJInspectorToolBar
@@ -16,7 +18,6 @@
 }
 
 + (id)instanceWithTitle:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) MMUIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(readonly, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -27,4 +28,3 @@
 - (void)setupViews;
 
 @end
-

@@ -20,7 +20,6 @@
     SEL _setter;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL setter; // @synthesize setter=_setter;
 @property(readonly, nonatomic) SEL getter; // @synthesize getter=_getter;
 @property(readonly, nonatomic) NSArray *protocols; // @synthesize protocols=_protocols;

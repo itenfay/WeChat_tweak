@@ -12,7 +12,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *templateTransSet; // @synthesize templateTransSet=_templateTransSet;
 @property(retain, nonatomic) NSMutableArray *stickerArr; // @synthesize stickerArr=_stickerArr;
 - (id)generateJsonDic;

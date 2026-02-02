@@ -11,7 +11,6 @@
 }
 
 + (_Bool)showBigPicWithWCContentItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (id)initWithWCContentItem:(id)arg1 title:(id)arg2 sourceUsrname:(id)arg3 sourceNickname:(id)arg4 viewStyle:(id)arg5;
 

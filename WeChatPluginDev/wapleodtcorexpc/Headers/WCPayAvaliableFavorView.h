@@ -12,7 +12,6 @@
     UIImageView *m_backgroundView;
 }
 
-- (void).cxx_destruct;
 - (_Bool)shouldPreventedAutorotateToInterfaceOrientation;
 - (void)closeView;
 - (void)showAnimation;

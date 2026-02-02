@@ -55,7 +55,6 @@
     NSDictionary *_pageOutDateReportDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *pageOutDateReportDict; // @synthesize pageOutDateReportDict=_pageOutDateReportDict;
 @property(retain, nonatomic) WCPayGPLaunchConfirmPageSheet *confirmPageSheet; // @synthesize confirmPageSheet=_confirmPageSheet;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;

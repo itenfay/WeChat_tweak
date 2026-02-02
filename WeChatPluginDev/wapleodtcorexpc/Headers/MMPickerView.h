@@ -24,7 +24,6 @@
 }
 
 + (struct CGSize)getPickerViewSize;
-- (void).cxx_destruct;
 @property(nonatomic) long long lastOri; // @synthesize lastOri=_lastOri;
 @property(retain, nonatomic) UIViewController *popoverControllerNew; // @synthesize popoverControllerNew=_popoverControllerNew;
 @property(retain, nonatomic) UIView *transparentView; // @synthesize transparentView=_transparentView;

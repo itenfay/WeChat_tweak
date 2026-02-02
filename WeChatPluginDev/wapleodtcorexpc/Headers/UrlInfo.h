@@ -47,7 +47,6 @@
     unsigned int m_uiResponseCSeq;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiResponseCSeq; // @synthesize m_uiResponseCSeq;
 @property(nonatomic) unsigned int m_uiReqestCSeq; // @synthesize m_uiReqestCSeq;
 @property(nonatomic) unsigned int m_uiXEncIdx; // @synthesize m_uiXEncIdx;

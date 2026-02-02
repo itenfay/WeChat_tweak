@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 @protocol TextStateNewXMLLogicDelegate;
@@ -16,7 +17,6 @@
 
 + (_Bool)isBypassChannelSupportedForType:(id)arg1;
 + (id)newXMLTypeList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *typeToHandlerMap; // @synthesize typeToHandlerMap=_typeToHandlerMap;
 @property(nonatomic) __weak id <TextStateNewXMLLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)initStatusNewModifyHandler;
@@ -31,4 +31,3 @@
 - (id)init;
 
 @end
-

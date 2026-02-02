@@ -22,7 +22,6 @@
     NSMutableArray *_relativeInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *relativeInfos; // @synthesize relativeInfos=_relativeInfos;
 @property(retain, nonatomic) NSMutableArray *searchInfos; // @synthesize searchInfos=_searchInfos;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

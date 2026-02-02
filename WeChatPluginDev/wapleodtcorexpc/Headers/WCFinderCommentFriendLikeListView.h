@@ -13,7 +13,6 @@
     UITableViewDiffableDataSource *_source;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableViewDiffableDataSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSDiffableDataSourceSnapshot *snapShot; // @synthesize snapShot=_snapShot;
 @property(retain, nonatomic) NSArray *likeInfoArray; // @synthesize likeInfoArray=_likeInfoArray;

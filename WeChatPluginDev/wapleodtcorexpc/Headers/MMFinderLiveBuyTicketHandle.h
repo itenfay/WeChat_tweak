@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMFinderLiveFeedNoticeDetailView, MMFinderLiveNoticeDetailPayView, MMFinderLivePurchaseConcertTicketView, MMFinderLiveTaskId, MMPageSheetAdapter, MMUIViewController, MMWebViewController, NSData, NSString, WCFinderContact;
 
@@ -37,7 +38,6 @@
 + (_Bool)isConcert:(id)arg1;
 + (_Bool)hasNoticePay:(id)arg1;
 + (_Bool)isNoticeNeedPayment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *webVC; // @synthesize webVC=_webVC;
 @property(retain, nonatomic) MMPageSheetAdapter *rootPageSheet; // @synthesize rootPageSheet=_rootPageSheet;
 @property(retain, nonatomic) NSString *adapterUrl; // @synthesize adapterUrl=_adapterUrl;
@@ -91,4 +91,3 @@
 @property(readonly) Class superclass;
 
 @end
-

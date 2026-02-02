@@ -14,7 +14,6 @@
     _Bool _isBlurBgImageLoad;
 }
 
-- (void).cxx_destruct;
 - (void)onTouchUpInside;
 - (void)onLoadImageOK:(id)arg1;
 - (void)updateThumbImage;

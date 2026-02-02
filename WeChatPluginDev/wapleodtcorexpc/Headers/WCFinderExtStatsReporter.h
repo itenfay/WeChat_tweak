@@ -17,7 +17,6 @@
 
 + (void)extStatReportWithType:(int)arg1 dataItem:(id)arg2 commentScene:(int)arg3 liveNoticeInfo:(id)arg4;
 + (void)extStatReportWithType:(int)arg1 dataItem:(id)arg2 commentScene:(int)arg3 templateInfo:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposeTidSet; // @synthesize exposeTidSet=_exposeTidSet;
 @property(retain, nonatomic) NSMutableArray *stats; // @synthesize stats=_stats;
 @property(copy, nonatomic) NSString *replayEnterScene; // @synthesize replayEnterScene=_replayEnterScene;

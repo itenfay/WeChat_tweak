@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_commentCnt;
 + (void)PBArrayAdd_likeCnt;
 + (void)PBArrayAdd_publishId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int exposeCnt; // @synthesize exposeCnt=_exposeCnt;
 @property(retain, nonatomic) NSString *exposeStartTime; // @synthesize exposeStartTime=_exposeStartTime;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

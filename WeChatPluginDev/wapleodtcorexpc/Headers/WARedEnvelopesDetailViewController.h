@@ -15,7 +15,6 @@
     UIView *_m_pinImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_pinImageView; // @synthesize m_pinImageView=_m_pinImageView;
 @property(retain, nonatomic) ContactUpdateHelper *m_helperForSenderNickName; // @synthesize m_helperForSenderNickName=_m_helperForSenderNickName;
 - (id)addBorderViewBottomAtView:(id)arg1;

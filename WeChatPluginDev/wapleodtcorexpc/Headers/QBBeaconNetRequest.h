@@ -30,7 +30,6 @@
 @property(retain, nonatomic) QBBeaconReqDataPackage *reqDataPkg; // @synthesize reqDataPkg;
 @property(retain, nonatomic) NSString *serverUrl; // @synthesize serverUrl;
 @property(nonatomic) int priority; // @synthesize priority;
-- (void).cxx_destruct;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

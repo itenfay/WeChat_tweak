@@ -12,7 +12,6 @@
     MISSING_TYPE *adapter;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onClickPageSheetConfirmButton;
 - (void)pageSheetDidClose:(id)arg1 closeType:(long long)arg2;

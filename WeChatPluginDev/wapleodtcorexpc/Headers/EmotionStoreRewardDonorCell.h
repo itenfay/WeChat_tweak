@@ -12,7 +12,6 @@
     MMWebImageView *_donorHeadImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *donorHeadImageView; // @synthesize donorHeadImageView=_donorHeadImageView;
 
 @end

@@ -12,7 +12,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *keepOptionButton; // @synthesize keepOptionButton=_keepOptionButton;
 @property(retain, nonatomic) UIButton *declineButton; // @synthesize declineButton=_declineButton;
 - (void)setSMUI;

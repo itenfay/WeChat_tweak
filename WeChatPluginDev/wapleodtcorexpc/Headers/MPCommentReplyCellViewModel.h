@@ -11,7 +11,6 @@
     MPCommentReply *_commentReply;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreReplyFromSameAuthor; // @synthesize isPreReplyFromSameAuthor=_isPreReplyFromSameAuthor;
 @property(retain, nonatomic) MPCommentReply *commentReply; // @synthesize commentReply=_commentReply;
 @property(readonly, nonatomic) _Bool isFromAuthor;

@@ -18,7 +18,6 @@
     NSDictionary *_originJSON;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *originJSON; // @synthesize originJSON=_originJSON;
 @property(readonly, nonatomic) double zoom_min; // @synthesize zoom_min=_zoom_min;
 @property(readonly, nonatomic) double zoom_max; // @synthesize zoom_max=_zoom_max;

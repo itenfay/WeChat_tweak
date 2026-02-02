@@ -17,7 +17,6 @@
     WCAdCanvasExtraParams *_extraParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCanvasExtraParams *extraParams; // @synthesize extraParams=_extraParams;
 @property(nonatomic) _Bool willJumpToHalfOtherContent; // @synthesize willJumpToHalfOtherContent=_willJumpToHalfOtherContent;
 @property(retain, nonatomic) WCCanvasPageViewController *canvasViewController; // @synthesize canvasViewController=_canvasViewController;

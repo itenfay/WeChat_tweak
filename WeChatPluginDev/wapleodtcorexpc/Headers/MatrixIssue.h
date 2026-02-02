@@ -18,7 +18,6 @@
     NSDictionary *_customInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *customInfo; // @synthesize customInfo=_customInfo;
 @property(nonatomic) int reportType; // @synthesize reportType=_reportType;
 @property(retain, nonatomic) NSData *issueData; // @synthesize issueData=_issueData;

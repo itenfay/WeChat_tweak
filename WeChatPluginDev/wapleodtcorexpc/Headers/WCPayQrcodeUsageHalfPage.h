@@ -19,7 +19,6 @@
     long long _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(nonatomic) _Bool isKeyboardShowing; // @synthesize isKeyboardShowing=_isKeyboardShowing;
 @property(nonatomic) long long selectedRow; // @synthesize selectedRow=_selectedRow;

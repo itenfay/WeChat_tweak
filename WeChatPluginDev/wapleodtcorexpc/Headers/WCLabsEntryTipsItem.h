@@ -12,7 +12,6 @@
     WCLabsEntryTipsConfigItem *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLabsEntryTipsConfigItem *config; // @synthesize config=_config;
 - (id)description;
 - (long long)compare:(id)arg1;

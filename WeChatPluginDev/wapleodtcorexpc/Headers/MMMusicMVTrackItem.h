@@ -69,7 +69,6 @@
 + (void)PBArrayAdd_refObjectId;
 + (void)PBArrayAdd_timeLengthInMvMs;
 + (void)PBArrayAdd_timeOffsetInMvMs;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderMVInfo_ClientDraftInfo *clientDraftInfo; // @synthesize clientDraftInfo=_clientDraftInfo;
 @property(nonatomic) unsigned long long localMaterialTimeOffsetInClipMs; // @synthesize localMaterialTimeOffsetInClipMs=_localMaterialTimeOffsetInClipMs;
 @property(retain, nonatomic) NSString *localMaterialId; // @synthesize localMaterialId=_localMaterialId;

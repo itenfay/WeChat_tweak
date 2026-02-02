@@ -34,7 +34,6 @@
     double _zoomLevel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool audioOnly; // @synthesize audioOnly=_audioOnly;
 @property(nonatomic) double zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(nonatomic) __weak id <MMovieCompressorDelegate> delegate; // @synthesize delegate=m_delegate;

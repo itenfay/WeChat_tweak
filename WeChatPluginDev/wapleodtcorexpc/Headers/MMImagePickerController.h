@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageLogicController, EditVideoLogicController, MMAssetPickerController, MMFinderLiveImagePickerParams, MMImagePickerControllerPreviewReportObject, NSArray, NSMutableDictionary, NSNumber, NSString, WCFinderEditOptionModel, WCFinderPickerTemplateParams;
 @protocol MMAssetPickerUserActionTipsProtocol, MMImagePickerControllerDelegate;
 
@@ -81,7 +83,6 @@
     struct _NSRange _selectCountLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(nonatomic) unsigned long long authScene; // @synthesize authScene=_authScene;
 @property(nonatomic) _Bool showAssetWithLocationOnly; // @synthesize showAssetWithLocationOnly=_showAssetWithLocationOnly;
@@ -275,4 +276,3 @@
 @property(readonly) Class superclass;
 
 @end
-

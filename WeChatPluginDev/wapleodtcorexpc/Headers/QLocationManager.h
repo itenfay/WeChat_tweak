@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol QLocationManagerAPIProcotol, QLocationManagerDelegate;
@@ -14,7 +15,6 @@
     id <QLocationManagerAPIProcotol> _manager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <QLocationManagerAPIProcotol> manager; // @synthesize manager=_manager;
 @property(nonatomic) __weak id <QLocationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool pausesLocationUpdatesAutomatically;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

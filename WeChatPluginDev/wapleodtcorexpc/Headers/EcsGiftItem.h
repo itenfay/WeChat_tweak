@@ -18,7 +18,6 @@
     NSString *_skuId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *skuId; // @synthesize skuId=_skuId;
 @property(nonatomic) unsigned int canChangeSku; // @synthesize canChangeSku=_canChangeSku;
 @property(nonatomic) unsigned int giftStatus; // @synthesize giftStatus=_giftStatus;

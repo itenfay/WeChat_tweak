@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicDataItem;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicDataItem; // @synthesize dicDataItem=_dicDataItem;
 - (id)getPBPropertyTable;
 

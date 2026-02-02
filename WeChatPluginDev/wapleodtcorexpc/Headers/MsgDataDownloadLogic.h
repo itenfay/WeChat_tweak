@@ -15,7 +15,6 @@
     id <MsgDataDownloadDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MsgDataDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnDownloadRecordMessagePart:(id)arg1 DataId:(id)arg2 PartLen:(unsigned int)arg3 TotalLen:(unsigned int)arg4;
 - (void)OnRecordMessageDownloadOK:(id)arg1;

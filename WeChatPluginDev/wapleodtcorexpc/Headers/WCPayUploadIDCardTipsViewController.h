@@ -21,7 +21,6 @@
     RichTextView *_termsOfService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *termsOfService; // @synthesize termsOfService=_termsOfService;
 @property(retain, nonatomic) UIButton *uploadButton; // @synthesize uploadButton=_uploadButton;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;

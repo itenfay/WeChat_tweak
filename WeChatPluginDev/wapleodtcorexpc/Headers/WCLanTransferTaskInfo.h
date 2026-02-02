@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_filePath;
 + (void)PBArrayAdd_toUser;
 + (void)PBArrayAdd_lanClientMsgID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *lanInfo; // @synthesize lanInfo=_lanInfo;

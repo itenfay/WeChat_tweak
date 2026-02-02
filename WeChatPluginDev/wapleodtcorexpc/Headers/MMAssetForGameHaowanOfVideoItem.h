@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, GameHaowanAlbumVideoItem, NSString, NSURL, NSURLSessionTask;
 
 @interface MMAssetForGameHaowanOfVideoItem
@@ -14,7 +16,6 @@
     NSURL *_assetURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
 - (void)dealloc;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

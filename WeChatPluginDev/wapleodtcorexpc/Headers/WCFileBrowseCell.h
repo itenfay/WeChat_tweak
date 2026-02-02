@@ -31,7 +31,6 @@
 + (double)getCellHeight:(double)arg1 browseInfo:(id)arg2;
 + (struct UIEdgeInsets)getSperatorInsetForSectionLastCell;
 + (struct UIEdgeInsets)getSperatorInset;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(nonatomic) _Bool bSelected; // @synthesize bSelected=_bSelected;
 @property(retain, nonatomic) WCFileBrowseInfo *browseInfo; // @synthesize browseInfo=_browseInfo;

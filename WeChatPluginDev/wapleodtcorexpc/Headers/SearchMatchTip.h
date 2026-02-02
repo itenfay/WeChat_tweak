@@ -32,7 +32,6 @@
 + (id)GetUnActiveMatchTipFrom:(id)arg1;
 + (id)GetActiveMatchTipFrom:(id)arg1;
 + (void)updateGroupSortContext;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicGroupMemberMatchTip; // @synthesize dicGroupMemberMatchTip=_dicGroupMemberMatchTip;
 @property(nonatomic) unsigned int chatRoomMemberCount; // @synthesize chatRoomMemberCount=_chatRoomMemberCount;
 @property(nonatomic) unsigned long long queryMatchType; // @synthesize queryMatchType=_queryMatchType;

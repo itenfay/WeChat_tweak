@@ -14,7 +14,6 @@
     NSString *_shareThumbUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shareThumbUrl; // @synthesize shareThumbUrl=_shareThumbUrl;
 @property(retain, nonatomic) NSString *shareUrl; // @synthesize shareUrl=_shareUrl;
 @property(retain, nonatomic) MiniGameVideoFile *videofile; // @synthesize videofile=_videofile;

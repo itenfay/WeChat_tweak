@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJClipBundlePresentationView, NSString, UIImage, UIImageView, UILabel, WCFinderFeedContentVM, WCFinderFeedImageView, WCFinderFeedMediaWrap, WCFinderFullNewMultiMediaView, WCFinderMediaInfo, WCFinderMinimizeSilenceMonitor, WCFinderPlayerControlView, WCFinderShortTapGestureRecognizer, WCFinderVideoDragProgressReporter, WCFinderVideoPlayCellParams, WCPlayerView, WCPlayerVolumeObserver, WCWidgetPlayer;
 @protocol WCFinderFeedContentMediaActionProtocol, WCFinderHalfScreenListenProtocol;
@@ -45,7 +46,6 @@
     WCFinderMinimizeSilenceMonitor *_silenceMonitor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isExactingPlayerViewForLandScapeAnimation; // @synthesize isExactingPlayerViewForLandScapeAnimation=_isExactingPlayerViewForLandScapeAnimation;
 @property(retain, nonatomic) WCFinderMinimizeSilenceMonitor *silenceMonitor; // @synthesize silenceMonitor=_silenceMonitor;
 @property(retain, nonatomic) UIImage *pauseCaputerImage; // @synthesize pauseCaputerImage=_pauseCaputerImage;
@@ -209,4 +209,3 @@
 @property(readonly) Class superclass;
 
 @end
-

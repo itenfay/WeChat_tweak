@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCStoryPostCgiObj
@@ -16,7 +18,6 @@
     NSString *_postXml;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *postXml; // @synthesize postXml=_postXml;
 @property(retain, nonatomic) NSString *videoMd5; // @synthesize videoMd5=_videoMd5;
@@ -30,4 +31,3 @@
 - (id)initWithTaskInfo:(id)arg1;
 
 @end
-

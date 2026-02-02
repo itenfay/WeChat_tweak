@@ -22,7 +22,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDownloadImageCdnMgr *cdnMgr; // @synthesize cdnMgr=_cdnMgr;
 @property(retain, nonatomic) NSRecursiveLock *m_lock; // @synthesize m_lock;
 - (void)onCdnDownloadImageProcessChanged:(id)arg1 downloadType:(long long)arg2 current:(long long)arg3 total:(long long)arg4;

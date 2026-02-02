@@ -14,7 +14,6 @@
 + (id)polygonWithCoordinates:(struct CLLocationCoordinate2D *)arg1 count:(unsigned long long)arg2 interiorPolygons:(id)arg3;
 + (id)polygonWithPoints:(CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2;
 + (id)polygonWithCoordinates:(struct CLLocationCoordinate2D *)arg1 count:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *interiorPolygons; // @synthesize interiorPolygons=_interiorPolygons;
 - (id)initWithPoints:(CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2;
 - (id)initWithWithCoordinates:(struct CLLocationCoordinate2D *)arg1 count:(unsigned long long)arg2;

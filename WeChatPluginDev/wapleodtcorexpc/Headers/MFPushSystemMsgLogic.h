@@ -16,7 +16,6 @@
     UIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <MFPushSystemMsgDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIButton<MFBanner> *bannerBtn; // @synthesize bannerBtn=m_banner;

@@ -12,7 +12,6 @@
     UILabel *m_checkLabel;
 }
 
-- (void).cxx_destruct;
 - (void)report32229:(_Bool)arg1;
 - (void)onAppear;
 - (void)layoutDigestLabel;

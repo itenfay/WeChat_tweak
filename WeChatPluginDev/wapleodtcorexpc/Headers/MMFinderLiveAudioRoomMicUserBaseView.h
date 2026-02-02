@@ -48,7 +48,6 @@
     MMFinderLiveCommonOnlineMemberSheet *_onlineMemberSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCommonOnlineMemberSheet *onlineMemberSheet; // @synthesize onlineMemberSheet=_onlineMemberSheet;
 @property(nonatomic) _Bool shouldShowLocation; // @synthesize shouldShowLocation=_shouldShowLocation;
 @property(copy, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;

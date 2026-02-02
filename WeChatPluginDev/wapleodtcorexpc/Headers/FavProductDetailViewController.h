@@ -11,7 +11,6 @@
     FavDataItemWrap *m_favDataWrap;
 }
 
-- (void).cxx_destruct;
 - (void)OnSendAppMsgOKToContacts:(id)arg1;
 - (void)onEditProductTag;
 - (void)onDeleteProduct;

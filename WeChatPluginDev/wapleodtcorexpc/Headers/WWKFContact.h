@@ -27,7 +27,6 @@
 }
 
 + (id)contactWithOpenIMKefuContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(retain, nonatomic) NSString *locationType; // @synthesize locationType=_locationType;
 @property(nonatomic) _Bool needLocation; // @synthesize needLocation=_needLocation;

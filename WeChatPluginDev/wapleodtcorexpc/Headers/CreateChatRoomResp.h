@@ -10,7 +10,6 @@
     NSString *extMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extMsg; // @synthesize extMsg;
 
 @end

@@ -11,7 +11,6 @@
 
 + (id)checkBaseLibIntegrityWithInfo:(id)arg1;
 + (id)checkPackageIntegrityWithAppId:(id)arg1 patchId:(id)arg2 md5:(id)arg3;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

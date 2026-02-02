@@ -54,7 +54,6 @@
 + (id)emoticonSvg;
 + (id)errorTipSvgDark;
 + (id)errorTipSvg;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

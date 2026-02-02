@@ -43,7 +43,6 @@
     NSString *_jsapi_tinyapp_path;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int is_clear_failure; // @synthesize is_clear_failure=_is_clear_failure;
 @property(retain, nonatomic) NSString *jsapi_tinyapp_path; // @synthesize jsapi_tinyapp_path=_jsapi_tinyapp_path;
 @property(retain, nonatomic) NSString *jsapi_tinyapp_username; // @synthesize jsapi_tinyapp_username=_jsapi_tinyapp_username;

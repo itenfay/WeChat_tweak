@@ -12,7 +12,6 @@
     MyWCDB *m_database;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MyWCDB *m_database; // @synthesize m_database;
 - (void)getStrangerCommentForDataItem:(id)arg1 partner:(id)arg2;
 - (void)addComment:(id)arg1 toItem:(id)arg2;

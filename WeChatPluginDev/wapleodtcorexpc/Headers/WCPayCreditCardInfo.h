@@ -35,7 +35,6 @@
     NSArray *m_aryExtList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_aryExtList; // @synthesize m_aryExtList;
 @property(retain, nonatomic) NSString *m_nsExtGroupTitle; // @synthesize m_nsExtGroupTitle;
 @property(retain, nonatomic) NSArray *m_aryCreditLimitExtList; // @synthesize m_aryCreditLimitExtList;

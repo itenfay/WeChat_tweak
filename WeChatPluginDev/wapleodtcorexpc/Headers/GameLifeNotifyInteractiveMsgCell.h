@@ -19,7 +19,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;

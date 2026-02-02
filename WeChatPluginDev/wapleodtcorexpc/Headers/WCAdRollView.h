@@ -13,7 +13,6 @@
     WCAdRollTextView *_rollText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdRollTextView *rollText; // @synthesize rollText=_rollText;
 @property(retain, nonatomic) WCAdURLImageView *rollIcon; // @synthesize rollIcon=_rollIcon;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

@@ -13,7 +13,6 @@
 }
 
 + (double)cellHeightForWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)layoutSubviews;
 - (void)initSubviews;

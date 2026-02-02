@@ -18,7 +18,6 @@
 + (_Bool)isSectionIdentifierEqualsTo:(id)arg1;
 + (double)cellHeight;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *cellViewCornerMaskLayer; // @synthesize cellViewCornerMaskLayer=_cellViewCornerMaskLayer;
 @property(nonatomic) unsigned long long cellViewCurrentCorner; // @synthesize cellViewCurrentCorner=_cellViewCurrentCorner;
 @property(retain, nonatomic) UILabel *loadMoreLabel; // @synthesize loadMoreLabel=_loadMoreLabel;

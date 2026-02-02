@@ -13,7 +13,6 @@
     long long _renderEnv;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long renderEnv; // @synthesize renderEnv=_renderEnv;
 @property(retain, nonatomic) NSMutableDictionary *renderContextDict; // @synthesize renderContextDict=_renderContextDict;
 - (_Bool)isValid;

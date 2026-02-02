@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, VoipRecentStatusFadeView, WCFinderSimplePlayerView;
 
@@ -20,7 +21,6 @@
     VoipRecentStatusFadeView *_bottomFadeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoipRecentStatusFadeView *bottomFadeView; // @synthesize bottomFadeView=_bottomFadeView;
 @property(retain, nonatomic) VoipRecentStatusFadeView *topFadeView; // @synthesize topFadeView=_topFadeView;
 @property(retain, nonatomic) UIImageView *soundIconImageView; // @synthesize soundIconImageView=_soundIconImageView;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveBatchRewardAnimationWeVisionRenderer, MMFinderLiveGiftAttackRenderLogic, MMFinderLiveGiftPlayItem, MMFinderLiveNotifyGiftNotificationView, MMFinderLivePlayGiftAnimationCommand, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveGiftMagicRewardHandler, MMLiveHapticsPlayer, MMLiveInteractionGiftRenderLogic, MMTimer, MMUILabel, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PAGView, RfxPagView, UIImageView, UILabel, UIView, _TtC6WeChat15MagicRewardView;
 @protocol MMLiveRewardGiftRecievingAnimationViewDelegate;
 
@@ -70,7 +72,6 @@
 + (double)giftNotificationHeightWithRole:(_Bool)arg1;
 + (double)getMaxContentHeightWithRole:(_Bool)arg1;
 + (double)getHeightWithGiftCount:(unsigned long long)arg1 isAudience:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *usernameToLatestAttackedInfoDic; // @synthesize usernameToLatestAttackedInfoDic=_usernameToLatestAttackedInfoDic;
 @property(retain, nonatomic) NSMutableDictionary *pagAudioFileOverWriteCounters; // @synthesize pagAudioFileOverWriteCounters=_pagAudioFileOverWriteCounters;
 @property(retain, nonatomic) NSString *viewId; // @synthesize viewId=_viewId;
@@ -294,4 +295,3 @@
 @property(readonly) Class superclass;
 
 @end
-

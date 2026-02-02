@@ -16,7 +16,6 @@
 }
 
 + (_Bool)checkDeviceUUIDMatch:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <PreEnterStepDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)topViewController;
 - (id)rootMMViewController;

@@ -22,7 +22,6 @@
     UIColor *_pillarColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *pillarColor; // @synthesize pillarColor=_pillarColor;
 @property(nonatomic) float maxHeight; // @synthesize maxHeight=_maxHeight;
 @property(nonatomic) unsigned int pillarsCount; // @synthesize pillarsCount=_pillarsCount;

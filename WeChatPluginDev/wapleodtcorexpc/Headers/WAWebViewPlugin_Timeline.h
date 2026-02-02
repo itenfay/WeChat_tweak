@@ -13,7 +13,6 @@
     id <IWATimelineService> _timelineService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWATimelineService> timelineService; // @synthesize timelineService=_timelineService;
 @property(nonatomic) __weak id <IWAWebViewPluginDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
 @property(nonatomic) _Bool shouldShowShareTimelineMenu; // @synthesize shouldShowShareTimelineMenu=_shouldShowShareTimelineMenu;

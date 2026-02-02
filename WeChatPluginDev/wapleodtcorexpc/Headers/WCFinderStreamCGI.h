@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSMutableArray, WCFinderStreamRequestParams;
 
 @interface WCFinderStreamCGI
@@ -25,7 +27,6 @@
 + (_Bool)hasReddotFinderObjectWithTab:(int)arg1 bubbleInfo:(id)arg2;
 + (id)getStreamRequestTopObjectsWithTabType:(int)arg1 tabTipsObjectId:(unsigned long long)arg2 guideBarObjectId:(unsigned long long)arg3 h5ByPass:(id)arg4 topObjects:(id)arg5 bubbleInfo:(id)arg6 relateTid:(unsigned long long)arg7;
 + (id)prefetchCacheHashKey:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStreamRequestParams *params; // @synthesize params=_params;
 @property(nonatomic) int commentscene; // @synthesize commentscene=_commentscene;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
@@ -59,4 +60,3 @@
 - (id)initWithPullType:(unsigned long long)arg1 buffer:(id)arg2 tabType:(int)arg3 commentscene:(int)arg4 params:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failureBlock:(CDUnknownBlockType)arg7;
 
 @end
-

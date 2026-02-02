@@ -13,7 +13,6 @@
     id <WCDeviceAuthLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCDeviceAuthLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleWCDeviceAuthResopnse:(id)arg1;

@@ -17,7 +17,6 @@
 }
 
 + (id)createLiveAudiencePromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) FinderLiveShopWindowAdItem *adItem; // @synthesize adItem=_adItem;
 @property(retain, nonatomic) NSData *reportExtBuffer; // @synthesize reportExtBuffer=_reportExtBuffer;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TextStateModel, WCCommentDataService, WCCommentObject;
 @protocol TextStateDetailViewModelDelegate;
@@ -49,7 +50,6 @@
     struct _NSRange _commentTextViewLatestSelectionRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *commitPastedStrArray; // @synthesize commitPastedStrArray=_commitPastedStrArray;
 @property(retain, nonatomic) NSMutableArray *pastedStrArray; // @synthesize pastedStrArray=_pastedStrArray;
 @property(nonatomic) _Bool autoExpandSubCommentList; // @synthesize autoExpandSubCommentList=_autoExpandSubCommentList;
@@ -156,4 +156,3 @@
 @property(readonly) Class superclass;
 
 @end
-

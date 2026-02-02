@@ -17,7 +17,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didSetDarkModeObserver; // @synthesize didSetDarkModeObserver=_didSetDarkModeObserver;
 - (void)didSetDynamicYYImage;
 - (long long)overrideStyle;

@@ -17,7 +17,6 @@
     NSString *_resultNickName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resultNickName; // @synthesize resultNickName=_resultNickName;
 @property(copy, nonatomic) NSString *resultPagePath; // @synthesize resultPagePath=_resultPagePath;
 @property(nonatomic) unsigned int resultAppState; // @synthesize resultAppState=_resultAppState;

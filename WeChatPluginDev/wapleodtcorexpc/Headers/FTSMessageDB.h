@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSDB;
 
@@ -14,7 +15,6 @@
     _Bool _isHandlingAutoReparing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHandlingAutoReparing; // @synthesize isHandlingAutoReparing=_isHandlingAutoReparing;
 @property(nonatomic) _Bool isHandlingUsernameFailIdRetry; // @synthesize isHandlingUsernameFailIdRetry=_isHandlingUsernameFailIdRetry;
 @property(retain, nonatomic) FTSDB *database; // @synthesize database=_database;
@@ -45,4 +45,3 @@
 - (_Bool)asyncCheckAndRepair:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -23,7 +23,6 @@
     WCFinderBaseCgi *_finderSearchCGI;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBaseCgi *finderSearchCGI; // @synthesize finderSearchCGI=_finderSearchCGI;
 @property(nonatomic) unsigned long long searchSourceType; // @synthesize searchSourceType=_searchSourceType;
 @property(nonatomic) unsigned long long refreshTime; // @synthesize refreshTime=_refreshTime;

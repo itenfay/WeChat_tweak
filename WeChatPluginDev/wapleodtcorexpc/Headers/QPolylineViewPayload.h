@@ -19,7 +19,6 @@
     double _symbolGap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double symbolGap; // @synthesize symbolGap=_symbolGap;
 @property(retain, nonatomic) UIImage *symbolImage; // @synthesize symbolImage=_symbolImage;
 @property(nonatomic) _Bool useGradient; // @synthesize useGradient=_useGradient;

@@ -54,7 +54,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsIdentifier; // @synthesize nsIdentifier=_nsIdentifier;
 @property(nonatomic) long long firstSvrId; // @synthesize firstSvrId=_firstSvrId;
 @property(nonatomic) unsigned int hiddenCount; // @synthesize hiddenCount=_hiddenCount;

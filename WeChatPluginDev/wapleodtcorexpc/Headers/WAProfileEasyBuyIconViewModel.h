@@ -18,7 +18,6 @@
 }
 
 + (id)createWithRelievedBuyInfo:(id)arg1 position:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int iconHeight; // @synthesize iconHeight=_iconHeight;
 @property(nonatomic) unsigned int iconWidth; // @synthesize iconWidth=_iconWidth;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

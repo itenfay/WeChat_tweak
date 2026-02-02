@@ -13,7 +13,6 @@
     AccountErrorInfo *_errorInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AccountErrorInfo *errorInfo; // @synthesize errorInfo=_errorInfo;
 @property(nonatomic) long long returnCode; // @synthesize returnCode=_returnCode;
 

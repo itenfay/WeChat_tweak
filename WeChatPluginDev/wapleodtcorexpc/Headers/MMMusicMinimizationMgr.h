@@ -13,7 +13,6 @@
     MMMusicInfo *_lastPlayMusic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool startSuccesss; // @synthesize startSuccesss=_startSuccesss;
 @property(retain, nonatomic) MMMusicInfo *lastPlayMusic; // @synthesize lastPlayMusic=_lastPlayMusic;
 @property(nonatomic) _Bool autoCloseAtFinish; // @synthesize autoCloseAtFinish=_autoCloseAtFinish;

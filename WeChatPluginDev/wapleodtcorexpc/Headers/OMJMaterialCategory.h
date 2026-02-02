@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_93f81c78 backingCategory; // @synthesize backingCategory=_backingCategory;
 @property(readonly, nonatomic) NSArray *materialInfos; // @synthesize materialInfos=_materialInfos;
 @property(readonly, nonatomic) NSString *previewImageURL; // @synthesize previewImageURL=_previewImageURL;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderDataItem;
 
 @interface WCFinderBanLiveCommentCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) long long liveScene; // @synthesize liveScene=_liveScene;
@@ -30,4 +31,3 @@
 - (id)initWithDataItem:(id)arg1 audienceUsername:(id)arg2 scene:(unsigned long long)arg3 liveScene:(long long)arg4 enable:(_Bool)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

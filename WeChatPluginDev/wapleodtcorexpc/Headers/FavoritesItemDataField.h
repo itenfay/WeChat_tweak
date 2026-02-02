@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FavBrandMpVideoItem, FavEmoticonItem, FavLocationItem, FavProductItem, FavReferMsgItem, FavStreamVideoItem, FavTVItem, FavURLItem, FavWeAppItem, FavoritesDataItemSource, LiteAppSharedItem, MMMusicShareItem, NSArray, NSString, TingShareCategoryItem, TingShareListenItem, WCFinderContentColumnSharedItem, WCFinderLiveProductShareItem, WCFinderLiveShareItem, WCFinderLiveShopWindowShareItem, WCFinderMessageShareNameCard, WCFinderShareToMomentsItem, WCFinderThemeLiveStreamShareItem, WCFinderTopicShareItem, WCMegaVideoShareItem;
 
 @interface FavoritesItemDataField
@@ -111,7 +113,6 @@
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tpAesKey; // @synthesize tpAesKey=_tpAesKey;
 @property(retain, nonatomic) NSString *tpDataUrl; // @synthesize tpDataUrl=_tpDataUrl;
 @property(retain, nonatomic) NSString *tpThumbAeskey; // @synthesize tpThumbAeskey=_tpThumbAeskey;
@@ -252,4 +253,3 @@
 @property(readonly) Class superclass;
 
 @end
-

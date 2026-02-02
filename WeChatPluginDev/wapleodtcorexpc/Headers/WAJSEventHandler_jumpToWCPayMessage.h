@@ -10,7 +10,6 @@
     WCPayJumpC2CMessageJsapiLogic *_m_jumpC2CMessageJsapiLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayJumpC2CMessageJsapiLogic *m_jumpC2CMessageJsapiLogic; // @synthesize m_jumpC2CMessageJsapiLogic=_m_jumpC2CMessageJsapiLogic;
 - (void)onWCBaseLogicDidStop:(unsigned int)arg1;
 - (void)handleJSEvent:(id)arg1;

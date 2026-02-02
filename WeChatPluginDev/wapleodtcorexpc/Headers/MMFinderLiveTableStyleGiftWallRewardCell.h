@@ -16,7 +16,6 @@
     NSMutableArray *_signViewArraryForLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *signViewArraryForLayout; // @synthesize signViewArraryForLayout=_signViewArraryForLayout;
 @property(retain, nonatomic) MMWebImageView *giftImageView; // @synthesize giftImageView=_giftImageView;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *mysteriousSignView; // @synthesize mysteriousSignView=_mysteriousSignView;

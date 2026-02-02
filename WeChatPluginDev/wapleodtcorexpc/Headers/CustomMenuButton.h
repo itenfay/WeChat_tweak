@@ -30,7 +30,6 @@
 + (int)serverActionType2LocalCustomType:(long long)arg1;
 + (long long)localCustomActionType2ServerType:(long long)arg1;
 + (int)serverType2LocalCustom:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MpEcsJumpInfo *menuEcsJumpInfo; // @synthesize menuEcsJumpInfo=_menuEcsJumpInfo;
 @property(nonatomic) _Bool isSubMenuListHasIcon; // @synthesize isSubMenuListHasIcon=_isSubMenuListHasIcon;
 @property(nonatomic) _Bool isSubMenu; // @synthesize isSubMenu=_isSubMenu;

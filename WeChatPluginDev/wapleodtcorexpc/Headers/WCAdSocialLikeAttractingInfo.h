@@ -20,7 +20,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *iconPagDarkMD5; // @synthesize iconPagDarkMD5=_iconPagDarkMD5;
 @property(retain, nonatomic) NSString *iconPagDarkUrl; // @synthesize iconPagDarkUrl=_iconPagDarkUrl;
 @property(retain, nonatomic) NSString *iconPagMD5; // @synthesize iconPagMD5=_iconPagMD5;

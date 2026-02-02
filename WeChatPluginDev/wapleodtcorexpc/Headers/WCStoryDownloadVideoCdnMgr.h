@@ -16,7 +16,6 @@
     NSArray *_arrSmoothNetworkPreload;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastPreloadChatRoomTime; // @synthesize lastPreloadChatRoomTime=_lastPreloadChatRoomTime;
 @property(retain, nonatomic) NSArray *arrSmoothNetworkPreload; // @synthesize arrSmoothNetworkPreload=_arrSmoothNetworkPreload;
 @property(retain, nonatomic) NSArray *arrBadNetworkPreload; // @synthesize arrBadNetworkPreload=_arrBadNetworkPreload;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupInputView, MMFinderLiveTaskId, MMUILabel, NSString, UIButton, UIView;
 
 @interface MMFinderLiveFansGroupNameModifyPanel
@@ -18,7 +20,6 @@
     double _keyBoardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double keyBoardHeight; // @synthesize keyBoardHeight=_keyBoardHeight;
 @property(nonatomic) _Bool isKeyBoardShow; // @synthesize isKeyBoardShow=_isKeyBoardShow;
 @property(retain, nonatomic) UIButton *modifyButton; // @synthesize modifyButton=_modifyButton;
@@ -50,4 +51,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

@@ -22,7 +22,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppid:(id)arg1 username:(id)arg2 path:(id)arg3 scene:(id)arg4 scene_note:(id)arg5 extra_data:(id)arg6 referrer_info_extra_data:(id)arg7 app_version:(id)arg8;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *app_version; // @synthesize app_version=_app_version;
 @property(copy, nonatomic) NSString *referrer_info_extra_data; // @synthesize referrer_info_extra_data=_referrer_info_extra_data;
 @property(copy, nonatomic) NSString *extra_data; // @synthesize extra_data=_extra_data;

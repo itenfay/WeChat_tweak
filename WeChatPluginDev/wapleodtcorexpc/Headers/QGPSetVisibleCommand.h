@@ -10,7 +10,6 @@
     QGPSetVisibleParam *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPSetVisibleParam *params; // @synthesize params=_params;
 
 @end

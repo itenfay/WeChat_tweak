@@ -24,7 +24,6 @@
     MISSING_TYPE *layoutHorizontalInset;
 }
 
-- (void).cxx_destruct;
 - (void)onTabsViewValueChanged:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

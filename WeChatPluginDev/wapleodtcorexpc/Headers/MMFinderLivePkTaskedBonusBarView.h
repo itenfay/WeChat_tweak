@@ -18,7 +18,6 @@
     MMFinderLivePkTaskedBonusModel *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePkTaskedBonusModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) UIImageView *rightChevronView; // @synthesize rightChevronView=_rightChevronView;
 @property(retain, nonatomic) UIView<MMFinderLivePkTaskedBonusBarContentView> *contentView; // @synthesize contentView=_contentView;

@@ -17,7 +17,6 @@
     NSString *_accessibilityContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessibilityContent; // @synthesize accessibilityContent=_accessibilityContent;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

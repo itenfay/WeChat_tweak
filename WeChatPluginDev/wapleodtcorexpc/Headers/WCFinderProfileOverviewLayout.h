@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_layouts;
 + (void)PBArrayAdd_secType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(nonatomic) long long secType; // @synthesize secType=_secType;
 - (id)getPBPropertyTable;

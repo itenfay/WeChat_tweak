@@ -14,7 +14,6 @@
     MISSING_TYPE *value;
 }
 
-- (void).cxx_destruct;
 - (id)initWithLogID:(long long)arg1 value:(id)arg2 type:(long long)arg3;
 - (id)init;
 @property(nonatomic, readonly) NSString *value;

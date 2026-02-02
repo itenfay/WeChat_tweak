@@ -15,7 +15,6 @@
     WCPayDigitalCertManageViewController *_digitalCertVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayDigitalCertManageViewController *digitalCertVC; // @synthesize digitalCertVC=_digitalCertVC;
 @property(retain, nonatomic) PaySecurityResp *response; // @synthesize response=_response;
 @property(retain, nonatomic) WCPayPaySecurityCgi *cgi; // @synthesize cgi=_cgi;

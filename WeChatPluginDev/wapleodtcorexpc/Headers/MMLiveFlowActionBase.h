@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLiveFlowActionBase : NSObject
 {
@@ -17,4 +18,3 @@
 - (void)invokeWithInput:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end
-

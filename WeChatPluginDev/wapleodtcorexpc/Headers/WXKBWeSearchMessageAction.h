@@ -10,7 +10,6 @@
     NSDictionary *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dataItem; // @synthesize dataItem=_dataItem;
 - (void)report;
 - (_Bool)openBrandProfileWithMessage:(id)arg1 chatContact:(id)arg2;

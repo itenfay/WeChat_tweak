@@ -22,7 +22,6 @@
     id <WCPayBindCardConfirmViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <WCPayBindCardConfirmViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property double minHeight; // @synthesize minHeight=_minHeight;
 @property(retain) UIButton *refuseButton; // @synthesize refuseButton=_refuseButton;

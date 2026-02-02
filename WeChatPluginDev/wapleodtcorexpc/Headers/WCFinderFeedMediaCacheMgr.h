@@ -16,7 +16,6 @@
     NSMutableArray *_watchList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *watchList; // @synthesize watchList=_watchList;
 @property(copy, nonatomic) NSString *contextId; // @synthesize contextId=_contextId;
 @property(retain, nonatomic) NSMutableDictionary *metricDict; // @synthesize metricDict=_metricDict;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 @protocol GCDWebServerBodyReader;
@@ -27,7 +28,6 @@
 + (id)response;
 + (id)responseWithRedirect:(id)arg1 permanent:(_Bool)arg2;
 + (id)responseWithStatusCode:(long long)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *additionalHeaders; // @synthesize additionalHeaders=_headers;
 @property(nonatomic, getter=isGZipContentEncodingEnabled) _Bool gzipContentEncodingEnabled; // @synthesize gzipContentEncodingEnabled=_gzipped;
 @property(copy, nonatomic) NSString *eTag; // @synthesize eTag=_eTag;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

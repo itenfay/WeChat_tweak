@@ -16,7 +16,6 @@
     SightIconView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIView *failureTipsView; // @synthesize failureTipsView=_failureTipsView;
 @property(retain, nonatomic) MMWebImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;

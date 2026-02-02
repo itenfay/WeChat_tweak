@@ -12,7 +12,6 @@
     NSOperationQueue *_operationQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void)stopAll;
 - (void)stopPreloadWithItem:(id)arg1;

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_musicList;
 + (void)PBArrayAdd_musicCategory;
 + (void)PBArrayAdd_playList;
-- (void).cxx_destruct;
 @property(nonatomic) long long musicCnt; // @synthesize musicCnt=_musicCnt;
 @property(retain, nonatomic) NSArray *musicList; // @synthesize musicList=_musicList;
 @property(retain, nonatomic) MMListenCategoryItem *musicCategory; // @synthesize musicCategory=_musicCategory;

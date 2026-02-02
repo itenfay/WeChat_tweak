@@ -16,7 +16,6 @@
 
 + (double)cellHeightForOrder:(id)arg1 inWidth:(double)arg2 estimate:(_Bool)arg3;
 + (double)availableContentWidthForCellWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightingView; // @synthesize highlightingView=_highlightingView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) MMCustomerOrderInfo *order; // @synthesize order=_order;

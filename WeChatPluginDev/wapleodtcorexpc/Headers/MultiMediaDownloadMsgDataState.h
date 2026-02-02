@@ -14,7 +14,6 @@
     MsgDataDownloadLogic *_downloadLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgDataDownloadLogic *downloadLogic; // @synthesize downloadLogic=_downloadLogic;
 @property(retain, nonatomic) CMessageWrap *sourceMsgWrap; // @synthesize sourceMsgWrap=_sourceMsgWrap;
 @property(retain, nonatomic) NSString *downloadMiddleKey; // @synthesize downloadMiddleKey=_downloadMiddleKey;

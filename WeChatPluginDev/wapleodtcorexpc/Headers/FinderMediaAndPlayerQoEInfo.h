@@ -32,7 +32,6 @@
 }
 
 + (id)defaultFinderPlayerQoEInfo;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bReadyToPlay; // @synthesize bReadyToPlay=_bReadyToPlay;
 @property(nonatomic) int loopCount; // @synthesize loopCount=_loopCount;
 @property(nonatomic) float playablePos; // @synthesize playablePos=_playablePos;

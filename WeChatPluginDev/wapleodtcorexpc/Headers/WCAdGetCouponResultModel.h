@@ -15,7 +15,6 @@
     NSString *_msg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *msg; // @synthesize msg=_msg;

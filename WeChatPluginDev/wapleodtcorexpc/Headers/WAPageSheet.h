@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPageSheetAdapter, NSString, UIView, WAPageSheetContentView;
 @protocol WAPageSheetDelegate;
 
@@ -19,7 +21,6 @@
     CDUnknownBlockType _dismissCompleteAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissCompleteAction; // @synthesize dismissCompleteAction=_dismissCompleteAction;
 @property(copy, nonatomic) CDUnknownBlockType showCompleteAction; // @synthesize showCompleteAction=_showCompleteAction;
 @property(retain, nonatomic) WAPageSheet *retainSheet; // @synthesize retainSheet=_retainSheet;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

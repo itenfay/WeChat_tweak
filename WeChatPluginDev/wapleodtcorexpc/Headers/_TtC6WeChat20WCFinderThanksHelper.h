@@ -12,7 +12,6 @@
 + (double)getThanksPartyMagicDelay;
 + (id)genThanksMagicEmojiMetaWithEmojiKey:(id)arg1;
 + (long long)thankStyleForReportWithThankIconType:(int)arg1;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -12,7 +12,6 @@
     MMFinderLiveStickerEditingActivatorContainerView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveStickerEditingActivatorContainerView *containerView; // @synthesize containerView=_containerView;
 
 @end

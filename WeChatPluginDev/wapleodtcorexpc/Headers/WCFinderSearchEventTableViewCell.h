@@ -12,7 +12,6 @@
     MMWebImageView *_coverImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) UILabel *participateNumLabel; // @synthesize participateNumLabel=_participateNumLabel;
 @property(retain, nonatomic) UILabel *eventNameLabel; // @synthesize eventNameLabel=_eventNameLabel;

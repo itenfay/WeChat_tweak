@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCPipContentSourcePlaybackDelegateObj, WCPlayerPipDisplayLayerView;
 
 @interface WCPipContentSourcePlayer_SampleBuffer
@@ -18,7 +20,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType seekCompletionHandler; // @synthesize seekCompletionHandler=_seekCompletionHandler;
 @property(retain, nonatomic) WCPipContentSourcePlaybackDelegateObj *playbackDelegateObj; // @synthesize playbackDelegateObj=_playbackDelegateObj;
 @property(nonatomic) int pipControllerPlayState; // @synthesize pipControllerPlayState=_pipControllerPlayState;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

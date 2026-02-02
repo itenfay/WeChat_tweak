@@ -15,7 +15,6 @@
     RTEAttachmentView *_attachmentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak RTEAttachmentView *attachmentView; // @synthesize attachmentView=_attachmentView;
 @property(nonatomic) unsigned long long focusLocation; // @synthesize focusLocation=_focusLocation;
 @property(nonatomic) __weak id <WNAccessibilityElementDelegate> delegate; // @synthesize delegate=_delegate;

@@ -26,7 +26,6 @@
     unsigned long long _lastUpdateVolumeTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastUpdateVolumeTime; // @synthesize lastUpdateVolumeTime=_lastUpdateVolumeTime;
 @property(retain, nonatomic) UILabel *talkTipLabel; // @synthesize talkTipLabel=_talkTipLabel;
 @property(retain, nonatomic) UIImageView *talkingImageView; // @synthesize talkingImageView=_talkingImageView;

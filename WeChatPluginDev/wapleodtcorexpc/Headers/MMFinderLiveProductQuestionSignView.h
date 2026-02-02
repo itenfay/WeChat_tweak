@@ -22,7 +22,6 @@
 + (id)signLabelFont;
 + (id)productQuestionSignText;
 + (struct CGSize)getProductQuestionSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *signLabel; // @synthesize signLabel=_signLabel;
 @property(retain, nonatomic) UIImageView *iconImgView; // @synthesize iconImgView=_iconImgView;
 - (void)layoutSignLabel;

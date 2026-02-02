@@ -17,7 +17,6 @@
     double _lastRequestTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastRequestTime; // @synthesize lastRequestTime=_lastRequestTime;
 @property(nonatomic) unsigned int nextRequestDuration; // @synthesize nextRequestDuration=_nextRequestDuration;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;

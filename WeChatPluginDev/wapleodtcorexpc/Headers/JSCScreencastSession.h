@@ -27,7 +27,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)recordingLoop;
 - (void)ackFrame:(int)arg1;
 - (void)stop;

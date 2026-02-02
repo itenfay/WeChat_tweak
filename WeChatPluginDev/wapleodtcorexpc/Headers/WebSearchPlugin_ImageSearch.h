@@ -10,7 +10,6 @@
     WCImageSearchReportModel *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCImageSearchReportModel *reporter; // @synthesize reporter=_reporter;
 - (void)handleEvent:(id)arg1 userInfo:(id)arg2;
 

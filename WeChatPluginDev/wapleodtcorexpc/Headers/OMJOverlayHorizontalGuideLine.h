@@ -11,7 +11,6 @@
     UIView *_lineRight;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineRight; // @synthesize lineRight=_lineRight;
 @property(retain, nonatomic) UIView *lineLeft; // @synthesize lineLeft=_lineLeft;
 - (void)configWithGuideLineStyle:(id)arg1;

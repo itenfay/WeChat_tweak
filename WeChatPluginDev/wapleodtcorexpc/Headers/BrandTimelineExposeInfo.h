@@ -78,7 +78,6 @@
 + (void)fillData:(id)arg1 withFinderFixedCellViewModel:(id)arg2 index:(long long)arg3;
 + (id)genKeyForBaseItemViewModel:(id)arg1;
 + (id)readerKeyPrefix;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportRealTimeValidExposed; // @synthesize hasReportRealTimeValidExposed=_hasReportRealTimeValidExposed;
 @property(nonatomic) _Bool hasReportRealTimeExposed; // @synthesize hasReportRealTimeExposed=_hasReportRealTimeExposed;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;

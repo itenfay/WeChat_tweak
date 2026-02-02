@@ -14,7 +14,6 @@
     NSString *_resource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resource; // @synthesize resource=_resource;
 @property(nonatomic) unsigned int resourceId; // @synthesize resourceId=_resourceId;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

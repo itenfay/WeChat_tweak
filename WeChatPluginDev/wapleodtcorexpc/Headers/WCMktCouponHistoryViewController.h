@@ -12,7 +12,6 @@
     UIView *_emptyView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WCMktCouponHistoryLogicController *logicController; // @synthesize logicController=_logicController;

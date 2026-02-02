@@ -40,7 +40,6 @@
     UIImage *_albumImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 @property(retain, nonatomic) UIImage *albumImage; // @synthesize albumImage=_albumImage;
 @property(copy, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;

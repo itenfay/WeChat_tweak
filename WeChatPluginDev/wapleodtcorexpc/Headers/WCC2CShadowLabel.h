@@ -16,7 +16,6 @@
     UIView *_shadowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UILabel *frontTextLabel; // @synthesize frontTextLabel=_frontTextLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;

@@ -14,7 +14,6 @@
 }
 
 + (id)generateBizCContactInfo:(id)arg1 fromStrange:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fromStrange; // @synthesize fromStrange=_fromStrange;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 

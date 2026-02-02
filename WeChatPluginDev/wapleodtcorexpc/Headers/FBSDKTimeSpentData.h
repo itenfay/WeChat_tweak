@@ -28,7 +28,6 @@
 + (id)singleton;
 + (void)restore:(_Bool)arg1;
 + (void)suspend;
-- (void).cxx_destruct;
 - (id)appEventsParametersForDeactivate;
 - (id)appEventsParametersForActivate;
 - (void)instanceRestore:(_Bool)arg1;

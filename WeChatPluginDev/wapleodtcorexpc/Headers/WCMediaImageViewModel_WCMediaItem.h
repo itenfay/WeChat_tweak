@@ -10,7 +10,6 @@
     WCMediaItem *_mediaItem;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void)fillExtraDataInImageMaterial:(id)arg1;
 - (_Bool)isLivePhoto;

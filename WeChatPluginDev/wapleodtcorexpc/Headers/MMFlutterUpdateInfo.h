@@ -44,7 +44,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5;
 @property(nonatomic) unsigned long long updateTime; // @synthesize updateTime;

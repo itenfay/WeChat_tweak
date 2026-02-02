@@ -17,7 +17,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMarqueeTextView *lyricsMarqueeView; // @synthesize lyricsMarqueeView=_lyricsMarqueeView;
 @property(retain, nonatomic) UILabel *titleLabelView; // @synthesize titleLabelView=_titleLabelView;
 @property(retain, nonatomic) WCStoryLyricWaveView *waveIconView; // @synthesize waveIconView=_waveIconView;

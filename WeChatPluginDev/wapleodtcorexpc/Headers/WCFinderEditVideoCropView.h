@@ -25,7 +25,6 @@
     double _videoLegnth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double videoLegnth; // @synthesize videoLegnth=_videoLegnth;
 @property(nonatomic) _Bool ignoreShock; // @synthesize ignoreShock=_ignoreShock;
 @property(nonatomic) double lastEndTime; // @synthesize lastEndTime=_lastEndTime;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WMPFLaunchTipView : UIView
 {
@@ -23,4 +24,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 isGame:(_Bool)arg2;
 
 @end
-

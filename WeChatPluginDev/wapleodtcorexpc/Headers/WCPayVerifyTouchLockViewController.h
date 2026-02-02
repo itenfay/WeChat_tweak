@@ -11,7 +11,6 @@
     id <WCPayVerifyTouchLockViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasCheckShowTouchId; // @synthesize bHasCheckShowTouchId=_bHasCheckShowTouchId;
 @property(nonatomic) __weak id <WCPayVerifyTouchLockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onBackButtonClick;

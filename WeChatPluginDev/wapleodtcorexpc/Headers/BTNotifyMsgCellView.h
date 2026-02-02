@@ -14,7 +14,6 @@
     MMHeadImageView *_headerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMHeadImageView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIButton *messageTipsVew; // @synthesize messageTipsVew=_messageTipsVew;
 @property(retain, nonatomic) BTNotifySectionData *viewModel; // @synthesize viewModel=_viewModel;

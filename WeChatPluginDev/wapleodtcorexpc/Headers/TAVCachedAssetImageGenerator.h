@@ -4,6 +4,7 @@
 //
 
 #import <AVFoundation/AVAssetImageGenerator.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)assetImageGeneratorWithAsset:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 - (id)keyAtTime:(CDStruct_1b6d18a9)arg1;
 - (_Bool)hasCacheAtTime:(CDStruct_1b6d18a9)arg1;
@@ -23,4 +23,3 @@
 - (id)initWithAsset:(id)arg1;
 
 @end
-

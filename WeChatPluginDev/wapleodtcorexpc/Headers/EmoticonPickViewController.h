@@ -15,7 +15,6 @@
     EmoticonCustomManageAddLogic *_addEmoticonLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomManageAddLogic *addEmoticonLogic; // @synthesize addEmoticonLogic=_addEmoticonLogic;
 @property(retain, nonatomic) UIImageView *m_imageView; // @synthesize m_imageView=_m_imageView;
 @property(retain, nonatomic) NSString *m_localMd5; // @synthesize m_localMd5;

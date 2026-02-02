@@ -25,7 +25,6 @@
 }
 
 + (id)stringForContacts:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sendType; // @synthesize sendType=_sendType;
 @property(retain, nonatomic) NSString *oldMailId; // @synthesize oldMailId=_oldMailId;
 @property(retain, nonatomic) NSString *tipWording; // @synthesize tipWording;

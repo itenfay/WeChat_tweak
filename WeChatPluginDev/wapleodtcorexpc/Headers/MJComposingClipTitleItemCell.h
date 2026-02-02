@@ -13,7 +13,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCellSelected; // @synthesize isCellSelected=_isCellSelected;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)configCellWithTitle:(id)arg1;

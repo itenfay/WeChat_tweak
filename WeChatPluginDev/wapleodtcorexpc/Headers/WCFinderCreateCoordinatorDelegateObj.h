@@ -14,7 +14,6 @@
 }
 
 + (id)bindDelegateObjWithHost:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 @property(nonatomic) __weak id delegateHost; // @synthesize delegateHost=_delegateHost;
 - (void)finderCreateAccountCancel:(id)arg1;

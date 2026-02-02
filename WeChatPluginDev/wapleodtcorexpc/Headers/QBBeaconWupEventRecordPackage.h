@@ -12,7 +12,6 @@
 
 + (id)jceType;
 @property(retain, nonatomic, getter=list, setter=setList:) NSArray *jcev2_p_0_o_list__b0x9i_VOQBBeaconWupEventRecord; // @synthesize jcev2_p_0_o_list__b0x9i_VOQBBeaconWupEventRecord=_jcev2_p_0_o_list__b0x9i_VOQBBeaconWupEventRecord;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

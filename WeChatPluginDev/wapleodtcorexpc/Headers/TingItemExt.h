@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithExtInfo:(id)arg1 playIndex:(id)arg2 fromScene:(id)arg3 withFloatBall:(id)arg4 singerCategoryId:(id)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *singerCategoryId; // @synthesize singerCategoryId=_singerCategoryId;
 @property(retain, nonatomic) NSNumber *withFloatBall; // @synthesize withFloatBall=_withFloatBall;
 @property(retain, nonatomic) NSNumber *fromScene; // @synthesize fromScene=_fromScene;

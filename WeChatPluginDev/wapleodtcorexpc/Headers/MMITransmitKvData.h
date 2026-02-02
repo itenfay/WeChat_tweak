@@ -12,7 +12,6 @@
 
 + (id)create;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)getStringList:(id)arg1;
 - (id)getLongList:(id)arg1;
 - (id)getBoolList:(id)arg1;

@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_menu_username;
 + (void)PBArrayAdd_menu_jump_url;
 + (void)PBArrayAdd_menu_jump_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *menu_icon_url; // @synthesize menu_icon_url=_menu_icon_url;
 @property(retain, nonatomic) NSString *menu_title; // @synthesize menu_title=_menu_title;
 @property(retain, nonatomic) NSString *menu_path; // @synthesize menu_path=_menu_path;

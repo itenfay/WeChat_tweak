@@ -16,7 +16,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) long long corner; // @synthesize corner=_corner;

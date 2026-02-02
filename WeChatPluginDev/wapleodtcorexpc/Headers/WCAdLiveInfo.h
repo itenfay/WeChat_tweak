@@ -22,7 +22,6 @@
     NSArray *_liveCheerIconList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int liveStatus; // @synthesize liveStatus=_liveStatus;
 @property(retain, nonatomic) NSArray *liveCheerIconList; // @synthesize liveCheerIconList=_liveCheerIconList;
 @property(nonatomic) double likeAnimationInterval; // @synthesize likeAnimationInterval=_likeAnimationInterval;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameHaowanAlbumVideoItem, MMWebImageView, NSString, WCPlayerView;
 @protocol GameVideoPreviewControllerDelegate, GameVideoPreviewDataSource;
 
@@ -16,7 +18,6 @@
     MMWebImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) WCPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(nonatomic) __weak id <GameVideoPreviewDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

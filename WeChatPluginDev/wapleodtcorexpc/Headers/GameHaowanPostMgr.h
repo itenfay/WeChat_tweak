@@ -12,7 +12,6 @@
     NSMutableDictionary *_uploadTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *uploadTasks; // @synthesize uploadTasks=_uploadTasks;
 @property(retain, nonatomic) GameHaowanDatabaseHelper *databaseHelper; // @synthesize databaseHelper=_databaseHelper;
 @property(retain, nonatomic) NSMutableDictionary *reportEditProps; // @synthesize reportEditProps=_reportEditProps;

@@ -21,7 +21,6 @@
     unsigned long long _refreshInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstPageRequestFinished; // @synthesize isFirstPageRequestFinished=_isFirstPageRequestFinished;
 @property(nonatomic) unsigned long long refreshInterval; // @synthesize refreshInterval=_refreshInterval;
 @property(retain, nonatomic) WCFinderBaseCgi *requestCgi; // @synthesize requestCgi=_requestCgi;

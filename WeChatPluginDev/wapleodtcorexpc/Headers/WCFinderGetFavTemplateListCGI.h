@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderGetFavTemplateListCGI
@@ -16,7 +18,6 @@
 
 + (id)cachedHashKeyWithPageBufferUniqueId:(id)arg1;
 + (id)mmkvCachedKey;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pageBufferUniqueId; // @synthesize pageBufferUniqueId=_pageBufferUniqueId;
 @property(nonatomic) unsigned long long preFetchType; // @synthesize preFetchType=_preFetchType;
 @property(nonatomic) _Bool isPrefetchReq; // @synthesize isPrefetchReq=_isPrefetchReq;
@@ -38,4 +39,3 @@
 - (id)initWithPageBuf:(id)arg1 preFetchType:(unsigned long long)arg2 finderUserName:(id)arg3 successfulBlock:(CDUnknownBlockType)arg4 failedBlock:(CDUnknownBlockType)arg5;
 
 @end
-

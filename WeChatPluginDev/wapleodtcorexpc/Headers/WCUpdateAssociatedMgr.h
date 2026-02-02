@@ -17,7 +17,6 @@
 + (SEL)associateObjectForGetterName:(id)arg1;
 + (void)addMethodForClass:(Class)arg1 forSel:(SEL)arg2 withMethodType:(const char *)arg3 withPolicty:(unsigned long long)arg4;
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *selectorObjectNameDict; // @synthesize selectorObjectNameDict=_selectorObjectNameDict;
 @property(retain, nonatomic) NSMutableDictionary *methodSignatureSelectorDict; // @synthesize methodSignatureSelectorDict=_methodSignatureSelectorDict;
 - (struct _NSRange)centerGetNSRange;

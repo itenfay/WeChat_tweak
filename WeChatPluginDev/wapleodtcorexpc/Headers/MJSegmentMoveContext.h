@@ -16,7 +16,6 @@
     struct CGRect _movingSegmentOriginalFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint movingSegmentSnapshotOffset; // @synthesize movingSegmentSnapshotOffset=_movingSegmentSnapshotOffset;
 @property(nonatomic) struct CGPoint locationInMovingSnapshotLayer; // @synthesize locationInMovingSnapshotLayer=_locationInMovingSnapshotLayer;
 @property(nonatomic) struct CGPoint movingSegmentOriginalLocation; // @synthesize movingSegmentOriginalLocation=_movingSegmentOriginalLocation;

@@ -16,7 +16,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *flowViewsCache; // @synthesize flowViewsCache=_flowViewsCache;
 @property(retain, nonatomic) NSMutableDictionary *pageAdapterDict; // @synthesize pageAdapterDict=_pageAdapterDict;
 @property(retain, nonatomic) WCFinderTabPageView *tabPageView; // @synthesize tabPageView=_tabPageView;

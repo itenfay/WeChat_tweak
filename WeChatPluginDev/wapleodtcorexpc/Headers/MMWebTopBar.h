@@ -18,7 +18,6 @@
     SightIconView *_loadView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *loadView; // @synthesize loadView=_loadView;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) MMWebTopBarStyleConfig *currentStyle; // @synthesize currentStyle=_currentStyle;

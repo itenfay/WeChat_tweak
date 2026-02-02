@@ -28,7 +28,6 @@
     NSString *nowGroupId;
 }
 
-- (void).cxx_destruct;
 - (id)findTableView:(id)arg1;
 - (long long)tsTableView:(id)arg1 calcDataItemIndex:(long long)arg2;
 - (long long)tsTableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

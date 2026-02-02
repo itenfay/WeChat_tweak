@@ -14,7 +14,6 @@
     NSDictionary *_extraInfos;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *extraInfos; // @synthesize extraInfos=_extraInfos;
 @property(nonatomic) long long audioSampleRate; // @synthesize audioSampleRate=_audioSampleRate;
 @property(retain, nonatomic) NSString *audioFilePath; // @synthesize audioFilePath=_audioFilePath;

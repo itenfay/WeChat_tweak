@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderLiveGetShopShelfCGI
@@ -16,7 +18,6 @@
 }
 
 + (void)onGetResponse:(id)arg1 forTaskId:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *stockId; // @synthesize stockId=_stockId;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -29,4 +30,3 @@
 - (id)initWithFinderTaskId:(id)arg1 stockId:(id)arg2 pullScene:(unsigned int)arg3 liveCookies:(id)arg4 version:(unsigned long long)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

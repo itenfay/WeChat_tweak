@@ -10,7 +10,6 @@
     NSArray *_taps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *taps; // @synthesize taps=_taps;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) double timestamp;

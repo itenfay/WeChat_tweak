@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, FavDataItemWrap, FavoritesItem, FavoritesItemDataField, NSMutableArray, NSNumber, NSString, RTESectionMgr, RTETextView, WCDataItem, WNContentStorage, WNContentStorageBuilder;
 @protocol WeNoteDataControllerDelegate><WNTextViewOperationDelegate;
 
@@ -44,7 +46,6 @@
     struct _NSRange _selectedRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long locationForDeleteForwardBR; // @synthesize locationForDeleteForwardBR=_locationForDeleteForwardBR;
 @property(nonatomic) long long locationForDeleteFrontBR; // @synthesize locationForDeleteFrontBR=_locationForDeleteFrontBR;
 @property(retain, nonatomic) NSNumber *highlightOnNextInput; // @synthesize highlightOnNextInput=_highlightOnNextInput;
@@ -194,4 +195,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (void)reportMoreLiveFollowFoldAction:(unsigned long long)arg1 commentScene:(id)arg2 tabType:(unsigned int)arg3 subTabType:(unsigned int)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *switchExtraDic; // @synthesize switchExtraDic=_switchExtraDic;
 @property(retain, nonatomic) NSString *refPageId; // @synthesize refPageId=_refPageId;
 @property(nonatomic) unsigned long long enterPageTime; // @synthesize enterPageTime=_enterPageTime;

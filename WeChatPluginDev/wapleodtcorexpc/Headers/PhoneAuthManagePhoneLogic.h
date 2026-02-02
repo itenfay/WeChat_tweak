@@ -13,7 +13,6 @@
     NSString *_appid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;
 @property(nonatomic) __weak id <PhoneAuthManagePhoneLogicOperationDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;
 @property(nonatomic) __weak id <PhoneAuthManagePhoneLogicDelegate> delegate; // @synthesize delegate=_delegate;

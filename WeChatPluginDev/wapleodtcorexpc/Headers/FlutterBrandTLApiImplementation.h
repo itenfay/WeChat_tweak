@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BizBaseCallbackApi, BizCallbackApi, BizEnterStatusInfo, BrandTLExptConfig, BrandTimelineNotifyLogic, ForwardMessageLogicController, MMFlutterViewController, MMScrollActionSheet, NSMutableSet, NSString;
 @protocol BrandTLViewControllerProtocol;
@@ -22,7 +23,6 @@
     ForwardMessageLogicController *_forwardMsgLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardMsgLogic; // @synthesize forwardMsgLogic=_forwardMsgLogic;
 @property(retain, nonatomic) MMScrollActionSheet *shareActionSheet; // @synthesize shareActionSheet=_shareActionSheet;
 @property(retain, nonatomic) BizCallbackApi *bizApiCallback; // @synthesize bizApiCallback=_bizApiCallback;
@@ -149,4 +149,3 @@
 @property(readonly) Class superclass;
 
 @end
-

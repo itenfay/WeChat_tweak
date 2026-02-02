@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BrandProfileEnterInfo, CBaseContactInfoAssist, CContact, CContactVerifyLogic, CMessageWrap, ForwardMessageLogicController, MMPageSheetAdapter, MMTimer, MMUIButton, MMUIView, NSData, NSDictionary, NSMutableDictionary, NSString, SendVerifyMsgLogicController, TextStatePrivacyMgr, TextStateProfileCardContentView, TextStateProfileDragAnimateHelper, UIButton, UITableView, WCStoryDragAnimationUtil;
 @protocol ContactInfoViewControllerDelegate, contactInfoDelegate;
 
@@ -65,7 +67,6 @@
     TextStatePrivacyMgr *_shareScopeMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStatePrivacyMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) MMTimer *textStateRefTimer; // @synthesize textStateRefTimer=_textStateRefTimer;
@@ -250,4 +251,3 @@
 @property(readonly) Class superclass;
 
 @end
-

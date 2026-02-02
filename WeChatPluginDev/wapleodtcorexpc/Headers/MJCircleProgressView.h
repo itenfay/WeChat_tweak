@@ -17,7 +17,6 @@
     CALayer *_progressBackgroundLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *progressBackgroundLayer; // @synthesize progressBackgroundLayer=_progressBackgroundLayer;
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;
 @property(retain, nonatomic) UIColor *trackTintColor; // @synthesize trackTintColor=_trackTintColor;

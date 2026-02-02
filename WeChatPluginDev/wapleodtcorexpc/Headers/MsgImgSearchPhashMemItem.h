@@ -14,7 +14,6 @@
     NSString *_phashVersion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phashVersion; // @synthesize phashVersion=_phashVersion;
 @property(retain, nonatomic) NSString *phashStr; // @synthesize phashStr=_phashStr;
 @property(nonatomic) _Bool isCalcuateOK; // @synthesize isCalcuateOK=_isCalcuateOK;

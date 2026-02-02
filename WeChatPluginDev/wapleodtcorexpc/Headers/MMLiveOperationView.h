@@ -30,7 +30,6 @@
     unsigned long long _bottomShadowForbidOptionFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bottomShadowForbidOptionFlag; // @synthesize bottomShadowForbidOptionFlag=_bottomShadowForbidOptionFlag;
 @property(nonatomic) unsigned long long topShadowForbidOptionFlag; // @synthesize topShadowForbidOptionFlag=_topShadowForbidOptionFlag;
 @property(retain, nonatomic) MMLiveGradientView *bottomShadowView; // @synthesize bottomShadowView=_bottomShadowView;

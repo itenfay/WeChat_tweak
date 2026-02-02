@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIViewController (ModalView)
 @property(nonatomic) _Bool isForbidPageSheet; // @dynamic isForbidPageSheet;
@@ -29,4 +30,3 @@
 - (void)PresentModalViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)PresentModalViewController:(id)arg1 animated:(_Bool)arg2;
 @end
-

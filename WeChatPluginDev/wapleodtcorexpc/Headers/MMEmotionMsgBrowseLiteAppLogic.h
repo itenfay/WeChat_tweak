@@ -30,7 +30,6 @@
 
 + (id)createLogicWithEmoticonWrap:(id)arg1 appId:(id)arg2 attachedLiteAppVC:(id)arg3;
 + (id)createLogicWithMessageWrap:(id)arg1 appId:(id)arg2 attachedLiteAppVC:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CEmoticonWrap *operatingEmoticonWrap; // @synthesize operatingEmoticonWrap=_operatingEmoticonWrap;
 @property(retain, nonatomic) NSString *operatingMd5; // @synthesize operatingMd5=_operatingMd5;
 @property(retain, nonatomic) MMScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;

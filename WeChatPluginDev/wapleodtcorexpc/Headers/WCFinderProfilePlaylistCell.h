@@ -19,7 +19,6 @@
 
 + (struct CGSize)sizeThatFit:(struct CGSize)arg1 showPlayInfo:(_Bool)arg2;
 + (double)calcualteItemWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *registerCellSet; // @synthesize registerCellSet=_registerCellSet;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIButton *allButton; // @synthesize allButton=_allButton;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIView;
 
 @interface MMLaconButton
@@ -19,7 +21,6 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(nonatomic) _Bool bUseMaskHighlightedEffect; // @synthesize bUseMaskHighlightedEffect=_bUseMaskHighlightedEffect;
@@ -39,4 +40,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

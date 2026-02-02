@@ -24,7 +24,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *cacheList; // @synthesize cacheList=_cacheList;
 @property(retain, nonatomic) WCFinderLRUCache *lfuCacheForGhost; // @synthesize lfuCacheForGhost=_lfuCacheForGhost;

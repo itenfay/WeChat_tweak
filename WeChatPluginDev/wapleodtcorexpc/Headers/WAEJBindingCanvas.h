@@ -55,7 +55,6 @@
 + (void *)_ptr_to_get_width;
 + (void *)_ptr_to_func___lockStyle;
 + (void *)_ptr_to_func___uid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *touchableRects; // @synthesize touchableRects=_touchableRects;
 @property(nonatomic) int viewId; // @synthesize viewId=_viewId;
 @property(nonatomic) __weak UIView *canvasView; // @synthesize canvasView=_canvasView;

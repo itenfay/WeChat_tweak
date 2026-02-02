@@ -31,7 +31,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIImageView *topColorView; // @synthesize topColorView=_topColorView;
 @property(retain, nonatomic) WCFinderHeadImageView *avatarView; // @synthesize avatarView=_avatarView;

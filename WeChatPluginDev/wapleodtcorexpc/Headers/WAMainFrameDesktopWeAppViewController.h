@@ -18,7 +18,6 @@
     id <WAMainFrameDesktopWeAppViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAMainFrameDesktopWeAppViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWeAppItemOpened:(id)arg1;
 - (void)reportClickWeApp:(id)arg1 index:(long long)arg2;

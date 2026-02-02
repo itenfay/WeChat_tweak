@@ -16,7 +16,6 @@
 }
 
 + (id)getCommonInteractionLogicWithDataItem:(id)arg1 scene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long interactionState; // @synthesize interactionState=_interactionState;
 @property(retain, nonatomic) WCAdInteractionDeviceMotionContainer *deviceMotionContainer; // @synthesize deviceMotionContainer=_deviceMotionContainer;
 @property(retain, nonatomic) WCAdCommonInteractionInfo *interactionInfo; // @synthesize interactionInfo=_interactionInfo;

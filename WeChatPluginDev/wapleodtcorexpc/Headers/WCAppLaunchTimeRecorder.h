@@ -19,7 +19,6 @@
 
 + (id)sharedInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onNewSyncOplogConnectFail;
 - (void)onNewSyncOplogFail;
 - (void)onNewSyncOplogOK;

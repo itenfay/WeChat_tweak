@@ -13,7 +13,6 @@
     NSMutableArray *_gridElements;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *gridElements; // @synthesize gridElements=_gridElements;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) WCAdvertiseInfo *adInfo; // @synthesize adInfo=_adInfo;

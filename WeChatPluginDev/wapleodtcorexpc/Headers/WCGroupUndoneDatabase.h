@@ -13,7 +13,6 @@
     WCTTable *_todoTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *todoTable; // @synthesize todoTable=_todoTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;
 - (_Bool)deleteExpiredEventInfoForChatroom:(id)arg1;

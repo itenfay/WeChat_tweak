@@ -23,7 +23,6 @@
     WCPayRealnameInfoViewV2 *_realNameViewV2;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayRealnameInfoViewV2 *realNameViewV2; // @synthesize realNameViewV2=_realNameViewV2;
 @property(nonatomic) double m_minItemLeft; // @synthesize m_minItemLeft=_m_minItemLeft;
 @property(retain, nonatomic) WCPayGetProfessionItem *professionItem; // @synthesize professionItem=_professionItem;

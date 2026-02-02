@@ -13,7 +13,6 @@
     NSArray *_unfoldedUsernames;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *unfoldedUsernames; // @synthesize unfoldedUsernames=_unfoldedUsernames;
 @property(retain, nonatomic) NSDate *generatedTime; // @synthesize generatedTime=_generatedTime;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -10,7 +10,6 @@
     NSArray *_extInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *extInfoArray; // @synthesize extInfoArray=_extInfoArray;
 - (void)loadExtInfo:(id)arg1;
 - (id)initWithData:(id)arg1;

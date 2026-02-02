@@ -10,7 +10,6 @@
     TPIDKeyboardView *keyboardView;
 }
 
-- (void).cxx_destruct;
 - (void)autoRemarkKeyBoradType;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)dealloc;

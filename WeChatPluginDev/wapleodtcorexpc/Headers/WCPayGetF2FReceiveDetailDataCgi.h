@@ -15,7 +15,6 @@
     id <WCPayGetF2FReceiveDetailDataCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayGetF2FReceiveDetailDataCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(nonatomic) unsigned int maxRecordPerTime; // @synthesize maxRecordPerTime=_maxRecordPerTime;
 @property(copy, nonatomic) NSString *lastBillID; // @synthesize lastBillID=_lastBillID;

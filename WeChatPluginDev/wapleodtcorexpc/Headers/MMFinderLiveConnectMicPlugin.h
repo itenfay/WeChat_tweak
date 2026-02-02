@@ -16,7 +16,6 @@
     FinderLiveBattleSettingInfo *_battleSettings;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int locationDisplayTimeInterval; // @synthesize locationDisplayTimeInterval=_locationDisplayTimeInterval;
 @property(nonatomic) _Bool isDisplayMicLocationEnabled; // @synthesize isDisplayMicLocationEnabled=_isDisplayMicLocationEnabled;
 @property(nonatomic) _Bool isOrdinaryLiveInviteAudienceMicEnabled; // @synthesize isOrdinaryLiveInviteAudienceMicEnabled=_isOrdinaryLiveInviteAudienceMicEnabled;

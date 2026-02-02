@@ -14,7 +14,6 @@
     NSMutableSet *_curTouchSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *curTouchSet; // @synthesize curTouchSet=_curTouchSet;
 @property(nonatomic) __weak id <WATouchBaseViewDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;
 - (void)onLongPress:(id)arg1;

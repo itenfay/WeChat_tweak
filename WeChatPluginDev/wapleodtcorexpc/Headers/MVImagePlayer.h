@@ -26,7 +26,6 @@
     struct CGSize _outputSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *renderDispatchQueue; // @synthesize renderDispatchQueue=_renderDispatchQueue;
 @property(retain, nonatomic) NSDate *startPlayDate; // @synthesize startPlayDate=_startPlayDate;
 @property(readonly, nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;

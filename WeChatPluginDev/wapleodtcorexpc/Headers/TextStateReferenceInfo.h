@@ -52,7 +52,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusCommentMessageThumb *messageThumbData; // @synthesize messageThumbData=_messageThumbData;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) _Bool notify; // @synthesize notify=_notify;

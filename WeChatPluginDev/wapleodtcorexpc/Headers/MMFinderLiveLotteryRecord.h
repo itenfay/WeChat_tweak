@@ -20,7 +20,6 @@
     WCFinderContact *_anchorContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
 @property(nonatomic) unsigned int supportMultiType; // @synthesize supportMultiType=_supportMultiType;
 @property(nonatomic) int retCode; // @synthesize retCode=_retCode;

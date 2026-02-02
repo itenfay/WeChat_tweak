@@ -30,7 +30,6 @@
 + (id)indexDBPath;
 + (id)backupMediaBufferPath;
 + (id)backupMediaPath;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long leftSpace; // @synthesize leftSpace=_leftSpace;
 @property(retain, nonatomic) WXGChatLogRecoverFilter *recoverFilter; // @synthesize recoverFilter=_recoverFilter;
 @property(retain, nonatomic) WXGBackupIndexDB *indexDB; // @synthesize indexDB=_indexDB;

@@ -13,7 +13,6 @@
     NSMutableArray *_realArray;
 }
 
-- (void).cxx_destruct;
 - (id)objects;
 - (void)remove:(id)arg1;
 - (void)addObject:(id)arg1;

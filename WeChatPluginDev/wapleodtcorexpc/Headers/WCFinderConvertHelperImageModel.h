@@ -14,7 +14,6 @@
     NSData *_imageData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(nonatomic) double imageQualityLevel; // @synthesize imageQualityLevel=_imageQualityLevel;
 @property(copy, nonatomic) NSString *referenceURLPath; // @synthesize referenceURLPath=_referenceURLPath;

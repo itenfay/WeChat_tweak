@@ -19,7 +19,6 @@
     UIColor *_backgroundHighlightGradientColorTo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool highlightWecoin; // @synthesize highlightWecoin=_highlightWecoin;
 @property(retain, nonatomic) UIColor *backgroundHighlightGradientColorTo; // @synthesize backgroundHighlightGradientColorTo=_backgroundHighlightGradientColorTo;
 @property(retain, nonatomic) UIColor *backgroundHighlightGradientColorFrom; // @synthesize backgroundHighlightGradientColorFrom=_backgroundHighlightGradientColorFrom;

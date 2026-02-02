@@ -17,7 +17,6 @@
     long long _fileContentId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool markedForPreservation; // @synthesize markedForPreservation=_markedForPreservation;
 @property(nonatomic) long long fileContentId; // @synthesize fileContentId=_fileContentId;
 @property(nonatomic) unsigned long long sizeOnDisk; // @synthesize sizeOnDisk=_sizeOnDisk;

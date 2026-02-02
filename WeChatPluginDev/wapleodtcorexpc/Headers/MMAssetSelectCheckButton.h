@@ -18,7 +18,6 @@
     struct CGRect _selectedIndexViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectionBlurView; // @synthesize selectionBlurView=_selectionBlurView;
 @property(retain, nonatomic) UIView *notSelectedView; // @synthesize notSelectedView=_notSelectedView;
 @property(nonatomic) struct CGRect selectedIndexViewFrame; // @synthesize selectedIndexViewFrame=_selectedIndexViewFrame;

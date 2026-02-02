@@ -16,7 +16,6 @@
     id <EnterpriseRoomContactSelectDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseRoomContactSelectDelegate> delegate; // @synthesize delegate;
 - (id)GetCompareStrByContact:(id)arg1;
 - (void)onCancel:(id)arg1;

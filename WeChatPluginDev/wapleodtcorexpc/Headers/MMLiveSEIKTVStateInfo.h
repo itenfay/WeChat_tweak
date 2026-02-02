@@ -13,7 +13,6 @@
     MMLiveSEIKTVSongItem *_cs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveSEIKTVSongItem *cs; // @synthesize cs=_cs;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 

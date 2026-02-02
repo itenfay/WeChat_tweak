@@ -13,7 +13,6 @@
     id _userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *displayStr; // @synthesize displayStr=_displayStr;
 - (id)initWithDisplayStr:(id)arg1;

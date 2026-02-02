@@ -14,7 +14,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *reqId; // @synthesize reqId=_reqId;
 @property(retain, nonatomic) NSString *queryText; // @synthesize queryText=_queryText;

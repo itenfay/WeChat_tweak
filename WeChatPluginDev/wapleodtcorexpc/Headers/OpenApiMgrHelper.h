@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface OpenApiMgrHelper : NSObject
 {
@@ -39,4 +40,3 @@
 + (id)FormTextMsg:(id)arg1 withText:(id)arg2 appID:(id)arg3;
 
 @end
-

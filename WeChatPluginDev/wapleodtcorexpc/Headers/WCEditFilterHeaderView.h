@@ -16,7 +16,6 @@
     MMTimer *_throttle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int lastSliderValue; // @synthesize lastSliderValue=_lastSliderValue;
 @property(retain, nonatomic) MMTimer *throttle; // @synthesize throttle=_throttle;
 @property(retain, nonatomic) UILabel *sliderValueLabel; // @synthesize sliderValueLabel=_sliderValueLabel;

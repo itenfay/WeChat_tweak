@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEngine, FlutterMethodChannel, NSString, NSURLRequest, UIColor, UIImageView, UIScrollView, WADebugSkylineOptions, WAFlutterViewController, WANativeViewPlugin, WASkyLineRuntime, WASkylinePageCfg, WATexturePlugin;
 @protocol IWASkylineRuntime, WASkylineViewDelegate, YYWebViewDelegate;
@@ -43,7 +44,6 @@
     UIView *_coverColorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *coverColorView; // @synthesize coverColorView=_coverColorView;
 @property(retain, nonatomic) UIView *coverRoot; // @synthesize coverRoot=_coverRoot;
 @property(nonatomic) long long curInputWidgetId; // @synthesize curInputWidgetId=_curInputWidgetId;
@@ -134,4 +134,3 @@
 @property(readonly) Class superclass;
 
 @end
-

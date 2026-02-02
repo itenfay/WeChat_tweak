@@ -15,7 +15,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithResult:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *result; // @synthesize result=_result;
 - (id)toList;
 

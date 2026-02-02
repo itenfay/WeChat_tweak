@@ -21,7 +21,6 @@
     MMPickLocationViewController *_pickLocationViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showingOtherVC; // @synthesize showingOtherVC=_showingOtherVC;
 @property(retain, nonatomic) MMPickLocationViewController *pickLocationViewController; // @synthesize pickLocationViewController=_pickLocationViewController;
 @property(retain, nonatomic) WCFinderAddPOIViewController *addVC; // @synthesize addVC=_addVC;

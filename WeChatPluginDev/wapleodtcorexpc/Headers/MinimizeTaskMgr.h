@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, MinimizationWindow, MinimizeTaskData, MinimizeTaskNewSessionInfoSmall, NSMutableArray, NSMutableDictionary, NSString, UIViewController;
 
 @interface MinimizeTaskMgr
@@ -32,7 +34,6 @@
 }
 
 + (id)newTransitionControllerForTaskKey:(id)arg1 TaskBizKey:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(nonatomic) __weak UIViewController *prevWillAppearViewController; // @synthesize prevWillAppearViewController=_prevWillAppearViewController;
 @property(nonatomic) _Bool isForcedHiddenByMMMVPlayer; // @synthesize isForcedHiddenByMMMVPlayer=_isForcedHiddenByMMMVPlayer;
@@ -260,4 +261,3 @@
 @property(readonly) Class superclass;
 
 @end
-

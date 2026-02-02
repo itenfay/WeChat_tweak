@@ -17,7 +17,6 @@
 + (void)endSession;
 + (void)beginSession:(id)arg1 isRecentUse:(_Bool)arg2;
 + (id)instance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecentUse; // @synthesize isRecentUse=_isRecentUse;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 

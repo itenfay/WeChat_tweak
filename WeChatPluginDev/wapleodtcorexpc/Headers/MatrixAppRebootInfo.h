@@ -25,7 +25,6 @@
 
 + (id)infoPath;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userScene; // @synthesize userScene=_userScene;
 @property(retain, nonatomic) NSString *dumpFileName; // @synthesize dumpFileName=_dumpFileName;
 @property(retain, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;

@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSThread *thread; // @synthesize thread=_thread;
 @property(nonatomic) shared_ptr_772c274f model; // @synthesize model=_model;
 - (id)modelPath;

@@ -13,7 +13,6 @@
     double _phase;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) NSArray *intervals; // @synthesize intervals=_intervals;
 - (_Bool)isEqual:(id)arg1;

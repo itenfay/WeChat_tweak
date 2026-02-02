@@ -16,7 +16,6 @@
     MMLiveUserStateItem *_userItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveUserStateItem *userItem; // @synthesize userItem=_userItem;
 @property(retain, nonatomic) MMUIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUILabel *displayNameLabel; // @synthesize displayNameLabel=_displayNameLabel;

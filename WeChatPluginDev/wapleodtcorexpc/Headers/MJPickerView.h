@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UICollectionView, UIColor, UIFont, UISelectionFeedbackGenerator;
 @protocol MJPickerViewDataSource, MJPickerViewDelegate;
@@ -28,7 +29,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *feedback; // @synthesize feedback=_feedback;
 @property(nonatomic) _Bool isDarkCornerEnabled; // @synthesize isDarkCornerEnabled=_isDarkCornerEnabled;
 @property(nonatomic) _Bool isFeedbackEnabled; // @synthesize isFeedbackEnabled=_isFeedbackEnabled;
@@ -84,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

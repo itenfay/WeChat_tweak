@@ -26,7 +26,6 @@
     WAUpdatableMsgInfo *_updatableMsgInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int secFlagForSinglePageMode; // @synthesize secFlagForSinglePageMode=_secFlagForSinglePageMode;
 @property(retain, nonatomic) WAUpdatableMsgInfo *updatableMsgInfo; // @synthesize updatableMsgInfo=_updatableMsgInfo;
 @property(nonatomic) _Bool isPrivateMessage; // @synthesize isPrivateMessage=_isPrivateMessage;

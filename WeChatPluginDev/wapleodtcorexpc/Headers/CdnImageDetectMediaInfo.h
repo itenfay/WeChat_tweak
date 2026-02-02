@@ -19,7 +19,6 @@
     NSString *_forwardAesKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *forwardAesKey; // @synthesize forwardAesKey=_forwardAesKey;
 @property(retain, nonatomic) NSString *forwardFileID; // @synthesize forwardFileID=_forwardFileID;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

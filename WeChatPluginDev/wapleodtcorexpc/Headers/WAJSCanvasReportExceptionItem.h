@@ -19,7 +19,6 @@
     NSString *_jsContextName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *jsContextName; // @synthesize jsContextName=_jsContextName;
 @property(nonatomic) _Bool isMainContext; // @synthesize isMainContext=_isMainContext;
 @property(nonatomic) unsigned int jsVMType; // @synthesize jsVMType=_jsVMType;

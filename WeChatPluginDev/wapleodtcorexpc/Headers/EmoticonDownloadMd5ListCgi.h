@@ -21,7 +21,6 @@
     NSString *_versionKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *versionKey; // @synthesize versionKey=_versionKey;
 @property(retain, nonatomic) OrderedDictionary *md5ObjectOrderedList; // @synthesize md5ObjectOrderedList=_md5ObjectOrderedList;
 @property(retain, nonatomic) NSMutableSet *needUpateMd5Set; // @synthesize needUpateMd5Set=_needUpateMd5Set;

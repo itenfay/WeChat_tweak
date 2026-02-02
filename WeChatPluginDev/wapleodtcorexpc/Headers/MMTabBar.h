@@ -16,7 +16,6 @@
     double _extraKeyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double extraKeyboardHeight; // @synthesize extraKeyboardHeight=_extraKeyboardHeight;
 @property(retain, nonatomic) NSMutableArray *tabBarItemViews; // @synthesize tabBarItemViews=_tabBarItemViews;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

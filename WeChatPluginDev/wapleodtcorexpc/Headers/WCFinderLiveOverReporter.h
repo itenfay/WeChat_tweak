@@ -12,7 +12,6 @@
     NSString *m_sessionId;
 }
 
-- (void).cxx_destruct;
 - (void)reportOverAction:(unsigned long long)arg1 withResult:(unsigned long long)arg2 actionResultDic:(id)arg3;
 - (void)onOverAction:(unsigned long long)arg1 withResult:(unsigned long long)arg2;
 - (void)unRegisterExtension;

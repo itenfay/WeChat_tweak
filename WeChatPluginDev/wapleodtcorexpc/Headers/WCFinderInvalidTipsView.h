@@ -19,7 +19,6 @@
     WCFinderInvalidTipsInfo *_invalidInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderInvalidTipsInfo *invalidInfo; // @synthesize invalidInfo=_invalidInfo;
 @property(retain, nonatomic) UIButton *complainButton; // @synthesize complainButton=_complainButton;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

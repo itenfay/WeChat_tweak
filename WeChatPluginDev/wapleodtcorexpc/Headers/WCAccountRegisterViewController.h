@@ -25,7 +25,6 @@
 }
 
 + (_Bool)verifyPassword:(id)arg1 withError:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TakeOrSelectHeadImageLogic *headImageLogic; // @synthesize headImageLogic=_headImageLogic;
 @property(retain, nonatomic) NSMutableArray *availableItems; // @synthesize availableItems=_availableItems;
 @property(retain, nonatomic) CountryCodeWrap *countryCodeWrap; // @synthesize countryCodeWrap=_countryCodeWrap;

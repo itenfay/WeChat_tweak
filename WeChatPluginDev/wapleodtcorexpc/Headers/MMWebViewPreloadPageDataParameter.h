@@ -18,7 +18,6 @@
     MMWebCoreConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebCoreConfig *config; // @synthesize config=_config;
 @property(nonatomic) _Bool useOfflineCache; // @synthesize useOfflineCache=_useOfflineCache;
 @property(nonatomic) unsigned int enterType; // @synthesize enterType=_enterType;

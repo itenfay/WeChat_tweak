@@ -13,7 +13,6 @@
 }
 
 + (long long)contentHeight;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateEmptyState:(_Bool)arg1;
 - (void)initView;

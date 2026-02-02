@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSURLCache;
 
@@ -13,10 +14,8 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (void)downloadImageWithURL:(id)arg1 ttl:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeAll;
 - (id)init;
 
 @end
-

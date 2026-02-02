@@ -4,16 +4,15 @@
 //
 
 #import <UIKit/UITapGestureRecognizer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VoIPMPUITapGestureRecognizer : UITapGestureRecognizer
 {
     CDUnknownBlockType _event;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType event; // @synthesize event=_event;
 - (void)handleAction:(id)arg1;
 - (id)initWithEvent:(CDUnknownBlockType)arg1;
 
 @end
-

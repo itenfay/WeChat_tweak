@@ -15,7 +15,6 @@
     UIView *_nativeViewContainer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *nativeViewContainer; // @synthesize nativeViewContainer=_nativeViewContainer;
 @property(nonatomic) __weak UIView *nativeView; // @synthesize nativeView=_nativeView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

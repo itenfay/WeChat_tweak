@@ -12,7 +12,6 @@
     CMMDB *m_oMMDB;
 }
 
-- (void).cxx_destruct;
 - (void)getContactQueryProperty:(void *)arg1;
 - (_Bool)isFriendExtTableExist:(id)arg1;
 - (void)getFriendExtTableValue:(id)arg1 fromDBObject:(id)arg2;

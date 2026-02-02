@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterBasicMessageChannel;
 
@@ -12,11 +13,9 @@
     FlutterBasicMessageChannel *_channel;
 }
 
-- (void).cxx_destruct;
 - (void)onAccountLogout;
 - (void)onUpdateUIContext;
 - (void)onEngineExitCallback:(CDUnknownBlockType)arg1;
 - (id)initWithMessenger:(id)arg1;
 
 @end
-

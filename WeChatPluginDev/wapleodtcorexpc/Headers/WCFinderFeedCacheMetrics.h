@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_totalCount;
 + (void)PBArrayAdd_contextId;
 + (void)PBArrayAdd_strategy;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long evictCost; // @synthesize evictCost=_evictCost;
 @property(nonatomic) unsigned long long actualCost; // @synthesize actualCost=_actualCost;
 @property(nonatomic) unsigned long long evictCount; // @synthesize evictCount=_evictCount;

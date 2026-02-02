@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *adId; // @synthesize adId=_adId;
 @property(nonatomic) unsigned long long readAdTimestamp; // @synthesize readAdTimestamp=_readAdTimestamp;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

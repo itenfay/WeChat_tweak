@@ -16,7 +16,6 @@
     UIView *_container;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *container; // @synthesize container=_container;
 @property(nonatomic) __weak UIViewController *vc; // @synthesize vc=_vc;
 @property(retain, nonatomic) UIBarButtonItem *barItem; // @synthesize barItem=_barItem;

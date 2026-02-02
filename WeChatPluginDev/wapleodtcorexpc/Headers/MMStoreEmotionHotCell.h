@@ -21,7 +21,6 @@
     UIImageView *_tagImageViewNew;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *tagImageViewNew; // @synthesize tagImageViewNew=_tagImageViewNew;
 @property(retain, nonatomic) MMWebImageView *tagImageView; // @synthesize tagImageView=_tagImageView;
 @property(retain, nonatomic) UIView *imageBackgroundView; // @synthesize imageBackgroundView=_imageBackgroundView;

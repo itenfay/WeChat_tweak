@@ -36,7 +36,6 @@
     NSMutableArray *_downloadProgressInfos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDownloadResumption; // @synthesize enableDownloadResumption=_enableDownloadResumption;
 @property(retain, nonatomic) NSMutableArray *downloadProgressInfos; // @synthesize downloadProgressInfos=_downloadProgressInfos;
 @property(nonatomic) unsigned long long downloadScene; // @synthesize downloadScene=_downloadScene;

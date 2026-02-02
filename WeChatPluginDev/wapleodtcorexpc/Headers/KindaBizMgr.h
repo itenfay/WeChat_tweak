@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class KindaAppModuleManager, MMLocatingCoordinateLogic, NSString;
 
 @interface KindaBizMgr
@@ -11,7 +13,6 @@
     MMLocatingCoordinateLogic *_locatingLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic; // @synthesize locatingLogic=_locatingLogic;
 @property(retain, nonatomic) KindaAppModuleManager *moduleManager; // @synthesize moduleManager=_moduleManager;
 - (void)updateWCPayAddressCache:(id)arg1;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

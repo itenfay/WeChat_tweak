@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TXAudioEffectManager, TXBeautyManager, TXDeviceManager, TXLivePushConfig;
 @protocol TXAudioCustomProcessDelegate, TXLivePushListener, TXLiveRecordListener, TXVideoCustomProcessDelegate;
@@ -29,7 +30,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long audioVolumeEvaluationInterval; // @synthesize audioVolumeEvaluationInterval=_audioVolumeEvaluationInterval;
 @property(nonatomic) __weak id <TXAudioCustomProcessDelegate> audioProcessDelegate; // @synthesize audioProcessDelegate=_audioProcessDelegate;
 @property(nonatomic) __weak id <TXVideoCustomProcessDelegate> videoProcessDelegate; // @synthesize videoProcessDelegate=_videoProcessDelegate;
@@ -106,4 +106,3 @@
 - (id)initWithConfig:(id)arg1;
 
 @end
-

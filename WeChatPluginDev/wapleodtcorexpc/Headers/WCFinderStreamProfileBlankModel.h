@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol WCFinderStreamProfileBlankModelDelegate;
 
@@ -14,7 +16,6 @@
     id <WCFinderStreamProfileBlankModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderStreamProfileBlankModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType tipsClickBlock; // @synthesize tipsClickBlock=_tipsClickBlock;
 @property(retain, nonatomic) NSString *displayTips; // @synthesize displayTips=_displayTips;
@@ -29,4 +30,3 @@
 - (id)displayName;
 
 @end
-

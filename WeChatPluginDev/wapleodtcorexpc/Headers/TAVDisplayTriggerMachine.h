@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, VIDisplayTriggerObject;
 
@@ -15,7 +16,6 @@
     VIDisplayTriggerObject *_triggerObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VIDisplayTriggerObject *triggerObject; // @synthesize triggerObject=_triggerObject;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
@@ -27,4 +27,3 @@
 - (void)dealloc;
 
 @end
-

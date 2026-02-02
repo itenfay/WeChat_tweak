@@ -13,7 +13,6 @@
     struct _NSRange _range;
 }
 
-- (void).cxx_destruct;
 - (id)readValueOfType:(unsigned char)arg1;
 - (id)readValue;
 - (void)readAlignment:(unsigned char)arg1;

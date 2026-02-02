@@ -19,7 +19,6 @@
     SnsServerConfig *_pbServerConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int nextPageCount; // @synthesize nextPageCount=_nextPageCount;
 @property(nonatomic) int firstPageCount; // @synthesize firstPageCount=_firstPageCount;
 @property(nonatomic) int tiger2022SourceStatus; // @synthesize tiger2022SourceStatus=_tiger2022SourceStatus;

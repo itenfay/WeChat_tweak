@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol WKScriptMessageHandlerWithReply;
@@ -13,7 +14,6 @@
     id <WKScriptMessageHandlerWithReply> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WKScriptMessageHandlerWithReply> delegate; // @synthesize delegate=_delegate;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
 
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

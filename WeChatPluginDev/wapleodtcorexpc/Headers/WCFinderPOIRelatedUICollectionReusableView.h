@@ -34,7 +34,6 @@
 }
 
 + (double)headerViewHeightWith:(id)arg1 bindContact:(id)arg2 noticeWording:(id)arg3 isDataEmpty:(_Bool)arg4 width:(double)arg5 onlyShowPoiName:(_Bool)arg6 addressSubType:(int)arg7;
-- (void).cxx_destruct;
 @property(nonatomic) int addressSubType; // @synthesize addressSubType=_addressSubType;
 @property(nonatomic) _Bool onlyShowPoiName; // @synthesize onlyShowPoiName=_onlyShowPoiName;
 @property(retain, nonatomic) NSString *noticeWording; // @synthesize noticeWording=_noticeWording;

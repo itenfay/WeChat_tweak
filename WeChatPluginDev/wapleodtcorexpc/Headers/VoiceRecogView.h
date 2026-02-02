@@ -28,7 +28,6 @@
 
 + (unsigned int)HeightWithMode:(int)arg1;
 + (unsigned int)WidthWithMode:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *mRecogAnimationView; // @synthesize mRecogAnimationView;
 @property(retain, nonatomic) NSArray *mMiddleVolumeImages; // @synthesize mMiddleVolumeImages;
 @property(retain, nonatomic) NSArray *mHighVolumeImages; // @synthesize mHighVolumeImages;

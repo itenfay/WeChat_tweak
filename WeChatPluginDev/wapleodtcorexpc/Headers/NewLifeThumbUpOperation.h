@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, NSString;
 
@@ -21,7 +22,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) int enterScene; // @synthesize enterScene=_enterScene;
@@ -39,4 +39,3 @@
 - (_Bool)isValid;
 
 @end
-

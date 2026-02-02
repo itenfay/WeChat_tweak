@@ -27,7 +27,6 @@
     WSSimilarEmotItemView *_weakHolder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WSSimilarEmotItemView *weakHolder; // @synthesize weakHolder=_weakHolder;
 @property(retain, nonatomic) NSData *imgData; // @synthesize imgData=_imgData;
 @property(retain, nonatomic) NSString *meaning; // @synthesize meaning=_meaning;

@@ -14,7 +14,6 @@
     UIView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) _Bool isShowIndicator; // @synthesize isShowIndicator=_isShowIndicator;

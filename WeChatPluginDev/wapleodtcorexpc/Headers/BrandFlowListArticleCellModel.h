@@ -18,7 +18,6 @@
 }
 
 + (id)convertFromReaderWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int idx; // @synthesize idx=_idx;
 @property(nonatomic) unsigned int mid; // @synthesize mid=_mid;
 @property(nonatomic) unsigned int bizUin; // @synthesize bizUin=_bizUin;

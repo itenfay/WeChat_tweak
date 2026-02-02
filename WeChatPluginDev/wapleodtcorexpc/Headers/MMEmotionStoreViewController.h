@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPersonalEmotionsViewController, MMUnderlineTabsView, MMWechatEmotionsViewController, NSMutableArray, StoreEmotionHomePageViewController, UIImageView;
 
 @interface MMEmotionStoreViewController
@@ -21,7 +23,6 @@
     NSMutableArray *_sectionItems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool newHomePage; // @synthesize newHomePage=_newHomePage;
 @property(retain, nonatomic) NSMutableArray *sectionItems; // @synthesize sectionItems=_sectionItems;
 @property(retain, nonatomic) MMUnderlineTabsView *sectionTab; // @synthesize sectionTab=_sectionTab;
@@ -53,4 +54,3 @@
 - (id)init;
 
 @end
-

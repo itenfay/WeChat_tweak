@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveCDNLivePreloadItem, NSMutableArray, NSMutableSet, NSString, NSURLSession, NSURLSessionDataTask, UIView;
 @protocol MMLiveCDNLivePreloaderDelegate;
@@ -19,7 +20,6 @@
     NSURLSessionDataTask *_preloadTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionDataTask *preloadTask; // @synthesize preloadTask=_preloadTask;
 @property(retain, nonatomic) NSURLSession *preloadSession; // @synthesize preloadSession=_preloadSession;
 @property(retain, nonatomic) NSMutableSet *preloadedUrlSet; // @synthesize preloadedUrlSet=_preloadedUrlSet;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

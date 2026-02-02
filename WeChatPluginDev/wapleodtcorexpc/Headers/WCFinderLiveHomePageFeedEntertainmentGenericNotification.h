@@ -13,7 +13,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (_Bool)isEqual:(id)arg1;

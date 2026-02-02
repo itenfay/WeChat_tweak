@@ -14,7 +14,6 @@
     NSMutableArray *_messageList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *messageList; // @synthesize messageList=_messageList;
 @property(nonatomic) unsigned int end; // @synthesize end=_end;
 @property(nonatomic) unsigned int start; // @synthesize start=_start;

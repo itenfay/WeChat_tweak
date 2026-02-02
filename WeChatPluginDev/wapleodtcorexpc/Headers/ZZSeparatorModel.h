@@ -19,7 +19,6 @@
     double _length;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double length; // @synthesize length=_length;
 @property(nonatomic) double end; // @synthesize end=_end;
 @property(nonatomic) double begin; // @synthesize begin=_begin;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBCommonAdapter, MagicBrushBiz, NSString, UIView, _TtC6WeChat24MagicBrushVConsoleHelper;
 
@@ -15,7 +16,6 @@
     _TtC6WeChat24MagicBrushVConsoleHelper *_mbVConsoleHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat24MagicBrushVConsoleHelper *mbVConsoleHelper; // @synthesize mbVConsoleHelper=_mbVConsoleHelper;
 @property(retain, nonatomic) MBCommonAdapter *mbCommonAdapter; // @synthesize mbCommonAdapter=_mbCommonAdapter;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

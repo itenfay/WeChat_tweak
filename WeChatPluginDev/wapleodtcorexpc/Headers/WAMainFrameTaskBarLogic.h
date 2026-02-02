@@ -38,7 +38,6 @@
 
 + (long long)getAliveTimeoutForListen;
 + (long long)getAliveTimeout;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TencentLBSLocationManager *locationMgr; // @synthesize locationMgr=_locationMgr;
 @property(nonatomic) unsigned long long closingPageType; // @synthesize closingPageType=_closingPageType;
 @property(retain, nonatomic) NSMutableDictionary *exceedDataType2LastKeepTime; // @synthesize exceedDataType2LastKeepTime=_exceedDataType2LastKeepTime;

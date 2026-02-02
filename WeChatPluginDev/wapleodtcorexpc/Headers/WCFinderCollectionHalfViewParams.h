@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderCollectionInfo, FinderPaidCollectionInfo, NSString, WCFinderCollectionHalfViewDisplayInfo;
 
@@ -23,7 +24,6 @@
 + (id)paramsWithDisplayInfo:(id)arg1 commentScene:(int)arg2 dataScene:(id)arg3;
 + (id)paramsWithPaidCollection:(id)arg1 commentScene:(int)arg2 dataScene:(id)arg3;
 + (id)paramsWithCollectionInfo:(id)arg1 commentScene:(int)arg2 dataScene:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dismissSelfWhenJumpNewList; // @synthesize dismissSelfWhenJumpNewList=_dismissSelfWhenJumpNewList;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 @property(retain, nonatomic) NSString *dataScene; // @synthesize dataScene=_dataScene;
@@ -35,4 +35,3 @@
 @property(retain, nonatomic) FinderCollectionInfo *collectionInfo; // @synthesize collectionInfo=_collectionInfo;
 
 @end
-

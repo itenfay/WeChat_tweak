@@ -19,7 +19,6 @@
     FTSContactDB *_ftsContactDB;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckIndexCount; // @synthesize hasCheckIndexCount=_hasCheckIndexCount;
 @property(retain, nonatomic) FTSContactDB *ftsContactDB; // @synthesize ftsContactDB=_ftsContactDB;
 - (void)onContactListUpdate:(unsigned int)arg1;

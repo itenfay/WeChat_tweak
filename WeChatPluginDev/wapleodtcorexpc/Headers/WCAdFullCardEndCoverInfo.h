@@ -17,7 +17,6 @@
     unsigned long long _endCoverEndTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endCoverEndTime; // @synthesize endCoverEndTime=_endCoverEndTime;
 @property(retain, nonatomic) NSString *ambientImageUrl; // @synthesize ambientImageUrl=_ambientImageUrl;
 @property(retain, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;

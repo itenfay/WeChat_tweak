@@ -16,7 +16,6 @@
     WCStatTimerHelper *_statTimeHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStatTimerHelper *statTimeHelper; // @synthesize statTimeHelper=_statTimeHelper;
 @property(retain, nonatomic) RecommendedMusicFeedback *currentRecommendedMusicFeedback; // @synthesize currentRecommendedMusicFeedback=_currentRecommendedMusicFeedback;
 @property(retain, nonatomic) NSMutableArray *recommendedMusicFeedbacks; // @synthesize recommendedMusicFeedbacks=_recommendedMusicFeedbacks;

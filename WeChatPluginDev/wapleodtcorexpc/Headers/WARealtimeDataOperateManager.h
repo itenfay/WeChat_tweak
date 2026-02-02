@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_workerQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workerQueue; // @synthesize workerQueue=_workerQueue;
 @property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timerSource; // @synthesize timerSource=_timerSource;

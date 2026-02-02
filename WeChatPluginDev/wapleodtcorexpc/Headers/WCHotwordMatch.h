@@ -14,7 +14,6 @@
 }
 
 + (id)hotwordMatchFromURLString:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *hotword; // @synthesize hotword=_hotword;
 @property(readonly, nonatomic) long long scene; // @synthesize scene=_scene;
 - (id)generateURLString;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedArray;
 @protocol WCFinderProfileFeedManagerDelegate;
@@ -17,7 +18,6 @@
 }
 
 + (id)managerWithFeedArray:(id)arg1 isAuthor:(_Bool)arg2 username:(id)arg3 feedMap:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType feedMap; // @synthesize feedMap=_feedMap;
 @property(retain, nonatomic) WCFinderFeedArray *feedArray; // @synthesize feedArray=_feedArray;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

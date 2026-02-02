@@ -14,7 +14,6 @@
     NSString *_reason;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;

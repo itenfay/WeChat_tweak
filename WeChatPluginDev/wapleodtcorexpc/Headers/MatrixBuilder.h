@@ -14,7 +14,6 @@
     NSMutableSet *_plugins;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *plugins; // @synthesize plugins=_plugins;
 @property(nonatomic) __weak id <MatrixPluginListenerDelegate> pluginListener; // @synthesize pluginListener=_pluginListener;
 - (id)getPlugins;

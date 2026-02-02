@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebViewController, NSString, WebTransCgiLogic;
 @protocol WebTransPageLogicDelegate;
@@ -26,7 +27,6 @@
     NSString *_brand;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int residueReTryNum; // @synthesize residueReTryNum=_residueReTryNum;
 @property(nonatomic) _Bool hasShownBtnOnceInThisPage; // @synthesize hasShownBtnOnceInThisPage=_hasShownBtnOnceInThisPage;
 @property(nonatomic) _Bool isTransOrderFromMenuBtn; // @synthesize isTransOrderFromMenuBtn=_isTransOrderFromMenuBtn;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

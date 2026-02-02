@@ -20,7 +20,6 @@
 }
 
 + (id)defaultFilterDataItems;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *coverColorString; // @synthesize coverColorString=_coverColorString;
 @property(retain, nonatomic) NSString *filterImagePath; // @synthesize filterImagePath=_filterImagePath;

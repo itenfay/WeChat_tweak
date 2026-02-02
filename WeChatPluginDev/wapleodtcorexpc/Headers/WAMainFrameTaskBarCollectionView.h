@@ -13,7 +13,6 @@
     UIPanGestureRecognizer *_mainFrameCollectionViewPanGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *mainFrameCollectionViewPanGesture; // @synthesize mainFrameCollectionViewPanGesture=_mainFrameCollectionViewPanGesture;
 @property(nonatomic) _Bool canHookPanGesture; // @synthesize canHookPanGesture=_canHookPanGesture;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;

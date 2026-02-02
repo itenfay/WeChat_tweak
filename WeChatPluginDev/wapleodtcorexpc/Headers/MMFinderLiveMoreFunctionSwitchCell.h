@@ -21,7 +21,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;

@@ -20,7 +20,6 @@
 
 + (struct CGSize)estimateSizeWithContent:(id)arg1 font:(id)arg2 lineHeight:(double)arg3 maxLines:(unsigned long long)arg4 tags:(id)arg5 tagEstimateSize:(struct CGSize)arg6 spacing:(double)arg7 inWidth:(double)arg8;
 + (struct CGSize)estimateSizeWithProduct:(id)arg1 font:(id)arg2 lineHeight:(double)arg3 maxLines:(unsigned long long)arg4 tagEstimateSize:(struct CGSize)arg5 spacing:(double)arg6 inWidth:(double)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;

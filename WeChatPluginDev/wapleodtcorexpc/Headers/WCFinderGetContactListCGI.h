@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderGetContactListCGI
 {
     CDUnknownBlockType _successBlock;
@@ -12,7 +14,6 @@
     unsigned long long _requestContactCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestContactCount; // @synthesize requestContactCount=_requestContactCount;
 @property(copy, nonatomic) CDUnknownBlockType respSuccessBlock; // @synthesize respSuccessBlock=_respSuccessBlock;
 @property(nonatomic) unsigned long long fromScene; // @synthesize fromScene=_fromScene;
@@ -36,4 +37,3 @@
 - (id)init;
 
 @end
-

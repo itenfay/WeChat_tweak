@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableSet, NSRecursiveLock, NSString, WCTDatabase;
 
 @interface EnterpriseMsgDB
@@ -13,7 +15,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 - (void)clearFileOfMsg:(id)arg1;
 - (id)internalGetMsgDBItem:(id)arg1 uiLocalID:(unsigned int)arg2;
 - (id)GetImgOrVideoOrAppNextMsg:(id)arg1 StartCreateTime:(unsigned int)arg2 EndCreateTime:(unsigned int)arg3 Limit:(int)arg4;
@@ -56,4 +57,3 @@
 - (id)initWithPath:(id)arg1;
 
 @end
-

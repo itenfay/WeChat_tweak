@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, OMCClipSegment;
 @protocol OMCClipSpeedAdjustable, OMCColorAdjustable, OMCContentSpatialAdjustable, OMCFilterAdjustable, OMCPictureEnhancable, OMCSpeedAdjustable, OMCThumbnailProvider, OMCVolumeAdjustable;
 
@@ -26,7 +28,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <OMCClipSpeedAdjustable> speedAdjustable; // @synthesize speedAdjustable=_speedAdjustable;
 @property(retain, nonatomic) id <OMCVolumeAdjustable> volumeAdjustable; // @synthesize volumeAdjustable=_volumeAdjustable;
 @property(retain, nonatomic) id <OMCContentSpatialAdjustable> contentSpatialAdjustable; // @synthesize contentSpatialAdjustable=_contentSpatialAdjustable;
@@ -63,4 +64,3 @@
 - (id)initWithClipSegment:(id)arg1 storylineHeight:(double)arg2;
 
 @end
-

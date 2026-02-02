@@ -34,7 +34,6 @@
     NSArray *_locations;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needResetFromValueToDefault; // @synthesize needResetFromValueToDefault=_needResetFromValueToDefault;
 @property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;

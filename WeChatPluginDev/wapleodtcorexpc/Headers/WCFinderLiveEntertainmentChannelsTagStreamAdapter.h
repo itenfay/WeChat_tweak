@@ -18,7 +18,6 @@
     WCFinderLiveFeedGenericAutoPlayModel *_autoPlayCtx;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveFeedGenericAutoPlayModel *autoPlayCtx; // @synthesize autoPlayCtx=_autoPlayCtx;
 @property(retain, nonatomic) WCFinderLiveEntertainmentChannelsTagStreamVM *vm; // @synthesize vm=_vm;
 @property(nonatomic) __weak MMUIViewController<WCFinderFeedBaseViewControllerProtocol> *currentViewController; // @synthesize currentViewController=_currentViewController;

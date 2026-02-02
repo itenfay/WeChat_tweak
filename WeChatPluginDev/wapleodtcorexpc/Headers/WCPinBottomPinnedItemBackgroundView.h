@@ -12,7 +12,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void)layoutSubviews;
 - (void)initBackgroundView;

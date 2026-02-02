@@ -74,7 +74,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ConStrRes1; // @synthesize ConStrRes1=_ConStrRes1;
 @property(nonatomic) unsigned int ConIntRes2; // @synthesize ConIntRes2=_ConIntRes2;
 @property(nonatomic) unsigned long long m_uBrandAffMsgId; // @synthesize m_uBrandAffMsgId=_m_uBrandAffMsgId;

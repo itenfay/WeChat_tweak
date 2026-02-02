@@ -18,7 +18,6 @@
     NSString *_codePkgPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subScene; // @synthesize subScene=_subScene;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool htmlStringInPkg; // @synthesize htmlStringInPkg=_htmlStringInPkg;

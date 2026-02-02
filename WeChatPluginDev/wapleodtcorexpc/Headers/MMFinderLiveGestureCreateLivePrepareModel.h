@@ -13,7 +13,6 @@
     NSArray *_defaultEnabledTags;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *defaultEnabledTags; // @synthesize defaultEnabledTags=_defaultEnabledTags;
 @property(retain, nonatomic) NSArray *gestureUpdates; // @synthesize gestureUpdates=_gestureUpdates;
 

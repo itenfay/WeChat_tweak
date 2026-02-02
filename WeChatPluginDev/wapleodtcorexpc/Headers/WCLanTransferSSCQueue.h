@@ -16,7 +16,6 @@
     NSMutableDictionary *_taskInfoStartDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *taskInfoStartDict; // @synthesize taskInfoStartDict=_taskInfoStartDict;
 @property(retain, nonatomic) NSMutableDictionary *taskInfoDict; // @synthesize taskInfoDict=_taskInfoDict;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sscQueue; // @synthesize sscQueue=_sscQueue;

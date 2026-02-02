@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableViewReorder, WCGeneralMonitor, ZZTableViewChainModel;
 @protocol WCGeneralMonitorDelegate;
@@ -41,4 +42,3 @@
 @property(readonly, nonatomic) MMTableViewReorder *reorder;
 - (void)setReorder:(id)arg1;
 @end
-

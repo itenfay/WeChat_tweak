@@ -14,7 +14,6 @@
     MISSING_TYPE *urlQueryDict;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initConfig:(id)arg1;
 - (id)init;

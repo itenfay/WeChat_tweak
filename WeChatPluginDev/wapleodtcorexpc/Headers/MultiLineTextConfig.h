@@ -14,7 +14,6 @@
     double _lineHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
 @property(retain, nonatomic) UIColor *fontColor; // @synthesize fontColor=_fontColor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;

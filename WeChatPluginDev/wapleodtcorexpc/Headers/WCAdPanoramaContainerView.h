@@ -13,7 +13,6 @@
     MMProgressViewEx *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMProgressViewEx *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCPanoramaImageView *panoramaImageView; // @synthesize panoramaImageView=_panoramaImageView;
 @property(nonatomic) _Bool showLoading; // @synthesize showLoading=_showLoading;

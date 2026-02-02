@@ -17,7 +17,6 @@
     WCFinderMinimizeFloatingAudioOnlyView *_audioOnlyView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMinimizeFloatingAudioOnlyView *audioOnlyView; // @synthesize audioOnlyView=_audioOnlyView;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;

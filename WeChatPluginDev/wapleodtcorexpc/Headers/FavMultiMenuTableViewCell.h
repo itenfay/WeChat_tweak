@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 @protocol FavMultiMenuTableViewCellDelegate;
 
@@ -15,7 +17,6 @@
     id <FavMultiMenuTableViewCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableGesture; // @synthesize disableGesture=_disableGesture;
 @property(nonatomic) __weak id <FavMultiMenuTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *m_bkgCardView; // @synthesize m_bkgCardView=_m_bkgCardView;
@@ -36,4 +37,3 @@
 - (void)handlePan:(id)arg1;
 
 @end
-

@@ -22,7 +22,6 @@
     unsigned long long _queryIntervalInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long queryIntervalInMs; // @synthesize queryIntervalInMs=_queryIntervalInMs;
 @property(nonatomic) unsigned int queryTimeout; // @synthesize queryTimeout=_queryTimeout;
 @property(nonatomic) unsigned long long queryStartTimeInMs; // @synthesize queryStartTimeInMs=_queryStartTimeInMs;

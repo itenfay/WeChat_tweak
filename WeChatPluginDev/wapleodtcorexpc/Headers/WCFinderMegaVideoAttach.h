@@ -18,7 +18,6 @@
     NSString *_draft;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *draft; // @synthesize draft=_draft;
 @property(retain, nonatomic) UIImage *capture; // @synthesize capture=_capture;
 @property(nonatomic) unsigned long long playTimes; // @synthesize playTimes=_playTimes;

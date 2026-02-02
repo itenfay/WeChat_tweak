@@ -15,7 +15,6 @@
     WCFinderMsgBubbleShowStateInfo *_bubbleShowStateInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgBubbleShowStateInfo *bubbleShowStateInfo; // @synthesize bubbleShowStateInfo=_bubbleShowStateInfo;
 @property(retain, nonatomic) NSMutableArray *bubbleViewArray; // @synthesize bubbleViewArray=_bubbleViewArray;
 @property(nonatomic) __weak id <WCFinderMsgBubbleMgrPanelViewDelegate> delegate; // @synthesize delegate=_delegate;

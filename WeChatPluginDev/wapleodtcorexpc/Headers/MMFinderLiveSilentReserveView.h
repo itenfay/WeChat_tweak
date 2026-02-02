@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveReserveViewModel, NSString;
 
@@ -13,7 +14,6 @@
     MMFinderLiveReserveViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReserveViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(copy, nonatomic) CDUnknownBlockType jsapiSuccessBlock; // @synthesize jsapiSuccessBlock=_jsapiSuccessBlock;
 - (void)onViewModelWorkFinished;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

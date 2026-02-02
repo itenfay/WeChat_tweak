@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -15,11 +16,9 @@
     MISSING_TYPE *crashProtected;
 }
 
-- (void).cxx_destruct;
 - (void)reportThatPreloadHomePageWithCtrlInfo:(id)arg1;
 - (void)reportThatConsumeReddotWithCtrlInfo:(id)arg1;
 - (void)reportThatReddotExposeWithContext:(id)arg1 onPredicted:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end
-

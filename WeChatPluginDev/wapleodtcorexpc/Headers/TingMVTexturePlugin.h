@@ -15,7 +15,6 @@
     TingMVTextureUpdateListenerApi *_listener;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TingMVTextureUpdateListenerApi *listener; // @synthesize listener=_listener;
 @property(readonly, nonatomic) NSMutableDictionary *textureInfoMap; // @synthesize textureInfoMap=_textureInfoMap;
 @property(readonly, nonatomic) NSObject<FlutterTextureRegistry> *registry; // @synthesize registry=_registry;

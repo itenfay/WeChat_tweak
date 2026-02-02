@@ -15,7 +15,6 @@
     unsigned long long _startTag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(nonatomic) unsigned int newCount; // @synthesize newCount=_newCount;
 @property(nonatomic) unsigned long long startTag; // @synthesize startTag=_startTag;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MagicSclFrameSetView;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _insertCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType insertCompletion; // @synthesize insertCompletion=_insertCompletion;
 @property(retain, nonatomic) MagicSclFrameSetView *frameSetView; // @synthesize frameSetView=_frameSetView;
 @property(nonatomic) unsigned int frameId; // @synthesize frameId=_frameId;
 @property(nonatomic) unsigned int bizType; // @synthesize bizType=_bizType;
 
 @end
-

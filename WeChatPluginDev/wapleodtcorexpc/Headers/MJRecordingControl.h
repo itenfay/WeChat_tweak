@@ -33,7 +33,6 @@
     UIImpactFeedbackGenerator *_feedback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *feedback; // @synthesize feedback=_feedback;
 @property(retain, nonatomic) UILabel *cancelTitleLabel; // @synthesize cancelTitleLabel=_cancelTitleLabel;
 @property(retain, nonatomic) UILabel *recordingTitleLabel; // @synthesize recordingTitleLabel=_recordingTitleLabel;

@@ -17,7 +17,6 @@
     unsigned int m_dataSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_dataSize; // @synthesize m_dataSize;
 @property(retain, nonatomic) NSString *m_nsThumbPath; // @synthesize m_nsThumbPath;
 @property(retain, nonatomic) NSString *m_nsDescription; // @synthesize m_nsDescription;

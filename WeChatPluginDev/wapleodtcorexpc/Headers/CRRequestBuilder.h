@@ -18,7 +18,6 @@
     NSMutableDictionary *_headers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *headers; // @synthesize headers=_headers;
 @property(nonatomic) _Bool compressBody; // @synthesize compressBody=_compressBody;
 @property(copy, nonatomic) NSData *body; // @synthesize body=_body;

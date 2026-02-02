@@ -20,7 +20,6 @@
 }
 
 + (double)heightFor:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderWindowProductInfo_SkuAttrInfoList *skus; // @synthesize skus=_skus;
 @property(nonatomic) struct CGSize cellSizeWithImage; // @synthesize cellSizeWithImage=_cellSizeWithImage;
 @property(nonatomic) unsigned long long labelsMaxLine; // @synthesize labelsMaxLine=_labelsMaxLine;

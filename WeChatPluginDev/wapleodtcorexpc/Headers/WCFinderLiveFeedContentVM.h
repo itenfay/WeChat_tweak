@@ -15,7 +15,6 @@
     FinderBannerExtInfo *_bannerExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderBannerExtInfo *bannerExtInfo; // @synthesize bannerExtInfo=_bannerExtInfo;
 @property(copy, nonatomic) NSArray *cardFeedArray; // @synthesize cardFeedArray=_cardFeedArray;
 @property(retain, nonatomic) NSString *objectWording; // @synthesize objectWording=_objectWording;

@@ -14,7 +14,6 @@
 }
 
 + (id)infoWithSessionId:(id)arg1 editSessionId:(id)arg2 musicInfo:(id)arg3 songId:(id)arg4 partNum:(int)arg5 createType:(unsigned long long)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSMutableArray *commonParams; // @synthesize commonParams=_commonParams;
 - (void)setPageType:(unsigned long long)arg1;

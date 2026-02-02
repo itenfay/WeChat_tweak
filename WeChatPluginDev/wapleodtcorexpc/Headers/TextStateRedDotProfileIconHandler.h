@@ -14,7 +14,6 @@
 }
 
 + (id)keyFromDuration:(struct _NSRange)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateRedDotProfileIconConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSString *configString; // @synthesize configString=_configString;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;

@@ -17,7 +17,6 @@
     ContactsDataLogic *_m_contactsDataLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsDataLogic *m_contactsDataLogic; // @synthesize m_contactsDataLogic=_m_contactsDataLogic;
 @property(nonatomic) unsigned long long bindScene; // @synthesize bindScene=_bindScene;
 @property(retain, nonatomic) UINavigationController *m_preNavController; // @synthesize m_preNavController=_m_preNavController;

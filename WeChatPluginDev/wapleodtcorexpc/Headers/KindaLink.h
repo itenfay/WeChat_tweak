@@ -21,7 +21,6 @@
     struct _NSRange _m_range;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fontStyle; // @synthesize fontStyle=_fontStyle;
 @property(nonatomic) double linkTextSize; // @synthesize linkTextSize=_linkTextSize;
 @property(nonatomic) int linkBkgRadius; // @synthesize linkBkgRadius=_linkBkgRadius;

@@ -10,7 +10,6 @@
     UIImageView *_closeIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *closeIcon; // @synthesize closeIcon=_closeIcon;
 - (void)updateDisplayDragCloseProgress:(double)arg1;
 - (void)layoutSubviews;

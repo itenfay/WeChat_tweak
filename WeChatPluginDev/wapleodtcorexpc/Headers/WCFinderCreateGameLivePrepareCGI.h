@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLocation, FinderMedia, GameTeamUpSpecialGiftSettingDetail, MMFinderLiveCreateParamsModel, MMLiveTaskId, NSString;
 
 @interface WCFinderCreateGameLivePrepareCGI
@@ -24,7 +26,6 @@
     GameTeamUpSpecialGiftSettingDetail *_specialGiftSetting;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameTeamUpSpecialGiftSettingDetail *specialGiftSetting; // @synthesize specialGiftSetting=_specialGiftSetting;
 @property(retain, nonatomic) NSString *gameUserId; // @synthesize gameUserId=_gameUserId;
 @property(nonatomic) unsigned int platformId; // @synthesize platformId=_platformId;
@@ -50,4 +51,3 @@
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId;
 
 @end
-

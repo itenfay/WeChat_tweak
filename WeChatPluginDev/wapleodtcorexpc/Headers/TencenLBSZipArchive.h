@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSFileManager, NSString;
 @protocol ZipArchiveDelegate;
@@ -50,4 +51,3 @@
 - (id)init;
 
 @end
-

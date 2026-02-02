@@ -4,6 +4,7 @@
 //
 
 #import <AVFoundation/AVAsset.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface AVAsset (AudioData)
 + (id)audioDataForClassify:(id)arg1;
@@ -28,4 +29,3 @@
 - (_Bool)tav_hasAudio;
 - (id)syncLoadTracksWithMediaType:(id)arg1;
 @end
-

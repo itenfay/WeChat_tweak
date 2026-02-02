@@ -19,7 +19,6 @@
     UILabel *_suffixLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UILabel *suffixLabel; // @synthesize suffixLabel=_suffixLabel;
 @property(retain, nonatomic) UILabel *amountLabel; // @synthesize amountLabel=_amountLabel;

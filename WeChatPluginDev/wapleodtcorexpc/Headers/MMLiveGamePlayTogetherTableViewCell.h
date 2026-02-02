@@ -13,7 +13,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveGamePlayTogetherTableViewCellDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 
 @end

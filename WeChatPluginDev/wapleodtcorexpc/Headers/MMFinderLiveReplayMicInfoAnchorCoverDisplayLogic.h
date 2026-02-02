@@ -15,7 +15,6 @@
     NSMutableDictionary *_userViewInfoDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userViewInfoDict; // @synthesize userViewInfoDict=_userViewInfoDict;
 @property(retain, nonatomic) MMFinderLiveConnectMicUsersInfo *allMicUsersInfo; // @synthesize allMicUsersInfo=_allMicUsersInfo;
 @property(retain, nonatomic) UIView *micUserContainerView; // @synthesize micUserContainerView=_micUserContainerView;

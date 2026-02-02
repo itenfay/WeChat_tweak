@@ -19,7 +19,6 @@
     long long _initializeTryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long initializeTryCount; // @synthesize initializeTryCount=_initializeTryCount;
 @property(nonatomic) _Bool initialized; // @synthesize initialized=_initialized;
 @property(nonatomic) int serviceType; // @synthesize serviceType=_serviceType;

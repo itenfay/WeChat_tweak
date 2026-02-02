@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, WCFinderAudienceReserveLiveCGIExtentParams;
 
 @interface WCFinderAudienceReserveLiveCGI
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) WCFinderAudienceReserveLiveCGIExtentParams *extentParams; // @synthesize extentParams=_extentParams;
@@ -38,4 +39,3 @@
 - (id)initWithAnchorUserName:(id)arg1 noticeId:(id)arg2 optype:(unsigned int)arg3 scene:(unsigned int)arg4 promoterToken:(id)arg5 config:(id)arg6 enterType:(unsigned int)arg7 sessionBuffer:(id)arg8 aggregateTypeArray:(id)arg9 extentParams:(id)arg10 successBlock:(CDUnknownBlockType)arg11 failureBlock:(CDUnknownBlockType)arg12;
 
 @end
-

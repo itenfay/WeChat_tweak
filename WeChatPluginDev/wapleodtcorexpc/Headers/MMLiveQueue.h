@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -13,7 +14,6 @@
     NSMutableArray *_queue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
 @property(nonatomic) unsigned long long maxCount; // @synthesize maxCount=_maxCount;
 - (void)enqueueEx:(id)arg1 tieBreakingBehavior:(unsigned long long)arg2;
@@ -40,4 +40,3 @@
 - (id)init;
 
 @end
-

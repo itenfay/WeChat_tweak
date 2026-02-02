@@ -14,7 +14,6 @@
     WCDevice *_deviceInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDevice *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(nonatomic) _Bool m_ignoreContact; // @synthesize m_ignoreContact;
 @property(nonatomic) unsigned long long m_source; // @synthesize m_source;

@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *adTraceMsgList; // @synthesize adTraceMsgList=_adTraceMsgList;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;

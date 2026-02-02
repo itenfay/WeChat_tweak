@@ -22,7 +22,6 @@
     UIView *_parentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(nonatomic) __weak id <WAEvaluatePopSheetDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onCommitButtonClicked;

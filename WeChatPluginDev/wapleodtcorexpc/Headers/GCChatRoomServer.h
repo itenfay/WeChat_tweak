@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ExportExternInfo, GCChatRoomInfo, GCRecursiveRunTask, GameCenterCommonDb, GetChatroomBaseInfoResponse, GetChatroomRealtimeInfoResponse, MMLockMutableDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSMutableString, NSString, WCTTable;
 @protocol GCChatRoomServerDelegate;
 
@@ -43,7 +45,6 @@
     long long _oneBatchFailCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreChatroomFirstEnterTip; // @synthesize ignoreChatroomFirstEnterTip=_ignoreChatroomFirstEnterTip;
 @property(nonatomic) _Bool hasStopSaveSimpleMemberInfo; // @synthesize hasStopSaveSimpleMemberInfo=_hasStopSaveSimpleMemberInfo;
 @property(nonatomic) _Bool isPullAllMemberNameList; // @synthesize isPullAllMemberNameList=_isPullAllMemberNameList;
@@ -155,4 +156,3 @@
 - (id)initWithChatRoomInfo:(id)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     double _currentCommentTableHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currentCommentTableHeight; // @synthesize currentCommentTableHeight=_currentCommentTableHeight;
 @property(retain, nonatomic) NSString *commentlayoutIdentifyKey; // @synthesize commentlayoutIdentifyKey=_commentlayoutIdentifyKey;
 @property(nonatomic) double currentCommentTableWidth; // @synthesize currentCommentTableWidth=_currentCommentTableWidth;

@@ -14,7 +14,6 @@
     UIFont *_font;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;

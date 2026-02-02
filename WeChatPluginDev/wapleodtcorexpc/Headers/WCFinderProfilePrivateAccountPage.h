@@ -11,7 +11,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *lockIconView; // @synthesize lockIconView=_lockIconView;
 - (void)updateLabelSize;

@@ -41,7 +41,6 @@
 + (void)PBArrayAdd_m_functionIconUrl;
 + (void)PBArrayAdd_m_functionName;
 + (void)PBArrayAdd_m_functionId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_subtitle; // @synthesize m_subtitle=_m_subtitle;
 @property(nonatomic) unsigned int m_weapp_version; // @synthesize m_weapp_version=_m_weapp_version;
 @property(retain, nonatomic) NSString *m_weapp_pagepath; // @synthesize m_weapp_pagepath=_m_weapp_pagepath;

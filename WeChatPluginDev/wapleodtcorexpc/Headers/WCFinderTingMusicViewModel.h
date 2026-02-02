@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderMusicTopicInfo, ForwardMessageLogicController, MMListenCategoryItem, NSArray, NSMutableArray, NSString, WCFinderMusicTopicDataProvider;
 @protocol WCFinderTingMusicViewModelDelegate;
@@ -25,7 +26,6 @@
 
 + (int)getRelatedInnerType;
 + (int)getMusicVideoInnerType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sectionArray; // @synthesize sectionArray=_sectionArray;
 @property(retain, nonatomic) NSMutableArray *listenItemArray; // @synthesize listenItemArray=_listenItemArray;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
@@ -87,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(nonatomic) __weak MMTListAdapter *adapter; // @synthesize adapter=_adapter;
 @property(retain, nonatomic) NSMutableDictionary *exposedSet; // @synthesize exposedSet=_exposedSet;

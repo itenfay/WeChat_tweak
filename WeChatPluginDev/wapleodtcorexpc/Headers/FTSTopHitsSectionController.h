@@ -10,7 +10,6 @@
     NSArray *_topHitItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *topHitItems; // @synthesize topHitItems=_topHitItems;
 - (unsigned long long)sectionType;
 - (id)sectionTitle;

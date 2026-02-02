@@ -13,7 +13,6 @@
     NSString *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSString *event; // @synthesize event=_event;
 - (void)reportFinderLiveAudienceComodityAction:(id)arg1 event:(id)arg2 params:(id)arg3;

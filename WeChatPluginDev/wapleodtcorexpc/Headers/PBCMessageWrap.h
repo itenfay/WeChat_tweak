@@ -44,7 +44,6 @@
 + (void)PBArrayAdd_messageType;
 + (void)PBArrayAdd_mesLocalId;
 + (void)PBArrayAdd_mesSvrId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isSenderStatus; // @synthesize isSenderStatus=_isSenderStatus;
 @property(retain, nonatomic) NSString *specifiedChatName; // @synthesize specifiedChatName=_specifiedChatName;
 @property(retain, nonatomic) NSString *msgSource; // @synthesize msgSource=_msgSource;

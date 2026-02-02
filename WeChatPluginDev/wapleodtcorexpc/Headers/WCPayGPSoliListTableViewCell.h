@@ -22,7 +22,6 @@
     UIView *_sepLine2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepLine2; // @synthesize sepLine2=_sepLine2;
 @property(retain, nonatomic) UIView *sepLine1; // @synthesize sepLine1=_sepLine1;
 @property(retain, nonatomic) UIImageView *arrowImgView; // @synthesize arrowImgView=_arrowImgView;

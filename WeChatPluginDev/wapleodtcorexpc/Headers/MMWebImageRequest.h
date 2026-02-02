@@ -21,7 +21,6 @@
     MMImageLoaderReqContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageLoaderReqContext *context; // @synthesize context=_context;
 @property(nonatomic) _Bool onlyNeedData; // @synthesize onlyNeedData=_onlyNeedData;
 @property(nonatomic) _Bool syncReadDiskCache; // @synthesize syncReadDiskCache=_syncReadDiskCache;

@@ -25,7 +25,6 @@
     NSString *m_privacyAgreementUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_privacyAgreementUrl; // @synthesize m_privacyAgreementUrl;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;
 - (id)navigationBarBackgroundColor;

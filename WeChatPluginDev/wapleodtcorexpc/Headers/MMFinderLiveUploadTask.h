@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -17,7 +18,6 @@
     long long _uploadingMediaCount;
 }
 
-- (void).cxx_destruct;
 @property long long uploadingMediaCount; // @synthesize uploadingMediaCount=_uploadingMediaCount;
 @property long long currentRetryCount; // @synthesize currentRetryCount=_currentRetryCount;
 @property(nonatomic) long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
@@ -29,4 +29,3 @@
 - (id)initWithUploadTaskId:(id)arg1 mediaItemArray:(id)arg2 maxRetryCount:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
-

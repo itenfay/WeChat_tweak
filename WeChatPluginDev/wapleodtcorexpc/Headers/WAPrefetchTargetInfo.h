@@ -14,7 +14,6 @@
     NSString *_pagePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

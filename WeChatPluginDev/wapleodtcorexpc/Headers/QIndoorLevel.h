@@ -13,7 +13,6 @@
     NSString *_shortName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)description;

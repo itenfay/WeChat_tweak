@@ -18,7 +18,6 @@
     GameCenterMessageRedPointInfo *_redPointInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterMessageRedPointInfo *redPointInfo; // @synthesize redPointInfo=_redPointInfo;
 @property(retain, nonatomic) MMLoadMoreTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) GameLifeConversationCellDataSource *cellDataSource; // @synthesize cellDataSource=_cellDataSource;

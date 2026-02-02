@@ -15,7 +15,6 @@
     MISSING_TYPE *weakEngine;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)dispatchTouchEventViewId:(id)arg1 event:(id)arg2 error:(id *)arg3;
 - (void)onDetachedFromEngine:(id)arg1;

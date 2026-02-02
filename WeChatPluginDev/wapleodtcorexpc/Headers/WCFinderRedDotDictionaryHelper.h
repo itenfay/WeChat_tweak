@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, WCFinderRedDotThreadSafeDictionary;
 
@@ -14,7 +15,6 @@
     NSMutableDictionary *_dic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dic; // @synthesize dic=_dic;
 @property(retain, nonatomic) WCFinderRedDotThreadSafeDictionary *gcdDic; // @synthesize gcdDic=_gcdDic;
 @property(nonatomic) _Bool useGCDSwitch; // @synthesize useGCDSwitch=_useGCDSwitch;
@@ -31,4 +31,3 @@
 - (id)initWithGCDSwitch:(_Bool)arg1 queueName:(id)arg2;
 
 @end
-

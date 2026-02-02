@@ -15,7 +15,6 @@
     MMURLHandler *_urlHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDetectModelWorkable; // @synthesize isDetectModelWorkable=_isDetectModelWorkable;
 @property(retain, nonatomic) MMURLHandler *urlHandler; // @synthesize urlHandler=_urlHandler;
 - (void)detectDocumentArea:(id)arg1 cropRect:(struct CGRect)arg2 sessionId:(unsigned long long)arg3;

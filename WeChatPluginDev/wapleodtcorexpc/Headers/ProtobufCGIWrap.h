@@ -50,7 +50,6 @@
     NSString *_reqHost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int stn_errCode; // @synthesize stn_errCode=_stn_errCode;
 @property(nonatomic) int stn_errType; // @synthesize stn_errType=_stn_errType;
 @property(nonatomic) short encryptAlgo; // @synthesize encryptAlgo=_encryptAlgo;

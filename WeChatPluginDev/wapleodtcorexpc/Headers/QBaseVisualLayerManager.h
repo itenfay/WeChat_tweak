@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, QBasicMapView, QLayerManager;
 
@@ -17,7 +18,6 @@
     NSString *_configPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *configPath; // @synthesize configPath=_configPath;
 @property(copy, nonatomic) NSString *apiKey; // @synthesize apiKey=_apiKey;
 @property(nonatomic) __weak QLayerManager *internalLayerManager; // @synthesize internalLayerManager=_internalLayerManager;
@@ -30,4 +30,3 @@
 - (void)addLayer:(id)arg1;
 
 @end
-

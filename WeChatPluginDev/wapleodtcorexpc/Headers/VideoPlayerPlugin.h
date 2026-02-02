@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol FlutterBinaryMessenger, FlutterPluginRegistrar, FlutterTextureRegistry;
@@ -18,7 +19,6 @@
 
 + (void)registerWithRegistrar:(id)arg1;
 + (void)setPluginImplClass:(Class)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<FlutterPluginRegistrar> *registrar; // @synthesize registrar=_registrar;
 @property(readonly, nonatomic) NSMutableDictionary *players; // @synthesize players=_players;
 @property(readonly, nonatomic) __weak NSObject<FlutterBinaryMessenger> *messenger; // @synthesize messenger=_messenger;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

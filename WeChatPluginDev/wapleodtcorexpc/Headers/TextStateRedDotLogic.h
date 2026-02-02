@@ -14,7 +14,6 @@
     NSMutableDictionary *_redDotToHandlerDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *redDotToHandlerDict; // @synthesize redDotToHandlerDict=_redDotToHandlerDict;
 @property(nonatomic) __weak id <TextStateRedDotLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)handlerForRedDot:(unsigned int)arg1;

@@ -20,7 +20,6 @@
 }
 
 + (double)calBtnLengthFor:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCurrentBtnGrayForWecoin; // @synthesize isCurrentBtnGrayForWecoin=_isCurrentBtnGrayForWecoin;
 @property(retain, nonatomic) UIButton *downloadCancelBtn; // @synthesize downloadCancelBtn=_downloadCancelBtn;
 @property(retain, nonatomic) EmotionProgressView *progressView; // @synthesize progressView=_progressView;

@@ -14,7 +14,6 @@
     MMFinderLiveWebPageSheetParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveWebPageSheetParams *params; // @synthesize params=_params;
 @property(nonatomic) unsigned int cacheTsSec; // @synthesize cacheTsSec=_cacheTsSec;
 @property(retain, nonatomic) MMPageSheetAdapter *adpater; // @synthesize adpater=_adpater;

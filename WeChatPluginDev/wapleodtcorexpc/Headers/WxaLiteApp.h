@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WxaLiteAppConfig *config; // @synthesize config=_config;
 - (void)setup:(id)arg1;
 - (_Bool)checkInit;

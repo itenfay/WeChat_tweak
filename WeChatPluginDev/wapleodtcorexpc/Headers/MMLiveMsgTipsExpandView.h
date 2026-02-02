@@ -14,7 +14,6 @@
     MMTableView *_bannerItemTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *bannerItemTableView; // @synthesize bannerItemTableView=_bannerItemTableView;
 @property(retain, nonatomic) NSMutableArray *viewModelList; // @synthesize viewModelList=_viewModelList;
 @property(retain, nonatomic) CContact *groupContact; // @synthesize groupContact=_groupContact;

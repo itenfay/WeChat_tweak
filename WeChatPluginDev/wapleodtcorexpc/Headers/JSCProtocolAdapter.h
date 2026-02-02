@@ -20,7 +20,6 @@
     JSCScreencastSession *_screencastSession;
 }
 
-- (void).cxx_destruct;
 - (id)onScriptProfilerTrackingComplete:(id)arg1;
 - (void)removeProfilesDeadLoop:(id)arg1 nodes:(id)arg2;
 - (id)onProfilerStop:(id)arg1;

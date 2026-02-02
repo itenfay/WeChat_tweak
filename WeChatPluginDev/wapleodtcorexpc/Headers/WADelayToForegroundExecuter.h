@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAWebViewController;
 
@@ -14,10 +15,8 @@
     NSString *_jsapiName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *jsapiName; // @synthesize jsapiName=_jsapiName;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) __weak WAWebViewController *ownerWebViewController; // @synthesize ownerWebViewController=_ownerWebViewController;
 
 @end
-

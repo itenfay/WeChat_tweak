@@ -16,7 +16,6 @@
 
 + (id)textRestrictRuleWithType:(long long)arg1;
 + (struct _NSRange)markedTextRangeToNSRange:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long restrictType; // @synthesize restrictType=_restrictType;
 @property(nonatomic) __weak id <UITextFieldDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(readonly, nonatomic) long long restricyType; // @synthesize restricyType=_restricyType;

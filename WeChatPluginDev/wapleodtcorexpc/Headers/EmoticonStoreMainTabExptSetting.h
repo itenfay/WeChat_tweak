@@ -15,7 +15,6 @@
 }
 
 + (id)savePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *listWording; // @synthesize listWording=_listWording;
 @property(retain, nonatomic) NSString *tabWording; // @synthesize tabWording=_tabWording;
 @property(nonatomic) int type; // @synthesize type=_type;

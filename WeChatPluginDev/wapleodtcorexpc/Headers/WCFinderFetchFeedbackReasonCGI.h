@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderFetchFeedbackReasonCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
@@ -30,4 +31,3 @@
 - (id)initWithFeedID:(unsigned long long)arg1 liveScene:(long long)arg2 feedbackType:(unsigned long long)arg3 commentScene:(int)arg4 sessionBuffer:(id)arg5 success:(CDUnknownBlockType)arg6 fail:(CDUnknownBlockType)arg7;
 
 @end
-

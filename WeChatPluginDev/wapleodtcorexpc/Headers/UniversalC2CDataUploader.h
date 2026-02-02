@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMCommonCgiUploader, MMCommonUploadResult, NSString, UniversalUploadResult;
 
@@ -41,7 +42,6 @@
     NSString *_downloadingKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadingKey; // @synthesize downloadingKey=_downloadingKey;
 @property(nonatomic) unsigned long long haveUploadSize; // @synthesize haveUploadSize=_haveUploadSize;
 @property(nonatomic) unsigned long long totalFileSize; // @synthesize totalFileSize=_totalFileSize;
@@ -96,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

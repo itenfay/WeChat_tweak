@@ -15,7 +15,6 @@
     NSString *_voicetransIconEnglish;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *voicetransIconEnglish; // @synthesize voicetransIconEnglish=_voicetransIconEnglish;
 @property(retain, nonatomic) NSString *voicetransIcon; // @synthesize voicetransIcon=_voicetransIcon;
 @property(retain, nonatomic) NSString *languageName; // @synthesize languageName=_languageName;

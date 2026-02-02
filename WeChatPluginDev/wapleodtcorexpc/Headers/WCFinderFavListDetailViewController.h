@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSNumber, NSString, WCFinderFavListDetailViewModel, WCFinderFeedListView, WCFinderShareCustomTransition;
 
 @interface WCFinderFavListDetailViewController
@@ -17,7 +19,6 @@
 }
 
 + (id)genDeleteTransferCtxByCommentScene:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(copy, nonatomic) NSString *displayTitle; // @synthesize displayTitle=_displayTitle;
 @property(retain, nonatomic) WCFinderFavListDetailViewModel *viewModel; // @synthesize viewModel=_viewModel;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

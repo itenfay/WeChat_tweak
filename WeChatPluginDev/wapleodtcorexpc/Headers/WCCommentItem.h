@@ -38,7 +38,6 @@
 }
 
 + (id)genCommentObject:(id)arg1 content:(id)arg2 ref:(id)arg3 source:(long long)arg4 SnsEmojiInfoObj:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsDragonCommentInfo *dragonCommentInfo; // @synthesize dragonCommentInfo=_dragonCommentInfo;
 @property(retain, nonatomic) NSString *commentFailedBtnTitle; // @synthesize commentFailedBtnTitle=_commentFailedBtnTitle;
 @property(retain, nonatomic) NSString *commentFailedBtnUrl; // @synthesize commentFailedBtnUrl=_commentFailedBtnUrl;

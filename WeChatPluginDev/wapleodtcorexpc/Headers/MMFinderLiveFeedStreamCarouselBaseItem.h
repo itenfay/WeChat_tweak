@@ -12,7 +12,6 @@
     FeedsPreviewLiveMultiStyleInfo_StyleSevenTeen_CycleStyleControl *_styleCtrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FeedsPreviewLiveMultiStyleInfo_StyleSevenTeen_CycleStyleControl *styleCtrl; // @synthesize styleCtrl=_styleCtrl;
 
 @end

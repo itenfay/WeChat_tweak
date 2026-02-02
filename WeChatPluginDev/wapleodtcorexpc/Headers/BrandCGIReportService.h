@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSLock, NSMapTable, NSString;
 
 @interface BrandCGIReportService
@@ -11,7 +13,6 @@
     NSLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMapTable *mapTable; // @synthesize mapTable=_mapTable;
 - (id)_requestForEventID:(unsigned int)arg1;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

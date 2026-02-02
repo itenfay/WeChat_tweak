@@ -14,7 +14,6 @@
     NSString *_nickName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(copy, nonatomic) NSString *confirmWording; // @synthesize confirmWording=_confirmWording;
 @property(copy, nonatomic) NSString *confirmRedirectUrl; // @synthesize confirmRedirectUrl=_confirmRedirectUrl;

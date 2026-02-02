@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAudioPlayer, CEmoticonWrap, CMessageWrap, ContactUpdateHelper, EmoticonBoardView, EmoticonCustomAddLogicController, MMEmoticonView, MMTableView, MMUILabel, NSString, RichTextView, SharePreConfirmSheetView, SharePreConfirmView, UIButton, UIImageView, UILabel, UIView, WCActionSheet, WCRedEnvelopesCommentInputToolView, WCRedEnvelopesStoryDargUtil, WCRedEnvelopesStoryViewController, WCUITextField;
 @protocol WCRedEnvelopesRedEnvelopesDetailViewControllerDelegate;
 
@@ -96,7 +98,6 @@
     WCActionSheet *_m_actionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCActionSheet *m_actionSheet; // @synthesize m_actionSheet=_m_actionSheet;
 @property(retain, nonatomic) UILabel *finderDesignHBWarningLabel; // @synthesize finderDesignHBWarningLabel=_finderDesignHBWarningLabel;
 @property(retain, nonatomic) UIView *emoticonBoardBackground; // @synthesize emoticonBoardBackground=_emoticonBoardBackground;
@@ -318,4 +319,3 @@
 @property(readonly) Class superclass;
 
 @end
-

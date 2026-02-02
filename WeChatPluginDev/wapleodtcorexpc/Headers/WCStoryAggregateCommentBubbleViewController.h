@@ -32,7 +32,6 @@
     UITableView *_replyCommentTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *replyCommentTableView; // @synthesize replyCommentTableView=_replyCommentTableView;
 @property(retain, nonatomic) WCStoryComment *replyComment; // @synthesize replyComment=_replyComment;
 @property(retain, nonatomic) WCInputControllerViews *inputControllerViews; // @synthesize inputControllerViews=_inputControllerViews;

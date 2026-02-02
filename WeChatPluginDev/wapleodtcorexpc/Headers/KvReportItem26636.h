@@ -33,7 +33,6 @@
     NSString *_sessionId_39;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isDregradePrinterMode_44; // @synthesize isDregradePrinterMode_44=_isDregradePrinterMode_44;
 @property(nonatomic) unsigned int hasEditCrop_43; // @synthesize hasEditCrop_43=_hasEditCrop_43;
 @property(nonatomic) unsigned int originContentHeight_42; // @synthesize originContentHeight_42=_originContentHeight_42;

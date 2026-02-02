@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _okBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType okBlock; // @synthesize okBlock=_okBlock;
 - (void)onLoadWCPayWebImageFail:(id)arg1;
 - (void)onLoadWCPayWebImageOK:(id)arg1;
@@ -28,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

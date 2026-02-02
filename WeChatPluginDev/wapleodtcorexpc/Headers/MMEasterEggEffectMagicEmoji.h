@@ -12,7 +12,6 @@
     MMTimer *_timeoutTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(retain, nonatomic) NSString *magicEmojiEffectId; // @synthesize magicEmojiEffectId=_magicEmojiEffectId;

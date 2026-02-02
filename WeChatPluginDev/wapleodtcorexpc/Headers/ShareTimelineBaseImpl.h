@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSEvent, NSDictionary, NSMutableData, NSString, NSURLConnection, WebviewJSEventHandlerBase;
 
 @interface ShareTimelineBaseImpl
@@ -17,7 +19,6 @@
     NSDictionary *_extraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) NSString *publishedId; // @synthesize publishedId=_publishedId;
 @property(retain, nonatomic) NSMutableData *m_recData; // @synthesize m_recData=_m_recData;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

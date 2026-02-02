@@ -18,7 +18,6 @@
 }
 
 + (double)getNearbyTableViewCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *poiTipsLabel; // @synthesize poiTipsLabel=_poiTipsLabel;
 @property(retain, nonatomic) UIImageView *poiImageView; // @synthesize poiImageView=_poiImageView;

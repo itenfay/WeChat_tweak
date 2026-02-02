@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveWidgetContainerViewConfig, MMFinderLiveWidgetItem, MMTimer, NSMutableArray;
 
@@ -19,7 +20,6 @@
     MMFinderLiveWidgetItem *_enteringItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveWidgetItem *enteringItem; // @synthesize enteringItem=_enteringItem;
 @property(nonatomic) double lastWidgetAnimationStartTs; // @synthesize lastWidgetAnimationStartTs=_lastWidgetAnimationStartTs;
 @property(retain, nonatomic) MMTimer *currentWidgetAnimationTimer; // @synthesize currentWidgetAnimationTimer=_currentWidgetAnimationTimer;
@@ -52,4 +52,3 @@
 - (id)initWithConfig:(id)arg1;
 
 @end
-

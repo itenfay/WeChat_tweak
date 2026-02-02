@@ -13,7 +13,6 @@
     UILabel *m_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MailReceiverEditViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onTextFieldChanged:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

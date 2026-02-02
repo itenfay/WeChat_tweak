@@ -94,7 +94,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 toComponentItem:(id)arg2 withSizeType:(long long)arg3 basicWidth:(int)arg4 basicRootFontSize:(int)arg5 widthRoundingType:(long long)arg6 heightRoundingType:(long long)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *actionOnSuccess; // @synthesize actionOnSuccess=_actionOnSuccess;
 @property(retain, nonatomic) WCAdStatePublishInfo *statePublishInfo; // @synthesize statePublishInfo=_statePublishInfo;
 @property(nonatomic) _Bool autoJump; // @synthesize autoJump=_autoJump;

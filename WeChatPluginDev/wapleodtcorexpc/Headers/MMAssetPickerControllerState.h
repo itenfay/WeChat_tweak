@@ -40,7 +40,6 @@
     id <MMAssetPickerUserActionTipsProtocol> _userActionTipsActivity;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MMAssetPickerUserActionTipsProtocol> userActionTipsActivity; // @synthesize userActionTipsActivity=_userActionTipsActivity;
 @property(nonatomic) _Bool shouldShowFinderMJPublisherTemplateComposingButton; // @synthesize shouldShowFinderMJPublisherTemplateComposingButton=_shouldShowFinderMJPublisherTemplateComposingButton;
 @property(retain, nonatomic) NSString *pickerBottomFloatText; // @synthesize pickerBottomFloatText=_pickerBottomFloatText;

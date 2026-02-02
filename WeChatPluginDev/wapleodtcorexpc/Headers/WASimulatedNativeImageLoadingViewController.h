@@ -14,7 +14,6 @@
     MMProgressViewEx *_loadingView;
 }
 
-- (void).cxx_destruct;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLayoutSubviews;

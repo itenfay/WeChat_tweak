@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (id)proxyWithTarget:(id)arg1;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

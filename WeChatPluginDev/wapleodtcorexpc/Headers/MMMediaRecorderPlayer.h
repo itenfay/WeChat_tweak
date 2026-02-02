@@ -41,7 +41,6 @@
     struct CGSize m_videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *m_timer; // @synthesize m_timer;
 @property(retain, nonatomic) MMProgressViewEx *m_loadingView; // @synthesize m_loadingView;
 @property(retain, nonatomic) WCNetworkMediaSlider *m_progressSlider; // @synthesize m_progressSlider;

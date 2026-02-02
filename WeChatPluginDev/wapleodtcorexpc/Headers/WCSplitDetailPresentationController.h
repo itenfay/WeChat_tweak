@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIPresentationController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol WCSplitDetailPresentationControllerDelegate;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _transtionEndHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transtionEndHandler; // @synthesize transtionEndHandler=_transtionEndHandler;
 @property(nonatomic) _Bool isChangingSize; // @synthesize isChangingSize=_isChangingSize;
 @property(nonatomic) __weak id <WCSplitDetailPresentationControllerDelegate> splitDelegate; // @synthesize splitDelegate=_splitDelegate;
@@ -30,4 +30,3 @@
 - (void)updatePresentedFrame:(struct CGRect)arg1 displayMode:(long long)arg2;
 
 @end
-

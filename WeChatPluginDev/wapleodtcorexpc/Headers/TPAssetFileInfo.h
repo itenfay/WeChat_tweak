@@ -20,7 +20,6 @@
     NSString *_cachePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cachePath; // @synthesize cachePath=_cachePath;
 @property(nonatomic) int taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) _Bool usePollingMode; // @synthesize usePollingMode=_usePollingMode;

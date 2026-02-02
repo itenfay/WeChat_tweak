@@ -48,7 +48,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reservedText2; // @synthesize reservedText2=_reservedText2;
 @property(retain, nonatomic) NSString *reservedText1; // @synthesize reservedText1=_reservedText1;
 @property(retain, nonatomic) NSString *associatedGroups; // @synthesize associatedGroups=_associatedGroups;

@@ -20,7 +20,6 @@
     NSString *_translateImageCdnAesKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *translateImageCdnAesKey; // @synthesize translateImageCdnAesKey=_translateImageCdnAesKey;
 @property(retain, nonatomic) NSString *translateImageCdnFiledId; // @synthesize translateImageCdnFiledId=_translateImageCdnFiledId;
 @property(retain, nonatomic) NSString *enhanceImageCdnAesKey; // @synthesize enhanceImageCdnAesKey=_enhanceImageCdnAesKey;

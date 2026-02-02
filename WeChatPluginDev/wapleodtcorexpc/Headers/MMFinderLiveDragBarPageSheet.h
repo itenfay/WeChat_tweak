@@ -10,7 +10,6 @@
     MMLiveShopShelfDragBar *_dragBar;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveShopShelfDragBar *dragBar; // @synthesize dragBar=_dragBar;
 - (void)pageSheetDidChangeVisibleHeight:(double)arg1;
 - (void)setDetailView:(id)arg1;

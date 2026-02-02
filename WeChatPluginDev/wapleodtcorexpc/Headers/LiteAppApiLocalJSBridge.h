@@ -12,7 +12,6 @@
     FTSWebSearchMgr *_webSearchMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSWebSearchMgr *webSearchMgr; // @synthesize webSearchMgr=_webSearchMgr;
 @property(retain, nonatomic) LocalJSEventHandler_BaseEvent *handler; // @synthesize handler=_handler;
 - (id)webView;

@@ -11,7 +11,6 @@
     NSString *_value;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 

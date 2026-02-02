@@ -16,7 +16,6 @@
 
 + (double)footerMarginTopForIsBlank:(_Bool)arg1;
 + (double)footerHeightForIsBlank:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *modifyScopeButton; // @synthesize modifyScopeButton=_modifyScopeButton;
 @property(nonatomic) __weak id <WCMomentsShareScopeSectionFooterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_initView;

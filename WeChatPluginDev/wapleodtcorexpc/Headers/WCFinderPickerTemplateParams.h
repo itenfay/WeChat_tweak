@@ -17,7 +17,6 @@
     NSString *_followFeedId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *followFeedId; // @synthesize followFeedId=_followFeedId;
 @property(nonatomic) unsigned long long eventId; // @synthesize eventId=_eventId;
 @property(nonatomic) _Bool showLegalTipsViewIfNeed; // @synthesize showLegalTipsViewIfNeed=_showLegalTipsViewIfNeed;

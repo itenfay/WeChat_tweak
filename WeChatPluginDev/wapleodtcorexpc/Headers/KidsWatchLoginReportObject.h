@@ -15,7 +15,6 @@
     unsigned long long _accountType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) unsigned long long kidsCount; // @synthesize kidsCount=_kidsCount;
 @property(retain, nonatomic) NSString *qrCode; // @synthesize qrCode=_qrCode;

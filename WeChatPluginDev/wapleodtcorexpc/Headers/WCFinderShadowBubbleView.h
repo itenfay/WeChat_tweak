@@ -19,7 +19,6 @@
     UIColor *_fontColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useRawContent; // @synthesize useRawContent=_useRawContent;
 @property(retain, nonatomic) UIColor *fontColor; // @synthesize fontColor=_fontColor;
 @property(retain, nonatomic) UIColor *bkColor; // @synthesize bkColor=_bkColor;

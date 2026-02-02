@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameWebViewTimeRecord, MMWebViewController, NSDictionary, NSMutableDictionary, NSString;
 
 @interface GameWebReporter
@@ -29,7 +31,6 @@
 }
 
 + (id)createWithWebView:(id)arg1 andUrl:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealtime16142; // @synthesize isRealtime16142=_isRealtime16142;
 @property(nonatomic) unsigned long long pageCloseTime; // @synthesize pageCloseTime=_pageCloseTime;
 @property(retain, nonatomic) NSDictionary *webTimingDic; // @synthesize webTimingDic=_webTimingDic;
@@ -71,4 +72,3 @@
 - (id)webView;
 
 @end
-

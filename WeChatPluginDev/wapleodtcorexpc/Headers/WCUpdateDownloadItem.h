@@ -16,7 +16,6 @@
     NSMutableArray *_customInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *customInfos; // @synthesize customInfos=_customInfos;
 @property(retain, nonatomic) ResourceMeta *resMeta; // @synthesize resMeta=_resMeta;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

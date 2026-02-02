@@ -23,7 +23,6 @@
     unsigned long long _lockedOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lockedOrientation; // @synthesize lockedOrientation=_lockedOrientation;
 @property(retain, nonatomic) NSString *gameAppId; // @synthesize gameAppId=_gameAppId;
 @property(retain, nonatomic) id <H5GameViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveAudioOnlyIndicatorView, MMLiveTaskId, MMMinimizeLiveIndicatorView, MMUIButton, UIImageView;
 
@@ -28,7 +29,6 @@
     UIView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) MMUIButton *bgButton; // @synthesize bgButton=_bgButton;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
@@ -110,4 +110,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

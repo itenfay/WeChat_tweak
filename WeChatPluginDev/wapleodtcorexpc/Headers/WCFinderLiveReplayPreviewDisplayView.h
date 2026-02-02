@@ -48,7 +48,6 @@
 }
 
 + (id)getFixedSectionFromReplayUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(nonatomic) _Bool isStartPreview; // @synthesize isStartPreview=_isStartPreview;
 @property(retain, nonatomic) NSMutableArray *previewVideoResolutionRecordList; // @synthesize previewVideoResolutionRecordList=_previewVideoResolutionRecordList;

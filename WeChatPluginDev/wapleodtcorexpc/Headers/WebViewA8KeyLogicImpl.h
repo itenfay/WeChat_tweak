@@ -53,7 +53,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *firstGetA8KeyReqUrl; // @synthesize firstGetA8KeyReqUrl=_firstGetA8KeyReqUrl;
 @property(copy, nonatomic) NSString *getA8keySceneNoteTmplId; // @synthesize getA8keySceneNoteTmplId=_getA8keySceneNoteTmplId;
 @property(copy, nonatomic) NSString *getA8keySceneNoteTmplUsername; // @synthesize getA8keySceneNoteTmplUsername=_getA8keySceneNoteTmplUsername;

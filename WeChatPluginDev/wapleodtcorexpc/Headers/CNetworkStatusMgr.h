@@ -32,7 +32,6 @@
     unsigned long long m_beginGettingDataTime;
 }
 
-- (void).cxx_destruct;
 - (void)onNetworkWeakChanged:(_Bool)arg1 currentRTT:(unsigned int)arg2;
 - (_Bool)isNetworkWeak;
 - (void)onNetworkCheckResult:(_Bool)arg1 stage:(unsigned int)arg2 allEnds:(_Bool)arg3 kvString:(id)arg4;

@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_groups;
 + (void)PBArrayAdd_key;
 + (void)PBArrayAdd_configId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *idToIconDict; // @synthesize idToIconDict=_idToIconDict;
 @property(retain, nonatomic) NSRecursiveLock *accessLock; // @synthesize accessLock=_accessLock;
 @property(retain, nonatomic) NSMutableArray *icons; // @synthesize icons=_icons;

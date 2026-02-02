@@ -17,7 +17,6 @@
     NSString *_btnTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSubmitBtnShow; // @synthesize isSubmitBtnShow=_isSubmitBtnShow;
 @property(retain, nonatomic) NSString *btnTitle; // @synthesize btnTitle=_btnTitle;
 @property(retain, nonatomic) NSString *tips; // @synthesize tips=_tips;

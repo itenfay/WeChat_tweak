@@ -12,7 +12,6 @@
     MISSING_TYPE *cellHeight;
 }
 
-- (void).cxx_destruct;
 - (void)OnClearStoreItemReddot:(id)arg1;
 - (void)onDownloadStoreItem:(id)arg1;
 - (void)OnRewardStoreItem:(id)arg1;

@@ -24,7 +24,6 @@
 
 + (id)certificateDataTrustChainForServerTrust:(struct __SecTrust *)arg1;
 + (_Bool)validateChallenge:(id)arg1 withCertificateDataArray:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrHttpHeaderWhiteList; // @synthesize arrHttpHeaderWhiteList=_arrHttpHeaderWhiteList;
 @property(retain, nonatomic) NSArray *arrHttpHeaderBlackList; // @synthesize arrHttpHeaderBlackList=_arrHttpHeaderBlackList;
 @property(retain, nonatomic) NSString *httpHeaderMode; // @synthesize httpHeaderMode=_httpHeaderMode;

@@ -13,7 +13,6 @@
     id <InternalLoadingFavorDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <InternalLoadingFavorDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)onWCPayBusiF2FGetFavorCgiError:(id)arg1;
 - (void)onWCPayBusiF2FGetFavorCgiResp:(id)arg1;

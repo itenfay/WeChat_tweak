@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -37,10 +38,8 @@
 @property(retain, nonatomic) NSString *segName; // @synthesize segName=_segName;
 @property(nonatomic) _Bool is64os; // @synthesize is64os=_is64os;
 @property(retain, nonatomic) NSString *phoneID; // @synthesize phoneID=_phoneID;
-- (void).cxx_destruct;
 - (void)saveToFileWithCompletion:(CDUnknownBlockType)arg1;
 - (void)saveToFile:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)toDictionary;
 
 @end
-

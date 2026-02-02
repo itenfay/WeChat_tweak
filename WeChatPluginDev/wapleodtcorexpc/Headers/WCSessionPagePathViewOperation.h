@@ -14,7 +14,6 @@
     NSMutableArray *_businessParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *businessParams; // @synthesize businessParams=_businessParams;
 @property(nonatomic) unsigned long long timestampMs; // @synthesize timestampMs=_timestampMs;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;

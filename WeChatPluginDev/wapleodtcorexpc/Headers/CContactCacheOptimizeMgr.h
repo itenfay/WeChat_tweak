@@ -16,7 +16,6 @@
     NSRecursiveLock *m_recordUseLock;
 }
 
-- (void).cxx_destruct;
 - (void)onManulLogOut;
 - (void)onPreQuit;
 - (void)onKickQuit;

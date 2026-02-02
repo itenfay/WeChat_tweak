@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSString;
 @protocol VoicePrintVerifyViewControllerDelegate;
 
@@ -15,7 +17,6 @@
     MMTimer *_timeoutTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(nonatomic, getter=isRecording) _Bool recording; // @synthesize recording=_recording;
 @property(nonatomic, getter=isRecordButtonPressed) _Bool recordButtonPressed; // @synthesize recordButtonPressed=_recordButtonPressed;
@@ -50,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

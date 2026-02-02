@@ -18,7 +18,6 @@
     CameraScanTabView *_tabView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak CameraScanTabView *tabView; // @synthesize tabView=_tabView;
 @property(nonatomic) __weak UIView *albumButtonWrapView; // @synthesize albumButtonWrapView=_albumButtonWrapView;
 @property(nonatomic) __weak UILabel *torchLabel; // @synthesize torchLabel=_torchLabel;

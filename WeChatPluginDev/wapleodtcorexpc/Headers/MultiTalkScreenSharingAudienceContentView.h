@@ -14,7 +14,6 @@
     UIView *_renderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *renderView; // @synthesize renderView=_renderView;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) WCVideoRender *render; // @synthesize render=_render;

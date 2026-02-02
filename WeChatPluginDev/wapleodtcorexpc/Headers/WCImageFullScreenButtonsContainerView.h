@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ImageBrowseButton, WCMomentsBizOriginalArticleButton;
 
 @interface WCImageFullScreenButtonsContainerView
@@ -14,7 +16,6 @@
     ImageBrowseButton *_circleToSearchButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ImageBrowseButton *circleToSearchButton; // @synthesize circleToSearchButton=_circleToSearchButton;
 @property(retain, nonatomic) WCMomentsBizOriginalArticleButton *bizOriginalArticleButton; // @synthesize bizOriginalArticleButton=_bizOriginalArticleButton;
 @property(copy, nonatomic) CDUnknownBlockType circleToSearchBlock; // @synthesize circleToSearchBlock=_circleToSearchBlock;
@@ -33,4 +34,3 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end
-

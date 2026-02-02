@@ -16,7 +16,6 @@
     MMFinderLiveEnterSqaureTransitionContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) MMFinderLiveEnterSqaureTransitionContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <MMFinderLiveEnterAndExitSqaureTransitionControllerDelegatge> delegate; // @synthesize delegate=_delegate;

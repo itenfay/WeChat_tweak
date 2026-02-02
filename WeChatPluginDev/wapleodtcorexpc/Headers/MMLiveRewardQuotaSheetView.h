@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveRewardGiftExtInfo, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, RichTextView, UILabel, UIView, UIVisualEffectView;
 @protocol MMLiveRewardQuotaSheetViewDelegate;
 
@@ -29,7 +31,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needFaceVerify; // @synthesize needFaceVerify=_needFaceVerify;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

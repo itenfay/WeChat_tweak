@@ -13,7 +13,6 @@
     NSMutableArray *_styleContentViewList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *styleContentViewList; // @synthesize styleContentViewList=_styleContentViewList;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationEditLogic *customizationEditLogic; // @synthesize customizationEditLogic=_customizationEditLogic;
 - (void)changeSelectToStyleContent:(id)arg1;

@@ -17,7 +17,6 @@
     UIScrollView *m_mainScrollView;
 }
 
-- (void).cxx_destruct;
 - (void)onUpload;
 - (void)onSwitchValueChange:(id)arg1;
 - (void)makeTipLabelWithText:(id)arg1;

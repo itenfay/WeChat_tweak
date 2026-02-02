@@ -14,7 +14,6 @@
     unsigned long long _businessType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long businessType; // @synthesize businessType=_businessType;
 @property(copy, nonatomic) NSString *reportBypData; // @synthesize reportBypData=_reportBypData;
 @property(copy, nonatomic) NSString *reportData; // @synthesize reportData=_reportData;

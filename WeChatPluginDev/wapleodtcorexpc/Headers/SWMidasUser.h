@@ -18,7 +18,6 @@
     MISSING_TYPE *platformKey;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (id)initWithOfferID:(id)arg1 openID:(id)arg2 openKey:(id)arg3 sessionID:(id)arg4 sessionType:(id)arg5 platform:(id)arg6 platformKey:(id)arg7;

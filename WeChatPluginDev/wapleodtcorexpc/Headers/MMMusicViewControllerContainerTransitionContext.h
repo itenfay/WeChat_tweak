@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, UIView;
 
@@ -18,7 +19,6 @@
     struct CGAffineTransform _targetTransform;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform targetTransform; // @synthesize targetTransform=_targetTransform;
 @property(nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

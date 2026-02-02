@@ -14,7 +14,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *translatedCaptionEntries; // @synthesize translatedCaptionEntries=_translatedCaptionEntries;
 @property(readonly, nonatomic) MJCaptionEntry *originalCaptionEntry; // @synthesize originalCaptionEntry=_originalCaptionEntry;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;

@@ -23,7 +23,6 @@
     MMTimer *_waitBillTimeoutTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *waitBillTimeoutTimer; // @synthesize waitBillTimeoutTimer=_waitBillTimeoutTimer;
 @property(nonatomic) unsigned long long billWaitStartTimestamp; // @synthesize billWaitStartTimestamp=_billWaitStartTimestamp;
 @property(nonatomic) _Bool waitingBillProcess; // @synthesize waitingBillProcess=_waitingBillProcess;

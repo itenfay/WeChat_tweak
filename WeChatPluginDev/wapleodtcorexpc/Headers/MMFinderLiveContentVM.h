@@ -56,7 +56,6 @@
 }
 
 + (id)contentVMWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *temporaryNonceId; // @synthesize temporaryNonceId=_temporaryNonceId;
 @property(nonatomic) unsigned long long temporaryObjectId; // @synthesize temporaryObjectId=_temporaryObjectId;
 @property(nonatomic) _Bool isCertificateType; // @synthesize isCertificateType=_isCertificateType;

@@ -17,7 +17,6 @@
     CDStruct_02837cd9 _boundingMapRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_02837cd9 boundingMapRect; // @synthesize boundingMapRect=_boundingMapRect;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) CDStruct_c3b9c2ee centerPoint; // @synthesize centerPoint=_centerPoint;

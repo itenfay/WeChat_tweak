@@ -15,7 +15,6 @@
     unsigned int _appUuid;
 }
 
-- (void).cxx_destruct;
 - (void)releaseAudioNative;
 - (id)getAudioFilePath:(id)arg1;
 - (void)initAudioContext:(unsigned long long)arg1;

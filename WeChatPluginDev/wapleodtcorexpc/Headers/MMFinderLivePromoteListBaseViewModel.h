@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveAnchorPromoteInfo, MMFinderLiveTaskId, MMTableView, NSData, NSMutableArray, NSString, WCFinderRefreshTableFooterView;
 @protocol MMFinderLivePromoteListViewModelDelegate;
@@ -26,7 +27,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
@@ -73,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

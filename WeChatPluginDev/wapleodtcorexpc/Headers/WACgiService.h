@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WACgiService : NSObject
 {
@@ -20,4 +21,3 @@
 + (Class)externalIMP;
 
 @end
-

@@ -70,7 +70,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bUpdateFlag; // @synthesize m_bUpdateFlag;
 @property(retain, nonatomic) NSString *m_nsBrandUserName; // @synthesize m_nsBrandUserName;
 @property(nonatomic) _Bool m_bHeadImageUpdateFlag; // @synthesize m_bHeadImageUpdateFlag;

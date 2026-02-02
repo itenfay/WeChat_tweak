@@ -15,7 +15,6 @@
     UIImage *_iconImg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int position; // @synthesize position=_position;
 @property(retain, nonatomic) UIImage *iconImg; // @synthesize iconImg=_iconImg;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

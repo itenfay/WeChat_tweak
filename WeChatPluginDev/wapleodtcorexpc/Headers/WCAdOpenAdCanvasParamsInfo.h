@@ -26,7 +26,6 @@
     NSString *_samplePoints;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool openInHalfScreen; // @synthesize openInHalfScreen=_openInHalfScreen;
 @property(nonatomic) float targetDistance; // @synthesize targetDistance=_targetDistance;
 @property(retain, nonatomic) NSString *samplePoints; // @synthesize samplePoints=_samplePoints;

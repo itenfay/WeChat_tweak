@@ -31,7 +31,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPlayCount:(long long)arg1 loopCount:(long long)arg2 totalPlaybackTimeMS:(long long)arg3 playbackTimeMS:(long long)arg4 totalBufferTimeMS:(long long)arg5 playerErrorCode:(long long)arg6 playerErrorDesc:(id)arg7 durationMS:(long long)arg8 presentationHeight:(long long)arg9 presentationWidth:(long long)arg10 size:(long long)arg11 bitrate:(long long)arg12 vcodec:(id)arg13 bufferredCount:(long long)arg14 actualPlayingTimeMS:(long long)arg15 getMaxPlayPosition:(long long)arg16 firstLoadingTimeMS:(long long)arg17;
-- (void).cxx_destruct;
 @property(nonatomic) long long firstLoadingTimeMS; // @synthesize firstLoadingTimeMS=_firstLoadingTimeMS;
 @property(nonatomic) long long getMaxPlayPosition; // @synthesize getMaxPlayPosition=_getMaxPlayPosition;
 @property(nonatomic) long long actualPlayingTimeMS; // @synthesize actualPlayingTimeMS=_actualPlayingTimeMS;

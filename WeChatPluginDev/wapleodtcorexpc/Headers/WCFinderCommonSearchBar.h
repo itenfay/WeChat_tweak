@@ -15,7 +15,6 @@
     UIButton *_clearBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(retain, nonatomic) UIButton *clearBtn; // @synthesize clearBtn=_clearBtn;
 @property(retain, nonatomic) UIImageView *searchImageView; // @synthesize searchImageView=_searchImageView;

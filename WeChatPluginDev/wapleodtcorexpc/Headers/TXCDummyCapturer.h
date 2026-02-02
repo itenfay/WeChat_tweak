@@ -15,7 +15,6 @@
     TXCVideoCaptureConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVideoCaptureConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) TXCDispatchQueue *queue; // @synthesize queue=_queue;
 @property(readonly) _Bool isRunning; // @synthesize isRunning;

@@ -13,7 +13,6 @@
     NSString *_dcepOrderNo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dcepOrderNo; // @synthesize dcepOrderNo=_dcepOrderNo;
 @property(retain, nonatomic) MMVoidITransmitKvDataCallback *resultCallback; // @synthesize resultCallback=_resultCallback;
 - (void)ThirdPayCallback:(id)arg1;

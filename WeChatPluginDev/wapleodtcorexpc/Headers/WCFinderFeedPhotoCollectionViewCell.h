@@ -26,7 +26,6 @@
     WCFinderFeedMediaWrap *_mediaWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UITapGestureRecognizer *likeGes; // @synthesize likeGes=_likeGes;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AddPlanReq, BalanceMobileInfo, CContact, CMessageWrap, CgiGetQrcodeUrlV2Resp, CgiSaveQrcodeResp, ExposureInfo, GetBanPayMobileInfoResponse, GetPayFunctionSwitchListResponse, GetTransferWordingResponse, ManagePlanReq, MenuItem, MerchantPayGetQRCodeInfoResp, MerchantPayPlaceOrderResp, ModifyPlanReq, NFCCardsQueryNFCCardInfoResponse, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSString, OperationResp, PlanIndexResp, PlanIndexResp_PlanItem, PreAddPlanResp, QueryDetailResp, SimplePKPass, TenpayBindCardInfo, TenpayBindCardSubscribeAppInfo, WCPayAppAuthRequestStruct, WCPayAuthenticationPay, WCPayAuthenticationPayStatusStruct, WCPayAuthenticationPayVerifySMSStruct, WCPayBalanceChargeLQTInfo, WCPayBalanceInfo, WCPayBankPriority, WCPayBannerNotice, WCPayBillEntryInfo, WCPayBindCardInfo, WCPayBindCardListApplyNewCardInfo, WCPayBindInfo, WCPayBindUserInfo, WCPayBizF2FControlData, WCPayCardBinInfo, WCPayControlDataGroupPayData, WCPayCreditCardInfo, WCPayDynamicActionEntry, WCPayECardControlData, WCPayF2FControlData, WCPayFetchCashierWithField, WCPayFetchInfo, WCPayGetUserExInfoCgiResponse, WCPayHoneyPayControlData, WCPayIAPOrderDetail, WCPayJumpRemindInfo, WCPayLQTControlData, WCPayLQTInfo, WCPayLoanEntryInfo, WCPayMchQRCodeControlData, WCPayMultiOrderDetail, WCPayNoticeInfo, WCPayOfflinePayChangeLimitFeeRequestStruct, WCPayPayMenuArrayInfo, WCPayPayResponseRetryInfo, WCPayQRCodeCollectionFixedAmountData, WCPayQRCodeRewardControlData, WCPayRealnameGuideInfo, WCPayResetPasswordInfo, WCPaySecurityControlData, WCPaySetUserExInfoCgiRequest, WCPaySwitchInfo, WCPayTransToBankCardData, WCPayTransferMoneyData, WCPayTransferPrepayRequestStruct, WCPayUserInfo, WCPayVirtualNoBindCard, WCPayWalletInfo;
 
@@ -324,7 +325,6 @@
     NSString *_palmSdkConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fromTransCollection; // @synthesize fromTransCollection=_fromTransCollection;
 @property(retain, nonatomic) NSString *palmSdkConfig; // @synthesize palmSdkConfig=_palmSdkConfig;
 @property(nonatomic) unsigned int palmCaptureMode; // @synthesize palmCaptureMode=_palmCaptureMode;
@@ -653,4 +653,3 @@
 - (id)init;
 
 @end
-

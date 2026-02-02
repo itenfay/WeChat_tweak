@@ -10,7 +10,6 @@
     FinderLiveShopWindowAdItem *_adItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveShopWindowAdItem *adItem; // @synthesize adItem=_adItem;
 - (id)promoteKey;
 

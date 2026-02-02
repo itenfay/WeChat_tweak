@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableSet;
 
@@ -21,7 +22,6 @@
 + (id)globalAlreadyFastForwardSelectors;
 + (id)delegateWithProtocol:(id)arg1 handler:(id)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *alreadyFastForwardSelectors; // @synthesize alreadyFastForwardSelectors=_alreadyFastForwardSelectors;
 @property(retain, nonatomic) NSMutableDictionary *signatureMap; // @synthesize signatureMap=_signatureMap;
 @property(nonatomic) __weak WCFinderEventDelegate *next; // @synthesize next=_next;
@@ -39,4 +39,3 @@
 - (void)addNextChain:(id)arg1;
 
 @end
-

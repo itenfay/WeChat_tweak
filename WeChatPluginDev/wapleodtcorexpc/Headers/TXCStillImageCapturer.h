@@ -18,7 +18,6 @@
     long long _defaultFps;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long defaultFps; // @synthesize defaultFps=_defaultFps;
 @property(retain, nonatomic) TXCTimedOutput *timedOutput; // @synthesize timedOutput=_timedOutput;
 @property _Bool isRunning; // @synthesize isRunning=_isRunning;

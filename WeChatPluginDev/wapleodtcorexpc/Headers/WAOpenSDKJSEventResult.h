@@ -13,7 +13,6 @@
     WAOpenSDKJSEventHandlerContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAOpenSDKJSEventHandlerContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *respDataMsg; // @synthesize respDataMsg=_respDataMsg;
 

@@ -44,7 +44,6 @@
 + (void)PBArrayAdd_otherVideoNum;
 + (void)PBArrayAdd_previewVideoArray;
 + (void)PBArrayAdd_liveNoticeListInfo;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long previewLiveLastUpdateTime; // @synthesize previewLiveLastUpdateTime=_previewLiveLastUpdateTime;
 @property(nonatomic) unsigned long long previewVideoLastUpdateTime; // @synthesize previewVideoLastUpdateTime=_previewVideoLastUpdateTime;
 @property(nonatomic) unsigned long long liveShortNum; // @synthesize liveShortNum=_liveShortNum;

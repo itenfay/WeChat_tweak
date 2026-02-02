@@ -17,7 +17,6 @@
     UIView *_cardImgContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *cardImgContentView; // @synthesize cardImgContentView=_cardImgContentView;
 @property(nonatomic) _Bool acceptAble; // @synthesize acceptAble=_acceptAble;
 @property(retain, nonatomic) WCShareCardMemberHeaderCardImageView *cardImageView; // @synthesize cardImageView=_cardImageView;

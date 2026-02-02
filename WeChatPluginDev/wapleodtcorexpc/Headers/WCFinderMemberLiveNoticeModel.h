@@ -13,7 +13,6 @@
     FinderLiveNoticeListInfo *_noticeList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveNoticeListInfo *noticeList; // @synthesize noticeList=_noticeList;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;
 

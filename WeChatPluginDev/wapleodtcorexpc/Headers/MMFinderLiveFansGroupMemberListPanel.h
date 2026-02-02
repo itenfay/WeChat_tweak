@@ -19,7 +19,6 @@
     MMUIMaskContainerView *_tableViewContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIMaskContainerView *tableViewContainerView; // @synthesize tableViewContainerView=_tableViewContainerView;
 @property(retain, nonatomic) MMFinderLiveFansGroupMemberSelfIntimacyView *selfIntimacyView; // @synthesize selfIntimacyView=_selfIntimacyView;
 @property(retain, nonatomic) MMFinderLiveFansGroupMemberLogic *fetchLogic; // @synthesize fetchLogic=_fetchLogic;

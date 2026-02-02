@@ -11,7 +11,6 @@
     MISSING_TYPE *lock;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onServiceInit;
 

@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (CDStruct_1b6d18a9)reverseMapTime:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)mapTime:(CDStruct_1b6d18a9)arg1;
 - (id)initWithSourceDuration:(CDStruct_1b6d18a9)arg1 targetDuration:(CDStruct_1b6d18a9)arg2 controlPoints:(id)arg3;

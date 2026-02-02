@@ -10,7 +10,6 @@
     WWKMessageAttachment *_attachment;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WWKMessageAttachment *attachment; // @synthesize attachment=_attachment;
 - (_Bool)deserializeWithDictionary:(id)arg1;
 - (id)serializedDict;

@@ -21,7 +21,6 @@
     NSMutableSet *_contactSetNotImportFromGroup;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *contactSetNotImportFromGroup; // @synthesize contactSetNotImportFromGroup=_contactSetNotImportFromGroup;
 @property(retain, nonatomic) NSMutableSet *contactSetImportFromGroup; // @synthesize contactSetImportFromGroup=_contactSetImportFromGroup;
 @property(retain, nonatomic) NSMutableSet *undeterminedContactSet; // @synthesize undeterminedContactSet=_undeterminedContactSet;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAudioPlayer, AVAudioRouteManager, AVVideoDevice, MMTimer, MMViewCapture, MinimizeTaskData, MultiTalkMainViewController, MultiTalkWindow, MultitalkMiniInAppView, NSArray, NSMutableDictionary, NSRecursiveLock, NSString, RingBackSoundCoordinator, SafeMutableDictionary, VoipCheckAudioDeviceObj;
 
 @interface MultiTalkMgr
@@ -71,7 +73,6 @@
     NSArray *_currentTalkingInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentTalkingInfos; // @synthesize currentTalkingInfos=_currentTalkingInfos;
 @property(copy, nonatomic) CDUnknownBlockType queryTalkingMembersBlock; // @synthesize queryTalkingMembersBlock=_queryTalkingMembersBlock;
 @property(retain, nonatomic) AVAudioRouteManager *audioRouteMgr; // @synthesize audioRouteMgr=_audioRouteMgr;
@@ -386,4 +387,3 @@
 @property(readonly) Class superclass;
 
 @end
-

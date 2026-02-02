@@ -20,7 +20,6 @@
 
 + (id)GenTimelineReporterWithAction:(long long)arg1 requestId:(id)arg2 source:(long long)arg3 scene:(unsigned int)arg4 snsItem:(id)arg5 chatType:(unsigned long long)arg6 picMD5:(id)arg7;
 + (id)GenMsgReporterWithAction:(long long)arg1 requestId:(id)arg2 source:(long long)arg3 scene:(unsigned int)arg4 msgWrap:(id)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reqKey; // @synthesize reqKey=_reqKey;
 @property(copy, nonatomic) NSString *docID; // @synthesize docID=_docID;
 @property(copy, nonatomic) NSString *searchID; // @synthesize searchID=_searchID;

@@ -24,7 +24,6 @@
     double timeInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval;
 @property(nonatomic) _Bool isWebp; // @synthesize isWebp;
 @property(retain, nonatomic) NSString *m_nsNotifyKey; // @synthesize m_nsNotifyKey;

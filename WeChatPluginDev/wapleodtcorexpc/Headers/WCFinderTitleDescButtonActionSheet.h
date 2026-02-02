@@ -16,7 +16,6 @@
     MMUIButton *_cancelBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;
 @property(retain, nonatomic) MMUIButton *acceptBtn; // @synthesize acceptBtn=_acceptBtn;
 @property(retain, nonatomic) RichTextView *ruleTextView; // @synthesize ruleTextView=_ruleTextView;

@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_continueFlag;
 + (void)PBArrayAdd_collectionCount;
 + (void)PBArrayAdd_collectionInfoArray;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(nonatomic) unsigned long long collectionCount; // @synthesize collectionCount=_collectionCount;

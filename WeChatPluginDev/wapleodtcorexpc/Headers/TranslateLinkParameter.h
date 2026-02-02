@@ -24,7 +24,6 @@
     AppmsgSignature3rd *_appmsgSignature3rd;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AppmsgSignature3rd *appmsgSignature3rd; // @synthesize appmsgSignature3rd=_appmsgSignature3rd;
 @property(retain, nonatomic) SdkFinderInfo *finderInfo; // @synthesize finderInfo=_finderInfo;
 @property(nonatomic) _Bool isAutoResend; // @synthesize isAutoResend=_isAutoResend;

@@ -34,7 +34,6 @@
     NSString *_curMotionTip;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEverDetectFace; // @synthesize hasEverDetectFace=_hasEverDetectFace;
 @property(nonatomic) _Bool isReflecting; // @synthesize isReflecting=_isReflecting;
 @property(retain, nonatomic) NSString *curMotionTip; // @synthesize curMotionTip=_curMotionTip;

@@ -18,7 +18,6 @@
     NSMutableArray *_diskItemArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *diskItemArray; // @synthesize diskItemArray=_diskItemArray;
 @property(nonatomic) long long diskItemCacheSize; // @synthesize diskItemCacheSize=_diskItemCacheSize;
 @property(nonatomic) int diskItemCount; // @synthesize diskItemCount=_diskItemCount;

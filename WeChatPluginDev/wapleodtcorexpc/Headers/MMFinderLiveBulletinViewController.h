@@ -40,7 +40,6 @@
     UILabel *_wordCountTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wordCountTips; // @synthesize wordCountTips=_wordCountTips;
 @property(retain, nonatomic) UILabel *descCountTips; // @synthesize descCountTips=_descCountTips;
 @property(retain, nonatomic) MMGrowTextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;

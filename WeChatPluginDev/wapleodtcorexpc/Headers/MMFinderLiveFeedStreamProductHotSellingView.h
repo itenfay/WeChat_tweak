@@ -15,7 +15,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) NSMutableArray *roundImageViews; // @synthesize roundImageViews=_roundImageViews;
 @property(retain, nonatomic) UIView *imageContainerView; // @synthesize imageContainerView=_imageContainerView;

@@ -14,7 +14,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) unsigned long long cdnScene; // @synthesize cdnScene=_cdnScene;
 @property(readonly, nonatomic) NSString *taskKey; // @synthesize taskKey=_taskKey;

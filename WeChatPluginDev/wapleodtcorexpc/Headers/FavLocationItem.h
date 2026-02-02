@@ -20,7 +20,6 @@
 }
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicLocationName; // @synthesize dicLocationName=_dicLocationName;
 @property(retain, nonatomic) NSString *floorName; // @synthesize floorName=_floorName;
 @property(retain, nonatomic) NSString *buildingId; // @synthesize buildingId=_buildingId;

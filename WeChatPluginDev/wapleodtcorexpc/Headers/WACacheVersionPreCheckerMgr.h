@@ -14,7 +14,6 @@
     NSMutableDictionary *_checkers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *checkers; // @synthesize checkers=_checkers;
 @property(readonly, nonatomic) NSMutableDictionary *dicWeAppPluginVersion; // @synthesize dicWeAppPluginVersion=_dicWeAppPluginVersion;
 @property(readonly, nonatomic) NSMutableDictionary *dicAutoUpdatePluginKey2VersionInfo; // @synthesize dicAutoUpdatePluginKey2VersionInfo=_dicAutoUpdatePluginKey2VersionInfo;

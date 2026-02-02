@@ -11,7 +11,6 @@
     PAGView *_dotPagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *dotPagView; // @synthesize dotPagView=_dotPagView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 - (void)layoutSubviews;

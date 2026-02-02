@@ -19,7 +19,6 @@
 }
 
 + (double)cellHeightForOrder:(id)arg1 inWidth:(double)arg2 estimate:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *components; // @synthesize components=_components;
 @property(retain, nonatomic) UIView<MMOrderCenterTableViewCellComponent> *finderRefererView; // @synthesize finderRefererView=_finderRefererView;
 @property(retain, nonatomic) UIView<MMOrderCenterTableViewCellComponent> *timeReviewView; // @synthesize timeReviewView=_timeReviewView;

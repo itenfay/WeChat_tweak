@@ -24,7 +24,6 @@
 }
 
 + (struct CGRect)previewAreaSizeWithContainerSize:(struct CGSize)arg1 aspectRatio:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *previewViews; // @synthesize previewViews=_previewViews;
 @property(retain, nonatomic) MMFinderLiveConnectMicModePreviewItemView *anchorPreviewView; // @synthesize anchorPreviewView=_anchorPreviewView;
 @property(retain, nonatomic) NSMutableArray *placeholderViews; // @synthesize placeholderViews=_placeholderViews;

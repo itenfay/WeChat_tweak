@@ -16,7 +16,6 @@
     MMUIView *_bottomBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *bottomBackgroundView; // @synthesize bottomBackgroundView=_bottomBackgroundView;
 @property(readonly, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) MJComposingToolbar *toolbar; // @synthesize toolbar=_toolbar;

@@ -15,7 +15,6 @@
     WCRedesignButtonItem *_iPadOnlyButtonItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedesignButtonItem *iPadOnlyButtonItem; // @synthesize iPadOnlyButtonItem=_iPadOnlyButtonItem;
 @property(retain, nonatomic) WCRedesignButtonItem *useBothButtonItem; // @synthesize useBothButtonItem=_useBothButtonItem;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

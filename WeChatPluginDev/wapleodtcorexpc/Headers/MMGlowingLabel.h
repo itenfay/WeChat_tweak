@@ -15,7 +15,6 @@
     UIColor *_innerGlowColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *innerGlowColor; // @synthesize innerGlowColor=_innerGlowColor;
 @property(nonatomic) double innerGlowSize; // @synthesize innerGlowSize=_innerGlowSize;
 @property(retain, nonatomic) UIColor *glowColor; // @synthesize glowColor=_glowColor;

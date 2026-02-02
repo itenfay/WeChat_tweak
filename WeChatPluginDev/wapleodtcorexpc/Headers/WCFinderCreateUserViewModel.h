@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)genAgreementContent;
-- (void).cxx_destruct;
 @property(nonatomic) long long weixinSexType; // @synthesize weixinSexType=_weixinSexType;
 @property(nonatomic) unsigned long long minWordCount; // @synthesize minWordCount=_minWordCount;
 @property(nonatomic) unsigned long long maxWordCount; // @synthesize maxWordCount=_maxWordCount;
@@ -36,4 +36,3 @@
 - (id)init;
 
 @end
-

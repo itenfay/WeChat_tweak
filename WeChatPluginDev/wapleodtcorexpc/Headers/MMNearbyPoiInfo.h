@@ -13,7 +13,6 @@
     NSString *_poiName;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *poiName; // @synthesize poiName=_poiName;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) double longitude; // @synthesize longitude=_longitude;

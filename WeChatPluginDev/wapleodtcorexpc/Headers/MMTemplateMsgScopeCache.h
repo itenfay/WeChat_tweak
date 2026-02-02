@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_scopeList;
 + (void)PBArrayAdd_isGlobalRecv;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasSettingEntry; // @synthesize hasSettingEntry=_hasSettingEntry;
 @property(retain, nonatomic) NSMutableArray *scopeList; // @synthesize scopeList=_scopeList;
 @property(nonatomic) _Bool isGlobalRecv; // @synthesize isGlobalRecv=_isGlobalRecv;

@@ -10,7 +10,6 @@
     id <WCPayMchCodeVoiceOperateCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayMchCodeVoiceOperateCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1;
 - (void)failWithNetworking:(id)arg1;

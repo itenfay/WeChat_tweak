@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FBDocumentViewController, FBFilesViewController, MMAssetPickerController, MMUIViewController, MMUnderlineTabsView, NSString, UIDocumentPickerViewController, UINavigationController, WCFileBrowserToolBar, WCFileBrowserToolBarViewModel;
 @protocol WCFileBrowseDelegate;
 
@@ -28,7 +30,6 @@
     unsigned long long _type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) CDUnknownBlockType GetFileInfosFromAlbum; // @synthesize GetFileInfosFromAlbum=_GetFileInfosFromAlbum;
 @property(nonatomic) _Bool loadAlbumFinish; // @synthesize loadAlbumFinish=_loadAlbumFinish;
@@ -92,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

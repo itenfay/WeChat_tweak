@@ -14,7 +14,6 @@
     UICollectionView *_reverbCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *reverbCollectionView; // @synthesize reverbCollectionView=_reverbCollectionView;
 @property(retain, nonatomic) UISlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

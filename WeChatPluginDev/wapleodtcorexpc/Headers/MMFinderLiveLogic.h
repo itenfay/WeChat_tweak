@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveAppMsgInfoCacheLogic, MMFinderLiveConnectMicLogic, MMFinderLiveImageOcrOp, MMFinderLiveOperationViewModel, MMFinderLiveRedPacketLogic, MMFinderLiveRedPacketMessage, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveScreenSharingLogic, NSString, WCFinderCreateLiveCGI, WCFinderLiveInfo, WeAvatarLogic;
 @protocol MMFinderLiveLogicDelegate;
 
@@ -34,7 +36,6 @@
     MMFinderLiveAppMsgInfoCacheLogic *_appMsgInfoCacheLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAppMsgInfoCacheLogic *appMsgInfoCacheLogic; // @synthesize appMsgInfoCacheLogic=_appMsgInfoCacheLogic;
 @property(retain, nonatomic) MMFinderLiveImageOcrOp *ocrOp; // @synthesize ocrOp=_ocrOp;
 @property(nonatomic) double lastEnableLikeAnchorStatusRequestResultTime; // @synthesize lastEnableLikeAnchorStatusRequestResultTime=_lastEnableLikeAnchorStatusRequestResultTime;
@@ -258,4 +259,3 @@
 @property(readonly) Class superclass;
 
 @end
-

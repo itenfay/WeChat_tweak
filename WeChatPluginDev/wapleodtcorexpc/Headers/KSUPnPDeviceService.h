@@ -16,7 +16,6 @@
     NSURL *_eventSubURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *eventSubURL; // @synthesize eventSubURL=_eventSubURL;
 @property(retain, nonatomic) NSURL *controlURL; // @synthesize controlURL=_controlURL;
 @property(retain, nonatomic) NSURL *SCPDURL; // @synthesize SCPDURL=_SCPDURL;

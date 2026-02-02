@@ -12,7 +12,6 @@
     NSMutableSet *_clickSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *clickSet; // @synthesize clickSet=_clickSet;
 @property(retain, nonatomic) BrandSessionTableFooter *tableFooter; // @synthesize tableFooter=_tableFooter;
 @property(nonatomic) _Bool canShowPersonalCenter; // @synthesize canShowPersonalCenter=_canShowPersonalCenter;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderWindowProductInfo, FinderWindowProductInfo_DetailPage, MMFinderLiveGoodsItem, MMFinderLiveOpenProductPageAspect, MMFinderLiveTaskId, NSString;
 
@@ -28,7 +29,6 @@
 + (id)paramWithProduct:(id)arg1 type:(unsigned long long)arg2;
 + (id)paramWithProduct:(id)arg1;
 + (id)param;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveOpenProductPageAspect *aspect; // @synthesize aspect=_aspect;
 @property(copy, nonatomic) CDUnknownBlockType nativeProductShare; // @synthesize nativeProductShare=_nativeProductShare;
 @property(copy, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
@@ -45,4 +45,3 @@
 @property(retain, nonatomic) FinderWindowProductInfo *product; // @synthesize product=_product;
 
 @end
-

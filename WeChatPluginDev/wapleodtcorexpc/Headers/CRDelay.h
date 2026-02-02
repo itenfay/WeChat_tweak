@@ -14,7 +14,6 @@
 }
 
 + (id)delayWithSeconds:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(nonatomic) double seconds; // @synthesize seconds=_seconds;
 - (void)start;

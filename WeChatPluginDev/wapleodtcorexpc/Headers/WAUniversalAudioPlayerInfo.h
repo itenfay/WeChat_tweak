@@ -13,7 +13,6 @@
     WAUniversalAudioInfo *_audioInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAUniversalAudioInfo *audioInfo; // @synthesize audioInfo=_audioInfo;
 @property(nonatomic) unsigned long long playerState; // @synthesize playerState=_playerState;
 

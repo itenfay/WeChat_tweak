@@ -43,7 +43,6 @@
 + (void)PBArrayAdd_originLang;
 + (void)PBArrayAdd_originText;
 + (void)PBArrayAdd_mesLocalId;
-- (void).cxx_destruct;
 @property(nonatomic) int autoScrollUpCount; // @synthesize autoScrollUpCount=_autoScrollUpCount;
 @property(nonatomic) _Bool bAutoScrollUp; // @synthesize bAutoScrollUp=_bAutoScrollUp;
 @property(retain, nonatomic) NSString *recoreItemlocalDataID; // @synthesize recoreItemlocalDataID;

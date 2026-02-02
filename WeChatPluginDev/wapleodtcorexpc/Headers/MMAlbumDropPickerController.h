@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, MMUIView, MMUIViewController, NSArray, NSString, UIImageView, UIView;
 @protocol MMAlbumDropPickerControllerDelegate, MMImagePickerControlCenter, OS_dispatch_queue;
@@ -31,7 +32,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool hasRegisterChangeObserver; // @synthesize hasRegisterChangeObserver=_hasRegisterChangeObserver;
 @property(retain, nonatomic) MMUIView *dimmingView; // @synthesize dimmingView=_dimmingView;
@@ -94,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

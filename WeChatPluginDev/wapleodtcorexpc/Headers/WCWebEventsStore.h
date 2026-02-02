@@ -15,7 +15,6 @@
 }
 
 + (id)eventSetDescription:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reqToFullUrlDic; // @synthesize reqToFullUrlDic=_reqToFullUrlDic;
 @property(retain, nonatomic) NSMutableArray *curEventActions; // @synthesize curEventActions=_curEventActions;
 @property(retain, nonatomic) NSMutableSet *curEventsStore; // @synthesize curEventsStore=_curEventsStore;

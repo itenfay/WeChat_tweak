@@ -17,7 +17,6 @@
     AVAudioFormat *_format;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioFormat *format; // @synthesize format=_format;
 - (void)initDecoder;
 - (void)initDataFormat;

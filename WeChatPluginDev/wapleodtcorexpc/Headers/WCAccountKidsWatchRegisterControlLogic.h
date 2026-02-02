@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCAccountBindPhoneForRegCGI, WCPrivacyPolicyControlLogic;
 @protocol WCAccountKidsWatchRegisterControlLogicDelegate;
 
@@ -21,7 +23,6 @@
 + (id)headImageUploadTempPath;
 + (id)ISOCode;
 + (id)countryCode;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRegistering; // @synthesize isRegistering=_isRegistering;
 @property(retain, nonatomic) NSString *headImageUploadClientId; // @synthesize headImageUploadClientId=_headImageUploadClientId;
 @property(nonatomic) unsigned int adjustRet; // @synthesize adjustRet=_adjustRet;
@@ -70,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

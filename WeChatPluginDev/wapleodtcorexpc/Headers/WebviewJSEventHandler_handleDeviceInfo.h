@@ -10,7 +10,6 @@
     UISlider *m_volumeViewSlider;
 }
 
-- (void).cxx_destruct;
 - (_Bool)needPassPramsWithAction:(id)arg1;
 - (void)setFullScreenLayout:(id)arg1 errMsg:(id *)arg2;
 - (void)setKeepScreenOn:(id)arg1 errMsg:(id *)arg2;

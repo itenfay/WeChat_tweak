@@ -10,7 +10,6 @@
     id _obj;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id obj; // @synthesize obj=_obj;
 
 @end

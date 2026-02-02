@@ -16,7 +16,6 @@
     struct __CVBuffer *_cvPixelBufferRef;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct __CVBuffer *cvPixelBufferRef; // @synthesize cvPixelBufferRef=_cvPixelBufferRef;
 @property(nonatomic) long long textureId; // @synthesize textureId=_textureId;
 @property(nonatomic) __weak id <FlutterTextureRegistry> textureRegistry; // @synthesize textureRegistry=_textureRegistry;

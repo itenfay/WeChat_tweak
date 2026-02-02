@@ -10,7 +10,6 @@
     NSString *_function;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *function; // @synthesize function=_function;
 
 @end

@@ -18,7 +18,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *street; // @synthesize street=_street;
 @property(copy, nonatomic) NSString *district; // @synthesize district=_district;
 @property(copy, nonatomic) NSString *city; // @synthesize city=_city;

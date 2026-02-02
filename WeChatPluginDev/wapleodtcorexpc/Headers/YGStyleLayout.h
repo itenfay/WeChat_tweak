@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIView;
 
@@ -110,7 +111,6 @@
 }
 
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) _Bool isContainer; // @synthesize isContainer=_isContainer;
 @property(nonatomic) _Bool isIncludedInLayoutInternal; // @synthesize isIncludedInLayoutInternal=_isIncludedInLayoutInternal;
@@ -227,4 +227,3 @@
 - (id)initWithView:(id)arg1;
 
 @end
-

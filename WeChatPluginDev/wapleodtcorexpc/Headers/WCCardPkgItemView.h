@@ -21,7 +21,6 @@
 
 + (double)CardItemViewTopHeight;
 + (double)CardItemViewHeight;
-- (void).cxx_destruct;
 @property(nonatomic) long long indexForBatchAdd; // @synthesize indexForBatchAdd=_indexForBatchAdd;
 @property(nonatomic) __weak id <WCCardPkgItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool bSelected; // @synthesize bSelected=_bSelected;

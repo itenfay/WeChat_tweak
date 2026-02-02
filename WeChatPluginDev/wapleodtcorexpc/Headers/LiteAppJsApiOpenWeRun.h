@@ -10,7 +10,6 @@
     CContactVerifyLogic *m_oLogic;
 }
 
-- (void).cxx_destruct;
 - (void)onContactVerifyFail;
 - (void)contactAddContactOk:(id)arg1;
 - (void)invokeJsApi:(id)arg1 param:(id)arg2 isFromView:(_Bool)arg3;

@@ -17,7 +17,6 @@
 
 + (id)unicodeStringWithString:(id)arg1;
 + (id)filterSpecialChars:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <settingModifySignDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) NSString *m_nsLastSign; // @synthesize m_nsLastSign;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

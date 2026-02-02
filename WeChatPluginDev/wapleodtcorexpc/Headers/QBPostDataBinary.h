@@ -30,7 +30,6 @@
 @property long long randomString; // @synthesize randomString=_randomString;
 @property _Bool dataReady; // @synthesize dataReady=_dataReady;
 @property(nonatomic) int dataPostType; // @synthesize dataPostType=_dataPostType;
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)createInputStreamForPost;
 - (unsigned long long)dataSize;

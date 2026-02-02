@@ -13,7 +13,6 @@
     MemoryMappedKV *_mmap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmap; // @synthesize mmap=_mmap;
 @property(nonatomic) _Bool isUserLogoutInThisSession; // @synthesize isUserLogoutInThisSession=_isUserLogoutInThisSession;
 @property(retain, nonatomic) WCDurationLogDB *dataBase; // @synthesize dataBase=_dataBase;

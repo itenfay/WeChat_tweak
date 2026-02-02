@@ -19,7 +19,6 @@
     UIView *_highLightShadowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highLightShadowView; // @synthesize highLightShadowView=_highLightShadowView;
 @property(nonatomic) _Bool enableDarkmode; // @synthesize enableDarkmode=_enableDarkmode;
 @property(retain, nonatomic) NSNumber *customDetailLabelWidth; // @synthesize customDetailLabelWidth=_customDetailLabelWidth;

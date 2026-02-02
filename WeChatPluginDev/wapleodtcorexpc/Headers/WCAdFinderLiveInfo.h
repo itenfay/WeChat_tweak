@@ -16,7 +16,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderLiveFeedNonceId; // @synthesize finderLiveFeedNonceId=_finderLiveFeedNonceId;
 @property(retain, nonatomic) NSString *finderLiveFeedExportId; // @synthesize finderLiveFeedExportId=_finderLiveFeedExportId;
 @property(retain, nonatomic) NSString *finderLiveId; // @synthesize finderLiveId=_finderLiveId;

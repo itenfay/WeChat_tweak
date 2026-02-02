@@ -19,7 +19,6 @@
     long long _volume;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long volume; // @synthesize volume=_volume;
 @property(nonatomic) long long rotation; // @synthesize rotation=_rotation;
 @property(nonatomic) long long fillMode; // @synthesize fillMode=_fillMode;

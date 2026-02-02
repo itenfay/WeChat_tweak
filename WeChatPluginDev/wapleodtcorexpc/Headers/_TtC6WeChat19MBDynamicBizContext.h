@@ -10,7 +10,6 @@
     MISSING_TYPE *mbCoverViewMgr;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

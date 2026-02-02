@@ -12,7 +12,6 @@
     CAGradientLayer *_maskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) MMUILabel *imageCountLabel; // @synthesize imageCountLabel=_imageCountLabel;
 @property(retain, nonatomic) UIImageView *imageIconView; // @synthesize imageIconView=_imageIconView;

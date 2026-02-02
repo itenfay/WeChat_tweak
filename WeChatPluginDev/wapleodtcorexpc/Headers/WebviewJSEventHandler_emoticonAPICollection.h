@@ -17,7 +17,6 @@
     EmojiInfoObj *_emojiInfoObj;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showDesignerEntry; // @synthesize showDesignerEntry=_showDesignerEntry;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;
 @property(nonatomic) long long operationScene; // @synthesize operationScene=_operationScene;

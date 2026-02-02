@@ -13,7 +13,6 @@
     NSString *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long rid; // @synthesize rid=_rid;
 

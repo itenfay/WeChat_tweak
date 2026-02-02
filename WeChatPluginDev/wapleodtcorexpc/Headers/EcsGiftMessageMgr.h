@@ -16,7 +16,6 @@
     NSMutableArray *_giftMsgIdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *giftMsgIdList; // @synthesize giftMsgIdList=_giftMsgIdList;
 @property(copy, nonatomic) NSString *sendGiftMsgXml; // @synthesize sendGiftMsgXml=_sendGiftMsgXml;
 @property(copy, nonatomic) NSString *sendGiftRecipientUsername; // @synthesize sendGiftRecipientUsername=_sendGiftRecipientUsername;

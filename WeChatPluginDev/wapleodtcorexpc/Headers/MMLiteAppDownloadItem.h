@@ -31,7 +31,6 @@
     unsigned long long _pkgCompressAlgorithm;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pkgCompressAlgorithm; // @synthesize pkgCompressAlgorithm=_pkgCompressAlgorithm;
 @property(nonatomic) _Bool isDownloadMediaResource; // @synthesize isDownloadMediaResource=_isDownloadMediaResource;
 @property(nonatomic) long long checkUpdateFrom; // @synthesize checkUpdateFrom=_checkUpdateFrom;

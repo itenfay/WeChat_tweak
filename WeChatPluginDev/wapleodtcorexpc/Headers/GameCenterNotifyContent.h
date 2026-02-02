@@ -29,7 +29,6 @@
     NSString *_businessData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *businessData; // @synthesize businessData=_businessData;
 @property(retain, nonatomic) NSString *reportExtData; // @synthesize reportExtData=_reportExtData;
 @property(retain, nonatomic) NSString *originMsg; // @synthesize originMsg=_originMsg;

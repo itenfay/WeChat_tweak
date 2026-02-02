@@ -10,7 +10,6 @@
     NSString *_cardId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 - (id)dictionaryRepresentation;
 

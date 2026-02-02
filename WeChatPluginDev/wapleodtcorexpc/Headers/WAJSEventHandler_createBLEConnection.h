@@ -12,7 +12,6 @@
     unsigned long long m_connectTime;
 }
 
-- (void).cxx_destruct;
 - (id)bleInstance;
 - (void)onSuccess;
 - (void)onTimeOut;

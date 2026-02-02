@@ -18,7 +18,6 @@
 }
 
 + (double)defaultDisplayHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReDisplayExtButton; // @synthesize needReDisplayExtButton=_needReDisplayExtButton;
 @property(nonatomic) struct UIEdgeInsets lineEdgeInsets; // @synthesize lineEdgeInsets=_lineEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets titleEdgeInsets; // @synthesize titleEdgeInsets=_titleEdgeInsets;

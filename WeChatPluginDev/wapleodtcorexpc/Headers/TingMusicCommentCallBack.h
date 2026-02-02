@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol FlutterBinaryMessenger;
@@ -14,7 +15,6 @@
     NSString *_messageChannelSuffix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageChannelSuffix; // @synthesize messageChannelSuffix=_messageChannelSuffix;
 @property(retain, nonatomic) NSObject<FlutterBinaryMessenger> *binaryMessenger; // @synthesize binaryMessenger=_binaryMessenger;
 - (void)onCommentInputViewShowState:(long long)arg1 footerHeight:(long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -23,4 +23,3 @@
 - (id)initWithBinaryMessenger:(id)arg1;
 
 @end
-

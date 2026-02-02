@@ -31,7 +31,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) FavoritesRecordDataField *dataField; // @synthesize dataField=_dataField;
 @property(retain, nonatomic) UILabel *rawPlayingTagLabel; // @synthesize rawPlayingTagLabel=_rawPlayingTagLabel;

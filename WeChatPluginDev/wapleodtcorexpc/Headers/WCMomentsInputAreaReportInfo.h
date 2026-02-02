@@ -20,7 +20,6 @@
     unsigned long long _wordLimiedToastCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long wordLimiedToastCount; // @synthesize wordLimiedToastCount=_wordLimiedToastCount;
 @property(nonatomic) double contextScreenHeightRatio; // @synthesize contextScreenHeightRatio=_contextScreenHeightRatio;
 @property(nonatomic) unsigned long long lineCount; // @synthesize lineCount=_lineCount;

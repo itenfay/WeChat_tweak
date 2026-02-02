@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveKTVSingingPrepareLogic, MMUILabel, NSString;
 
 @interface MMFinderLiveKTVBeginContentView
@@ -16,7 +18,6 @@
     MMFinderLiveKTVSingingPrepareLogic *_currPrepareLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVSingingPrepareLogic *currPrepareLogic; // @synthesize currPrepareLogic=_currPrepareLogic;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMUILabel *songNameLabel; // @synthesize songNameLabel=_songNameLabel;
@@ -42,4 +43,3 @@
 - (id)initWithTaskId:(id)arg1 mode:(unsigned long long)arg2;
 
 @end
-

@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_arrTransInfo;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrTransInfo; // @synthesize arrTransInfo=_arrTransInfo;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 - (id)init;

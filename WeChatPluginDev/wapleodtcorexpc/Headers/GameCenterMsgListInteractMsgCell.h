@@ -14,7 +14,6 @@
 }
 
 + (id)convertRichText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) MMWebImageView *descImageView; // @synthesize descImageView=_descImageView;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

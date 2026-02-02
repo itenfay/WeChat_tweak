@@ -12,7 +12,6 @@
     GetHbRefundConfigResp *_hbRefundConfigResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetHbRefundConfigResp *hbRefundConfigResp; // @synthesize hbRefundConfigResp=_hbRefundConfigResp;
 @property(retain, nonatomic) WCPayHongBaoRefundConfigCgi *hbRefundConfigCgi; // @synthesize hbRefundConfigCgi=_hbRefundConfigCgi;
 - (void)OnHongBaoRefundConfigRepsonseError:(id)arg1 errorCode:(unsigned int)arg2;

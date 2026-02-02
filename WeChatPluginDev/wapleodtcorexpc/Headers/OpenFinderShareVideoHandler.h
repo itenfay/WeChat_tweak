@@ -15,7 +15,6 @@
     WCFinderJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) unsigned long long enterEditImageViewTime; // @synthesize enterEditImageViewTime=_enterEditImageViewTime;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;

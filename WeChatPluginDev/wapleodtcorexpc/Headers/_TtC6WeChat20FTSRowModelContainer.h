@@ -15,7 +15,6 @@
     MISSING_TYPE *type;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFeature:(id)arg1 type:(unsigned long long)arg2 isDetailSearch:(_Bool)arg3 searchText:(id)arg4;
 - (id)initWithContact:(id)arg1 type:(unsigned long long)arg2 isDetailSearch:(_Bool)arg3;

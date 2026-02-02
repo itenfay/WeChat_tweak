@@ -10,7 +10,6 @@
     UIImage *_imageObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *imageObj; // @synthesize imageObj=_imageObj;
 
 @end

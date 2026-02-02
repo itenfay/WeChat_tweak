@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WeSVGRenderer : NSObject
 {
@@ -19,7 +20,6 @@
 + (struct CGColor *)createColorFromRGBColor:(const RGBColor_87c90449 *)arg1 opacity:(double)arg2;
 + (struct CGImage *)createImageWithSize:(struct CGSize)arg1 transform:(struct CGAffineTransform)arg2 type:(long long)arg3 actions:(CDUnknownBlockType)arg4;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)performMask:(optional_9436b898)arg1 transform:(struct CGAffineTransform)arg2 context:(struct CGContext *)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)performGradient:(const void *)arg1 forPath:(struct CGPath *)arg2 context:(struct CGContext *)arg3 isEvenOdd:(_Bool)arg4;
 - (void)drawGraphics:(const void *)arg1 context:(struct CGContext *)arg2;
@@ -32,4 +32,3 @@
 - (id)initWithRenderModel:(shared_ptr_fa695132)arg1 options:(void *)arg2;
 
 @end
-

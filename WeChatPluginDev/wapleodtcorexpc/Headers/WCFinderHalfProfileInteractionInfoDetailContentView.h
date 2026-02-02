@@ -16,7 +16,6 @@
 
 + (id)_getRichTextView;
 + (double)cellHeightWithConfiguration:(id)arg1 layoutEnvironment:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *describeContentLabel; // @synthesize describeContentLabel=_describeContentLabel;
 @property(copy, nonatomic) WCFinderHalfProfileInteractionInfoDetailConfiguration *appliedConfiguration; // @synthesize appliedConfiguration=_appliedConfiguration;
 @property(copy, nonatomic) id <UIContentConfiguration> configuration;

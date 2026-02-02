@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppUuid:(long long)arg1 params:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(nonatomic) long long appUuid; // @synthesize appUuid=_appUuid;
 - (id)toList;

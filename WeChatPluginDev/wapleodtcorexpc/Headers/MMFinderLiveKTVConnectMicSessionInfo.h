@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiveSdkInfo, NSString;
 
@@ -16,7 +17,6 @@
     LiveSdkInfo *_prepareConnectMicSdkInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiveSdkInfo *prepareConnectMicSdkInfo; // @synthesize prepareConnectMicSdkInfo=_prepareConnectMicSdkInfo;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(copy, nonatomic) NSString *liveMicId; // @synthesize liveMicId=_liveMicId;
@@ -24,4 +24,3 @@
 @property(copy, nonatomic) NSString *songUniqueId; // @synthesize songUniqueId=_songUniqueId;
 
 @end
-

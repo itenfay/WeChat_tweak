@@ -31,7 +31,6 @@
     MultiTalkJumpAppInfo *_jumpAppInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiTalkJumpAppInfo *jumpAppInfo; // @synthesize jumpAppInfo=_jumpAppInfo;
 @property(nonatomic) unsigned int m_clickCount; // @synthesize m_clickCount=_m_clickCount;
 @property(nonatomic) _Bool m_hasReachLimit; // @synthesize m_hasReachLimit=_m_hasReachLimit;

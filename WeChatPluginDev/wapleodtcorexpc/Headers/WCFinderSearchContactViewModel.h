@@ -25,7 +25,6 @@
 }
 
 + (id)initWithBuffer:(id)arg1 latestRequestID:(id)arg2 queryText:(id)arg3 queryContinueFlag:(_Bool)arg4 dataSources:(id)arg5 searchSessionid:(id)arg6 searchSourceType:(unsigned long long)arg7;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportInputText; // @synthesize hasReportInputText=_hasReportInputText;
 @property(retain, nonatomic) WCFinderBaseCgi *cgi; // @synthesize cgi=_cgi;
 @property(nonatomic) unsigned long long searchSourceType; // @synthesize searchSourceType=_searchSourceType;

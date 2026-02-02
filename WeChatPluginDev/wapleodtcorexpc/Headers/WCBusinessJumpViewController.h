@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSDictionary, NSString;
 
 @interface WCBusinessJumpViewController
@@ -15,7 +17,6 @@
     NSDictionary *_dictTranslateInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool sendreqWhenViewDidAppear; // @synthesize sendreqWhenViewDidAppear=_sendreqWhenViewDidAppear;
 @property(retain, nonatomic) NSDictionary *dictTranslateInfo; // @synthesize dictTranslateInfo=_dictTranslateInfo;
 @property(copy, nonatomic) NSString *errorMsg; // @synthesize errorMsg=_errorMsg;
@@ -41,4 +42,3 @@
 - (void)viewDidLoad;
 
 @end
-

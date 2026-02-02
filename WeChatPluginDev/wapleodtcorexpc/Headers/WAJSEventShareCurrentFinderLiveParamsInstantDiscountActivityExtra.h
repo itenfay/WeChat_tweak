@@ -13,7 +13,6 @@
     NSString *_coverMaskImageURL;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coverMaskImageURL; // @synthesize coverMaskImageURL=_coverMaskImageURL;
 @property(copy, nonatomic) NSString *activityKey; // @synthesize activityKey=_activityKey;
 

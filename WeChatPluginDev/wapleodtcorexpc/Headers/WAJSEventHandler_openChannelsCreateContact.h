@@ -10,7 +10,6 @@
     WCFinderCreateCoordinator *_createCoordinator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 - (void)finderCreateCoordinatorStartCreateUserComplete;
 - (void)handleJSEvent:(id)arg1;

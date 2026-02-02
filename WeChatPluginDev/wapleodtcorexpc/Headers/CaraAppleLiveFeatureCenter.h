@@ -12,7 +12,6 @@
     CaraCppLiveFeatureCenter *_underlying;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CaraCppLiveFeatureCenter *underlying; // @synthesize underlying=_underlying;
 - (void)onLiveUserActiveLevelUpdate:(int)arg1;
 - (void)onLiveCellConsume;

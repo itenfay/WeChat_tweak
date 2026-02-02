@@ -15,7 +15,6 @@
     WCFinderLiveShopWindowShareItem *_shopWindowShareItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShopWindowShareItem *shopWindowShareItem; // @synthesize shopWindowShareItem=_shopWindowShareItem;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *liteAppQuery; // @synthesize liteAppQuery=_liteAppQuery;

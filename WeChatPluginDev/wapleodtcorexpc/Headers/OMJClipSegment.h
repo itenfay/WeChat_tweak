@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_67e01d81 backingClipSegment; // @synthesize backingClipSegment=_backingClipSegment;
 @property(readonly, nonatomic) unsigned long long clipType; // @synthesize clipType=_clipType;
 @property(readonly, copy) NSString *description;

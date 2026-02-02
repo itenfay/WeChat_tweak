@@ -18,7 +18,6 @@
     NSMutableArray *_m_myReceiverHistory;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_myReceiverHistory; // @synthesize m_myReceiverHistory=_m_myReceiverHistory;
 @property(retain, nonatomic) NSMutableArray *m_otherReceiverHistory; // @synthesize m_otherReceiverHistory=_m_otherReceiverHistory;
 @property(retain, nonatomic) WarningNotice *noticeItem; // @synthesize noticeItem=_noticeItem;

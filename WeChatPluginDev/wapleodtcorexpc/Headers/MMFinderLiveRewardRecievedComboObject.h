@@ -20,7 +20,6 @@
     NSMutableArray *_rewardRecievedAppMsgInfoQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTopestPriority; // @synthesize isTopestPriority=_isTopestPriority;
 @property(nonatomic) unsigned int lastDisplayGiftCount; // @synthesize lastDisplayGiftCount=_lastDisplayGiftCount;
 @property(nonatomic) unsigned int closeWaitBeginTime; // @synthesize closeWaitBeginTime=_closeWaitBeginTime;

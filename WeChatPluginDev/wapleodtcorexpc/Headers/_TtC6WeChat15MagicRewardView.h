@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, NSString;
 
@@ -19,7 +20,6 @@
     MISSING_TYPE *$__lazy_storage_$_resListeners;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
@@ -48,4 +48,3 @@
 @property(nonatomic, copy) NSString *giftName;
 
 @end
-

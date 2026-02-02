@@ -14,7 +14,6 @@
     _Bool m_isScanning;
 }
 
-- (void).cxx_destruct;
 - (id)__hexToString:(id)arg1;
 - (void)__closeConnectionForSupport3rdApp:(id)arg1;
 - (void)__onConnectedPeripheral:(id)arg1;

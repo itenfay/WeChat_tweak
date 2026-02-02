@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_captionItems;
 + (void)PBArrayAdd_launguage;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *captionItems; // @synthesize captionItems=_captionItems;
 @property(retain, nonatomic) NSString *launguage; // @synthesize launguage=_launguage;
 @property(readonly, copy) NSString *description;

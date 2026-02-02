@@ -19,7 +19,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdAlphaVideoProcessor *alphaVideoProcessor; // @synthesize alphaVideoProcessor=_alphaVideoProcessor;
 @property(nonatomic) int videoCompositeType; // @synthesize videoCompositeType=_videoCompositeType;
 @property(copy, nonatomic) NSArray *layerInstructions; // @synthesize layerInstructions=_layerInstructions;

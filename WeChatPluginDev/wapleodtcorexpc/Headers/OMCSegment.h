@@ -13,7 +13,6 @@
     OMJID *_segmentID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJID *segmentID; // @synthesize segmentID=_segmentID;
 @property(readonly, nonatomic) __weak OMCTimeline *timeline; // @synthesize timeline=_timeline;
 @property(readonly, copy) NSString *description;

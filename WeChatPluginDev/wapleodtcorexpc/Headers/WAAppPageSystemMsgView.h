@@ -19,7 +19,6 @@
     double _textHorMargin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useLightStyle; // @synthesize useLightStyle=_useLightStyle;
 @property(nonatomic) double textHorMargin; // @synthesize textHorMargin=_textHorMargin;
 @property(nonatomic) double textVerMargin; // @synthesize textVerMargin=_textVerMargin;

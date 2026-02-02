@@ -16,7 +16,6 @@
 }
 
 + (int)gridUnitAtScale:(int)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *gridID; // @synthesize gridID=_gridID;
 @property(readonly, nonatomic) unsigned int scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) int y; // @synthesize y=_y;

@@ -22,7 +22,6 @@
     NSString *_scoreNum;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *scoreNum; // @synthesize scoreNum=_scoreNum;
 @property(nonatomic) _Bool hasFlagshipFlag; // @synthesize hasFlagshipFlag=_hasFlagshipFlag;
 @property(nonatomic) _Bool hasRelievedBuyFlag; // @synthesize hasRelievedBuyFlag=_hasRelievedBuyFlag;

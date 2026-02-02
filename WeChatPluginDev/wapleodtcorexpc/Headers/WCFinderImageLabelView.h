@@ -17,7 +17,6 @@
 }
 
 + (double)getHeightByIconHeight:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) id dataSource; // @synthesize dataSource=_dataSource;

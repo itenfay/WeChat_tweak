@@ -25,7 +25,6 @@
     NSArray *_gestureItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *gestureItems; // @synthesize gestureItems=_gestureItems;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) unsigned long long currentHintIndex; // @synthesize currentHintIndex=_currentHintIndex;

@@ -10,7 +10,6 @@
     QGPMaterialVariantsInfos *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPMaterialVariantsInfos *value; // @synthesize value=_value;
 
 @end

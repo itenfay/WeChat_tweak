@@ -27,7 +27,6 @@
     struct CGSize _liveLabelSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int blurEffectStyle; // @synthesize blurEffectStyle=_blurEffectStyle;
 @property(nonatomic) _Bool addBlurEffect; // @synthesize addBlurEffect=_addBlurEffect;
 @property(nonatomic) _Bool isShowBtn; // @synthesize isShowBtn=_isShowBtn;

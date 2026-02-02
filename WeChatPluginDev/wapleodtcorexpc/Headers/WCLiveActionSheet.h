@@ -13,7 +13,6 @@
 }
 
 + (long long)getActionSheetWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTitleLabel; // @synthesize richTitleLabel=_richTitleLabel;
 @property(retain, nonatomic) id extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(copy, nonatomic) NSString *richTitle; // @synthesize richTitle=_richTitle;

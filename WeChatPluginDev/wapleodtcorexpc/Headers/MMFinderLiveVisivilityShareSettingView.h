@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveNewShareSettingSessionSelectController, MMFinderLiveShareSettingInitParams, MMFinderLiveVisivilitySettingInfo, MMTableViewInfo, MMUIButton, MMUILabel, NSString, UIButton, UIView, UIViewController;
 @protocol MMFinderLiveVisivilityShareSettingDelegate;
 
@@ -28,7 +30,6 @@
 + (id)lowerCellDigestWithAudienceLists:(id)arg1 selectedLists:(id)arg2;
 + (id)lowerCellDigestWithContactUsernames:(id)arg1 chatroomUsernames:(id)arg2 fileLists:(id)arg3;
 + (void)updateCellInfoSeperateLine:(id)arg1 needDisplay:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
@@ -89,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

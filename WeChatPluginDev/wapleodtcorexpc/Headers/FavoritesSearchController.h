@@ -36,7 +36,6 @@
     unsigned long long _currentSearchType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int entranceScene; // @synthesize entranceScene=_entranceScene;
 @property(nonatomic) unsigned long long currentSearchType; // @synthesize currentSearchType=_currentSearchType;
 @property(retain, nonatomic) NSArray *searchTags; // @synthesize searchTags=_searchTags;

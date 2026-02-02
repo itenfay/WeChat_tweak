@@ -28,7 +28,6 @@
     NSString *_byPass;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *byPass; // @synthesize byPass=_byPass;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;
 @property(retain, nonatomic) NSString *cdnHttpHead; // @synthesize cdnHttpHead=_cdnHttpHead;

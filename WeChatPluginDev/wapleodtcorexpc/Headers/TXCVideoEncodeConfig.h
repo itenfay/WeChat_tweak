@@ -33,7 +33,6 @@
     struct CGSize _resolution;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVTExternalConfig *vtExternalConfig; // @synthesize vtExternalConfig=_vtExternalConfig;
 @property(nonatomic) _Bool enablesTranscoding; // @synthesize enablesTranscoding=_enablesTranscoding;
 @property(nonatomic) _Bool enablesRoi; // @synthesize enablesRoi=_enablesRoi;

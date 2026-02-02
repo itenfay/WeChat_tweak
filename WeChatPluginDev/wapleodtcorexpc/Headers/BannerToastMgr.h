@@ -13,7 +13,6 @@
     NSMutableDictionary *m_dicPersistentSecurityBannerMsgs;
 }
 
-- (void).cxx_destruct;
 - (void)logUniDirectionFriendBanner:(id)arg1 opType:(unsigned int)arg2;
 - (void)logRecommandFriendBanner:(id)arg1 opType:(unsigned int)arg2 recCount:(unsigned int)arg3;
 - (void)logMainFrameBanner:(unsigned int)arg1 opType:(unsigned int)arg2;

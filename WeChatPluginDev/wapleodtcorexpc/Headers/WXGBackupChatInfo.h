@@ -19,7 +19,6 @@
     NSMutableDictionary *_filterMediaCntInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *filterMediaCntInfo; // @synthesize filterMediaCntInfo=_filterMediaCntInfo;
 @property(retain, nonatomic) NSMutableDictionary *mediaCntInfo; // @synthesize mediaCntInfo=_mediaCntInfo;
 @property(nonatomic) unsigned long long filterMediaCount; // @synthesize filterMediaCount=_filterMediaCount;

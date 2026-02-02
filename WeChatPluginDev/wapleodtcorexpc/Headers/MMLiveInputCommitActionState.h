@@ -15,7 +15,6 @@
     FinderWindowProductInfo *_questionProductInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderWindowProductInfo *questionProductInfo; // @synthesize questionProductInfo=_questionProductInfo;
 @property(nonatomic) _Bool isCurrentForwardToProductQuestion; // @synthesize isCurrentForwardToProductQuestion=_isCurrentForwardToProductQuestion;
 @property(retain, nonatomic) MMFinderLiveFloatMsg *floatMsgToUse; // @synthesize floatMsgToUse=_floatMsgToUse;

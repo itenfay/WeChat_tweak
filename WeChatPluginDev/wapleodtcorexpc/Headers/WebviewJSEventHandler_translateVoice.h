@@ -12,7 +12,6 @@
     _Bool _isShowProgressTips;
 }
 
-- (void).cxx_destruct;
 - (void)onVoiceTransFail:(id)arg1 baseResponse:(id)arg2;
 - (void)onVoiceTransEnd:(id)arg1 FromCache:(_Bool)arg2;
 - (void)onVoiceTransVoiceID:(id)arg1 transResult:(id)arg2;

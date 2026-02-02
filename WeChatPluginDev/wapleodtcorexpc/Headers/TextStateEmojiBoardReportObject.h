@@ -15,7 +15,6 @@
     NSString *_publishId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecentUsedSectionValid; // @synthesize isRecentUsedSectionValid=_isRecentUsedSectionValid;
 @property(retain, nonatomic) NSString *publishId; // @synthesize publishId=_publishId;
 @property(nonatomic) unsigned long long hideTimeStamp; // @synthesize hideTimeStamp=_hideTimeStamp;

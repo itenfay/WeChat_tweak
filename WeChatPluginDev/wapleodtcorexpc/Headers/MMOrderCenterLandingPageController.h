@@ -15,7 +15,6 @@
     NSString *_filteringAppId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filteringAppId; // @synthesize filteringAppId=_filteringAppId;
 @property(retain, nonatomic) MMOrderCenterPivotViewController *pivotViewController; // @synthesize pivotViewController=_pivotViewController;
 @property(retain, nonatomic) WCSearcher *searcher; // @synthesize searcher=_searcher;

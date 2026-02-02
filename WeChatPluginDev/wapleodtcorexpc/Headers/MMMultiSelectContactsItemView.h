@@ -13,7 +13,6 @@
     ContactsItemView *_contactItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsItemView *contactItemView; // @synthesize contactItemView=_contactItemView;
 @property(retain, nonatomic) UIImageView *checkMarkImgView; // @synthesize checkMarkImgView=_checkMarkImgView;
 @property(nonatomic) _Bool isAllowMultiSelect; // @synthesize isAllowMultiSelect=_isAllowMultiSelect;

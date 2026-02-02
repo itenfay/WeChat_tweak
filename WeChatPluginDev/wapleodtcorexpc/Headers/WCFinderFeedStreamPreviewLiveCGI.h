@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderFeedStreamPreviewLiveCGI
@@ -16,7 +18,6 @@
     NSData *_multiStyleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *multiStyleInfo; // @synthesize multiStyleInfo=_multiStyleInfo;
 @property(nonatomic) long long previewDelaySec; // @synthesize previewDelaySec=_previewDelaySec;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
@@ -31,4 +32,3 @@
 - (id)initWithFinderFeedPreviewDataItem:(id)arg1 commentScene:(int)arg2 liveTaskId:(id)arg3 multiStyleInfo:(id)arg4 previewDelaySec:(long long)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

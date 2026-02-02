@@ -16,7 +16,6 @@
     NSIndexPath *_cleanOriginMsgIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) NSIndexPath *cleanOriginMsgIndex; // @synthesize cleanOriginMsgIndex=_cleanOriginMsgIndex;
 @property(nonatomic) unsigned long long settingViewType; // @synthesize settingViewType=_settingViewType;
 @property(retain, nonatomic) DelaySwitchSettingLogic *delaySwitchLogic; // @synthesize delaySwitchLogic=_delaySwitchLogic;

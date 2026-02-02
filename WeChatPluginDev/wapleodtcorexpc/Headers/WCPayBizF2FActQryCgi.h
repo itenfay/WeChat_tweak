@@ -10,7 +10,6 @@
     id <WCPayBizF2FActQryCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayBizF2FActQryCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

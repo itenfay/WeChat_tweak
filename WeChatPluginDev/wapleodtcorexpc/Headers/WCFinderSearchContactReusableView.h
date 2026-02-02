@@ -16,7 +16,6 @@
     UIView *_blankView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *blankView; // @synthesize blankView=_blankView;
 @property(retain, nonatomic) MMUIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

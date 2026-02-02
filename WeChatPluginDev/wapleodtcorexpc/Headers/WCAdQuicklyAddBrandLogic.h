@@ -20,7 +20,6 @@
     NSString *_canvasDynamicInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *canvasDynamicInfo; // @synthesize canvasDynamicInfo=_canvasDynamicInfo;
 @property(copy, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;
 @property(retain, nonatomic) WCAdvertiseInfo *adInfo; // @synthesize adInfo=_adInfo;

@@ -11,7 +11,6 @@
     NSDictionary *_scanDetailMsgMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *scanDetailMsgMap; // @synthesize scanDetailMsgMap=_scanDetailMsgMap;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 - (_Bool)isVerticalScreen;

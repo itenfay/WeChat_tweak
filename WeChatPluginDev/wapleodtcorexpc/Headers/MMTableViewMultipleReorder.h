@@ -49,7 +49,6 @@
     struct UIEdgeInsets _previousContentInset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *autoScrollTimer; // @synthesize autoScrollTimer=_autoScrollTimer;
 @property(nonatomic) double scrollStep; // @synthesize scrollStep=_scrollStep;
 @property(nonatomic) _Bool isAutoScrolling; // @synthesize isAutoScrolling=_isAutoScrolling;

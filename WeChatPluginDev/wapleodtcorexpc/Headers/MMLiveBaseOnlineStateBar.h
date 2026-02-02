@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString;
 
 @interface MMLiveBaseOnlineStateBar
@@ -15,7 +17,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) _Bool showingRunningBank; // @synthesize showingRunningBank=_showingRunningBank;
 @property(retain, nonatomic) NSString *onlineCountTitle; // @synthesize onlineCountTitle=_onlineCountTitle;
@@ -26,4 +27,3 @@
 - (void)sizeToFits;
 
 @end
-

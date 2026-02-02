@@ -10,7 +10,6 @@
     MMUINavigationController *_navigationController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 - (void)onAppRefreshTokenErrorViewDimiss:(id)arg1;
 - (void)clearAllHandle;

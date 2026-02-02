@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableSet, NSString, WCFinderContact, WCFinderFeedArray, WCFinderProfileADPlugin, WCFinderProfileFeedManager, WCFinderShareEntranceMessageInfo;
 @protocol WCFinderProfileDataFetcher, WCFinderProfileViewModelProtocol;
@@ -33,7 +34,6 @@
 }
 
 + (int)displayCommentSceneForIsAuthor:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileADPlugin *adPlugin; // @synthesize adPlugin=_adPlugin;
 @property(retain, nonatomic) NSMutableSet *lastStreamItemIds; // @synthesize lastStreamItemIds=_lastStreamItemIds;
 @property(nonatomic) unsigned long long entryScene; // @synthesize entryScene=_entryScene;
@@ -87,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
     MMFinderLiveRewardGiftItem *_customizePriorRewardItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreTextNewCustomize; // @synthesize ignoreTextNewCustomize=_ignoreTextNewCustomize;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *customizePriorRewardItem; // @synthesize customizePriorRewardItem=_customizePriorRewardItem;
 @property(retain, nonatomic) MMFinderLiveRewardAppMsgInfo *rewardAppMsg; // @synthesize rewardAppMsg=_rewardAppMsg;

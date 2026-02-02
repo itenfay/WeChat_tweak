@@ -12,7 +12,6 @@
     unsigned long long _contactType;
 }
 
-- (void).cxx_destruct;
 - (void)showErrorWhenNoContact;
 - (void)onStrangerContactUpdateForbidden:(id)arg1;
 - (void)onStrangerContactUpdated:(id)arg1 Contact:(id)arg2;

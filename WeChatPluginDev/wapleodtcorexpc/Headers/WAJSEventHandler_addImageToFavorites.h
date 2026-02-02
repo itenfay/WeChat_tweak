@@ -10,7 +10,6 @@
     NSString *_cacheKey;
 }
 
-- (void).cxx_destruct;
 - (void)OnHttpGetFinish:(id)arg1 response:(id)arg2 ErrNo:(int)arg3 isWebp:(_Bool)arg4;
 - (id)genKeyForUrl:(id)arg1;
 - (id)getImageDataWithPackageRelativeURL:(id)arg1;

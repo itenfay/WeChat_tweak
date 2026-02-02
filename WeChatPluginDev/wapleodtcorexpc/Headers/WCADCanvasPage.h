@@ -26,7 +26,6 @@
     NSArray *_forbiddenGlobalItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *forbiddenGlobalItems; // @synthesize forbiddenGlobalItems=_forbiddenGlobalItems;
 @property(nonatomic) int hasIf; // @synthesize hasIf;
 @property(nonatomic) int canvasIf; // @synthesize canvasIf;

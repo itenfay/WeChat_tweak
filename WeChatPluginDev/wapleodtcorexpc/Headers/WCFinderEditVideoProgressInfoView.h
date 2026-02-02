@@ -19,7 +19,6 @@
 }
 
 + (double)viewH;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *videoPieceDuration; // @synthesize videoPieceDuration=_videoPieceDuration;
 @property(retain, nonatomic) EditVideoAttr *attr; // @synthesize attr=_attr;
 @property(nonatomic) _Bool isScrollingTriggerByPlayer; // @synthesize isScrollingTriggerByPlayer=_isScrollingTriggerByPlayer;

@@ -19,7 +19,6 @@
     WCAdURLImageView *_animationThumbView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool finishedFlag; // @synthesize finishedFlag=_finishedFlag;
 @property(nonatomic) _Bool isHideAnimating; // @synthesize isHideAnimating=_isHideAnimating;
 @property(nonatomic) _Bool hasPlayedFlag; // @synthesize hasPlayedFlag=_hasPlayedFlag;

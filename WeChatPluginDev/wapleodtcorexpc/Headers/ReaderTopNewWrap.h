@@ -19,7 +19,6 @@
     NSArray *_m_picUrls;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_picUrls; // @synthesize m_picUrls=_m_picUrls;
 @property(retain, nonatomic) NSArray *m_coverUrls; // @synthesize m_coverUrls=_m_coverUrls;
 @property(nonatomic) unsigned int m_coversDisplayMode; // @synthesize m_coversDisplayMode=_m_coversDisplayMode;

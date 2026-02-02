@@ -18,7 +18,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) unsigned int mostRecentPrefetchTime; // @synthesize mostRecentPrefetchTime=_mostRecentPrefetchTime;

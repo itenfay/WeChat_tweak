@@ -13,7 +13,6 @@
     MMTextStateMediaUploadTaskInfo *_curTaskInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTextStateMediaUploadTaskInfo *curTaskInfo; // @synthesize curTaskInfo=_curTaskInfo;
 @property(retain, nonatomic) NSMutableArray *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(nonatomic) __weak id <MMTextStateMediaUploadCdnMgrDelegate> delegate; // @synthesize delegate=_delegate;

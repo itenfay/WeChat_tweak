@@ -30,7 +30,6 @@
     struct CGRect _currentKeyboardRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *preSelectedContact; // @synthesize preSelectedContact=_preSelectedContact;
 @property(readonly, nonatomic) long long i64LocalSearchId; // @synthesize i64LocalSearchId=_i64LocalSearchId;
 @property(nonatomic) _Bool willReportSearchBarExposed; // @synthesize willReportSearchBarExposed=_willReportSearchBarExposed;

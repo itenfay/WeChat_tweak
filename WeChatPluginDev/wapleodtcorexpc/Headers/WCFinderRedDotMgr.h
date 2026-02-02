@@ -55,7 +55,6 @@
 + (id)mockSettingOriginalShowInfo;
 + (id)mockEntranceMentionShowInfoByCount:(long long)arg1;
 + (id)mockEntanceShowInfo;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool GCDDicSafeThreadStrategy; // @synthesize GCDDicSafeThreadStrategy=_GCDDicSafeThreadStrategy;
 @property(retain, nonatomic) WCFinderRedDotDictionaryHelper *swipeRevokeDic; // @synthesize swipeRevokeDic=_swipeRevokeDic;
 @property(retain, nonatomic) WCFinderRedDotDictionaryHelper *uuidCtrlInfosDic; // @synthesize uuidCtrlInfosDic=_uuidCtrlInfosDic;

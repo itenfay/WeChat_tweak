@@ -18,7 +18,6 @@
     NSArray *_finderTopicResList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *finderTopicResList; // @synthesize finderTopicResList=_finderTopicResList;
 @property(retain, nonatomic) NSArray *displayRelationAvatarList; // @synthesize displayRelationAvatarList=_displayRelationAvatarList;
 @property(retain, nonatomic) NSArray *relationAvatarList; // @synthesize relationAvatarList=_relationAvatarList;

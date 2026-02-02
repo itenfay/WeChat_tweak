@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCommentAssitantManageView, MMFinderLiveTaskId, MMUINavigationController, NSArray, NSMutableArray, NSMutableDictionary, NSString, RoomContactSelectViewController, UINavigationController, WCColorProxy;
 
@@ -23,7 +24,6 @@
     MMUINavigationController *_presentedNavigationVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUINavigationController *presentedNavigationVC; // @synthesize presentedNavigationVC=_presentedNavigationVC;
 @property(retain, nonatomic) NSMutableDictionary *liveContactMap; // @synthesize liveContactMap=_liveContactMap;
 @property(retain, nonatomic) NSMutableDictionary *sourceTypeMap; // @synthesize sourceTypeMap=_sourceTypeMap;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

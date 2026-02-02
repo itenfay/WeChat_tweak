@@ -20,7 +20,6 @@
     NSArray *_animateDots;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useShortTitle; // @synthesize useShortTitle=_useShortTitle;
 @property(retain, nonatomic) NSArray *animateDots; // @synthesize animateDots=_animateDots;
 @property(nonatomic) long long animateDotIndex; // @synthesize animateDotIndex=_animateDotIndex;

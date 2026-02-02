@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MegaVideoClientStatus, NSData, NSString, WCMegaVideoLocation;
 
 @interface WCMegaVideoGetRelatedListCGI
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(retain, nonatomic) NSData *objectSessionInfo; // @synthesize objectSessionInfo=_objectSessionInfo;
@@ -39,4 +40,3 @@
 - (id)initWithLastBuff:(id)arg1 videoId:(id)arg2 videoNonceId:(id)arg3 scene:(int)arg4 fromUsername:(id)arg5 toUsername:(id)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

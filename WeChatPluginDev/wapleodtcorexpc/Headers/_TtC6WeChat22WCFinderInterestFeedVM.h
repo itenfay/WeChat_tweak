@@ -31,7 +31,6 @@
     MISSING_TYPE *dataItem;
 }
 
-- (void).cxx_destruct;
 - (void)fetchNewData;
 - (id)init;
 

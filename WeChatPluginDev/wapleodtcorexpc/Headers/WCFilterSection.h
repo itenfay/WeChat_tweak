@@ -21,7 +21,6 @@
 }
 
 + (id)convertToFilterItems:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long defaultSelectIndex; // @synthesize defaultSelectIndex=_defaultSelectIndex;
 @property(nonatomic) unsigned long long displayType; // @synthesize displayType=_displayType;
 @property(nonatomic) _Bool canMultiSelect; // @synthesize canMultiSelect=_canMultiSelect;

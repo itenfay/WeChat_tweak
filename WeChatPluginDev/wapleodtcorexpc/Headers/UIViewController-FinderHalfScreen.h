@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIViewController (FinderHalfScreen)
 - (_Bool)isPresentedByJumpInfo;
@@ -23,4 +24,3 @@
 - (void)setFinderHalfScreenStateBindVC:(id)arg1;
 - (void)setFinderHalfScreenState;
 @end
-

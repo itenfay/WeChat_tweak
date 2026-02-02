@@ -143,7 +143,6 @@
     unsigned long long _URLExpiredRetryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long URLExpiredRetryCount; // @synthesize URLExpiredRetryCount=_URLExpiredRetryCount;
 @property(retain, nonatomic) NSMutableDictionary *jumpInfoPreloadDict; // @synthesize jumpInfoPreloadDict=_jumpInfoPreloadDict;
 @property(nonatomic) unsigned long long currMutexFeatureViewTypes; // @synthesize currMutexFeatureViewTypes=_currMutexFeatureViewTypes;

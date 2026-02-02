@@ -18,7 +18,6 @@
     WAPageFlowObject *_preAppPageInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int preEntranceWebviewID; // @synthesize preEntranceWebviewID=_preEntranceWebviewID;
 @property(retain, nonatomic) WAPageFlowObject *preAppPageInfo; // @synthesize preAppPageInfo=_preAppPageInfo;
 @property(retain, nonatomic) WAPageFlowSessionInfo *preSessionInfo; // @synthesize preSessionInfo=_preSessionInfo;

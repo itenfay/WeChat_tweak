@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, PAGAnimator, PAGComposition, PAGDecoder, UIImage;
 
@@ -35,7 +36,6 @@
 + (void)RegisterFlushQueueDestoryMethod;
 + (id)ImageViewFlushQueue;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) float maxFrameRate; // @synthesize maxFrameRate=_maxFrameRate;
 @property(nonatomic) long long fileHeight; // @synthesize fileHeight=_fileHeight;
@@ -94,4 +94,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

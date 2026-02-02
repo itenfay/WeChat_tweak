@@ -15,7 +15,6 @@
     NSString *m_nsAtomicButtonTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsAtomicButtonTitle; // @synthesize m_nsAtomicButtonTitle;
 @property(retain, nonatomic) NSString *m_nsAtomicTitle; // @synthesize m_nsAtomicTitle;
 @property(nonatomic) _Bool m_bEnable; // @synthesize m_bEnable;

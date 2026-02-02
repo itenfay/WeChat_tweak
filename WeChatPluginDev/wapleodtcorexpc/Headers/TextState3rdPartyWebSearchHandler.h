@@ -10,7 +10,6 @@
     NSString *_keyword;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
 - (_Bool)doSourceActionWithViewController:(id)arg1 scene:(unsigned int)arg2;
 - (unsigned int)type;

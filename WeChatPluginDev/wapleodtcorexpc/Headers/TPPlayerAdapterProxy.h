@@ -16,7 +16,6 @@
     TPEventTrackingPublisher *_eventTrackingPublisher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPEventTrackingPublisher *eventTrackingPublisher; // @synthesize eventTrackingPublisher=_eventTrackingPublisher;
 @property(retain, nonatomic) TPPlayerAdapterProxyDelegate *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
 @property(nonatomic) __weak id <ITPPlayerBaseDelegate> outerDelegate; // @synthesize outerDelegate=_outerDelegate;

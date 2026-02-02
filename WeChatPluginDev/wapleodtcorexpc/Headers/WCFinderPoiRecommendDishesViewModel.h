@@ -15,7 +15,6 @@
     WCFinderPoiRecommendDishesInfo *_dishesInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPoiRecommendDishesInfo *dishesInfo; // @synthesize dishesInfo=_dishesInfo;
 @property(retain, nonatomic) FinderPoiBasicInfoResponse_RecommendDishesComponent *recommendDishesComponent; // @synthesize recommendDishesComponent=_recommendDishesComponent;
 @property(nonatomic) __weak id <WCFinderPoiRecommendDishesViewModelDelegte> delegate; // @synthesize delegate=_delegate;

@@ -13,7 +13,6 @@
     PAGView *_previewPagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *previewPagView; // @synthesize previewPagView=_previewPagView;
 @property(retain, nonatomic) PAGFile *previewPagFile; // @synthesize previewPagFile=_previewPagFile;
 - (void)addAlphaMask:(id)arg1;

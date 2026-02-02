@@ -20,7 +20,6 @@
     unsigned long long m_lastBeganTouchTime;
 }
 
-- (void).cxx_destruct;
 - (void)clearViewId:(id)arg1;
 - (void)onGesture:(id)arg1 withTarget:(id)arg2 withAction:(id)arg3;
 - (void)onSendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;

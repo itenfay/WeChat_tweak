@@ -12,7 +12,6 @@
     NSMutableString *_jsScript;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *jsScript; // @synthesize jsScript=_jsScript;
 - (void)appendString:(id)arg1;
 - (void)jsVar:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;

@@ -12,7 +12,6 @@
     NSMutableArray *_lineArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lineArray; // @synthesize lineArray=_lineArray;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

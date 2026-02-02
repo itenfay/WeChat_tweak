@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCRedesignTextItem, WCRedesignVerifyCodeTextItem;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _tapVerifyCodeButtonHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapVerifyCodeButtonHandler; // @synthesize tapVerifyCodeButtonHandler=_tapVerifyCodeButtonHandler;
 @property(retain, nonatomic) WCRedesignVerifyCodeTextItem *verifyCodeTextItem; // @synthesize verifyCodeTextItem=_verifyCodeTextItem;
 @property(retain, nonatomic) WCRedesignTextItem *passwordTextItem; // @synthesize passwordTextItem=_passwordTextItem;
@@ -26,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

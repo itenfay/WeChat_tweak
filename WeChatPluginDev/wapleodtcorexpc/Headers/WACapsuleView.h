@@ -36,7 +36,6 @@
 + (double)bannerMaxWidth;
 + (struct CGSize)menuSize;
 + (_Bool)shouldUseSmallMenu;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *capsuleTimer; // @synthesize capsuleTimer=_capsuleTimer;
 @property(retain, nonatomic) MMUIView *menuView; // @synthesize menuView=_menuView;
 @property(retain, nonatomic) WCSequentialActionRunner *sequentialAction; // @synthesize sequentialAction=_sequentialAction;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, NSURLSession, NSURLSessionDataTask;
 @protocol MVImageRequestDelegate;
 
@@ -17,7 +19,6 @@
     NSURLSessionDataTask *_dataTask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSURLSessionDataTask *dataTask; // @synthesize dataTask=_dataTask;
 @property(nonatomic) _Bool internalFinished; // @synthesize internalFinished=_internalFinished;
 @property(nonatomic) _Bool internalExecuting; // @synthesize internalExecuting=_internalExecuting;
@@ -42,4 +43,3 @@
 - (void)createCacheDirectoryIfNeeded;
 
 @end
-

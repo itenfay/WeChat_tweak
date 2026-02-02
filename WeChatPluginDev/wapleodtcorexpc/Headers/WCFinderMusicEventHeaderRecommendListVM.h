@@ -15,7 +15,6 @@
 + (unsigned long long)templateListCountOfMusicTopicInfo:(id)arg1;
 + (unsigned long long)recommendMusicListCountOfMusicTopicInfo:(id)arg1;
 + (unsigned long long)dataCountOfMusicTopicInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderMusicTopicInfo *musicTopicInfo; // @synthesize musicTopicInfo=_musicTopicInfo;
 - (_Bool)isTemplateIndex:(unsigned long long)arg1;
 - (id)recommendMusicOfIndex:(unsigned long long)arg1;

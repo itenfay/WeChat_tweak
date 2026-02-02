@@ -14,7 +14,6 @@
     AVMediaSelectionGroup *_group;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) AVMediaSelectionGroup *group; // @synthesize group=_group;
 @property(retain, nonatomic) AVMediaSelectionOption *option; // @synthesize option=_option;

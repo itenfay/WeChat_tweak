@@ -14,7 +14,6 @@
     NSObject<WCFinderPostMgrDelegate> *_forwardDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<WCFinderPostMgrDelegate> *forwardDelegate; // @synthesize forwardDelegate=_forwardDelegate;
 @property(nonatomic) __weak NSObject<WCFinderPostMgrDelegate> *originDelegate; // @synthesize originDelegate=_originDelegate;
 - (void)onPostActionFinish;

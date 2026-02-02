@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _callback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) NSArray *componentKeyList; // @synthesize componentKeyList=_componentKeyList;
 @property(retain, nonatomic) NSString *customText; // @synthesize customText=_customText;
@@ -24,4 +24,3 @@
 @property(retain, nonatomic) NSString *giftProductId; // @synthesize giftProductId=_giftProductId;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LOTAnimationView, NSString, WCFinderCustomImageRichTextView;
 
@@ -16,7 +17,6 @@
     WCFinderCustomImageRichTextView *_eduTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *eduTipsLabel; // @synthesize eduTipsLabel=_eduTipsLabel;
 @property(retain, nonatomic) LOTAnimationView *doubleLikeView; // @synthesize doubleLikeView=_doubleLikeView;
 @property(copy, nonatomic) CDUnknownBlockType hitBlock; // @synthesize hitBlock=_hitBlock;
@@ -28,4 +28,3 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end
-

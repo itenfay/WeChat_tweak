@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface WCFinderLiveGetRewardWishListCGI
@@ -13,7 +15,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveScene; // @synthesize liveScene=_liveScene;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -24,4 +25,3 @@
 - (id)initWithLiveTaskId:(id)arg1 liveCookies:(id)arg2 liveScene:(long long)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

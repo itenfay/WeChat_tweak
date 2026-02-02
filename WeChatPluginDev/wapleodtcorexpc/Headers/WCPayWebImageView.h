@@ -27,7 +27,6 @@
     struct UIEdgeInsets _resizeableInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsDarkmodeMd5; // @synthesize nsDarkmodeMd5=_nsDarkmodeMd5;
 @property(retain, nonatomic) NSString *nsMd5; // @synthesize nsMd5=_nsMd5;
 @property(retain, nonatomic) UIImage *defaultWebImage; // @synthesize defaultWebImage=_defaultWebImage;

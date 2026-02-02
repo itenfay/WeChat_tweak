@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSContactSearchUtilLogic, NSArray, WCFinderMentionUserSearchViewModel, WCFinderMentionUserSection;
 @protocol WCFinderMentionUserActionSheetViewModelDelegate;
@@ -21,7 +22,6 @@
     FTSContactSearchUtilLogic *_contactSearchLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isError; // @synthesize isError=_isError;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) FTSContactSearchUtilLogic *contactSearchLogic; // @synthesize contactSearchLogic=_contactSearchLogic;
@@ -47,4 +47,3 @@
 - (id)init;
 
 @end
-

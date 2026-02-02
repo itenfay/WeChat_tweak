@@ -34,7 +34,6 @@
     unsigned long long _selectMemberSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectMemberSource; // @synthesize selectMemberSource=_selectMemberSource;
 @property(retain, nonatomic) NSArray *launchIgnoreContacts; // @synthesize launchIgnoreContacts=_launchIgnoreContacts;
 @property(retain, nonatomic) NSArray *launchSelectedContacts; // @synthesize launchSelectedContacts=_launchSelectedContacts;

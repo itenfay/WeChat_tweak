@@ -44,7 +44,6 @@
 + (void)MMLiveReportFieldAdd_rulePop;
 + (void)MMLiveReportFieldAdd_roomId;
 + (void)MMLiveReportFieldAdd_scene;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int hasRealNameProcess; // @synthesize hasRealNameProcess;
 @property(nonatomic) unsigned int hasClickedRuleConfirm; // @synthesize hasClickedRuleConfirm;
 @property(nonatomic) unsigned int castSwitch; // @synthesize castSwitch;

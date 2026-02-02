@@ -15,7 +15,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl;
 @property(retain, nonatomic) NSData *videoFileData; // @synthesize videoFileData;

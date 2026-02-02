@@ -15,7 +15,6 @@
     MMTimer *_checkTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int checkFailCount; // @synthesize checkFailCount=_checkFailCount;
 @property(nonatomic) _Bool isChecking; // @synthesize isChecking=_isChecking;
 @property(nonatomic) unsigned int checkInterval; // @synthesize checkInterval=_checkInterval;

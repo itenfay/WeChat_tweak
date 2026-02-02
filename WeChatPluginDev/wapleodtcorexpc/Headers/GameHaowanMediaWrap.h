@@ -10,7 +10,6 @@
     NSString *_videoUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;
 - (id)getTempDirectory;
 - (id)getMediaWrapUrl;

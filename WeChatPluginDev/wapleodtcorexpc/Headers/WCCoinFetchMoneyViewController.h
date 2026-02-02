@@ -33,7 +33,6 @@
     WCPayJSApiVerifyPayPasswordControlLogic *_currentLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayJSApiVerifyPayPasswordControlLogic *currentLogic; // @synthesize currentLogic=_currentLogic;
 @property(retain, nonatomic) WCCoinFetchMoneySuccessViewController *fetchMoneySuccessVC; // @synthesize fetchMoneySuccessVC=_fetchMoneySuccessVC;
 @property(retain, nonatomic) WCCoinFetchMoneyInputViewController *inputMoneyVC; // @synthesize inputMoneyVC=_inputMoneyVC;

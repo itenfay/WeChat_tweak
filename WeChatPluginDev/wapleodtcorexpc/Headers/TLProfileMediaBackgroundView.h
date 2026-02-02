@@ -12,7 +12,6 @@
     TLProfileModel *_mediaItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TLProfileModel *mediaItem; // @synthesize mediaItem=_mediaItem;
 
 @end

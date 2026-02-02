@@ -32,7 +32,6 @@
 + (unsigned int)CustomEmoticonLimit;
 + (unsigned int)CustomOrCameraEmoticonManualSyncLimit;
 + (unsigned int)CustomOrCameraEmoticonFirstSyncLimit;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonSendRecordList *recordList; // @synthesize recordList=_recordList;
 @property(retain, nonatomic) NSRecursiveLock *saveThumbsLock; // @synthesize saveThumbsLock=_saveThumbsLock;
 @property(retain, nonatomic) NSMutableSet *savingCustomEmotThumbs; // @synthesize savingCustomEmotThumbs=_savingCustomEmotThumbs;

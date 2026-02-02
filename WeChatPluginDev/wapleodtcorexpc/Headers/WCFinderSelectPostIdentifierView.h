@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIButton, UITableView, WCFinderCustomPanelSheet;
 
@@ -21,7 +22,6 @@
     CDUnknownBlockType _updateFrameBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateFrameBlock; // @synthesize updateFrameBlock=_updateFrameBlock;
 @property(nonatomic) _Bool showOnlyOptionalUsernames; // @synthesize showOnlyOptionalUsernames=_showOnlyOptionalUsernames;
 @property(nonatomic) int refreshPrepareState; // @synthesize refreshPrepareState=_refreshPrepareState;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

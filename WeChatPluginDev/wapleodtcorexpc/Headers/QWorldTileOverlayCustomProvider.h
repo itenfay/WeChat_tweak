@@ -10,7 +10,6 @@
     QOverseaProvider *_userProvider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QOverseaProvider *userProvider; // @synthesize userProvider=_userProvider;
 - (void)resetDataWithConfig:(id)arg1;
 - (void)onStyleChanged:(unsigned long long)arg1;

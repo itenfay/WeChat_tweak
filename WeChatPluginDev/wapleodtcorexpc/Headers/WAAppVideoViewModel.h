@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *appContact; // @synthesize appContact=_appContact;
 @property(readonly, nonatomic) NSString *videoTitle; // @synthesize videoTitle=_videoTitle;
 @property(readonly, nonatomic) struct CGSize thumbImageSize; // @synthesize thumbImageSize=m_thumbImageSize;

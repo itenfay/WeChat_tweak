@@ -22,7 +22,6 @@
     double _detailBrowsingBeginTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double detailBrowsingBeginTime; // @synthesize detailBrowsingBeginTime=_detailBrowsingBeginTime;
 @property(nonatomic) double previewBrowsingBeginTime; // @synthesize previewBrowsingBeginTime=_previewBrowsingBeginTime;
 @property(nonatomic) double historyBrowsingBeginTime; // @synthesize historyBrowsingBeginTime=_historyBrowsingBeginTime;

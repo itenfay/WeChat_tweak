@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_lastRepairTime;
 + (void)PBArrayAdd_repairTimes;
 + (void)PBArrayAdd_tag;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastRepairTime; // @synthesize lastRepairTime=_lastRepairTime;
 @property(nonatomic) int repairTimes; // @synthesize repairTimes=_repairTimes;
 @property(nonatomic) int tag; // @synthesize tag=_tag;

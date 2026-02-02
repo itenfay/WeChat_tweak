@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMHeadImageView, MMUILabel, NSArray, NSMutableArray, NSString;
 
@@ -20,7 +21,6 @@
     NSMutableArray *_cellViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cellViews; // @synthesize cellViews=_cellViews;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

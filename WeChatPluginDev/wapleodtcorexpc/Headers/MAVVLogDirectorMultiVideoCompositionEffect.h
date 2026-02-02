@@ -15,7 +15,6 @@
     struct CGRect _outputCrop;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct __CVBuffer *destTexRef; // @synthesize destTexRef=_destTexRef;
 @property(retain, nonatomic) MAVCopyRendererMetal *copyRender; // @synthesize copyRender=_copyRender;
 @property(nonatomic) _Bool outputSizeChanged; // @synthesize outputSizeChanged=_outputSizeChanged;

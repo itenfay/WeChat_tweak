@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *infoString; // @synthesize infoString=_infoString;
 @property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(nonatomic) double occurTime; // @synthesize occurTime=_occurTime;

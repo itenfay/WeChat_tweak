@@ -15,7 +15,6 @@
     unsigned int _playLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int playLength; // @synthesize playLength=_playLength;
 - (id)accessibilityLabel;
 - (void)onLoadImageOK:(id)arg1;

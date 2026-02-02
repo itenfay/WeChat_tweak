@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, WCFinderDataItem;
 
 @interface WCFinderLiveKtvGetPlayMemberCGI
@@ -15,7 +17,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(retain, nonatomic) NSData *reqBuffer; // @synthesize reqBuffer=_reqBuffer;
 @property(nonatomic) long long cgiRequestScene; // @synthesize cgiRequestScene=_cgiRequestScene;
@@ -28,4 +29,3 @@
 - (id)initWithFinderTaskId:(id)arg1 reqBuffer:(id)arg2 liveCookies:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

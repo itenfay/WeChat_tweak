@@ -18,7 +18,6 @@
     long long _selectedDistributeType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long selectedDistributeType; // @synthesize selectedDistributeType=_selectedDistributeType;
 @property(retain, nonatomic) NSArray *lotteryGiftDistributeTypeOptions; // @synthesize lotteryGiftDistributeTypeOptions=_lotteryGiftDistributeTypeOptions;
 @property(retain, nonatomic) MMTableView *optionTableView; // @synthesize optionTableView=_optionTableView;

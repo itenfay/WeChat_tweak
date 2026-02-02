@@ -17,7 +17,6 @@
     UIView *_bgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 @property(retain, nonatomic) UIButton *m_pageBtn; // @synthesize m_pageBtn;
 @property(retain, nonatomic) MMHorizontalTableView *m_tableView; // @synthesize m_tableView;

@@ -20,7 +20,6 @@
     MMFinderLiveStickerEditingActivatorView *_textStickerActivatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStickerEditingActivatorView *textStickerActivatorView; // @synthesize textStickerActivatorView=_textStickerActivatorView;
 @property(retain, nonatomic) MMFinderLiveStickerItemBase *textSticker; // @synthesize textSticker=_textSticker;
 @property(retain, nonatomic) MMFinderLiveStickerEditingActivatorView *imageStickerActivatorView; // @synthesize imageStickerActivatorView=_imageStickerActivatorView;

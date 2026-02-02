@@ -13,7 +13,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLotteryRecord *lotteryRecord; // @synthesize lotteryRecord=_lotteryRecord;
 @property(retain, nonatomic) MMUIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMCPLabel *liveRecordNameLabel; // @synthesize liveRecordNameLabel=_liveRecordNameLabel;

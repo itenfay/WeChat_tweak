@@ -15,7 +15,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWeishange; // @synthesize isWeishange=_isWeishange;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

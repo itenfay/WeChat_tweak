@@ -13,7 +13,6 @@
     NSMutableArray *_appMsgInfoCacheArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *appMsgInfoCacheArray; // @synthesize appMsgInfoCacheArray=_appMsgInfoCacheArray;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 - (void)onMinimizeWindowDidHide:(id)arg1;

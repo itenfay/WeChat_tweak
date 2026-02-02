@@ -49,7 +49,6 @@
 + (void)PBArrayAdd_collectionCount;
 + (void)PBArrayAdd_feedTids;
 + (void)PBArrayAdd_layouts;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id parsedObj; // @synthesize parsedObj=_parsedObj;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSArray *paidCollectionList; // @synthesize paidCollectionList=_paidCollectionList;

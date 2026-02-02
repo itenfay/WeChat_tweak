@@ -45,7 +45,6 @@
 + (id)getRelatedMemoryKV;
 + (id)getDetailInfoFromInfoDict:(id)arg1 prefix:(id)arg2 suffix:(id)arg3 isSize:(_Bool)arg4;
 + (_Bool)canLetFileInfoHardLink:(id)arg1 with:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *fileScanTimer; // @synthesize fileScanTimer=_fileScanTimer;
 @property(nonatomic) unsigned long long totalInsertDBCount; // @synthesize totalInsertDBCount=_totalInsertDBCount;
 @property(nonatomic) _Bool bUseCache; // @synthesize bUseCache=_bUseCache;

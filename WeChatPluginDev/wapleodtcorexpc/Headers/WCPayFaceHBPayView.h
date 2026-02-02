@@ -44,7 +44,6 @@
     MMTipsViewController *_tipsViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTipsViewController *tipsViewController; // @synthesize tipsViewController=_tipsViewController;
 - (void)setDelegate:(id)arg1;
 - (id)getReceiverInfos;

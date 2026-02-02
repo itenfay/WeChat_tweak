@@ -27,7 +27,6 @@
     UILabel *_refreshTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *refreshTipsLabel; // @synthesize refreshTipsLabel=_refreshTipsLabel;
 @property(retain, nonatomic) UIImageView *refreshIconView; // @synthesize refreshIconView=_refreshIconView;
 @property(retain, nonatomic) UIView *refreshMaskView; // @synthesize refreshMaskView=_refreshMaskView;

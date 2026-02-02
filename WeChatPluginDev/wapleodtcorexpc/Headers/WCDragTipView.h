@@ -10,7 +10,6 @@
     UIView *_tipView;
 }
 
-- (void).cxx_destruct;
 - (void)innerHide;
 - (void)animatedHide;
 - (void)onCloseGoldenCmarmaTip;

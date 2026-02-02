@@ -14,7 +14,6 @@
     id <BrandProfileFuwuContainerViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <BrandProfileFuwuContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *fuwuViewList; // @synthesize fuwuViewList=_fuwuViewList;
 @property(retain, nonatomic) UIScrollView *fuwuScrollView; // @synthesize fuwuScrollView=_fuwuScrollView;

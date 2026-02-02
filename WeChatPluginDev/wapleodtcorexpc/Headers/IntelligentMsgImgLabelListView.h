@@ -14,7 +14,6 @@
     id <IntelligentMsgImgLabelListViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IntelligentMsgImgLabelListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *m_LabelList; // @synthesize m_LabelList;
 - (void)onClickMsgImgLabelButton:(id)arg1;

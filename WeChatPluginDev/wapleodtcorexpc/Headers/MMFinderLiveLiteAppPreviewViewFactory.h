@@ -13,7 +13,6 @@
     id <MMFinderLiveLiteAppPreviewViewFactoryDataSource> _dataSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveLiteAppPreviewViewFactoryDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)createArgsCodec;
 - (id)createWithFrame:(struct CGRect)arg1 viewIdentifier:(long long)arg2 arguments:(id)arg3;

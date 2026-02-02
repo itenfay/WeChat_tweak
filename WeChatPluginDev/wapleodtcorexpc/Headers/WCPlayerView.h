@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMImageScrollViewHelper, NSArray, NSObject, NSRecursiveLock, NSString, UIImageView, WCCorePlayer, WCPipContentSourcePlayer, WCPlayerFairPlayResourceLoader, WCPlayerLayerView, WCPlayerPlayArgs, WCPlayerPlaybackInfo, WCPlayerPredicter, WCPlayerReporter, WCPlayerResourceLoader;
 @protocol TLProfileBaseMediaViewDelegate, WCPlayerControlProtocol, WCPlayerViewUIDelegate;
@@ -36,7 +37,6 @@
 }
 
 + (id)generatePlayerWithFrame:(struct CGRect)arg1 PlayArgs:(id)arg2 Controller:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageScrollViewHelper *scrollViewHelper; // @synthesize scrollViewHelper=_scrollViewHelper;
 @property(retain, nonatomic) WCPlayerFairPlayResourceLoader *fairPlayResourceloader; // @synthesize fairPlayResourceloader=_fairPlayResourceloader;
 @property(retain, nonatomic) WCPlayerResourceLoader *switchingResourceloader; // @synthesize switchingResourceloader=_switchingResourceloader;
@@ -270,4 +270,3 @@
 
 
 @end
-

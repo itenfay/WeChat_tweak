@@ -13,7 +13,6 @@
     long long _pts;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long pts; // @synthesize pts=_pts;
 @property(retain, nonatomic) NSMutableArray *pixelBuffers; // @synthesize pixelBuffers=_pixelBuffers;
 

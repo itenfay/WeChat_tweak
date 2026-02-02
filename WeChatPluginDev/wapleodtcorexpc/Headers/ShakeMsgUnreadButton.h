@@ -12,7 +12,6 @@
     MMWebImageView *oIconImageView;
 }
 
-- (void).cxx_destruct;
 - (void)onShakeMsgUnreadCountChanged;
 - (void)updateSubViews;
 - (void)initView;

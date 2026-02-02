@@ -24,7 +24,6 @@
     NSDate *_expirationDate;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic) _Bool isBlacklisted; // @synthesize isBlacklisted=_isBlacklisted;
 @property(nonatomic) _Bool isInStation; // @synthesize isInStation=_isInStation;

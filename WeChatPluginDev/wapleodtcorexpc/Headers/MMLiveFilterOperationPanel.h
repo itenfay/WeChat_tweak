@@ -28,7 +28,6 @@
     MMUIMaskContainerView *_collectionContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIMaskContainerView *collectionContainerView; // @synthesize collectionContainerView=_collectionContainerView;
 @property(retain, nonatomic) UISwipeGestureRecognizer *rightSwipeGesture; // @synthesize rightSwipeGesture=_rightSwipeGesture;
 @property(retain, nonatomic) UISwipeGestureRecognizer *leftSwipeGesture; // @synthesize leftSwipeGesture=_leftSwipeGesture;

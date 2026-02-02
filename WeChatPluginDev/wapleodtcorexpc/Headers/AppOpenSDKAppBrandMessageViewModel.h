@@ -15,7 +15,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool updatedWaContact; // @synthesize updatedWaContact=_updatedWaContact;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 - (id)reportAppMessageItem:(unsigned int)arg1;

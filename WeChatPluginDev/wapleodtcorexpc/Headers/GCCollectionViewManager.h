@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCCollectionViewManagerConfig, GCCollectionViewSectionModel, MMUIActivityIndicatorView, NSMutableArray, NSMutableDictionary, NSString, UICollectionView, UILongPressGestureRecognizer, UIRefreshControl;
 @protocol GCClvManagerProtocol;
@@ -29,7 +30,6 @@
     struct CGPoint _previousContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHeaderView; // @synthesize showHeaderView=_showHeaderView;
 @property(nonatomic) double activityHeight; // @synthesize activityHeight=_activityHeight;
 @property(nonatomic) _Bool hasInitEnd; // @synthesize hasInitEnd=_hasInitEnd;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

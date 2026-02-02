@@ -13,7 +13,6 @@
     NSString *_localPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localPath; // @synthesize localPath=_localPath;
 @property(retain, nonatomic) MJTemplateMediaResource *resource; // @synthesize resource=_resource;
 

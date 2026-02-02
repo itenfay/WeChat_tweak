@@ -13,7 +13,6 @@
     WWKFContentSendMsgInfo *_sendMsgInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasShowQuickSendMsg; // @synthesize bHasShowQuickSendMsg=_bHasShowQuickSendMsg;
 @property(retain, nonatomic) WWKFContentSendMsgInfo *sendMsgInfo; // @synthesize sendMsgInfo=_sendMsgInfo;
 @property(copy, nonatomic) NSString *sessionSubTitle; // @synthesize sessionSubTitle=_sessionSubTitle;

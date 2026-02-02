@@ -14,7 +14,6 @@
     NSDictionary *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(retain, nonatomic) NSArray *urlList; // @synthesize urlList=_urlList;
 @property(nonatomic) int dlType; // @synthesize dlType=_dlType;

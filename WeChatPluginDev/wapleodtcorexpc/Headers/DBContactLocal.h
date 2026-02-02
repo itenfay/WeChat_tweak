@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_mobileIdentify;
 + (void)PBArrayAdd_needUpdate;
 + (void)PBArrayAdd_chatState;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int localAddContactTime; // @synthesize localAddContactTime=_localAddContactTime;
 @property(retain, nonatomic) NSString *openIMPrivacyAgreementUrl; // @synthesize openIMPrivacyAgreementUrl=_openIMPrivacyAgreementUrl;
 @property(nonatomic) unsigned int localCommonFlag; // @synthesize localCommonFlag=_localCommonFlag;

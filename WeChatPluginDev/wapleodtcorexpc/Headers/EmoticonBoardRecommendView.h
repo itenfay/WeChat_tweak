@@ -21,7 +21,6 @@
     MMEmoticonStoreDownloadLogic *_downloadLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMEmoticonStoreDownloadLogic *downloadLogic; // @synthesize downloadLogic=_downloadLogic;
 @property(nonatomic) __weak id <EmoticonBoardRecommendViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTapGetEmoticonBtnFor:(unsigned long long)arg1;

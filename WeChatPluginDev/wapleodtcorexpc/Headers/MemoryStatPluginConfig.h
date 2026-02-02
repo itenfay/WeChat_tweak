@@ -60,7 +60,6 @@
 + (void)PBArrayAdd_uploadAlways;
 + (void)PBArrayAdd_disableTime;
 + (void)PBArrayAdd_memoryStatManualEnabled;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *memgraphCategories; // @synthesize memgraphCategories=_memgraphCategories;
 @property(retain, nonatomic) NSDictionary *observedCategories; // @synthesize observedCategories=_observedCategories;
 @property(retain, nonatomic) NSMutableDictionary *customInfo; // @synthesize customInfo=_customInfo;

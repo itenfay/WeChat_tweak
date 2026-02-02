@@ -10,7 +10,6 @@
     WCWebNavigationEventActionContext *_actionContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCWebNavigationEventActionContext *actionContext; // @synthesize actionContext=_actionContext;
 - (id)initWithActionContext:(id)arg1;
 

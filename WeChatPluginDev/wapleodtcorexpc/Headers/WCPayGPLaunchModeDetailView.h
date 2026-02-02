@@ -19,7 +19,6 @@
     UIView *_customizeAAView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customizeAAView; // @synthesize customizeAAView=_customizeAAView;
 @property(retain, nonatomic) UIView *activityAAView; // @synthesize activityAAView=_activityAAView;
 @property(retain, nonatomic) UIView *commonAAView; // @synthesize commonAAView=_commonAAView;

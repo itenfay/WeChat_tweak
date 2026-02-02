@@ -39,7 +39,6 @@
     struct CGSize _sizeOfPrivacyPixelBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEncodeing; // @synthesize isEncodeing=_isEncodeing;
 @property(retain, nonatomic) NSLock *videoFrameLock; // @synthesize videoFrameLock=_videoFrameLock;
 @property(retain, nonatomic) MMFinderReplayKitVideoEncoder *encoder; // @synthesize encoder=_encoder;

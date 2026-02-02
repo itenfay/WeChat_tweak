@@ -14,7 +14,6 @@
     NSString *_tipsContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tipsContent; // @synthesize tipsContent=_tipsContent;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIImageView *iconImgView; // @synthesize iconImgView=_iconImgView;

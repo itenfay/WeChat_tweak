@@ -19,7 +19,6 @@
     MMUIView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) MMUIView *titleSeperatorLiveView; // @synthesize titleSeperatorLiveView=_titleSeperatorLiveView;
 @property(retain, nonatomic) MMCPLabel *titleLabel; // @synthesize titleLabel=_titleLabel;

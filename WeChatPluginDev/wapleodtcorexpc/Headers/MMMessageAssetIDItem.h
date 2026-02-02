@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;
 @property(nonatomic) long long messageSvrID; // @synthesize messageSvrID=_messageSvrID;

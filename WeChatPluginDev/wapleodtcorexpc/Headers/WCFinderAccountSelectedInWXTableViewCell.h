@@ -18,7 +18,6 @@
     UIView *_selectBGView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectBGView; // @synthesize selectBGView=_selectBGView;
 @property(retain, nonatomic) UIImageView *addIconImageView; // @synthesize addIconImageView=_addIconImageView;
 @property(retain, nonatomic) UIView *addIconView; // @synthesize addIconView=_addIconView;

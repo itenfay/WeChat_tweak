@@ -14,7 +14,6 @@
     NSMutableSet *_currentLoadingModules;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *currentLoadingModules; // @synthesize currentLoadingModules=_currentLoadingModules;
 @property(retain, nonatomic) NSMutableDictionary *reportDic; // @synthesize reportDic=_reportDic;
 @property(retain, nonatomic) NSMutableDictionary *keyContainerDic; // @synthesize keyContainerDic=_keyContainerDic;

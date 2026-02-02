@@ -15,7 +15,6 @@
     WCSnsABTestTitle *abtestTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSnsABTestTitle *abtestTitle; // @synthesize abtestTitle;
 @property(nonatomic) int showType; // @synthesize showType;
 @property(retain, nonatomic) NSString *tipIndex; // @synthesize tipIndex;

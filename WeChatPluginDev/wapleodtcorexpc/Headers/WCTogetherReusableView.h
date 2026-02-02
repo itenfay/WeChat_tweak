@@ -12,7 +12,6 @@
 
 + (double)heightForViewSection:(id)arg1 inTableView:(id)arg2;
 + (id)reusableViewIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id viewSection; // @synthesize viewSection=_viewSection;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

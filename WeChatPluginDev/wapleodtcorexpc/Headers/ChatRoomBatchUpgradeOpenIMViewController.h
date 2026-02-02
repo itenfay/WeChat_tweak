@@ -24,7 +24,6 @@
     NSString *_chatRoomBatchUpgradeOpenIMExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatRoomBatchUpgradeOpenIMExtInfo; // @synthesize chatRoomBatchUpgradeOpenIMExtInfo=_chatRoomBatchUpgradeOpenIMExtInfo;
 @property(retain, nonatomic) NSString *chatRoomBatchUpgradeOpenIMTicket; // @synthesize chatRoomBatchUpgradeOpenIMTicket=_chatRoomBatchUpgradeOpenIMTicket;
 - (id)navigationBarBackgroundColor;

@@ -31,7 +31,6 @@
     NSMutableDictionary *_dictInnerJumpTypeAppId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *appSettingMap; // @synthesize appSettingMap=_appSettingMap;
 - (void)onPreQuit;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

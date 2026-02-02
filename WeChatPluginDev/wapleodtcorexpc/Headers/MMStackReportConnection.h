@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_reportQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reportQueue; // @synthesize reportQueue=_reportQueue;
 @property(retain, nonatomic) NSMutableArray *uploadedCustomIssue; // @synthesize uploadedCustomIssue=_uploadedCustomIssue;
 @property(nonatomic) __weak id <MMStackReportConnectionDelegate> delegate; // @synthesize delegate=_delegate;

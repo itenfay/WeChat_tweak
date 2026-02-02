@@ -11,7 +11,6 @@
     long long _request_scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long request_scene; // @synthesize request_scene=_request_scene;
 @property(nonatomic) __weak id <WCPayMchShortTermQrcodeCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)didFailWithError:(id)arg1;

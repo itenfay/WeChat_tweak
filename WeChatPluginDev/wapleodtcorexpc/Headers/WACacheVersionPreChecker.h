@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WACacheVersionPreChecker : NSObject
 {
@@ -25,4 +26,3 @@
 - (void)startPreCheckCacheVersionWithCheckerContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

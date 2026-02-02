@@ -11,7 +11,6 @@
     NSNumber *_customIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *customIndex; // @synthesize customIndex=_customIndex;
 @property(retain, nonatomic) NSNumber *pidIndex; // @synthesize pidIndex=_pidIndex;
 - (_Bool)isEqual:(id)arg1;

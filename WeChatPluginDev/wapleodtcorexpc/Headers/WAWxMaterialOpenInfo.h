@@ -19,7 +19,6 @@
     unsigned long long _materialSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int materialScene; // @synthesize materialScene=_materialScene;
 @property(nonatomic) unsigned long long materialSize; // @synthesize materialSize=_materialSize;
 @property(retain, nonatomic) NSString *materialName; // @synthesize materialName=_materialName;

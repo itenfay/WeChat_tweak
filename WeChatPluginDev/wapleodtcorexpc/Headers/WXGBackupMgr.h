@@ -42,7 +42,6 @@
 }
 
 + (_Bool)isNotifyStateCanReenter:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pairType; // @synthesize pairType=_pairType;
 @property(retain, nonatomic) ChatMigrationGetConnectInfo *getConnectionInfo; // @synthesize getConnectionInfo=_getConnectionInfo;
 @property(retain, nonatomic) WXGBackupImportMessageHelper *importMessageHelper; // @synthesize importMessageHelper=_importMessageHelper;

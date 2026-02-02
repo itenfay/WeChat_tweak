@@ -15,7 +15,6 @@
     _Bool _bIsGetResult;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)sendBizScanLicenseRequestWithImg:(id)arg1 andType:(unsigned int)arg2;
 - (void)getCardCancel;

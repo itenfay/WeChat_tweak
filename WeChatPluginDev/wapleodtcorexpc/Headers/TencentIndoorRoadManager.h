@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,10 +14,8 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain) NSString *curBuildid; // @synthesize curBuildid=_curBuildid;
 - (_Bool)downloadIndoorRoadDataWithBuildid:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)resetBuildid;
 
 @end
-

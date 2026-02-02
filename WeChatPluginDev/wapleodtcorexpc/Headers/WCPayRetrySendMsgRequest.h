@@ -16,7 +16,6 @@
     unsigned int _fromScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fromScene; // @synthesize fromScene=_fromScene;
 @property(retain, nonatomic) NSString *m_nsTransferID; // @synthesize m_nsTransferID;
 @property(nonatomic) unsigned long long m_uiInvalidTime; // @synthesize m_uiInvalidTime;

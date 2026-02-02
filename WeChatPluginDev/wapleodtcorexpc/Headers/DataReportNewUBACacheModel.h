@@ -26,7 +26,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_reportStr;
 + (void)PBArrayAdd_cacheTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportStr; // @synthesize reportStr=_reportStr;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 - (id)toString;

@@ -11,7 +11,6 @@
     TencentLBSLocationManager *_manager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TencentLBSLocationManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) _Bool toTriggerLocationCheck; // @synthesize toTriggerLocationCheck=_toTriggerLocationCheck;
 - (void)tencentLBSLocationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

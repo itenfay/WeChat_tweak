@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSNumber, NSString, UBDictionarySignal;
 
@@ -20,7 +21,6 @@
     NSData *_contextBuff;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *contextBuff; // @synthesize contextBuff=_contextBuff;
 @property(readonly, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(retain, nonatomic) NSString *submitTaskID; // @synthesize submitTaskID=_submitTaskID;
@@ -56,4 +56,3 @@
 - (id)initWithStatusDidUpdateSignal:(id)arg1;
 
 @end
-

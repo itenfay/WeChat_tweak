@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLoadingView, WCTopicJumpInfo;
 
 @interface WCTopicService
@@ -16,7 +18,6 @@
     double _lastReqTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastReqTime; // @synthesize lastReqTime=_lastReqTime;
 @property(nonatomic) __weak MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCTopicJumpInfo *curTopicJumpInfo; // @synthesize curTopicJumpInfo=_curTopicJumpInfo;
@@ -51,4 +52,3 @@
 - (void)onServiceInit;
 
 @end
-

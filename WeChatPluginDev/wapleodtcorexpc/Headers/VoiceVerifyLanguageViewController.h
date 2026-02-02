@@ -20,7 +20,6 @@
 + (id)GetLanguageNameByLanguageCode:(id)arg1;
 + (id)GetLanguageCodes;
 + (id)GetLanguageNames;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <VoiceVerifyLanguageDelegate> m_delegate; // @synthesize m_delegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

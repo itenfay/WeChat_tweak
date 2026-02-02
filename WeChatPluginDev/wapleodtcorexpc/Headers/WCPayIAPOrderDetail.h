@@ -31,7 +31,6 @@
     int uiServiceSubscribeStrategy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsShareToFriendsURL; // @synthesize nsShareToFriendsURL;
 @property(retain, nonatomic) NSString *nsPaidSuccessDetail; // @synthesize nsPaidSuccessDetail;
 @property(nonatomic) int uiServiceSubscribeStrategy; // @synthesize uiServiceSubscribeStrategy;

@@ -14,7 +14,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) UILabel *applyLabel; // @synthesize applyLabel=_applyLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

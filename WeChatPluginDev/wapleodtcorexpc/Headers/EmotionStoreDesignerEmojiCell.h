@@ -12,7 +12,6 @@
     SingleEmoticonView *_emoticonView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SingleEmoticonView *emoticonView; // @synthesize emoticonView=_emoticonView;
 - (_Bool)isAccessibilityElement;
 - (unsigned long long)accessibilityTraits;

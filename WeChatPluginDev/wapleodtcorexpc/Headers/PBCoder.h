@@ -47,7 +47,6 @@
 + (_Bool)decodeObject:(id)arg1 fromData:(id)arg2 withProperty:(id)arg3 andTagIndexMap:(const void *)arg4;
 + (_Bool)encodeObject:(id)arg1 withPropertyTable:(id)arg2 toFile:(id)arg3;
 + (id)encodeObject:(id)arg1 withPropertyTable:(id)arg2;
-- (void).cxx_destruct;
 - (id)decodeOneObject:(id)arg1 withProperty:(id)arg2 andTagIndexMap:(const void *)arg3;
 - (id)decodeOneObject:(id)arg1 ofClass:(Class)arg2;
 - (void)decodeObject:(id)arg1 withProperty:(id)arg2 andTagIndexMap:(const void *)arg3;

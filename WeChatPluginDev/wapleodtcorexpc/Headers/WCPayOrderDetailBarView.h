@@ -17,7 +17,6 @@
 }
 
 + (double)barCodeWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) MMUIView *container; // @synthesize container=_container;
 @property(retain, nonatomic) QBarCodeView *imageBarView; // @synthesize imageBarView=_imageBarView;

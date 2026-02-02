@@ -18,7 +18,6 @@
     UIPercentDrivenInteractiveTransition *_interactiveTransition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *interactiveTransition; // @synthesize interactiveTransition=_interactiveTransition;
 @property(nonatomic) unsigned int edgeGestureType; // @synthesize edgeGestureType=_edgeGestureType;
 @property(nonatomic) _Bool shouldAutoComplete; // @synthesize shouldAutoComplete=_shouldAutoComplete;

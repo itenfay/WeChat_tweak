@@ -12,7 +12,6 @@
     NSString *_liveParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveParams; // @synthesize liveParams=_liveParams;
 
 @end

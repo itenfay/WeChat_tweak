@@ -10,7 +10,6 @@
     id _context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
 - (id)fillOneInfo:(id)arg1;
 - (id)fillAppBaseInfo;

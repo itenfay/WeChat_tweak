@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImage, UIImageView, UIScrollView, WCFinderAnimationLoadingView, WCFinderFullScreenImageBrowseTransition, WXFullScreenGestureRecognizer;
 
 @interface WCFinderFullScreenImageBrowseViewController
@@ -19,7 +21,6 @@
 }
 
 + (void)showInViewController:(id)arg1 imageURL:(id)arg2 dismissBlock:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFullScreenImageBrowseTransition *transition; // @synthesize transition=_transition;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
@@ -50,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -36,7 +36,6 @@
     NSString *_backgroundSimulatedNativeAppIDs;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backgroundSimulatedNativeAppIDs; // @synthesize backgroundSimulatedNativeAppIDs=_backgroundSimulatedNativeAppIDs;
 @property(copy, nonatomic) NSString *foregroundSimulatedNativeAppIDs; // @synthesize foregroundSimulatedNativeAppIDs=_foregroundSimulatedNativeAppIDs;
 @property(copy, nonatomic) NSString *backgroundGameAppIDs; // @synthesize backgroundGameAppIDs=_backgroundGameAppIDs;

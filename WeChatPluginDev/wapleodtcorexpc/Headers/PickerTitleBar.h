@@ -12,7 +12,6 @@
     MMUIView *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool isTitleInCenter; // @synthesize isTitleInCenter=_isTitleInCenter;

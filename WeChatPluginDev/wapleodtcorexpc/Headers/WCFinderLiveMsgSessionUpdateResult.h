@@ -15,7 +15,6 @@
     WCFinderLiveMsgSessionInfo *_sessionInfoById;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveMsgSessionInfo *sessionInfoById; // @synthesize sessionInfoById=_sessionInfoById;
 @property(nonatomic) _Bool sessionHasUpdated; // @synthesize sessionHasUpdated=_sessionHasUpdated;
 @property(nonatomic) _Bool isSenderForMsg; // @synthesize isSenderForMsg=_isSenderForMsg;

@@ -12,7 +12,6 @@
     UILabel *_statusLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 - (_Bool)isOnWifi;
 - (void)updateView;

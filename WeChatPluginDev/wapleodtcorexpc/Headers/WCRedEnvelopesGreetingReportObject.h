@@ -15,7 +15,6 @@
     NSString *_emoticonMd5;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int addSelfieEmoticonFromBoardTimes; // @synthesize addSelfieEmoticonFromBoardTimes=_addSelfieEmoticonFromBoardTimes;
 @property(nonatomic) unsigned int addCustomEmoticonTimes; // @synthesize addCustomEmoticonTimes=_addCustomEmoticonTimes;
 @property(nonatomic) unsigned int addSelfieEmoticonTimes; // @synthesize addSelfieEmoticonTimes=_addSelfieEmoticonTimes;

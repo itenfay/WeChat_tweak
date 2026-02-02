@@ -16,7 +16,6 @@
 }
 
 + (id)infoWithShowInfo:(id)arg1 ctrlInfo:(id)arg2 category:(long long)arg3 showSeconds:(double)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *findEntryRedCtrlInfo; // @synthesize findEntryRedCtrlInfo=_findEntryRedCtrlInfo;
 @property(nonatomic) long long category; // @synthesize category=_category;
 @property(nonatomic) double showSeconds; // @synthesize showSeconds=_showSeconds;

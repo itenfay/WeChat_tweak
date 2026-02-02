@@ -25,7 +25,6 @@
     HKObserverQuery *_observerQuery;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HKObserverQuery *observerQuery; // @synthesize observerQuery=_observerQuery;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) CMPedometer *cmPedometer; // @synthesize cmPedometer=_cmPedometer;

@@ -14,7 +14,6 @@
     MISSING_TYPE *latestNotifiedText;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)focusSearchBar:(_Bool)arg1;
 - (void)__onSearchInputTextChangedWith:(id)arg1;

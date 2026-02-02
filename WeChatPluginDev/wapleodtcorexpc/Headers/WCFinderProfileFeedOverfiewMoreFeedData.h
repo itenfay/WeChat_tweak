@@ -12,7 +12,6 @@
     WCFinderStreamProfileFeedViewModel *_pageModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderStreamProfileFeedViewModel *pageModel; // @synthesize pageModel=_pageModel;
 
 @end

@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_gameShareData;
 + (void)PBArrayAdd_gameShareId;
 + (void)PBArrayAdd_liteAppExtInfo;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *readText; // @synthesize readText=_readText;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned int isVideo; // @synthesize isVideo=_isVideo;

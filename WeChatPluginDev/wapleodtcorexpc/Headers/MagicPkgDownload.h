@@ -12,7 +12,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 - (_Bool)unzipDownloadUpdates:(id)arg1 unzipPath:(id)arg2;
 - (void)UpdateFinish:(id)arg1 pkgPath:(id)arg2 unzipPath:(id)arg3;
 - (void)downloadMagicPkg:(id)arg1 downloadType:(unsigned long long)arg2;

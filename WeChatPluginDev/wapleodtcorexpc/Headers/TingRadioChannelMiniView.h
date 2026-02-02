@@ -16,7 +16,6 @@
     UIView *_waveColorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *waveColorView; // @synthesize waveColorView=_waveColorView;
 @property(nonatomic) __weak PAGFile *waveFile; // @synthesize waveFile=_waveFile;
 @property(retain, nonatomic) PAGView *waveMaskLayer; // @synthesize waveMaskLayer=_waveMaskLayer;

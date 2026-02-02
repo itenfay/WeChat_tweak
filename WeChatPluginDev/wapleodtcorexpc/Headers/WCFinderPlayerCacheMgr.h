@@ -11,7 +11,6 @@
 }
 
 + (id)cacheKeyForTid:(id)arg1 scene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *playerCaches; // @synthesize playerCaches=_playerCaches;
 - (_Bool)isPlayerInCache:(id)arg1;
 - (id)playerForKey:(id)arg1;

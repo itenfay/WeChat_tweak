@@ -13,7 +13,6 @@
 }
 
 + (_Bool)isDomainNeedUpdateForUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRequestingEmojiInfo; // @synthesize isRequestingEmojiInfo=_isRequestingEmojiInfo;
 - (void)onBatchdownloadWithIsSuccessed:(_Bool)arg1 newEmojiInfo:(id)arg2 isOriCanDownload:(_Bool)arg3;
 - (void)reportErrorWithReason:(int)arg1;

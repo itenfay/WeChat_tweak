@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderSearchGetHotWordListCgi
@@ -12,7 +14,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(retain, nonatomic) NSString *searchRequestId; // @synthesize searchRequestId=_searchRequestId;
@@ -22,4 +23,3 @@
 - (id)initWithHotWordListBuffer:(id)arg1 objHotwordInfoBuffer:(id)arg2 requestId:(id)arg3 successful:(CDUnknownBlockType)arg4 failedBlock:(CDUnknownBlockType)arg5;
 
 @end
-

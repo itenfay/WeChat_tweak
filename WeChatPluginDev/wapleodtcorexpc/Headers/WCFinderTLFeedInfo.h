@@ -15,7 +15,6 @@
     NSString *_fromFinderUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(copy, nonatomic) NSString *fromFinderUsername; // @synthesize fromFinderUsername=_fromFinderUsername;
 @property(copy, nonatomic) NSString *fromFeedSessionBuffer; // @synthesize fromFeedSessionBuffer=_fromFeedSessionBuffer;

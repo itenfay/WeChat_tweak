@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)textStateListFromJSONObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(copy, nonatomic) CDUnknownBlockType getCurrentTextStateId; // @synthesize getCurrentTextStateId=_getCurrentTextStateId;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -27,4 +27,3 @@
 - (id)initWithJSONObject:(id)arg1;
 
 @end
-

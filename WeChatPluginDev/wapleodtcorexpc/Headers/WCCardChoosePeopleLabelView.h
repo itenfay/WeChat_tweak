@@ -15,7 +15,6 @@
     WCCardChooseSubPeopleLabelView *_subPeopleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCardChooseSubPeopleLabelView *subPeopleView; // @synthesize subPeopleView=_subPeopleView;
 @property(retain, nonatomic) MMUIImageView *peopleImageView; // @synthesize peopleImageView=_peopleImageView;
 @property(retain, nonatomic) MMUIButton *settingButton; // @synthesize settingButton=_settingButton;

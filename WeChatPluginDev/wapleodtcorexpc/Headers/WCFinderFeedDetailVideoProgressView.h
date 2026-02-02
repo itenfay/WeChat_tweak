@@ -27,7 +27,6 @@
     struct CGRect _layoutBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect layoutBounds; // @synthesize layoutBounds=_layoutBounds;
 @property(nonatomic) _Bool fullScreenState; // @synthesize fullScreenState=_fullScreenState;
 @property(retain, nonatomic) WCFinderGradientView *progressBarGradientView; // @synthesize progressBarGradientView=_progressBarGradientView;

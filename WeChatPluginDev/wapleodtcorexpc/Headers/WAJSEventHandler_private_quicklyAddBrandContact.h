@@ -11,7 +11,6 @@
     MMTimer *_timerContactSync;
 }
 
-- (void).cxx_destruct;
 - (void)onModifyContact:(id)arg1;
 - (void)callbackAddContactOK;
 - (void)onCgiResponse:(id)arg1 forEvent:(unsigned int)arg2;

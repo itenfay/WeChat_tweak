@@ -22,7 +22,6 @@
     NSMutableDictionary *_instanceId2Nodes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowKV; // @synthesize allowKV=_allowKV;
 @property(retain, nonatomic) NSMutableDictionary *instanceId2Nodes; // @synthesize instanceId2Nodes=_instanceId2Nodes;
 @property(nonatomic) unsigned long long signpostIdNative; // @synthesize signpostIdNative=_signpostIdNative;

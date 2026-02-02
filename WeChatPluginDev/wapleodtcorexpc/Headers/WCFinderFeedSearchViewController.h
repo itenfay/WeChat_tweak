@@ -20,7 +20,6 @@
     WCFinderFeedFlowView *_resultFeedFlowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedFlowView *resultFeedFlowView; // @synthesize resultFeedFlowView=_resultFeedFlowView;
 @property(retain, nonatomic) FavTagSearchFilter *tagFilterView; // @synthesize tagFilterView=_tagFilterView;
 @property(retain, nonatomic) UIView *guideContentView; // @synthesize guideContentView=_guideContentView;

@@ -18,7 +18,6 @@
 
 + (void)setContactInitedStatus:(_Bool)arg1;
 + (_Bool)isContactInited;
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)checkIsSucceed;
 - (void)handleGetContactsRsp:(id)arg1;

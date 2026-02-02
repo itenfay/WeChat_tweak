@@ -22,7 +22,6 @@
     WCFinderLocationInfo *_locationInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;
 @property(retain, nonatomic) WCFinderLocationInfo *locationInfo; // @synthesize locationInfo=_locationInfo;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;

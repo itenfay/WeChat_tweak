@@ -23,7 +23,6 @@
     WCFinderContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) WCFinderSDKFinderBindTopView *tableHeaderView; // @synthesize tableHeaderView=_tableHeaderView;

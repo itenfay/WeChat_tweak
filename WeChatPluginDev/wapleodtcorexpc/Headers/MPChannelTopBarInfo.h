@@ -50,7 +50,6 @@
 + (void)PBArrayAdd_logoUrl;
 + (void)PBArrayAdd_appId;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dmDefaultLogoUrl; // @synthesize dmDefaultLogoUrl=_dmDefaultLogoUrl;
 @property(copy, nonatomic) NSString *dmLogoUrl; // @synthesize dmLogoUrl=_dmLogoUrl;
 @property(copy, nonatomic) NSString *appPath; // @synthesize appPath=_appPath;

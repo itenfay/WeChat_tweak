@@ -17,7 +17,6 @@
     NSMutableArray *m_tempPathList;
 }
 
-- (void).cxx_destruct;
 - (void)onVideoPlay;
 - (void)updateThumbImageAtIndex:(unsigned int)arg1;
 - (id)tryGetThumbImageView:(id)arg1;

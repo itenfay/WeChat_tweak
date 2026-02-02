@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetImageGenerator, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, SightLocalViewSliderMaskView, UICollectionView, UIColor, UIFont, UILabel;
 @protocol SightLocalVideoImageSliderDelegate;
@@ -57,7 +58,6 @@
     struct CGPoint _sliderContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sliderBarrierText; // @synthesize sliderBarrierText=_sliderBarrierText;
 @property(retain, nonatomic) UIFont *sliderBarrierLabelScaledFont; // @synthesize sliderBarrierLabelScaledFont=_sliderBarrierLabelScaledFont;
 @property(retain, nonatomic) UILabel *sliderBarrierLabel; // @synthesize sliderBarrierLabel=_sliderBarrierLabel;
@@ -167,4 +167,3 @@
 @property(readonly) Class superclass;
 
 @end
-

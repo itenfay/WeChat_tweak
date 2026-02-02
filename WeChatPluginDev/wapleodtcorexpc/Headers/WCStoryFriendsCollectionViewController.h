@@ -32,7 +32,6 @@
     unsigned long long _clickRenewCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long clickRenewCount; // @synthesize clickRenewCount=_clickRenewCount;
 @property(nonatomic) unsigned long long clickClearCount; // @synthesize clickClearCount=_clickClearCount;
 @property(nonatomic) _Bool isCleanUnreadStory; // @synthesize isCleanUnreadStory=_isCleanUnreadStory;

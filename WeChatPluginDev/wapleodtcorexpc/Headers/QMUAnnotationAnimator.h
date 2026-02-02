@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface QMUAnnotationAnimator : NSObject
 {
@@ -16,4 +17,3 @@
 + (void)translateWithAnnotationView:(id)arg1 locations:(id)arg2 duration:(double)arg3 rotateEnabled:(_Bool)arg4;
 
 @end
-

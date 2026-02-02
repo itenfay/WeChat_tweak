@@ -11,7 +11,6 @@
     NSMutableDictionary *_referrerDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *referrerDict; // @synthesize referrerDict=_referrerDict;
 @property(nonatomic) _Bool useCronetDownloader; // @synthesize useCronetDownloader=_useCronetDownloader;
 - (id)getReferrerWithUrl:(id)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPageSheetAdapter, NSMutableArray, NSString, QuickReplyMsgReporter, QuickReplyMsgViewController;
 
 @interface QuickReplyMsgMgr
@@ -18,7 +20,6 @@
     MMPageSheetAdapter *_pageSheetAdapter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMPageSheetAdapter *pageSheetAdapter; // @synthesize pageSheetAdapter=_pageSheetAdapter;
 @property(retain, nonatomic) QuickReplyMsgReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) NSMutableArray *pendingNotifyItems; // @synthesize pendingNotifyItems=_pendingNotifyItems;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

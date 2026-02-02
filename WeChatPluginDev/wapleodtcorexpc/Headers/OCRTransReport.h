@@ -33,7 +33,6 @@
 + (void)reportImageOCRZoomType:(unsigned int)arg1 sessionID:(id)arg2;
 + (void)reportImageOCRActionType:(unsigned int)arg1 sessionID:(id)arg2 ocrResultType:(long long)arg3;
 + (void)reportImageOCRActionType:(unsigned int)arg1 sessionID:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldExitActionReported; // @synthesize shouldExitActionReported=_shouldExitActionReported;
 @property(retain, nonatomic) NSDate *firstEndEnhanceTime; // @synthesize firstEndEnhanceTime=_firstEndEnhanceTime;
 @property(retain, nonatomic) NSDate *endEnhanceTime; // @synthesize endEnhanceTime=_endEnhanceTime;

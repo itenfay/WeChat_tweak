@@ -17,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct CronetTaskResult result; // @synthesize result=_result;
 @property(nonatomic) int m_nHttpStatusCode; // @synthesize m_nHttpStatusCode=_m_nHttpStatusCode;
 @property(nonatomic) int m_nRetCode; // @synthesize m_nRetCode=_m_nRetCode;

@@ -24,7 +24,6 @@
     WCRedEnvAudioTransLogic *_transTextLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisasterVoiceTrans; // @synthesize isDisasterVoiceTrans=_isDisasterVoiceTrans;
 @property(nonatomic) unsigned int transInputId; // @synthesize transInputId=_transInputId;
 @property(retain, nonatomic) WCRedEnvAudioTransLogic *transTextLogic; // @synthesize transTextLogic=_transTextLogic;

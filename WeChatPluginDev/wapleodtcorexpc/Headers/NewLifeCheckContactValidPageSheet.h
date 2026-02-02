@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, RequestContactReq, UIButton, UIImageView, UILabel, UIView, WCFinderHeadImageView, WCFinderPersonalCenterViewModel;
 
 @interface NewLifeCheckContactValidPageSheet
@@ -25,7 +27,6 @@
     UIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
@@ -64,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

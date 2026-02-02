@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canUseInSafemode;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMultiEvent *m_oEventMgr; // @synthesize m_oEventMgr;
 - (unsigned int)AddEvent:(id)arg1;
 - (int)onGYNetEnd:(int)arg1 Code:(int)arg2 Msg:(const char *)arg3 Hashcode:(unsigned int)arg4 cgiProfile:(const void *)arg5;

@@ -18,7 +18,6 @@
     NSString *_nickname;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *digest; // @synthesize digest=_digest;

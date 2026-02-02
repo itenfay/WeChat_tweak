@@ -21,7 +21,6 @@
     unsigned long long _infoButtonClickCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int templateType; // @synthesize templateType=_templateType;
 @property(nonatomic) unsigned long long infoButtonClickCount; // @synthesize infoButtonClickCount=_infoButtonClickCount;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;

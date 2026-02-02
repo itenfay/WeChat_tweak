@@ -19,7 +19,6 @@
     NSString *_wsEndPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int proxyPort; // @synthesize proxyPort=_proxyPort;
 @property(retain, nonatomic) NSString *wsEndPoint; // @synthesize wsEndPoint=_wsEndPoint;
 @property(nonatomic) __weak id <WARemoteDebugChannelDelegate> delegate; // @synthesize delegate=_delegate;

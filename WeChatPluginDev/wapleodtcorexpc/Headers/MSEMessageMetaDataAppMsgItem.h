@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_contentUrl;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_toUsername;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileMd5; // @synthesize fileMd5=_fileMd5;
 @property(nonatomic) unsigned int fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;

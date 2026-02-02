@@ -21,7 +21,6 @@
     struct CGRect _initialRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *editTipsRichTextView; // @synthesize editTipsRichTextView=_editTipsRichTextView;
 @property(nonatomic) _Bool hiddenEditTipsRichTextView; // @synthesize hiddenEditTipsRichTextView=_hiddenEditTipsRichTextView;
 @property(retain, nonatomic) EditImageCropGridView *cropGridView; // @synthesize cropGridView=_cropGridView;

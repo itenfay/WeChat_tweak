@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *viewModelList; // @synthesize viewModelList=_viewModelList;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 - (void)resetLayoutCache;

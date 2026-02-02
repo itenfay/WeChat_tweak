@@ -13,7 +13,6 @@
     MemoryMappedKV *_defaultKVMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *defaultKVMap; // @synthesize defaultKVMap=_defaultKVMap;
 @property(retain, nonatomic) MemoryMappedKV *soundsFileKVMap; // @synthesize soundsFileKVMap=_soundsFileKVMap;
 @property(nonatomic) unsigned int vibrateFileVersion;

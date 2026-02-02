@@ -14,7 +14,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *editSwitch; // @synthesize editSwitch=_editSwitch;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <MMFinderLiveFansGroupAnchorEditSwitchCellDelegate> delegate; // @synthesize delegate=_delegate;

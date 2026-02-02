@@ -17,7 +17,6 @@
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (struct CGSize)getImageSize:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bTimeLineScene; // @synthesize bTimeLineScene=_bTimeLineScene;
 - (void)onShowGreetingEntry;
 - (void)jumpDetailView;

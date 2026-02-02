@@ -13,7 +13,6 @@
     MMLoadingIndicatorView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void)layoutSubviews;

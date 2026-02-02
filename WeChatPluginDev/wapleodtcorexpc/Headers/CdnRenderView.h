@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAEAGLLayer, CALayer, EAGLContext, MMLiveRemoteCdnCustomRenderMetricsMonitor, MMLiveTextureBuffer, MMWeEffectFrame, NSObject, glVideoSharpen;
 @protocol OS_dispatch_queue;
 
@@ -76,7 +78,6 @@
 + (const float *)textureCoordinatesForRotation:(unsigned long long)arg1;
 + (Class)layerClass;
 + (_Bool)checkInitParamValidWithRenderMode:(long long)arg1 renderScene:(long long)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType checkTimeRangeIsFullLoadCallback; // @synthesize checkTimeRangeIsFullLoadCallback=_checkTimeRangeIsFullLoadCallback;
 @property(copy, nonatomic) CDUnknownBlockType decreasePerfLevelCallback; // @synthesize decreasePerfLevelCallback=_decreasePerfLevelCallback;
 @property(copy, nonatomic) CDUnknownBlockType increasePerfLevelCallback; // @synthesize increasePerfLevelCallback=_increasePerfLevelCallback;
@@ -211,4 +212,3 @@
 - (void)initMetricsReportData;
 
 @end
-

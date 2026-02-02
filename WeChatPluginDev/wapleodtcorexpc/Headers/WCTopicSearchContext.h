@@ -16,7 +16,6 @@
     unsigned long long _curseLocation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long curseLocation; // @synthesize curseLocation=_curseLocation;
 @property(copy, nonatomic) NSString *inputQuery; // @synthesize inputQuery=_inputQuery;
 @property(copy, nonatomic) NSString *sourceSceneId; // @synthesize sourceSceneId=_sourceSceneId;

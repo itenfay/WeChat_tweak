@@ -21,7 +21,6 @@
     NSString *_referrer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *referrer; // @synthesize referrer=_referrer;
 @property(nonatomic) double playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(nonatomic) _Bool isHLS; // @synthesize isHLS=_isHLS;

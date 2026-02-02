@@ -14,7 +14,6 @@
     MMTipsViewController *_fontSettingTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTipsViewController *fontSettingTipsView; // @synthesize fontSettingTipsView=_fontSettingTipsView;
 @property(nonatomic) __weak id <FontSettingUtilDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSURLSessionDownloadTask, WePkgFileDownloadInfo;
 @protocol WePkgDownloaderDelegate;
 
@@ -13,7 +15,6 @@
     NSURLSessionDownloadTask *_downloadTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionDownloadTask *downloadTask; // @synthesize downloadTask=_downloadTask;
 @property(nonatomic) __weak id <WePkgDownloaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WePkgFileDownloadInfo *downloadInfo; // @synthesize downloadInfo=_downloadInfo;
@@ -26,4 +27,3 @@
 - (id)initWithPkgDownloadInfo:(id)arg1 delegate:(id)arg2;
 
 @end
-

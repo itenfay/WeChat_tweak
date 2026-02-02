@@ -12,7 +12,6 @@
     NSMutableDictionary *_configDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *configDic; // @synthesize configDic=_configDic;
 - (int)getStoreTimeFromExpt:(id)arg1;
 - (id)getCacheKeyFromFullPath:(id)arg1;

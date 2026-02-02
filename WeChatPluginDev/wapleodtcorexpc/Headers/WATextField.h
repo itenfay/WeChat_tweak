@@ -54,7 +54,6 @@
     struct CGPoint lastHitPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *placeholderStyleDark; // @synthesize placeholderStyleDark=_placeholderStyleDark;
 @property(retain, nonatomic) NSDictionary *placeholderStyle; // @synthesize placeholderStyle=_placeholderStyle;
 @property(retain, nonatomic) id <IWAPayKeyboardService> payKeyboardService; // @synthesize payKeyboardService=_payKeyboardService;

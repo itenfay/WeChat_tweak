@@ -16,7 +16,6 @@
     NSObject<MMQRCodeScannerDelegate> *_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<MMQRCodeScannerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 - (void)printArray:(vector_d4107ee0)arg1;

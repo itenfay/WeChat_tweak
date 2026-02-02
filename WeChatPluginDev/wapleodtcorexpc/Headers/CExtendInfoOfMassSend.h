@@ -14,7 +14,6 @@
 }
 
 + (void)CreateExtendInfoWithUserName:(id)arg1 retExtendInfo:(id *)arg2 retIsContinueDispatch:(_Bool *)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *toListMd5; // @synthesize toListMd5=_toListMd5;
 @property(nonatomic) __weak CMessageWrap *m_refMessageWrap; // @synthesize m_refMessageWrap;
 - (void)UpdateMassSendContent;

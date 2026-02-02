@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *jumpActionInfo; // @synthesize jumpActionInfo=_jumpActionInfo;
 @property(retain, nonatomic) NSString *jumpTitle; // @synthesize jumpTitle=_jumpTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

@@ -13,7 +13,6 @@
     UIView *_rightView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightView; // @synthesize rightView=_rightView;
 @property(copy, nonatomic) NSString *leftBadge; // @synthesize leftBadge=_leftBadge;
 

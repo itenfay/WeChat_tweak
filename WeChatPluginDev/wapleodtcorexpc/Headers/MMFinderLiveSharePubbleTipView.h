@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, MMTimer, MMUIButton, MMUIImageView, MMUILabel, NSString, UIFont, UITapGestureRecognizer, UIView;
 
 @interface MMFinderLiveSharePubbleTipView
@@ -26,7 +28,6 @@
 }
 
 + (double)caculatePubbleTipViewWidthWithType:(long long)arg1 titleText:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissTimerCallback; // @synthesize dismissTimerCallback=_dismissTimerCallback;
 @property(retain, nonatomic) MMTimer *dismissTimer; // @synthesize dismissTimer=_dismissTimer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
@@ -61,4 +62,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2;
 
 @end
-

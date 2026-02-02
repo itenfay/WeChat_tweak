@@ -12,7 +12,6 @@
     NSString *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 
 @end

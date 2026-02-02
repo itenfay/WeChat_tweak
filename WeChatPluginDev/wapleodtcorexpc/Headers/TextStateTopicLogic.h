@@ -19,7 +19,6 @@
     NSString *_presentType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *presentType; // @synthesize presentType=_presentType;
 @property(retain, nonatomic) NSMutableOrderedSet *sortedUsernameSet; // @synthesize sortedUsernameSet=_sortedUsernameSet;
 @property(retain, nonatomic) NSMutableDictionary *usernameToTopicId; // @synthesize usernameToTopicId=_usernameToTopicId;

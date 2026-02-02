@@ -13,7 +13,6 @@
     MISSING_TYPE *delegate;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

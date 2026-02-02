@@ -18,7 +18,6 @@
     NSMutableSet *_feedIDs;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableSet *feedIDs; // @synthesize feedIDs=_feedIDs;
 @property(copy, nonatomic) NSString *curQuery; // @synthesize curQuery=_curQuery;
 @property(nonatomic) unsigned int dataOffset; // @synthesize dataOffset=_dataOffset;

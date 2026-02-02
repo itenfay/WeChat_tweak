@@ -17,7 +17,6 @@
     NSString *_onlineDeviceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *onlineDeviceId; // @synthesize onlineDeviceId=_onlineDeviceId;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) NSMutableArray *deviceArr; // @synthesize deviceArr=_deviceArr;

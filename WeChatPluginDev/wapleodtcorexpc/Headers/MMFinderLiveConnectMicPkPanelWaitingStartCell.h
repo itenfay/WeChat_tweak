@@ -22,7 +22,6 @@
 
 + (id)ReuseIdentifier;
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicPKInfo *pkInfo; // @synthesize pkInfo=_pkInfo;
 @property(retain, nonatomic) UIButton *quitMicBtn; // @synthesize quitMicBtn=_quitMicBtn;
 @property(retain, nonatomic) UIButton *acceptBtn; // @synthesize acceptBtn=_acceptBtn;

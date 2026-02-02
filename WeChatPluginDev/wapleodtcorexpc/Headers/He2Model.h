@@ -14,7 +14,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *PatternList; // @synthesize PatternList=_PatternList;
 @property(retain, nonatomic) HeMetadataModel *Metadata; // @synthesize Metadata=_Metadata;
 

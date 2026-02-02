@@ -16,7 +16,6 @@
     unsigned long long _interval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int logID; // @synthesize logID=_logID;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned long long quitTimestampMs; // @synthesize quitTimestampMs=_quitTimestampMs;

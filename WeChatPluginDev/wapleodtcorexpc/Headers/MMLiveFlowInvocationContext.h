@@ -12,7 +12,6 @@
     NSString *_invocationId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *invocationId; // @synthesize invocationId=_invocationId;
 - (id)description;
 

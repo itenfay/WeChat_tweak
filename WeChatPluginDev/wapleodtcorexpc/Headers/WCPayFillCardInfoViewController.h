@@ -47,7 +47,6 @@
     WCBaseTextFieldItem *_addressView;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCBaseTextFieldItem *addressView; // @synthesize addressView=_addressView;
 @property(retain) WCPaySelectDateItem *effectView; // @synthesize effectView=_effectView;
 @property(retain) WCPaySelectGenderItem *genderView; // @synthesize genderView=_genderView;

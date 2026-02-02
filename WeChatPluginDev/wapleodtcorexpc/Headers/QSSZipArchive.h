@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -37,7 +38,6 @@
 + (_Bool)unzipFileAtPath:(id)arg1 toDestination:(id)arg2;
 + (_Bool)isPasswordValidForArchiveAtPath:(id)arg1 password:(id)arg2 error:(id *)arg3;
 + (_Bool)isFilePasswordProtectedAtPath:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)close;
 - (_Bool)writeData:(id)arg1 filename:(id)arg2 compressionLevel:(int)arg3 password:(id)arg4 AES:(_Bool)arg5;
 - (_Bool)writeData:(id)arg1 filename:(id)arg2 withPassword:(id)arg3;
@@ -50,4 +50,3 @@
 - (id)init;
 
 @end
-

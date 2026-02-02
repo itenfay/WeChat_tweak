@@ -20,7 +20,6 @@
     NSString *_stateChannelUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *stateChannelUserName; // @synthesize stateChannelUserName=_stateChannelUserName;
 @property(nonatomic) long long stateMiniProgramType; // @synthesize stateMiniProgramType=_stateMiniProgramType;
 @property(retain, nonatomic) NSString *stateMiniProgramPath; // @synthesize stateMiniProgramPath=_stateMiniProgramPath;

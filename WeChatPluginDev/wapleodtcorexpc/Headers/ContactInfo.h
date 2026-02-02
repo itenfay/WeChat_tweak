@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUserName:(id)arg1 nickName:(id)arg2 isContact:(id)arg3 isPlaceTop:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isPlaceTop; // @synthesize isPlaceTop=_isPlaceTop;
 @property(retain, nonatomic) NSNumber *isContact; // @synthesize isContact=_isContact;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

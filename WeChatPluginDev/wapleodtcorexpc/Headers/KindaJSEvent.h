@@ -13,7 +13,6 @@
     JSEvent *_webEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *webEvent; // @synthesize webEvent=_webEvent;
 @property(retain, nonatomic) WAJSEventHandler_BaseEvent *tinyAppEvent; // @synthesize tinyAppEvent=_tinyAppEvent;
 - (long long)kindaGetType;

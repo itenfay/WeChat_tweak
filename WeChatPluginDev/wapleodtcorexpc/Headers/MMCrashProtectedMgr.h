@@ -20,7 +20,6 @@
 + (void)clearFlag;
 + (_Bool)isCrashBySpecialCharacter;
 + (_Bool)isMemoryMappedKVValid;
-- (void).cxx_destruct;
 - (id)lastCPKey:(unsigned long long)arg1;
 - (void)removeInfoWithKey:(id)arg1 threadId:(unsigned long long)arg2;
 - (void)stopCleaning;

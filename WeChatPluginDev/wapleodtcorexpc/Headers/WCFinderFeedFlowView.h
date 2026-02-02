@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UICollectionView, UIImage, WCFinderEmptyTipsView, WCFinderFlowTopTipsView, WCFinderStreamFooterView, WCFinderStreamLayout;
 @protocol WCFinderFeedFlowViewDataSource, WCFinderFeedFlowViewDelegate, WCFinderFeedFlowViewLayoutDelegate, WCFinderFeedFlowViewMonitorDelegate;
@@ -48,7 +49,6 @@
 + (struct CGSize)defaultCellSpace;
 + (unsigned long long)defaultColumnCount;
 + (id)flowLayoutFeedFlowView;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidAutoPlayCell; // @synthesize forbidAutoPlayCell=_forbidAutoPlayCell;
 @property(retain, nonatomic) NSMutableArray *selectedContentVMs; // @synthesize selectedContentVMs=_selectedContentVMs;
 @property(nonatomic, getter=isViewCurrentAppear) _Bool viewCurrentAppear; // @synthesize viewCurrentAppear=_viewCurrentAppear;
@@ -222,4 +222,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBBuildConfig, MBPackageLogic, MagicBrushBiz, NSMutableDictionary, NSString;
 @protocol IMBExtraInfoDelegate, IMBFileSystem, MBCommonAdapterDelegate;
@@ -23,7 +24,6 @@
     NSMutableDictionary *_weAppPluginName2InstanceDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *weAppPluginName2InstanceDic; // @synthesize weAppPluginName2InstanceDic=_weAppPluginName2InstanceDic;
 @property(retain, nonatomic) NSMutableDictionary *handlerDict; // @synthesize handlerDict=_handlerDict;
 @property(retain, nonatomic) NSString *packagePath; // @synthesize packagePath=_packagePath;
@@ -106,4 +106,3 @@
 @property(readonly) Class superclass;
 
 @end
-

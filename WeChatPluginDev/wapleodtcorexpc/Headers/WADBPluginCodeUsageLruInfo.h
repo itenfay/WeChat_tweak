@@ -33,7 +33,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 @property(nonatomic) unsigned int hit; // @synthesize hit=_hit;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;

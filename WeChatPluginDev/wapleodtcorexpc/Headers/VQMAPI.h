@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VQMAPI : NSObject
 {
@@ -15,7 +16,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2 refCntManager:(void *)arg3;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)updateEvent:(int)arg1 bytesInfo:(id)arg2;
 - (unsigned long long)timestampMSCurrentSystem;
@@ -37,4 +37,3 @@
 - (shared_ptr_c92d46f7)getDispatcher;
 
 @end
-

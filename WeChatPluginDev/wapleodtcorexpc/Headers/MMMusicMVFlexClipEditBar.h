@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicFlexEditBarCell, MMMusicFlexEditBarSortHelper, MMUIButton, NSArray, NSMutableArray, NSString, UIPinchGestureRecognizer, UIScrollView;
 @protocol MMMusicMVFlexClipEditBarDataSource, MMMusicMVFlexClipEditBarDelegate;
@@ -46,7 +47,6 @@
     NSMutableArray *_transitionCellArr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPlaceholderItem; // @synthesize hasPlaceholderItem=_hasPlaceholderItem;
 @property(retain, nonatomic) NSMutableArray *transitionCellArr; // @synthesize transitionCellArr=_transitionCellArr;
 @property(nonatomic) double curScale; // @synthesize curScale=_curScale;
@@ -143,4 +143,3 @@
 @property(readonly) Class superclass;
 
 @end
-

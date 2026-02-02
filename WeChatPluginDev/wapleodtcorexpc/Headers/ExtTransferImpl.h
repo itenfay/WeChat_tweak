@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface ExtTransferImpl : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)handle:(id)arg1 isLiteApp:(_Bool)arg2 callback:(CDUnknownBlockType)arg3;
 
 @end
-

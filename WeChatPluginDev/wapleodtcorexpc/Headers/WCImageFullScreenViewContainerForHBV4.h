@@ -50,7 +50,6 @@
     ScanQRCodeLogicController *_scanQRCodeLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *m_container; // @synthesize m_container;
 @property(retain, nonatomic) UIView *m_backgroundView; // @synthesize m_backgroundView;
 @property(readonly, nonatomic) MMLoadingView *m_loadingView; // @synthesize m_loadingView;

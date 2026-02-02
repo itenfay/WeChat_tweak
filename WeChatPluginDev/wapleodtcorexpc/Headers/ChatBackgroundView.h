@@ -15,7 +15,6 @@
     _Bool _bShowSelect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowSelect; // @synthesize bShowSelect=_bShowSelect;
 @property(nonatomic) long long m_index; // @synthesize m_index;
 @property(nonatomic) __weak id <ChatBackgroundViewDelegate> m_delegate; // @synthesize m_delegate;

@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *followId; // @synthesize followId=_followId;
 @property(copy, nonatomic) NSString *topicId; // @synthesize topicId=_topicId;
 

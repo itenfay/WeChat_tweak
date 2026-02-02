@@ -20,7 +20,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_context;
 + (void)PBArrayAdd_nextTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *context; // @synthesize context=_context;
 @property(nonatomic) unsigned int nextTime; // @synthesize nextTime=_nextTime;
 - (id)getPBPropertyTable;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCAdDynamicFeedCommonUtil : NSObject
 {
@@ -46,4 +47,3 @@
 + (id)getValueForOriValue:(id)arg1 fromAdInfo:(id)arg2;
 
 @end
-

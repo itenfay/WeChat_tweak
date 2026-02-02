@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_redDotDic;
 + (void)PBArrayAdd_webBusinessType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *redDotDic; // @synthesize redDotDic=_redDotDic;
 @property(nonatomic) long long webBusinessType; // @synthesize webBusinessType=_webBusinessType;
 - (id)getRedDotDicByRedDotPathArray:(id)arg1;

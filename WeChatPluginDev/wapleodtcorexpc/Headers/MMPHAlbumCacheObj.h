@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, UIImage;
 
 @interface MMPHAlbumCacheObj
@@ -22,7 +24,6 @@
 + (void)PBArrayAdd_albumPhotoCount;
 + (void)PBArrayAdd_assetsDic;
 + (void)PBArrayAdd_identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *thumbImage; // @synthesize thumbImage=_thumbImage;
 @property(nonatomic) _Bool isNameUpdated; // @synthesize isNameUpdated=_isNameUpdated;
 @property(nonatomic) _Bool isPhotoCountUpdated; // @synthesize isPhotoCountUpdated=_isPhotoCountUpdated;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

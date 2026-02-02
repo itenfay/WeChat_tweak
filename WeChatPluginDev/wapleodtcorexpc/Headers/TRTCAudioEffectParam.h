@@ -16,7 +16,6 @@
     NSString *_path;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int volume; // @synthesize volume=_volume;
 @property(nonatomic) _Bool publish; // @synthesize publish=_publish;
 @property(nonatomic) int loopCount; // @synthesize loopCount=_loopCount;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AnchorSwitchSkinInfo_SelectedValue, NSString;
 
 @interface MMFinderLiveCommitAnchorCustomizeRewardCGI
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) AnchorSwitchSkinInfo_SelectedValue *commitStyle; // @synthesize commitStyle=_commitStyle;
@@ -24,4 +25,3 @@
 - (id)initWithTaskId:(id)arg1 productId:(id)arg2 commitStyle:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

@@ -32,7 +32,6 @@
     UIView *_endowmentInsOperationView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasReportEndowmentInsOperationView; // @synthesize bHasReportEndowmentInsOperationView=_bHasReportEndowmentInsOperationView;
 @property(retain, nonatomic) UIView *endowmentInsOperationView; // @synthesize endowmentInsOperationView=_endowmentInsOperationView;
 @property(nonatomic) _Bool bHasShowUpgradeFixedDepositHalfPage; // @synthesize bHasShowUpgradeFixedDepositHalfPage=_bHasShowUpgradeFixedDepositHalfPage;

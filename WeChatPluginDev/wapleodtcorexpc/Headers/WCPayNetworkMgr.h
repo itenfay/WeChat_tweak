@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WCPayNetworkMgr
@@ -11,7 +13,6 @@
     NSMutableDictionary *_callbacks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *callbacks; // @synthesize callbacks=_callbacks;
 - (void)debugPrintRequestWithCGIWrap:(id)arg1;
 - (void)debugPrintResponseWithCGIWrap:(id)arg1;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

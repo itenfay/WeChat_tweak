@@ -11,7 +11,6 @@
     NewLifeSelectLinkReq *_requset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preventEndForDismissingActionSheet; // @synthesize preventEndForDismissingActionSheet=_preventEndForDismissingActionSheet;
 @property(retain, nonatomic) NewLifeSelectLinkReq *requset; // @synthesize requset=_requset;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;

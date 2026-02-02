@@ -10,7 +10,6 @@
     NSMutableArray *_snsProxyList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *snsProxyList; // @synthesize snsProxyList=_snsProxyList;
 - (unsigned int)getCreateTime:(id)arg1;
 - (id)getLatestStatus:(id)arg1 timeLimit:(unsigned long long)arg2;

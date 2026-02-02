@@ -17,7 +17,6 @@
     UIView *_backgroundContentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundContentView; // @synthesize backgroundContentView=_backgroundContentView;
 @property(retain, nonatomic) UIView *foregroundContentView; // @synthesize foregroundContentView=_foregroundContentView;
 @property(nonatomic) double scorePercent; // @synthesize scorePercent=_scorePercent;

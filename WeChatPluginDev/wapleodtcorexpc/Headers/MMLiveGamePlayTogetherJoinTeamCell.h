@@ -18,7 +18,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableTeamUp; // @synthesize enableTeamUp=_enableTeamUp;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) MMUILabel *teamupNextLabel; // @synthesize teamupNextLabel=_teamupNextLabel;

@@ -12,7 +12,6 @@
     WCPlayerPlayArgs *_playerPlayArgs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerPlayArgs; // @synthesize playerPlayArgs=_playerPlayArgs;
 @property(retain, nonatomic) WCPlayerView *retainPlayerView; // @synthesize retainPlayerView=_retainPlayerView;
 @property(nonatomic) __weak WCPlayerView *playerView; // @synthesize playerView;

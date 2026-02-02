@@ -13,7 +13,6 @@
     id <MMWebviewAdSchemeHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMWebviewAdSchemeHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleGetAdTokenRequestWithURLComponents:(id)arg1 url:(id)arg2 task:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *customScheme;

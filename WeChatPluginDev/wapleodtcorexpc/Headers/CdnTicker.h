@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CdnTicker : NSObject
 {
@@ -13,7 +14,6 @@
 }
 
 + (id)tickerWithInterval:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) long long tickInteval; // @synthesize tickInteval=_tickInteval;
 @property(nonatomic) long long tickCount; // @synthesize tickCount=_tickCount;
@@ -21,4 +21,3 @@
 - (void)tick;
 
 @end
-

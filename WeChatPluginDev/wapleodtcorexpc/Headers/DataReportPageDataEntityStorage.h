@@ -12,7 +12,6 @@
     NSMutableDictionary *m_pageDataMap;
 }
 
-- (void).cxx_destruct;
 - (void)clear:(unsigned long long)arg1 pageName:(id)arg2;
 - (void)clear:(id)arg1;
 - (id)get:(id)arg1;

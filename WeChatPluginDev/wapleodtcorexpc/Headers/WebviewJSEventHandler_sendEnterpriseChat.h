@@ -13,7 +13,6 @@
     NSMutableData *_recData;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)sendAppMessage:(id)arg1 extraData:(id)arg2 imageData:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;

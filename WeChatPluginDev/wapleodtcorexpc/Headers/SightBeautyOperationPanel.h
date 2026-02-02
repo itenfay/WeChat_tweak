@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMLiveBeautyStyleSlider, MMUIButton, NSMutableArray, NSString, UICollectionView, UITapGestureRecognizer;
 @protocol SightBeautyOperationPanelDelegate;
@@ -22,7 +23,6 @@
     MMUIButton *_checkButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *checkButton; // @synthesize checkButton=_checkButton;
 @property(nonatomic) unsigned long long currentBeautyItemIndex; // @synthesize currentBeautyItemIndex=_currentBeautyItemIndex;
 @property(retain, nonatomic) NSMutableArray *beautyDataItemsList; // @synthesize beautyDataItemsList=_beautyDataItemsList;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

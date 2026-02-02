@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, YYBaseWebView;
 @protocol WAVConsoleJSLogicImplDelegate;
 
@@ -14,7 +16,6 @@
     NSString *_curContextUUID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *curContextUUID; // @synthesize curContextUUID=_curContextUUID;
 @property(copy, nonatomic) NSString *curRandomUUID; // @synthesize curRandomUUID=_curRandomUUID;
 @property(nonatomic) __weak id <WAVConsoleJSLogicImplDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,4 +34,3 @@
 - (id)init;
 
 @end
-

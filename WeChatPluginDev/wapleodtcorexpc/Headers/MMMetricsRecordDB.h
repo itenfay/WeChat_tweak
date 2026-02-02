@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
@@ -21,7 +22,6 @@
     WCTTable *m_tableBusinessData;
 }
 
-- (void).cxx_destruct;
 - (id)getBusinessDatasFrom:(double)arg1 to:(double)arg2;
 - (_Bool)insertBusinessDatas:(id)arg1;
 - (id)getAllImageInfos;
@@ -49,4 +49,3 @@
 - (id)initWithDBPath:(id)arg1;
 
 @end
-

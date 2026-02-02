@@ -13,7 +13,6 @@
     MMUIActivityIndicatorView *_customLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *customLoadingView; // @synthesize customLoadingView=_customLoadingView;
 @property(retain, nonatomic) MMWebImageView *customImageView; // @synthesize customImageView=_customImageView;
 - (void)onLoadImageOK:(id)arg1;

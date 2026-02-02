@@ -19,7 +19,6 @@
     NSString *_consultContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *consultContent; // @synthesize consultContent=_consultContent;
 @property(nonatomic) _Bool isAnonymous; // @synthesize isAnonymous=_isAnonymous;
 @property(retain, nonatomic) WCFinderContact *toFinderContact; // @synthesize toFinderContact=_toFinderContact;

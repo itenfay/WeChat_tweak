@@ -12,7 +12,6 @@
     TPPlayerSlice *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerSlice *model; // @synthesize model=_model;
 - (id)build;
 - (id)setDurationUs:(long long)arg1;

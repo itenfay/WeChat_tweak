@@ -16,7 +16,6 @@
     NSMutableArray *_seperatorViews;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *seperatorViews; // @synthesize seperatorViews=_seperatorViews;
 @property(retain) NSMutableArray *itemViews; // @synthesize itemViews=_itemViews;
 @property(retain) NSArray *numbers; // @synthesize numbers=_numbers;

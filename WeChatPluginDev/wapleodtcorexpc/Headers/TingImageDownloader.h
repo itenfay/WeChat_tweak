@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -13,7 +14,6 @@
     NSMutableDictionary *_momentBlockMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *momentBlockMap; // @synthesize momentBlockMap=_momentBlockMap;
 @property(retain, nonatomic) NSMutableDictionary *blockMap; // @synthesize blockMap=_blockMap;
 - (void)onDownloadFail:(id)arg1 downloadType:(long long)arg2;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMExpandImageView, MMHeadImageView, MMUIButton, MMUIImageView, MMUILabel, TextStateModel;
 @protocol WCStatusViewDelegate;
 
@@ -27,7 +29,6 @@
 }
 
 + (id)standardMoreButton;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType contactButtonHandler; // @synthesize contactButtonHandler=_contactButtonHandler;
 @property(copy, nonatomic) CDUnknownBlockType moreButtonHandler; // @synthesize moreButtonHandler=_moreButtonHandler;
 @property(nonatomic) __weak id <WCStatusViewDelegate> statusViewDelegate; // @synthesize statusViewDelegate=_statusViewDelegate;
@@ -65,4 +66,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

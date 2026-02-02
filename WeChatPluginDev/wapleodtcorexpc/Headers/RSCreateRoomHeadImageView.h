@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)getHeadImageSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FacingMember *m_facingMember; // @synthesize m_facingMember;
 - (void)updateWithFacingMember:(id)arg1;
 - (id)initWithFacingMember:(id)arg1;

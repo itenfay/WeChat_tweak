@@ -25,7 +25,6 @@
     long long _otherSideSupportExt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long otherSideSupportExt; // @synthesize otherSideSupportExt=_otherSideSupportExt;
 @property(nonatomic) double transferDataStartTime; // @synthesize transferDataStartTime=_transferDataStartTime;
 @property(nonatomic) _Bool bHeartBeatLate; // @synthesize bHeartBeatLate=_bHeartBeatLate;

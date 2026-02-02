@@ -13,7 +13,6 @@
     long long _corner;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long corner; // @synthesize corner=_corner;
 @property(readonly, nonatomic) OMJTextOverlayDesc *overlayDesc; // @synthesize overlayDesc=_overlayDesc;
 - (id)initWithOverlayDesc:(id)arg1 corner:(long long)arg2;

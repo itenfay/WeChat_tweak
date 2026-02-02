@@ -11,7 +11,6 @@
     WAWxMaterialOpenInfo *_openInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWxMaterialOpenInfo *openInfo; // @synthesize openInfo=_openInfo;
 @property(retain, nonatomic) WAReportOpenMaterialItem *materialItem; // @synthesize materialItem=_materialItem;
 - (void)handleWithImage;

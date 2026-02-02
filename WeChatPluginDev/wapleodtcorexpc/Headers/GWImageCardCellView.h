@@ -13,7 +13,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideDesc; // @synthesize hideDesc=_hideDesc;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(nonatomic) _Bool hidePlayBtn; // @synthesize hidePlayBtn=_hidePlayBtn;

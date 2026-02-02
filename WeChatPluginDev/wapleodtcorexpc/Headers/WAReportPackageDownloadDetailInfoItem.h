@@ -42,7 +42,6 @@
     unsigned long long _responseCost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long responseCost; // @synthesize responseCost=_responseCost;
 @property(nonatomic) unsigned long long requestCost; // @synthesize requestCost=_requestCost;
 @property(nonatomic) unsigned long long SSLconnectionCost; // @synthesize SSLconnectionCost=_SSLconnectionCost;

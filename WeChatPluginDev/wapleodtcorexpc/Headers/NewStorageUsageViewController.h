@@ -27,7 +27,6 @@
     NSArray *_deepCleanArray;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSArray *deepCleanArray; // @synthesize deepCleanArray=_deepCleanArray;
 @property(retain) NSMutableArray *cacheClassifycation; // @synthesize cacheClassifycation=_cacheClassifycation;
 @property(nonatomic) double startScanTime; // @synthesize startScanTime=_startScanTime;

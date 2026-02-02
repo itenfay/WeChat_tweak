@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSThread.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSObject;
 @protocol OS_dispatch_semaphore;
@@ -16,7 +17,6 @@
     CDUnknownBlockType _handler;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) double threshold; // @synthesize threshold=_threshold;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
@@ -25,4 +25,3 @@
 - (id)initWithThreashold:(double)arg1 handler:(CDUnknownBlockType)arg2;
 
 @end
-

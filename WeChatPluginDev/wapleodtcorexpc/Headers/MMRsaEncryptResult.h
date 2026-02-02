@@ -14,7 +14,6 @@
 }
 
 + (id)RsaEncryptResultWithBase64Str:(id)arg1 ret:(int)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int ret; // @synthesize ret=_ret;
 @property(readonly, nonatomic) NSString *base64Str; // @synthesize base64Str=_base64Str;
 - (id)description;

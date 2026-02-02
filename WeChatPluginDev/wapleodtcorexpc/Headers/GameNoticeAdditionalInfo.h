@@ -17,7 +17,6 @@
     NSString *_buttonJumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *buttonJumpUrl; // @synthesize buttonJumpUrl=_buttonJumpUrl;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;

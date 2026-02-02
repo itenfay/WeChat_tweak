@@ -13,7 +13,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGameLiveListContentView *liveListContentView; // @synthesize liveListContentView=_liveListContentView;
 - (void)updateCellWithRectCorner:(unsigned long long)arg1;
 - (void)updateWithGameInfo:(id)arg1 searchText:(id)arg2;

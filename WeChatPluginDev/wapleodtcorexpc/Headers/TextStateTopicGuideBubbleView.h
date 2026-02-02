@@ -15,7 +15,6 @@
     struct CGPoint _arrowPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) CAShapeLayer *bubbleLayer; // @synthesize bubbleLayer=_bubbleLayer;
 @property(retain, nonatomic) UIView *bubbleView; // @synthesize bubbleView=_bubbleView;

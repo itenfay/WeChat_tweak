@@ -16,7 +16,6 @@
 }
 
 + (void)_insertCameraInfo:(id)arg1 intoSortedList:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) double visualFactorScale; // @synthesize visualFactorScale=_visualFactorScale;
 @property(nonatomic) double maxDigitalZoomFactor; // @synthesize maxDigitalZoomFactor=_maxDigitalZoomFactor;
 @property(nonatomic) double minDigitalZoomFactor; // @synthesize minDigitalZoomFactor=_minDigitalZoomFactor;

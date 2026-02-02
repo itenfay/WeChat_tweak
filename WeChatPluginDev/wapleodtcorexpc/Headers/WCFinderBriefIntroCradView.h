@@ -18,7 +18,6 @@
     double _countdownDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double countdownDuration; // @synthesize countdownDuration=_countdownDuration;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) WCFinderNormalProgressBar *progressBar; // @synthesize progressBar=_progressBar;

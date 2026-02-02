@@ -22,7 +22,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_shareItem;
 + (void)PBArrayAdd_musicInfo;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidShowMinimizeWhenExitVC; // @synthesize forbidShowMinimizeWhenExitVC=_forbidShowMinimizeWhenExitVC;
 @property(copy, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;

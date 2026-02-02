@@ -45,7 +45,6 @@
 + (void)PBArrayAdd_fileMD5;
 + (void)PBArrayAdd_filePath;
 + (void)PBArrayAdd_inodeNum;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scanType; // @synthesize scanType=_scanType;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *fileMD5; // @synthesize fileMD5=_fileMD5;

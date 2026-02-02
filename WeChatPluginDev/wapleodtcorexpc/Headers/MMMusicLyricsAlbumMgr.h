@@ -12,7 +12,6 @@
     NSString *m_nsAlbumCoverRootPath;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleGetLyricsAndAlbumResp:(id)arg1 Event:(unsigned int)arg2;
 - (_Bool)GetLyricsAndAlbumFromSvr:(id)arg1;

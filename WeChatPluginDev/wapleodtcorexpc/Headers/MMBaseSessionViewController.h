@@ -13,7 +13,6 @@
     _Bool _isShowMsgSearch;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowMsgSearch; // @synthesize isShowMsgSearch=_isShowMsgSearch;
 - (void)handleNavigationCancelItemClick;
 - (void)onFTSKFContactSearchResultChangedForDetail;

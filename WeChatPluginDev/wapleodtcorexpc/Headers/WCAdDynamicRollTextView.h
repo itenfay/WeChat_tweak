@@ -11,7 +11,6 @@
     WCAdDynamicFeedElementRollTextInfo *_styleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementRollTextInfo *styleInfo; // @synthesize styleInfo=_styleInfo;
 @property(nonatomic) _Bool didLayoutOnce; // @synthesize didLayoutOnce=_didLayoutOnce;
 - (void)layoutSubviews;

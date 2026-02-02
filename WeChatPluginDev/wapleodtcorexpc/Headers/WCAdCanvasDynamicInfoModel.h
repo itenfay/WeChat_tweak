@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minVangoghLibVersion; // @synthesize minVangoghLibVersion=_minVangoghLibVersion;
 @property(retain, nonatomic) NSString *vangoghId; // @synthesize vangoghId=_vangoghId;
 

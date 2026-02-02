@@ -11,7 +11,6 @@
     NSMutableArray *m_downloadingItemList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_downloadingItemList; // @synthesize m_downloadingItemList;
 @property(retain, nonatomic) NSMutableDictionary *m_itemList; // @synthesize m_itemList;
 - (id)megerFromArray:(id)arg1 IsForceUpdateTagAndIntroduce:(_Bool)arg2;

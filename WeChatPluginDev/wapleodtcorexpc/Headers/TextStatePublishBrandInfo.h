@@ -18,7 +18,6 @@
     NSString *_base64BrandKeyInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *base64BrandKeyInfo; // @synthesize base64BrandKeyInfo=_base64BrandKeyInfo;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *openId; // @synthesize openId=_openId;

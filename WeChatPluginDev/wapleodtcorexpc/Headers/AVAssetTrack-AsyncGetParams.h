@@ -4,6 +4,7 @@
 //
 
 #import <AVFoundation/AVAssetTrack.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface AVAssetTrack (AsyncGetParams)
 + (id)getAssetInfoDict;
@@ -18,4 +19,3 @@
 - (float)syncGetBitrate;
 - (id)tav_trackKey;
 @end
-

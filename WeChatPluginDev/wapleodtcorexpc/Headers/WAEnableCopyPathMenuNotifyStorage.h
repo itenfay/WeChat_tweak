@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicAppid2Info;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicAppid2Info; // @synthesize dicAppid2Info=_dicAppid2Info;
 - (id)getPBPropertyTable;
 

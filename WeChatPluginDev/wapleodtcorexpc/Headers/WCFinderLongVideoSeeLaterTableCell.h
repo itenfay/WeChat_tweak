@@ -28,7 +28,6 @@
 + (double)getTitleMaxWidthWithWidth:(double)arg1;
 + (double)cellHeightWithContentVM:(id)arg1 width:(double)arg2;
 + (id)seeLaterReasonTextWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInSeeLaterList; // @synthesize isInSeeLaterList=_isInSeeLaterList;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) _Bool isLastCell; // @synthesize isLastCell=_isLastCell;

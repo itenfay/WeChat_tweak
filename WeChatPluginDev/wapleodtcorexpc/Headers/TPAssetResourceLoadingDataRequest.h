@@ -25,7 +25,6 @@
     id <TPAssetResourceLoadingDataRequestDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TPAssetResourceLoadingDataRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TPWorkerQueue *dataWriteQueue; // @synthesize dataWriteQueue=_dataWriteQueue;
 @property(nonatomic) long long realOffset; // @synthesize realOffset=_realOffset;

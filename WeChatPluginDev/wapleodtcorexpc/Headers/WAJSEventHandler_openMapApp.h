@@ -10,7 +10,6 @@
     WANavigateLogicController *_navLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WANavigateLogicController *navLogic; // @synthesize navLogic=_navLogic;
 - (void)onCancelMenu;
 - (void)onClickMapApp:(unsigned long long)arg1;

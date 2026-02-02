@@ -27,7 +27,6 @@
 
 + (double)heightWithParams:(id)arg1 width:(double)arg2;
 + (double)defaultHeightWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTerminatorViewParams *params; // @synthesize params=_params;
 @property(nonatomic) _Bool m_labelNewLineBreakRules; // @synthesize m_labelNewLineBreakRules=_m_labelNewLineBreakRules;
 @property(retain, nonatomic) UIColor *m_textColor; // @synthesize m_textColor=_m_textColor;

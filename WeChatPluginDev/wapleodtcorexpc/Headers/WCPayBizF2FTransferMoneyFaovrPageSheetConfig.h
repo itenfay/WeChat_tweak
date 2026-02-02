@@ -14,7 +14,6 @@
     NSArray *_selectedArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectedArray; // @synthesize selectedArray=_selectedArray;
 @property(retain, nonatomic) BusiF2FFavorCommResp *favorResp; // @synthesize favorResp=_favorResp;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

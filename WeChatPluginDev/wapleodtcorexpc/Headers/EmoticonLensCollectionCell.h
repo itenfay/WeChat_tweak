@@ -24,7 +24,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CircleProcessView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

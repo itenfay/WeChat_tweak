@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLongImageUtil : NSObject
 {
@@ -15,4 +16,3 @@
 + (void)saveImageToAlbum:(id)arg1 viewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
-

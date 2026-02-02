@@ -13,7 +13,6 @@
     LiteAppDynamicModuleCallback *__callback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiteAppDynamicModuleCallback *_callback; // @synthesize _callback=__callback;
 @property(retain, nonatomic) CMMotionManager *_manager; // @synthesize _manager=__manager;
 

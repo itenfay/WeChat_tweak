@@ -20,7 +20,6 @@
     double _scrollTimeInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForceDisplay; // @synthesize isForceDisplay=_isForceDisplay;
 @property(nonatomic) double scrollTimeInterval; // @synthesize scrollTimeInterval=_scrollTimeInterval;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;

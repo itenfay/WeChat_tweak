@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMDoodleController, MMDoodleToolbarItem, MultiTalkCornerContainerView, MultiTalkHDHeadView, NSString, UIButton, UIImageView, UITapGestureRecognizer, UIView;
 @protocol MultiTalkScreenSharingPresentationViewControllerDelegate;
 
@@ -23,7 +25,6 @@
     unsigned long long _doodleInterfaceOrientationMask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long doodleInterfaceOrientationMask; // @synthesize doodleInterfaceOrientationMask=_doodleInterfaceOrientationMask;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) _Bool barsHidden; // @synthesize barsHidden=_barsHidden;
@@ -103,4 +104,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     NSMutableArray *_stateHistory;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(nonatomic) _Bool isFold; // @synthesize isFold=_isFold;
 @property(retain, nonatomic) NSMutableArray *stateHistory; // @synthesize stateHistory=_stateHistory;

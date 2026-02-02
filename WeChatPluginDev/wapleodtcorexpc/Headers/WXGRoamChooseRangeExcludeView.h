@@ -11,7 +11,6 @@
     UITableView *_sheetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *sheetView; // @synthesize sheetView=_sheetView;
 @property(nonatomic) long long enterScene; // @synthesize enterScene=_enterScene;
 - (void)onRoamBackupPackageServiceChooseRangeIncludeUserComplete:(_Bool)arg1;

@@ -13,7 +13,6 @@
     CIContext *_compositingContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CIContext *compositingContext; // @synthesize compositingContext=_compositingContext;
 @property(retain, nonatomic) MMLiveVideoFrameWidgetManageLogic *widgetManageLogic; // @synthesize widgetManageLogic=_widgetManageLogic;
 - (struct opaqueCMSampleBuffer *)createCompositedSampleBufferWithSourceBuffer:(struct opaqueCMSampleBuffer *)arg1 widgetList:(id)arg2 flipX:(_Bool)arg3;

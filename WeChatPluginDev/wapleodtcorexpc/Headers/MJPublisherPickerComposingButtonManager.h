@@ -16,7 +16,6 @@
     UIButton *_normalButtonForNonPreviewing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingNewYearStyle; // @synthesize isUsingNewYearStyle=_isUsingNewYearStyle;
 @property(retain, nonatomic) UIButton *normalButtonForNonPreviewing; // @synthesize normalButtonForNonPreviewing=_normalButtonForNonPreviewing;
 @property(retain, nonatomic) UIButton *normalButtonForPreviewing; // @synthesize normalButtonForPreviewing=_normalButtonForPreviewing;

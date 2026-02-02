@@ -13,7 +13,6 @@
     CContact *_selectUser;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *selectUser; // @synthesize selectUser=_selectUser;
 @property(retain, nonatomic) WCPayUnionTransferBeforeCgi *unionBeforeCgi; // @synthesize unionBeforeCgi=_unionBeforeCgi;
 @property(nonatomic) __weak id <WCPaySelectChatroomMemberViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

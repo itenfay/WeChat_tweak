@@ -17,7 +17,6 @@
 }
 
 + (id)ClusterUsernames;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSMessageDB *ftsDB; // @synthesize ftsDB=_ftsDB;
 @property(nonatomic) _Bool bIsIgnoreCluster; // @synthesize bIsIgnoreCluster=_bIsIgnoreCluster;
 - (id)getClusterIdFor:(id)arg1;

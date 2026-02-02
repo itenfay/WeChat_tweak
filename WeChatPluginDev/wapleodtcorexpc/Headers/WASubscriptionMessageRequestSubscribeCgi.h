@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WASubscriptionMessagePageSheetViewModel;
 
 @interface WASubscriptionMessageRequestSubscribeCgi
@@ -18,7 +20,6 @@
     NSString *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int popupScene; // @synthesize popupScene=_popupScene;
@@ -36,4 +37,3 @@
 - (id)initWithViewModel:(id)arg1 username:(id)arg2 scene:(unsigned long long)arg3 appid:(id)arg4 popupScene:(unsigned int)arg5 sessionId:(id)arg6 extInfo:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failBlock:(CDUnknownBlockType)arg9;
 
 @end
-

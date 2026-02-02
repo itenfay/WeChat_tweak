@@ -15,7 +15,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(nonatomic) __weak id <WCFinderMoreHotContentBottomViewDelegate> delegate; // @synthesize delegate=_delegate;

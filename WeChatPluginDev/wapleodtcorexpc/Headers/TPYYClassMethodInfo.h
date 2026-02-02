@@ -18,7 +18,6 @@
     NSArray *_argumentTypeEncodings;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *argumentTypeEncodings; // @synthesize argumentTypeEncodings=_argumentTypeEncodings;
 @property(readonly, nonatomic) NSString *returnTypeEncoding; // @synthesize returnTypeEncoding=_returnTypeEncoding;
 @property(readonly, nonatomic) NSString *typeEncoding; // @synthesize typeEncoding=_typeEncoding;

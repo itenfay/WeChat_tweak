@@ -13,7 +13,6 @@
     NSString *_encryptExtra;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *encryptExtra; // @synthesize encryptExtra=_encryptExtra;
 @property(retain, nonatomic) NSString *certPem; // @synthesize certPem=_certPem;
 - (id)encryptPlainString:(id)arg1 encryptError:(id *)arg2;

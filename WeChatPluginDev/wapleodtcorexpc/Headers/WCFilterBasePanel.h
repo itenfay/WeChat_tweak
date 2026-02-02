@@ -23,7 +23,6 @@
     id <WCFilterBasePanelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useBoldFont; // @synthesize useBoldFont=_useBoldFont;
 @property(nonatomic) _Bool useEmphasizeColor; // @synthesize useEmphasizeColor=_useEmphasizeColor;
 @property(nonatomic) __weak id <WCFilterBasePanelDelegate> delegate; // @synthesize delegate=_delegate;

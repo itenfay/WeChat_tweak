@@ -68,7 +68,6 @@
 + (void)PBArrayAdd_packName;
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_productID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *previewEmojiInfos; // @synthesize previewEmojiInfos=_previewEmojiInfos;
 @property(retain, nonatomic) NSString *designerIpsetKey; // @synthesize designerIpsetKey=_designerIpsetKey;
 @property(retain, nonatomic) NSArray *packEmojiInfoList; // @synthesize packEmojiInfoList=_packEmojiInfoList;

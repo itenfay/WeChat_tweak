@@ -20,7 +20,6 @@
     UIButton *_serviceButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *serviceButton; // @synthesize serviceButton=_serviceButton;
 @property(retain, nonatomic) UIButton *enterButton; // @synthesize enterButton=_enterButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

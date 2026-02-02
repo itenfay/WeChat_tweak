@@ -27,7 +27,6 @@
     NSString *_deviceInitTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceInitTime; // @synthesize deviceInitTime=_deviceInitTime;
 @property(retain, nonatomic) NSString *tnmId; // @synthesize tnmId=_tnmId;
 @property(retain, nonatomic) WCDeviceSysFileInfo *mcMetaFileInfo; // @synthesize mcMetaFileInfo=_mcMetaFileInfo;

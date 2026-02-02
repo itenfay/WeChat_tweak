@@ -33,7 +33,6 @@
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(retain, nonatomic) NSString *qAuth; // @synthesize qAuth=_qAuth;
 @property(retain) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)invalidateServerUrl:(id)arg1;
 - (id)serverUrl;
 - (void)resetGuid;

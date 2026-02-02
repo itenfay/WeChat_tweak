@@ -14,7 +14,6 @@
     NSArray *_models;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *models; // @synthesize models=_models;
 @property(copy, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

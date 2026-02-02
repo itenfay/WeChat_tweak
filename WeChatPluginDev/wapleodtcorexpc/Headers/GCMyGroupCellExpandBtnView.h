@@ -18,7 +18,6 @@
     UIView *_redDotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;
 @property(retain, nonatomic) UIImageView *arrowIcon; // @synthesize arrowIcon=_arrowIcon;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;

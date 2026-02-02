@@ -22,7 +22,6 @@
     MMFinderCreateLiveSpamCheckReportSession *_reportSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderCreateLiveSpamCheckReportSession *reportSession; // @synthesize reportSession=_reportSession;
 @property(nonatomic) _Bool hasVerified; // @synthesize hasVerified=_hasVerified;
 @property(nonatomic) int warnType; // @synthesize warnType=_warnType;

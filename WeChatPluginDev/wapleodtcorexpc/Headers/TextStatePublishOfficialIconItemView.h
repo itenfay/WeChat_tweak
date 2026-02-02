@@ -16,7 +16,6 @@
 
 + (double)minItemHeight;
 + (double)itemWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) TextStatePublishOfficialIconItem *iconItem; // @synthesize iconItem=_iconItem;

@@ -13,7 +13,6 @@
     StatusExtInfo *_textState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusExtInfo *textState; // @synthesize textState=_textState;
 @property(retain, nonatomic) NSString *textStateId; // @synthesize textStateId=_textStateId;
 

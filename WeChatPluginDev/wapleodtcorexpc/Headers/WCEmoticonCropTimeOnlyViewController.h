@@ -11,7 +11,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(retain, nonatomic) WCEditVideoPushPopTransition *customTransitionDelegate; // @synthesize customTransitionDelegate=_customTransitionDelegate;
 - (void)onCropDone:(CDStruct_e83c9415)arg1;

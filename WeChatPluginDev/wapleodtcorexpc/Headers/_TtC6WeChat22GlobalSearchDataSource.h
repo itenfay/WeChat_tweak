@@ -33,7 +33,6 @@
     MISSING_TYPE *$__lazy_storage_$_hasWebSearchIntention;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)sortSections;
 - (void)finishSearchOf:(unsigned long long)arg1 data:(id)arg2;

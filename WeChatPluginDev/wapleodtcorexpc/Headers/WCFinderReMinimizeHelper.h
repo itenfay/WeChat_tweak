@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSValue, UIViewController;
 
@@ -15,11 +16,9 @@
     NSValue *_floatingViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *floatingViewFrame; // @synthesize floatingViewFrame=_floatingViewFrame;
 @property(copy, nonatomic) CDUnknownBlockType validChecker; // @synthesize validChecker=_validChecker;
 @property(copy, nonatomic) CDUnknownBlockType createTransationBlock; // @synthesize createTransationBlock=_createTransationBlock;
 @property(nonatomic) __weak UIViewController *relativeVC; // @synthesize relativeVC=_relativeVC;
 
 @end
-

@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_iconUrl;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_tipsShowType;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHadShow; // @synthesize bHadShow=_bHadShow;
 @property(retain, nonatomic) NSArray *arrShowingTips; // @synthesize arrShowingTips=_arrShowingTips;
 @property(retain, nonatomic) NSMutableArray *arrParents; // @synthesize arrParents=_arrParents;

@@ -22,7 +22,6 @@
     struct CGPoint _panStartPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double loadingTopOffset; // @synthesize loadingTopOffset=_loadingTopOffset;
 @property(nonatomic) _Bool panInteracting; // @synthesize panInteracting=_panInteracting;
 @property(nonatomic) struct CGPoint panStartPoint; // @synthesize panStartPoint=_panStartPoint;

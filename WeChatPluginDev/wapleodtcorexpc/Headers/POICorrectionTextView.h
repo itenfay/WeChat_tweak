@@ -20,7 +20,6 @@
 }
 
 + (double)contentHeight:(double)arg1 isFooterStyle:(_Bool)arg2 paddingX:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topSeperatorLine; // @synthesize topSeperatorLine=_topSeperatorLine;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UILabel *mainLabel; // @synthesize mainLabel=_mainLabel;

@@ -15,7 +15,6 @@
     ContactsDataLogic *_contactDataLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsDataLogic *contactDataLogic; // @synthesize contactDataLogic=_contactDataLogic;
 @property(readonly, nonatomic) unsigned long long contactDataScene; // @synthesize contactDataScene=_contactDataScene;
 @property(nonatomic) unsigned long long m_commonSearchScene; // @synthesize m_commonSearchScene=_m_commonSearchScene;

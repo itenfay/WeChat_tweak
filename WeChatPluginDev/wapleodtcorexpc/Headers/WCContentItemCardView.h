@@ -19,7 +19,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bottomBkgView; // @synthesize bottomBkgView=_bottomBkgView;
 @property(retain, nonatomic) UIView *hlView; // @synthesize hlView=_hlView;
 @property(retain, nonatomic) UILabel *durationLabel; // @synthesize durationLabel=_durationLabel;

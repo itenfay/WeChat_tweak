@@ -16,7 +16,6 @@
     long long _currentRenderType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRenderWillEnd; // @synthesize isRenderWillEnd=_isRenderWillEnd;
 @property(nonatomic) long long currentRenderType; // @synthesize currentRenderType=_currentRenderType;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

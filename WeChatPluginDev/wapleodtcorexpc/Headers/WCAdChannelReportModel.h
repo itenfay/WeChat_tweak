@@ -17,7 +17,6 @@
     NSString *_aid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *aid; // @synthesize aid=_aid;
 @property(retain, nonatomic) NSString *adExtInfo; // @synthesize adExtInfo=_adExtInfo;

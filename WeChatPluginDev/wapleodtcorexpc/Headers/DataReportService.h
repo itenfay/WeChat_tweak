@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class DataReportConfiguration, DataReportPageContext, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIViewController;
 
 @interface DataReportService
@@ -19,7 +21,6 @@
     UIViewController *m_curViewController;
 }
 
-- (void).cxx_destruct;
 - (void)setViewExposeMinRate:(id)arg1 rate:(double)arg2;
 - (void)setViewExposeMinTime:(id)arg1 timeMills:(unsigned long long)arg2;
 - (id)getViewId:(id)arg1;
@@ -151,4 +152,3 @@
 @property(readonly) Class superclass;
 
 @end
-

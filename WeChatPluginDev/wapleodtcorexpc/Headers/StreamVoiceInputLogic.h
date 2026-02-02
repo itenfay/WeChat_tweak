@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EVADProcessor, NSMutableArray, NSMutableDictionary, NSString, SimpleAudioRecorder, StreamInputResult, UploadStreamVoiceDataMgr;
 
@@ -26,7 +27,6 @@
     NSString *_currentVoiceId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentVoiceId; // @synthesize currentVoiceId=_currentVoiceId;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) NSMutableDictionary *sequenceMap; // @synthesize sequenceMap=_sequenceMap;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -25,7 +25,6 @@
     struct UIEdgeInsets _contentInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(retain, nonatomic) UIView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;

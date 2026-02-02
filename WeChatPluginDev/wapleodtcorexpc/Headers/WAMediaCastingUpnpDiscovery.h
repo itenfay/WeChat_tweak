@@ -19,7 +19,6 @@
     NSTimer *_sendTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *sendTimer; // @synthesize sendTimer=_sendTimer;
 @property(nonatomic) int fd; // @synthesize fd=_fd;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;

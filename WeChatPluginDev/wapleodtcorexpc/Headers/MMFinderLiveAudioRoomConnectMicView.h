@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUIImageView, MMUILabel, RichTextView, UIButton;
 
 @interface MMFinderLiveAudioRoomConnectMicView
@@ -18,7 +20,6 @@
     UIButton *_connectMicBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *connectMicBtn; // @synthesize connectMicBtn=_connectMicBtn;
 @property(retain, nonatomic) MMUILabel *showLocationLabel; // @synthesize showLocationLabel=_showLocationLabel;
 @property(retain, nonatomic) RichTextView *showLocationView; // @synthesize showLocationView=_showLocationView;
@@ -43,4 +44,3 @@
 - (id)initWithTaskId:(id)arg1 isLocationAuthorized:(_Bool)arg2;
 
 @end
-

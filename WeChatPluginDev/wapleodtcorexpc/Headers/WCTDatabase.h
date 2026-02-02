@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -39,7 +40,6 @@
 + (void)registerScalarFunction:(const struct ScalarFunctionModule *)arg1 named:(id)arg2;
 + (void)setDefaultCipherConfiguration:(int)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct RecyclableHandle)generateHandle:(_Bool)arg1;
 - (id)error;
 - (_Bool)incrementalVacuum:(int)arg1;
@@ -273,4 +273,3 @@
 - (id)prepareInsert;
 
 @end
-

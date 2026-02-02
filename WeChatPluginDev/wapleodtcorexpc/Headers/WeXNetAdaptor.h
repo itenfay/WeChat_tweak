@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)releaseContext;
 - (id)initWithJSContext:(struct OpaqueJSContext *)arg1 parent:(struct OpaqueJSValue *)arg2 delegate:(id)arg3;
 - (void)log:(int)arg1 message:(const void *)arg2;

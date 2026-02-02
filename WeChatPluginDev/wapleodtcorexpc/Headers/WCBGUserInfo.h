@@ -21,7 +21,6 @@
     NSString *_bgFileId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bgFileId; // @synthesize bgFileId=_bgFileId;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(copy, nonatomic) NSString *bgImgMd5; // @synthesize bgImgMd5=_bgImgMd5;

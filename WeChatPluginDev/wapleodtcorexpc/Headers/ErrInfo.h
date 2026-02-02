@@ -13,7 +13,6 @@
     NSString *_errMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) unsigned int errNumber; // @synthesize errNumber=_errNumber;
 - (id)initWithErrNumber:(unsigned int)arg1 errMsg:(id)arg2;

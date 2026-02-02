@@ -12,7 +12,6 @@
     UIView *_musicCardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *musicCardView; // @synthesize musicCardView=_musicCardView;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

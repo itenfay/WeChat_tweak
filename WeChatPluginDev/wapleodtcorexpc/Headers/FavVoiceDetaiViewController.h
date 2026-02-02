@@ -11,7 +11,6 @@
     FavAudioPlayerController *m_audioPlayerCtrl;
 }
 
-- (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onFavActionSheetSelectedItemWithType:(long long)arg1;
 - (id)getCurrentViewController;

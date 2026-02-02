@@ -28,7 +28,6 @@
     NSString *_comment;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableEdit; // @synthesize disableEdit=_disableEdit;
 @property(retain, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(nonatomic) double payAmount; // @synthesize payAmount=_payAmount;

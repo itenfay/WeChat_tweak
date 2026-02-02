@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderLiveCheckLotteryBillCGI
@@ -12,7 +14,6 @@
     NSString *_billNo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *billNo; // @synthesize billNo=_billNo;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -22,4 +23,3 @@
 - (id)initWithLiveTaskId:(id)arg1 billNo:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

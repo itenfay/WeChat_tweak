@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderNewUserPrepareResponse, MJPublisher, MMFinderLivePurchasedFeedViewModel, NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout, UINavigationController, WCActionSheet, WCActionSheetWithHeadAvatar, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderPersonalCenterCollectionViewCell, WCFinderPersonalCenterContactData, WCFinderPersonalCenterTakePhotoCollectionViewCell, WCFinderPersonalCenterViewModel, WCFinderPersonalCenterWeixinContactCollectionViewCell, WCFinderPostActionSheetConfigArray, WCFinderProcessTimeRecorder, WCFinderWebViewOpener;
 
 @interface WCFinderPersonalCenterViewController
@@ -47,7 +49,6 @@
     WCFinderPersonalCenterContactData *_contactData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPersonalCenterContactData *contactData; // @synthesize contactData=_contactData;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
 @property(nonatomic) _Bool personalCenterShowInteractiveTailText; // @synthesize personalCenterShowInteractiveTailText=_personalCenterShowInteractiveTailText;
@@ -280,4 +281,3 @@
 @property(readonly) Class superclass;
 
 @end
-

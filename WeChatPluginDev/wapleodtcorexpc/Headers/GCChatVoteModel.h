@@ -13,7 +13,6 @@
     ChatroomUserData *_userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomUserData *userData; // @synthesize userData=_userData;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 

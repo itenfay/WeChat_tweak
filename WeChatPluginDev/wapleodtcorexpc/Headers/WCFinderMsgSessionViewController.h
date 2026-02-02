@@ -15,7 +15,6 @@
     WCFinderProcessTimeRecorder *_processTimeRecarder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProcessTimeRecorder *processTimeRecarder; // @synthesize processTimeRecarder=_processTimeRecarder;
 @property(retain, nonatomic) NSString *currentFinderUsername; // @synthesize currentFinderUsername=_currentFinderUsername;
 @property(retain, nonatomic) MMBaseSessionCellData *systemCellData; // @synthesize systemCellData=_systemCellData;

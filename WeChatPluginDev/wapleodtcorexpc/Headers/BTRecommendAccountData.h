@@ -19,7 +19,6 @@
     BTRecommendUserInfo *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTRecommendUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSArray *arrAppMsg; // @synthesize arrAppMsg=_arrAppMsg;
 @property(copy, nonatomic) NSString *appMsgRecommendReason; // @synthesize appMsgRecommendReason=_appMsgRecommendReason;

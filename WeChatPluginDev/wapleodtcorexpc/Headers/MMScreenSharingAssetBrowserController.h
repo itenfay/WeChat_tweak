@@ -13,7 +13,6 @@
     UIView<MMAssetPickerBrowserViewProtocol> *_assetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<MMAssetPickerBrowserViewProtocol> *assetView; // @synthesize assetView=_assetView;
 @property(nonatomic) double contentRatioY; // @synthesize contentRatioY=_contentRatioY;
 @property(copy, nonatomic) NSArray *assetInfos; // @synthesize assetInfos=_assetInfos;

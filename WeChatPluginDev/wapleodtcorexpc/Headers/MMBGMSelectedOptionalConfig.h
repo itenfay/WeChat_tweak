@@ -26,7 +26,6 @@
     NSMutableArray *_assertItems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowMusicCategoryPanel; // @synthesize shouldShowMusicCategoryPanel=_shouldShowMusicCategoryPanel;
 @property(nonatomic) _Bool shouldShowSecondCutPromotionEntry; // @synthesize shouldShowSecondCutPromotionEntry=_shouldShowSecondCutPromotionEntry;
 @property(retain, nonatomic) NSMutableArray *assertItems; // @synthesize assertItems=_assertItems;

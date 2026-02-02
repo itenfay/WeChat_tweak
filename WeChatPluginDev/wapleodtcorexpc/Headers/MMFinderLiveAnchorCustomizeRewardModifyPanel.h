@@ -20,7 +20,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

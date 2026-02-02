@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FBSDKGraphRequestPiggybackManager : NSObject
 {
@@ -15,4 +16,3 @@
 + (void)addPiggybackRequests:(id)arg1;
 
 @end
-

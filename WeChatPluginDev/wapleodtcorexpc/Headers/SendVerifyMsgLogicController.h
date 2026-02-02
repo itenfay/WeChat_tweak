@@ -29,7 +29,6 @@
     long long _contactInfoViewSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_needVerifyPreCheck; // @synthesize m_needVerifyPreCheck=_m_needVerifyPreCheck;
 @property(nonatomic) long long contactInfoViewSource; // @synthesize contactInfoViewSource=_contactInfoViewSource;
 @property(nonatomic) unsigned int m_uiOpCode; // @synthesize m_uiOpCode=_m_uiOpCode;

@@ -16,7 +16,6 @@
     UIView *_customView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(retain, nonatomic) UIView *seperateView; // @synthesize seperateView=_seperateView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;

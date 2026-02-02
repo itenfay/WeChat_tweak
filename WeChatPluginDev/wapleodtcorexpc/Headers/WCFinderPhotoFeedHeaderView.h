@@ -24,7 +24,6 @@
     double _layoutWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) WCFinderPhotoFeedDetailDescriptionView *feedDescriptionView; // @synthesize feedDescriptionView=_feedDescriptionView;
 @property(retain, nonatomic) UILabel *feedShortTitleLabel; // @synthesize feedShortTitleLabel=_feedShortTitleLabel;

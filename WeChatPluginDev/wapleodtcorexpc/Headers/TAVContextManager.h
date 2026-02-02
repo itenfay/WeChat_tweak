@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CIContext *CIContext; // @synthesize CIContext=_CIContext;
 - (id)init;
 

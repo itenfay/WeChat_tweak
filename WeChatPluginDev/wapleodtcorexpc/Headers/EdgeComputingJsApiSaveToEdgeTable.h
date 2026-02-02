@@ -10,7 +10,6 @@
     EdgeComputingDBService *_dBService;
 }
 
-- (void).cxx_destruct;
 - (void)clear;
 - (unsigned int)getType;
 - (id)functionName;

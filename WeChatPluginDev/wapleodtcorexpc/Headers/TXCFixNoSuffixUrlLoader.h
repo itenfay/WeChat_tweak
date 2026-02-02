@@ -12,7 +12,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (void)resourceLoader:(id)arg1 didCancelLoadingRequest:(id)arg2;
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;

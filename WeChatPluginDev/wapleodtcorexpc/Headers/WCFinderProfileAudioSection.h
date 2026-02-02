@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMListenCategoryItem, NSMutableArray, NSMutableSet, NSString, WCFinderStreamLoadingState;
 
@@ -24,7 +25,6 @@
 
 + (id)categoryItemFromCollectionInfo:(id)arg1;
 + (void)rmObserver:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onClickItem; // @synthesize onClickItem=_onClickItem;
 @property(copy, nonatomic) CDUnknownBlockType requestNext; // @synthesize requestNext=_requestNext;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

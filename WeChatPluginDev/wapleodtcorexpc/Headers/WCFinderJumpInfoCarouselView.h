@@ -28,7 +28,6 @@
     struct CGRect _targetFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clickCountArray; // @synthesize clickCountArray=_clickCountArray;
 @property(retain, nonatomic) NSMutableArray *autoCarouselCountArray; // @synthesize autoCarouselCountArray=_autoCarouselCountArray;
 @property(retain, nonatomic) NSMutableArray *carouselCountArray; // @synthesize carouselCountArray=_carouselCountArray;

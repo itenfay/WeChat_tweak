@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableSet, NSString;
 
 @interface MMFinderLiveAudienceCouponsView
@@ -10,7 +12,6 @@
     NSMutableSet *_exposedCouponIdSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedCouponIdSet; // @synthesize exposedCouponIdSet=_exposedCouponIdSet;
 - (void)willDisplayCellForModel:(id)arg1;
 - (CDUnknownBlockType)actionForReportButtonActionWithIsReceiveFailForCoupon:(id)arg1;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

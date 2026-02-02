@@ -22,7 +22,6 @@
 + (double)viewHeight;
 + (double)bottomMargin;
 + (double)topMargin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConsultBarInfo *currentConsultBarInfo; // @synthesize currentConsultBarInfo=_currentConsultBarInfo;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) WCAdURLImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

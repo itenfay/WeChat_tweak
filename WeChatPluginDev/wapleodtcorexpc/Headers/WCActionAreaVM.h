@@ -29,7 +29,6 @@
 + (_Bool)canShowSourceWithDataItem:(id)arg1 showType:(unsigned long long *)arg2 text:(id *)arg3 url:(id *)arg4 backupUrl:(id *)arg5;
 + (_Bool)canShowStarIconWithDataItem:(id)arg1 scene:(unsigned long long)arg2 isStarEnabled:(_Bool)arg3;
 + (id)timeLabelDisplayTextWithDataItem:(id)arg1 scene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStarEnabled; // @synthesize isStarEnabled=_isStarEnabled;
 @property(nonatomic) _Bool isDynamicTagEnabled; // @synthesize isDynamicTagEnabled=_isDynamicTagEnabled;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

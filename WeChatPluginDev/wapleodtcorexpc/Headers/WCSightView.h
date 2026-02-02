@@ -30,7 +30,6 @@
     UIView *_controlViewContainer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *controlViewContainer; // @synthesize controlViewContainer=_controlViewContainer;
 @property(nonatomic) _Bool tryingToPlay; // @synthesize tryingToPlay=_tryingToPlay;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerInfo; // @synthesize playerInfo=_playerInfo;

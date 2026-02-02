@@ -14,7 +14,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(nonatomic) unsigned long long connectTimestampInMS; // @synthesize connectTimestampInMS=_connectTimestampInMS;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

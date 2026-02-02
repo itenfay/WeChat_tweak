@@ -12,7 +12,6 @@
     NSString *_frameSetName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *frameSetName; // @synthesize frameSetName=_frameSetName;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) _Bool isReadyToShow; // @synthesize isReadyToShow=_isReadyToShow;

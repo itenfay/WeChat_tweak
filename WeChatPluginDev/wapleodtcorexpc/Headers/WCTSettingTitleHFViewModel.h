@@ -19,7 +19,6 @@
 + (id)createFooterWithTitle:(id)arg1;
 + (id)createHeaderWithTitle:(id)arg1;
 + (id)createWithTitle:(id)arg1 edgeInsets:(struct UIEdgeInsets)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long accessibilityTraits; // @synthesize accessibilityTraits=_accessibilityTraits;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

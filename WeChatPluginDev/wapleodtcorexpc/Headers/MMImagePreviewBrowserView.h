@@ -22,7 +22,6 @@
     struct CGPoint _livePhotoPhotoPosition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLivePhotoSelected; // @synthesize isLivePhotoSelected=_isLivePhotoSelected;
 @property(nonatomic) struct CGPoint livePhotoPhotoPosition; // @synthesize livePhotoPhotoPosition=_livePhotoPhotoPosition;
 @property(retain, nonatomic) WCLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;

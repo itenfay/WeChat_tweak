@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
@@ -31,7 +32,6 @@
     NSString *_h5AuthToken;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReqRetry; // @synthesize isReqRetry=_isReqRetry;
 @property(nonatomic) _Bool isWaitingH5auth; // @synthesize isWaitingH5auth=_isWaitingH5auth;
 @property(nonatomic) _Bool disableRetryWhenFail; // @synthesize disableRetryWhenFail=_disableRetryWhenFail;
@@ -56,4 +56,3 @@
 - (id)toTransferReq;
 
 @end
-

@@ -14,7 +14,6 @@
     EAGLContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EAGLContext *context; // @synthesize context=_context;
 @property(nonatomic) float elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(retain, nonatomic) WADynamicBackgroundGLContext *glContext; // @synthesize glContext=_glContext;

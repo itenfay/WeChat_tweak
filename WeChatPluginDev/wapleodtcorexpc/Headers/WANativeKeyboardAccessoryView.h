@@ -13,7 +13,6 @@
     UIToolbar *_toolbar;
 }
 
-- (void).cxx_destruct;
 - (void)addToolbarToView:(id)arg1;
 - (void)removeToolBarFromView;
 - (void)setToolBar:(id)arg1;

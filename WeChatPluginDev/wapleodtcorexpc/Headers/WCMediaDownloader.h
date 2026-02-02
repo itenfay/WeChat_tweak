@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCDataItem, WCMediaItem;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) WCMediaDownloader *retainedSelf; // @synthesize retainedSelf=_retainedSelf;
 @property(readonly, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

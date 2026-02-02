@@ -27,7 +27,6 @@
 + (double)signIconWidthForStyle:(long long)arg1;
 + (id)signLabelFontForStyle:(long long)arg1;
 + (struct CGSize)getGameEsportSizeWithBadgeName:(id)arg1 uiStyle:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) double currentLayoutFontScale; // @synthesize currentLayoutFontScale=_currentLayoutFontScale;
 @property(retain, nonatomic) MMUILabel *signLabel; // @synthesize signLabel=_signLabel;
 @property(retain, nonatomic) MMWebImageView *rankImgView; // @synthesize rankImgView=_rankImgView;

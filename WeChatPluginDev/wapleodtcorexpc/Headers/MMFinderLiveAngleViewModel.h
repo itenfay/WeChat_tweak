@@ -21,7 +21,6 @@
     NSString *_coverSpamText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *coverSpamText; // @synthesize coverSpamText=_coverSpamText;
 @property(nonatomic) _Bool isCoverSpam; // @synthesize isCoverSpam=_isCoverSpam;
 @property(retain, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;

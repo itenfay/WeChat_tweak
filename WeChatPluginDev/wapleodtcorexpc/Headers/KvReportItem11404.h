@@ -38,7 +38,6 @@
     NSString *_netType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isControlGroup; // @synthesize isControlGroup=_isControlGroup;
 @property(nonatomic) unsigned int exptShowFlag; // @synthesize exptShowFlag=_exptShowFlag;
 @property(nonatomic) unsigned int dataMode; // @synthesize dataMode=_dataMode;

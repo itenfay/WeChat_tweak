@@ -11,7 +11,6 @@
     NSArray *_arrPrefetchDomainInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrPrefetchDomainInfo; // @synthesize arrPrefetchDomainInfo=_arrPrefetchDomainInfo;
 @property(retain, nonatomic) NSArray *arrA8KeyLiteParams; // @synthesize arrA8KeyLiteParams=_arrA8KeyLiteParams;
 

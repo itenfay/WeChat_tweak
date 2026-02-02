@@ -33,7 +33,6 @@
     NSString *_exposeUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *exposeUrl; // @synthesize exposeUrl=_exposeUrl;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSMutableArray *bannerList; // @synthesize bannerList=_bannerList;

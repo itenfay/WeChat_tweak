@@ -14,7 +14,6 @@
     double _zoom;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double zoom; // @synthesize zoom=_zoom;
 @property(nonatomic) double lng; // @synthesize lng=_lng;
 @property(nonatomic) double lat; // @synthesize lat=_lat;

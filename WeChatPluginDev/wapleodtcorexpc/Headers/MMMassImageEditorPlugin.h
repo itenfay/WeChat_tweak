@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJFlutterImageEditorSession, MMFlutterInstance, NSString;
 @protocol FlutterTextureRegistry;
@@ -15,7 +16,6 @@
     MMFlutterInstance *_pageInstance;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFlutterInstance *pageInstance; // @synthesize pageInstance=_pageInstance;
 @property(retain, nonatomic) MJFlutterImageEditorSession *imageEditorSession; // @synthesize imageEditorSession=_imageEditorSession;
 @property(retain, nonatomic) NSObject<FlutterTextureRegistry> *flutterTextureRegistery; // @synthesize flutterTextureRegistery=_flutterTextureRegistery;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

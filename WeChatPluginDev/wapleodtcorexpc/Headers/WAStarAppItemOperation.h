@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_preUsername;
 + (void)PBArrayAdd_operAppType;
 + (void)PBArrayAdd_operUsername;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int operationScene; // @synthesize operationScene=_operationScene;
 @property(nonatomic) unsigned int operationType; // @synthesize operationType=_operationType;
 @property(nonatomic) unsigned int nextAppType; // @synthesize nextAppType=_nextAppType;

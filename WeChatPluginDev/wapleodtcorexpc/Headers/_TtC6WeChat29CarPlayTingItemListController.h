@@ -11,7 +11,6 @@
     MISSING_TYPE *nextDetailPage;
 }
 
-- (void).cxx_destruct;
 - (void)onPlayingItemUpdateWithPlayingItem:(id)arg1;
 - (void)dealloc;
 

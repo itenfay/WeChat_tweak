@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _getClassfyBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType getClassfyBlock; // @synthesize getClassfyBlock=_getClassfyBlock;
 @property(retain, nonatomic) NSData *assetClassfyResult; // @synthesize assetClassfyResult=_assetClassfyResult;
 - (void)asyncCheckClassfyResult:(CDUnknownBlockType)arg1;
@@ -22,4 +22,3 @@
 - (_Bool)hasGetClassfyResult;
 
 @end
-

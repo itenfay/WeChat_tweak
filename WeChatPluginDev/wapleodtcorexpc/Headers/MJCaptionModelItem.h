@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_duration;
 + (void)PBArrayAdd_startTime;
 + (void)PBArrayAdd_text;
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;

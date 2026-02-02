@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UNNotificationSettings, WeToast;
 
 @interface NotificationActionsMgr
@@ -17,7 +19,6 @@
 
 + (void)setApplicationIconBadgeNumber:(unsigned int)arg1;
 + (void)registerNotification;
-- (void).cxx_destruct;
 @property _Bool appLaunchedDueToNotification; // @synthesize appLaunchedDueToNotification=_appLaunchedDueToNotification;
 @property(readonly, nonatomic) UNNotificationSettings *notificationSettings; // @synthesize notificationSettings=_notificationSettings;
 @property(readonly, retain, nonatomic) NSDictionary *actionMaping; // @synthesize actionMaping=_actionMaping;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

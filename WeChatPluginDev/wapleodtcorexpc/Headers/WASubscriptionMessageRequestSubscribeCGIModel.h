@@ -18,7 +18,6 @@
     NSString *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int popupScene; // @synthesize popupScene=_popupScene;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMUIButton, MMUILabel, MMUITextField, NSString, UIVisualEffectView;
 
@@ -29,7 +30,6 @@
     double _contentBottomWhenKeyboardShow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentBottomWhenKeyboardShow; // @synthesize contentBottomWhenKeyboardShow=_contentBottomWhenKeyboardShow;
 @property(nonatomic) _Bool isKeyboardShow; // @synthesize isKeyboardShow=_isKeyboardShow;
 @property(nonatomic) unsigned int maxInputWordCount; // @synthesize maxInputWordCount=_maxInputWordCount;
@@ -81,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

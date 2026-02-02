@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UITableView, WAAuthorizeResultInfo, WANickNameAndHeaderAuthViewModel, WANicknameAndHeadAuthorizeSheetInfo;
 @protocol IWAAuthorizeAddAvatarService, WAAuthorizePageDelegate;
 
@@ -17,7 +19,6 @@
 }
 
 + (id)convertAvatarInfoListFromProto:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) id <IWAAuthorizeAddAvatarService> authorizeAddAvatarProxyService; // @synthesize authorizeAddAvatarProxyService=_authorizeAddAvatarProxyService;
 @property(nonatomic) unsigned int sessionId; // @synthesize sessionId=_sessionId;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

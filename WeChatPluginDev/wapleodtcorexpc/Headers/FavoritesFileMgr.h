@@ -12,7 +12,6 @@
     _Bool _forbidCheck;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidCheck; // @synthesize forbidCheck=_forbidCheck;
 - (void)checkAndCleanUnRetainFileWithFavItem:(id)arg1;
 - (id)getRetainMd5ByLocalId:(unsigned int)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebViewController, NSString;
 
@@ -24,7 +25,6 @@
     MMWebViewController *_curWebViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) MMWebViewController *curWebViewController; // @synthesize curWebViewController=_curWebViewController;
 @property(copy, nonatomic) CDUnknownBlockType endBlock; // @synthesize endBlock=_endBlock;
 @property(nonatomic) _Bool autoCloseWebView; // @synthesize autoCloseWebView=_autoCloseWebView;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

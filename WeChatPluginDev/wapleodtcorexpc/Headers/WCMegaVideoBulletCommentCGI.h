@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCMegaVideoBulletCommentCGI
@@ -17,7 +19,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAuthorView; // @synthesize isAuthorView=_isAuthorView;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
@@ -32,4 +33,3 @@
 - (id)initWithVideoId:(id)arg1 videoNonceId:(id)arg2 videoTimestamp:(unsigned long long)arg3 content:(id)arg4 username:(id)arg5 isAuthorView:(_Bool)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

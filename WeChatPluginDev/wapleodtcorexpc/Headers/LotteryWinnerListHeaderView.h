@@ -20,7 +20,6 @@
 }
 
 + (double)headerHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLotteryInfo *lotteryInfo; // @synthesize lotteryInfo=_lotteryInfo;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;
 @property(retain, nonatomic) MMUILabel *lotteryWinTimeTitleLabel; // @synthesize lotteryWinTimeTitleLabel=_lotteryWinTimeTitleLabel;

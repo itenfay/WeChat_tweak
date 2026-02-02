@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     NSString *_businessKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *businessKey; // @synthesize businessKey=_businessKey;
 @property(copy, nonatomic) NSString *miniProgramID; // @synthesize miniProgramID=_miniProgramID;
 - (id)appendParameterStringFor:(id)arg1 fileName:(id)arg2;
@@ -24,4 +24,3 @@
 - (id)initWithMiniProgramID:(id)arg1 businessKey:(id)arg2;
 
 @end
-

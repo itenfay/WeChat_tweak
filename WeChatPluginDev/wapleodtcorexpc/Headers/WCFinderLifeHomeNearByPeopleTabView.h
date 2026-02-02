@@ -13,7 +13,6 @@
     UIImageView *_iconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void)layoutSubviews;

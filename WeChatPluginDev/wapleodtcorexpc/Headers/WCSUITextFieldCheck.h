@@ -10,7 +10,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onEditChange:(id)arg1;
 - (void)onEndEdit:(id)arg1;
 - (void)onBeginEdit:(id)arg1;

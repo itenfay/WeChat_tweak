@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TSEnvironment : NSObject
 {
@@ -27,4 +28,3 @@
 + (_Bool)isBeingDebugged;
 
 @end
-

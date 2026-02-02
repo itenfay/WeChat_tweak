@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (WCFinder)
 - (id)takeSnapshot;
@@ -46,4 +47,3 @@
 - (void)loopSetStyles:(CDUnknownBlockType)arg1;
 - (void)loopChilds:(CDUnknownBlockType)arg1;
 @end
-

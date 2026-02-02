@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_dicSolitaireForMatch;
 + (void)PBArrayAdd_dicActiveSolitaire;
 + (void)PBArrayAdd_chatName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicSolitaireForMatch; // @synthesize dicSolitaireForMatch=_dicSolitaireForMatch;
 @property(retain, nonatomic) NSMutableDictionary *dicActiveSolitaire; // @synthesize dicActiveSolitaire=_dicActiveSolitaire;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;

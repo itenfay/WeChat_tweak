@@ -52,7 +52,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *FavItemReservedText; // @synthesize FavItemReservedText=_FavItemReservedText;
 @property(nonatomic) unsigned int FavItemReservedInt; // @synthesize FavItemReservedInt=_FavItemReservedInt;
 @property(retain, nonatomic) NSString *searchSource; // @synthesize searchSource;

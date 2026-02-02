@@ -19,7 +19,6 @@
     NSMutableSet *_exposedEntries;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedEntries; // @synthesize exposedEntries=_exposedEntries;
 @property(retain, nonatomic) NSMutableArray *selectedEntries; // @synthesize selectedEntries=_selectedEntries;
 @property(nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;

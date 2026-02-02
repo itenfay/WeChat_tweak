@@ -16,7 +16,6 @@
 }
 
 + (id)concertInfoWithBackendModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long topicType; // @synthesize topicType=_topicType;
 @property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;
 @property(retain, nonatomic) NSString *concertActivityId; // @synthesize concertActivityId=_concertActivityId;

@@ -16,7 +16,6 @@
 
 + (id)getTimeFormatString:(unsigned int)arg1;
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *pluginDescLabel; // @synthesize pluginDescLabel=_pluginDescLabel;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

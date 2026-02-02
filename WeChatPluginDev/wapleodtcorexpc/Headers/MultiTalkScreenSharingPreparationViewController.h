@@ -15,7 +15,6 @@
     long long _fileValidationStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long fileValidationStatus; // @synthesize fileValidationStatus=_fileValidationStatus;
 @property(copy, nonatomic) NSString *fileValidationPath; // @synthesize fileValidationPath=_fileValidationPath;
 @property(nonatomic) _Bool startButtonClicked; // @synthesize startButtonClicked=_startButtonClicked;

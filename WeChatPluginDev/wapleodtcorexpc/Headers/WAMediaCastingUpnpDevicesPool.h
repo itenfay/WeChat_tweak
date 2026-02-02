@@ -14,7 +14,6 @@
     NSObject<OS_dispatch_queue> *_synchronizationQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizationQueue; // @synthesize synchronizationQueue=_synchronizationQueue;
 @property(retain, nonatomic) NSMutableDictionary *pool; // @synthesize pool=_pool;
 - (id)allDevices;

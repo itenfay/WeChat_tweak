@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSAttributedString, NSMutableArray, NSMutableAttributedString, NSString, NSTimer, UIBezierPath, UIColor, UIFont, YYTextContainer, YYTextDebugOption, YYTextHighlight, YYTextLayout;
 @protocol YYTextLinePositionModifier, YYTextParser;
@@ -65,7 +66,6 @@
 
 + (Class)layerClass;
 + (id)_shrinkLayoutWithLayout:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreCommonProperties; // @synthesize ignoreCommonProperties=_ignoreCommonProperties;
 @property(nonatomic) _Bool fadeOnHighlight; // @synthesize fadeOnHighlight=_fadeOnHighlight;
 @property(nonatomic) _Bool fadeOnAsynchronouslyDisplay; // @synthesize fadeOnAsynchronouslyDisplay=_fadeOnAsynchronouslyDisplay;
@@ -158,4 +158,3 @@
 @property(readonly) Class superclass;
 
 @end
-

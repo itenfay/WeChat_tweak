@@ -19,7 +19,6 @@
     NSString *_checkTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkState; // @synthesize checkState=_checkState;
 @property(copy, nonatomic) NSString *checkTitle; // @synthesize checkTitle=_checkTitle;
 @property(nonatomic) _Bool hasCheckBtn; // @synthesize hasCheckBtn=_hasCheckBtn;

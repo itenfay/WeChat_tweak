@@ -23,7 +23,6 @@
     FinderLiveContact *_anchorContact;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeverJoinFanclub; // @synthesize isNeverJoinFanclub=_isNeverJoinFanclub;
 @property(retain, nonatomic) FinderLiveContact *anchorContact; // @synthesize anchorContact=_anchorContact;
 @property(retain, nonatomic) FinderLiveNoticeBubbleInfo *noticeBubbleInfo; // @synthesize noticeBubbleInfo=_noticeBubbleInfo;

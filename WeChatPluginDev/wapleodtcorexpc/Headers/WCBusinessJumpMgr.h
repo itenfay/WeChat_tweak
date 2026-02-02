@@ -15,7 +15,6 @@
 
 + (_Bool)isUniversalLinksBusinessJumpMiniProgram:(id)arg1;
 + (id)getBusinessName:(id)arg1;
-- (void).cxx_destruct;
 - (id)getNavigationControllerToPushOrPresentVC;
 - (void)internalHandleJump:(id)arg1 translateInfo:(id)arg2 parentViewController:(id)arg3;
 - (_Bool)isBusinessJump:(id)arg1;

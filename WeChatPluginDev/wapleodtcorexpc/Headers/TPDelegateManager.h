@@ -23,7 +23,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) NSMutableDictionary *mOfflineDownloadDelegateMap; // @synthesize mOfflineDownloadDelegateMap=_mOfflineDownloadDelegateMap;

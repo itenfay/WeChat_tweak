@@ -28,7 +28,6 @@
 }
 
 + (double)descLabelFontSize;
-- (void).cxx_destruct;
 @property(nonatomic) double detailHeight; // @synthesize detailHeight=_detailHeight;
 @property(nonatomic) double titleHeight; // @synthesize titleHeight=_titleHeight;
 @property(retain, nonatomic) MMUIButton *renameButton; // @synthesize renameButton=_renameButton;

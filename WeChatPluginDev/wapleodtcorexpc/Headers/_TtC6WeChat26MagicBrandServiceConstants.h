@@ -26,7 +26,6 @@
 + (id)EventOnBrandServiceBoxExpose;
 + (long long)BrandRecFeeds;
 + (long long)BrandFeeds;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

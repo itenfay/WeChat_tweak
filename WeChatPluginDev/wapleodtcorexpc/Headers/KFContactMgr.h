@@ -12,7 +12,6 @@
     NSMutableDictionary *_dictOpenId2ReqInfo;
 }
 
-- (void).cxx_destruct;
 - (id)kfContactListFromWorkinfoList:(id)arg1 brandUsrName:(id)arg2;
 - (void)updateKFContactsToLocal:(id)arg1 brandUsrName:(id)arg2;
 - (void)handleGetKFContactInfo:(id)arg1;

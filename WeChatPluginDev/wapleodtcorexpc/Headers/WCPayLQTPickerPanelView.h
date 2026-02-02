@@ -20,7 +20,6 @@
     UIPickerView *_timePicker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPickerView *timePicker; // @synthesize timePicker=_timePicker;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_pidsWithReddotStatus;
 + (void)PBArrayAdd_reddotTimeStamp;
 + (void)PBArrayAdd_designerUin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pidsWithReddotStatus; // @synthesize pidsWithReddotStatus=_pidsWithReddotStatus;
 @property(nonatomic) unsigned int reddotTimeStamp; // @synthesize reddotTimeStamp=_reddotTimeStamp;
 @property(retain, nonatomic) NSString *designerUin; // @synthesize designerUin=_designerUin;

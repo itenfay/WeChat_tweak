@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MMUILandscapeSheetViewController
@@ -11,7 +13,6 @@
     unsigned long long _overrideOrientationMask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long overrideOrientationMask; // @synthesize overrideOrientationMask=_overrideOrientationMask;
 @property(copy, nonatomic) CDUnknownBlockType onRequirePortrait; // @synthesize onRequirePortrait=_onRequirePortrait;
 - (void)didAppearFromSearchController;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

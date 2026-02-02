@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WAContact, WAThreadSafeMutableDictionary;
 
@@ -14,7 +15,6 @@
     WAThreadSafeMutableDictionary *_fetchType2Observers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAThreadSafeMutableDictionary *fetchType2Observers; // @synthesize fetchType2Observers=_fetchType2Observers;
 @property(retain, nonatomic) WAThreadSafeMutableDictionary *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
@@ -36,4 +36,3 @@
 - (id)initWithContact:(id)arg1;
 
 @end
-

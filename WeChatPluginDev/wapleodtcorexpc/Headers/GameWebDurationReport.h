@@ -25,7 +25,6 @@
 }
 
 + (unsigned long long)getMonotonicTimeInMillseconds;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool beLiteApp; // @synthesize beLiteApp=_beLiteApp;
 @property(nonatomic) unsigned long long clientDurationGap; // @synthesize clientDurationGap=_clientDurationGap;
 @property(retain, nonatomic) NSMutableDictionary *externInfoDict; // @synthesize externInfoDict=_externInfoDict;

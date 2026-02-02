@@ -13,7 +13,6 @@
     UIButton *_confirmBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmBtn; // @synthesize confirmBtn=_confirmBtn;
 @property(retain, nonatomic) WCPayOfflinePayBlockLayer *viewData; // @synthesize viewData=_viewData;
 @property(nonatomic) __weak id <WCPayOfflinePayBlockTipsViewDelegate> delegate; // @synthesize delegate=_delegate;

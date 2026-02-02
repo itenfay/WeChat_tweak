@@ -10,7 +10,6 @@
     NSMutableDictionary *_contactCaches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contactCaches; // @synthesize contactCaches=_contactCaches;
 - (id)getClubContactCache:(id)arg1;
 - (id)selfContactCache;

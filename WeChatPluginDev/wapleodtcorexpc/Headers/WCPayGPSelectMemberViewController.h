@@ -30,7 +30,6 @@
     NSMutableDictionary *_cellHeightDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cellHeightDict; // @synthesize cellHeightDict=_cellHeightDict;
 @property(nonatomic) double kSelectMemberTopBarHeight; // @synthesize kSelectMemberTopBarHeight=_kSelectMemberTopBarHeight;
 @property(retain, nonatomic) NSArray *searchResultContacts; // @synthesize searchResultContacts=_searchResultContacts;

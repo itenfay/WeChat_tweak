@@ -21,7 +21,6 @@
     MoveWithTouchAlgorithm *_moveAlgorithm;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MoveWithTouchAlgorithm *moveAlgorithm; // @synthesize moveAlgorithm=_moveAlgorithm;
 @property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;

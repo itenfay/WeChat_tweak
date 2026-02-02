@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MultiTalkBottomOperatePanel, MultiTalkScreenSharingAudienceView, NSObject, UIView, WCVideoOpenglRender;
 @protocol MultiTalkMemberProtocol, MultiTalkScreenSharingAudienceViewControllerDelegate;
 
@@ -22,7 +24,6 @@
     long long _lastInterfaceOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastInterfaceOrientation; // @synthesize lastInterfaceOrientation=_lastInterfaceOrientation;
 @property(nonatomic) _Bool shouldHideBlurAfterAnimation; // @synthesize shouldHideBlurAfterAnimation=_shouldHideBlurAfterAnimation;
 @property(retain, nonatomic) UIView *selectedMemberCell; // @synthesize selectedMemberCell=_selectedMemberCell;
@@ -53,4 +54,3 @@
 - (void)handleScreenEdgePanGesture:(id)arg1;
 
 @end
-

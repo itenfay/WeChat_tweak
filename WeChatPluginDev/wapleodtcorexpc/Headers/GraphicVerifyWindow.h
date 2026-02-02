@@ -17,7 +17,6 @@
     UIWindow *oldKeyWindow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *m_codeImageView; // @synthesize m_codeImageView;
 @property(retain, nonatomic) UIWindow *oldKeyWindow; // @synthesize oldKeyWindow;
 - (void)resignKeyWindow;

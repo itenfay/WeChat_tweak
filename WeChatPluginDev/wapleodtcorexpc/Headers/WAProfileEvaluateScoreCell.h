@@ -14,7 +14,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAProfileRatingView *ratingView; // @synthesize ratingView=_ratingView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setViewDataModel:(id)arg1;

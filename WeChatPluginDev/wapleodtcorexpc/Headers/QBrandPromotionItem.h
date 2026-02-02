@@ -27,7 +27,6 @@
     NSString *_night_pic_url;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int rank; // @synthesize rank=_rank;
 @property(copy, nonatomic) NSString *night_pic_url; // @synthesize night_pic_url=_night_pic_url;
 @property(copy, nonatomic) NSString *day_pic_url; // @synthesize day_pic_url=_day_pic_url;

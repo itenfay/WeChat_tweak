@@ -24,7 +24,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *timeRangesByPointOffsetRange; // @synthesize timeRangesByPointOffsetRange=_timeRangesByPointOffsetRange;
 @property(retain, nonatomic) NSMapTable *pointOffsetRangesByTimeRange; // @synthesize pointOffsetRangesByTimeRange=_pointOffsetRangesByTimeRange;
 @property(nonatomic) SharedPtr_9eb4f64e offset2TimeMapper; // @synthesize offset2TimeMapper=_offset2TimeMapper;

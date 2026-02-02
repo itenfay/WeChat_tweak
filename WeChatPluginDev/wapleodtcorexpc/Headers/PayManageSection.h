@@ -15,7 +15,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) TextViewData *footer; // @synthesize footer=_footer;
 @property(retain) TextViewData *header; // @synthesize header=_header;
 @property(retain) NSArray *extra_labels; // @synthesize extra_labels=_extra_labels;

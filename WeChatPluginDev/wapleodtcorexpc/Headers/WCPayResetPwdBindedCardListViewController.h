@@ -19,7 +19,6 @@
     MMTipsViewController *_errorTipsViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTipsViewController *errorTipsViewController; // @synthesize errorTipsViewController=_errorTipsViewController;
 @property(retain, nonatomic) UIButton *qaButton; // @synthesize qaButton=_qaButton;
 - (void)onQAButtonClick;

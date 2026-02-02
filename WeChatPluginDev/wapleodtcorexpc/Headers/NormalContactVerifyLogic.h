@@ -16,7 +16,6 @@
     NSString *_m_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_reportInfo; // @synthesize m_reportInfo=_m_reportInfo;
 @property(nonatomic) unsigned int m_qrAddScene; // @synthesize m_qrAddScene=_m_qrAddScene;
 @property(nonatomic) __weak id <NormalContactVerifyLogicDelegate> delegate; // @synthesize delegate=_delegate;

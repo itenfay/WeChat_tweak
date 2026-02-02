@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCStoryDataItem, WCStoryPreviewReportObj;
 @protocol WCStoryCommentOthersViewModelDelegate;
@@ -18,7 +19,6 @@
 }
 
 + (id)viewModelWithTid:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryPreviewReportObj *reportObj; // @synthesize reportObj=_reportObj;
 @property(retain, nonatomic) NSMutableArray *cellHeights; // @synthesize cellHeights=_cellHeights;
 @property(retain, nonatomic) WCStoryDataItem *dataItem; // @synthesize dataItem=_dataItem;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

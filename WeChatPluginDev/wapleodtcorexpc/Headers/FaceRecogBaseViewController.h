@@ -11,7 +11,6 @@
     FaceRecogBaseView *_baseView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bUseBlackStatusbar; // @synthesize bUseBlackStatusbar=_bUseBlackStatusbar;
 @property(retain, nonatomic) FaceRecogBaseView *baseView; // @synthesize baseView=_baseView;
 - (long long)overrideUserInterfaceStyle;

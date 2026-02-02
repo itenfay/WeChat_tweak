@@ -11,7 +11,6 @@
     DiscoverEntranceSetSwitchInfo *_nearByPeopleSwitchInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DiscoverEntranceSetSwitchInfo *nearByPeopleSwitchInfo; // @synthesize nearByPeopleSwitchInfo=_nearByPeopleSwitchInfo;
 @property(nonatomic) _Bool nearbyPeopleEntranceEnabled; // @synthesize nearbyPeopleEntranceEnabled=_nearbyPeopleEntranceEnabled;
 - (id)statusDesc;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, MMFinderLiveNoticePosterModel, MMWebImageView, NSDateFormatter, NSString, UIButton, UIImage, UIImageView, UILabel, WCFinderContact, WCFinderHeadImageView;
 @protocol MMFinderLiveNoticeDetailsViewDelegate;
@@ -45,7 +46,6 @@
     UIView *_posterBackgroundImageShadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *posterBackgroundImageShadingView; // @synthesize posterBackgroundImageShadingView=_posterBackgroundImageShadingView;
 @property(retain, nonatomic) UIImageView *posterBackgroundImageView; // @synthesize posterBackgroundImageView=_posterBackgroundImageView;
 @property(retain, nonatomic) UIView *posterBackgroundImageContainer; // @synthesize posterBackgroundImageContainer=_posterBackgroundImageContainer;
@@ -108,4 +108,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -14,7 +14,6 @@
     NSOperationQueue *m_queue;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)stopCheck;
 - (void)startCheck;

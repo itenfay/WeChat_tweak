@@ -16,7 +16,6 @@
 }
 
 + (id)foldInfoSavePath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCMicroMerchantFoldInfo *foldInfo; // @synthesize foldInfo=_foldInfo;
 @property(readonly, nonatomic) _Bool isGenerating; // @synthesize isGenerating=_isGenerating;
 - (void)asyncSaveFoldInfo;

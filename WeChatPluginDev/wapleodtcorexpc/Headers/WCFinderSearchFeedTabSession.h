@@ -21,7 +21,6 @@
     NSMutableArray *_mutFeedItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutFeedItems; // @synthesize mutFeedItems=_mutFeedItems;
 @property(retain, nonatomic) NSString *reqId; // @synthesize reqId=_reqId;
 @property(nonatomic) _Bool isError; // @synthesize isError=_isError;

@@ -12,7 +12,6 @@
     NSMutableDictionary *_cachedPredictedResults;
 }
 
-- (void).cxx_destruct;
 - (void)handleVideoSourcePredictTaskDidComplete:(id)arg1;
 - (id)predictVideoSourceWithDataItems:(id)arg1;
 - (_Bool)predictVideoSourceWithDataItem:(id)arg1;

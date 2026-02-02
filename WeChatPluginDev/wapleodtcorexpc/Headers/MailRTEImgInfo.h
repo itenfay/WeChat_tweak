@@ -10,7 +10,6 @@
     MailRTEAttachment *_attachment;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MailRTEAttachment *attachment; // @synthesize attachment=_attachment;
 - (id)getImgPath;
 - (_Bool)isGifMsg;

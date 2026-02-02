@@ -19,7 +19,6 @@
 }
 
 + (id)paramsWithSelectGoResponse:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportScenario; // @synthesize reportScenario=_reportScenario;
 @property(retain, nonatomic) NSData *paramsBuffer; // @synthesize paramsBuffer=_paramsBuffer;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;

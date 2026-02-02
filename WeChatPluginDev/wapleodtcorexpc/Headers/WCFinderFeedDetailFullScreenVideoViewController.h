@@ -18,7 +18,6 @@
     struct CGPoint _panStartPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isViewWillAppear; // @synthesize isViewWillAppear=_isViewWillAppear;
 @property(nonatomic) _Bool isPullingDown; // @synthesize isPullingDown=_isPullingDown;
 @property(nonatomic) struct CGPoint panStartPoint; // @synthesize panStartPoint=_panStartPoint;

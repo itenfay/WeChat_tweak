@@ -15,7 +15,6 @@
     NSString *_cacheKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needDisplay; // @synthesize needDisplay=_needDisplay;
 @property(copy, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(nonatomic) double cacheTimestamp; // @synthesize cacheTimestamp=_cacheTimestamp;

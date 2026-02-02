@@ -47,7 +47,6 @@
 
 + (id)getTextFrom:(struct XmlReaderNode_t *)arg1 atNodeName:(id)arg2;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *realdescolordark; // @synthesize realdescolordark=_realdescolordark;
 @property(retain, nonatomic) NSString *realtitlecolordark; // @synthesize realtitlecolordark=_realtitlecolordark;
 @property(retain, nonatomic) ThirdC2CRouteInfo *routeInfo; // @synthesize routeInfo=_routeInfo;

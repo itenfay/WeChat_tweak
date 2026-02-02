@@ -13,7 +13,6 @@
     UIView *_transparentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *transparentView; // @synthesize transparentView=_transparentView;
 @property(retain, nonatomic) MMScrollableActionSheetContainerView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak id <MMScrollableActionSheetDelegate> delegate; // @synthesize delegate=_delegate;

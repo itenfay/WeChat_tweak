@@ -14,7 +14,6 @@
     id <JumpToBizWebviewBlockViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <JumpToBizWebviewBlockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onJumpToBizWebview:(int)arg1 WithErrMsg:(id)arg2 WithUrl:(id)arg3;
 - (void)onReturn;

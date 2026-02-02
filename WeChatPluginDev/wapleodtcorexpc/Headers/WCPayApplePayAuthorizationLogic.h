@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiteAppDynamicModuleCallback, NSDictionary, NSString, UIViewController;
 @protocol WCPayApplePayAuthorizationLogicDelegate;
@@ -19,7 +20,6 @@
     CDUnknownBlockType _paymentCompletionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType paymentCompletionHandler; // @synthesize paymentCompletionHandler=_paymentCompletionHandler;
 @property(retain, nonatomic) UIViewController *paymentViewController; // @synthesize paymentViewController=_paymentViewController;
 @property(retain, nonatomic) NSDictionary *option; // @synthesize option=_option;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

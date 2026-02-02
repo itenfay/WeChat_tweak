@@ -34,7 +34,6 @@
     CdnUploadTaskInfo *_taskInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int retryMaxCount; // @synthesize retryMaxCount=_retryMaxCount;
 @property(nonatomic) _Bool bJustUploadDataWithoutMD5Hit; // @synthesize bJustUploadDataWithoutMD5Hit=_bJustUploadDataWithoutMD5Hit;
 @property(nonatomic) _Bool enableHitCheck; // @synthesize enableHitCheck=_enableHitCheck;

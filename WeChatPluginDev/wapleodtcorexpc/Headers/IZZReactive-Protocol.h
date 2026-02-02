@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSObject;
 @protocol IZZReactive;
@@ -19,4 +20,3 @@
 - (id)getIDRetrunValue;
 - (void)getReturnValue:(void *)arg1;
 @end
-

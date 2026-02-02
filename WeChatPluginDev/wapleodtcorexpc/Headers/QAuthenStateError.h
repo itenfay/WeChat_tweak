@@ -13,7 +13,6 @@
     NSMutableDictionary *_errorInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *errorInfo; // @synthesize errorInfo=_errorInfo;
 @property(retain, nonatomic) TBMapCommonCounter *retryCounter; // @synthesize retryCounter=_retryCounter;
 - (id)toDictionary;

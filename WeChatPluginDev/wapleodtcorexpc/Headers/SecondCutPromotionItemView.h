@@ -15,7 +15,6 @@
     UDRSecondCutPromotionItem *_promotionItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UDRSecondCutPromotionItem *promotionItem; // @synthesize promotionItem=_promotionItem;
 @property(retain, nonatomic) UIStackView *trailingStack; // @synthesize trailingStack;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel;

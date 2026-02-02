@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString;
 
 @interface CdnServiceMgr
@@ -15,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicTasksBlock; // @synthesize dicTasksBlock=_dicTasksBlock;
 @property(retain, nonatomic) NSMutableArray *arrNotInitDownloadTaskBlock; // @synthesize arrNotInitDownloadTaskBlock=_arrNotInitDownloadTaskBlock;
 @property(retain, nonatomic) NSMutableArray *arrNotInitUploadTaskBlock; // @synthesize arrNotInitUploadTaskBlock=_arrNotInitUploadTaskBlock;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

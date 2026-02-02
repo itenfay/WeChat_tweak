@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView;
 
 @interface QPinAnnotationView
@@ -13,7 +15,6 @@
     struct CGRect _validRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect validRect; // @synthesize validRect=_validRect;
 @property(nonatomic) _Bool animatesDrop; // @synthesize animatesDrop=_animatesDrop;
 @property(retain, nonatomic) UIImageView *shadowImageView; // @synthesize shadowImageView=_shadowImageView;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

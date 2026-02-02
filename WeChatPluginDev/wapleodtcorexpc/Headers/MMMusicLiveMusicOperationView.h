@@ -24,7 +24,6 @@
     double _lastSeekTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSeekNotSuccPlayAuto; // @synthesize isSeekNotSuccPlayAuto=_isSeekNotSuccPlayAuto;
 @property(nonatomic) _Bool isSeekNotSuccRefreshUIFlag; // @synthesize isSeekNotSuccRefreshUIFlag=_isSeekNotSuccRefreshUIFlag;
 @property(nonatomic) double lastSeekTime; // @synthesize lastSeekTime=_lastSeekTime;

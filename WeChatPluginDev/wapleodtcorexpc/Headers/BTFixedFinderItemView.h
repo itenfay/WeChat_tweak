@@ -10,7 +10,6 @@
     CAGradientLayer *_colorMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *colorMaskLayer; // @synthesize colorMaskLayer=_colorMaskLayer;
 - (void)layoutCoverContainerView:(id)arg1;
 - (void)setupCoverContainer:(id)arg1;

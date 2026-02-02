@@ -14,7 +14,6 @@
     struct RenderTarget *_target;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct RenderTarget *target; // @synthesize target=_target;
 @property(nonatomic) __weak MagicBrushCore *magicbrush; // @synthesize magicbrush=_magicbrush;
 @property(nonatomic) int canvasId; // @synthesize canvasId=_canvasId;

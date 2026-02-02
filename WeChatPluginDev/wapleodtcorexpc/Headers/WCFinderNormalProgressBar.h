@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSNumber, NSString, UIPanGestureRecognizer, UIView, WCFinderNormalProgressBarConfig;
 
 @interface WCFinderNormalProgressBar
@@ -21,7 +23,6 @@
 
 + (double)progressBarVisibleHeight;
 + (id)finderNormalProgressBarWithFrame:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double lastX; // @synthesize lastX=_lastX;
 @property(nonatomic) int lastTime; // @synthesize lastTime=_lastTime;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGes; // @synthesize panGes=_panGes;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     NSString *_btn_confirm;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *btn_confirm; // @synthesize btn_confirm=_btn_confirm;
 @property(retain) NSString *btn_cancel; // @synthesize btn_cancel=_btn_cancel;
 @property(retain) NSString *wording; // @synthesize wording=_wording;

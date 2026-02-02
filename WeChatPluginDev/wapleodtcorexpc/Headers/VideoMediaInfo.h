@@ -22,7 +22,6 @@
     NSString *_acodec;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *acodec; // @synthesize acodec=_acodec;
 @property(retain, nonatomic) NSString *vcodec; // @synthesize vcodec=_vcodec;
 @property(nonatomic) unsigned int modifiyTime; // @synthesize modifiyTime=_modifiyTime;

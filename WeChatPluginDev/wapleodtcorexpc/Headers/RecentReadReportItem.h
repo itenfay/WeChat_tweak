@@ -14,7 +14,6 @@
     unsigned long long _timeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(retain, nonatomic) BizRecentReadSmallItemViewModel *viewModel; // @synthesize viewModel=_viewModel;

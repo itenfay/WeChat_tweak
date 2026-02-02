@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *buffer; // @synthesize buffer=_buffer;
 @property(nonatomic) unsigned int nextSyncTime; // @synthesize nextSyncTime=_nextSyncTime;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;

@@ -17,7 +17,6 @@
     TextStateEmojiBoardModel *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateEmojiBoardModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) TextStatePublishIconList *publishIconList; // @synthesize publishIconList=_publishIconList;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;

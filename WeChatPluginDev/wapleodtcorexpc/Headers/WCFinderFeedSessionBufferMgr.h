@@ -13,7 +13,6 @@
     WCFinderWCDB *_finderDB;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderWCDB *finderDB; // @synthesize finderDB=_finderDB;
 @property(retain, nonatomic) MMLRUCache *cache; // @synthesize cache=_cache;
 - (id)_cacheKeyWithTid:(id)arg1 scene:(int)arg2 extraKey:(id)arg3;

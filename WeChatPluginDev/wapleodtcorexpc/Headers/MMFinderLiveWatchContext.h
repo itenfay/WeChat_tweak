@@ -15,7 +15,6 @@
 
 + (void)CleanContext;
 + (id)CurrentContext;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAudienceReportContext *reportContext; // @synthesize reportContext=_reportContext;
 @property(retain, nonatomic) MMFinderLiveWatchRecommandData *recommandData; // @synthesize recommandData=_recommandData;
 - (void)reinit;

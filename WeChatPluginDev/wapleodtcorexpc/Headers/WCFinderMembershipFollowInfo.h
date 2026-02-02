@@ -49,7 +49,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long isCancel; // @synthesize isCancel=_isCancel;
 @property(nonatomic) unsigned long long subscriptionType; // @synthesize subscriptionType=_subscriptionType;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;

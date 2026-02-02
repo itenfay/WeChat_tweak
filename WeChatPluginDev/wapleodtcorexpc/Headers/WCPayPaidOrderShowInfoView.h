@@ -14,7 +14,6 @@
     id <WCPayPaidOrderShowInfoViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayPaidOrderShowInfoViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSArray *m_showArray; // @synthesize m_showArray=_m_showArray;
 - (void)onSingleTap:(id)arg1;

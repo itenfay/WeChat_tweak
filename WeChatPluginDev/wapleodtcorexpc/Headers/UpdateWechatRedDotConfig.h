@@ -27,7 +27,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_nsNewXml;
 + (void)PBArrayAdd_uiHasShowReddotlevel;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiExpireTime; // @synthesize uiExpireTime=_uiExpireTime;
 @property(nonatomic) unsigned int uiReddotlevel; // @synthesize uiReddotlevel=_uiReddotlevel;
 @property(nonatomic) unsigned int uiClientVersion; // @synthesize uiClientVersion=_uiClientVersion;

@@ -22,7 +22,6 @@
 
 + (id)ReuseIdentifier;
 + (struct CGSize)cellSize;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needUpdateLayerColor; // @synthesize needUpdateLayerColor=_needUpdateLayerColor;
 @property(retain, nonatomic) CAGradientLayer *shadowGradientLayer; // @synthesize shadowGradientLayer=_shadowGradientLayer;
 @property(retain, nonatomic) CAGradientLayer *mainColorGradientLayer; // @synthesize mainColorGradientLayer=_mainColorGradientLayer;

@@ -31,7 +31,6 @@
 + (unsigned long long)verticalFlipOfTransform:(unsigned long long)arg1;
 + (unsigned long long)rotate180OfTransform:(unsigned long long)arg1;
 + (unsigned long long)transformOfRotation:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *transform; // @synthesize transform=_transform;
 @property(nonatomic) _Bool outputMirror; // @synthesize outputMirror=_outputMirror;
 @property(nonatomic) unsigned long long outputRotation; // @synthesize outputRotation=_outputRotation;

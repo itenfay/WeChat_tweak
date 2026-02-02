@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTagTextField, MMUILabel, NSString, UIBarButtonItem, UIButton, UIColor, UIImage, UIImageView, UILabel, UIStackView, WCSearchViewController, _TtC6WeChat36SearchInteractiveVoiceInputViewModel, _TtC6WeChat39SearchVoiceInputAccessoryViewController;
 
@@ -38,7 +39,6 @@
     CDUnknownBlockType _voiceInputResultHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType voiceInputResultHandler; // @synthesize voiceInputResultHandler=_voiceInputResultHandler;
 @property(copy, nonatomic) CDUnknownBlockType voiceInputBottomHandler; // @synthesize voiceInputBottomHandler=_voiceInputBottomHandler;
 @property(copy, nonatomic) CDUnknownBlockType voiceInputRightOpHandler; // @synthesize voiceInputRightOpHandler=_voiceInputRightOpHandler;
@@ -111,4 +111,3 @@
 @property(readonly) Class superclass;
 
 @end
-

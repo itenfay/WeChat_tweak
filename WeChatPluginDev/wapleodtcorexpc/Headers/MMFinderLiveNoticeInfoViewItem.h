@@ -16,7 +16,6 @@
     NSString *_finderUserName;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAuthor; // @synthesize isAuthor=_isAuthor;
 @property(readonly, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;
 @property(readonly, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;

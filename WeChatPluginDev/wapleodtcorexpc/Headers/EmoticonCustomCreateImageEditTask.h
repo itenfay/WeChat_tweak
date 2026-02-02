@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 @protocol EmoticonCustomCreateImageEditTaskDelegate;
 
@@ -15,7 +17,6 @@
     NSData *_imgData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *imgData; // @synthesize imgData=_imgData;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(copy, nonatomic) CDUnknownBlockType editCancelBlock; // @synthesize editCancelBlock=_editCancelBlock;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

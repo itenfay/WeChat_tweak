@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_voiceData;
 + (void)PBArrayAdd_voiceFormat;
 + (void)PBArrayAdd_index;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool endFlag; // @synthesize endFlag=_endFlag;
 @property(retain, nonatomic) NSData *voiceData; // @synthesize voiceData=_voiceData;
 @property(nonatomic) unsigned int voiceFormat; // @synthesize voiceFormat=_voiceFormat;

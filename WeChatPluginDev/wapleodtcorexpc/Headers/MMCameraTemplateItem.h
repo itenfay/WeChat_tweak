@@ -27,7 +27,6 @@
 + (id)genTempateItemList;
 + (id)itemFromMJVideoTemplate:(id)arg1;
 + (id)itemFromVideoTemplate:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(copy, nonatomic) NSString *previewImageURL; // @synthesize previewImageURL=_previewImageURL;
 @property(nonatomic) unsigned long long templateDescVersion; // @synthesize templateDescVersion=_templateDescVersion;

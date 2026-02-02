@@ -11,7 +11,6 @@
     RichTextView *_richTextLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextLabel; // @synthesize richTextLabel=_richTextLabel;
 @property(retain, nonatomic) _TtC6WeChat24SystemAuthCapabilityInfo *capabilityInfo; // @synthesize capabilityInfo=_capabilityInfo;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIPickerView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJDatePickerViewModel, NSDate, NSString;
 
@@ -13,7 +14,6 @@
     MJDatePickerViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJDatePickerViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(copy, nonatomic) CDUnknownBlockType dateDidChageHandler; // @synthesize dateDidChageHandler=_dateDidChageHandler;
 @property(readonly, nonatomic) NSDate *selectedDate;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

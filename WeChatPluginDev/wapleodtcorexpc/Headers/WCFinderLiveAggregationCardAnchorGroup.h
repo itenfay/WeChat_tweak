@@ -13,7 +13,6 @@
     NSData *_entryBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *entryBuffer; // @synthesize entryBuffer=_entryBuffer;
 @property(retain, nonatomic) NSMutableArray *anchor; // @synthesize anchor=_anchor;
 

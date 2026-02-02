@@ -19,7 +19,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderHistoryLiveInfoCellDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 @property(nonatomic) _Bool isSelfAnchor; // @synthesize isSelfAnchor=_isSelfAnchor;
 @property(retain, nonatomic) MMUIImageView *arrowIconView; // @synthesize arrowIconView=_arrowIconView;

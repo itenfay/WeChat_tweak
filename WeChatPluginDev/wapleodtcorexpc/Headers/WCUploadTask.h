@@ -102,7 +102,6 @@
 
 + (_Bool)isPendingBusinessValid:(int)arg1;
 + (id)getBusinessTypeStr:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSightVideoCompositeTask *cachedSightCompositeTask; // @synthesize cachedSightCompositeTask=_cachedSightCompositeTask;
 @property(retain, nonatomic) NSString *RISKY_savedSightCompositeTaskId; // @synthesize RISKY_savedSightCompositeTaskId=_RISKY_savedSightCompositeTaskId;
 @property(retain, nonatomic) WCMomentsPostReportSession *postReportSession; // @synthesize postReportSession=_postReportSession;

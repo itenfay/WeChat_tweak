@@ -33,7 +33,6 @@
 + (id)CMDIdKeyDicWithSceneIdDic:(id)arg1 InternalDic:(id)arg2;
 + (id)QrcodeUseBindQueryKey;
 + (id)AuthenKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsCurrentControlLogicName; // @synthesize m_nsCurrentControlLogicName;
 @property(nonatomic) __weak id <WCPayNetworkHelperDelegate> m_delegate; // @synthesize m_delegate;
 - (void)transformTenpayCGI:(_Bool)arg1 pbCGIWrap:(id)arg2 payScene:(unsigned int)arg3;

@@ -12,7 +12,6 @@
     WCFinderAnimationLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 - (void)stopLoading;
 - (void)startLoading;

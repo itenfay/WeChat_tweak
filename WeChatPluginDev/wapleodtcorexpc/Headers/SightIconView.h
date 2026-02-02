@@ -45,7 +45,6 @@
 + (id)PlayBtnOperation:(struct CGRect)arg1 color:(id)arg2;
 + (id)PlayBtnOperation:(struct CGRect)arg1;
 + (id)PlayBtnCover:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *iconTypeShadow; // @synthesize iconTypeShadow=_iconTypeShadow;
 @property(retain, nonatomic) NSMutableDictionary *iconTypeColor; // @synthesize iconTypeColor=_iconTypeColor;
 @property(retain, nonatomic) NSMutableDictionary *iconTypeRadius; // @synthesize iconTypeRadius=_iconTypeRadius;

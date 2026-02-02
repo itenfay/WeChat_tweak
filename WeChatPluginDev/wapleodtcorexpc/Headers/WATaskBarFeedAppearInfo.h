@@ -21,7 +21,6 @@
     unsigned long long _isRefresh;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long isRefresh; // @synthesize isRefresh=_isRefresh;
 @property(nonatomic) unsigned long long pageFeedIndex; // @synthesize pageFeedIndex=_pageFeedIndex;
 @property(retain, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;

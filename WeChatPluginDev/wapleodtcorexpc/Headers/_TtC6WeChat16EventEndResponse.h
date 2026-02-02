@@ -14,7 +14,6 @@
     MISSING_TYPE *requstId;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

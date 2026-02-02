@@ -36,7 +36,6 @@
     ColorGradientView *_blurView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ColorGradientView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) MMUILabel *callerMemberNameLabel; // @synthesize callerMemberNameLabel=_callerMemberNameLabel;
 @property(retain, nonatomic) MMUILabel *memberNameLabel; // @synthesize memberNameLabel=_memberNameLabel;

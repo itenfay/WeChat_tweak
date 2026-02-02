@@ -15,7 +15,6 @@
     long long _itemCategoryId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needPoi; // @synthesize needPoi=_needPoi;
 @property(nonatomic) long long itemCategoryId; // @synthesize itemCategoryId=_itemCategoryId;
 @property(nonatomic) long long itemStatus; // @synthesize itemStatus=_itemStatus;

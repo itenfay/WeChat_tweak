@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSMutableSet, NSObject, NSString, SolitaireAnalysiser;
 @protocol OS_dispatch_queue;
 
@@ -15,7 +17,6 @@
     NSObject<OS_dispatch_queue> *_writeQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 @property(retain, nonatomic) SolitaireAnalysiser *analysiser; // @synthesize analysiser=_analysiser;
 @property(retain, nonatomic) NSMutableSet *unFoldSet; // @synthesize unFoldSet=_unFoldSet;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

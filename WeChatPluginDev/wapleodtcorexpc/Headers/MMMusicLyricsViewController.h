@@ -27,7 +27,6 @@
     MMMusicListenLyricsViewController *_lyricContainerVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicListenLyricsViewController *lyricContainerVC; // @synthesize lyricContainerVC=_lyricContainerVC;
 @property(retain, nonatomic) UIButton *topAreaTapBtn; // @synthesize topAreaTapBtn=_topAreaTapBtn;
 @property(retain, nonatomic) UILabel *musicianLabel; // @synthesize musicianLabel=_musicianLabel;

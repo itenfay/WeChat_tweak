@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UICollectionView, WAAuthPageSheetViewModel, WAAuthorizeResultInfo, WAAuthorizeSheetInfo, ZZFLEXAngel;
 @protocol WAAuthorizePageSheetDelegate;
 
@@ -19,7 +21,6 @@
     WAAuthPageSheetViewModel *_psViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAuthPageSheetViewModel *psViewModel; // @synthesize psViewModel=_psViewModel;
 @property(retain, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

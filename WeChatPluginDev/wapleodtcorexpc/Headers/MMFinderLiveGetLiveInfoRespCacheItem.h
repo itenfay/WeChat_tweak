@@ -16,7 +16,6 @@
     NSString *_tipsId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tipsId; // @synthesize tipsId=_tipsId;
 @property(nonatomic) unsigned int noticeType; // @synthesize noticeType=_noticeType;
 @property(retain, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;

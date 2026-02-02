@@ -16,7 +16,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *labSwitch; // @synthesize labSwitch=_labSwitch;
 - (void)initLabel;
 - (void)initSwitch;

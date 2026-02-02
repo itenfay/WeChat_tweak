@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_desc;
 + (void)PBArrayAdd_m_languageCode;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_desc; // @synthesize m_desc=_m_desc;
 @property(retain, nonatomic) NSString *m_languageCode; // @synthesize m_languageCode=_m_languageCode;
 - (id)getPBPropertyTable;

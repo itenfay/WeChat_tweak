@@ -11,7 +11,6 @@
     double _cellHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

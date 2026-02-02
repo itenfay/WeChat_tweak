@@ -12,7 +12,6 @@
     WxaRouterConfig *_wxaRouterConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WxaRouterConfig *wxaRouterConfig; // @synthesize wxaRouterConfig=_wxaRouterConfig;
 - (void)setup;
 - (void)addFlutterPlugin:(id)arg1;

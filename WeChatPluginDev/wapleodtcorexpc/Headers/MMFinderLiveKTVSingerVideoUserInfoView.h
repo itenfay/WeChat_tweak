@@ -16,7 +16,6 @@
     MMUILabel *_heatLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *heatLabel; // @synthesize heatLabel=_heatLabel;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) WCFinderHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

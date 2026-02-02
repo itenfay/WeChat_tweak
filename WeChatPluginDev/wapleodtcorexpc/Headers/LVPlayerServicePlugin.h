@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MegaVideoPlayerCallbackApi, NSString;
 
@@ -12,7 +13,6 @@
     MegaVideoPlayerCallbackApi *_playerApiCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MegaVideoPlayerCallbackApi *playerApiCallback; // @synthesize playerApiCallback=_playerApiCallback;
 - (id)getCurrentPlayMsPlayerId:(long long)arg1 error:(id *)arg2;
 - (void)pausePlayerId:(long long)arg1 error:(id *)arg2;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_name;
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_index;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) long long longValue; // @synthesize longValue=_longValue;
 @property(nonatomic) int intValue; // @synthesize intValue=_intValue;

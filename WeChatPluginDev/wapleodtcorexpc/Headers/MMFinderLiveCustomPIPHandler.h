@@ -14,7 +14,6 @@
     unsigned long long _indicatorState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long indicatorState; // @synthesize indicatorState=_indicatorState;
 @property(nonatomic) _Bool isPIPCheckStart; // @synthesize isPIPCheckStart=_isPIPCheckStart;
 @property(nonatomic) __weak id <MMFinderLivePIPMinimizeLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;

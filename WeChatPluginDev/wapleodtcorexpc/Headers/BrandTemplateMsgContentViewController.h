@@ -12,7 +12,6 @@
     MMUILabel *_emptyLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(retain, nonatomic) NSString *templateId; // @synthesize templateId=_templateId;
 @property(retain, nonatomic) NSString *templateSessionId; // @synthesize templateSessionId=_templateSessionId;

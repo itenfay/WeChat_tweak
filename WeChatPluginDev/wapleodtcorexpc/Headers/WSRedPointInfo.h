@@ -49,7 +49,6 @@
 + (void)PBArrayAdd_entranceShowRed;
 + (void)PBArrayAdd_bFFShowRedot;
 + (void)PBArrayAdd_msgid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderSyncTipsShowInfo *tipsShowInfo; // @synthesize tipsShowInfo=_tipsShowInfo;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;

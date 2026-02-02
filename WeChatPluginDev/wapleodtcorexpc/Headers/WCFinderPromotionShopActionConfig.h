@@ -14,7 +14,6 @@
     long long _multiStorePromotion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long multiStorePromotion; // @synthesize multiStorePromotion=_multiStorePromotion;
 @property(copy, nonatomic) NSString *poiId; // @synthesize poiId=_poiId;
 @property(copy, nonatomic) NSString *productId; // @synthesize productId=_productId;

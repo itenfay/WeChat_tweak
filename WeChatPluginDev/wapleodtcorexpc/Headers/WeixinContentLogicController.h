@@ -19,7 +19,6 @@
     MMInputToolView *_inputToolView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsShowingPayPluginTopMsgBar; // @synthesize bIsShowingPayPluginTopMsgBar=_bIsShowingPayPluginTopMsgBar;
 @property(nonatomic) __weak MMInputToolView *inputToolView; // @synthesize inputToolView=_inputToolView;
 @property(retain, nonatomic) ChatUnavailableTipsView *chatUnavailableTipsView; // @synthesize chatUnavailableTipsView=_chatUnavailableTipsView;

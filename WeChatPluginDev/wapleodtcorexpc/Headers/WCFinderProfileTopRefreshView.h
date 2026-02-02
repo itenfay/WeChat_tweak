@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol WCFinderProfileTopRefreshViewDelegate;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)topRefreshViewWithTrigger:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable; // @synthesize enable=_enable;
 @property(nonatomic) __weak id <WCFinderProfileTopRefreshViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

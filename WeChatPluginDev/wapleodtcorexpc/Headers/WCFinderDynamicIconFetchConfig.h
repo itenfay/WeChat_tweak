@@ -16,7 +16,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) WCFinderDynamicIconFetchArgs *args; // @synthesize args=_args;
 @property(retain, nonatomic) NSString *defaultSVGName; // @synthesize defaultSVGName=_defaultSVGName;

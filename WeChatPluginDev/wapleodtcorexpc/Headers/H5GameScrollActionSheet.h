@@ -20,7 +20,6 @@
     id <H5GameScrollActionSheetDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <H5GameScrollActionSheetDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didRotate:(id)arg1;
 - (void)onEmptyPlaceTap:(id)arg1;

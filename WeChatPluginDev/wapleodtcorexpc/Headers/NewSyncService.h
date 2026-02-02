@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMMDB, NSDate, NSObject, NSRecursiveLock, NSString, OplogDataLogic;
 @protocol OS_dispatch_queue;
 
@@ -32,7 +34,6 @@
     NSObject<OS_dispatch_queue> *m_actionNotifySyncQueue;
 }
 
-- (void).cxx_destruct;
 @property _Bool m_bHasSync; // @synthesize m_bHasSync=_m_bHasSync;
 - (_Bool)IsLastSyncFinishCallingExtension;
 - (void)onNewSyncOplogFail;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

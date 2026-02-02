@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPageSheetAdapter, NSNumber, NSString, TingFlutterCommentInputController, TingInsertedContentCallBack, UIView;
 
 @interface TingFlutterViewController
@@ -18,7 +20,6 @@
     UIView *_shadowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(nonatomic) _Bool bInShowAnimation; // @synthesize bInShowAnimation=_bInShowAnimation;
 @property(nonatomic) _Bool bSyncProgress; // @synthesize bSyncProgress=_bSyncProgress;
@@ -69,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

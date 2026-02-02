@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderContact, WCFinderPushProfileParams;
 
@@ -19,7 +20,6 @@
     WCFinderContact *_authorContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *authorContact; // @synthesize authorContact=_authorContact;
 @property(nonatomic) unsigned int enterType; // @synthesize enterType=_enterType;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
@@ -36,4 +36,3 @@
 - (id)init;
 
 @end
-

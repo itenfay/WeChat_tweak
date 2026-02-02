@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMInputToolView, NSString, WCFinderAuthInfo, WCFinderInteractionLimitWarningView, WCFinderMsgChatContentReporter, WCFinderUserBindPhoneAssist;
 
 @interface WCFinderMsgContentLogicController
@@ -21,7 +23,6 @@
     unsigned long long _aliasInfoCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long aliasInfoCount; // @synthesize aliasInfoCount=_aliasInfoCount;
 @property(nonatomic) __weak WCFinderInteractionLimitWarningView *warningView; // @synthesize warningView=_warningView;
 @property(nonatomic) __weak MMInputToolView *toolViewEx; // @synthesize toolViewEx=_toolViewEx;
@@ -92,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

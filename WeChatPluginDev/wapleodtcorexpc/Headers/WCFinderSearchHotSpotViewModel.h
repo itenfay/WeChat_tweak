@@ -16,7 +16,6 @@
     WCFinderHotSpotTableViewSectionModel *_hotSpotSectionModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasClickShowMore; // @synthesize hasClickShowMore=_hasClickShowMore;
 @property(retain, nonatomic) WCFinderHotSpotTableViewSectionModel *hotSpotSectionModel; // @synthesize hotSpotSectionModel=_hotSpotSectionModel;
 @property(retain, nonatomic) WCFinderHotSpotHistorySectionModel *historySectionModel; // @synthesize historySectionModel=_historySectionModel;

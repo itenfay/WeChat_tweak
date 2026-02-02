@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CommonReddotNativeHandlerObjc : NSObject
 {
@@ -27,4 +28,3 @@
 + (void)onReddotSyncResponse:(unsigned int)arg1 scene:(unsigned int)arg2 finderCommonReddotSyncResponse:(id)arg3;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppForeground; // @synthesize isAppForeground=_isAppForeground;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableOrderedSet *tasks; // @synthesize tasks=_tasks;

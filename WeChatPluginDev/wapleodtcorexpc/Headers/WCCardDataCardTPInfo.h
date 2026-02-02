@@ -71,7 +71,6 @@
 + (void)PBArrayAdd_logoName;
 + (void)PBArrayAdd_logoUrl;
 + (void)PBArrayAdd_color;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *brandIconUrl; // @synthesize brandIconUrl=_brandIconUrl;
 @property(retain, nonatomic) NSString *giftTitle; // @synthesize giftTitle=_giftTitle;
 @property(retain, nonatomic) BluetoothInfo *bleInfo; // @synthesize bleInfo=_bleInfo;

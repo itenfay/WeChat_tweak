@@ -11,7 +11,6 @@
     UIWindow *m_window;
 }
 
-- (void).cxx_destruct;
 - (void)reportLogoutSwitchToOtherAccount;
 - (void)reportLogoutSwitchToOtherMethodToLogin;
 - (void)reportLogoutDefaultPhoneOrNot:(_Bool)arg1;

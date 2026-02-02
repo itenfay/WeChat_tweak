@@ -53,7 +53,6 @@
     WCPayPaidDetailLeadTailView *_leadTailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPaidDetailLeadTailView *leadTailView; // @synthesize leadTailView=_leadTailView;
 @property(nonatomic) _Bool bHasReportFinderInfoViewShow; // @synthesize bHasReportFinderInfoViewShow=_bHasReportFinderInfoViewShow;
 @property(retain, nonatomic) WCPayPaidDetailFinderInfoView *finderInfoView; // @synthesize finderInfoView=_finderInfoView;

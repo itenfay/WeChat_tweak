@@ -15,7 +15,6 @@
     UIColor *textColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor;
 @property(retain, nonatomic) NSString *tips; // @synthesize tips;
 

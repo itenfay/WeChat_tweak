@@ -20,7 +20,6 @@
     MMFinderLiveKTVSubBoardItem *_selectedSubBoardItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVSubBoardItem *selectedSubBoardItem; // @synthesize selectedSubBoardItem=_selectedSubBoardItem;
 @property(retain, nonatomic) NSMutableArray *subBoardItems; // @synthesize subBoardItems=_subBoardItems;
 @property(nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;

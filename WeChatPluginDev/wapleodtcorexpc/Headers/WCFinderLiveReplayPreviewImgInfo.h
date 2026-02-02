@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)getFixedSectionFromImgUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long preRequestCnt; // @synthesize preRequestCnt=_preRequestCnt;
 @property(copy, nonatomic) CDUnknownBlockType preLoadCompletion; // @synthesize preLoadCompletion=_preLoadCompletion;
 @property(nonatomic) unsigned long long loadState; // @synthesize loadState=_loadState;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

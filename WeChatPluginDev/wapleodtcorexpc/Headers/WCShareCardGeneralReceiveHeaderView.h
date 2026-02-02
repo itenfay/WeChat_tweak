@@ -13,7 +13,6 @@
     MMUILabel *_useabelTimeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *useabelTimeLabel; // @synthesize useabelTimeLabel=_useabelTimeLabel;
 @property(retain, nonatomic) MMUILabel *vaildDateLabel; // @synthesize vaildDateLabel=_vaildDateLabel;
 @property(retain, nonatomic) MMUIButton *sureButton; // @synthesize sureButton=_sureButton;

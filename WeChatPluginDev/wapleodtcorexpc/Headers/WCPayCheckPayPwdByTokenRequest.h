@@ -18,7 +18,6 @@
     NSString *_m_biopayv2authReq;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_biopayv2authReq; // @synthesize m_biopayv2authReq=_m_biopayv2authReq;
 @property(nonatomic) NSData *m_fingerData; // @synthesize m_fingerData=_m_fingerData;
 @property(copy, nonatomic) NSString *m_useTouch; // @synthesize m_useTouch=_m_useTouch;

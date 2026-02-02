@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_useTime;
 + (void)PBArrayAdd_iconDescription;
 + (void)PBArrayAdd_iconId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isCustom; // @synthesize isCustom=_isCustom;
 @property(nonatomic) unsigned int useTime; // @synthesize useTime=_useTime;
 @property(retain, nonatomic) NSString *iconDescription; // @synthesize iconDescription=_iconDescription;

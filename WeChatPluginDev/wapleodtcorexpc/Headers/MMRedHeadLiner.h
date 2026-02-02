@@ -10,7 +10,6 @@
     UILabel *m_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_label; // @synthesize m_label;
 - (void)displayString:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

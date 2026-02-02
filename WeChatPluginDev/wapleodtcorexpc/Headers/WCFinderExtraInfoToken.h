@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary;
 
@@ -14,7 +15,6 @@
     NSDictionary *_appendDict;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasClean; // @synthesize hasClean=_hasClean;
 @property(retain, nonatomic) NSDictionary *appendDict; // @synthesize appendDict=_appendDict;
 @property(copy, nonatomic) CDUnknownBlockType cleanupBlock; // @synthesize cleanupBlock=_cleanupBlock;
@@ -22,4 +22,3 @@
 - (void)dealloc;
 
 @end
-

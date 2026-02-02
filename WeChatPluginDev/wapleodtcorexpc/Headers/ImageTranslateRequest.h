@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class OCRTransReport, OCRTransResultViewController, UIImage;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _finishBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
 @property(copy, nonatomic) CDUnknownBlockType callBack; // @synthesize callBack=_callBack;
 @property(retain, nonatomic) OCRTransResultViewController *transResultViewController; // @synthesize transResultViewController=_transResultViewController;
@@ -27,4 +27,3 @@
 - (void)execute;
 
 @end
-

@@ -21,7 +21,6 @@
     NSData *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) unsigned int currentPageOffset; // @synthesize currentPageOffset=_currentPageOffset;
 @property(nonatomic) unsigned long long currentSearchId; // @synthesize currentSearchId=_currentSearchId;

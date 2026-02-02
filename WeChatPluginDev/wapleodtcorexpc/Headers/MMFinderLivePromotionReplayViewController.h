@@ -20,7 +20,6 @@
     MMUIButton *_backBarButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int viewStartTime; // @synthesize viewStartTime=_viewStartTime;
 @property(retain, nonatomic) MMUIButton *backBarButton; // @synthesize backBarButton=_backBarButton;
 @property(retain, nonatomic) MMFinderLivePromotionReplayOperationView *operationView; // @synthesize operationView=_operationView;

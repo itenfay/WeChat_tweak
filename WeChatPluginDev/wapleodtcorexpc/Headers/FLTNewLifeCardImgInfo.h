@@ -25,7 +25,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithThumbUrl:(id)arg1 thumbUrlToken:(id)arg2 thumbLocalPath:(id)arg3 url:(id)arg4 urlToken:(id)arg5 localPath:(id)arg6 decodeKey:(id)arg7 cropInfo:(id)arg8 picCropInfo:(id)arg9 width:(id)arg10 height:(id)arg11;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSNumber *width; // @synthesize width=_width;
 @property(retain, nonatomic) FLTPictureCropInfo *picCropInfo; // @synthesize picCropInfo=_picCropInfo;

@@ -12,7 +12,6 @@
     NSString *m_nsSessionKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsSessionKey; // @synthesize m_nsSessionKey;
 
 @end

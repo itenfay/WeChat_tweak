@@ -24,7 +24,6 @@
     UIView *_phoneNumberSeparateView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *phoneNumberSeparateView; // @synthesize phoneNumberSeparateView=_phoneNumberSeparateView;
 @property(retain, nonatomic) KidsWatchTextFieldItem *phoneNumberTextFieldItem; // @synthesize phoneNumberTextFieldItem=_phoneNumberTextFieldItem;
 @property(retain, nonatomic) UIView *nickNameSeparateView; // @synthesize nickNameSeparateView=_nickNameSeparateView;

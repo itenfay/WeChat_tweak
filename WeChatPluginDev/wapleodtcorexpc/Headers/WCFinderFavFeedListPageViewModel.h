@@ -27,7 +27,6 @@
 }
 
 + (id)pageViewModelWithTopicInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBaseCgi *cgi; // @synthesize cgi=_cgi;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;

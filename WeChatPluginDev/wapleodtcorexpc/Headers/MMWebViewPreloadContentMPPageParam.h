@@ -19,7 +19,6 @@
     NSString *_templateVersionGroup;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isOfflineCache; // @synthesize isOfflineCache=_isOfflineCache;
 @property(copy, nonatomic) NSString *templateVersionGroup; // @synthesize templateVersionGroup=_templateVersionGroup;
 @property(nonatomic) unsigned int templateReportId; // @synthesize templateReportId=_templateReportId;

@@ -16,7 +16,6 @@
     WCRedEnvelopesSelectSkinRedDotInfo *_m_reddotInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedEnvelopesSelectSkinRedDotInfo *m_reddotInfo; // @synthesize m_reddotInfo=_m_reddotInfo;
 @property(retain, nonatomic) WCPayWebImageView *m_iconImageView; // @synthesize m_iconImageView=_m_iconImageView;
 @property(retain, nonatomic) UILabel *m_contentLabel; // @synthesize m_contentLabel=_m_contentLabel;

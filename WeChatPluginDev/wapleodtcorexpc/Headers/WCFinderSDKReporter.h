@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderSDKReporter : NSObject
 {
@@ -36,4 +37,3 @@
 + (void)reset:(id)arg1;
 
 @end
-

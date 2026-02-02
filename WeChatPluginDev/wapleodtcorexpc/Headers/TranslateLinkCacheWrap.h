@@ -15,7 +15,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_resp;
 + (void)PBArrayAdd_req;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TranslateLinkResp *resp; // @synthesize resp=_resp;
 @property(retain, nonatomic) TranslateLinkReq *req; // @synthesize req=_req;
 - (id)getPBPropertyTable;

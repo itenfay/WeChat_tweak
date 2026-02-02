@@ -19,7 +19,6 @@
     _Bool m_needUpdateTag;
 }
 
-- (void).cxx_destruct;
 - (void)ReachabilityChange:(unsigned int)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)HandleModifyFavItemResp:(id)arg1 Event:(unsigned int)arg2;

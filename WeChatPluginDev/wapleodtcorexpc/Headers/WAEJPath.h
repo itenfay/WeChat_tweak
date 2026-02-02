@@ -23,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly) int fillRule; // @synthesize fillRule;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform;
 - (void)drawLinesToContext:(id)arg1;

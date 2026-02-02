@@ -11,7 +11,6 @@
     id <WCPayBindCardConfirmViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <WCPayBindCardConfirmViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)onWCPayBindCardConfirmViewConfirm:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

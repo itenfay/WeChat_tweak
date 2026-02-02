@@ -19,7 +19,6 @@
 
 + (id)getSucceedResult;
 + (id)getFailedResult;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool resultHasPermission; // @synthesize resultHasPermission=_resultHasPermission;
 @property(retain, nonatomic) NSString *resultMsg; // @synthesize resultMsg=_resultMsg;
 @property(retain, nonatomic) NSString *permissionMsg; // @synthesize permissionMsg=_permissionMsg;

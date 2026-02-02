@@ -15,7 +15,6 @@
 }
 
 + (id)finderLiveStreamJumpModelFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromLiveComple; // @synthesize isFromLiveComple=_isFromLiveComple;
 @property(retain, nonatomic) NSString *relatedWording; // @synthesize relatedWording=_relatedWording;
 @property(retain, nonatomic) WCFinderLiveTabInfo *liveTab; // @synthesize liveTab=_liveTab;

@@ -14,7 +14,6 @@
     MMContext *m_context;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) MMContext *context;
 @property(readonly, nonatomic) id argument;

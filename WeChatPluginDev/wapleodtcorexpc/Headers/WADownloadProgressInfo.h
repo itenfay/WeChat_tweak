@@ -13,7 +13,6 @@
     long long _totalBytesWritten;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long totalBytesWritten; // @synthesize totalBytesWritten=_totalBytesWritten;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 

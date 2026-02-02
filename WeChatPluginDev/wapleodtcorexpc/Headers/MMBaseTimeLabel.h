@@ -18,7 +18,6 @@
 }
 
 + (double)widthWithPrefix:(id)arg1 font:(id)arg2 maxWidthTime:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideHours; // @synthesize hideHours=_hideHours;
 @property(copy, nonatomic) NSString *maxWidthTime; // @synthesize maxWidthTime=_maxWidthTime;
 @property(nonatomic) unsigned long long seconds; // @synthesize seconds=_seconds;

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_dynamicCanvasData;
 + (void)PBArrayAdd_adCanvasXml;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCanvasLoadParams *loadParams; // @synthesize loadParams=_loadParams;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(retain, nonatomic) NSString *dynamicCanvasData; // @synthesize dynamicCanvasData=_dynamicCanvasData;

@@ -25,7 +25,6 @@
     CAAnimation *_currentAnimation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMediaPlayProcessed; // @synthesize isMediaPlayProcessed=_isMediaPlayProcessed;
 @property(retain, nonatomic) CAAnimation *currentAnimation; // @synthesize currentAnimation=_currentAnimation;
 @property(retain, nonatomic) WCAdURLImageView *nextProductImageView; // @synthesize nextProductImageView=_nextProductImageView;

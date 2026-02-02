@@ -13,7 +13,6 @@
     MMPushTransition *_transition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPushTransition *transition; // @synthesize transition=_transition;
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 - (id)animationControllerForDismissedController:(id)arg1;

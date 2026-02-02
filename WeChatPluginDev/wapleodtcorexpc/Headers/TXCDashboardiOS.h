@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, TXCDashboardFloatingBall, TXCDashboardLayoutView;
 
@@ -15,7 +16,6 @@
 }
 
 + (void)destoryContainerInMainThread:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCDashboardLayoutView *dashboardLayoutView; // @synthesize dashboardLayoutView=_dashboardLayoutView;
 @property(retain, nonatomic) TXCDashboardFloatingBall *floatingBall; // @synthesize floatingBall=_floatingBall;
 @property(retain, nonatomic) NSMutableDictionary *dashboardInfo; // @synthesize dashboardInfo=_dashboardInfo;
@@ -35,4 +35,3 @@
 - (id)init;
 
 @end
-

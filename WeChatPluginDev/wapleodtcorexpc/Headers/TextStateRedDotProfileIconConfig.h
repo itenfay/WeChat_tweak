@@ -16,7 +16,6 @@
 + (long long)secondsFromDurationString:(id)arg1;
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *parsedDurations; // @synthesize parsedDurations=_parsedDurations;
 @property(retain, nonatomic) NSArray *durations; // @synthesize durations=_durations;
 - (struct _NSRange)hitDurationForLocation:(long long)arg1;

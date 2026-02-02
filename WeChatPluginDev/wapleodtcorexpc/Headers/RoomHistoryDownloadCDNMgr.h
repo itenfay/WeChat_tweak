@@ -15,7 +15,6 @@
     NSMutableArray *_pendingMsgQueue;
 }
 
-- (void).cxx_destruct;
 - (void)OnCdnDownload:(id)arg1;
 - (void)OnSetCdnDnsInfo;
 - (void)DownloadFail:(int)arg1 Expired:(_Bool)arg2 DownloadInfo:(id)arg3;

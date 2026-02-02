@@ -12,7 +12,6 @@
     int viewType;
 }
 
-- (void).cxx_destruct;
 - (void)OnEndPlayWNAudio:(id)arg1;
 - (void)OnBeginPlayWNAudio:(id)arg1;
 - (id)getDuration:(int)arg1;

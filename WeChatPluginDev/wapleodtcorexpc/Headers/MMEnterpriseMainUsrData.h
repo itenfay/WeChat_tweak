@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicNewArrivalCount;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicNewArrivalCount; // @synthesize dicNewArrivalCount=_dicNewArrivalCount;
 - (id)getPBPropertyTable;
 

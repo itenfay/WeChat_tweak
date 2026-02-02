@@ -15,7 +15,6 @@
     double _paramValue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;
 @property(nonatomic) double paramValue; // @synthesize paramValue=_paramValue;
 @property(retain, nonatomic) NSString *cardTitle; // @synthesize cardTitle=_cardTitle;

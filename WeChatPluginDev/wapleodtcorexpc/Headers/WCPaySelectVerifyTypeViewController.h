@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GetRealnameWordingRsp, InternalTask, NSString, UIButton, UIImageView, UILabel, UIView, WCPayJumpRemindControlLogic, WCPayJumpRemindInfo, WCPaySelectVerifyTypeViewV2;
 @protocol WCPaySelectVerifyTypeViewControllerDelegate;
 
@@ -36,7 +38,6 @@
     WCPaySelectVerifyTypeViewV2 *_layoutV2;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPaySelectVerifyTypeViewV2 *layoutV2; // @synthesize layoutV2=_layoutV2;
 @property(retain, nonatomic) UILabel *m_titleLabel; // @synthesize m_titleLabel=_m_titleLabel;
 @property(retain, nonatomic) UIView *m_safeTipsBase; // @synthesize m_safeTipsBase=_m_safeTipsBase;
@@ -88,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

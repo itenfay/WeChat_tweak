@@ -16,7 +16,6 @@
     unsigned int m_uiInitalMoney;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiInitalMoney; // @synthesize m_uiInitalMoney;
 @property(retain, nonatomic) NSString *m_nsPassword; // @synthesize m_nsPassword;
 @property(retain, nonatomic) NSString *m_nsCardTail; // @synthesize m_nsCardTail;

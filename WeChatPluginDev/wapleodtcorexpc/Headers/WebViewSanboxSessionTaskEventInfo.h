@@ -13,7 +13,6 @@
     unsigned long long _eventTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long eventTime; // @synthesize eventTime=_eventTime;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)descriptionWithStartTime:(unsigned long long)arg1;

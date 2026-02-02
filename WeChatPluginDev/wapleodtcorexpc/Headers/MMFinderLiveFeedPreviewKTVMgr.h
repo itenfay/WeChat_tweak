@@ -10,7 +10,6 @@
     NSMutableDictionary *_ktvBoxDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *ktvBoxDict; // @synthesize ktvBoxDict=_ktvBoxDict;
 - (void)clearKTVBoxWithTaskId:(id)arg1;
 - (id)getKTVBoxWithTaskId:(id)arg1;

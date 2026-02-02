@@ -12,7 +12,6 @@
     NSString *_sceneTag;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sceneTag; // @synthesize sceneTag=_sceneTag;
 - (id)contentTypeForData:(id)arg1;
 - (int)convertPicType:(id)arg1;

@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithRet:(long long)arg1 errorMessage:(id)arg2 data:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(nonatomic) long long ret; // @synthesize ret=_ret;

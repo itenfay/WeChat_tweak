@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAAnimationGroup, CameraScanCodesMarkDotInfo, MMUIButton, UIImageView;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _clickBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 @property(retain, nonatomic) CameraScanCodesMarkDotInfo *markDotInfo; // @synthesize markDotInfo=_markDotInfo;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
@@ -32,4 +32,3 @@
 - (id)init;
 
 @end
-

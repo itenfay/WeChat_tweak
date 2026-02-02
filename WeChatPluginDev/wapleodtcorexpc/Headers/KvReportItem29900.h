@@ -15,7 +15,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int actionResult; // @synthesize actionResult=_actionResult;
 @property(nonatomic) unsigned int actionScene; // @synthesize actionScene=_actionScene;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;

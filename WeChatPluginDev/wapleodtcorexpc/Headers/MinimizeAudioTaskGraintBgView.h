@@ -12,7 +12,6 @@
     CAGradientLayer *_graintLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *graintLayer; // @synthesize graintLayer=_graintLayer;
 - (void)updateFgColor:(id)arg1;
 - (void)layoutSubviews;

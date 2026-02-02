@@ -15,7 +15,6 @@
     unsigned long long _productCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(nonatomic) unsigned long long productCount; // @synthesize productCount=_productCount;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;

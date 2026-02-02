@@ -17,7 +17,6 @@
     WCFinderJumpInfo *_jumpInfoSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfoSource; // @synthesize jumpInfoSource=_jumpInfoSource;
 @property(retain, nonatomic) UIButton *tipsBtn; // @synthesize tipsBtn=_tipsBtn;

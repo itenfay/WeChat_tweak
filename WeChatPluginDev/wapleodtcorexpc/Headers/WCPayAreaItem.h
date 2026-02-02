@@ -19,7 +19,6 @@
     NSArray *_bannedCountryCodes;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSArray *bannedCountryCodes; // @synthesize bannedCountryCodes=_bannedCountryCodes;
 @property(nonatomic) _Bool openSearch; // @synthesize openSearch=_openSearch;
 @property(nonatomic) _Bool chinaFirst; // @synthesize chinaFirst=_chinaFirst;

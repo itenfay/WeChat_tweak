@@ -15,7 +15,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *visibleDate; // @synthesize visibleDate=_visibleDate;
 @property(retain, nonatomic) AnyPromise *getPreloadDataPromise; // @synthesize getPreloadDataPromise=_getPreloadDataPromise;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

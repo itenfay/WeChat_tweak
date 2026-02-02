@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WAWebSocketConfig;
 @protocol OS_dispatch_queue, WAWebSocketHandlerDelegate;
@@ -18,7 +19,6 @@
     id <WAWebSocketHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int workerId; // @synthesize workerId=_workerId;
 @property(nonatomic) __weak id <WAWebSocketHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)webSocketTaskDidEnd:(id)arg1;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

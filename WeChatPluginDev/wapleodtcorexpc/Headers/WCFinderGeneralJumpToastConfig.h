@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *buttonContentArray; // @synthesize buttonContentArray=_buttonContentArray;
 @property(retain, nonatomic) NSArray *buttonArray; // @synthesize buttonArray=_buttonArray;
 @property(retain, nonatomic) WCFinderGeneralExtConfigModel *extConfig; // @synthesize extConfig=_extConfig;

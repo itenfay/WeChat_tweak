@@ -15,7 +15,6 @@
 }
 
 + (id)createSelector:(SEL)arg1 commandClsName:(id)arg2 hasReturn:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *commandClsName; // @synthesize commandClsName=_commandClsName;
 @property(nonatomic) _Bool hasReturn; // @synthesize hasReturn=_hasReturn;
 @property SEL selector; // @synthesize selector=_selector;

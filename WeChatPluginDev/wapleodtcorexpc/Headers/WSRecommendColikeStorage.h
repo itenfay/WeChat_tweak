@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_hideVersion;
 + (void)PBArrayAdd_colikeBlockList;
 + (void)PBArrayAdd_colikeHideList;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRequestColikeBlockData; // @synthesize hasRequestColikeBlockData=_hasRequestColikeBlockData;
 @property(nonatomic) _Bool hasRequestColikeHideData; // @synthesize hasRequestColikeHideData=_hasRequestColikeHideData;
 @property(nonatomic) unsigned long long blockVersion; // @synthesize blockVersion=_blockVersion;

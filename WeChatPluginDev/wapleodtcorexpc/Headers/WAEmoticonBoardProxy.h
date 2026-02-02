@@ -17,7 +17,6 @@
 }
 
 + (_Bool)IsSupportEmoticonBoard;
-- (void).cxx_destruct;
 - (void)onSearchEmoticonViewControllerSendEmoticon:(id)arg1;
 - (void)showSearchEmoticonViewController;
 - (void)onEmoticonSearchIconClicked;

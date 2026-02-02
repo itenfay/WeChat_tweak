@@ -15,7 +15,6 @@
 
 + (_Bool)isFinderLiveBoxId:(id)arg1 equal:(id)arg2;
 + (id)genFinderBoxId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *roomUsername; // @synthesize roomUsername=_roomUsername;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 - (_Bool)isEqual:(id)arg1;

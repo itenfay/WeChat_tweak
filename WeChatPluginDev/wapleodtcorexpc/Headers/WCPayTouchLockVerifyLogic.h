@@ -15,7 +15,6 @@
     WCPayTouchLockAuthenCgi *_authenCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTouchLockAuthenCgi *authenCgi; // @synthesize authenCgi=_authenCgi;
 @property(retain, nonatomic) NSData *domainData; // @synthesize domainData=_domainData;
 @property(retain, nonatomic) WCPayCloseWalletLockCgi *closeWalletLockCgi; // @synthesize closeWalletLockCgi=_closeWalletLockCgi;

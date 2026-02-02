@@ -12,7 +12,6 @@
     MISSING_TYPE *belowInputCoverViewContainer;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)applicationDidEnterBackground;
 - (void)applicationDidBecomeActive;

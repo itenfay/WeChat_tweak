@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class SnsWithTaPageRequest, SnsWithTaPageResponse, WCBaseNetworkingError;
 
 @interface WCTogetherHistoryCGI
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failureBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) WCBaseNetworkingError *error; // @synthesize error=_error;
@@ -27,4 +28,3 @@
 @property(retain, nonatomic) SnsWithTaPageRequest *request; // @dynamic request;
 
 @end
-

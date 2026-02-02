@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JITRuntime, NSThread;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _finishBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
 @property(nonatomic) __weak JITRuntime *runtime; // @synthesize runtime=_runtime;
 @property _Bool threadStopped; // @synthesize threadStopped=_threadStopped;
@@ -32,4 +32,3 @@
 - (id)initWithId:(int)arg1;
 
 @end
-

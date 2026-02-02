@@ -18,7 +18,6 @@
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (id)getTrimDesc:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double targetWidth; // @synthesize targetWidth=_targetWidth;
 @property(nonatomic) double targetMargin; // @synthesize targetMargin=_targetMargin;
 - (void)onShareToOpenSDK:(id)arg1;

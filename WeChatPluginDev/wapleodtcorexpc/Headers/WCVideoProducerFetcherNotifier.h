@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCVideoProducerFetcherNotifier : NSObject
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _preprocCompletionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType preprocCompletionBlock; // @synthesize preprocCompletionBlock=_preprocCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType creationCompletionBlock; // @synthesize creationCompletionBlock=_creationCompletionBlock;
 - (void)notifyPreprocCompleteWithResult:(_Bool)arg1 templateSession:(id)arg2;
@@ -20,4 +20,3 @@
 - (id)_init;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, UIImage;
 
 @interface EmoticonCreateImageUploadTask
@@ -13,7 +15,6 @@
     NSData *_gifData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *gifData; // @synthesize gifData=_gifData;
 @property(retain, nonatomic) UIImage *editedImg; // @synthesize editedImg=_editedImg;
 @property(copy, nonatomic) CDUnknownBlockType prepareFailBlock; // @synthesize prepareFailBlock=_prepareFailBlock;
@@ -28,4 +29,3 @@
 - (id)init;
 
 @end
-

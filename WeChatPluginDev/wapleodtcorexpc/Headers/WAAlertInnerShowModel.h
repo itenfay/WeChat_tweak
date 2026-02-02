@@ -17,7 +17,6 @@
     WAAlertModel *_alertModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAAlertModel *alertModel; // @synthesize alertModel=_alertModel;
 @property(nonatomic) __weak WAWebViewPlugin_NativeView *nativeInstance; // @synthesize nativeInstance=_nativeInstance;
 @property(nonatomic) __weak WAWebViewPlugin_InputKeyboard *keyboardPlugin; // @synthesize keyboardPlugin=_keyboardPlugin;

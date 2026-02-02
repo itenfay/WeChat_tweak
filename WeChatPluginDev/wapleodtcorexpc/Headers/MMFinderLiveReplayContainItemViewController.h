@@ -13,7 +13,6 @@
     MMFinderLiveContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreviewMuted; // @synthesize isPreviewMuted=_isPreviewMuted;
 @property(retain, nonatomic) MMFinderLiveContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) MMFinderLiveReplayTask *replayTask; // @synthesize replayTask=_replayTask;

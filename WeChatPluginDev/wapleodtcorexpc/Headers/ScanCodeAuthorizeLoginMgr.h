@@ -37,7 +37,6 @@
     unsigned long long _stepStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stepStartTime; // @synthesize stepStartTime=_stepStartTime;
 @property(nonatomic) unsigned int stayStartTime; // @synthesize stayStartTime=_stayStartTime;
 @property(nonatomic) unsigned int sessionID; // @synthesize sessionID=_sessionID;

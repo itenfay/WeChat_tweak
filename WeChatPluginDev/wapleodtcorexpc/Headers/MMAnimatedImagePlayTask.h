@@ -26,7 +26,6 @@
     MMAnimatedImageDecoder *_decoder;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMAnimatedImageDecoder *decoder; // @synthesize decoder=_decoder;
 @property(readonly, nonatomic) _Bool stopped; // @synthesize stopped=m_stopped;
 - (void)updateFrame;

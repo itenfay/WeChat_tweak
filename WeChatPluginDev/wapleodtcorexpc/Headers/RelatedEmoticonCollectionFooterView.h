@@ -14,7 +14,6 @@
     MMUILabel *_loadingTipView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *loadingTipView; // @synthesize loadingTipView=_loadingTipView;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) MMTerminatorView *terminatorView; // @synthesize terminatorView=_terminatorView;

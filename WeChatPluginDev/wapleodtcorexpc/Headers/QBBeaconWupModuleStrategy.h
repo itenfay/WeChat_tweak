@@ -22,7 +22,6 @@
 @property(retain, nonatomic, getter=url, setter=setUrl:) NSString *jcev2_p_2_o_url; // @synthesize jcev2_p_2_o_url=_jcev2_p_2_o_url;
 @property(nonatomic, getter=onOff, setter=setOnOff:) BOOL jcev2_p_1_r_onOff; // @synthesize jcev2_p_1_r_onOff=_jcev2_p_1_r_onOff;
 @property(nonatomic, getter=mId, setter=setMId:) BOOL jcev2_p_0_r_mId; // @synthesize jcev2_p_0_r_mId=_jcev2_p_0_r_mId;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

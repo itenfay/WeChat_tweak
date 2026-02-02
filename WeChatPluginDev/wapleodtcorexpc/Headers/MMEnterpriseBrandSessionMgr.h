@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MMEnterpriseBrandSessionMgr
@@ -10,7 +12,6 @@
     NSMutableDictionary *_dictMainUsr2SubSessionCacher;
 }
 
-- (void).cxx_destruct;
 - (void)resetBrandSessionNewFlag:(id)arg1 mainUserName:(id)arg2;
 - (void)resetBrandSessionNewFlag:(id)arg1;
 - (void)setBrandSessionNewFlag:(id)arg1;
@@ -76,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

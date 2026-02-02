@@ -18,7 +18,6 @@
 }
 
 + (double)heightForDishDetail:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) MMUIButton *likeButton; // @synthesize likeButton=_likeButton;
 @property(retain, nonatomic) MMUILabel *priceLabel; // @synthesize priceLabel=_priceLabel;

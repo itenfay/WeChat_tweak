@@ -19,7 +19,6 @@
 }
 
 + (unsigned int)serachSubSceneFromUserName:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;
 @property(nonatomic) unsigned long long adId; // @synthesize adId=_adId;
 @property(nonatomic) unsigned int adScene; // @synthesize adScene=_adScene;

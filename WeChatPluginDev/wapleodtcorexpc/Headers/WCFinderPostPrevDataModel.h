@@ -12,7 +12,6 @@
     NSMutableArray *_usualTopicsArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *usualTopicsArray; // @synthesize usualTopicsArray=_usualTopicsArray;
 - (id)filterUsualTopicFromPreMatchString:(id)arg1;
 - (void)_filterValidTopics:(id)arg1;

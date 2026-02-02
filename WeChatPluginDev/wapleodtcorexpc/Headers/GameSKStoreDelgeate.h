@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, SKStoreProductViewController, UIViewController;
 
@@ -16,7 +17,6 @@
     UIViewController *_hostVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *hostVC; // @synthesize hostVC=_hostVC;
 @property(nonatomic) _Bool popWhenDismiss; // @synthesize popWhenDismiss=_popWhenDismiss;
 @property(nonatomic) __weak SKStoreProductViewController *storeVc; // @synthesize storeVc=_storeVc;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

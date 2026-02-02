@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMObject, MMUILabel, MMUIView, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIScrollView, UITapGestureRecognizer, UITextField, UIView, UIViewController;
 @protocol IWCCTRichTextViewProtocol, IWCUIKitGrowTextViewProtocol, IWCUIKitInputControllerProtocol, IWCUIKitInputControllerProxyService, MMTipsViewControllerDelegate;
 
@@ -52,7 +54,6 @@
 }
 
 + (void)load;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWCUIKitInputControllerProxyService> inputControllerProxyService; // @synthesize inputControllerProxyService=_inputControllerProxyService;
 @property(nonatomic) long long fixedUserInterfaceStyle; // @synthesize fixedUserInterfaceStyle=_fixedUserInterfaceStyle;
 @property(nonatomic) _Bool hideTipsWhenClickedOutOfTips; // @synthesize hideTipsWhenClickedOutOfTips=_hideTipsWhenClickedOutOfTips;
@@ -167,4 +168,3 @@
 @property(readonly) Class superclass;
 
 @end
-

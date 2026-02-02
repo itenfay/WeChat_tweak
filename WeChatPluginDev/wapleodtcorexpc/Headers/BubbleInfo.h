@@ -19,7 +19,6 @@
     struct UIEdgeInsets _margin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets margin; // @synthesize margin=_margin;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

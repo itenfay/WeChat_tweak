@@ -10,7 +10,6 @@
     DesignerPortfolioCollectionViewProvider *_provider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DesignerPortfolioCollectionViewProvider *provider; // @synthesize provider=_provider;
 - (void)onFetchEmoticonDataFailed;
 - (void)onGetEmoticonPacksForDisplay:(_Bool)arg1;

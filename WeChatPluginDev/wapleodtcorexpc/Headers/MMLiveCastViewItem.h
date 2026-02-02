@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _didSelectBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didSelectBlock; // @synthesize didSelectBlock=_didSelectBlock;
 @property(nonatomic) _Bool showsBottomSeparatorLine; // @synthesize showsBottomSeparatorLine=_showsBottomSeparatorLine;
 @property(nonatomic) _Bool showsTopSeparatorLine; // @synthesize showsTopSeparatorLine=_showsTopSeparatorLine;
@@ -25,4 +25,3 @@
 - (void)didSelect;
 
 @end
-

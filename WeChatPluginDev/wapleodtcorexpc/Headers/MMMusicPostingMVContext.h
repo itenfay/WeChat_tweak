@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMusicMVModel, MVStat22259, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -20,7 +21,6 @@
     NSString *_baseDraftLocalId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEditedInFlexMode; // @synthesize hasEditedInFlexMode=_hasEditedInFlexMode;
 @property(nonatomic) _Bool hasEditedInFixMode; // @synthesize hasEditedInFixMode=_hasEditedInFixMode;
 @property(retain, nonatomic) NSString *baseDraftLocalId; // @synthesize baseDraftLocalId=_baseDraftLocalId;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

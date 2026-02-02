@@ -13,7 +13,6 @@
     MMUILabel *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUILabel *briefLabel; // @synthesize briefLabel=_briefLabel;
 @property(retain, nonatomic) MMUIView *textBackView; // @synthesize textBackView=_textBackView;

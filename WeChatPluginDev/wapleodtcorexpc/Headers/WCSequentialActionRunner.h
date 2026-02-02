@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIView;
 
@@ -14,7 +15,6 @@
     long long _curActionIdx;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long curActionIdx; // @synthesize curActionIdx=_curActionIdx;
 @property(retain, nonatomic) NSMutableArray *actionArr; // @synthesize actionArr=_actionArr;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

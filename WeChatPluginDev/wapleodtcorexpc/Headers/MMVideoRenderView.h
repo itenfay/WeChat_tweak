@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAEAGLLayer, CALayer, EAGLContext, MMCameraFocusSquare, MMOpenGLContext, UIPinchGestureRecognizer, UITapGestureRecognizer;
 @protocol MMVideoRenderViewDelegate;
@@ -68,7 +69,6 @@
 
 + (const float *)textureCoordinatesForRotation:(unsigned long long)arg1;
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int mRawDataFrameType; // @synthesize mRawDataFrameType=_mRawDataFrameType;
 @property(nonatomic) unsigned int yuvOffsetMatrixUniform; // @synthesize yuvOffsetMatrixUniform=_yuvOffsetMatrixUniform;
 @property(nonatomic) unsigned int yuvConversionMatrixUniform; // @synthesize yuvConversionMatrixUniform=_yuvConversionMatrixUniform;
@@ -142,4 +142,3 @@
 - (id)init;
 
 @end
-

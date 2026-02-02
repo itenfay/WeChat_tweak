@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMDebounce : NSObject
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _taskBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType taskBlock; // @synthesize taskBlock=_taskBlock;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 - (void)invalidate;
@@ -21,4 +21,3 @@
 - (id)initWithInterval:(double)arg1 taskBlock:(CDUnknownBlockType)arg2;
 
 @end
-

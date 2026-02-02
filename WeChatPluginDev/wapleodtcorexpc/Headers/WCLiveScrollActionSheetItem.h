@@ -11,7 +11,6 @@
     NSString *_redDotPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *redDotPath; // @synthesize redDotPath=_redDotPath;
 @property(nonatomic) long long reportElementId; // @synthesize reportElementId=_reportElementId;
 - (id)init;

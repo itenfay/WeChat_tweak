@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewHeaderFooterView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUIImageView, MMUILabel, NSString, UIView;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) MMUILabel *addLabel; // @synthesize addLabel=_addLabel;
 @property(retain, nonatomic) MMUIImageView *addImageView; // @synthesize addImageView=_addImageView;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -32,7 +32,6 @@
 }
 
 + (id)getGroupDispName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_backSecondConfirmConfirm; // @synthesize m_backSecondConfirmConfirm=_m_backSecondConfirmConfirm;
 @property(retain, nonatomic) NSString *m_backSecondConfirmCancel; // @synthesize m_backSecondConfirmCancel=_m_backSecondConfirmCancel;
 @property(retain, nonatomic) NSString *m_backSecondConfirmTitle; // @synthesize m_backSecondConfirmTitle=_m_backSecondConfirmTitle;

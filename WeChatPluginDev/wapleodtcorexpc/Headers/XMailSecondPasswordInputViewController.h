@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIButton, UILabel, UIScrollView, WCUITextField;
 
 @interface XMailSecondPasswordInputViewController
@@ -16,7 +18,6 @@
     CDUnknownBlockType _onViewControllerQuitBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onViewControllerQuitBlock; // @synthesize onViewControllerQuitBlock=_onViewControllerQuitBlock;
 @property(copy, nonatomic) CDUnknownBlockType onClickConfirmBlock; // @synthesize onClickConfirmBlock=_onClickConfirmBlock;
 @property(retain, nonatomic) NSString *mailAddr; // @synthesize mailAddr=_mailAddr;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     NSArray *_itemList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestTimes; // @synthesize requestTimes=_requestTimes;
 @property(retain, nonatomic) NSArray *itemList; // @synthesize itemList=_itemList;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

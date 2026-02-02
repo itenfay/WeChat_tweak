@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUIImageView, MMUILabel, NSString, NSURLConnection, TPVideoFrameBuffer, UIImage, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UITopTouchView, WAMediaCastingRoutePickerController, WAPlayerHttpMediaWrap, WAScreenBrightnessStateView, WAVideoLayer, WCNetworkMediaSlider, WCPlayerPlayArgs, WCPlayerView;
 @protocol WAVideoPlayerViewDelegate;
 
@@ -114,7 +116,6 @@
     struct CGRect _displayRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool pauseBecauseAudioSessionRouteChange; // @synthesize pauseBecauseAudioSessionRouteChange=_pauseBecauseAudioSessionRouteChange;
 @property(retain, nonatomic) WAMediaCastingRoutePickerController *mediaCastingRoutePickerController; // @synthesize mediaCastingRoutePickerController=_mediaCastingRoutePickerController;
 @property(retain, nonatomic) TPVideoFrameBuffer *curFrameBuffer; // @synthesize curFrameBuffer=_curFrameBuffer;
@@ -371,4 +372,3 @@
 @property(readonly) Class superclass;
 
 @end
-

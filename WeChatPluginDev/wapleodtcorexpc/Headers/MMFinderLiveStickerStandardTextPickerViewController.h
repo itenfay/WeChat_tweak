@@ -16,7 +16,6 @@
     EditImageTextInputView *_inputView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditImageTextInputView *inputView; // @synthesize inputView=_inputView;
 @property(retain, nonatomic) UIView *inputContainerView; // @synthesize inputContainerView=_inputContainerView;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;

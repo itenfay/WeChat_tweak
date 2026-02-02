@@ -23,7 +23,6 @@
     NSString *_qingHuaiPageUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *qingHuaiPageUrl; // @synthesize qingHuaiPageUrl=_qingHuaiPageUrl;
 @property(nonatomic) unsigned int isDefaultFocus; // @synthesize isDefaultFocus=_isDefaultFocus;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;

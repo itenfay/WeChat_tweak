@@ -17,7 +17,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 - (void)initDescLabel;
 - (void)initTitleLabel;
 - (void)initLabsIcon;

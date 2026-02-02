@@ -20,7 +20,6 @@
 
 + (id)timelineCellWithContact:(id)arg1 dataItem:(id)arg2;
 + (id)timelineCellWithContact:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *interactiveUsernameArray; // @synthesize interactiveUsernameArray=_interactiveUsernameArray;
 @property(nonatomic) long long cornerCount; // @synthesize cornerCount=_cornerCount;
 @property(nonatomic) _Bool isMessageCell; // @synthesize isMessageCell=_isMessageCell;

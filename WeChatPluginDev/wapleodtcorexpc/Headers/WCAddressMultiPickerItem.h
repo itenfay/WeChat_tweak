@@ -17,7 +17,6 @@
     WCAddressHalfScreenPickerView *_pickerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAddressHalfScreenPickerView *pickerView; // @synthesize pickerView=_pickerView;
 - (id)selectStreet;
 - (id)selectDistrict;

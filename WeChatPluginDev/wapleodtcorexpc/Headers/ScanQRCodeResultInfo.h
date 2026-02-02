@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_fromScene;
 + (void)PBArrayAdd_timeStamp;
 + (void)PBArrayAdd_resultString;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasProceed; // @synthesize hasProceed=_hasProceed;
 @property(nonatomic) _Bool scanFromCombineTab; // @synthesize scanFromCombineTab=_scanFromCombineTab;
 @property(nonatomic) int networkType; // @synthesize networkType=_networkType;

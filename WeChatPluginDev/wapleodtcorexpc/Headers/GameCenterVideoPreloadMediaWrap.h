@@ -11,7 +11,6 @@
 }
 
 + (id)getCacheIdentifyFromUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (id)getTempDirectory;
 - (_Bool)isLIFOPreloadTask;

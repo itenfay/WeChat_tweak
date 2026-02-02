@@ -18,7 +18,6 @@
 }
 
 + (double)calculateHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SportRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) UIButton *buttonView; // @synthesize buttonView=_buttonView;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUIHalfScreenViewDismissInteractiveTransition, MMUIHalfScreenViewPresentationAnimateTransition, MMUIView, NSString, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UIScrollView, UIView;
 @protocol MMUIHalfScreenViewControllerDelegate;
 
@@ -53,7 +55,6 @@
 }
 
 + (double)detailViewTopOffset;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIHalfScreenViewPresentationAnimateTransition *presentationAnimate; // @synthesize presentationAnimate=_presentationAnimate;
 @property(retain, nonatomic) UIScrollView *detaiInSideScrollView; // @synthesize detaiInSideScrollView=_detaiInSideScrollView;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
@@ -145,4 +146,3 @@
 @property(readonly) Class superclass;
 
 @end
-

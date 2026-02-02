@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCFinderContact, WCFinderFeedContentVM;
 
@@ -33,7 +34,6 @@
 
 + (double)overviewMediaAspectRatio;
 + (id)currentUsername;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *redPacketLabelTitle; // @synthesize redPacketLabelTitle=_redPacketLabelTitle;
 @property(nonatomic) _Bool showRedPacket; // @synthesize showRedPacket=_showRedPacket;
 @property(nonatomic) _Bool isLikeBeforeClick; // @synthesize isLikeBeforeClick=_isLikeBeforeClick;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

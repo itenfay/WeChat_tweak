@@ -24,7 +24,6 @@
     struct UIEdgeInsets _presentationEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct UIEdgeInsets presentationEdgeInsets; // @synthesize presentationEdgeInsets=_presentationEdgeInsets;

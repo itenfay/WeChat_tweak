@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, NSString;
 @protocol WAWorkFlowImplement;
@@ -17,7 +18,6 @@
     NSString *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSNumber *numResult; // @synthesize numResult=_numResult;
 @property(retain, nonatomic) id <WAWorkFlowImplement> stepSubWorkFlow; // @synthesize stepSubWorkFlow=_stepSubWorkFlow;
@@ -26,4 +26,3 @@
 - (void)dealloc;
 
 @end
-

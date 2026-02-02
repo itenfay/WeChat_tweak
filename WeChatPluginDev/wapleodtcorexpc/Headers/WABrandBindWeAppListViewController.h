@@ -15,7 +15,6 @@
     NSString *_fromBrandAppid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromBrandAppid; // @synthesize fromBrandAppid=_fromBrandAppid;
 @property(retain, nonatomic) NSString *fromBrandUserName; // @synthesize fromBrandUserName=_fromBrandUserName;
 @property(retain, nonatomic) NSArray *arrBindWeAppInfo; // @synthesize arrBindWeAppInfo=_arrBindWeAppInfo;

@@ -10,7 +10,6 @@
     NSMutableDictionary *_param;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *param; // @synthesize param=_param;
 - (void)onAddPayCardResult:(_Bool)arg1;
 - (id)getCurrentURL;

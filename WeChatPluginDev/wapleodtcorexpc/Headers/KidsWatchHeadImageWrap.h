@@ -13,7 +13,6 @@
     NSString *_aesKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aesKey; // @synthesize aesKey=_aesKey;
 @property(retain, nonatomic) NSString *fileId; // @synthesize fileId=_fileId;
 

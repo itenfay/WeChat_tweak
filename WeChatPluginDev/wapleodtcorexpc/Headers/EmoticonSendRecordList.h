@@ -17,7 +17,6 @@
 + (id)GetEmoticonRecentSendList;
 + (void)initialize;
 + (void)PBArrayAdd_md5List;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *md5List; // @synthesize md5List=_md5List;
 - (void)saveToFile;
 - (id)allRecentSendMd5sInOrder;

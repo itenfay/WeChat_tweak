@@ -14,7 +14,6 @@
     struct CGRect _sourceFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize coverSize; // @synthesize coverSize=_coverSize;
 @property(retain, nonatomic) UIView *coverView; // @synthesize coverView=_coverView;
 @property(nonatomic) struct CGRect sourceFrame; // @synthesize sourceFrame=_sourceFrame;

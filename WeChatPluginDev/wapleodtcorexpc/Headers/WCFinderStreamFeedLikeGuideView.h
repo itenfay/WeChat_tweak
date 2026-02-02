@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionReusableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, UIButton, UILabel, WCFinderFeedContentVM, WCFinderHeadImageView;
 
@@ -18,7 +19,6 @@
     WCFinderFeedContentVM *_contentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(nonatomic) __weak MMUIButton *likeActionButton; // @synthesize likeActionButton=_likeActionButton;
 @property(retain, nonatomic) UIButton *cancelLikeButton; // @synthesize cancelLikeButton=_cancelLikeButton;
@@ -34,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

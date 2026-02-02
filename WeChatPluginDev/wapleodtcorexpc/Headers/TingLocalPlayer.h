@@ -11,7 +11,6 @@
     MsgFileDetailLogicController *_msgFileLogicController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgFileDetailLogicController *msgFileLogicController; // @synthesize msgFileLogicController=_msgFileLogicController;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (_Bool)isPlayRateSupported;

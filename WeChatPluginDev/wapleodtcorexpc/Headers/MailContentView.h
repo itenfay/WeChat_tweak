@@ -16,7 +16,6 @@
 
 + (id)contentDefaultParagraphStyle;
 + (id)contentDefaultTextAttribute;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect textViewFrame; // @synthesize textViewFrame=_textViewFrame;
 @property(nonatomic) _Bool forbidBecomeFirstResponder; // @synthesize forbidBecomeFirstResponder;
 @property(nonatomic) __weak id <MailContentViewDelegate> m_delegate; // @synthesize m_delegate;

@@ -25,7 +25,6 @@
     NSString *_thumbFileMd5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbFileMd5; // @synthesize thumbFileMd5=_thumbFileMd5;
 @property(retain, nonatomic) NSString *thumbAesKey; // @synthesize thumbAesKey=_thumbAesKey;
 @property(retain, nonatomic) NSString *thumbFileId; // @synthesize thumbFileId=_thumbFileId;

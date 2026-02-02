@@ -11,7 +11,6 @@
     DiscoverEntranceSettingReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DiscoverEntranceSettingReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) DelaySwitchSettingLogic *delaySwitchSettingLogic; // @synthesize delaySwitchSettingLogic=_delaySwitchSettingLogic;
 - (void)reloadTableView;

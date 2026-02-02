@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_productId;
 + (void)PBArrayAdd_m_packType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_productId; // @synthesize m_productId=_m_productId;
 @property(nonatomic) unsigned int m_packType; // @synthesize m_packType=_m_packType;
 - (id)toXML;

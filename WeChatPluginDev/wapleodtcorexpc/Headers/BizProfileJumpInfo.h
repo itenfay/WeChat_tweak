@@ -21,7 +21,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUserName:(id)arg1 addContactScene:(id)arg2 openArticleFromScene:(id)arg3 enterTarget:(id)arg4 bizFinderExtraData:(id)arg5 articleUrl:(id)arg6 bizFromScene:(id)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *bizFromScene; // @synthesize bizFromScene=_bizFromScene;
 @property(copy, nonatomic) NSString *articleUrl; // @synthesize articleUrl=_articleUrl;
 @property(copy, nonatomic) NSString *bizFinderExtraData; // @synthesize bizFinderExtraData=_bizFinderExtraData;

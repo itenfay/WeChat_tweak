@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditVideoMusicController, MJPublisherContext, MMBGMSelectedConfig, NSMutableArray;
 @protocol MMBGMSelectedMusicDataProtocol;
@@ -21,7 +22,6 @@
     CDUnknownBlockType _musicDownloadCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType musicDownloadCompletion; // @synthesize musicDownloadCompletion=_musicDownloadCompletion;
 @property(nonatomic) _Bool isMusicDownloadCancelled; // @synthesize isMusicDownloadCancelled=_isMusicDownloadCancelled;
 @property(retain, nonatomic) MJPublisherContext *publisherContext; // @synthesize publisherContext=_publisherContext;
@@ -43,4 +43,3 @@
 - (id)initWithFollowMusicInfo:(id)arg1 assetClassfyResult:(id)arg2;
 
 @end
-

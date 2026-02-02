@@ -15,7 +15,6 @@
     UICollectionView *_collectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <MJPageViewInnerProtocol> delegate; // @synthesize delegate=_delegate;

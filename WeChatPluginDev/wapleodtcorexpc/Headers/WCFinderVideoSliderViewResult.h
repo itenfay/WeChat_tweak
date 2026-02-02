@@ -14,7 +14,6 @@
     double _coverTimeInVideo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double coverTimeInVideo; // @synthesize coverTimeInVideo=_coverTimeInVideo;
 @property(retain, nonatomic) UIImage *speciallyImage; // @synthesize speciallyImage=_speciallyImage;
 @property(nonatomic) unsigned long long resultType; // @synthesize resultType=_resultType;

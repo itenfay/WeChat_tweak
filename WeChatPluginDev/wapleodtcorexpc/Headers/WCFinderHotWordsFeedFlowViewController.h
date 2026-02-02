@@ -11,7 +11,6 @@
     WCFinderFeedFlowView *_feedFlowView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
 @property(retain, nonatomic) WCFinderHotWordsFeedViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)finderFeedFlowView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

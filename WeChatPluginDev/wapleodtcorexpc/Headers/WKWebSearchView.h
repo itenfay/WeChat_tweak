@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, NSURLRequest, UIScrollView;
 @protocol YYWebViewDelegate;
 
@@ -21,7 +23,6 @@
     unsigned long long _initTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterReusablePoolTime; // @synthesize enterReusablePoolTime=_enterReusablePoolTime;
 @property(nonatomic) unsigned long long initTime; // @synthesize initTime=_initTime;
 @property(copy, nonatomic) NSString *loadURLString; // @synthesize loadURLString=_loadURLString;
@@ -61,4 +62,3 @@
 @property(nonatomic) __weak id <YYWebViewDelegate> wvDelegate;
 
 @end
-

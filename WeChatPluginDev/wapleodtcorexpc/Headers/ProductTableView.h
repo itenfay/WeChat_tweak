@@ -26,7 +26,6 @@
     id <ProductTableViewDelegate> _deleage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ProductTableViewDelegate> deleage; // @synthesize deleage=_deleage;
 @property(nonatomic) unsigned int jumpProfileScence; // @synthesize jumpProfileScence=_jumpProfileScence;
 @property(nonatomic) unsigned int getA8KeyScence; // @synthesize getA8KeyScence=_getA8KeyScence;

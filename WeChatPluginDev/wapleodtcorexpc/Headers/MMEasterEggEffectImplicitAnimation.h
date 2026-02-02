@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CADisplayLink, MMEasterEggTopAnimation, NSArray, NSMutableArray, NSOperationQueue, NSString, PAGView;
 @protocol MMEasterEggEffectDelegateImplicitAnimation;
 
@@ -21,7 +23,6 @@
     double _nextStartAnimationTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double nextStartAnimationTime; // @synthesize nextStartAnimationTime=_nextStartAnimationTime;
 @property(nonatomic) unsigned long long countOfViewFinished; // @synthesize countOfViewFinished=_countOfViewFinished;
 @property(nonatomic) unsigned long long startAnimationViewCount; // @synthesize startAnimationViewCount=_startAnimationViewCount;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     WCFinderShareCustomTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(nonatomic) unsigned long long firstOffset; // @synthesize firstOffset=_firstOffset;
 @property(retain, nonatomic) WCFinderFeedListView *feedListView; // @synthesize feedListView=_feedListView;

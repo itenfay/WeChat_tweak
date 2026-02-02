@@ -11,7 +11,6 @@
 }
 
 + (void)reportBatchSocialBlackWithActionCode:(unsigned int)arg1 andSelectFriendNum:(unsigned long long)arg2 andModifiedSucFriendNum:(unsigned long long)arg3 andModifiedSucFriendsStr:(id)arg4 andBeforSocialBlackFriendNum:(unsigned long long)arg5 andAfterSocialblackFriendNum:(unsigned long long)arg6 andActionOperateNum:(unsigned long long)arg7 andSelectTagName:(id)arg8 andSelectTagID:(id)arg9 andStayTime:(double)arg10 andSessionID:(id)arg11;
-- (void).cxx_destruct;
 - (_Bool)onFilterContactCandidate:(id)arg1;
 - (void)onContactsDataChange;
 - (id)getAddContactLoadContactListFromContactTagData:(id)arg1;

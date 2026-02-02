@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveGiftNotificationItem, MMFinderLiveGlobalRankSignView, MMFinderLiveLiveRoleSignView, MMFinderLiveNotifyGiftNotificationView, MMFinderLivePkTaskedBonusGiftNotificationIndicatorView, MMLiveScrollNumView, MMUILabel, NSNumberFormatter, NSString, PAGView, RfxPagView, UIImageView, UIView;
 
 @interface MMLiveRewardGiftNotificationView
@@ -35,7 +37,6 @@
     NSString *_viewId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *viewId; // @synthesize viewId=_viewId;
 @property(retain, nonatomic) NSNumberFormatter *taskedBonusMultiplierFormatter; // @synthesize taskedBonusMultiplierFormatter=_taskedBonusMultiplierFormatter;
 @property(retain, nonatomic) MMFinderLivePkTaskedBonusGiftNotificationIndicatorView *taskedBonusIndicatorView; // @synthesize taskedBonusIndicatorView=_taskedBonusIndicatorView;
@@ -119,4 +120,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *s2tMap; // @synthesize s2tMap=_s2tMap;
 @property(retain, nonatomic) NSDictionary *t2sMap; // @synthesize t2sMap=_t2sMap;
 - (id)getTraditionalChineseDic;

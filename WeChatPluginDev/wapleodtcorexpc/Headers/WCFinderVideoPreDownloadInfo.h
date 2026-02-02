@@ -59,7 +59,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(nonatomic) _Bool isIdleMonitorTask; // @synthesize isIdleMonitorTask=_isIdleMonitorTask;
 @property(nonatomic) _Bool isMinBytesComplete; // @synthesize isMinBytesComplete=_isMinBytesComplete;

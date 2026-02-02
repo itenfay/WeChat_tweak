@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSContext, JSVirtualMachine, NSMutableDictionary, NSString, VideoPreloadReporter;
 
 @interface MMWebOptimVideoCacheTask
@@ -16,7 +18,6 @@
     NSMutableDictionary *_getVUrlDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *getVUrlDict; // @synthesize getVUrlDict=_getVUrlDict;
 @property(retain, nonatomic) VideoPreloadReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) JSVirtualMachine *jsVirtualMachine; // @synthesize jsVirtualMachine=_jsVirtualMachine;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

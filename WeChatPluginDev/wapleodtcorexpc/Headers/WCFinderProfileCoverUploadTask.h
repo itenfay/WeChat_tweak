@@ -15,7 +15,6 @@
     NSString *_uploadMediaLocalURL;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uploadMediaLocalURL; // @synthesize uploadMediaLocalURL=_uploadMediaLocalURL;
 @property(retain, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(retain, nonatomic) NSString *mediaMd5; // @synthesize mediaMd5=_mediaMd5;

@@ -14,7 +14,6 @@
 }
 
 + (id)textItemWithText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long type; // @synthesize type=_type;
 

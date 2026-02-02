@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmojiInfo, EmoticonStoreDetailCoverImageView, EmoticonStoreDetailRewardEntranceView, EmoticonStoreGridView, EmoticonStoreItem, EmoticonStoreReportInfo, EmotionLinkInfo, EmotionRewardResponseInfo, EmotionStoreDetailDesignerContainerView, MMBorderView, MMEmoticonStoreDownloadLogic, MMUIScrollView, MMWebImageView, NSString, RichTextView, StoreEmotionPageShareLogic, UIButton, UIImageView, UILabel, UIView, WCDataItem;
 
 @interface MMStoreEmotionDetailViewController
@@ -50,7 +52,6 @@
 }
 
 + (id)genProductIdFromTimelineUserData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmotionLinkInfo *linkInfoForReport; // @synthesize linkInfoForReport=_linkInfoForReport;
 @property(nonatomic) _Bool needUpdateForLink; // @synthesize needUpdateForLink=_needUpdateForLink;
 @property(retain, nonatomic) RichTextView *linkDetailView; // @synthesize linkDetailView=_linkDetailView;
@@ -185,4 +186,3 @@
 @property(readonly) Class superclass;
 
 @end
-

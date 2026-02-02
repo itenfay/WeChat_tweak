@@ -13,7 +13,6 @@
     MMUILabel *_subtitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)updateWithTitle:(id)arg1 subtitle:(id)arg2;

@@ -15,7 +15,6 @@
 
 + (id)pairByUInt:(unsigned int)arg1;
 + (id)pairWithShowingStr:(id)arg1 timeStr:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *timeStr; // @synthesize timeStr=_timeStr;
 @property(readonly, copy, nonatomic) NSString *showingStr; // @synthesize showingStr=_showingStr;
 - (id)initWithShowingStr:(id)arg1 timeStr:(id)arg2;

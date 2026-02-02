@@ -26,7 +26,6 @@
     UIImageView *_volumeIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *volumeIconView; // @synthesize volumeIconView=_volumeIconView;
 @property(retain, nonatomic) UIView *volumeBgView; // @synthesize volumeBgView=_volumeBgView;
 @property(retain, nonatomic) UIView *volumePanel; // @synthesize volumePanel=_volumePanel;

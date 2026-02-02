@@ -12,7 +12,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 - (void)layoutSubviews;
 - (void)commonConfiWithColor:(id)arg1 alphaTop:(double)arg2 alphaBottom:(double)arg3;

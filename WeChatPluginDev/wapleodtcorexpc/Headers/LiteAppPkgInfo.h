@@ -15,7 +15,6 @@
     NSString *_patchId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAutoCheck; // @synthesize isAutoCheck=_isAutoCheck;
 @property(retain, nonatomic) NSString *patchId; // @synthesize patchId=_patchId;
 @property(retain, nonatomic) NSString *baseId; // @synthesize baseId=_baseId;

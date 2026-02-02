@@ -13,7 +13,6 @@
     long long _opentypewebviewSubtype;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long opentypewebviewSubtype; // @synthesize opentypewebviewSubtype=_opentypewebviewSubtype;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;
 - (void)onPreEnterWechatDone;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, WCListenLyricAnimationLoadingView;
 
 @interface WCListenLyricsLoadingHeaderView
@@ -12,7 +14,6 @@
     UIView *_highlightedView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedView; // @synthesize highlightedView=_highlightedView;
 @property(retain, nonatomic) WCListenLyricAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(copy, nonatomic) CDUnknownBlockType onClickBlock; // @synthesize onClickBlock=_onClickBlock;
@@ -28,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

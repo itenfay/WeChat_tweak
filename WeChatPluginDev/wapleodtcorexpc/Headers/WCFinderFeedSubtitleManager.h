@@ -12,7 +12,6 @@
     NSMutableDictionary *_subtitleViewModelDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *subtitleViewModelDict; // @synthesize subtitleViewModelDict=_subtitleViewModelDict;
 - (void)clearAll;
 - (id)subtitleViewModelWithTid:(id)arg1;

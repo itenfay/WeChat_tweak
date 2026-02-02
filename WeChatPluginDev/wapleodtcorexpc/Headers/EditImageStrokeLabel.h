@@ -14,7 +14,6 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;

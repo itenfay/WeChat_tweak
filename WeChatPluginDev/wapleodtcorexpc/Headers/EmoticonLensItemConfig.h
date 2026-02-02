@@ -20,7 +20,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nameCn; // @synthesize nameCn=_nameCn;
 @property(retain, nonatomic) NSString *nameEn; // @synthesize nameEn=_nameEn;
 @property(retain, nonatomic) NSString *id; // @synthesize id=_id;

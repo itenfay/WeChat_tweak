@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSMutableSet, NSObject, NSString, WAAppTask, WXAudioNative;
 @protocol OS_dispatch_queue;
 
@@ -25,7 +27,6 @@
     NSMutableDictionary *_sessionIdDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sessionIdDict; // @synthesize sessionIdDict=_sessionIdDict;
 @property _Bool bInterruptBySystem; // @synthesize bInterruptBySystem=_bInterruptBySystem;
 @property _Bool bInterruptByInnerApp; // @synthesize bInterruptByInnerApp=_bInterruptByInnerApp;
@@ -93,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

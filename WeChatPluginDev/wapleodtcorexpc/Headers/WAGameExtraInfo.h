@@ -12,7 +12,6 @@
     WxaGameBaseInfo *_gameBaseInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WxaGameBaseInfo *gameBaseInfo; // @synthesize gameBaseInfo=_gameBaseInfo;
 @property(retain, nonatomic) GetWxaGameConfigResponse_WxagGameReviewsConfig *gameReviewConfig; // @synthesize gameReviewConfig=_gameReviewConfig;
 @property(retain, nonatomic) GetWxaGameConfigResponse_WxagGameOriginalReviewConfig *gameEvaluateConfig; // @synthesize gameEvaluateConfig=_gameEvaluateConfig;

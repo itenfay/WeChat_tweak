@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AmountRemindPage, BusiF2FPlaceOrderResp, DrawLotteryResponse, ExposureInfo, ExposureInfoModifyResponse, GetLotteryResponse, MMTipsViewController, MMWebViewController, NSString, WCPayBizF2FPayCheckCgi, WCPayBizF2FPlaceOrderCgi, WCPayBizF2FZeroCallBackAutoRetryCgi, WCPayBizF2FZeroPayConfirmView, WCPayBusiF2FSucPageCgiWithRetry, WCPayBusiF2FUnlockFavorCgi, WCPayF2FDrawLotteryCgi, WCPayF2FGetLotteryCgi, WCPayF2FMiddlePageSubLogic, WCPayF2FModifyExposureCgi, WCPayGetZeroPayTokenCgi, WCPayPayMoneyLogic;
 @protocol WCPayBizF2FTransferControlLogicDelegate;
 
@@ -42,7 +44,6 @@
     MMWebViewController *_hkCashierViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *hkCashierViewController; // @synthesize hkCashierViewController=_hkCashierViewController;
 @property(retain) MMTipsViewController *checkNameController; // @synthesize checkNameController=_checkNameController;
 @property(nonatomic) _Bool bIsShowingCrossPlatformSuccPage; // @synthesize bIsShowingCrossPlatformSuccPage=_bIsShowingCrossPlatformSuccPage;
@@ -181,4 +182,3 @@
 @property(readonly) Class superclass;
 
 @end
-

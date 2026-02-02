@@ -13,7 +13,6 @@
     CommentContentInfo *_contentInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CommentContentInfo *contentInfo; // @synthesize contentInfo=_contentInfo;
 @property(nonatomic) int type; // @synthesize type=_type;
 

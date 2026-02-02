@@ -12,7 +12,6 @@
     NSString *_link;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -14,7 +14,6 @@
     NSArray *_menuData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *menuData; // @synthesize menuData=_menuData;
 @property(retain, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

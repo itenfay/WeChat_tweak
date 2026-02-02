@@ -27,7 +27,6 @@
     NSString *_modelFolder;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *modelFolder; // @synthesize modelFolder=_modelFolder;
 @property(retain, nonatomic) QVisLayerPayload *payload; // @synthesize payload=_payload;
 @property(nonatomic) int modelPedestalRectCount; // @synthesize modelPedestalRectCount=_modelPedestalRectCount;

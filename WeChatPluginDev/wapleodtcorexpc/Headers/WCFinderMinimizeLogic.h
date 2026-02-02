@@ -32,7 +32,6 @@
     NSString *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(retain, nonatomic) WCFinderContextIdToken *contextToken; // @synthesize contextToken=_contextToken;
 @property(retain, nonatomic) NSDictionary *reportUDFKV; // @synthesize reportUDFKV=_reportUDFKV;

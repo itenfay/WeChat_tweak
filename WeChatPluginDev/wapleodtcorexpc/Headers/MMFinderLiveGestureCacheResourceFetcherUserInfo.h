@@ -13,7 +13,6 @@
     NSString *_loggingTag;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *loggingTag; // @synthesize loggingTag=_loggingTag;
 @property(retain, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 

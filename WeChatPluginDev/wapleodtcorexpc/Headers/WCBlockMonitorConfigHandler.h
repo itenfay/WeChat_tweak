@@ -13,7 +13,6 @@
 }
 
 + (int)getDeviceCPUCount;
-- (void).cxx_destruct;
 - (_Bool)getShouldSearchQueueNames;
 - (_Bool)getShouldUploadCoreDumpAfterCrash;
 - (_Bool)getShouldCoreDumpAtNonCrash;

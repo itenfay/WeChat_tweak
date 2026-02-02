@@ -14,7 +14,6 @@
     RingToneDetail *_ring;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneDetail *ring; // @synthesize ring=_ring;
 @property(nonatomic) __weak id <RingTonePickerSectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) RingToneRecommendReporter_23604 *reporter; // @synthesize reporter=_reporter;

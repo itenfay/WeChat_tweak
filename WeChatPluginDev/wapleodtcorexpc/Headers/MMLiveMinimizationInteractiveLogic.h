@@ -19,7 +19,6 @@
 }
 
 + (id)minimizeInteractiveLogic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *minimizeContainerView; // @synthesize minimizeContainerView=_minimizeContainerView;
 @property(retain, nonatomic) MMLiveCustomTransition *customTransition; // @synthesize customTransition=_customTransition;
 @property(retain, nonatomic) MinimizeNewTransitionController *transitionController; // @synthesize transitionController=_transitionController;

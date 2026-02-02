@@ -12,7 +12,6 @@
     MISSING_TYPE *completions;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;

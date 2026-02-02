@@ -27,7 +27,6 @@
     id <WCImageFullScreenViewControllerDelegateV4> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCImageFullScreenViewControllerDelegateV4> m_delegate; // @synthesize m_delegate;
 @property(nonatomic) unsigned int m_iCurIndex; // @synthesize m_iCurIndex;
 - (void)onVideoVoipViewDidAppear:(id)arg1;

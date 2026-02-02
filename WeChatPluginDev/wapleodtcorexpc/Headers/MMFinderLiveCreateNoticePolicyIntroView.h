@@ -10,7 +10,6 @@
     RichTextView *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *descLabel; // @synthesize descLabel=_descLabel;
 - (double)contentViewHeight;
 - (void)updateDescLabel;

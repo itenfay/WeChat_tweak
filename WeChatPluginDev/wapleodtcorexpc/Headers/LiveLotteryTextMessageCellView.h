@@ -10,7 +10,6 @@
     UIButton *m_sourceButton;
 }
 
-- (void).cxx_destruct;
 - (void)anchorClickLotteryDetail:(id)arg1 lotteryInfo:(id)arg2 taskId:(id)arg3;
 - (void)audienceClickLotteryDetail:(id)arg1 lotteryInfo:(id)arg2 taskId:(id)arg3 anchorNickName:(id)arg4 objectId:(unsigned long long)arg5 liveId:(unsigned long long)arg6 lotteryType:(unsigned int)arg7 couponRecordInfo:(id)arg8;
 - (void)reportClick:(unsigned long long)arg1 audience:(int)arg2 lotteryId:(id)arg3;

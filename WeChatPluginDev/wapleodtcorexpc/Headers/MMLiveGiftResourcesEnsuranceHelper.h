@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _giftFetchingWorkItem;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType giftFetchingWorkItem; // @synthesize giftFetchingWorkItem=_giftFetchingWorkItem;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 - (id)validateAvailabilityOfResources:(id)arg1 correlationId:(id)arg2;
@@ -23,4 +23,3 @@
 - (id)initWithLiveTaskId:(id)arg1;
 
 @end
-

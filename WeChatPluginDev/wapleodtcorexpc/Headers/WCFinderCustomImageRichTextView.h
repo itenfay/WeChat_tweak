@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface WCFinderCustomImageRichTextView
@@ -11,7 +13,6 @@
 }
 
 + (id)defaultSVGMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *respCache; // @synthesize respCache=_respCache;
 - (struct CGRect)getFrameOfImageStyleMatches:(CDUnknownBlockType)arg1;
 - (_Bool)handleCommentIcon:(id)arg1 size:(struct CGSize)arg2 handler:(CDUnknownBlockType)arg3;
@@ -27,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

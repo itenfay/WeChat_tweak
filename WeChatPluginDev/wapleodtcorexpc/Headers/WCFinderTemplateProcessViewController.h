@@ -26,7 +26,6 @@
     NSString *_traceId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(copy, nonatomic) NSString *preSelectedTemplateID; // @synthesize preSelectedTemplateID=_preSelectedTemplateID;
 @property(nonatomic, getter=isExporting) _Bool exporting; // @synthesize exporting=_exporting;

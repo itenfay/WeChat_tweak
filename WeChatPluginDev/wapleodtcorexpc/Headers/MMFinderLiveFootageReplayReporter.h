@@ -14,7 +14,6 @@
     NSString *_correlationId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *correlationId; // @synthesize correlationId=_correlationId;
 @property(nonatomic) unsigned long long replayLengthInMilliseconds; // @synthesize replayLengthInMilliseconds=_replayLengthInMilliseconds;
 @property(retain, nonatomic) MMFinderLiveFootageReplayModel *replayModel; // @synthesize replayModel=_replayModel;

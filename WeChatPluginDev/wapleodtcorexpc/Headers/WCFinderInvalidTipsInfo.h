@@ -19,7 +19,6 @@
     NSString *_complainText;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *complainText; // @synthesize complainText=_complainText;
 @property(retain, nonatomic) UIColor *buttonTitleColor; // @synthesize buttonTitleColor=_buttonTitleColor;
 @property(retain, nonatomic) UIColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;

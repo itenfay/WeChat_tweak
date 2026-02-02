@@ -4,9 +4,9 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSObject (MMThrottle)
 - (void)doThrottledTaskWithMode:(unsigned long long)arg1 interval:(double)arg2 taskId:(id)arg3 taskBlock:(CDUnknownBlockType)arg4;
 - (void)doThrottledTaskWithInterval:(double)arg1 taskId:(id)arg2 taskBlock:(CDUnknownBlockType)arg3;
 @end
-

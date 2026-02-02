@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveMilestoneLotteryInfo, FinderLiveMilestoneLotteryMetaInfo, MMFinderLiveTaskId, MMTimer, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, WCFinderLiveAudienceLogReporter;
 @protocol MMFinderLiveMilestoneLotteryViewModelDelegate;
@@ -27,7 +28,6 @@
 
 + (id)pathForBigLotteryPacketPAG;
 + (id)pathForSmallLotteryPacketPAG;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *colorConfigMap; // @synthesize colorConfigMap=_colorConfigMap;
 @property(nonatomic) _Bool isAttendingVote; // @synthesize isAttendingVote=_isAttendingVote;
 @property(retain, nonatomic) NSString *lastDisplayedLotteryId; // @synthesize lastDisplayedLotteryId=_lastDisplayedLotteryId;
@@ -121,4 +121,3 @@
 @property(readonly) Class superclass;
 
 @end
-

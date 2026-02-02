@@ -17,7 +17,6 @@
     unsigned long long m_searchScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_searchScene; // @synthesize m_searchScene;
 @property(retain, nonatomic) NSString *m_googleImageUrl; // @synthesize m_googleImageUrl;
 @property(retain, nonatomic) NSArray *m_arrMobiles; // @synthesize m_arrMobiles;

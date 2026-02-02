@@ -16,7 +16,6 @@
 
 + (id)dataSourceWithMediaAsset:(id)arg1;
 + (id)dataSourceWithUrlDataSource:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <ITPMediaAsset> mediaAsset; // @synthesize mediaAsset=_mediaAsset;
 @property(retain, nonatomic) TPUrlDataSource *urlDataSource; // @synthesize urlDataSource=_urlDataSource;
 - (_Bool)isValid;

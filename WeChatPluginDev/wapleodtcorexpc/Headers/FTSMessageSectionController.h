@@ -10,7 +10,6 @@
     NSMutableDictionary *m_dicWeakMedia;
 }
 
-- (void).cxx_destruct;
 - (unsigned int)getSubClickTypeForClickType:(unsigned int)arg1 index:(unsigned int)arg2;
 - (unsigned long long)clickTypeForIndex:(long long)arg1;
 - (void)onFTSDetailPageMessageResultChanged:(_Bool)arg1;

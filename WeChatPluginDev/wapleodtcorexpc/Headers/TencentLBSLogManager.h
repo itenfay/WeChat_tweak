@@ -16,7 +16,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *calmanPath; // @synthesize calmanPath=_calmanPath;
 @property(copy, nonatomic) NSString *badDataPath; // @synthesize badDataPath=_badDataPath;
 @property(copy, nonatomic) NSString *tencentDataPath; // @synthesize tencentDataPath=_tencentDataPath;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PrepareFinder, UIView, WCFinderContact, WCFinderContactPreviewData, WCFinderRedDotTipsShowInfo;
 
@@ -31,7 +32,6 @@
     UIView *_reportRootView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *reportRootView; // @synthesize reportRootView=_reportRootView;
 @property(nonatomic) _Bool newPrepareStyle; // @synthesize newPrepareStyle=_newPrepareStyle;
 @property(copy, nonatomic) CDUnknownBlockType creatorBindReport; // @synthesize creatorBindReport=_creatorBindReport;
@@ -54,4 +54,3 @@
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 
 @end
-

@@ -18,7 +18,6 @@
     long long _uploadErrSnsTipsCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long uploadErrSnsTipsCode; // @synthesize uploadErrSnsTipsCode=_uploadErrSnsTipsCode;
 @property(copy, nonatomic) NSString *uploadErrBtnTitle; // @synthesize uploadErrBtnTitle=_uploadErrBtnTitle;
 @property(copy, nonatomic) NSString *uploadErrBtnUrl; // @synthesize uploadErrBtnUrl=_uploadErrBtnUrl;

@@ -12,7 +12,6 @@
     WAPrefetchInvalidateResourceInfo *_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPrefetchInvalidateResourceInfo *info; // @synthesize info=_info;
 - (void)clearInvalidateCodeWithAppid:(id)arg1;
 - (void)clearInvalidateContactWithAppid:(id)arg1;

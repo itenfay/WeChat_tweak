@@ -11,7 +11,6 @@
     NSString *_extMsg;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extMsg; // @synthesize extMsg=_extMsg;
 @property(copy, nonatomic) NSString *businessType; // @synthesize businessType=_businessType;
 

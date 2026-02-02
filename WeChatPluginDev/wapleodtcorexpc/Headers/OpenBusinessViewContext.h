@@ -13,7 +13,6 @@
     NSString *_businessType;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *businessType; // @synthesize businessType=_businessType;
 @property(copy, nonatomic) NSString *envVersion; // @synthesize envVersion=_envVersion;
 

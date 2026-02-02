@@ -15,7 +15,6 @@
     FTSContactIndexMgr *_indexMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSContactIndexMgr *indexMgr; // @synthesize indexMgr=_indexMgr;
 @property(nonatomic) _Bool needMonitorReport; // @synthesize needMonitorReport=_needMonitorReport;
 - (id)syncSearchTextForSingleContact:(id)arg1;

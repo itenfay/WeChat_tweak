@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, PAGView;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _pagCompletion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hide; // @synthesize hide=_hide;
 @property(copy, nonatomic) CDUnknownBlockType pagCompletion; // @synthesize pagCompletion=_pagCompletion;
 @property(retain, nonatomic) NSMutableDictionary *imageDic; // @synthesize imageDic=_imageDic;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 
 @end
-

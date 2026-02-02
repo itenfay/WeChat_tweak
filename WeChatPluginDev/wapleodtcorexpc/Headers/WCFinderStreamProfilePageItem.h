@@ -13,7 +13,6 @@
     WCFinderStreamProfilePageModel *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStreamProfilePageModel *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 

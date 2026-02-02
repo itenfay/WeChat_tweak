@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_pagePath;
 + (void)PBArrayAdd_appUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preloadResources; // @synthesize preloadResources=_preloadResources;
 @property(nonatomic) unsigned int subType; // @synthesize subType=_subType;
 @property(nonatomic) unsigned int isGame; // @synthesize isGame=_isGame;

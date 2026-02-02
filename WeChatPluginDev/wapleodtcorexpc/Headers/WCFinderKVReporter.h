@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderKVReporter : NSObject
 {
@@ -331,4 +332,3 @@
 + (void)reportEventInTopic:(_Bool)arg1 commentScene:(int)arg2 withEventId:(unsigned long long)arg3;
 
 @end
-

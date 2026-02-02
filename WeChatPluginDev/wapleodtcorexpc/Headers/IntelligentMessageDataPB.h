@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_updateModelItemDic;
 + (void)PBArrayAdd_modelKeyInfoDic;
 + (void)PBArrayAdd_lastUpdateModelId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int strartRepairIntelligentMsgCurrentVersion; // @synthesize strartRepairIntelligentMsgCurrentVersion=_strartRepairIntelligentMsgCurrentVersion;
 @property(nonatomic) unsigned int currentIntelligentMsgVersion; // @synthesize currentIntelligentMsgVersion=_currentIntelligentMsgVersion;
 @property(nonatomic) long long faceClusterSequence; // @synthesize faceClusterSequence=_faceClusterSequence;

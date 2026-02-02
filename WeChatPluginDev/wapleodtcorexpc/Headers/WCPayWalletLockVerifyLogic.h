@@ -14,7 +14,6 @@
     WCPayWalletLockReportCgi *_walletLockReportCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayWalletLockReportCgi *walletLockReportCgi; // @synthesize walletLockReportCgi=_walletLockReportCgi;
 @property(nonatomic) unsigned int patternLockLogicTag; // @synthesize patternLockLogicTag=_patternLockLogicTag;
 @property(nonatomic) __weak id <WCPayWalletLockVerifyLogicDelegate> delegate; // @synthesize delegate=_delegate;

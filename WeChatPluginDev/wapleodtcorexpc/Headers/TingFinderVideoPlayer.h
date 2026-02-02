@@ -11,7 +11,6 @@
     WCFinderDataItem *_fetchedDataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *fetchedDataItem; // @synthesize fetchedDataItem=_fetchedDataItem;
 @property(retain, nonatomic) WCFinderPlayerViewForTing *videoView; // @synthesize videoView=_videoView;
 - (void)finderPlayerViewForTing:(id)arg1 onVideoPlayFail:(int)arg2 errorDesc:(id)arg3;

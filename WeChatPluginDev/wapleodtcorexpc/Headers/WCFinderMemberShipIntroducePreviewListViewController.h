@@ -23,7 +23,6 @@
     UIView *_topViewContainer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topViewContainer; // @synthesize topViewContainer=_topViewContainer;
 @property(retain, nonatomic) WCFinderStreamProfileDragBarView *dragBarView; // @synthesize dragBarView=_dragBarView;
 @property(nonatomic) unsigned long long entranceSource; // @synthesize entranceSource=_entranceSource;

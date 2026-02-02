@@ -22,7 +22,6 @@
 + (const void *)objectRelationalMapping;
 + (void)initialize;
 + (void)PBArrayAdd_categoryName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 - (id)genCategoryInfo;
 - (id)getPBPropertyTable;

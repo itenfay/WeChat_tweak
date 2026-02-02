@@ -15,7 +15,6 @@
 + (id)fetchBulletTextColorWithTextStyle:(id)arg1;
 + (id)fetchBulletTextFontWithTextStyle:(id)arg1;
 + (struct CGSize)calcBulletTextViewSizeWithBulletText:(id)arg1 font:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *bulletTextLabel; // @synthesize bulletTextLabel=_bulletTextLabel;
 @property(retain, nonatomic) WCAdBulletScreenTextStyleInfo *bulletTextStyle; // @synthesize bulletTextStyle=_bulletTextStyle;
 @property(retain, nonatomic) NSString *bulletText; // @synthesize bulletText=_bulletText;

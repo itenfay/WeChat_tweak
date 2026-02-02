@@ -14,7 +14,6 @@
     NSNumber *_count;
 }
 
-- (void).cxx_destruct;
 - (id)description;
 - (void)addSequence:(id)arg1;
 - (void)addSchema:(id)arg1;

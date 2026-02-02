@@ -15,7 +15,6 @@
     WCFinderFeedContentVM *_sourceFeedContentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *sourceFeedContentVM; // @synthesize sourceFeedContentVM=_sourceFeedContentVM;
 @property(copy, nonatomic) NSString *sourceFeedId; // @synthesize sourceFeedId=_sourceFeedId;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

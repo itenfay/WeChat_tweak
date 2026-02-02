@@ -42,7 +42,6 @@
 @property(retain, nonatomic) NSString *HTTPMethod; // @synthesize HTTPMethod=_HTTPMethod;
 @property(retain, nonatomic) NSMutableArray *eventArray; // @synthesize eventArray=_eventArray;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)commonInfo;
 - (id)networkDescriptionWithAPN:(int)arg1;
 - (id)itemTypeDescription;

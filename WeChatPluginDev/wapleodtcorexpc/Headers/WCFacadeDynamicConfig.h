@@ -76,7 +76,6 @@
     unsigned long long _serverConfigHash;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool Post_isIPadSightCameraLandscapeEnabled; // @synthesize Post_isIPadSightCameraLandscapeEnabled=_Post_isIPadSightCameraLandscapeEnabled;
 @property(nonatomic) _Bool Post_isIPadSightCameraEnabled; // @synthesize Post_isIPadSightCameraEnabled=_Post_isIPadSightCameraEnabled;
 @property(nonatomic) unsigned long long serverConfigHash; // @synthesize serverConfigHash=_serverConfigHash;

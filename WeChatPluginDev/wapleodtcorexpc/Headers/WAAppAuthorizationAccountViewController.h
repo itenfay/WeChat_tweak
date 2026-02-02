@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAAppAuthInfoData, WAAppAuthorizationAccountLogic, WAContact;
 
 @interface WAAppAuthorizationAccountViewController
@@ -13,7 +15,6 @@
     WAAppAuthorizationAccountLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppAuthorizationAccountLogic *logic; // @synthesize logic=_logic;
 @property(copy, nonatomic) CDUnknownBlockType updateAction; // @synthesize updateAction=_updateAction;
 @property(retain, nonatomic) WAAppAuthInfoData *authInfo; // @synthesize authInfo=_authInfo;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

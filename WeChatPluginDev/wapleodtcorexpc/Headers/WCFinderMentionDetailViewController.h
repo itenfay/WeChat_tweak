@@ -28,7 +28,6 @@
     WCFinderShareCustomTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClickCloseBtn; // @synthesize isClickCloseBtn=_isClickCloseBtn;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(nonatomic) _Bool needsResumeTimelineVideo; // @synthesize needsResumeTimelineVideo=_needsResumeTimelineVideo;

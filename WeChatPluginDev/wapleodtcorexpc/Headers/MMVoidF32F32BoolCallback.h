@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)call:(float)arg1 value2:(float)arg2 value3:(_Bool)arg3;
 - (id)initWithCpp:(const void *)arg1;
 

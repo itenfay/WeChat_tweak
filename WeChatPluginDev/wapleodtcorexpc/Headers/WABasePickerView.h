@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FixTitleColorButton, NSString, UIPickerView, WABasePickerViewModel;
 @protocol WAPickerViewDelegate;
@@ -21,7 +22,6 @@
     FixTitleColorButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FixTitleColorButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) FixTitleColorButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

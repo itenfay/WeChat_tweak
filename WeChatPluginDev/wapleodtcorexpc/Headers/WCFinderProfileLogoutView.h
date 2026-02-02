@@ -17,7 +17,6 @@
     UIButton *_IKnowButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *IKnowButton; // @synthesize IKnowButton=_IKnowButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;

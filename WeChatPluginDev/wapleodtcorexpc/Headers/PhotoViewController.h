@@ -57,7 +57,6 @@
 + (id)imageFromLocalCacheWithPath:(id)arg1;
 + (id)imageDataFromCacheWithUrl:(id)arg1;
 + (id)genKeyForUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageActionSheet *imageActionSheet; // @synthesize imageActionSheet=_imageActionSheet;
 @property(retain, nonatomic) NSMutableDictionary *translatedImages; // @synthesize translatedImages=_translatedImages;
 @property(nonatomic) int presetIndex; // @synthesize presetIndex=_presetIndex;

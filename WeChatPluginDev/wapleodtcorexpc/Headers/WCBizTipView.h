@@ -20,7 +20,6 @@
     UIButton *_backgroundCloseBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *backgroundCloseBtn; // @synthesize backgroundCloseBtn=_backgroundCloseBtn;
 @property(nonatomic) __weak id <WCBizTipViewDelegate> m_delegate; // @synthesize m_delegate;
 - (id)getContentImageView;

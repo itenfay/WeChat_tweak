@@ -15,7 +15,6 @@
     NSMutableDictionary *_waitingListenerDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *waitingListenerDict; // @synthesize waitingListenerDict=_waitingListenerDict;
 @property(retain, nonatomic) NSMutableArray *waitingQueue; // @synthesize waitingQueue=_waitingQueue;
 @property(retain, nonatomic) NSMutableDictionary *taskDict; // @synthesize taskDict=_taskDict;

@@ -17,7 +17,6 @@
     struct CGSize _containerSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSMutableArray *timeValues; // @synthesize timeValues=_timeValues;
 @property(retain, nonatomic) NSMutableArray *scaleValues; // @synthesize scaleValues=_scaleValues;

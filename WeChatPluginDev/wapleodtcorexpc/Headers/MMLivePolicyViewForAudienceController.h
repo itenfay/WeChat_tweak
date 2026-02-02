@@ -20,7 +20,6 @@
     MMWebViewController *_webVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWebViewController *webVC; // @synthesize webVC=_webVC;
 @property(nonatomic) long long currOrientation; // @synthesize currOrientation=_currOrientation;
 @property(retain, nonatomic) UIImageView *shadowView; // @synthesize shadowView=_shadowView;

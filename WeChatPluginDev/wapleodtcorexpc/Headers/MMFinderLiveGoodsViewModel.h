@@ -25,7 +25,6 @@
     NSString *_searchKeyword;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *searchKeyword; // @synthesize searchKeyword=_searchKeyword;
 @property(nonatomic) long long listType; // @synthesize listType=_listType;
 @property(retain, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveMusicAddDataItem, MMUILabel, MMWebImageView, NSString, UIImageView;
 
@@ -22,7 +23,6 @@
 + (id)identifier;
 + (double)preferLabelLeft;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(retain, nonatomic) UIImageView *addStateImage; // @synthesize addStateImage=_addStateImage;
 @property(retain, nonatomic) MMUILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

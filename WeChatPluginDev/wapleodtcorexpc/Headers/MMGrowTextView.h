@@ -62,7 +62,6 @@
 }
 
 + (struct UIEdgeInsets)defaultBackgroundImageInsets;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSAttributedString *lastAttributedContent; // @synthesize lastAttributedContent=_lastAttributedContent;
 @property(nonatomic) struct _NSRange lastMarkedRange; // @synthesize lastMarkedRange=_lastMarkedRange;
 @property(nonatomic) _Bool bMatchInnerViewHeightWithFrame; // @synthesize bMatchInnerViewHeightWithFrame=_bMatchInnerViewHeightWithFrame;

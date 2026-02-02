@@ -12,7 +12,6 @@
     struct CGSize _editBounds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSticky; // @synthesize isSticky=_isSticky;
 @property(nonatomic) struct CGSize editBounds; // @synthesize editBounds=_editBounds;
 @property(nonatomic) __weak id <EditImageAnimatedDelegate> animatedDelegate; // @synthesize animatedDelegate=_animatedDelegate;

@@ -20,7 +20,6 @@
     WCFinderFollowSearchContactViewController *_searchContactVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFollowSearchContactViewController *searchContactVC; // @synthesize searchContactVC=_searchContactVC;
 @property(retain, nonatomic) UIView *searchContainer; // @synthesize searchContainer=_searchContainer;
 @property(retain, nonatomic) MMUISearchBar *searchBar; // @synthesize searchBar=_searchBar;

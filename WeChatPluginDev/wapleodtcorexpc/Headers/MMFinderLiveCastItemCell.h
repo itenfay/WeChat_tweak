@@ -18,7 +18,6 @@
 
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)defaultCellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeparatorLine; // @synthesize bottomSeparatorLine=_bottomSeparatorLine;
 @property(retain, nonatomic) UIView *topSeparatorLine; // @synthesize topSeparatorLine=_topSeparatorLine;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;

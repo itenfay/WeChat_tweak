@@ -12,7 +12,6 @@
 }
 
 + (id)modelWithType:(long long)arg1 data:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id data; // @synthesize data=_data;
 @property(nonatomic) long long type; // @synthesize type=_type;
 

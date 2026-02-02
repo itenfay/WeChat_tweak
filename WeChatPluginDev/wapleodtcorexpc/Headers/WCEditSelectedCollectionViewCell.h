@@ -13,7 +13,6 @@
     UIColor *_borderLineColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderLineColor; // @synthesize borderLineColor=_borderLineColor;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)showBorder:(_Bool)arg1;

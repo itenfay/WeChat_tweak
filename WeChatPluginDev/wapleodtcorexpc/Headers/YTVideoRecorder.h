@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, AVCaptureAudioDataOutput, AVCaptureSession, NSString;
 
@@ -23,7 +24,6 @@
     NSString *videoPath;
 }
 
-- (void).cxx_destruct;
 - (struct __CVBuffer *)newPixelBufferFromCGImage:(const struct Mat *)arg1;
 - (void)saveToCameraRoll:(CDUnknownBlockType)arg1;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

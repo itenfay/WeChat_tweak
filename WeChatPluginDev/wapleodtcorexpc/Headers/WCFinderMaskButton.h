@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMBadgeView, UIView;
 
 @interface WCFinderMaskButton
@@ -12,7 +14,6 @@
     MMBadgeView *_redDotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *redDotView; // @synthesize redDotView=_redDotView;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
@@ -26,4 +27,3 @@
 - (void)setMaskViewBackgroundColor:(id)arg1;
 
 @end
-

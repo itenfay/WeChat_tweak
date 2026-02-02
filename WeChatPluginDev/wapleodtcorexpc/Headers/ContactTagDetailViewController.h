@@ -31,7 +31,6 @@
     NSString *ns_CurTagNameTextFieldValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_leftBarButtonTitle; // @synthesize m_leftBarButtonTitle;
 @property(retain, nonatomic) NSString *m_title; // @synthesize m_title;
 @property(nonatomic) _Bool m_bIsFromContactTagHelloWorld; // @synthesize m_bIsFromContactTagHelloWorld;

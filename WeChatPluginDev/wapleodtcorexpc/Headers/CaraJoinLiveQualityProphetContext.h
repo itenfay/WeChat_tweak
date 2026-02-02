@@ -15,7 +15,6 @@
     NSString *_liveID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) NSString *liveID; // @synthesize liveID=_liveID;
 @property(readonly, nonatomic) int networkQuality; // @synthesize networkQuality=_networkQuality;

@@ -4,6 +4,7 @@
 //
 
 #import <UserNotifications/UNNotificationContent.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UNNotificationContent (VoIPIntent)
 - (void)createVoIPIntentContentUsingAudioAvatarWithType:(unsigned long long)arg1 remark:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -14,4 +15,3 @@
 - (void)createVoIPIntentContentWithContent:(id)arg1 remark:(id)arg2 isSucceed:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)VoIPNotificationContentWithDuration:(double)arg1 remark:(id)arg2;
 @end
-

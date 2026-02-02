@@ -17,7 +17,6 @@
 + (id)numberFromValueStr:(id)arg1 preferType:(int)arg2;
 + (id)numberFromValueStr:(id)arg1;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *valueStr; // @synthesize valueStr=_valueStr;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (_Bool)increase;

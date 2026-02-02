@@ -14,7 +14,6 @@
     id <IntelligentMsgImgResultListViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IntelligentMsgImgResultListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int m_style; // @synthesize m_style=_m_style;
 @property(retain, nonatomic) NSArray *m_LabelList; // @synthesize m_LabelList;

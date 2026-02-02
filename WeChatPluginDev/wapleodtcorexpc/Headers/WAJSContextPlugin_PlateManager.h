@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSString, UIScreenEdgePanGestureRecognizer, WAMenuPopInteractiveTransition, WAPlateAuthorizePageSheet, WAPlateAuthorizeSheetInfo, WAPlateManageViewController, WAReportPlateManageActionItem;
 
 @interface WAJSContextPlugin_PlateManager
@@ -21,7 +23,6 @@
     UIScreenEdgePanGestureRecognizer *_popBackGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popBackGesture; // @synthesize popBackGesture=_popBackGesture;
 @property(retain, nonatomic) WAMenuPopInteractiveTransition *interactiveTransition; // @synthesize interactiveTransition=_interactiveTransition;
 @property(nonatomic) _Bool managerVCDidShow; // @synthesize managerVCDidShow=_managerVCDidShow;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

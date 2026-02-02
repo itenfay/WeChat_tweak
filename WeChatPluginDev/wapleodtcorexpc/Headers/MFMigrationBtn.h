@@ -16,7 +16,6 @@
     unsigned long long m_totalSize;
 }
 
-- (void).cxx_destruct;
 - (void)setSpeed:(float)arg1;
 - (void)setCurrentReceiveSize:(unsigned long long)arg1 totalSize:(unsigned long long)arg2;
 - (void)setCurrentSessionCount:(unsigned long long)arg1 totalSessionCount:(unsigned long long)arg2;

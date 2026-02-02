@@ -16,7 +16,6 @@
     NSMutableArray *_otherUsernames;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool containsAnyUsers; // @synthesize containsAnyUsers=_containsAnyUsers;
 @property(readonly, nonatomic) NSMutableArray *otherUsernames; // @synthesize otherUsernames=_otherUsernames;
 @property(readonly, nonatomic) NSMutableArray *friends; // @synthesize friends=_friends;

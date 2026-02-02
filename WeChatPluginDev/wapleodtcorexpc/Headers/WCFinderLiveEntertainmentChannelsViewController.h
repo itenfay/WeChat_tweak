@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFeedExtraInfoFetchLogic, MMUIButton, NSMutableDictionary, NSString, UIView, WCFinderCreateCoordinator, WCFinderEmptyTipsView, WCFinderLiveEntertainmentChannelsViewModel, WCFinderLivePageStayReporter, WCFinderTabPageView;
 
 @interface WCFinderLiveEntertainmentChannelsViewController
@@ -22,7 +24,6 @@
     WCFinderLivePageStayReporter *_stayReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLivePageStayReporter *stayReporter; // @synthesize stayReporter=_stayReporter;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 @property(nonatomic) unsigned long long playTogetherLiveType; // @synthesize playTogetherLiveType=_playTogetherLiveType;
@@ -113,4 +114,3 @@
 @property(readonly) Class superclass;
 
 @end
-

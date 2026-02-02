@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *maxSizeiOS; // @synthesize maxSizeiOS=_maxSizeiOS;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *maxSize; // @synthesize maxSize=_maxSize;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *sizeStep; // @synthesize sizeStep=_sizeStep;

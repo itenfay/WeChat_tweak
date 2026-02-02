@@ -15,7 +15,6 @@
     NSString *_fileMd5Hash;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileMd5Hash; // @synthesize fileMd5Hash=_fileMd5Hash;
 @property(retain, nonatomic) NSString *fileUri; // @synthesize fileUri=_fileUri;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;

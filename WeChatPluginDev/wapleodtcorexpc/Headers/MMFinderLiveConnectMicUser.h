@@ -65,7 +65,6 @@
 + (id)connectMicUserFromContact:(id)arg1 finderLiveContact:(id)arg2;
 + (id)connectMicUserFromContact:(id)arg1;
 + (id)connectMicUserFromAnchorContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long estimatedMicEndTimeOnAnchorSideInSeconds; // @synthesize estimatedMicEndTimeOnAnchorSideInSeconds=_estimatedMicEndTimeOnAnchorSideInSeconds;
 @property(nonatomic) unsigned long long paidMicLastDurationInSeconds; // @synthesize paidMicLastDurationInSeconds=_paidMicLastDurationInSeconds;
 @property(nonatomic) _Bool isAnchorPkChangeLayoutEnabled; // @synthesize isAnchorPkChangeLayoutEnabled=_isAnchorPkChangeLayoutEnabled;

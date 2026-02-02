@@ -19,7 +19,6 @@
     JSC2CodeCacheDetail *_codeCacheDetail;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSC2CodeCacheDetail *codeCacheDetail; // @synthesize codeCacheDetail=_codeCacheDetail;
 @property(nonatomic) unsigned int costTimeInMs; // @synthesize costTimeInMs=_costTimeInMs;
 @property(nonatomic) unsigned long long endInjectTimeInMs; // @synthesize endInjectTimeInMs=_endInjectTimeInMs;

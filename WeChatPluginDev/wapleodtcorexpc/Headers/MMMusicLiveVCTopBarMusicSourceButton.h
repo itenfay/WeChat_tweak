@@ -12,7 +12,6 @@
     UIImageView *_musicSourceArrow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *musicSourceArrow; // @synthesize musicSourceArrow=_musicSourceArrow;
 @property(retain, nonatomic) MMUILabel *musicSourceLabel; // @synthesize musicSourceLabel=_musicSourceLabel;
 @property(retain, nonatomic) UIImageView *musicSourceIconView; // @synthesize musicSourceIconView=_musicSourceIconView;

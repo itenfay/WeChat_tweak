@@ -4,15 +4,14 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VIDisplayTriggerObject : NSObject
 {
     CDUnknownBlockType _triggerOperation;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType triggerOperation; // @synthesize triggerOperation=_triggerOperation;
 - (void)trigger;
 
 @end
-

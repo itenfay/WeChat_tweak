@@ -17,7 +17,6 @@
     NSDictionary *_action_param;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *action_param; // @synthesize action_param=_action_param;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(nonatomic) long long descType; // @synthesize descType=_descType;

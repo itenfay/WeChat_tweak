@@ -25,7 +25,6 @@
     MusicCallbackApi *_flutterMusicPlayerCallBack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MusicCallbackApi *flutterMusicPlayerCallBack; // @synthesize flutterMusicPlayerCallBack=_flutterMusicPlayerCallBack;
 @property(nonatomic) _Bool enableBrandService; // @synthesize enableBrandService=_enableBrandService;
 @property(nonatomic) _Bool enableAd; // @synthesize enableAd=_enableAd;

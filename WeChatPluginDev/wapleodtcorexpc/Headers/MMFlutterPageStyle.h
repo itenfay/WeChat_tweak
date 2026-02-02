@@ -26,7 +26,6 @@
     NSObject<MMFlutterViewControllerAnimatedTransitioning> *_transitionManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<MMFlutterViewControllerAnimatedTransitioning> *transitionManager; // @synthesize transitionManager=_transitionManager;
 @property(nonatomic) long long modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
 @property(retain, nonatomic) UIColor *beforeRenderBackgroundColor; // @synthesize beforeRenderBackgroundColor=_beforeRenderBackgroundColor;

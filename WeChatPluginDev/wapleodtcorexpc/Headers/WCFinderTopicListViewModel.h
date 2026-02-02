@@ -42,7 +42,6 @@
     NSData *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(nonatomic) _Bool disabledFlag; // @synthesize disabledFlag=_disabledFlag;
 @property(nonatomic) unsigned long long patMusicPermission; // @synthesize patMusicPermission=_patMusicPermission;

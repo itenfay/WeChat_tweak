@@ -14,7 +14,6 @@
 }
 
 + (id)sharedMenuController;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect targetRect; // @synthesize targetRect=_targetRect;
 @property(retain, nonatomic) UIMenu *menu; // @synthesize menu=_menu;
 - (struct CGRect)editMenuInteraction:(id)arg1 targetRectForConfiguration:(id)arg2;

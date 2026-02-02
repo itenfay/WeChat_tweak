@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMListenMembershipJoinInfo_AdSchemeInfo, MMTimer, MMUIViewController, NSString, WAAppTaskHandlerWrapper;
 
@@ -20,7 +21,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool preloadDone; // @synthesize preloadDone=_preloadDone;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
@@ -47,4 +47,3 @@
 - (id)initWithADInfo:(id)arg1;
 
 @end
-

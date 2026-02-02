@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BrandTemplateMsgAuthMessageBubbleModel, MMBrandHeadImageView, MMHeadImageView, MMUIButton, MMUILabel, MMWebImageView, MultiColumnReaderMessageCellMainContentView, MultiColumnReaderMessageViewModel, NSString, RichTextView, UIButton, UIImageView, UILabel, WAContactGetter, WCSubscriptionNotifyActionHeaderView;
 
 @interface MultiColumnReaderMessageCellView
@@ -26,7 +28,6 @@
     WCSubscriptionNotifyActionHeaderView *_actionSheetIconView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCSubscriptionNotifyActionHeaderView *actionSheetIconView; // @synthesize actionSheetIconView=_actionSheetIconView;
 - (void)onHeadImageLongPressed:(id)arg1;
 - (void)onHeadImageClicked:(id)arg1;
@@ -115,4 +116,3 @@
 @property(readonly, nonatomic) MultiColumnReaderMessageViewModel *viewModel; // @dynamic viewModel;
 
 @end
-

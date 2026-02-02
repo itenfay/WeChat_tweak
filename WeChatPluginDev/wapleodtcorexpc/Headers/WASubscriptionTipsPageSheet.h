@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton, UIImageView, UILabel;
 
 @interface WASubscriptionTipsPageSheet
@@ -15,7 +17,6 @@
     UIButton *_okButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
@@ -27,4 +28,3 @@
 - (double)contentHeight;
 
 @end
-

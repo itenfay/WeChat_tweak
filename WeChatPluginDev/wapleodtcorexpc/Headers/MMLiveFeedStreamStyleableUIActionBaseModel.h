@@ -13,7 +13,6 @@
     NSString *_eid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eid; // @synthesize eid=_eid;
 @property(nonatomic) int type; // @synthesize type=_type;
 

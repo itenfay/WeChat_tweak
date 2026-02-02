@@ -18,7 +18,6 @@
     UIImageView *_rightImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int expandMode; // @synthesize expandMode=_expandMode;
 @property(retain, nonatomic) UIImage *rightImage; // @synthesize rightImage=_rightImage;
 @property(retain, nonatomic) UIImage *middleImage; // @synthesize middleImage=_middleImage;

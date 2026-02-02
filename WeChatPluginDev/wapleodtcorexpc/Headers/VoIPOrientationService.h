@@ -22,7 +22,6 @@
 + (_Bool)shouldUpdateDeviceAngleDegree;
 + (_Bool)isEnable;
 + (int)flagWithOrientation:(long long)arg1 isFrontCamera:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMMotionManager *motion; // @synthesize motion=_motion;
 @property(nonatomic) _Bool isSystemLockActived; // @synthesize isSystemLockActived=_isSystemLockActived;
 @property(nonatomic) long long motionOrientation; // @synthesize motionOrientation=_motionOrientation;

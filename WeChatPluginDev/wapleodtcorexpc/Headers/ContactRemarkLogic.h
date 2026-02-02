@@ -11,7 +11,6 @@
     CContact *_downloadingContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *downloadingContact; // @synthesize downloadingContact=_downloadingContact;
 @property(retain, nonatomic) NSMutableArray *uploadedCardItem; // @synthesize uploadedCardItem=_uploadedCardItem;
 - (void)onFailedToGetContactsFromSvr;

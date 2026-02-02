@@ -18,7 +18,6 @@
 + (_Bool)shouldShowAnchorTaskGuide:(id)arg1 liveTaskId:(id)arg2;
 + (void)setSubPath:(id)arg1 liveTaskId:(id)arg2;
 + (id)getMoreFunctionItemsWithTaskId:(id)arg1 viewType:(unsigned long long)arg2 isGameLive:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveBaseLogReporter *reporter; // @synthesize reporter=_reporter;
 @property(readonly, nonatomic) _Bool isConnectMicEnabled; // @synthesize isConnectMicEnabled=_isConnectMicEnabled;
 - (void)onReportOperationViewDidSelect:(unsigned long long)arg1 item:(id)arg2;

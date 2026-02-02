@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_messageUUID;
 + (void)PBArrayAdd_assetID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;
 @property(retain, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
 - (id)getPBPropertyTable;

@@ -10,7 +10,6 @@
     id <WCPayJSRequestHKCashierLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayJSRequestHKCashierLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)authFail;
 - (void)authOk;

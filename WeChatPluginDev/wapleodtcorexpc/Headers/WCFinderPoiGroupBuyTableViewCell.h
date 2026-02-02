@@ -16,7 +16,6 @@
 }
 
 + (double)heightForGroupBuyCoupon:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;
 @property(retain, nonatomic) WCFinderPoiGroupBuyView *groupBuyView; // @synthesize groupBuyView=_groupBuyView;
 @property(nonatomic) __weak id <WCFinderPoiGroupBuyTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;

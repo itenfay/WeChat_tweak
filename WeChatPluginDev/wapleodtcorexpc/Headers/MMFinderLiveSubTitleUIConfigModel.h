@@ -21,7 +21,6 @@
 }
 
 + (unsigned long long)getFinalLinesWithMaxLine:(unsigned long long)arg1 supportStable:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long engDisplayMode; // @synthesize engDisplayMode=_engDisplayMode;
 @property(nonatomic) unsigned long long chnDisplayMode; // @synthesize chnDisplayMode=_chnDisplayMode;
 @property(retain, nonatomic) UIFont *engSubTitleFont; // @synthesize engSubTitleFont=_engSubTitleFont;

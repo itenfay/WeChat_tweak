@@ -15,7 +15,6 @@
     NSMutableSet *_hotSalePAGPlaySet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *hotSalePAGPlaySet; // @synthesize hotSalePAGPlaySet=_hotSalePAGPlaySet;
 @property(nonatomic) _Bool hasLoadHotSalePag; // @synthesize hasLoadHotSalePag=_hasLoadHotSalePag;
 @property(retain, nonatomic) MMTimer *channelsVCDestroyTimer; // @synthesize channelsVCDestroyTimer=_channelsVCDestroyTimer;

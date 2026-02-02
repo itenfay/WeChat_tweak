@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BaseMsgContentLogicController, ChatroomProfileView, EmoticonBoardView, MMGrowTextView, MMUILabel, MMUIViewController, NSArray, NSString, SharePreConfirmHeadView, SharePreConfirmSuccessView, UIButton, UIScrollView, UITapGestureRecognizer, UIView, WCGroupUndoneShareReport, WCInputController;
 @protocol SharePreConfirmSheetViewDelegate;
 
@@ -56,7 +58,6 @@
 }
 
 + (_Bool)isEnable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseMsgContentLogicController *msgLogicController; // @synthesize msgLogicController=_msgLogicController;
 @property(retain, nonatomic) MMUIViewController *preViewController; // @synthesize preViewController=_preViewController;
 @property(retain, nonatomic) ChatroomProfileView *chatroomProfileViewInfo; // @synthesize chatroomProfileViewInfo=_chatroomProfileViewInfo;
@@ -231,4 +232,3 @@
 @property(readonly) Class superclass;
 
 @end
-

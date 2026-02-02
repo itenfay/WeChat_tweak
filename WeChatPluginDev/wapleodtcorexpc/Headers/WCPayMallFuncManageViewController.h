@@ -14,7 +14,6 @@
     NSMutableDictionary *_updateFuncDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *updateFuncDict; // @synthesize updateFuncDict=_updateFuncDict;
 @property(retain, nonatomic) NSMutableArray *updateFuncTypeList; // @synthesize updateFuncTypeList=_updateFuncTypeList;
 - (void)onBack;

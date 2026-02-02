@@ -15,7 +15,6 @@
     WCFinderWXInteractCenterDataProvider *_dataProvider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderWXInteractCenterDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic) long long selectType; // @synthesize selectType=_selectType;
 @property(nonatomic) __weak id <WCFinderWXInteractiveDetailViewModelDelegate> delegate; // @synthesize delegate=_delegate;

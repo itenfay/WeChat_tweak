@@ -13,7 +13,6 @@
     MISSING_TYPE *records;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, copy) NSDictionary *records;
 @property(nonatomic) double avgFps; // @synthesize avgFps;

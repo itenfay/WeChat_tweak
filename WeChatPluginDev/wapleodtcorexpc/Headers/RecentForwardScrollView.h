@@ -51,7 +51,6 @@
 }
 
 + (_Bool)hasRecentForward;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *finishForwardChatBtnInNewEditModelView; // @synthesize finishForwardChatBtnInNewEditModelView=_finishForwardChatBtnInNewEditModelView;
 @property(retain, nonatomic) MMUIButton *finishForwardChatBtnInNewEditModel; // @synthesize finishForwardChatBtnInNewEditModel=_finishForwardChatBtnInNewEditModel;
 @property(retain, nonatomic) MMUIButton *deleteForwardChatBtnInNewEditModel; // @synthesize deleteForwardChatBtnInNewEditModel=_deleteForwardChatBtnInNewEditModel;

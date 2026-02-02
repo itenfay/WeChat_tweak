@@ -16,7 +16,6 @@
     WCLoopMetrics *_lastCaptureEffectMetrics;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLoopMetrics *lastCaptureEffectMetrics; // @synthesize lastCaptureEffectMetrics=_lastCaptureEffectMetrics;
 @property(nonatomic) double lastCollectTime; // @synthesize lastCollectTime=_lastCollectTime;
 @property(nonatomic) unsigned long long metricsTriggerCnt; // @synthesize metricsTriggerCnt=_metricsTriggerCnt;

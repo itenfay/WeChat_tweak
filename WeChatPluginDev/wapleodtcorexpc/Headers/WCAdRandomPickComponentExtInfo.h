@@ -15,7 +15,6 @@
 + (id)fromResponseExtInfo:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_pickedCardsList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pickedCardsList; // @synthesize pickedCardsList=_pickedCardsList;
 - (void)mergeWithExtInfo:(id)arg1;
 - (id)initWithCoder:(id)arg1;

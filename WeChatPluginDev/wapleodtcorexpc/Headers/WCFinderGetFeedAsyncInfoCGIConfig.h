@@ -18,7 +18,6 @@
     NSMutableDictionary *_feedProductIdMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *feedProductIdMap; // @synthesize feedProductIdMap=_feedProductIdMap;
 @property(retain, nonatomic) CLLocation *customLocation; // @synthesize customLocation=_customLocation;
 @property(nonatomic) long long reportScene; // @synthesize reportScene=_reportScene;

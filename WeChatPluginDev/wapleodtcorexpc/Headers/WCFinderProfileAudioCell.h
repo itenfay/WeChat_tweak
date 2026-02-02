@@ -27,7 +27,6 @@
 }
 
 + (double)displayHeight;
-- (void).cxx_destruct;
 @property(nonatomic) int audioStatus; // @synthesize audioStatus=_audioStatus;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UILabel *playNumLabel; // @synthesize playNumLabel=_playNumLabel;

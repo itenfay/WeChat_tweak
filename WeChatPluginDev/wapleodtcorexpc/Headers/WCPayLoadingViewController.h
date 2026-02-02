@@ -12,7 +12,6 @@
     id <WCPayLoadingViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayLoadingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)showErrorAlert;
 - (void)didFail;

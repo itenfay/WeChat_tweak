@@ -17,7 +17,6 @@
 
 + (id)fromMap:(id)arg1;
 + (id)makeWithUrl:(id)arg1 httpMethod:(id)arg2 httpBody:(id)arg3 allHttpHeaderFields:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *allHttpHeaderFields; // @synthesize allHttpHeaderFields=_allHttpHeaderFields;
 @property(retain, nonatomic) FlutterStandardTypedData *httpBody; // @synthesize httpBody=_httpBody;
 @property(copy, nonatomic) NSString *httpMethod; // @synthesize httpMethod=_httpMethod;

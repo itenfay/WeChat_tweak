@@ -17,7 +17,6 @@
     UIImage *_normalImage;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) UIImage *normalImage; // @synthesize normalImage=_normalImage;
 @property(retain, nonatomic) id <TLProfileMediaViewProvider> thirdPartyHandler; // @synthesize thirdPartyHandler=_thirdPartyHandler;
 @property(readonly, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

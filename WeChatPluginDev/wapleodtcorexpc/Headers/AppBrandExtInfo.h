@@ -11,7 +11,6 @@
     NSString *_liteGameInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) NSString *liteGameInfo; // @synthesize liteGameInfo=_liteGameInfo;
 - (id)toXML;

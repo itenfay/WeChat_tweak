@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 #import "PAGViewApi-Protocol.h"
 
@@ -20,7 +21,6 @@
 
 + (void)registerWithRegistrar:(id)arg1;
 + (void)registerWithRegistry:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *controllerMap; // @synthesize controllerMap=_controllerMap;
 @property(readonly, nonatomic) NSObject<FlutterBinaryMessenger> *messenger; // @synthesize messenger=_messenger;
 @property(readonly, nonatomic) NSObject<FlutterPluginRegistrar> *registrar; // @synthesize registrar=_registrar;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

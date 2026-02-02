@@ -18,7 +18,6 @@
 + (id)fetching;
 + (id)failure;
 + (id)successWithQuest:(id)arg1 reasons:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *reasons; // @synthesize reasons=_reasons;
 @property(retain, nonatomic) NSArray *quests; // @synthesize quests=_quests;
 @property(nonatomic) _Bool fetchSuccess; // @synthesize fetchSuccess=_fetchSuccess;

@@ -18,7 +18,6 @@
     struct CGRect _frame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<FlutterBinaryMessenger> *messenger; // @synthesize messenger=_messenger;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) MMLiteAppView *liteAppView; // @synthesize liteAppView=_liteAppView;

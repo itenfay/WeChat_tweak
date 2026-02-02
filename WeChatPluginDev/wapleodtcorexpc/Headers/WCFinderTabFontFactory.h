@@ -16,7 +16,6 @@
     double _regularWeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double regularWeight; // @synthesize regularWeight=_regularWeight;
 @property(nonatomic) double boldWeight; // @synthesize boldWeight=_boldWeight;
 @property(retain, nonatomic) UIFont *regular; // @synthesize regular=_regular;

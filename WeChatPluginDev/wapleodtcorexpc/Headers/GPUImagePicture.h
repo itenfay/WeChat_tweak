@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject;
 @protocol OS_dispatch_semaphore;
 
@@ -13,7 +15,6 @@
     NSObject<OS_dispatch_semaphore> *imageUpdateSemaphore;
 }
 
-- (void).cxx_destruct;
 - (void)addTarget:(id)arg1 atTextureLocation:(long long)arg2;
 - (struct CGSize)outputImageSize;
 - (void)processImageUpToFilter:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -33,4 +34,3 @@
 - (id)initWithURL:(id)arg1;
 
 @end
-

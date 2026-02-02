@@ -13,7 +13,6 @@
 }
 
 + (id)sharedManager;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (id)init;
 - (void)setupBundle;

@@ -16,7 +16,6 @@
     NSMutableSet *_weAppSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *weAppSet; // @synthesize weAppSet=_weAppSet;
 @property(retain, nonatomic) NSMutableArray *msgArr; // @synthesize msgArr=_msgArr;
 @property(retain, nonatomic) MsgNewImgDataLogic *dataLogic; // @synthesize dataLogic=_dataLogic;

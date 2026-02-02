@@ -18,7 +18,6 @@
     MJShootBeautyInspectorViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJShootBeautyInspectorViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) CAGradientLayer *panelBackgroundGradientLayer; // @synthesize panelBackgroundGradientLayer=_panelBackgroundGradientLayer;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

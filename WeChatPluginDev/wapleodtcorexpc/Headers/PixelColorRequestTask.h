@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
@@ -15,11 +16,9 @@
     struct CGSize _fromSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize fromSize; // @synthesize fromSize=_fromSize;
 @property(retain, nonatomic) NSArray *coordinateList; // @synthesize coordinateList=_coordinateList;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) unsigned long long format; // @synthesize format=_format;
 
 @end
-

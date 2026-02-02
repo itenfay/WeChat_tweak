@@ -19,7 +19,6 @@
     unsigned long long _bindScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bindScene; // @synthesize bindScene=_bindScene;
 @property(retain, nonatomic) NSString *m_nsWardUserName; // @synthesize m_nsWardUserName=_m_nsWardUserName;
 @property(retain, nonatomic) NSString *m_nsGuardianTicket; // @synthesize m_nsGuardianTicket=_m_nsGuardianTicket;

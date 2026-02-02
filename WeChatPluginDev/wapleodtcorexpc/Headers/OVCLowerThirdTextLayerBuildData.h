@@ -16,7 +16,6 @@
     NSDictionary *_placeholdersByBlockID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldUsePlaceholder; // @synthesize shouldUsePlaceholder=_shouldUsePlaceholder;
 @property(readonly, nonatomic) NSDictionary *placeholdersByBlockID; // @synthesize placeholdersByBlockID=_placeholdersByBlockID;
 @property(readonly, nonatomic) NSDictionary *defaultContentsByBlockID; // @synthesize defaultContentsByBlockID=_defaultContentsByBlockID;

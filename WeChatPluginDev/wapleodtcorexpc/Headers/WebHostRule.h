@@ -13,7 +13,6 @@
     NSString *_brandName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *brandName; // @synthesize brandName=_brandName;
 @property(nonatomic) long long type; // @synthesize type=_type;
 

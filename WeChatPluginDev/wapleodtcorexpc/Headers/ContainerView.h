@@ -10,7 +10,6 @@
     MMWebViewController *_webViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 - (void)layoutSubviews;
 

@@ -15,7 +15,6 @@
     TXCMetalDisplayConfig *_displayConfig;
 }
 
-- (void).cxx_destruct;
 - (void)setDisplayConfig:(id)arg1;
 - (unsigned long long)rendererType;
 - (id)drawMetalTexture:(id)arg1 toTarget:(id)arg2 coordinate:(id)arg3;

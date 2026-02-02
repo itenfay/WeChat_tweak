@@ -12,7 +12,6 @@
     struct UIEdgeInsets _touchInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets=_touchInsets;
 @property(retain, nonatomic) UIImageView *arrow; // @synthesize arrow=_arrow;

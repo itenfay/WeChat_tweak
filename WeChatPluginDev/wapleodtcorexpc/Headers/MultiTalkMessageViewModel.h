@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double nodeContentHeight; // @synthesize nodeContentHeight=m_nodeContentHeight;
 @property(readonly, nonatomic) double nodeContentWidth; // @synthesize nodeContentWidth=m_nodeContentWidth;
 @property(readonly, nonatomic) double headerContentHeight; // @synthesize headerContentHeight=m_headerContentHeight;

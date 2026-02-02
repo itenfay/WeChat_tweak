@@ -13,7 +13,6 @@
     NSMutableArray *_nodeList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPackInFirstScreen; // @synthesize isPackInFirstScreen=_isPackInFirstScreen;
 @property(retain, nonatomic) NSMutableArray *nodeList; // @synthesize nodeList=_nodeList;
 - (id)initWithNodeList:(id)arg1;

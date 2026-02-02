@@ -24,7 +24,6 @@
     NSString *_sourceName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
 @property(retain, nonatomic) NSString *verifyInfo; // @synthesize verifyInfo=_verifyInfo;
 @property(nonatomic) long long videoHeight; // @synthesize videoHeight=_videoHeight;

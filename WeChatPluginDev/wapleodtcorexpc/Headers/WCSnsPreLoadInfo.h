@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_sightAutoDownloadOn3GPlus;
 + (void)PBArrayAdd_expId;
 + (void)PBArrayAdd_layerId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool sightAutoDownloadOnWifi; // @synthesize sightAutoDownloadOnWifi=_sightAutoDownloadOnWifi;
 @property(nonatomic) _Bool sightAutoDownloadOn3GPlus; // @synthesize sightAutoDownloadOn3GPlus=_sightAutoDownloadOn3GPlus;
 @property(retain, nonatomic) NSString *expId; // @synthesize expId=_expId;

@@ -12,7 +12,6 @@
     WCFinderRefreshTableFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRefreshTableFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WCFinderPoiGroupBuyListViewModel *viewModel; // @synthesize viewModel=_viewModel;

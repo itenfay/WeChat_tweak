@@ -11,7 +11,6 @@
     FaceRecogPayHandler *_faceHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogPayHandler *faceHandler; // @synthesize faceHandler=_faceHandler;
 @property(retain, nonatomic) JSEvent *cbEvent; // @synthesize cbEvent=_cbEvent;
 - (void)faceRecogPayHandlerDidCancel:(id)arg1;

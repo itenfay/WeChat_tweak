@@ -10,7 +10,6 @@
     MMUIButton *_expandButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *expandButton; // @synthesize expandButton=_expandButton;
 - (void)onClickExpand;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

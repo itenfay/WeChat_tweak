@@ -13,7 +13,6 @@
     NSString *_string;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSendout; // @synthesize isSendout=_isSendout;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 

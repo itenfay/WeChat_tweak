@@ -17,7 +17,6 @@
     long long _shareScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long shareScene; // @synthesize shareScene=_shareScene;
 @property(nonatomic) _Bool chatRoomOnly; // @synthesize chatRoomOnly=_chatRoomOnly;
 @property(nonatomic) _Bool usePageSheet; // @synthesize usePageSheet=_usePageSheet;

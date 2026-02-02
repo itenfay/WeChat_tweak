@@ -21,7 +21,6 @@
     NSMutableArray *_textColorValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *textColorValue; // @synthesize textColorValue=_textColorValue;
 @property(retain, nonatomic) NSData *productExtInfo; // @synthesize productExtInfo=_productExtInfo;
 @property(nonatomic) unsigned int businessType; // @synthesize businessType=_businessType;

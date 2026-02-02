@@ -14,7 +14,6 @@
     NSMutableArray *_noretainObejcts;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EJFileSystemDelegate> delegate; // @synthesize delegate;
 - (void)cancelAllFileTask;
 - (void)enterForeground;

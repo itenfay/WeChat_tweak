@@ -19,7 +19,6 @@
     long long _m_horizontalPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_horizontalPadding; // @synthesize m_horizontalPadding=_m_horizontalPadding;
 @property(nonatomic) long long m_verticalPadding; // @synthesize m_verticalPadding=_m_verticalPadding;
 @property(nonatomic) _Bool enableHignLight; // @synthesize enableHignLight=_enableHignLight;

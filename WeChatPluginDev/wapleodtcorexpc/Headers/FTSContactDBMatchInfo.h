@@ -17,7 +17,6 @@
     unsigned long long _queryMatchType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long queryMatchType; // @synthesize queryMatchType=_queryMatchType;
 @property(retain, nonatomic) NSString *matchContent; // @synthesize matchContent=_matchContent;
 @property(retain, nonatomic) NSArray *matchPhases; // @synthesize matchPhases=_matchPhases;

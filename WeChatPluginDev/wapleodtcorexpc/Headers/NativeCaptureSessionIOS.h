@@ -26,7 +26,6 @@
     struct ARNativeCameraFrame _curFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool auto_focus_once; // @synthesize auto_focus_once=_auto_focus_once;
 @property(nonatomic) int used_height; // @synthesize used_height=_used_height;
 @property(nonatomic) int used_width; // @synthesize used_width=_used_width;

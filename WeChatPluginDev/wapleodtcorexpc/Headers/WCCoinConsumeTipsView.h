@@ -12,7 +12,6 @@
     id <WCCoinConsumeTipsViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCoinConsumeTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *wording; // @synthesize wording=_wording;
 - (void)pageSheetDidClose:(_Bool)arg1;

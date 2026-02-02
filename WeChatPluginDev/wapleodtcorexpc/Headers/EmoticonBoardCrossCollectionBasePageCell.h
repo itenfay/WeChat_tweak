@@ -18,7 +18,6 @@
     UIView *_topMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topMaskView; // @synthesize topMaskView=_topMaskView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionLayout; // @synthesize collectionLayout=_collectionLayout;
 @property(retain, nonatomic) MMLoadMoreCollectionView *collectionView; // @synthesize collectionView=_collectionView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCFinderGlobalRedDotFrequencyReportHelper;
 
@@ -35,7 +36,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_subBusinessBanQueueDic;
 + (void)PBArrayAdd_exposeModelDic;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool findPageInTabBar; // @synthesize findPageInTabBar=_findPageInTabBar;
 @property(nonatomic) _Bool findPageIsInExpose; // @synthesize findPageIsInExpose=_findPageIsInExpose;
 @property(retain, nonatomic) WCFinderGlobalRedDotFrequencyReportHelper *reportHelper; // @synthesize reportHelper=_reportHelper;
@@ -104,4 +104,3 @@
 @property(readonly) Class superclass;
 
 @end
-

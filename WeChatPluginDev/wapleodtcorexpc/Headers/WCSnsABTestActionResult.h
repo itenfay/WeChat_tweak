@@ -16,7 +16,6 @@
     unsigned int endTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int endTime; // @synthesize endTime;
 @property(nonatomic) unsigned int startTime; // @synthesize startTime;
 @property(retain, nonatomic) NSString *dataItemId; // @synthesize dataItemId;

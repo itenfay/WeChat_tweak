@@ -27,7 +27,6 @@
 
 + (double)contentViewExtraHeightWithContentVM:(id)arg1;
 + (id)pageControlConfig;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(nonatomic) _Bool videoPlayerFullScreen; // @synthesize videoPlayerFullScreen=_videoPlayerFullScreen;
 @property(retain, nonatomic) WCFinderBulletGroupView *bulletAnimationView; // @synthesize bulletAnimationView=_bulletAnimationView;

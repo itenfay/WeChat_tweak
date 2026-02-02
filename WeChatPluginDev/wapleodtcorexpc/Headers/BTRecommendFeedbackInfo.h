@@ -14,7 +14,6 @@
     NSString *_negativeFeedbackTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *negativeFeedbackTitle; // @synthesize negativeFeedbackTitle=_negativeFeedbackTitle;
 @property(nonatomic) _Bool bShowFeedback; // @synthesize bShowFeedback=_bShowFeedback;
 @property(retain, nonatomic) NSArray *feedbackReasonArr; // @synthesize feedbackReasonArr=_feedbackReasonArr;

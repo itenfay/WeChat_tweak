@@ -12,7 +12,6 @@
     id <WCGetAddressControlLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCGetAddressControlLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnNotAcceptGetLatestAddress;
 - (void)OnImportYiXunAddress:(id)arg1 importStatus:(int)arg2 Error:(id)arg3;

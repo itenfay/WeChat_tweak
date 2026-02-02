@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
@@ -26,7 +27,6 @@
     NSString *_lastVersion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReRunWhenPauseResume; // @synthesize needReRunWhenPauseResume=_needReRunWhenPauseResume;
 @property(retain, nonatomic) NSString *lastVersion; // @synthesize lastVersion=_lastVersion;
 @property(retain, nonatomic) NSMutableDictionary *receiveInfoDict; // @synthesize receiveInfoDict=_receiveInfoDict;
@@ -57,4 +57,3 @@
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

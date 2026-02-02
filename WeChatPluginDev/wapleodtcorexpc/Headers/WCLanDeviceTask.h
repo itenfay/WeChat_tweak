@@ -16,7 +16,6 @@
     long long m_taskCmd;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_subTaskId; // @synthesize m_subTaskId;
 @property(nonatomic) long long m_taskCmd; // @synthesize m_taskCmd;
 @property(nonatomic) long long m_taskId; // @synthesize m_taskId;

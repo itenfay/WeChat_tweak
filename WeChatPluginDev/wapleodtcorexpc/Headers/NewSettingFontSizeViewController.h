@@ -15,7 +15,6 @@
     UIView *_bottomView;
 }
 
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)genMsgLabel:(id)arg1 isSender:(_Bool)arg2;

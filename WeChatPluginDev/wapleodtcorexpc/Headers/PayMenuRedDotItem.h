@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_wording;
 + (void)PBArrayAdd_expireTime;
 + (void)PBArrayAdd_itemName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(nonatomic) unsigned int expireTime; // @synthesize expireTime=_expireTime;
 @property(retain, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;

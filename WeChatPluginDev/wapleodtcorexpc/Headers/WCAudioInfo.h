@@ -23,7 +23,6 @@
     NSString *_refer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *refer; // @synthesize refer=_refer;
 @property(retain, nonatomic) id userData; // @synthesize userData=_userData;
 @property(copy, nonatomic) NSString *fileCacheId; // @synthesize fileCacheId=_fileCacheId;

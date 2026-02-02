@@ -20,7 +20,6 @@
     id _customData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStartNewSession; // @synthesize shouldStartNewSession=_shouldStartNewSession;
 @property(retain, nonatomic) id customData; // @synthesize customData=_customData;
 @property(nonatomic) unsigned int diffWecoinCount; // @synthesize diffWecoinCount=_diffWecoinCount;

@@ -14,7 +14,6 @@
     NSMutableArray *_deleteAppInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deleteAppInfos; // @synthesize deleteAppInfos=_deleteAppInfos;
 @property(nonatomic) unsigned int deleteCount; // @synthesize deleteCount=_deleteCount;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

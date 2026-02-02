@@ -14,7 +14,6 @@
 
 + (id)codecWithReaderWriter:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)decode:(id)arg1;
 - (id)encode:(id)arg1;
 - (id)initWithReaderWriter:(id)arg1;

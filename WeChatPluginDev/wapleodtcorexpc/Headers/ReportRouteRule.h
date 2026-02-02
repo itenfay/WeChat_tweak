@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithRouteType:(id)arg1 routeRule:(id)arg2 isBatchReport:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isBatchReport; // @synthesize isBatchReport=_isBatchReport;
 @property(retain, nonatomic) NSNumber *routeRule; // @synthesize routeRule=_routeRule;
 @property(retain, nonatomic) NSNumber *routeType; // @synthesize routeType=_routeType;

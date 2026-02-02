@@ -31,7 +31,6 @@
 + (void)PBArrayAdd_postTipsStreamCGIByPass;
 + (void)PBArrayAdd_coverUrl;
 + (void)PBArrayAdd_words;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) MusicPostTipsDetail *musicTipsInfo; // @synthesize musicTipsInfo=_musicTipsInfo;
 @property(nonatomic) _Bool isPreloading; // @synthesize isPreloading=_isPreloading;

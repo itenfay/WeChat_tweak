@@ -95,7 +95,6 @@
 + (void)PBArrayAdd_mediaMd5;
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_mediaUrl;
-- (void).cxx_destruct;
 @property(nonatomic) int ratio; // @synthesize ratio=_ratio;
 @property(retain, nonatomic) WCFinderFullScreenEditRectModel *editRectModel; // @synthesize editRectModel=_editRectModel;
 @property(nonatomic) unsigned long long uploadCDNType; // @synthesize uploadCDNType=_uploadCDNType;

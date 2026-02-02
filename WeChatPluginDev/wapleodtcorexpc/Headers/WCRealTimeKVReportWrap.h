@@ -15,7 +15,6 @@
     NSString *_extKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool tryReportFail; // @synthesize tryReportFail=_tryReportFail;
 @property(nonatomic) _Bool reportSuccess; // @synthesize reportSuccess=_reportSuccess;
 @property(retain, nonatomic) NSString *extKey; // @synthesize extKey=_extKey;

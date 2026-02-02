@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_m_messagePatternList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_messagePatternList; // @synthesize m_messagePatternList=_m_messagePatternList;
 - (id)getPBPropertyTable;
 

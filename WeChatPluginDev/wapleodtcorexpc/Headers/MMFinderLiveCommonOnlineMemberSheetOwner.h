@@ -14,7 +14,6 @@
     NSString *_ownerName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ownerName; // @synthesize ownerName=_ownerName;
 @property(nonatomic) unsigned int boardType; // @synthesize boardType=_boardType;
 @property(retain, nonatomic) NSString *boardKey; // @synthesize boardKey=_boardKey;

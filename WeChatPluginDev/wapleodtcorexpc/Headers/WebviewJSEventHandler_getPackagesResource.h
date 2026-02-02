@@ -10,7 +10,6 @@
     JSEvent *_m_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *m_event; // @synthesize m_event=_m_event;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

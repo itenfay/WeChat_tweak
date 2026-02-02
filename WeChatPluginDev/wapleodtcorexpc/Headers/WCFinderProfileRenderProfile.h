@@ -22,7 +22,6 @@
     double _feedPageLoadingEndTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double feedPageLoadingEndTime; // @synthesize feedPageLoadingEndTime=_feedPageLoadingEndTime;
 @property(nonatomic) double homePageLoadingEndTime; // @synthesize homePageLoadingEndTime=_homePageLoadingEndTime;
 @property(nonatomic) double headerLoadingEndTime; // @synthesize headerLoadingEndTime=_headerLoadingEndTime;

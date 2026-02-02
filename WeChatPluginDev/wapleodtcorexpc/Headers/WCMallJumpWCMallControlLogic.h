@@ -17,7 +17,6 @@
     int m_enWCMallJumpWCMallControlLogicScene;
 }
 
-- (void).cxx_destruct;
 - (void)OnGetWCMallFunctionList:(id)arg1 GlobalList:(id)arg2 BroadCastInfo:(id)arg3 BannerList:(id)arg4 response:(id)arg5 FromCached:(_Bool)arg6 NotShowTutorial:(_Bool)arg7 typeMap:(id)arg8 Error:(id)arg9;
 - (void)stopLogic;
 - (void)endJSEventWith:(_Bool)arg1;

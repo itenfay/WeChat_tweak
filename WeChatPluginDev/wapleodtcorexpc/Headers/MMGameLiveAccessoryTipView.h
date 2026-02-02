@@ -12,7 +12,6 @@
     struct CGSize _selfSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) struct CGSize selfSize; // @synthesize selfSize=_selfSize;

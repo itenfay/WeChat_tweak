@@ -31,7 +31,6 @@
     MMCommonActionSheetPicker *_startTimePicker;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasTrialTimeManuallyModified; // @synthesize hasTrialTimeManuallyModified=_hasTrialTimeManuallyModified;
 @property(nonatomic) int liveMode; // @synthesize liveMode=_liveMode;
 @property(nonatomic) unsigned int curTrialTimeMinute; // @synthesize curTrialTimeMinute=_curTrialTimeMinute;

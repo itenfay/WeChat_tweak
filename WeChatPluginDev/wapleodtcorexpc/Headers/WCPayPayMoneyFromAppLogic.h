@@ -18,7 +18,6 @@
     _Bool m_cancelByOpenApi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_cancelByOpenApi; // @synthesize m_cancelByOpenApi;
 - (void)cancelPayMoneyFromOverseaH5WalletLogic:(id)arg1;
 - (void)failToPayMoneyFromOverseaH5WalletLogic:(id)arg1;

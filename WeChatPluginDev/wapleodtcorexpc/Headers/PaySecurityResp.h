@@ -21,7 +21,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int cert_encrypt_type; // @synthesize cert_encrypt_type=_cert_encrypt_type;
 @property(retain, nonatomic) WCPayBalancePrivacyInfo *balance_privacy_info; // @synthesize balance_privacy_info=_balance_privacy_info;
 @property(retain, nonatomic) PaySecurityDialogInfo *dialog_info; // @synthesize dialog_info=_dialog_info;

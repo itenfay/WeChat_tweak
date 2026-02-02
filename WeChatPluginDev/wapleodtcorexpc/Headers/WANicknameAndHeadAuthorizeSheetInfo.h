@@ -10,7 +10,6 @@
     UserAvatarInfo *_avatarInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UserAvatarInfo *avatarInfo; // @synthesize avatarInfo=_avatarInfo;
 
 @end

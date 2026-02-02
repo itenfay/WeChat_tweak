@@ -12,7 +12,6 @@
     NSString *_dataPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dataPath; // @synthesize dataPath=_dataPath;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *businessId; // @synthesize businessId=_businessId;

@@ -18,7 +18,6 @@
     _Bool _cancelDimissOrPopAnimation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelDimissOrPopAnimation; // @synthesize cancelDimissOrPopAnimation=_cancelDimissOrPopAnimation;
 @property(nonatomic) _Bool useGotoRootViewControllerV2; // @synthesize useGotoRootViewControllerV2=_useGotoRootViewControllerV2;
 @property(nonatomic) unsigned int m_uiLogicStatus; // @synthesize m_uiLogicStatus;

@@ -17,7 +17,6 @@
     MMFinderLiveShopShelfHeaderViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShopShelfHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) MMUIButton *goodsOrderCenterButton; // @synthesize goodsOrderCenterButton=_goodsOrderCenterButton;
 @property(retain, nonatomic) MMUIButton *customerServiceButton; // @synthesize customerServiceButton=_customerServiceButton;

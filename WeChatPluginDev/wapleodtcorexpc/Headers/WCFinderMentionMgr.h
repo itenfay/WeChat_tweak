@@ -12,7 +12,6 @@
     NSMutableSet *_followingContactSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *followingContactSet; // @synthesize followingContactSet=_followingContactSet;
 - (void)endMentionContactFollow:(id)arg1;
 - (void)startToFollowMentionContact:(id)arg1;

@@ -22,7 +22,6 @@
 + (double)preferSearchTableHeight;
 + (double)preferSearchTableWidth;
 + (double)preferSearchBarHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactSelectSearcherConfig *config; // @synthesize config=_config;
 @property(nonatomic) __weak id <WCContactSelectFixedSearcherDelegate> searchDelegate; // @synthesize searchDelegate=_searchDelegate;
 @property(retain, nonatomic) NSMutableArray *arrResult; // @synthesize arrResult=_arrResult;

@@ -17,7 +17,6 @@
     UIButton *_acceptButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) MMUILabel *messageLabel; // @synthesize messageLabel=_messageLabel;

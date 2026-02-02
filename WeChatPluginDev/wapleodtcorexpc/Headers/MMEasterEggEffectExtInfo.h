@@ -14,7 +14,6 @@
     NSString *_keyword;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool resume; // @synthesize resume=_resume;
 @property(nonatomic) unsigned int messageLocalId; // @synthesize messageLocalId=_messageLocalId;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;

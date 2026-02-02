@@ -15,7 +15,6 @@
     UIImageView *_arrowBorderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowBorderView; // @synthesize arrowBorderView=_arrowBorderView;
 @property(retain, nonatomic) UIImageView *arrowHighlightedImageView; // @synthesize arrowHighlightedImageView=_arrowHighlightedImageView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

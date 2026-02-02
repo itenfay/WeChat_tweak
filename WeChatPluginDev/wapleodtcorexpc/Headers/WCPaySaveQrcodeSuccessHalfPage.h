@@ -16,7 +16,6 @@
     HalfPage *_halfPageInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HalfPage *halfPageInfo; // @synthesize halfPageInfo=_halfPageInfo;
 @property(retain, nonatomic) UIView *halfPageContentView; // @synthesize halfPageContentView=_halfPageContentView;
 @property(retain, nonatomic) MMImageView *pointView; // @synthesize pointView=_pointView;

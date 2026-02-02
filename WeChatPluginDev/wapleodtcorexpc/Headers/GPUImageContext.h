@@ -37,7 +37,6 @@
 + (id)sharedContextQueue;
 + (id)sharedImageProcessingContext;
 + (void *)contextKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contextQueue; // @synthesize contextQueue=_contextQueue;
 @property(retain, nonatomic) GLProgram *currentShaderProgram; // @synthesize currentShaderProgram=_currentShaderProgram;
 @property(readonly) GPUImageFramebufferCache *framebufferCache; // @synthesize framebufferCache=_framebufferCache;

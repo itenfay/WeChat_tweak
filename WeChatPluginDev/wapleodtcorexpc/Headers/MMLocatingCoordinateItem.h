@@ -30,7 +30,6 @@
     id _requestObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id requestObj; // @synthesize requestObj=_requestObj;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;

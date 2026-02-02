@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 @protocol WCFinderManagePOIViewModelDelegate;
@@ -20,7 +21,6 @@
     NSData *_bindingLastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bindingLastBuffer; // @synthesize bindingLastBuffer=_bindingLastBuffer;
 @property(retain, nonatomic) NSData *auditingLastBuffer; // @synthesize auditingLastBuffer=_auditingLastBuffer;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
@@ -47,4 +47,3 @@
 - (id)initWithFinderUsername:(id)arg1;
 
 @end
-

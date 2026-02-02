@@ -13,7 +13,6 @@
     NSMutableArray *_markItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *markItems; // @synthesize markItems=_markItems;
 @property(retain, nonatomic) WAAppTaskVersionFallBackMarkItem *currentLaunchItem; // @synthesize currentLaunchItem=_currentLaunchItem;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

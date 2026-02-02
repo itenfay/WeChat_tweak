@@ -13,7 +13,6 @@
     LocationRetriever *_locationRetriever;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;
 @property(nonatomic) unsigned long long sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) __weak id <CameraScanGoodsRemoteDetectorDelegate> delegate; // @synthesize delegate=_delegate;

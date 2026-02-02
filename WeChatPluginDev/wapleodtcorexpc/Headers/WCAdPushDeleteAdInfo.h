@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long deleteLevel; // @synthesize deleteLevel=_deleteLevel;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;
 - (_Bool)isValid;

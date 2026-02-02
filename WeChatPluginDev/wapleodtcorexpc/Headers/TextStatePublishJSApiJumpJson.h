@@ -13,7 +13,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *infos; // @synthesize infos=_infos;
 
 @end

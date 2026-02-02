@@ -17,7 +17,6 @@
     NSString *subDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subDesc; // @synthesize subDesc;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc;

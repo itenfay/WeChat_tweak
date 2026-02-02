@@ -10,7 +10,6 @@
     BrandServiceStorage *m_serviceStorage;
 }
 
-- (void).cxx_destruct;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)saveStorage;
 - (void)loadStorage;

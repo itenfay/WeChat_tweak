@@ -13,7 +13,6 @@
     NSString *_tabSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tabSessionId; // @synthesize tabSessionId=_tabSessionId;
 @property(retain, nonatomic) NSString *contextId; // @synthesize contextId=_contextId;
 - (id)description;

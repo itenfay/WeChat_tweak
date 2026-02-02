@@ -23,7 +23,6 @@
     NSMutableArray *_searchControllerSelectedContacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *searchControllerSelectedContacts; // @synthesize searchControllerSelectedContacts=_searchControllerSelectedContacts;
 @property(nonatomic) __weak ContactsSearchController *searchController; // @synthesize searchController=_searchController;
 @property(nonatomic) __weak WCSearchBar *searchBar; // @synthesize searchBar=_searchBar;

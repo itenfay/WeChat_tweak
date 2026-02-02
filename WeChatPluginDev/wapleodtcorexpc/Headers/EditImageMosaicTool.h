@@ -18,7 +18,6 @@
     unsigned long long _style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _style; // @synthesize _style;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor;

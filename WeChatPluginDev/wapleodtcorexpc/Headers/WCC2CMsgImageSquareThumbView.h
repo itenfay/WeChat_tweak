@@ -11,7 +11,6 @@
     id <WCC2CMsgImageSquareThumbViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCC2CMsgImageSquareThumbViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)showMsgLocation:(id)arg1;
 - (void)deleteAction:(id)arg1;

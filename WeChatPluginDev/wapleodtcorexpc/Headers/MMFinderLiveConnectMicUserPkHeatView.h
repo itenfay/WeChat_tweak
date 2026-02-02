@@ -24,7 +24,6 @@
 }
 
 + (double)heightWithSmallMode:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool smallMode; // @synthesize smallMode=_smallMode;
 @property(nonatomic) _Bool isSelfAnchorTeam; // @synthesize isSelfAnchorTeam=_isSelfAnchorTeam;
 @property(retain, nonatomic) CAGradientLayer *containerGradientLayer; // @synthesize containerGradientLayer=_containerGradientLayer;

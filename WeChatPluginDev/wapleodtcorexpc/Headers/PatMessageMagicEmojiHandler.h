@@ -17,7 +17,6 @@
     struct _NSRange _range;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSString *emojiName; // @synthesize emojiName=_emojiName;
 @property(retain, nonatomic) NSString *emojiKey; // @synthesize emojiKey=_emojiKey;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMVPlayer, MMMusicInfo, MMMusicLiveBaseMsg, MMMusicLiveCGIMgr, MMMusicLiveViewController, MMMusicMVEditorViewController, MMMusicMVRecommendViewController, MMMusicMVSwitchNewAnimator, MMMusicVCOpenParams, MinimizeNewTransitionController, MusicLiveCheckPermissionResp, MusicLiveGetSongStatusResp, NSArray, NSMutableArray, NSString, UIPanGestureRecognizer, UIView, UIViewController, WCCommentObject, WCFinderFeedContentVM;
 @protocol MusicInteractionStatistics;
 
@@ -84,7 +86,6 @@
     unsigned long long _exitType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long exitType; // @synthesize exitType=_exitType;
 @property(nonatomic) _Bool isMinimized; // @synthesize isMinimized=_isMinimized;
 @property(retain, nonatomic) NSString *taskBizKey; // @synthesize taskBizKey=_taskBizKey;
@@ -354,4 +355,3 @@
 @property(readonly) Class superclass;
 
 @end
-

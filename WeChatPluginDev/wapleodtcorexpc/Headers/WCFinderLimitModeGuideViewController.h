@@ -21,7 +21,6 @@
 + (void)displayToRootView:(id)arg1 commentScene:(int)arg2 type:(long long)arg3;
 + (_Bool)shouldShowLimitModeGuidForType:(long long)arg1;
 + (long long)displayType:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long themeStyle; // @synthesize themeStyle=_themeStyle;
 @property(nonatomic) __weak UIViewController *targetVC; // @synthesize targetVC=_targetVC;
 @property(nonatomic) __weak UINavigationController *navVC; // @synthesize navVC=_navVC;

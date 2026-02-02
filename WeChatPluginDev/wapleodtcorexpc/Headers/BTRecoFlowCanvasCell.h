@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BTRecoFlowSeparatorLineView, MMWebCanvasItemData, MMWebCanvasView, NSMutableDictionary, NSString;
 
 @interface BTRecoFlowCanvasCell
@@ -19,7 +21,6 @@
     MMWebCanvasItemData *_itemData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasExposedOnce; // @synthesize hasExposedOnce=_hasExposedOnce;
 @property(retain, nonatomic) MMWebCanvasItemData *itemData; // @synthesize itemData=_itemData;
 @property(nonatomic) double viewHeight; // @synthesize viewHeight=_viewHeight;
@@ -70,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

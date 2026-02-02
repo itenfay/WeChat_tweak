@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterBasicMessageChannel;
 
@@ -21,4 +22,3 @@
 - (id)initWithChannel:(id)arg1;
 
 @end
-

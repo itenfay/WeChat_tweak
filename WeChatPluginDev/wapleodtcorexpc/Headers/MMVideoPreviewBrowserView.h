@@ -35,7 +35,6 @@
     MMAssetICloudLoadingView *_iCloudLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAssetICloudLoadingView *iCloudLoadingView; // @synthesize iCloudLoadingView=_iCloudLoadingView;
 @property(retain, nonatomic) ColorGradientView *iCloudBgView; // @synthesize iCloudBgView=_iCloudBgView;
 @property(nonatomic) _Bool enablePlayButton; // @synthesize enablePlayButton=_enablePlayButton;

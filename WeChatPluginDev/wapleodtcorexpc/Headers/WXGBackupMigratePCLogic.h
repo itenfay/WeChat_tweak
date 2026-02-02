@@ -22,7 +22,6 @@
     NSString *_lastMigrateSesionName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bSendFinish; // @synthesize bSendFinish=_bSendFinish;
 @property(copy, nonatomic) NSString *lastMigrateSesionName; // @synthesize lastMigrateSesionName=_lastMigrateSesionName;
 @property(nonatomic) _Bool bFirstTag; // @synthesize bFirstTag=_bFirstTag;

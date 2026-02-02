@@ -21,7 +21,6 @@
     NSString *_adHotDiscussedBarNumberTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *adHotDiscussedBarNumberTitle; // @synthesize adHotDiscussedBarNumberTitle=_adHotDiscussedBarNumberTitle;
 @property(retain, nonatomic) NSString *adStateSettingBarNumberTitle; // @synthesize adStateSettingBarNumberTitle=_adStateSettingBarNumberTitle;
 @property(copy, nonatomic) NSString *adHighlightTagNumberTitle; // @synthesize adHighlightTagNumberTitle=_adHighlightTagNumberTitle;

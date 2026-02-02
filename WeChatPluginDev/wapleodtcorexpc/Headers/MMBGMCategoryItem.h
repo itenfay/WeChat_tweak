@@ -13,7 +13,6 @@
     NSString *_categoryName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(copy, nonatomic) NSString *categoryID; // @synthesize categoryID=_categoryID;
 

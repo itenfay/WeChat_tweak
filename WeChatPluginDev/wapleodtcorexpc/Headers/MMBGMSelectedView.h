@@ -15,7 +15,6 @@
     MMBGMSelectedBottomView *_bottomView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedBottomView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) MMBGMSelectedContentView *topContentView; // @synthesize topContentView=_topContentView;
 @property(retain, nonatomic) MMBGMSelectedConfig *config; // @synthesize config=_config;

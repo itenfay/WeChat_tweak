@@ -16,7 +16,6 @@
     NSString *m_verifyTicket;
 }
 
-- (void).cxx_destruct;
 - (void)onErrorHandleLogicDoneWithPolicyListIsAgreed:(_Bool)arg1 policyAgreementTicket:(id)arg2;
 - (void)onErrorHandleLogicDoneAndNeedGoNextWithParams:(id)arg1;
 - (_Bool)onErrorHandleLogicHandleGoNextWithParams:(id)arg1 webVC:(id)arg2 customClose:(_Bool *)arg3;

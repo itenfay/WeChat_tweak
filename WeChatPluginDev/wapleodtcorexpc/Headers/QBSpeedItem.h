@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSString, NSURLConnection;
 
@@ -20,7 +21,6 @@
 @property(retain, nonatomic) NSError *errorInfo; // @synthesize errorInfo=_errorInfo;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *hostString; // @synthesize hostString=_hostString;
-- (void).cxx_destruct;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

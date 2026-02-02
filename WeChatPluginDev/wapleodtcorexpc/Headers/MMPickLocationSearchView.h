@@ -23,7 +23,6 @@
     double _lastContentHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastContentHeight; // @synthesize lastContentHeight=_lastContentHeight;
 @property(nonatomic) __weak MMUIViewController *contentController; // @synthesize contentController=_contentController;
 @property(retain, nonatomic) MMPickLocationContentView *contentView; // @synthesize contentView=_contentView;

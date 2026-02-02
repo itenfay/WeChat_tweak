@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableAttributedString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _verticalGlypFormhWithRange;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType verticalGlypFormhWithRange; // @synthesize verticalGlypFormhWithRange=_verticalGlypFormhWithRange;
 @property(readonly, nonatomic) NSMutableAttributedString *object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) CDUnknownBlockType attachmentWithRange;
@@ -74,4 +74,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType pingFangRegular;
 
 @end
-

@@ -12,7 +12,6 @@
     NSString *_word;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *word; // @synthesize word=_word;
 - (id)initWithWord:(id)arg1;
 

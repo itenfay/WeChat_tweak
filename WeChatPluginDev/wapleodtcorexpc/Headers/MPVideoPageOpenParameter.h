@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_videoWidth;
 + (void)PBArrayAdd_duration;
 + (void)PBArrayAdd_videoId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *videoInitialTime; // @synthesize videoInitialTime=_videoInitialTime;
 @property(nonatomic) unsigned int videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(nonatomic) unsigned int videoWidth; // @synthesize videoWidth=_videoWidth;

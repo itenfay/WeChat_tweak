@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithLatitude:(id)arg1 longitude:(id)arg2 precision:(id)arg3 adCode:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *adCode; // @synthesize adCode=_adCode;
 @property(retain, nonatomic) NSNumber *precision; // @synthesize precision=_precision;
 @property(retain, nonatomic) NSNumber *longitude; // @synthesize longitude=_longitude;

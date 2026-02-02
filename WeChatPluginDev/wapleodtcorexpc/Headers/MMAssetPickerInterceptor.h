@@ -17,7 +17,6 @@
 }
 
 + (id)_safeKeyForAsset:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *assetInjectorMap; // @synthesize assetInjectorMap=_assetInjectorMap;
 @property(nonatomic) _Bool shouldReactivePreviewController; // @synthesize shouldReactivePreviewController=_shouldReactivePreviewController;
 @property(nonatomic) _Bool shouldKeepLoading; // @synthesize shouldKeepLoading=_shouldKeepLoading;

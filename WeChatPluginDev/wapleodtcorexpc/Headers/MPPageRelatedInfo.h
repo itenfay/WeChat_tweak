@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_payInfo;
 + (void)PBArrayAdd_friendInfo;
 + (void)PBArrayAdd_fullUrl;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *wordingReportInfo; // @synthesize wordingReportInfo=_wordingReportInfo;
 @property(copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
 @property(nonatomic) unsigned int lastUpdatTimeStamp; // @synthesize lastUpdatTimeStamp=_lastUpdatTimeStamp;

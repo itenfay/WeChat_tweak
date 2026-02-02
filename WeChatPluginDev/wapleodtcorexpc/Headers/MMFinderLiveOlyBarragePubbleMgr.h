@@ -39,7 +39,6 @@
     unsigned long long _strangerBarragePubbleExposeContinueTimes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int currExposeIndex; // @synthesize currExposeIndex=_currExposeIndex;
 @property(nonatomic) _Bool hasNotifyDisplay; // @synthesize hasNotifyDisplay=_hasNotifyDisplay;
 @property(nonatomic) _Bool isEnableDisplayBarrage; // @synthesize isEnableDisplayBarrage=_isEnableDisplayBarrage;

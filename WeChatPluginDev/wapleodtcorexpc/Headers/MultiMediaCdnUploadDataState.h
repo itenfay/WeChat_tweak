@@ -13,7 +13,6 @@
     NSString *_uploadFileKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uploadFileKey; // @synthesize uploadFileKey=_uploadFileKey;
 @property(nonatomic) unsigned long long totalFileSize; // @synthesize totalFileSize=_totalFileSize;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;

@@ -19,7 +19,6 @@
     NSString *_currentSearchText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentSearchText; // @synthesize currentSearchText=_currentSearchText;
 @property(retain, nonatomic) NSMutableArray *filteredMicAudienceList; // @synthesize filteredMicAudienceList=_filteredMicAudienceList;
 @property(retain, nonatomic) NSArray *micAudienceList; // @synthesize micAudienceList=_micAudienceList;

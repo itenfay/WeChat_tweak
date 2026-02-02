@@ -14,7 +14,6 @@
     MultiTalkMemberCell *_memberCell;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiTalkMemberCell *memberCell; // @synthesize memberCell=_memberCell;
 @property(retain, nonatomic) NSObject<MultiTalkMemberProtocol> *member; // @synthesize member=_member;
 - (id)initWithMember:(id)arg1 memberCell:(id)arg2;

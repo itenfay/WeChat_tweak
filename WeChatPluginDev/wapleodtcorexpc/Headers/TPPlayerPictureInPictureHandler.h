@@ -15,7 +15,6 @@
 }
 
 + (id)handlerForAdapter:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long prePlayerType; // @synthesize prePlayerType=_prePlayerType;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak TPPlayerAdapter *adapter; // @synthesize adapter=_adapter;

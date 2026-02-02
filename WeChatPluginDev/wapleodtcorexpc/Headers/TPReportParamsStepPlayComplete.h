@@ -20,7 +20,6 @@
     long long _tduration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long tduration; // @synthesize tduration=_tduration;
 @property(nonatomic) long long bcount; // @synthesize bcount=_bcount;
 @property(nonatomic) long long tbduration; // @synthesize tbduration=_tbduration;

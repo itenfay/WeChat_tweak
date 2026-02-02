@@ -13,7 +13,6 @@
 }
 
 + (id)mediaWithContentVM:(id)arg1 isSubScene:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TextStateBaseMediaViewDelegate> textStateDelegate; // @synthesize textStateDelegate=_textStateDelegate;
 // Preceding property had unknown attributes: ?
 // Original attribute string: T@"<TextStateBaseMediaViewDelegate>",?,W,N,V_textStateDelegate

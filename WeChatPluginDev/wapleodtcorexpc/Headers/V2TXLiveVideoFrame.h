@@ -19,7 +19,6 @@
     long long _rotation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int textureId; // @synthesize textureId=_textureId;
 @property(nonatomic) long long rotation; // @synthesize rotation=_rotation;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;

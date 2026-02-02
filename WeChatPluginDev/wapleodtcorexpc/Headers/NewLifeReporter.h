@@ -13,7 +13,6 @@
     NSMutableDictionary *_sdkReportParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sdkReportParams; // @synthesize sdkReportParams=_sdkReportParams;
 @property(retain, nonatomic) NSMutableDictionary *firstExpFeedCache; // @synthesize firstExpFeedCache=_firstExpFeedCache;
 - (void)setFlutterReportSDKInfo:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderTabSwitchCustomViewInfo : NSObject
 {
@@ -14,7 +15,6 @@
     struct UIEdgeInsets _customBarInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets customBarInsets; // @synthesize customBarInsets=_customBarInsets;
 @property(copy, nonatomic) CDUnknownBlockType updater; // @synthesize updater=_updater;
 @property(copy, nonatomic) CDUnknownBlockType configer; // @synthesize configer=_configer;
@@ -22,4 +22,3 @@
 @property(retain, nonatomic) Class viewClass; // @synthesize viewClass=_viewClass;
 
 @end
-

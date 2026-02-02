@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface ChatBoxUtil : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)pushChatBoxListFrom:(id)arg1 complete:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -15,7 +15,6 @@
 
 + (double)defaultHeightByWidth:(double)arg1;
 + (id)genRichTextViewByMaxWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *tipsRichTextView; // @synthesize tipsRichTextView=_tipsRichTextView;
 @property(nonatomic) double topBottomMargin; // @synthesize topBottomMargin=_topBottomMargin;
 - (void)setUpTips:(id)arg1;

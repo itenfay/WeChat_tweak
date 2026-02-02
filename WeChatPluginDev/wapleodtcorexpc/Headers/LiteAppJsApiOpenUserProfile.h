@@ -10,7 +10,6 @@
     NSDictionary *_param;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *param; // @synthesize param=_param;
 - (void)showErrorWhenNoContact;
 - (void)onStrangerContactUpdateForbidden:(id)arg1;

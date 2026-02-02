@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _completeHandler;
 }
 
-- (void).cxx_destruct;
 - (void)callSuccess;
 - (void)callFail:(id)arg1;
 - (void)callCompleteHandler:(_Bool)arg1 error:(id)arg2;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

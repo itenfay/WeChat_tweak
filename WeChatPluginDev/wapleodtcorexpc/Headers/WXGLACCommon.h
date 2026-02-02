@@ -24,7 +24,6 @@
 + (id)getTestSpeedPacket;
 + (unsigned int)getTestCount;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (_Bool)testSpeedOpen;
 - (id)getResendTimeIntervalArray;
 - (double)getTestSpeedDiff;

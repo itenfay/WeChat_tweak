@@ -11,7 +11,6 @@
     MMScrollableActionSheetVerticalContainerView *_verticalContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollableActionSheetVerticalContainerView *verticalContainerView; // @synthesize verticalContainerView=_verticalContainerView;
 - (void)onTappedRowInfo:(id)arg1;
 - (void)addOrUpdateVerticalRowInfo:(id)arg1;

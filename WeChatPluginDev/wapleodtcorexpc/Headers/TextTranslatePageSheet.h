@@ -23,7 +23,6 @@
 }
 
 + (_Bool)isEnable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextTranslateCgi *translateCgi; // @synthesize translateCgi=_translateCgi;
 @property(retain, nonatomic) NSString *originText; // @synthesize originText=_originText;
 @property(retain, nonatomic) UIButton *changeLanguageButton; // @synthesize changeLanguageButton=_changeLanguageButton;

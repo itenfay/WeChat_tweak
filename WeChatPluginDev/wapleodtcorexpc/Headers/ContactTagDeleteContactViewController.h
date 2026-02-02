@@ -11,7 +11,6 @@
     NSArray *_arrContactNameList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrContactNameList; // @synthesize arrContactNameList=_arrContactNameList;
 @property(retain, nonatomic) ContactTagData *m_contactTagData; // @synthesize m_contactTagData=_m_contactTagData;
 - (_Bool)onFilterContactCandidate:(id)arg1;

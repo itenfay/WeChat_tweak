@@ -14,7 +14,6 @@
 }
 
 + (id)loadReportID:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *strategyName; // @synthesize strategyName=_strategyName;
 @property(copy, nonatomic) NSMutableArray *reportIDArray; // @synthesize reportIDArray=_reportIDArray;
 - (void)saveReportIDs;

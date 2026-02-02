@@ -14,7 +14,6 @@
     NSString *_keyBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keyBuffer; // @synthesize keyBuffer=_keyBuffer;
 @property(retain, nonatomic) NSString *buffer; // @synthesize buffer=_buffer;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

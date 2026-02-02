@@ -24,7 +24,6 @@
 }
 
 + (id)createWithCgi:(unsigned int)arg1 pbRequest:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *respClass; // @synthesize respClass=_respClass;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;

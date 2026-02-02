@@ -15,7 +15,6 @@
     NSArray *_arrVersion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrVersion; // @synthesize arrVersion=_arrVersion;
 @property(retain, nonatomic) NSNumber *patch; // @synthesize patch=_patch;
 @property(retain, nonatomic) NSNumber *minor; // @synthesize minor=_minor;

@@ -12,7 +12,6 @@
     id <MMLiveCustomTransitionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveCustomTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getExtendTransitionContainerBackView;
 - (struct CGRect)getMaximizeToRect;

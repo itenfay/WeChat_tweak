@@ -14,7 +14,6 @@
     NSString *_accessibilityText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 @property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(nonatomic) long long displayFormat; // @synthesize displayFormat=_displayFormat;

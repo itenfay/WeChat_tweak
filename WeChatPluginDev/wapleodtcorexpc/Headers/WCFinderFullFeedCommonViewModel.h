@@ -19,7 +19,6 @@
     NSString *_needCleanFeedIDAfterAppend;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *needCleanFeedIDAfterAppend; // @synthesize needCleanFeedIDAfterAppend=_needCleanFeedIDAfterAppend;
 @property(nonatomic) unsigned long long placeHolderDisplayFlag; // @synthesize placeHolderDisplayFlag=_placeHolderDisplayFlag;
 @property(nonatomic) _Bool shouldPreserveFeeds; // @synthesize shouldPreserveFeeds=_shouldPreserveFeeds;

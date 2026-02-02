@@ -26,7 +26,6 @@
 }
 
 + (id)getTag;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCReportStrategyDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;
 @property(nonatomic) __weak id <WCFPSMonitorPluginDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reportIssueCompleteWithIssue:(id)arg1 success:(_Bool)arg2;

@@ -15,7 +15,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectionBorderView; // @synthesize selectionBorderView=_selectionBorderView;
 @property(retain, nonatomic) MMWebImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 @property(retain, nonatomic) MMLiveKtvThemeItem *theme; // @synthesize theme=_theme;

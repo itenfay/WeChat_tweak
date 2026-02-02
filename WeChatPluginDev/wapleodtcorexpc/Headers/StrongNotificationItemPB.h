@@ -45,7 +45,6 @@
 + (void)PBArrayAdd_nsCreateTime;
 + (void)PBArrayAdd_nsUsrName;
 + (void)PBArrayAdd_nsForcePushId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCustomizationNotify; // @synthesize isCustomizationNotify=_isCustomizationNotify;
 @property(retain, nonatomic) NSString *topicTitle; // @synthesize topicTitle=_topicTitle;
 @property(retain, nonatomic) NSString *noticeId; // @synthesize noticeId=_noticeId;

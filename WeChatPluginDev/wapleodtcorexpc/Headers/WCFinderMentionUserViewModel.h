@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSString;
 @protocol WCFinderMentionUserViewModelDelegate;
@@ -17,7 +18,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool hasMoreContact; // @synthesize hasMoreContact=_hasMoreContact;
 @property(retain, nonatomic) NSMutableArray *contactArray; // @synthesize contactArray=_contactArray;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

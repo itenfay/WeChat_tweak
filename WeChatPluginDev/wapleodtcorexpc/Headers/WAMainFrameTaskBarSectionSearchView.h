@@ -14,7 +14,6 @@
 }
 
 + (long long)contentHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAMainFrameTaskBarSectionSearchViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onSearchPlaceHolderUpdate:(id)arg1;
 - (void)refreshSearchPlaceHolder:(id)arg1;

@@ -14,7 +14,6 @@
     UILabel *_nameLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool circleHeader; // @synthesize circleHeader=_circleHeader;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) MMHeadImageView *headerImageView; // @synthesize headerImageView=_headerImageView;

@@ -11,7 +11,6 @@
 }
 
 + (double)calculateHeightWithGroup:(id)arg1 groupItem:(id)arg2 width:(double)arg3 isFirstOneInsection:(_Bool)arg4 isLastOneInSection:(_Bool)arg5;
-- (void).cxx_destruct;
 - (void)updateAccessibility;
 - (void)onClickEvent;
 - (void)setHighlightedColor;

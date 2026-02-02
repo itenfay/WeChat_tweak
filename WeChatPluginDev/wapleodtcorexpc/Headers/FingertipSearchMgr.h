@@ -14,7 +14,6 @@
     FSDSMModelPreparer *_dsmPreparer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FSDSMModelPreparer *dsmPreparer; // @synthesize dsmPreparer=_dsmPreparer;
 @property(retain, nonatomic) DSMMatcher *dsm; // @synthesize dsm=_dsm;
 @property(retain, nonatomic) NSHashTable *weakVCHashTable; // @synthesize weakVCHashTable=_weakVCHashTable;

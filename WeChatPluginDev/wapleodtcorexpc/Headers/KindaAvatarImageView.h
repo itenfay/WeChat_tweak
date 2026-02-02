@@ -11,7 +11,6 @@
     NSString *_m_userName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_userName; // @synthesize m_userName=_m_userName;
 @property(retain, nonatomic) MMHeadImageView *m_headImageView; // @synthesize m_headImageView=_m_headImageView;
 - (void)setUrl:(id)arg1;

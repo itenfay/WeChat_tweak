@@ -20,7 +20,6 @@
     NSString *_hijackUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hijackUrl; // @synthesize hijackUrl=_hijackUrl;
 @property(nonatomic) _Bool needReportOperatorsHijack; // @synthesize needReportOperatorsHijack=_needReportOperatorsHijack;
 - (void)handleBlockConfigMsg:(id)arg1;

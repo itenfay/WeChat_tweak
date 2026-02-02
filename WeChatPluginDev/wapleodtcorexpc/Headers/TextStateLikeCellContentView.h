@@ -25,7 +25,6 @@
 }
 
 + (double)getCellHight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) TextStateItemView *iconView; // @synthesize iconView=_iconView;

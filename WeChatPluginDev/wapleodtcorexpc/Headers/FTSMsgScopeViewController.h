@@ -12,7 +12,6 @@
     id <FTSMsgScopeViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FTSMsgScopeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FTSMsgScopeView *msgScopeView; // @synthesize msgScopeView=_msgScopeView;
 - (_Bool)searchBarHasTagInfo;

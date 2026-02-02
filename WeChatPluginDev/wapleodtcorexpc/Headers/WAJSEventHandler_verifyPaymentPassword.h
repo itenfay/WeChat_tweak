@@ -10,7 +10,6 @@
     NSMutableDictionary *_param;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *param; // @synthesize param=_param;
 - (id)getCurrentURL;
 - (id)getParam;

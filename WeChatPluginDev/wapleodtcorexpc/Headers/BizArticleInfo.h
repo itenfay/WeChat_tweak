@@ -29,7 +29,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMsgId:(id)arg1 svrId:(id)arg2 pos:(id)arg3 posInCard:(id)arg4 openScene:(id)arg5 subScene:(id)arg6 url:(id)arg7 itemShowType:(id)arg8 userName:(id)arg9 nickName:(id)arg10 title:(id)arg11 coverUrl:(id)arg12 bizFinderEnterId:(id)arg13 rankSessionId:(id)arg14 msgLocalId:(id)arg15;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *msgLocalId; // @synthesize msgLocalId=_msgLocalId;
 @property(copy, nonatomic) NSString *rankSessionId; // @synthesize rankSessionId=_rankSessionId;
 @property(retain, nonatomic) NSNumber *bizFinderEnterId; // @synthesize bizFinderEnterId=_bizFinderEnterId;

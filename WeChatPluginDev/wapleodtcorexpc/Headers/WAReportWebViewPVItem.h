@@ -18,7 +18,6 @@
     unsigned long long _staytimeFuncpageStart;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long staytimeFuncpageStart; // @synthesize staytimeFuncpageStart=_staytimeFuncpageStart;
 @property(copy, nonatomic) NSString *referAction; // @synthesize referAction=_referAction;
 @property(nonatomic) unsigned int publicLibVersion; // @synthesize publicLibVersion=_publicLibVersion;

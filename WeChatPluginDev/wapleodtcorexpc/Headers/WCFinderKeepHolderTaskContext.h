@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_nonceId;
 + (void)PBArrayAdd_playedPosition;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(nonatomic) double playedPosition; // @synthesize playedPosition=_playedPosition;
 - (id)getPBPropertyTable;

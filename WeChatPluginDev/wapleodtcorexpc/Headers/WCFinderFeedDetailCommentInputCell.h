@@ -23,7 +23,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long identitySwitchType; // @synthesize identitySwitchType=_identitySwitchType;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;

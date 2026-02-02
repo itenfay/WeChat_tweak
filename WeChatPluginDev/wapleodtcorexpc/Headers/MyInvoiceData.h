@@ -25,7 +25,6 @@
 + (id)GenJsonFromInvoiceData:(id)arg1 andUin:(unsigned long long)arg2;
 + (id)GetInvoiceArrFromJson:(id)arg1;
 + (_Bool)GetIsHaveInvoiceInfoFromJson:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *invoice_url; // @synthesize invoice_url;
 @property(retain, nonatomic) NSString *email; // @synthesize email;
 @property(retain, nonatomic) NSString *bank_number; // @synthesize bank_number;

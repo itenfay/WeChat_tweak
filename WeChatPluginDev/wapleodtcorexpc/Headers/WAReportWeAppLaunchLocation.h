@@ -17,7 +17,6 @@
     NSString *_horizontalAccuracy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int cacheTime; // @synthesize cacheTime=_cacheTime;
 @property(retain, nonatomic) NSString *horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(retain, nonatomic) NSString *verticalAccuracy; // @synthesize verticalAccuracy=_verticalAccuracy;

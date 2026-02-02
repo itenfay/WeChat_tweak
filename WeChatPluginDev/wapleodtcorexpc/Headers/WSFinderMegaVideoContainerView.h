@@ -19,7 +19,6 @@
     NSString *_curContextId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCurWSWebView; // @synthesize isCurWSWebView=_isCurWSWebView;
 @property(retain, nonatomic) NSString *curContextId; // @synthesize curContextId=_curContextId;
 @property(copy, nonatomic) NSDictionary *createConfig; // @synthesize createConfig=_createConfig;

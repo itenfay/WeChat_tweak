@@ -13,7 +13,6 @@
     unsigned long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) __weak UIView *cell; // @synthesize cell=_cell;
 - (struct CGRect)frame;

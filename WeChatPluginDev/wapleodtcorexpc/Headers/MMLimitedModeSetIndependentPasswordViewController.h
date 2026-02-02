@@ -21,7 +21,6 @@
     WCPayInputView *_payInputView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayInputView *payInputView; // @synthesize payInputView=_payInputView;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool showRepeatWrongTips; // @synthesize showRepeatWrongTips=_showRepeatWrongTips;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAudioSessionDataSourceDescription, AVCaptureAudioDataOutput, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, MJCameraTemplateReportObject, MJTemplateCameraSession, MMQRCodeScanner, NSMutableArray, NSObject, NSRecursiveLock, NSString, XEffectEffectManager;
 @protocol OS_dispatch_queue, SightCameraCaptureDelegate;
 
@@ -49,7 +51,6 @@
     long long _currentDeviceCaptureOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentDeviceCaptureOrientation; // @synthesize currentDeviceCaptureOrientation=_currentDeviceCaptureOrientation;
 @property(retain, nonatomic) AVAudioSessionDataSourceDescription *preAudioSessionDataSource; // @synthesize preAudioSessionDataSource=_preAudioSessionDataSource;
 @property(retain, nonatomic) MJTemplateCameraSession *miaojianSession; // @synthesize miaojianSession=_miaojianSession;
@@ -213,4 +214,3 @@
 @property(readonly) Class superclass;
 
 @end
-

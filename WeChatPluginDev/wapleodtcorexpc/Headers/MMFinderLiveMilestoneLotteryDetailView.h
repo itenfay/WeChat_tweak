@@ -14,7 +14,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) __weak MMFinderLiveMilestoneLotteryDetailWinnerResultView *winnerResultView; // @synthesize winnerResultView=_winnerResultView;
 @property(nonatomic) __weak MMFinderLiveMilestoneLotteryDetailQuestionView *questionView; // @synthesize questionView=_questionView;

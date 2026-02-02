@@ -23,7 +23,6 @@
     KSAudioStreamPlayBackItem *_playerItem;
 }
 
-- (void).cxx_destruct;
 @property(retain) KSAudioStreamPlayBackItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(nonatomic) KSNewAudioPlayerManager *audioManager; // @synthesize audioManager=_audioManager;
 @property(nonatomic) _Bool seekToPlayAuto; // @synthesize seekToPlayAuto=_seekToPlayAuto;

@@ -25,7 +25,6 @@
     CDStruct_1b6d18a9 _coverImageDetectionMaxDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float coverImageDetectionDarknessRatioThreshold; // @synthesize coverImageDetectionDarknessRatioThreshold=_coverImageDetectionDarknessRatioThreshold;
 @property(nonatomic) CDStruct_1b6d18a9 coverImageDetectionMaxDuration; // @synthesize coverImageDetectionMaxDuration=_coverImageDetectionMaxDuration;
 @property(nonatomic) int coverImageDetectionFrameInterval; // @synthesize coverImageDetectionFrameInterval=_coverImageDetectionFrameInterval;

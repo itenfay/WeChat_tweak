@@ -21,7 +21,6 @@
 }
 
 + (id)getContactByMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *indexUpdateDic; // @synthesize indexUpdateDic=_indexUpdateDic;
 @property(retain, nonatomic) NSMutableDictionary *sessionUpdateDic; // @synthesize sessionUpdateDic=_sessionUpdateDic;
 @property(nonatomic) unsigned int scanLocalID; // @synthesize scanLocalID=_scanLocalID;

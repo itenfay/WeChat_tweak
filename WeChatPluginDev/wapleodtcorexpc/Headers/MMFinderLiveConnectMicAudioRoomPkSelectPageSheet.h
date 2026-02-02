@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveBattleDurationItem, MMFinderLiveConnectMicPkSelectionModel, MMUIButton, NSString, UITableView;
 
 @interface MMFinderLiveConnectMicAudioRoomPkSelectPageSheet
@@ -15,7 +17,6 @@
     MMFinderLiveBattleDurationItem *_selectedDuration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveBattleDurationItem *selectedDuration; // @synthesize selectedDuration=_selectedDuration;
 @property(nonatomic) unsigned long long selectedBattleMode; // @synthesize selectedBattleMode=_selectedBattleMode;
 @property(retain, nonatomic) MMFinderLiveConnectMicPkSelectionModel *model; // @synthesize model=_model;
@@ -54,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

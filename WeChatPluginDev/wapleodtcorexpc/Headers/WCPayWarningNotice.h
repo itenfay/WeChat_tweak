@@ -19,7 +19,6 @@
     NSString *_righticon_dark;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *righticon_dark; // @synthesize righticon_dark=_righticon_dark;
 @property(retain, nonatomic) NSString *righticon; // @synthesize righticon=_righticon;
 @property(retain, nonatomic) NSString *lefticon_dark; // @synthesize lefticon_dark=_lefticon_dark;

@@ -15,7 +15,6 @@
 
 + (unsigned int)getCacheMediaTypeWithFileType:(unsigned int)arg1;
 + (id)findRecordDataInList:(id)arg1 WithLocalDataId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnRecordMediaInfo *m_curDownMediaInfo; // @synthesize m_curDownMediaInfo;
 @property(retain, nonatomic) CMessageWrap *m_waitDownMsgWrap; // @synthesize m_waitDownMsgWrap;
 @property(retain, nonatomic) CMessageWrap *m_curDownMsgWrap; // @synthesize m_curDownMsgWrap;

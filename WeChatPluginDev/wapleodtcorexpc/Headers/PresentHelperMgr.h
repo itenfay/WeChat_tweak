@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSCountedSet, NSMutableArray, NSString;
 
 @interface PresentHelperMgr
@@ -11,7 +13,6 @@
     NSCountedSet *_slientlyPreparePresentStackVCSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCountedSet *slientlyPreparePresentStackVCSet; // @synthesize slientlyPreparePresentStackVCSet=_slientlyPreparePresentStackVCSet;
 @property(retain, nonatomic) NSMutableArray *tmpCannotShowViewControllers; // @synthesize tmpCannotShowViewControllers=_tmpCannotShowViewControllers;
 - (_Bool)isViewControllerCanSetStatusBarStyleWhenSlientProcess:(id)arg1;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

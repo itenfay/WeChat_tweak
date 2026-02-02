@@ -28,7 +28,6 @@
 }
 
 + (id)genFromUnion:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayECardRealNameInfo *ecard_info; // @synthesize ecard_info=_ecard_info;
 @property(retain, nonatomic) NSString *protocolUrl; // @synthesize protocolUrl=_protocolUrl;
 @property(retain, nonatomic) NSString *rightProtocolWording; // @synthesize rightProtocolWording=_rightProtocolWording;

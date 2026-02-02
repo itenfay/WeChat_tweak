@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSNumber, NSString, VoicePrintMgr, VoicePrintResourceItem, VoicePrintVerifyViewController;
 
@@ -24,7 +25,6 @@
     NSString *_randomAuthKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *randomAuthKey; // @synthesize randomAuthKey=_randomAuthKey;
 @property(retain, nonatomic) NSNumber *result; // @synthesize result=_result;
 @property(nonatomic, getter=isRecordingTooShort) _Bool recordingTooShort; // @synthesize recordingTooShort=_recordingTooShort;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

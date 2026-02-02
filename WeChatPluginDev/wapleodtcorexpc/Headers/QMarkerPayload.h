@@ -26,7 +26,6 @@
     CDStruct_34734122 _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double angle; // @synthesize angle=_angle;
 @property(nonatomic) _Bool avoidOtherAnnotations; // @synthesize avoidOtherAnnotations=_avoidOtherAnnotations;
 @property(nonatomic) _Bool avoidAnnotation; // @synthesize avoidAnnotation=_avoidAnnotation;

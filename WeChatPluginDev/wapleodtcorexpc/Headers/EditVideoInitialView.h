@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, EVVideoPreviewBrowserView, EditImageEmotionToolAttrView, EditImagePenToolAttrView, EditImageScrollView, EditStoryImageAttr, EditVideoBGMView, EditVideoCropView, EditVideoMusicController, MMLoadingView, MMUIButton, MMUIImageView, MMUIView, NSMutableArray, NSString, UIImageView, UIView, WCEditLoadingModeButton, WCEditViewControllerUIConfig, WCStoryPublishReportObj;
 @protocol EditVideoInitialViewDelegate, EditVideoOptionsDelegate;
 
@@ -63,7 +65,6 @@
     MMUIButton *_rightTopEntranceBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *rightTopEntranceBtn; // @synthesize rightTopEntranceBtn=_rightTopEntranceBtn;
 @property(retain, nonatomic) EditVideoMusicController *musicController; // @synthesize musicController=_musicController;
 @property(retain, nonatomic) UIImageView *blurImageView; // @synthesize blurImageView=_blurImageView;
@@ -204,4 +205,3 @@
 @property(readonly) Class superclass;
 
 @end
-

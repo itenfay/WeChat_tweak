@@ -24,7 +24,6 @@
     NSString *_whiteListCharsSet;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *whiteListCharsSet; // @synthesize whiteListCharsSet=_whiteListCharsSet;
 @property(nonatomic) __weak id <TenpaySafeInputViewDelegate> safeViewDelegate; // @synthesize safeViewDelegate;
 - (int)getError;

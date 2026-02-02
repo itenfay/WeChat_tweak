@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJStyleEditData, NSArray, NSDictionary, NSMutableDictionary, NSString, OMJMaterialInfo, OMJMaterialManager;
 @protocol MJStyleEditViewModelDataSource;
@@ -35,7 +36,6 @@
 + (long long)searchAnimPresetIDWith:(id)arg1 data:(id)arg2;
 + (long long)searchColorStyleIDWith:(id)arg1 data:(id)arg2;
 + (long long)searchFontNameWith:(id)arg1 data:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *backupStylesDict; // @synthesize backupStylesDict=_backupStylesDict;
 @property(retain, nonatomic) NSMutableDictionary *downloadStatus; // @synthesize downloadStatus=_downloadStatus;
 @property(retain, nonatomic) NSDictionary *animDicts; // @synthesize animDicts=_animDicts;
@@ -83,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

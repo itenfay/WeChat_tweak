@@ -15,7 +15,6 @@
     unsigned long long _currLayoutStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currLayoutStyle; // @synthesize currLayoutStyle=_currLayoutStyle;
 @property(retain, nonatomic) MMFinderLiveBarragePubbleCellFrameResult *layoutResult; // @synthesize layoutResult=_layoutResult;
 @property(nonatomic) int lastExposeIndex; // @synthesize lastExposeIndex=_lastExposeIndex;

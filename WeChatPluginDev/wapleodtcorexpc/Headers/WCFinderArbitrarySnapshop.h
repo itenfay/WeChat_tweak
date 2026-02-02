@@ -13,7 +13,6 @@
 }
 
 + (id)snapshopWithIdentifiers:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 
 @end

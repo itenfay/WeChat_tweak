@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OMJMoviePlayerDelegate;
 
@@ -19,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) shared_ptr_c90976e0 backingPlayer; // @synthesize backingPlayer=_backingPlayer;
 @property(nonatomic) _Bool isAudioEnabled; // @synthesize isAudioEnabled=_isAudioEnabled;
@@ -46,4 +46,3 @@
 - (id)initWithBackingPlayer:(const void *)arg1;
 
 @end
-

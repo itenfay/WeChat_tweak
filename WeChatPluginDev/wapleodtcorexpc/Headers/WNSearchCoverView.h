@@ -13,7 +13,6 @@
     NSMutableDictionary *_coverInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *coverInfos; // @synthesize coverInfos=_coverInfos;
 @property(nonatomic) _Bool hasSetDisplay; // @synthesize hasSetDisplay=_hasSetDisplay;
 - (void)drawRectWith:(id)arg1;

@@ -16,7 +16,6 @@
 + (id)createSectionDataWithMsgWrap:(id)arg1 sectionWidth:(double)arg2 displayMode:(unsigned int)arg3 delegate:(id)arg4;
 + (void)initMsgSectionDataClassList;
 + (void)registerMsgSectionDataClass:(Class)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int displayMode; // @synthesize displayMode=_displayMode;
 @property(readonly, nonatomic) NSMutableArray *arrItemCellViewModel; // @synthesize arrItemCellViewModel=_arrItemCellViewModel;
 @property(readonly, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;

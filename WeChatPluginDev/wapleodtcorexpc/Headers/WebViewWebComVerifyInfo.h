@@ -15,7 +15,6 @@
     NSString *_webComptConfigJson;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *webComptConfigJson; // @synthesize webComptConfigJson=_webComptConfigJson;
 @property(nonatomic) unsigned int taskJsCtxReportId; // @synthesize taskJsCtxReportId=_taskJsCtxReportId;
 @property(nonatomic) unsigned int taskReportId; // @synthesize taskReportId=_taskReportId;

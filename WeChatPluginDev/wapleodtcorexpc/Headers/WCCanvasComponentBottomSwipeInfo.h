@@ -12,7 +12,6 @@
     NSString *_jumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 @property(nonatomic) int swipeActionType; // @synthesize swipeActionType=_swipeActionType;
 @property(retain, nonatomic) NSString *swipeText; // @synthesize swipeText=_swipeText;

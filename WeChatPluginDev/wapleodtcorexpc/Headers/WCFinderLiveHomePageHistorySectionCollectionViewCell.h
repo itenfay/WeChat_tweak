@@ -14,7 +14,6 @@
 
 + (double)cellHeightInWidth:(double)arg1 styleInfo:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageHistorySectionView *liveCollectionView; // @synthesize liveCollectionView=_liveCollectionView;
 @property(nonatomic) __weak id <WCFinderLiveHomePageHistorySectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)indexPathsForVisibleItems;

@@ -16,7 +16,6 @@
     MMUIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) MMWebImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) MMUIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;

@@ -19,7 +19,6 @@
 
 + (void)updateSearchBarAppearance:(id)arg1;
 + (id)createSearchBarWithFrame:(struct CGRect)arg1 placeholder:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *connectMicUserList; // @synthesize connectMicUserList=_connectMicUserList;
 @property(readonly, nonatomic) UIScrollView *mainScrollView; // @synthesize mainScrollView=_mainScrollView;
 @property(nonatomic) __weak id <MMFinderLiveConnectMicContainerViewDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;

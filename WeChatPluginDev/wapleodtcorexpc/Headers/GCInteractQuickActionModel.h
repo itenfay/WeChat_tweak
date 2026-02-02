@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor;
 
@@ -15,11 +16,9 @@
     UIColor *_textColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) CDUnknownBlockType touchBlock; // @synthesize touchBlock=_touchBlock;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *svgImgStr; // @synthesize svgImgStr=_svgImgStr;
 
 @end
-

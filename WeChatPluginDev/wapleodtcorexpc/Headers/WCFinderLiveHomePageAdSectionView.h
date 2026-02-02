@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageAdSectionViewCollectionFlowLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) __weak id <WCFinderLiveHomePageAdSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onContainerSectionVMHomePageResetState;

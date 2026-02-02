@@ -31,7 +31,6 @@
 + (_Bool)showsMoreNoticesWithNoticeList:(id)arg1;
 + (double)heightWithContentVM:(id)arg1 noticeListInfo:(id)arg2 width:(double)arg3 scene:(unsigned long long)arg4;
 + (double)detailViewMarginRight;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize cacheSize; // @synthesize cacheSize=_cacheSize;
 @property(retain, nonatomic) UILabel *moreNoticesLabel; // @synthesize moreNoticesLabel=_moreNoticesLabel;
 @property(retain, nonatomic) WCFinderLiveLivingItemView *moreNoticesItemView; // @synthesize moreNoticesItemView=_moreNoticesItemView;

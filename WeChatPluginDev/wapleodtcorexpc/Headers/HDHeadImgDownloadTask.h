@@ -21,7 +21,6 @@
     NSString *_m_nsTempFile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTempFile; // @synthesize m_nsTempFile=_m_nsTempFile;
 @property(retain, nonatomic) NSString *m_nsUrl; // @synthesize m_nsUrl;
 @property(nonatomic) unsigned int m_uiDownloadEventId; // @synthesize m_uiDownloadEventId;

@@ -19,7 +19,6 @@
     MMImageDetectMediaInfo *_detectMediaInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageDetectMediaInfo *detectMediaInfo; // @synthesize detectMediaInfo=_detectMediaInfo;
 @property(retain, nonatomic) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property(retain, nonatomic) WCMediaItem *snsMediaItem; // @synthesize snsMediaItem=_snsMediaItem;

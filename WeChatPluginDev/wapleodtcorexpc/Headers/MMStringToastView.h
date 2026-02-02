@@ -23,7 +23,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool isIndividualWindow; // @synthesize isIndividualWindow=_isIndividualWindow;
 @property(retain, nonatomic) UIImageView *netStatusArrowIconView; // @synthesize netStatusArrowIconView=_netStatusArrowIconView;

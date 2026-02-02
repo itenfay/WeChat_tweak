@@ -16,7 +16,6 @@
     GameCenterTabInfoNode *_tabInfoNode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterTabInfoNode *tabInfoNode; // @synthesize tabInfoNode=_tabInfoNode;
 @property(retain, nonatomic) GameCenterMsgV2Node *msgV2Node; // @synthesize msgV2Node=_msgV2Node;
 @property(retain, nonatomic) GameCenterMsgReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;

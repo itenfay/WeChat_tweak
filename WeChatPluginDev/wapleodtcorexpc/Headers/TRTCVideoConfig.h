@@ -32,7 +32,6 @@
 + (id)localMirrorTypeNames;
 + (id)fpsList;
 + (id)resolutionNames;
-- (void).cxx_destruct;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) long long fpsIndex; // @synthesize fpsIndex=_fpsIndex;
 @property(retain, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;

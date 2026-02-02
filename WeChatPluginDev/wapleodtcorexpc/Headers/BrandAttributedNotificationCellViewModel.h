@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateViewModelWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 - (id)messageAttributedStringArr;
 - (id)messageAttributedStringAtIndex:(unsigned long long)arg1;
 - (unsigned int)messageAttributedStringMaxLineCountAtIndex:(unsigned long long)arg1;

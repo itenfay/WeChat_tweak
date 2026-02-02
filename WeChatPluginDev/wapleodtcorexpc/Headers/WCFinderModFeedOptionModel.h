@@ -17,7 +17,6 @@
     NSMutableArray *_shortTitleArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *shortTitleArray; // @synthesize shortTitleArray=_shortTitleArray;
 @property(copy, nonatomic) NSMutableArray *coverUrlWord; // @synthesize coverUrlWord=_coverUrlWord;
 @property(copy, nonatomic) NSString *fullCoverUrl; // @synthesize fullCoverUrl=_fullCoverUrl;

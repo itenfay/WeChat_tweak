@@ -36,7 +36,6 @@
 + (id)getStatusIdAppendString:(id)arg1;
 + (void)reportAction:(long long)arg1 actionExtraInfo:(id)arg2 textState:(id)arg3 scene:(long long)arg4 subScene:(long long)arg5 sessionId:(id)arg6 sceneSessionId:(id)arg7 positionInCardList:(unsigned long long)arg8 cardListId:(id)arg9 exitType:(long long)arg10 stayDuration:(unsigned long long)arg11 isPullDown:(_Bool)arg12 hasIconRedDot:(_Bool)arg13 hasTruncatedLink:(_Bool)arg14 requestId:(unsigned long long)arg15;
 + (void)reportAction:(long long)arg1 scene:(long long)arg2 contact:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long exitType; // @synthesize exitType=_exitType;
 @property(nonatomic) unsigned long long cardDurationTime; // @synthesize cardDurationTime=_cardDurationTime;
 @property(nonatomic) unsigned long long cardExposeTime; // @synthesize cardExposeTime=_cardExposeTime;

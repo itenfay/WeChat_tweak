@@ -22,7 +22,6 @@
     MMUILabel *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSmallPicMode; // @synthesize isSmallPicMode=_isSmallPicMode;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UIButton *titleButton; // @synthesize titleButton=_titleButton;

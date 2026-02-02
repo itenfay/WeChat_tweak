@@ -18,7 +18,6 @@
 }
 
 + (struct CGSize)getDefaultIconImageSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *stickyTopContainerView; // @synthesize stickyTopContainerView=_stickyTopContainerView;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) UILabel *leftInfoLabel; // @synthesize leftInfoLabel=_leftInfoLabel;

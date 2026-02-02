@@ -10,7 +10,6 @@
     WebRecordDB *_db;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebRecordDB *db; // @synthesize db=_db;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

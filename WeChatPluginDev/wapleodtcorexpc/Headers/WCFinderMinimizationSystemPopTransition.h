@@ -14,7 +14,6 @@
     UIViewController *_animatedTransitionRespondViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController=_animatedTransitionRespondViewController;
 @property(nonatomic) _Bool useWhenVCPop; // @synthesize useWhenVCPop=_useWhenVCPop;
 @property(nonatomic) _Bool isInteracting; // @synthesize isInteracting=_isInteracting;

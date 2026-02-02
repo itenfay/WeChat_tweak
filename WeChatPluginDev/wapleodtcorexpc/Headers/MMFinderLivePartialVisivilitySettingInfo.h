@@ -13,7 +13,6 @@
     NSMutableArray *_selectedVisibleFileLists;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedVisibleFileLists; // @synthesize selectedVisibleFileLists=_selectedVisibleFileLists;
 @property(retain, nonatomic) NSMutableArray *chooseContactUsernameList; // @synthesize chooseContactUsernameList=_chooseContactUsernameList;
 @property(retain, nonatomic) NSMutableArray *chooseContactChatroomList; // @synthesize chooseContactChatroomList=_chooseContactChatroomList;

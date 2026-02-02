@@ -20,7 +20,6 @@
     unsigned int m_uiScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiScene; // @synthesize m_uiScene;
 @property(retain, nonatomic) WCTableViewNormalCellManager *m_editInfo; // @synthesize m_editInfo;
 @property(retain, nonatomic) id m_userData; // @synthesize m_userData;

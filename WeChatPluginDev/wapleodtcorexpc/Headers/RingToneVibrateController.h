@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol RingToneVibrateDataSource;
@@ -23,7 +24,6 @@
 + (_Bool)CustomizedVibrateEnabled;
 + (_Bool)SupportCustomizedVibrate;
 + (_Bool)VibrateEnabled;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVibrating; // @synthesize isVibrating=_isVibrating;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType onVibrate; // @synthesize onVibrate=_onVibrate;
@@ -39,4 +39,3 @@
 - (void)executeInHapticQueueWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

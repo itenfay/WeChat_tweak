@@ -16,7 +16,6 @@
     long long _favType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromExcerpt; // @synthesize isFromExcerpt=_isFromExcerpt;
 @property(nonatomic) long long favType; // @synthesize favType=_favType;
 @property(retain, nonatomic) NSArray *chatContents; // @synthesize chatContents=_chatContents;

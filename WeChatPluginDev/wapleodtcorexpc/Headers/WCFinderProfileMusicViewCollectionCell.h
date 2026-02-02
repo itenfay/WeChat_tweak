@@ -14,7 +14,6 @@
 }
 
 + (double)displayHeightWithIndexPath:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperator; // @synthesize seperator=_seperator;
 @property(nonatomic) _Bool allowSlideDelete; // @synthesize allowSlideDelete=_allowSlideDelete;
 @property(nonatomic) _Bool showSeperator; // @synthesize showSeperator=_showSeperator;

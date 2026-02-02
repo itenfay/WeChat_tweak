@@ -15,7 +15,6 @@
 + (id)fromXMLParentNode:(struct XmlReaderNode_t *)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_encodedExcerptUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *encodedExcerptUrl; // @synthesize encodedExcerptUrl=_encodedExcerptUrl;
 - (id)toXML;
 - (_Bool)canShowOriginalArticleSource;

@@ -15,7 +15,6 @@
     NSString *_lastpushmsg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clicktime; // @synthesize clicktime=_clicktime;
 @property(copy, nonatomic) NSString *lastpushmsg; // @synthesize lastpushmsg=_lastpushmsg;
 @property(copy, nonatomic) NSString *lastpushappid; // @synthesize lastpushappid=_lastpushappid;

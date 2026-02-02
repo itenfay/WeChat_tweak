@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEventChannel, NSMutableDictionary, NSString;
 @protocol FlutterBinaryMessenger, FlutterTextureRegistry;
@@ -17,7 +18,6 @@
     NSMutableDictionary *_playerMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *playerMap; // @synthesize playerMap=_playerMap;
 @property(copy, nonatomic) CDUnknownBlockType playerEventSink; // @synthesize playerEventSink=_playerEventSink;
 @property(retain, nonatomic) FlutterEventChannel *playerEventChannel; // @synthesize playerEventChannel=_playerEventChannel;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

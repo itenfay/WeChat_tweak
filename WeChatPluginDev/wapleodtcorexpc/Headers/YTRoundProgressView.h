@@ -15,7 +15,6 @@
     UIColor *_backgroundTintColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isAnnular) _Bool annular; // @synthesize annular=_annular;
 @property(retain, nonatomic) UIColor *backgroundTintColor; // @synthesize backgroundTintColor=_backgroundTintColor;
 @property(retain, nonatomic) UIColor *progressTintColor; // @synthesize progressTintColor=_progressTintColor;

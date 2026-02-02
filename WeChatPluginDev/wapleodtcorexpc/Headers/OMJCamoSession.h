@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class OMJCDNBridgeService, UIView;
 @protocol OMJCamoSessionDelegate;
@@ -17,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_85cde1ea backingRenderView; // @synthesize backingRenderView=_backingRenderView;
 @property(nonatomic) SharedPtr_a4453dff backingSession; // @synthesize backingSession=_backingSession;
 @property(readonly, nonatomic) OMJCDNBridgeService *cdnBridgeService; // @synthesize cdnBridgeService=_cdnBridgeService;
@@ -117,4 +117,3 @@
 - (id)initWithBackingSession:(const void *)arg1 backingRenderView:(const void *)arg2;
 
 @end
-

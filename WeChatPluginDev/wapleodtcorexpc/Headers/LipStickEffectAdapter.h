@@ -15,7 +15,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *mouthShape; // @synthesize mouthShape=_mouthShape;
 @property(retain, nonatomic) NSArray *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSNumber *lipstickType; // @synthesize lipstickType=_lipstickType;

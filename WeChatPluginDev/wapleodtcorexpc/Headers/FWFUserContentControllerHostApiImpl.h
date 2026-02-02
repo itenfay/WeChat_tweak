@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)removeAllUserScriptsForControllerWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)addUserScriptForControllerWithIdentifier:(id)arg1 userScript:(id)arg2 error:(id *)arg3;

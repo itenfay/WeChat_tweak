@@ -15,7 +15,6 @@
     FinderLiveAnchorCustomGiftInfo_CustomItem *_customizationItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveAnchorCustomGiftInfo_CustomItem *customizationItem; // @synthesize customizationItem=_customizationItem;
 @property(retain, nonatomic) FinderLiveFanClubCustomGift *customizableGift; // @synthesize customizableGift=_customizableGift;
 @property(retain, nonatomic) MMFinderLiveFansGroupCustomizableGiftColorVariant *selectedVariant; // @synthesize selectedVariant=_selectedVariant;

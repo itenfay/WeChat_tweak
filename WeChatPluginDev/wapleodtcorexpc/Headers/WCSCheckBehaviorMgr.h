@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onSendEvent:(id)arg1;
 - (id)convertScenes:(unsigned int)arg1;
 - (void)endRecord:(unsigned int)arg1;

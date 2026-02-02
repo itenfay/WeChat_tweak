@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCAccountBindPhoneForRegCGI, WCAccountGatewayMobileHandler, WCAccountManualAuthControlLogic, WCAccountRegisterControlLogic, WCPrivacyPolicyControlLogic;
 
 @interface WCAccountPhoneRegLoginControlLogic
@@ -22,7 +24,6 @@
     WCAccountGatewayMobileHandler *_gatewayMobileHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountGatewayMobileHandler *gatewayMobileHandler; // @synthesize gatewayMobileHandler=_gatewayMobileHandler;
 - (void)resume;
 - (void)pause;
@@ -95,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

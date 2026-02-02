@@ -47,7 +47,6 @@
     struct CGSize _currentSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFrontCamera; // @synthesize isFrontCamera=_isFrontCamera;
 @property(nonatomic) _Bool backVirtualBackgroundOn; // @synthesize backVirtualBackgroundOn=_backVirtualBackgroundOn;
 @property(nonatomic) _Bool frontVirtualBackgroundOn; // @synthesize frontVirtualBackgroundOn=_frontVirtualBackgroundOn;

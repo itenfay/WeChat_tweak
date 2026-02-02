@@ -24,7 +24,6 @@
     CameraScanCombineGoodsListViewExpandLayout *_expandLayout;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bChangingLayout; // @synthesize bChangingLayout=_bChangingLayout;
 @property(retain, nonatomic) CameraScanCombineGoodsListViewExpandLayout *expandLayout; // @synthesize expandLayout=_expandLayout;
 @property(retain, nonatomic) CameraScanCombineGoodsListViewLayout *normalLayout; // @synthesize normalLayout=_normalLayout;

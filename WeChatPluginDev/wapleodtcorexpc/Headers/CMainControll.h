@@ -23,7 +23,6 @@
     _Bool m_bStop;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMMDB *m_oMMDB; // @synthesize m_oMMDB;
 - (void)TimerSync;
 - (void)onLoginOK;

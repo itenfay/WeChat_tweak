@@ -16,7 +16,6 @@
     NSString *_nationality;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nationality; // @synthesize nationality=_nationality;
 @property(retain, nonatomic) WCPayProfession *profession; // @synthesize profession=_profession;
 @property(copy, nonatomic) NSString *city; // @synthesize city=_city;

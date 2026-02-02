@@ -14,7 +14,6 @@
     WCStackTracePool *_stackTracePool;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStackTracePool *stackTracePool; // @synthesize stackTracePool=_stackTracePool;
 @property(nonatomic) __weak id <WCPowerConsumeStackCollectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (struct StackInfo)getStackInfoWithThreadCount:(unsigned int)arg1 costCpuThreadList:(unsigned int *)arg2 costCpuValueList:(float *)arg3;

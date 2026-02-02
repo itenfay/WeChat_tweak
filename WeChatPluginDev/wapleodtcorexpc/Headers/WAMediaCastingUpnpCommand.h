@@ -15,7 +15,6 @@
     NSString *_XMLCommandName;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *XMLCommandName; // @synthesize XMLCommandName=_XMLCommandName;
 @property(copy, nonatomic) NSString *commandServiceType; // @synthesize commandServiceType=_commandServiceType;
 @property(copy, nonatomic) NSString *commandName; // @synthesize commandName=_commandName;

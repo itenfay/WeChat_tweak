@@ -26,7 +26,6 @@
     NSMutableArray *_emoticonViewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *emoticonViewArray; // @synthesize emoticonViewArray=_emoticonViewArray;
 @property(nonatomic) _Bool shouldDisableDescUpdateExtension; // @synthesize shouldDisableDescUpdateExtension=_shouldDisableDescUpdateExtension;
 @property(nonatomic) _Bool shouldDisableRemoteDesc; // @synthesize shouldDisableRemoteDesc=_shouldDisableRemoteDesc;

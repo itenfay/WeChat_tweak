@@ -14,7 +14,6 @@
     UILabel *_m_walletRegionDescLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_walletRegionDescLabel; // @synthesize m_walletRegionDescLabel=_m_walletRegionDescLabel;
 @property(retain, nonatomic) UIView *m_coverView; // @synthesize m_coverView=_m_coverView;
 @property(retain, nonatomic) NSArray *m_walletRegionDescArray; // @synthesize m_walletRegionDescArray=_m_walletRegionDescArray;

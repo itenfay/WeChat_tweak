@@ -25,7 +25,6 @@
 
 + (id)sharedInstance;
 + (void)hook;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *liveWebviews; // @synthesize liveWebviews=m_liveWebviews;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=m_lock;
 - (void)onStackReportCompleted:(_Bool)arg1;

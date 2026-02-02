@@ -17,7 +17,6 @@
     NSString *_compatibleJumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool brandDirectJump; // @synthesize brandDirectJump=_brandDirectJump;
 @property(retain, nonatomic) NSString *compatibleJumpUrl; // @synthesize compatibleJumpUrl=_compatibleJumpUrl;
 @property(retain, nonatomic) NSString *brandDesc; // @synthesize brandDesc=_brandDesc;

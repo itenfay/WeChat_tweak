@@ -21,7 +21,6 @@
 }
 
 + (void)saveDataItemAndExtraInfosWithContainerModels:(id)arg1 commentScene:(int)arg2 extraKey:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long containerId; // @synthesize containerId=_containerId;
 @property(retain, nonatomic) NSString *themeTag; // @synthesize themeTag=_themeTag;
 @property(retain, nonatomic) WCFinderLiveEntertainmentChannelsContext *ctx; // @synthesize ctx=_ctx;

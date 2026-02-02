@@ -14,7 +14,6 @@
     NSMutableSet *_tidContainSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(retain, nonatomic) NSMutableArray *streamWaittingPool; // @synthesize streamWaittingPool=_streamWaittingPool;
 @property(retain, nonatomic) NSMutableArray *failedItems; // @synthesize failedItems=_failedItems;

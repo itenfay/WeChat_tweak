@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFlutterViewController, NSString, UIView;
 
@@ -16,7 +17,6 @@
     UIView *_embedContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *embedContainerView; // @synthesize embedContainerView=_embedContainerView;
 @property(retain, nonatomic) UIView *parentEmbedContainerView; // @synthesize parentEmbedContainerView=_parentEmbedContainerView;
 @property(copy, nonatomic) CDUnknownBlockType selectContactCallback; // @synthesize selectContactCallback=_selectContactCallback;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

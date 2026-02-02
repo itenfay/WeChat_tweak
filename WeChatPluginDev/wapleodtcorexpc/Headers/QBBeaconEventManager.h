@@ -32,7 +32,6 @@
 @property(nonatomic) _Bool isEventUpOnOff; // @synthesize isEventUpOnOff=_isEventUpOnOff;
 @property(nonatomic) _Bool isEventUploadClose; // @synthesize isEventUploadClose=_isEventUploadClose;
 @property(retain, nonatomic) NSDictionary *detail; // @synthesize detail=_detail;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

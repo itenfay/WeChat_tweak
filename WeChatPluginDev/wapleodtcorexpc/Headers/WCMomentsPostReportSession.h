@@ -69,7 +69,6 @@
     NSDictionary *_Together_contactSelectionRecords;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *Together_contactSelectionRecords; // @synthesize Together_contactSelectionRecords=_Together_contactSelectionRecords;
 @property(retain, nonatomic) NSMutableDictionary *postCompositeOperationDictionary; // @synthesize postCompositeOperationDictionary=_postCompositeOperationDictionary;
 @property(nonatomic) _Bool hasEverEnteredNewCommitPage; // @synthesize hasEverEnteredNewCommitPage=_hasEverEnteredNewCommitPage;

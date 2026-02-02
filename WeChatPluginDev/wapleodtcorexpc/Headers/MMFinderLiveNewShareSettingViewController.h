@@ -28,7 +28,6 @@
     unsigned long long _entrySource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long entrySource; // @synthesize entrySource=_entrySource;
 @property(retain, nonatomic) NSMutableArray *selectedVisibleFileLists; // @synthesize selectedVisibleFileLists=_selectedVisibleFileLists;
 @property(retain, nonatomic) MMFinderLiveTestLivePartialVisivilityShareSettingView *testLiveVisivilitySettingView; // @synthesize testLiveVisivilitySettingView=_testLiveVisivilitySettingView;

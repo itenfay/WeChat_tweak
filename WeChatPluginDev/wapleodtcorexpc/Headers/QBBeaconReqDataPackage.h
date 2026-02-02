@@ -30,7 +30,6 @@
 @property(retain, nonatomic) NSString *reqServant; // @synthesize reqServant;
 @property(retain, nonatomic) NSString *reqKey; // @synthesize reqKey;
 @property(retain, nonatomic) QBBeaconRequestPackage *requestPackage; // @synthesize requestPackage;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getWithRspData:(id)arg1 error:(id *)arg2;
 - (id)createReqData:(id *)arg1;

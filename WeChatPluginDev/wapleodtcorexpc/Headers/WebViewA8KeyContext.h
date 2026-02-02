@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WebViewA8KeyContext : NSObject
 {
@@ -13,11 +14,9 @@
     CDUnknownBlockType _onGetBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) CDUnknownBlockType onGetBlock; // @synthesize onGetBlock=_onGetBlock;
 @property(nonatomic) _Bool exceptionBackOnGetA8Key; // @synthesize exceptionBackOnGetA8Key=_exceptionBackOnGetA8Key;
 @property(nonatomic) _Bool notGoToUrlOnGetA8Key; // @synthesize notGoToUrlOnGetA8Key=_notGoToUrlOnGetA8Key;
 
 @end
-

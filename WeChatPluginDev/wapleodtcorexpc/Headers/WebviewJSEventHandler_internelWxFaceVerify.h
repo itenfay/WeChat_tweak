@@ -11,7 +11,6 @@
     FaceRecogInternelHandler *_verifyHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogInternelHandler *verifyHandler; // @synthesize verifyHandler=_verifyHandler;
 @property(retain, nonatomic) JSEvent *cbEvent; // @synthesize cbEvent=_cbEvent;
 - (void)faceRecogHandlerDidFinish:(id)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AutoTranslateMsgController, AutoTranslateMsgControllerV2, BaseMsgContentViewController, BaseMsgLoaderLogic, CBaseContact, CContact, CContactVerifyLogic, CMessageWrap, ForwardMessageLogicController, ImageController, MMEasterEggController, MMLocatingPoiDataLogic, MMPickLocationViewController, MMUIViewController, MultiSelectController, MyFavoritesListViewController, NSArray, NSMutableDictionary, NSMutableSet, NSString, RecordController, SendVerifyMsgLogicController, ShareDataToOpenSDKController, ShareFriendOnChatLogicController, ShareMessageConfirmLogicHelper, TypingController, UINavigationController, UIViewController, UrlController, VoiceAutoTranslateHelper, WAAppIdToUsernameTransfer, WCScheduleLogicController, ilinkMultiSelectLogic;
 
 @interface BaseMsgContentLogicController
@@ -72,7 +74,6 @@
     CMessageWrap *_firstMsgAfterEnterSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *firstMsgAfterEnterSession; // @synthesize firstMsgAfterEnterSession=_firstMsgAfterEnterSession;
 @property(nonatomic) _Bool isMovingToMainFrame; // @synthesize isMovingToMainFrame=_isMovingToMainFrame;
 @property(nonatomic) __weak UIViewController *currentMusicSearchViewController; // @synthesize currentMusicSearchViewController=_currentMusicSearchViewController;
@@ -510,4 +511,3 @@
 @property(readonly) Class superclass;
 
 @end
-

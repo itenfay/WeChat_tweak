@@ -14,7 +14,6 @@
     unsigned int _m_uiRetryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiRetryCount; // @synthesize m_uiRetryCount=_m_uiRetryCount;
 @property(nonatomic) unsigned int cgiNumber; // @synthesize cgiNumber=_cgiNumber;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

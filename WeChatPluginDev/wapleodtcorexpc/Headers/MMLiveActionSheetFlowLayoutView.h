@@ -20,7 +20,6 @@
     MMGradientBottomView *_bottomGradientView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGradientBottomView *bottomGradientView; // @synthesize bottomGradientView=_bottomGradientView;
 @property(retain, nonatomic) NSIndexPath *firstRedDotIndexPath; // @synthesize firstRedDotIndexPath=_firstRedDotIndexPath;
 @property(retain, nonatomic) UICollectionViewFlowLayout *actionSheetCollectionLayout; // @synthesize actionSheetCollectionLayout=_actionSheetCollectionLayout;

@@ -12,7 +12,6 @@
     id <PrivateCommonApiHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <PrivateCommonApiHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleCommonApiWithParams:(id)arg1;
 

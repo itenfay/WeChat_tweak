@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonStoreReportInfo, MMLiteAppViewController, NSString, WCDataItem;
 
@@ -20,7 +21,6 @@
 }
 
 + (id)createLogicWithPid:(id)arg1 appId:(id)arg2 attachedLiteAppVC:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMLiteAppViewController *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) NSString *pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;
@@ -42,4 +42,3 @@
 - (void)dealloc;
 
 @end
-

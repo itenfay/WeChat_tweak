@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FLTWKNavigationDelegate, FLTWKProgressionDelegate, FLTWKWebView, FlutterMethodChannel, NSMutableSet, NSString;
 
@@ -19,7 +20,6 @@
 }
 
 + (_Bool)isValidStringArgument:(id)arg1 withErrorMessage:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FLTWKWebView *webView; // @synthesize webView=_webView;
 - (id)webView:(id)arg1 createWebViewWithConfiguration:(id)arg2 forNavigationAction:(id)arg3 windowFeatures:(id)arg4;
 - (void)updateUserAgent:(id)arg1;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

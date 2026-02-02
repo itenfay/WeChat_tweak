@@ -10,7 +10,6 @@
     id <MMCameraTouchEventViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMCameraTouchEventViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)makeAllGestureRecognizerNotCancelsTouches;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

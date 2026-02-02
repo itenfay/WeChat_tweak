@@ -11,7 +11,6 @@
     UIImageView *m_tipBkg;
 }
 
-- (void).cxx_destruct;
 - (void)egoRefreshScrollViewDidScroll:(id)arg1;
 - (void)onStateOfLoading;
 - (void)onStateOfNormal;

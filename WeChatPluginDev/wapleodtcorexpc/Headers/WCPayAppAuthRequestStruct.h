@@ -21,7 +21,6 @@
     NSString *bundleId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId;
 @property(retain, nonatomic) NSString *scene; // @synthesize scene;
 @property(retain, nonatomic) NSString *signType; // @synthesize signType;

@@ -13,7 +13,6 @@
     id <NewLifePostEndDelegate> _postEndDelegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <NewLifePostEndDelegate> postEndDelegate; // @synthesize postEndDelegate=_postEndDelegate;
 @property(retain, nonatomic) NSMutableDictionary *idMusicMap; // @synthesize idMusicMap=_idMusicMap;
 @property(retain, nonatomic) MMBGMSelectHalfScreenViewController *selectMusicVc; // @synthesize selectMusicVc=_selectMusicVc;

@@ -14,7 +14,6 @@
 }
 
 + (id)progressView;
-- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void)completeAnimate:(_Bool)arg1;
 - (void)initShapeLayer;

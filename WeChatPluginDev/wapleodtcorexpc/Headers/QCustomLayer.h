@@ -13,7 +13,6 @@
     QCustomLayerTileOverlay *_handler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QCustomLayerTileOverlay *handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *layerID; // @synthesize layerID=_layerID;
 

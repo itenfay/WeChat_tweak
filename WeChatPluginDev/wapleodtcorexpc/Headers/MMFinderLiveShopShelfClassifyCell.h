@@ -20,7 +20,6 @@
 + (id)selectedFont;
 + (id)normalFont;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) MMUILabel *classifyLabel; // @synthesize classifyLabel=_classifyLabel;
 @property(retain, nonatomic) FinderShopShelfLabelClassifyInfo *info; // @synthesize info=_info;

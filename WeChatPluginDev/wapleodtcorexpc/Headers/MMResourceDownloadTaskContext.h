@@ -17,7 +17,6 @@
     MMResDownloadInfo *_downloadInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMResDownloadInfo *downloadInfo; // @synthesize downloadInfo=_downloadInfo;
 @property(retain, nonatomic) MMResDownloadUrlInfo *downloadUrlInfo; // @synthesize downloadUrlInfo=_downloadUrlInfo;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;

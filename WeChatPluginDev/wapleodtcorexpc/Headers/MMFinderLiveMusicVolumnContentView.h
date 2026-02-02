@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveMusicStyleSlider, MMUILabel;
 
@@ -17,7 +18,6 @@
 }
 
 + (int)getAdaptedProgressValue:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdatingWithSEI; // @synthesize isUpdatingWithSEI=_isUpdatingWithSEI;
 @property(nonatomic) int previousVolumeValue; // @synthesize previousVolumeValue=_previousVolumeValue;
 @property(copy, nonatomic) CDUnknownBlockType volumnAdjustCallback; // @synthesize volumnAdjustCallback=_volumnAdjustCallback;
@@ -38,4 +38,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

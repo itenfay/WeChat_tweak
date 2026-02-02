@@ -14,7 +14,6 @@
 
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (unsigned long long)columnType;
-- (void).cxx_destruct;
 - (id)init;
 - (id)init:(id)arg1;
 @property(nonatomic, retain) NSNumber *underlying; // @synthesize underlying;

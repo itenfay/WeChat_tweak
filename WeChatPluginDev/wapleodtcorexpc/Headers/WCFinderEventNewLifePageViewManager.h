@@ -10,7 +10,6 @@
     NewLifeDetailCollectionViewAnimator *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeDetailCollectionViewAnimator *animator; // @synthesize animator=_animator;
 - (id)indexPathForViewingFeedId:(id)arg1;
 - (struct CGSize)finderFeedFlowView:(id)arg1 cellSpaceAtSection:(unsigned long long)arg2;

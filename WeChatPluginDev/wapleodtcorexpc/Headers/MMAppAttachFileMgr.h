@@ -13,7 +13,6 @@
 
 + (void)reportSendFileAction:(id)arg1 action:(int)arg2;
 + (void)reportFileMsg:(id)arg1 action:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *msgAttachUrlDict; // @synthesize msgAttachUrlDict=_msgAttachUrlDict;
 @property(retain, nonatomic) NSMutableDictionary *msgWrapDict; // @synthesize msgWrapDict=_msgWrapDict;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_timelineInfo;
 + (void)PBArrayAdd_topBarInfo;
 + (void)PBArrayAdd_entryOption;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPChannelTimelineInfo *timelineInfo; // @synthesize timelineInfo=_timelineInfo;
 @property(retain, nonatomic) MPChannelTopBarInfo *topBarInfo; // @synthesize topBarInfo=_topBarInfo;
 @property(nonatomic) unsigned long long entryOption; // @synthesize entryOption=_entryOption;

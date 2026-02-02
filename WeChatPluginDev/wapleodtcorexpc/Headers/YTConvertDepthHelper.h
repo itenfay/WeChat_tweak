@@ -21,7 +21,6 @@
 
 + (void)clearInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *depthFrameDatas; // @synthesize depthFrameDatas=_depthFrameDatas;
 - (void)deinit;
 - (void)setNetFetchControlConfig:(int)arg1 withIntervalTime:(long long)arg2 withOffset:(float)arg3;

@@ -23,7 +23,6 @@
     FinderBizInfo_BizInfo *_bizInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderBizInfo_BizInfo *bizInfo; // @synthesize bizInfo=_bizInfo;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool isRequestingData; // @synthesize isRequestingData=_isRequestingData;

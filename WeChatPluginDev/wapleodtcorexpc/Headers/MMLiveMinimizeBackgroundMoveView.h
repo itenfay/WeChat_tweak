@@ -15,7 +15,6 @@
     id <MMLiveMinimizeBackgroundMoveViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveMinimizeBackgroundMoveViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MoveWithTouchAlgorithm *moveAlgorithm; // @synthesize moveAlgorithm=_moveAlgorithm;
 @property(retain, nonatomic) UIImageView *blurView; // @synthesize blurView=_blurView;

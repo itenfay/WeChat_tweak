@@ -52,7 +52,6 @@
     NSString *_encryptIV;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *encryptIV; // @synthesize encryptIV=_encryptIV;
 @property(copy, nonatomic) NSString *encryptKey; // @synthesize encryptKey=_encryptKey;
 @property(retain, nonatomic) NSString *printClientID; // @synthesize printClientID=_printClientID;

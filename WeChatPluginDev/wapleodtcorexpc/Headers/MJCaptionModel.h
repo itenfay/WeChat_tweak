@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_captionGroups;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *captionGroups; // @synthesize captionGroups=_captionGroups;
 @property(readonly, copy) NSString *description;
 - (id)toCaptionGroups;

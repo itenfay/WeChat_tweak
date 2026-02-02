@@ -15,7 +15,6 @@
     CDStruct_3ec1b870 _bounds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *iconSrc; // @synthesize iconSrc=_iconSrc;
 @property(nonatomic) CDStruct_3ec1b870 bounds; // @synthesize bounds=_bounds;

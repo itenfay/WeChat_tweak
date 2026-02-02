@@ -20,7 +20,6 @@
     long long _memoryResideng;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long memoryResideng; // @synthesize memoryResideng=_memoryResideng;
 @property(nonatomic) float cpuUsage; // @synthesize cpuUsage=_cpuUsage;
 @property(copy, nonatomic) NSString *sightBeautyEffectInfo; // @synthesize sightBeautyEffectInfo=_sightBeautyEffectInfo;

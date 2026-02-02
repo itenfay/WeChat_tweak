@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, ColorGradientView, MMUILabel, MultiTalkHDHeadView, MultiTalkMuteIconView, MultiTalkSharingScreenTipsView, NSMutableArray, NSObject, NSString, UIColor, UIImageView, UILabel, WCVideoRender;
 @protocol MultiTalkMemberCellDelegate, MultiTalkMemberProtocol;
@@ -43,7 +44,6 @@
     NSObject<MultiTalkMemberProtocol> *_member;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isChanging; // @synthesize isChanging=_isChanging;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) NSObject<MultiTalkMemberProtocol> *member; // @synthesize member=_member;
@@ -112,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

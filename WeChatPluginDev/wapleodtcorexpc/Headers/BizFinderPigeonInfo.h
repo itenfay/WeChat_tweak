@@ -36,7 +36,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFromSessionIdInfo:(id)arg1 objectId:(id)arg2 exportId:(id)arg3 nonceId:(id)arg4 mediaType:(id)arg5 encryptUsername:(id)arg6 reportInfo:(id)arg7 alignment:(id)arg8 title:(id)arg9 coverImgUrl:(id)arg10 nickName:(id)arg11 headImgUrl:(id)arg12 finderDuration:(id)arg13 finderHeight:(id)arg14 finderWidth:(id)arg15 finderCoverHeight:(id)arg16 finderCoverWidth:(id)arg17 finderMediaType:(id)arg18 currentPlayMs:(id)arg19 isLandscapeVideo:(id)arg20 animatedImage:(id)arg21 animatedImageRect:(id)arg22;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BizRect *animatedImageRect; // @synthesize animatedImageRect=_animatedImageRect;
 @property(retain, nonatomic) FlutterStandardTypedData *animatedImage; // @synthesize animatedImage=_animatedImage;
 @property(retain, nonatomic) NSNumber *isLandscapeVideo; // @synthesize isLandscapeVideo=_isLandscapeVideo;

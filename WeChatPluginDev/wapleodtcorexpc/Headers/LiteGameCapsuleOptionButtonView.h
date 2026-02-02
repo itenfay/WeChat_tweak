@@ -10,7 +10,6 @@
     NSString *_appUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appUserName; // @synthesize appUserName=_appUserName;
 - (void)onClick;
 - (void)setButton;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootComposingViewModel, NSString;
 
@@ -12,7 +13,6 @@
     MJShootComposingViewModel *_shootComposingVM;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MJShootComposingViewModel *shootComposingVM; // @synthesize shootComposingVM=_shootComposingVM;
 - (void)loadingStatusForID:(id)arg1 threadSafetyHandler:(CDUnknownBlockType)arg2;
 - (void)resetMaterialsLoadingStatus;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     unsigned long long _enterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(nonatomic) _Bool forbiddenFinderLongVideoEntry; // @synthesize forbiddenFinderLongVideoEntry=_forbiddenFinderLongVideoEntry;
 @property(retain, nonatomic) RecommendedMusicInfo *patMusicInfo; // @synthesize patMusicInfo=_patMusicInfo;

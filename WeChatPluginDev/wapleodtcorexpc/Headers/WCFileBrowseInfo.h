@@ -86,7 +86,6 @@
 + (void)PBArrayAdd_fromChatName;
 + (void)PBArrayAdd_fromUserName;
 + (void)PBArrayAdd_desTitle;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bUserOpen; // @synthesize bUserOpen=_bUserOpen;
 @property(nonatomic) unsigned int typeDownloaded; // @synthesize typeDownloaded=_typeDownloaded;
 @property(retain, nonatomic) NSData *fileThumb; // @synthesize fileThumb=_fileThumb;

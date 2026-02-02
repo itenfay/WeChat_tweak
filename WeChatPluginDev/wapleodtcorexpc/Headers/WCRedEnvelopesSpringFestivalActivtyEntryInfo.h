@@ -17,7 +17,6 @@
     NSString *_action_app_username;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *action_app_username; // @synthesize action_app_username=_action_app_username;
 @property(retain, nonatomic) NSString *action_url; // @synthesize action_url=_action_url;
 @property(nonatomic) unsigned int action_type; // @synthesize action_type=_action_type;

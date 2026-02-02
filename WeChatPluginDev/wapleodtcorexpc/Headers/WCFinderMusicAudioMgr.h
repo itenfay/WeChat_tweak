@@ -10,7 +10,6 @@
     NSMutableSet *_pages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *pages; // @synthesize pages=_pages;
 - (void)popMonitorStack:(id)arg1;
 - (id)pageNameForVC:(id)arg1;

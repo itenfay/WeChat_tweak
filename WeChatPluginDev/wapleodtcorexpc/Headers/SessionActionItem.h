@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_uiSessionType;
 + (void)PBArrayAdd_uiStayTime;
 + (void)PBArrayAdd_uiEnterTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSString *nsUserName; // @synthesize nsUserName=_nsUserName;
 @property(nonatomic) unsigned int uiUnreadCount; // @synthesize uiUnreadCount=_uiUnreadCount;

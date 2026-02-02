@@ -15,7 +15,6 @@
     NSDictionary *_displayInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) NSDictionary *displayInfo; // @synthesize displayInfo=_displayInfo;
 @property(nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;

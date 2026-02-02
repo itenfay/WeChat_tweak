@@ -11,7 +11,6 @@
     MISSING_TYPE *biz;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)extractContextNameFromInvokeContextId:(unsigned int)arg1;
 - (_Bool)getJSApiPermission:(id)arg1 appid:(id)arg2;

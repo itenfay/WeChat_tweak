@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 

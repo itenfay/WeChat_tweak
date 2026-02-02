@@ -20,7 +20,6 @@
     id <WCOutDialPadDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableBottomFunctionBtn; // @synthesize enableBottomFunctionBtn=_enableBottomFunctionBtn;
 @property(nonatomic) _Bool hideKeyPad; // @synthesize hideKeyPad=_hideKeyPad;
 @property(readonly, nonatomic) _Bool isSpeakerBtnSelected; // @synthesize isSpeakerBtnSelected=m_isSpeakerBtnSelected;

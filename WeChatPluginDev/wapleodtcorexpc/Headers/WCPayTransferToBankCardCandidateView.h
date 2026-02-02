@@ -15,7 +15,6 @@
     NSString *_m_inputText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_inputText; // @synthesize m_inputText=_m_inputText;
 @property(retain, nonatomic) NSMutableArray *m_resultsArray; // @synthesize m_resultsArray=_m_resultsArray;
 @property(nonatomic) unsigned long long m_enMatchRule; // @synthesize m_enMatchRule;

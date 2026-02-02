@@ -19,7 +19,6 @@
 
 + (id)getUploadDic:(float)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int recordCount; // @synthesize recordCount=_recordCount;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) BrightnessDevice *brightnessDevice; // @synthesize brightnessDevice=_brightnessDevice;

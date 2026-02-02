@@ -16,7 +16,6 @@
     NSMutableDictionary *_refreshExtraInfoTsDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *refreshExtraInfoTsDict; // @synthesize refreshExtraInfoTsDict=_refreshExtraInfoTsDict;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) __weak id <MMFinderLiveFeedExtraInfoFetcherDelegate> delegate; // @synthesize delegate=_delegate;

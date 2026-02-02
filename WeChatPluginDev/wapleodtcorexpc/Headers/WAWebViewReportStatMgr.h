@@ -16,7 +16,6 @@
     _Bool _isOpenDebugState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isOpenDebugState; // @synthesize isOpenDebugState=_isOpenDebugState;
 @property(retain, nonatomic) WAReportOuterMenuActionItem *m_mutiSelectBaseItem; // @synthesize m_mutiSelectBaseItem;
 - (_Bool)getJSApiEventAction:(unsigned int)arg1 withActionItem:(id)arg2 appId:(id)arg3 needRemoveEventAction:(_Bool)arg4;

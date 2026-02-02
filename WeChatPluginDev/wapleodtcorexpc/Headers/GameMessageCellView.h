@@ -14,7 +14,6 @@
 }
 
 + (id)getGameImageByIndex:(unsigned int)arg1;
-- (void).cxx_destruct;
 - (id)operationMenuItems;
 - (void)stopAnimation;
 - (void)doAnimation;

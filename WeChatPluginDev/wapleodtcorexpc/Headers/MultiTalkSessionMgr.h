@@ -14,7 +14,6 @@
     WCTTable *_bannerTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *bannerTable; // @synthesize bannerTable=_bannerTable;
 @property(retain, nonatomic) WCTTable *sessionTable; // @synthesize sessionTable=_sessionTable;
 @property(retain, nonatomic) WCTTable *messageTable; // @synthesize messageTable=_messageTable;

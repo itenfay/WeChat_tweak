@@ -14,7 +14,6 @@
     WCPayGPLaunchParamInvalidTipsView *_paramInvalidTipsView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsAmountInvalid; // @synthesize bIsAmountInvalid=_bIsAmountInvalid;
 @property(retain, nonatomic) WCPayGPLaunchParamInvalidTipsView *paramInvalidTipsView; // @synthesize paramInvalidTipsView=_paramInvalidTipsView;
 @property(retain, nonatomic) WCPayGPMemberFillMoneyView *contentView; // @synthesize contentView=_contentView;

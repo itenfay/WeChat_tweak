@@ -16,7 +16,6 @@
     NSString *m_nsHeadHDImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsHeadHDImgUrl; // @synthesize m_nsHeadHDImgUrl;
 @property(retain, nonatomic) NSString *m_nsHeadImgUrl; // @synthesize m_nsHeadImgUrl;
 @property(nonatomic) unsigned int m_uiImgType; // @synthesize m_uiImgType;

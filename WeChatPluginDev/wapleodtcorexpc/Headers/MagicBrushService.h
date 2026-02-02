@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MBBizSystem, NSMutableDictionary;
 @protocol IMBReportProxy;
@@ -15,7 +16,6 @@
     id <IMBReportProxy> _reportProxy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMBReportProxy> reportProxy; // @synthesize reportProxy=_reportProxy;
 @property(retain, nonatomic) MBBizSystem *bizSystem; // @synthesize bizSystem=_bizSystem;
 @property(retain, nonatomic) NSMutableDictionary *extDict; // @synthesize extDict=_extDict;
@@ -34,4 +34,3 @@
 - (void)registerJsEventImplWithEventName:(id)arg1 impl:(id)arg2;
 
 @end
-

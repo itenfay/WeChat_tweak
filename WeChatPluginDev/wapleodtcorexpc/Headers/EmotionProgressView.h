@@ -12,7 +12,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *foregroundView; // @synthesize foregroundView=_foregroundView;
 @property(nonatomic) double progress; // @synthesize progress=_progress;

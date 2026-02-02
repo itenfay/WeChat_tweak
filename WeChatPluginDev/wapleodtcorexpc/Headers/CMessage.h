@@ -16,7 +16,6 @@
     _Bool m_bNotify;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bNotify; // @synthesize m_bNotify;
 @property(retain, nonatomic) ProtobufCGIWrap *m_pbCGIWrap; // @synthesize m_pbCGIWrap;
 @property(retain, nonatomic) NSDictionary *m_dicMessageInfo; // @synthesize m_dicMessageInfo;

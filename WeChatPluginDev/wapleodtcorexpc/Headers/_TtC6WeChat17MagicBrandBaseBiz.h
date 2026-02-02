@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE;
 @protocol _TtP6WeChat26IMBSclExternalViewDelegate_;
 
@@ -17,7 +19,6 @@
     MISSING_TYPE *testPendingJs;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)bizAppConfig;
 - (void)onDestroy:(int)arg1;
@@ -39,4 +40,3 @@
 @property(nonatomic, readonly) id <_TtP6WeChat26IMBSclExternalViewDelegate_> externalViewDelegate;
 
 @end
-

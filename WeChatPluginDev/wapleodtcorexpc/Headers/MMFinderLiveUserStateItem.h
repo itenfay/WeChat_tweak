@@ -17,7 +17,6 @@
 
 + (id)batchConvertKtvPlayMember:(id)arg1;
 + (id)batchConvert:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bestPlaySongName; // @synthesize bestPlaySongName=_bestPlaySongName;
 @property(nonatomic) unsigned int playAvgScores; // @synthesize playAvgScores=_playAvgScores;
 @property(nonatomic) unsigned int playSize; // @synthesize playSize=_playSize;

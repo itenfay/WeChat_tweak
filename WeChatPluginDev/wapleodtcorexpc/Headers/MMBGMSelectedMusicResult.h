@@ -17,7 +17,6 @@
     id <MMBGMSelectedMusicDataProtocol> _musicData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> musicData; // @synthesize musicData=_musicData;
 @property(copy, nonatomic) NSString *musicFilePath; // @synthesize musicFilePath=_musicFilePath;
 @property(nonatomic) _Bool isOstOn; // @synthesize isOstOn=_isOstOn;

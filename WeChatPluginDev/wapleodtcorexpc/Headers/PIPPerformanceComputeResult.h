@@ -18,7 +18,6 @@
     double _renderToBufferDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int fpsDifference; // @synthesize fpsDifference=_fpsDifference;
 @property(nonatomic) double renderToBufferDuration; // @synthesize renderToBufferDuration=_renderToBufferDuration;
 @property(nonatomic) double attachWidgetsDuration; // @synthesize attachWidgetsDuration=_attachWidgetsDuration;

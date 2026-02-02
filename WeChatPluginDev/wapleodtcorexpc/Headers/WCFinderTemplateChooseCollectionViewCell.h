@@ -22,7 +22,6 @@
 + (double)kCellWidth;
 + (struct CGSize)cellSize;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showBoarder; // @synthesize showBoarder=_showBoarder;
 @property(retain, nonatomic) UIView *backGroundBorderView; // @synthesize backGroundBorderView=_backGroundBorderView;
 @property(retain, nonatomic) MMUIImageView *blankTemplateImgView; // @synthesize blankTemplateImgView=_blankTemplateImgView;

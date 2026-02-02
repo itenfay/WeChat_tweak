@@ -29,7 +29,6 @@
 }
 
 + (int)formatStringToNumber:(id)arg1;
-- (void).cxx_destruct;
 @property(copy) NSString *finderLiveRedDotReportJson; // @synthesize finderLiveRedDotReportJson=_finderLiveRedDotReportJson;
 @property(copy) NSString *finderRedDotReportJson; // @synthesize finderRedDotReportJson=_finderRedDotReportJson;
 @property(copy) NSString *k1kRedDotReportJson; // @synthesize k1kRedDotReportJson=_k1kRedDotReportJson;

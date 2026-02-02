@@ -19,7 +19,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSmallMode; // @synthesize isSmallMode=_isSmallMode;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) UILabel *entryAreaLabel; // @synthesize entryAreaLabel=_entryAreaLabel;

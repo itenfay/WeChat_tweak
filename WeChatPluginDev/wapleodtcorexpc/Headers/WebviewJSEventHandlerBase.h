@@ -13,7 +13,6 @@
     long long _vcScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long vcScene; // @synthesize vcScene=_vcScene;
 @property(retain, nonatomic) JSEvent *currentEvent; // @synthesize currentEvent=_currentEvent;
 @property(nonatomic) __weak id <WebviewJSEventHandlerBaseDelegate> m_delegate; // @synthesize m_delegate;

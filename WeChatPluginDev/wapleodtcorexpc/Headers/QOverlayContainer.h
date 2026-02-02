@@ -15,7 +15,6 @@
     TBOrderedSafeDictionary *_viewContainer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TBOrderedSafeDictionary *viewContainer; // @synthesize viewContainer=_viewContainer;
 @property(retain, nonatomic) QTextManager *textManager; // @synthesize textManager=_textManager;
 @property(nonatomic) __weak QMapContext *mapContext; // @synthesize mapContext=_mapContext;

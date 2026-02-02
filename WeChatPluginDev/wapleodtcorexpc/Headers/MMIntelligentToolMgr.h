@@ -10,7 +10,6 @@
     NSRecursiveLock *_ocrLock;
 }
 
-- (void).cxx_destruct;
 - (void)onServiceInit;
 - (void)onServiceClearData;
 - (id)getCodeClassify:(id)arg1;

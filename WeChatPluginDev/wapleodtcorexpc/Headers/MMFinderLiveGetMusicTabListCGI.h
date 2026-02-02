@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData;
 
 @interface MMFinderLiveGetMusicTabListCGI
@@ -14,7 +16,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int tabType; // @synthesize tabType=_tabType;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
@@ -26,4 +27,3 @@
 - (id)initWithFinderTaskId:(id)arg1 lastBuffer:(id)arg2 liveCookies:(id)arg3 tabType:(unsigned int)arg4 success:(CDUnknownBlockType)arg5 fail:(CDUnknownBlockType)arg6;
 
 @end
-

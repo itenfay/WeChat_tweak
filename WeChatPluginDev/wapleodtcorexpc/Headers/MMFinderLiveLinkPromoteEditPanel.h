@@ -25,7 +25,6 @@
     UIColor *_tipLabelColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tipLabelColor; // @synthesize tipLabelColor=_tipLabelColor;
 @property(nonatomic) _Bool isPageWillClose; // @synthesize isPageWillClose=_isPageWillClose;
 @property(nonatomic) _Bool hasClickInputTipLabel; // @synthesize hasClickInputTipLabel=_hasClickInputTipLabel;

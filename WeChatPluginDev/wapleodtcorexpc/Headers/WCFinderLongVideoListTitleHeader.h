@@ -16,7 +16,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLongVideoListTitleHeaderConfig *config; // @synthesize config=_config;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) MMUIButton *rightArrowBtn; // @synthesize rightArrowBtn=_rightArrowBtn;

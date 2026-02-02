@@ -13,7 +13,6 @@
     double _composetime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double composetime; // @synthesize composetime=_composetime;
 @property(copy, nonatomic) NSString *editVideoName; // @synthesize editVideoName=_editVideoName;
 

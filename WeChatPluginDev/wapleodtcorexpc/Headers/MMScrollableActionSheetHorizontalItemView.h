@@ -16,7 +16,6 @@
     id <MMScrollableActionSheetHorizontalItemViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMScrollableActionSheetHorizontalItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double cachedItemViewHeight; // @synthesize cachedItemViewHeight=_cachedItemViewHeight;
 @property(retain, nonatomic) UIImageView *cornerImageView; // @synthesize cornerImageView=_cornerImageView;

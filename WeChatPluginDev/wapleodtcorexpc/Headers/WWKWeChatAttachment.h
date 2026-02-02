@@ -11,7 +11,6 @@
 }
 
 + (id)attachment;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)writeToDict:(id)arg1;
 - (id)initWithDict:(id)arg1;

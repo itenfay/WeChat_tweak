@@ -19,7 +19,6 @@
     long long _currentStereoOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentStereoOrientation; // @synthesize currentStereoOrientation=_currentStereoOrientation;
 @property(retain) NSObject<OS_dispatch_queue> *timerQueue; // @synthesize timerQueue=_timerQueue;
 @property(retain) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;

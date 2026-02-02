@@ -25,7 +25,6 @@
     NSObject *_renderLock;
 }
 
-- (void).cxx_destruct;
 @property _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property _Bool backgroundRenderingEnabled; // @synthesize backgroundRenderingEnabled=_backgroundRenderingEnabled;
 @property(nonatomic) _Bool atBottom; // @synthesize atBottom=_atBottom;

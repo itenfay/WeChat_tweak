@@ -13,7 +13,6 @@
     NSHashTable *_hashTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *hashTable; // @synthesize hashTable=_hashTable;
 @property(retain, nonatomic) MMRuleSetList *ruleSetList; // @synthesize ruleSetList=_ruleSetList;
 @property(retain, nonatomic) WCCSSStyleExecuter *styleExecuter; // @synthesize styleExecuter=_styleExecuter;

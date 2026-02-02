@@ -12,7 +12,6 @@
     struct CLLocationCoordinate2D _lastCoordinate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SKBuiltinBuffer_t *searchBuff; // @synthesize searchBuff=_searchBuff;
 @property(retain, nonatomic) SKBuiltinBuffer_t *nearBuff; // @synthesize nearBuff=_nearBuff;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

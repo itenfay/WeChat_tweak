@@ -15,7 +15,6 @@
     id <StatViewCellDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StatViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMUIButton *rowTitleArrowButton; // @synthesize rowTitleArrowButton=_rowTitleArrowButton;
 @property(retain, nonatomic) MMUILabel *rowCountNumber; // @synthesize rowCountNumber=_rowCountNumber;

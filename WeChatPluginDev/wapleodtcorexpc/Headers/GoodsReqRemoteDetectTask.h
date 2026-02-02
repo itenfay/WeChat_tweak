@@ -14,7 +14,6 @@
     CameraScanGoodsItemExchangeInfo *_exchangeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CameraScanGoodsItemExchangeInfo *exchangeInfo; // @synthesize exchangeInfo=_exchangeInfo;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(copy, nonatomic) NSString *reqKey; // @synthesize reqKey=_reqKey;

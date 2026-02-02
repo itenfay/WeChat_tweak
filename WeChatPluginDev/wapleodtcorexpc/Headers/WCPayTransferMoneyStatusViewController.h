@@ -34,7 +34,6 @@
 }
 
 + (long long)indexInLocation:(struct CGPoint)arg1 withLabel:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreloadedLiteApp; // @synthesize isPreloadedLiteApp=_isPreloadedLiteApp;
 @property(retain, nonatomic) RecvChannel *modalSelectedChannel; // @synthesize modalSelectedChannel=_modalSelectedChannel;
 @property(retain, nonatomic) NSMutableDictionary *subChannelSelectdDictionary; // @synthesize subChannelSelectdDictionary=_subChannelSelectdDictionary;

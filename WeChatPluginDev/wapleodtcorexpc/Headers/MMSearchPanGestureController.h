@@ -25,7 +25,6 @@
     id <MMSearchPanGestureControlDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMSearchPanGestureControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isGesturing; // @synthesize isGesturing=_isGesturing;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;

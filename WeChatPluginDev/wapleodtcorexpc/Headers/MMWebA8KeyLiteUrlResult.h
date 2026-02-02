@@ -15,7 +15,6 @@
     NSString *_prefetchId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prefetchId; // @synthesize prefetchId=_prefetchId;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSDictionary *httpHeader; // @synthesize httpHeader=_httpHeader;

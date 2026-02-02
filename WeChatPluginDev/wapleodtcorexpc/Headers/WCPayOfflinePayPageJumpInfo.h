@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_tiny_app_username;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_icon_url;
-- (void).cxx_destruct;
 @property(nonatomic) int jump_type; // @synthesize jump_type=_jump_type;
 @property(retain, nonatomic) NSString *h5_url; // @synthesize h5_url=_h5_url;
 @property(retain, nonatomic) NSString *tiny_app_path; // @synthesize tiny_app_path=_tiny_app_path;

@@ -15,7 +15,6 @@
     unsigned int m_uploadProgress;
 }
 
-- (void).cxx_destruct;
 - (_Bool)cancelTaskWithDevice:(id)arg1;
 - (void)onKissDeviceProgressResponeWithProgressInfo:(id)arg1;
 - (void)onKissDeviceResponseWithErrorCode:(unsigned int)arg1;

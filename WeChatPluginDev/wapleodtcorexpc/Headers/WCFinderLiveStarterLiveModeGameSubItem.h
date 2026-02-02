@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_subTitle;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_liveMode;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGameUserInfo *gameUserInfo; // @synthesize gameUserInfo=_gameUserInfo;
 @property(nonatomic) long long gameEntryScene; // @synthesize gameEntryScene=_gameEntryScene;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

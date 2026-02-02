@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderWindowProductInfo, MMTimer, MMUIButton, MMWebImageView, PAGView, UILabel;
 @protocol MMFinderLiveFeedStreamProductCardViewDelegate;
 
@@ -25,7 +27,6 @@
 }
 
 + (double)defaultHeightWithStyle:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderWindowProductInfo *pendingProductInfo; // @synthesize pendingProductInfo=_pendingProductInfo;
 @property(nonatomic) _Bool isExpandAnimating; // @synthesize isExpandAnimating=_isExpandAnimating;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
@@ -55,4 +56,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

@@ -12,7 +12,6 @@
     id <WebSearchImageTaskDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 - (void)ImageDidFail:(id)arg1;
 - (void)ImageDidLoadWithData:(id)arg1 Url:(id)arg2;
 - (void)asynDownloadImage;

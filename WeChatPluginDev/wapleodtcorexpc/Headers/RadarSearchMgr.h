@@ -15,7 +15,6 @@
     CLLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) RadarSearchSetting *setting; // @synthesize setting=_setting;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -15,7 +16,6 @@
     MISSING_TYPE *wxaPkgPath;
 }
 
-- (void).cxx_destruct;
 - (void)destory;
 - (id)provideFileSystem;
 - (id)initWithInstanceName:(id)arg1;
@@ -23,4 +23,3 @@
 - (void)provideMainScript:(CDUnknownBlockType)arg1;
 
 @end
-

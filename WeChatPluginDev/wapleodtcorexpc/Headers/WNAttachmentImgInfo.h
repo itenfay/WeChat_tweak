@@ -10,7 +10,6 @@
     RTEAttributeNode *_attribute;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak RTEAttributeNode *attribute; // @synthesize attribute=_attribute;
 - (id)getSightPath;
 - (id)getImgPath;

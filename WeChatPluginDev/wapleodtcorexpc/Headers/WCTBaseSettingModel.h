@@ -17,7 +17,6 @@
 }
 
 + (id)createWithTitle:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long accessibilityTraits; // @synthesize accessibilityTraits=_accessibilityTraits;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;

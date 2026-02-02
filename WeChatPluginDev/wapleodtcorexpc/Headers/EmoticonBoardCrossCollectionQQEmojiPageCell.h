@@ -16,7 +16,6 @@
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;
 @property(retain, nonatomic) UIView *buttonBackgroundView; // @synthesize buttonBackgroundView=_buttonBackgroundView;

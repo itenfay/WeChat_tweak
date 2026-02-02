@@ -14,7 +14,6 @@
     UIView *_sepreateLine;
 }
 
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)initSeperateLine;
 - (void)initTitleLabel;

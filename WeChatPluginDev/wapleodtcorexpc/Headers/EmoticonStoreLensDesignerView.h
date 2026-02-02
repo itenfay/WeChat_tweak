@@ -19,7 +19,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *followButton; // @synthesize followButton=_followButton;
 @property(retain, nonatomic) UILabel *designerNameLabel; // @synthesize designerNameLabel=_designerNameLabel;
 @property(retain, nonatomic) UILabel *lensNameLabel; // @synthesize lensNameLabel=_lensNameLabel;

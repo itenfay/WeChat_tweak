@@ -11,7 +11,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)onStoreSetData:(id)arg1 changes:(id)arg2;
 - (void)onStoreSendResult:(id)arg1 callbackId:(int)arg2 resultType:(id)arg3 result:(id)arg4;

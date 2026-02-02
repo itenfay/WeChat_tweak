@@ -13,7 +13,6 @@
 }
 
 + (_Bool)reportEngineInfo;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool recreateEngineGroup; // @synthesize recreateEngineGroup=_recreateEngineGroup;
 @property(retain, nonatomic) MMFlutterAutoReleaseEngineGroupHelper *autoReleaseHelper; // @synthesize autoReleaseHelper=_autoReleaseHelper;
 @property(retain, nonatomic) MMFlutterEngineGroup *sharedEngineGroup; // @synthesize sharedEngineGroup=_sharedEngineGroup;

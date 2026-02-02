@@ -13,7 +13,6 @@
     long long _userInterfaceStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(retain, nonatomic) UIImageView *checkIconView; // @synthesize checkIconView=_checkIconView;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;

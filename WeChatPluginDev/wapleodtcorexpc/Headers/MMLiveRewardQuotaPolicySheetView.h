@@ -25,7 +25,6 @@
     NSString *_secverifyId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *secverifyId; // @synthesize secverifyId=_secverifyId;
 @property(retain, nonatomic) NSString *verifyUrl; // @synthesize verifyUrl=_verifyUrl;
 @property(nonatomic) unsigned long long verifyMode; // @synthesize verifyMode=_verifyMode;

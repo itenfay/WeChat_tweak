@@ -10,7 +10,6 @@
     NewLifeScrollActionSheet *_scrollActionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;
 - (void)attemptUpdateFeedStatusWithDataItem:(id)arg1;
 - (void)handleRequest:(id)arg1;

@@ -16,7 +16,6 @@
     int m_enWCPayServiceSubscribeStrategy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_enWCPayServiceSubscribeStrategy; // @synthesize m_enWCPayServiceSubscribeStrategy;
 @property(retain, nonatomic) NSString *m_nsUserName; // @synthesize m_nsUserName;
 @property(retain, nonatomic) NSString *m_nsSubscribeUrl; // @synthesize m_nsSubscribeUrl;

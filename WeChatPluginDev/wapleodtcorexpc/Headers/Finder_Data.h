@@ -18,7 +18,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUsername:(id)arg1 nickname:(id)arg2 logo_url:(id)arg3 finder_uin:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *finder_uin; // @synthesize finder_uin=_finder_uin;
 @property(copy, nonatomic) NSString *logo_url; // @synthesize logo_url=_logo_url;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

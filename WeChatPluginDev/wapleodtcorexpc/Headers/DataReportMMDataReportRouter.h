@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -19,7 +20,6 @@
 + (id)getMaxLengthParam:(id)arg1;
 + (void)removeMaxLengthParams:(id)arg1;
 + (void)removeSamePageParams:(id)arg1;
-- (void).cxx_destruct;
 - (void)onRealTimeKVReportFailedWithWrap:(id)arg1;
 - (void)onRealTimeKVReportSucceedWithWrap:(id)arg1;
 - (id)toReportStr:(id)arg1;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

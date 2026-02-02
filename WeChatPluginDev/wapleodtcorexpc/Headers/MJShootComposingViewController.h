@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderVideoTemplateInfo, MJPublisherPickerComposingButtonManager, MJSCPickerEditingMediator, MJShootComposingView, MJShootComposingViewModel, MMImagePickerManagerOptionObj, MMShortVideoParamModel, MMTipsViewController, NSMutableArray, NSString;
 @protocol MJShootComposingViewControllerDelegate;
 
@@ -30,7 +32,6 @@
     MMImagePickerManagerOptionObj *_optionObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImagePickerManagerOptionObj *optionObj; // @synthesize optionObj=_optionObj;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
@@ -136,4 +137,3 @@
 @property(readonly) Class superclass;
 
 @end
-

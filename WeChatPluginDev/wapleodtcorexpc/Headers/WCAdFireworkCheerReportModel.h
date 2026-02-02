@@ -11,7 +11,6 @@
     NSString *_numberRequestId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int totalLikeCount; // @synthesize totalLikeCount=_totalLikeCount;
 @property(retain, nonatomic) NSString *numberRequestId; // @synthesize numberRequestId=_numberRequestId;
 

@@ -13,7 +13,6 @@
     BaseMessageViewModel *_messageViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseMessageViewModel *messageViewModel; // @synthesize messageViewModel=_messageViewModel;
 @property(nonatomic) unsigned int index; // @synthesize index=m_index;
 @property(retain, nonatomic) FavoritesItem *parent; // @synthesize parent=m_parent;

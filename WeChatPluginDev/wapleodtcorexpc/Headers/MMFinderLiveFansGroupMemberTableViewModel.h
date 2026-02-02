@@ -19,7 +19,6 @@
     MMFinderLiveFansGroupMemberTableSectionHeaderView *_memberSectionHeaderView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupMemberTableSectionHeaderView *memberSectionHeaderView; // @synthesize memberSectionHeaderView=_memberSectionHeaderView;
 @property(retain, nonatomic) MMFinderLiveFansGroupMemberSectionInfo *fansGroupMemberSectionInfo; // @synthesize fansGroupMemberSectionInfo=_fansGroupMemberSectionInfo;
 @property(nonatomic) unsigned long long groupType; // @synthesize groupType=_groupType;

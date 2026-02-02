@@ -15,7 +15,6 @@
     double _endTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFullLoad; // @synthesize isFullLoad=_isFullLoad;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;

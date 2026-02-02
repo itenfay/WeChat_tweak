@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_sql;
 + (void)PBArrayAdd_reportID;
 + (void)PBArrayAdd_configID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sqlMD5; // @synthesize sqlMD5=_sqlMD5;
 @property(retain, nonatomic) NSString *originalJson; // @synthesize originalJson=_originalJson;
 @property(retain, nonatomic) NSString *dbPath; // @synthesize dbPath=_dbPath;

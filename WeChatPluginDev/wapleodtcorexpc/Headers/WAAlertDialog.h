@@ -32,7 +32,6 @@
     UIButton *_confirmBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmBtn; // @synthesize confirmBtn=_confirmBtn;
 @property(retain, nonatomic) UIButton *cancelBtn; // @synthesize cancelBtn=_cancelBtn;
 @property(nonatomic) __weak UIView *alignView; // @synthesize alignView=_alignView;

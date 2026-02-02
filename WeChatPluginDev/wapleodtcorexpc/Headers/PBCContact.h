@@ -68,7 +68,6 @@
 + (void)PBArrayAdd_chatRoomStatus;
 + (void)PBArrayAdd_chatRoomMemList;
 + (void)PBArrayAdd_baseContact;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiDeleteFlag; // @synthesize m_uiDeleteFlag=_m_uiDeleteFlag;
 @property(retain, nonatomic) NSString *m_textStatusExtInfo; // @synthesize m_textStatusExtInfo=_m_textStatusExtInfo;
 @property(retain, nonatomic) NSString *m_textStatusID; // @synthesize m_textStatusID=_m_textStatusID;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, UIScrollView;
 
@@ -18,7 +19,6 @@
     struct CGPoint _toContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationStartTime; // @synthesize animationStartTime=_animationStartTime;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -32,4 +32,3 @@
 - (id)initWithScrollView:(id)arg1;
 
 @end
-

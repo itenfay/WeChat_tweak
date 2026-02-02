@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCPlayerView;
 
 @interface WCFinderMinimizePlayerContentView
@@ -12,7 +14,6 @@
     struct CGSize _originSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize originSize; // @synthesize originSize=_originSize;
 @property(copy, nonatomic) CDUnknownBlockType playerGenerator; // @synthesize playerGenerator=_playerGenerator;
 @property(retain, nonatomic) WCPlayerView *playerView; // @synthesize playerView=_playerView;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

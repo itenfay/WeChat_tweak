@@ -19,7 +19,6 @@
     NSMutableDictionary *_userNameDict;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPureText; // @synthesize isPureText=_isPureText;
 @property(retain, nonatomic) NSMutableDictionary *userNameDict; // @synthesize userNameDict=_userNameDict;
 @property(retain, nonatomic) NSMutableSet *userNameSet; // @synthesize userNameSet=_userNameSet;

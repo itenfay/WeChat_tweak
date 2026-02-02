@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,9 +16,7 @@
 
 + (id)configWithDefaultMsg:(id)arg1;
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultMsg; // @synthesize defaultMsg=_defaultMsg;
 @property(copy, nonatomic) CDUnknownBlockType handlerConfigBlock; // @synthesize handlerConfigBlock=_handlerConfigBlock;
 
 @end
-

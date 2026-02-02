@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMImagePickerVideoTask, NSMutableArray;
 
@@ -14,7 +15,6 @@
     MMImagePickerVideoTask *_runningTask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(retain, nonatomic) MMImagePickerVideoTask *runningTask; // @synthesize runningTask=_runningTask;
 @property(retain, nonatomic) NSMutableArray *videoCompressTasks; // @synthesize videoCompressTasks=_videoCompressTasks;
@@ -25,4 +25,3 @@
 - (id)init;
 
 @end
-

@@ -13,7 +13,6 @@
     NSURL *_pdfFileURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *pdfFileURL; // @synthesize pdfFileURL=_pdfFileURL;
 @property(retain, nonatomic) UIColor *pdfViewBackgroundColor; // @synthesize pdfViewBackgroundColor=_pdfViewBackgroundColor;
 @property(retain, nonatomic) PDFView *pdfView; // @synthesize pdfView=_pdfView;

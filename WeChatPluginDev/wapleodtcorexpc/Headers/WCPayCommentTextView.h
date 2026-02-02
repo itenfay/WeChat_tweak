@@ -19,7 +19,6 @@
     WCUIAlertView *_m_alertView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingAlertView; // @synthesize isShowingAlertView=_isShowingAlertView;
 @property(retain, nonatomic) WCUIAlertView *m_alertView; // @synthesize m_alertView=_m_alertView;
 @property(nonatomic) unsigned int m_maxCommentLength; // @synthesize m_maxCommentLength=_m_maxCommentLength;

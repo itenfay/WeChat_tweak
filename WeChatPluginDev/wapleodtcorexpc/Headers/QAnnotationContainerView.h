@@ -18,7 +18,6 @@
     NSMutableDictionary *_collisionViewStorage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasTriggerAnnoViewWithEngineMarker; // @synthesize hasTriggerAnnoViewWithEngineMarker=_hasTriggerAnnoViewWithEngineMarker;
 @property(retain, nonatomic) NSMutableDictionary *collisionViewStorage; // @synthesize collisionViewStorage=_collisionViewStorage;
 @property(retain, nonatomic) TBOrderedSafeDictionary *annotationStorage; // @synthesize annotationStorage=_annotationStorage;

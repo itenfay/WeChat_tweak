@@ -17,7 +17,6 @@
     NSDictionary *_originJSON;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *originJSON; // @synthesize originJSON=_originJSON;
 @property(readonly, nonatomic) NSArray *params; // @synthesize params=_params;
 @property(readonly, nonatomic) NSString *data_ver; // @synthesize data_ver=_data_ver;

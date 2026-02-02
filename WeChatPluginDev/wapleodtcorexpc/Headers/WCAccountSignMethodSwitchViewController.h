@@ -19,7 +19,6 @@
     UIView *_separatorLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLineView; // @synthesize separatorLineView=_separatorLineView;
 @property(retain, nonatomic) UILabel *separatorTextLabel; // @synthesize separatorTextLabel=_separatorTextLabel;
 @property(retain, nonatomic) AppleStyleLoginRegisterButton *passkeyButton; // @synthesize passkeyButton=_passkeyButton;

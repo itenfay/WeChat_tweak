@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveAnchorCustomizeRewardModifyPanel, MMFinderLiveAnchorCustomizeRewardViewModel, MMFinderLiveTaskId, NSString, UITableView;
 
 @interface MMFinderLiveAnchorCustomizeRewardSelectPanel
@@ -14,7 +16,6 @@
     MMFinderLiveAnchorCustomizeRewardModifyPanel *_anchorCustomizeRewardModifyPanel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardModifyPanel *anchorCustomizeRewardModifyPanel; // @synthesize anchorCustomizeRewardModifyPanel=_anchorCustomizeRewardModifyPanel;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UITableView *rewardListTableView; // @synthesize rewardListTableView=_rewardListTableView;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

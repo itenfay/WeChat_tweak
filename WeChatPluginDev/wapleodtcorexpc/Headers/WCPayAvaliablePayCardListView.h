@@ -16,7 +16,6 @@
     id <WCPayAvaliablePayCardListViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)webViewReturn:(id)arg1;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)didMoveToWindow;

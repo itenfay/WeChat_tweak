@@ -17,7 +17,6 @@
     id <MMOrderCenterTabNumberingDataProvider> _tabNumberingProvider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMOrderCenterTabNumberingDataProvider> tabNumberingProvider; // @synthesize tabNumberingProvider=_tabNumberingProvider;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) UIScrollView *pageContainerView; // @synthesize pageContainerView=_pageContainerView;

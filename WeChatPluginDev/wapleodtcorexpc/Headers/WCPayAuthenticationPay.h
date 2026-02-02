@@ -116,7 +116,6 @@
     NSString *_mobile_area;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mobile_area; // @synthesize mobile_area=_mobile_area;
 @property(retain, nonatomic) WCPayAuthenRequestRetryInfo *m_retryInfo; // @synthesize m_retryInfo=_m_retryInfo;
 @property(retain, nonatomic) NSString *currentPayCardBankType; // @synthesize currentPayCardBankType=_currentPayCardBankType;

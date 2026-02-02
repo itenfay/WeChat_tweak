@@ -13,7 +13,6 @@
     _Bool m_isActionSheetShowing;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavoritesItemDataField *m_favData; // @synthesize m_favData;
 @property(retain, nonatomic) FavDataItemWrap *m_favDataWrap; // @synthesize m_favDataWrap;
 @property(retain, nonatomic) FavoritesItem *m_favItem; // @synthesize m_favItem;

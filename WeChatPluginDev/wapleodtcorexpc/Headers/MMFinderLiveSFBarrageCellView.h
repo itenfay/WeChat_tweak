@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveContact, MMFinderLiveSFBarrageCellUIParam, MMFinderLiveTableStyleCommentPubbleUserCell, MMLiveCommentDataItem, MMLiveCommentPubbleCell, MMUIButton, NSString, PAGView;
 
@@ -31,7 +32,6 @@
 + (id)createPubbleCellFrame:(id)arg1 taskId:(id)arg2 maxWidth:(double)arg3;
 + (id)createPubbleCellFrame:(id)arg1 taskId:(id)arg2;
 + (double)estimateBarrageCellLineHeight:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveSFBarrageCellUIParam *uiParam; // @synthesize uiParam=_uiParam;
 @property(nonatomic) _Bool isInGetContactProcess; // @synthesize isInGetContactProcess=_isInGetContactProcess;
 @property(nonatomic) unsigned long long lastGetContactTime; // @synthesize lastGetContactTime=_lastGetContactTime;
@@ -143,4 +143,3 @@
 @property(readonly) Class superclass;
 
 @end
-

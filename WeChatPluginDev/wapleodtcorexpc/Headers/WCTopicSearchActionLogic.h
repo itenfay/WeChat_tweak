@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonUploader, NSMutableDictionary, NSString, WKWebView;
 
 @interface WCTopicSearchActionLogic
@@ -14,7 +16,6 @@
 
 + (_Bool)isCustomEmoticon:(unsigned int)arg1;
 + (_Bool)isStoreEmoticon:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictEmotionRequestWrappers; // @synthesize dictEmotionRequestWrappers=_dictEmotionRequestWrappers;
 @property(nonatomic) __weak WKWebView *resultWebView; // @synthesize resultWebView=_resultWebView;
 - (void)onSingleEmotionDownloadFailedWithMd5:(id)arg1;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     NSString *userName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName;
 @property(nonatomic) unsigned int quality; // @synthesize quality;
 @property(nonatomic) unsigned int memberId; // @synthesize memberId;

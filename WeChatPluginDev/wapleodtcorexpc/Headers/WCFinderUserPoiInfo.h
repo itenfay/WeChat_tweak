@@ -20,7 +20,6 @@
 }
 
 + (id)finderPOIInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *highlightAddressKeywords; // @synthesize highlightAddressKeywords=_highlightAddressKeywords;
 @property(retain, nonatomic) NSMutableArray *highlightNameKeywords; // @synthesize highlightNameKeywords=_highlightNameKeywords;
 @property(copy, nonatomic) NSString *normalDetail; // @synthesize normalDetail=_normalDetail;

@@ -18,7 +18,6 @@
     MMFinderLiveTaskId *_taskID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSArray *cardViewModels; // @synthesize cardViewModels=_cardViewModels;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;

@@ -51,7 +51,6 @@
 + (void)PBArrayAdd_locationLatitude;
 + (void)PBArrayAdd_locationLongitude;
 + (void)PBArrayAdd_city;
-- (void).cxx_destruct;
 @property(nonatomic) double locationLatitude; // @synthesize locationLatitude=_locationLatitude;
 @property(nonatomic) double locationLongitude; // @synthesize locationLongitude=_locationLongitude;
 @property(retain, nonatomic) NSString *displayPoiAddressName; // @synthesize displayPoiAddressName=_displayPoiAddressName;

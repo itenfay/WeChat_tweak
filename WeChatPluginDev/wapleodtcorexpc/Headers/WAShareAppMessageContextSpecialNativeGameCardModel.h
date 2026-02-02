@@ -15,7 +15,6 @@
     NSString *_liteGameInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int appBrandPriority; // @synthesize appBrandPriority=_appBrandPriority;
 @property(copy, nonatomic) NSString *liteGameInfo; // @synthesize liteGameInfo=_liteGameInfo;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;

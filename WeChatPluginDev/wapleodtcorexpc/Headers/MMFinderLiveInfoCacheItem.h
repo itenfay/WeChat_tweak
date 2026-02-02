@@ -21,7 +21,6 @@
 }
 
 + (id)keyWithGetLiveInfoParams:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveAbnormalClosedPageInfo *abnormalClosePage; // @synthesize abnormalClosePage=_abnormalClosePage;
 @property(retain, nonatomic) WCFinderGetLiveInfoModel *successCallbackModel; // @synthesize successCallbackModel=_successCallbackModel;
 @property(retain, nonatomic) NSArray *jumpInfos; // @synthesize jumpInfos=_jumpInfos;

@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_info;
 + (void)PBArrayAdd_createTime;
-- (void).cxx_destruct;
 @property(nonatomic) long long isInnerQuickShare; // @synthesize isInnerQuickShare=_isInnerQuickShare;
 @property(nonatomic) long long activityType; // @synthesize activityType=_activityType;
 @property(nonatomic) long long commentEggCount; // @synthesize commentEggCount=_commentEggCount;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -20,7 +21,6 @@
 + (id)JsonStringToObj:(id)arg1;
 + (id)ObjToJsonString:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onDispatch; // @synthesize onDispatch=_onDispatch;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(nonatomic) unsigned int appUuid; // @synthesize appUuid=_appUuid;
@@ -34,4 +34,3 @@
 - (id)init;
 
 @end
-

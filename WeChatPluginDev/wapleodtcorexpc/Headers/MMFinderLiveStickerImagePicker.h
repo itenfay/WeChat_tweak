@@ -16,7 +16,6 @@
     double _targetDimension;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double targetDimension; // @synthesize targetDimension=_targetDimension;
 @property(nonatomic) __weak UIViewController *hostingVc; // @synthesize hostingVc=_hostingVc;
 @property(retain, nonatomic) MMFinderLiveImageStickerItem *stickerItem; // @synthesize stickerItem=_stickerItem;

@@ -25,7 +25,6 @@
     MISSING_TYPE *useUDR;
 }
 
-- (void).cxx_destruct;
 - (void)shakeAllVisiableViews:(_Bool)arg1;
 - (id)getMetaByID:(id)arg1 needFrame:(_Bool)arg2;
 - (id)getVisibleMetaDict:(_Bool)arg1;

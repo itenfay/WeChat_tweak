@@ -11,7 +11,6 @@
     NSArray<QGPMaterialVariantsInfoOne> *_materialVariantsInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray<QGPMaterialVariantsInfoOne> *materialVariantsInfo; // @synthesize materialVariantsInfo=_materialVariantsInfo;
 
 @end

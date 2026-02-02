@@ -13,7 +13,6 @@
     NSArray *_subTags;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subTags; // @synthesize subTags=_subTags;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 

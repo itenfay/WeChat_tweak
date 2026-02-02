@@ -15,7 +15,6 @@
 }
 
 + (id)autoTestAssertTypes;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *scheduleTimer; // @synthesize scheduleTimer=_scheduleTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dumpQueue; // @synthesize dumpQueue=_dumpQueue;
 @property(retain, nonatomic) NSMutableDictionary *logQueues; // @synthesize logQueues=_logQueues;

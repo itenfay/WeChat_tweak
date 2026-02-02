@@ -17,7 +17,6 @@
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *animations; // @synthesize animations=_animations;
 @property(retain, nonatomic) NSArray *elementInfos; // @synthesize elementInfos=_elementInfos;
 @property(retain, nonatomic) NSDictionary *influentAnimations; // @synthesize influentAnimations=_influentAnimations;

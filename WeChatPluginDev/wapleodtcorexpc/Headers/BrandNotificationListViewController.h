@@ -20,7 +20,6 @@
     unsigned long long _state;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterId; // @synthesize enterId=_enterId;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

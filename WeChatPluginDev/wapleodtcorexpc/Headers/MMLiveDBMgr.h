@@ -11,7 +11,6 @@
     WCTTable *_tableLiveInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableLiveInfo; // @synthesize tableLiveInfo=_tableLiveInfo;
 @property(retain) WCTDatabase *db; // @synthesize db=_db;
 - (void)willRecoverDatabase;

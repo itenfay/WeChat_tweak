@@ -11,7 +11,6 @@
     OrderedDictionary *_musicInfoDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *musicInfoDictionary; // @synthesize musicInfoDictionary=_musicInfoDictionary;
 @property(copy, nonatomic) NSString *templateID; // @synthesize templateID=_templateID;
 - (void)videoProducerViewModel:(id)arg1 didGetExtRecommendMusics:(id)arg2 forTemplateID:(id)arg3;

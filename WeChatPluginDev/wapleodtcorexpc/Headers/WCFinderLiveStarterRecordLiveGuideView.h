@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, UIView;
 
 @interface WCFinderLiveStarterRecordLiveGuideView
@@ -14,7 +16,6 @@
     MMUIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUIButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -31,4 +32,3 @@
 - (void)updateWithTitle:(id)arg1;
 
 @end
-

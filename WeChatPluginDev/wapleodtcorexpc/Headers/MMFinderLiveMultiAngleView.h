@@ -14,7 +14,6 @@
     MMFinderLiveMultiAngleCollectionView *_mainCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveMultiAngleCollectionView *mainCollectionView; // @synthesize mainCollectionView=_mainCollectionView;
 @property(retain, nonatomic) MMFinderLiveChooseClarityViewNavBar *navBar; // @synthesize navBar=_navBar;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

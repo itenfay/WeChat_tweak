@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveLotteryCreateInfo, NSData, WCFinderDataItem;
 
 @interface WCFinderLiveCreateLotteryCGI
@@ -15,7 +17,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(nonatomic) long long optype; // @synthesize optype=_optype;
 @property(retain, nonatomic) MMFinderLiveLotteryCreateInfo *createInfo; // @synthesize createInfo=_createInfo;
@@ -28,4 +29,3 @@
 - (id)initWithLotteryCreateInfo:(id)arg1 finderDataItem:(id)arg2 optype:(long long)arg3 liveCookies:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

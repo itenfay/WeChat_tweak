@@ -17,7 +17,6 @@
 + (id)dirForUpdatedWebResource;
 + (id)confPathForDefaultWebResource;
 + (id)dirForDefaultWebResource;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *cornerImg; // @synthesize cornerImg=_cornerImg;
 @property(retain, nonatomic) NSMutableDictionary *materialWeAppDic; // @synthesize materialWeAppDic=_materialWeAppDic;
 - (void)reportOpenMaterialOpenItem:(id)arg1;

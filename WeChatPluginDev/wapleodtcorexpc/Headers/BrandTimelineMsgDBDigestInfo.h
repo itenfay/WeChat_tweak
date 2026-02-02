@@ -13,7 +13,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int flag; // @synthesize flag=_flag;
 @property(retain, nonatomic) NSString *strategyInfo; // @synthesize strategyInfo=_strategyInfo;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;

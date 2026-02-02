@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)observerWithCallback:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)forceFireEvent;
 - (void)fireDarkModeChange:(_Bool)arg1;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

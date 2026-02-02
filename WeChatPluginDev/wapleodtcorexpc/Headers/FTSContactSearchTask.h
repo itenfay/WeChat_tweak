@@ -30,7 +30,6 @@
     NSString *_lastQueryText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMultiKeyMatch; // @synthesize isMultiKeyMatch=_isMultiKeyMatch;
 @property(nonatomic) _Bool hasSearchDone; // @synthesize hasSearchDone=_hasSearchDone;
 @property(retain, nonatomic) NSString *lastQueryText; // @synthesize lastQueryText=_lastQueryText;

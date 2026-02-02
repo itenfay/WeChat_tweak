@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long logLevels; // @synthesize logLevels=_logLevels;
 @property(retain, nonatomic) id <TSKLogProtocol> delegate; // @synthesize delegate=_delegate;
 - (void)logLevel:(unsigned long long)arg1 inPosition:(struct _TSKLogPosition)arg2 withFormat:(id)arg3;

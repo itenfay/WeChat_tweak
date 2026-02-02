@@ -12,7 +12,6 @@
     UIView *_showResourceBgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *showResourceBgView; // @synthesize showResourceBgView=_showResourceBgView;
 @property(retain, nonatomic) WCPayWebImageView *showResourceImageView; // @synthesize showResourceImageView=_showResourceImageView;
 @property(retain, nonatomic) NSMutableDictionary *showResourceMaskImageViewCache; // @synthesize showResourceMaskImageViewCache=_showResourceMaskImageViewCache;

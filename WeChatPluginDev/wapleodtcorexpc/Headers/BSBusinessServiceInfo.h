@@ -15,7 +15,6 @@
 }
 
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *itemFieldDict; // @synthesize itemFieldDict=_itemFieldDict;
 @property(retain, nonatomic) NSString *serviceUrl; // @synthesize serviceUrl=_serviceUrl;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

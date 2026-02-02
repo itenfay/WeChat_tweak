@@ -12,7 +12,6 @@
     CdnUploadEmojiInfo *_cdnInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnUploadEmojiInfo *cdnInfo; // @synthesize cdnInfo=_cdnInfo;
 @property(nonatomic) __weak id <EmoticonUploadCdnDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnCdnUpload:(id)arg1;

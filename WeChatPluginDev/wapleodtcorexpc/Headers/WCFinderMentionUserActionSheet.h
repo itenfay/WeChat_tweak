@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUISearchBar, NSString, UILabel, UITableView, WCFinderAnimationLoadingView, WCFinderMentionUserActionSheetViewModel;
 
 @interface WCFinderMentionUserActionSheet
@@ -19,7 +21,6 @@
 }
 
 + (id)sheetWithScene:(unsigned long long)arg1 complete:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned long long searchKey; // @synthesize searchKey=_searchKey;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

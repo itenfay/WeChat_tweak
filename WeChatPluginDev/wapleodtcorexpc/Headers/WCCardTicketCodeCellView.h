@@ -16,7 +16,6 @@
 }
 
 + (double)heightForCardSource:(id)arg1 viewWidth:(double)arg2;
-- (void).cxx_destruct;
 - (void)codeAnimatorWillExitFullScreen:(id)arg1;
 - (void)codeAnimatorWillBecomeFullScreen:(id)arg1;
 - (void)fieldClicked:(id)arg1;

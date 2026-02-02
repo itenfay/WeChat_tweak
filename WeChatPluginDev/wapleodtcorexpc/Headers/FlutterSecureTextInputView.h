@@ -10,7 +10,6 @@
     UITextField *_textField;
 }
 
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)isKindOfClass:(Class)arg1;

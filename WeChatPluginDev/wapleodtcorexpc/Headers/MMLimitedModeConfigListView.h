@@ -14,7 +14,6 @@
     NSArray *_bizTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bizTypes; // @synthesize bizTypes=_bizTypes;
 @property(nonatomic) __weak id <MMLimitedModeConfigListViewDelegate><MMLimitedModeBizCellDelegate> limitedDelegate; // @synthesize limitedDelegate=_limitedDelegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

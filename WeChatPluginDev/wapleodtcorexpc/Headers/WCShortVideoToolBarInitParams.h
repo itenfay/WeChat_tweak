@@ -24,7 +24,6 @@
     double _contentBottomPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentBottomPadding; // @synthesize contentBottomPadding=_contentBottomPadding;
 @property(retain, nonatomic) NSMutableArray *wxToMaasMusicIds; // @synthesize wxToMaasMusicIds=_wxToMaasMusicIds;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

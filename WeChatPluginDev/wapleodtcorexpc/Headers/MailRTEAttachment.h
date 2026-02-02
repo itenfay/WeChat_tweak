@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MailRTEAttachment
@@ -18,7 +20,6 @@
 + (id)UIImageWriteToTempFile:(id)arg1;
 + (id)getTempFilePath;
 + (id)DataWriteToTempFile:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int dataSize; // @synthesize dataSize=_dataSize;
 @property(retain, nonatomic) NSString *attachID; // @synthesize attachID=_attachID;
 @property(retain, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
@@ -36,4 +37,3 @@
 - (id)init;
 
 @end
-

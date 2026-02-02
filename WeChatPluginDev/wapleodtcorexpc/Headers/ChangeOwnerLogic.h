@@ -16,7 +16,6 @@
     CContact *_m_oContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *m_oContact; // @synthesize m_oContact=_m_oContact;
 @property(nonatomic) __weak id <ChangeOwnerLogicDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onCancelSelectContact;

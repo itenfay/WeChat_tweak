@@ -14,7 +14,6 @@
     id <MMLiveKtvThemeItemFetching> _fetchingProvider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMLiveKtvThemeItemFetching> fetchingProvider; // @synthesize fetchingProvider=_fetchingProvider;
 @property(retain, nonatomic) NSString *themeId; // @synthesize themeId=_themeId;
 

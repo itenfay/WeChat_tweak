@@ -15,7 +15,6 @@
     id _webViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id webViewController; // @synthesize webViewController=_webViewController;
 @property(retain, nonatomic) NSArray *a8KeyHeaders; // @synthesize a8KeyHeaders=_a8KeyHeaders;
 @property(retain, nonatomic) NSString *a8KeyFullUrl; // @synthesize a8KeyFullUrl=_a8KeyFullUrl;

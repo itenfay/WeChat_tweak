@@ -13,7 +13,6 @@
     NSData *_purchaseBuff;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *purchaseBuff; // @synthesize purchaseBuff=_purchaseBuff;
 @property(retain, nonatomic) NSString *billNo; // @synthesize billNo=_billNo;
 @property(nonatomic) __weak id <EmoticonStoreWeCoinPurchaseLogicDelegate> delegate; // @synthesize delegate=_delegate;

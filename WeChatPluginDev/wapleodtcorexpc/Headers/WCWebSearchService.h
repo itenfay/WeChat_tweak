@@ -21,7 +21,6 @@
 + (_Bool)IsImageSearchScene:(unsigned long long)arg1;
 + (_Bool)IsFingertipSearchScene:(unsigned long long)arg1;
 + (id)FingertipSearchExpressHintWord;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCWebSearchSyncLogic *searchSyncLogic; // @synthesize searchSyncLogic=_searchSyncLogic;
 @property(retain, nonatomic) NSMutableDictionary *liteAppSessionIdDict; // @synthesize liteAppSessionIdDict=_liteAppSessionIdDict;
 @property(retain, nonatomic) NSArray *blackListHostForSearch; // @synthesize blackListHostForSearch=_blackListHostForSearch;

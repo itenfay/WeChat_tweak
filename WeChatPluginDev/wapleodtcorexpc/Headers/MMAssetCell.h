@@ -19,7 +19,6 @@
     UIButton *_cameraButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *cameraButton; // @synthesize cameraButton=_cameraButton;
 @property(nonatomic) _Bool showCameraButton; // @synthesize showCameraButton=_showCameraButton;
 @property(retain, nonatomic) UIButton *addButton; // @synthesize addButton=_addButton;

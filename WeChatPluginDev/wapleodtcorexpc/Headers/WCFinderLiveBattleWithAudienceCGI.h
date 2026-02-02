@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSData, NSString, WCFinderDataItem;
 @protocol MMFinderLivePkWinningConditionArguments;
 
@@ -23,7 +25,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) id <MMFinderLivePkWinningConditionArguments> winningConditionArguments; // @synthesize winningConditionArguments=_winningConditionArguments;
@@ -43,4 +44,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 liveCookies:(id)arg3 battleId:(id)arg4 battleMode:(unsigned long long)arg5 battleScope:(unsigned long long)arg6 opCode:(unsigned long long)arg7 battleTeams:(id)arg8 winningCondition:(unsigned long long)arg9 winningConditionArguments:(id)arg10 battleDuration:(unsigned long long)arg11 lastBattleId:(id)arg12 successBlock:(CDUnknownBlockType)arg13 failBlock:(CDUnknownBlockType)arg14;
 
 @end
-

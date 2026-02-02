@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderSelectPostIdentifierLogic : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)showSelectedSheetOnView:(id)arg1 selectUsername:(id)arg2 selectedBlock:(CDUnknownBlockType)arg3 cancelBlock:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCOpenReportParam, NSDictionary;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _onCloseBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onCloseBlock; // @synthesize onCloseBlock=_onCloseBlock;
 @property(retain, nonatomic) NSDictionary *addtionUrlParams; // @synthesize addtionUrlParams=_addtionUrlParams;
 @property(retain, nonatomic) GCOpenReportParam *reportParam; // @synthesize reportParam=_reportParam;
@@ -26,4 +26,3 @@
 @property(nonatomic) unsigned int sourceScene; // @synthesize sourceScene=_sourceScene;
 
 @end
-

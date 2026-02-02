@@ -18,7 +18,6 @@
     NSMutableString *attribute;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportToLogID; // @synthesize reportToLogID;
 @property(retain, nonatomic) NSMutableString *attribute; // @synthesize attribute;
 @property(retain, nonatomic) NSMutableString *reverseStr; // @synthesize reverseStr;

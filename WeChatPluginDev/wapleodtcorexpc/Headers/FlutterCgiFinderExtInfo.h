@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFinderBaseRequestIndex:(long long)arg1 feedIdList:(id)arg2 scene:(id)arg3 enterScene:(id)arg4 useSessionBuffer:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useSessionBuffer; // @synthesize useSessionBuffer=_useSessionBuffer;
 @property(retain, nonatomic) NSNumber *enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) NSNumber *scene; // @synthesize scene=_scene;

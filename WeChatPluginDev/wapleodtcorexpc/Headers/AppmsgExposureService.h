@@ -10,7 +10,6 @@
     NSMutableDictionary *_uid2HasExposuredMap;
 }
 
-- (void).cxx_destruct;
 - (void)reportWithId:(unsigned int)arg1 key:(long long)arg2 value:(unsigned int)arg3;
 - (void)logErrorIfHasExposuredButNotReport:(unsigned int)arg1;
 - (void)doReportExposureItem:(id)arg1 urlInfo:(id)arg2 chatType:(unsigned int)arg3;

@@ -13,7 +13,6 @@
     WCPlayerLayerView *_displayLayerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerLayerView *displayLayerView; // @synthesize displayLayerView=_displayLayerView;
 @property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(retain, nonatomic) WCPipSupportPlayer *player; // @synthesize player=_player;

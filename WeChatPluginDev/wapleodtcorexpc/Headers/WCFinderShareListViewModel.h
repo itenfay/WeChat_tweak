@@ -33,7 +33,6 @@
 
 + (_Bool)relatedRecommendTipsValid:(id)arg1;
 + (_Bool)shouldShowGuideNextBubble:(id)arg1 curProgress:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareFeedDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic) unsigned long long lastdetectionValidityTimestamp; // @synthesize lastdetectionValidityTimestamp=_lastdetectionValidityTimestamp;
 @property(retain, nonatomic) NSData *lastCheckBuffer; // @synthesize lastCheckBuffer=_lastCheckBuffer;

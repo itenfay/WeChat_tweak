@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveImagePickerParams, NSArray, NSMutableDictionary, NSNumber, NSString, WCFinderEditOptionModel, WCFinderPickerTemplateParams;
 @protocol MMAssetPickerUserActionTipsProtocol;
@@ -61,7 +62,6 @@
     long long _livePhotoMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showAssetWithLocationOnly; // @synthesize showAssetWithLocationOnly=_showAssetWithLocationOnly;
 @property(nonatomic) long long livePhotoMode; // @synthesize livePhotoMode=_livePhotoMode;
 @property(copy, nonatomic) CDUnknownBlockType assetSelectedBlock; // @synthesize assetSelectedBlock=_assetSelectedBlock;
@@ -197,4 +197,3 @@
 
 
 @end
-

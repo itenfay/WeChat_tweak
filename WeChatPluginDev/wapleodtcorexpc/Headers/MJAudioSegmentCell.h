@@ -11,7 +11,6 @@
     MJAudioWaveformView *_waveformView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJAudioWaveformView *waveformView; // @synthesize waveformView=_waveformView;
 @property(nonatomic) _Bool contentCanBeDrawn; // @synthesize contentCanBeDrawn=_contentCanBeDrawn;
 - (void)drawWaveformWithTimeRange:(CDStruct_e83c9415)arg1 sampleCount:(unsigned int)arg2 forceUpdate:(_Bool)arg3;

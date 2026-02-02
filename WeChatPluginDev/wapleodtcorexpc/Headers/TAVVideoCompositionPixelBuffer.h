@@ -13,7 +13,6 @@
     id <TAVVideoCompositionTrack> _track;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TAVVideoCompositionTrack> track; // @synthesize track=_track;
 @property(nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 

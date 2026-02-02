@@ -14,7 +14,6 @@
     id <OpenIMContactVerifyLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OpenIMContactVerifyLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onOpenImGetContactDone:(id)arg1 contact:(id)arg2;

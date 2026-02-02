@@ -23,7 +23,6 @@
 @property(retain, nonatomic, getter=sTypeName, setter=setSTypeName:) NSString *jcev2_p_2_o_sTypeName; // @synthesize jcev2_p_2_o_sTypeName;
 @property(retain, nonatomic, getter=vIPType, setter=setVIPType:) NSArray *jcev2_p_1_r_vIPType__b0x9i_VONSNumber; // @synthesize jcev2_p_1_r_vIPType__b0x9i_VONSNumber;
 @property(retain, nonatomic, getter=stUB, setter=setStUB:) QBWupUserBase *jcev2_p_0_r_stUB; // @synthesize jcev2_p_0_r_stUB;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

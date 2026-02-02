@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext;
 @protocol OS_dispatch_queue;
@@ -20,7 +21,6 @@
 
 + (_Bool)supportsFastTextureUpload;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) struct __CVOpenGLESTextureCache *coreVideoTextureCache; // @synthesize coreVideoTextureCache=_coreVideoTextureCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *renderQueue; // @synthesize renderQueue=_renderQueue;
 @property(retain, nonatomic) EAGLContext *glContext; // @synthesize glContext=_glContext;
@@ -41,4 +41,3 @@
 - (id)init;
 
 @end
-

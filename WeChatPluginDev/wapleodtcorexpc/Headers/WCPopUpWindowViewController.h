@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, UIViewPropertyAnimator;
 @protocol UITimingCurveProvider;
 
@@ -20,7 +22,6 @@
     UIViewPropertyAnimator *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) id <UITimingCurveProvider> hideTimingParameters; // @synthesize hideTimingParameters=_hideTimingParameters;
 @property(retain, nonatomic) id <UITimingCurveProvider> showTimingParameters; // @synthesize showTimingParameters=_showTimingParameters;
@@ -40,4 +41,3 @@
 - (id)init;
 
 @end
-

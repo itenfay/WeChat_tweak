@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMOpenGLContext, XImageContext;
 
@@ -14,7 +15,6 @@
     XImageContext *_rciContext;
 }
 
-- (void).cxx_destruct;
 @property(retain) XImageContext *rciContext; // @synthesize rciContext=_rciContext;
 @property(retain) MMOpenGLContext *openGLContext; // @synthesize openGLContext=_openGLContext;
 @property long long renderType; // @synthesize renderType=_renderType;
@@ -24,4 +24,3 @@
 - (id)initWithOpenGLContext:(id)arg1;
 
 @end
-

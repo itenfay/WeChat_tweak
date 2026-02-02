@@ -17,7 +17,6 @@
     NSString *relativePagePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool flagshipFlag; // @synthesize flagshipFlag=_flagshipFlag;
 @property(nonatomic) _Bool relievedBuyFlag; // @synthesize relievedBuyFlag=_relievedBuyFlag;
 @property(nonatomic) int miniProgramType; // @synthesize miniProgramType;

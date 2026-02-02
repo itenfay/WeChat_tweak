@@ -26,7 +26,6 @@
 }
 
 + (_Bool)isEditedTimeRange:(CDStruct_e83c9415)arg1 equalToTimeDuration:(CDStruct_1b6d18a9)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 totalEditedTimeRange; // @synthesize totalEditedTimeRange=_totalEditedTimeRange;
 @property(copy, nonatomic) NSString *assetUrlForMultiComposeVideo; // @synthesize assetUrlForMultiComposeVideo=_assetUrlForMultiComposeVideo;
 @property(nonatomic) _Bool isSilenceVideo; // @synthesize isSilenceVideo=_isSilenceVideo;

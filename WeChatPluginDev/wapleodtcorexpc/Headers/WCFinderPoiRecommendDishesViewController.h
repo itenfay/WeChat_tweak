@@ -13,7 +13,6 @@
     MMUIButton *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSMutableDictionary *reportDict; // @synthesize reportDict=_reportDict;

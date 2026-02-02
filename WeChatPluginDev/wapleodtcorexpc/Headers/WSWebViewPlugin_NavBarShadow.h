@@ -12,7 +12,6 @@
     double _animateDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableAddShadow; // @synthesize enableAddShadow=_enableAddShadow;
 @property(nonatomic) double animateDuration; // @synthesize animateDuration=_animateDuration;
 @property(retain, nonatomic) UIView *navShadowView; // @synthesize navShadowView=_navShadowView;

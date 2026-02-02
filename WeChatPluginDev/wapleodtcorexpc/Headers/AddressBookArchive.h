@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_emails;
 + (void)PBArrayAdd_phones;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *emails; // @synthesize emails=_emails;
 @property(retain, nonatomic) NSMutableSet *phones; // @synthesize phones=_phones;
 - (id)getPBPropertyTable;

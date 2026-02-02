@@ -20,7 +20,6 @@
     long long _remainsPlayCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool manualDelete; // @synthesize manualDelete=_manualDelete;
 @property(nonatomic) long long remainsPlayCount; // @synthesize remainsPlayCount=_remainsPlayCount;
 @property(nonatomic) long long totalPlayCount; // @synthesize totalPlayCount=_totalPlayCount;

@@ -27,7 +27,6 @@
     WCTagsView *_tagsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTagsView *tagsView; // @synthesize tagsView=_tagsView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *staredView; // @synthesize staredView=_staredView;

@@ -36,7 +36,6 @@
     NSObject<OS_dispatch_queue> *_searchQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int pageId; // @synthesize pageId=_pageId;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *searchQueue; // @synthesize searchQueue=_searchQueue;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;

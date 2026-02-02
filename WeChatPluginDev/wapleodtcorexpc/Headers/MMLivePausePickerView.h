@@ -16,7 +16,6 @@
     NSNumber *_selectedDuration;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *selectedDuration; // @synthesize selectedDuration=_selectedDuration;
 @property(retain, nonatomic) UIView *pickerViewCustomizedIndicatorBottomLine; // @synthesize pickerViewCustomizedIndicatorBottomLine=_pickerViewCustomizedIndicatorBottomLine;
 @property(retain, nonatomic) UIView *pickerViewCustomizedIndicatorTopLine; // @synthesize pickerViewCustomizedIndicatorTopLine=_pickerViewCustomizedIndicatorTopLine;

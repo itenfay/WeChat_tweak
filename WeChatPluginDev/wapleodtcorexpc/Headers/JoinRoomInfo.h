@@ -31,7 +31,6 @@
     long long _roomId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceCellularNetwork; // @synthesize forceCellularNetwork=_forceCellularNetwork;
 @property(nonatomic) long long roomId; // @synthesize roomId=_roomId;
 @property(nonatomic) unsigned int lifespan; // @synthesize lifespan=_lifespan;

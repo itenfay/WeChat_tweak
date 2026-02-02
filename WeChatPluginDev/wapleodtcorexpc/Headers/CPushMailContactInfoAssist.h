@@ -12,7 +12,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) XMailBindMailControlLogic *bindMailControlLogic; // @synthesize bindMailControlLogic=_bindMailControlLogic;
 - (void)onXMailBindMailControlLogicCanceled:(id)arg1;
 - (void)onXMailBindMailControlLogicSuccess:(id)arg1 mailAddr:(id)arg2;

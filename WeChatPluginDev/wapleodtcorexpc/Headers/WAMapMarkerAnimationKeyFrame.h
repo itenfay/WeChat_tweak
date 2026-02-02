@@ -14,7 +14,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double rotate; // @synthesize rotate=_rotate;
 @property(retain, nonatomic) NSValue *coordValue; // @synthesize coordValue=_coordValue;

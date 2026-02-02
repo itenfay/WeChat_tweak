@@ -19,7 +19,6 @@
     _Bool _hadTryCaculateOriginSourceMD5;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hadTryCaculateOriginSourceMD5; // @synthesize hadTryCaculateOriginSourceMD5=_hadTryCaculateOriginSourceMD5;
 @property(nonatomic) _Bool isSendingMsg; // @synthesize isSendingMsg=_isSendingMsg;
 @property(nonatomic) _Bool isUploadFail; // @synthesize isUploadFail=_isUploadFail;

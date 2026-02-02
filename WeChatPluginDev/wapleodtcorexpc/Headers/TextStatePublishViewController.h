@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CEmoticonWrap, EmoticonBoardView, MMGrowTextView, MMUIButton, MMUILabel, NSArray, NSDictionary, NSString, PrivateInfo, TextStateIcon, TextStatePublishConfiguration, TextStatePublishContentBuilder, TextStatePublishEmoticonView, TextStatePublishGuideView, TextStatePublishIconButton, TextStatePublishIconList, TextStatePublishInputBar, TextStatePublishMediaSwitchView, TextStatePublishReportObject, TextStatePublishSourceInfo, TextStatePublishSourceView, TextStatePublishTitleView, TextStateTopicGuideBubbleView, UIBarButtonItem, UIScreenEdgePanGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, WCInputController, WCLocationInfo, WCMomentsPrivacyParams, WCStatusPrivacySetting;
 @protocol TextStatePublishIconPicker, TextStatePublishViewControllerDelegate;
 
@@ -68,7 +70,6 @@
     PrivateInfo *_privateInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PrivateInfo *privateInfo; // @synthesize privateInfo=_privateInfo;
 @property(copy, nonatomic) CDUnknownBlockType postPositionAuthorizationAndAlertHandler; // @synthesize postPositionAuthorizationAndAlertHandler=_postPositionAuthorizationAndAlertHandler;
 @property(copy, nonatomic) CDUnknownBlockType postNewbieGuideHandler; // @synthesize postNewbieGuideHandler=_postNewbieGuideHandler;
@@ -268,4 +269,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -25,7 +25,6 @@
     NSString *_brandWording;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool newOcrmt; // @synthesize newOcrmt=_newOcrmt;
 @property(retain, nonatomic) NSString *brandWording; // @synthesize brandWording=_brandWording;
 @property(retain, nonatomic) NSString *toLanguage; // @synthesize toLanguage=_toLanguage;

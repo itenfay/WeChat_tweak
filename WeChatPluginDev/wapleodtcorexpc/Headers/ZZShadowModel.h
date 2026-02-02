@@ -16,7 +16,6 @@
 }
 
 + (id)create;
-- (void).cxx_destruct;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;

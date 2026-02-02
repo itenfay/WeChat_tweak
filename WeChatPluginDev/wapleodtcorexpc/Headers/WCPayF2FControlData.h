@@ -14,7 +14,6 @@
     CgiF2FDynamicCodeResp *_m_f2fDynamicCodeResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CgiF2FDynamicCodeResp *m_f2fDynamicCodeResp; // @synthesize m_f2fDynamicCodeResp=_m_f2fDynamicCodeResp;
 @property(retain, nonatomic) WCPayTransferPrepayResponseStruct *m_f2fPlaceOrderResp; // @synthesize m_f2fPlaceOrderResp=_m_f2fPlaceOrderResp;
 @property(retain, nonatomic) WCPayTranferGetUserNameResponse *m_transferScanQrCodeResp; // @synthesize m_transferScanQrCodeResp=_m_transferScanQrCodeResp;

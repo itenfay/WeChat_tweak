@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMLiveBeautyPackage, MMLiveBeautyResourcesDescriptor, MMLiveEffectsUsingContext, MMLiveEnergyController, MMLiveFilterDataItem, MMLiveFilterPackage, MMLiveMakeupDataItem, MMLiveMakeupPackage, MMLiveTask, MMWeEffectManager, MemoryMappedKV, NSDictionary, NSMutableDictionary, NSString, WCFinderLiveAnchorLogReporter, WCFinderLiveStarterReporter;
 
@@ -33,7 +34,6 @@
 }
 
 + (_Bool)isDeviceLowSpec;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filterResourcesInstancePath; // @synthesize filterResourcesInstancePath=_filterResourcesInstancePath;
 @property(retain, nonatomic) NSString *makeupResourcesInstancePath; // @synthesize makeupResourcesInstancePath=_makeupResourcesInstancePath;
 @property(retain, nonatomic) NSDictionary *makeupDetailIdDic; // @synthesize makeupDetailIdDic=_makeupDetailIdDic;
@@ -112,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

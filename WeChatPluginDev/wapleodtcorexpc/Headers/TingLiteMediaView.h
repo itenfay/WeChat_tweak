@@ -22,7 +22,6 @@
     MusicDefualtImageView *_coverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MusicDefualtImageView *coverView; // @synthesize coverView=_coverView;
 @property(retain, nonatomic) TingItem *tingItem; // @synthesize tingItem=_tingItem;
 @property(copy, nonatomic) NSString *listenId; // @synthesize listenId=_listenId;

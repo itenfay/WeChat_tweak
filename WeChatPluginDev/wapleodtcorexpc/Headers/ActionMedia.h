@@ -14,7 +14,6 @@
     NSString *_link;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int showInWeb; // @synthesize showInWeb=_showInWeb;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;

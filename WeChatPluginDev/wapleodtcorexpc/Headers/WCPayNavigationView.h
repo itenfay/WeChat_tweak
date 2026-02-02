@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIFont, UILabel;
 
@@ -24,7 +25,6 @@
 + (void)baseView:(id)arg1 pushView:(id)arg2;
 + (void)baseView:(id)arg1 popView:(id)arg2 animated:(_Bool)arg3 direction:(unsigned long long)arg4 completeHandler:(CDUnknownBlockType)arg5;
 + (void)baseView:(id)arg1 pushView:(id)arg2 animated:(_Bool)arg3 direction:(unsigned long long)arg4 completeHandler:(CDUnknownBlockType)arg5;
-- (void).cxx_destruct;
 @property(retain) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) NSString *my_subtitle; // @synthesize my_subtitle=_my_subtitle;
 @property(retain, nonatomic) NSString *my_title; // @synthesize my_title=_my_title;
@@ -66,4 +66,3 @@
 - (id)init;
 
 @end
-

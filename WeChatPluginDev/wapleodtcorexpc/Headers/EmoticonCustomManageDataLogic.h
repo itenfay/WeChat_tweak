@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, OrderedDictionary;
 
 @interface EmoticonCustomManageDataLogic
@@ -22,7 +24,6 @@
     unsigned long long _startMultiSelectMarkedCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool startMultiSelectStatus; // @synthesize startMultiSelectStatus=_startMultiSelectStatus;
 @property(nonatomic) unsigned long long startMultiSelectMarkedCount; // @synthesize startMultiSelectMarkedCount=_startMultiSelectMarkedCount;
 @property(nonatomic) unsigned long long lastMultiSelectIndex; // @synthesize lastMultiSelectIndex=_lastMultiSelectIndex;
@@ -76,4 +77,3 @@
 - (id)initWithType:(unsigned long long)arg1;
 
 @end
-

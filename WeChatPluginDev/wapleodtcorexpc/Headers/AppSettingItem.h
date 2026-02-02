@@ -15,7 +15,6 @@
     NSString *appID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID;
 @property(nonatomic) _Bool appAddedByUser; // @synthesize appAddedByUser;
 @property(nonatomic) unsigned int flag; // @synthesize flag;

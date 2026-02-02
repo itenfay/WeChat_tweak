@@ -15,7 +15,6 @@
     unsigned int m_nameLenLimit;
 }
 
-- (void).cxx_destruct;
 - (void)resignFirstResponder;
 - (_Bool)onError:(id)arg1;
 - (void)OnGetTenpaySecureCtrlSalt:(id)arg1 Date:(id)arg2 Error:(id)arg3;

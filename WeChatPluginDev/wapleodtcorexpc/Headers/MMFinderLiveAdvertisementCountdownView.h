@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, MMUILabel, WCFinderProgressView;
 
@@ -22,7 +23,6 @@
     double _timeInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(nonatomic) long long countdownInteval; // @synthesize countdownInteval=_countdownInteval;
 @property(nonatomic) double countdownTime; // @synthesize countdownTime=_countdownTime;
@@ -49,4 +49,3 @@
 - (void)dealloc;
 
 @end
-

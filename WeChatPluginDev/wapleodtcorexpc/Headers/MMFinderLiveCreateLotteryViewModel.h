@@ -20,7 +20,6 @@
     NSMutableArray *_showArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *showArray; // @synthesize showArray=_showArray;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
 @property(nonatomic) _Bool isGameLive; // @synthesize isGameLive=_isGameLive;

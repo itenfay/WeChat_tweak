@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage;
 
@@ -15,7 +16,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *base64Data; // @synthesize base64Data=_base64Data;
 @property(retain, nonatomic) NSString *localId; // @synthesize localId=_localId;
@@ -23,4 +23,3 @@
 - (void)triggerGetImapgeWithComplectionBlock:(CDUnknownBlockType)arg1;
 
 @end
-

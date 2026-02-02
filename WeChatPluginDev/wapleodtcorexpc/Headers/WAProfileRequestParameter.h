@@ -14,7 +14,6 @@
     NSString *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(retain, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;

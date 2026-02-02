@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -17,7 +18,6 @@
 
 + (unsigned long long)countOfThumePerSecond;
 + (id)viewModelWithAssets:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *thumbImages; // @synthesize thumbImages=_thumbImages;
 @property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
 @property(nonatomic) _Bool isLoadingImg; // @synthesize isLoadingImg=_isLoadingImg;
@@ -27,4 +27,3 @@
 - (id)initWithAssets:(id)arg1;
 
 @end
-

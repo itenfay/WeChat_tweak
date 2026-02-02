@@ -22,7 +22,6 @@
 }
 
 + (id)paramsWithContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderJumpInfo *enterShowJumpInfo; // @synthesize enterShowJumpInfo=_enterShowJumpInfo;
 @property(nonatomic) unsigned int customTLFollowEnterType; // @synthesize customTLFollowEnterType=_customTLFollowEnterType;
 @property(nonatomic) _Bool fromThankMention; // @synthesize fromThankMention=_fromThankMention;

@@ -16,7 +16,6 @@
     MMUITextField *_textField;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MMFinderLiveConnectMicSeatBaseInfo *micSeatBaseInfo; // @synthesize micSeatBaseInfo=_micSeatBaseInfo;

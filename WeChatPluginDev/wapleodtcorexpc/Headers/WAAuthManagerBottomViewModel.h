@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WAAuthManagerBottomViewModel : NSObject
 {
@@ -12,11 +13,9 @@
     CDUnknownBlockType _editButtonClickAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType editButtonClickAction; // @synthesize editButtonClickAction=_editButtonClickAction;
 @property(nonatomic) _Bool isEdit; // @synthesize isEdit=_isEdit;
 @property(nonatomic) double viewHeight; // @synthesize viewHeight=_viewHeight;
 - (id)initWithViewHeight:(double)arg1 isEdit:(_Bool)arg2;
 
 @end
-

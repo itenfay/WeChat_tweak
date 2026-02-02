@@ -13,7 +13,6 @@
     WCAccountNewPhoneVerifyViewController *_currentVC;
 }
 
-- (void).cxx_destruct;
 - (void)onSetPasswordOK;
 - (void)onSetPasswordBack;
 - (_Bool)onManualAuthControlLogicError:(id)arg1;

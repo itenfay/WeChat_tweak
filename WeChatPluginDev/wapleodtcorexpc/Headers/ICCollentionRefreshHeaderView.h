@@ -15,7 +15,6 @@
     MMUIActivityIndicatorView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) __weak id <ICCollentionRefreshHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long state; // @synthesize state=_state;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIScrollView;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)showBlockTipsInViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UIScrollView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) CDUnknownBlockType onQuitBlock; // @synthesize onQuitBlock=_onQuitBlock;
@@ -25,4 +25,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

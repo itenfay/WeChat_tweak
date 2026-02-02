@@ -10,7 +10,6 @@
     NSArray *_pos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pos; // @synthesize pos=_pos;
 - (id)getDic;
 - (id)initWithParam:(id)arg1;

@@ -16,7 +16,6 @@
     id <JSApiScopeConfirmWindowDelegate> _confirmWindowDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <JSApiScopeConfirmWindowDelegate> confirmWindowDelegate; // @synthesize confirmWindowDelegate=_confirmWindowDelegate;
 @property(nonatomic) unsigned long long orientationMask; // @synthesize orientationMask=_orientationMask;
 @property(retain, nonatomic) NSString *confirmTitle; // @synthesize confirmTitle=_confirmTitle;

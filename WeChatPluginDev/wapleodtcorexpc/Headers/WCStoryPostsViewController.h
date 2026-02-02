@@ -17,7 +17,6 @@
     unsigned long long _defaultSelectedTag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long defaultSelectedTag; // @synthesize defaultSelectedTag=_defaultSelectedTag;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) WCStoryAlbumViewController *albumViewController; // @synthesize albumViewController=_albumViewController;

@@ -10,7 +10,6 @@
     FavAudioInfo *m_audioInfo;
 }
 
-- (void).cxx_destruct;
 - (void)OnPlayError:(id)arg1;
 - (void)OnEndPlay:(id)arg1;
 - (void)OnBeginPlay:(id)arg1;

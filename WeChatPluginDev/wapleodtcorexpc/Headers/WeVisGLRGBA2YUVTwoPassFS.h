@@ -14,7 +14,6 @@
     _Bool _isInitialized;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 - (void)drawUVFromRGBA:(unsigned int)arg1 transpose:(_Bool)arg2 flipX:(_Bool)arg3;
 - (void)drawYFromRGBA:(unsigned int)arg1 transpose:(_Bool)arg2 flipX:(_Bool)arg3;

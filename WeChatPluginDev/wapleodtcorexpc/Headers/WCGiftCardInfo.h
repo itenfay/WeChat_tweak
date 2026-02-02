@@ -11,7 +11,6 @@
     NSString *_orderId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 @property(nonatomic) unsigned int bizUin; // @synthesize bizUin=_bizUin;
 

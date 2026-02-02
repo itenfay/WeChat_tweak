@@ -15,7 +15,6 @@
     unsigned long long _selfLikeCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selfLikeCount; // @synthesize selfLikeCount=_selfLikeCount;
 @property(nonatomic) unsigned long long displayLikeCount; // @synthesize displayLikeCount=_displayLikeCount;
 @property(nonatomic) unsigned long long likeCount; // @synthesize likeCount=_likeCount;

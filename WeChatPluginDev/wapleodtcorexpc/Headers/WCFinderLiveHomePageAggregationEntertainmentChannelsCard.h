@@ -16,7 +16,6 @@
     unsigned long long _calculateLineCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long calculateLineCount; // @synthesize calculateLineCount=_calculateLineCount;
 @property(nonatomic) double layoutHeight; // @synthesize layoutHeight=_layoutHeight;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;

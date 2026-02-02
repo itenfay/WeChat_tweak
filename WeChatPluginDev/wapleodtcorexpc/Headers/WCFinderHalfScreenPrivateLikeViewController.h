@@ -15,7 +15,6 @@
     NSString *_subtitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *mtitle; // @synthesize mtitle=_mtitle;
 @property(retain, nonatomic) UIButton *okButton; // @synthesize okButton=_okButton;

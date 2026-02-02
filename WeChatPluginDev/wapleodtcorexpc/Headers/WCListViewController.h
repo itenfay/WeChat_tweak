@@ -40,7 +40,6 @@
     long long _puzzleImageViewLayoutStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long puzzleImageViewLayoutStyle; // @synthesize puzzleImageViewLayoutStyle=_puzzleImageViewLayoutStyle;
 @property(nonatomic) _Bool isStarBrowsingEnabled; // @synthesize isStarBrowsingEnabled=_isStarBrowsingEnabled;
 @property(retain, nonatomic) WCTogetherHistoryReportSession *cachedTogetherHistoryReportSession; // @synthesize cachedTogetherHistoryReportSession=_cachedTogetherHistoryReportSession;

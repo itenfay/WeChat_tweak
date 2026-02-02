@@ -22,7 +22,6 @@
 + (double)topShadowHeight:(_Bool)arg1;
 + (id)bottomShadowWithFrame:(struct CGRect)arg1;
 + (id)topShadowWithFrame:(struct CGRect)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLandscape; // @synthesize isLandscape=_isLandscape;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 - (void)layoutSubviews;

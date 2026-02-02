@@ -17,7 +17,6 @@
 
 + (double)iconMarginForCount:(unsigned long long)arg1;
 + (double)iconLengthForCount:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSMutableArray *iconViewList; // @synthesize iconViewList=_iconViewList;
 @property(retain, nonatomic) MMUILabel *dayLabel; // @synthesize dayLabel=_dayLabel;

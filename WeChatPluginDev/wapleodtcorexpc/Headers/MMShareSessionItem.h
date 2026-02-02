@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_dispalyName;
 + (void)PBArrayAdd_nickname;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSuffixIcon; // @synthesize showSuffixIcon=_showSuffixIcon;
 @property(retain, nonatomic) NSString *dispalyName; // @synthesize dispalyName=_dispalyName;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

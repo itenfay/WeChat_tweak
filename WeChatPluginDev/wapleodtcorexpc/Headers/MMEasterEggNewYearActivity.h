@@ -18,7 +18,6 @@
     WCCgiBlockHelper *_prepareCgiBlockHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCgiBlockHelper *prepareCgiBlockHelper; // @synthesize prepareCgiBlockHelper=_prepareCgiBlockHelper;
 @property(retain, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;

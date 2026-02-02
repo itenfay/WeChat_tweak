@@ -12,7 +12,6 @@
     CommonMessageViewModel *_referMessageViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CommonMessageViewModel *referMessageViewModel; // @synthesize referMessageViewModel=_referMessageViewModel;
 - (id)referDescForAccessibility;
 - (id)referDesc;

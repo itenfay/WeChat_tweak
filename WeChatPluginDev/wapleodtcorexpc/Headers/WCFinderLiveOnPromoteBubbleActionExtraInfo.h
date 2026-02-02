@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)extra:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveType; // @synthesize liveType=_liveType;
 @property(retain, nonatomic) NSDictionary *otherActionResults; // @synthesize otherActionResults=_otherActionResults;
 @property(nonatomic) unsigned int entranceType; // @synthesize entranceType=_entranceType;
@@ -43,4 +43,3 @@
 @property(readonly) Class superclass;
 
 @end
-

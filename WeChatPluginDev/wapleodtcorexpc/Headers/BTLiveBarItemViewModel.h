@@ -20,7 +20,6 @@
 }
 
 + (id)itemViewClassName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *cachedMainColor; // @synthesize cachedMainColor=_cachedMainColor;
 @property(nonatomic) _Bool isExposedInLiveBar; // @synthesize isExposedInLiveBar=_isExposedInLiveBar;
 @property(nonatomic) _Bool isDefaultExpand; // @synthesize isDefaultExpand=_isDefaultExpand;

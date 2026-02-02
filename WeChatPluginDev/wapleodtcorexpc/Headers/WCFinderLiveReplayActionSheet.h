@@ -10,7 +10,6 @@
     MMFinderLiveReplayTask *_replayLiveTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReplayTask *replayLiveTask; // @synthesize replayLiveTask=_replayLiveTask;
 - (id)seperatorBackgroundColor;
 - (id)containerViewBlurBackgroundColor;

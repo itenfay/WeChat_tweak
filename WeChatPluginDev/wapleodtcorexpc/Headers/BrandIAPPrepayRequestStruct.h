@@ -19,7 +19,6 @@
     NSString *_extKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extKey; // @synthesize extKey=_extKey;
 @property(retain, nonatomic) NSString *stepInURL; // @synthesize stepInURL=_stepInURL;
 @property(retain, nonatomic) NSString *signType; // @synthesize signType=_signType;

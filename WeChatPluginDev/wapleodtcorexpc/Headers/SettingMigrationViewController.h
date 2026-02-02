@@ -15,7 +15,6 @@
 }
 
 + (unsigned int)checkSupportMigratePC;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(nonatomic) unsigned long long vcType; // @synthesize vcType=_vcType;
 @property(retain, nonatomic) NSArray *titleArray; // @synthesize titleArray=_titleArray;

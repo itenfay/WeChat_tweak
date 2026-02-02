@@ -20,7 +20,6 @@
     RichTextView *_titleTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(nonatomic) _Bool autoHideSearchBar; // @synthesize autoHideSearchBar=_autoHideSearchBar;
 @property(retain, nonatomic) WCFinderAuthoritySearchListViewController *searchVC; // @synthesize searchVC=_searchVC;

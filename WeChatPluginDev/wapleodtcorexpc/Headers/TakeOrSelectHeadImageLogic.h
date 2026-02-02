@@ -12,7 +12,6 @@
     id <TakeOrSelectHeadImageLogicDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithViewController:(id)arg1 delegate:(id)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;

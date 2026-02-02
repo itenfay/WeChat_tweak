@@ -37,7 +37,6 @@
     long long _successCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long successCount; // @synthesize successCount=_successCount;
 @property(nonatomic) long long sectionCount; // @synthesize sectionCount=_sectionCount;
 @property(nonatomic) long long sectionIndexLimit; // @synthesize sectionIndexLimit=_sectionIndexLimit;

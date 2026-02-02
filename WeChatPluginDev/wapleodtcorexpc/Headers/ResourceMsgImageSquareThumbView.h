@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, NSString, SimpleChatLogInfo, UIImageView, UILabel, UIView, YYImage;
 
 @interface ResourceMsgImageSquareThumbView
@@ -23,7 +25,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) YYImage *m_image; // @synthesize m_image=_m_image;
 @property(nonatomic) _Bool bUsePureColorBackground; // @synthesize bUsePureColorBackground=_bUsePureColorBackground;
 @property(retain, nonatomic) UIImageView *m_markSelectedImageView; // @synthesize m_markSelectedImageView=_m_markSelectedImageView;
@@ -59,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

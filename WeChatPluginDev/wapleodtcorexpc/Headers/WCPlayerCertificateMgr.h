@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSLock, NSString;
 
@@ -19,7 +20,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSLock *lockOfCompletion; // @synthesize lockOfCompletion=_lockOfCompletion;
 @property(retain, nonatomic) NSString *errorDes; // @synthesize errorDes=_errorDes;
@@ -36,4 +36,3 @@
 - (id)initWithCertificateUrl:(id)arg1;
 
 @end
-

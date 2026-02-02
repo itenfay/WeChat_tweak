@@ -28,7 +28,6 @@
 }
 
 + (id)configListFromXLabConfigString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *relativeConstraints; // @synthesize relativeConstraints=_relativeConstraints;
 @property(retain, nonatomic) NSString *relativeViewId; // @synthesize relativeViewId=_relativeViewId;
 @property(retain, nonatomic) NSNumber *centerY; // @synthesize centerY=_centerY;

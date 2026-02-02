@@ -20,7 +20,6 @@
     SpeakTextLoadingRequest *_loadingRequest;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestedIndex; // @synthesize requestedIndex=_requestedIndex;
 @property(retain, nonatomic) SpeakTextLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;
 @property(retain, nonatomic) NSMutableArray *currentPieces; // @synthesize currentPieces=_currentPieces;

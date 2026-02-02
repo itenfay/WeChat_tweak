@@ -19,7 +19,6 @@
 }
 
 + (id)singleton;
-- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_rwlock_t readWriteLock; // @synthesize readWriteLock=_readWriteLock;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) NSString *hardWare; // @synthesize hardWare=_hardWare;

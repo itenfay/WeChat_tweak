@@ -13,7 +13,6 @@
     MMUIButton *_backgroundButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(retain, nonatomic) MMFinderLiveMinifyRoomControlBanner *minifyRoomBanner; // @synthesize minifyRoomBanner=_minifyRoomBanner;
 @property(retain, nonatomic) MMFinderLivePreviewRelatedHeaderView *previewRelatedHeaderView; // @synthesize previewRelatedHeaderView=_previewRelatedHeaderView;

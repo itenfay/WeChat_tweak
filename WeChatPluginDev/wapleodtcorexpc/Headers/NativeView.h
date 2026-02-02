@@ -13,7 +13,6 @@
     FlutterMethodChannel *_channel;
 }
 
-- (void).cxx_destruct;
 - (id)view;
 - (void)buttonClick:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 viewIdentifier:(long long)arg2 arguments:(id)arg3 binaryMessenger:(id)arg4 methodChannel:(id)arg5;

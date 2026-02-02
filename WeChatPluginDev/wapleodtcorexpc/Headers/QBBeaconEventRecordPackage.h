@@ -13,7 +13,6 @@
 }
 
 @property(retain, nonatomic) NSArray *list; // @synthesize list;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getDataToBuffer;
 - (void)addPkgElements:(id)arg1;

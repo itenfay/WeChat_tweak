@@ -20,7 +20,6 @@
     NSArray *_otherRoomConnectAudienceUserList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnchorPkChangeLayoutEnabled; // @synthesize isAnchorPkChangeLayoutEnabled=_isAnchorPkChangeLayoutEnabled;
 @property(retain, nonatomic) NSArray *otherRoomConnectAudienceUserList; // @synthesize otherRoomConnectAudienceUserList=_otherRoomConnectAudienceUserList;
 @property(retain, nonatomic) NSDictionary *invitedMicAudienceDict; // @synthesize invitedMicAudienceDict=_invitedMicAudienceDict;

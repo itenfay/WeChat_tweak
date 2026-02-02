@@ -35,7 +35,6 @@
 }
 
 + (_Bool)IsSupportTopStoryPlugin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSTabRedDotInfoCollector *tabRedDotInfoCollector; // @synthesize tabRedDotInfoCollector=_tabRedDotInfoCollector;
 @property(retain, nonatomic) NSDictionary *from3rdAppShareParams; // @synthesize from3rdAppShareParams=_from3rdAppShareParams;
 @property(retain, nonatomic) UIImage *mVideoFlowIcon; // @synthesize mVideoFlowIcon=_mVideoFlowIcon;

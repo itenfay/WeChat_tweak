@@ -12,7 +12,6 @@
     NSString *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 
 @end

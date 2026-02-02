@@ -21,7 +21,6 @@
     long long _needReportCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEndExpose; // @synthesize hasEndExpose=_hasEndExpose;
 @property(nonatomic) long long needReportCount; // @synthesize needReportCount=_needReportCount;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;

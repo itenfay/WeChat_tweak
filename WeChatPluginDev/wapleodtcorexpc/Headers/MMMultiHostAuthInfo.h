@@ -16,7 +16,6 @@
     NSDictionary *_hostToAlgoDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSDictionary *hostToAlgoDictionary; // @synthesize hostToAlgoDictionary=_hostToAlgoDictionary;
 @property(retain) NSData *serverId; // @synthesize serverId=_serverId;
 @property(retain) NSData *serverSessionKey; // @synthesize serverSessionKey=_serverSessionKey;

@@ -18,7 +18,6 @@
     NSDictionary *_selectedAutoKeywords;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClick; // @synthesize isClick=_isClick;
 @property(copy, nonatomic) NSDictionary *selectedAutoKeywords; // @synthesize selectedAutoKeywords=_selectedAutoKeywords;
 @property(copy, nonatomic) NSArray *autoKeywords; // @synthesize autoKeywords=_autoKeywords;

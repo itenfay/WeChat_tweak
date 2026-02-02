@@ -13,7 +13,6 @@
     double _timeInterval;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(retain, nonatomic) NSString *displayStr; // @synthesize displayStr=_displayStr;
 - (id)initWithDisplayStr:(id)arg1 time:(double)arg2;

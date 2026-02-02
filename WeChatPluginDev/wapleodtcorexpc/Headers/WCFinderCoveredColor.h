@@ -19,7 +19,6 @@
 + (id)colorWithNormal:(id)arg1;
 + (id)colorWithNormal:(id)arg1 coveredBlurColor:(id)arg2;
 + (id)colorWithNormal:(id)arg1 coveredColor:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool displayCoveredStyle; // @synthesize displayCoveredStyle=_displayCoveredStyle;
 @property(nonatomic) _Bool displayBlurWhenCovered; // @synthesize displayBlurWhenCovered=_displayBlurWhenCovered;
 @property(retain, nonatomic) UIColor *coveredColor; // @synthesize coveredColor=_coveredColor;

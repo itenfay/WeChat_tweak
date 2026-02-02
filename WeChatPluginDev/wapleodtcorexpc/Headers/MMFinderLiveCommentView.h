@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CLLocation, FinderLiveBoxId, MMFinderGroupLiveChatRoomDataProvider, MMFinderLiveCommentContentScrollView, MMFinderLiveCommentEntranceTabBar, MMFinderLiveCommentInputEmoticonView, MMFinderLiveCommentPostInfo, MMFinderLiveCommentTableViewModel, MMFinderLiveFloatMsgConfigRequestLogic, MMFinderLiveNotifyCommentLogic, MMFinderLivePrivateCommentContentView, MMFinderLiveProductQuestionBoxDataProvider, MMFinderLivePublicCommentContentView, MMFinderLiveSFBarrageView, MMFinderLiveTask, MMFinderLiveTaskId, MMFinderLiveTopCommentContentView, MMFinderLiveTopCommentLogic, MMLiveCommentDataItem, MMLiveCommentTableViewModel, MMLocatingCoordinateLogic, MMNormalTipsView, MMTableView, NSArray, NSData, NSMutableDictionary, NSString, PickLocationManager, RichTextView, WCBulletinInfo, WCLocationInfo, WCUIAlertView;
 
 @interface MMFinderLiveCommentView
@@ -97,7 +99,6 @@
 + (double)currentCommentTableWidth:(id)arg1;
 + (double)commentTableWidth:(id)arg1;
 + (double)commentButtonMinWidthWithTaskId:(id)arg1 isLandscape:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMNormalTipsView *barrageTipsView; // @synthesize barrageTipsView=_barrageTipsView;
 @property(nonatomic) _Bool needsAudioModeNotificationUponJoinLive; // @synthesize needsAudioModeNotificationUponJoinLive=_needsAudioModeNotificationUponJoinLive;
 @property(nonatomic) _Bool joinLiveTipsPopulated; // @synthesize joinLiveTipsPopulated=_joinLiveTipsPopulated;
@@ -510,4 +511,3 @@
 @property(readonly) Class superclass;
 
 @end
-

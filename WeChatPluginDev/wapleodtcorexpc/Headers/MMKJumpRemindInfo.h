@@ -19,7 +19,6 @@
 }
 
 + (id)KJumpRemindInfoWithJumpType:(int)arg1 isPopUpWindows:(_Bool)arg2 wording:(id)arg3 leftButtonWording:(id)arg4 rightButtonWording:(id)arg5 url:(id)arg6 title:(id)arg7;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) MMKRedirectUrl *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSString *rightButtonWording; // @synthesize rightButtonWording=_rightButtonWording;

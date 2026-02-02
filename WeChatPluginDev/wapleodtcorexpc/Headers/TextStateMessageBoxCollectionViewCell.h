@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMHeadImageView, MMUILabel, NSMutableArray, UIStackView;
 
@@ -17,7 +18,6 @@
     UIStackView *_rootStackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *rootStackView; // @synthesize rootStackView=_rootStackView;
 @property(retain, nonatomic) UIStackView *headImageStackView; // @synthesize headImageStackView=_headImageStackView;
 @property(retain, nonatomic) NSMutableArray *headImageViews; // @synthesize headImageViews=_headImageViews;
@@ -29,4 +29,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

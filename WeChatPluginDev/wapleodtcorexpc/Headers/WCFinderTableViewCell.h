@@ -14,7 +14,6 @@
     NSHashTable *_hiddenOnHalfHashTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *hiddenOnHalfHashTable; // @synthesize hiddenOnHalfHashTable=_hiddenOnHalfHashTable;
 @property(retain, nonatomic) WCFinderPassThoughView *wc_contentView; // @synthesize wc_contentView=_wc_contentView;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;

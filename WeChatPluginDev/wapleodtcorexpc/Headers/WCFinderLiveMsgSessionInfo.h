@@ -75,7 +75,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int comparePriority; // @synthesize comparePriority=_comparePriority;
 @property(retain, nonatomic) NSString *selfEncryptedUsername; // @synthesize selfEncryptedUsername=_selfEncryptedUsername;
 @property(nonatomic) unsigned int liveIdentity; // @synthesize liveIdentity=_liveIdentity;

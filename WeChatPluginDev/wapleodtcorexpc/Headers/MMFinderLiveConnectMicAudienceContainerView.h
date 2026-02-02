@@ -22,7 +22,6 @@
     MMFinderLivePaidConnectMicAnchorOperationPanelInfo *_panelInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isKTVSectionReported; // @synthesize isKTVSectionReported=_isKTVSectionReported;
 @property(retain, nonatomic) MMFinderLivePaidConnectMicAnchorOperationPanelInfo *panelInfo; // @synthesize panelInfo=_panelInfo;
 @property(retain, nonatomic) NSArray *applyingMicUserListForPaidMic; // @synthesize applyingMicUserListForPaidMic=_applyingMicUserListForPaidMic;

@@ -14,7 +14,6 @@
     unsigned long long _filterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long filterScene; // @synthesize filterScene=_filterScene;
 @property(readonly, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;
 @property(retain, nonatomic) NSMutableDictionary *userCommentDisableDict; // @synthesize userCommentDisableDict=_userCommentDisableDict;

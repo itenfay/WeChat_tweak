@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEngine, NSMutableDictionary, NSString, UIViewController;
 @protocol OS_dispatch_queue;
@@ -22,7 +23,6 @@
 }
 
 + (id)flutterRevision;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *destroyQueue; // @synthesize destroyQueue=_destroyQueue;
 @property(copy, nonatomic) CDUnknownBlockType destroyCallback; // @synthesize destroyCallback=_destroyCallback;
 @property(nonatomic) long long createEnd; // @synthesize createEnd=_createEnd;
@@ -39,4 +39,3 @@
 - (id)initWithKey:(id)arg1 engine:(id)arg2;
 
 @end
-

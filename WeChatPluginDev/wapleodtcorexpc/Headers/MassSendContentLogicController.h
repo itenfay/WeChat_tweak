@@ -10,7 +10,6 @@
     UIImageView *_toolView;
 }
 
-- (void).cxx_destruct;
 - (void)onMultiSelectContactReturn:(id)arg1;
 - (void)onDeleteMsg:(id)arg1;
 - (void)deleteAllMsgByContact:(id)arg1;

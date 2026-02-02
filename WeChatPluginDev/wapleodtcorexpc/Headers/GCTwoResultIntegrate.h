@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface GCTwoResultIntegrate : NSObject
 {
@@ -15,7 +16,6 @@
     CDUnknownBlockType _intergrateBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType intergrateBlock; // @synthesize intergrateBlock=_intergrateBlock;
 @property(nonatomic) int targetNum; // @synthesize targetNum=_targetNum;
 @property(copy, nonatomic) CDUnknownBlockType didSelect; // @synthesize didSelect=_didSelect;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

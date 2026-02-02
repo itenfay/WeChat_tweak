@@ -16,7 +16,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timestap; // @synthesize timestap=_timestap;
 @property(nonatomic) unsigned int maxSeq; // @synthesize maxSeq=_maxSeq;
 @property(nonatomic) unsigned int minSeq; // @synthesize minSeq=_minSeq;

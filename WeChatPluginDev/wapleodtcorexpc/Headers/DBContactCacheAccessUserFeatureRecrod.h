@@ -53,7 +53,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isMute; // @synthesize isMute=_isMute;
 @property(nonatomic) unsigned int myRecentMsgCount; // @synthesize myRecentMsgCount=_myRecentMsgCount;
 @property(nonatomic) unsigned int groupFriendsCount; // @synthesize groupFriendsCount=_groupFriendsCount;

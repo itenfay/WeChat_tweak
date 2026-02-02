@@ -15,7 +15,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithParams:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *params; // @synthesize params=_params;
 - (id)toList;
 

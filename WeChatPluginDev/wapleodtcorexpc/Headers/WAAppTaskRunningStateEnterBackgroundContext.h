@@ -13,7 +13,6 @@
     WAAppStateChangedContextInfo *_contextInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppStateChangedContextInfo *contextInfo; // @synthesize contextInfo=_contextInfo;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;

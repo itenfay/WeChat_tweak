@@ -16,7 +16,6 @@
     id <CustomEmoticonConflictViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <CustomEmoticonConflictViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) UIButton *m_closeButton; // @synthesize m_closeButton=_m_closeButton;
 @property(retain, nonatomic) UILabel *m_comflictWordingLabel; // @synthesize m_comflictWordingLabel=_m_comflictWordingLabel;

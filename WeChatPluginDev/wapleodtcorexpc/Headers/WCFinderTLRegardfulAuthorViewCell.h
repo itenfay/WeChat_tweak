@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UILabel, UIView, WCFinderHeadImageView, WCFinderTLRegardfulAuthorCellViewModel;
 
 @interface WCFinderTLRegardfulAuthorViewCell
@@ -17,7 +19,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *avatarTextTipsLabel; // @synthesize avatarTextTipsLabel=_avatarTextTipsLabel;
 @property(retain, nonatomic) UIView *avatarViewCircle; // @synthesize avatarViewCircle=_avatarViewCircle;
 @property(nonatomic) __weak UIView *redDotView; // @synthesize redDotView=_redDotView;
@@ -39,4 +40,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

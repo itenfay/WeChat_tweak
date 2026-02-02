@@ -12,7 +12,6 @@
     WCPayPhoneTextItem *_m_textFieldPhoneItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPhoneTextItem *m_textFieldPhoneItem; // @synthesize m_textFieldPhoneItem=_m_textFieldPhoneItem;
 - (void)showTip:(id)arg1 tips:(id)arg2;
 - (void)dealloc;

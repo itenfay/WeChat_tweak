@@ -10,7 +10,6 @@
     id <WCPayWalletBatchFunctionOperateCgiDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getCgiNewDNSBusinessType;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

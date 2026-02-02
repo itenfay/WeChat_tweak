@@ -14,7 +14,6 @@
     UIImageView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;

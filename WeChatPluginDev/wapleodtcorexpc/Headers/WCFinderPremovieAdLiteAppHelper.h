@@ -11,7 +11,6 @@
     MMLiteAppView *_liteAppView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiteAppView *liteAppView; // @synthesize liteAppView=_liteAppView;
 @property(nonatomic) _Bool isReadyToShow; // @synthesize isReadyToShow=_isReadyToShow;
 - (struct CGRect)adLabelFrameInExtraInfo:(id)arg1;

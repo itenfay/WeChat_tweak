@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimelineEditBehaviorInfo *info; // @synthesize info=_info;
 - (void)kvDataReport;
 - (void)didSelectTagCountFromSearchForImport:(unsigned long long)arg1;

@@ -24,7 +24,6 @@
     NSString *_customAccessibilityLabel;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *customAccessibilityLabel; // @synthesize customAccessibilityLabel=_customAccessibilityLabel;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) UIView *redDotView; // @synthesize redDotView=_redDotView;

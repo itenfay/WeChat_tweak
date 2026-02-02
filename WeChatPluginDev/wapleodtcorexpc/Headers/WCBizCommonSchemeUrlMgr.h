@@ -13,7 +13,6 @@
     NSDictionary *_handlerDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *handlerDictionary; // @synthesize handlerDictionary=_handlerDictionary;
 @property(retain, nonatomic) WCBizSchemeBlockViewController *blockViewController; // @synthesize blockViewController=_blockViewController;
 - (_Bool)checkAntiSpamInfoValid:(id)arg1;

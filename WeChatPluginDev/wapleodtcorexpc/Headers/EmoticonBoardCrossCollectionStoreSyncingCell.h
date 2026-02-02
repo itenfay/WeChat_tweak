@@ -12,7 +12,6 @@
     MMUIActivityIndicatorView *_indicator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicator; // @synthesize indicator=_indicator;
 - (void)startLoading;
 - (void)initPackSyncTipWithFrame:(struct CGRect)arg1;

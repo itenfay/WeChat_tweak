@@ -13,7 +13,6 @@
 }
 
 + (id)findDismissTargetVCWithTopVC:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVMutableComposition, AVMutableVideoComposition, AVPictureInPictureController, AVPlayer, AVPlayerItem, AVPlayerLayer, MMLiveCustomRenderPIPHandleLogic, MMLiveCustomRenderPIPStartParam, MMLiveCustomRenderPIPView, MMLiveCustomRenderView, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -45,7 +47,6 @@
 + (_Bool)appendToAdapter:(id)arg1 pixelBuffer:(struct __CVBuffer *)arg2 totalFrames:(long long)arg3 frameDuration:(CDStruct_1b6d18a9)arg4 withInput:(id)arg5 withMovieWriter:(id)arg6;
 + (struct __CVBuffer *)pixelBufferFromCGImage:(struct CGImage *)arg1 size:(struct CGSize)arg2;
 + (int)getPictureInPictureMaxKnownSupportedControlStyle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCustomRenderPIPStartParam *startParam; // @synthesize startParam=_startParam;
 @property(nonatomic) _Bool needAutoStopPIP; // @synthesize needAutoStopPIP=_needAutoStopPIP;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
@@ -168,4 +169,3 @@
 @property(readonly) Class superclass;
 
 @end
-

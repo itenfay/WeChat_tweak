@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MMFinderLiveInfoPollingMgr
@@ -10,7 +12,6 @@
     NSMutableDictionary *_cacheItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cacheItems; // @synthesize cacheItems=_cacheItems;
 - (void)getLiveInfoWithParams:(id)arg1 referenceId:(id)arg2 overrideCache:(_Bool)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 - (void)onServiceInit;
@@ -26,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

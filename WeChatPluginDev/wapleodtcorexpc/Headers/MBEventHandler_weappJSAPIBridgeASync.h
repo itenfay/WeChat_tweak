@@ -10,7 +10,6 @@
     WAJSEventHandler_BaseEvent *_bridgeWeAppHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAJSEventHandler_BaseEvent *bridgeWeAppHandler; // @synthesize bridgeWeAppHandler=_bridgeWeAppHandler;
 - (id)sourceOpenSDKAppID;
 - (id)getEventHandler:(id)arg1;

@@ -10,7 +10,6 @@
     StatusFooterJumpFinderProfile *_finderProfile;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusFooterJumpFinderProfile *finderProfile; // @synthesize finderProfile=_finderProfile;
 - (_Bool)doSourceActionWithViewController:(id)arg1 scene:(unsigned int)arg2;
 - (id)customView;

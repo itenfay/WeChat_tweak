@@ -16,7 +16,6 @@
     UIImage *_frontgroundImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *frontgroundImage; // @synthesize frontgroundImage=_frontgroundImage;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

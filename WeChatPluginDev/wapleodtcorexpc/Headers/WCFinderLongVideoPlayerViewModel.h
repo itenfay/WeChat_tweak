@@ -21,7 +21,6 @@
     NSData *_lastRecommendBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecommendRequesting; // @synthesize isRecommendRequesting=_isRecommendRequesting;
 @property(retain, nonatomic) NSData *lastRecommendBuffer; // @synthesize lastRecommendBuffer=_lastRecommendBuffer;
 @property(nonatomic) _Bool hadMoreRecommend; // @synthesize hadMoreRecommend=_hadMoreRecommend;

@@ -17,7 +17,6 @@
 + (id)taskQueueFilePath;
 + (id)decodeTaskQueue;
 + (void)encodeTaskQueue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(nonatomic) __weak id <TextStatePublishLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)shouldModifySelfContact;

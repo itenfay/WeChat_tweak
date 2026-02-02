@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSCache, NSMutableArray, NSMutableDictionary, NSString, QMapContext, QMapRepeatTimer, QMediator, QPointEventEngine, QUniversalMapCounter;
 
@@ -26,7 +27,6 @@
     CDStruct_02837cd9 _mapRectHolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *eventCache; // @synthesize eventCache=_eventCache;
 @property(nonatomic) double mapScaleHolder; // @synthesize mapScaleHolder=_mapScaleHolder;
 @property(nonatomic) CDStruct_02837cd9 mapRectHolder; // @synthesize mapRectHolder=_mapRectHolder;
@@ -75,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -35,7 +35,6 @@
 + (void)PBArrayAdd_lastRefreshTime;
 + (void)PBArrayAdd_finderFeedExportId;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dataBuffer; // @synthesize dataBuffer=_dataBuffer;
 @property(retain, nonatomic) NSString *finderSessionBuffer; // @synthesize finderSessionBuffer=_finderSessionBuffer;
 @property(retain, nonatomic) BrandLiveWeAppData *weAppData; // @synthesize weAppData=_weAppData;

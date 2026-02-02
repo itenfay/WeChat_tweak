@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSData, NSMutableArray, NSString, WCFinderBaseCgi;
 @protocol WCFinderProfileDraftListViewModelDelegate;
 
@@ -19,7 +21,6 @@
 
 + (int)tabId;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidenModifyMVDraft; // @synthesize forbidenModifyMVDraft=_forbidenModifyMVDraft;
 @property(retain, nonatomic) NSMutableArray *savingDraftList; // @synthesize savingDraftList=_savingDraftList;
 @property(nonatomic) __weak WCFinderBaseCgi *loadingCGI; // @synthesize loadingCGI=_loadingCGI;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

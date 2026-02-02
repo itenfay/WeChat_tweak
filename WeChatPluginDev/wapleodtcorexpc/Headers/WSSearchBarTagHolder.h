@@ -16,7 +16,6 @@
     struct _NSRange _range;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;

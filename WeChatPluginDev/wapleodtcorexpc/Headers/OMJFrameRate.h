@@ -13,7 +13,6 @@
 + (id)fromNumericValue:(float)arg1;
 + (id)fromType:(unsigned long long)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct XMFFrameRate backingFrameRate; // @synthesize backingFrameRate=_backingFrameRate;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

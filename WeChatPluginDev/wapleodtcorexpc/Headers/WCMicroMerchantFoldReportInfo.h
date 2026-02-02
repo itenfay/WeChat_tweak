@@ -20,7 +20,6 @@
 + (unsigned long long)hitRuleTypeWithInteractionType:(unsigned long long)arg1;
 + (id)reportInfoWithFoldAgainUsername:(id)arg1 sessionID:(id)arg2;
 + (id)reportInfoWithInteraction:(id)arg1 sessionID:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long statusType; // @synthesize statusType=_statusType;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;

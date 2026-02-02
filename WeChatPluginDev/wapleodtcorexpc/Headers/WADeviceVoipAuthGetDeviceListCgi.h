@@ -12,7 +12,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(nonatomic) __weak id <WADeviceVoipAuthGetDeviceListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

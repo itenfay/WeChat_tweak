@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_smallHeadImg;
 + (void)PBArrayAdd_bigHeadImg;
 + (void)PBArrayAdd_nickName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int kefuType; // @synthesize kefuType=_kefuType;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;

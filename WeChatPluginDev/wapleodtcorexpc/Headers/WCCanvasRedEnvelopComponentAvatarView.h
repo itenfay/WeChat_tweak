@@ -17,7 +17,6 @@
     UILabel *_tailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tailView; // @synthesize tailView=_tailView;
 @property(retain, nonatomic) UILabel *nameView; // @synthesize nameView=_nameView;
 @property(retain, nonatomic) MMHeadImageView *headView; // @synthesize headView=_headView;

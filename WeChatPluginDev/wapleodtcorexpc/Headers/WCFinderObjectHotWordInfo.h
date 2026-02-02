@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_hotWordInfo;
 + (unsigned long long)columnType;
 + (id)unarchiveWithWCTValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderObjectHotWordInfo *hotWordInfo; // @synthesize hotWordInfo=_hotWordInfo;
 - (id)getPBPropertyTable;
 - (id)archivedWCTValue;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_signature;
 + (void)PBArrayAdd_headImgUrl;
 + (void)PBArrayAdd_nickName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(copy, nonatomic) NSString *headImgUrl; // @synthesize headImgUrl=_headImgUrl;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSIndexPath, NSString, RichTextView, UIAccessibilityElement, UIButton, UIColor, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UIView, WCFinderFeedContentVM, WCFinderFeedLBSRecommendReasonView, WCFinderFeedMediaWrap, WCFinderFeedStaticCoverContactView, WCFinderFeedStaticCoverView, WCFinderMaskButton, WCFinderPageControl, WCFinderSimplePlayerView, WCFinderStaticCoverCollectionViewCellConfig, WCFinderStreamCellUploadStatusView;
 @protocol WCFinderFeedStaticCoverCollectionViewCellDataSource, WCFinderFeedStaticCoverCollectionViewCellDelegate;
@@ -57,7 +58,6 @@
 + (_Bool)showFollowReasonStateWithContentVM:(id)arg1 flag:(unsigned long long)arg2;
 + (id)pageCtrlStyleConfig;
 + (double)pageCtrlHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIAccessibilityElement *cellAccesibilityElement; // @synthesize cellAccesibilityElement=_cellAccesibilityElement;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(retain, nonatomic) UIImageView *markSelectedImageView; // @synthesize markSelectedImageView=_markSelectedImageView;
@@ -170,4 +170,3 @@
 @property(readonly) Class superclass;
 
 @end
-

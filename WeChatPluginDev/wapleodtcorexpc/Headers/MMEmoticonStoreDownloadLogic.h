@@ -17,7 +17,6 @@
     double _staticBtnWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double staticBtnWidth; // @synthesize staticBtnWidth=_staticBtnWidth;
 @property(retain, nonatomic) EmoticonStoreDownloadView *downloadView; // @synthesize downloadView=_downloadView;
 @property(retain, nonatomic) UIImageView *downloadedCheck; // @synthesize downloadedCheck=_downloadedCheck;

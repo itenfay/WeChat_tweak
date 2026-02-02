@@ -15,7 +15,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderUserRelationshipTagLabel *userTagLabel; // @synthesize userTagLabel=_userTagLabel;
 @property(nonatomic) __weak UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;

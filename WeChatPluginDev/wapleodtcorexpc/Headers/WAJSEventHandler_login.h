@@ -17,7 +17,6 @@
     WAJSContextPlugin_userAccount *_userAccountInstance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int cgiEventId; // @synthesize cgiEventId=_cgiEventId;
 @property(nonatomic) __weak WAJSContextPlugin_userAccount *userAccountInstance; // @synthesize userAccountInstance=_userAccountInstance;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appID;

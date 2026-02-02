@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_selectedImageUrls;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedImageUrls; // @synthesize selectedImageUrls=_selectedImageUrls;
 - (id)getPBPropertyTable;
 

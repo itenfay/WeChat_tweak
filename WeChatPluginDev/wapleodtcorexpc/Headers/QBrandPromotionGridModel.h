@@ -16,7 +16,6 @@
     QPolyline *_polyline;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QPolyline *polyline; // @synthesize polyline=_polyline;
 @property(nonatomic) __weak QBrandPromotionContext *brandPromotionContext; // @synthesize brandPromotionContext=_brandPromotionContext;
 @property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;

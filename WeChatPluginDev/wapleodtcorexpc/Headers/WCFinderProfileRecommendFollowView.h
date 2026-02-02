@@ -24,7 +24,6 @@
     struct CGSize _cacheSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShowcasePagingView *pagingView; // @synthesize pagingView=_pagingView;
 @property(nonatomic) _Bool showInfoSecondLine; // @synthesize showInfoSecondLine=_showInfoSecondLine;
 @property(nonatomic) double cacheAnchorPosition; // @synthesize cacheAnchorPosition=_cacheAnchorPosition;

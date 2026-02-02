@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *barInfoList; // @synthesize barInfoList=_barInfoList;
 @property(nonatomic) unsigned long long firstAnimInterval; // @synthesize firstAnimInterval=_firstAnimInterval;
 - (_Bool)isValid;

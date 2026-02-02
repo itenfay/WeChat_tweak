@@ -16,7 +16,6 @@
     NSString *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(retain, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;
 @property(nonatomic) unsigned int recNativeCardStyle; // @synthesize recNativeCardStyle=_recNativeCardStyle;

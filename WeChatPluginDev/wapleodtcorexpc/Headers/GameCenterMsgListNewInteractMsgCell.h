@@ -10,7 +10,6 @@
     GCInteractView *_interactView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCInteractView *interactView; // @synthesize interactView=_interactView;
 - (void)updateWithCellData:(id)arg1;
 

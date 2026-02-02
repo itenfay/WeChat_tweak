@@ -13,7 +13,6 @@
     NSMutableArray *_container;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *container; // @synthesize container=_container;
 @property(nonatomic) __weak QMapContext *context; // @synthesize context=_context;
 - (id)init;

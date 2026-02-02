@@ -15,7 +15,6 @@
     NSString *_actionResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *actionResult; // @synthesize actionResult=_actionResult;
 @property(retain, nonatomic) NSString *refPageType; // @synthesize refPageType=_refPageType;
 @property(nonatomic) unsigned int sourceType; // @synthesize sourceType=_sourceType;

@@ -16,7 +16,6 @@
     NSString *nsSerialID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int iBizType; // @synthesize iBizType;
 @property(nonatomic) unsigned int iRequestType; // @synthesize iRequestType;
 @property(retain, nonatomic) NSString *nsSerialID; // @synthesize nsSerialID;

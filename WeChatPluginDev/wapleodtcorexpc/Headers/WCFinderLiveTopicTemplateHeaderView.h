@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveColorfulLabel, MMUIButton, NSString, RichTextView;
 
@@ -17,7 +18,6 @@
     MMUIButton *_detailButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *detailButton; // @synthesize detailButton=_detailButton;
 @property(retain, nonatomic) RichTextView *subtitleTextView; // @synthesize subtitleTextView=_subtitleTextView;
 @property(retain, nonatomic) MMLiveColorfulLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -43,4 +43,3 @@
 @property(readonly) Class superclass;
 
 @end
-

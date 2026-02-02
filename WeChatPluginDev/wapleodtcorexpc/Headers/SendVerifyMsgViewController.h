@@ -80,7 +80,6 @@
 }
 
 + (unsigned int)getSendVerifySourceSceneWithFriendScene:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEditHelloMsg; // @synthesize hasEditHelloMsg=_hasEditHelloMsg;
 @property(nonatomic) _Bool hasFilledOrSavedHelloMsg; // @synthesize hasFilledOrSavedHelloMsg=_hasFilledOrSavedHelloMsg;
 @property(nonatomic) _Bool descSelectorIconUsed; // @synthesize descSelectorIconUsed=_descSelectorIconUsed;

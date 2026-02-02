@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, MMFinderLiveKSKitMusicNote, MMFinderLiveKSKitMusicNoteLine, MMFinderLiveKTVReporter, NSMutableArray, NSString, NSThread, UIColor;
 @protocol MMLiveUniqueTaskId;
@@ -68,7 +69,6 @@
 }
 
 + (CDUnknownBlockType)createReportTimer:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType recvFpsReport; // @synthesize recvFpsReport=_recvFpsReport;
 @property unsigned long long recvFpsStatCnt; // @synthesize recvFpsStatCnt=_recvFpsStatCnt;
 @property long long recvFps; // @synthesize recvFps=_recvFps;
@@ -222,4 +222,3 @@
 - (void)initRefreshStats;
 
 @end
-

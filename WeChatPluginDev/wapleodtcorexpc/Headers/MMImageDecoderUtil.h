@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMImageDecoderUtil : NSObject
 {
@@ -16,4 +17,3 @@
 + (id)errorWithCode:(long long)arg1 message:(id)arg2;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ButtonAttachManager, FixTitleColorButtonChainModel, MMUIActivityIndicatorView, NSMutableDictionary, NSMutableSet, UIColor, UIView;
 
 @interface FixTitleColorButton
@@ -40,7 +42,6 @@
 }
 
 + (CDUnknownBlockType)zz_create;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *animatedMaskView; // @synthesize animatedMaskView=_animatedMaskView;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
@@ -110,4 +111,3 @@
 @property(readonly, copy, nonatomic) FixTitleColorButtonChainModel *zz_setup;
 
 @end
-

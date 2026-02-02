@@ -15,7 +15,6 @@
     NSMutableDictionary *_invocationCounters;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *invocationCounters; // @synthesize invocationCounters=_invocationCounters;
 @property(retain, nonatomic) NSString *correlationId; // @synthesize correlationId=_correlationId;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *workItemGroup; // @synthesize workItemGroup=_workItemGroup;

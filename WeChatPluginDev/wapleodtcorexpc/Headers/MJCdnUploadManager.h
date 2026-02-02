@@ -13,7 +13,6 @@
     NSMutableDictionary *_successTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *successTasks; // @synthesize successTasks=_successTasks;
 @property(retain, nonatomic) NSMutableDictionary *runningTasks; // @synthesize runningTasks=_runningTasks;
 @property(retain, nonatomic) OrderedDictionary *pendingTasks; // @synthesize pendingTasks=_pendingTasks;

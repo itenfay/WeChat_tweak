@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, UIViewController;
 @protocol IWAHTMLWebVCHelper;
 
@@ -13,7 +15,6 @@
     NSString *_javascriptForDisappear;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *javascriptForDisappear; // @synthesize javascriptForDisappear=_javascriptForDisappear;
 @property(retain, nonatomic) UIViewController<IWAHTMLWebVCHelper> *htmlWebVC; // @synthesize htmlWebVC=_htmlWebVC;
 @property(readonly, nonatomic) NSMutableDictionary *enableScrollDic; // @synthesize enableScrollDic=_enableScrollDic;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

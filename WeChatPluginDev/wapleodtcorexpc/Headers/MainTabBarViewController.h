@@ -23,7 +23,6 @@
     id <MainTabBarControllerDelegate> _mainDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool recoverTabBarItems; // @synthesize recoverTabBarItems=_recoverTabBarItems;
 @property(nonatomic) __weak id <MainTabBarControllerDelegate> mainDelegate; // @synthesize mainDelegate=_mainDelegate;
 @property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;

@@ -18,7 +18,6 @@
     MISSING_TYPE *identifier;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, copy) NSString *identifier;
 @property(nonatomic, copy) NSString *tailText;

@@ -14,7 +14,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool redDotOberver; // @synthesize redDotOberver=_redDotOberver;
 @property(retain, nonatomic) NSMutableDictionary *cachedExpt; // @synthesize cachedExpt=_cachedExpt;
 @property(retain, nonatomic) LVCacheManager *pageCache; // @synthesize pageCache=_pageCache;

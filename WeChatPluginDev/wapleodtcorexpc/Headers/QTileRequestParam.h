@@ -18,7 +18,6 @@
     NSString *_engineOriginalUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *engineOriginalUrl; // @synthesize engineOriginalUrl=_engineOriginalUrl;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property int tag; // @synthesize tag=_tag;

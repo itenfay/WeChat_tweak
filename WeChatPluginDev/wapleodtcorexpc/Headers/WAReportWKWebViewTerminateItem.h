@@ -16,7 +16,6 @@
     NSString *_stackTopPagePath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stackTopPagePath; // @synthesize stackTopPagePath=_stackTopPagePath;
 @property(nonatomic) unsigned long long memoryWarningType; // @synthesize memoryWarningType=_memoryWarningType;
 @property(nonatomic) unsigned long long tereminateType; // @synthesize tereminateType=_tereminateType;

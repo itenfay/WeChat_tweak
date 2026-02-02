@@ -18,7 +18,6 @@
     NSString *_topic;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(copy, nonatomic) NSString *wxaGameExportId; // @synthesize wxaGameExportId=_wxaGameExportId;
 @property(copy, nonatomic) NSString *joinLiveTips; // @synthesize joinLiveTips=_joinLiveTips;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, UIImageView;
 
@@ -21,7 +22,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *warmArrowImageView; // @synthesize warmArrowImageView=_warmArrowImageView;
 @property(retain, nonatomic) UIImageView *memberArrowImageView; // @synthesize memberArrowImageView=_memberArrowImageView;
 @property(nonatomic) _Bool isAnchor; // @synthesize isAnchor=_isAnchor;
@@ -43,4 +43,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 isAnchor:(_Bool)arg2;
 
 @end
-

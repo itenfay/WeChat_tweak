@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIScrollView;
 
 @interface XMailBindWechatRegMailViewController
@@ -15,7 +17,6 @@
     CDUnknownBlockType _onClickUseOtherMailBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onClickUseOtherMailBlock; // @synthesize onClickUseOtherMailBlock=_onClickUseOtherMailBlock;
 @property(copy, nonatomic) CDUnknownBlockType onClickConfirmBlock; // @synthesize onClickConfirmBlock=_onClickConfirmBlock;
 @property(retain, nonatomic) NSString *headUrl; // @synthesize headUrl=_headUrl;
@@ -38,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

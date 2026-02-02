@@ -13,7 +13,6 @@
     NSString *_templateShortUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *templateShortUrl; // @synthesize templateShortUrl=_templateShortUrl;
 @property(copy, nonatomic) NSString *templateTopicId; // @synthesize templateTopicId=_templateTopicId;
 

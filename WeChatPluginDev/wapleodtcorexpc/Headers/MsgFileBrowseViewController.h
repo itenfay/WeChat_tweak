@@ -45,7 +45,6 @@
     ViewAppMsgController *_appMsgController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ViewAppMsgController *appMsgController; // @synthesize appMsgController=_appMsgController;
 @property(retain, nonatomic) UIButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;

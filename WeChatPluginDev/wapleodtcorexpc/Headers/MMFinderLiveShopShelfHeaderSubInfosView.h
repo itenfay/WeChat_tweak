@@ -12,7 +12,6 @@
     NSArray *_tuples;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (void)updateWithShopWindowInfo:(id)arg1;

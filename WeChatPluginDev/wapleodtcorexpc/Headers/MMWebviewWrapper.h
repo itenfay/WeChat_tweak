@@ -13,7 +13,6 @@
     WKWebView *_weakWebview;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(nonatomic) __weak WKWebView *weakWebview; // @synthesize weakWebview=_weakWebview;
 

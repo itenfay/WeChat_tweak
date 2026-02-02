@@ -27,7 +27,6 @@
     MMMetricsInfo *_lastReportedMetricsInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMetricsInfo *lastReportedMetricsInfo; // @synthesize lastReportedMetricsInfo=_lastReportedMetricsInfo;
 @property(nonatomic) double liveRenderViewTotalFrameTime; // @synthesize liveRenderViewTotalFrameTime=_liveRenderViewTotalFrameTime;
 @property(nonatomic) unsigned long long liveRenderViewFrameCnt; // @synthesize liveRenderViewFrameCnt=_liveRenderViewFrameCnt;

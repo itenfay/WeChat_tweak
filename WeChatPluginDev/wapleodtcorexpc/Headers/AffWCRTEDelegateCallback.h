@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onSayHelloComplete:(unsigned long long)arg1;
 - (id)initWithCpp:(const void *)arg1;
 

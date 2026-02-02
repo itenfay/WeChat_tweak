@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CXCallObserver, FinderCoCertRewardInfo, MMFinderLiveFansGroupInfo, MMFinderLiveLogic, MMFinderLiveReadStatMgr, MMFinderLiveReplayViewController, MMFinderLiveUIStateInfo, MMGameLiveLaunchModel, MMLiveCDNLivePreloader, MMLiveContainerLogic, MMLiveFeedStreamTask, MMLiveLimitedBusinessMgr, MMLiveNameVerifyViewController, MMLivePivotViewController, MMLivePolicyViewForAudienceController, MMLiveRewardGiftNewCustomizationMagicEngineMemoryManager, MMLiveRewardGiftNewCustomizationMagicRewardResManager, MMLiveStopStateDisplayViewController, MMLiveTask, MMLiveTempCacheInfo, MMLiveVerifyViewController, MMLiveViewController, NSArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, PIPPerformanceComputeParamConfig, UINavigationController, WCFinderCreateCoordinator, WCFinderCreateLiveViewModel, WCFinderLRUCache, WCFinderLivePreviewViewController, WCFinderTaskScheduler, _TtC6WeChat26FinderLiveStayTimeReporter;
 @protocol MMLiveConflictHandling;
 
@@ -90,7 +92,6 @@
 + (_Bool)resolveCommonExternalConflicts;
 + (_Bool)isNavigationContainStopStateDisplayController:(id)arg1;
 + (void)deleteStopStateDisplayControllerFromNavigationVC:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCDNLivePreloader *cdnLivePreloader; // @synthesize cdnLivePreloader=_cdnLivePreloader;
 @property(nonatomic) __weak MMLiveStopStateDisplayViewController *stopStateDisplayVC; // @synthesize stopStateDisplayVC=_stopStateDisplayVC;
 @property(retain, nonatomic) MMFinderLiveLogic *liveLogic; // @synthesize liveLogic=_liveLogic;
@@ -693,4 +694,3 @@
 @property(readonly) Class superclass;
 
 @end
-

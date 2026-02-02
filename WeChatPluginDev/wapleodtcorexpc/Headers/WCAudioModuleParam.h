@@ -13,7 +13,6 @@
     WCAudioModule *_audioModuleResignActive;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAudioModule *audioModuleResignActive; // @synthesize audioModuleResignActive=_audioModuleResignActive;
 @property(retain, nonatomic) WCAudioModule *audioModuleBecomeActive; // @synthesize audioModuleBecomeActive=_audioModuleBecomeActive;
 

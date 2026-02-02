@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, UICollectionView;
 
@@ -28,7 +29,6 @@
     NSMutableArray *_touchCellFrameArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *touchCellFrameArr; // @synthesize touchCellFrameArr=_touchCellFrameArr;
 @property(retain, nonatomic) NSMutableArray *lastAppendLongPubbleCellFrameArr; // @synthesize lastAppendLongPubbleCellFrameArr=_lastAppendLongPubbleCellFrameArr;
 @property(retain, nonatomic) NSMutableArray *lastAppendShortPubbleCellFrameArr; // @synthesize lastAppendShortPubbleCellFrameArr=_lastAppendShortPubbleCellFrameArr;
@@ -72,4 +72,3 @@
 - (id)initWithCellWidth:(double)arg1 inCollectionView:(id)arg2;
 
 @end
-

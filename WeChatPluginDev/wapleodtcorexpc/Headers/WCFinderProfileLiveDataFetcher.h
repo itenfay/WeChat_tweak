@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderStreamLoadingState;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _feedMapper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRequestingFristPage; // @synthesize isRequestingFristPage=_isRequestingFristPage;
 @property(nonatomic) _Bool isAuthor; // @synthesize isAuthor=_isAuthor;
 @property(copy, nonatomic) CDUnknownBlockType feedMapper; // @synthesize feedMapper=_feedMapper;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

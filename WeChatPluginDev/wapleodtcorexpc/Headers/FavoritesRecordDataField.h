@@ -13,7 +13,6 @@
 }
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgCreateTime; // @synthesize msgCreateTime=_msgCreateTime;
 @property(nonatomic) unsigned int msgLocalId; // @synthesize msgLocalId=_msgLocalId;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;

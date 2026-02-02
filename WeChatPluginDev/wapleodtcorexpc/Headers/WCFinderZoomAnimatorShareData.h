@@ -12,7 +12,6 @@
     NSMapTable *_animatorMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *animatorMap; // @synthesize animatorMap=_animatorMap;
 - (void)cleanAnimator:(id)arg1;
 - (void)registerAnimator:(id)arg1;

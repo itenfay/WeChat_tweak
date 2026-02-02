@@ -34,7 +34,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long feedType; // @synthesize feedType=_feedType;
 @property(nonatomic) unsigned long long feedIndex; // @synthesize feedIndex=_feedIndex;
 @property(nonatomic) unsigned long long tabType; // @synthesize tabType=_tabType;

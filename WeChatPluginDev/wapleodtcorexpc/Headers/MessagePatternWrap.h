@@ -19,7 +19,6 @@
 + (long long)getParserType:(id)arg1;
 + (_Bool)isBrandContactMsg:(id)arg1;
 + (id)GetPathOfPatternCacheWithPb:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsChatName; // @synthesize m_nsChatName;
 @property _Bool m_bChange; // @synthesize m_bChange;
 @property(retain, nonatomic) NSMutableArray *m_arrPatternList; // @synthesize m_arrPatternList;

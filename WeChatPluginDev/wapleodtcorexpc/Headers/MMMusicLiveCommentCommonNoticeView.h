@@ -14,7 +14,6 @@
     MMMuiscLiveCommentCommonContentView *_commentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMuiscLiveCommentCommonContentView *commentView; // @synthesize commentView=_commentView;
 @property(retain, nonatomic) UIView *commentBgView; // @synthesize commentBgView=_commentBgView;
 @property(retain, nonatomic) MMMusicLiveCommentBaseViewModel *viewModel; // @synthesize viewModel=_viewModel;

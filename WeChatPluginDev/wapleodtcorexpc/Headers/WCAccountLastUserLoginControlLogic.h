@@ -17,7 +17,6 @@
     VoicePrintVerifyLogic *_voicePrintVerifyLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoicePrintVerifyLogic *voicePrintVerifyLogic; // @synthesize voicePrintVerifyLogic=_voicePrintVerifyLogic;
 - (void)onSetPasswordOK;
 - (void)onSetPasswordBack;

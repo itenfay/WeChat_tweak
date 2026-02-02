@@ -13,7 +13,6 @@
 }
 
 + (double)defaultFooterHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *noMemAttendTipLabel; // @synthesize noMemAttendTipLabel=_noMemAttendTipLabel;
 - (void)layoutNoMemAttendTipLabel;
 - (void)layoutUI;

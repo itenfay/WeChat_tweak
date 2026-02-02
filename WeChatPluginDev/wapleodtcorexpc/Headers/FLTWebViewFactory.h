@@ -14,7 +14,6 @@
     FLTCookieManager *_cookieManager;
 }
 
-- (void).cxx_destruct;
 - (id)createWithFrame:(struct CGRect)arg1 viewIdentifier:(long long)arg2 arguments:(id)arg3;
 - (id)createArgsCodec;
 - (id)initWithMessenger:(id)arg1 cookieManager:(id)arg2;

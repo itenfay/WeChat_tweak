@@ -32,7 +32,6 @@
     UIAccessibilityElement *_infoButtonAccssbilityElement;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIAccessibilityElement *infoButtonAccssbilityElement; // @synthesize infoButtonAccssbilityElement=_infoButtonAccssbilityElement;
 @property(retain, nonatomic) UIAccessibilityElement *selfAccssbilityElement; // @synthesize selfAccssbilityElement=_selfAccssbilityElement;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;

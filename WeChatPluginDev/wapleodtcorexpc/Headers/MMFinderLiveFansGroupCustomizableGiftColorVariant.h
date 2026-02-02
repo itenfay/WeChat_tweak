@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveGift, MMLiveResourceFetcherFanoutFlowAction, MMLiveStorageCleanupPinningToken, NSMutableArray, NSString, UIColor;
 
@@ -21,7 +22,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(retain, nonatomic) MMLiveResourceFetcherFanoutFlowAction *resourceFetcher; // @synthesize resourceFetcher=_resourceFetcher;
 @property(retain, nonatomic) NSMutableArray *pendingCallbacks; // @synthesize pendingCallbacks=_pendingCallbacks;
@@ -39,4 +39,3 @@
 - (id)initWithFinderLiveGift:(id)arg1;
 
 @end
-

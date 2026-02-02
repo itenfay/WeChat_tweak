@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_dicProfileRecommen;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicProfileRecommen; // @synthesize dicProfileRecommen=_dicProfileRecommen;
 - (id)getPBPropertyTable;
 

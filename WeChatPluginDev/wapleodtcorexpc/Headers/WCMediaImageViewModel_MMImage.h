@@ -10,7 +10,6 @@
     MMImage *_mmImage;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMImage *mmImage; // @synthesize mmImage=_mmImage;
 - (void)fillExtraDataInImageMaterial:(id)arg1;
 - (_Bool)isLivePhoto;

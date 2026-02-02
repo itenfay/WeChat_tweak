@@ -14,7 +14,6 @@
     unsigned long long _clickTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long clickTimeStamp; // @synthesize clickTimeStamp=_clickTimeStamp;
 @property(nonatomic) unsigned long long exposeTimeStamp; // @synthesize exposeTimeStamp=_exposeTimeStamp;
 @property(copy, nonatomic) NSString *feedTid; // @synthesize feedTid=_feedTid;

@@ -12,7 +12,6 @@
     NSString *_TraceId_22;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int InsertRet_23; // @synthesize InsertRet_23=_InsertRet_23;
 @property(copy, nonatomic) NSString *TraceId_22; // @synthesize TraceId_22=_TraceId_22;
 @property(copy, nonatomic) NSString *AId_21; // @synthesize AId_21=_AId_21;

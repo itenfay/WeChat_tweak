@@ -19,7 +19,6 @@
 
 + (double)heightForItemContentViewWithViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *playIconView; // @synthesize playIconView=_playIconView;

@@ -11,7 +11,6 @@
 }
 
 + (id)createNoticeAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;
 - (id)promoteKey;
 

@@ -16,7 +16,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *blendMode; // @synthesize blendMode=_blendMode;
 @property(retain, nonatomic) NSNumber *shimmerType; // @synthesize shimmerType=_shimmerType;
 @property(retain, nonatomic) NSString *shimmerPath; // @synthesize shimmerPath=_shimmerPath;

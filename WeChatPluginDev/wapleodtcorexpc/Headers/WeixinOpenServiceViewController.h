@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long userType; // @synthesize userType=_userType;
 @property(retain, nonatomic) UIView *confirmView; // @synthesize confirmView=_confirmView;
 @property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;

@@ -14,7 +14,6 @@
     NSString *_role;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool roleChanged; // @synthesize roleChanged=_roleChanged;
 @property(retain, nonatomic) NSString *role; // @synthesize role=_role;
 @property(nonatomic) int sentenceEndMs; // @synthesize sentenceEndMs=_sentenceEndMs;

@@ -20,7 +20,6 @@
     MJTemplateListParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTemplateListParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) WCFinderVideoTemplateSelectBasicViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;

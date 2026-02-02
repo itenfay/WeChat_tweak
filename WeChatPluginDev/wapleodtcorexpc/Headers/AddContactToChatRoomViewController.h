@@ -24,7 +24,6 @@
     NSSet *_trackUsernameSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *m_showTranslateSectionIndex; // @synthesize m_showTranslateSectionIndex;
 @property(nonatomic) _Bool m_bShowTranslateSectionAtFirst; // @synthesize m_bShowTranslateSectionAtFirst;
 @property(retain, nonatomic) CreateChatLogic *m_createChatLogic; // @synthesize m_createChatLogic;

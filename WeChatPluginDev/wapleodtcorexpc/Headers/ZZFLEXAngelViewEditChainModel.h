@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 
@@ -13,7 +14,6 @@
     NSArray *_listData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *listData; // @synthesize listData=_listData;
 @property(nonatomic) long long editType; // @synthesize editType=_editType;
 - (id)p_executeWithSectionModel:(id)arg1 viewModel:(id)arg2;
@@ -24,4 +24,3 @@
 - (id)initWithType:(long long)arg1 andListData:(id)arg2;
 
 @end
-

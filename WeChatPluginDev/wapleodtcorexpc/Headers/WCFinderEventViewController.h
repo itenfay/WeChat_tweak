@@ -59,7 +59,6 @@
     NSData *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int preSelectFilterType; // @synthesize preSelectFilterType=_preSelectFilterType;
 @property(retain, nonatomic) NSData *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;

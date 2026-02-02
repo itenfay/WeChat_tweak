@@ -28,7 +28,6 @@
     NSString *_enterImmerseType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *enterImmerseType; // @synthesize enterImmerseType=_enterImmerseType;
 @property(retain, nonatomic) NSString *commentScene; // @synthesize commentScene=_commentScene;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;

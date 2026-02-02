@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIButton, UIImageView, UILabel, UIView;
 
 @interface MMLiveLotteryErrTipBaseView
@@ -16,7 +18,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -34,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

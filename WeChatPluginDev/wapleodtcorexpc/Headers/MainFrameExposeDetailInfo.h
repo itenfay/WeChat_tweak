@@ -16,7 +16,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long msgTime; // @synthesize msgTime=_msgTime;
 @property(nonatomic) long long mute; // @synthesize mute=_mute;
 @property(nonatomic) long long unreadCount; // @synthesize unreadCount=_unreadCount;

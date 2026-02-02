@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FormatTextLogic : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)transferFromText:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
 
 @end
-

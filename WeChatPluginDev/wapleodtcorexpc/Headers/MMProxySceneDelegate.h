@@ -12,7 +12,6 @@
     NSObject *_target;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *target; // @synthesize target=_target;
 @property(readonly, copy) NSString *debugDescription;
 // Preceding property had unknown attributes: ?

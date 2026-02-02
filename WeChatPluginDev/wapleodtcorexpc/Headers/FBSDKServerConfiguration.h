@@ -37,7 +37,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSArray *eventBindings; // @synthesize eventBindings=_eventBindings;
 @property(readonly, copy, nonatomic) NSString *updateMessage; // @synthesize updateMessage=_updateMessage;

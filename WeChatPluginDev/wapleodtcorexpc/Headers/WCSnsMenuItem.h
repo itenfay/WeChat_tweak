@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_alertWording;
 + (void)PBArrayAdd_menuActionType;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int alertActionType; // @synthesize alertActionType=_alertActionType;
 @property(retain, nonatomic) NSString *alertWording; // @synthesize alertWording=_alertWording;
 @property(nonatomic) unsigned int menuActionType; // @synthesize menuActionType=_menuActionType;

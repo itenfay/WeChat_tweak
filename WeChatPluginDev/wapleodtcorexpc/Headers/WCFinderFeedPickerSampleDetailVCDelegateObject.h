@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController;
 
@@ -14,7 +15,6 @@
 
 + (void)downloadCoverOrThumbImageWithMediaWrap:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)delegateObjWithHostVC:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *hostVC; // @synthesize hostVC=_hostVC;
 - (void)finderFeedPickerPreviewViewController:(id)arg1 didClickDoneWithDataItem:(id)arg2;
 - (void)_releaseSelf;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

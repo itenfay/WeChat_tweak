@@ -13,7 +13,6 @@
     QDataCacheHandDrawMap *_dataCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QDataCacheHandDrawMap *dataCache; // @synthesize dataCache=_dataCache;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 - (void)resetData;

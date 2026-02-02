@@ -27,7 +27,6 @@
     UILabel *_timeoutCountingLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *timeoutCountingLabel; // @synthesize timeoutCountingLabel=_timeoutCountingLabel;
 @property(retain, nonatomic) UILabel *warningMessageLabel; // @synthesize warningMessageLabel=_warningMessageLabel;
 @property(retain, nonatomic) UIImageView *recordWarningView; // @synthesize recordWarningView=_recordWarningView;

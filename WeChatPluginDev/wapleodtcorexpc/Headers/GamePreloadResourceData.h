@@ -13,7 +13,6 @@
     long long _randomTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long randomTime; // @synthesize randomTime=_randomTime;
 @property(retain, nonatomic) NSString *resourceUrl; // @synthesize resourceUrl=_resourceUrl;
 

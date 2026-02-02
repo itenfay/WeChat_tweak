@@ -11,7 +11,6 @@
     NSString *_cacheKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(nonatomic) _Bool shouldUseDynamicPage; // @synthesize shouldUseDynamicPage=_shouldUseDynamicPage;
 - (id)toXML;

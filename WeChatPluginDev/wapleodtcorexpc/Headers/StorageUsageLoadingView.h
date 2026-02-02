@@ -13,7 +13,6 @@
     MMUILabel *m_subTitleLabel;
 }
 
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layout;
 - (void)layoutSubviews;

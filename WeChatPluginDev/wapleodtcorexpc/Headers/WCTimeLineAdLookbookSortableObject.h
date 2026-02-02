@@ -13,7 +13,6 @@
     UIView *_view;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) double area; // @synthesize area=_area;
 - (long long)compare:(id)arg1;

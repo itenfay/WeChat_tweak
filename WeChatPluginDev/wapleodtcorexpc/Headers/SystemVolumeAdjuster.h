@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MPVolumeView;
 
@@ -14,7 +15,6 @@
     MPVolumeView *_volumeView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float setVolume; // @synthesize setVolume=_setVolume;
 @property(nonatomic) float originalVolume; // @synthesize originalVolume=_originalVolume;
 @property(retain, nonatomic) MPVolumeView *volumeView; // @synthesize volumeView=_volumeView;
@@ -26,4 +26,3 @@
 - (id)init;
 
 @end
-

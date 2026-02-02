@@ -11,7 +11,6 @@
     MMKCountPickerViewOnSelectCallback *_callback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMKCountPickerViewOnSelectCallback *callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) WCPaySelectCountItem *countItem; // @synthesize countItem=_countItem;
 - (void)WCBaseInfoItemEndEdit:(id)arg1;

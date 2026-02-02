@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_bizUsrName;
 + (void)PBArrayAdd_bizUin;
 + (void)PBArrayAdd_bizHeadImgUrl;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bizUin; // @synthesize bizUin=_bizUin;
 @property(copy, nonatomic) NSString *bizUsrName; // @synthesize bizUsrName=_bizUsrName;
 @property(copy, nonatomic) NSString *bizHeadImgUrl; // @synthesize bizHeadImgUrl=_bizHeadImgUrl;

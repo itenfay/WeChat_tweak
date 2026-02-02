@@ -14,7 +14,6 @@
     NSMutableDictionary *_reportDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reportDict; // @synthesize reportDict=_reportDict;
 @property(retain, nonatomic) NSString *jumpInfoToGroupbuyByPass; // @synthesize jumpInfoToGroupbuyByPass=_jumpInfoToGroupbuyByPass;
 @property(copy, nonatomic) NSString *poiId; // @synthesize poiId=_poiId;

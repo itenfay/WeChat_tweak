@@ -15,7 +15,6 @@
     CAGradientLayer *_maskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) MMUIButton *sureButton; // @synthesize sureButton=_sureButton;
 @property(retain, nonatomic) WCCardPkgBackTableView *tableView; // @synthesize tableView=_tableView;

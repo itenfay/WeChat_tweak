@@ -13,7 +13,6 @@
     NSString *openID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *openID; // @synthesize openID;
 @property(nonatomic) int type; // @synthesize type;
 - (id)init;

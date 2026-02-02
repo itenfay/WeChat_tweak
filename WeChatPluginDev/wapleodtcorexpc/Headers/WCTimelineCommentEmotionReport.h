@@ -14,7 +14,6 @@
     NSMutableArray *_clickEmojiIdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clickEmojiIdList; // @synthesize clickEmojiIdList=_clickEmojiIdList;
 @property(retain, nonatomic) NSMutableArray *clickEmojiIconIdList; // @synthesize clickEmojiIconIdList=_clickEmojiIconIdList;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

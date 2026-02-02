@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionReusableView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCFinderTabSwitchView;
 @protocol WCFinderSearchTabCellHeaderDelegate;
@@ -16,7 +17,6 @@
 }
 
 + (double)displayHeightForTab;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTabSwitchView *switchView; // @synthesize switchView=_switchView;
 @property(retain, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
 @property(nonatomic) __weak id <WCFinderSearchTabCellHeaderDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

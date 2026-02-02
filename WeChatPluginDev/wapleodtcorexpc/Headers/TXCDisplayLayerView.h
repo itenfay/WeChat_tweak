@@ -17,7 +17,6 @@
     double _boundsOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double boundsOffset; // @synthesize boundsOffset=_boundsOffset;
 @property(copy) NSString *currentVideoGravity; // @synthesize currentVideoGravity=_currentVideoGravity;
 @property(nonatomic) _Bool firstFrameRendered; // @synthesize firstFrameRendered=_firstFrameRendered;

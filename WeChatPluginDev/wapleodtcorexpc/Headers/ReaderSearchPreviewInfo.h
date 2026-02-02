@@ -16,7 +16,6 @@
     NSArray *_arrKeyword;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrKeyword; // @synthesize arrKeyword=_arrKeyword;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(nonatomic) double widthMargin; // @synthesize widthMargin=_widthMargin;

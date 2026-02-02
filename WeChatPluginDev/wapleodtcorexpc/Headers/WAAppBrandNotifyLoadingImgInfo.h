@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_loadingImgProgressbarColor;
 + (void)PBArrayAdd_loadingImgUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *loadingImgProgressbarColor; // @synthesize loadingImgProgressbarColor=_loadingImgProgressbarColor;
 @property(retain, nonatomic) NSString *loadingImgUrl; // @synthesize loadingImgUrl=_loadingImgUrl;
 @property(readonly, copy) NSString *description;

@@ -16,7 +16,6 @@
     UIView *_onPressedView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *onPressedView; // @synthesize onPressedView=_onPressedView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *titleLineView; // @synthesize titleLineView=_titleLineView;

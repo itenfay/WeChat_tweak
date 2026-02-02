@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, UIView;
 @protocol MMMusicMVSwitchNewAnimatorDelegate;
@@ -28,7 +29,6 @@
     id <MMMusicMVSwitchNewAnimatorDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicMVSwitchNewAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)sideTypeWithPercent:(double)arg1;
 - (double)cubeWidth;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

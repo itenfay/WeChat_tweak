@@ -15,7 +15,6 @@
     id <WCFinderCommentSearchMentionHeaderViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderCommentSearchMentionHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

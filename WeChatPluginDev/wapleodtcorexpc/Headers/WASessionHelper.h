@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WASessionHelper : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)enterTempSessionWithInfo:(id)arg1 topViewController:(id)arg2 callback:(CDUnknownBlockType)arg3;
 
 @end
-

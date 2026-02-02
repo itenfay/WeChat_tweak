@@ -12,7 +12,6 @@
     NSDictionary *_dicSetting;
 }
 
-- (void).cxx_destruct;
 - (id)getCurLangWordingFromDic:(id)arg1;
 - (id)wxaCommUseSetting;
 - (id)tradeGuaranteeMenuSetting;

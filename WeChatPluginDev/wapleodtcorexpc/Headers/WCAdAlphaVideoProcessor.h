@@ -16,7 +16,6 @@
     CIFilter *_alphaVideoFilter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CIFilter *alphaVideoFilter; // @synthesize alphaVideoFilter=_alphaVideoFilter;
 @property(nonatomic) int videoCompositeType; // @synthesize videoCompositeType=_videoCompositeType;
 @property(retain, nonatomic) CIContext *context; // @synthesize context=_context;

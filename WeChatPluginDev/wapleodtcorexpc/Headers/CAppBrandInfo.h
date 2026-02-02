@@ -106,7 +106,6 @@
 }
 
 + (id)appBrandInfoWithExternalInfoDicionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int systemAuthFrequencyLimitFlag; // @synthesize systemAuthFrequencyLimitFlag=_systemAuthFrequencyLimitFlag;
 @property(nonatomic) unsigned int systemAuthBizScene; // @synthesize systemAuthBizScene=_systemAuthBizScene;
 @property(nonatomic) unsigned int flagshipFlag; // @synthesize flagshipFlag=_flagshipFlag;

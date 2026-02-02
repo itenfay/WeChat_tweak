@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, RichTextView, UIImageView;
 
 @interface WCFinderPostTopBaseView
@@ -16,7 +18,6 @@
     CDUnknownBlockType _closeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeBlock; // @synthesize closeBlock=_closeBlock;
 @property(copy, nonatomic) CDUnknownBlockType sureBlock; // @synthesize sureBlock=_sureBlock;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
@@ -31,4 +32,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 iconImage:(id)arg2 content:(id)arg3 sureBlock:(CDUnknownBlockType)arg4 closeBlock:(CDUnknownBlockType)arg5;
 
 @end
-

@@ -15,7 +15,6 @@
     CDStruct_e83c9415 _timeRangeInAsset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLooping; // @synthesize isLooping=_isLooping;
 @property(readonly, nonatomic) double volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRangeInAsset; // @synthesize timeRangeInAsset=_timeRangeInAsset;

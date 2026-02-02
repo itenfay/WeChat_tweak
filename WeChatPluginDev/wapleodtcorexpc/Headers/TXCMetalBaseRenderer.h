@@ -13,7 +13,6 @@
     TXCMetalContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCMetalContext *context; // @synthesize context=_context;
 - (void)setDisplayConfig:(id)arg1;
 - (unsigned long long)rendererType;

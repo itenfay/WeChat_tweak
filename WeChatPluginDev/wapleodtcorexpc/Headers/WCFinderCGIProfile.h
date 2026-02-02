@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -26,7 +27,6 @@
 
 + (id)fromResponse:(id)arg1;
 + (id)profileWithCGIId:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cbkEndMS; // @synthesize cbkEndMS=_cbkEndMS;
 @property(nonatomic) unsigned long long cbkBeginMS; // @synthesize cbkBeginMS=_cbkBeginMS;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
@@ -44,4 +44,3 @@
 - (id)toJson:(CDUnknownBlockType)arg1;
 
 @end
-

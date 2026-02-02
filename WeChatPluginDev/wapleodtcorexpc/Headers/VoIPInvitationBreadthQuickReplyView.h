@@ -23,7 +23,6 @@
     XImageViewRenderer *_renderer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) XImageViewRenderer *renderer; // @synthesize renderer=_renderer;
 @property(retain, nonatomic) UIImageView *jumpIconImageView; // @synthesize jumpIconImageView=_jumpIconImageView;
 @property(retain, nonatomic) UILabel *actionLabel; // @synthesize actionLabel=_actionLabel;

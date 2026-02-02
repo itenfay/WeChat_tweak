@@ -14,7 +14,6 @@
     struct CGPoint _m_pTouchLocation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *customLongPressGesture; // @synthesize customLongPressGesture=_customLongPressGesture;
 @property(nonatomic) struct CGPoint m_pTouchLocation; // @synthesize m_pTouchLocation=_m_pTouchLocation;
 @property(nonatomic) __weak id <MMTransparentButtonDelegate> m_delegate; // @synthesize m_delegate=_delegate;

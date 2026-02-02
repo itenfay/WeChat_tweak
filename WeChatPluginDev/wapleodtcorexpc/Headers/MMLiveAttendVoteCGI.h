@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, NSData, NSMutableArray, NSString;
 
 @interface MMLiveAttendVoteCGI
@@ -17,7 +19,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSString *votingId; // @synthesize votingId=_votingId;
@@ -32,4 +33,3 @@
 - (id)initWithFinderTaskId:(id)arg1 objectId:(unsigned long long)arg2 nonceId:(id)arg3 choiceIds:(id)arg4 cookies:(id)arg5 votingId:(id)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

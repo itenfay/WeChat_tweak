@@ -12,7 +12,6 @@
     MJTileReusableAttributes *_reusableAttributes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTileReusableAttributes *reusableAttributes; // @synthesize reusableAttributes=_reusableAttributes;
 - (void)prepareForReuse;
 

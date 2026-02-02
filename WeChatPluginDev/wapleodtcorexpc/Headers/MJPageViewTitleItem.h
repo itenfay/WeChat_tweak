@@ -16,7 +16,6 @@
 }
 
 + (id)itemWith:(id)arg1 fontSize:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *unselectedObject; // @synthesize unselectedObject=_unselectedObject;
 @property(retain, nonatomic) NSObject *selectedObject; // @synthesize selectedObject=_selectedObject;
 @property(retain, nonatomic) MMUIImageView *imageView; // @synthesize imageView=_imageView;

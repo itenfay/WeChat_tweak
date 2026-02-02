@@ -13,7 +13,6 @@
     MMUILabel *_hintLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned char status; // @synthesize status=_status;
 @property(retain, nonatomic) MMUILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 @property(retain, nonatomic) SightIconView *uploadingView; // @synthesize uploadingView=_uploadingView;

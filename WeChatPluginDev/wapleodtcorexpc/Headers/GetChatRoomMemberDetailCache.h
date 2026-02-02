@@ -15,7 +15,6 @@
     NSString *_m_nsUserName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiLastGetTime; // @synthesize m_uiLastGetTime=_m_uiLastGetTime;
 @property(nonatomic) unsigned int m_uiChatRoomServerVersion; // @synthesize m_uiChatRoomServerVersion=_m_uiChatRoomServerVersion;
 @property(nonatomic) unsigned int m_uiChatRoomClientVersion; // @synthesize m_uiChatRoomClientVersion=_m_uiChatRoomClientVersion;

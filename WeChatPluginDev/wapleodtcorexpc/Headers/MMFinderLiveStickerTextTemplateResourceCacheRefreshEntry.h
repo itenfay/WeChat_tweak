@@ -14,7 +14,6 @@
     unsigned long long _lastRefreshUnixEpochTimeInMilliseconds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastRefreshUnixEpochTimeInMilliseconds; // @synthesize lastRefreshUnixEpochTimeInMilliseconds=_lastRefreshUnixEpochTimeInMilliseconds;
 @property(retain, nonatomic) NSString *extractedResourcePath; // @synthesize extractedResourcePath=_extractedResourcePath;
 @property(retain, nonatomic) NSString *resourceMd5Hash; // @synthesize resourceMd5Hash=_resourceMd5Hash;

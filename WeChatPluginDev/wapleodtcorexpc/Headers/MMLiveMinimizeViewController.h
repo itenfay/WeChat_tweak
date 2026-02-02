@@ -13,7 +13,6 @@
     MMLiveMinimizeBackgroundMoveView *_backgroundMoveView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveMinimizeBackgroundMoveView *backgroundMoveView; // @synthesize backgroundMoveView=_backgroundMoveView;
 @property(nonatomic) __weak id <MMLiveMinimizeViewControllerDelegate> liveMinimizeDelegate; // @synthesize liveMinimizeDelegate=_liveMinimizeDelegate;
 @property(retain, nonatomic) UIView *liveView; // @synthesize liveView=_liveView;

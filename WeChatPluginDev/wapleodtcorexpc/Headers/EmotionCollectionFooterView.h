@@ -14,7 +14,6 @@
     id <EmotionCollectionFooterViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmotionCollectionFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MMRefreshTableFooterDidTriggerRefresh:(id)arg1;
 - (void)onStateOfNoData:(id)arg1;

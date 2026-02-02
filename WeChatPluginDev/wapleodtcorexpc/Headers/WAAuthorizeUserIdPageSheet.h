@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UserIdAuthorizePageInfo, WAUserIdPageSheetViewModel, WXAPhoneInfo;
 
 @interface WAAuthorizeUserIdPageSheet
@@ -13,7 +15,6 @@
     WAUserIdPageSheetViewModel *_uidViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAUserIdPageSheetViewModel *uidViewModel; // @synthesize uidViewModel=_uidViewModel;
 @property(copy, nonatomic) CDUnknownBlockType managerPhoneNumberAction; // @synthesize managerPhoneNumberAction=_managerPhoneNumberAction;
 @property(retain, nonatomic) WXAPhoneInfo *selectedItem; // @synthesize selectedItem=_selectedItem;
@@ -23,4 +24,3 @@
 - (id)initWithPageInfo:(id)arg1;
 
 @end
-

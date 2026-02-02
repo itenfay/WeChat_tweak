@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderActivateLiveMicRequest_MicInfo, NSData, NSMutableArray, NSString, WCFinderDataItem;
 
 @interface WCFinderActivateLiveMicCGI
@@ -22,7 +24,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
@@ -43,4 +44,3 @@
 - (id)initForAudienceWithDataItem:(id)arg1 micType:(long long)arg2 liveMicId:(id)arg3 liveCookies:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

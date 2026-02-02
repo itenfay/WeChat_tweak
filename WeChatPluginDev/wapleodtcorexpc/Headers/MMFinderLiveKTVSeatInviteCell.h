@@ -13,7 +13,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVSeatInviteView *inviteView; // @synthesize inviteView=_inviteView;
 - (void)layoutInviteView;
 - (void)layoutUI;

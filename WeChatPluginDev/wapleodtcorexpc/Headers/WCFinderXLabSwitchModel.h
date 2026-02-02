@@ -48,7 +48,6 @@
     NSMutableDictionary *_cgiProfileReportCGINumbers;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidReport; // @synthesize forbidReport=_forbidReport;
 @property(retain, nonatomic) NSMutableDictionary *cgiProfileReportCGINumbers; // @synthesize cgiProfileReportCGINumbers=_cgiProfileReportCGINumbers;
 @property(nonatomic) long long originalRecommendExposeCountLimit; // @synthesize originalRecommendExposeCountLimit=_originalRecommendExposeCountLimit;

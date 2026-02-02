@@ -13,7 +13,6 @@
     TextStateJumpElement *_jumpElement;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak TextStateJumpElement *jumpElement; // @synthesize jumpElement=_jumpElement;
 @property(nonatomic) __weak TextStateModel *textState; // @synthesize textState=_textState;
 

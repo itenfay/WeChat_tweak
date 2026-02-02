@@ -22,7 +22,6 @@
     UIColor *_topicColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool donotNeedTextViewContentTopBottomInset; // @synthesize donotNeedTextViewContentTopBottomInset=_donotNeedTextViewContentTopBottomInset;
 @property(nonatomic) _Bool useDefaultReturnKey; // @synthesize useDefaultReturnKey=_useDefaultReturnKey;
 @property(nonatomic) _Bool enablePlaceholderPinText; // @synthesize enablePlaceholderPinText=_enablePlaceholderPinText;

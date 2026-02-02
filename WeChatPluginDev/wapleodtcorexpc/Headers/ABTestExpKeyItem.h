@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_nsExpId;
 + (void)PBArrayAdd_nsValue;
 + (void)PBArrayAdd_nsArgKey;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiMonitorHitKey; // @synthesize uiMonitorHitKey=_uiMonitorHitKey;
 @property(nonatomic) unsigned int uiMonitorHitId; // @synthesize uiMonitorHitId=_uiMonitorHitId;
 @property(nonatomic) _Bool bNoReport; // @synthesize bNoReport=_bNoReport;

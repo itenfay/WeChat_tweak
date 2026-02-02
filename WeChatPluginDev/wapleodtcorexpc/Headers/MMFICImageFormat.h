@@ -20,7 +20,6 @@
 }
 
 + (id)formatWithName:(id)arg1 family:(id)arg2 imageSize:(struct CGSize)arg3 maxImgCount:(unsigned int)arg4 version:(unsigned int)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(nonatomic) unsigned int pageSize; // @synthesize pageSize=_pageSize;
 @property(nonatomic) unsigned int cpuzSize; // @synthesize cpuzSize=_cpuzSize;

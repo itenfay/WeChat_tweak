@@ -10,7 +10,6 @@
     NSString *_dataText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dataText; // @synthesize dataText=_dataText;
 
 @end

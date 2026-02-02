@@ -25,7 +25,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool remoteMode; // @synthesize remoteMode=_remoteMode;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int silentOpenType; // @synthesize silentOpenType=_silentOpenType;

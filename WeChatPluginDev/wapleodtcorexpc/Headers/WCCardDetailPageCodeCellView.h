@@ -24,7 +24,6 @@
 }
 
 + (double)heightForCardSource:(id)arg1 viewWidth:(double)arg2 offlineCode:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int offlineCodeStatus; // @synthesize offlineCodeStatus=_offlineCodeStatus;
 @property(retain, nonatomic) NSString *dynamicOfflineCode; // @synthesize dynamicOfflineCode=_dynamicOfflineCode;
 @property(retain, nonatomic) NSString *dynamicCode; // @synthesize dynamicCode=_dynamicCode;

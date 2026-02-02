@@ -19,7 +19,6 @@
     NSArray *_domains;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *domains; // @synthesize domains=_domains;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(nonatomic) unsigned long long mainMenuActionType; // @synthesize mainMenuActionType=_mainMenuActionType;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLiveCommonUtil : NSObject
 {
@@ -291,4 +292,3 @@
 + (void)initialize;
 
 @end
-

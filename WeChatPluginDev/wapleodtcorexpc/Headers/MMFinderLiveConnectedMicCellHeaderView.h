@@ -17,7 +17,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeparatorLine; // @synthesize bottomSeparatorLine=_bottomSeparatorLine;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMFinderLiveConnectedMicCellHeaderViewAction *action; // @synthesize action=_action;

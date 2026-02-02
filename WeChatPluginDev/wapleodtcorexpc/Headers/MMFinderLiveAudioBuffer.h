@@ -14,7 +14,6 @@
     NSMutableData *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long read; // @synthesize read=_read;
 @property(nonatomic) unsigned long long clearLength; // @synthesize clearLength=_clearLength;

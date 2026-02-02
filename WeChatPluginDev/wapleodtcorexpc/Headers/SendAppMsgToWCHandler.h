@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AppCommunicateData, MMTipsViewController, NSString, OpenApiParameter, UINavigationController;
 
 @interface SendAppMsgToWCHandler
@@ -15,7 +17,6 @@
     UINavigationController *_m_navigationController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(nonatomic) _Bool canReturnRightShareResult; // @synthesize canReturnRightShareResult=_canReturnRightShareResult;
 @property(retain, nonatomic) UINavigationController *m_navigationController; // @synthesize m_navigationController=_m_navigationController;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

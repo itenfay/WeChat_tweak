@@ -16,7 +16,6 @@
     UIViewController *_showVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *showVC; // @synthesize showVC=_showVC;
 @property(retain, nonatomic) WAMapAppNavigateItem *navigateTo; // @synthesize navigateTo=_navigateTo;
 @property(retain, nonatomic) WAMapAppNavigateItem *navigateFrom; // @synthesize navigateFrom=_navigateFrom;

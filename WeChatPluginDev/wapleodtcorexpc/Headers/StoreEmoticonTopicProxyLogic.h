@@ -18,7 +18,6 @@
     StoreEmotionGetEmotionListCgi *_getEmotionListCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmotionGetEmotionListCgi *getEmotionListCgi; // @synthesize getEmotionListCgi=_getEmotionListCgi;
 @property(retain, nonatomic) StoreEmotionAllListReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(nonatomic) unsigned long long sessionId; // @synthesize sessionId=_sessionId;

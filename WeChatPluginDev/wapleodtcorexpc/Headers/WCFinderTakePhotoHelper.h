@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)show:(id)arg1 toVC:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 @property(nonatomic) __weak UIViewController *vc; // @synthesize vc=_vc;
 - (void)onShortVideoTakenFailedToSaveToLibrary:(id)arg1;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

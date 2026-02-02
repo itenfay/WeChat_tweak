@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetImageGenerator, NSMutableArray, NSMutableDictionary;
 @protocol OS_dispatch_queue;
@@ -18,7 +19,6 @@
     NSMutableArray *_handleList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool generating; // @synthesize generating=_generating;
 @property(retain, nonatomic) NSMutableArray *handleList; // @synthesize handleList=_handleList;
 @property(retain, nonatomic) NSMutableArray *requestedTimes; // @synthesize requestedTimes=_requestedTimes;
@@ -33,4 +33,3 @@
 - (id)initWithSource:(id)arg1 imageSize:(struct CGSize)arg2;
 
 @end
-

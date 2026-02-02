@@ -15,7 +15,6 @@
     UILabel *_finderLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *finderLabel; // @synthesize finderLabel=_finderLabel;
 @property(retain, nonatomic) UIImageView *tinyIcon; // @synthesize tinyIcon=_tinyIcon;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;

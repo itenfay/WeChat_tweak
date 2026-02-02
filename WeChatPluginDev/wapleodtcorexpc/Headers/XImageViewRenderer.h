@@ -47,7 +47,6 @@
 
 + (_Bool)isSupportHDR;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAEDRMetadata *EDRMetadata; // @synthesize EDRMetadata=_EDRMetadata;
 @property(nonatomic) _Bool preferHdr; // @synthesize preferHdr=_preferHdr;
 @property(nonatomic) _Bool isSupportHDR; // @synthesize isSupportHDR=_isSupportHDR;

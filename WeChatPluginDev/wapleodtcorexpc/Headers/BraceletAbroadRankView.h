@@ -15,7 +15,6 @@
     id <BraceletAbroadRankViewDelegate><NSObject> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <BraceletAbroadRankViewDelegate><NSObject> delegate; // @synthesize delegate=_delegate;
 - (void)onClick;
 - (void)initView;

@@ -14,7 +14,6 @@
     id _userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) MMEasterEgg *egg; // @synthesize egg=_egg;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;

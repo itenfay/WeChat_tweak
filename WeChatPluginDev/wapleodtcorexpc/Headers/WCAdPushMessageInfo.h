@@ -13,7 +13,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *messageList; // @synthesize messageList=_messageList;
 
 @end

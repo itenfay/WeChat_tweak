@@ -31,7 +31,6 @@
     long long _midFileType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long midFileType; // @synthesize midFileType=_midFileType;
 @property(nonatomic) unsigned long long uploadTotalSize; // @synthesize uploadTotalSize=_uploadTotalSize;
 @property(retain, nonatomic) MsgDataDownloadLogic *msgDownloadLogic; // @synthesize msgDownloadLogic=_msgDownloadLogic;

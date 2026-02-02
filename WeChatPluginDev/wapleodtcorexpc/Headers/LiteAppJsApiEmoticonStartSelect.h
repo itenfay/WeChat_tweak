@@ -11,7 +11,6 @@
     UIViewController *_controller;
 }
 
-- (void).cxx_destruct;
 - (void)onSearchEmoticonViewControllerSendEmoticon:(id)arg1;
 - (void)onEmoticonSearchIconClicked;
 - (void)onSendButtonClicked;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, EditImageAttr, EditImageIntialView, EditVideoAttr, EditVideoBGMPlayer, EditVideoLogicItem, MJCamChangeTemplateParams, MJCameraTemplateReportObject, MMCameraTemplatePanel, MMCameraTopBarView, MMCameraTouchEventView, MMCircularProgressView, MMImageCropperViewController, MMLoadingView, MMShortVideoParamModel, MMSightCameraOptionManager, MMSightRecordView, MMUIButton, MMUIImageView, MMUILabel, NSArray, NSMutableArray, NSString, OMCGeographicInfo, OMJRecordingResultTraits, RecommendedMusicInfo, ShortVideoToolbarPreviewView, SightBeautyOperationPanel, SightCameraPreviewView, SightShootingModeSwitchView, UIButton, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView, WCFinderEditImageMusicView, WCFinderMusicSelectView, WCFinderTemplateMusicSelectEntranceView, WCShortVideoToolBarInitParams, WCUIAlertView;
 @protocol ShortVideoBarDelegate;
 
@@ -120,7 +122,6 @@
 }
 
 + (id)postEnterSceneKey;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UILongPressGestureRecognizer *voiceOverLongPressInRecordBtn; // @synthesize voiceOverLongPressInRecordBtn=_voiceOverLongPressInRecordBtn;
 @property(nonatomic) __weak UITapGestureRecognizer *voiceOverTapInRecordBtn; // @synthesize voiceOverTapInRecordBtn=_voiceOverTapInRecordBtn;
 @property(nonatomic) __weak UIView *toolbarRightBtn; // @synthesize toolbarRightBtn=_toolbarRightBtn;
@@ -480,4 +481,3 @@
 @property(readonly) Class superclass;
 
 @end
-

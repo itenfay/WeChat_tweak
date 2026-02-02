@@ -20,7 +20,6 @@
 }
 
 + (id)identifierFromYear:(unsigned long long)arg1 month:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *itemList; // @synthesize itemList=_itemList;
 @property(retain, nonatomic) NSMutableDictionary *customDescriptionToCountDict; // @synthesize customDescriptionToCountDict=_customDescriptionToCountDict;
 @property(retain, nonatomic) NSMutableDictionary *iconIdToCountDict; // @synthesize iconIdToCountDict=_iconIdToCountDict;

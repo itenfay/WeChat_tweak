@@ -13,7 +13,6 @@
     NSArray *_detailField;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *detailField; // @synthesize detailField=_detailField;
 @property(retain, nonatomic) NSArray *innerTagList; // @synthesize innerTagList=_innerTagList;
 @property(retain, nonatomic) NSArray *outerTagList; // @synthesize outerTagList=_outerTagList;

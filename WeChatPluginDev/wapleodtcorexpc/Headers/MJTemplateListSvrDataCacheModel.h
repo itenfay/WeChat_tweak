@@ -17,7 +17,6 @@
     NSData *_pageBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *pageBuffer; // @synthesize pageBuffer=_pageBuffer;
 @property(retain, nonatomic) NSMutableArray *categoryList; // @synthesize categoryList=_categoryList;
 @property(retain, nonatomic) NSMutableArray *templateList; // @synthesize templateList=_templateList;

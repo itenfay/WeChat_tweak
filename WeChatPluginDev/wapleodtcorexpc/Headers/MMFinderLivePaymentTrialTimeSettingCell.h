@@ -15,7 +15,6 @@
     UIImageView *_arrowIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowIconView; // @synthesize arrowIconView=_arrowIconView;
 @property(retain, nonatomic) MMUILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

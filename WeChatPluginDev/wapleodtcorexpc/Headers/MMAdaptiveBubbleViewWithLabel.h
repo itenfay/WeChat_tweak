@@ -10,7 +10,6 @@
     UILabel *_mainPartTitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *mainPartTitleLabel; // @synthesize mainPartTitleLabel=_mainPartTitleLabel;
 - (void)setTitleLabelText:(id)arg1;
 - (void)layoutMainPartContentView;

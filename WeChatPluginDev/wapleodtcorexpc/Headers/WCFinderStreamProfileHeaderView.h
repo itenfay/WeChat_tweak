@@ -38,7 +38,6 @@
 
 + (id)parseJumpInfoTailIcon:(id)arg1 size:(struct CGSize *)arg2 padding:(double *)arg3;
 + (_Bool)supportDarkModel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRegularExpression *signatureIgnoreEmailRegex; // @synthesize signatureIgnoreEmailRegex=_signatureIgnoreEmailRegex;
 @property(retain, nonatomic) NSMutableDictionary *redDotChangeNotifyBlocks; // @synthesize redDotChangeNotifyBlocks=_redDotChangeNotifyBlocks;
 @property(retain, nonatomic) NSMutableDictionary *customLayoutFuncBlockMap; // @synthesize customLayoutFuncBlockMap=_customLayoutFuncBlockMap;

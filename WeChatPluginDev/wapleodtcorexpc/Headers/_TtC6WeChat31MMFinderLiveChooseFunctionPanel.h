@@ -15,7 +15,6 @@
     MISSING_TYPE *$__lazy_storage_$_navBar;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;

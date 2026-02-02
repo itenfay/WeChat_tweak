@@ -22,7 +22,6 @@
     FinderLiveNoticeQRCodeResponse_PersonalColumnInfo *_columnInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDescExtend; // @synthesize enableDescExtend=_enableDescExtend;
 @property(nonatomic) int modifyEntranceStatus; // @synthesize modifyEntranceStatus=_modifyEntranceStatus;
 @property(retain, nonatomic) FinderLiveNoticeQRCodeResponse_PersonalColumnInfo *columnInfo; // @synthesize columnInfo=_columnInfo;

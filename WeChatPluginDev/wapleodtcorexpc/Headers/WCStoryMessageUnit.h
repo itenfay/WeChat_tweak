@@ -17,7 +17,6 @@
     long long _unreadCommentCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long unreadCommentCount; // @synthesize unreadCommentCount=_unreadCommentCount;
 @property(retain, nonatomic) NSString *lastCommentId; // @synthesize lastCommentId=_lastCommentId;
 @property(retain, nonatomic) NSString *lastCommentTid; // @synthesize lastCommentTid=_lastCommentTid;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIImageView, MMUILabel, MMUIView, NSDate, UIView, WCStoryPreviewReportObj, WCStorysPreviewViewController;
 
 @interface WCStoryDragAnimationUtil
@@ -37,7 +39,6 @@
 + (id)storyDragAnimationUtilWithFrontView:(id)arg1 backView:(id)arg2 frontViewTop:(double)arg3;
 + (void)errorShock;
 + (void)lightShock;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bBackViewShow; // @synthesize bBackViewShow=_bBackViewShow;
 @property(nonatomic) _Bool isPlayingMuted; // @synthesize isPlayingMuted=_isPlayingMuted;
 @property(nonatomic) _Bool hasTriggerPlayMuteShock; // @synthesize hasTriggerPlayMuteShock=_hasTriggerPlayMuteShock;
@@ -76,4 +77,3 @@
 - (id)initWithFrontView:(id)arg1 backViewController:(id)arg2 frontViewTop:(double)arg3;
 
 @end
-

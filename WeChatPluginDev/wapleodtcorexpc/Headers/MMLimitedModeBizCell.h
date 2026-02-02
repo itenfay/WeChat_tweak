@@ -21,7 +21,6 @@
 
 + (double)cellHeight;
 + (id)cellInTableView:(id)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

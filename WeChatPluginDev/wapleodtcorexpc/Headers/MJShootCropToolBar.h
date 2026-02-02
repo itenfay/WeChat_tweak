@@ -16,7 +16,6 @@
 }
 
 + (id)createButtonWithIconName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *resetButton; // @synthesize resetButton=_resetButton;
 @property(retain, nonatomic) MMUIButton *flipButton; // @synthesize flipButton=_flipButton;
 @property(retain, nonatomic) MMUIButton *rotateButton; // @synthesize rotateButton=_rotateButton;

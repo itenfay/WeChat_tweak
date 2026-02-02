@@ -11,7 +11,6 @@
     _Bool _exitAtHidden;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool exitAtHidden; // @synthesize exitAtHidden=_exitAtHidden;
 - (void)onMMLiveWillStart;
 - (void)onMonoServiceDidEnd;

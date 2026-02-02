@@ -15,7 +15,6 @@
 
 + (struct CGSize)innerContentSizeForImageCard:(id)arg1;
 + (void)onCalculatLayoutInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *playIcon; // @synthesize playIcon=_playIcon;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) MMWebImageView *coverImageView; // @synthesize coverImageView=_coverImageView;

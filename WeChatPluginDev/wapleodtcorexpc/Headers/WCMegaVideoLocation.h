@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_city;
 + (void)PBArrayAdd_latitude;
 + (void)PBArrayAdd_longitude;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
 @property(copy, nonatomic) NSString *region; // @synthesize region=_region;
 @property(copy, nonatomic) NSString *province; // @synthesize province=_province;

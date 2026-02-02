@@ -12,7 +12,6 @@
     NSMutableDictionary *m_profileConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsCDNClientID; // @synthesize m_nsCDNClientID;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleRankDelFollowResponse:(id)arg1;

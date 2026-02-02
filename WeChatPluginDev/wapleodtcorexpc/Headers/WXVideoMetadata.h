@@ -20,7 +20,6 @@
 + (id)getExtraInfoFromAsset:(id)arg1;
 + (id)metadataFromAsset:(id)arg1;
 + (id)metadataWithWXTag;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHardEncodeMetaData; // @synthesize isHardEncodeMetaData=_isHardEncodeMetaData;
 @property(nonatomic) _Bool isSoftEncodeMetaData; // @synthesize isSoftEncodeMetaData=_isSoftEncodeMetaData;
 @property(copy, nonatomic) NSString *abaInfo; // @synthesize abaInfo=_abaInfo;

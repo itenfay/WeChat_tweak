@@ -20,7 +20,6 @@
 + (void)reportNoticeOperation:(id)arg1 withNoticeInfo:(id)arg2 withCommentScene:(id)arg3 actionType:(unsigned long long)arg4 liveId:(unsigned long long)arg5;
 + (void)reportNoticeOperation:(id)arg1 withNoticeInfo:(id)arg2 withCommentScene:(id)arg3 actionType:(unsigned long long)arg4;
 + (void)reportNoticeOperation:(long long)arg1 withUsername:(id)arg2 withLiveId:(unsigned long long)arg3 withLiveStatus:(unsigned int)arg4 withCommentScene:(id)arg5 withForceNoticeInfo:(id)arg6 withNoticeContent:(id)arg7;
-- (void).cxx_destruct;
 - (void)reportNoticeOperation:(long long)arg1 username:(id)arg2 withNoticeInfo:(id)arg3 withCommentScene:(int)arg4 feedID:(id)arg5 isFromNoticeDetail:(_Bool)arg6 sourceScene:(id)arg7 fromSourceScene:(id)arg8 channelExtra:(id)arg9;
 - (void)reportNoticeOperation:(long long)arg1 withUsername:(id)arg2 sceneNote:(id)arg3 noticeInfo:(id)arg4 commentScene:(id)arg5 noticeBussinessDic:(id)arg6;
 - (void)reportNoticeOperation:(long long)arg1 withUsername:(id)arg2 noticeInfo:(id)arg3 actionInfo:(id)arg4 commentScene:(id)arg5;

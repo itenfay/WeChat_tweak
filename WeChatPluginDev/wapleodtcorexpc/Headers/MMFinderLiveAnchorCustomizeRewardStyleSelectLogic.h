@@ -29,7 +29,6 @@
     struct CGSize _imageLayerSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *hostingVc; // @synthesize hostingVc=_hostingVc;
 @property(retain, nonatomic) WCActionSheet *chooseImageActionSheet; // @synthesize chooseImageActionSheet=_chooseImageActionSheet;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardPagFileLoader *pagFileLoader; // @synthesize pagFileLoader=_pagFileLoader;

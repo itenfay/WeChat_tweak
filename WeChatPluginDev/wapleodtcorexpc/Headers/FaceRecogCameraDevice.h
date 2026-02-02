@@ -41,7 +41,6 @@
     CDStruct_1b6d18a9 _DeviceExposureDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long skipDepthPhotoSyncCheck; // @synthesize skipDepthPhotoSyncCheck=_skipDepthPhotoSyncCheck;
 @property(nonatomic) long long missingDepthFrameCount; // @synthesize missingDepthFrameCount=_missingDepthFrameCount;
 @property(retain, nonatomic) AVCaptureDataOutputSynchronizer *outputSynchronizer; // @synthesize outputSynchronizer=_outputSynchronizer;

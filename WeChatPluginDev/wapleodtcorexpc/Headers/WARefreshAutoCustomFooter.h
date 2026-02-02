@@ -13,7 +13,6 @@
     MMUIImageView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WARefreshDefaultNoMoreDataLabel *noMoreDataView; // @synthesize noMoreDataView=_noMoreDataView;
 @property(nonatomic) int lineWordsInterval; // @synthesize lineWordsInterval=_lineWordsInterval;

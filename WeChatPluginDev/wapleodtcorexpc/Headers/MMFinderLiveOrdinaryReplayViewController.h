@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveOrdinaryReplayOperationView, NSString, WCFinderLiveReplayActionSheet, WCFinderLiveReplayReporter, WCLiveCountdownToastView;
 
 @interface MMFinderLiveOrdinaryReplayViewController
@@ -20,7 +22,6 @@
     unsigned long long _seekBeginTsInMS;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long seekBeginTsInMS; // @synthesize seekBeginTsInMS=_seekBeginTsInMS;
 @property(nonatomic) _Bool hasReportStartWatching; // @synthesize hasReportStartWatching=_hasReportStartWatching;
 @property(nonatomic) unsigned long long stopgapStartUnixEpochTime; // @synthesize stopgapStartUnixEpochTime=_stopgapStartUnixEpochTime;
@@ -99,4 +100,3 @@
 @property(readonly) Class superclass;
 
 @end
-

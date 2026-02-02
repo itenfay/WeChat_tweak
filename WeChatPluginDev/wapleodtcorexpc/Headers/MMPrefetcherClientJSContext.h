@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSVirtualMachine, MMClientJsApiHandler, MMPrefetcherClientADJsApiHandler, MMPrefetcherClientJSContextConfig, MMPrefetcherClientJsApiHandler, MMWebJsBasePkgInfo, NSString;
 
 @interface MMPrefetcherClientJSContext
@@ -16,7 +18,6 @@
     MMWebJsBasePkgInfo *_bizPkgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebJsBasePkgInfo *bizPkgInfo; // @synthesize bizPkgInfo=_bizPkgInfo;
 @property(retain, nonatomic) JSVirtualMachine *jsVM; // @synthesize jsVM=_jsVM;
 @property(retain, nonatomic) MMPrefetcherClientJSContextConfig *config; // @synthesize config=_config;
@@ -29,4 +30,3 @@
 - (id)initWithConfig:(id)arg1 jvm:(id)arg2 bizPkgInfo:(id)arg3;
 
 @end
-

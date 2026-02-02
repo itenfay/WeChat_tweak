@@ -23,7 +23,6 @@
     struct __CFString *_colorConversionMartixKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableColorConversion; // @synthesize enableColorConversion=_enableColorConversion;
 @property(nonatomic) _Bool colorConversionFullRange; // @synthesize colorConversionFullRange=_colorConversionFullRange;
 @property(nonatomic) struct __CFString *colorConversionMartixKey; // @synthesize colorConversionMartixKey=_colorConversionMartixKey;

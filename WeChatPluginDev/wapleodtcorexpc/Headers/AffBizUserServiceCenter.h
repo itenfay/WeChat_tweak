@@ -11,7 +11,6 @@
     id <CommonAffServiceCenter> _serviceCenter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <CommonAffServiceCenter> serviceCenter; // @synthesize serviceCenter=_serviceCenter;
 - (void)onServiceTerminate;
 - (void)onServiceClearData;

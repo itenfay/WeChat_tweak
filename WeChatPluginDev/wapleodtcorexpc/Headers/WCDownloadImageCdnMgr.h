@@ -26,7 +26,6 @@
 
 + (long long)imageDownloadCategoryForMediaItem:(id)arg1;
 + (long long)imageDownloadCategoryForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mediaThumbDownloadStateDic; // @synthesize mediaThumbDownloadStateDic=_mediaThumbDownloadStateDic;
 @property(nonatomic) __weak id <WCCdnDownloadImageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;

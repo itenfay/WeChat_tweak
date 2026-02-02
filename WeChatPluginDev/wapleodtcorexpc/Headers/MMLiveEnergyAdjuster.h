@@ -23,7 +23,6 @@
     NSArray *_blurPowerModeAdjustParamLevels;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *blurPowerModeAdjustParamLevels; // @synthesize blurPowerModeAdjustParamLevels=_blurPowerModeAdjustParamLevels;
 @property(readonly, copy, nonatomic) NSArray *PAGFrameRateLevels; // @synthesize PAGFrameRateLevels=_PAGFrameRateLevels;
 @property(readonly, copy, nonatomic) NSArray *faceShapeBeautyLevels; // @synthesize faceShapeBeautyLevels=_faceShapeBeautyLevels;

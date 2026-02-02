@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
@@ -17,7 +18,6 @@
     NSMutableSet *_matchGroups;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *matchGroups; // @synthesize matchGroups=_matchGroups;
 @property(retain, nonatomic) NSMutableDictionary *groupRelation; // @synthesize groupRelation=_groupRelation;
 @property(nonatomic) _Bool isMultiSearchGroupMember; // @synthesize isMultiSearchGroupMember=_isMultiSearchGroupMember;
@@ -26,4 +26,3 @@
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureDataOutputSynchronizer, AVCaptureDepthDataOutput, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -23,7 +25,6 @@
     AVCaptureDataOutputSynchronizer *_outputSynchronizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureDataOutputSynchronizer *outputSynchronizer; // @synthesize outputSynchronizer=_outputSynchronizer;
 @property(retain, nonatomic) AVCaptureDepthDataOutput *depthDataOutput; // @synthesize depthDataOutput=_depthDataOutput;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *bufferQueue; // @synthesize bufferQueue=_bufferQueue;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AUAudioDevice, AVVideoDevice, CMMotionManager, MMTimer, NSArray, NSMutableArray, NSRecursiveLock, NSString, VOIPComponent, VOIPDialData, VOIPKernelLog, VOIPVideoRender, XImageContext, XImageViewRenderer;
 @protocol IVOIPVideoDeviceDelegate;
 
@@ -317,7 +319,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPIPDisplaying; // @synthesize isPIPDisplaying=_isPIPDisplaying;
 @property(nonatomic) _Bool shouldCheckLocalCaptureIsActive; // @synthesize shouldCheckLocalCaptureIsActive=_shouldCheckLocalCaptureIsActive;
 @property(nonatomic) double sessionStartUpTime; // @synthesize sessionStartUpTime=_sessionStartUpTime;
@@ -779,4 +780,3 @@
 @property(readonly) Class superclass;
 
 @end
-

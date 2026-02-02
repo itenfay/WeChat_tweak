@@ -30,7 +30,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *genderIconImageView; // @synthesize genderIconImageView=_genderIconImageView;
 @property(retain, nonatomic) MMUIImageView *roleIconImageView; // @synthesize roleIconImageView=_roleIconImageView;
 @property(retain, nonatomic) MMFinderLiveRecentRewardUserItem *recentRewardUserItem; // @synthesize recentRewardUserItem=_recentRewardUserItem;

@@ -11,7 +11,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) __weak id <WAStarListViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reportItemMoveFrom:(id)arg1 fromIndex:(long long)arg2 to:(long long)arg3;

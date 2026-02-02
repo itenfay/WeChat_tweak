@@ -11,7 +11,6 @@
     TingLaunchOptionsOpenPlayerTabCommentInfo *_tabCommentInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingLaunchOptionsOpenPlayerTabCommentInfo *tabCommentInfo; // @synthesize tabCommentInfo=_tabCommentInfo;
 @property(nonatomic) int tabType; // @synthesize tabType=_tabType;
 

@@ -14,7 +14,6 @@
 
 + (double)height;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int value; // @synthesize value=_value;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UIImageView *coin; // @synthesize coin=_coin;

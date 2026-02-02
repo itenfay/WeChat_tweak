@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSData, NSError, NSString;
 @protocol MMFinderLivePayMgrExt, MMPageSheetProvider;
@@ -30,7 +31,6 @@
     NSString *_referenceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int rechargeScene; // @synthesize rechargeScene=_rechargeScene;
 @property(nonatomic) _Bool differentialTopUp; // @synthesize differentialTopUp=_differentialTopUp;
 @property(retain, nonatomic) NSString *referenceId; // @synthesize referenceId=_referenceId;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

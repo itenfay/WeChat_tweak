@@ -38,7 +38,6 @@
 + (id)getChatViewReporter:(int)arg1 uiArea:(int)arg2 pos:(unsigned int)arg3 actionId:(int)arg4 sessionId:(id)arg5 sourceId:(unsigned int)arg6 actionStatus:(id)arg7;
 + (void)reportConversationItem:(unsigned int)arg1 actionId:(int)arg2 totalNum:(unsigned int)arg3 conversation:(id)arg4 sourceId:(unsigned int)arg5 actionStatus:(id)arg6 extInfoDic:(id)arg7;
 + (id)createReporter:(int)arg1 uiArea:(int)arg2 positionId:(unsigned int)arg3 actionId:(int)arg4 sourceId:(unsigned int)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) long long ssid; // @synthesize ssid=_ssid;
 @property(nonatomic) long long GameType; // @synthesize GameType=_GameType;
 @property(nonatomic) unsigned int Time; // @synthesize Time=_Time;

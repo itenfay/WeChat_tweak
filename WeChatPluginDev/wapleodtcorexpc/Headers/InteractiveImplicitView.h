@@ -14,7 +14,6 @@
     double _nextShakeCoordinate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double nextShakeCoordinate; // @synthesize nextShakeCoordinate=_nextShakeCoordinate;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;

@@ -14,7 +14,6 @@
 + (id)GetInfoStringMd5For:(id)arg1;
 + (id)GetPathOfRsaCertInfoVerify;
 + (id)GetPathOfRsaCertInfo;
-- (void).cxx_destruct;
 - (id)GetMutableRsaCertInfo;
 - (id)GetKVCommCertInfo;
 - (id)GetAuthCertInfo;

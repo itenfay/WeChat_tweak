@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_clipTimeLengthMs;
 + (void)PBArrayAdd_clipTimeOffsetMs;
 + (void)PBArrayAdd_localId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localThumbPath; // @synthesize localThumbPath=_localThumbPath;
 @property(copy, nonatomic) NSString *localVideoPath; // @synthesize localVideoPath=_localVideoPath;
 @property(nonatomic) unsigned int clipTimeLengthMs; // @synthesize clipTimeLengthMs=_clipTimeLengthMs;

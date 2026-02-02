@@ -13,7 +13,6 @@
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
 + (double)adjustImageRatioBy:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareToMomentsItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (_Bool)isMemberShipFeed;

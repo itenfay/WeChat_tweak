@@ -47,7 +47,6 @@
     id <BraceletRankProfileViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <BraceletRankProfileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *arrAffectedUser; // @synthesize arrAffectedUser;
 @property(retain, nonatomic) NSString *nsBrandUserName; // @synthesize nsBrandUserName;

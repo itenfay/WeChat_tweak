@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_opType;
 + (void)PBArrayAdd_appType;
 + (void)PBArrayAdd_usrname;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int commuseFlag; // @synthesize commuseFlag=_commuseFlag;
 @property(nonatomic) _Bool isOperating; // @synthesize isOperating=_isOperating;
 @property(nonatomic) _Bool excuteSync; // @synthesize excuteSync=_excuteSync;

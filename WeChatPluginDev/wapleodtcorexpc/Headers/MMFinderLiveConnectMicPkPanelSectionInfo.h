@@ -12,7 +12,6 @@
     NSMutableArray *_displayItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *displayItems; // @synthesize displayItems=_displayItems;
 - (id)init;
 

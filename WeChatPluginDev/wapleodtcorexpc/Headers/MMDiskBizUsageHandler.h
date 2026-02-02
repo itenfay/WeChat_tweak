@@ -17,7 +17,6 @@
 + (id)ruleDescription:(const struct MMDiskUsageBizRule *)arg1;
 + (_Bool)p_isRuleValid:(const struct MMDiskUsageBizRule *)arg1;
 + (long long)p_validateStoreTimeType:(const struct MMDiskUsageBizRule *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBizFileMatchNode *appRootMatchNode; // @synthesize appRootMatchNode=_appRootMatchNode;
 - (void)p_makeArrayBizFileNodeZeroAppData:(id)arg1;
 - (void)p_makeArrayBizFileNodeOtherUser:(id)arg1;

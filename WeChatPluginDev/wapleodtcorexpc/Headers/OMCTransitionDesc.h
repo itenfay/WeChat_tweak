@@ -13,7 +13,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SharedPtr_6bdad1cb backingTransitionDesc; // @synthesize backingTransitionDesc=_backingTransitionDesc;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 suggestedTransOutDuration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 suggestedTransInDuration;

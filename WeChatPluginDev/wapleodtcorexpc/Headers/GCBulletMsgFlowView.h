@@ -19,7 +19,6 @@
     long long _curLoadIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long curLoadIndex; // @synthesize curLoadIndex=_curLoadIndex;
 @property(retain, nonatomic) MMTimer *displayTimer; // @synthesize displayTimer=_displayTimer;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;

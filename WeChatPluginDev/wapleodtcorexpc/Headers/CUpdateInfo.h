@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_m_bShowInSetting;
 + (void)PBArrayAdd_m_nsDescription;
 + (void)PBArrayAdd_m_uiNewVersion;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *m_nsNewestVersionDescription; // @synthesize m_nsNewestVersionDescription=_m_nsNewestVersionDescription;
 @property(nonatomic) unsigned int m_uiNewVersionUpdateTime; // @synthesize m_uiNewVersionUpdateTime=_m_uiNewVersionUpdateTime;
 @property(nonatomic) unsigned int m_uiSysNoticeCount; // @synthesize m_uiSysNoticeCount=_m_uiSysNoticeCount;

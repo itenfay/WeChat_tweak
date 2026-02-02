@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *monitorTable; // @synthesize monitorTable=_monitorTable;
 - (void)onNearbySubTabDisappear:(unsigned long long)arg1 withScene:(unsigned long long)arg2;
 - (void)onNearbySubTabAppear:(unsigned long long)arg1 withScene:(unsigned long long)arg2;

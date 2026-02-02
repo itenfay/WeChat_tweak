@@ -22,7 +22,6 @@
     UILabel *_switchLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *switchLabel; // @synthesize switchLabel=_switchLabel;
 @property(retain, nonatomic) UIImageView *switchLogoImageView; // @synthesize switchLogoImageView=_switchLogoImageView;
 @property(retain, nonatomic) UIView *headImageViewLayer; // @synthesize headImageViewLayer=_headImageViewLayer;

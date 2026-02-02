@@ -21,7 +21,6 @@
 }
 
 + (double)defaultHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *productTitleLabel; // @synthesize productTitleLabel=_productTitleLabel;
 @property(retain, nonatomic) UILabel *guideLabel; // @synthesize guideLabel=_guideLabel;
 @property(retain, nonatomic) PAGView *playingIconView; // @synthesize playingIconView=_playingIconView;

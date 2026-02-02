@@ -28,7 +28,6 @@
 }
 
 + (id)genTextStatusJumpInfoRingtonePB:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *selectImageView; // @synthesize selectImageView=_selectImageView;
 @property(nonatomic) __weak RingToneContactSelectViewController *selectVC; // @synthesize selectVC=_selectVC;
 @property(retain, nonatomic) UIView *musicInfoBottomView; // @synthesize musicInfoBottomView=_musicInfoBottomView;

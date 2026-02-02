@@ -15,7 +15,6 @@
     BTVideoItemCellAutoPlayerView *m_lastAddedPlayerView;
 }
 
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (id)getTimeLabelAccessibilityLabel;
 - (void)resetLastAddedPlayerView;

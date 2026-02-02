@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, AVMutableVideoComposition, NSString, NSURL, SightAssetPreviewView, SightDraft, UIButton, UIImage, UIImageView, UILabel, UIView;
 @protocol EVVideoPreviewBrowserViewDelegate;
 
@@ -31,7 +33,6 @@
     unsigned long long _asserPrepareInvokeCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long asserPrepareInvokeCount; // @synthesize asserPrepareInvokeCount=_asserPrepareInvokeCount;
 @property(copy, nonatomic) CDUnknownBlockType loadAssetSuccessBlock; // @synthesize loadAssetSuccessBlock=_loadAssetSuccessBlock;
 @property(retain, nonatomic) AVMutableVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
@@ -86,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

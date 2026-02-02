@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSString (MMMusicStatistics)
 + (id)MMMusicStatistics_appendSessionID;
@@ -27,4 +28,3 @@
 - (CDUnknownBlockType)MMMusicStatistics_appendSongID;
 - (CDUnknownBlockType)MMMusicStatistics_appendString;
 @end
-

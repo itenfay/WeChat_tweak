@@ -32,7 +32,6 @@
     NSMutableArray *_backUpSingleAttrs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *backUpSingleAttrs; // @synthesize backUpSingleAttrs=_backUpSingleAttrs;
 @property(nonatomic) unsigned long long scrollTriggerTime; // @synthesize scrollTriggerTime=_scrollTriggerTime;
 @property(nonatomic) _Bool ignoreShock; // @synthesize ignoreShock=_ignoreShock;

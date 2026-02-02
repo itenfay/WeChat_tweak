@@ -10,7 +10,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)onChooseCancel;
 - (void)onChooseSuccess:(id)arg1;

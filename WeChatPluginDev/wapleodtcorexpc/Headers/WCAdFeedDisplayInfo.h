@@ -22,7 +22,6 @@
     double mediaIconPaddingBottom;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double mediaIconPaddingBottom; // @synthesize mediaIconPaddingBottom;
 @property(nonatomic) double mediaIconPaddingRight; // @synthesize mediaIconPaddingRight;
 @property(nonatomic) double mediaIconHeight; // @synthesize mediaIconHeight;

@@ -10,7 +10,6 @@
     UITextField *_sceneTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *sceneTextView; // @synthesize sceneTextView=_sceneTextView;
 - (void)onDone;
 - (void)viewDidLoad;

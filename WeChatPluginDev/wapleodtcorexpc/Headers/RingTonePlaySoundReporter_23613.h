@@ -22,7 +22,6 @@
     unsigned long long _vibrateType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int startPlayTimeStamp; // @synthesize startPlayTimeStamp=_startPlayTimeStamp;
 @property(nonatomic) unsigned long long vibrateType; // @synthesize vibrateType=_vibrateType;
 @property(nonatomic) unsigned long long muteType; // @synthesize muteType=_muteType;

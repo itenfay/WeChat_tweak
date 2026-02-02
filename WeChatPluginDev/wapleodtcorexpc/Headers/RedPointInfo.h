@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_mustClearInSameTime;
 + (void)PBArrayAdd_redPointID;
 + (void)PBArrayAdd_redPointPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extInfoString; // @synthesize extInfoString=_extInfoString;
 @property(nonatomic) unsigned int recieveTime; // @synthesize recieveTime=_recieveTime;
 @property(nonatomic) unsigned int mustClearInSameTime; // @synthesize mustClearInSameTime=_mustClearInSameTime;

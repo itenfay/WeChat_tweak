@@ -18,7 +18,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) double gradientWidth; // @synthesize gradientWidth=_gradientWidth;
 @property(nonatomic) double flowDuration; // @synthesize flowDuration=_flowDuration;

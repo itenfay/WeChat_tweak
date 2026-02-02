@@ -13,7 +13,6 @@
     NSString *_reloadDesc;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reloadDesc; // @synthesize reloadDesc=_reloadDesc;
 @property(copy, nonatomic) NSString *badNetTip; // @synthesize badNetTip=_badNetTip;
 @property(nonatomic) __weak id <GWHaowanAlbumBadNetViewDelegate> delegate; // @synthesize delegate=_delegate;

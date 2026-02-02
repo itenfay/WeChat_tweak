@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderWindowProductImgButtonInfo, MMUILabel, UIImageView, UIView;
 
 @interface MMFinderLiveGoodsPromotionReplayFloatView
@@ -15,7 +17,6 @@
     FinderWindowProductImgButtonInfo *_imageButtonStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) FinderWindowProductImgButtonInfo *imageButtonStatus; // @synthesize imageButtonStatus=_imageButtonStatus;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -33,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

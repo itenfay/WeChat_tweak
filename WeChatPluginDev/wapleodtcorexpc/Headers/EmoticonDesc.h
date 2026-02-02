@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_LangList;
 + (void)PBArrayAdd_m_md5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_LangList; // @synthesize m_LangList=_m_LangList;
 @property(retain, nonatomic) NSString *m_md5; // @synthesize m_md5=_m_md5;
 - (_Bool)hasTheSameMd5WithDesc:(id)arg1;

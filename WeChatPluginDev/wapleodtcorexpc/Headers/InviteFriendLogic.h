@@ -27,7 +27,6 @@
 + (_Bool)isEntryOnTheTop;
 + (_Bool)isShowEntryInContactList;
 + (_Bool)isShowEntryInMainFrame;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int fromScene; // @synthesize fromScene=_fromScene;
 - (void)reportInvitationSendStatus:(unsigned int)arg1 result:(_Bool)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

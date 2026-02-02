@@ -14,7 +14,6 @@
     NSMutableDictionary *_headerDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *headerDic; // @synthesize headerDic=_headerDic;
 @property(retain, nonatomic) NSString *fullUrl; // @synthesize fullUrl=_fullUrl;
 @property(retain, nonatomic) NSString *requestUrl; // @synthesize requestUrl=_requestUrl;

@@ -14,7 +14,6 @@
     UIImageView *_accessoryImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *accessoryImageView; // @synthesize accessoryImageView=_accessoryImageView;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMUILabel *phoneNumberLabel; // @synthesize phoneNumberLabel=_phoneNumberLabel;

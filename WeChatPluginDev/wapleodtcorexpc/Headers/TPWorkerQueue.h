@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)workerQueueWithQueueType:(unsigned long long)arg1 queueName:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workingQueue; // @synthesize workingQueue=_workingQueue;
 @property(nonatomic) unsigned long long queueType; // @synthesize queueType=_queueType;
 - (void)destoryQueue;
@@ -23,4 +23,3 @@
 - (void)scheduleTaskAsync:(CDUnknownBlockType)arg1;
 
 @end
-

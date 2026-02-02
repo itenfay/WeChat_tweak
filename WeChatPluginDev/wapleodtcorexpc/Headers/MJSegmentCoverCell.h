@@ -13,7 +13,6 @@
     long long _taskID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) OMCBatchThumbnailProvider *batchThumbnailProvider; // @synthesize batchThumbnailProvider=_batchThumbnailProvider;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

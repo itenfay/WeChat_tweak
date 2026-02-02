@@ -14,7 +14,6 @@
     NSString *m_nsCertN;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsCertN; // @synthesize m_nsCertN;
 @property(retain, nonatomic) NSString *m_nsCertE; // @synthesize m_nsCertE;
 @property(nonatomic) unsigned int m_uiCertVersion; // @synthesize m_uiCertVersion;

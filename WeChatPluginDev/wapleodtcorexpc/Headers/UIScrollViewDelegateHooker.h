@@ -13,7 +13,6 @@
     FavBrowseDetailData *_browseData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak FavBrowseDetailData *browseData; // @synthesize browseData=_browseData;
 @property(nonatomic) __weak id originalDelegate; // @synthesize originalDelegate=_originalDelegate;
 - (id)forwardingTargetForSelector:(SEL)arg1;

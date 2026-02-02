@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJShootBeautyItem, MJShootBeautyMainPanelItem, NSArray, NSMutableDictionary, OMJBeautyAdjustmentDesc;
 
 @interface MJShootBeautyInspectorViewModel
@@ -18,7 +20,6 @@
 }
 
 + (id)defaultMainPanelItems;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *originalBeautyDescByID; // @synthesize originalBeautyDescByID=_originalBeautyDescByID;
 @property(retain, nonatomic) NSMutableDictionary *beautyDescByID; // @synthesize beautyDescByID=_beautyDescByID;
 @property(nonatomic) _Bool didAdjustBeautyParam; // @synthesize didAdjustBeautyParam=_didAdjustBeautyParam;
@@ -50,4 +51,3 @@
 - (id)init;
 
 @end
-

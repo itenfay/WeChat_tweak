@@ -12,7 +12,6 @@
     NSString *_currentIndicatorColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentIndicatorColor; // @synthesize currentIndicatorColor=_currentIndicatorColor;
 @property(retain, nonatomic) NSString *indicatorColor; // @synthesize indicatorColor=_indicatorColor;
 @property(retain, nonatomic) NSArray *componentItemList; // @synthesize componentItemList=_componentItemList;

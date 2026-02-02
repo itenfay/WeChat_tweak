@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIColor, UIScreenEdgePanGestureRecognizer, WAContact;
 @protocol WALoadingViewControllerDelegate, WAMinimizeDelegate;
 
@@ -27,7 +29,6 @@
     CDUnknownBlockType _viewDidAppearCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType viewDidAppearCallback; // @synthesize viewDidAppearCallback=_viewDidAppearCallback;
 @property(retain, nonatomic) UIColor *loadingForegroundTextColor; // @synthesize loadingForegroundTextColor=_loadingForegroundTextColor;
 @property(retain, nonatomic) UIColor *loadingBackgroundColor; // @synthesize loadingBackgroundColor=_loadingBackgroundColor;
@@ -66,4 +67,3 @@
 - (void)viewDidLoad;
 
 @end
-

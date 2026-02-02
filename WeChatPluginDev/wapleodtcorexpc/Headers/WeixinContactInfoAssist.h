@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, CContactVerifyPreCheckBusinessLogic, CMessageWrap, ContactRelatedGroupLogic, MMTableViewInfo, NSDictionary, NSString, SendVerifyMsgLogicController, UIButton, UILabel, UIStackView, WCFinderContactFinderAssist;
 @protocol ContactInfoAssistDelegate, WeixinContactInfoAssistDelegate;
 
@@ -43,7 +45,6 @@
     UIStackView *_footerStackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *footerStackView; // @synthesize footerStackView=_footerStackView;
 @property(retain, nonatomic) NSDictionary *extraSourceInfo; // @synthesize extraSourceInfo=_extraSourceInfo;
 @property(nonatomic) __weak id <WeixinContactInfoAssistDelegate> weixinContactAssistDelegate; // @synthesize weixinContactAssistDelegate=_weixinContactAssistDelegate;
@@ -205,4 +206,3 @@
 @property(readonly) Class superclass;
 
 @end
-

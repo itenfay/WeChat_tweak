@@ -14,7 +14,6 @@
     MinimizeTaskOpenContext *_openContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MinimizeTaskOpenContext *openContext; // @synthesize openContext=_openContext;
 @property(retain, nonatomic) MinimizeTaskData *taskData; // @synthesize taskData=_taskData;
 @property(retain, nonatomic) UIImageView *snapShotView; // @synthesize snapShotView=_snapShotView;

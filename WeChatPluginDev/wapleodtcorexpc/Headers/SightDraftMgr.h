@@ -10,7 +10,6 @@
     NSMutableArray *m_draftList;
 }
 
-- (void).cxx_destruct;
 - (id)getDraftList;
 - (void)removeDraft:(id)arg1 needWriteIndexFile:(_Bool)arg2;
 - (void)removeDraft:(id)arg1;

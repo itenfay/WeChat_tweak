@@ -15,7 +15,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool writable; // @synthesize writable=_writable;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak NSObject *holder; // @synthesize holder=_holder;

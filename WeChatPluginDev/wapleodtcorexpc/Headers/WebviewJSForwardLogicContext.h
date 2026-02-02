@@ -10,7 +10,6 @@
     CContact *_targetContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *targetContact; // @synthesize targetContact=_targetContact;
 
 @end

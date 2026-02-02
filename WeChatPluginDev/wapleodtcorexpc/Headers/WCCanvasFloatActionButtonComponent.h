@@ -18,7 +18,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) double appearPaddingBottom; // @synthesize appearPaddingBottom=_appearPaddingBottom;
 @property(nonatomic) double appearPaddingTop; // @synthesize appearPaddingTop=_appearPaddingTop;
 @property(retain, nonatomic) WCCanvasComponent *buttonComponent; // @synthesize buttonComponent=_buttonComponent;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiteAppReferrerInfo, LiteAppStore, NSDictionary, NSString;
 
@@ -37,7 +38,6 @@
     NSDictionary *_storeData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool presentsWithTransaction; // @synthesize presentsWithTransaction=_presentsWithTransaction;
 @property(nonatomic) _Bool sizeChangeSnapshot; // @synthesize sizeChangeSnapshot=_sizeChangeSnapshot;
 @property(nonatomic) _Bool isPipMode; // @synthesize isPipMode=_isPipMode;
@@ -71,4 +71,3 @@
 - (id)initWithAppUrl:(id)arg1;
 
 @end
-

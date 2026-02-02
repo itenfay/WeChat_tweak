@@ -17,7 +17,6 @@
     SpecialFindPwdInfo *_specialFindPwdInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) SpecialFindPwdInfo *specialFindPwdInfo; // @synthesize specialFindPwdInfo=_specialFindPwdInfo;
 @property(retain) NSArray *controlData; // @synthesize controlData=_controlData;
 @property(retain) NSArray *unSupportNationList; // @synthesize unSupportNationList=_unSupportNationList;

@@ -16,7 +16,6 @@
     MMUILabel *m_thanksTips;
 }
 
-- (void).cxx_destruct;
 - (void)onLoadImageOK:(id)arg1;
 - (void)onClose;
 - (double)updateColorEggTipsViewFromMarginTop:(double)arg1;

@@ -14,7 +14,6 @@
     NSMutableSet *_resultCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int resultCacheVersion; // @synthesize resultCacheVersion=_resultCacheVersion;
 @property(retain, nonatomic) NSMutableSet *resultCache; // @synthesize resultCache=_resultCache;
 @property(retain, nonatomic) NSSet *descList; // @synthesize descList=_descList;

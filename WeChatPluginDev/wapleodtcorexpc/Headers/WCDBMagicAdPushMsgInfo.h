@@ -45,7 +45,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *message_traceid; // @synthesize message_traceid=_message_traceid;
 @property(nonatomic) unsigned long long message_op_time; // @synthesize message_op_time=_message_op_time;
 @property(nonatomic) unsigned long long message_slotid; // @synthesize message_slotid=_message_slotid;

@@ -20,7 +20,6 @@
     long long _availableDownBandwidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long availableDownBandwidth; // @synthesize availableDownBandwidth=_availableDownBandwidth;
 @property(nonatomic) long long availableUpBandwidth; // @synthesize availableUpBandwidth=_availableUpBandwidth;
 @property(nonatomic) unsigned int rtt; // @synthesize rtt=_rtt;

@@ -14,7 +14,6 @@
     MMSessionInfo *_chatBoxSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMSessionInfo *chatBoxSession; // @synthesize chatBoxSession=_chatBoxSession;
 @property(retain, nonatomic) NSMutableArray *chatBoxSessions; // @synthesize chatBoxSessions=_chatBoxSessions;
 @property(retain, nonatomic) NSMutableSet *addChatboxPendding; // @synthesize addChatboxPendding=_addChatboxPendding;

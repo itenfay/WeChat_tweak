@@ -14,7 +14,6 @@
     NSString *_pullCommentScene;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pullCommentScene; // @synthesize pullCommentScene=_pullCommentScene;
 @property(nonatomic) unsigned long long homePageContainerType; // @synthesize homePageContainerType=_homePageContainerType;
 @property(retain, nonatomic) NSDictionary *audienceEnterActionResultDict; // @synthesize audienceEnterActionResultDict=_audienceEnterActionResultDict;

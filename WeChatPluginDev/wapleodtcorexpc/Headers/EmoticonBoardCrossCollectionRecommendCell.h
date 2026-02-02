@@ -12,7 +12,6 @@
     EmoticonBoardRecommendView *_recommendView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonBoardRecommendView *recommendView; // @synthesize recommendView=_recommendView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

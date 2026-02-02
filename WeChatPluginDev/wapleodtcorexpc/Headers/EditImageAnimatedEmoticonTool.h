@@ -12,7 +12,6 @@
     double _imageScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double imageScale; // @synthesize imageScale=_imageScale;
 @property(readonly, nonatomic) NSString *emoticonMd5; // @synthesize emoticonMd5=m_emoticonMd5;
 - (id)accessibilityLabel;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AQAudioRecorder, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, GPUImageFramebuffer, NSObject, NSString, NSURL;
 @protocol OS_dispatch_queue, WCCameraWriterDelegate;
 
@@ -40,7 +42,6 @@
     struct CGAffineTransform _m_preferredTransform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AQAudioRecorder *recorder; // @synthesize recorder=_recorder;
 @property(nonatomic) unsigned long long m_recordTimeStamp; // @synthesize m_recordTimeStamp=_m_recordTimeStamp;
 @property(nonatomic) _Bool m_disableWritingToFile; // @synthesize m_disableWritingToFile=_m_disableWritingToFile;
@@ -103,4 +104,3 @@
 @property(readonly) Class superclass;
 
 @end
-

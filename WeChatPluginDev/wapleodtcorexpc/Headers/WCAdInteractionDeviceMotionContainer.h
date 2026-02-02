@@ -18,7 +18,6 @@
     CADisplayLink *_displayTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTerminated; // @synthesize isTerminated=_isTerminated;
 @property(nonatomic) _Bool shouldResumeTimer; // @synthesize shouldResumeTimer=_shouldResumeTimer;
 @property(retain, nonatomic) CADisplayLink *displayTimer; // @synthesize displayTimer=_displayTimer;

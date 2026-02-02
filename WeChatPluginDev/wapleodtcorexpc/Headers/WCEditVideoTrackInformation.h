@@ -14,7 +14,6 @@
     NSArray *_formatDescriptions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *formatDescriptions; // @synthesize formatDescriptions=_formatDescriptions;
 @property(nonatomic) double framerate; // @synthesize framerate=_framerate;
 @property(nonatomic) double bitrate; // @synthesize bitrate=_bitrate;

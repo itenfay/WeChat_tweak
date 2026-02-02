@@ -13,7 +13,6 @@
     NSString *_proxy_domain;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *proxy_domain; // @synthesize proxy_domain=_proxy_domain;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (id)initWithDict:(id)arg1;

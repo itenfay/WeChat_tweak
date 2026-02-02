@@ -17,7 +17,6 @@
     WCFinderRedDotTipsShowInfo *_showInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotTipsShowInfo *showInfo; // @synthesize showInfo=_showInfo;
 @property(retain, nonatomic) WCFinderRedDotTipsShowInfo *existShowInfo; // @synthesize existShowInfo=_existShowInfo;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *controlInfo; // @synthesize controlInfo=_controlInfo;

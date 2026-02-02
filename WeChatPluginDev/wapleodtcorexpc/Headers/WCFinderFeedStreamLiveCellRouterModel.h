@@ -15,7 +15,6 @@
     unsigned long long _fromSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fromSource; // @synthesize fromSource=_fromSource;
 @property(retain, nonatomic) MMFinderLiveFeedTransferLogic *transferCtx; // @synthesize transferCtx=_transferCtx;
 @property(retain, nonatomic) FeedsPreviewJoinLiveMultiStyleInfo_ManueTriggerJoinLive *feedStreamJoinLiveStyleInfo; // @synthesize feedStreamJoinLiveStyleInfo=_feedStreamJoinLiveStyleInfo;

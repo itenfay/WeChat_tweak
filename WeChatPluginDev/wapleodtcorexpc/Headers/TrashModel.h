@@ -37,7 +37,6 @@
 
 + (id)getSaveRootDir;
 + (id)fromBuffer:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimelineExtBean *extBean; // @synthesize extBean=_extBean;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int commentCnt; // @synthesize commentCnt=_commentCnt;

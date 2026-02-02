@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCreateNoticeReporter, MMFinderLiveNoticeListViewModel, MMFinderLiveNoticePromoteListPanel, MMFinderLivePromoteAddPanel, MMFinderLivePromoteDataModel, MMFinderLivePromoteListBasePanel, MMFinderLivePromoteLogic, MMFinderLivePromoteManagePanel, MMFinderLiveTask, MMFinderLiveTaskId, MMPageSheetAdapter, NSString, UIView, WCFinderCreateLiveViewModel, _TtC6WeChat35MMFinderLiveChooseFunctionViewModel;
 @protocol MMFinderLivePromoteManagePanelDelegate, MMFinderLivePromoteManageReportDelegate;
@@ -33,7 +34,6 @@
     MMFinderLiveNoticeListViewModel *_anchorNoticeListViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveNoticeListViewModel *anchorNoticeListViewModel; // @synthesize anchorNoticeListViewModel=_anchorNoticeListViewModel;
 @property(nonatomic) _Bool showNoticeListVCAfterNoticeCreation; // @synthesize showNoticeListVCAfterNoticeCreation=_showNoticeListVCAfterNoticeCreation;
 @property(nonatomic) _Bool needShow; // @synthesize needShow=_needShow;
@@ -148,4 +148,3 @@
 @property(readonly) Class superclass;
 
 @end
-

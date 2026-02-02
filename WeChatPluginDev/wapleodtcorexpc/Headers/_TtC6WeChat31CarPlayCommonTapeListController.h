@@ -10,7 +10,6 @@
     MISSING_TYPE *commonTapeList;
 }
 
-- (void).cxx_destruct;
 
 @end
 

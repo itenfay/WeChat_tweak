@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveCommentPubbleCell;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _tapCallback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisplayStart; // @synthesize isDisplayStart=_isDisplayStart;
 @property(copy, nonatomic) CDUnknownBlockType tapCallback; // @synthesize tapCallback=_tapCallback;
 @property(copy, nonatomic) CDUnknownBlockType dismissCallback; // @synthesize dismissCallback=_dismissCallback;
@@ -31,4 +31,3 @@
 - (id)initWithCell:(id)arg1;
 
 @end
-

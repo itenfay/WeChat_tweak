@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCGetMainThreadUtil : NSObject
 {
@@ -14,4 +15,3 @@
 + (void)getCurrentMainThreadStack:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
     NSValue *_originEncodeResolution;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *originEncodeResolution; // @synthesize originEncodeResolution=_originEncodeResolution;
 @property(nonatomic) long long originEncodeBitrate; // @synthesize originEncodeBitrate=_originEncodeBitrate;
 - (struct CGSize)adjustResolutionWithScreenResolution:(struct CGSize)arg1;

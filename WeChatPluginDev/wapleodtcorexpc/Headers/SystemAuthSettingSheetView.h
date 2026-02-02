@@ -14,7 +14,6 @@
     MMLocatingCoordinateLogic *_locatingLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic; // @synthesize locatingLogic=_locatingLogic;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;
 @property(retain, nonatomic) MMUILabel *locationLabel; // @synthesize locationLabel=_locationLabel;

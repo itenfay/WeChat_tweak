@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_businessData;
 + (void)PBArrayAdd_addMsgData;
 + (void)PBArrayAdd_functionMsgId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long businessId; // @synthesize businessId=_businessId;
 @property(retain, nonatomic) NSData *businessData; // @synthesize businessData=_businessData;
 @property(retain, nonatomic) NSData *addMsgData; // @synthesize addMsgData=_addMsgData;

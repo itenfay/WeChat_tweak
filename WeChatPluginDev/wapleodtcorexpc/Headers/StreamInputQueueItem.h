@@ -19,7 +19,6 @@
     NSData *_pcmVoiceData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int inputLanguageType; // @synthesize inputLanguageType=_inputLanguageType;
 @property(copy, nonatomic) NSData *pcmVoiceData; // @synthesize pcmVoiceData=_pcmVoiceData;
 @property(copy, nonatomic) NSData *voiceData; // @synthesize voiceData=_voiceData;

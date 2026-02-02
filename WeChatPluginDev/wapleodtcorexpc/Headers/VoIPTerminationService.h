@@ -14,7 +14,6 @@
 }
 
 + (void)launchIfNeed;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int mTalkingTime; // @synthesize mTalkingTime=_mTalkingTime;
 @property(retain, nonatomic) MMTimer *mVoipTimer; // @synthesize mVoipTimer=_mVoipTimer;
 @property(nonatomic) _Bool isCaller; // @synthesize isCaller=_isCaller;

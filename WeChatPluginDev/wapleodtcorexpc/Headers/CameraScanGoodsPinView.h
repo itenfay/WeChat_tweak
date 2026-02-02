@@ -12,7 +12,6 @@
     POPSpringAnimation *_shakingAnimation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) POPSpringAnimation *shakingAnimation; // @synthesize shakingAnimation=_shakingAnimation;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(retain, nonatomic) UIImageView *fgImageView; // @synthesize fgImageView=_fgImageView;

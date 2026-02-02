@@ -11,7 +11,6 @@
     unsigned long long _hashCode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hashCode; // @synthesize hashCode=_hashCode;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 - (_Bool)isEqual:(id)arg1 hashCode:(unsigned long long)arg2;

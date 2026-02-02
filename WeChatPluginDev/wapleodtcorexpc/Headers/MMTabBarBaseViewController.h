@@ -10,7 +10,6 @@
     FontSettingUtil *m_fontSettingUtil;
 }
 
-- (void).cxx_destruct;
 - (void)heroDidEndTransition;
 - (id)getCurrentViewController;
 - (void)onMainTabBarHiddenChange:(_Bool)arg1;

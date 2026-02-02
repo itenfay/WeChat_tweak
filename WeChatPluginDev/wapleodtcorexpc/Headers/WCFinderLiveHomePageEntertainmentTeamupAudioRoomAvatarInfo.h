@@ -11,7 +11,6 @@
     NSString *_sdkUserId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cameraOn; // @synthesize cameraOn=_cameraOn;
 @property(retain, nonatomic) NSString *sdkUserId; // @synthesize sdkUserId=_sdkUserId;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, WCAppContext;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)center;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *moduleList; // @synthesize moduleList=_moduleList;
 @property(readonly, nonatomic) NSMutableDictionary *modulesMap; // @synthesize modulesMap=_modulesMap;
 @property(readonly, nonatomic) NSMutableArray *moduleClasseList; // @synthesize moduleClasseList=_moduleClasseList;
@@ -31,4 +31,3 @@
 - (id)init;
 
 @end
-

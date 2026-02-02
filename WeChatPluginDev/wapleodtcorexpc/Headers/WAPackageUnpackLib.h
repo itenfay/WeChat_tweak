@@ -15,7 +15,6 @@
     unsigned long long _version;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(nonatomic) unsigned long long debugModeType; // @synthesize debugModeType=_debugModeType;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

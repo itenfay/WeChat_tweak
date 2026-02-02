@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMUIKitAdapterUtil : NSObject
 {
@@ -20,4 +21,3 @@
 + (id)getFirstActiveWindowScene;
 
 @end
-

@@ -14,7 +14,6 @@
     unsigned long long _selectingIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectingIndex; // @synthesize selectingIndex=_selectingIndex;
 @property(retain, nonatomic) UIView *sliderView; // @synthesize sliderView=_sliderView;
 @property(retain, nonatomic) OrderedDictionary *sectionViews; // @synthesize sectionViews=_sectionViews;

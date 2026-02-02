@@ -14,7 +14,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(nonatomic) long long msgType; // @synthesize msgType=_msgType;
 @property(retain, nonatomic) NSString *cardInfo; // @synthesize cardInfo=_cardInfo;
 

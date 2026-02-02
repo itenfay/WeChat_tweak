@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface QTCJSONKeyMapper : NSObject
 {
@@ -17,7 +18,6 @@
 + (id)mapperForSnakeCase;
 + (id)mapperFromUnderscoreCaseToCamelCase;
 + (id)swapKeysAndValuesInDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType modelToJSONKeyBlock; // @synthesize modelToJSONKeyBlock=_modelToJSONKeyBlock;
 - (id)convertValue:(id)arg1;
 - (id)convertValue:(id)arg1 isImportingToModel:(_Bool)arg2;
@@ -28,4 +28,3 @@
 - (id)initWithJSONToModelBlock:(CDUnknownBlockType)arg1 modelToJSONBlock:(CDUnknownBlockType)arg2;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, UIButton, UIView;
 @protocol MMDropDownHalfScreenViewDelegate;
 
@@ -25,7 +27,6 @@
     UIView *_detailViewMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *detailViewMaskView; // @synthesize detailViewMaskView=_detailViewMaskView;
 @property(retain, nonatomic) UIButton *bgMaskView; // @synthesize bgMaskView=_bgMaskView;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
@@ -65,4 +66,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 navigationBarHeight:(double)arg2;
 
 @end
-

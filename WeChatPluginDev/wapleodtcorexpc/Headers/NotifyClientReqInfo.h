@@ -14,7 +14,6 @@
     NSString *_clientAIInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientAIInfo; // @synthesize clientAIInfo=_clientAIInfo;
 @property(retain, nonatomic) NSString *functionID; // @synthesize functionID=_functionID;
 @property(nonatomic) int funcMsgScene; // @synthesize funcMsgScene=_funcMsgScene;

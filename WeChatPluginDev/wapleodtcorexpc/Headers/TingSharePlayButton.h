@@ -14,7 +14,6 @@
     ActiveSessionContext *_sessionContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enterPlayer; // @synthesize enterPlayer=_enterPlayer;
 @property(retain, nonatomic) ActiveSessionContext *sessionContext; // @synthesize sessionContext=_sessionContext;
 @property(retain, nonatomic) MMListenCategoryItem *categoryItem; // @synthesize categoryItem=_categoryItem;

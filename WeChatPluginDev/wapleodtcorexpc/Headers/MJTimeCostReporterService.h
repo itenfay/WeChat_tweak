@@ -15,7 +15,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain, nonatomic) NSMutableDictionary *eventStartDates; // @synthesize eventStartDates=_eventStartDates;
 - (void)reportEventWithName:(id)arg1 params:(id)arg2;

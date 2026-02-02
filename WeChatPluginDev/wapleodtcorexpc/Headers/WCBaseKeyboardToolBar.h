@@ -28,7 +28,6 @@
     id _manualSetTarget;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id manualSetTarget; // @synthesize manualSetTarget=_manualSetTarget;
 @property(nonatomic) SEL manualSetAction; // @synthesize manualSetAction=_manualSetAction;
 @property(nonatomic) _Bool bNeedManualKeyboardFrameChange; // @synthesize bNeedManualKeyboardFrameChange=_bNeedManualKeyboardFrameChange;

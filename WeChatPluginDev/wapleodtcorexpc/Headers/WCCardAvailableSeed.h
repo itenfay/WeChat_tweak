@@ -19,7 +19,6 @@
     NSString *_nonceStr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int onlyInvoice; // @synthesize onlyInvoice=_onlyInvoice;
 @property(retain, nonatomic) NSString *nonceStr; // @synthesize nonceStr=_nonceStr;
 @property(nonatomic) unsigned int timeStamp; // @synthesize timeStamp=_timeStamp;

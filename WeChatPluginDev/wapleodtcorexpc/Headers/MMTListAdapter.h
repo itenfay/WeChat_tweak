@@ -23,7 +23,6 @@
     NSMutableSet *_registeredSupplementaryViewIdentifiers;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInObjectUpdateTransaction; // @synthesize isInObjectUpdateTransaction=_isInObjectUpdateTransaction;
 @property(retain, nonatomic) NSMutableSet *registeredSupplementaryViewIdentifiers; // @synthesize registeredSupplementaryViewIdentifiers=_registeredSupplementaryViewIdentifiers;
 @property(retain, nonatomic) NSMutableSet *registeredCellIdentifiers; // @synthesize registeredCellIdentifiers=_registeredCellIdentifiers;

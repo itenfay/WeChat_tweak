@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary;
 @protocol UPWebViewJavascriptBridgeBaseDelegate;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSMutableDictionary *responseCallbacks; // @synthesize responseCallbacks=_responseCallbacks;
 @property(retain, nonatomic) NSMutableArray *startupMessageQueue; // @synthesize startupMessageQueue=_startupMessageQueue;
 @property(nonatomic) __weak id <UPWebViewJavascriptBridgeBaseDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_log:(id)arg1 json:(id)arg2;
 - (id)_deserializeMessageJSON:(id)arg1;
 - (id)_serializeMessage:(id)arg1 pretty:(_Bool)arg2;
@@ -49,4 +49,3 @@
 - (id)init;
 
 @end
-

@@ -28,7 +28,6 @@
     NSDictionary *_jsapiParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *jsapiParams; // @synthesize jsapiParams=_jsapiParams;
 @property(retain, nonatomic) NSData *thumbData; // @synthesize thumbData=_thumbData;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;

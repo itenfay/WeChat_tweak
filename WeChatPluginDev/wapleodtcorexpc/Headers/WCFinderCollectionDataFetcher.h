@@ -26,7 +26,6 @@
     FinderJumpInfo *_creatorEntranceJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *creatorEntranceJumpInfo; // @synthesize creatorEntranceJumpInfo=_creatorEntranceJumpInfo;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool isPullingFirstPage; // @synthesize isPullingFirstPage=_isPullingFirstPage;

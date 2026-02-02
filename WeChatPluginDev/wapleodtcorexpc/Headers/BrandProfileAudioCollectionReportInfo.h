@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString;
 
@@ -17,7 +18,6 @@
     NSDictionary *_pageReportParams;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *pageReportParams; // @synthesize pageReportParams=_pageReportParams;
 @property(copy, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 @property(nonatomic) long long pageId; // @synthesize pageId=_pageId;
@@ -27,4 +27,3 @@
 - (struct SDKReportInfo)toSDKReportInfo;
 
 @end
-

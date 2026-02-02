@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) int m_type; // @synthesize m_type=_m_type;
 @property(retain, nonatomic) NSString *m_address; // @synthesize m_address=_m_address;
 @property(nonatomic) int m_longitude; // @synthesize m_longitude=_m_longitude;

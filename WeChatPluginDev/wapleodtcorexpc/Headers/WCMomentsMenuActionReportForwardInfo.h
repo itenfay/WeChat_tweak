@@ -13,7 +13,6 @@
     NSString *_toUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForwardSuccess; // @synthesize isForwardSuccess=_isForwardSuccess;
 @property(nonatomic) _Bool isAppendix; // @synthesize isAppendix=_isAppendix;
 @property(retain, nonatomic) NSString *toUsername; // @synthesize toUsername=_toUsername;

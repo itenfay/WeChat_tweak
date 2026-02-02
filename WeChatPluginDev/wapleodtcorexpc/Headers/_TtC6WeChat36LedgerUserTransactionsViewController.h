@@ -20,7 +20,6 @@
     MISSING_TYPE *$__lazy_storage_$_tableView;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

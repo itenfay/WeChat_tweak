@@ -19,7 +19,6 @@
     NSMutableDictionary *m_dicMergeResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <UploadVoiceDelegate> m_delNotifyToSender; // @synthesize m_delNotifyToSender;
 @property(retain, nonatomic) MMTimer *m_timerCheck; // @synthesize m_timerCheck;
 @property(retain, nonatomic) NSRecursiveLock *m_oLock; // @synthesize m_oLock;

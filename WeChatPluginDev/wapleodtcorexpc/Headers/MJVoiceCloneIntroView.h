@@ -19,7 +19,6 @@
     MMUIButton *_goRecordingButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *goRecordingButton; // @synthesize goRecordingButton=_goRecordingButton;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) WCAgreementCheckBox *agreementCheckBox; // @synthesize agreementCheckBox=_agreementCheckBox;

@@ -16,7 +16,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_statisticalInfoList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *statisticalInfoList; // @synthesize statisticalInfoList=_statisticalInfoList;
 - (id)initWithMemberStatisticalInfo:(id)arg1;
 - (id)archivedWCTValue;

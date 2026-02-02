@@ -12,7 +12,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errMessage; // @synthesize errMessage=_errMessage;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;
 - (id)getErrorMessageForDisplay;

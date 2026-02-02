@@ -59,7 +59,6 @@
     NSArray *_badgeInfos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int visibleBadgeCount; // @synthesize visibleBadgeCount=_visibleBadgeCount;
 @property(retain, nonatomic) NSArray *badgeInfos; // @synthesize badgeInfos=_badgeInfos;
 @property(retain, nonatomic) WCFinderContact *fetchedFinderContact; // @synthesize fetchedFinderContact=_fetchedFinderContact;

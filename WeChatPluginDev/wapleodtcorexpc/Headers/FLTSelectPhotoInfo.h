@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPhotoId:(id)arg1 path:(id)arg2 width:(long long)arg3 height:(long long)arg4 cropInfo:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FLTPhotoCropInfo *cropInfo; // @synthesize cropInfo=_cropInfo;
 @property(nonatomic) long long height; // @synthesize height=_height;
 @property(nonatomic) long long width; // @synthesize width=_width;

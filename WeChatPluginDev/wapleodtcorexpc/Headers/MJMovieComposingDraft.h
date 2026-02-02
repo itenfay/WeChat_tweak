@@ -41,7 +41,6 @@
 + (void)PBArrayAdd_assetClassifyResult;
 + (void)PBArrayAdd_maasSDKVersion;
 + (void)PBArrayAdd_isFromAlbum;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJAssetAnalysisReportInfoModel *realShotReportInfoModel; // @synthesize realShotReportInfoModel=_realShotReportInfoModel;
 @property(retain, nonatomic) NSDictionary *vocalAdjustmentParamsModels; // @synthesize vocalAdjustmentParamsModels=_vocalAdjustmentParamsModels;
 @property(retain, nonatomic) NSData *aspectRatioData; // @synthesize aspectRatioData=_aspectRatioData;

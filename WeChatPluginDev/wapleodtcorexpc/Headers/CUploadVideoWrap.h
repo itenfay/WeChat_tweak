@@ -55,7 +55,6 @@
     NSString *_m_nsMediaTagName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsMediaTagName; // @synthesize m_nsMediaTagName=_m_nsMediaTagName;
 @property(retain, nonatomic) NSString *m_nsMessageExt; // @synthesize m_nsMessageExt=_m_nsMessageExt;
 @property(retain, nonatomic) NSString *m_nsMessageAction; // @synthesize m_nsMessageAction=_m_nsMessageAction;

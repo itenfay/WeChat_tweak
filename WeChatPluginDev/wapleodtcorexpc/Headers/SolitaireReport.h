@@ -16,7 +16,6 @@
     NSString *_nsIdentifier;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsIdentifier; // @synthesize nsIdentifier=_nsIdentifier;
 @property(nonatomic) long long sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) NSString *nsCurMsgUserName; // @synthesize nsCurMsgUserName=_nsCurMsgUserName;

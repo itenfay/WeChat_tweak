@@ -18,7 +18,6 @@
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceSetHighlight; // @synthesize forceSetHighlight=_forceSetHighlight;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) BrandLiveStatusButton *liveButton; // @synthesize liveButton=_liveButton;

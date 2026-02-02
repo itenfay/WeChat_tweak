@@ -22,7 +22,6 @@
     CDStruct_1b6d18a9 _startTimeOfCamScene;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lyricInfos; // @synthesize lyricInfos=_lyricInfos;
 @property(nonatomic) int loopCount; // @synthesize loopCount=_loopCount;
 @property(nonatomic) CDStruct_1b6d18a9 startTimeOfCamScene; // @synthesize startTimeOfCamScene=_startTimeOfCamScene;

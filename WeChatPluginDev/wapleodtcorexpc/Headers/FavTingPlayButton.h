@@ -10,7 +10,6 @@
     id <FavTingPlayButtonDelegate> _favTingBtnDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavTingPlayButtonDelegate> favTingBtnDelegate; // @synthesize favTingBtnDelegate=_favTingBtnDelegate;
 - (id)categoryItem;
 

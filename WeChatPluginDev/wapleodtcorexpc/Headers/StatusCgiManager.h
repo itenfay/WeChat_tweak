@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ConcurrentDictionary;
 
@@ -16,7 +17,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)getSelfHistoryDataAsync:(id)arg1 on:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getSelfHistoryDataAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -27,4 +27,3 @@
 - (void)attachClientInvoker:(const void *)arg1;
 
 @end
-

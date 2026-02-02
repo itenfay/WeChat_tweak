@@ -20,7 +20,6 @@
     WCFinderNetIconTextBtn *_jumpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNetIconTextBtn *jumpButton; // @synthesize jumpButton=_jumpButton;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

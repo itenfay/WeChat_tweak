@@ -13,7 +13,6 @@
     NSString *_engineMarkerImageKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *engineMarkerImageKey; // @synthesize engineMarkerImageKey=_engineMarkerImageKey;
 @property(nonatomic) int markerID; // @synthesize markerID=_markerID;
 

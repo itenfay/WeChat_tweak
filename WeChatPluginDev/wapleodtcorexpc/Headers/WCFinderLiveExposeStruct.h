@@ -34,7 +34,6 @@
     NSMutableDictionary *_switchExtraDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *switchExtraDic; // @synthesize switchExtraDic=_switchExtraDic;
 @property(retain, nonatomic) NSString *channelExtra; // @synthesize channelExtra=_channelExtra;
 @property(retain, nonatomic) NSString *clickSubTabContextId; // @synthesize clickSubTabContextId=_clickSubTabContextId;

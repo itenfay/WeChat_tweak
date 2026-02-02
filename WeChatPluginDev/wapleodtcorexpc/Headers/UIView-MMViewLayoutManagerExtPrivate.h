@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMViewLayoutComponentItem;
 
@@ -11,4 +12,3 @@
 @property(retain, nonatomic) MMViewLayoutComponentItem *mm_bindedItem;
 @property(copy, nonatomic) CDUnknownBlockType mm_onDependentViewInit;
 @end
-

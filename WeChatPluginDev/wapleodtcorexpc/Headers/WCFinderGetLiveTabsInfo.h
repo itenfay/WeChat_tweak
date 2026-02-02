@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_prefechTabPullType;
 + (void)PBArrayAdd_hideTabs;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *navTabList; // @synthesize navTabList=_navTabList;
 @property(nonatomic) unsigned long long prefechNextTabPullType; // @synthesize prefechNextTabPullType=_prefechNextTabPullType;
 @property(nonatomic) unsigned long long prefechPreTabPullType; // @synthesize prefechPreTabPullType=_prefechPreTabPullType;

@@ -20,7 +20,6 @@
 
 + (_Bool)p_writeMediaDataPush:(id)arg1 toPath:(id)arg2;
 + (_Bool)p_writeMsgListDataPush:(id)arg1 toPath:(id)arg2;
-- (void).cxx_destruct;
 @property _Bool bPacking; // @synthesize bPacking=_bPacking;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *chatPackQueue; // @synthesize chatPackQueue=_chatPackQueue;
 @property(copy, nonatomic) NSString *wechatLogFile; // @synthesize wechatLogFile=_wechatLogFile;

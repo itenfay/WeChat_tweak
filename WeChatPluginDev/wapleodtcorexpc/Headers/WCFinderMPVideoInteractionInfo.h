@@ -17,7 +17,6 @@
 }
 
 + (id)interactionInfoWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long favCount; // @synthesize favCount=_favCount;
 @property(nonatomic) _Bool isFav; // @synthesize isFav=_isFav;
 @property(nonatomic) unsigned long long likeCount; // @synthesize likeCount=_likeCount;

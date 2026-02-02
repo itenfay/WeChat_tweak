@@ -16,7 +16,6 @@
     UILongPressGestureRecognizer *_longPressGest;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceHighlight; // @synthesize forceHighlight=_forceHighlight;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGest; // @synthesize longPressGest=_longPressGest;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

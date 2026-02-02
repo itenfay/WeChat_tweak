@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
@@ -17,7 +18,6 @@
     MMUIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MMUIButton *cancelMultiSelectButton; // @synthesize cancelMultiSelectButton=_cancelMultiSelectButton;
 @property(retain, nonatomic) MMUIButton *multiSelectButton; // @synthesize multiSelectButton=_multiSelectButton;
@@ -36,4 +36,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

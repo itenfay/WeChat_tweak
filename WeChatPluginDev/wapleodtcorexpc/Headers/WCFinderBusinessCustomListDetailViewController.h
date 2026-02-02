@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiteAppViewController, NSString, UIView, WCFinderBusinessCustomListDetailViewModel, WCFinderFeedDetailStatusView, WCFinderFeedListView, WCFinderShareCustomTransition;
 @protocol WCFinderBusinessCustomListDetailViewControllerDelegate;
 
@@ -22,7 +24,6 @@
     UIView *_embedLiteAppView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPresentedScene; // @synthesize isPresentedScene=_isPresentedScene;
 @property(retain, nonatomic) UIView *embedLiteAppView; // @synthesize embedLiteAppView=_embedLiteAppView;
 @property(retain, nonatomic) MMLiteAppViewController *embedLiteAppVC; // @synthesize embedLiteAppVC=_embedLiteAppVC;
@@ -114,4 +115,3 @@
 @property(readonly) Class superclass;
 
 @end
-

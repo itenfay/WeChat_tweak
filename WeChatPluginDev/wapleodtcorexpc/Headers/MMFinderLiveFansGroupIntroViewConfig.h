@@ -20,7 +20,6 @@
     struct CGSize _iconImageRatio;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupIntroViewColorConfig *colorConfig; // @synthesize colorConfig=_colorConfig;
 @property(nonatomic) _Bool isFree; // @synthesize isFree=_isFree;
 @property(retain, nonatomic) NSArray *rights; // @synthesize rights=_rights;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJAIAssetGenerateResult, MJAIAssetGenerateTask, MJAITemplateAssetOptions, NSArray, NSData, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -46,7 +47,6 @@
 }
 
 + (long long)errorTypeForError:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long finishedTaskCount; // @synthesize finishedTaskCount=_finishedTaskCount;
 @property(nonatomic) unsigned long long totalTaskCount; // @synthesize totalTaskCount=_totalTaskCount;
 @property(retain, nonatomic) NSDate *aiAssetGeneratingEndTime; // @synthesize aiAssetGeneratingEndTime=_aiAssetGeneratingEndTime;
@@ -126,4 +126,3 @@
 @property(readonly) Class superclass;
 
 @end
-

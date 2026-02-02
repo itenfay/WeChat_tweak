@@ -28,7 +28,6 @@
 @property long long randomString; // @synthesize randomString=_randomString;
 @property _Bool dataReady; // @synthesize dataReady=_dataReady;
 @property(nonatomic) int dataPostType; // @synthesize dataPostType=_dataPostType;
-- (void).cxx_destruct;
 - (unsigned long long)dataSize;
 - (unsigned long long)contentInfoStringLength:(id)arg1;
 - (unsigned long long)contentBoundayStringLength;

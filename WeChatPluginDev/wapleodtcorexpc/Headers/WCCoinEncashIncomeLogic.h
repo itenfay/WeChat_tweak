@@ -19,7 +19,6 @@
     SecurityInfoAuthrizeLogic *_authLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SecurityInfoAuthrizeLogic *authLogic; // @synthesize authLogic=_authLogic;
 @property(retain, nonatomic) KindaProgressDialog *loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) WCCoinFetchMoneyInputViewController *inputVC; // @synthesize inputVC=_inputVC;

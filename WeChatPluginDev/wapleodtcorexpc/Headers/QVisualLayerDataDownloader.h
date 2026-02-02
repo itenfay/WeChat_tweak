@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -12,7 +13,6 @@
     NSMutableDictionary *_downloadingTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadingTasks; // @synthesize downloadingTasks=_downloadingTasks;
 - (void)sendVisLayerTaskCancellation:(id)arg1;
 - (id)getDownloadTaskFromKey:(id)arg1;
@@ -24,4 +24,3 @@
 - (id)init;
 
 @end
-

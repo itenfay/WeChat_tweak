@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_layoutEndTime;
 + (void)PBArrayAdd_announceMent;
 + (void)PBArrayAdd_cardID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *labelWording; // @synthesize labelWording=_labelWording;
 @property(nonatomic) unsigned int itemType; // @synthesize itemType=_itemType;
 @property(nonatomic) unsigned int layoutEndTime; // @synthesize layoutEndTime=_layoutEndTime;

@@ -15,7 +15,6 @@
     unsigned long long _expiredTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isOver; // @synthesize isOver=_isOver;
 @property(nonatomic) unsigned long long expiredTime; // @synthesize expiredTime=_expiredTime;
 @property(copy, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;

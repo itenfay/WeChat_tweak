@@ -12,7 +12,6 @@
     NSNumber *_curApiCallbackId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *curApiCallbackId; // @synthesize curApiCallbackId=_curApiCallbackId;
 @property(retain, nonatomic) NSString *curApiName; // @synthesize curApiName=_curApiName;
 @property(retain, nonatomic) YYBaseWebView *webView; // @synthesize webView=_webView;

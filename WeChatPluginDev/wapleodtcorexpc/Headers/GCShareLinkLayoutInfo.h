@@ -18,7 +18,6 @@
     double _labelContentWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double labelContentWidth; // @synthesize labelContentWidth=_labelContentWidth;
 @property(nonatomic) double labelSpace; // @synthesize labelSpace=_labelSpace;
 @property(nonatomic) double titleRightMargin; // @synthesize titleRightMargin=_titleRightMargin;

@@ -13,7 +13,6 @@
 + (double)commentTableWidthForLandscape;
 + (double)commentTableWidthForPortrait;
 + (double)commentTableWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *forbiddCommentLoadingView; // @synthesize forbiddCommentLoadingView=_forbiddCommentLoadingView;
 - (void)updateInputViewAccessibility:(_Bool)arg1;
 - (double)commentTableHeight;

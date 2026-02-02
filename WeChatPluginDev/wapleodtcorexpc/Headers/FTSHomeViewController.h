@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FTSVoiceSearchBarController, MMTListAdapter, NSArray, NSString, UITableView, WCWebSearchBar, WCWebSearchInputProvider, _TtC6WeChat19FTSHomePageReporter;
 @protocol FTSHomeViewControllerDelegate, WSHotListTeachView;
 
@@ -19,7 +21,6 @@
     _TtC6WeChat19FTSHomePageReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromVoice; // @synthesize isFromVoice=_isFromVoice;
 @property(retain, nonatomic) _TtC6WeChat19FTSHomePageReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) WCWebSearchInputProvider *inputProvider; // @synthesize inputProvider=_inputProvider;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

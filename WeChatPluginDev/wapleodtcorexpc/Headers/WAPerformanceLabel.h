@@ -11,7 +11,6 @@
     long long _type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 - (void)setValue:(id)arg1;
 - (void)setText:(id)arg1 value:(id)arg2;

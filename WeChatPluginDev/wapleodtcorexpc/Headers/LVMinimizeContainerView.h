@@ -26,7 +26,6 @@
 + (struct CGSize)sizeForStyle:(unsigned long long)arg1;
 + (unsigned long long)styleForMediaInfo:(id)arg1;
 + (_Bool)shouldAdjustShowArea:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;

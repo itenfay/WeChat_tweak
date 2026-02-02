@@ -18,7 +18,6 @@
     NSString *_mbHardcodeWxaPkgFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mbHardcodeWxaPkgFilePath; // @synthesize mbHardcodeWxaPkgFilePath=_mbHardcodeWxaPkgFilePath;
 @property(retain, nonatomic) NSString *mbBundleFilePath; // @synthesize mbBundleFilePath=_mbBundleFilePath;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;

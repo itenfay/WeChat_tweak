@@ -36,7 +36,6 @@
 + (id)unsafeLaunchOptionsWithLaunchOptions:(id)arg1 scene:(int)arg2;
 + (id)launchOptionsWithScene:(int)arg1;
 + (int)tingProfileScene:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceObliterateOther; // @synthesize forceObliterateOther=_forceObliterateOther;
 @property(nonatomic) _Bool hasSquare; // @synthesize hasSquare=_hasSquare;
 @property(nonatomic) _Bool skipRefreshIfCreate; // @synthesize skipRefreshIfCreate=_skipRefreshIfCreate;

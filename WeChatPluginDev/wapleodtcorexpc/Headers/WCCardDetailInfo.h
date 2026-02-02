@@ -14,7 +14,6 @@
     NSString *_detailAdTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detailAdTitle; // @synthesize detailAdTitle=_detailAdTitle;
 @property(retain, nonatomic) NSArray *detailImgList; // @synthesize detailImgList=_detailImgList;
 @property(retain, nonatomic) NSString *detailUrl; // @synthesize detailUrl=_detailUrl;

@@ -75,7 +75,6 @@
 
 + (int)getVideoDurationForAsset:(id)arg1;
 + (id)genVideoInfoWithVideoUrl:(id)arg1 thumb:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_referFromScene; // @synthesize m_referFromScene=_m_referFromScene;
 @property(retain, nonatomic) MPPageIdentityInfo *m_mpPageIdentityInfo; // @synthesize m_mpPageIdentityInfo=_m_mpPageIdentityInfo;
 @property(retain, nonatomic) NSString *m_nsEncodeJson; // @synthesize m_nsEncodeJson=_m_nsEncodeJson;

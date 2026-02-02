@@ -18,7 +18,6 @@
     PAGImage *_relplacePagImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int replaceIndex; // @synthesize replaceIndex=_replaceIndex;
 @property(retain, nonatomic) PAGImage *relplacePagImage; // @synthesize relplacePagImage=_relplacePagImage;
 @property(retain, nonatomic) WCPaySingleDownloadLogic *singleDownloadLogic; // @synthesize singleDownloadLogic=_singleDownloadLogic;

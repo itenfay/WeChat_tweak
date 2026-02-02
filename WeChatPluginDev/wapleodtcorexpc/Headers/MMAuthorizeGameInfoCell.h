@@ -20,7 +20,6 @@
 
 + (double)rightPadding;
 + (double)leftPadding;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAuthorizeGameInfoCellVM *vm; // @synthesize vm=_vm;
 @property(retain, nonatomic) UIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;
 @property(retain, nonatomic) UIView *topSeperatorLine; // @synthesize topSeperatorLine=_topSeperatorLine;

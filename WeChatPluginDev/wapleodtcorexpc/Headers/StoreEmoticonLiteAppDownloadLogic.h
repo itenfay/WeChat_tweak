@@ -15,7 +15,6 @@
     id <StoreEmoticonLiteAppDownloadLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StoreEmoticonLiteAppDownloadLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak MMUIViewController *callingVC; // @synthesize callingVC=_callingVC;
 @property(nonatomic) EmoticonStoreReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;

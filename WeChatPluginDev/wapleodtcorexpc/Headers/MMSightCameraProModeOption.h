@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UIScrollView, WCElasticLayoutView;
 @protocol MMSightCameraProModeOptionDelegate;
@@ -17,7 +18,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *svProModeOptionList; // @synthesize svProModeOptionList=_svProModeOptionList;
 @property(retain, nonatomic) WCElasticLayoutView *elasticLayoutView; // @synthesize elasticLayoutView=_elasticLayoutView;
 @property(nonatomic) struct CGRect containerFrame; // @synthesize containerFrame=_containerFrame;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

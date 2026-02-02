@@ -17,7 +17,6 @@
     NSArray *_textOverlayDescs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *textOverlayDescs; // @synthesize textOverlayDescs=_textOverlayDescs;
 @property(retain, nonatomic) NSArray *stickerOverlayDescs; // @synthesize stickerOverlayDescs=_stickerOverlayDescs;
 @property(retain, nonatomic) OMJLyricOverlayDesc *lyricOverlayDesc; // @synthesize lyricOverlayDesc=_lyricOverlayDesc;

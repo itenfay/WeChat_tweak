@@ -14,7 +14,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 - (id)take:(id)arg1;
 - (_Bool)has:(id)arg1;
 - (void)remove:(id)arg1;

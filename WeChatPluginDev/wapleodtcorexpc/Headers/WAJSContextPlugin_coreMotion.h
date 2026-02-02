@@ -18,7 +18,6 @@
     unsigned long long _coordType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long coordType; // @synthesize coordType=_coordType;
 @property(nonatomic) _Bool enableIndoor; // @synthesize enableIndoor=_enableIndoor;
 @property(retain, nonatomic) NSString *mapSubKey; // @synthesize mapSubKey=_mapSubKey;

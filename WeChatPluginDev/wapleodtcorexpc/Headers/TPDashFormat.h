@@ -21,7 +21,6 @@
     NSString *_language;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float frameRate; // @synthesize frameRate=_frameRate;
 @property(nonatomic) int audioSamplingRate; // @synthesize audioSamplingRate=_audioSamplingRate;
 @property(nonatomic) int audioChannels; // @synthesize audioChannels=_audioChannels;

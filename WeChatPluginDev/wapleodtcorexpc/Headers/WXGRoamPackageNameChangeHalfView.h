@@ -11,7 +11,6 @@
     UIButton *_completeBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *completeBtn; // @synthesize completeBtn=_completeBtn;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

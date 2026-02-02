@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_timeStamp;
 + (void)PBArrayAdd_longitude;
 + (void)PBArrayAdd_latitude;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;

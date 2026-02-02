@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface MMPayLiteAppResourceBatchGetCGI
@@ -12,7 +14,6 @@
     CDUnknownBlockType _fail;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fail; // @synthesize fail=_fail;
 @property(copy, nonatomic) CDUnknownBlockType success; // @synthesize success=_success;
 @property(retain, nonatomic) NSArray *pkgList; // @synthesize pkgList=_pkgList;
@@ -24,4 +25,3 @@
 - (id)initWithPkgList:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
 
 @end
-

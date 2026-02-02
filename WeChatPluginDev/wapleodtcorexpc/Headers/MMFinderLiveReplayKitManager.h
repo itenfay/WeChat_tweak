@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderScreenRecordGuideView, NSString, RPSystemBroadcastPickerView;
 
@@ -25,7 +26,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBroadcastRecording; // @synthesize isBroadcastRecording=_isBroadcastRecording;
 @property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(nonatomic) _Bool isOpenRecordLive; // @synthesize isOpenRecordLive=_isOpenRecordLive;
@@ -74,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

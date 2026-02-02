@@ -41,7 +41,6 @@
     NSMutableArray *_arrFrameIndexDetectedItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrFrameIndexDetectedItem; // @synthesize arrFrameIndexDetectedItem=_arrFrameIndexDetectedItem;
 @property(nonatomic) long long svrFirstSuccessFrame; // @synthesize svrFirstSuccessFrame=_svrFirstSuccessFrame;
 @property(nonatomic) long long svrSuccessCount; // @synthesize svrSuccessCount=_svrSuccessCount;

@@ -15,7 +15,6 @@
     UIView *_topSeparator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topSeparator; // @synthesize topSeparator=_topSeparator;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool showTopSeparator; // @synthesize showTopSeparator=_showTopSeparator;

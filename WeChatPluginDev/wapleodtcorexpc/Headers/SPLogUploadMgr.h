@@ -15,7 +15,6 @@
 
 + (id)silentPushBackgroundURLSessionIndentifierPrefix;
 + (id)xmlStringFromCgContent:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_packageSize; // @synthesize m_packageSize=_m_packageSize;
 @property(retain, nonatomic) NSString *m_realHost; // @synthesize m_realHost=_m_realHost;
 @property(retain, nonatomic) NSString *m_realReportUrl; // @synthesize m_realReportUrl=_m_realReportUrl;

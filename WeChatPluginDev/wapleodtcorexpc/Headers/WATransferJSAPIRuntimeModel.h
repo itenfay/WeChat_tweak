@@ -20,7 +20,6 @@
 }
 
 + (id)fromEventHandler:(id)arg1 jsapiParams:(id)arg2 wxaScene:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long wxaScene; // @synthesize wxaScene=_wxaScene;
 @property(nonatomic) _Bool isService; // @synthesize isService=_isService;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

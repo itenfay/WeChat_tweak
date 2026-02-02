@@ -19,7 +19,6 @@
     unsigned long long _component;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long component; // @synthesize component=_component;
 @property(nonatomic) unsigned long long videoState; // @synthesize videoState=_videoState;
 @property(copy, nonatomic) NSString *manuFacturer; // @synthesize manuFacturer=_manuFacturer;

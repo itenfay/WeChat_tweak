@@ -13,7 +13,6 @@
     MISSING_TYPE *request;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
 

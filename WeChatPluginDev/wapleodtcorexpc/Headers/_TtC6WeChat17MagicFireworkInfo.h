@@ -14,7 +14,6 @@
     MISSING_TYPE *randomSeed;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (id)toDictionary;

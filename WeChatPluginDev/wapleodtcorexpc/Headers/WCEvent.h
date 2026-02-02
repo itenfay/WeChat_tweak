@@ -12,7 +12,6 @@
     WCState *_destinationState;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCState *destinationState; // @synthesize destinationState=_destinationState;
 @property(readonly, nonatomic) NSArray *sourceStates; // @synthesize sourceStates=_sourceStates;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;

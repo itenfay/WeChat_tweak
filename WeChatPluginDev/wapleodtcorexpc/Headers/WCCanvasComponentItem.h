@@ -73,7 +73,6 @@
     NSString *_randomCardId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDefaultRandomCard; // @synthesize isDefaultRandomCard=_isDefaultRandomCard;
 @property(retain, nonatomic) NSString *randomCardId; // @synthesize randomCardId=_randomCardId;
 @property(nonatomic) _Bool isShakeAnimView; // @synthesize isShakeAnimView=_isShakeAnimView;

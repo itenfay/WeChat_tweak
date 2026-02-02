@@ -18,7 +18,6 @@
     NSString *_md5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(nonatomic) int mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSString *mediaID; // @synthesize mediaID=_mediaID;

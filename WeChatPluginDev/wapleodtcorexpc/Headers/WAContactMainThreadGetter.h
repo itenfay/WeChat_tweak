@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString;
 
@@ -15,7 +16,6 @@
     unsigned long long _getType;
 }
 
-- (void).cxx_destruct;
 - (void)onUpdateWeAppContactFailedWithKey:(id)arg1 type:(unsigned long long)arg2 errMsg:(id)arg3;
 - (void)onUpdateWeAppContactSuccess:(id)arg1;
 - (void)onUpdateContactTimeout:(id)arg1;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

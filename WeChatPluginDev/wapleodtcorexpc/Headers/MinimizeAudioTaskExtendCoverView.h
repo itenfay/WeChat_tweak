@@ -20,7 +20,6 @@
 + (_Bool)automaticallyNotifiesObserversOfImage;
 + (id)keyPathsForValuesAffectingImage;
 + (struct CGSize)defaultSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundGraintView; // @synthesize backgroundGraintView=_backgroundGraintView;
 @property(retain, nonatomic) MMWebImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) MMWebImageView *coverView; // @synthesize coverView=_coverView;

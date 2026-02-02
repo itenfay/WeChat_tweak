@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnRenderStats, MMWeEffectManager, NSString, RotationControl, ScaleControl, VRProjectionModel;
 @protocol CdnNotifyDelegate;
@@ -31,7 +32,6 @@
 }
 
 + (_Bool)checkInitParamValidWithRenderMode:(long long)arg1 renderScene:(long long)arg2;
-- (void).cxx_destruct;
 @property _Bool needProcessByWeffect; // @synthesize needProcessByWeffect=_needProcessByWeffect;
 @property __weak MMWeEffectManager *weeffectManager; // @synthesize weeffectManager=_weeffectManager;
 @property(retain, nonatomic) ScaleControl *mScaleControl; // @synthesize mScaleControl=_mScaleControl;
@@ -77,4 +77,3 @@
 @property(readonly) Class superclass;
 
 @end
-

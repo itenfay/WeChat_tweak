@@ -14,7 +14,6 @@
     WCDataItem *_securityVerificationDataItem;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isVerified; // @synthesize isVerified=_isVerified;
 @property(readonly, nonatomic) WCDataItem *securityVerificationDataItem; // @synthesize securityVerificationDataItem=_securityVerificationDataItem;
 @property(readonly, nonatomic) _Bool isInSession; // @synthesize isInSession=_isInSession;

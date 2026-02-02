@@ -10,7 +10,6 @@
     id m_target;
 }
 
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)returnNil;

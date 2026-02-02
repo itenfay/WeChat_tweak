@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 @protocol MMMultiMenuAndMemuTableViewCellDelegate;
 
@@ -15,7 +17,6 @@
     UIView *_m_bkgCardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_bkgCardView; // @synthesize m_bkgCardView=_m_bkgCardView;
 @property(nonatomic) long long buttonTitleLabelNumberOfLines; // @synthesize buttonTitleLabelNumberOfLines=_buttonTitleLabelNumberOfLines;
 @property(nonatomic) __weak id <MMMultiMenuAndMemuTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,4 +32,3 @@
 - (void)setFrame:(struct CGRect)arg1;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView, UILabel, WCFinderDataItem, WCFinderFeedContentVM, WCFinderFeedImageView, WCFinderFeedMediaWrap, WCFinderMediaInfo, WCFinderPlayerControlView, WCFinderSimplePlayerInitParam, WCPlayerView;
 @protocol WCFinderFeedContentMediaActionProtocol;
 
@@ -28,7 +30,6 @@
     NSString *_currentVideoTid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableProgressBar; // @synthesize disableProgressBar=_disableProgressBar;
 @property(copy, nonatomic) NSString *currentVideoTid; // @synthesize currentVideoTid=_currentVideoTid;
 @property(nonatomic) _Bool needsRestThumb; // @synthesize needsRestThumb=_needsRestThumb;
@@ -121,4 +122,3 @@
 @property(readonly) Class superclass;
 
 @end
-

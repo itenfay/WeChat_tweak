@@ -23,7 +23,6 @@
     RingToneVideoFeedViewController *_pickerVC2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneVideoFeedViewController *pickerVC2; // @synthesize pickerVC2=_pickerVC2;
 @property(retain, nonatomic) RingTonePickerViewController *pickerVC; // @synthesize pickerVC=_pickerVC;
 @property(retain, nonatomic) RingToneHomePageActionReporter_23612 *reporter; // @synthesize reporter=_reporter;

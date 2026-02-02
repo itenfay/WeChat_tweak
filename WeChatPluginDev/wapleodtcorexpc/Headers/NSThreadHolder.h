@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSThread;
 
@@ -12,10 +13,8 @@
     NSThread *_thread;
 }
 
-- (void).cxx_destruct;
 - (_Bool)onWorkingThread;
 - (void)checkAndPost:(CDUnknownBlockType)arg1;
 - (id)initWithNSThread:(id)arg1;
 
 @end
-

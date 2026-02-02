@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_3fcb0b09 backingSegment; // @synthesize backingSegment=_backingSegment;
 @property(readonly, nonatomic) NSString *segmentID; // @synthesize segmentID=_segmentID;
 - (id)description;

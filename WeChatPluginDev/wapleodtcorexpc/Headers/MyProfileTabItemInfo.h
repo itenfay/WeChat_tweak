@@ -14,7 +14,6 @@
     unsigned long long _tabType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tabType; // @synthesize tabType=_tabType;
 @property(retain, nonatomic) UIImage *normalImage; // @synthesize normalImage=_normalImage;
 @property(retain, nonatomic) NSString *titleStr; // @synthesize titleStr=_titleStr;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)createUnReadCountStr:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *unReadIconView; // @synthesize unReadIconView=_unReadIconView;
 @property(copy, nonatomic) CDUnknownBlockType transferHitTestBlock; // @synthesize transferHitTestBlock=_transferHitTestBlock;
 @property(nonatomic) unsigned long long unReadCount; // @synthesize unReadCount=_unReadCount;
@@ -32,4 +32,3 @@
 - (id)initWithLabel:(id)arg1 icon:(id)arg2 backgroundColor:(id)arg3;
 
 @end
-

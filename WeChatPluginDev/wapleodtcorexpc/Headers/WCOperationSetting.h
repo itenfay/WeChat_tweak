@@ -14,7 +14,6 @@
     _Bool needWriteBack;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needWriteBack; // @synthesize needWriteBack;
 @property(retain, nonatomic) NSMutableDictionary *dicUserBigImageAddedCount; // @synthesize dicUserBigImageAddedCount;
 @property(retain, nonatomic) NSMutableDictionary *dicUserBigImageClickedCount; // @synthesize dicUserBigImageClickedCount;

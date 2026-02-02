@@ -11,7 +11,6 @@
     _Bool mIsPrepareSent;
 }
 
-- (void).cxx_destruct;
 - (long long)getVoiceFormat;
 - (void)stop;
 - (void)cleanResource;

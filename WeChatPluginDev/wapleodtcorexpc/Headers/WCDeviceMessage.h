@@ -16,7 +16,6 @@
     unsigned int m_type;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_type; // @synthesize m_type;
 @property(retain, nonatomic) NSData *m_sessionBuffer; // @synthesize m_sessionBuffer;
 @property(retain, nonatomic) NSData *m_data; // @synthesize m_data;

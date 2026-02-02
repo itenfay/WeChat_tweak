@@ -15,7 +15,6 @@
     ICBatchFetchingContext *_batchFetchingContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ICBatchFetchingContext *batchFetchingContext; // @synthesize batchFetchingContext=_batchFetchingContext;
 @property(nonatomic) double leadingScreensForBatching; // @synthesize leadingScreensForBatching=_leadingScreensForBatching;
 @property(nonatomic) __weak id <ICFlowBatchFetchingDelegate> batchFetchingDelegate; // @synthesize batchFetchingDelegate=_batchFetchingDelegate;

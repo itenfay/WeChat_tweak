@@ -14,7 +14,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *proxyMapLock; // @synthesize proxyMapLock=_proxyMapLock;
 @property(retain, nonatomic) NSMutableDictionary *tpDownloadProxyDic; // @synthesize tpDownloadProxyDic=_tpDownloadProxyDic;
 - (id)init;

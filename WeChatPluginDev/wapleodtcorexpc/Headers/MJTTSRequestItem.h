@@ -16,7 +16,6 @@
     NSString *_audioFilePath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *audioFilePath; // @synthesize audioFilePath=_audioFilePath;
 @property(readonly, nonatomic) NSString *roleName; // @synthesize roleName=_roleName;
 @property(readonly, nonatomic) NSString *roleID; // @synthesize roleID=_roleID;

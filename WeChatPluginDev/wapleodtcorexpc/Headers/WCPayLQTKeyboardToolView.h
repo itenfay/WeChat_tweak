@@ -18,7 +18,6 @@
     NSArray *_separators;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *separators; // @synthesize separators=_separators;
 @property(retain, nonatomic) NSArray *amountLabels; // @synthesize amountLabels=_amountLabels;
 @property(retain, nonatomic) UILabel *profitLabel; // @synthesize profitLabel=_profitLabel;

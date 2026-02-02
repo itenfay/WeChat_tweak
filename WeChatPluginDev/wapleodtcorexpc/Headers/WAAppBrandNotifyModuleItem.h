@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_independent;
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_name;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrWidgetInfo; // @synthesize arrWidgetInfo=_arrWidgetInfo;
 @property(retain, nonatomic) NSString *debugUrl; // @synthesize debugUrl=_debugUrl;
 @property(retain, nonatomic) NSMutableArray *arrPluginCodeInfo; // @synthesize arrPluginCodeInfo=_arrPluginCodeInfo;

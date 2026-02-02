@@ -32,7 +32,6 @@
     NSString *_regSessionid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *regSessionid; // @synthesize regSessionid=_regSessionid;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *scene; // @synthesize scene=_scene;

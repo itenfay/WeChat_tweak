@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSMutableDictionary.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -14,7 +15,6 @@
     _Bool _disableStrictDebugMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableStrictDebugMode; // @synthesize disableStrictDebugMode=_disableStrictDebugMode;
 - (void)updateOrderForKey:(id)arg1 index:(unsigned long long)arg2;
 - (void)sortOrderUsingComparator:(CDUnknownBlockType)arg1;
@@ -44,4 +44,3 @@
 - (id)init;
 
 @end
-

@@ -12,7 +12,6 @@
     NSArray *_EnergyController_lowPowerModeRules;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *EnergyController_lowPowerModeRules; // @synthesize EnergyController_lowPowerModeRules=_EnergyController_lowPowerModeRules;
 @property(readonly, nonatomic) _Bool DocumentsPresentation_usesTestBizArticles;
 @property(readonly, nonatomic) double Cast_UPnPDiscoveryTimeoutInterval;

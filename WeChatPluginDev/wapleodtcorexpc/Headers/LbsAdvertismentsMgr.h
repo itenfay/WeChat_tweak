@@ -11,7 +11,6 @@
     NSMutableDictionary *_adActionInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *adActionInfos; // @synthesize adActionInfos=_adActionInfos;
 @property(retain, nonatomic) NSMutableDictionary *adInfos; // @synthesize adInfos=_adInfos;
 - (void)onServiceInit;

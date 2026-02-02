@@ -21,7 +21,6 @@
 + (_Bool)isMiaoJianAppInstalled;
 + (_Bool)longVideoEntranceEnable;
 + (_Bool)takePhotoEntranceEnable;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiaoJianShareParams *shareParams; // @synthesize shareParams=_shareParams;
 @property(readonly, nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;

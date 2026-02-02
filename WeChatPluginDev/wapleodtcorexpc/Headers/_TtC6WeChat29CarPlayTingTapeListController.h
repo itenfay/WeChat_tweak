@@ -13,7 +13,6 @@
     MISSING_TYPE *hasRequest;
 }
 
-- (void).cxx_destruct;
 
 @end
 

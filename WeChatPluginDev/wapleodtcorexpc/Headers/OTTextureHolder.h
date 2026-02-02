@@ -24,7 +24,6 @@
     NSMutableData *nsData;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 @property(readonly, nonatomic) unsigned int textureId; // @synthesize textureId=_textureId;
 @property(readonly, nonatomic) int height; // @synthesize height=_pixelHeight;

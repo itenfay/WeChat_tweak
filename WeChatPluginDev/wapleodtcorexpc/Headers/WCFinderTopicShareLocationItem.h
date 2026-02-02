@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_longitude;
 + (void)PBArrayAdd_latitude;
 + (void)PBArrayAdd_poiClassifyId;
-- (void).cxx_destruct;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(copy, nonatomic) NSString *poiClassifyId; // @synthesize poiClassifyId=_poiClassifyId;

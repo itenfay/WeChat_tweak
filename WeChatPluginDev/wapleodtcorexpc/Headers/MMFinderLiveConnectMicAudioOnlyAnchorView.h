@@ -22,7 +22,6 @@
     struct CGRect _backgroundVideoViewNormalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveResourceFetcherRootFlowAction *downloadMgr; // @synthesize downloadMgr=_downloadMgr;
 @property(retain, nonatomic) NSString *backgroundVideoUri; // @synthesize backgroundVideoUri=_backgroundVideoUri;
 @property(retain, nonatomic) NSString *sdkUserId; // @synthesize sdkUserId=_sdkUserId;

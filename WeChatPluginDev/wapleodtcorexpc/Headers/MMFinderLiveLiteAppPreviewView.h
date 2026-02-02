@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FlutterMethodChannel, MMLiteAppViewController, NSString;
 
 @interface MMFinderLiveLiteAppPreviewView
@@ -11,7 +13,6 @@
     FlutterMethodChannel *_channel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;
 @property(nonatomic) __weak MMLiteAppViewController *liteApp; // @synthesize liteApp=_liteApp;
 - (void)handleJSMethod:(id)arg1 params:(id)arg2 WithResult:(CDUnknownBlockType)arg3;
@@ -27,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

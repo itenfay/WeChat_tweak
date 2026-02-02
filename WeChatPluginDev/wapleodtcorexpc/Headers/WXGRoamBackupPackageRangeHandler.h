@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSRecursiveLock, NSString, WXGChatLogSessionUtility;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
@@ -21,7 +22,6 @@
     NSRecursiveLock *_taskCountLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *taskCountLock; // @synthesize taskCountLock=_taskCountLock;
 @property(nonatomic) unsigned long long rangeCulculateTaskCount; // @synthesize rangeCulculateTaskCount=_rangeCulculateTaskCount;
 @property(retain, nonatomic) WXGChatLogSessionUtility *sessionUtility; // @synthesize sessionUtility=_sessionUtility;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

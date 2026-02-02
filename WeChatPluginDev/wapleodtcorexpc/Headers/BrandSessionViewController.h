@@ -14,7 +14,6 @@
     unsigned long long _source;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(nonatomic) unsigned int sessionId; // @synthesize sessionId=_sessionId;
 - (id)queryOfUrl:(id)arg1;

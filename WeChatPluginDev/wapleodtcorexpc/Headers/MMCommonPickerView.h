@@ -16,7 +16,6 @@
     double _pickItemTextLineHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double pickItemTextLineHeight; // @synthesize pickItemTextLineHeight=_pickItemTextLineHeight;
 @property(retain, nonatomic) NSMutableArray *dataItems; // @synthesize dataItems=_dataItems;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

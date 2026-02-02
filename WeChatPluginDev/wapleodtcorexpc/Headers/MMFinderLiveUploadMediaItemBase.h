@@ -17,7 +17,6 @@
     unsigned long long _uploadCdnAppType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uploadCdnAppType; // @synthesize uploadCdnAppType=_uploadCdnAppType;
 @property(nonatomic) unsigned long long headerParamsType; // @synthesize headerParamsType=_headerParamsType;
 @property(copy, nonatomic) NSString *requestHeader; // @synthesize requestHeader=_requestHeader;

@@ -10,7 +10,6 @@
     MMLocatingCoordinateLogic *_coordinateLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *coordinateLogic; // @synthesize coordinateLogic=_coordinateLogic;
 - (void)handleRequest:(id)arg1;
 

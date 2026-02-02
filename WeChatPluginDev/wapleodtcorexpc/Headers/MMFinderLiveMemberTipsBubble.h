@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIImageView;
 
@@ -17,7 +18,6 @@
     NSString *_tips;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool superfanIcon; // @synthesize superfanIcon=_superfanIcon;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *tips; // @synthesize tips=_tips;
@@ -35,4 +35,3 @@
 - (id)initWithTips:(id)arg1 duration:(unsigned int)arg2 superfanIcon:(_Bool)arg3;
 
 @end
-

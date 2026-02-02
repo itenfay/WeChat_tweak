@@ -13,7 +13,6 @@
     NSDictionary *_dicInputParam;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain) NSDictionary *dicInputParam; // @synthesize dicInputParam=_dicInputParam;
 - (void)onCgiResponse:(id)arg1 forEvent:(unsigned int)arg2;

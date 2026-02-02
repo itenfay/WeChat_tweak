@@ -14,7 +14,6 @@
     UIView *_tipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) FinderMusicTopicInfo *musicTopicInfo; // @synthesize musicTopicInfo=_musicTopicInfo;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;

@@ -13,7 +13,6 @@
     NSString *_m_displayName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_displayName; // @synthesize m_displayName=_m_displayName;
 @property(retain, nonatomic) NSString *m_username; // @synthesize m_username=_m_username;
 - (id)displayName;

@@ -14,7 +14,6 @@
     struct CGSize _textContentWidth;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *customFont; // @synthesize customFont=_customFont;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) CATextLayer *textLayer; // @synthesize textLayer=_textLayer;

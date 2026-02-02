@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString, VoipRecentStatusImagesView;
 
@@ -18,7 +19,6 @@
     NSMutableArray *_dotViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dotViews; // @synthesize dotViews=_dotViews;
 @property(retain, nonatomic) VoipRecentStatusImagesView *imagesView; // @synthesize imagesView=_imagesView;
 @property(retain, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

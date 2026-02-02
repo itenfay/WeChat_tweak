@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _finishBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
 @property(retain, nonatomic) NSString *nsContent; // @synthesize nsContent=_nsContent;
 - (_Bool)isHasOccupyKeyword:(id)arg1;
@@ -21,4 +21,3 @@
 - (id)initWithContent:(id)arg1 FinishBlock:(CDUnknownBlockType)arg2;
 
 @end
-

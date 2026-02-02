@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSSet;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _handleLongPress;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handleLongPress; // @synthesize handleLongPress=_handleLongPress;
 @property(nonatomic) _Bool isLongPressHandled; // @synthesize isLongPressHandled=_isLongPressHandled;
 @property(nonatomic) _Bool shouldHighlightBackground; // @synthesize shouldHighlightBackground=_shouldHighlightBackground;
@@ -30,4 +30,3 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end
-

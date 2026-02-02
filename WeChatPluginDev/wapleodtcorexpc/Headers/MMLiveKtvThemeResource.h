@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,10 +14,8 @@
     NSString *_md5Hash;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *md5Hash; // @synthesize md5Hash=_md5Hash;
 @property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
 - (void)fetchResourcesWithCompletionBlock:(CDUnknownBlockType)arg1;
 
 @end
-

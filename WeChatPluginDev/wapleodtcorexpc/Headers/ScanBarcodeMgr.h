@@ -12,7 +12,6 @@
 }
 
 + (unsigned int)getBarcodeType:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extKey; // @synthesize extKey=_extKey;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)cancelSendBarcode:(unsigned int)arg1;

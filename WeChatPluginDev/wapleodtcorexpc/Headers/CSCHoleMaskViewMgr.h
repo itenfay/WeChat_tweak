@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _clickBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 @property(retain, nonatomic) UIButton *bottomMaskView; // @synthesize bottomMaskView=_bottomMaskView;
 @property(retain, nonatomic) UIButton *rightMaskView; // @synthesize rightMaskView=_rightMaskView;
@@ -29,4 +29,3 @@
 - (id)initWithSuperview:(id)arg1 andHoleFrame:(struct CGRect)arg2 andClickBlock:(CDUnknownBlockType)arg3;
 
 @end
-

@@ -10,7 +10,6 @@
     TempAccessibilityElement *_tempElement;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TempAccessibilityElement *tempElement; // @synthesize tempElement=_tempElement;
 - (id)getSubViewAccessibilityRecursive;
 - (id)accessibilityElements;

@@ -13,7 +13,6 @@
     NSString *_videoPageUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *videoPageUrl; // @synthesize videoPageUrl=_videoPageUrl;
 @property(copy, nonatomic) NSString *bizUsername; // @synthesize bizUsername=_bizUsername;

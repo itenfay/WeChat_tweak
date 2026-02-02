@@ -11,7 +11,6 @@
     id <WCCardNewTicketContentDelegate> _delegte;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardNewTicketContentDelegate> delegte; // @synthesize delegte=_delegte;
 - (void)realOpenTinyAppWithUsername:(id)arg1 path:(id)arg2;
 - (void)realOpenUrl:(id)arg1;

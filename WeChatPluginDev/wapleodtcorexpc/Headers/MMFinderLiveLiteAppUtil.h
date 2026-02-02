@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveLiteAppUtil : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)openLiveRewardIdentitySwitchLiteAppFromNavVC:(id)arg1 onIdentityUpdated:(CDUnknownBlockType)arg2;
 
 @end
-

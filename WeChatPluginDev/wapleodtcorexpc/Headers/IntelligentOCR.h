@@ -20,7 +20,6 @@
 
 + (struct Mat)rgbaMatFromUIImage:(id)arg1 bgColor:(id)arg2;
 + (id)generatePHashWithImage:(id)arg1;
-- (void).cxx_destruct;
 - (id)getIntelligentOCRPerfEveryDayId;
 - (void)doReportIntelligentOCR;
 - (id)getCodeClassify:(id)arg1;

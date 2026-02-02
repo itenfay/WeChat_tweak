@@ -14,7 +14,6 @@
     UIButton *_bottomBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *bottomBtn; // @synthesize bottomBtn=_bottomBtn;
 @property(retain, nonatomic) MMUILabel *errDescLabel; // @synthesize errDescLabel=_errDescLabel;
 @property(retain, nonatomic) UIImageView *errImgView; // @synthesize errImgView=_errImgView;

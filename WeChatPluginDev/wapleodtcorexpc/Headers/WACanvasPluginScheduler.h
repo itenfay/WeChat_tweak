@@ -14,7 +14,6 @@
 }
 
 + (id)scheduler;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *servicePluginPool; // @synthesize servicePluginPool=_servicePluginPool;
 @property(retain, nonatomic) NSDictionary *webviewPluginPool; // @synthesize webviewPluginPool=_webviewPluginPool;
 - (void)_handleServiceEvent:(long long)arg1 userInfo:(id)arg2;

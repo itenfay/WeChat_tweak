@@ -14,7 +14,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool bForceUpdate; // @synthesize bForceUpdate=_bForceUpdate;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

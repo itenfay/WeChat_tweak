@@ -26,7 +26,6 @@
 + (id)paramBoolWithKey:(unsigned long long)arg1 value:(_Bool)arg2 param1:(_Bool)arg3 param2:(_Bool)arg4;
 + (id)paramFloatWithKey:(unsigned long long)arg1 value:(float)arg2 param1:(float)arg3 param2:(float)arg4;
 + (id)paramLongWithKey:(unsigned long long)arg1 value:(long long)arg2 param1:(long long)arg3 param2:(long long)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPOptionalParamObject *paramObject; // @synthesize paramObject=_paramObject;
 @property(retain, nonatomic) TPOptionalParamQueueString *paramQueueString; // @synthesize paramQueueString=_paramQueueString;
 @property(retain, nonatomic) TPOptionalParamQueueInt *paramQueueInt; // @synthesize paramQueueInt=_paramQueueInt;

@@ -14,7 +14,6 @@
     TXCSharpFilter *_sharpFilter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCSharpFilter *sharpFilter; // @synthesize sharpFilter=_sharpFilter;
 @property(retain, nonatomic) TXCSmoothMixFilter *smoothMixFilter; // @synthesize smoothMixFilter=_smoothMixFilter;
 @property(retain, nonatomic) TXCSmoothVerticalFilter *smoothVerticalFilter; // @synthesize smoothVerticalFilter=_smoothVerticalFilter;

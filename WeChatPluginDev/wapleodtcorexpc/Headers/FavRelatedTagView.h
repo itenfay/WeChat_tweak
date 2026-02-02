@@ -15,7 +15,6 @@
     id <FavRelatedTagDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavRelatedTagDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)indexOfTag:(id)arg1;
 - (id)getAllTagList;

@@ -17,7 +17,6 @@
     struct CGRect _anchorRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect anchorRect; // @synthesize anchorRect=_anchorRect;
 @property(retain, nonatomic) MMMusicSetStatusBubbleTriangleView *triangleView; // @synthesize triangleView=_triangleView;
 @property(retain, nonatomic) MMUILabel *suffixStatusLabel; // @synthesize suffixStatusLabel=_suffixStatusLabel;

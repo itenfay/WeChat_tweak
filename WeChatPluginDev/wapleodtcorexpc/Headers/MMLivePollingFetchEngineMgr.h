@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MMLivePollingFetchEngineMgr
@@ -10,7 +12,6 @@
     NSMutableDictionary *_engineMap;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *engineMap; // @synthesize engineMap=_engineMap;
 - (void)stopEngineForLive:(id)arg1;
 - (id)engineForLive:(id)arg1;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

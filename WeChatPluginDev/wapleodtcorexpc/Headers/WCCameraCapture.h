@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureVideoPreviewLayer, NSObject;
 @protocol OS_dispatch_queue;
 
@@ -20,7 +22,6 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableScanAutoSwitchCameraWhenFocusing; // @synthesize enableScanAutoSwitchCameraWhenFocusing=_enableScanAutoSwitchCameraWhenFocusing;
 @property(nonatomic) _Bool autoSwitchingScanCameraLensPosition; // @synthesize autoSwitchingScanCameraLensPosition=_autoSwitchingScanCameraLensPosition;
 @property(nonatomic) float cameraDefaultZoomFactor; // @synthesize cameraDefaultZoomFactor=_cameraDefaultZoomFactor;
@@ -67,4 +68,3 @@
 - (id)initWithSessionPreset:(id)arg1 frameRate:(int)arg2 enableAutoSwitchCamera:(_Bool)arg3;
 
 @end
-

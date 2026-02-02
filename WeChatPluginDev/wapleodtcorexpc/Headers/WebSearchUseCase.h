@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCSearchUIConfig, WebSearchContext;
 
@@ -18,7 +19,6 @@
 + (_Bool)liteAppHomePageEnaledWithHitExptReport:(_Bool)arg1;
 + (_Bool)liteAppHomePageEnaled;
 + (void)preHeartSearchH5Page;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType searchTransitionCompletion; // @synthesize searchTransitionCompletion=_searchTransitionCompletion;
 @property(copy, nonatomic) CDUnknownBlockType onSearchVCWillAppear; // @synthesize onSearchVCWillAppear=_onSearchVCWillAppear;
 @property(retain, nonatomic) WCSearchUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
@@ -35,4 +35,3 @@
 - (id)initWithParams:(id)arg1;
 
 @end
-

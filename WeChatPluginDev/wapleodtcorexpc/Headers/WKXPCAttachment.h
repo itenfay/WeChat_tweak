@@ -16,7 +16,6 @@
     long long _flag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int count; // @synthesize count=_count;
 @property(nonatomic) long long flag; // @synthesize flag=_flag;
 @property(nonatomic) __weak WKWebView *webView; // @synthesize webView=_webView;

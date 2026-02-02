@@ -21,7 +21,6 @@
     NSString *_enterTimeStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *enterTimeStr; // @synthesize enterTimeStr=_enterTimeStr;
 @property(nonatomic) _Bool didReport; // @synthesize didReport=_didReport;
 @property(nonatomic) _Bool isDisablingLoadMore; // @synthesize isDisablingLoadMore=_isDisablingLoadMore;

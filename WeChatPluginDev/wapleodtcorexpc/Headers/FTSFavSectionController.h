@@ -10,7 +10,6 @@
     NSArray *_favItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *favItems; // @synthesize favItems=_favItems;
 - (void)onFTSDetailPageFavResultChanged;
 - (void)cancelSearch;

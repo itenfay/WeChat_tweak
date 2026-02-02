@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, WCAccountControlData, WCFullPhoneNumInputHelper, WCRedesignTextItem;
 @protocol MMUIViewControllerDelegate;
@@ -29,7 +30,6 @@
     CDUnknownBlockType _nextHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType nextHandler; // @synthesize nextHandler=_nextHandler;
 @property(copy, nonatomic) CDUnknownBlockType checkNextHandler; // @synthesize checkNextHandler=_checkNextHandler;
 @property(retain, nonatomic) WCRedesignTextItem *passwordTextItem; // @synthesize passwordTextItem=_passwordTextItem;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

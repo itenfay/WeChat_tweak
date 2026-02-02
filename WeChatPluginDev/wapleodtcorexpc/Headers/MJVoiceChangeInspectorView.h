@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJSegmentInspectorViewModel, MMUIActivityIndicatorView, MMUIButton, NSString, UICollectionView;
 @protocol MJSpeechTextInspectorViewModelProtocol;
 
@@ -18,7 +20,6 @@
     MMUIButton *_protocolButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *protocolButton; // @synthesize protocolButton=_protocolButton;
 @property(nonatomic) _Bool shouldHideTopBar; // @synthesize shouldHideTopBar=_shouldHideTopBar;
 @property(nonatomic) _Bool shouldRequestVoiceChangeUponLoaded; // @synthesize shouldRequestVoiceChangeUponLoaded=_shouldRequestVoiceChangeUponLoaded;
@@ -65,4 +66,3 @@
 @property(readonly, nonatomic) MJSegmentInspectorViewModel<MJSpeechTextInspectorViewModelProtocol> *viewModel; // @dynamic viewModel;
 
 @end
-

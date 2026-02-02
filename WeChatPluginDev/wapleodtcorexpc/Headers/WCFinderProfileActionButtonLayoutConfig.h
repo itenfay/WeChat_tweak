@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderProfileActionButtonLayoutConfig : NSObject
 {
@@ -12,10 +13,8 @@
     long long _lineConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lineConfig; // @synthesize lineConfig=_lineConfig;
 @property(copy, nonatomic) CDUnknownBlockType config; // @synthesize config=_config;
 @property(retain, nonatomic) Class btnCls; // @synthesize btnCls=_btnCls;
 
 @end
-

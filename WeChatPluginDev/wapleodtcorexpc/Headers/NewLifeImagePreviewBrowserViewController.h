@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MultiImageScrollView, NSMutableArray, NSMutableSet, NSString, UIImageView, UIPageControl;
 
 @interface NewLifeImagePreviewBrowserViewController
@@ -17,7 +19,6 @@
     NSMutableSet *_urlDownloadSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *urlDownloadSet; // @synthesize urlDownloadSet=_urlDownloadSet;
 @property(retain, nonatomic) UIImageView *animationImageView; // @synthesize animationImageView=_animationImageView;
 @property(retain, nonatomic) MultiImageScrollView *imageScrollView; // @synthesize imageScrollView=_imageScrollView;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

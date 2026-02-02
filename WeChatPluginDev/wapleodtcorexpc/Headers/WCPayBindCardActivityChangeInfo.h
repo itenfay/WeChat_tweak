@@ -23,7 +23,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *activity_tinyapp_btn_text; // @synthesize activity_tinyapp_btn_text=_activity_tinyapp_btn_text;
 @property(retain, nonatomic) NSString *tinyapp_path; // @synthesize tinyapp_path=_tinyapp_path;
 @property(retain, nonatomic) NSString *tinyapp_username; // @synthesize tinyapp_username=_tinyapp_username;

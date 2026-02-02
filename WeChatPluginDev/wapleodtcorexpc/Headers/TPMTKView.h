@@ -24,7 +24,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(nonatomic) int lucidMode; // @synthesize lucidMode=_lucidMode;
 @property(nonatomic) struct CGSize drawableSize; // @synthesize drawableSize=_drawableSize;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;

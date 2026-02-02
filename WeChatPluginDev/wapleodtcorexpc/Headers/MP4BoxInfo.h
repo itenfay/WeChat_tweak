@@ -14,7 +14,6 @@
     unsigned long long _length;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

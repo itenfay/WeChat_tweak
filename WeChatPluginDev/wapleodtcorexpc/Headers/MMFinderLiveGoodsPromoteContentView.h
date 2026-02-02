@@ -12,7 +12,6 @@
     MMUILabel *_serialNumLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *serialNumLabel; // @synthesize serialNumLabel=_serialNumLabel;
 @property(retain, nonatomic) MMFinderLiveECHotSaleLikeAnimationMaskView *hotSaleLikeAnimationMaskView; // @synthesize hotSaleLikeAnimationMaskView=_hotSaleLikeAnimationMaskView;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;

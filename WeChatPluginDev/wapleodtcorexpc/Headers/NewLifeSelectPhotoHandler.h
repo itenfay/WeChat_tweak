@@ -10,7 +10,6 @@
     NewLifeSelectPhotoResp *_response;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeSelectPhotoResp *response; // @synthesize response=_response;
 - (void)onFinishSelectAssets:(id)arg1 assets:(id)arg2;
 - (void)onCancelSelectAssets:(id)arg1;

@@ -16,7 +16,6 @@
 }
 
 + (id)delegateWithWebviewController:(id)arg1 target:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<MMWebViewDelegate> *target; // @synthesize target=_target;
 @property(nonatomic) __weak NSObject<MMWebViewDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak MMWebViewController *webviewController; // @synthesize webviewController=_webviewController;

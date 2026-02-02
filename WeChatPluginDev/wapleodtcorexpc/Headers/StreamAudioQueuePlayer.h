@@ -13,7 +13,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (_Bool)initAudioQueue;
 - (int)getCodecTypeFromVoiceFormat:(long long)arg1;

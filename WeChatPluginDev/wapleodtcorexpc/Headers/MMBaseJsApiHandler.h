@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     NSString *_systemInfoJsonStr;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *systemInfoJsonStr; // @synthesize systemInfoJsonStr=_systemInfoJsonStr;
 @property(copy, nonatomic) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
@@ -30,4 +30,3 @@
 - (void)dealloc;
 
 @end
-

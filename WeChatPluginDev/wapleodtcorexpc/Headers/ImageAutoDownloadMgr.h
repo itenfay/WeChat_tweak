@@ -14,7 +14,6 @@
     ImageAutoControl *m_oImageAutoControl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_CurDownloadingMsg; // @synthesize m_CurDownloadingMsg;
 - (void)OnAddEnterpriseMsg:(id)arg1 Brand:(id)arg2 WrapMsg:(id)arg3;
 - (void)OnDelMsg:(id)arg1 Brand:(id)arg2 DelAll:(_Bool)arg3;

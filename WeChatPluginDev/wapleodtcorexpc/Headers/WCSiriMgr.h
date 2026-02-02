@@ -17,7 +17,6 @@
 }
 
 + (id)getSiriDeviceId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrContactsToBeEncoded; // @synthesize arrContactsToBeEncoded=_arrContactsToBeEncoded;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(nonatomic) _Bool isSirikitAvaiable; // @synthesize isSirikitAvaiable=_isSirikitAvaiable;

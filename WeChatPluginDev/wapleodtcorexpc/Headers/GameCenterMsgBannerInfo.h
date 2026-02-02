@@ -13,7 +13,6 @@
     NSArray *_wepkgIds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *wepkgIds; // @synthesize wepkgIds=_wepkgIds;
 @property(retain, nonatomic) NSString *bannerId; // @synthesize bannerId=_bannerId;
 

@@ -21,7 +21,6 @@
 }
 
 + (id)getCreateLotteryOperationView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(retain, nonatomic) MMFinderLiveCreateLotteryTableHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) long long locationId; // @synthesize locationId=_locationId;

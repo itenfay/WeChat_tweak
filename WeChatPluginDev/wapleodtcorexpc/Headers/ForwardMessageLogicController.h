@@ -61,7 +61,6 @@
     SharePreConfirmSheetView *_confirmSheetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SharePreConfirmSheetView *confirmSheetView; // @synthesize confirmSheetView=_confirmSheetView;
 @property(retain, nonatomic) WWKMsgForwarder *wwkMsgForwarder; // @synthesize wwkMsgForwarder=_wwkMsgForwarder;
 @property(nonatomic) _Bool hasAnyMsgDidnotDownload; // @synthesize hasAnyMsgDidnotDownload=_hasAnyMsgDidnotDownload;

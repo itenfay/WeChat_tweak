@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
 @interface WAWebViewPlugin_CustomCanvas
@@ -13,7 +15,6 @@
     NSNumber *_oldScrollEnabled;
 }
 
-- (void).cxx_destruct;
 - (double)canvasScaleWithCanvasID:(unsigned int)arg1;
 - (struct CGSize)canvasSizeWithCanvasID:(unsigned int)arg1;
 - (id)canvasToImageData:(unsigned int)arg1 targetRect:(struct CGRect)arg2;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

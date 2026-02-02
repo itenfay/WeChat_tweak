@@ -18,7 +18,6 @@
 + (void)reportTopicSearchShareAction:(long long)arg1 resultType:(long long)arg2 query:(id)arg3 reportItem:(id)arg4;
 + (void)reportTopicSearchVCAction:(long long)arg1 actionSourceType:(long long)arg2 dismissReason:(long long)arg3 reportItem:(id)arg4;
 + (void)reportTopicSearchVCAction:(long long)arg1 actionSourceType:(long long)arg2 reportItem:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *timelineTopicActionSessionId; // @synthesize timelineTopicActionSessionId=_timelineTopicActionSessionId;
 @property(readonly, nonatomic) WCTopicReportSessionInputItem *reportSessionInputItem; // @synthesize reportSessionInputItem=_reportSessionInputItem;
 - (void)reportWCFeedCommentSendFinish:(id)arg1 comment:(id)arg2;

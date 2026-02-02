@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMLiveActionSheetFlowLayoutView, MMLiveShopShelfDragBar, MMScrollActionSheetItemView, NSArray, NSString, UIPanGestureRecognizer, WCFinderLiveAnchorLogReporter, WCLiveScrollActionSheetViewModel;
 
 @interface WCLiveScrollActionSheet
@@ -26,7 +28,6 @@
     MMScrollActionSheetItemView *_firstItemViewWithRedDot;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMScrollActionSheetItemView *firstItemViewWithRedDot; // @synthesize firstItemViewWithRedDot=_firstItemViewWithRedDot;
 @property(retain, nonatomic) MMFinderLiveTask *finderLiveTask; // @synthesize finderLiveTask=_finderLiveTask;
 @property(retain, nonatomic) MMLiveShopShelfDragBar *dragBar; // @synthesize dragBar=_dragBar;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

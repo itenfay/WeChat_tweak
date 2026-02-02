@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSMutableSet, NSString, WAWorkerRuntime;
 
 @interface WeAppWorkerManager
@@ -15,7 +17,6 @@
     WAWorkerRuntime *_workerRuntime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool loaded; // @synthesize loaded=_loaded;
 @property(retain, nonatomic) WAWorkerRuntime *workerRuntime; // @synthesize workerRuntime=_workerRuntime;
 @property(nonatomic) _Bool isCompatible; // @synthesize isCompatible=_isCompatible;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
     NSNumber *_m_isOverdue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *m_isOverdue; // @synthesize m_isOverdue=_m_isOverdue;
 @property(retain, nonatomic) NSNumber *m_availableOtb; // @synthesize m_availableOtb=_m_availableOtb;
 @property(retain, nonatomic) NSString *m_tips; // @synthesize m_tips=_m_tips;

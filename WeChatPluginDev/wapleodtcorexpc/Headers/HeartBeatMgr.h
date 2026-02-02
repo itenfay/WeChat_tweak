@@ -13,7 +13,6 @@
     unsigned long long m_checkTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_checkTime; // @synthesize m_checkTime;
 @property(retain, nonatomic) MMTimer *m_timer; // @synthesize m_timer;
 @property(retain, nonatomic) NSMutableSet *m_setRequestEventID; // @synthesize m_setRequestEventID;

@@ -29,7 +29,6 @@
     NSString *_fileMd5New;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgCountNew; // @synthesize msgCountNew=_msgCountNew;
 @property(nonatomic) unsigned int fileLengthNew; // @synthesize fileLengthNew=_fileLengthNew;
 @property(retain, nonatomic) NSString *fileMd5New; // @synthesize fileMd5New=_fileMd5New;

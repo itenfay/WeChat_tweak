@@ -19,7 +19,6 @@
 
 + (double)viewHeightWithPaidCollection:(id)arg1 width:(double)arg2;
 + (double)titleMaxWidthWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize layoutSize; // @synthesize layoutSize=_layoutSize;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollection; // @synthesize paidCollection=_paidCollection;
 @property(retain, nonatomic) MMUIButton *priceLabel; // @synthesize priceLabel=_priceLabel;

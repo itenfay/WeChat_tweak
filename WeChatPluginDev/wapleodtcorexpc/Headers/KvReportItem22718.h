@@ -12,7 +12,6 @@
     NSString *_Sessionid_23;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *Sessionid_23; // @synthesize Sessionid_23=_Sessionid_23;
 @property(nonatomic) unsigned int Position_22; // @synthesize Position_22=_Position_22;
 @property(nonatomic) unsigned int ActionType_21; // @synthesize ActionType_21=_ActionType_21;

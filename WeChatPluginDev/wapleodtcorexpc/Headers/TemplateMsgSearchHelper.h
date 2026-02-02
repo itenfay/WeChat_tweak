@@ -47,7 +47,6 @@
     unsigned long long _reportPageType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reportPageType; // @synthesize reportPageType=_reportPageType;
 @property(retain, nonatomic) NSString *templateSessionId; // @synthesize templateSessionId=_templateSessionId;
 @property(nonatomic) _Bool bUsePanCancelGesture; // @synthesize bUsePanCancelGesture=_bUsePanCancelGesture;

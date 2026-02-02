@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicPKForegroundGiftContainerView, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, NSMutableDictionary, NSString;
 
@@ -16,7 +17,6 @@
     NSMutableDictionary *_giftId2PercentCacheMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *giftId2PercentCacheMap; // @synthesize giftId2PercentCacheMap=_giftId2PercentCacheMap;
 @property(retain, nonatomic) MMFinderLiveConnectMicPKForegroundGiftContainerView *giftContainerView; // @synthesize giftContainerView=_giftContainerView;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

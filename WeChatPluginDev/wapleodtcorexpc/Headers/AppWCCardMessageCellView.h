@@ -14,7 +14,6 @@
     UIImageView *m_thumbImageView;
 }
 
-- (void).cxx_destruct;
 - (void)onTouchUpInside;
 - (id)operationMenuItems;
 - (void)updateThumbImage;

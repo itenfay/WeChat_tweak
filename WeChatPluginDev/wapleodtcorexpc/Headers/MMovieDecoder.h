@@ -26,7 +26,6 @@
 }
 
 + (id)shareOperationQueue;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cpKey; // @synthesize cpKey=_cpKey;
 @property(nonatomic) _Bool audioOnly; // @synthesize audioOnly=_audioOnly;
 @property(readonly, nonatomic) struct CGAffineTransform preferredTransform; // @synthesize preferredTransform=m_preferredTransform;

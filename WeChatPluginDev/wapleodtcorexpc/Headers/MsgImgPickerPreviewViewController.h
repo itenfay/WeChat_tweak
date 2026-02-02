@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageIntialView, MMUIButton, MsgImgPickerSelectedCollectionView, MultiImageScrollView, NSString, UIButton, UIView;
 @protocol MsgImgPickerPreviewViewControllerDataSource, MsgImgPickerPreviewViewControllerDelegate;
 
@@ -22,7 +24,6 @@
     EditImageIntialView *_editImageInitialView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditImageIntialView *editImageInitialView; // @synthesize editImageInitialView=_editImageInitialView;
 @property(retain, nonatomic) UIButton *checkmarkButton; // @synthesize checkmarkButton=_checkmarkButton;
 @property(retain, nonatomic) MsgImgPickerSelectedCollectionView *selectedCollectionView; // @synthesize selectedCollectionView=_selectedCollectionView;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

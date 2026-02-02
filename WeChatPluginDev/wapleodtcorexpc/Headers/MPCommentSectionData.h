@@ -13,7 +13,6 @@
     NSMutableArray *_cellViewModelArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cellViewModelArray; // @synthesize cellViewModelArray=_cellViewModelArray;
 @property(retain, nonatomic) MPCommentMsg *commentMsg; // @synthesize commentMsg=_commentMsg;
 - (void)initCellViewModelArray:(_Bool)arg1;

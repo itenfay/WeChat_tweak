@@ -13,7 +13,6 @@
     double _currentNotifyCommentContentViewHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currentNotifyCommentContentViewHeight; // @synthesize currentNotifyCommentContentViewHeight=_currentNotifyCommentContentViewHeight;
 @property(retain, nonatomic) UIView *notifyCommentContentContainerView; // @synthesize notifyCommentContentContainerView=_notifyCommentContentContainerView;
 @property(retain, nonatomic) MMFinderLiveNotifyCommentLogic *notifyCommentLogic; // @synthesize notifyCommentLogic=_notifyCommentLogic;

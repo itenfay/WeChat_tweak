@@ -15,7 +15,6 @@
     NSString *_privateMapKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *privateMapKey; // @synthesize privateMapKey=_privateMapKey;
 @property(copy, nonatomic) NSString *userSig; // @synthesize userSig=_userSig;
 @property(copy, nonatomic) NSString *strRoomId; // @synthesize strRoomId=_strRoomId;

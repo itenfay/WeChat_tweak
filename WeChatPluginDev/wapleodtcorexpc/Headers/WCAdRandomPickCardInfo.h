@@ -22,7 +22,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdRandomPickCardItemsInfo *cardsInfo; // @synthesize cardsInfo=_cardsInfo;
 @property(retain, nonatomic) NSString *doneTitleColor; // @synthesize doneTitleColor=_doneTitleColor;
 @property(retain, nonatomic) NSString *doneTitle; // @synthesize doneTitle=_doneTitle;

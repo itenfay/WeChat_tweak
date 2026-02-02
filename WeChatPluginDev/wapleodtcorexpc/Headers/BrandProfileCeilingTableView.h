@@ -11,7 +11,6 @@
     CAGradientLayer *_backgroundLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(nonatomic) __weak UIGestureRecognizer *otherGestureRecognizer; // @synthesize otherGestureRecognizer=_otherGestureRecognizer;
 - (void)traitCollectionDidChange:(id)arg1;

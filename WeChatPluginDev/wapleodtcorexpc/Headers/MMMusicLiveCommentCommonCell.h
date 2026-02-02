@@ -19,7 +19,6 @@
 }
 
 + (double)calculateHeight:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicLiveCommentCellDetailView *detailView; // @synthesize detailView=_detailView;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) MMMuiscLiveCommentCommonContentView *commentView; // @synthesize commentView=_commentView;

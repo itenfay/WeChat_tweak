@@ -16,7 +16,6 @@
     MISSING_TYPE *exitTimeStampMs;
 }
 
-- (void).cxx_destruct;
 - (void)OnLiveStayBusinessEnter:(unsigned long long)arg1 commentScene:(id)arg2 reddotTipsID:(id)arg3;
 - (void)OnLiveStayBusinessExit:(unsigned long long)arg1;
 - (void)dealloc;

@@ -34,7 +34,6 @@
 + (id)templateInfoWithMJVideoTemplate:(id)arg1 musicID:(id)arg2;
 + (id)templateInfoWithOMJTemplateInfo:(id)arg1 musicID:(id)arg2 templateType:(unsigned long long)arg3;
 + (id)templateInfoWithOMJTemplateInfo:(id)arg1 OMJMusicInfo:(id)arg2 templateType:(unsigned long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumAssetCount; // @synthesize maximumAssetCount=_maximumAssetCount;
 @property(nonatomic) unsigned long long minimumAssetCount; // @synthesize minimumAssetCount=_minimumAssetCount;
 @property(copy, nonatomic) NSString *AndroidSDKVersionMin; // @synthesize AndroidSDKVersionMin=_AndroidSDKVersionMin;

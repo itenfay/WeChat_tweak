@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIView;
 
 @interface WCEditImageSafeAreaScrollView
@@ -15,7 +17,6 @@
 }
 
 + (_Bool)isCGRect1:(struct CGRect)arg1 inRect2:(struct CGRect)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(retain, nonatomic) MMUIView *leftLine; // @synthesize leftLine=_leftLine;
 @property(retain, nonatomic) MMUIView *bottomLine; // @synthesize bottomLine=_bottomLine;
@@ -30,4 +31,3 @@
 - (void)handlePanGesture:(id)arg1;
 
 @end
-

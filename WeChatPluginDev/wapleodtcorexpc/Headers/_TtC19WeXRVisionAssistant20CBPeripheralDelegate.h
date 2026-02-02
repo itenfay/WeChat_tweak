@@ -12,7 +12,6 @@
     MISSING_TYPE *loginService;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)peripheralManager:(id)arg1 didReceiveWriteRequests:(id)arg2;
 - (void)peripheralManager:(id)arg1 didReceiveReadRequest:(id)arg2;

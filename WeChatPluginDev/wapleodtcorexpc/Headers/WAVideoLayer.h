@@ -19,7 +19,6 @@
     double _initFloatTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double initFloatTime; // @synthesize initFloatTime=_initFloatTime;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;

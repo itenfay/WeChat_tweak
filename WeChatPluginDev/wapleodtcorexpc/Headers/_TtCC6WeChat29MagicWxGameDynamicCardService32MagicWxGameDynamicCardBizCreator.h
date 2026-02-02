@@ -13,7 +13,6 @@
     MISSING_TYPE *autoDestroyTime;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)create;
 

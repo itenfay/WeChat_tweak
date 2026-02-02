@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
@@ -13,7 +14,6 @@
     WCTTable *_table;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 - (void)reddotReExposure;
@@ -73,4 +73,3 @@
 - (_Bool)initDb;
 
 @end
-

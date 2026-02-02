@@ -17,7 +17,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCStoryLyricWaveView *waveView; // @synthesize waveView=_waveView;
 @property(retain, nonatomic) MMUIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *infoLabel; // @synthesize infoLabel=_infoLabel;

@@ -12,7 +12,6 @@
     StatusStorageManager *_manager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusStorageManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) StatusXmlParseManager *statusXmlParseManager; // @synthesize statusXmlParseManager=_statusXmlParseManager;
 @property(retain, nonatomic) StatusLogicCommentManager *affStatusLogicCommentManager; // @synthesize affStatusLogicCommentManager=_affStatusLogicCommentManager;

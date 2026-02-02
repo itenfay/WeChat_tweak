@@ -17,7 +17,6 @@
     MMFinderLiveStreamTypeInfo *_finderLiveStreamTypeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveStreamTypeInfo *finderLiveStreamTypeInfo; // @synthesize finderLiveStreamTypeInfo=_finderLiveStreamTypeInfo;
 @property(nonatomic) unsigned long long activityTypeUpdateTime; // @synthesize activityTypeUpdateTime=_activityTypeUpdateTime;
 @property(nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;

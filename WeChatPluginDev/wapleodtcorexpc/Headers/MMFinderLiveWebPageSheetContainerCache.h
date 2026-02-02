@@ -13,7 +13,6 @@
 }
 
 + (id)itemKeyWithPageSheetParams:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *items; // @synthesize items=_items;
 - (id)containerWithPageSheetParams:(id)arg1;
 - (void)removeContainerWithPageSheetParams:(id)arg1;

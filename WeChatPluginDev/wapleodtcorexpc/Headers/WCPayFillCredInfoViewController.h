@@ -20,7 +20,6 @@
     double _footerBtnOldY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double footerBtnOldY; // @synthesize footerBtnOldY=_footerBtnOldY;
 @property(retain, nonatomic) UIButton *faqBtn; // @synthesize faqBtn=_faqBtn;
 @property(retain, nonatomic) UIButton *footerBtn; // @synthesize footerBtn=_footerBtn;

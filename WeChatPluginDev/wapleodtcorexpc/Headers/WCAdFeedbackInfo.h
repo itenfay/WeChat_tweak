@@ -12,7 +12,6 @@
     NSArray *_feedbackList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *feedbackList; // @synthesize feedbackList=_feedbackList;
 - (long long)validFeedbackCnt;
 - (id)validFeedbackList;

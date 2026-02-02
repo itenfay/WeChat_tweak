@@ -22,7 +22,6 @@
     UIButton *_cropProportionBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *cropProportionBtn; // @synthesize cropProportionBtn=_cropProportionBtn;
 @property(retain, nonatomic) UIButton *rotateBtn; // @synthesize rotateBtn=_rotateBtn;
 @property(retain, nonatomic) EditImageCropToolBarViewModel *viewStateModel; // @synthesize viewStateModel=_viewStateModel;

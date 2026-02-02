@@ -12,7 +12,6 @@
     UIColor *_highlightedBGColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *highlightedBGColor; // @synthesize highlightedBGColor=_highlightedBGColor;
 @property(nonatomic) __weak UIView<MMCopyLabelDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)longPressToCopy:(id)arg1;

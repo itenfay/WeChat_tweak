@@ -12,7 +12,6 @@
 + (id)stopAdVideo;
 + (id)startAdVideo;
 + (id)name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

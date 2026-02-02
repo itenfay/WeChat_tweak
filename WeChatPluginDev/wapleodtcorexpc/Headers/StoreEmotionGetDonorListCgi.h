@@ -16,7 +16,6 @@
     id <StoreEmotionGetDonorListCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StoreEmotionGetDonorListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)callFailedDelegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

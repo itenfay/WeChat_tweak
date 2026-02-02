@@ -21,7 +21,6 @@
 }
 
 + (id)sharedSerialQueue;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CgiReportDataController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) CgiReportDataSender *sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) CgiReportFlowGuarder *flowGuarder; // @synthesize flowGuarder=_flowGuarder;

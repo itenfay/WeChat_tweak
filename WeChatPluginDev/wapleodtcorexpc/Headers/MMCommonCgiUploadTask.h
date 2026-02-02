@@ -21,7 +21,6 @@
     WCBaseCgi *_uploadCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBaseCgi *uploadCgi; // @synthesize uploadCgi=_uploadCgi;
 @property(nonatomic) __weak id <MMCommonCgiUploadTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;

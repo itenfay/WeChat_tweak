@@ -10,7 +10,6 @@
     UIFont *_font;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 - (id)initWithBackgroundColor:(id)arg1 font:(id)arg2;
 

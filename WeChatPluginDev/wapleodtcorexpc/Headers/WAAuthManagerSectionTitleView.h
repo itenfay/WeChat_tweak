@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)setViewDataModel:(id)arg1;

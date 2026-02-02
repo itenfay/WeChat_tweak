@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderGetCollectionListCGI
@@ -15,7 +17,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int businessType; // @synthesize businessType=_businessType;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -28,4 +29,3 @@
 - (id)initWithUsername:(id)arg1 scene:(unsigned int)arg2 businessType:(unsigned int)arg3 lastBuffer:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

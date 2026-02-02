@@ -25,7 +25,6 @@
     double _maxIntensity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxIntensity; // @synthesize maxIntensity=_maxIntensity;
 @property(nonatomic) double minIntensity; // @synthesize minIntensity=_minIntensity;
 @property(retain, nonatomic) NSArray *startPoints; // @synthesize startPoints=_startPoints;

@@ -12,7 +12,6 @@
     _Bool _showCallout;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showCallout; // @synthesize showCallout=_showCallout;
 @property(nonatomic) __weak MMHeadImageAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 @property(retain, nonatomic) UserPositionItem *userPositionItem; // @synthesize userPositionItem=_userPositionItem;

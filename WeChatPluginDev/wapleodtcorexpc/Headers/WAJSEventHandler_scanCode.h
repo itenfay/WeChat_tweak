@@ -18,7 +18,6 @@
     NSString *_pagePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(nonatomic) long long codeVersion; // @synthesize codeVersion=_codeVersion;
 @property(retain, nonatomic) NSString *rawDataInBase64; // @synthesize rawDataInBase64=_rawDataInBase64;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveBadgeInfo, FinderLiveContact, MMFinderLiveConnectMicUser, MMFinderLiveTask, MMFinderLiveTaskId, NSData, NSString, UIColor, UIView, WCFinderContact;
 
 @interface MMFinderLiveOnlineUserProfileOpenParameter
@@ -64,7 +66,6 @@
     struct CGRect _highlightRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isOtherAnonymousUser; // @synthesize isOtherAnonymousUser=_isOtherAnonymousUser;
 @property(nonatomic) unsigned long long fallbackObjectID; // @synthesize fallbackObjectID=_fallbackObjectID;
 @property(nonatomic) unsigned long long fallbackLiveID; // @synthesize fallbackLiveID=_fallbackLiveID;
@@ -125,4 +126,3 @@
 - (id)init;
 
 @end
-

@@ -14,7 +14,6 @@
     WCPayUserInfo *_payUserInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayUserInfo *payUserInfo; // @synthesize payUserInfo=_payUserInfo;
 @property(retain, nonatomic) MMVoidBoolCallback *bioPayResultCallback; // @synthesize bioPayResultCallback=_bioPayResultCallback;
 @property(retain, nonatomic) DelaySwitchSettingLogic *delaySetting; // @synthesize delaySetting=_delaySetting;

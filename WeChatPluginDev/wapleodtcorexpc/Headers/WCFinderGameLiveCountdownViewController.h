@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveCountdownTipsView, NSString;
 @protocol WCFinderGameLiveCountdownViewControllerDelegate;
 
@@ -15,7 +17,6 @@
     long long _countdownTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long countdownTimer; // @synthesize countdownTimer=_countdownTimer;
 @property(retain, nonatomic) MMLiveCountdownTipsView *countdownTipsView; // @synthesize countdownTipsView=_countdownTipsView;
 @property(nonatomic) __weak id <WCFinderGameLiveCountdownViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

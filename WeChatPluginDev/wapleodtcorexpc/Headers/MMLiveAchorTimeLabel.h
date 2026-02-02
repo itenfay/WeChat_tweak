@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveAnchorExceptionCheckManager, MMTimerLabel, NSString, UIImageView;
 
 @interface MMLiveAchorTimeLabel
@@ -16,7 +18,6 @@
 }
 
 + (id)networkImageForState:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimerLabel *timerLabel; // @synthesize timerLabel=_timerLabel;
 @property(readonly, nonatomic) UIImageView *networkStateImageView; // @synthesize networkStateImageView=_networkStateImageView;
 @property(nonatomic) long long currentNetWorkState; // @synthesize currentNetWorkState=_currentNetWorkState;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

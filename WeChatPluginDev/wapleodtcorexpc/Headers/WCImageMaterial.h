@@ -14,7 +14,6 @@
     WCPlayerPlayArgs *_playerArgs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerArgs; // @synthesize playerArgs=_playerArgs;
 @property(retain, nonatomic) MMAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

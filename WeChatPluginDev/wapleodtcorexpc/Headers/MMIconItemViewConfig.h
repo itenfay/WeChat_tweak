@@ -24,7 +24,6 @@
     id <MMIconItemConfigDelegate> _configDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMIconItemConfigDelegate> configDelegate; // @synthesize configDelegate=_configDelegate;
 @property(nonatomic) _Bool changeIconColorOnAppearanceChange; // @synthesize changeIconColorOnAppearanceChange=_changeIconColorOnAppearanceChange;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;

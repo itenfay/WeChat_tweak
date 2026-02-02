@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveResDownloadManager, NSString;
 
@@ -16,7 +17,6 @@
 + (void)cleanUnusedResources;
 + (void)refreshResourceUsageAtPath:(id)arg1;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveResDownloadManager *downloadMgr; // @synthesize downloadMgr=_downloadMgr;
 - (id)zipPath:(id)arg1;
 - (id)cachePath:(id)arg1;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

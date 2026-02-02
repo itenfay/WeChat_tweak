@@ -17,7 +17,6 @@
     id <OpenIMSucceedContactLogicLogicDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OpenIMSucceedContactLogicLogicDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)onOpenIMContactVerifyFail:(id)arg1;

@@ -18,7 +18,6 @@
     double m_iLastMsgSentTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiTmpRecordID; // @synthesize m_uiTmpRecordID;
 @property(nonatomic) __weak id <RecordControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)dealloc;

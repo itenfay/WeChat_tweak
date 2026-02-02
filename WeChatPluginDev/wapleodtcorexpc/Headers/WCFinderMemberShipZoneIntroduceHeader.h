@@ -47,7 +47,6 @@
     WCFinderMSInteractionView *_interactionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMSInteractionView *interactionView; // @synthesize interactionView=_interactionView;
 @property(retain, nonatomic) UIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain, nonatomic) UIView *bottomSeparatorLine; // @synthesize bottomSeparatorLine=_bottomSeparatorLine;

@@ -16,7 +16,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(nonatomic) unsigned long long feedMediaType; // @synthesize feedMediaType=_feedMediaType;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;

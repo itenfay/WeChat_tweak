@@ -15,7 +15,6 @@
     NSString *m_nsRelationKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsRelationKey; // @synthesize m_nsRelationKey;
 @property(retain, nonatomic) NSString *m_nsMobileNo; // @synthesize m_nsMobileNo;
 @property(nonatomic) _Bool m_bIsFreeSMS; // @synthesize m_bIsFreeSMS;

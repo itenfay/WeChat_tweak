@@ -14,7 +14,6 @@
     struct CLLocationCoordinate2D _location;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D location; // @synthesize location=_location;
 @property(nonatomic) float zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(retain, nonatomic) NSString *bounds; // @synthesize bounds=_bounds;

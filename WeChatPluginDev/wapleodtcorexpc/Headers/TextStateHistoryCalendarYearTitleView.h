@@ -14,7 +14,6 @@
 }
 
 + (double)height;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *yearLabel; // @synthesize yearLabel=_yearLabel;
 @property(nonatomic) unsigned long long year; // @synthesize year=_year;
 - (void)layoutSubviews;

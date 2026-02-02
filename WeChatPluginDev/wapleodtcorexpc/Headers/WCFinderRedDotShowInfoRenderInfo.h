@@ -14,7 +14,6 @@
     unsigned long long _entryScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long entryScene; // @synthesize entryScene=_entryScene;
 @property(retain, nonatomic) WCFinderRedDotRenderResultModel *renderModel; // @synthesize renderModel=_renderModel;
 @property(nonatomic) double availableWidth; // @synthesize availableWidth=_availableWidth;

@@ -17,7 +17,6 @@
     MMUILabel *_helperLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool model; // @synthesize model=_model;
 @property(retain, nonatomic) MMUILabel *helperLabel; // @synthesize helperLabel=_helperLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -15,7 +15,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;

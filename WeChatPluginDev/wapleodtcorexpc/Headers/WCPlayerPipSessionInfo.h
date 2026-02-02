@@ -17,7 +17,6 @@
     long long _stopReason;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPipStoppedByEnterForeground; // @synthesize isPipStoppedByEnterForeground=_isPipStoppedByEnterForeground;
 @property(nonatomic) long long stopReason; // @synthesize stopReason=_stopReason;
 @property(retain, nonatomic) NSMutableArray *arrTaskId; // @synthesize arrTaskId=_arrTaskId;

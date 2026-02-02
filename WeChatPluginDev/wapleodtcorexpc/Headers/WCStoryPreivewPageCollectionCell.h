@@ -12,7 +12,6 @@
     WCStoryPreviewPageView *_pageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryPreviewPageView *pageView; // @synthesize pageView=_pageView;
 
 @end

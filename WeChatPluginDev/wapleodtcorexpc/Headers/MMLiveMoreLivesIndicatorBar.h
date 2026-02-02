@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMWebImageView, UIImageView;
 
 @interface MMLiveMoreLivesIndicatorBar
@@ -13,7 +15,6 @@
     MMWebImageView *_moreLiveIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *moreLiveIconView; // @synthesize moreLiveIconView=_moreLiveIconView;
 @property(retain, nonatomic) UIImageView *arrowIconView; // @synthesize arrowIconView=_arrowIconView;
 @property(retain, nonatomic) MMUILabel *moreLiveLabel; // @synthesize moreLiveLabel=_moreLiveLabel;
@@ -29,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 andTaskId:(id)arg2 componentKey:(id)arg3;
 
 @end
-

@@ -40,7 +40,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isRevokeByMyself; // @synthesize isRevokeByMyself=_isRevokeByMyself;
 @property(retain, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;
 @property(retain, nonatomic) NSString *announcementId; // @synthesize announcementId=_announcementId;

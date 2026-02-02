@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -13,7 +14,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSMutableArray *postedDataItems; // @synthesize postedDataItems=_postedDataItems;
 - (void)onFinderPostSessionUpLoadSuccessful:(id)arg1;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

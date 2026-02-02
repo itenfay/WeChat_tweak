@@ -12,7 +12,6 @@
 }
 
 + (id)infoWithUrlString:(id)arg1 needDownload:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int needDownload; // @synthesize needDownload=_needDownload;
 @property(retain, nonatomic) NSString *urlMd5; // @synthesize urlMd5=_urlMd5;
 - (id)dictionaryRepresentation;

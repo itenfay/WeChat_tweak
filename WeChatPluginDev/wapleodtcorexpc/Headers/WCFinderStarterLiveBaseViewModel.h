@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderLiveStartePublicModel;
 
@@ -12,7 +13,6 @@
     WCFinderLiveStartePublicModel *_publicModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStartePublicModel *publicModel; // @synthesize publicModel=_publicModel;
 - (long long)getLiveSubMode;
 - (id)getVisibilityUsernameList;
@@ -38,4 +38,3 @@
 - (void)createLivePrepareSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
 
 @end
-

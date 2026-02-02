@@ -37,7 +37,6 @@
 + (void)PBArrayAdd_likeId;
 + (void)PBArrayAdd_headImgUrl;
 + (void)PBArrayAdd_nickName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLikeInfo *info; // @synthesize info=_info;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
 @property(nonatomic) unsigned int thankFlag; // @synthesize thankFlag=_thankFlag;

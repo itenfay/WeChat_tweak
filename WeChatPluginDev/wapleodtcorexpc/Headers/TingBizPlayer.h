@@ -22,7 +22,6 @@
     TingPlayerStateMachine *_stateMachine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingPlayerStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) int playerKernelType; // @synthesize playerKernelType=_playerKernelType;
 @property(readonly, nonatomic) double displayTime; // @synthesize displayTime=_displayTime;

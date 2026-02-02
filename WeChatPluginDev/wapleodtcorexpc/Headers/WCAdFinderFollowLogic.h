@@ -19,7 +19,6 @@
     WCAdHalfScreenContainerBaseView *_halfScreenView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdHalfScreenContainerBaseView *halfScreenView; // @synthesize halfScreenView=_halfScreenView;
 @property(retain, nonatomic) NSString *feedCountFormat; // @synthesize feedCountFormat=_feedCountFormat;
 @property(retain, nonatomic) NSString *friendFollowCountFormat; // @synthesize friendFollowCountFormat=_friendFollowCountFormat;

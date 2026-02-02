@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
@@ -24,7 +25,6 @@
     NSString *_pardusDocId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pardusDocId; // @synthesize pardusDocId=_pardusDocId;
 @property(nonatomic) _Bool isVoiceInput; // @synthesize isVoiceInput=_isVoiceInput;
 @property(nonatomic) _Bool hasSearchResult; // @synthesize hasSearchResult=_hasSearchResult;
@@ -54,4 +54,3 @@
 - (void)countSectionItems;
 
 @end
-

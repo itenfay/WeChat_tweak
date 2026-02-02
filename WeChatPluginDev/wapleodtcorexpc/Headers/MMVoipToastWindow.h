@@ -13,7 +13,6 @@
     struct CGRect m_fixRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_lastOrientation; // @synthesize m_lastOrientation=_m_lastOrientation;
 @property(nonatomic) double m_fixOriginX; // @synthesize m_fixOriginX=_m_fixOriginX;
 @property(nonatomic) struct CGRect m_fixRect; // @synthesize m_fixRect;

@@ -11,7 +11,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 - (int)convertPicType:(id)arg1;
 - (void)setResponseHeaderFor:(id)arg1 from:(id)arg2;
 - (id)sendSynchronousRequest:(id)arg1 returningResponse:(id *)arg2 error:(id *)arg3;

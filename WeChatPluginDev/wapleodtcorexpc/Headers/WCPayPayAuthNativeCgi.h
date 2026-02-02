@@ -20,7 +20,6 @@
     WCPayIdKeyRegularReporter *_m_cgiReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayIdKeyRegularReporter *m_cgiReporter; // @synthesize m_cgiReporter=_m_cgiReporter;
 @property(nonatomic) __weak id <WCPayPayAuthNativeCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) unsigned int m_A8keyScene; // @synthesize m_A8keyScene=_m_A8keyScene;

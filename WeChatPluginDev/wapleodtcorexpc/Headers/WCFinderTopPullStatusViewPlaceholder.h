@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSProxy.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderTopPullStatusView;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _commit;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType commit; // @synthesize commit=_commit;
 @property(retain, nonatomic) WCFinderTopPullStatusView *statusView; // @synthesize statusView=_statusView;
 - (id)debugDescription;
@@ -34,4 +34,3 @@
 - (id)initWithView:(id)arg1 commit:(CDUnknownBlockType)arg2;
 
 @end
-

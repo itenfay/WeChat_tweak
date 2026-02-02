@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)call;
 - (id)initWithCpp:(const void *)arg1;
 

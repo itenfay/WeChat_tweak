@@ -10,7 +10,6 @@
     GameCenterTabSettingControl_TabConfiguration *_defaultTabConfiguration;
 }
 
-- (void).cxx_destruct;
 - (id)getTabStyleConfiguration;
 - (id)getTabConfigurationFromGlobalConfig;
 - (id)getTabConfiguration;

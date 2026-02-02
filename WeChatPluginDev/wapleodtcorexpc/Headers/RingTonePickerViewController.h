@@ -33,7 +33,6 @@
 
 + (id)constructRingTonePickerViewController:(id)arg1 friendName:(id)arg2;
 + (id)constructRingDetailPickerViewController:(id)arg1 friendName:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ringRecommendSwitch; // @synthesize ringRecommendSwitch=_ringRecommendSwitch;
 @property(nonatomic) _Bool isJumpToSearchPage; // @synthesize isJumpToSearchPage=_isJumpToSearchPage;
 @property(nonatomic) _Bool isJumpToOtherPage; // @synthesize isJumpToOtherPage=_isJumpToOtherPage;

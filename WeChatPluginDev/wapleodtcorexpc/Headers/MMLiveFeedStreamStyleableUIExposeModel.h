@@ -17,7 +17,6 @@
     unsigned long long _guideBarType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long guideBarType; // @synthesize guideBarType=_guideBarType;
 @property(retain, nonatomic) NSString *guideBarTxt; // @synthesize guideBarTxt=_guideBarTxt;
 @property(retain, nonatomic) NSString *lotteryId; // @synthesize lotteryId=_lotteryId;

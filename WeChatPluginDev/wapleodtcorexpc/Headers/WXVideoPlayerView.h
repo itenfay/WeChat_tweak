@@ -30,7 +30,6 @@
     SightView *_sightView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bCurrentVideoMessageStartPlay; // @synthesize m_bCurrentVideoMessageStartPlay=_m_bCurrentVideoMessageStartPlay;
 @property(nonatomic) _Bool soundable; // @synthesize soundable=_soundable;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;

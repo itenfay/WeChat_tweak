@@ -12,7 +12,6 @@
     long long _stage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long stage; // @synthesize stage=_stage;
 @property(nonatomic) long long version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *provider; // @synthesize provider=_provider;

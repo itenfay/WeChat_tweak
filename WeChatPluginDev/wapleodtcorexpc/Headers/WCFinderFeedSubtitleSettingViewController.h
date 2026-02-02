@@ -15,7 +15,6 @@
     NSIndexPath *_initialSelectedIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *initialSelectedIndexPath; // @synthesize initialSelectedIndexPath=_initialSelectedIndexPath;
 @property(retain, nonatomic) NSMutableArray *itemArray; // @synthesize itemArray=_itemArray;
 @property(retain, nonatomic) UILabel *headerTipsLabel; // @synthesize headerTipsLabel=_headerTipsLabel;

@@ -15,7 +15,6 @@
 }
 
 + (id)errorWithCode:(id)arg1 message:(id)arg2 details:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id details; // @synthesize details=_details;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSString *code; // @synthesize code=_code;

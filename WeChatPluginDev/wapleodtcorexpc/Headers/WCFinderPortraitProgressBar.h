@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSNumber, NSString, UIColor, UIPanGestureRecognizer, UIView;
 
 @interface WCFinderPortraitProgressBar
@@ -24,7 +26,6 @@
     double _offsetX;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double offsetX; // @synthesize offsetX=_offsetX;
 @property(nonatomic) double lastX; // @synthesize lastX=_lastX;
 @property(nonatomic) int lastTime; // @synthesize lastTime=_lastTime;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

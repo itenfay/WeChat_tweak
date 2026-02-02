@@ -19,7 +19,6 @@
     WCFinderContact *_finderContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *finderContact; // @synthesize finderContact=_finderContact;
 @property(copy, nonatomic) NSString *currentMsgUsername; // @synthesize currentMsgUsername=_currentMsgUsername;
 @property(nonatomic) __weak WCFinderHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

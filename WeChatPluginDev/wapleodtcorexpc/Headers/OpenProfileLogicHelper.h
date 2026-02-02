@@ -13,7 +13,6 @@
     int _source;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OpenProfileLogicHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onStrangerContactUpdateForbidden:(id)arg1;
 - (void)onStrangerContactUpdated:(id)arg1 Contact:(id)arg2;

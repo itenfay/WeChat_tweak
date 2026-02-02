@@ -14,7 +14,6 @@
     unsigned long long _updateTimeInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateTimeInMs; // @synthesize updateTimeInMs=_updateTimeInMs;
 @property(retain, nonatomic) NSString *wifiBSSID; // @synthesize wifiBSSID=_wifiBSSID;
 @property(retain, nonatomic) NSString *wifiSSID; // @synthesize wifiSSID=_wifiSSID;

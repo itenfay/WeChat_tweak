@@ -21,7 +21,6 @@
     NSString *_m_nsTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTips; // @synthesize m_nsTips=_m_nsTips;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle=_m_nsTitle;
 @property(nonatomic) double contentViewY; // @synthesize contentViewY=_contentViewY;

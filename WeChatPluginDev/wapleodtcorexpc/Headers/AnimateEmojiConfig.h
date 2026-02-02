@@ -14,7 +14,6 @@
 + (id)xmlFileName;
 + (id)fromConfigPath:(id)arg1 resDir:(id)arg2;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 resDir:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *nodes; // @synthesize nodes=_nodes;
 @property(nonatomic) unsigned long long emojiAnimVersion; // @synthesize emojiAnimVersion=_emojiAnimVersion;
 - (id)debugDescription;

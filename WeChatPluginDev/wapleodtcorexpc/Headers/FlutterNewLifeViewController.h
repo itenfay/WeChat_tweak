@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TingFlutterCommentInputController;
 
 @interface FlutterNewLifeViewController
@@ -10,7 +12,6 @@
     TingFlutterCommentInputController *_commentInputController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingFlutterCommentInputController *commentInputController; // @synthesize commentInputController=_commentInputController;
 - (void)registerYReportSdk;
 - (void)activeCommentInput:(id)arg1 result:(CDUnknownBlockType)arg2;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

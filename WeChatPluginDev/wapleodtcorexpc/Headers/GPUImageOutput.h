@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GLProgram, GPUImageFramebuffer, GPUImageMovieWriter, NSMutableArray;
 @protocol GPUImageInput;
@@ -33,7 +34,6 @@
     struct GPUTextureOptions _outputTextureOptions;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct GPUTextureOptions outputTextureOptions; // @synthesize outputTextureOptions=_outputTextureOptions;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) CDUnknownBlockType frameProcessingCompletionBlock; // @synthesize frameProcessingCompletionBlock=_frameProcessingCompletionBlock;
@@ -69,4 +69,3 @@
 - (id)init;
 
 @end
-

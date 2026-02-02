@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CaraCppLiveReddotProphet, NSString;
 
 @interface CaraLiveReddotProphetService
@@ -10,7 +12,6 @@
     CaraCppLiveReddotProphet *_underlying;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CaraCppLiveReddotProphet *underlying; // @synthesize underlying=_underlying;
 - (void)reportThatPreload:(id)arg1 byPrediction:(id)arg2;
 - (void)reportThatReddotConsume:(id)arg1 isReady:(id)arg2;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

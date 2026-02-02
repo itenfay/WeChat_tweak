@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebPrefetchDownloadTaskRequest, NSURLSession, NSURLSessionDownloadTask;
 
 @interface MMWebPrefetchDownloadTask
@@ -15,7 +17,6 @@
     unsigned long long _startTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSURLSessionDownloadTask *sessionTask; // @synthesize sessionTask=_sessionTask;
@@ -34,4 +35,3 @@
 - (id)initWithRequest:(id)arg1 urlSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
-

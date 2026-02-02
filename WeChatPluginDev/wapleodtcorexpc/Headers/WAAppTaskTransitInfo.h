@@ -14,7 +14,6 @@
     NSString *_traceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;
 @property(copy, nonatomic) NSString *commonUxInfo; // @synthesize commonUxInfo=_commonUxInfo;
 @property(retain, nonatomic) NSString *adUxInfo; // @synthesize adUxInfo=_adUxInfo;

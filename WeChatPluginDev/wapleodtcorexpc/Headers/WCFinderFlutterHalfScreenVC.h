@@ -13,7 +13,6 @@
     unsigned long long _cancelMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cancelMode; // @synthesize cancelMode=_cancelMode;
 @property(retain, nonatomic) MMFlutterViewController *flutterVC; // @synthesize flutterVC=_flutterVC;
 @property(retain, nonatomic) WCFinderFlutterHalfScreenPlugin *halfScreenPlugin; // @synthesize halfScreenPlugin=_halfScreenPlugin;

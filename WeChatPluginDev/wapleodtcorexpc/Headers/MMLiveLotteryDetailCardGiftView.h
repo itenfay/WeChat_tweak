@@ -30,7 +30,6 @@
 + (double)getItemColumnMargin:(unsigned long long)arg1;
 + (double)getItemRowMargin;
 + (unsigned long long)getTypeWithLotteryInfo:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *showGiftInfoArray; // @synthesize showGiftInfoArray=_showGiftInfoArray;
 @property(nonatomic) double collectionViewHeight; // @synthesize collectionViewHeight=_collectionViewHeight;
 @property(nonatomic) double collectionViewWidth; // @synthesize collectionViewWidth=_collectionViewWidth;

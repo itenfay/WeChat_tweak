@@ -48,7 +48,6 @@
 }
 
 + (id)createTextView;
-- (void).cxx_destruct;
 @property(nonatomic) double topSectionOffset; // @synthesize topSectionOffset=_topSectionOffset;
 @property(nonatomic) double offsetWhenReuse; // @synthesize offsetWhenReuse=_offsetWhenReuse;
 @property(nonatomic) double changeBGColorOffset; // @synthesize changeBGColorOffset=_changeBGColorOffset;

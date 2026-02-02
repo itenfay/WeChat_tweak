@@ -16,7 +16,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *EventParameters; // @synthesize EventParameters=_EventParameters;
 @property(nonatomic) double EventDuration; // @synthesize EventDuration=_EventDuration;
 @property(copy, nonatomic) NSString *EventType; // @synthesize EventType=_EventType;

@@ -16,7 +16,6 @@
     WCFinderDataItem *_machineTabFirstPlayableDataItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool machineTabIsTopRefreshing; // @synthesize machineTabIsTopRefreshing=_machineTabIsTopRefreshing;
 @property(retain, nonatomic) WCFinderDataItem *machineTabFirstPlayableDataItem; // @synthesize machineTabFirstPlayableDataItem=_machineTabFirstPlayableDataItem;
 @property(nonatomic) _Bool haveLeadToMachineTab; // @synthesize haveLeadToMachineTab=_haveLeadToMachineTab;

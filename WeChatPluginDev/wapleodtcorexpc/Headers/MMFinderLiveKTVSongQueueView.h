@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKtvPlayerWaitListInfo, MMLiveTaskId, MMUIImageView, MMUILabel, NSString, UICollectionView, WCFinderContact;
 
@@ -21,7 +22,6 @@
     MMUILabel *_actionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *actionLabel; // @synthesize actionLabel=_actionLabel;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UICollectionView *playerCollectionView; // @synthesize playerCollectionView=_playerCollectionView;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

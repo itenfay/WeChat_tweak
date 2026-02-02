@@ -14,7 +14,6 @@
     NSMutableDictionary *_pluginInstanceDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pluginInstanceDict; // @synthesize pluginInstanceDict=_pluginInstanceDict;
 @property(nonatomic) __weak id <WSWebViewPluginableProtocol> webViewOwner; // @synthesize webViewOwner=_webViewOwner;
 - (void)observeLifeCircleFor:(id)arg1;

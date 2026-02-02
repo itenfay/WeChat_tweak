@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FBSDKKeychainStore, FBSDKLoginManagerLogger, NSSet, NSString, UIViewController;
 
@@ -23,7 +24,6 @@
 
 + (id)stringForChallenge;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *requestedPermissions; // @synthesize requestedPermissions=_requestedPermissions;
 @property(nonatomic) __weak UIViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 @property(nonatomic) unsigned long long loginBehavior; // @synthesize loginBehavior=_loginBehavior;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

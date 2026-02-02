@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, SRWebSocket, WAWebSocketTaskDelayReleaseWrap;
 @protocol OS_dispatch_queue, OS_dispatch_source, WAWebSocketTaskDelegate;
@@ -27,7 +28,6 @@
     CDUnknownBlockType _messageHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType messageHandler; // @synthesize messageHandler=_messageHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) CDUnknownBlockType closeHandler; // @synthesize closeHandler=_closeHandler;
@@ -74,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

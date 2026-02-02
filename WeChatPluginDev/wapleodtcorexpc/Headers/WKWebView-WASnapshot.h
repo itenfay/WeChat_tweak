@@ -4,6 +4,7 @@
 //
 
 #import <WebKit/WKWebView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WKWebView (WASnapshot)
 - (void)setSnapshotImgView:(id)arg1;
@@ -22,4 +23,3 @@
 - (void)captureFullScreenshotWithFrame:(struct CGRect)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)captureFullScreenshotWithCompletion:(CDUnknownBlockType)arg1;
 @end
-

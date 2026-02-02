@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface MJSTTAsyncTask
@@ -10,7 +12,6 @@
     NSString *_audioID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *audioID; // @synthesize audioID=_audioID;
 - (id)description;
 - (id)statusDidUpdateParams;
@@ -24,4 +25,3 @@
 - (id)initWithAudioID:(id)arg1 statusDidUpdateSignal:(id)arg2;
 
 @end
-

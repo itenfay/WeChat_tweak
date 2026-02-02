@@ -29,7 +29,6 @@
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_url;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videomd5; // @synthesize videomd5=_videomd5;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(retain, nonatomic) NSString *encryptKey; // @synthesize encryptKey=_encryptKey;

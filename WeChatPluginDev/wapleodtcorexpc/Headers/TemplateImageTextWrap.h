@@ -13,7 +13,6 @@
     NSString *_text;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *cover; // @synthesize cover=_cover;
 

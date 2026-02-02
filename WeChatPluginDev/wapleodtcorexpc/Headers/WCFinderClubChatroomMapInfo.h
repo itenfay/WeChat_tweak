@@ -59,7 +59,6 @@
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_finderUsername;
 + (void)PBArrayAdd_chatroomId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PrepareFinder *finderPrepare; // @synthesize finderPrepare=_finderPrepare;
 @property(retain, nonatomic) BindFinderClubInfo *bindFinderClubInfo; // @synthesize bindFinderClubInfo=_bindFinderClubInfo;
 @property(retain, nonatomic) ChatroomBindInfo *accountBindInfo; // @synthesize accountBindInfo=_accountBindInfo;

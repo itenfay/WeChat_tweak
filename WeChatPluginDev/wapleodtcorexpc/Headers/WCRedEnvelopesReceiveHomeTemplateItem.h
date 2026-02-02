@@ -22,7 +22,6 @@
     NSString *_atmospherePagUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *atmospherePagUrl; // @synthesize atmospherePagUrl=_atmospherePagUrl;
 @property(nonatomic) int pagType; // @synthesize pagType=_pagType;
 @property(retain, nonatomic) NSString *skinPagMd5; // @synthesize skinPagMd5=_skinPagMd5;

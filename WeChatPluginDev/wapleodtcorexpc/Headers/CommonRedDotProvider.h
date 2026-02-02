@@ -12,7 +12,6 @@
     NSArray *_finderRedDotPaths;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *finderRedDotPaths; // @synthesize finderRedDotPaths=_finderRedDotPaths;
 - (id)checkToGetRedDotInfo;
 - (id)initWithPaths:(id)arg1;

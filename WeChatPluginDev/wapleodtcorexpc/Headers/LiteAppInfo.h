@@ -20,7 +20,6 @@
     unsigned long long _updateTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) NSString *patchId; // @synthesize patchId=_patchId;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;

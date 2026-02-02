@@ -22,7 +22,6 @@
     UIButton *_protocolCoverBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *protocolCoverBtn; // @synthesize protocolCoverBtn=_protocolCoverBtn;
 @property(retain, nonatomic) RichTextView *protocolTextView; // @synthesize protocolTextView=_protocolTextView;
 @property(retain, nonatomic) UIImageView *protocolImgView; // @synthesize protocolImgView=_protocolImgView;

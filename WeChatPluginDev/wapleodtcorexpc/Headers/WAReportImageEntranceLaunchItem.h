@@ -21,7 +21,6 @@
     NSString *_imageKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageKey; // @synthesize imageKey=_imageKey;
 @property(copy, nonatomic) NSString *launchPath; // @synthesize launchPath=_launchPath;
 @property(copy, nonatomic) NSString *launchAppId; // @synthesize launchAppId=_launchAppId;

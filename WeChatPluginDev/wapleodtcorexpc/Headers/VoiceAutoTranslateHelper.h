@@ -17,7 +17,6 @@
     NSMutableArray *_autoTranslateQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *autoTranslateQueue; // @synthesize autoTranslateQueue=_autoTranslateQueue;
 @property(retain, nonatomic) VoiceAutoTransReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) _Bool continueTranslate; // @synthesize continueTranslate=_continueTranslate;

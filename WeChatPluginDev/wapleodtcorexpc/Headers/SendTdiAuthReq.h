@@ -10,7 +10,6 @@
     NSString *_tdiExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tdiExtInfo; // @synthesize tdiExtInfo=_tdiExtInfo;
 
 @end

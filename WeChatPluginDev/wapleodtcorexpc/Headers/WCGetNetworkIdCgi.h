@@ -13,7 +13,6 @@
     NSString *_localClientIp;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localClientIp; // @synthesize localClientIp=_localClientIp;
 @property(copy, nonatomic) NSString *localCtx; // @synthesize localCtx=_localCtx;
 @property(copy, nonatomic) NSString *localNetId; // @synthesize localNetId=_localNetId;

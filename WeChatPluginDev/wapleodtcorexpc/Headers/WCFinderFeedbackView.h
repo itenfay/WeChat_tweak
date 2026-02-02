@@ -20,7 +20,6 @@
     struct CGRect _anchorRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedbackReasonView *reasonView; // @synthesize reasonView=_reasonView;
 @property(retain, nonatomic) WCFinderSimpleFeedbackView *simpleFeedbackView; // @synthesize simpleFeedbackView=_simpleFeedbackView;
 @property(retain, nonatomic) UIView *triangleView; // @synthesize triangleView=_triangleView;

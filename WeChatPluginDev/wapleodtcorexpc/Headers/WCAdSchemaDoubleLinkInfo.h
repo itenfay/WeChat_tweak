@@ -16,7 +16,6 @@
     WCAdCardBtnInfo *_doubleLinkClickActionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *doubleLinkClickActionInfo; // @synthesize doubleLinkClickActionInfo=_doubleLinkClickActionInfo;
 @property(nonatomic) int doubleLinkWeAppType; // @synthesize doubleLinkWeAppType=_doubleLinkWeAppType;
 @property(retain, nonatomic) NSString *doubleLinkWeAppPath; // @synthesize doubleLinkWeAppPath=_doubleLinkWeAppPath;

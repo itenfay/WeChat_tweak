@@ -15,7 +15,6 @@
     NSMutableDictionary *_users;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *users; // @synthesize users=_users;
 @property(retain, nonatomic) TRTCCloud *trtc; // @synthesize trtc=_trtc;
 @property(nonatomic) __weak id <TRTCRemoteUserManagerDelegate> delegate; // @synthesize delegate=_delegate;

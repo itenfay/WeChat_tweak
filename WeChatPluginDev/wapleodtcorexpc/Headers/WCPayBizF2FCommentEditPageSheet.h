@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetAdapter, NSString, UITextField;
 
@@ -19,7 +20,6 @@
     WCPayBizF2FCommentEditPageSheet *_selfRetaining;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBizF2FCommentEditPageSheet *selfRetaining; // @synthesize selfRetaining=_selfRetaining;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) MMPageSheetAdapter *adapter; // @synthesize adapter=_adapter;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

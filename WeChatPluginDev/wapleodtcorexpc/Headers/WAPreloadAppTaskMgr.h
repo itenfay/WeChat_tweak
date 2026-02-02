@@ -20,7 +20,6 @@
 + (unsigned int)preloadInjectValueForPreloadMoment:(unsigned int)arg1;
 + (unsigned int)preloadDegradeType;
 + (_Bool)isCloseClientPreload;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppTaskCapsuleMenu *cachedCapsuleMenu; // @synthesize cachedCapsuleMenu=_cachedCapsuleMenu;
 @property(retain, nonatomic) WASimulatedNativeWeAppLoadingViewController *cachedSimulatedNativeLoading; // @synthesize cachedSimulatedNativeLoading=_cachedSimulatedNativeLoading;
 @property(retain, nonatomic) WACircleProgressLoadingViewController *cachedWeappLoading; // @synthesize cachedWeappLoading=_cachedWeappLoading;

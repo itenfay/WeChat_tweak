@@ -20,7 +20,6 @@
 }
 
 + (id)newWithTemplateListResponse:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *topicId; // @synthesize topicId=_topicId;
 @property(copy, nonatomic) NSString *templateMusicId; // @synthesize templateMusicId=_templateMusicId;
 @property(retain, nonatomic) VideoTemplate *videoTemplate; // @synthesize videoTemplate=_videoTemplate;

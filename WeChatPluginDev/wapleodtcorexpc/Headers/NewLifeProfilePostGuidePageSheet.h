@@ -14,7 +14,6 @@
     NSMutableDictionary *_reportParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reportParams; // @synthesize reportParams=_reportParams;
 @property(retain, nonatomic) NewLifeRedDotTipsShowInfo *profilePostRedDotInfo; // @synthesize profilePostRedDotInfo=_profilePostRedDotInfo;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;

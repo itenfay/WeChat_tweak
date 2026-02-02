@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderLiveEcGetLiveConfigResponse_ShowAnimation_HotSellingOptions, FinderWindowProductInfo, MMFinderLiveGoodsHotSaleAnimationView, MMFinderLiveHotSaleAnimationLogic, MMWebImageView, NSString, PAGView, UILabel;
 
@@ -21,7 +22,6 @@
     PAGView *_playingIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *playingIconView; // @synthesize playingIconView=_playingIconView;
 @property(retain, nonatomic) MMFinderLiveGoodsHotSaleAnimationView *hotSaleAnimationView; // @synthesize hotSaleAnimationView=_hotSaleAnimationView;
 @property(retain, nonatomic) MMFinderLiveHotSaleAnimationLogic *animationLogic; // @synthesize animationLogic=_animationLogic;
@@ -55,4 +55,3 @@
 @property(readonly) Class superclass;
 
 @end
-

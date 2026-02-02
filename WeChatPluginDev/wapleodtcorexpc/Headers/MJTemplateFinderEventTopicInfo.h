@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_eventName;
 + (void)PBArrayAdd_creatorNickname;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(copy, nonatomic) NSString *creatorNickname; // @synthesize creatorNickname=_creatorNickname;
 @property(readonly, copy) NSString *description;

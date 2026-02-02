@@ -13,7 +13,6 @@
     NSObject<FlutterTextureRegistry> *_registry;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSObject<FlutterTextureRegistry> *registry; // @synthesize registry=_registry;
 @property(nonatomic) long long textureId; // @synthesize textureId=_textureId;
 - (void)onDisplayLink:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel;
 
@@ -16,7 +17,6 @@
     MMUIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) MMUIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(readonly, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -26,4 +26,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

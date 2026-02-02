@@ -19,7 +19,6 @@
 }
 
 + (id)snapshotOCRDataWithText:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJMovieTextSuggestionSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(readonly, nonatomic) NSData *feedEmbedding; // @synthesize feedEmbedding=_feedEmbedding;
 @property(retain, nonatomic) NSString *userInputWording; // @synthesize userInputWording=_userInputWording;

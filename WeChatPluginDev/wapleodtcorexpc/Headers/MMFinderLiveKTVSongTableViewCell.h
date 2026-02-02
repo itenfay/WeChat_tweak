@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKTVSongItem, MMFinderLiveTask, MMFinderLiveTaskId, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MMWebImageView, NSString, UIView, WCFinderLiveAnchorLogReporter;
 
@@ -26,7 +27,6 @@
 
 + (id)identifier;
 + (double)cellHeightWithState:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) MMUIButton *requestButton; // @synthesize requestButton=_requestButton;
@@ -54,4 +54,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

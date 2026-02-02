@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderJoinLiveContext, MMFinderLiveTaskId, NSArray, NSString, UITableView;
 
 @interface MMFinderLiveAudienceSuperfanSwitchRoleSheetView
@@ -14,7 +16,6 @@
     MMFinderJoinLiveContext *_liveContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderJoinLiveContext *liveContext; // @synthesize liveContext=_liveContext;
 @property(retain, nonatomic) NSArray *roleInfos; // @synthesize roleInfos=_roleInfos;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

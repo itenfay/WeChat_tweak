@@ -10,7 +10,6 @@
     NSMutableArray *_arrRecord;
 }
 
-- (void).cxx_destruct;
 - (id)getAllErrCodeRecord;
 - (void)addErrCodeRecord:(unsigned long long)arg1;
 - (void)onServiceClearData;

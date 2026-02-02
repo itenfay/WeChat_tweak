@@ -15,7 +15,6 @@
     MMUILabel *_emptyLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;

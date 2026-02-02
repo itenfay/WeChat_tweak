@@ -18,7 +18,6 @@
     double _thumbHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double thumbHeight; // @synthesize thumbHeight=_thumbHeight;
 @property(nonatomic) double thumbWidth; // @synthesize thumbWidth=_thumbWidth;
 @property(copy, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;

@@ -15,7 +15,6 @@
 }
 
 + (_Bool)canCreateSectionDataWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTopItemShowBigCover; // @synthesize isTopItemShowBigCover=_isTopItemShowBigCover;
 @property(readonly, nonatomic) _Bool isStarContact; // @synthesize isStarContact=_isStarContact;
 @property(readonly, nonatomic) _Bool isOftenReadContact; // @synthesize isOftenReadContact=_isOftenReadContact;

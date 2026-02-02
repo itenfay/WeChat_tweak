@@ -16,7 +16,6 @@
     NSString *_m_nsState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsState; // @synthesize m_nsState=_m_nsState;
 @property(retain, nonatomic) NSString *m_nsScope; // @synthesize m_nsScope=_m_nsScope;
 - (void)onIPadOAuthRedirectUrl:(id)arg1 confirmRedirectUrl:(id)arg2 confirmWording:(id)arg3 appIconUrl:(id)arg4 appNickname:(id)arg5;

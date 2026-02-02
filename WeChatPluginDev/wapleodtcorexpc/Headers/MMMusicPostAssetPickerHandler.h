@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -13,7 +14,6 @@
     NSMutableArray *_selectedModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectedModels; // @synthesize selectedModels=_selectedModels;
 @property(copy, nonatomic) CDUnknownBlockType onSelectedAssetChanged; // @synthesize onSelectedAssetChanged=_onSelectedAssetChanged;
 - (void)postVideoViewController:(id)arg1 onFinderVideoSelectedBtnChecked:(id)arg2;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

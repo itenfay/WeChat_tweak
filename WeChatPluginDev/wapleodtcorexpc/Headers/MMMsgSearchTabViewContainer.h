@@ -17,7 +17,6 @@
     UIView *_tabUnderLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *tabUnderLine; // @synthesize tabUnderLine=_tabUnderLine;
 @property(nonatomic) unsigned long long selectIndex; // @synthesize selectIndex=_selectIndex;
 @property(retain, nonatomic) NSMutableArray *tabViewArray; // @synthesize tabViewArray=_tabViewArray;

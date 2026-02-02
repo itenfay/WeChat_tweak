@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) CIImage *depthFrame; // @synthesize depthFrame=_depthFrame;
 @property(nonatomic) struct Mat data; // @synthesize data=_data;

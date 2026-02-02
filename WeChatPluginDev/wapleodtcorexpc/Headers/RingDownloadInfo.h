@@ -15,7 +15,6 @@
     NSString *_decodeKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *decodeKey; // @synthesize decodeKey=_decodeKey;
 @property(copy, nonatomic) NSString *savePath; // @synthesize savePath=_savePath;
 @property(copy, nonatomic) NSString *mediaUrl; // @synthesize mediaUrl=_mediaUrl;

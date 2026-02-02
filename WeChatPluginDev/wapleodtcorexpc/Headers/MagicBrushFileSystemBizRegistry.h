@@ -11,7 +11,6 @@
     NSString *_mBizDir;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mBizDir; // @synthesize mBizDir=_mBizDir;
 @property(copy, nonatomic) NSString *mBizName; // @synthesize mBizName=_mBizName;
 - (id)initWithBizName:(id)arg1;

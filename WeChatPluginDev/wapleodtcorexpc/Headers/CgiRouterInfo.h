@@ -17,7 +17,6 @@
     NSString *_cgiUri;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cgiUri; // @synthesize cgiUri=_cgiUri;
 @property(retain, nonatomic) NSString *cgiName; // @synthesize cgiName=_cgiName;
 @property(nonatomic) unsigned int tryCount; // @synthesize tryCount=_tryCount;

@@ -11,7 +11,6 @@
     UIProgressView *m_progressView;
 }
 
-- (void).cxx_destruct;
 - (void)onClearUnnecessaryFilesFinished;
 - (void)updateProgress:(unsigned int)arg1;
 - (void)startFakeLoadingToProgress:(int)arg1;

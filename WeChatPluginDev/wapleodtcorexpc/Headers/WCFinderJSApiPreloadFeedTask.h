@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSSet;
 
@@ -16,11 +17,9 @@
 }
 
 + (id)taskWithIds:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 @property(retain, nonatomic) NSSet *fetching; // @synthesize fetching=_fetching;
 @property(retain, nonatomic) NSSet *faileds; // @synthesize faileds=_faileds;
 @property(retain, nonatomic) NSMutableSet *pending; // @synthesize pending=_pending;
 
 @end
-

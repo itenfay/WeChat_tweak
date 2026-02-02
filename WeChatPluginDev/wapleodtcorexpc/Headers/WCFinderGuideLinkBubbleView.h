@@ -13,7 +13,6 @@
     WCFinderGuideLinkBubbleModel *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGuideLinkBubbleModel *model; // @synthesize model=_model;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;

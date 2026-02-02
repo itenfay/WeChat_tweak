@@ -45,7 +45,6 @@
     NSDictionary *_headerDic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useDownloadResumption; // @synthesize useDownloadResumption=_useDownloadResumption;
 @property(retain, nonatomic) NSDictionary *headerDic; // @synthesize headerDic=_headerDic;
 @property(nonatomic) unsigned int dnsType; // @synthesize dnsType=_dnsType;

@@ -23,7 +23,6 @@
     FinderLiveEcGetLiveConfigResponse *_ecConfigResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveEcGetLiveConfigResponse *ecConfigResp; // @synthesize ecConfigResp=_ecConfigResp;
 @property(nonatomic) __weak WCFinderLiveEntertainmentChannelsViewModel *vcVM; // @synthesize vcVM=_vcVM;
 @property(nonatomic) double actionButtonDistanceToBottom; // @synthesize actionButtonDistanceToBottom=_actionButtonDistanceToBottom;

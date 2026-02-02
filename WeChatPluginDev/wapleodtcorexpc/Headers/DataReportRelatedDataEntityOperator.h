@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface DataReportRelatedDataEntityOperator : NSObject
 {
@@ -39,4 +40,3 @@
 + (void)setPageId:(id)arg1 pageId:(unsigned long long)arg2;
 
 @end
-

@@ -18,7 +18,6 @@
     WACommentListFooterTipView *_footer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMoreReadMessage; // @synthesize hasMoreReadMessage=_hasMoreReadMessage;
 @property(retain, nonatomic) WACommentListFooterTipView *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;

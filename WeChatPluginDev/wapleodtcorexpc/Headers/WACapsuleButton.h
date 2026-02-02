@@ -21,7 +21,6 @@
     UILabel *_bannerLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *bannerLabel; // @synthesize bannerLabel=_bannerLabel;
 @property(retain, nonatomic) UIView *hightlightedView; // @synthesize hightlightedView=_hightlightedView;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;

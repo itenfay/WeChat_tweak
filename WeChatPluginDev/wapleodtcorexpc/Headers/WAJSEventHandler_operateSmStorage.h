@@ -10,7 +10,6 @@
     NSError *_err;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *err; // @synthesize err=_err;
 - (void)operate_sm2Verify:(id)arg1;
 - (void)operate_sm2Sign:(id)arg1;

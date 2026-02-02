@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPictureInPictureController, AVPlayerLayer, NSString;
 @protocol WCPictureInPictureDelegate;
@@ -20,7 +21,6 @@
 }
 
 + (_Bool)isPictureInPictureSupported;
-- (void).cxx_destruct;
 @property(nonatomic) long long initTimeMs; // @synthesize initTimeMs=_initTimeMs;
 @property(nonatomic) __weak AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(nonatomic) int taskId; // @synthesize taskId=_taskId;
@@ -57,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

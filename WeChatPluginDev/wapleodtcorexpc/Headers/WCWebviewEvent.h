@@ -11,7 +11,6 @@
     NSObject *_eventContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *eventContext; // @synthesize eventContext=_eventContext;
 @property(nonatomic) _Bool bCanceled; // @synthesize bCanceled=_bCanceled;
 @property(readonly) unsigned long long hash;

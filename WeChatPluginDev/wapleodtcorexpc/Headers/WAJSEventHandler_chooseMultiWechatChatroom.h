@@ -10,7 +10,6 @@
     MultiSelectChatRoomHalfScreenViewController *_m_viewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiSelectChatRoomHalfScreenViewController *m_viewController; // @synthesize m_viewController=_m_viewController;
 - (void)onMultiSelectContactCancel;
 - (void)onMultiSelectContactReturn:(id)arg1;

@@ -23,7 +23,6 @@
     unsigned long long _thumbFileSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int crc32; // @synthesize crc32=_crc32;
 @property(nonatomic) unsigned long long thumbFileSize; // @synthesize thumbFileSize=_thumbFileSize;
 @property(nonatomic) unsigned long long middleFileSize; // @synthesize middleFileSize=_middleFileSize;

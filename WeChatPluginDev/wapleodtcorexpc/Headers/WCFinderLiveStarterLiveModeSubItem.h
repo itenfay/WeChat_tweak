@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -34,7 +35,6 @@
 + (void)PBArrayAdd_subTitle;
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_liveMode;
-- (void).cxx_destruct;
 @property(nonatomic) double originY; // @synthesize originY=_originY;
 @property(nonatomic) double originX; // @synthesize originX=_originX;
 @property(nonatomic) double width; // @synthesize width=_width;
@@ -65,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

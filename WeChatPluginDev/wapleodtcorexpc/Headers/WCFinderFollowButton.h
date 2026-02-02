@@ -11,7 +11,6 @@
     WCFinderFollowBtnConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFollowBtnConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) WCFinderFollowBtnViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)onClickSelf;

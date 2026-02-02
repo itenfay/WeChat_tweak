@@ -16,7 +16,6 @@
     NSLock *_m_backgroundTaskLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *m_backgroundTaskLock; // @synthesize m_backgroundTaskLock=_m_backgroundTaskLock;
 @property(nonatomic) _Bool m_hasHoldBackgroundTask; // @synthesize m_hasHoldBackgroundTask=_m_hasHoldBackgroundTask;
 @property(nonatomic) int m_outAppVibrationCount; // @synthesize m_outAppVibrationCount=_m_outAppVibrationCount;

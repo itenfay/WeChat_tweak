@@ -13,7 +13,6 @@
     UIImageView *_iconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) WCFinderAuthorContactView *contactView; // @synthesize contactView=_contactView;
 - (void)updateWithContact:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSString, WCFinderLivePlayerSlider;
 
@@ -20,7 +21,6 @@
 }
 
 + (_Bool)isSliderPercent:(double)arg1 equalPercent:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRecentShockInStartOrEnd; // @synthesize isRecentShockInStartOrEnd=_isRecentShockInStartOrEnd;
 @property(retain, nonatomic) NSMutableArray *greateTimeDotList; // @synthesize greateTimeDotList=_greateTimeDotList;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;
@@ -58,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

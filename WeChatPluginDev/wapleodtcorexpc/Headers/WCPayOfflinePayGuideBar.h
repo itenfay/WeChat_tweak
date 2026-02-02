@@ -53,7 +53,6 @@
 + (void)PBArrayAdd_is_show_guide;
 + (void)PBArrayAdd_guide_data;
 + (void)PBArrayAdd_guide_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dark_background_color; // @synthesize dark_background_color=_dark_background_color;
 @property(retain, nonatomic) NSString *dark_guide_btn_bg_color; // @synthesize dark_guide_btn_bg_color=_dark_guide_btn_bg_color;
 @property(retain, nonatomic) NSString *dark_guide_btn_text_color; // @synthesize dark_guide_btn_text_color=_dark_guide_btn_text_color;

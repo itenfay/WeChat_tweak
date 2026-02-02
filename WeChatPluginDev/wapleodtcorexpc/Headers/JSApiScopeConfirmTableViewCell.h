@@ -20,7 +20,6 @@
 + (unsigned long long)viewHeightWithScopeText:(id)arg1 width:(unsigned long long)arg2;
 + (void)layoutScopeLabel:(id)arg1 width:(unsigned long long)arg2 getHeight:(unsigned long long *)arg3;
 + (id)getScopeLabel;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;
 @property(nonatomic) _Bool isMustSelect; // @synthesize isMustSelect=_isMustSelect;
 @property(retain, nonatomic) NSString *scopeDescription; // @synthesize scopeDescription=_scopeDescription;

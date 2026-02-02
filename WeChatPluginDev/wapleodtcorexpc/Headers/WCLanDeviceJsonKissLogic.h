@@ -10,7 +10,6 @@
     NSMutableDictionary *m_sendTaskMap;
 }
 
-- (void).cxx_destruct;
 - (_Bool)cancelTaskWithDevice:(id)arg1;
 - (void)onSendDataToWCLanDevice:(long long)arg1 ErrCode:(int)arg2;
 - (void)kissDeviceWithJsonStr:(id)arg1 deviceType:(id)arg2 deviceId:(id)arg3;

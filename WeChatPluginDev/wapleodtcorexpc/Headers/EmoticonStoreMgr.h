@@ -27,7 +27,6 @@
 
 + (unsigned int)getIdKeyDownloadFailed;
 + (unsigned int)getIdKeyIdEmoticon;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *downloadingStoreItemCache; // @synthesize downloadingStoreItemCache=_downloadingStoreItemCache;
 @property(retain, nonatomic) NSString *secondTabExptConfig; // @synthesize secondTabExptConfig=_secondTabExptConfig;
 @property(retain, nonatomic) EmoticonStoreSecondTabExptSetting *secondTabExptSetting; // @synthesize secondTabExptSetting=_secondTabExptSetting;

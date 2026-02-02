@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveQueue, NSMutableDictionary;
 
@@ -13,7 +14,6 @@
     MMLiveQueue *_requests;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveQueue *requests; // @synthesize requests=_requests;
 @property(retain, nonatomic) NSMutableDictionary *items; // @synthesize items=_items;
 - (void)invokeFrontTask;
@@ -22,4 +22,3 @@
 - (id)init;
 
 @end
-

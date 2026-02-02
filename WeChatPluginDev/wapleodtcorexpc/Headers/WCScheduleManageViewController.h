@@ -11,7 +11,6 @@
     NSMutableArray *_todoItemArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *todoItemArr; // @synthesize todoItemArr=_todoItemArr;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 - (void)OnUpdateItems:(id)arg1;

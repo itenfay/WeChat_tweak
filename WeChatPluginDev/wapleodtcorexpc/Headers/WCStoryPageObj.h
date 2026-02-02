@@ -13,7 +13,6 @@
     NSMutableArray *_arrPageIndexObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrPageIndexObj; // @synthesize arrPageIndexObj=_arrPageIndexObj;
 @property(retain, nonatomic) WCStoryDataItem *dataItem; // @synthesize dataItem=_dataItem;
 

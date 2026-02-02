@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
@@ -16,7 +17,6 @@
 
 + (id)handlerForLbsLifeSync;
 + (id)handlerForFinderSync;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType bufferLoadBlock; // @synthesize bufferLoadBlock=_bufferLoadBlock;
 @property(copy, nonatomic) CDUnknownBlockType bufferSaveBlock; // @synthesize bufferSaveBlock=_bufferSaveBlock;
 @property(retain, nonatomic) NSData *keyBuf; // @synthesize keyBuf=_keyBuf;
@@ -29,4 +29,3 @@
 - (id)initWithBufferSaver:(CDUnknownBlockType)arg1 bufferLoader:(CDUnknownBlockType)arg2;
 
 @end
-

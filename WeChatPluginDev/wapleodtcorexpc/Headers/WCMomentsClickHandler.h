@@ -15,7 +15,6 @@
     MMURLHandler *_urlHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMURLHandler *urlHandler; // @synthesize urlHandler=_urlHandler;
 @property(nonatomic) __weak MMUIViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 @property(nonatomic) __weak id <WCMomentsClickHandlerDelegate> delegate; // @synthesize delegate=_delegate;

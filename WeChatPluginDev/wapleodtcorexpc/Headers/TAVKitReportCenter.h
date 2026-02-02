@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol OS_dispatch_queue;
@@ -21,7 +22,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
@@ -38,4 +38,3 @@
 - (id)init;
 
 @end
-

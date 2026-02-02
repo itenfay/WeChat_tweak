@@ -10,7 +10,6 @@
     NSString *_ip;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ip; // @synthesize ip=_ip;
 - (id)init;
 

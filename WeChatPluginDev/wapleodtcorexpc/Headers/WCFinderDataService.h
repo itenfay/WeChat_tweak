@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BrandDirectlyOperateContactLogic, FinderDynamicAbility, FinderEnterStreamTips, FinderJoinLiveVisibleInfo, FinderLivePersonalCenterPrepareInfo, FinderNewUserPrepareResponse, FinderPopupClientFreqConfig, FinderStreamPrefechTimeIntervalConf, MMLiveCastDeviceViewItem, MMTimer, MMWebViewController, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSRecursiveLock, NSString, WCFinderAccessoryDownloadManager, WCFinderCachedMgr, WCFinderCardsEntryCenter, WCFinderCommentPostMgr, WCFinderConfiguration, WCFinderContact, WCFinderDiagnosisDataCenter, WCFinderDraftUploadDraftMgr, WCFinderDynamicConfigModel, WCFinderECRedDotsCenter, WCFinderEnterExtraReportInfoModel, WCFinderEnterSourceReportInfoModel, WCFinderFeedMediaCacheMgr, WCFinderFeedSessionBufferMgr, WCFinderFeedSubtitleManager, WCFinderFetchSelfCGI, WCFinderFluencyReportCenter, WCFinderGlobalRedDotFrequencyModel, WCFinderLastestPlayVideoInfoMgr, WCFinderLimitedBusinessMgr, WCFinderLimitedCapacityQueueMgr, WCFinderLimitedModeMgr, WCFinderLocalFeedProvider, WCFinderLocationManager, WCFinderMMKVKeyModel, WCFinderMemoryCacheMgr, WCFinderMentionMgr, WCFinderMoreLivePreFetchCacheMgr, WCFinderMyTabEntranceWordingReadInfo, WCFinderNotifyHandler, WCFinderOtherTabPrefetchManager, WCFinderOuterPreloadManager, WCFinderPayReportObj, WCFinderPostEditEntryMgr, WCFinderPostMgr, WCFinderPostReportInfoMgr, WCFinderPreFetchObjectMgr, WCFinderPrefetchManager, WCFinderPrefetchPool, WCFinderPrefetchTaskManager, WCFinderProfilePreloadHelper, WCFinderRedDotCommonImpl, WCFinderRedDotCtrlInfo, WCFinderRedDotFindTabModel, WCFinderResourceLoader, WCFinderSetting, WCFinderStreamEntranceReportModel, WCFinderSyncExptSwitchModel, WCFinderSyncKeyBufHandler, WCFinderTemplateResourcePreloader, WCFinderTimelineReportMgr, WCFinderUploadCdnMgr, WCFinderUserInfoSetting, WCFinderWCDB, WCFinderWordingIconManager, WCFinderXLabSwitchModel;
 @protocol OS_dispatch_queue, WCFinderRedDotInterfaceProtocol;
 
@@ -175,7 +177,6 @@
 + (_Bool)enableWXPhotoShareToFinder;
 + (_Bool)shouldShowSnsShareToFinderEntryIsOverseas:(_Bool)arg1;
 + (_Bool)shouldShowPatMusicPostEntry;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderECRedDotsCenter *ecRedDotsCenter; // @synthesize ecRedDotsCenter=_ecRedDotsCenter;
 @property(retain, nonatomic) WCFinderCardsEntryCenter *cardsEntryCenter; // @synthesize cardsEntryCenter=_cardsEntryCenter;
 @property(retain, nonatomic) NSMutableSet *selfMemberAnchorUsernameSet; // @synthesize selfMemberAnchorUsernameSet=_selfMemberAnchorUsernameSet;
@@ -2391,4 +2392,3 @@
 @property(readonly) Class superclass;
 
 @end
-

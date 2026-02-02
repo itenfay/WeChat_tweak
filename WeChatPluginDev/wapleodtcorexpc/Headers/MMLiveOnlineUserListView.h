@@ -15,7 +15,6 @@
     NSArray *_userList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *userList; // @synthesize userList=_userList;
 @property(nonatomic) __weak id <MMLiveContactTableViewCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 @property(retain, nonatomic) MMTableView *contactTableView; // @synthesize contactTableView=_contactTableView;

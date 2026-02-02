@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIWindow, UIViewController;
 
@@ -16,7 +17,6 @@
     UIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsAnimationAlpha; // @synthesize bIsAnimationAlpha=_bIsAnimationAlpha;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) MMUIWindow *window; // @synthesize window=_window;
@@ -32,4 +32,3 @@
 - (id)initWithViewController:(id)arg1 windowLevel:(int)arg2;
 
 @end
-

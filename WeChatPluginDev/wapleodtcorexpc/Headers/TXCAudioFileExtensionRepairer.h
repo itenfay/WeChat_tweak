@@ -14,7 +14,6 @@
     NSString *_hardLinkFilePath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *hardLinkFilePath; // @synthesize hardLinkFilePath=_hardLinkFilePath;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(copy, nonatomic) NSString *rawFilePath; // @synthesize rawFilePath=_rawFilePath;

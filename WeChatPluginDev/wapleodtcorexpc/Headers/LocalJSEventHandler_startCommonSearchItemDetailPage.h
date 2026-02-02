@@ -10,7 +10,6 @@
     WCDataItem *_oDataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDataItem *oDataItem; // @synthesize oDataItem=_oDataItem;
 - (void)onOpenService:(unsigned long long)arg1 config:(id)arg2 error:(id)arg3;
 - (void)jumpPhoto;

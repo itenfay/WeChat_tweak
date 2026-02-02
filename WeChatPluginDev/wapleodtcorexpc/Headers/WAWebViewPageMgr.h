@@ -17,7 +17,6 @@
     WAAppTask *_task;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WAAppTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSMutableArray *dissociativePool; // @synthesize dissociativePool=_dissociativePool;
 @property(retain, nonatomic) NSMutableArray *releasePool; // @synthesize releasePool=_releasePool;

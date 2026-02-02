@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_dicExpArgs;
 + (void)PBArrayAdd_nsExpId;
 + (void)PBArrayAdd_nsLayerId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiPriorityLevel; // @synthesize uiPriorityLevel=_uiPriorityLevel;
 @property(retain, nonatomic) NSString *nsBizId; // @synthesize nsBizId=_nsBizId;
 @property(nonatomic) _Bool bNoReport; // @synthesize bNoReport=_bNoReport;

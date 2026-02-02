@@ -33,7 +33,6 @@
     struct CGSize _sizeForNoCancelButtonTextField;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize sizeForNoCancelButtonTextField; // @synthesize sizeForNoCancelButtonTextField=_sizeForNoCancelButtonTextField;
 @property(nonatomic) _Bool forbidBecomeFirstResponder; // @synthesize forbidBecomeFirstResponder=_forbidBecomeFirstResponder;
 @property(nonatomic) _Bool bMagnifierTipsCenter; // @synthesize bMagnifierTipsCenter=_bMagnifierTipsCenter;

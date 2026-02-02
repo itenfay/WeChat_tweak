@@ -20,7 +20,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPlayerId:(long long)arg1 effectId:(long long)arg2 effectType:(long long)arg3 startTimeMs:(long long)arg4 endTimeMs:(long long)arg5 params:(id)arg6;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(nonatomic) long long endTimeMs; // @synthesize endTimeMs=_endTimeMs;
 @property(nonatomic) long long startTimeMs; // @synthesize startTimeMs=_startTimeMs;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -14,7 +15,6 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *playIDAry; // @synthesize playIDAry=_playIDAry;
 - (id)copyObjecFromLockArry:(id)arg1;
 - (void)addObjecToLockArry:(id)arg1;
@@ -36,4 +36,3 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
-

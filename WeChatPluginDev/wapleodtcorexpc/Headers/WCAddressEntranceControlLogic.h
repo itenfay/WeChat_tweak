@@ -12,7 +12,6 @@
     id <WCAddressEntranceControlLogicDelegate> _logicDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAddressEntranceControlLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 - (void)OnAnalyseAddressInfo:(id)arg1;
 - (void)OnImportYiXunAddress:(id)arg1 importStatus:(int)arg2 Error:(id)arg3;

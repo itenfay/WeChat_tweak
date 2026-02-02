@@ -10,7 +10,6 @@
     NSMutableArray *_overlays;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *overlays; // @synthesize overlays=_overlays;
 - (void)addMapCircle:(id)arg1 circle:(id)arg2;
 - (void)handleJSEvent:(id)arg1;

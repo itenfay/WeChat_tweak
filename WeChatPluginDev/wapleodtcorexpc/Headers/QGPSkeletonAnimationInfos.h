@@ -11,7 +11,6 @@
     NSArray<QGPSkeletonAnimationInfoOne> *_animationInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray<QGPSkeletonAnimationInfoOne> *animationInfo; // @synthesize animationInfo=_animationInfo;
 
 @end

@@ -15,7 +15,6 @@
 
 + (double)descriptionTableViewCellHeight;
 + (id)createLabel;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 - (void)setUpTitle:(id)arg1 width:(double)arg2;

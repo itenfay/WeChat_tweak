@@ -16,7 +16,6 @@
     CdnTaskInfo *_curTaskInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnTaskInfo *curTaskInfo; // @synthesize curTaskInfo=_curTaskInfo;
 - (void)onPlayerDownloadComplete:(id)arg1 downloadInfo:(id)arg2;
 - (void)OnCdnVideoPreloadCompleted:(id)arg1;

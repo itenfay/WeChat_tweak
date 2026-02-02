@@ -12,7 +12,6 @@
     TPTrackInfo *_trackInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPTrackInfo *trackInfo; // @synthesize trackInfo=_trackInfo;
 @property(nonatomic) long long opaque; // @synthesize opaque=_opaque;
 @property(nonatomic) long long trackIndex; // @synthesize trackIndex=_trackIndex;

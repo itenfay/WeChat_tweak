@@ -55,7 +55,6 @@
     UILabel *_emptyLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(retain, nonatomic) UIView *customFooterView; // @synthesize customFooterView=_customFooterView;
 @property(retain, nonatomic) NSMutableDictionary *dicUsrSourceHelper; // @synthesize dicUsrSourceHelper=_dicUsrSourceHelper;

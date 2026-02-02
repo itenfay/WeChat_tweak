@@ -14,7 +14,6 @@
     NSArray *m_arrSupportLanguages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_arrSupportLanguages; // @synthesize m_arrSupportLanguages;
 @property(retain, nonatomic) NSString *m_nsLanguage; // @synthesize m_nsLanguage;
 @property(retain, nonatomic) NSString *m_nsKeyWord; // @synthesize m_nsKeyWord;

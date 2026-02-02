@@ -23,7 +23,6 @@
     PreloadMsgInfoGenerator *_downPreloadGenerator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PreloadMsgInfoGenerator *downPreloadGenerator; // @synthesize downPreloadGenerator=_downPreloadGenerator;
 @property(retain, nonatomic) OrderedDictionary *downPreloadMsgInfos; // @synthesize downPreloadMsgInfos=_downPreloadMsgInfos;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *downPreloadQueue; // @synthesize downPreloadQueue=_downPreloadQueue;

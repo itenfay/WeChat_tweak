@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMGameAudioMixWrapper, MMGameOffTexture, MMMediaServiceWrapper, NSString;
 
 @interface WAWebViewPlugin_MediaService
@@ -21,7 +23,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMediaServiceWrapper *service_wrapper; // @synthesize service_wrapper=_service_wrapper;
 - (void)wkRequest:(id)arg1;
 - (void)asyncRunOnMainThread:(CDUnknownBlockType)arg1;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

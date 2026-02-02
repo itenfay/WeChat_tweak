@@ -13,7 +13,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int rc; // @synthesize rc=_rc;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 

@@ -23,7 +23,6 @@
 
 + (id)genMinimizationMusicPlayerTaskKey;
 + (id)transitionController;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFoldFloatingView; // @synthesize hasFoldFloatingView=_hasFoldFloatingView;
 @property(retain, nonatomic) MiniAudioTaskContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) MMUIButton *minimizeCloseBtn; // @synthesize minimizeCloseBtn=_minimizeCloseBtn;

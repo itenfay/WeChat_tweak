@@ -14,7 +14,6 @@
     unsigned long long _syncId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long syncId; // @synthesize syncId=_syncId;
 @property(retain, nonatomic) NSMutableArray *requestedSongItems; // @synthesize requestedSongItems=_requestedSongItems;
 @property(nonatomic) int version; // @synthesize version=_version;

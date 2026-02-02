@@ -11,7 +11,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithSceneName:(id)arg1;
 - (void)contentStyleDidChange:(long long)arg1;

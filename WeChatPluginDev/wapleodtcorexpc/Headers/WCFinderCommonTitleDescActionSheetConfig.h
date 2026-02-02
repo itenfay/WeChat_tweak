@@ -14,7 +14,6 @@
     unsigned long long _iconStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long iconStyle; // @synthesize iconStyle=_iconStyle;
 @property(copy, nonatomic) NSString *descContent; // @synthesize descContent=_descContent;
 @property(copy, nonatomic) NSString *titleContent; // @synthesize titleContent=_titleContent;

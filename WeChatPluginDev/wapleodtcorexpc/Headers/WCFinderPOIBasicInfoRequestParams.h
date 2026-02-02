@@ -18,7 +18,6 @@
     unsigned long long _fromObjectId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPrefetch; // @synthesize isPrefetch=_isPrefetch;
 @property(nonatomic) int fromCommentScene; // @synthesize fromCommentScene=_fromCommentScene;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;

@@ -20,7 +20,6 @@
     UILabel *_descriptionLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnchor; // @synthesize isAnchor=_isAnchor;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) _Bool showRedDot; // @synthesize showRedDot=_showRedDot;

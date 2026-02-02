@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString;
 @protocol OS_dispatch_queue;
 
@@ -31,7 +33,6 @@
     MMTimer *_memoryCacheManagementTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *memoryCacheManagementTimer; // @synthesize memoryCacheManagementTimer=_memoryCacheManagementTimer;
 @property(retain, nonatomic) NSMutableArray *downloadingRequestObjectQueue; // @synthesize downloadingRequestObjectQueue=_downloadingRequestObjectQueue;
 @property(retain, nonatomic) NSMutableArray *waittingRequestObjectQueue; // @synthesize waittingRequestObjectQueue=_waittingRequestObjectQueue;
@@ -129,4 +130,3 @@
 @property(readonly) Class superclass;
 
 @end
-

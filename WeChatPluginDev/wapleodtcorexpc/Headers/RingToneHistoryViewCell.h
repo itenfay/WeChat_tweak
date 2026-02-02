@@ -21,7 +21,6 @@
     UIView *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 @property(retain, nonatomic) UIView *rightContentStackView; // @synthesize rightContentStackView=_rightContentStackView;

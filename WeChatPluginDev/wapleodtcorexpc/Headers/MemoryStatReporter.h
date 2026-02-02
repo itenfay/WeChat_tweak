@@ -19,7 +19,6 @@
     MMStackReportConnection *m_dumpReportConnection;
 }
 
-- (void).cxx_destruct;
 - (void)onReportUploadCompleted:(_Bool)arg1;
 - (void)onStackReportCompleted:(_Bool)arg1;
 - (void)doSummaryReport:(id)arg1;

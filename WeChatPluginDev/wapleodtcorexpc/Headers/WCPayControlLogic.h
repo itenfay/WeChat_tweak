@@ -11,7 +11,6 @@
     NSString *m_nsErrorDetailUrl;
 }
 
-- (void).cxx_destruct;
 - (void)onRealnameActionClick:(id)arg1;
 - (void)setPayChannel:(unsigned int)arg1;
 - (void)webViewReturn:(id)arg1;

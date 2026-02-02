@@ -18,7 +18,6 @@
     NSMutableDictionary *_dicSessionResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicSessionResult; // @synthesize dicSessionResult=_dicSessionResult;
 @property(retain, nonatomic) NSMutableArray *arrSessionResult; // @synthesize arrSessionResult=_arrSessionResult;
 @property(retain, nonatomic) NSMutableArray *arrMsgItems; // @synthesize arrMsgItems=_arrMsgItems;

@@ -21,7 +21,6 @@
 + (id)finder;
 + (id)mmImageLoader;
 + (id)ultram_MMImageLoader;
-- (void).cxx_destruct;
 - (id)init;
 - (void)onFetchImageFrom:(long long)arg1;
 - (void)onLoadImageWith:(long long)arg1;

@@ -12,7 +12,6 @@
     NSMutableDictionary *_dbQueryValueCache;
 }
 
-- (void).cxx_destruct;
 - (void)clear;
 - (unsigned int)getType;
 - (id)functionName;

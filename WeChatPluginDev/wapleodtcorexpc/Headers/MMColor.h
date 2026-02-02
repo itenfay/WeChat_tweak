@@ -16,7 +16,6 @@
     NSString *m_colorCssPath;
 }
 
-- (void).cxx_destruct;
 - (_Bool)loadColorFromPath:(id)arg1;
 - (id)getColorByName:(id)arg1 withAlpha:(double)arg2;
 - (id)getColorByName:(id)arg1;

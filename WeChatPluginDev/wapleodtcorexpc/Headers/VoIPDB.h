@@ -12,7 +12,6 @@
     WCTTable *m_tableVoIPMessageHistory;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableVoIPMessageHistory; // @synthesize m_tableVoIPMessageHistory;
 @property(retain, nonatomic) WCTTable *m_table; // @synthesize m_table;
 @property(retain, nonatomic) WCTDatabase *m_db; // @synthesize m_db;

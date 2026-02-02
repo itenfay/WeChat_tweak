@@ -13,7 +13,6 @@
     NSString *sign;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sign; // @synthesize sign;
 @property(nonatomic) unsigned int timeStamp; // @synthesize timeStamp;
 @property(retain, nonatomic) NSString *package; // @synthesize package;

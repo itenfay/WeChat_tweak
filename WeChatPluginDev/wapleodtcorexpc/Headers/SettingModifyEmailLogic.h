@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol SettingModifyEmailLogicDelegate;
 
@@ -16,7 +18,6 @@
     CDUnknownBlockType _sendVerifyEmailBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sendVerifyEmailBlock; // @synthesize sendVerifyEmailBlock=_sendVerifyEmailBlock;
 @property(copy, nonatomic) CDUnknownBlockType unbindEmailBlock; // @synthesize unbindEmailBlock=_unbindEmailBlock;
 @property(copy, nonatomic) CDUnknownBlockType checkUnbindBlock; // @synthesize checkUnbindBlock=_checkUnbindBlock;
@@ -49,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

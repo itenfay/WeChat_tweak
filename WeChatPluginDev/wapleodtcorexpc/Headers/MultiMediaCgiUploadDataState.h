@@ -10,7 +10,6 @@
     UniversalC2CDataUploader *_uploader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UniversalC2CDataUploader *uploader; // @synthesize uploader=_uploader;
 - (id)getStateName;
 - (void)stop;

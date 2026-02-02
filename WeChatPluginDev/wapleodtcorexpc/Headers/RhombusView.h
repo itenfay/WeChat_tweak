@@ -12,7 +12,6 @@
     NSString *_progressBarColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *progressBarColor; // @synthesize progressBarColor=_progressBarColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 progressBarColor:(id)arg2;

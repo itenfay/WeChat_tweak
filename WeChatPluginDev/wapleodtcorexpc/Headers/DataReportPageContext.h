@@ -34,7 +34,6 @@
     NSMutableDictionary *m_nextSessionParams;
 }
 
-- (void).cxx_destruct;
 - (void)updatePageInfo:(id)arg1 eventId:(id)arg2;
 - (void)clearPage:(id)arg1;
 - (void)subPageOut:(id)arg1;

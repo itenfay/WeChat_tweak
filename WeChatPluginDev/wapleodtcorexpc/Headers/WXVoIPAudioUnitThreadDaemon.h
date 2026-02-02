@@ -17,7 +17,6 @@
     NSObject<OS_dispatch_source> *_timer;
 }
 
-- (void).cxx_destruct;
 @property unsigned int timingIntervalInMS; // @synthesize timingIntervalInMS=_timingIntervalInMS;
 @property unsigned short maxCaptureSampleValue; // @synthesize maxCaptureSampleValue=_maxCaptureSampleValue;
 @property _Bool isThreadAlive; // @synthesize isThreadAlive=_isThreadAlive;

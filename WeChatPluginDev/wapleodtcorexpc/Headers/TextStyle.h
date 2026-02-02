@@ -24,7 +24,6 @@
     struct CGRect _drawFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect drawFrame; // @synthesize drawFrame=_drawFrame;
 @property(nonatomic) struct _NSRange highlightRange; // @synthesize highlightRange=_highlightRange;
 @property(nonatomic) long long inlineVerticalAlign; // @synthesize inlineVerticalAlign=_inlineVerticalAlign;

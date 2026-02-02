@@ -15,7 +15,6 @@
 }
 
 + (double)heightForWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryRefreshFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <WCAlbumPickerFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MMRefreshTableFooterDidTriggerRefresh:(id)arg1;

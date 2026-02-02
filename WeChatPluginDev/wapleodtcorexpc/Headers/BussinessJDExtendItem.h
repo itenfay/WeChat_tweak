@@ -15,7 +15,6 @@
     long long nsJumpWeappVersion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long nsJumpWeappVersion; // @synthesize nsJumpWeappVersion;
 @property(retain, nonatomic) NSString *nsJumpWeappPath; // @synthesize nsJumpWeappPath;
 @property(retain, nonatomic) NSString *nsJumpWeapp; // @synthesize nsJumpWeapp;

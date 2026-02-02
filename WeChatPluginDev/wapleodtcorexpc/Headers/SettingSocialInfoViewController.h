@@ -11,7 +11,6 @@
     SettingMyAccountExtInfoLogic *m_infoLogic;
 }
 
-- (void).cxx_destruct;
 - (void)showModifySignView;
 - (void)showModifyAddressView;
 - (void)showModifySexView;

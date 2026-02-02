@@ -56,7 +56,6 @@
 + (_Bool)shouldShowMembership;
 + (_Bool)shouldShowFollowMeLabel;
 + (_Bool)shouldShowRefContentWithViewModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double cacheWidth; // @synthesize cacheWidth=_cacheWidth;
 @property(retain, nonatomic) UILabel *feedTypeTag; // @synthesize feedTypeTag=_feedTypeTag;
 @property(retain, nonatomic) WCFinderUserRelationshipTag *userTag; // @synthesize userTag=_userTag;

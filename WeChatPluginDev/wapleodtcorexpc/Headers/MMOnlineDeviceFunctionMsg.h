@@ -18,7 +18,6 @@
 }
 
 + (id)functionMsgWithDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *toUserName; // @synthesize toUserName=_toUserName;

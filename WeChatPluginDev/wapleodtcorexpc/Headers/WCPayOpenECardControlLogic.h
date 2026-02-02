@@ -27,7 +27,6 @@
     WCPayEcardModelView *_openEcardModelView;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCPayEcardModelView *openEcardModelView; // @synthesize openEcardModelView=_openEcardModelView;
 @property(retain) OpenECardReq *openEcardReq; // @synthesize openEcardReq=_openEcardReq;
 @property(retain, nonatomic) NSString *currentInputMobile; // @synthesize currentInputMobile=_currentInputMobile;

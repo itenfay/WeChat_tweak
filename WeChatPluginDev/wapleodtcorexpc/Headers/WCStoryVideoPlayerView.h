@@ -23,7 +23,6 @@
     WXFullScreenGestureRecognizer *_fullScreenGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXFullScreenGestureRecognizer *fullScreenGestureRecognizer; // @synthesize fullScreenGestureRecognizer=_fullScreenGestureRecognizer;
 @property(retain, nonatomic) WCStoryVideoControlView *controlView; // @synthesize controlView=_controlView;
 @property(retain, nonatomic) WCStoryPlayRecord *playRecord; // @synthesize playRecord=_playRecord;

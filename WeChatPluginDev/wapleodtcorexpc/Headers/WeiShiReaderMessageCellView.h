@@ -10,7 +10,6 @@
     WeShiReaderItemView *itemView;
 }
 
-- (void).cxx_destruct;
 - (void)doWeishiRepor:(unsigned int)arg1 topNewsTitle:(id)arg2 readerWrap:(id)arg3;
 - (void)onAppear;
 - (void)onMoreMenu:(id)arg1;

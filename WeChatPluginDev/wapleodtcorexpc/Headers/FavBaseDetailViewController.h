@@ -11,7 +11,6 @@
     FavoritesItem *m_favItem;
 }
 
-- (void).cxx_destruct;
 - (void)onFavTagEditOK;
 - (void)onFavTagEditBegin:(int)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

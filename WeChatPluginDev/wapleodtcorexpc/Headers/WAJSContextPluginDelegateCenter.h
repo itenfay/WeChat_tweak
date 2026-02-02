@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSRecursiveLock, Protocol;
 
@@ -15,7 +16,6 @@
     _Bool m_needCleanUp;
 }
 
-- (void).cxx_destruct;
 - (void)cleanUp;
 - (void)__cleanUp;
 - (void)releaseDelegates;
@@ -25,4 +25,3 @@
 - (id)initWithKey:(id)arg1;
 
 @end
-

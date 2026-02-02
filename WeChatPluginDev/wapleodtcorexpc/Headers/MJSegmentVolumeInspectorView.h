@@ -12,7 +12,6 @@
     MJPublisherSlider *_plainSlider;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisherSlider *plainSlider; // @synthesize plainSlider=_plainSlider;
 @property(retain, nonatomic) MMUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) MMUIButton *muteButton; // @synthesize muteButton=_muteButton;

@@ -11,7 +11,6 @@
     MMWebImageView *m_webImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *m_webImageView; // @synthesize m_webImageView;
 @property(retain, nonatomic) MMRedHeadLiner *m_tagImageView; // @synthesize m_tagImageView;
 - (void)layoutSubviews;

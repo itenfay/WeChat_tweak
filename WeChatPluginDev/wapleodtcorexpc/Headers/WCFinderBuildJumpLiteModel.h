@@ -13,7 +13,6 @@
     WCFinderBuildLiteAppConfig *_lite_app_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBuildLiteAppConfig *lite_app_config; // @synthesize lite_app_config=_lite_app_config;
 @property(retain, nonatomic) WCFinderBuildJumpConfig *jump_info_config; // @synthesize jump_info_config=_jump_info_config;
 - (id)genJumpInfo;

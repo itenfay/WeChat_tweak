@@ -14,7 +14,6 @@
     MMSayHelloButton *_sayHelloBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMSayHelloButton *sayHelloBtn; // @synthesize sayHelloBtn=_sayHelloBtn;
 @property(nonatomic) __weak id <WCFinderLifeNearbySayHelloViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clickBtn;

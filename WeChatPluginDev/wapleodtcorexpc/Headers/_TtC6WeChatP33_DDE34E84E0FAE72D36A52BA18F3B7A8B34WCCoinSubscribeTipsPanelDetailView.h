@@ -12,7 +12,6 @@
     MISSING_TYPE *parent;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

@@ -65,7 +65,6 @@
 + (void)PBArrayAdd_nickName;
 + (void)PBArrayAdd_userName;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long commentHash; // @synthesize commentHash=_commentHash;
 @property(nonatomic) _Bool isPosting; // @synthesize isPosting=_isPosting;
 @property(nonatomic) unsigned int profileSource; // @synthesize profileSource=_profileSource;

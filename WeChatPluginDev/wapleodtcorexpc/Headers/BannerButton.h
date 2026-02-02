@@ -15,7 +15,6 @@
     double _contentMarginLeft;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentMarginLeft; // @synthesize contentMarginLeft=_contentMarginLeft;
 @property(retain, nonatomic) UIImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) UILabel *customTitleLabel; // @synthesize customTitleLabel=_customTitleLabel;

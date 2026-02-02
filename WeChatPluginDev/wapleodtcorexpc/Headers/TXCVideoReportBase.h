@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface TXCVideoReportBase
 {
     _Bool _receivedFirstFrame;
@@ -10,7 +12,6 @@
     long long _lastTicks;
 }
 
-- (void).cxx_destruct;
 @property long long lastTicks; // @synthesize lastTicks=_lastTicks;
 @property(copy) CDUnknownBlockType logger; // @synthesize logger=_logger;
 @property(nonatomic) _Bool receivedFirstFrame; // @synthesize receivedFirstFrame=_receivedFirstFrame;
@@ -21,4 +22,3 @@
 - (id)init;
 
 @end
-

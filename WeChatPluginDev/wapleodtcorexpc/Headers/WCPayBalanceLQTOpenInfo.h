@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_routeType;
 + (void)PBArrayAdd_openUrl;
 + (void)PBArrayAdd_openInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(nonatomic) int routeType; // @synthesize routeType=_routeType;
 @property(retain, nonatomic) NSString *openUrl; // @synthesize openUrl=_openUrl;

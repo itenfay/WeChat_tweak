@@ -206,7 +206,6 @@
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
 + (id)myCurrentStatus;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *richTextDescription; // @synthesize richTextDescription=_richTextDescription;
 @property(retain, nonatomic) NSArray *clusterPresentList; // @synthesize clusterPresentList=_clusterPresentList;
 @property(retain, nonatomic) NSMutableDictionary *keyToJumpElementDict; // @synthesize keyToJumpElementDict=_keyToJumpElementDict;

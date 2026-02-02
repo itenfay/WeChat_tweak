@@ -15,7 +15,6 @@
     id <WCAdFinderDialogBaseViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdFinderDialogBaseViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *titleView; // @synthesize titleView=_titleView;

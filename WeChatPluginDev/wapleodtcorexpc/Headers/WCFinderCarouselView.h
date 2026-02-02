@@ -20,7 +20,6 @@
 }
 
 + (double)displayHeightWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
 @property(nonatomic) long long numbers; // @synthesize numbers=_numbers;

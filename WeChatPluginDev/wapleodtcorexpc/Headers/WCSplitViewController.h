@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, UINavigationController, UIView;
 
@@ -20,7 +21,6 @@
     struct CGSize _lastSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 @property(retain, nonatomic) UIImageView *snapshotImageView; // @synthesize snapshotImageView=_snapshotImageView;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
@@ -72,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

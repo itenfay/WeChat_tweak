@@ -28,7 +28,6 @@
     NSString *_quickResponseId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int quickResponseFlag; // @synthesize quickResponseFlag=_quickResponseFlag;
 @property(retain, nonatomic) NSString *quickResponseId; // @synthesize quickResponseId=_quickResponseId;
 @property(retain, nonatomic) NSString *quoteText; // @synthesize quoteText=_quoteText;

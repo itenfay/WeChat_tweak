@@ -18,7 +18,6 @@
     NSRecursiveLock *_dataLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *dataLock; // @synthesize dataLock=_dataLock;
 @property(nonatomic) unsigned int m_channesPerFrame; // @synthesize m_channesPerFrame=_m_channesPerFrame;
 @property(nonatomic) unsigned int m_framesPerPacket; // @synthesize m_framesPerPacket=_m_framesPerPacket;

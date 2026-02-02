@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUILabel, NSString, RichTextView, UIButton, UIView;
 @protocol WCFinderLiveHalfScreenUtilControllerDelegate;
 
@@ -23,7 +25,6 @@
     NSString *_cliMsgId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPolicy; // @synthesize isPolicy=_isPolicy;
 @property(nonatomic) _Bool isAgreementChecked; // @synthesize isAgreementChecked=_isAgreementChecked;
 @property(retain, nonatomic) NSString *cliMsgId; // @synthesize cliMsgId=_cliMsgId;
@@ -65,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

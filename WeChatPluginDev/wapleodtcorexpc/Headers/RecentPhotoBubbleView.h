@@ -13,7 +13,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImage *originImage; // @synthesize originImage=_originImage;
 - (void)dealloc;

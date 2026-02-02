@@ -17,7 +17,6 @@
     double _widthResolution;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double widthResolution; // @synthesize widthResolution=_widthResolution;
 @property(nonatomic) double heightResolution; // @synthesize heightResolution=_heightResolution;
 @property(nonatomic) double maxSize; // @synthesize maxSize=_maxSize;

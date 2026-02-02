@@ -16,7 +16,6 @@
     MMUIButton *_cpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cpButton; // @synthesize cpButton=_cpButton;
 @property(retain, nonatomic) NSString *wxid; // @synthesize wxid=_wxid;
 @property(retain, nonatomic) MMFinderLiveFansGroupInvisibleTipView *invisibleTipView; // @synthesize invisibleTipView=_invisibleTipView;

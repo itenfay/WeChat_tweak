@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @protocol MMMusicOpenThirdAppHelperDataSource, MMMusicOpenThirdAppHelperDelegate;
 
 @interface MMMusicOpenThirdAppHelper
@@ -11,7 +13,6 @@
     id <MMMusicOpenThirdAppHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicOpenThirdAppHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MMMusicOpenThirdAppHelperDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)open3rdAppToAppStore:(unsigned long long)arg1 downloadURL:(id)arg2;
@@ -24,4 +25,3 @@
 - (void)tryOpenThirdAppWithMusicInfo:(id)arg1 andSource:(unsigned long long)arg2;
 
 @end
-

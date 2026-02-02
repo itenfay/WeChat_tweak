@@ -35,7 +35,6 @@
     unsigned int _m_scence;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowOpenIMTypeInGroupContact; // @synthesize isShowOpenIMTypeInGroupContact=_isShowOpenIMTypeInGroupContact;
 @property(nonatomic) _Bool wrapItemAccessibilityElement; // @synthesize wrapItemAccessibilityElement=_wrapItemAccessibilityElement;
 @property(nonatomic) unsigned int m_scence; // @synthesize m_scence=_m_scence;

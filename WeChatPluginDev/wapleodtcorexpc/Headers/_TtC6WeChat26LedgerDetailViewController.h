@@ -21,7 +21,6 @@
     MISSING_TYPE *$__lazy_storage_$_footerTransactionsEntry;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

@@ -16,7 +16,6 @@
     NSString *_actionSheetTitle;
 }
 
-- (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)setDestructiveIndex:(int)arg1;
 - (void)show;

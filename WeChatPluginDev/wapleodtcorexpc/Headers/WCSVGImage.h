@@ -26,7 +26,6 @@
 + (id)imageNamed:(id)arg1 color:(id)arg2;
 + (id)imageNamed:(id)arg1;
 + (id)imageData:(id)arg1 resize:(struct CGSize)arg2 scale:(double)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect viewBox; // @synthesize viewBox=_viewBox;
 @property(retain, nonatomic) WCSVGCanvas *mainCanvas; // @synthesize mainCanvas=_mainCanvas;
 @property(readonly, nonatomic) struct CGSize size;

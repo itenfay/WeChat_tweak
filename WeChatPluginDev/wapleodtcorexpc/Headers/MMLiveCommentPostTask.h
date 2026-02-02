@@ -18,7 +18,6 @@
     NSMutableDictionary *_externInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *externInfo; // @synthesize externInfo=_externInfo;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;

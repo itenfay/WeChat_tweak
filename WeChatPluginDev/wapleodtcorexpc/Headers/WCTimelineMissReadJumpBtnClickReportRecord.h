@@ -17,7 +17,6 @@
     NSMutableArray *_exposureFeedIds;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jumpItemCreatTimeToNowInterval; // @synthesize jumpItemCreatTimeToNowInterval=_jumpItemCreatTimeToNowInterval;
 @property(retain, nonatomic) NSMutableArray *exposureFeedIds; // @synthesize exposureFeedIds=_exposureFeedIds;
 @property(retain, nonatomic) NSArray *missReadFeedIds; // @synthesize missReadFeedIds=_missReadFeedIds;

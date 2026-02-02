@@ -14,7 +14,6 @@
     NSMutableArray *m_xmlList;
 }
 
-- (void).cxx_destruct;
 - (void)saveAddMsg:(id)arg1;
 - (id)loadAddMsg;
 - (void)removeAddMsg:(id)arg1;

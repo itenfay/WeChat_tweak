@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onfinderRedDotDataChangedActionComplete:(unsigned long long)arg1;
 - (void)onfinderRedDotHasDisposeActionComplete:(unsigned long long)arg1;
 - (void)onfinderRedDotHasAddActionComplete:(unsigned long long)arg1;

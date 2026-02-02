@@ -20,7 +20,6 @@
 
 + (double)cellHeight;
 + (id)cellId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showMaskView; // @synthesize showMaskView=_showMaskView;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) UILabel *playingTipsLabel; // @synthesize playingTipsLabel=_playingTipsLabel;

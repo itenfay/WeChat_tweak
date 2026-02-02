@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, WANicknameAndHeadAuthorizeSheetInfo;
 @protocol IWANicknameAndHeadAuthorizePageSheet;
 
@@ -13,7 +15,6 @@
     double _maxListHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxListHeight; // @synthesize maxListHeight=_maxListHeight;
 @property(copy, nonatomic) CDUnknownBlockType scrollToAvatarAction; // @synthesize scrollToAvatarAction=_scrollToAvatarAction;
 @property(retain, nonatomic) NSMutableArray *avatarList; // @synthesize avatarList=_avatarList;
@@ -23,4 +24,3 @@
 @property(nonatomic) __weak id <IWANicknameAndHeadAuthorizePageSheet> pageSheet; // @dynamic pageSheet;
 
 @end
-

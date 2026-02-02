@@ -22,7 +22,6 @@
     WCFinderDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) WCFinderBGMPlayer *bgmPlayer; // @synthesize bgmPlayer=_bgmPlayer;
 @property(retain, nonatomic) MMMusicFadeOutLayer *imageMaskLayer; // @synthesize imageMaskLayer=_imageMaskLayer;

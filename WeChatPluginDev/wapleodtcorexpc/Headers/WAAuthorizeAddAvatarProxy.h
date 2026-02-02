@@ -13,7 +13,6 @@
     id <IWAAuthorizeAddAvatarServiceDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWAAuthorizeAddAvatarServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cancelAddAvatar;
 - (void)onModAvatarSuccess:(id)arg1;

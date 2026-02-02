@@ -17,7 +17,6 @@
     GetSearchShareResponse_SearchShareContext *_shareContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEndTranscationInVC; // @synthesize hasEndTranscationInVC=_hasEndTranscationInVC;
 @property(retain, nonatomic) GetSearchShareResponse_SearchShareContext *shareContext; // @synthesize shareContext=_shareContext;
 @property(retain, nonatomic) WCTopicSearchActionLogic *shareActionLogic; // @synthesize shareActionLogic=_shareActionLogic;

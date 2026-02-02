@@ -14,7 +14,6 @@
 
 + (id)fromAdInfo:(id)arg1;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(retain, nonatomic) NSString *simpleTransitionAnimationMD5; // @synthesize simpleTransitionAnimationMD5=_simpleTransitionAnimationMD5;
 @property(retain, nonatomic) NSString *simpleTransitionAnimationUrl; // @synthesize simpleTransitionAnimationUrl=_simpleTransitionAnimationUrl;

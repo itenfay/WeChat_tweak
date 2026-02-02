@@ -13,7 +13,6 @@
     id <WSWebNativeVideoPlayerLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <WSWebNativeVideoPlayerLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int nativeViewId; // @synthesize nativeViewId=_nativeViewId;
 - (void)seek:(double)arg1;

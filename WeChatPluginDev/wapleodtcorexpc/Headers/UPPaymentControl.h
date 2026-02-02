@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UPPreTableCell;
 
@@ -23,7 +24,6 @@
 @property(nonatomic) _Bool configHandled; // @synthesize configHandled=_configHandled;
 @property(copy, nonatomic) NSString *downloadURL; // @synthesize downloadURL=_downloadURL;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)onPayCancel:(id)arg1;
 - (_Bool)onSDKPay:(id)arg1;
 - (void)onWebPayResult:(id)arg1;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

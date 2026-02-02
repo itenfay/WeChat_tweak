@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderGetHistoryLiveListCGI
@@ -16,7 +18,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int requestScene; // @synthesize requestScene=_requestScene;
 @property(nonatomic) unsigned int endTimeRange; // @synthesize endTimeRange=_endTimeRange;
 @property(nonatomic) unsigned int startTimeRange; // @synthesize startTimeRange=_startTimeRange;
@@ -30,4 +31,3 @@
 - (id)initWithAnchorFinderUsername:(id)arg1 requestScene:(int)arg2 lastBuffer:(id)arg3 startTimeRange:(unsigned int)arg4 endTimeRange:(unsigned int)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

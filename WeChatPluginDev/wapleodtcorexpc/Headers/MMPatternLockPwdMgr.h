@@ -15,7 +15,6 @@
     MMPatternLockBufferData *_lockBuffer;
 }
 
-- (void).cxx_destruct;
 @property unsigned int m_payCardListTag; // @synthesize m_payCardListTag=_m_payCardListTag;
 @property(nonatomic) _Bool isCloseViaToken; // @synthesize isCloseViaToken=_isCloseViaToken;
 @property(nonatomic) int userRegFlag; // @synthesize userRegFlag=_userRegFlag;

@@ -66,7 +66,6 @@
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_priority;
 + (void)PBArrayAdd_tipsID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ClearPrevReddotFeedStrategy *clearPrevReddotFeedStrategy; // @synthesize clearPrevReddotFeedStrategy=_clearPrevReddotFeedStrategy;
 @property(nonatomic) int saveStrategy; // @synthesize saveStrategy=_saveStrategy;
 @property(copy, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;

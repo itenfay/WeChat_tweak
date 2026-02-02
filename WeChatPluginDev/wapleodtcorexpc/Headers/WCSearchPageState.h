@@ -16,7 +16,6 @@
     WCSearchUIConfig *_uiConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromVertical; // @synthesize isFromVertical=_isFromVertical;
 @property(retain, nonatomic) WCSearchUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
 @property(retain, nonatomic) WebSearchContext *data; // @synthesize data=_data;

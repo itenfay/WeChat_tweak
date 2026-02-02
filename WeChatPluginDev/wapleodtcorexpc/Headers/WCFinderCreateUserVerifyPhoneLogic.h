@@ -13,7 +13,6 @@
     WCAccountBindPhoneControlLogic *_bindPhoneLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountBindPhoneControlLogic *bindPhoneLogic; // @synthesize bindPhoneLogic=_bindPhoneLogic;
 @property(retain, nonatomic) AnyPromise *userPreparePromise; // @synthesize userPreparePromise=_userPreparePromise;
 - (void)verifyBindPhoneFromVC:(id)arg1;

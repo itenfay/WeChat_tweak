@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMFinderLiveTaskId, MMUIButton, MMUILabel, NSString, WCFinderHeadImageView;
 
@@ -23,7 +24,6 @@
 
 + (double)getTitleContentWidth:(id)arg1;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) double selfWidth; // @synthesize selfWidth=_selfWidth;
 @property(retain, nonatomic) MMUIButton *arrowButton; // @synthesize arrowButton=_arrowButton;
 @property(retain, nonatomic) WCFinderHeadImageView *headerImgView; // @synthesize headerImgView=_headerImgView;
@@ -71,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

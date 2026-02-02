@@ -19,7 +19,6 @@
     id <MMBGMSelectedMusicDataProtocol> _insertedMusicInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> insertedMusicInfo; // @synthesize insertedMusicInfo=_insertedMusicInfo;
 @property(nonatomic, getter=isRecommendedDataLoaded) _Bool recommendedDataLoaded; // @synthesize recommendedDataLoaded=_recommendedDataLoaded;

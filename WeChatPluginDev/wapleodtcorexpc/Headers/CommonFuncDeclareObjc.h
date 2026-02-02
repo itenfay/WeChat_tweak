@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -44,7 +45,6 @@
 + (id)from_Void_Bool_Block:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)to_Void_AffCgiResponse_1_Block:(id)arg1;
 + (id)from_Void_AffCgiResponse_1_Block:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_TingUserContactInfoUR_1_Block; // @synthesize Void_TingUserContactInfoUR_1_Block=_Void_TingUserContactInfoUR_1_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_TingPoiInfoUR_1_Block; // @synthesize Void_TingPoiInfoUR_1_Block=_Void_TingPoiInfoUR_1_Block;
 @property(readonly, copy, nonatomic) CDUnknownBlockType Void_TingFinderContactInfoUR_1_Block; // @synthesize Void_TingFinderContactInfoUR_1_Block=_Void_TingFinderContactInfoUR_1_Block;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -24,7 +24,6 @@
     FavoritesItemDataField *_scrollToData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowLocateToMsg; // @synthesize bShowLocateToMsg=_bShowLocateToMsg;
 @property(nonatomic) _Bool bAnimate; // @synthesize bAnimate=_bAnimate;
 @property(nonatomic) unsigned int vcType; // @synthesize vcType=_vcType;

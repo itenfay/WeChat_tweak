@@ -16,7 +16,6 @@
     float m_fTopWidth;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *m_imgvFront; // @synthesize m_imgvFront;
 @property(retain, nonatomic) UIImageView *m_imgvBack; // @synthesize m_imgvBack;
 - (void)setProgressFontRect:(struct CGRect)arg1;

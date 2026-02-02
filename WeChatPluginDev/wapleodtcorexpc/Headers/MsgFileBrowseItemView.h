@@ -38,7 +38,6 @@
     UILabel *_thumbDescLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *thumbDescLabel; // @synthesize thumbDescLabel=_thumbDescLabel;
 @property(nonatomic) __weak id <MsgFileBrowseItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double circlePercent; // @synthesize circlePercent=_circlePercent;

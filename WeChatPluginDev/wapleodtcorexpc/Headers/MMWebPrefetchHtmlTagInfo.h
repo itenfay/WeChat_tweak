@@ -13,7 +13,6 @@
     NSArray *_arrAttr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrAttr; // @synthesize arrAttr=_arrAttr;
 @property(copy, nonatomic) NSString *fullSrc; // @synthesize fullSrc=_fullSrc;
 @property(copy, nonatomic) NSString *src; // @synthesize src=_src;

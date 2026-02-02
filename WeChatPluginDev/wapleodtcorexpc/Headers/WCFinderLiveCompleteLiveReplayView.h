@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, NSString, UILabel, WCFinderDataItem, WCFinderFeedImageCDNView;
 
@@ -17,7 +18,6 @@
     UILabel *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

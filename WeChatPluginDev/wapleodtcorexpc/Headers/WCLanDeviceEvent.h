@@ -12,7 +12,6 @@
     long long m_cmd;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_cmd; // @synthesize m_cmd;
 @property(retain, nonatomic) JSEvent *m_event; // @synthesize m_event;
 @property(retain, nonatomic) NSString *m_deviceId; // @synthesize m_deviceId;

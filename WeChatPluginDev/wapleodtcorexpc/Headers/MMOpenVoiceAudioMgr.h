@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString;
 
@@ -27,7 +28,6 @@
     unsigned int silentDataLen;
 }
 
-- (void).cxx_destruct;
 - (int)getVoiceVolume;
 - (int)getPlayCount;
 - (int)getRecordCount;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     UIImageView *_imgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imgView; // @synthesize imgView=_imgView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) MMFinderLiveGenericPickerItem *item; // @synthesize item=_item;

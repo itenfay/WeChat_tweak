@@ -26,7 +26,6 @@
     unsigned long long _lastPage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastPage; // @synthesize lastPage=_lastPage;
 @property(nonatomic) __weak id <SelectAttachmentViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <SelectAttachmentViewDelegate> delegate; // @synthesize delegate=_delegate;

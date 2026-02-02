@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCStoryDataItem, WCStoryPreviewReportObj;
 @protocol WCStoryAggregateCommentBubbleViewModelDelegate;
@@ -19,7 +20,6 @@
 }
 
 + (id)viewModelWithTid:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryPreviewReportObj *reportObj; // @synthesize reportObj=_reportObj;
 @property(nonatomic) unsigned long long listReadState; // @synthesize listReadState=_listReadState;
 @property(retain, nonatomic) NSMutableArray *commentCellHeights; // @synthesize commentCellHeights=_commentCellHeights;
@@ -59,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *lastConnectedDeviceList; // @synthesize lastConnectedDeviceList=_lastConnectedDeviceList;
 - (id)recoverFromDisk;
 - (void)saveToDisk;

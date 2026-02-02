@@ -14,7 +14,6 @@
     WCStoryBubbleHeadView *_storyBubbleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryBubbleHeadView *storyBubbleView; // @synthesize storyBubbleView=_storyBubbleView;
 @property(retain, nonatomic) WCStoryDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) WCStoryComment *comment; // @synthesize comment=_comment;

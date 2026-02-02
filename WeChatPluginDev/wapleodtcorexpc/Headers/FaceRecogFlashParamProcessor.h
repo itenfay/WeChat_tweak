@@ -19,7 +19,6 @@
     NSSet *_actionTipsSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *actionTipsSet; // @synthesize actionTipsSet=_actionTipsSet;
 @property(retain, nonatomic) NSData *selectDataFromConfig; // @synthesize selectDataFromConfig=_selectDataFromConfig;
 @property(nonatomic) long long depthFrameCount; // @synthesize depthFrameCount=_depthFrameCount;

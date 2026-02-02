@@ -22,7 +22,6 @@
 }
 
 + (double)getDynamicRatio;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebTransWebpageLogic *webPageMgr; // @synthesize webPageMgr=_webPageMgr;
 @property(copy, nonatomic) NSString *curRandomUUID; // @synthesize curRandomUUID=_curRandomUUID;
 @property(nonatomic) double dynamicRatio; // @synthesize dynamicRatio=_dynamicRatio;

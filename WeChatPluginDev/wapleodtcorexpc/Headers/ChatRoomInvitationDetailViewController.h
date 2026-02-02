@@ -26,7 +26,6 @@
     ChatRoomInvitationContactProfileLogic *_contactProfileLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatRoomInvitationContactProfileLogic *contactProfileLogic; // @synthesize contactProfileLogic=_contactProfileLogic;
 @property(nonatomic) __weak id <ChatRoomInvitationDetailDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) CMessageWrap *m_messageWrap; // @synthesize m_messageWrap;

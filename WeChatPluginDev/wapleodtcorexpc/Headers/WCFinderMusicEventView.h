@@ -33,7 +33,6 @@
     long long _exposeCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long exposeCount; // @synthesize exposeCount=_exposeCount;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(copy, nonatomic) NSString *traceId; // @synthesize traceId=_traceId;

@@ -13,7 +13,6 @@
     EmoticonStoreFootView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonStoreFootView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UILabel *emptyHintLabel; // @synthesize emptyHintLabel=_emptyHintLabel;
 @property(retain, nonatomic) DesignerPortfolioCollectionViewProvider *provider; // @synthesize provider=_provider;

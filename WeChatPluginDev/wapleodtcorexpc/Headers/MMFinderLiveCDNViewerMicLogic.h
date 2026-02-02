@@ -25,7 +25,6 @@
 }
 
 + (id)generateNoUserMicUsersInfoForMultiPlayerAudioRoomModeWithAnchorSdkUserId:(id)arg1 andAnchorContact:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long battleNotifyVersion; // @synthesize battleNotifyVersion=_battleNotifyVersion;
 @property(retain, nonatomic) NSMutableArray *micSeatBaseInfoListInOrdinaryMode; // @synthesize micSeatBaseInfoListInOrdinaryMode=_micSeatBaseInfoListInOrdinaryMode;
 @property(retain, nonatomic) NSMutableArray *micSeatBaseInfoListInAudioRoomMode; // @synthesize micSeatBaseInfoListInAudioRoomMode=_micSeatBaseInfoListInAudioRoomMode;

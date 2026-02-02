@@ -24,7 +24,6 @@
     CALayer *_appMsgHighlightLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool appMsgKeepHL; // @synthesize appMsgKeepHL=_appMsgKeepHL;
 @property(nonatomic) _Bool bizContentKeepHL; // @synthesize bizContentKeepHL=_bizContentKeepHL;
 @property(retain, nonatomic) CALayer *appMsgHighlightLayer; // @synthesize appMsgHighlightLayer=_appMsgHighlightLayer;

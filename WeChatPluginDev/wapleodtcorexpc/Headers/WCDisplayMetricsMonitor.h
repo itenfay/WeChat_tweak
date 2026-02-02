@@ -19,7 +19,6 @@
     unsigned long long _metricsRecordsMaximumCapacity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long metricsRecordsMaximumCapacity; // @synthesize metricsRecordsMaximumCapacity=_metricsRecordsMaximumCapacity;
 @property(readonly, nonatomic) WCDisplayMetrics *currentMetrics; // @synthesize currentMetrics=_currentMetrics;
 @property(nonatomic) double durationPerCollectionCycle; // @synthesize durationPerCollectionCycle=_durationPerCollectionCycle;

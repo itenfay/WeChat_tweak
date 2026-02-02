@@ -17,7 +17,6 @@
     NSString *_readText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned int isVideo; // @synthesize isVideo=_isVideo;
 @property(nonatomic) unsigned int isExposed; // @synthesize isExposed=_isExposed;

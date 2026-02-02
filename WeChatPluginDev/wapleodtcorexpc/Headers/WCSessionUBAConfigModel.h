@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_originalJson;
 + (void)PBArrayAdd_sessionUBAConfigs;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalJson; // @synthesize originalJson=_originalJson;
 @property(retain, nonatomic) NSMutableArray *sessionUBAConfigs; // @synthesize sessionUBAConfigs=_sessionUBAConfigs;
 - (id)toString;

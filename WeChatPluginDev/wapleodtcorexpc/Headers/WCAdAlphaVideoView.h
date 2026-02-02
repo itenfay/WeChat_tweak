@@ -27,7 +27,6 @@
     WCAdAlphaVideoMetalRender *_metalRender;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdAlphaVideoMetalRender *metalRender; // @synthesize metalRender=_metalRender;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) AVPlayerItemVideoOutput *videoOutput; // @synthesize videoOutput=_videoOutput;

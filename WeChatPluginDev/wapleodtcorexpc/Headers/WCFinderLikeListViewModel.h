@@ -19,7 +19,6 @@
     NSData *_lastBuff;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForbidFetchMore; // @synthesize isForbidFetchMore=_isForbidFetchMore;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;

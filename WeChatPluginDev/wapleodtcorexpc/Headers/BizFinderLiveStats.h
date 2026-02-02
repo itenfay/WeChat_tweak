@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFinderObjId:(id)arg1 liveId:(id)arg2 username:(id)arg3 onlineCount:(id)arg4 liveStatus:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *liveStatus; // @synthesize liveStatus=_liveStatus;
 @property(retain, nonatomic) NSNumber *onlineCount; // @synthesize onlineCount=_onlineCount;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_latestDownloadedVersion;
 + (void)PBArrayAdd_minValidVersion;
 + (void)PBArrayAdd_latestVersion;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *latestFullVersion; // @synthesize latestFullVersion=_latestFullVersion;
 @property(nonatomic) unsigned int reportId; // @synthesize reportId=_reportId;
 @property(nonatomic) unsigned int templateType; // @synthesize templateType=_templateType;

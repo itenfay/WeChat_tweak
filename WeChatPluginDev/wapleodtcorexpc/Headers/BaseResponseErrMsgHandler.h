@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BaseResponseErrMsg, MMUIViewController, NSDictionary, NSString;
 
@@ -21,7 +22,6 @@
 + (_Bool)canHandleErrorMsg:(id)arg1;
 + (_Bool)commonHandleErrorMsg:(id)arg1 viewController:(id)arg2 config:(id)arg3;
 + (_Bool)commonHandleBaseResponse:(id)arg1 viewController:(id)arg2 config:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onWebViewCloseAndGoNextBlock; // @synthesize onWebViewCloseAndGoNextBlock=_onWebViewCloseAndGoNextBlock;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(copy, nonatomic) CDUnknownBlockType doneBlock; // @synthesize doneBlock=_doneBlock;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

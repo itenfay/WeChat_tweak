@@ -18,7 +18,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *zoomerBtnList; // @synthesize zoomerBtnList=_zoomerBtnList;
 @property(retain, nonatomic) MMCameraZoomFactorInfo *zoomFactorInfo; // @synthesize zoomFactorInfo=_zoomFactorInfo;
 @property(retain, nonatomic) WCElasticLayoutView *elasticLayoutView; // @synthesize elasticLayoutView=_elasticLayoutView;

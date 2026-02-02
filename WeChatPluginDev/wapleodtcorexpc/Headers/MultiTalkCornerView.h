@@ -13,7 +13,6 @@
     CAShapeLayer *_shapeLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(nonatomic) unsigned long long corner; // @synthesize corner=_corner;
 - (unsigned long long)autoresizingMaskForCorner:(unsigned long long)arg1;

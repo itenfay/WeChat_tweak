@@ -15,7 +15,6 @@
     NSString *POILink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *POILink; // @synthesize POILink;
 @property(retain, nonatomic) NSString *POIName; // @synthesize POIName;
 @property(retain, nonatomic) NSString *POIId; // @synthesize POIId;

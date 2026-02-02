@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TextState3rdPartyDataItemFactory : NSObject
 {
@@ -14,4 +15,3 @@
 + (void)requestFinderDataItemFromFeedId:(id)arg1 nonceId:(id)arg2 handler:(CDUnknownBlockType)arg3;
 
 @end
-

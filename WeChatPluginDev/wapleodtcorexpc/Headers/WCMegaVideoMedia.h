@@ -56,7 +56,6 @@
 + (void)PBArrayAdd_mediaType;
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_videoUrl;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coverUrlToken; // @synthesize coverUrlToken=_coverUrlToken;
 @property(copy, nonatomic) NSString *thumbUrlToken; // @synthesize thumbUrlToken=_thumbUrlToken;
 @property(copy, nonatomic) NSString *urlToken; // @synthesize urlToken=_urlToken;

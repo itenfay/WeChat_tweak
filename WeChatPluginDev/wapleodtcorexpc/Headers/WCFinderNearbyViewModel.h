@@ -28,7 +28,6 @@
     NSMutableSet *_tidContainSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchLivingStream; // @synthesize isFetchLivingStream=_isFetchLivingStream;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(nonatomic) unsigned long long maxTid; // @synthesize maxTid=_maxTid;

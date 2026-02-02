@@ -18,7 +18,6 @@
     id <WCFinderLiveNoticeCellViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasShowFlag; // @synthesize hasShowFlag=_hasShowFlag;
 @property(nonatomic) __weak id <WCFinderLiveNoticeCellViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

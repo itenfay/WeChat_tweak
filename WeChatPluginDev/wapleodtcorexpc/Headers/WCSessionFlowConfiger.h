@@ -16,7 +16,6 @@
     WCSessionUBAConfigModel *_sessionUBAConfigModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNeedCollectSessionUBA; // @synthesize isNeedCollectSessionUBA=_isNeedCollectSessionUBA;
 @property(nonatomic) _Bool isNeedReportSingle; // @synthesize isNeedReportSingle=_isNeedReportSingle;
 @property(retain, nonatomic) WCSessionUBAConfigModel *sessionUBAConfigModel; // @synthesize sessionUBAConfigModel=_sessionUBAConfigModel;

@@ -16,7 +16,6 @@
     NSString *_outsideTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *outsideTitle; // @synthesize outsideTitle=_outsideTitle;
 @property(retain, nonatomic) NSMutableArray *searchHitWords; // @synthesize searchHitWords=_searchHitWords;
 @property(copy, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;

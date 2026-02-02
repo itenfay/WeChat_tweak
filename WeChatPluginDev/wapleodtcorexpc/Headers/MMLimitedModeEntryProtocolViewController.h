@@ -18,7 +18,6 @@
     id <MMLimitedModeEntryProtocolViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLimitedModeEntryProtocolViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 - (void)setCloseButton:(id)arg1;

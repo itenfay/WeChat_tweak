@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveMilestoneLotteryDetailQuestionOptionView, MMFinderLiveMilestoneLotteryViewModel, MMUIButton, NSString, UILabel, UIScrollView, UIView;
 
 @interface MMFinderLiveMilestoneLotteryDetailQuestionView
@@ -20,7 +22,6 @@
     NSString *_lotteryId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lotteryId; // @synthesize lotteryId=_lotteryId;
 @property(nonatomic) __weak MMFinderLiveMilestoneLotteryDetailQuestionOptionView *lastSelectedOptionView; // @synthesize lastSelectedOptionView=_lastSelectedOptionView;
 @property(retain, nonatomic) MMUIButton *submitButton; // @synthesize submitButton=_submitButton;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

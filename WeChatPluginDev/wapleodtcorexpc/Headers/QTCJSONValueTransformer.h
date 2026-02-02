@@ -13,7 +13,6 @@
 }
 
 + (Class)classByResolvingClusterClasses:(Class)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *primitivesNames; // @synthesize primitivesNames=_primitivesNames;
 - (id)__NSMutableDictionaryFromNSArray:(id)arg1;
 - (id)__NSDictionaryFromNSArray:(id)arg1;

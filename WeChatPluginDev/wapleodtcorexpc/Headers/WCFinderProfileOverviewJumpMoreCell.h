@@ -15,7 +15,6 @@
     struct UIEdgeInsets _topLineEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 @property(nonatomic) struct UIEdgeInsets topLineEdgeInsets; // @synthesize topLineEdgeInsets=_topLineEdgeInsets;
 @property(retain, nonatomic) UILabel *wordingLabel; // @synthesize wordingLabel=_wordingLabel;

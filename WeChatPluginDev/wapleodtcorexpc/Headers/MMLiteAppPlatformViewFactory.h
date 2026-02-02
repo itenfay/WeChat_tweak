@@ -13,7 +13,6 @@
     NSMapTable *_viewMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *viewMap; // @synthesize viewMap=_viewMap;
 @property(nonatomic) __weak MMLiteAppPlatformViewPlugin *plugin; // @synthesize plugin=_plugin;
 - (id)createArgsCodec;

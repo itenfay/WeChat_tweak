@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, PKAddPaymentPassViewController;
 
 @interface WAJSEventHandler_openNFCCard
@@ -15,7 +17,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) unsigned long long actType; // @synthesize actType=_actType;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

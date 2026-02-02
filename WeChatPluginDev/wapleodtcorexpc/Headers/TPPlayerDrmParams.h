@@ -37,7 +37,6 @@
     long long _drmLicenseEndTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long drmLicenseEndTimeMs; // @synthesize drmLicenseEndTimeMs=_drmLicenseEndTimeMs;
 @property(nonatomic) long long drmLicenseStartTimeMs; // @synthesize drmLicenseStartTimeMs=_drmLicenseStartTimeMs;
 @property(nonatomic) long long drmCertificateEndTimeMs; // @synthesize drmCertificateEndTimeMs=_drmCertificateEndTimeMs;

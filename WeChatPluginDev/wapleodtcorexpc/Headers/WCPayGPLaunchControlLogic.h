@@ -23,7 +23,6 @@
     NSString *_soliMemContentInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *soliMemContentInfo; // @synthesize soliMemContentInfo=_soliMemContentInfo;
 @property(nonatomic) _Bool bIsSoliThemeCut; // @synthesize bIsSoliThemeCut=_bIsSoliThemeCut;
 @property(nonatomic) long long launchPayerCount; // @synthesize launchPayerCount=_launchPayerCount;

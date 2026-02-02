@@ -15,7 +15,6 @@
     double _cachedFuwuViewHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cachedFuwuViewHeight; // @synthesize cachedFuwuViewHeight=_cachedFuwuViewHeight;
 @property(retain, nonatomic) NSMutableArray *allFuwuButtonList; // @synthesize allFuwuButtonList=_allFuwuButtonList;
 @property(retain, nonatomic) NSMutableArray *showingFuwuButtonList; // @synthesize showingFuwuButtonList=_showingFuwuButtonList;

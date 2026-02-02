@@ -13,7 +13,6 @@
     WCTogetherHistoryReportSession *_historyReportSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTogetherHistoryReportSession *historyReportSession; // @synthesize historyReportSession=_historyReportSession;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) WCTogetherHistoryViewModel *viewModel; // @synthesize viewModel=_viewModel;

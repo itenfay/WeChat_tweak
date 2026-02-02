@@ -13,7 +13,6 @@
     NSMutableDictionary *_oldOptions;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *oldOptions; // @synthesize oldOptions=_oldOptions;
 @property(retain, nonatomic) WADebugSkylineOptions *options; // @synthesize options=_options;
 - (_Bool)optionChanged;

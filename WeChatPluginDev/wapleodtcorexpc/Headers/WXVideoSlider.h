@@ -20,7 +20,6 @@
     double _additionalSliderHeightWhenHighlighted;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double additionalSliderHeightWhenHighlighted; // @synthesize additionalSliderHeightWhenHighlighted=_additionalSliderHeightWhenHighlighted;
 @property(nonatomic) double sliderHeight; // @synthesize sliderHeight=_sliderHeight;
 @property(nonatomic) double dotImgOverScrollMode; // @synthesize dotImgOverScrollMode=_dotImgOverScrollMode;

@@ -11,7 +11,6 @@
     WCPayPayMoneyLogic *m_payLogic;
 }
 
-- (void).cxx_destruct;
 - (void)call:(id)arg1;
 - (void)OnGetMallPrepayRequest:(id)arg1 AppSource:(id)arg2 Error:(id)arg3;
 - (_Bool)gotoViewController:(id)arg1;

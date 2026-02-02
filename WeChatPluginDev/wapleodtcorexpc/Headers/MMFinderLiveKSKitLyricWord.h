@@ -17,7 +17,6 @@
 
 + (_Bool)isLyricWordContentCHN:(id)arg1;
 + (id)parseLyricWord:(id)arg1 inSentence:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize labelSize; // @synthesize labelSize=_labelSize;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) int duration; // @synthesize duration=_duration;

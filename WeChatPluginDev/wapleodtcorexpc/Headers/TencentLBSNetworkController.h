@@ -38,7 +38,6 @@
 + (id)decryptAes:(id)arg1;
 + (id)encryptAes:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property double lastBleT; // @synthesize lastBleT=_lastBleT;
 @property(nonatomic) _Bool request; // @synthesize request=_request;
 @property(nonatomic) _Bool load; // @synthesize load=_load;

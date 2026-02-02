@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJShootComposingTemplateSinglePageViewModel, MJShootComposingViewModel, MJShootTemplateItemReportModel, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UBDictionarySignal, WCGetCameraTemplateListParams;
 @protocol MJShootComposingTemplatePanelViewModelDelegate;
@@ -34,7 +35,6 @@
     NSArray *_templateItemsForDefaultTab;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *templateItemsForDefaultTab; // @synthesize templateItemsForDefaultTab=_templateItemsForDefaultTab;
 @property(nonatomic) int favTabIndex; // @synthesize favTabIndex=_favTabIndex;
 @property(retain, nonatomic) MJShootComposingTemplateSinglePageViewModel *defaultTabVM; // @synthesize defaultTabVM=_defaultTabVM;
@@ -84,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

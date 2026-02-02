@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_arrTopHit;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrTopHit; // @synthesize arrTopHit=_arrTopHit;
 - (id)init;
 - (id)getPBPropertyTable;

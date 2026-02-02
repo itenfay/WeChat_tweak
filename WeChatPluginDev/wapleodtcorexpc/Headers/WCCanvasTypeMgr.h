@@ -12,7 +12,6 @@
     NSSet *_validTypeSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *validTypeSet; // @synthesize validTypeSet=_validTypeSet;
 - (_Bool)hasCanvasTypeValid:(id)arg1;
 - (_Bool)isScrollGroupComponentAllTypesValid:(id)arg1;

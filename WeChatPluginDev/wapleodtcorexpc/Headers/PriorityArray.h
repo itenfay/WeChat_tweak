@@ -12,7 +12,6 @@
     NSMutableArray *_queue;
 }
 
-- (void).cxx_destruct;
 - (_Bool)contains:(id)arg1;
 - (_Bool)remove:(id)arg1;
 - (void)add:(id)arg1 withPriority:(long long)arg2;

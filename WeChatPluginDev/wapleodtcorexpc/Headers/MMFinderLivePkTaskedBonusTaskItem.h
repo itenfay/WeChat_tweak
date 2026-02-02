@@ -14,7 +14,6 @@
     NSString *_targetGiftId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *targetGiftId; // @synthesize targetGiftId=_targetGiftId;
 @property(nonatomic) unsigned long long current; // @synthesize current=_current;
 @property(nonatomic) unsigned long long target; // @synthesize target=_target;

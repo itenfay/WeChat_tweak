@@ -27,7 +27,6 @@
 + (id)mediaInfoFromVideoItem:(id)arg1;
 + (id)mediaInfoFromImageItem:(id)arg1;
 + (id)mediaInfoFromUsername:(id)arg1 textState:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canEditLive; // @synthesize canEditLive=_canEditLive;
 @property(nonatomic) _Bool canEditBlur; // @synthesize canEditBlur=_canEditBlur;
 @property(nonatomic) unsigned long long mediaDuration; // @synthesize mediaDuration=_mediaDuration;

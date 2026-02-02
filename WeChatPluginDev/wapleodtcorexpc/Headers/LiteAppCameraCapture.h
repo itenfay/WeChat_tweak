@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureVideoPreviewLayer, NSObject;
 @protocol OS_dispatch_queue;
 
@@ -15,7 +17,6 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) AVCaptureVideoPreviewLayer *previewLayer; // @synthesize previewLayer=_previewLayer;
 @property(nonatomic) _Bool activeQRScan; // @synthesize activeQRScan=_activeQRScan;
@@ -50,4 +51,3 @@
 - (id)initWithPreset:(id)arg1;
 
 @end
-

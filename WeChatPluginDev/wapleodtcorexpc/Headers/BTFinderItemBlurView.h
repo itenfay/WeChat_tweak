@@ -13,7 +13,6 @@
     UIColor *_mainColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *mainColor; // @synthesize mainColor=_mainColor;
 @property(retain, nonatomic) UIView *blurMaskView; // @synthesize blurMaskView=_blurMaskView;
 @property(retain, nonatomic) CAGradientLayer *blurGradientLayer; // @synthesize blurGradientLayer=_blurGradientLayer;

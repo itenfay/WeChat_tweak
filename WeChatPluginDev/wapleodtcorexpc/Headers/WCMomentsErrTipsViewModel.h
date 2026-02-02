@@ -20,7 +20,6 @@
     long long _tipType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDetail; // @synthesize isDetail=_isDetail;
 @property(nonatomic) long long tipType; // @synthesize tipType=_tipType;
 @property(retain, nonatomic) WCCommentItem *comment; // @synthesize comment=_comment;

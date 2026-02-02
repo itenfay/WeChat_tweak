@@ -16,7 +16,6 @@
     NSArray *_m_arrExistAdmintUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *m_arrExistAdmintUserName; // @synthesize m_arrExistAdmintUserName=_m_arrExistAdmintUserName;
 @property(retain, nonatomic) CContact *m_roomContact; // @synthesize m_roomContact=_m_roomContact;
 @property(nonatomic) __weak id <AddAdminLogicDelegate> m_delegate; // @synthesize m_delegate;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer;
 
 @interface MMUILandscapeSheetNavigationController
@@ -12,7 +14,6 @@
 }
 
 + (double)navBarBottomtInLandscape;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool wasPortrait; // @synthesize wasPortrait=_wasPortrait;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
@@ -29,4 +30,3 @@
 - (id)init;
 
 @end
-

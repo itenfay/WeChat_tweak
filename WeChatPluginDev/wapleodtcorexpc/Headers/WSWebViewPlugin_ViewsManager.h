@@ -12,7 +12,6 @@
     MISSING_TYPE *hasTeachPage;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (_Bool)enableRestoreEducatePage;
 - (void)changePageType:(unsigned long long)arg1;

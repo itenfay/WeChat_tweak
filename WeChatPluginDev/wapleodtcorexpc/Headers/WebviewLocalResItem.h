@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_svrId;
 + (void)PBArrayAdd_savePath;
 + (void)PBArrayAdd_localResId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNeedStorage; // @synthesize bNeedStorage=_bNeedStorage;
 @property(nonatomic) _Bool needMediaId; // @synthesize needMediaId=_needMediaId;
 @property(retain, nonatomic) NSString *fileUrl; // @synthesize fileUrl=_fileUrl;

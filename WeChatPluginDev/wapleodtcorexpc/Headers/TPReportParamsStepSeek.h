@@ -17,7 +17,6 @@
     NSString *_code;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *code; // @synthesize code=_code;
 @property(nonatomic) long long letime; // @synthesize letime=_letime;
 @property(nonatomic) long long lstime; // @synthesize lstime=_lstime;

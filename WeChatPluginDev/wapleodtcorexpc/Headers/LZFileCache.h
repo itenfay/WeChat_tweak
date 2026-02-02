@@ -32,7 +32,6 @@
 + (void)preheat:(void *)arg1 size:(unsigned long long)arg2;
 + (int)pageSize;
 + (id)cfgPath:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long fileCacheErrorType; // @synthesize fileCacheErrorType=_fileCacheErrorType;
 @property(nonatomic) _Bool bCacheFinish; // @synthesize bCacheFinish=_bCacheFinish;
 @property(nonatomic) _Bool bCleaned; // @synthesize bCleaned=_bCleaned;

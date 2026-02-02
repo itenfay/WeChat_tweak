@@ -11,7 +11,6 @@
     NSString *_displayName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *avatarUrl; // @synthesize avatarUrl=_avatarUrl;
 

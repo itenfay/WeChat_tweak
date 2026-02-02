@@ -13,7 +13,6 @@
     int _curIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int curIndex; // @synthesize curIndex=_curIndex;
 @property(nonatomic) int lastScore; // @synthesize lastScore=_lastScore;
 @property(nonatomic) int totalScore; // @synthesize totalScore=_totalScore;

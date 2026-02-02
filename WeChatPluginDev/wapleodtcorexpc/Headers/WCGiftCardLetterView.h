@@ -26,7 +26,6 @@
     long long _downloadState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long downloadState; // @synthesize downloadState=_downloadState;
 @property(retain, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 @property(nonatomic) __weak WCCardImageBrowserViewController *imageVC; // @synthesize imageVC=_imageVC;

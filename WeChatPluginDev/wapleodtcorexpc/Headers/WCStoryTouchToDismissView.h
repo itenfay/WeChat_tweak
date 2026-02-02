@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCStoryTouchToDismissView : UIView
 {
@@ -12,7 +13,6 @@
     CDUnknownBlockType _hitTestBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hitTestBlock; // @synthesize hitTestBlock=_hitTestBlock;
 @property(copy, nonatomic) CDUnknownBlockType dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(nonatomic) _Bool touchToDismiss; // @synthesize touchToDismiss=_touchToDismiss;
@@ -20,4 +20,3 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end
-

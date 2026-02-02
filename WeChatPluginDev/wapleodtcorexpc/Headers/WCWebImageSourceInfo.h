@@ -18,7 +18,6 @@
 
 + (id)imageSourceInfoFromDictionary:(id)arg1;
 + (id)imageSourceInfoForPlaceHolder;
-- (void).cxx_destruct;
 @property(nonatomic) long long searchScene; // @synthesize searchScene=_searchScene;
 @property(copy, nonatomic) NSString *searchReqKey; // @synthesize searchReqKey=_searchReqKey;
 @property(retain, nonatomic) NSObject *sourceData; // @synthesize sourceData=_sourceData;

@@ -13,7 +13,6 @@
     UIImage *_subIconDefault;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIImage *subIconDefault; // @synthesize subIconDefault=_subIconDefault;
 @property(retain) NSString *subIconUrl; // @synthesize subIconUrl=_subIconUrl;
 

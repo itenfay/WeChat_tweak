@@ -29,7 +29,6 @@
     UIImageView *_switchImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsSpeechSwitchViewShow; // @synthesize bIsSpeechSwitchViewShow=_bIsSpeechSwitchViewShow;
 @property(retain, nonatomic) UIImageView *switchImageView; // @synthesize switchImageView=_switchImageView;
 @property(retain, nonatomic) UISwitch *openSwitch; // @synthesize openSwitch=_openSwitch;

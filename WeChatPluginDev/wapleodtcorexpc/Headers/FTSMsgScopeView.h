@@ -18,7 +18,6 @@
     NSString *_taskKey;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool asCluster; // @synthesize asCluster=_asCluster;
 @property(copy, nonatomic) NSString *taskKey; // @synthesize taskKey=_taskKey;
 - (id)ftsResultGetWCSearchContainerView;

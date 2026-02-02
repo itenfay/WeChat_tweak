@@ -3,12 +3,13 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderForeignRealNameVerifyPanelSheet
 {
     CDUnknownBlockType _okBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType okBlock; // @synthesize okBlock=_okBlock;
 - (void)onClickOk;
 - (void)addCancelBtn:(id)arg1 flex:(void *)arg2;
@@ -20,4 +21,3 @@
 - (void)viewDidLoad;
 
 @end
-

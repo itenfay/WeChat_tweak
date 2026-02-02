@@ -31,7 +31,6 @@
     UIButton *m_originImageCheck;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *m_originImageCheck; // @synthesize m_originImageCheck;
 @property(retain, nonatomic) UILabel *m_filterLabel; // @synthesize m_filterLabel;
 @property(retain, nonatomic) UIButton *m_filterButton; // @synthesize m_filterButton;

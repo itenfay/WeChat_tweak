@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiteAppAssetView, MMAsset, NSString, NSURL;
 
@@ -22,7 +23,6 @@
     LiteAppAssetView *_assetView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak LiteAppAssetView *assetView; // @synthesize assetView=_assetView;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
@@ -46,4 +46,3 @@
 - (id)initWithAsset:(id)arg1 forIndex:(int)arg2;
 
 @end
-

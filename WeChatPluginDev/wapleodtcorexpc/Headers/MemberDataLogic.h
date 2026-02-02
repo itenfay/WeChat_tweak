@@ -18,7 +18,6 @@
     NSMutableDictionary *m_dicSessionTime;
 }
 
-- (void).cxx_destruct;
 - (void)sortContacts:(id)arg1 matchTips:(id)arg2;
 - (id)getMatchTipForUsername:(id)arg1;
 - (id)filtContactsByName:(id)arg1;

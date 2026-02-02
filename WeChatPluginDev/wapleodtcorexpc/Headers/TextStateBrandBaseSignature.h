@@ -13,7 +13,6 @@
     NSString *_sourceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;
 @property(retain, nonatomic) NSString *textStateSignature; // @synthesize textStateSignature=_textStateSignature;
 - (id)description;

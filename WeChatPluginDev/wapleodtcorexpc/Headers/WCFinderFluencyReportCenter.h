@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -13,7 +14,6 @@
     NSMutableDictionary *_sceneReportBlockDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sceneReportBlockDict; // @synthesize sceneReportBlockDict=_sceneReportBlockDict;
 @property(retain, nonatomic) NSMutableDictionary *sceneDict; // @synthesize sceneDict=_sceneDict;
 - (void)reportWithSceneKey:(id)arg1;
@@ -24,4 +24,3 @@
 - (void)setReportBlock:(CDUnknownBlockType)arg1 withSceneKey:(id)arg2;
 
 @end
-

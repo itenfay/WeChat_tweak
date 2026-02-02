@@ -12,7 +12,6 @@
     unsigned long long _forwardType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forwardType; // @synthesize forwardType=_forwardType;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;

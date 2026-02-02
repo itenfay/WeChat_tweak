@@ -23,7 +23,6 @@
     long long _messageSvrId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int payInfoStatus; // @synthesize payInfoStatus=_payInfoStatus;
 @property(nonatomic) unsigned int msgCreateTime; // @synthesize msgCreateTime=_msgCreateTime;
 @property(nonatomic) _Bool isSender; // @synthesize isSender=_isSender;

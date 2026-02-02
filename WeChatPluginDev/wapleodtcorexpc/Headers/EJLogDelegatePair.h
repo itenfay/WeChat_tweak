@@ -13,7 +13,6 @@
     id <EJNativeLogViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int referCount; // @synthesize referCount=_referCount;
 @property(nonatomic) __weak id <EJNativeLogViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)initWithDelegate:(id)arg1;

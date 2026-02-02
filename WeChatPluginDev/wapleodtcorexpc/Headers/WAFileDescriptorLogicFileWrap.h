@@ -13,7 +13,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int flag; // @synthesize flag=_flag;
 @property(nonatomic) _Bool isTmpOrStoreFile; // @synthesize isTmpOrStoreFile=_isTmpOrStoreFile;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

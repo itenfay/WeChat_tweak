@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingImageHandler : NSObject
 {
@@ -12,9 +13,7 @@
 }
 
 + (id)handlerWithObserver:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) __weak id observer; // @synthesize observer=_observer;
 
 @end
-

@@ -27,7 +27,6 @@
 }
 
 + (struct CGSize)getPickerViewSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *handlers; // @synthesize handlers=_handlers;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long lastOri; // @synthesize lastOri=_lastOri;

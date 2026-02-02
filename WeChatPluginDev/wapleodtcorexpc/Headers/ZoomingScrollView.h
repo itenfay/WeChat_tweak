@@ -15,7 +15,6 @@
     id <ZoomingScrollViewDelegate> _zoomViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ZoomingScrollViewDelegate> zoomViewDelegate; // @synthesize zoomViewDelegate=_zoomViewDelegate;
 @property(nonatomic) double doubleTapExpandZoomScale; // @synthesize doubleTapExpandZoomScale=_doubleTapExpandZoomScale;
 @property(retain, nonatomic) UIImageView *photoImageView; // @synthesize photoImageView=_photoImageView;

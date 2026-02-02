@@ -15,7 +15,6 @@
     NSString *_BizUserName_25;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool IsClick_26; // @synthesize IsClick_26=_IsClick_26;
 @property(copy, nonatomic) NSString *BizUserName_25; // @synthesize BizUserName_25=_BizUserName_25;
 @property(nonatomic) unsigned int Sessionid_24; // @synthesize Sessionid_24=_Sessionid_24;

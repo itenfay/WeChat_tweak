@@ -15,7 +15,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *classifyCollectionView; // @synthesize classifyCollectionView=_classifyCollectionView;
 @property(retain, nonatomic) FinderShopShelfLabelClassifyInfo *selectedClassifyInfo; // @synthesize selectedClassifyInfo=_selectedClassifyInfo;
 @property(retain, nonatomic) NSMutableArray *classifyInfos; // @synthesize classifyInfos=_classifyInfos;

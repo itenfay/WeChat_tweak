@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSString, NSURLSessionDownloadTask, WAPackageCronetDownloadTask;
 
@@ -26,7 +27,6 @@
     unsigned long long _downloadType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDownloadResumption; // @synthesize enableDownloadResumption=_enableDownloadResumption;
 @property(nonatomic) unsigned int dnsType; // @synthesize dnsType=_dnsType;
 @property(nonatomic) _Bool needGzip; // @synthesize needGzip=_needGzip;
@@ -45,4 +45,3 @@
 - (id)initWithDownloadTask:(id)arg1 progressBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 
 @end
-

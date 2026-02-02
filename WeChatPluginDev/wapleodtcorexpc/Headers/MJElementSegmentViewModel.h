@@ -20,7 +20,6 @@
     id <OMCLayerSpatialAdjustable> _layerSpatialAdjustable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <OMCLayerSpatialAdjustable> layerSpatialAdjustable; // @synthesize layerSpatialAdjustable=_layerSpatialAdjustable;
 @property(nonatomic) _Bool isTransOutOverlapped; // @synthesize isTransOutOverlapped=_isTransOutOverlapped;
 @property(nonatomic) _Bool isTransInOverlapped; // @synthesize isTransInOverlapped=_isTransInOverlapped;

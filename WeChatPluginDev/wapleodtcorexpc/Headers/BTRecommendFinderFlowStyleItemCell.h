@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BTFinderItemViewModel, BTFinderRecommendRedPacketView, BTRichTextTagView, BTScrollabelFinderStyleCoverContainerView, MMUILabel, MMWebImageView, NSString, UIImageView, UIView, WCFinderTagView;
 
@@ -29,7 +30,6 @@
 + (double)cellWidth;
 + (double)cellHeight;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BTFinderRecommendRedPacketView *redPacketView; // @synthesize redPacketView=_redPacketView;
 @property(retain, nonatomic) UIView *recommendGradientView; // @synthesize recommendGradientView=_recommendGradientView;
 @property(retain, nonatomic) MMUILabel *recommendLabel; // @synthesize recommendLabel=_recommendLabel;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

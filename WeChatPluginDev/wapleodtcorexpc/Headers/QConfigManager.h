@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, QMediator, QStatisticer;
 @protocol QConfigManagerDelegate;
@@ -23,7 +24,6 @@
     NSMutableDictionary *_indoorDict;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStartedUpdate; // @synthesize hasStartedUpdate=_hasStartedUpdate;
 @property(retain, nonatomic) NSMutableDictionary *indoorDict; // @synthesize indoorDict=_indoorDict;
 @property(nonatomic) int unfinishedTasks; // @synthesize unfinishedTasks=_unfinishedTasks;
@@ -61,4 +61,3 @@
 - (id)getCurrentConfigVersions;
 
 @end
-

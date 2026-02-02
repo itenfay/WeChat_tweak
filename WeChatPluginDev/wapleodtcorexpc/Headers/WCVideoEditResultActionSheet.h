@@ -13,7 +13,6 @@
 }
 
 + (id)allActions;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCVideoEditResultActionSheetRecentForwardDelegate> recentForwardDelegate; // @synthesize recentForwardDelegate=_recentForwardDelegate;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (_Bool)disableScrollSheetItem:(long long)arg1;

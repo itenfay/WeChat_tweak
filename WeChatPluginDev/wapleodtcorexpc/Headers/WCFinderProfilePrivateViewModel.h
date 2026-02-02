@@ -11,7 +11,6 @@
     NSString *_errorTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorTips; // @synthesize errorTips=_errorTips;
 @property(retain, nonatomic) UIImage *errorIcon; // @synthesize errorIcon=_errorIcon;
 - (_Bool)shouldDisplayTab;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiteAppBaseRecorder, NSMutableDictionary, NSString;
 
@@ -23,7 +24,6 @@
 }
 
 + (void)_showRecordDenied;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long audioThreshold; // @synthesize audioThreshold=_audioThreshold;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(retain, nonatomic) NSString *recorderSavePath; // @synthesize recorderSavePath=_recorderSavePath;
@@ -72,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

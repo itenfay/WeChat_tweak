@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveContactExtRelationInfo, NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderGetLiveContactCGI
@@ -18,7 +20,6 @@
     FinderLiveContactExtRelationInfo *_extRelationInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveContactExtRelationInfo *extRelationInfo; // @synthesize extRelationInfo=_extRelationInfo;
 @property(nonatomic) unsigned long long objectId; // @synthesize objectId=_objectId;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;
@@ -35,4 +36,3 @@
 - (id)initWithFinderTaskId:(id)arg1 userName:(id)arg2 fromScene:(unsigned long long)arg3 extInfo:(id)arg4 extRelationInfo:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

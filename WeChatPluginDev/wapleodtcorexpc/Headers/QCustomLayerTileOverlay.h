@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, QCustomLayerConfigItem;
 
 @interface QCustomLayerTileOverlay
@@ -14,7 +16,6 @@
 
 + (void)updateCustomLayerCaches:(id)arg1;
 + (id)getTileOverlayCachePath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QCustomLayerConfigItem *serverConfig; // @synthesize serverConfig=_serverConfig;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *businessKey; // @synthesize businessKey=_businessKey;
@@ -25,4 +26,3 @@
 - (id)init;
 
 @end
-

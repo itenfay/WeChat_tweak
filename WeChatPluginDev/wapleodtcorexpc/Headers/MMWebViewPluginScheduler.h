@@ -14,7 +14,6 @@
 }
 
 + (_Bool)isWebScrollEvent:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *pluginName2InstanceDic; // @synthesize pluginName2InstanceDic=_pluginName2InstanceDic;
 @property(readonly, nonatomic) __weak MMWebViewController *ownerWebViewController; // @synthesize ownerWebViewController=_ownerWebViewController;
 - (void)handleEvent:(unsigned long long)arg1 userInfo:(id)arg2 retInfo:(id)arg3;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLimitedModeSetPasswordLogic, NSString;
 
@@ -14,7 +15,6 @@
     id _selfHolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id selfHolder; // @synthesize selfHolder=_selfHolder;
 @property(copy, nonatomic) CDUnknownBlockType resolve; // @synthesize resolve=_resolve;
 @property(retain, nonatomic) MMLimitedModeSetPasswordLogic *setPasswordLogic; // @synthesize setPasswordLogic=_setPasswordLogic;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

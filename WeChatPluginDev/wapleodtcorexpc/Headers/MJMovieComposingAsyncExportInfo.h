@@ -18,7 +18,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMJMovieExportSettings *exportSettings; // @synthesize exportSettings=_exportSettings;
 @property(nonatomic) double exportVideoDuration; // @synthesize exportVideoDuration=_exportVideoDuration;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;

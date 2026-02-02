@@ -21,7 +21,6 @@
 
 + (id)dotWithMultilineIntros:(id)arg1 font:(id)arg2 textColor:(id)arg3;
 + (id)DynamicLabel:(id)arg1 textStyle:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressCopyGesture; // @synthesize longPressCopyGesture=_longPressCopyGesture;
 @property(retain, nonatomic) NSString *textToCopy; // @synthesize textToCopy=_textToCopy;
 @property(retain, nonatomic) UIColor *highlightCopyColor; // @synthesize highlightCopyColor=_highlightCopyColor;

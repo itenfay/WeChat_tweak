@@ -58,7 +58,6 @@
 + (void)PBArrayAdd_nickname;
 + (void)PBArrayAdd_avatar;
 + (void)PBArrayAdd_finderUsername;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appUsername; // @synthesize appUsername=_appUsername;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

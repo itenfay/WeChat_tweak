@@ -15,7 +15,6 @@
 }
 
 + (double)getDisplayViewHeight;
-- (void).cxx_destruct;
 @property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSMutableArray *contactList; // @synthesize contactList=_contactList;

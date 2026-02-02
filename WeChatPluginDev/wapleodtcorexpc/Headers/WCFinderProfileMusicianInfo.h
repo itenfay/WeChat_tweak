@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_hasPlaylist;
 + (void)PBArrayAdd_summary;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPlaylist; // @synthesize hasPlaylist=_hasPlaylist;
 @property(retain, nonatomic) FinderMusicBaikeSummary *summary; // @synthesize summary=_summary;
 - (id)getPBPropertyTable;

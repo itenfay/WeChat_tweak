@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_infoDic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *infoDic; // @synthesize infoDic=_infoDic;
 - (id)getPBPropertyTable;
 

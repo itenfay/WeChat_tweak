@@ -14,7 +14,6 @@
     id <WCAdHalfScreenContainerViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdHalfScreenContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCAdHalfScreenContainerInfo *containerInfo; // @synthesize containerInfo=_containerInfo;
 - (id)titleForPageSheetConfirmButton;

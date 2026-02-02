@@ -13,7 +13,6 @@
     WCAdBreakFramePlayStateTagInfo *_tagInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdBreakFramePlayStateTagInfo *tagInfo; // @synthesize tagInfo=_tagInfo;
 @property(nonatomic) int interactionState; // @synthesize interactionState=_interactionState;
 @property(retain, nonatomic) UIView *titleViewCache; // @synthesize titleViewCache=_titleViewCache;

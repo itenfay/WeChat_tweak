@@ -11,7 +11,6 @@
     NSString *_result;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *result; // @synthesize result=_result;
 @property(retain, nonatomic) NSString *action; // @synthesize action=_action;
 

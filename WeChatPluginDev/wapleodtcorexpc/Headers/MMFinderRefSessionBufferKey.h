@@ -15,7 +15,6 @@
 }
 
 + (id)keyWithTid:(id)arg1 scene:(int)arg2 extraKey:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionExtraKey; // @synthesize sessionExtraKey=_sessionExtraKey;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;

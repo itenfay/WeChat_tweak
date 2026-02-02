@@ -13,7 +13,6 @@
     WCPayAntiCheatWarningJumpInfo *_jump_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayAntiCheatWarningJumpInfo *jump_info; // @synthesize jump_info=_jump_info;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 

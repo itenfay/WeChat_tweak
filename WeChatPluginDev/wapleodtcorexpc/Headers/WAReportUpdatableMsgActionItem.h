@@ -15,7 +15,6 @@
     NSNumber *_pushMsgState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subscribeState; // @synthesize subscribeState=_subscribeState;
 @property(retain, nonatomic) NSNumber *pushMsgState; // @synthesize pushMsgState=_pushMsgState;
 @property(nonatomic) unsigned long long eventId; // @synthesize eventId=_eventId;

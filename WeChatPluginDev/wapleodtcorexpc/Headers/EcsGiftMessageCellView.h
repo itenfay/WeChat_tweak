@@ -11,7 +11,6 @@
     UILabel *_m_wishLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_wishLabel; // @synthesize m_wishLabel=_m_wishLabel;
 @property(retain, nonatomic) UILabel *m_tagLabel; // @synthesize m_tagLabel=_m_tagLabel;
 - (id)operationMenuItems;

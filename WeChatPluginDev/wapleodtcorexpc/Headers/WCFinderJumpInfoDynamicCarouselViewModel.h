@@ -37,7 +37,6 @@
 }
 
 + (id)viewModelWithFeedContentVM:(id)arg1 jumpInfo:(id)arg2 showPosition:(int)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo_PartialCarouselCardStyle_CarouselDesc *currentCarouselDesc; // @synthesize currentCarouselDesc=_currentCarouselDesc;
 @property(retain, nonatomic) FinderJumpInfo_PartialCarouselCardStyle *currentCardStyle; // @synthesize currentCardStyle=_currentCardStyle;
 @property(retain, nonatomic) NSTimer *asyncLoadInfoDelayTimer; // @synthesize asyncLoadInfoDelayTimer=_asyncLoadInfoDelayTimer;

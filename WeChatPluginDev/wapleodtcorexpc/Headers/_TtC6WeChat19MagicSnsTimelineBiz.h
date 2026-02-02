@@ -12,7 +12,6 @@
     MISSING_TYPE *pkgMgr;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
 - (void)onCanvasViewCreated:(unsigned int)arg1 view:(id)arg2;

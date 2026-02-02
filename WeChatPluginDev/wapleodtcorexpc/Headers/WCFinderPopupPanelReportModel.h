@@ -22,7 +22,6 @@
     NSString *_noticeFeedId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *noticeFeedId; // @synthesize noticeFeedId=_noticeFeedId;
 @property(copy, nonatomic) NSString *noticeTipsUuid; // @synthesize noticeTipsUuid=_noticeTipsUuid;
 @property(copy, nonatomic) NSString *noticeTipsId; // @synthesize noticeTipsId=_noticeTipsId;

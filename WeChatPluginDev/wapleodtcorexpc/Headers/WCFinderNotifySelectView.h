@@ -22,7 +22,6 @@
 
 + (double)selectViewWidth;
 + (id)getNotifySelectButtonTitleWithIndex:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double buttonTotalWidthSize; // @synthesize buttonTotalWidthSize=_buttonTotalWidthSize;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSMutableArray *labelArray; // @synthesize labelArray=_labelArray;

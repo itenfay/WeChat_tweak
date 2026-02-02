@@ -20,7 +20,6 @@
 
 + (id)genFromJumpRemindInfo:(id)arg1;
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayRedirectUrlInfo *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *right_button_wording; // @synthesize right_button_wording=_right_button_wording;
 @property(retain, nonatomic) NSString *left_button_wording; // @synthesize left_button_wording=_left_button_wording;

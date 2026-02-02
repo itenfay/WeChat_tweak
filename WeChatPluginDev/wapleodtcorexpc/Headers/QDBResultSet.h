@@ -16,7 +16,6 @@
 }
 
 + (id)resultSetWithStatement:(id)arg1 usingParentDatabase:(id)arg2;
-- (void).cxx_destruct;
 @property(retain) QDBStatement *statement; // @synthesize statement=_statement;
 @property(retain) NSString *query; // @synthesize query=_query;
 - (id)dataForColumnIndex:(int)arg1;

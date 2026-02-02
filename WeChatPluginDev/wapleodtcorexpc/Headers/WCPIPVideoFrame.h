@@ -16,7 +16,6 @@
     unsigned long long _renderMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long renderMode; // @synthesize renderMode=_renderMode;
 @property(copy, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(nonatomic) _Bool flipX; // @synthesize flipX=_flipX;

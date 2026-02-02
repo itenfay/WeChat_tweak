@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext, NSString, TXCDispatchQueue;
 
@@ -15,7 +16,6 @@
 }
 
 + (_Bool)supportsFastTextureUpload:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCDispatchQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) EAGLContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) struct __CVOpenGLESTextureCache *textureCache; // @synthesize textureCache=_textureCache;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

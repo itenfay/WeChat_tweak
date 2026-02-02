@@ -21,7 +21,6 @@
     NSString *_m_iconName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_iconName; // @synthesize m_iconName=_m_iconName;
 @property(nonatomic) unsigned int m_stepCount; // @synthesize m_stepCount;
 @property(nonatomic) long long m_DID; // @synthesize m_DID;

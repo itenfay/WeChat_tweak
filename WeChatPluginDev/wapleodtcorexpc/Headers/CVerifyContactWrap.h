@@ -34,7 +34,6 @@
     NSArray *_labelIdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *labelIdList; // @synthesize labelIdList=_labelIdList;
 @property(retain, nonatomic) NSString *searchClickId; // @synthesize searchClickId=_searchClickId;
 @property(retain, nonatomic) NSString *ctx; // @synthesize ctx=_ctx;

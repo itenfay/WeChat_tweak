@@ -22,7 +22,6 @@
     struct CGSize _scheduleItemSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *footerAttrs; // @synthesize footerAttrs=_footerAttrs;
 @property(retain, nonatomic) NSMutableArray *headerAttrs; // @synthesize headerAttrs=_headerAttrs;
 @property(retain, nonatomic) NSMutableDictionary *itemAttributes; // @synthesize itemAttributes=_itemAttributes;

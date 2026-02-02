@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveSubTitleUIConfigModel, MMLiveTaskId, NSArray, NSMutableArray, NSMutableDictionary, TextStyleAttributeObj, UIFont;
 
@@ -24,7 +25,6 @@
     NSArray *_currentInitSubTitleList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentInitSubTitleList; // @synthesize currentInitSubTitleList=_currentInitSubTitleList;
 @property(nonatomic) _Bool isEngSubTitleScrolling; // @synthesize isEngSubTitleScrolling=_isEngSubTitleScrolling;
 @property(nonatomic) _Bool isChnSubTitleScrolling; // @synthesize isChnSubTitleScrolling=_isChnSubTitleScrolling;
@@ -105,4 +105,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

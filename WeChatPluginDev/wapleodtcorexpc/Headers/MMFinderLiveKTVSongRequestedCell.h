@@ -18,7 +18,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *myDeleteButton; // @synthesize myDeleteButton=_myDeleteButton;
 @property(retain, nonatomic) MMUIImageView *setTopLabel; // @synthesize setTopLabel=_setTopLabel;
 @property(retain, nonatomic) MMUIImageView *deleteLabel; // @synthesize deleteLabel=_deleteLabel;

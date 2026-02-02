@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMLocalNotificationUtil : NSObject
 {
@@ -19,4 +20,3 @@
 + (void)cancelAllNotReservedLocalNotificationsWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

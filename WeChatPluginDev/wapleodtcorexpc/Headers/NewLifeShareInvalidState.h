@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UINavigationController, WCFinderGeneralJumpErrMsgModel;
 
@@ -20,7 +21,6 @@
 + (id)errorMessageModelFromMessage:(id)arg1;
 + (id)nonExistInfoFromCode:(int)arg1 message:(id)arg2;
 + (id)stateFromCode:(int)arg1 message:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) int code; // @synthesize code=_code;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -34,4 +34,3 @@
 - (void)updateLocalDataItemWithFeedId:(id)arg1;
 
 @end
-

@@ -22,7 +22,6 @@
     NSDictionary *_dicKFContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicKFContact; // @synthesize dicKFContact=_dicKFContact;
 @property(retain, nonatomic) NSString *lastQueryTextForDetail; // @synthesize lastQueryTextForDetail=_lastQueryTextForDetail;
 @property(retain, nonatomic) NSString *lastQueryText; // @synthesize lastQueryText=_lastQueryText;

@@ -36,7 +36,6 @@
     struct CGPoint _draggingScrollViewOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double displayDragCloseStyleProgress; // @synthesize displayDragCloseStyleProgress=_displayDragCloseStyleProgress;
 @property(nonatomic) double pointExpandMin; // @synthesize pointExpandMin=_pointExpandMin;
 @property(nonatomic) double pointExpandMax; // @synthesize pointExpandMax=_pointExpandMax;

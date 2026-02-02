@@ -13,7 +13,6 @@
     WeVisFace *_visFace;
 }
 
-- (void).cxx_destruct;
 @property(retain) WeVisFace *visFace; // @synthesize visFace=_visFace;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *faceRect; // @synthesize faceRect=_faceRect;

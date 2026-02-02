@@ -39,7 +39,6 @@
 + (void)PBArrayAdd_lastMsgTime;
 + (void)PBArrayAdd_hasNewMsg;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderExportId; // @synthesize finderExportId=_finderExportId;
 @property(nonatomic) unsigned long long finderLastUpdateTime; // @synthesize finderLastUpdateTime=_finderLastUpdateTime;
 @property(nonatomic) unsigned long long finderUin; // @synthesize finderUin=_finderUin;

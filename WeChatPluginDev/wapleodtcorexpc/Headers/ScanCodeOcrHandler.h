@@ -12,7 +12,6 @@
     NSMutableArray *_m_reporterArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_reporterArray; // @synthesize m_reporterArray=_m_reporterArray;
 - (void)handleOcr:(id)arg1;
 - (_Bool)needCrashProtect:(id)arg1;

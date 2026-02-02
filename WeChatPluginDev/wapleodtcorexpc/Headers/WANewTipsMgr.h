@@ -11,7 +11,6 @@
     NSMutableArray *_updatingTipsKeyList;
 }
 
-- (void).cxx_destruct;
 - (void)removeTipsInfoFromUpdatingLIstWithTipsId:(unsigned int)arg1 uniqueId:(id)arg2;
 - (void)addTipsInfoToUpdatingListWithTipsId:(unsigned int)arg1 uniqueId:(id)arg2;
 - (_Bool)isTipsInfoInUpdatingListWithTipsId:(unsigned int)arg1 uniqueId:(id)arg2;

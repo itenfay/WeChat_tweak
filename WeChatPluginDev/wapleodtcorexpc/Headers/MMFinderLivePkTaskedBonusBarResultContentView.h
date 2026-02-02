@@ -12,7 +12,6 @@
     UILabel *_contentLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

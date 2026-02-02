@@ -25,7 +25,6 @@
 + (double)heightForTitle:(id)arg1 subTitle:(id)arg2 cellWidth:(double)arg3;
 + (double)heightForTitle:(id)arg1 cellWidth:(double)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

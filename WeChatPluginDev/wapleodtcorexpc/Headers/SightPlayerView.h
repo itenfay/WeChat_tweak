@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPlayer, AVPlayerItem, AVPlayerLayerView, MVideoPlayerView, NSObject, NSString, SightRecoder;
 @protocol SightPlayerViewDelegate;
@@ -41,7 +42,6 @@
     NSString *_playerPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) NSString *recodedPath; // @synthesize recodedPath=_recodedPath;
 @property(nonatomic) float m_uiMaxLimitDuration; // @synthesize m_uiMaxLimitDuration=_m_uiMaxLimitDuration;
@@ -118,4 +118,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     NSDictionary *_json;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *json; // @synthesize json=_json;
 @property(nonatomic) _Bool enable; // @synthesize enable=_enable;
 - (id)initWithJSON:(id)arg1;

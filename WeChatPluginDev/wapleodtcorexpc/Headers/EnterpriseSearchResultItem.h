@@ -14,7 +14,6 @@
     NSObject *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSString *matchText; // @synthesize matchText=_matchText;
 @property(nonatomic) unsigned int matchField; // @synthesize matchField=_matchField;

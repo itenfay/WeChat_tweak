@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_jumpType;
 + (void)PBArrayAdd_redDotFlag;
 + (void)PBArrayAdd_enterId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *weAppId; // @synthesize weAppId=_weAppId;
 @property(nonatomic) unsigned int businessType; // @synthesize businessType=_businessType;
 @property(retain, nonatomic) NSString *weAppDarkIconUrl; // @synthesize weAppDarkIconUrl=_weAppDarkIconUrl;

@@ -19,7 +19,6 @@
     NSString *_htmlUrlStringInBanner;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *htmlUrlStringInBanner; // @synthesize htmlUrlStringInBanner=_htmlUrlStringInBanner;
 @property(retain, nonatomic) NSString *htmlUrlStringInDialog; // @synthesize htmlUrlStringInDialog=_htmlUrlStringInDialog;
 @property(retain, nonatomic) NSString *schemeUrlStringInBanner; // @synthesize schemeUrlStringInBanner=_schemeUrlStringInBanner;

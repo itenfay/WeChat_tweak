@@ -17,7 +17,6 @@
 }
 
 + (double)getFavDetailHeaderHeight;
-- (void).cxx_destruct;
 - (id)genMomentNoteTimeStringByUInt:(unsigned int)arg1;
 - (id)getFavItem;
 - (void)initView;

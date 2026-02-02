@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface MMFinderLiveGestureCache
@@ -14,7 +16,6 @@
     NSMutableArray *_cacheUpdateQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cacheUpdateQueue; // @synthesize cacheUpdateQueue=_cacheUpdateQueue;
 @property(retain, nonatomic) NSMutableArray *validateCompletionQueue; // @synthesize validateCompletionQueue=_validateCompletionQueue;
 @property(retain, nonatomic) NSMutableDictionary *anchorSupportedGesturesDict; // @synthesize anchorSupportedGesturesDict=_anchorSupportedGesturesDict;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

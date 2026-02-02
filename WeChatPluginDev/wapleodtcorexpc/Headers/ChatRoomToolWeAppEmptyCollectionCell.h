@@ -14,7 +14,6 @@
 }
 
 + (double)getCellHeight;
-- (void).cxx_destruct;
 - (void)initTitleLabel;
 - (void)initView;
 - (id)initWithFrame:(struct CGRect)arg1;

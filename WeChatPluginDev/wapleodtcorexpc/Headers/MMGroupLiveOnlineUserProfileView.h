@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, CContact, MMHeadImageView, MMUIButton, MMUILabel, NSString, RichTextView, UIPanGestureRecognizer, UIVisualEffectView;
 
@@ -40,7 +41,6 @@
     double _previousPanPositionY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double previousPanPositionY; // @synthesize previousPanPositionY=_previousPanPositionY;
 @property(nonatomic) double viewTopAtPanBegin; // @synthesize viewTopAtPanBegin=_viewTopAtPanBegin;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
@@ -95,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

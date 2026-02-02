@@ -45,7 +45,6 @@
 }
 
 + (double)getMaxFontRatio;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *adManageUrl; // @synthesize adManageUrl=_adManageUrl;
 @property(nonatomic) _Bool showGuideAdManage; // @synthesize showGuideAdManage=_showGuideAdManage;
 @property(retain, nonatomic) NSString *specialAdWording; // @synthesize specialAdWording=_specialAdWording;

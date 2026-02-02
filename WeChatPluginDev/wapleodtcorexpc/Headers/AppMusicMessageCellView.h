@@ -14,7 +14,6 @@
     MMMusicPlayerContoller *_playButton;
 }
 
-- (void).cxx_destruct;
 - (_Bool)handleMagicTapAction:(id)arg1;
 - (void)addMagicTapActions:(id)arg1;
 - (void)onClickToPlayMusic:(id)arg1 playState:(long long)arg2 clickedOnBtn:(_Bool)arg3;

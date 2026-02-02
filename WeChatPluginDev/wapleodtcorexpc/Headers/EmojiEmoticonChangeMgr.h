@@ -13,7 +13,6 @@
 
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned int)countEmojiFromSoftbank:(id)arg1;
 - (unsigned int)countEmojiFromUnified:(id)arg1;
 - (id)changeEmojiFromSoftbankToUnified:(id)arg1;

@@ -12,7 +12,6 @@
     NSMutableArray *_editLaunchMJOperationList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *editLaunchMJOperationList; // @synthesize editLaunchMJOperationList=_editLaunchMJOperationList;
 @property(retain, nonatomic) NSMutableArray *editAssetClipOperationList; // @synthesize editAssetClipOperationList=_editAssetClipOperationList;
 @property(retain, nonatomic) MJVideoTemplate *templateInfo; // @synthesize templateInfo=_templateInfo;

@@ -17,7 +17,6 @@
     NSString *_extendAccessibilityString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extendAccessibilityString; // @synthesize extendAccessibilityString=_extendAccessibilityString;
 @property(nonatomic) unsigned long long descMode; // @synthesize descMode=_descMode;
 @property(nonatomic) unsigned long long frameMode; // @synthesize frameMode=_frameMode;

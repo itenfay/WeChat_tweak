@@ -21,7 +21,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(readonly, copy) NSString *description;
 

@@ -17,7 +17,6 @@
     NSString *_query;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) WCFinderBgmListOptionalParams *optionalParams; // @synthesize optionalParams=_optionalParams;
 @property(nonatomic) unsigned long long videoDuration; // @synthesize videoDuration=_videoDuration;

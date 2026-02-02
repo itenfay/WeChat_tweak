@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMHeadImageView, MMUIButton, UIButton, UIImageView, UILabel, UIView;
 
 @interface MMFinderLiveRealNameFriendLikeGuideSheet
@@ -26,7 +28,6 @@
     CDUnknownBlockType _disAppearAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType disAppearAction; // @synthesize disAppearAction=_disAppearAction;
 @property(copy, nonatomic) CDUnknownBlockType confirmBlock; // @synthesize confirmBlock=_confirmBlock;
 @property(copy, nonatomic) CDUnknownBlockType cancelRecommendBlock; // @synthesize cancelRecommendBlock=_cancelRecommendBlock;
@@ -51,4 +52,3 @@
 - (id)initWithTaskId:(id)arg1 cancelRecommendBlock:(CDUnknownBlockType)arg2 confirmBlock:(CDUnknownBlockType)arg3 disAppearAction:(CDUnknownBlockType)arg4;
 
 @end
-

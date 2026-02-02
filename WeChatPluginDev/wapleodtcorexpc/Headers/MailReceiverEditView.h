@@ -16,7 +16,6 @@
     UILabel *m_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MailReceiverEditViewDelegate> m_delegate; // @synthesize m_delegate;
 @property(nonatomic) long long m_uiReceiverEditViewTag; // @synthesize m_uiReceiverEditViewTag;
 - (long long)count;

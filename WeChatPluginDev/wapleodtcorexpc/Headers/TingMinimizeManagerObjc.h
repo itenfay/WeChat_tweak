@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSRecursiveLock, NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)create;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *listenerArray; // @synthesize listenerArray=_listenerArray;
 - (void)minimizeMar:(id)arg1 onMonimizeActiveStateChanged:(_Bool)arg2;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
     NSMutableSet *_notifyProductIdSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(nonatomic) unsigned int displayDuration; // @synthesize displayDuration=_displayDuration;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;

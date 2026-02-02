@@ -14,7 +14,6 @@
     OMCGeographicInfo *_geoInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OMCGeographicInfo *geoInfo; // @synthesize geoInfo=_geoInfo;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *materialID; // @synthesize materialID=_materialID;

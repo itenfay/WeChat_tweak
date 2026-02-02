@@ -11,7 +11,6 @@
     NSString *_audioFilePath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *audioFilePath; // @synthesize audioFilePath=_audioFilePath;
 @property(readonly, nonatomic) NSData *pcmData; // @synthesize pcmData=_pcmData;
 - (id)description;

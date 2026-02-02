@@ -15,7 +15,6 @@
     NSURL *_displayUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *displayUrl; // @synthesize displayUrl=_displayUrl;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSURL *darkURL; // @synthesize darkURL=_darkURL;

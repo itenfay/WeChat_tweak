@@ -13,7 +13,6 @@
     id <ContactsAuthorityManageAddContactFromContactsViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactsAuthorityManageAddContactFromContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ContactTagData *m_contactTagData; // @synthesize m_contactTagData=_m_contactTagData;
 - (void)reloadAuthorityDetailAddContactWithDicMultiSelect:(id)arg1 andDicExistContact:(id)arg2;

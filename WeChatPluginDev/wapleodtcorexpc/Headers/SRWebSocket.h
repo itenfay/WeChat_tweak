@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSInputStream, NSMutableArray, NSMutableData, NSMutableSet, NSOperationQueue, NSOutputStream, NSString, NSURL, NSURLRequest, SRDelegateController, SRIOConsumerPool, SRProxyConnect, SRSecurityOptions;
 @protocol OS_dispatch_data, OS_dispatch_queue, SRWebSocketDelegate;
@@ -55,7 +56,6 @@
 }
 
 + (_Bool)automaticallyNotifiesObserversOfReadyState;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SRDelegateController *delegateController; // @synthesize delegateController=_delegateController;
 @property(nonatomic) _Bool allowsUntrustedSSLCertificates; // @synthesize allowsUntrustedSSLCertificates=_allowsUntrustedSSLCertificates;
 @property(readonly, copy, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;
@@ -126,4 +126,3 @@
 @property(readonly) Class superclass;
 
 @end
-

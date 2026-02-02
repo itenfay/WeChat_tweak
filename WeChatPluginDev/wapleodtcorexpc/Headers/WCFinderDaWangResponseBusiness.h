@@ -15,7 +15,6 @@
     NSString *_appId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;
 @property(retain, nonatomic) NSString *freeFlowLogoContent; // @synthesize freeFlowLogoContent=_freeFlowLogoContent;
 @property(copy, nonatomic) NSString *freeFlowType; // @synthesize freeFlowType=_freeFlowType;

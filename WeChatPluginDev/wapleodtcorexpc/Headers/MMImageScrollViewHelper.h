@@ -16,7 +16,6 @@
     double _contentRatioY;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentRatioY; // @synthesize contentRatioY=_contentRatioY;
 @property(nonatomic) __weak id <MMImageScrollViewHelperDelegate> m_delegate; // @synthesize m_delegate;
 @property(nonatomic) _Bool noDoubleTaps; // @synthesize noDoubleTaps;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -20,7 +21,6 @@
     unsigned long long _retryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(copy, nonatomic) NSString *tmpPath; // @synthesize tmpPath=_tmpPath;
@@ -34,4 +34,3 @@
 - (id)init;
 
 @end
-

@@ -13,7 +13,6 @@
     _Bool _isMarking;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMarking; // @synthesize isMarking=_isMarking;
 @property(nonatomic) __weak UIResponder *overrideNextResponder; // @synthesize overrideNextResponder=_overrideNextResponder;
 - (void)setFrame:(struct CGRect)arg1;

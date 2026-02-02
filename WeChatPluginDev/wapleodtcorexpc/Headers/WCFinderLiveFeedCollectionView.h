@@ -24,7 +24,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool stopPlayLive; // @synthesize stopPlayLive=_stopPlayLive;
 @property(nonatomic) _Bool isInDarkMode; // @synthesize isInDarkMode=_isInDarkMode;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;

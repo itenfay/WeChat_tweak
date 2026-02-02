@@ -13,7 +13,6 @@
     NSString *_keyBufMd5;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keyBufMd5; // @synthesize keyBufMd5=_keyBufMd5;
 @property(retain, nonatomic) WCFinderLbsLifeSyncTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(retain, nonatomic) NSMutableArray *taskQueue; // @synthesize taskQueue=_taskQueue;

@@ -23,7 +23,6 @@
     MISSING_TYPE *isPreload;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)report:(int)arg1 with:(id)arg2;
 - (void)report:(int)arg1;

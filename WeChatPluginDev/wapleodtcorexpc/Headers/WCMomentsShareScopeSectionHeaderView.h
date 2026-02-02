@@ -14,7 +14,6 @@
 }
 
 + (double)heightForTitle:(id)arg1 headerViewWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void)_initViewWithWidth:(double)arg1;

@@ -20,7 +20,6 @@
     NSMutableDictionary *_tableRowDataDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tableRowDataDict; // @synthesize tableRowDataDict=_tableRowDataDict;
 @property(retain, nonatomic) NSMutableArray *tableSectionDataArr; // @synthesize tableSectionDataArr=_tableSectionDataArr;
 @property(nonatomic) int cardStatus; // @synthesize cardStatus=_cardStatus;

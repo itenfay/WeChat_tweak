@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterTextInputView, FlutterTextInputViewAccessibilityHider, NSMutableDictionary, NSString, NSTimer, UIView, UIViewController;
 @protocol FlutterIndirectScribbleDelegate, FlutterTextInputDelegate, FlutterViewResponder;
@@ -28,7 +29,6 @@
     struct CGRect _keyboardRect;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventSink; // @synthesize eventSink=_eventSink;
 @property(nonatomic) double pointerYVelocity; // @synthesize pointerYVelocity=_pointerYVelocity;
 @property(nonatomic) double previousPointerYPosition; // @synthesize previousPointerYPosition=_previousPointerYPosition;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

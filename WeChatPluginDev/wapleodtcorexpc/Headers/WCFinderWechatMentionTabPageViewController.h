@@ -13,7 +13,6 @@
     unsigned long long _selectedTab;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;
 @property(retain, nonatomic) WCFinderTabPageModel *commentTabPageModel; // @synthesize commentTabPageModel=_commentTabPageModel;
 @property(retain, nonatomic) WCFinderTabPageModel *likeTabPageModel; // @synthesize likeTabPageModel=_likeTabPageModel;

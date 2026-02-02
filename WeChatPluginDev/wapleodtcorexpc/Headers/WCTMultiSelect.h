@@ -9,7 +9,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)allMultiObjects;
 - (id)firstMultiObject;
 - (id)onResultColumns:(const void *)arg1;

@@ -13,7 +13,6 @@
     MegaVideoCommCallback *_commCallbackApi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MegaVideoCommCallback *commCallbackApi; // @synthesize commCallbackApi=_commCallbackApi;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 - (void)markStarFeed:(id)arg1 starContext:(id)arg2 commentscene:(long long)arg3 snapshotInfo:(id)arg4 error:(id *)arg5;

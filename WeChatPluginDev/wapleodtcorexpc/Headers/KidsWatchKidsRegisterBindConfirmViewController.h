@@ -15,7 +15,6 @@
     NSString *_bindedHeadImageURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bindedHeadImageURL; // @synthesize bindedHeadImageURL=_bindedHeadImageURL;
 @property(retain, nonatomic) NSString *bindedNickName; // @synthesize bindedNickName=_bindedNickName;
 @property(retain, nonatomic) KidsWatchButton *backButton; // @synthesize backButton=_backButton;

@@ -19,7 +19,6 @@
     EmoticonCellLikeButton *_webSearchButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCellLikeButton *webSearchButton; // @synthesize webSearchButton=_webSearchButton;
 @property(retain, nonatomic) UILabel *wordingLabel; // @synthesize wordingLabel=_wordingLabel;
 @property(retain, nonatomic) SightIconView *sightIconView; // @synthesize sightIconView=_sightIconView;

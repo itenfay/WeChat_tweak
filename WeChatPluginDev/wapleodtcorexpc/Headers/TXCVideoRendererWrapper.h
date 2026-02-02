@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TXCDispatchQueue, TXCDroppableDispatcher, TXCGSensor, TXCVideoRenderConfig, UIView;
 @protocol TXILocalVideoRenderer, TXILocalVideoRendererDelegate;
 
@@ -17,7 +19,6 @@
     TXCDroppableDispatcher *_dispatcher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCDroppableDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain) id <TXILocalVideoRenderer> renderer; // @synthesize renderer=_renderer;
 @property(nonatomic) __weak UIView *superView; // @synthesize superView=_superView;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

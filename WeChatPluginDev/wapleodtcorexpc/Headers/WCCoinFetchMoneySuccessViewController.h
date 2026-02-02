@@ -13,7 +13,6 @@
     EncashResultPageInfo *_pageInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EncashResultPageInfo *pageInfo; // @synthesize pageInfo=_pageInfo;
 @property(retain, nonatomic) LiveRewardIncomeBizInfo *liveIncomeBizInfo; // @synthesize liveIncomeBizInfo=_liveIncomeBizInfo;
 @property(nonatomic) _Bool fetchFromLiveStyle; // @synthesize fetchFromLiveStyle=_fetchFromLiveStyle;

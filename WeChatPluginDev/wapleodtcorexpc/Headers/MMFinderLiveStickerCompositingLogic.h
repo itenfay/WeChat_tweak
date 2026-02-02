@@ -20,7 +20,6 @@
 + (id)createStickerTransmitCompositingLogicWithTaskId:(id)arg1;
 + (id)createStickerCompositingLogic:(unsigned long long)arg1 maxStickerCount:(unsigned long long)arg2 taskId:(id)arg3;
 + (id)createStickerCompositingLogic:(unsigned long long)arg1 taskId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *stickerDictLock; // @synthesize stickerDictLock=_stickerDictLock;
 @property(retain, nonatomic) OrderedDictionary *compositingStickerDict; // @synthesize compositingStickerDict=_compositingStickerDict;
 @property(nonatomic) unsigned long long maxStickerCount; // @synthesize maxStickerCount=_maxStickerCount;

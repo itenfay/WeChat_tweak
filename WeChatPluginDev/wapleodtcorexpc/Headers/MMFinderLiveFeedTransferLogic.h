@@ -15,7 +15,6 @@
     MMFinderLiveFeedDataLogic *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveFeedDataLogic *context; // @synthesize context=_context;
 @property(retain, nonatomic) MMFinderLiveFeedTransferOutData *out; // @synthesize out=_out;
 @property(retain, nonatomic) MMFinderLiveFeedTransferInData *in; // @synthesize in=_in;

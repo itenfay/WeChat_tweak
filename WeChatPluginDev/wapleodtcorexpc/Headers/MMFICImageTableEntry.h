@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -16,7 +17,6 @@
 }
 
 + (unsigned long long)entryLengthWithImageLength:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long imageLength; // @synthesize imageLength=_imageLength;
 - (_Bool)flush;
 - (void)executeBlockOnDealloc:(CDUnknownBlockType)arg1;
@@ -28,4 +28,3 @@
 @property(readonly, nonatomic) void *imageAddress;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, WCFinderCGIProfile;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)pageInfoFor:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCGIProfile *cgiProfile; // @synthesize cgiProfile=_cgiProfile;
 @property(copy, nonatomic) CDUnknownBlockType storeExtInfoAction; // @synthesize storeExtInfoAction=_storeExtInfoAction;
 @property(retain, nonatomic) NSArray *overviewCaches; // @synthesize overviewCaches=_overviewCaches;
@@ -27,4 +27,3 @@
 @property(retain, nonatomic) Class pageClass; // @synthesize pageClass=_pageClass;
 
 @end
-

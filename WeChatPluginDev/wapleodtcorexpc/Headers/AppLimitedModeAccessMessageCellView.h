@@ -12,7 +12,6 @@
     UILabel *m_descLabel;
 }
 
-- (void).cxx_destruct;
 - (void)updateThumbImage;
 - (void)onTouchUpInside;
 - (id)operationMenuItems;

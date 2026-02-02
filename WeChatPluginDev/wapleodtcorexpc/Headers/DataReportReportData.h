@@ -13,7 +13,6 @@
     NSMutableDictionary *m_params;
 }
 
-- (void).cxx_destruct;
 - (id)toString;
 - (void)putParams:(id)arg1;
 - (void)putParam:(id)arg1 withValue:(id)arg2;

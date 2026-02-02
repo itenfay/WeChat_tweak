@@ -12,7 +12,6 @@
     NSMutableArray *_m_dataSource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_dataSource; // @synthesize m_dataSource=_m_dataSource;
 - (long long)count;
 - (id)dataAtSection:(long long)arg1;

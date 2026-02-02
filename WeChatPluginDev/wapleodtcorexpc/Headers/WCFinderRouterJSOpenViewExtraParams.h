@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFrontEndPreviewView;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _feedStopPlayCallBack;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType feedStopPlayCallBack; // @synthesize feedStopPlayCallBack=_feedStopPlayCallBack;
 @property(copy, nonatomic) CDUnknownBlockType popFeedViewCallBack; // @synthesize popFeedViewCallBack=_popFeedViewCallBack;
 @property(nonatomic) _Bool forceIgnoreFinderAuthBlock; // @synthesize forceIgnoreFinderAuthBlock=_forceIgnoreFinderAuthBlock;
 @property(retain, nonatomic) MMFinderLiveFrontEndPreviewView *previewView; // @synthesize previewView=_previewView;
 
 @end
-

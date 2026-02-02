@@ -24,7 +24,6 @@
     long long _scanBlackCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long scanBlackCount; // @synthesize scanBlackCount=_scanBlackCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *modelQueue; // @synthesize modelQueue=_modelQueue;
 @property(retain, nonatomic) CameraScanCombineModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, WAContactGetter;
 
@@ -13,7 +14,6 @@
     NSMutableDictionary *_cdnUploadQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cdnUploadQueue; // @synthesize cdnUploadQueue=_cdnUploadQueue;
 @property(retain, nonatomic) WAContactGetter *contactGetter; // @synthesize contactGetter=_contactGetter;
 - (void)OnCdnUpload:(id)arg1;
@@ -32,4 +32,3 @@
 - (void)generateAppMsgFromAppData:(id)arg1 toUserName:(id)arg2 fromAppId:(id)arg3 translateLinkExtraInfo:(id)arg4 callback:(CDUnknownBlockType)arg5;
 
 @end
-

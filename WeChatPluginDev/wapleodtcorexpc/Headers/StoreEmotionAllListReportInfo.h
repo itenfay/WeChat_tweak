@@ -14,7 +14,6 @@
     long long _pageScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long pageScene; // @synthesize pageScene=_pageScene;
 @property(retain, nonatomic) NSString *designerUin; // @synthesize designerUin=_designerUin;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;

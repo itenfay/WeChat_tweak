@@ -12,7 +12,6 @@
     UIColor *_backgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (id)initWithBackgroundColor:(id)arg1;
 

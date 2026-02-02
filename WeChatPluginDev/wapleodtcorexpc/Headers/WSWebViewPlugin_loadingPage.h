@@ -12,7 +12,6 @@
     WSDotLoadingView *_WSDotLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSDotLoadingView *WSDotLoadingView; // @synthesize WSDotLoadingView=_WSDotLoadingView;
 @property(retain, nonatomic) UIImageView *headView; // @synthesize headView=_headView;
 @property(retain, nonatomic) UIScrollView *loadingContainerView; // @synthesize loadingContainerView=_loadingContainerView;

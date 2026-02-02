@@ -32,7 +32,6 @@
     NSMutableDictionary *_pageOutDynamicParamsCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pageOutDynamicParamsCache; // @synthesize pageOutDynamicParamsCache=_pageOutDynamicParamsCache;
 @property(retain, nonatomic) NSMutableDictionary *sessionOutDynamicParamsCache; // @synthesize sessionOutDynamicParamsCache=_sessionOutDynamicParamsCache;
 @property(retain, nonatomic) NSMutableDictionary *bizOutDynamicParamsCache; // @synthesize bizOutDynamicParamsCache=_bizOutDynamicParamsCache;

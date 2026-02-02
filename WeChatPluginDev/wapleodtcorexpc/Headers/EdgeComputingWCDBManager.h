@@ -10,7 +10,6 @@
     WCTDatabase *edgeDatabase;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)queryRowNum:(id)arg1;
 - (id)querySQL:(id)arg1;
 - (_Bool)execuSQL:(id)arg1;

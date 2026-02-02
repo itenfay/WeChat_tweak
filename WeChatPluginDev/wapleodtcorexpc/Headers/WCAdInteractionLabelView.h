@@ -19,7 +19,6 @@
 }
 
 + (struct CGSize)calcViewSizeForLabelInfo:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdInteractionRollingLabelView *rollingLabelView; // @synthesize rollingLabelView=_rollingLabelView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) PAGView *iconView; // @synthesize iconView=_iconView;

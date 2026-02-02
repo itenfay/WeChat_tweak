@@ -40,7 +40,6 @@
 
 + (long long)transferPbSingStateToSingState:(int)arg1;
 + (int)transferSingStateToPbSingState:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDirty; // @synthesize isDirty=_isDirty;
 @property(nonatomic) unsigned long long currSingerSelfVolumn; // @synthesize currSingerSelfVolumn=_currSingerSelfVolumn;
 @property(nonatomic) int userStatusFlag; // @synthesize userStatusFlag=_userStatusFlag;

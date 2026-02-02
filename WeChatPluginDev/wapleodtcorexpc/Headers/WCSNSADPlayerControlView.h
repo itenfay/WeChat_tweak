@@ -13,7 +13,6 @@
     struct CGSize _iconSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCSNSADPlayerControlViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SightIconView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;

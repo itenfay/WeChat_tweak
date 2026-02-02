@@ -10,7 +10,6 @@
     MMFinderLiveFeedStreamProductStyleView *_couponStyleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedStreamProductStyleView *couponStyleView; // @synthesize couponStyleView=_couponStyleView;
 - (void)onLiveFeedStreamProductStyleViewClicked:(id)arg1 jump2Type:(unsigned long long)arg2 productInfo:(id)arg3;
 - (void)setTaskId:(id)arg1;

@@ -17,7 +17,6 @@
     NSMutableArray *_preloadArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *preloadArray; // @synthesize preloadArray=_preloadArray;
 @property(copy, nonatomic) NSMutableSet *feedIDs; // @synthesize feedIDs=_feedIDs;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;

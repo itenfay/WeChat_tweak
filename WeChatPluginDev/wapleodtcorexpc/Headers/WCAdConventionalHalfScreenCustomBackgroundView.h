@@ -10,7 +10,6 @@
     id <WCAdConventionalHalfScreenCustomBackgroundViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdConventionalHalfScreenCustomBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 

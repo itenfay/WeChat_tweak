@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_priority;
 + (void)PBArrayAdd_liteGameInfo;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSString *liteGameInfo; // @synthesize liteGameInfo=_liteGameInfo;
 @property(readonly, copy) NSString *description;

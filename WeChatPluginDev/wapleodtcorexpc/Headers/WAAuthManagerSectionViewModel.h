@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WxaUseUserInfoItem;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _deleteAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deleteAction; // @synthesize deleteAction=_deleteAction;
 @property(nonatomic) _Bool isEdit; // @synthesize isEdit=_isEdit;
 @property(nonatomic) _Bool isPlugin; // @synthesize isPlugin=_isPlugin;
@@ -25,4 +25,3 @@
 - (id)initWithAppId:(id)arg1 isPlugin:(_Bool)arg2 userInfoItem:(id)arg3 isEdit:(_Bool)arg4;
 
 @end
-

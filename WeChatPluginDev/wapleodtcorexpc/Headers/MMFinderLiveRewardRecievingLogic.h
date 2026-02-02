@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardComboPriorityQueue, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveResourceFetcherLegacyApiAdapter, MMLiveRewardGiftRecievingAnimationView, MMTimer, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary;
 
@@ -26,7 +27,6 @@
     MMTimer *_scheduleTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *scheduleTimer; // @synthesize scheduleTimer=_scheduleTimer;
 @property(retain, nonatomic) MMLiveResourceFetcherLegacyApiAdapter *adHocResourceDownloadMgr; // @synthesize adHocResourceDownloadMgr=_adHocResourceDownloadMgr;
 @property(retain, nonatomic) NSMutableArray *giftAnimationPlayCommandsQueue; // @synthesize giftAnimationPlayCommandsQueue=_giftAnimationPlayCommandsQueue;
@@ -110,4 +110,3 @@
 @property(readonly) Class superclass;
 
 @end
-

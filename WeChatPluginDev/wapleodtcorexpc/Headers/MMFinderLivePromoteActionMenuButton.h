@@ -11,7 +11,6 @@
 }
 
 + (double)preferWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 - (void)setTag:(long long)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;

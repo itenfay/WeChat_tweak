@@ -13,7 +13,6 @@
     NSString *m_bundleId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_bundleId; // @synthesize m_bundleId;
 @property(retain, nonatomic) NSString *m_url; // @synthesize m_url;
 

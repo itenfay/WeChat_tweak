@@ -12,7 +12,6 @@
     MMLiveCommentDataItem *_commentItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool supportDisplayStatus; // @synthesize supportDisplayStatus=_supportDisplayStatus;
 @property(retain, nonatomic) MMLiveCommentDataItem *commentItem; // @synthesize commentItem=_commentItem;
 @property(retain, nonatomic) MMLiveCommentTableViewCellFrame *cellFrame; // @synthesize cellFrame=_cellFrame;

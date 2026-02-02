@@ -22,7 +22,6 @@
     id <MMUICommonHalfScreenTipViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_viewConfigFlag; // @synthesize m_viewConfigFlag=_m_viewConfigFlag;
 @property(nonatomic) _Bool m_isDarkMode; // @synthesize m_isDarkMode=_m_isDarkMode;
 @property(nonatomic) __weak id <MMUICommonHalfScreenTipViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

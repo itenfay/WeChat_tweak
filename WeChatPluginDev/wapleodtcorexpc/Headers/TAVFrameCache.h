@@ -15,7 +15,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *dataUpdateSemaphore; // @synthesize dataUpdateSemaphore=_dataUpdateSemaphore;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
 - (void)cleanCache;

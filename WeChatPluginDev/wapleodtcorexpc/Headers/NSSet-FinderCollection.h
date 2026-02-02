@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSSet.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSSet (FinderCollection)
 - (id)groupBy:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -11,4 +12,3 @@
 - (id)finderMap:(CDUnknownBlockType)arg1;
 - (void)each:(CDUnknownBlockType)arg1;
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveRewardFreeGiftParams;
 
 @interface MMFinderLiveRewardFreeGiftCGI
@@ -12,7 +14,6 @@
     MMFinderLiveRewardFreeGiftParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRewardFreeGiftParams *params; // @synthesize params=_params;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -22,4 +23,3 @@
 - (id)initWithFinderTaskId:(id)arg1 rewardParams:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

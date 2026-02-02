@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderGameLiveWelfareCollectionViewModel, MMTimer, UICollectionView;
 
@@ -17,7 +18,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) MMFinderGameLiveWelfareCollectionViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(copy, nonatomic) CDUnknownBlockType contentWidthDidChange; // @synthesize contentWidthDidChange=_contentWidthDidChange;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

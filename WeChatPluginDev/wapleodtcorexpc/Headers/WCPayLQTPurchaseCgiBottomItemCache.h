@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_isProtoclDefaultChecked;
 + (void)PBArrayAdd_isShowProtocol;
 + (void)PBArrayAdd_autoPullUpKeyboard;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *hintOfKeyboard; // @synthesize hintOfKeyboard=_hintOfKeyboard;
 @property(retain, nonatomic) NSArray *protocolList; // @synthesize protocolList=_protocolList;
 @property(retain, nonatomic) NSString *bottomTipsWording; // @synthesize bottomTipsWording=_bottomTipsWording;

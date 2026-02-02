@@ -12,7 +12,6 @@
     unsigned long long _freqCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long freqCount; // @synthesize freqCount=_freqCount;
 @property(nonatomic) unsigned long long cost; // @synthesize cost=_cost;
 @property(retain, nonatomic) id data; // @synthesize data=_data;

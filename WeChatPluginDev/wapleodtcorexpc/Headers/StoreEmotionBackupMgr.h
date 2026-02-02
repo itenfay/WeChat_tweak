@@ -11,7 +11,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) StoreEmotionBackupLogicObject *backupLogicObject; // @synthesize backupLogicObject=_backupLogicObject;
 - (void)onStoreEmotionBackupLogicNoneedBackup;

@@ -17,7 +17,6 @@
     QPolygon *_originPolygon;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableCollideLabel; // @synthesize disableCollideLabel=_disableCollideLabel;
 @property(retain, nonatomic) QPolygon *originPolygon; // @synthesize originPolygon=_originPolygon;
 @property(copy, nonatomic) NSArray *holeStrokeIds; // @synthesize holeStrokeIds=_holeStrokeIds;

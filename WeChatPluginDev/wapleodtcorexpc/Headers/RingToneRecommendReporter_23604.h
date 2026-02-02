@@ -34,7 +34,6 @@
     RingToneDetail *_playingRingTone;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneDetail *playingRingTone; // @synthesize playingRingTone=_playingRingTone;
 @property(nonatomic) unsigned long long startPlayRingTimeStamp; // @synthesize startPlayRingTimeStamp=_startPlayRingTimeStamp;
 @property(nonatomic) unsigned long long pageKeepTimeStamp; // @synthesize pageKeepTimeStamp=_pageKeepTimeStamp;

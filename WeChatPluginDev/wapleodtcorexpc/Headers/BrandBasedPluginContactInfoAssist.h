@@ -10,7 +10,6 @@
     CContactVerifyLogic *_contactVerifyLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContactVerifyLogic *contactVerifyLogic; // @synthesize contactVerifyLogic=_contactVerifyLogic;
 - (void)contactAddContactOk:(id)arg1;
 - (void)handleOnAddContactOk:(id)arg1;

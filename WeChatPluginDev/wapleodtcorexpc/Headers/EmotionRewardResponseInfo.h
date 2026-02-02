@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_donors;
 + (void)PBArrayAdd_donorNum;
 + (void)PBArrayAdd_prices;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAllInfo; // @synthesize hasAllInfo=_hasAllInfo;
 @property(retain, nonatomic) EmotionReward *reward; // @synthesize reward=_reward;
 @property(retain, nonatomic) NSArray *donors; // @synthesize donors=_donors;

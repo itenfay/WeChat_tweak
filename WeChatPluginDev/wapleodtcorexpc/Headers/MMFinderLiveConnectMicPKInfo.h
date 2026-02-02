@@ -26,7 +26,6 @@
     id _winningConditionArguments;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int battleDuration; // @synthesize battleDuration=_battleDuration;
 @property(nonatomic) _Bool isDisableNextBattle; // @synthesize isDisableNextBattle=_isDisableNextBattle;
 @property(retain, nonatomic) id winningConditionArguments; // @synthesize winningConditionArguments=_winningConditionArguments;

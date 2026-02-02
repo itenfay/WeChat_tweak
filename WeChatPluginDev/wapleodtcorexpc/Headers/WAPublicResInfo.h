@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_checkSum;
 + (void)PBArrayAdd_pkgDownloadUrl;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int oldVersion; // @synthesize oldVersion=_oldVersion;
 @property(retain, nonatomic) NSString *pkgPatchUrl; // @synthesize pkgPatchUrl=_pkgPatchUrl;
 @property(nonatomic) unsigned int updateType; // @synthesize updateType=_updateType;

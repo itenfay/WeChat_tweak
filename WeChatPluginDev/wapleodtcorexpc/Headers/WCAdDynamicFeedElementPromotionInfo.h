@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *rightNumberBackgroundColor; // @synthesize rightNumberBackgroundColor=_rightNumberBackgroundColor;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *rightNumberColor; // @synthesize rightNumberColor=_rightNumberColor;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *rightTextColor; // @synthesize rightTextColor=_rightTextColor;

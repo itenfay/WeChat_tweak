@@ -65,7 +65,6 @@
 }
 
 + (void)reportOnCommitWithString:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int currentAuthLogType; // @synthesize currentAuthLogType=_currentAuthLogType;
 @property(nonatomic) _Bool showAccuracyAuthorizationTip; // @synthesize showAccuracyAuthorizationTip=_showAccuracyAuthorizationTip;
 @property(nonatomic) _Bool enableFullRangeSearch; // @synthesize enableFullRangeSearch=_enableFullRangeSearch;

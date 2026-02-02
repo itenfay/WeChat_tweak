@@ -17,7 +17,6 @@
     unsigned long long _EventTime_28;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long EventTime_28; // @synthesize EventTime_28=_EventTime_28;
 @property(nonatomic) unsigned int Content_27; // @synthesize Content_27=_Content_27;
 @property(copy, nonatomic) NSString *SessionId_26; // @synthesize SessionId_26=_SessionId_26;

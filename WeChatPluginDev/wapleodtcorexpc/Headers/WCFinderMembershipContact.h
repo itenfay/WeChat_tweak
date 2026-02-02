@@ -38,7 +38,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderTabTipsDSLRenderTmpl *dslRender; // @synthesize dslRender=_dslRender;
 @property(nonatomic) unsigned long long pageType; // @synthesize pageType=_pageType;
 @property(nonatomic) unsigned long long expireTime; // @synthesize expireTime=_expireTime;

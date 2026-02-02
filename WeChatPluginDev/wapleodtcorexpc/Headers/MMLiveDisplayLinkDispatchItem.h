@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink;
 
@@ -14,7 +15,6 @@
     double _beginTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
@@ -23,4 +23,3 @@
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

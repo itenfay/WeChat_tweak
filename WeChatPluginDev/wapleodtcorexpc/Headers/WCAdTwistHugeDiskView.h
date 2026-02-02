@@ -16,7 +16,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int impactTimingIndex; // @synthesize impactTimingIndex=_impactTimingIndex;
 @property(retain, nonatomic) NSArray *impactTimings; // @synthesize impactTimings=_impactTimings;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *impactFeedback; // @synthesize impactFeedback=_impactFeedback;

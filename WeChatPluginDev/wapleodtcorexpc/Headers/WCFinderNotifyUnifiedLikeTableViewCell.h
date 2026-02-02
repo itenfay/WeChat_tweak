@@ -12,7 +12,6 @@
 }
 
 + (double)getHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderDynamicRichTextView *contentTextView; // @synthesize contentTextView=_contentTextView;
 @property(nonatomic) __weak UIImageView *likeImageView; // @synthesize likeImageView=_likeImageView;
 - (void)updateNofiyCenterCellWithViewModel:(id)arg1 width:(double)arg2;

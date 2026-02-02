@@ -13,7 +13,6 @@
     NSMutableData *_dstData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *dstData; // @synthesize dstData=_dstData;
 @property(retain, nonatomic) NSMutableData *srcData; // @synthesize srcData=_srcData;
 - (id)srcDataFromVideoFrame:(id)arg1;

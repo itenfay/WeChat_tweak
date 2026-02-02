@@ -21,7 +21,6 @@
     NSString *_challenge;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *challenge; // @synthesize challenge=_challenge;
 @property(copy, nonatomic) NSDate *dataAccessExpirationDate; // @synthesize dataAccessExpirationDate=_dataAccessExpirationDate;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;

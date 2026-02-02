@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMVoipCSMainWindow, NSString, UIButton, UIImageView, UILabel, VoipAutoUpdateLabel, WACampusVoipMsg;
 
@@ -21,7 +22,6 @@
     MMVoipCSMainWindow *_notiWindow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoipCSMainWindow *notiWindow; // @synthesize notiWindow=_notiWindow;
 @property(retain, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(retain, nonatomic) UIButton *rejectButton; // @synthesize rejectButton=_rejectButton;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

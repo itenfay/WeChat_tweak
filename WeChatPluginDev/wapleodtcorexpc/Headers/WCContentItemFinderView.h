@@ -30,7 +30,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needSilencePlay; // @synthesize needSilencePlay=_needSilencePlay;
 @property(retain, nonatomic) NewLifeShareCoverImageView *newlifeShareView; // @synthesize newlifeShareView=_newlifeShareView;
 @property(retain, nonatomic) MMUIButton *memberFlagButton; // @synthesize memberFlagButton=_memberFlagButton;

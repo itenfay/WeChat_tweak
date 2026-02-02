@@ -17,7 +17,6 @@
 }
 
 + (long long)compareEnterpriseSession:(id)arg1 right:(id)arg2;
-- (void).cxx_destruct;
 - (id)isUserHasSpecalSessionInfo:(id)arg1;
 - (_Bool)isMessageShouldHandled:(id)arg1;
 - (_Bool)isUserShouldHandled:(id)arg1;

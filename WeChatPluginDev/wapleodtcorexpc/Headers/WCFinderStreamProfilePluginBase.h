@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderStreamProfileHeadData;
 @protocol WCFinderStreamProfilePluginDelegate;
@@ -15,7 +16,6 @@
 }
 
 + (_Bool)pluginEnable:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderStreamProfilePluginDelegate> pluginDelegate; // @synthesize pluginDelegate=_pluginDelegate;
 @property(retain, nonatomic) WCFinderStreamProfileHeadData *headData; // @synthesize headData=_headData;
 - (void)onFetchDataFinish:(_Bool)arg1 cgiProfile:(id)arg2;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

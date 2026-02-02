@@ -15,7 +15,6 @@
     unsigned long long _iconOption;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long iconOption; // @synthesize iconOption=_iconOption;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 @property(retain, nonatomic) NSString *iconDescription; // @synthesize iconDescription=_iconDescription;

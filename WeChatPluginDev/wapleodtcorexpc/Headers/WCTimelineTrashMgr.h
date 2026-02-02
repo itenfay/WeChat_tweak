@@ -14,7 +14,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enable; // @synthesize enable=_enable;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSMutableDictionary *exposeMap; // @synthesize exposeMap=_exposeMap;

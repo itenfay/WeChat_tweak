@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (const void *)outputSamples;
 - (void)reset;
 - (void)updateWithPCMData:(const float *)arg1 length:(unsigned long long)arg2;

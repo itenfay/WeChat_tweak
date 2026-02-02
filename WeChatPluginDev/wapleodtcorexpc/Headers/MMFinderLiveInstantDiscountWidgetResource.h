@@ -14,7 +14,6 @@
     PAGFile *_done;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGFile *done; // @synthesize done=_done;
 @property(retain, nonatomic) PAGFile *add; // @synthesize add=_add;
 @property(retain, nonatomic) PAGFile *enter; // @synthesize enter=_enter;

@@ -21,7 +21,6 @@
     struct CGSize _outputSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize outputSize; // @synthesize outputSize=_outputSize;
 @property(nonatomic) char *outputBytes; // @synthesize outputBytes=_outputBytes;
 @property(nonatomic) struct __CVBuffer *renderTexture; // @synthesize renderTexture=_renderTexture;

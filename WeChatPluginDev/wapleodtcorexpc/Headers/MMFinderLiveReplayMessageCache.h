@@ -18,7 +18,6 @@
     MMFinderLiveReplayMessagePage *_leastRecentlyUsedPage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNotPrependInfo; // @synthesize isNotPrependInfo=_isNotPrependInfo;
 @property(retain, nonatomic) MMFinderLiveReplayMessagePage *leastRecentlyUsedPage; // @synthesize leastRecentlyUsedPage=_leastRecentlyUsedPage;
 @property(retain, nonatomic) MMFinderLiveReplayMessagePage *mostRecentlyUsedPage; // @synthesize mostRecentlyUsedPage=_mostRecentlyUsedPage;

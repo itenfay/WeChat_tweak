@@ -19,7 +19,6 @@
 }
 
 + (void)applyPAGImage:(id)arg1 forIndex:(unsigned long long)arg2 tmpl:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak TingPAGImageView *bindPagPlayer; // @synthesize bindPagPlayer=_bindPagPlayer;
 @property(retain, nonatomic) NSMutableArray *arrCoverUrl; // @synthesize arrCoverUrl=_arrCoverUrl;
 @property(retain, nonatomic) PAGFile *tmplFile; // @synthesize tmplFile=_tmplFile;

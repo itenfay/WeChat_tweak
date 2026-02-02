@@ -18,7 +18,6 @@
     MMUIActivityIndicatorView *_activityIndicatorView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bScrollViewAnimating; // @synthesize bScrollViewAnimating=_bScrollViewAnimating;
 @property(retain, nonatomic) MMUIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) UIScrollView *backgroundScrollView; // @synthesize backgroundScrollView=_backgroundScrollView;

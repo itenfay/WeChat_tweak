@@ -10,7 +10,6 @@
     UIImageView *m_donorsNumView;
 }
 
-- (void).cxx_destruct;
 - (void)updateDonorNum:(unsigned int)arg1;
 - (void)initViewWithStoreItem:(id)arg1;
 - (id)initWithStoreItem:(id)arg1;

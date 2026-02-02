@@ -17,7 +17,6 @@
     NSMutableArray *_lineViews;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDirty; // @synthesize isDirty=_isDirty;
 @property(retain, nonatomic) NSMutableArray *lineViews; // @synthesize lineViews=_lineViews;
 @property(nonatomic) double separatorPaddingEnd; // @synthesize separatorPaddingEnd=_separatorPaddingEnd;

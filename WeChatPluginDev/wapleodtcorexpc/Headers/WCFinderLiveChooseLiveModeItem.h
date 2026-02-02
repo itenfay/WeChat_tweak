@@ -17,7 +17,6 @@
     NSString *_subTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;

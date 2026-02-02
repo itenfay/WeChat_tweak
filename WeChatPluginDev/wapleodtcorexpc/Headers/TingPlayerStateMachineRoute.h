@@ -14,7 +14,6 @@
     NSArray *_events;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
 @property(nonatomic) int destination; // @synthesize destination=_destination;
 @property(nonatomic) int source; // @synthesize source=_source;

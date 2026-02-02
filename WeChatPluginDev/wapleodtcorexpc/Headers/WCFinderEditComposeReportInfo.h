@@ -21,7 +21,6 @@
     NSMutableArray *_audioSessionStatus;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *audioSessionStatus; // @synthesize audioSessionStatus=_audioSessionStatus;
 @property(nonatomic) unsigned long long autoRetryExportTimes; // @synthesize autoRetryExportTimes=_autoRetryExportTimes;
 @property(nonatomic) _Bool keepsProcessInBackground; // @synthesize keepsProcessInBackground=_keepsProcessInBackground;

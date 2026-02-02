@@ -25,7 +25,6 @@
     MISSING_TYPE *attachChangeCallback;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (void)resize;

@@ -17,7 +17,6 @@
     CameraScanGoodsJSAPIInfo *_jsapiInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CameraScanGoodsJSAPIInfo *jsapiInfo; // @synthesize jsapiInfo=_jsapiInfo;
 @property(retain, nonatomic) CameraScanGoodsAdInfo *adInfo; // @synthesize adInfo=_adInfo;
 @property(copy, nonatomic) NSString *descStr; // @synthesize descStr=_descStr;

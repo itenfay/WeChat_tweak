@@ -13,7 +13,6 @@
     NSMutableArray *_contentVMS;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *contentVMS; // @synthesize contentVMS=_contentVMS;
 @property(retain, nonatomic) FinderStreamDivider *divider; // @synthesize divider=_divider;
 - (id)init;

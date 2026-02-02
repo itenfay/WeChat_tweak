@@ -21,7 +21,6 @@
 }
 
 + (double)heightOfLockView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cellsInOrder; // @synthesize cellsInOrder=_cellsInOrder;
 @property(retain, nonatomic) NSMutableArray *finalLines; // @synthesize finalLines=_finalLines;
 @property(retain, nonatomic) NSMutableDictionary *drawnLines; // @synthesize drawnLines=_drawnLines;

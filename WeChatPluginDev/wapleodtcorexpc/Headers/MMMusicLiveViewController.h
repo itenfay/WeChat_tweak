@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, ForwardMessageLogicController, MMMsgCommonTipsView, MMMusicDotMVDataSource, MMMusicFavHandler, MMMusicForwardHandler, MMMusicInfo, MMMusicLiveCommentModel, MMMusicLiveCommentView, MMMusicLiveInputView, MMMusicLiveLyricDisplayView, MMMusicLiveMVAuthorInfoView, MMMusicLiveMusicOperationView, MMMusicLiveSendLocationBubbleView, MMMusicLiveVCTopBarView, MMMusicLyricsViewController, MMMusicMVPostingStateView, MMMusicOpenThirdAppHelper, MMMusicSetStatusBubbleView, MMMusicVideoImageDownloader, MMScrollActionSheet, MMUIActivityIndicatorView, MMUIButton, NSString, SendAppMsgHandler, UIButton, UILabel, UIView, WCLocationInfo, WCUIAlertView;
 @protocol MMMusicLiveViewControllerDelegate;
 
@@ -72,7 +74,6 @@
 }
 
 + (id)logStr:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
 @property(retain, nonatomic) MMScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;
 @property(retain, nonatomic) NSString *jumpToThirdAppItemTitle; // @synthesize jumpToThirdAppItemTitle=_jumpToThirdAppItemTitle;
@@ -307,4 +308,3 @@
 @property(readonly) Class superclass;
 
 @end
-

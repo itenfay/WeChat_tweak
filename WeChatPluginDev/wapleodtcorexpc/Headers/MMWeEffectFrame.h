@@ -24,7 +24,6 @@
     struct CGRect _normalizeFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize faceTrackScaledSize; // @synthesize faceTrackScaledSize=_faceTrackScaledSize;
 @property(nonatomic) int faceTrackRet; // @synthesize faceTrackRet=_faceTrackRet;
 @property(nonatomic) struct CGRect normalizeFrame; // @synthesize normalizeFrame=_normalizeFrame;

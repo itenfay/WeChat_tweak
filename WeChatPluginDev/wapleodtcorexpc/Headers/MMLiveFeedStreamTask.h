@@ -33,7 +33,6 @@
 }
 
 + (void)filterNotSupportMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatReporter; // @synthesize extStatReporter=_extStatReporter;
 @property(retain, nonatomic) NSMutableDictionary *exposeModelDict; // @synthesize exposeModelDict=_exposeModelDict;
 @property(retain, nonatomic) MMFinderJoinLiveContext *joinLiveContext; // @synthesize joinLiveContext=_joinLiveContext;

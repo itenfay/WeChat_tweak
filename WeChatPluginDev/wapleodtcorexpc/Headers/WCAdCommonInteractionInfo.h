@@ -17,7 +17,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double triggerGForce; // @synthesize triggerGForce=_triggerGForce;
 @property(nonatomic) double actionDelay; // @synthesize actionDelay=_actionDelay;
 @property(nonatomic) double actionPosition; // @synthesize actionPosition=_actionPosition;

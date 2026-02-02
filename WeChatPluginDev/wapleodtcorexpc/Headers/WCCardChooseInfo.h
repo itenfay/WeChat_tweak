@@ -25,7 +25,6 @@
     NSString *_cardId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int genType; // @synthesize genType=_genType;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 @property(retain, nonatomic) NSString *invoiceStatus; // @synthesize invoiceStatus=_invoiceStatus;

@@ -12,7 +12,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *redeemImageView; // @synthesize redeemImageView=_redeemImageView;
 @property(retain, nonatomic) UIView *redeemBackgroundView; // @synthesize redeemBackgroundView=_redeemBackgroundView;

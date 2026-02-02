@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMAlbumDataProviderForPHAssetFramework : NSObject
 {
@@ -17,4 +18,3 @@
 + (void)AllMMAlbumsForPHFrameworkWith:(CDUnknownBlockType)arg1 errorBlock:(CDUnknownBlockType)arg2 options:(id)arg3 callbackOnMainThread:(_Bool)arg4;
 
 @end
-

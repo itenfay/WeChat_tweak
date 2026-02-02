@@ -12,7 +12,6 @@
     int m_eWCAddressGetAddressControlLogicSituation;
 }
 
-- (void).cxx_destruct;
 - (void)OnPreFinishedWCAddressLogic:(id)arg1 waitUntilDone:(_Bool *)arg2;
 - (void)OnGetLatestAddress:(id)arg1 UserName:(id)arg2 NickName:(id)arg3 Error:(id)arg4;
 - (void)onWCBaseLogicDidStop:(unsigned int)arg1;

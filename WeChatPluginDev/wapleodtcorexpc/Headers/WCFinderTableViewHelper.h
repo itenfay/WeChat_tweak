@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderTableViewHelper : NSObject
 {
@@ -22,4 +23,3 @@
 + (void)tableViewRegisterCell:(id)arg1;
 
 @end
-

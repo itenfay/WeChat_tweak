@@ -16,7 +16,6 @@
     WSWebNativeVideoPlayerLogic *_logic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResumeWhenCallingPlayIfNeeded; // @synthesize shouldResumeWhenCallingPlayIfNeeded=_shouldResumeWhenCallingPlayIfNeeded;
 @property(retain, nonatomic) WSWebNativeVideoPlayerLogic *logic; // @synthesize logic=_logic;
 @property(readonly, nonatomic) __weak id <WSWebNativeVideoPlayerLogicDelegate> delegate; // @synthesize delegate=_delegate;

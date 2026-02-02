@@ -10,7 +10,6 @@
     GCTagLineView *_tagLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCTagLineView *tagLineView; // @synthesize tagLineView=_tagLineView;
 - (id)verticalAlignArrary;
 - (_Bool)supportStickTop;

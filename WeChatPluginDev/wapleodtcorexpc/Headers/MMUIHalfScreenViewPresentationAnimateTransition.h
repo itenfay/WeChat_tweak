@@ -18,7 +18,6 @@
     MMUIHalfScreenViewController *_presentedController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIHalfScreenViewController *presentedController; // @synthesize presentedController=_presentedController;
 @property(nonatomic) __weak MMUIHalfScreenViewPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(nonatomic) double presentedHeight; // @synthesize presentedHeight=_presentedHeight;

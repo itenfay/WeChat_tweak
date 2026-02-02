@@ -10,7 +10,6 @@
     AdPushMsgDBMgr *_dbMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AdPushMsgDBMgr *dbMgr; // @synthesize dbMgr=_dbMgr;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)onServiceClearData;

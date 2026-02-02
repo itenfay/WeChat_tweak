@@ -21,7 +21,6 @@
     WAPageFlowSessionInfo *_currentSessionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAPageFlowSessionInfo *currentSessionInfo; // @synthesize currentSessionInfo=_currentSessionInfo;
 @property(retain, nonatomic) WAPageFlowAppInfo *currentAppInfo; // @synthesize currentAppInfo=_currentAppInfo;
 - (id)genQuery:(id)arg1;

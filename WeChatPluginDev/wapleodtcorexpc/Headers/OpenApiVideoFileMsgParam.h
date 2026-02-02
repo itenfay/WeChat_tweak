@@ -14,7 +14,6 @@
     NSString *_videoCompressParams;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoCompressParams; // @synthesize videoCompressParams=_videoCompressParams;
 @property(nonatomic) long long maxVideoTime; // @synthesize maxVideoTime=_maxVideoTime;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

@@ -86,7 +86,6 @@
     ForeignHbCurrencyTips *_m_currencyTips;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableSetStatus; // @synthesize enableSetStatus=_enableSetStatus;
 @property(retain, nonatomic) ForeignHbCurrencyTips *m_currencyTips; // @synthesize m_currencyTips=_m_currencyTips;
 @property(retain, nonatomic) NSString *m_nsForeignAmountDesc; // @synthesize m_nsForeignAmountDesc=_m_nsForeignAmountDesc;

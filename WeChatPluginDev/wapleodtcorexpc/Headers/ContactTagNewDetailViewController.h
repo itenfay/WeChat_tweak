@@ -26,7 +26,6 @@
     ContactsSearchController *_searchController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactsSearchController *searchController; // @synthesize searchController=_searchController;
 @property(nonatomic) _Bool isRemovingMember; // @synthesize isRemovingMember=_isRemovingMember;
 @property(nonatomic) __weak MMUIViewController *selectContactViewController; // @synthesize selectContactViewController=_selectContactViewController;

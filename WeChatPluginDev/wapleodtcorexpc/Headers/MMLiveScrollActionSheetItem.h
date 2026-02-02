@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage;
 
@@ -28,7 +29,6 @@
     CDUnknownBlockType _action;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *accessibilityLabelWording; // @synthesize accessibilityLabelWording=_accessibilityLabelWording;
 @property(nonatomic) long long subTitleMaxLine; // @synthesize subTitleMaxLine=_subTitleMaxLine;
@@ -49,4 +49,3 @@
 - (id)init;
 
 @end
-

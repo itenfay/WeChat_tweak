@@ -20,7 +20,6 @@
     GetProfileInfoResponse_ProfilePageInfo *_pageInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetProfileInfoResponse_ProfilePageInfo *pageInfo; // @synthesize pageInfo=_pageInfo;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UIImageView *playIconView; // @synthesize playIconView=_playIconView;

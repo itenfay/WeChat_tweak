@@ -10,7 +10,6 @@
     NSMutableSet *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *items; // @synthesize items=_items;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

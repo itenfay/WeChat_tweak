@@ -11,7 +11,6 @@
     NSMutableArray *_arrPillarsB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrPillarsB; // @synthesize arrPillarsB=_arrPillarsB;
 @property(retain, nonatomic) NSMutableArray *arrPillarsA; // @synthesize arrPillarsA=_arrPillarsA;
 - (void)configPillarsWithPeakPower:(float)arg1;

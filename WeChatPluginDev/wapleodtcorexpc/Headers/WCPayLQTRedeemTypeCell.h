@@ -22,7 +22,6 @@
     id <WCPayLQTRedeemTypeCellDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayLQTRedeemTypeCellDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(nonatomic) _Bool m_defaultSelected; // @synthesize m_defaultSelected=_m_defaultSelected;
 @property(nonatomic) _Bool m_highlight; // @synthesize m_highlight=_m_highlight;

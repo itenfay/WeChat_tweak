@@ -12,7 +12,6 @@
     UIImageView *_headImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *headImageView; // @synthesize headImageView=_headImageView;
 - (void)updateWitCellViewModel:(id)arg1;
 - (void)setUpUI;

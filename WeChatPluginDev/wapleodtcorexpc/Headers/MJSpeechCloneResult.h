@@ -11,7 +11,6 @@
     NSDictionary *_extraInfos;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *extraInfos; // @synthesize extraInfos=_extraInfos;
 @property(readonly, nonatomic) NSString *roleID; // @synthesize roleID=_roleID;
 - (id)description;

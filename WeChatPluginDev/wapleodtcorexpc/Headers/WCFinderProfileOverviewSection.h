@@ -22,7 +22,6 @@
 + (id)nameForSecType:(long long)arg1;
 + (long long)mapTabInfoType:(unsigned int)arg1;
 + (id)sectionWithType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showAllButton; // @synthesize showAllButton=_showAllButton;
 @property(retain, nonatomic) NSDictionary *layoutMap; // @synthesize layoutMap=_layoutMap;
 @property(retain, nonatomic) NSArray *layouts; // @synthesize layouts=_layouts;

@@ -24,7 +24,6 @@
 }
 
 + (_Bool)validateStartPoints:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 @property(nonatomic) _Bool drawn; // @synthesize drawn=_drawn;
 @property(nonatomic) __weak id <QOverlayProtocol> containerDelegate; // @synthesize containerDelegate=_containerDelegate;

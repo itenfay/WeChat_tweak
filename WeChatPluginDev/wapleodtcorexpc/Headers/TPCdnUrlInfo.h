@@ -15,7 +15,6 @@
     NSString *_errorStr;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *errorStr; // @synthesize errorStr=_errorStr;
 @property(readonly, nonatomic) NSString *cdnIp; // @synthesize cdnIp=_cdnIp;
 @property(readonly, nonatomic) NSString *uIp; // @synthesize uIp=_uIp;

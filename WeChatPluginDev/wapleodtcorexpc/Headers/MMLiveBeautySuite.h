@@ -24,7 +24,6 @@
 
 + (id)equivalentSuiteIdForLegacyType:(unsigned long long)arg1;
 + (id)suiteInJsonDictionary:(id)arg1 fromLocalDirectory:(id)arg2 badges:(id)arg3 isLowSpecDevice:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(retain, nonatomic) NSString *resourcesPath; // @synthesize resourcesPath=_resourcesPath;
 @property(retain, nonatomic) MMLiveBeautyBadgeCollection *itemBadges; // @synthesize itemBadges=_itemBadges;

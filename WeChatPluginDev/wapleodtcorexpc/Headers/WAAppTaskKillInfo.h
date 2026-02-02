@@ -14,7 +14,6 @@
     unsigned long long _killTimeStampInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long killTimeStampInMs; // @synthesize killTimeStampInMs=_killTimeStampInMs;
 @property(nonatomic) unsigned int killReason; // @synthesize killReason=_killReason;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;

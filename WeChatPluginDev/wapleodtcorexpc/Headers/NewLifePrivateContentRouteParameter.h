@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _didEnterCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didEnterCallback; // @synthesize didEnterCallback=_didEnterCallback;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 - (id)description;
 
 @end
-

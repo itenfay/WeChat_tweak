@@ -21,7 +21,6 @@
 
 + (_Bool)isCommentValid:(id)arg1;
 + (id)createBarrageDataItemFromComment:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int deleteFlag; // @synthesize deleteFlag=_deleteFlag;
 @property(nonatomic) unsigned long long relationType; // @synthesize relationType=_relationType;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;

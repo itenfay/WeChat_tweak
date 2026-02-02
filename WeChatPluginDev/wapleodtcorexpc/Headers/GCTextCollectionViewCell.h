@@ -18,7 +18,6 @@
 + (void)onCalculatLayoutInfo:(id)arg1;
 + (id)centerTipTextLayoutWithMarginInsets:(struct UIEdgeInsets)arg1;
 + (id)textLayoutInfoForTextCellModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *sysTitleLabel; // @synthesize sysTitleLabel=_sysTitleLabel;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 @property(retain, nonatomic) NSMutableDictionary *linkJumpInfoDict; // @synthesize linkJumpInfoDict=_linkJumpInfoDict;

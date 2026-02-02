@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_idx;
 + (void)PBArrayAdd_msgId;
 + (void)PBArrayAdd_bizUin;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *audioTitle; // @synthesize audioTitle=_audioTitle;
 @property(copy, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(nonatomic) long long audioPos; // @synthesize audioPos=_audioPos;

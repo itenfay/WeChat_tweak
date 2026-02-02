@@ -10,7 +10,6 @@
     PreEnterShowWCOpenServiceConfig *_configObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PreEnterShowWCOpenServiceConfig *configObj; // @synthesize configObj=_configObj;
 - (void)startStep;
 @property(readonly, nonatomic) _Bool isValid;

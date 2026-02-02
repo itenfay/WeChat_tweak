@@ -22,7 +22,6 @@
     MMUIButton *_otherVerifyWayBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *otherVerifyWayBtn; // @synthesize otherVerifyWayBtn=_otherVerifyWayBtn;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

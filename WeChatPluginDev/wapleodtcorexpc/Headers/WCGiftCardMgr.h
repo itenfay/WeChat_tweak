@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, WCCardCDNDownloadHelper;
 
 @interface WCGiftCardMgr
@@ -16,7 +18,6 @@
 + (unsigned long long)cleanCacheMgrMakeToClean;
 + (id)sourceTempPath;
 + (id)sourceLocalPath;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCardCDNDownloadHelper *helper; // @synthesize helper=_helper;
 @property(retain, nonatomic) NSMutableDictionary *failureDic; // @synthesize failureDic=_failureDic;
 @property(retain, nonatomic) NSMutableDictionary *successDic; // @synthesize successDic=_successDic;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

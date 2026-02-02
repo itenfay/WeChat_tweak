@@ -12,7 +12,6 @@
     NSArray *_promotingViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *promotingViews; // @synthesize promotingViews=_promotingViews;
 @property(retain, nonatomic) MMLiveColorfulLabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) MMLiveColorfulLabel *titleLabel; // @synthesize titleLabel=_titleLabel;

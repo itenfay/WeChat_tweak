@@ -19,7 +19,6 @@
 + (id)xmContactDatasFromContacts:(id)arg1;
 + (id)contactsFromXMContacts:(id)arg1;
 + (id)contactFromXMContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uin; // @synthesize uin;
 @property(retain, nonatomic) NSString *addr; // @synthesize addr;
 @property(retain, nonatomic) NSString *name; // @synthesize name;

@@ -11,7 +11,6 @@
     _Bool _useEmbedMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useEmbedMode; // @synthesize useEmbedMode=_useEmbedMode;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

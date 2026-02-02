@@ -15,7 +15,6 @@
     MMLiveStorageCleanupPinningToken *_songResourcesPinningToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *songResourcesPinningToken; // @synthesize songResourcesPinningToken=_songResourcesPinningToken;
 @property(retain, nonatomic) MMFinderLiveKSKitMusicSong *songData; // @synthesize songData=_songData;
 @property(retain, nonatomic) id <MMLiveUniqueTaskId> taskId; // @synthesize taskId=_taskId;

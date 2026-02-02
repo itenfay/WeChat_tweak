@@ -14,7 +14,6 @@
     NSMutableArray *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) long long firstIndex; // @synthesize firstIndex=_firstIndex;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;

@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveConnectMicPkSelectionModel;
 
@@ -12,4 +13,3 @@
 - (void)initiateSelection;
 - (void)updateWithModel:(MMFinderLiveConnectMicPkSelectionModel *)arg1;
 @end
-

@@ -20,7 +20,6 @@
     UIView<FavPlayerViewProtocol> *_playerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<FavPlayerViewProtocol> *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) SimpleImgInfo *imgInfo; // @synthesize imgInfo=_imgInfo;
 @property(nonatomic) __weak id <MMFullScreenItemViewDelegate> delegate; // @synthesize delegate=_delegate;

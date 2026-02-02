@@ -13,7 +13,6 @@
     id <MMTextFloatBottomToolViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMTextFloatBottomToolViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onDetailBtnClicked;
 - (void)layoutSubviews;

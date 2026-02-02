@@ -18,7 +18,6 @@
     MMLiveTask<MMLiveEnergyControllerDelegate> *_liveTaskDelegate;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MMLiveTask<MMLiveEnergyControllerDelegate> *liveTaskDelegate; // @synthesize liveTaskDelegate=_liveTaskDelegate;
 - (void)BlurPowerMode_evaluateAdjustParamLevel:(int *)arg1;
 - (void)Gift_evaluateFullScreenGiftDisplaySpacingTimeInterval:(double *)arg1;

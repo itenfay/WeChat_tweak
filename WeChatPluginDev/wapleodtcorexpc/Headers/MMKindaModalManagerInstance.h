@@ -13,7 +13,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *modals; // @synthesize modals=_modals;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShown:(id)arg1;

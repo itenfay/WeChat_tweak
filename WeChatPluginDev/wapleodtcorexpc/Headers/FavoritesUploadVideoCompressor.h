@@ -10,7 +10,6 @@
     NSMutableSet *m_currentItemCompressingVideoSet;
 }
 
-- (void).cxx_destruct;
 - (void)onFavVideoCompressFinish:(id)arg1 isSuccess:(_Bool)arg2;
 - (void)configCompressedVideosInDataList:(id)arg1;
 - (void)findNeedCompressVideosInDataList:(id)arg1;

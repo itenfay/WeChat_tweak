@@ -21,7 +21,6 @@
     NSString *_usrFileNameListUseCodeCache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int codeCacheFormatVersion; // @synthesize codeCacheFormatVersion=_codeCacheFormatVersion;
 @property(copy, nonatomic) NSString *usrFileNameListUseCodeCache; // @synthesize usrFileNameListUseCodeCache=_usrFileNameListUseCodeCache;
 @property(copy, nonatomic) NSString *publibFileNameListUseCodeCache; // @synthesize publibFileNameListUseCodeCache=_publibFileNameListUseCodeCache;

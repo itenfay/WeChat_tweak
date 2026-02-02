@@ -15,7 +15,6 @@
     long long _displayLevel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long displayLevel; // @synthesize displayLevel=_displayLevel;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;

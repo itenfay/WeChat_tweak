@@ -12,7 +12,6 @@
     TemplateMsgSearchHelper *_searchHelper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastAutoPlayLocalID; // @synthesize lastAutoPlayLocalID=_lastAutoPlayLocalID;
 @property(nonatomic) _Bool isViewDidAppear; // @synthesize isViewDidAppear=_isViewDidAppear;
 @property(retain, nonatomic) TemplateMsgSearchHelper *searchHelper; // @synthesize searchHelper=_searchHelper;

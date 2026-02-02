@@ -11,7 +11,6 @@
     id <WCClearScheduleCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(nonatomic) __weak id <WCClearScheduleCgiDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

@@ -14,7 +14,6 @@
     NSString *_referKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *referKey; // @synthesize referKey=_referKey;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

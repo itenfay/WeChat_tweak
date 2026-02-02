@@ -12,7 +12,6 @@
     WCFinderSearchHotWord *_nextHotword;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreUpdateCell; // @synthesize ignoreUpdateCell=_ignoreUpdateCell;
 @property(retain, nonatomic) WCFinderSearchHotWord *nextHotword; // @synthesize nextHotword=_nextHotword;
 @property(retain, nonatomic) WCFinderSearchHotWord *preHotword; // @synthesize preHotword=_preHotword;

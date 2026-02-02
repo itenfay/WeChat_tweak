@@ -13,7 +13,6 @@
     EAGLContext *_eaglContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EAGLContext *eaglContext; // @synthesize eaglContext=_eaglContext;
 @property(retain, nonatomic) CIContext *context; // @synthesize context=_context;
 - (struct CGRect)getBlurRegionWithBlurSize:(struct CGSize)arg1 targetSize:(struct CGSize)arg2 originalImageSize:(struct CGSize)arg3;

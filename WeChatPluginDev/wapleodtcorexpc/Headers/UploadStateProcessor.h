@@ -13,7 +13,6 @@
     MultiMediaUploadProcessController *_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MultiMediaUploadProcessController *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)onProcessEndWithFailType:(int)arg1;

@@ -18,7 +18,6 @@
     _Bool m_isDelingBySourceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesBatchDelMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)checkFailQueue;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

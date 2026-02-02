@@ -26,7 +26,6 @@
     MMLiveCastMoreViewItem *_moreViewItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCastMoreViewItem *moreViewItem; // @synthesize moreViewItem=_moreViewItem;
 @property(retain, nonatomic) MMLiveCastDeviceViewItem *connectingDeviceViewItem; // @synthesize connectingDeviceViewItem=_connectingDeviceViewItem;
 @property(retain, nonatomic) NSMutableDictionary *cachedDeviceViewItems; // @synthesize cachedDeviceViewItems=_cachedDeviceViewItems;

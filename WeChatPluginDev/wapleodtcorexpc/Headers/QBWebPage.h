@@ -24,7 +24,6 @@
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(nonatomic) __weak id webview; // @synthesize webview=_webview;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)commonInfo;
 - (id)dateDesForDate:(id)arg1;
 - (id)JSONInfoWithDetail:(_Bool)arg1;

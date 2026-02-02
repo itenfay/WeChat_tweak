@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject, NSString, WAFileSpaceTraceLogic;
 @protocol OS_dispatch_queue;
 
@@ -14,7 +16,6 @@
     unsigned long long _maxTotalFileSize;
 }
 
-- (void).cxx_destruct;
 @property unsigned long long maxTotalFileSize; // @synthesize maxTotalFileSize=_maxTotalFileSize;
 @property unsigned long long scanPhase; // @synthesize scanPhase=_scanPhase;
 - (void)onAppTaskTerminate:(id)arg1;
@@ -69,4 +70,3 @@
 @property(readonly) Class superclass;
 
 @end
-

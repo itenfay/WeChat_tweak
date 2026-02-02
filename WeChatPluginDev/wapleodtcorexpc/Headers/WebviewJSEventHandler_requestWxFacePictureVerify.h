@@ -12,7 +12,6 @@
     NSMutableDictionary *_errorMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *errorMap; // @synthesize errorMap=_errorMap;
 @property(retain, nonatomic) JSEvent *cbEvent; // @synthesize cbEvent=_cbEvent;
 - (void)faceRecogDidFinishWithCode:(int)arg1 msg:(id)arg2 verifyResult:(id)arg3;

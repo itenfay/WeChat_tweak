@@ -11,7 +11,6 @@
     _Bool _isDismissCurrentViewController;
 }
 
-- (void).cxx_destruct;
 - (id)getCurrentController;
 - (_Bool)shouldDismissCurrentViewController;
 - (void)routeEnableTest;

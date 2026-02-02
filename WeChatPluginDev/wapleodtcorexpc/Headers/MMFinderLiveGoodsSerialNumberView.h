@@ -14,7 +14,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) unsigned long long serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;

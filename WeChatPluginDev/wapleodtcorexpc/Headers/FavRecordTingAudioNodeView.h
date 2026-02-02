@@ -10,7 +10,6 @@
     TingSharePlayButton *_playButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingSharePlayButton *playButton; // @synthesize playButton=_playButton;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
 - (void)updateContentSubview;

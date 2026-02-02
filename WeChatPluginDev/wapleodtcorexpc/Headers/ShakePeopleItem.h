@@ -58,7 +58,6 @@
 + (void)PBArrayAdd_m_nsCountry;
 + (void)PBArrayAdd_m_nsNickName;
 + (void)PBArrayAdd_m_nsUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsAntispamTicket; // @synthesize m_nsAntispamTicket=_m_nsAntispamTicket;
 @property(retain, nonatomic) NSString *m_nsHeadHDImgUrl; // @synthesize m_nsHeadHDImgUrl=_m_nsHeadHDImgUrl;
 @property(retain, nonatomic) NSString *m_headImgUrl; // @synthesize m_headImgUrl=_m_headImgUrl;

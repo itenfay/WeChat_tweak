@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, MMWebCanvasLogicJsEngine, MMWebCanvasPkgInfo, MMWebCanvasRenderJsEngine, NSMutableDictionary, NSString, WCEliminatedSlotMMKV;
 @protocol WXCustomWebViewControllerProtocol;
 
@@ -18,7 +20,6 @@
     WCEliminatedSlotMMKV *_layoutDataSlotKv;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool reflowWhenEnterForeground; // @synthesize reflowWhenEnterForeground=_reflowWhenEnterForeground;
 @property(nonatomic) _Bool isSettingUpLogicEngine; // @synthesize isSettingUpLogicEngine=_isSettingUpLogicEngine;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *layoutDataSlotKv; // @synthesize layoutDataSlotKv=_layoutDataSlotKv;
@@ -90,4 +91,3 @@
 @property(readonly) Class superclass;
 
 @end
-

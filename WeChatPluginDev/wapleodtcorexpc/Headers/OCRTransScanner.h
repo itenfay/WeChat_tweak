@@ -23,7 +23,6 @@
     CameraScannerViewWrapper *_cameraScannerWrapper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak CameraScannerViewWrapper *cameraScannerWrapper; // @synthesize cameraScannerWrapper=_cameraScannerWrapper;
 @property(retain, nonatomic) UIImage *sourceImage; // @synthesize sourceImage=_sourceImage;
 @property(nonatomic) unsigned int sessionId; // @synthesize sessionId=_sessionId;

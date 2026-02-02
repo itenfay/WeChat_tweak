@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UISwitch.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZSwitchChainModel;
 
@@ -12,4 +13,3 @@
 @property(readonly, copy, nonatomic) ZZSwitchChainModel *zz_setup;
 - (void)onValueChanged:(CDUnknownBlockType)arg1;
 @end
-

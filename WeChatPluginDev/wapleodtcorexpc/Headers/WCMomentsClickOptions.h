@@ -19,7 +19,6 @@
 }
 
 + (id)clickOptions;
-- (void).cxx_destruct;
 @property(nonatomic) long long adExposureScene; // @synthesize adExposureScene=_adExposureScene;
 @property(nonatomic) int contactInfoScene; // @synthesize contactInfoScene=_contactInfoScene;
 @property(nonatomic) long long clickScene; // @synthesize clickScene=_clickScene;

@@ -36,7 +36,6 @@
     RichTextView *_setUpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain) RichTextView *setUpButton; // @synthesize setUpButton=_setUpButton;
 @property(retain) UIView *bottomContainer; // @synthesize bottomContainer=_bottomContainer;
 @property(retain) UIView *toPhoneLine; // @synthesize toPhoneLine=_toPhoneLine;

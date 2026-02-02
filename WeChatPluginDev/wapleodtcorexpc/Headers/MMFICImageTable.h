@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FICImageTableMetadata, MMFICImageFormat, NSCountedSet, NSRecursiveLock, NSString;
 
@@ -29,7 +30,6 @@
     int tableUsedCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int tableUsedCount; // @synthesize tableUsedCount;
 - (_Bool)canImageTableRemoveLocalCache;
 - (void)cleanupFICImgInMemory;
@@ -50,4 +50,3 @@
 @property(readonly, copy, nonatomic) NSString *tableFilePath;
 
 @end
-

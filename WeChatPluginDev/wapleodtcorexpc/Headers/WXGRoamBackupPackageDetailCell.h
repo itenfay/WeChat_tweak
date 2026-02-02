@@ -15,7 +15,6 @@
     UIImageView *_arrowImg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImg; // @synthesize arrowImg=_arrowImg;
 @property(retain, nonatomic) UILabel *prefix; // @synthesize prefix=_prefix;
 @property(retain, nonatomic) UILabel *subTitleLable; // @synthesize subTitleLable=_subTitleLable;

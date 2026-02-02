@@ -18,7 +18,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSeparator; // @synthesize showSeparator=_showSeparator;
 @property(nonatomic) _Bool isSingleLineMode; // @synthesize isSingleLineMode=_isSingleLineMode;
 @property(retain, nonatomic) UIView *separateLineView; // @synthesize separateLineView=_separateLineView;

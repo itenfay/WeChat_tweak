@@ -17,7 +17,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property _Bool invaild; // @synthesize invaild=_invaild;
 @property(retain) NSString *desc; // @synthesize desc=_desc;
 @property(retain) NSString *title; // @synthesize title=_title;

@@ -14,7 +14,6 @@
     double _collectionViewWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNotScrolling; // @synthesize isNotScrolling=_isNotScrolling;
 @property(nonatomic) double collectionViewWidth; // @synthesize collectionViewWidth=_collectionViewWidth;
 @property(retain, nonatomic) NSArray *cellViewModelArr; // @synthesize cellViewModelArr=_cellViewModelArr;

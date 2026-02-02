@@ -12,7 +12,6 @@
     MJPageView *_pageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPageView *pageView; // @synthesize pageView=_pageView;
 @property(nonatomic) __weak id <MJComposingPagePanelViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)pageView:(id)arg1 didSelectTitleItemAtIndex:(long long)arg2;

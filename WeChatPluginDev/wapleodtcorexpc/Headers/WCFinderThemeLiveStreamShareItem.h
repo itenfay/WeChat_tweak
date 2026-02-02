@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_imgUrl;
 + (void)PBArrayAdd_subTitle;
 + (void)PBArrayAdd_mainTitle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *themeId; // @synthesize themeId=_themeId;
 @property(retain, nonatomic) NSString *imgUrl; // @synthesize imgUrl=_imgUrl;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;

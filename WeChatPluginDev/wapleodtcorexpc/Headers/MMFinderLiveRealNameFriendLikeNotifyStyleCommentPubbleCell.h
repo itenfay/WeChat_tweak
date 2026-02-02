@@ -10,7 +10,6 @@
     MMFinderLiveRealNameFriendLikeNotificationView *_notificationView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRealNameFriendLikeNotificationView *notificationView; // @synthesize notificationView=_notificationView;
 @property(readonly, nonatomic) MMFinderLiveRealNameFriendLikeCommentDataItem *friendLikeDataItem;
 - (void)setCellFrame:(id)arg1;

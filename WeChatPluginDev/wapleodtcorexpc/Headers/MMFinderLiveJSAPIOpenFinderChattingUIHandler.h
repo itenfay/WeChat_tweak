@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveJSAPIOpenFinderChattingUIHandler : NSObject
 {
@@ -12,4 +13,3 @@
 + (void)handleJSEvent:(id)arg1 loader:(id)arg2 navigationController:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
-

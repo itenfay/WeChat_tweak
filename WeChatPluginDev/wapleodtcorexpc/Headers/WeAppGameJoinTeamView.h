@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUIButton, MMUILabel, NSDictionary, NSString, UIView, WeAppGameJoinTeamConditionView, WeAppGameJoinTeamDescView, WeAppGameJoinTeamHistoryView, WeAppGameJoinTeamSectionView;
 @protocol WeAppGameJoinTeamViewDelegate;
 
@@ -27,7 +29,6 @@
     WeAppGameJoinTeamConditionView *_conditionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WeAppGameJoinTeamConditionView *conditionView; // @synthesize conditionView=_conditionView;
 @property(retain, nonatomic) WeAppGameJoinTeamSectionView *sectionView; // @synthesize sectionView=_sectionView;
 @property(retain, nonatomic) WeAppGameJoinTeamHistoryView *historyView; // @synthesize historyView=_historyView;
@@ -72,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

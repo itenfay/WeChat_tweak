@@ -20,7 +20,6 @@
     MISSING_TYPE *cellHeight;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight;
 @property(nonatomic) _Bool isFirstDisable; // @synthesize isFirstDisable;

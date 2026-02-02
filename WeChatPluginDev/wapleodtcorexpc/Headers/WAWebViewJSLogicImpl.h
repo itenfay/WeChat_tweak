@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, UIView;
 @protocol WAWebViewJSLogicDelegate, YYWebViewInterface;
@@ -20,7 +21,6 @@
     NSMutableSet *_lstBaseEvents;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *lstBaseEvents; // @synthesize lstBaseEvents=_lstBaseEvents;
 @property(readonly, nonatomic) _Bool directInvokeOc; // @synthesize directInvokeOc=_directInvokeOc;
 @property(readonly, nonatomic) _Bool directInvokeJs; // @synthesize directInvokeJs=_directInvokeJs;
@@ -86,4 +86,3 @@
 @property(readonly) Class superclass;
 
 @end
-

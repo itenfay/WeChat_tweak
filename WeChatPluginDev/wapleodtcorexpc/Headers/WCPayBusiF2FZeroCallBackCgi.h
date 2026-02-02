@@ -10,7 +10,6 @@
     id <WCPayBusiF2FZeroCallBackCgiDelegate> _m_cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayBusiF2FZeroCallBackCgiDelegate> m_cgiDelegate; // @synthesize m_cgiDelegate=_m_cgiDelegate;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;

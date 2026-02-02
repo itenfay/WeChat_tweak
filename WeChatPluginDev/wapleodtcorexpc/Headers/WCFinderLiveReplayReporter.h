@@ -14,7 +14,6 @@
     NSString *_reportUUID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportUUID; // @synthesize reportUUID=_reportUUID;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;

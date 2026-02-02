@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, TPDynamicStatisticParams, TPGeneralPlayFlowParams, TPPictureInPictureController, TPPlayerLayerViewContainer, TPPlayerLogContext, TPPlayerQueue, TPPlayerVideo, TPSubtitleData, TPSubtitleParserWrapper, TPSubtitleRenderModel, TPTimer, UIImageView, UIView;
 @protocol ITPAVPlayer, ITPPlayerBaseDelegate;
@@ -79,7 +80,6 @@
 }
 
 + (id)playerWithType:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPSubtitleRenderModel *subtitleRenderModel; // @synthesize subtitleRenderModel=_subtitleRenderModel;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) TPSubtitleData *lastSubtitleData; // @synthesize lastSubtitleData=_lastSubtitleData;
@@ -285,4 +285,3 @@
 @property(readonly) Class superclass;
 
 @end
-

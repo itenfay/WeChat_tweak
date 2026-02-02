@@ -190,7 +190,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WeChatIntroductionItem *introductionItem; // @synthesize introductionItem=_introductionItem;
 @property(retain, nonatomic) NSString *announcementId; // @synthesize announcementId=_announcementId;
 @property(retain, nonatomic) GroupNoticeItem *groupNoticeItem; // @synthesize groupNoticeItem=_groupNoticeItem;

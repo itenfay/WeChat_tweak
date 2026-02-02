@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString, WCCgiBlockHelper;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) WCCgiBlockHelper *cgiBlockHelper; // @synthesize cgiBlockHelper=_cgiBlockHelper;
 @property(retain, nonatomic) NSData *context; // @synthesize context=_context;
@@ -28,4 +28,3 @@
 - (id)initWithUsername:(id)arg1;
 
 @end
-

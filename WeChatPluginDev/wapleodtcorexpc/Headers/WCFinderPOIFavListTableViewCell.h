@@ -17,7 +17,6 @@
 }
 
 + (double)heightWithStyle:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFavPoiItem *favPOIItem; // @synthesize favPOIItem=_favPOIItem;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) WCFinderLBSCardContentView *lbsCard; // @synthesize lbsCard=_lbsCard;

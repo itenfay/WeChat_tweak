@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString;
 
@@ -14,7 +15,6 @@
 }
 
 + (id)reportWithAction:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *recards; // @synthesize recards=_recards;
 @property(copy, nonatomic) CDUnknownBlockType reportAction; // @synthesize reportAction=_reportAction;
 - (_Bool)filterShouldRecardStatMetaModel:(id)arg1;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

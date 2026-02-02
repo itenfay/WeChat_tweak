@@ -26,7 +26,6 @@
     WCAdCardBtnInfo *_clickActionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *clickActionInfo; // @synthesize clickActionInfo=_clickActionInfo;
 @property(nonatomic) double titleColorAlphaDark; // @synthesize titleColorAlphaDark=_titleColorAlphaDark;
 @property(retain, nonatomic) NSString *titleColorDark; // @synthesize titleColorDark=_titleColorDark;

@@ -14,7 +14,6 @@
 }
 
 + (void)clearCache;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 - (id)initWithVersion:(id)arg1;

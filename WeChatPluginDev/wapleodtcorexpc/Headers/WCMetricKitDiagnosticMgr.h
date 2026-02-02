@@ -21,7 +21,6 @@
 
 + (void)updateVoipInfo:(int)arg1 lastVoipTimestamp:(double)arg2;
 + (void)enableForceReportForLastTermination;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool appLaunchShouldReport; // @synthesize appLaunchShouldReport=_appLaunchShouldReport;
 @property(nonatomic) _Bool diskWriteExceptionShouldReport; // @synthesize diskWriteExceptionShouldReport=_diskWriteExceptionShouldReport;
 @property(nonatomic) _Bool cpuExceptionShouldReport; // @synthesize cpuExceptionShouldReport=_cpuExceptionShouldReport;

@@ -17,7 +17,6 @@
 }
 
 + (id)giftAnimationPlayCommandWithBackendMessage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *businessBuff; // @synthesize businessBuff=_businessBuff;
 @property(nonatomic) unsigned int triggerType; // @synthesize triggerType=_triggerType;
 @property(retain, nonatomic) MMFinderLivePlayGiftAnimationCommandItem *landscapeAnimation; // @synthesize landscapeAnimation=_landscapeAnimation;

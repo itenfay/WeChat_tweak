@@ -15,7 +15,6 @@
     MMUILabel *_introLbl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *introLbl; // @synthesize introLbl=_introLbl;
 @property(retain, nonatomic) UIView *middleView; // @synthesize middleView=_middleView;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;

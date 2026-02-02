@@ -18,7 +18,6 @@
     NSObject *_eventParam;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool permissionCheck; // @synthesize permissionCheck=_permissionCheck;
 @property(nonatomic) _Bool notAsyncIfPossibleForGameApp; // @synthesize notAsyncIfPossibleForGameApp=_notAsyncIfPossibleForGameApp;
 @property(nonatomic) _Bool afterThreadInject; // @synthesize afterThreadInject=_afterThreadInject;

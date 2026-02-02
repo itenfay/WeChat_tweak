@@ -18,7 +18,6 @@
     WCFinderTopicRouteParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTopicRouteParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) WCFinderPostMgr *postMgr; // @synthesize postMgr=_postMgr;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;

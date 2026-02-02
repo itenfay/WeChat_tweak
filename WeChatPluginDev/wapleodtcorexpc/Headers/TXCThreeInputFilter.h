@@ -11,7 +11,6 @@
     TXCVideoFrameCoords *_frameCoords3;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVideoFrameCoords *frameCoords3; // @synthesize frameCoords3=_frameCoords3;
 @property(retain, nonatomic) TXCVideoFrameCoords *frameCoords2; // @synthesize frameCoords2=_frameCoords2;
 - (id)processVideoFrame1:(id)arg1 videoFrame2:(id)arg2 videoFrame3:(id)arg3;

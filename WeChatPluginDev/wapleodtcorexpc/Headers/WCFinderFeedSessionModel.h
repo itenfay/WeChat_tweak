@@ -44,7 +44,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extraKey; // @synthesize extraKey=_extraKey;
 @property(nonatomic) unsigned long long exposeCount; // @synthesize exposeCount=_exposeCount;
 @property(nonatomic) unsigned long long exposeTimeInMS; // @synthesize exposeTimeInMS=_exposeTimeInMS;

@@ -10,7 +10,6 @@
     ShareDataToOpenSDKController *_shareVc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShareDataToOpenSDKController *shareVc; // @synthesize shareVc=_shareVc;
 - (void)handleWithImage;
 - (id)init;

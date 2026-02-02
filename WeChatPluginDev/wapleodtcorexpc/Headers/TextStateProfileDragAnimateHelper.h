@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, MMTimer, MMUIButton, MultipleTextStateCardView, NSHashTable, NSString, TextStateFullScreenCardContentView, TextStateMediaContainerView, TextStateMusicPlayerCoordinator, TextStateProfileCardContentView, UIButton, UIView;
 @protocol TextStateProfileDragAnimateHelperDelegate;
 
@@ -37,7 +39,6 @@
 
 + (struct CGSize)standardTextStateMediaSizeForWidth:(double)arg1;
 + (double)profileBottomPaddingWithSingle:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needShowDoubleTapFavoriteGuide; // @synthesize needShowDoubleTapFavoriteGuide=_needShowDoubleTapFavoriteGuide;
 @property(nonatomic) double startPlayTime; // @synthesize startPlayTime=_startPlayTime;
 @property(retain, nonatomic) MMTimer *playMediaTimer; // @synthesize playMediaTimer=_playMediaTimer;
@@ -123,4 +124,3 @@
 @property(readonly) Class superclass;
 
 @end
-

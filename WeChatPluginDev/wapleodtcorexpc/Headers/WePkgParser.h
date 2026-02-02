@@ -14,7 +14,6 @@
     CBaseFile *_file;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int resourceOffset; // @synthesize resourceOffset=_resourceOffset;
 @property(retain, nonatomic) CBaseFile *file; // @synthesize file=_file;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

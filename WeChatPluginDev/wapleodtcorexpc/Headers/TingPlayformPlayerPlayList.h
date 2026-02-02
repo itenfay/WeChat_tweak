@@ -16,7 +16,6 @@
 
 + (id)taskService;
 + (_Bool)hasPlayingPlayList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TingPlayTaskClient> weakProxy; // @synthesize weakProxy=_weakProxy;
 @property(nonatomic) __weak id <TingPlayListListener> listListener; // @synthesize listListener=_listListener;
 - (void)onPlayTaskServiceRefresh:(id)arg1;

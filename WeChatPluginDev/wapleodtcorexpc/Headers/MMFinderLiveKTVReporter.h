@@ -14,7 +14,6 @@
 }
 
 + (id)createKeyWithTarget:(id)arg1 sel:(id)arg2 business:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) double logInterval; // @synthesize logInterval=_logInterval;
 @property(retain, nonatomic) NSMutableDictionary *logRecordDict; // @synthesize logRecordDict=_logRecordDict;
 - (_Bool)tryFreqLogForTarget:(id)arg1 sel:(id)arg2 business:(id)arg3 interval:(double)arg4;

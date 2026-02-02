@@ -16,7 +16,6 @@
     NSString *_snsId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;
 @property(retain, nonatomic) WCAdvertiseInfo *adData; // @synthesize adData=_adData;
 @property(nonatomic) unsigned int finderLiveStartTime; // @synthesize finderLiveStartTime=_finderLiveStartTime;

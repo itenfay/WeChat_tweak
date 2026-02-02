@@ -13,7 +13,6 @@
     MMLimitedModeVerifyPasswordUtilLogic *_verifyPwdLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLimitedModeVerifyPasswordUtilLogic *verifyPwdLogic; // @synthesize verifyPwdLogic=_verifyPwdLogic;
 @property(retain, nonatomic) MMUIButton *modeChangeBtn; // @synthesize modeChangeBtn=_modeChangeBtn;
 @property(retain, nonatomic) WCFinderLimitProtectCommonHeadView *commonHeadView; // @synthesize commonHeadView=_commonHeadView;

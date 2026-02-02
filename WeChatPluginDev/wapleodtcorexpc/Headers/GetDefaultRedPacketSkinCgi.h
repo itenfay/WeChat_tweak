@@ -10,7 +10,6 @@
     id <GetDefaultRedPacketSkinCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GetDefaultRedPacketSkinCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)cacheResponse:(id)arg1;
 - (id)processCacheDataBeforeSetAsResponse:(id)arg1;

@@ -13,7 +13,6 @@
     NSString *_numberRequestId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bannerPlayCount; // @synthesize bannerPlayCount=_bannerPlayCount;
 @property(nonatomic) unsigned int continuousLikeCount; // @synthesize continuousLikeCount=_continuousLikeCount;
 @property(nonatomic) unsigned int totalLikeCount; // @synthesize totalLikeCount=_totalLikeCount;

@@ -22,7 +22,6 @@
     WCFinderFeedContentVM *_contentVMAtPanStart;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderFeedContentVM *contentVMAtPanStart; // @synthesize contentVMAtPanStart=_contentVMAtPanStart;
 @property(nonatomic) _Bool isPanInScreenTopArea; // @synthesize isPanInScreenTopArea=_isPanInScreenTopArea;
 @property(nonatomic) _Bool isPanelViewAnimating; // @synthesize isPanelViewAnimating=_isPanelViewAnimating;

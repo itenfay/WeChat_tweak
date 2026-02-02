@@ -13,7 +13,6 @@
     unsigned long long _viewState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long viewState; // @synthesize viewState=_viewState;
 @property(retain, nonatomic) NSString *engineId; // @synthesize engineId=_engineId;
 - (_Bool)isVisible;

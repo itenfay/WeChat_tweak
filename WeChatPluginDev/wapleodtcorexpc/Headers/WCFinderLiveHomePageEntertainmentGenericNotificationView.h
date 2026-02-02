@@ -15,7 +15,6 @@
     WCFinderLiveHomePageFeedEntertainmentGenericNotification *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageFeedEntertainmentGenericNotification *data; // @synthesize data=_data;
 @property(retain, nonatomic) RichTextView *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;

@@ -11,7 +11,6 @@
     WapPayParameter *_wapPayParameter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WapPayParameter *wapPayParameter; // @synthesize wapPayParameter=_wapPayParameter;
 @property(retain, nonatomic) OpenApiParameter *openApiParameter; // @synthesize openApiParameter=_openApiParameter;
 - (void)dealloc;

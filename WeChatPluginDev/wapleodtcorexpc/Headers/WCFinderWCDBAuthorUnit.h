@@ -16,7 +16,6 @@
     WCTTable *_authorFeedFavList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *authorFeedFavList; // @synthesize authorFeedFavList=_authorFeedFavList;
 @property(retain, nonatomic) WCTTable *authorFeedLikeList; // @synthesize authorFeedLikeList=_authorFeedLikeList;
 @property(retain, nonatomic) WCTTable *finderAuthorMentionTable; // @synthesize finderAuthorMentionTable=_finderAuthorMentionTable;

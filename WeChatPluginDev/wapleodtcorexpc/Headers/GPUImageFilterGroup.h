@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GPUImageFramebuffer, GPUImageOutput, NSArray, NSMutableArray, NSString;
 @protocol GPUImageInput;
 
@@ -17,7 +19,6 @@
     struct CGSize _inputSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize inputSize; // @synthesize inputSize=_inputSize;
 @property(retain, nonatomic) GPUImageFramebuffer *inputFrameBuffer; // @synthesize inputFrameBuffer=_inputFrameBuffer;
 @property(retain, nonatomic) GPUImageOutput<GPUImageInput> *inputFilterToIgnoreForUpdates; // @synthesize inputFilterToIgnoreForUpdates=_inputFilterToIgnoreForUpdates;
@@ -64,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

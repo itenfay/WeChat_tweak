@@ -13,7 +13,6 @@
     UIView *_wechatCustomView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *wechatCustomView; // @synthesize wechatCustomView=_wechatCustomView;
 @property(retain, nonatomic) UIView *finderCustomView; // @synthesize finderCustomView=_finderCustomView;
 @property(retain, nonatomic) UIView *tipsCustomView; // @synthesize tipsCustomView=_tipsCustomView;

@@ -12,7 +12,6 @@
     _Bool m_bGetFunctionList;
 }
 
-- (void).cxx_destruct;
 - (void)setRecommendIdHasShowed:(id)arg1;
 - (_Bool)isNeedShowRecommendViewWithId:(id)arg1;
 - (void)jsJumpWCMall:(id)arg1;

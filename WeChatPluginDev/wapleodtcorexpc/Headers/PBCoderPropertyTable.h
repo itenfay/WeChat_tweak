@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (const void *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 - (id)init;

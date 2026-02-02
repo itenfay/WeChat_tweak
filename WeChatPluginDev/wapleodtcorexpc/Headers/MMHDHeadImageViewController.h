@@ -10,7 +10,6 @@
     MMHDHeadImageView *_headImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMHDHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 - (_Bool)shouldHideNavigationBar;
 - (void)viewDidLayoutSubviews;

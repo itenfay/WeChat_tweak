@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITapGestureRecognizer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _eventHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
     union _GLKMatrix4 _projectionMatrix;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WADynamicBackgroundSystem *backgroundSystem; // @synthesize backgroundSystem=_backgroundSystem;
 @property(nonatomic) _Bool isFirstFrameDrawed; // @synthesize isFirstFrameDrawed=_isFirstFrameDrawed;
 @property(nonatomic) _Bool isTryingDrawFirstFrame; // @synthesize isTryingDrawFirstFrame=_isTryingDrawFirstFrame;

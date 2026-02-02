@@ -16,7 +16,6 @@
     UIImageView *_webeanImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *webeanImageView; // @synthesize webeanImageView=_webeanImageView;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

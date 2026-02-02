@@ -14,7 +14,6 @@
     NSString *_prevIntentHash;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *prevIntentHash; // @synthesize prevIntentHash=_prevIntentHash;
 @property(retain, nonatomic) NSString *currIntentHash; // @synthesize currIntentHash=_currIntentHash;
 @property(retain, nonatomic) NSMutableDictionary *map; // @synthesize map=_map;

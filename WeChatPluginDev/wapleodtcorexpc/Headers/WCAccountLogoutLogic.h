@@ -14,7 +14,6 @@
     id <WCAccountLogoutLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAccountLogoutLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onWCAccountBindPhoneControlLogicStop:(id)arg1;

@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_shakeTvItem;
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_itemType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShakeWeAppItem *shakeWeAppItem; // @synthesize shakeWeAppItem=_shakeWeAppItem;
 @property(retain, nonatomic) ShakeTempSessionItem *shakeTempSessionItem; // @synthesize shakeTempSessionItem=_shakeTempSessionItem;
 @property(retain, nonatomic) ShakeProductItem *shakeProductItem; // @synthesize shakeProductItem=_shakeProductItem;

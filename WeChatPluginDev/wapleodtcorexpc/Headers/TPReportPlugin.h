@@ -44,7 +44,6 @@
     double _samplingRate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReportToBeacon; // @synthesize needReportToBeacon=_needReportToBeacon;
 @property(nonatomic) double samplingRate; // @synthesize samplingRate=_samplingRate;
 @property(retain, nonatomic) TPDiskReadWrite *diskReadWrite; // @synthesize diskReadWrite=_diskReadWrite;

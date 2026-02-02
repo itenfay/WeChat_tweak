@@ -17,7 +17,6 @@
     double _searchRequestEndTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double searchRequestEndTime; // @synthesize searchRequestEndTime=_searchRequestEndTime;
 @property(nonatomic) double searchRequestBeginTime; // @synthesize searchRequestBeginTime=_searchRequestBeginTime;
 @property(retain, nonatomic) WCVideoProducerMusicPlayingOperation *currentSearchPlayingOperation; // @synthesize currentSearchPlayingOperation=_currentSearchPlayingOperation;

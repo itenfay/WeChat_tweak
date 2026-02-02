@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSetFlag; // @synthesize isSetFlag=_isSetFlag;
 @property(nonatomic) int tabType; // @synthesize tabType=_tabType;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

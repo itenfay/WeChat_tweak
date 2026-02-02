@@ -19,7 +19,6 @@
     YtImageInfo *_extra_best_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) YtImageInfo *extra_best_image; // @synthesize extra_best_image=_extra_best_image;
 @property(retain, nonatomic) NSString *request_id; // @synthesize request_id=_request_id;
 @property(retain, nonatomic) NSString *mp_business_buffer; // @synthesize mp_business_buffer=_mp_business_buffer;

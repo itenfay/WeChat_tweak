@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mentionedTime; // @synthesize mentionedTime=_mentionedTime;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 

@@ -16,7 +16,6 @@
     _Bool _useForChatTool;
 }
 
-- (void).cxx_destruct;
 - (id)getCurrentViewController;
 - (void)OnForwardMessageException:(id)arg1;
 - (void)OnForwardMessageCancel:(id)arg1;

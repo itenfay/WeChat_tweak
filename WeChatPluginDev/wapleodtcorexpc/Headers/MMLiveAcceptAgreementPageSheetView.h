@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, MMUIButton, MMUILabel, NSString, UIImageView, UILabel, UIView, UIVisualEffectView;
 @protocol MMLiveAcceptAgreementPageSheetViewDelegate;
 
@@ -24,7 +26,6 @@
     NSString *_actionBtnText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *actionBtnText; // @synthesize actionBtnText=_actionBtnText;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -59,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

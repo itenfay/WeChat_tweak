@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderGetCameraTemplateCGI
@@ -24,7 +26,6 @@
 + (id)mmkvCachedKey;
 + (id)getCachedCameraVideoTemplateList;
 + (int)enterTypeWithPreFetchType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(copy, nonatomic) NSString *pageBufferUniqueId; // @synthesize pageBufferUniqueId=_pageBufferUniqueId;
 @property(nonatomic) unsigned long long tabId; // @synthesize tabId=_tabId;
@@ -53,4 +54,3 @@
 - (id)initWithPageBuf:(id)arg1 scene:(unsigned long long)arg2 preFetchType:(unsigned long long)arg3 finderUserName:(id)arg4 optionalParams:(id)arg5 successfulBlock:(CDUnknownBlockType)arg6 failedBlock:(CDUnknownBlockType)arg7;
 
 @end
-

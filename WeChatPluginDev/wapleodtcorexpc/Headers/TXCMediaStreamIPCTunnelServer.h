@@ -15,7 +15,6 @@
     TXCIPCTunnelTransport *_transport;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCIPCTunnelTransport *transport; // @synthesize transport=_transport;
 @property(nonatomic) __weak id <TXCMediaStreamIPCTunnelServerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isAccept; // @synthesize isAccept=_isAccept;

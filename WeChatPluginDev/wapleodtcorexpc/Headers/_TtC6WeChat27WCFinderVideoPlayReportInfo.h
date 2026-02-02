@@ -15,7 +15,6 @@
     MISSING_TYPE *videoReplayCount;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTid:(id)arg1;
 @property(nonatomic) unsigned long long videoReplayCount; // @synthesize videoReplayCount;

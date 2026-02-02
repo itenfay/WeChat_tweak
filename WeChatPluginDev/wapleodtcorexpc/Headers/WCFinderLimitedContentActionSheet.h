@@ -15,7 +15,6 @@
     WCFinderSelectPanelView *_panelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSelectPanelView *panelView; // @synthesize panelView=_panelView;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) NSArray *gridModels; // @synthesize gridModels=_gridModels;

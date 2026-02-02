@@ -13,7 +13,6 @@
     WCFinderLiveReplayPreviewImgInfo *_previewImgInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveReplayPreviewImgInfo *previewImgInfo; // @synthesize previewImgInfo=_previewImgInfo;
 @property(retain, nonatomic) MMFinderLiveReplayGreateTimeModel *greateTimeModel; // @synthesize greateTimeModel=_greateTimeModel;
 - (double)getPreviewTime;

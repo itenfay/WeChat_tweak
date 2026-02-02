@@ -10,7 +10,6 @@
     WABeaconMgrUseInfoHandler *_useInfoHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WABeaconMgrUseInfoHandler *useInfoHandler; // @synthesize useInfoHandler=_useInfoHandler;
 - (void)locationManager:(id)arg1 rangingBeaconsDidFailForRegion:(id)arg2 withError:(id)arg3;
 - (void)locationManager:(id)arg1 didRangeBeacons:(id)arg2 inRegion:(id)arg3;

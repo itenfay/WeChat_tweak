@@ -19,7 +19,6 @@
     NSThread *m_oCurThread;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bEventFinish; // @synthesize m_bEventFinish;
 @property(nonatomic) _Bool m_bStop; // @synthesize m_bStop;
 @property __weak NSThread *m_oCurThread; // @synthesize m_oCurThread;

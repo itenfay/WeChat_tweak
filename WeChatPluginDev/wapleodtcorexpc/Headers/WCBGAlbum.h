@@ -17,7 +17,6 @@
 + (void)PBArrayAdd_groupList;
 + (void)PBArrayAdd_author;
 + (id)bgAlbumFromServerObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *groupList; // @synthesize groupList=_groupList;
 @property(retain, nonatomic) WCBGAuthor *author; // @synthesize author=_author;
 - (id)initWithCoder:(id)arg1;

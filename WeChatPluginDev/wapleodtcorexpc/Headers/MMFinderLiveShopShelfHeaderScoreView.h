@@ -13,7 +13,6 @@
     UILabel *_levelLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *levelLabel; // @synthesize levelLabel=_levelLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

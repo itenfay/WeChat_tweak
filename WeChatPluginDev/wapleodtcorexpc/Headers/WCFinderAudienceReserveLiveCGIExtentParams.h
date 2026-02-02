@@ -16,7 +16,6 @@
     NSData *_liveCookies;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(copy, nonatomic) NSString *qrCodeURL; // @synthesize qrCodeURL=_qrCodeURL;

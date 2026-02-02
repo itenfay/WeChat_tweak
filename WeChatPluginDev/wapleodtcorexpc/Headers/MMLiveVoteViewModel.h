@@ -16,7 +16,6 @@
     MMTimer *_countdownTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *countdownTimer; // @synthesize countdownTimer=_countdownTimer;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(nonatomic) _Bool isAttending; // @synthesize isAttending=_isAttending;

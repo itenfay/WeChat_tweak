@@ -17,7 +17,6 @@
     WCFinderNavTabTitleViewLayout *_layout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNavTabTitleViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) double cursorProgress; // @synthesize cursorProgress=_cursorProgress;
 @property(nonatomic) __weak id <WCFinderNavTabTitleViewDelegate> delegate; // @synthesize delegate=_delegate;

@@ -12,7 +12,6 @@
     NSDictionary *_userInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) WCState *sourceState; // @synthesize sourceState=_sourceState;
 @property(readonly, nonatomic) WCEvent *event; // @synthesize event=_event;

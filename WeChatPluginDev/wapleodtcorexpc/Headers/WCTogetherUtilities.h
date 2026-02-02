@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCTogetherUtilities : NSObject
 {
@@ -16,4 +17,3 @@
 + (void)adjustPrivacyForUploadTask:(id)arg1;
 
 @end
-

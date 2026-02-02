@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithCommentScene:(long long)arg1 mediaProto:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *mediaProto; // @synthesize mediaProto=_mediaProto;
 @property(nonatomic) long long commentScene; // @synthesize commentScene=_commentScene;
 - (id)toList;

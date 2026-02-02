@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSCache, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -14,7 +16,6 @@
     NSCache *_headerImgCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *headerImgCache; // @synthesize headerImgCache=_headerImgCache;
 @property(retain, nonatomic) NSCache *playerThumbCache; // @synthesize playerThumbCache=_playerThumbCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ioQueue; // @synthesize ioQueue=_ioQueue;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

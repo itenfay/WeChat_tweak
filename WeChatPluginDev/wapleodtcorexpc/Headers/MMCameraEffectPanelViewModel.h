@@ -15,7 +15,6 @@
 }
 
 + (unsigned long long)templateSceneWithCaptureScene:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *funnyInfos; // @synthesize funnyInfos=_funnyInfos;
 @property(nonatomic) __weak id <MMCameraEffectPanelViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)getTemplateScene;

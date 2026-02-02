@@ -17,7 +17,6 @@
     unsigned long long _updateResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int updateCostTimeInMs; // @synthesize updateCostTimeInMs=_updateCostTimeInMs;
 @property(nonatomic) unsigned long long updateResult; // @synthesize updateResult=_updateResult;
 @property(nonatomic) _Bool isWeakNet; // @synthesize isWeakNet=_isWeakNet;

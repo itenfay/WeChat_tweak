@@ -14,7 +14,6 @@
     NSTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) __weak id <WAMediaCastingUpnpServicePollDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool isActive;

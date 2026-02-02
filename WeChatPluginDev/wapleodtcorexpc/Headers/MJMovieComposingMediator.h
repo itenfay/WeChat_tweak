@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MJMovieComposingMediator : NSObject
 {
@@ -71,4 +72,3 @@
 + (void)registerMovieComposingVC:(id)arg1;
 
 @end
-

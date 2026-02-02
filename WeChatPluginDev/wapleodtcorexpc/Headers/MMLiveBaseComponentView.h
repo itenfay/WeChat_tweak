@@ -15,7 +15,6 @@
     NSMutableDictionary *_layoutDependentKeys;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *layoutDependentKeys; // @synthesize layoutDependentKeys=_layoutDependentKeys;
 @property(retain, nonatomic) OrderedDictionary *components; // @synthesize components=_components;
 @property(retain, nonatomic) NSString *componentKey; // @synthesize componentKey=_componentKey;

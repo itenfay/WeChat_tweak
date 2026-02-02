@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AnyPromise, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderCGIProfile, WCFinderFeedArray, WCFinderStreamLoadingState;
 @protocol WCFinderProfileOverviewPageModelDelegate, WCFinderProfilePullableFeedViewModel;
 
@@ -42,7 +44,6 @@
 + (_Bool)pageIsRequired;
 + (_Bool)shouldDisplay:(id)arg1;
 + (_Bool)allowLimitMode;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadCache; // @synthesize hasLoadCache=_hasLoadCache;
 @property(retain, nonatomic) id <WCFinderProfilePullableFeedViewModel> feedArraySource; // @synthesize feedArraySource=_feedArraySource;
 @property(retain, nonatomic) WCFinderFeedArray *latestFeedArray; // @synthesize latestFeedArray=_latestFeedArray;
@@ -124,4 +125,3 @@
 @property(readonly) Class superclass;
 
 @end
-

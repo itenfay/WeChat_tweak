@@ -11,7 +11,6 @@
     WCFinderInvalidTipsView *_invalidTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderInvalidTipsView *invalidTipsView; // @synthesize invalidTipsView=_invalidTipsView;
 @property(retain, nonatomic) WCFinderInvalidTipsInfo *tipsInfo; // @synthesize tipsInfo=_tipsInfo;
 - (void)finderInvalidTipsViewDidClickComplainButton:(id)arg1;

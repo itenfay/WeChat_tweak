@@ -16,7 +16,6 @@
     UIButton *_confirmBtn;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsInitFromScreenCapturing; // @synthesize bIsInitFromScreenCapturing=_bIsInitFromScreenCapturing;
 @property(retain, nonatomic) UIButton *confirmBtn; // @synthesize confirmBtn=_confirmBtn;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

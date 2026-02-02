@@ -13,7 +13,6 @@
     id <WCPayBaseViewControllerRemoveDelegate> _removeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayBaseViewControllerRemoveDelegate> removeDelegate; // @synthesize removeDelegate=_removeDelegate;
 - (void)refreshViewWithData:(id)arg1;
 - (void)setupWithData:(id)arg1;

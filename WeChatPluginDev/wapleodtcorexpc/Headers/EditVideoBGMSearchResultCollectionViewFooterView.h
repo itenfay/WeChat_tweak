@@ -16,7 +16,6 @@
 }
 
 + (double)getViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimeLineFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <EditVideoBGMSearchResultCollectionViewFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double heightLimit; // @synthesize heightLimit=_heightLimit;

@@ -28,7 +28,6 @@
     UIBarButtonItem *_savedLeftButtonItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRecoverLeftButton; // @synthesize shouldRecoverLeftButton=_shouldRecoverLeftButton;
 @property(retain, nonatomic) UIBarButtonItem *savedLeftButtonItem; // @synthesize savedLeftButtonItem=_savedLeftButtonItem;
 @property(retain, nonatomic) UIView *fakeTopTitleSeperateLine; // @synthesize fakeTopTitleSeperateLine=_fakeTopTitleSeperateLine;

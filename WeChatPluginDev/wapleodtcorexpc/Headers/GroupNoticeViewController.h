@@ -20,7 +20,6 @@
 }
 
 + (_Bool)isDisplay;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHistory; // @synthesize isHistory=_isHistory;
 @property(nonatomic) int enterScene; // @synthesize enterScene=_enterScene;
 @property(nonatomic) unsigned int editTime; // @synthesize editTime=_editTime;

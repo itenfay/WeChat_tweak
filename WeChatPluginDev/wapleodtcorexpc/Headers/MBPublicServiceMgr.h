@@ -11,7 +11,6 @@
     MagicBrushService *_magicbrush;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MagicBrushService *magicbrush; // @synthesize magicbrush=_magicbrush;
 @property(retain, nonatomic) NSMapTable *extServicesMap; // @synthesize extServicesMap=_extServicesMap;
 - (void)forceStop:(id)arg1 withAllConnectedBizes:(_Bool)arg2;

@@ -18,7 +18,6 @@
 + (struct CGSize)calculateSize:(id)arg1 outArrStyles:(id *)arg2;
 + (double)calculateHeight:(id)arg1 isJoinStyle:(_Bool)arg2;
 + (id)getContentStrFromModel:(id)arg1 isJoinStyle:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isJoinStyle; // @synthesize isJoinStyle=_isJoinStyle;
 @property(retain, nonatomic) NSString *contentStr; // @synthesize contentStr=_contentStr;
 @property(retain, nonatomic) RichTextView *commentView; // @synthesize commentView=_commentView;

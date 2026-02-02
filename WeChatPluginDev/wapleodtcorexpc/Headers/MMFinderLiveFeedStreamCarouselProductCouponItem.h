@@ -11,7 +11,6 @@
     FeedsPreviewLiveMultiStyleInfo_StyleTwelve *_couponStyleConf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FeedsPreviewLiveMultiStyleInfo_StyleTwelve *couponStyleConf; // @synthesize couponStyleConf=_couponStyleConf;
 @property(retain, nonatomic) FinderLiveSyncFeedPreviewMultiStyleInfoResp_RecommendCouponInfo *couponBubble; // @synthesize couponBubble=_couponBubble;
 @property(readonly, copy) NSString *description;

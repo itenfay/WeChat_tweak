@@ -15,7 +15,6 @@
     NSArray *relayIPList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *relayIPList; // @synthesize relayIPList;
 @property(nonatomic) unsigned int relayPort; // @synthesize relayPort;
 @property(retain, nonatomic) NSString *relayIP; // @synthesize relayIP;

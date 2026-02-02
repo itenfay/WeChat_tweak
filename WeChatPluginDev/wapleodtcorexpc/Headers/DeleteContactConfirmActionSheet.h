@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, UIButton;
 
 @interface DeleteContactConfirmActionSheet
@@ -12,7 +14,6 @@
     UIButton *_checkBox;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *checkBox; // @synthesize checkBox=_checkBox;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(copy, nonatomic) CDUnknownBlockType confirmBlock; // @synthesize confirmBlock=_confirmBlock;
@@ -22,4 +23,3 @@
 - (id)initWithContact:(id)arg1;
 
 @end
-

@@ -13,7 +13,6 @@
 }
 
 + (id)infoWithGMsgID:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *entranceGMsgID; // @synthesize entranceGMsgID=_entranceGMsgID;
 
 @end

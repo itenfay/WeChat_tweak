@@ -19,7 +19,6 @@
     struct CGSize _normalizedSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) struct CGSize normalizedSize; // @synthesize normalizedSize=_normalizedSize;

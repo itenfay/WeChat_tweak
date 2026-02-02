@@ -10,7 +10,6 @@
     TSKEffectGraph *_graph;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TSKEffectGraph *graph; // @synthesize graph=_graph;
 - (id)supportedReverbTypes;
 - (_Bool)updateSettingParam:(id)arg1;

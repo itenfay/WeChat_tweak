@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GLProgram, GPUImageFramebuffer, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_semaphore;
 
@@ -34,7 +36,6 @@
 }
 
 + (const float *)textureCoordinatesForRotation:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(readonly) struct __CVBuffer *renderTarget; // @synthesize renderTarget=_renderTarget;
 @property(nonatomic) _Bool currentlyReceivingMonochromeInput; // @synthesize currentlyReceivingMonochromeInput;
 @property(nonatomic) _Bool preventRendering; // @synthesize preventRendering=_preventRendering;
@@ -101,4 +102,3 @@
 @property(readonly) Class superclass;
 
 @end
-

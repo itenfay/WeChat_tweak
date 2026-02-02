@@ -18,7 +18,6 @@
 
 + (double)heightWithWordings:(id)arg1 lineNumber:(unsigned long long)arg2 width:(double)arg3;
 + (id)layoutPropertiesWithWordings:(id)arg1 lineNumber:(unsigned long long)arg2 width:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLBSCardWordingListStyle *style; // @synthesize style=_style;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(nonatomic) unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;

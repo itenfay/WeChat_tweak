@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TenpayPasswordCtrl;
 @protocol UITextInput;
@@ -20,7 +21,6 @@
     unsigned long long _nodeId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nodeId; // @synthesize nodeId=_nodeId;
 @property(nonatomic) unsigned long long appUuid; // @synthesize appUuid=_appUuid;
 @property(nonatomic) long long pwdTimestamp; // @synthesize pwdTimestamp=_pwdTimestamp;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

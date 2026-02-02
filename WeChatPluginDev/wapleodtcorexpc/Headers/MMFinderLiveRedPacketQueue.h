@@ -15,7 +15,6 @@
     NSMutableArray *_redPackets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *redPackets; // @synthesize redPackets=_redPackets;
 @property(copy, nonatomic) NSString *senderMicId; // @synthesize senderMicId=_senderMicId;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

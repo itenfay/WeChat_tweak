@@ -23,7 +23,6 @@
     UIImageView *_rawSuccTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rawSuccTipsView; // @synthesize rawSuccTipsView=_rawSuccTipsView;
 @property(retain, nonatomic) SightIconView *rawProgressIcon; // @synthesize rawProgressIcon=_rawProgressIcon;
 @property(retain, nonatomic) UIButton *iconClickBgButton; // @synthesize iconClickBgButton=_iconClickBgButton;

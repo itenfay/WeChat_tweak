@@ -21,7 +21,6 @@
 + (double)getSeparatorLeftInset;
 + (id)identifier;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *musicNameLabel; // @synthesize musicNameLabel=_musicNameLabel;
 @property(nonatomic) double lastContentViewWidth; // @synthesize lastContentViewWidth=_lastContentViewWidth;
 @property(retain, nonatomic) UILabel *warningLabel; // @synthesize warningLabel=_warningLabel;

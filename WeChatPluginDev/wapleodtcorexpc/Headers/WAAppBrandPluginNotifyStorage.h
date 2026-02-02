@@ -16,7 +16,6 @@
 + (id)loadStorageFromPath:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_dicPluginNotify;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicPluginNotify; // @synthesize dicPluginNotify=_dicPluginNotify;
 - (id)getPBPropertyTable;
 

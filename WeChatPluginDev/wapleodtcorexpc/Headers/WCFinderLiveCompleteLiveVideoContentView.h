@@ -20,7 +20,6 @@
     double _itemBottom;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLayoutFeeds; // @synthesize isLayoutFeeds=_isLayoutFeeds;
 @property(nonatomic) double itemBottom; // @synthesize itemBottom=_itemBottom;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;

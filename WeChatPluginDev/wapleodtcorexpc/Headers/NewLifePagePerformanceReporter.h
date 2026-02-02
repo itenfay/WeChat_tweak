@@ -13,7 +13,6 @@
 }
 
 + (void)addExtraInfo:(id)arg1 toParams:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contextMap; // @synthesize contextMap=_contextMap;
 - (void)onClear;
 - (id)createStepDesc:(id)arg1;

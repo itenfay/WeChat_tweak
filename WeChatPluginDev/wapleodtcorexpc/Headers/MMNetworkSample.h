@@ -51,7 +51,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long wwanReceived; // @synthesize wwanReceived=_wwanReceived;
 @property(nonatomic) unsigned long long wwanSent; // @synthesize wwanSent=_wwanSent;
 @property(nonatomic) unsigned long long wifiReceived; // @synthesize wifiReceived=_wifiReceived;

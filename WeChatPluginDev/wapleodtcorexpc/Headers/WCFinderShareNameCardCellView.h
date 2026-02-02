@@ -12,7 +12,6 @@
     WCFinderAuthInfoIconView *_icon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

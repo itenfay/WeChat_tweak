@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_fileSize;
 + (void)PBArrayAdd_mesSvrId;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(nonatomic) unsigned int fileSize; // @synthesize fileSize=_fileSize;
 @property(nonatomic) long long mesSvrId; // @synthesize mesSvrId=_mesSvrId;

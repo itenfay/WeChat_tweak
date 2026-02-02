@@ -16,7 +16,6 @@
 }
 
 + (id)GenerateReportItemWithEventList:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) MMGPUSamplingTraceInfo *samplingTraceInfo; // @synthesize samplingTraceInfo=_samplingTraceInfo;
 @property(retain, nonatomic) WCSamplingStatData *kvReportData; // @synthesize kvReportData=_kvReportData;

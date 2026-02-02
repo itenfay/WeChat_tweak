@@ -18,7 +18,6 @@
     NSString *m_footerTipsContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_footerTipsContent; // @synthesize m_footerTipsContent;
 @property(retain, nonatomic) NSString *m_footerTipsTitle; // @synthesize m_footerTipsTitle;
 @property(retain, nonatomic) NSString *m_headerTip; // @synthesize m_headerTip;

@@ -14,7 +14,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *entry_url; // @synthesize entry_url=_entry_url;
 @property(retain, nonatomic) NSString *entry_word; // @synthesize entry_word=_entry_word;
 - (void)genFromDic:(id)arg1;

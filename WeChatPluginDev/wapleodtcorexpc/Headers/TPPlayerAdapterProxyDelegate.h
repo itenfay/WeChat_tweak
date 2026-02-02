@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TPPlayerAdapter, TPPlayerEventPublisher;
 @protocol ITPPlayerBaseDelegate;
@@ -15,7 +16,6 @@
     TPPlayerAdapter *_playerAdapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerAdapter *playerAdapter; // @synthesize playerAdapter=_playerAdapter;
 @property(retain, nonatomic) TPPlayerEventPublisher *publisher; // @synthesize publisher=_publisher;
 @property(nonatomic) __weak id <ITPPlayerBaseDelegate> outerDelegate; // @synthesize outerDelegate=_outerDelegate;
@@ -53,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

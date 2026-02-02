@@ -19,7 +19,6 @@
     WCFinderBaseCgi *_subscribeCGI;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBaseCgi *subscribeCGI; // @synthesize subscribeCGI=_subscribeCGI;
 @property(retain, nonatomic) MMUIButton *detailButton; // @synthesize detailButton=_detailButton;
 @property(nonatomic) _Bool isLastSubscribed; // @synthesize isLastSubscribed=_isLastSubscribed;

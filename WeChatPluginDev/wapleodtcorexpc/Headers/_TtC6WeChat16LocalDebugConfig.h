@@ -13,7 +13,6 @@
     MISSING_TYPE *debugStrategy;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

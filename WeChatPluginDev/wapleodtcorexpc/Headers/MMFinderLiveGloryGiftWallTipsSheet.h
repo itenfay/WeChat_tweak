@@ -17,7 +17,6 @@
     UIImageView *_giftWallIntroImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *giftWallIntroImageView; // @synthesize giftWallIntroImageView=_giftWallIntroImageView;
 @property(retain, nonatomic) MMUILabel *giftWallDetailLabel; // @synthesize giftWallDetailLabel=_giftWallDetailLabel;
 @property(retain, nonatomic) MMUILabel *giftWallTitleLabel; // @synthesize giftWallTitleLabel=_giftWallTitleLabel;

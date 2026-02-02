@@ -27,7 +27,6 @@
     MMUIMaskContainerView *_collectionContainerView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingNotice; // @synthesize isShowingNotice=_isShowingNotice;
 @property(retain, nonatomic) MMUIMaskContainerView *collectionContainerView; // @synthesize collectionContainerView=_collectionContainerView;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;

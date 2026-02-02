@@ -15,7 +15,6 @@
     id <WCFinderBulletInputViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderBulletInputViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EmoticonBoardView *emoticonBoardView; // @synthesize emoticonBoardView=_emoticonBoardView;
 @property(retain, nonatomic) WCFinderBulletInputToolbarView *inputToolbarView; // @synthesize inputToolbarView=_inputToolbarView;

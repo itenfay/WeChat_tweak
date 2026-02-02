@@ -13,7 +13,6 @@
     id <WAPlateLabelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAPlateLabelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long inputViewType; // @synthesize inputViewType=_inputViewType;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;

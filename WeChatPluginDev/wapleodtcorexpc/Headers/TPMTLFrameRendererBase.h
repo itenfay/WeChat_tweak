@@ -20,7 +20,6 @@
     TPMTLDisplayConfig *_displayCfg;
 }
 
-- (void).cxx_destruct;
 @property(retain) TPMTLDisplayConfig *displayCfg; // @synthesize displayCfg=_displayCfg;
 @property(retain) MTLRenderPassDescriptor *renderpassDescriptor; // @synthesize renderpassDescriptor=_renderpassDescriptor;
 @property(retain) id <MTLRenderPipelineState> pipelineState; // @synthesize pipelineState=_pipelineState;

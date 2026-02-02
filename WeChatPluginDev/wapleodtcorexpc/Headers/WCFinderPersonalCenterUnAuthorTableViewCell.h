@@ -18,7 +18,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UnAuthFinder *authInfo; // @synthesize authInfo=_authInfo;
 @property(retain, nonatomic) UIView *redDot; // @synthesize redDot=_redDot;
 @property(retain, nonatomic) UIImageView *arrowIconView; // @synthesize arrowIconView=_arrowIconView;

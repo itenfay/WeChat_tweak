@@ -14,7 +14,6 @@
     NSString *_fileExtension;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(retain, nonatomic) NSString *originalUrl; // @synthesize originalUrl=_originalUrl;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

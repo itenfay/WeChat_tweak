@@ -15,7 +15,6 @@
     struct _NSRange _selectedRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SlideTextDelegate> slideTextDelegate; // @synthesize slideTextDelegate=_slideTextDelegate;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(nonatomic) long long maxCharLength; // @synthesize maxCharLength=_maxCharLength;

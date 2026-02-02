@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MagicWeAppCardService
@@ -11,7 +13,6 @@
     NSMutableDictionary *_host2biz;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *host2biz; // @synthesize host2biz=_host2biz;
 @property(retain, nonatomic) NSMutableDictionary *frameSetItems; // @synthesize frameSetItems=_frameSetItems;
 - (void)postMessageToMagicBrushInHost:(id)arg1 withFrameId:(unsigned int)arg2 message:(id)arg3 fromAppid:(id)arg4;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

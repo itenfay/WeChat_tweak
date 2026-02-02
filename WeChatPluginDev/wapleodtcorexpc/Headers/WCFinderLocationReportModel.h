@@ -12,7 +12,6 @@
     NSString *_finderPostSessionid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *finderPostSessionid; // @synthesize finderPostSessionid=_finderPostSessionid;
 
 @end

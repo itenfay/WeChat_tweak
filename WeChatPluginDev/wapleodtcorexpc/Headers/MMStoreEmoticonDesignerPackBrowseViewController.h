@@ -13,7 +13,6 @@
     NSString *_sdkRequestID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sdkRequestID; // @synthesize sdkRequestID=_sdkRequestID;
 @property(nonatomic) _Bool needStaticsInfo; // @synthesize needStaticsInfo=_needStaticsInfo;
 @property(nonatomic) __weak id <MMStoreEmotionDesignerPackBrowseViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

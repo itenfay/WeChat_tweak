@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GiftNewCustomizationMagicRewardResource, MMFinderLiveNewCustomGiftItemResourceURL, MMFinderLiveNewCustomGiftText, NSArray, NSString;
 
@@ -33,7 +34,6 @@
 + (_Bool)isCustomGiftInfoValid:(id)arg1;
 + (_Bool)isNewCustomizationGift:(id)arg1;
 + (id)newCustomizationModelForFinderLiveGift:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double baseRewardAmount; // @synthesize baseRewardAmount=_baseRewardAmount;
 @property(nonatomic) _Bool isEngineDisabled; // @synthesize isEngineDisabled=_isEngineDisabled;
 @property(nonatomic) _Bool isOnceModified; // @synthesize isOnceModified=_isOnceModified;
@@ -81,4 +81,3 @@
 - (void)innerInit;
 
 @end
-

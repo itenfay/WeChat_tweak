@@ -15,7 +15,6 @@
     NSMutableArray *_pendingOpenJobs;
 }
 
-- (void).cxx_destruct;
 - (void)deleteAllDevices;
 - (void)onWeAppItemDeleted:(id)arg1;
 - (void)onAppTaskDidFinishLaunchWithAppId:(id)arg1;

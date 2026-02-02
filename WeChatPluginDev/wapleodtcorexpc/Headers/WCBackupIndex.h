@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;

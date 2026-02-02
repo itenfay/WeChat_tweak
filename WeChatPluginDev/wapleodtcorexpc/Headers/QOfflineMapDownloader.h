@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary;
 
@@ -13,7 +14,6 @@
     NSMutableArray *_downloadingItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadingItems; // @synthesize downloadingItems=_downloadingItems;
 @property(retain, nonatomic) NSMutableDictionary *downloadingTasks; // @synthesize downloadingTasks=_downloadingTasks;
 - (id)init;
@@ -27,4 +27,3 @@
 - (void)downloadData:(id)arg1 withURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
-

@@ -14,7 +14,6 @@
     GameJumpInfo *_sourceJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameJumpInfo *sourceJumpInfo; // @synthesize sourceJumpInfo=_sourceJumpInfo;
 @property(nonatomic) _Bool sourceClickable; // @synthesize sourceClickable=_sourceClickable;
 @property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;

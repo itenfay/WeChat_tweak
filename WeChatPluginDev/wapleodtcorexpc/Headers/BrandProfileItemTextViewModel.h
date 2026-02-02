@@ -18,7 +18,6 @@
     struct CGSize _textSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *textLabelStyles; // @synthesize textLabelStyles=_textLabelStyles;
 @property(nonatomic) struct CGSize textSize; // @synthesize textSize=_textSize;
 @property(readonly, nonatomic) NSString *bottomStr;

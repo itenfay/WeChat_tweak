@@ -22,7 +22,6 @@
     NSString *_lastSearchReqeustId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastSearchReqeustId; // @synthesize lastSearchReqeustId=_lastSearchReqeustId;
 @property(copy, nonatomic) NSString *searchKeyWord; // @synthesize searchKeyWord=_searchKeyWord;
 @property(retain, nonatomic) NSData *searchBuff; // @synthesize searchBuff=_searchBuff;

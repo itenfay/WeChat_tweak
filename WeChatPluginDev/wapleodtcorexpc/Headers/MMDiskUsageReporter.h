@@ -19,7 +19,6 @@
 }
 
 + (id)regularExpressionsThatLogFilesToKV;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDiskUsageScaner *reportScanner; // @synthesize reportScanner=_reportScanner;
 @property(retain, nonatomic) NSDictionary *fileNumReportIdKeyInfoDic; // @synthesize fileNumReportIdKeyInfoDic=_fileNumReportIdKeyInfoDic;
 @property(retain, nonatomic) NSDictionary *sizeReportIdKeyInfoDic; // @synthesize sizeReportIdKeyInfoDic=_sizeReportIdKeyInfoDic;

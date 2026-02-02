@@ -13,7 +13,6 @@
 }
 
 + (_Bool)whetherInfoDBExist;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTDatabase *infoDB; // @synthesize infoDB=_infoDB;
 - (void)willRecoverDatabase;
 - (void)delFileBrowseInfoWithChatName:(id)arg1;

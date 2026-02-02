@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, ForwardMessageLogicController, MMFinderLiveBuyTicketHandle, MMFinderLiveCancelNoticeView, MMFinderLiveCreateNoticeReporter, MMFinderLiveNoticeDetailsPreviewModel, MMFinderLiveNoticeDetailsReservationParameters, MMFinderLiveNoticeDetailsView, MMFinderLiveNoticePosterModel, MMLiveIconButton, MMLiveVerticalTextButtonView, MMScrollActionSheet, MMUIButton, NSString, UIBarButtonItem, UIView, WCFinderContact, WCFinderCreateLiveViewModel, WCFinderLiveAudienceNoticeReporter;
 @protocol MMFinderLiveNoticeDetailsViewControllerDelegate;
 
@@ -40,7 +42,6 @@
     MMFinderLiveCreateNoticeReporter *_noticeCreationReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCreateNoticeReporter *noticeCreationReporter; // @synthesize noticeCreationReporter=_noticeCreationReporter;
 @property(retain, nonatomic) WCFinderCreateLiveViewModel *createLiveVM; // @synthesize createLiveVM=_createLiveVM;
 @property(retain, nonatomic) MMFinderLiveNoticeDetailsPreviewModel *previewModel; // @synthesize previewModel=_previewModel;
@@ -150,4 +151,3 @@
 @property(readonly) Class superclass;
 
 @end
-

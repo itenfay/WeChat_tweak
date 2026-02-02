@@ -11,7 +11,6 @@
     WCMediaItem *_mediaItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (void)resetSubViews;

@@ -18,7 +18,6 @@
     NSString *_confirmTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNotice; // @synthesize isNotice=_isNotice;
 @property(retain, nonatomic) NSString *confirmTitle; // @synthesize confirmTitle=_confirmTitle;
 @property(retain, nonatomic) NSString *extraDesc; // @synthesize extraDesc=_extraDesc;

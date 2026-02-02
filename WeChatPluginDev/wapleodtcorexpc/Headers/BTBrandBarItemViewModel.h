@@ -18,7 +18,6 @@
 }
 
 + (id)itemViewClassName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiveForcePreposed; // @synthesize isLiveForcePreposed=_isLiveForcePreposed;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak BTBaseBarItemView *barItemView; // @synthesize barItemView=_barItemView;

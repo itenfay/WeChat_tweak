@@ -12,7 +12,6 @@
     UIScrollView *m_contentView;
 }
 
-- (void).cxx_destruct;
 - (void)onBackBtnDone:(id)arg1;
 - (double)getContentViewY;
 - (void)viewDidLoad;

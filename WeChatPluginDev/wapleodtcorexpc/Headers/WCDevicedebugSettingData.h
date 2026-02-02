@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_setting;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *setting; // @synthesize setting=_setting;
 - (id)init;
 - (id)getPBPropertyTable;

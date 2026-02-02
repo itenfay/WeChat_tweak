@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderDataTool : NSObject
 {
@@ -39,4 +40,3 @@
 + (id)arrayToJsonString:(id)arg1;
 
 @end
-

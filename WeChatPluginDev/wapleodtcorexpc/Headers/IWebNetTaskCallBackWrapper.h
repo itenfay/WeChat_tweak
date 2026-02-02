@@ -12,7 +12,6 @@
     IWebNetTaskCallBack *m_callbackImpl;
 }
 
-- (void).cxx_destruct;
 
 @end
 

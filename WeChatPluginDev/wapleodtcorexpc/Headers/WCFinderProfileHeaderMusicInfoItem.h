@@ -13,7 +13,6 @@
     struct _NSRange _mediumFontRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange mediumFontRange; // @synthesize mediumFontRange=_mediumFontRange;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 

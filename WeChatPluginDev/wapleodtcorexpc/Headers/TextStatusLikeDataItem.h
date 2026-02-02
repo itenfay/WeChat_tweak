@@ -26,7 +26,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int source; // @synthesize source=_source;
 @property(nonatomic) unsigned long long likeCountVersion; // @synthesize likeCountVersion=_likeCountVersion;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, NSURLSession, WARequestConfig;
 @protocol OS_dispatch_queue;
@@ -18,7 +19,6 @@
     NSURLSession *_urlSession;
 }
 
-- (void).cxx_destruct;
 - (void)requestTaskDidEnd:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -50,4 +50,3 @@
 @property(readonly) Class superclass;
 
 @end
-

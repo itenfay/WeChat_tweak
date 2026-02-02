@@ -14,7 +14,6 @@
     UILabel *_searchHintLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *searchHintLabel; // @synthesize searchHintLabel=_searchHintLabel;
 @property(retain, nonatomic) UIImageView *searchIcon; // @synthesize searchIcon=_searchIcon;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;

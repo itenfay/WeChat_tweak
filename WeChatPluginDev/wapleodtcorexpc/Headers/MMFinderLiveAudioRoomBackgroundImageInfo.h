@@ -15,7 +15,6 @@
     UIColor *_audioWaveColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *audioWaveColor; // @synthesize audioWaveColor=_audioWaveColor;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic) unsigned long long backgroundImageState; // @synthesize backgroundImageState=_backgroundImageState;

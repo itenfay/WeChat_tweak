@@ -13,7 +13,6 @@
 }
 
 + (_Bool)isGraphicVerifyError:(id)arg1;
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)onGraphicVerifyChangeImage;
 - (void)onGraphicVerifyBack;

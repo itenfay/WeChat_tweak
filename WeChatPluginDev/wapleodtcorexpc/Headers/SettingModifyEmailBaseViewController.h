@@ -10,7 +10,6 @@
     SettingModifyEmailLogic *_emailLogic;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SettingModifyEmailLogic *emailLogic; // @synthesize emailLogic=_emailLogic;
 - (id)getViewController;
 - (id)initWithEmailLogic:(id)arg1;

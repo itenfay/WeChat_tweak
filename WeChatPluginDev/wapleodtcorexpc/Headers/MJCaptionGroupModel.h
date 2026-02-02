@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_originalCaptionEntry;
 + (void)PBArrayAdd_duration;
 + (void)PBArrayAdd_startTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *translatedCaptionEntries; // @synthesize translatedCaptionEntries=_translatedCaptionEntries;
 @property(retain, nonatomic) MJCaptionEntryModel *originalCaptionEntry; // @synthesize originalCaptionEntry=_originalCaptionEntry;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

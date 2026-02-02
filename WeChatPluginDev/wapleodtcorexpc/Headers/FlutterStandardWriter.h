@@ -12,7 +12,6 @@
     NSMutableData *_data;
 }
 
-- (void).cxx_destruct;
 - (void)writeValue:(id)arg1;
 - (void)writeUTF8:(id)arg1;
 - (void)writeAlignment:(unsigned char)arg1;

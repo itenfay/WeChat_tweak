@@ -17,7 +17,6 @@
     NSMutableArray *_signViewArraryForLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *signViewArraryForLayout; // @synthesize signViewArraryForLayout=_signViewArraryForLayout;
 @property(retain, nonatomic) MMUILabel *giftCountLabel; // @synthesize giftCountLabel=_giftCountLabel;
 @property(retain, nonatomic) MMWebImageView *giftImageView; // @synthesize giftImageView=_giftImageView;

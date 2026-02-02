@@ -13,7 +13,6 @@
     MMFinderLiveShowBoxItemsView *_view;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShowBoxItemsView *view; // @synthesize view=_view;
 @property(retain, nonatomic) NSArray *group; // @synthesize group=_group;
 

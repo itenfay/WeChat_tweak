@@ -22,7 +22,6 @@
     NSNumber *_codecType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *codecType; // @synthesize codecType=_codecType;
 @property(retain, nonatomic) NSNumber *maxQP; // @synthesize maxQP=_maxQP;
 @property(retain, nonatomic) NSNumber *minQP; // @synthesize minQP=_minQP;

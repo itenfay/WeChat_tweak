@@ -15,7 +15,6 @@
     NSMutableArray *_seekItemArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *seekItemArray; // @synthesize seekItemArray=_seekItemArray;
 @property(nonatomic) _Bool isSeeking; // @synthesize isSeeking=_isSeeking;
 @property(nonatomic) long long seekBufferedCount; // @synthesize seekBufferedCount=_seekBufferedCount;

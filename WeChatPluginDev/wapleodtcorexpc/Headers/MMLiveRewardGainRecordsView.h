@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCPLabel, MMLiveHalfScreenTitleBarView, MMLiveTaskId, MMLoadingView, MMTableView, MMUIButton, MMUILabel, NSData, NSMutableArray, NSString, UIImageView, UIView, WCTimeLineFooterView;
 @protocol MMLiveRewardGainRecordsViewDelegate;
 
@@ -23,7 +25,6 @@
     unsigned long long _rewardTotalAmountInWecoin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rewardTotalAmountInWecoin; // @synthesize rewardTotalAmountInWecoin=_rewardTotalAmountInWecoin;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSMutableArray *rewardGainsInfoList; // @synthesize rewardGainsInfoList=_rewardGainsInfoList;
@@ -69,4 +70,3 @@
 @property(retain, nonatomic) MMLiveTaskId *taskId;
 
 @end
-

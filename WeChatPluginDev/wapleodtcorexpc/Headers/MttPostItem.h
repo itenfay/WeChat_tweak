@@ -22,7 +22,6 @@
 @property(retain, nonatomic) NSString *mainURLString; // @synthesize mainURLString=_mainURLString;
 @property(nonatomic) double inTime; // @synthesize inTime=_inTime;
 @property(retain, nonatomic) NSObject<QBPostDataProtocol> *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 
 @end
 

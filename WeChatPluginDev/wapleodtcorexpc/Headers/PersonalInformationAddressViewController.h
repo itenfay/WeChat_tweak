@@ -13,7 +13,6 @@
     MMTableViewInfo *_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool loadingData; // @synthesize loadingData=_loadingData;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(retain, nonatomic) UIView *contentHeaderView; // @synthesize contentHeaderView=_contentHeaderView;

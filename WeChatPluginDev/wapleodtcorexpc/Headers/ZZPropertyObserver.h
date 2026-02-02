@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol IZZReactive;
@@ -26,7 +27,6 @@
 }
 
 + (id)createWithInstance:(id)arg1 propertyName:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ZZPropertyObserver *nextPO; // @synthesize nextPO=_nextPO;
 @property(nonatomic) __weak ZZPropertyObserver *prePO; // @synthesize prePO=_prePO;
 @property(nonatomic) void *data; // @synthesize data=_data;
@@ -68,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

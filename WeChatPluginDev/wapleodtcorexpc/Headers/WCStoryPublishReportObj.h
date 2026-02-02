@@ -35,7 +35,6 @@
     NSString *_photoLengthWidthSacles;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEnterAllbum; // @synthesize hasEnterAllbum=_hasEnterAllbum;
 @property(nonatomic) _Bool hasRecordVideo; // @synthesize hasRecordVideo=_hasRecordVideo;
 @property(nonatomic) unsigned int isPortrailVideo; // @synthesize isPortrailVideo=_isPortrailVideo;

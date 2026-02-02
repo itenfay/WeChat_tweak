@@ -27,7 +27,6 @@
     UIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIImageView *openReplayCheckbox; // @synthesize openReplayCheckbox=_openReplayCheckbox;
 @property(retain, nonatomic) MMUILabel *openReplaySubtitle; // @synthesize openReplaySubtitle=_openReplaySubtitle;

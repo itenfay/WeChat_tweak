@@ -11,7 +11,6 @@
     NSMutableDictionary *_dicUserName2CellData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicUserName2CellData; // @synthesize dicUserName2CellData=_dicUserName2CellData;
 @property(retain, nonatomic) MMBaseSessionStorage *sessionStorage; // @synthesize sessionStorage=_sessionStorage;
 - (void)updateSessionAndNotifyUI:(id)arg1;

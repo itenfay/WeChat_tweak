@@ -10,7 +10,6 @@
     NSMutableDictionary *_dicSessionId2Session;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicSessionId2Session; // @synthesize dicSessionId2Session=_dicSessionId2Session;
 - (id)getXNetSDKVersion;
 - (unsigned int)GenSessionID;

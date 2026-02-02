@@ -17,7 +17,6 @@
 }
 
 + (id)infoWithLevel:(unsigned int)arg1 desc:(id)arg2 imageUrlString:(id)arg3 imageUrlStringDark:(id)arg4 imageUrlStringLight:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageUrlStringLight; // @synthesize imageUrlStringLight=_imageUrlStringLight;
 @property(retain, nonatomic) NSString *imageUrlStringDark; // @synthesize imageUrlStringDark=_imageUrlStringDark;
 @property(retain, nonatomic) NSString *imageUrlString; // @synthesize imageUrlString=_imageUrlString;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, UILabel;
 
@@ -17,7 +18,6 @@
     NSString *_titleWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *titleWording; // @synthesize titleWording=_titleWording;
 @property(retain, nonatomic) UIImageView *imageArrowView; // @synthesize imageArrowView=_imageArrowView;
 @property(retain, nonatomic) UILabel *subTitleTextLabel; // @synthesize subTitleTextLabel=_subTitleTextLabel;
@@ -32,4 +32,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

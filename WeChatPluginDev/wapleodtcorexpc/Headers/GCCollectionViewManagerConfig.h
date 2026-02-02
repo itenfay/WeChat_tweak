@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UICollectionView;
 
@@ -15,11 +16,9 @@
     double _customPageSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double customPageSize; // @synthesize customPageSize=_customPageSize;
 @property(nonatomic) _Bool supportLongPress; // @synthesize supportLongPress=_supportLongPress;
 @property(copy, nonatomic) CDUnknownBlockType refreshBlock; // @synthesize refreshBlock=_refreshBlock;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 
 @end
-

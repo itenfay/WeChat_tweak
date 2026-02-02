@@ -20,7 +20,6 @@
 + (double)cellHeight;
 + (double)cellWidth;
 + (_Bool)canCreateViewModelWithSectionData:(id)arg1 accountIndex:(unsigned int)arg2 appMsgIndex:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRequestFinderInterestData; // @synthesize hasRequestFinderInterestData=_hasRequestFinderInterestData;
 @property(nonatomic) _Bool hasUpdateDatas; // @synthesize hasUpdateDatas=_hasUpdateDatas;
 @property(retain, nonatomic) NSArray *indexesOfExposedItemNeedToReport; // @synthesize indexesOfExposedItemNeedToReport=_indexesOfExposedItemNeedToReport;

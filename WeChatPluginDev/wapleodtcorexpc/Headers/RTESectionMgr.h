@@ -25,7 +25,6 @@
     double _lastCellExtendHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastCellExtendHeight; // @synthesize lastCellExtendHeight=_lastCellExtendHeight;
 @property(nonatomic) __weak id <RTESectionMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onUpdateTextView:(id)arg1;

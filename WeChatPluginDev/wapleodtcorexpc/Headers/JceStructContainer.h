@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface JceStructContainer : NSObject
 {
@@ -12,7 +13,6 @@
     CDUnknownBlockType _deallocator;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deallocator; // @synthesize deallocator=_deallocator;
 @property(copy, nonatomic) CDUnknownBlockType allocator; // @synthesize allocator=_allocator;
 @property(readonly, nonatomic) void *p; // @synthesize p=_p;
@@ -20,4 +20,3 @@
 - (id)initWithAllocator:(CDUnknownBlockType)arg1 andDeallocator:(CDUnknownBlockType)arg2;
 
 @end
-

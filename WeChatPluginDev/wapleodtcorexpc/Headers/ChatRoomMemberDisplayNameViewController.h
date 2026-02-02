@@ -17,7 +17,6 @@
     CContact *_chatRoomContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *chatRoomContact; // @synthesize chatRoomContact=_chatRoomContact;
 - (id)navigationBarBackgroundColor;
 - (void)handleOplogRet:(int)arg1 errMsg:(id)arg2 eventID:(unsigned int)arg3 cgiWrap:(id)arg4;

@@ -17,7 +17,6 @@
     TencentLBSLocationManager *_locationMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TencentLBSLocationManager *locationMgr; // @synthesize locationMgr=_locationMgr;
 @property(nonatomic) double getLocationTimeStamp; // @synthesize getLocationTimeStamp=_getLocationTimeStamp;
 - (void)onTencentLBSLocationError:(id)arg1;

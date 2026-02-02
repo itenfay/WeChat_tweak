@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveAnchorPromoteInfo;
 
 @interface WCFinderLiveModPromoteInfoCgi
@@ -13,7 +15,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) MMFinderLiveAnchorPromoteInfo *modPromoteInfo; // @synthesize modPromoteInfo=_modPromoteInfo;
@@ -25,4 +26,3 @@
 - (id)initWithLiveTaskId:(id)arg1 opType:(unsigned long long)arg2 promoteInfo:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

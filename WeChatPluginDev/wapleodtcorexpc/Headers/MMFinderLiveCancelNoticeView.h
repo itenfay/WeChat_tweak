@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, MMGrowTextView, MMUIButton, MMUILabel, NSString, UIView;
 
 @interface MMFinderLiveCancelNoticeView
@@ -22,7 +24,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(nonatomic) _Bool isKeyboardShow; // @synthesize isKeyboardShow=_isKeyboardShow;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

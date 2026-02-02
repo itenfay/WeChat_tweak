@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_m_uiAccessTime;
 + (void)PBArrayAdd_m_uiLocalID;
 + (void)PBArrayAdd_m_nsChatName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bNonAutoClean; // @synthesize m_bNonAutoClean=_m_bNonAutoClean;
 @property(nonatomic) unsigned int m_uiHasPreloadSize; // @synthesize m_uiHasPreloadSize=_m_uiHasPreloadSize;
 @property(nonatomic) unsigned int m_uiAccessTime; // @synthesize m_uiAccessTime=_m_uiAccessTime;

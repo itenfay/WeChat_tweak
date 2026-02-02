@@ -18,7 +18,6 @@
     long long _loadingCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long loadingCount; // @synthesize loadingCount=_loadingCount;
 @property(nonatomic) long long enterFullScreenCount; // @synthesize enterFullScreenCount=_enterFullScreenCount;
 @property(retain, nonatomic) NSDate *sourceSwitchEndTime; // @synthesize sourceSwitchEndTime=_sourceSwitchEndTime;

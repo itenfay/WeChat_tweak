@@ -16,7 +16,6 @@
     id <NewMainFrameRightTopMenuBtnDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <NewMainFrameRightTopMenuBtnDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMBarButton *m_addButton; // @synthesize m_addButton;
 @property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;

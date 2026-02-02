@@ -11,7 +11,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingSharedListView *listContentView; // @synthesize listContentView=_listContentView;
 - (void)onLongTouch;
 - (void)addFavorite;

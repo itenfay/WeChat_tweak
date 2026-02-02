@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BizNameCardProtectedInfo *protectedInfo; // @synthesize protectedInfo=_protectedInfo;
 - (id)getReferImage;
 - (id)getReferImageViewWithSize:(struct CGSize)arg1;

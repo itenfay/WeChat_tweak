@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, NSMutableArray, NSMutableDictionary, NSSet, NSString, TextStateDataLogic, TextStateIconLogic, TextStateLikeLogic, TextStateNewXMLLogic, TextStatePublishIconRecentUseCache, TextStatePublishLogic, TextStateReadLogic, TextStateRedDotLogic, TextStateTopicLogic, UIImage, _TtC6WeChat18DoNotDisturbManger;
 
 @interface TextStateMgr
@@ -45,7 +47,6 @@
     CDUnknownBlockType _publishCallback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bSupportPublishMultiStatus; // @synthesize bSupportPublishMultiStatus=_bSupportPublishMultiStatus;
 @property(nonatomic) _Bool bSupportBrowseMultiStatus; // @synthesize bSupportBrowseMultiStatus=_bSupportBrowseMultiStatus;
 @property(copy, nonatomic) CDUnknownBlockType publishCallback; // @synthesize publishCallback=_publishCallback;
@@ -239,4 +240,3 @@
 @property(readonly) Class superclass;
 
 @end
-

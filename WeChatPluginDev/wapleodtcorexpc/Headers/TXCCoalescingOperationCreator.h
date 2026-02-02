@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TXCCoalescingOperationCreator : NSObject
 {
@@ -13,4 +14,3 @@
 + (CDUnknownBlockType)createCoalescingOperationWithIntervals:(id)arg1;
 
 @end
-

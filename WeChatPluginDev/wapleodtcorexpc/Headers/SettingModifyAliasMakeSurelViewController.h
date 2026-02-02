@@ -24,7 +24,6 @@
     id <SettingModifyAliasViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SettingModifyAliasViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *m_ssesionID; // @synthesize m_ssesionID=_m_ssesionID;
 @property(retain, nonatomic) NSString *m_setAliasHumanFaceTicket; // @synthesize m_setAliasHumanFaceTicket=_m_setAliasHumanFaceTicket;

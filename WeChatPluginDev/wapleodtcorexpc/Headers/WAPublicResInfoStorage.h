@@ -16,7 +16,6 @@
 + (id)loadStorageFromPath:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_dicPublicInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicPublicInfo; // @synthesize dicPublicInfo=_dicPublicInfo;
 - (void)adjustOldPublicResVersion;
 - (id)getDescendingVersion;

@@ -15,7 +15,6 @@
     RichTextView *_quitRoomInfoLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *quitRoomInfoLabel; // @synthesize quitRoomInfoLabel=_quitRoomInfoLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) NSString *quitRoomInfo; // @synthesize quitRoomInfo=_quitRoomInfo;

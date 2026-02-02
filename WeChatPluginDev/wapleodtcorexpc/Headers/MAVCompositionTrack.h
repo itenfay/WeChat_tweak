@@ -32,7 +32,6 @@
 + (struct CGAffineTransform)wcvm_adjustPreferredTransform:(struct CGAffineTransform)arg1 withNaturalSize:(struct CGSize)arg2;
 + (void)setFixesTransform:(_Bool)arg1;
 + (void)load;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVClip *internalClip; // @synthesize internalClip=_internalClip;
 @property(nonatomic) struct CGSize sourceSize; // @synthesize sourceSize=_sourceSize;
 @property(nonatomic) CDStruct_1b6d18a9 sourceDuration; // @synthesize sourceDuration=_sourceDuration;

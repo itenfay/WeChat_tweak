@@ -10,7 +10,6 @@
     QGPLatLng *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPLatLng *params; // @synthesize params=_params;
 
 @end

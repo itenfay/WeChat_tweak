@@ -84,7 +84,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *colorDark; // @synthesize colorDark=_colorDark;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *color; // @synthesize color=_color;
 @property(retain, nonatomic) WCAdDynamicFeedElementValue *borderColorDark; // @synthesize borderColorDark=_borderColorDark;

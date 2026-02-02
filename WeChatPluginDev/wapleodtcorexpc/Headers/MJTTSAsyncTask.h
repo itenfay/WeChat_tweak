@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJAudioFileManager, NSString;
 
 @interface MJTTSAsyncTask
@@ -13,7 +15,6 @@
     MJAudioFileManager *_audioFileManager;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCloneTimbre; // @synthesize isCloneTimbre=_isCloneTimbre;
 @property(readonly, nonatomic) MJAudioFileManager *audioFileManager; // @synthesize audioFileManager=_audioFileManager;
 @property(readonly, nonatomic) NSString *roleID; // @synthesize roleID=_roleID;
@@ -30,4 +31,3 @@
 - (id)initWithText:(id)arg1 roleID:(id)arg2 isCloneTimbre:(_Bool)arg3 audioFileManager:(id)arg4 statusDidUpdateSignal:(id)arg5;
 
 @end
-

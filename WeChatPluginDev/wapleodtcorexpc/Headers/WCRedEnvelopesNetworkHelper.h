@@ -15,7 +15,6 @@
 + (void)idkeyCmdReport:(unsigned int)arg1 keyName:(id)arg2 value:(unsigned int)arg3;
 + (void)idkeyCmdReport:(unsigned int)arg1 keyName:(id)arg2;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCRedEnvelopesNetworkHelperDelegate> m_delegate; // @synthesize m_delegate;
 - (void)reportHongBaoTenPayRes:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

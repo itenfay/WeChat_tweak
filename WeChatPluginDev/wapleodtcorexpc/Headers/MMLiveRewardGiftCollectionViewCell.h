@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMUILabel, MMUIView, NSString, UIImage, UIImageView, UILongPressGestureRecognizer;
 @protocol MMLiveRewardGiftCollectionViewCellDelegate;
@@ -31,7 +32,6 @@
     unsigned long long _mode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) UILongPressGestureRecognizer *sendButtonLongPressGesture; // @synthesize sendButtonLongPressGesture=_sendButtonLongPressGesture;
 @property(retain, nonatomic) MMUILabel *tagLabel; // @synthesize tagLabel=_tagLabel;
@@ -95,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

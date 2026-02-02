@@ -15,7 +15,6 @@
     unsigned long long _outputType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long outputType; // @synthesize outputType=_outputType;
 @property(retain, nonatomic) WXGBackupDataInfo *backupDataInfo; // @synthesize backupDataInfo=_backupDataInfo;
 @property(retain, nonatomic) PacketBackupDataPush *dataPush; // @synthesize dataPush=_dataPush;

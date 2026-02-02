@@ -20,7 +20,6 @@
     unsigned long long _muteType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int startPlayTimeStamp; // @synthesize startPlayTimeStamp=_startPlayTimeStamp;
 @property(nonatomic) unsigned long long muteType; // @synthesize muteType=_muteType;
 @property(nonatomic) unsigned int playDuration; // @synthesize playDuration=_playDuration;

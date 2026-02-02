@@ -10,7 +10,6 @@
     id <WCPayOfflineAddNewCardTipsViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayOfflineAddNewCardTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewPayCardBtnPress;
 - (void)addNewCardBtnPress;

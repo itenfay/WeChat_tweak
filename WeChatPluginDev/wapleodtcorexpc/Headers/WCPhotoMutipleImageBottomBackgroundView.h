@@ -16,7 +16,6 @@
     CAGradientLayer *_backgroundLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fittingSize; // @synthesize fittingSize=_fittingSize;
 @property(retain, nonatomic) CAGradientLayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMVPlayer, MMMusicVideoStatusOpenParams, NSString;
 @protocol TextStateBaseMediaViewDelegate, TextStateMVPlayerViewDelegate;
@@ -17,7 +18,6 @@
     struct UIEdgeInsets _lyricViewInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets lyricViewInsets; // @synthesize lyricViewInsets=_lyricViewInsets;
 @property(nonatomic) _Bool startPlayerAfterLoad; // @synthesize startPlayerAfterLoad=_startPlayerAfterLoad;
 @property(retain, nonatomic) MMMusicVideoStatusOpenParams *openParams; // @synthesize openParams=_openParams;
@@ -65,4 +65,3 @@
 
 
 @end
-

@@ -12,7 +12,6 @@
     UICollectionView *_view;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *view; // @synthesize view=_view;
 - (id)indexPathForCell:(id)arg1;
 - (id)listVisiableCells;

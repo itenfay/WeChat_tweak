@@ -19,7 +19,6 @@
     UISwitch *_m_itemSwtich;
 }
 
-- (void).cxx_destruct;
 @property(retain) UISwitch *m_itemSwtich; // @synthesize m_itemSwtich=_m_itemSwtich;
 @property(retain) WCPayLineSeparatorView *m_panelView; // @synthesize m_panelView=_m_panelView;
 @property(retain) UILabel *m_titleLabel; // @synthesize m_titleLabel=_m_titleLabel;

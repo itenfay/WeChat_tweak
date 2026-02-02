@@ -16,7 +16,6 @@
     _Bool waitingForCompletion;
 }
 
-- (void).cxx_destruct;
 @property _Bool waitingForCompletion; // @synthesize waitingForCompletion;
 @property(nonatomic) double presentedTime; // @synthesize presentedTime=_presentedTime;
 @property(readonly, nonatomic) IOSurface *surface; // @synthesize surface=_surface;

@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/NSTextAttachment.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMTextAttachment : NSTextAttachment
 {
     CDUnknownBlockType _onAccessibilityActivate;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onAccessibilityActivate; // @synthesize onAccessibilityActivate=_onAccessibilityActivate;
 - (_Bool)accessibilityActivate;
 
 @end
-

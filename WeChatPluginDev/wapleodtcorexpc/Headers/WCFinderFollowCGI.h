@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderFollowCGIRequestParams;
 
 @interface WCFinderFollowCGI
@@ -24,7 +26,6 @@
     WCFinderFollowCGIRequestParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFollowCGIRequestParams *params; // @synthesize params=_params;
 @property(nonatomic) unsigned int enhanceFollowBtn; // @synthesize enhanceFollowBtn=_enhanceFollowBtn;
 @property(nonatomic) unsigned long long fromMentionID; // @synthesize fromMentionID=_fromMentionID;
@@ -47,4 +48,3 @@
 - (id)initWithParams:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 
 @end
-

@@ -28,7 +28,6 @@
     struct CGRect _fullScreen;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC25MagicCardStarterProtocols25MagicCardStarterBizConfig *bizConfig; // @synthesize bizConfig=_bizConfig;
 @property(retain, nonatomic) _TtC25MagicCardStarterProtocols22MagicCardStarterHandle *starterHandle; // @synthesize starterHandle=_starterHandle;
 @property(retain, nonatomic) _TtC6WeChat18MagicSclCustomView *customView; // @synthesize customView=_customView;

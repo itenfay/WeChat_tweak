@@ -25,7 +25,6 @@
 
 + (double)cellHeightWithDataItem:(id)arg1 viewW:(double)arg2;
 + (id)cellId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLandScapeCardCellStyle *style; // @synthesize style=_style;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;

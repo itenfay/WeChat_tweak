@@ -23,7 +23,6 @@
     NSString *_shortLink;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int wxProcessColdStartTimeStamp; // @synthesize wxProcessColdStartTimeStamp=_wxProcessColdStartTimeStamp;
 @property(copy, nonatomic) NSString *shortLink; // @synthesize shortLink=_shortLink;
 @property(nonatomic) unsigned int coldStartMode; // @synthesize coldStartMode=_coldStartMode;

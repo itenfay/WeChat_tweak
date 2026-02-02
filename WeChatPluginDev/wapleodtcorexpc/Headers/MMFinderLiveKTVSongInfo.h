@@ -14,7 +14,6 @@
     NSString *_testSingPCMPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *testSingPCMPath; // @synthesize testSingPCMPath=_testSingPCMPath;
 @property(retain, nonatomic) NSString *originalMusicFilePath; // @synthesize originalMusicFilePath=_originalMusicFilePath;
 @property(retain, nonatomic) NSString *accompanyMusicFilePath; // @synthesize accompanyMusicFilePath=_accompanyMusicFilePath;

@@ -16,7 +16,6 @@
     FinderJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(nonatomic) int htmlShowStyle; // @synthesize htmlShowStyle=_htmlShowStyle;
 @property(nonatomic) _Bool linkIsFromPasteBoard; // @synthesize linkIsFromPasteBoard=_linkIsFromPasteBoard;

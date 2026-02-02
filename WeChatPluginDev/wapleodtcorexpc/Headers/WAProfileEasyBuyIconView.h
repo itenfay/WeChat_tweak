@@ -14,7 +14,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) WAProfileEasyBuyIconViewModel *viewModel; // @synthesize viewModel=_viewModel;

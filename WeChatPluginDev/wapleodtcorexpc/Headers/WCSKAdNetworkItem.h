@@ -19,7 +19,6 @@
     NSString *_signature;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(nonatomic) long long timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *sourceAppId; // @synthesize sourceAppId=_sourceAppId;

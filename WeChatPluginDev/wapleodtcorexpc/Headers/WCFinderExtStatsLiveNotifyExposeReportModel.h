@@ -11,7 +11,6 @@
     NSString *_noticeID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *noticeID; // @synthesize noticeID=_noticeID;
 @property(nonatomic) unsigned long long autoPlayDurationMS; // @synthesize autoPlayDurationMS=_autoPlayDurationMS;
 - (id)generateOtherKVsDictionary;

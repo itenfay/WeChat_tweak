@@ -17,7 +17,6 @@
     unsigned long long _currentIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSArray *tabListData; // @synthesize tabListData=_tabListData;
 @property(retain, nonatomic) NSMutableArray *tabButtons; // @synthesize tabButtons=_tabButtons;

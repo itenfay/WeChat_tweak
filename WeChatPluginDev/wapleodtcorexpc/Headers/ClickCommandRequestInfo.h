@@ -18,7 +18,6 @@
     NSString *m_content;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_actionType; // @synthesize m_actionType;
 @property(nonatomic) long long m_type; // @synthesize m_type;
 @property(retain, nonatomic) NSString *m_content; // @synthesize m_content;

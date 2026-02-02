@@ -12,7 +12,6 @@
     NSArray *_path;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *path; // @synthesize path=_path;
 - (_Bool)getHasClip;
 - (void)setHasClip:(_Bool)arg1;

@@ -19,7 +19,6 @@
     struct CGSize _selfSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ktvThemeResourceFetchSessionToken; // @synthesize ktvThemeResourceFetchSessionToken=_ktvThemeResourceFetchSessionToken;
 @property(retain, nonatomic) MMUILabel *stateLabel; // @synthesize stateLabel=_stateLabel;
 @property(retain, nonatomic) MMLiveKtvUserView *singerUserView; // @synthesize singerUserView=_singerUserView;

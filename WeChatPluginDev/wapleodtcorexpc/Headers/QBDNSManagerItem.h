@@ -21,7 +21,6 @@
 @property long long err; // @synthesize err=_err;
 @property int status; // @synthesize status=_status;
 @property(retain) NSArray *records; // @synthesize records=_records;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

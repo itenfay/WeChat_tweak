@@ -18,7 +18,6 @@
     EnhanceTranslatingView *_enhanceTranslatingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EnhanceTranslatingView *enhanceTranslatingView; // @synthesize enhanceTranslatingView=_enhanceTranslatingView;
 @property(retain, nonatomic) EnhanceTranslatingLogic *logic; // @synthesize logic=_logic;
 @property(retain, nonatomic) OCRTransReport *report; // @synthesize report=_report;

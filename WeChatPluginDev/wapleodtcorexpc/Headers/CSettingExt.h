@@ -144,7 +144,6 @@
     NSString *webviewSessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useSendButtonInApp; // @synthesize useSendButtonInApp=_useSendButtonInApp;
 @property(nonatomic) _Bool m_isShakeMusicOverseaPromptInShakeNotShowAgain; // @synthesize m_isShakeMusicOverseaPromptInShakeNotShowAgain=_m_isShakeMusicOverseaPromptInShakeNotShowAgain;
 @property(nonatomic) _Bool m_bHasNotifyWeSportEmptyCover; // @synthesize m_bHasNotifyWeSportEmptyCover=_m_bHasNotifyWeSportEmptyCover;

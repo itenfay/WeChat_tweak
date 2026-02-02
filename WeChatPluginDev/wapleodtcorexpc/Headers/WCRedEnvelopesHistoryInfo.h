@@ -23,7 +23,6 @@
     NSString *m_nsProcessContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsProcessContent; // @synthesize m_nsProcessContent;
 @property(retain, nonatomic) NSString *m_nsHeaderImageClickedUrl; // @synthesize m_nsHeaderImageClickedUrl;
 @property(retain, nonatomic) NSString *m_nsCurrentYear; // @synthesize m_nsCurrentYear;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMWebImageView, NSArray, NSString, UIImage, UIView, WAHomeTableViewCellDescView, WCTagsView;
 
 @interface WAHomeTableViewCell
@@ -27,7 +29,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAHomeTableViewCellDescView *descView; // @synthesize descView=_descView;
 @property(retain, nonatomic) WCTagsView *tagsView; // @synthesize tagsView=_tagsView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
@@ -72,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -26,7 +26,6 @@
     double _otherPageRecordDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double otherPageRecordDuration; // @synthesize otherPageRecordDuration=_otherPageRecordDuration;
 @property(nonatomic) double otherPageStartTime; // @synthesize otherPageStartTime=_otherPageStartTime;
 @property(retain, nonatomic) GameWebViewClientReportRecord *otherPageTimeRecorder; // @synthesize otherPageTimeRecorder=_otherPageTimeRecorder;

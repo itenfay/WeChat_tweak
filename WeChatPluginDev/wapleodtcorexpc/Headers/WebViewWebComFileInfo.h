@@ -14,7 +14,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int size; // @synthesize size=_size;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

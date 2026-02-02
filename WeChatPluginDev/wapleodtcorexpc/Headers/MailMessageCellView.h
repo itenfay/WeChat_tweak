@@ -10,7 +10,6 @@
     UIImageView *m_bgImageView;
 }
 
-- (void).cxx_destruct;
 - (void)onTouchUpInside;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)onDelete:(id)arg1;

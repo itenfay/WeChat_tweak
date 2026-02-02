@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_storeItemList;
 + (void)PBArrayAdd_totalEmojiCount;
 + (void)PBArrayAdd_totalEmoticonCount;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;
 @property(nonatomic) unsigned int designerUin; // @synthesize designerUin=_designerUin;
 @property(nonatomic) unsigned long long totalEmojiCount; // @synthesize totalEmojiCount=_totalEmojiCount;

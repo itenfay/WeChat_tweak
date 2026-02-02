@@ -14,7 +14,6 @@
     CMessageWrap *_msgWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 @property int lastRecordTime; // @synthesize lastRecordTime=_lastRecordTime;
 @property unsigned int audioid; // @synthesize audioid=_audioid;

@@ -18,7 +18,6 @@
     NSString *_backGroundImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backGroundImage; // @synthesize backGroundImage=_backGroundImage;
 @property(retain, nonatomic) UIColor *backGroundColor; // @synthesize backGroundColor=_backGroundColor;
 @property(retain, nonatomic) NSString *btnText; // @synthesize btnText=_btnText;

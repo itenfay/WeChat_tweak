@@ -14,7 +14,6 @@
 
 + (_Bool)canUseInSafemode;
 + (_Bool)isPRConfigContent:(id)arg1;
-- (void).cxx_destruct;
 - (void)cleanUpdate;
 - (void)cleanOldOne;
 - (void)handleXmlMsg:(id)arg1;

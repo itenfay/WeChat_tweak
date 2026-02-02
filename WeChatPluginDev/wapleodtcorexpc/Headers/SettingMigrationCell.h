@@ -21,7 +21,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *betweenSeperator; // @synthesize betweenSeperator=_betweenSeperator;
 @property(retain, nonatomic) UIView *bottomSeperator; // @synthesize bottomSeperator=_bottomSeperator;
 @property(retain, nonatomic) UIView *topSeperator; // @synthesize topSeperator=_topSeperator;

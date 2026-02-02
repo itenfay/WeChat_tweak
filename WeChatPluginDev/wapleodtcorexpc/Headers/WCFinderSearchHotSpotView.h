@@ -13,7 +13,6 @@
     WCFinderSearchHotSpotViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchHotSpotViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WCFinderSearchHotSpotViewDelegate> delegate; // @synthesize delegate=_delegate;

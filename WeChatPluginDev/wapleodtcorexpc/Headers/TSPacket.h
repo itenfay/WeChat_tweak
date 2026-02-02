@@ -13,7 +13,6 @@
 }
 
 + (int)uniqueTag;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 
 @end

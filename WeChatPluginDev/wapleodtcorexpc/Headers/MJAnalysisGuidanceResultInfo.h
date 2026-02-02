@@ -13,7 +13,6 @@
     MJVolumeAnalysisResult *_volumeResult;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJVolumeAnalysisResult *volumeResult; // @synthesize volumeResult=_volumeResult;
 @property(readonly, nonatomic) MJAssetAnalysisReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 - (id)description;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderClientStatus, NSData, NSString;
 
 @interface WCFinderGetLikeListCGI
@@ -16,7 +18,6 @@
     FinderClientStatus *_clientStatus;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderClientStatus *clientStatus; // @synthesize clientStatus=_clientStatus;
 @property(nonatomic) int tabType; // @synthesize tabType=_tabType;
 @property(retain, nonatomic) NSData *lastBuff; // @synthesize lastBuff=_lastBuff;
@@ -32,4 +33,3 @@
 - (id)initWithLastBuff:(id)arg1 targetUsername:(id)arg2 clientStatus:(id)arg3 scene:(int)arg4 successful:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

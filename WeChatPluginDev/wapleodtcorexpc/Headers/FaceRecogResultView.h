@@ -21,7 +21,6 @@
     struct CGRect _faceRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subDescLabel; // @synthesize subDescLabel=_subDescLabel;
 @property(retain, nonatomic) UIButton *bizCustomButton; // @synthesize bizCustomButton=_bizCustomButton;
 @property(nonatomic) _Bool showIconFromFaceCenter; // @synthesize showIconFromFaceCenter=_showIconFromFaceCenter;

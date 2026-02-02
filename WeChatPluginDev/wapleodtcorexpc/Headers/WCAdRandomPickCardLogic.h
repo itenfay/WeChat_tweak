@@ -17,7 +17,6 @@
 }
 
 + (id)getRandomPickCardLogicWithDataItem:(id)arg1 contentItemScene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extraPickedCardInfos; // @synthesize extraPickedCardInfos=_extraPickedCardInfos;
 @property(retain, nonatomic) NSMutableDictionary *extraCardExtInfos; // @synthesize extraCardExtInfos=_extraCardExtInfos;
 @property(nonatomic) long long logicStatus; // @synthesize logicStatus=_logicStatus;

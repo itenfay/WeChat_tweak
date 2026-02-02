@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJAudioFileManager, NSArray, NSMutableArray, NSMutableDictionary, NSString, UBDictionarySignal;
 
@@ -23,7 +24,6 @@
 }
 
 + (id)regulateCaptionItems:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(retain, nonatomic) NSMutableDictionary *tasksByText; // @synthesize tasksByText=_tasksByText;
 @property(nonatomic) long long audioSampleRate; // @synthesize audioSampleRate=_audioSampleRate;
@@ -52,4 +52,3 @@
 - (id)initWithAudioID:(id)arg1 roleID:(id)arg2 isCloneTimbre:(_Bool)arg3 audioFileManager:(id)arg4 statusDidUpdateSignal:(id)arg5;
 
 @end
-

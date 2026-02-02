@@ -15,7 +15,6 @@
     unsigned long long _jumpScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long jumpScene; // @synthesize jumpScene=_jumpScene;
 @property(retain, nonatomic) NSString *toAppId; // @synthesize toAppId=_toAppId;
 @property(retain, nonatomic) NSString *fromAppId; // @synthesize fromAppId=_fromAppId;

@@ -13,7 +13,6 @@
     UIImageView *m_errorImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *errorMessageLabel; // @synthesize errorMessageLabel;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

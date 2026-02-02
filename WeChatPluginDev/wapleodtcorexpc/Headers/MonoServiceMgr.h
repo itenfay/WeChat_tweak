@@ -21,7 +21,6 @@
 + (_Bool)isLastActionInMainScene;
 + (id)createUniqueId:(id)arg1 business:(unsigned long long)arg2 subBusiness:(unsigned long long)arg3;
 + (id)createUniqueId:(id)arg1 monoServiceKind:(unsigned long long)arg2 business:(unsigned long long)arg3 subBusiness:(unsigned long long)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentVoipOrMultiTalkId; // @synthesize currentVoipOrMultiTalkId=_currentVoipOrMultiTalkId;
 @property(retain, nonatomic) NSMutableDictionary *subSceneVideoMonoServiceDict; // @synthesize subSceneVideoMonoServiceDict=_subSceneVideoMonoServiceDict;
 @property(retain, nonatomic) NSMutableDictionary *mainSceneVideoMonoServiceDict; // @synthesize mainSceneVideoMonoServiceDict=_mainSceneVideoMonoServiceDict;

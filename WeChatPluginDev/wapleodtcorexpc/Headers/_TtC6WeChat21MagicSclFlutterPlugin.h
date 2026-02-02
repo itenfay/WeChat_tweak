@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -14,7 +15,6 @@
     MISSING_TYPE *weakEngine;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)invokeBizName:(id)arg1 apiName:(id)arg2 data:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)getFrameSetCoverPathRootId:(id)arg1 frameSetId:(id)arg2 error:(id *)arg3;
@@ -37,4 +37,3 @@
 - (void)onAttachedToEngine:(id)arg1;
 
 @end
-

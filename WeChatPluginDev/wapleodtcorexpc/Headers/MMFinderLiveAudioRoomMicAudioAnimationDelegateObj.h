@@ -12,7 +12,6 @@
     MMFinderLiveAudioRoomMicAudioAnimationView *_weakAnimationView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveAudioRoomMicAudioAnimationView *weakAnimationView; // @synthesize weakAnimationView=_weakAnimationView;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 

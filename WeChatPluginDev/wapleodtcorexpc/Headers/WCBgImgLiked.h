@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bgimg; // @synthesize bgimg=_bgimg;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 

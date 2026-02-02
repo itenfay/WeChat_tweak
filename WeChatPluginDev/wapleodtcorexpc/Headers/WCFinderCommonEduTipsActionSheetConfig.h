@@ -18,7 +18,6 @@
     NSString *_trailContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *trailContent; // @synthesize trailContent=_trailContent;
 @property(copy, nonatomic) NSString *acceptContent; // @synthesize acceptContent=_acceptContent;
 @property(copy, nonatomic) NSString *cancelContent; // @synthesize cancelContent=_cancelContent;

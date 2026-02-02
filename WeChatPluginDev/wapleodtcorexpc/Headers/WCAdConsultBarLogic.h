@@ -16,7 +16,6 @@
 }
 
 + (id)getConsultLogicWithDataItem:(id)arg1 contentItemScene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstAnimation; // @synthesize isFirstAnimation=_isFirstAnimation;
 @property(retain, nonatomic) WCAdConsultBarCarouselInfo *barCarouselInfo; // @synthesize barCarouselInfo=_barCarouselInfo;
 @property(retain, nonatomic) MMTimer *animateTimer; // @synthesize animateTimer=_animateTimer;

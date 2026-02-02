@@ -19,7 +19,6 @@
 }
 
 + (id)createPendingExtensionKeyWithTaskId:(id)arg1 businessType:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FIFOFileQueue *pendingQueue; // @synthesize pendingQueue=_pendingQueue;
 @property(nonatomic) __weak id <WCUploadMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)checkPendingTaskOverTime;

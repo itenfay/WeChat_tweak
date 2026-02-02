@@ -18,7 +18,6 @@
     NSString *_receiverInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *receiverInfo; // @synthesize receiverInfo=_receiverInfo;
 @property(retain, nonatomic) NSString *tips; // @synthesize tips=_tips;
 @property(retain, nonatomic) NSString *confirmBtn; // @synthesize confirmBtn=_confirmBtn;

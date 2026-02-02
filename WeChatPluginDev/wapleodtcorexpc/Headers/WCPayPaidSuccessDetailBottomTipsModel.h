@@ -12,7 +12,6 @@
     NSString *_tipsContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tipsContent; // @synthesize tipsContent=_tipsContent;
 
 @end

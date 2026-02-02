@@ -31,7 +31,6 @@
 + (id)getCurrentChnSubTitleTextAttributeObj;
 + (id)getCurrentEngSubTitleFont;
 + (id)getCurrentChnSubTitleFont;
-- (void).cxx_destruct;
 @property(nonatomic) double standardChnSubTitleLineHeight; // @synthesize standardChnSubTitleLineHeight=_standardChnSubTitleLineHeight;
 @property(nonatomic) _Bool isLiveMinimized; // @synthesize isLiveMinimized=_isLiveMinimized;
 @property(nonatomic) _Bool hasContent; // @synthesize hasContent=_hasContent;

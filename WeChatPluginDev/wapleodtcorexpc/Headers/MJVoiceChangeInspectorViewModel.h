@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJNarrationSegmentViewModel, MJSpeechManager, NSArray, NSString;
 
 @interface MJVoiceChangeInspectorViewModel
@@ -20,7 +22,6 @@
     NSString *_originRoleID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVoiceCloneEnabledByConfig; // @synthesize isVoiceCloneEnabledByConfig=_isVoiceCloneEnabledByConfig;
 @property(retain, nonatomic) NSString *originRoleID; // @synthesize originRoleID=_originRoleID;
 @property(retain, nonatomic) MJSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
@@ -82,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

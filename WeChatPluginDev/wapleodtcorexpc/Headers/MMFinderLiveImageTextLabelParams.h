@@ -19,7 +19,6 @@
     struct UIEdgeInsets _padding;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *rightImage; // @synthesize rightImage=_rightImage;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

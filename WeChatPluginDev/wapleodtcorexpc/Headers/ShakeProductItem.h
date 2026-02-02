@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_productId;
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;
 @property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

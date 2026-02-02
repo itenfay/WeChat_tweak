@@ -17,7 +17,6 @@
 + (id)resultForFetching;
 + (id)resultForFail;
 + (id)resultForSuccessWith:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *feedbackReasons; // @synthesize feedbackReasons=_feedbackReasons;
 @property(nonatomic) _Bool fetchSuccess; // @synthesize fetchSuccess=_fetchSuccess;
 @property(nonatomic) _Bool fetching; // @synthesize fetching=_fetching;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AnyPromise, EmoticonBoardView, FinderLocation, MJPublisher, MMBarButtonItem, MMMenuController, MMTipsViewController, MMUIButton, NSMutableDictionary, NSString, UIButton, UIControl, UIImageView, UILabel, UIScrollView, UIView, WCActionSheet, WCActionSheetItem, WCFiderEidtMusicPostingAudioAdapter, WCFinderAdCommentApplyActionSheet, WCFinderAnimationLoadingView, WCFinderCoverEditViewController, WCFinderCoverHoriPreviewViewController, WCFinderCreateCoordinator, WCFinderEditExtensionReadView, WCFinderFilterTextView, WCFinderForbidBannerView, WCFinderHeadImageView, WCFinderLayoutView, WCFinderLocationSelectHalfViewController, WCFinderModifiedPanelView, WCFinderModifyEditInputView, WCFinderPostCoverInfoView, WCFinderPostInputView, WCFinderPostModifiedEduTipsPannel, WCFinderPostNetResourceAssistCancelToken, WCFinderPostPOICustomControl, WCFinderPostTopBaseView, WCFinderPostVerifyAssist, WCFinderPostViewModel, WCFinderRecommendBubbleView, WCFinderWarningPanelView, WCInputController, WCTimelinePOIPickerViewController;
 @protocol WCFinderPostViewControllerDelegate;
 
@@ -89,7 +91,6 @@
 + (_Bool)showNavigationStreamProfileVCDraftTab:(id)arg1;
 + (void)showJumpProfileDraftTab:(id)arg1;
 + (_Bool)_isOriginalItem:(id)arg1 supportCurrentDataItem:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisher *mjPublisher; // @synthesize mjPublisher=_mjPublisher;
 @property(copy, nonatomic) NSString *lastPOISearchWord; // @synthesize lastPOISearchWord=_lastPOISearchWord;
 @property(retain, nonatomic) FinderLocation *lastFinderLocation; // @synthesize lastFinderLocation=_lastFinderLocation;
@@ -493,4 +494,3 @@
 @property(readonly) Class superclass;
 
 @end
-

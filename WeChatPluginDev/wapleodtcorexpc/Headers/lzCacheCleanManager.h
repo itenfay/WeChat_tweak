@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate;
 
@@ -12,7 +13,6 @@
     NSDate *_lastCleanDate;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isExpFile:(id)arg1;
 - (id)scanCachePath:(id)arg1;
 - (_Bool)isFileCaching:(id)arg1 cacheMgr:(id)arg2;
@@ -22,4 +22,3 @@
 - (id)init;
 
 @end
-

@@ -18,7 +18,6 @@
     unsigned long long _timestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int option; // @synthesize option=_option;
 @property(nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;

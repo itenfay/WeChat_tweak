@@ -14,7 +14,6 @@
     NSArray *_collectionViewCellItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *collectionViewCellItems; // @synthesize collectionViewCellItems=_collectionViewCellItems;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

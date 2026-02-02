@@ -24,7 +24,6 @@
     WCPayOverseaFacingReceiveControlLogic *_overseaFacingReceiveControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayOverseaFacingReceiveControlLogic *overseaFacingReceiveControlLogic; // @synthesize overseaFacingReceiveControlLogic=_overseaFacingReceiveControlLogic;
 @property(retain, nonatomic) WCPayJumpHbRefundJsapiLogic *hbRefundControlLogic; // @synthesize hbRefundControlLogic=_hbRefundControlLogic;
 @property(retain, nonatomic) WCPayLQTMoneyControlLogic *lqtMoneyControlLogic; // @synthesize lqtMoneyControlLogic=_lqtMoneyControlLogic;

@@ -18,7 +18,6 @@
     unsigned long long _settingAuthManageFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool finderShowLikeListInWeixinProfile; // @synthesize finderShowLikeListInWeixinProfile=_finderShowLikeListInWeixinProfile;
 @property(nonatomic) unsigned int wcNotificationCellIndex; // @synthesize wcNotificationCellIndex=_wcNotificationCellIndex;
 @property(nonatomic) unsigned long long settingAuthManageFlag; // @synthesize settingAuthManageFlag=_settingAuthManageFlag;

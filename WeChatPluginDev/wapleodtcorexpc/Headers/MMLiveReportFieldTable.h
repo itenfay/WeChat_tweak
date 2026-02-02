@@ -14,7 +14,6 @@
 }
 
 + (void)addFieldWidthTable:(id)arg1 withClass:(Class)arg2 forFieldName:(id)arg3 forFieldIndex:(unsigned int)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) Class reportHandlerClass; // @synthesize reportHandlerClass=_reportHandlerClass;
 @property(retain, nonatomic) NSMutableDictionary *fieldDict; // @synthesize fieldDict=_fieldDict;
 - (id)serializeAsLogString:(id)arg1;

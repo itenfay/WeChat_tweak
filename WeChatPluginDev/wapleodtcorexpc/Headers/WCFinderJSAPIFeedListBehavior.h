@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString, WCFinderCompleteHandler;
 
@@ -25,7 +26,6 @@
 + (_Bool)boolValueForKey:(id)arg1 inDict:(id)arg2;
 + (id)behaviorDict:(id)arg1;
 + (id)behaviorWithParams:(id)arg1 event:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liteAppId; // @synthesize liteAppId=_liteAppId;
 @property(nonatomic) _Bool delayCompleteCallback; // @synthesize delayCompleteCallback=_delayCompleteCallback;
 @property(retain, nonatomic) NSMutableDictionary *bckInfo; // @synthesize bckInfo=_bckInfo;
@@ -45,4 +45,3 @@
 - (_Bool)delayCallResultCallback;
 
 @end
-

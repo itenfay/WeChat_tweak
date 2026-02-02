@@ -22,7 +22,6 @@
 + (id)speechMsgWithNewXML:(id)arg1;
 + (id)speechMsgWithWCPayExtensionInfo:(id)arg1;
 + (id)speechMsgWithPayload:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_messageWrap; // @synthesize m_messageWrap=_m_messageWrap;
 @property(retain, nonatomic) NSString *m_pushIdentifier; // @synthesize m_pushIdentifier=_m_pushIdentifier;
 @property(nonatomic) unsigned int voiceSynthesizeTime; // @synthesize voiceSynthesizeTime=_voiceSynthesizeTime;

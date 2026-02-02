@@ -38,7 +38,6 @@
 
 + (unsigned long long)convertFrom:(long long)arg1;
 + (id)cachedKeyOfEncryptedFeedID:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hasJumpToTabFromLeadToCardRecord; // @synthesize hasJumpToTabFromLeadToCardRecord=_hasJumpToTabFromLeadToCardRecord;
 @property(nonatomic) unsigned long long hasEnterTabRecord; // @synthesize hasEnterTabRecord=_hasEnterTabRecord;
 @property(retain, nonatomic) MMLRUCache *subTabCache; // @synthesize subTabCache=_subTabCache;

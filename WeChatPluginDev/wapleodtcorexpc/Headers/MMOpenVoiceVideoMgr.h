@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 @protocol OS_dispatch_queue;
@@ -18,7 +19,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *views; // @synthesize views=_views;
 @property(nonatomic) unsigned int logCnt; // @synthesize logCnt=_logCnt;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *videoQueue; // @synthesize videoQueue=_videoQueue;
@@ -46,4 +46,3 @@
 - (id)init;
 
 @end
-

@@ -13,7 +13,6 @@
     NSMutableDictionary *sqlConfigRecorderBackup;
 }
 
-- (void).cxx_destruct;
 - (void)saveRecorder;
 - (void)initRecorder;
 - (void)removeSqlConfig:(id)arg1;

@@ -16,7 +16,6 @@
 }
 
 + (id)schedulerWithApiFrom:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long apiFrom; // @synthesize apiFrom=_apiFrom;
 @property(retain, nonatomic) NSDictionary *servicePluginPool; // @synthesize servicePluginPool=_servicePluginPool;
 @property(retain, nonatomic) NSDictionary *webviewPluginPool; // @synthesize webviewPluginPool=_webviewPluginPool;

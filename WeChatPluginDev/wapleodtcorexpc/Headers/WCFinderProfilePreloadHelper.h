@@ -14,7 +14,6 @@
     WCFinderProfilePreloadTask *_fetchingTask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useNewCGI; // @synthesize useNewCGI=_useNewCGI;
 @property(retain, nonatomic) WCFinderProfilePreloadTask *fetchingTask; // @synthesize fetchingTask=_fetchingTask;
 @property(nonatomic) __weak WCFinderDataService *dataService; // @synthesize dataService=_dataService;

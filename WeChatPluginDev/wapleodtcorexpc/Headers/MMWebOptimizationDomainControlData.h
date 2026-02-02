@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_domain;
 + (void)PBArrayAdd_controlBits;
 + (void)PBArrayAdd_controlExpiredTime;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(nonatomic) unsigned int controlBits; // @synthesize controlBits=_controlBits;
 @property(nonatomic) unsigned int controlExpiredTime; // @synthesize controlExpiredTime=_controlExpiredTime;

@@ -19,7 +19,6 @@
 
 + (double)cellLabelTextFontSize:(_Bool)arg1;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *volumeAnimationView; // @synthesize volumeAnimationView=_volumeAnimationView;
 @property(retain, nonatomic) UIImageView *audioIconView; // @synthesize audioIconView=_audioIconView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -19,7 +19,6 @@
 }
 
 + (id)_getPrefix:(id)arg1 inRecordDataFields:(id)arg2 prefix:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) long long mediaFormatSupport; // @synthesize mediaFormatSupport=_mediaFormatSupport;
 - (id)_getMeidaIDForThumbHistoryMessageWrap:(id)arg1 withExtension:(id)arg2;
 - (id)_getMeidaIDForHistoryMessageWrap:(id)arg1 withExtension:(id)arg2;

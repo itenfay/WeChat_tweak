@@ -10,7 +10,6 @@
     id <WCPaySelectWalletViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)selectWalletInfo:(id)arg1;
 - (void)makeWalletInfoCell:(id)arg1 cellInfo:(id)arg2;
 - (void)setDelegate:(id)arg1;

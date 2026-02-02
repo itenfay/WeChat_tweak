@@ -27,7 +27,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shutdownFlag; // @synthesize shutdownFlag=_shutdownFlag;
 @property(retain, nonatomic) MMFinderLiveFeedPreviewLogic *finderLivePreviewLogic; // @synthesize finderLivePreviewLogic=_finderLivePreviewLogic;
 @property(retain, nonatomic) MMTimer *checkJoinLiveTimer; // @synthesize checkJoinLiveTimer=_checkJoinLiveTimer;

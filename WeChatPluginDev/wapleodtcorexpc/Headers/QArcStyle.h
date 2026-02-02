@@ -14,7 +14,6 @@
     double _degree;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double degree; // @synthesize degree=_degree;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(copy, nonatomic) NSArray *gradient; // @synthesize gradient=_gradient;

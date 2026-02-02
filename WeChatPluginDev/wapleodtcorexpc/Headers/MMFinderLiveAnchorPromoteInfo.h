@@ -20,7 +20,6 @@
 }
 
 + (id)createAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anchorUsername; // @synthesize anchorUsername=_anchorUsername;
 @property(retain, nonatomic) NSString *statusTips; // @synthesize statusTips=_statusTips;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;

@@ -14,7 +14,6 @@
     NSString *actionUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *actionUrl; // @synthesize actionUrl;
 @property(retain, nonatomic) NSString *actionText; // @synthesize actionText;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType;

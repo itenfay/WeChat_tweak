@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController;
 
@@ -12,7 +13,6 @@
     UIViewController *_currentViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 - (void)closeProfileDialogWithError:(id *)arg1;
 - (void)showBizProfileDialogUserName:(id)arg1 percentHeight:(double)arg2 listenItemData:(id)arg3 scene:(long long)arg4 sceneNote:(id)arg5 completion:(CDUnknownBlockType)arg6;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

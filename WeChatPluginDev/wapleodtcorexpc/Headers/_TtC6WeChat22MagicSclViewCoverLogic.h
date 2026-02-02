@@ -20,7 +20,6 @@
     MISSING_TYPE *imageCache;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onSclViewLayout;
 - (void)onSclViewAddSubView;

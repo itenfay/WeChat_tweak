@@ -12,7 +12,6 @@
     UIImageView *_likeImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *likeImageView; // @synthesize likeImageView=_likeImageView;
 @property(retain, nonatomic) UILabel *likeNumbLabel; // @synthesize likeNumbLabel=_likeNumbLabel;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

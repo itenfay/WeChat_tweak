@@ -13,7 +13,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) __weak id <MMMusicPostVideoMyLikeDataVMDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)notifyOnDataChanged:(_Bool)arg1;

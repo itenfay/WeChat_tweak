@@ -19,7 +19,6 @@
     NSString *_halfMediaPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int ratio; // @synthesize ratio=_ratio;
 @property(copy, nonatomic) NSString *halfMediaPath; // @synthesize halfMediaPath=_halfMediaPath;
 @property(retain, nonatomic) WCFinderFullScreenEditRectModel *editRectModel; // @synthesize editRectModel=_editRectModel;

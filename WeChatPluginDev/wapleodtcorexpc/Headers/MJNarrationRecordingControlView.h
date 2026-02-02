@@ -17,7 +17,6 @@
     MMUIButton *_typeSwitchButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *typeSwitchButton; // @synthesize typeSwitchButton=_typeSwitchButton;
 @property(retain, nonatomic) MJRecordingControl *backingControl; // @synthesize backingControl=_backingControl;
 @property(nonatomic) unsigned long long narrationType; // @synthesize narrationType=_narrationType;

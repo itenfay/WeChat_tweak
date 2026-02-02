@@ -27,7 +27,6 @@
     WCFinderLiveHomePageScrollActionSheet *_currentActionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageScrollActionSheet *currentActionSheet; // @synthesize currentActionSheet=_currentActionSheet;
 @property(retain, nonatomic) WCFinderMoreLiveTagListHeaderView *tagListHeaderView; // @synthesize tagListHeaderView=_tagListHeaderView;
 @property(nonatomic) _Bool relatedRecommendVisible; // @synthesize relatedRecommendVisible=_relatedRecommendVisible;

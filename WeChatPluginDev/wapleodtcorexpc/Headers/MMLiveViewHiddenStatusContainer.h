@@ -12,7 +12,6 @@
     NSMutableDictionary *_statuses;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *statuses; // @synthesize statuses=_statuses;
 - (id)init;
 

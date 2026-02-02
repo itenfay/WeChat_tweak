@@ -21,7 +21,6 @@
 + (void)reportExposeKeywordJumpInfo:(id)arg1 scene:(int)arg2 fromVC:(id)arg3 tid:(id)arg4 indexPath:(id)arg5 extra:(id)arg6;
 + (void)reportExposeCommentKeyword:(struct WCFinderKeywordAction)arg1 scene:(int)arg2 fromVC:(id)arg3 tid:(id)arg4 indexPath:(id)arg5 extra:(id)arg6;
 + (void)reportClickCommentKeyword:(struct WCFinderKeywordAction)arg1 scene:(int)arg2 fromVC:(id)arg3 tid:(id)arg4 indexPath:(id)arg5 extra:(id)arg6;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *keywordMap; // @synthesize keywordMap=_keywordMap;
 @property(retain, nonatomic) NSString *componentId; // @synthesize componentId=_componentId;
 - (id)ensureJumpInfoSearchWord:(id)arg1 link:(id)arg2;

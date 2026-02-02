@@ -13,7 +13,6 @@
     unsigned long long _threadId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long threadId; // @synthesize threadId=_threadId;
 @property(retain, nonatomic) NSString *cpKey; // @synthesize cpKey=_cpKey;
 

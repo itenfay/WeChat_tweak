@@ -26,7 +26,6 @@
     UILabel *_guideContextEducationLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *guideContextEducationLabel; // @synthesize guideContextEducationLabel=_guideContextEducationLabel;
 @property(retain, nonatomic) UIImage *guideContextfakeSnapshotImage; // @synthesize guideContextfakeSnapshotImage=_guideContextfakeSnapshotImage;
 @property(retain, nonatomic) UIView *exitButton; // @synthesize exitButton=_exitButton;

@@ -14,7 +14,6 @@
     MMUIButton *_closeBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

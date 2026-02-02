@@ -21,7 +21,6 @@
     CdnComVideoProcessInfo *_moovProgressInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnComVideoProcessInfo *moovProgressInfo; // @synthesize moovProgressInfo=_moovProgressInfo;
 @property(retain, nonatomic) CdnComVideoProcessInfo *m3u8ProgressInfo; // @synthesize m3u8ProgressInfo=_m3u8ProgressInfo;
 @property(retain, nonatomic) CdnProgressInfo *progressInfo; // @synthesize progressInfo=_progressInfo;

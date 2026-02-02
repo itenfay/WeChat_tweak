@@ -14,7 +14,6 @@
 }
 
 + (Class)generatorClassForCommand:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *command2ApiList; // @synthesize command2ApiList=_command2ApiList;
 @property(retain, nonatomic) NSMutableDictionary *command2CallbackGenerator; // @synthesize command2CallbackGenerator=_command2CallbackGenerator;
 - (id)createGeneratorForCommand:(id)arg1;

@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_weAppUsername;
 + (void)PBArrayAdd_thumbUrl;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSString *weAppUsername; // @synthesize weAppUsername=_weAppUsername;

@@ -18,7 +18,6 @@
     NSString *_firstCommitNavigationPerfReportString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *firstCommitNavigationPerfReportString; // @synthesize firstCommitNavigationPerfReportString=_firstCommitNavigationPerfReportString;
 @property(retain, nonatomic) NSString *firstCommitNavigationURLString; // @synthesize firstCommitNavigationURLString=_firstCommitNavigationURLString;
 @property(nonatomic) unsigned long long firstNavigationRedirectCount; // @synthesize firstNavigationRedirectCount=_firstNavigationRedirectCount;

@@ -33,7 +33,6 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMusicTypeLabel *typeLabel; // @synthesize typeLabel=_typeLabel;
 @property(retain, nonatomic) UIImage *playingAnimatedImage; // @synthesize playingAnimatedImage=_playingAnimatedImage;
 @property(retain, nonatomic) UIImageView *playingStateImageView; // @synthesize playingStateImageView=_playingStateImageView;

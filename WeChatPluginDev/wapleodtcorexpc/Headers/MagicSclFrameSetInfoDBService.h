@@ -11,7 +11,6 @@
     WCTTable *_frameSetInfoTable;
 }
 
-- (void).cxx_destruct;
 - (id)setupTableWithName:(id)arg1 tableClass:(Class)arg2;
 - (void)reInit;
 - (int)getHeightForBizName:(id)arg1 frameSetName:(id)arg2 path:(id)arg3;

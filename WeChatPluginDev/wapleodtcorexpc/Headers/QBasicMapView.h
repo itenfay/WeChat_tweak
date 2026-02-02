@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink, GLKView, NSArray, NSString, QMapContext, QMapMonitor, TBDrawParam, TBRegionChangeDistributor;
 @protocol QViewSystemChangeDelegate;
@@ -24,7 +25,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMapMonitor *drawMonitor; // @synthesize drawMonitor=_drawMonitor;
 @property(retain, nonatomic) NSArray *buildingRectList; // @synthesize buildingRectList=_buildingRectList;
 @property(retain, nonatomic) TBDrawParam *frameParam; // @synthesize frameParam=_frameParam;
@@ -154,4 +154,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -10,7 +10,6 @@
     MISSING_TYPE *C2C;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onUserClickRequestFile:(id)arg1;
 - (void)onUserClickFile:(id)arg1;

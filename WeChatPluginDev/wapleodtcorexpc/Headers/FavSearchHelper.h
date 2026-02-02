@@ -16,7 +16,6 @@
 + (id)convertFavDataToSimpleInfo:(id)arg1 inItem:(id)arg2;
 + (id)aggregatePicSearchResult:(id)arg1;
 + (id)filterAndAggregateSearchResult:(id)arg1 withSearchText:(id)arg2 withSearchType:(long long)arg3 withTagList:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrLocItem; // @synthesize arrLocItem=_arrLocItem;
 @property(nonatomic) unsigned int currentEventID; // @synthesize currentEventID=_currentEventID;
 @property(nonatomic) __weak id <FavSearchHelperDelegate> delegate; // @synthesize delegate=_delegate;

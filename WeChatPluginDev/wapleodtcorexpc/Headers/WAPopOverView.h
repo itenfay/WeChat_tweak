@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, UIImageView, UIView, WAPopOverTaskBarView, WAPopOverTaskBarlogic;
 
 @interface WAPopOverView
@@ -21,7 +23,6 @@
 }
 
 + (double)getPopOverWidth;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(retain, nonatomic) WAPopOverTaskBarlogic *logic; // @synthesize logic=_logic;
 @property(retain, nonatomic) WAPopOverTaskBarView *taskBarView; // @synthesize taskBarView=_taskBarView;
@@ -44,4 +45,3 @@
 - (id)initWithWAPopOverTaskLogic:(id)arg1;
 
 @end
-

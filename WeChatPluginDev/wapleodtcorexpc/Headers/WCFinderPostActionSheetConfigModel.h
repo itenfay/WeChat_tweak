@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_icon;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(copy, nonatomic) NSString *appstoreScheme; // @synthesize appstoreScheme=_appstoreScheme;
 @property(copy, nonatomic) NSString *universalLink; // @synthesize universalLink=_universalLink;

@@ -26,7 +26,6 @@
     struct CGRect _videoOriginParentViewInWindowFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *videoSnapShotView; // @synthesize videoSnapShotView=_videoSnapShotView;
 @property(nonatomic) struct CGPoint floatVideoInitialPosition; // @synthesize floatVideoInitialPosition=_floatVideoInitialPosition;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

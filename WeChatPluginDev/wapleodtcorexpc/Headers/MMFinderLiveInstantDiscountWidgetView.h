@@ -29,7 +29,6 @@
     PAGView *_pagView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStaticTextStyle; // @synthesize isStaticTextStyle=_isStaticTextStyle;
 @property(nonatomic) _Bool shouldShowText; // @synthesize shouldShowText=_shouldShowText;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;

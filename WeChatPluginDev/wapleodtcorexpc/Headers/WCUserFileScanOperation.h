@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSMutableArray;
 
 @interface WCUserFileScanOperation
@@ -20,7 +22,6 @@
     NSMutableArray *_scanFolderItemStack;
 }
 
-- (void).cxx_destruct;
 @property _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(nonatomic) _Bool backgroundTaskEnabled; // @synthesize backgroundTaskEnabled=_backgroundTaskEnabled;
 @property(retain, nonatomic) NSMutableArray *scanFolderItemStack; // @synthesize scanFolderItemStack=_scanFolderItemStack;
@@ -42,4 +43,3 @@
 - (id)initWithPreAction:(CDUnknownBlockType)arg1 afterAction:(CDUnknownBlockType)arg2 fileAction:(CDUnknownBlockType)arg3;
 
 @end
-

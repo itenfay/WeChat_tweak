@@ -21,7 +21,6 @@
 + (id)collectionView:(id)arg1 displayCellForContentVM:(id)arg2 atIndexPath:(id)arg3 hiddenSticker:(_Bool)arg4;
 + (void)registerDisplayCellForCollectionView:(id)arg1;
 + (_Bool)checkPurchaseUserCount:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *displayTids; // @synthesize displayTids=_displayTids;
 @property(retain, nonatomic) NSMutableDictionary *exposedTimeMap; // @synthesize exposedTimeMap=_exposedTimeMap;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatReporter; // @synthesize extStatReporter=_extStatReporter;

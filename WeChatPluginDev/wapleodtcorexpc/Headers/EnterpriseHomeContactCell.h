@@ -11,7 +11,6 @@
     MMUILabel *_displayNameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *displayNameLabel; // @synthesize displayNameLabel=_displayNameLabel;
 @property(retain, nonatomic) MMWebImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void)layoutSubviews;

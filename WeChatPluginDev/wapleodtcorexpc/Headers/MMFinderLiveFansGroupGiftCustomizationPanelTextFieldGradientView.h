@@ -13,7 +13,6 @@
     CAGradientLayer *_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(nonatomic) double gradientLayerBottomHeight; // @synthesize gradientLayerBottomHeight=_gradientLayerBottomHeight;
 - (id)maskPathWithWidth:(double)arg1 height:(double)arg2 outset:(double)arg3;

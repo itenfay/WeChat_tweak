@@ -25,7 +25,6 @@
 + (id)heapJson;
 + (unsigned long long)sourceVersion;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMemoryLayout *objectSpace; // @synthesize objectSpace=_objectSpace;
 @property(retain, nonatomic) MMMemoryLayout *arrayBuffers; // @synthesize arrayBuffers=_arrayBuffers;
 @property(retain, nonatomic) MMMemoryLayout *deprecatedExtraMemory; // @synthesize deprecatedExtraMemory=_deprecatedExtraMemory;

@@ -12,7 +12,6 @@
     NSMutableDictionary *_queryDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *queryDict; // @synthesize queryDict=_queryDict;
 - (void)setQueryKey:(id)arg1 value:(id)arg2;
 - (id)genQueryString;

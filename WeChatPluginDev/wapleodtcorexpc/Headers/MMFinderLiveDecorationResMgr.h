@@ -12,7 +12,6 @@
     NSRecursiveLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableSet *downloadKeyList; // @synthesize downloadKeyList=_downloadKeyList;
 @property(retain, nonatomic) MMLiveResourceFetcherRootFlowAction *downloader; // @synthesize downloader=_downloader;

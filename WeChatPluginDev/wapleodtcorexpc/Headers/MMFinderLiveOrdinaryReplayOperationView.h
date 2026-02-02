@@ -44,7 +44,6 @@
     MMUIActivityIndicatorView *_loadingRing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayerControlWidgetsEnableDisplay; // @synthesize isPlayerControlWidgetsEnableDisplay=_isPlayerControlWidgetsEnableDisplay;
 @property(nonatomic) _Bool isLongPressing; // @synthesize isLongPressing=_isLongPressing;
 @property(nonatomic) _Bool isClickFirst; // @synthesize isClickFirst=_isClickFirst;

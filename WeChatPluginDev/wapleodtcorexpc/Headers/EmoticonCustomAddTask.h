@@ -15,7 +15,6 @@
     UINavigationController *_topNavigationController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *topNavigationController; // @synthesize topNavigationController=_topNavigationController;
 @property(nonatomic) __weak id <EmoticonCustomAddTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EmoticonCustomAddLogicController *addLogicController; // @synthesize addLogicController=_addLogicController;

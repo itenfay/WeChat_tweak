@@ -15,7 +15,6 @@
 }
 
 + (id)reuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *selectedBorderLayer; // @synthesize selectedBorderLayer=_selectedBorderLayer;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

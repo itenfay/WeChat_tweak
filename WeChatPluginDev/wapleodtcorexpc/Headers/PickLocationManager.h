@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLocatingCoordinateLogic, MMPOIAnnotation, NSArray, NSMutableArray, NSString, POIItem, QIndoorInfo, QPoiInfo;
 @protocol MMPickLocationDataActionDelegate;
 
@@ -47,7 +49,6 @@
 + (struct CLLocationCoordinate2D)centerForAnnotations:(id)arg1;
 + (double)getDistanceBetween:(struct CLLocationCoordinate2D)arg1 AndTarget:(struct CLLocationCoordinate2D)arg2;
 + (id)createAnnotationForPOIItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disablePoiDirectionDesc; // @synthesize disablePoiDirectionDesc=_disablePoiDirectionDesc;
 @property(retain, nonatomic) MMLocatingCoordinateLogic *locatingLogic; // @synthesize locatingLogic=_locatingLogic;
 @property(retain, nonatomic) POIItem *myPoiItem; // @synthesize myPoiItem=_myPoiItem;
@@ -115,4 +116,3 @@
 - (id)init;
 
 @end
-

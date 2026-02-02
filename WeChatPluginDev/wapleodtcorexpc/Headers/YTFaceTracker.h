@@ -22,7 +22,6 @@
 + (void)GlobalRelease;
 + (int)GlobalInit;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_0edc81f6 trackResInfo; // @synthesize trackResInfo=_trackResInfo;
 @property(nonatomic) struct YTPOSE facePose; // @synthesize facePose=_facePose;
 @property(nonatomic) struct CGRect faceRect; // @synthesize faceRect=_faceRect;

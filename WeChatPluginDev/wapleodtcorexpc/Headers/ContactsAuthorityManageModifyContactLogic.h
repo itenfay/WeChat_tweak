@@ -19,7 +19,6 @@
     ContactTagData *_m_contactTagData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactTagData *m_contactTagData; // @synthesize m_contactTagData=_m_contactTagData;
 @property(nonatomic) __weak id <ContactsAuthorityManageModifyContactLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long m_contactsAuthorityManageModifyAction; // @synthesize m_contactsAuthorityManageModifyAction;

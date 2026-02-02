@@ -14,7 +14,6 @@
     NSArray *_musicList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *musicList; // @synthesize musicList=_musicList;
 @property(retain, nonatomic) MMListenCategoryItem *musicCategory; // @synthesize musicCategory=_musicCategory;
 @property(retain, nonatomic) NSArray *playList; // @synthesize playList=_playList;

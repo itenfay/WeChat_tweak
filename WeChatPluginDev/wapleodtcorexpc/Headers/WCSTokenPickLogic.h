@@ -23,7 +23,6 @@
     NSMutableDictionary *_dicSelectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicSelectedIndex; // @synthesize dicSelectedIndex=_dicSelectedIndex;
 @property(retain, nonatomic) NSMutableDictionary *dicSelectedContact; // @synthesize dicSelectedContact=_dicSelectedContact;
 @property(retain, nonatomic) NSMutableArray *arrLastIndexContactTokens; // @synthesize arrLastIndexContactTokens=_arrLastIndexContactTokens;

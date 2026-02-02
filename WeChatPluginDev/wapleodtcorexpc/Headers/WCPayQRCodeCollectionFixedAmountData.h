@@ -16,7 +16,6 @@
     NSString *_payerDescPlaceholder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *payerDescPlaceholder; // @synthesize payerDescPlaceholder=_payerDescPlaceholder;
 @property(nonatomic) _Bool payerDescRequired; // @synthesize payerDescRequired=_payerDescRequired;
 @property(nonatomic) long long amount; // @synthesize amount=_amount;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMContext, NSString;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)hardcodeMetaDataWithTemplateId:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType getSceneBlock; // @synthesize getSceneBlock=_getSceneBlock;
 @property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 - (void)requestTemplateMetadataWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

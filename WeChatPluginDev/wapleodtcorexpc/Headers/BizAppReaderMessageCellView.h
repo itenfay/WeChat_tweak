@@ -10,7 +10,6 @@
     BizAppReaderMessageBigPicView *_bigPicView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BizAppReaderMessageBigPicView *bigPicView; // @synthesize bigPicView=_bigPicView;
 - (unsigned long long)accessibilityTraits;
 - (void)updateSourceView:(id)arg1 nickname:(id)arg2 detailStr:(id)arg3;

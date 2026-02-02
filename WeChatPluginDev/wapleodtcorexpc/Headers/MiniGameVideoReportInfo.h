@@ -21,7 +21,6 @@
     NSString *_externInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int funcType; // @synthesize funcType=_funcType;
 @property(retain, nonatomic) NSString *externInfo; // @synthesize externInfo=_externInfo;
 @property(nonatomic) unsigned int appState; // @synthesize appState=_appState;

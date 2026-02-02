@@ -15,7 +15,6 @@
     struct CGSize m_headSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRound; // @synthesize isRound=_isRound;
 @property(nonatomic) struct CGSize m_headSize; // @synthesize m_headSize;
 - (void)onLoadImageOK:(id)arg1;

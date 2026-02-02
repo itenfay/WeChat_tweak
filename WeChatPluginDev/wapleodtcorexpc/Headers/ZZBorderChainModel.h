@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZBorderModel;
 
@@ -12,11 +13,9 @@
     ZZBorderModel *_object;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ZZBorderModel *object; // @synthesize object=_object;
 - (CDUnknownBlockType)radius;
 - (CDUnknownBlockType)color;
 - (CDUnknownBlockType)width;
 
 @end
-

@@ -14,7 +14,6 @@
     AchievementInfo_GameAchievement *_gameAchievement;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AchievementInfo_GameAchievement *gameAchievement; // @synthesize gameAchievement=_gameAchievement;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMWebImageView *iconView; // @synthesize iconView=_iconView;

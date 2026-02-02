@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveView, NSString;
 
@@ -14,7 +15,6 @@
     CDUnknownBlockType _overTimeBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType overTimeBlock; // @synthesize overTimeBlock=_overTimeBlock;
 @property(nonatomic) __weak MMLiveView *liveView; // @synthesize liveView=_liveView;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

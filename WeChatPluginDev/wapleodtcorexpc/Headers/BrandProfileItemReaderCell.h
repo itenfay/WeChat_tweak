@@ -10,7 +10,6 @@
     CAGradientLayer *_coverMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *coverMaskLayer; // @synthesize coverMaskLayer=_coverMaskLayer;
 - (id)accessibilityLabel;
 - (void)layoutSubviewsNormalItem;

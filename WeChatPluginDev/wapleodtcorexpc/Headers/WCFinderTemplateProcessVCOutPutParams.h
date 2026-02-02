@@ -15,7 +15,6 @@
     NSString *_eventCreaterNickName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *eventCreaterNickName; // @synthesize eventCreaterNickName=_eventCreaterNickName;
 @property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(copy, nonatomic) NSString *templateMusicId; // @synthesize templateMusicId=_templateMusicId;

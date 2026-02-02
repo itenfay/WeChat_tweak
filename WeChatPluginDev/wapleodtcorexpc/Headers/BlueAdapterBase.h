@@ -16,7 +16,6 @@
     NSRecursiveLock *m_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSRecursiveLock *m_lock; // @synthesize m_lock;
 @property(nonatomic) __weak id <BlueAdapterDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain) BlueDevicePool *m_devices; // @synthesize m_devices;

@@ -12,7 +12,6 @@
     CContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) ContactRelatedGroupLogic *relatedGroupLogic; // @synthesize relatedGroupLogic=_relatedGroupLogic;
 @property(retain, nonatomic) NSString *customTitle; // @synthesize customTitle=_customTitle;

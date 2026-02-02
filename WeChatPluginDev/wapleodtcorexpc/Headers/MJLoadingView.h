@@ -16,7 +16,6 @@
 }
 
 + (id)progressLayerWithStrokeColor:(id)arg1 StrokeEnd:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *foregroundLayer; // @synthesize foregroundLayer=_foregroundLayer;
 @property(retain, nonatomic) CAShapeLayer *bgCircleLayer; // @synthesize bgCircleLayer=_bgCircleLayer;
 @property(retain, nonatomic) UIView *bgMaskView; // @synthesize bgMaskView=_bgMaskView;

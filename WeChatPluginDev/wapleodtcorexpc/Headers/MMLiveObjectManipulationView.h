@@ -24,7 +24,6 @@
     struct CGSize _contentSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double actualBorderWidth; // @synthesize actualBorderWidth=_actualBorderWidth;
 @property(retain, nonatomic) MMLiveObjectManipulationViewCornerActionButton *bottomRightActionButton; // @synthesize bottomRightActionButton=_bottomRightActionButton;
 @property(retain, nonatomic) MMLiveObjectManipulationViewCornerActionButton *bottomLeftActionButton; // @synthesize bottomLeftActionButton=_bottomLeftActionButton;

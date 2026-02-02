@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSURL, VideoEncodeParams;
 @protocol OS_dispatch_queue;
@@ -19,7 +20,6 @@
     NSError *_error;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long metadataType; // @synthesize metadataType=_metadataType;
 @property(retain, nonatomic) VideoEncodeParams *encodeParams; // @synthesize encodeParams=_encodeParams;
@@ -38,4 +38,3 @@
 - (id)initWithAssetURL:(id)arg1;
 
 @end
-

@@ -18,7 +18,6 @@
     WCFinderLiveAudienceNoticeReporter *_liveNoticeReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveAudienceNoticeReporter *liveNoticeReporter; // @synthesize liveNoticeReporter=_liveNoticeReporter;
 @property(retain, nonatomic) MMFinderLiveBuyTicketHandle *ticketHandle; // @synthesize ticketHandle=_ticketHandle;
 @property(retain, nonatomic) WCFinderInteractivePanelConfigParamsModel *paramsModel; // @synthesize paramsModel=_paramsModel;

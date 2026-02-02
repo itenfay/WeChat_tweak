@@ -17,7 +17,6 @@
     long long _lastOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long lastOrientation; // @synthesize lastOrientation=_lastOrientation;
 @property(nonatomic) _Bool notifyFirstFrame; // @synthesize notifyFirstFrame=_notifyFirstFrame;
 @property(nonatomic) int rotation; // @synthesize rotation=_rotation;

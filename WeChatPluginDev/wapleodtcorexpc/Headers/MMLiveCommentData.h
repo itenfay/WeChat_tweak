@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveBoxId, MMLiveCommentDataDictCache, MMLiveCommentVMState, MMLiveTaskId, NSArray, NSMutableArray, NSMutableDictionary;
 
@@ -33,7 +34,6 @@
 }
 
 + (_Bool)updateSelfCommentStatusToDB:(unsigned int)arg1 msgLocalID:(unsigned int)arg2 boxId:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCommentVMState *commentVMState; // @synthesize commentVMState=_commentVMState;
 @property(retain, nonatomic) MMLiveCommentDataDictCache *commentDataCache; // @synthesize commentDataCache=_commentDataCache;
 @property(nonatomic) _Bool isCustomAppendData; // @synthesize isCustomAppendData=_isCustomAppendData;
@@ -114,4 +114,3 @@
 - (id)init;
 
 @end
-

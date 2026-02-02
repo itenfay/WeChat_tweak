@@ -17,7 +17,6 @@
 }
 
 + (id)attributes;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) NSNumber *useSystemLayoutSizeFittingSize; // @synthesize useSystemLayoutSizeFittingSize=_useSystemLayoutSizeFittingSize;
 @property(retain, nonatomic) NSNumber *fixedWidth; // @synthesize fixedWidth=_fixedWidth;

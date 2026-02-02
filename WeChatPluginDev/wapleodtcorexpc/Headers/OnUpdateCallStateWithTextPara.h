@@ -20,7 +20,6 @@
     NSString *_errTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMinmizeMode; // @synthesize isMinmizeMode=_isMinmizeMode;
 @property(nonatomic) _Bool isShowFreeActicityNotSupport; // @synthesize isShowFreeActicityNotSupport=_isShowFreeActicityNotSupport;
 @property(nonatomic) _Bool isShowChargeAlert; // @synthesize isShowChargeAlert=_isShowChargeAlert;

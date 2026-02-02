@@ -15,7 +15,6 @@
     NSString *nsActionResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiEndTime; // @synthesize uiEndTime;
 @property(nonatomic) unsigned int uiBeginTime; // @synthesize uiBeginTime;
 @property(retain, nonatomic) NSString *nsActionResult; // @synthesize nsActionResult;

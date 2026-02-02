@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface RawVideoUploadTask
@@ -11,7 +13,6 @@
     NSString *_downloadFileKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadFileKey; // @synthesize downloadFileKey=_downloadFileKey;
 @property(nonatomic) _Bool bStop; // @synthesize bStop=_bStop;
 - (void)onDownloadTaskSuccess;
@@ -32,4 +33,3 @@
 - (id)initWithMsgWrap:(id)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     NSData *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) struct OpaqueJSValue *jsObject; // @synthesize jsObject=_jsObject;
 @property(nonatomic) long long length; // @synthesize length=_length;

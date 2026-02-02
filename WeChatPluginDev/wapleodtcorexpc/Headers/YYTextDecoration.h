@@ -17,7 +17,6 @@
 
 + (id)decorationWithStyle:(long long)arg1 width:(id)arg2 color:(id)arg3;
 + (id)decorationWithStyle:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) YYTextShadow *shadow; // @synthesize shadow=_shadow;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSNumber *width; // @synthesize width=_width;

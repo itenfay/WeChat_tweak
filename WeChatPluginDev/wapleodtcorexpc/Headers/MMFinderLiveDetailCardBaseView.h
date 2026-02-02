@@ -20,7 +20,6 @@
     MMFinderLiveDropGiftDetailCardViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool closeAnimated; // @synthesize closeAnimated=_closeAnimated;
 @property(retain, nonatomic) MMFinderLiveDropGiftDetailCardViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) double cardViewHeightLandScape; // @synthesize cardViewHeightLandScape=_cardViewHeightLandScape;

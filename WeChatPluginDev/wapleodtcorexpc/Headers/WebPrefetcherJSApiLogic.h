@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WKWebView, WebviewJSEventHandlerFacade;
 @protocol WebPrefetcherJSApiLogicDelegate, YYWebViewInterface;
@@ -17,7 +18,6 @@
     NSMutableDictionary *_jsApiDefMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *jsApiDefMap; // @synthesize jsApiDefMap=_jsApiDefMap;
 @property(retain, nonatomic) NSMutableDictionary *functionMap; // @synthesize functionMap=_functionMap;
 @property(retain, nonatomic) WebviewJSEventHandlerFacade *jsEventHandler; // @synthesize jsEventHandler=_jsEventHandler;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

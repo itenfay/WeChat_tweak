@@ -13,7 +13,6 @@
 }
 
 + (Class)class;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMXp2pWrapper *p2pManager; // @synthesize p2pManager=_p2pManager;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

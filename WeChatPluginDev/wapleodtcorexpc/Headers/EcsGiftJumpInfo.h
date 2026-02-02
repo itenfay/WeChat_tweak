@@ -14,7 +14,6 @@
     EcsJumpNativeInfo *_nativeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EcsJumpNativeInfo *nativeInfo; // @synthesize nativeInfo=_nativeInfo;
 @property(retain, nonatomic) EcsJumpHtml5Info *html5Info; // @synthesize html5Info=_html5Info;
 @property(retain, nonatomic) EcsJumpLiteAppInfo *liteAppInfo; // @synthesize liteAppInfo=_liteAppInfo;

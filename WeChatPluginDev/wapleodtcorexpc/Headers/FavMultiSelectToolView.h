@@ -10,7 +10,6 @@
     NSMutableArray *m_btnArray;
 }
 
-- (void).cxx_destruct;
 - (void)setBtnsEnabled:(_Bool)arg1;
 - (void)layoutView;
 - (id)createBtnWithImg:(id)arg1 accessibilityStr:(id)arg2 Sel:(SEL)arg3 Target:(id)arg4;

@@ -21,7 +21,6 @@
 
 + (id)cellID;
 + (double)cellH;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMWebImageView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

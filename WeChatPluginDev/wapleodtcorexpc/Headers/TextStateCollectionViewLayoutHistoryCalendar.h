@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewLayout.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 @protocol TextStateCollectionViewLayoutHistoryCalendarDelegate;
@@ -25,7 +26,6 @@
 + (double)yearHeight;
 + (double)sectionHeaderWidth;
 + (struct CGSize)itemSize;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sectionEndComparator; // @synthesize sectionEndComparator=_sectionEndComparator;
 @property(copy, nonatomic) CDUnknownBlockType sectionBeginComparator; // @synthesize sectionBeginComparator=_sectionBeginComparator;
 @property(retain, nonatomic) NSMutableArray *sectionItemCountList; // @synthesize sectionItemCountList=_sectionItemCountList;
@@ -58,4 +58,3 @@
 - (id)init;
 
 @end
-

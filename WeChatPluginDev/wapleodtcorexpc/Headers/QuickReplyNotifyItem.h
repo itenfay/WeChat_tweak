@@ -21,7 +21,6 @@
     NSString *_reportMsgType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportMsgType; // @synthesize reportMsgType=_reportMsgType;
 @property(retain, nonatomic) NSString *reportMsgId; // @synthesize reportMsgId=_reportMsgId;
 @property(retain, nonatomic) CMessageWrap *message; // @synthesize message=_message;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMLiveFaceDecodeTask, MMLiveTask, MMTimer, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
@@ -42,7 +43,6 @@
 }
 
 + (CDUnknownBlockType)createReportTimer:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property double lastProcessTime; // @synthesize lastProcessTime=_lastProcessTime;
 @property(copy) CDUnknownBlockType processFpsReport; // @synthesize processFpsReport=_processFpsReport;
 @property(copy) CDUnknownBlockType recvFpsReport; // @synthesize recvFpsReport=_recvFpsReport;
@@ -152,4 +152,3 @@
 @property(readonly) Class superclass;
 
 @end
-

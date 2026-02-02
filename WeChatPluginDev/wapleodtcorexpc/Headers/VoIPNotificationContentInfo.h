@@ -31,7 +31,6 @@
 + (id)notificationContentFromAPNSPushRequest:(id)arg1 decryptPayload:(id)arg2;
 + (id)notificationContentFromUserInfo:(id)arg1;
 + (id)notificationContentInfoFromAppExtensionDataUtil;
-- (void).cxx_destruct;
 @property(nonatomic) long long ilinkctxver; // @synthesize ilinkctxver=_ilinkctxver;
 @property(retain, nonatomic) NSString *ilinkctx; // @synthesize ilinkctx=_ilinkctx;
 @property(nonatomic) _Bool isIlink; // @synthesize isIlink=_isIlink;

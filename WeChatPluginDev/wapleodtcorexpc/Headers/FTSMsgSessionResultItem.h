@@ -16,7 +16,6 @@
     NSMutableArray *_clusterResults;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clusterResults; // @synthesize clusterResults=_clusterResults;
 @property(nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(nonatomic) _Bool hasCheck; // @synthesize hasCheck=_hasCheck;

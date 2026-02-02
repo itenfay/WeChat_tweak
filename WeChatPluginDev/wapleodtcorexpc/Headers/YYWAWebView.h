@@ -4,6 +4,7 @@
 //
 
 #import <WebKit/WKWebView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, NSURLRequest, UIScrollView, UIView, YYWAWebViewScriptMessageHandler;
 @protocol YYWAWebViewDelegate, YYWAWebViewSyncJSAPIDelegate, YYWebViewDelegate;
@@ -28,7 +29,6 @@
 }
 
 + (id)processPool;
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets oldSafeArea; // @synthesize oldSafeArea=_oldSafeArea;
 @property(retain, nonatomic) NSMutableDictionary *gestureEnableDic; // @synthesize gestureEnableDic=_gestureEnableDic;
 @property(retain, nonatomic) UIView *wkHitView; // @synthesize wkHitView=_wkHitView;
@@ -97,4 +97,3 @@
 @property(readonly) Class superclass;
 
 @end
-

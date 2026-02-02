@@ -30,7 +30,6 @@
 + (int)frameCountForImageData:(id)arg1;
 + (struct CGSize)imageSizeWithWxAMData:(id)arg1;
 + (_Bool)isWxAMData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMAnimatedImageDecodeConfig *config; // @synthesize config=_config;
 - (int)decodedLoopCnt;
 - (_Bool)isSingleFrame;

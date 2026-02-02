@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderNotifySeiInfo, NSData;
 
 @interface WCFinderLiveSyncNotifySeiInfoCGI
@@ -12,7 +14,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) FinderNotifySeiInfo *notifySeiInfo; // @synthesize notifySeiInfo=_notifySeiInfo;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -22,4 +23,3 @@
 - (id)initWithLiveTaskId:(id)arg1 liveCookies:(id)arg2 notifySeiInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSString, WKWebView, WebviewJSEventHandlerFacade;
 @protocol WebViewJSLogicDelegate, YYWebViewInterface;
 
@@ -22,7 +24,6 @@
     NSMutableDictionary *_dictPageSha2Host;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictPageSha2Host; // @synthesize dictPageSha2Host=_dictPageSha2Host;
 @property(retain, nonatomic) NSMutableDictionary *dictPageRamdomSigns; // @synthesize dictPageRamdomSigns=_dictPageRamdomSigns;
 @property(retain, nonatomic) NSMutableArray *jsEvents; // @synthesize jsEvents=_jsEvents;
@@ -89,4 +90,3 @@
 @property(readonly) Class superclass;
 
 @end
-

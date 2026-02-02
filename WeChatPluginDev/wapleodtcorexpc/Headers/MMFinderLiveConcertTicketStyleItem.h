@@ -42,7 +42,6 @@
 }
 
 + (id)styleItemWithTicketInfo:(id)arg1 resourceInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConcertTicketWebPageShareInfo *webPageShareInfo; // @synthesize webPageShareInfo=_webPageShareInfo;
 @property(retain, nonatomic) NSArray *pageItems; // @synthesize pageItems=_pageItems;
 @property(retain, nonatomic) MMFinderLiveConcertTicketExternalNavigationInfo *externalNavigationInfo; // @synthesize externalNavigationInfo=_externalNavigationInfo;

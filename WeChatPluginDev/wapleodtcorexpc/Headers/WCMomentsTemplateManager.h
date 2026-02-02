@@ -13,7 +13,6 @@
     double _lastTimeThatUpdatesDefaulteTemplates;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastTimeThatUpdatesDefaulteTemplates; // @synthesize lastTimeThatUpdatesDefaulteTemplates=_lastTimeThatUpdatesDefaulteTemplates;
 @property(nonatomic) _Bool isCheckingUpdatesForDefaulteTemplates; // @synthesize isCheckingUpdatesForDefaulteTemplates=_isCheckingUpdatesForDefaulteTemplates;
 @property(retain, nonatomic) MJVideoTemplate *defaultTemplate; // @synthesize defaultTemplate=_defaultTemplate;

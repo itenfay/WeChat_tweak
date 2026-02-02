@@ -25,7 +25,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAddress:(id)arg1 city:(id)arg2 id:(id)arg3 districtId:(id)arg4 img:(id)arg5 latitude:(id)arg6 longitude:(id)arg7 name:(id)arg8 poiId:(id)arg9 province:(id)arg10 type:(id)arg11;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *province; // @synthesize province=_province;
 @property(copy, nonatomic) NSString *poiId; // @synthesize poiId=_poiId;

@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

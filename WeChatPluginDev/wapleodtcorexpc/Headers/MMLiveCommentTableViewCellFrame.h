@@ -20,7 +20,6 @@
 
 + (double)standardLiveCommentCellHeight:(unsigned long long)arg1;
 + (double)liveCommentCellToCellMargin:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMLiveCommentDataItem *comment; // @synthesize comment=_comment;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;

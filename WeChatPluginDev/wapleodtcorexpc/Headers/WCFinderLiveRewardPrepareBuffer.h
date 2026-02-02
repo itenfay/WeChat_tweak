@@ -14,7 +14,6 @@
     NSData *_ctxBuf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *ctxBuf; // @synthesize ctxBuf=_ctxBuf;
 @property(retain, nonatomic) NSData *prepareBuf; // @synthesize prepareBuf=_prepareBuf;
 @property(nonatomic) unsigned long long sceneType; // @synthesize sceneType=_sceneType;

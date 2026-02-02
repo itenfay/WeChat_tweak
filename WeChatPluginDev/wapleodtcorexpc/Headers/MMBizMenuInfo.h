@@ -17,7 +17,6 @@
 }
 
 + (id)svgImageNameForShowIconType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSMutableArray *arrMenu; // @synthesize arrMenu=_arrMenu;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;

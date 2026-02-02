@@ -21,7 +21,6 @@
     WCRedEnvelopesControlData *m_data;
 }
 
-- (void).cxx_destruct;
 - (void)showSuccessOpenAnimation;
 - (void)removeView;
 - (void)endAnimation;

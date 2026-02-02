@@ -20,7 +20,6 @@
     NSMutableDictionary *_nowPlayingInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHeadsetConnected; // @synthesize isHeadsetConnected=_isHeadsetConnected;
 @property(retain, nonatomic) NSMutableDictionary *nowPlayingInfo; // @synthesize nowPlayingInfo=_nowPlayingInfo;
 @property(nonatomic) long long generatedPlayerCount; // @synthesize generatedPlayerCount=_generatedPlayerCount;

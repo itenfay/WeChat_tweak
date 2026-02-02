@@ -13,7 +13,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *effects; // @synthesize effects=_effects;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 - (CDStruct_1b6d18a9)additionalDurationAfterApplyEffect;

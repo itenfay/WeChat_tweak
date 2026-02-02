@@ -14,7 +14,6 @@
     NSData *_imageData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool willShareToTimeLine; // @synthesize willShareToTimeLine=_willShareToTimeLine;
 @property(nonatomic) _Bool willShareToFriend; // @synthesize willShareToFriend=_willShareToFriend;
 @property(nonatomic) _Bool isDownloadingImage; // @synthesize isDownloadingImage=_isDownloadingImage;

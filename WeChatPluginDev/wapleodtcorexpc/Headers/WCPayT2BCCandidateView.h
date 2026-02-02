@@ -19,7 +19,6 @@
     id <WCPayT2BCCandidateViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayT2BCCandidateViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *maskBtn; // @synthesize maskBtn=_maskBtn;
 @property(retain, nonatomic) NSString *inputText; // @synthesize inputText=_inputText;

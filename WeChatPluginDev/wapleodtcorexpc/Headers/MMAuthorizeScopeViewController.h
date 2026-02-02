@@ -23,7 +23,6 @@
     NSString *_cloudGameScopeWording;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cloudGameScopeWording; // @synthesize cloudGameScopeWording=_cloudGameScopeWording;
 @property(retain, nonatomic) NSMutableArray *arrSelect; // @synthesize arrSelect=_arrSelect;
 @property(retain, nonatomic) UIButton *denyBtn; // @synthesize denyBtn=_denyBtn;

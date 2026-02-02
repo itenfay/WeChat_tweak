@@ -13,7 +13,6 @@
     NSMutableDictionary *_nativeViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *nativeViews; // @synthesize nativeViews=_nativeViews;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
 - (id)getSafeNativeViewsWritable:(_Bool)arg1;

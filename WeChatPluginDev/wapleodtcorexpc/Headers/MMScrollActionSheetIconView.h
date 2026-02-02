@@ -19,7 +19,6 @@
 
 + (double)displayHeightForItem:(id)arg1 width:(double)arg2 iconMargin:(double)arg3;
 + (double)displayHeightForItem:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *cornerImg; // @synthesize cornerImg=_cornerImg;

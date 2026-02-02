@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveResDownloader;
 
@@ -12,7 +13,6 @@
     MMFinderLiveResDownloader *_downloadManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveResDownloader *downloadManager; // @synthesize downloadManager=_downloadManager;
 - (void)extractExtraDataAtPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)saveExtraData:(id)arg1 forFileAtPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -23,4 +23,3 @@
 - (id)init;
 
 @end
-

@@ -21,7 +21,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTimeLineFooterView *loadMoreFooterView; // @synthesize loadMoreFooterView=_loadMoreFooterView;
 @property(nonatomic) double loadMoreThresholdOffset; // @synthesize loadMoreThresholdOffset=_loadMoreThresholdOffset;
 @property(copy, nonatomic) NSString *noMoreDataStateText; // @synthesize noMoreDataStateText=_noMoreDataStateText;

@@ -26,7 +26,6 @@
     NSString *_postCycleId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *postCycleId; // @synthesize postCycleId=_postCycleId;
 @property(retain, nonatomic) WCTimelineExtBean *extBean; // @synthesize extBean=_extBean;
 @property(nonatomic) unsigned long long pasteLength; // @synthesize pasteLength=_pasteLength;

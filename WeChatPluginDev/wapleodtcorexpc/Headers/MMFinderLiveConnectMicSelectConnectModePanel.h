@@ -14,7 +14,6 @@
     MMFinderLiveConnectMicSelectConnectModeItemView *_autoConnectItemView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicSelectConnectModeItemView *autoConnectItemView; // @synthesize autoConnectItemView=_autoConnectItemView;
 @property(retain, nonatomic) MMFinderLiveConnectMicSelectConnectModeItemView *anchorConfirmItemView; // @synthesize anchorConfirmItemView=_anchorConfirmItemView;
 @property(nonatomic) _Bool canAutoConnect; // @synthesize canAutoConnect=_canAutoConnect;

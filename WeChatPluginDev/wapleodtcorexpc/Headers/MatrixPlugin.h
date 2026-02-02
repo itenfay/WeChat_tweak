@@ -15,7 +15,6 @@
 }
 
 + (id)getTag;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MatrixPluginListenerDelegate> pluginListener; // @synthesize pluginListener=_pluginListener;
 @property(retain, nonatomic) MatrixPluginConfig *pluginConfig; // @synthesize pluginConfig;
 - (void)reportError:(id)arg1;

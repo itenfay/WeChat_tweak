@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSMutableArray, NSString, UIColor;
 
 @interface WAAppOpenCustomUIParameter
@@ -35,7 +37,6 @@
     NSString *_m_liteGameLoadingParameters;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *m_liteGameLoadingParameters; // @synthesize m_liteGameLoadingParameters=_m_liteGameLoadingParameters;
 @property(retain, nonatomic) NSMutableArray *widgetParameters; // @synthesize widgetParameters=_widgetParameters;
 @property(retain, nonatomic) UIColor *loadingForegroundTextColor; // @synthesize loadingForegroundTextColor=_loadingForegroundTextColor;
@@ -64,4 +65,3 @@
 @property(nonatomic) unsigned long long m_uiLaunchAnimationType; // @synthesize m_uiLaunchAnimationType=_m_uiLaunchAnimationType;
 
 @end
-

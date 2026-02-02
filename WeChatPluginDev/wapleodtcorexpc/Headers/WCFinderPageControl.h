@@ -20,7 +20,6 @@
     struct UIEdgeInsets _touchInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISwipeGestureRecognizer *swipeRight; // @synthesize swipeRight=_swipeRight;
 @property(retain, nonatomic) UISwipeGestureRecognizer *swipeLeft; // @synthesize swipeLeft=_swipeLeft;
 @property(retain, nonatomic) NSMutableArray *dotsView; // @synthesize dotsView=_dotsView;

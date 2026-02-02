@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_contactDict;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contactDict; // @synthesize contactDict=_contactDict;
 - (id)getPBPropertyTable;
 

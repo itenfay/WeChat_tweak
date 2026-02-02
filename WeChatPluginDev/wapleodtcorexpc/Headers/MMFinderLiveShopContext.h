@@ -36,7 +36,6 @@
     MMFinderLiveECHotSaleLikeAnimationCenter *_hotSaleLikeAnimationCenter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAskForPromotingOpen; // @synthesize isAskForPromotingOpen=_isAskForPromotingOpen;
 @property(retain, nonatomic) MMFinderLiveECHotSaleLikeAnimationCenter *hotSaleLikeAnimationCenter; // @synthesize hotSaleLikeAnimationCenter=_hotSaleLikeAnimationCenter;
 @property(retain, nonatomic) MMFinderLiveGoodsItem *currPromotingGoodsItem; // @synthesize currPromotingGoodsItem=_currPromotingGoodsItem;

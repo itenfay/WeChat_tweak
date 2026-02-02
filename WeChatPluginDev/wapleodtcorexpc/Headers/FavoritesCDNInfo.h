@@ -96,7 +96,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
 @property(retain, nonatomic) NSString *clientMsgID; // @synthesize clientMsgID=_clientMsgID;
 @property(retain, nonatomic) NSString *dataFmt; // @synthesize dataFmt=_dataFmt;

@@ -18,7 +18,6 @@
     UIImageView *_descArrowImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *descArrowImgView; // @synthesize descArrowImgView=_descArrowImgView;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;

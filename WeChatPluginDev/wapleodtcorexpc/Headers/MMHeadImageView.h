@@ -33,7 +33,6 @@
     struct CGSize _imageSize;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool bRoundedCorner; // @synthesize bRoundedCorner=_bRoundedCorner;
 @property(nonatomic) _Bool bAlwayShowDefaultImage; // @synthesize bAlwayShowDefaultImage=_bAlwayShowDefaultImage;
 @property(nonatomic) _Bool addStoryMaskAction; // @synthesize addStoryMaskAction=_addStoryMaskAction;

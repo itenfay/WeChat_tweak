@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -17,7 +18,6 @@
     NSMutableArray *_countDowntDotList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStartPrepare; // @synthesize isStartPrepare=_isStartPrepare;
 @property(retain, nonatomic) NSMutableArray *countDowntDotList; // @synthesize countDowntDotList=_countDowntDotList;
 @property(nonatomic) int remainSeconds; // @synthesize remainSeconds=_remainSeconds;
@@ -44,4 +44,3 @@
 - (id)init;
 
 @end
-

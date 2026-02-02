@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)tokenize:(id)arg1 maxLength:(long long)arg2;
 - (id)initWithVacabulary:(id)arg1;
 

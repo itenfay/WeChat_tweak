@@ -12,7 +12,6 @@
     CircleToSearchPreviewView *_previewView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CircleToSearchPreviewView *previewView; // @synthesize previewView=_previewView;
 @property(nonatomic) double maxBottomInset; // @synthesize maxBottomInset=_maxBottomInset;
 @property(nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;

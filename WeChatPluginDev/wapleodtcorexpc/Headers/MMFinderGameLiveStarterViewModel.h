@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLocation, GameTeamUpSpecialGiftSettingDetail, MMFinderLiveGameUserInfo, MMFinderLiveImageOcrOp, MMFinderLivePromoteManageLogic, MMFinderLiveTask, MMLiveTaskId, NSData, NSString, WCFinderDataItem, WCFinderLiveShareItem;
 
@@ -31,7 +32,6 @@
     MMFinderLiveImageOcrOp *_ocrOp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveImageOcrOp *ocrOp; // @synthesize ocrOp=_ocrOp;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(retain, nonatomic) MMLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
@@ -78,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

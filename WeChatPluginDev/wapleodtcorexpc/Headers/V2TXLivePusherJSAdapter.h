@@ -24,7 +24,6 @@
     long long _micVolume;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long micVolume; // @synthesize micVolume=_micVolume;
 @property(nonatomic) long long bgmVolume; // @synthesize bgmVolume=_bgmVolume;
 @property(retain, nonatomic) V2TXLivePusherWx *pusher; // @synthesize pusher=_pusher;

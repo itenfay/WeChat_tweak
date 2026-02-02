@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIScrollView, MMWebImageView, NSString, UIView, WCFinderCropRectModel;
 
 @interface WCFinderCoverPhotoPreviewView
@@ -14,7 +16,6 @@
     MMWebImageView *_photoImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *photoImageView; // @synthesize photoImageView=_photoImageView;
 - (void)setCropRectModel:(id)arg1;
 - (void)setBlurView:(id)arg1;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

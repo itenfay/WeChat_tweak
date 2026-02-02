@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVCaptureConnection, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSString, WCLoopMetricsCollector;
 @protocol MMAVCameraCapturerActionDelegate, MMAVCameraCapturerDelegate, OS_dispatch_queue, OS_dispatch_semaphore;
@@ -55,7 +56,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureMetadataOutput *metaOutput; // @synthesize metaOutput=_metaOutput;
 @property long long interfaceOritation; // @synthesize interfaceOritation=_interfaceOritation;
 @property(retain) AVCaptureVideoPreviewLayer *prevLayer; // @synthesize prevLayer=_prevLayer;
@@ -141,4 +141,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
     MMNewVoiceInputReportObj *_reportObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMNewVoiceInputReportObj *reportObj; // @synthesize reportObj=_reportObj;
 @property(nonatomic) _Bool bPreventRecordViewExit; // @synthesize bPreventRecordViewExit=_bPreventRecordViewExit;
 @property(nonatomic) _Bool bForbidVoiceTrans; // @synthesize bForbidVoiceTrans=_bForbidVoiceTrans;

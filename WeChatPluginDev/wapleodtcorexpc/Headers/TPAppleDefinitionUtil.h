@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *playerDefinitionMap; // @synthesize playerDefinitionMap=_playerDefinitionMap;
 - (int)getDefinitionByDefLevel:(int)arg1;
 - (long long)getHeightByDefLevel:(int)arg1;

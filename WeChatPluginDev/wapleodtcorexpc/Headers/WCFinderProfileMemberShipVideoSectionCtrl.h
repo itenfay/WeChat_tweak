@@ -12,7 +12,6 @@
 
 + (void)setupRegister:(id)arg1;
 + (id)sectionDefines;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cellHeightMap; // @synthesize cellHeightMap=_cellHeightMap;
 - (void)onMemberShipSecDataExtChange;
 - (void)onFeedArrayChanged;

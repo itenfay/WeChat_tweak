@@ -13,7 +13,6 @@
     NSMutableDictionary *_dicSelectionContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicSelectionContact; // @synthesize dicSelectionContact=_dicSelectionContact;
 @property(nonatomic) unsigned long long selectionType; // @synthesize selectionType=_selectionType;
 

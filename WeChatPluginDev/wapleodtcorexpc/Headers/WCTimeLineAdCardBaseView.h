@@ -53,7 +53,6 @@
 + (double)heightForMediaView:(id)arg1 maxWidth:(double)arg2;
 + (double)heightForMedia:(id)arg1;
 + (double)heightForMedia:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCanvasPageOpenBySelf; // @synthesize isCanvasPageOpenBySelf=_isCanvasPageOpenBySelf;
 @property(nonatomic) double lastTouchTimestamp; // @synthesize lastTouchTimestamp=_lastTouchTimestamp;
 @property(nonatomic) struct CGPoint lastTouchPoint; // @synthesize lastTouchPoint=_lastTouchPoint;

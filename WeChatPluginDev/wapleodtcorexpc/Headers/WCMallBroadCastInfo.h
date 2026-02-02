@@ -14,7 +14,6 @@
     NSString *m_nsJumpUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle;
 @property(retain, nonatomic) NSString *m_nsJumpUrl; // @synthesize m_nsJumpUrl;
 @property(retain, nonatomic) NSString *m_nsIconUrl; // @synthesize m_nsIconUrl;

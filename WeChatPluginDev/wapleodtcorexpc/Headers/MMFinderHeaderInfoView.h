@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, NSString, UILabel, WCFinderContact, WCFinderHeadImageView;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _headerImageDidUpdateBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType headerImageDidUpdateBlock; // @synthesize headerImageDidUpdateBlock=_headerImageDidUpdateBlock;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) MMWebImageView *authorizedIconView; // @synthesize authorizedIconView=_authorizedIconView;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

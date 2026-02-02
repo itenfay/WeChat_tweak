@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIView, WCFinderDiscoveryLiveTabPageViewModel, WCFinderLiveDiscoveryCacheModel, WCFinderRedDotCtrlInfo, WCFinderTabPageModel;
 @protocol WCFinderLiveDiscoveryMoreLiveViewControllerDelegate;
 
@@ -20,7 +22,6 @@
     WCFinderDiscoveryLiveTabPageViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDiscoveryLiveTabPageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) unsigned long long selectedSubTabId; // @synthesize selectedSubTabId=_selectedSubTabId;
 @property(nonatomic) _Bool isLocationServiceAuthrized; // @synthesize isLocationServiceAuthrized=_isLocationServiceAuthrized;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

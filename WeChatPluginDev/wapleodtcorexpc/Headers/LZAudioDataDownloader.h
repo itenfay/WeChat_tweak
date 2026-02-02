@@ -12,7 +12,6 @@
     id <LZAudioDataDownloadDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <LZAudioDataDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)downloadDetailInfo;
 - (_Bool)isErrorCanRetry:(id)arg1;

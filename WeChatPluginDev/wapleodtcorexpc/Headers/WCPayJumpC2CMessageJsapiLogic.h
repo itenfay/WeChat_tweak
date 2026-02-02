@@ -16,7 +16,6 @@
     NSString *m_msgSvrId;
 }
 
-- (void).cxx_destruct;
 - (void)reportWithAction:(unsigned long long)arg1;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2;
 - (void)report14954WithString:(id)arg1;

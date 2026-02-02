@@ -12,7 +12,6 @@
     OMCTimeline *_timeline;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak OMCTimeline *timeline; // @synthesize timeline=_timeline;
 - (id)description;
 - (void)setVideoTagDesc:(id)arg1;

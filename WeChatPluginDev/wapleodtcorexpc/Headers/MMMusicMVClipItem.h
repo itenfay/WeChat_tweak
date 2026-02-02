@@ -15,7 +15,6 @@
     MMMusicMVTrackItemLocalPic *_localPic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicMVTrackItemLocalPic *localPic; // @synthesize localPic=_localPic;
 @property(retain, nonatomic) NSString *videoThumbPath; // @synthesize videoThumbPath=_videoThumbPath;
 @property(retain, nonatomic) NSString *videoLocalPath; // @synthesize videoLocalPath=_videoLocalPath;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSNumber, NSString, WAJSCoreService, WAOpenGLView;
 
 @interface WAWebViewPlugin_WebGLCanvas
@@ -13,7 +15,6 @@
     NSMutableDictionary *_canvasMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *canvasMap; // @synthesize canvasMap=_canvasMap;
 @property(nonatomic) __weak WAOpenGLView *glview; // @synthesize glview=_glview;
 @property(nonatomic) __weak WAJSCoreService *service; // @synthesize service=_service;
@@ -38,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

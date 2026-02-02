@@ -14,7 +14,6 @@
     NSMutableArray *m_arrRecvSeq;
 }
 
-- (void).cxx_destruct;
 - (id)getHeartBeatResPkgWithAck:(unsigned long long)arg1;
 - (id)getHeartBeatRequestPkgWithAck:(unsigned long long)arg1;
 - (id)getCancelRequestWithID:(id)arg1;

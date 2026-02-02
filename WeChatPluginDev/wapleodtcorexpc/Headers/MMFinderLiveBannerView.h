@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIControl.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveBannerAngel, MMTimer, NSArray, NSMutableArray, NSString, UICollectionView;
 
@@ -29,7 +30,6 @@
 }
 
 + (struct CGSize)viewSizeByBannerList:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInDelete; // @synthesize isInDelete=_isInDelete;
 @property(nonatomic) _Bool isInJump; // @synthesize isInJump=_isInJump;
 @property(retain, nonatomic) NSMutableArray *addingBannerQueue; // @synthesize addingBannerQueue=_addingBannerQueue;
@@ -94,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

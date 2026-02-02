@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TRTCAudioConfig, TRTCParams, TRTCVideoConfig;
 
 @interface MMLiveTRTCPushAdapter
@@ -16,7 +18,6 @@
 }
 
 + (struct CGSize)getResolutionSize:(long long)arg1 resolutionMode:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TRTCAudioConfig *audioConfig; // @synthesize audioConfig=_audioConfig;
 @property(retain, nonatomic) TRTCVideoConfig *videoConfig; // @synthesize videoConfig=_videoConfig;
 @property(nonatomic) long long trtcRoleType; // @synthesize trtcRoleType=_trtcRoleType;
@@ -119,4 +120,3 @@
 @property(readonly) Class superclass;
 
 @end
-

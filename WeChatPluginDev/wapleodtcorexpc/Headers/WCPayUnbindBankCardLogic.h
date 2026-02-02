@@ -11,7 +11,6 @@
     NSString *_unbindCardBindSerial;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *unbindCardBindSerial; // @synthesize unbindCardBindSerial=_unbindCardBindSerial;
 - (void)stopLogic;
 - (void)PayPwdRightActionBack;

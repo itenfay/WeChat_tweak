@@ -11,7 +11,6 @@
     NSMutableArray *_showMoreLabelStyles;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *showMoreLabelStyles;
 @property(readonly, nonatomic) struct CGSize showMoreLabelSize;
 - (double)viewHeight;

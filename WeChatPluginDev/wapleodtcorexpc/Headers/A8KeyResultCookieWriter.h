@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSHTTPCookie, NSString, UIView;
 
 @interface A8KeyResultCookieWriter
@@ -16,7 +18,6 @@
     unsigned int _a8KeyCookieExpireTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int a8KeyCookieExpireTime; // @synthesize a8KeyCookieExpireTime=_a8KeyCookieExpireTime;
 - (void)reportWriteA8KeyCookieWithResult:(_Bool)arg1;
 - (id)buildHttpCookieWithValue:(id)arg1 forKey:(id)arg2 httpOnly:(_Bool)arg3;
@@ -30,4 +31,3 @@
 - (id)initWithDomain:(id)arg1 weakWebView:(id)arg2 andCompleteBlock:(CDUnknownBlockType)arg3;
 
 @end
-

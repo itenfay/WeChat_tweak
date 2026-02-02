@@ -42,7 +42,6 @@
     FinderGetContactListReq *_contactListReq;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderGetContactListReq *contactListReq; // @synthesize contactListReq=_contactListReq;
 @property(nonatomic) _Bool hasFetchedPreviewData; // @synthesize hasFetchedPreviewData=_hasFetchedPreviewData;
 @property(retain, nonatomic) MMUIButton *moreButton; // @synthesize moreButton=_moreButton;

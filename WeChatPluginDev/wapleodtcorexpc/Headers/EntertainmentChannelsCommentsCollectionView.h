@@ -14,7 +14,6 @@
     NSArray *_bulletList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bulletList; // @synthesize bulletList=_bulletList;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

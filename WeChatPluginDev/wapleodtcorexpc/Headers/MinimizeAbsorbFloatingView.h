@@ -50,7 +50,6 @@
     struct UIEdgeInsets _touchInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize outerContentSize; // @synthesize outerContentSize=_outerContentSize;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 @property(nonatomic) _Bool isFoldEnabled; // @synthesize isFoldEnabled=_isFoldEnabled;

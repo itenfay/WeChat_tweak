@@ -16,7 +16,6 @@
     unsigned long long _getBalanceScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long getBalanceScene; // @synthesize getBalanceScene=_getBalanceScene;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) GetWeChatOutCouponsResponse *couponResponse; // @synthesize couponResponse=_couponResponse;

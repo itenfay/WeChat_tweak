@@ -13,7 +13,6 @@
     UIView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void)initSubView;

@@ -14,7 +14,6 @@
 
 + (struct CGSize)getCellIconSize;
 + (struct CGSize)getCellSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatRoomToolWeAppInfo *m_chatRoomToolWeAppInfo; // @synthesize m_chatRoomToolWeAppInfo;
 @property(retain, nonatomic) MMUILabel *m_titleLabel; // @synthesize m_titleLabel;
 @property(retain, nonatomic) MMWebImageView *m_appIconView; // @synthesize m_appIconView;

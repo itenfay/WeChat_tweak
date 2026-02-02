@@ -19,7 +19,6 @@
     WCFinderFansListVCParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFansListVCParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) WCFinderFollowSearchContactViewController *searchContactVC; // @synthesize searchContactVC=_searchContactVC;
 @property(retain, nonatomic) WCFinderContact *selectContact; // @synthesize selectContact=_selectContact;

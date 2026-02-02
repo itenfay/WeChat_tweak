@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, WACanvasFileHelper;
 @protocol MMWebCanvasLogicJsEngineDelegate, OS_dispatch_queue;
 
@@ -22,7 +24,6 @@
     WACanvasFileHelper *_fileHelper;
 }
 
-- (void).cxx_destruct;
 @property _Bool hasStopped; // @synthesize hasStopped=_hasStopped;
 @property(nonatomic) _Bool finishedSetup; // @synthesize finishedSetup=_finishedSetup;
 @property(retain, nonatomic) WACanvasFileHelper *fileHelper; // @synthesize fileHelper=_fileHelper;
@@ -96,4 +97,3 @@
 @property(readonly) Class superclass;
 
 @end
-

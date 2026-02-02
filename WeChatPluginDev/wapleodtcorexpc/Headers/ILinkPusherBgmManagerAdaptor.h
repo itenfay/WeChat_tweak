@@ -14,7 +14,6 @@
 
 + (void)destroySharedIntance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXAudioEffectManager *audioEffectManager; // @synthesize audioEffectManager=_audioEffectManager;
 - (id)getAudioEffectManager;
 - (void)dealloc;

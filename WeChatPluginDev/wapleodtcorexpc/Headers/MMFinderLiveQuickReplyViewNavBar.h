@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FixTitleColorButton, MMUIButton, MMUILabel;
 
@@ -16,7 +17,6 @@
     FixTitleColorButton *_rightButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FixTitleColorButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -36,4 +36,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

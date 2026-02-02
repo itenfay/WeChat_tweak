@@ -13,7 +13,6 @@
     NSMutableDictionary *_pendingMessagesDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingMessagesDict; // @synthesize pendingMessagesDict=_pendingMessagesDict;
 @property(nonatomic) _Bool isPrepared; // @synthesize isPrepared=_isPrepared;
 - (void)removeReceiver:(id)arg1;

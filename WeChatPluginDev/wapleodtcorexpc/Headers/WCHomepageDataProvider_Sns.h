@@ -16,7 +16,6 @@
     id <WCHomePageDataProviderStarDelegate> _starDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCHomePageDataProviderStarDelegate> starDelegate; // @synthesize starDelegate=_starDelegate;
 @property(retain, nonatomic) NSString *username; // @synthesize username;
 @property(nonatomic) __weak id <WCHomePageDataProviderDelegate> delegate; // @synthesize delegate;

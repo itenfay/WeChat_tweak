@@ -17,7 +17,6 @@
     MMUIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;
 @property(retain, nonatomic) FinderJumpInfo_Style *style; // @synthesize style=_style;

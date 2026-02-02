@@ -23,7 +23,6 @@
     unsigned long long _multiSelectLimitCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long multiSelectLimitCount; // @synthesize multiSelectLimitCount=_multiSelectLimitCount;
 @property(retain, nonatomic) NSMutableArray *selectedContacts; // @synthesize selectedContacts=_selectedContacts;
 @property(retain, nonatomic) NSMutableArray *strangerContactList; // @synthesize strangerContactList=_strangerContactList;

@@ -20,7 +20,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSimpleTransition; // @synthesize showSimpleTransition=_showSimpleTransition;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

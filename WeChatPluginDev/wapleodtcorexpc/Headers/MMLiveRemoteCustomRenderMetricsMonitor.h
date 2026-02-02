@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCLoopMetricsCollector;
 
@@ -19,7 +20,6 @@
     double _lastDecreaseTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastDecreaseTime; // @synthesize lastDecreaseTime=_lastDecreaseTime;
 @property(retain, nonatomic) NSMutableArray *recentMetricsList; // @synthesize recentMetricsList=_recentMetricsList;
 @property(retain, nonatomic) WCLoopMetricsCollector *renderMetricsCollector; // @synthesize renderMetricsCollector=_renderMetricsCollector;
@@ -72,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

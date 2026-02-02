@@ -13,7 +13,6 @@
     FinderShopCouponInfo *_couponInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool willDismissing; // @synthesize willDismissing=_willDismissing;
 @property(retain, nonatomic) FinderShopCouponInfo *couponInfo; // @synthesize couponInfo=_couponInfo;
 @property(retain, nonatomic) MMFinderLiveCouponView *couponView; // @synthesize couponView=_couponView;

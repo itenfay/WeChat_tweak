@@ -16,7 +16,6 @@
     NSMutableArray *_pendingFetchCGI;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingFetchCGI; // @synthesize pendingFetchCGI=_pendingFetchCGI;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) long long state; // @synthesize state=_state;

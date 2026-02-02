@@ -14,7 +14,6 @@
     NSString *_currentUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentDebugMode; // @synthesize currentDebugMode=_currentDebugMode;
 @property(copy, nonatomic) NSString *currentUsername; // @synthesize currentUsername=_currentUsername;
 @property(nonatomic) __weak WAPopOverView *popOverView; // @synthesize popOverView=_popOverView;

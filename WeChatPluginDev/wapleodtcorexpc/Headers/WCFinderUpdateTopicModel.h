@@ -13,7 +13,6 @@
     struct _NSRange _topicRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange topicRange; // @synthesize topicRange=_topicRange;
 @property(copy, nonatomic) NSString *inputTopic; // @synthesize inputTopic=_inputTopic;
 - (_Bool)isEqual:(id)arg1;

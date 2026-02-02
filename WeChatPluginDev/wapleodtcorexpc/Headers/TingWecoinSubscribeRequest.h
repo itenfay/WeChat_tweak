@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithJoinInfo:(id)arg1 sessionId:(id)arg2 tingScene:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *tingScene; // @synthesize tingScene=_tingScene;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) FlutterStandardTypedData *joinInfo; // @synthesize joinInfo=_joinInfo;

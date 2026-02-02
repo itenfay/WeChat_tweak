@@ -11,7 +11,6 @@
     WCThreadQOSManagerConfig *m_config;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isDeviceHighPerformance;
 - (void)setupStrategyFromXLab;
 - (void)onExptItemListChange;

@@ -30,7 +30,6 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *edgePanGesture; // @synthesize edgePanGesture=_edgePanGesture;

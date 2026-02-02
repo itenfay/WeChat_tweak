@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURLSession;
 
@@ -12,7 +13,6 @@
     NSURLSession *session;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session;
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

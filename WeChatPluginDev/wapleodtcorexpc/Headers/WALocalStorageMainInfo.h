@@ -28,7 +28,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastModifyTime; // @synthesize lastModifyTime=_lastModifyTime;
 @property(nonatomic) unsigned long long storageLength; // @synthesize storageLength=_storageLength;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;

@@ -15,7 +15,6 @@
     struct CGSize _layoutSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *playingMaskLabel; // @synthesize playingMaskLabel=_playingMaskLabel;
 @property(retain, nonatomic) RichTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;

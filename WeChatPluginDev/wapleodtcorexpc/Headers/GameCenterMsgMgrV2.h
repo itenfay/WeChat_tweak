@@ -19,7 +19,6 @@
     GamePullMsgControlInfo *_pullMsgControlInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool userHasLogout; // @synthesize userHasLogout=_userHasLogout;
 @property(nonatomic) _Bool dataHasLoaded; // @synthesize dataHasLoaded=_dataHasLoaded;
 @property(retain, nonatomic) GamePullMsgControlInfo *pullMsgControlInfo; // @synthesize pullMsgControlInfo=_pullMsgControlInfo;

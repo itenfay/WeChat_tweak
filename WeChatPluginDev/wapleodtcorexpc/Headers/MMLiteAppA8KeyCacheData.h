@@ -13,7 +13,6 @@
     double _time;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(retain, nonatomic) MMLiteAppA8KeyCacheInfo *info; // @synthesize info=_info;
 

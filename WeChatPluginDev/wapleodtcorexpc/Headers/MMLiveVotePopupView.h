@@ -33,7 +33,6 @@
     NSString *_votingId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *votingId; // @synthesize votingId=_votingId;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(retain, nonatomic) MMUILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;

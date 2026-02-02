@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSMutableArray;
 
@@ -16,7 +17,6 @@
 
 + (double)staticHeight;
 + (double)staticWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *paramCardBtnList; // @synthesize paramCardBtnList=_paramCardBtnList;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) CDUnknownBlockType onBarrageParamCardSelect; // @synthesize onBarrageParamCardSelect=_onBarrageParamCardSelect;
@@ -28,4 +28,3 @@
 - (id)initWithTitle:(id)arg1;
 
 @end
-

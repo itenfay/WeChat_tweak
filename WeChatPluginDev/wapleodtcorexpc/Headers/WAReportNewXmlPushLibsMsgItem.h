@@ -15,7 +15,6 @@
 }
 
 + (void)reportWithMsg:(id)arg1 state:(unsigned int)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;
 @property(nonatomic) unsigned int busiType; // @synthesize busiType=_busiType;

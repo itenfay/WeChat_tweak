@@ -33,7 +33,6 @@
 + (long long)getCommentIndexForDataItem:(id)arg1 RowIndex:(long long)arg2;
 + (double)getCellHeightForDataItem:(id)arg1 RowIndex:(long long)arg2;
 + (id)getNickNameForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *accessibilityView; // @synthesize accessibilityView=_accessibilityView;
 @property(nonatomic) _Bool needBottomRoundCorner; // @synthesize needBottomRoundCorner=_needBottomRoundCorner;
 @property(nonatomic) _Bool needTopRoundCorner; // @synthesize needTopRoundCorner=_needTopRoundCorner;

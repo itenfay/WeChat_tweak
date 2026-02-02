@@ -19,7 +19,6 @@
     NSArray *_objectIDArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int noticeType; // @synthesize noticeType=_noticeType;
 @property(retain, nonatomic) NSArray *objectIDArray; // @synthesize objectIDArray=_objectIDArray;
 @property(nonatomic) float latitude; // @synthesize latitude=_latitude;

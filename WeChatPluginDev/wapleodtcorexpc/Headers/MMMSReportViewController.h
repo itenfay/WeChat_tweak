@@ -12,7 +12,6 @@
     MMLoadingView *m_loadingViewX;
 }
 
-- (void).cxx_destruct;
 - (void)onMemoryRecordUploadCompleted:(_Bool)arg1;
 - (void)onNextButtonClicked:(id)arg1;
 - (void)onUploadButtonClicked:(id)arg1;

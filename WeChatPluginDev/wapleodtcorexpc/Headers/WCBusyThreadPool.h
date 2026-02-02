@@ -12,7 +12,6 @@
     NSMutableArray *_store;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *store; // @synthesize store=_store;
 - (void)mergeFrameArray:(id)arg1 and:(id)arg2;
 - (void)mergeFrame:(id)arg1 and:(id)arg2;

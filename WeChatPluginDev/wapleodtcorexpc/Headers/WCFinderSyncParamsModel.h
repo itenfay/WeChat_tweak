@@ -22,7 +22,6 @@
     FinderSyncClientStatus_DiscoveryReddotInfo *_socialHotDiscoveryReddotInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinderDau; // @synthesize isFinderDau=_isFinderDau;
 @property(retain, nonatomic) FinderSyncClientStatus_DiscoveryReddotInfo *socialHotDiscoveryReddotInfo; // @synthesize socialHotDiscoveryReddotInfo=_socialHotDiscoveryReddotInfo;
 @property(retain, nonatomic) FinderSyncClientStatus_DiscoveryReddotInfo *liveDiscoveryReddotInfo; // @synthesize liveDiscoveryReddotInfo=_liveDiscoveryReddotInfo;

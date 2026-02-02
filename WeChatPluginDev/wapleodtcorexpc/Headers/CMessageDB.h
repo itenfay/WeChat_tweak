@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMMDB;
 
@@ -12,7 +13,6 @@
     CMMDB *m_oMMDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMMDB *m_oMMDB; // @synthesize m_oMMDB;
 - (_Bool)batchUpdateAbnormalCreateTimeMsg:(id)arg1 arrMsg:(id)arg2;
 - (id)GetAscMsgsByCreateTime:(id)arg1 FromCreateTime:(unsigned int)arg2 Limit:(int)arg3;
@@ -163,4 +163,3 @@
 - (id)init;
 
 @end
-

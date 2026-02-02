@@ -36,7 +36,6 @@
 + (id)GetDownloadClientID:(id)arg1 HD:(_Bool)arg2;
 + (id)GetCdnRootPath;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool m_bForbidSnsDownloadWithCustomProtocol; // @synthesize m_bForbidSnsDownloadWithCustomProtocol;
 - (void)SetAllDebugIP:(id)arg1;
 - (void)SetHttpDownloadDebugIP:(id)arg1;

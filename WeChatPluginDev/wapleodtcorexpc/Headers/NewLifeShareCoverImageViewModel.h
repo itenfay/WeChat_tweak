@@ -33,7 +33,6 @@
     struct CGSize _albumIconSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int coverViewType; // @synthesize coverViewType=_coverViewType;
 @property(retain, nonatomic) WCFinderShareToMomentsItem *shareToMomentsItem; // @synthesize shareToMomentsItem=_shareToMomentsItem;
 @property(nonatomic) _Bool showRedPacket; // @synthesize showRedPacket=_showRedPacket;

@@ -14,7 +14,6 @@
     WCPayFaceHBPayView *_payView;
 }
 
-- (void).cxx_destruct;
 - (void)setDelegate:(id)arg1;
 - (id)showPayViewWithDelegate:(id)arg1;
 - (void)hidePayView;

@@ -17,7 +17,6 @@
     NSMutableDictionary *_udfKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *udfKV; // @synthesize udfKV=_udfKV;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(nonatomic) unsigned long long eventTime; // @synthesize eventTime=_eventTime;

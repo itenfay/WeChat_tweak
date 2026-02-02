@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TenpayLogHooker : NSObject
 {
@@ -17,4 +18,3 @@
 - (void)setHooker:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -21,7 +21,6 @@
 + (void)reportContactTagWithReportScene:(unsigned int)arg1 andActionCode:(unsigned int)arg2 andHandlePage:(unsigned int)arg3;
 + (id)GetPathOfContactLabelOrderList;
 + (id)GetPathOfContactLabelList;
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)OnUpdateLabelOrder:(id)arg1 Event:(unsigned int)arg2;
 - (void)OnSetLabels:(id)arg1 Event:(unsigned int)arg2;

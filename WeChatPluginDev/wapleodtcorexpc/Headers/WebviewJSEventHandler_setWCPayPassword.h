@@ -12,7 +12,6 @@
     WCPayResetPwdByTokenCgi *_resetCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayResetPwdByTokenCgi *resetCgi; // @synthesize resetCgi=_resetCgi;
 @property(retain, nonatomic) WCPayPayPwdViewController *pwdVC; // @synthesize pwdVC=_pwdVC;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;

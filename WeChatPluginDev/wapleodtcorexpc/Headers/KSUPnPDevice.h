@@ -30,7 +30,6 @@
     NSDictionary *_discoverInfoForParsing;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *discoverInfoForParsing; // @synthesize discoverInfoForParsing=_discoverInfoForParsing;
 @property(nonatomic) __weak id <KSUPnPDeviceStatusObserver> statusObserver; // @synthesize statusObserver=_statusObserver;
 @property(copy, nonatomic) NSArray *serviceList; // @synthesize serviceList=_serviceList;

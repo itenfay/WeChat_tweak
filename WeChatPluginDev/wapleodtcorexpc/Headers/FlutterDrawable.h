@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAMetalLayer, FlutterMetalLayer, FlutterTexture, NSString;
 @protocol MTLTexture;
@@ -16,7 +17,6 @@
     _Bool _presented;
 }
 
-- (void).cxx_destruct;
 - (void)flutterPrepareForPresent:(id)arg1;
 - (void)presentAfterMinimumDuration:(double)arg1;
 - (void)presentAtTime:(double)arg1;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

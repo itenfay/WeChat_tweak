@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMToastView, NSString;
 
@@ -19,7 +20,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResumeInteraction; // @synthesize shouldResumeInteraction=_shouldResumeInteraction;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) double toastDuration; // @synthesize toastDuration=_toastDuration;
@@ -55,4 +55,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

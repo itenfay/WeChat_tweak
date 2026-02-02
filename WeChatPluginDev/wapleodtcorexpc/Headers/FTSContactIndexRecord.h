@@ -18,7 +18,6 @@
     NSMutableSet *_indexingUserNames;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int aboveMaxUserNameCount; // @synthesize aboveMaxUserNameCount=_aboveMaxUserNameCount;
 @property(retain, nonatomic) NSMutableSet *indexingUserNames; // @synthesize indexingUserNames=_indexingUserNames;
 @property(retain, nonatomic) NSString *nextMaxUserName; // @synthesize nextMaxUserName=_nextMaxUserName;

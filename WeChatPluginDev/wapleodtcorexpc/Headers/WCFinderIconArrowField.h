@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, UILabel;
 
@@ -18,7 +19,6 @@
 
 + (struct CGPoint)iconCenterWithHeight:(double)arg1;
 + (double)textPaddingLeft;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapAction; // @synthesize tapAction=_tapAction;
 @property(nonatomic) double arrowPaddingText; // @synthesize arrowPaddingText=_arrowPaddingText;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
@@ -46,4 +46,3 @@
 @property(readonly, nonatomic) CDUnknownBlockType themeIconSVG;
 
 @end
-

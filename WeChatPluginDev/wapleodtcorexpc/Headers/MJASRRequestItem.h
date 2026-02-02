@@ -16,7 +16,6 @@
     CDStruct_e83c9415 _timeRangeForASR;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRangeForASR; // @synthesize timeRangeForASR=_timeRangeForASR;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 @property(readonly, nonatomic) NSString *mediaFileURL; // @synthesize mediaFileURL=_mediaFileURL;

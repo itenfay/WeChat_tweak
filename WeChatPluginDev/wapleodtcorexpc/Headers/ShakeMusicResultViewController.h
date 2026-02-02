@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicFavHandler, MMMusicForwardHandler, MMMusicInfo, MMMusicOpenThirdAppHelper, MMUIButton, MMUILabel, MMWebImageView, NSString, RichTextView, ShakeMusicInfo, ShakeMusicPlayButton, ShakeMusicResultMediaView, UIScrollView, UIView;
 
 @interface ShakeMusicResultViewController
@@ -32,7 +34,6 @@
     MMMusicFavHandler *_favHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseCustomPopAnimation; // @synthesize shouldUseCustomPopAnimation=_shouldUseCustomPopAnimation;
 @property(nonatomic) _Bool shouldNotStopMusic; // @synthesize shouldNotStopMusic=_shouldNotStopMusic;
 @property(retain, nonatomic) MMMusicFavHandler *favHandler; // @synthesize favHandler=_favHandler;
@@ -104,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

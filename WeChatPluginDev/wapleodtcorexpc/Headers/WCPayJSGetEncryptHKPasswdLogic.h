@@ -10,7 +10,6 @@
     id <WCPayJSGetEncryptHKPasswdLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayJSGetEncryptHKPasswdLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)authFail;
 - (void)callGetEncryptPwd:(id)arg1 signature:(id)arg2;

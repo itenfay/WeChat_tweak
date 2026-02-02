@@ -13,7 +13,6 @@
     UIView *_frontColorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *frontColorView; // @synthesize frontColorView=_frontColorView;
 @property(retain, nonatomic) UIView *backColorView; // @synthesize backColorView=_backColorView;
 - (void)layoutSubviews;

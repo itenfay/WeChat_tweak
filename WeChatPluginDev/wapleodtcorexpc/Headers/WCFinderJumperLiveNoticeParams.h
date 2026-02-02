@@ -15,7 +15,6 @@
 
 + (id)paramsFromLiveReservationStyle:(id)arg1;
 + (id)paramsFromLiveReservationNecessaryParams:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bypReportChnlExtra; // @synthesize bypReportChnlExtra=_bypReportChnlExtra;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeInfo; // @synthesize noticeInfo=_noticeInfo;
 

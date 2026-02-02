@@ -15,7 +15,6 @@
     unsigned long long _translatingMsgsCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bStopTranslateFlag; // @synthesize bStopTranslateFlag=_bStopTranslateFlag;
 @property(nonatomic) unsigned long long translatingMsgsCount; // @synthesize translatingMsgsCount=_translatingMsgsCount;
 @property(retain, nonatomic) NSMutableArray *currentTranslatingMsgs; // @synthesize currentTranslatingMsgs=_currentTranslatingMsgs;

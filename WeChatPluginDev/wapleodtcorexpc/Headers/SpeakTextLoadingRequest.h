@@ -19,7 +19,6 @@
     unsigned long long _lastReceiveDataTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastReceiveDataTime; // @synthesize lastReceiveDataTime=_lastReceiveDataTime;
 @property(retain, nonatomic) NSMutableArray *extInfos; // @synthesize extInfos=_extInfos;
 @property(retain, nonatomic) NSData *contextBuff; // @synthesize contextBuff=_contextBuff;

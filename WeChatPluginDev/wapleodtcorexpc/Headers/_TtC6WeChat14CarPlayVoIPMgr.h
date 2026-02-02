@@ -11,7 +11,6 @@
     MISSING_TYPE *rootVoIPTalkingController;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)setTalkingControllerDelegateWithDelegate:(id)arg1;
 - (id)getTalkingController;

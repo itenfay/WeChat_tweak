@@ -13,7 +13,6 @@
     MISSING_TYPE *$__lazy_storage_$_collectionView;
 }
 
-- (void).cxx_destruct;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(struct CGPoint *)arg3;

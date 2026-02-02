@@ -44,7 +44,6 @@
     MyWCDB *wcdb;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MyWCDB *wcdb; // @synthesize wcdb;
 @property(retain, nonatomic) WCLocationInfo *locationInfo; // @synthesize locationInfo;
 @property(nonatomic) _Bool isDeleted; // @synthesize isDeleted;

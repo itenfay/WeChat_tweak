@@ -21,7 +21,6 @@
     WCFinderGetCollectionListCGI *_cgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int businessType; // @synthesize businessType=_businessType;
 @property(retain, nonatomic) WCFinderGetCollectionListCGI *cgi; // @synthesize cgi=_cgi;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

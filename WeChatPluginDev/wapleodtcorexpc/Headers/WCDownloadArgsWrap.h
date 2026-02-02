@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSString;
 
@@ -61,7 +62,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) int bitrate; // @synthesize bitrate=_bitrate;
 @property(nonatomic) int predownloadMinsize; // @synthesize predownloadMinsize=_predownloadMinsize;
 @property(nonatomic) int predownloadRatio; // @synthesize predownloadRatio=_predownloadRatio;
@@ -128,4 +128,3 @@
 @property(readonly) Class superclass;
 
 @end
-

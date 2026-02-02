@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, WCDataItem, WCMomentsPostReportSession;
 
@@ -18,7 +19,6 @@
     NSString *_tips;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tips; // @synthesize tips=_tips;
 @property(retain, nonatomic) UIColor *svgIconColor; // @synthesize svgIconColor=_svgIconColor;
 @property(copy, nonatomic) NSString *svgIconName; // @synthesize svgIconName=_svgIconName;
@@ -41,4 +41,3 @@
 - (void)dr_bindShareButton:(id)arg1;
 
 @end
-

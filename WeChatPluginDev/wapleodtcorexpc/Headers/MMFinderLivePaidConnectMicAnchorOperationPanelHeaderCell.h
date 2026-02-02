@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, RichTextView, UILabel;
 
@@ -20,7 +21,6 @@
 + (id)genSummaryRichTextView;
 + (double)cellHeightWithConnectPrice:(unsigned long long)arg1 serviceCount:(unsigned long long)arg2 cellWidth:(double)arg3;
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *summaryTextView; // @synthesize summaryTextView=_summaryTextView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) CDUnknownBlockType modifyPaidConnectMicSettingAction; // @synthesize modifyPaidConnectMicSettingAction=_modifyPaidConnectMicSettingAction;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

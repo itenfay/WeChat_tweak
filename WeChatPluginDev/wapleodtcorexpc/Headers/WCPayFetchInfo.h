@@ -26,7 +26,6 @@
 
 + (id)GenFromDictionary:(id)arg1;
 + (id)fetchInfoOfJSONDic:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayFetchQAInfo *withdraw_sector; // @synthesize withdraw_sector=_withdraw_sector;
 @property(copy, nonatomic) NSString *card_list_wording_content; // @synthesize card_list_wording_content=_card_list_wording_content;
 @property(copy, nonatomic) NSString *card_list_wording_title; // @synthesize card_list_wording_title=_card_list_wording_title;

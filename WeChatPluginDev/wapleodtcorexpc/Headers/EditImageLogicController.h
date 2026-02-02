@@ -12,7 +12,6 @@
     NSMutableDictionary *__editedImageDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_editedImageDic; // @synthesize _editedImageDic=__editedImageDic;
 - (void)dealloc;
 - (id)getEditedString:(id)arg1;

@@ -12,7 +12,6 @@
     id <IWAWebViewPluginDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWAWebViewPluginDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDictionary *param; // @synthesize param=_param;
 

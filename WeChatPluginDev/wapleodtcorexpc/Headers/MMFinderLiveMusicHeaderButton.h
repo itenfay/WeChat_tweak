@@ -18,7 +18,6 @@
     UIImageView *_musicIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *musicIconView; // @synthesize musicIconView=_musicIconView;
 @property(retain, nonatomic) UIView *musicButton; // @synthesize musicButton=_musicButton;
 @property(retain, nonatomic) FinderLiveBriefMusicInfo *currentBriefInfo; // @synthesize currentBriefInfo=_currentBriefInfo;

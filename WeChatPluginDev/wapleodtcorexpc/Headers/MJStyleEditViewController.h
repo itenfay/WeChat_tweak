@@ -21,7 +21,6 @@
     NSMutableDictionary *_selectedIdxDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *selectedIdxDict; // @synthesize selectedIdxDict=_selectedIdxDict;
 @property(retain, nonatomic) MMUIButton *applyToAllButton; // @synthesize applyToAllButton=_applyToAllButton;
 @property(retain, nonatomic) MJStyleEditToolBar *toolBar; // @synthesize toolBar=_toolBar;

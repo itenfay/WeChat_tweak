@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UILabel, UITableView, UIView, WCFinderAnimationLoadingView, WCFinderFeedContentTextViewConfig, WCFinderMemberShipSearchViewModel;
 
 @interface WCFinderMemberShipSearchVC
@@ -19,7 +21,6 @@
 }
 
 + (void)displayOnViewController:(id)arg1 finderUserName:(id)arg2 closeCallback:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentTextViewConfig *textViewConfig; // @synthesize textViewConfig=_textViewConfig;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *emptyLoadingView; // @synthesize emptyLoadingView=_emptyLoadingView;
 @property(retain, nonatomic) UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

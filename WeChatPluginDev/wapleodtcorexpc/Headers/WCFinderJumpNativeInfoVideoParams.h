@@ -18,7 +18,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *jumpInfoBypassInfo; // @synthesize jumpInfoBypassInfo=_jumpInfoBypassInfo;
 @property(nonatomic) unsigned long long getRelatedListScene; // @synthesize getRelatedListScene=_getRelatedListScene;
 @property(nonatomic) _Bool forbidGetRelatedList; // @synthesize forbidGetRelatedList=_forbidGetRelatedList;

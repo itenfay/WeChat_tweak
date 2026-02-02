@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol OS_dispatch_queue;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

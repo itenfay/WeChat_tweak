@@ -14,7 +14,6 @@
     unsigned long long _fileSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int modifyTime; // @synthesize modifyTime=_modifyTime;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

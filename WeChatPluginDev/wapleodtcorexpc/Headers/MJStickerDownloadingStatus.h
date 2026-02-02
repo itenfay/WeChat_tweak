@@ -15,7 +15,6 @@
     NSArray *_completionCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *completionCallback; // @synthesize completionCallback=_completionCallback;
 @property(copy, nonatomic) NSArray *progressCallback; // @synthesize progressCallback=_progressCallback;
 @property(nonatomic) float progress; // @synthesize progress=_progress;

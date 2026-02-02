@@ -22,7 +22,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_uiLogoutType;
 + (void)PBArrayAdd_m_arrUserInfos;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiLogoutType; // @synthesize m_uiLogoutType=_m_uiLogoutType;
 @property(retain, nonatomic) LoginUserInfo *m_curUserInfo; // @synthesize m_curUserInfo=_m_curUserInfo;
 @property(retain, nonatomic) NSMutableDictionary *m_dicUserInfos; // @synthesize m_dicUserInfos=_m_dicUserInfos;

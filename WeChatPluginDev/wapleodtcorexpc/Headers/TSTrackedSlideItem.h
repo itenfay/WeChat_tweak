@@ -10,7 +10,6 @@
     NSArray *_touches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *touches; // @synthesize touches=_touches;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

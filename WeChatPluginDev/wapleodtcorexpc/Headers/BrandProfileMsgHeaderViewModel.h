@@ -11,7 +11,6 @@
     struct CGSize _titleSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize titleSize; // @synthesize titleSize=_titleSize;
 @property(retain, nonatomic) NSMutableArray *titleLabelStyles; // @synthesize titleLabelStyles=_titleLabelStyles;
 - (void)onUnfold;

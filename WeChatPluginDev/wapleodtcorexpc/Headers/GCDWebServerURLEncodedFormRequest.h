@@ -11,7 +11,6 @@
 }
 
 + (id)mimeType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *arguments; // @synthesize arguments=_arguments;
 - (id)description;
 - (_Bool)close:(id *)arg1;

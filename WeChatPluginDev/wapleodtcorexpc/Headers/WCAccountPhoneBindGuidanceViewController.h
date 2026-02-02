@@ -12,7 +12,6 @@
     WCAccountPhoneBindGuidanceData *_m_guidanceData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountPhoneBindGuidanceData *m_guidanceData; // @synthesize m_guidanceData=_m_guidanceData;
 @property(nonatomic) __weak id <WCAccountPhoneBindGuidanceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

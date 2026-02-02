@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFrameSetName:(id)arg1 frameSetData:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *frameSetData; // @synthesize frameSetData=_frameSetData;
 @property(copy, nonatomic) NSString *frameSetName; // @synthesize frameSetName=_frameSetName;
 - (id)toList;

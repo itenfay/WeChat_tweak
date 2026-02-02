@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ConfAVMemberList, IConfSDKRegisterableCallbackHolder, MMConfSDKAudioMgr, MMConfSDKCGIImp, MMConfSDKMemberMgr, MMConfSDKNetworkMgr, MMConfSDKVideoHWdec, MMConfSDKVideoHWenc, MMContext, MMTimer, NSMutableArray, NSMutableDictionary, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol MultitalkApiDelegate, OS_dispatch_queue;
 
@@ -106,7 +108,6 @@
     _Bool _isNotSendBanner;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNotSendBanner; // @synthesize isNotSendBanner=_isNotSendBanner;
 - (void)OnConfEvent:(int)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
 - (void)callIfNotNil:(id)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
@@ -207,4 +208,3 @@
 @property(readonly) Class superclass;
 
 @end
-

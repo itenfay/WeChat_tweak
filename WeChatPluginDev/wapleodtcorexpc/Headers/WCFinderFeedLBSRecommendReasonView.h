@@ -21,7 +21,6 @@
 + (id)createReasonItemStr:(id)arg1 config:(id)arg2;
 + (id)createReasonItemsStr:(id)arg1 config:(id)arg2;
 + (double)heightForReasonItems:(id)arg1 config:(id)arg2 width:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) WCFinderFeedLBSRecommendReasonViewConfig *config; // @synthesize config=_config;
 - (void)updateWithReasonItems:(id)arg1 config:(id)arg2;

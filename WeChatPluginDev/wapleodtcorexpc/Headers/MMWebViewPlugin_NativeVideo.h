@@ -18,7 +18,6 @@
 }
 
 + (unsigned int)playerCountGlobal;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictLocalFinderFeedInfos; // @synthesize dictLocalFinderFeedInfos=_dictLocalFinderFeedInfos;
 @property(retain, nonatomic) NSMutableDictionary *dictLocalFinderPlayInfos; // @synthesize dictLocalFinderPlayInfos=_dictLocalFinderPlayInfos;
 - (void)finderMPVideoInteractionUpdate:(id)arg1;

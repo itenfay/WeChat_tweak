@@ -14,7 +14,6 @@
     id <WeMediaDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WeMediaDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)releaseContext;
 - (_Bool)isAudioPlaying;

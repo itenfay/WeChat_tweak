@@ -16,7 +16,6 @@
 }
 
 + (id)handlerWithPresentingVC:(id)arg1 commentScene:(int)arg2 refCommentScene:(int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) int refCommentScene; // @synthesize refCommentScene=_refCommentScene;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) __weak UIViewController<WCFinderFeedBaseViewControllerProtocol> *presentingVC; // @synthesize presentingVC=_presentingVC;

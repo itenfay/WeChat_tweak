@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderMemberShipModBlackListCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(nonatomic) int acctType; // @synthesize acctType=_acctType;
@@ -30,4 +31,3 @@
 - (id)initWithFinderUsername:(id)arg1 objectId:(unsigned long long)arg2 commenTid:(unsigned long long)arg3 opType:(int)arg4 acctType:(int)arg5 successful:(CDUnknownBlockType)arg6 failure:(CDUnknownBlockType)arg7;
 
 @end
-

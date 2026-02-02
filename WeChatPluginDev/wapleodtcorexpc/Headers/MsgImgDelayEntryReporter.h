@@ -29,7 +29,6 @@
     unsigned long long _detectBitSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int entryType; // @synthesize entryType=_entryType;
 @property(nonatomic) unsigned int clickResult; // @synthesize clickResult=_clickResult;
 @property(nonatomic) unsigned long long detectBitSet; // @synthesize detectBitSet=_detectBitSet;

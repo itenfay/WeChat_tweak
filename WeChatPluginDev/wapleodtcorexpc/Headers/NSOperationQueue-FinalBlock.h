@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperationQueue.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSOperationQueue (FinalBlock)
 + (id)newSerialMainQueue;
@@ -11,4 +12,3 @@
 - (void)sc_addOperationWithAsyncBlock:(CDUnknownBlockType)arg1;
 - (id)addOperationWithAsyncBlock:(CDUnknownBlockType)arg1;
 @end
-

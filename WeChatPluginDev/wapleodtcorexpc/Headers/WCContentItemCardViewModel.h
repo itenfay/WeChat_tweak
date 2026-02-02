@@ -25,7 +25,6 @@
 
 + (double)calCoverFittingHeightWithThumbWidth:(unsigned int)arg1 height:(unsigned int)arg2;
 + (id)fromContentItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *usrName; // @synthesize usrName=_usrName;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;

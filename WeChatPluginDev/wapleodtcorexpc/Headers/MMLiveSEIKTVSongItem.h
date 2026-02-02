@@ -16,7 +16,6 @@
     NSString *_uiqId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uiqId; // @synthesize uiqId=_uiqId;
 @property(nonatomic) unsigned long long os; // @synthesize os=_os;
 @property(retain, nonatomic) NSString *sName; // @synthesize sName=_sName;

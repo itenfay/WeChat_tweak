@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_key;
 + (void)PBArrayAdd_passthroughIconList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *passthroughIconList; // @synthesize passthroughIconList=_passthroughIconList;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
 - (id)initWithAgenda:(id)arg1;

@@ -14,7 +14,6 @@
     UILabel *_videoCountLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *videoCountLabel; // @synthesize videoCountLabel=_videoCountLabel;
 @property(nonatomic) __weak UILabel *groupNickNameLabel; // @synthesize groupNickNameLabel=_groupNickNameLabel;
 @property(nonatomic) __weak MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;

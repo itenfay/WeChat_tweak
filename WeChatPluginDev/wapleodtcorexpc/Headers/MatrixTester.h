@@ -13,7 +13,6 @@
     NSTimer *_runloop2Timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *runloop2Timer; // @synthesize runloop2Timer=_runloop2Timer;
 @property(retain, nonatomic) NSTimer *runloopTimer; // @synthesize runloopTimer=_runloopTimer;
 - (void)readMassData;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, WCEliminatedSlotMMKV, WebviewJSEventHandlerFacade;
 @protocol MMClientJsApiHandlerDelegate;
@@ -25,7 +26,6 @@
     CDUnknownBlockType _cgiCallbackBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cgiCallbackBlock; // @synthesize cgiCallbackBlock=_cgiCallbackBlock;
 @property(copy, nonatomic) CDUnknownBlockType callbackBlock; // @synthesize callbackBlock=_callbackBlock;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *slotKv; // @synthesize slotKv=_slotKv;
@@ -66,4 +66,3 @@
 @property(readonly) Class superclass;
 
 @end
-

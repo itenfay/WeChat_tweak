@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableDictionary;
 
@@ -15,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)internalStartWithTaskStateUpdateHandler:(CDUnknownBlockType)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)prepareTasksWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cancelProcessing;
@@ -25,4 +25,3 @@
 - (id)initWithPHAssets:(id)arg1;
 
 @end
-

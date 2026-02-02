@@ -24,7 +24,6 @@
 }
 
 + (id)defaultParam;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *interruptedWhenAppResignActive; // @synthesize interruptedWhenAppResignActive=_interruptedWhenAppResignActive;
 @property(nonatomic) _Bool isKeepPictureInPictureStatusWhenPlayerStopped; // @synthesize isKeepPictureInPictureStatusWhenPlayerStopped=_isKeepPictureInPictureStatusWhenPlayerStopped;
 @property(nonatomic) _Bool isOpenAutoPictureInPicture; // @synthesize isOpenAutoPictureInPicture=_isOpenAutoPictureInPicture;

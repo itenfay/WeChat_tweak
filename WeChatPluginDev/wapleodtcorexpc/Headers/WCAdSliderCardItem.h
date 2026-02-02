@@ -16,7 +16,6 @@
     WCAdSliderCardButton *_buttonInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdSliderCardButton *buttonInfo; // @synthesize buttonInfo=_buttonInfo;
 @property(retain, nonatomic) WCAdCardBtnInfo *clickActionInfo; // @synthesize clickActionInfo=_clickActionInfo;
 @property(retain, nonatomic) NSString *frontBorderImage; // @synthesize frontBorderImage=_frontBorderImage;

@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WXVoIPAudioHardwareDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)notifyHardwarePluggedOut:(const struct Hardware *)arg1;
 - (void)notifyHardwarePluggedIn:(const struct Hardware *)arg1;

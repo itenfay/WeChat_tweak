@@ -16,7 +16,6 @@
     NSString *_scene;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
 @property(copy, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;

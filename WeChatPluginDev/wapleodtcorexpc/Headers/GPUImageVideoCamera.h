@@ -51,7 +51,6 @@
 
 + (_Bool)isFrontFacingCameraPresent;
 + (_Bool)isBackFacingCameraPresent;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool horizontallyMirrorRearFacingCamera; // @synthesize horizontallyMirrorRearFacingCamera=_horizontallyMirrorRearFacingCamera;
 @property(nonatomic) _Bool horizontallyMirrorFrontFacingCamera; // @synthesize horizontallyMirrorFrontFacingCamera=_horizontallyMirrorFrontFacingCamera;
 @property(nonatomic) id <GPUImageVideoCameraDelegate> delegate; // @synthesize delegate=_delegate;

@@ -12,7 +12,6 @@
     BSTimelineFlutterPlugin *_apiImpl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didAppear; // @synthesize didAppear=_didAppear;
 @property(retain, nonatomic) BSTimelineFlutterPlugin *apiImpl; // @synthesize apiImpl=_apiImpl;
 @property(retain, nonatomic) BSTLExptConfig *exptConfig; // @synthesize exptConfig=_exptConfig;

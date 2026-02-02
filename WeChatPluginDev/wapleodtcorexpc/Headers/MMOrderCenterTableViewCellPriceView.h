@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMCustomerOrderInfo, NSArray, NSString;
 @protocol MMOrderCenterTableViewCellComponentAggregatedDelegate;
@@ -22,7 +23,6 @@
 + (void)getPartsLineIndexWith:(id)arg1 getSize:(CDUnknownBlockType)arg2 getFont:(CDUnknownBlockType)arg3 maxWidth:(double)arg4 partResultAction:(CDUnknownBlockType)arg5;
 + (_Bool)shouldUseComponentForOrder:(id)arg1;
 + (id)fontForType:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) MMCustomerOrderInfo *order; // @synthesize order=_order;
 @property(nonatomic) __weak id <MMOrderCenterTableViewCellComponentAggregatedDelegate> delegate; // @synthesize delegate=_delegate;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

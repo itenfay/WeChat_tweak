@@ -16,7 +16,6 @@
     UICollectionView *_templateCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *templateCollectionView; // @synthesize templateCollectionView=_templateCollectionView;
 @property(retain, nonatomic) WCVideoProducerDataSource *cellVMData; // @synthesize cellVMData=_cellVMData;
 @property(nonatomic) __weak id <WCMomentsCompositorTemplateTableDelegate> delegate; // @synthesize delegate=_delegate;

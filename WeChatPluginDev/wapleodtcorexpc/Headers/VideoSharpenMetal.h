@@ -32,7 +32,6 @@
     int mSharpenMode;
 }
 
-- (void).cxx_destruct;
 - (id)process:(id)arg1 commandbuf:(id)arg2 width:(int)arg3 height:(int)arg4 mode:(int)arg5;
 - (void)setuptextures:(int)arg1 height:(int)arg2;
 - (void)dealloc;

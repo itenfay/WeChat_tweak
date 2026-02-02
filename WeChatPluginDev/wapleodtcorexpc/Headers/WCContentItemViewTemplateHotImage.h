@@ -26,7 +26,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 - (void)deleteFullScreeImageViews;
 - (void)initFullScreeImageViews;
 - (void)deleteFullScreenData;

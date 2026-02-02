@@ -14,7 +14,6 @@
     FinderMemberZonePromoteInfo *_memberZonePromoteInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderMemberZonePromoteInfo *memberZonePromoteInfo; // @synthesize memberZonePromoteInfo=_memberZonePromoteInfo;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

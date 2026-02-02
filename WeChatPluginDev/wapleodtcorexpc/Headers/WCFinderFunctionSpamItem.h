@@ -13,7 +13,6 @@
     NSString *_tip;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tip; // @synthesize tip=_tip;
 @property(nonatomic) unsigned int action; // @synthesize action=_action;
 - (id)init;

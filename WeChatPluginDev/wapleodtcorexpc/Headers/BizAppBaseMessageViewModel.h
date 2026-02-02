@@ -22,7 +22,6 @@
     CContact *_bizContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *bizContact; // @synthesize bizContact=_bizContact;
 - (id)accessibilityMessageType;
 - (id)additionalAccessibilityDescription;

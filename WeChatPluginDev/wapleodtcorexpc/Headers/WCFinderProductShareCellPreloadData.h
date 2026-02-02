@@ -13,7 +13,6 @@
     FinderWindowProductInfo *_productInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInLiving; // @synthesize isInLiving=_isInLiving;
 @property(retain, nonatomic) FinderWindowProductInfo *productInfo; // @synthesize productInfo=_productInfo;
 

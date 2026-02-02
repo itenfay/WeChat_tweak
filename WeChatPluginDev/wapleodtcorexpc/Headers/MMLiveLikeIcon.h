@@ -14,7 +14,6 @@
     UIImage *_icon;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fixedRate; // @synthesize fixedRate=_fixedRate;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;

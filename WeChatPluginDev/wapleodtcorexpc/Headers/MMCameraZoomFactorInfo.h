@@ -21,7 +21,6 @@
     double _visualFactorScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTripleSupported; // @synthesize isTripleSupported=_isTripleSupported;
 @property(nonatomic) _Bool isDualWideSupported; // @synthesize isDualWideSupported=_isDualWideSupported;
 @property(nonatomic) double visualFactorScale; // @synthesize visualFactorScale=_visualFactorScale;

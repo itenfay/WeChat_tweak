@@ -17,7 +17,6 @@
     NSString *_promoterToken;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool reportingClearAdDataAfterReportForBook; // @synthesize reportingClearAdDataAfterReportForBook=_reportingClearAdDataAfterReportForBook;
 @property(nonatomic) _Bool reportingUseDefaultAdData; // @synthesize reportingUseDefaultAdData=_reportingUseDefaultAdData;
 @property(nonatomic) unsigned int enterType; // @synthesize enterType=_enterType;

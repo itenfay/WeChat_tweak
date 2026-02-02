@@ -16,7 +16,6 @@
 }
 
 + (id)itemWithName:(id)arg1 icon:(id)arg2 iconColor:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) UIColor *iconColor; // @synthesize iconColor=_iconColor;
 @property(retain, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;

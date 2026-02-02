@@ -23,7 +23,6 @@
     unsigned long long _routePickerViewEnterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long routePickerViewEnterScene; // @synthesize routePickerViewEnterScene=_routePickerViewEnterScene;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;

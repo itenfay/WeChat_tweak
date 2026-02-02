@@ -19,7 +19,6 @@
     long long _callbackId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int localId; // @synthesize localId=_localId;
 @property(nonatomic) _Bool isFromView; // @synthesize isFromView=_isFromView;
 @property(nonatomic) long long callbackId; // @synthesize callbackId=_callbackId;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MAVVideoComposition, NSMutableArray, NSString, WCFinderEditVideoCropView, WCFinderEditVideoMultiVideoCropView, WCFinderEditVideoPorgressInfoViewModel, WCFinderEditVideoProgressInfoView, WCFinderFullScreenEditFrameBlurView;
 @protocol WCFinderFullScreenCompositionLayoutViewDelegate;
 
@@ -19,7 +21,6 @@
     MAVVideoComposition *_composition;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MAVVideoComposition *composition; // @synthesize composition=_composition;
 @property(retain, nonatomic) NSMutableArray *videoUrls; // @synthesize videoUrls=_videoUrls;
 @property(retain, nonatomic) WCFinderFullScreenEditFrameBlurView *frameCropView; // @synthesize frameCropView=_frameCropView;
@@ -108,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     UILabel *_headerViewTitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *headerViewTitleLabel; // @synthesize headerViewTitleLabel=_headerViewTitleLabel;
 @property(nonatomic) __weak UILabel *headerTitleLabel; // @synthesize headerTitleLabel=_headerTitleLabel;
 @property(retain, nonatomic) WCFinderGroupMemberViewModel *viewModel; // @synthesize viewModel=_viewModel;

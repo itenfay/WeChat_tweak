@@ -39,7 +39,6 @@
 + (void)onCalculatLayoutInfo:(id)arg1;
 + (void)calculateLayoutIfNeed:(id)arg1;
 + (void)updateiPadCellWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headTickleMaskView; // @synthesize headTickleMaskView=_headTickleMaskView;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 @property(retain, nonatomic) UITapGestureRecognizer *doubleTapOnHead; // @synthesize doubleTapOnHead=_doubleTapOnHead;

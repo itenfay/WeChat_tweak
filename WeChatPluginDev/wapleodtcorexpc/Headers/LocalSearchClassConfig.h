@@ -19,7 +19,6 @@
 + (id)makeDefaultConfigOfAddressBookFriend;
 + (id)makeDefaultConfigOfContact;
 + (id)makeDefaultClassConfig:(Class)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrMatchConfig; // @synthesize arrMatchConfig=_arrMatchConfig;
 @property(retain, nonatomic) LSTargetGenerator *nsKeyGenerator; // @synthesize nsKeyGenerator=_nsKeyGenerator;
 @property(nonatomic) Class objClass; // @synthesize objClass=_objClass;

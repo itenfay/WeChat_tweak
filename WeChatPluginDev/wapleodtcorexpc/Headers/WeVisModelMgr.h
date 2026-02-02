@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, NSMutableArray, NSMutableSet, NSString, WeVisModelResponse;
 
 @interface WeVisModelMgr
@@ -18,7 +20,6 @@
 + (id)resFileMd5:(int)arg1 subtype:(int)arg2;
 + (id)modelPathOfType:(int)arg1 subtype:(int)arg2 filename:(id)arg3;
 + (id)modelPathOfInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *invalidModelList; // @synthesize invalidModelList=_invalidModelList;
 @property(retain, nonatomic) WeVisModelResponse *targetModelInfo; // @synthesize targetModelInfo=_targetModelInfo;
 @property(retain, nonatomic) WeVisModelResponse *localModelInfo; // @synthesize localModelInfo=_localModelInfo;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

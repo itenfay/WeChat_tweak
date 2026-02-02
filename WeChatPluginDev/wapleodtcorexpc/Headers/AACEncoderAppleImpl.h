@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)frameLengthInBytes;
 - (Optional_eb6751fe)encodeAudioPacket:(const void *)arg1;
 - (Optional_3f6628e3)encodeAudioFrame:(const void *)arg1;

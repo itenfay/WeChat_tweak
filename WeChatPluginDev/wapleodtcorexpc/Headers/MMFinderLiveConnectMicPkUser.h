@@ -21,7 +21,6 @@
     unsigned long long _genericScore;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int seatId; // @synthesize seatId=_seatId;
 @property(nonatomic) unsigned long long genericScore; // @synthesize genericScore=_genericScore;
 @property(nonatomic) _Bool isApplicant; // @synthesize isApplicant=_isApplicant;

@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *interceptors; // @synthesize interceptors=_interceptors;
 - (void)registerInterceptor:(id)arg1;
 - (void)intercept:(id)arg1;

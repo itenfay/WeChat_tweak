@@ -47,7 +47,6 @@
     struct UIEdgeInsets _touchEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CATextLayer *textLayer; // @synthesize textLayer=_textLayer;
 @property(nonatomic) double trackPaddingWithImage; // @synthesize trackPaddingWithImage=_trackPaddingWithImage;
 @property(retain, nonatomic) CALayer *maximumImageLayer; // @synthesize maximumImageLayer=_maximumImageLayer;

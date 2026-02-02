@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BrandMpVideoReporter, CAGradientLayer, CMessageWrap, CameraScanCodesMarkDotView, EditImageForwardAndEditLogicController, ForwardMessageLogicController, GetQRCodeInfoLogic, ImageBrowseButton, MMAdaptiveBubbleViewWithLabel, MMProgressViewEx, MMScrollActionSheet, MMTimer, MMUIActivityIndicatorView, MPCustomInteractiveHandler, MPDragDownGestureHandler, MsgImgDataLogic, MsgImgDelayEntryReporter, MsgImgFullScreenContainer, MsgImgPreviewData, MsgImgSearchPhashMemCache, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, OCRTransHalfScreenViewController, QRCodeInMultiDisplayView, ScanQRCodeLogicController, ShareDataToOpenSDKController, SightIconView, UILabel, UIView, WCActionSheet, WCImageTranslateLogic, WCMomentsBizOriginalArticleButton;
 @protocol MsgImgFullScreenTransitionComponent, MsgImgFullScreenTransitionDelegate, MsgImgFullScreenViewControllerDelegate;
 
@@ -130,7 +132,6 @@
     OCRTransHalfScreenViewController *_ocrHalfScreenViewCtrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OCRTransHalfScreenViewController *ocrHalfScreenViewCtrl; // @synthesize ocrHalfScreenViewCtrl=_ocrHalfScreenViewCtrl;
 @property(nonatomic) _Bool lockRotate; // @synthesize lockRotate=_lockRotate;
 @property(retain, nonatomic) NSMutableArray *arrItems2; // @synthesize arrItems2=_arrItems2;
@@ -596,4 +597,3 @@
 @property(readonly) Class superclass;
 
 @end
-

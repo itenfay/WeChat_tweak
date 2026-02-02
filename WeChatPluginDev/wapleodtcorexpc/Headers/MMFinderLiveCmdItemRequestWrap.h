@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderCmdItem, FinderCmdRet;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType completeCallBlock; // @synthesize completeCallBlock=_completeCallBlock;
 @property(retain, nonatomic) FinderCmdRet *cmdRet; // @synthesize cmdRet=_cmdRet;
 @property(retain, nonatomic) FinderCmdItem *cmdItem; // @synthesize cmdItem=_cmdItem;
 
 @end
-

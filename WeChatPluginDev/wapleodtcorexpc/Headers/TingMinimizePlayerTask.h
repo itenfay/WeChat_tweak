@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MiniAudioTaskContentView, NSString;
 
 @interface TingMinimizePlayerTask
@@ -10,7 +12,6 @@
     MiniAudioTaskContentView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MiniAudioTaskContentView *contentView; // @synthesize contentView=_contentView;
 - (_Bool)handleOpenTask:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)onMiniAudioContentViewOuterContentClicked;
@@ -36,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

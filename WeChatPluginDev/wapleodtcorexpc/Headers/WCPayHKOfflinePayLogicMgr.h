@@ -13,7 +13,6 @@
     MMVoidBoolCallback *_webPageSheetCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidBoolCallback *webPageSheetCallback; // @synthesize webPageSheetCallback=_webPageSheetCallback;
 @property(retain, nonatomic) MMPageSheetAdapter *webPageAdapter; // @synthesize webPageAdapter=_webPageAdapter;
 @property(retain, nonatomic) NSString *mmkvID; // @synthesize mmkvID=_mmkvID;

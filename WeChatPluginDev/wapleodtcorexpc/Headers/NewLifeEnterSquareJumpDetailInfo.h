@@ -14,7 +14,6 @@
     NewLifePagePreloadCache *_preloadCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifePagePreloadCache *preloadCache; // @synthesize preloadCache=_preloadCache;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool jumpDetailSkipHome; // @synthesize jumpDetailSkipHome=_jumpDetailSkipHome;

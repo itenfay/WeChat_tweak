@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 @protocol MMFinderReplayKitVideoDecoderDelegate, OS_dispatch_queue;
@@ -18,7 +19,6 @@
     NSMutableDictionary *_parameterSets;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *parameterSets; // @synthesize parameterSets=_parameterSets;
 @property(nonatomic) struct opaqueCMFormatDescription *formatDesc; // @synthesize formatDesc=_formatDesc;
 @property(nonatomic) struct OpaqueVTDecompressionSession *session; // @synthesize session=_session;
@@ -40,4 +40,3 @@
 - (id)initWithDelegate:(id)arg1;
 
 @end
-

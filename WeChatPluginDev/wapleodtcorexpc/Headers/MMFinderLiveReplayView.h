@@ -32,7 +32,6 @@
 + (struct CGPoint)getAudienceRemoteVideoViewCenterForScene:(unsigned long long)arg1 containerView:(id)arg2 withDisplaySize:(struct CGSize)arg3;
 + (struct CGRect)createRemoteViewFrameWithDisplaySize:(struct CGSize)arg1 containerView:(id)arg2 scene:(unsigned long long)arg3;
 + (struct CGRect)getMainVideoViewFrameWithVideoSize:(struct CGSize)arg1 containerView:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReplayTaskId *replayTaskId; // @synthesize replayTaskId=_replayTaskId;
 @property(nonatomic) double actualWatchDuration; // @synthesize actualWatchDuration=_actualWatchDuration;
 @property(nonatomic) double lastPlayTs; // @synthesize lastPlayTs=_lastPlayTs;

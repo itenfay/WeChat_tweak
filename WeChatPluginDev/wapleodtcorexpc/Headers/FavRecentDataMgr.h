@@ -10,7 +10,6 @@
     NSMutableArray *_arrRecentFavDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrRecentFavDatas; // @synthesize arrRecentFavDatas=_arrRecentFavDatas;
 - (id)getRecentFavoritesItem;
 - (void)removeFavoritesItemByLocalId:(unsigned int)arg1;

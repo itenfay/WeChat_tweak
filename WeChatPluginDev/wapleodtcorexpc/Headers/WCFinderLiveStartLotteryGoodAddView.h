@@ -11,7 +11,6 @@
     MMUILabel *_goodsTitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *goodsTitleLabel; // @synthesize goodsTitleLabel=_goodsTitleLabel;
 @property(retain, nonatomic) UIImageView *goodsImageView; // @synthesize goodsImageView=_goodsImageView;
 - (void)layoutUI;

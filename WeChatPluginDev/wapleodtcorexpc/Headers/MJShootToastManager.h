@@ -12,7 +12,6 @@
     WeToast *_toastVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WeToast *toastVC; // @synthesize toastVC=_toastVC;
 - (void)showToastWithText:(id)arg1;
 - (void)hideToastIfNeeded;

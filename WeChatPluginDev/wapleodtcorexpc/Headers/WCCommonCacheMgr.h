@@ -12,7 +12,6 @@
     WCCommonCacheDB *_cacheDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCommonCacheDB *cacheDB; // @synthesize cacheDB=_cacheDB;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue; // @synthesize processQueue=_processQueue;
 - (void)onPlayerDownloadComplete:(id)arg1 downloadInfo:(id)arg2;

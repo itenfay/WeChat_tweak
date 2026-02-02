@@ -28,7 +28,6 @@
     long long _streamType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long streamType; // @synthesize streamType=_streamType;
 @property(nonatomic) unsigned int finalLoss; // @synthesize finalLoss=_finalLoss;
 @property(nonatomic) unsigned int videoBlockRate; // @synthesize videoBlockRate=_videoBlockRate;

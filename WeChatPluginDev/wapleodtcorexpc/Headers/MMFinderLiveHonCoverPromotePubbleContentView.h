@@ -19,7 +19,6 @@
 + (id)getCacheInfoWithList:(id)arg1 model:(id)arg2 liveTask:(id)arg3;
 + (id)getNewCoverInfoWithBuffer:(id)arg1;
 + (_Bool)isCanShowHonCover:(id)arg1 liveTask:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnchor; // @synthesize isAnchor=_isAnchor;
 @property(nonatomic) _Bool received; // @synthesize received=_received;
 @property(retain, nonatomic) FinderLivePromoteInfoRedPacketCover_PromoteRedPacketCoverInfo *model; // @synthesize model=_model;

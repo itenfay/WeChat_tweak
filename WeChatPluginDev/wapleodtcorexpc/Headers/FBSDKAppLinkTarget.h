@@ -15,7 +15,6 @@
 }
 
 + (id)appLinkTargetWithURL:(id)arg1 appStoreId:(id)arg2 appName:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(copy, nonatomic) NSString *appStoreId; // @synthesize appStoreId=_appStoreId;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;

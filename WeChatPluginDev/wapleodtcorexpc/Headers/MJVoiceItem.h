@@ -18,7 +18,6 @@
     UIImage *_icon;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool iconClipsToBounds; // @synthesize iconClipsToBounds=_iconClipsToBounds;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;

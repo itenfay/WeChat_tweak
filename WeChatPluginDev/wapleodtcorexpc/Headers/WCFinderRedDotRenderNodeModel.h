@@ -19,7 +19,6 @@
     NSMutableString *_reddotShowContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *reddotShowContent; // @synthesize reddotShowContent=_reddotShowContent;
 @property(nonatomic) unsigned long long remakeFlag; // @synthesize remakeFlag=_remakeFlag;
 @property(nonatomic) __weak UIView *redDotRenderView; // @synthesize redDotRenderView=_redDotRenderView;

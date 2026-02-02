@@ -12,7 +12,6 @@
     NSString *_liveDesc;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *liveDesc; // @synthesize liveDesc=_liveDesc;
 
 @end

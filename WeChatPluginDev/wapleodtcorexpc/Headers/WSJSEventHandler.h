@@ -19,7 +19,6 @@
     NSMutableArray *_preloadVids;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *preloadVids; // @synthesize preloadVids=_preloadVids;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dataLoader; // @synthesize dataLoader=_dataLoader;

@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheTimestamp; // @synthesize cacheTimestamp=_cacheTimestamp;
 @property(retain, nonatomic) WCFinderCommenListArray *commentList; // @synthesize commentList=_commentList;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

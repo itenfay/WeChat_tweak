@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSOperationQueue;
 @protocol OS_dispatch_queue, SRWebSocketDelegate;
@@ -17,7 +18,6 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property struct SRDelegateAvailableMethods availableDelegateMethods; // @synthesize availableDelegateMethods=_availableDelegateMethods;
 - (void)performDelegateQueueBlock:(CDUnknownBlockType)arg1;
@@ -28,4 +28,3 @@
 - (id)init;
 
 @end
-

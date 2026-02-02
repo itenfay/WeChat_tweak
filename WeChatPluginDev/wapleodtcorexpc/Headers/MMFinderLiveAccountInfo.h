@@ -20,7 +20,6 @@
 + (id)getDigestLogWithLiveAccountInfoList:(id)arg1;
 + (void)reName:(id)arg1 forAccountInfos:(id)arg2;
 + (id)tranferToLiveAccountInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReName; // @synthesize isReName=_isReName;
 @property(readonly, nonatomic) NSString *roleWording; // @synthesize roleWording=_roleWording;
 @property(readonly, nonatomic) NSString *roleName; // @synthesize roleName=_roleName;

@@ -16,7 +16,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *button_jump_url; // @synthesize button_jump_url=_button_jump_url;
 @property(retain, nonatomic) NSString *button_name; // @synthesize button_name=_button_name;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;

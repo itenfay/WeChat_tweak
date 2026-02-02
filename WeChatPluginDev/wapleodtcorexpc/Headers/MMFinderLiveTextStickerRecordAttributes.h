@@ -23,7 +23,6 @@
 }
 
 + (id)stickerRecordAttributesFromItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *templateExtractedResourcePath; // @synthesize templateExtractedResourcePath=_templateExtractedResourcePath;
 @property(retain, nonatomic) NSString *templateUnextractedResourcePath; // @synthesize templateUnextractedResourcePath=_templateUnextractedResourcePath;
 @property(retain, nonatomic) NSString *templateResourceMd5Hash; // @synthesize templateResourceMd5Hash=_templateResourceMd5Hash;

@@ -13,7 +13,6 @@
     NSString *_matchedFingerWord;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *matchedFingerWord; // @synthesize matchedFingerWord=_matchedFingerWord;
 @property(copy, nonatomic) NSString *exposedFingerWord; // @synthesize exposedFingerWord=_exposedFingerWord;
 @property(retain, nonatomic) WCFingertipSearchReportModel *reporter; // @synthesize reporter=_reporter;

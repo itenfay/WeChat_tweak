@@ -14,7 +14,6 @@
 }
 
 + (id)notificationMsgWithSvrMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSArray *likeList; // @synthesize likeList=_likeList;
 

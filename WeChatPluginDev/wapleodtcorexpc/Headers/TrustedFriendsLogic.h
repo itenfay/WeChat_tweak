@@ -15,7 +15,6 @@
     NSMutableArray *_m_trustedFriendList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isListHadChanged; // @synthesize m_isListHadChanged=_m_isListHadChanged;
 @property(nonatomic) unsigned int m_maxTrustedFriendCount; // @synthesize m_maxTrustedFriendCount=_m_maxTrustedFriendCount;
 @property(retain, nonatomic) NSMutableArray *m_trustedFriendList; // @synthesize m_trustedFriendList=_m_trustedFriendList;

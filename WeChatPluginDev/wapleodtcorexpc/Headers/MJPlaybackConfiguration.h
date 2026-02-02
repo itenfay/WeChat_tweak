@@ -18,7 +18,6 @@
     CDStruct_1b6d18a9 _endTimeOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAudioEnabled; // @synthesize isAudioEnabled=_isAudioEnabled;
 @property(nonatomic) CDStruct_1b6d18a9 endTimeOffset; // @synthesize endTimeOffset=_endTimeOffset;
 @property(nonatomic) CDStruct_1b6d18a9 startTimeOffset; // @synthesize startTimeOffset=_startTimeOffset;

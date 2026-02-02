@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPickLocationViewController;
 
@@ -14,7 +15,6 @@
     MMPickLocationViewController *_picker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPickLocationViewController *picker; // @synthesize picker=_picker;
 @property(copy, nonatomic) CDUnknownBlockType didCancel; // @synthesize didCancel=_didCancel;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPick; // @synthesize didFinishPick=_didFinishPick;
@@ -25,4 +25,3 @@
 - (id)initWithPicker:(id)arg1;
 
 @end
-

@@ -15,7 +15,6 @@
     MMFinderLivePromoteDisplayLeaseView *_leaseView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePromoteDisplayLeaseView *leaseView; // @synthesize leaseView=_leaseView;
 @property(retain, nonatomic) NSString *leaseId; // @synthesize leaseId=_leaseId;
 @property(retain, nonatomic) MMFinderLivePromoteDisplayLeaseToken *token; // @synthesize token=_token;

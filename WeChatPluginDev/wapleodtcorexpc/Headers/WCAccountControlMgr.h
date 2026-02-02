@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCAccountAutoLoginControlLogic, WCAccountCloseMainFrameLogic, WCAccountSignHelper, WCAccountSwitchLogic;
 
 @interface WCAccountControlMgr
@@ -23,7 +25,6 @@
     unsigned long long _m_lastAuthFinishTime;
 }
 
-- (void).cxx_destruct;
 @property _Bool m_needAuthAgainForUpdateInfo; // @synthesize m_needAuthAgainForUpdateInfo=_m_needAuthAgainForUpdateInfo;
 @property(nonatomic) unsigned long long m_lastAuthFinishTime; // @synthesize m_lastAuthFinishTime=_m_lastAuthFinishTime;
 @property unsigned long long m_lastmakesuretime; // @synthesize m_lastmakesuretime=_m_lastmakesuretime;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

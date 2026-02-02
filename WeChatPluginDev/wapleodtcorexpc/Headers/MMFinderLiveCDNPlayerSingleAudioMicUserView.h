@@ -16,7 +16,6 @@
     UIView *_audioUserBlurView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideAudioMicUserAvatar; // @synthesize hideAudioMicUserAvatar=_hideAudioMicUserAvatar;
 @property(retain, nonatomic) UIView *audioUserBlurView; // @synthesize audioUserBlurView=_audioUserBlurView;
 @property(retain, nonatomic) WCFinderHeadImageView *backgroundHeadImageView; // @synthesize backgroundHeadImageView=_backgroundHeadImageView;

@@ -19,7 +19,6 @@
     NSMutableDictionary *_sendMsgDictionary;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool reloadAfterBatchUpdate; // @synthesize reloadAfterBatchUpdate=_reloadAfterBatchUpdate;
 @property(nonatomic) _Bool isPerformingBatchUpdate; // @synthesize isPerformingBatchUpdate=_isPerformingBatchUpdate;
 @property(retain, nonatomic) NSMutableDictionary *sendMsgDictionary; // @synthesize sendMsgDictionary=_sendMsgDictionary;

@@ -10,7 +10,6 @@
     StatusFooterJumpFinderFeedByExportId *_finderInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StatusFooterJumpFinderFeedByExportId *finderInfo; // @synthesize finderInfo=_finderInfo;
 - (_Bool)doSourceActionWithViewController:(id)arg1 scene:(unsigned int)arg2;
 - (id)customView;

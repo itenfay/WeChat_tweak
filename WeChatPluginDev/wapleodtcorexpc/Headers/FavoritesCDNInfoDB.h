@@ -12,7 +12,6 @@
     MyFavoritesDB *_mmDB;
 }
 
-- (void).cxx_destruct;
 - (_Bool)deleteCdnInfo:(id)arg1;
 - (_Bool)deleteCdnInfoByFavoritesItemLocalId:(unsigned int)arg1;
 - (id)getUploadCdnInfoByItemId:(unsigned int)arg1 LocalItemDataId:(id)arg2 andType:(int)arg3;

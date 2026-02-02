@@ -14,7 +14,6 @@
 }
 
 + (Class)controllerClassForServiceType:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) KSUPnPDeviceService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) __weak KSUPnPDevice *device; // @synthesize device=_device;
 - (id)initWithDevice:(id)arg1 service:(id)arg2;

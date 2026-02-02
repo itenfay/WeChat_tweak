@@ -19,7 +19,6 @@
     NSMutableDictionary *_hasMoreStatusDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *hasMoreStatusDict; // @synthesize hasMoreStatusDict=_hasMoreStatusDict;
 @property(retain, nonatomic) NSMutableArray *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSMutableArray *ipSetList; // @synthesize ipSetList=_ipSetList;

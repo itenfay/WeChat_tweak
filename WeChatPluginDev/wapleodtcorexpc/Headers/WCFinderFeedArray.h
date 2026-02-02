@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableSet, NSOrderedCollectionDifference, NSString, WCFinderFeedArrayBridge, WCFinderFeedArrayObserverList;
 
@@ -26,7 +27,6 @@
 + (id)arrayWithFeeds:(id)arg1;
 + (id)array;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedArrayBridge *bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) NSArray *beforeModifyFeeds; // @synthesize beforeModifyFeeds=_beforeModifyFeeds;
 @property(retain, nonatomic) NSOrderedCollectionDifference *changed; // @synthesize changed=_changed;
@@ -89,4 +89,3 @@
 @property(readonly) Class superclass;
 
 @end
-

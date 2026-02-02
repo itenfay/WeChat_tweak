@@ -15,7 +15,6 @@
     WCAdRollView *_liveDescView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdRollView *liveDescView; // @synthesize liveDescView=_liveDescView;
 @property(retain, nonatomic) MMUILabel *liveStatusText; // @synthesize liveStatusText=_liveStatusText;
 @property(retain, nonatomic) UIImageView *liveStatusIcon; // @synthesize liveStatusIcon=_liveStatusIcon;

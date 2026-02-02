@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderCommByPass, MMFinderLivePivotEducationView, MMFinderLivePreviewExitButton, MMFinderLiveRelatedLiveParams, MMLiveDisplayLinkAnimator, MMLivePivotAutoSwipeInfo, MMLivePivotCollectionView, MMLivePivotView, MMLivePreviewRelatedViewModel, MMLiveTaskId, MMLiveView, MMTimer, MMUILabel, MMUIView, NSArray, NSData, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionView, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, UIViewPropertyAnimator, WCFinderFullShareListTemplatePlugin, WCFinderLiveBaseLogReporter, WCFinderLiveHomePageViewController, WCLiveBlurButton;
 @protocol MMLiveContainerDisplayViewProtocol, MMLiveMorphDismissTarget;
 
@@ -101,7 +103,6 @@
 + (_Bool)checkIsReplayStatus:(id)arg1;
 + (id)createPivotItemViewControllerWithDataItem:(id)arg1;
 + (id)getUniqueKeyForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *dataItemsSet; // @synthesize dataItemsSet=_dataItemsSet;
 @property long long startPreviewIndex; // @synthesize startPreviewIndex=_startPreviewIndex;
 @property(nonatomic) struct CGRect pivotCollectionViewFrame; // @synthesize pivotCollectionViewFrame=_pivotCollectionViewFrame;
@@ -448,4 +449,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -33,7 +33,6 @@
     NSArray *_arrItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrItems; // @synthesize arrItems=_arrItems;
 @property(retain, nonatomic) NSString *nsContent; // @synthesize nsContent=_nsContent;
 @property(retain, nonatomic) NSString *nsSeparator; // @synthesize nsSeparator=_nsSeparator;

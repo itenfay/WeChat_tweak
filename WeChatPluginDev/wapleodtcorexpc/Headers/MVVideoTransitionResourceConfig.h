@@ -10,7 +10,6 @@
     NSArray *_transitionConfigArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *transitionConfigArr; // @synthesize transitionConfigArr=_transitionConfigArr;
 - (id)initFromJson:(id)arg1;
 

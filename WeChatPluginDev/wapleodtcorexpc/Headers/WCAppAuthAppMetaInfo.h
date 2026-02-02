@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_appTypeDesc;
 + (void)PBArrayAdd_appName;
 + (void)PBArrayAdd_appId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
 @property(copy, nonatomic) NSString *wordingInScope; // @synthesize wordingInScope=_wordingInScope;
 @property(copy, nonatomic) NSString *appIconUrl; // @synthesize appIconUrl=_appIconUrl;

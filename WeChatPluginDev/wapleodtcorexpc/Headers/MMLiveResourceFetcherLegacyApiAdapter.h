@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveResourceFetcherRootFlowAction;
 
@@ -12,11 +13,9 @@
     MMLiveResourceFetcherRootFlowAction *_rootAction;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveResourceFetcherRootFlowAction *rootAction; // @synthesize rootAction=_rootAction;
 - (void)start:(id)arg1 fileMD5:(id)arg2 enforceIntegrityCheck:(_Bool)arg3 pathManager:(id)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) unsigned long long pendingTaskCount;
 - (id)init;
 
 @end
-

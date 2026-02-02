@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -21,7 +22,6 @@
     NSMapTable *_recardStatModelMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *recardStatModelMap; // @synthesize recardStatModelMap=_recardStatModelMap;
 @property(retain, nonatomic) NSMutableArray *enhanceStatsArray; // @synthesize enhanceStatsArray=_enhanceStatsArray;
 @property(nonatomic) double lastStreamCGIPostTime; // @synthesize lastStreamCGIPostTime=_lastStreamCGIPostTime;
@@ -71,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

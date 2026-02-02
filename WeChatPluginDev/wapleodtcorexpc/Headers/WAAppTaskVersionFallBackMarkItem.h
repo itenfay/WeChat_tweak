@@ -21,7 +21,6 @@
     NSMutableArray *_downloadSuccessInfoDatas;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadSuccessInfoDatas; // @synthesize downloadSuccessInfoDatas=_downloadSuccessInfoDatas;
 @property(retain, nonatomic) NSMutableArray *needDownloadInfoDatas; // @synthesize needDownloadInfoDatas=_needDownloadInfoDatas;
 @property(nonatomic) unsigned long long updatingScene; // @synthesize updatingScene=_updatingScene;

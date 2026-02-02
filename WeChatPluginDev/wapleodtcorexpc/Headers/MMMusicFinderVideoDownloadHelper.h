@@ -10,7 +10,6 @@
     id <MMMusicFinderVideoDownloadHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <MMMusicFinderVideoDownloadHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)finderMediaVideoStreamDownloadSuccessfulWithTid:(id)arg1;
 - (id)init;

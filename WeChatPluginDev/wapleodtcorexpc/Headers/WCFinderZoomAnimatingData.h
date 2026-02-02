@@ -18,7 +18,6 @@
     struct CGRect _snapOriginFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool closeDirectly; // @synthesize closeDirectly=_closeDirectly;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIView *snapContainer; // @synthesize snapContainer=_snapContainer;

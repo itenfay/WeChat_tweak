@@ -19,7 +19,6 @@
     int m_enWCPayHistoryOrderDetailViewScene;
 }
 
-- (void).cxx_destruct;
 - (void)OnClickedReceiverProfile:(id)arg1;
 - (void)OnClickedRetrySendMessage:(id)arg1 UserName:(id)arg2;
 - (void)OnClickedBrandProfile:(id)arg1 NickName:(id)arg2;

@@ -14,7 +14,6 @@
     double _cornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *bkgColor; // @synthesize bkgColor=_bkgColor;
 @property(retain, nonatomic) NSValue *range; // @synthesize range=_range;

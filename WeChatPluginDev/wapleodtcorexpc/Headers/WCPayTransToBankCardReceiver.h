@@ -16,7 +16,6 @@
     WCPayTransBankItem *_m_bankItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayTransBankItem *m_bankItem; // @synthesize m_bankItem=_m_bankItem;
 @property(retain, nonatomic) NSString *m_nsBankcardTailNo; // @synthesize m_nsBankcardTailNo=_m_nsBankcardTailNo;
 @property(retain, nonatomic) NSString *m_nsBankcardEncNo; // @synthesize m_nsBankcardEncNo=_m_nsBankcardEncNo;

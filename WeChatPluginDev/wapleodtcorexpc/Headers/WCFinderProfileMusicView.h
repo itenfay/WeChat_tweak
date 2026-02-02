@@ -38,7 +38,6 @@
 }
 
 + (double)displayHeightWithIndexPath:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstRow; // @synthesize isFirstRow=_isFirstRow;
 @property(retain, nonatomic) NSString *oldObserveKey; // @synthesize oldObserveKey=_oldObserveKey;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

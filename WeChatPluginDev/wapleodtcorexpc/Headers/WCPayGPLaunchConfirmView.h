@@ -18,7 +18,6 @@
     ChatroomProfileView *_chatroomInfoView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomProfileView *chatroomInfoView; // @synthesize chatroomInfoView=_chatroomInfoView;
 @property(retain, nonatomic) MMUIView *chatroomContentView; // @synthesize chatroomContentView=_chatroomContentView;
 @property(retain, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;

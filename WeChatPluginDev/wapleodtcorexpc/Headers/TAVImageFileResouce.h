@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CIImage, NSObject, NSString;
 @protocol OS_dispatch_semaphore;
 
@@ -14,7 +16,6 @@
     NSObject<OS_dispatch_semaphore> *_operationSemaphore;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *operationSemaphore; // @synthesize operationSemaphore=_operationSemaphore;
 @property(copy, nonatomic) CDUnknownBlockType cleanBlock; // @synthesize cleanBlock=_cleanBlock;
 @property(retain, nonatomic) CIImage *tempImage; // @synthesize tempImage=_tempImage;
@@ -30,4 +31,3 @@
 - (void)dealloc;
 
 @end
-

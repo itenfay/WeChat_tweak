@@ -18,7 +18,6 @@
     UIActivityIndicatorView *m_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long scene; // @synthesize scene=m_scene;
 - (id)genBigButton;
 - (id)genBigGrayButton;

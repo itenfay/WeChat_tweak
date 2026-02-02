@@ -17,7 +17,6 @@
 }
 
 + (long long)syncVersion2Report:(int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiVersion; // @synthesize uiVersion=_uiVersion;
 @property(nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(retain, nonatomic) TingTapePlayingInfo *curPlayingInfo; // @synthesize curPlayingInfo=_curPlayingInfo;

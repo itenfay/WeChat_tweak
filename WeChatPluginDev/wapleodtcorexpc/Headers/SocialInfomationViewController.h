@@ -17,7 +17,6 @@
 
 + (id)getSourceForContact:(id)arg1 sourceMsg:(id)arg2;
 + (id)getRegionForContact:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactRelatedGroupLogic *m_relatedGroupLogic; // @synthesize m_relatedGroupLogic;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;
 - (void)onCRGDataUpdated;

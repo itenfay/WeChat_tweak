@@ -20,7 +20,6 @@
     NSArray *_gameCategoryList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *gameCategoryList; // @synthesize gameCategoryList=_gameCategoryList;
 @property(retain, nonatomic) WCFinderTabPageView *tabPageView; // @synthesize tabPageView=_tabPageView;
 @property(retain, nonatomic) MMFinderLiveGameUserInfo *selectGameUserInfo; // @synthesize selectGameUserInfo=_selectGameUserInfo;

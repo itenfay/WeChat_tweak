@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray;
 
 @interface WCFinderLiveSensitiveManageCGI
@@ -15,7 +17,6 @@
 + (id)createSensitiveGetCGIWithFinderTaskId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)createSensitiveDeleteCGIWithFinderTaskId:(id)arg1 opSensitiveItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)createSensitiveAddCGIWithFinderTaskId:(id)arg1 opSensitiveItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) int opType; // @synthesize opType=_opType;
 @property(retain, nonatomic) NSArray *operateSensitiveDataItemList; // @synthesize operateSensitiveDataItemList=_operateSensitiveDataItemList;
@@ -27,4 +28,3 @@
 - (id)initWithFinderTaskId:(id)arg1 opType:(int)arg2 opSensitiveItems:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
-

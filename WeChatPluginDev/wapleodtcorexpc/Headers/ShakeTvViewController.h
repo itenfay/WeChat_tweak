@@ -32,7 +32,6 @@
     UIView *footerLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userdata; // @synthesize userdata=_userdata;
 @property(nonatomic) _Bool canDelete; // @synthesize canDelete=_canDelete;
 @property(nonatomic) _Bool canEditTag; // @synthesize canEditTag=_canEditTag;

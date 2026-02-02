@@ -26,7 +26,6 @@
     UICollectionViewLayout *_collectionViewLayout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) WCAddressPickerBtnGroupView *btnGroupView; // @synthesize btnGroupView=_btnGroupView;

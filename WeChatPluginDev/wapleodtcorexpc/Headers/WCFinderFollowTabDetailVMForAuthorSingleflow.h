@@ -15,7 +15,6 @@
     NSData *_lastBuf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;
 @property(nonatomic) unsigned long long preFetchNextPageIndex; // @synthesize preFetchNextPageIndex=_preFetchNextPageIndex;
 @property(nonatomic) _Bool noMoreData; // @synthesize noMoreData=_noMoreData;

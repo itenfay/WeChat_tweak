@@ -15,7 +15,6 @@
     UIImageView *_blurView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstResponse; // @synthesize isFirstResponse=_isFirstResponse;
 @property(retain, nonatomic) UIImageView *blurView; // @synthesize blurView=_blurView;
 @property(nonatomic) __weak KindaModalController *modal; // @synthesize modal=_modal;

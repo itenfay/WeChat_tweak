@@ -15,7 +15,6 @@
     NSString *m_dataItemTid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_dataItemTid; // @synthesize m_dataItemTid;
 @property(nonatomic) int iScene; // @synthesize iScene;
 @property(retain, nonatomic) WCUserComment *m_userComment; // @synthesize m_userComment;

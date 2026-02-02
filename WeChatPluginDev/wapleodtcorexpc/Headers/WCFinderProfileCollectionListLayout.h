@@ -22,7 +22,6 @@
     struct UIEdgeInsets _extraInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets extraInsets; // @synthesize extraInsets=_extraInsets;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) WCFinderProfileCollectionListStyle *style; // @synthesize style=_style;

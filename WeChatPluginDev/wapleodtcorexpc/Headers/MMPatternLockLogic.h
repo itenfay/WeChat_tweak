@@ -19,7 +19,6 @@
     MMUINavigationController *_enteranceViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUINavigationController *enteranceViewController; // @synthesize enteranceViewController=_enteranceViewController;
 @property(retain, nonatomic) MMPatternLockViewController *lockViewController; // @synthesize lockViewController=_lockViewController;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;

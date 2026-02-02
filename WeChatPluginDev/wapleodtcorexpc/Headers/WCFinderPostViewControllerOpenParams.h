@@ -17,7 +17,6 @@
     id <WCFinderPostViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool presentAnimated; // @synthesize presentAnimated=_presentAnimated;
 @property(nonatomic) __weak id <WCFinderPostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIViewController *fromVC; // @synthesize fromVC=_fromVC;

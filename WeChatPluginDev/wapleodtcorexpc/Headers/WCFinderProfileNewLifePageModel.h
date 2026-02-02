@@ -20,7 +20,6 @@
 + (int)tabId;
 + (_Bool)allowLimitMode;
 + (_Bool)shouldDisplay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileNewLifePageDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;

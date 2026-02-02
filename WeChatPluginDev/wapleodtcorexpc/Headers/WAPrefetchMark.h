@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_reportKey;
 + (void)PBArrayAdd_appVersion;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;
 @property(copy, nonatomic) NSString *moduleName; // @synthesize moduleName=_moduleName;
 @property(nonatomic) unsigned int packageType; // @synthesize packageType=_packageType;

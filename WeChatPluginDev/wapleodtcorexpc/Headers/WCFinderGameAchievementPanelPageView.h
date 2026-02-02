@@ -18,7 +18,6 @@
 }
 
 + (double)displayHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *achievementNameLabel; // @synthesize achievementNameLabel=_achievementNameLabel;
 @property(retain, nonatomic) WCFinderLinearView *achievementView; // @synthesize achievementView=_achievementView;
 @property(retain, nonatomic) UILabel *itemNameLabel; // @synthesize itemNameLabel=_itemNameLabel;

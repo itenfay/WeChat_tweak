@@ -34,7 +34,6 @@
     NSMutableSet *_expandSystemMsgSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *expandSystemMsgSet; // @synthesize expandSystemMsgSet=_expandSystemMsgSet;
 @property(retain, nonatomic) NSMutableArray *needResetAlphaCellViewList; // @synthesize needResetAlphaCellViewList=_needResetAlphaCellViewList;
 @property(retain, nonatomic) NSMutableSet *expandedMsgLocalIDSet; // @synthesize expandedMsgLocalIDSet=_expandedMsgLocalIDSet;

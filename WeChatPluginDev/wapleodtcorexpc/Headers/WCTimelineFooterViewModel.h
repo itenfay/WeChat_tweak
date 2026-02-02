@@ -16,7 +16,6 @@
     WCMomentsNewLifeShareViewModel *_newlifeShareViewModel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCMomentsNewLifeShareViewModel *newlifeShareViewModel; // @synthesize newlifeShareViewModel=_newlifeShareViewModel;
 @property(readonly, nonatomic) WCMomentsFinderShareViewModel *finderShareViewModel; // @synthesize finderShareViewModel=_finderShareViewModel;
 @property(readonly, nonatomic) WCMomentsPostShareBaseViewModel *displayedViewModel; // @synthesize displayedViewModel=_displayedViewModel;

@@ -28,7 +28,6 @@
     WCAccountForgetPasswordControlLogic *_forgetPwdLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountForgetPasswordControlLogic *forgetPwdLogic; // @synthesize forgetPwdLogic=_forgetPwdLogic;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)onWCAccountForgetPasswordControlLogic:(id)arg1 continueWithTicket:(id)arg2 ticketType:(unsigned int)arg3 handled:(_Bool *)arg4;

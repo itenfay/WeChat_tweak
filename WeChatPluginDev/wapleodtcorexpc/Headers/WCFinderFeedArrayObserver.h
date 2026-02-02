@@ -14,7 +14,6 @@
     WCFinderFeedArrayObserver *_next;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedArrayObserver *next; // @synthesize next=_next;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id <NSObject> observer; // @synthesize observer=_observer;

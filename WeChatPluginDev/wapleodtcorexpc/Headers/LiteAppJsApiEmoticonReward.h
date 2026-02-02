@@ -12,7 +12,6 @@
     WCPayPayMoneyLogic *_payLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPayMoneyLogic *payLogic; // @synthesize payLogic=_payLogic;
 @property(retain, nonatomic) StoreEmotionRewardAskForRewardCgi *rewardCgi; // @synthesize rewardCgi=_rewardCgi;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;

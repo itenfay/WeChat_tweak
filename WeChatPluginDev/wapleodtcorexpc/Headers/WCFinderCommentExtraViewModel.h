@@ -26,7 +26,6 @@
     WCFinderKeywordComponent *_keyword;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int sourceScene; // @synthesize sourceScene=_sourceScene;
 @property(retain, nonatomic) WCFinderKeywordComponent *keyword; // @synthesize keyword=_keyword;
 @property(nonatomic) int scene; // @synthesize scene=_scene;

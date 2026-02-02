@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_bizType;
 + (void)PBArrayAdd_imgSourceUrl;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bizType; // @synthesize bizType=_bizType;
 @property(copy, nonatomic) NSString *imgSourceUrl; // @synthesize imgSourceUrl=_imgSourceUrl;
 @property(readonly, copy) NSString *description;

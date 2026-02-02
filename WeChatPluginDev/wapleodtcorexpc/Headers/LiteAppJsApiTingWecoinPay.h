@@ -13,7 +13,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) __weak MMPageSheetAdapter *pageAdapter; // @synthesize pageAdapter=_pageAdapter;
 @property(retain, nonatomic) TingWecoinPlugin *logic; // @synthesize logic=_logic;

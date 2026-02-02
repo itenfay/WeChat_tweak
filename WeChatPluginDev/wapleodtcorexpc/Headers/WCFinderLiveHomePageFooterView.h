@@ -19,7 +19,6 @@
 
 + (double)footerWidth;
 + (id)footerIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) double pulldownWidth; // @synthesize pulldownWidth=_pulldownWidth;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;

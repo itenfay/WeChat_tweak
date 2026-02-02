@@ -15,7 +15,6 @@
     unsigned long long _animationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long animationType; // @synthesize animationType=_animationType;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

@@ -11,7 +11,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLiveBlurButton *giftButton; // @synthesize giftButton=_giftButton;
 - (id)createSingButton;
 - (id)createFinishButton;

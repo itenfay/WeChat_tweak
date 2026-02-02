@@ -19,7 +19,6 @@
     long long _dw_time;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int err; // @synthesize err=_err;
 @property(nonatomic) long long dw_time; // @synthesize dw_time=_dw_time;
 @property(nonatomic) long long up_time; // @synthesize up_time=_up_time;

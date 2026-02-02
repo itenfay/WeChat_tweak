@@ -17,7 +17,6 @@
 + (void)PBArrayAdd_mediaList;
 + (void)PBArrayAdd_name;
 + (id)bgGroupFromServerObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mediaList; // @synthesize mediaList=_mediaList;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)initWithCoder:(id)arg1;

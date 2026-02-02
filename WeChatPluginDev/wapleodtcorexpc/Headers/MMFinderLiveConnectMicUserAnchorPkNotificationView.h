@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMUIActivityIndicatorView, UIButton, UILabel;
 
@@ -21,7 +22,6 @@
     unsigned long long _pkState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pkState; // @synthesize pkState=_pkState;
 @property(retain, nonatomic) MMUIActivityIndicatorView *pkLoadingView; // @synthesize pkLoadingView=_pkLoadingView;
 @property(retain, nonatomic) UIButton *pkButton; // @synthesize pkButton=_pkButton;
@@ -40,4 +40,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

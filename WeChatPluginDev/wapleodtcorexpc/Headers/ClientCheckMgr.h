@@ -11,7 +11,6 @@
     NSMutableSet *_setImageList;
 }
 
-- (void).cxx_destruct;
 - (id)expandFilePath:(id)arg1;
 - (id)runningProcesses;
 - (id)arrToString:(id)arg1;

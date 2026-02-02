@@ -12,7 +12,6 @@
     CAGradientLayer *_m_gradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak CAGradientLayer *m_gradientLayer; // @synthesize m_gradientLayer=_m_gradientLayer;
 @property(nonatomic) __weak UIImageView *m_coverImg2; // @synthesize m_coverImg2=_m_coverImg2;
 @property(nonatomic) __weak UIImageView *m_coverImg1; // @synthesize m_coverImg1=_m_coverImg1;

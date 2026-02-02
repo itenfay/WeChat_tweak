@@ -16,7 +16,6 @@
     unsigned long long _indexOfColorPair;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long indexOfColorPair; // @synthesize indexOfColorPair=_indexOfColorPair;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;

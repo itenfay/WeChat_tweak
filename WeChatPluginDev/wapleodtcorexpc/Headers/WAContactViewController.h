@@ -12,7 +12,6 @@
     CNMutableContact *_savedContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CNMutableContact *savedContact; // @synthesize savedContact=_savedContact;
 - (void)viewDidLoad;
 

@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_fileID;
 + (void)PBArrayAdd_size;
 + (void)PBArrayAdd_name;
-- (void).cxx_destruct;
 @property(nonatomic) int fileInUseType; // @synthesize fileInUseType=_fileInUseType;
 @property(nonatomic) long long fileID; // @synthesize fileID=_fileID;
 @property(nonatomic) int fileClass; // @synthesize fileClass=_fileClass;

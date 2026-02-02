@@ -18,7 +18,6 @@
     id <MMStoreEmotionTagSelectDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMStoreEmotionTagSelectDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onTouchEndBlankView;
 - (void)onTagHighLight:(id)arg1;

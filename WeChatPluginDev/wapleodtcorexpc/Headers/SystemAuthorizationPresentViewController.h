@@ -14,7 +14,6 @@
     UIView *_emptyView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) UIStackView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) UIStackView *tableHeaderView; // @synthesize tableHeaderView=_tableHeaderView;

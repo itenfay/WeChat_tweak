@@ -20,7 +20,6 @@
     double _halfScreenHeightRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bulletCommentSwitch; // @synthesize bulletCommentSwitch=_bulletCommentSwitch;
 @property(nonatomic) _Bool shouldForbidPanUpGesture; // @synthesize shouldForbidPanUpGesture=_shouldForbidPanUpGesture;
 @property(nonatomic) double halfScreenHeightRatio; // @synthesize halfScreenHeightRatio=_halfScreenHeightRatio;

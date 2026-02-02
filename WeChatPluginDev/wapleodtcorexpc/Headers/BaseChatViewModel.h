@@ -22,7 +22,6 @@
     NSString *_chatSplitWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatSplitWording; // @synthesize chatSplitWording=_chatSplitWording;
 @property(nonatomic) _Bool shouldReCreate; // @synthesize shouldReCreate=_shouldReCreate;
 @property(nonatomic) __weak id <ChatViewModelDelegate> delegate; // @synthesize delegate=_delegate;

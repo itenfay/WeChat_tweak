@@ -122,7 +122,6 @@
 + (void)PBArrayAdd_placeHolderInfo;
 + (void)PBArrayAdd_funcFlag;
 + (void)PBArrayAdd_wxStatusIconId;
-- (void).cxx_destruct;
 @property(nonatomic) double compressDuration; // @synthesize compressDuration=_compressDuration;
 @property(retain, nonatomic) NSString *gameClientParams; // @synthesize gameClientParams=_gameClientParams;
 @property(retain, nonatomic) FinderMemberData *finderMemberData; // @synthesize finderMemberData=_finderMemberData;

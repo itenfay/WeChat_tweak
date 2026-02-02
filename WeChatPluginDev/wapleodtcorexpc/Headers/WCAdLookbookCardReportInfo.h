@@ -15,7 +15,6 @@
     WCAdLookbookCardReportItem *_brandNewReportItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdLookbookCardReportItem *brandNewReportItem; // @synthesize brandNewReportItem=_brandNewReportItem;
 @property(nonatomic) unsigned int slideCount; // @synthesize slideCount=_slideCount;
 @property(nonatomic) unsigned int scrollCount; // @synthesize scrollCount=_scrollCount;

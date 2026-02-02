@@ -19,7 +19,6 @@
     UIView *_seperator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperator; // @synthesize seperator=_seperator;
 @property(nonatomic) _Bool notCallDelegateOnManualSetMusicButton; // @synthesize notCallDelegateOnManualSetMusicButton=_notCallDelegateOnManualSetMusicButton;
 @property(retain, nonatomic) MMBGMSelectedBottomViewModel *viewModel; // @synthesize viewModel=_viewModel;

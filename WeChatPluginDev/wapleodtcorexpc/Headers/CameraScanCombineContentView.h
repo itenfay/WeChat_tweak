@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CameraScanBlurEffectView, CameraScanCombineCropImageView, CameraScanCombineGoodsListView, MMTimer, NSString, UIView;
 @protocol CameraScanCombineContentViewDelegate, CameraScanGoodsMarkDotViewInterface;
 
@@ -19,7 +21,6 @@
     UIView *_centerMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *centerMaskView; // @synthesize centerMaskView=_centerMaskView;
 @property(retain, nonatomic) CameraScanCombineGoodsListView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) MMTimer *timerForUITest; // @synthesize timerForUITest=_timerForUITest;
@@ -70,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     unsigned long long _endTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) unsigned long long beginTime; // @synthesize beginTime=_beginTime;
 @property(copy, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;

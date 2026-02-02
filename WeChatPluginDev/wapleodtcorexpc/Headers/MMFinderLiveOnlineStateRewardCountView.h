@@ -14,7 +14,6 @@
 }
 
 + (id)reuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;
 - (void)updateHeaderView:(id)arg1;

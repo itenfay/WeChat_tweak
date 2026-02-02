@@ -18,7 +18,6 @@
     unsigned long long _finderTotalCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long finderTotalCount; // @synthesize finderTotalCount=_finderTotalCount;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

@@ -18,7 +18,6 @@
     MMUIButton *_orientationButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool replayExplicitlyPaused; // @synthesize replayExplicitlyPaused=_replayExplicitlyPaused;
 @property(retain, nonatomic) MMUIButton *orientationButton; // @synthesize orientationButton=_orientationButton;
 @property(retain, nonatomic) MMFinderLiveReplayBarrageView *barrageView; // @synthesize barrageView=_barrageView;

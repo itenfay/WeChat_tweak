@@ -26,7 +26,6 @@
     unsigned long long _showScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideStickyTopIcon; // @synthesize hideStickyTopIcon=_hideStickyTopIcon;
 @property(nonatomic) _Bool hideMoreIcon; // @synthesize hideMoreIcon=_hideMoreIcon;
 @property(nonatomic) unsigned long long showScene; // @synthesize showScene=_showScene;

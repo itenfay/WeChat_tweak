@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WxaUseUserInfoItem_ScopeItem;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _reloadUIAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reloadUIAction; // @synthesize reloadUIAction=_reloadUIAction;
 @property(copy, nonatomic) CDUnknownBlockType deleteAction; // @synthesize deleteAction=_deleteAction;
 @property(nonatomic) _Bool isEdit; // @synthesize isEdit=_isEdit;
@@ -23,4 +23,3 @@
 - (id)initWithScopeItem:(id)arg1 isEdit:(_Bool)arg2;
 
 @end
-

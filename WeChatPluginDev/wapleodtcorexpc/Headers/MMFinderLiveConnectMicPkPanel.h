@@ -17,7 +17,6 @@
     MMFinderLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) MMFinderLiveConnectMicPkPanelMasterView *masterView; // @synthesize masterView=_masterView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

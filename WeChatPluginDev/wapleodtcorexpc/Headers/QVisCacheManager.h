@@ -13,7 +13,6 @@
     NSString *_key;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *configPath; // @synthesize configPath=_configPath;
 - (id)getModelLayerCachePath:(id)arg1;

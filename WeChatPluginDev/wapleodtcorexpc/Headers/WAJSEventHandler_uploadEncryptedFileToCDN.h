@@ -13,7 +13,6 @@
     NSString *_tempFilePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowProgressTips; // @synthesize isShowProgressTips=_isShowProgressTips;
 @property(copy, nonatomic) NSString *tempFilePath; // @synthesize tempFilePath=_tempFilePath;
 - (void)onItemUploadCDNFinishedWithoutMediaId:(int)arg1 Item:(id)arg2;

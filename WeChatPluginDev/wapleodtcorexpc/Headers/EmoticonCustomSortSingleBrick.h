@@ -10,7 +10,6 @@
     CAShapeLayer *_shadowLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shadowLayer; // @synthesize shadowLayer=_shadowLayer;
 - (void)setShadowLayerToSelf;
 - (id)initWithFrame:(struct CGRect)arg1;

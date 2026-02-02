@@ -16,7 +16,6 @@
 }
 
 + (id)downloadInfoWithData:(id)arg1 thumb:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileKey; // @synthesize fileKey=_fileKey;
 @property(nonatomic) __weak GroupNoticeItem *item; // @synthesize item=_item;
 @property(nonatomic) _Bool isThumb; // @synthesize isThumb=_isThumb;

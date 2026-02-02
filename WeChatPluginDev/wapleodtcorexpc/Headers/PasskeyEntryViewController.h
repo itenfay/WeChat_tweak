@@ -17,7 +17,6 @@
     WCButtonListView *_bottomButtonList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUnsupportedIOSVersion; // @synthesize isUnsupportedIOSVersion=_isUnsupportedIOSVersion;
 @property(retain, nonatomic) WCButtonListView *bottomButtonList; // @synthesize bottomButtonList=_bottomButtonList;
 @property(retain, nonatomic) PasskeyCreateLogic *createLogic; // @synthesize createLogic=_createLogic;

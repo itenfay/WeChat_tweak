@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WAUniversalAudioInfo, WAUniversalAudioPlayerCachePool;
 @protocol OS_dispatch_queue, WAUniversalAudioLoaderDelegate;
@@ -21,7 +22,6 @@
     WAUniversalAudioPlayerCachePool *_cachePool;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAUniversalAudioPlayerCachePool *cachePool; // @synthesize cachePool=_cachePool;
 @property(nonatomic) double seekTimeRecord; // @synthesize seekTimeRecord=_seekTimeRecord;
 @property(nonatomic) _Bool needsToSeek; // @synthesize needsToSeek=_needsToSeek;
@@ -47,4 +47,3 @@
 - (id)initWithAudioQueue:(id)arg1 cachePool:(id)arg2 fileQueue:(id)arg3;
 
 @end
-

@@ -12,7 +12,6 @@
     CAppBrandInfo *_appBrandInfo;
 }
 
-- (void).cxx_destruct;
 - (id)tcpDomainList;
 - (id)udpDomainList;
 - (id)downloadFileDomainList;

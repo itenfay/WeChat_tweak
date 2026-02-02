@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FileDetailLogicController, ImageBrowseButton, ImageScrollView, MMCircleProgressView, MMLoadingIndicatorView, MMScrollActionSheet, MMUIButton, MMUILabel, MiniRecTransitionController, NSMutableArray, NSMutableSet, NSString, NSURL, ShareDataToOpenSDKController, UIButton, UIImageView, UIScrollView, UITapGestureRecognizer, UIViewController, WKWebView, WXFullScreenGestureRecognizer;
 @protocol FileDetailCustomizedPreviewController, FileDetailViewControllerDelegate;
 
@@ -67,7 +69,6 @@
     MMScrollActionSheet *_scrollActionSheet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMScrollActionSheet *scrollActionSheet; // @synthesize scrollActionSheet=_scrollActionSheet;
 @property(retain, nonatomic) MiniRecTransitionController *minimizationTransitionController; // @synthesize minimizationTransitionController=_minimizationTransitionController;
 @property(retain, nonatomic) MMLoadingIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
@@ -226,4 +227,3 @@
 @property(readonly) Class superclass;
 
 @end
-

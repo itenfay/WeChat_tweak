@@ -22,7 +22,6 @@
 + (double)wordingMaxWidthForWidth:(double)arg1 iconUrl:(id)arg2;
 + (double)heightForWording:(id)arg1 font:(id)arg2 maxWidth:(double)arg3 isSingleLine:(_Bool)arg4;
 + (double)heightWithItemInfo:(id)arg1 buttonStyle:(long long)arg2 maxWidth:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descView; // @synthesize descView=_descView;
 @property(retain, nonatomic) MMUILabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) WCAdURLImageView *iconView; // @synthesize iconView=_iconView;

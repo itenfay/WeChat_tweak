@@ -13,7 +13,6 @@
     YTBeautySmoothFilter *_smoothFilter;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) YTBeautySmoothFilter *smoothFilter; // @synthesize smoothFilter=_smoothFilter;
 @property(readonly, nonatomic) TXCTwoInputFilter *borderFilter; // @synthesize borderFilter=_borderFilter;
 @property(readonly, nonatomic) YTBeautyBlurFilter *borderBlurFilter; // @synthesize borderBlurFilter=_borderBlurFilter;

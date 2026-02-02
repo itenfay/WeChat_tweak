@@ -14,7 +14,6 @@
     NSDictionary *_arguments;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableMiniprogram; // @synthesize enableMiniprogram=_enableMiniprogram;
 @property(retain, nonatomic) NSDictionary *arguments; // @synthesize arguments=_arguments;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;

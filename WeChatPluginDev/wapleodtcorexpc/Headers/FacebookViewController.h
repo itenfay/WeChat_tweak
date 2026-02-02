@@ -15,7 +15,6 @@
     id <FacebookViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FacebookViewControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onUnBindFacebookFinish:(unsigned int)arg1;
 - (void)onBindFacebookFinish:(unsigned int)arg1;

@@ -14,7 +14,6 @@
     SecondCutPromotionItemStackView *promotionItemStackView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SecondCutPromotionItemStackView *promotionItemStackView; // @synthesize promotionItemStackView;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel;
 @property(retain, nonatomic) RichTextView *titleView; // @synthesize titleView;

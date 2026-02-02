@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, UIColor, UINavigationController, WAAppOpenCustomUIParameter, WAAppTaskReferrerInfo;
 
@@ -46,7 +47,6 @@
     CDUnknownBlockType _reprocessAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reprocessAction; // @synthesize reprocessAction=_reprocessAction;
 @property(copy, nonatomic) CDUnknownBlockType frameChangeBlock; // @synthesize frameChangeBlock=_frameChangeBlock;
 @property(copy, nonatomic) CDUnknownBlockType didBeDismissedBlock; // @synthesize didBeDismissedBlock=_didBeDismissedBlock;
@@ -87,4 +87,3 @@
 - (id)description;
 
 @end
-

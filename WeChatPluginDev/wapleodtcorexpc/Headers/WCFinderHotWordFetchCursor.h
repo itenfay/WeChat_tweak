@@ -18,7 +18,6 @@
     WCFinderSearchHotWord *_currentHotword;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchHotWord *currentHotword; // @synthesize currentHotword=_currentHotword;
 @property(retain, nonatomic) NSData *objHotwordInfoBuffer; // @synthesize objHotwordInfoBuffer=_objHotwordInfoBuffer;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

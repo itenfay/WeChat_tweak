@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, WXAudioEffectManagerDelegate;
@@ -20,7 +21,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WXAudioEffectManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) void *audioEngine; // @synthesize audioEngine=_audioEngine;
 @property(retain, nonatomic) NSMutableDictionary *audioEffectMap; // @synthesize audioEffectMap=_audioEffectMap;
@@ -76,4 +76,3 @@
 @property(readonly) Class superclass;
 
 @end
-

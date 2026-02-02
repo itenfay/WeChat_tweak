@@ -15,7 +15,6 @@
     NSString *_imageName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(nonatomic) __weak id <WCFinderImageTextContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long type; // @synthesize type=_type;

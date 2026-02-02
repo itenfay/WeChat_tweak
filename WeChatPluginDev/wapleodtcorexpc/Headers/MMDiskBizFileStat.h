@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_m_delFileNum;
 + (void)PBArrayAdd_m_fileSize;
 + (void)PBArrayAdd_m_fileNum;
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat28MMDiskBizStatDayAggregations *aggregationsByDayInterval; // @synthesize aggregationsByDayInterval=_aggregationsByDayInterval;
 @property(nonatomic) unsigned long long m_delFileSize; // @synthesize m_delFileSize=_m_delFileSize;
 @property(nonatomic) unsigned int m_delFileNum; // @synthesize m_delFileNum=_m_delFileNum;

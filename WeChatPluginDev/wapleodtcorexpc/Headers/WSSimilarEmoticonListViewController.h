@@ -43,7 +43,6 @@
     NSString *_searchQuery;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) EmoticonCustomAddLogicController *emoticonAddLogicController; // @synthesize emoticonAddLogicController=_emoticonAddLogicController;

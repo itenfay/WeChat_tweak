@@ -10,7 +10,6 @@
     UIView *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)refreshLayout;
 - (void)layoutSubviews;

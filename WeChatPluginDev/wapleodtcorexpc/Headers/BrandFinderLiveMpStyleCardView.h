@@ -10,7 +10,6 @@
     MMWebImageView *_backgroundCoverImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *backgroundCoverImageView; // @synthesize backgroundCoverImageView=_backgroundCoverImageView;
 - (double)titleMaxWidth;
 - (void)updateLiveStatusViewDisplay;

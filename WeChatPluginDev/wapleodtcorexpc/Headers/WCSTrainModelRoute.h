@@ -20,7 +20,6 @@
     NSString *_falseKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isExtBooster; // @synthesize isExtBooster=_isExtBooster;
 @property(retain, nonatomic) NSString *falseKey; // @synthesize falseKey=_falseKey;
 @property(retain, nonatomic) NSString *trueKey; // @synthesize trueKey=_trueKey;

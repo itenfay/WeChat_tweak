@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveRewardGiftNewCustomizationMagicEngineResLogic, NSMutableDictionary;
 
@@ -14,7 +15,6 @@
     MMLiveRewardGiftNewCustomizationMagicEngineResLogic *_engineResLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasResourceTaskChecking; // @synthesize hasResourceTaskChecking=_hasResourceTaskChecking;
 @property(retain, nonatomic) MMLiveRewardGiftNewCustomizationMagicEngineResLogic *engineResLogic; // @synthesize engineResLogic=_engineResLogic;
 @property(retain, nonatomic) NSMutableDictionary *taskDict; // @synthesize taskDict=_taskDict;
@@ -55,4 +55,3 @@
 - (id)init;
 
 @end
-

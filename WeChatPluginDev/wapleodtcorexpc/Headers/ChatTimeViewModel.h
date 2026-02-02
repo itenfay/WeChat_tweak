@@ -17,7 +17,6 @@
     ChatTimeNodeRightButtonInfo *_rightButtonInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatTimeNodeRightButtonInfo *rightButtonInfo; // @synthesize rightButtonInfo=_rightButtonInfo;
 @property(nonatomic) double showingTime; // @synthesize showingTime=_showingTime;
 @property(readonly, nonatomic) struct CGPoint rightButtonOrigin; // @synthesize rightButtonOrigin=m_rightButtonOrigin;

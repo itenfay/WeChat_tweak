@@ -15,7 +15,6 @@
     id <WCFinderExpandableTagSelectorAction> _action;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderExpandableTagSelectorAction> action; // @synthesize action=_action;
 @property(retain, nonatomic) WCFinderLifeFilterTag *tag; // @synthesize tag=_tag;
 @property(nonatomic) __weak id <WCFinderFeedBaseViewControllerProtocol> baseViewProtocol; // @synthesize baseViewProtocol=_baseViewProtocol;

@@ -13,7 +13,6 @@
     struct CGPoint _endPoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
 @property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;

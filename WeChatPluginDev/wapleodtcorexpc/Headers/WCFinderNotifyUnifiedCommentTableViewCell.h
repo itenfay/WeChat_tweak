@@ -12,7 +12,6 @@
 }
 
 + (double)getHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIButton *commentDeleteLabel; // @synthesize commentDeleteLabel=_commentDeleteLabel;
 @property(nonatomic) __weak RichTextView *contentTextView; // @synthesize contentTextView=_contentTextView;
 - (void)updateNofiyCenterCellWithViewModel:(id)arg1 width:(double)arg2;

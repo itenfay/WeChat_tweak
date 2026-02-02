@@ -12,7 +12,6 @@
     NSArray *_arrCmdID;
 }
 
-- (void).cxx_destruct;
 - (void)checkAndLoad;
 - (_Bool)IsValidCommandInVM:(unsigned int)arg1;
 - (_Bool)CgiSendByLongConnInVM:(unsigned int)arg1;

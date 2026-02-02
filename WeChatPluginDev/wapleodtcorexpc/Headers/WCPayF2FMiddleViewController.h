@@ -35,7 +35,6 @@
     MMTimer *_m_refreshTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *m_refreshTimer; // @synthesize m_refreshTimer=_m_refreshTimer;
 @property(retain, nonatomic) NSString *m_dynamicCodeSpamWording; // @synthesize m_dynamicCodeSpamWording=_m_dynamicCodeSpamWording;
 @property(retain, nonatomic) NSString *m_getDynamicCodeExtend; // @synthesize m_getDynamicCodeExtend=_m_getDynamicCodeExtend;

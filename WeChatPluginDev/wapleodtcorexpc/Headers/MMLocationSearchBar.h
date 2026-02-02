@@ -18,7 +18,6 @@
     UIViewController *_m_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *m_viewController; // @synthesize m_viewController=_m_viewController;
 @property(retain, nonatomic) NSMutableArray *m_arrFilteredObject; // @synthesize m_arrFilteredObject=_m_arrFilteredObject;
 @property(readonly, nonatomic) _Bool isSearching; // @synthesize isSearching=_isSearching;

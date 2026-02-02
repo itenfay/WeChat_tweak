@@ -24,7 +24,6 @@
     UIButton *_cancelButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak id <TrackRoomTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)getUnFoldTipHeight;

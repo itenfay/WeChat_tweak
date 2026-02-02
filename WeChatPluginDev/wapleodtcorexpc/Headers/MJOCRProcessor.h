@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock;
 
@@ -16,7 +17,6 @@
 
 + (id)convertToSDRWithImage:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)asyncExtractTextWithImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)asyncDetectTextWithImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)releaseOCRCache;
@@ -29,4 +29,3 @@
 - (id)init;
 
 @end
-

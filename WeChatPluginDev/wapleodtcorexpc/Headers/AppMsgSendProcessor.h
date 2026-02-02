@@ -14,7 +14,6 @@
     OpenBufferUploadMgr *_openBufferUploadMgr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sendRetryCount; // @synthesize sendRetryCount=_sendRetryCount;
 @property(retain, nonatomic) OpenBufferUploadMgr *openBufferUploadMgr; // @synthesize openBufferUploadMgr=_openBufferUploadMgr;
 @property(retain, nonatomic) NSData *appMsgContentData; // @synthesize appMsgContentData=_appMsgContentData;

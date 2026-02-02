@@ -15,7 +15,6 @@
     NSString *_placeholder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) MJMovieDeleteButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) MJMovieTextButton *textButton; // @synthesize textButton=_textButton;

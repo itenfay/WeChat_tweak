@@ -13,7 +13,6 @@
     struct CGRect _targetFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMLiveMorphDismissSource> sourceContext; // @synthesize sourceContext=_sourceContext;
 @property(retain, nonatomic) UIView *customSnapView; // @synthesize customSnapView=_customSnapView;
 @property(nonatomic) struct CGRect targetFrame; // @synthesize targetFrame=_targetFrame;

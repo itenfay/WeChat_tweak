@@ -17,7 +17,6 @@
     long long _time;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int threadID; // @synthesize threadID=_threadID;
 @property(nonatomic) int processID; // @synthesize processID=_processID;
 @property(nonatomic) int depth; // @synthesize depth=_depth;

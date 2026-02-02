@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_taskID;
 + (void)PBArrayAdd_contentUrl;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSString *contentUrl; // @synthesize contentUrl=_contentUrl;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

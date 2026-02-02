@@ -22,7 +22,6 @@
     OpenMinimchGuide *_open_minimch_guide;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenMinimchGuide *open_minimch_guide; // @synthesize open_minimch_guide=_open_minimch_guide;
 @property(retain, nonatomic) NSString *half_page_info; // @synthesize half_page_info=_half_page_info;
 @property(retain, nonatomic) NSString *left_button_continue; // @synthesize left_button_continue=_left_button_continue;

@@ -25,7 +25,6 @@
     struct CGSize _textSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double shadowOffsetY; // @synthesize shadowOffsetY=_shadowOffsetY;
 @property(nonatomic) double shadowOffsetX; // @synthesize shadowOffsetX=_shadowOffsetX;
 @property(nonatomic) double shadowOpacity; // @synthesize shadowOpacity=_shadowOpacity;

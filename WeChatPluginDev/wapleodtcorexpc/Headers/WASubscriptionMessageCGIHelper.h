@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WASubscriptionMessageCGIHelper : NSObject
 {
@@ -18,4 +19,3 @@
 + (void)sendRequestListByIDCGIWith:(id)arg1 success:(CDUnknownBlockType)arg2 fail:(CDUnknownBlockType)arg3;
 
 @end
-

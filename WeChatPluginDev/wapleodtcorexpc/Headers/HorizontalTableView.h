@@ -17,7 +17,6 @@
     id <HorizontalTableViewDelegate> m_viewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_visibleCells; // @synthesize m_visibleCells;
 @property(nonatomic) __weak id <HorizontalTableViewDelegate> m_viewDelegate; // @synthesize m_viewDelegate;
 @property(nonatomic) __weak id <HorizontalTableViewDataSource> m_dataSource; // @synthesize m_dataSource;

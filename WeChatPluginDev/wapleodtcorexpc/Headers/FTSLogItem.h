@@ -61,7 +61,6 @@
     NSString *_nsItemUserName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int customerServiceMatchType; // @synthesize customerServiceMatchType=_customerServiceMatchType;
 @property(nonatomic) unsigned int customerServiceType; // @synthesize customerServiceType=_customerServiceType;
 @property(nonatomic) unsigned int customerServiceCount; // @synthesize customerServiceCount=_customerServiceCount;

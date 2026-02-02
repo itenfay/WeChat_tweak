@@ -13,7 +13,6 @@
     NSString *_tinyapp_path;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tinyapp_path; // @synthesize tinyapp_path=_tinyapp_path;
 @property(retain, nonatomic) NSString *tinyapp_username; // @synthesize tinyapp_username=_tinyapp_username;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

@@ -13,7 +13,6 @@
     WCOutPhoneContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCOutPhoneContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) WCOutRecentCallItem *lastCallItem; // @synthesize lastCallItem=_lastCallItem;
 

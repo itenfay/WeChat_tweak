@@ -19,7 +19,6 @@
     NSDictionary *_docRespHeader;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int subBizScene; // @synthesize subBizScene=_subBizScene;
 @property(nonatomic) unsigned int bizScene; // @synthesize bizScene=_bizScene;
 @property(retain, nonatomic) NSDictionary *docRespHeader; // @synthesize docRespHeader=_docRespHeader;

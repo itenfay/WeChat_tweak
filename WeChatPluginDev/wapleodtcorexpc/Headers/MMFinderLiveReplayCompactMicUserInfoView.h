@@ -13,7 +13,6 @@
     NSMutableDictionary *_userViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userViews; // @synthesize userViews=_userViews;
 @property(retain, nonatomic) MMFinderLiveConnectMicUsersInfo *allMicUsersInfo; // @synthesize allMicUsersInfo=_allMicUsersInfo;
 - (void)updateSubviewsWithMicUserInfo:(id)arg1;

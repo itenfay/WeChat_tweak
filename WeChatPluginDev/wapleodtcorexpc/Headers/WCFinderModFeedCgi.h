@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderModFeedOptionModel;
 
 @interface WCFinderModFeedCgi
@@ -14,7 +16,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType sucBlock; // @synthesize sucBlock=_sucBlock;
 @property(retain, nonatomic) WCFinderModFeedOptionModel *optionModel; // @synthesize optionModel=_optionModel;
@@ -26,4 +27,3 @@
 - (id)initWithFeedId:(id)arg1 fromUsername:(id)arg2 optionModel:(id)arg3 sucBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 
 @end
-

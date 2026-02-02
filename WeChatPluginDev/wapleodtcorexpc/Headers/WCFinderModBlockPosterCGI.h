@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderModBlockPosterCGI
 {
     _Bool _setBlock;
@@ -10,7 +12,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(nonatomic) _Bool setBlock; // @synthesize setBlock=_setBlock;
@@ -20,4 +21,3 @@
 - (id)initWithUserName:(id)arg1 setBlock:(_Bool)arg2 selfUserName:(id)arg3 successful:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 
 @end
-

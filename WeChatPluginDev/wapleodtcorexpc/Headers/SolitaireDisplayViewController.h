@@ -38,7 +38,6 @@
     double _defaultKeyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double defaultKeyboardHeight; // @synthesize defaultKeyboardHeight=_defaultKeyboardHeight;
 @property(retain, nonatomic) NSMutableSet *nameSet; // @synthesize nameSet=_nameSet;
 @property(copy, nonatomic) NSString *cacheTailText; // @synthesize cacheTailText=_cacheTailText;

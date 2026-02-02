@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSIntelligentMessageDB, FTSIntelligentMsgIndexMgr, FTSIntelligentMsgSearchMgr, NSMutableArray, NSMutableDictionary, NSString;
 
@@ -18,7 +19,6 @@
     FTSIntelligentMsgIndexMgr *_indexMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSIntelligentMsgIndexMgr *indexMgr; // @synthesize indexMgr=_indexMgr;
 @property(retain, nonatomic) NSMutableDictionary *dicLatestSession; // @synthesize dicLatestSession=_dicLatestSession;
 @property(retain, nonatomic) NSMutableArray *arrSessionUser; // @synthesize arrSessionUser=_arrSessionUser;
@@ -84,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

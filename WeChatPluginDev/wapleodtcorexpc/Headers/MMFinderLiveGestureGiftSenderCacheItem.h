@@ -15,7 +15,6 @@
     unsigned long long _validUntil;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long validUntil; // @synthesize validUntil=_validUntil;
 @property(retain, nonatomic) NSString *validForGestureId; // @synthesize validForGestureId=_validForGestureId;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

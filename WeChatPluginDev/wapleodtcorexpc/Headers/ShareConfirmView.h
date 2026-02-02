@@ -33,7 +33,6 @@
     WCPasteTextLengthLogic *pastelogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *successText; // @synthesize successText=_successText;
 @property(retain, nonatomic) EmoticonBoardView *emoticonBoardView; // @synthesize emoticonBoardView=_emoticonBoardView;
 @property(retain, nonatomic) WCPasteTextLengthLogic *pastelogic; // @synthesize pastelogic;

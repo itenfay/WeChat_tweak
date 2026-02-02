@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _firstEntryBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType firstEntryBlock; // @synthesize firstEntryBlock=_firstEntryBlock;
 @property(retain, nonatomic) NSMutableDictionary *stateData; // @synthesize stateData=_stateData;
 @property(retain, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
@@ -35,4 +35,3 @@
 - (id)init;
 
 @end
-

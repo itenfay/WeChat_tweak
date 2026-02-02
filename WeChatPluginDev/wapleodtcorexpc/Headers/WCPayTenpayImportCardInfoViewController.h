@@ -15,7 +15,6 @@
     id <WCPayTenpayImportCardInfoViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)makeInfoCell:(id)arg1 cellInfo:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)onNext;

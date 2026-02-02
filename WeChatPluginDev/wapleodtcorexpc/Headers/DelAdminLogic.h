@@ -14,7 +14,6 @@
     CContact *_m_adminContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *m_adminContact; // @synthesize m_adminContact=_m_adminContact;
 @property(retain, nonatomic) CContact *m_roomContact; // @synthesize m_roomContact=_m_roomContact;
 @property(nonatomic) __weak id <DelAdminLogicDelegate> m_delegate; // @synthesize m_delegate;

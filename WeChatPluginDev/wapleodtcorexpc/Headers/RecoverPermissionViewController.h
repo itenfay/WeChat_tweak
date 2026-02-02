@@ -13,7 +13,6 @@
     UIButton *m_goBackButton;
 }
 
-- (void).cxx_destruct;
 - (void)onGoBackButtonClicked:(id)arg1;
 - (void)resetProtectionOnFile:(const char *)arg1;
 - (void)resetProtectionOnPath:(const char *)arg1;

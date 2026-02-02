@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)setPlaybackRate:(float)arg1;
 - (void)setInnerProcessCallback:(id)arg1;
 - (int)seek:(long long)arg1;

@@ -16,7 +16,6 @@
     NSString *_backgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSString *fontWeight; // @synthesize fontWeight=_fontWeight;
 @property(retain, nonatomic) NSString *color; // @synthesize color=_color;

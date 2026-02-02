@@ -14,7 +14,6 @@
     NSString *m_statisticsFilePath;
 }
 
-- (void).cxx_destruct;
 - (void)loadStatisticsData;
 - (void)saveStatisticsData;
 - (void)loadConfig;

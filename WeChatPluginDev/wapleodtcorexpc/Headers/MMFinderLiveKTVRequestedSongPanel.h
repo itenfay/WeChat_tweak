@@ -46,7 +46,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *reportedSongUniqueIdSet; // @synthesize reportedSongUniqueIdSet=_reportedSongUniqueIdSet;
 @property(nonatomic) _Bool isPlayingSongReported; // @synthesize isPlayingSongReported=_isPlayingSongReported;
 @property(nonatomic) _Bool isNoContentViewReported; // @synthesize isNoContentViewReported=_isNoContentViewReported;

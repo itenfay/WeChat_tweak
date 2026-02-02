@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, EmoticonBoardView, MMGrowTextView, MMTipsViewController, MMUILabel, NSMutableArray, NSMutableDictionary, NSString, ReportVoiceResultMgr, StreamVoiceInputControlView, StreamVoiceInputLogic, StreamVoiceInputPrepareView, UIButton, UIImageView, UILabel, UIView, WCInputController, WXKeyBoardTipsView;
 @protocol StreamVoiceInputViewControllerDelegate;
 
@@ -67,7 +69,6 @@
     struct CGRect _viewFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) StreamVoiceInputLogic *curInputLogic; // @synthesize curInputLogic=_curInputLogic;
 @property(retain, nonatomic) NSMutableDictionary *inputLogicDic; // @synthesize inputLogicDic=_inputLogicDic;
@@ -208,4 +209,3 @@
 @property(readonly) Class superclass;
 
 @end
-

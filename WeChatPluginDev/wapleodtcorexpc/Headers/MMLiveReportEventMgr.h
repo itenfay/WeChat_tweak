@@ -10,7 +10,6 @@
     NSMutableDictionary *_handlerObjects;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *handlerObjects; // @synthesize handlerObjects=_handlerObjects;
 - (void)onUIOrientationChanged:(id)arg1;
 - (void)onActionSheetClicked:(id)arg1 buttonAtIndex:(long long)arg2 controller:(id)arg3;

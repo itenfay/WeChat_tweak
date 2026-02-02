@@ -14,7 +14,6 @@
     _Bool _inUse;
 }
 
-- (void).cxx_destruct;
 @property _Bool inUse; // @synthesize inUse=_inUse;
 @property void *statement; // @synthesize statement=_statement;
 @property(retain) NSString *query; // @synthesize query=_query;

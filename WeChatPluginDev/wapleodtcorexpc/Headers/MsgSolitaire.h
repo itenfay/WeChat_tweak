@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int msgLocalId; // @synthesize msgLocalId=_msgLocalId;
 @property(retain, nonatomic) NSString *nsChatName; // @synthesize nsChatName=_nsChatName;
 - (id)description;

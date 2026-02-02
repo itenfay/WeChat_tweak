@@ -14,7 +14,6 @@
 }
 
 + (id)getStateSettingBarLogicWithDataItem:(id)arg1 contentItemScene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool timerStarted; // @synthesize timerStarted=_timerStarted;
 @property(retain, nonatomic) WCAdStateSettingBarInfo *barInfo; // @synthesize barInfo=_barInfo;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

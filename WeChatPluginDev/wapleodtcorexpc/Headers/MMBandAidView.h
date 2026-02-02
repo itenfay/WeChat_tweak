@@ -17,7 +17,6 @@
     NSLayoutConstraint *_rightPartLeftToChildRight;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *rightPartLeftToChildRight; // @synthesize rightPartLeftToChildRight=_rightPartLeftToChildRight;
 @property(retain, nonatomic) NSLayoutConstraint *leftPartRightToChildLeft; // @synthesize leftPartRightToChildLeft=_leftPartRightToChildLeft;
 @property(nonatomic) double cornerToChild; // @synthesize cornerToChild=_cornerToChild;

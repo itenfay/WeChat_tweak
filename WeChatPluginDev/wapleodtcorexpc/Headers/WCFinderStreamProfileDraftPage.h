@@ -12,7 +12,6 @@
     NSMutableSet *_exposeCellIds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposeCellIds; // @synthesize exposeCellIds=_exposeCellIds;
 @property(retain, nonatomic) UILabel *statusTips; // @synthesize statusTips=_statusTips;
 @property(nonatomic) __weak WCFinderStreamFooterView *footerView; // @synthesize footerView=_footerView;

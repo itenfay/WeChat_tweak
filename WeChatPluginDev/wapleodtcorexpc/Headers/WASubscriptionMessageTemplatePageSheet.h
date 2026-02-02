@@ -11,7 +11,6 @@
     WASMTPageSheetViewModel *_smtViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WASMTPageSheetViewModel *smtViewModel; // @synthesize smtViewModel=_smtViewModel;
 @property(nonatomic) long long backButtonType; // @synthesize backButtonType=_backButtonType;
 - (id)subViewModel;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,9 +15,7 @@
 }
 
 + (id)createWithTitle:(id)arg1 clickAction:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 
 @end
-

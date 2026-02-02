@@ -15,7 +15,6 @@
     MISSING_TYPE *host;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) long long hash;
 - (_Bool)isEqual:(id)arg1;

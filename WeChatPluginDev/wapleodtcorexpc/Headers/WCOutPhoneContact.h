@@ -23,7 +23,6 @@
     NSString *mainPurePhoneNum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWeChatFriend; // @synthesize isWeChatFriend;
 @property(retain, nonatomic) NSString *mainPurePhoneNum; // @synthesize mainPurePhoneNum;
 @property(retain, nonatomic) NSString *mainCountryCode; // @synthesize mainCountryCode;

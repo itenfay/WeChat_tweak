@@ -15,7 +15,6 @@
     AVAssetReaderTrackOutput *_readerOutput;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRestartReading; // @synthesize isRestartReading=_isRestartReading;
 @property(retain, nonatomic) AVAssetReaderTrackOutput *readerOutput; // @synthesize readerOutput=_readerOutput;
 @property(retain, nonatomic) AVAssetReader *videoReader; // @synthesize videoReader=_videoReader;

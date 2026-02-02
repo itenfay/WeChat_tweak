@@ -16,7 +16,6 @@
     QTexturePolylineView *_internalPolyline;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QTexturePolylineView *internalPolyline; // @synthesize internalPolyline=_internalPolyline;
 @property(nonatomic) _Bool disableCollideLabel; // @synthesize disableCollideLabel=_disableCollideLabel;
 @property(nonatomic) double symbolGap; // @synthesize symbolGap=_symbolGap;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GameURLSessionStatistics, NSMutableDictionary, NSRecursiveLock, NSString, NSURLSession;
 @protocol GameURLSessionWrapperDelegate;
@@ -29,7 +30,6 @@
 
 + (_Bool)isIPV6Address:(id)arg1;
 + (_Bool)isValidIPAddress:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long simpleErrorContinuousCount; // @synthesize simpleErrorContinuousCount=_simpleErrorContinuousCount;
 @property(nonatomic) long long simpleErrorTotalCount; // @synthesize simpleErrorTotalCount=_simpleErrorTotalCount;
 @property(nonatomic) long long simpleReqFailCount; // @synthesize simpleReqFailCount=_simpleReqFailCount;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

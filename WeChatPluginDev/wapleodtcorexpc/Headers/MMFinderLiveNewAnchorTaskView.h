@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMFinderLiveNewAnchorTaskViewModel, MMFinderLiveTaskId, MMUIActivityIndicatorView, MMUIView, NSString, UICollectionView, UIScrollView, WCFinderLiveAnchorLogReporter, WCFinderLiveStarterReporter;
 
 @interface MMFinderLiveNewAnchorTaskView
@@ -24,7 +26,6 @@
     CAGradientLayer *_statusGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *statusGradientLayer; // @synthesize statusGradientLayer=_statusGradientLayer;
 @property(retain, nonatomic) UICollectionView *taskStatusCollectionView; // @synthesize taskStatusCollectionView=_taskStatusCollectionView;
 @property(retain, nonatomic) MMUIView *statusView; // @synthesize statusView=_statusView;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

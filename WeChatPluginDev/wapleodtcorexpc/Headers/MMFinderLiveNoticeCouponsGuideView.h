@@ -15,7 +15,6 @@
     UITableView *_couponsTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *couponsTable; // @synthesize couponsTable=_couponsTable;
 @property(copy, nonatomic) NSString *anchor; // @synthesize anchor=_anchor;
 @property(retain, nonatomic) NSArray *notices; // @synthesize notices=_notices;

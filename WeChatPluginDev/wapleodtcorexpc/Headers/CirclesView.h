@@ -17,7 +17,6 @@
     CircleView *_circleView3;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CircleView *circleView3; // @synthesize circleView3=_circleView3;
 @property(retain, nonatomic) CircleView *circleView2; // @synthesize circleView2=_circleView2;
 @property(retain, nonatomic) CircleView *circleView; // @synthesize circleView=_circleView;

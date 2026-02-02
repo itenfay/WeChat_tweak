@@ -13,7 +13,6 @@
     struct _NSRange _editeRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *editString; // @synthesize editString=_editString;
 @property(nonatomic) struct _NSRange editeRange; // @synthesize editeRange=_editeRange;
 

@@ -30,7 +30,6 @@
 + (id)createDescLabel;
 + (double)cellHeightWithModel:(id)arg1 width:(double)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *fullScreenImage; // @synthesize fullScreenImage=_fullScreenImage;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(retain, nonatomic) UILabel *postTimeLabel; // @synthesize postTimeLabel=_postTimeLabel;

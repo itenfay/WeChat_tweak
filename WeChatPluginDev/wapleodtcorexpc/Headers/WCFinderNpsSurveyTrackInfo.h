@@ -15,7 +15,6 @@
     NSArray *_multiAnswerIDs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *multiAnswerIDs; // @synthesize multiAnswerIDs=_multiAnswerIDs;
 @property(copy, nonatomic) NSString *inputAnswerText; // @synthesize inputAnswerText=_inputAnswerText;
 @property(nonatomic) unsigned long long selectedAnswerId; // @synthesize selectedAnswerId=_selectedAnswerId;

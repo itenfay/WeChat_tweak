@@ -31,7 +31,6 @@
     UILabel *_m_statusThirdDescLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_statusThirdDescLabel; // @synthesize m_statusThirdDescLabel=_m_statusThirdDescLabel;
 @property(retain, nonatomic) UILabel *m_statusThirdLabel; // @synthesize m_statusThirdLabel=_m_statusThirdLabel;
 @property(retain, nonatomic) UILabel *m_statusSecondDescLabel; // @synthesize m_statusSecondDescLabel=_m_statusSecondDescLabel;

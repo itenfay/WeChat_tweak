@@ -14,7 +14,6 @@
     double _expire;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double expire; // @synthesize expire=_expire;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;

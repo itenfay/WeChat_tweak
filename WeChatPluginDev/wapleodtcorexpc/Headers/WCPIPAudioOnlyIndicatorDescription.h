@@ -13,7 +13,6 @@
     struct CGSize _leftRightIconSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double leftRightIconTextInset; // @synthesize leftRightIconTextInset=_leftRightIconTextInset;
 @property(nonatomic) struct CGSize leftRightIconSize; // @synthesize leftRightIconSize=_leftRightIconSize;
 @property(retain, nonatomic) NSString *rightIcon; // @synthesize rightIcon=_rightIcon;

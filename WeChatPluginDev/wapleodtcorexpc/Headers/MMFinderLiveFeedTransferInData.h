@@ -10,7 +10,6 @@
     NSString *_currentPkSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentPkSessionId; // @synthesize currentPkSessionId=_currentPkSessionId;
 
 @end

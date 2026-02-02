@@ -16,7 +16,6 @@
     _Bool m_isResumed;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isResumed; // @synthesize m_isResumed;
 @property(nonatomic) int m_nHttpStatusCode; // @synthesize m_nHttpStatusCode;
 @property(nonatomic) int m_nRetCode; // @synthesize m_nRetCode;

@@ -10,7 +10,6 @@
     UIImageView *_avatarIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *avatarIcon; // @synthesize avatarIcon=_avatarIcon;
 - (void)onOnlineStateButtonClicked;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

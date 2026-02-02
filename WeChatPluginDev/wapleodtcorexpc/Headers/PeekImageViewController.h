@@ -19,7 +19,6 @@
     ImageMessageCellView *_imgCellView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak ImageMessageCellView *imgCellView; // @synthesize imgCellView=_imgCellView;
 @property(nonatomic) __weak WCImageView *wcImageView; // @synthesize wcImageView=_wcImageView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

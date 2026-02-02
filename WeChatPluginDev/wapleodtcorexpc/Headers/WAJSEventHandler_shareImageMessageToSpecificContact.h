@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, NSString, WAReportImageEntranceShareItem, WAScreenshotContextInfo;
 
 @interface WAJSEventHandler_shareImageMessageToSpecificContact
@@ -16,7 +18,6 @@
     WAScreenshotContextInfo *_waInfo;
 }
 
-- (void).cxx_destruct;
 - (void)updateReportItemWithContact:(id)arg1 isSuccess:(int)arg2;
 - (void)fetchUsernameWithOpenId:(id)arg1 appId:(id)arg2 complete:(CDUnknownBlockType)arg3;
 - (id)getCurrentViewController;
@@ -45,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

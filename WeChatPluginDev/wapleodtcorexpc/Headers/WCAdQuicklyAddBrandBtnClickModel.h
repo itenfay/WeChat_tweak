@@ -11,7 +11,6 @@
     NSString *_brandUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *brandUsername; // @synthesize brandUsername=_brandUsername;
 @property(nonatomic) int clickType; // @synthesize clickType=_clickType;
 

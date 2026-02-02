@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 - (_Bool)checkTime;

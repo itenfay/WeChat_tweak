@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVCaptureDevice, MMAppRunningInfo, MMAudioMonitor, MMAudioMonitorConfig, MMCPUTimeProfiler, MMCPUTimeProfilerConfig, MMGPUMonitor, MMGPUMonitorConfig, MMLocationMonitor, MMLocationMonitorConfig, MMMetricsDB, MMMetricsInfo, MMMetricsMonitorConfig, MMNetworkMonitor, MMNetworkMonitorConfig, MMStackReportConnection, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, NSThread;
 
 @interface MMMetricsMonitor
@@ -56,7 +58,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain) NSString *weAppScene; // @synthesize weAppScene=_weAppScene;
 @property(retain) NSString *scene; // @synthesize scene=_scene;
 - (void)onStackReportCompleted:(_Bool)arg1;
@@ -125,4 +126,3 @@
 @property(readonly) Class superclass;
 
 @end
-

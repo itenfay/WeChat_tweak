@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_isFolded;
 + (void)PBArrayAdd_dicUserNameFold;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFolded; // @synthesize isFolded=_isFolded;
 @property(retain, nonatomic) NSMutableDictionary *dicUserNameFold; // @synthesize dicUserNameFold=_dicUserNameFold;
 - (id)getPBPropertyTable;

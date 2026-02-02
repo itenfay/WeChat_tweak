@@ -13,7 +13,6 @@
     NSString *_noticeURLStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *noticeURLStr; // @synthesize noticeURLStr=_noticeURLStr;
 @property(retain, nonatomic) NSString *m_nsCrtCrt; // @synthesize m_nsCrtCrt;
 

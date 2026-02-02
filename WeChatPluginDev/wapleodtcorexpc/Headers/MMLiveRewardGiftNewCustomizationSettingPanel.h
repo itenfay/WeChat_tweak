@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveGiftNewCustomizationModel, MMFinderLiveRewardGiftItem, MMLiveRewardGiftNewCustomizationEditLogic, MMLiveRewardGiftNewCustomizationEffectPreviewView, MMLiveRewardGiftNewCustomizationInputToolView, MMLiveRewardGiftNewCustomizationPriceDisplayView, MMLiveRewardGiftNewCustomizationStyleSelectView, MMLiveTaskId, MMUIButton, NSString, UIView;
 
 @interface MMLiveRewardGiftNewCustomizationSettingPanel
@@ -27,7 +29,6 @@
     struct CGRect _nameEditInputToolRectForUnActive;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCloseWithModified; // @synthesize isCloseWithModified=_isCloseWithModified;
 @property(nonatomic) _Bool isKeyboardShow; // @synthesize isKeyboardShow=_isKeyboardShow;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
@@ -97,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCDownloadArgsWrap, WCPlayerPlaybackInfo, WCPlayerReporter;
 @protocol WCPlayerDownloaderDelegate;
@@ -36,7 +37,6 @@
 }
 
 + (_Bool)copyVideoFromTmpPath:(id)arg1 toFormatPath:(id)arg2 identifier:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType downloadCompleteBlock; // @synthesize downloadCompleteBlock=_downloadCompleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType fastCompleteBlock; // @synthesize fastCompleteBlock=_fastCompleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType dataReadyBlock; // @synthesize dataReadyBlock=_dataReadyBlock;
@@ -90,4 +90,3 @@
 - (id)initWithPlaybackInfo:(id)arg1 downloadArgs:(id)arg2;
 
 @end
-

@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_uiCreateTime;
 + (void)PBArrayAdd_uiType;
 + (void)PBArrayAdd_ui64SvrMsgId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsPid; // @synthesize nsPid=_nsPid;
 @property(retain, nonatomic) NSString *nsJumpLink; // @synthesize nsJumpLink=_nsJumpLink;
 @property(retain, nonatomic) NSString *nsDesc; // @synthesize nsDesc=_nsDesc;

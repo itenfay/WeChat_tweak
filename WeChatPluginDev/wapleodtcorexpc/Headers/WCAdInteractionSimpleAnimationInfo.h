@@ -10,7 +10,6 @@
     NSObject *_value;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *value; // @synthesize value=_value;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

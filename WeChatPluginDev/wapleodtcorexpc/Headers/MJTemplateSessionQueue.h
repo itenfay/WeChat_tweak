@@ -13,7 +13,6 @@
     NSMutableArray *_pendingSessions;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *pendingSessions; // @synthesize pendingSessions=_pendingSessions;
 @property(readonly, nonatomic) MJTemplateSession *workingSession; // @synthesize workingSession=_workingSession;
 - (_Bool)releaseWorkingSession:(id)arg1;

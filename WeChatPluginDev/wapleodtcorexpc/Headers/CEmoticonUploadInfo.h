@@ -16,7 +16,6 @@
     CMessageWrap *m_wrapMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_wrapMsg; // @synthesize m_wrapMsg;
 @property(nonatomic) _Bool m_bFirst; // @synthesize m_bFirst;
 @property(nonatomic) unsigned int m_uiTotalLen; // @synthesize m_uiTotalLen;

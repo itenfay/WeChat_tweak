@@ -35,7 +35,6 @@
     double _matchLoudnessValue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float maxLoudness; // @synthesize maxLoudness=_maxLoudness;
 @property(nonatomic) float minLoudness; // @synthesize minLoudness=_minLoudness;
 @property(nonatomic) float defaultLoudness; // @synthesize defaultLoudness=_defaultLoudness;

@@ -20,7 +20,6 @@
     NSMutableDictionary *_tipsArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TrackRoomTopBarViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)onHeadListItemClick:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GCOpenReportParam, MMLoadingView, MMNavBarInteractiveConfig, MMSnackBar, MMTitleView, MMUINavigationBar, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, UIBarButtonItem, UIColor, UIFont, UILabel, UINavigationController, UIPanGestureRecognizer, UIScrollView, UIView, WCEventTrackingSystemConfig, WCProgressViewHelper, _TtC7WCUIKit16MMHostingManager;
 
@@ -85,7 +86,6 @@
 + (_Bool)hookViewDidBePushed;
 + (void)hookMMUIViewController;
 + (void)load;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBeingRotation; // @synthesize isBeingRotation=_isBeingRotation;
 @property(nonatomic) _Bool didObserveInteractivePopGRForDeselectCell; // @synthesize didObserveInteractivePopGRForDeselectCell=_didObserveInteractivePopGRForDeselectCell;
 @property(nonatomic) long long orientationBeforeRotation; // @synthesize orientationBeforeRotation=_orientationBeforeRotation;
@@ -529,4 +529,3 @@
 @property(readonly) Class superclass;
 
 @end
-

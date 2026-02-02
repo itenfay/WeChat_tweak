@@ -38,7 +38,6 @@
 + (id)_generateEditDetailStrFromRecorderList:(id)arg1;
 + (id)_generateMediaDetailStrFromRecorderList:(id)arg1;
 + (void)reportUserOperationWithSessionId:(id)arg1 recorderList:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *operationContextMap; // @synthesize operationContextMap=_operationContextMap;
 @property(readonly, nonatomic) unsigned int activityEventType; // @synthesize activityEventType=_activityEventType;
 @property(nonatomic) double videoProducerEndTime; // @synthesize videoProducerEndTime=_videoProducerEndTime;

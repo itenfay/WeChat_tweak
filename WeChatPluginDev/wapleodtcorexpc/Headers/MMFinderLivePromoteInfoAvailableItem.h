@@ -34,7 +34,6 @@
 
 + (_Bool)shouldReportAtPromoteManagerAvaiableListWithType:(unsigned int)arg1;
 + (id)createAnchorPromoteAvailableItemFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLivePromoteInfoAvailableItem_PaidCollectionExtBuffer *paidCollectionExtBuffer; // @synthesize paidCollectionExtBuffer=_paidCollectionExtBuffer;
 @property(retain, nonatomic) FinderLivePromoteInfoAvailableItem_ListenExtBuffer *listenExtBuffer; // @synthesize listenExtBuffer=_listenExtBuffer;
 @property(retain, nonatomic) FinderLivePromoteInfoAvailableItem_RedPacketCoverExtBuffer *redPacketCoverExtBuffer; // @synthesize redPacketCoverExtBuffer=_redPacketCoverExtBuffer;

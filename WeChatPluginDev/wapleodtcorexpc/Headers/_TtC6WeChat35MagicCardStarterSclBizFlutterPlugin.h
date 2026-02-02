@@ -11,7 +11,6 @@
     MISSING_TYPE *callback;
 }
 
-- (void).cxx_destruct;
 - (void)onAttachedToViewController:(id)arg1;
 - (void)onDetachedFromEngine:(id)arg1;
 

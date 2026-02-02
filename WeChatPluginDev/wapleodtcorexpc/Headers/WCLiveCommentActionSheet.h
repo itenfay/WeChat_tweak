@@ -10,7 +10,6 @@
     MMLiveCommentDataItem *_commentItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCommentDataItem *commentItem; // @synthesize commentItem=_commentItem;
 - (id)getCustomHeadView;
 - (id)initWithCommentItem:(id)arg1;

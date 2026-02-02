@@ -16,7 +16,6 @@
     NSMutableArray *_m_selectedArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_selectedArray; // @synthesize m_selectedArray=_m_selectedArray;
 @property(nonatomic) __weak id <WCPayBizF2FFavorSelectViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) BusiF2FFavorCommResp *m_favorResp; // @synthesize m_favorResp=_m_favorResp;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSError, NSString;
 
 @interface WCMomentsAIImageGetResultCGI
@@ -16,7 +18,6 @@
     NSArray *_AIImageURLs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxRetryTimes; // @synthesize maxRetryTimes=_maxRetryTimes;
 @property(nonatomic) unsigned int nextQueryInterval; // @synthesize nextQueryInterval=_nextQueryInterval;
 @property(copy, nonatomic) NSArray *AIImageURLs; // @synthesize AIImageURLs=_AIImageURLs;
@@ -31,4 +32,3 @@
 - (id)initWithTaskID:(id)arg1;
 
 @end
-

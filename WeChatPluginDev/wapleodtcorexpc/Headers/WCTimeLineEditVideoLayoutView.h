@@ -13,7 +13,6 @@
     double _currentLyricTotalTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowNewBGMPanel; // @synthesize shouldShowNewBGMPanel=_shouldShowNewBGMPanel;
 @property(nonatomic) _Bool shouldRecoverLyricsWidget; // @synthesize shouldRecoverLyricsWidget=_shouldRecoverLyricsWidget;
 @property(nonatomic) double currentLyricTotalTime; // @synthesize currentLyricTotalTime=_currentLyricTotalTime;

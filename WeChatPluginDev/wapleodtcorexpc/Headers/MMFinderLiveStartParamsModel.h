@@ -47,7 +47,6 @@
     WCFinderCreateLivePrepareResponseModel *_responseModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCreateLivePrepareResponseModel *responseModel; // @synthesize responseModel=_responseModel;
 @property(retain, nonatomic) FinderLiveGuideInfo *liveGuideInfo; // @synthesize liveGuideInfo=_liveGuideInfo;
 @property(retain, nonatomic) NSArray *resourcePackages; // @synthesize resourcePackages=_resourcePackages;

@@ -15,7 +15,6 @@
     long long _liveShareSceneIfLive;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long liveShareSceneIfLive; // @synthesize liveShareSceneIfLive=_liveShareSceneIfLive;
 @property(retain, nonatomic) id <ForwardMessageLogicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CContact *fastForwardContact; // @synthesize fastForwardContact=_fastForwardContact;

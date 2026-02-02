@@ -22,7 +22,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (long long)isNetworkChanged:(_Bool)arg1;
 - (void)loadData;
 - (_Bool)isHTTPDNSEnabled;

@@ -13,7 +13,6 @@
     UIViewController *_weakPresentedVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *weakPresentedVC; // @synthesize weakPresentedVC=_weakPresentedVC;
 - (void)onPopBackInteractiveTransitionBegin:(id)arg1;
 - (id)interactionControllerForDismissal:(id)arg1;

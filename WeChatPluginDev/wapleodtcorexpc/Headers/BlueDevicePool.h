@@ -13,7 +13,6 @@
     NSRecursiveLock *m_oLock;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *devicePool; // @synthesize devicePool=_devicePool;
 - (void)removeAllObjectsWithDelegate:(id)arg1;
 - (void)removeDisconnected;

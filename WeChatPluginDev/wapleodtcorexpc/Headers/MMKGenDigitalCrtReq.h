@@ -20,7 +20,6 @@
 }
 
 + (id)KGenDigitalCrtReqWithType:(int)arg1 idType:(int)arg2 idNo:(id)arg3 reqKey:(id)arg4 verifyCode:(id)arg5 token:(id)arg6 creTail:(id)arg7 certEncryptType:(int)arg8;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int certEncryptType; // @synthesize certEncryptType=_certEncryptType;
 @property(readonly, nonatomic) NSString *creTail; // @synthesize creTail=_creTail;
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;

@@ -18,7 +18,6 @@
     OMJRenderingParams *_renderingParams;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldEnableMetalRenderSys; // @synthesize shouldEnableMetalRenderSys=_shouldEnableMetalRenderSys;
 @property(readonly, nonatomic) OMJRenderingParams *renderingParams; // @synthesize renderingParams=_renderingParams;
 @property(readonly, nonatomic) OMJTemplateServiceParams *templateServiceParams; // @synthesize templateServiceParams=_templateServiceParams;

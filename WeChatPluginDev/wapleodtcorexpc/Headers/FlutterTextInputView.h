@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterTextInputPlugin, FlutterTextRange, NSArray, NSDictionary, NSMutableArray, NSMutableString, NSString, UIAccessibilityElement, UIInputViewController, UITextInputPasswordRules, UITextInteraction, UITextPosition, UITextRange;
 @protocol FlutterViewResponder, UITextInputDelegate, UITextInputTokenizer;
@@ -59,7 +60,6 @@
     struct CATransform3D _editableTransform;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
 @property(copy, nonatomic) NSString *temporarilyDeletedComposedCharacter; // @synthesize temporarilyDeletedComposedCharacter=_temporarilyDeletedComposedCharacter;
 @property(nonatomic) double inputAccessoryHeight; // @synthesize inputAccessoryHeight=_inputAccessoryHeight;
@@ -214,4 +214,3 @@
 
 
 @end
-

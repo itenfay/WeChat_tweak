@@ -24,7 +24,6 @@
     NSString *_sessionID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool shouldRemoveOnPickerAppear; // @synthesize shouldRemoveOnPickerAppear=_shouldRemoveOnPickerAppear;

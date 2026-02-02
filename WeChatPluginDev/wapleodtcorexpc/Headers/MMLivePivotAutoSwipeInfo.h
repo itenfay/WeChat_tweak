@@ -13,7 +13,6 @@
     MMLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) FinderLiveAutoSwipeInfo *info; // @synthesize info=_info;
 

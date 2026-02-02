@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MAVEffectManager, MAVVLogDirectorMultiVideoCompositionEffect, NSMutableArray, TAVSourceExportSession;
 
@@ -26,7 +27,6 @@
     CDStruct_e83c9415 _playRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MAVVideoComposition *selfPtr; // @synthesize selfPtr=_selfPtr;
 @property(retain, nonatomic) MAVVLogDirectorMultiVideoCompositionEffect *mixEffect; // @synthesize mixEffect=_mixEffect;
 @property(retain, nonatomic) TAVSourceExportSession *exportSession; // @synthesize exportSession=_exportSession;
@@ -64,4 +64,3 @@
 - (id)initWithTrackArray:(id)arg1;
 
 @end
-

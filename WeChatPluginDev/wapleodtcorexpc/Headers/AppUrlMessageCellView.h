@@ -12,7 +12,6 @@
     UIImageView *m_thumbImageView;
 }
 
-- (void).cxx_destruct;
 - (id)viewControllerToPreviewWithFromController:(id)arg1 forLocation:(struct CGPoint)arg2 inCoordinateView:(id)arg3;
 - (id)viewControllerForPreview:(id)arg1;
 - (id)urlForPreView:(id)arg1;

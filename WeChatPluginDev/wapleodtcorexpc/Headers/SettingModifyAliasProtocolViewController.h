@@ -18,7 +18,6 @@
     id <SettingModifyAliasViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SettingModifyAliasViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)setM_commonHeadView:(id)arg1;
 - (id)m_commonHeadView;

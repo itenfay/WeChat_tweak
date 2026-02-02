@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class Background, BroadcastMessage, ChannelInfo, ChatroomEnterInfo, ChatroomUserData, EmoticonBoardView, EnterLeadSpeakInfo, GCChatRoomInfo, GCChatRoomServer, GCChatRoonEnterTipView, GCCollectionViewManager, GCJoinHintView, GCMultiChannelContainerView, GCMultiMessageViewModelConfig, GCNotificationBarView, GCSelfUnTouchableView, GCVerticalImgLabelView, GameChatAtPersonListView, GameChatAtPersonListViewModel, GameChatInputToolBaseView, GameChatRoomConfig, GameChatRoomDbData, GetChatroomBaseInfoResponse, GetChatroomPanelResponse, ImageController, JumpInfo, MMPageSheetAdapter, MMSessionInfo, MMWebImageView, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, Notification, PAGFile, PAGView, PremadeCardInfo, RealtimeControlInfo, SlotList, UIButton, UICollectionView, UIControl, UIImageView, UILabel, UIView, WCTTable;
 @protocol GCMessageViewModelProtocol;
 
@@ -85,7 +87,6 @@
     NSMutableArray *_gcJumpInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowHalfScrrenVc; // @synthesize isShowHalfScrrenVc=_isShowHalfScrrenVc;
 @property(retain, nonatomic) NSMutableArray *gcJumpInfoArray; // @synthesize gcJumpInfoArray=_gcJumpInfoArray;
 @property(nonatomic) _Bool hasJumpToTarget; // @synthesize hasJumpToTarget=_hasJumpToTarget;
@@ -385,4 +386,3 @@
 @property(readonly) Class superclass;
 
 @end
-

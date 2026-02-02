@@ -18,7 +18,6 @@
 }
 
 + (struct CGSize)size;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ColorGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) MMWebImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) UIView *markBgView; // @synthesize markBgView=_markBgView;

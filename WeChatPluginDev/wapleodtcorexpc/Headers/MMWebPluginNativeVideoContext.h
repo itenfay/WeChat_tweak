@@ -16,7 +16,6 @@
     MMWebFinderPlayArgs *_finderPlayInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWebFinderPlayArgs *finderPlayInfo; // @synthesize finderPlayInfo=_finderPlayInfo;
 @property(retain, nonatomic) MMWebPluginNativeVideoJSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(nonatomic) _Bool needEvent; // @synthesize needEvent=_needEvent;

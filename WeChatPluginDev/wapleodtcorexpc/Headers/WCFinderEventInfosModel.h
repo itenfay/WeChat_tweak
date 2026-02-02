@@ -27,7 +27,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_eventInfosArray;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContainerMutableArray *eventInfosArray; // @synthesize eventInfosArray=_eventInfosArray;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (id)init;

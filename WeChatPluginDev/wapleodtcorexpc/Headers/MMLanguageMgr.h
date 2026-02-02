@@ -22,7 +22,6 @@
 
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool downloadPackageRightNow; // @synthesize downloadPackageRightNow=_downloadPackageRightNow;
 @property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
 - (void)setTranslateLanguage:(id)arg1 followSystemLanguage:(_Bool)arg2;

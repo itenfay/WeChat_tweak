@@ -13,7 +13,6 @@
     MISSING_TYPE *statusCallback;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

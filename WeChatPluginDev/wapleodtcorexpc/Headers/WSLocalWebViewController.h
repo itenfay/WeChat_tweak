@@ -62,7 +62,6 @@
 + (void)removeCache;
 + (id)getPreloadInstanceWithReddotId:(id)arg1;
 + (void)preHeatWeSeePageWithReddotId:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSTabInfoList *tabInfoModel; // @synthesize tabInfoModel=_tabInfoModel;
 @property(retain, nonatomic) UIScrollView *midView; // @synthesize midView=_midView;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;

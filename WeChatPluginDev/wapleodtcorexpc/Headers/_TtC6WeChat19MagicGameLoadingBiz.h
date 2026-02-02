@@ -15,7 +15,6 @@
     MISSING_TYPE *framesetRootId;
 }
 
-- (void).cxx_destruct;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
 - (id)getParentViewController;
 - (void)onCanvasViewCreated:(unsigned int)arg1 view:(id)arg2;

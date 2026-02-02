@@ -10,7 +10,6 @@
     ChatroomMsgShareLink *_shareLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ChatroomMsgShareLink *shareLink; // @synthesize shareLink=_shareLink;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (Class)bindCellClass;

@@ -15,7 +15,6 @@
     NSString *m_nsUniversalLink;
 }
 
-- (void).cxx_destruct;
 - (void)createWeChateHB;
 - (id)parseURLParams:(id)arg1;
 - (void)onPreEnterWechatDone;

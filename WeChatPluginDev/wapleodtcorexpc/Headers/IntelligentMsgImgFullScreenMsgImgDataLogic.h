@@ -10,7 +10,6 @@
     NSArray *m_arrResultMsg;
 }
 
-- (void).cxx_destruct;
 - (void)resetMsgArray;
 - (void)updateMsgArray;
 - (void)setMsgArray:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 @protocol MMMusicLiveCGIMgrDelegate;
@@ -21,7 +22,6 @@
 + (id)arrTrackItemWithBreakPointMs:(id)arg1 musicDurationMs:(unsigned long long)arg2;
 + (void)handleGetBeatTracksCGIWrap:(id)arg1 eventId:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 + (unsigned int)sendGetBeatTracks:(unsigned int)arg1 songId:(id)arg2 mvModel:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicLiveCGIMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)genClientMsgId;
 - (id)convertPbMsgToModel:(id)arg1;
@@ -46,4 +46,3 @@
 - (void)sendLiveJoinReqWithMVModel:(id)arg1;
 
 @end
-

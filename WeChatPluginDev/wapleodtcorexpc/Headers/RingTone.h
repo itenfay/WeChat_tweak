@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_startTime;
 + (void)PBArrayAdd_nonceId;
 + (void)PBArrayAdd_objectId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RingToneDetail *detail; // @synthesize detail=_detail;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

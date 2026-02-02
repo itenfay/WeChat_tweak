@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CustomVisualEffectView, MMTimer, NSCondition, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PriorityArray, UINavigationController, UIView, UIVisualEffectView, WAAppOpenParameter, WAAppTansitionController, WAAppTaskCapsuleMenu, WAAppTaskExtInfo, WAAppTaskHandlerWrapper, WAAppTaskLifeCycleRecord, WAAppTaskLoader, WAAppTaskReferrerInfo, WAAppTaskRunningStateEnterBackgroundContext, WAAppTaskShowFromBackgroundContext, WAAppTaskSplashADConfig, WAAppTaskSystemCoverView, WAApptaskPublicResLogic, WABrandTitleBar, WAColdLaunchPreFetchCGILogic, WAContact, WAFPSMonitor, WAIpadAdaptLogic, WAJSCoreService, WAPackageConfig, WAPerformanceIndexObject, WAPermissionHandler, WAPopOverTaskBarlogic, WAPopOverView, WAPreloadAppTask, WARemoteDebugger, WAThreadSafeMutableDictionary, WAUINavigationController, WAWebViewController, WAWebViewPageMgr, WMPFLaunchTipView, WxaExternalInfo, _TtC9WeAppCore20WAAfterLaunchHandler;
 @protocol IWASkylineRuntime, IWASkylineView><YYWebViewInterface, WAAppTaskDelegate;
@@ -199,7 +200,6 @@
 + (id)appIDListFromViewController:(id)arg1;
 + (id)appIdWithWeAppNavigationController:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *bizDataPipeHandlerDic; // @synthesize bizDataPipeHandlerDic=_bizDataPipeHandlerDic;
 @property(nonatomic) _Bool hasCalculateIgnoreOpConfigAtLeastOnePage; // @synthesize hasCalculateIgnoreOpConfigAtLeastOnePage=_hasCalculateIgnoreOpConfigAtLeastOnePage;
 @property(nonatomic) _Bool isIgnoreOpConfigAtLeastOnePage; // @synthesize isIgnoreOpConfigAtLeastOnePage=_isIgnoreOpConfigAtLeastOnePage;
@@ -1278,4 +1278,3 @@
 @property(readonly) Class superclass;
 
 @end
-

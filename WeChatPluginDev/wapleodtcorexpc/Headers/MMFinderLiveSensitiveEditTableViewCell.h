@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveSensitiveTextField, NSString;
 
@@ -15,7 +16,6 @@
 
 + (double)preferHeight;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveSensitiveTextField *textField; // @synthesize textField=_textField;
 @property(copy, nonatomic) CDUnknownBlockType onSensitiveWordAddCallback; // @synthesize onSensitiveWordAddCallback=_onSensitiveWordAddCallback;
 @property(nonatomic) _Bool ignoreResignFirstResponder; // @dynamic ignoreResignFirstResponder;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

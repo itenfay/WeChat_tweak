@@ -17,7 +17,6 @@
     CContact *_deviceContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *deviceContact; // @synthesize deviceContact=_deviceContact;
 @property(retain, nonatomic) NSDictionary *userData; // @synthesize userData=_userData;
 @property(retain, nonatomic) WCLanDeviceInfo *lanDevice; // @synthesize lanDevice=_lanDevice;

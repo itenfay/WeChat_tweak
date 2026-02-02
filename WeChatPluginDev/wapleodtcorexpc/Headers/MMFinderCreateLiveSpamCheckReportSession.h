@@ -15,7 +15,6 @@
     NSString *_finderUserName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *finderUserName; // @synthesize finderUserName=_finderUserName;
 @property(retain, nonatomic) NSString *pageId; // @synthesize pageId=_pageId;

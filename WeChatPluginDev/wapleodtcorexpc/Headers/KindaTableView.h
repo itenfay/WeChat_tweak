@@ -19,7 +19,6 @@
     MMVoidCallback *_onScrollBeginBallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidCallback *onScrollBeginBallback; // @synthesize onScrollBeginBallback=_onScrollBeginBallback;
 @property(retain, nonatomic) MMVoidCallback *onScrollCallBack; // @synthesize onScrollCallBack=_onScrollCallBack;
 @property(retain, nonatomic) MMVoidCallback *footerRefreshCallback; // @synthesize footerRefreshCallback=_footerRefreshCallback;

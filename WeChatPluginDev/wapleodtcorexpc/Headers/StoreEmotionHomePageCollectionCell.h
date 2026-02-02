@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmojiRecommendInfo, MMUILabel, NSMutableArray, UIImageView;
 
@@ -17,7 +18,6 @@
     CDUnknownBlockType _tapHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapHandler; // @synthesize tapHandler=_tapHandler;
 @property(nonatomic) long long emoticonCount; // @synthesize emoticonCount=_emoticonCount;
 @property(retain, nonatomic) NSMutableArray *singleEmoticonViewList; // @synthesize singleEmoticonViewList=_singleEmoticonViewList;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

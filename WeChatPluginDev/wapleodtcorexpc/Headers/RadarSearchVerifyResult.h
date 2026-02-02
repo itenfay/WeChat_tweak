@@ -15,7 +15,6 @@
     int _type;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *encryUsrName; // @synthesize encryUsrName=_encryUsrName;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;

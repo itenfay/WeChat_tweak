@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, WCAdAnimateViewControllerAnimatedTransitioning, WCDataItem;
 
 @interface WCAdAnimateTransitionViewController
@@ -14,7 +16,6 @@
     CDUnknownBlockType _animateCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animateCompletion; // @synthesize animateCompletion=_animateCompletion;
 @property(retain, nonatomic) WCAdAnimateViewControllerAnimatedTransitioning *presentationAnimate; // @synthesize presentationAnimate=_presentationAnimate;
 @property(retain, nonatomic) UIView *originView; // @synthesize originView=_originView;
@@ -30,4 +31,3 @@
 - (id)initWithGestureType:(long long)arg1 dataItem:(id)arg2 originView:(id)arg3;
 
 @end
-

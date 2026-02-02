@@ -16,7 +16,6 @@
     NSString *_m_filePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needNotifyPartLen; // @synthesize needNotifyPartLen=_needNotifyPartLen;
 @property(retain, nonatomic) NSString *m_filePath; // @synthesize m_filePath=_m_filePath;
 @property(retain, nonatomic) NSObject *m_userInfo; // @synthesize m_userInfo=_m_userInfo;

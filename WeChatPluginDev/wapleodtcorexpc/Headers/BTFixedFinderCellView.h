@@ -13,7 +13,6 @@
     NSMutableArray *_voiceOverElements;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *voiceOverElements; // @synthesize voiceOverElements=_voiceOverElements;
 @property(retain, nonatomic) NSMutableArray *finderItemViewArr; // @synthesize finderItemViewArr=_finderItemViewArr;
 @property(nonatomic) __weak id <BTFixedFinderCellViewDelegate> finderCellViewDelegate; // @synthesize finderCellViewDelegate=_finderCellViewDelegate;

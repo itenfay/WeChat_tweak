@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WWKFContactOpLogic;
 
 @interface WWKFOpenMgr
@@ -11,7 +13,6 @@
 }
 
 + (_Bool)shouldShowErrWithhErrCode:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WWKFContactOpLogic *contactOpLogic; // @synthesize contactOpLogic=_contactOpLogic;
 - (void)doCallbackResultWithErrCode:(long long)arg1 context:(id)arg2;
 - (void)doShowAlertWithSvrControlErrMsg:(id)arg1 context:(id)arg2;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

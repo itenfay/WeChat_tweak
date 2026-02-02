@@ -14,7 +14,6 @@
     NSString *_adExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *adExtInfo; // @synthesize adExtInfo=_adExtInfo;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;

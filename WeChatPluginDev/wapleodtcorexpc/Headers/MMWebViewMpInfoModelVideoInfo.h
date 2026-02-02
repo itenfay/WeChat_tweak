@@ -15,7 +15,6 @@
     NSString *_vid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned int videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(nonatomic) unsigned int videoWidth; // @synthesize videoWidth=_videoWidth;

@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_sequence;
 + (void)PBArrayAdd_ticket;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *friendRequest; // @synthesize friendRequest=_friendRequest;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *encryptedUsername; // @synthesize encryptedUsername=_encryptedUsername;

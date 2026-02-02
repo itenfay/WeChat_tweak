@@ -23,7 +23,6 @@
     MMWebImageView *_liveImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool liveImageLoaded; // @synthesize liveImageLoaded=_liveImageLoaded;
 @property(retain, nonatomic) MMWebImageView *liveImageView; // @synthesize liveImageView=_liveImageView;
 @property(retain, nonatomic) WCFinderLiveNowView *liveMaskTipsView; // @synthesize liveMaskTipsView=_liveMaskTipsView;

@@ -36,7 +36,6 @@
     double _itemSpacing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double itemSpacing; // @synthesize itemSpacing=_itemSpacing;
 @property(nonatomic) unsigned long long itemCount; // @synthesize itemCount=_itemCount;
 @property(nonatomic) double itemWidth; // @synthesize itemWidth=_itemWidth;

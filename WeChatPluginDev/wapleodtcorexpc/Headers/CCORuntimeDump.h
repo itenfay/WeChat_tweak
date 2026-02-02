@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CCORuntimeDump : NSObject
 {
@@ -12,4 +13,3 @@
 + (id)registeredClassNamesJustIsInitial:(_Bool)arg1 withIgnoringBlock:(CDUnknownBlockType)arg2;
 
 @end
-

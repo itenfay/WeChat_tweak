@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveChooseClarityDataItem, MMUILabel, UIImageView;
 
@@ -16,7 +17,6 @@
     MMFinderLiveChooseClarityDataItem *_clarityDataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveChooseClarityDataItem *clarityDataItem; // @synthesize clarityDataItem=_clarityDataItem;
 @property(retain, nonatomic) UIImageView *arrowImgView; // @synthesize arrowImgView=_arrowImgView;
 @property(retain, nonatomic) MMUILabel *clarityLabel; // @synthesize clarityLabel=_clarityLabel;
@@ -36,4 +36,3 @@
 - (id)init;
 
 @end
-

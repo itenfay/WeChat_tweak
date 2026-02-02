@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewPropertyAnimator.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCSplitPropertyAnimator : UIViewPropertyAnimator
 {
@@ -11,7 +12,6 @@
     CDUnknownBlockType _complete;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 @property(copy, nonatomic) CDUnknownBlockType animation; // @synthesize animation=_animation;
 - (void)addCompletion:(CDUnknownBlockType)arg1;
@@ -20,4 +20,3 @@
 - (void)startWithoutAnimation;
 
 @end
-

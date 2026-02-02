@@ -12,7 +12,6 @@
     LiteAppViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak LiteAppViewController *vc; // @synthesize vc=_vc;
 - (id)consume:(id)arg1;
 

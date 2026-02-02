@@ -11,7 +11,6 @@
     NSMutableDictionary *m_dicLocalCache;
 }
 
-- (void).cxx_destruct;
 - (void)saveDicLocalCache;
 - (void)tryLoadDicLocalCache;
 - (id)pathForDicLocalCache;

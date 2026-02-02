@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_lastRecordCacheOptimizeInfoToDBTime;
 + (void)PBArrayAdd_bestLoadArrUserName;
 + (void)PBArrayAdd_lastCalculateBestLoadTime;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int firstRecordCacheOptimizeInfoTime; // @synthesize firstRecordCacheOptimizeInfoTime=_firstRecordCacheOptimizeInfoTime;
 @property(nonatomic) unsigned int allChatRoomStrangerCount; // @synthesize allChatRoomStrangerCount=_allChatRoomStrangerCount;
 @property(nonatomic) float bestLoadlistScale; // @synthesize bestLoadlistScale=_bestLoadlistScale;

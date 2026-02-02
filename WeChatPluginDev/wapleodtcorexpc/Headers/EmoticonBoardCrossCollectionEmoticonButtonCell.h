@@ -12,7 +12,6 @@
     EmoticonBoardButton *_emoticonBoardButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonBoardButton *emoticonBoardButton; // @synthesize emoticonBoardButton=_emoticonBoardButton;
 - (id)initWithFrame:(struct CGRect)arg1;
 

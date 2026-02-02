@@ -16,7 +16,6 @@
     UIView *oTopHeaderView;
 }
 
-- (void).cxx_destruct;
 - (void)onMainWindowFrameChanged;
 - (void)removeView;
 - (void)endAnimation;

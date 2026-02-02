@@ -11,7 +11,6 @@
 }
 
 + (struct CGSize)bannerSizeByInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *leftIconView; // @synthesize leftIconView=_leftIconView;
 - (void)setBannerVM:(id)arg1;
 - (void)setupUIIfNeeded;

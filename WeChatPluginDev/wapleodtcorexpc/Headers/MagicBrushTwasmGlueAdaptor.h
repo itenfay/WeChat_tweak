@@ -13,7 +13,6 @@
     void *_glueAdaptorImpl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) void *glueAdaptorImpl; // @synthesize glueAdaptorImpl=_glueAdaptorImpl;
 @property(nonatomic) __weak WasmAdaptor *wasmAdaptor; // @synthesize wasmAdaptor=_wasmAdaptor;
 - (void)bindTo:(id)arg1;

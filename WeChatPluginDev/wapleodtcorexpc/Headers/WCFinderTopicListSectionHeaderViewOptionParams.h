@@ -15,7 +15,6 @@
     NSString *_topicName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showHighlightTopicStyle; // @synthesize showHighlightTopicStyle=_showHighlightTopicStyle;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(copy, nonatomic) NSString *topicName; // @synthesize topicName=_topicName;

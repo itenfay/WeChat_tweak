@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSMutableDictionary, NSString, WCSessionDSLExecuter, WCSessionFlowConfiger, WCSessionFlowSessionInfo, WCSessionFlowStatItem;
 
 @interface WCSessionFlowMgr
@@ -34,7 +36,6 @@
     WCSessionFlowConfiger *sessionConfiger;
 }
 
-- (void).cxx_destruct;
 - (id)getConfigMMKV;
 - (id)getDataMMKV;
 - (id)getSidBySessionId:(id)arg1;
@@ -115,4 +116,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GameItem, NSString, UIViewController;
 
@@ -17,7 +18,6 @@
     GameItem *_gameInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameItem *gameInfo; // @synthesize gameInfo=_gameInfo;
 @property(nonatomic) __weak UIViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 @property(nonatomic) int fromType; // @synthesize fromType=_fromType;
@@ -38,4 +38,3 @@
 - (id)initWithType:(id)arg1 url:(id)arg2 type:(int)arg3 viewController:(id)arg4;
 
 @end
-

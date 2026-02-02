@@ -25,7 +25,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithLocalId:(id)arg1 svrId:(id)arg2 url:(id)arg3 userName:(id)arg4 nickName:(id)arg5 title:(id)arg6 coverUrl:(id)arg7 itemShowType:(id)arg8 coverImage:(id)arg9 animatedImage:(id)arg10 animatedImageRect:(id)arg11;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BizRect *animatedImageRect; // @synthesize animatedImageRect=_animatedImageRect;
 @property(retain, nonatomic) FlutterStandardTypedData *animatedImage; // @synthesize animatedImage=_animatedImage;
 @property(retain, nonatomic) FlutterStandardTypedData *coverImage; // @synthesize coverImage=_coverImage;

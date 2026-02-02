@@ -33,7 +33,6 @@
     long long _requestedVerifyPausedLiveScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long requestedVerifyPausedLiveScene; // @synthesize requestedVerifyPausedLiveScene=_requestedVerifyPausedLiveScene;
 @property(nonatomic) __weak MMFinderLiveLogic *finderLiveLogic; // @synthesize finderLiveLogic=_finderLiveLogic;
 @property(nonatomic) __weak id <MMLivePauseViewModelDelegate> delegate; // @synthesize delegate=_delegate;

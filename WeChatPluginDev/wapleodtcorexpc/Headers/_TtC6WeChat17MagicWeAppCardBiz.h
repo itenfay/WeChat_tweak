@@ -20,7 +20,6 @@
     MISSING_TYPE *frameSetId2View;
 }
 
-- (void).cxx_destruct;
 - (void)bindWAMagicBrushFrameRuntime:(id)arg1;
 - (id)getAppId;
 - (id)getParentViewController;

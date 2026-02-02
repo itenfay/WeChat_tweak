@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, MMFinderLiveProductShareTask, NSString, WCLiveProductShareScrollActionSheet;
 
 @interface MMFinderLiveECProductShareLogic
@@ -12,7 +14,6 @@
     ForwardMessageLogicController *_forwardLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 @property(retain, nonatomic) MMFinderLiveProductShareTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) WCLiveProductShareScrollActionSheet *shareActionSheet; // @synthesize shareActionSheet=_shareActionSheet;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

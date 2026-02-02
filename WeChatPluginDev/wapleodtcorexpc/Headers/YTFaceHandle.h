@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, NSTimer, YtVideoSetting;
 @protocol YTAGReflectDeviceDelegate;
@@ -35,7 +36,6 @@
 + (id)checksum:(id)arg1 withData:(id)arg2;
 + (void)registerSDKLogger:(int)arg1 withListener:(CDUnknownBlockType)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reflectCallback; // @synthesize reflectCallback=_reflectCallback;
 @property(retain, nonatomic) NSMutableArray *BestImgPts; // @synthesize BestImgPts=_BestImgPts;
 @property(nonatomic) __weak id <YTAGReflectDeviceDelegate> device; // @synthesize device=_device;
@@ -68,4 +68,3 @@
 - (id)initWithAppId:(id)arg1 withExtraData:(id)arg2;
 
 @end
-

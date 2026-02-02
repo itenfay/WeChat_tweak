@@ -14,7 +14,6 @@
     MMCanvasJsApiHandler *_canvasJsApiHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCanvasJsApiHandler *canvasJsApiHandler; // @synthesize canvasJsApiHandler=_canvasJsApiHandler;
 @property(nonatomic) __weak id <MMCanvasRenderClientContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *canvasId; // @synthesize canvasId=_canvasId;

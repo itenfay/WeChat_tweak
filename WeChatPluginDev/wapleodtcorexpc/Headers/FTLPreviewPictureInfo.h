@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithImgInfo:(id)arg1 positionInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FLTImgPositionInfo *positionInfo; // @synthesize positionInfo=_positionInfo;
 @property(retain, nonatomic) FLTNewLifeCardImgInfo *imgInfo; // @synthesize imgInfo=_imgInfo;
 - (id)toList;

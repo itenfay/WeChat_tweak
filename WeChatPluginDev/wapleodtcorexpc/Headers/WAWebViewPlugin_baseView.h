@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface WAWebViewPlugin_baseView
@@ -14,7 +16,6 @@
 + (id)imageWithData:(id)arg1;
 + (void)refreshImageScrollView:(id)arg1 minimumZoomScale:(double)arg2 zoomScale:(double)arg3;
 + (void)recoverImageScrollView:(id)arg1;
-- (void).cxx_destruct;
 - (void)loadImageScrollView:(id)arg1 imageURL:(id)arg2 viewId:(unsigned int)arg3 zoomScale:(double)arg4 minimumZoomScale:(double)arg5;
 - (void)removeScrollImageViewWithViewId:(unsigned int)arg1;
 - (void)updateScrollImageViewWithParams:(id)arg1;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     MMUILabel *_noMoreTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int lineWordsInterval; // @synthesize lineWordsInterval=_lineWordsInterval;
 @property(retain, nonatomic) MMUILabel *noMoreTipsLabel; // @synthesize noMoreTipsLabel=_noMoreTipsLabel;
 @property(retain, nonatomic) UIView *lineRightView; // @synthesize lineRightView=_lineRightView;

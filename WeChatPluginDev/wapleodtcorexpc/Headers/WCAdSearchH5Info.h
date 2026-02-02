@@ -13,7 +13,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 - (_Bool)isValid;
 - (id)initWithCoder:(id)arg1;

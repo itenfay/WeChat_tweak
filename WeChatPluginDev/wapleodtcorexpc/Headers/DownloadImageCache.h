@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_m_uiLocalID;
 + (void)PBArrayAdd_m_nsChatName;
 + (void)PBArrayAdd_m_nsMD5;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bHD; // @synthesize m_bHD=_m_bHD;
 @property(nonatomic) unsigned int m_uiLastReadTime; // @synthesize m_uiLastReadTime=_m_uiLastReadTime;
 @property(nonatomic) unsigned int m_uiLocalID; // @synthesize m_uiLocalID=_m_uiLocalID;

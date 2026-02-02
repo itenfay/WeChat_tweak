@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveGiftWallInfo, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, NSArray, NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout, UIImageView, UIScrollView, UIView;
 
 @interface MMFinderLiveWishListDetailForAnchorPanel
@@ -35,7 +37,6 @@
     FinderLiveGiftWallInfo *_giftWallInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveGiftWallInfo *giftWallInfo; // @synthesize giftWallInfo=_giftWallInfo;
 @property(retain, nonatomic) MMUIButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(retain, nonatomic) MMUILabel *giftWallTitleLabel; // @synthesize giftWallTitleLabel=_giftWallTitleLabel;
@@ -109,4 +110,3 @@
 @property(readonly) Class superclass;
 
 @end
-

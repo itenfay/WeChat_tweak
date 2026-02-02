@@ -16,7 +16,6 @@
     unsigned long long _disappearDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long disappearDuration; // @synthesize disappearDuration=_disappearDuration;
 @property(nonatomic) unsigned long long disappearTime; // @synthesize disappearTime=_disappearTime;
 @property(nonatomic) _Bool isStart; // @synthesize isStart=_isStart;

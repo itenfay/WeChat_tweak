@@ -18,7 +18,6 @@
     FlutterBrandTLApiImplementation *_apiImpl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didAppear; // @synthesize didAppear=_didAppear;
 @property(retain, nonatomic) FlutterBrandTLApiImplementation *apiImpl; // @synthesize apiImpl=_apiImpl;
 @property(nonatomic) unsigned int enterSessionInfoNotifyType; // @synthesize enterSessionInfoNotifyType;

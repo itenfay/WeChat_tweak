@@ -13,7 +13,6 @@
     double _videoDurationLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double videoDurationLimit; // @synthesize videoDurationLimit=_videoDurationLimit;
 @property(nonatomic) double curVideoDuration; // @synthesize curVideoDuration=_curVideoDuration;
 @property(retain, nonatomic) MMImagePickerManagerOptionObj *optionObj; // @synthesize optionObj=_optionObj;

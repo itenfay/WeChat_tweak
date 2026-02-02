@@ -21,7 +21,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithIsLaunchViewMode:(id)arg1 containerViewX:(id)arg2 containerViewY:(id)arg3 containerViewWidth:(id)arg4 containerViewHeight:(id)arg5 containerViewBorderRadius:(id)arg6 needAnimatedPush:(id)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *needAnimatedPush; // @synthesize needAnimatedPush=_needAnimatedPush;
 @property(retain, nonatomic) NSNumber *containerViewBorderRadius; // @synthesize containerViewBorderRadius=_containerViewBorderRadius;
 @property(retain, nonatomic) NSNumber *containerViewHeight; // @synthesize containerViewHeight=_containerViewHeight;

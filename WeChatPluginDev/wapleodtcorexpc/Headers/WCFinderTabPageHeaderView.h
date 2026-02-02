@@ -31,7 +31,6 @@
     CAGradientLayer *_gradientMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientMaskLayer; // @synthesize gradientMaskLayer=_gradientMaskLayer;
 @property(nonatomic) unsigned long long selectFilterIndex; // @synthesize selectFilterIndex=_selectFilterIndex;
 @property(retain, nonatomic) WCFinderTabFilterView *filterView; // @synthesize filterView=_filterView;

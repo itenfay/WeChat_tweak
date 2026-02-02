@@ -13,7 +13,6 @@
     EffectGraph *_graph;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EffectGraph *graph; // @synthesize graph=_graph;
 @property(retain, nonatomic) EffectSpec *spec; // @synthesize spec=_spec;
 - (void)reset;

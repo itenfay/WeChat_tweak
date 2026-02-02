@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WAFileStorage : NSObject
 {
@@ -63,4 +64,3 @@
 + (void)saveImageWithAppID:(id)arg1 images:(id)arg2 completeHandler:(CDUnknownBlockType)arg3;
 
 @end
-

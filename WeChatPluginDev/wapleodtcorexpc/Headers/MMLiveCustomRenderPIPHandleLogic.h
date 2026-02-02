@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMFinderLiveTaskId, NSString, UIView;
 @protocol MMLiveCustomRenderPIPViewProtocol;
@@ -31,7 +32,6 @@
     unsigned long long _currentPIPStartScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;
 @property(nonatomic) _Bool isSystemPIPStarted; // @synthesize isSystemPIPStarted=_isSystemPIPStarted;
 @property(nonatomic) unsigned long long currentPIPStartScene; // @synthesize currentPIPStartScene=_currentPIPStartScene;
@@ -133,4 +133,3 @@
 @property(readonly) Class superclass;
 
 @end
-

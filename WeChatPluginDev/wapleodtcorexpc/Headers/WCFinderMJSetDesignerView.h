@@ -18,7 +18,6 @@
 + (double)height;
 + (id)buildTitleTextView:(double)arg1;
 + (id)genTitleLabelWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFollowButton *followBtn; // @synthesize followBtn=_followBtn;
 @property(retain, nonatomic) UILabel *songDescLabel; // @synthesize songDescLabel=_songDescLabel;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authIconView; // @synthesize authIconView=_authIconView;

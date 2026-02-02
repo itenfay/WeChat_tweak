@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIPercentDrivenInteractiveTransition.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIPanGestureRecognizer;
 
@@ -19,7 +20,6 @@
     struct CGRect _presentedFinianFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long panGestureType; // @synthesize panGestureType=_panGestureType;
 @property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(nonatomic) _Bool isTransitionFromPanGesture; // @synthesize isTransitionFromPanGesture=_isTransitionFromPanGesture;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

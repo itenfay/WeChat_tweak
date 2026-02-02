@@ -14,7 +14,6 @@
 }
 
 + (id)nowWithSales:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned long long sales; // @synthesize sales=_sales;
 

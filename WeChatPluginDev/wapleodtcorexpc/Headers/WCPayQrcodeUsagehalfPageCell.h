@@ -19,7 +19,6 @@
     UIButton *_container;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showInputField; // @synthesize showInputField=_showInputField;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UIButton *container; // @synthesize container=_container;

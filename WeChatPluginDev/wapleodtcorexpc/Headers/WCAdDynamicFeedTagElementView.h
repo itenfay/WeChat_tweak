@@ -15,7 +15,6 @@
     MMUILabel *_textView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) WCAdURLImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) WCAdTagNode *nodeInfo; // @synthesize nodeInfo=_nodeInfo;

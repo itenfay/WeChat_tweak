@@ -32,7 +32,6 @@
     NSString *m_nsIP;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *m_nsIP; // @synthesize m_nsIP;
 @property(retain, nonatomic) NSMutableData *m_dtResponseData; // @synthesize m_dtResponseData;
 @property(nonatomic) unsigned int m_uiMaxRetryCount; // @synthesize m_uiMaxRetryCount;

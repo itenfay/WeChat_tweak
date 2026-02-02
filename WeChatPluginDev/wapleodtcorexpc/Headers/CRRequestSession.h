@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSOperationQueue, NSURLSession;
 
@@ -17,7 +18,6 @@
 + (id)sessionWithURLSession:(id)arg1 queue:(id)arg2;
 + (id)sessionWithURLSession:(id)arg1;
 + (id)session;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *headers; // @synthesize headers=_headers;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -29,4 +29,3 @@
 - (id)initWithURLSession:(id)arg1 queue:(id)arg2;
 
 @end
-

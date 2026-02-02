@@ -27,7 +27,6 @@
     double _delayCallEndedSec;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double delayCallEndedSec; // @synthesize delayCallEndedSec=_delayCallEndedSec;
 @property(nonatomic) __weak id <WAAudioSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool loop; // @synthesize loop=_loop;

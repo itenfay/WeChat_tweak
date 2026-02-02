@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithTexts:(id)arg1 voiceIdSet:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *voiceIdSet; // @synthesize voiceIdSet=_voiceIdSet;
 @property(copy, nonatomic) NSArray *texts; // @synthesize texts=_texts;
 - (id)toList;

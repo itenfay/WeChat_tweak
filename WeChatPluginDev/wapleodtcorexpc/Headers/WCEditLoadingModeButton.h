@@ -14,7 +14,6 @@
     UIView *_crookBackGroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *crookBackGroundView; // @synthesize crookBackGroundView=_crookBackGroundView;
 @property(nonatomic) __weak MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) __weak UIImageView *crookIconView; // @synthesize crookIconView=_crookIconView;

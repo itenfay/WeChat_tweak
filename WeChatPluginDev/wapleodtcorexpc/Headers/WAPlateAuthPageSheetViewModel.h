@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WAPlateAuthorizePageSheet, WAPlateAuthorizeSheetInfo;
 
 @interface WAPlateAuthPageSheetViewModel
@@ -10,7 +12,6 @@
     CDUnknownBlockType _scrollToPlateAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scrollToPlateAction; // @synthesize scrollToPlateAction=_scrollToPlateAction;
 
 // Remaining properties
@@ -18,4 +19,3 @@
 @property(nonatomic) __weak WAPlateAuthorizePageSheet *pageSheet; // @dynamic pageSheet;
 
 @end
-

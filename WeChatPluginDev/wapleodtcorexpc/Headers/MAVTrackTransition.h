@@ -15,7 +15,6 @@
     CDStruct_1b6d18a9 _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool changed; // @synthesize changed=_changed;
 @property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) MAVVLogEffect *effect; // @synthesize effect=_effect;

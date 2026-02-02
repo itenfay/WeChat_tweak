@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_exposeCount;
 + (void)PBArrayAdd_firstExposeTimeMs;
 + (void)PBArrayAdd_ds;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderVvList; // @synthesize finderVvList=_finderVvList;
 @property(retain, nonatomic) NSString *stayTimeSecList; // @synthesize stayTimeSecList=_stayTimeSecList;
 @property(nonatomic) unsigned int deepReadCount; // @synthesize deepReadCount=_deepReadCount;

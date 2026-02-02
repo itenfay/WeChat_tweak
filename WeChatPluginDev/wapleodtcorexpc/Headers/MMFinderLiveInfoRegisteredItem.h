@@ -13,7 +13,6 @@
     unsigned long long _registeredCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long registeredCount; // @synthesize registeredCount=_registeredCount;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
 

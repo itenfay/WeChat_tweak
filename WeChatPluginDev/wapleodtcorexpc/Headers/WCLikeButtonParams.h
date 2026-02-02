@@ -26,7 +26,6 @@
 }
 
 + (id)defaultParams;
-- (void).cxx_destruct;
 @property(nonatomic) long long browseScene; // @synthesize browseScene=_browseScene;
 @property(nonatomic) _Bool isShowLikeCount; // @synthesize isShowLikeCount=_isShowLikeCount;
 @property(nonatomic) _Bool isEnhanceInteractionEnabled; // @synthesize isEnhanceInteractionEnabled=_isEnhanceInteractionEnabled;

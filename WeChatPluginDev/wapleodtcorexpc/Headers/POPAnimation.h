@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -15,7 +16,6 @@
     NSArray *_progressMarkers;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *progressMarkers; // @synthesize progressMarkers=_progressMarkers;
 @property(readonly, copy, nonatomic) id currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) void *solver; // @synthesize solver=_solver;
@@ -45,4 +45,3 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
-

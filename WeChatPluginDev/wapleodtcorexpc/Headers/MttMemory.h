@@ -15,7 +15,6 @@
 + (id)instanceWithPropertyInfo:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(nonatomic) int memorySize; // @synthesize memorySize=_memorySize;
-- (void).cxx_destruct;
 - (id)JSONString;
 - (id)JSONObject;
 

@@ -17,7 +17,6 @@
     unsigned long long _lastMMKVTrimTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastReadCacheFileTimeSec; // @synthesize lastReadCacheFileTimeSec=_lastReadCacheFileTimeSec;
 @property(nonatomic) unsigned long long lastMMKVTrimTimeMs; // @synthesize lastMMKVTrimTimeMs=_lastMMKVTrimTimeMs;
 @property(nonatomic) _Bool useMMKV; // @synthesize useMMKV=_useMMKV;

@@ -19,7 +19,6 @@
 
 + (id)eventChannelWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3;
 + (id)eventChannelWithName:(id)arg1 binaryMessenger:(id)arg2;
-- (void).cxx_destruct;
 - (void)setStreamHandler:(id)arg1;
 - (id)initWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3 taskQueue:(id)arg4;
 - (id)initWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3;

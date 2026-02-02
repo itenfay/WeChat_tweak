@@ -11,7 +11,6 @@
     NSObject<IWAAuthorizeAddAvatarService> *_addAvatarService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<IWAAuthorizeAddAvatarService> *addAvatarService; // @synthesize addAvatarService=_addAvatarService;
 - (void)onIWAAuthorizeAddAvatarCancel;
 - (void)onIWAAuthorizeModAvatarSuccess:(id)arg1;

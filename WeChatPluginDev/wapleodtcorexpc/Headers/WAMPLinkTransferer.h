@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WAThreadSafeMutableDictionary;
 
 @interface WAMPLinkTransferer
@@ -14,7 +16,6 @@
 + (void)transferNodeFromMPLinkString:(id)arg1 businessType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)transferNodeFromMPLinkString:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (_Bool)isMPLinkStringValid:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAThreadSafeMutableDictionary *transferCaches; // @synthesize transferCaches=_transferCaches;
 - (id)getNodeFromCache:(id)arg1;
 - (void)saveCachesWithMPShortLinkString:(id)arg1 transferredNode:(id)arg2;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

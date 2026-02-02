@@ -96,7 +96,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *virtualPath; // @synthesize virtualPath=_virtualPath;
 @property(retain, nonatomic) NSString *specifiedExtInfo; // @synthesize specifiedExtInfo=_specifiedExtInfo;
 @property(retain, nonatomic) NSData *extInfo; // @synthesize extInfo=_extInfo;

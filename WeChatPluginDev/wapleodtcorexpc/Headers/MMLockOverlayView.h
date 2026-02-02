@@ -13,7 +13,6 @@
     NSMutableArray *_pointsToDraw;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool errored; // @synthesize errored=_errored;
 @property(retain, nonatomic) NSMutableArray *pointsToDraw; // @synthesize pointsToDraw=_pointsToDraw;
 - (void)hightlightError;

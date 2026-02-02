@@ -16,7 +16,6 @@
 + (void)PBArrayAdd_tips;
 + (void)PBArrayAdd_authInfo;
 + (void)PBArrayAdd_appInfo;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tips; // @synthesize tips=_tips;
 @property(retain, nonatomic) WCAppAuthAuthInfo *authInfo; // @synthesize authInfo=_authInfo;
 @property(retain, nonatomic) WCAppAuthAppMetaInfo *appInfo; // @synthesize appInfo=_appInfo;

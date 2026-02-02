@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView;
 
@@ -17,7 +18,6 @@
     UIView *_closeHotView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *closeHotView; // @synthesize closeHotView=_closeHotView;
 @property(retain, nonatomic) UIImageView *closeLogoImageView; // @synthesize closeLogoImageView=_closeLogoImageView;
 @property(retain, nonatomic) UIView *closeView; // @synthesize closeView=_closeView;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMConfSDKNativeEngine : NSObject
 {
@@ -70,4 +71,3 @@
 + (void)updateFrameOrientation:(long long)arg1 isFrontCamera:(_Bool)arg2;
 
 @end
-

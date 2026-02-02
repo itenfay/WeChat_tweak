@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMFinderLiveQuickReplyModel, MMGrowTextView, MMUIButton, NSIndexPath, NSString;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *cleanButton; // @synthesize cleanButton=_cleanButton;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(retain, nonatomic) MMGrowTextView *textView; // @synthesize textView=_textView;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

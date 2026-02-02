@@ -10,7 +10,6 @@
     NSMutableDictionary *m_downloadTaskListDic;
 }
 
-- (void).cxx_destruct;
 - (void)onDownloadFinishedWithLoader:(id)arg1 AndData:(id)arg2;
 - (void)downloadImgUrlStr:(id)arg1 toPath:(id)arg2;
 - (void)preDownloadImgUrlStr:(id)arg1;

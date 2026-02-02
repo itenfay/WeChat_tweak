@@ -18,7 +18,6 @@
     WCCommentObjectFinderInfo *_finderInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCommentObjectFinderInfo *finderInfo; // @synthesize finderInfo=_finderInfo;
 @property(retain, nonatomic) WCCommentUniCommentInfo *uniCommentInfo; // @synthesize uniCommentInfo=_uniCommentInfo;
 @property(nonatomic) _Bool isSelfLiked; // @synthesize isSelfLiked=_isSelfLiked;

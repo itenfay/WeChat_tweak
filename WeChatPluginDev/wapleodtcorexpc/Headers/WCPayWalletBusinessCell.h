@@ -16,7 +16,6 @@
     MMUILabel *_subTitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) WCPayWebImageView *activityIconImgView; // @synthesize activityIconImgView=_activityIconImgView;

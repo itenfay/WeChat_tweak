@@ -24,7 +24,6 @@
     UIAccessibilityElement *_fullCardElement;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bReserved; // @synthesize bReserved=_bReserved;
 @property(retain, nonatomic) UIAccessibilityElement *fullCardElement; // @synthesize fullCardElement=_fullCardElement;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;

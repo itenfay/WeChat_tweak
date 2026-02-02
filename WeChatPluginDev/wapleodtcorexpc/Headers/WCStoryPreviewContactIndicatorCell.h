@@ -13,7 +13,6 @@
     MMCPLabel *_usernameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCPLabel *usernameLabel; // @synthesize usernameLabel=_usernameLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 - (void)setContact:(id)arg1;

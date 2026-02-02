@@ -12,7 +12,6 @@
     UIView *_line;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

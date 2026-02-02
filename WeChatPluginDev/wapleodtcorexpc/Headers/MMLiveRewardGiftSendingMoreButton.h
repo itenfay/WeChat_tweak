@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LOTAnimationView, MMFinderLiveRewardGiftItem, MMFinderLiveTaskId, NSString;
 @protocol MMLiveRewardGiftSendingMoreLogicDelegate;
 
@@ -23,7 +25,6 @@
     LOTAnimationView *_breatheAnimationView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseQuickSendAnimation; // @synthesize shouldUseQuickSendAnimation=_shouldUseQuickSendAnimation;
 @property(retain, nonatomic) LOTAnimationView *breatheAnimationView; // @synthesize breatheAnimationView=_breatheAnimationView;
 @property(nonatomic) _Bool isInterrupted; // @synthesize isInterrupted=_isInterrupted;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

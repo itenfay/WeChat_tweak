@@ -43,7 +43,6 @@
     NSMutableArray *_m_synthesizeRecordQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bIsShowHKFacingReceiveFirstTips; // @synthesize m_bIsShowHKFacingReceiveFirstTips=_m_bIsShowHKFacingReceiveFirstTips;
 @property(retain, nonatomic) NSMutableArray *m_synthesizeRecordQueue; // @synthesize m_synthesizeRecordQueue=_m_synthesizeRecordQueue;
 @property(retain, nonatomic) NSMutableArray *m_groupPayPaySuccessRecordArray; // @synthesize m_groupPayPaySuccessRecordArray=_m_groupPayPaySuccessRecordArray;

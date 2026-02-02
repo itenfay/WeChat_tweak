@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_familyEdcationHadGetContactUserNameList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *familyEdcationHadGetContactUserNameList; // @synthesize familyEdcationHadGetContactUserNameList=_familyEdcationHadGetContactUserNameList;
 - (id)getPBPropertyTable;
 

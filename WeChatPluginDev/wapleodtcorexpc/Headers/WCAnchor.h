@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -14,11 +15,9 @@
     struct CGPoint _offset;
 }
 
-- (void).cxx_destruct;
 - (struct CGPoint)point;
 - (id)view;
 - (CDUnknownBlockType)offsetBy;
 - (id)initWithView:(id)arg1 type:(int)arg2;
 
 @end
-

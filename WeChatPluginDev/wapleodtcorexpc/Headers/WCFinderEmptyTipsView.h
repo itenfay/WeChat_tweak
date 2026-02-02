@@ -21,7 +21,6 @@
 + (id)defaultTipsWordingOfState:(unsigned long long)arg1;
 + (id)defaultIconImageOfState:(unsigned long long)arg1;
 + (unsigned long long)defaultStyleFlagOfState:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(nonatomic) double loadingSize; // @synthesize loadingSize=_loadingSize;
 @property(retain, nonatomic) RichTextView *stateTipsTextView; // @synthesize stateTipsTextView=_stateTipsTextView;

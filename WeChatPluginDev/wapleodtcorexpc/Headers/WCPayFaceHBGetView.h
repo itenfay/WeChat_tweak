@@ -34,7 +34,6 @@
     UIView *_blurView;
 }
 
-- (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)updateFaceHB:(id)arg1;
 - (void)removeBlurView;

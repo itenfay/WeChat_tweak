@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, AVAssetReader, AVAssetReaderOutput, AVVideoComposition, NSMutableArray, NSObject;
 @protocol OS_dispatch_queue;
 
@@ -19,7 +21,6 @@
     CDStruct_1b6d18a9 _bufferDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreloading; // @synthesize isPreloading=_isPreloading;
 @property(nonatomic) CDStruct_1b6d18a9 bufferDuration; // @synthesize bufferDuration=_bufferDuration;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *loadBufferQueue; // @synthesize loadBufferQueue=_loadBufferQueue;
@@ -49,4 +50,3 @@
 - (void)dealloc;
 
 @end
-

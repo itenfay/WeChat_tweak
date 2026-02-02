@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)adapterWithURL:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (void)fetchDataItemMediaAudioUrl:(CDUnknownBlockType)arg1;
 
@@ -27,4 +27,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -32,7 +32,6 @@
     TLProfileModel *_profileModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TLProfileModel *profileModel; // @synthesize profileModel=_profileModel;
 @property(retain, nonatomic) UIView *backgroundBlurView; // @synthesize backgroundBlurView=_backgroundBlurView;
 @property(retain, nonatomic) UIViewPropertyAnimator *blurAnimator; // @synthesize blurAnimator=_blurAnimator;

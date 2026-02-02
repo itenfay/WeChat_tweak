@@ -23,7 +23,6 @@
     WCPayComplianceHalfPage *_complianceHalfPage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) WCPayComplianceHalfPage *complianceHalfPage; // @synthesize complianceHalfPage=_complianceHalfPage;
 @property(retain, nonatomic) NSString *currentQrcode; // @synthesize currentQrcode=_currentQrcode;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;

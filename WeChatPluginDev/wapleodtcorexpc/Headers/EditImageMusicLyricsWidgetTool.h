@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, UIImageView, UITextView, WCStoryLyricWaveView;
 
 @interface EditImageMusicLyricsWidgetTool
@@ -20,7 +22,6 @@
 }
 
 + (id)generateWidgetFromState:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 videoCropTimeRange; // @synthesize videoCropTimeRange=_videoCropTimeRange;
 @property(nonatomic) double lyricTotalTime; // @synthesize lyricTotalTime=_lyricTotalTime;
 @property(copy, nonatomic) CDUnknownBlockType didDoubleTapBlock; // @synthesize didDoubleTapBlock=_didDoubleTapBlock;
@@ -60,4 +61,3 @@
 - (void)setup;
 
 @end
-

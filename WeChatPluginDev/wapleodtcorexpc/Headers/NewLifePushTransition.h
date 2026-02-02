@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage;
 
@@ -19,7 +20,6 @@
     struct CGRect _fromContentFrame;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType endCallback; // @synthesize endCallback=_endCallback;
 @property(copy, nonatomic) CDUnknownBlockType startCallback; // @synthesize startCallback=_startCallback;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

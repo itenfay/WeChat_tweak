@@ -16,7 +16,6 @@
 }
 
 + (struct CGSize)itemSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;
 @property(retain, nonatomic) MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(nonatomic, getter=isRead) _Bool read; // @synthesize read=_read;

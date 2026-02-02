@@ -39,7 +39,6 @@
 + (id)fetchLikeTitle:(id)arg1;
 + (double)calcSocialLikeViewHeight:(id)arg1;
 + (long long)fetchDisplayType:(id)arg1 inlineRemainWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long viewDisplayType; // @synthesize viewDisplayType=_viewDisplayType;
 @property(nonatomic) _Bool isLikeButtonTransformAnimating; // @synthesize isLikeButtonTransformAnimating=_isLikeButtonTransformAnimating;
 @property(nonatomic) _Bool isLikeIconAnimating; // @synthesize isLikeIconAnimating=_isLikeIconAnimating;

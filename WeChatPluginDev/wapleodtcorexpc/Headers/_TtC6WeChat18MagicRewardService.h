@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE;
 
 @interface _TtC6WeChat18MagicRewardService
@@ -18,7 +20,6 @@
     MISSING_TYPE *_pixelRatio;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onPkgUpdateFail:(id)arg1 reason:(unsigned long long)arg2;
 - (void)onPkgUpdateSuccess:(id)arg1 pkgVersion:(id)arg2;
@@ -43,4 +44,3 @@
 @property(nonatomic) long long frameRate;
 
 @end
-

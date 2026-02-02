@@ -12,7 +12,6 @@
     NSArray *_subViewItems;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subViewItems; // @synthesize subViewItems=_subViewItems;
 
 @end

@@ -11,7 +11,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *attachedTextLabel; // @synthesize attachedTextLabel=_attachedTextLabel;
 - (void)setCustomizeRewardItem:(id)arg1;
 - (void)layoutSubviews;

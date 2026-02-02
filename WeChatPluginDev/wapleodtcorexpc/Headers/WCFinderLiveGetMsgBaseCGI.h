@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveGetMsgBaseCGI
 {
     _Bool _asyncTransferData;
@@ -26,4 +28,3 @@
 - (void)transferDataFromResp:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

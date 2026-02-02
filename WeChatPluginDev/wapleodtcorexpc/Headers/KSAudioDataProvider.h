@@ -21,7 +21,6 @@
     NSDictionary *_providerWorkDetail;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSDictionary *providerWorkDetail; // @synthesize providerWorkDetail=_providerWorkDetail;
 @property(nonatomic) __weak id <KSAudioDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;

@@ -11,7 +11,6 @@
     long long _musicOrder;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long musicOrder; // @synthesize musicOrder=_musicOrder;
 @property(retain, nonatomic) OMJMusicInfo *omjMusicInfo; // @synthesize omjMusicInfo=_omjMusicInfo;
 - (id)copyWithZone:(struct _NSZone *)arg1;

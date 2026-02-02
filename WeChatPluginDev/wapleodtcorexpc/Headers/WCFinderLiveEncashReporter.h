@@ -13,7 +13,6 @@
     long long m_lastSceneType;
 }
 
-- (void).cxx_destruct;
 - (void)reportEncashAction:(unsigned long long)arg1 withSceneType:(long long)arg2;
 - (void)onEncashAction:(unsigned long long)arg1;
 - (void)openEncashPage;

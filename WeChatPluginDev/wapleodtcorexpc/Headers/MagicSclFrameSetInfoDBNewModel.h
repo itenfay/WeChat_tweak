@@ -37,7 +37,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) int frameSetHeight; // @synthesize frameSetHeight=_frameSetHeight;
 @property(copy, nonatomic) NSString *frameSetRootPath; // @synthesize frameSetRootPath=_frameSetRootPath;
 @property(copy, nonatomic) NSString *frameSetName; // @synthesize frameSetName=_frameSetName;

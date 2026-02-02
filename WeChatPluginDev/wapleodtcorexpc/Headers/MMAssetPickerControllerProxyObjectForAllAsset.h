@@ -18,7 +18,6 @@
     NSMutableArray *_otherAlbumSelectedInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *otherAlbumSelectedInfos; // @synthesize otherAlbumSelectedInfos=_otherAlbumSelectedInfos;
 @property(nonatomic) __weak id <MMImagePickerControlCenter> controlCenter; // @synthesize controlCenter=_controlCenter;
 @property(retain, nonatomic) NSMutableArray *m_assetArray; // @synthesize m_assetArray=_m_assetArray;

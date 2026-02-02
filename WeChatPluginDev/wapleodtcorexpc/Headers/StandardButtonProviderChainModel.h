@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -17,7 +18,6 @@
     UIView *_viewSuperview;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *viewSuperview; // @synthesize viewSuperview=_viewSuperview;
 @property(readonly, nonatomic) CDUnknownBlockType Link; // @synthesize Link=_Link;
 @property(readonly, nonatomic) CDUnknownBlockType WideBig; // @synthesize WideBig=_WideBig;
@@ -52,4 +52,3 @@
 @property(readonly, nonatomic) CDUnknownBlockType BigStrong;
 
 @end
-

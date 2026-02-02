@@ -60,7 +60,6 @@
 + (void)PBArrayAdd_m_nsLastLoginName;
 + (void)PBArrayAdd_m_nsLastUserName;
 + (void)PBArrayAdd_m_nsCurUsrName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_isAreadyChangeWeChatFontSetting; // @synthesize m_isAreadyChangeWeChatFontSetting=_m_isAreadyChangeWeChatFontSetting;
 @property(nonatomic) _Bool m_isAreadyShowFontSettingTips; // @synthesize m_isAreadyShowFontSettingTips=_m_isAreadyShowFontSettingTips;
 @property(retain, nonatomic) NSString *m_nsSystemContentSize; // @synthesize m_nsSystemContentSize=_m_nsSystemContentSize;

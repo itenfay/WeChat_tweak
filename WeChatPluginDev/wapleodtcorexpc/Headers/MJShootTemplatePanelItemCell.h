@@ -19,7 +19,6 @@
     MMCameraTemplateItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMCameraTemplateItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) MJCircleProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIView *progressBGView; // @synthesize progressBGView=_progressBGView;

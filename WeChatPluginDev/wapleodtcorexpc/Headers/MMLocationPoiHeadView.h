@@ -37,7 +37,6 @@
     double _animationPercent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double animationPercent; // @synthesize animationPercent=_animationPercent;
 @property(retain, nonatomic) FixTitleColorButton *favBtn; // @synthesize favBtn=_favBtn;
 @property(retain, nonatomic) MMUIButton *privatTipsView; // @synthesize privatTipsView=_privatTipsView;

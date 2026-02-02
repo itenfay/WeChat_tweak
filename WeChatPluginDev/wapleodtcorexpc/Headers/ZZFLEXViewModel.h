@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol ZZFLEXViewModelDelegate;
@@ -22,7 +23,6 @@
     struct CGSize _viewSize;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType configAction; // @synthesize configAction=_configAction;
 @property(copy, nonatomic) CDUnknownBlockType selectedAction; // @synthesize selectedAction=_selectedAction;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
@@ -43,4 +43,3 @@
 - (struct CGSize)visableSizeForHostView:(id)arg1 angel:(id)arg2 sectionInsets:(struct UIEdgeInsets)arg3;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderLiveGetLotteryHistoryCGI
@@ -19,7 +21,6 @@
     unsigned long long _getType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int supportMultiType; // @synthesize supportMultiType=_supportMultiType;
 @property(nonatomic) unsigned long long getType; // @synthesize getType=_getType;
 @property(nonatomic) long long finderLiveScene; // @synthesize finderLiveScene=_finderLiveScene;
@@ -38,4 +39,3 @@
 - (id)initWithLiveIdForAudience:(unsigned long long)arg1 liveTaskId:(id)arg2 objectId:(unsigned long long)arg3 nonceId:(id)arg4 lastBuffer:(id)arg5 getType:(unsigned long long)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

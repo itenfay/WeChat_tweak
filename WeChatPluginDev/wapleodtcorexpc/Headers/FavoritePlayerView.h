@@ -36,7 +36,6 @@
     struct CGSize _videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rawPlayStartTime; // @synthesize rawPlayStartTime=_rawPlayStartTime;
 @property(nonatomic) unsigned long long rawBtnClickTime; // @synthesize rawBtnClickTime=_rawBtnClickTime;
 @property(nonatomic) _Bool isShowRawPlaySucc; // @synthesize isShowRawPlaySucc=_isShowRawPlaySucc;

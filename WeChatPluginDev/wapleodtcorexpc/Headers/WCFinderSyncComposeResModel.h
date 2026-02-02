@@ -15,7 +15,6 @@
     ABAReportPrams *_videoScoreParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ABAReportPrams *videoScoreParams; // @synthesize videoScoreParams=_videoScoreParams;
 @property(copy, nonatomic) NSString *outputFile; // @synthesize outputFile=_outputFile;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;

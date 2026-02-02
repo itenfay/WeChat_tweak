@@ -30,7 +30,6 @@
 
 + (double)CardItemViewTopHeight;
 + (double)itemViewHieght;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *iconBgView; // @synthesize iconBgView=_iconBgView;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIButton *tagButton; // @synthesize tagButton=_tagButton;

@@ -16,7 +16,6 @@
 
 + (double)cellHeight;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_5102c92c sessionItem; // @synthesize sessionItem=_sessionItem;
 @property(retain, nonatomic) UILabel *sourceLabel; // @synthesize sourceLabel=_sourceLabel;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;

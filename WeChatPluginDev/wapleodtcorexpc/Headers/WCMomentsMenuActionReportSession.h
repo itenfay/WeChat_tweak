@@ -13,7 +13,6 @@
     WCMomentsMenuActionReportForwardInfo *_forwardInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsMenuActionReportForwardInfo *forwardInfo; // @synthesize forwardInfo=_forwardInfo;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) WCMomentsMenuActionReportSnsInfo *snsInfo; // @synthesize snsInfo=_snsInfo;

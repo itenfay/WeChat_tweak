@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onSeletBank:(id)arg1 bankType:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;
 

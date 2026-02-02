@@ -25,7 +25,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *destHitRectStr; // @synthesize destHitRectStr=_destHitRectStr;
 @property(retain, nonatomic) NSString *srcHitRectStr; // @synthesize srcHitRectStr=_srcHitRectStr;
 @property(retain, nonatomic) NSString *destDisplayRectStr; // @synthesize destDisplayRectStr=_destDisplayRectStr;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UILabel, WCFinderDyeWebImageView;
 
@@ -21,7 +22,6 @@
 + (_Bool)hasEnoughMarginWithJumpInfo:(id)arg1 maxWidth:(double)arg2;
 + (id)jumpInfoTailIcon:(id)arg1;
 + (struct CGSize)calculateDisplaySize:(struct CGSize)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tailIconObserver; // @synthesize tailIconObserver=_tailIconObserver;
 @property(retain, nonatomic) UIImageView *tailIcon; // @synthesize tailIcon=_tailIcon;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

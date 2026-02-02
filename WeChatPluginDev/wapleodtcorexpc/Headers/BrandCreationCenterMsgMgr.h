@@ -10,7 +10,6 @@
     MMLRUCache *_notifyUUIDCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLRUCache *notifyUUIDCache; // @synthesize notifyUUIDCache=_notifyUUIDCache;
 - (void)syncWithActionNotifyData:(id)arg1 uuid:(id)arg2;
 

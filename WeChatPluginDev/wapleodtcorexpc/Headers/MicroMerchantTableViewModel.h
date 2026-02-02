@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CContact, NSArray, NSMutableDictionary, WCDataItem, WCMicroMerchantFeedsGroup, WCTimeLineVideoPreloadMgr;
 
@@ -19,7 +20,6 @@
     NSArray *_initialWSFeedList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *initialWSFeedList; // @synthesize initialWSFeedList=_initialWSFeedList;
 @property(nonatomic) _Bool isUnfolded; // @synthesize isUnfolded=_isUnfolded;
 @property(nonatomic) _Bool isUnfoldEnabled; // @synthesize isUnfoldEnabled=_isUnfoldEnabled;
@@ -54,4 +54,3 @@
 - (id)initWithGroupItem:(id)arg1 ofPlaceHolder:(id)arg2;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CADisplayLink, JITRuntimeTouchReceiverView, MBGLView, MMWebImageView, MagicBrushCore, MagicBrushEAGLLayerRT, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSURLRequest, RCDraggableButton, UILabel, UIScreenEdgePanGestureRecognizer, UIView, WAGameActionSheet, WAGameEvaluatePopSheet, WAGameReviewPopSheet, WAGameRollProgressView, WAJITRuntime, WAMenuPopInteractiveTransition, WAOpenGLView, WCActionSheet, YYWAWebView;
 @protocol IWAEmoticonBoardService, OS_dispatch_queue, WAGameContextDelegate, WAGameKeyboardDelegate;
 
@@ -94,7 +96,6 @@
 + (id)createLoadingView:(id)arg1 inView:(id)arg2 insertLoadingViewAtIndexZero:(_Bool)arg3;
 + (id)createLoadingView:(id)arg1 inView:(id)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jitLiteMode; // @synthesize jitLiteMode=_jitLiteMode;
 @property(retain, nonatomic) NSMutableDictionary *mbCanvasMap; // @synthesize mbCanvasMap=_mbCanvasMap;
 @property(retain, nonatomic) NSMutableDictionary *mbCaptureInfos; // @synthesize mbCaptureInfos=_mbCaptureInfos;
@@ -412,4 +413,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
 + (id)xmlAttributePropertylistForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 @property(retain, nonatomic) NSString *brandId; // @synthesize brandId=_brandId;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

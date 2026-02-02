@@ -36,7 +36,6 @@
 + (void)PBArrayAdd_imgSizeHeight;
 + (void)PBArrayAdd_imgSizeWidth;
 + (void)PBArrayAdd_formatName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int FICVersion; // @synthesize FICVersion=_FICVersion;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(nonatomic) unsigned int pageSize; // @synthesize pageSize=_pageSize;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJShootVisageInspectorItem, NSArray, NSIndexPath;
 
 @interface MJShootMakeupInspectorViewModel
@@ -13,7 +15,6 @@
 }
 
 + (id)defaultMakeupItems;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) MJShootVisageInspectorItem *selectedMakeupItem; // @synthesize selectedMakeupItem=_selectedMakeupItem;
 @property(retain, nonatomic) NSArray *makeupItems; // @synthesize makeupItems=_makeupItems;
@@ -31,4 +32,3 @@
 - (void)fetchMakeupDataIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

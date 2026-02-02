@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol WXMASConstraintDelegate;
 
@@ -13,7 +14,6 @@
     id <WXMASConstraintDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WXMASConstraintDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool updateExisting; // @synthesize updateExisting=_updateExisting;
 - (void)uninstall;
@@ -74,4 +74,3 @@
 - (id)init;
 
 @end
-

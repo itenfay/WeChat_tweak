@@ -14,7 +14,6 @@
     UINavigationController *_originalNav;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *originalNav; // @synthesize originalNav=_originalNav;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

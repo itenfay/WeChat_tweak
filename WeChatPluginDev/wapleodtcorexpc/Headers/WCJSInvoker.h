@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -20,7 +21,6 @@
 + (id)safeArray:(id)arg1;
 + (id)safeDictionary:(id)arg1;
 + (id)safeString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *debugString; // @synthesize debugString=_debugString;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSArray *invokeArgs; // @synthesize invokeArgs=_invokeArgs;
@@ -40,4 +40,3 @@
 - (id)initWithJavascript:(id)arg1;
 
 @end
-

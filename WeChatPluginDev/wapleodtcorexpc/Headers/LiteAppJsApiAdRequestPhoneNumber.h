@@ -12,7 +12,6 @@
     WCAdConfirmHalfScreenAdapter *_phoneNumAdapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConfirmHalfScreenAdapter *phoneNumAdapter; // @synthesize phoneNumAdapter=_phoneNumAdapter;
 @property(retain, nonatomic) NSString *requestName; // @synthesize requestName=_requestName;
 @property(retain, nonatomic) NSString *requestIcon; // @synthesize requestIcon=_requestIcon;

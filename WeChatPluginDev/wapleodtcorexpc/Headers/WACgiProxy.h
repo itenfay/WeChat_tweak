@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSLock, NSMapTable, NSString;
 
@@ -17,7 +18,6 @@
 + (void)cancelCgiRequest:(unsigned int)arg1;
 + (unsigned int)sendCgi:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMapTable *mapTable; // @synthesize mapTable=_mapTable;
 - (id)convertWACgiProfileInfoFromProtobufCgiProFile:(id)arg1;
@@ -44,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

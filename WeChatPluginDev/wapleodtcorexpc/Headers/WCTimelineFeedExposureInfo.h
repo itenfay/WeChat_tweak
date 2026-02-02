@@ -22,7 +22,6 @@
     NSString *_nickName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int objectType; // @synthesize objectType=_objectType;
 @property(nonatomic) _Bool isAd; // @synthesize isAd=_isAd;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

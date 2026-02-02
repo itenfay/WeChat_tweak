@@ -14,7 +14,6 @@
     MISSING_TYPE *feedbackReason;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCardStyle:(id)arg1 jumpId:(id)arg2 feedbackReason:(id)arg3;
 @property(nonatomic, copy) NSString *feedbackReason;

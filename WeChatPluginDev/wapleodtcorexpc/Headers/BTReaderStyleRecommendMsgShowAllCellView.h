@@ -11,7 +11,6 @@
     UIImageView *m_arrowView;
 }
 
-- (void).cxx_destruct;
 - (void)initArrowView;
 - (void)initTitleLabel;
 - (void)layoutSubviews;

@@ -15,7 +15,6 @@
     NSString *_targetPageUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int publiclibversion; // @synthesize publiclibversion=_publiclibversion;
 @property(nonatomic) unsigned int clientTimestamp; // @synthesize clientTimestamp=_clientTimestamp;
 @property(retain, nonatomic) NSString *targetPageUrl; // @synthesize targetPageUrl=_targetPageUrl;

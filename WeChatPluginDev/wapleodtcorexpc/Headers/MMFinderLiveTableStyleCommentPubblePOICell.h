@@ -12,7 +12,6 @@
     UIImageView *_arrowImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) MMUILabel *signLabel; // @synthesize signLabel=_signLabel;
 @property(retain, nonatomic) MMUIView *signBackView; // @synthesize signBackView=_signBackView;

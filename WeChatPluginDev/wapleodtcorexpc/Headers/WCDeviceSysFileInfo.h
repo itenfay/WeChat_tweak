@@ -14,7 +14,6 @@
     NSString *_fileNumber;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileNumber; // @synthesize fileNumber=_fileNumber;
 @property(retain, nonatomic) NSString *modifyDate; // @synthesize modifyDate=_modifyDate;
 @property(retain, nonatomic) NSString *createDate; // @synthesize createDate=_createDate;

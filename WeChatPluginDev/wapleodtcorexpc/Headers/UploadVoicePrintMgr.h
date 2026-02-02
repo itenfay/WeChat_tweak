@@ -27,7 +27,6 @@
     NSString *_RsaVoiceKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *RsaVoiceKey; // @synthesize RsaVoiceKey=_RsaVoiceKey;
 @property(retain, nonatomic) NSString *RsaCreateTicket; // @synthesize RsaCreateTicket;
 @property(retain, nonatomic) NSString *RsaVerifyTicket; // @synthesize RsaVerifyTicket;

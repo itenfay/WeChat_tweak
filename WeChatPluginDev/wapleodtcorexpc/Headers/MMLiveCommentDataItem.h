@@ -152,7 +152,6 @@
 + (id)createLocalAddCommentAssistantNotice:(id)arg1;
 + (_Bool)isLocalComment:(id)arg1 equalRemoteComment:(id)arg2;
 + (id)uniqueCommentClientMsgId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long notifyMsgPriority; // @synthesize notifyMsgPriority=_notifyMsgPriority;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) _Bool hasTopDisplayInTable; // @synthesize hasTopDisplayInTable=_hasTopDisplayInTable;

@@ -15,7 +15,6 @@
 }
 
 + (id)channelNameFromViewId:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak NSObject<FlutterBinaryMessenger> *messenger; // @synthesize messenger=_messenger;
 - (id)createArgsCodec;

@@ -27,7 +27,6 @@
     NSString *_gameliveInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *gameliveInfo; // @synthesize gameliveInfo=_gameliveInfo;
 @property(nonatomic) unsigned int pluginSessionID; // @synthesize pluginSessionID=_pluginSessionID;
 @property(nonatomic) unsigned int hostVersion; // @synthesize hostVersion=_hostVersion;

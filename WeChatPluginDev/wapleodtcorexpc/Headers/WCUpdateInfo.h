@@ -17,7 +17,6 @@
     NSString *_maxIOSVersion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *maxIOSVersion; // @synthesize maxIOSVersion=_maxIOSVersion;
 @property(retain, nonatomic) NSString *minIOSVersion; // @synthesize minIOSVersion=_minIOSVersion;
 @property(retain, nonatomic) NSString *pid; // @synthesize pid=_pid;

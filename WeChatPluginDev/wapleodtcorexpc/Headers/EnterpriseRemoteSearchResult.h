@@ -14,7 +14,6 @@
     NSMutableArray *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;

@@ -18,7 +18,6 @@
     MMLiveMsgTipsExpandViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveMsgTipsExpandViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;

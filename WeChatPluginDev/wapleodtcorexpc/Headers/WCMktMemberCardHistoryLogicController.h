@@ -18,7 +18,6 @@
     WCMktDeleteInvalidTicketCgi *_deleteCardCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNeedUpdateDataAfterViewControllerWillApper; // @synthesize bNeedUpdateDataAfterViewControllerWillApper=_bNeedUpdateDataAfterViewControllerWillApper;
 @property(retain, nonatomic) WCMktDeleteInvalidTicketCgi *deleteCardCgi; // @synthesize deleteCardCgi=_deleteCardCgi;
 @property(retain, nonatomic) WCMktMemberCardHistoryPageCgi *historyHomePageCgi; // @synthesize historyHomePageCgi=_historyHomePageCgi;

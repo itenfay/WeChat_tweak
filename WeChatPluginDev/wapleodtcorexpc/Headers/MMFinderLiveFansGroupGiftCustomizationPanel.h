@@ -27,7 +27,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool changeCommiting; // @synthesize changeCommiting=_changeCommiting;
 @property(nonatomic) _Bool textEditing; // @synthesize textEditing=_textEditing;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

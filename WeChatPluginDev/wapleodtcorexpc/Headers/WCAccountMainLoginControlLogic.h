@@ -15,7 +15,6 @@
     unsigned int m_uiCurrentLoginType;
 }
 
-- (void).cxx_destruct;
 - (void)onMainLoginUseBothDevice;
 - (void)onMainLoginPasskeyConnectWithAutoLogin:(_Bool)arg1;
 - (void)onMainLoginAppleConnect;

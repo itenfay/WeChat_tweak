@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FBSDKLoginManager;
 
 @interface FacebookAuth
@@ -13,7 +15,6 @@
 
 + (void)asyncGetMeInfoWithSize:(struct CGSize)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)tryInitSDK;
-- (void).cxx_destruct;
 @property(nonatomic) long long m_uiFacebookUsageType; // @synthesize m_uiFacebookUsageType;
 - (void)reAuth;
 - (void)requestNewPermission;
@@ -25,4 +26,3 @@
 - (id)init;
 
 @end
-

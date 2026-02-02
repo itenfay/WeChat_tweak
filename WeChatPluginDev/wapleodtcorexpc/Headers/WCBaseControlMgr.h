@@ -10,7 +10,6 @@
     NSMutableArray *m_arrLogicStack;
 }
 
-- (void).cxx_destruct;
 - (void)cancelAllLogicExcept:(id)arg1;
 - (void)cancelAllLogic;
 - (id)getAllLogic;

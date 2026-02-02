@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderGetLiveInfoReq_FinderGetLiveInfoSceneNotificationInfo, FinderGetLiveInfoReq_LiveADBypassInfo, NSString;
 
 @interface WCFinderGetLiveInfoCGI
@@ -16,7 +18,6 @@
     FinderGetLiveInfoReq_FinderGetLiveInfoSceneNotificationInfo *_notificationInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderGetLiveInfoReq_FinderGetLiveInfoSceneNotificationInfo *notificationInfo; // @synthesize notificationInfo=_notificationInfo;
 @property(retain, nonatomic) FinderGetLiveInfoReq_LiveADBypassInfo *liveAdByPassInfo; // @synthesize liveAdByPassInfo=_liveAdByPassInfo;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -30,4 +31,3 @@
 - (id)initWithLiveId:(unsigned long long)arg1 andFinderUsername:(id)arg2 andScene:(unsigned int)arg3 liveAdByPassInfo:(id)arg4 notificationInfo:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

@@ -35,7 +35,6 @@
 }
 
 + (id)shared;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *mmkv; // @synthesize mmkv=_mmkv;
 @property(retain, nonatomic) TingCrossplatformManager *crossPlatformManager; // @synthesize crossPlatformManager=_crossPlatformManager;
 @property(nonatomic) _Bool enableFindEntrance; // @synthesize enableFindEntrance=_enableFindEntrance;

@@ -12,7 +12,6 @@
     NSString *_currentEmail;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentEmail; // @synthesize currentEmail=_currentEmail;
 @property(retain, nonatomic) UIButton *unbindEmailButton; // @synthesize unbindEmailButton=_unbindEmailButton;
 @property(retain, nonatomic) SettingModifyEmailOnBindHeadView *m_commonHeadView; // @synthesize m_commonHeadView;

@@ -14,7 +14,6 @@
     unsigned long long _timestampMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timestampMs; // @synthesize timestampMs=_timestampMs;
 @property(nonatomic) unsigned long long totalCostTime; // @synthesize totalCostTime=_totalCostTime;
 @property(nonatomic) unsigned long long costTime; // @synthesize costTime=_costTime;

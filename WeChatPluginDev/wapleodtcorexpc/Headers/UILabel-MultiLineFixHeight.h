@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UILabel.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ZZLabelChainModel;
 
@@ -40,4 +41,3 @@
 - (void)sizeToFitWidth:(double)arg1;
 - (void)sizeToFitWidth:(double)arg1 lineBreakMode:(long long)arg2;
 @end
-

@@ -12,7 +12,6 @@
     NSMutableArray *_historyRecords;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *historyRecords; // @synthesize historyRecords=_historyRecords;
 - (void)loadData;
 - (id)historyRecordAtIndex:(unsigned long long)arg1;

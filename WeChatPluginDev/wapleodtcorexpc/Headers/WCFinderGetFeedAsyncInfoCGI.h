@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, WCFinderGetFeedAsyncInfoCGIConfig;
 
 @interface WCFinderGetFeedAsyncInfoCGI
@@ -14,7 +16,6 @@
     WCFinderGetFeedAsyncInfoCGIConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderGetFeedAsyncInfoCGIConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSMutableArray *scenesArray; // @synthesize scenesArray=_scenesArray;
 @property(nonatomic) int asyncLoadInfoScene; // @synthesize asyncLoadInfoScene=_asyncLoadInfoScene;
@@ -27,4 +28,3 @@
 - (id)initWithObjectUidList:(id)arg1 scene:(int)arg2 commentScene:(int)arg3 config:(id)arg4 successful:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

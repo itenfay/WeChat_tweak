@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveDiscoverPreloadInfo, NSData, WCFinderNavLiveStreamPrefetchExtraData, WCFinderNavLiveStreamRequestModel;
 
 @interface WCFinderNavLiveStreamCGI
@@ -19,7 +21,6 @@
 }
 
 + (id)prefetchCacheHashKey:(int)arg1 containerId:(unsigned long long)arg2 tabId:(unsigned long long)arg3 relatedObjectId:(unsigned long long)arg4 homePageScene:(unsigned long long)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderNavLiveStreamPrefetchExtraData *prefetchExtra; // @synthesize prefetchExtra=_prefetchExtra;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
@@ -45,4 +46,3 @@
 - (id)initWithModel:(id)arg1 overLiteCgi:(_Bool)arg2 successBlock:(CDUnknownBlockType)arg3 failedBlock:(CDUnknownBlockType)arg4;
 
 @end
-

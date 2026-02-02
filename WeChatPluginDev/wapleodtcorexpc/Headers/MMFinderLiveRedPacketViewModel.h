@@ -21,7 +21,6 @@
     MMFinderLiveRedPacketItem *_targetRedPacket;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRedPacketItem *targetRedPacket; // @synthesize targetRedPacket=_targetRedPacket;
 @property(retain, nonatomic) MMFinderLiveRedPacketQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak MMFinderLiveRedPacketLogic *logic; // @synthesize logic=_logic;

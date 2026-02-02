@@ -43,7 +43,6 @@
     unsigned long long _preSelectIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long preSelectIndex; // @synthesize preSelectIndex=_preSelectIndex;
 @property(nonatomic) unsigned long long tabCount; // @synthesize tabCount=_tabCount;
 @property(nonatomic) _Bool tabViewContainerBlurEffectEnabled; // @synthesize tabViewContainerBlurEffectEnabled=_tabViewContainerBlurEffectEnabled;

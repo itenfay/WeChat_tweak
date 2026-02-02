@@ -14,7 +14,6 @@
     NSMutableDictionary *_pluginName2InstanceDic;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *pluginName2InstanceDic; // @synthesize pluginName2InstanceDic=_pluginName2InstanceDic;
 @property(readonly, nonatomic) __weak id <ILiteAppJsApiPluginControllerProtocol> ownerLiteAppController; // @synthesize ownerLiteAppController=_ownerLiteAppController;
 - (void)loadingInitPluginArray;

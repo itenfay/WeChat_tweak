@@ -18,7 +18,6 @@
     _Bool m_bFreqLimit;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MassSendInfo *m_info; // @synthesize m_info;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (id)GetAllMassSendContact;

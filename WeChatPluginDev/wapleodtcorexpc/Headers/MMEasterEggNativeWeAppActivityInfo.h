@@ -11,7 +11,6 @@
 }
 
 + (id)activityNodeName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *weAppUsername; // @synthesize weAppUsername=_weAppUsername;
 - (_Bool)isValid;
 - (void)tryParseWeAppUsernameFromActivityNode:(struct XmlReaderNode_t *)arg1;

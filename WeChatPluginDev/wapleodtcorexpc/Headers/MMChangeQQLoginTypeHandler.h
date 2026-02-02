@@ -12,7 +12,6 @@
     NSString *_loginName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int lastLoginAcountType; // @synthesize lastLoginAcountType=_lastLoginAcountType;
 @property(retain, nonatomic) NSString *loginName; // @synthesize loginName=_loginName;
 @property(retain, nonatomic) PasswordLogic *pwdLogic; // @synthesize pwdLogic=_pwdLogic;

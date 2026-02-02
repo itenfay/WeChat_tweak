@@ -16,7 +16,6 @@
 }
 
 + (id)sharedServices;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMapLoggerConfig *loggerConfig; // @synthesize loggerConfig=_loggerConfig;
 @property(retain, nonatomic) NSMutableDictionary *internalCacheOptions; // @synthesize internalCacheOptions=_internalCacheOptions;
 @property(nonatomic) _Bool enableDebugLog; // @synthesize enableDebugLog=_enableDebugLog;

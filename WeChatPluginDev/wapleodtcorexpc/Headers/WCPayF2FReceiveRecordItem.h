@@ -16,7 +16,6 @@
     unsigned long long _amount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *transID; // @synthesize transID=_transID;

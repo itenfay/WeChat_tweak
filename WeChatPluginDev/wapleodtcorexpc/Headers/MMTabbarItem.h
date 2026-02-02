@@ -22,7 +22,6 @@
     NSValue *_customSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *customSize; // @synthesize customSize=_customSize;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSURL *highlightImageDarkUrl; // @synthesize highlightImageDarkUrl=_highlightImageDarkUrl;

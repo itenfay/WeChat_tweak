@@ -38,7 +38,6 @@
 + (id)templateWithName:(id)arg1 coverUrls:(id)arg2 templateId:(id)arg3 descUrl:(id)arg4 descVer:(unsigned long long)arg5 localSVGIconName:(id)arg6;
 + (id)templateWithName:(id)arg1 coverUrls:(id)arg2 templateId:(id)arg3 localSVGIconName:(id)arg4;
 + (id)templateWithName:(id)arg1 coverUrls:(id)arg2 templateId:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *aiModelType; // @synthesize aiModelType=_aiModelType;
 @property(readonly, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) unsigned long long maximumAssetCount; // @synthesize maximumAssetCount=_maximumAssetCount;

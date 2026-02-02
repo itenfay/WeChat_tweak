@@ -18,7 +18,6 @@
     MMFinderLiveEnterSqaureTransitionContext *_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveEnterSqaureTransitionContext *context; // @synthesize context=_context;
 @property(nonatomic) _Bool isPop; // @synthesize isPop=_isPop;
 @property(nonatomic) __weak id <MMFinderLiveEnterSquareAnimiatedDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
     MMUILabel *_tips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *tips; // @synthesize tips=_tips;
 @property(retain, nonatomic) MMUILabel *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) MMUILabel *title; // @synthesize title=_title;

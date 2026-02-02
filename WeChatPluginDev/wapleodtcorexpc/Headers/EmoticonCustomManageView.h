@@ -19,7 +19,6 @@
     id <EmoticonCustomManageViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmoticonCustomManageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *countContainerView; // @synthesize countContainerView=_countContainerView;
 @property(retain, nonatomic) MMBadgeView *countView; // @synthesize countView=_countView;

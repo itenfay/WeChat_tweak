@@ -16,7 +16,6 @@
 
 + (id)errorInfoFromBaseResponse:(id)arg1 networkError:(id)arg2;
 + (id)errorInfoFromBaseResponse:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BaseResponseErrMsg *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) int baseResponseRet; // @synthesize baseResponseRet=_baseResponseRet;
 @property(nonatomic) unsigned int uiMessage; // @synthesize uiMessage=_uiMessage;

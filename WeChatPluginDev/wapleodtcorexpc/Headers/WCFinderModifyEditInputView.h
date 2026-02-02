@@ -19,7 +19,6 @@
     long long _maxCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long maxCount; // @synthesize maxCount=_maxCount;
 @property(retain, nonatomic) WCFinderModTextSelectModel *modifyModel; // @synthesize modifyModel=_modifyModel;
 @property(retain, nonatomic) UILabel *countLimitLabel; // @synthesize countLimitLabel=_countLimitLabel;

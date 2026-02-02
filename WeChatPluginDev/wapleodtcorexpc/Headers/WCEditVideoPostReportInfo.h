@@ -16,7 +16,6 @@
     double _editedVideoDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double editedVideoDuration; // @synthesize editedVideoDuration=_editedVideoDuration;
 @property(nonatomic) double originVideoDuration; // @synthesize originVideoDuration=_originVideoDuration;
 @property(copy, nonatomic) NSString *originVideoPath; // @synthesize originVideoPath=_originVideoPath;

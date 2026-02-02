@@ -16,7 +16,6 @@
     UIButton *_acceptButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(retain, nonatomic) UIButton *rejectButton; // @synthesize rejectButton=_rejectButton;
 @property(retain, nonatomic) _WAAutoFillDataTextView *textView; // @synthesize textView=_textView;

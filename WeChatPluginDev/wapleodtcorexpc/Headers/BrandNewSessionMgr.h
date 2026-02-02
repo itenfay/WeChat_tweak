@@ -16,7 +16,6 @@
     NSMutableArray *m_setUsrNameArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandSessionCache *m_mainSessionCache; // @synthesize m_mainSessionCache;
 - (void)onMigrateBrandMsgFinish:(unsigned long long)arg1;
 - (unsigned int)genSendMsgTime;

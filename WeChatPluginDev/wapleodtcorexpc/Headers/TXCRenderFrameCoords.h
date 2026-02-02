@@ -12,7 +12,6 @@
     TXCVideoFrameCoords *_frameCoords;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCVideoFrameCoords *frameCoords; // @synthesize frameCoords=_frameCoords;
 - (float *)texcoordVertexAtIndex:(unsigned long long)arg1;
 - (unsigned long long)texcoordVertexCount;

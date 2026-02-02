@@ -10,7 +10,6 @@
     WXPBGeneratedMessage *_innerRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXPBGeneratedMessage *innerRequest; // @synthesize innerRequest=_innerRequest;
 - (void)finderLiveActivityCgiDidFailWithError:(id)arg1 response:(id)arg2;
 - (void)didGetFinderLiveActivityCgiResponse:(id)arg1;

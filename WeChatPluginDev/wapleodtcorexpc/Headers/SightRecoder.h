@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMovieCompressor, NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _completionHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) MMovieCompressor *movieCompressor; // @synthesize movieCompressor=_movieCompressor;
 @property(retain, nonatomic) NSString *dstVideoPath; // @synthesize dstVideoPath=_dstVideoPath;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
     unsigned long long _uiTotalAmount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uiTotalAmount; // @synthesize uiTotalAmount=_uiTotalAmount;
 @property(nonatomic) unsigned int uiIsSetAmount; // @synthesize uiIsSetAmount=_uiIsSetAmount;
 @property(nonatomic) int iCurrency; // @synthesize iCurrency=_iCurrency;

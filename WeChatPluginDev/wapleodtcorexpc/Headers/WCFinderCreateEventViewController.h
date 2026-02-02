@@ -34,7 +34,6 @@
     UIView *_agreetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *agreetView; // @synthesize agreetView=_agreetView;
 @property(retain, nonatomic) MMUIButton *agreetButton; // @synthesize agreetButton=_agreetButton;
 @property(retain, nonatomic) RichTextView *statementView; // @synthesize statementView=_statementView;

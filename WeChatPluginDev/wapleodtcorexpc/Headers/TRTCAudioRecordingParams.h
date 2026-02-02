@@ -13,7 +13,6 @@
     unsigned long long _recordingContent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long recordingContent; // @synthesize recordingContent=_recordingContent;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (id)init;

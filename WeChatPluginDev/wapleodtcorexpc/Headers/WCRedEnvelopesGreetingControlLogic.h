@@ -22,7 +22,6 @@
     NSString *_reportSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reportSessionId; // @synthesize reportSessionId=_reportSessionId;
 @property(retain, nonatomic) MMWebViewController *h5RedEnvPrepayWebUI; // @synthesize h5RedEnvPrepayWebUI=_h5RedEnvPrepayWebUI;
 @property(retain, nonatomic) NSString *unqiueId; // @synthesize unqiueId=_unqiueId;

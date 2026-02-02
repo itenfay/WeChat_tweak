@@ -20,7 +20,6 @@
     UIButton *_profileButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *profileButton; // @synthesize profileButton=_profileButton;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;

@@ -17,7 +17,6 @@
     CMessageWrap *_messageWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 @property(retain, nonatomic) HwClientEncryptFileInfo *clientEncryptInfo; // @synthesize clientEncryptInfo=_clientEncryptInfo;
 @property(nonatomic) int cdnAppType; // @synthesize cdnAppType=_cdnAppType;

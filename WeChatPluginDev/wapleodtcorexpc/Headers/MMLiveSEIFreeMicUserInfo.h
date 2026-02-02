@@ -13,7 +13,6 @@
     NSString *_uId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int us; // @synthesize us=_us;
 @property(retain, nonatomic) NSString *uId; // @synthesize uId=_uId;
 - (_Bool)isTalking;

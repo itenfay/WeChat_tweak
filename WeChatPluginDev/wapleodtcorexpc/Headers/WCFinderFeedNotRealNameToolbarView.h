@@ -16,7 +16,6 @@
 }
 
 + (double)toolbarHeightWith:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *retryColor; // @synthesize retryColor=_retryColor;
 @property(retain, nonatomic) UIColor *tipsLabelColor; // @synthesize tipsLabelColor=_tipsLabelColor;
 @property(nonatomic) __weak id <WCFinderFeedNotRealNameToolbarViewDelegate> delegate; // @synthesize delegate=_delegate;

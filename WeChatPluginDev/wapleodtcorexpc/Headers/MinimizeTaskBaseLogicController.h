@@ -13,7 +13,6 @@
     UIViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) MinimizeTaskData *taskData; // @synthesize taskData=_taskData;
 - (void)onEnterRecentUsedTask:(id)arg1;

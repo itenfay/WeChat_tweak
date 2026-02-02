@@ -13,7 +13,6 @@
     struct CGRect _mainViewRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect mainViewRect; // @synthesize mainViewRect=_mainViewRect;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (_Bool)zoomAnimatorUseTranSnapViewWithSnapAgain;

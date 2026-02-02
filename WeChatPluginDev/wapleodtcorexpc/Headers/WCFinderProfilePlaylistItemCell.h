@@ -23,7 +23,6 @@
 }
 
 + (double)displayHeight:(double)arg1 firstColumn:(_Bool)arg2 showPlayInfo:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *playInfoLabel; // @synthesize playInfoLabel=_playInfoLabel;
 @property(retain, nonatomic) UIImageView *playInfoIconView; // @synthesize playInfoIconView=_playInfoIconView;
 @property(nonatomic) struct CGSize cacheSize; // @synthesize cacheSize=_cacheSize;

@@ -10,7 +10,6 @@
     NSMutableDictionary *_funcImpl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *funcImpl; // @synthesize funcImpl=_funcImpl;
 - (void)onServiceClearData;
 - (void)onServiceInit;

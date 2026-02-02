@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType openFailCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType openFailCallback; // @synthesize openFailCallback;
 @property(nonatomic) unsigned long long enterTimeInMs; // @synthesize enterTimeInMs;
 @property(nonatomic) _Bool isPresentModal; // @synthesize isPresentModal;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

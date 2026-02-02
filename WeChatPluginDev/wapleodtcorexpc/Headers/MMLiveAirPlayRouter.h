@@ -16,7 +16,6 @@
 }
 
 + (id)sharedRouter;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVRoutePickerView *routePickerView; // @synthesize routePickerView=_routePickerView;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) _Bool disableMutePlay; // @synthesize disableMutePlay=_disableMutePlay;

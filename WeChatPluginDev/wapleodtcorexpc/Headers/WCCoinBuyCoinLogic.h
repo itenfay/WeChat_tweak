@@ -20,7 +20,6 @@
     MMUIViewController *_loadingVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *loadingVC; // @synthesize loadingVC=_loadingVC;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;

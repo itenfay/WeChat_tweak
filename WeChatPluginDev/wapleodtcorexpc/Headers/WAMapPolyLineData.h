@@ -24,7 +24,6 @@
     long long _displayLevel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long displayLevel; // @synthesize displayLevel=_displayLevel;
 @property(nonatomic) double symbolGap; // @synthesize symbolGap=_symbolGap;
 @property(nonatomic) long long style; // @synthesize style=_style;

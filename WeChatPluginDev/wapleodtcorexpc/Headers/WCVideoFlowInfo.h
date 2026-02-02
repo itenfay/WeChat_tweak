@@ -54,7 +54,6 @@
 + (void)PBArrayAdd_searchId;
 + (void)PBArrayAdd_expand;
 + (void)PBArrayAdd_vid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *extParamsNSCodingData; // @synthesize extParamsNSCodingData=_extParamsNSCodingData;
 @property(retain, nonatomic) NSMutableArray *extParams; // @synthesize extParams=_extParams;
 @property(nonatomic) long long sourceJumpType; // @synthesize sourceJumpType=_sourceJumpType;

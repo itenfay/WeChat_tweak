@@ -23,7 +23,6 @@
     GCDragDecorateView *_dragDecorateView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool anotherScrollViewOriginBounces; // @synthesize anotherScrollViewOriginBounces=_anotherScrollViewOriginBounces;
 @property(nonatomic) _Bool isBannerShow; // @synthesize isBannerShow=_isBannerShow;
 @property(retain, nonatomic) GCDragDecorateView *dragDecorateView; // @synthesize dragDecorateView=_dragDecorateView;

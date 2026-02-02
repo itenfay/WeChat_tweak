@@ -21,7 +21,6 @@
 
 + (id)new;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_70ca3131 cronetRequestCallBack; // @synthesize cronetRequestCallBack=_cronetRequestCallBack;
 @property(copy, nonatomic) NSString *cronetRequestId; // @synthesize cronetRequestId=_cronetRequestId;
 @property(nonatomic) __weak id <WCURLSessionTaskInternalDelegate> taskDelegate; // @synthesize taskDelegate=_taskDelegate;

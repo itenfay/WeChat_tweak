@@ -22,7 +22,6 @@
     CDStruct_14d5dc5e _inputMatrix;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_14d5dc5e inputMatrix; // @synthesize inputMatrix=_inputMatrix;
 @property(nonatomic) float inputRatio; // @synthesize inputRatio=_inputRatio;
 @property(retain, nonatomic) id <MTLTexture> inputTexture; // @synthesize inputTexture=_inputTexture;

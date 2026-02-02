@@ -13,7 +13,6 @@
     NSMutableDictionary *_contentIdToBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contentIdToBackgroundView; // @synthesize contentIdToBackgroundView=_contentIdToBackgroundView;
 @property(retain, nonatomic) UIView *currentPatBackgroundView; // @synthesize currentPatBackgroundView=_currentPatBackgroundView;
 @property(retain, nonatomic) NSArray *patBackgroundViews; // @synthesize patBackgroundViews=_patBackgroundViews;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderLiveGestureLuaScriptRegistrationTask : NSObject
 {
@@ -11,9 +12,7 @@
     CDUnknownBlockType _gestureIdsSource;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType gestureIdsSource; // @synthesize gestureIdsSource=_gestureIdsSource;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 
 @end
-

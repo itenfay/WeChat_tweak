@@ -10,7 +10,6 @@
     AVAsset *_asset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 - (id)trackInfoForType:(id)arg1 atIndex:(long long)arg2;
 - (id)tracksForType:(id)arg1;

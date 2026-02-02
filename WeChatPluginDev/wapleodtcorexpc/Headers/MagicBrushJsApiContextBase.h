@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -13,7 +14,6 @@
     NSMutableDictionary *_weappPluginPool;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *weappPluginPool; // @synthesize weappPluginPool=_weappPluginPool;
 @property(retain, nonatomic) NSMutableDictionary *webviewPluginPool; // @synthesize webviewPluginPool=_webviewPluginPool;
 - (id)provideCurrentViewController;
@@ -64,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

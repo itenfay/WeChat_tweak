@@ -13,7 +13,6 @@
     unsigned long long _sessionSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sessionSize; // @synthesize sessionSize=_sessionSize;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 

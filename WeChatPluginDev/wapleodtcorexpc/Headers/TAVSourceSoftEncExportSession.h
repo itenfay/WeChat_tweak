@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAssetReaderAudioMixOutput, AVAssetReaderVideoCompositionOutput, AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, NSCondition, NSError, NSObject, NSURL, TAVExportReportData, TAVSourceExportReader;
 @protocol OS_dispatch_queue;
 
@@ -44,7 +46,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) long long backgroundCount; // @synthesize backgroundCount=_backgroundCount;
 @property(nonatomic) double exportStartTime; // @synthesize exportStartTime=_exportStartTime;
 @property(retain, nonatomic) TAVExportReportData *exportReportData; // @synthesize exportReportData=_exportReportData;
@@ -116,4 +117,3 @@
 - (id)init;
 
 @end
-

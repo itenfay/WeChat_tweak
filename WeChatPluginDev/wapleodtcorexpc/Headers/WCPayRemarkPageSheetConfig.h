@@ -21,7 +21,6 @@
     long long _bottomType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxInputLengthForDiaplay; // @synthesize maxInputLengthForDiaplay=_maxInputLengthForDiaplay;
 @property(nonatomic) long long bottomType; // @synthesize bottomType=_bottomType;
 @property(retain, nonatomic) NSString *rightButtonTitle; // @synthesize rightButtonTitle=_rightButtonTitle;

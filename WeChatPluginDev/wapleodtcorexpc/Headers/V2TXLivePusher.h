@@ -19,7 +19,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct VideoSize)getVideoSizeWith:(long long)arg1 mode:(long long)arg2;
 - (id)convertToInnerFrame:(id)arg1;
 - (unsigned long long)convertToInnerFormat:(long long)arg1;

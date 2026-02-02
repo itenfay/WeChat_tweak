@@ -10,7 +10,6 @@
     CaraCppJoinLiveQualityProphet *_underlying;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CaraCppJoinLiveQualityProphet *underlying; // @synthesize underlying=_underlying;
 - (void)reportThatLiveRoomLag:(id)arg1 context:(id)arg2;
 - (void)stopPredict;

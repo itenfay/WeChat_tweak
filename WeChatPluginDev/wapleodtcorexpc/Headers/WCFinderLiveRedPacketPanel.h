@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, WCFinderLiveRedPacketItemView;
 
 @interface WCFinderLiveRedPacketPanel
@@ -14,7 +16,6 @@
     UIView *_headView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headView; // @synthesize headView=_headView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) CDUnknownBlockType liveRedPacketPanelBlock; // @synthesize liveRedPacketPanelBlock=_liveRedPacketPanelBlock;
@@ -30,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

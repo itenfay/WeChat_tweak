@@ -17,7 +17,6 @@
     id <NSObject><IWCDevicePedometerSearchViewControllerExt> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <NSObject><IWCDevicePedometerSearchViewControllerExt> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView=_m_tableView;
 - (void)onWCDeviceBindEnd:(id)arg1 Error:(id)arg2;

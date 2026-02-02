@@ -14,7 +14,6 @@
     NSMutableDictionary *_averFrameTimeRecordDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *averFrameTimeRecordDict; // @synthesize averFrameTimeRecordDict=_averFrameTimeRecordDict;
 @property(retain, nonatomic) NSMutableDictionary *executeRecordDict; // @synthesize executeRecordDict=_executeRecordDict;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

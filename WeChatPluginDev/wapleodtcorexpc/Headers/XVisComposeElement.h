@@ -21,7 +21,6 @@
     struct CGRect _normalizeFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect normalizeFrame; // @synthesize normalizeFrame=_normalizeFrame;
 @property(nonatomic) struct CGRect normalizeCropRect; // @synthesize normalizeCropRect=_normalizeCropRect;
 @property(nonatomic) struct CGSize inputSize; // @synthesize inputSize=_inputSize;

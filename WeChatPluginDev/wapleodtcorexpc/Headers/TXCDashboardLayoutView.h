@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSString, TXCDashboardWindow, UITableView, UITextView;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)defaultLayoutView;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentShowDashboardID; // @synthesize currentShowDashboardID=_currentShowDashboardID;
 @property(retain, nonatomic) NSDictionary *dashboardInfo; // @synthesize dashboardInfo=_dashboardInfo;
 @property(nonatomic, getter=isCollapseTableView) _Bool collapseTableView; // @synthesize collapseTableView=_collapseTableView;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

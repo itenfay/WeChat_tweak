@@ -43,7 +43,6 @@
 }
 
 + (id)generateWidgetFromState:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreShock; // @synthesize ignoreShock=_ignoreShock;
 @property(nonatomic) unsigned long long handleGestureCount; // @synthesize handleGestureCount=_handleGestureCount;
 @property(nonatomic) CDStruct_c97747ee gestureStartState; // @synthesize gestureStartState=_gestureStartState;

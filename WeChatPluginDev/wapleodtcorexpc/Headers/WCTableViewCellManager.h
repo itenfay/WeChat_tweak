@@ -67,7 +67,6 @@
 + (id)normalCellForTitle:(id)arg1;
 + (id)centerCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 detail:(id)arg4;
 + (id)centerCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(copy, nonatomic) NSArray *customRowAction; // @synthesize customRowAction=_customRowAction;
 @property(retain, nonatomic) UIColor *fSeperateLineColor; // @synthesize fSeperateLineColor=_fSeperateLineColor;

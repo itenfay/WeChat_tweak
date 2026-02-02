@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAppViewControllerManager, MMTimer, MMUIWindow, NSRecursiveLock, NSString, UIWindow;
 
 @interface MicroMessengerAppDelegate
@@ -33,7 +35,6 @@
 }
 
 + (id)GlobalInstance;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long protectedDataStatus; // @synthesize protectedDataStatus=_protectedDataStatus;
 @property(copy, nonatomic) CDUnknownBlockType backgroundSessionCompletionHandler; // @synthesize backgroundSessionCompletionHandler=_backgroundSessionCompletionHandler;
 @property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
@@ -194,4 +195,3 @@
 @property(readonly) Class superclass;
 
 @end
-

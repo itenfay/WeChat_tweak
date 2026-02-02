@@ -13,7 +13,6 @@
     NSMutableDictionary *_universalCleanMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *universalCleanMap; // @synthesize universalCleanMap=_universalCleanMap;
 @property(retain, nonatomic) NSMutableDictionary *universalReportMap; // @synthesize universalReportMap=_universalReportMap;
 @property(retain, nonatomic) NSMutableDictionary *allClassName; // @synthesize allClassName=_allClassName;

@@ -17,7 +17,6 @@
     NSString *_unpackDestination;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *unpackDestination; // @synthesize unpackDestination=_unpackDestination;
 @property _Bool bUnpacking; // @synthesize bUnpacking=_bUnpacking;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *unpackQueue; // @synthesize unpackQueue=_unpackQueue;

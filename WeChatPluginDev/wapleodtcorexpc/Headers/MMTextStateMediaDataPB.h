@@ -12,7 +12,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_textStateMediaUploadTaskInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTextStateMediaUploadTaskInfo *textStateMediaUploadTaskInfo; // @synthesize textStateMediaUploadTaskInfo=_textStateMediaUploadTaskInfo;
 - (id)getPBPropertyTable;
 

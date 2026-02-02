@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMMLiveRewardQuotaSettingDetailCell, MMUILabel, NSString, UISwitch, UIView;
 @protocol MMLiveRewardQuotaSettingSheetViewDelegate;
 
@@ -22,7 +24,6 @@
     unsigned long long _rewardQuota;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rewardQuota; // @synthesize rewardQuota=_rewardQuota;
 @property(retain, nonatomic) MMMLiveRewardQuotaSettingDetailCell *detailCell; // @synthesize detailCell=_detailCell;
 @property(retain, nonatomic) UIView *footerSeparatorLine; // @synthesize footerSeparatorLine=_footerSeparatorLine;
@@ -62,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

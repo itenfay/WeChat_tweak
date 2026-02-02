@@ -10,7 +10,6 @@
     CContact *_chatRoomContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *chatRoomContact; // @synthesize chatRoomContact=_chatRoomContact;
 - (void)createUserFinished:(id)arg1;
 - (void)createUserClosed;

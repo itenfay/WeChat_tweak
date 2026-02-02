@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSArray.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSArray (WXMASAdditions)
 - (id)mas_commonSuperviewOfViews;
@@ -13,4 +14,3 @@
 - (id)mas_updateConstraints:(CDUnknownBlockType)arg1;
 - (id)mas_makeConstraints:(CDUnknownBlockType)arg1;
 @end
-

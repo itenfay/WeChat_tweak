@@ -15,7 +15,6 @@
     NSString *_detailText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;

@@ -15,7 +15,6 @@
     CADisplayLink *_displayLink;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) NSMutableDictionary *nativeViews; // @synthesize nativeViews=_nativeViews;
 @property(retain, nonatomic) NSMapTable *textureContainers; // @synthesize textureContainers=_textureContainers;

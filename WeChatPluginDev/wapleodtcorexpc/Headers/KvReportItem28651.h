@@ -42,7 +42,6 @@
     NSString *_extraData_42;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isControlGroup_53; // @synthesize isControlGroup_53=_isControlGroup_53;
 @property(nonatomic) unsigned int exptShowFlag_52; // @synthesize exptShowFlag_52=_exptShowFlag_52;
 @property(nonatomic) unsigned int dataMode_51; // @synthesize dataMode_51=_dataMode_51;

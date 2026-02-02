@@ -12,7 +12,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <HoneyPaySelectCardTypeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)useBlackStatusbar;

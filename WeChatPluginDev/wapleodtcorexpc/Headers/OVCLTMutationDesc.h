@@ -14,7 +14,6 @@
     NSDictionary *_mutationOptions;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *mutationOptions; // @synthesize mutationOptions=_mutationOptions;
 @property(readonly, nonatomic) OVCLTLayerSpecifier *ltLayerSpecifier; // @synthesize ltLayerSpecifier=_ltLayerSpecifier;
 @property(readonly, nonatomic) OVCLTMutationKind *mutationKind; // @synthesize mutationKind=_mutationKind;

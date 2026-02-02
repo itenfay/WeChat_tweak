@@ -30,7 +30,6 @@
 }
 
 + (id)getSocialLikeLogicWithDataItem:(id)arg1 contentItemScene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFireworkCheerAnimationView *fullScreenAnimationView; // @synthesize fullScreenAnimationView=_fullScreenAnimationView;
 @property(nonatomic) _Bool mainMediaPlayingFlag; // @synthesize mainMediaPlayingFlag=_mainMediaPlayingFlag;
 @property(nonatomic) _Bool fireworkCheerCommentAnimationPendingFlag; // @synthesize fireworkCheerCommentAnimationPendingFlag=_fireworkCheerCommentAnimationPendingFlag;

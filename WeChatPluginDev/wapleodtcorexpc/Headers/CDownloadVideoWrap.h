@@ -19,7 +19,6 @@
     unsigned int m_uiNetwork;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiNetwork; // @synthesize m_uiNetwork;
 @property(retain, nonatomic) NSData *m_dtVideo; // @synthesize m_dtVideo;
 @property(nonatomic) unsigned int m_uiVideoStartPos; // @synthesize m_uiVideoStartPos;

@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)releaseFace;
 - (void)getPoseAngle:(id)arg1;
 - (void)getPartConfidence:(id)arg1;

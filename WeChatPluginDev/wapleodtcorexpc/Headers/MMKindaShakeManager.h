@@ -15,7 +15,6 @@
     MMVoidCallback *_m_onDelayNotifyCallback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_delayMs; // @synthesize m_delayMs=_m_delayMs;
 @property(retain, nonatomic) MMVoidCallback *m_onDelayNotifyCallback; // @synthesize m_onDelayNotifyCallback=_m_onDelayNotifyCallback;
 @property(retain, nonatomic) MMVoidCallback *onShakeCallback; // @synthesize onShakeCallback=_onShakeCallback;

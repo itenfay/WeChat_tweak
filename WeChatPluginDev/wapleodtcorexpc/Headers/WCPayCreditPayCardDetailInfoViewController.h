@@ -12,7 +12,6 @@
     UIButton *m_footerButton;
 }
 
-- (void).cxx_destruct;
 - (void)setDelegate:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onUnBind;

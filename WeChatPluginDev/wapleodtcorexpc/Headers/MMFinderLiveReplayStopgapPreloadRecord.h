@@ -36,7 +36,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) NSString *qualityTag; // @synthesize qualityTag=_qualityTag;
 @property(nonatomic) unsigned int qualityLevel; // @synthesize qualityLevel=_qualityLevel;

@@ -12,7 +12,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponent *theChosenComponent; // @synthesize theChosenComponent=_theChosenComponent;
 @property(retain, nonatomic) WCCanvasComponentItem *theChosenItem; // @synthesize theChosenItem=_theChosenItem;
 - (void)shareComponentDidBeClickedWithType:(long long)arg1;

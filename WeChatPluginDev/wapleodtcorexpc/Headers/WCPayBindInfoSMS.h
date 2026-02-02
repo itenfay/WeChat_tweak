@@ -21,7 +21,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(copy, nonatomic) NSString *autoDeductBankSerial; // @synthesize autoDeductBankSerial=_autoDeductBankSerial;
 @property(copy, nonatomic) NSString *autoDeductBankType; // @synthesize autoDeductBankType=_autoDeductBankType;

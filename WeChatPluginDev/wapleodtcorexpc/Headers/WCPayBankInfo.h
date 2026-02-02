@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_polling_forbid_word;
 + (void)PBArrayAdd_bind_serial;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *polling_forbid_word; // @synthesize polling_forbid_word=_polling_forbid_word;
 @property(retain, nonatomic) NSString *bind_serial; // @synthesize bind_serial=_bind_serial;
 - (id)getPBPropertyTable;

@@ -15,7 +15,6 @@
 }
 
 + (id)BindCardContextWithBindCardUuid:(id)arg1 deviceName:(id)arg2 deviceType:(id)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(readonly, nonatomic) NSString *bindCardUuid; // @synthesize bindCardUuid=_bindCardUuid;

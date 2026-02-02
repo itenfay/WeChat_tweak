@@ -14,7 +14,6 @@
     MAVVideoComposition *_composition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayingBeforeEnterBackground; // @synthesize isPlayingBeforeEnterBackground=_isPlayingBeforeEnterBackground;
 @property(retain, nonatomic) MAVVideoComposition *composition; // @synthesize composition=_composition;
 @property(retain, nonatomic) MAVVideoCompositionPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;

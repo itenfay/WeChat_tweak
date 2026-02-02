@@ -12,7 +12,6 @@
     WCFinderLiveShareExtraInstantDiscountActivityExtra *_instantDiscountActivityExtra;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareExtraInstantDiscountActivityExtra *instantDiscountActivityExtra; // @synthesize instantDiscountActivityExtra=_instantDiscountActivityExtra;
 
 @end

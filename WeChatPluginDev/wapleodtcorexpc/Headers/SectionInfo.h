@@ -13,7 +13,6 @@
 }
 
 + (id)create:(unsigned long long)arg1 size:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(nonatomic) long long start; // @synthesize start=_start;

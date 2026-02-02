@@ -20,7 +20,6 @@
     UILabel *_noShareScopeDataTips;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *noShareScopeDataTips; // @synthesize noShareScopeDataTips=_noShareScopeDataTips;
 @property(retain, nonatomic) WCTextStatusShareScopeBottomView *statusScopeBottomTip; // @synthesize statusScopeBottomTip=_statusScopeBottomTip;
 @property(retain, nonatomic) WCMomentsShareScopeBottomView *shareScopeBottomView; // @synthesize shareScopeBottomView=_shareScopeBottomView;

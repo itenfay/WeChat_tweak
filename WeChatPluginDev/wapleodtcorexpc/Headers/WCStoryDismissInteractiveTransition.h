@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIPercentDrivenInteractiveTransition;
 @protocol WCStoryDismissInteractiveTransitionDelegate;
@@ -14,7 +15,6 @@
     id <WCStoryDismissInteractiveTransitionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCStoryDismissInteractiveTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition; // @synthesize interactivePopTransition=m_interactivePopTransition;
 - (void)handlePopGesWithState:(long long)arg1 progress:(double)arg2 isSweepFastBlock:(CDUnknownBlockType)arg3;
@@ -23,4 +23,3 @@
 @property(readonly, nonatomic) _Bool isInteracting;
 
 @end
-

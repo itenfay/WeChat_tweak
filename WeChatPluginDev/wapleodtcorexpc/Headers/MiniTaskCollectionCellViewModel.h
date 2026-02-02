@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MinimizeTaskData, NSMutableArray, NSString, UIImage, WCScheduleItem;
 @protocol MiniTaskCollectionCellViewModelDelegate;
 
@@ -32,7 +34,6 @@
 
 + (id)scheduleDataToModel:(id)arg1;
 + (id)minimizeDataToModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasNotifyUpdateSnapshot; // @synthesize hasNotifyUpdateSnapshot=_hasNotifyUpdateSnapshot;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(retain, nonatomic) WCScheduleItem *scheduleItem; // @synthesize scheduleItem=_scheduleItem;
@@ -58,4 +59,3 @@
 - (void)updateOutdateState;
 
 @end
-

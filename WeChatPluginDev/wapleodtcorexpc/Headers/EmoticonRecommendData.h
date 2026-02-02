@@ -13,7 +13,6 @@
     unsigned long long _enterTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 

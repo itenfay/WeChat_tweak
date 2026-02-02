@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIViewController;
 
@@ -14,7 +15,6 @@
 }
 
 + (void)checkWithUserPrepare:(id)arg1 type:(long long)arg2 isRegChain:(_Bool)arg3 fromVC:(id)arg4 complete:(CDUnknownBlockType)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *fromVC; // @synthesize fromVC=_fromVC;
 @property(copy, nonatomic) CDUnknownBlockType complete; // @synthesize complete=_complete;
 - (void)bindPhoneReturn;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

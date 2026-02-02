@@ -17,7 +17,6 @@
     MMHeadImageView *_headImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMHeadImageView *headImageView; // @synthesize headImageView=_headImageView;
 @property(retain, nonatomic) UILabel *unReadLabel; // @synthesize unReadLabel=_unReadLabel;
 @property(retain, nonatomic) UIButton *notifyButton; // @synthesize notifyButton=_notifyButton;

@@ -27,7 +27,6 @@
     BankFavGuideForBindCard *_bank_fav_guide;
 }
 
-- (void).cxx_destruct;
 @property(retain) BankFavGuideForBindCard *bank_fav_guide; // @synthesize bank_fav_guide=_bank_fav_guide;
 @property(retain, nonatomic) WCPayBankCardFavorInfo *bank_card_info; // @synthesize bank_card_info=_bank_card_info;
 @property(retain, nonatomic) NSString *m_nsVariableFavorDesc; // @synthesize m_nsVariableFavorDesc;

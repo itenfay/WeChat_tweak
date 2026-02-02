@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocationManager, NSString;
 
@@ -15,7 +16,6 @@
     CLLocationManager *_manager;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int initialAuthorizationState; // @synthesize initialAuthorizationState=_initialAuthorizationState;
 @property(retain, nonatomic) CLLocationManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) id retainCycle; // @synthesize retainCycle=_retainCycle;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

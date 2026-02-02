@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LVFeedListCostReport, MMTimer, MegaVideoPageMonitorHelper, NSData, NSDate, NSMutableDictionary, NSNumber, NSString, NSValue, UICollectionView, UICollectionViewDiffableDataSource, UIView, WCFinderEmptyTipsView, WCFinderLongVideoListCell, WCFinderLongVideoListViewModel, WCFinderPullDownRefreshHeaderView, WCFinderStreamFooterView, WCFinderStreamHotAreaTrigger;
 
 @interface WCFinderLongVideoListViewController
@@ -36,7 +38,6 @@
     struct CGPoint _lastExitFeedHintStartOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *fixOffsetDue2Rotate; // @synthesize fixOffsetDue2Rotate=_fixOffsetDue2Rotate;
 @property(nonatomic) _Bool closeDetectionValidity; // @synthesize closeDetectionValidity=_closeDetectionValidity;
 @property(nonatomic) unsigned long long maxLVExposeIndex; // @synthesize maxLVExposeIndex=_maxLVExposeIndex;
@@ -159,4 +160,3 @@
 @property(readonly) Class superclass;
 
 @end
-

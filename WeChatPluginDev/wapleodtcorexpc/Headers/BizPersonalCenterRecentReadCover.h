@@ -19,7 +19,6 @@
     MMUIImageView *_imgIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *imgIconView; // @synthesize imgIconView=_imgIconView;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) MMUIImageView *playVoiceBg; // @synthesize playVoiceBg=_playVoiceBg;

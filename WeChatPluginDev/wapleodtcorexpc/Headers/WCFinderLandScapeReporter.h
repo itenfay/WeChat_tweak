@@ -12,7 +12,6 @@
     NSString *_firstFeedId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *firstFeedId; // @synthesize firstFeedId=_firstFeedId;
 
 @end

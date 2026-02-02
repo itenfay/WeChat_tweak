@@ -17,7 +17,6 @@
     CAShapeLayer *_brandNewMediaMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *brandNewMediaMask; // @synthesize brandNewMediaMask=_brandNewMediaMask;
 @property(retain, nonatomic) WCAdURLImageView *charmImageView; // @synthesize charmImageView=_charmImageView;
 @property(retain, nonatomic) NSMutableSet *lastVisibleIndexPaths; // @synthesize lastVisibleIndexPaths=_lastVisibleIndexPaths;

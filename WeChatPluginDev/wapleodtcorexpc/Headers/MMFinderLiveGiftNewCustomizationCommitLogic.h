@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTaskId, NSMutableDictionary;
 
@@ -14,7 +15,6 @@
     NSMutableDictionary *_pendingDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingDict; // @synthesize pendingDict=_pendingDict;
 @property(retain, nonatomic) NSMutableDictionary *committingDict; // @synthesize committingDict=_committingDict;
 @property(retain, nonatomic) MMFinderLiveTaskId *finderTaskId; // @synthesize finderTaskId=_finderTaskId;
@@ -24,4 +24,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

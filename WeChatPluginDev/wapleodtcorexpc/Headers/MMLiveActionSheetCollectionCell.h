@@ -20,7 +20,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableInnerRedDotLogic; // @synthesize disableInnerRedDotLogic=_disableInnerRedDotLogic;
 @property(retain, nonatomic) MMScrollActionSheetItem *actionSheetItem; // @synthesize actionSheetItem=_actionSheetItem;
 @property(retain, nonatomic) MMUILabel *itemSubtitleLabel; // @synthesize itemSubtitleLabel=_itemSubtitleLabel;

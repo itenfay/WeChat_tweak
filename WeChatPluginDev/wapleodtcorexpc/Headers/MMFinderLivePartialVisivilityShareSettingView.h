@@ -10,7 +10,6 @@
     MMFinderLivePartialVisivilitySettingInfo *_partialSettingInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePartialVisivilitySettingInfo *partialSettingInfo; // @synthesize partialSettingInfo=_partialSettingInfo;
 - (void)selectVisibleFileListFromAllVisibilityFileLists;
 - (void)selectVisibleContactsFromRecentSessions;

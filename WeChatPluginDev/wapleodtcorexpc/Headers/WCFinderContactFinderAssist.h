@@ -25,7 +25,6 @@
     WCFinderContactPreviewData *_previewData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useNewStyle; // @synthesize useNewStyle=_useNewStyle;
 @property(retain, nonatomic) WCFinderContactPreviewData *previewData; // @synthesize previewData=_previewData;
 @property(retain, nonatomic) NSString *alreadyFetchKey; // @synthesize alreadyFetchKey=_alreadyFetchKey;

@@ -20,7 +20,6 @@
     NSString *_time;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *time; // @synthesize time=_time;
 @property(retain, nonatomic) NSString *contentDesc; // @synthesize contentDesc=_contentDesc;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;

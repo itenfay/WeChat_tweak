@@ -18,7 +18,6 @@
 
 + (struct CGRect)transitionRectForFeedId:(id)arg1 image:(id)arg2 inNav:(id)arg3;
 + (void)bindTransitionAnimatorFromCell:(id)arg1 fromFeedId:(id)arg2 fromVC:(id)arg3 toVC:(id)arg4;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *shareCellIdentifier; // @synthesize shareCellIdentifier=_shareCellIdentifier;
 @property(nonatomic) __weak id <WCFinderShareAbstractCell> shareCell; // @synthesize shareCell=_shareCell;
 @property(nonatomic) _Bool willPresent; // @synthesize willPresent=_willPresent;

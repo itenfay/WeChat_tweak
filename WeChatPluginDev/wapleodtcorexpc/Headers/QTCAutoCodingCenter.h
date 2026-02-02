@@ -13,7 +13,6 @@
 }
 
 + (id)center;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *typeEncodingToCls; // @synthesize typeEncodingToCls=_typeEncodingToCls;
 - (Class)classForObjcType:(id)arg1;
 - (void)registerObjcTypeWrapperClass:(Class)arg1;

@@ -18,7 +18,6 @@
     id <AudioPlayerProtocol> _audioPlayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <AudioPlayerProtocol> audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(retain, nonatomic) FavAudioInfo *m_lastAudioInfo; // @synthesize m_lastAudioInfo;
 @property(retain, nonatomic) FavAudioInfo *m_curAudioInfo; // @synthesize m_curAudioInfo;

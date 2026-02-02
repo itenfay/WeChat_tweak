@@ -25,7 +25,6 @@
 }
 
 + (id)defaultContentColor;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) _Bool showsBorder; // @synthesize showsBorder=_showsBorder;
 @property(retain, nonatomic) UIColor *detailTextColor; // @synthesize detailTextColor=_detailTextColor;

@@ -20,7 +20,6 @@
     WCPayInterceptWinLogic *_interceptWinLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;
 @property(retain, nonatomic) HBBusinessCallbackCgi *hbBusinessCallbackCgi; // @synthesize hbBusinessCallbackCgi=_hbBusinessCallbackCgi;
 @property(retain, nonatomic) FFHBRequestResp *m_prepayResp; // @synthesize m_prepayResp=_m_prepayResp;

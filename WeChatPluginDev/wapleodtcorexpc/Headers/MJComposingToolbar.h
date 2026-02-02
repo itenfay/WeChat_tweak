@@ -15,7 +15,6 @@
     NSArray *_contentSubviews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contentSubviews; // @synthesize contentSubviews=_contentSubviews;
 @property(retain, nonatomic) UIStackView *undoRedoContainer; // @synthesize undoRedoContainer=_undoRedoContainer;
 @property(readonly, nonatomic) MMUIButton *redoButton; // @synthesize redoButton=_redoButton;

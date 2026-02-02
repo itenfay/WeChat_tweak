@@ -15,7 +15,6 @@
     _Bool _canAutoDownload;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canAutoDownload; // @synthesize canAutoDownload=_canAutoDownload;
 @property(nonatomic) __weak id <DownloadVoiceDelegate> m_delNotifyToReceiver; // @synthesize m_delNotifyToReceiver;
 @property(retain, nonatomic) NSRecursiveLock *m_oLock; // @synthesize m_oLock;

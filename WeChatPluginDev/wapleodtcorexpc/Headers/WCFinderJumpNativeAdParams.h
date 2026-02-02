@@ -17,7 +17,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *canvasDynamicInfo; // @synthesize canvasDynamicInfo=_canvasDynamicInfo;
 @property(nonatomic) _Bool preLoad; // @synthesize preLoad=_preLoad;
 @property(nonatomic) _Bool noStore; // @synthesize noStore=_noStore;

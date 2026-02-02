@@ -16,7 +16,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *hitLineList; // @synthesize hitLineList=_hitLineList;
 @property(retain, nonatomic) UIColor *hitlineColor; // @synthesize hitlineColor=_hitlineColor;
 @property(retain, nonatomic) UIView *progressLine; // @synthesize progressLine=_progressLine;

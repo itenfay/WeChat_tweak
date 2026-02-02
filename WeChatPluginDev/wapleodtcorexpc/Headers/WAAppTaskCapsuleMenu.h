@@ -23,7 +23,6 @@
     struct CGRect _frame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bannerText; // @synthesize bannerText=_bannerText;
 @property(nonatomic) _Bool isGame; // @synthesize isGame=_isGame;
 @property(retain, nonatomic) WAAppTaskCapsuleButton *expandButton; // @synthesize expandButton=_expandButton;

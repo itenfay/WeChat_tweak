@@ -17,7 +17,6 @@
     NSString *_m_ssesionID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_ssesionID; // @synthesize m_ssesionID=_m_ssesionID;
 @property(retain, nonatomic) NSArray *m_arrCheckCanSetAliasResult; // @synthesize m_arrCheckCanSetAliasResult=_m_arrCheckCanSetAliasResult;
 - (void)setM_tableView:(id)arg1;

@@ -11,7 +11,6 @@
     AppleIDBindLogic *_appleIDBindLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AppleIDBindLogic *appleIDBindLogic; // @synthesize appleIDBindLogic=_appleIDBindLogic;
 @property(retain, nonatomic) WCAccountManualAuthControlLogic *manualAuthLogic; // @synthesize manualAuthLogic=_manualAuthLogic;
 - (void)reportAction:(unsigned long long)arg1;

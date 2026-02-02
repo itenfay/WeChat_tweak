@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class KVOController, NSString;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType m_block;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithController:(id)arg1 keyPath:(id)arg2;
@@ -28,4 +28,3 @@
 - (id)initWithController:(id)arg1 keyPath:(id)arg2 options:(unsigned long long)arg3 block:(CDUnknownBlockType)arg4 action:(SEL)arg5 context:(void *)arg6;
 
 @end
-

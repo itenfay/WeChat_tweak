@@ -25,7 +25,6 @@
 
 + (double)cellHeight;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeperateLine; // @synthesize bottomSeperateLine=_bottomSeperateLine;
 @property(retain, nonatomic) UILabel *msgCountLabel; // @synthesize msgCountLabel=_msgCountLabel;
 @property(retain, nonatomic) UIView *seperateLine; // @synthesize seperateLine=_seperateLine;

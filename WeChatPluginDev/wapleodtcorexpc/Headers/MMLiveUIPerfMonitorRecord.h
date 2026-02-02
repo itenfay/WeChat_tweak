@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -20,7 +21,6 @@
 
 + (_Bool)isRectArea:(struct CGRect)arg1 largerThan:(struct CGRect)arg2;
 + (id)getMonitorObjKey:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recordDesc; // @synthesize recordDesc=_recordDesc;
 @property(copy, nonatomic) CDUnknownBlockType composeRectUpdateNotifyCallback; // @synthesize composeRectUpdateNotifyCallback=_composeRectUpdateNotifyCallback;
 @property(nonatomic) double composeSizePercent; // @synthesize composeSizePercent=_composeSizePercent;
@@ -42,4 +42,3 @@
 - (void)initDefaultDatas;
 
 @end
-

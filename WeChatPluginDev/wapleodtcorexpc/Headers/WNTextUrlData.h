@@ -14,7 +14,6 @@
     struct _NSRange _range;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *linkStr; // @synthesize linkStr=_linkStr;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;

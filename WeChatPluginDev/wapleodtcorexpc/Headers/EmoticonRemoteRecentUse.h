@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_lastUsedTime;
 + (void)PBArrayAdd_query;
 + (void)PBArrayAdd_md5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CEmoticonWrap *refEmoticon; // @synthesize refEmoticon=_refEmoticon;
 @property(nonatomic) unsigned int lastUsedTime; // @synthesize lastUsedTime=_lastUsedTime;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;

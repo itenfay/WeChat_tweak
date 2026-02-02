@@ -17,7 +17,6 @@
 + (id)trackForProtocolName:(id)arg1 selectorName:(id)arg2;
 + (void)cacheTrack:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *trackCacheDict; // @synthesize trackCacheDict=_trackCacheDict;
 
 @end

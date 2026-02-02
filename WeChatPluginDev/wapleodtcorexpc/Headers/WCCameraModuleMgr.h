@@ -11,7 +11,6 @@
     WCCameraModule *_interruptionModule;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCameraModule *interruptionModule; // @synthesize interruptionModule=_interruptionModule;
 @property(retain, nonatomic) WCCameraModule *activeModule; // @synthesize activeModule=_activeModule;
 - (id)currentActiveModule;

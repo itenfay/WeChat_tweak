@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupIntroView, MMFinderLiveRewardGiftItem, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveHalfScreenTitleBarView, MMUIButton, MMUILabel, MMUIMaskContainerView, NSArray, NSString, UIScrollView, UIView, WCFinderAnimationLoadingView;
 
 @interface MMFinderLiveNewFansGroupJoinPanel
@@ -29,7 +31,6 @@
     WCFinderAnimationLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool defaultSelectSuperfan; // @synthesize defaultSelectSuperfan=_defaultSelectSuperfan;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) NSArray *interestCells; // @synthesize interestCells=_interestCells;
@@ -95,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

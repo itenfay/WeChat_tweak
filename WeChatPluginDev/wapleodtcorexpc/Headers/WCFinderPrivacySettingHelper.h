@@ -19,7 +19,6 @@
 }
 
 + (unsigned long long)getCurrentPrivacyWithContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long flag; // @synthesize flag=_flag;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) __weak id <WCFinderPrivacySettingHelperDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_webRedDotDic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *webRedDotDic; // @synthesize webRedDotDic=_webRedDotDic;
 - (void)setWebRedDotModel:(id)arg1 forType:(long long)arg2;
 - (id)getWebRedDotModelWithType:(long long)arg1;

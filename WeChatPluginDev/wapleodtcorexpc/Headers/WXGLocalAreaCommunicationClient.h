@@ -31,7 +31,6 @@
     NSString *_wifiName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wifiName; // @synthesize wifiName=_wifiName;
 @property(nonatomic) _Bool tryPeer; // @synthesize tryPeer=_tryPeer;
 @property(retain, nonatomic) NSString *server_ok; // @synthesize server_ok=_server_ok;

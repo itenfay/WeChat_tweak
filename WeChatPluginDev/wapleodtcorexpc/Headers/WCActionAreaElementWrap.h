@@ -18,7 +18,6 @@
     double _subElementSpacing;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double subElementSpacing; // @synthesize subElementSpacing=_subElementSpacing;
 @property(retain, nonatomic) NSArray *subElements; // @synthesize subElements=_subElements;
 @property(nonatomic) unsigned long long displayLine; // @synthesize displayLine=_displayLine;

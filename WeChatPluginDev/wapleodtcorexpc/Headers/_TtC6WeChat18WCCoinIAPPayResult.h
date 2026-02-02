@@ -13,7 +13,6 @@
     MISSING_TYPE *failMsg;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithStatus:(long long)arg1 failMsg:(id)arg2;
 @property(nonatomic, readonly) NSString *failMsg;

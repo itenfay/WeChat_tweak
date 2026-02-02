@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class SnsUserPageRequest, SnsUserPageResponse;
 
 @interface WCHomepageCgi
@@ -16,7 +18,6 @@
     double _endTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) SnsUserPageResponse *responseToProcess; // @synthesize responseToProcess=_responseToProcess;
@@ -33,4 +34,3 @@
 - (id)init;
 
 @end
-

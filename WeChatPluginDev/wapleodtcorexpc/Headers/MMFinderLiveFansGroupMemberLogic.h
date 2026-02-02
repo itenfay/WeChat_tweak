@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFansGroupMemberSectionInfo, MMFinderLiveTask, MMFinderLiveTaskId, NSData;
 
@@ -18,7 +19,6 @@
     unsigned long long _lastReqFilterType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastReqFilterType; // @synthesize lastReqFilterType=_lastReqFilterType;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool isFetching; // @synthesize isFetching=_isFetching;
@@ -33,4 +33,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

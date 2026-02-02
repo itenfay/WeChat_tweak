@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveVerifyAgreementCommonHeadView, MMLiveVerifyAgreementProtocolView, MMLiveView, NSString, UIButton, UIImageView, UIView, WCFinderAnimationLoadingView;
 @protocol MMLiveVerifyViewControllerDelegate;
 
@@ -27,7 +29,6 @@
     UIView *_liveVerifyButtonLoadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCalledCompletionBlock; // @synthesize hasCalledCompletionBlock=_hasCalledCompletionBlock;
 @property(retain, nonatomic) UIView *liveVerifyButtonLoadingView; // @synthesize liveVerifyButtonLoadingView=_liveVerifyButtonLoadingView;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *animatedLoadingView; // @synthesize animatedLoadingView=_animatedLoadingView;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

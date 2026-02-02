@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImage;
 
 @interface MMAssetForFLTSelectPhotoInfo
@@ -12,7 +14,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *assetPath; // @synthesize assetPath=_assetPath;
 @property(retain, nonatomic) NSString *assetId; // @synthesize assetId=_assetId;
@@ -25,4 +26,3 @@
 - (id)getThumbImage;
 
 @end
-

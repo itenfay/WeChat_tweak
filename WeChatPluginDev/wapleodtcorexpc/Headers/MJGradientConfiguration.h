@@ -17,7 +17,6 @@
 
 + (id)verticalGradientWithColors:(id)arg1;
 + (id)horizontalGradientWithColors:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(readonly, nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
 @property(readonly, nonatomic) NSArray *locations; // @synthesize locations=_locations;

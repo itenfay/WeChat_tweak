@@ -14,7 +14,6 @@
     NSMutableArray *_monitorPointList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *monitorPointList; // @synthesize monitorPointList=_monitorPointList;
 @property(retain, nonatomic) NSString *rootBtnId; // @synthesize rootBtnId=_rootBtnId;
 @property(nonatomic) unsigned long long monitorId; // @synthesize monitorId=_monitorId;

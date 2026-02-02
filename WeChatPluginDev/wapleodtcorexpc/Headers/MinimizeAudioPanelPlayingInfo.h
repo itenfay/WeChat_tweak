@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_contextData;
 + (void)PBArrayAdd_bizId;
 + (void)PBArrayAdd_bizType;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tapeCoverUrl; // @synthesize tapeCoverUrl=_tapeCoverUrl;
 @property(copy, nonatomic) NSString *tapeDesc; // @synthesize tapeDesc=_tapeDesc;
 @property(copy, nonatomic) NSString *tapeName; // @synthesize tapeName=_tapeName;

@@ -23,7 +23,6 @@
 + (void)reportBuyCoinSuccessCostTime:(unsigned long long)arg1;
 + (void)reportKVKey:(unsigned int)arg1;
 + (void)reportIDKey:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_reportSessionId; // @synthesize _reportSessionId=__reportSessionId;
 @property(retain, nonatomic) NSString *buyTingVipSession; // @synthesize buyTingVipSession=_buyTingVipSession;
 @property(nonatomic) unsigned long long businessId; // @synthesize businessId=_businessId;

@@ -12,7 +12,6 @@
     UILabel *_titleView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;
 - (void)setupGameVideoAlbumHeaderView;
 - (id)initWithFrame:(struct CGRect)arg1;

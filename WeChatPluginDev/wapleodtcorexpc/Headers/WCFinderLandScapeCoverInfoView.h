@@ -13,7 +13,6 @@
     WCFinderStaticCoverInfoView *_infoView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStaticCoverInfoView *infoView; // @synthesize infoView=_infoView;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) WCFinderFeedImageCDNView *coverView; // @synthesize coverView=_coverView;

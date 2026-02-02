@@ -16,7 +16,6 @@
     NSObject<OS_dispatch_semaphore> *_transmitWidgetDictLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *transmitWidgetDictLock; // @synthesize transmitWidgetDictLock=_transmitWidgetDictLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *renderWidgetDictLock; // @synthesize renderWidgetDictLock=_renderWidgetDictLock;
 @property(retain, nonatomic) OrderedDictionary *transmitWidgetDict; // @synthesize transmitWidgetDict=_transmitWidgetDict;

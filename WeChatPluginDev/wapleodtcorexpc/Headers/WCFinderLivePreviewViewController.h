@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveContentVM, MMFinderLiveHeaderView, MMFinderLiveTask, MMFinderLiveView, MMLiveAudienceAccountIntroView, MMLiveTaskId, MMLiveView, NSString, UIImageView, UIView;
 @protocol MMLiveContainerDisplayViewProtocol;
 
@@ -26,7 +28,6 @@
     CDUnknownBlockType _closeCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeCallback; // @synthesize closeCallback=_closeCallback;
 @property(nonatomic) _Bool isPopedOrDismissed; // @synthesize isPopedOrDismissed=_isPopedOrDismissed;
 @property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
@@ -95,4 +96,3 @@
 @property(readonly) Class superclass;
 
 @end
-

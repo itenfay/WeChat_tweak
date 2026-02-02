@@ -12,7 +12,6 @@
     CDStruct_e83c9415 _timeRangeInAsset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentCropRect; // @synthesize contentCropRect=_contentCropRect;
 @property(retain, nonatomic) OMJContentSpatialDesc *contentSpatialDesc; // @synthesize contentSpatialDesc=_contentSpatialDesc;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRangeInAsset; // @synthesize timeRangeInAsset=_timeRangeInAsset;

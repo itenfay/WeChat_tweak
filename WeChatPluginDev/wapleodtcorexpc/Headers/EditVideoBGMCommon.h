@@ -12,7 +12,6 @@
 
 + (id)setAllText:(id)arg1 andSpcifiStr:(id)arg2 withColor:(id)arg3 specifiStrFont:(id)arg4;
 + (id)genLyricsFromLrcString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLRUCache *urlToFilePathMap; // @synthesize urlToFilePathMap=_urlToFilePathMap;
 - (id)saveMusicPathWithMusicData:(id)arg1 components:(id)arg2;
 - (id)getMusicPathWithMusicData:(id)arg1;

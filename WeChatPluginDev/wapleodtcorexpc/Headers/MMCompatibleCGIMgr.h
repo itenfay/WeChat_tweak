@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCompatibleCGIDB, NSString;
 
 @interface MMCompatibleCGIMgr
@@ -10,7 +12,6 @@
     MMCompatibleCGIDB *m_compatibleCGIDB;
 }
 
-- (void).cxx_destruct;
 - (_Bool)checkHadCompatibleCGIDataWithId:(id)arg1;
 - (id)getPbUniqueIDPrefixWithCompatibleCGIType:(unsigned int)arg1;
 - (unsigned int)getUiCgiWithCompatibleCGIType:(unsigned int)arg1;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

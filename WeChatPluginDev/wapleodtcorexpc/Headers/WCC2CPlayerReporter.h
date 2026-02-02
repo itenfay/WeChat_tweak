@@ -10,7 +10,6 @@
     CMessageWrap *_mediaWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
 - (void)customReport;
 - (id)getMD5ChatName;

@@ -13,7 +13,6 @@
     UIFont *_subFont;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *subFont; // @synthesize subFont=_subFont;
 @property(retain, nonatomic) UIFont *mainfont; // @synthesize mainfont=_mainfont;
 - (id)observerIdentifier;

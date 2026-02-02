@@ -14,7 +14,6 @@
     unsigned long long m_lastReportTime;
 }
 
-- (void).cxx_destruct;
 - (void)onRealTimeKVReportFailedWithWrap:(id)arg1;
 - (void)onRealTimeKVReportSucceedWithWrap:(id)arg1;
 - (void)onFailure:(id)arg1;

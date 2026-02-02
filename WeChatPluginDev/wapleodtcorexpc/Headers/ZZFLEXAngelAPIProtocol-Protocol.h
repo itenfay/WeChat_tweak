@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIScrollView, ZZFLEXAngelIndexPathChainModel, ZZFLEXAngelViewBatchEditChainModel, ZZFLEXAngelViewEditChainModel;
 
@@ -46,4 +47,3 @@
 @property(readonly, nonatomic) NSMutableArray *data;
 - (void)reloadView;
 @end
-

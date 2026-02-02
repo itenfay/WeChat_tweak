@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIColor;
 
@@ -24,7 +25,6 @@
     CDUnknownBlockType _resultBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(retain, nonatomic) id attachInfo; // @synthesize attachInfo=_attachInfo;
 @property(retain, nonatomic) UIColor *colorForConfirmBtn; // @synthesize colorForConfirmBtn=_colorForConfirmBtn;
@@ -44,4 +44,3 @@
 - (id)init;
 
 @end
-

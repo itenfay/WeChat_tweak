@@ -51,7 +51,6 @@
     NSString *_leftTimeString;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float migrationProgress; // @synthesize migrationProgress=_migrationProgress;
 @property(retain, nonatomic) NSString *leftTimeString; // @synthesize leftTimeString=_leftTimeString;
 @property(retain, nonatomic) NSString *speedString; // @synthesize speedString=_speedString;

@@ -15,7 +15,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithByteArray:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *byteArray; // @synthesize byteArray=_byteArray;
 - (id)toList;
 

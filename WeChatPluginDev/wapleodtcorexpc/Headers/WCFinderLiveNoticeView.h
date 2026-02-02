@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveNoticeInfo, FinderLiveNoticeListInfo, MMPaddingView, MMUIButton, NSString, RichTextView, UIColor, UIImageView, UILabel, WCFinderLiveNoticePayActionView, WCFinderLiveNoticeViewItemView;
 @protocol WCFinderLiveNoticeViewDelegate;
@@ -54,7 +55,6 @@
 + (double)heightWithIdentity:(_Bool)arg1 noticeInfo:(id)arg2 noticeList:(id)arg3 width:(double)arg4 introductionStyle:(long long)arg5 isInList:(_Bool)arg6 memberVisitant:(_Bool)arg7 isStartReminder:(_Bool)arg8;
 + (double)heightWithIdentity:(_Bool)arg1 noticeInfo:(id)arg2 noticeList:(id)arg3 width:(double)arg4 introductionStyle:(long long)arg5 isInList:(_Bool)arg6 memberVisitant:(_Bool)arg7 isStartReminder:(_Bool)arg8 displayLiveTimeOnSingleLine:(_Bool)arg9;
 + (double)detailViewMarginRightWithIsAuthor:(_Bool)arg1 isInList:(_Bool)arg2 isStartReminder:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *anchorUsername; // @synthesize anchorUsername=_anchorUsername;
 @property(retain, nonatomic) UIColor *profileActionTextColor; // @synthesize profileActionTextColor=_profileActionTextColor;
 @property(retain, nonatomic) MMPaddingView *couponsTitleLabel; // @synthesize couponsTitleLabel=_couponsTitleLabel;
@@ -131,4 +131,3 @@
 @property(readonly) Class superclass;
 
 @end
-

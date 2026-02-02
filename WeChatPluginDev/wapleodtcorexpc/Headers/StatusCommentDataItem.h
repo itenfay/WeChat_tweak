@@ -21,7 +21,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int commentCount; // @synthesize commentCount=_commentCount;
 @property(nonatomic) unsigned long long operation; // @synthesize operation=_operation;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=_timeStamp;

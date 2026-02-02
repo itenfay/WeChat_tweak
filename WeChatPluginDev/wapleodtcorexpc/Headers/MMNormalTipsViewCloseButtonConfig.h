@@ -13,7 +13,6 @@
     UIColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 

@@ -11,7 +11,6 @@
     OrderedDictionary *m_dicMultiSelect;
 }
 
-- (void).cxx_destruct;
 - (void)onCancel:(id)arg1;
 - (void)didSelectContact:(id)arg1;
 - (_Bool)isSelected:(id)arg1;

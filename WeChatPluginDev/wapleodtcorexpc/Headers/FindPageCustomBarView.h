@@ -12,7 +12,6 @@
     UIView *_titleViewContainer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *titleViewContainer; // @synthesize titleViewContainer=_titleViewContainer;
 @property(retain, nonatomic) UIView *rightItemView; // @synthesize rightItemView=_rightItemView;
 @property(retain, nonatomic) UIView *leftItemView; // @synthesize leftItemView=_leftItemView;

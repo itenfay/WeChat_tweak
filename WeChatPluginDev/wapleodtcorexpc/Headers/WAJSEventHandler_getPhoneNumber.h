@@ -10,7 +10,6 @@
     PhoneAuthGetPhoneNumberLogic *_getPhoneNumberLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PhoneAuthGetPhoneNumberLogic *getPhoneNumberLogic; // @synthesize getPhoneNumberLogic=_getPhoneNumberLogic;
 - (void)newGetPhoneNumberLogic:(id)arg1;
 - (void)handleJSEvent:(id)arg1;

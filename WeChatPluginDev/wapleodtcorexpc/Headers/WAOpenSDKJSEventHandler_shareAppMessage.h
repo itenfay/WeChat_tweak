@@ -12,7 +12,6 @@
     WAShareAppMessageForwardLogicControllerComponent *_forwardLogicControllerComponent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAShareAppMessageForwardLogicControllerComponent *forwardLogicControllerComponent; // @synthesize forwardLogicControllerComponent=_forwardLogicControllerComponent;
 @property(retain, nonatomic) WAShareAppMessageCommonParamsModel *paramsModel; // @synthesize paramsModel=_paramsModel;
 @property(retain, nonatomic) WAShareAppMessageContextModel *shareContextModel; // @synthesize shareContextModel=_shareContextModel;

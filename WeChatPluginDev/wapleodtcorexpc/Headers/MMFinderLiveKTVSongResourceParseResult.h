@@ -15,7 +15,6 @@
     NSString *_songPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *songPath; // @synthesize songPath=_songPath;
 @property(retain, nonatomic) NSData *noteData; // @synthesize noteData=_noteData;
 @property(retain, nonatomic) NSArray *sentenceTimeList; // @synthesize sentenceTimeList=_sentenceTimeList;

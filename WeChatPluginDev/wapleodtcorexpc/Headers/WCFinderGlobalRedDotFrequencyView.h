@@ -12,7 +12,6 @@
     RichTextView *_richTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
 
 @end

@@ -20,7 +20,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFetchingData; // @synthesize isFetchingData=_isFetchingData;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) NSString *tid; // @synthesize tid=_tid;

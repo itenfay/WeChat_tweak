@@ -16,7 +16,6 @@
     NSMutableDictionary *_performanceTexts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *performanceTexts; // @synthesize performanceTexts=_performanceTexts;
 @property(copy, nonatomic) NSArray *performanceKeys; // @synthesize performanceKeys=_performanceKeys;
 @property(nonatomic) __weak id <MMLivePerformanceViewModelDelegate> delegate; // @synthesize delegate=_delegate;

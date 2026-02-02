@@ -16,7 +16,6 @@
     WCSKAdNetworkItem *_skAdItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSKAdNetworkItem *skAdItem; // @synthesize skAdItem=_skAdItem;
 @property(retain, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;
 @property(retain, nonatomic) NSString *uxinfo; // @synthesize uxinfo=_uxinfo;

@@ -13,7 +13,6 @@
     struct CGSize _coverImgSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize coverImgSize; // @synthesize coverImgSize=_coverImgSize;
 @property(retain, nonatomic) NSString *coverImgURL; // @synthesize coverImgURL=_coverImgURL;
 @property(retain, nonatomic) NSString *timeStr; // @synthesize timeStr=_timeStr;

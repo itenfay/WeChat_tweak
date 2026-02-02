@@ -17,7 +17,6 @@
     unsigned long long _viewDelegatePtr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long viewDelegatePtr; // @synthesize viewDelegatePtr=_viewDelegatePtr;
 @property(nonatomic) __weak id <MMCanvasRenderClientContextDelegate> contextDelegate; // @synthesize contextDelegate=_contextDelegate;
 @property(nonatomic) __weak id <MMWebJsCanvasViewPortDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;

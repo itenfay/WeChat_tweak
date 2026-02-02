@@ -21,7 +21,6 @@
     long long _closeTimes;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long closeTimes; // @synthesize closeTimes=_closeTimes;
 @property(nonatomic) long long showTimes; // @synthesize showTimes=_showTimes;
 @property(nonatomic) long long position; // @synthesize position=_position;

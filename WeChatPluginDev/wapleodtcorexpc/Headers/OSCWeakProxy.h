@@ -15,7 +15,6 @@
 
 + (id)proxyWithTarget:(id)arg1 protocol:(id)arg2;
 + (id)proxyWithTarget:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

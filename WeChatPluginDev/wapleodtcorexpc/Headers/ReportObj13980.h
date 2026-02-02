@@ -19,7 +19,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) unsigned int costTime; // @synthesize costTime=_costTime;
 @property(nonatomic) unsigned long long beginTimeTemp; // @synthesize beginTimeTemp=_beginTimeTemp;

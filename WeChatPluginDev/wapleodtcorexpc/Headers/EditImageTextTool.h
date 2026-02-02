@@ -29,7 +29,6 @@
     struct CGRect _textInputViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long textStyle; // @synthesize textStyle=_textStyle;
 @property(retain, nonatomic) WCEditViewControllerUIConfig *uiConfig; // @synthesize uiConfig=_uiConfig;
 @property(nonatomic) struct CGRect textInputViewFrame; // @synthesize textInputViewFrame=_textInputViewFrame;

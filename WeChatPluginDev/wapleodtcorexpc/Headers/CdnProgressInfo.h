@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_nTryShow; // @synthesize m_nTryShow;
 @property(nonatomic) int m_nStatus; // @synthesize m_nStatus;
 @property(nonatomic) unsigned long long m_nFinishedLegth; // @synthesize m_nFinishedLegth;

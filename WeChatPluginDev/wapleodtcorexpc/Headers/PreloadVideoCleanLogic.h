@@ -14,7 +14,6 @@
     unsigned int _uiLastCleanPreloadTmpFileTime;
 }
 
-- (void).cxx_destruct;
 - (void)onDeleteCacheForChatName:(id)arg1;
 - (void)setPreloadSize:(unsigned int)arg1 forRecordId:(id)arg2;
 - (unsigned int)getPreloadSizeForRecordId:(id)arg1;

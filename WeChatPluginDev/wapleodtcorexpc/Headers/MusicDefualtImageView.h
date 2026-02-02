@@ -19,7 +19,6 @@
     struct CGRect _displayBounds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *foregroundImageView; // @synthesize foregroundImageView=_foregroundImageView;
 @property(retain, nonatomic) MMMusicFadeOutLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(nonatomic) _Bool inInUpdateImageProcess; // @synthesize inInUpdateImageProcess=_inInUpdateImageProcess;

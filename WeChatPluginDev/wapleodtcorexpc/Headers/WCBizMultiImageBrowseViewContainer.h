@@ -26,7 +26,6 @@
     id <WCBizMultiImageBrowseViewContainerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingView *m_loadingView; // @synthesize m_loadingView;
 @property(nonatomic) __weak id <WCBizMultiImageBrowseViewContainerDelegate> m_delegate; // @synthesize m_delegate;
 @property(nonatomic) struct CGSize m_initalContentSize; // @synthesize m_initalContentSize;

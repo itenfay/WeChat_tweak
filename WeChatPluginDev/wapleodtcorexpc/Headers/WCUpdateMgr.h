@@ -20,7 +20,6 @@
 + (_Bool)shouldTrace;
 + (void)immediateRenameUpdate;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dummy;
 - (id)getUpdatePID;
 - (void)cleanOldOne;

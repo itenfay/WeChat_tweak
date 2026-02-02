@@ -16,7 +16,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *modelList; // @synthesize modelList=_modelList;
 @property(nonatomic) long long configVersion; // @synthesize configVersion=_configVersion;
 @property(nonatomic) long long sdkVersion; // @synthesize sdkVersion=_sdkVersion;

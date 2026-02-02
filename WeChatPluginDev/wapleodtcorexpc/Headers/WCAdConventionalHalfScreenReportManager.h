@@ -17,7 +17,6 @@
     unsigned long long _contentOption;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentOption; // @synthesize contentOption=_contentOption;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *snsId; // @synthesize snsId=_snsId;

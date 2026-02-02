@@ -21,7 +21,6 @@
     id <WASendSessionMsgViewDelegate> _viewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WASendSessionMsgViewDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 - (void)onLoadImageOK:(id)arg1;

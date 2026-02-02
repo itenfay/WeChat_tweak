@@ -19,7 +19,6 @@
 + (void *)_ptr_to_func_closePath;
 + (void *)_ptr_to_func_addPath;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct SkPath path; // @synthesize path=_path;
 - (struct OpaqueJSValue *)_func_rect:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3 exception:(const struct OpaqueJSValue **)arg4;
 - (struct OpaqueJSValue *)_func_ellipse:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3 exception:(const struct OpaqueJSValue **)arg4;

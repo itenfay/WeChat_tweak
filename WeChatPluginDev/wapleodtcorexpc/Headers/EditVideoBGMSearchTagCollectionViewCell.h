@@ -14,7 +14,6 @@
 }
 
 + (struct CGSize)sizeForItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tagLabel; // @synthesize tagLabel=_tagLabel;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 - (void)updataWithItem:(id)arg1;

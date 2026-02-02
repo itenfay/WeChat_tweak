@@ -14,7 +14,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct __CVBuffer *textureRef; // @synthesize textureRef=_textureRef;
 @property(retain, nonatomic) MAVCompositionTrack *track; // @synthesize track=_track;

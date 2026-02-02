@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderOpenAPI : NSObject
 {
@@ -37,4 +38,3 @@
 + (void)getLiveNoticeStateWithAnchorUserName:(id)arg1 noticeId:(id)arg2 successfulBlock:(CDUnknownBlockType)arg3 failedBlock:(CDUnknownBlockType)arg4;
 
 @end
-

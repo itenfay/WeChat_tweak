@@ -16,7 +16,6 @@
     StoreEmotionReplaceMyPanelListCgi *_replaceCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) StoreEmotionReplaceMyPanelListCgi *replaceCgi; // @synthesize replaceCgi=_replaceCgi;
 @property(nonatomic) _Bool hasUndownload; // @synthesize hasUndownload=_hasUndownload;
 @property(nonatomic) _Bool isDeleteMode; // @synthesize isDeleteMode=_isDeleteMode;

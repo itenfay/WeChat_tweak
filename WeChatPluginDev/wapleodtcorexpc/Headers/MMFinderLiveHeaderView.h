@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveAnniversaryDecorationViewModel, MMFinderLiveClarityHeaderButton, MMFinderLiveFansGroupSignView, MMFinderLiveHeaderFollowButton, MMFinderLiveMusicHeaderButton, MMFinderLiveTask, MMUIButton, MMUIImageView, MMUILabel, MMWebImageView, NSString, PAGView, WCFinderContact, WCFinderHeadImageView, WCLiveBlurButton;
 
 @interface MMFinderLiveHeaderView
@@ -68,7 +70,6 @@
     struct CGSize _originMarkLabelSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentAvatarBackgroundViewUrl; // @synthesize currentAvatarBackgroundViewUrl=_currentAvatarBackgroundViewUrl;
 @property(retain, nonatomic) PAGView *avatarBackgroundView; // @synthesize avatarBackgroundView=_avatarBackgroundView;
 @property(retain, nonatomic) MMFinderLiveAnniversaryDecorationViewModel *anniversaryDecorationViewModel; // @synthesize anniversaryDecorationViewModel=_anniversaryDecorationViewModel;
@@ -251,4 +252,3 @@
 @property(readonly) Class superclass;
 
 @end
-

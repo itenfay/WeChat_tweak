@@ -73,7 +73,6 @@
     NSString *_finderPushScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int finderDeepReadCount; // @synthesize finderDeepReadCount=_finderDeepReadCount;
 @property(nonatomic) unsigned int finderDropRedDotCount; // @synthesize finderDropRedDotCount=_finderDropRedDotCount;
 @property(nonatomic) unsigned int currBattery; // @synthesize currBattery=_currBattery;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJPlaybackViewModel, MJTimelineViewModel, NSArray, NSMutableDictionary, OMJAspectRatio;
 
@@ -19,7 +20,6 @@
     unsigned long long _originalContentScaleMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long originalContentScaleMode; // @synthesize originalContentScaleMode=_originalContentScaleMode;
 @property(retain, nonatomic) OMJAspectRatio *originalAspectRatio; // @synthesize originalAspectRatio=_originalAspectRatio;
 @property(retain, nonatomic) NSMutableDictionary *originalSegmentLayerSpatialInfos; // @synthesize originalSegmentLayerSpatialInfos=_originalSegmentLayerSpatialInfos;
@@ -34,4 +34,3 @@
 - (id)initWithTimelineViewModel:(id)arg1 playbackViewModel:(id)arg2;
 
 @end
-

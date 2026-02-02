@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, NSTimer, UICollectionView, UIImageView, UILabel, UITapGestureRecognizer, WCFinderExtStatsReporter, WCFinderNearbyViewModel, WCFinderStreamFooterView, WCFinderStreamHeaderView, WCFinderStreamLayout, WCFinderStreamLiveCollectionViewCell;
 @protocol WCFinderNearbyViewControllerDelegate;
 
@@ -29,7 +31,6 @@
     WCFinderExtStatsReporter *_extStatsReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderExtStatsReporter *extStatsReporter; // @synthesize extStatsReporter=_extStatsReporter;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
 @property(retain, nonatomic) WCFinderStreamLiveCollectionViewCell *livingCell; // @synthesize livingCell=_livingCell;
@@ -151,4 +152,3 @@
 @property(readonly) Class superclass;
 
 @end
-

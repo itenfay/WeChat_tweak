@@ -33,7 +33,6 @@
 + (void)PBArrayAdd_bizScene;
 + (void)PBArrayAdd_generateScene;
 + (void)PBArrayAdd_generateType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aggreSessionId; // @synthesize aggreSessionId=_aggreSessionId;
 @property(retain, nonatomic) NSString *miniSessionId; // @synthesize miniSessionId=_miniSessionId;
 @property(nonatomic) unsigned long long lastMaximizeTime; // @synthesize lastMaximizeTime=_lastMaximizeTime;

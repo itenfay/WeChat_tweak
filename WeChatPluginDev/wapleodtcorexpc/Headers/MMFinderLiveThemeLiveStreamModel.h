@@ -10,7 +10,6 @@
     FinderThemeLiveStreamResponse *_resp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderThemeLiveStreamResponse *resp; // @synthesize resp=_resp;
 
 @end

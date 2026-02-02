@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIViewController;
 
@@ -21,7 +22,6 @@
     NSString *_preinjectData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preinjectData; // @synthesize preinjectData=_preinjectData;
 @property(retain, nonatomic) UIColor *backGroundColor; // @synthesize backGroundColor=_backGroundColor;
 @property(nonatomic) _Bool reCreateAfterUsed; // @synthesize reCreateAfterUsed=_reCreateAfterUsed;
@@ -34,4 +34,3 @@
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 
 @end
-

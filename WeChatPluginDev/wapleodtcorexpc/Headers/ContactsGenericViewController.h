@@ -21,7 +21,6 @@
     id <contactsDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bPopUp; // @synthesize m_bPopUp;
 @property(retain, nonatomic) NSString *m_nsDomain; // @synthesize m_nsDomain;
 @property(nonatomic) long long m_iViewType; // @synthesize m_iViewType;

@@ -19,7 +19,6 @@
 + (id)getSharedUrlCache;
 + (id)getAvailableCapacityControl;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *visibleWebViewStateTable; // @synthesize visibleWebViewStateTable=_visibleWebViewStateTable;
 @property(retain, nonatomic) YYWKSchemeGuardModel *guardModel; // @synthesize guardModel=_guardModel;
 @property(nonatomic) _Bool ignoreGuardCheck; // @synthesize ignoreGuardCheck=_ignoreGuardCheck;

@@ -12,7 +12,6 @@
     WCFinderFeedPickerParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedPickerParams *params; // @synthesize params=_params;
 @property(nonatomic) __weak id <WCFinderSearchPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (int)searchHistoryListViewEnterScene;

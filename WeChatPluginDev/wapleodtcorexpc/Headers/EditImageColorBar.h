@@ -16,7 +16,6 @@
     double _unselectedSizeLen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double unselectedSizeLen; // @synthesize unselectedSizeLen=_unselectedSizeLen;
 @property(nonatomic) double selectedSizeLen; // @synthesize selectedSizeLen=_selectedSizeLen;
 @property(retain, nonatomic) NSArray *colorArray; // @synthesize colorArray=_colorArray;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderNpsSurveyQuestion, FinderNpsSurveyTaskConf, MMStarRatingView, NSMutableArray, NSString, UILabel;
 
 @interface WCFinderNpsSurveyView
@@ -16,7 +18,6 @@
     MMStarRatingView *_starRatingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMStarRatingView *starRatingView; // @synthesize starRatingView=_starRatingView;
 @property(retain, nonatomic) NSMutableArray *answerButtonList; // @synthesize answerButtonList=_answerButtonList;
 @property(retain, nonatomic) UILabel *questionLabel; // @synthesize questionLabel=_questionLabel;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

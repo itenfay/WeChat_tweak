@@ -16,7 +16,6 @@
     NSString *_fromAppId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromAppId; // @synthesize fromAppId=_fromAppId;
 @property(copy, nonatomic) NSString *extendedEnterSceneNote; // @synthesize extendedEnterSceneNote=_extendedEnterSceneNote;
 @property(nonatomic) unsigned long long extendedEnterScene; // @synthesize extendedEnterScene=_extendedEnterScene;

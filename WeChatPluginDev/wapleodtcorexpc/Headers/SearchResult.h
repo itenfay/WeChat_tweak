@@ -13,7 +13,6 @@
     NSString *_keyword;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned char weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
 - (id)initWithKeyword:(id)arg1 weight:(unsigned char)arg2;

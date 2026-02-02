@@ -21,7 +21,6 @@
     WCFinderFeedSearchParams *_searchParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedSearchParams *searchParams; // @synthesize searchParams=_searchParams;
 @property(retain, nonatomic) WCFinderBaseCgi *cgi; // @synthesize cgi=_cgi;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;

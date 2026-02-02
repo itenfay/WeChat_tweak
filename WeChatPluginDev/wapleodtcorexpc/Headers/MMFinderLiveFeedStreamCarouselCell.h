@@ -12,7 +12,6 @@
     MMFinderLiveFeedStreamCarouselBaseItem<MMFinderLiveFeedStreamCarouselItemProtocol> *_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedStreamCarouselBaseItem<MMFinderLiveFeedStreamCarouselItemProtocol> *data; // @synthesize data=_data;
 @property(nonatomic) __weak id <MMFinderLiveFeedStreamCarouselCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)prepareForReuse;

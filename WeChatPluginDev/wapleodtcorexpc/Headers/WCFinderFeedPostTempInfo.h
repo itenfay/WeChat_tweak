@@ -13,7 +13,6 @@
     RecommendedMusicInfo *_musicInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RecommendedMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;
 @property(nonatomic) _Bool isOnPostLoading; // @synthesize isOnPostLoading=_isOnPostLoading;
 

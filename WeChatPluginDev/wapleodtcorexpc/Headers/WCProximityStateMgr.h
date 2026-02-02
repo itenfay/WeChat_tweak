@@ -21,7 +21,6 @@
     long long _proximityStateErrorCountExpt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long proximityStateErrorCountExpt; // @synthesize proximityStateErrorCountExpt=_proximityStateErrorCountExpt;
 @property(nonatomic) int touchCountWhenProximityState; // @synthesize touchCountWhenProximityState=_touchCountWhenProximityState;
 @property(nonatomic) _Bool shouldChangeBrightness; // @synthesize shouldChangeBrightness=_shouldChangeBrightness;

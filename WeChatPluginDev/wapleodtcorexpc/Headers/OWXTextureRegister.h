@@ -14,7 +14,6 @@
     id <OMJTextureHolder> _textureHolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <OMJTextureHolder> textureHolder; // @synthesize textureHolder=_textureHolder;
 @property(retain, nonatomic) NSObject<FlutterTextureRegistry> *textures; // @synthesize textures=_textures;
 - (struct __CVBuffer *)copyPixelBuffer;

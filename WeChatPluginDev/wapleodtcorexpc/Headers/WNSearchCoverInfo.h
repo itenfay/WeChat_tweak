@@ -15,7 +15,6 @@
     struct CGRect _endRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subCoverInfoList; // @synthesize subCoverInfoList=_subCoverInfoList;
 @property(retain, nonatomic) UIColor *coverColor; // @synthesize coverColor=_coverColor;
 @property(nonatomic) struct CGRect endRect; // @synthesize endRect=_endRect;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonBoardView, MMUILabel, NSArray, NSIndexPath, NSString, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer, UITableView, UITapGestureRecognizer, UIView, WCCommentDetailHeaderView, WCCommentDetailViewModel, WCCommentEmotionBoardViewContainerView, WCCommentInputView, WCFinderAnimationLoadingView, WCFinderCommentDetailTextView, WCFinderCommentIdentityActionSheetView, WCFinderCommentListHeaderRefreshView, WCFinderCommentSearchMentionContainerView, WCFinderCreateCoordinator, WCFinderHeadImageView, WCFinderPushFeedViewParams, WCFinderRefreshTableFooterView, WCInputController;
 @protocol WCCommentDetailViewControllerDelegate;
 
@@ -68,7 +70,6 @@
 
 + (void)showWithCommentObject:(id)arg1 refCommentId:(unsigned long long)arg2 viewController:(id)arg3;
 + (id)viewControllerWithCommentObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rightButtons; // @synthesize rightButtons=_rightButtons;
 @property(retain, nonatomic) WCFinderPushFeedViewParams *funcParams; // @synthesize funcParams=_funcParams;
 @property(nonatomic) _Bool showTitle; // @synthesize showTitle=_showTitle;
@@ -323,4 +324,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *zhTWName; // @synthesize zhTWName=_zhTWName;
 @property(retain, nonatomic) NSString *zhCNName; // @synthesize zhCNName=_zhCNName;
 @property(retain, nonatomic) NSString *zhHKName; // @synthesize zhHKName=_zhHKName;

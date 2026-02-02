@@ -14,7 +14,6 @@
 }
 
 + (id)newInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldParseWeAppTagLink; // @synthesize shouldParseWeAppTagLink=_shouldParseWeAppTagLink;
 @property(nonatomic) _Bool shouldParseWeAppMPShortLink; // @synthesize shouldParseWeAppMPShortLink=_shouldParseWeAppMPShortLink;
 @property(retain, nonatomic) NSString *sourceUrl; // @synthesize sourceUrl=_sourceUrl;

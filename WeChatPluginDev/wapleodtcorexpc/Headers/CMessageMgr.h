@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BypSendEmotionMessageMgr, BypSendMessageMgr, CDownloadVideoMgr, CEmoticonDownloadMgr, CEmoticonUploadMgr, CMessageDB, DownloadImageCDNMgr, DownloadImageMgr, DownloadVideoCDNMgr, MessageAssetThreshold, MessagePatternCacheMgr, MultiMediaUploadUnifyMgr, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, OpenDownloadCDNMgr, OpenDownloadMgr, OpenUploadCDNMgr, OpenUploadMgr, OpenUploadVideoCDNMgr, RecordDownloadCDNMgr, RecordUploadCDNMgr, RoomHistoryDownloadCDNMgr, ThumbDownloadMgr, UploadImageCDNMgr, UploadImageMgr, VideoUploadUnifyMgr;
 @protocol OS_dispatch_semaphore;
 
@@ -57,7 +59,6 @@
 + (unsigned long long)preCleanGetCacheSize;
 + (unsigned long long)cleanCacheMgrMakeToClean;
 + (void)supplementLocalBubbleWithVoIPIlinkWordingInfo:(id)arg1 exceptionType:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckMsgTime; // @synthesize hasCheckMsgTime=_hasCheckMsgTime;
 @property(retain, nonatomic) NSNumber *waittingSecMsgCount; // @synthesize waittingSecMsgCount=_waittingSecMsgCount;
 @property(retain, nonatomic) MessageAssetThreshold *assetThreshold; // @synthesize assetThreshold=_assetThreshold;
@@ -387,4 +388,3 @@
 @property(readonly) Class superclass;
 
 @end
-

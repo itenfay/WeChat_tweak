@@ -17,7 +17,6 @@
 + (void)setHTTPBodyElementData:(id)arg1 forRequest:(id)arg2;
 + (id)sharedInstance;
 @property(retain) NSMutableDictionary *dicData; // @synthesize dicData=_dicData;
-- (void).cxx_destruct;
 - (void)removeAllPostData;
 - (id)arrayFromKey:(id)arg1;
 - (id)arrayFromContainerWithKey:(id)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSMutableDictionary, NSString, UIColor, UIView, WCFinderCreateCoordinator, WCFinderEmptyTipsView, WCFinderLivePageStayReporter, WCFinderLiveTabInfo, WCFinderNearbyMoreLiveViewModel, WCFinderTabPageView;
 
 @interface WCFinderNearbyMoreLiveViewController
@@ -39,7 +41,6 @@
     struct CGRect _firstCellRect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 @property(nonatomic) _Bool isReloadingByLocationAuthorizationChanged; // @synthesize isReloadingByLocationAuthorizationChanged=_isReloadingByLocationAuthorizationChanged;
 @property(nonatomic) struct CGRect firstCellRect; // @synthesize firstCellRect=_firstCellRect;
@@ -176,4 +177,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -24,7 +24,6 @@
     NSMutableDictionary *_playFailedMusicDataDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *playFailedMusicDataDict; // @synthesize playFailedMusicDataDict=_playFailedMusicDataDict;
 @property(retain, nonatomic) MMFinderLiveMusicDataItem *currentPlayingMusicItem; // @synthesize currentPlayingMusicItem=_currentPlayingMusicItem;
 @property(retain, nonatomic) NSMutableArray *selectedMusicDataItemArray; // @synthesize selectedMusicDataItemArray=_selectedMusicDataItemArray;

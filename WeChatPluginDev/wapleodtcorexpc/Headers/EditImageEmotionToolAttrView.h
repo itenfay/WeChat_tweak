@@ -16,7 +16,6 @@
     unsigned long long _emoticonBoardViewStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long emoticonBoardViewStyle; // @synthesize emoticonBoardViewStyle=_emoticonBoardViewStyle;
 @property(nonatomic) _Bool isEmoticonSearchEnabled; // @synthesize isEmoticonSearchEnabled=_isEmoticonSearchEnabled;
 @property(nonatomic) _Bool animatable; // @synthesize animatable=_animatable;

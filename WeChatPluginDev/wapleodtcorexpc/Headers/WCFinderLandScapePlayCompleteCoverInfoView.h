@@ -15,7 +15,6 @@
     UITapGestureRecognizer *_tapGes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGes; // @synthesize tapGes=_tapGes;
 @property(retain, nonatomic) UIImageView *playView; // @synthesize playView=_playView;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;

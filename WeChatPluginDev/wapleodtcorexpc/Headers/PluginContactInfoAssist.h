@@ -17,7 +17,6 @@
     UILabel *_introLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *introLabel; // @synthesize introLabel=_introLabel;
 - (id)navigationBarBackgroundColor;
 - (id)getLoadingText;

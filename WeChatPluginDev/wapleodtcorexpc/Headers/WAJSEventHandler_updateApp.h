@@ -11,7 +11,6 @@
     unsigned int _latestVersion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int latestVersion; // @synthesize latestVersion=_latestVersion;
 - (void)endWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)markUpdateAppRunning:(_Bool)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CRReportAPIClient;
 
@@ -20,10 +21,8 @@
 + (void)jumpToAppStore:(id)arg1 report:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CRReportAPIClient *reportClient; // @synthesize reportClient=_reportClient;
 - (id)initSingleton;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
-

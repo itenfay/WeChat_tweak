@@ -139,7 +139,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useRfxPag; // @synthesize useRfxPag=_useRfxPag;
 @property(nonatomic) unsigned int freeGiftSeq; // @synthesize freeGiftSeq=_freeGiftSeq;
 @property(retain, nonatomic) MMFinderLiveAnchorCustomizeRewardStyleItem *anchorCustomizeStyle; // @synthesize anchorCustomizeStyle=_anchorCustomizeStyle;

@@ -18,7 +18,6 @@
     NSDictionary *_response;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *response; // @synthesize response=_response;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) _Bool bNotShowedFeedbackBrandContact; // @synthesize bNotShowedFeedbackBrandContact=_bNotShowedFeedbackBrandContact;

@@ -24,7 +24,6 @@
 }
 
 + (_Bool)isPivotEnableToScroll;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forbidScrollReasons; // @synthesize forbidScrollReasons=_forbidScrollReasons;
 @property(nonatomic) struct CGPoint targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
 @property(nonatomic) _Bool isScrollDown; // @synthesize isScrollDown=_isScrollDown;

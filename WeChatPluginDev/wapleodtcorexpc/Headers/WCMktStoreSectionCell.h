@@ -18,7 +18,6 @@
     CardSortInfo *_sortInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CardSortInfo *sortInfo; // @synthesize sortInfo=_sortInfo;
 @property(retain, nonatomic) UIButton *coverBtn; // @synthesize coverBtn=_coverBtn;
 @property(retain, nonatomic) UIView *seplineView; // @synthesize seplineView=_seplineView;

@@ -13,7 +13,6 @@
     UILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MJSlantedLinesView *slantedLinesView; // @synthesize slantedLinesView=_slantedLinesView;
 - (void)layoutViews;

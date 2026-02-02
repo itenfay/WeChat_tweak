@@ -14,7 +14,6 @@
     NSString *_checkRelativePath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *checkRelativePath; // @synthesize checkRelativePath=_checkRelativePath;
 @property(retain, nonatomic) UIView *documentView; // @synthesize documentView=_documentView;
 @property(retain, nonatomic) UIView *tipsPanView; // @synthesize tipsPanView=_tipsPanView;

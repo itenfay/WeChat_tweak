@@ -14,7 +14,6 @@
     id <WAJSEventHandlerContextDelegate> _context;
 }
 
-- (void).cxx_destruct;
 - (id)getEventHandler:(id)arg1;
 - (id)sourceOpenSDKAppID;
 - (id)GetWebViewPluginByName:(id)arg1;

@@ -11,7 +11,6 @@
     LSMFileStorage *m_fileStorage;
 }
 
-- (void).cxx_destruct;
 - (void)onBoldTextStatusChanged;
 - (void)onLanguageChange;
 - (void)onFontSizeChange;

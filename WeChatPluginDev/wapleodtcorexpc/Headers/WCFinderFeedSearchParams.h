@@ -18,7 +18,6 @@
     unsigned long long _searchScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int interactionScene; // @synthesize interactionScene=_interactionScene;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
 @property(nonatomic) unsigned long long searchScene; // @synthesize searchScene=_searchScene;

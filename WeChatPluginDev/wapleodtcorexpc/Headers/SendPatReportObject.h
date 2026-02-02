@@ -19,7 +19,6 @@
     unsigned long long _revokeType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool exposeSetSuffixEducation; // @synthesize exposeSetSuffixEducation=_exposeSetSuffixEducation;
 @property(nonatomic) unsigned long long revokeType; // @synthesize revokeType=_revokeType;
 @property(nonatomic) _Bool createNewChat; // @synthesize createNewChat=_createNewChat;

@@ -12,7 +12,6 @@
     NSString *_refreshWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *refreshWording; // @synthesize refreshWording=_refreshWording;
 @property(nonatomic) _Bool canRefresh; // @synthesize canRefresh=_canRefresh;
 @property(nonatomic) _Bool isDynamic; // @synthesize isDynamic=_isDynamic;

@@ -24,7 +24,6 @@
     NSString *_fromAppId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromAppId; // @synthesize fromAppId=_fromAppId;
 @property(copy, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
 @property(nonatomic) unsigned long long newScene; // @synthesize newScene=_newScene;

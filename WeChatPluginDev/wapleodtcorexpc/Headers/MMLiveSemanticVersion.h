@@ -17,7 +17,6 @@
 }
 
 + (id)semanticVersionFromString:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *buildTag; // @synthesize buildTag=_buildTag;
 @property(retain, nonatomic) NSString *previewTag; // @synthesize previewTag=_previewTag;
 @property(nonatomic) unsigned long long patch; // @synthesize patch=_patch;

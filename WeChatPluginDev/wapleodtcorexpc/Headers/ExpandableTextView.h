@@ -13,7 +13,6 @@
     ExpandableTextViewConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ExpandableTextViewConfig *config; // @synthesize config=_config;
 @property(nonatomic) __weak id <ExpandableTextViewDelegate> expandDelegate; // @synthesize expandDelegate=_expandDelegate;
 @property(nonatomic) _Bool isExpand; // @synthesize isExpand=_isExpand;

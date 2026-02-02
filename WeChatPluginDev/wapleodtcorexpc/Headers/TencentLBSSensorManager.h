@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CLLocationManager, CMMotionManager, CMPedometer, NSNumber, NSOperationQueue, NSString;
 
@@ -23,7 +24,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType headingBlock; // @synthesize headingBlock=_headingBlock;
 @property(retain, nonatomic) NSNumber *lastSteps; // @synthesize lastSteps=_lastSteps;
 @property(retain, nonatomic) CMPedometer *pedometer; // @synthesize pedometer=_pedometer;
@@ -59,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

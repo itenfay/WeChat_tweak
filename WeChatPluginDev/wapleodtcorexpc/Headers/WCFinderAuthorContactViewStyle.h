@@ -18,7 +18,6 @@
 }
 
 + (id)defaultStyle;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showAuthProfessionLabel; // @synthesize showAuthProfessionLabel=_showAuthProfessionLabel;
 @property(retain, nonatomic) UIColor *nicknameColor; // @synthesize nicknameColor=_nicknameColor;
 @property(retain, nonatomic) UIFont *nicknameFont; // @synthesize nicknameFont=_nicknameFont;

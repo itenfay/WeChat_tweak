@@ -13,7 +13,6 @@
 }
 
 + (id)createNotifyMsgInfoWithFollowContactOrderSet:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSOrderedSet *followContactSet; // @synthesize followContactSet=_followContactSet;
 - (id)description;
 

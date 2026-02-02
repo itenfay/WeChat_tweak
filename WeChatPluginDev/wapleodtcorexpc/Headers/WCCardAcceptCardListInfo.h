@@ -18,7 +18,6 @@
     NSString *_templateMsgId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *templateMsgId; // @synthesize templateMsgId=_templateMsgId;
 @property(retain, nonatomic) NSString *consumedboxCardId; // @synthesize consumedboxCardId=_consumedboxCardId;
 @property(nonatomic) unsigned int statScene; // @synthesize statScene=_statScene;

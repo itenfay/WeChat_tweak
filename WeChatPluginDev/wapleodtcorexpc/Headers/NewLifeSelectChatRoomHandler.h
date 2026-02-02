@@ -14,7 +14,6 @@
     NSMutableSet *_recentChatRoomSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *recentChatRoomSet; // @synthesize recentChatRoomSet=_recentChatRoomSet;
 @property(retain, nonatomic) NSMutableArray *recentChatRoomList; // @synthesize recentChatRoomList=_recentChatRoomList;
 @property(nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;

@@ -18,7 +18,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cardItems; // @synthesize cardItems=_cardItems;
 @property(retain, nonatomic) NSString *backgroundImageUrl; // @synthesize backgroundImageUrl=_backgroundImageUrl;
 @property(retain, nonatomic) NSString *titleColorPickedDark; // @synthesize titleColorPickedDark=_titleColorPickedDark;

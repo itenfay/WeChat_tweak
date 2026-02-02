@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class OpenSDKOAuthRequest;
 
 @interface GetQRCodeOAuthDataCgi
@@ -12,7 +14,6 @@
     CDUnknownBlockType _completion;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) OpenSDKOAuthRequest *authReq; // @synthesize authReq=_authReq;
 @property(nonatomic) _Bool hasHandleEcdhRollback; // @synthesize hasHandleEcdhRollback=_hasHandleEcdhRollback;
@@ -23,4 +24,3 @@
 - (id)initWithAuthReq:(id)arg1;
 
 @end
-

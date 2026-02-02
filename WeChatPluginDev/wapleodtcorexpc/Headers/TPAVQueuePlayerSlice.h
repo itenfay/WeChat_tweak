@@ -18,7 +18,6 @@
     AVPlayerItemVideoOutput *_VROutput;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlayerItemVideoOutput *VROutput; // @synthesize VROutput=_VROutput;
 @property(retain, nonatomic) AVPlayerItemVideoOutput *snapshotOutput; // @synthesize snapshotOutput=_snapshotOutput;
 @property(nonatomic) _Bool assetLoaded; // @synthesize assetLoaded=_assetLoaded;

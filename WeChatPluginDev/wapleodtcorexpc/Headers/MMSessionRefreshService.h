@@ -14,7 +14,6 @@
     int m_skipedCount;
 }
 
-- (void).cxx_destruct;
 - (void)onServiceEnterForeground;
 - (void)onServiceEnterBackground;
 - (void)onServiceInit;

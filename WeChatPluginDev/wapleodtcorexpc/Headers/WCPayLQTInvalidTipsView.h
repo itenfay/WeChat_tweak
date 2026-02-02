@@ -16,7 +16,6 @@
     id <WCPayLQTInvalidTipsViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayLQTInvalidTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *richTextContent; // @synthesize richTextContent=_richTextContent;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

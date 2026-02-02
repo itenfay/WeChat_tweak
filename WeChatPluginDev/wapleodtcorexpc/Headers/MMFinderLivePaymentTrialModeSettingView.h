@@ -18,7 +18,6 @@
     long long _purchaseLivePreviewType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long purchaseLivePreviewType; // @synthesize purchaseLivePreviewType=_purchaseLivePreviewType;
 @property(retain, nonatomic) MMFinderLivePaymentTrialModeCell *durationFromLiveStartCell; // @synthesize durationFromLiveStartCell=_durationFromLiveStartCell;
 @property(retain, nonatomic) MMFinderLivePaymentTrialModeCell *durationFromFirstJoinCell; // @synthesize durationFromFirstJoinCell=_durationFromFirstJoinCell;

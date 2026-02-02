@@ -18,7 +18,6 @@
     struct CGRect _imgViewFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GCChatRoomImageZoomAnimationDelegate> zoomAnimationDelegate; // @synthesize zoomAnimationDelegate=_zoomAnimationDelegate;
 @property(retain, nonatomic) NSString *sourcePosIdentifier; // @synthesize sourcePosIdentifier=_sourcePosIdentifier;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;

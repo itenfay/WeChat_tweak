@@ -19,7 +19,6 @@
     WCAdURLImageView *_jumpLinkIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdURLImageView *jumpLinkIcon; // @synthesize jumpLinkIcon=_jumpLinkIcon;
 @property(retain, nonatomic) MMUIButton *jumpLinkButton; // @synthesize jumpLinkButton=_jumpLinkButton;
 @property(retain, nonatomic) MMUILabel *continuousLikeNumber; // @synthesize continuousLikeNumber=_continuousLikeNumber;

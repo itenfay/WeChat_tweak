@@ -15,7 +15,6 @@
     NSString *_chatRoomId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *chatRoomId; // @synthesize chatRoomId=_chatRoomId;
 @property(nonatomic) unsigned long long chatType; // @synthesize chatType=_chatType;
 @property(copy, nonatomic) NSString *msgFromUserName; // @synthesize msgFromUserName=_msgFromUserName;

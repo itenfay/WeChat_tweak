@@ -24,7 +24,6 @@
     NSString *_maskString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *maskString; // @synthesize maskString=_maskString;
 @property(copy, nonatomic) NSString *serverString; // @synthesize serverString=_serverString;
 @property(copy, nonatomic) NSString *connectString; // @synthesize connectString=_connectString;

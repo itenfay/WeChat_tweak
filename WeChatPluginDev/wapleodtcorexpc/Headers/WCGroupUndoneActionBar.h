@@ -17,7 +17,6 @@
     CAGradientLayer *_rightGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *rightGradientLayer; // @synthesize rightGradientLayer=_rightGradientLayer;
 @property(retain, nonatomic) CAGradientLayer *leftGradientLayer; // @synthesize leftGradientLayer=_leftGradientLayer;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

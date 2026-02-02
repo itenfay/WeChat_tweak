@@ -12,7 +12,6 @@
     RhombusView *_rmbView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RhombusView *rmbView; // @synthesize rmbView=_rmbView;
 - (void)beginLoadingAnimation;
 - (id)initWithFrame:(struct CGRect)arg1 progressBarColor:(id)arg2;

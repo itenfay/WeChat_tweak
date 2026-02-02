@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, NewLifePostInfo;
 
 @interface WCMomentsNewLifeShareViewModel
@@ -14,7 +16,6 @@
     NSString *_newlifeShareFeedId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *newlifeShareFeedId; // @synthesize newlifeShareFeedId=_newlifeShareFeedId;
 @property(nonatomic) long long newlifePostShareScene; // @synthesize newlifePostShareScene=_newlifePostShareScene;
 @property(copy, nonatomic) NewLifePostInfo *currentNewLifePostInfo; // @synthesize currentNewLifePostInfo=_currentNewLifePostInfo;
@@ -38,4 +39,3 @@
 - (void)dr_bindShareButton:(id)arg1;
 
 @end
-

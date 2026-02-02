@@ -18,7 +18,6 @@
 
 + (double)LocalCityShareCardEmptyTipsHeight;
 + (double)ShareCardGatherViewHeight;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)genTagItemViewWithTagItem:(id)arg1;
 - (id)genNewItemView;

@@ -18,7 +18,6 @@
     double _heightPercent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealAppear; // @synthesize isRealAppear=_isRealAppear;
 @property(nonatomic) _Bool autoRotate; // @synthesize autoRotate=_autoRotate;
 @property(nonatomic) _Bool landscape; // @synthesize landscape=_landscape;

@@ -16,7 +16,6 @@
     NSString *_entranceGMsgID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *entranceGMsgID; // @synthesize entranceGMsgID=_entranceGMsgID;
 @property(copy, nonatomic) NSString *ecSource; // @synthesize ecSource=_ecSource;
 @property(copy, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

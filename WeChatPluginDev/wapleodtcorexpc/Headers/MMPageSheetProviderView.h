@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetBottomView, MMPageSheetNavigationBar, MMUILabel, NSMutableArray, NSString, UIButton, UIPanGestureRecognizer, UIScrollView;
 @protocol MMPageSheetProviderViewDelegate;
@@ -41,7 +42,6 @@
 }
 
 + (id)viewWithProvider:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *interactivePopToView; // @synthesize interactivePopToView=_interactivePopToView;
 @property(nonatomic) _Bool isBeingInteractivePop; // @synthesize isBeingInteractivePop=_isBeingInteractivePop;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
@@ -163,4 +163,3 @@
 @property(readonly) Class superclass;
 
 @end
-

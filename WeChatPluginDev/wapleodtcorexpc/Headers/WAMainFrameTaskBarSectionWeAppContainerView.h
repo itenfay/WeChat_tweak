@@ -18,7 +18,6 @@
 
 + (double)contentHeightWithWeAppViewModel:(id)arg1 myWeAppViewModel:(id)arg2;
 + (long long)topAreaHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cellOnceCreated; // @synthesize cellOnceCreated=_cellOnceCreated;
 @property(retain, nonatomic) UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

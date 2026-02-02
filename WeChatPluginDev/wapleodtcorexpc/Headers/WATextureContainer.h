@@ -24,7 +24,6 @@
     struct CGSize _ciContextOutBufferSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize ciContextOutBufferSize; // @synthesize ciContextOutBufferSize=_ciContextOutBufferSize;
 @property(nonatomic) struct __CVBuffer *ciContextOutBuffer; // @synthesize ciContextOutBuffer=_ciContextOutBuffer;
 @property(retain, nonatomic) CIContext *ciContext; // @synthesize ciContext=_ciContext;

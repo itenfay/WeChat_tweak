@@ -12,7 +12,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *corpid; // @synthesize corpid=_corpid;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 

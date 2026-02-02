@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE;
 
@@ -15,11 +16,9 @@
     MISSING_TYPE *session;
 }
 
-- (void).cxx_destruct;
 - (void)reportThatPreloadLiveHomePage;
 - (void)reportThatEnterDiscoverLiveCell;
 - (void)reportThatEnterDiscoverTabWithIsInHomePage:(_Bool)arg1 isHomePageVCCached:(_Bool)arg2 predictProbThreshold:(float)arg3 onPredict:(CDUnknownBlockType)arg4;
 - (id)init;
 
 @end
-

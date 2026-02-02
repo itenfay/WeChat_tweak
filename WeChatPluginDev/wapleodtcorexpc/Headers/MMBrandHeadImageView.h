@@ -20,7 +20,6 @@
 
 + (id)getFTSFeatureBrandHeadImageViewFromUrl:(id)arg1 username:(id)arg2;
 + (id)getFTSBrandHeadImageViewFromUrl:(id)arg1 username:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id m_object; // @synthesize m_object;
 @property(nonatomic) SEL m_selAction; // @synthesize m_selAction;
 @property(nonatomic) __weak id m_oTarget; // @synthesize m_oTarget;

@@ -11,7 +11,6 @@
     NSString *m_serviceId;
 }
 
-- (void).cxx_destruct;
 - (id)bleInstance;
 - (void)dealloc;
 - (void)onBluetoothCharacteristicsDiscovered:(id)arg1 service:(id)arg2 device:(id)arg3 errorCode:(int)arg4 errMsg:(id)arg5 appid:(id)arg6;

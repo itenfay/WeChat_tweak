@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -24,7 +25,6 @@
     CDUnknownBlockType _showMoreButtonCondition;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType showMoreButtonCondition; // @synthesize showMoreButtonCondition=_showMoreButtonCondition;
 @property(copy, nonatomic) CDUnknownBlockType shouldShowTotalCount; // @synthesize shouldShowTotalCount=_shouldShowTotalCount;
 @property(copy, nonatomic) CDUnknownBlockType syncDataFromPage; // @synthesize syncDataFromPage=_syncDataFromPage;
@@ -40,4 +40,3 @@
 @property(nonatomic) long long secType; // @synthesize secType=_secType;
 
 @end
-

@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_setMatchTypeStr;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setMatchTypeStr; // @synthesize setMatchTypeStr=_setMatchTypeStr;
 - (id)getPBPropertyTable;
 

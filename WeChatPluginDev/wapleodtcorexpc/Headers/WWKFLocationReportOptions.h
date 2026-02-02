@@ -14,7 +14,6 @@
     NSString *_locationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *locationType; // @synthesize locationType=_locationType;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

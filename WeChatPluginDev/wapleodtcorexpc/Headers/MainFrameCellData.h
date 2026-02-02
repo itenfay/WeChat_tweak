@@ -68,7 +68,6 @@
 + (void)PBArrayAdd_m_timeIsMoreThanAWeek;
 + (void)PBArrayAdd_m_nsHeadImgUrl;
 + (void)PBArrayAdd_m_nsHeadImgUsrName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPositionChanged; // @synthesize isPositionChanged=_isPositionChanged;
 @property(retain, nonatomic) NSIndexPath *currIndexPath; // @synthesize currIndexPath=_currIndexPath;
 @property(nonatomic) _Bool m_bContainsEmoji; // @synthesize m_bContainsEmoji=_m_bContainsEmoji;

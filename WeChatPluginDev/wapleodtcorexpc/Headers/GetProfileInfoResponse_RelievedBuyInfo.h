@@ -4,6 +4,7 @@
 //
 
 #import <ProtobufLite/WXPBGeneratedMessage.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -32,4 +33,3 @@
 @property(retain, nonatomic) NSString *subtitle; // @dynamic subtitle;
 
 @end
-

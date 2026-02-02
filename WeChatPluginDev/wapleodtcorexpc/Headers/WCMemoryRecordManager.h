@@ -14,7 +14,6 @@
     NSMutableArray *m_recordList;
 }
 
-- (void).cxx_destruct;
 - (void)removeOldData;
 - (id)oldRecordListPath;
 - (void)loadRecordList;

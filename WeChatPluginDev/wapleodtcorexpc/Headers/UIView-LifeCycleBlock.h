@@ -4,9 +4,9 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (LifeCycleBlock)
 - (void)afterAddToWindow:(CDUnknownBlockType)arg1;
 - (void)afterAddToSuperview:(CDUnknownBlockType)arg1;
 @end
-

@@ -30,7 +30,6 @@
     id <RecordUploadTaskDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasTryFormatConvert; // @synthesize hasTryFormatConvert=_hasTryFormatConvert;
 @property(nonatomic) __weak id <RecordUploadTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isLocalResource; // @synthesize isLocalResource=_isLocalResource;

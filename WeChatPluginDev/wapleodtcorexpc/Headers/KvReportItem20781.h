@@ -14,7 +14,6 @@
     NSString *_ErrMsg_25;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ErrMsg_25; // @synthesize ErrMsg_25=_ErrMsg_25;
 @property(nonatomic) unsigned int PkgType_24; // @synthesize PkgType_24=_PkgType_24;
 @property(nonatomic) unsigned int PkgVersion_23; // @synthesize PkgVersion_23=_PkgVersion_23;

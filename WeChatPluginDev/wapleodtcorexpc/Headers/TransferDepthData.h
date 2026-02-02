@@ -13,7 +13,6 @@
     UIImage *_depthImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float median; // @synthesize median=_median;
 @property(retain, nonatomic) UIImage *depthImage; // @synthesize depthImage=_depthImage;
 

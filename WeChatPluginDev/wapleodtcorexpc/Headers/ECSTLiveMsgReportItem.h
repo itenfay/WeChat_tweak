@@ -17,7 +17,6 @@
 }
 
 + (id)reportKeyWithMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveScene; // @synthesize liveScene=_liveScene;
 @property(nonatomic) _Bool isClick; // @synthesize isClick=_isClick;
 @property(copy, nonatomic) NSString *liveExportID; // @synthesize liveExportID=_liveExportID;

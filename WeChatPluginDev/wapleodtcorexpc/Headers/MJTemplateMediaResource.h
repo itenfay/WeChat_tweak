@@ -15,7 +15,6 @@
     NSString *_mediaFileMd5;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mediaFileMd5; // @synthesize mediaFileMd5=_mediaFileMd5;
 @property(copy, nonatomic) NSString *mediaId; // @synthesize mediaId=_mediaId;
 @property(copy, nonatomic) NSString *mediaUrl; // @synthesize mediaUrl=_mediaUrl;

@@ -12,7 +12,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) WSWeSeeRouter *router; // @synthesize router=_router;
 @property(retain, nonatomic) MMUIViewController *vc; // @synthesize vc=_vc;

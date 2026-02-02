@@ -16,7 +16,6 @@
     NSString *_adjustedAssetFilePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool cdnUploadCacheEnabled; // @synthesize cdnUploadCacheEnabled=_cdnUploadCacheEnabled;
 @property(copy, nonatomic) NSString *adjustedAssetFilePath; // @synthesize adjustedAssetFilePath=_adjustedAssetFilePath;
 @property(copy, nonatomic) NSString *assetFileKey; // @synthesize assetFileKey=_assetFileKey;

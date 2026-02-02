@@ -14,7 +14,6 @@
 }
 
 + (id)instance;
-- (void).cxx_destruct;
 - (void)removeAllRecords;
 - (void)deleteWithTalker:(id)arg1;
 - (void)deleteWithTalker:(id)arg1 localId:(long long)arg2;

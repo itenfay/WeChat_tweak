@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveCompleteViewReplaySettingsCoverPickingRequest, NSString;
 
@@ -12,7 +13,6 @@
     MMFinderLiveCompleteViewReplaySettingsCoverPickingRequest *_currentRequest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveCompleteViewReplaySettingsCoverPickingRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 - (void)showAlbumPickerWithHostingVc:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showCameraPickerWithHostingVc:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -34,4 +34,3 @@
 @property(readonly) Class superclass;
 
 @end
-

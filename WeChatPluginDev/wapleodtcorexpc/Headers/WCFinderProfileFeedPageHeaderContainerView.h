@@ -17,7 +17,6 @@
 
 + (double)displayHeightWithTagLayout:(id)arg1 collectionLayout:(id)arg2;
 + (id)createTagListViewOptions;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfileCollectionListView *collectionListView; // @synthesize collectionListView=_collectionListView;
 @property(retain, nonatomic) WCFinderTagListView *tagListView; // @synthesize tagListView=_tagListView;
 @property(nonatomic) __weak id <WCFinderProfileFeedPageHeaderContainerViewDelegate> delegate; // @synthesize delegate=_delegate;

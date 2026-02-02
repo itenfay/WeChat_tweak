@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAsset, AVAssetReader, AVAssetReaderOutput, AVAssetReaderVideoCompositionOutput, AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, AVMutableVideoComposition, AVVideoComposition, AVVideoCompositionCoreAnimationTool, NSDictionary, NSError, NSString, NSURL;
 @protocol OS_dispatch_queue;
@@ -50,7 +51,6 @@
     CDStruct_e83c9415 _adjustTimeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAppSuspend; // @synthesize hasAppSuspend=_hasAppSuspend;
 @property(nonatomic) _Bool hasBegan; // @synthesize hasBegan=_hasBegan;
 @property(nonatomic) CDStruct_e83c9415 adjustTimeRange; // @synthesize adjustTimeRange=_adjustTimeRange;
@@ -103,4 +103,3 @@
 - (id)initWithAsset:(id)arg1;
 
 @end
-

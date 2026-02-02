@@ -33,7 +33,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowTapicOnExceedMaxTimeRange; // @synthesize allowTapicOnExceedMaxTimeRange=_allowTapicOnExceedMaxTimeRange;
 @property(retain, nonatomic) UIColor *sliderHighlightMaskColor; // @synthesize sliderHighlightMaskColor=_sliderHighlightMaskColor;
 @property(nonatomic) double videoLength; // @synthesize videoLength=_videoLength;

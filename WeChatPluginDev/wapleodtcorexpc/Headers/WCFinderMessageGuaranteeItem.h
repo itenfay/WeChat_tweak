@@ -15,7 +15,6 @@
 }
 
 + (id)xmlNodeName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;
 @property(copy, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;

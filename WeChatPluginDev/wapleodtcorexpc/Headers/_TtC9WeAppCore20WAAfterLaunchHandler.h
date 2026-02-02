@@ -14,7 +14,6 @@
     MISSING_TYPE *appId;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)fetchData;
 - (id)initWithAppId:(id)arg1;

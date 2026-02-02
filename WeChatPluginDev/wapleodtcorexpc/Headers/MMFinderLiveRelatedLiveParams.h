@@ -14,7 +14,6 @@
     FinderLiveRelatedExtInfo *_relatedExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveRelatedExtInfo *relatedExtInfo; // @synthesize relatedExtInfo=_relatedExtInfo;
 @property(retain, nonatomic) NSArray *relatedLiveContentVMs; // @synthesize relatedLiveContentVMs=_relatedLiveContentVMs;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJShootVisageInspectorItem, NSArray, NSIndexPath;
 
 @interface MJShootFaceEffectInspectorViewModel
@@ -13,7 +15,6 @@
 }
 
 + (id)defaultFaceEffectItems;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) MJShootVisageInspectorItem *selectedFaceEffectItem; // @synthesize selectedFaceEffectItem=_selectedFaceEffectItem;
 @property(retain, nonatomic) NSArray *faceEffectItems; // @synthesize faceEffectItems=_faceEffectItems;
@@ -31,4 +32,3 @@
 - (void)fetchFaceEffectDataIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

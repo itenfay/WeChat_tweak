@@ -13,7 +13,6 @@
     unsigned long long _beginTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long beginTime; // @synthesize beginTime=_beginTime;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 

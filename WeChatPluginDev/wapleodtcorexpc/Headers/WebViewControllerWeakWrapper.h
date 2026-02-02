@@ -13,7 +13,6 @@
 }
 
 + (id)wrapperWithViewController:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWebViewController *viewController; // @synthesize viewController=_viewController;
 
 @end

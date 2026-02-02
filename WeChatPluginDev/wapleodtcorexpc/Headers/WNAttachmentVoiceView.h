@@ -20,7 +20,6 @@
     unsigned int _timems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timems; // @synthesize timems=_timems;
 - (id)getSubViewAccessibilityRecursive;
 - (void)OnAudioPlaying:(id)arg1 Offset:(unsigned int)arg2;

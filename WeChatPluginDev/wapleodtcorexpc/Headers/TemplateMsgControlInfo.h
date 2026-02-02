@@ -16,7 +16,6 @@
     unsigned long long _footerActionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long footerActionType; // @synthesize footerActionType=_footerActionType;
 @property(retain, nonatomic) NSString *footerActionWording; // @synthesize footerActionWording=_footerActionWording;
 @property(retain, nonatomic) NSString *footerWording; // @synthesize footerWording=_footerWording;

@@ -22,7 +22,6 @@
     NSMutableDictionary *_dataWrapList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dataWrapList; // @synthesize dataWrapList=_dataWrapList;
 @property(retain, nonatomic) FavoritesItemDataField *scrollToData; // @synthesize scrollToData=_scrollToData;
 - (id)findNodeViewWithMsgSvrId:(long long)arg1;

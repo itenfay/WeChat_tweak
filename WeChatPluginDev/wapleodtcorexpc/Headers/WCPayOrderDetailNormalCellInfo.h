@@ -16,7 +16,6 @@
     _Bool m_bIsSegmentationCell;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiJumpedType; // @synthesize m_uiJumpedType;
 @property(retain, nonatomic) NSString *m_nsValue; // @synthesize m_nsValue;
 @property(retain, nonatomic) NSString *m_nsKey; // @synthesize m_nsKey;

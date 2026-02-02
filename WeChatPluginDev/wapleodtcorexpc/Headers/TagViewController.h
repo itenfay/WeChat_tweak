@@ -23,7 +23,6 @@
 
 + (id)genImage:(unsigned long long)arg1 forButton:(id)arg2 cornerRadius:(double)arg3 isHighLight:(_Bool)arg4 isDarkMode:(_Bool)arg5;
 + (id)genImage:(unsigned long long)arg1 forButton:(id)arg2 cornerRadius:(double)arg3 isHighLight:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bShowAllTags; // @synthesize m_bShowAllTags=_m_bShowAllTags;
 @property(retain, nonatomic) NSString *m_allTagTitle; // @synthesize m_allTagTitle;
 @property(retain, nonatomic) NSArray *m_allTags; // @synthesize m_allTags;

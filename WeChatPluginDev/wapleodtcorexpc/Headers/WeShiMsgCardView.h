@@ -18,7 +18,6 @@
     id <WeiShiMsgCardMenuDelegate> _menuDelegage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WeiShiMsgCardMenuDelegate> menuDelegage; // @synthesize menuDelegage=_menuDelegage;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(nonatomic) unsigned int itemIndex; // @synthesize itemIndex=_itemIndex;

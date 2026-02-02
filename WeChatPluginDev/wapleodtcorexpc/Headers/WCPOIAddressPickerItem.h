@@ -21,7 +21,6 @@
     _Bool m_bLockProviceAndCity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool lockProviceAndCity; // @synthesize lockProviceAndCity=m_bLockProviceAndCity;
 - (void)commonPickerConfirm:(id)arg1;
 - (void)commonPickerCancel:(id)arg1;

@@ -13,7 +13,6 @@
     MPVolumeView *_m_privateVoulmeView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float m_lastVolume; // @synthesize m_lastVolume=_m_lastVolume;
 @property(retain, nonatomic) MPVolumeView *m_privateVoulmeView; // @synthesize m_privateVoulmeView=_m_privateVoulmeView;
 @property(retain, nonatomic) AVPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;

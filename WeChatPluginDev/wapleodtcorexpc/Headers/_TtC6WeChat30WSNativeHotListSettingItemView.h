@@ -16,7 +16,6 @@
     MISSING_TYPE *$__lazy_storage_$_prefixLineView;
 }
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)switchDidChanged:(id)arg1;
 - (void)layoutSubviews;

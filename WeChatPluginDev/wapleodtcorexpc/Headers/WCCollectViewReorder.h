@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UILongPressGestureRecognizer;
 
@@ -13,10 +14,8 @@
     CDUnknownBlockType _moveGestureStateChangeBlocks;
 }
 
-- (void).cxx_destruct;
 - (void)moveGestureAction:(id)arg1;
 - (void)bindToCollectionView:(id)arg1;
 - (id)init;
 
 @end
-

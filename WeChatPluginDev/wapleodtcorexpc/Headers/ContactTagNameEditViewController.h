@@ -21,7 +21,6 @@
     MMUILabel *_warningTextLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsFavTag; // @synthesize bIsFavTag=_bIsFavTag;
 @property(retain, nonatomic) MMUILabel *warningTextLabel; // @synthesize warningTextLabel=_warningTextLabel;
 @property(nonatomic) _Bool bIsShowWarningText; // @synthesize bIsShowWarningText=_bIsShowWarningText;

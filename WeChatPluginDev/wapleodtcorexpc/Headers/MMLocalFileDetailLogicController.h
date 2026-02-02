@@ -11,7 +11,6 @@
     NSURL *_fileURL;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void)didFail;
 - (void)didFinish;

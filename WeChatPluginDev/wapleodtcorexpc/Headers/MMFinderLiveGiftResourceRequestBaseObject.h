@@ -24,7 +24,6 @@
     MMFinderLiveGiftResourceExtraInfo *_extraInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGiftResourceExtraInfo *extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(retain, nonatomic) NSString *observerSubscriptionKey; // @synthesize observerSubscriptionKey=_observerSubscriptionKey;
 @property(nonatomic) _Bool isPreload; // @synthesize isPreload=_isPreload;

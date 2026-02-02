@@ -13,7 +13,6 @@
     MMUILabel *_nicknameLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;
 @property(retain, nonatomic) MMWebImageView *headImageView; // @synthesize headImageView=_headImageView;
 - (void)updateViewModel:(id)arg1;

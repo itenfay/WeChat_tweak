@@ -10,7 +10,6 @@
     id <WCCardPkgBatchGetCardItemByTpInfoMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardPkgBatchGetCardItemByTpInfoMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleBatchGetWCCardByTpInfoResp:(id)arg1 Event:(unsigned int)arg2;

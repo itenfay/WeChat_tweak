@@ -14,7 +14,6 @@
     NSMutableArray *_parameterCurvesStorage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *parameterCurvesStorage; // @synthesize parameterCurvesStorage=_parameterCurvesStorage;
 @property(retain, nonatomic) NSMutableArray *dynamicParametersStorage; // @synthesize dynamicParametersStorage=_dynamicParametersStorage;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;

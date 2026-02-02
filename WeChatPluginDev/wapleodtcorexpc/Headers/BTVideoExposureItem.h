@@ -13,7 +13,6 @@
     id <BTItemCellViewModelVideoPlayProtocol> _itemCellViewModelVideoPlay;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <BTItemCellViewModelVideoPlayProtocol> itemCellViewModelVideoPlay; // @synthesize itemCellViewModelVideoPlay=_itemCellViewModelVideoPlay;
 @property(nonatomic) double exposureRatio; // @synthesize exposureRatio=_exposureRatio;
 @property(retain, nonatomic) NSIndexPath *cellViewIndexPath; // @synthesize cellViewIndexPath=_cellViewIndexPath;

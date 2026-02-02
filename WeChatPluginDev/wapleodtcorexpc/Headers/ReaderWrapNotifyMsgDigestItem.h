@@ -14,7 +14,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fontBold; // @synthesize fontBold=_fontBold;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 - (id)genContent;

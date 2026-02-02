@@ -10,7 +10,6 @@
     WCEliminatedSlotMMKV *_slotMMKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *slotMMKV; // @synthesize slotMMKV=_slotMMKV;
 - (void)onServiceClearData;
 - (void)onServiceInit;

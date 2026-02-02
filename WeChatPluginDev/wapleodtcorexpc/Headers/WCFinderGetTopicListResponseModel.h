@@ -27,7 +27,6 @@
     FinderGetTopicListResponse *_resp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderGetTopicListResponse *resp; // @synthesize resp=_resp;
 @property(nonatomic) _Bool hasPrefetched; // @synthesize hasPrefetched=_hasPrefetched;
 @property(nonatomic) unsigned int reviseFeedCount; // @synthesize reviseFeedCount=_reviseFeedCount;

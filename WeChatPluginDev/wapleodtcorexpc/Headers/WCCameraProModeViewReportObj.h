@@ -19,7 +19,6 @@
 }
 
 + (unsigned long long)optionWithEventID:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long aspectRatioState; // @synthesize aspectRatioState=_aspectRatioState;
 @property(nonatomic) unsigned long long timeState; // @synthesize timeState=_timeState;
 @property(nonatomic) unsigned long long gridState; // @synthesize gridState=_gridState;

@@ -96,7 +96,6 @@
 }
 
 + (struct CGSize)fitSizeWithOriginSize:(struct CGSize)arg1 maxLen:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool noFirstTimeEnter; // @synthesize noFirstTimeEnter=_noFirstTimeEnter;
 @property(retain, nonatomic) RecommendedMusicInfo *patMusic; // @synthesize patMusic=_patMusic;
 @property(copy, nonatomic) NSString *patMusicId; // @synthesize patMusicId=_patMusicId;

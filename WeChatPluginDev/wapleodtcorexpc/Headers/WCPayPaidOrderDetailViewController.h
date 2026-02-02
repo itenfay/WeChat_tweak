@@ -41,7 +41,6 @@
     NSString *_textStatusTransId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppTaskLaunchingDuringLive; // @synthesize isAppTaskLaunchingDuringLive=_isAppTaskLaunchingDuringLive;
 @property(retain, nonatomic) NSString *textStatusTransId; // @synthesize textStatusTransId=_textStatusTransId;
 @property(retain, nonatomic) TextStateBrandLogic *brandLogic; // @synthesize brandLogic=_brandLogic;

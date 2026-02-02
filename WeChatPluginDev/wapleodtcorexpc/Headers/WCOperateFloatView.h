@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIImageView, UILabel, UINavigationController, WCDataItem, WCLikeButton, WCOperateFloatViewParams;
 
@@ -23,7 +24,6 @@
     WCOperateFloatViewParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCOperateFloatViewParams *params; // @synthesize params=_params;
 @property(nonatomic) _Bool isPerformHideAnimation; // @synthesize isPerformHideAnimation=_isPerformHideAnimation;
 @property(nonatomic) _Bool isEnhanceInteractionEnabled; // @synthesize isEnhanceInteractionEnabled=_isEnhanceInteractionEnabled;
@@ -46,4 +46,3 @@
 - (double)buttonWidth:(id)arg1;
 
 @end
-

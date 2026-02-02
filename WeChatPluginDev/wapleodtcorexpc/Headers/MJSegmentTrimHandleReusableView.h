@@ -14,7 +14,6 @@
     UIView<MJSegmentTrimHandleProtocol> *_backingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<MJSegmentTrimHandleProtocol> *backingView; // @synthesize backingView=_backingView;
 @property(nonatomic) __weak id <MJSegmentReusableViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)hideSnapIndicatorDot;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderHalfScreedCreateUserViewModel : NSObject
 {
@@ -13,4 +14,3 @@
 + (id)getTips;
 
 @end
-

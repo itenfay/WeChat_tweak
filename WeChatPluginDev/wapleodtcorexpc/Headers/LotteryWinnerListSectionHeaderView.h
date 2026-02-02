@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel, NSString;
 
@@ -20,7 +21,6 @@
 }
 
 + (double)headerHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *timeOutButton; // @synthesize timeOutButton=_timeOutButton;
 @property(retain, nonatomic) MMUIButton *downLoadButton; // @synthesize downLoadButton=_downLoadButton;
 @property(retain, nonatomic) MMUILabel *winTipLabel; // @synthesize winTipLabel=_winTipLabel;
@@ -39,4 +39,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

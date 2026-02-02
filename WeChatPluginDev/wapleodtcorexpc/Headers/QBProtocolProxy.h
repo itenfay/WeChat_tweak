@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSURLProtocol, QBProtocolWorker;
 
@@ -27,7 +28,6 @@
 + (void)addProxyAuthenticationDelegate:(id)arg1;
 + (id)validURLForRequest:(id)arg1;
 @property(nonatomic) __weak NSURLProtocol *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (_Bool)protocolDidReceiveChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 forURL:(id)arg3;
 - (_Bool)protocolWillSendRequestForAuthenticationChallenge:(id)arg1 forURL:(id)arg2;
 - (void)protocolAfterSendRequest:(id)arg1;
@@ -45,4 +45,3 @@
 - (void)protocolDidInitialized:(id)arg1 resourceType:(int)arg2;
 
 @end
-

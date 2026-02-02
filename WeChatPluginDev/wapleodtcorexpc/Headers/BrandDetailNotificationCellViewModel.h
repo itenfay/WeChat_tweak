@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, CContactVerifyLogic, NSArray, NSAttributedString, NSMutableArray, NSString, UIColor;
 
 @interface BrandDetailNotificationCellViewModel
@@ -22,7 +24,6 @@
 }
 
 + (_Bool)canCreateViewModelWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onFollowAction; // @synthesize onFollowAction=_onFollowAction;
 @property(readonly, nonatomic) NSArray *tagsList; // @synthesize tagsList=_tagsList;
 @property(readonly, nonatomic) double detailHeight; // @synthesize detailHeight=_detailHeight;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

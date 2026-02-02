@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveCommentBlurButtonBackView;
 
 @interface MMFinderLiveCommentButton
@@ -13,7 +15,6 @@
     CDUnknownBlockType _commentButtonAlphaChangeCallback;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSynchronizeLayout; // @synthesize isSynchronizeLayout=_isSynchronizeLayout;
 @property(copy, nonatomic) CDUnknownBlockType commentButtonAlphaChangeCallback; // @synthesize commentButtonAlphaChangeCallback=_commentButtonAlphaChangeCallback;
 @property(copy, nonatomic) CDUnknownBlockType commentButtonHiddenChangeCallback; // @synthesize commentButtonHiddenChangeCallback=_commentButtonHiddenChangeCallback;
@@ -26,4 +27,3 @@
 - (id)getBlurButtonBackView;
 
 @end
-

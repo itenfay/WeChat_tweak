@@ -13,7 +13,6 @@
     WCRedEnvelopesWelcomePageLayout *_m_layout;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCRedEnvelopesWelcomePageLayout *m_layout; // @synthesize m_layout=_m_layout;
 - (void)setDelegate:(id)arg1;
 - (void)OnClickBannerActivity;

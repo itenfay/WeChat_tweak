@@ -15,7 +15,6 @@
     NSMutableArray *_extSwitchInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *extSwitchInfos; // @synthesize extSwitchInfos=_extSwitchInfos;
 @property(retain, nonatomic) NSMutableArray *switchInfos; // @synthesize switchInfos=_switchInfos;
 @property(copy, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetAdapter, NSString;
 
@@ -13,7 +14,6 @@
     MMPageSheetAdapter *_weakPageAdapter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMPageSheetAdapter *weakPageAdapter; // @synthesize weakPageAdapter=_weakPageAdapter;
 @property(copy, nonatomic) CDUnknownBlockType onCloseBlock; // @synthesize onCloseBlock=_onCloseBlock;
 - (void)pageSheetDidClose:(id)arg1 isManualTrigger:(_Bool)arg2;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

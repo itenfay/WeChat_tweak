@@ -10,7 +10,6 @@
     FavImagePreView *m_imgPreView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FavImagePreView *m_imgPreView; // @synthesize m_imgPreView;
 - (id)accessibilityLabel;
 - (void)onWillLongPressFavImagePreView:(id)arg1 imageView:(id)arg2;

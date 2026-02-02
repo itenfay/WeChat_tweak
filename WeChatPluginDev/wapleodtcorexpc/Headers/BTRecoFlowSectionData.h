@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canCreateSectionDataWithCardMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedRowHeightMap; // @synthesize cachedRowHeightMap=_cachedRowHeightMap;
 @property(copy, nonatomic) NSString *titleTag; // @synthesize titleTag=_titleTag;
 @property(nonatomic) _Bool isExposed; // @synthesize isExposed=_isExposed;

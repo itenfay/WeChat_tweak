@@ -13,7 +13,6 @@
     NSString *m_nsName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsName; // @synthesize m_nsName;
 @property(nonatomic) unsigned int m_uiID; // @synthesize m_uiID;
 - (id)description;

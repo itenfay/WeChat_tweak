@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJVideoTemplate, MMUIButton, NSIndexPath, NSMutableDictionary, NSString, UICollectionView, UIView, WCMomentsCompositorTemplateTableViewController, WCVideoProducerDataSource;
 @protocol WCMomentsCompositorTemplatePanelDelegate;
 
@@ -23,7 +25,6 @@
     UIView *_templateTableVCContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *templateTableVCContainerView; // @synthesize templateTableVCContainerView=_templateTableVCContainerView;
 @property(retain, nonatomic) MMUIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UICollectionView *tabBarCollectionView; // @synthesize tabBarCollectionView=_tabBarCollectionView;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

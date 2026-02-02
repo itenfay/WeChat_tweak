@@ -12,7 +12,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <WXCustomWebViewControllerProtocol> webviewController; // @synthesize webviewController=_webviewController;
 - (void)onStoreSetData:(id)arg1 changes:(id)arg2;
 - (void)onStoreSendResult:(id)arg1 callbackId:(int)arg2 resultType:(id)arg3 result:(id)arg4;

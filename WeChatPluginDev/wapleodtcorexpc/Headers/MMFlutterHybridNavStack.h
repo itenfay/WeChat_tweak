@@ -17,7 +17,6 @@
     NSMutableDictionary *_pausedEngine;
 }
 
-- (void).cxx_destruct;
 - (_Bool)hasActiveFlutterPage;
 - (_Bool)hasFlutterPage;
 - (void)dealloc;

@@ -34,7 +34,6 @@
     id <EnterpriseConvergeSessionSearchControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseConvergeSessionSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)hasApplicationSection;
 - (_Bool)hasGroupSection;

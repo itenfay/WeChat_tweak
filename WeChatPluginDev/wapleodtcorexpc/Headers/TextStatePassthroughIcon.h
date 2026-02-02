@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_endTime;
 + (void)PBArrayAdd_beginTime;
 + (void)PBArrayAdd_iconId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) unsigned int beginTime; // @synthesize beginTime=_beginTime;
 @property(retain, nonatomic) NSString *iconId; // @synthesize iconId=_iconId;

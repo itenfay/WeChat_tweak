@@ -14,7 +14,6 @@
     UIView *_selectedPanelView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowCloseBtn; // @synthesize bShowCloseBtn=_bShowCloseBtn;
 @property(retain, nonatomic) UIView *selectedPanelView; // @synthesize selectedPanelView=_selectedPanelView;
 @property(retain, nonatomic) NSString *selectedLanguageType; // @synthesize selectedLanguageType=_selectedLanguageType;

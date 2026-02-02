@@ -14,7 +14,6 @@
     UIButton *_startButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *startButton; // @synthesize startButton=_startButton;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) _Bool navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;

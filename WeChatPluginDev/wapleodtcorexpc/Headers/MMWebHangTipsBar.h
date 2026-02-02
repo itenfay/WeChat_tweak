@@ -19,7 +19,6 @@
     SightIconView *_loadView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightIconView *loadView; // @synthesize loadView=_loadView;
 @property(retain, nonatomic) MMUIButton *closeBtn; // @synthesize closeBtn=_closeBtn;
 @property(retain, nonatomic) MMUIButton *linkBtn; // @synthesize linkBtn=_linkBtn;

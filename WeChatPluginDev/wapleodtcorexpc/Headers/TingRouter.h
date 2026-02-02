@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingRouter : NSObject
 {
@@ -64,4 +65,3 @@
 + (void)openTingUrl:(id)arg1 extraParams:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
-

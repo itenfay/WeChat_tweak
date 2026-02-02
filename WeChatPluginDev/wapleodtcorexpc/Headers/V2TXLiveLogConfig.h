@@ -16,7 +16,6 @@
     NSString *_logPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *logPath; // @synthesize logPath=_logPath;
 @property(nonatomic) _Bool enableLogFile; // @synthesize enableLogFile=_enableLogFile;
 @property(nonatomic) _Bool enableConsole; // @synthesize enableConsole=_enableConsole;

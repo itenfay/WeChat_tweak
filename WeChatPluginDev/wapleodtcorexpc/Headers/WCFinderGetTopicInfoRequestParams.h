@@ -19,7 +19,6 @@
     NSData *_topicInfoPassbuff;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int getTopicInfoFlag; // @synthesize getTopicInfoFlag=_getTopicInfoFlag;
 @property(retain, nonatomic) NSData *topicInfoPassbuff; // @synthesize topicInfoPassbuff=_topicInfoPassbuff;
 @property(copy, nonatomic) NSString *fromObjectId; // @synthesize fromObjectId=_fromObjectId;

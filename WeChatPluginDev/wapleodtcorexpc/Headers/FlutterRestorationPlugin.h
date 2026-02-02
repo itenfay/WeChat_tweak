@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData;
 
@@ -25,4 +26,3 @@
 - (id)initWithChannel:(id)arg1 restorationEnabled:(_Bool)arg2;
 
 @end
-

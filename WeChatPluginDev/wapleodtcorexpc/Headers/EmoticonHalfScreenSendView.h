@@ -27,7 +27,6 @@
     EmoticonHalfScreenSendViewReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReportEntryExpose; // @synthesize needReportEntryExpose=_needReportEntryExpose;
 @property(retain, nonatomic) EmoticonHalfScreenSendViewReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;

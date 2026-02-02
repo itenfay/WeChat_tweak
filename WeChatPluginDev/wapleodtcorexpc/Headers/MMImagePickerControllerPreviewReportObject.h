@@ -11,7 +11,6 @@
     MMImagePickerReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImagePickerReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(nonatomic) unsigned int m_previewCount; // @synthesize m_previewCount;
 - (void)reportPickerActionInfo;

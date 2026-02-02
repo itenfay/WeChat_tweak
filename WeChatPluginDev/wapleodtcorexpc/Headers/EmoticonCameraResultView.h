@@ -52,7 +52,6 @@
 }
 
 + (double)EmoticonCameraPreviewSideLength;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonVideoConverter *videoConverter; // @synthesize videoConverter=_videoConverter;
 @property(nonatomic) CDStruct_1b6d18a9 currentFrameTime; // @synthesize currentFrameTime=_currentFrameTime;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;

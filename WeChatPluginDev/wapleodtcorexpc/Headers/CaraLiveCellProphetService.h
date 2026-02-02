@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CaraCppLiveCellProphet, NSString;
 
 @interface CaraLiveCellProphetService
@@ -10,7 +12,6 @@
     CaraCppLiveCellProphet *_underlying;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CaraCppLiveCellProphet *underlying; // @synthesize underlying=_underlying;
 - (void)reportThatPreload:(id)arg1;
 - (void)reportThatCellConsume:(id)arg1;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdvertiseFinderTopicResImageModel *imageInfo; // @synthesize imageInfo=_imageInfo;
 @property(retain, nonatomic) NSString *finderType; // @synthesize finderType=_finderType;
 @property(retain, nonatomic) NSString *duration; // @synthesize duration=_duration;

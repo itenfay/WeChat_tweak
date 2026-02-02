@@ -19,7 +19,6 @@
 + (id)initInner:(id)arg1 snsid:(id)arg2 scene:(int)arg3;
 + (id)genHeader:(id)arg1 uxinfo:(id)arg2 adExtInfo:(id)arg3 aid:(id)arg4 scene:(int)arg5;
 + (id)genHeader:(id)arg1 snsid:(id)arg2 scene:(int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *aid; // @synthesize aid=_aid;
 @property(retain, nonatomic) NSString *adExtInfo; // @synthesize adExtInfo=_adExtInfo;

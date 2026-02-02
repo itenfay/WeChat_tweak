@@ -15,7 +15,6 @@
     NSString *_matchWordTip;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *matchWordTip; // @synthesize matchWordTip=_matchWordTip;
 @property(retain, nonatomic) NSString *matchWord; // @synthesize matchWord=_matchWord;
 @property(nonatomic) unsigned long long matchType; // @synthesize matchType=_matchType;

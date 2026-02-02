@@ -11,7 +11,6 @@
     UIView *_highlightView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceSetHighlight; // @synthesize forceSetHighlight=_forceSetHighlight;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

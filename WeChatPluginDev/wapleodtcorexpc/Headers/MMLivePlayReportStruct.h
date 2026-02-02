@@ -52,7 +52,6 @@
     NSString *_cdnSvrIp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int role; // @synthesize role=_role;
 @property(nonatomic) unsigned int netType; // @synthesize netType=_netType;
 @property(nonatomic) unsigned int videoFormat; // @synthesize videoFormat=_videoFormat;

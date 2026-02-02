@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCStoryPhotoVideoEffectsMaker : NSObject
 {
@@ -27,4 +28,3 @@
 + (void)applyVideoEffectsToComposition:(id)arg1 photoArray:(id)arg2 size:(struct CGSize)arg3;
 
 @end
-

@@ -21,7 +21,6 @@
     WCFinderMsgSessionInfo *_sessionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(nonatomic) _Bool isGreetSessionUnreadStatusUpdated; // @synthesize isGreetSessionUnreadStatusUpdated=_isGreetSessionUnreadStatusUpdated;
 @property(nonatomic) _Bool isInGreetSessionListOnly; // @synthesize isInGreetSessionListOnly=_isInGreetSessionListOnly;

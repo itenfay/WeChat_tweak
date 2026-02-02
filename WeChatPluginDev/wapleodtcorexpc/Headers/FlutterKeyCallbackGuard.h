@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -22,4 +23,3 @@
 - (id)initWithCallback:(CDUnknownBlockType)arg1;
 
 @end
-

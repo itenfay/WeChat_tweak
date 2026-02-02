@@ -15,7 +15,6 @@
     MMFinderLiveStreamTypeInfo *_finderLiveStreamTypeInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReceivedMicUsersList; // @synthesize hasReceivedMicUsersList=_hasReceivedMicUsersList;
 @property(nonatomic) _Bool hasReceivedOtherAnchorSEI; // @synthesize hasReceivedOtherAnchorSEI=_hasReceivedOtherAnchorSEI;
 @property(nonatomic) _Bool hasReceivedCurrentAnchorSEI; // @synthesize hasReceivedCurrentAnchorSEI=_hasReceivedCurrentAnchorSEI;

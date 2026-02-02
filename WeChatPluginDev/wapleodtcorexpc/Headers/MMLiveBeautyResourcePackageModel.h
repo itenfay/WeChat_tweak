@@ -21,7 +21,6 @@
 }
 
 + (id)packageWithType:(unsigned long long)arg1 uri:(id)arg2 md5Hash:(id)arg3 instanceId:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *manifestPath; // @synthesize manifestPath=_manifestPath;
 @property(retain, nonatomic) NSString *masterPath; // @synthesize masterPath=_masterPath;
 @property(retain, nonatomic) NSString *masterId; // @synthesize masterId=_masterId;

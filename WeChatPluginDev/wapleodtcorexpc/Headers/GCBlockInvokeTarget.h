@@ -4,16 +4,15 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface GCBlockInvokeTarget : NSObject
 {
     CDUnknownBlockType _block;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)invoke:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

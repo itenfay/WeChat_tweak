@@ -17,7 +17,6 @@
     UIButton *_rightBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *rightBtn; // @synthesize rightBtn=_rightBtn;
 @property(retain, nonatomic) GCTagLineView *tagLineView; // @synthesize tagLineView=_tagLineView;
 @property(retain, nonatomic) UIView *bulletMsgContainer; // @synthesize bulletMsgContainer=_bulletMsgContainer;

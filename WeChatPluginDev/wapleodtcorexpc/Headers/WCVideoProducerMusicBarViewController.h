@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSIndexPath, NSString, UICollectionView, UIView, WCVideoProducerDataSource;
 @protocol WCVideoProducerMusicBarDelegate;
 
@@ -20,7 +22,6 @@
     UICollectionView *_selectListCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *selectListCollectionView; // @synthesize selectListCollectionView=_selectListCollectionView;
 @property(retain, nonatomic) UIView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
 @property(retain, nonatomic) MMUIButton *switchOSTButton; // @synthesize switchOSTButton=_switchOSTButton;
@@ -84,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

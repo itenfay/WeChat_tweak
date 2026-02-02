@@ -14,7 +14,6 @@
     NSString *_mainText;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mainText; // @synthesize mainText=_mainText;
 @property(nonatomic, getter=isLyricsOn) _Bool lyricsOn; // @synthesize lyricsOn=_lyricsOn;
 @property(nonatomic, getter=isStoryHideInTimeLine) _Bool storyHideInTimeline; // @synthesize storyHideInTimeline=_storyHideInTimeline;

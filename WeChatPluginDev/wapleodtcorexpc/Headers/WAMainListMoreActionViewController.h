@@ -10,7 +10,6 @@
     MMTableViewInfo *m_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 - (void)openRunningTaskPage;
 - (void)openThirdAppRunAuthSimulatedNative;
 - (void)openOverallAuthListPage;

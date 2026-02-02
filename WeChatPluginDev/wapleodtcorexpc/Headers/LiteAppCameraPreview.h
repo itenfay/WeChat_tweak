@@ -27,7 +27,6 @@
     double _m_lastZoomScale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double m_lastZoomScale; // @synthesize m_lastZoomScale=_m_lastZoomScale;
 @property(retain, nonatomic) NSString *qrData; // @synthesize qrData=_qrData;
 @property(nonatomic) int videoStabilizationMode; // @synthesize videoStabilizationMode=_videoStabilizationMode;

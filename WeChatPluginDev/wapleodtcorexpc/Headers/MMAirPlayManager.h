@@ -10,7 +10,6 @@
     NSMutableDictionary *_mutedToastRecords;
 }
 
-- (void).cxx_destruct;
 - (void)airPlayCenter:(id)arg1 routeDidChange:(id)arg2;
 - (void)resetMutedToastRecordsForAllScenes;
 - (void)resetMutedToastRecordsForScene:(long long)arg1;

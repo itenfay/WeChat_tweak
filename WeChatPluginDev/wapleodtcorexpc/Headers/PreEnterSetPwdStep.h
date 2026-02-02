@@ -11,7 +11,6 @@
     PasswordLogic *m_setPasswdLogic;
 }
 
-- (void).cxx_destruct;
 - (void)onSetPasswordOK;
 - (void)onSetPasswordBack;
 - (void)showSetPasswordView;

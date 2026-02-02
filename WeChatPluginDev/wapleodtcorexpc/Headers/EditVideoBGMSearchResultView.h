@@ -17,7 +17,6 @@
     unsigned long long _replayTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long replayTime; // @synthesize replayTime=_replayTime;
 @property(retain, nonatomic) EditVideoBGMSearchResultCollectionViewFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

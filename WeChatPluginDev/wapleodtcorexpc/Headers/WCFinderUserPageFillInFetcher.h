@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol WCFinderProfileUserPageFetcher;
@@ -15,7 +16,6 @@
 }
 
 + (id)fetcherWithInner:(id)arg1 ensureCount:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) id <WCFinderProfileUserPageFetcher> fetcher; // @synthesize fetcher=_fetcher;
 - (id)startFetch:(id)arg1 data:(id)arg2 retryCount:(long long)arg3 successful:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 + (id)getRecommendContentWithContentVM:(id)arg1;
 + (id)bubbleBgColorWithContentVM:(id)arg1;
 + (_Bool)recommendFromEnhanceWithContentVM:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCustomImageRichTextView *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;

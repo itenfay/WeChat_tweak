@@ -17,7 +17,6 @@
     NSMutableArray *_debug_msgArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContactListUpdated; // @synthesize isContactListUpdated=_isContactListUpdated;
 @property(nonatomic) _Bool isManulLogined; // @synthesize isManulLogined=_isManulLogined;
 @property(retain, nonatomic) NSMutableArray *debug_msgArray; // @synthesize debug_msgArray=_debug_msgArray;

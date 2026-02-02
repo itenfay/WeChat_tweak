@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveEditImagePreviewPageSheet, MMUIButton, NSString, UIView;
 
 @interface WCFinderLiveEditImageViewController
@@ -18,7 +20,6 @@
     struct CGSize _cropImageRatio;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *previewButton; // @synthesize previewButton=_previewButton;
 @property(retain, nonatomic) MMUIButton *backButton; // @synthesize backButton=_backButton;
 @property(retain, nonatomic) MMFinderLiveEditImagePreviewPageSheet *previewPageSheet; // @synthesize previewPageSheet=_previewPageSheet;
@@ -43,4 +44,3 @@
 - (void)viewWillAppear:(_Bool)arg1;
 
 @end
-

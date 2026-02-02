@@ -11,7 +11,6 @@
     NSArray *_holeStrokeIds;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *holeStrokeIds; // @synthesize holeStrokeIds=_holeStrokeIds;
 @property(nonatomic) int fillId; // @synthesize fillId=_fillId;
 

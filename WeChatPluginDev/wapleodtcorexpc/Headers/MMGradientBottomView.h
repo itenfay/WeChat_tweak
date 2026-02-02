@@ -16,7 +16,6 @@
 }
 
 + (double)gradientHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreHitTest; // @synthesize ignoreHitTest=_ignoreHitTest;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

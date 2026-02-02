@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool purchased; // @synthesize purchased=_purchased;
 @property(retain, nonatomic) FinderCourseInfo *courseInfo; // @synthesize courseInfo=_courseInfo;
 @property(copy, nonatomic) NSString *courseIDKey; // @synthesize courseIDKey=_courseIDKey;

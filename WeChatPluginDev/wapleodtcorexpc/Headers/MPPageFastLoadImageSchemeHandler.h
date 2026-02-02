@@ -18,7 +18,6 @@
     NSArray *_preloadImageIDs;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preloadImageIDs; // @synthesize preloadImageIDs=_preloadImageIDs;
 @property(retain, nonatomic) MPPageFastLoadWXPicDecoder *wxPicDecoder; // @synthesize wxPicDecoder=_wxPicDecoder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *decodeQueue; // @synthesize decodeQueue=_decodeQueue;

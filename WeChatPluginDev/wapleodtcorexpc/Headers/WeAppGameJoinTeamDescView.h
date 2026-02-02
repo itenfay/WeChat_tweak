@@ -14,7 +14,6 @@
     MMUILabel *_memberLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *memberLabel; // @synthesize memberLabel=_memberLabel;
 @property(retain, nonatomic) MMUILabel *additionLabel; // @synthesize additionLabel=_additionLabel;
 @property(retain, nonatomic) MMUILabel *scoreLable; // @synthesize scoreLable=_scoreLable;

@@ -24,7 +24,6 @@
 }
 
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;
 @property(retain, nonatomic) FinderLiveAppMsgLiveRewardInfo *rewardInfo; // @synthesize rewardInfo=_rewardInfo;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;

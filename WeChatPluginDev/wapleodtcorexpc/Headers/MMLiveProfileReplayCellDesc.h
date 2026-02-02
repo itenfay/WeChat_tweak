@@ -17,7 +17,6 @@
 + (struct CGSize)caculateSize:(unsigned long long)arg1 data:(id)arg2;
 + (id)getDescText:(unsigned long long)arg1 data:(id)arg2;
 + (id)getDescFont:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) MMUILabel *paidLabel; // @synthesize paidLabel=_paidLabel;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIButton;
 
 @interface MMLiveLotteryHistoryWinnerRecordCell
@@ -13,7 +15,6 @@
 }
 
 + (double)seperateLineLeftMargin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *finderChatButton; // @synthesize finderChatButton=_finderChatButton;
 @property(copy, nonatomic) CDUnknownBlockType chatButtonClickBlock; // @synthesize chatButtonClickBlock=_chatButtonClickBlock;
 @property(nonatomic) _Bool enableToChat; // @synthesize enableToChat=_enableToChat;
@@ -26,4 +27,3 @@
 - (double)lotteryWinnerRecordCellInnerPadding;
 
 @end
-

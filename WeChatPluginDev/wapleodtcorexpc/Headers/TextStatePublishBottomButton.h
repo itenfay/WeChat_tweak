@@ -14,7 +14,6 @@
 
 + (id)buttonWithTitleAndColor:(id)arg1 imageName:(id)arg2 color:(id)arg3 highLightedColor:(id)arg4 disabledColor:(id)arg5;
 + (id)buttonWithTitle:(id)arg1 imageName:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *selectedImageView; // @synthesize selectedImageView=_selectedImageView;
 - (void)hideRedDot;
 - (void)showRedDot;

@@ -22,7 +22,6 @@
     id <EmoticonRecoverLogicObjectDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_needUpdateTime; // @synthesize m_needUpdateTime=_m_needUpdateTime;
 @property(nonatomic) unsigned int m_needNotifyCount; // @synthesize m_needNotifyCount=_m_needNotifyCount;
 @property(nonatomic) __weak id <EmoticonRecoverLogicObjectDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

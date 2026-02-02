@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class TXCBeautifyBaseFilter;
 @protocol TXIGlContext;
 
@@ -17,7 +19,6 @@
     id <TXIGlContext> _glContext;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TXIGlContext> glContext; // @synthesize glContext=_glContext;
 @property(retain, nonatomic) TXCBeautifyBaseFilter *beautifyFilterImpl; // @synthesize beautifyFilterImpl=_beautifyFilterImpl;
 @property(nonatomic) _Bool enableSharpnessEnhancement; // @synthesize enableSharpnessEnhancement=_enableSharpnessEnhancement;
@@ -32,4 +33,3 @@
 - (id)initWithContext:(id)arg1;
 
 @end
-

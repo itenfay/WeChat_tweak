@@ -15,7 +15,6 @@
 + (id)fromType:(unsigned long long)arg1;
 + (id)fromBackingAspectRatio:(const void *)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct XMFAspectRatio backingAspectRatio; // @synthesize backingAspectRatio=_backingAspectRatio;
 - (id)saveToData;
 - (id)copyWithZone:(struct _NSZone *)arg1;

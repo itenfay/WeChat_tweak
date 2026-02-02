@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_city;
 + (void)PBArrayAdd_province;
 + (void)PBArrayAdd_country;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long birthDay; // @synthesize birthDay=_birthDay;
 @property(nonatomic) unsigned long long birthMonth; // @synthesize birthMonth=_birthMonth;
 @property(nonatomic) unsigned long long birthYear; // @synthesize birthYear=_birthYear;

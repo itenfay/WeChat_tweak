@@ -14,7 +14,6 @@
     id <FavSearchTopFilterViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavSearchTopFilterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onExtendPanel:(id)arg1;
 - (void)onClickBtn:(id)arg1;

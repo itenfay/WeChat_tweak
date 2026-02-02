@@ -10,7 +10,6 @@
     id _parentTraget;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id parentTraget; // @synthesize parentTraget=_parentTraget;
 
 @end

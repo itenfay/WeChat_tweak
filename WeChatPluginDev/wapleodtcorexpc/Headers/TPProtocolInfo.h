@@ -13,7 +13,6 @@
     NSString *_protocolVersion;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, nonatomic) NSString *protocolName; // @synthesize protocolName=_protocolName;
 - (id)initWithProtocolName:(id)arg1 protocolVersion:(id)arg2;

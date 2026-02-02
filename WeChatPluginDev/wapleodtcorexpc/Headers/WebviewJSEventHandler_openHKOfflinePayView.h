@@ -11,7 +11,6 @@
     WCPayJSOpenHKOfflinePayLogic *_openHKOfflinePayLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayJSOpenHKOfflinePayLogic *openHKOfflinePayLogic; // @synthesize openHKOfflinePayLogic=_openHKOfflinePayLogic;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)onOpenHKOfflinePayFail;

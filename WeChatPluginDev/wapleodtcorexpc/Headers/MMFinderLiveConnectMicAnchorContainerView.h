@@ -20,7 +20,6 @@
     NSArray *_originCandicateAnchorList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool footerViewHasBeenExposed; // @synthesize footerViewHasBeenExposed=_footerViewHasBeenExposed;
 @property(nonatomic) _Bool forceDisableApplySectionCellButton; // @synthesize forceDisableApplySectionCellButton=_forceDisableApplySectionCellButton;
 @property(retain, nonatomic) NSArray *originCandicateAnchorList; // @synthesize originCandicateAnchorList=_originCandicateAnchorList;

@@ -11,7 +11,6 @@
     WCCanvasPageViewController *_canvasPageVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasJumped; // @synthesize hasJumped=_hasJumped;
 @property(retain, nonatomic) WCCanvasPageViewController *canvasPageVC; // @synthesize canvasPageVC=_canvasPageVC;
 - (void)onCanvasViewDidBePushed;

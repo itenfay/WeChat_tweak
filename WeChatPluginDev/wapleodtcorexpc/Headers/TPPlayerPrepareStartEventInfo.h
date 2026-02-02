@@ -10,7 +10,6 @@
     NSString *_flowId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *flowId; // @synthesize flowId=_flowId;
 - (id)init;
 

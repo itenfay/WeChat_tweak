@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicLiveCGIMgr, MMMusicMVModel, MMMusicMVRecommendAnimationLoadingView, MMMusicMVRecommendHeaderView, MMMusicMVRecommendTableCell, NSData, NSMutableArray, NSString, UIButton, UILabel, UIPanGestureRecognizer, UITableView, UIView, WCFinderLastestPlayVideoInfoMgr;
 @protocol MMMusicMVRecommendViewControllerDataSource;
 
@@ -31,7 +33,6 @@
     NSMutableArray *_internalLoadMvModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *internalLoadMvModels; // @synthesize internalLoadMvModels=_internalLoadMvModels;
 @property(nonatomic) _Bool isInternalLoading; // @synthesize isInternalLoading=_isInternalLoading;
 @property(retain, nonatomic) MMMusicLiveCGIMgr *cgiMgr; // @synthesize cgiMgr=_cgiMgr;
@@ -84,4 +85,3 @@
 @property(readonly) Class superclass;
 
 @end
-

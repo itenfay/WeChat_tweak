@@ -14,7 +14,6 @@
 
 + (id)tokenNameForOldToken:(id)arg1;
 + (id)shared;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tokenDict; // @synthesize tokenDict=_tokenDict;
 - (id)tokenNameForOldToken:(id)arg1;
 - (void)initData;

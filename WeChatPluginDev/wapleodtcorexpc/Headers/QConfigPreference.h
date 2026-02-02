@@ -14,7 +14,6 @@
     NSString *_configDirectoryPath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *configDirectoryPath; // @synthesize configDirectoryPath=_configDirectoryPath;
 @property(readonly, copy, nonatomic) NSString *miniProgramID; // @synthesize miniProgramID=_miniProgramID;
 @property(readonly, copy, nonatomic) NSString *businessKey; // @synthesize businessKey=_businessKey;

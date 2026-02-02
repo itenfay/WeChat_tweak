@@ -18,7 +18,6 @@
 
 + (id)genFromUnion:(id)arg1;
 + (id)genFromDict:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rightBtnWording; // @synthesize rightBtnWording=_rightBtnWording;
 @property(retain, nonatomic) NSString *leftBtnWording; // @synthesize leftBtnWording=_leftBtnWording;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;

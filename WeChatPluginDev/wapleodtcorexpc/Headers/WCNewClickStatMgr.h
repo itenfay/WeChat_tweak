@@ -26,7 +26,6 @@
     NSMutableArray *unreadMergeRecords;
 }
 
-- (void).cxx_destruct;
 - (void)calcSessionUnread:(id)arg1;
 - (id)createRptByJsonArray:(id)arg1;
 - (void)reportWeixinTime;

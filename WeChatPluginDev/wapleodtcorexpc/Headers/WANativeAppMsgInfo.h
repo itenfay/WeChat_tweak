@@ -13,7 +13,6 @@
     NSString *_sourceIconUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceIconUrl; // @synthesize sourceIconUrl=_sourceIconUrl;
 @property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
 @property(retain, nonatomic) NSString *appNameMultiLanguageKey; // @synthesize appNameMultiLanguageKey=_appNameMultiLanguageKey;

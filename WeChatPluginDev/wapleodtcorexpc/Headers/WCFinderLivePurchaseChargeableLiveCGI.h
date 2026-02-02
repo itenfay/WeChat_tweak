@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderLivePurchaseChargeableLiveCGI
@@ -15,7 +17,6 @@
     NSString *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(nonatomic) unsigned int wecoinAmount; // @synthesize wecoinAmount=_wecoinAmount;
@@ -28,4 +29,3 @@
 - (id)initWithFinderTaskId:(id)arg1 liveCookies:(id)arg2 wecoinAmount:(unsigned int)arg3 sessionBuffer:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

@@ -10,7 +10,6 @@
     BrandFinderLiveBaseCardView *_cardView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandFinderLiveBaseCardView *cardView; // @synthesize cardView=_cardView;
 - (id)accessibilityLabel;
 - (void)onRecommendReasonAvailableChanged;

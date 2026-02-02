@@ -23,7 +23,6 @@
 }
 
 + (id)getAccessAuthorizationVerifyInfo;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *vc; // @synthesize vc=_vc;
 @property(nonatomic) __weak id <MMLimitedModeAuthorizationUtilLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)openWeApp:(id)arg1;

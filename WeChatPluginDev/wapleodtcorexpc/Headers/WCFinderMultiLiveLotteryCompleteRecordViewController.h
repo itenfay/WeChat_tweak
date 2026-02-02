@@ -16,7 +16,6 @@
     MMFinderLiveTask *_finderLiveTask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAssistant; // @synthesize isAssistant=_isAssistant;
 @property(retain, nonatomic) MMFinderLiveTask *finderLiveTask; // @synthesize finderLiveTask=_finderLiveTask;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;

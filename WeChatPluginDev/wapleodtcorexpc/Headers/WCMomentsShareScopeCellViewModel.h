@@ -20,7 +20,6 @@
 
 + (long long)viewTypeOfSectionIdentifier:(id)arg1;
 + (id)sectionIdentifierOfType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFilterTagDataEnabled; // @synthesize isFilterTagDataEnabled=_isFilterTagDataEnabled;
 @property(nonatomic) _Bool shouldDisplayBottomLine; // @synthesize shouldDisplayBottomLine=_shouldDisplayBottomLine;
 @property(nonatomic) _Bool shouldRoundBottomCorner; // @synthesize shouldRoundBottomCorner=_shouldRoundBottomCorner;

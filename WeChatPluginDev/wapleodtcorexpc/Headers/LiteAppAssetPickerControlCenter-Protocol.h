@@ -4,6 +4,7 @@
 //
 
 #import "NSObject-Protocol.h"
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -27,4 +28,3 @@
 @property(nonatomic) _Bool forceSendOriginImage;
 @property(nonatomic) _Bool canSendOriginImage;
 @end
-

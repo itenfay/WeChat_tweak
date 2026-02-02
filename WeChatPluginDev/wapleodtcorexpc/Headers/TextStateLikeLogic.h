@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, TextStateLikeData, WCCgiBlockHelper;
 @protocol TextStateLikeLogicDelegate;
@@ -18,7 +19,6 @@
 }
 
 + (id)generateClientIdForTextState:(id)arg1 isLike:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *idToLikeTypeDictForAff; // @synthesize idToLikeTypeDictForAff=_idToLikeTypeDictForAff;
 @property(nonatomic) _Bool useAffDB; // @synthesize useAffDB=_useAffDB;
 @property(retain, nonatomic) TextStateLikeData *cachedLikeData; // @synthesize cachedLikeData=_cachedLikeData;
@@ -37,4 +37,3 @@
 - (id)init;
 
 @end
-

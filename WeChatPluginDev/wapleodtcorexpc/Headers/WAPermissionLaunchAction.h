@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_isUpdateHistoryList;
 + (void)PBArrayAdd_openURL;
 + (void)PBArrayAdd_actionCode;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *retryPageShowMsg; // @synthesize retryPageShowMsg=_retryPageShowMsg;
 @property(copy, nonatomic) NSString *migrateTargetAppid; // @synthesize migrateTargetAppid=_migrateTargetAppid;
 @property(retain, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;

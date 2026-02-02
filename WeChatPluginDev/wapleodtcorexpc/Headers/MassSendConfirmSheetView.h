@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSArray, NSString, UIImageView, UIView;
 
 @interface MassSendConfirmSheetView
@@ -17,7 +19,6 @@
     NSArray *_contacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(retain, nonatomic) UIView *bottomSperatorLineView; // @synthesize bottomSperatorLineView=_bottomSperatorLineView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

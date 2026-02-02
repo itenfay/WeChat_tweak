@@ -14,7 +14,6 @@
     MMUILabel *_noMoreTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *noMoreTipsLabel; // @synthesize noMoreTipsLabel=_noMoreTipsLabel;
 @property(retain, nonatomic) UIView *lineRightView; // @synthesize lineRightView=_lineRightView;
 @property(retain, nonatomic) UIView *lineLeftView; // @synthesize lineLeftView=_lineLeftView;

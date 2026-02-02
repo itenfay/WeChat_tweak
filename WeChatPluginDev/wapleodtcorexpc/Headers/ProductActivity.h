@@ -14,7 +14,6 @@
     NSString *_activity_content;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *activity_content; // @synthesize activity_content=_activity_content;
 @property(retain, nonatomic) NSString *activity_tag; // @synthesize activity_tag=_activity_tag;
 @property(nonatomic) unsigned int activity_type; // @synthesize activity_type=_activity_type;

@@ -24,7 +24,6 @@
     MMUILabel *_detailLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUILabel *cloudGameScopeLabel; // @synthesize cloudGameScopeLabel=_cloudGameScopeLabel;
 @property(retain, nonatomic) MMUILabel *scopeLabel; // @synthesize scopeLabel=_scopeLabel;

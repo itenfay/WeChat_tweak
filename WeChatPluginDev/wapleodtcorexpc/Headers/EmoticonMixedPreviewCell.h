@@ -16,7 +16,6 @@
     UIImageView *_moreImg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *moreImg; // @synthesize moreImg=_moreImg;
 @property(retain, nonatomic) UIView *moreView; // @synthesize moreView=_moreView;
 @property(retain, nonatomic) UILabel *packHintLabel; // @synthesize packHintLabel=_packHintLabel;

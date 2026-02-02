@@ -13,7 +13,6 @@
     NSString *_retMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *retMsg; // @synthesize retMsg=_retMsg;
 @property(nonatomic) int retCode; // @synthesize retCode=_retCode;
 

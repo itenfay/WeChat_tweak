@@ -24,7 +24,6 @@
     unsigned int _weappEnterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int weappEnterScene; // @synthesize weappEnterScene=_weappEnterScene;
 @property(retain, nonatomic) NSString *weappPayCookies; // @synthesize weappPayCookies;
 @property(nonatomic) unsigned int payScene; // @synthesize payScene;

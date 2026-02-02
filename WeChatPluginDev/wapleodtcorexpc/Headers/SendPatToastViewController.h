@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAShapeLayer, MMTimer, NSString, PatWrap, RichTextView, SendPatToastWindow, UIView;
 
 @interface SendPatToastViewController
@@ -22,7 +24,6 @@
     struct CGRect _headImageFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(nonatomic) _Bool hideAfterShown; // @synthesize hideAfterShown=_hideAfterShown;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

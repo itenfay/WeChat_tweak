@@ -43,7 +43,6 @@
 
 + (id)fetchAnimationViewForView:(id)arg1 isFromTimeline:(_Bool)arg2 dataItem:(id)arg3;
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFullCardContentContainerView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
 @property(retain, nonatomic) WCAdFinderLiveLogic *finderLiveLogic; // @synthesize finderLiveLogic=_finderLiveLogic;
 @property(retain, nonatomic) WCAdFinderLivePlayerView *finderLivePlayerView; // @synthesize finderLivePlayerView=_finderLivePlayerView;

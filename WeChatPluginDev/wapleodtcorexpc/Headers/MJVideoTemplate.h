@@ -43,7 +43,6 @@
 + (void)PBArrayAdd_type;
 + (void)PBArrayAdd_templateId;
 + (id)finderDefaultTemplate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) unsigned long long updateTime; // @synthesize updateTime=_updateTime;
 @property(nonatomic) unsigned long long createTime; // @synthesize createTime=_createTime;

@@ -16,7 +16,6 @@
     id <GetSafetyInfoLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiHasWxPwd; // @synthesize m_uiHasWxPwd=_m_uiHasWxPwd;
 @property(nonatomic) unsigned int m_uiOpenFace; // @synthesize m_uiOpenFace=_m_uiOpenFace;
 @property(nonatomic) unsigned int m_uiHasFace; // @synthesize m_uiHasFace=_m_uiHasFace;

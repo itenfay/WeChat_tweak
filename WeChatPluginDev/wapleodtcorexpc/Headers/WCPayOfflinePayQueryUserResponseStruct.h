@@ -19,7 +19,6 @@
     NSString *_offlinePayPauseWord;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool offlinePayForceGetToken; // @synthesize offlinePayForceGetToken=_offlinePayForceGetToken;
 @property(copy, nonatomic) NSString *offlinePayPauseWord; // @synthesize offlinePayPauseWord=_offlinePayPauseWord;
 @property(nonatomic) _Bool offlinePayPauseFlag; // @synthesize offlinePayPauseFlag=_offlinePayPauseFlag;

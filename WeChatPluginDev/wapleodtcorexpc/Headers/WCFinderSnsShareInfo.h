@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_watchingCount;
 + (void)PBArrayAdd_shareCount;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *shareContactListArray; // @synthesize shareContactListArray=_shareContactListArray;
 @property(nonatomic) unsigned int watchingCount; // @synthesize watchingCount=_watchingCount;
 @property(nonatomic) unsigned int shareCount; // @synthesize shareCount=_shareCount;

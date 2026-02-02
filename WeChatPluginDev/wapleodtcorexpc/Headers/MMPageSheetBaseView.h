@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMPageSheetConfig, NSString;
 @protocol MMPageSheetContainer;
@@ -16,7 +17,6 @@
     double _superViewWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double superViewWidth; // @synthesize superViewWidth=_superViewWidth;
 @property(retain, nonatomic) id <MMPageSheetContainer> pageSheetContainer; // @synthesize pageSheetContainer=_pageSheetContainer;
 @property(retain, nonatomic) UIView *detailView; // @synthesize detailView=_detailView;
@@ -57,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

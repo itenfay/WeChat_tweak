@@ -18,7 +18,6 @@
 + (void)updateCertRegion:(unsigned int)arg1;
 + (id)GetLocalHostListWithType:(struct basic_string<char, std::char_traits<char>, std::allocator<char>>)arg1;
 + (id)GetRealHostFromHost:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSSet *mainHostSet; // @synthesize mainHostSet=_mainHostSet;
 @property(retain) NSSet *axHostSet; // @synthesize axHostSet=_axHostSet;
 @property(retain, nonatomic) HostList *axHostList; // @synthesize axHostList=_axHostList;

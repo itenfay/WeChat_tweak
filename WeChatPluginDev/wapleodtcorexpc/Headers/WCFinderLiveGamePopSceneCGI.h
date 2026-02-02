@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderDataItem;
 
 @interface WCFinderLiveGamePopSceneCGI
@@ -15,7 +17,6 @@
     long long _result;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long result; // @synthesize result=_result;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *gameAppId; // @synthesize gameAppId=_gameAppId;
@@ -28,4 +29,3 @@
 - (id)initWithScene:(long long)arg1 result:(long long)arg2 liveTaskId:(id)arg3 finderDataItem:(id)arg4 gameAppId:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

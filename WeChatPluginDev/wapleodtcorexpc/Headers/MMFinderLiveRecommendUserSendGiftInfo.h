@@ -14,7 +14,6 @@
     NSString *_wording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(retain, nonatomic) MMFinderLiveRewardGiftItem *giftItem; // @synthesize giftItem=_giftItem;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;

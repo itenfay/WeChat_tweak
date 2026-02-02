@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_expireTime;
 + (void)PBArrayAdd_eventName;
 + (void)PBArrayAdd_eventID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrSpecialPVPageConfig; // @synthesize arrSpecialPVPageConfig=_arrSpecialPVPageConfig;
 @property(retain, nonatomic) NSArray *arrPageConfig; // @synthesize arrPageConfig=_arrPageConfig;
 @property(retain, nonatomic) NSString *regType; // @synthesize regType=_regType;

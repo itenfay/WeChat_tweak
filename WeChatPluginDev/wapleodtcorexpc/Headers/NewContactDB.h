@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSRecursiveLock, WCTDatabase, WCTTable;
 
@@ -28,7 +29,6 @@
 + (unsigned int)imgStatusToEnum:(id)arg1;
 + (id)imgStatusToString:(unsigned long long)arg1;
 + (unsigned long long)getFTSContactIndexRecordType:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) WCTTable *m_tableCacheAccessUserFeatureRecrod; // @synthesize m_tableCacheAccessUserFeatureRecrod=_m_tableCacheAccessUserFeatureRecrod;
 @property(retain) WCTTable *m_tableCacheOptimizeStrategyScore; // @synthesize m_tableCacheOptimizeStrategyScore=_m_tableCacheOptimizeStrategyScore;
 @property(retain) WCTTable *m_tableCacheOptimizeStrategy; // @synthesize m_tableCacheOptimizeStrategy=_m_tableCacheOptimizeStrategy;
@@ -102,4 +102,3 @@
 - (id)readIndexRecordFromDB;
 
 @end
-

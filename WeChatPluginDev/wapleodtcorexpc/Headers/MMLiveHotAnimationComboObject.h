@@ -12,7 +12,6 @@
     NSString *_resourceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resourceId; // @synthesize resourceId=_resourceId;
 
 @end

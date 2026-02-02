@@ -18,7 +18,6 @@
     NSArray *_decorationItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *decorationItems; // @synthesize decorationItems=_decorationItems;
 @property(nonatomic) unsigned int decorationLevel; // @synthesize decorationLevel=_decorationLevel;
 @property(retain, nonatomic) NSArray *borderColors; // @synthesize borderColors=_borderColors;

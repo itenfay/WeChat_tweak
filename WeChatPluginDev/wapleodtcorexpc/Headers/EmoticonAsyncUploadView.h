@@ -13,7 +13,6 @@
     MMUIActivityIndicatorView *_m_activityIndicator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *m_activityIndicator; // @synthesize m_activityIndicator=_m_activityIndicator;
 @property(retain, nonatomic) UIImageView *m_uploadFailedView; // @synthesize m_uploadFailedView=_m_uploadFailedView;
 @property(retain, nonatomic) UIView *m_maskView; // @synthesize m_maskView=_m_maskView;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, SightIconView, UIImage, UIImageView;
 @protocol WAWebToastViewDelegate;
@@ -36,7 +37,6 @@
 + (long long)genSeqId;
 + (id)getCurrentToastViewIfHave;
 + (void)setCurrentToastView:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMask; // @synthesize isMask=_isMask;
 @property(nonatomic) double fShowDuration; // @synthesize fShowDuration=_fShowDuration;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
@@ -59,4 +59,3 @@
 - (id)init;
 
 @end
-

@@ -27,7 +27,6 @@
     MMFinderLiveMicInviteAudienceViewModel *_inviteAudienceViewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveMicInviteAudienceViewModel *inviteAudienceViewModel; // @synthesize inviteAudienceViewModel=_inviteAudienceViewModel;
 @property(nonatomic) _Bool canShowInviteAudienceSection; // @synthesize canShowInviteAudienceSection=_canShowInviteAudienceSection;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;

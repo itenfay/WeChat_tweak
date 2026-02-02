@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString, TXCDispatchQueue, TXCHardwareVideoFrameSorter, TXCVideoDecodeConfig;
 @protocol TXIVideoDecoderSupervisorInterface;
 
@@ -18,7 +20,6 @@
     NSMutableDictionary *_parameterSets;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *parameterSets; // @synthesize parameterSets=_parameterSets;
 @property(nonatomic) struct opaqueCMFormatDescription *formatDesc; // @synthesize formatDesc=_formatDesc;
 @property(nonatomic) struct OpaqueVTDecompressionSession *session; // @synthesize session=_session;
@@ -51,4 +52,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
 }
 
 + (id)constructOneItemWithId:(unsigned long long)arg1 withTotalCostValueKey:(unsigned long long)arg2 withTotalCountKey:(unsigned long long)arg3 withDes:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsDes; // @synthesize m_nsDes;
 @property(nonatomic) unsigned long long m_uTotalCountKey; // @synthesize m_uTotalCountKey;
 @property(nonatomic) unsigned long long m_uTotalCostValueKey; // @synthesize m_uTotalCostValueKey;

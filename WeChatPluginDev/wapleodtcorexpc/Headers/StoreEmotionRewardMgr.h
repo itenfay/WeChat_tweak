@@ -15,7 +15,6 @@
 
 + (_Bool)isHideStopShowRewardTipsButton;
 + (_Bool)isCloseReward;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *rewardInfoCacheDic; // @synthesize rewardInfoCacheDic=_rewardInfoCacheDic;
 @property(retain, nonatomic) NSMutableDictionary *getPriceOnlyRewardInfoCgiDic; // @synthesize getPriceOnlyRewardInfoCgiDic=_getPriceOnlyRewardInfoCgiDic;
 @property(retain, nonatomic) NSMutableDictionary *getAllRewardInfoCgiDic; // @synthesize getAllRewardInfoCgiDic=_getAllRewardInfoCgiDic;

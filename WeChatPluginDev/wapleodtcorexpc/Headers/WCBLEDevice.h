@@ -16,7 +16,6 @@
     long long _m_profileID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_profileID; // @synthesize m_profileID=_m_profileID;
 @property(copy, nonatomic) NSString *m_mac; // @synthesize m_mac=_m_mac;
 @property(nonatomic) long long m_bleSimpleProto; // @synthesize m_bleSimpleProto=_m_bleSimpleProto;

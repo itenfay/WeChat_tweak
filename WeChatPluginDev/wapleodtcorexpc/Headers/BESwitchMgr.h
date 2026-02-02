@@ -13,7 +13,6 @@
     MemoryMappedKV *_mappedKV;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastRequestTime; // @synthesize lastRequestTime=_lastRequestTime;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 @property(nonatomic) unsigned int debugConfigOpenTimelineWhenInit; // @synthesize debugConfigOpenTimelineWhenInit=_debugConfigOpenTimelineWhenInit;

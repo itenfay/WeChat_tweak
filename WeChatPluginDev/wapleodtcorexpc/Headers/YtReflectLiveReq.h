@@ -21,7 +21,6 @@
     NSDictionary *_select_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *select_data; // @synthesize select_data=_select_data;
 @property(retain, nonatomic) NSString *session_id; // @synthesize session_id=_session_id;
 @property(retain, nonatomic) NSString *compare_image; // @synthesize compare_image=_compare_image;

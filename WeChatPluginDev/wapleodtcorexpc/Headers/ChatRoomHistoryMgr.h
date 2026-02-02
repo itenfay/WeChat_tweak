@@ -13,7 +13,6 @@
     NSMutableArray *_arrProcessingMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrProcessingMsg; // @synthesize arrProcessingMsg=_arrProcessingMsg;
 @property(retain, nonatomic) ChatRoomHistoryDB *historyDB; // @synthesize historyDB=_historyDB;
 @property(retain, nonatomic) CMessageWrap *currMsgWrap; // @synthesize currMsgWrap=_currMsgWrap;

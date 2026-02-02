@@ -18,7 +18,6 @@
 }
 
 + (_Bool)CanShowQuickTransTips;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bAutoTranslating; // @synthesize bAutoTranslating=_bAutoTranslating;
 @property(nonatomic) _Bool bAutoPlaying; // @synthesize bAutoPlaying=_bAutoPlaying;
 @property(retain, nonatomic) VoiceMessageViewModel *tipsShowingViewModel; // @synthesize tipsShowingViewModel=_tipsShowingViewModel;

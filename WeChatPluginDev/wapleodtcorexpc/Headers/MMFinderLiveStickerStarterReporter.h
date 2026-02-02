@@ -12,7 +12,6 @@
     WCFinderLiveStarterReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStarterReporter *reporter; // @synthesize reporter=_reporter;
 - (void)reportStickerAction:(unsigned long long)arg1 type:(unsigned long long)arg2 attributes:(id)arg3;
 - (void)reportStickerAction:(unsigned long long)arg1 type:(unsigned long long)arg2;

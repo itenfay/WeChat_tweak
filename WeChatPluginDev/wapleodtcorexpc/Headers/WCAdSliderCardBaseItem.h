@@ -12,7 +12,6 @@
     WCMediaItem *_mediaItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

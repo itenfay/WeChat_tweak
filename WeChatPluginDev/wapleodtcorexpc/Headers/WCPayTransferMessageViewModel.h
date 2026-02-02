@@ -12,7 +12,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double groupTransferBubbleHeight; // @synthesize groupTransferBubbleHeight=_groupTransferBubbleHeight;
 @property(readonly, nonatomic) NSString *bgImageName; // @synthesize bgImageName=_bgImageName;
 - (id)additionalAccessibilityDescription;

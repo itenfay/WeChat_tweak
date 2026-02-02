@@ -22,7 +22,6 @@
     NSDictionary *_dicFinder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dicFinder; // @synthesize dicFinder=_dicFinder;
 @property(retain, nonatomic) NSString *lastQueryTextForDetail; // @synthesize lastQueryTextForDetail=_lastQueryTextForDetail;
 @property(retain, nonatomic) NSString *lastQueryText; // @synthesize lastQueryText=_lastQueryText;

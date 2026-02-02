@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ImageTranslateRequest, NSString;
 
 @interface ImageTranslateService
@@ -13,7 +15,6 @@
 
 + (void)reportIDKey:(unsigned int)arg1 value:(unsigned int)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ImageTranslateRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 - (void)clearCurrentRequest;
 - (void)translateImage:(id)arg1 statInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

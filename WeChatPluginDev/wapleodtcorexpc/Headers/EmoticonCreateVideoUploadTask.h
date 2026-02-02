@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonVideoConverter, NSString;
 
 @interface EmoticonCreateVideoUploadTask
@@ -14,7 +16,6 @@
     EmoticonVideoConverter *_videoConverter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonVideoConverter *videoConverter; // @synthesize videoConverter=_videoConverter;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
 @property(copy, nonatomic) CDUnknownBlockType convertSucBlock; // @synthesize convertSucBlock=_convertSucBlock;
@@ -26,4 +27,3 @@
 - (id)init;
 
 @end
-

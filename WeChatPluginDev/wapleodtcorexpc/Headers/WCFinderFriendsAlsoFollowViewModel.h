@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray, NSMutableDictionary, NSString;
 @protocol WCFinderFriendsAlsoFollowViewModelDelegate;
@@ -22,7 +23,6 @@
     NSMutableDictionary *_pendingFollowStateMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingFollowStateMap; // @synthesize pendingFollowStateMap=_pendingFollowStateMap;
 @property(nonatomic) _Bool hasMoreData; // @synthesize hasMoreData=_hasMoreData;
 @property(retain, nonatomic) NSData *lastBuf; // @synthesize lastBuf=_lastBuf;
@@ -48,4 +48,3 @@
 - (id)initWithUsername:(id)arg1 scene:(int)arg2 fromUsername:(id)arg3 commentScene:(int)arg4;
 
 @end
-

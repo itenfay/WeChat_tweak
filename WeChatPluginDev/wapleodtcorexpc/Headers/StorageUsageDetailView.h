@@ -21,7 +21,6 @@
     id <StorageUsageDetailViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(nonatomic) __weak id <StorageUsageDetailViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) StorageUsageDetailModel *model; // @synthesize model=m_model;

@@ -14,7 +14,6 @@
 }
 
 + (id)buildOutputWithData:(id)arg1 userInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSData *result; // @synthesize result=_result;
 

@@ -11,7 +11,6 @@
     NSMutableDictionary *_dictAppId2LastUpdateTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictAppId2LastUpdateTime; // @synthesize dictAppId2LastUpdateTime=_dictAppId2LastUpdateTime;
 @property(retain, nonatomic) NSMutableDictionary *dictAppId2ContactResources; // @synthesize dictAppId2ContactResources=_dictAppId2ContactResources;
 - (id)init;

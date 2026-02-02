@@ -19,7 +19,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) double detectMaxValue; // @synthesize detectMaxValue=_detectMaxValue;
 @property(nonatomic) double detectAvgValue; // @synthesize detectAvgValue=_detectAvgValue;
 @property(nonatomic) long long doudiCount; // @synthesize doudiCount=_doudiCount;

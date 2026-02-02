@@ -16,7 +16,6 @@
     NSDictionary *_httpHeader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *httpHeader; // @synthesize httpHeader=_httpHeader;
 @property(retain, nonatomic) NSString *systemPlayerUrl; // @synthesize systemPlayerUrl=_systemPlayerUrl;
 @property(retain, nonatomic) NSString *thumbPlayerUrl; // @synthesize thumbPlayerUrl=_thumbPlayerUrl;

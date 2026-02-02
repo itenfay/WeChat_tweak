@@ -15,7 +15,6 @@
     EAGLContext *_glContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak EAGLContext *glContext; // @synthesize glContext=_glContext;
 @property(nonatomic) unsigned int framebufferColorTexture; // @synthesize framebufferColorTexture=_framebufferColorTexture;
 @property(nonatomic) unsigned int framebuffer; // @synthesize framebuffer=_framebuffer;

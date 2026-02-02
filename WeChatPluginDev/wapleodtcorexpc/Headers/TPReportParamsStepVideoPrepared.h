@@ -13,7 +13,6 @@
     long long _firstpacketreadtime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long firstpacketreadtime; // @synthesize firstpacketreadtime=_firstpacketreadtime;
 @property(nonatomic) long long fileopenedtime; // @synthesize fileopenedtime=_fileopenedtime;
 @property(nonatomic) long long urlindex; // @synthesize urlindex=_urlindex;

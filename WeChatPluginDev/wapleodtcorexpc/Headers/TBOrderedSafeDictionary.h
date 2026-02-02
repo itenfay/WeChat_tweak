@@ -12,7 +12,6 @@
     NSMutableArray *_pairs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pairs; // @synthesize pairs=_pairs;
 - (id)init;
 - (_Bool)containsKey:(id)arg1;

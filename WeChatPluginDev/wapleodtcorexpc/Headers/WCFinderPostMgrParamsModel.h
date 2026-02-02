@@ -22,7 +22,6 @@
     unsigned long long _publisherEnteryType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long publisherEnteryType; // @synthesize publisherEnteryType=_publisherEnteryType;
 @property(nonatomic) unsigned long long shareScene; // @synthesize shareScene=_shareScene;
 @property(nonatomic) unsigned int profileEnterType; // @synthesize profileEnterType=_profileEnterType;

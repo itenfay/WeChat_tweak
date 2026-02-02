@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString, WAWebViewController;
 @protocol WAJSEventHandlerContextDelegate;
@@ -25,7 +26,6 @@
     id _userInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool noCallback; // @synthesize noCallback=_noCallback;
 @property(nonatomic) _Bool responseUseBase64; // @synthesize responseUseBase64=_responseUseBase64;
@@ -60,4 +60,3 @@
 - (void)endWithResult:(id)arg1;
 
 @end
-

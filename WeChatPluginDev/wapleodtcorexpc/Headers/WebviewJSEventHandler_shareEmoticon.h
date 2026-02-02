@@ -12,7 +12,6 @@
     NSString *_currentUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentUrl; // @synthesize currentUrl=_currentUrl;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogicController; // @synthesize forwardLogicController=_forwardLogicController;
 - (void)ImageDidFail:(id)arg1;

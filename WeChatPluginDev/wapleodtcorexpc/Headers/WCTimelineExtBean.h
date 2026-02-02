@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_uploadResponseRetCodeArr;
 + (void)PBArrayAdd_snsExtStatData;
 + (void)PBArrayAdd_inputAction;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsInputAreaReportInfo *inputAreaReportInfo; // @synthesize inputAreaReportInfo=_inputAreaReportInfo;
 @property(nonatomic) _Bool isTigerEnabled; // @synthesize isTigerEnabled=_isTigerEnabled;
 @property(nonatomic) long long springContentStyle; // @synthesize springContentStyle=_springContentStyle;

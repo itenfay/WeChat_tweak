@@ -21,7 +21,6 @@
     NSString *_callerName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *callerName; // @synthesize callerName=_callerName;
 @property(nonatomic) int mScreenStatus; // @synthesize mScreenStatus=_mScreenStatus;
 @property(nonatomic) int mHoldStatus; // @synthesize mHoldStatus=_mHoldStatus;

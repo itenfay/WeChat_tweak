@@ -13,7 +13,6 @@
     KindaLiteAppUIPage *_liteAppPage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KindaLiteAppUIPage *liteAppPage; // @synthesize liteAppPage=_liteAppPage;
 @property(retain, nonatomic) KindaTinyAppUIPage *tinyAppPage; // @synthesize tinyAppPage=_tinyAppPage;
 - (void)liteAppDidClose:(id)arg1;

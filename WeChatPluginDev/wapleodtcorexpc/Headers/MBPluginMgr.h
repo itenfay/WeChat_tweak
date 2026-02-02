@@ -10,7 +10,6 @@
     NSMapTable *_extPluginsMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *extPluginsMap; // @synthesize extPluginsMap=_extPluginsMap;
 - (id)providePlugin:(id)arg1 version:(id)arg2;
 - (void)onServiceMemoryWarning;

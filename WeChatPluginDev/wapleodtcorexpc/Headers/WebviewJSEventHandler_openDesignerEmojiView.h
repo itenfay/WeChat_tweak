@@ -13,7 +13,6 @@
 }
 
 + (id)dictionForBannerSet:(id)arg1;
-- (void).cxx_destruct;
 - (void)onGetDesignerForDesignerId:(id)arg1 AndDesigner:(id)arg2;
 - (void)openDesignerEmojiViewControllerWithDesignerUin:(unsigned int)arg1;
 - (void)openDesignerEmojiViewControllerWithDesignerId;

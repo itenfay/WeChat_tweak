@@ -15,7 +15,6 @@
     id <WCAdFinderDialogContainViewDelegate> _containerDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdFinderDialogContainViewDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
 @property(retain, nonatomic) WCAdFinderDialogBaseView *dialogDetailView; // @synthesize dialogDetailView=_dialogDetailView;
 @property(retain, nonatomic) WCAdFinderDialogBaseInfo *dialogInfo; // @synthesize dialogInfo=_dialogInfo;

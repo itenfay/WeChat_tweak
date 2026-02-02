@@ -17,7 +17,6 @@
     NSString *_greetSessionId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *greetSessionId; // @synthesize greetSessionId=_greetSessionId;
 @property(nonatomic) __weak id <ITableSessionStorageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCTDatabase *greetSessionDB; // @synthesize greetSessionDB=_greetSessionDB;

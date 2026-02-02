@@ -13,7 +13,6 @@
     id _loadingContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id loadingContext; // @synthesize loadingContext=_loadingContext;
 @property(nonatomic) int loadingType; // @synthesize loadingType=_loadingType;
 @property(nonatomic) unsigned long long loadingEndTimeMS; // @synthesize loadingEndTimeMS=_loadingEndTimeMS;

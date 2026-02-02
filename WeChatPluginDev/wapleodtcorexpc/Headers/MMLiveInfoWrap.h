@@ -18,7 +18,6 @@
     MMLiveAnchorStatusItem *_anchorStatusItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveAnchorStatusItem *anchorStatusItem; // @synthesize anchorStatusItem=_anchorStatusItem;
 @property(retain, nonatomic) NSString *latestLiveMicId; // @synthesize latestLiveMicId=_latestLiveMicId;
 @property(retain, nonatomic) NSMutableArray *currentRoomIds; // @synthesize currentRoomIds=_currentRoomIds;

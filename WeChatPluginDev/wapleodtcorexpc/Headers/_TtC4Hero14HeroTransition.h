@@ -42,7 +42,6 @@
     MISSING_TYPE *inTabBarController;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)interactionControllerForPresentation:(id)arg1;
 - (id)interactionControllerForDismissal:(id)arg1;

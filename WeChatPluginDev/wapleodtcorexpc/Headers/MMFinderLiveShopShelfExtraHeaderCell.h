@@ -20,7 +20,6 @@
     struct UIEdgeInsets _padding;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShopShelfMainTableHeaderView *tableHeaderView; // @synthesize tableHeaderView=_tableHeaderView;
 @property(retain, nonatomic) MMFinderLiveShopShelfExtraHeaderInfos *extraHeaderInfos; // @synthesize extraHeaderInfos=_extraHeaderInfos;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;

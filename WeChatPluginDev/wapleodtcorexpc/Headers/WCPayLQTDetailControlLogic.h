@@ -26,7 +26,6 @@
     WCPayLQTAutoChargeModifyTimeCgi *_autoChargeModifyTimeCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayLQTAutoChargeModifyTimeCgi *autoChargeModifyTimeCgi; // @synthesize autoChargeModifyTimeCgi=_autoChargeModifyTimeCgi;
 @property(retain, nonatomic) WCPayLQTAutoChargeCloseCgi *autoChargeCloseCgi; // @synthesize autoChargeCloseCgi=_autoChargeCloseCgi;
 @property(retain, nonatomic) WCPayLQTAutoChargeOpenCgi *autoChargeOpenCgi; // @synthesize autoChargeOpenCgi=_autoChargeOpenCgi;

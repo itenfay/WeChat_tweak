@@ -18,7 +18,6 @@
     unsigned long long _contentType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 @property(copy, nonatomic) NSString *ecSource; // @synthesize ecSource=_ecSource;
 @property(copy, nonatomic) NSString *lastGMsgID; // @synthesize lastGMsgID=_lastGMsgID;

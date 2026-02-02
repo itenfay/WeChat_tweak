@@ -12,7 +12,6 @@
     MMFinderLiveTask *_liveTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTask *liveTask; // @synthesize liveTask=_liveTask;
 @property(readonly, nonatomic) NSString *anchorIdentityId;
 @property(readonly, nonatomic) _Bool isKtvMode;

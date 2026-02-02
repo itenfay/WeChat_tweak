@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMFinderI420Frame : NSObject
 {
@@ -33,4 +34,3 @@
 - (void)getBytesQueue:(CDUnknownBlockType)arg1;
 
 @end
-

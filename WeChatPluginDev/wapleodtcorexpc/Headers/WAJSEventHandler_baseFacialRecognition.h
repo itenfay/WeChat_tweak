@@ -10,7 +10,6 @@
     FaceRecogPrivateVerifyHandler *_handler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogPrivateVerifyHandler *handler; // @synthesize handler=_handler;
 - (_Bool)needConfirmView;
 - (id)jsapiFuncName;

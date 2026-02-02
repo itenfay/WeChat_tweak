@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext, EJStatusHolder, EJTextureHolder, EJTextureProgram, NSMutableDictionary, WAEJCanvasContext, WAEJJavaScriptView;
 
@@ -76,4 +77,3 @@
 - (id)initWithCanvas:(id)arg1 canvas:(id)arg2;
 
 @end
-

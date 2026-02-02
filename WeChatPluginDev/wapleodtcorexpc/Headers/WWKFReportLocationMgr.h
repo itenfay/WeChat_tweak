@@ -12,7 +12,6 @@
     NSMutableDictionary *_reportUsers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reportUsers; // @synthesize reportUsers=_reportUsers;
 @property(nonatomic) _Bool retrieveringLocation; // @synthesize retrieveringLocation=_retrieveringLocation;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;

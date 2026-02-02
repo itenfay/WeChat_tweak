@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool purchased; // @synthesize purchased=_purchased;
 @property(retain, nonatomic) FinderDramaInfo *dramaInfo; // @synthesize dramaInfo=_dramaInfo;
 @property(copy, nonatomic) NSString *dramaIDKey; // @synthesize dramaIDKey=_dramaIDKey;

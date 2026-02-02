@@ -13,7 +13,6 @@
     WCFinderDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool videoCompleted; // @synthesize videoCompleted=_videoCompleted;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 - (id)collectionInfo;

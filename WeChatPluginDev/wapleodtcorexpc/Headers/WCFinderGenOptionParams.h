@@ -18,7 +18,6 @@
     NSString *_originalVideoPath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *originalVideoPath; // @synthesize originalVideoPath=_originalVideoPath;
 @property(copy, nonatomic) NSString *postFinderUsername; // @synthesize postFinderUsername=_postFinderUsername;
 @property(retain, nonatomic) AVAsset *fromAvAsset; // @synthesize fromAvAsset=_fromAvAsset;

@@ -58,7 +58,6 @@
 + (void)PBArrayAdd_lastUnusedSeconds;
 + (void)PBArrayAdd_currentPkgMd5;
 + (void)PBArrayAdd_currentEnabledVersion;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int patchSizeInBytes; // @synthesize patchSizeInBytes=_patchSizeInBytes;
 @property(nonatomic) unsigned int patchDownloadNetworkType; // @synthesize patchDownloadNetworkType=_patchDownloadNetworkType;
 @property(retain, nonatomic) NSString *patchDownloadUrl; // @synthesize patchDownloadUrl=_patchDownloadUrl;

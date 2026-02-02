@@ -19,7 +19,6 @@
     WCFinderAnimationLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool miniAppHasSet; // @synthesize miniAppHasSet=_miniAppHasSet;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) WCFinderJumpInfo *selectedGoodsJumpInfo; // @synthesize selectedGoodsJumpInfo=_selectedGoodsJumpInfo;

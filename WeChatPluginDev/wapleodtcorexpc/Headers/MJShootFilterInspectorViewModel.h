@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJShootFilterItem, NSArray;
 
 @interface MJShootFilterInspectorViewModel
@@ -13,7 +15,6 @@
 }
 
 + (id)defaultItems;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJShootFilterItem *selectedFilterItem; // @synthesize selectedFilterItem=_selectedFilterItem;
 @property(retain, nonatomic) NSArray *filterItems; // @synthesize filterItems=_filterItems;
 @property(retain, nonatomic) NSArray *titleItems; // @synthesize titleItems=_titleItems;
@@ -33,4 +34,3 @@
 - (void)fetchFilterDataIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

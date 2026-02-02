@@ -15,7 +15,6 @@
     UITableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) unsigned long long bannedConditionFlag; // @synthesize bannedConditionFlag=_bannedConditionFlag;
 @property(nonatomic) _Bool canAutoConnect; // @synthesize canAutoConnect=_canAutoConnect;

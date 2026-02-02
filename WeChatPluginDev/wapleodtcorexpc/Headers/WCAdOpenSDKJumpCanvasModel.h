@@ -13,7 +13,6 @@
     unsigned long long _subKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long subKey; // @synthesize subKey=_subKey;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;
 @property(retain, nonatomic) NSString *canvasId; // @synthesize canvasId=_canvasId;

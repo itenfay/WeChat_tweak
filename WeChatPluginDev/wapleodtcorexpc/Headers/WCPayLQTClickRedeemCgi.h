@@ -11,7 +11,6 @@
     id <WCPayLQTClickRedeemCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property _Bool fromServer; // @synthesize fromServer=_fromServer;
 @property(nonatomic) __weak id <WCPayLQTClickRedeemCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1;

@@ -11,7 +11,6 @@
     NSString *_currLiteAppId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldCancelTask; // @synthesize shouldCancelTask=_shouldCancelTask;
 @property(retain, nonatomic) NSString *currLiteAppId; // @synthesize currLiteAppId=_currLiteAppId;
 - (void)onTemplateApplyed:(unsigned long long)arg1;

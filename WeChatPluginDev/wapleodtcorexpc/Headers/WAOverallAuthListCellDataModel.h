@@ -14,7 +14,6 @@
 }
 
 + (id)createByAuthItem:(id)arg1 contact:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) WAAuthorizationItemData *authItem; // @synthesize authItem=_authItem;
 

@@ -10,7 +10,6 @@
     JSEvent *_jsEvent;
 }
 
-- (void).cxx_destruct;
 - (void)startEditAddress;
 - (void)OnAskAuthorizationFailure:(id)arg1 ForAuthInfo:(id)arg2;
 - (void)OnAskAuthorizationSuccessForAuthInfo:(id)arg1;

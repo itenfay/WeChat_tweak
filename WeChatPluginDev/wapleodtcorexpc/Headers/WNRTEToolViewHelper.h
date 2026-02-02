@@ -17,7 +17,6 @@
     RTEAttributeNode *_recordingAttribute;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RTEAttributeNode *recordingAttribute; // @synthesize recordingAttribute=_recordingAttribute;
 @property(retain, nonatomic) MMPickLocationViewController *locationViewCtrl; // @synthesize locationViewCtrl=_locationViewCtrl;
 @property(retain, nonatomic) NSMutableArray *arrAttachments; // @synthesize arrAttachments=_arrAttachments;

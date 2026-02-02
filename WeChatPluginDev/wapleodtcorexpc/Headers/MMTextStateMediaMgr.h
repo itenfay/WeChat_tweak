@@ -13,7 +13,6 @@
     MMTextStateMediaUploadCdnMgr *_uploadMediaCdnMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTextStateMediaUploadCdnMgr *uploadMediaCdnMgr; // @synthesize uploadMediaCdnMgr=_uploadMediaCdnMgr;
 @property(retain, nonatomic) MMTextStateMediaDownloadImageCdnMgr *downloadImageCdnMgr; // @synthesize downloadImageCdnMgr=_downloadImageCdnMgr;
 @property(retain, nonatomic) MMTextStateMediaDownloadVideoCdnMgr *downloadVideoCdnMgr; // @synthesize downloadVideoCdnMgr=_downloadVideoCdnMgr;

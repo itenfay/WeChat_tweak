@@ -15,7 +15,6 @@
     FTSIntelligentMsgItem *m_intelligentMsgItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSIntelligentMsgItem *m_intelligentMsgItem; // @synthesize m_intelligentMsgItem;
 @property(retain, nonatomic) FTSMsgItem *m_msgItem; // @synthesize m_msgItem;
 @property(retain, nonatomic) NSString *m_nsSearchText; // @synthesize m_nsSearchText;

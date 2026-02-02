@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface MMFinderLiveGiftResourceBaseMgr
 {
 }
@@ -51,4 +53,3 @@
 - (void)loadGiftResForURL:(id)arg1 resType:(long long)arg2 productId:(id)arg3 fileMD5:(id)arg4 memoryCacheOptions:(unsigned long long)arg5 oberver:(id)arg6;
 
 @end
-

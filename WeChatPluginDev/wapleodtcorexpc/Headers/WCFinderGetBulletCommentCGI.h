@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderGetBulletCommentCGI
@@ -17,7 +19,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
@@ -32,4 +33,3 @@
 - (id)initWithObjectId:(id)arg1 objectNonceId:(id)arg2 startTimestamp:(unsigned long long)arg3 lastBuffer:(id)arg4 selectedSource:(int)arg5 commentScene:(int)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

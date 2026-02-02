@@ -17,7 +17,6 @@
     UILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) double gradientWidth; // @synthesize gradientWidth=_gradientWidth;

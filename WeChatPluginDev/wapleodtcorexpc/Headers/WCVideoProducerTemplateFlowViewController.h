@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJVideoTemplate, NSIndexPath, NSMutableSet, NSString, UIButton, UICollectionView, UIPanGestureRecognizer, UIView, WCUnhittableView, WCVideoProducerDataSource, WCVideoProducerLoadMoreView;
 @protocol WCVideoProducerTemplateFlowDelegate;
 
@@ -34,7 +36,6 @@
     struct CGPoint _topBarSlideBeginPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJVideoTemplate *originalTemplate; // @synthesize originalTemplate=_originalTemplate;
 @property(retain, nonatomic) NSMutableSet *playingIndexPathSet; // @synthesize playingIndexPathSet=_playingIndexPathSet;
 @property(nonatomic) _Bool isScrolledByCode; // @synthesize isScrolledByCode=_isScrolledByCode;
@@ -141,4 +142,3 @@
 @property(readonly) Class superclass;
 
 @end
-

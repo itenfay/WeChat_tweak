@@ -13,7 +13,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *productList; // @synthesize productList=_productList;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;

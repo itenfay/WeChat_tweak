@@ -45,7 +45,6 @@
 + (id)sectionWithFooter:(id)arg1;
 + (id)sectionWithHeader:(id)arg1;
 + (id)defaultSection;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRefreshFooterAtSizeChange; // @synthesize shouldRefreshFooterAtSizeChange=_shouldRefreshFooterAtSizeChange;
 @property(nonatomic) _Bool shouldRefreshHeaderAtSizeChange; // @synthesize shouldRefreshHeaderAtSizeChange=_shouldRefreshHeaderAtSizeChange;
 @property(nonatomic) double lastTableWidth; // @synthesize lastTableWidth=_lastTableWidth;

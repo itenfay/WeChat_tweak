@@ -16,7 +16,6 @@
     unsigned long long m_lastAppInTime;
 }
 
-- (void).cxx_destruct;
 - (void)onCgiResp:(id)arg1 errCode:(long long)arg2 errMsg:(id)arg3 cgiParams:(id)arg4 routeRules:(id)arg5 time:(unsigned long long)arg6;
 - (void)onCgiReq:(id)arg1 cgiParams:(id)arg2 routeRules:(id)arg3 time:(unsigned long long)arg4;
 - (void)onAudioStop:(unsigned long long)arg1;

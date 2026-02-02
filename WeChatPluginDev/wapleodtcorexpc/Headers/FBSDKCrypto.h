@@ -16,7 +16,6 @@
 + (id)randomString:(unsigned long long)arg1;
 + (id)randomBytes:(unsigned long long)arg1;
 + (id)makeMasterKey;
-- (void).cxx_destruct;
 - (id)_macForIV:(id)arg1 cipherData:(id)arg2 additionalDataToSign:(id)arg3;
 - (id)decrypt:(id)arg1 additionalSignedData:(id)arg2;
 - (id)encrypt:(id)arg1 additionalDataToSign:(id)arg2;

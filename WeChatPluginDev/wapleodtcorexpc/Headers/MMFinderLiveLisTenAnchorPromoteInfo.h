@@ -11,7 +11,6 @@
 }
 
 + (id)createListenAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveListenPromoteInfo *liveListenPromoteInfo; // @synthesize liveListenPromoteInfo=_liveListenPromoteInfo;
 - (id)promoteKey;
 

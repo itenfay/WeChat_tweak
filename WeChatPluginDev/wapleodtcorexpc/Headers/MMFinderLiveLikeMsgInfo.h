@@ -18,7 +18,6 @@
 
 + (_Bool)checkLikeLiveMsgInfoPBValid:(id)arg1;
 + (id)createLiveLikeMsgInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveAppMsg *rootAppMsg; // @synthesize rootAppMsg=_rootAppMsg;
 @property(nonatomic) unsigned int likeUvNum; // @synthesize likeUvNum=_likeUvNum;
 @property(retain, nonatomic) NSMutableArray *userInfoList; // @synthesize userInfoList=_userInfoList;

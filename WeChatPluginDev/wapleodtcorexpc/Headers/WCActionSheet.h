@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, UIColor, UIScrollView, UIView;
 @protocol WCActionSheetDelegate;
 
@@ -40,7 +42,6 @@
 + (long long)getActionSheetWidthFor:(id)arg1;
 + (long long)getActionSheetWidth;
 + (id)getCurrentShowingActionSheet;
-- (void).cxx_destruct;
 @property(nonatomic) double currSceneWidth; // @synthesize currSceneWidth=_currSceneWidth;
 @property(nonatomic) _Bool hasSeplineButton; // @synthesize hasSeplineButton=_hasSeplineButton;
 @property(nonatomic) _Bool shouldRelease; // @synthesize shouldRelease=_shouldRelease;
@@ -157,4 +158,3 @@
 @property(readonly) Class superclass;
 
 @end
-

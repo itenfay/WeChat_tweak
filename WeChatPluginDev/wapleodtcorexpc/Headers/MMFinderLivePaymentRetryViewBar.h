@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLivePayButton, MMUILabel;
 @protocol MMFinderLivePaymentRetryViewBarDelegate;
@@ -31,7 +32,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastExtendTime; // @synthesize lastExtendTime=_lastExtendTime;
 @property(nonatomic) _Bool needHidden; // @synthesize needHidden=_needHidden;
 @property(nonatomic) long long payButtonState; // @synthesize payButtonState=_payButtonState;
@@ -78,4 +78,3 @@
 - (id)initWithFromSource:(long long)arg1 countDownMode:(long long)arg2;
 
 @end
-

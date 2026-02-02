@@ -15,7 +15,6 @@
 }
 
 + (id)changeWithSection:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderChangeSet *changes; // @synthesize changes=_changes;
 @property(nonatomic) long long section; // @synthesize section=_section;
 @property(nonatomic) long long type; // @synthesize type=_type;

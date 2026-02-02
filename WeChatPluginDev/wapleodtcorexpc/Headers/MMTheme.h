@@ -26,7 +26,6 @@
 
 + (id)defaultTheme;
 + (id)themeFromPath:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long themeType; // @synthesize themeType=m_themeType;
 @property(nonatomic) long long finishedSize; // @synthesize finishedSize=m_finishedSize;
 @property(nonatomic) long long totalSize; // @synthesize totalSize=m_totalSize;

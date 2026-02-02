@@ -22,7 +22,6 @@
     NSMutableArray *_previewViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *previewViews; // @synthesize previewViews=_previewViews;
 @property(retain, nonatomic) WCFinderReuseQueue *previewViewReuseQueue; // @synthesize previewViewReuseQueue=_previewViewReuseQueue;
 @property(retain, nonatomic) UIView *settingRedDotView; // @synthesize settingRedDotView=_settingRedDotView;

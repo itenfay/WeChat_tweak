@@ -15,7 +15,6 @@
     NSMutableSet *_ids;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *ids; // @synthesize ids=_ids;
 @property(retain, nonatomic) NSMutableArray *dataItems; // @synthesize dataItems=_dataItems;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

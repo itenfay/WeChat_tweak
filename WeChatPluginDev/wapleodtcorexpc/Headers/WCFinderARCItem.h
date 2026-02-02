@@ -13,7 +13,6 @@
     unsigned long long _cost;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cost; // @synthesize cost=_cost;
 @property(retain, nonatomic) id data; // @synthesize data=_data;
 @property(retain, nonatomic) id key; // @synthesize key=_key;

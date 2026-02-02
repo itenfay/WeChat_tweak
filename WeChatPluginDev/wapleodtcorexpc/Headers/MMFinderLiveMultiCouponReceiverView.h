@@ -11,7 +11,6 @@
     UILabel *_validityPeriodLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *validityPeriodLabel; // @synthesize validityPeriodLabel=_validityPeriodLabel;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 - (void)setActionButtonHidden:(_Bool)arg1;

@@ -18,7 +18,6 @@
     struct CGSize _lastLayoutSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectBgView; // @synthesize selectBgView=_selectBgView;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(retain, nonatomic) NSMutableArray *commentItems; // @synthesize commentItems=_commentItems;

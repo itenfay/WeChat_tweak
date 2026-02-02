@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)getEditActions;
 - (id)getView;
 - (id)initWithCpp:(const void *)arg1;

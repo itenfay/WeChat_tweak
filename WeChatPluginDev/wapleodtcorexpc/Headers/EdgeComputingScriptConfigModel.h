@@ -38,7 +38,6 @@
 + (void)PBArrayAdd_dataSourceID;
 + (void)PBArrayAdd_dataSourceType;
 + (void)PBArrayAdd_configID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *scriptMD5; // @synthesize scriptMD5=_scriptMD5;
 @property(nonatomic) unsigned int isRepeat; // @synthesize isRepeat=_isRepeat;
 @property(nonatomic) unsigned int runPeriod; // @synthesize runPeriod=_runPeriod;

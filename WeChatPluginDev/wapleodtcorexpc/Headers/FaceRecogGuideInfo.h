@@ -17,7 +17,6 @@
 }
 
 + (id)genDefaultInfo;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *secondStepIconName; // @synthesize secondStepIconName=_secondStepIconName;
 @property(copy, nonatomic) NSString *secondStepContent; // @synthesize secondStepContent=_secondStepContent;
 @property(copy, nonatomic) NSString *secondStepNumberIconName; // @synthesize secondStepNumberIconName=_secondStepNumberIconName;

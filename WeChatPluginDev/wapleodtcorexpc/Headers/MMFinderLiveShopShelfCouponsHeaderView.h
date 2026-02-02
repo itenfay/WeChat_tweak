@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSAttributedString;
 
@@ -14,11 +15,9 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *title; // @synthesize title=_title;
 @property(copy, nonatomic) CDUnknownBlockType onClicked; // @synthesize onClicked=_onClicked;
 - (void)initSubViews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

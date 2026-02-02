@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AACWeakTimer, AVAudioPlayer, NSArray, NSString;
 
@@ -37,7 +38,6 @@
     double _startTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) _Bool audioPlayFinish; // @synthesize audioPlayFinish=_audioPlayFinish;
 @property(copy, nonatomic) CDUnknownBlockType playProgress; // @synthesize playProgress=_playProgress;
@@ -92,4 +92,3 @@
 @property(readonly) Class superclass;
 
 @end
-

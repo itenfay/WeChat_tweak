@@ -33,7 +33,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) WCOutFeedbackCgi *cgi; // @synthesize cgi=_cgi;
 @property(nonatomic) _Bool hasInputSth; // @synthesize hasInputSth=_hasInputSth;

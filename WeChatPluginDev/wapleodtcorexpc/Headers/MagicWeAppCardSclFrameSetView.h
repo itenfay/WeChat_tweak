@@ -12,7 +12,6 @@
     MBExternalViewStub *_mbView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MBExternalViewStub *mbView; // @synthesize mbView=_mbView;
 @property(nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 @property(nonatomic) _Bool haveNewNativeViewTexture; // @synthesize haveNewNativeViewTexture=_haveNewNativeViewTexture;

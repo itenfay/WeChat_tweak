@@ -14,7 +14,6 @@
     NSString *_mmpay_mkt_sign;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mmpay_mkt_sign; // @synthesize mmpay_mkt_sign=_mmpay_mkt_sign;
 @property(retain, nonatomic) NSString *trans_id; // @synthesize trans_id=_trans_id;
 @property(retain, nonatomic) NSString *busi_param; // @synthesize busi_param=_busi_param;

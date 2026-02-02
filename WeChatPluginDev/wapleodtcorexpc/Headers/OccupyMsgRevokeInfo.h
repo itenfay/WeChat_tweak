@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_msgSvrID;
 + (void)PBArrayAdd_localID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *overwriteMsgID; // @synthesize overwriteMsgID=_overwriteMsgID;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;

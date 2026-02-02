@@ -14,7 +14,6 @@
     NSMutableData *_pcmDataBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *pcmDataBuffer; // @synthesize pcmDataBuffer=_pcmDataBuffer;
 @property(nonatomic) unsigned int pcmBufferPacket; // @synthesize pcmBufferPacket=_pcmBufferPacket;
 @property(nonatomic) unsigned int recordPacket; // @synthesize recordPacket=_recordPacket;

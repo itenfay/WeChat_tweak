@@ -21,7 +21,6 @@
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
 + (id)parseSubCardsFromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *subCardsInfo; // @synthesize subCardsInfo=_subCardsInfo;
 @property(nonatomic) unsigned int expireTime; // @synthesize expireTime=_expireTime;
 @property(retain, nonatomic) NSString *decorationTitle; // @synthesize decorationTitle=_decorationTitle;

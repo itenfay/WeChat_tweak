@@ -47,7 +47,6 @@
 + (void)reportAction:(unsigned long long)arg1 enterTime:(unsigned long long)arg2 totalTime:(unsigned long long)arg3 recordTime:(unsigned long long)arg4 editTime:(unsigned long long)arg5 composeTime:(unsigned long long)arg6 uploadTime:(unsigned long long)arg7 composeFailReason:(unsigned long long)arg8 uploadFailReason:(unsigned long long)arg9 scene:(unsigned long long)arg10 lensId:(id)arg11 lensPosition:(unsigned long long)arg12 boardPullUpInterval:(unsigned long long)arg13 lensName:(id)arg14 lensSource:(unsigned long long)arg15 sourceType:(unsigned long long)arg16;
 + (void)reportClickEmoticonCameraLabelInMessage;
 + (void)reportShowEmoticonCameraEntrance;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lensSourceType; // @synthesize lensSourceType=_lensSourceType;
 @property(nonatomic) long long lensPosition; // @synthesize lensPosition=_lensPosition;
 @property(nonatomic) unsigned long long lensSource; // @synthesize lensSource=_lensSource;

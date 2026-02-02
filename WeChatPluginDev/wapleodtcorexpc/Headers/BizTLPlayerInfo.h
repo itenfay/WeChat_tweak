@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithTextureInfo:(id)arg1 playerId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *playerId; // @synthesize playerId=_playerId;
 @property(retain, nonatomic) BizTLTextureInfo *textureInfo; // @synthesize textureInfo=_textureInfo;
 - (id)toList;

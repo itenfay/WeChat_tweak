@@ -13,7 +13,6 @@
     NSMutableString *_additionalInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *additionalInfo; // @synthesize additionalInfo=_additionalInfo;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 - (id)description;

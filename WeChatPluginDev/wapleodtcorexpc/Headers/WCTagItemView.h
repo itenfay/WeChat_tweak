@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIButton.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIImageView, UIView, WCTagItemViewModel;
 
@@ -16,7 +17,6 @@
     UIView *_customView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(retain, nonatomic) UIImageView *tagImageView; // @synthesize tagImageView=_tagImageView;
 @property(nonatomic) long long lastType; // @synthesize lastType=_lastType;
@@ -27,4 +27,3 @@
 - (id)initWithClickAction:(CDUnknownBlockType)arg1;
 
 @end
-

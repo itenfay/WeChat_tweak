@@ -22,7 +22,6 @@
     double _keyboardHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(retain, nonatomic) UIButton *sendButton; // @synthesize sendButton=_sendButton;

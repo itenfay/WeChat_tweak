@@ -10,7 +10,6 @@
     NSMutableDictionary *dicUrlToControlItem;
 }
 
-- (void).cxx_destruct;
 - (void)cleanAllControlItem;
 - (void)setControlItem:(id)arg1;
 - (id)getControlItem:(id)arg1;

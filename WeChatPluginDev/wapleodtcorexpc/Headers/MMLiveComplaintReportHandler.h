@@ -26,7 +26,6 @@
 + (void)MMLiveReportFieldAdd_liveId;
 + (void)MMLiveReportFieldAdd_roomId;
 + (void)MMLiveReportFieldAdd_scene;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveUserName; // @synthesize liveUserName;
 @property(nonatomic) unsigned int audienceCount; // @synthesize audienceCount;
 @property(nonatomic) unsigned int roomRole; // @synthesize roomRole;

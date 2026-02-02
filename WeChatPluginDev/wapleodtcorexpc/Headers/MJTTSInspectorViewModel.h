@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJSegmentViewModel, MJSpeechManager, NSArray, NSString;
 
 @interface MJTTSInspectorViewModel
@@ -24,7 +26,6 @@
     MJSegmentViewModel *_segmentVM;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVoiceCloneEnabledByConfig; // @synthesize isVoiceCloneEnabledByConfig=_isVoiceCloneEnabledByConfig;
 @property(retain, nonatomic) MJSegmentViewModel *segmentVM; // @synthesize segmentVM=_segmentVM;
 @property(retain, nonatomic) NSString *selectedRoleID; // @synthesize selectedRoleID=_selectedRoleID;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

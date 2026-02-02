@@ -14,7 +14,6 @@
     NSArray *_cheerIconList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cheerIconList; // @synthesize cheerIconList=_cheerIconList;
 @property(nonatomic) double animationInterval; // @synthesize animationInterval=_animationInterval;
 @property(nonatomic) _Bool pauseFlag; // @synthesize pauseFlag=_pauseFlag;

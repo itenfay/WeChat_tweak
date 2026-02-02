@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSString;
 
 @interface WCPasskeyDeletePageSheet
@@ -12,7 +14,6 @@
     MMUILabel *_contentLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMUILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(copy, nonatomic) CDUnknownBlockType onGoDeleteBlock; // @synthesize onGoDeleteBlock=_onGoDeleteBlock;
@@ -32,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

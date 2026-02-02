@@ -10,7 +10,6 @@
     MISSING_TYPE *main;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)cacheWithVideo:(id)arg1 createTime:(long long)arg2;
 - (void)reportWithTask:(id)arg1;

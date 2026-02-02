@@ -10,7 +10,6 @@
     WSEmoticonPadViewController *_emoticonPad;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WSEmoticonPadViewController *emoticonPad; // @synthesize emoticonPad=_emoticonPad;
 - (void)addDownloadTaskWith:(id)arg1;
 - (void)didSelectorSelfDefinedEmotcion:(id)arg1;

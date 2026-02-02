@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_newCount;
 + (void)PBArrayAdd_items;
-- (void).cxx_destruct;
 @property(nonatomic) int newCount; // @synthesize newCount=_newCount;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 - (void)encodeWithCoder:(id)arg1;

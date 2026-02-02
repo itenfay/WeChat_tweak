@@ -24,7 +24,6 @@
     GCImageMsgWrapper *_imgMsgWrapper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCImageMsgWrapper *imgMsgWrapper; // @synthesize imgMsgWrapper=_imgMsgWrapper;
 @property(nonatomic) _Bool delaySend; // @synthesize delaySend=_delaySend;
 @property(nonatomic) _Bool isCache; // @synthesize isCache=_isCache;

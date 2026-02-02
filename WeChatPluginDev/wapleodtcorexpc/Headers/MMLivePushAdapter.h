@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveAudio3AParamConfig, MMLivePushMediaConfig, MMLivePushParams, MMLiveVideoEncParam, NSArray, NSMutableDictionary, NSMutableSet, NSString, TRTCCloud, UIView;
 @protocol MMLivePushAdapterDelegate;
 
@@ -30,7 +32,6 @@
     NSMutableSet *_allRemoteUsersSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *allRemoteUsersSet; // @synthesize allRemoteUsersSet=_allRemoteUsersSet;
 @property(retain, nonatomic) NSMutableDictionary *allRemoteUsersDict; // @synthesize allRemoteUsersDict=_allRemoteUsersDict;
 @property(retain, nonatomic) MMLivePushMediaConfig *mediaConfig; // @synthesize mediaConfig=_mediaConfig;
@@ -128,4 +129,3 @@
 - (id)initWithParams:(id)arg1 effectManager:(id)arg2 andLiveCapture:(id)arg3;
 
 @end
-

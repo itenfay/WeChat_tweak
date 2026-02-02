@@ -14,7 +14,6 @@
 }
 
 + (id)apAuthFromApBase:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) NSURLConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <APAuthDelegate> delegate; // @synthesize delegate;

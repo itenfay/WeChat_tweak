@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJMovieTemplateInfo, MMImageExifLogInfo, NSArray, NSData, NSError, NSMutableArray, NSMutableDictionary, NSString, VideoUploadStatInfo, WCEditVideoPostReportInfo, WCFinderVideoQualityScoreModel, WCMomentsTemplateInfo, WCSightVideoCompositeTask;
 
 @interface SightDraft
@@ -33,7 +35,6 @@
 + (void)PBArrayAdd_date;
 + (void)PBArrayAdd_itemAry;
 + (void)PBArrayAdd_draftID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSightVideoCompositeTask *cachedSightCompositeTask; // @synthesize cachedSightCompositeTask=_cachedSightCompositeTask;
 @property(retain, nonatomic) NSString *RISKY_savedSightCompositeTaskId; // @synthesize RISKY_savedSightCompositeTaskId=_RISKY_savedSightCompositeTaskId;
 @property(retain, nonatomic) NSMutableDictionary *serializableExtMap; // @synthesize serializableExtMap=_serializableExtMap;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

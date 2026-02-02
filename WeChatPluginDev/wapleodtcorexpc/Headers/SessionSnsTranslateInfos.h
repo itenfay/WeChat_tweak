@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_dicTransInfo;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicTransInfo; // @synthesize dicTransInfo=_dicTransInfo;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 - (id)init;

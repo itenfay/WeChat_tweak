@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSData, NSString;
 
 @interface MMListenVideoBgmListCgi
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType successfulBlock; // @synthesize successfulBlock=_successfulBlock;
 @property(nonatomic) unsigned long long finderEnterScene; // @synthesize finderEnterScene=_finderEnterScene;
@@ -39,4 +40,3 @@
 - (id)initWithSuccessfulBlock:(CDUnknownBlockType)arg1 failed:(CDUnknownBlockType)arg2;
 
 @end
-

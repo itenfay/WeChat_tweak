@@ -26,7 +26,6 @@
 + (id)buildSongDetailLabel:(double)arg1;
 + (_Bool)canShowAuthorView:(id)arg1;
 + (double)heightWithMusicTopicInfo:(id)arg1 andViewWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *fromDataItem; // @synthesize fromDataItem=_fromDataItem;
 @property(retain, nonatomic) UIView *playButtonBGView; // @synthesize playButtonBGView=_playButtonBGView;
 @property(retain, nonatomic) WCFinderExpandHitTingPlayerContoller *playMusicBtn; // @synthesize playMusicBtn=_playMusicBtn;

@@ -17,7 +17,6 @@
     MMUIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MMUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) MJPublisherButton *resetButton; // @synthesize resetButton=_resetButton;

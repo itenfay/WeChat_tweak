@@ -14,7 +14,6 @@
     CDStruct_1b6d18a9 _snapTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStorySegment; // @synthesize hasStorySegment=_hasStorySegment;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 snapTime; // @synthesize snapTime=_snapTime;
 - (id)description;

@@ -21,7 +21,6 @@
     double _minVideoDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) _Bool canMultiSelect; // @synthesize canMultiSelect=_canMultiSelect;
 @property(readonly, nonatomic) double minVideoDuration; // @synthesize minVideoDuration=_minVideoDuration;

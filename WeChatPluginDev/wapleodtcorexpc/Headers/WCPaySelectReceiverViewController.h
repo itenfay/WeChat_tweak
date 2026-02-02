@@ -17,7 +17,6 @@
     UILabel *_m_emptyTipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *m_emptyTipsLabel; // @synthesize m_emptyTipsLabel=_m_emptyTipsLabel;
 @property(retain, nonatomic) WCPayTransToBankCardReceiver *m_receiver; // @synthesize m_receiver=_m_receiver;
 @property(retain, nonatomic) WCUIAlertView *m_alertView; // @synthesize m_alertView=_m_alertView;

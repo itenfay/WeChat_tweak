@@ -49,7 +49,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *verticalGuideLineWidthConstraint; // @synthesize verticalGuideLineWidthConstraint=_verticalGuideLineWidthConstraint;
 @property(retain, nonatomic) OMJOverlayGuideLine *verticalGuideLine; // @synthesize verticalGuideLine=_verticalGuideLine;
 @property(retain, nonatomic) OMJOverlayGuideLine *horizontalGuideLine; // @synthesize horizontalGuideLine=_horizontalGuideLine;

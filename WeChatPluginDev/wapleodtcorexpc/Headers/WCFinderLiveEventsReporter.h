@@ -12,7 +12,6 @@
     MMFinderLiveTask *_liveTask;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MMFinderLiveTask *liveTask; // @synthesize liveTask=_liveTask;
 - (void)reportEventWithModule:(long long)arg1 eventName:(id)arg2 description:(id)arg3;
 @property(readonly, nonatomic) unsigned int kvLogID;

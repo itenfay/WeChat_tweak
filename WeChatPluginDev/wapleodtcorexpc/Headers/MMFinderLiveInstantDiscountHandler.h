@@ -16,7 +16,6 @@
     MMFinderLiveInstantDiscountWidgetView *_widgetView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveInstantDiscountWidgetView *widgetView; // @synthesize widgetView=_widgetView;
 @property(nonatomic) __weak id <MMFinderLiveInstantDiscountHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FinderLiveGetMoneyOffTagResponse *info; // @synthesize info=_info;

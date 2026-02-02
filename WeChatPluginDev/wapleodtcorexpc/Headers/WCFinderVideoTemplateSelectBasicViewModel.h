@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJTemplateListParams, NSData, NSMutableArray;
 
@@ -17,7 +18,6 @@
     MJTemplateListParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJTemplateListParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSMutableArray *videoTemplatesData; // @synthesize videoTemplatesData=_videoTemplatesData;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
@@ -43,4 +43,3 @@
 - (id)initWithParams:(id)arg1;
 
 @end
-

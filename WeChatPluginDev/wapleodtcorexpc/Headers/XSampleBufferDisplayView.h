@@ -13,7 +13,6 @@
 }
 
 + (Class)layerClass;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVSampleBufferDisplayLayer *displayLayer; // @synthesize displayLayer=_displayLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

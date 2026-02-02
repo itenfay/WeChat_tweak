@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *en; // @synthesize en;
 @property(retain, nonatomic) NSString *tw; // @synthesize tw;
 @property(retain, nonatomic) NSString *zh; // @synthesize zh;

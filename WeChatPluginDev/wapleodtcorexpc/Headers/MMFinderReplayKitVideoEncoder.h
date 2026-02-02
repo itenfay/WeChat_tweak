@@ -28,7 +28,6 @@
     CIContext *_rotateContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CIContext *rotateContext; // @synthesize rotateContext=_rotateContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool isLandscape; // @synthesize isLandscape=_isLandscape;

@@ -34,7 +34,6 @@
 + (void)PBArrayAdd_dataItems;
 + (void)PBArrayAdd_showFeedPreview;
 + (void)PBArrayAdd_contact;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPoiInteractionInfo *poiInteractionInfo; // @synthesize poiInteractionInfo=_poiInteractionInfo;
 @property(retain, nonatomic) MemberQAUserPagePreviewData *memberQaData; // @synthesize memberQaData=_memberQaData;
 @property(retain, nonatomic) NSMutableArray *previewItems; // @synthesize previewItems=_previewItems;

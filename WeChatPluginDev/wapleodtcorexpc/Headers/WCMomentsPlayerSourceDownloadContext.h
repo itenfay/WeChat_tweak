@@ -22,7 +22,6 @@
     CdnProgressInfo *_downloadProgressInfoWhenPreloadCompleted;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDownloadCompleted; // @synthesize isDownloadCompleted=_isDownloadCompleted;
 @property(nonatomic) _Bool isDownloadMoovReady; // @synthesize isDownloadMoovReady=_isDownloadMoovReady;
 @property(nonatomic) _Bool isDownloading; // @synthesize isDownloading=_isDownloading;

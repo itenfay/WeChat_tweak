@@ -24,7 +24,6 @@
     NSMutableArray *_touchPoints;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *touchPoints; // @synthesize touchPoints=_touchPoints;
 @property(retain, nonatomic) WCPayMaskViewMatrix *maskedMatrix; // @synthesize maskedMatrix=_maskedMatrix;
 @property(nonatomic) _Bool isCanScratch; // @synthesize isCanScratch=_isCanScratch;

@@ -19,7 +19,6 @@
     NSError *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long failedCount; // @synthesize failedCount=_failedCount;
 @property(nonatomic) _Bool isSuccessful; // @synthesize isSuccessful=_isSuccessful;

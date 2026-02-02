@@ -11,7 +11,6 @@
     NSMutableArray *_shakeTvList;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleOpTvHist:(id)arg1;
 - (void)handleShakeTvTempSession:(id)arg1 deeplinkUrl:(id)arg2 currVC:(id)arg3 statScene:(unsigned int)arg4 openLinkScene:(int)arg5;

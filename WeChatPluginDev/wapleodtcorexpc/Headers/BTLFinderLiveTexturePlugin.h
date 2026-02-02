@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BizFinderLivePlayersCallbackApi, NSMutableDictionary, NSString;
 @protocol FlutterTextureRegistry;
@@ -15,7 +16,6 @@
     BizFinderLivePlayersCallbackApi *_callback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BizFinderLivePlayersCallbackApi *callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) NSObject<FlutterTextureRegistry> *registry; // @synthesize registry=_registry;
 @property(retain, nonatomic) NSMutableDictionary *playerItemsMap; // @synthesize playerItemsMap=_playerItemsMap;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

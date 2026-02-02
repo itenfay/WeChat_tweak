@@ -13,7 +13,6 @@
     NSMutableDictionary *_descriptionToIconDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *descriptionToIconDict; // @synthesize descriptionToIconDict=_descriptionToIconDict;
 @property(retain, nonatomic) NSMutableArray *groupArray; // @synthesize groupArray=_groupArray;
 - (void)removeCustomIcon;

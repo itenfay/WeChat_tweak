@@ -16,7 +16,6 @@
 }
 
 + (double)defaultWidth;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowForward; // @synthesize allowForward=_allowForward;
 @property(retain, nonatomic) WCFinderFeedLiveToolBarItemButton *shareBtn; // @synthesize shareBtn=_shareBtn;
 @property(nonatomic) __weak id <WCFinderFeedToolbarActionDelegate> delegate; // @synthesize delegate=_delegate;

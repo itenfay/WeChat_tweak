@@ -18,7 +18,6 @@
     double _opacity;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(retain, nonatomic) NSArray *affineTransforms; // @synthesize affineTransforms=_affineTransforms;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;

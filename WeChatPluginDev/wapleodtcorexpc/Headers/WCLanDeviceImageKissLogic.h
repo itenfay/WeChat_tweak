@@ -17,7 +17,6 @@
     unsigned long long m_nonceNum;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)getRandNumber;
 - (_Bool)cancelTaskWithDevice:(id)arg1;
 - (void)onKissDeviceProgressResponeWithProgress:(double)arg1 queueType:(unsigned long long)arg2;

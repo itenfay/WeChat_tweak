@@ -22,7 +22,6 @@
     double _rowHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(retain, nonatomic) UIColor *rowHighlightedColor; // @synthesize rowHighlightedColor=_rowHighlightedColor;
 @property(nonatomic) _Bool blurContentBackground; // @synthesize blurContentBackground=_blurContentBackground;

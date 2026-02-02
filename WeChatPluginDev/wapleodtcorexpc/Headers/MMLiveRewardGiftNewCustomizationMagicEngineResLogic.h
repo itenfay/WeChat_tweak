@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveResDownloadManager, NSMutableDictionary;
 
@@ -14,7 +15,6 @@
     NSMutableDictionary *_loadTaskDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *loadTaskDict; // @synthesize loadTaskDict=_loadTaskDict;
 @property(retain, nonatomic) MMFinderLiveResDownloadManager *downloadMgr; // @synthesize downloadMgr=_downloadMgr;
 @property(copy, nonatomic) CDUnknownBlockType loadStateChangeCallback; // @synthesize loadStateChangeCallback=_loadStateChangeCallback;
@@ -32,4 +32,3 @@
 - (void)loadGiftResForURL:(id)arg1 productId:(id)arg2 fileMD5:(id)arg3 enforceIntegrityCheck:(_Bool)arg4 callback:(CDUnknownBlockType)arg5;
 
 @end
-

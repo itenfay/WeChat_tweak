@@ -49,7 +49,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *togetherBrowseFeedIDSet; // @synthesize togetherBrowseFeedIDSet=_togetherBrowseFeedIDSet;
 @property(retain, nonatomic) NSMutableSet *detailPageBrowsePicSet; // @synthesize detailPageBrowsePicSet=_detailPageBrowsePicSet;
 @property(retain, nonatomic) NSMutableSet *galleryBrowseMediaSet; // @synthesize galleryBrowseMediaSet=_galleryBrowseMediaSet;

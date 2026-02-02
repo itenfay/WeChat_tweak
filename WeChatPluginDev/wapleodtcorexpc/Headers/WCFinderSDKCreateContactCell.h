@@ -12,7 +12,6 @@
     UIImageView *_addIconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *addIconImageView; // @synthesize addIconImageView=_addIconImageView;
 - (void)layoutSubviews;
 - (void)setUpUI;

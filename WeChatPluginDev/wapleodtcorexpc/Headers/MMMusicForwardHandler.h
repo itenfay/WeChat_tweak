@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicVideoImageDownloader, NSString, SendAppMsgHandler;
 @protocol MMMusicForwardHandlerDataSource, MMMusicForwardHandlerDelegate;
 
@@ -16,7 +18,6 @@
     MMMusicVideoImageDownloader *_imageDownLoader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicVideoImageDownloader *imageDownLoader; // @synthesize imageDownLoader=_imageDownLoader;
 @property(retain, nonatomic) SendAppMsgHandler *sendAppMsgHandler; // @synthesize sendAppMsgHandler=_sendAppMsgHandler;
 @property(nonatomic) unsigned long long curShareSource; // @synthesize curShareSource=_curShareSource;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

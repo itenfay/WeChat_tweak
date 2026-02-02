@@ -16,7 +16,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_arrStatePermissionBytes;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrStatePermissionBytes; // @synthesize arrStatePermissionBytes=_arrStatePermissionBytes;
 @property(readonly, copy) NSString *description;
 - (id)archivedWCTValue;

@@ -24,7 +24,6 @@
     struct CGPoint _adjustedContentOffset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bottomTailFireworksImageView; // @synthesize bottomTailFireworksImageView=_bottomTailFireworksImageView;
 @property(retain, nonatomic) UIImageView *topTailFireworksImageView; // @synthesize topTailFireworksImageView=_topTailFireworksImageView;
 @property(retain, nonatomic) UIImageView *bottomHeadFireworksImageView; // @synthesize bottomHeadFireworksImageView=_bottomHeadFireworksImageView;

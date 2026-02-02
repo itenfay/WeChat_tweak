@@ -20,7 +20,6 @@
 }
 
 + (_Bool)isRecommendTips:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(nonatomic) long long countDownTimes; // @synthesize countDownTimes=_countDownTimes;
 @property(retain, nonatomic) MMTimer *countDownTimer; // @synthesize countDownTimer=_countDownTimer;

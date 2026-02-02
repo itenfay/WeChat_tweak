@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiveKTVScorerInitParam, MMFinderLiveKSKitMusicSong, NSRecursiveLock;
 @protocol MMFinderLiveKTVScorerDelegate;
@@ -20,7 +21,6 @@
     NSRecursiveLock *_audioScoreLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *audioScoreLock; // @synthesize audioScoreLock=_audioScoreLock;
 @property(copy, nonatomic) CDUnknownBlockType finishScoreCompletion; // @synthesize finishScoreCompletion=_finishScoreCompletion;
 @property(nonatomic) _Bool isFinishScoring; // @synthesize isFinishScoring=_isFinishScoring;
@@ -49,4 +49,3 @@
 - (id)initWithParam:(id)arg1;
 
 @end
-

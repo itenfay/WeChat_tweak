@@ -11,7 +11,6 @@
     NSString *_identifier;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (_Bool)isLIFOPreloadTask;

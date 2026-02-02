@@ -15,7 +15,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRowAnimating; // @synthesize isRowAnimating=_isRowAnimating;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSMutableArray *tipsViews; // @synthesize tipsViews=_tipsViews;

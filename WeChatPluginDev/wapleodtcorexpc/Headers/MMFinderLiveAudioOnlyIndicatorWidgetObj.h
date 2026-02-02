@@ -10,7 +10,6 @@
     WCPIPAudioOnlyIndicatorDescription *_indicatorDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPIPAudioOnlyIndicatorDescription *indicatorDescription; // @synthesize indicatorDescription=_indicatorDescription;
 - (double)leftRightIconImageCenterPercent;
 - (id)getCompositedLeftIconImage:(id)arg1 rightIconImage:(id)arg2 withMaskImage:(id)arg3;

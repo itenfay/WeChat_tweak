@@ -17,7 +17,6 @@
     unsigned long long _loadingLocation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadingLocation; // @synthesize loadingLocation=_loadingLocation;
 @property(nonatomic) _Bool isBufferingViewLoading; // @synthesize isBufferingViewLoading=_isBufferingViewLoading;
 @property(nonatomic) double progress; // @synthesize progress=_progress;

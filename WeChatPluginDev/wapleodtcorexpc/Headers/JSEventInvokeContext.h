@@ -13,7 +13,6 @@
     NSString *_eventInvokeSourceWebComptName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *eventInvokeSourceWebComptName; // @synthesize eventInvokeSourceWebComptName=_eventInvokeSourceWebComptName;
 @property(nonatomic) unsigned int eventInvokeSource; // @synthesize eventInvokeSource=_eventInvokeSource;
 

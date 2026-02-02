@@ -16,7 +16,6 @@
     MMFinderLiveRedPacketItem *_referredRedPacketInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRedPacketItem *referredRedPacketInfo; // @synthesize referredRedPacketInfo=_referredRedPacketInfo;
 @property(copy, nonatomic) NSString *clientMsgId; // @synthesize clientMsgId=_clientMsgId;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;

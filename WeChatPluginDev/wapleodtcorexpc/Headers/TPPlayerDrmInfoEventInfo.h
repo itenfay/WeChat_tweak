@@ -10,7 +10,6 @@
     TPPlayerDrmParams *_drmParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerDrmParams *drmParams; // @synthesize drmParams=_drmParams;
 - (id)init;
 

@@ -10,7 +10,6 @@
     NSMutableSet *m_downliadingPackageLists;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

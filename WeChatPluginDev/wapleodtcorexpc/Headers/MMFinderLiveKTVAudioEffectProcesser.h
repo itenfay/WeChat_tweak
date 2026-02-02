@@ -16,7 +16,6 @@
     struct __sFILE *_proProcessDumpFile;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct __sFILE *proProcessDumpFile; // @synthesize proProcessDumpFile=_proProcessDumpFile;
 @property(nonatomic) struct __sFILE *preProcessDumpFile; // @synthesize preProcessDumpFile=_preProcessDumpFile;
 @property(retain, nonatomic) NSMutableData *processedData; // @synthesize processedData=_processedData;

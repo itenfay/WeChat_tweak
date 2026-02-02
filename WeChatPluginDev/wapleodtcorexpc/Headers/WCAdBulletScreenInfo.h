@@ -17,7 +17,6 @@
     double _bulletShootingTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int visibleBullets; // @synthesize visibleBullets=_visibleBullets;
 @property(nonatomic) double bulletShootingTime; // @synthesize bulletShootingTime=_bulletShootingTime;
 @property(nonatomic) double bulletShootingDuration; // @synthesize bulletShootingDuration=_bulletShootingDuration;

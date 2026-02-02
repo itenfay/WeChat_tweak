@@ -25,7 +25,6 @@
 
 + (double)prefferedHeight;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMMusicMVRecommendTableCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) MMMusicMVModel *model; // @synthesize model=_model;
 - (void)onUnactive;

@@ -10,7 +10,6 @@
     UILabel *_emptyLabel;
 }
 
-- (void).cxx_destruct;
 - (void)setEmptyViewTips:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;

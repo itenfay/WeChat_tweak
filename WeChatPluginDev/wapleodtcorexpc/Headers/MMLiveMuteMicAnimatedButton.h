@@ -12,7 +12,6 @@
     UIImageView *_iconImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void)stopAnimation;
 - (void)startAnimation;

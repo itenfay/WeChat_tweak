@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_respTimeStamp;
 + (void)PBArrayAdd_expId;
 + (void)PBArrayAdd_layerId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int showTimeStamp; // @synthesize showTimeStamp=_showTimeStamp;
 @property(nonatomic) unsigned int delayInterval; // @synthesize delayInterval=_delayInterval;
 @property(nonatomic) unsigned int respTimeStamp; // @synthesize respTimeStamp=_respTimeStamp;

@@ -14,7 +14,6 @@
     NSString *_callerName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int memberId; // @synthesize memberId=_memberId;
 @property(copy, nonatomic) NSString *callerName; // @synthesize callerName=_callerName;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface VoicePrintCommunication : NSObject
 {
@@ -18,4 +19,3 @@
 + (void)checkVoicePrintWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

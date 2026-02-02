@@ -13,7 +13,6 @@
     NSString *_errMsg;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) int errCode; // @synthesize errCode=_errCode;
 

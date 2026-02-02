@@ -14,7 +14,6 @@
     WCFinderJumpInfo *_jumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderJumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) NSString *openUrl; // @synthesize openUrl=_openUrl;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;

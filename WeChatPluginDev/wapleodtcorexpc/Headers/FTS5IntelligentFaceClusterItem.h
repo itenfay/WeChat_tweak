@@ -78,7 +78,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *l2NormFaceFeatureStr; // @synthesize l2NormFaceFeatureStr=_l2NormFaceFeatureStr;
 @property(retain, nonatomic) NSString *facePointStr; // @synthesize facePointStr=_facePointStr;
 @property(nonatomic) double faceImageHeight; // @synthesize faceImageHeight=_faceImageHeight;

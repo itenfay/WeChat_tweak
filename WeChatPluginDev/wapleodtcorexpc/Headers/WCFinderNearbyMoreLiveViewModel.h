@@ -12,7 +12,6 @@
     id <WCFinderNearbyMoreLiveViewModelDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int fromScene; // @synthesize fromScene=_fromScene;
 @property(nonatomic) _Bool hasRefreshLiveTabList; // @synthesize hasRefreshLiveTabList=_hasRefreshLiveTabList;
 @property(nonatomic) __weak id <WCFinderNearbyMoreLiveViewModelDelegate> delegate; // @synthesize delegate=_delegate;

@@ -14,7 +14,6 @@
     struct CGSize _size;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double blockDuration; // @synthesize blockDuration=_blockDuration;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *pagPath; // @synthesize pagPath=_pagPath;

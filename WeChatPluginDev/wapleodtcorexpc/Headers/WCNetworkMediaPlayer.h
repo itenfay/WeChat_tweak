@@ -41,7 +41,6 @@
     struct CGSize m_videoSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool initFromAd; // @synthesize initFromAd=_initFromAd;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool m_bFromCanvasSight; // @synthesize m_bFromCanvasSight=_m_bFromCanvasSight;

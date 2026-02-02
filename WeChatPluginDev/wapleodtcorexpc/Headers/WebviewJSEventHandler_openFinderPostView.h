@@ -10,7 +10,6 @@
     JSEvent *_event;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JSEvent *event; // @synthesize event=_event;
 - (void)postViewControllerCancelPostWithModel:(id)arg1;
 - (void)postViewControllerStartUpload;

@@ -15,7 +15,6 @@
     MISSING_TYPE *completion;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

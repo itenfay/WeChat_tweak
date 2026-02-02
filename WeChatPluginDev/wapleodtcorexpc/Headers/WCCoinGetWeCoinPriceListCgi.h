@@ -15,7 +15,6 @@
     id <WCCoinGetWeCoinPriceListCgiDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCoinGetWeCoinPriceListCgiDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned int diffWecoinCount; // @synthesize diffWecoinCount=_diffWecoinCount;

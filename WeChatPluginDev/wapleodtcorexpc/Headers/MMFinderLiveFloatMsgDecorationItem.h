@@ -16,7 +16,6 @@
 
 + (id)itemFromFreeMsgConfig:(id)arg1;
 + (id)itemFromPBDecoration:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localFileUrl; // @synthesize localFileUrl=_localFileUrl;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

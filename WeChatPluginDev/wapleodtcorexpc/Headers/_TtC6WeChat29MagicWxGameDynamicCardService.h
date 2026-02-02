@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE;
 
 @interface _TtC6WeChat29MagicWxGameDynamicCardService
@@ -15,7 +17,6 @@
     MISSING_TYPE *sendScrollInterval;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (double)getWxGameDynamicCardOffsetTop:(id)arg1;
 - (void)showMsgPopupMenu:(id)arg1;
@@ -41,4 +42,3 @@
 - (void)createBiz;
 
 @end
-

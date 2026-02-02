@@ -43,7 +43,6 @@
 + (void)PBArrayAdd_duration;
 + (void)PBArrayAdd_mid;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) int encIdx; // @synthesize encIdx=_encIdx;
 @property(nonatomic) unsigned long long enckey; // @synthesize enckey=_enckey;

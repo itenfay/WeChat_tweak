@@ -20,7 +20,6 @@
     NSMutableArray *_selectReasons;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *selectReasons; // @synthesize selectReasons=_selectReasons;
 @property(nonatomic) _Bool isClosing; // @synthesize isClosing=_isClosing;
 @property(nonatomic) int satisfactionQuestSubType; // @synthesize satisfactionQuestSubType=_satisfactionQuestSubType;

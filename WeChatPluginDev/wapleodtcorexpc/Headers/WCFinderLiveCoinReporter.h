@@ -13,7 +13,6 @@
 }
 
 + (void)reportCoinDetail:(id)arg1;
-- (void).cxx_destruct;
 - (void)reportCoinAction:(unsigned long long)arg1 withSceneType:(long long)arg2;
 
 @end

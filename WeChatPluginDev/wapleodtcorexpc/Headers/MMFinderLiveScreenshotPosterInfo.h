@@ -29,7 +29,6 @@
     struct CGPoint _bottomRightCropPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *qrCodeCenterImageUri; // @synthesize qrCodeCenterImageUri=_qrCodeCenterImageUri;
 @property(retain, nonatomic) NSString *qrCodeContent; // @synthesize qrCodeContent=_qrCodeContent;
 @property(retain, nonatomic) NSString *qrCodeImageUri; // @synthesize qrCodeImageUri=_qrCodeImageUri;

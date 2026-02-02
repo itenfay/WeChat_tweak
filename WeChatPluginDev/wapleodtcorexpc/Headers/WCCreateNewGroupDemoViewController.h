@@ -21,7 +21,6 @@
     NSString *_hintText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hintText; // @synthesize hintText=_hintText;
 @property(retain, nonatomic) NSString *tagNamePlaceHolder; // @synthesize tagNamePlaceHolder=_tagNamePlaceHolder;
 @property(retain, nonatomic) MMUILabel *warningTextLabel; // @synthesize warningTextLabel=_warningTextLabel;

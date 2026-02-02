@@ -19,7 +19,6 @@
     UIView *_m_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_backgroundView; // @synthesize m_backgroundView=_m_backgroundView;
 @property(retain, nonatomic) UIButton *m_confirmButton; // @synthesize m_confirmButton=_m_confirmButton;
 @property(retain, nonatomic) UIButton *m_cancelButton; // @synthesize m_cancelButton=_m_cancelButton;

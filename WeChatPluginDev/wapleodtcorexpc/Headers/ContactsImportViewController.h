@@ -19,7 +19,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) CContact *operatingContact; // @synthesize operatingContact=_operatingContact;
 @property(retain, nonatomic) NSIndexPath *operatingIndexPath; // @synthesize operatingIndexPath=_operatingIndexPath;

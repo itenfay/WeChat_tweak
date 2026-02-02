@@ -19,7 +19,6 @@
     WAContactGetter *_contactGetter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAContactGetter *contactGetter; // @synthesize contactGetter=_contactGetter;
 @property(retain, nonatomic) NSString *headImageUrl; // @synthesize headImageUrl=_headImageUrl;
 @property(retain, nonatomic) WAMainFrameTaskItem *taskItem; // @synthesize taskItem=_taskItem;

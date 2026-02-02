@@ -14,7 +14,6 @@
     MMUIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int historyCount; // @synthesize historyCount=_historyCount;
 @property(retain, nonatomic) MMUIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak id <WCMallOldTelephoneViewDelegate> m_delegate; // @synthesize m_delegate;

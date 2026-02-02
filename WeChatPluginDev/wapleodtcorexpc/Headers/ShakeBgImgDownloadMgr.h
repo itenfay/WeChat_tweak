@@ -14,7 +14,6 @@
     unsigned int m_uiCurDownloadCount;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShakeInfo *m_oShakeInfo; // @synthesize m_oShakeInfo;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)DownloadBgImg:(unsigned int)arg1 TotalLen:(unsigned int)arg2;

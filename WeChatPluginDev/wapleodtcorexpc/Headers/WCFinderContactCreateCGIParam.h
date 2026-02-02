@@ -25,7 +25,6 @@
     unsigned long long _createSceneFeedId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long createSceneFeedId; // @synthesize createSceneFeedId=_createSceneFeedId;
 @property(nonatomic) unsigned int createSceneUserType; // @synthesize createSceneUserType=_createSceneUserType;
 @property(copy, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;

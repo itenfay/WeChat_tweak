@@ -72,7 +72,6 @@
     struct CGAffineTransform _preferredTransform;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bufferSeq; // @synthesize bufferSeq=_bufferSeq;
 @property(nonatomic) _Bool isWaitingPauseBufferingCompleted; // @synthesize isWaitingPauseBufferingCompleted=_isWaitingPauseBufferingCompleted;
 @property(retain, nonatomic) WCPlayerDownloadInfo *downloadInfo; // @synthesize downloadInfo=_downloadInfo;

@@ -17,7 +17,6 @@
     NSString *_sceneNote;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sceneNote; // @synthesize sceneNote=_sceneNote;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned long long startTimestamp; // @synthesize startTimestamp=_startTimestamp;

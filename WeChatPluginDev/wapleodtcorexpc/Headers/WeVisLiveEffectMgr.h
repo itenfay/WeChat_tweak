@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EAGLContext, MMGPUClarityFilter, MMGPUClarityPreProcess, MMGPUSpatiotemporalDenosing, NSArray, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, SpatiotemporalDenosingPreProcess, WCLoopMetricsCollector, WeVisByPassFS, WeVisGLCompose2RGBA, WeVisGLFrameBuffer, WeVisGLRGBA2YUVTwoPassFS, WeVisGLTexture, WeVisGLYUV2RGBA, WeVisPixelBuffer;
 @protocol WeVisLiveEffectDelegate, WeVisLiveEffectEnergyController;
@@ -212,7 +213,6 @@
 
 + (void)configGlobalContext:(void *)arg1 withModelKeyArr:(id)arg2;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool destroyed; // @synthesize destroyed=_destroyed;
 @property(nonatomic) unsigned int faceTrackSkipFrameCnt; // @synthesize faceTrackSkipFrameCnt=_faceTrackSkipFrameCnt;
 @property(nonatomic) unsigned long long frameCnt; // @synthesize frameCnt=_frameCnt;
@@ -370,4 +370,3 @@
 - (id)initWithGlContext:(id)arg1 globalContext:(void *)arg2 sceneType:(long long)arg3 modelKeyArray:(id)arg4 SDKMode:(int)arg5 isAllowFp16:(_Bool)arg6 energyController:(id)arg7 beautyAssetsDirectory:(id)arg8;
 
 @end
-

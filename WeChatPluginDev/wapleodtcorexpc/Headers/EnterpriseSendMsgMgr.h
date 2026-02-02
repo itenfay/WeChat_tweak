@@ -13,7 +13,6 @@
     id <EnterpriseSendMsgMgrDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseSendMsgMgrDelegate> delegate; // @synthesize delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleSendMsgResp:(id)arg1;

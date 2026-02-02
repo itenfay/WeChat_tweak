@@ -18,7 +18,6 @@
 + (struct CGSize)preferSizeForCellFrame:(id)arg1;
 + (id)font;
 + (double)horizontalMargin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AnyPromise *getProductInfo; // @synthesize getProductInfo=_getProductInfo;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;

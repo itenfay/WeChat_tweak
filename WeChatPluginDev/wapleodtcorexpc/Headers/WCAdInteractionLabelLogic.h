@@ -16,7 +16,6 @@
     unsigned long long _currentTick;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentTick; // @synthesize currentTick=_currentTick;
 @property(retain, nonatomic) MMTimer *logicTimer; // @synthesize logicTimer=_logicTimer;
 @property(nonatomic) unsigned long long switchCount; // @synthesize switchCount=_switchCount;

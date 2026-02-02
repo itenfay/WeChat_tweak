@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMenuContentView, MMMenuWindow, NSArray, NSString, UIColor, UIResponder, UIView, UIViewPropertyAnimator;
 
 @interface MMMenuController
@@ -37,7 +39,6 @@
 
 + (double)displayChangeAnimateDuration;
 + (id)sharedMenuController;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *targetSceneId; // @synthesize targetSceneId=_targetSceneId;
 @property(retain, nonatomic) id extraInfo; // @synthesize extraInfo=_extraInfo;
 @property(nonatomic) long long statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

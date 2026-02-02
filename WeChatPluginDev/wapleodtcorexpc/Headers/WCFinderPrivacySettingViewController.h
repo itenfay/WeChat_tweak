@@ -12,7 +12,6 @@
     WCFinderPrivacySettingHelper *_helper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPrivacySettingHelper *helper; // @synthesize helper=_helper;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) WCFinderPersonalSettingParams *params; // @synthesize params=_params;

@@ -63,7 +63,6 @@
     WCPayWebImageView *_redDotIconView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReddotExposureHasCount; // @synthesize isReddotExposureHasCount=_isReddotExposureHasCount;
 @property(retain, nonatomic) WCPayWebImageView *redDotIconView; // @synthesize redDotIconView=_redDotIconView;
 @property(retain, nonatomic) UILabel *redDotWordingLabel; // @synthesize redDotWordingLabel=_redDotWordingLabel;

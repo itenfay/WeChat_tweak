@@ -15,7 +15,6 @@
     GenMallPrepayResponse *_mallPrepayResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GenMallPrepayResponse *mallPrepayResp; // @synthesize mallPrepayResp=_mallPrepayResp;
 @property(retain, nonatomic) WCPayPayMoneyLogic *payMoneyLogic; // @synthesize payMoneyLogic=_payMoneyLogic;
 @property(retain, nonatomic) WCPayGenMallPrePayCgi *prepayCgi; // @synthesize prepayCgi=_prepayCgi;

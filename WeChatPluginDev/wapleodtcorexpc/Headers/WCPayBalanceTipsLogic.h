@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString, UIView;
 
 @interface WCPayBalanceTipsLogic
@@ -18,7 +20,6 @@
     NSString *_m_nsRightBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsRightBtn; // @synthesize m_nsRightBtn=_m_nsRightBtn;
 @property(retain, nonatomic) NSString *m_nsLeftBtn; // @synthesize m_nsLeftBtn=_m_nsLeftBtn;
 @property(retain, nonatomic) NSString *m_nsRemark; // @synthesize m_nsRemark=_m_nsRemark;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

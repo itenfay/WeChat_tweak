@@ -37,7 +37,6 @@
     WCMomentsShareScopeMgr *_shareScopeMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsShareScopeMgr *shareScopeMgr; // @synthesize shareScopeMgr=_shareScopeMgr;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) WCDataItem *cacheDateItem; // @synthesize cacheDateItem=_cacheDateItem;

@@ -16,7 +16,6 @@
     NSString *_feedId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpContent; // @synthesize isUpContent=_isUpContent;
 @property(nonatomic) _Bool fetchYet; // @synthesize fetchYet=_fetchYet;
 @property(nonatomic) _Bool lastFeed; // @synthesize lastFeed=_lastFeed;

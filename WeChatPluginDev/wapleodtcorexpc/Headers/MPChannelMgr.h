@@ -11,7 +11,6 @@
     MPChannelGetEntryDataTask *_currentTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPChannelGetEntryDataTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(retain, nonatomic) MemoryMappedKV *mappedKV; // @synthesize mappedKV=_mappedKV;
 - (void)updateWeAppChannelFeeds:(id)arg1;

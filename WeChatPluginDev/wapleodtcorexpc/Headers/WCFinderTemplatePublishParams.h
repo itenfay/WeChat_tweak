@@ -23,7 +23,6 @@
     WCFinderFeedVideoFetcher *_videoFetcher;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableShowFromAlbum; // @synthesize disableShowFromAlbum=_disableShowFromAlbum;
 @property(nonatomic) _Bool disableShowMoreTmpl; // @synthesize disableShowMoreTmpl=_disableShowMoreTmpl;
 @property(nonatomic) _Bool disableShowNoTmpl; // @synthesize disableShowNoTmpl=_disableShowNoTmpl;

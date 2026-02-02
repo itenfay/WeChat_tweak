@@ -23,7 +23,6 @@
 + (id)defaultFontOfSize:(double)arg1;
 + (id)labelForCaptionWithFontSize:(double)arg1 borderColor:(id)arg2;
 + (id)labelForInputHintLaylerWithFontSize:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
 @property(retain, nonatomic) NSString *inputHint; // @synthesize inputHint=_inputHint;
 @property(nonatomic) double minFontSize; // @synthesize minFontSize=_minFontSize;

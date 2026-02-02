@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_deviceList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deviceList; // @synthesize deviceList=_deviceList;
 - (id)getPBPropertyTable;
 

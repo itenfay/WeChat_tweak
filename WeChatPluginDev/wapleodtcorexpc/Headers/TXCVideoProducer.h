@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, TXCDispatchQueue, TXCVTExternalConfig, TXCVideoBindableParallelGroup, TXCVideoCaptureConfig, TXCVideoCaptureReport, TXCVideoPreprocessController, TXCVideoRenderConfig, TXCVideoRenderReport, TXCVideoResultHandler, TXCVideoStreamSnapshot;
 @protocol TXIGlContext, TXILocalVideoRenderer, TXIVideoCaptureInterface, TXIVideoProducerDelegate, TXIVideoRenderer;
@@ -33,7 +34,6 @@
 }
 
 + (struct EncodeAbility)encodeAbility;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVTExternalConfig *vtExternalConfig; // @synthesize vtExternalConfig=_vtExternalConfig;
 @property(nonatomic) int producerMode; // @synthesize producerMode=_producerMode;
 @property(readonly, nonatomic) TXCVideoResultHandler *resultHandler; // @synthesize resultHandler=_resultHandler;
@@ -136,4 +136,3 @@
 @property(readonly) Class superclass;
 
 @end
-

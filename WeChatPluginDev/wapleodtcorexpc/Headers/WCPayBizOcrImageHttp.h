@@ -27,7 +27,6 @@
     BankCardOcrEncryptData *_bankcard_res;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) BankCardOcrEncryptData *bankcard_res; // @synthesize bankcard_res=_bankcard_res;
 @property(copy, nonatomic) OcrGetBankCardInfoWechatRegResp *processResponse; // @synthesize processResponse=_processResponse;
 @property(copy, nonatomic) NSArray *sm2Key; // @synthesize sm2Key=_sm2Key;

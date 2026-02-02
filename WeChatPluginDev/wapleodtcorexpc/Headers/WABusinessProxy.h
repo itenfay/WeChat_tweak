@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -31,7 +32,6 @@
 + (void)onWeAppNavigateToMiniProgramFromAppId:(id)arg1 toAppId:(id)arg2 pagePath:(id)arg3 fromScene:(unsigned long long)arg4 fromSceneNote:(id)arg5 adInfo:(id)arg6;
 + (void)showUserGuide;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadingInfos; // @synthesize uploadingInfos=_uploadingInfos;
 - (void)OnCdnUpload:(id)arg1;
 - (void)uploadMPShortLink:(id)arg1 snapShotForWebVC:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -47,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

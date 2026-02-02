@@ -13,7 +13,6 @@
 }
 
 + (void)reportChatRoomSpecialAttentionMemberLogWithActionCode:(long long)arg1 chatRoomUserName:(id)arg2 initialAttentionMemberListCount:(unsigned int)arg3 addAttentionMemberList:(id)arg4 deleteAttentionMemberList:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ChatRoomSpecialAttentionMemberLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) CContact *m_chatRoomContact; // @synthesize m_chatRoomContact=_m_chatRoomContact;
 - (void)updateLocalChatRoomRoomSpecialAttentionList:(id)arg1 andSpecialAttentionMemberList:(id)arg2;

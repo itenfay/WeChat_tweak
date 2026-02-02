@@ -55,7 +55,6 @@
 
 + (id)notifyCenterCellRegisterInfo;
 + (id)placeholderViewModel;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long supportInteractionAction; // @synthesize supportInteractionAction=_supportInteractionAction;
 @property(retain, nonatomic) NSString *currentFinderUsername; // @synthesize currentFinderUsername=_currentFinderUsername;
 @property(nonatomic) unsigned int thanked; // @synthesize thanked=_thanked;

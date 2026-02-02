@@ -16,7 +16,6 @@
     struct CGRect _normalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect normalizedFrame; // @synthesize normalizedFrame=_normalizedFrame;
 @property(nonatomic) unsigned long long layerOrder; // @synthesize layerOrder=_layerOrder;
 @property(nonatomic) long long layerLevel; // @synthesize layerLevel=_layerLevel;

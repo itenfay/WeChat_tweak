@@ -21,7 +21,6 @@
     UIView *_colorMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *colorMaskView; // @synthesize colorMaskView=_colorMaskView;
 @property(retain, nonatomic) EmoticonPreviewWindowViewController *emoticonPreview; // @synthesize emoticonPreview=_emoticonPreview;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionLayout; // @synthesize collectionLayout=_collectionLayout;

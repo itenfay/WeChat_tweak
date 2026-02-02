@@ -15,7 +15,6 @@
     MISSING_TYPE *_shieldMyLikedState;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFinderContact:(id)arg1;
 

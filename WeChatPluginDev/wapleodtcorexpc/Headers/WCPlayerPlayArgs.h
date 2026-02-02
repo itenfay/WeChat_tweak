@@ -76,7 +76,6 @@
     struct WCShowArea _showArea;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float maxTargetBuffer; // @synthesize maxTargetBuffer=_maxTargetBuffer;
 @property(nonatomic) float minTargetBuffer; // @synthesize minTargetBuffer=_minTargetBuffer;
 @property(nonatomic) _Bool isAddPlayerItemOutput; // @synthesize isAddPlayerItemOutput=_isAddPlayerItemOutput;

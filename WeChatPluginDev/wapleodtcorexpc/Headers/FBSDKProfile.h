@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSString, NSURL;
 
@@ -27,7 +28,6 @@
 + (id)currentProfile;
 + (id)fetchCachedProfile;
 + (void)cacheProfile:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *refreshDate; // @synthesize refreshDate=_refreshDate;
 @property(readonly, nonatomic) NSURL *linkURL; // @synthesize linkURL=_linkURL;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -45,4 +45,3 @@
 - (id)initWithUserID:(id)arg1 firstName:(id)arg2 middleName:(id)arg3 lastName:(id)arg4 name:(id)arg5 linkURL:(id)arg6 refreshDate:(id)arg7;
 
 @end
-

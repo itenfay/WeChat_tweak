@@ -64,7 +64,6 @@
 + (void)PBArrayAdd_desc;
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_videoId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *warnWording; // @synthesize warnWording=_warnWording;
 @property(nonatomic) unsigned long long warnFlag; // @synthesize warnFlag=_warnFlag;
 @property(nonatomic) unsigned long long likeFlag; // @synthesize likeFlag=_likeFlag;

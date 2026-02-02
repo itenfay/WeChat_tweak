@@ -14,7 +14,6 @@
 }
 
 + (id)errorWithCode:(long long)arg1 description:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 

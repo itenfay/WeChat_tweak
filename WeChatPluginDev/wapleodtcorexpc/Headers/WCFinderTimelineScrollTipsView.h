@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImageView, UILabel, UITapGestureRecognizer;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)tipsViewWithTips:(id)arg1 imageName:(id)arg2 maxWidth:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UIImageView *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -27,4 +27,3 @@
 - (void)setUpWithTips:(id)arg1 imageName:(id)arg2 maxWidth:(double)arg3;
 
 @end
-

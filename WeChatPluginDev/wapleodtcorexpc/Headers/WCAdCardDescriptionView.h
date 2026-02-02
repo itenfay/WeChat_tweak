@@ -17,7 +17,6 @@
 
 + (_Bool)hasDescriptionIconForItems:(id)arg1;
 + (double)getHeightForItems:(id)arg1 maxWidth:(double)arg2 buttonStyle:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) NSMutableArray *descriptionViews; // @synthesize descriptionViews=_descriptionViews;
 @property(nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;

@@ -21,7 +21,6 @@
 
 + (id)songWithSongInfo:(id)arg1 singingSongName:(id)arg2;
 + (id)songWithName:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int auditStatus; // @synthesize auditStatus=_auditStatus;
 @property(retain, nonatomic) NSString *localWarningTips; // @synthesize localWarningTips=_localWarningTips;
 @property(nonatomic) unsigned long long originalOrder; // @synthesize originalOrder=_originalOrder;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMWebImageView, NSString, UIButton, UIImage, UILabel, UITextField;
 
@@ -31,7 +32,6 @@
     double _currentKeyboardOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currentKeyboardOffset; // @synthesize currentKeyboardOffset=_currentKeyboardOffset;
 @property(retain, nonatomic) MMWebImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
@@ -82,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

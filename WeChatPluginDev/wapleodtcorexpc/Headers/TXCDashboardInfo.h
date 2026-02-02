@@ -13,7 +13,6 @@
     NSString *_log;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *log; // @synthesize log=_log;
 @property(copy, nonatomic) NSString *status; // @synthesize status=_status;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderHalfScreenHelper : NSObject
 {
@@ -24,4 +25,3 @@
 + (id)animatedCtx;
 
 @end
-

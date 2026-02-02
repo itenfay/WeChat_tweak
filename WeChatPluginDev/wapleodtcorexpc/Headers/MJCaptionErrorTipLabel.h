@@ -13,7 +13,6 @@
     UIImageView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *text;

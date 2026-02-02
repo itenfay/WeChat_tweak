@@ -51,7 +51,6 @@
     WCFinderCreateUserVerifyPhoneLogic *_verifyPhoneLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) WCFinderCreateUserVerifyPhoneLogic *verifyPhoneLogic; // @synthesize verifyPhoneLogic=_verifyPhoneLogic;
 @property(copy, nonatomic) NSString *recommentNickName; // @synthesize recommentNickName=_recommentNickName;

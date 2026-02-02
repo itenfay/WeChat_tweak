@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCPLabel, MMFinderLiveReserveViewModel, MMPageSheetAdapter, MMUIButton, MMUILabel, NSMutableArray, NSString, UIButton, UIImageView, UIScrollView, UIView, WCFinderAuthInfoIconView, WCFinderHeadImageView;
 
 @interface MMFinderLiveReservePageSheet
@@ -26,7 +28,6 @@
     MMFinderLiveReserveViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveReserveViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) NSMutableArray *viewList; // @synthesize viewList=_viewList;
 @property(retain, nonatomic) MMPageSheetAdapter *pageSheetAdapter; // @synthesize pageSheetAdapter=_pageSheetAdapter;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

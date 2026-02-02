@@ -13,7 +13,6 @@
     NSHashTable *_targetArrays;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *targetArrays; // @synthesize targetArrays=_targetArrays;
 @property(nonatomic) _Bool modifying; // @synthesize modifying=_modifying;
 - (void)applyChange:(id)arg1 target:(id)arg2;

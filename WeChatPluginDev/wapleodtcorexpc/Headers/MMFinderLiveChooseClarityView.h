@@ -23,7 +23,6 @@
 + (id)getSwitchStreamClarityDataItemModelArray:(id)arg1 chooseCdnUrl:(id)arg2;
 + (id)transferToClarityModelArray:(id)arg1 liveTask:(id)arg2;
 + (id)changeModelArray:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *clarityMethodTableView; // @synthesize clarityMethodTableView=_clarityMethodTableView;
 @property(retain, nonatomic) MMFinderLiveChooseClarityViewNavBar *navBar; // @synthesize navBar=_navBar;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

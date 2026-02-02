@@ -19,7 +19,6 @@
 }
 
 + (id)defaultManager;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *libraryCachePath; // @synthesize libraryCachePath=_libraryCachePath;
 @property(retain, nonatomic) NSString *documentPath; // @synthesize documentPath=_documentPath;
 @property(readonly, nonatomic) unsigned int loginNonGuestContextTimes; // @synthesize loginNonGuestContextTimes=m_loginNonGuestContextTimes;

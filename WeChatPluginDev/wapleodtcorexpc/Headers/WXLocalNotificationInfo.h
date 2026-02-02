@@ -23,7 +23,6 @@
     NSString *_identifier;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool fromNotFriend; // @synthesize fromNotFriend=_fromNotFriend;
 @property(copy, nonatomic) NSString *fromUser; // @synthesize fromUser=_fromUser;

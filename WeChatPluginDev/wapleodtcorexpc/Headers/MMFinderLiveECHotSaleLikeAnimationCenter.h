@@ -14,7 +14,6 @@
     NSMutableDictionary *_numberLogics;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *numberLogics; // @synthesize numberLogics=_numberLogics;
 @property(retain, nonatomic) NSMutableDictionary *localData; // @synthesize localData=_localData;
 @property(nonatomic) __weak MMFinderLiveNotifyStyleHotSaleCommentPubbleCell *notifyCell; // @synthesize notifyCell=_notifyCell;

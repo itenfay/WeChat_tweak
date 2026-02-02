@@ -10,7 +10,6 @@
     NSMutableDictionary *m_commonMarkDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_commonMarkDict; // @synthesize m_commonMarkDict;
 - (_Bool)isForceShowCapsuleViewWithAppid:(id)arg1;
 - (void)markWeAppForceShowCapsuleView:(id)arg1;

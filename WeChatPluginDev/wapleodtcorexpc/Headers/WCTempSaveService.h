@@ -15,7 +15,6 @@
     NSOperationQueue *_textFileQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReadingFile; // @synthesize isReadingFile=_isReadingFile;
 @property(retain, nonatomic) NSOperationQueue *textFileQueue; // @synthesize textFileQueue=_textFileQueue;
 @property(retain, nonatomic) NSOperationQueue *mediaFileQueue; // @synthesize mediaFileQueue=_mediaFileQueue;

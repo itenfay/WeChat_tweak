@@ -14,7 +14,6 @@
 }
 
 + (id)genGradientModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 

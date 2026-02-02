@@ -21,7 +21,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) __weak id <ContactPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reportRecommendInfo:(int)arg1;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_appmsgClientID;
 + (void)PBArrayAdd_videoClientID;
 + (void)PBArrayAdd_imgClientIDs;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appmsgClientID; // @synthesize appmsgClientID=_appmsgClientID;
 @property(retain, nonatomic) NSString *videoClientID; // @synthesize videoClientID=_videoClientID;
 @property(retain, nonatomic) NSArray *imgClientIDs; // @synthesize imgClientIDs=_imgClientIDs;

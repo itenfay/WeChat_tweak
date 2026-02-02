@@ -14,7 +14,6 @@
 }
 
 @property(nonatomic) __weak id <QBScriptMessageHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 
 // Remaining properties

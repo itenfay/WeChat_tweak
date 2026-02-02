@@ -14,7 +14,6 @@
     id <WCPayLQTBelowAmountHintViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayLQTBelowAmountHintViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *hintBelowAmount; // @synthesize hintBelowAmount=_hintBelowAmount;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;

@@ -14,7 +14,6 @@
     NSArray *_emojiSummaryArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *emojiSummaryArr; // @synthesize emojiSummaryArr=_emojiSummaryArr;
 @property(retain, nonatomic) NSArray *emojiInfoArr; // @synthesize emojiInfoArr=_emojiInfoArr;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

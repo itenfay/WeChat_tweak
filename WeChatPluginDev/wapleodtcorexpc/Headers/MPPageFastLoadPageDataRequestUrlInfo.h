@@ -21,7 +21,6 @@
 + (id)generateRequestUrlInfoIfSupport:(_Bool)arg1 itemShowType:(unsigned int)arg2 url:(id)arg3 scene:(unsigned int)arg4 enterType:(unsigned int)arg5 isOfflineCache:(_Bool)arg6;
 + (id)generateRequestUrlInfoIfSupport:(_Bool)arg1 itemShowType:(unsigned int)arg2 url:(id)arg3 scene:(unsigned int)arg4 enterType:(unsigned int)arg5;
 + (id)generateRequestUrlInfoWithForwardUrl:(id)arg1 scene:(unsigned int)arg2 enterType:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastModifyTime; // @synthesize lastModifyTime=_lastModifyTime;
 @property(nonatomic) _Bool isOfflineCache; // @synthesize isOfflineCache=_isOfflineCache;
 @property(nonatomic) unsigned int enterType; // @synthesize enterType=_enterType;

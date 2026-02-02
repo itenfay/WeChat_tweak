@@ -20,7 +20,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_fileName; // @synthesize m_fileName;
 @property(readonly, copy) NSString *description;
 

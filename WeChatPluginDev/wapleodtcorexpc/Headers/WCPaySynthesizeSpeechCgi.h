@@ -15,7 +15,6 @@
     NSMutableDictionary *_m_dictCGIRequestBeginTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_dictCGIRequestBeginTime; // @synthesize m_dictCGIRequestBeginTime=_m_dictCGIRequestBeginTime;
 @property(retain, nonatomic) NSMutableDictionary *m_dictSpeechMsg; // @synthesize m_dictSpeechMsg=_m_dictSpeechMsg;
 @property(nonatomic) __weak id <WCPaySynthesizeSpeechCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

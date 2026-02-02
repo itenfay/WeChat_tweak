@@ -25,7 +25,6 @@
     WCPayCreditPayQuestionNode *m_secondQuestionNode;
 }
 
-- (void).cxx_destruct;
 - (void)WCBaseInfoItemEndEdit:(id)arg1;
 - (_Bool)canDoNext;
 - (void)WCBaseInfoItemEditChanged:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MAVEffectRenderer, NSDictionary, NSMutableDictionary, NSNumber, NSObject, NSString, WCPlayerView;
 @protocol FlutterTextureRegistry;
@@ -38,7 +39,6 @@
     double _startCountTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double startCountTime; // @synthesize startCountTime=_startCountTime;
 @property(nonatomic) long long frameCount; // @synthesize frameCount=_frameCount;
 @property(nonatomic) _Bool couldProduceFrame; // @synthesize couldProduceFrame=_couldProduceFrame;
@@ -131,4 +131,3 @@
 @property(readonly) Class superclass;
 
 @end
-

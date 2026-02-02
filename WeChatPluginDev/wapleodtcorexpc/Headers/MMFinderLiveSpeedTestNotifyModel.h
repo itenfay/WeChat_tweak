@@ -18,7 +18,6 @@
 
 + (id)getServerAddrListWithNotify:(id)arg1;
 + (id)changeModelWithNotify:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int concurrentNum; // @synthesize concurrentNum=_concurrentNum;
 @property(retain, nonatomic) NSData *ctx; // @synthesize ctx=_ctx;
 @property(nonatomic) unsigned int reqsize; // @synthesize reqsize=_reqsize;

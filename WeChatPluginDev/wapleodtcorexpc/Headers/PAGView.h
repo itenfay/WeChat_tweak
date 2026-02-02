@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PAGAnimator, PAGFile, PAGPlayer, PAGSurface;
 
@@ -82,4 +83,3 @@
 - (id)finderLiveRenderStatistics;
 
 @end
-

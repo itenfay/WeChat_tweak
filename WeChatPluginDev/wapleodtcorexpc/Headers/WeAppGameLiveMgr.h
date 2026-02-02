@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MemoryMappedKV, NSMutableArray, NSString;
 @protocol WAGameLiveServiceExt;
 
@@ -30,7 +32,6 @@
     NSMutableArray *_pendingMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingMsg; // @synthesize pendingMsg=_pendingMsg;
 @property(retain, nonatomic) MemoryMappedKV *gameTeamInfoMMKV; // @synthesize gameTeamInfoMMKV=_gameTeamInfoMMKV;
 @property(nonatomic) __weak id <WAGameLiveServiceExt> serviceExt; // @synthesize serviceExt=_serviceExt;
@@ -131,4 +132,3 @@
 @property(readonly) Class superclass;
 
 @end
-

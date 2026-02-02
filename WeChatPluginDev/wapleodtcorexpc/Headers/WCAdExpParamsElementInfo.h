@@ -15,7 +15,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool report; // @synthesize report=_report;
 @property(retain, nonatomic) NSString *expValue; // @synthesize expValue=_expValue;
 @property(retain, nonatomic) NSString *expId; // @synthesize expId=_expId;

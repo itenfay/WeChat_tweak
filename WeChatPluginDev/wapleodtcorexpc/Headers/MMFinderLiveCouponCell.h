@@ -16,7 +16,6 @@
 + (Class)contentClassWithStyle:(long long)arg1;
 + (double)getCellHeightWithCoupon:(id)arg1 style:(long long)arg2 padding:(struct UIEdgeInsets)arg3 width:(double)arg4;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(retain, nonatomic) MMFinderLiveMultiCouponView *couponView; // @synthesize couponView=_couponView;

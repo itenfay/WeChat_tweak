@@ -19,7 +19,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int tinyapp_version; // @synthesize tinyapp_version=_tinyapp_version;
 @property(retain, nonatomic) NSString *activity_tinyapp_btn_text; // @synthesize activity_tinyapp_btn_text=_activity_tinyapp_btn_text;
 @property(retain, nonatomic) NSString *tinyapp_path; // @synthesize tinyapp_path=_tinyapp_path;

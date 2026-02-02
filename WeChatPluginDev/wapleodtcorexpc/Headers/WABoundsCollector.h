@@ -16,7 +16,6 @@
     double _maxy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxy; // @synthesize maxy=_maxy;
 @property(nonatomic) double maxx; // @synthesize maxx=_maxx;
 @property(nonatomic) double miny; // @synthesize miny=_miny;

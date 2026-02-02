@@ -10,7 +10,6 @@
     id <WCPayGetLotteryCgiDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1;
 - (void)didGetResponse:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

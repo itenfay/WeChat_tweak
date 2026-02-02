@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class HKPayPluginResponse, NSString, WCPayHKGetPluginCgi;
 
 @interface WeChatPayHKContactInfoAssist
@@ -13,7 +15,6 @@
     HKPayPluginResponse *_payPluginResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HKPayPluginResponse *payPluginResp; // @synthesize payPluginResp=_payPluginResp;
 @property(retain, nonatomic) WCPayHKGetPluginCgi *getPluginCgi; // @synthesize getPluginCgi=_getPluginCgi;
 @property(nonatomic) _Bool hasRequestedPluginData; // @synthesize hasRequestedPluginData=_hasRequestedPluginData;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

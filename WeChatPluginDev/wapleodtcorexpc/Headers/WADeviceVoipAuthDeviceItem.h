@@ -16,7 +16,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *sn; // @synthesize sn=_sn;

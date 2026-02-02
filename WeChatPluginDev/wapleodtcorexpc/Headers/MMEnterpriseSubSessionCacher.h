@@ -18,7 +18,6 @@
 }
 
 + (long long)compareEnterpriseSubSession:(id)arg1 right:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *mainUsrName; // @synthesize mainUsrName=_mainUsrName;
 - (void)checkSessionInfo:(id)arg1;
 - (void)performCleanUpNoMsgSessions:(id)arg1;

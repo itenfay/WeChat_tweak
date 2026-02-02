@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UILabel;
 
@@ -16,7 +17,6 @@
 }
 
 + (double)heightForTips:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *clickButton; // @synthesize clickButton=_clickButton;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) NSString *tips; // @synthesize tips=_tips;
@@ -31,4 +31,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2;
 
 @end
-

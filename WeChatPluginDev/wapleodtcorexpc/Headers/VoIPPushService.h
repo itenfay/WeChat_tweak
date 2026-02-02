@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, PKPushRegistry;
 
 @interface VoIPPushService
@@ -11,7 +13,6 @@
     PKPushRegistry *m_tokenRetriver;
 }
 
-- (void).cxx_destruct;
 - (void)pushRegistry:(id)arg1 didInvalidatePushTokenForType:(id)arg2;
 - (void)pushRegistry:(id)arg1 didReceiveIncomingPushWithPayload:(id)arg2 forType:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)pushRegistry:(id)arg1 didUpdatePushCredentials:(id)arg2 forType:(id)arg3;
@@ -28,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

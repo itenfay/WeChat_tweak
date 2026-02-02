@@ -12,7 +12,6 @@
     long long _geoMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long geoMode; // @synthesize geoMode=_geoMode;
 @property(retain, nonatomic) LocationRetriever *locationRetriever; // @synthesize locationRetriever=_locationRetriever;
 @property(retain, nonatomic) WCAdDetermineHalfScreenView *determineHalfScreenView; // @synthesize determineHalfScreenView=_determineHalfScreenView;

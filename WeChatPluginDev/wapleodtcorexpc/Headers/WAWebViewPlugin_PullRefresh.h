@@ -12,7 +12,6 @@
     WAWebViewPullDownRefreshView *_headRefreshView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAWebViewPullDownRefreshView *headRefreshView; // @synthesize headRefreshView=_headRefreshView;
 @property(nonatomic) _Bool isEnablePullRefresh; // @synthesize isEnablePullRefresh=_isEnablePullRefresh;
 @property(nonatomic) _Bool isReflashingHead; // @synthesize isReflashingHead=_isReflashingHead;

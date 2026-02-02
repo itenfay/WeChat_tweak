@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LOTAnimationView, MMFinderGameLiveWelfareInfoViewModel, MMFinderGameLiveWelfareTaskCollectionView, MMWebImageView, NSString, UILabel;
 
@@ -20,7 +21,6 @@
     UILabel *_tipLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tipLabel; // @synthesize tipLabel=_tipLabel;
 @property(retain, nonatomic) NSString *lastLuckBagWelfareId; // @synthesize lastLuckBagWelfareId=_lastLuckBagWelfareId;
 @property(nonatomic) unsigned long long currentStatus; // @synthesize currentStatus=_currentStatus;
@@ -48,4 +48,3 @@
 - (id)init;
 
 @end
-

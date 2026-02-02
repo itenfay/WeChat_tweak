@@ -15,7 +15,6 @@
 
 + (void)setupRegister:(id)arg1;
 + (id)sectionDefines;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderProfileTagFeedViewModel<WCFinderProfilePullableFeedViewModel> *feedModel; // @synthesize feedModel=_feedModel;
 @property(retain, nonatomic) WCFinderFeedArray *displayFeedArray; // @synthesize displayFeedArray=_displayFeedArray;
 @property(nonatomic) __weak WCFinderProfileOverviewFeedSectionCtrl *feedSecCtrl; // @synthesize feedSecCtrl=_feedSecCtrl;

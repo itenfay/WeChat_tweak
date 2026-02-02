@@ -15,7 +15,6 @@
     long long _uiinitRetryCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long uiinitRetryCount; // @synthesize uiinitRetryCount=_uiinitRetryCount;
 @property(nonatomic) _Bool bPreRender; // @synthesize bPreRender=_bPreRender;
 @property(nonatomic) _Bool hasSendUiInitEvent; // @synthesize hasSendUiInitEvent=_hasSendUiInitEvent;

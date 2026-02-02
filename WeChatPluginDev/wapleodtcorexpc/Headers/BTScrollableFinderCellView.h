@@ -15,7 +15,6 @@
 }
 
 + (double)headerViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *playingCells; // @synthesize playingCells=_playingCells;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) BTRecommendFinderHeaderView *headerView; // @synthesize headerView=_headerView;

@@ -16,7 +16,6 @@
     long long _tableViewStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReportedDismiss; // @synthesize hasReportedDismiss=_hasReportedDismiss;
 @property(nonatomic) _Bool hasReportedShown; // @synthesize hasReportedShown=_hasReportedShown;
 @property(nonatomic) long long tableViewStyle; // @synthesize tableViewStyle=_tableViewStyle;

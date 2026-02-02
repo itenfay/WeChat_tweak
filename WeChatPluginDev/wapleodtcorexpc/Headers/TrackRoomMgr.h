@@ -29,7 +29,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TrackPOIItem *roomPOI; // @synthesize roomPOI=_roomPOI;
 @property(readonly, nonatomic) unsigned int refreshTimeInterval; // @synthesize refreshTimeInterval=_refreshTimeInterval;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;

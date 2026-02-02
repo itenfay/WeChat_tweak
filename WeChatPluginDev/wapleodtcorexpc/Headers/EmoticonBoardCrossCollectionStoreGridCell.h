@@ -15,7 +15,6 @@
     EmoticonGridView *_gridView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonGridView *gridView; // @synthesize gridView=_gridView;
 @property(retain, nonatomic) EmoticonBoardCrossCollectionStoreGridCellModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak id <EmoticonBoardCrossCollectionStoreGridCellDelegate> delegsate; // @synthesize delegsate=_delegsate;

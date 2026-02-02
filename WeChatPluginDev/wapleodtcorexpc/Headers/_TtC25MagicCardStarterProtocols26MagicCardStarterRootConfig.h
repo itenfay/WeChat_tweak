@@ -15,7 +15,6 @@
     MISSING_TYPE *offScreenCacheStrategy;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)id;
 - (id)initWithPath:(id)arg1 query:(id)arg2 offScreenCacheSize:(long long)arg3 offScreenCacheStrategy:(unsigned int)arg4;

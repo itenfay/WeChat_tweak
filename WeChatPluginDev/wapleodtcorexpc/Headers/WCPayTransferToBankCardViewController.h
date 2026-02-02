@@ -36,7 +36,6 @@
     NSString *_remarkContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remarkContent; // @synthesize remarkContent=_remarkContent;
 @property(retain, nonatomic) WCPayRemarkPageSheet *remarkPageSheet; // @synthesize remarkPageSheet=_remarkPageSheet;
 @property(retain, nonatomic) WCPayTransferMoneyAntiCheatUIView *noticeBanner; // @synthesize noticeBanner=_noticeBanner;

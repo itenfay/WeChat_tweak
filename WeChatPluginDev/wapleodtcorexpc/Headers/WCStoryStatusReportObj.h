@@ -15,7 +15,6 @@
 }
 
 + (void)reportChangeFeaturedWithTid:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long previewEnterScene; // @synthesize previewEnterScene=_previewEnterScene;
 @property(nonatomic) unsigned long long videoType; // @synthesize videoType=_videoType;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;

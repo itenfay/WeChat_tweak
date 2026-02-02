@@ -17,7 +17,6 @@
 
 + (id)replaceCommaToSemicolon:(id)arg1;
 + (id)checkToGetStruct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPrivateAccount; // @synthesize isPrivateAccount=_isPrivateAccount;
 @property(retain, nonatomic) FinderWxAppInfo *wxAppInfo; // @synthesize wxAppInfo=_wxAppInfo;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

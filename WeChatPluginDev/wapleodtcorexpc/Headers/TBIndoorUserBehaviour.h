@@ -15,7 +15,6 @@
     unsigned long long _pickerShowCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pickerShowCount; // @synthesize pickerShowCount=_pickerShowCount;
 @property(nonatomic) unsigned long long activeLevelAPICount; // @synthesize activeLevelAPICount=_activeLevelAPICount;
 @property(nonatomic) unsigned long long showCount; // @synthesize showCount=_showCount;

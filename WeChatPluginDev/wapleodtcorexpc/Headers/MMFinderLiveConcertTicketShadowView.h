@@ -12,7 +12,6 @@
     CALayer *_shadowLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *shadowLayer; // @synthesize shadowLayer=_shadowLayer;
 @property(nonatomic) double shadowRadius;
 @property(nonatomic) double shadowOpacity;

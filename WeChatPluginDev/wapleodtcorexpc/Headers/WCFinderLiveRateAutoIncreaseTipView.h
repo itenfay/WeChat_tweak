@@ -15,7 +15,6 @@
     UIImageView *_secondPlayIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *secondPlayIcon; // @synthesize secondPlayIcon=_secondPlayIcon;
 @property(retain, nonatomic) UIImageView *firstPlayIcon; // @synthesize firstPlayIcon=_firstPlayIcon;
 @property(retain, nonatomic) UILabel *playbackSpeedLabel; // @synthesize playbackSpeedLabel=_playbackSpeedLabel;

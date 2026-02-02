@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, NSDate, UIView, WCRedEnvelopesRedEnvelopesDetailViewController, WCRedEnvelopesStoryViewController;
 
 @interface WCRedEnvelopesStoryDargUtil
@@ -46,7 +48,6 @@
 }
 
 + (void)lightShock;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIgnoreDrag; // @synthesize shouldIgnoreDrag=_shouldIgnoreDrag;
 @property(nonatomic) _Bool hasBeginDrag; // @synthesize hasBeginDrag=_hasBeginDrag;
 @property(copy, nonatomic) CDUnknownBlockType frontViewShowCompletion; // @synthesize frontViewShowCompletion=_frontViewShowCompletion;
@@ -93,4 +94,3 @@
 - (id)initWithFrontViewController:(id)arg1 frontView:(id)arg2 backViewController:(id)arg3 frontViewTop:(double)arg4;
 
 @end
-

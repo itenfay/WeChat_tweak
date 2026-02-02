@@ -20,7 +20,6 @@
     NSString *_deletingCardID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bNeedUpdateDataAfterViewControllerWillApper; // @synthesize bNeedUpdateDataAfterViewControllerWillApper=_bNeedUpdateDataAfterViewControllerWillApper;
 @property(retain, nonatomic) NSString *deletingCardID; // @synthesize deletingCardID=_deletingCardID;
 @property(retain, nonatomic) WCMktDeleteCouponCgi *deleteCardCgi; // @synthesize deleteCardCgi=_deleteCardCgi;

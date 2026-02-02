@@ -12,7 +12,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 
 @end

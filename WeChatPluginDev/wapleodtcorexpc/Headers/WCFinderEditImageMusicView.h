@@ -15,7 +15,6 @@
 }
 
 + (double)getImageMusicViewWidthWith:(id)arg1 useEduTips:(_Bool)arg2 screenSize:(struct CGSize)arg3 duration:(int)arg4 hiddenArrow:(_Bool)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *songInfoLabel; // @synthesize songInfoLabel=_songInfoLabel;
 @property(retain, nonatomic) UILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
 @property(retain, nonatomic) UILabel *chooseBGMTipsLabel; // @synthesize chooseBGMTipsLabel=_chooseBGMTipsLabel;

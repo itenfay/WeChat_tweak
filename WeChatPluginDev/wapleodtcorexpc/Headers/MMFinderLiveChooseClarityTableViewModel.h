@@ -15,7 +15,6 @@
     id <MMFinderLiveChooseClarityTableDataDelegate> _dataDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveChooseClarityTableDataDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSMutableArray *clarityMethodDataArray;

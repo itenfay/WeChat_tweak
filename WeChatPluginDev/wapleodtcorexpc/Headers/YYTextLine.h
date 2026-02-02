@@ -29,7 +29,6 @@
 }
 
 + (id)lineWithCTLine:(struct __CTLine *)arg1 position:(struct CGPoint)arg2 vertical:(_Bool)arg3;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *attachmentRects; // @synthesize attachmentRects=_attachmentRects;
 @property(readonly, nonatomic) NSArray *attachmentRanges; // @synthesize attachmentRanges=_attachmentRanges;
 @property(readonly, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;

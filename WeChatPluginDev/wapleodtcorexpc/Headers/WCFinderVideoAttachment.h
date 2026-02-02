@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_videoNonceId;
 + (void)PBArrayAdd_video;
 + (void)PBArrayAdd_videoId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoNonceId; // @synthesize videoNonceId=_videoNonceId;
 @property(retain, nonatomic) WCMegaVideo *video; // @synthesize video=_video;
 @property(nonatomic) unsigned long long videoId; // @synthesize videoId=_videoId;

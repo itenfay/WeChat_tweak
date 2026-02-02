@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long zoomDuration; // @synthesize zoomDuration=_zoomDuration;
 @property(nonatomic) unsigned long long zoomTriggerTimestamp; // @synthesize zoomTriggerTimestamp=_zoomTriggerTimestamp;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;

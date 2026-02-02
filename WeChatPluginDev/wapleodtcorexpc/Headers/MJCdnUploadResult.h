@@ -12,7 +12,6 @@
     CdnUploadTaskInfo *_taskInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CdnUploadTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;
 @property(readonly, copy, nonatomic) NSString *fileCdnURL;
 @property(readonly, copy, nonatomic) NSString *taskKey;

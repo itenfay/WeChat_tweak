@@ -18,7 +18,6 @@
 }
 
 + (double)cellHeightForScopeItem:(id)arg1 cellWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

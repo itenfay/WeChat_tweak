@@ -15,7 +15,6 @@
     CContact *_currentContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *currentContact; // @synthesize currentContact=_currentContact;
 @property(retain, nonatomic) NSMutableArray *recentGroupPayContactList; // @synthesize recentGroupPayContactList=_recentGroupPayContactList;
 @property(nonatomic) _Bool bHasSelectMemberFinish; // @synthesize bHasSelectMemberFinish=_bHasSelectMemberFinish;

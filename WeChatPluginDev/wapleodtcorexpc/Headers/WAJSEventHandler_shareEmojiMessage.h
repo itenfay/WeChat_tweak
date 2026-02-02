@@ -13,7 +13,6 @@
     MISSING_TYPE *useForChatTool;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)OnForwardMessageCancel:(id)arg1;
 - (void)OnForwardMessageSend:(id)arg1;

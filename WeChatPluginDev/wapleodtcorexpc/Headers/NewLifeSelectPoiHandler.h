@@ -10,7 +10,6 @@
     FinderLocation *_location;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLocation *location; // @synthesize location=_location;
 - (void)onPOIPickerCancel;
 - (void)onPOIPickerFinished:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMListenMembershipJoinInfo_WecoinSchemeInfo_PackageInfo, MMListenMembershipJoinResponse, NSString, _TtC6WeChat26WCCoinSubscribeMemberLogic;
 
@@ -14,7 +15,6 @@
     MMListenMembershipJoinResponse *_joinResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMListenMembershipJoinResponse *joinResp; // @synthesize joinResp=_joinResp;
 @property(retain, nonatomic) MMListenMembershipJoinInfo_WecoinSchemeInfo_PackageInfo *selectedPackage; // @synthesize selectedPackage=_selectedPackage;
 @property(retain, nonatomic) _TtC6WeChat26WCCoinSubscribeMemberLogic *wecoinLogic; // @synthesize wecoinLogic=_wecoinLogic;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

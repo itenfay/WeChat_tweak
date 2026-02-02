@@ -17,7 +17,6 @@
 }
 
 + (double)defaultCellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideCheckbox; // @synthesize hideCheckbox=_hideCheckbox;
 @property(nonatomic) double layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(retain, nonatomic) UIImageView *checkboxImageView; // @synthesize checkboxImageView=_checkboxImageView;

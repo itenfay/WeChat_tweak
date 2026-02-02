@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, UIViewController, WCProgressMaskView;
 
@@ -14,7 +15,6 @@
     UIViewController *_attachedController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *attachedController; // @synthesize attachedController=_attachedController;
 @property(retain, nonatomic) WCProgressMaskView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIView *progressCircleViewSuperview; // @synthesize progressCircleViewSuperview=_progressCircleViewSuperview;
@@ -29,4 +29,3 @@
 - (id)initWithController:(id)arg1;
 
 @end
-

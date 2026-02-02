@@ -13,7 +13,6 @@
     BrandFlowListBaseCellModel *_cellModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandFlowListBaseCellModel *cellModel; // @synthesize cellModel=_cellModel;
 @property(nonatomic) __weak MMWebViewController *webviewVc; // @synthesize webviewVc=_webviewVc;
 - (void)layoutSubviews;

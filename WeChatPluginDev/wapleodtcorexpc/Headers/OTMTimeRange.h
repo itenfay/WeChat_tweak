@@ -19,7 +19,6 @@
 + (id)invalidTimeRange;
 + (id)zeroTimeRange;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) OTMTime *duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) OTMTime *start; // @synthesize start=_start;
 @property(readonly, nonatomic) struct XTMTimeRange backingTimeRange; // @synthesize backingTimeRange=_backingTimeRange;

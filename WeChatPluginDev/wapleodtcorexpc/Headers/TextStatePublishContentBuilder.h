@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmojiInfoObj, EmoticonUploader, NSArray, NSString, PrivateInfo, TextStateIcon, TextStatePublishBlackListItem, TextStatePublishMediaInfo, TextStatePublishSourceInfo, UIImage, WCLocationInfo;
 
@@ -45,7 +46,6 @@
 + (id)builderFromFollowingTextStateForUsername:(id)arg1;
 + (id)builderFromEditingTextState:(id)arg1;
 + (id)builderFromSourceInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonUploader *emoticonUploader; // @synthesize emoticonUploader=_emoticonUploader;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) _Bool refetch3rdPartyBackground; // @synthesize refetch3rdPartyBackground=_refetch3rdPartyBackground;
@@ -97,4 +97,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_chatStatus;
 + (void)PBArrayAdd_owner;
 + (void)PBArrayAdd_chatRoomMember;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int inChatRoomStatus; // @synthesize inChatRoomStatus=_inChatRoomStatus;
 @property(retain, nonatomic) NSString *chatRoomSpecialAttentionMem; // @synthesize chatRoomSpecialAttentionMem=_chatRoomSpecialAttentionMem;
 @property(nonatomic) unsigned int chatRoomLocalSendUpgradeType; // @synthesize chatRoomLocalSendUpgradeType=_chatRoomLocalSendUpgradeType;

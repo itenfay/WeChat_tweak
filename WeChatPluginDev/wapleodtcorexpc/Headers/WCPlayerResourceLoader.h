@@ -34,7 +34,6 @@
     WCBaseScheduler *_scheduler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBaseScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(nonatomic) long long requestSecondsAfterSeek; // @synthesize requestSecondsAfterSeek=_requestSecondsAfterSeek;
 @property(nonatomic) _Bool isWaitingLoadingRequestAfterSeek; // @synthesize isWaitingLoadingRequestAfterSeek=_isWaitingLoadingRequestAfterSeek;

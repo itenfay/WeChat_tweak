@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCFinderBubbleReadyRequirements;
 
@@ -17,7 +18,6 @@
     WCFinderBubbleReadyRequirements *_requirements;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBubbleReadyRequirements *requirements; // @synthesize requirements=_requirements;
 @property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 @property(copy, nonatomic) CDUnknownBlockType dismissAnimationBlock; // @synthesize dismissAnimationBlock=_dismissAnimationBlock;
@@ -26,4 +26,3 @@
 @property(copy, nonatomic) CDUnknownBlockType availableCheckBlock; // @synthesize availableCheckBlock=_availableCheckBlock;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CADisplayLink, FavoritesItemDataField, MMScrollActionSheet, MMTimer, MMWebTransHelpButton, MiniRecTransitionController, NSString, RTEAttachmentViewProvider, RTEAttributeNode, StreamVoiceInputViewController, UIBarButtonItem, UIButton, UIImage, UIView, WNAttachmentBaseView, WNContentSearchBar, WNRTEToolView, WNSaveImageLogic, WNSearchLogic, WNSelectionView, WNTableview, WNTranslateLogic, WNTranslateTopView, WeNoteDataController;
 
 @interface WeNoteViewController
@@ -78,7 +80,6 @@
     unsigned long long _maxFileSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bShowLocateToMsg; // @synthesize bShowLocateToMsg=_bShowLocateToMsg;
 @property(nonatomic) unsigned int maxObjectCount; // @synthesize maxObjectCount=_maxObjectCount;
 @property(nonatomic) unsigned long long maxFileSize; // @synthesize maxFileSize=_maxFileSize;
@@ -367,4 +368,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -20,7 +20,6 @@
 }
 
 + (id)fromServerObj:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSString *searchId; // @synthesize searchId=_searchId;
 @property(nonatomic) unsigned int totalCount; // @synthesize totalCount=_totalCount;

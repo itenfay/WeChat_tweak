@@ -20,7 +20,6 @@
     UIView *_pageSheetDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *pageSheetDetailView; // @synthesize pageSheetDetailView=_pageSheetDetailView;
 @property(retain, nonatomic) MMPageSheetAdapter *pageAdapter; // @synthesize pageAdapter=_pageAdapter;
 @property(retain, nonatomic) WCPayWebImageView *contentImgView; // @synthesize contentImgView=_contentImgView;

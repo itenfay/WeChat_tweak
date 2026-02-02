@@ -19,7 +19,6 @@
 
 + (_Bool)isNetworkType5G:(id)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property long long cellNetType; // @synthesize cellNetType=_cellNetType;
 @property(retain, nonatomic) NSHashTable *delegateArray; // @synthesize delegateArray=_delegateArray;

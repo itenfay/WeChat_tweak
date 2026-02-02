@@ -22,7 +22,6 @@
     MMUIActivityIndicatorView *_indicatorView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int loadingHintLabelMarginLeft; // @synthesize loadingHintLabelMarginLeft=_loadingHintLabelMarginLeft;
 @property(nonatomic) int indicatorViewSize; // @synthesize indicatorViewSize=_indicatorViewSize;
 @property(nonatomic) int loadingHintTextSize; // @synthesize loadingHintTextSize=_loadingHintTextSize;

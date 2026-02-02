@@ -60,7 +60,6 @@
     NSString *_launchAllFileEvaluateDetailBase64;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int gcDuration; // @synthesize gcDuration=_gcDuration;
 @property(nonatomic) unsigned int gcTimes; // @synthesize gcTimes=_gcTimes;
 @property(nonatomic) unsigned int coldLaunchFileSizeReachCodeCacheSizeDemaindRatio; // @synthesize coldLaunchFileSizeReachCodeCacheSizeDemaindRatio=_coldLaunchFileSizeReachCodeCacheSizeDemaindRatio;

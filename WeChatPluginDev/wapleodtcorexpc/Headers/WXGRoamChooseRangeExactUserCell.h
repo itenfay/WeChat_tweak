@@ -17,7 +17,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *seperator; // @synthesize seperator=_seperator;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMHeadImageView *headIcon; // @synthesize headIcon=_headIcon;

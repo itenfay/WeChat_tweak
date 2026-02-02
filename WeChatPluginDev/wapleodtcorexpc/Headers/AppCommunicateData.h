@@ -32,7 +32,6 @@
     NSString *_reportApiName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportApiName; // @synthesize reportApiName=_reportApiName;
 @property(copy, nonatomic) NSString *reportCurrentUrl; // @synthesize reportCurrentUrl=_reportCurrentUrl;
 @property(copy, nonatomic) NSString *reportAppID; // @synthesize reportAppID=_reportAppID;

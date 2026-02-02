@@ -14,7 +14,6 @@
     NSMutableArray *_assetOperationList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *assetOperationList; // @synthesize assetOperationList=_assetOperationList;
 @property(nonatomic) long long videoProducerEnabler; // @synthesize videoProducerEnabler=_videoProducerEnabler;
 @property(retain, nonatomic) NSMutableArray *selectedAssetOperationList; // @synthesize selectedAssetOperationList=_selectedAssetOperationList;

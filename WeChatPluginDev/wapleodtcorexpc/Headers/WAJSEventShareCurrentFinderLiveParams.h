@@ -13,7 +13,6 @@
     WAJSEventShareCurrentFinderLiveParamsInstantDiscountActivityExtra *_instantDiscountActivityExtra;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAJSEventShareCurrentFinderLiveParamsInstantDiscountActivityExtra *instantDiscountActivityExtra; // @synthesize instantDiscountActivityExtra=_instantDiscountActivityExtra;
 @property(nonatomic) unsigned long long liveID; // @synthesize liveID=_liveID;
 

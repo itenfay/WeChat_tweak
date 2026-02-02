@@ -13,7 +13,6 @@
     UIView *_weakView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
 @property(nonatomic) __weak UIView *weakView; // @synthesize weakView=_weakView;
 

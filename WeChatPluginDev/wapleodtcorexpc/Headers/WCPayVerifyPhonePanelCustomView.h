@@ -15,7 +15,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *desc; // @synthesize desc=_desc;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) UILabel *descLabel; // @synthesize descLabel=_descLabel;

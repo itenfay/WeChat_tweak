@@ -18,7 +18,6 @@
 
 + (unsigned int)distanceToInt:(double)arg1;
 + (id)arrayToString:(id)arg1 samplingInterval:(long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *uxInfo; // @synthesize uxInfo=_uxInfo;
 @property(retain, nonatomic) NSString *aid; // @synthesize aid=_aid;
 @property(nonatomic) unsigned long long result; // @synthesize result=_result;

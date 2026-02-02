@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, NSURL, WKDownload;
 
 @interface MMWebNewAttachmentDetailLogicController
@@ -18,7 +20,6 @@
 }
 
 + (id)attachmentPathForURLString:(id)arg1 andExtName:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isObservingDownload; // @synthesize isObservingDownload=_isObservingDownload;
 @property(retain, nonatomic) NSData *lastResumeData; // @synthesize lastResumeData=_lastResumeData;
 @property(retain, nonatomic) WKDownload *downloadTask; // @synthesize downloadTask=_downloadTask;
@@ -67,4 +68,3 @@
 @property(readonly) Class superclass;
 
 @end
-

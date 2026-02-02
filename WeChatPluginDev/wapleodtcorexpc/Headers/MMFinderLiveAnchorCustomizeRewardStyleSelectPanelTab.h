@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSArray;
 
@@ -14,7 +15,6 @@
     MMUILabel *_selectedTabLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *selectedTabLabel; // @synthesize selectedTabLabel=_selectedTabLabel;
 @property(retain, nonatomic) NSArray *labelArray; // @synthesize labelArray=_labelArray;
 @property(copy, nonatomic) CDUnknownBlockType onLabelClickedAtIndex; // @synthesize onLabelClickedAtIndex=_onLabelClickedAtIndex;
@@ -34,4 +34,3 @@
 - (id)initWithTabLabelTextArray:(id)arg1;
 
 @end
-

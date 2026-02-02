@@ -16,7 +16,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAuthManagerItemViewModel *prepareDeleteViewModel; // @synthesize prepareDeleteViewModel=_prepareDeleteViewModel;
 @property(retain, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

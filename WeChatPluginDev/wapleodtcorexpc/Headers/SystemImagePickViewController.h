@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMAlbum, MMAlbumAccessAuthView, MMTableView, NSArray, NSMutableArray, NSMutableSet, NSObject, NSString, UIView;
 @protocol OS_dispatch_queue, SystemImagePickViewControllerDelegate;
@@ -59,7 +60,6 @@
     struct UIEdgeInsets _additionalTableViewInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currVideoPath; // @synthesize currVideoPath=_currVideoPath;
 @property(nonatomic) _Bool isAccessLimited; // @synthesize isAccessLimited=_isAccessLimited;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -199,4 +199,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -10,7 +10,6 @@
     NSArray *_contacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (unsigned int)getSubClickTypeForClickType:(unsigned int)arg1 index:(unsigned int)arg2;
 - (void)onFTSKFContactSearchResultChangedForDetail;

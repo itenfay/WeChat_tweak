@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderContact;
 
 @interface WCFinderNewCloseMicCGI
@@ -15,7 +17,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) NSString *applyId; // @synthesize applyId=_applyId;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -28,4 +29,3 @@
 - (id)initWithLiveTaskId:(id)arg1 liveCookies:(id)arg2 applyId:(id)arg3 sessionId:(id)arg4 toFinderContact:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_businessArray;
 + (void)PBArrayAdd_curIndex;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *businessArray; // @synthesize businessArray=_businessArray;
 @property(nonatomic) long long curIndex; // @synthesize curIndex=_curIndex;
 - (void)moveToNextIndex;

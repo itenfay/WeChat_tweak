@@ -12,7 +12,6 @@
     CMessageWrap *_msg;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CMessageWrap *msg; // @synthesize msg=_msg;
 
 @end

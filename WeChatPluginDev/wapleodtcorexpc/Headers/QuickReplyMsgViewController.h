@@ -18,7 +18,6 @@
     double _dismissTimeout;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreviewEnable; // @synthesize isPreviewEnable=_isPreviewEnable;
 @property(nonatomic) double dismissTimeout; // @synthesize dismissTimeout=_dismissTimeout;
 @property(retain, nonatomic) MMTimer *autoDismissTimer; // @synthesize autoDismissTimer=_autoDismissTimer;

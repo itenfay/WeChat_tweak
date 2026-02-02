@@ -41,7 +41,6 @@
 + (double)heightForMediaWithRatio:(double)arg1 commentViewHeight:(double)arg2 maxHeightPercentage:(long long)arg3 width:(double)arg4 minArea:(unsigned long long)arg5;
 + (double)textViewMaxWidthWith:(double)arg1 avatarLeftMargin:(double)arg2;
 + (double)sectionHeightWith:(id)arg1 width:(double)arg2 halfScreenHeight:(double)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long startPlayTime; // @synthesize startPlayTime=_startPlayTime;
 @property(nonatomic) unsigned long long preloadPercent; // @synthesize preloadPercent=_preloadPercent;
 @property(retain, nonatomic) NSMutableSet *lastBufferEventArray; // @synthesize lastBufferEventArray=_lastBufferEventArray;

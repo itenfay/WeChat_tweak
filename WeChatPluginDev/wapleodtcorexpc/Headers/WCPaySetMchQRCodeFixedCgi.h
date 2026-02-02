@@ -10,7 +10,6 @@
     id <WCPaySetMchQRCodeFixedCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPaySetMchQRCodeFixedCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 - (void)didFailWithError:(id)arg1;
 - (void)failWithNetworking:(id)arg1;

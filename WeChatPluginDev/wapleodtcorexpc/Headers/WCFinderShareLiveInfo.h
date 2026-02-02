@@ -93,7 +93,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableShareCardExpose; // @synthesize disableShareCardExpose=_disableShareCardExpose;
 @property(nonatomic) unsigned int liveSubMode; // @synthesize liveSubMode=_liveSubMode;
 @property(nonatomic) unsigned int liveMode; // @synthesize liveMode=_liveMode;

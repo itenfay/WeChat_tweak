@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderMentionHelper : NSObject
 {
@@ -20,4 +21,3 @@
 + (id)mockCommentForReplyWithMention:(id)arg1 withDisplayName:(id)arg2;
 
 @end
-

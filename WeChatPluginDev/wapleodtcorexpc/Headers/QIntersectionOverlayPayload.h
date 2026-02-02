@@ -22,7 +22,6 @@
     struct CGRect _rect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rightBottomCornerRadius; // @synthesize rightBottomCornerRadius=_rightBottomCornerRadius;
 @property(nonatomic) unsigned long long leftBottomCornerRadius; // @synthesize leftBottomCornerRadius=_leftBottomCornerRadius;
 @property(nonatomic) unsigned long long rightTopCornerRadius; // @synthesize rightTopCornerRadius=_rightTopCornerRadius;

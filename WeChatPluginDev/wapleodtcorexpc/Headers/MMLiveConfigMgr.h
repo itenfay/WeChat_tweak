@@ -13,7 +13,6 @@
     NSArray *_ipadExtendIgnoreVCArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiveBackgroundDecodeEnable; // @synthesize isLiveBackgroundDecodeEnable=_isLiveBackgroundDecodeEnable;
 @property(nonatomic) _Bool isLiveUIPerfMonitorEnable; // @synthesize isLiveUIPerfMonitorEnable=_isLiveUIPerfMonitorEnable;
 @property(retain, nonatomic) NSArray *ipadExtendIgnoreVCArray; // @synthesize ipadExtendIgnoreVCArray=_ipadExtendIgnoreVCArray;

@@ -10,7 +10,6 @@
     id <WCBGRecommendMgrDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCBGRecommendMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onPackageListUpdated:(id)arg1;
 - (void)MMResource_updateBGStorage;

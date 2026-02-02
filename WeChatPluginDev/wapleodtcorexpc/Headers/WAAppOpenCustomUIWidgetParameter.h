@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView;
 
 @interface WAAppOpenCustomUIWidgetParameter
@@ -15,7 +17,6 @@
     unsigned long long _source;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAlreadyAddToSuperview; // @synthesize hasAlreadyAddToSuperview=_hasAlreadyAddToSuperview;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(copy, nonatomic) CDUnknownBlockType layoutBlock; // @synthesize layoutBlock=_layoutBlock;
@@ -25,4 +26,3 @@
 - (id)widgetIdentifier;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)finderFeedOPWrapWithJSON:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *feed_thumbnail; // @synthesize feed_thumbnail=_feed_thumbnail;
 @property(copy, nonatomic) NSString *nonceID; // @synthesize nonceID=_nonceID;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;

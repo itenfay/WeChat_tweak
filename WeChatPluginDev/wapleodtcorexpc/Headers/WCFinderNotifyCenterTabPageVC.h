@@ -19,7 +19,6 @@
     WCFinderRedDotCtrlInfo *_redDotCtrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *redDotCtrlInfo; // @synthesize redDotCtrlInfo=_redDotCtrlInfo;
 @property(nonatomic) _Bool showMentionSwitchEntry; // @synthesize showMentionSwitchEntry=_showMentionSwitchEntry;
 @property(nonatomic) double enterTime; // @synthesize enterTime=_enterTime;

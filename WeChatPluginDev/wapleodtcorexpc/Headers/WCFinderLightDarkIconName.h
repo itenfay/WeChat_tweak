@@ -16,7 +16,6 @@
 
 + (id)instanceWithSameName:(id)arg1;
 + (id)instanceWithLight:(id)arg1 dark:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long imageFetchType; // @synthesize imageFetchType=_imageFetchType;
 @property(copy, nonatomic) NSString *darkName; // @synthesize darkName=_darkName;
 @property(copy, nonatomic) NSString *lightName; // @synthesize lightName=_lightName;

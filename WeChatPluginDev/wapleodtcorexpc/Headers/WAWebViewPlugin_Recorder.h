@@ -13,7 +13,6 @@
     unsigned long long _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) _Bool isCheckingPermission; // @synthesize isCheckingPermission=_isCheckingPermission;
 @property(nonatomic) __weak id <IWAWebViewPluginDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;

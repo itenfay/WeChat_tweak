@@ -32,7 +32,6 @@
     WCFinderLiveAudienceNoticeReporter *_reserveActionReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveAudienceNoticeReporter *reserveActionReporter; // @synthesize reserveActionReporter=_reserveActionReporter;
 @property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(nonatomic) _Bool isActionButtonWorking; // @synthesize isActionButtonWorking=_isActionButtonWorking;

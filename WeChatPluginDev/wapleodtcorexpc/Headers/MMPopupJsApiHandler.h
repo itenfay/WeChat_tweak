@@ -12,7 +12,6 @@
     id <MMPopupJsApiHandlerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMPopupJsApiHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)addApi_close:(id)arg1;
 - (void)addApi_popup:(id)arg1;

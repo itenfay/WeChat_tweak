@@ -20,7 +20,6 @@
     AAOperationRes *_gpOperationResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AAOperationRes *gpOperationResp; // @synthesize gpOperationResp=_gpOperationResp;
 @property(retain, nonatomic) WCPayGPOperationCgi *gpOperationCgi; // @synthesize gpOperationCgi=_gpOperationCgi;
 @property(nonatomic) _Bool bIsFromJSAPI; // @synthesize bIsFromJSAPI=_bIsFromJSAPI;

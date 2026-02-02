@@ -22,7 +22,6 @@
 
 + (void)setCurrentLogic:(id)arg1;
 + (id)currentLogic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stagingSendInfoDictionary; // @synthesize stagingSendInfoDictionary=_stagingSendInfoDictionary;
 @property(retain, nonatomic) NSMutableDictionary *redPacketQueueDictionary; // @synthesize redPacketQueueDictionary=_redPacketQueueDictionary;
 @property(retain, nonatomic) NSMutableDictionary *redPacketDictionary; // @synthesize redPacketDictionary=_redPacketDictionary;

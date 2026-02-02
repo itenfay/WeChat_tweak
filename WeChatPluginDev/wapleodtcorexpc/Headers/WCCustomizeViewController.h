@@ -17,7 +17,6 @@
     WCCoverPostReporter *_coverPostReporter;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowProfessionalCraft; // @synthesize canShowProfessionalCraft=_canShowProfessionalCraft;
 @property(retain, nonatomic) WCCoverPostReporter *coverPostReporter; // @synthesize coverPostReporter=_coverPostReporter;
 @property(retain, nonatomic) WCFinderDataItem *finderFeed; // @synthesize finderFeed=_finderFeed;

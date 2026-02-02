@@ -21,7 +21,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestId; // @synthesize requestId=_requestId;
 @property(retain, nonatomic) NSString *cardListId; // @synthesize cardListId=_cardListId;
 @property(retain, nonatomic) NSString *sceneSessionId; // @synthesize sceneSessionId=_sceneSessionId;

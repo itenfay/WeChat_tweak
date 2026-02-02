@@ -33,7 +33,6 @@
 + (long long)dayOfDate:(id)arg1;
 + (long long)monthOfDate:(id)arg1;
 + (long long)yearOfDate:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) WCPaySelectDateItemData *currentSelectedData; // @synthesize currentSelectedData=_currentSelectedData;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) UILabel *pickerTitleView; // @synthesize pickerTitleView=_pickerTitleView;

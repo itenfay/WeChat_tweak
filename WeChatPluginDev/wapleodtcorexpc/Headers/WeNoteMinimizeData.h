@@ -18,7 +18,6 @@
     NSString *_localDataId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(nonatomic) _Bool bEditable; // @synthesize bEditable=_bEditable;
 @property(retain, nonatomic) NSString *localDataId; // @synthesize localDataId=_localDataId;

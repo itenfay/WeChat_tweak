@@ -12,7 +12,6 @@
     MISSING_TYPE *didRenderView;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)handleEvent:(id)arg1 userInfo:(id)arg2;
 

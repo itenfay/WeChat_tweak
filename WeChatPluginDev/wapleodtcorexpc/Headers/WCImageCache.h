@@ -11,7 +11,6 @@
 }
 
 + (_Bool)couldCacheImage:(id)arg1;
-- (void).cxx_destruct;
 - (void)onServiceClearMemoryCacheInBackground;
 - (void)onServiceClearMemoryCache:(unsigned long long)arg1 addedUserType:(unsigned long long)arg2;
 - (unsigned long long)onServiceCleanCache;

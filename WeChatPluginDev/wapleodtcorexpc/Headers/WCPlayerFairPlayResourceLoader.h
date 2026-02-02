@@ -18,7 +18,6 @@
     WCPlayerCertificateMgr *_certificateMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPlayerCertificateMgr *certificateMgr; // @synthesize certificateMgr=_certificateMgr;
 @property(retain, nonatomic) WCPlayerFairPlayInfo *fairPlayInfo; // @synthesize fairPlayInfo=_fairPlayInfo;
 @property(retain, nonatomic) AVAssetResourceLoadingRequest *loadingRequest; // @synthesize loadingRequest=_loadingRequest;

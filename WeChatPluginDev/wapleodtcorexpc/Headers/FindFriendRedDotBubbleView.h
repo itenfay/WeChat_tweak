@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMBadgeView, RichTextView, UITapGestureRecognizer, WCFinderHeadImageView, WCFinderRedDotTipsShowInfo;
 
@@ -22,7 +23,6 @@
 }
 
 + (_Bool)validateShowInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) WCFinderRedDotTipsShowInfo *showInfo; // @synthesize showInfo=_showInfo;
@@ -46,4 +46,3 @@
 - (id)initWithShowInfo:(id)arg1;
 
 @end
-

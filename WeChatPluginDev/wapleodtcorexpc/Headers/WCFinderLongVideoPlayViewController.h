@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MiniRecTransitionController, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIScreenEdgePanGestureRecognizer, UIScrollView, UITableView, UIViewController, WCFinderLongVideoPlayerViewModel, WCFinderMegaVideoViewModel;
 @protocol WCFinderCommentBaseViewProtocol;
 
@@ -34,7 +36,6 @@
     NSString *_encryptedVideoId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *encryptedVideoId; // @synthesize encryptedVideoId=_encryptedVideoId;
 @property(copy, nonatomic) NSString *videoNonceId; // @synthesize videoNonceId=_videoNonceId;
 @property(copy, nonatomic) NSString *videoId; // @synthesize videoId=_videoId;
@@ -165,4 +166,3 @@
 @property(readonly) Class superclass;
 
 @end
-

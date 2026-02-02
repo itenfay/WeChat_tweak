@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIAlertAction, UIAlertController;
 @protocol UIAlertViewDelegate;
@@ -23,7 +24,6 @@
 }
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(retain, nonatomic) NSMutableArray *actionList; // @synthesize actionList=_actionList;
 @property(nonatomic) __weak UIAlertController *alertController; // @synthesize alertController=_alertController;
@@ -48,4 +48,3 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 
 @end
-

@@ -21,7 +21,6 @@
     WCFinderShareCustomTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(nonatomic) __weak WCFinderCustomPanelSheet *headerEventSheet; // @synthesize headerEventSheet=_headerEventSheet;
 @property(retain, nonatomic) WCFinderEventHeaderActionHandler *headerActionHeandler; // @synthesize headerActionHeandler=_headerActionHeandler;

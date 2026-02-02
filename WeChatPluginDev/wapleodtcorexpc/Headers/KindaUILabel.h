@@ -21,7 +21,6 @@
     UITextView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) NSAttributedString *backupAttributedText; // @synthesize backupAttributedText=_backupAttributedText;
 @property(nonatomic) long long expandHitHeight; // @synthesize expandHitHeight=_expandHitHeight;

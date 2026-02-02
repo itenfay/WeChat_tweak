@@ -18,7 +18,6 @@
     UIPanGestureRecognizer *_panGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(nonatomic) unsigned int languageType; // @synthesize languageType=_languageType;
 @property(retain, nonatomic) UIView *selectPanelView; // @synthesize selectPanelView=_selectPanelView;

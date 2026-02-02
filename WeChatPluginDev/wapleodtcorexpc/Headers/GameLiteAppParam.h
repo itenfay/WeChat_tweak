@@ -18,7 +18,6 @@
 
 + (id)liteAppParaWithAppid:(id)arg1 path:(id)arg2 queryStr:(id)arg3 pkgId:(id)arg4;
 + (id)liteAppParamFromDict:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool transParentLiteApp; // @synthesize transParentLiteApp=_transParentLiteApp;
 @property(retain, nonatomic) NSString *pkgId; // @synthesize pkgId=_pkgId;
 @property(retain, nonatomic) NSString *queryStr; // @synthesize queryStr=_queryStr;

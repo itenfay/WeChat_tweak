@@ -19,7 +19,6 @@
     MMFinderLiveConnectMicPkSelectionResult *_currentPkSelectResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableModifyPlayMode; // @synthesize disableModifyPlayMode=_disableModifyPlayMode;
 @property(nonatomic) _Bool requireChanges; // @synthesize requireChanges=_requireChanges;
 @property(retain, nonatomic) MMFinderLiveConnectMicPkSelectionResult *currentPkSelectResult; // @synthesize currentPkSelectResult=_currentPkSelectResult;

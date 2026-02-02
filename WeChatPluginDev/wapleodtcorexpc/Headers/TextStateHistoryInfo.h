@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_iconId;
 + (void)PBArrayAdd_textStateId;
 + (void)PBArrayAdd_key;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) TextStateModel *textState; // @synthesize textState=_textState;
 @property(retain, nonatomic) NSString *defaultImageId; // @synthesize defaultImageId=_defaultImageId;

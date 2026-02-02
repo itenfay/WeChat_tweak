@@ -35,7 +35,6 @@
 + (id)buildSongDetailLabel:(double)arg1;
 + (_Bool)canShowAuthorView:(id)arg1;
 + (double)heightWithMusicTopicInfo:(id)arg1 andViewWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareItemInfo *shareItemInfo; // @synthesize shareItemInfo=_shareItemInfo;
 @property(retain, nonatomic) WCFinderShadowBubbleView *likeEduBubbleView; // @synthesize likeEduBubbleView=_likeEduBubbleView;
 @property(retain, nonatomic) WCFinderMusicEventHeaderRecommendListView *recommendListView; // @synthesize recommendListView=_recommendListView;

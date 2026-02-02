@@ -25,7 +25,6 @@
     WNRTEToolViewHelper *_toolViewHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WNRTEToolViewHelper *toolViewHelper; // @synthesize toolViewHelper=_toolViewHelper;
 @property(retain, nonatomic) NSArray *extendBtns; // @synthesize extendBtns=_extendBtns;
 @property(retain, nonatomic) NSArray *baseBtns; // @synthesize baseBtns=_baseBtns;

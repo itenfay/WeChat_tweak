@@ -13,7 +13,6 @@
     long long _urlindex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long urlindex; // @synthesize urlindex=_urlindex;
 @property(nonatomic) long long vt; // @synthesize vt=_vt;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

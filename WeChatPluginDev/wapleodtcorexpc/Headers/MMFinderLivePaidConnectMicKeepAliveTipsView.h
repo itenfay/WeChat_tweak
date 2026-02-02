@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveConnectMicUser, MMUIButton, UILabel;
 
 @interface MMFinderLivePaidConnectMicKeepAliveTipsView
@@ -13,7 +15,6 @@
     MMUIButton *_keepAliveButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *keepAliveButton; // @synthesize keepAliveButton=_keepAliveButton;
 @property(retain, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *micUser; // @synthesize micUser=_micUser;
@@ -27,4 +28,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2;
 
 @end
-

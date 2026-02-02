@@ -14,7 +14,6 @@
 }
 
 + (void)inPictureFromVC:(id)arg1 mediaCell:(id)arg2 contentVM:(id)arg3 silencePlay:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *inPictureCacheView; // @synthesize inPictureCacheView=_inPictureCacheView;
 @property(retain, nonatomic) UIViewController<WCFinderInPictureProtocol> *cache; // @synthesize cache=_cache;
 @property(nonatomic) __weak UIViewController<WCFinderInPictureProtocol> *vcContext; // @synthesize vcContext=_vcContext;

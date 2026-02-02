@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _getBottomCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType getBottomCallback; // @synthesize getBottomCallback=_getBottomCallback;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) double initialBottom; // @synthesize initialBottom=_initialBottom;
@@ -24,4 +24,3 @@
 @property(retain, nonatomic) UIView *scrollView; // @synthesize scrollView=_scrollView;
 
 @end
-

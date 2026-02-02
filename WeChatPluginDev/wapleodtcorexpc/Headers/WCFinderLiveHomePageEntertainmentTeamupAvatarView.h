@@ -14,7 +14,6 @@
     UIImageView *_placeHolder;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *placeHolder; // @synthesize placeHolder=_placeHolder;
 @property(retain, nonatomic) WCFinderLiveHomePageEntertainmentTeamupAvatarInfo *info; // @synthesize info=_info;
 @property(retain, nonatomic) WCFinderHeadImageView *imageView; // @synthesize imageView=_imageView;

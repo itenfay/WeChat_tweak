@@ -22,7 +22,6 @@
 }
 
 + (id)regardfulAuthorCellViewModelWithOfterReadItem:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastReadLiveFeedID; // @synthesize lastReadLiveFeedID=_lastReadLiveFeedID;
 @property(nonatomic) unsigned long long localLastestUpdateTime; // @synthesize localLastestUpdateTime=_localLastestUpdateTime;
 @property(nonatomic) unsigned long long lastestUnreadTime; // @synthesize lastestUnreadTime=_lastestUnreadTime;

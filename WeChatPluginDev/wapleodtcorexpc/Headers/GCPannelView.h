@@ -19,7 +19,6 @@
     GCCollectionViewManager *_clvManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCCollectionViewManager *clvManager; // @synthesize clvManager=_clvManager;
 @property(retain, nonatomic) GCLabelDynamicLayout *itemLabelLayout; // @synthesize itemLabelLayout=_itemLabelLayout;
 @property(retain, nonatomic) UICollectionView *bottomCollectionView; // @synthesize bottomCollectionView=_bottomCollectionView;

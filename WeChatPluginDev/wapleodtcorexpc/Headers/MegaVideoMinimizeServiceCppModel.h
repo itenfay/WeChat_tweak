@@ -13,7 +13,6 @@
     WCFinderFeedContentVM *_cachedNextContentVM;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *cachedNextContentVM; // @synthesize cachedNextContentVM=_cachedNextContentVM;
 @property(retain, nonatomic) WCFinderFeedContentVM *cachedPlayingContentVM; // @synthesize cachedPlayingContentVM=_cachedPlayingContentVM;
 - (int)listType;

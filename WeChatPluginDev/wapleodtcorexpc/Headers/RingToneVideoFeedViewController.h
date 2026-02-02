@@ -41,7 +41,6 @@
 
 + (id)constructRingTonePickerViewController:(id)arg1 friendName:(id)arg2;
 + (id)constructRingDetailPickerViewController:(id)arg1 friendName:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasDragTrigger; // @synthesize hasDragTrigger=_hasDragTrigger;
 @property(nonatomic) _Bool isScrollToTop; // @synthesize isScrollToTop=_isScrollToTop;
 @property(nonatomic) _Bool ringRecommendSwitch; // @synthesize ringRecommendSwitch=_ringRecommendSwitch;

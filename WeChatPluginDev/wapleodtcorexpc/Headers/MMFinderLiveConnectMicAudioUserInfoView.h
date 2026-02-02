@@ -10,7 +10,6 @@
     PAGView *_volumeAnimationView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *volumeAnimationView; // @synthesize volumeAnimationView=_volumeAnimationView;
 - (void)updateMicMutedButtonAppearance;
 - (void)configureNicknameLabelLiveDirtyHandle;

@@ -20,7 +20,6 @@
     unsigned long long _selectState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectState; // @synthesize selectState=_selectState;
 @property(retain, nonatomic) MMUIButton *undoBtn; // @synthesize undoBtn=_undoBtn;
 @property(retain, nonatomic) MMUIButton *brushBtn; // @synthesize brushBtn=_brushBtn;

@@ -13,7 +13,6 @@
     NSString *_seatName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *seatName; // @synthesize seatName=_seatName;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void)updateSeatName:(id)arg1;

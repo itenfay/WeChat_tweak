@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, NSString;
 @protocol OS_dispatch_queue;
@@ -21,7 +22,6 @@
     CDStruct_1b6d18a9 _startTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) CDStruct_1b6d18a9 currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) _Bool isRecording; // @synthesize isRecording=_isRecording;
@@ -44,4 +44,3 @@
 - (id)initWithFilePath:(id)arg1 videoSize:(struct CGSize)arg2;
 
 @end
-

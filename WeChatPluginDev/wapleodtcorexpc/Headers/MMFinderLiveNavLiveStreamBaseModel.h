@@ -26,7 +26,6 @@
     NSArray *_allDataArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allDataArray; // @synthesize allDataArray=_allDataArray;
 @property(retain, nonatomic) FinderNavLiveStreamPreloadControlConfig *preloadControlConfig; // @synthesize preloadControlConfig=_preloadControlConfig;
 @property(nonatomic) unsigned long long autoPlayFlag; // @synthesize autoPlayFlag=_autoPlayFlag;

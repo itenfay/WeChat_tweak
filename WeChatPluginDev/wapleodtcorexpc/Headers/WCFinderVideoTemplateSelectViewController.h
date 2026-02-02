@@ -15,7 +15,6 @@
     NSString *_currentPlayUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentPlayUrl; // @synthesize currentPlayUrl=_currentPlayUrl;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;

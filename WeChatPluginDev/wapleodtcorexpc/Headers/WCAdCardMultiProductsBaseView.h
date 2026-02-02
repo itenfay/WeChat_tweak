@@ -11,7 +11,6 @@
     struct CGSize _previousSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdCardMultiProductsScreenDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize previousSize; // @synthesize previousSize=_previousSize;
 - (void)restorePrevioisCenterWith:(id)arg1;

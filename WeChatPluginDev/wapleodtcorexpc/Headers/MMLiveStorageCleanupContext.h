@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 @protocol OS_dispatch_group;
@@ -16,7 +17,6 @@
     unsigned long long _externalCleanupContribution;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long externalCleanupContribution; // @synthesize externalCleanupContribution=_externalCleanupContribution;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *externalCleanupTasksGroup; // @synthesize externalCleanupTasksGroup=_externalCleanupTasksGroup;
 @property(retain, nonatomic) NSMutableArray *deviationDirectives; // @synthesize deviationDirectives=_deviationDirectives;
@@ -27,4 +27,3 @@
 - (void)addPathToBePreserved:(id)arg1;
 
 @end
-

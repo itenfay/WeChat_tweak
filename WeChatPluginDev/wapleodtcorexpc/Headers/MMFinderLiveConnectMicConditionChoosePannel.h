@@ -16,7 +16,6 @@
 }
 
 + (_Bool)isConditionTypeValid:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unForbiddenTypes; // @synthesize unForbiddenTypes=_unForbiddenTypes;
 @property(retain, nonatomic) NSIndexPath *lastSelectIdx; // @synthesize lastSelectIdx=_lastSelectIdx;
 @property(nonatomic) unsigned long long lastSelectType; // @synthesize lastSelectType=_lastSelectType;

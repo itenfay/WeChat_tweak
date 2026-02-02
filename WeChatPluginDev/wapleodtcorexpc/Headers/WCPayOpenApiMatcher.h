@@ -13,7 +13,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_matchArray; // @synthesize m_matchArray=_m_matchArray;
 - (_Bool)matchApi:(id)arg1;
 - (id)init;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJPublisherPlaybackProgressSlider, MMUIButton, UIStackView;
 
 @interface MJMovieComposingBottomBar
@@ -18,7 +20,6 @@
     MMUIButton *_doneButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MMUIButton *clippingButton; // @synthesize clippingButton=_clippingButton;
 @property(retain, nonatomic) MMUIButton *narrationButton; // @synthesize narrationButton=_narrationButton;
@@ -36,4 +37,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

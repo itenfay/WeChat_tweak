@@ -19,7 +19,6 @@
 
 + (double)height;
 + (id)generateDotView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundBlurView; // @synthesize backgroundBlurView=_backgroundBlurView;
 @property(retain, nonatomic) NSMutableArray *dotViewList; // @synthesize dotViewList=_dotViewList;
 @property(nonatomic) struct _NSRange slidingWindow; // @synthesize slidingWindow=_slidingWindow;

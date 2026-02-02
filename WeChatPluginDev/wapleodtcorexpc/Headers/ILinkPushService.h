@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ConfAVMemberList, IConfSDKRegisterableCallbackHolder, MMConfSDKAudioMgr, MMConfSDKCGIImp, MMConfSDKMemberMgr, MMConfSDKNetworkMgr, MMConfSDKVideoHWenc, MMTimer, NSMutableArray, NSMutableData, NSMutableDictionary, NSObject, NSString, VoIPConfSDKNativeCallbackMgr;
 @protocol ILinkPushApiDelegate, OS_dispatch_queue;
 
@@ -106,7 +108,6 @@
     int mApplicationState;
 }
 
-- (void).cxx_destruct;
 - (void)OnConfEvent:(int)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
 - (void)callIfNotNil:(id)arg1 errCode:(int)arg2 data:(id)arg3 callbackData:(id)arg4;
 - (void)updateLiveRemoteStatus:(_Bool)arg1;
@@ -205,4 +206,3 @@
 @property(readonly) Class superclass;
 
 @end
-

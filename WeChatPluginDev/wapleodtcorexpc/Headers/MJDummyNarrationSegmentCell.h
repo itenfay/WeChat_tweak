@@ -20,7 +20,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJAudioWaveformView *waveformView; // @synthesize waveformView=_waveformView;
 @property(readonly, nonatomic) OMCDecibelHeightCalculator *decibelHeightCalc; // @synthesize decibelHeightCalc=_decibelHeightCalc;
 @property(nonatomic) _Bool contentCanBeDrawn; // @synthesize contentCanBeDrawn=_contentCanBeDrawn;

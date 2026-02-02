@@ -12,7 +12,6 @@
     NSDictionary *_m_extraData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *m_extraData; // @synthesize m_extraData=_m_extraData;
 @property(retain, nonatomic) NSMutableData *m_recData; // @synthesize m_recData=_m_recData;
 @property(retain, nonatomic) NSURLConnection *m_connection; // @synthesize m_connection=_m_connection;

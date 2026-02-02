@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSString;
 
 @interface WCFinderFeedFavCgi
@@ -15,7 +17,6 @@
     CDUnknownBlockType _failedBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) NSDictionary *clientUdfKv; // @synthesize clientUdfKv=_clientUdfKv;
@@ -28,4 +29,3 @@
 - (id)initWithFeedID:(id)arg1 nonceID:(id)arg2 isFav:(_Bool)arg3 sessionBuffer:(id)arg4 scene:(int)arg5 sourceType:(int)arg6 clientUdfKv:(id)arg7 params:(id)arg8 completion:(CDUnknownBlockType)arg9 failed:(CDUnknownBlockType)arg10;
 
 @end
-

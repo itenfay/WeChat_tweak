@@ -13,7 +13,6 @@
     UIImageView *_arrowImgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImgView; // @synthesize arrowImgView=_arrowImgView;
 @property(retain, nonatomic) MMWebImageView *iconImgView; // @synthesize iconImgView=_iconImgView;
 @property(retain, nonatomic) UIView *coverBackView; // @synthesize coverBackView=_coverBackView;

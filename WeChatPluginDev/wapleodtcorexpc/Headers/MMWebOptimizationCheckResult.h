@@ -13,7 +13,6 @@
     MMWebviewPrefetchResult *_prefetchResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebviewPrefetchResult *prefetchResult; // @synthesize prefetchResult=_prefetchResult;
 @property(nonatomic) _Bool hasCacheDnsResult; // @synthesize hasCacheDnsResult=_hasCacheDnsResult;
 @property(copy, nonatomic) NSString *a8KeyRespUrl; // @synthesize a8KeyRespUrl=_a8KeyRespUrl;

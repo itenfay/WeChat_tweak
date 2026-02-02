@@ -21,7 +21,6 @@
     UIView *_backgroundView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIButton *confirmBtn; // @synthesize confirmBtn=_confirmBtn;

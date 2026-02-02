@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -17,4 +18,3 @@
 - (id)observerPropertyByName:(id)arg1 tag:(id)arg2 action:(id)arg3;
 - (void)observerDeallocWithTag:(id)arg1 action:(CDUnknownBlockType)arg2;
 @end
-

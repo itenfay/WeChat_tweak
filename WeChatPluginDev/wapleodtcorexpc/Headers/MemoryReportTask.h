@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_reportSuccess;
 + (void)PBArrayAdd_generateFail;
 + (void)PBArrayAdd_launchTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *customInfo; // @synthesize customInfo=_customInfo;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) _Bool reportSuccess; // @synthesize reportSuccess=_reportSuccess;

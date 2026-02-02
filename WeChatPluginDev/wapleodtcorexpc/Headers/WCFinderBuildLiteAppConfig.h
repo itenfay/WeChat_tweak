@@ -23,7 +23,6 @@
     long long _position;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(copy, nonatomic) NSString *mini_version; // @synthesize mini_version=_mini_version;
 @property(retain, nonatomic) NSData *extraData; // @synthesize extraData=_extraData;

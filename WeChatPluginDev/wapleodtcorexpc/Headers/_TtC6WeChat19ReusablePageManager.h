@@ -14,7 +14,6 @@
     MISSING_TYPE *isRemovingPage;
 }
 
-- (void).cxx_destruct;
 - (void)validCheck;
 - (void)onMemoryWarning;
 - (id)init;

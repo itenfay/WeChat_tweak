@@ -12,7 +12,6 @@
     ReaderWrapNotifyMsg *_notifyMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ReaderWrapNotifyMsg *notifyMsg; // @synthesize notifyMsg=_notifyMsg;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

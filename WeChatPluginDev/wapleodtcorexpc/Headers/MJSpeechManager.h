@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJAudioFileManager, NSMutableArray, NSMutableDictionary, UBDictionarySignal;
 
@@ -28,7 +29,6 @@
     NSMutableArray *_pendingVocalEnhancementItems;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *pendingVocalEnhancementItems; // @synthesize pendingVocalEnhancementItems=_pendingVocalEnhancementItems;
 @property(readonly, nonatomic) NSMutableArray *pendingSpeechAsyncRequestItems; // @synthesize pendingSpeechAsyncRequestItems=_pendingSpeechAsyncRequestItems;
 @property(readonly, nonatomic) NSMutableDictionary *speechCloneAsyncTaskGroupsByAudioID; // @synthesize speechCloneAsyncTaskGroupsByAudioID=_speechCloneAsyncTaskGroupsByAudioID;
@@ -113,4 +113,3 @@
 - (unsigned long long)stsAsyncRequestStatusWithAudioID:(id)arg1 roleID:(id)arg2;
 
 @end
-

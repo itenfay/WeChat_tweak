@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <PLzmaSDKDecoderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (id)initWithStream:(id)arg1 fileType:(unsigned char)arg2 andDelegate:(id)arg3;

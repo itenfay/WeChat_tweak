@@ -11,7 +11,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(retain, nonatomic) FinderNPSPlugin *finderNPSPlugin; // @synthesize finderNPSPlugin=_finderNPSPlugin;
 - (void)onCloseNPS;

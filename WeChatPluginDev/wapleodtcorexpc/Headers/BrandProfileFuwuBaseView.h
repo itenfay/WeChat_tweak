@@ -11,7 +11,6 @@
     id <BrandProfileFuwuBaseViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHideTopDividingLine; // @synthesize shouldHideTopDividingLine=_shouldHideTopDividingLine;
 @property(nonatomic) __weak id <BrandProfileFuwuBaseViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)calcuteFuwuViewHeight;

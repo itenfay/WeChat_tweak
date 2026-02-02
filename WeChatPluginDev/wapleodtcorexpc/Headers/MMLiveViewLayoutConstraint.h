@@ -14,7 +14,6 @@
     NSNumber *_margin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *margin; // @synthesize margin=_margin;
 @property(retain, nonatomic) NSNumber *relativeToEdge; // @synthesize relativeToEdge=_relativeToEdge;
 @property(retain, nonatomic) NSNumber *edge; // @synthesize edge=_edge;

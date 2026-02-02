@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ColorGradientView, MMUIButton, NSArray, NSMutableArray;
 
@@ -23,7 +24,6 @@
     NSArray *_rateList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(nonatomic) _Bool isPortraitLayout; // @synthesize isPortraitLayout=_isPortraitLayout;
 @property(retain, nonatomic) NSArray *rateList; // @synthesize rateList=_rateList;
@@ -60,4 +60,3 @@
 - (id)initWithRateList:(id)arg1 defaultRate:(double)arg2;
 
 @end
-

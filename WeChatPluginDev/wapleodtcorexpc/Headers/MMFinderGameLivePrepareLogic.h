@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, WCFinderCreateCoordinator, WCFinderDataItem;
 @protocol MMFinderGameLivePrepareLogicDelegate;
@@ -32,7 +33,6 @@
 + (_Bool)isValidToJumpFromOpenBusinessViewWithExtInfo:(id)arg1;
 + (_Bool)isValidToJumpWithExtInfo:(id)arg1;
 + (_Bool)notValidForDifferentAccountWithExtInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dataFromGame; // @synthesize dataFromGame=_dataFromGame;
 @property(retain, nonatomic) NSString *gameUserId; // @synthesize gameUserId=_gameUserId;
 @property(nonatomic) unsigned int platformId; // @synthesize platformId=_platformId;
@@ -76,4 +76,3 @@
 - (id)init;
 
 @end
-

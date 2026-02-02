@@ -16,7 +16,6 @@
     WCCardChoosePeopleLabelView *_chooseView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCardChoosePeopleLabelView *chooseView; // @synthesize chooseView=_chooseView;
 @property(retain, nonatomic) MMUIView *separateStrokeView; // @synthesize separateStrokeView=_separateStrokeView;
 @property(retain, nonatomic) WCShareCardGeneralReceiveHeaderView *generalReceiverHeaderView; // @synthesize generalReceiverHeaderView=_generalReceiverHeaderView;

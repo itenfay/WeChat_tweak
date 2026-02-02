@@ -13,7 +13,6 @@
     NSArray *_includeUsers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *includeUsers; // @synthesize includeUsers=_includeUsers;
 @property(nonatomic) unsigned int maxCount; // @synthesize maxCount=_maxCount;
 - (id)init;

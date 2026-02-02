@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MCNearbyServiceBrowser, MCPeerID, MCSession, MMTimer, NSDate, NSDictionary, NSString, WXGSpeedFilter;
 @protocol LocalAreaPeerClientDelegate;
@@ -31,7 +32,6 @@
     id <LocalAreaPeerClientDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <LocalAreaPeerClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)getClientOpenTime;
 - (unsigned long long)getTotalReceiveLength;
@@ -65,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

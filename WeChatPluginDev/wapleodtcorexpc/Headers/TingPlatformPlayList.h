@@ -16,7 +16,6 @@
     id <TingPlayTaskClient> _weakProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <TingPlayTaskClient> weakProxy; // @synthesize weakProxy=_weakProxy;
 @property(nonatomic) __weak id <TingPlayListListener> listListener; // @synthesize listListener=_listListener;
 @property(retain, nonatomic) id <TingPlayTaskService> taskService; // @synthesize taskService=_taskService;

@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_configModelArray;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *configModelArray; // @synthesize configModelArray=_configModelArray;
 - (id)initWithPostActionSheetArray:(id)arg1;
 - (id)init;

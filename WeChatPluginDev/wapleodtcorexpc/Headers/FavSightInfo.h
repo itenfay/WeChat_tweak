@@ -25,7 +25,6 @@
 }
 
 + (id)createSightInfoWithData:(id)arg1 AndItem:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needLazyDownload; // @synthesize needLazyDownload=_needLazyDownload;
 @property(retain, nonatomic) FavoritesItemDataField *favData; // @synthesize favData=_favData;
 @property(retain, nonatomic) FavoritesItem *favItem; // @synthesize favItem=_favItem;

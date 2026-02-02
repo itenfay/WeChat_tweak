@@ -15,7 +15,6 @@
     NSString *_accountInfoUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountInfoUrl; // @synthesize accountInfoUrl=_accountInfoUrl;
 @property(nonatomic) _Bool isPrivateLock; // @synthesize isPrivateLock=_isPrivateLock;
 @property(retain, nonatomic) WCFinderStreamProfileExtInfo *extInfo; // @synthesize extInfo=_extInfo;

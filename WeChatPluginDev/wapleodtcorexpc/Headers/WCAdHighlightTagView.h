@@ -14,7 +14,6 @@
     unsigned long long _contentItemScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentItemScene; // @synthesize contentItemScene=_contentItemScene;
 @property(retain, nonatomic) MMUILabel *numberTitleLabel; // @synthesize numberTitleLabel=_numberTitleLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

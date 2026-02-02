@@ -16,7 +16,6 @@
 + (id)sharedInstance;
 @property(nonatomic) _Bool isUploading; // @synthesize isUploading;
 @property(retain) NSString *uploadUrl; // @synthesize uploadUrl;
-- (void).cxx_destruct;
 - (void)finishWithResponse:(id)arg1 reqPkg:(id)arg2;
 - (void)failWithResponse:(id)arg1 reqPkg:(id)arg2;
 - (_Bool)deleteUploadData:(id)arg1;

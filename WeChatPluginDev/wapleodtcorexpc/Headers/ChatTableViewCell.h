@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BaseChatCellView, UIView;
 
 @interface ChatTableViewCell
@@ -14,7 +16,6 @@
     UIView *_selectionHighlightView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectionHighlightView; // @synthesize selectionHighlightView=_selectionHighlightView;
 @property(copy, nonatomic) CDUnknownBlockType m_accessibilityElementsHiddenBlock; // @synthesize m_accessibilityElementsHiddenBlock=_m_accessibilityElementsHiddenBlock;
 @property(readonly, nonatomic) BaseChatCellView *cellView; // @synthesize cellView=m_cellView;
@@ -33,4 +34,3 @@
 - (void)setViewModel:(id)arg1;
 
 @end
-

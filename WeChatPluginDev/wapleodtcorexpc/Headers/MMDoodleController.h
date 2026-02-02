@@ -18,7 +18,6 @@
     MMDoodlePenView *_penView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMDoodlePenView *penView; // @synthesize penView=_penView;
 @property(retain, nonatomic) EditImageScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
 @property(nonatomic) __weak id <MMDoodleDataSource> dataSource; // @synthesize dataSource=_dataSource;

@@ -11,7 +11,6 @@
     NSMutableArray *_pluginAppidList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceUpdate; // @synthesize forceUpdate=_forceUpdate;
 @property(retain, nonatomic) NSMutableArray *pluginAppidList; // @synthesize pluginAppidList=_pluginAppidList;
 

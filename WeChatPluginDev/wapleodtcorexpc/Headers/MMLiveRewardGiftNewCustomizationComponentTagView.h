@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveNewCustomGiftComponentValue, MMUILabel, MMWebImageView, UIImageView;
 
@@ -25,7 +26,6 @@
 + (double)leftInset;
 + (double)preferHeight;
 + (double)preferWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *beanIncreaseLabel; // @synthesize beanIncreaseLabel=_beanIncreaseLabel;
 @property(retain, nonatomic) MMUILabel *beanCntLabel; // @synthesize beanCntLabel=_beanCntLabel;
 @property(retain, nonatomic) UIImageView *beanIconView; // @synthesize beanIconView=_beanIconView;
@@ -54,4 +54,3 @@
 - (id)initWithComponentValue:(id)arg1 uiStyle:(unsigned long long)arg2;
 
 @end
-

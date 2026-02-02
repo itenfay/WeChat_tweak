@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIButton, UIView;
 
@@ -17,7 +18,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *splitLine; // @synthesize splitLine=_splitLine;
 @property(retain, nonatomic) UIButton *pkBtn; // @synthesize pkBtn=_pkBtn;
 @property(retain, nonatomic) UIButton *quitBtn; // @synthesize quitBtn=_quitBtn;
@@ -31,4 +31,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

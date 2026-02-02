@@ -16,7 +16,6 @@
     NSString *_lastQueryResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastQueryResult; // @synthesize lastQueryResult=_lastQueryResult;
 @property(nonatomic) _Bool bHadObserverActivitySummary; // @synthesize bHadObserverActivitySummary=_bHadObserverActivitySummary;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;

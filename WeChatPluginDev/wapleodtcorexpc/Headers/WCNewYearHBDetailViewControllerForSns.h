@@ -21,7 +21,6 @@
     UILabel *_rmbUnitLabel;
 }
 
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)makeCell:(id)arg1 cell:(id)arg2 row:(unsigned long long)arg3;

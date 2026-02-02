@@ -14,7 +14,6 @@
 }
 
 + (id)genFinderBoxIdAndReaddot:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasUnreadMsg; // @synthesize hasUnreadMsg=_hasUnreadMsg;
 @property(retain, nonatomic) MMFinderGroupLiveChatBoxId *boxId; // @synthesize boxId=_boxId;
 

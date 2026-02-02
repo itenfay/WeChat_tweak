@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLiveStorageCleanupPinningToken, MMLiveTask, MMLiveTaskId, MMLiveWevisionWidgetObj, NSString;
 
@@ -23,7 +24,6 @@
 }
 
 + (id)baseResourceDir;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcePinningToken; // @synthesize resourcePinningToken=_resourcePinningToken;
 @property(copy, nonatomic) CDUnknownBlockType endCompletion; // @synthesize endCompletion=_endCompletion;
 @property(nonatomic) _Bool isEnding; // @synthesize isEnding=_isEnding;
@@ -61,4 +61,3 @@
 - (id)initWithWidget:(id)arg1 prior:(int)arg2 taskId:(id)arg3;
 
 @end
-

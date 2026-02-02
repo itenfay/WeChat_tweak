@@ -11,7 +11,6 @@
     MISSING_TYPE *$__lazy_storage_$_preConfirmView;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)OnSharePreConfirmSheetViewCancel:(id)arg1;
 - (void)OnSharePreConfirmSheetViewSend:(id)arg1;

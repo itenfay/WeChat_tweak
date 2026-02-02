@@ -33,7 +33,6 @@
     NSMutableSet *_detailPageBrowsePicSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *detailPageBrowsePicSet; // @synthesize detailPageBrowsePicSet=_detailPageBrowsePicSet;
 @property(retain, nonatomic) NSMutableSet *galleryBrowseMediaSet; // @synthesize galleryBrowseMediaSet=_galleryBrowseMediaSet;
 @property(nonatomic) _Bool isDetailSession; // @synthesize isDetailSession=_isDetailSession;

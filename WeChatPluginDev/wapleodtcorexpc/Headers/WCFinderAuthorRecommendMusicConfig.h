@@ -13,7 +13,6 @@
     long long _like_state;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long like_state; // @synthesize like_state=_like_state;
 @property(copy, nonatomic) NSString *listen_id; // @synthesize listen_id=_listen_id;
 - (id)initWithJSONString:(id)arg1;

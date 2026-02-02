@@ -15,7 +15,6 @@
     CContact *_selectedContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *selectedContact; // @synthesize selectedContact=_selectedContact;
 @property(retain, nonatomic) SharePreConfirmSheetView *sharePreConfirmSheetView; // @synthesize sharePreConfirmSheetView=_sharePreConfirmSheetView;
 @property(retain, nonatomic) SharePreConfirmView *sharePreConfirmView; // @synthesize sharePreConfirmView=_sharePreConfirmView;

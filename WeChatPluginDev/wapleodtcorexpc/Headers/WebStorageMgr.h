@@ -10,7 +10,6 @@
     WebStorageDb *_storageDb;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WebStorageDb *storageDb; // @synthesize storageDb=_storageDb;
 - (id)getAllFile:(id)arg1;
 - (id)getAllGlobalConfig;

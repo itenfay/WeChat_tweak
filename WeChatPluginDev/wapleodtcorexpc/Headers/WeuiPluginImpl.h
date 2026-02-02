@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIView, UIViewController;
 @protocol UITextInput;
@@ -19,7 +20,6 @@
 }
 
 + (id)plugin;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView<UITextInput> *flutterTextInput; // @synthesize flutterTextInput=_flutterTextInput;
 @property(nonatomic) __weak UIViewController *associateViewController; // @synthesize associateViewController=_associateViewController;
 - (void)onDetachedToViewController;
@@ -49,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     NSString *_buttonText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

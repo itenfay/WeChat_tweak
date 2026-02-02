@@ -15,7 +15,6 @@
     NSArray *_featureContents;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *featureContents; // @synthesize featureContents=_featureContents;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *env; // @synthesize env=_env;

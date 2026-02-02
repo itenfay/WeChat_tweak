@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GCTableViewSecionModel, GCTableViewSource, MMTableView, NSIndexPath, NSMutableArray, NSString, UINavigationController;
 
 @interface GameCenterMsgListBaseTabViewController
@@ -28,7 +30,6 @@
     GCTableViewSecionModel *_readSection;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GCTableViewSecionModel *readSection; // @synthesize readSection=_readSection;
 @property(retain, nonatomic) GCTableViewSecionModel *unreadSection; // @synthesize unreadSection=_unreadSection;
 @property(retain, nonatomic) GCTableViewSource *tableViewSource; // @synthesize tableViewSource=_tableViewSource;
@@ -108,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

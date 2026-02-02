@@ -13,7 +13,6 @@
     NSString *_appCtxScript;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appCtxScript; // @synthesize appCtxScript=_appCtxScript;
 @property(copy, nonatomic) NSString *downloadUrl; // @synthesize downloadUrl=_downloadUrl;
 

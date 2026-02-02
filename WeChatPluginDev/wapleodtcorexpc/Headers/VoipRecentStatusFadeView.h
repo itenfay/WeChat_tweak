@@ -14,7 +14,6 @@
     CAGradientLayer *_caGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *caGradientLayer; // @synthesize caGradientLayer=_caGradientLayer;
 @property(nonatomic) double endPointY; // @synthesize endPointY=_endPointY;
 @property(nonatomic) double startPointY; // @synthesize startPointY=_startPointY;

@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_idx;
 + (void)PBArrayAdd_mid;
 + (void)PBArrayAdd_bizId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemShowType; // @synthesize itemShowType=_itemShowType;
 @property(copy, nonatomic) NSString *idx; // @synthesize idx=_idx;
 @property(copy, nonatomic) NSString *mid; // @synthesize mid=_mid;

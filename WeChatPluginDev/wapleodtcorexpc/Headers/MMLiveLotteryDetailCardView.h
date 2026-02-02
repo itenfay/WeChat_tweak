@@ -64,7 +64,6 @@
 }
 
 + (long long)transferAliasRoleTypeFromPersonalMsgScene:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double cardViewHeightLandScape; // @synthesize cardViewHeightLandScape=_cardViewHeightLandScape;
 @property(nonatomic) double cardViewHeightPortrait; // @synthesize cardViewHeightPortrait=_cardViewHeightPortrait;
 @property(nonatomic) double cardViewWidthLandScape; // @synthesize cardViewWidthLandScape=_cardViewWidthLandScape;

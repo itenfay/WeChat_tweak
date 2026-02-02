@@ -15,7 +15,6 @@
     int _playID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int playID; // @synthesize playID=_playID;
 @property(nonatomic) int fileDuration; // @synthesize fileDuration=_fileDuration;
 @property(nonatomic) int fileType; // @synthesize fileType=_fileType;

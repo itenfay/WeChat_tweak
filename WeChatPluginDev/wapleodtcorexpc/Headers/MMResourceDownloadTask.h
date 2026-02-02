@@ -19,7 +19,6 @@
     id <MMResourceDownloadTaskDelegate> _downloadTaskDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMResourceDownloadTaskDelegate> downloadTaskDelegate; // @synthesize downloadTaskDelegate=_downloadTaskDelegate;
 @property(nonatomic) long long currentCnt; // @synthesize currentCnt=_currentCnt;
 @property(nonatomic) long long retryCnt; // @synthesize retryCnt=_retryCnt;

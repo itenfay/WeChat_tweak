@@ -12,7 +12,6 @@
     NSString *_defaultKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultKey; // @synthesize defaultKey=_defaultKey;
 
 @end

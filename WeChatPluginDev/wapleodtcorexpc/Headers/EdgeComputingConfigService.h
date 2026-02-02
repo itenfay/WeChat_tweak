@@ -12,7 +12,6 @@
     EdgeComputingConfigParser *configParser;
 }
 
-- (void).cxx_destruct;
 - (void)tryToDownloadScript;
 - (void)onSessionEdgeComputingSqlConfigChange:(id)arg1 isDel:(_Bool)arg2 andSessionPageId:(unsigned int)arg3;
 - (void)onSessionEdgeComputingScriptConfigChange:(id)arg1 isDel:(_Bool)arg2 andSessionPageId:(unsigned int)arg3;

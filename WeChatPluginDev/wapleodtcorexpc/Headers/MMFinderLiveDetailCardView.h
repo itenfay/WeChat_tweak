@@ -13,7 +13,6 @@
     UIImageView *_backgroundImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(nonatomic) __weak MMFinderLiveDropGiftDetailCardViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)layoutSubviews;

@@ -37,7 +37,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_bizNickName;
 + (void)PBArrayAdd_bizUsrName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) double thumbHeight; // @synthesize thumbHeight=_thumbHeight;
 @property(nonatomic) double thumbWidth; // @synthesize thumbWidth=_thumbWidth;

@@ -28,7 +28,6 @@
     struct CGRect _titleFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentUIStyle; // @synthesize currentUIStyle=_currentUIStyle;
 @property(nonatomic) struct CGRect titleFrame; // @synthesize titleFrame=_titleFrame;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;

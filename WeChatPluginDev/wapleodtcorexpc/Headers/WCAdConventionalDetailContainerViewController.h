@@ -19,7 +19,6 @@
 }
 
 + (double)fetchDetailPageSheetHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPageSheetViewClosedByUser; // @synthesize isPageSheetViewClosedByUser=_isPageSheetViewClosedByUser;
 @property(nonatomic) _Bool isPageSheetViewFullyVisible; // @synthesize isPageSheetViewFullyVisible=_isPageSheetViewFullyVisible;
 @property(retain, nonatomic) WCAdConventionalHalfScreenCustomBackgroundView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;

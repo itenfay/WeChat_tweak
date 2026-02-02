@@ -35,7 +35,6 @@
 + (void)PBArrayAdd_exptSeq;
 + (void)PBArrayAdd_groupId;
 + (void)PBArrayAdd_exptId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *paramHashVal; // @synthesize paramHashVal=_paramHashVal;
 @property(nonatomic) unsigned long long bucketSrc; // @synthesize bucketSrc=_bucketSrc;
 @property(nonatomic) unsigned int fromSystem; // @synthesize fromSystem=_fromSystem;

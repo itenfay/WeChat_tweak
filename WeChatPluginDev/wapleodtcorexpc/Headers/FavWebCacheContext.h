@@ -17,7 +17,6 @@
     NSString *_cookie;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cookie; // @synthesize cookie=_cookie;
 @property(retain, nonatomic) NSDictionary *sessionStorage; // @synthesize sessionStorage=_sessionStorage;
 @property(retain, nonatomic) NSDictionary *localStorage; // @synthesize localStorage=_localStorage;

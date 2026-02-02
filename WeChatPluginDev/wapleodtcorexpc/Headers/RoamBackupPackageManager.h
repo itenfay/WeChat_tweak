@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface RoamBackupPackageManager : NSObject
 {
@@ -15,7 +16,6 @@
 + (id)buildZidlObjForHolder:(const void *)arg1 svrIdentity:(const void *)arg2;
 + (id)shareInstance;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)deletePackagesAsync:(id)arg1 on:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deletePackagesAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -32,4 +32,3 @@
 - (shared_ptr_8c935b55)getDispatcher;
 
 @end
-

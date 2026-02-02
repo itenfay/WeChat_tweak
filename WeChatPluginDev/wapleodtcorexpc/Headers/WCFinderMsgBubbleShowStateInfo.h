@@ -14,7 +14,6 @@
     NSArray *_commentFailInfoArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *commentFailInfoArray; // @synthesize commentFailInfoArray=_commentFailInfoArray;
 @property(nonatomic) _Bool showPrivateMsgBubble; // @synthesize showPrivateMsgBubble=_showPrivateMsgBubble;
 @property(nonatomic) unsigned long long unReadMsgCount; // @synthesize unReadMsgCount=_unReadMsgCount;

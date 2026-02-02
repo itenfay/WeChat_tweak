@@ -15,7 +15,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getCachedAudio:(id)arg1 path:(id)arg2;
 - (void)removeCachedAudio:(id)arg1 path:(id)arg2;

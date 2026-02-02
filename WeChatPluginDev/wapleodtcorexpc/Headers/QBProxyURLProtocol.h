@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSURLProtocol.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDate, NSString, QBDNSQueryItem, QBNetwork, QBProtocolProxy;
 
@@ -49,7 +50,6 @@
 + (void)setCurrentMainURL:(id)arg1;
 + (void)startProxyWithWorker:(Class)arg1;
 @property(retain, nonatomic) QBNetwork *network; // @synthesize network=_network;
-- (void).cxx_destruct;
 - (void)reportDNSDadRequest:(long long)arg1 aInterval:(long long)arg2 bInterval:(long long)arg3 cInterval:(long long)arg4;
 - (id)qbNetworkOriginHost:(id)arg1;
 - (void)qbNetwork:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -92,4 +92,3 @@
 @property(readonly) Class superclass;
 
 @end
-

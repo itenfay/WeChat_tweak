@@ -10,7 +10,6 @@
     MISSING_TYPE *controlStatus;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)configNativeNavBarWith:(id)arg1;
 - (id)navOwner;

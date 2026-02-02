@@ -13,7 +13,6 @@
     NSString *_minimizationCoverId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minimizationCoverId; // @synthesize minimizationCoverId=_minimizationCoverId;
 @property(retain, nonatomic) NSMutableDictionary *infoMap; // @synthesize infoMap=_infoMap;
 @property(retain, nonatomic) NSString *interruptedId; // @synthesize interruptedId=_interruptedId;

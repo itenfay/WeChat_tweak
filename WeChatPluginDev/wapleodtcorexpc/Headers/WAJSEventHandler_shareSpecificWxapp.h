@@ -11,7 +11,6 @@
     ForwardMessageLogicController *_forwardLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
 - (id)getShareStatReport:(id)arg1;

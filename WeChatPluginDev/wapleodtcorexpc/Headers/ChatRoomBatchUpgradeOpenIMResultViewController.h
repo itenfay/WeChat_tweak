@@ -15,7 +15,6 @@
     NSMutableDictionary *_dicBatchUpgradeOpenIMResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicBatchUpgradeOpenIMResult; // @synthesize dicBatchUpgradeOpenIMResult=_dicBatchUpgradeOpenIMResult;
 - (id)navigationBarBackgroundColor;
 - (void)doIAccept;

@@ -60,7 +60,6 @@
     NSString *_kidsAccountOpenID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPasskeyLoginAutoShow; // @synthesize isPasskeyLoginAutoShow=_isPasskeyLoginAutoShow;
 @property(nonatomic) _Bool kidsWatchShowSyncChat; // @synthesize kidsWatchShowSyncChat=_kidsWatchShowSyncChat;
 @property(retain, nonatomic) NSString *kidsAccountOpenID; // @synthesize kidsAccountOpenID=_kidsAccountOpenID;

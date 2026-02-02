@@ -12,7 +12,6 @@
     NSString *_filePath;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) unsigned long long timingFillMode; // @synthesize timingFillMode=_timingFillMode;
 @property(readonly, nonatomic) unsigned long long stickerType; // @synthesize stickerType=_stickerType;

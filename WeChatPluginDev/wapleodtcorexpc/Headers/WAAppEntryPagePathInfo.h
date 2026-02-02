@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_entryPagePath;
 + (void)PBArrayAdd_username;
 + (void)PBArrayAdd_appid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *entryPagePath; // @synthesize entryPagePath=_entryPagePath;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;

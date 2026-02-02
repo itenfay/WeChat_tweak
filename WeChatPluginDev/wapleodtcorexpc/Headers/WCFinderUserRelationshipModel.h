@@ -21,7 +21,6 @@
     NSString *_poiInteractionLabel;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *poiInteractionLabel; // @synthesize poiInteractionLabel=_poiInteractionLabel;
 @property(retain, nonatomic) UIFont *tagLabelFont; // @synthesize tagLabelFont=_tagLabelFont;
 @property(nonatomic) _Bool canShowAuthor; // @synthesize canShowAuthor=_canShowAuthor;

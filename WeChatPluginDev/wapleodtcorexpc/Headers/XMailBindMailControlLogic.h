@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSString, XMailCommitBindCgi;
 @protocol XMailBindMailControlLogicDelegate;
 
@@ -14,7 +16,6 @@
     XMailCommitBindCgi *_commitBindCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) XMailCommitBindCgi *commitBindCgi; // @synthesize commitBindCgi=_commitBindCgi;
 @property(retain, nonatomic) NSString *defaultMailAddr; // @synthesize defaultMailAddr=_defaultMailAddr;
 @property(nonatomic) __weak MMUIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

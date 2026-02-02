@@ -20,7 +20,6 @@
 + (id)defaultConfigOfFooterViewInState:(unsigned long long)arg1;
 + (id)defaultConfigOfEmptyTipsViewInState:(unsigned long long)arg1;
 + (id)defaultConfigOfHeaderViewInState:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *endBtnText; // @synthesize endBtnText=_endBtnText;
 @property(retain, nonatomic) NSString *endText; // @synthesize endText=_endText;
 @property(retain, nonatomic) NSString *tipsText; // @synthesize tipsText=_tipsText;

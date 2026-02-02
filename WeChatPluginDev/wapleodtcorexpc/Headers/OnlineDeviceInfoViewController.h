@@ -24,7 +24,6 @@
     OnlineInfo *_onlineClient;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OnlineInfo *onlineClient; // @synthesize onlineClient=_onlineClient;
 @property(nonatomic) unsigned long long supportedOrientations; // @synthesize supportedOrientations=_supportedOrientations;
 @property(nonatomic) __weak id <OnlineDeviceInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

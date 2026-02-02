@@ -48,7 +48,6 @@
 + (void)PBArrayAdd_retryCount;
 + (void)PBArrayAdd_opType;
 + (void)PBArrayAdd_cmdid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int nextRetryTime; // @synthesize nextRetryTime=_nextRetryTime;
 @property(nonatomic) unsigned int finalFailKey; // @synthesize finalFailKey=_finalFailKey;
 @property(nonatomic) unsigned int failKey; // @synthesize failKey=_failKey;

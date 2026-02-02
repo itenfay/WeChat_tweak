@@ -15,7 +15,6 @@
     NSArray *_subSearchResultInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subSearchResultInfos; // @synthesize subSearchResultInfos=_subSearchResultInfos;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool isFromDesc; // @synthesize isFromDesc=_isFromDesc;

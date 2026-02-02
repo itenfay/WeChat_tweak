@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCCanvasDynamicDataLoader;
 
@@ -14,7 +15,6 @@
     NSMutableDictionary *_preloadResFlagDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *preloadResFlagDic; // @synthesize preloadResFlagDic=_preloadResFlagDic;
 @property(retain, nonatomic) NSMutableDictionary *loadCompleteHandlerDic; // @synthesize loadCompleteHandlerDic=_loadCompleteHandlerDic;
 @property(retain, nonatomic) WCCanvasDynamicDataLoader *dynamicDataLoader; // @synthesize dynamicDataLoader=_dynamicDataLoader;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

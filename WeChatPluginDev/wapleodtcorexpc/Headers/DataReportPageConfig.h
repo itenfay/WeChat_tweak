@@ -12,7 +12,6 @@
     NSMutableDictionary *m_needReplenishPages;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isFinderOrNearbyTabSubPages:(id)arg1;
 - (_Bool)isNeedReplenishPage:(id)arg1 withCurPage:(id)arg2;
 - (_Bool)isFilterPage:(id)arg1;

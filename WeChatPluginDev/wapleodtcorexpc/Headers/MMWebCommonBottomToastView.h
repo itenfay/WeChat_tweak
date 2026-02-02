@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton, UIImageView, UILabel;
 
@@ -24,7 +25,6 @@
 + (void)showToastWithId:(id)arg1 title:(id)arg2 iconImage:(id)arg3 iconData:(id)arg4 subtitle:(id)arg5 needArrow:(_Bool)arg6 clickable:(_Bool)arg7 extraBottomMargin:(double)arg8 inSuperView:(id)arg9 reportBindBlock:(CDUnknownBlockType)arg10 clickBlock:(CDUnknownBlockType)arg11 hideBlock:(CDUnknownBlockType)arg12;
 + (void)showToastWithId:(id)arg1 title:(id)arg2 iconImage:(id)arg3 iconData:(id)arg4 subtitle:(id)arg5 needArrow:(_Bool)arg6 clickable:(_Bool)arg7 extraBottomMargin:(double)arg8 inSuperView:(id)arg9 clickBlock:(CDUnknownBlockType)arg10 hideBlock:(CDUnknownBlockType)arg11;
 + (void)showToastWithId:(id)arg1 title:(id)arg2 iconData:(id)arg3 subtitle:(id)arg4 needArrow:(_Bool)arg5 clickable:(_Bool)arg6 inSuperView:(id)arg7 clickBlock:(CDUnknownBlockType)arg8;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hideBlock; // @synthesize hideBlock=_hideBlock;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
 @property(nonatomic) double extraBottomMargin; // @synthesize extraBottomMargin=_extraBottomMargin;
@@ -49,4 +49,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

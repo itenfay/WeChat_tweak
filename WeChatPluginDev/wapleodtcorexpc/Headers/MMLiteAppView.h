@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class LiteAppStore, MMLiteAppViewController;
 
@@ -19,7 +20,6 @@
     MMLiteAppViewController *_vc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRealAppear; // @synthesize isRealAppear=_isRealAppear;
 @property(nonatomic) _Bool disableLayoutSubview; // @synthesize disableLayoutSubview=_disableLayoutSubview;
 @property(retain, nonatomic) MMLiteAppViewController *vc; // @synthesize vc=_vc;
@@ -46,4 +46,3 @@
 - (id)init;
 
 @end
-

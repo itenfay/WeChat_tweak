@@ -15,7 +15,6 @@
 }
 
 + (double)heightForShakeMsgItem:(id)arg1 withCellSize:(struct CGSize)arg2;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)initCellView;
 - (void)showEdit:(_Bool)arg1;

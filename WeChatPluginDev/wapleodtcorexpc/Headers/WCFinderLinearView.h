@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderLinearView : UIView
 {
@@ -21,7 +22,6 @@
 + (id)horizontalLayoutView;
 + (id)verticalLayoutView;
 + (id)linearViewBuilder:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *rootYogaView; // @synthesize rootYogaView=_rootYogaView;
 @property(nonatomic) __weak WCFinderLinearView *parentLinearView; // @synthesize parentLinearView=_parentLinearView;
 @property(nonatomic) __weak WCFinderLinearView *rootLinearView; // @synthesize rootLinearView=_rootLinearView;
@@ -60,4 +60,3 @@
 - (void)addSubHorizontalLayout:(CDUnknownBlockType)arg1;
 
 @end
-

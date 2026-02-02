@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMContext, MMTimer, NSMutableArray, NSMutableDictionary, NSString, WANativeViewPlugin, WASkylineRuntimeInfo;
 @protocol WASkylineRuntimeDelegate;
@@ -25,7 +26,6 @@
 
 + (void)onSkylineCppLog:(int)arg1 file:(const char *)arg2 line:(int)arg3 str:(const char *)arg4 strLen:(int)arg5;
 + (id)getVersionString;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingRouteBlock; // @synthesize pendingRouteBlock=_pendingRouteBlock;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) MMContext *userContext; // @synthesize userContext=_userContext;
@@ -93,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

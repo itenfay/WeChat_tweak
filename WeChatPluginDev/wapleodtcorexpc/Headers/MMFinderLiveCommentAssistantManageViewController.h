@@ -14,7 +14,6 @@
 }
 
 + (void)presentCommentAssitantManageVCFromVC:(id)arg1 taskId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLiveBlurButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) MMFinderLiveCommentAssitantManageViewModel *manageViewModel; // @synthesize manageViewModel=_manageViewModel;
 @property(retain, nonatomic) MMFinderLiveCommentAssitantManageView *manageView; // @synthesize manageView=_manageView;

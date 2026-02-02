@@ -13,7 +13,6 @@
     WCFinderShowcasePagingView *_owner;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderShowcasePagingView *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longGesture; // @synthesize longGesture=_longGesture;
 - (void)onTap;

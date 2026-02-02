@@ -19,7 +19,6 @@
     UIButton *_confirmButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) MMUITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) UIView *bottomBarContainerView; // @synthesize bottomBarContainerView=_bottomBarContainerView;

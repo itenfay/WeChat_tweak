@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditImageDeleteBarView, EditImageWidgetTool, MMTimer, NSMutableArray, NSString;
 @protocol EditImageAnimatedOperationDelegate><EmoticonEmptyEditViewGestureDelegate;
@@ -22,7 +23,6 @@
     id <EditImageAnimatedOperationDelegate><EmoticonEmptyEditViewGestureDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EditImageAnimatedOperationDelegate><EmoticonEmptyEditViewGestureDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EditImageDeleteBarView *_deleteBar; // @synthesize _deleteBar;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

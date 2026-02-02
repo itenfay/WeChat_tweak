@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MentionListLastReadInfo, NSData, NSMutableArray, NSMutableSet, ThankRedPackageInfo, WCFinderContact, WCFinderListLoadingStateModel;
 @protocol WCFinderNotifyCenterUnitVMDelegate;
@@ -25,7 +26,6 @@
     double _cacheContainerWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowIgnoreTips; // @synthesize shouldShowIgnoreTips=_shouldShowIgnoreTips;
 @property(nonatomic) double cacheContainerWidth; // @synthesize cacheContainerWidth=_cacheContainerWidth;
 @property(retain, nonatomic) MentionListLastReadInfo *lastReadInfo; // @synthesize lastReadInfo=_lastReadInfo;
@@ -62,4 +62,3 @@
 - (id)initWithContact:(id)arg1 tabType:(unsigned long long)arg2;
 
 @end
-

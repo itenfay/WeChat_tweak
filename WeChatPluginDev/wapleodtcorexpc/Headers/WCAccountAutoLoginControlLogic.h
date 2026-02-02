@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CountDownTipViewController, MMUIWindow, NSString, WCAccountControlData, WCAccountGraphicVerifyControlLogic, WCAccountManualAuthControlLogic;
 @protocol WCAccountAutoLoginControlLogicDelegate;
 
@@ -26,7 +28,6 @@
     _Bool _isDisasterAuth;
 }
 
-- (void).cxx_destruct;
 @property _Bool isDisasterAuth; // @synthesize isDisasterAuth=_isDisasterAuth;
 - (_Bool)onManualAuthControlLogicError:(id)arg1;
 - (void)onManualAuthControlLogicStop:(unsigned long long)arg1 response:(id)arg2;
@@ -70,4 +71,3 @@
 @property(readonly) Class superclass;
 
 @end
-

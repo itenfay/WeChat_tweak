@@ -17,7 +17,6 @@
     NSRecursiveLock *_glLock;
 }
 
-- (void).cxx_destruct;
 - (void)restoreContext;
 - (void)makeArContext;
 - (id)glContext;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonStoreReportInfo, NSString, PersonalDesigner;
 
 @interface MMEmoticonDesignerProfilePageContext
@@ -20,7 +22,6 @@
     EmoticonStoreReportInfo *_reportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonStoreReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(copy, nonatomic) CDUnknownBlockType viewDetailBlock; // @synthesize viewDetailBlock=_viewDetailBlock;
 @property(copy, nonatomic) CDUnknownBlockType addNewPackageBlock; // @synthesize addNewPackageBlock=_addNewPackageBlock;
@@ -37,4 +38,3 @@
 - (_Bool)isValid;
 
 @end
-

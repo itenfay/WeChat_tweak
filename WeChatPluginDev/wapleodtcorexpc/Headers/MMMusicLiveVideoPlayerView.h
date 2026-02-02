@@ -23,7 +23,6 @@
     WCFinderFeedMediaWrap *_mediaWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedMediaWrap *mediaWrap; // @synthesize mediaWrap=_mediaWrap;
 @property(retain, nonatomic) WCPlayerPlayArgs *playerInfo; // @synthesize playerInfo=_playerInfo;
 @property(nonatomic) double videoPlayDuration; // @synthesize videoPlayDuration=_videoPlayDuration;

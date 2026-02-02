@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_reportExtInfo;
 + (void)PBArrayAdd_tipsUuid;
 + (void)PBArrayAdd_jumpPriority;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;
 @property(nonatomic) unsigned int jumpPriority; // @synthesize jumpPriority=_jumpPriority;
 @property(copy, nonatomic) NSString *tipsUuid; // @synthesize tipsUuid=_tipsUuid;

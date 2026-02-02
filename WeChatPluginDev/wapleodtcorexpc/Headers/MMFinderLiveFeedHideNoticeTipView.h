@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, MMUIImageView, MMUILabel, UIScrollView, UIView;
 
 @interface MMFinderLiveFeedHideNoticeTipView
@@ -17,7 +19,6 @@
     long long _previousOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(retain, nonatomic) MMUIImageView *tipImageView; // @synthesize tipImageView=_tipImageView;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -38,4 +39,3 @@
 - (void)pageSheetDidRotation;
 
 @end
-

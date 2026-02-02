@@ -18,7 +18,6 @@
     CDStruct_1b6d18a9 _playheadTime;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *userInfos; // @synthesize userInfos=_userInfos;
 @property(readonly, nonatomic) NSString *valueFormatter; // @synthesize valueFormatter=_valueFormatter;
 @property(readonly, nonatomic) NSString *redoValue; // @synthesize redoValue=_redoValue;

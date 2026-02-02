@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveHeaderView, MMFinderLiveTask, MMLiveMoreLivesIndicatorBar, MMLiveTask, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIView, WCLiveScrollActionSheet;
 
 @interface MMLiveStopStateDisplayViewController
@@ -25,7 +27,6 @@
     NSString *_subTipContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subTipContent; // @synthesize subTipContent=_subTipContent;
 @property(retain, nonatomic) WCLiveScrollActionSheet *settingScrollActionSheet; // @synthesize settingScrollActionSheet=_settingScrollActionSheet;
 @property(retain, nonatomic) MMFinderLiveHeaderView *liveHeaderView; // @synthesize liveHeaderView=_liveHeaderView;
@@ -94,4 +95,3 @@
 @property(readonly) Class superclass;
 
 @end
-

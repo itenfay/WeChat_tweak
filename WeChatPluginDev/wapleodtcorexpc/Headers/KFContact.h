@@ -42,7 +42,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool headImgUpdateFlag; // @synthesize headImgUpdateFlag=_headImgUpdateFlag;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;

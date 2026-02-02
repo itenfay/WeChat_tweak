@@ -16,7 +16,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_arrJumpToAppInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrJumpToAppInfo; // @synthesize arrJumpToAppInfo=_arrJumpToAppInfo;
 - (id)archivedWCTValue;
 @property(readonly, copy) NSString *description;

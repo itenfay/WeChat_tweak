@@ -12,7 +12,6 @@
 }
 
 + (id)iLinkPath;
-- (void).cxx_destruct;
 - (void)onServiceTerminate;
 - (void)onServiceInit;
 - (void)makeSureLogReady;

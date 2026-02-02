@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_totalProgress;
 + (void)PBArrayAdd_dicCache;
 + (void)PBArrayAdd_cacheID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) _Bool isSharedCache; // @synthesize isSharedCache=_isSharedCache;
 @property(nonatomic) unsigned int totalProgress; // @synthesize totalProgress=_totalProgress;

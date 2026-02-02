@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIImage, UIImageView;
 @protocol WCFinderHeadImageViewDelegate;
@@ -31,7 +32,6 @@
 + (id)getLocalImageWithURLString:(id)arg1;
 + (_Bool)isCacheImageWithURLString:(id)arg1;
 + (_Bool)isCacheImageWithContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long targetSize; // @synthesize targetSize=_targetSize;
 @property(nonatomic) _Bool loadImageSuccessful; // @synthesize loadImageSuccessful=_loadImageSuccessful;
 @property(copy, nonatomic) NSString *rawImageURL; // @synthesize rawImageURL=_rawImageURL;
@@ -79,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

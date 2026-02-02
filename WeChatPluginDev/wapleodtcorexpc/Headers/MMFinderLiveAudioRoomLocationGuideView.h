@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUIImageView, MMUILabel, NSMutableArray, UIButton, UILabel, UIView;
 
 @interface MMFinderLiveAudioRoomLocationGuideView
@@ -22,7 +24,6 @@
     NSMutableArray *_circles;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *circles; // @synthesize circles=_circles;
 @property(retain, nonatomic) UILabel *locationLabel; // @synthesize locationLabel=_locationLabel;
 @property(retain, nonatomic) MMUIImageView *locationIconView; // @synthesize locationIconView=_locationIconView;
@@ -50,4 +51,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

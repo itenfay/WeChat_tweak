@@ -15,7 +15,6 @@
     MMFinderLiveQrCodeSessionSelectController *_sessionSelectController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveQrCodeSessionSelectController *sessionSelectController; // @synthesize sessionSelectController=_sessionSelectController;
 @property(retain, nonatomic) NSString *qrCodeUri; // @synthesize qrCodeUri=_qrCodeUri;
 @property(retain, nonatomic) UINavigationController *navVC; // @synthesize navVC=_navVC;

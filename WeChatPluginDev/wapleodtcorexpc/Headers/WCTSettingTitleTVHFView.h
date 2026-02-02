@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewHeaderFooterView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTSettingTitleHFView;
 
@@ -13,7 +14,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCTSettingTitleHFView *view; // @synthesize view=_view;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)setViewDelegate:(id)arg1;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

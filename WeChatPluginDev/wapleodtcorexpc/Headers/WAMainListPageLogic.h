@@ -22,7 +22,6 @@
     NSMutableArray *_exposedItemDatas;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool exposeUploaded; // @synthesize exposeUploaded=_exposeUploaded;
 @property(nonatomic) unsigned int initTimeStamp; // @synthesize initTimeStamp=_initTimeStamp;
 @property(retain, nonatomic) NSMutableArray *exposedItemDatas; // @synthesize exposedItemDatas=_exposedItemDatas;

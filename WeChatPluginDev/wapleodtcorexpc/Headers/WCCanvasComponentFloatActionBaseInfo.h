@@ -24,7 +24,6 @@
     WCCanvasComponentItem *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentItem *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) _Bool isFullClickable; // @synthesize isFullClickable=_isFullClickable;
 @property(nonatomic) double descColorAlpha; // @synthesize descColorAlpha=_descColorAlpha;

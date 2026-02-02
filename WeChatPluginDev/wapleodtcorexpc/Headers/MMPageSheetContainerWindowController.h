@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMPageSheetProviderView, NSString;
 @protocol MMPageSheetContainerDelegate;
 
@@ -14,7 +16,6 @@
     id <MMPageSheetContainerDelegate> _containerDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool pageSheetDismissed; // @synthesize pageSheetDismissed=_pageSheetDismissed;
 @property(nonatomic) __weak id <MMPageSheetContainerDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
 @property(nonatomic) unsigned long long supportOrientation; // @synthesize supportOrientation=_supportOrientation;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -18,7 +18,6 @@
 
 + (id)convertContact:(id)arg1;
 + (_Bool)isMyFriend:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderBatchModContactTypeTask *batchContactTask; // @synthesize batchContactTask=_batchContactTask;
 @property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
 @property(nonatomic) __weak id <WCFinderAuthorityListViewModelSearchDelegate> searchDelegate; // @synthesize searchDelegate;

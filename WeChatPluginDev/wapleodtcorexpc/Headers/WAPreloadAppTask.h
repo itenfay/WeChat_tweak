@@ -14,7 +14,6 @@
     WAJSCoreService *_appService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAJSCoreService *appService; // @synthesize appService=_appService;
 @property(retain, nonatomic) WAWebViewController *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) WAApptaskPublicResLogic *publicResLogic; // @synthesize publicResLogic=_publicResLogic;

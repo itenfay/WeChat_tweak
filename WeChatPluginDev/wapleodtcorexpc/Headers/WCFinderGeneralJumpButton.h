@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderGeneralExtConfigModel;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hookWebVCBlock; // @synthesize hookWebVCBlock=_hookWebVCBlock;
 @property(copy, nonatomic) CDUnknownBlockType jumpNextPostAction; // @synthesize jumpNextPostAction=_jumpNextPostAction;
 @property(nonatomic) int jumpType; // @synthesize jumpType=_jumpType;
@@ -28,4 +28,3 @@
 - (void)jumpAction;
 
 @end
-

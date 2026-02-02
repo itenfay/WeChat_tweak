@@ -17,7 +17,6 @@
     NSString *_groupUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupUrl; // @synthesize groupUrl=_groupUrl;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) NSString *sourceUrl; // @synthesize sourceUrl=_sourceUrl;

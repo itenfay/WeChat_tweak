@@ -12,7 +12,6 @@
     NSString *_loginUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int extDevice; // @synthesize extDevice=_extDevice;
 @property(retain, nonatomic) NSString *loginUrl; // @synthesize loginUrl=_loginUrl;
 @property(nonatomic) unsigned int uiFromScene; // @synthesize uiFromScene=_uiFromScene;

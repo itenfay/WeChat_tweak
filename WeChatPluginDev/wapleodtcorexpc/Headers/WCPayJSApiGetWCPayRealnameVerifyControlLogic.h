@@ -11,7 +11,6 @@
     long long m_enWCPayCheckAuthorityScene;
 }
 
-- (void).cxx_destruct;
 - (void)OnRealnameVerifySuccess:(id)arg1;
 - (void)OnRealnameVerifyCancel:(id)arg1;
 - (void)OnCheckWCPayJsApiRequest:(id)arg1 Error:(id)arg2;

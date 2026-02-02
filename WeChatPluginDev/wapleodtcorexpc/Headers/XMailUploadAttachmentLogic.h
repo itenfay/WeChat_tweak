@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class OrderedDictionary, XMailUploadAttachmentTask;
 
@@ -15,7 +16,6 @@
     OrderedDictionary *_taskList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAlertErrMsg; // @synthesize shouldAlertErrMsg=_shouldAlertErrMsg;
 @property(retain, nonatomic) OrderedDictionary *taskList; // @synthesize taskList=_taskList;
 @property(retain, nonatomic) XMailUploadAttachmentTask *curTask; // @synthesize curTask=_curTask;
@@ -27,4 +27,3 @@
 - (_Bool)addUploadAttachmentTaskWithFileName:(id)arg1 filePath:(id)arg2;
 
 @end
-

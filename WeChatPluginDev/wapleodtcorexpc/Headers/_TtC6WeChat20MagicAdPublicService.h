@@ -15,7 +15,6 @@
     MISSING_TYPE *bizName;
 }
 
-- (void).cxx_destruct;
 - (void)onJSException:(id)arg1 msg:(id)arg2 extra:(id)arg3;
 - (void)onDestroy:(int)arg1;
 - (void)onMainScriptInjected:(id)arg1;

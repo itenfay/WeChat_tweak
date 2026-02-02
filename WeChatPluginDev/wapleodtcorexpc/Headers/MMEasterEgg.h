@@ -24,7 +24,6 @@
     id <MMEasterEggActivityInfo> _activityInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MMEasterEggActivityInfo> activityInfo; // @synthesize activityInfo=_activityInfo;
 @property(retain, nonatomic) MMEasterEggTopAnimation *eggTopAnimation; // @synthesize eggTopAnimation=_eggTopAnimation;
 @property(retain, nonatomic) NSArray *eggAnimations; // @synthesize eggAnimations=_eggAnimations;

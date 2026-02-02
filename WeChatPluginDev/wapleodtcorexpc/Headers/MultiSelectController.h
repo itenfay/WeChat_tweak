@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, ForwardMessageLogicController, MMPageSheetBaseView, MsgDataSaveLogic, NSMutableArray, NSString;
 @protocol MultiSelectContollerDelegate;
 
@@ -34,7 +36,6 @@
 
 + (_Bool)didDownloadOK:(id)arg1;
 + (unsigned int)getDownloadThumbStatus:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool loadRecordImgFail; // @synthesize loadRecordImgFail=_loadRecordImgFail;
 @property(copy, nonatomic) CDUnknownBlockType recordTipCompleteBlock; // @synthesize recordTipCompleteBlock=_recordTipCompleteBlock;
 @property(retain, nonatomic) MMPageSheetBaseView *recordTipView; // @synthesize recordTipView=_recordTipView;
@@ -108,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

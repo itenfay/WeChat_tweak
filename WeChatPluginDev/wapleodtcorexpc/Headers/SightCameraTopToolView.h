@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, MMUIButton, RecommendedMusicInfo, UIButton, WCFinderEditImageMusicView;
 
@@ -25,7 +26,6 @@
 
 + (long long)torchModeWithToolFlashMode:(long long)arg1;
 + (long long)flashModeWithToolFlashMode:(long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType closeButtonBlock; // @synthesize closeButtonBlock=_closeButtonBlock;
 @property(copy, nonatomic) CDUnknownBlockType switchCameraBlock; // @synthesize switchCameraBlock=_switchCameraBlock;
 @property(nonatomic) _Bool canRelayoutSubviews; // @synthesize canRelayoutSubviews=_canRelayoutSubviews;
@@ -52,4 +52,3 @@
 @property(nonatomic) long long orientation;
 
 @end
-

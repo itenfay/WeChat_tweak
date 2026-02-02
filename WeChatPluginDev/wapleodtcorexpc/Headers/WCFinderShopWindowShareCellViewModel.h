@@ -14,7 +14,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AnyPromise *loadDataIfNeverPromise; // @synthesize loadDataIfNeverPromise=_loadDataIfNeverPromise;
 @property(retain, nonatomic) WCFinderLiveAudienceComodityLogReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) WCFinderLiveShopWindowShareItem *loadedItem; // @synthesize loadedItem=_loadedItem;

@@ -20,7 +20,6 @@
     id <MTLCommandQueue> _commandQueue;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRender; // @synthesize needRender=_needRender;
 @property(nonatomic) _Bool isRendering; // @synthesize isRendering=_isRendering;
 @property(retain, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;

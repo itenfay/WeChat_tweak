@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class LVReddotInfo, NSData;
 
 @interface WCFinderGetLongVideoCGI
@@ -16,7 +18,6 @@
 }
 
 + (id)prefetchCacheHashKey:(int)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
@@ -38,4 +39,3 @@
 - (id)initWithWithPullType:(unsigned long long)arg1 tabType:(int)arg2 reddotInfo:(id)arg3 lastBuffer:(id)arg4 successful:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
 
 @end
-

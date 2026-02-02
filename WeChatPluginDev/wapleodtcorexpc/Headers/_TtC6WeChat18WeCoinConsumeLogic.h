@@ -12,7 +12,6 @@
     MISSING_TYPE *continuation;
 }
 
-- (void).cxx_destruct;
 - (void)consumeDidCancel:(id)arg1;
 - (void)consumeDidFail:(id)arg1 error:(id)arg2;
 - (void)consumeDidSuccess:(id)arg1 result:(id)arg2;

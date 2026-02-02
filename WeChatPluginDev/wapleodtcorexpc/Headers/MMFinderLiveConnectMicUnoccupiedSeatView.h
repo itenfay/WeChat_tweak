@@ -19,7 +19,6 @@
     unsigned long long _micLayoutMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long micLayoutMode; // @synthesize micLayoutMode=_micLayoutMode;
 @property(nonatomic) unsigned long long pkState; // @synthesize pkState=_pkState;
 @property(retain, nonatomic) MMFinderLiveConnectMicSeatNameLabel *seatNameLabel; // @synthesize seatNameLabel=_seatNameLabel;

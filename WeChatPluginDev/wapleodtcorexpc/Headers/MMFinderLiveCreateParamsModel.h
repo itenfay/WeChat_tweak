@@ -49,7 +49,6 @@
     NSString *_descriptionExtend;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *descriptionExtend; // @synthesize descriptionExtend=_descriptionExtend;
 @property(nonatomic) unsigned int gameLiveStreamType; // @synthesize gameLiveStreamType=_gameLiveStreamType;
 @property(nonatomic) unsigned int notificationmsgtriggertype; // @synthesize notificationmsgtriggertype=_notificationmsgtriggertype;

@@ -17,7 +17,6 @@
     NSString *_reddotShowContent;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reddotShowContent; // @synthesize reddotShowContent=_reddotShowContent;
 @property(nonatomic) _Bool useOriginalNode; // @synthesize useOriginalNode=_useOriginalNode;
 @property(nonatomic) unsigned long long remakeFlag; // @synthesize remakeFlag=_remakeFlag;

@@ -14,7 +14,6 @@
 + (id)generateStaticIconImage:(id)arg1 iconColor:(id)arg2;
 + (id)whiteColorWithAlphaComponent;
 + (id)toolbarItemButton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *itemTitleLabel; // @synthesize itemTitleLabel=_itemTitleLabel;
 @property(retain, nonatomic) UIImageView *itemImageView; // @synthesize itemImageView=_itemImageView;
 - (void)setItemImageName:(id)arg1 iconColor:(id)arg2;

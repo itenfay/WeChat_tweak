@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_createTime;
 + (void)PBArrayAdd_chatUserName;
 + (void)PBArrayAdd_serverId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSString *chatUserName; // @synthesize chatUserName=_chatUserName;
 @property(nonatomic) long long serverId; // @synthesize serverId=_serverId;

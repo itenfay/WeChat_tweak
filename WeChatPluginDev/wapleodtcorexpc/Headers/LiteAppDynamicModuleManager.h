@@ -17,7 +17,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *excutingApi; // @synthesize excutingApi=_excutingApi;
 @property(retain, nonatomic) NSMutableDictionary *appModule; // @synthesize appModule=_appModule;
 @property(retain, nonatomic) NSMutableDictionary *nativeModuleInstances; // @synthesize nativeModuleInstances=_nativeModuleInstances;

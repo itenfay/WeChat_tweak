@@ -17,7 +17,6 @@
     id <MMHorizontalTableViewDataSource> dataSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMHorizontalTableViewDataSource> dataSource; // @synthesize dataSource;
 @property(nonatomic) __weak id <MMHorizontalTableViewDelegate> viewDelegate; // @synthesize viewDelegate;
 - (void)scrollViewDidScroll:(id)arg1;

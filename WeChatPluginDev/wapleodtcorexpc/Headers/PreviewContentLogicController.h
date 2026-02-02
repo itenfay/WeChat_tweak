@@ -30,7 +30,6 @@
     NSString *_curDownloadCoverId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *curDownloadCoverId; // @synthesize curDownloadCoverId=_curDownloadCoverId;
 @property(nonatomic) _Bool isLoadingOk; // @synthesize isLoadingOk=_isLoadingOk;
 @property(retain, nonatomic) NSRecursiveLock *m_lock; // @synthesize m_lock=_m_lock;

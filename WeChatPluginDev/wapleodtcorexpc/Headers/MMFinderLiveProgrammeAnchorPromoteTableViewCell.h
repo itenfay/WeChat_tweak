@@ -16,7 +16,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveProgrammeAnchorPromoteInfo *programmaPromoteInfo; // @synthesize programmaPromoteInfo=_programmaPromoteInfo;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UIView *splitView; // @synthesize splitView=_splitView;

@@ -17,7 +17,6 @@
     UILabel *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authIconView; // @synthesize authIconView=_authIconView;
 @property(retain, nonatomic) UILabel *authViewLabel; // @synthesize authViewLabel=_authViewLabel;

@@ -22,7 +22,6 @@
     unsigned int m_uiRedCodIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiRedCodIndex; // @synthesize m_uiRedCodIndex;
 @property(retain, nonatomic) NSString *m_nsBankMasterUrl; // @synthesize m_nsBankMasterUrl;
 @property(retain, nonatomic) NSString *m_nsBankBgUrl; // @synthesize m_nsBankBgUrl;

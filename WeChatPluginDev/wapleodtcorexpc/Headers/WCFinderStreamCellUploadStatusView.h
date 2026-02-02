@@ -15,7 +15,6 @@
     UIView *_progressView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hadEncoding; // @synthesize hadEncoding=_hadEncoding;
 @property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) CAShapeLayer *ovalShapeLayer; // @synthesize ovalShapeLayer=_ovalShapeLayer;

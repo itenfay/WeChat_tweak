@@ -45,7 +45,6 @@
 + (void)PBArrayAdd_scene;
 + (void)PBArrayAdd_shortTimestamp;
 + (void)PBArrayAdd_timestamp;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long shortTimestamp; // @synthesize shortTimestamp=_shortTimestamp;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *redDotIdentifier; // @synthesize redDotIdentifier=_redDotIdentifier;

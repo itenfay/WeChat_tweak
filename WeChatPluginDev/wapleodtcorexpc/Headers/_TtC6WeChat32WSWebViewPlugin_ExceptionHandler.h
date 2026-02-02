@@ -16,7 +16,6 @@
     MISSING_TYPE *lastProcessFlow;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)handleFailLoadWithCode:(long long)arg1 message:(id)arg2;
 - (void)handleJSEvaluateErrorWithCode:(long long)arg1 message:(id)arg2;

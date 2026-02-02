@@ -20,7 +20,6 @@
     ForwardMessageLogicController *_forwardController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardController; // @synthesize forwardController=_forwardController;
 @property(retain, nonatomic) WCFinderProcessTimeRecorder *creatorCenterProcessRecorder; // @synthesize creatorCenterProcessRecorder=_creatorCenterProcessRecorder;
 @property(nonatomic) long long fetchPrepareState; // @synthesize fetchPrepareState=_fetchPrepareState;

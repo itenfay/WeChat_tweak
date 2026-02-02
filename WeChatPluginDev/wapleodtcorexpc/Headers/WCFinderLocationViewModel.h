@@ -31,7 +31,6 @@
 }
 
 + (id)convertLocationToLbsConfig:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *materialCity; // @synthesize materialCity=_materialCity;
 @property(copy, nonatomic) NSString *city; // @synthesize city=_city;
 @property(nonatomic) long long autoQueryInterval; // @synthesize autoQueryInterval=_autoQueryInterval;

@@ -10,7 +10,6 @@
     WCCardAddHelper *_addHelper;
 }
 
-- (void).cxx_destruct;
 - (void)onAddCancel;
 - (void)onAddFail:(id)arg1;
 - (void)onAddSuccess:(id)arg1;

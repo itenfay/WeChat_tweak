@@ -10,7 +10,6 @@
     WCFinderContact *_anchorContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;
 - (void)updateAudioRoomScene:(unsigned long long)arg1;
 - (void)updateMicUserInfo:(id)arg1 locationName:(id)arg2 showLocation:(_Bool)arg3;

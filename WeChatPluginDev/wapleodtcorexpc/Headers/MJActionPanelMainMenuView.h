@@ -19,7 +19,6 @@
     NSArray *_menuItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *sectionInsets; // @synthesize sectionInsets=_sectionInsets;

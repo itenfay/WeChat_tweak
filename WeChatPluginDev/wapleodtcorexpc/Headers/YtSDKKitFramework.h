@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSLock, NSMutableArray, NSString, UIImage, UIView;
 
@@ -23,7 +24,6 @@
 + (void)YTRequestWithUrl:(id)arg1 withContent:(id)arg2 withHeader:(id)arg3 withResponseBlock:(CDUnknownBlockType)arg4;
 + (void)clearInstance;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) int networkTimeoutMs; // @synthesize networkTimeoutMs=_networkTimeoutMs;
 @property(retain, nonatomic) NSString *modelRootPath; // @synthesize modelRootPath=_modelRootPath;
 @property(nonatomic) struct CGRect detectRect; // @synthesize detectRect=_detectRect;
@@ -48,4 +48,3 @@
 - (id)getVersion;
 
 @end
-

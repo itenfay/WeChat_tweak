@@ -10,7 +10,6 @@
     WCMallControlData *m_data;
 }
 
-- (void).cxx_destruct;
 - (void)onErrorAlertViewStopLogic:(id)arg1;
 - (_Bool)onError:(id)arg1;
 - (void)stopLogic;

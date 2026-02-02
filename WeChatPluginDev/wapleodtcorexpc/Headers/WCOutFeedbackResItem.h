@@ -13,7 +13,6 @@
     NSString *_resContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *resContent; // @synthesize resContent=_resContent;
 @property(nonatomic) int resID; // @synthesize resID=_resID;
 

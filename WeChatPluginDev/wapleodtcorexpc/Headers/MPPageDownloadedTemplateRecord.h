@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_url;
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_version;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int downloadSize; // @synthesize downloadSize=_downloadSize;
 @property(nonatomic) unsigned long long endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;

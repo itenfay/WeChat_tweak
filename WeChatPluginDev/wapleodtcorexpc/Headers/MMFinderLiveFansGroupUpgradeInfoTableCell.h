@@ -14,7 +14,6 @@
     MMFinderLiveFansGroupUpgradeInfo *_upgradeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupUpgradeInfo *upgradeInfo; // @synthesize upgradeInfo=_upgradeInfo;
 @property(retain, nonatomic) MMUILabel *upgradeStatusLabel; // @synthesize upgradeStatusLabel=_upgradeStatusLabel;
 @property(retain, nonatomic) MMUILabel *intimacyIncCountLabel; // @synthesize intimacyIncCountLabel=_intimacyIncCountLabel;

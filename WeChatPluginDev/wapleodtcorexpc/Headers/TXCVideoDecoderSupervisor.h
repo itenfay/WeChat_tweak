@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSNumber, NSString, TXCDispatchQueue, TXCDroppableDispatcher;
 @protocol TXIVideoDecodeSupervisorDelegate;
 
@@ -22,7 +24,6 @@
 
 + (_Bool)supportsSoftwareCodec;
 + (_Bool)supportsHevc;
-- (void).cxx_destruct;
 @property _Bool isSoftwareHevcFailed; // @synthesize isSoftwareHevcFailed=_isSoftwareHevcFailed;
 @property _Bool isHardwareHevcFailed; // @synthesize isHardwareHevcFailed=_isHardwareHevcFailed;
 @property(readonly, nonatomic) TXCDroppableDispatcher *outputDispatcher; // @synthesize outputDispatcher=_outputDispatcher;
@@ -59,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

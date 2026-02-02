@@ -22,7 +22,6 @@
     UIView *_keyboardMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *keyboardMask; // @synthesize keyboardMask=_keyboardMask;
 @property(nonatomic) long long pwdViewStyle; // @synthesize pwdViewStyle=_pwdViewStyle;
 @property(retain) UIColor *lineColor; // @synthesize lineColor=_lineColor;

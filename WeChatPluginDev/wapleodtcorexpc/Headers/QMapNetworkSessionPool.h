@@ -18,7 +18,6 @@
 }
 
 + (id)sessionPoolWithConfiguration:(id)arg1 sessionCount:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dead; // @synthesize dead=_dead;
 @property(nonatomic) unsigned long long sessionCount; // @synthesize sessionCount=_sessionCount;
 @property(copy, nonatomic) NSURLSessionConfiguration *configuration; // @synthesize configuration=_configuration;

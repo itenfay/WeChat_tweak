@@ -14,7 +14,6 @@
     NSMutableDictionary *m_userIndex;
 }
 
-- (void).cxx_destruct;
 - (void)reloadContacts;
 - (id)getSettingPath;
 - (void)addObjecttoLogs:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, NSString, WANativeViewPlugin;
 @protocol FlutterPluginRegistrar;
@@ -16,7 +17,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterMethodChannel *channel; // @synthesize channel=_channel;
 @property(nonatomic) __weak WANativeViewPlugin *nativeViewPlugin; // @synthesize nativeViewPlugin=_nativeViewPlugin;
 @property(nonatomic) __weak NSObject<FlutterPluginRegistrar> *registrar; // @synthesize registrar=_registrar;
@@ -35,4 +35,3 @@
 @property(readonly) Class superclass;
 
 @end
-

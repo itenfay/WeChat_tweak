@@ -11,7 +11,6 @@
     NSMutableArray *_uploadingIssueArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadingIssueArray; // @synthesize uploadingIssueArray=_uploadingIssueArray;
 @property(retain, nonatomic) NSMutableArray *uploadedIssueArray; // @synthesize uploadedIssueArray=_uploadedIssueArray;
 - (void)handleReportLagIssue:(id)arg1 success:(_Bool)arg2;

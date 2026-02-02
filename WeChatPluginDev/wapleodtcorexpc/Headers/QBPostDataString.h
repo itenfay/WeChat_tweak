@@ -26,7 +26,6 @@
 @property(readonly) NSString *dataString; // @synthesize dataString=_dataString;
 @property long long randomString; // @synthesize randomString=_randomString;
 @property _Bool dataReady; // @synthesize dataReady=_dataReady;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)createInputStreamForPost;

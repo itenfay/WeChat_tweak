@@ -16,7 +16,6 @@
     OMJDashLineStyle *_dashLineStyle;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) OMJDashLineStyle *dashLineStyle; // @synthesize dashLineStyle=_dashLineStyle;
 @property(nonatomic) double shadowWidth; // @synthesize shadowWidth=_shadowWidth;
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;

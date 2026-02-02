@@ -17,7 +17,6 @@
     CContact *_chatRoomContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *chatRoomContact; // @synthesize chatRoomContact=_chatRoomContact;
 @property(retain, nonatomic) MMUITextField *m_tfRemark; // @synthesize m_tfRemark;
 - (id)navigationBarBackgroundColor;

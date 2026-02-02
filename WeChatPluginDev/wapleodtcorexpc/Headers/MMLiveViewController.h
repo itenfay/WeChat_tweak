@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveCompleteViewController, MMLiveConnectMicLogic, MMLiveLogic, MMLiveOperationView, MMLivePivotViewController, MMLiveStarterViewController, MMLiveTask, MMLiveTaskId, MMLiveView, NSMutableDictionary, NSString, UIImageView, UINavigationController, UIView;
 @protocol MMLiveContainerDisplayViewProtocol, MMLiveViewControllerDelegate;
 
@@ -43,7 +45,6 @@
     unsigned long long _currentPauseViewTypes;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long currentPauseViewTypes; // @synthesize currentPauseViewTypes=_currentPauseViewTypes;
 @property(nonatomic) _Bool isLiveAppearing; // @synthesize isLiveAppearing=_isLiveAppearing;
 @property(nonatomic) _Bool liveDidStarted; // @synthesize liveDidStarted=_liveDidStarted;
@@ -290,4 +291,3 @@
 @property(readonly) Class superclass;
 
 @end
-

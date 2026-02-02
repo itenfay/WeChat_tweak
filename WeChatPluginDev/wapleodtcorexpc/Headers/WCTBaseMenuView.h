@@ -11,7 +11,6 @@
     UIImageView *_arrowView;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(readonly, nonatomic) MMUIImageView *iconView; // @synthesize iconView=_iconView;
 - (void)loadUI:(id)arg1;

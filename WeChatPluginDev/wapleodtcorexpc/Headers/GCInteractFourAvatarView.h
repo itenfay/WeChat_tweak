@@ -12,7 +12,6 @@
     NSMutableArray *_imgViewArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *imgViewArray; // @synthesize imgViewArray=_imgViewArray;
 - (void)configureUrlArray:(id)arg1;
 - (void)initImgArray;

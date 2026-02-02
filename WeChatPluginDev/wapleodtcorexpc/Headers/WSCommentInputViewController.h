@@ -25,7 +25,6 @@
 }
 
 + (void)showInputWithPlaceHolder:(id)arg1 inputText:(id)arg2 initShowKeyboard:(_Bool)arg3 maxInputLength:(long long)arg4 orientation:(long long)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long orientationMask; // @synthesize orientationMask=_orientationMask;
 @property(retain, nonatomic) NSString *oriInputText; // @synthesize oriInputText=_oriInputText;
 @property(nonatomic) long long maxInputLength; // @synthesize maxInputLength=_maxInputLength;

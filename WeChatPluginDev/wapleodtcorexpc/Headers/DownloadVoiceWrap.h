@@ -42,7 +42,6 @@
 + (void)PBArrayAdd_m_uiVoiceLen;
 + (void)PBArrayAdd_m_uiCreateTime;
 + (void)PBArrayAdd_m_uiLocalID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bReportCost60s; // @synthesize bReportCost60s=_bReportCost60s;
 @property(nonatomic) unsigned int startDownloadTime; // @synthesize startDownloadTime=_startDownloadTime;
 @property(nonatomic) unsigned int m_uiCancelFlag; // @synthesize m_uiCancelFlag=_m_uiCancelFlag;

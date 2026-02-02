@@ -15,7 +15,6 @@
     UIViewController *_animatedTransitionRespondViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useInPresentAnimation; // @synthesize useInPresentAnimation=_useInPresentAnimation;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController=_animatedTransitionRespondViewController;
 @property(nonatomic) __weak id <MinimizationNewTransitionDelegate> delegate; // @synthesize delegate=_delegate;

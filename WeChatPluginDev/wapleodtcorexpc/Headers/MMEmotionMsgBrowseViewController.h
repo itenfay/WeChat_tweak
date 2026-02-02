@@ -10,7 +10,6 @@
     CMessageWrap *_wrapMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *wrapMsg; // @synthesize wrapMsg=_wrapMsg;
 - (void)OnMsgRevoked:(id)arg1 n64MsgId:(long long)arg2;
 - (void)OnEmoticonDownload:(unsigned int)arg1 withMsgWrap:(id)arg2;

@@ -26,7 +26,6 @@
     id <ContactSettingViewControllerDelegate> _viewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needDeleteSession; // @synthesize needDeleteSession=_needDeleteSession;
 @property(nonatomic) __weak id <ContactSettingViewControllerDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 @property(retain, nonatomic) ContactRelatedGroupLogic *relatedGroupLogic; // @synthesize relatedGroupLogic=_relatedGroupLogic;

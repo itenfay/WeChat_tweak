@@ -13,7 +13,6 @@
     TXCDispatchQueue *_outputQueue;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TXCDispatchQueue *outputQueue; // @synthesize outputQueue=_outputQueue;
 @property(readonly, nonatomic) TXCDispatchQueue *queue; // @synthesize queue=_queue;
 - (id)capturerOfType:(unsigned long long)arg1 identifier:(id)arg2;

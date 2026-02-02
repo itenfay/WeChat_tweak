@@ -14,7 +14,6 @@
     long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *snsid; // @synthesize snsid=_snsid;
 @property(retain, nonatomic) NSString *uxinfo; // @synthesize uxinfo=_uxinfo;

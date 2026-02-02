@@ -18,7 +18,6 @@
     WCAdTimelineAdLocalRecords *_localAdRecords;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdTimelineAdLocalRecords *localAdRecords; // @synthesize localAdRecords=_localAdRecords;
 @property(retain, nonatomic) NSString *vangoghLibVersion; // @synthesize vangoghLibVersion=_vangoghLibVersion;
 @property(retain, nonatomic) WCAdPassThroughPullRecords *adPullRecords; // @synthesize adPullRecords=_adPullRecords;

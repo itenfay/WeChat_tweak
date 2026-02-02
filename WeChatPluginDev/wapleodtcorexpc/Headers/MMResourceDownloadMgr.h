@@ -16,7 +16,6 @@
     id <MMResDownloadMgrDelegate> _downloadMgrDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMResDownloadMgrDelegate> downloadMgrDelegate; // @synthesize downloadMgrDelegate=_downloadMgrDelegate;
 - (void)workThread_onDownloadFinish:(long long)arg1 downloadData:(id)arg2 task:(id)arg3;
 - (void)onDownloadFinish:(long long)arg1 downloadData:(id)arg2 task:(id)arg3;

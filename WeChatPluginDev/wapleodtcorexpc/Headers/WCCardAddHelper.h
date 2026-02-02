@@ -17,7 +17,6 @@
     WCNewCardDetailViewController *_cardDetailVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromAppBrand; // @synthesize isFromAppBrand=_isFromAppBrand;
 @property(nonatomic) _Bool isDetailReturn; // @synthesize isDetailReturn=_isDetailReturn;
 @property(nonatomic) _Bool isBatchReturn; // @synthesize isBatchReturn=_isBatchReturn;

@@ -14,7 +14,6 @@
     NSMutableArray *_attributesArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *attributesArray; // @synthesize attributesArray=_attributesArray;
 @property(nonatomic) __weak id <CameraScanCombineGoodsListViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)gradienLayerMaskHeight;

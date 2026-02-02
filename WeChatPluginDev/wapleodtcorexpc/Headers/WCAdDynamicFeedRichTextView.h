@@ -10,7 +10,6 @@
     WCAdDynamicFeedElementInfo *_elementInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdDynamicFeedElementInfo *elementInfo; // @synthesize elementInfo=_elementInfo;
 - (void)onMenuControllerWillHide:(id)arg1;
 - (void)appendNotifications;

@@ -13,7 +13,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMWebImageView *mainIcon; // @synthesize mainIcon=_mainIcon;
 - (struct CGSize)mainIconSize;

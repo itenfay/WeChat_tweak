@@ -12,7 +12,6 @@
     SessionForwardRecordDB *_forwardRecordDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SessionForwardRecordDB *forwardRecordDB; // @synthesize forwardRecordDB=_forwardRecordDB;
 - (void)deleteExpiredSessionForwardRecord;
 - (void)resetForwardMsgWithContact:(id)arg1;

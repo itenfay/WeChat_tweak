@@ -15,7 +15,6 @@
     NSMutableArray *_reportSessionInfoArr;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int reportToken; // @synthesize reportToken=_reportToken;
 @property(nonatomic) _Bool validSync; // @synthesize validSync=_validSync;
 @property(retain, nonatomic) NSMutableArray *reportSessionInfoArr; // @synthesize reportSessionInfoArr=_reportSessionInfoArr;

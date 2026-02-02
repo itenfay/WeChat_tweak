@@ -23,7 +23,6 @@
 + (id)identifier;
 + (double)innerLeftPadding;
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveContact *memberContact; // @synthesize memberContact=_memberContact;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) MMUILabel *rewardAmountLabel; // @synthesize rewardAmountLabel=_rewardAmountLabel;

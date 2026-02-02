@@ -13,7 +13,6 @@
     NSString *_favor_desc;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool is_default_show; // @synthesize is_default_show=_is_default_show;
 @property(retain, nonatomic) NSString *favor_desc; // @synthesize favor_desc=_favor_desc;
 

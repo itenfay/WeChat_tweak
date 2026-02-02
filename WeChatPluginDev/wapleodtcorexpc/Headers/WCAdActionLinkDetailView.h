@@ -14,7 +14,6 @@
     WCTagsView *_weAppSpecialTagIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTagsView *weAppSpecialTagIcon; // @synthesize weAppSpecialTagIcon=_weAppSpecialTagIcon;
 @property(retain, nonatomic) MMUIButton *detailBtn; // @synthesize detailBtn=_detailBtn;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;

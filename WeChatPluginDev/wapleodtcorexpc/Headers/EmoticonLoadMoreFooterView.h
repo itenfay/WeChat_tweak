@@ -16,7 +16,6 @@
     MMUIActivityIndicatorView *_indicator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicator; // @synthesize indicator=_indicator;
 @property(retain, nonatomic) UILabel *customEmoticonSyncLabel; // @synthesize customEmoticonSyncLabel=_customEmoticonSyncLabel;
 @property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;

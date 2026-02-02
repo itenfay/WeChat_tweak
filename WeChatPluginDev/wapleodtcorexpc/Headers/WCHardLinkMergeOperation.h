@@ -4,17 +4,16 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCHardLinkMergeOperation : NSOperation
 {
     CDUnknownBlockType _mergeCompletion;
 }
 
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType mergeCompletion; // @synthesize mergeCompletion=_mergeCompletion;
 - (void)hardlinkTheSameFile;
 - (void)start;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
-

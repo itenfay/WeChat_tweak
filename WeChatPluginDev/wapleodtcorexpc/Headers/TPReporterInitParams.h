@@ -21,7 +21,6 @@
     NSString *_playFlowId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReportToBeacon; // @synthesize needReportToBeacon=_needReportToBeacon;
 @property(copy, nonatomic) NSString *playFlowId; // @synthesize playFlowId=_playFlowId;
 @property(nonatomic) _Bool isUseProxy; // @synthesize isUseProxy=_isUseProxy;

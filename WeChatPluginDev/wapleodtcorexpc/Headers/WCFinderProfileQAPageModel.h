@@ -12,7 +12,6 @@
 
 + (id)overviewSectionTypes;
 + (int)tabId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderUserPageSectionQAInfo *qaInfo; // @synthesize qaInfo=_qaInfo;
 - (void)requestPageData;
 - (void)_updateQAOverviewSection;

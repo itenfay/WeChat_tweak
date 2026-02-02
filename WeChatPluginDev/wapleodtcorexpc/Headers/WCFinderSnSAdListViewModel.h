@@ -28,7 +28,6 @@
     unsigned long long _maxID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(nonatomic) unsigned long long maxID; // @synthesize maxID=_maxID;
 @property(retain, nonatomic) WCFinderContact *contact; // @synthesize contact=_contact;

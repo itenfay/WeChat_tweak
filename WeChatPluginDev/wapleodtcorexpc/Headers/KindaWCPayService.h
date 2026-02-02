@@ -18,7 +18,6 @@
     MMVoidITransmitKvDataCallback *_getCardListCallback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMVoidITransmitKvDataCallback *getCardListCallback; // @synthesize getCardListCallback=_getCardListCallback;
 @property(retain, nonatomic) MMVoidITransmitKvDataNoticeItemCallback *bannerDataCallback; // @synthesize bannerDataCallback=_bannerDataCallback;
 - (void)onAddPayCardResult:(_Bool)arg1;

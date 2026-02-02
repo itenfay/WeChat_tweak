@@ -16,7 +16,6 @@
     HistoryMsgUploadMgr *_uploadMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HistoryMsgUploadMgr *uploadMgr; // @synthesize uploadMgr=_uploadMgr;
 @property(retain, nonatomic) HistoryMsgUploadTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSString *lastUploadErrMsg; // @synthesize lastUploadErrMsg=_lastUploadErrMsg;

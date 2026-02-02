@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCFinderDataItem;
 
@@ -19,7 +20,6 @@
 + (_Bool)videoHasBeFollowed:(id)arg1;
 + (id)genFeedOutputPathBy:(id)arg1 commentScene:(int)arg2;
 + (_Bool)videoHasDownloaded:(id)arg1 commentScene:(int)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType sucBlock; // @synthesize sucBlock=_sucBlock;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

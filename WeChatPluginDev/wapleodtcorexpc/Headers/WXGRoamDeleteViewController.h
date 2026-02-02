@@ -19,7 +19,6 @@
     unsigned long long _state;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bDeleteAbort; // @synthesize bDeleteAbort=_bDeleteAbort;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) UIButton *closeBtn; // @synthesize closeBtn=_closeBtn;

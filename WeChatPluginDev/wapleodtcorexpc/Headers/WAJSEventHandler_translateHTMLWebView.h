@@ -11,7 +11,6 @@
     WAWebViewPlugin_HTMLWeb *_htmlWeb;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool translate; // @synthesize translate=_translate;
 @property(nonatomic) __weak WAWebViewPlugin_HTMLWeb *htmlWeb; // @synthesize htmlWeb=_htmlWeb;
 - (void)onHTMLWeb:(id)arg1 translateRevertFinish:(_Bool)arg2;

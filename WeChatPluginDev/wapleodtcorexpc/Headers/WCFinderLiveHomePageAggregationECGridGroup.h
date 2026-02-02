@@ -16,7 +16,6 @@
     NSMutableArray *_productViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *productViews; // @synthesize productViews=_productViews;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) NSMutableArray *productGroup; // @synthesize productGroup=_productGroup;

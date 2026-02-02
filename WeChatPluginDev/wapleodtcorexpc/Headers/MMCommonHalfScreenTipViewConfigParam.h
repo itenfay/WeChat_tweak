@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIButton;
 
@@ -26,7 +27,6 @@
     NSArray *_arrDescContentTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrDescContentTitle; // @synthesize arrDescContentTitle=_arrDescContentTitle;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType operateBlock; // @synthesize operateBlock=_operateBlock;
@@ -45,4 +45,3 @@
 - (id)init;
 
 @end
-

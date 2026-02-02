@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdPushDeleteAdInfo *deleteAdInfo; // @synthesize deleteAdInfo=_deleteAdInfo;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
 

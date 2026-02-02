@@ -18,7 +18,6 @@
     double _borderColorAlphaComponent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double borderColorAlphaComponent; // @synthesize borderColorAlphaComponent=_borderColorAlphaComponent;
 @property(nonatomic) double borderColorBlueComponent; // @synthesize borderColorBlueComponent=_borderColorBlueComponent;
 @property(nonatomic) double borderColorGreenComponent; // @synthesize borderColorGreenComponent=_borderColorGreenComponent;

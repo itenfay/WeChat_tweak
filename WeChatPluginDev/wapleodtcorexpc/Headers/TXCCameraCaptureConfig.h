@@ -17,7 +17,6 @@
     NSNumber *_enablesFaceDetect;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *enablesFaceDetect; // @synthesize enablesFaceDetect=_enablesFaceDetect;
 @property(retain, nonatomic) NSNumber *isFront; // @synthesize isFront=_isFront;
 @property(retain, nonatomic) NSNumber *enablesZoom; // @synthesize enablesZoom=_enablesZoom;

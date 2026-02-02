@@ -16,7 +16,6 @@
     id <WCShareCardBatchGetMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCShareCardBatchGetMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleBatchGetObjectList:(id)arg1;
 - (void)handleBatchGetFail;

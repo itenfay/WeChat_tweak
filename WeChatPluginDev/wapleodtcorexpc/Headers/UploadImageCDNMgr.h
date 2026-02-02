@@ -18,7 +18,6 @@
 + (unsigned int)CreateSendImageEvent:(id)arg1 clientMsgId:(id)arg2 md5:(id)arg3 hitMd5:(_Bool)arg4 imgType:(int)arg5 imgInfoBuffer:(id)arg6;
 + (id)genUploadMsgImgRequest:(id)arg1 hitMd5:(_Bool)arg2 imgInfo:(id)arg3 imgType:(int)arg4 md5:(id)arg5 msgWrap:(id)arg6;
 + (_Bool)isCloseCalOriginSourceMd5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MsgDataDownloadLogic *msgDownloadLogic; // @synthesize msgDownloadLogic=_msgDownloadLogic;
 @property(nonatomic) _Bool bJustUploadDataWithoutMD5Hit; // @synthesize bJustUploadDataWithoutMD5Hit=_bJustUploadDataWithoutMD5Hit;
 @property(nonatomic) __weak id <UploadImageCDNMgrDelegate> m_delegate; // @synthesize m_delegate;

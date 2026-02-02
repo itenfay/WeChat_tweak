@@ -17,7 +17,6 @@
     struct CGRect _backgroundAnimationPrimaryGraphicsFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWidgetHiddenForParticipateAnimation; // @synthesize isWidgetHiddenForParticipateAnimation=_isWidgetHiddenForParticipateAnimation;
 @property(nonatomic) unsigned long long backgroundAnimationCountdownDay; // @synthesize backgroundAnimationCountdownDay=_backgroundAnimationCountdownDay;
 @property(nonatomic) struct CGSize backgroundAnimationCanvasSize; // @synthesize backgroundAnimationCanvasSize=_backgroundAnimationCanvasSize;

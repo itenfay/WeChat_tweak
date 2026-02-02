@@ -31,7 +31,6 @@
     NSString *_FinderSessionBuffer_41;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *FinderSessionBuffer_41; // @synthesize FinderSessionBuffer_41=_FinderSessionBuffer_41;
 @property(copy, nonatomic) NSString *FinderUin_40; // @synthesize FinderUin_40=_FinderUin_40;
 @property(copy, nonatomic) NSString *FinderObjectId_39; // @synthesize FinderObjectId_39=_FinderObjectId_39;

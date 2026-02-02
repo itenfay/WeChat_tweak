@@ -29,7 +29,6 @@
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2 appID:(id)arg3;
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long homepageType; // @synthesize homepageType=_homepageType;
 @property(nonatomic) __weak id <WCContentItemBaseViewDelegate> itemViewDelegate; // @synthesize itemViewDelegate=_itemViewDelegate;
 @property(retain, nonatomic) ShareDataToOpenSDKController *shareDataToOpenSDKController; // @synthesize shareDataToOpenSDKController=_shareDataToOpenSDKController;

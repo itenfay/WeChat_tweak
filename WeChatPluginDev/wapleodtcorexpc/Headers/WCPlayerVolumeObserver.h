@@ -15,7 +15,6 @@
     MPVolumeView *_volumeView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MPVolumeView *volumeView; // @synthesize volumeView=_volumeView;
 @property(nonatomic) _Bool showSystemVolumeView; // @synthesize showSystemVolumeView=_showSystemVolumeView;
 @property(nonatomic) __weak id <WCPlayerVolumeObserverDelegate> delegate; // @synthesize delegate=_delegate;

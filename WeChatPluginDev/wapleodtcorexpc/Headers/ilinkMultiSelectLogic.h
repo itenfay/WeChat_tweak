@@ -18,7 +18,6 @@
     unsigned long long _maxMemberNumber;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool doNotShowContactsSelect; // @synthesize doNotShowContactsSelect=_doNotShowContactsSelect;
 @property(nonatomic) unsigned long long maxMemberNumber; // @synthesize maxMemberNumber=_maxMemberNumber;
 @property(retain, nonatomic) CContact *m_roomContact; // @synthesize m_roomContact=_m_roomContact;

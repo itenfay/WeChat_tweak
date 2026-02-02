@@ -16,7 +16,6 @@
     NSDictionary *_projectParams;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int qos; // @synthesize qos=_qos;
 @property(retain, nonatomic) NSDictionary *projectParams; // @synthesize projectParams=_projectParams;
 @property(retain, nonatomic) NSMutableDictionary *localResources; // @synthesize localResources=_localResources;

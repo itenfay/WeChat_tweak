@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFollowNotifyCommentLogic, MMFinderLiveFollowNotifyDataItem, MMFinderLiveLikeNotifyCommentLogic, MMFinderLiveLikeNotifyDataItem, MMFinderLiveRealNameFriendLikeCommentDataItem, MMFinderLiveTaskId, MMLiveCommentDataItem, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSString, PAGFile, PAGView, UITableView, UIView;
 
@@ -33,7 +34,6 @@
     NSString *_lastAudienceJoinRankImageName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allow30FpsAnimation; // @synthesize allow30FpsAnimation=_allow30FpsAnimation;
 @property(retain, nonatomic) NSString *lastAudienceJoinRankImageName; // @synthesize lastAudienceJoinRankImageName=_lastAudienceJoinRankImageName;
 @property(retain, nonatomic) PAGFile *audienceJoinPAGFile; // @synthesize audienceJoinPAGFile=_audienceJoinPAGFile;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

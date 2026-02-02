@@ -16,7 +16,6 @@
     CAAnimationGroup *_scanLineAnimation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAAnimationGroup *scanLineAnimation; // @synthesize scanLineAnimation=_scanLineAnimation;
 @property(retain, nonatomic) UIImageView *scanLineView; // @synthesize scanLineView=_scanLineView;
 @property(retain, nonatomic) MMSightRecordView *takePhotoView; // @synthesize takePhotoView=_takePhotoView;

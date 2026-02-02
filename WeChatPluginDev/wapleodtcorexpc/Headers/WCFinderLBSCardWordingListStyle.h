@@ -13,7 +13,6 @@
 }
 
 + (id)defaultStyle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *wordingTextColor; // @synthesize wordingTextColor=_wordingTextColor;
 
 @end

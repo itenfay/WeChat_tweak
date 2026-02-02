@@ -12,7 +12,6 @@
     MMFinderLiveMilestoneLotteryDetailWinnerResultView *_winnerResultView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCheckedGiftAnimation; // @synthesize hasCheckedGiftAnimation=_hasCheckedGiftAnimation;
 @property(retain, nonatomic) MMFinderLiveMilestoneLotteryDetailWinnerResultView *winnerResultView; // @synthesize winnerResultView=_winnerResultView;
 @property(retain, nonatomic) FinderLiveMilestoneLotteryInfo *lotteryInfo; // @synthesize lotteryInfo=_lotteryInfo;

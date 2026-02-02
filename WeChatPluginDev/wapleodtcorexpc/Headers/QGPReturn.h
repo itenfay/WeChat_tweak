@@ -11,7 +11,6 @@
 }
 
 + (id)successWithoutReturn;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 - (id)init;
 

@@ -20,7 +20,6 @@
     NSMutableArray *_coinValues;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *coinValues; // @synthesize coinValues=_coinValues;
 @property(retain, nonatomic) MMLiveGameJoinTeamSettingCoinValueView *settingCoinValueView; // @synthesize settingCoinValueView=_settingCoinValueView;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

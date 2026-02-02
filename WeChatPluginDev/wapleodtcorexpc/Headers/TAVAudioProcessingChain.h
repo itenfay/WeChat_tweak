@@ -12,7 +12,6 @@
     NSArray *_nodes;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)applyEffectToBufferListInOut:(struct AudioBufferList *)arg1 renderInfo:(id)arg2;

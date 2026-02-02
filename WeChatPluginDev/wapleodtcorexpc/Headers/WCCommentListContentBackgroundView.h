@@ -12,7 +12,6 @@
     CAGradientLayer *_backgroundLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 - (void)layoutSubviews;
 - (void)loadBackgroundLayer;

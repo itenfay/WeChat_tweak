@@ -10,7 +10,6 @@
     PopItem *_popItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PopItem *popItem; // @synthesize popItem=_popItem;
 - (id)description;
 - (id)initWithErrorCode:(unsigned int)arg1 errorMsg:(id)arg2 popItem:(id)arg3;

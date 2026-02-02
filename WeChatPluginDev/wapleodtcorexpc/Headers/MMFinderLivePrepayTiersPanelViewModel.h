@@ -19,7 +19,6 @@
 }
 
 + (id)viewModelWithPaymentItemsResponse:(id)arg1 eventTitle:(id)arg2 eventDescription:(id)arg3 referenceId:(id)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int livingTime; // @synthesize livingTime=_livingTime;
 @property(retain, nonatomic) NSString *referenceId; // @synthesize referenceId=_referenceId;
 @property(nonatomic) _Bool isUpgrade; // @synthesize isUpgrade=_isUpgrade;

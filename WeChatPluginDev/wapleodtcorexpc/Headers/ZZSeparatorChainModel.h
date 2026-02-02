@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView, ZZSeparatorModel;
 
@@ -13,7 +14,6 @@
     ZZSeparatorModel *_separatorModel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ZZSeparatorModel *separatorModel; // @synthesize separatorModel=_separatorModel;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (CDUnknownBlockType)borderWidth;
@@ -25,4 +25,3 @@
 - (id)initWithView:(id)arg1 andPosition:(long long)arg2;
 
 @end
-

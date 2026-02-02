@@ -16,7 +16,6 @@
     id <WCDeviceJSApiBatchSearchLogicHelpDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCDeviceJSApiBatchSearchLogicHelpDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onBatchSearchWCDevice:(id)arg1 Scene:(int)arg2 Error:(int)arg3;
 - (id)getRunningDeviceScanExt:(id)arg1;

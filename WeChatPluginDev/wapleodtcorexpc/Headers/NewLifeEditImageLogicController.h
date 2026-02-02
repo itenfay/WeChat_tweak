@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EditImageIntialView, MMAsset, MMLoadingView, NSString, UIImage, UIViewController;
 @protocol NewLifeEditImageLogicControllerDelegate;
@@ -18,7 +19,6 @@
     MMLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(retain, nonatomic) EditImageIntialView *editImageInitialView; // @synthesize editImageInitialView=_editImageInitialView;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

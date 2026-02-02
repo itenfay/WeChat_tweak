@@ -15,7 +15,6 @@
     id <MTLCommandQueue> _defaultCommandQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLCommandQueue> defaultCommandQueue; // @synthesize defaultCommandQueue=_defaultCommandQueue;
 @property(retain, nonatomic) id <MTLLibrary> defaultLibrary; // @synthesize defaultLibrary=_defaultLibrary;
 @property(nonatomic) struct __CVMetalTextureCache *textureCache; // @synthesize textureCache=_textureCache;

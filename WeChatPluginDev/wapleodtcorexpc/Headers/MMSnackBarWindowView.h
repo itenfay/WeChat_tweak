@@ -14,7 +14,6 @@
     id <MMSnackBarWindowViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMSnackBarWindowViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMSnackBarView *snackBarView; // @synthesize snackBarView=_snackBarView;
 - (void)updateSnackBarPosition;

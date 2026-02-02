@@ -12,7 +12,6 @@
     MMFinderLiveConnectMicUser *_micUser;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *micUser; // @synthesize micUser=_micUser;
 - (_Bool)isValid;
 

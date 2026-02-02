@@ -10,7 +10,6 @@
     MMUIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *button; // @synthesize button=_button;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
 - (void)ImageDidFail:(id)arg1;

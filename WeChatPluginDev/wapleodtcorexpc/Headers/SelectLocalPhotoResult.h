@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithRet:(long long)arg1 msg:(id)arg2 path:(id)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *msg; // @synthesize msg=_msg;
 @property(nonatomic) long long ret; // @synthesize ret=_ret;

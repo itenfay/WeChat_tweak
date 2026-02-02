@@ -23,7 +23,6 @@
     UIView *_buttonCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *buttonCoverView; // @synthesize buttonCoverView=_buttonCoverView;
 @property(retain, nonatomic) CAShapeLayer *indicator; // @synthesize indicator=_indicator;
 @property(retain, nonatomic) UIButton *buttonView; // @synthesize buttonView=_buttonView;

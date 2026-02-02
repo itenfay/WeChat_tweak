@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderJumpMainTabHelper : NSObject
 {
@@ -14,4 +15,3 @@
 + (void)jumpMainMsgListTabFromVC:(id)arg1 contact:(id)arg2 setupsnaptureVCNav:(CDUnknownBlockType)arg3 complete:(CDUnknownBlockType)arg4;
 
 @end
-

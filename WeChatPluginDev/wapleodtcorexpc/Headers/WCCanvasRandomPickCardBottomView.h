@@ -20,7 +20,6 @@
 + (void)addShadowToView:(id)arg1;
 + (id)generateSimpleLabelWithFont:(id)arg1 textColor:(id)arg2 text:(id)arg3;
 + (struct CGSize)calcSizeForEncoreInfo:(id)arg1 orientation:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didShowSwitchAnimation; // @synthesize didShowSwitchAnimation=_didShowSwitchAnimation;
 @property(retain, nonatomic) MMUIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
 @property(retain, nonatomic) WCCanvasRandomPickCardButtonView *buttonView; // @synthesize buttonView=_buttonView;

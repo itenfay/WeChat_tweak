@@ -36,7 +36,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRecreateTexture; // @synthesize shouldRecreateTexture=_shouldRecreateTexture;
 @property(nonatomic) __weak id <XEffectRenderTargetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CAEAGLLayer *layer; // @synthesize layer=_layer;

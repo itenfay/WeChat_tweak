@@ -12,7 +12,6 @@
     NSString *_key;
 }
 
-- (void).cxx_destruct;
 @property(retain) NSString *key; // @synthesize key=_key;
 - (id)color:(id)arg1;
 - (double)layout:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, FinderJumpInfo_Style, MMTimer, MMUIButton, MMUILabel, MMWebImageView, NSString, WCFinderJumpInfoDynamicCarouselDetailItemView, WCFinderJumpInfoDynamicCarouselDetailView, WCFinderJumpInfoDynamicCarouselTitleView, WCFinderJumpInfoDynamicCarouselViewModel;
 @protocol WCFinderJumpInfoDynamicCarouselViewDelegate;
@@ -31,7 +32,6 @@
 + (id)createDetailView;
 + (id)createTitleView;
 + (id)createIconImageView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) _Bool isStyleInitialized; // @synthesize isStyleInitialized=_isStyleInitialized;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
@@ -93,4 +93,3 @@
 @property(readonly) Class superclass;
 
 @end
-

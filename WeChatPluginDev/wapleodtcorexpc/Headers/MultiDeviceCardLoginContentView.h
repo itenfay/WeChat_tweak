@@ -27,7 +27,6 @@
     MMTimer *_timeoutTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(nonatomic) long long errorType; // @synthesize errorType=_errorType;
 @property(nonatomic) _Bool agreementSelected; // @synthesize agreementSelected=_agreementSelected;

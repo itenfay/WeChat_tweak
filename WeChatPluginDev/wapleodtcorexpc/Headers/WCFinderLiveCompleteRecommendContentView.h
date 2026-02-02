@@ -34,7 +34,6 @@
 }
 
 + (double)contentViewWidthAndHeightScale;
-- (void).cxx_destruct;
 @property(nonatomic) double videoCollectionViewHeight; // @synthesize videoCollectionViewHeight=_videoCollectionViewHeight;
 @property(nonatomic) unsigned long long tabId; // @synthesize tabId=_tabId;
 @property(nonatomic) double itemBottom; // @synthesize itemBottom=_itemBottom;

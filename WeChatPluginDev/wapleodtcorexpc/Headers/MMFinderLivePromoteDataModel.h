@@ -17,7 +17,6 @@
 }
 
 + (id)initWithTaskId:(id)arg1 promoteInfoList:(id)arg2 promoteAvailableItemList:(id)arg3 errorCode:(long long)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *functionPanelDataArray; // @synthesize functionPanelDataArray=_functionPanelDataArray;
 @property(retain, nonatomic) NSMutableArray *promoteAvailableItemList; // @synthesize promoteAvailableItemList=_promoteAvailableItemList;
 @property(retain, nonatomic) NSMutableArray *promoteInfoList; // @synthesize promoteInfoList=_promoteInfoList;

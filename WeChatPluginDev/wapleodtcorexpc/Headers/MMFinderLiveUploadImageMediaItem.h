@@ -12,7 +12,6 @@
     MMLiveStorageCleanupPinningToken *_pinningToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *pinningToken; // @synthesize pinningToken=_pinningToken;
 @property(copy, nonatomic) NSString *thumbFilePath; // @synthesize thumbFilePath=_thumbFilePath;
 @property(copy, nonatomic) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;

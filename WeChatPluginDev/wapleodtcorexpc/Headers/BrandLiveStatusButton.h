@@ -12,7 +12,6 @@
     unsigned long long _style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UIImageView *liveImageView; // @synthesize liveImageView=_liveImageView;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;

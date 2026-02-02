@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithAppId:(id)arg1 name:(id)arg2 iconUrl:(id)arg3 iconData:(id)arg4 grayIconData:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *grayIconData; // @synthesize grayIconData=_grayIconData;
 @property(retain, nonatomic) FlutterStandardTypedData *iconData; // @synthesize iconData=_iconData;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

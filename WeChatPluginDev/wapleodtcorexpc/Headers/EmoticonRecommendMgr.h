@@ -12,7 +12,6 @@
     NSString *m_lastEmotionStoreContent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonServerTip *m_serverTip; // @synthesize m_serverTip;
 - (void)onGetEmoticonClickFlag:(unsigned int)arg1 downloadFlag:(unsigned int)arg2 pid:(id)arg3;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

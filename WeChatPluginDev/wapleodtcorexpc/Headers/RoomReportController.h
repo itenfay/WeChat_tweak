@@ -10,7 +10,6 @@
     NSString *_m_redLabelValue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_redLabelValue; // @synthesize m_redLabelValue=_m_redLabelValue;
 - (void)realReport:(_Bool)arg1;
 

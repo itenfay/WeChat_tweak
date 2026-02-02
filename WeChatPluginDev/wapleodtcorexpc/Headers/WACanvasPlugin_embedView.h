@@ -11,7 +11,6 @@
     NSString *_frameSetId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *frameSetId; // @synthesize frameSetId=_frameSetId;
 @property(retain, nonatomic) WACanvasCoverViewContainer *coverViewContainer; // @synthesize coverViewContainer=_coverViewContainer;
 - (id)getChildViewsByClass:(Class)arg1;

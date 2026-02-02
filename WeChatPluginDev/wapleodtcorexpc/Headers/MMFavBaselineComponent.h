@@ -28,7 +28,6 @@
 + (double)computeHeightWith:(id)arg1 WithOriginX:(double)arg2 MaxOriginX:(double)arg3 ComWidth:(double)arg4 ComHeight:(double)arg5;
 + (_Bool)needShowTagList:(id)arg1;
 + (double)calHeightWithComData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFavCellComponentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onStrangerContactUpdated:(id)arg1;
 - (void)changeWidth:(double)arg1;

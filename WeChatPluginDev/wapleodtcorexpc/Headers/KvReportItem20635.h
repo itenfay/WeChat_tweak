@@ -13,7 +13,6 @@
     NSString *_TraceId_22;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int IsMsgExposed_24; // @synthesize IsMsgExposed_24=_IsMsgExposed_24;
 @property(nonatomic) unsigned int RecallType_23; // @synthesize RecallType_23=_RecallType_23;
 @property(copy, nonatomic) NSString *TraceId_22; // @synthesize TraceId_22=_TraceId_22;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString;
 
 @interface MMWindowMgr
@@ -10,7 +12,6 @@
     NSMutableArray *m_WindowMgrObjArr;
 }
 
-- (void).cxx_destruct;
 - (void)doWindowClose:(id)arg1 isTop:(_Bool)arg2 WithCompletion:(CDUnknownBlockType)arg3;
 - (id)getTopWindowLess:(int)arg1;
 - (_Bool)isContainWindowObj:(id)arg1;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

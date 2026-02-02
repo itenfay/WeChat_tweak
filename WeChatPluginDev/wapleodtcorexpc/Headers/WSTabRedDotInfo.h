@@ -17,7 +17,6 @@
     NSNumber *_numRedDotCount;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *numRedDotCount; // @synthesize numRedDotCount=_numRedDotCount;
 @property(retain, nonatomic) WCFinderRedDotTipsShowInfo *numRedDotShowInfo; // @synthesize numRedDotShowInfo=_numRedDotShowInfo;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *numRedDotCtrlInfo; // @synthesize numRedDotCtrlInfo=_numRedDotCtrlInfo;

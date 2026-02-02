@@ -11,7 +11,6 @@
     NSMutableSet *_cardIdSetV2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *cardIdSetV2; // @synthesize cardIdSetV2=_cardIdSetV2;
 @property(retain, nonatomic) NSMutableSet *cardIdSet; // @synthesize cardIdSet=_cardIdSet;
 - (void)onServiceClearData;

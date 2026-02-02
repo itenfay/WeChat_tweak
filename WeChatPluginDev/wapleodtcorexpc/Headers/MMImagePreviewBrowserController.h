@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageIntialView, EditVideoLogicItem, MMAsset, MMAssetSelectCheckButton, MMAssetSelectedCollectionView, MMUIActivityIndicatorView, MMUIButton, MMUILabel, MultiImageScrollView, NSMutableDictionary, NSString, UIButton, UIImageView, UILabel, UIView, VideoEncodeTask, WCFinderCreateCoordinator, WCFinderPreviewEditVideoCompositionTask, WCFinderSyncComposeResModel;
 @protocol MMImagePickerControlCenter, MMImagePreviewBrowserControllerDataSource, MMImagePreviewBrowserControllerDelegate;
 
@@ -56,7 +58,6 @@
 }
 
 + (unsigned long long)editImageEnterSceneWithPickerScene:(int)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *miaojianMetaInfo; // @synthesize miaojianMetaInfo=_miaojianMetaInfo;
 @property(nonatomic) int pickerScene; // @synthesize pickerScene=_pickerScene;
 @property(retain, nonatomic) MMUILabel *rawTotalSizeLabel; // @synthesize rawTotalSizeLabel=_rawTotalSizeLabel;
@@ -250,4 +251,3 @@
 @property(readonly) Class superclass;
 
 @end
-

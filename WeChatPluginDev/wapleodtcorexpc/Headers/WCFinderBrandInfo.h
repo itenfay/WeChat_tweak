@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_imgUrl;
 + (void)PBArrayAdd_nickname;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imgUrl; // @synthesize imgUrl=_imgUrl;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;

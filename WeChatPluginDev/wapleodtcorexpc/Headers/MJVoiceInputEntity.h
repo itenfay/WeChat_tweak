@@ -16,7 +16,6 @@
     NSArray *_captions;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int captionsIndex; // @synthesize captionsIndex=_captionsIndex;
 @property(retain, nonatomic) NSArray *captions; // @synthesize captions=_captions;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;

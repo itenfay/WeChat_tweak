@@ -18,7 +18,6 @@
     BalanceMobileInfo *_selectedMobileInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BalanceMobileInfo *selectedMobileInfo; // @synthesize selectedMobileInfo=_selectedMobileInfo;
 - (id)getCardInfoWith:(id)arg1;
 - (id)getSelectedMobileInfo:(id)arg1;

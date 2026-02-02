@@ -11,7 +11,6 @@
     CXProvider *_provider;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CXProvider *provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) CXCallController *cxController; // @synthesize cxController=_cxController;
 - (void)renewRingToneSoundForCaller:(id)arg1;

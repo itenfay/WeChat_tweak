@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableDictionary, NSString;
 
 @interface MusicLinkService
@@ -13,7 +15,6 @@
     long long _checkUrlLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long checkUrlLimit; // @synthesize checkUrlLimit=_checkUrlLimit;
 @property(nonatomic) long long checkUrlResultExipredTimeInterval; // @synthesize checkUrlResultExipredTimeInterval=_checkUrlResultExipredTimeInterval;
 @property(retain, nonatomic) NSMutableDictionary *checkUrlCacheTimeList; // @synthesize checkUrlCacheTimeList=_checkUrlCacheTimeList;
@@ -35,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

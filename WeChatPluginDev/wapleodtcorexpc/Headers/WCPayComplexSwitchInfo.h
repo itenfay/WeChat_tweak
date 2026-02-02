@@ -15,7 +15,6 @@
 + (id)GenFromDictionary:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_bind_newcard_switch;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBindNewCardSwitch *bind_newcard_switch; // @synthesize bind_newcard_switch=_bind_newcard_switch;
 - (void)genFromDic:(id)arg1;
 - (id)getPBPropertyTable;

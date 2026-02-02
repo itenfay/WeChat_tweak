@@ -13,7 +13,6 @@
     unsigned long long _bubbleShowTs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bubbleShowTs; // @synthesize bubbleShowTs=_bubbleShowTs;
 @property(copy, nonatomic) NSString *bubbleWording; // @synthesize bubbleWording=_bubbleWording;
 - (id)initWithBubbleInfo:(id)arg1;

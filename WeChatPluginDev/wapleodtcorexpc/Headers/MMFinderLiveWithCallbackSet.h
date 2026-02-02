@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSSet;
 
@@ -13,7 +14,6 @@
     NSMutableSet *_realSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *realSet; // @synthesize realSet=_realSet;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void)removeObject:(id)arg1;
@@ -22,4 +22,3 @@
 - (id)init;
 
 @end
-

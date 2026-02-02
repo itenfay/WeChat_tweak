@@ -15,7 +15,6 @@
     PersonalDesigner *_designer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PersonalDesigner *designer; // @synthesize designer=_designer;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UILabel *designerNameLabel; // @synthesize designerNameLabel=_designerNameLabel;

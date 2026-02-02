@@ -12,7 +12,6 @@
     ImageScrollView *_imageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ImageScrollView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) double contentRatioY; // @synthesize contentRatioY=_contentRatioY;
 @property(copy, nonatomic) NSArray *imageURLs; // @synthesize imageURLs=_imageURLs;

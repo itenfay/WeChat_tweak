@@ -27,7 +27,6 @@
 + (_Bool)audioModule:(id)arg1 canMixWithAudioList:(id)arg2;
 + (_Bool)audioModule:(id)arg1 canReplaceAudioList:(id)arg2;
 + (_Bool)audioModule:(id)arg1 canAddToAudioListDirectly:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) int checkInterval; // @synthesize checkInterval=_checkInterval;
 @property(nonatomic) _Bool isCheckingOtherAudio; // @synthesize isCheckingOtherAudio=_isCheckingOtherAudio;
 @property(retain, nonatomic) MMTimer *activeCheckTimer; // @synthesize activeCheckTimer=_activeCheckTimer;

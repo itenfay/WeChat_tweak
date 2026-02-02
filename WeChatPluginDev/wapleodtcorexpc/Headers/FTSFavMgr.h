@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FTSFavDB, FTSFavIndexMgr, NSMutableDictionary, NSString;
 
@@ -14,7 +15,6 @@
     FTSFavIndexMgr *_favIndexMgr;
 }
 
-- (void).cxx_destruct;
 - (_Bool)updateTagIndexFor:(id)arg1;
 - (id)getFavItemLocalIdByTag:(id)arg1;
 - (id)getTagsMatch:(id)arg1;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

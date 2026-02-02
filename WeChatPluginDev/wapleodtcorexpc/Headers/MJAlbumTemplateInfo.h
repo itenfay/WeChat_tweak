@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_materialNumSuggest;
 + (void)PBArrayAdd_materialNumMax;
 + (void)PBArrayAdd_materialNumMin;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *materialNumSuggest; // @synthesize materialNumSuggest=_materialNumSuggest;
 @property(nonatomic) unsigned long long materialNumMax; // @synthesize materialNumMax=_materialNumMax;
 @property(nonatomic) unsigned long long materialNumMin; // @synthesize materialNumMin=_materialNumMin;

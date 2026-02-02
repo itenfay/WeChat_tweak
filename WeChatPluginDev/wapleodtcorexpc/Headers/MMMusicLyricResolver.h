@@ -15,7 +15,6 @@
     _Bool _isLyricListContainsEmptyStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *timeList; // @synthesize timeList=_timeList;
 @property(retain, nonatomic) NSMutableArray *lyricsList; // @synthesize lyricsList=_lyricsList;
 @property(retain, nonatomic) NSString *lyrics; // @synthesize lyrics=_lyrics;

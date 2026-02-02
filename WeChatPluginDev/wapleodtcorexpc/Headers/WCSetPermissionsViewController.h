@@ -20,7 +20,6 @@
     MMTableViewInfo *_tableViewInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(retain, nonatomic) WCOpLog *wcOpLog; // @synthesize wcOpLog=_wcOpLog;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

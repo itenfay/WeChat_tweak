@@ -21,7 +21,6 @@
     unsigned long long _dragStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dragStyle; // @synthesize dragStyle=_dragStyle;
 @property(nonatomic) double videoDurationTime; // @synthesize videoDurationTime=_videoDurationTime;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

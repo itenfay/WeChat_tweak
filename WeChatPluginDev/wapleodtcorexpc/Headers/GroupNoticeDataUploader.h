@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GroupNoticeUploadInfo, GroupNoticeUploadTask;
 @protocol GroupNoticeDataUploadDelegate;
@@ -17,7 +18,6 @@
 }
 
 + (id)uploaderWithUploadInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUploading; // @synthesize isUploading=_isUploading;
 @property(retain, nonatomic) GroupNoticeUploadTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(retain, nonatomic) GroupNoticeUploadInfo *uploadInfo; // @synthesize uploadInfo=_uploadInfo;
@@ -32,4 +32,3 @@
 - (void)startUpload;
 
 @end
-

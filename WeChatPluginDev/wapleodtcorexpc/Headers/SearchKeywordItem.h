@@ -16,7 +16,6 @@
     _Bool _regexMode;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isEnglishWord; // @synthesize isEnglishWord=_isEnglishWord;
 @property(nonatomic) _Bool regexMode; // @synthesize regexMode=_regexMode;
 @property(retain, nonatomic) NSString *regexword; // @synthesize regexword=_regexword;

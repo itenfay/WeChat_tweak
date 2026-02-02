@@ -19,7 +19,6 @@
     NSString *m_strongNotificationQRCode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_strongNotificationQRCode; // @synthesize m_strongNotificationQRCode;
 @property(retain, nonatomic) NSString *m_strongNotificationContent; // @synthesize m_strongNotificationContent;
 - (void)onAcceptWeAppStrongNotification:(id)arg1 resultFlag:(_Bool)arg2 errorMsg:(id)arg3;

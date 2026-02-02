@@ -17,7 +17,6 @@
     int m_enWCPayHistoryOrderDetailViewScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayHistoryOrderDetailViewDelegate> m_delegate; // @synthesize m_delegate;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)RetrySendTransferMessage;

@@ -14,7 +14,6 @@
     long long _creationCenterNotifyCount;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long creationCenterNotifyCount; // @synthesize creationCenterNotifyCount=_creationCenterNotifyCount;
 @property(readonly, nonatomic) CMessageWrap *latestMsgWrap; // @synthesize latestMsgWrap=_latestMsgWrap;
 @property(readonly, nonatomic) unsigned int notifyCount; // @synthesize notifyCount=_notifyCount;

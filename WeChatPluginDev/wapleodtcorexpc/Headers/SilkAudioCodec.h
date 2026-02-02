@@ -15,7 +15,6 @@
     AVAudioFormat *_format;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioFormat *format; // @synthesize format=_format;
 - (_Bool)ifSilkAudioPlayerAgcOn;
 - (void)initDecoder:(id)arg1;

@@ -11,7 +11,6 @@
     NSData *_lastBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) unsigned long long tabType; // @synthesize tabType=_tabType;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

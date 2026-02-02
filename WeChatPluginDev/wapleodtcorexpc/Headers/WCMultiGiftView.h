@@ -18,7 +18,6 @@
     NSArray *_acceptedCardList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHide; // @synthesize isHide=_isHide;
 @property(retain, nonatomic) NSArray *acceptedCardList; // @synthesize acceptedCardList=_acceptedCardList;
 @property(retain, nonatomic) UIButton *footerButton; // @synthesize footerButton=_footerButton;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OVCGIFToVideoConverterDelegate;
 
@@ -14,11 +15,9 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OVCGIFToVideoConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cancelConverting;
 - (void)startConvertingWithGIFFilePath:(id)arg1 toVideo:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)init;
 
 @end
-

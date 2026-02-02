@@ -17,7 +17,6 @@
     NSString *_subVcGameHostWebUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subVcGameHostWebUrl; // @synthesize subVcGameHostWebUrl=_subVcGameHostWebUrl;
 @property(nonatomic) _Bool isGameVc; // @synthesize isGameVc=_isGameVc;
 @property(nonatomic) _Bool isGameHostWebVc; // @synthesize isGameHostWebVc=_isGameHostWebVc;

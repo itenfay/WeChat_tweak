@@ -14,7 +14,6 @@
 }
 
 + (double)heightForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *rightTitle; // @synthesize rightTitle=_rightTitle;
 @property(retain, nonatomic) RichTextView *leftTitle; // @synthesize leftTitle=_leftTitle;
 @property(retain, nonatomic) WCMicroMerchantFeedsGroup *wsGroup; // @synthesize wsGroup=_wsGroup;

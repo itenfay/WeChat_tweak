@@ -10,7 +10,6 @@
     PAGView *_pagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 - (void)onClickDoneBtn;
 - (void)traitCollectionDidChange:(id)arg1;

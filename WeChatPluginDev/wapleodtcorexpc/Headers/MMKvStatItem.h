@@ -11,7 +11,6 @@
     NSString *_seperator;
 }
 
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)prepareForSerialization;

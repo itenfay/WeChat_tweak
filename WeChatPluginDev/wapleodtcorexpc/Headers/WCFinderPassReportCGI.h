@@ -11,7 +11,6 @@
     NSString *_reportData;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportData; // @synthesize reportData=_reportData;
 @property(nonatomic) int passReportScene; // @synthesize passReportScene=_passReportScene;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;

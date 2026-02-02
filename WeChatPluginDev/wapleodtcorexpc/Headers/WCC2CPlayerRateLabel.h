@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, UILabel, UIViewPropertyAnimator;
 
@@ -17,7 +18,6 @@
     UIViewPropertyAnimator *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) NSArray *supportedPlayRate; // @synthesize supportedPlayRate=_supportedPlayRate;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

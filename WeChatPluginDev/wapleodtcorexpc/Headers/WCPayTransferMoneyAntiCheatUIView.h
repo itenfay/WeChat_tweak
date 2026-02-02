@@ -30,7 +30,6 @@
     WCPayWebImageView *_righticonWebImageView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int antiCheatViewMarginHorizontal; // @synthesize antiCheatViewMarginHorizontal=_antiCheatViewMarginHorizontal;
 @property(nonatomic) int wordingLabelMarginVertical; // @synthesize wordingLabelMarginVertical=_wordingLabelMarginVertical;
 @property(nonatomic) int righticonHeight; // @synthesize righticonHeight=_righticonHeight;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TSKScorer;
 @protocol TSKMidiScoreCalculator;
 
@@ -13,7 +15,6 @@
     double _lastScoreRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double lastScoreRatio; // @synthesize lastScoreRatio=_lastScoreRatio;
 @property(retain, nonatomic) id <TSKMidiScoreCalculator> calculator; // @synthesize calculator=_calculator;
 @property(retain, nonatomic) TSKScorer *audioScore; // @synthesize audioScore=_audioScore;
@@ -43,4 +44,3 @@
 @property(readonly) Class superclass;
 
 @end
-

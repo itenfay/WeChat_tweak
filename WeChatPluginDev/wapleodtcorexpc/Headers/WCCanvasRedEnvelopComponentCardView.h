@@ -30,7 +30,6 @@
     WCCanvasComponent *_shareComponent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponent *shareComponent; // @synthesize shareComponent=_shareComponent;
 @property(retain, nonatomic) UIButton *actionBtn; // @synthesize actionBtn=_actionBtn;
 @property(retain, nonatomic) UIImageView *redEnvelopBottomImageView; // @synthesize redEnvelopBottomImageView=_redEnvelopBottomImageView;

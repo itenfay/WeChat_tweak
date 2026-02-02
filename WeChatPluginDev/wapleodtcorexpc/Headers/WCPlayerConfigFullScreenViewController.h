@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject, NSString, UIImage, UIView, WCDataItem, WCMomentsPlayerViewContainer, WCPlayerFullScreenConfigControlView, WCPlayerPlayArgs, WCPlayerView, WCWidgetPlayer, WXFullScreenGestureRecognizer;
 @protocol WCPlayerConfigFullScreenViewControllerPostDelegate, WCPlayerConfigViewControllerDelegate, WCPlayerMediaExt;
 
@@ -45,7 +47,6 @@
     struct CGRect _originRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long videoProgressBarType; // @synthesize videoProgressBarType=_videoProgressBarType;
 @property(nonatomic) _Bool shouldResumeAtApear; // @synthesize shouldResumeAtApear=_shouldResumeAtApear;
 @property(retain, nonatomic) UIView *accessibilityView; // @synthesize accessibilityView=_accessibilityView;
@@ -173,4 +174,3 @@
 @property(readonly) Class superclass;
 
 @end
-

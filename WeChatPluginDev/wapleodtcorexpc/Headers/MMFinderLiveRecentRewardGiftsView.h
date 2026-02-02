@@ -16,7 +16,6 @@
     NSMutableArray *_reservedItemViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reservedItemViews; // @synthesize reservedItemViews=_reservedItemViews;
 @property(nonatomic) double maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) unsigned long long layoutMode; // @synthesize layoutMode=_layoutMode;

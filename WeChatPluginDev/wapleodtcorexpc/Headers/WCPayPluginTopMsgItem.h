@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_msgCreateTime;
 + (void)PBArrayAdd_msgContent;
 + (void)PBArrayAdd_msgSvrId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic) unsigned int msgCreateTime; // @synthesize msgCreateTime=_msgCreateTime;
 @property(retain, nonatomic) NSString *msgContent; // @synthesize msgContent=_msgContent;

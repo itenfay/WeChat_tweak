@@ -15,7 +15,6 @@
     FinderLiveFreeGiftPackageInfo *_latestFreeGiftPackageInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveFreeGiftPackageInfo *latestFreeGiftPackageInfo; // @synthesize latestFreeGiftPackageInfo=_latestFreeGiftPackageInfo;
 @property(retain, nonatomic) MMFinderLiveRewardFreeGift *latestLocalInsertFreeGift; // @synthesize latestLocalInsertFreeGift=_latestLocalInsertFreeGift;
 @property(retain, nonatomic) NSMutableArray *freeGiftArray; // @synthesize freeGiftArray=_freeGiftArray;

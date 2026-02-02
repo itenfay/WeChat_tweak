@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSString, UIButton, UILabel, UIView, WCPayCss;
 
 @interface MMPanelView
@@ -37,7 +39,6 @@
 
 + (id)ShowPanelWithCustomView:(id)arg1 customViewHeight:(double)arg2 leftTitle:(id)arg3 leftHandler:(CDUnknownBlockType)arg4 rightTitle:(id)arg5 rightHandler:(CDUnknownBlockType)arg6 leftBarStyle:(unsigned long long)arg7 leftBarHandler:(CDUnknownBlockType)arg8 rightBarStyle:(unsigned long long)arg9 rightBarHandler:(CDUnknownBlockType)arg10 title:(id)arg11 subTitle:(id)arg12 titleAlignment:(long long)arg13 complete:(CDUnknownBlockType)arg14 lightMode:(_Bool)arg15;
 + (id)ShowPanelWithCustomView:(id)arg1 customViewHeight:(double)arg2 leftTitle:(id)arg3 leftHandler:(CDUnknownBlockType)arg4 rightTitle:(id)arg5 rightHandler:(CDUnknownBlockType)arg6 leftBarStyle:(unsigned long long)arg7 leftBarHandler:(CDUnknownBlockType)arg8 rightBarStyle:(unsigned long long)arg9 rightBarHandler:(CDUnknownBlockType)arg10 title:(id)arg11 subTitle:(id)arg12 titleAlignment:(long long)arg13 complete:(CDUnknownBlockType)arg14;
-- (void).cxx_destruct;
 @property(retain) WCPayCss *css; // @synthesize css=_css;
 @property(nonatomic) double navigationY; // @synthesize navigationY=_navigationY;
 @property(retain) UILabel *titleDescLabel; // @synthesize titleDescLabel=_titleDescLabel;
@@ -88,4 +89,3 @@
 - (void)layoutSubviews;
 
 @end
-

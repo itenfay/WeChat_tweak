@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (Card_Action)
 - (void)setTouchDownBlock:(CDUnknownBlockType)arg1;
@@ -12,4 +13,3 @@
 - (void)removeAllTouchDown;
 - (void)setOnTouchDown:(CDUnknownBlockType)arg1;
 @end
-

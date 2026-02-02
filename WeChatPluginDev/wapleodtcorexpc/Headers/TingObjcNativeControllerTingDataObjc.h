@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TingObjcNativeControllerTingDataObjc : NSObject
 {
@@ -25,4 +26,3 @@
 + (void)addOrRevertBlackList:(id)arg1 addOrRevert:(_Bool)arg2 callback:(CDUnknownBlockType)arg3;
 
 @end
-

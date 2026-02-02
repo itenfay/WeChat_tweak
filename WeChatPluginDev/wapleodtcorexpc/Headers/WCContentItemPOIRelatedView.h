@@ -14,7 +14,6 @@
 }
 
 + (double)heightForMedia:(id)arg1 showDetail:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *poiDesclabel; // @synthesize poiDesclabel=_poiDesclabel;
 @property(retain, nonatomic) UILabel *poiTitleLabel; // @synthesize poiTitleLabel=_poiTitleLabel;
 @property(retain, nonatomic) MMWebImageView *contentImageView; // @synthesize contentImageView=_contentImageView;

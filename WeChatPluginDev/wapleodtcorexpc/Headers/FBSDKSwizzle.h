@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMapTable;
 
@@ -16,7 +17,6 @@
     NSMapTable *_blocks;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSMapTable *blocks; // @synthesize blocks=_blocks;
 @property(nonatomic) unsigned int numArgs; // @synthesize numArgs=_numArgs;
 @property(nonatomic) CDUnknownFunctionPointerType originalMethod; // @synthesize originalMethod=_originalMethod;
@@ -27,4 +27,3 @@
 - (id)init;
 
 @end
-

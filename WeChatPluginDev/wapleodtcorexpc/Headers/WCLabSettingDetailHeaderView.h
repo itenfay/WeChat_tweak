@@ -16,7 +16,6 @@
 }
 
 + (double)heightForLabItem:(id)arg1;
-- (void).cxx_destruct;
 - (void)initLineView;
 - (void)initDescLabel;
 - (void)initTitleLabel;

@@ -14,7 +14,6 @@
     unsigned long long _retryCnt;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long retryCnt; // @synthesize retryCnt=_retryCnt;
 @property(nonatomic) unsigned int designerUin; // @synthesize designerUin=_designerUin;
 @property(retain, nonatomic) SKBuiltinBuffer_t *reqBuffer; // @synthesize reqBuffer=_reqBuffer;

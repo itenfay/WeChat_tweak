@@ -12,7 +12,6 @@
     WKWebView *_weakWebView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WKWebView *weakWebView; // @synthesize weakWebView=_weakWebView;
 
 @end

@@ -48,7 +48,6 @@
     NSMutableSet *_visiblePages;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNoPrePageLoad; // @synthesize isNoPrePageLoad=_isNoPrePageLoad;
 @property(nonatomic) _Bool isShowingDataItemList; // @synthesize isShowingDataItemList=_isShowingDataItemList;
 @property(retain, nonatomic) NSMutableSet *visiblePages; // @synthesize visiblePages=_visiblePages;

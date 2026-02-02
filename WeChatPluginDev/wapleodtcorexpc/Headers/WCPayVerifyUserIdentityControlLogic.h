@@ -15,7 +15,6 @@
     NSDictionary *_paramDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *paramDict; // @synthesize paramDict=_paramDict;
 @property(retain, nonatomic) KindaJSEvent *kindaJSEvent; // @synthesize kindaJSEvent=_kindaJSEvent;
 @property(retain, nonatomic) WAJSEventHandler_BaseEvent *tinyAppEvent; // @synthesize tinyAppEvent=_tinyAppEvent;

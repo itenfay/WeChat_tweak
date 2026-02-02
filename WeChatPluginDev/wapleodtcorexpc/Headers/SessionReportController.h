@@ -23,7 +23,6 @@
     unsigned long long _fromScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fromScene; // @synthesize fromScene=_fromScene;
 - (int)getEnterScene;
 - (void)realReport:(_Bool)arg1;

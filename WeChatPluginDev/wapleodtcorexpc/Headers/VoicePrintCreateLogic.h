@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSNumber, NSString, VoicePrintCreateViewController, VoicePrintEnvironmentChecker, VoicePrintMgr, VoicePrintRecorder, VoicePrintResourceItem;
 
@@ -22,7 +23,6 @@
     VoicePrintEnvironmentChecker *_environmentChecker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoicePrintEnvironmentChecker *environmentChecker; // @synthesize environmentChecker=_environmentChecker;
 @property(retain, nonatomic) VoicePrintRecorder *recorder; // @synthesize recorder=_recorder;
 @property(retain, nonatomic) VoicePrintMgr *voicePrintManager; // @synthesize voicePrintManager=_voicePrintManager;
@@ -69,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -42,7 +42,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WePkgNonAtomicSingleFileConfigExt *ext; // @synthesize ext=_ext;
 @property(retain, nonatomic) NSString *charSet; // @synthesize charSet=_charSet;
 @property(retain, nonatomic) NSString *currentEnabledVersion; // @synthesize currentEnabledVersion=_currentEnabledVersion;

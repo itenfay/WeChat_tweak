@@ -23,7 +23,6 @@
     NSDictionary *_userData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userData; // @synthesize userData=_userData;
 @property(nonatomic) _Bool isShowSendSuccessView; // @synthesize isShowSendSuccessView=_isShowSendSuccessView;
 @property(nonatomic) _Bool isAddTextMessage; // @synthesize isAddTextMessage=_isAddTextMessage;

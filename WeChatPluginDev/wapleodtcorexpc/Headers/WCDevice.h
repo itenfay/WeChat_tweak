@@ -85,7 +85,6 @@
 + (const void *)objectRelationalMapping;
 + (_Bool)canShowSettingDeviceEntry;
 + (_Bool)hasBoundValidDevices;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMIotDeviceExtInfo *iotExtraInfo; // @synthesize iotExtraInfo=_iotExtraInfo;
 @property(retain, nonatomic) NSString *PLACE_HOLDER; // @synthesize PLACE_HOLDER=_PLACE_HOLDER;
 @property(retain, nonatomic) NSDictionary *m_externalInfoJSONCache; // @synthesize m_externalInfoJSONCache;

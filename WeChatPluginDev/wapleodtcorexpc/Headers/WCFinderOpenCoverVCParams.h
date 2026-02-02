@@ -15,7 +15,6 @@
     WCFinderCropRectModel *_cropRectModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCropRectModel *cropRectModel; // @synthesize cropRectModel=_cropRectModel;
 @property(nonatomic) int coverShowStyle; // @synthesize coverShowStyle=_coverShowStyle;
 @property(nonatomic) double coverTimeStamp; // @synthesize coverTimeStamp=_coverTimeStamp;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary;
 
@@ -17,7 +18,6 @@
 + (id)revertMonotonicDataFromLocalDataItem:(id)arg1;
 + (id)tempMonotonicDataFromLocalDataItem:(id)arg1 isThumbUp:(_Bool)arg2;
 + (void)updateMonotonicDataWithLocalDataItem:(id)arg1 thumbUp:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *feedThumbUpOperationQueue; // @synthesize feedThumbUpOperationQueue=_feedThumbUpOperationQueue;
 @property(retain, nonatomic) NSMutableDictionary *feedThumbUpTempInfo; // @synthesize feedThumbUpTempInfo=_feedThumbUpTempInfo;
 - (void)removeTempInfoForFeedId:(id)arg1;
@@ -30,4 +30,3 @@
 - (id)init;
 
 @end
-

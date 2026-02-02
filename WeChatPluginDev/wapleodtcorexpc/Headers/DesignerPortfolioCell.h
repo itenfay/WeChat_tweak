@@ -15,7 +15,6 @@
     MMBadgeView *_reddotImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *reddotImageView; // @synthesize reddotImageView=_reddotImageView;
 @property(retain, nonatomic) UIColor *overridingColor; // @synthesize overridingColor=_overridingColor;
 @property(retain, nonatomic) EmoticonStoreReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;

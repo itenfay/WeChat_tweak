@@ -18,7 +18,6 @@
     ThirdAppBindReportObject *_reportObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ThirdAppBindReportObject *reportObject; // @synthesize reportObject=_reportObject;
 @property(retain, nonatomic) AppleStyleLoginRegisterButton *bindButton; // @synthesize bindButton=_bindButton;
 @property(retain, nonatomic) UIButton *unbindButton; // @synthesize unbindButton=_unbindButton;

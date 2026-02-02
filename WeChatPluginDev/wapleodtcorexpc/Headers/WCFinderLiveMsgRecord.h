@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(nonatomic) unsigned int msgLocalID; // @synthesize msgLocalID=_msgLocalID;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

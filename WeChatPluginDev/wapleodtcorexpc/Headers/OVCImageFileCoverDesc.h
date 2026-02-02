@@ -11,7 +11,6 @@
     struct CGRect _contentCropRegion;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect contentCropRegion; // @synthesize contentCropRegion=_contentCropRegion;
 @property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (id)initWithFilePath:(id)arg1 contentCropRegion:(struct CGRect)arg2 duration:(CDStruct_1b6d18a9)arg3;

@@ -13,7 +13,6 @@
     UILabel *_timeLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) RichTextView *shortDescTextView; // @synthesize shortDescTextView=_shortDescTextView;
 @property(retain, nonatomic) RichTextView *longDescTextView; // @synthesize longDescTextView=_longDescTextView;

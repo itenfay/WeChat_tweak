@@ -16,7 +16,6 @@
     unsigned long long _enterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(nonatomic) unsigned long long tabId; // @synthesize tabId=_tabId;
 @property(copy, nonatomic) NSString *musicId; // @synthesize musicId=_musicId;

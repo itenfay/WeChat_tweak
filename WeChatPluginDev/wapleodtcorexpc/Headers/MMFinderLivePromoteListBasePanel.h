@@ -15,7 +15,6 @@
     WCFinderRefreshTableFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRefreshTableFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
 @property(retain, nonatomic) MMTableView *mainTableView; // @synthesize mainTableView=_mainTableView;

@@ -14,7 +14,6 @@
     WCFinderShareCustomTransition *_animator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderShareCustomTransition *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) WCFinderNearbyRelatedViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCFinderFeedListView *feedListView; // @synthesize feedListView=_feedListView;

@@ -11,7 +11,6 @@
 }
 
 + (id)instanceWithValue:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 
 @end

@@ -26,7 +26,6 @@
     NSString *_interrupt_msg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useHttp; // @synthesize useHttp=_useHttp;
 @property(retain, nonatomic) NSString *interrupt_msg; // @synthesize interrupt_msg=_interrupt_msg;
 @property(nonatomic) unsigned int interrupt_ret; // @synthesize interrupt_ret=_interrupt_ret;

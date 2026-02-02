@@ -18,7 +18,6 @@
 
 + (struct CGSize)getCellSize;
 + (id)identifier;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDarkMode; // @synthesize forceDarkMode=_forceDarkMode;
 @property(retain, nonatomic) MMCPLabel *paymentValueLabel; // @synthesize paymentValueLabel=_paymentValueLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;

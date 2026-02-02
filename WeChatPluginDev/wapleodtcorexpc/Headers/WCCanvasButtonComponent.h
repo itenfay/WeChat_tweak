@@ -15,7 +15,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool dynamicButtonSize; // @synthesize dynamicButtonSize=_dynamicButtonSize;
 @property(retain, nonatomic) WCCanvasClickEventManager *clickManager; // @synthesize clickManager=_clickManager;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longpressGesture; // @synthesize longpressGesture=_longpressGesture;

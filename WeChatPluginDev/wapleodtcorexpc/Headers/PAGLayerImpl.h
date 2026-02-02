@@ -14,7 +14,6 @@
 + (id)BatchConvertToPAGLayers:(const void *)arg1;
 + (id)ToPAGLayer:(shared_ptr_69e1d727)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setExcludedFromTimeline:(_Bool)arg1;
 - (_Bool)excludedFromTimeline;
 - (void)dealloc;

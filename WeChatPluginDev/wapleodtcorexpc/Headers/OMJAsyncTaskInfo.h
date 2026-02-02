@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) struct XMJAsyncTaskInfo backingTaskInfo; // @synthesize backingTaskInfo=_backingTaskInfo;
 @property(readonly, nonatomic) NSString *taskTag; // @synthesize taskTag=_taskTag;
 @property(readonly, nonatomic) long long executionID; // @synthesize executionID=_executionID;

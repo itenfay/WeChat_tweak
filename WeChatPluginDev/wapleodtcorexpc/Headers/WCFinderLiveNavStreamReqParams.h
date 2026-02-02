@@ -33,7 +33,6 @@
     ClientSpecificConfig *_clientSpecConfig;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int nextPagePullType; // @synthesize nextPagePullType=_nextPagePullType;
 @property(retain, nonatomic) ClientSpecificConfig *clientSpecConfig; // @synthesize clientSpecConfig=_clientSpecConfig;
 @property(retain, nonatomic) NSData *prefetchObjectsBuffer; // @synthesize prefetchObjectsBuffer=_prefetchObjectsBuffer;

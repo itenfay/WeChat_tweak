@@ -28,7 +28,6 @@
     NSString *_netLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *netLabel; // @synthesize netLabel=_netLabel;
 @property(nonatomic) unsigned long long protocolType; // @synthesize protocolType=_protocolType;
 @property(nonatomic) unsigned long long channelType; // @synthesize channelType=_channelType;

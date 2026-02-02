@@ -15,7 +15,6 @@
     UIView *_topCellView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topCellView; // @synthesize topCellView=_topCellView;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) long long count; // @synthesize count=_count;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, CContact, NSDate, NSHashTable, NSString, TLProfileDragDownView, TLProfileMediaContainerView, TLProfileModel, UIButton, UILongPressGestureRecognizer, UITableView, UITapGestureRecognizer, UIView;
 @protocol TLProfileDragAnimateHelperDelegate;
 
@@ -50,7 +52,6 @@
 }
 
 + (id)tlProfileDragHelperWithFrontContainer:(id)arg1 frontInitialTop:(double)arg2 frontTableView:(id)arg3 scene:(unsigned long long)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
@@ -147,4 +148,3 @@
 @property(readonly) Class superclass;
 
 @end
-

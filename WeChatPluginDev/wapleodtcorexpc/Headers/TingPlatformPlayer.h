@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString, TingItem, TingPlatformPlayerCore, TingPlayTaskListenerBridge, TingPlayerAudioModuleHelper, TingPlayerContext, TingPlayerDisplayElement;
 @protocol TingAudioFocusCallback, TingPlayTask;
@@ -24,7 +25,6 @@
 }
 
 + (id)fromURObj:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) TingPlayTaskListenerBridge *listenerBridge; // @synthesize listenerBridge=_listenerBridge;
 @property(retain, nonatomic) TingPlayerContext *playingContext; // @synthesize playingContext=_playingContext;
@@ -140,4 +140,3 @@
 @property(readonly) Class superclass;
 
 @end
-

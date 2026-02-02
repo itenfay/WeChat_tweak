@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditImageAttr, MMAsset, NSMutableArray, NSString, RecommendedMusicInfo, UIImage, UIView, WCEditImageLayoutView, WCEditViewControllerUIConfig;
 @protocol WCEditImageViewControllerDelegate;
 
@@ -25,7 +27,6 @@
     EditImageAttr *_editImageAttr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EditImageAttr *editImageAttr; // @synthesize editImageAttr=_editImageAttr;
 @property(retain, nonatomic) UIView *tempView; // @synthesize tempView=_tempView;
 @property(nonatomic) _Bool isEmoticonBoardSearchEnabled; // @synthesize isEmoticonBoardSearchEnabled=_isEmoticonBoardSearchEnabled;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -28,7 +28,6 @@
     UIBarButtonItem *_cancelBarButtonItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *cancelBarButtonItem; // @synthesize cancelBarButtonItem=_cancelBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *titleBarButtonItem; // @synthesize titleBarButtonItem=_titleBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *doneBarButtonItem; // @synthesize doneBarButtonItem=_doneBarButtonItem;

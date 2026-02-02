@@ -22,7 +22,6 @@
     id <IMMQuartz2DDelegate> _canvasDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMMQuartz2DDelegate> canvasDelegate; // @synthesize canvasDelegate=_canvasDelegate;
 @property(nonatomic) int interactionMode; // @synthesize interactionMode=_interactionMode;
 @property(retain, nonatomic) NSString *userData; // @synthesize userData=_userData;

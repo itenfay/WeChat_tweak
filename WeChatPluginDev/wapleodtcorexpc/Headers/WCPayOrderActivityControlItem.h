@@ -14,7 +14,6 @@
     NSString *buttonTitle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isActivityViewHidden; // @synthesize isActivityViewHidden;
 @property(nonatomic) _Bool isButtonHidden; // @synthesize isButtonHidden;
 @property(nonatomic) _Bool isButtonEnable; // @synthesize isButtonEnable;

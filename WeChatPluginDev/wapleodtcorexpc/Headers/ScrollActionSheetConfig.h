@@ -14,7 +14,6 @@
     NSMutableArray *_itemTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *itemTypes; // @synthesize itemTypes=_itemTypes;
 @property(nonatomic) __weak id <MMScrollActionSheetDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)addItemTypes:(id)arg1;

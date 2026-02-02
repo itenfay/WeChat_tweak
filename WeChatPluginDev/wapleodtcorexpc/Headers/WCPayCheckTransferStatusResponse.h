@@ -40,7 +40,6 @@
     RecvCustomerInfoModule *_recv_customer_info_module;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RecvCustomerInfoModule *recv_customer_info_module; // @synthesize recv_customer_info_module=_recv_customer_info_module;
 @property(retain, nonatomic) NSArray *customer_info_list; // @synthesize customer_info_list=_customer_info_list;
 @property(retain, nonatomic) RecvAccountInfo *recv_account_info; // @synthesize recv_account_info=_recv_account_info;

@@ -16,7 +16,6 @@
     NSMutableDictionary *extBeanDic;
 }
 
-- (void).cxx_destruct;
 - (void)onServiceMemoryWarning;
 - (void)onServiceTerminate;
 - (void)onServiceEnterBackground;

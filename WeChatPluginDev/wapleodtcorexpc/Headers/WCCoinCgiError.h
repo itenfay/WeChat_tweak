@@ -11,7 +11,6 @@
 }
 
 + (id)errorWith:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) InterceptPopUp *interceptInfo; // @synthesize interceptInfo=_interceptInfo;
 
 @end

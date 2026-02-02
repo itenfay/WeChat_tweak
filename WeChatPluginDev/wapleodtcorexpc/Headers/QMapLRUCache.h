@@ -19,7 +19,6 @@
     NSLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) QMapLinkList *linkList; // @synthesize linkList=_linkList;
 @property(retain, nonatomic) NSMutableDictionary *map; // @synthesize map=_map;

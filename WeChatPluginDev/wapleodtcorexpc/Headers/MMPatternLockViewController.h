@@ -25,7 +25,6 @@
     long long _retryTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBlock2Root; // @synthesize isBlock2Root=_isBlock2Root;
 @property(nonatomic) _Bool isNeedSvrVerify; // @synthesize isNeedSvrVerify=_isNeedSvrVerify;
 @property(nonatomic) _Bool isOpSuccess; // @synthesize isOpSuccess=_isOpSuccess;

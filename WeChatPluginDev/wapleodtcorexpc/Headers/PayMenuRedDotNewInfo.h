@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_m_newInfoItemArray;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_newInfoItemArray; // @synthesize m_newInfoItemArray=_m_newInfoItemArray;
 - (id)init;
 - (id)getPBPropertyTable;

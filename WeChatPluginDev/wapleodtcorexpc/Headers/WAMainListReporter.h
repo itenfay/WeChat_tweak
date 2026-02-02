@@ -19,7 +19,6 @@
 }
 
 + (id)createWithOperateType:(long long)arg1 sessionId:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long vcDidShowTime; // @synthesize vcDidShowTime=_vcDidShowTime;
 @property(retain, nonatomic) NSMutableDictionary *exposureItemMap; // @synthesize exposureItemMap=_exposureItemMap;
 @property(nonatomic) long long reportSessionId; // @synthesize reportSessionId=_reportSessionId;

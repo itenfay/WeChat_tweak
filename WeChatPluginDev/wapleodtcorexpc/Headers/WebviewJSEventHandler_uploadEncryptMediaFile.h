@@ -11,7 +11,6 @@
     _Bool _isShowProgressTips;
 }
 
-- (void).cxx_destruct;
 - (void)onLocalResourceUploadProgress:(int)arg1 LocalId:(id)arg2;
 - (void)onLocalResourceUploadFinished:(id)arg1 SvrId:(id)arg2 ErrCode:(int)arg3;
 - (id)getAppId:(id)arg1;

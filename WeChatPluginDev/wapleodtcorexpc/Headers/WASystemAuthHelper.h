@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WASystemAuthHelper : NSObject
 {
@@ -18,4 +19,3 @@
 + (unsigned int)authorizationStatusFor:(unsigned int)arg1 appid:(id)arg2;
 
 @end
-

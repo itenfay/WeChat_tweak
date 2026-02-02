@@ -14,7 +14,6 @@
     NSString *m_manufacturerData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_manufacturerData; // @synthesize m_manufacturerData;
 @property(retain, nonatomic) NSString *m_deviceId; // @synthesize m_deviceId;
 @property(retain, nonatomic) NSString *m_deviceType; // @synthesize m_deviceType;

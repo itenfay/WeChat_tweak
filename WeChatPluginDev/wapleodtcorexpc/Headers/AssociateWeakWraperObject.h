@@ -11,7 +11,6 @@
 }
 
 + (id)wrapperWithWeakObject:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id weakObject; // @synthesize weakObject=_weakObject;
 - (id)initWithWeakObject:(id)arg1;
 

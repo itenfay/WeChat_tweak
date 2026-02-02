@@ -22,7 +22,6 @@
     CALayer *_contentLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 @property(nonatomic) _Bool alreadyAnimation; // @synthesize alreadyAnimation=_alreadyAnimation;
 @property(retain, nonatomic) NSMutableArray *contentSizeArr; // @synthesize contentSizeArr=_contentSizeArr;

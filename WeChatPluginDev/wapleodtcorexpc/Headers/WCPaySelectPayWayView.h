@@ -23,7 +23,6 @@
     UIView *_titleArea;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *titleArea; // @synthesize titleArea=_titleArea;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(retain, nonatomic) MMUIView *contentView; // @synthesize contentView=_contentView;

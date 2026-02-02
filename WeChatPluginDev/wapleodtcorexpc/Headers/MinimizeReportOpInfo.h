@@ -21,7 +21,6 @@
     unsigned long long _taskFoldTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long taskFoldTime; // @synthesize taskFoldTime=_taskFoldTime;
 @property(nonatomic) unsigned long long taskForegroundTime; // @synthesize taskForegroundTime=_taskForegroundTime;
 @property(nonatomic) long long taskOrder; // @synthesize taskOrder=_taskOrder;

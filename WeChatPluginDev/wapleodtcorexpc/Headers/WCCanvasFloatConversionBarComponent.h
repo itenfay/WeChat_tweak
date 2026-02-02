@@ -20,7 +20,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *buttonOriTextColor; // @synthesize buttonOriTextColor=_buttonOriTextColor;
 @property(retain, nonatomic) UIColor *buttonOriBackgroundColor; // @synthesize buttonOriBackgroundColor=_buttonOriBackgroundColor;
 @property(nonatomic) struct CGRect buttonOriFrame; // @synthesize buttonOriFrame=_buttonOriFrame;

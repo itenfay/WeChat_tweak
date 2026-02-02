@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIImageView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CALayer, EVVideoPreviewBrowserView, EditImageCropOverlayView, EditImageDeleteBarView, EditImageWidgetTool, MMTimer, NSArray, NSMutableArray, NSString, UIColor, UIImage, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, WCEditEraserCurserView, WCEditImageOperationMgr, WCEditImagePenTraceMgr, WCEditImageScrollView, WCEditPanGestureFilter, WCEditViewControllerUIConfig;
 @protocol WCEditImageToolProtocol;
@@ -96,7 +97,6 @@
     struct CGRect _cancelBtnFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEditEraserCurserView *eraserCurserView; // @synthesize eraserCurserView=_eraserCurserView;
 @property(retain, nonatomic) WCEditImagePenTraceMgr *mosaicTraceMgr; // @synthesize mosaicTraceMgr=_mosaicTraceMgr;
 @property(retain, nonatomic) WCEditImagePenTraceMgr *penTraceMgr; // @synthesize penTraceMgr=_penTraceMgr;
@@ -270,4 +270,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -15,7 +15,6 @@
     NSData *_nextPageData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 @property(nonatomic) unsigned int nextPageFlag; // @synthesize nextPageFlag=_nextPageFlag;
 @property(retain, nonatomic) NSData *nextPageData; // @synthesize nextPageData=_nextPageData;

@@ -12,7 +12,6 @@
     CDStruct_e83c9415 _editedTimeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 editedTimeRange; // @synthesize editedTimeRange=_editedTimeRange;
 @property(nonatomic) CDStruct_1b6d18a9 originDuration; // @synthesize originDuration=_originDuration;
 @property(copy, nonatomic) NSString *assetURL; // @synthesize assetURL=_assetURL;

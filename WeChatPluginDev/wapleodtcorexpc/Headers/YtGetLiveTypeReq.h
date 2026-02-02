@@ -15,7 +15,6 @@
     NSDictionary *_select_data;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *select_data; // @synthesize select_data=_select_data;
 @property(nonatomic) int platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) NSString *session_id; // @synthesize session_id=_session_id;

@@ -22,7 +22,6 @@
     NSString *m_nsSendID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsSendID; // @synthesize m_nsSendID;
 @property(retain, nonatomic) NSString *m_nsSendTime; // @synthesize m_nsSendTime;
 @property(nonatomic) unsigned int m_uiThxCount; // @synthesize m_uiThxCount;

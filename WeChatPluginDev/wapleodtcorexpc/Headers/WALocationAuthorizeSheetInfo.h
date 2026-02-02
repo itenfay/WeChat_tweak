@@ -10,7 +10,6 @@
     NSArray *_scopeDescList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *scopeDescList; // @synthesize scopeDescList=_scopeDescList;
 
 @end

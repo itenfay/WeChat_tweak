@@ -3,13 +3,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveCreateVoteCGI
 {
     CDUnknownBlockType _successBlock;
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 - (void)finderCgiDidFailWithError:(id)arg1 response:(id)arg2;
@@ -22,4 +23,3 @@
 - (id)initWithFinderTaskId:(id)arg1 question:(id)arg2 choices:(id)arg3 duration:(unsigned int)arg4 allowMultipleSelection:(_Bool)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

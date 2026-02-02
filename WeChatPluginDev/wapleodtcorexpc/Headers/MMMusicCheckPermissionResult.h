@@ -15,7 +15,6 @@
     NSString *_statusVerifyInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool chatroomEnabled; // @synthesize chatroomEnabled=_chatroomEnabled;
 @property(retain, nonatomic) NSString *statusVerifyInfo; // @synthesize statusVerifyInfo=_statusVerifyInfo;
 @property(retain, nonatomic) NSString *songId; // @synthesize songId=_songId;

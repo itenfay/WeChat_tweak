@@ -14,7 +14,6 @@
     _Bool m_bIsCoverImgViewFinishLoad;
 }
 
-- (void).cxx_destruct;
 - (struct CGRect)previewingSourceRectForLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
 - (void)onLoadImageOK:(id)arg1;
 - (id)getLabelTextColor;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonGetWordListCGI, EmoticonRemoteRecommendTable, EmoticonWordListMeta, MMAsyncBlockOperation, MemoryMappedKV, NSArray, NSMutableDictionary, NSMutableSet, NSNumber, NSObject, NSOperationQueue, NSString;
 @protocol OS_dispatch_queue;
 
@@ -40,7 +42,6 @@
 + (void)clearAllCachedData;
 + (id)adjustOcrResult:(id)arg1;
 + (id)cpkeyForOcrMd5:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MemoryMappedKV *localEmojiOcrResultKV; // @synthesize localEmojiOcrResultKV=_localEmojiOcrResultKV;
 @property(nonatomic) __weak MMAsyncBlockOperation *lastCalOcrOperation; // @synthesize lastCalOcrOperation=_lastCalOcrOperation;
 @property(retain, nonatomic) NSOperationQueue *calOcrQueue; // @synthesize calOcrQueue=_calOcrQueue;
@@ -148,4 +149,3 @@
 @property(readonly) Class superclass;
 
 @end
-

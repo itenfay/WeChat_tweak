@@ -16,7 +16,6 @@
     UIPageControl *_adPageControl;
 }
 
-- (void).cxx_destruct;
 - (void)onJumptoFeedBackView;
 - (void)makeInfoCell:(id)arg1 cellInfo:(id)arg2;
 - (double)getShopInfoCellHeight:(id)arg1;

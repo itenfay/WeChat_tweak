@@ -12,7 +12,6 @@
 }
 
 + (id)convertFromData:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *chatRoomName; // @synthesize chatRoomName=_chatRoomName;
 @property(retain, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;
 - (id)uploadIdentifier;

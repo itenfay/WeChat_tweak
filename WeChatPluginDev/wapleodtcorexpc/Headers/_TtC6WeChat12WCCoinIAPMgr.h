@@ -13,7 +13,6 @@
 }
 
 + (void)bindingPaymentMethodWithPinningID:(NSString *)arg1 completionHandler:(void (^)(long long))arg2;
-- (void).cxx_destruct;
 - (id)init;
 - (void)onServiceInit;
 - (void)purchaseWithSubscriptionResp:(PrepareWecoinSubscriptionResponse *)arg1 completionHandler:(void (^)(_TtC6WeChat18WCCoinIAPPayResult *))arg2;

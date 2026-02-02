@@ -21,7 +21,6 @@
     long long _balance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long balance; // @synthesize balance=_balance;
 @property(nonatomic) __weak id <MMLiveRewardGiftSelectionLogicDelegate> logicDelegate; // @synthesize logicDelegate=_logicDelegate;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;

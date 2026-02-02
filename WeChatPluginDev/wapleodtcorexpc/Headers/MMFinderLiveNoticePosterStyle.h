@@ -21,7 +21,6 @@
 
 + (id)fallbackStyle;
 + (id)styleWithBackendModel:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFallback; // @synthesize isFallback=_isFallback;
 @property(retain, nonatomic) NSString *verificationIconUri; // @synthesize verificationIconUri=_verificationIconUri;
 @property(retain, nonatomic) NSString *brandLogoColorHexCode; // @synthesize brandLogoColorHexCode=_brandLogoColorHexCode;

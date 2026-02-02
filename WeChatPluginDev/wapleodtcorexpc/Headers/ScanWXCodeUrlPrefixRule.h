@@ -12,7 +12,6 @@
     NSMutableArray *_handlerArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *handlerArray; // @synthesize handlerArray=_handlerArray;
 - (void)reportHandleCount;
 - (_Bool)isUrlMatchPrefixRule:(id)arg1 andTryGetCodeType:(char *)arg2;

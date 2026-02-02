@@ -23,7 +23,6 @@
     NSArray *_memberPriceArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *memberPriceArray; // @synthesize memberPriceArray=_memberPriceArray;
 @property(nonatomic) __weak id <WCFinderMembershipPaymentSelectDetailViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCCoinConsumeParameter *parameter; // @synthesize parameter=_parameter;

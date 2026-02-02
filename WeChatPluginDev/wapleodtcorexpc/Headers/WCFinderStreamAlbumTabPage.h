@@ -10,7 +10,6 @@
     WCFinderStreamFooterView *_footerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderStreamFooterView *footerView; // @synthesize footerView=_footerView;
 - (void)didClickStreamFooterRefresh:(id)arg1;
 - (_Bool)isEnableStreamFooterTrigerLoading:(id)arg1;

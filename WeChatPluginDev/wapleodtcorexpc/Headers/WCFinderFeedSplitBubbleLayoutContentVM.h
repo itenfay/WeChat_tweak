@@ -10,7 +10,6 @@
     WCFinderFeedSplitBubbleLayoutBubbleInfo *_bubbleInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedSplitBubbleLayoutBubbleInfo *bubbleInfo; // @synthesize bubbleInfo=_bubbleInfo;
 - (id)initWithDivider:(id)arg1 scene:(int)arg2 dataScene:(id)arg3;
 

@@ -29,7 +29,6 @@
     CommonMessageCellViewExtTarget *_extTarget;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didChatroomInDarkBkg; // @synthesize didChatroomInDarkBkg=_didChatroomInDarkBkg;
 @property(retain, nonatomic) CommonMessageCellViewExtTarget *extTarget; // @synthesize extTarget=_extTarget;
 @property(nonatomic) __weak UIImageView *bottomLeftIconView; // @synthesize bottomLeftIconView=_bottomLeftIconView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WCFinderGetFeedFavListCGI
@@ -16,7 +18,6 @@
     CDUnknownBlockType _failure;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) CDUnknownBlockType successful; // @synthesize successful=_successful;
 @property(nonatomic) int requestType; // @synthesize requestType=_requestType;
@@ -29,4 +30,3 @@
 - (id)initWithFinderUsername:(id)arg1 scene:(unsigned long long)arg2 lastBuffer:(id)arg3 objectID:(id)arg4 requestType:(int)arg5 successful:(CDUnknownBlockType)arg6 failure:(CDUnknownBlockType)arg7;
 
 @end
-

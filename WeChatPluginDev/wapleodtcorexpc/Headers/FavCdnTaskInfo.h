@@ -14,7 +14,6 @@
     FavoritesDownloadCDNInfo *_downloadInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FavoritesDownloadCDNInfo *downloadInfo; // @synthesize downloadInfo=_downloadInfo;
 @property(nonatomic) long long remainSize; // @synthesize remainSize=_remainSize;
 @property(nonatomic) int retryCount; // @synthesize retryCount=_retryCount;

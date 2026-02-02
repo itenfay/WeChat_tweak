@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, ForwardMessageLogicController, MMLimitedModeVerifyPasswordUtilLogic, MMUILabel, NSString, UIButton, WCFinderLimitAgreementCommonHeadView, WCFinderLimitCheckPanelView;
 
 @interface WCFinderCheckAntiAddictViewController
@@ -23,7 +25,6 @@
     CMessageWrap *_authorizeRequestMessageWrap;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool controlExitState; // @synthesize controlExitState=_controlExitState;
 @property(retain, nonatomic) CMessageWrap *authorizeRequestMessageWrap; // @synthesize authorizeRequestMessageWrap=_authorizeRequestMessageWrap;
 @property(retain, nonatomic) MMLimitedModeVerifyPasswordUtilLogic *verifyPwdLogic; // @synthesize verifyPwdLogic=_verifyPwdLogic;
@@ -75,4 +76,3 @@
 @property(readonly) Class superclass;
 
 @end
-

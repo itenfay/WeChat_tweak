@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMainFeedList:(id)arg1 hasMore:(id)arg2 lastBuffer:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(retain, nonatomic) NSNumber *hasMore; // @synthesize hasMore=_hasMore;
 @property(copy, nonatomic) NSArray *mainFeedList; // @synthesize mainFeedList=_mainFeedList;

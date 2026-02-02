@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameCenterBaseMsg, GameCenterTabSettingControl_TabConfiguration, GameCenterTabSettingControl_TabSetting, GameLifeTabBarConfig, GameLifeTabBarLogicController, JumpInfo, MMTabBar, MMUIViewController, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PAGView, UIImageView, UIView;
 @protocol UIViewControllerAnimatedTransitioning;
 
@@ -58,7 +60,6 @@
     struct CGSize _bgViewSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double gameTabHeight; // @synthesize gameTabHeight=_gameTabHeight;
 @property(retain, nonatomic) JumpInfo *homeBarJumpInfo; // @synthesize homeBarJumpInfo=_homeBarJumpInfo;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
@@ -197,4 +198,3 @@
 @property(readonly) Class superclass;
 
 @end
-

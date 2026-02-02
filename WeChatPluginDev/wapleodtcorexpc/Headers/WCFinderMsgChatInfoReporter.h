@@ -20,7 +20,6 @@
     NSString *_talkerUsername;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReport; // @synthesize needReport=_needReport;
 @property(nonatomic) unsigned int complianClickCount; // @synthesize complianClickCount=_complianClickCount;
 @property(nonatomic) unsigned int clearMsgHistoryClickCount; // @synthesize clearMsgHistoryClickCount=_clearMsgHistoryClickCount;

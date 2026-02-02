@@ -12,7 +12,6 @@
     id <MFPushBannerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MFPushBannerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) MFBannerBtn *bannerBtn; // @synthesize bannerBtn=m_bannerBtn;
 - (void)onInitOK;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WAOrderInfoModel;
 
 @interface WAOrderInfoLogic
@@ -12,7 +14,6 @@
     CDUnknownBlockType _dissmissOrderRedDotRespAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dissmissOrderRedDotRespAction; // @synthesize dissmissOrderRedDotRespAction=_dissmissOrderRedDotRespAction;
 @property(copy, nonatomic) CDUnknownBlockType orderInfoRespAction; // @synthesize orderInfoRespAction=_orderInfoRespAction;
 @property(readonly, nonatomic) WAOrderInfoModel *orderInfo; // @synthesize orderInfo=_orderInfo;
@@ -21,4 +22,3 @@
 - (void)requestOrderInfoWithCompleteAction:(CDUnknownBlockType)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 @protocol DataReportDynamicPublicParamsProvider, DataReportParamsFormatProtocol;
@@ -21,7 +22,6 @@
 }
 
 + (id)build:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *callbacks; // @synthesize callbacks=_callbacks;
 @property(retain, nonatomic) id <DataReportDynamicPublicParamsProvider> dynamicPublicParamsProvider; // @synthesize dynamicPublicParamsProvider=_dynamicPublicParamsProvider;
 @property(retain, nonatomic) id <DataReportParamsFormatProtocol> formatter; // @synthesize formatter=_formatter;
@@ -33,4 +33,3 @@
 - (id)init;
 
 @end
-

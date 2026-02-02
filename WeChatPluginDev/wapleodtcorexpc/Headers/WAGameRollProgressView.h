@@ -13,7 +13,6 @@
     MovingRhombusView *_view1;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MovingRhombusView *view1; // @synthesize view1=_view1;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;
 - (void)endLoadingAnimation;

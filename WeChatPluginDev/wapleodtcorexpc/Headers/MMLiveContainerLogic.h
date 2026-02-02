@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveEnterSqaureTransitionContext, MMFinderLiveEnterSqaureTransitionController, MMFinderLiveExitSqaureTransitionController, MMFinderLiveMinimizeWindowReporter, MMFinderLiveTask, MMLiveMinimizationInteractiveLogic, MMLiveMinimizeWindow, MMMinimizeLiveContainerView, MMUIButton, MMUIViewController, MiniAudioTaskContentView, MinimizeTaskData, NSArray, NSString, TransitionStateInfo, UIGestureRecognizer, UIImage, UIImageView, UINavigationController, UIViewController;
 @protocol MMLiveContainerLogicControllerDelegate, MMLiveContainerLogicDelegate, MMLiveContainerLogicTargetViewControllerDelegate;
@@ -65,7 +66,6 @@
 + (_Bool)checkIsEnableToPresentInMainScene:(_Bool)arg1;
 + (id)getPresentingVCInMainScene:(_Bool)arg1;
 + (id)getPresentingVC;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enterHomepageTransitionAnimated; // @synthesize enterHomepageTransitionAnimated=_enterHomepageTransitionAnimated;
 @property(nonatomic) _Bool isBoundExitSqaureGesture; // @synthesize isBoundExitSqaureGesture=_isBoundExitSqaureGesture;
 @property(nonatomic) _Bool isBoundEnterSqaureGesture; // @synthesize isBoundEnterSqaureGesture=_isBoundEnterSqaureGesture;
@@ -333,4 +333,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithUserName:(id)arg1 nickName:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 - (id)toList;

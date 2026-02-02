@@ -45,7 +45,6 @@
     struct CGSize _cellSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showFollowButton; // @synthesize showFollowButton=_showFollowButton;
 @property(copy, nonatomic) NSString *replyNickname; // @synthesize replyNickname=_replyNickname;
 @property(copy, nonatomic) NSString *showTitleString; // @synthesize showTitleString=_showTitleString;

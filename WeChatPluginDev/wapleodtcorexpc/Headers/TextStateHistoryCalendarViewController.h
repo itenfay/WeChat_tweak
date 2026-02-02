@@ -15,7 +15,6 @@
     TextStateCardListViewController *_cardListViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak TextStateCardListViewController *cardListViewController; // @synthesize cardListViewController=_cardListViewController;
 @property(nonatomic) _Bool canSelect; // @synthesize canSelect=_canSelect;
 @property(retain, nonatomic) TextStateHistoryLogic *historyLogic; // @synthesize historyLogic=_historyLogic;

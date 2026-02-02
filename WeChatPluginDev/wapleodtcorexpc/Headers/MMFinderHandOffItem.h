@@ -12,7 +12,6 @@
     NSString *_objectNonceId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *objectNonceId; // @synthesize objectNonceId=_objectNonceId;
 @property(copy, nonatomic) NSString *objectId; // @synthesize objectId=_objectId;
 @property(copy, nonatomic) NSString *icon; // @synthesize icon=_icon;

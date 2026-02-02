@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString;
 
@@ -13,7 +14,6 @@
 }
 
 + (id)filterWithFilters:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (void)filterReports:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)addFilter:(id)arg1;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
 }
 
 + (id)badgeItemInJsonDictionary:(id)arg1 categoryKey:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *categorizedId; // @synthesize categorizedId=_categorizedId;
 @property(retain, nonatomic) NSString *lastGroup; // @synthesize lastGroup=_lastGroup;
 @property(nonatomic) unsigned long long lastVersion; // @synthesize lastVersion=_lastVersion;

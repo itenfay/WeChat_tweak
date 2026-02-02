@@ -10,7 +10,6 @@
     MMUIImageView *_doneIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *doneIcon; // @synthesize doneIcon=_doneIcon;
 - (_Bool)shouldShowAdsConfirmView;
 - (void)countdownEndAnimate;

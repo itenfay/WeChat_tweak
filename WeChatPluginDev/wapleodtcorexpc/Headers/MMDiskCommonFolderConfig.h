@@ -14,7 +14,6 @@
 }
 
 + (id)desForStoreTime:(long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *nextConfig; // @synthesize nextConfig=_nextConfig;
 @property(nonatomic) long long defaultTime; // @synthesize defaultTime=_defaultTime;
 - (id)description;

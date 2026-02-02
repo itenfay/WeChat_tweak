@@ -15,7 +15,6 @@
 
 + (_Bool)shouldAutoProcessingToastWithErrorCode:(long long)arg1;
 + (id)baseProcessingToastErrorCodeSet;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *baseProcessingToastErrorCodeSet; // @synthesize baseProcessingToastErrorCodeSet=_baseProcessingToastErrorCodeSet;
 @property(nonatomic, getter=isCancelTask) _Bool cancelTask; // @synthesize cancelTask=_cancelTask;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

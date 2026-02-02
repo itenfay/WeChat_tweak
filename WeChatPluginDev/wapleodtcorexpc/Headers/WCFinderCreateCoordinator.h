@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderNewUserPrepareResponse, NSDictionary, NSString, WCFinderPostSessionModel;
 @protocol WCFinderCreateCoordinatorDelegate;
@@ -27,7 +28,6 @@
 
 + (_Bool)shouldStartCreateUserByMasterContact;
 + (_Bool)shouldStartCreateUserWithPostContact:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(nonatomic) _Bool isAutoLifeCycle; // @synthesize isAutoLifeCycle=_isAutoLifeCycle;
@@ -72,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -96,7 +96,6 @@
 
 + (id)genMappingBusinessIdWithMsg:(id)arg1;
 + (id)getMessageWrapWithMappingBusinessId:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bUsePanCancelGesture; // @synthesize bUsePanCancelGesture=_bUsePanCancelGesture;
 @property(retain, nonatomic) WCDataSearcher *searcher; // @synthesize searcher=_searcher;
 @property(nonatomic) _Bool m_bShowSearchByTime; // @synthesize m_bShowSearchByTime=_m_bShowSearchByTime;

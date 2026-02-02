@@ -18,7 +18,6 @@
     long long _expandHitHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long expandHitHeight; // @synthesize expandHitHeight=_expandHitHeight;
 @property(nonatomic) long long expandHitWidth; // @synthesize expandHitWidth=_expandHitWidth;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;

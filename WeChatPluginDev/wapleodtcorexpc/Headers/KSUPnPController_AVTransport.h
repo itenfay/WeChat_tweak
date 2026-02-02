@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface KSUPnPController_AVTransport
 {
 }
@@ -14,4 +16,3 @@
 - (void)setAVTransportURI:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 
 @end
-

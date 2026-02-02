@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _tapCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapCallback; // @synthesize tapCallback=_tapCallback;
 - (void)dealloc;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

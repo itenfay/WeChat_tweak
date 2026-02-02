@@ -16,7 +16,6 @@
     NSMutableArray *_childAddressFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *childAddressFrame; // @synthesize childAddressFrame=_childAddressFrame;
 @property(nonatomic) unsigned int repeatCountInBackground; // @synthesize repeatCountInBackground=_repeatCountInBackground;
 @property(nonatomic) unsigned int repeatCount; // @synthesize repeatCount=_repeatCount;

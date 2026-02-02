@@ -11,7 +11,6 @@
     id <MMLiveMinimizationAnimateDelegate> _minimizeDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveMinimizationAnimateDelegate> minimizeDelegate; // @synthesize minimizeDelegate=_minimizeDelegate;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

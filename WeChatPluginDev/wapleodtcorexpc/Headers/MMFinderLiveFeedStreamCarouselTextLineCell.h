@@ -12,7 +12,6 @@
     UIView *_hardAdCornerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hardAdCornerView; // @synthesize hardAdCornerView=_hardAdCornerView;
 @property(retain, nonatomic) WCFinderFullScrollTextView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) WCFinderLiveNowView *liveTipsView; // @synthesize liveTipsView=_liveTipsView;

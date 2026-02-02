@@ -11,7 +11,6 @@
     UILabel *_numberLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(retain, nonatomic) CAShapeLayer *flagLayer; // @synthesize flagLayer=_flagLayer;
 - (void)updateNumber:(long long)arg1 showFlag:(_Bool)arg2 animated:(_Bool)arg3;

@@ -15,7 +15,6 @@
     FlutterError *_error;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) FlutterError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDictionary *config; // @synthesize config=_config;
 @property(nonatomic) long long viewId; // @synthesize viewId=_viewId;

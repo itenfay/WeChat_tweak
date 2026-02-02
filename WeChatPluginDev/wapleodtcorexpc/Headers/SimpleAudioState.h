@@ -22,7 +22,6 @@
     MMContext *_m_context;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMContext *m_context; // @synthesize m_context=_m_context;
 @property(retain, nonatomic) NSRecursiveLock *m_dataLock; // @synthesize m_dataLock=_m_dataLock;
 @property(nonatomic) __weak id <SimpleAudioBufferDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

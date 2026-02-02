@@ -17,7 +17,6 @@
     NSDictionary *_extraParams;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *extraParams; // @synthesize extraParams=_extraParams;
 @property(readonly, nonatomic) long long totalLength; // @synthesize totalLength=_totalLength;
 @property(readonly, nonatomic) long long offset; // @synthesize offset=_offset;

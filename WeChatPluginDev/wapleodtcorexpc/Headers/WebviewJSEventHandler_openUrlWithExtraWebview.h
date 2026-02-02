@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WebviewJSEventHandler_openUrlWithExtraWebview
@@ -12,7 +14,6 @@
 
 + (void)setGlobalHasShow:(_Bool)arg1;
 + (_Bool)getGlobalHasShow;
-- (void).cxx_destruct;
 - (void)webPageSheetDidDismiss:(id)arg1;
 - (void)ShowWebViewControllerWithType:(unsigned long long)arg1 andWebViewVC:(id)arg2;
 - (void)webViewReturn:(id)arg1;
@@ -37,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

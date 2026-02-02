@@ -16,7 +16,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_aeskey;
 + (void)PBArrayAdd_url;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aeskey; // @synthesize aeskey=_aeskey;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(readonly, copy) NSString *description;

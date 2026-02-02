@@ -15,7 +15,6 @@
     unsigned long long _eventTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long eventTime; // @synthesize eventTime=_eventTime;
 @property(nonatomic) long long firstViewOffset; // @synthesize firstViewOffset=_firstViewOffset;
 @property(retain, nonatomic) WCFinderFeedListView *feedListView; // @synthesize feedListView=_feedListView;

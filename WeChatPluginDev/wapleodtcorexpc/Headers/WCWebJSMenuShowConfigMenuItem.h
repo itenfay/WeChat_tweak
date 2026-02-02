@@ -12,7 +12,6 @@
     NSString *_menuID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *menuID; // @synthesize menuID=_menuID;
 @property(retain, nonatomic) UIImage *menuIconImage; // @synthesize menuIconImage=_menuIconImage;
 @property(copy, nonatomic) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;

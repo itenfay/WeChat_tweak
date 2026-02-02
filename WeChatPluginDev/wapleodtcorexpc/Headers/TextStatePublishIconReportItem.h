@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_iconType;
 + (void)PBArrayAdd_iconCustomDescription;
 + (void)PBArrayAdd_iconId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int isFromRecentUse; // @synthesize isFromRecentUse=_isFromRecentUse;
 @property(nonatomic) unsigned int iconType; // @synthesize iconType=_iconType;
 @property(retain, nonatomic) NSString *iconCustomDescription; // @synthesize iconCustomDescription=_iconCustomDescription;

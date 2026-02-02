@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CMMotionManager, NSString;
 
@@ -13,7 +14,6 @@
     NSString *lastOrientation;
 }
 
-- (void).cxx_destruct;
 - (void)stopOrientationListener;
 - (void)getOrientation:(CDUnknownBlockType)arg1;
 - (void)startOrientationListener:(CDUnknownBlockType)arg1;
@@ -26,4 +26,3 @@
 @property(readonly) Class superclass;
 
 @end
-

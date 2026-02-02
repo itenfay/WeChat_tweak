@@ -12,7 +12,6 @@
     NSTimer *_timer;
 }
 
-- (void).cxx_destruct;
 - (void)_timerDidFire;
 - (void)_checkAccessTokenExpirationDate;
 - (void)dealloc;

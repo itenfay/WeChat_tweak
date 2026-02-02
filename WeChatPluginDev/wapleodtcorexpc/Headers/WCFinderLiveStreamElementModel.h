@@ -29,7 +29,6 @@
 }
 
 + (id)finderLiveStreamElementModelFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long subStyle; // @synthesize subStyle=_subStyle;
 @property(retain, nonatomic) FinderLiveStreamPlayTogetherInfo *entertainmentInfo; // @synthesize entertainmentInfo=_entertainmentInfo;
 @property(retain, nonatomic) WCFinderLiveCardProductShowcase *productShowcase; // @synthesize productShowcase=_productShowcase;

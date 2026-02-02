@@ -17,7 +17,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *priceAmountLabel; // @synthesize priceAmountLabel=_priceAmountLabel;
 @property(retain, nonatomic) UIImageView *wecoinIconImageView; // @synthesize wecoinIconImageView=_wecoinIconImageView;
 @property(retain, nonatomic) MMFinderLiveGroupedBadgeView *groupedBadgeView; // @synthesize groupedBadgeView=_groupedBadgeView;

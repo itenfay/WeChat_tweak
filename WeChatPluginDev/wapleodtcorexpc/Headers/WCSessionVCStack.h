@@ -10,7 +10,6 @@
     NSMutableArray *m_container;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)search:(id)arg1;
 - (unsigned long long)count;
 - (void)clear;

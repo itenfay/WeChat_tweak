@@ -13,7 +13,6 @@
 + (id)feedInfosInDataItem:(id)arg1 layout:(id)arg2 atIndexPath:(id)arg3;
 + (void)setupRegister:(id)arg1;
 + (id)sectionDefines;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *deleteFeedIds; // @synthesize deleteFeedIds=_deleteFeedIds;
 - (void)onFeedArrayChanged:(id)arg1;
 - (_Bool)showJustWatchWithContentVM:(id)arg1;

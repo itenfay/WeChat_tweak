@@ -17,7 +17,6 @@
     MMLivePivotFooterView *_headerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLivePivotFooterView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) MMLivePivotFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak id <MMLivePivotViewDelegate> delegate; // @synthesize delegate=_delegate;

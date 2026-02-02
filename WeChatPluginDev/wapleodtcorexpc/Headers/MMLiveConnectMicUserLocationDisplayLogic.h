@@ -17,7 +17,6 @@
     MMLiveConnectMicUserLocationDisplayInfo *_anchorLocationDisplayInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int locationDisplayTimeInterval; // @synthesize locationDisplayTimeInterval=_locationDisplayTimeInterval;
 @property(retain, nonatomic) MMLiveConnectMicUserLocationDisplayInfo *anchorLocationDisplayInfo; // @synthesize anchorLocationDisplayInfo=_anchorLocationDisplayInfo;
 @property(retain, nonatomic) NSMutableDictionary *displayedLocationUserDict; // @synthesize displayedLocationUserDict=_displayedLocationUserDict;

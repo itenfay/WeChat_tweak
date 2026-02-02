@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIColor;
 
@@ -22,7 +23,6 @@
     NSMutableArray *_pendingSegmentList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingSegmentList; // @synthesize pendingSegmentList=_pendingSegmentList;
 @property(retain, nonatomic) NSMutableArray *displayingSegmentList; // @synthesize displayingSegmentList=_displayingSegmentList;
 @property(nonatomic) int currKalaPostion; // @synthesize currKalaPostion=_currKalaPostion;
@@ -58,4 +58,3 @@
 - (id)init;
 
 @end
-

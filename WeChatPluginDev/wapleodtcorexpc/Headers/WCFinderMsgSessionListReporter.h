@@ -21,7 +21,6 @@
     NSMutableSet *_openSessionSet;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int delSessionCount; // @synthesize delSessionCount=_delSessionCount;
 @property(nonatomic) unsigned int sessionClickCount; // @synthesize sessionClickCount=_sessionClickCount;
 @property(nonatomic) unsigned int exposeSessionCount; // @synthesize exposeSessionCount=_exposeSessionCount;

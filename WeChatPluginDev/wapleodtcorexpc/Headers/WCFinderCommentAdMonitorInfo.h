@@ -38,7 +38,6 @@
     unsigned long long _renderTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long renderTime; // @synthesize renderTime=_renderTime;
 @property(nonatomic) unsigned long long decodeTime; // @synthesize decodeTime=_decodeTime;
 @property(nonatomic) unsigned long long rtt; // @synthesize rtt=_rtt;

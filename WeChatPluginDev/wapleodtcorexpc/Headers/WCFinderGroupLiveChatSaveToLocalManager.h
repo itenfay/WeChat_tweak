@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, WCFinderGroupLiveChatSaveToLocalBaseHandler;
 @protocol OS_dispatch_queue;
@@ -17,7 +18,6 @@
     NSObject<OS_dispatch_queue> *_kQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *kQueue; // @synthesize kQueue=_kQueue;
 @property(retain, nonatomic) NSMutableSet *saveDataSet; // @synthesize saveDataSet=_saveDataSet;
 @property(retain, nonatomic) NSString *roomId; // @synthesize roomId=_roomId;
@@ -37,4 +37,3 @@
 - (void)dealloc;
 
 @end
-

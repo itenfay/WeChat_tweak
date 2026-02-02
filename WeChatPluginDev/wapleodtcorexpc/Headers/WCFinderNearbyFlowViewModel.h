@@ -21,7 +21,6 @@
     NSMutableSet *_tidContainSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(nonatomic) unsigned long long maxTid; // @synthesize maxTid=_maxTid;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;

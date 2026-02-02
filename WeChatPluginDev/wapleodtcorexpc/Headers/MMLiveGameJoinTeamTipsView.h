@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, NSString;
 
 @interface MMLiveGameJoinTeamTipsView
@@ -12,7 +14,6 @@
     CDUnknownBlockType _reloadAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reloadAction; // @synthesize reloadAction=_reloadAction;
 @property(copy, nonatomic) CDUnknownBlockType showAction; // @synthesize showAction=_showAction;
 @property(readonly, nonatomic) MMFinderLiveTaskId *taskId; // @synthesize taskId=_taskId;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

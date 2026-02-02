@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CADisplayLink;
 
@@ -14,7 +15,6 @@
     long long _framesPerSecond;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long framesPerSecond; // @synthesize framesPerSecond=_framesPerSecond;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
@@ -25,4 +25,3 @@
 - (void)dealloc;
 
 @end
-

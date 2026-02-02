@@ -49,7 +49,6 @@
 + (void)PBArrayAdd_musicDataUrl;
 + (void)PBArrayAdd_singer;
 + (void)PBArrayAdd_songName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mid; // @synthesize mid=_mid;
 @property(copy, nonatomic) NSString *musicOperationUrl; // @synthesize musicOperationUrl=_musicOperationUrl;
 @property(copy, nonatomic) NSString *lowerQualityImagePath; // @synthesize lowerQualityImagePath=_lowerQualityImagePath;

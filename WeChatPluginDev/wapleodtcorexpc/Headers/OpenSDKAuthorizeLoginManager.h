@@ -45,7 +45,6 @@
 
 + (void)fillAuthConfirmReq:(id)arg1 WithLoginReq:(id)arg2;
 + (void)fillAuthAuthorizeReq:(id)arg1 WithLoginReq:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCurAuthReqFinished; // @synthesize isCurAuthReqFinished=_isCurAuthReqFinished;
 @property(nonatomic) unsigned long long stepStartTime; // @synthesize stepStartTime=_stepStartTime;
 @property(nonatomic) unsigned int stayStartTime; // @synthesize stayStartTime=_stayStartTime;

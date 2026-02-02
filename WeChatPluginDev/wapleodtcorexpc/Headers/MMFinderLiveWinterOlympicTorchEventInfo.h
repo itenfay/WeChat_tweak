@@ -19,7 +19,6 @@
     unsigned long long _eventType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSString *avatarUrl; // @synthesize avatarUrl=_avatarUrl;
 @property(nonatomic) long long relayIndex; // @synthesize relayIndex=_relayIndex;

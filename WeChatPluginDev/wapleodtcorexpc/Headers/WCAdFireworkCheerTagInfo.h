@@ -20,7 +20,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *jumpLinkActionInfo; // @synthesize jumpLinkActionInfo=_jumpLinkActionInfo;
 @property(retain, nonatomic) NSString *jumpLinkIconDark; // @synthesize jumpLinkIconDark=_jumpLinkIconDark;
 @property(retain, nonatomic) NSString *jumpLinkIconLight; // @synthesize jumpLinkIconLight=_jumpLinkIconLight;

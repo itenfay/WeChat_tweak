@@ -17,7 +17,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) RichTextView *tipsTextView; // @synthesize tipsTextView=_tipsTextView;
 @property(retain, nonatomic) WCFinderPreviewFeedHorizontallyView *feedHorizonView; // @synthesize feedHorizonView=_feedHorizonView;

@@ -15,7 +15,6 @@
     unsigned char _routeInfo;
 }
 
-- (void).cxx_destruct;
 @property unsigned char routeInfo; // @synthesize routeInfo=_routeInfo;
 @property(retain, nonatomic) id m_userData; // @synthesize m_userData;
 - (void)WCBaseInfoItemEditChanged:(id)arg1;

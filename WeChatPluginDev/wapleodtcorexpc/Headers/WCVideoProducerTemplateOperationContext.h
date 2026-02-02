@@ -16,7 +16,6 @@
     WCVideoProducerTemplatePlayingOperation *_currentTemplateOperation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCVideoProducerTemplatePlayingOperation *currentTemplateOperation; // @synthesize currentTemplateOperation=_currentTemplateOperation;
 @property(retain, nonatomic) NSMutableArray *templateOperationList; // @synthesize templateOperationList=_templateOperationList;
 @property(retain, nonatomic) OrderedDictionary *showedTemplateListMap; // @synthesize showedTemplateListMap=_showedTemplateListMap;

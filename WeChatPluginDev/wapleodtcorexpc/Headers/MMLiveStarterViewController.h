@@ -37,7 +37,6 @@
     MMGrowTextView *_growTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGrowTextView *growTextView; // @synthesize growTextView=_growTextView;
 @property(retain, nonatomic) WCFinderHeadImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) WCFinderLiveStarterReporter *reporter; // @synthesize reporter=_reporter;

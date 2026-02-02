@@ -22,7 +22,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) double rightBaseLineX; // @synthesize rightBaseLineX=_rightBaseLineX;
 @property(nonatomic) double stateX; // @synthesize stateX=_stateX;
 @property(retain, nonatomic) NSArray *sameTpCardDataList; // @synthesize sameTpCardDataList=_sameTpCardDataList;

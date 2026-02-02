@@ -16,7 +16,6 @@
     UILabel *_valueLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) MMGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;

@@ -4,10 +4,10 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (YogaKit)
 - (void)configureLayoutWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isYogaEnabled;
 - (id)yoga;
 @end
-

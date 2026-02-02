@@ -11,7 +11,6 @@
     NSMutableArray *_arrImageSourceInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrImageSourceInfos; // @synthesize arrImageSourceInfos=_arrImageSourceInfos;
 @property(nonatomic) _Bool enableBottomBar; // @synthesize enableBottomBar=_enableBottomBar;
 - (id)init;

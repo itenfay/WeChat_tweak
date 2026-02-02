@@ -10,7 +10,6 @@
     WCPayECardCgiError *_baseECardCgiError;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayECardCgiError *baseECardCgiError; // @synthesize baseECardCgiError=_baseECardCgiError;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2;
 - (void)handleECardCgiError:(id)arg1;

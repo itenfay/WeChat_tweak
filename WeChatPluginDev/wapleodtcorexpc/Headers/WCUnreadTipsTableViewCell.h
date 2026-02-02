@@ -16,7 +16,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUnreadTipsViewModel *vm; // @synthesize vm=_vm;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MMUIButton *defaultButton; // @synthesize defaultButton=_defaultButton;

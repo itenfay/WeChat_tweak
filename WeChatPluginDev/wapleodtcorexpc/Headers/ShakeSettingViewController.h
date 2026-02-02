@@ -13,7 +13,6 @@
     MMPageSheetBaseView *_pageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPageSheetBaseView *pageView; // @synthesize pageView=_pageView;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 - (long long)styleForPageSheetConfirmButton;

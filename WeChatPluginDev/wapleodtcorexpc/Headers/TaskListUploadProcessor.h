@@ -13,7 +13,6 @@
     MultiMediaUploadTask *_currentTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MultiMediaUploadTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(retain, nonatomic) NSMutableArray *uploadTaskList; // @synthesize uploadTaskList=_uploadTaskList;
 @property(nonatomic) unsigned long long uploadTaskTotalSize; // @synthesize uploadTaskTotalSize=_uploadTaskTotalSize;

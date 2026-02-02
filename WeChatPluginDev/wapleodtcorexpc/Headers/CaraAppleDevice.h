@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_source> *_batteryTimer;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *batteryTimer; // @synthesize batteryTimer=_batteryTimer;
 @property float batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 @property long long batteryState; // @synthesize batteryState=_batteryState;

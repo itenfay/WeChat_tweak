@@ -18,7 +18,6 @@
 
 + (double)heightForViewItem:(id)arg1 inTableView:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(retain, nonatomic) UIImageView *endPointView; // @synthesize endPointView=_endPointView;
 @property(retain, nonatomic) UIView *leftLine; // @synthesize leftLine=_leftLine;

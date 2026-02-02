@@ -13,7 +13,6 @@
     unsigned long long _tryCloseCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tryCloseCount; // @synthesize tryCloseCount=_tryCloseCount;
 @property(retain, nonatomic) MMFinderLiveConnectMicUser *userInfo; // @synthesize userInfo=_userInfo;
 

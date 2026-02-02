@@ -16,7 +16,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int commentTopicId; // @synthesize commentTopicId=_commentTopicId;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;

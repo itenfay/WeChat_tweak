@@ -11,7 +11,6 @@
     TingLiteMediaView *_mediaView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingLiteMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) MMMusicInfo *musicInfo; // @synthesize musicInfo=_musicInfo;
 - (void)fillMusicShareItemWithMVPlayerData:(id)arg1;

@@ -30,7 +30,6 @@
 @property(copy, nonatomic) NSString *mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) NSString *tn; // @synthesize tn=_tn;
 @property(copy, nonatomic) NSString *schemeURL; // @synthesize schemeURL=_schemeURL;
-- (void).cxx_destruct;
 - (id)deviceInfo;
 - (void)updateNetworkMode:(long long)arg1;
 - (void)reachabilityChanged:(id)arg1;

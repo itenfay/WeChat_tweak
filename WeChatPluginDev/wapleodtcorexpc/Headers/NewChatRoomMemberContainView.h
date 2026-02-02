@@ -22,7 +22,6 @@
     WCColorProxy *_colorProxy;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowOpenIMTypeInGroupContact; // @synthesize isShowOpenIMTypeInGroupContact=_isShowOpenIMTypeInGroupContact;
 @property(retain, nonatomic) WCColorProxy *colorProxy; // @synthesize colorProxy=_colorProxy;
 @property(nonatomic) _Bool wrapItemAccessibilityElement; // @synthesize wrapItemAccessibilityElement=_wrapItemAccessibilityElement;

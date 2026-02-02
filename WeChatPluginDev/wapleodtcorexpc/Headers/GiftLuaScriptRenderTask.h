@@ -13,7 +13,6 @@
     unsigned long long _renderSeq;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long renderSeq; // @synthesize renderSeq=_renderSeq;
 @property(retain, nonatomic) NSString *resPath; // @synthesize resPath=_resPath;
 

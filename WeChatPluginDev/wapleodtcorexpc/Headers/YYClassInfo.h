@@ -21,7 +21,6 @@
 
 + (id)classInfoWithClassName:(id)arg1;
 + (id)classInfoWithClass:(Class)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *propertyInfos; // @synthesize propertyInfos=_propertyInfos;
 @property(readonly, nonatomic) YYClassInfo *superClassInfo; // @synthesize superClassInfo=_superClassInfo;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;

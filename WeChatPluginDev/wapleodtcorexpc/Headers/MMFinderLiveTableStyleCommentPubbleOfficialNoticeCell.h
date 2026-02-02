@@ -15,7 +15,6 @@
     MMFinderLiveLiveRoleSignView *_mysteriousSignView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLiveRoleSignView *mysteriousSignView; // @synthesize mysteriousSignView=_mysteriousSignView;
 @property(nonatomic) unsigned int lastMsgSubtype; // @synthesize lastMsgSubtype=_lastMsgSubtype;
 @property(nonatomic) unsigned int lastRank; // @synthesize lastRank=_lastRank;

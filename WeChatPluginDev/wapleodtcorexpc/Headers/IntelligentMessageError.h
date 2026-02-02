@@ -11,7 +11,6 @@
     NSString *_desc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(nonatomic) _Bool isError; // @synthesize isError=_isError;
 

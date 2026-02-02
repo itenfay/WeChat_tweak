@@ -11,7 +11,6 @@
     MMWebViewKeepHolderMgr *_webKeeper;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWebViewKeepHolderMgr *webKeeper; // @synthesize webKeeper=_webKeeper;
 @property(retain, nonatomic) MMWebViewController *webViewVC; // @synthesize webViewVC=_webViewVC;
 

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface FBSDKInternalUtility : NSObject
 {
@@ -60,4 +61,3 @@
 + (id)appURLScheme;
 
 @end
-

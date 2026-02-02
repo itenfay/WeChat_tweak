@@ -19,7 +19,6 @@
     double _scale;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) double rotation; // @synthesize rotation=_rotation;
 @property(nonatomic) double translationY; // @synthesize translationY=_translationY;

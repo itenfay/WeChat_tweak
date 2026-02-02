@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSInputStream, NSMutableArray, NSOutputStream, NSString, NSURL;
 @protocol OS_dispatch_queue;
@@ -27,7 +28,6 @@
     NSOutputStream *_outputStream;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

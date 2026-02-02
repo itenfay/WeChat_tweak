@@ -20,7 +20,6 @@
 
 + (id)tingPlaylistOPWrapWithJSON:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *generalString; // @synthesize generalString=_generalString;
 @property(retain, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(retain, nonatomic) NSString *cover; // @synthesize cover=_cover;

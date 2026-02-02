@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderFeedMediaWrap, WCFinderMediaInfo;
 
 @interface EmoticonCustomCreateVideoDownloadTask
@@ -17,7 +19,6 @@
     NSString *_nonceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(copy, nonatomic) CDUnknownBlockType finderSucBlock; // @synthesize finderSucBlock=_finderSucBlock;
@@ -48,4 +49,3 @@
 @property(readonly) Class superclass;
 
 @end
-

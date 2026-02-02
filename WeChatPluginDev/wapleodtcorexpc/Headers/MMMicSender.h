@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @protocol MMMicReceiver;
 
 @interface MMMicSender
@@ -18,7 +20,6 @@
     CDUnknownBlockType _queueAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType queueAction; // @synthesize queueAction=_queueAction;
 @property(nonatomic) int channelCount; // @synthesize channelCount=_channelCount;
 @property(nonatomic) _Bool disableSendData; // @synthesize disableSendData=_disableSendData;
@@ -41,4 +42,3 @@
 - (void)handleQueue:(struct OpaqueAudioQueue *)arg1 buffer:(struct AudioQueueBuffer *)arg2 startTime:(const struct AudioTimeStamp *)arg3 inNumPackets:(unsigned int)arg4 inPacketDesc:(const struct AudioStreamPacketDescription *)arg5;
 
 @end
-

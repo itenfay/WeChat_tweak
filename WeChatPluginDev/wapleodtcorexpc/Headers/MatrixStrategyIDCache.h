@@ -13,7 +13,6 @@
     NSRecursiveLock *_idArrayLock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *idArrayLock; // @synthesize idArrayLock=_idArrayLock;
 @property(retain, nonatomic) NSMutableDictionary *strategyMap; // @synthesize strategyMap=_strategyMap;
 - (id)getReportIDForStrategy:(id)arg1;

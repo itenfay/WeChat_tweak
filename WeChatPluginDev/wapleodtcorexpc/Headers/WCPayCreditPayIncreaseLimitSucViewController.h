@@ -10,7 +10,6 @@
     id <WCPayCreditPayIncreaseLimitSucViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)initHeaderView;
 - (void)initNavigationBar;

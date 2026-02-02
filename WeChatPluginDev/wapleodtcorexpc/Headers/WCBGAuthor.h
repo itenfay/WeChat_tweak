@@ -23,7 +23,6 @@
 + (void)PBArrayAdd_title;
 + (void)PBArrayAdd_name;
 + (id)bgAuthorFromServerObject:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMediaItem *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *quote; // @synthesize quote=_quote;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCPIPTextStateDescription;
 
 @interface MMFinderLiveStateTextWidgetObj
@@ -13,7 +15,6 @@
     struct CGSize _sizeText;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize sizeText; // @synthesize sizeText=_sizeText;
 @property(retain, nonatomic) WCPIPTextStateDescription *textDescription; // @synthesize textDescription=_textDescription;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
@@ -32,4 +33,3 @@
 - (id)initWithTextDescription:(id)arg1 businessId:(id)arg2;
 
 @end
-

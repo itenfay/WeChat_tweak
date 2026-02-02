@@ -18,7 +18,6 @@
     long long _refreshStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long refreshStyle; // @synthesize refreshStyle=_refreshStyle;
 @property(retain, nonatomic) NSString *normalIconName; // @synthesize normalIconName=_normalIconName;
 @property(retain, nonatomic) NSString *selectedIconName; // @synthesize selectedIconName=_selectedIconName;

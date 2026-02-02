@@ -18,7 +18,6 @@
     BrandProfileEnterInfo *_profileEnterInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) BrandProfileEnterInfo *profileEnterInfo; // @synthesize profileEnterInfo=_profileEnterInfo;
 @property(retain, nonatomic) NSString *searchClickId; // @synthesize searchClickId=_searchClickId;
 @property(retain, nonatomic) BizProfileV2Resp *cacheItem; // @synthesize cacheItem=_cacheItem;

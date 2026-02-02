@@ -14,7 +14,6 @@
     NSString *_query;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;

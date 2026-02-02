@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderLiveStarteAudioModeViewModel, WCFinderLiveStarteGameModeViewModel, WCFinderLiveStartePublicModel, WCFinderLiveStarteVideoModeViewModel;
 
@@ -15,7 +16,6 @@
     WCFinderLiveStartePublicModel *_publicModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStartePublicModel *publicModel; // @synthesize publicModel=_publicModel;
 @property(retain, nonatomic) WCFinderLiveStarteGameModeViewModel *gameModeViewModel; // @synthesize gameModeViewModel=_gameModeViewModel;
 @property(retain, nonatomic) WCFinderLiveStarteAudioModeViewModel *audioModeViewModel; // @synthesize audioModeViewModel=_audioModeViewModel;
@@ -45,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

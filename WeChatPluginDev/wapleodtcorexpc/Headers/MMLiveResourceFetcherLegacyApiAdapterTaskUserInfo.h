@@ -12,7 +12,6 @@
     NSString *_downloadUriHash;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadUriHash; // @synthesize downloadUriHash=_downloadUriHash;
 
 @end

@@ -13,7 +13,6 @@
     CdnProgressInfo *_progressInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CdnProgressInfo *progressInfo; // @synthesize progressInfo=_progressInfo;
 @property(nonatomic) int retCode; // @synthesize retCode=_retCode;
 - (id)initWithRetCode:(int)arg1 progressInfo:(id)arg2;

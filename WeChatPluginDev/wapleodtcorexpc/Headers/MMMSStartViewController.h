@@ -10,7 +10,6 @@
     UIImageView *m_logoView;
 }
 
-- (void).cxx_destruct;
 - (void)onNextButtonClicked:(id)arg1;
 - (void)layoutLogoView;
 - (void)layoutViews;

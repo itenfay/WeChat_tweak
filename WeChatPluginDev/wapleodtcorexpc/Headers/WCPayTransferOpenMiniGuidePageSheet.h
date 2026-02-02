@@ -13,7 +13,6 @@
     OpenMinimchGuide *_viewData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenMinimchGuide *viewData; // @synthesize viewData=_viewData;
 @property(retain, nonatomic) UIView *tipsContainerView; // @synthesize tipsContainerView=_tipsContainerView;
 @property(nonatomic) __weak id <WCPayTransferOpenMiniGuidePageSheetDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;

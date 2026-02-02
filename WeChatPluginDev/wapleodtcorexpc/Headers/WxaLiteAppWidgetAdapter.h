@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterMethodChannel, FlutterViewController, LiteAppPageConfig, MMLiteAppReporter, NSMutableDictionary, NSString, UIImage, UIViewController, WxaLiteAppStartReport, WxaLiteAppWidgetConsumer, WxaLiteAppWidgetFlutterPluginApi;
 @protocol LiteAppWidgetParentViewControllerDelegate;
@@ -46,7 +47,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) float lastVolume; // @synthesize lastVolume=_lastVolume;
 @property(nonatomic) long long lastOrientation; // @synthesize lastOrientation=_lastOrientation;
 @property(nonatomic) float lastBatteryLevel; // @synthesize lastBatteryLevel=_lastBatteryLevel;
@@ -137,4 +137,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,8 +4,8 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (MMMultiButton)
 @property(readonly, copy, nonatomic) CDUnknownBlockType addMultiButton;
 @end
-

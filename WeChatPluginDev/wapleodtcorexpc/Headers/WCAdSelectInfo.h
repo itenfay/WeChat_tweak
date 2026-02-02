@@ -15,7 +15,6 @@
     WCAdCardBtnInfo *_rightBtnClickActionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *rightBtnClickActionInfo; // @synthesize rightBtnClickActionInfo=_rightBtnClickActionInfo;
 @property(retain, nonatomic) WCAdCardBtnInfo *leftBtnClickActionInfo; // @synthesize leftBtnClickActionInfo=_leftBtnClickActionInfo;
 @property(retain, nonatomic) NSString *rightBtnTitle; // @synthesize rightBtnTitle;

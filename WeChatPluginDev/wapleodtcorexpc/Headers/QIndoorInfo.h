@@ -13,7 +13,6 @@
     NSString *_levelName;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *levelName; // @synthesize levelName=_levelName;
 @property(readonly, copy, nonatomic) NSString *buildUid; // @synthesize buildUid=_buildUid;
 - (id)initWithBuildUid:(id)arg1 levelName:(id)arg2;

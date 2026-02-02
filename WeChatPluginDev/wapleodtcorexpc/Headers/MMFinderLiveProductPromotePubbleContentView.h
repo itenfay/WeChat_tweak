@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveProductHintAnimationInfo, MMFinderLiveGoodsHotSaleAnimationView, MMFinderLiveGoodsItem, MMFinderLiveGoodsPromoteContentView, MMFinderLiveHotSaleAnimationLogic, NSString;
 
 @interface MMFinderLiveProductPromotePubbleContentView
@@ -16,7 +18,6 @@
 }
 
 + (id)transferPromoteBufferToGoodsItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGoodsHotSaleAnimationView *hotSaleAnimationView; // @synthesize hotSaleAnimationView=_hotSaleAnimationView;
 @property(retain, nonatomic) MMFinderLiveHotSaleAnimationLogic *hotSaleAnimationLogic; // @synthesize hotSaleAnimationLogic=_hotSaleAnimationLogic;
 @property(nonatomic) _Bool closeBySelf; // @synthesize closeBySelf=_closeBySelf;
@@ -68,4 +69,3 @@
 @property(readonly) Class superclass;
 
 @end
-

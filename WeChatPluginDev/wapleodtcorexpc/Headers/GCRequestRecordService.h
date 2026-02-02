@@ -15,7 +15,6 @@
     NSMutableSet *_usedInterCeptSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *usedInterCeptSet; // @synthesize usedInterCeptSet=_usedInterCeptSet;
 @property(retain, nonatomic) NSString *toPickFile; // @synthesize toPickFile=_toPickFile;
 @property(retain, nonatomic) _TtC6WeChat3HAR *interceptHar; // @synthesize interceptHar=_interceptHar;

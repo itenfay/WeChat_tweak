@@ -19,7 +19,6 @@
     id <ContactBatchModifyLogicDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactBatchModifyLogicDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)handleSnsNointerestingResponse:(_Bool)arg1;
 - (void)onWCGroupRemoveMemberReturn:(_Bool)arg1 group:(id)arg2;

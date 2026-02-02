@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, MMWebImageView, NSString;
 
 @interface WCLiveGameRankHalfScreenView
@@ -13,7 +15,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) MMUILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
 @property(retain, nonatomic) MMWebImageView *webImageView; // @synthesize webImageView=_webImageView;
@@ -23,4 +24,3 @@
 - (id)initWithDesc:(id)arg1 imageUrl:(id)arg2;
 
 @end
-

@@ -10,7 +10,6 @@
     id <MMAuthorizeViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMAuthorizeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onOAuthCancel;
 - (id)navigationBarBackgroundColor;

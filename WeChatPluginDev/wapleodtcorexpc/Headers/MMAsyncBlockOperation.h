@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSOperation.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)operationWithBlock:(CDUnknownBlockType)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool internalFinished; // @synthesize internalFinished=_internalFinished;
 @property(nonatomic) _Bool internalExecuting; // @synthesize internalExecuting=_internalExecuting;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
@@ -31,4 +31,3 @@
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end
-

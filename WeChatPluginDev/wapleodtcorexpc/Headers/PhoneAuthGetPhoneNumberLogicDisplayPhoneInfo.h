@@ -13,7 +13,6 @@
     NSString *_describeString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *describeString; // @synthesize describeString=_describeString;
 @property(copy, nonatomic) NSString *showPhoneNumberString; // @synthesize showPhoneNumberString=_showPhoneNumberString;
 @property(nonatomic) _Bool isWxPhone; // @synthesize isWxPhone=_isWxPhone;

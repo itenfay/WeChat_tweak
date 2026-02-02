@@ -11,7 +11,6 @@
     unsigned long long _totalCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(retain, nonatomic) NSMutableArray *localIds; // @synthesize localIds=_localIds;
 - (void)delayNotifyWeb:(id)arg1;

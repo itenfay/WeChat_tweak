@@ -17,7 +17,6 @@
     NSString *_m_coverid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_coverid; // @synthesize m_coverid=_m_coverid;
 @property(retain, nonatomic) NSString *m_sessionid; // @synthesize m_sessionid=_m_sessionid;
 @property(retain, nonatomic) JSEvent *m_event; // @synthesize m_event=_m_event;

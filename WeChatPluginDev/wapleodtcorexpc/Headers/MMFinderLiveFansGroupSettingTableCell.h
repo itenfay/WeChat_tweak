@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSString, UIView;
 
 @interface MMFinderLiveFansGroupSettingTableCell
@@ -16,7 +18,6 @@
     UIView *_rightView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightView; // @synthesize rightView=_rightView;
 @property(retain, nonatomic) MMUILabel *leftTitleLabel; // @synthesize leftTitleLabel=_leftTitleLabel;
 @property(copy, nonatomic) CDUnknownBlockType valueChangeCallback; // @synthesize valueChangeCallback=_valueChangeCallback;
@@ -35,4 +36,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

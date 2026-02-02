@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCFinderFlowViewAutoPlayParams : NSObject
 {
@@ -16,11 +17,9 @@
 + (id)paramsForFollowFlowScene;
 + (id)defaultParams;
 + (CDUnknownBlockType)defaultAutoPlayVisibleRectProvider;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxPlayCount; // @synthesize maxPlayCount=_maxPlayCount;
 @property(copy, nonatomic) CDUnknownBlockType preventChangePlayableBlock; // @synthesize preventChangePlayableBlock=_preventChangePlayableBlock;
 @property(copy, nonatomic) CDUnknownBlockType playableCellsFilterBlock; // @synthesize playableCellsFilterBlock=_playableCellsFilterBlock;
 @property(copy, nonatomic) CDUnknownBlockType visibleRectProvider; // @synthesize visibleRectProvider=_visibleRectProvider;
 
 @end
-

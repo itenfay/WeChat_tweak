@@ -12,7 +12,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentMusicItem *musicItem; // @synthesize musicItem=_musicItem;
 @property(nonatomic) int displayType; // @synthesize displayType=_displayType;
 - (id)initWithCoder:(id)arg1;

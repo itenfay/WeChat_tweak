@@ -10,7 +10,6 @@
     OrderedDictionary *_realFeedExposureItemDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *realFeedExposureItemDic; // @synthesize realFeedExposureItemDic=_realFeedExposureItemDic;
 - (id)init;
 

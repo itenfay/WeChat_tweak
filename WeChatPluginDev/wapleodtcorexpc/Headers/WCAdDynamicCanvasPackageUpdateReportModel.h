@@ -11,7 +11,6 @@
     NSString *_currentVersion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(nonatomic) unsigned long long errorCode; // @synthesize errorCode=_errorCode;
 

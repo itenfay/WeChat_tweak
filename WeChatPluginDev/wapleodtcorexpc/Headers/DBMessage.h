@@ -67,7 +67,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int des; // @synthesize des=_des;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int imageStatus; // @synthesize imageStatus=_imageStatus;

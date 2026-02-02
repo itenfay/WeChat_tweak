@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, RichTextView, UIImageView;
 
@@ -19,7 +20,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *superfanWingsImageView; // @synthesize superfanWingsImageView=_superfanWingsImageView;
 @property(retain, nonatomic) RichTextView *superfanTipLabel; // @synthesize superfanTipLabel=_superfanTipLabel;
 @property(retain, nonatomic) MMUILabel *fansGroupNameTipLabel; // @synthesize fansGroupNameTipLabel=_fansGroupNameTipLabel;
@@ -48,4 +48,3 @@
 @property(readonly) Class superclass;
 
 @end
-

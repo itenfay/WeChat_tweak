@@ -29,7 +29,6 @@
     MMLimitedModeMaskViewView *_maskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLimitedModeMaskViewView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) NSString *pay_status; // @synthesize pay_status=_pay_status;
 @property(retain, nonatomic) NSData *pay_respData; // @synthesize pay_respData=_pay_respData;

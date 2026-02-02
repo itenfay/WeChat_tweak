@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMAsyncBlockOperation, NSDictionary, NSOperationQueue, NSString;
 @protocol EmoticonDescRecommandLogicDelegate;
@@ -31,7 +32,6 @@
 + (id)filterNotInDBEmoticons:(id)arg1;
 + (id)filterNoImageEmoticons:(id)arg1;
 + (id)asyncSearchForKeyword:(id)arg1 descToMd5Cache:(id)arg2 cacheVersion:(int)arg3 packageIndex:(id)arg4 descAliasDic:(id)arg5 descToCustomMd5Cache:(id)arg6 maxLengthForCustomDesc:(unsigned int)arg7;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *descToCustomMd5Cache; // @synthesize descToCustomMd5Cache=_descToCustomMd5Cache;
 @property(nonatomic) unsigned int maxLengthForCustomDesc; // @synthesize maxLengthForCustomDesc=_maxLengthForCustomDesc;
 @property(nonatomic) _Bool needLoadCustomEmotionDesc; // @synthesize needLoadCustomEmotionDesc=_needLoadCustomEmotionDesc;
@@ -73,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

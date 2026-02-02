@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTSettingSelectView;
 
@@ -13,7 +14,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCTSettingSelectView *view; // @synthesize view=_view;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)setViewDelegate:(id)arg1;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

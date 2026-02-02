@@ -14,7 +14,6 @@
     unsigned int m_uiArrivalCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiMsgID; // @synthesize m_uiMsgID;
 @property(nonatomic) unsigned int m_uiArrivalCount; // @synthesize m_uiArrivalCount;
 @property(retain, nonatomic) NSString *m_nsUsrName; // @synthesize m_nsUsrName;

@@ -45,7 +45,6 @@
     CDStruct_e83c9415 _timeRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fixesTransform; // @synthesize fixesTransform=_fixesTransform;
 @property(nonatomic) int selectedKbpsLevel; // @synthesize selectedKbpsLevel=_selectedKbpsLevel;
 @property(nonatomic) int vbvBufferSize; // @synthesize vbvBufferSize=_vbvBufferSize;

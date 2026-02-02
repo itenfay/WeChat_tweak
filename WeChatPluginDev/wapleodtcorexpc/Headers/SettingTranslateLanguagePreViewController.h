@@ -10,7 +10,6 @@
     MMUILabel *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 - (_Bool)isSetNormalToBlackStyle;
 - (id)normalTintColor;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, MMUIButton, MMUIImageView, MMWebImageView, NSString, UILabel, UIScrollView, WCFinderJumpInfoDynamicCarouselLiveNoticeViewModel;
 
 @interface MMFinderLiveNoticePageSheetView
@@ -24,7 +26,6 @@
 + (id)createDetailIconImageView;
 + (id)createTitleLabel;
 + (id)createIconImageView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) MMUIImageView *detailIconImageView; // @synthesize detailIconImageView=_detailIconImageView;
@@ -56,4 +57,3 @@
 @property(readonly) Class superclass;
 
 @end
-

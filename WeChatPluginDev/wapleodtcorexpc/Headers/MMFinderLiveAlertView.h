@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSString;
 
 @interface MMFinderLiveAlertView
@@ -15,7 +17,6 @@
     NSString *_rawViewTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *rawViewTitle; // @synthesize rawViewTitle=_rawViewTitle;
 @property(retain, nonatomic) MMTimer *countDownTimer; // @synthesize countDownTimer=_countDownTimer;
 @property(nonatomic) _Bool displayCountDownInTitleTag; // @synthesize displayCountDownInTitleTag=_displayCountDownInTitleTag;
@@ -29,4 +30,3 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 
 @end
-

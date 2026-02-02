@@ -12,7 +12,6 @@
     UIView *_blurView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 - (void)layoutSubviews;
 

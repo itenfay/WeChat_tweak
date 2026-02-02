@@ -18,7 +18,6 @@
 @property(nonatomic) int pos; // @synthesize pos=_pos;
 @property(nonatomic) int offset; // @synthesize offset=_offset;
 @property(nonatomic) int parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)JSONObject;
 
 @end

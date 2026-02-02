@@ -18,7 +18,6 @@
 
 + (id)stringForInnerState:(unsigned long long)arg1;
 + (id)stringForPlayerState:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property unsigned long long preInnerState; // @synthesize preInnerState=_preInnerState;
 @property unsigned long long currentInnerState; // @synthesize currentInnerState=_currentInnerState;
 @property unsigned long long preState; // @synthesize preState=_preState;

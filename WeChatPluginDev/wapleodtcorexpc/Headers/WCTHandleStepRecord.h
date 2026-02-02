@@ -14,7 +14,6 @@
     NSDate *_startTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int stepCount; // @synthesize stepCount=_stepCount;
 @property(nonatomic) double totalTime; // @synthesize totalTime=_totalTime;

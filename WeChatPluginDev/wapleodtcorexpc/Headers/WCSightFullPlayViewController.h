@@ -15,7 +15,6 @@
     id <WCSightFullPlayViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDataItem *m_dataItem; // @synthesize m_dataItem;
 @property(retain, nonatomic) WCMediaItem *m_mediaData; // @synthesize m_mediaData;
 @property(nonatomic) __weak id <WCSightFullPlayViewControllerDelegate> m_delegate; // @synthesize m_delegate;

@@ -15,7 +15,6 @@
     NSString *_pagePath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int component; // @synthesize component=_component;
 @property(nonatomic) unsigned int appServiceType; // @synthesize appServiceType=_appServiceType;
 @property(copy, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;

@@ -14,7 +14,6 @@
     struct CGRect _imageFinalFrameInWindow;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect imageFinalFrameInWindow; // @synthesize imageFinalFrameInWindow=_imageFinalFrameInWindow;
 @property(nonatomic) struct CGRect imageOriginFrameInWindow; // @synthesize imageOriginFrameInWindow=_imageOriginFrameInWindow;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

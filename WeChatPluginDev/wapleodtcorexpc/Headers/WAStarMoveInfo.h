@@ -13,7 +13,6 @@
     WAAppItemData *_toNextItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppItemData *toNextItem; // @synthesize toNextItem=_toNextItem;
 @property(retain, nonatomic) WAAppItemData *toPreItem; // @synthesize toPreItem=_toPreItem;
 @property(retain, nonatomic) WAAppItemData *moveItem; // @synthesize moveItem=_moveItem;

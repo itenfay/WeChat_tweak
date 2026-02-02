@@ -11,7 +11,6 @@
     NSArray *_layoutItems;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) NSArray *layoutItems; // @synthesize layoutItems=_layoutItems;
 - (void)encodeWithCoder:(id)arg1;

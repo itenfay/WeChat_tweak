@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterBasicMessageChannel, FlutterBinaryMessengerRelay, FlutterDartProject, FlutterMethodChannel, FlutterTextureRegistryRelay, FlutterViewController, NSMutableDictionary, NSString, NSURL;
 @protocol FlutterBinaryMessenger, FlutterEngineDelegate, FlutterTextureRegistry, NSObject;
@@ -72,7 +73,6 @@
 + (id)generateThreadLabel:(id)arg1;
 + (_Bool)isProfilerEnabled;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) CDStruct_60417d04 *embedderAPI; // @synthesize embedderAPI=_embedderAPI;
 @property(nonatomic) _Bool enableEmbedderAPI; // @synthesize enableEmbedderAPI=_enableEmbedderAPI;
 @property(retain, nonatomic) id <NSObject> flutterViewControllerWillDeallocObserver; // @synthesize flutterViewControllerWillDeallocObserver=_flutterViewControllerWillDeallocObserver;
@@ -224,4 +224,3 @@
 @property(readonly) Class superclass;
 
 @end
-

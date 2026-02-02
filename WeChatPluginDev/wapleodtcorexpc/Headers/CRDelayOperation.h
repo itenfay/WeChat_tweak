@@ -14,7 +14,6 @@
 
 + (id)operationWithDelayInSeconds:(double)arg1;
 + (id)operationWithDelay:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CRDelay *delay; // @synthesize delay=_delay;
 @property(readonly, nonatomic) double seconds;
 - (void)cancel;

@@ -17,7 +17,6 @@
     long long _mediaDurationMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool selectedSubtitle; // @synthesize selectedSubtitle=_selectedSubtitle;
 @property(nonatomic) _Bool isMultiTrack; // @synthesize isMultiTrack=_isMultiTrack;
 @property(nonatomic) long long mediaDurationMs; // @synthesize mediaDurationMs=_mediaDurationMs;

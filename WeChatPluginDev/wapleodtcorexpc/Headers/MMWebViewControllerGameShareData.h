@@ -24,7 +24,6 @@
     GameShareDataImageModel *_imageModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int shareType; // @synthesize shareType=_shareType;
 @property(retain, nonatomic) GameShareDataImageModel *imageModel; // @synthesize imageModel=_imageModel;
 @property(retain, nonatomic) GameShareDataTailInfo *tailInfo; // @synthesize tailInfo=_tailInfo;

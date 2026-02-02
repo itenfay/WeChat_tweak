@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary;
 
@@ -16,7 +17,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)contextName:(id)arg1;
 - (void)updateSampleData:(id)arg1 contextName:(id)arg2;
 - (void)jscScriptProfilerStopTracking:(id)arg1;
@@ -27,4 +27,3 @@
 - (id)init;
 
 @end
-

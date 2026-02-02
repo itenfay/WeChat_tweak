@@ -16,7 +16,6 @@
     CAShapeLayer *_shpreLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shpreLayer; // @synthesize shpreLayer=_shpreLayer;
 @property(retain, nonatomic) CAShapeLayer *bottomShapeLayer; // @synthesize bottomShapeLayer=_bottomShapeLayer;
 @property(retain, nonatomic) UIColor *lineStrokeColor; // @synthesize lineStrokeColor=_lineStrokeColor;

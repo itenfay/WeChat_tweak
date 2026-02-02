@@ -15,7 +15,6 @@
     WCFinderDetailTimeStringConfig *_timeStringConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDetailTimeStringConfig *timeStringConfig; // @synthesize timeStringConfig=_timeStringConfig;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

@@ -53,7 +53,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) int topFeedType; // @synthesize topFeedType=_topFeedType;
 @property(retain, nonatomic) NSString *titleV2; // @synthesize titleV2=_titleV2;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;

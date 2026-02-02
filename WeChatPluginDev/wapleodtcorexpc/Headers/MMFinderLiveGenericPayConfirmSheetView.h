@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCPLabel, MMLiveRewardGiftCoinButton, MMUIButton, NSString, UIImageView, UILabel, UIView;
 
 @interface MMFinderLiveGenericPayConfirmSheetView
@@ -23,7 +25,6 @@
     long long _price;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromFeed; // @synthesize isFromFeed=_isFromFeed;
 @property(nonatomic) long long price; // @synthesize price=_price;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -73,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -33,7 +33,6 @@
     MMLiveGamePlayTogetherJoinTeamSettingCell *_joinTeamSettingCell;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveGamePlayTogetherJoinTeamSettingCell *joinTeamSettingCell; // @synthesize joinTeamSettingCell=_joinTeamSettingCell;
 @property(retain, nonatomic) MMLiveGamePlayTogetherJoinTeamSettingItem *joinTeamSettingItem; // @synthesize joinTeamSettingItem=_joinTeamSettingItem;
 @property(retain, nonatomic) MMLiveGamePlayTogetherJoinTeamCell *joinTeamCell; // @synthesize joinTeamCell=_joinTeamCell;

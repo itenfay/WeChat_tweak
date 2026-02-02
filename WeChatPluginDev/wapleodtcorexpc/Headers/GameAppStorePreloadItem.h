@@ -18,7 +18,6 @@
     double _loadCompleteTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double loadCompleteTime; // @synthesize loadCompleteTime=_loadCompleteTime;
 @property(nonatomic) double startLoadTime; // @synthesize startLoadTime=_startLoadTime;
 @property(nonatomic) _Bool isPreload; // @synthesize isPreload=_isPreload;

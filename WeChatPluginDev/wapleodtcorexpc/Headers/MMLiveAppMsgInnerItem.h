@@ -14,7 +14,6 @@
     MMGroupLiveInfoItem *_liveInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMGroupLiveInfoItem *liveInfo; // @synthesize liveInfo=_liveInfo;
 @property(nonatomic) _Bool useDefaultLiveName; // @synthesize useDefaultLiveName=_useDefaultLiveName;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

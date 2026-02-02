@@ -13,7 +13,6 @@
     GameLifeInfoChatRoom *_chatRoomInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameLifeInfoChatRoom *chatRoomInfo; // @synthesize chatRoomInfo=_chatRoomInfo;
 @property(nonatomic) _Bool replaceNotice; // @synthesize replaceNotice=_replaceNotice;
 

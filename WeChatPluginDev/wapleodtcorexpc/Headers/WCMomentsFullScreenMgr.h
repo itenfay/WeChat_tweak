@@ -12,7 +12,6 @@
     WCDataItem *_dataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(retain, nonatomic) NSString *fullScreenMid; // @synthesize fullScreenMid=_fullScreenMid;
 @property(retain, nonatomic) NSString *fullScreenTid; // @synthesize fullScreenTid=_fullScreenTid;

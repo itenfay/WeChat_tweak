@@ -20,7 +20,6 @@
     WXGChatLogProtoHandler *_protoHandler;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bInTransfer; // @synthesize bInTransfer=_bInTransfer;
 @property(nonatomic) _Bool bConfirmLogic; // @synthesize bConfirmLogic=_bConfirmLogic;
 @property(nonatomic) _Bool bStartLogic; // @synthesize bStartLogic=_bStartLogic;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAGradientLayer, MMAssetPickerSliderThumbView, MMUILabel, NSDate;
 @protocol MMAssetPickerSliderDelegate;
 
@@ -23,7 +25,6 @@
     struct UIEdgeInsets _thumbViewEdgeInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHiddenSliderTopMask; // @synthesize isHiddenSliderTopMask=_isHiddenSliderTopMask;
 @property(nonatomic) _Bool isThumbViewAnimating; // @synthesize isThumbViewAnimating=_isThumbViewAnimating;
 @property(retain, nonatomic) NSDate *lastDate; // @synthesize lastDate=_lastDate;
@@ -66,4 +67,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 thumbViewEdgeInset:(struct UIEdgeInsets)arg2;
 
 @end
-

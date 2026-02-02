@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMLiveMinimizeViewController, NSString, SequenceAnimationObject;
 @protocol MMLiveMinimizeWindowDelegate;
 
@@ -15,7 +17,6 @@
     struct CGRect _originMoveViewRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect originMoveViewRect; // @synthesize originMoveViewRect=_originMoveViewRect;
 @property(retain, nonatomic) MMLiveMinimizeViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) SequenceAnimationObject *animationObjectForAlpha; // @synthesize animationObjectForAlpha=_animationObjectForAlpha;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

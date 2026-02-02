@@ -12,7 +12,6 @@
     id <POITapGestureRecognizerDelegate> _actionDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <POITapGestureRecognizerDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

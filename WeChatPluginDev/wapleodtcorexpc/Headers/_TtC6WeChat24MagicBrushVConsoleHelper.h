@@ -18,7 +18,6 @@
     MISSING_TYPE *containerView;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)webViewDidFinishLoad:(id)arg1 navigation:(id)arg2;
 - (void)layout;

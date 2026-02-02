@@ -22,7 +22,6 @@
     MMUIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *remainLabel; // @synthesize remainLabel=_remainLabel;

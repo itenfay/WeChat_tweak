@@ -13,7 +13,6 @@
     id <WCPayResetPwdByFaceCgiDelegate> _cgiDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayResetPwdByFaceCgiDelegate> cgiDelegate; // @synthesize cgiDelegate=_cgiDelegate;
 @property(retain, nonatomic) NSString *passwd; // @synthesize passwd=_passwd;
 @property(retain, nonatomic) NSString *auth_token; // @synthesize auth_token=_auth_token;

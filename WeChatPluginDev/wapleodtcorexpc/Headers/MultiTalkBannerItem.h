@@ -58,7 +58,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int bannerSDKMode; // @synthesize bannerSDKMode;
 @property(nonatomic) unsigned long long bannerItemSeq; // @synthesize bannerItemSeq;
 @property(nonatomic) unsigned int multiTalkStatus; // @synthesize multiTalkStatus;

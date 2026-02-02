@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
@@ -16,7 +17,6 @@
     WCTTable *m_tableOfflineCodeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *m_tableOfflineCodeInfo; // @synthesize m_tableOfflineCodeInfo;
 @property(retain, nonatomic) WCTTable *m_tableOfflineCode; // @synthesize m_tableOfflineCode;
 @property(retain, nonatomic) WCTTable *m_tableMsgCenter; // @synthesize m_tableMsgCenter;
@@ -73,4 +73,3 @@
 - (_Bool)insertOrUpdateCodeConfigItem:(id)arg1;
 
 @end
-

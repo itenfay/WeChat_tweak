@@ -15,7 +15,6 @@
     NSCache *_cache;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int realCacheFrameCount; // @synthesize realCacheFrameCount=_realCacheFrameCount;
 @property(nonatomic) unsigned int realCacheCout; // @synthesize realCacheCout=_realCacheCout;
 @property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;

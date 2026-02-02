@@ -13,7 +13,6 @@
     MMUILabel *_textLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 - (void)setupWithItem:(id)arg1;

@@ -42,7 +42,6 @@
 + (void)MMLiveReportFieldAdd_liveId;
 + (void)MMLiveReportFieldAdd_roomId;
 + (void)MMLiveReportFieldAdd_scene;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long exitChatroomUV; // @synthesize exitChatroomUV;
 @property(nonatomic) unsigned long long exitTimestamp; // @synthesize exitTimestamp;
 @property(nonatomic) unsigned long long enterTimestamp; // @synthesize enterTimestamp;

@@ -14,7 +14,6 @@
     NSLock *_lock;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) QMapLRUCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) NSMutableDictionary *imageTaskDict; // @synthesize imageTaskDict=_imageTaskDict;

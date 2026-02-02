@@ -14,7 +14,6 @@
 }
 
 + (id)sharedQrcLyricParserWapper;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QrcLyricParser *luomaQrcLyricParser; // @synthesize luomaQrcLyricParser=_luomaQrcLyricParser;
 @property(retain, nonatomic) QrcLyricParser *qrcLyricParser; // @synthesize qrcLyricParser=_qrcLyricParser;
 - (id)init;

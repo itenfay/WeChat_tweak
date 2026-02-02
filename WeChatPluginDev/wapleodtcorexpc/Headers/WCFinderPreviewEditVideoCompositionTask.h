@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, MAVVideoComposition, NSArray, VideoEncodeTask;
 
 @interface WCFinderPreviewEditVideoCompositionTask
@@ -23,7 +25,6 @@
 }
 
 + (id)generateFinderConstrainFromMergedImageFromImageList:(id)arg1 forSize:(struct CGSize)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 @property(nonatomic) unsigned long long preCompressCount; // @synthesize preCompressCount=_preCompressCount;
 @property(nonatomic) _Bool isPreCompressUpload; // @synthesize isPreCompressUpload=_isPreCompressUpload;
@@ -61,4 +62,3 @@
 - (id)initWithTaskId:(id)arg1 srcPHAsset:(id)arg2 editVideoAttr:(id)arg3 compositionAttr:(id)arg4 previewThumbImageSize:(struct CGSize)arg5;
 
 @end
-

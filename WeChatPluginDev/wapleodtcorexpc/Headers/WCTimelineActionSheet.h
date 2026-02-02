@@ -14,7 +14,6 @@
 
 + (id)defaultCancelSheetForOversea:(id)arg1;
 + (id)defaultCancelSheet:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) _Bool oversea; // @synthesize oversea=_oversea;
 @property(nonatomic) _Bool shownWithBadge; // @synthesize shownWithBadge=_shownWithBadge;

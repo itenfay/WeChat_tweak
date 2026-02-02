@@ -17,7 +17,6 @@
     CDStruct_1b6d18a9 _snapshotTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPrefetched; // @synthesize isPrefetched=_isPrefetched;
 @property(retain, nonatomic) NSString *cdnUrl; // @synthesize cdnUrl=_cdnUrl;
 @property(retain, nonatomic) NSString *ocrText; // @synthesize ocrText=_ocrText;

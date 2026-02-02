@@ -21,7 +21,6 @@
 }
 
 + (long long)groupTypeForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStarEnabled; // @synthesize isStarEnabled=_isStarEnabled;
 @property(retain, nonatomic) WCMomentsPageContext *pageContext; // @synthesize pageContext=_pageContext;
 @property(nonatomic) long long accessoryContentType; // @synthesize accessoryContentType=_accessoryContentType;

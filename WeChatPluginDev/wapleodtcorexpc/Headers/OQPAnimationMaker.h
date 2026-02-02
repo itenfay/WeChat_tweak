@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAAnimation;
 
@@ -12,7 +13,6 @@
     CAAnimation *_animation;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAAnimation *animation; // @synthesize animation=_animation;
 @property(readonly, nonatomic) CDUnknownBlockType fillMode;
 @property(readonly, nonatomic) CDUnknownBlockType autoreverses;
@@ -30,4 +30,3 @@
 @property(readonly, nonatomic) CDUnknownBlockType animations;
 
 @end
-

@@ -17,7 +17,6 @@
     MISSING_TYPE *toast;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isSameCallWithRoomID:(long long)arg1 roomKey:(long long)arg2;
 - (void)setRoomInfoWithRoomID:(long long)arg1 roomKey:(long long)arg2;
 - (id)initWithContact:(id)arg1 toast:(id)arg2;

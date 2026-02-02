@@ -4,15 +4,14 @@
 //
 
 #import <UIKit/UIAccessibilityElement.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WNAccessibilityMenuElement : UIAccessibilityElement
 {
     CDUnknownBlockType _handle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handle; // @synthesize handle=_handle;
 - (_Bool)accessibilityActivate;
 
 @end
-

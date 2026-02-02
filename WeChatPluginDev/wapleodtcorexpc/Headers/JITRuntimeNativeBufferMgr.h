@@ -14,7 +14,6 @@
     NSMutableDictionary *_remoteBufferDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *remoteBufferDic; // @synthesize remoteBufferDic=_remoteBufferDic;
 @property(retain, nonatomic) NSMutableDictionary *localBufferDic; // @synthesize localBufferDic=_localBufferDic;
 - (id)genBufferID;

@@ -15,7 +15,6 @@
     struct CGRect _simulatedNativeAnimationScreenRect;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect simulatedNativeAnimationScreenRect; // @synthesize simulatedNativeAnimationScreenRect=_simulatedNativeAnimationScreenRect;
 @property(nonatomic) __weak WAWebViewController *currentWebviewController; // @synthesize currentWebviewController=_currentWebviewController;
 @property(nonatomic) _Bool isInteracting; // @synthesize isInteracting=_isInteracting;

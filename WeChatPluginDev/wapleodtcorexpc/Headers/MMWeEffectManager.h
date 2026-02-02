@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CdnRenderContextWrapper, EAGLContext, MMOpenGLContext, NSString, VisEffectRenderContextWrapper, WCLoopMetricsCollector, WeVisLiveEffectMgr, WeeffectRenderContextWrapper, XImageContext;
 @protocol WeEffectEnergyController, WeEffectManagerResultDelegate;
@@ -40,7 +41,6 @@
 }
 
 + (CDUnknownBlockType)createReportTimer:(long long)arg1 block:(CDUnknownBlockType)arg2;
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType processFpsReport; // @synthesize processFpsReport=_processFpsReport;
 @property unsigned long long processFpsStatCnt; // @synthesize processFpsStatCnt=_processFpsStatCnt;
 @property long long processFps; // @synthesize processFps=_processFps;
@@ -190,4 +190,3 @@
 @property(readonly) Class superclass;
 
 @end
-

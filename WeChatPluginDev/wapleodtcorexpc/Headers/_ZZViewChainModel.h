@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIView;
 
@@ -23,7 +24,6 @@
 }
 
 + (Class)viewClass;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType shadowColor_O; // @synthesize shadowColor_O=_shadowColor_O;
 @property(readonly, copy, nonatomic) CDUnknownBlockType shadow_O; // @synthesize shadow_O=_shadow_O;
 @property(readonly, copy, nonatomic) CDUnknownBlockType borderColor_O; // @synthesize borderColor_O=_borderColor_O;
@@ -131,4 +131,3 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType leftChangeSize;
 
 @end
-

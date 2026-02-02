@@ -20,7 +20,6 @@
     struct CGRect _displayFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isApplicationActive; // @synthesize isApplicationActive=_isApplicationActive;
 @property(nonatomic) struct CGRect displayFrame; // @synthesize displayFrame=_displayFrame;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *renderDispatchQueue; // @synthesize renderDispatchQueue=_renderDispatchQueue;

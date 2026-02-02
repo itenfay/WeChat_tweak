@@ -44,7 +44,6 @@
     UIButton *_abontCardButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *abontCardButton; // @synthesize abontCardButton=_abontCardButton;
 @property(nonatomic) long long selectedDepositAmount; // @synthesize selectedDepositAmount=_selectedDepositAmount;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

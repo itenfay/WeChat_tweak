@@ -14,7 +14,6 @@
     NSString *_contextString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contextString; // @synthesize contextString=_contextString;
 @property(nonatomic) double tapMaxDelay; // @synthesize tapMaxDelay=_tapMaxDelay;
 - (void)reset;

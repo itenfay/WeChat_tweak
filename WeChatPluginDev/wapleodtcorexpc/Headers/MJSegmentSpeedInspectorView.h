@@ -16,7 +16,6 @@
     UISelectionFeedbackGenerator *_feedback;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *feedback; // @synthesize feedback=_feedback;
 @property(retain, nonatomic) NSDictionary *pickerStrideLabelsByValue; // @synthesize pickerStrideLabelsByValue=_pickerStrideLabelsByValue;
 @property(retain, nonatomic) UIImage *higherIndicatorImage; // @synthesize higherIndicatorImage=_higherIndicatorImage;

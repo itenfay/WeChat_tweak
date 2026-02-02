@@ -20,7 +20,6 @@
     UIImageView *_accessoryView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) MMUILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

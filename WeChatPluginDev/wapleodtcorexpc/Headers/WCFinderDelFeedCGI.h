@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 
 @interface WCFinderDelFeedCGI
@@ -17,7 +19,6 @@
     NSString *_clientId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
 @property(nonatomic) int feedSourceScene; // @synthesize feedSourceScene=_feedSourceScene;
 @property(nonatomic) int delScene; // @synthesize delScene=_delScene;
@@ -32,4 +33,3 @@
 - (id)initWithFeedTid:(id)arg1 nonceID:(id)arg2 clientId:(id)arg3 posterName:(id)arg4 delScene:(int)arg5 feedSourceScene:(int)arg6 successful:(CDUnknownBlockType)arg7 failure:(CDUnknownBlockType)arg8;
 
 @end
-

@@ -14,7 +14,6 @@
     MMUIButton *_contentScaleModeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *contentScaleModeButton; // @synthesize contentScaleModeButton=_contentScaleModeButton;
 @property(retain, nonatomic) UICollectionView *canvasCollectionView; // @synthesize canvasCollectionView=_canvasCollectionView;
 @property(retain, nonatomic) MJTimelineCanvasEditViewModel *viewModel; // @synthesize viewModel=_viewModel;

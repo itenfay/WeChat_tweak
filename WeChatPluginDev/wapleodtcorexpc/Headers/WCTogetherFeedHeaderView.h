@@ -13,7 +13,6 @@
 
 + (double)heightForViewSection:(id)arg1 inTableView:(id)arg2;
 + (id)reusableViewIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *dayTextLabel; // @synthesize dayTextLabel=_dayTextLabel;
 @property(retain, nonatomic) UILabel *yearTextLabel; // @synthesize yearTextLabel=_yearTextLabel;
 - (void)layoutSubviews;

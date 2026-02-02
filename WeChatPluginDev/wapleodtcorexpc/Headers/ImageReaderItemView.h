@@ -14,7 +14,6 @@
     unsigned int _imageCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int imageCount; // @synthesize imageCount=_imageCount;
 - (id)accessibilityLabel;
 - (void)onLoadImageOK:(id)arg1;

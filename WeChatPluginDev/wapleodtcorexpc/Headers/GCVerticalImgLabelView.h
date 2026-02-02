@@ -14,7 +14,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) MMWebImageView *imgView; // @synthesize imgView=_imgView;
 @property(retain, nonatomic) UIView *topView; // @synthesize topView=_topView;

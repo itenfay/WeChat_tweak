@@ -10,7 +10,6 @@
     WCSetting *_setting;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSetting *setting; // @synthesize setting=_setting;
 - (id)pathForWCSetting;
 - (id)getWCSetting;

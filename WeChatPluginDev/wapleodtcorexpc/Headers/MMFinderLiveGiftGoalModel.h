@@ -23,7 +23,6 @@
 + (_Bool)ensureResourceAvailabilityForGiftId:(id)arg1 liveTaskId:(id)arg2;
 + (id)descriptionWithBackendSuppliedTemplate:(id)arg1 liveTaskId:(id)arg2;
 + (id)goalModelWithBackendInfo:(id)arg1 liveTaskId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePlayGiftAnimationCommand *fulfilledAnimationCommand; // @synthesize fulfilledAnimationCommand=_fulfilledAnimationCommand;
 @property(retain, nonatomic) MMFinderLiveGiftGoalItem *goalItem; // @synthesize goalItem=_goalItem;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;

@@ -14,7 +14,6 @@
     MMTableView *_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) _Bool postAfterSelect; // @synthesize postAfterSelect=_postAfterSelect;
 @property(retain, nonatomic) FinderLiveTagInfo *selectedTagInfo; // @synthesize selectedTagInfo=_selectedTagInfo;

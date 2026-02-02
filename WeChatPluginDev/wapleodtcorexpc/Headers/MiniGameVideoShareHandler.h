@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ForwardMessageLogicController, MiniGameVideoFile, NSMutableData, NSString, NSURLSession;
 
@@ -25,7 +26,6 @@
     CDUnknownBlockType _finishCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishCallback; // @synthesize finishCallback=_finishCallback;
 @property(copy, nonatomic) CDUnknownBlockType cancelCallback; // @synthesize cancelCallback=_cancelCallback;
 @property(copy, nonatomic) CDUnknownBlockType onShareCallback; // @synthesize onShareCallback=_onShareCallback;
@@ -75,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     NSString *_filteringAppId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool hasMoreOrders; // @synthesize hasMoreOrders=_hasMoreOrders;
 @property(nonatomic) _Bool newSearch; // @synthesize newSearch=_newSearch;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
 }
 
 + (id)cellId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedContentVM *contentVM; // @synthesize contentVM=_contentVM;
 @property(retain, nonatomic) UIButton *dragupTipsLabel; // @synthesize dragupTipsLabel=_dragupTipsLabel;
 @property(retain, nonatomic) MMUIImageView *playIconView; // @synthesize playIconView=_playIconView;

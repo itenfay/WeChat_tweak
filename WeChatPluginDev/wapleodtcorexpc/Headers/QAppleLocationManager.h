@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CLLocationManager, NSString;
 
 @interface QAppleLocationManager
@@ -10,7 +12,6 @@
     CLLocationManager *_manager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocationManager *manager; // @synthesize manager=_manager;
 - (void)locationManagerDidChangeAuthorization:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

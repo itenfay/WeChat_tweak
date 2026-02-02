@@ -16,7 +16,6 @@
     struct CGSize _iconImageSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UILabel *actionLabel; // @synthesize actionLabel=_actionLabel;
 @property(readonly, nonatomic) UILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;

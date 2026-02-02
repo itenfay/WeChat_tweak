@@ -17,7 +17,6 @@
 
 + (double)heightForArticle:(id)arg1;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 @property(retain, nonatomic) MMUILabel *datetimeLabel; // @synthesize datetimeLabel=_datetimeLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

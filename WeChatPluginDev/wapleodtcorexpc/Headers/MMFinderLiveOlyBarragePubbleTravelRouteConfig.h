@@ -12,7 +12,6 @@
     NSMutableArray *_travelList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *travelList; // @synthesize travelList=_travelList;
 
 @end

@@ -14,7 +14,6 @@
     MMUIButton *_acceptBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *acceptBtn; // @synthesize acceptBtn=_acceptBtn;
 @property(retain, nonatomic) UIView *tipsView; // @synthesize tipsView=_tipsView;
 @property(nonatomic) __weak id <WCFinderAdCommentApplyActionSheetDelegate> applyDelegate; // @synthesize applyDelegate=_applyDelegate;

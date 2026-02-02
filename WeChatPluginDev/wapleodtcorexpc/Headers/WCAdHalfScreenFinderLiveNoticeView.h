@@ -12,7 +12,6 @@
     WCAdFinderLiveNoticeInfo *_finderLiveNoticeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdFinderLiveNoticeInfo *finderLiveNoticeInfo; // @synthesize finderLiveNoticeInfo=_finderLiveNoticeInfo;
 @property(nonatomic) __weak id <WCAdHalfScreenFinderLiveNoticeViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)styleForPageSheetConfirmButton;

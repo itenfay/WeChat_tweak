@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderGetLiveOnlineMemberCGI
@@ -18,7 +20,6 @@
     NSData *_getLiveOnlineMemberBuf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *getLiveOnlineMemberBuf; // @synthesize getLiveOnlineMemberBuf=_getLiveOnlineMemberBuf;
 @property(nonatomic) unsigned long long filterScene; // @synthesize filterScene=_filterScene;
 @property(nonatomic) unsigned int boardType; // @synthesize boardType=_boardType;
@@ -34,4 +35,3 @@
 - (id)initWithFinderTaskId:(id)arg1 reqBuffer:(id)arg2 micId:(id)arg3 boardKey:(id)arg4 boardType:(unsigned int)arg5 filterScene:(unsigned long long)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-

@@ -15,7 +15,6 @@
     NSMutableSet *_unreadStoryUsers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *unreadStoryUsers; // @synthesize unreadStoryUsers=_unreadStoryUsers;
 @property(retain, nonatomic) WCStoryNotifyHandler *syncNotifyHandler; // @synthesize syncNotifyHandler=_syncNotifyHandler;
 @property(nonatomic) _Bool waitingForShowPreview; // @synthesize waitingForShowPreview=_waitingForShowPreview;

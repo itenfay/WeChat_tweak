@@ -15,7 +15,6 @@
     id <ContactsAuthorityManageDeleteContactViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactsAuthorityManageDeleteContactViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ContactTagData *m_contactTagData; // @synthesize m_contactTagData=_m_contactTagData;
 @property(retain, nonatomic) ContactsAuthorityManageModifyContactLogic *m_contactsAuthorityManageModifyContactLogic; // @synthesize m_contactsAuthorityManageModifyContactLogic;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FTSExternalRouter, FTSVoiceSearchBarController, NSString, _TtC6WeChat14FTSSectionData;
 @protocol FTSResultPage;
 
@@ -15,7 +17,6 @@
     _TtC6WeChat14FTSSectionData *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat14FTSSectionData *model; // @synthesize model=_model;
 @property(retain, nonatomic) FTSExternalRouter *router; // @synthesize router=_router;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -81,4 +82,3 @@
 @property(readonly) Class superclass;
 
 @end
-

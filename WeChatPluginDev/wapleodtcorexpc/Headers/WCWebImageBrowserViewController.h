@@ -17,7 +17,6 @@
     WCWebImageBrowserConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCWebImageBrowserConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) WCWebImageSourceInfoButton *imageSourceBtn; // @synthesize imageSourceBtn=_imageSourceBtn;
 @property(retain, nonatomic) ImageBrowseButton *circleToSearchBtn; // @synthesize circleToSearchBtn=_circleToSearchBtn;

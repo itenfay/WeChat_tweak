@@ -16,7 +16,6 @@
 }
 
 + (id)reportInfoWithAppId:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useInstallUrl; // @synthesize useInstallUrl=_useInstallUrl;
 @property(retain, nonatomic) NSDictionary *channelReportExtInfo; // @synthesize channelReportExtInfo=_channelReportExtInfo;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

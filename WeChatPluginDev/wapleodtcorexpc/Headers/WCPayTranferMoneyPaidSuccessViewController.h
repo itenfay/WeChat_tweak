@@ -14,7 +14,6 @@
     WCPaySelectVerifyTypeLogic *_m_realNameLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPaySelectVerifyTypeLogic *m_realNameLogic; // @synthesize m_realNameLogic=_m_realNameLogic;
 @property(retain, nonatomic) WCPayTransferMoneyPaidSuccessViewV2 *m_layoutV2; // @synthesize m_layoutV2=_m_layoutV2;
 - (void)onWCPayTransferMoneyPaidSuccessViewV2ReturnWithoutDrawLottery;

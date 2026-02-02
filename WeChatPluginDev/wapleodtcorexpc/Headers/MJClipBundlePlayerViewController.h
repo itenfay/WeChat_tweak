@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJPublisherMovieCompositionTask, MMUIButton, MMUIImageView, NSString, UILabel, UIView, WCFinderFeedContentVM, WCFinderFullInteractivePanelView, WCFinderInteractivePanelConfigParamsModel, WCFinderLandscapeProgressPanelView, WCFinderPortraitProgressPanelView, WCFinderPostSessionModel, WCFinderProgressControlPanelConfigParamsModel, WCFinderTableViewParamModel;
 
 @interface MJClipBundlePlayerViewController
@@ -29,7 +31,6 @@
     MMUIButton *_closeButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) _Bool isDragGREnding; // @synthesize isDragGREnding=_isDragGREnding;
 @property(nonatomic) _Bool isVideoPlaying; // @synthesize isVideoPlaying=_isVideoPlaying;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

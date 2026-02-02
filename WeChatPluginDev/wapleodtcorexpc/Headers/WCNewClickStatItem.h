@@ -32,7 +32,6 @@
     NSArray *_pageFormatList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pageFormatList; // @synthesize pageFormatList=_pageFormatList;
 @property(nonatomic) unsigned int realFirstEnterTS; // @synthesize realFirstEnterTS;
 @property(nonatomic) unsigned int realLastQuitTS; // @synthesize realLastQuitTS;

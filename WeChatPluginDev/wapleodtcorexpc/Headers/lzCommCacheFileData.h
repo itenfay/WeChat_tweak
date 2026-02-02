@@ -18,7 +18,6 @@
     NSString *_fileName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIgnor; // @synthesize bIgnor=_bIgnor;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(nonatomic) _Bool bHidden; // @synthesize bHidden=_bHidden;

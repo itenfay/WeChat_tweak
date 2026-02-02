@@ -27,7 +27,6 @@
 }
 
 + (long long)getDirection:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isRunningInSheetModeBeforeFullScreen; // @synthesize isRunningInSheetModeBeforeFullScreen=_isRunningInSheetModeBeforeFullScreen;
 @property(nonatomic) unsigned int currentFullScrennViewID; // @synthesize currentFullScrennViewID=_currentFullScrennViewID;
 @property(nonatomic) _Bool isInBackground; // @synthesize isInBackground=_isInBackground;

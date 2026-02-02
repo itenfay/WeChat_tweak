@@ -62,7 +62,6 @@
 + (unsigned long long)enterTimestampMs;
 + (void)__setSessionId:(unsigned int)arg1;
 + (unsigned int)sessionId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) KvReportItem29480 *personalCenterEntranceExposedItem; // @synthesize personalCenterEntranceExposedItem=_personalCenterEntranceExposedItem;
 @property(nonatomic) unsigned int msgExpandMoreCnt; // @synthesize msgExpandMoreCnt=_msgExpandMoreCnt;
 @property(nonatomic) unsigned int navNewMsgClickCnt; // @synthesize navNewMsgClickCnt=_navNewMsgClickCnt;

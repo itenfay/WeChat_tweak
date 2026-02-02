@@ -19,7 +19,6 @@
     double _cumulativeWallTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cumulativeWallTime; // @synthesize cumulativeWallTime=_cumulativeWallTime;
 @property(nonatomic) int cumulativeCount; // @synthesize cumulativeCount=_cumulativeCount;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;

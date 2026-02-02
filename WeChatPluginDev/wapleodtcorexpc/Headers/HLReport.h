@@ -22,7 +22,6 @@
 + (id)displayName;
 + (id)vendorID;
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastDate; // @synthesize lastDate=_lastDate;
 @property(nonatomic) long long fcount; // @synthesize fcount=_fcount;
 @property long long totolCount; // @synthesize totolCount=_totolCount;

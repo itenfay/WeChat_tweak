@@ -23,7 +23,6 @@
     NSMutableDictionary *_showYearCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *showYearCache; // @synthesize showYearCache=_showYearCache;
 @property(retain, nonatomic) MMUILabel *noDataLabel; // @synthesize noDataLabel=_noDataLabel;
 @property(retain, nonatomic) NSMutableArray *dateKeyTable; // @synthesize dateKeyTable=_dateKeyTable;

@@ -15,7 +15,6 @@
     unsigned int mCurrentPacket;
 }
 
-- (void).cxx_destruct;
 - (_Bool)writeBytes:(void *)arg1 len:(unsigned int)arg2;
 - (_Bool)openByName:(id)arg1;
 - (void)setDataFormat:(struct AudioStreamBasicDescription)arg1;

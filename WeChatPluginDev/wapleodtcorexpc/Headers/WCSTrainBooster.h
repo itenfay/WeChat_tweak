@@ -14,7 +14,6 @@
     NSMutableDictionary *_dicRouteExt;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicRouteExt; // @synthesize dicRouteExt=_dicRouteExt;
 @property(retain, nonatomic) NSMutableDictionary *dicRoute; // @synthesize dicRoute=_dicRoute;
 @property(retain, nonatomic) WCSTrainModelRoute *entryRoute; // @synthesize entryRoute=_entryRoute;

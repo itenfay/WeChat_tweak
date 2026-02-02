@@ -11,7 +11,6 @@
     NSMutableDictionary *_reportModelDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *reportModelDict; // @synthesize reportModelDict=_reportModelDict;
 @property(retain, nonatomic) CRReportAPIClient *reportClient; // @synthesize reportClient=_reportClient;
 - (void)dealloc;

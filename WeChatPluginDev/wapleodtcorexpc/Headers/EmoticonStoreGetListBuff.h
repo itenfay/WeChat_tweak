@@ -14,7 +14,6 @@
     unsigned long long m_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_sessionId; // @synthesize m_sessionId;
 @property(retain, nonatomic) NSData *m_reqBuf; // @synthesize m_reqBuf;
 @property(nonatomic) unsigned int m_eventId; // @synthesize m_eventId;

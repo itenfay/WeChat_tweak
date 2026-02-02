@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithPositionInfo:(id)arg1 index:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *index; // @synthesize index=_index;
 @property(retain, nonatomic) FLTImgPositionInfo *positionInfo; // @synthesize positionInfo=_positionInfo;
 - (id)toList;

@@ -17,7 +17,6 @@
     unsigned long long _m_confirmType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned char routeInfo; // @synthesize routeInfo=_routeInfo;
 @property(nonatomic) unsigned long long m_confirmType; // @synthesize m_confirmType=_m_confirmType;
 @property(retain, nonatomic) NSString *m_nsProductOriginalMoney; // @synthesize m_nsProductOriginalMoney;

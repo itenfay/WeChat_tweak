@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -12,7 +13,6 @@
     CDUnknownBlockType _onConfirm;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onConfirm; // @synthesize onConfirm=_onConfirm;
 - (void)onClickPageSheetConfirmButton;
 - (double)bottomViewTopMargin;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

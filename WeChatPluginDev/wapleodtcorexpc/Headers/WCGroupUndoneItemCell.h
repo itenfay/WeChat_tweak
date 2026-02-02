@@ -30,7 +30,6 @@
 + (id)ReplyLabelFont;
 + (id)CompleteLabelFont;
 + (id)LabelFont;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCGroupUndoneItemCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ChatRoomToolMessageEventInfo *model; // @synthesize model=_model;
 - (void)onComplete:(id)arg1;

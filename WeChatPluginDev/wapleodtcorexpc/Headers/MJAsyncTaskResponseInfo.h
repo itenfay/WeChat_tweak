@@ -14,7 +14,6 @@
 }
 
 + (id)infoWithQueryIntervalMillis:(unsigned long long)arg1 contextBuff:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *contextBuff; // @synthesize contextBuff=_contextBuff;
 @property(readonly, nonatomic) unsigned long long queryIntervalMillis; // @synthesize queryIntervalMillis=_queryIntervalMillis;
 - (id)initWithQueryIntervalMillis:(unsigned long long)arg1 contextBuff:(id)arg2;

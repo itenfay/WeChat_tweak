@@ -19,7 +19,6 @@
     NSMutableArray *_shareSheetStack;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *shareSheetStack; // @synthesize shareSheetStack=_shareSheetStack;
 @property(retain, nonatomic) NSMutableDictionary *forwardMessageLogics; // @synthesize forwardMessageLogics=_forwardMessageLogics;
 @property(nonatomic) __weak id <FavForwardLogicDelegate> m_delegate; // @synthesize m_delegate;

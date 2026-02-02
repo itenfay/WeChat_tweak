@@ -10,7 +10,6 @@
     CAShapeLayer *_shapeLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 - (void)layoutSubviews;
 - (void)setLineScale:(double)arg1;

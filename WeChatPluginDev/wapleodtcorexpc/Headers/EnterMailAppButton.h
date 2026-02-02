@@ -13,7 +13,6 @@
     MMUILabel *enterMailAppTitleLabel;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isQQMailAppInstall;
 - (void)layoutSubviews;
 - (id)accessibilityLabel;

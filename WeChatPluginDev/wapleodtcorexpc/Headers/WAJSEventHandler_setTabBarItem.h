@@ -17,7 +17,6 @@
     UIImage *_selectIconImage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *selectIconImage; // @synthesize selectIconImage=_selectIconImage;
 @property(retain, nonatomic) NSString *selectIconPath; // @synthesize selectIconPath=_selectIconPath;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;

@@ -18,7 +18,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayDigitalCertInstallCrtWording *m_crt_wording; // @synthesize m_crt_wording=_m_crt_wording;
 @property(nonatomic) int m_noResetMobile; // @synthesize m_noResetMobile=_m_noResetMobile;
 @property(nonatomic) int m_isIgnoreCrt; // @synthesize m_isIgnoreCrt=_m_isIgnoreCrt;

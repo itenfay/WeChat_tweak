@@ -15,7 +15,6 @@
     WNContentStorage *_storage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WNContentStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSData *noteImageData; // @synthesize noteImageData=_noteImageData;
 @property(nonatomic) unsigned int localId; // @synthesize localId=_localId;

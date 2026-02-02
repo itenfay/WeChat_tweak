@@ -17,7 +17,6 @@
     FinderLikeInfo *_finderLikeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLikeInfo *finderLikeInfo; // @synthesize finderLikeInfo=_finderLikeInfo;
 @property(retain, nonatomic) NewLifeThumbUpInfo *thumbUpInfo; // @synthesize thumbUpInfo=_thumbUpInfo;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;

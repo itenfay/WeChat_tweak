@@ -18,7 +18,6 @@
 
 + (id)xmlStyleTagForType:(unsigned long long)arg1;
 + (id)xmlStyleTagFormatForType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

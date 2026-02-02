@@ -17,7 +17,6 @@
     struct UIEdgeInsets _tipsInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets tipsInsets; // @synthesize tipsInsets=_tipsInsets;
 @property(nonatomic) unsigned int arrowType; // @synthesize arrowType=_arrowType;
 @property(nonatomic) double arrowHeight; // @synthesize arrowHeight=_arrowHeight;

@@ -14,7 +14,6 @@
     NSDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) long long sourceId; // @synthesize sourceId=_sourceId;
 @property(nonatomic) _Bool sharesScreen; // @synthesize sharesScreen=_sharesScreen;

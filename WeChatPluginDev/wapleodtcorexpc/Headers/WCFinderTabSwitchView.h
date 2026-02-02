@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, UIScrollView, WCFinderTabFontFactory, WCFinderTabSwitchCustomViewInfo;
 @protocol WCFinderTabSwitchViewDataSource, WCFinderTabSwitchViewDelegate;
@@ -40,7 +41,6 @@
 
 + (double)displayHeightWithInsets:(struct UIEdgeInsets)arg1 titleFontSize:(double)arg2 cursorPaddingTitle:(double)arg3;
 + (double)displayHeightWithInsets:(struct UIEdgeInsets)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderTabFontFactory *fontFactory; // @synthesize fontFactory=_fontFactory;
 @property(retain, nonatomic) NSMutableArray *selectedStack; // @synthesize selectedStack=_selectedStack;
 @property(retain, nonatomic) NSMutableArray *reuseTabButtons; // @synthesize reuseTabButtons=_reuseTabButtons;
@@ -106,4 +106,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

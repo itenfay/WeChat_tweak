@@ -15,7 +15,6 @@
 }
 
 + (id)create;
-- (void).cxx_destruct;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) double width; // @synthesize width=_width;

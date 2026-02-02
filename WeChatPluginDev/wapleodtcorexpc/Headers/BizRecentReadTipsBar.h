@@ -13,7 +13,6 @@
     UIView *_bottomLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) MMUILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 - (void)updateDateText:(id)arg1;

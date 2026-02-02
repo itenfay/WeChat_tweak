@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, NSMutableArray, NSString, WCFinderLiveBaseCgi;
 
 @interface MMFinderLiveSensitiveLogic
@@ -18,7 +20,6 @@
     unsigned long long _currMaxActionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currMaxActionId; // @synthesize currMaxActionId=_currMaxActionId;
 @property(nonatomic) __weak WCFinderLiveBaseCgi *invokingCGI; // @synthesize invokingCGI=_invokingCGI;
 @property(nonatomic) _Bool isInvokeingAction; // @synthesize isInvokeingAction=_isInvokeingAction;
@@ -60,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

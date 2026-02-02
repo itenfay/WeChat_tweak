@@ -33,7 +33,6 @@
 + (id)modelFromFinderDataItem:(id)arg1 source:(unsigned long long)arg2;
 + (void)retriveTidAndNonceId:(id)arg1 tid:(id *)arg2 nonceId:(id *)arg3;
 + (id)combineTid:(id)arg1 nonceId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *debugMsg; // @synthesize debugMsg=_debugMsg;
 @property(retain, nonatomic) NSString *recommendReason; // @synthesize recommendReason=_recommendReason;
 @property(retain, nonatomic) NSString *reqId; // @synthesize reqId=_reqId;

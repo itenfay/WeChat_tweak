@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GameAppStorePreloadItem, GameSKStoreDelgeate, MMUIViewController, NSMutableDictionary;
 @protocol WXCustomWebViewControllerProtocol;
@@ -18,7 +19,6 @@
     double _showStimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableStatusCheck; // @synthesize enableStatusCheck=_enableStatusCheck;
 @property(nonatomic) double showStimeStamp; // @synthesize showStimeStamp=_showStimeStamp;
 @property(retain, nonatomic) GameAppStorePreloadItem *currentShowStoreItem; // @synthesize currentShowStoreItem=_currentShowStoreItem;
@@ -49,4 +49,3 @@
 - (id)init;
 
 @end
-

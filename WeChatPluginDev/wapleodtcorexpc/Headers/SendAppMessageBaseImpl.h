@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CMessageWrap, ForwardMessageLogicController, JSEvent, NSDictionary, NSMutableData, NSString, NSURLConnection, WWKMsgForwarder, WebviewJSEventHandlerBase;
 
 @interface SendAppMessageBaseImpl
@@ -20,7 +22,6 @@
     CDUnknownBlockType _beforeForwardBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType beforeForwardBlock; // @synthesize beforeForwardBlock=_beforeForwardBlock;
 @property(retain, nonatomic) WWKMsgForwarder *weworkMsgForwarder; // @synthesize weworkMsgForwarder=_weworkMsgForwarder;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
@@ -63,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

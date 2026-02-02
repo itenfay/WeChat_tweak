@@ -23,7 +23,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_meta;
 + (void)PBArrayAdd_words;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonWordListMeta *meta; // @synthesize meta=_meta;
 @property(retain, nonatomic) NSMutableSet *words; // @synthesize words=_words;
 @property(readonly, copy) NSString *debugDescription;

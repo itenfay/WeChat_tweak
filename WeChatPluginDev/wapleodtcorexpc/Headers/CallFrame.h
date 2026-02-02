@@ -16,7 +16,6 @@
     NSNumber *_columnNumber;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *columnNumber; // @synthesize columnNumber=_columnNumber;
 @property(retain, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

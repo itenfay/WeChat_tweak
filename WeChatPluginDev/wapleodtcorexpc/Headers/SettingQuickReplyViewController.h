@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface SettingQuickReplyViewController
 {
     _Bool _isSelectionChanged;
@@ -10,7 +12,6 @@
     long long _selectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelectionChanged; // @synthesize isSelectionChanged=_isSelectionChanged;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
@@ -22,4 +23,3 @@
 - (id)initWithSelectionHandler:(CDUnknownBlockType)arg1;
 
 @end
-

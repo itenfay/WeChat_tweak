@@ -18,7 +18,6 @@
     WCMicroMerchantReporter *_wsFoldReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMicroMerchantReporter *wsFoldReporter; // @synthesize wsFoldReporter=_wsFoldReporter;
 @property(retain, nonatomic) WCCommentReport *commentReport; // @synthesize commentReport=_commentReport;
 @property(retain, nonatomic) WeishiReportItem *weSeeSession; // @synthesize weSeeSession=_weSeeSession;

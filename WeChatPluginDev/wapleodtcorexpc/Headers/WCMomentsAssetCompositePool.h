@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString;
 
@@ -18,7 +19,6 @@
 
 + (id)_getUserWCExportCacheDir;
 + (id)_getUserWCRootDir;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sightDraftTaskResultBlock; // @synthesize sightDraftTaskResultBlock=_sightDraftTaskResultBlock;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(retain, nonatomic) NSMutableArray *completedAssetList; // @synthesize completedAssetList=_completedAssetList;
@@ -46,4 +46,3 @@
 @property(readonly) Class superclass;
 
 @end
-

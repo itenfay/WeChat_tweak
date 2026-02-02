@@ -16,7 +16,6 @@
     unsigned long long _FixedWhiteListCount;
 }
 
-- (void).cxx_destruct;
 - (void)removeTempObjects;
 - (void)removeAllObjects;
 - (_Bool)isInWhiteListWithHost:(id)arg1;

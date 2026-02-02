@@ -14,7 +14,6 @@
     unsigned long long _activityType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRegisteredFetchLiveActivity; // @synthesize hasRegisteredFetchLiveActivity=_hasRegisteredFetchLiveActivity;
 @property(nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;

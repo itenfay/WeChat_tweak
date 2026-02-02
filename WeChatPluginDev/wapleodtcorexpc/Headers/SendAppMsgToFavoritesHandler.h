@@ -16,7 +16,6 @@
     OpenApiImageCdnUploader *_uploader;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenApiImageCdnUploader *uploader; // @synthesize uploader=_uploader;
 @property(retain, nonatomic) NSData *hdSongAlbumData; // @synthesize hdSongAlbumData=_hdSongAlbumData;
 @property(retain, nonatomic) MMTipsViewController *tipsViewController; // @synthesize tipsViewController=_tipsViewController;

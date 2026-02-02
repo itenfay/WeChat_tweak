@@ -23,7 +23,6 @@
     unsigned long long _showUIFinishTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long showUIFinishTimestamp; // @synthesize showUIFinishTimestamp=_showUIFinishTimestamp;
 @property(nonatomic) unsigned long long localOperationFinishTimestamp; // @synthesize localOperationFinishTimestamp=_localOperationFinishTimestamp;
 @property(copy, nonatomic) NSData *debugMessage; // @synthesize debugMessage=_debugMessage;

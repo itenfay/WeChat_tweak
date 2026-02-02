@@ -18,7 +18,6 @@
     CardHomePageTopCell *_topCellData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CardHomePageTopCell *topCellData; // @synthesize topCellData=_topCellData;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIImageView *redDotImageView; // @synthesize redDotImageView=_redDotImageView;

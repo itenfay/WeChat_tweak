@@ -17,7 +17,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupSignView *fansGroupSignView; // @synthesize fansGroupSignView=_fansGroupSignView;
 @property(retain, nonatomic) UILabel *currentRoleTipLabel; // @synthesize currentRoleTipLabel=_currentRoleTipLabel;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;

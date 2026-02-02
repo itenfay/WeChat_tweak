@@ -21,7 +21,6 @@
     NSString *_clientKVReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientKVReportInfo; // @synthesize clientKVReportInfo=_clientKVReportInfo;
 @property(nonatomic) _Bool forbidSaveDraft; // @synthesize forbidSaveDraft=_forbidSaveDraft;
 @property(nonatomic) _Bool syncPostLoading; // @synthesize syncPostLoading=_syncPostLoading;

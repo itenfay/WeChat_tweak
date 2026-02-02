@@ -14,7 +14,6 @@
     NSMutableArray *_scopeList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSMutableArray *scopeList; // @synthesize scopeList=_scopeList;
 @property(copy, nonatomic) NSString *weappUsrName; // @synthesize weappUsrName=_weappUsrName;

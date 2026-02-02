@@ -16,7 +16,6 @@
     TPPlayerEventPublisher *_publisher;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerEventPublisher *publisher; // @synthesize publisher=_publisher;
 @property(retain, nonatomic) TPDataTransportManagerProxyDelegate *proxyDelegate; // @synthesize proxyDelegate=_proxyDelegate;
 @property(nonatomic) __weak id <TPProxyPlayDelegate> outerDelegate; // @synthesize outerDelegate=_outerDelegate;

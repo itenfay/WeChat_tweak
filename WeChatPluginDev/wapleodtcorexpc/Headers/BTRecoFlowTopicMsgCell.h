@@ -17,7 +17,6 @@
     double _bottomSeparatorRightPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomSeparatorRightPadding; // @synthesize bottomSeparatorRightPadding=_bottomSeparatorRightPadding;
 @property(nonatomic) double bottomSeparatorLeftPadding; // @synthesize bottomSeparatorLeftPadding=_bottomSeparatorLeftPadding;
 @property(retain, nonatomic) BTRecoFlowSeparatorLineView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;

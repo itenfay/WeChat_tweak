@@ -13,7 +13,6 @@
     id <WebviewJSEventHandlerBaseDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)handle:(id)arg1;
 - (_Bool)canHandle:(id)arg1;
 - (void)setDelegate:(id)arg1;

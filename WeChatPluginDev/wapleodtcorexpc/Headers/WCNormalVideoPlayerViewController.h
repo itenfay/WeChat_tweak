@@ -11,7 +11,6 @@
     NSString *_videoUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;
 @property(retain, nonatomic) WCNormalVideoPlayerView *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 - (void)dealloc;

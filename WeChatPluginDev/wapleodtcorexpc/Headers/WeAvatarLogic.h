@@ -23,7 +23,6 @@
     id <WeAvatarLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WeAvatarLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onPollingResponse:(id)arg1;
 - (void)notifyOnReadyIfNeeded;

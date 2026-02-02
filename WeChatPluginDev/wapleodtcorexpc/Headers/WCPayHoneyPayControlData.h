@@ -29,7 +29,6 @@
     WCPayBindCardInfo *_honeyPayCardInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBindCardInfo *honeyPayCardInfo; // @synthesize honeyPayCardInfo=_honeyPayCardInfo;
 @property(copy, nonatomic) NSString *cellCardNo; // @synthesize cellCardNo=_cellCardNo;
 @property(retain, nonatomic) QryHoneyPayCardDetailResp *cardDetailResp; // @synthesize cardDetailResp=_cardDetailResp;

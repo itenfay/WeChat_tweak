@@ -16,7 +16,6 @@
     long long _newLineCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long newLineCount; // @synthesize newLineCount=_newLineCount;
 @property(nonatomic) _Bool bIsContentCut; // @synthesize bIsContentCut=_bIsContentCut;
 @property(nonatomic) unsigned int contentCreateTime; // @synthesize contentCreateTime=_contentCreateTime;

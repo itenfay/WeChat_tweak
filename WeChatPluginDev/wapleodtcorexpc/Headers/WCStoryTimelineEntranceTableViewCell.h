@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, UIButton, UICollectionView, UIImageView, UILabel, UIView, WCStoryReportUtil, WCStoryTimelineEntranceCollectionViewLayout;
 @protocol WCStoryTimelineEntranceTableViewCellDelegate;
 
@@ -27,7 +29,6 @@
     CDUnknownBlockType _showPreviewBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType showPreviewBlock; // @synthesize showPreviewBlock=_showPreviewBlock;
 @property(retain, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(nonatomic) _Bool canAdjustInset; // @synthesize canAdjustInset=_canAdjustInset;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -11,7 +11,6 @@
     NSString *_dataPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isGif; // @synthesize isGif=_isGif;
 @property(retain, nonatomic) NSString *dataPath; // @synthesize dataPath=_dataPath;
 - (id)getImgPath;

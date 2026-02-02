@@ -16,7 +16,6 @@
     id <OpenUploadCDNMgrDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bJustUploadDataWithoutMD5Hit; // @synthesize bJustUploadDataWithoutMD5Hit=_bJustUploadDataWithoutMD5Hit;
 @property(nonatomic) __weak id <OpenUploadCDNMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnWillRevokeMsg:(id)arg1 revokeContext:(id)arg2;

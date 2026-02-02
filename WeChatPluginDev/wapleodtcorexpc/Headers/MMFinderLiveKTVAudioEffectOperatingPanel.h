@@ -16,7 +16,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveKTVAudioEffectSettingCell *bgmVolumeSettingCell; // @synthesize bgmVolumeSettingCell=_bgmVolumeSettingCell;
 @property(nonatomic) __weak MMFinderLiveKTVAudioEffectSettingCell *humanVolumeSettingCell; // @synthesize humanVolumeSettingCell=_humanVolumeSettingCell;
 @property(retain, nonatomic) WCFinderLiveAnchorLogReporter *anchorLogReporter; // @synthesize anchorLogReporter=_anchorLogReporter;

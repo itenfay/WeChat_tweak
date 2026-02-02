@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMMusicLiveCGIMgr, MMMusicMVClipUploader, MMMusicPostingMVContext, NSMutableArray, NSString, UIImage, UIViewController, WCFinderCreateCoordinator;
 
 @interface MMMusicMVPostDataService
@@ -19,7 +21,6 @@
     WCFinderCreateCoordinator *_userCreator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCreateCoordinator *userCreator; // @synthesize userCreator=_userCreator;
 @property(nonatomic) _Bool isDraftEditingMode; // @synthesize isDraftEditingMode=_isDraftEditingMode;
 @property(nonatomic) __weak UIViewController *currentVC; // @synthesize currentVC=_currentVC;
@@ -78,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

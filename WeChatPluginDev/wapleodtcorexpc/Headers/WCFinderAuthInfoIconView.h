@@ -10,7 +10,6 @@
     WCFinderAuthInfo *_authInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderAuthInfo *authInfo; // @synthesize authInfo=_authInfo;
 - (id)accessibilityLabel;
 - (void)updateIconWithAuthIconUrl:(id)arg1 authIconType:(unsigned long long)arg2;

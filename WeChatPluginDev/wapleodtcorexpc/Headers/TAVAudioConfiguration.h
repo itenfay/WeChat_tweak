@@ -15,7 +15,6 @@
     TAVSimpleVolumeProcessingNode *_volumeProcessingNode;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TAVSimpleVolumeProcessingNode *volumeProcessingNode; // @synthesize volumeProcessingNode=_volumeProcessingNode;
 @property(retain, nonatomic) id <TAVAudioProcessingNode> effectNode; // @synthesize effectNode=_effectNode;
 @property(nonatomic) float volume; // @synthesize volume=_volume;

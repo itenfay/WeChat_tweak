@@ -15,7 +15,6 @@
     NSObject *_contextInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *contextInfo; // @synthesize contextInfo=_contextInfo;
 @property(retain, nonatomic) NSArray *feedbackReasonArr; // @synthesize feedbackReasonArr=_feedbackReasonArr;
 @property(copy, nonatomic) NSString *confirmBtnWording; // @synthesize confirmBtnWording=_confirmBtnWording;

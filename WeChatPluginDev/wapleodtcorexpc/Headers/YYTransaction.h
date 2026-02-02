@@ -13,7 +13,6 @@
 
 + (id)transactionWithTarget:(id)arg1 selector:(SEL)arg2;
 + (void)load;
-- (void).cxx_destruct;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 - (_Bool)isEqual:(id)arg1;

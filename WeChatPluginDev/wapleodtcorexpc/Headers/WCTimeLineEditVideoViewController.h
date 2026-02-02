@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCFinderCreateCoordinator;
 
 @interface WCTimeLineEditVideoViewController
@@ -10,7 +12,6 @@
     WCFinderCreateCoordinator *_createCoordinator;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 - (void)longVideoChooseHelper:(id)arg1 postSession:(id)arg2;
 - (void)triggerFinderPostActionWith:(id)arg1;
@@ -40,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

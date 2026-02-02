@@ -24,7 +24,6 @@
 
 + (unsigned int)orientationFromRotation:(int)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_1255c1d2 metaData; // @synthesize metaData=_metaData;
 @property(readonly, nonatomic) long long videoFullRangeFlag; // @synthesize videoFullRangeFlag=_videoFullRangeFlag;
 @property(readonly, nonatomic) long long bitDepth; // @synthesize bitDepth=_bitDepth;

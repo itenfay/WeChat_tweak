@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIPercentDrivenInteractiveTransition;
 @protocol MMUIHalfScreenViewDismissInteractiveTransitionDelegate;
@@ -15,7 +16,6 @@
     id <MMUIHalfScreenViewDismissInteractiveTransitionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMUIHalfScreenViewDismissInteractiveTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double interactivePopProgress; // @synthesize interactivePopProgress=_interactivePopProgress;
 @property(readonly, nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition; // @synthesize interactivePopTransition=m_interactivePopTransition;
@@ -24,4 +24,3 @@
 @property(readonly, nonatomic) _Bool isInteracting;
 
 @end
-

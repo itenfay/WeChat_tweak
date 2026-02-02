@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveImagePickerParams, MMNearbyPoiInfo, NSArray, NSMutableDictionary, NSNumber, NSString, WCFinderEditOptionModel, WCFinderPickerTemplateParams;
 @protocol MMAssetPickerUserActionTipsProtocol;
 
@@ -90,7 +92,6 @@
     struct _NSRange _selectCountLimit;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showAssetWithLocationOnly; // @synthesize showAssetWithLocationOnly=_showAssetWithLocationOnly;
 @property(nonatomic) _Bool isSupportHeif; // @synthesize isSupportHeif=_isSupportHeif;
 @property(nonatomic) long long livePhotoMode; // @synthesize livePhotoMode=_livePhotoMode;
@@ -179,4 +180,3 @@
 - (void)setByPassInfoObject:(id)arg1 forKey:(id)arg2;
 
 @end
-

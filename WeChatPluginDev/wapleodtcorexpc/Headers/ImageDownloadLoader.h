@@ -16,7 +16,6 @@
     NSURL *_imgUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *imgUrl; // @synthesize imgUrl=_imgUrl;
 @property(nonatomic) __weak id <ImageDownloadLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)ImageDidFail:(id)arg1;

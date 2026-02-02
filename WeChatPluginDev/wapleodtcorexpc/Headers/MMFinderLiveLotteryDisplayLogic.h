@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveLotteryPacketDisplayLogic, MMFinderLivePageSheetNoticeView, MMFinderLiveTaskId, MMLiveLotteryDetailCardView, NSMutableDictionary, NSMutableSet, NSString;
 
@@ -32,7 +33,6 @@
 + (void)checkAndClearOverTimeLotteryCache;
 + (id)initRecentDisplayLotteryIdWithLiveTaskId:(id)arg1 liveRoomKey:(id)arg2;
 + (id)initRecentDisplayLotteryIdWithLiveTaskId:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLivePageSheetNoticeView *mysteriousNoticeView; // @synthesize mysteriousNoticeView=_mysteriousNoticeView;
 @property(retain, nonatomic) NSMutableSet *mysteriousAttendLotteryFailTipsShowSet; // @synthesize mysteriousAttendLotteryFailTipsShowSet=_mysteriousAttendLotteryFailTipsShowSet;
 @property(nonatomic) unsigned long long checkLotteryStateTime; // @synthesize checkLotteryStateTime=_checkLotteryStateTime;
@@ -109,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -23,7 +23,6 @@
     long long _style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) CAShapeLayer *outerDotLayer; // @synthesize outerDotLayer=_outerDotLayer;
 @property(retain, nonatomic) UIImageView *timerCancellerIcon; // @synthesize timerCancellerIcon=_timerCancellerIcon;

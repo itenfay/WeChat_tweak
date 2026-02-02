@@ -17,7 +17,6 @@
     DiscoverEntranceSettingSheetView *_sheetView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DiscoverEntranceSettingSheetView *sheetView; // @synthesize sheetView=_sheetView;
 @property(nonatomic) __weak WCTableViewNormalCellManager *cellMgr; // @synthesize cellMgr=_cellMgr;
 @property(nonatomic) _Bool enabledReddot; // @synthesize enabledReddot=_enabledReddot;

@@ -25,7 +25,6 @@
     WCImageTranslateLogic *_imgTranslateLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool canShowActionSheetOnlyForQrCode; // @synthesize canShowActionSheetOnlyForQrCode=_canShowActionSheetOnlyForQrCode;
 @property(nonatomic) _Bool isScanScreen; // @synthesize isScanScreen=_isScanScreen;
 @property(retain, nonatomic) WCImageTranslateLogic *imgTranslateLogic; // @synthesize imgTranslateLogic=_imgTranslateLogic;

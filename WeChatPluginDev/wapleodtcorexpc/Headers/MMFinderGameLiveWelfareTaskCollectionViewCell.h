@@ -16,7 +16,6 @@
     UIImageView *_rightImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) MMFinderGameLiveWelfareTaskDegreeCompletionView *degreeCompletionView; // @synthesize degreeCompletionView=_degreeCompletionView;

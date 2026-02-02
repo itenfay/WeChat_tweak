@@ -19,7 +19,6 @@
     NSString *_globalPkgAppId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *globalPkgAppId; // @synthesize globalPkgAppId=_globalPkgAppId;
 @property(retain, nonatomic) NSString *backgroundImagePath; // @synthesize backgroundImagePath=_backgroundImagePath;
 @property(nonatomic) _Bool useCoreText; // @synthesize useCoreText=_useCoreText;

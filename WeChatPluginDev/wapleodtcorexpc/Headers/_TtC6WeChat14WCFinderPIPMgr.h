@@ -14,7 +14,6 @@
     MISSING_TYPE *currentVolume;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 @property(nonatomic) _Bool is_pip_status; // @synthesize is_pip_status;

@@ -13,7 +13,6 @@
     NSString *_iconUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 - (void)encodeWithCoder:(id)arg1;

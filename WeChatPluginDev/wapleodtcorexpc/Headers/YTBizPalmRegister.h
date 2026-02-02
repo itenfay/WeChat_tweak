@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue;
 
@@ -24,7 +25,6 @@
 + (id)getDefaultTipLocalizedStringKey:(unsigned long long)arg1;
 + (id)getTipLocalizedStringKey:(int)arg1 tipHandType:(unsigned long long)arg2 palmCaptureMode:(unsigned int)arg3;
 + (int)convertToYTHandType:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool alreadyNotifySuccess; // @synthesize alreadyNotifySuccess=_alreadyNotifySuccess;
 @property(nonatomic) long long lastSaveLogTime; // @synthesize lastSaveLogTime=_lastSaveLogTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
@@ -43,4 +43,3 @@
 - (id)initWithBundlePath:(id)arg1;
 
 @end
-

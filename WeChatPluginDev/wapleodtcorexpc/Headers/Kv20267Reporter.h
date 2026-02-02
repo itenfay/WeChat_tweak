@@ -39,7 +39,6 @@
 }
 
 + (id)createReportWithScenceID:(int)arg1 uiArea:(int)arg2 positionId:(unsigned int)arg3 actionId:(int)arg4 externInfo:(id)arg5 appId:(id)arg6;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int ClassID; // @synthesize ClassID=_ClassID;
 @property(retain, nonatomic) NSString *ExternInfo; // @synthesize ExternInfo=_ExternInfo;
 @property(nonatomic) unsigned int ReasonID; // @synthesize ReasonID=_ReasonID;

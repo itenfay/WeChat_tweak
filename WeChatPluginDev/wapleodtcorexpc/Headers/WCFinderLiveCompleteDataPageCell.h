@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AnchorCloseLivePageDataItem, MMUILabel, UIButton;
 
@@ -19,7 +20,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *clickButton; // @synthesize clickButton=_clickButton;
 @property(retain, nonatomic) MMUILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) MMUILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
@@ -38,4 +38,3 @@
 - (void)updateWithePageDataItem:(id)arg1 clickEnable:(_Bool)arg2;
 
 @end
-

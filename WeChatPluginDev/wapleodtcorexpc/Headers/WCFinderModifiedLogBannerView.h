@@ -16,7 +16,6 @@
     MMUIView *_deleteBtn;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *deleteBtn; // @synthesize deleteBtn=_deleteBtn;
 @property(retain, nonatomic) RichTextView *toTextView; // @synthesize toTextView=_toTextView;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

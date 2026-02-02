@@ -18,7 +18,6 @@
     WCFinderContact *_currentFinderContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderContact *currentFinderContact; // @synthesize currentFinderContact=_currentFinderContact;
 @property(retain, nonatomic) WCFinderComment *replyComment; // @synthesize replyComment=_replyComment;
 @property(nonatomic) int postScene; // @synthesize postScene=_postScene;

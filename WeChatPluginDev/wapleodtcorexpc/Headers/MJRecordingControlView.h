@@ -16,7 +16,6 @@
     MJRecordingControl *_backingControl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJRecordingControl *backingControl; // @synthesize backingControl=_backingControl;
 @property(nonatomic) unsigned long long backingControlOptions; // @synthesize backingControlOptions=_backingControlOptions;
 @property(nonatomic) _Bool isHoldRecording; // @synthesize isHoldRecording=_isHoldRecording;

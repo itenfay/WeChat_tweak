@@ -18,7 +18,6 @@
     NSString *_encryKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *encryKey; // @synthesize encryKey=_encryKey;
 @property(copy, nonatomic) NSString *localServer; // @synthesize localServer=_localServer;
 @property(retain, nonatomic) NSMutableDictionary *taskInfoStartDict; // @synthesize taskInfoStartDict=_taskInfoStartDict;

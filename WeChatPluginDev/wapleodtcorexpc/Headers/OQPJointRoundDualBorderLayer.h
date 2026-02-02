@@ -10,7 +10,6 @@
     CAShapeLayer *_innerBorderLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *innerBorderLayer; // @synthesize innerBorderLayer=_innerBorderLayer;
 - (void)layoutSublayers;
 @property(nonatomic) struct CGColor *innerBorderColor;

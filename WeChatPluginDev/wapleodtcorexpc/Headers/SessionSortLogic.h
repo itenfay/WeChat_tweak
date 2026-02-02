@@ -16,7 +16,6 @@
     NSString *_foldCachePath;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isFolded;
 - (long long)foldSessionCount;
 - (_Bool)isSessionFold:(id)arg1;

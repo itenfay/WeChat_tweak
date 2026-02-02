@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) MMUIViewController *pickerHostingVc; // @synthesize pickerHostingVc=_pickerHostingVc;
 @property(retain, nonatomic) NSString *correlationId; // @synthesize correlationId=_correlationId;
 - (id)init;
 
 @end
-

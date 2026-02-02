@@ -25,7 +25,6 @@
 }
 
 + (id)snapTypeDescription:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *rightOverlayView; // @synthesize rightOverlayView=_rightOverlayView;
 @property(retain, nonatomic) MMUIView *leftOverlayView; // @synthesize leftOverlayView=_leftOverlayView;
 @property(retain, nonatomic) MMUIView *bottomOverlayView; // @synthesize bottomOverlayView=_bottomOverlayView;

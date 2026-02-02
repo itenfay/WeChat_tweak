@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface SharePreConfirmViewController
 {
     _Bool _willRotateToPreviousOrientation;
@@ -10,7 +12,6 @@
     unsigned long long _overrideOrientationMask;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long overrideOrientationMask; // @synthesize overrideOrientationMask=_overrideOrientationMask;
 @property(copy, nonatomic) CDUnknownBlockType didTransitionToNewSizeBlock; // @synthesize didTransitionToNewSizeBlock=_didTransitionToNewSizeBlock;
 @property(nonatomic) _Bool willRotateToPreviousOrientation; // @synthesize willRotateToPreviousOrientation=_willRotateToPreviousOrientation;
@@ -18,4 +19,3 @@
 - (unsigned long long)supportedInterfaceOrientations;
 
 @end
-

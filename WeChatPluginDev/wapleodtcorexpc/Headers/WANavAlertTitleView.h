@@ -22,7 +22,6 @@
     UIImage *_highlightIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *highlightIcon; // @synthesize highlightIcon=_highlightIcon;
 @property(retain, nonatomic) UIImage *normalIcon; // @synthesize normalIcon=_normalIcon;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;

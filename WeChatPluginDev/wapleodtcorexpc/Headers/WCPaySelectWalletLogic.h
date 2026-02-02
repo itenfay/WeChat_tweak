@@ -13,7 +13,6 @@
     unsigned int _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 - (void)OnSetUserWallet:(id)arg1;
 - (void)OnQueryUserWallet:(id)arg1 Error:(id)arg2;

@@ -16,7 +16,6 @@
     unsigned int _patternLockLogicTag;
 }
 
-- (void).cxx_destruct;
 - (void)startUnbind;
 - (void)onPatternLockLogicOperateSuccess;
 - (void)onPatternLockLogicOperateCancel;

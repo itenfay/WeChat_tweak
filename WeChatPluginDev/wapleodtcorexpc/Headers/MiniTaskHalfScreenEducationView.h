@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSString, UIView;
 
 @interface MiniTaskHalfScreenEducationView
@@ -13,7 +15,6 @@
     CDUnknownBlockType _confirmBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType confirmBlock; // @synthesize confirmBlock=_confirmBlock;
 @property(retain, nonatomic) MMUILabel *descContentLable; // @synthesize descContentLable=_descContentLable;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

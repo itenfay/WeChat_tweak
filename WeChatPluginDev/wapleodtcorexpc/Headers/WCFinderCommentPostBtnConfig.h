@@ -16,7 +16,6 @@
     UIColor *_bgColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 @property(retain, nonatomic) UIColor *svgColor; // @synthesize svgColor=_svgColor;
 @property(retain, nonatomic) NSString *svgName; // @synthesize svgName=_svgName;

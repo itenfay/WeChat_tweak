@@ -12,7 +12,6 @@
     NSArray *_aiAssetURLs;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *aiAssetURLs; // @synthesize aiAssetURLs=_aiAssetURLs;
 - (id)initWithAIAssetURLs:(id)arg1;
 

@@ -14,7 +14,6 @@
     WCPayInterceptWinLogic *_interceptWinLogic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isStopLogicWhenCloseWebview; // @synthesize isStopLogicWhenCloseWebview=_isStopLogicWhenCloseWebview;
 @property(retain, nonatomic) WCPayInterceptWinLogic *interceptWinLogic; // @synthesize interceptWinLogic=_interceptWinLogic;
 @property(nonatomic) unsigned int getA8keyScene; // @synthesize getA8keyScene=_getA8keyScene;

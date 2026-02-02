@@ -12,7 +12,6 @@
     MTLRenderPassDescriptor *_renderPassDescriptor;
 }
 
-- (void).cxx_destruct;
 - (id)renderPassDescriptor;
 - (unsigned long long)type;
 - (void)updateRenderPassDescriptor:(id)arg1;

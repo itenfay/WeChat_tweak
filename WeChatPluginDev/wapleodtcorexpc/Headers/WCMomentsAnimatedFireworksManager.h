@@ -10,7 +10,6 @@
     NSArray *_animationFireworkImages;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *animationFireworkImages; // @synthesize animationFireworkImages=_animationFireworkImages;
 - (void)clearAnimatedFireworkImages;
 - (void)loadAnimatedFireworkImagesIfNeeded;

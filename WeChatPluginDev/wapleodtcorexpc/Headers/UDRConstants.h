@@ -10,7 +10,6 @@
     NSMutableArray *_kUDRBizMetaArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *kUDRBizMetaArray; // @synthesize kUDRBizMetaArray=_kUDRBizMetaArray;
 - (id)getClsNameArray;
 - (void)dealloc;

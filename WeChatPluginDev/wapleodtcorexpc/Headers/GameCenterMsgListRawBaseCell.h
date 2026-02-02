@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIView, UIView;
 
 @interface GameCenterMsgListRawBaseCell
@@ -13,7 +15,6 @@
     UIView *_hightLightBgView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *hightLightBgView; // @synthesize hightLightBgView=_hightLightBgView;
 @property(nonatomic) _Bool highLightBackground; // @synthesize highLightBackground=_highLightBackground;
 @property(copy, nonatomic) CDUnknownBlockType clickBlock; // @synthesize clickBlock=_clickBlock;
@@ -22,4 +23,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

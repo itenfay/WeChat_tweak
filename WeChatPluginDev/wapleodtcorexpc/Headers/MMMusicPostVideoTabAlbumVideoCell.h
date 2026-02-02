@@ -21,7 +21,6 @@
 }
 
 + (id)reuseKey;
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets checkButtonHitTetsSlop; // @synthesize checkButtonHitTetsSlop=_checkButtonHitTetsSlop;
 @property(retain, nonatomic) UIView *selectCoverView; // @synthesize selectCoverView=_selectCoverView;
 @property(nonatomic) __weak id <MMMusicPostVideoTabAlbumVideoCellDelegate> delegate; // @synthesize delegate=_delegate;

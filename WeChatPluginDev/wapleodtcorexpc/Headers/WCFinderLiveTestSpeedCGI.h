@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveTestSpeedCGI
 {
     unsigned int _sceneCode;
@@ -14,7 +16,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int concurrentNum; // @synthesize concurrentNum=_concurrentNum;
 @property(nonatomic) unsigned int downloadSize; // @synthesize downloadSize=_downloadSize;
 @property(nonatomic) unsigned int uploadSize; // @synthesize uploadSize=_uploadSize;
@@ -27,4 +28,3 @@
 - (id)initWithSceneCode:(unsigned int)arg1 opCode:(unsigned int)arg2 uploadSize:(unsigned int)arg3 downloadSize:(unsigned int)arg4 concurrentNum:(unsigned int)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

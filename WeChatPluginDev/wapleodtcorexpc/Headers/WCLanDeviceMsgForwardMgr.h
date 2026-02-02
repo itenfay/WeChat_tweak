@@ -17,7 +17,6 @@
     long long m_opScene;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isActive;
 - (void)onKissDeviceProgressUpdate:(double)arg1 device:(id)arg2;
 - (void)onKissDeviceWithDevice:(id)arg1 errCode:(int)arg2;

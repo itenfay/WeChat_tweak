@@ -10,7 +10,6 @@
     NSMutableDictionary *_dic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dic; // @synthesize dic=_dic;
 - (id)getTinyappPath;
 - (id)getTinyappUserName;

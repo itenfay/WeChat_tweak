@@ -16,7 +16,6 @@
     _Bool needShowTimer;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isWorking;
 - (void)cancel;
 - (_Bool)checkTimeout;

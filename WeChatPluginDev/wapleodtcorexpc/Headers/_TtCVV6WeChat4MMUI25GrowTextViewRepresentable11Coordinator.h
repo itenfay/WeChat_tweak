@@ -14,7 +14,6 @@
     MISSING_TYPE *environmentValues;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (struct CGSize)maxSizeForTextView:(id)arg1;
 - (void)TextViewHeightDidChanged:(id)arg1;

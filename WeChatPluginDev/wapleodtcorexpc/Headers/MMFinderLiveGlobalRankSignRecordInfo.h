@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveGlobalRankSignView;
 
@@ -15,7 +16,6 @@
     double _maxDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxDuration; // @synthesize maxDuration=_maxDuration;
 @property(copy, nonatomic) CDUnknownBlockType autoEndInvokeCallback; // @synthesize autoEndInvokeCallback=_autoEndInvokeCallback;
 @property(copy, nonatomic) CDUnknownBlockType invokeCallback; // @synthesize invokeCallback=_invokeCallback;
@@ -25,4 +25,3 @@
 - (void)startInvokeAnimation;
 
 @end
-

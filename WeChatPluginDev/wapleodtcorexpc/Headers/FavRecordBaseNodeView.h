@@ -25,7 +25,6 @@
 
 + (double)referNodeViewWidth;
 + (double)heightForData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak FavRecordBaseNodeView *referNodeView; // @synthesize referNodeView=_referNodeView;
 @property(readonly, retain, nonatomic) NSSet *m_touches; // @synthesize m_touches;
 @property(readonly, retain, nonatomic) FavoritesItemDataField *favData; // @synthesize favData;

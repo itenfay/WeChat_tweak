@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCVideoProducerExportSettingsLoader : NSObject
 {
@@ -12,4 +13,3 @@
 - (void)loadExportSettingsWithVideoTemplate:(id)arg1 assetInfoList:(id)arg2 videoAspectRatio:(double)arg3 progressBlock:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
 
 @end
-

@@ -19,7 +19,6 @@
     NSMutableArray *_reportInfoArr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reportInfoArr; // @synthesize reportInfoArr=_reportInfoArr;
 @property(retain, nonatomic) NSArray *continueUnfoldInteractionTypes; // @synthesize continueUnfoldInteractionTypes=_continueUnfoldInteractionTypes;
 @property(retain, nonatomic) NSMutableDictionary *unfoldedUsernameInfos; // @synthesize unfoldedUsernameInfos=_unfoldedUsernameInfos;

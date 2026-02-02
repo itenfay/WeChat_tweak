@@ -24,7 +24,6 @@
     struct CGSize _outputSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVideoFrameCoords *frameCoords; // @synthesize frameCoords=_frameCoords;
 @property(retain, nonatomic) TXCGlFrameBuffer *frameBuffer; // @synthesize frameBuffer=_frameBuffer;
 @property(retain, nonatomic) id <TXIGlContext> context; // @synthesize context=_context;

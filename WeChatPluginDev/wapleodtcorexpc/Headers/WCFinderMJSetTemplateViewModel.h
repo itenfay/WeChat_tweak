@@ -18,7 +18,6 @@
     WCFinderMJSetInitParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMJSetInitParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
 @property(retain, nonatomic) NSMutableArray *mutTabs; // @synthesize mutTabs=_mutTabs;

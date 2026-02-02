@@ -41,7 +41,6 @@
 
 + (id)getDateWithoutHMS:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastHeaderIndex; // @synthesize lastHeaderIndex=_lastHeaderIndex;
 @property(nonatomic) unsigned long long lastSelectTimeIndex; // @synthesize lastSelectTimeIndex=_lastSelectTimeIndex;
 @property(retain, nonatomic) NSDate *selectEndDate; // @synthesize selectEndDate=_selectEndDate;

@@ -11,7 +11,6 @@
     unsigned long long _cellStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
 @property(retain, nonatomic) NSArray *imgComDataArr; // @synthesize imgComDataArr=_imgComDataArr;
 

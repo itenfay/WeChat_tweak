@@ -14,7 +14,6 @@
     NSString *_checksum;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int y; // @synthesize y=_y;
 @property(nonatomic) int x; // @synthesize x=_x;
 @property(retain, nonatomic) NSString *checksum; // @synthesize checksum=_checksum;

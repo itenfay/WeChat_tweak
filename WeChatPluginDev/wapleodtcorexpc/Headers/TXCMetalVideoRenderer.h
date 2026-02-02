@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSObject, NSString, TXCDispatchQueue, TXCGSensor, TXCMTKView, TXCMetalContext, TXCMetalDisplayConfig, TXCMetalRenderTargetView, TXCMetalRenderer, TXCRenderFrameCoords, TXCVideoRenderConfig, UIView;
 @protocol MTLTexture, OS_dispatch_semaphore, TXILocalVideoRendererDelegate;
 
@@ -28,7 +30,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool requestClearView; // @synthesize requestClearView=_requestClearView;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
 @property(retain) TXCMTKView *renderView; // @synthesize renderView=_renderView;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

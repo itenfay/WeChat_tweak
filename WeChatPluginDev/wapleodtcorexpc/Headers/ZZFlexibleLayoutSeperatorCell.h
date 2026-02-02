@@ -13,7 +13,6 @@
 }
 
 + (struct CGSize)viewSizeByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ZZFlexibleLayoutSeperatorModel *model; // @synthesize model=_model;
 - (void)setViewDataModel:(id)arg1;
 - (id)init;

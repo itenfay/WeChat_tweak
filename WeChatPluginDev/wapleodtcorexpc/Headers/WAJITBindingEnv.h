@@ -12,7 +12,6 @@
     WAJITBindingMediaModule *_mediaModule;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAJITBindingMediaModule *mediaModule; // @synthesize mediaModule=_mediaModule;
 - (void)onDestroyJITBindingContext;
 - (void)onCreateJITBindingContext:(id)arg1;

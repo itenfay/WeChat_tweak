@@ -19,7 +19,6 @@
 + (double)expanderHeight;
 + (double)heightForOrder:(id)arg1 inWidth:(double)arg2 estimate:(_Bool)arg3;
 + (_Bool)shouldUseComponentForOrder:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *skuViews; // @synthesize skuViews=_skuViews;
 @property(retain, nonatomic) NSMutableArray *accessibilityElementsArray; // @synthesize accessibilityElementsArray=_accessibilityElementsArray;
 @property(retain, nonatomic) MMOrderCenterTableViewCellSkuListExpander *expander; // @synthesize expander=_expander;

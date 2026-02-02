@@ -12,7 +12,6 @@
     UIImageView *_thumbImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *thumbImageView; // @synthesize thumbImageView=_thumbImageView;
 @property(retain, nonatomic) RichTextView *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) RichTextView *titleLabel; // @synthesize titleLabel=_titleLabel;

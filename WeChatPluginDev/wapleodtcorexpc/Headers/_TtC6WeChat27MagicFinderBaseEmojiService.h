@@ -11,7 +11,6 @@
     MISSING_TYPE *delegate;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)destroyBiz;
 - (_Bool)triggerEmojiWithScene:(long long)arg1 id:(id)arg2 handler:(id)arg3;

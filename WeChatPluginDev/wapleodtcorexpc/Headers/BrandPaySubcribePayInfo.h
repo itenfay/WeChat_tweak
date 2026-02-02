@@ -12,7 +12,6 @@
     NSString *_fullUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fullUrl; // @synthesize fullUrl=_fullUrl;
 @property(copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
 @property(nonatomic) _Bool isPaid; // @synthesize isPaid=_isPaid;

@@ -14,7 +14,6 @@
 }
 
 + (double)calcHeightForCellWithContact:(id)arg1 chatroomContact:(id)arg2 comment:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableSelect; // @synthesize disableSelect=_disableSelect;
 @property(retain, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(retain, nonatomic) CContact *chatroomContact; // @synthesize chatroomContact=_chatroomContact;

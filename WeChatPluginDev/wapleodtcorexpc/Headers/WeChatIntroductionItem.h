@@ -15,7 +15,6 @@
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)itemFromXml:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *introductionList; // @synthesize introductionList=_introductionList;
 - (id)toXML;
 

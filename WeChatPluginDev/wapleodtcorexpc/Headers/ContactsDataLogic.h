@@ -46,7 +46,6 @@
     NSMutableArray *_myNormalContactArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *myNormalContactArray; // @synthesize myNormalContactArray=_myNormalContactArray;
 @property(retain, nonatomic) WCSTokenPickLogic *tokenPickLogic; // @synthesize tokenPickLogic=_tokenPickLogic;
 @property(nonatomic) _Bool bMemberMatchWithGroups; // @synthesize bMemberMatchWithGroups=_bMemberMatchWithGroups;

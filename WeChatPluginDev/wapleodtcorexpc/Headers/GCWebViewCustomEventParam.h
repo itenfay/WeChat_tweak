@@ -16,7 +16,6 @@
     NSDictionary *_jsParam;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *jsParam; // @synthesize jsParam=_jsParam;
 @property(retain, nonatomic) NSMutableDictionary *customParam; // @synthesize customParam=_customParam;
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;

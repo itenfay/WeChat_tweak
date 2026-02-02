@@ -17,7 +17,6 @@
 + (id)genFromSearchOrderResp:(id)arg1;
 + (id)genFromGetOrderListResp:(id)arg1;
 + (id)convertFromProductList:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) EcCustomerOrder *orderBaseInfo; // @synthesize orderBaseInfo=_orderBaseInfo;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;

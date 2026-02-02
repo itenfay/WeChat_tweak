@@ -13,7 +13,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *method; // @synthesize method=_method;
 

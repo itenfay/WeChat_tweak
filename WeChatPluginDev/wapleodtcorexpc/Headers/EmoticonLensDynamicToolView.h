@@ -20,7 +20,6 @@
 }
 
 + (double)getHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *extraLensList; // @synthesize extraLensList=_extraLensList;
 @property(retain, nonatomic) EmoticonCameraDynamiFlowLayout *dynamicLayout; // @synthesize dynamicLayout=_dynamicLayout;
 @property(retain, nonatomic) UICollectionView *dynamicCollectionView; // @synthesize dynamicCollectionView=_dynamicCollectionView;

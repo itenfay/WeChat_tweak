@@ -17,7 +17,6 @@
     NSMutableSet *_tableViewAddedTags;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *tableViewAddedTags; // @synthesize tableViewAddedTags=_tableViewAddedTags;
 @property(retain, nonatomic) NSMutableSet *tableViewNewlyCreatedTags; // @synthesize tableViewNewlyCreatedTags=_tableViewNewlyCreatedTags;
 @property(retain, nonatomic) NSMutableSet *editViewAddedTags; // @synthesize editViewAddedTags=_editViewAddedTags;

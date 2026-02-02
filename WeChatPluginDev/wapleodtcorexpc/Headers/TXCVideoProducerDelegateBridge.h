@@ -16,7 +16,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onCustomProcessVideoFrame:(id)arg1 dst:(id)arg2;
 - (void)videoProducer:(id)arg1 onError:(id)arg2;
 - (void)videoProducer:(id)arg1 onEncodeParamsChanged:(const void *)arg2 forStreamType:(int)arg3;

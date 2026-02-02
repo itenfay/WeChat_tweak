@@ -12,7 +12,6 @@
     NSMutableDictionary *_domainRuleMaps;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *domainRuleMaps; // @synthesize domainRuleMaps=_domainRuleMaps;
 - (id)replaceOriginDomain:(id)arg1;
 - (void)unregisterDomianRules:(id)arg1;

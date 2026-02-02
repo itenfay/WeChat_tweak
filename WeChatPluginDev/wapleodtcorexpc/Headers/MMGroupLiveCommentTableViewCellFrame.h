@@ -16,7 +16,6 @@
     struct CGSize _pubbleSizeLandscape;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrStylesLandscape; // @synthesize arrStylesLandscape=_arrStylesLandscape;
 @property(retain, nonatomic) NSArray *arrStylesPortrait; // @synthesize arrStylesPortrait=_arrStylesPortrait;
 @property(nonatomic) double cellHeightLandscape; // @synthesize cellHeightLandscape=_cellHeightLandscape;

@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithMediaId:(id)arg1 errCode:(long long)arg2 cdnOriginResultByteArray:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *cdnOriginResultByteArray; // @synthesize cdnOriginResultByteArray=_cdnOriginResultByteArray;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;
 @property(copy, nonatomic) NSString *mediaId; // @synthesize mediaId=_mediaId;

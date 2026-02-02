@@ -14,7 +14,6 @@
 }
 
 + (id)defaultValueForKey:(id)arg1;
-- (void).cxx_destruct;
 @property _Bool displaysAsynchronously; // @synthesize displaysAsynchronously=_displaysAsynchronously;
 - (void)_setLayerContents:(id)arg1;
 - (void)_cancelAsyncDisplay;

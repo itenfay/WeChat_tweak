@@ -21,7 +21,6 @@
     id <MMLiveCircleProgressViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveCircleProgressViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double progressValue; // @synthesize progressValue=_progressValue;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;

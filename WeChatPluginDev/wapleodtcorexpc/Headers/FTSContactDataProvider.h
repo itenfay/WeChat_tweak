@@ -29,7 +29,6 @@
 
 + (_Bool)isFtsValidContact:(id)arg1 needGroupMember:(_Bool)arg2 checkListType:(_Bool)arg3;
 + (_Bool)isFtsValidContact:(id)arg1;
-- (void).cxx_destruct;
 - (void)makeupFtsContactSource:(id)arg1;
 - (void)internalReportSourceVerifyStatusWithSession:(id)arg1 andListContact:(id)arg2;
 - (void)internalReportChatRoomStatus;

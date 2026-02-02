@@ -10,7 +10,6 @@
     MMPrivacyInfomationApplyTipsViewConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPrivacyInfomationApplyTipsViewConfig *config; // @synthesize config=_config;
 - (void)onClickPageSheetCancelButton;
 - (void)onClickPageSheetConfirmButton;

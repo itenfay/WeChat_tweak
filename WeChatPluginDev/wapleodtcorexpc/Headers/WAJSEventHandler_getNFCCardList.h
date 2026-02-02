@@ -10,7 +10,6 @@
     WCPayPassKitFacade *_passKitFacade;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPassKitFacade *passKitFacade; // @synthesize passKitFacade=_passKitFacade;
 - (void)showErrorAlertView:(id)arg1;
 - (void)onFailReturn;

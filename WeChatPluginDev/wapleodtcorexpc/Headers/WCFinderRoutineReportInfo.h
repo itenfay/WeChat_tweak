@@ -27,7 +27,6 @@
     NSString *_fromContextId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isADFlag; // @synthesize isADFlag=_isADFlag;
 @property(copy, nonatomic) NSString *fromContextId; // @synthesize fromContextId=_fromContextId;
 @property(copy, nonatomic) NSDictionary *feedClientInfo; // @synthesize feedClientInfo=_feedClientInfo;

@@ -14,7 +14,6 @@
 
 + (void)registerHandler:(Class)arg1;
 + (id)handlerMap;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <WCFinderGlobalStore> currentStore; // @synthesize currentStore=_currentStore;
 @property(nonatomic) __weak MMLiteAppViewController *liteAppVC; // @synthesize liteAppVC=_liteAppVC;
 - (id)handleForActionName:(id)arg1;

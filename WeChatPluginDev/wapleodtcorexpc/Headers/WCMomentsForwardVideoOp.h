@@ -12,7 +12,6 @@
     id <WCMomentsForwardVideoOpDelegate> _videoOpDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCompositeVideo; // @synthesize isCompositeVideo=_isCompositeVideo;
 @property(nonatomic) __weak id <WCMomentsForwardVideoOpDelegate> videoOpDelegate; // @synthesize videoOpDelegate=_videoOpDelegate;
 - (void)OnForwardMessageFailUpdate:(id)arg1;

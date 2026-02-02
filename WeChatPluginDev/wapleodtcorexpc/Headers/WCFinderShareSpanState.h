@@ -14,7 +14,6 @@
     NSString *_spanModelStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *spanModelStr; // @synthesize spanModelStr=_spanModelStr;
 @property(retain, nonatomic) NSString *notFoundState; // @synthesize notFoundState=_notFoundState;
 @property(retain, nonatomic) WCFinderGeneralJumpErrMsgModel *spanModel; // @synthesize spanModel=_spanModel;

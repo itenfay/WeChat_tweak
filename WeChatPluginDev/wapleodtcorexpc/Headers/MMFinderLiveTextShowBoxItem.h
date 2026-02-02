@@ -17,7 +17,6 @@
     UIColor *_backgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useJumpStyle; // @synthesize useJumpStyle=_useJumpStyle;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;

@@ -16,7 +16,6 @@
 }
 
 + (void)importInDestionation:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *destinationFolder; // @synthesize destinationFolder=_destinationFolder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *importQueue; // @synthesize importQueue=_importQueue;
 @property(nonatomic) __weak id <WXGRoamImportQueueDelegate> delegate; // @synthesize delegate=_delegate;

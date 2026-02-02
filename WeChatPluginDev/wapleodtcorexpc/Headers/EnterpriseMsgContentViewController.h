@@ -10,7 +10,6 @@
     WCActionSheet *_enterpriseActionSheet;
 }
 
-- (void).cxx_destruct;
 - (void)onEnterpriseSelectBrandContact:(id)arg1 sheetView:(id)arg2;
 - (void)openEnterpriseBrandEntry;
 - (void)onBackButtonClicked:(id)arg1;

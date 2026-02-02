@@ -26,7 +26,6 @@
     MMFinderLiveSongManageTableViewCell *_cellToReset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFinderLiveSongManageTableViewCell *cellToReset; // @synthesize cellToReset=_cellToReset;
 @property(nonatomic) unsigned int indexOffset; // @synthesize indexOffset=_indexOffset;
 @property(retain, nonatomic) MMFinderLiveSongItem *preSingingSongItem; // @synthesize preSingingSongItem=_preSingingSongItem;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveSquareStyleInfo, NSMutableDictionary, NSString, WCFinderFeedFlowView, WCFinderLiveHomePageTabLiveStreamSectionViewModel, WCFinderLiveTabInfo;
 @protocol WCFinderLiveHomePageAggregationTabLiveStreamVMDelegate;
@@ -23,7 +24,6 @@
     NSMutableDictionary *_dataModels;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dataModels; // @synthesize dataModels=_dataModels;
 @property(nonatomic) _Bool showLocationAuthorized; // @synthesize showLocationAuthorized=_showLocationAuthorized;
 @property(nonatomic) __weak WCFinderLiveHomePageTabLiveStreamSectionViewModel *sectionVM; // @synthesize sectionVM=_sectionVM;
@@ -74,4 +74,3 @@
 @property(readonly) Class superclass;
 
 @end
-

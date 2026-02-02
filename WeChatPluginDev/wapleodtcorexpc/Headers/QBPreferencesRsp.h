@@ -17,7 +17,6 @@
 @property(retain, nonatomic, getter=sContentMd5, setter=setSContentMd5:) NSString *jcev2_p_2_o_sContentMd5; // @synthesize jcev2_p_2_o_sContentMd5;
 @property(retain, nonatomic, getter=vPreferencesKeyValue, setter=setVPreferencesKeyValue:) NSArray *jcev2_p_1_o_vPreferencesKeyValue__b0x9i_VOQBPreferencesKeyValue; // @synthesize jcev2_p_1_o_vPreferencesKeyValue__b0x9i_VOQBPreferencesKeyValue;
 @property(nonatomic, getter=iRspTime, setter=setIRspTime:) int jcev2_p_0_r_iRspTime; // @synthesize jcev2_p_0_r_iRspTime;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

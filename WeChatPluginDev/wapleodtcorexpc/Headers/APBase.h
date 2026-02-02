@@ -77,7 +77,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PublicWifiPageInfo *pageInfo; // @synthesize pageInfo=_pageInfo;
 @property(copy, nonatomic) NSString *retMsg; // @synthesize retMsg=_retMsg;
 @property(nonatomic) unsigned int protocolType; // @synthesize protocolType=_protocolType;

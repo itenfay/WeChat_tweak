@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsLogExt; // @synthesize m_nsLogExt=_m_nsLogExt;
 @property(nonatomic) unsigned int m_uiLogId; // @synthesize m_uiLogId=_m_uiLogId;
 @property(nonatomic) unsigned int m_uiCreateTime; // @synthesize m_uiCreateTime=_m_uiCreateTime;

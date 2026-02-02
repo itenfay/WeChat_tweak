@@ -34,7 +34,6 @@
     WXGBackupDataMgr *_dataMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXGBackupDataMgr *dataMgr; // @synthesize dataMgr=_dataMgr;
 @property(nonatomic) _Bool bStartPacking; // @synthesize bStartPacking=_bStartPacking;
 @property(retain, nonatomic) NSMutableArray *dataSessionInfoArray; // @synthesize dataSessionInfoArray=_dataSessionInfoArray;

@@ -17,7 +17,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithErrCode:(long long)arg1 errMsg:(id)arg2 data:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterStandardTypedData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) long long errCode; // @synthesize errCode=_errCode;

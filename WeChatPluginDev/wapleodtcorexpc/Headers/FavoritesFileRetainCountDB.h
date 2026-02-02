@@ -12,7 +12,6 @@
     MyFavoritesDB *_mmDB;
 }
 
-- (void).cxx_destruct;
 - (id)getRetainMd5ByLocalId:(unsigned int)arg1;
 - (_Bool)isMd5RetainCountZero:(id)arg1;
 - (_Bool)deleteItemByMd5:(id)arg1 andItemLocalId:(unsigned int)arg2;

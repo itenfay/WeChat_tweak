@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMLimitedModeAuthorizationUtilLogic, NSString, WCFinderLimitAccessAuthorizationModel;
 @protocol WCFinderLimitedModeMgrDelegate;
@@ -31,7 +32,6 @@
 + (id)getTimeLockAuthorizationBizKey;
 + (id)getCurfewAuthorizationBizKey;
 + (_Bool)canCheckAntiAddictLogicBySwitch;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long antiSceneTotalWatchSeconds; // @synthesize antiSceneTotalWatchSeconds=_antiSceneTotalWatchSeconds;
 @property(retain, nonatomic) WCFinderLimitAccessAuthorizationModel *authorizationModel; // @synthesize authorizationModel=_authorizationModel;
 @property(retain, nonatomic) MMLimitedModeAuthorizationUtilLogic *authorizationLogic; // @synthesize authorizationLogic=_authorizationLogic;
@@ -83,4 +83,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -26,7 +26,6 @@
     WCAdCardBtnInfo *_adGestureClickActionInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *adGestureClickActionInfo; // @synthesize adGestureClickActionInfo=_adGestureClickActionInfo;
 @property(retain, nonatomic) WCAdClickBarInfo *adClickBarInfo; // @synthesize adClickBarInfo=_adClickBarInfo;
 @property(retain, nonatomic) WCAdFullCardDragImageGestureInfo *dragImageGestureInfo; // @synthesize dragImageGestureInfo=_dragImageGestureInfo;

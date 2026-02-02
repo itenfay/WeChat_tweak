@@ -13,7 +13,6 @@
     NSArray *_http_proxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *http_proxy; // @synthesize http_proxy=_http_proxy;
 @property(nonatomic) _Bool privacy_protection; // @synthesize privacy_protection=_privacy_protection;
 - (id)initWithDict:(id)arg1;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, V2TXLivePlayerJSConfig, V2TXLivePlayerWx;
 @protocol V2TXLivePlayerJSAdapterDelegate;
@@ -18,7 +19,6 @@
     NSString *_playerId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playerId; // @synthesize playerId=_playerId;
 @property(nonatomic) __weak id <V2TXLivePlayerJSAdapterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)apiOnlineLog:(id)arg1 online:(_Bool)arg2;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

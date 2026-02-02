@@ -34,7 +34,6 @@
     UITapGestureRecognizer *_exitTapGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *exitTapGestureRecognizer; // @synthesize exitTapGestureRecognizer=_exitTapGestureRecognizer;
 @property(nonatomic) double animLimitUpBtnMaxTop; // @synthesize animLimitUpBtnMaxTop=_animLimitUpBtnMaxTop;
 @property(nonatomic) double animLimitUpBtnMinTop; // @synthesize animLimitUpBtnMinTop=_animLimitUpBtnMinTop;

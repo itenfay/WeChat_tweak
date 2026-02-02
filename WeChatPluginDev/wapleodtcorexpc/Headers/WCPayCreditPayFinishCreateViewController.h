@@ -10,7 +10,6 @@
     id <WCPayCreditPayFinishCreateViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)onIncreaseLimit;
 - (void)onBack;
 - (void)setDelegate:(id)arg1;

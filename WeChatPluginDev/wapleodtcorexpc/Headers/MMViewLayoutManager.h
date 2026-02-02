@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSMutableSet, UIView;
 
@@ -18,7 +19,6 @@
     UIView *_topLevelView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *topLevelView; // @synthesize topLevelView=_topLevelView;
 @property(retain, nonatomic) NSMutableSet *parentsForDirtyItems; // @synthesize parentsForDirtyItems=_parentsForDirtyItems;
 @property(retain, nonatomic) NSMutableSet *dirtyItems; // @synthesize dirtyItems=_dirtyItems;
@@ -46,4 +46,3 @@
 - (id)initWithTopLevelView:(id)arg1;
 
 @end
-

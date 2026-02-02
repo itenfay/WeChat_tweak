@@ -11,7 +11,6 @@
     id <WCFinderFullScreenEditVideoViewControllerDelegate> _finderDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderFullScreenEditVideoViewControllerDelegate> finderDelegate; // @synthesize finderDelegate=_finderDelegate;
 - (void)registerYReportSdk;
 - (void)finderEditVideoLayoutDrawEnd;

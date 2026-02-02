@@ -14,7 +14,6 @@
     NSArray *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <MMBGMCategoryViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)genDiffableDataSourceSnapshot;

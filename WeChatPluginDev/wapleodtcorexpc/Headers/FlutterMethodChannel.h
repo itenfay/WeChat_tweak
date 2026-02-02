@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol FlutterBinaryMessenger, FlutterMethodCodec, FlutterTaskQueue;
@@ -19,7 +20,6 @@
 
 + (id)methodChannelWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3;
 + (id)methodChannelWithName:(id)arg1 binaryMessenger:(id)arg2;
-- (void).cxx_destruct;
 - (void)resizeChannelBuffer:(long long)arg1;
 - (void)setMethodCallHandler:(CDUnknownBlockType)arg1;
 - (void)invokeMethod:(id)arg1 arguments:(id)arg2 result:(CDUnknownBlockType)arg3;
@@ -28,4 +28,3 @@
 - (id)initWithName:(id)arg1 binaryMessenger:(id)arg2 codec:(id)arg3;
 
 @end
-

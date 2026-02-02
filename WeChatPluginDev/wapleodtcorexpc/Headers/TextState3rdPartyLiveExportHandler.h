@@ -13,7 +13,6 @@
     MMFinderLiveSharePlayerView *_livePlayerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveSharePlayerView *livePlayerView; // @synthesize livePlayerView=_livePlayerView;
 @property(retain, nonatomic) MMFinderLiveStatusIconShareView *liveStatusView; // @synthesize liveStatusView=_liveStatusView;
 @property(retain, nonatomic) WCFinderLiveShareItem *liveShareItem; // @synthesize liveShareItem=_liveShareItem;

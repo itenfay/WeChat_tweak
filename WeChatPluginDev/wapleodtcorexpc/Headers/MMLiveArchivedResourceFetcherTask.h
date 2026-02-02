@@ -11,7 +11,6 @@
     NSString *_manifestPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *manifestPath; // @synthesize manifestPath=_manifestPath;
 @property(retain, nonatomic) NSString *unarchiveDestinationPath; // @synthesize unarchiveDestinationPath=_unarchiveDestinationPath;
 - (id)pinnedPaths;

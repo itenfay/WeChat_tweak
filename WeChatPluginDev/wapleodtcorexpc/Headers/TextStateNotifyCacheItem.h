@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_referenceCount;
 + (void)PBArrayAdd_doLikeCount;
 + (void)PBArrayAdd_textStateId;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int commentCount; // @synthesize commentCount=_commentCount;
 @property(nonatomic) unsigned int referenceCount; // @synthesize referenceCount=_referenceCount;
 @property(nonatomic) unsigned long long doLikeCountVersion; // @synthesize doLikeCountVersion=_doLikeCountVersion;

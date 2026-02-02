@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSNumber, OnlineInfo;
 
@@ -15,7 +16,6 @@
     NSNumber *_cachedKeepAliveEnabled;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *cachedKeepAliveEnabled; // @synthesize cachedKeepAliveEnabled=_cachedKeepAliveEnabled;
 @property(retain, nonatomic) NSNumber *cachedAutoLoginEnabled; // @synthesize cachedAutoLoginEnabled=_cachedAutoLoginEnabled;
 @property(retain, nonatomic) NSNumber *cachedLock; // @synthesize cachedLock=_cachedLock;
@@ -40,4 +40,3 @@
 - (id)initWithOnlineInfo:(id)arg1;
 
 @end
-

@@ -28,7 +28,6 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imgInstruction; // @synthesize imgInstruction=_imgInstruction;
 @property(nonatomic) _Bool avoidOtherAnnotations; // @synthesize avoidOtherAnnotations=_avoidOtherAnnotations;
 @property(nonatomic) _Bool avoidAnnotation; // @synthesize avoidAnnotation=_avoidAnnotation;

@@ -24,7 +24,6 @@
 
 + (long long)clientType;
 + (id)singleton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) QBussinessSetting *serverSetting; // @synthesize serverSetting=_serverSetting;
 @property(copy) NSString *vendorDeviceId; // @synthesize vendorDeviceId=_vendorDeviceId;
 @property(copy) NSString *suid; // @synthesize suid=_suid;

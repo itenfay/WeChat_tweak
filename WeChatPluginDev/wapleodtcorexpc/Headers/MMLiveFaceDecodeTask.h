@@ -17,7 +17,6 @@
 + (char *)getDecodedRGBATexBufFromJbigBuf:(char *)arg1 length:(int)arg2 dstWidth:(unsigned long long *)arg3 dstHeight:(unsigned long long *)arg4;
 + (id)decode:(id)arg1;
 + (_Bool)checkParamValidForEncodedData:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double dataRecvTime; // @synthesize dataRecvTime=_dataRecvTime;
 @property(retain, nonatomic) NSData *encodedData; // @synthesize encodedData=_encodedData;
 - (id)initWithEncodedData:(id)arg1;

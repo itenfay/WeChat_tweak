@@ -13,7 +13,6 @@
     UIImageView *_snapshotImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *snapshotImageView; // @synthesize snapshotImageView=_snapshotImageView;
 @property(nonatomic) __weak id <WAEAGLViewGestureDelegate> gestureDelegate; // @synthesize gestureDelegate=_gestureDelegate;
 @property(nonatomic) int interactionMode; // @synthesize interactionMode=_interactionMode;

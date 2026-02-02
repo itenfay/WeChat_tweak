@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface QPointEventEngine : NSObject
 {
@@ -15,4 +16,3 @@
 - (void)asyncFetchPointEventData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
-

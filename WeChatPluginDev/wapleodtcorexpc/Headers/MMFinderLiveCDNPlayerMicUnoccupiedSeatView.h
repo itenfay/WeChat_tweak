@@ -13,7 +13,6 @@
     UIImageView *_addIconView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *addIconView; // @synthesize addIconView=_addIconView;
 @property(retain, nonatomic) MMFinderLiveConnectMicSeatInfo *micSeatInfo; // @synthesize micSeatInfo=_micSeatInfo;
 - (void)layoutUI;

@@ -10,7 +10,6 @@
     NSMutableArray *_draftItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *draftItems; // @synthesize draftItems=_draftItems;
 - (id)generateSelectItemModelFromAssetInfo:(id)arg1;
 - (id)identifier;

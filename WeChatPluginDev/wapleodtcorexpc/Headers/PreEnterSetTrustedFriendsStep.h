@@ -10,7 +10,6 @@
     NSString *m_content;
 }
 
-- (void).cxx_destruct;
 - (void)showTrustedFriendsVC:(id)arg1;
 - (void)startStep;
 - (id)initWithXml:(id)arg1;

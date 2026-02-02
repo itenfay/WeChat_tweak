@@ -34,7 +34,6 @@
     long long _consumerSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long consumerSize; // @synthesize consumerSize=_consumerSize;
 @property(nonatomic) long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(nonatomic) long long producerSize; // @synthesize producerSize=_producerSize;

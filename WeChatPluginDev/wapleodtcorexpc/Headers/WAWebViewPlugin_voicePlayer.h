@@ -13,7 +13,6 @@
     NSString *_localId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localId; // @synthesize localId=_localId;
 @property(nonatomic) __weak id <IWAWebViewPluginDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
 - (_Bool)handleEvent:(unsigned long long)arg1 userInfo:(id)arg2;

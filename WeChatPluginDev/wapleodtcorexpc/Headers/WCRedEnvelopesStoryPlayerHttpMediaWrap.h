@@ -12,7 +12,6 @@
     long long _index;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(nonatomic) unsigned int subtypeId; // @synthesize subtypeId=_subtypeId;
 @property(retain, nonatomic) NSString *resourceURL; // @synthesize resourceURL=_resourceURL;

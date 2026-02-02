@@ -15,7 +15,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *retry_fail_wording; // @synthesize retry_fail_wording=_retry_fail_wording;
 @property(nonatomic) long long max_retry_count; // @synthesize max_retry_count=_max_retry_count;
 @property(nonatomic) long long retry_interval; // @synthesize retry_interval=_retry_interval;

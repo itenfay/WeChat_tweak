@@ -19,7 +19,6 @@
     WCFinderMentionSearchViewController *_searchViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMentionSearchViewController *searchViewController; // @synthesize searchViewController=_searchViewController;
 @property(retain, nonatomic) UIView *searchContainer; // @synthesize searchContainer=_searchContainer;
 @property(retain, nonatomic) MMUISearchBar *searchBar; // @synthesize searchBar=_searchBar;

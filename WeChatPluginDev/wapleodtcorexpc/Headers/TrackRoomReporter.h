@@ -16,7 +16,6 @@
     double _movePathDistance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double movePathDistance; // @synthesize movePathDistance=_movePathDistance;
 @property(retain, nonatomic) NSArray *othersCurrentLocation; // @synthesize othersCurrentLocation=_othersCurrentLocation;
 @property(retain, nonatomic) CLLocation *userCurrentLocation; // @synthesize userCurrentLocation=_userCurrentLocation;

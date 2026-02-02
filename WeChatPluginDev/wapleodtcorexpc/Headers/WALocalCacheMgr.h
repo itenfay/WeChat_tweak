@@ -20,7 +20,6 @@
 + (id)getDebugModuleInfoDataWithAppId:(id)arg1 userName:(id)arg2 moduleName:(id)arg3 appServiceType:(unsigned int)arg4;
 + (id)getDefaultInfoDataWithAppId:(id)arg1 userName:(id)arg2 appServiceType:(unsigned int)arg3;
 + (id)getDebugInfoDataWithAppId:(id)arg1 userName:(id)arg2 appServiceType:(unsigned int)arg3;
-- (void).cxx_destruct;
 - (unsigned long long)transferDownloadTypeToReportType:(unsigned long long)arg1;
 - (_Bool)isPkgFileExistsForInfoData:(id)arg1;
 - (_Bool)overwriteTargetInfoDataPkg:(id)arg1 bySourceInfoData:(id)arg2;

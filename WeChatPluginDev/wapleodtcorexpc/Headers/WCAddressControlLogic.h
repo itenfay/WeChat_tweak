@@ -13,7 +13,6 @@
     NSString *m_nsUserName;
 }
 
-- (void).cxx_destruct;
 - (void)OnNotAcceptGetLatestAddress;
 - (void)OnImportYiXunAddress:(id)arg1 importStatus:(int)arg2 Error:(id)arg3;
 - (void)OnAnalyseAddressInfo:(id)arg1;

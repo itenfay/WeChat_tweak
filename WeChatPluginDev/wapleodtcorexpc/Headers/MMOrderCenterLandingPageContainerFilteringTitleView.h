@@ -14,7 +14,6 @@
     UIImageView *_chevronView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *chevronView; // @synthesize chevronView=_chevronView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

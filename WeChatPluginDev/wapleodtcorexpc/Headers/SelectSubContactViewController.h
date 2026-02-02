@@ -21,7 +21,6 @@
     NSMutableSet *_selectedUsernames;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *selectedUsernames; // @synthesize selectedUsernames=_selectedUsernames;
 @property(nonatomic) unsigned long long overrideOrientationMask; // @synthesize overrideOrientationMask=_overrideOrientationMask;
 @property(nonatomic) _Bool isInPageSheetMode; // @synthesize isInPageSheetMode=_isInPageSheetMode;

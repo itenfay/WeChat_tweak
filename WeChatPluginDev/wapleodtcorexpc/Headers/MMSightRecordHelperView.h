@@ -21,7 +21,6 @@
     double _maxRecordDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxRecordDuration; // @synthesize maxRecordDuration=_maxRecordDuration;
 @property(nonatomic) double minRecordDuration; // @synthesize minRecordDuration=_minRecordDuration;
 @property(nonatomic) double startRecordAnimationDuration; // @synthesize startRecordAnimationDuration=_startRecordAnimationDuration;

@@ -11,7 +11,6 @@
     NSString *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSString *nativeUri; // @synthesize nativeUri=_nativeUri;
 - (id)toXML;

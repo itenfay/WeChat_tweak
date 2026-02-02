@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface EmoticonGetWordListCGI
 {
     unsigned int _startTime;
@@ -10,7 +12,6 @@
     CDUnknownBlockType _failed;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) CDUnknownBlockType failed; // @synthesize failed=_failed;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -21,4 +22,3 @@
 - (id)initWithCompletionBlock:(CDUnknownBlockType)arg1 failed:(CDUnknownBlockType)arg2;
 
 @end
-

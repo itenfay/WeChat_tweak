@@ -38,7 +38,6 @@
     UIImageView *_taxCutArrow;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *taxCutArrow; // @synthesize taxCutArrow=_taxCutArrow;
 @property(retain, nonatomic) UILabel *taxCutDesc; // @synthesize taxCutDesc=_taxCutDesc;
 @property(retain, nonatomic) UILabel *taxCutTitle; // @synthesize taxCutTitle=_taxCutTitle;

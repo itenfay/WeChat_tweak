@@ -10,7 +10,6 @@
     id <WCAddressNetworkDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAddressNetworkDelegate> m_delegate; // @synthesize m_delegate;
 - (void)ImportYiXunAdress:(id)arg1;
 - (void)SelectWCAddress:(id)arg1;

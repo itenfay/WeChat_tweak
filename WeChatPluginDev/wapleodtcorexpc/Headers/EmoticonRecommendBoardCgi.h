@@ -21,7 +21,6 @@
     NSData *_localEmoji;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSData *localEmoji; // @synthesize localEmoji=_localEmoji;
 @property(retain, nonatomic) NSData *pageBuffer; // @synthesize pageBuffer=_pageBuffer;

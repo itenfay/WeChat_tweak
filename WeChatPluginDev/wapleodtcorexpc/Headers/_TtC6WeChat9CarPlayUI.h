@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MISSING_TYPE, _TtC6WeChat17CarPlayController;
 
 @interface _TtC6WeChat9CarPlayUI
@@ -14,7 +16,6 @@
     MISSING_TYPE *presentedController;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)templateWillAppear:(id)arg1 animated:(_Bool)arg2;
 - (void)showTabBarController;
@@ -40,4 +41,3 @@
 - (void)showActionSheetWithActionSheet:(id)arg1;
 
 @end
-

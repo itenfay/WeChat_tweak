@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_lastUpdateTime;
 + (void)PBArrayAdd_taskInnerKey;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(copy, nonatomic) NSString *taskInnerKey; // @synthesize taskInnerKey=_taskInnerKey;
 - (id)getPBPropertyTable;

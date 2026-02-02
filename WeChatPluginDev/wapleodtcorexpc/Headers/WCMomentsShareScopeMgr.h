@@ -22,7 +22,6 @@
     unsigned long long _modifyShareScopeEnterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long modifyShareScopeEnterScene; // @synthesize modifyShareScopeEnterScene=_modifyShareScopeEnterScene;
 @property(nonatomic) _Bool isModifyFromShareScopeVC; // @synthesize isModifyFromShareScopeVC=_isModifyFromShareScopeVC;
 @property(nonatomic) _Bool isRequestContactDataForModifying; // @synthesize isRequestContactDataForModifying=_isRequestContactDataForModifying;

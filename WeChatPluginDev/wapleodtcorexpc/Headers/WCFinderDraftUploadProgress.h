@@ -16,7 +16,6 @@
 }
 
 + (id)progressWithCombineProgresses:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *combinedProgresses; // @synthesize combinedProgresses=_combinedProgresses;
 @property(nonatomic) __weak id <WCFinderDraftUploadProgressDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WCFinderFeedDraft *draft; // @synthesize draft=_draft;

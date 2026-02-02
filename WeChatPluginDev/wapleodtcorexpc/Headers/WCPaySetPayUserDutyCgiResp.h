@@ -14,7 +14,6 @@
 }
 
 + (id)genFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *retmsg; // @synthesize retmsg=_retmsg;
 @property(nonatomic) unsigned int retcode; // @synthesize retcode=_retcode;
 

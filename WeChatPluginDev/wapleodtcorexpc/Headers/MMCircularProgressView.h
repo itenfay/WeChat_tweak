@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSArray, UIColor, UIImage, UIImageView;
 
@@ -27,7 +28,6 @@
     MMTimer *_animationTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *animationTimer; // @synthesize animationTimer=_animationTimer;
 @property(nonatomic) double animationStep; // @synthesize animationStep=_animationStep;
 @property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
@@ -60,4 +60,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

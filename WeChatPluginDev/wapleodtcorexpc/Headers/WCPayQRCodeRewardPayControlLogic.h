@@ -15,7 +15,6 @@
     WCPayQRCodeRewardPayCheckCgi *_payCheckCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayQRCodeRewardPayCheckCgi *payCheckCgi; // @synthesize payCheckCgi=_payCheckCgi;
 @property(retain, nonatomic) WCPayQRCodeRewardPlaceOrderCgi *placeOrderCgi; // @synthesize placeOrderCgi=_placeOrderCgi;
 @property(retain, nonatomic) WCPayQRCodeRewardScanCodeCgi *scanCodeCgi; // @synthesize scanCodeCgi=_scanCodeCgi;

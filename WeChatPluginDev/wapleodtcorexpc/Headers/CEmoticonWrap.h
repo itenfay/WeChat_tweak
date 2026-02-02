@@ -40,7 +40,6 @@
 + (void)PBArrayAdd_m_uiGameType;
 + (void)PBArrayAdd_m_bCanDelete;
 + (void)PBArrayAdd_m_uiType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fromSearchKey; // @synthesize fromSearchKey=_fromSearchKey;
 @property(nonatomic) _Bool disableRecordSend; // @synthesize disableRecordSend=_disableRecordSend;
 @property(nonatomic) _Bool isReommandSearchWrap; // @synthesize isReommandSearchWrap=_isReommandSearchWrap;

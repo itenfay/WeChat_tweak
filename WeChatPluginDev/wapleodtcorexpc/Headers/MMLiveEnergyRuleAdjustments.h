@@ -29,7 +29,6 @@
     NSNumber *_blurPowerModeAdjustParamAdjustLevel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *blurPowerModeAdjustParamAdjustLevel; // @synthesize blurPowerModeAdjustParamAdjustLevel=_blurPowerModeAdjustParamAdjustLevel;
 @property(retain, nonatomic) NSNumber *fullScreenGiftDisplaySpacingTimeInterval; // @synthesize fullScreenGiftDisplaySpacingTimeInterval=_fullScreenGiftDisplaySpacingTimeInterval;
 @property(retain, nonatomic) NSNumber *giftPAGFrameRateAdjustLevel; // @synthesize giftPAGFrameRateAdjustLevel=_giftPAGFrameRateAdjustLevel;

@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IWXVoIPAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)overrideOutputAudioPort:(unsigned long long)arg1 error:(id *)arg2;
 - (_Bool)setPreferredOutputNumberOfChannels:(long long)arg1 error:(id *)arg2;

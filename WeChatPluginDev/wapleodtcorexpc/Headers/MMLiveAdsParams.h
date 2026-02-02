@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableArray, NSString;
 
@@ -23,7 +24,6 @@
     unsigned long long _rewardTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rewardTime; // @synthesize rewardTime=_rewardTime;
 @property(copy, nonatomic) NSString *clkReportLink; // @synthesize clkReportLink=_clkReportLink;
 @property(copy, nonatomic) NSString *expReportLink; // @synthesize expReportLink=_expReportLink;
@@ -39,4 +39,3 @@
 - (id)init;
 
 @end
-

@@ -19,7 +19,6 @@
     struct CGRect _fullScreen;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(nonatomic) struct CGRect halfScreen; // @synthesize halfScreen=_halfScreen;
 @property(retain, nonatomic) MMUIButton *startToPlayBtn; // @synthesize startToPlayBtn=_startToPlayBtn;

@@ -14,7 +14,6 @@
     WCTTable *_forwardRecordItemTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *forwardRecordItemTable; // @synthesize forwardRecordItemTable=_forwardRecordItemTable;
 @property(retain, nonatomic) WCTTable *forwardRecordTable; // @synthesize forwardRecordTable=_forwardRecordTable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;

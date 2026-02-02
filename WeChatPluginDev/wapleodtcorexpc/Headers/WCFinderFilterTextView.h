@@ -33,7 +33,6 @@
 
 + (id)getMentionedNicknameArrayWithText:(id)arg1;
 + (_Bool)isCharacters:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderHighlightedInfoModel *lastHighlightedModel; // @synthesize lastHighlightedModel=_lastHighlightedModel;
 @property(retain, nonatomic) NSRegularExpression *mailMatcher; // @synthesize mailMatcher=_mailMatcher;
 @property(retain, nonatomic) NSString *lastText; // @synthesize lastText=_lastText;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CXCallObserver, NSString, TRTCCdnPlayerManager, UIView, WCLiveBlurButton, WCPlayLiveWithoutLoginHeadView, WCPlayLiveWithoutLoginViewModel;
 
 @interface WCPlayLiveWithoutLoginViewController
@@ -18,7 +20,6 @@
     CXCallObserver *_callObserver;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CXCallObserver *callObserver; // @synthesize callObserver=_callObserver;
 @property(nonatomic) _Bool hasSetIdleTimerDisabled; // @synthesize hasSetIdleTimerDisabled=_hasSetIdleTimerDisabled;
 @property(nonatomic) _Bool isIdleTimerDisabledBefore; // @synthesize isIdleTimerDisabledBefore=_isIdleTimerDisabledBefore;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

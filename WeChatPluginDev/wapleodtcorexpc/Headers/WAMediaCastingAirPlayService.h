@@ -15,7 +15,6 @@
 }
 
 + (id)service;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMediaCastingAirPlayDetector *detector; // @synthesize detector=_detector;
 @property(nonatomic) __weak id <WAMediaCastingAirPlayServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWAMediaCastingAirPlayDetector:(id)arg1 wirelessRouteActiveDidChange:(_Bool)arg2;

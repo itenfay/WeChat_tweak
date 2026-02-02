@@ -22,7 +22,6 @@
     struct UIEdgeInsets _contentInsetWhenKeyBoardHide;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsetWhenKeyBoardHide; // @synthesize contentInsetWhenKeyBoardHide=_contentInsetWhenKeyBoardHide;
 @property(retain, nonatomic) NSMutableArray *quickReplies; // @synthesize quickReplies=_quickReplies;
 - (void)saveQuickRepliesInFileAndTransferToWatch;

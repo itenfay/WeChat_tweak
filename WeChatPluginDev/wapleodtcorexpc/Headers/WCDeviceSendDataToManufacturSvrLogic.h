@@ -14,7 +14,6 @@
     long long _m_sessionId;
 }
 
-- (void).cxx_destruct;
 @property long long m_sessionId; // @synthesize m_sessionId=_m_sessionId;
 @property(nonatomic) __weak id <WCDeviceSendDataToManufacturSvrLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

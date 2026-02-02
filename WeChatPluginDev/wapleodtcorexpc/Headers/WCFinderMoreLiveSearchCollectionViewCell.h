@@ -28,7 +28,6 @@
 }
 
 + (double)cellHeightInWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderSearchHighLightItemModel *itemModel; // @synthesize itemModel=_itemModel;
 @property(retain, nonatomic) UILabel *audienceNumLabel; // @synthesize audienceNumLabel=_audienceNumLabel;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authInfoIconView; // @synthesize authInfoIconView=_authInfoIconView;

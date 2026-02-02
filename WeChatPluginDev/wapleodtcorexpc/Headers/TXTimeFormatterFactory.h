@@ -13,7 +13,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 - (id)getDateFormatter;
 - (id)init;
 

@@ -16,7 +16,6 @@
     double _arrowPaddingRightWhenNotInList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double arrowPaddingRightWhenNotInList; // @synthesize arrowPaddingRightWhenNotInList=_arrowPaddingRightWhenNotInList;
 @property(nonatomic) _Bool isInList; // @synthesize isInList=_isInList;
 @property(retain, nonatomic) UIView *topLineView; // @synthesize topLineView=_topLineView;

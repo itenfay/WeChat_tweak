@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CContact, CMessageWrap, MMAcceptAgreementCommonHeadView, MMLimitedModeAuthorizationUtilLogic, MMLimitedModeGuardianLogic, MMTableView, MMTableViewInfo, NSString, UIButton, UIColor, UIImage;
 
 @interface MMLimitedModeAuthorizeRequestDisplayViewController
@@ -27,7 +29,6 @@
     UIColor *_m_navigationBarBackgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *m_navigationBarBackgroundColor; // @synthesize m_navigationBarBackgroundColor=_m_navigationBarBackgroundColor;
 @property(copy, nonatomic) CDUnknownBlockType m_resultActionBlock; // @synthesize m_resultActionBlock=_m_resultActionBlock;
 @property(nonatomic) _Bool m_bHiddenOperateButton; // @synthesize m_bHiddenOperateButton=_m_bHiddenOperateButton;
@@ -71,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
     PatRevokeTipsView *_patRevokeTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PatRevokeTipsView *patRevokeTipsView; // @synthesize patRevokeTipsView=_patRevokeTipsView;
 @property(nonatomic) double shakeHeadAnimationProgress; // @synthesize shakeHeadAnimationProgress=_shakeHeadAnimationProgress;
 @property(nonatomic) unsigned long long shakeHeadAnimationType; // @synthesize shakeHeadAnimationType=_shakeHeadAnimationType;

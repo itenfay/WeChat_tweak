@@ -13,7 +13,6 @@
     NSString *_musicID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *musicID; // @synthesize musicID=_musicID;
 @property(readonly, nonatomic) NSString *templateID; // @synthesize templateID=_templateID;
 - (id)description;

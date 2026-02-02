@@ -36,7 +36,6 @@
     struct CGRect _imageViewMinimizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OCRTransPanGestureAnimationElement *animationElement; // @synthesize animationElement=_animationElement;
 @property(nonatomic) unsigned int reportZoomType; // @synthesize reportZoomType=_reportZoomType;
 @property(nonatomic) long long ocrResultType; // @synthesize ocrResultType=_ocrResultType;

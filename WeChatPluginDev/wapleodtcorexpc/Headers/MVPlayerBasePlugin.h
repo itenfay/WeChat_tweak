@@ -12,7 +12,6 @@
     MMMVPlayer *_player;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMMVPlayer *player; // @synthesize player=_player;
 
 // Remaining properties

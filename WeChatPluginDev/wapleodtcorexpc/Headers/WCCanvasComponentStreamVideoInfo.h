@@ -23,7 +23,6 @@
     WCCanvasComponentVideoFloatBarInfo *_floatBarInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentVideoFloatBarInfo *floatBarInfo; // @synthesize floatBarInfo=_floatBarInfo;
 @property(nonatomic) _Bool forceLandscapeWhenTurnToFullScreen; // @synthesize forceLandscapeWhenTurnToFullScreen=_forceLandscapeWhenTurnToFullScreen;
 @property(nonatomic) _Bool allowVoice; // @synthesize allowVoice=_allowVoice;

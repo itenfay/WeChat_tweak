@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXAudioEffectManager *audioEffectManager; // @synthesize audioEffectManager=_audioEffectManager;
 - (id)getAudioEffectManager;
 - (id)init;

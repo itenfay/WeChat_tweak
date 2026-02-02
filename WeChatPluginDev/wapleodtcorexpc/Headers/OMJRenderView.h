@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) shared_ptr_85cde1ea backingView; // @synthesize backingView=_backingView;
 - (void)layoutSubviews;
 - (void)teardownIfNeeded;

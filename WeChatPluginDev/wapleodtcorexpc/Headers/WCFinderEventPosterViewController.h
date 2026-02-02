@@ -20,7 +20,6 @@
     MMUIButton *_actionButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) WCFinderEventHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;

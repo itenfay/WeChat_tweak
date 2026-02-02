@@ -18,7 +18,6 @@
     NSURL *_curURL;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *curURL; // @synthesize curURL=_curURL;
 @property(retain, nonatomic) NSMutableArray *transferQueuePool; // @synthesize transferQueuePool=_transferQueuePool;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *bridgeQueue; // @synthesize bridgeQueue=_bridgeQueue;

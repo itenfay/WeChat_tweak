@@ -18,7 +18,6 @@
     NSString *_deletingCardID;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deletingCardID; // @synthesize deletingCardID=_deletingCardID;
 @property(retain, nonatomic) WCMktRemoveCardInRecentListCgi *removeCardInRecentListCgi; // @synthesize removeCardInRecentListCgi=_removeCardInRecentListCgi;
 @property(retain, nonatomic) WCMktCardHomePageV2Cgi *homePageCgi; // @synthesize homePageCgi=_homePageCgi;

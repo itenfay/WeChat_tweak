@@ -13,7 +13,6 @@
 }
 
 + (double)viewH;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setupTitle:(id)arg1;
 - (void)setupLayoutWithSuperView:(id)arg1;

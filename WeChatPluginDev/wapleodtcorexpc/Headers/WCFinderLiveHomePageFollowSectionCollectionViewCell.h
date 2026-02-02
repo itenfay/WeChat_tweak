@@ -14,7 +14,6 @@
 
 + (double)cellHeight:(_Bool)arg1 styleInfo:(id)arg2;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageFollowSectionView *liveCollectionView; // @synthesize liveCollectionView=_liveCollectionView;
 @property(nonatomic) __weak id <WCFinderLiveHomePageFollowSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scrollToTop:(_Bool)arg1;

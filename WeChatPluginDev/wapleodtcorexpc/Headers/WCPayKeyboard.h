@@ -28,7 +28,6 @@
     struct UIEdgeInsets _insets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize oldSize; // @synthesize oldSize=_oldSize;
 @property(nonatomic) _Bool showConfirm; // @synthesize showConfirm=_showConfirm;
 @property(nonatomic) long long type; // @synthesize type=_type;

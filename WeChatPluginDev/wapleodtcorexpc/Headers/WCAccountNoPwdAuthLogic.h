@@ -13,7 +13,6 @@
     WCAccountLoginUsersViewController *_loginUsersVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCAccountLoginUsersViewController *loginUsersVC; // @synthesize loginUsersVC=_loginUsersVC;
 - (_Bool)onManualAuthControlLogicError:(id)arg1;
 - (void)onManualAuthControlLogicStop:(unsigned long long)arg1 response:(id)arg2;

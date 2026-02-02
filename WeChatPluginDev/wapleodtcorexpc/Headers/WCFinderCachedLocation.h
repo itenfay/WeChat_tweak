@@ -15,7 +15,6 @@
 
 + (id)cachedLocationWithLocation:(id)arg1 cachedTime:(double)arg2;
 + (id)cachedLocationWithLocation:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double cachedTimeStamp; // @synthesize cachedTimeStamp=_cachedTimeStamp;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 - (void)updateCachedTimeToNow;

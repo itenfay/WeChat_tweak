@@ -12,7 +12,6 @@
     WCAdLifeCycleReportExtraReplaceNewAdInfo *_replaceNewAdInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdLifeCycleReportExtraReplaceNewAdInfo *replaceNewAdInfo; // @synthesize replaceNewAdInfo=_replaceNewAdInfo;
 
 @end

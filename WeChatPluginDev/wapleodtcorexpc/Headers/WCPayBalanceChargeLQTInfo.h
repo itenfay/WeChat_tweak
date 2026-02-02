@@ -27,7 +27,6 @@
 + (void)PBArrayAdd_isLqtUser;
 + (void)PBArrayAdd_subTitle;
 + (void)PBArrayAdd_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lqtTraceInfo; // @synthesize lqtTraceInfo=_lqtTraceInfo;
 @property(retain, nonatomic) NSString *lqtOperateId; // @synthesize lqtOperateId=_lqtOperateId;
 @property(retain, nonatomic) WCPayBalanceLQTOpenInfo *openLqtInfo; // @synthesize openLqtInfo=_openLqtInfo;

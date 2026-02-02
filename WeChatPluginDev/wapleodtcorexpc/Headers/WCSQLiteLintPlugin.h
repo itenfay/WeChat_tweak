@@ -11,7 +11,6 @@
 }
 
 + (id)getTag;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCSQLiteLintDataSourceDelegate> deleagte; // @synthesize deleagte=_deleagte;
 - (id)getReportDataFromIssue:(void *)arg1;
 - (function_fdb5bcff)getSQLiteExcutionCallback;

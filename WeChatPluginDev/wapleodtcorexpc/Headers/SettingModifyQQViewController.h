@@ -14,7 +14,6 @@
     id <SettingModifyQQViewControllerDelegate> _m_SettingModifyQQViewControllerDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SettingModifyQQViewControllerDelegate> m_SettingModifyQQViewControllerDelegate; // @synthesize m_SettingModifyQQViewControllerDelegate=_m_SettingModifyQQViewControllerDelegate;
 @property(retain, nonatomic) UIViewController *m_vcAccount; // @synthesize m_vcAccount;
 @property(nonatomic) unsigned int m_uiBindQQUin; // @synthesize m_uiBindQQUin;

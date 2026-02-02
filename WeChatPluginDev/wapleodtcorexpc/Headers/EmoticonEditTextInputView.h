@@ -21,7 +21,6 @@
     UIColor *_strokeColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) __weak id <EmoticonEditTextInputDelegate> delegate; // @synthesize delegate=_delegate;

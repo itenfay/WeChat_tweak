@@ -29,7 +29,6 @@
 + (id)calDisplayNameWithCommentDidsplayName:(id)arg1;
 + (id)generatorAvatorView:(id)arg1 headUrl:(id)arg2 headerViewSize:(struct CGSize)arg3;
 + (double)cellHeightWithContentVM:(id)arg1 isDisplayRecommend:(_Bool)arg2 hideFriendLikeInfo:(_Bool)arg3 onlyShowRecommendReason:(_Bool)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) long long incFriendLikeCount; // @synthesize incFriendLikeCount=_incFriendLikeCount;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(nonatomic) _Bool isRuningCompletionBlock; // @synthesize isRuningCompletionBlock=_isRuningCompletionBlock;

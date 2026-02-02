@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebButtonChainModel, NSString, NSURL, UIImage;
 
 @interface MMWebImageButton
@@ -13,7 +15,6 @@
 
 + (_Bool)CanLoadImage:(id)arg1;
 + (CDUnknownBlockType)zz_create;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)ImageDidFail:(id)arg1;
 - (void)ImageDidLoad:(id)arg1 Url:(id)arg2;
@@ -32,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

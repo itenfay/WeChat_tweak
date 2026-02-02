@@ -12,7 +12,6 @@
     NSString *_referer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *referer; // @synthesize referer=_referer;
 @property(retain, nonatomic) NSString *localFilePath; // @synthesize localFilePath=_localFilePath;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

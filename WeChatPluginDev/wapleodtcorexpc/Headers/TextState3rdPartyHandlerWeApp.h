@@ -10,7 +10,6 @@
     TextStateWeAppBuffer *_buffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TextStateWeAppBuffer *buffer; // @synthesize buffer=_buffer;
 - (id)path;
 - (id)username;

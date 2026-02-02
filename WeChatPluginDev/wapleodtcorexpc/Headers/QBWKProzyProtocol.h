@@ -17,7 +17,6 @@
 
 + (id)canonicalRequestForRequest:(id)arg1;
 + (_Bool)canInitWithRequest:(id)arg1;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

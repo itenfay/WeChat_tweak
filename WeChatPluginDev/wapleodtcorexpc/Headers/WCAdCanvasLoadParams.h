@@ -18,7 +18,6 @@
     unsigned long long _loadStartTimeMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadStartTimeMs; // @synthesize loadStartTimeMs=_loadStartTimeMs;
 @property(retain, nonatomic) NSString *dynamicCanvasLibVersion; // @synthesize dynamicCanvasLibVersion=_dynamicCanvasLibVersion;
 @property(retain, nonatomic) WCAdSupportCapabilityInfo *supportCapability; // @synthesize supportCapability=_supportCapability;

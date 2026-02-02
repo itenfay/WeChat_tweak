@@ -24,7 +24,6 @@
 + (id)parseCommonActionXML:(struct XmlReaderNode_t *)arg1;
 + (id)getBaseItemOfType:(int)arg1 rootNode:(struct XmlReaderNode_t *)arg2;
 + (id)getScanItemFromXml:(id)arg1 andType:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *barcode; // @synthesize barcode=_barcode;
 @property(retain, nonatomic) id scanItem; // @synthesize scanItem=_scanItem;
 @property(nonatomic) int itemType; // @synthesize itemType=_itemType;

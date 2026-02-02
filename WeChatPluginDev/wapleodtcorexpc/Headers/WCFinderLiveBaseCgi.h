@@ -13,7 +13,6 @@
     NSString *_liveSessionKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isForbidCancelCGI; // @synthesize isForbidCancelCGI=_isForbidCancelCGI;
 @property(retain, nonatomic) NSString *liveSessionKey; // @synthesize liveSessionKey=_liveSessionKey;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;

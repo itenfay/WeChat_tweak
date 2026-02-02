@@ -11,7 +11,6 @@
 }
 
 + (_Bool)canCreateSectionDataWithMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *canvasId; // @synthesize canvasId=_canvasId;
 - (void)onAdCanvasViewTouchEnd:(id)arg1;
 - (void)onCanvasItemClick:(id)arg1;

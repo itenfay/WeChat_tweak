@@ -15,7 +15,6 @@
     NSString *_wordingEN;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *wordingEN; // @synthesize wordingEN=_wordingEN;
 @property(retain, nonatomic) NSString *wordingZhTW; // @synthesize wordingZhTW=_wordingZhTW;
 @property(retain, nonatomic) NSString *wordingZhHK; // @synthesize wordingZhHK=_wordingZhHK;

@@ -14,7 +14,6 @@
 }
 
 + (id)dataFromFile:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)removeItem:(id)arg1;
 - (_Bool)updateItem:(id)arg1 arrivalCount:(unsigned int)arg2 msgid:(unsigned int)arg3;
 - (_Bool)setItem:(id)arg1;

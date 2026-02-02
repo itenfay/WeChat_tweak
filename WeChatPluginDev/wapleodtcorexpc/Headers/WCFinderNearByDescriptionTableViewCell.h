@@ -13,7 +13,6 @@
 }
 
 + (double)descriptionCellHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 - (void)updateWith:(id)arg1;
 - (void)prepareForReuse;

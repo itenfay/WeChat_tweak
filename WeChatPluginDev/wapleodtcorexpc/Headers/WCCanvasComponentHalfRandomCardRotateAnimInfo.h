@@ -15,7 +15,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1 basicWidth:(int)arg2 basicRootFontSize:(int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) double animationColorAlpha; // @synthesize animationColorAlpha=_animationColorAlpha;
 @property(retain, nonatomic) NSString *animationColor; // @synthesize animationColor=_animationColor;
 @property(nonatomic) double imgHeight; // @synthesize imgHeight=_imgHeight;

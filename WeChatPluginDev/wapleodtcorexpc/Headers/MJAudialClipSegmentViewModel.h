@@ -17,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUpdateWaveformProvider; // @synthesize shouldUpdateWaveformProvider=_shouldUpdateWaveformProvider;
 @property(retain, nonatomic) OMCDecibelHeightCalculator *decibelHeightCalc; // @synthesize decibelHeightCalc=_decibelHeightCalc;
 @property(retain, nonatomic) OMCAudioWaveformProvider *waveformProvider; // @synthesize waveformProvider=_waveformProvider;

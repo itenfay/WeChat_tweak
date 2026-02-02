@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CBaseContact, MMTableViewInfo, NSString, WCFinderMsgChatInfoReporter;
 @protocol WCFinderMsgChatInfoViewControllerDelegate;
 
@@ -16,7 +18,6 @@
     WCFinderMsgChatInfoReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMsgChatInfoReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) MMTableViewInfo *tableViewMgr; // @synthesize tableViewMgr=_tableViewMgr;
 @property(retain, nonatomic) CBaseContact *realChatContact; // @synthesize realChatContact=_realChatContact;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

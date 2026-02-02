@@ -15,7 +15,6 @@
     UIButton *_nextButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) WCFullPhoneNumInputHelper *fullPhoneNumInputHelper; // @synthesize fullPhoneNumInputHelper=_fullPhoneNumInputHelper;
 @property(retain, nonatomic) NSString *headerTip; // @synthesize headerTip=_headerTip;

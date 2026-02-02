@@ -41,7 +41,6 @@
 + (void)PBArrayAdd_nsDescription;
 + (void)PBArrayAdd_nsUsrName;
 + (void)PBArrayAdd_nsForcePushId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCustomizationNotify; // @synthesize isCustomizationNotify=_isCustomizationNotify;
 @property(retain, nonatomic) NSString *notifyWording; // @synthesize notifyWording=_notifyWording;
 @property(nonatomic) _Bool ignoreCache; // @synthesize ignoreCache=_ignoreCache;

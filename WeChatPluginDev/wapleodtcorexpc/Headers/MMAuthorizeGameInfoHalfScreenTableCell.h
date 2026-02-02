@@ -12,7 +12,6 @@
     UIView *_topSeperatorLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topSeperatorLine; // @synthesize topSeperatorLine=_topSeperatorLine;
 @property(retain, nonatomic) UIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;
 @property(retain, nonatomic) UIImageView *selectImageView; // @synthesize selectImageView=_selectImageView;

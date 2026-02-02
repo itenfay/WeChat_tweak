@@ -16,7 +16,6 @@
 }
 
 + (double)calcHeightWithMaxWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint descOriCenter; // @synthesize descOriCenter=_descOriCenter;
 @property(retain, nonatomic) NSMutableArray *imagesOriCenter; // @synthesize imagesOriCenter=_imagesOriCenter;
 @property(retain, nonatomic) MMUILabel *productDescView; // @synthesize productDescView=_productDescView;

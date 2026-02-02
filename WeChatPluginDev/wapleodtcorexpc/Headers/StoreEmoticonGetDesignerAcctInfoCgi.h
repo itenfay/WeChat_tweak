@@ -13,7 +13,6 @@
     NSString *_designerId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int designerUin; // @synthesize designerUin=_designerUin;
 @property(retain, nonatomic) NSString *designerId; // @synthesize designerId=_designerId;
 @property(nonatomic) __weak id <StoreEmoticonGetDesignerAcctInfoCgiDelegate> delegate; // @synthesize delegate=_delegate;

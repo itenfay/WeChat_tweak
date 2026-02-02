@@ -13,7 +13,6 @@
     MMGradientView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool stopAnimatingFlag; // @synthesize stopAnimatingFlag=_stopAnimatingFlag;
 @property(retain, nonatomic) MMGradientView *lineView; // @synthesize lineView=_lineView;
 - (_Bool)isAnimating;

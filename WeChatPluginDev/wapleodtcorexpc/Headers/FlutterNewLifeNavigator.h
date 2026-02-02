@@ -14,7 +14,6 @@
     MMFlutterInstance *_detailInstance;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoReleaseFlutterViewForDetail; // @synthesize autoReleaseFlutterViewForDetail=_autoReleaseFlutterViewForDetail;
 @property(retain, nonatomic) MMFlutterInstance *detailInstance; // @synthesize detailInstance=_detailInstance;
 @property(nonatomic) _Bool tryReuseEngineForDetail; // @synthesize tryReuseEngineForDetail=_tryReuseEngineForDetail;

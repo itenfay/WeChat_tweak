@@ -17,7 +17,6 @@
     struct UIEdgeInsets _tagPadding;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;
 @property(nonatomic) struct UIEdgeInsets tagPadding; // @synthesize tagPadding=_tagPadding;
 @property(nonatomic) struct UIEdgeInsets tagSafeArea; // @synthesize tagSafeArea=_tagSafeArea;

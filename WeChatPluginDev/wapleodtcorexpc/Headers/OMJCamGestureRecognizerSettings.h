@@ -13,7 +13,6 @@
     NSArray *_enabledGestures;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *enabledGestures; // @synthesize enabledGestures=_enabledGestures;
 @property(readonly, nonatomic) _Bool isGestureEnabled; // @synthesize isGestureEnabled=_isGestureEnabled;
 - (_Bool)isGestureEnabled:(long long)arg1;

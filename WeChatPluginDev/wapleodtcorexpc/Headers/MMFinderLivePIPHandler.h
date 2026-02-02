@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMFinderLiveTaskId;
 
@@ -16,7 +17,6 @@
     MMFinderLiveTaskId *_liveTaskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveTaskId *liveTaskId; // @synthesize liveTaskId=_liveTaskId;
 @property(copy, nonatomic) CDUnknownBlockType showSwitchGuideCallback; // @synthesize showSwitchGuideCallback=_showSwitchGuideCallback;
 @property(copy, nonatomic) CDUnknownBlockType getAppActiveCallback; // @synthesize getAppActiveCallback=_getAppActiveCallback;
@@ -39,4 +39,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

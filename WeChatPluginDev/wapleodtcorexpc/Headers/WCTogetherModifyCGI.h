@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class SnsWithTaOpResponse, WCBaseNetworkingError;
 
 @interface WCTogetherModifyCGI
@@ -13,7 +15,6 @@
     WCBaseNetworkingError *_error;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBaseNetworkingError *error; // @synthesize error=_error;
 @property(retain, nonatomic) SnsWithTaOpResponse *response; // @synthesize response=_response;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
@@ -23,4 +24,3 @@
 - (id)initWithRequest:(id)arg1;
 
 @end
-

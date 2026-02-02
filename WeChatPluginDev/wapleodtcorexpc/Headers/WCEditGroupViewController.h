@@ -11,7 +11,6 @@
     NSMutableArray *m_arrMyGroup;
 }
 
-- (void).cxx_destruct;
 - (void)onWCGroupUpdatedReturn:(_Bool)arg1;
 - (void)onWCGroupUpdated;
 - (void)onMultiSelectContactReturn:(id)arg1;

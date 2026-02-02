@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_endCheckTime;
 + (void)PBArrayAdd_beforeCheckTime;
 + (void)PBArrayAdd_lastReportTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *finishUserName; // @synthesize finishUserName=_finishUserName;
 @property(retain, nonatomic) MMActiveStorageStatInfo *activeStatInfo; // @synthesize activeStatInfo=_activeStatInfo;
 @property(retain, nonatomic) MMActiveStorageStatInfo *allStatInfo; // @synthesize allStatInfo=_allStatInfo;

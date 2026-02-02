@@ -18,7 +18,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCombineFollowFinderInfo *finderFollowInfo; // @synthesize finderFollowInfo=_finderFollowInfo;
 @property(retain, nonatomic) WCAdCombineFollowBrandInfo *brandFollowInfo; // @synthesize brandFollowInfo=_brandFollowInfo;
 @property(nonatomic) int allFollowSuccessJumpType; // @synthesize allFollowSuccessJumpType=_allFollowSuccessJumpType;

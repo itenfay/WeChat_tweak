@@ -14,7 +14,6 @@
     long long _feedType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long feedType; // @synthesize feedType=_feedType;
 @property(copy, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;

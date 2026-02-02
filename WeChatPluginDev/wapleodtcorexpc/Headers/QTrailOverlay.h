@@ -12,7 +12,6 @@
     QTrailLineStyle *_style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int linesCount; // @synthesize linesCount=_linesCount;
 @property(retain, nonatomic) QTrailLineStyle *style; // @synthesize style=_style;
 @property(copy, nonatomic) NSArray *lines; // @synthesize lines=_lines;

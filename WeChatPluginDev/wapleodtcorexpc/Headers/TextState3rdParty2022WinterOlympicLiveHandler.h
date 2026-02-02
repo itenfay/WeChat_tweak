@@ -13,7 +13,6 @@
 }
 
 + (id)liveShareItemFromXML:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveHeadUrl; // @synthesize liveHeadUrl=_liveHeadUrl;
 @property(retain, nonatomic) NSString *liveNickname; // @synthesize liveNickname=_liveNickname;
 @property(retain, nonatomic) NSString *liveUsername; // @synthesize liveUsername=_liveUsername;

@@ -14,7 +14,6 @@
 }
 
 + (id)objWithDataItem:(id)arg1 scene:(int)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) int scene; // @synthesize scene=_scene;
 

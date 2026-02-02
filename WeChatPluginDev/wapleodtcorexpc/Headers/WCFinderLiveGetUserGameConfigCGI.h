@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveGetUserGameConfigRequest_GameCategoryInfo, NSString, PagingGetGamePlayTogetherDynamicItem;
 
 @interface WCFinderLiveGetUserGameConfigCGI
@@ -21,7 +23,6 @@
     FinderLiveGetUserGameConfigRequest_GameCategoryInfo *_gameCategoryInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveGetUserGameConfigRequest_GameCategoryInfo *gameCategoryInfo; // @synthesize gameCategoryInfo=_gameCategoryInfo;
 @property(retain, nonatomic) PagingGetGamePlayTogetherDynamicItem *pagingGetDynamicItem; // @synthesize pagingGetDynamicItem=_pagingGetDynamicItem;
 @property(nonatomic) _Bool onlyNeedPlayTogetherInfo; // @synthesize onlyNeedPlayTogetherInfo=_onlyNeedPlayTogetherInfo;
@@ -40,4 +41,3 @@
 - (id)initWithFinderUsername:(id)arg1 appId:(id)arg2 liveScene:(int)arg3 extraAntiInfo:(id)arg4 opensdkVersion:(unsigned int)arg5 platformId:(unsigned int)arg6 gameUserId:(id)arg7 onlyNeedPlayTogetherInfo:(_Bool)arg8 pagingGetDynamicItem:(id)arg9 gameCategoryInfo:(id)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 
 @end
-

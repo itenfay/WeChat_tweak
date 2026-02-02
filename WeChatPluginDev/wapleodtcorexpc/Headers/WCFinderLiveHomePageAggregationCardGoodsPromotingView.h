@@ -14,7 +14,6 @@
     UILabel *_shopLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *shopLabel; // @synthesize shopLabel=_shopLabel;
 @property(retain, nonatomic) UILabel *goodsLabel; // @synthesize goodsLabel=_goodsLabel;
 @property(retain, nonatomic) MMPaddingView *goodsImageView; // @synthesize goodsImageView=_goodsImageView;

@@ -13,7 +13,6 @@
     id <MTLDevice> _mtlDevice;
 }
 
-- (void).cxx_destruct;
 @property(retain) id <MTLDevice> mtlDevice; // @synthesize mtlDevice=_mtlDevice;
 @property(retain) id <TPMTLFrameRenderer> renderer; // @synthesize renderer=_renderer;
 - (_Bool)render:(struct TPFrame *)arg1 destination:(id)arg2;

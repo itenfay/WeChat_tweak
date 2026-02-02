@@ -18,7 +18,6 @@
     id <WCAdvertiseActionFloatViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdvertiseActionFloatViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIButton *m_unInterestBtn; // @synthesize m_unInterestBtn;
 @property(readonly, nonatomic) WCDataItem *m_item; // @synthesize m_item;

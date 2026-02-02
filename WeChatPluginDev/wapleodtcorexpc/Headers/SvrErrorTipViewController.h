@@ -12,7 +12,6 @@
     NSString *_urlStr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *urlStr; // @synthesize urlStr=_urlStr;
 - (void)jumpUrl:(id)arg1;
 - (void)setupInfoView;

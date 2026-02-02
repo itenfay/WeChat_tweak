@@ -10,7 +10,6 @@
     KindaJSEvent *_kindaJSEvent;
 }
 
-- (void).cxx_destruct;
 - (void)handleJSEvent:(id)arg1;
 
 @end

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface UIView (FinderInterfaceStyle)
 + (id)colorWithMMUserInterfaceStyle:(long long)arg1 lightColor:(id)arg2 darkColor:(id)arg3;
@@ -14,4 +15,3 @@
 - (void)setFinderMMUserInterfaceStyle:(long long)arg1;
 - (long long)finderMMUserInterfaceStyle;
 @end
-

@@ -21,7 +21,6 @@
     long long _previousOrientation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(nonatomic) _Bool hasEdit; // @synthesize hasEdit=_hasEdit;
 @property(nonatomic) _Bool hasContent; // @synthesize hasContent=_hasContent;

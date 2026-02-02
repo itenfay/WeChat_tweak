@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSPointerArray, NSString;
 
@@ -52,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

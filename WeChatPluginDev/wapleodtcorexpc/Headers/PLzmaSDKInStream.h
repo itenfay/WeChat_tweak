@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithStreams:(id)arg1;
 - (id)initWithDataNoCopy:(id)arg1;

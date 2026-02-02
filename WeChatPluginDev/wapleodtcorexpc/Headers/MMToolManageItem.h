@@ -15,7 +15,6 @@
     NSString *_appUserName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appUserName; // @synthesize appUserName=_appUserName;
 @property(retain, nonatomic) NSObject *rawData; // @synthesize rawData=_rawData;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

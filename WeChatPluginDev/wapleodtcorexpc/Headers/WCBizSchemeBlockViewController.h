@@ -20,7 +20,6 @@
     CheckExternalUrlAntiSpam *_antiSpamInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDismissWhenAppear; // @synthesize shouldDismissWhenAppear=_shouldDismissWhenAppear;
 @property(retain, nonatomic) CheckExternalUrlAntiSpam *antiSpamInfo; // @synthesize antiSpamInfo=_antiSpamInfo;
 @property(retain, nonatomic) NSMutableArray *actionButtons; // @synthesize actionButtons=_actionButtons;

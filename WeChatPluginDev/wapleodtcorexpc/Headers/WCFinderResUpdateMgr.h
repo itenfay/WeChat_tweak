@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSString;
 
 @interface WCFinderResUpdateMgr
@@ -11,7 +13,6 @@
     NSDictionary *_cleanupResourceItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cleanupResourceItems; // @synthesize cleanupResourceItems=_cleanupResourceItems;
 @property(retain, nonatomic) NSDictionary *currentResourceItems; // @synthesize currentResourceItems=_currentResourceItems;
 - (id)getDestDirWithResType:(unsigned int)arg1 subResType:(unsigned int)arg2 version:(unsigned int)arg3;
@@ -41,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

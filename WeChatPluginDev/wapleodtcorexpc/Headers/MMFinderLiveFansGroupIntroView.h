@@ -21,7 +21,6 @@
     CAGradientLayer *_borderGradientLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *borderGradientLayer; // @synthesize borderGradientLayer=_borderGradientLayer;
 @property(retain, nonatomic) CAGradientLayer *bgGradientLayer; // @synthesize bgGradientLayer=_bgGradientLayer;
 @property(retain, nonatomic) MMLiveColorfulLabel *rightDetailLabel; // @synthesize rightDetailLabel=_rightDetailLabel;

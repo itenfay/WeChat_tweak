@@ -23,7 +23,6 @@
     WCUIAlertView *_alertView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUIAlertView *alertView; // @synthesize alertView=_alertView;
 @property(nonatomic) __weak id <RSVerifyViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getViewController;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSString;
 
 @interface MMLiveResUpdateMgr
@@ -11,7 +13,6 @@
     NSDictionary *_cleanupResourceItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cleanupResourceItems; // @synthesize cleanupResourceItems=_cleanupResourceItems;
 @property(retain, nonatomic) NSDictionary *currentResourceItems; // @synthesize currentResourceItems=_currentResourceItems;
 - (void)willBeginStorageCleanupInScenario:(unsigned long long)arg1 withContext:(id)arg2;
@@ -44,4 +45,3 @@
 @property(readonly) Class superclass;
 
 @end
-

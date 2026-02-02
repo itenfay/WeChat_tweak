@@ -15,7 +15,6 @@
 }
 
 + (double)splitTableViewCellHeight;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(nonatomic) __weak UIView *leftLine; // @synthesize leftLine=_leftLine;
 @property(nonatomic) __weak UILabel *splitLabel; // @synthesize splitLabel=_splitLabel;

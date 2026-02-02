@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol AVPictureInPictureSampleBufferPlaybackDelegate;
@@ -13,7 +14,6 @@
     NSObject<AVPictureInPictureSampleBufferPlaybackDelegate> *_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<AVPictureInPictureSampleBufferPlaybackDelegate> *delegate; // @synthesize delegate=_delegate;
 - (CDStruct_e83c9415)pictureInPictureControllerTimeRangeForPlayback:(id)arg1;
 - (_Bool)pictureInPictureControllerIsPlaybackPaused:(id)arg1;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

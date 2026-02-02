@@ -33,7 +33,6 @@
     struct CGPoint _panStartPos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPaning; // @synthesize isPaning=_isPaning;
 @property(nonatomic) _Bool triggerDragToReply; // @synthesize triggerDragToReply=_triggerDragToReply;
 @property(nonatomic) long long currDragType; // @synthesize currDragType=_currDragType;

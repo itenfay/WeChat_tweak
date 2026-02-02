@@ -13,7 +13,6 @@
     WCTTable *m_table;
 }
 
-- (void).cxx_destruct;
 - (_Bool)DeleteOplogInDB:(unsigned int)arg1;
 - (id)GetOplogsAfterOplogId:(unsigned int)arg1 limit:(int)arg2;
 - (_Bool)InsertOplogInDB:(id)arg1;

@@ -14,7 +14,6 @@
 
 + (_Bool)canForceStartVoiceWithContact:(id)arg1;
 + (_Bool)canStartVideoWithContact:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) VideoVoipCSCallerView *m_videoVoipCSViewController; // @synthesize m_videoVoipCSViewController;
 @property(retain, nonatomic) MMVoipToastWindow *m_voipCSToastWindow; // @synthesize m_voipCSToastWindow;
 @property(retain, nonatomic) MMVoipCSMainWindow *m_mainWindow; // @synthesize m_mainWindow;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIButton, UIImageView;
 @protocol MMEdgeTipsViewDelegate;
 
@@ -15,7 +17,6 @@
     MMUILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) UIButton *bgButton; // @synthesize bgButton=_bgButton;
@@ -35,4 +36,3 @@
 - (id)initWithTitle:(id)arg1 image:(id)arg2;
 
 @end
-

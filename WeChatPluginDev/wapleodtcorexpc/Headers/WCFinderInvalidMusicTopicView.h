@@ -19,7 +19,6 @@
     NSString *_errMsg;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

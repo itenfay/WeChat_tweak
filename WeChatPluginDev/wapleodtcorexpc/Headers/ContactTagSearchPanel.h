@@ -21,7 +21,6 @@
     NSArray *_allTags;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMultiSelecting; // @synthesize isMultiSelecting=_isMultiSelecting;
 @property(retain, nonatomic) NSArray *allTags; // @synthesize allTags=_allTags;
 @property(retain, nonatomic) NSArray *forceSelectedTags; // @synthesize forceSelectedTags=_forceSelectedTags;

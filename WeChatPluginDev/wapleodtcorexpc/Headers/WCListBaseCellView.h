@@ -48,7 +48,6 @@
 + (double)getContentWidthWithCellWidth:(double)arg1;
 + (double)getTimeLabelMarginLeftCurOri;
 + (double)getTimeLabelWidthCurOri;
-- (void).cxx_destruct;
 @property(nonatomic) long long puzzleImageViewLayoutStyle; // @synthesize puzzleImageViewLayoutStyle=_puzzleImageViewLayoutStyle;
 @property(retain, nonatomic) NSIndexPath *m_indexPath; // @synthesize m_indexPath=_m_indexPath;
 @property(nonatomic) long long accessoryType; // @synthesize accessoryType=_accessoryType;

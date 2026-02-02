@@ -29,7 +29,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;

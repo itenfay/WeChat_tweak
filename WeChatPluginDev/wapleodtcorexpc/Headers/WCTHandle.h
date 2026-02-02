@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase;
 
@@ -16,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)lazyRunTransaction:(CDUnknownBlockType)arg1;
 - (id)error;
 - (void)detachCancellationSignal;
@@ -234,4 +234,3 @@
 - (struct WCTOptionalBool)tableExists:(id)arg1;
 
 @end
-

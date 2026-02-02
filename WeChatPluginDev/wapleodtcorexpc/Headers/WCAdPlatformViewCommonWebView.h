@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ContainerView, FlutterMethodChannel, MMWebViewController, NSString;
 @protocol UIScrollViewDelegate;
 
@@ -20,7 +22,6 @@
     id <UIScrollViewDelegate> _webViewScrollViewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIScrollViewDelegate> webViewScrollViewDelegate; // @synthesize webViewScrollViewDelegate=_webViewScrollViewDelegate;
 @property(nonatomic) _Bool scrolledFlag; // @synthesize scrolledFlag=_scrolledFlag;
 @property(nonatomic) _Bool bgTransparent; // @synthesize bgTransparent=_bgTransparent;
@@ -63,4 +64,3 @@
 @property(readonly) Class superclass;
 
 @end
-

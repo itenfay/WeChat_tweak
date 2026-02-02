@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMProgressViewEx, MMWebImageView, NSString, NSURLSession, NSURLSessionTask;
 
 @interface GameVideoOnlineEditViewController
@@ -21,7 +23,6 @@
     unsigned long long _downloadStartTimeMills;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadStartTimeMills; // @synthesize downloadStartTimeMills=_downloadStartTimeMills;
 @property(retain, nonatomic) MMProgressViewEx *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) MMWebImageView *imageView; // @synthesize imageView=_imageView;
@@ -72,4 +73,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -19,7 +19,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *searchID; // @synthesize searchID=_searchID;
 @property(nonatomic) unsigned int totalCount; // @synthesize totalCount=_totalCount;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;

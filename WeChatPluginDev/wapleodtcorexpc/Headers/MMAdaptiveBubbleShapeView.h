@@ -14,7 +14,6 @@
     struct UIEdgeInsets _mainPartContentViewEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double arrowImageViewRight; // @synthesize arrowImageViewRight=_arrowImageViewRight;
 @property(nonatomic) struct UIEdgeInsets mainPartContentViewEdgeInsets; // @synthesize mainPartContentViewEdgeInsets=_mainPartContentViewEdgeInsets;
 @property(nonatomic) struct CGSize mainPartContentViewSize; // @synthesize mainPartContentViewSize=_mainPartContentViewSize;

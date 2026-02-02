@@ -13,7 +13,6 @@
     EmoticonStoreReportInfo *m_reportInfo;
 }
 
-- (void).cxx_destruct;
 - (void)endWithFail;
 - (void)endWithOk;
 - (id)handleWithParams:(id)arg1 AndViewController:(id)arg2;

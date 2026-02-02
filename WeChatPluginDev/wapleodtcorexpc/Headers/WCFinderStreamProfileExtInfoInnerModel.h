@@ -55,7 +55,6 @@
 + (void)PBArrayAdd_collectionInfo;
 + (void)PBArrayAdd_serviceMenu;
 + (void)PBArrayAdd_mcnInfo;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderProfilePostTipsInfo *postTipsInfo; // @synthesize postTipsInfo=_postTipsInfo;
 @property(retain, nonatomic) FinderFeedBriefInfo *briefInfo; // @synthesize briefInfo=_briefInfo;
 @property(retain, nonatomic) FinderMileStone *milestone; // @synthesize milestone=_milestone;

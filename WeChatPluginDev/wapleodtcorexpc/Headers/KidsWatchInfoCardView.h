@@ -16,7 +16,6 @@
     NSMutableArray *_cellViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cellViews; // @synthesize cellViews=_cellViews;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;

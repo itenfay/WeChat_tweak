@@ -18,7 +18,6 @@
     NSString *_g;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *g; // @synthesize g=_g;
 @property(nonatomic) double s; // @synthesize s=_s;
 @property(nonatomic) double r; // @synthesize r=_r;

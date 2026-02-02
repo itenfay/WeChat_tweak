@@ -13,7 +13,6 @@
     UITableView *_topicsTableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *topicsTableView; // @synthesize topicsTableView=_topicsTableView;
 @property(retain, nonatomic) NSArray *usualTopicsArray; // @synthesize usualTopicsArray=_usualTopicsArray;
 @property(nonatomic) __weak id <WCFinderPostUsualTopicViewDelegate> delegate; // @synthesize delegate=_delegate;

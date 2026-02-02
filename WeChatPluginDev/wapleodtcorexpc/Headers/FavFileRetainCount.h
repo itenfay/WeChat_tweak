@@ -30,7 +30,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dataFmt; // @synthesize dataFmt=_dataFmt;
 @property(nonatomic) unsigned int itemLocalId; // @synthesize itemLocalId=_itemLocalId;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;

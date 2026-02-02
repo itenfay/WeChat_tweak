@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMListenUserConfig, MMTableViewInfo, NSString, SettingsTingSwitchConfig;
 
 @interface SettingsTingViewController
@@ -12,7 +14,6 @@
     SettingsTingSwitchConfig *_switchConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SettingsTingSwitchConfig *switchConfig; // @synthesize switchConfig=_switchConfig;
 @property(retain, nonatomic) MMListenUserConfig *userConfig; // @synthesize userConfig=_userConfig;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -28,7 +28,6 @@
     NSMutableArray *_sessionDetails;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *sessionDetails; // @synthesize sessionDetails=_sessionDetails;
 @property(nonatomic) long long topSessionCount; // @synthesize topSessionCount=_topSessionCount;
 @property(retain, nonatomic) NSMutableSet *clearUnreadSessions; // @synthesize clearUnreadSessions=_clearUnreadSessions;

@@ -13,7 +13,6 @@
     NSMutableSet *_observingMd5s;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *observingMd5s; // @synthesize observingMd5s=_observingMd5s;
 @property(nonatomic) __weak MMLiteAppViewController *currentVC; // @synthesize currentVC=_currentVC;
 - (void)onDeleteBackupEmoticonFailed:(id)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FlutterActionBarHelper, FlutterPageStateDispacher, FlutterViewController, MMFlutterEdgeGesture, MMFlutterEngine, MMFlutterHybridNavPageState, MMFlutterInstance, MMFlutterRoute, NSMutableDictionary, NSObject, NSString, UIImageView, UIView, WebViewA8KeyLogicImpl, WebViewJSLogicImpl;
 @protocol MMFlutterViewControllerAnimatedTransitioning, MMFlutterViewControllerDelegate, WXCustomWebViewControllerDelegate, YYWebViewInterface;
 
@@ -46,7 +48,6 @@
     CDUnknownBlockType _safeAreaInsetsDelegate;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType safeAreaInsetsDelegate; // @synthesize safeAreaInsetsDelegate=_safeAreaInsetsDelegate;
 @property(nonatomic) __weak id transitionDelegate; // @synthesize transitionDelegate=_transitionDelegate;
 @property(nonatomic) int transitionMode; // @synthesize transitionMode=_transitionMode;
@@ -243,4 +244,3 @@
 @property(readonly) Class superclass;
 
 @end
-

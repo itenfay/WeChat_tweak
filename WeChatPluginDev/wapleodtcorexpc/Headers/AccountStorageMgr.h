@@ -18,7 +18,6 @@
     CUpdateInfo *m_oUpdateInfo;
 }
 
-- (void).cxx_destruct;
 - (void)internalRemoveSyncBuffer;
 - (id)internalReadSyncBuffer;
 - (_Bool)internalWriteSyncBuffer:(id)arg1;

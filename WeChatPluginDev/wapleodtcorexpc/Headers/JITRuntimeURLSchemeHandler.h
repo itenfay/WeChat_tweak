@@ -13,7 +13,6 @@
     id <WKURLSchemeHandler> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WKURLSchemeHandler> delegate; // @synthesize delegate=_delegate;
 - (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;

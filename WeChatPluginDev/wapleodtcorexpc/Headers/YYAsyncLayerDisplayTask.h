@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface YYAsyncLayerDisplayTask : NSObject
 {
@@ -13,11 +14,9 @@
     CDUnknownBlockType _didDisplay;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didDisplay; // @synthesize didDisplay=_didDisplay;
 @property(copy, nonatomic) CDUnknownBlockType displayContentsForLayer; // @synthesize displayContentsForLayer=_displayContentsForLayer;
 @property(copy, nonatomic) CDUnknownBlockType display; // @synthesize display=_display;
 @property(copy, nonatomic) CDUnknownBlockType willDisplay; // @synthesize willDisplay=_willDisplay;
 
 @end
-

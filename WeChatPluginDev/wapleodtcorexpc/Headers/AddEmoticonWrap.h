@@ -32,7 +32,6 @@
 + (void)PBArrayAdd_fileSize;
 + (void)PBArrayAdd_fileType;
 + (void)PBArrayAdd_source;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsUploadWhenExceedLimit; // @synthesize allowsUploadWhenExceedLimit=_allowsUploadWhenExceedLimit;
 @property(retain, nonatomic) EmotionFinderLinkInfo *finderLinkInfo; // @synthesize finderLinkInfo=_finderLinkInfo;
 @property(retain, nonatomic) NSString *editSessionId; // @synthesize editSessionId=_editSessionId;

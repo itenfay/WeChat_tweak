@@ -10,7 +10,6 @@
     NSString *_finderType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderType; // @synthesize finderType=_finderType;
 
 @end

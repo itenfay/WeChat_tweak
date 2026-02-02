@@ -15,7 +15,6 @@
 }
 
 + (id)wwkfKeyUrlForKfUrl:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *tableContact; // @synthesize tableContact=_tableContact;
 @property(retain, nonatomic) WCTDatabase *db; // @synthesize db=_db;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *slotKv; // @synthesize slotKv=_slotKv;

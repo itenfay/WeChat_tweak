@@ -13,7 +13,6 @@
 
 + (double)preferHeightForGoods:(id)arg1 inWidth:(double)arg2;
 + (double)imageWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 - (id)accessibilityLabel;

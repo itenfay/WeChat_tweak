@@ -14,7 +14,6 @@
     double _contentMaxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentMaxWidth; // @synthesize contentMaxWidth=_contentMaxWidth;
 @property unsigned long long currentGender; // @synthesize currentGender=_currentGender;
 @property(retain) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;

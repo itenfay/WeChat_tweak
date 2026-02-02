@@ -16,7 +16,6 @@
     unsigned long long _matchType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long matchType; // @synthesize matchType=_matchType;
 @property(nonatomic) unsigned int row; // @synthesize row=_row;
 @property(nonatomic) unsigned long long clickType; // @synthesize clickType=_clickType;

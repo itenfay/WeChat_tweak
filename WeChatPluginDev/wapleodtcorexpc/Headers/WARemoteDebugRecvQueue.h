@@ -17,7 +17,6 @@
     id <WARemoteDebugRecvQueueDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WARemoteDebugRecvQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clearAccumulateCount;
 - (unsigned int)getIntervalRecvCount;

@@ -18,7 +18,6 @@
     _Bool m_bForceSpeeker;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bForceSpeeker; // @synthesize m_bForceSpeeker;
 @property(nonatomic) _Bool m_bEnable; // @synthesize m_bEnable;
 @property(retain, nonatomic) NSString *m_nsAudioPath; // @synthesize m_nsAudioPath;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol MMWormholeTransiting;
@@ -14,7 +15,6 @@
     NSMutableDictionary *_listenerBlocks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *listenerBlocks; // @synthesize listenerBlocks=_listenerBlocks;
 @property(retain, nonatomic) id <MMWormholeTransiting> wormholeMessenger; // @synthesize wormholeMessenger=_wormholeMessenger;
 - (void)stopListeningForMessageWithIdentifier:(id)arg1;
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCFinderTransitionUserInfo, WCFinderZoomAnimatingData, WCFinderZoomAnimatorShareData, WCFinderZoomCacheData;
 @protocol WCFinderZoomAnimatorBehavior, WCFinderZoomAnimatorDelegate;
@@ -45,7 +46,6 @@
 + (id)animatorWithRetainBehavior:(id)arg1;
 + (id)animatorWithView:(id)arg1;
 + (_Bool)finderFeedTransitionAsCard;
-- (void).cxx_destruct;
 @property(nonatomic) double centerPos; // @synthesize centerPos=_centerPos;
 @property(retain, nonatomic) WCFinderZoomAnimatorShareData *shareData; // @synthesize shareData=_shareData;
 @property(retain, nonatomic) WCFinderZoomCacheData *cacheData; // @synthesize cacheData=_cacheData;
@@ -105,4 +105,3 @@
 @property(readonly) Class superclass;
 
 @end
-

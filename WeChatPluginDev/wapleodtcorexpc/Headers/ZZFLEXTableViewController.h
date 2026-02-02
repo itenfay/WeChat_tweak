@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTableView, NSMutableArray, NSString, UIScrollView, ZZFLEXAngel, ZZFLEXAngelIndexPathChainModel, ZZFLEXAngelViewBatchEditChainModel, ZZFLEXAngelViewEditChainModel;
 
 @interface ZZFLEXTableViewController
@@ -12,7 +14,6 @@
     ZZFLEXAngel *_angel;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(readonly, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) long long tableViewStyle; // @synthesize tableViewStyle=_tableViewStyle;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -11,7 +11,6 @@
     MMLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) NSMutableArray *synchronizeObjList; // @synthesize synchronizeObjList=_synchronizeObjList;
 - (void)removeSEISynchronizeDelegate:(id)arg1;

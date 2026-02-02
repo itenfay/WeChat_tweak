@@ -17,7 +17,6 @@
     double _cornerRadius;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(copy, nonatomic) NSString *liveStatusWording; // @synthesize liveStatusWording=_liveStatusWording;
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;

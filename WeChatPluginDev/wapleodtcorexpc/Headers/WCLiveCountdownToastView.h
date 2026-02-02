@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTimer, NSString, UIColor, UIImageView, UILabel;
 
@@ -25,7 +26,6 @@
     NSString *_timeoutText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timeoutText; // @synthesize timeoutText=_timeoutText;
 @property(retain, nonatomic) NSString *timeoutIcon; // @synthesize timeoutIcon=_timeoutIcon;
 @property(nonatomic) long long countDown; // @synthesize countDown=_countDown;
@@ -55,4 +55,3 @@
 - (id)initWithFrame:(struct CGRect)arg1 countTime:(long long)arg2 wordings:(id)arg3 timeoutIcon:(id)arg4 timeoutText:(id)arg5;
 
 @end
-

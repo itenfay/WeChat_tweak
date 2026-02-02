@@ -27,7 +27,6 @@
     long long _cardPos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long cardPos; // @synthesize cardPos=_cardPos;
 @property(retain, nonatomic) FinderJumpInfo_CarouselCardStyle *cardStyle; // @synthesize cardStyle=_cardStyle;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;

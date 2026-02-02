@@ -36,7 +36,6 @@
     unsigned long long _metricsTypeLiveRenderFrameTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long metricsTypeLiveRenderFrameTime; // @synthesize metricsTypeLiveRenderFrameTime=_metricsTypeLiveRenderFrameTime;
 @property(nonatomic) unsigned long long metricsTypeLiveRenderViewType; // @synthesize metricsTypeLiveRenderViewType=_metricsTypeLiveRenderViewType;
 @property(nonatomic) unsigned long long metricsTypeBaseRejectCPUTaskScene; // @synthesize metricsTypeBaseRejectCPUTaskScene=_metricsTypeBaseRejectCPUTaskScene;

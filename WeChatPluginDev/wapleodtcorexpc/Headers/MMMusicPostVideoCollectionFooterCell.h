@@ -15,7 +15,6 @@
 
 + (struct CGSize)getFooterViewSize:(double)arg1;
 + (id)reuseKeyStr;
-- (void).cxx_destruct;
 - (void)setVisible:(_Bool)arg1;
 - (void)setLoadingVisible:(_Bool)arg1;
 - (void)layoutSubviews;

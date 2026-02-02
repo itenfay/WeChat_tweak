@@ -14,7 +14,6 @@
     NSString *_taskID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int maxRetryTimes; // @synthesize maxRetryTimes=_maxRetryTimes;
 @property(readonly, nonatomic) unsigned int nextQueryInterval; // @synthesize nextQueryInterval=_nextQueryInterval;
 @property(readonly, nonatomic) NSString *taskID; // @synthesize taskID=_taskID;

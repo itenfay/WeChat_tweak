@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray;
 @protocol MMFinderLiveShopShelfPageCornerCropper, MMFinderLiveShopShelfPagesManageViewEdgeEventDelegate;
@@ -15,7 +16,6 @@
     NSArray *_pages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 @property(nonatomic) __weak id <MMFinderLiveShopShelfPageCornerCropper> cornerCropper; // @synthesize cornerCropper=_cornerCropper;
 @property(nonatomic) __weak id <MMFinderLiveShopShelfPagesManageViewEdgeEventDelegate> edgeEventDelegate; // @synthesize edgeEventDelegate=_edgeEventDelegate;
@@ -27,4 +27,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

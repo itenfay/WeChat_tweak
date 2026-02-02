@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMCPLabel, MMHeadImageView, NSString, RichTextView, UIButton, UIImageView, UILabel, UIView, UrlLabel, WCCommentEmotionView, WCDataItem, WCMomentsFireworksIconView, WCUserComment;
 @protocol ILinkEventExt, WCCommentViewDelegate;
 
@@ -36,7 +38,6 @@
 + (id)genShowContentUserStr:(id)arg1 nickname:(id)arg2;
 + (id)getDisplayCommentContentPattern:(id)arg1 dataItem:(id)arg2;
 + (id)getDisplayCommentContent:(id)arg1 dataItem:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsFireworksIconView *springIconButton; // @synthesize springIconButton=_springIconButton;
 @property(retain, nonatomic) WCCommentEmotionView *emotionView; // @synthesize emotionView=_emotionView;
 @property(copy, nonatomic) CDUnknownBlockType onHedaImageClick; // @synthesize onHedaImageClick=_onHedaImageClick;
@@ -102,4 +103,3 @@
 @property(readonly) Class superclass;
 
 @end
-

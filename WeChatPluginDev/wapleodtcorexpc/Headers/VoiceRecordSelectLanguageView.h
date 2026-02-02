@@ -13,7 +13,6 @@
     UIView *_selectedPanelView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *selectedPanelView; // @synthesize selectedPanelView=_selectedPanelView;
 @property(nonatomic) unsigned int selectedLanguageType; // @synthesize selectedLanguageType=_selectedLanguageType;
 @property(nonatomic) __weak id <VoiceRecordSelectLanguageViewDelegate> delegate; // @synthesize delegate=_delegate;

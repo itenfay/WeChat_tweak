@@ -18,7 +18,6 @@
     long long _taskCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long taskCount; // @synthesize taskCount=_taskCount;
 @property(retain, nonatomic) NSString *ItemSubId; // @synthesize ItemSubId=_ItemSubId;
 @property(retain, nonatomic) NSString *contextId; // @synthesize contextId=_contextId;

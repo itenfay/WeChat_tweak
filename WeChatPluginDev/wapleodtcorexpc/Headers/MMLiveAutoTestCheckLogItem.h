@@ -15,7 +15,6 @@
     NSString *_log;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;

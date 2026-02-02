@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, NSMutableSet, NSString, WCFinderContact, WCFinderMemberShipIntroducePushParams, WCFinderMemberShipZoneIntroduceHeaderData;
 @protocol WCFinderMembershipIntroduceViewModelDelegate;
 
@@ -22,7 +24,6 @@
     NSMutableSet *_tidContainSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *tidContainSet; // @synthesize tidContainSet=_tidContainSet;
 @property(nonatomic) unsigned long long visitorStatus; // @synthesize visitorStatus=_visitorStatus;
 @property(retain, nonatomic) ForwardMessageLogicController *forwardLogic; // @synthesize forwardLogic=_forwardLogic;
@@ -61,4 +62,3 @@
 @property(readonly) Class superclass;
 
 @end
-

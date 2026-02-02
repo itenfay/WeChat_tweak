@@ -16,7 +16,6 @@
 + (id)unarchiveWithWCTValue:(id)arg1;
 + (void)initialize;
 + (void)PBArrayAdd_templateVersionInfoList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *templateVersionInfoList; // @synthesize templateVersionInfoList=_templateVersionInfoList;
 - (id)archivedWCTValue;
 - (id)getPBPropertyTable;

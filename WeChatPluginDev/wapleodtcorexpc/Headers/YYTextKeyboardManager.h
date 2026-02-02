@@ -25,7 +25,6 @@
 
 + (void)load;
 + (id)defaultManager;
-- (void).cxx_destruct;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2;
 - (void)_notifyAllObservers;
 - (void)_keyboardFrameChanged:(id)arg1;

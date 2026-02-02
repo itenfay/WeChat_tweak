@@ -15,7 +15,6 @@
     NSString *_shareUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shareUrl; // @synthesize shareUrl=_shareUrl;
 @property(nonatomic) unsigned int totalNum; // @synthesize totalNum=_totalNum;
 @property(retain, nonatomic) NSString *reqkey; // @synthesize reqkey=_reqkey;

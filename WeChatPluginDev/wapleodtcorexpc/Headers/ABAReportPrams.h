@@ -29,7 +29,6 @@
     double _inputVideoMinFps;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool vcodec2Preset; // @synthesize vcodec2Preset=_vcodec2Preset;
 @property(nonatomic) double inputVideoMinFps; // @synthesize inputVideoMinFps=_inputVideoMinFps;
 @property(nonatomic) double inputVideoMaxFps; // @synthesize inputVideoMaxFps=_inputVideoMaxFps;

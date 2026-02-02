@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIViewController, NSString, TextStateCardReporter;
 
@@ -18,7 +19,6 @@
     MMUIViewController *_curViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController *curViewController; // @synthesize curViewController=_curViewController;
 @property(copy, nonatomic) CDUnknownBlockType textStateDynamicGetter; // @synthesize textStateDynamicGetter=_textStateDynamicGetter;
 @property(copy, nonatomic) NSString *educationDescForPublish; // @synthesize educationDescForPublish=_educationDescForPublish;
@@ -34,4 +34,3 @@
 - (id)initWithViewController:(id)arg1;
 
 @end
-

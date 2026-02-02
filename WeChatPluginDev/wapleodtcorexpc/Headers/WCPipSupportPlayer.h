@@ -27,7 +27,6 @@
     double _lastPlaybackTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(nonatomic) double lastPlaybackTime; // @synthesize lastPlaybackTime=_lastPlaybackTime;

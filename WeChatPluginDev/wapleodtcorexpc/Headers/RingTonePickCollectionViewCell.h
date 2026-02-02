@@ -27,7 +27,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(nonatomic) unsigned long long settingNum; // @synthesize settingNum=_settingNum;
 @property(nonatomic) unsigned long long useFriendNum; // @synthesize useFriendNum=_useFriendNum;

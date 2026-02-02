@@ -14,7 +14,6 @@
 + (id)Load:(id)arg1;
 + (id)ToPagFile:(shared_ptr_fff0cd15)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)copyOriginal;
 - (void)resetTextForAllTextLayersWithName:(id)arg1;
 - (void)setText:(id)arg1 forAllTextLayersWithName:(id)arg2;

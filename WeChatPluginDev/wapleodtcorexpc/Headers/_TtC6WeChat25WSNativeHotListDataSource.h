@@ -16,7 +16,6 @@
     MISSING_TYPE *session;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)listAdapter:(id)arg1 sectionControllerForObject:(id)arg2;
 - (id)objectsForListAdapter:(id)arg1;

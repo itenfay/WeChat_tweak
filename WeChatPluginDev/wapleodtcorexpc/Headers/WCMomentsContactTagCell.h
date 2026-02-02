@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ContactTagData, MMUILabel, UIButton, UIImageView, UIView;
 
 @interface WCMomentsContactTagCell
@@ -18,7 +20,6 @@
 }
 
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) ContactTagData *tagData; // @synthesize tagData=_tagData;
 @property(copy, nonatomic) CDUnknownBlockType detailCallback; // @synthesize detailCallback=_detailCallback;
 @property(retain, nonatomic) MMUILabel *memberCountLabel; // @synthesize memberCountLabel=_memberCountLabel;
@@ -44,4 +45,3 @@
 - (void)updateContactTag:(id)arg1 checked:(_Bool)arg2 clickedDetail:(CDUnknownBlockType)arg3;
 
 @end
-

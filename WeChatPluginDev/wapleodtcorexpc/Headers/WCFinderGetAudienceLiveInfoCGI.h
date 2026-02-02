@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveContact;
 
 @interface WCFinderGetAudienceLiveInfoCGI
@@ -13,7 +15,6 @@
     FinderLiveContact *_audienceContact;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) FinderLiveContact *audienceContact; // @synthesize audienceContact=_audienceContact;
 @property(nonatomic) unsigned long long objectId; // @synthesize objectId=_objectId;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
@@ -25,4 +26,3 @@
 - (id)initWithFinderTaskId:(id)arg1 audienceContact:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

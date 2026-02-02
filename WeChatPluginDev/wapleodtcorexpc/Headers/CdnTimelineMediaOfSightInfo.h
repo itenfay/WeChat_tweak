@@ -18,7 +18,6 @@
     NSDictionary *_customRequestHeaders;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *customRequestHeaders; // @synthesize customRequestHeaders=_customRequestHeaders;
 @property(nonatomic) int thumbFileType; // @synthesize thumbFileType=_thumbFileType;
 @property(nonatomic) _Bool useLargeFileAPI; // @synthesize useLargeFileAPI;

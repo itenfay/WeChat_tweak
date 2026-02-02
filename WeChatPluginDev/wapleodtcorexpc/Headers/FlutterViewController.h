@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FlutterEngine, FlutterKeyboardManager, FlutterView, NSObject, NSString, UIHoverGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UIScrollView, UIView, VSyncClient;
 @protocol FlutterBinaryMessenger;
@@ -66,7 +67,6 @@
 + (_Bool)accessibilityIsOnOffSwitchLabelsEnabled;
 + (_Bool)automaticallyNotifiesObserversOfDisplayingFlutterUI;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FlutterKeyboardManager *keyboardManager; // @synthesize keyboardManager=_keyboardManager;
 @property(readonly, nonatomic) _Bool isVoiceOverRunning; // @synthesize isVoiceOverRunning=_isVoiceOverRunning;
 @property(retain, nonatomic) UIRotationGestureRecognizer *rotationGestureRecognizer; // @synthesize rotationGestureRecognizer=_rotationGestureRecognizer;
@@ -262,4 +262,3 @@
 @property(retain, nonatomic) UIView *view;
 
 @end
-

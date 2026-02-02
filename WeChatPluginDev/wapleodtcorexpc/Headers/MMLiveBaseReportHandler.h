@@ -14,7 +14,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool autoTackEvent; // @synthesize autoTackEvent=_autoTackEvent;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned int logId; // @synthesize logId=_logId;

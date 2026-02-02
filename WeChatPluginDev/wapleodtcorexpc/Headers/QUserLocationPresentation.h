@@ -15,7 +15,6 @@
     QNavigationGravityLine *_gravityLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QNavigationGravityLine *gravityLine; // @synthesize gravityLine=_gravityLine;
 @property(retain, nonatomic) QUserLocationCompassPresentation *compass; // @synthesize compass=_compass;
 @property(retain, nonatomic) UIColor *circleFillColor; // @synthesize circleFillColor=_circleFillColor;

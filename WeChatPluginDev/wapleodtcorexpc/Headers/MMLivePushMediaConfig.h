@@ -18,7 +18,6 @@
     long long _captureVolume;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long captureVolume; // @synthesize captureVolume=_captureVolume;
 @property(nonatomic) _Bool isFrontCamera; // @synthesize isFrontCamera=_isFrontCamera;
 @property(retain, nonatomic) MMLiveVideoEncParam *videoEncParam; // @synthesize videoEncParam=_videoEncParam;

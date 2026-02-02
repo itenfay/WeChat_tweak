@@ -18,7 +18,6 @@
     id <WCPayResetDelayTransferDurationViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayResetDelayTransferDurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WCPayResetDelayTipsNewModal *resetDelayTipsModal; // @synthesize resetDelayTipsModal=_resetDelayTipsModal;
 @property(copy, nonatomic) NSString *originSelectedTitle; // @synthesize originSelectedTitle=_originSelectedTitle;

@@ -12,7 +12,6 @@
     CMMDB *m_oMMDB;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isUserName:(id)arg1 ExistInList:(id)arg2;
 - (id)GetMMDB;
 - (_Bool)AddGroupAdmin:(id)arg1 withAdminList:(id)arg2;

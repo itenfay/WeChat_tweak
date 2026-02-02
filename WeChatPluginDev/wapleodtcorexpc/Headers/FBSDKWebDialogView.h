@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIActivityIndicatorView, UIButton, WKWebView;
 @protocol FBSDKWebDialogViewDelegate;
@@ -16,7 +17,6 @@
     id <FBSDKWebDialogViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FBSDKWebDialogViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
@@ -39,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

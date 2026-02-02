@@ -26,7 +26,6 @@
 + (id)getGruopTipWithSupportAdminOrNO:(id)arg1 tipKey:(id)arg2 noAdminTipKey:(id)arg3;
 + (_Bool)isSupportOpenGroupAdmin:(id)arg1;
 + (_Bool)IsReservedGroupTopic:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicShouldDeleteAllMsgAfterQuit; // @synthesize dicShouldDeleteAllMsgAfterQuit=_dicShouldDeleteAllMsgAfterQuit;
 @property(retain, nonatomic) NSMutableDictionary *m_dicQuitGroup; // @synthesize m_dicQuitGroup=_m_dicQuitGroup;
 @property(retain, nonatomic) ChatRoomPanelDynamicWeAppCache *m_panelDynamicWeAppCache; // @synthesize m_panelDynamicWeAppCache=_m_panelDynamicWeAppCache;

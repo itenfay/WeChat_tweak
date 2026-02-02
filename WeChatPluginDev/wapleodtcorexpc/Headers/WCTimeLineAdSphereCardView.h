@@ -15,7 +15,6 @@
 }
 
 + (double)heightForMedia:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *weAppTips; // @synthesize weAppTips=_weAppTips;
 @property(retain, nonatomic) UIImageView *weAppLogo; // @synthesize weAppLogo=_weAppLogo;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;

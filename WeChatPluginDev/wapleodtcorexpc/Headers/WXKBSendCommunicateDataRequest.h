@@ -12,7 +12,6 @@
     NSString *_action;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *action; // @synthesize action=_action;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) long long type; // @synthesize type=_type;

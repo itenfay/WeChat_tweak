@@ -14,7 +14,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicShareItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(retain, nonatomic) MMMusicMVSongInfo *mvSongInfo; // @synthesize mvSongInfo=_mvSongInfo;
 - (id)toXML;

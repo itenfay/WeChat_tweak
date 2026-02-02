@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSLock, NSMutableArray, NSObject, NSString, WCFImageCache, WCFImageDownloader;
 @protocol OS_dispatch_queue;
 
@@ -16,7 +18,6 @@
     NSObject<OS_dispatch_queue> *_blocksQueue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *blocksQueue; // @synthesize blocksQueue=_blocksQueue;
 @property(retain, nonatomic) NSMutableArray *operations; // @synthesize operations=_operations;
 @property(retain, nonatomic) WCFImageDownloader *downloader; // @synthesize downloader=_downloader;
@@ -57,4 +58,3 @@
 @property(readonly) Class superclass;
 
 @end
-

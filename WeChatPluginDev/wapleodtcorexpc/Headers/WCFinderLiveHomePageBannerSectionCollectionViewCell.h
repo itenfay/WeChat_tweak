@@ -14,7 +14,6 @@
 
 + (double)cellHeightInWidth:(double)arg1;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveHomePageBannerSectionView *liveCollectionView; // @synthesize liveCollectionView=_liveCollectionView;
 @property(nonatomic) __weak id <WCFinderLiveHomePageBannerSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)autoPlayStart;

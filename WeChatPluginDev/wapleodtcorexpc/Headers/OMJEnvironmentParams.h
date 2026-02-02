@@ -18,7 +18,6 @@
     NSString *_localeID;
 }
 
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localeID; // @synthesize localeID=_localeID;
 @property(readonly, nonatomic) _Bool createDirectoryIfNotExist; // @synthesize createDirectoryIfNotExist=_createDirectoryIfNotExist;
 @property(readonly, copy, nonatomic) NSString *clipBundleDirectory; // @synthesize clipBundleDirectory=_clipBundleDirectory;

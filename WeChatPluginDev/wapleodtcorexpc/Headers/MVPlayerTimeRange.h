@@ -14,7 +14,6 @@
     NSSet *_videoIdentifiers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *videoIdentifiers; // @synthesize videoIdentifiers=_videoIdentifiers;
 @property(nonatomic) double durationInSecond; // @synthesize durationInSecond=_durationInSecond;
 @property(nonatomic) double startTimeInSecond; // @synthesize startTimeInSecond=_startTimeInSecond;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CAAnimation, CADisplayLink, CALayer, NSMutableDictionary, NSString, UIColor, UIImage;
 
 @interface ImageStyle
@@ -31,7 +33,6 @@
     NSMutableDictionary *_networkResultTempData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *networkResultTempData; // @synthesize networkResultTempData=_networkResultTempData;
 @property(nonatomic) _Bool didCropImg; // @synthesize didCropImg=_didCropImg;
 @property(getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

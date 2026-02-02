@@ -13,7 +13,6 @@
 }
 
 + (double)heightForShareScopeBottomViewWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *labelView; // @synthesize labelView=_labelView;
 - (void)layoutSubviews;
 - (void)initLabelView;

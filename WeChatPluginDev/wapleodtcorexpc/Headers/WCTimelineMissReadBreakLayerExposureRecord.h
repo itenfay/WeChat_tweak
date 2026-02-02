@@ -28,7 +28,6 @@
     unsigned long long _newBreakLayerID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int preCreateBreakLayerWsFeedCnt; // @synthesize preCreateBreakLayerWsFeedCnt=_preCreateBreakLayerWsFeedCnt;
 @property(nonatomic) unsigned int preCreateBreakLayerFeedCnt; // @synthesize preCreateBreakLayerFeedCnt=_preCreateBreakLayerFeedCnt;
 @property(nonatomic) unsigned long long newBreakLayerID; // @synthesize newBreakLayerID=_newBreakLayerID;

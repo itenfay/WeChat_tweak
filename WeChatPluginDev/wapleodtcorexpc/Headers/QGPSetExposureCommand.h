@@ -10,7 +10,6 @@
     QGPSetExposureParam *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPSetExposureParam *params; // @synthesize params=_params;
 
 @end

@@ -20,7 +20,6 @@
     id <MMFinderLiveGiftWallSettingViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveGiftWallSettingViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) RichTextView *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UIView *footerSeparatorLine; // @synthesize footerSeparatorLine=_footerSeparatorLine;

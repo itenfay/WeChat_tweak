@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UIScrollView;
 
@@ -18,7 +19,6 @@
     double _pullingPercent;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isAutomaticallyChangeAlpha) _Bool automaticallyChangeAlpha; // @synthesize automaticallyChangeAlpha=_automaticallyChangeAlpha;
 @property(nonatomic) double pullingPercent; // @synthesize pullingPercent=_pullingPercent;
 @property(readonly, nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -43,4 +43,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

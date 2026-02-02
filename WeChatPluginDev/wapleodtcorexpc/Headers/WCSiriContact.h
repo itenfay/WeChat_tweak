@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_avatarUrl;
 + (void)PBArrayAdd_displayName;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *termName; // @synthesize termName=_termName;
 @property(retain, nonatomic) NSArray *memberAvatarUrls; // @synthesize memberAvatarUrls=_memberAvatarUrls;
 @property(retain, nonatomic) NSString *avatarHDUrl; // @synthesize avatarHDUrl=_avatarHDUrl;

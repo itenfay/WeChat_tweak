@@ -11,7 +11,6 @@
     id <TXCVideoCaptureReportDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <TXCVideoCaptureReportDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onScreenSizeChange:(struct CGSize)arg1;
 - (void)onCapturerDidResume;

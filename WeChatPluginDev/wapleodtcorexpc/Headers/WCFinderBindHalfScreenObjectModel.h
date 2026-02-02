@@ -14,7 +14,6 @@
     double _heightRatio;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;
 @property(copy, nonatomic) NSString *registerKey; // @synthesize registerKey=_registerKey;
 @property(retain, nonatomic) NSHashTable *bindObjectHashTable; // @synthesize bindObjectHashTable=_bindObjectHashTable;

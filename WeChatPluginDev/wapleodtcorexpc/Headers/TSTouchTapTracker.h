@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, TSTouchTrackRecognizer, UIView;
 
@@ -14,7 +15,6 @@
     NSMutableArray *_touches;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *touches; // @synthesize touches=_touches;
 @property(retain, nonatomic) TSTouchTrackRecognizer *trackRecognizer; // @synthesize trackRecognizer=_trackRecognizer;
 @property(nonatomic) __weak UIView *attachedView; // @synthesize attachedView=_attachedView;
@@ -29,4 +29,3 @@
 @property(readonly) Class superclass;
 
 @end
-

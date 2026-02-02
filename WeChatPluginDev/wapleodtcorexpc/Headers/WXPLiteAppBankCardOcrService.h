@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class KindaScanWidget, NSString;
 
@@ -13,7 +14,6 @@
     KindaScanWidget *_scanWidget;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) KindaScanWidget *scanWidget; // @synthesize scanWidget=_scanWidget;
 @property(copy, nonatomic) CDUnknownBlockType scanCallback; // @synthesize scanCallback=_scanCallback;
 - (void)onFinishScan:(id)arg1 scanResult:(id)arg2 cardImgData:(id)arg3;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

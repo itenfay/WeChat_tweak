@@ -13,7 +13,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CustomRoamDiskManagerCallback *diskManagerCb; // @synthesize diskManagerCb=_diskManagerCb;
 - (id)genAutoTestDeviceInfo;
 - (void)scanDevices;

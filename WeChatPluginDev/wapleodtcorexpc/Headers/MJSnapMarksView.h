@@ -15,7 +15,6 @@
     MJSnapMarksViewLayout *_layout;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MJSnapMarksViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) __weak id <MJTimelineVisibleRectDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)redrawSnapMarks;

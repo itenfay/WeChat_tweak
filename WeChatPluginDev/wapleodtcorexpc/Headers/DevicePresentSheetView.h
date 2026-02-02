@@ -15,7 +15,6 @@
     DevicePresentCollectionView *_oldDeviceView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool didAppendDeviceView; // @synthesize didAppendDeviceView=_didAppendDeviceView;
 @property(retain, nonatomic) DevicePresentCollectionView *oldDeviceView; // @synthesize oldDeviceView=_oldDeviceView;
 @property(retain, nonatomic) NSMutableArray *publicDevices; // @synthesize publicDevices=_publicDevices;

@@ -12,7 +12,6 @@
     MMFlutterViewController *_viewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMFlutterViewController *viewController; // @synthesize viewController=_viewController;
 - (void)setEdgeDragThresholdThreshold:(double)arg1 error:(id *)arg2;
 - (void)enableEdgeDragEnable:(_Bool)arg1 error:(id *)arg2;

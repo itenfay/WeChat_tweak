@@ -12,7 +12,6 @@
 
 + (void)clearOneClickLoginInfo;
 + (_Bool)shouldShowOneClickLogin;
-- (void).cxx_destruct;
 - (void)onManulLogOut;
 - (void)onGetA8KeyOneClickLoginWithURL:(id)arg1 extraInfo:(id)arg2;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

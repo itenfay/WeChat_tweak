@@ -11,7 +11,6 @@
     MMUILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 - (void)updateTalker:(id)arg1 andQuery:(id)arg2 withInSession:(_Bool)arg3;
 - (id)compressString:(id)arg1 contraintWidth:(double)arg2;
 - (void)initView;

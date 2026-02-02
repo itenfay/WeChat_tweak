@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderClientStatus, WCFinderUserPageParams;
 
 @interface WCFinderUserPageCGI
@@ -13,7 +15,6 @@
     WCFinderUserPageParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderUserPageParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) FinderClientStatus *clientStatus; // @synthesize clientStatus=_clientStatus;
 @property(copy, nonatomic) CDUnknownBlockType failure; // @synthesize failure=_failure;
@@ -24,4 +25,3 @@
 - (id)initWithParams:(id)arg1 clientStatus:(id)arg2 successful:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 
 @end
-

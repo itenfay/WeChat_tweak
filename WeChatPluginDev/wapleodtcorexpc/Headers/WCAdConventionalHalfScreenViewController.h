@@ -28,7 +28,6 @@
     struct CGRect _originRectInScreen;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdConventionalHalfScreenReportManager *reportManager; // @synthesize reportManager=_reportManager;
 @property(nonatomic) _Bool isReadyToDismiss; // @synthesize isReadyToDismiss=_isReadyToDismiss;
 @property(retain, nonatomic) UIImageView *mediaTransitionBGView; // @synthesize mediaTransitionBGView=_mediaTransitionBGView;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, NSTimer;
 
 @interface MJShootCountdownView
@@ -15,7 +17,6 @@
 }
 
 + (double)MJMapCountdownTimerMode:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
@@ -33,4 +34,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

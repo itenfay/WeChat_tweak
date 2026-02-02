@@ -12,7 +12,6 @@
     MISSING_TYPE *viewHolderContainer;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) __weak id <_TtP6WeChat30MagicBrandJsApiContextDelegate_> brandDelegate; // @synthesize brandDelegate;
 

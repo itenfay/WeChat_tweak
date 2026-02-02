@@ -10,7 +10,6 @@
     WCFinderPostSessionModel *_postSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderPostSessionModel *postSession; // @synthesize postSession=_postSession;
 - (int)patMusicType;
 - (int)videoSourceType;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, PAGView;
 
@@ -12,7 +13,6 @@
     PAGView *_pagView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *pagView; // @synthesize pagView=_pagView;
 - (void)replaceButtonIcon:(id)arg1 withImage:(id)arg2;
 - (void)onAnimationEnd:(id)arg1;
@@ -33,4 +33,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -14,7 +14,6 @@
     NSString *_timelineSessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timelineSessionId; // @synthesize timelineSessionId=_timelineSessionId;
 @property(retain, nonatomic) NSString *forwardUsername; // @synthesize forwardUsername=_forwardUsername;
 @property(nonatomic) _Bool fastForward; // @synthesize fastForward=_fastForward;

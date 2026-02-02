@@ -26,7 +26,6 @@
     id <ContactInfoAssistDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ContactInfoAssistDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)onRestoreCPLabel:(id)arg1;

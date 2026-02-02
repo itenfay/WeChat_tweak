@@ -22,7 +22,6 @@
 }
 
 + (void)asyncDoReportExposure:(id)arg1 sessionID:(id)arg2 exposureSessionExposureFeedIdsCnt:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasConfirmedUnfold; // @synthesize hasConfirmedUnfold=_hasConfirmedUnfold;
 @property(nonatomic) _Bool hasClickedUnfold; // @synthesize hasClickedUnfold=_hasClickedUnfold;
 @property(retain, nonatomic) NSMutableSet *browseFeedListInFold; // @synthesize browseFeedListInFold=_browseFeedListInFold;

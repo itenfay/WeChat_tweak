@@ -14,7 +14,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *variations; // @synthesize variations=_variations;
 @property(retain, nonatomic) NSString *emojiString; // @synthesize emojiString=_emojiString;
 

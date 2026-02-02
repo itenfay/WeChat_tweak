@@ -10,7 +10,6 @@
     UIButton *m_clearButton;
 }
 
-- (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)setClearButtonHidden:(_Bool)arg1;
 - (void)OnClear:(id)arg1;

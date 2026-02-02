@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary, NSMutableDictionary, NSString, UIViewController;
 
@@ -58,4 +59,3 @@
 @property(copy, nonatomic) NSString *dr_viewUniqueId;
 @property(copy, nonatomic) NSString *dr_viewId;
 @end
-

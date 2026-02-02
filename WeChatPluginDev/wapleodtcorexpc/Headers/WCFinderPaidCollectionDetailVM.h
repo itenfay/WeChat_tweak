@@ -14,7 +14,6 @@
     FinderPaidCollectionInfo *_paidCollection;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollection; // @synthesize paidCollection=_paidCollection;
 @property(retain, nonatomic) id <WCFinderCollectionFeedListProvider> collectionDataProvider; // @synthesize collectionDataProvider=_collectionDataProvider;
 - (id)dataSnapshot;

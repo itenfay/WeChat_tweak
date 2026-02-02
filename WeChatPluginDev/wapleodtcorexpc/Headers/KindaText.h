@@ -12,7 +12,6 @@
     NSMutableArray *_m_textArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_textArray; // @synthesize m_textArray=_m_textArray;
 - (void)appendLink:(id)arg1;
 - (void)appendText:(id)arg1;

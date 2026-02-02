@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIImageView, UILabel, UIView;
 
 @interface WCStartLiveHalfScreenView
@@ -13,7 +15,6 @@
     UILabel *_topTitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *topTitleLabel; // @synthesize topTitleLabel=_topTitleLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(copy, nonatomic) CDUnknownBlockType cancelCallback; // @synthesize cancelCallback=_cancelCallback;
@@ -38,4 +39,3 @@
 @property(readonly) Class superclass;
 
 @end
-

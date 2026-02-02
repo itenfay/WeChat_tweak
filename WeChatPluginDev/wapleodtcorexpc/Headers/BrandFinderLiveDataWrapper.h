@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BrandFinderLiveDataWrapperMedia, NSString;
 
@@ -31,7 +32,6 @@
 + (id)modelPropertyBlacklistForConfigTag:(id)arg1;
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int liveFlag; // @synthesize liveFlag=_liveFlag;
 @property(copy, nonatomic) NSString *recommendReason; // @synthesize recommendReason=_recommendReason;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
@@ -67,4 +67,3 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
-

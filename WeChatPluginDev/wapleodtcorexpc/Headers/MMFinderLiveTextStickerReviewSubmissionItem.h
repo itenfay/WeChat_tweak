@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     NSString *_text;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *submissionId; // @synthesize submissionId=_submissionId;
 - (id)createSubmissionEntity;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

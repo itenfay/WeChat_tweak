@@ -12,7 +12,6 @@
     WKWebSearchView *_webView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WKWebSearchView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) WAWxMaterialOpenInfo *openInfo; // @synthesize openInfo=_openInfo;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;

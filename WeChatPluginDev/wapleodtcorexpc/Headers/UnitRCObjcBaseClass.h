@@ -12,7 +12,6 @@
     UnitRCAssociatedObjc *_objc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UnitRCAssociatedObjc *objc; // @synthesize objc=_objc;
 - (void)notifyFieldUpdated:(int)arg1;
 

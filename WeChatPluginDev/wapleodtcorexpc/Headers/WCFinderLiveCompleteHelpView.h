@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveTask, MMUIButton;
 
@@ -16,7 +17,6 @@
     UIView *_sepelateLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sepelateLine; // @synthesize sepelateLine=_sepelateLine;
 @property(retain, nonatomic) MMUIButton *helpEntranceBtn; // @synthesize helpEntranceBtn=_helpEntranceBtn;
 @property(retain, nonatomic) MMUIButton *creatorCenterBtn; // @synthesize creatorCenterBtn=_creatorCenterBtn;
@@ -30,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

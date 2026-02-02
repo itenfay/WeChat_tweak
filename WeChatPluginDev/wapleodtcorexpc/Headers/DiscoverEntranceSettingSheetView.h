@@ -12,7 +12,6 @@
     DiscoverEntranceSettingConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) DiscoverEntranceSettingConfig *config; // @synthesize config=_config;
 @property(nonatomic) __weak id <DiscoverEntranceSettingSheetViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)hideSubSwitchViewsWhenEntranceValueChanged:(_Bool)arg1;

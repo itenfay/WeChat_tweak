@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) WeakPtr_55ba20e6 backingPreloader; // @synthesize backingPreloader=_backingPreloader;
 - (void)updateExpectedResourceUsage:(id)arg1;
 - (void)stopPreloading;

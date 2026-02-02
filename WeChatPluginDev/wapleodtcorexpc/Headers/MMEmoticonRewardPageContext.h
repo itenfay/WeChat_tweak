@@ -11,7 +11,6 @@
     NSString *_productId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;
 @property(nonatomic) unsigned long long rewardScene; // @synthesize rewardScene=_rewardScene;
 - (_Bool)allowsInEmoticonLimited;

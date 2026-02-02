@@ -70,7 +70,6 @@
     long long _originClickActionType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long originClickActionType; // @synthesize originClickActionType=_originClickActionType;
 @property(nonatomic) long long indirectJumpType; // @synthesize indirectJumpType=_indirectJumpType;
 @property(retain, nonatomic) WCAdCardBtnInfo *defaultClickActionInfo; // @synthesize defaultClickActionInfo=_defaultClickActionInfo;

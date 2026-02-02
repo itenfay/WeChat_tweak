@@ -22,7 +22,6 @@
     UIPercentDrivenInteractiveTransition *_interactiveTransition;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasTapic; // @synthesize hasTapic=_hasTapic;
 @property(retain, nonatomic) UIPercentDrivenInteractiveTransition *interactiveTransition; // @synthesize interactiveTransition=_interactiveTransition;
 @property(nonatomic) unsigned int edgeGestureType; // @synthesize edgeGestureType=_edgeGestureType;

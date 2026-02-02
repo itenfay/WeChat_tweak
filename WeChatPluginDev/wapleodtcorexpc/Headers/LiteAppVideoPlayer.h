@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVPlayerItemVideoOutput, CADisplayLink, FlutterEventChannel, LiteAppVideoPlayerFrameUpdater, MAVEffectRenderer, NSString, TXLivePlayer, WCPlayerPlayArgs, WCPlayerPlaybackInfo, WCPlayerView;
 
@@ -37,7 +38,6 @@
     NSObject *_errorEvent;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *errorEvent; // @synthesize errorEvent=_errorEvent;
 @property(retain, nonatomic) NSObject *initialEvent; // @synthesize initialEvent=_initialEvent;
 @property(nonatomic) struct __CVBuffer *latestPixelBuffer; // @synthesize latestPixelBuffer=_latestPixelBuffer;
@@ -129,4 +129,3 @@
 @property(readonly) Class superclass;
 
 @end
-

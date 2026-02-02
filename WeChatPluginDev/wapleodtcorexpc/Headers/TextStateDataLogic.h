@@ -27,7 +27,6 @@
 + (id)generateTextStateFromContact:(id)arg1;
 + (_Bool)isTextStateValidForUsername:(id)arg1;
 + (void)insertOrUpdateTextState:(id)arg1 forOrderedIdToTextState:(id)arg2 index:(unsigned long long *)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool affDBFinishTransfer; // @synthesize affDBFinishTransfer=_affDBFinishTransfer;
 @property(nonatomic) _Bool useAffDB; // @synthesize useAffDB=_useAffDB;
 @property(retain, nonatomic) TextStateDBTransfer *dbTransfer; // @synthesize dbTransfer=_dbTransfer;

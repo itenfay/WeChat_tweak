@@ -12,7 +12,6 @@
     TPVideoInfo *_model;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPVideoInfo *model; // @synthesize model=_model;
 - (id)build;
 - (id)setDownloadParamDataArray:(id)arg1;

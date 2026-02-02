@@ -18,7 +18,6 @@
     long long _jsEnterScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int canvasPageScene; // @synthesize canvasPageScene=_canvasPageScene;
 @property(nonatomic) long long jsEnterScene; // @synthesize jsEnterScene=_jsEnterScene;
 @property(retain, nonatomic) WCAdOpenAdCanvasParamsInfo *paramsInfo; // @synthesize paramsInfo=_paramsInfo;

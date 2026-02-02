@@ -19,7 +19,6 @@
     MJShootBeautyItem *_item;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJShootBeautyItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) MMUIView *dotView; // @synthesize dotView=_dotView;
 @property(retain, nonatomic) MMUIView *blurView; // @synthesize blurView=_blurView;

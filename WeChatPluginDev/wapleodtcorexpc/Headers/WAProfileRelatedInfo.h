@@ -13,7 +13,6 @@
     NSString *_username;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(copy, nonatomic) NSString *iconURL; // @synthesize iconURL=_iconURL;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSMutableArray;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _completionBlock;
 }
 
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)finishRecord;
 - (void)_start;
@@ -24,4 +24,3 @@
 - (id)init;
 
 @end
-

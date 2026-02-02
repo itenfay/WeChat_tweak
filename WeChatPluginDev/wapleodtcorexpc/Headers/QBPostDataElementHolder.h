@@ -13,7 +13,6 @@
 }
 
 + (id)defaulInstance;
-- (void).cxx_destruct;
 - (void)removeElement:(id)arg1;
 - (void)addElement:(id)arg1;
 - (id)init;

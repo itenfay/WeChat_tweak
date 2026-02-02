@@ -21,7 +21,6 @@
 + (void)PBArrayAdd_cacheChatHistoryItemList;
 + (void)PBArrayAdd_tempClientIdAndSeqDict;
 + (void)PBArrayAdd_lastBuffer;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cacheChatHistoryItemKeyList; // @synthesize cacheChatHistoryItemKeyList=_cacheChatHistoryItemKeyList;
 @property(retain, nonatomic) NSArray *cacheChatHistoryItemList; // @synthesize cacheChatHistoryItemList=_cacheChatHistoryItemList;
 @property(retain, nonatomic) NSMutableDictionary *tempClientIdAndSeqDict; // @synthesize tempClientIdAndSeqDict=_tempClientIdAndSeqDict;

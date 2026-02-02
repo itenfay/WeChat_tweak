@@ -50,7 +50,6 @@
     _Bool _bShowJumpButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowUpBtn; // @synthesize arrowUpBtn=_arrowUpBtn;
 @property(nonatomic) _Bool isSingleLyricPage; // @synthesize isSingleLyricPage=_isSingleLyricPage;
 @property(nonatomic) _Bool isShakeMusicPage; // @synthesize isShakeMusicPage=_isShakeMusicPage;

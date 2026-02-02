@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, NSString, UIView;
 @protocol QAnnotation;
@@ -25,7 +26,6 @@
     struct CGPoint _annoComparePoint;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int coordKVOCounter; // @synthesize coordKVOCounter=_coordKVOCounter;
 @property(nonatomic) __weak id <QAnnotation> observerTarget; // @synthesize observerTarget=_observerTarget;
 @property(nonatomic) __weak UIView *mapInternalRotateView; // @synthesize mapInternalRotateView=_mapInternalRotateView;
@@ -72,4 +72,3 @@
 @property(readonly) Class superclass;
 
 @end
-

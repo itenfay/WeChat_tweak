@@ -14,7 +14,6 @@
     NSString *_IAPErrDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *IAPErrDesc; // @synthesize IAPErrDesc=_IAPErrDesc;
 @property(nonatomic) long long IAPErrCode; // @synthesize IAPErrCode=_IAPErrCode;
 @property(nonatomic) unsigned int errCode; // @synthesize errCode=_errCode;

@@ -16,7 +16,6 @@
     NSString *_eventToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eventToken; // @synthesize eventToken=_eventToken;
 @property(nonatomic) unsigned int streamStatus; // @synthesize streamStatus=_streamStatus;
 @property(nonatomic) unsigned int eventStatus; // @synthesize eventStatus=_eventStatus;

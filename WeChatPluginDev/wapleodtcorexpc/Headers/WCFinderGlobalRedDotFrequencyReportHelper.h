@@ -21,7 +21,6 @@
 + (long long)convertCalcReasonType:(long long)arg1;
 + (id)getRedDotPathFromFindPageIdx:(long long)arg1;
 + (long long)getLastTabTypeFromPath:(id)arg1 businessType:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long enterBackgroundTimeStamp; // @synthesize enterBackgroundTimeStamp=_enterBackgroundTimeStamp;
 @property(nonatomic) unsigned long long willDisappearFindPageTimeStamp; // @synthesize willDisappearFindPageTimeStamp=_willDisappearFindPageTimeStamp;
 @property(nonatomic) unsigned long long willAppearFindPageTimeStamp; // @synthesize willAppearFindPageTimeStamp=_willAppearFindPageTimeStamp;

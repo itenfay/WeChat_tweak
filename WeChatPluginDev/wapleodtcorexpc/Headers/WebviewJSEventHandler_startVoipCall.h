@@ -17,7 +17,6 @@
     NSString *_m_context;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bShowCSVideo; // @synthesize m_bShowCSVideo=_m_bShowCSVideo;
 @property(nonatomic) _Bool m_bAllowBackCamera; // @synthesize m_bAllowBackCamera=_m_bAllowBackCamera;
 @property(nonatomic) unsigned int m_uGetContactInfoTryTimes; // @synthesize m_uGetContactInfoTryTimes=_m_uGetContactInfoTryTimes;

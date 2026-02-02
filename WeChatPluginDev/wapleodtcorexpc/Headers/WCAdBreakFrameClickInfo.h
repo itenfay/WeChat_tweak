@@ -19,7 +19,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *clickActionInfo; // @synthesize clickActionInfo=_clickActionInfo;
 @property(nonatomic) double clickEndTime; // @synthesize clickEndTime=_clickEndTime;
 @property(nonatomic) double clickStartTime; // @synthesize clickStartTime=_clickStartTime;

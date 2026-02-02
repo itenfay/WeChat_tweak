@@ -29,7 +29,6 @@
 
 + (id)displayContentOfComment:(id)arg1;
 + (double)heightForComment:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *colonLabel; // @synthesize colonLabel=_colonLabel;
 @property(nonatomic) __weak UIVisualEffectView *blurEffectView; // @synthesize blurEffectView=_blurEffectView;
 @property(nonatomic) __weak MMUIButton *replyBtn; // @synthesize replyBtn=_replyBtn;

@@ -11,7 +11,6 @@
 }
 
 + (id)newInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 - (id)attributeStringForContent:(id)arg1;
 - (id)getStyle;

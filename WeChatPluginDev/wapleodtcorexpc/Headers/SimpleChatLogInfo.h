@@ -14,7 +14,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *m_dataMsg; // @synthesize m_dataMsg=_m_dataMsg;
 @property(retain, nonatomic) FavoritesItemDataField *m_dataField; // @synthesize m_dataField=_m_dataField;
 - (id)getDataBackgroundColor;

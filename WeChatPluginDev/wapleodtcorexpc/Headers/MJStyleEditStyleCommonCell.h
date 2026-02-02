@@ -15,7 +15,6 @@
     MMUIView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;

@@ -30,7 +30,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithTitle:(id)arg1 url:(id)arg2 urlId:(id)arg3 time:(id)arg4 cover:(id)arg5 cover_1_1:(id)arg6 digest:(id)arg7 itemShowType:(id)arg8 play_length:(id)arg9 play_url:(id)arg10 player:(id)arg11 vid:(id)arg12 picNum:(id)arg13 videoWidth:(id)arg14 videoHeight:(id)arg15 isPaySubscribe:(id)arg16;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isPaySubscribe; // @synthesize isPaySubscribe=_isPaySubscribe;
 @property(retain, nonatomic) NSNumber *videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(retain, nonatomic) NSNumber *videoWidth; // @synthesize videoWidth=_videoWidth;

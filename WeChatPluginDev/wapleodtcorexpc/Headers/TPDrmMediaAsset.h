@@ -23,7 +23,6 @@
     NSString *_drmPropertyCookie;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *drmPropertyCookie; // @synthesize drmPropertyCookie=_drmPropertyCookie;
 @property(retain, nonatomic) NSString *drmPropertyAppVersion; // @synthesize drmPropertyAppVersion=_drmPropertyAppVersion;
 @property(retain, nonatomic) NSString *drmPropertyPlatform; // @synthesize drmPropertyPlatform=_drmPropertyPlatform;

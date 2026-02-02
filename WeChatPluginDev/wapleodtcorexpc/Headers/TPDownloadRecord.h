@@ -22,7 +22,6 @@
     long long _hitDownloaded;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long hitDownloaded; // @synthesize hitDownloaded=_hitDownloaded;
 @property(retain, nonatomic) NSString *protocolVer; // @synthesize protocolVer=_protocolVer;
 @property(retain, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;

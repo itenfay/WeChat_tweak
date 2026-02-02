@@ -11,7 +11,6 @@
     MISSING_TYPE *hintLabel;
 }
 
-- (void).cxx_destruct;
 - (void)onStateOfNoMoreData:(id)arg1;
 - (void)onStateOfLoading;
 - (void)onStateOfNormal;

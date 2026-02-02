@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TingDataReportService;
 
@@ -16,7 +17,6 @@
 
 + (id)extraReportDataFromScene:(int)arg1 ActionListenItem:(id)arg2 actionCategoryItem:(id)arg3 playingListenItem:(id)arg4 playingCategoryItem:(id)arg5;
 + (void)clearSession;
-- (void).cxx_destruct;
 @property(retain, nonatomic) TingDataReportService *logic; // @synthesize logic=_logic;
 @property(nonatomic) unsigned int netType; // @synthesize netType=_netType;
 @property(nonatomic) int audioSessionRoute; // @synthesize audioSessionRoute=_audioSessionRoute;
@@ -80,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

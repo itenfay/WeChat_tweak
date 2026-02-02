@@ -21,7 +21,6 @@
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contentList; // @synthesize contentList=_contentList;
 @property(nonatomic) unsigned int maxLineCount; // @synthesize maxLineCount=_maxLineCount;
 @property(nonatomic) _Bool bBold; // @synthesize bBold=_bBold;

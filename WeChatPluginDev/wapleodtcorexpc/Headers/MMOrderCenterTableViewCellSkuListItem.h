@@ -39,7 +39,6 @@
 + (double)tagHeight;
 + (struct CGSize)imageTagSize;
 + (double)imageHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *deliveryInfoView; // @synthesize deliveryInfoView=_deliveryInfoView;
 @property(retain, nonatomic) UILabel *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) UILabel *countView; // @synthesize countView=_countView;

@@ -4,8 +4,8 @@
 //
 
 #import <QuartzCore/CALayer.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface CALayer (WeChat)
 - (void)ls_dissolveFrom:(long long)arg1 to:(long long)arg2 duration:(double)arg3 removeOnComplete:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 @end
-

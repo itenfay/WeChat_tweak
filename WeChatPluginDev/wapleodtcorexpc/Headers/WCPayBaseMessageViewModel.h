@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCPayNetImageResource;
 
 @interface WCPayBaseMessageViewModel
@@ -12,7 +14,6 @@
     WCPayNetImageResource *_m_iconImageResource;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNetImageResource *m_iconImageResource; // @synthesize m_iconImageResource=_m_iconImageResource;
 @property(readonly, nonatomic) unsigned long long bubbleType; // @synthesize bubbleType=_bubbleType;
 @property(readonly, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
@@ -28,4 +29,3 @@
 - (void)updateBgBubbleType:(unsigned long long)arg1;
 
 @end
-

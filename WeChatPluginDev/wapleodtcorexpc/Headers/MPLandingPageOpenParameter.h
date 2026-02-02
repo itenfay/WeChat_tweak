@@ -47,7 +47,6 @@
 + (void)PBArrayAdd_bizNickname;
 + (void)PBArrayAdd_bizUserName;
 + (void)PBArrayAdd_url;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *minimizationOpenBizKey; // @synthesize minimizationOpenBizKey=_minimizationOpenBizKey;
 @property(nonatomic) __weak UINavigationController *preRenderNavigationController; // @synthesize preRenderNavigationController=_preRenderNavigationController;
 @property(retain, nonatomic) MPVideoPageOpenParameter *videoParam; // @synthesize videoParam=_videoParam;

@@ -14,7 +14,6 @@
     NSString *_url;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useCdn; // @synthesize useCdn=_useCdn;
 @property(nonatomic) unsigned int downloadScene; // @synthesize downloadScene=_downloadScene;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_mediaType;
 + (void)PBArrayAdd_mediaList;
 + (void)PBArrayAdd_videoDescription;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMegaVideoLocation *feedLocation; // @synthesize feedLocation=_feedLocation;
 @property(retain, nonatomic) WCMegaVideoExtendedReading *extReading; // @synthesize extReading=_extReading;
 @property(retain, nonatomic) WCMegaVideoLocation *location; // @synthesize location=_location;

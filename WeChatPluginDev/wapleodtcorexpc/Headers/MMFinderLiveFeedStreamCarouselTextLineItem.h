@@ -12,7 +12,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool showHardAdLogo; // @synthesize showHardAdLogo=_showHardAdLogo;
 @property(nonatomic) _Bool hideTitle; // @synthesize hideTitle=_hideTitle;

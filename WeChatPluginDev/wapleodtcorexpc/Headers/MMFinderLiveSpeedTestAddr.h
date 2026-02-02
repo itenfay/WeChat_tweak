@@ -13,7 +13,6 @@
     NSString *_ip;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int port; // @synthesize port=_port;
 @property(retain, nonatomic) NSString *ip; // @synthesize ip=_ip;
 

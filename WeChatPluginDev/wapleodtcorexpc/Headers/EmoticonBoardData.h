@@ -13,7 +13,6 @@
     NSMutableArray *_tabItems;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tabItems; // @synthesize tabItems=_tabItems;
 @property(retain, nonatomic) NSMutableArray *boardPageWraps; // @synthesize boardPageWraps=_boardPageWraps;
 

@@ -13,7 +13,6 @@
     NSMutableArray *_resendingFavItems;
 }
 
-- (void).cxx_destruct;
 - (void)OnCdnUpload:(id)arg1;
 - (void)handleModFavItem:(id)arg1 Event:(unsigned int)arg2;
 - (void)HandleCheckFavItemResp:(id)arg1 Event:(unsigned int)arg2;

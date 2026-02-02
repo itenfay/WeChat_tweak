@@ -11,7 +11,6 @@
     id <MainTableDelegate> _m_mainTableDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool enableDeselection; // @synthesize enableDeselection=_enableDeselection;
 @property(nonatomic) __weak id <MainTableDelegate> m_mainTableDelegate; // @synthesize m_mainTableDelegate=_m_mainTableDelegate;
 - (_Bool)touchesShouldCancelInContentView:(id)arg1;

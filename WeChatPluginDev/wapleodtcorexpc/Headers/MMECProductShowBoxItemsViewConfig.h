@@ -18,7 +18,6 @@
     struct UIEdgeInsets _paddingLabelPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool multiLines; // @synthesize multiLines=_multiLines;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;

@@ -18,7 +18,6 @@
 + (unsigned int)start_ModifySocialBlackList:(id)arg1 modType:(long long)arg2;
 + (unsigned int)start_ModifyContact:(id)arg1;
 + (id)getModifyContactData:(id)arg1 addScene:(unsigned int)arg2 delScene:(unsigned int)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <CContactOPLogDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (_Bool)add_ModifyContact:(id)arg1 withPhone:(id)arg2 NeedSync:(_Bool)arg3;
 - (_Bool)add_ModifyContact:(id)arg1 withDescription:(id)arg2 NeedSync:(_Bool)arg3;

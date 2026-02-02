@@ -25,7 +25,6 @@
     MMPageSheetAdapter *_pageSheetAdapter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPageSheetAdapter *pageSheetAdapter; // @synthesize pageSheetAdapter=_pageSheetAdapter;
 @property(retain, nonatomic) WADateTimePickerView *datePicker; // @synthesize datePicker=_datePicker;
 @property(retain, nonatomic) UIView *m_blackLine; // @synthesize m_blackLine=_m_blackLine;

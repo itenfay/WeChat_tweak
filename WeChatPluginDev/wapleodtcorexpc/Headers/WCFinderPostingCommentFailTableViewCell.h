@@ -15,7 +15,6 @@
     UIButton *_backGroundButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *backGroundButton; // @synthesize backGroundButton=_backGroundButton;
 @property(nonatomic) _Bool isInDarkMode; // @synthesize isInDarkMode=_isInDarkMode;
 @property(nonatomic) __weak id <WCFinderPostingCommentFailTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;

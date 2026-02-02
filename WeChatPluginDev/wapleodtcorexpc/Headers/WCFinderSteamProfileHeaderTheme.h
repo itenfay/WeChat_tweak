@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMapTable;
 
@@ -13,7 +14,6 @@
     NSMapTable *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *items; // @synthesize items=_items;
 @property(nonatomic) _Bool hasCover; // @synthesize hasCover=_hasCover;
 - (void)setImage:(CDUnknownBlockType)arg1 withColor:(id)arg2 forButton:(id)arg3;
@@ -26,4 +26,3 @@
 - (void)cleanUp:(id)arg1 key:(id)arg2;
 
 @end
-

@@ -15,7 +15,6 @@
 }
 
 + (id)weeffectType;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *blendMode; // @synthesize blendMode=_blendMode;
 @property(retain, nonatomic) NSNumber *shrinkRate; // @synthesize shrinkRate=_shrinkRate;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;

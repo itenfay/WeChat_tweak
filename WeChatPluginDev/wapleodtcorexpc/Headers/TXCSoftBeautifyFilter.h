@@ -10,7 +10,6 @@
     TXCSharpFilter *_sharpFilter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCSharpFilter *sharpFilter; // @synthesize sharpFilter=_sharpFilter;
 - (id)processVideoFrame:(id)arg1;
 - (void)setUniformsForFilter:(id)arg1 fboSize:(struct CGSize)arg2;

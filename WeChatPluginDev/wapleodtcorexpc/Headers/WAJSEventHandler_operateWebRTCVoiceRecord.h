@@ -7,7 +7,6 @@
 {
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)handleJSEvent:(id)arg1;
 

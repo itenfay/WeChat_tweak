@@ -12,7 +12,6 @@
     TemplateMsgSearchHelper *_searchHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TemplateMsgSearchHelper *searchHelper; // @synthesize searchHelper=_searchHelper;
 @property(retain, nonatomic) CBaseContact *templateContact; // @synthesize templateContact=_templateContact;
 - (void)didSelectSearchResultForMessageWrap:(id)arg1 indexPath:(id)arg2 arrKeyword:(id)arg3;

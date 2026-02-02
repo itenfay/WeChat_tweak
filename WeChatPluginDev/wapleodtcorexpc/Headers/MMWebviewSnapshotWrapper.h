@@ -12,7 +12,6 @@
     MMWebViewController *_webviewVC;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMWebViewController *webviewVC; // @synthesize webviewVC=_webviewVC;
 - (void)animateHideFullSnapshotEntrance;
 

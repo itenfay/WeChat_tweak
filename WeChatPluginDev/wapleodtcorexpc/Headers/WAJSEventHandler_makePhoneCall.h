@@ -10,7 +10,6 @@
     NSString *_number;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *number; // @synthesize number=_number;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)handleJSEvent:(id)arg1;

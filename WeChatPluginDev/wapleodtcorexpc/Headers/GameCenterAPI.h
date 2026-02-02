@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface GameCenterAPI : NSObject
 {
@@ -18,4 +19,3 @@
 + (id)getGameTabBarVcWithParams:(id)arg1 extra:(id)arg2 onCloseBlock:(CDUnknownBlockType)arg3;
 
 @end
-

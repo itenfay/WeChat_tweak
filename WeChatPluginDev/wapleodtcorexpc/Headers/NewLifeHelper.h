@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NewLifeHelper : NSObject
 {
@@ -38,4 +39,3 @@
 + (id)fixAbsolutePath:(id)arg1;
 
 @end
-

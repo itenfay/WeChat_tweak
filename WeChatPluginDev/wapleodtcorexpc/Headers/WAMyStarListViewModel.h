@@ -11,7 +11,6 @@
     WAMainListStarLogic *_starLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMainListStarLogic *starLogic; // @synthesize starLogic=_starLogic;
 - (void)starDataDidUpdated;
 - (void)appItemDidUnStaredFailedWithUnknownError:(id)arg1;

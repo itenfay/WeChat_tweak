@@ -20,7 +20,6 @@
     NSString *statusDesc2;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *statusDesc2; // @synthesize statusDesc2;
 @property(retain, nonatomic) NSString *statusDesc1; // @synthesize statusDesc1;
 @property(retain, nonatomic) NSString *dataflowResultInfo; // @synthesize dataflowResultInfo;

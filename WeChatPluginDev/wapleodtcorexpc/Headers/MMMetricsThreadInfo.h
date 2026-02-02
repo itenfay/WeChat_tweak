@@ -38,7 +38,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) float cpuUsage; // @synthesize cpuUsage=_cpuUsage;
 @property(nonatomic) unsigned int priority; // @synthesize priority=_priority;

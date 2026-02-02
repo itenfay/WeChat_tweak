@@ -15,7 +15,6 @@
     WCTTable *_tableResDownloadInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableResDownloadInfo; // @synthesize tableResDownloadInfo=_tableResDownloadInfo;
 @property(retain) WCTTable *tableResInfo; // @synthesize tableResInfo=_tableResInfo;
 @property(retain) WCTDatabase *db; // @synthesize db=_db;

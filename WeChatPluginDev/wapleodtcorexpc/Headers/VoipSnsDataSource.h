@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
     CDUnknownBlockType _resolver;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resolver; // @synthesize resolver=_resolver;
 @property(nonatomic) _Bool noMoreData; // @synthesize noMoreData=_noMoreData;
 @property(nonatomic) unsigned int timeLimit; // @synthesize timeLimit=_timeLimit;
@@ -30,4 +30,3 @@
 - (void)registerExtension;
 
 @end
-

@@ -14,7 +14,6 @@
 }
 
 + (id)identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveMpArticleAnchorPromoteInfo *articlePromoteInfo; // @synthesize articlePromoteInfo=_articlePromoteInfo;
 @property(retain, nonatomic) MMUILabel *anchorLabel; // @synthesize anchorLabel=_anchorLabel;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

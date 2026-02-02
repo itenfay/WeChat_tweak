@@ -15,7 +15,6 @@
     NSString *_byPassInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *byPassInfo; // @synthesize byPassInfo=_byPassInfo;
 @property(nonatomic) int bizType; // @synthesize bizType=_bizType;
 @property(retain, nonatomic) NSString *reportStr; // @synthesize reportStr=_reportStr;

@@ -11,7 +11,6 @@
     SubscribeMsgItem *_msgItem;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isHandling; // @synthesize isHandling=_isHandling;
 @property(retain, nonatomic) SubscribeMsgItem *msgItem; // @synthesize msgItem=_msgItem;
 

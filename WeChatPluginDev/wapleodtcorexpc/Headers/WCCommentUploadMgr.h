@@ -16,7 +16,6 @@
     id <WCCommentUploadMgrDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCommentUploadMgrDelegate> m_delegate; // @synthesize m_delegate;
 - (void)doInputAreaReportIfNeededWithCommentItem:(id)arg1;
 - (_Bool)loadFailedQueue;

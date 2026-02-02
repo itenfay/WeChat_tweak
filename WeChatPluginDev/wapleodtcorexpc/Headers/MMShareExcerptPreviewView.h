@@ -13,7 +13,6 @@
     double _bottomInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)playDismissAnimation;

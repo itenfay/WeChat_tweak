@@ -26,7 +26,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *urlScheme; // @synthesize urlScheme=_urlScheme;
 @property(nonatomic) unsigned int updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;

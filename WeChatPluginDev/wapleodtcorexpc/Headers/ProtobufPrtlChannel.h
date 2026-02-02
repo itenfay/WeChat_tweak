@@ -15,7 +15,6 @@
 
 + (int)getDefaultRetryCount;
 + (void)setDefaultRetryCount:(int)arg1;
-- (void).cxx_destruct;
 - (void)Stop;
 - (_Bool)Start;
 - (void)InitPrtl:(unsigned int)arg1 Delegate:(id)arg2 Scene:(unsigned int)arg3;

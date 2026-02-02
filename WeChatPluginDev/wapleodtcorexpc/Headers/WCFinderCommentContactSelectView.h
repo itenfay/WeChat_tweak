@@ -12,7 +12,6 @@
     UIView *_searchContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *searchContainerView; // @synthesize searchContainerView=_searchContainerView;
 @property(retain, nonatomic) WCContactSelectFixedSearcher *contactSearcher; // @synthesize contactSearcher=_contactSearcher;
 @property(retain, nonatomic) NSArray *latestCommentMentionedContacts; // @synthesize latestCommentMentionedContacts=_latestCommentMentionedContacts;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, NSString, UIImageView, UIView, WXGRoamBannerView;
 
@@ -27,7 +28,6 @@
 + (double)heightForDetailLabel:(id)arg1 maxWidth:(double)arg2;
 + (double)cellMaxDetailWidth:(double)arg1;
 + (double)cellHeight:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reloadBlock; // @synthesize reloadBlock=_reloadBlock;
 @property(nonatomic) unsigned long long cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(retain, nonatomic) WXGRoamBannerView *bannerView; // @synthesize bannerView=_bannerView;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

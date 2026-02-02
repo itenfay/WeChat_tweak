@@ -20,7 +20,6 @@
     unsigned long long _endTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int responseContentSize; // @synthesize responseContentSize=_responseContentSize;
 @property(nonatomic) unsigned int responseContentNoUpdateCount; // @synthesize responseContentNoUpdateCount=_responseContentNoUpdateCount;
 @property(nonatomic) unsigned int responseContentUpdateCount; // @synthesize responseContentUpdateCount=_responseContentUpdateCount;

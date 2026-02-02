@@ -14,7 +14,6 @@
     UIButton *_stopButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *stopButton; // @synthesize stopButton=_stopButton;
 - (void)dismiss;
 - (void)showWithString:(id)arg1;

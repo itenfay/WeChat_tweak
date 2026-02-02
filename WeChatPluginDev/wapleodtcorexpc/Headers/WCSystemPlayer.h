@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVAsset, AVPlayer, AVPlayerItem, AVPlayerItemVideoOutput, NSObject, NSString, WCPlayerFairPlayResourceLoader;
 
 @interface WCSystemPlayer
@@ -19,7 +21,6 @@
     double _playablePos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isNoCallbackSeek; // @synthesize isNoCallbackSeek=_isNoCallbackSeek;
 @property(nonatomic) float lastPlayBackRate; // @synthesize lastPlayBackRate=_lastPlayBackRate;
 @property(nonatomic) double playablePos; // @synthesize playablePos=_playablePos;
@@ -94,4 +95,3 @@
 - (double)currentTime;
 
 @end
-

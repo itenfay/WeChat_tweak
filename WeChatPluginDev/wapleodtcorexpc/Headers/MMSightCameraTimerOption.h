@@ -23,7 +23,6 @@
 }
 
 + (long long)convertTimeSecFromTimerType:(long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(retain, nonatomic) MMUIButton *timerButton_10s; // @synthesize timerButton_10s=_timerButton_10s;
 @property(retain, nonatomic) MMUIButton *timerButton_3s; // @synthesize timerButton_3s=_timerButton_3s;

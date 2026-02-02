@@ -16,7 +16,6 @@
 + (id)routeName;
 + (id)extraPlugins;
 + (id)createWithParam:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 - (void)viewDidLoad;
 

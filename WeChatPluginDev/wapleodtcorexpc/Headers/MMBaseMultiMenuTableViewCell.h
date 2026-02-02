@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSIndexPath, NSMutableArray, NSString, UIColor, UIGestureRecognizer, UIImageView, UIView;
 
 @interface MMBaseMultiMenuTableViewCell
@@ -35,7 +37,6 @@
     UIView *_rootContentView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidDisplayMenuWithGestures; // @synthesize forbidDisplayMenuWithGestures=_forbidDisplayMenuWithGestures;
 @property(retain, nonatomic) UIView *rootContentView; // @synthesize rootContentView=_rootContentView;
 @property(nonatomic) _Bool keepSwipeStateOnResue; // @synthesize keepSwipeStateOnResue=_keepSwipeStateOnResue;
@@ -98,4 +99,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString;
 @protocol MMMusicLiveCommentLikeOperationHandler;
 
@@ -15,7 +17,6 @@
     NSString *_mvPublisherName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mvPublisherName; // @synthesize mvPublisherName=_mvPublisherName;
 @property(copy, nonatomic) CDUnknownBlockType likeOperationHandler; // @synthesize likeOperationHandler=_likeOperationHandler;
 @property(nonatomic) _Bool isLiked; // @synthesize isLiked=_isLiked;
@@ -24,4 +25,3 @@
 - (id)initWithMsg:(id)arg1;
 
 @end
-

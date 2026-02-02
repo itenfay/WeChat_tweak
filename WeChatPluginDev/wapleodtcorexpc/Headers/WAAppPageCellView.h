@@ -22,7 +22,6 @@
     NSDate *_visibleDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *visibleDate; // @synthesize visibleDate=_visibleDate;
 @property(nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(retain, nonatomic) UIImageView *playIconImgView; // @synthesize playIconImgView=_playIconImgView;

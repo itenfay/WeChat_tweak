@@ -20,7 +20,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int cert_encrypt_type; // @synthesize cert_encrypt_type=_cert_encrypt_type;
 @property(copy, nonatomic) NSString *crt_item_logo_url; // @synthesize crt_item_logo_url=_crt_item_logo_url;
 @property(copy, nonatomic) NSString *crt_status_name; // @synthesize crt_status_name=_crt_status_name;

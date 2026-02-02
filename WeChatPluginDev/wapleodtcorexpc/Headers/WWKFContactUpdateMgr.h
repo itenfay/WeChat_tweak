@@ -12,7 +12,6 @@
     NSMutableDictionary *_dictUserName2RequestingTasks;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictUserName2RequestingTasks; // @synthesize dictUserName2RequestingTasks=_dictUserName2RequestingTasks;
 @property(retain, nonatomic) NSMutableArray *queueWaitingTasks; // @synthesize queueWaitingTasks=_queueWaitingTasks;
 @property(retain, nonatomic) WWKFContactOpLogic *contactOpLogic; // @synthesize contactOpLogic=_contactOpLogic;

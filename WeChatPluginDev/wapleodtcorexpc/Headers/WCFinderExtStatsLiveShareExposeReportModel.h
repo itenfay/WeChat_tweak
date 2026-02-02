@@ -14,7 +14,6 @@
     unsigned long long _exposeScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long exposeScene; // @synthesize exposeScene=_exposeScene;
 @property(retain, nonatomic) NSString *gMsgID; // @synthesize gMsgID=_gMsgID;
 @property(nonatomic) unsigned long long autoPlayDurationMS; // @synthesize autoPlayDurationMS=_autoPlayDurationMS;

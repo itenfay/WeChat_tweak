@@ -14,7 +14,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_becomeGuardianDic;
 + (void)PBArrayAdd_agreenAuthorizationDic;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *becomeGuardianDic; // @synthesize becomeGuardianDic=_becomeGuardianDic;
 @property(retain, nonatomic) NSMutableDictionary *agreenAuthorizationDic; // @synthesize agreenAuthorizationDic=_agreenAuthorizationDic;
 - (id)getPBPropertyTable;

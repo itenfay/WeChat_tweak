@@ -14,7 +14,6 @@
 }
 
 + (id)modelContainerPropertyMappingForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Pattern; // @synthesize Pattern=_Pattern;
 @property(nonatomic) long long AbsoluteTime; // @synthesize AbsoluteTime=_AbsoluteTime;
 

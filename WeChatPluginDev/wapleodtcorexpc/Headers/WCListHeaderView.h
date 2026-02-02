@@ -33,7 +33,6 @@
     TLProfileNicknameContainerView *_nicknameContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TLProfileNicknameContainerView *nicknameContainerView; // @synthesize nicknameContainerView=_nicknameContainerView;
 @property(nonatomic) long long homepageType; // @synthesize homepageType=_homepageType;
 @property(retain, nonatomic) UILabel *m_nickLabel; // @synthesize m_nickLabel=_m_nickLabel;

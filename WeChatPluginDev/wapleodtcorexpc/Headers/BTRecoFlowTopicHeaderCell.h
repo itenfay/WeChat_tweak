@@ -16,7 +16,6 @@
     NSMutableArray *_webImageViewList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *webImageViewList; // @synthesize webImageViewList=_webImageViewList;
 @property(retain, nonatomic) MMWebImageView *friend2Icon; // @synthesize friend2Icon=_friend2Icon;
 @property(retain, nonatomic) MMWebImageView *friend1Icon; // @synthesize friend1Icon=_friend1Icon;

@@ -17,7 +17,6 @@
     id <MMWebViewPresetUIChildViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forbidSetTailBgView; // @synthesize forbidSetTailBgView=_forbidSetTailBgView;
 @property(nonatomic) _Bool disableFixWebviewY; // @synthesize disableFixWebviewY=_disableFixWebviewY;
 @property(nonatomic) _Bool isWebviewHandleTopBarEvent; // @synthesize isWebviewHandleTopBarEvent=_isWebviewHandleTopBarEvent;

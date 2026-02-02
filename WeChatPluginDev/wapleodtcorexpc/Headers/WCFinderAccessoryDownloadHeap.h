@@ -13,7 +13,6 @@
     NSMutableDictionary *_item2IndexMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *item2IndexMap; // @synthesize item2IndexMap=_item2IndexMap;
 @property(retain, nonatomic) NSMutableArray *itemArray; // @synthesize itemArray=_itemArray;
 - (id)itemAtIndex:(long long)arg1;

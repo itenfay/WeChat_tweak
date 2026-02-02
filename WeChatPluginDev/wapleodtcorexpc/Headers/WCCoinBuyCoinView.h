@@ -16,7 +16,6 @@
     WCPayBuyCoinDetailView *_buyCoinDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayBuyCoinDetailView *buyCoinDetailView; // @synthesize buyCoinDetailView=_buyCoinDetailView;
 @property(nonatomic) unsigned long long panelShowType; // @synthesize panelShowType=_panelShowType;
 @property(nonatomic) _Bool alwaysDarkMode; // @synthesize alwaysDarkMode=_alwaysDarkMode;

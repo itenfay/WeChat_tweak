@@ -16,7 +16,6 @@
     NSMutableArray *aryADIconUrlList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *aryADIconUrlList; // @synthesize aryADIconUrlList;
 @property(retain, nonatomic) NSString *nsSignature; // @synthesize nsSignature;
 @property(retain, nonatomic) NSString *nsJumpUrl; // @synthesize nsJumpUrl;

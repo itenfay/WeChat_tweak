@@ -22,7 +22,6 @@
 
 + (id)lyricsWithMusicInfo:(id)arg1;
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBGMSelectedTabTableViewCellConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) id <MMBGMSelectedMusicDataProtocol> musicInfo; // @synthesize musicInfo=_musicInfo;
 @property(retain, nonatomic) UIView *separator; // @synthesize separator=_separator;

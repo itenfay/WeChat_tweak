@@ -24,7 +24,6 @@
     struct CGSize _lastViewSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cachedUnoccupiedSeatViewList; // @synthesize cachedUnoccupiedSeatViewList=_cachedUnoccupiedSeatViewList;
 @property(retain, nonatomic) NSMutableArray *unoccupiedSeatViewList; // @synthesize unoccupiedSeatViewList=_unoccupiedSeatViewList;
 @property(nonatomic) struct CGSize lastViewSize; // @synthesize lastViewSize=_lastViewSize;

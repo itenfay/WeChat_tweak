@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_semaphore;
 
@@ -13,7 +14,6 @@
     unsigned long long _waitMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long waitMs; // @synthesize waitMs=_waitMs;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 - (void)signal;
@@ -23,4 +23,3 @@
 - (id)init;
 
 @end
-

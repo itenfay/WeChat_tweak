@@ -14,7 +14,6 @@
     CMessageWrap *wrapMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CMessageWrap *wrapMsg; // @synthesize wrapMsg;
 @property(nonatomic) unsigned int totalLen; // @synthesize totalLen;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5;

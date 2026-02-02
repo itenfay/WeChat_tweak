@@ -14,7 +14,6 @@
     NSString *m_nsOperatorName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsOperatorName; // @synthesize m_nsOperatorName;
 @property(retain, nonatomic) NSString *m_nsUserName; // @synthesize m_nsUserName;
 @property(retain, nonatomic) NSString *m_nsTelephoneNumber; // @synthesize m_nsTelephoneNumber;

@@ -14,7 +14,6 @@
     WCAccountBindPhoneControlLogic *_bindLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAccountBindPhoneControlLogic *bindLogic; // @synthesize bindLogic=_bindLogic;
 @property(retain, nonatomic) PasswordLogic *passwordLogic; // @synthesize passwordLogic=_passwordLogic;
 @property(nonatomic) _Bool shouldQueryHasPasswd; // @synthesize shouldQueryHasPasswd=_shouldQueryHasPasswd;

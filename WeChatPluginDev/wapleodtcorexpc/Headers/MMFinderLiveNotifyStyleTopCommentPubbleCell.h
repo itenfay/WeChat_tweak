@@ -12,7 +12,6 @@
     UIView *_scrollViewContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *scrollViewContainerView; // @synthesize scrollViewContainerView=_scrollViewContainerView;
 @property(retain, nonatomic) MMFinderLiveNotifyStyleTopCommentPubbleSignLabelContainer *labelContainer; // @synthesize labelContainer=_labelContainer;
 @property(retain, nonatomic) UIScrollView *commentScrollView; // @synthesize commentScrollView=_commentScrollView;

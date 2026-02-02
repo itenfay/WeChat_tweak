@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem, WCFinderLiveMakePackageOrderParams;
 
 @interface WCFinderMakePackageOrderCGI
@@ -17,7 +19,6 @@
     WCFinderLiveMakePackageOrderParams *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveMakePackageOrderParams *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
 @property(copy, nonatomic) NSString *orderRequestId; // @synthesize orderRequestId=_orderRequestId;
@@ -32,4 +33,3 @@
 - (id)initWithFinderTaskId:(id)arg1 params:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 
 @end
-

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderCommByPass, FinderRelatedRecommendTips, FinderStreamLayoutInfo, MMTimer, NSArray, NSData, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCFinderAbstractTask, WCFinderOpenTimelineParams, WCFinderRedDotCtrlInfo;
 @protocol WCFinderFeedMachineVMDelegate;
 
@@ -71,7 +73,6 @@
     unsigned long long _topRefreshCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long topRefreshCount; // @synthesize topRefreshCount=_topRefreshCount;
 @property(retain, nonatomic) FinderRelatedRecommendTips *relatedRecommendTips; // @synthesize relatedRecommendTips=_relatedRecommendTips;
 @property(nonatomic) _Bool enterFeedByAppend; // @synthesize enterFeedByAppend=_enterFeedByAppend;
@@ -255,4 +256,3 @@
 @property(readonly) Class superclass;
 
 @end
-

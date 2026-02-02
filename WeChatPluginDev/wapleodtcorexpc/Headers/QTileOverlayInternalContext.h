@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class QTileOverlayHandler;
 
@@ -14,10 +15,8 @@
     CDUnknownBlockType _writeTileBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType writeTileBlock; // @synthesize writeTileBlock=_writeTileBlock;
 @property(copy, nonatomic) CDUnknownBlockType loadTileBlock; // @synthesize loadTileBlock=_loadTileBlock;
 @property(nonatomic) __weak QTileOverlayHandler *payload; // @synthesize payload=_payload;
 
 @end
-

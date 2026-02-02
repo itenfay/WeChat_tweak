@@ -13,7 +13,6 @@
     MMUIImageView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) BizRecentReadNoMoreDataLabel *noMoreDataView; // @synthesize noMoreDataView=_noMoreDataView;
 - (void)setState:(unsigned int)arg1;

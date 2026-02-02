@@ -18,7 +18,6 @@
     struct _NSRange _nextRange;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nextSessions; // @synthesize nextSessions=_nextSessions;
 @property(nonatomic) struct _NSRange nextRange; // @synthesize nextRange=_nextRange;
 @property(retain, nonatomic) WNContentStorage *nextContent; // @synthesize nextContent=_nextContent;

@@ -20,7 +20,6 @@
     MMPickLocationViewController *_locationViewCtrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMPickLocationViewController *locationViewCtrl; // @synthesize locationViewCtrl=_locationViewCtrl;
 @property(retain, nonatomic) NSMutableArray *arrAttachments; // @synthesize arrAttachments=_arrAttachments;
 @property(nonatomic) unsigned int mmassetCount; // @synthesize mmassetCount=_mmassetCount;

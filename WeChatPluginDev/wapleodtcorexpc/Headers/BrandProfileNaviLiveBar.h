@@ -15,7 +15,6 @@
     MMUIButton *_clickButtonMask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *clickButtonMask; // @synthesize clickButtonMask=_clickButtonMask;
 @property(retain, nonatomic) MMUIImageView *finderArrow; // @synthesize finderArrow=_finderArrow;
 @property(retain, nonatomic) MMUILabel *finderLabel; // @synthesize finderLabel=_finderLabel;

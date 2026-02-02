@@ -63,7 +63,6 @@
     unsigned long long _maskedCorners;
 }
 
-- (void).cxx_destruct;
 @property unsigned long long maskedCorners; // @synthesize maskedCorners=_maskedCorners;
 @property(nonatomic) _Bool m_isRefreshing; // @synthesize m_isRefreshing=_m_isRefreshing;
 @property(nonatomic) _Bool useStyleLightInterface; // @synthesize useStyleLightInterface=_useStyleLightInterface;

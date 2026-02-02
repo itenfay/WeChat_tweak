@@ -13,7 +13,6 @@
     NSString *_debugA8Key;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *debugA8Key; // @synthesize debugA8Key=_debugA8Key;
 @property(copy, nonatomic) NSString *debugPkgUrl; // @synthesize debugPkgUrl=_debugPkgUrl;
 - (id)description;

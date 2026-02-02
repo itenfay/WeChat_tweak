@@ -19,7 +19,6 @@
 + (_Bool)shouldShowSuffixTitleWithTitle:(id)arg1 font:(id)arg2 width:(double)arg3;
 + (double)getTitleWidthWithTitle:(id)arg1 authInfo:(id)arg2 font:(id)arg3 width:(double)arg4;
 + (double)getTitleWidthWithTitle:(id)arg1 suffixTitle:(id)arg2 font:(id)arg3 width:(double)arg4;
-- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) __weak RichTextView *suffixTitleView; // @synthesize suffixTitleView=_suffixTitleView;

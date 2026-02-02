@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UITableViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton;
 
@@ -14,7 +15,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType viewEventAction; // @synthesize viewEventAction=_viewEventAction;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

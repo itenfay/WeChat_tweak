@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, MMTimer, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
@@ -23,7 +25,6 @@
 + (unsigned long long)cleanCacheMgrMakeToClean;
 + (void)showActivityViewControllerWithActivityItems:(id)arg1 excludedActivityTypes:(id)arg2 fromViewController:(id)arg3 sourceRect:(struct CGRect)arg4;
 + (void)showActivityViewControllerWithActivityItems:(id)arg1 excludedActivityTypes:(id)arg2 fromViewController:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sessionRefreshQueue; // @synthesize sessionRefreshQueue=_sessionRefreshQueue;
 @property(retain, nonatomic) NSMutableSet *headImgHashUsernameSet; // @synthesize headImgHashUsernameSet=_headImgHashUsernameSet;
 @property(nonatomic) _Bool isRefreshingSessionKey; // @synthesize isRefreshingSessionKey=_isRefreshingSessionKey;
@@ -111,4 +112,3 @@
 @property(readonly) Class superclass;
 
 @end
-

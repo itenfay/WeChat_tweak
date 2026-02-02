@@ -14,7 +14,6 @@
     NSMutableDictionary *_energyAdjustTaskDict;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int currFrameRate; // @synthesize currFrameRate=_currFrameRate;
 @property(retain, nonatomic) NSMutableDictionary *energyAdjustTaskDict; // @synthesize energyAdjustTaskDict=_energyAdjustTaskDict;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

@@ -15,7 +15,6 @@
 
 + (id)filterWithPath:(id)arg1;
 + (id)filterWithPathArray:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *hashValue; // @synthesize hashValue=_hashValue;
 @property(retain, nonatomic) NSArray *filterGroup; // @synthesize filterGroup=_filterGroup;
 - (id)description;

@@ -19,7 +19,6 @@
     MicSetting_PurchaseMicSetting *_correspondingMicSetting;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MicSetting_PurchaseMicSetting *correspondingMicSetting; // @synthesize correspondingMicSetting=_correspondingMicSetting;
 @property(retain, nonatomic) FinderJumpInfo *ratingJumpInfo; // @synthesize ratingJumpInfo=_ratingJumpInfo;
 @property(nonatomic) unsigned long long currentWaitingUserCount; // @synthesize currentWaitingUserCount=_currentWaitingUserCount;

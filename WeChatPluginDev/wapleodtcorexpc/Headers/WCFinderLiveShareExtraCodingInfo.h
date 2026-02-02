@@ -14,7 +14,6 @@
     NSMutableArray *_entranceAdInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *entranceAdInfos; // @synthesize entranceAdInfos=_entranceAdInfos;
 @property(retain, nonatomic) FinderLiveCoverInfo *coverInfo; // @synthesize coverInfo=_coverInfo;
 @property(retain, nonatomic) LiveSdkInfo *liveSdkInfo; // @synthesize liveSdkInfo=_liveSdkInfo;

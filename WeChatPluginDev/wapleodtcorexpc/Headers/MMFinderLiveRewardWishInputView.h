@@ -20,7 +20,6 @@
     unsigned long long _maxTargetCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxTargetCount; // @synthesize maxTargetCount=_maxTargetCount;
 @property(nonatomic) __weak MMFinderLiveRewardWishView *targetWishView; // @synthesize targetWishView=_targetWishView;
 @property(nonatomic) __weak id <MMFinderLiveRewardWishInputViewDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;

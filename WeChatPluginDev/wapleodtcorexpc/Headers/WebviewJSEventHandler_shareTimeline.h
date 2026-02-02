@@ -10,7 +10,6 @@
     ShareTimelineBaseImpl *_shareTimelineImpl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ShareTimelineBaseImpl *shareTimelineImpl; // @synthesize shareTimelineImpl=_shareTimelineImpl;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;
 

@@ -29,7 +29,6 @@
 }
 
 + (void)showRecordStartFailTips:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bRealTimeTranslate; // @synthesize bRealTimeTranslate=_bRealTimeTranslate;
 @property(nonatomic) _Bool bCanStartTextViewAnimation; // @synthesize bCanStartTextViewAnimation=_bCanStartTextViewAnimation;
 @property(nonatomic) _Bool bTransStartSucc; // @synthesize bTransStartSucc=_bTransStartSucc;

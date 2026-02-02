@@ -84,7 +84,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *ConStrRes3; // @synthesize ConStrRes3=_ConStrRes3;
 @property(retain, nonatomic) NSString *packageId; // @synthesize packageId=_packageId;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;

@@ -28,7 +28,6 @@
     WCFinderBaseCgi *_getRelatedCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;
 @property(retain, nonatomic) WCFinderBaseCgi *getRelatedCgi; // @synthesize getRelatedCgi=_getRelatedCgi;
 @property(nonatomic) unsigned long long requestScene; // @synthesize requestScene=_requestScene;

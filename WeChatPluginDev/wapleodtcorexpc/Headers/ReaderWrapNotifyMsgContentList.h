@@ -19,7 +19,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nightPicUrl; // @synthesize nightPicUrl=_nightPicUrl;
 @property(retain, nonatomic) NSString *picUrl; // @synthesize picUrl=_picUrl;
 @property(nonatomic) _Bool fontBold; // @synthesize fontBold=_fontBold;

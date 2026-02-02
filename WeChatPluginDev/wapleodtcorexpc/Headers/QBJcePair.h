@@ -16,7 +16,6 @@
 + (id)analyzeExtStr:(id)arg1;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) id key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

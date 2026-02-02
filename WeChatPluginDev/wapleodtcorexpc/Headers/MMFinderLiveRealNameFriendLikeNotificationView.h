@@ -20,7 +20,6 @@
 
 + (struct CGSize)sizeWithNotification:(id)arg1 maxWidth:(double)arg2;
 + (id)displayContent:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveRealNameFriendLikeNotificationMsg *notification; // @synthesize notification=_notification;
 @property(retain, nonatomic) MMLiveGradientLayerView *bgGradientView; // @synthesize bgGradientView=_bgGradientView;
 @property(retain, nonatomic) UIImageView *likeIconView; // @synthesize likeIconView=_likeIconView;

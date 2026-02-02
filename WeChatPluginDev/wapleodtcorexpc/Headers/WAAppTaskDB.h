@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCTDatabase, WCTTable;
 
@@ -16,7 +17,6 @@
     WCTTable *_tableLocalStorageLengthInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain) WCTTable *tableLocalStorageLengthInfo; // @synthesize tableLocalStorageLengthInfo=_tableLocalStorageLengthInfo;
 @property(retain) WCTTable *tableLocalStorageDataInfo_1; // @synthesize tableLocalStorageDataInfo_1=_tableLocalStorageDataInfo_1;
 @property(retain) WCTTable *tableLocalStorageMainInfo; // @synthesize tableLocalStorageMainInfo=_tableLocalStorageMainInfo;
@@ -46,4 +46,3 @@
 - (id)initWithAppID:(id)arg1;
 
 @end
-

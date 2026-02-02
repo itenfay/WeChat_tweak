@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, UIButton, UILabel, WCFinderFeedFlowView, WCFinderStreamProfilePostTipsFeedFlowViewModel;
 
 @interface WCFinderPostTipsFlowViewController
@@ -16,7 +18,6 @@
     CDUnknownBlockType _clickPostButtonBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clickPostButtonBlock; // @synthesize clickPostButtonBlock=_clickPostButtonBlock;
 @property(nonatomic) unsigned long long enterTimeMS; // @synthesize enterTimeMS=_enterTimeMS;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -42,7 +42,6 @@
 + (double)cellHeightWith:(id)arg1 width:(double)arg2 forceExpand:(_Bool)arg3;
 + (id)getContentWithComment:(id)arg1;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderCommentTranslateView *translateView; // @synthesize translateView=_translateView;
 @property(retain, nonatomic) UIAccessibilityElement *likeAccessibility; // @synthesize likeAccessibility=_likeAccessibility;
 @property(retain, nonatomic) NSMutableArray *accessibilityElements; // @synthesize accessibilityElements=_accessibilityElements;

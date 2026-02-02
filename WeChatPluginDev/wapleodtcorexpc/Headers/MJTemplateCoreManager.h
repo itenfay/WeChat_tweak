@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MJTemplateSessionQueue, MMContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, OMJMaasCore;
 @protocol OS_dispatch_queue;
 
@@ -24,7 +26,6 @@
     NSMutableDictionary *_taskStartTimeDictionary;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *taskStartTimeDictionary; // @synthesize taskStartTimeDictionary=_taskStartTimeDictionary;
 @property(nonatomic) _Bool isCleaningCache; // @synthesize isCleaningCache=_isCleaningCache;
 @property(retain, nonatomic) MJTemplateSessionQueue *imageEditSessionQueue; // @synthesize imageEditSessionQueue=_imageEditSessionQueue;
@@ -93,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

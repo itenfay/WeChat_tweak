@@ -14,7 +14,6 @@
     MMFinderLiveWecoinLabelViewConfig *_config;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveWecoinLabelViewConfig *config; // @synthesize config=_config;
 @property(retain, nonatomic) UIImageView *coinImageView; // @synthesize coinImageView=_coinImageView;
 @property(retain, nonatomic) UILabel *coinLabel; // @synthesize coinLabel=_coinLabel;

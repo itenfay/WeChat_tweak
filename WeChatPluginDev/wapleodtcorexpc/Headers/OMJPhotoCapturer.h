@@ -15,7 +15,6 @@
     NSMutableArray *_photos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *photos; // @synthesize photos=_photos;
 @property(nonatomic) __weak id <OMJPhotoCapturerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AVCapturePhotoSettings *requestedPhotoSettings; // @synthesize requestedPhotoSettings=_requestedPhotoSettings;

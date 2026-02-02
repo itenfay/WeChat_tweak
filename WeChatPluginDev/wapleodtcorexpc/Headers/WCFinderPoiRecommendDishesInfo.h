@@ -51,7 +51,6 @@
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_commentScene;
 + (void)PBArrayAdd_poiId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderJumpInfo *footerJumpInfo; // @synthesize footerJumpInfo=_footerJumpInfo;
 @property(retain, nonatomic) WCFinderPoiRecommendDishesArray *dishesArray; // @synthesize dishesArray=_dishesArray;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

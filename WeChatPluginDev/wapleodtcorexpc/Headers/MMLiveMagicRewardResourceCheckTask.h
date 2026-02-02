@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class GiftNewCustomizationMagicRewardResource, NSMutableArray;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _resourceStateChangeCallback;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resourceStateChangeCallback; // @synthesize resourceStateChangeCallback=_resourceStateChangeCallback;
 @property(nonatomic) _Bool isChecking; // @synthesize isChecking=_isChecking;
 @property(retain, nonatomic) NSMutableArray *callbackObjList; // @synthesize callbackObjList=_callbackObjList;
@@ -35,4 +35,3 @@
 - (id)initWithMagicRewardResource:(id)arg1;
 
 @end
-

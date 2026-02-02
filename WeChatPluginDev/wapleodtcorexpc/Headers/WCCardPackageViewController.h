@@ -28,7 +28,6 @@
     id <WCCardPackageViewControllerDelegate> delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool fromMoreViewController; // @synthesize fromMoreViewController=_fromMoreViewController;
 @property(nonatomic) __weak id <WCCardPackageViewControllerDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) _Bool fromShareCardList; // @synthesize fromShareCardList;

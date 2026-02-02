@@ -15,7 +15,6 @@
     MISSING_TYPE *statusCollection;
 }
 
-- (void).cxx_destruct;
 - (void)reportThatFinishSwitchWithLive:(id)arg1 success:(_Bool)arg2;
 - (void)reportThatStartSwitchWithLive:(id)arg1 startQuality:(long long)arg2 targetQuality:(long long)arg3 smooth:(_Bool)arg4 manually:(_Bool)arg5;
 - (void)onStartCustomPixelTransferChange;

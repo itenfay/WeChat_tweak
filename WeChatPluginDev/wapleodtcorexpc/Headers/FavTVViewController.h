@@ -10,7 +10,6 @@
     FavoritesItem *m_favItem;
 }
 
-- (void).cxx_destruct;
 - (void)onEditTVTag;
 - (void)onDeleteTV;
 - (void)didReceiveMemoryWarning;

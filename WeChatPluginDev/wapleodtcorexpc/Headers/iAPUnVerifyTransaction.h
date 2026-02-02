@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_uiTransactionDate;
 + (void)PBArrayAdd_dtReceipt;
 + (void)PBArrayAdd_nsProductIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int uiTransactionDate; // @synthesize uiTransactionDate=_uiTransactionDate;
 @property(retain, nonatomic) NSData *dtReceipt; // @synthesize dtReceipt=_dtReceipt;
 @property(retain, nonatomic) NSString *nsProductIdentifier; // @synthesize nsProductIdentifier=_nsProductIdentifier;

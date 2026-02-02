@@ -13,7 +13,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) unsigned long long sourceScene; // @synthesize sourceScene=_sourceScene;
 - (void)reportProfileNoticeOk:(unsigned long long)arg1 withNoticeInfo:(id)arg2;

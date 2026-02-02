@@ -14,7 +14,6 @@
     long long _operationType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long operationType; // @synthesize operationType=_operationType;
 @property(nonatomic) long long assetSource; // @synthesize assetSource=_assetSource;
 @property(retain, nonatomic) MMAssetInfo *assetInfo; // @synthesize assetInfo=_assetInfo;

@@ -12,7 +12,6 @@
     NSString *taskBizKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bIsPresented; // @synthesize bIsPresented=_bIsPresented;
 @property(retain, nonatomic) NSString *taskBizKey; // @synthesize taskBizKey;
 @property(nonatomic) double taskAddTime; // @synthesize taskAddTime;

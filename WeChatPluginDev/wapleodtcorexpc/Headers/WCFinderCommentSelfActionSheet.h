@@ -11,7 +11,6 @@
     NSString *_musicSubTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *musicSubTitle; // @synthesize musicSubTitle=_musicSubTitle;
 @property(copy, nonatomic) NSString *musicTitle; // @synthesize musicTitle=_musicTitle;
 - (id)getCustomHeadView;

@@ -13,7 +13,6 @@
     MinimizeTaskContainerInfo *_contentInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MinimizeTaskContainerInfo *contentInfo; // @synthesize contentInfo=_contentInfo;
 @property(retain, nonatomic) NSString *taskKey; // @synthesize taskKey=_taskKey;
 

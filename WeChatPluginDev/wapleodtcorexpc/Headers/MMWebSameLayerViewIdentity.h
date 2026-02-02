@@ -12,7 +12,6 @@
     NSDictionary *m_dict;
 }
 
-- (void).cxx_destruct;
 - (id)description;
 - (double)maxDiff;
 - (struct CGRect)targetFrame;

@@ -16,7 +16,6 @@
     WCFinderDataItem *_fromDataItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderDataItem *fromDataItem; // @synthesize fromDataItem=_fromDataItem;
 @property(copy, nonatomic) NSString *fromFeedId; // @synthesize fromFeedId=_fromFeedId;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;

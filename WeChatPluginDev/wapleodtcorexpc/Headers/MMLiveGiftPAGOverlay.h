@@ -13,7 +13,6 @@
     NSMutableArray *_tagLabelList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tagLabelList; // @synthesize tagLabelList=_tagLabelList;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (void)onGiftPAGViewDisappear:(id)arg1 taskId:(id)arg2;

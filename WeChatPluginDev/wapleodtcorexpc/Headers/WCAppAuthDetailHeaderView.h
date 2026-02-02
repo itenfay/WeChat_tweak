@@ -19,7 +19,6 @@
     MMUILabel *_descLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UIView *appTypeBgView; // @synthesize appTypeBgView=_appTypeBgView;
 @property(retain, nonatomic) MMUILabel *appTypeLabel; // @synthesize appTypeLabel=_appTypeLabel;

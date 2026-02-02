@@ -16,7 +16,6 @@
     NSDateFormatter *m_dateFormatter;
 }
 
-- (void).cxx_destruct;
 - (void)onMemoryRecordUploadCompleted:(_Bool)arg1;
 - (void)MMPickerViewDidChooseRow:(long long)arg1 atSession:(long long)arg2;
 - (void)onUploadButtonClicked:(id)arg1;

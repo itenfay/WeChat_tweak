@@ -12,7 +12,6 @@
     WAAppTaskReferrerInfo *_backReferrerInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppTaskReferrerInfo *backReferrerInfo; // @synthesize backReferrerInfo=_backReferrerInfo;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;

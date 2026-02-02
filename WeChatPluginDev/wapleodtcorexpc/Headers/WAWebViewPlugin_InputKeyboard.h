@@ -30,7 +30,6 @@
     NSTimer *_ignoreSafeAreaChangeTimer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *ignoreSafeAreaChangeTimer; // @synthesize ignoreSafeAreaChangeTimer=_ignoreSafeAreaChangeTimer;
 @property(nonatomic) __weak id <WATextInputInterface> checkingField; // @synthesize checkingField=_checkingField;
 @property(nonatomic) double offset; // @synthesize offset=_offset;

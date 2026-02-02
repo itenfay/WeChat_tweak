@@ -10,7 +10,6 @@
     UIView *_contentView;
 }
 
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)getChildView:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setContentOffset:(struct CGPoint)arg1;

@@ -15,7 +15,6 @@
     NSString *_sessionId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int releaseScene; // @synthesize releaseScene=_releaseScene;
 @property(nonatomic) unsigned int preloadingOnEnter; // @synthesize preloadingOnEnter=_preloadingOnEnter;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;

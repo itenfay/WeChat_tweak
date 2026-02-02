@@ -16,7 +16,6 @@
     NSString *_alertId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *alertId; // @synthesize alertId=_alertId;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) unsigned long long liveId; // @synthesize liveId=_liveId;

@@ -26,7 +26,6 @@
     unsigned long long _cellStyle;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
 @property(nonatomic) _Bool bGroupMemberMsg; // @synthesize bGroupMemberMsg=_bGroupMemberMsg;
 @property(nonatomic) _Bool hiddenMode; // @synthesize hiddenMode=_hiddenMode;

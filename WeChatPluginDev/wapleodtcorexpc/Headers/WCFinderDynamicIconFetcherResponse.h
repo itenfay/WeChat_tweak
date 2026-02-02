@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, UIImage;
 
@@ -15,7 +16,6 @@
 }
 
 + (id)responseWithImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(nonatomic) _Bool filled; // @synthesize filled=_filled;
 @property(retain, nonatomic) UIImage *cacheImage; // @synthesize cacheImage=_cacheImage;
@@ -24,4 +24,3 @@
 - (void)cancel;
 
 @end
-

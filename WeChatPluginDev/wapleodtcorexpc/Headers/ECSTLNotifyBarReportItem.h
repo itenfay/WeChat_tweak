@@ -14,7 +14,6 @@
     NSString *_bizUserName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isClick; // @synthesize isClick=_isClick;
 @property(copy, nonatomic) NSString *bizUserName; // @synthesize bizUserName=_bizUserName;
 @property(nonatomic) unsigned int msgType; // @synthesize msgType=_msgType;

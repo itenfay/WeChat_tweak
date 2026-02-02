@@ -23,7 +23,6 @@
     WCCanvasComponentReportVideoFloatAreaInfo *_floatAreaInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCanvasComponentReportVideoFloatAreaInfo *floatAreaInfo; // @synthesize floatAreaInfo=_floatAreaInfo;
 @property(nonatomic) int isNewUI; // @synthesize isNewUI=_isNewUI;
 @property(nonatomic) unsigned long long clickSightIconCount; // @synthesize clickSightIconCount=_clickSightIconCount;

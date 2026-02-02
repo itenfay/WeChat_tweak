@@ -22,7 +22,6 @@
     struct CGSize _topicButtonSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long column; // @synthesize column=_column;
 @property(nonatomic) unsigned long long row; // @synthesize row=_row;
 @property(retain, nonatomic) NSAttributedString *topicAttributedStr; // @synthesize topicAttributedStr=_topicAttributedStr;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIButton.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButtonChainModel;
 
@@ -19,7 +20,6 @@
 }
 
 + (CDUnknownBlockType)zz_create;
-- (void).cxx_destruct;
 @property(nonatomic) double intrinsicContentVerticalMargin; // @synthesize intrinsicContentVerticalMargin=_intrinsicContentVerticalMargin;
 @property(nonatomic) double intrinsicContentHorizontalMargin; // @synthesize intrinsicContentHorizontalMargin=_intrinsicContentHorizontalMargin;
 @property(retain, nonatomic) id customObject; // @synthesize customObject=_customObject;
@@ -38,4 +38,3 @@
 @property(readonly, copy, nonatomic) MMUIButtonChainModel *zz_setup;
 
 @end
-

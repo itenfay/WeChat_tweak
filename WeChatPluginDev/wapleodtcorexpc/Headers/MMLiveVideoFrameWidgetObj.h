@@ -16,7 +16,6 @@
     CDStruct_76c2da79 _transformDescription;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
 @property(nonatomic) CDStruct_76c2da79 transformDescription; // @synthesize transformDescription=_transformDescription;
 @property(nonatomic) struct CGPoint normalizedAnchorPoint; // @synthesize normalizedAnchorPoint=_normalizedAnchorPoint;

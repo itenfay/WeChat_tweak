@@ -15,7 +15,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <MMFinderLiveScreenshotPosterHintViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MMFinderLiveScreenshotPosterLogic *screenshotPosterLogic; // @synthesize screenshotPosterLogic=_screenshotPosterLogic;

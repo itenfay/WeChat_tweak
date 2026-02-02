@@ -55,7 +55,6 @@
 }
 
 + (_Bool)launchDonateStepWAApp:(id)arg1 fromRank:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *focusInfoArray; // @synthesize focusInfoArray=_focusInfoArray;
 @property(retain, nonatomic) NSMutableArray *focusArray; // @synthesize focusArray=_focusArray;
 @property(retain, nonatomic) NSMutableArray *likeMeUserList; // @synthesize likeMeUserList=_likeMeUserList;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol TingDiscoverTapesService;
@@ -15,7 +16,6 @@
     NSMutableDictionary *_dictTaskContainer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dictTaskContainer; // @synthesize dictTaskContainer=_dictTaskContainer;
 @property(retain, nonatomic) id <TingDiscoverTapesService> discoverService; // @synthesize discoverService=_discoverService;
 @property(nonatomic) unsigned int taskId; // @synthesize taskId=_taskId;
@@ -40,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -13,7 +13,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int typeID; // @synthesize typeID=_typeID;
 - (id)initWithTypeId:(int)arg1 name:(id)arg2;

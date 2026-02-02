@@ -12,7 +12,6 @@
 }
 
 + (id)newInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsSourceUrl; // @synthesize nsSourceUrl=_nsSourceUrl;
 @property(retain, nonatomic) NSString *nsUrl; // @synthesize nsUrl=_nsUrl;
 - (id)getStyle;

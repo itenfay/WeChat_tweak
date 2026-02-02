@@ -14,7 +14,6 @@
     UITapGestureRecognizer *_selectTapGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *selectTapGesture; // @synthesize selectTapGesture=_selectTapGesture;
 @property(retain, nonatomic) MMUIImageView *selectDownIcon; // @synthesize selectDownIcon=_selectDownIcon;
 @property(retain, nonatomic) MMUILabel *yearMonthLabel; // @synthesize yearMonthLabel=_yearMonthLabel;

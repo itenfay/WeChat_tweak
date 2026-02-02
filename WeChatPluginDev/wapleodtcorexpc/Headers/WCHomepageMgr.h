@@ -26,7 +26,6 @@
 }
 
 + (id)homepageKeyWithUsername:(id)arg1 homepageType:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool prePageDayEndFlag; // @synthesize prePageDayEndFlag=_prePageDayEndFlag;
 @property(retain, nonatomic) NSMutableArray *m_cacheBeforeFirstJump; // @synthesize m_cacheBeforeFirstJump=_m_cacheBeforeFirstJump;
 @property(nonatomic) int beginHomePageCount; // @synthesize beginHomePageCount=_beginHomePageCount;

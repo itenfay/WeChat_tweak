@@ -31,7 +31,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) long long msgServerId; // @synthesize msgServerId=_msgServerId;
 @property(nonatomic) unsigned long long historyId; // @synthesize historyId=_historyId;
 @property(retain, nonatomic) NSString *chatName; // @synthesize chatName=_chatName;

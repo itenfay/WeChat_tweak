@@ -13,7 +13,6 @@
     MISSING_TYPE *useJitMode;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)onCanvasViewFirstFrameRendered:(unsigned int)arg1;
 - (void)onCanvasViewDestroy:(unsigned int)arg1 view:(id)arg2;

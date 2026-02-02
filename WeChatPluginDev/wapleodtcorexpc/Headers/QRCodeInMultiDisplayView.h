@@ -17,7 +17,6 @@
     MMTimer *_timer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) MMUILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property(retain, nonatomic) NSMutableArray *markDotViewList; // @synthesize markDotViewList=_markDotViewList;

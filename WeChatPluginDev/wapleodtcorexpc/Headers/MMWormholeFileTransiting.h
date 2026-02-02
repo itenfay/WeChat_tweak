@@ -14,7 +14,6 @@
     NSString *_directory;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *directory; // @synthesize directory=_directory;
 @property(copy, nonatomic) NSString *applicationGroupIdentifier; // @synthesize applicationGroupIdentifier=_applicationGroupIdentifier;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;

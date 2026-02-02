@@ -17,7 +17,6 @@
     struct CGRect _rcOriginFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUpdateFromViewWhenEnter; // @synthesize shouldUpdateFromViewWhenEnter=_shouldUpdateFromViewWhenEnter;
 @property(nonatomic) _Bool navControllerWrapped; // @synthesize navControllerWrapped=_navControllerWrapped;
 @property(nonatomic) struct CGRect rcOriginFrame; // @synthesize rcOriginFrame=_rcOriginFrame;

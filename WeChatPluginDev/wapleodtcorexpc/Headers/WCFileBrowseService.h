@@ -25,7 +25,6 @@
 
 + (id)p_getFileBrowseInfoSectionArray:(id)arg1;
 + (id)p_getFullDateStringOfTime:(unsigned int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFileBrowseKVLog *kvLogObj; // @synthesize kvLogObj=_kvLogObj;
 @property(nonatomic) _Bool bLoadingFavFile; // @synthesize bLoadingFavFile=_bLoadingFavFile;
 @property(nonatomic) _Bool bLoadingChatLogFile; // @synthesize bLoadingChatLogFile=_bLoadingChatLogFile;

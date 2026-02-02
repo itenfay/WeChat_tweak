@@ -14,7 +14,6 @@
 }
 
 + (struct CGSize)sizeWithFinderEmoticonComment:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderComment *comment; // @synthesize comment=_comment;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingTipsView; // @synthesize loadingTipsView=_loadingTipsView;
 @property(retain, nonatomic) UIImageView *emptyTipsView; // @synthesize emptyTipsView=_emptyTipsView;

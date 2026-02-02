@@ -14,7 +14,6 @@
     MMGrowTextView *_growTextView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMGrowTextView *growTextView; // @synthesize growTextView=_growTextView;
 @property(nonatomic) unsigned int pageLimit; // @synthesize pageLimit=_pageLimit;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;

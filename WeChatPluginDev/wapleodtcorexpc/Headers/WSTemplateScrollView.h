@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIScrollView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UIStackView;
 @protocol WSWebViewPluginableProtocol;
@@ -16,7 +17,6 @@
     struct CGRect _newlifeTabArea;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect newlifeTabArea; // @synthesize newlifeTabArea=_newlifeTabArea;
 @property(retain, nonatomic) NSMutableArray *templateContainers; // @synthesize templateContainers=_templateContainers;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -53,4 +53,3 @@
 @property(readonly) Class superclass;
 
 @end
-

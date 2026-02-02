@@ -15,7 +15,6 @@
     double _cellWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
 @property(retain, nonatomic) UIView *selectBGView; // @synthesize selectBGView=_selectBGView;
 @property(retain, nonatomic) UIView *darkMaskView; // @synthesize darkMaskView=_darkMaskView;

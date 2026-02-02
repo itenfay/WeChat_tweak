@@ -14,7 +14,6 @@
     NSString *_errMsg;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errMsg; // @synthesize errMsg=_errMsg;
 @property(nonatomic) int height; // @synthesize height=_height;
 @property(nonatomic) int width; // @synthesize width=_width;

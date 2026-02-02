@@ -12,7 +12,6 @@
     LVMainFeedViewController *_currentVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LVMainFeedViewController *currentVC; // @synthesize currentVC=_currentVC;
 - (void)receiveMemoryWarning:(id)arg1;
 - (void)onSurviveEnd;

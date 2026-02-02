@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIButton;
 
@@ -16,7 +17,6 @@
 }
 
 + (double)preferHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *navRightButton; // @synthesize navRightButton=_navRightButton;
 @property(retain, nonatomic) UIView *navLeftButton; // @synthesize navLeftButton=_navLeftButton;
 @property(copy, nonatomic) CDUnknownBlockType rightButtonActionCallback; // @synthesize rightButtonActionCallback=_rightButtonActionCallback;
@@ -35,4 +35,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

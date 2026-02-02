@@ -10,7 +10,6 @@
     UIView *_navBackground;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *navBackground; // @synthesize navBackground=_navBackground;
 - (void)honeyPaykeyboardDidHide:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;

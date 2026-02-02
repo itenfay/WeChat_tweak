@@ -14,7 +14,6 @@
     WCTTable *_revokeMsgTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *revokeMsgTable; // @synthesize revokeMsgTable=_revokeMsgTable;
 @property(retain, nonatomic) WCTTable *table; // @synthesize table=_table;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;

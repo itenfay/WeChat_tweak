@@ -11,7 +11,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned int readTime; // @synthesize readTime=_readTime;
 

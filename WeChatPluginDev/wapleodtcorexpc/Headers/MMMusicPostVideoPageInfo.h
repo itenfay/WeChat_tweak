@@ -13,7 +13,6 @@
     MMMusicPostVideoTabBaseController *_tabController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicPostVideoTabBaseController *tabController; // @synthesize tabController=_tabController;
 @property(retain, nonatomic) NSString *tabTitle; // @synthesize tabTitle=_tabTitle;
 

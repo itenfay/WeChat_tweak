@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSMutableString.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSMutableString (WAHTMLReport)
 - (_Bool)isHasAppend;
@@ -17,4 +18,3 @@
 - (long long)replaceOccurrencesOfRegex:(id)arg1 withString:(id)arg2 range:(struct _NSRange)arg3;
 - (long long)replaceOccurrencesOfRegex:(id)arg1 withString:(id)arg2;
 @end
-

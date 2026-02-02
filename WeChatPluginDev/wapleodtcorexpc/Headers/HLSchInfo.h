@@ -19,7 +19,6 @@
 
 + (_Bool)isJailbroken;
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id backObserver; // @synthesize backObserver=_backObserver;
 @property(nonatomic) struct __SCNetworkReachability *ref; // @synthesize ref=_ref;
 @property(nonatomic) long long schIndex; // @synthesize schIndex=_schIndex;

@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_jumpType;
 + (void)PBArrayAdd_jumpUrl;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int jumpType; // @synthesize jumpType=_jumpType;
 @property(copy, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
 - (id)initWithGameLifeJumpInfo:(id)arg1;

@@ -17,7 +17,6 @@
     MMGrowTextView *_textView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMGrowTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak MMUIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) EmoticonBoardView *emoticonBoardView; // @synthesize emoticonBoardView=_emoticonBoardView;

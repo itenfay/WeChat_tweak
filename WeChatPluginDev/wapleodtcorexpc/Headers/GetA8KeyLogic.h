@@ -45,7 +45,6 @@
     NSString *_fromBizUser;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromBizUser; // @synthesize fromBizUser=_fromBizUser;
 @property(nonatomic) unsigned int getA8KeyScene; // @synthesize getA8KeyScene=_getA8KeyScene;
 @property(nonatomic) unsigned int getA8keySubScene; // @synthesize getA8keySubScene=_getA8keySubScene;

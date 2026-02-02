@@ -17,7 +17,6 @@
 + (struct IStreamEncryptAndDecrypt *)createStreamEncryptIns:(id)arg1;
 + (_Bool)writeEKeyToEndOfFile:(id)arg1 ekey:(id)arg2;
 + (_Bool)fileIsExistWithPath:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long tailSize; // @synthesize tailSize=_tailSize;
 @property(readonly, nonatomic) NSString *ekey; // @synthesize ekey=_ekey;
 - (_Bool)isValidFile:(id)arg1;

@@ -19,7 +19,6 @@
     NSArray *_unreadCornerMessageCellModelArray;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *unreadCornerMessageCellModelArray; // @synthesize unreadCornerMessageCellModelArray=_unreadCornerMessageCellModelArray;
 @property(copy, nonatomic) NSArray *timestampReadCellModelArray; // @synthesize timestampReadCellModelArray=_timestampReadCellModelArray;
 @property(copy, nonatomic) NSArray *timestampUnreadCellModelArray; // @synthesize timestampUnreadCellModelArray=_timestampUnreadCellModelArray;

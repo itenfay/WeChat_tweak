@@ -15,7 +15,6 @@
     NSString *iconUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName;
 @property(retain, nonatomic) NSString *ticket; // @synthesize ticket;

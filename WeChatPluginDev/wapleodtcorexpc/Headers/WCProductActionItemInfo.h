@@ -19,7 +19,6 @@
     NSArray *imageUrlList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int index; // @synthesize index;
 @property(retain, nonatomic) NSArray *imageUrlList; // @synthesize imageUrlList;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType;

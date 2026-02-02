@@ -20,7 +20,6 @@
     struct CGRect _containerFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(nonatomic) long long currentSelectIndex; // @synthesize currentSelectIndex=_currentSelectIndex;
 @property(retain, nonatomic) NSArray *beautyInfos; // @synthesize beautyInfos=_beautyInfos;

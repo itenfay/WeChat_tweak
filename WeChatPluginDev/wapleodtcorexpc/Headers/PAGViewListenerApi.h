@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol FlutterBinaryMessenger;
 
@@ -12,7 +13,6 @@
     NSObject<FlutterBinaryMessenger> *_binaryMessenger;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<FlutterBinaryMessenger> *binaryMessenger; // @synthesize binaryMessenger=_binaryMessenger;
 - (void)onAnimationRepeatWithPagId:(id)arg1 Completion:(CDUnknownBlockType)arg2;
 - (void)onAnimationCancelWithPagId:(id)arg1 Completion:(CDUnknownBlockType)arg2;
@@ -22,4 +22,3 @@
 - (id)initWithBinaryMessenger:(id)arg1;
 
 @end
-

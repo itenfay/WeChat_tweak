@@ -14,7 +14,6 @@
 
 + (double)estimateLineHeight:(id)arg1 isBarrageItem:(_Bool)arg2;
 + (double)contentLeftMargin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *extraLayoutInfoDict; // @synthesize extraLayoutInfoDict=_extraLayoutInfoDict;
 - (_Bool)supportContentExpand;
 @property(readonly, nonatomic) MMLiveBaseTask<MMFinderLiveTaskFunctionPlugin> *finderLiveTask;

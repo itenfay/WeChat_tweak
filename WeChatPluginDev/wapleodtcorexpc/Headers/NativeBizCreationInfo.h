@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithRedPoint:(id)arg1 buffer:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *buffer; // @synthesize buffer=_buffer;
 @property(retain, nonatomic) NSNumber *redPoint; // @synthesize redPoint=_redPoint;
 - (id)toList;

@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_profilePhone;
 + (void)PBArrayAdd_profileMark;
 + (void)PBArrayAdd_userName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrProfileLabel; // @synthesize arrProfileLabel=_arrProfileLabel;
 @property(nonatomic) unsigned int lastTextMessageLocalId; // @synthesize lastTextMessageLocalId;
 @property(nonatomic) unsigned int recommendTime; // @synthesize recommendTime;

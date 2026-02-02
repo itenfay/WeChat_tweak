@@ -21,7 +21,6 @@
     long long _pageType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int enterMainFrameTime; // @synthesize enterMainFrameTime=_enterMainFrameTime;
 @property(nonatomic) _Bool hasEnterRemindContact; // @synthesize hasEnterRemindContact=_hasEnterRemindContact;
 @property(nonatomic) _Bool hasBackToMainFrame; // @synthesize hasBackToMainFrame=_hasBackToMainFrame;

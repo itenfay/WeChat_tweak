@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, SafeMethodChannel;
 
@@ -16,7 +17,6 @@
 + (void)registerWithRegistrar:(id)arg1;
 + (id)registerRegistrar:(id)arg1;
 + (id)pluginName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *consumers; // @synthesize consumers=_consumers;
 @property(retain, nonatomic) SafeMethodChannel *channel; // @synthesize channel=_channel;
 - (void)invokeMethod:(id)arg1 arguments:(id)arg2 result:(CDUnknownBlockType)arg3;
@@ -36,4 +36,3 @@
 @property(readonly) Class superclass;
 
 @end
-

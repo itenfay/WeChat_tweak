@@ -13,7 +13,6 @@
     WCFinderLiveAudienceComodityLogReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveAudienceComodityLogReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) WCFinderDataItem *finderDataItem; // @synthesize finderDataItem=_finderDataItem;
 - (void)reportEvent:(id)arg1 parameters:(id)arg2;

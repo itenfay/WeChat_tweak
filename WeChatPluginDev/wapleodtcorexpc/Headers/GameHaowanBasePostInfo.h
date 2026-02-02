@@ -15,7 +15,6 @@
     NSString *_videoId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needDelAfterPost; // @synthesize needDelAfterPost=_needDelAfterPost;
 @property(retain, nonatomic) NSString *videoId; // @synthesize videoId=_videoId;
 @property(nonatomic) _Bool isMiniGamePublish; // @synthesize isMiniGamePublish=_isMiniGamePublish;

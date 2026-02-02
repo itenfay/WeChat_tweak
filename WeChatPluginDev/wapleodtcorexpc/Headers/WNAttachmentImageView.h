@@ -16,7 +16,6 @@
 }
 
 + (double)getHeightOfAttachment:(id)arg1 withWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localImagePath; // @synthesize localImagePath=_localImagePath;
 @property(retain, nonatomic) WNImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) unsigned char status; // @synthesize status=_status;

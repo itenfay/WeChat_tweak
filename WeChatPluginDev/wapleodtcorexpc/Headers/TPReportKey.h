@@ -13,7 +13,6 @@
     NSString *_eventid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *eventid; // @synthesize eventid=_eventid;
 @property(copy, nonatomic) NSString *flowid; // @synthesize flowid=_flowid;
 

@@ -13,7 +13,6 @@
     MISSING_TYPE *frameSetName;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithRootConfig:(id)arg1 frameSetName:(id)arg2;
 

@@ -15,7 +15,6 @@
     struct CGSize _cropImageRatio;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *previewBulletinTitle; // @synthesize previewBulletinTitle=_previewBulletinTitle;
 @property(nonatomic) _Bool showPreviewButton; // @synthesize showPreviewButton=_showPreviewButton;
 @property(nonatomic) struct CGSize cropImageRatio; // @synthesize cropImageRatio=_cropImageRatio;

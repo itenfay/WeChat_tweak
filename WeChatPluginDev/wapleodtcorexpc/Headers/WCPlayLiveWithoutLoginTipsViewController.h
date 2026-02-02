@@ -14,7 +14,6 @@
     UIImageView *_indicateImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *indicateImageView; // @synthesize indicateImageView=_indicateImageView;
 @property(retain, nonatomic) MMUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) MMUIButton *confirmButton; // @synthesize confirmButton=_confirmButton;

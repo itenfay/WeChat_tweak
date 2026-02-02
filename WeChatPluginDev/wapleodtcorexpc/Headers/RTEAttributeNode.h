@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FavoritesItemDataField, NSObject, UIColor;
 @protocol NSCopying;
 
@@ -15,7 +17,6 @@
 }
 
 + (id)creatEmptyNote:(unsigned int)arg1 Length:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<NSCopying> *attributeInfo; // @synthesize attributeInfo=_attributeInfo;
 @property(nonatomic) _Bool effective; // @synthesize effective=_effective;
 @property(nonatomic) unsigned int nodeType; // @synthesize nodeType=_nodeType;
@@ -45,4 +46,3 @@
 @property(nonatomic) unsigned int headIndex;
 
 @end
-

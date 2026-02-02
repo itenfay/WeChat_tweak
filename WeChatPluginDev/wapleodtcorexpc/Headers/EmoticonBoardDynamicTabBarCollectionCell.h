@@ -16,7 +16,6 @@
     UIColor *_selectedBackgroundColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool allowManage; // @synthesize allowManage=_allowManage;
 @property(retain, nonatomic) UIColor *selectedBackgroundColor; // @synthesize selectedBackgroundColor=_selectedBackgroundColor;
 @property(retain, nonatomic) UIView *wxSelectedBGView; // @synthesize wxSelectedBGView=_wxSelectedBGView;

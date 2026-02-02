@@ -27,7 +27,6 @@
     NSHashTable *_observers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) FinderCouponWidgetsInfo *widgetCardInfo; // @synthesize widgetCardInfo=_widgetCardInfo;
 @property(nonatomic) _Bool isDuringReceiving; // @synthesize isDuringReceiving=_isDuringReceiving;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSCache, NSOperationQueue;
 
@@ -14,7 +15,6 @@
     NSCache *_memoryCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *memoryCache; // @synthesize memoryCache=_memoryCache;
 @property(retain, nonatomic) NSOperationQueue *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(readonly, nonatomic) _Bool isHighEnd; // @synthesize isHighEnd=_isHighEnd;
@@ -35,4 +35,3 @@
 - (id)init;
 
 @end
-

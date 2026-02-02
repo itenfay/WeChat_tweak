@@ -14,7 +14,6 @@
 }
 
 + (id)finderLiveCardProductShowcaseFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needRefresh; // @synthesize needRefresh=_needRefresh;
 @property(retain, nonatomic) NSArray *productInfos; // @synthesize productInfos=_productInfos;
 - (id)toFinderLiveCardProductShowcase;

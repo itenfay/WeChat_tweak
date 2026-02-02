@@ -27,7 +27,6 @@
     NSObject<SightQRCodeScannerDelegate> *_qrDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<SightQRCodeScannerDelegate> *qrDelegate; // @synthesize qrDelegate=_qrDelegate;
 @property(retain, nonatomic) NSString *qrData; // @synthesize qrData=_qrData;
 @property(retain, nonatomic) SightFocusView *focusView; // @synthesize focusView=_focusView;

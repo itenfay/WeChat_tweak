@@ -15,7 +15,6 @@
     MMKProfessionEditViewOnSelectProfessionCallback *m_callback;
 }
 
-- (void).cxx_destruct;
 - (void)setDefaultProfession:(int)arg1 name:(id)arg2;
 - (void)setOnSelectProfessionCallback:(id)arg1;
 - (void)setData:(id)arg1;

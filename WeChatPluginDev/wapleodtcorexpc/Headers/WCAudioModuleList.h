@@ -14,7 +14,6 @@
     NSMutableArray *_unitArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *unitArray; // @synthesize unitArray=_unitArray;
 @property(nonatomic) unsigned int unitCapacity; // @synthesize unitCapacity=_unitCapacity;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

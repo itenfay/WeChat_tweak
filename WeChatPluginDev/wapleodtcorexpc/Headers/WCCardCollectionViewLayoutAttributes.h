@@ -12,7 +12,6 @@
     UIColor *_backgroudColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroudColor; // @synthesize backgroudColor=_backgroudColor;
 
 @end

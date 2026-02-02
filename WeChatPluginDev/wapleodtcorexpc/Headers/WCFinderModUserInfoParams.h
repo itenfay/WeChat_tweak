@@ -41,7 +41,6 @@
 }
 
 + (unsigned long long)valueWithBOOL:(_Bool)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mjForbidReproduce; // @synthesize mjForbidReproduce=_mjForbidReproduce;
 @property(nonatomic) unsigned long long showLiveDataAtProfile; // @synthesize showLiveDataAtProfile=_showLiveDataAtProfile;
 @property(nonatomic) unsigned long long musicForbidReproduce; // @synthesize musicForbidReproduce=_musicForbidReproduce;

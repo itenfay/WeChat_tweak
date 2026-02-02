@@ -20,7 +20,6 @@
     CAAnimation *_currentScrollAnim;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAAnimation *currentScrollAnim; // @synthesize currentScrollAnim=_currentScrollAnim;
 @property(retain, nonatomic) MMMusicFadeOutLayer *fadeOutLayer; // @synthesize fadeOutLayer=_fadeOutLayer;
 @property(nonatomic) double animationInterval; // @synthesize animationInterval=_animationInterval;

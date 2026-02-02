@@ -19,7 +19,6 @@
     RichTextView *_contentTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *contentTextView; // @synthesize contentTextView=_contentTextView;
 @property(retain, nonatomic) UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;

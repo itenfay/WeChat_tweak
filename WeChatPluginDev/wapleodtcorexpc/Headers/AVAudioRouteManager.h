@@ -19,7 +19,6 @@
     unsigned long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) MMTimer *m_actingTimer; // @synthesize m_actingTimer=_m_actingTimer;
 @property(nonatomic) __weak id <AVAudioRouteManagerDelegate> delegate; // @synthesize delegate=_delegate;

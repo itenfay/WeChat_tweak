@@ -23,7 +23,6 @@
     NSString *_outputStreamId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *outputStreamId; // @synthesize outputStreamId=_outputStreamId;
 @property(copy, nonatomic) NSArray *mixStreams; // @synthesize mixStreams=_mixStreams;
 @property(nonatomic) unsigned long long audioChannels; // @synthesize audioChannels=_audioChannels;

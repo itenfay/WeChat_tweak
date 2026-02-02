@@ -16,7 +16,6 @@
     NSString *_m_emojiKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReloadPreview; // @synthesize needReloadPreview=_needReloadPreview;
 @property(retain, nonatomic) NSString *m_emojiKey; // @synthesize m_emojiKey=_m_emojiKey;
 @property(retain, nonatomic) UIButton *m_emojiPreviewView; // @synthesize m_emojiPreviewView=_m_emojiPreviewView;

@@ -10,7 +10,6 @@
     UIImageView *_guideImageView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *guideImageView; // @synthesize guideImageView=_guideImageView;
 - (void)layoutCustomizedTopView;
 - (void)loadCustomizedTopView;

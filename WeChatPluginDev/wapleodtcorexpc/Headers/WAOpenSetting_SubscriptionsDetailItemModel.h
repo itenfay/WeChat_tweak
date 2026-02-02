@@ -20,7 +20,6 @@
     long long _status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAcceptWithForceNotify; // @synthesize isAcceptWithForceNotify=_isAcceptWithForceNotify;
 @property(nonatomic) _Bool isForceNotifyTemplate; // @synthesize isForceNotifyTemplate=_isForceNotifyTemplate;
 @property(nonatomic) _Bool acceptAudio; // @synthesize acceptAudio=_acceptAudio;

@@ -10,7 +10,6 @@
     QGPIndex *_params;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QGPIndex *params; // @synthesize params=_params;
 
 @end

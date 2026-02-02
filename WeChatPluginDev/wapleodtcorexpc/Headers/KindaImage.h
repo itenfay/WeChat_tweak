@@ -18,7 +18,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool supportDynamicSize; // @synthesize supportDynamicSize=_supportDynamicSize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;

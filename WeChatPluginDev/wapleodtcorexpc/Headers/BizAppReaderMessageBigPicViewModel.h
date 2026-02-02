@@ -24,7 +24,6 @@
 }
 
 + (_Bool)isValidShareItem:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceNickname; // @synthesize sourceNickname=_sourceNickname;
 @property(copy, nonatomic) NSString *sourceUsrname; // @synthesize sourceUsrname=_sourceUsrname;
 @property(nonatomic) _Bool isLongPic; // @synthesize isLongPic=_isLongPic;

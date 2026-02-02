@@ -21,7 +21,6 @@
     MMTableView *m_tableView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableView *m_tableView; // @synthesize m_tableView;
 @property(nonatomic) _Bool m_bMultiSelect; // @synthesize m_bMultiSelect;
 @property(retain, nonatomic) NSMutableDictionary *m_dicMultiSelect; // @synthesize m_dicMultiSelect;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     CDUnknownBlockType _currentScreenSharingSecurityCheckCGICallback;
 }
 
-- (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)cgiSendCloudIlinkRequest:(unsigned int)arg1 request:(id)arg2;
 - (void)sendRequestWithoutPBW:(id)arg1 Retry:(int)arg2;
@@ -28,4 +28,3 @@
 - (void)cgiGetAuthCode:(unsigned int)arg1 callback:(CDUnknownBlockType)arg2;
 
 @end
-

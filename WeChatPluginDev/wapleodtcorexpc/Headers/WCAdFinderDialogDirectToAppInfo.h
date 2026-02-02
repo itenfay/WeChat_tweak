@@ -15,7 +15,6 @@
     NSString *_defaultJumpInfoBase64;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultJumpInfoBase64; // @synthesize defaultJumpInfoBase64=_defaultJumpInfoBase64;
 @property(retain, nonatomic) NSString *adExtInfo; // @synthesize adExtInfo=_adExtInfo;
 @property(nonatomic) _Bool internalJumpAppStore; // @synthesize internalJumpAppStore=_internalJumpAppStore;

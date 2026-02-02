@@ -19,7 +19,6 @@
     MJShootComposingTemplatePanelViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJShootComposingTemplatePanelViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) MJCircleProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIView *progressBGView; // @synthesize progressBGView=_progressBGView;

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSError, NSString, NSTimer, TPPlayerLayerViewContainer, TPPlayerLogContext, TPPlayerVideo, TPSlicePlayer;
 
@@ -50,7 +51,6 @@
     struct CGSize _presentationSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(nonatomic) _Bool shouldNotifyClipStartWhenPlaying; // @synthesize shouldNotifyClipStartWhenPlaying=_shouldNotifyClipStartWhenPlaying;
 @property(nonatomic) _Bool isResuming; // @synthesize isResuming=_isResuming;
@@ -148,4 +148,3 @@
 @property(readonly) Class superclass;
 
 @end
-

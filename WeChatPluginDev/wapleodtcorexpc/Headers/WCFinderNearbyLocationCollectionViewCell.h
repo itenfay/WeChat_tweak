@@ -15,7 +15,6 @@
     RichTextView *_hintTextView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *hintTextView; // @synthesize hintTextView=_hintTextView;
 @property(retain, nonatomic) UIImageView *locationImageView; // @synthesize locationImageView=_locationImageView;
 @property(nonatomic) __weak id <WCFinderNearbyLocationCellDelegate> delegate; // @synthesize delegate=_delegate;

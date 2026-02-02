@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveKSKitLyricSentence, MMFinderLiveKSKitLyricSentenceView;
 
@@ -20,7 +21,6 @@
     struct CGSize _prepareStateSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currState; // @synthesize currState=_currState;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) _Bool prepared; // @synthesize prepared=_prepared;
@@ -48,4 +48,3 @@
 - (id)initWithLyricSentence:(id)arg1 maxWidth:(double)arg2;
 
 @end
-

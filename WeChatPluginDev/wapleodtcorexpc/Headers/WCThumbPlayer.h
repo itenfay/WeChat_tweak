@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TPVideoFrameBuffer, WCTPPlayer;
 
 @interface WCThumbPlayer
@@ -16,7 +18,6 @@
     struct _opaque_pthread_rwlock_t _pixelBufferLock;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPauseBuffering; // @synthesize isPauseBuffering=_isPauseBuffering;
 @property(nonatomic) _Bool isLocalServerReinit; // @synthesize isLocalServerReinit=_isLocalServerReinit;
 @property(nonatomic) struct _opaque_pthread_rwlock_t pixelBufferLock; // @synthesize pixelBufferLock=_pixelBufferLock;
@@ -102,4 +103,3 @@
 @property(readonly) Class superclass;
 
 @end
-

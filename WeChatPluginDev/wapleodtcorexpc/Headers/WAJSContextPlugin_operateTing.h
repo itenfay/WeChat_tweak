@@ -11,7 +11,6 @@
     NSMutableSet *_setMusicWhiteListAppid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setMusicWhiteListAppid; // @synthesize setMusicWhiteListAppid=_setMusicWhiteListAppid;
 @property(retain, nonatomic) NSString *curClientId; // @synthesize curClientId=_curClientId;
 - (void)initConfigedMusicAppId;

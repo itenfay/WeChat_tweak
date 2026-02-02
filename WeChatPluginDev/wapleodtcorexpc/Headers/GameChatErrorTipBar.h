@@ -13,7 +13,6 @@
     UILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *imgView; // @synthesize imgView=_imgView;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_bFree;
 + (void)PBArrayAdd_hasReward;
 + (void)PBArrayAdd_sendId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bFree; // @synthesize bFree=_bFree;
 @property(nonatomic) _Bool hasReward; // @synthesize hasReward=_hasReward;
 @property(retain, nonatomic) NSString *sendId; // @synthesize sendId=_sendId;

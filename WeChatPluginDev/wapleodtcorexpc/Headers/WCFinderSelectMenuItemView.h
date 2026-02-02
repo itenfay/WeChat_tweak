@@ -15,7 +15,6 @@
 }
 
 + (double)estimatedHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

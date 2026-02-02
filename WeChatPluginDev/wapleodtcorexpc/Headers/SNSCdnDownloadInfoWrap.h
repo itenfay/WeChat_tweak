@@ -25,7 +25,6 @@
     NSString *_videoColdRule;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *videoColdRule; // @synthesize videoColdRule=_videoColdRule;
 @property(nonatomic) unsigned long long m_ui64TaskCreateTime; // @synthesize m_ui64TaskCreateTime=_m_ui64TaskCreateTime;
 @property(retain, nonatomic) CdnTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;

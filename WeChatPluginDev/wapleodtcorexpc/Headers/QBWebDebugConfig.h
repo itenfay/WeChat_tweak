@@ -18,7 +18,6 @@
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;
 @property(retain, nonatomic) NSString *randomKey; // @synthesize randomKey=_randomKey;
 @property(retain, nonatomic) NSString *businessID; // @synthesize businessID=_businessID;
-- (void).cxx_destruct;
 
 @end
 

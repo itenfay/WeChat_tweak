@@ -14,7 +14,6 @@
 
 + (long long)currentInterfaceOrientation;
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)convertToInnerDisplayOrientation:(long long)arg1;
 - (void)onOrientationChange;
 - (int)getOrientation;

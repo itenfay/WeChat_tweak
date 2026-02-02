@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLivePivotEducationViewModel, MMUILabel, NSString, UIImageView;
 
@@ -19,7 +20,6 @@
     MMUILabel *_tipsLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *tipsLabel; // @synthesize tipsLabel=_tipsLabel;
 @property(retain, nonatomic) UIImageView *upIconView; // @synthesize upIconView=_upIconView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -54,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

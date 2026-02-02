@@ -12,7 +12,6 @@
     NSDictionary *_linkMap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *linkMap; // @synthesize linkMap=_linkMap;
 @property(retain, nonatomic) BlockViewController *blockView; // @synthesize blockView=_blockView;
 @property(retain, nonatomic) OpenApiParameter *parameter; // @synthesize parameter=_parameter;

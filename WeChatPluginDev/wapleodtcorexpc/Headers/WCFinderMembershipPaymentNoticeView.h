@@ -10,7 +10,6 @@
     WCFinderMembershipPaymentNoticeDetailView *_panelDetailView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMembershipPaymentNoticeDetailView *panelDetailView; // @synthesize panelDetailView=_panelDetailView;
 - (void)panelDidClickLink:(id)arg1;
 - (void)panelLayoutFinished;

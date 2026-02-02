@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_guardianUserName;
 + (void)PBArrayAdd_businessType;
 + (void)PBArrayAdd_businesskey;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestAuthorizationMsgid; // @synthesize requestAuthorizationMsgid=_requestAuthorizationMsgid;
 @property(nonatomic) unsigned int agreenAuthorizationTime; // @synthesize agreenAuthorizationTime=_agreenAuthorizationTime;
 @property(retain, nonatomic) NSString *wardUserName; // @synthesize wardUserName=_wardUserName;

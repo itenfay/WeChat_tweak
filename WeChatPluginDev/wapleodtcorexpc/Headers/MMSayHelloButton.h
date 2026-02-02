@@ -15,7 +15,6 @@
     double m_fHeight;
 }
 
-- (void).cxx_destruct;
 - (void)onFriendAssistUnreadCountChanged;
 - (unsigned int)GetUnReadCount;
 - (void)UpdateView;

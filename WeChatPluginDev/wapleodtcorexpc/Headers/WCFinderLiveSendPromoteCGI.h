@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @interface WCFinderLiveSendPromoteCGI
 {
     int _opScene;
@@ -14,7 +16,6 @@
 
 + (id)createCancelPromoteCGIWithLiveTaskId:(id)arg1 promoteId:(unsigned long long)arg2 requestScene:(unsigned long long)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
 + (id)createSendPromoteCGIWithLiveTaskId:(id)arg1 promoteId:(unsigned long long)arg2 requestScene:(unsigned long long)arg3 successBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(nonatomic) int opScene; // @synthesize opScene=_opScene;
@@ -26,4 +27,3 @@
 - (id)initWithLiveTaskId:(id)arg1 opScene:(int)arg2 promoteId:(unsigned long long)arg3 requestScene:(unsigned long long)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 
 @end
-

@@ -47,7 +47,6 @@
 + (_Bool)hasOverLineNumLimitWithContent:(id)arg1 vm:(id)arg2 width:(double)arg3;
 + (double)getRefContentHeightWithVM:(id)arg1 width:(double)arg2;
 + (double)calucateCellHeightWithViewModel:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needUpdateCellSize; // @synthesize needUpdateCellSize=_needUpdateCellSize;
 @property(retain, nonatomic) MMUIButton *aggregatedExpandBtn; // @synthesize aggregatedExpandBtn=_aggregatedExpandBtn;
 @property(retain, nonatomic) MMUIButton *commentLikeBtn; // @synthesize commentLikeBtn=_commentLikeBtn;

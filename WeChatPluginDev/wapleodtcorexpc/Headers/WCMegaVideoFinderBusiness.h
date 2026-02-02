@@ -18,7 +18,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_nonceId;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nonceId; // @synthesize nonceId=_nonceId;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(readonly, copy) NSString *description;

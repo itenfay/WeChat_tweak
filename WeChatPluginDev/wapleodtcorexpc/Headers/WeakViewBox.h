@@ -14,7 +14,6 @@
 }
 
 + (id)view:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAdjusting; // @synthesize isAdjusting=_isAdjusting;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 

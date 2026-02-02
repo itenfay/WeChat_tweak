@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveConnectMicPKInfo, NSString, UICollectionView, UICollectionViewDiffableDataSource;
 
 @interface MMFinderLiveConnectMicTeamPkPanel
@@ -15,7 +17,6 @@
     MMFinderLiveConnectMicPKInfo *_pkInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isApplicant; // @synthesize isApplicant=_isApplicant;
 @property(retain, nonatomic) MMFinderLiveConnectMicPKInfo *pkInfo; // @synthesize pkInfo=_pkInfo;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
@@ -55,4 +56,3 @@
 @property(readonly) Class superclass;
 
 @end
-

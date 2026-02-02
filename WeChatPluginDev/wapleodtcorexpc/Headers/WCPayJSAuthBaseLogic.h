@@ -12,7 +12,6 @@
     NSDictionary *_m_param;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hideLoading; // @synthesize hideLoading=_hideLoading;
 @property(retain, nonatomic) NSDictionary *m_param; // @synthesize m_param=_m_param;
 @property(retain, nonatomic) JSEvent *m_jsEvent; // @synthesize m_jsEvent=_m_jsEvent;

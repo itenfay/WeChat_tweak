@@ -17,7 +17,6 @@
     unsigned long long _lastSeekTimestampMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastSeekTimestampMs; // @synthesize lastSeekTimestampMs=_lastSeekTimestampMs;
 @property(retain, nonatomic) NSString *pausedMusicIdWhenNotVisible; // @synthesize pausedMusicIdWhenNotVisible=_pausedMusicIdWhenNotVisible;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;

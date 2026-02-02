@@ -17,7 +17,6 @@
     NSDictionary *_recvChannelSubTitleClickInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *recvChannelSubTitleClickInfo; // @synthesize recvChannelSubTitleClickInfo=_recvChannelSubTitleClickInfo;
 @property(retain, nonatomic) WCPayUnionTransferConfirmCgi *unionConfirmCgi; // @synthesize unionConfirmCgi=_unionConfirmCgi;
 @property(retain, nonatomic) WCPayUnionTransferQueryCgi *unionQueryCgi; // @synthesize unionQueryCgi=_unionQueryCgi;

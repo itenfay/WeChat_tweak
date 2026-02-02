@@ -24,7 +24,6 @@
     NSString *_customHeadImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customHeadImageUrl; // @synthesize customHeadImageUrl=_customHeadImageUrl;
 @property(retain, nonatomic) NSString *sessionSubTitle; // @synthesize sessionSubTitle=_sessionSubTitle;
 @property(retain, nonatomic) NSString *sessionTitle; // @synthesize sessionTitle=_sessionTitle;

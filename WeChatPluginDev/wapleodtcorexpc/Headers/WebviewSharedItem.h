@@ -12,7 +12,6 @@
     NSString *_m_nsPublisherReqId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsPublisherReqId; // @synthesize m_nsPublisherReqId=_m_nsPublisherReqId;
 @property(retain, nonatomic) NSString *m_nsPublisherId; // @synthesize m_nsPublisherId=_m_nsPublisherId;
 @property(retain, nonatomic) NSString *m_nsJsAppId; // @synthesize m_nsJsAppId=_m_nsJsAppId;

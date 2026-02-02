@@ -28,7 +28,6 @@
     unsigned long long _trtcPushState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forcePushTrtcStream; // @synthesize forcePushTrtcStream=_forcePushTrtcStream;
 @property _Bool shouldPushTrtcStream; // @synthesize shouldPushTrtcStream=_shouldPushTrtcStream;
 @property unsigned long long trtcPushState; // @synthesize trtcPushState=_trtcPushState;

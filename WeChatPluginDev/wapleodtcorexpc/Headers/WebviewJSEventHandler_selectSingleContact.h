@@ -17,7 +17,6 @@
     NSString *m_nsAppid;
 }
 
-- (void).cxx_destruct;
 - (void)getBizUserOpenIdRequest;
 - (void)getIBGUserOpenIdRequest;
 - (void)handleBizResponseCGIWrap:(id)arg1;

@@ -35,7 +35,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain, nonatomic) XMMGPUClarityPreProcess *clarityPreProcess; // @synthesize clarityPreProcess=_clarityPreProcess;
 - (void)clean;
 - (void)processVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 toRGBAImage:(id *)arg2 yuvPixelBuffer:(struct __CVBuffer **)arg3 cropSizeWithoutRotation:(struct CGSize)arg4 flipX:(_Bool)arg5 shouldIgnoreBackground:(_Bool)arg6;

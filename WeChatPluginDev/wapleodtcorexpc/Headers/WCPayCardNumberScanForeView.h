@@ -16,7 +16,6 @@
     id _target;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (void)adjustToNewSize;

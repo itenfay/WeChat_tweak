@@ -14,7 +14,6 @@
     UIPanGestureRecognizer *m_panGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *m_panGesture; // @synthesize m_panGesture;
 @property(nonatomic) int m_curPageNum; // @synthesize m_curPageNum;
 @property(nonatomic) __weak id <LoopPageScrollViewDataSourceDelegate> m_delegate; // @synthesize m_delegate;

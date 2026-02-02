@@ -17,7 +17,6 @@
 
 + (double)imageDisplayScaleWithWidth:(double)arg1 height:(double)arg2;
 + (double)displayHeightForContentVM:(id)arg1 width:(double)arg2 descFont:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *coverView; // @synthesize coverView=_coverView;

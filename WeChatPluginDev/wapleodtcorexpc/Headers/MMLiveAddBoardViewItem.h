@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton, MMUILabel;
 
@@ -16,7 +17,6 @@
     MMUILabel *_functionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *functionLabel; // @synthesize functionLabel=_functionLabel;
 @property(retain, nonatomic) MMUIButton *functionButton; // @synthesize functionButton=_functionButton;
 @property(nonatomic) _Bool isActionEnabled; // @synthesize isActionEnabled=_isActionEnabled;
@@ -28,4 +28,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

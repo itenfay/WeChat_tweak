@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, TencentLBSLocation, TencentLBSLocationReGeocoder;
 
@@ -18,7 +19,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(retain) NSMutableArray *singleFixBlocks; // @synthesize singleFixBlocks=_singleFixBlocks;
 @property int mbearing; // @synthesize mbearing=_mbearing;
 @property(retain) TencentLBSLocation *mlastBleLocation; // @synthesize mlastBleLocation=_mlastBleLocation;
@@ -35,4 +35,3 @@
 - (id)init;
 
 @end
-

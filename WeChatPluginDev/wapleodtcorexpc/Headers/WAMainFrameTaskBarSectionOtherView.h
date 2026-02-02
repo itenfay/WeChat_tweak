@@ -19,7 +19,6 @@
 + (long long)contentHeight:(long long)arg1;
 + (long long)cellHeight;
 + (long long)cellWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMainFrameTaskBarSectionViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

@@ -12,7 +12,6 @@
     NSString *_referpagepath;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *referpagepath; // @synthesize referpagepath=_referpagepath;
 - (void)reportHomeButtonEvent:(unsigned long long)arg1;
 - (void)reportGameCBFPSItem:(id)arg1;

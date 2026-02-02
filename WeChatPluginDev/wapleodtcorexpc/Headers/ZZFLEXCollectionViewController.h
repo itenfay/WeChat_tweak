@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, NSString, UICollectionView, UIScrollView, ZZFLEXAngel, ZZFLEXAngelIndexPathChainModel, ZZFLEXAngelViewBatchEditChainModel, ZZFLEXAngelViewEditChainModel;
 
 @interface ZZFLEXCollectionViewController
@@ -14,7 +16,6 @@
     long long _scrollDirection;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool sectionFootersPinToVisibleBounds; // @synthesize sectionFootersPinToVisibleBounds=_sectionFootersPinToVisibleBounds;
 @property(nonatomic) _Bool sectionHeadersPinToVisibleBounds; // @synthesize sectionHeadersPinToVisibleBounds=_sectionHeadersPinToVisibleBounds;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
@@ -97,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

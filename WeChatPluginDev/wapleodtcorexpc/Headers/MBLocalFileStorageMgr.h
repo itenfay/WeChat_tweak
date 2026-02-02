@@ -15,7 +15,6 @@
     NSMutableDictionary *_dicFileStorageInfo;
 }
 
-- (void).cxx_destruct;
 - (_Bool)moveFolderFiles:(id)arg1 intoFolder:(id)arg2 error:(id *)arg3;
 - (id)workThread_unzipWithBizName:(id)arg1 filePath:(id)arg2 targetDirectory:(id)arg3;
 - (id)unzipWithBizName:(id)arg1 localID:(id)arg2 targetDirectory:(id)arg3;

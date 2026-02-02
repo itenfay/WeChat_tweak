@@ -21,7 +21,6 @@
     NSMutableDictionary *_mediaCntInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mediaCntInfo; // @synthesize mediaCntInfo=_mediaCntInfo;
 @property(nonatomic) unsigned int mediaCount; // @synthesize mediaCount=_mediaCount;
 @property(nonatomic) unsigned int msgMinTime; // @synthesize msgMinTime=_msgMinTime;

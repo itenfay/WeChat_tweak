@@ -16,7 +16,6 @@
     _Bool _isFrontCamera;
 }
 
-- (void).cxx_destruct;
 - (void)asyncHandleCancel;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)didTakeVideo;

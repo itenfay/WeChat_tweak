@@ -16,7 +16,6 @@
     UIColor *strokeColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor;
 @property(nonatomic) int stroke; // @synthesize stroke;
 @property(nonatomic) int widthOffset; // @synthesize widthOffset;

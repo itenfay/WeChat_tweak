@@ -13,7 +13,6 @@
     id <WCMallCandidateTelephoneViewDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCMallCandidateTelephoneViewDelegate> m_delegate; // @synthesize m_delegate;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

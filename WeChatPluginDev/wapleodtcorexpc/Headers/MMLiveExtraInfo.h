@@ -13,7 +13,6 @@
     WCFinderRedDotCtrlInfo *_reddotCtrlInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderRedDotCtrlInfo *reddotCtrlInfo; // @synthesize reddotCtrlInfo=_reddotCtrlInfo;
 @property(retain, nonatomic) NSString *adReportExtrainfoStr; // @synthesize adReportExtrainfoStr=_adReportExtrainfoStr;
 

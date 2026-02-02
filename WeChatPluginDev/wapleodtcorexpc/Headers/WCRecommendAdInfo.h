@@ -14,7 +14,6 @@
     NSString *snsRecInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *snsRecInfo; // @synthesize snsRecInfo;
 @property(retain, nonatomic) NSString *snsRecXml; // @synthesize snsRecXml;
 @property(retain, nonatomic) NSString *snsXml; // @synthesize snsXml;

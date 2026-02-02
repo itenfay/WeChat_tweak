@@ -12,7 +12,6 @@
     WCPayCountryCodeItem *_m_countryCodeItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayCountryCodeItem *m_countryCodeItem; // @synthesize m_countryCodeItem=_m_countryCodeItem;
 - (id)getPlaceHolder;
 - (void)setPlaceHolder:(id)arg1;

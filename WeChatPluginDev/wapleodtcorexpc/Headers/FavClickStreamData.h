@@ -18,7 +18,6 @@
     long long _enterPageTimeInMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long enterPageTimeInMs; // @synthesize enterPageTimeInMs=_enterPageTimeInMs;
 @property(nonatomic) long long stayTime; // @synthesize stayTime=_stayTime;
 @property(nonatomic) unsigned int enterPageTime; // @synthesize enterPageTime=_enterPageTime;

@@ -19,7 +19,6 @@
     NSObject<OS_dispatch_queue> *m_avmgrQueue;
 }
 
-- (void).cxx_destruct;
 - (void)notifyScrollViewStable;
 - (void)internalPerformFullPlay:(id)arg1 muted:(_Bool)arg2 audioCategory:(unsigned long long)arg3;
 - (void)internalPerformFullPlay:(id)arg1;

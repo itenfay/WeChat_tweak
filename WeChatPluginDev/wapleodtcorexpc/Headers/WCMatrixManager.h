@@ -14,7 +14,6 @@
     WCFPSMonitorPlugin *_fpsMonitorPlugin;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFPSMonitorPlugin *fpsMonitorPlugin; // @synthesize fpsMonitorPlugin=_fpsMonitorPlugin;
 @property(retain, nonatomic) WCSQLiteLintPlugin *sqliteLintPlugin; // @synthesize sqliteLintPlugin=_sqliteLintPlugin;
 @property(retain, nonatomic) WCMemoryStatPlugin *memStatPlugin; // @synthesize memStatPlugin=_memStatPlugin;

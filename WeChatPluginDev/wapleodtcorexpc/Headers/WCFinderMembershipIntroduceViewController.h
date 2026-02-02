@@ -25,7 +25,6 @@
     FinderLiveNoticeInfo *_noticeToReserve;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveNoticeInfo *noticeToReserve; // @synthesize noticeToReserve=_noticeToReserve;
 @property(retain, nonatomic) MMFinderLiveBuyTicketHandle *ticketHandle; // @synthesize ticketHandle=_ticketHandle;
 @property(retain, nonatomic) WCFinderMemberShipConsumeViewModel *consumeViewModel; // @synthesize consumeViewModel=_consumeViewModel;

@@ -14,7 +14,6 @@
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)fromEditImageAttr:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 - (_Bool)fromXML:(struct XmlReaderNode_t *)arg1;
 - (id)toXML;

@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic) unsigned int forwardTime; // @synthesize forwardTime=_forwardTime;

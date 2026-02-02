@@ -20,7 +20,6 @@
     UILongPressGestureRecognizer *_tabLongPressGestureRecognizer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *tabLongPressGestureRecognizer; // @synthesize tabLongPressGestureRecognizer=_tabLongPressGestureRecognizer;
 @property(nonatomic) unsigned long long appearType; // @synthesize appearType=_appearType;
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;

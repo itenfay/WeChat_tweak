@@ -10,7 +10,6 @@
     NSMutableArray *_arrCheckingPkgIds;
 }
 
-- (void).cxx_destruct;
 - (void)callFailExtForPkgId:(id)arg1 errCode:(int)arg2;
 - (void)callSuccessExtForPkgId:(id)arg1;
 - (void)callFailExtForPkgIds:(id)arg1 errCode:(int)arg2;

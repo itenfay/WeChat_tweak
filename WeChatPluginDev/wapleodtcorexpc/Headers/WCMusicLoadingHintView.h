@@ -16,7 +16,6 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double indicatorAndLabelSpacing; // @synthesize indicatorAndLabelSpacing=_indicatorAndLabelSpacing;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;

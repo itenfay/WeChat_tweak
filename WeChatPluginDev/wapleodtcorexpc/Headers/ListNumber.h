@@ -16,7 +16,6 @@
 
 + (id)extractFromString:(id)arg1;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rightIdentifier; // @synthesize rightIdentifier=_rightIdentifier;
 @property(retain, nonatomic) NumberObj *number; // @synthesize number=_number;
 @property(retain, nonatomic) NSString *leftIdentifier; // @synthesize leftIdentifier=_leftIdentifier;

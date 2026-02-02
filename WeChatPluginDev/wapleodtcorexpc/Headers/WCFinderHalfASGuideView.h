@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class RichTextView, UIButton, UIImageView;
 
@@ -16,7 +17,6 @@
     UIButton *_okButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) UIImageView *imgView; // @synthesize imgView=_imgView;
 @property(retain, nonatomic) RichTextView *mTitleView; // @synthesize mTitleView=_mTitleView;
@@ -27,4 +27,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

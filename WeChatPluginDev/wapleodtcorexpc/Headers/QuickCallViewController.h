@@ -25,7 +25,6 @@
     ElderModeViewController *_elderModeVC;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ElderModeViewController *elderModeVC; // @synthesize elderModeVC=_elderModeVC;
 @property(retain, nonatomic) MultiSelectContactsViewController *selectContactVC; // @synthesize selectContactVC=_selectContactVC;
 @property(retain, nonatomic) RichTextView *elderModeTipsView; // @synthesize elderModeTipsView=_elderModeTipsView;

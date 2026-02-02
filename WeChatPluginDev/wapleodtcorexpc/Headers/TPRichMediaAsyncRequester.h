@@ -15,7 +15,6 @@
     TPPlayerLogContext *_log;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(retain, nonatomic) id <ITPPlayerRichMediaAsyncRequesterWrapper> requester; // @synthesize requester=_requester;
 @property(nonatomic) __weak id <ITPRichMediaAsyncRequesterDelegate> delegate; // @synthesize delegate;

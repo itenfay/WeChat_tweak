@@ -23,7 +23,6 @@
 }
 
 + (id)genResourceClientId:(id)arg1 bioId:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FaceRecogBindVideoLogic *bindVideoLogic; // @synthesize bindVideoLogic=_bindVideoLogic;
 @property(nonatomic) _Bool uploading; // @synthesize uploading=_uploading;
 @property(nonatomic) unsigned int currentResourceType; // @synthesize currentResourceType=_currentResourceType;

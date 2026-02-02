@@ -28,7 +28,6 @@
 }
 
 + (id)transferScopeCacheToSubscriptionModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppAuthRespData *authData; // @synthesize authData=_authData;
 @property(retain, nonatomic) WAContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak id <WAAppAuthorizationDelegate> delegate; // @synthesize delegate=_delegate;

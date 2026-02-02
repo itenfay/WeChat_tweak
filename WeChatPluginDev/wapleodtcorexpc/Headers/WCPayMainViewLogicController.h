@@ -25,7 +25,6 @@
     WCPayGetGDPRInfoCgi *_getGDPRinfoCgi;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasPrefetchWeApp; // @synthesize bHasPrefetchWeApp=_bHasPrefetchWeApp;
 @property(nonatomic) _Bool bHasPreloadWeAppEnv; // @synthesize bHasPreloadWeAppEnv=_bHasPreloadWeAppEnv;
 @property(nonatomic) _Bool bHasSubTitleCell; // @synthesize bHasSubTitleCell=_bHasSubTitleCell;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class BTFinderInterestCellContainerView, BTRichTextTagView, MMUILabel, NSString, UIView, WCFinderFeedImageCDNView, WCFinderMPInterestData;
 
@@ -24,7 +25,6 @@
 + (double)cellWidth;
 + (double)cellHeight;
 + (id)cellIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMPInterestData *interestData; // @synthesize interestData=_interestData;
 @property(retain, nonatomic) MMUILabel *recommendLabel; // @synthesize recommendLabel=_recommendLabel;
 @property(retain, nonatomic) BTRichTextTagView *textView; // @synthesize textView=_textView;
@@ -59,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

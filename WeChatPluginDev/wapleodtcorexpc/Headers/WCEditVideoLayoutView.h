@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class AVMutableComposition, AVMutableVideoComposition, CAGradientLayer, EVVideoPreviewBrowserView, EditImageCropGridView, EditImageCropOverlayView, EditImageCropToolBarView, EditImageCropToolBarViewModel, EditImageEmotionToolAttrView, EditImagePenToolAttrView, EditImageTextInputView, EditImageTextToolV2, EditVideoBGMView, EditVideoCompositionBrowserView, EditVideoCropView, EditVideoLogicController, EditVideoMusicController, EditVideoSecondCutPromotionButtonShadowWrapper, MMBGMSelectHalfScreenViewController, MMBGMSelectedConfig, MMLoadingView, MMMusicFadeOutLayer, MMTimer, MMUIButton, MMUIImageView, MMUIView, NSArray, NSMutableArray, NSString, RecommendedMusicInfo, UIImageView, UILabel, UIPanGestureRecognizer, UIScrollView, UIView, WCEditImageScrollView, WCEditLoadingModeButton, WCEditVideoShareLongVideoModel, WCEditVideoToolListDelegateProxy, WCEditViewControllerUIConfig, WCFinderTemplateMusicSelectEntranceView;
 @protocol WCEditVideoLayoutViewDelegate, WCFinderEditDataReportDelegate;
 
@@ -106,7 +108,6 @@
 }
 
 + (struct CGRect)getVideoCropFrameWithViewFrame:(struct CGRect)arg1 viewCropFrame:(struct CGRect)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect containerLastFrame; // @synthesize containerLastFrame=_containerLastFrame;
 @property(nonatomic) struct CGPoint lastContentOffset; // @synthesize lastContentOffset=_lastContentOffset;
 @property(nonatomic) struct CGSize lastContentSize; // @synthesize lastContentSize=_lastContentSize;
@@ -415,4 +416,3 @@
 @property(readonly) Class superclass;
 
 @end
-

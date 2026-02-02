@@ -17,7 +17,6 @@
     NSString *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) unsigned long long actionTimeStamp; // @synthesize actionTimeStamp=_actionTimeStamp;
 @property(nonatomic) unsigned long long clickResult; // @synthesize clickResult=_clickResult;

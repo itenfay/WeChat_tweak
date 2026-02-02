@@ -13,7 +13,6 @@
     MMFinderLiveOnlineStateCollectionViewCell *_myUserStateCell;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveOnlineStateCollectionViewCell *myUserStateCell; // @synthesize myUserStateCell=_myUserStateCell;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;

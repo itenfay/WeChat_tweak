@@ -35,7 +35,6 @@
     unsigned long long _playEndPos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long playEndPos; // @synthesize playEndPos=_playEndPos;
 @property(nonatomic) unsigned long long playStartPos; // @synthesize playStartPos=_playStartPos;
 @property(nonatomic) unsigned long long playEndTime; // @synthesize playEndTime=_playEndTime;

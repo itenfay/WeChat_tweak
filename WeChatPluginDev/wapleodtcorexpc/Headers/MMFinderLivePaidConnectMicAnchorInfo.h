@@ -14,7 +14,6 @@
     FinderJumpInfo *_ratingJumpInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfo *ratingJumpInfo; // @synthesize ratingJumpInfo=_ratingJumpInfo;
 @property(retain, nonatomic) FinderJumpInfo *historyJumpInfo; // @synthesize historyJumpInfo=_historyJumpInfo;
 @property(nonatomic) double serviceRating; // @synthesize serviceRating=_serviceRating;

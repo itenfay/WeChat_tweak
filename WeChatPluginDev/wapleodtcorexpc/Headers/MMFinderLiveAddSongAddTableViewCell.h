@@ -13,7 +13,6 @@
     UILabel *_addLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *addLabel; // @synthesize addLabel=_addLabel;
 @property(retain, nonatomic) UIImageView *addIcon; // @synthesize addIcon=_addIcon;
 - (void)setAddSongEnabled:(_Bool)arg1;

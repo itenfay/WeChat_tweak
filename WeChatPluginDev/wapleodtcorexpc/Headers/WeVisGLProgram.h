@@ -17,7 +17,6 @@
     unsigned int _programId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isCompileAndLinked; // @synthesize isCompileAndLinked=_isCompileAndLinked;
 @property(nonatomic) unsigned int programId; // @synthesize programId=_programId;
 - (_Bool)validate;

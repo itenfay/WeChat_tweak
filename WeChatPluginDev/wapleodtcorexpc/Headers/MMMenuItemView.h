@@ -20,7 +20,6 @@
     double _rightPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double rightPadding; // @synthesize rightPadding=_rightPadding;
 @property(nonatomic) double leftPadding; // @synthesize leftPadding=_leftPadding;
 @property(nonatomic) _Bool isShow; // @synthesize isShow=_isShow;

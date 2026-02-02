@@ -11,7 +11,6 @@
 }
 
 + (id)liveShareItemFromXML:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveShareItem *liveShareItem; // @synthesize liveShareItem=_liveShareItem;
 - (id)reportActivityId;
 - (_Bool)autoHandleAppLifeCycleEvent;

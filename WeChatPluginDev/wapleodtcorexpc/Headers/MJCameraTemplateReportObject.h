@@ -15,7 +15,6 @@
 }
 
 + (id)cameraTemplateReportObjKey;
-- (void).cxx_destruct;
 @property(nonatomic) double captureFrameInterval; // @synthesize captureFrameInterval=_captureFrameInterval;
 @property(nonatomic) unsigned long long fileCount; // @synthesize fileCount=_fileCount;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;

@@ -14,7 +14,6 @@
     long long _updateResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long updateResult; // @synthesize updateResult=_updateResult;
 @property(nonatomic) long long updateScene; // @synthesize updateScene=_updateScene;
 @property(nonatomic) long long pluginState; // @synthesize pluginState=_pluginState;

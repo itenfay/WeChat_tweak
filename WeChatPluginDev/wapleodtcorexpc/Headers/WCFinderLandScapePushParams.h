@@ -27,7 +27,6 @@
 }
 
 + (id)createWithReportExtraInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fromSessionId; // @synthesize fromSessionId=_fromSessionId;
 @property(nonatomic) int getRelatedListScene; // @synthesize getRelatedListScene=_getRelatedListScene;
 @property(retain, nonatomic) NSString *playSessionId; // @synthesize playSessionId=_playSessionId;

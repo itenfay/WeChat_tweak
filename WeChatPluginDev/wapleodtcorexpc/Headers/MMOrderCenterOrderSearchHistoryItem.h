@@ -25,7 +25,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int time; // @synthesize time=_time;
 @property(copy, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
 

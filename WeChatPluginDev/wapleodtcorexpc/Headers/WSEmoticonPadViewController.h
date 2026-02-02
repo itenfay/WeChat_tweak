@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EmoticonBoardView, NSString, UIView;
 @protocol EmoticonBoardViewDelegate><BaseEmoticonViewDelegate;
 
@@ -15,7 +17,6 @@
     UIView *_guideView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic, getter=isEmoticonBoardUp) _Bool emoticonBoardUp; // @synthesize emoticonBoardUp=_emoticonBoardUp;
 @property(retain, nonatomic) UIView *guideView; // @synthesize guideView=_guideView;
 @property(retain, nonatomic) EmoticonBoardView *emoticonPad; // @synthesize emoticonPad=_emoticonPad;
@@ -39,4 +40,3 @@
 @property(readonly) Class superclass;
 
 @end
-

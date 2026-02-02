@@ -17,7 +17,6 @@
     id <WCCardMsgCenterMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCardMsgCenterMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)loadCardTips;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderGroupLiveChatBoxId, MMFinderLiveTaskId, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSRecursiveLock, NSString, OrderedDictionary, WCFinderGroupLiveChatSaveToLocalManager;
 @protocol OS_dispatch_source;
 
@@ -29,7 +31,6 @@
     unsigned long long _boxStatus;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long boxStatus; // @synthesize boxStatus=_boxStatus;
 @property(nonatomic) _Bool isStopFetchingCommentData; // @synthesize isStopFetchingCommentData=_isStopFetchingCommentData;
 @property(nonatomic) _Bool isPauseFetchReddot; // @synthesize isPauseFetchReddot=_isPauseFetchReddot;
@@ -119,4 +120,3 @@
 @property(readonly) Class superclass;
 
 @end
-

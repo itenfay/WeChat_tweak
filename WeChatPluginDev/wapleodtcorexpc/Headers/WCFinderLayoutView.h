@@ -19,7 +19,6 @@
     struct UIEdgeInsets _seperatorInset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize preSize; // @synthesize preSize=_preSize;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) NSMutableDictionary *arrangeViews; // @synthesize arrangeViews=_arrangeViews;

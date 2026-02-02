@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveFloatMsgResourceManager, MMFinderLiveTask, MMFinderLiveTaskId;
 
@@ -20,7 +21,6 @@
 }
 
 + (unsigned long long)getExtraInfoContent:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFloatMsgResourceManager *resourceMgr; // @synthesize resourceMgr=_resourceMgr;
 @property(nonatomic) _Bool isWecoinBalanceUpdated; // @synthesize isWecoinBalanceUpdated=_isWecoinBalanceUpdated;
 @property(nonatomic) _Bool isFetchingWecoinBalance; // @synthesize isFetchingWecoinBalance=_isFetchingWecoinBalance;
@@ -41,4 +41,3 @@
 - (id)initWithTaskId:(id)arg1;
 
 @end
-

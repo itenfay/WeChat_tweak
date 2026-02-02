@@ -10,7 +10,6 @@
     NewArrivalCountData *m_data;
 }
 
-- (void).cxx_destruct;
 - (void)OnModMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)OnDelMsg:(id)arg1;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;

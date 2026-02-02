@@ -25,7 +25,6 @@
     id <WXGMigrationServerEntryViewControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WXGMigrationServerEntryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)p_refreshQRCode;
 - (void)ReachabilityChange:(unsigned int)arg1;

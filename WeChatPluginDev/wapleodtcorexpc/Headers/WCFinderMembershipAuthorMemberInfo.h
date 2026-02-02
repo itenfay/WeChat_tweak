@@ -28,7 +28,6 @@
 + (void)PBArrayAdd_memberCenterURL;
 + (void)PBArrayAdd_liveNoticeListInfo;
 + (void)PBArrayAdd_memberCount;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalDynamicNum; // @synthesize totalDynamicNum=_totalDynamicNum;
 @property(nonatomic) unsigned long long totalLiveNum; // @synthesize totalLiveNum=_totalLiveNum;
 @property(nonatomic) unsigned long long totalFeedNum; // @synthesize totalFeedNum=_totalFeedNum;

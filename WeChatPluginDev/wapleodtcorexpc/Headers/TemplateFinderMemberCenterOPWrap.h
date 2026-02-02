@@ -14,7 +14,6 @@
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
 + (id)finderMemberCenterOpWrapWithJSON:(id)arg1;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *authorFinderUsername; // @synthesize authorFinderUsername=_authorFinderUsername;
 
 @end

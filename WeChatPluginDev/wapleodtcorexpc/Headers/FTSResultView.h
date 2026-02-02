@@ -42,7 +42,6 @@
     NSMutableArray *_arrSectionResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrSectionResult; // @synthesize arrSectionResult=_arrSectionResult;
 @property(retain, nonatomic) WSTagSearchLogic *tagSearchLogic; // @synthesize tagSearchLogic=_tagSearchLogic;
 @property(nonatomic) __weak FTSResultView *previousResultView; // @synthesize previousResultView=_previousResultView;

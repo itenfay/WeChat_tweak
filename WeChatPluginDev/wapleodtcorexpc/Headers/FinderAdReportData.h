@@ -12,7 +12,6 @@
     FinderAdReportInfo *_sns_ad;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderAdReportInfo *sns_ad; // @synthesize sns_ad=_sns_ad;
 
 @end

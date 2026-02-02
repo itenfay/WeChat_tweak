@@ -17,7 +17,6 @@
     NSMutableArray *_searchResult;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain, nonatomic) NSMutableArray *fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(retain, nonatomic) WCAppAuthOpLogic *opLogic; // @synthesize opLogic=_opLogic;

@@ -13,7 +13,6 @@
     NSMapTable *_targetsByActionName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *targetsByActionName; // @synthesize targetsByActionName=_targetsByActionName;
 @property(retain, nonatomic) NSMapTable *objectsByProtocolName; // @synthesize objectsByProtocolName=_objectsByProtocolName;
 - (void)forwardInvocation:(id)arg1;

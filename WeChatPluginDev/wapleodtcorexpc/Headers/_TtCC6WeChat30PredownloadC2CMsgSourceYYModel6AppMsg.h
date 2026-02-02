@@ -14,7 +14,6 @@
     MISSING_TYPE *cdnattachurl_pd;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, retain) NSNumber *cdnattachurl_pd; // @synthesize cdnattachurl_pd;
 @property(nonatomic, retain) NSNumber *cdnattachurl_pd_pri; // @synthesize cdnattachurl_pd_pri;

@@ -14,7 +14,6 @@
 }
 
 + (id)TestRecorderWithX:(float)arg1 values:(id)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) float x; // @synthesize x=_x;
 - (id)description;

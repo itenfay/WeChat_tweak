@@ -14,7 +14,6 @@
     MISSING_TYPE *rightLabel;
 }
 
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

@@ -15,7 +15,6 @@
     NSMutableDictionary *_resourceCostInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *resourceCostInfo; // @synthesize resourceCostInfo=_resourceCostInfo;
 @property(retain, nonatomic) NSMutableSet *firstScreenFeeds; // @synthesize firstScreenFeeds=_firstScreenFeeds;
 @property(nonatomic) _Bool needRecord; // @synthesize needRecord=_needRecord;

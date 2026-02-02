@@ -18,7 +18,6 @@
     unsigned long long _climinseq;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long climinseq; // @synthesize climinseq=_climinseq;
 @property(retain, nonatomic) NSMutableSet *friendUsernameSet; // @synthesize friendUsernameSet=_friendUsernameSet;
 @property(retain, nonatomic) NSMutableArray *ringbacks; // @synthesize ringbacks=_ringbacks;

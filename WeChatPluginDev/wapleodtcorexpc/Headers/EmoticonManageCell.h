@@ -17,7 +17,6 @@
     EmoticonManageDataObject *_dataObj;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonManageDataObject *dataObj; // @synthesize dataObj=_dataObj;
 @property(nonatomic) __weak id <EmoticonManageCellDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) MMProgressView *m_progressView; // @synthesize m_progressView;

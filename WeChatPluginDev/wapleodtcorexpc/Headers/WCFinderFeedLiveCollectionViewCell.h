@@ -73,7 +73,6 @@
 
 + (_Bool)shouldPreRender;
 + (_Bool)shouldPlayOnUserInteractionBegin;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFeedStreamCarouselView *carouselView; // @synthesize carouselView=_carouselView;
 @property(retain, nonatomic) WCFinderJumpInfoPanelView *textTLJumpinfoView; // @synthesize textTLJumpinfoView=_textTLJumpinfoView;
 @property(retain, nonatomic) MMFinderLiveGenericLongPressEducationView *longPressEducationView; // @synthesize longPressEducationView=_longPressEducationView;

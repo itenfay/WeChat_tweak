@@ -23,7 +23,6 @@
     _TtC6WeChat22MagicSclViewCoverLogic *_coverLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) _TtC6WeChat22MagicSclViewCoverLogic *coverLogic; // @synthesize coverLogic=_coverLogic;
 @property(nonatomic) int viewId; // @synthesize viewId=_viewId;
 @property(retain, nonatomic) NSString *bizName; // @synthesize bizName=_bizName;

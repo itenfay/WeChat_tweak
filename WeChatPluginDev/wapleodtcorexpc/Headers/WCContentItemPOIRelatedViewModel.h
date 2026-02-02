@@ -13,7 +13,6 @@
     WCContentItem *_contentItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCContentItem *contentItem; // @synthesize contentItem=_contentItem;
 @property(retain, nonatomic) WCFinderSharePOIRelatedItem *shareItem; // @synthesize shareItem=_shareItem;
 - (id)initWithContentItem:(id)arg1;

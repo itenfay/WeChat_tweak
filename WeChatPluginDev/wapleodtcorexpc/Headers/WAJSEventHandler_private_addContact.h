@@ -10,7 +10,6 @@
     MMWebAddContactView *_addContactView;
 }
 
-- (void).cxx_destruct;
 - (id)currentViewController;
 - (void)OnWebAddContactReturn;
 - (void)OnWebAddContact:(int)arg1 Msg:(id)arg2 CallBack:(id)arg3;

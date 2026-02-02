@@ -26,7 +26,6 @@
 
 + (id)convertFromFireworkTagInfo:(id)arg1;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double stateTriggerTime; // @synthesize stateTriggerTime=_stateTriggerTime;
 @property(nonatomic) long long stateTriggerType; // @synthesize stateTriggerType=_stateTriggerType;
 @property(retain, nonatomic) WCAdCardBtnInfo *jumpLinkActionInfo; // @synthesize jumpLinkActionInfo=_jumpLinkActionInfo;

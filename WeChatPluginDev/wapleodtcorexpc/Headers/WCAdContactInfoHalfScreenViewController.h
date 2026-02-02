@@ -15,7 +15,6 @@
 }
 
 + (double)profilePageSheetHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContactViewClosedByUser; // @synthesize isContactViewClosedByUser=_isContactViewClosedByUser;
 @property(nonatomic) _Bool isContactViewFullyVisible; // @synthesize isContactViewFullyVisible=_isContactViewFullyVisible;
 @property(retain, nonatomic) WCAdConventionalHalfScreenCustomBackgroundView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;

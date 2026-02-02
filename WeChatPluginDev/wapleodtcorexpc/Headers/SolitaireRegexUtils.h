@@ -15,7 +15,6 @@
 }
 
 + (id)shareInstance;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicRegex; // @synthesize dicRegex=_dicRegex;
 @property(retain, nonatomic) NSRecursiveLock *regexLock; // @synthesize regexLock=_regexLock;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;

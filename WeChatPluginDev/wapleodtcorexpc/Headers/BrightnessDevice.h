@@ -16,7 +16,6 @@
     AVCaptureSession *_session;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) float brightnessValue; // @synthesize brightnessValue=_brightnessValue;
 @property(retain, nonatomic) AVCaptureSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *videoProcessingQueue; // @synthesize videoProcessingQueue=_videoProcessingQueue;

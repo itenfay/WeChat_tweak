@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMTableView, NSIndexPath, NSMutableArray, NSString;
 
@@ -20,7 +21,6 @@
     NSIndexPath *_lastMovedToIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *lastMovedToIndex; // @synthesize lastMovedToIndex=_lastMovedToIndex;
 @property(retain, nonatomic) NSMutableArray *moreArray; // @synthesize moreArray=_moreArray;
 @property(copy, nonatomic) CDUnknownBlockType onCannotAddedBlock; // @synthesize onCannotAddedBlock=_onCannotAddedBlock;
@@ -61,4 +61,3 @@
 @property(readonly) Class superclass;
 
 @end
-

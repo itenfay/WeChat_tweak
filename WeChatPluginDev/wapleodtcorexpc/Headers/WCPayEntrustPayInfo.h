@@ -21,7 +21,6 @@
     NSString *_open_deduct_wording_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *open_deduct_wording_color; // @synthesize open_deduct_wording_color=_open_deduct_wording_color;
 @property(retain, nonatomic) NSString *openDeductWording; // @synthesize openDeductWording=_openDeductWording;
 @property(retain, nonatomic) NSString *deductRuleWording; // @synthesize deductRuleWording=_deductRuleWording;

@@ -20,7 +20,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appThumbUrl; // @synthesize appThumbUrl=_appThumbUrl;
 @property(copy, nonatomic) NSString *videoSource; // @synthesize videoSource=_videoSource;
 @property(nonatomic) unsigned long long miniProgramType; // @synthesize miniProgramType=_miniProgramType;

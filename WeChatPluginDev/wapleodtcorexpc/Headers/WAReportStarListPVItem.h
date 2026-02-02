@@ -13,7 +13,6 @@
     NSString *_starAppidList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int showTimestamp; // @synthesize showTimestamp=_showTimestamp;
 @property(copy, nonatomic) NSString *starAppidList; // @synthesize starAppidList=_starAppidList;
 @property(nonatomic) unsigned long long starCount; // @synthesize starCount=_starCount;

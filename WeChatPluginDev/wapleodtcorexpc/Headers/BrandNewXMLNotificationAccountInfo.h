@@ -12,7 +12,6 @@
     NSString *_headImgUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *headImgUrl; // @synthesize headImgUrl=_headImgUrl;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;

@@ -20,7 +20,6 @@
     id <MMAxAuthLogicDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property unsigned int eventId; // @synthesize eventId=_eventId;
 @property(nonatomic) unsigned int axTicketExpireTimestamp; // @synthesize axTicketExpireTimestamp=_axTicketExpireTimestamp;
 @property __weak id <MMAxAuthLogicDelegate> delegate; // @synthesize delegate=_delegate;

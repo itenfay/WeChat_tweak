@@ -27,7 +27,6 @@
     struct CGRect _displayNormalizedFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveViewHiddenStatusContainer *hiddenStatusContainer; // @synthesize hiddenStatusContainer=_hiddenStatusContainer;
 @property(retain, nonatomic) MMLiveVoteFloatingViewDisplayLogic *voteFloatingViewDisplayLogic; // @synthesize voteFloatingViewDisplayLogic=_voteFloatingViewDisplayLogic;
 @property(retain, nonatomic) MMLiveVoteFloatingView *voteFloatingView; // @synthesize voteFloatingView=_voteFloatingView;

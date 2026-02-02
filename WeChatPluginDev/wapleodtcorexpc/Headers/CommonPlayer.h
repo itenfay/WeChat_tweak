@@ -12,7 +12,6 @@
     id <CommonPlayerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <CommonPlayerDelegate> m_delegate; // @synthesize m_delegate;
 - (void)setNumberOfLoops:(long long)arg1;
 - (double)duration;

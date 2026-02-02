@@ -20,7 +20,6 @@
     WCMomentsPageContext *_pageContext;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bSilencePlayLivePhotos; // @synthesize bSilencePlayLivePhotos=_bSilencePlayLivePhotos;
 @property(nonatomic) _Bool bForbidLongPress; // @synthesize bForbidLongPress=_bForbidLongPress;
 @property(nonatomic) _Bool bFrom3DTouch; // @synthesize bFrom3DTouch=_bFrom3DTouch;

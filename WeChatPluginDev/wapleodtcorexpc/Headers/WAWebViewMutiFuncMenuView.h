@@ -42,7 +42,6 @@
 + (double)menuViewDefaultWidth;
 + (double)barHomeButtonLeftMarginCurOri;
 + (double)barReturnButtonLeftMarginCurOri;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool includeStatusBar; // @synthesize includeStatusBar=_includeStatusBar;
 @property(nonatomic) _Bool needAdaptIpad; // @synthesize needAdaptIpad=_needAdaptIpad;
 @property(nonatomic) _Bool canShowShare; // @synthesize canShowShare=_canShowShare;

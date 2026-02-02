@@ -92,7 +92,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *hiddenAppUserNameList; // @synthesize hiddenAppUserNameList=_hiddenAppUserNameList;
 @property(retain, nonatomic) NSArray *homeContacts; // @synthesize homeContacts=_homeContacts;
 @property(retain, nonatomic) NSString *colleageInviteJumpUrl; // @synthesize colleageInviteJumpUrl=_colleageInviteJumpUrl;

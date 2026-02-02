@@ -22,7 +22,6 @@
 
 + (id)feedInfoForPoiInteraction:(id)arg1;
 + (id)infoWithFeedTid:(id)arg1 sessionBuffer:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderPoiInteractionInfo *fromPoiInteraction; // @synthesize fromPoiInteraction=_fromPoiInteraction;
 @property(retain, nonatomic) NSString *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(retain, nonatomic) NSString *fullScrollGuideTips; // @synthesize fullScrollGuideTips=_fullScrollGuideTips;

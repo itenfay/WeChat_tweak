@@ -10,7 +10,6 @@
     WCPayMallRequestPaymentControlLogic *_mallRequestPaymentControlLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayMallRequestPaymentControlLogic *mallRequestPaymentControlLogic; // @synthesize mallRequestPaymentControlLogic=_mallRequestPaymentControlLogic;
 - (void)mallPaymentLogicDidFailWithResult:(id)arg1;
 - (void)mallPaymentLogicDidPaySucc;

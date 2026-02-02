@@ -15,7 +15,6 @@
 }
 
 + (id)processWCPayMsgRevokeRespIfNecessary:(id)arg1 revokeTicket:(id)arg2 msgWrap:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(retain, nonatomic) WCPayRecallTransferCgi *recallTransferCgi; // @synthesize recallTransferCgi=_recallTransferCgi;
 @property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;

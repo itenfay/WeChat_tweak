@@ -17,7 +17,6 @@
 
 + (id)fromMap:(id)arg1;
 + (id)makeWithText:(id)arg1 color:(id)arg2 subTitile:(id)arg3 subTitleColor:(id)arg4;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *subTitleColor; // @synthesize subTitleColor=_subTitleColor;
 @property(copy, nonatomic) NSString *subTitile; // @synthesize subTitile=_subTitile;
 @property(retain, nonatomic) NSNumber *color; // @synthesize color=_color;

@@ -12,7 +12,6 @@
     CAShapeLayer *_progressDotLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *progressDotLayer; // @synthesize progressDotLayer=_progressDotLayer;
 @property(retain, nonatomic) CAShapeLayer *progressArcLayer; // @synthesize progressArcLayer=_progressArcLayer;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;

@@ -21,7 +21,6 @@
 @property(retain, nonatomic, getter=sGUID, setter=setSGUID:) NSString *jcev2_p_2_r_sGUID; // @synthesize jcev2_p_2_r_sGUID;
 @property(retain, nonatomic, getter=sQUA, setter=setSQUA:) NSString *jcev2_p_1_r_sQUA; // @synthesize jcev2_p_1_r_sQUA;
 @property(nonatomic, getter=iDomainTime, setter=setIDomainTime:) int jcev2_p_0_r_iDomainTime; // @synthesize jcev2_p_0_r_iDomainTime;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

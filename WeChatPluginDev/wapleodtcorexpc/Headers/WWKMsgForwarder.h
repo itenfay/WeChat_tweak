@@ -15,7 +15,6 @@
     HistoryMsgUploadMgr *_uploadMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) HistoryMsgUploadMgr *uploadMgr; // @synthesize uploadMgr=_uploadMgr;
 @property(nonatomic) __weak id <WWKMsgForwarderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long appType; // @synthesize appType=_appType;

@@ -27,7 +27,6 @@
     NSString *_m_rightBarButtonTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_rightBarButtonTitle; // @synthesize m_rightBarButtonTitle=_m_rightBarButtonTitle;
 @property(nonatomic) unsigned long long m_memberCountLimit; // @synthesize m_memberCountLimit=_m_memberCountLimit;
 @property(retain, nonatomic) ContactTagData *m_contactTagData; // @synthesize m_contactTagData;

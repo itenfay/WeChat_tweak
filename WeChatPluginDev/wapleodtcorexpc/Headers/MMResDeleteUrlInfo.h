@@ -11,7 +11,6 @@
     NSString *_version;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *resUrl; // @synthesize resUrl=_resUrl;
 

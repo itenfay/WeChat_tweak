@@ -21,7 +21,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) SharedPtr_3c77faaa backingInfo; // @synthesize backingInfo=_backingInfo;
 @property(readonly, nonatomic) NSArray *vocalFiltersParams; // @synthesize vocalFiltersParams=_vocalFiltersParams;
 @property(readonly, nonatomic) NSDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;

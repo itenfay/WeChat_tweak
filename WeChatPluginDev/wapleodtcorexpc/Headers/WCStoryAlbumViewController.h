@@ -20,7 +20,6 @@
     WCStoryAlbumViewModel *_viewModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCStoryAlbumViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) MMUILabel *noDataLabel; // @synthesize noDataLabel=_noDataLabel;
 @property(nonatomic) _Bool isNoMoreData; // @synthesize isNoMoreData=_isNoMoreData;

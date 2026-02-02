@@ -57,7 +57,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *page; // @synthesize page=_page;
 @property(retain, nonatomic) NSString *version; // @synthesize version;

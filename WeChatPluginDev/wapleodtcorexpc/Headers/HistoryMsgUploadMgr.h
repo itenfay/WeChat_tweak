@@ -20,7 +20,6 @@
     NSMutableArray *_arrUploadTask;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrUploadTask; // @synthesize arrUploadTask=_arrUploadTask;
 @property(retain, nonatomic) NSMutableArray *arrReadyAddMsg; // @synthesize arrReadyAddMsg=_arrReadyAddMsg;
 @property(retain, nonatomic) NSArray *msgList; // @synthesize msgList=_msgList;

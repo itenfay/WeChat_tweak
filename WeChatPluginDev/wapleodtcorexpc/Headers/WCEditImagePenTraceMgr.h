@@ -12,7 +12,6 @@
     NSMutableArray *_penTraceViews;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *penTraceViews; // @synthesize penTraceViews=_penTraceViews;
 - (void)_playShockIfNeeded;
 - (void)setPenTraceHighLight:(_Bool)arg1 withIndex:(id)arg2;

@@ -14,7 +14,6 @@
     NSString *_annoTextImgKey;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *annoTextImgKey; // @synthesize annoTextImgKey=_annoTextImgKey;
 @property(nonatomic) int subMarkerID; // @synthesize subMarkerID=_subMarkerID;
 @property(nonatomic) int markerID; // @synthesize markerID=_markerID;

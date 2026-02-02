@@ -11,7 +11,6 @@
     MMUILabel *_guideAlbumLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *guideAlbumLabel; // @synthesize guideAlbumLabel=_guideAlbumLabel;
 @property(retain, nonatomic) UIImageView *guideImageView; // @synthesize guideImageView=_guideImageView;
 - (void)layoutCustomizedContentView;

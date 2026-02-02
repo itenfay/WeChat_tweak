@@ -10,7 +10,6 @@
     SightAssetExportSession *_session;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SightAssetExportSession *session; // @synthesize session=_session;
 - (void)handleJSEvent:(id)arg1;
 

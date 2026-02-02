@@ -23,7 +23,6 @@
     UIPanGestureRecognizer *_panGesture;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPresent; // @synthesize isPresent=_isPresent;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(retain, nonatomic) WCSplitPropertyAnimator *animator; // @synthesize animator=_animator;

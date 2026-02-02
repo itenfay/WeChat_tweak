@@ -25,7 +25,6 @@
 + (void)PBArrayAdd_m_clickFlag;
 + (void)PBArrayAdd_m_packageId;
 + (void)PBArrayAdd_m_descList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmotionLinkInfo *linkInfo; // @synthesize linkInfo=_linkInfo;
 @property(nonatomic) unsigned int m_clickFlag; // @synthesize m_clickFlag=_m_clickFlag;
 @property(nonatomic) unsigned int m_lastRequestTime; // @synthesize m_lastRequestTime=_m_lastRequestTime;

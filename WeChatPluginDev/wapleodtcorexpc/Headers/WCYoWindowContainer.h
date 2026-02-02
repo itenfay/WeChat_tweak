@@ -11,7 +11,6 @@
     NSObject<WCYoWindowDelegate> *_yoWindowDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<WCYoWindowDelegate> *yoWindowDelegate; // @synthesize yoWindowDelegate=_yoWindowDelegate;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 

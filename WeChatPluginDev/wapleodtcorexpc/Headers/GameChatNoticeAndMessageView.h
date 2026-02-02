@@ -23,7 +23,6 @@
 }
 
 + (double)dynamicMessageViewHeight;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(retain, nonatomic) UILabel *allLabel; // @synthesize allLabel=_allLabel;
 @property(retain, nonatomic) NSArray *chatModelArray; // @synthesize chatModelArray=_chatModelArray;

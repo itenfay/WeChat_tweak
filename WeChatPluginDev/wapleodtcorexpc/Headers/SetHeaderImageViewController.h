@@ -27,7 +27,6 @@
     unsigned int m_uiUploadHeadEventID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SetHeaderImageViewDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;
 - (void)onDeleteContact:(id)arg1;

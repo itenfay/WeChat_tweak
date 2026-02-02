@@ -42,7 +42,6 @@
 + (void)PBArrayAdd_topicType;
 + (void)PBArrayAdd_topicName;
 + (void)PBArrayAdd_topicId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *topicBuffer; // @synthesize topicBuffer=_topicBuffer;
 @property(nonatomic) _Bool jumpFlag; // @synthesize jumpFlag=_jumpFlag;
 @property(nonatomic) unsigned int topicType; // @synthesize topicType=_topicType;

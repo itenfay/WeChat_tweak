@@ -16,7 +16,6 @@
 
 + (double)displayHeightWithWidth:(double)arg1;
 + (double)textLabelWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIView *rightLine; // @synthesize rightLine=_rightLine;
 @property(retain, nonatomic) UIView *leftLine; // @synthesize leftLine=_leftLine;

@@ -23,7 +23,6 @@
 }
 
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 advertiseInfo:(id)arg2 orientation:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicInfo *mmMusicInfo; // @synthesize mmMusicInfo=_mmMusicInfo;
 @property(retain, nonatomic) NSString *musicId; // @synthesize musicId=_musicId;
 @property(retain, nonatomic) WCCanvasComponentMusicInfo *canvasMusicInfo; // @synthesize canvasMusicInfo=_canvasMusicInfo;

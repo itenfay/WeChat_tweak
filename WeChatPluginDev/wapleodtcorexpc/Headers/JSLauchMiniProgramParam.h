@@ -17,7 +17,6 @@
     long long _scene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSDictionary *halfScreenParam; // @synthesize halfScreenParam=_halfScreenParam;
 @property(retain, nonatomic) id privateReferrerData; // @synthesize privateReferrerData=_privateReferrerData;

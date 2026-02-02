@@ -14,7 +14,6 @@
     MMLiveTaskId *_taskId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLongPulling; // @synthesize isLongPulling=_isLongPulling;
 @property(nonatomic) _Bool isStartGetLiveComment; // @synthesize isStartGetLiveComment=_isStartGetLiveComment;
 @property(retain, nonatomic) MMLiveTaskId *taskId; // @synthesize taskId=_taskId;

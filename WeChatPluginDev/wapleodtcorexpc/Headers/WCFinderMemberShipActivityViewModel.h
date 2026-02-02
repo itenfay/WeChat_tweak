@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCFinderMemberShipDiscussionPage;
 @protocol WCFinderMemberShipActivityViewModelDelegate;
@@ -21,7 +22,6 @@
     NSString *_redirectFeedID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *redirectFeedID; // @synthesize redirectFeedID=_redirectFeedID;
 @property(copy, nonatomic) NSString *finderMemberTicket; // @synthesize finderMemberTicket=_finderMemberTicket;
 @property(retain, nonatomic) WCFinderMemberShipDiscussionPage *currentPage; // @synthesize currentPage=_currentPage;
@@ -65,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

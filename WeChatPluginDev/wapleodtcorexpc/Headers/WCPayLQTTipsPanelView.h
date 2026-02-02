@@ -17,7 +17,6 @@
     UIButton *_backButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;

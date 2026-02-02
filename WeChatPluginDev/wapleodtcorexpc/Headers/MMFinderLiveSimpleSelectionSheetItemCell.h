@@ -16,7 +16,6 @@
 
 + (id)reuseId;
 + (double)cellHeightWithItem:(id)arg1 maxWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIImageView *selectStatusImageView; // @synthesize selectStatusImageView=_selectStatusImageView;
 @property(retain, nonatomic) MMUILabel *detailDescriptionLabel; // @synthesize detailDescriptionLabel=_detailDescriptionLabel;
 @property(retain, nonatomic) MMUILabel *detailTitleLabel; // @synthesize detailTitleLabel=_detailTitleLabel;

@@ -13,7 +13,6 @@
     struct CGSize cropSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIToolbar *toolbar; // @synthesize toolbar;
 @property(nonatomic) struct CGSize cropSize; // @synthesize cropSize;
 - (void)drawRect:(struct CGRect)arg1;

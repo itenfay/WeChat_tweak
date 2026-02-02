@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class AVQueuePlayer, NSArray, NSDate, NSError, NSMutableArray, NSString, NSTimer, TPAVPlayerLayerView, TPAVQueuePlayerSlice, TPFBKVOController, TPFairPlayMgr, TPPlayerLayerViewContainer, TPPlayerLogContext, TPPlayerVideo;
 
@@ -67,7 +68,6 @@
     struct CGSize _presentationSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPPlayerLogContext *log; // @synthesize log=_log;
 @property(nonatomic) _Bool shouldNotifyClipStartWhenPlaying; // @synthesize shouldNotifyClipStartWhenPlaying=_shouldNotifyClipStartWhenPlaying;
 @property(nonatomic) _Bool isResumeing; // @synthesize isResumeing=_isResumeing;
@@ -206,4 +206,3 @@
 @property(readonly) Class superclass;
 
 @end
-

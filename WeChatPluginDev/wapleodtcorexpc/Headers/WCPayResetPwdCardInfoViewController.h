@@ -37,7 +37,6 @@
     WCBaseTextFieldItem *_realNameTextItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCBaseTextFieldItem *realNameTextItem; // @synthesize realNameTextItem=_realNameTextItem;
 @property(retain, nonatomic) WCPayCountryCodeAndPhoneNumberItem *countryCodeAndPhoneItem; // @synthesize countryCodeAndPhoneItem=_countryCodeAndPhoneItem;
 @property(retain, nonatomic) WCPayCountryCodeItem *countryCodeItem; // @synthesize countryCodeItem=_countryCodeItem;

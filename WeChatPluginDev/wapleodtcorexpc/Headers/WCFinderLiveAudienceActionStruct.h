@@ -44,7 +44,6 @@
     NSMutableDictionary *_switchExtraDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *switchExtraDic; // @synthesize switchExtraDic=_switchExtraDic;
 @property(retain, nonatomic) NSString *couponId; // @synthesize couponId=_couponId;
 @property(retain, nonatomic) NSString *actionStyle; // @synthesize actionStyle=_actionStyle;

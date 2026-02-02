@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_nulls;
 + (void)PBArrayAdd_heaviest;
 + (void)PBArrayAdd_time;
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, copy) NSArray *nulls;
 @property(nonatomic, copy) NSDictionary *heaviest;

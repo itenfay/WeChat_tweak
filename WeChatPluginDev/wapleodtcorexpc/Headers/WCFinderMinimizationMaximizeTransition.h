@@ -17,7 +17,6 @@
     id <MinimizationMaximizeTransitionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MinimizationMaximizeTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MinimizeTransitionInterface> transitionDelegate; // @synthesize transitionDelegate=_transitionDelegate;
 @property(retain, nonatomic) MinimizeTaskData *taskData; // @synthesize taskData=_taskData;

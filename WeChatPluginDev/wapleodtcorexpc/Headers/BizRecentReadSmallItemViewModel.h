@@ -16,7 +16,6 @@
     NSString *_bizUin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int itemId; // @synthesize itemId=_itemId;
 @property(nonatomic) unsigned int appMsgId; // @synthesize appMsgId=_appMsgId;
 @property(retain, nonatomic) NSString *bizUin; // @synthesize bizUin=_bizUin;

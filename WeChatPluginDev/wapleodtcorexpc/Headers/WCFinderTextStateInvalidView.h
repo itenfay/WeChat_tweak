@@ -16,7 +16,6 @@
     double _transitionProgress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double transitionProgress; // @synthesize transitionProgress=_transitionProgress;
 @property(retain, nonatomic) WCFinderFeedDetailStatusView *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;

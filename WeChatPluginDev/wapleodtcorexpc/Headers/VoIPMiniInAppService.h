@@ -16,7 +16,6 @@
 }
 
 + (id)minimizeTaskKey;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLocalResume; // @synthesize isLocalResume=_isLocalResume;
 @property(nonatomic) _Bool isCameraPrevInterruptAndResume; // @synthesize isCameraPrevInterruptAndResume=_isCameraPrevInterruptAndResume;
 @property(retain, nonatomic) VoIPMiniInAppView *currentView; // @synthesize currentView=_currentView;

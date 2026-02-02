@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ConcertTicketInfo, MMFinderLiveConcertTicketFailureView, MMFinderLiveConcertTicketViewController, MMFinderLiveConcertTicketViewControllerReportingContext, MMUIButton, NSArray, NSMutableDictionary, NSString, UIImageView, UILabel, UIView;
 
 @interface MMFinderLiveConcertTicketContainerViewController
@@ -27,7 +29,6 @@
     MMFinderLiveConcertTicketViewControllerReportingContext *_reportingContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConcertTicketViewControllerReportingContext *reportingContext; // @synthesize reportingContext=_reportingContext;
 @property(nonatomic) unsigned long long sourceScene; // @synthesize sourceScene=_sourceScene;
 @property(nonatomic) unsigned long long displayState; // @synthesize displayState=_displayState;
@@ -87,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

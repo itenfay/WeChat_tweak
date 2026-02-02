@@ -15,7 +15,6 @@
 }
 
 + (id)buildInputWithImage:(id)arg1 path:(id)arg2 userInfo:(id)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

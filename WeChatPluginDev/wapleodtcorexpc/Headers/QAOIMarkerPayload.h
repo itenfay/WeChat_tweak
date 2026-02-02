@@ -29,7 +29,6 @@
     NSString *_annoTextImgKey;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
 @property(copy, nonatomic) NSString *annoTextImgKey; // @synthesize annoTextImgKey=_annoTextImgKey;
 @property(nonatomic) int priority; // @synthesize priority=_priority;

@@ -19,7 +19,6 @@
     MMUIView *_used;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int bannerType; // @synthesize bannerType=_bannerType;
 @property(retain, nonatomic) MMUIView *used; // @synthesize used=_used;
 @property(retain, nonatomic) MMUIView *mainView; // @synthesize mainView=_mainView;

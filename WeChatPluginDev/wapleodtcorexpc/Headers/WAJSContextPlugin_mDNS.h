@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, NSMutableArray, NSNetServiceBrowser, NSString;
 
 @interface WAJSContextPlugin_mDNS
@@ -16,7 +18,6 @@
     MMTimer *_timerForStartScan;
 }
 
-- (void).cxx_destruct;
 - (void)sendJSEventToAppService:(id)arg1;
 - (void)notifyServiceLostToJSCore:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
@@ -46,4 +47,3 @@
 @property(readonly) Class superclass;
 
 @end
-

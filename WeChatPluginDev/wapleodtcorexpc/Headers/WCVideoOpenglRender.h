@@ -33,7 +33,6 @@
     unsigned long long _loadingImagesTimerCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadingImagesTimerCount; // @synthesize loadingImagesTimerCount=_loadingImagesTimerCount;
 @property(retain, nonatomic) MMTimer *loadingImagesTimer; // @synthesize loadingImagesTimer=_loadingImagesTimer;
 @property(retain, nonatomic) NSMutableArray *loadingImagesList; // @synthesize loadingImagesList=_loadingImagesList;

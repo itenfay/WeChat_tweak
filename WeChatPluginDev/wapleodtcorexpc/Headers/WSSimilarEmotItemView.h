@@ -17,7 +17,6 @@
     MMUIActivityIndicatorView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 @property(nonatomic) __weak id <WSSimilarEmotItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WSEmoticonModel *model; // @synthesize model=_model;

@@ -13,7 +13,6 @@
     MMUIButton *_coverButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *coverButton; // @synthesize coverButton=_coverButton;
 @property(retain, nonatomic) WCAdLookbookBrandNewItem *brandNewItemInfo; // @synthesize brandNewItemInfo=_brandNewItemInfo;
 @property(nonatomic) __weak id <WCTimeLineAdLookbookCardBrandNewMediaViewDelegate> brandNewMediaDelegate; // @synthesize brandNewMediaDelegate=_brandNewMediaDelegate;

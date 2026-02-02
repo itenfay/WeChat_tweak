@@ -16,7 +16,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int m_transferType; // @synthesize m_transferType=_m_transferType;
 @property(nonatomic) int m_transferNum; // @synthesize m_transferNum=_m_transferNum;
 @property(retain, nonatomic) NSString *m_tradeUrl; // @synthesize m_tradeUrl=_m_tradeUrl;

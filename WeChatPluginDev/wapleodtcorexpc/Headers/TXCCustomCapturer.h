@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableSet, NSString, TXCDispatchQueue, TXCPixelBufferPool, TXCTimedOutput, TXCVideoCaptureConfig;
 
@@ -25,7 +26,6 @@
     unsigned long long _firstOutputMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isTranscodingMode; // @synthesize isTranscodingMode=_isTranscodingMode;
 @property(nonatomic) unsigned long long firstOutputMs; // @synthesize firstOutputMs=_firstOutputMs;
 @property(nonatomic) unsigned int firstPtsMs; // @synthesize firstPtsMs=_firstPtsMs;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

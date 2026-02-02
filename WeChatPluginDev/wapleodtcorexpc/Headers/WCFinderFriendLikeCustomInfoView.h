@@ -18,7 +18,6 @@
     struct CGSize _headImageSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *avatorContainerView; // @synthesize avatorContainerView=_avatorContainerView;
 @property(retain, nonatomic) WCFinderDynamicRichTextView *appendTisTextView; // @synthesize appendTisTextView=_appendTisTextView;
 @property(retain, nonatomic) WCFinderDynamicRichTextView *likeInfoTextView; // @synthesize likeInfoTextView=_likeInfoTextView;

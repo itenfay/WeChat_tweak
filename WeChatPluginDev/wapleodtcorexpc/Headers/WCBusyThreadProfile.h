@@ -13,7 +13,6 @@
     NSArray *_callTree;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *callTree; // @synthesize callTree=_callTree;
 @property(nonatomic) unsigned int thread; // @synthesize thread=_thread;
 - (id)initWithThread:(unsigned int)arg1 callTree:(id)arg2;

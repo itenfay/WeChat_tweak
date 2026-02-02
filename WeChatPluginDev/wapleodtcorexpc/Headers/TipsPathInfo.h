@@ -13,7 +13,6 @@
     NSMutableSet *_setTipsId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *setTipsId; // @synthesize setTipsId=_setTipsId;
 @property(retain, nonatomic) NSString *nsPathKey; // @synthesize nsPathKey=_nsPathKey;
 

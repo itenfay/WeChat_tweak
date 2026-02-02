@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WCFinderFeedArray, WCFinderProfileFeedFetcher, WCFinderProfileFeedManager, WCFinderStreamLoadingState, WCFinderStreamProfileHeadData, WCFinderTopicInfo;
 @protocol WCFinderProfileTagFeedViewModelDataChange, WCFinderProfileTagFeedViewModelDelegate;
@@ -22,7 +23,6 @@
 }
 
 + (id)createDataFetcher:(id)arg1 topicId:(unsigned long long)arg2 username:(id)arg3;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderProfileTagFeedViewModel *refPageModel; // @synthesize refPageModel=_refPageModel;
 @property(nonatomic) long long feedCount; // @synthesize feedCount=_feedCount;
 @property(nonatomic) __weak WCFinderStreamProfileHeadData *headData; // @synthesize headData=_headData;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

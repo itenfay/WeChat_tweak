@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSDictionary;
 
@@ -15,11 +16,9 @@
     CDUnknownBlockType _openResultBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType openResultBlock; // @synthesize openResultBlock=_openResultBlock;
 @property(retain, nonatomic) NSDictionary *liteAppStoreDataDict; // @synthesize liteAppStoreDataDict=_liteAppStoreDataDict;
 @property(copy, nonatomic) CDUnknownBlockType onHalfCloseAction; // @synthesize onHalfCloseAction=_onHalfCloseAction;
 @property(copy, nonatomic) CDUnknownBlockType onDispatch; // @synthesize onDispatch=_onDispatch;
 
 @end
-

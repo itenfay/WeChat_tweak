@@ -24,7 +24,6 @@
 }
 
 + (id)GetPathOfOpenUploadCDNFile;
-- (void).cxx_destruct;
 - (void)HandleRevokeMsg:(id)arg1;
 - (void)HandleStatusNotifMsg:(id)arg1;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

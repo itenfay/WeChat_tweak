@@ -13,7 +13,6 @@
     NSString *_pageName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int logID; // @synthesize logID=_logID;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 - (id)toString;

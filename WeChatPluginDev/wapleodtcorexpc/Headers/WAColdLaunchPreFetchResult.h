@@ -15,7 +15,6 @@
     unsigned long long _status;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *fetchData; // @synthesize fetchData=_fetchData;
 @property(nonatomic) _Bool ret; // @synthesize ret=_ret;

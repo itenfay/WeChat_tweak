@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface TSKBaseModel : NSObject
 {
@@ -14,4 +15,3 @@
 - (void)encodeWithCoder:(id)arg1;
 
 @end
-

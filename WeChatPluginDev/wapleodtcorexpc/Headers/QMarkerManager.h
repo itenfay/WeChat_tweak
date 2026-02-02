@@ -14,7 +14,6 @@
     NSMutableArray *_markerStorage;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *markerStorage; // @synthesize markerStorage=_markerStorage;
 @property(nonatomic) __weak QMapContext *mapContext; // @synthesize mapContext=_mapContext;
 @property(nonatomic) __weak QMediator *mediator; // @synthesize mediator=_mediator;

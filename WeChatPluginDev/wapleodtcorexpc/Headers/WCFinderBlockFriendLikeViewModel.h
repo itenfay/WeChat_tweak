@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, WCFinderBatchModContactTypeTask;
 @protocol WCFinderAuthorityListViewModelDelegate, WCFinderAuthorityListViewModelSearchDelegate;
@@ -18,7 +19,6 @@
 }
 
 + (id)convertContact:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAddedBlockFriends; // @synthesize hasAddedBlockFriends=_hasAddedBlockFriends;
 @property(retain, nonatomic) WCFinderBatchModContactTypeTask *batchContactTask; // @synthesize batchContactTask=_batchContactTask;
 @property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
@@ -51,4 +51,3 @@
 @property(readonly) Class superclass;
 
 @end
-

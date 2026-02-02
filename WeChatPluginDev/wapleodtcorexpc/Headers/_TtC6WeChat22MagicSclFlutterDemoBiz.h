@@ -14,7 +14,6 @@
     MISSING_TYPE *$__lazy_storage_$_allPlugins;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) id <_TtP6WeChat26IMBSclExternalViewDelegate_> externalViewDelegate;
 

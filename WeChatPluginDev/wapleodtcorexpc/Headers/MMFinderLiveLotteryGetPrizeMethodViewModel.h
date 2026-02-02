@@ -16,7 +16,6 @@
     NSIndexPath *_selectIndexPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectIndexPath; // @synthesize selectIndexPath=_selectIndexPath;
 @property(retain, nonatomic) NSMutableArray *lotteryMethodDataArray; // @synthesize lotteryMethodDataArray=_lotteryMethodDataArray;
 @property(nonatomic) __weak id <MMFinderLiveLotteryGetPrizeMethodDelegate> dataDelegate; // @synthesize dataDelegate=_dataDelegate;

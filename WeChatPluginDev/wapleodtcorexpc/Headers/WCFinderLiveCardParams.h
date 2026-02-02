@@ -13,7 +13,6 @@
     WCFinderLiveNoticCardParams *_noticeParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveNoticCardParams *noticeParams; // @synthesize noticeParams=_noticeParams;
 @property(retain, nonatomic) MMFinderLiveContentVM *livingContentVM; // @synthesize livingContentVM=_livingContentVM;
 - (id)initWithLivingContentVM:(id)arg1 noticeParams:(id)arg2;

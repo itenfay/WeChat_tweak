@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WCTDatabase, WCTTable;
 
@@ -15,7 +16,6 @@
     WCTTable *m_tableImageInfo;
 }
 
-- (void).cxx_destruct;
 - (id)getAllImageInfos;
 - (_Bool)insertImageInfos:(id)arg1;
 - (id)getNetworkSamplesFrom:(double)arg1 to:(double)arg2;
@@ -28,4 +28,3 @@
 - (id)initWithDBPath:(id)arg1;
 
 @end
-

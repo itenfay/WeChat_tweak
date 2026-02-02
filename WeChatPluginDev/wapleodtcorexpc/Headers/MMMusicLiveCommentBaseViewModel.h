@@ -21,7 +21,6 @@
 }
 
 + (id)modelWithPopMsg:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLocation *location; // @synthesize location=_location;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) MMMusicLiveBaseMsg *msg; // @synthesize msg=_msg;

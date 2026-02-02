@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMWebViewController, NSString, UIViewController, WOAPObject;
 
 @interface WOAPPrivacyConfirmLogic
@@ -15,7 +17,6 @@
 
 + (_Bool)isNeedPrivacyConfirm;
 + (void)setForcePrivacyConfirmRequirement;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WOAPObject *requestObj; // @synthesize requestObj=_requestObj;
 @property(retain, nonatomic) MMWebViewController *privacyWebView; // @synthesize privacyWebView=_privacyWebView;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
@@ -42,4 +43,3 @@
 @property(readonly) Class superclass;
 
 @end
-

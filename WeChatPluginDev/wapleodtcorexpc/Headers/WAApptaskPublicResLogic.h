@@ -14,7 +14,6 @@
     NSDictionary *_pubLibVersion;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *pubLibVersion; // @synthesize pubLibVersion=_pubLibVersion;
 @property(retain, nonatomic) WAPublicResModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *appid; // @synthesize appid=_appid;

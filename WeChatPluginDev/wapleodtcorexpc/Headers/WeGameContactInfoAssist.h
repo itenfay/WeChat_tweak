@@ -10,7 +10,6 @@
     ForwardMessageLogicController *m_forwardLogic;
 }
 
-- (void).cxx_destruct;
 - (void)uninstallPlugin;
 - (void)installPlugin;
 - (void)handleTopSwitchChange:(id)arg1;

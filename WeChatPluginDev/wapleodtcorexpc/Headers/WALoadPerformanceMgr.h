@@ -17,7 +17,6 @@
     unsigned int _currentVersion;
 }
 
-- (void).cxx_destruct;
 - (void)reportLoadPerformanceInfo:(unsigned int)arg1 reportType:(unsigned long long)arg2 appType:(unsigned int)arg3;
 - (unsigned int)logAppRouteActionType:(long long)arg1 webviewID:(unsigned long long)arg2 appType:(unsigned int)arg3;
 - (void)logLaunchAppWithAppID:(id)arg1 version:(unsigned int)arg2;

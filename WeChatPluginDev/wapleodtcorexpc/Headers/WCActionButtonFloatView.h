@@ -13,7 +13,6 @@
     struct CGPoint _showPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) struct CGPoint showPoint; // @synthesize showPoint=_showPoint;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;

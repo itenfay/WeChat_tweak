@@ -26,7 +26,6 @@
 }
 
 + (id)paramWithUsername:(id)arg1 redirectFeedID:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPreviewMode; // @synthesize isPreviewMode=_isPreviewMode;
 @property(nonatomic) unsigned long long tabType; // @synthesize tabType=_tabType;
 @property(nonatomic) unsigned long long entranceSource; // @synthesize entranceSource=_entranceSource;

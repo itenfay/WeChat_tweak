@@ -16,7 +16,6 @@
     id <WCAudioModuleProxyDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAudioModuleProxyDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool allowsExternalPlayback; // @synthesize allowsExternalPlayback=_allowsExternalPlayback;
 @property(readonly, nonatomic) NSString *audioModuleIdentifier; // @synthesize audioModuleIdentifier=_audioModuleIdentifier;

@@ -22,7 +22,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *jumpLinkActionInfo; // @synthesize jumpLinkActionInfo=_jumpLinkActionInfo;
 @property(retain, nonatomic) NSArray *headImageList; // @synthesize headImageList=_headImageList;
 @property(retain, nonatomic) WCAdColorInfo *numberTitleColor; // @synthesize numberTitleColor=_numberTitleColor;

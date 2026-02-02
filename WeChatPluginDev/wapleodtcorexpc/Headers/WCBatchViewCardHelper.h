@@ -17,7 +17,6 @@
     MMUIViewController *_nextViewController;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIViewController *nextViewController; // @synthesize nextViewController=_nextViewController;
 @property(nonatomic) unsigned long long fromScene; // @synthesize fromScene=_fromScene;
 @property(nonatomic) __weak id <WCBatchViewCardHelpDelegate> delegate; // @synthesize delegate=_delegate;

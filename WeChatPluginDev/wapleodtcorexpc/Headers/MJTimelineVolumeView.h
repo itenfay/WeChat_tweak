@@ -21,7 +21,6 @@
     MJPublisherButton *_autoVolumeAdjustmentSwitch;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPublisherButton *autoVolumeAdjustmentSwitch; // @synthesize autoVolumeAdjustmentSwitch=_autoVolumeAdjustmentSwitch;
 @property(retain, nonatomic) NSMutableArray *slidersInfo; // @synthesize slidersInfo=_slidersInfo;
 @property(retain, nonatomic) MJTimelineVolumeSliderInfo *narrationVolumeSliderInfo; // @synthesize narrationVolumeSliderInfo=_narrationVolumeSliderInfo;

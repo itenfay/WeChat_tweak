@@ -13,7 +13,6 @@
     long long m_llFee;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsDesc; // @synthesize m_nsDesc;
 @property(nonatomic) long long m_llFee; // @synthesize m_llFee;
 

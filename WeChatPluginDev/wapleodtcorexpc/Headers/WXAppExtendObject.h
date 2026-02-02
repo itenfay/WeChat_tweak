@@ -15,7 +15,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url;
 @property(retain, nonatomic) NSData *fileData; // @synthesize fileData;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo;

@@ -16,7 +16,6 @@
     MMImageScrollViewHelper *_scrollViewHelper;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMImageScrollViewHelper *scrollViewHelper; // @synthesize scrollViewHelper=_scrollViewHelper;
 @property(nonatomic) __weak id <WCC2CVideoThumbImageViewDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

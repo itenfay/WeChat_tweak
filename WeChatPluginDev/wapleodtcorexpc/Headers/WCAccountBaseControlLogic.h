@@ -12,7 +12,6 @@
     _Bool m_bNeverAutoStop;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCAccountControlData *data; // @synthesize data=m_data;
 - (id)getViewController;
 - (void)onErrorHandleLogicDone;

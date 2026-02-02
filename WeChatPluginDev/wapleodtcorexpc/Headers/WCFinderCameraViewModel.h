@@ -15,7 +15,6 @@
     NSString *_finderUsername;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;
 @property(copy, nonatomic) NSString *musicSongId; // @synthesize musicSongId=_musicSongId;
 @property(copy, nonatomic) NSString *templateFollowFeedId; // @synthesize templateFollowFeedId=_templateFollowFeedId;

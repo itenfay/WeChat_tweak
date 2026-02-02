@@ -11,7 +11,6 @@
     MISSING_TYPE *amplitude;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)deviceMotionAccelerationChangedWithX:(double)arg1 y:(double)arg2 z:(double)arg3;
 - (void)handleEvent:(id)arg1 userInfo:(id)arg2;

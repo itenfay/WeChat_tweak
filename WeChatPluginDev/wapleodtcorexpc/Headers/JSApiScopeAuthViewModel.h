@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSApiScopeAuthorizeInfo, JSApiScopeAuthorizePageSheet;
 
 @interface JSApiScopeAuthViewModel
@@ -10,7 +12,6 @@
     CDUnknownBlockType _scrollToAvatarAction;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scrollToAvatarAction; // @synthesize scrollToAvatarAction=_scrollToAvatarAction;
 
 // Remaining properties
@@ -18,4 +19,3 @@
 @property(nonatomic) __weak JSApiScopeAuthorizePageSheet *pageSheet; // @dynamic pageSheet;
 
 @end
-

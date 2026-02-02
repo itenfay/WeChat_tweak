@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_currentAction;
 + (void)PBArrayAdd_parentId;
 + (void)PBArrayAdd_id;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int delStatus; // @synthesize delStatus=_delStatus;
 @property(nonatomic) unsigned int objectCreateTime; // @synthesize objectCreateTime=_objectCreateTime;
 @property(retain, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;

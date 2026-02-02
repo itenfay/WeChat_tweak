@@ -13,7 +13,6 @@
     AAQueryListRes *_lastQueryListResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) AAQueryListRes *lastQueryListResp; // @synthesize lastQueryListResp=_lastQueryListResp;
 @property(nonatomic) unsigned long long reqestingHistoryScene; // @synthesize reqestingHistoryScene=_reqestingHistoryScene;
 @property(nonatomic) unsigned long long curHistoryScene; // @synthesize curHistoryScene=_curHistoryScene;

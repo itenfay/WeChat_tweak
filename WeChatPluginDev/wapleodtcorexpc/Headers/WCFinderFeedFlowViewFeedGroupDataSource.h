@@ -14,7 +14,6 @@
     WCFinderFeedGroup *_feedGroup;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderFeedGroup *feedGroup; // @synthesize feedGroup=_feedGroup;
 @property(nonatomic) __weak id <WCFinderFeedFlowViewAdapterDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)finderFeedFlowView:(id)arg1 cellConfigAtIndexPath:(id)arg2;

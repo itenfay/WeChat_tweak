@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSData, NSMutableArray, NSString, PhoneAuthGetPhoneNumberLogicPhoneInfo, WAPhoneNumberAuthorizeSheetInfo, WAPhoneVerifyWindow, WAReportPhoneAuthActionItem, WCAccountBindPhoneControlLogic;
 @protocol IWAPhoneNumberAuthorizePageSheet;
 
@@ -28,7 +30,6 @@
     NSMutableArray *_customPhoneInfos;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *customPhoneInfos; // @synthesize customPhoneInfos=_customPhoneInfos;
 @property(nonatomic) unsigned long long originInterativePopFlag; // @synthesize originInterativePopFlag=_originInterativePopFlag;
 @property(copy, nonatomic) NSString *recordPhone; // @synthesize recordPhone=_recordPhone;
@@ -108,4 +109,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
 }
 
 + (_Bool)shouldShowSetPermissionsWithUserName:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTableViewInfo *tableViewInfo; // @synthesize tableViewInfo=_tableViewInfo;
 @property(nonatomic) unsigned int m_uiVerify; // @synthesize m_uiVerify=_m_uiVerify;
 @property(nonatomic) _Bool bDisableAllOperation; // @synthesize bDisableAllOperation=_bDisableAllOperation;

@@ -10,7 +10,6 @@
     NSMutableDictionary *m_dicState;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_dicState; // @synthesize m_dicState;
 - (void)OnEmoticonPackageDownloadStatusChanged:(id)arg1 IsDownloaded:(_Bool)arg2;
 - (void)OnEmoticonStoreItemInstallFailed:(id)arg1;

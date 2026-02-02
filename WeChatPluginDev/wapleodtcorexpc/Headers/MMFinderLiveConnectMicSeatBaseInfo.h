@@ -14,7 +14,6 @@
     NSString *_seatName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInOtherRoom; // @synthesize isInOtherRoom=_isInOtherRoom;
 @property(copy, nonatomic) NSString *seatName; // @synthesize seatName=_seatName;
 @property(nonatomic) unsigned long long micIndex; // @synthesize micIndex=_micIndex;

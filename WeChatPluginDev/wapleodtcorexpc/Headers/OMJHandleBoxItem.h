@@ -18,7 +18,6 @@
     struct CGSize _touchSize;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;

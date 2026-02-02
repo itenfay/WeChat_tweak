@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface WAPermissionMgr
@@ -24,7 +26,6 @@
 + (id)getPermissionByte:(id)arg1;
 + (_Bool)checkJsAPI:(id)arg1 haveRunMode:(unsigned int)arg2;
 + (unsigned int)getPermissionMode:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstTimeCheckABTestPermission; // @synthesize isFirstTimeCheckABTestPermission=_isFirstTimeCheckABTestPermission;
 @property(nonatomic) _Bool isFirstTimeCheckPluginPermission; // @synthesize isFirstTimeCheckPluginPermission=_isFirstTimeCheckPluginPermission;
 @property(nonatomic) unsigned int debugModeType; // @synthesize debugModeType=_debugModeType;
@@ -77,4 +78,3 @@
 @property(readonly) Class superclass;
 
 @end
-

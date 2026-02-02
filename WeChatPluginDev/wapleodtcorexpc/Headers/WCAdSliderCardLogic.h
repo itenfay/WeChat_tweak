@@ -16,7 +16,6 @@
 }
 
 + (id)getLogicWithDataItem:(id)arg1 contentItemScene:(unsigned long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentItemScene; // @synthesize contentItemScene=_contentItemScene;
 @property(retain, nonatomic) WCDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) _Bool isOpeningAnimationVisible; // @synthesize isOpeningAnimationVisible=_isOpeningAnimationVisible;

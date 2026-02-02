@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIButton, NSMutableSet, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel, UITapGestureRecognizer, WCFinderAnimationLoadingView, WCFinderCustomImageRichTextView, WCFinderFavInfo, WCFinderFeedFavListViewModel, WCFinderMagicAnimationLogic, WCFinderStreamFooterView;
 
 @interface WCFinderFeedFavListViewController
@@ -27,7 +29,6 @@
     NSMutableSet *_cellExposeSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *cellExposeSet; // @synthesize cellExposeSet=_cellExposeSet;
 @property(retain, nonatomic) WCFinderMagicAnimationLogic *magicAnimationLogic; // @synthesize magicAnimationLogic=_magicAnimationLogic;
 @property(nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;
@@ -102,4 +103,3 @@
 @property(readonly) Class superclass;
 
 @end
-

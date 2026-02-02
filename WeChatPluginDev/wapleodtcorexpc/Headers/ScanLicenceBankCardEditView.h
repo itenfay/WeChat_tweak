@@ -13,7 +13,6 @@
     UITextField *bankSequenceField;
 }
 
-- (void).cxx_destruct;
 - (id)getFullBankNumStr;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 andCodeNum:(id)arg2;

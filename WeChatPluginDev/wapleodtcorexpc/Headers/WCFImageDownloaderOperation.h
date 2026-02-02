@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, WCFImageTaskInfo;
 
@@ -33,7 +34,6 @@
 + (id)marsScheduleQueue;
 + (id)operationsWithMedia:(id)arg1 isThumb:(_Bool)arg2;
 + (id)operationWithMedia:(id)arg1 type:(long long)arg2 key:(id)arg3;
-- (void).cxx_destruct;
 @property long long status; // @synthesize status=_status;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
@@ -88,4 +88,3 @@
 @property(readonly) Class superclass;
 
 @end
-

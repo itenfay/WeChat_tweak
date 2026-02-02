@@ -20,7 +20,6 @@
     FinderLiveReportBaseInfo *_liveReportBaseInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveReportBaseInfo *liveReportBaseInfo; // @synthesize liveReportBaseInfo=_liveReportBaseInfo;
 @property(retain, nonatomic) FinderClientStatus *clientStatus; // @synthesize clientStatus=_clientStatus;
 @property(retain, nonatomic) FinderLivePermissionVerifyInfo *verifyInfo; // @synthesize verifyInfo=_verifyInfo;

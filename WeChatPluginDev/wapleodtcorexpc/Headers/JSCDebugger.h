@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class JSContext;
 
@@ -16,7 +17,6 @@
 + (struct __CFString *)JSCDebuggerRunLoopMode;
 + (_Bool)isSupportedDebugger;
 + (id)debuggerWithContext:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak JSContext *context; // @synthesize context=_context;
 - (CDUnknownBlockType)setupConnectionAdapter:(void *)arg1 disconnectBlock:(id *)arg2;
 - (void)removeDebuggerWrapper;
@@ -29,4 +29,3 @@
 - (_Bool)setupJSCDebuggerConnection:(CDUnknownBlockType)arg1;
 
 @end
-

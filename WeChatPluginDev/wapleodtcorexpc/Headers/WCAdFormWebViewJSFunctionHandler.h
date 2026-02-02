@@ -23,7 +23,6 @@
     WCAdWheelPickerLogic *_wheelPickerLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdWheelPickerLogic *wheelPickerLogic; // @synthesize wheelPickerLogic=_wheelPickerLogic;
 @property(retain, nonatomic) WCAdConfirmHalfScreenAdapter *phoneNumAdapter; // @synthesize phoneNumAdapter=_phoneNumAdapter;
 @property(retain, nonatomic) WCAdDetermineHalfScreenView *determineHalfScreenView; // @synthesize determineHalfScreenView=_determineHalfScreenView;

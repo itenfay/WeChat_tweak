@@ -37,7 +37,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_fromUserName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCCardFieldItem *feedField; // @synthesize feedField=_feedField;
 @property(retain, nonatomic) WCCardFieldItem *finderField; // @synthesize finderField=_finderField;
 @property(retain, nonatomic) WCCardFieldItem *giftingInfoField; // @synthesize giftingInfoField=_giftingInfoField;

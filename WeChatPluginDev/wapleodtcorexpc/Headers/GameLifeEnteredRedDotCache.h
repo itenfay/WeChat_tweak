@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_enterIdArr;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *enterIdArr; // @synthesize enterIdArr=_enterIdArr;
 - (id)getPBPropertyTable;
 

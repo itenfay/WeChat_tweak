@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, NSURLSession;
 @protocol OS_dispatch_queue;
@@ -27,7 +28,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)parseIpAddress:(id)arg1;
 - (struct IPEndPoint)getRemoteAddr:(id)arg1;
 - (id)base64DecodeString:(id)arg1;
@@ -60,4 +60,3 @@
 @property(readonly) Class superclass;
 
 @end
-

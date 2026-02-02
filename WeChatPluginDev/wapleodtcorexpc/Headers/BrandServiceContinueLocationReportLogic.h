@@ -15,7 +15,6 @@
     NSMutableDictionary *_extInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int preEventID; // @synthesize preEventID=_preEventID;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSDate *m_lastReportTime; // @synthesize m_lastReportTime;

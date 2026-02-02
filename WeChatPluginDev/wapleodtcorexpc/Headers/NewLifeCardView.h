@@ -33,7 +33,6 @@
 + (id)generateMediaBottomButtonWithHasText:(_Bool)arg1;
 + (id)generateFooterButton;
 + (double)adjustFooterButtonSize:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeRedPacketActivityView *redPacketView; // @synthesize redPacketView=_redPacketView;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) UIView *infoBGView; // @synthesize infoBGView=_infoBGView;

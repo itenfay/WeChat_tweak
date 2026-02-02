@@ -18,7 +18,6 @@
 }
 
 + (id)createWithAvatarUrl:(id)arg1 userName:(id)arg2 detail:(id)arg3 selected:(_Bool)arg4 menuItemsArray:(id)arg5;
-- (void).cxx_destruct;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSMutableArray *menuItemsArray; // @synthesize menuItemsArray=_menuItemsArray;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;

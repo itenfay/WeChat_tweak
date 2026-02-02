@@ -13,7 +13,6 @@
     GC23070Report *_reportModel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GC23070Report *reportModel; // @synthesize reportModel=_reportModel;
 @property(retain, nonatomic) ChatroomJumpDetail *jumpDetail; // @synthesize jumpDetail=_jumpDetail;
 - (void)handleJump;

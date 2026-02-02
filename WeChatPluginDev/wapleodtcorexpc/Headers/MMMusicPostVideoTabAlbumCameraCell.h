@@ -13,7 +13,6 @@
 }
 
 + (id)reuseKey;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
 - (void)layoutSubviews;

@@ -17,7 +17,6 @@
     NSString *_finderLiveDesc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderLiveDesc; // @synthesize finderLiveDesc=_finderLiveDesc;
 @property(retain, nonatomic) NSString *finderLiveTitle; // @synthesize finderLiveTitle=_finderLiveTitle;
 @property(retain, nonatomic) NSString *finderNickname; // @synthesize finderNickname=_finderNickname;

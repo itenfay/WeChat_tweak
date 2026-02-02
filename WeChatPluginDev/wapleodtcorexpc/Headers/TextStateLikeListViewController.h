@@ -21,7 +21,6 @@
     WCFinderAnimationLoadingView *_loadingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowLoading; // @synthesize isShowLoading=_isShowLoading;
 @property(retain, nonatomic) WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) NSMutableArray *arrInfo; // @synthesize arrInfo=_arrInfo;

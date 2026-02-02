@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -14,11 +15,9 @@
     CDUnknownBlockType _bottomBtnHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType bottomBtnHandler; // @synthesize bottomBtnHandler=_bottomBtnHandler;
 @property(copy, nonatomic) NSString *bottomBtnDesc; // @synthesize bottomBtnDesc=_bottomBtnDesc;
 @property(copy, nonatomic) NSString *errDesc; // @synthesize errDesc=_errDesc;
 - (id)description;
 
 @end
-

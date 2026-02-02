@@ -31,7 +31,6 @@
     WCUIAlertView *_alertView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCUIAlertView *alertView; // @synthesize alertView=_alertView;
 @property(retain, nonatomic) NSData *m_spamContext; // @synthesize m_spamContext=_m_spamContext;
 @property(retain, nonatomic) NSString *m_reportInfo; // @synthesize m_reportInfo=_m_reportInfo;

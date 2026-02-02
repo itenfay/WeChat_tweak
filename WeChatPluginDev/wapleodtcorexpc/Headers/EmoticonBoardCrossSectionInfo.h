@@ -18,7 +18,6 @@
     struct CGPoint _offset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowLoadingIfNeeded; // @synthesize shouldShowLoadingIfNeeded=_shouldShowLoadingIfNeeded;
 @property(retain, nonatomic) NSString *pidNeedScrollTo; // @synthesize pidNeedScrollTo=_pidNeedScrollTo;
 @property(retain, nonatomic) OrderedDictionary *qqEmojiDictionary; // @synthesize qqEmojiDictionary=_qqEmojiDictionary;

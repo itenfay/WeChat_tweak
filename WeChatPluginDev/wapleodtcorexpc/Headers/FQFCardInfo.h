@@ -17,7 +17,6 @@
     NSString *_fqf_sub_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fqf_sub_title; // @synthesize fqf_sub_title=_fqf_sub_title;
 @property(retain, nonatomic) NSString *fqf_title; // @synthesize fqf_title=_fqf_title;
 @property(retain, nonatomic) NSString *fqf_pay_desk_title; // @synthesize fqf_pay_desk_title=_fqf_pay_desk_title;

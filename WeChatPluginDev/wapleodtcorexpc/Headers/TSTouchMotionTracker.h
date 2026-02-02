@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, TSMotionTracker, TSTouchTrackRecognizer, UIView;
 
@@ -18,7 +19,6 @@
     CDUnknownBlockType _eventHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property _Bool didBeingOnTouch; // @synthesize didBeingOnTouch=_didBeingOnTouch;
 @property(retain, nonatomic) TSMotionTracker *motionTracker; // @synthesize motionTracker=_motionTracker;
@@ -38,4 +38,3 @@
 @property(readonly) Class superclass;
 
 @end
-

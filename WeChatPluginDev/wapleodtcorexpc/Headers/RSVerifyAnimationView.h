@@ -14,7 +14,6 @@
     id <RSVerifyAnimationViewDelegate> _rsDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <RSVerifyAnimationViewDelegate> rsDelegate; // @synthesize rsDelegate=_rsDelegate;
 @property(retain, nonatomic) RSAnimationHeadImgView *headImage; // @synthesize headImage=_headImage;
 - (id)viewForZoomingInScrollView:(id)arg1;

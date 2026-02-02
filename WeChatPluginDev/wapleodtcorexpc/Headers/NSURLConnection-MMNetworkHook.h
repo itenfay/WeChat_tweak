@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/NSURLConnection.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSURLConnection (MMNetworkHook)
 + (void)mmNetworkHook_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -13,4 +14,3 @@
 - (id)mmNetworkHook_initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(_Bool)arg3;
 - (id)mmNetworkHook_initWithRequest:(id)arg1 delegate:(id)arg2;
 @end
-

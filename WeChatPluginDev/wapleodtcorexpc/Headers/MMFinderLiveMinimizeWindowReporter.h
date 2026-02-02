@@ -15,7 +15,6 @@
     unsigned long long _pauseDuration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pauseDuration; // @synthesize pauseDuration=_pauseDuration;
 @property(nonatomic) unsigned long long lastPauseTime; // @synthesize lastPauseTime=_lastPauseTime;
 @property(nonatomic) unsigned long long minimizeStartTime; // @synthesize minimizeStartTime=_minimizeStartTime;

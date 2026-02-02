@@ -20,7 +20,6 @@
     UICollectionView *_micUsersCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *micUsersCollectionView; // @synthesize micUsersCollectionView=_micUsersCollectionView;
 @property(retain, nonatomic) UILabel *noUserTipLabel; // @synthesize noUserTipLabel=_noUserTipLabel;
 @property(retain, nonatomic) UIImageView *noUserTipIcon; // @synthesize noUserTipIcon=_noUserTipIcon;

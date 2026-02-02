@@ -22,7 +22,6 @@
     NSNumber *_maxAccelerationInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maxAccelerationInfo; // @synthesize maxAccelerationInfo=_maxAccelerationInfo;
 @property(retain, nonatomic) WCAdInteractionDeviceMotionContainer *deviceMotionContainer; // @synthesize deviceMotionContainer=_deviceMotionContainer;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;

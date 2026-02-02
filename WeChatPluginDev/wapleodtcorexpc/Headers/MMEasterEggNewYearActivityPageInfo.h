@@ -21,7 +21,6 @@
     NSString *_finderNonceId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderNonceId; // @synthesize finderNonceId=_finderNonceId;
 @property(retain, nonatomic) NSString *finderFeedId; // @synthesize finderFeedId=_finderFeedId;
 @property(retain, nonatomic) NSString *finderUsername; // @synthesize finderUsername=_finderUsername;

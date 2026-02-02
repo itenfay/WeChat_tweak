@@ -14,7 +14,6 @@
     UIColor *_color;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) double position; // @synthesize position=_position;
 @property(nonatomic) double width; // @synthesize width=_width;

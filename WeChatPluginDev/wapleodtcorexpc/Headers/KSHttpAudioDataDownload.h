@@ -18,7 +18,6 @@
     double _costTime;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLConnection *urlConnection; // @synthesize urlConnection=_urlConnection;
 @property(readonly, nonatomic) NSURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
 - (_Bool)ParseRangeInfo:(id)arg1 Result:(id)arg2;

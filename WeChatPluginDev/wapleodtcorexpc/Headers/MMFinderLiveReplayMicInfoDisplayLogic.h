@@ -39,7 +39,6 @@
     LiveRoomImg *_opposingAnchorLiveRoomImages;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) LiveRoomImg *opposingAnchorLiveRoomImages; // @synthesize opposingAnchorLiveRoomImages=_opposingAnchorLiveRoomImages;
 @property(retain, nonatomic) LiveRoomImg *currentAnchorLiveRoomImages; // @synthesize currentAnchorLiveRoomImages=_currentAnchorLiveRoomImages;
 @property(retain, nonatomic) MMLiveResourceFetcherRootFlowAction *downloadMgr; // @synthesize downloadMgr=_downloadMgr;

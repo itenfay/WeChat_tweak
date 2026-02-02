@@ -14,7 +14,6 @@
     WCPayIBGCheckJSAPICgi *_cgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayIBGCheckJSAPICgi *cgi; // @synthesize cgi=_cgi;
 @property(retain, nonatomic) NSString *currentBuffer; // @synthesize currentBuffer=_currentBuffer;
 @property(retain, nonatomic) NSString *buffer; // @synthesize buffer=_buffer;

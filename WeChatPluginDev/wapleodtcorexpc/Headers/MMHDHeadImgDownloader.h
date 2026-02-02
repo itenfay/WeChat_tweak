@@ -12,7 +12,6 @@
     NSMutableDictionary *_m_downloadTaskDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *m_downloadTaskDic; // @synthesize m_downloadTaskDic=_m_downloadTaskDic;
 @property(nonatomic) __weak id <HeadImgDownloaderDelegate> downloadDelegate; // @synthesize downloadDelegate;
 - (void)onDownloadPartOK:(id)arg1 task:(id)arg2;

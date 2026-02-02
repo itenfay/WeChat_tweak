@@ -13,7 +13,6 @@
     NSMutableArray *_sceneList;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int useEndTime; // @synthesize useEndTime=_useEndTime;
 @property(nonatomic) unsigned int useBeginTime; // @synthesize useBeginTime=_useBeginTime;
 @property(retain, nonatomic) NSMutableArray *sceneList; // @synthesize sceneList=_sceneList;

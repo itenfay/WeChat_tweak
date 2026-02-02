@@ -19,7 +19,6 @@
     MMUIButton *_hardlinkInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *hardlinkInfo; // @synthesize hardlinkInfo=_hardlinkInfo;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;

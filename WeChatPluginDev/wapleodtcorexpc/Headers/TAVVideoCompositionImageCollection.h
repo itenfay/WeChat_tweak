@@ -13,7 +13,6 @@
     NSArray *_overlayImages;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *overlayImages; // @synthesize overlayImages=_overlayImages;
 @property(copy, nonatomic) NSArray *channelImageInfos; // @synthesize channelImageInfos=_channelImageInfos;
 

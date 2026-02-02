@@ -20,7 +20,6 @@
     UIView *_m_titleArea;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *m_titleArea; // @synthesize m_titleArea=_m_titleArea;
 @property(retain) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) CgiBindQueryRecord *resultRecord; // @synthesize resultRecord=_resultRecord;

@@ -17,7 +17,6 @@
     NSDictionary *_reportRefJson;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *reportRefJson; // @synthesize reportRefJson=_reportRefJson;
 @property(retain, nonatomic) NSData *jumpNavliveBuffer; // @synthesize jumpNavliveBuffer=_jumpNavliveBuffer;
 @property(nonatomic) unsigned long long relatedObjectId; // @synthesize relatedObjectId=_relatedObjectId;

@@ -18,7 +18,6 @@
     UIView *_sendView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sendView; // @synthesize sendView=_sendView;
 @property(retain, nonatomic) UILabel *sendCountLabel; // @synthesize sendCountLabel=_sendCountLabel;
 @property(retain, nonatomic) EmojiInfoObj *emojiInfoObj; // @synthesize emojiInfoObj=_emojiInfoObj;

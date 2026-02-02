@@ -14,7 +14,6 @@
     id <AudioDataRead> _m_audioData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int m_currentPcmBytePos; // @synthesize m_currentPcmBytePos=_m_currentPcmBytePos;
 @property(retain, nonatomic) id <AudioDataRead> m_audioData; // @synthesize m_audioData=_m_audioData;
 @property(retain, nonatomic) SimpleAudioPlayer *m_audioPlayer; // @synthesize m_audioPlayer=_m_audioPlayer;

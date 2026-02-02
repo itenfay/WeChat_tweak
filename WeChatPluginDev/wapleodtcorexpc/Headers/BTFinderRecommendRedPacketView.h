@@ -11,7 +11,6 @@
     MMUILabel *_label;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *redPacketImageView; // @synthesize redPacketImageView=_redPacketImageView;
 - (void)setLabelTextColor:(id)arg1;

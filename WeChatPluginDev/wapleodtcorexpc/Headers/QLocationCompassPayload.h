@@ -16,7 +16,6 @@
     UIImage *_directionWest;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *directionWest; // @synthesize directionWest=_directionWest;
 @property(retain, nonatomic) UIImage *directionEast; // @synthesize directionEast=_directionEast;
 @property(retain, nonatomic) UIImage *directionSouth; // @synthesize directionSouth=_directionSouth;

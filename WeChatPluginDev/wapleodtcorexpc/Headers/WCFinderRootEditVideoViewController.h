@@ -15,7 +15,6 @@
     NSString *_templateFollowFeedID;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *templateFollowFeedID; // @synthesize templateFollowFeedID=_templateFollowFeedID;
 @property(copy, nonatomic) NSString *templateMusicId; // @synthesize templateMusicId=_templateMusicId;
 @property(copy, nonatomic) NSString *templateId; // @synthesize templateId=_templateId;

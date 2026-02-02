@@ -11,7 +11,6 @@
     WCPayJSRequestHKCashierLogic *_requestHKCashierLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayJSRequestHKCashierLogic *requestHKCashierLogic; // @synthesize requestHKCashierLogic=_requestHKCashierLogic;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)onRequestHKCashierFail;

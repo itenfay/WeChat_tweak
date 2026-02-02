@@ -21,7 +21,6 @@
 }
 
 + (long long)chatTypeForSession:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReportEntryData; // @synthesize shouldReportEntryData=_shouldReportEntryData;
 @property(retain, nonatomic) NSIndexPath *maxEntrySessionIndexPath; // @synthesize maxEntrySessionIndexPath=_maxEntrySessionIndexPath;
 @property(nonatomic) long long chatBoxMinIndex; // @synthesize chatBoxMinIndex=_chatBoxMinIndex;

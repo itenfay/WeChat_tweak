@@ -15,7 +15,6 @@
     WCFinderLiveStarterReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveStarterReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) WCFinderCreateCoordinator *createCoordinator; // @synthesize createCoordinator=_createCoordinator;
 @property(retain, nonatomic) MMUIButton *createAccountButton; // @synthesize createAccountButton=_createAccountButton;

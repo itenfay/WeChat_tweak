@@ -12,7 +12,6 @@
 }
 
 + (void)voipRoom:(id)arg1 syncStatus:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) long long roomStatus; // @synthesize roomStatus=_roomStatus;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 - (void)didFailWithError:(id)arg1 response:(id)arg2;

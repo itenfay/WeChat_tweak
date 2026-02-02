@@ -11,7 +11,6 @@
     unsigned int _sourceType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sourceType; // @synthesize sourceType=_sourceType;
 - (void)handle3rdVerifyResult:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

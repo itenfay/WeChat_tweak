@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveTaskId, MMUIButton, MMUILabel, NSNumber, NSString, WCTableViewManager;
 @protocol MMFinderLiveTrumpetSelectSheetDelegate;
 
@@ -23,7 +25,6 @@
 }
 
 + (id)showWithTaskId:(id)arg1 delegate:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isPrivateMsgVisiableInfoSwitchOn; // @synthesize isPrivateMsgVisiableInfoSwitchOn=_isPrivateMsgVisiableInfoSwitchOn;
 @property(retain, nonatomic) NSNumber *selectedPrivacyType; // @synthesize selectedPrivacyType=_selectedPrivacyType;
 @property(retain, nonatomic) NSNumber *selectedAccountType; // @synthesize selectedAccountType=_selectedAccountType;
@@ -74,4 +75,3 @@
 @property(readonly) Class superclass;
 
 @end
-

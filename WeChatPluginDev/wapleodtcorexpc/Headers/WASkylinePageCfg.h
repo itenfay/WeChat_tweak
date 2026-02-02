@@ -14,7 +14,6 @@
     SplashCacheInfo *_splashCacheInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) SplashCacheInfo *splashCacheInfo; // @synthesize splashCacheInfo=_splashCacheInfo;
 @property(retain, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
 @property(retain, nonatomic) UIColor *backgroundColorContent; // @synthesize backgroundColorContent=_backgroundColorContent;

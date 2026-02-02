@@ -20,7 +20,6 @@
     unsigned long long _sub_recv_channel_id;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sub_recv_channel_id; // @synthesize sub_recv_channel_id=_sub_recv_channel_id;
 @property(retain, nonatomic) NSString *sub_title_clicked; // @synthesize sub_title_clicked=_sub_title_clicked;
 @property(nonatomic) unsigned int groupType; // @synthesize groupType=_groupType;

@@ -21,7 +21,6 @@
     UIImageView *_musicDancingView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *musicDancingView; // @synthesize musicDancingView=_musicDancingView;
 @property(retain, nonatomic) SightIconView *playImageView; // @synthesize playImageView=_playImageView;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;

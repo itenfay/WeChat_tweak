@@ -24,7 +24,6 @@
     UIView *_lineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(nonatomic) _Bool isDismissed; // @synthesize isDismissed=_isDismissed;
 @property(nonatomic) long long selectedRow; // @synthesize selectedRow=_selectedRow;

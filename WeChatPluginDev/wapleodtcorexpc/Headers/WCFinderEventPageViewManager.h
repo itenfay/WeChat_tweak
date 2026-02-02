@@ -16,7 +16,6 @@
     MMUIViewController<WCFinderFeedBaseViewControllerProtocol> *_currentViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMUIViewController<WCFinderFeedBaseViewControllerProtocol> *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(retain, nonatomic) WCFinderEventPageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) WCFinderFeedFlowView *feedFlowView; // @synthesize feedFlowView=_feedFlowView;

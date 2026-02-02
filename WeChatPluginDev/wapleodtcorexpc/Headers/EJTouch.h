@@ -17,7 +17,6 @@
     struct CGPoint _locationInScriptView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) double maximumPossibleForce; // @synthesize maximumPossibleForce=_maximumPossibleForce;
 @property(nonatomic) double force; // @synthesize force=_force;

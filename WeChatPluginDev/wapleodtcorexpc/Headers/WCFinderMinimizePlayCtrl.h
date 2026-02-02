@@ -24,7 +24,6 @@
 
 + (void)setupRemoteButton:(id)arg1 enable:(_Bool)arg2 target:(id)arg3 action:(SEL)arg4;
 + (void)cleanControlCenter;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMakeAudioModule; // @synthesize isMakeAudioModule=_isMakeAudioModule;
 @property(nonatomic) _Bool lastRequestToPlay; // @synthesize lastRequestToPlay=_lastRequestToPlay;
 @property(nonatomic) long long statusMask; // @synthesize statusMask=_statusMask;

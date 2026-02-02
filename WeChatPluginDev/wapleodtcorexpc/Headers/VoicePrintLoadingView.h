@@ -13,7 +13,6 @@
     MMUILabel *_descriptionLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) MMUIActivityIndicatorView *loadingView; // @synthesize loadingView=_loadingView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

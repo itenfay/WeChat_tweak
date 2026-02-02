@@ -9,7 +9,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)lockGuard:(void *)arg1;
 - (id)initWithDatabase:(id)arg1;
 

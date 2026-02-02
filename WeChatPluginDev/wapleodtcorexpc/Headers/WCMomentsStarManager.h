@@ -12,7 +12,6 @@
     MyWCDB *_database;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MyWCDB *database; // @synthesize database=_database;
 - (void)onSnsNewCommitFinished:(id)arg1 task:(id)arg2;
 - (_Bool)updateActionRecordFromLocalDataItem:(id)arg1 toServerDataItem:(id)arg2;

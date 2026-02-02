@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_curAudioId;
 + (void)PBArrayAdd_dictAlbumAudioListInfo;
 + (void)PBArrayAdd_albumId;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSMutableDictionary *dictAlbumAudioListInfo; // @synthesize dictAlbumAudioListInfo=_dictAlbumAudioListInfo;
 @property(copy, nonatomic) NSString *curAudioId; // @synthesize curAudioId=_curAudioId;

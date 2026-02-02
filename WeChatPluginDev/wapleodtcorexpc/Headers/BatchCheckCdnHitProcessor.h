@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray;
 
 @interface BatchCheckCdnHitProcessor
@@ -10,7 +12,6 @@
     NSMutableArray *_uploadTaskList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uploadTaskList; // @synthesize uploadTaskList=_uploadTaskList;
 - (void)transNextState;
 - (void)removeUploadTaskByFileID:(id)arg1;
@@ -26,4 +27,3 @@
 - (id)initWithContext:(id)arg1;
 
 @end
-

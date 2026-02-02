@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class CIContext, NSString, TXCDispatchQueue, TXCFramebufferDrawer, TXCGlFrameBuffer, TXCPixelBufferPool, TXCRgbToYuvFilter, TXCVideoFrame, TXCVideoFrameCoords, TXCVideoRenderConfig;
 @protocol TXCCustomVideoRendererDelegate, TXIGlContext;
 
@@ -21,7 +23,6 @@
     TXCVideoFrame *_tempNV12Fame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TXCVideoFrame *tempNV12Fame; // @synthesize tempNV12Fame=_tempNV12Fame;
 @property(retain, nonatomic) TXCPixelBufferPool *pbPool; // @synthesize pbPool=_pbPool;
 @property(retain, nonatomic) TXCRgbToYuvFilter *rgbToYuvFilter; // @synthesize rgbToYuvFilter=_rgbToYuvFilter;
@@ -58,4 +59,3 @@
 @property(readonly) Class superclass;
 
 @end
-

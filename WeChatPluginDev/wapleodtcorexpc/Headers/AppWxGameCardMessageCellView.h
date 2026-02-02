@@ -10,7 +10,6 @@
     UIView *m_sclView;
 }
 
-- (void).cxx_destruct;
 - (id)operationMenuItems;
 - (double)getCellViewInfo;
 - (void)showMsgPopupMenu;

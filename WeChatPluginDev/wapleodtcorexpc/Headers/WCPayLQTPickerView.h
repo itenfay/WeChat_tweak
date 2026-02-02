@@ -16,7 +16,6 @@
     UIButton *_button;
 }
 
-- (void).cxx_destruct;
 @property(retain) UIButton *button; // @synthesize button=_button;
 @property long long nowDate; // @synthesize nowDate=_nowDate;
 @property long long endDate; // @synthesize endDate=_endDate;

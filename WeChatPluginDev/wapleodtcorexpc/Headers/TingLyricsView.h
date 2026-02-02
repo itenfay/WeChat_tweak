@@ -12,7 +12,6 @@
     MMMusicLiveLyricDisplayView *_lyricsDisplayView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicLiveLyricDisplayView *lyricsDisplayView; // @synthesize lyricsDisplayView=_lyricsDisplayView;
 @property(retain, nonatomic) MMMusicLyricResolver *resolver; // @synthesize resolver=_resolver;
 @property(copy, nonatomic) NSString *lyricsId; // @synthesize lyricsId=_lyricsId;

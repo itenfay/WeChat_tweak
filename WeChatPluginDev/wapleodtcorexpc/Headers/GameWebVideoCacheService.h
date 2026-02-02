@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class GameCenterCommonDb, GameURLSessionWrapper, NSMutableDictionary, NSRecursiveLock, NSString, SafeMutableDictionary, WCTTable, WKHTTPCookieStore;
 
 @interface GameWebVideoCacheService
@@ -19,7 +21,6 @@
 }
 
 + (id)getNewUrlWithUrl:(id)arg1 appendGameCacheIdentify:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *requestModelDict; // @synthesize requestModelDict=_requestModelDict;
 @property(nonatomic) __weak WKHTTPCookieStore *curWkCookieStore; // @synthesize curWkCookieStore=_curWkCookieStore;
 @property(retain, nonatomic) GameURLSessionWrapper *urlSessionWrapper; // @synthesize urlSessionWrapper=_urlSessionWrapper;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

@@ -17,7 +17,6 @@
     RoomDelMemController *_chatRoomDelMemController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ChatroomMemberRemoveViewControllerDelegate> vcDelegate; // @synthesize vcDelegate=_vcDelegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)makeCell:(id)arg1 tableCell:(id)arg2 row:(unsigned long long)arg3;

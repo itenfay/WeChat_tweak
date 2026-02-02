@@ -18,7 +18,6 @@
     PAGView *_pagBackgroundView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) PAGView *pagBackgroundView; // @synthesize pagBackgroundView=_pagBackgroundView;
 @property(retain, nonatomic) MMFinderLiveCouponItem *coupon; // @synthesize coupon=_coupon;
 @property(retain, nonatomic) UILabel *anchorDescriptionLabel; // @synthesize anchorDescriptionLabel=_anchorDescriptionLabel;

@@ -49,7 +49,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reservedText; // @synthesize reservedText=_reservedText;
 @property(nonatomic) unsigned int reservedInt; // @synthesize reservedInt=_reservedInt;
 @property(retain, nonatomic) NSString *msg; // @synthesize msg=_msg;

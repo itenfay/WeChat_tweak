@@ -10,7 +10,6 @@
     NSString *_ticket;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
 
 @end

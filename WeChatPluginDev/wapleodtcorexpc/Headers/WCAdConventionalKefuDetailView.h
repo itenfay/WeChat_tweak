@@ -18,7 +18,6 @@
     ColorGradientView *_bottomMaskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ColorGradientView *bottomMaskView; // @synthesize bottomMaskView=_bottomMaskView;
 @property(retain, nonatomic) UILabel *kefuTailName; // @synthesize kefuTailName=_kefuTailName;
 @property(retain, nonatomic) UILabel *kefuNickname; // @synthesize kefuNickname=_kefuNickname;

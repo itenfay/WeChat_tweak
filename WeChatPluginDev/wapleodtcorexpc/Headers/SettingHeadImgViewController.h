@@ -12,7 +12,6 @@
     _Bool _operateDirectly;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool operateDirectly; // @synthesize operateDirectly=_operateDirectly;
 - (void)onImgChangeEnd:(_Bool)arg1 withError:(id)arg2;
 - (void)onImgBeginChange:(id)arg1;

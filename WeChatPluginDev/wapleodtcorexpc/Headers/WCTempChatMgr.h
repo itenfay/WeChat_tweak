@@ -13,7 +13,6 @@
     NSMutableDictionary *_dictMsgControllerInfo;
 }
 
-- (void).cxx_destruct;
 - (void)sendEnterTempSessionReq:(long long)arg1 sessionFrom:(id)arg2 bizUsrName:(id)arg3 userInfo:(id)arg4;
 - (void)sendDelTempSessionReq:(id)arg1;
 - (id)pathForUserNameSet;

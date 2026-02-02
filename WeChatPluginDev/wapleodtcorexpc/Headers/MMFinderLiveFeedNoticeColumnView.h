@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, MMUIButton, MMUILabel, UIImageView, UIView, WCFinderContact, WCFinderHeadImageView;
 
 @interface MMFinderLiveFeedNoticeColumnView
@@ -18,7 +20,6 @@
     UIView *_bottomSeparaLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeparaLine; // @synthesize bottomSeparaLine=_bottomSeparaLine;
 @property(retain, nonatomic) UIView *topSeparaLine; // @synthesize topSeparaLine=_topSeparaLine;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
@@ -36,4 +37,3 @@
 - (void)updateWithAnchorFinderContact:(id)arg1 noticeInfo:(id)arg2;
 
 @end
-

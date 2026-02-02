@@ -31,7 +31,6 @@
     WCMomentsFinderRecommendationReporter *_reporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMomentsFinderRecommendationReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) _Bool isPreloading; // @synthesize isPreloading=_isPreloading;
 @property(copy, nonatomic) NSString *preloadGroupID; // @synthesize preloadGroupID=_preloadGroupID;

@@ -17,7 +17,6 @@
     struct CGRect _bounds;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCSVGImageConfig *associateImageConfig; // @synthesize associateImageConfig=_associateImageConfig;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;

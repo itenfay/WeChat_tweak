@@ -23,7 +23,6 @@
 }
 
 + (id)cellID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *incomeRedDot; // @synthesize incomeRedDot=_incomeRedDot;
 @property(nonatomic) _Bool canShowIncomeContainer; // @synthesize canShowIncomeContainer=_canShowIncomeContainer;
 @property(retain, nonatomic) UILabel *incomeLabel; // @synthesize incomeLabel=_incomeLabel;

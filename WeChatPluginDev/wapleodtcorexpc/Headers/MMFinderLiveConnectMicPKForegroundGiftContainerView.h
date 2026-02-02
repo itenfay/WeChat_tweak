@@ -18,7 +18,6 @@
     struct CGSize _lastLayoutSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(retain, nonatomic) RfxPagFile *foregroundRfxPAGFile; // @synthesize foregroundRfxPAGFile=_foregroundRfxPAGFile;
 @property(retain, nonatomic) PAGFile *foregroundPAGFile; // @synthesize foregroundPAGFile=_foregroundPAGFile;

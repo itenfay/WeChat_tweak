@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 @protocol IMBViewDelegate;
@@ -13,7 +14,6 @@
     id <IMBViewDelegate> _viewDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMBViewDelegate> viewDelegate; // @synthesize viewDelegate=_viewDelegate;
 - (void)onCreated;
 - (id)provideFileSystem;
@@ -31,4 +31,3 @@
 @property(readonly) Class superclass;
 
 @end
-

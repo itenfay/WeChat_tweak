@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, VoipForceStartObject;
 
 @interface VoipForceStartInActiveState
@@ -11,7 +13,6 @@
     VoipForceStartObject *_m_videoObject;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) VoipForceStartObject *m_videoObject; // @synthesize m_videoObject=_m_videoObject;
 @property(retain, nonatomic) VoipForceStartObject *m_audioObject; // @synthesize m_audioObject=_m_audioObject;
 - (void)startVideo;
@@ -31,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

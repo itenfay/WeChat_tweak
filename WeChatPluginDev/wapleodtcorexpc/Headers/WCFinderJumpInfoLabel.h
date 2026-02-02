@@ -22,7 +22,6 @@
     struct CGRect _targetFrame;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect targetFrame; // @synthesize targetFrame=_targetFrame;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(retain, nonatomic) RichTextView *textView; // @synthesize textView=_textView;

@@ -12,7 +12,6 @@
     id <MMFinderLiveSpringCardContainerViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveSpringCardContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onLotteryCardWillCloseByCloseButton;
 - (void)notifyViewDidAppearIfNeeded:(id)arg1;

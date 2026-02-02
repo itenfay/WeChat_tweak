@@ -15,7 +15,6 @@
     id <MMFinderForwardButtonDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderForwardButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longpressGesture; // @synthesize longpressGesture=_longpressGesture;
 @property(retain, nonatomic) UIView *mask; // @synthesize mask=_mask;

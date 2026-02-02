@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_baseTime;
 + (void)PBArrayAdd_score;
 + (void)PBArrayAdd_key;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int baseTime; // @synthesize baseTime=_baseTime;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;

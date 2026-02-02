@@ -14,7 +14,6 @@
     NSMutableArray *_expfileList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *expfileList; // @synthesize expfileList=_expfileList;
 @property(nonatomic) long long totalSize; // @synthesize totalSize=_totalSize;
 @property(retain, nonatomic) NSMutableArray *fileList; // @synthesize fileList=_fileList;

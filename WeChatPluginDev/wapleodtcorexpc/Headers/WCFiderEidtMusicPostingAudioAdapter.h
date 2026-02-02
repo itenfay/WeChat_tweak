@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 @protocol WCFiderEidtMusicPostingAudioAdapterDelegate;
@@ -15,7 +16,6 @@
 }
 
 + (id)adapterWithDelegate:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *videoMapAudioUrls; // @synthesize videoMapAudioUrls=_videoMapAudioUrls;
 @property(nonatomic) __weak id <WCFiderEidtMusicPostingAudioAdapterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)fetchDataItemMediaAudioUrl:(CDUnknownBlockType)arg1;
@@ -30,4 +30,3 @@
 @property(readonly) Class superclass;
 
 @end
-

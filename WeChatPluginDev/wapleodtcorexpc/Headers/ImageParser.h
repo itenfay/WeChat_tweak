@@ -15,7 +15,6 @@
 }
 
 + (id)newInstance;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool customImageProvider; // @synthesize customImageProvider=_customImageProvider;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 - (id)imageStyleOfRect:(struct CGRect)arg1 range:(struct _NSRange)arg2;

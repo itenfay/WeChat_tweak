@@ -24,7 +24,6 @@
 
 + (id)makeHighlightedLabel:(id)arg1 previewInfo:(id)arg2;
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasExposure; // @synthesize hasExposure=_hasExposure;
 @property(nonatomic) _Bool forceHideComplaintButton; // @synthesize forceHideComplaintButton=_forceHideComplaintButton;
 @property(nonatomic) unsigned long long viewScale; // @synthesize viewScale=_viewScale;

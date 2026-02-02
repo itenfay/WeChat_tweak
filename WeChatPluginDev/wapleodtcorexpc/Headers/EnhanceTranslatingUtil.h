@@ -14,7 +14,6 @@
     XNetInferenceSession *_xnetSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) XNetInferenceSession *xnetSession; // @synthesize xnetSession=_xnetSession;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *detectorsQueue; // @synthesize detectorsQueue=_detectorsQueue;
 - (void)onResUpdateFinish:(long long)arg1 resType:(unsigned int)arg2 subResType:(unsigned int)arg3;

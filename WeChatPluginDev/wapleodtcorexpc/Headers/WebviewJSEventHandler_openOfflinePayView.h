@@ -11,7 +11,6 @@
     WCPayJSOpenOfflinePayControlLogic *_openOfflinePayLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayJSOpenOfflinePayControlLogic *openOfflinePayLogic; // @synthesize openOfflinePayLogic=_openOfflinePayLogic;
 @property(retain, nonatomic) JSEvent *jsEvent; // @synthesize jsEvent=_jsEvent;
 - (void)returnToOfflinePayView;

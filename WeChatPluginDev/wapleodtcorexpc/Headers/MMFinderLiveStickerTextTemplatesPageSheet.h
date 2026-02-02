@@ -21,7 +21,6 @@
     UICollectionView *_templatesCollectionView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *templatesCollectionView; // @synthesize templatesCollectionView=_templatesCollectionView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *templatesCollectionViewLayout; // @synthesize templatesCollectionViewLayout=_templatesCollectionViewLayout;
 @property(retain, nonatomic) MMLiveScrollGradientMaskingView *collectionViewMaskingView; // @synthesize collectionViewMaskingView=_collectionViewMaskingView;

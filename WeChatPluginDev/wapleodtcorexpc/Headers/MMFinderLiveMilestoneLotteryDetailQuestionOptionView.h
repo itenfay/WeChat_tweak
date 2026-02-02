@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderLiveMilestoneLotteryInfo_AttendInfo_Choice, UIColor, UIImageView, UILabel;
 
@@ -24,7 +25,6 @@
     UIColor *_normalTextColor;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *normalTextColor; // @synthesize normalTextColor=_normalTextColor;
 @property(retain, nonatomic) UIColor *selectedTextColor; // @synthesize selectedTextColor=_selectedTextColor;
 @property(retain, nonatomic) UIColor *heavyColor; // @synthesize heavyColor=_heavyColor;
@@ -46,4 +46,3 @@
 - (id)initWithLightColor:(id)arg1 heavyColor:(id)arg2 selectedTextColor:(id)arg3 normalTextColor:(id)arg4;
 
 @end
-

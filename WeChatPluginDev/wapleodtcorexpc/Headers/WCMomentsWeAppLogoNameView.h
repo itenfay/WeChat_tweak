@@ -16,7 +16,6 @@
 
 + (double)minWidthWithWeAppName:(id)arg1 font:(id)arg2;
 + (double)widthWithWeAppName:(id)arg1 font:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) MMUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

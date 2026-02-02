@@ -11,7 +11,6 @@
     JSEvent *m_event;
 }
 
-- (void).cxx_destruct;
 - (void)asyncHandle_callbackFailEvent:(id)arg1 error:(id)arg2;
 - (void)asyncHandle_callbackEvent:(id)arg1 result:(id)arg2;
 - (void)onSingleEmotionDownloadOkWithWrap:(id)arg1 imageData:(id)arg2;

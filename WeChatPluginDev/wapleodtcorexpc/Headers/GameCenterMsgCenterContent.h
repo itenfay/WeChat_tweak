@@ -43,7 +43,6 @@
     GameCenterMsgV2Node *_v2Node;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterMsgV2Node *v2Node; // @synthesize v2Node=_v2Node;
 @property(nonatomic) unsigned int relationType; // @synthesize relationType=_relationType;
 @property(nonatomic) _Bool isGreet; // @synthesize isGreet=_isGreet;

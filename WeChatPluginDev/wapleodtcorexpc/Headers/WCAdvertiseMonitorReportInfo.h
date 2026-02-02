@@ -18,7 +18,6 @@
 }
 
 + (id)genMonitorReportInfo:(id)arg1 actionValue:(id)arg2 subType:(int)arg3 subValue:(int)arg4 extInfo:(id)arg5;
-- (void).cxx_destruct;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) int subValue; // @synthesize subValue=_subValue;

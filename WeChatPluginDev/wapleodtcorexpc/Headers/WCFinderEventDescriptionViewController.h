@@ -22,7 +22,6 @@
     FinderEventInfo *_eventInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderEventInfo *eventInfo; // @synthesize eventInfo=_eventInfo;
 @property(retain, nonatomic) RichTextView *statementView; // @synthesize statementView=_statementView;
 @property(retain, nonatomic) RichTextView *descTextView; // @synthesize descTextView=_descTextView;

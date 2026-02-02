@@ -46,7 +46,6 @@
     ReportVoiceResultMgr *_resultReportMgr;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) ReportVoiceResultMgr *resultReportMgr; // @synthesize resultReportMgr=_resultReportMgr;
 @property(retain, nonatomic) AudioRecorderUserData *userData; // @synthesize userData=_userData;
 @property(nonatomic) _Bool bHadReported; // @synthesize bHadReported=_bHadReported;

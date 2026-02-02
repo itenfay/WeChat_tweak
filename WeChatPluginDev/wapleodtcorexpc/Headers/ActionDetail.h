@@ -12,7 +12,6 @@
     NSString *_name;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)toXml;
 - (void)encodeWithCoder:(id)arg1;

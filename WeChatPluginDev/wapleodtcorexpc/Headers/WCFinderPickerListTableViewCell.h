@@ -28,7 +28,6 @@
 
 + (double)cellH;
 + (id)cellId;
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(retain, nonatomic) UIImageView *pauseView; // @synthesize pauseView=_pauseView;

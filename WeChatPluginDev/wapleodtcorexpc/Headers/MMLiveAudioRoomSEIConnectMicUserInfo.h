@@ -14,7 +14,6 @@
     unsigned long long _i;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long i; // @synthesize i=_i;
 @property(nonatomic) unsigned int us; // @synthesize us=_us;
 @property(retain, nonatomic) NSString *uId; // @synthesize uId=_uId;

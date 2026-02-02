@@ -24,7 +24,6 @@
     id <MMFinderLiveRewardWishSendingViewDelegate> _operationDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMFinderLiveRewardWishSendingViewDelegate> operationDelegate; // @synthesize operationDelegate=_operationDelegate;
 @property(retain, nonatomic) MMFinderLiveRewardWish *wishGiftItem; // @synthesize wishGiftItem=_wishGiftItem;
 @property(retain, nonatomic) MMUILabel *giftDisableLabel; // @synthesize giftDisableLabel=_giftDisableLabel;

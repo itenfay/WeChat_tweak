@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSMutableArray, WCPayNetImageResource;
 
 @interface PocketMoneyMessageViewModel
@@ -16,7 +18,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayNetImageResource *iconImageResource; // @synthesize iconImageResource=_iconImageResource;
 @property(retain, nonatomic) NSMutableArray *descLabelStyles; // @synthesize descLabelStyles=_descLabelStyles;
 @property(retain, nonatomic) NSMutableArray *titleLabelStyles; // @synthesize titleLabelStyles=_titleLabelStyles;
@@ -38,4 +39,3 @@
 - (struct CGSize)measureContentViewSize:(struct CGSize)arg1;
 
 @end
-

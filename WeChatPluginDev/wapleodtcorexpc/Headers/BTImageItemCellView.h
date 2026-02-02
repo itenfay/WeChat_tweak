@@ -15,7 +15,6 @@
     MMUILabel *_imageNum;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *imageNum; // @synthesize imageNum=_imageNum;
 @property(retain, nonatomic) UIImageView *imageIcon; // @synthesize imageIcon=_imageIcon;
 @property(retain, nonatomic) NSMutableArray *imgBtnArr; // @synthesize imgBtnArr=_imgBtnArr;

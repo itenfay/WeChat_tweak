@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)onSuccess:(id)arg1;
 - (void)onError:(int)arg1 errmsg:(id)arg2;
 - (id)initWithCpp:(const void *)arg1;

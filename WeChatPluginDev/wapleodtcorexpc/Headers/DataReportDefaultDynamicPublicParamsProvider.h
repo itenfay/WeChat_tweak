@@ -16,7 +16,6 @@
     unsigned long long m_lastGetIPTime;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isValidatIP:(id)arg1;
 - (id)getIPAddressArray;
 - (id)getIPV4Address:(id)arg1;

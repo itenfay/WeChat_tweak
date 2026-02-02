@@ -17,7 +17,6 @@
     MMWebImageView *m_rightCoverImageView;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isAccessibilityElement;
 - (_Bool)canShowMoreMenuItem;
 - (id)operationMenuItems;

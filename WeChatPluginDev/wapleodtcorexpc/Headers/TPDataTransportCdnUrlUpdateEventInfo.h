@@ -11,7 +11,6 @@
     NSString *_userIp;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userIp; // @synthesize userIp=_userIp;
 @property(copy, nonatomic) NSString *cdnIp; // @synthesize cdnIp=_cdnIp;
 - (id)init;

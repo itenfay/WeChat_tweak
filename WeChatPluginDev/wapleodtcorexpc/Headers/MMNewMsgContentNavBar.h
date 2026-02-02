@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMMsgCommonTipsView, MMMsgContentTipsItem, MMMsgTipsExpandView, MMMsgTipsMixedListExpandView, MMUIButton, MsgNewTipsBarReporter, NSArray, NSMutableArray, NSString, UIButton, UITapGestureRecognizer;
 @protocol MMNewMsgContentNavBarDelegate;
@@ -37,7 +38,6 @@
     NSString *_nsUserName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsUserName; // @synthesize nsUserName=_nsUserName;
 @property(retain, nonatomic) NSMutableArray *exposedTipsItems; // @synthesize exposedTipsItems=_exposedTipsItems;
 @property(nonatomic) _Bool isAddingMultipleTipsBar; // @synthesize isAddingMultipleTipsBar=_isAddingMultipleTipsBar;
@@ -118,4 +118,3 @@
 @property(readonly) Class superclass;
 
 @end
-

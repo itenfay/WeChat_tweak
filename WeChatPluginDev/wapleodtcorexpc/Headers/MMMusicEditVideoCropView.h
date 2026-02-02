@@ -26,7 +26,6 @@
     double _videoLength;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRemoveSliderCollectionViewKeyPathObserver; // @synthesize hasRemoveSliderCollectionViewKeyPathObserver=_hasRemoveSliderCollectionViewKeyPathObserver;
 @property(nonatomic) double videoLength; // @synthesize videoLength=_videoLength;
 @property(nonatomic) _Bool ignoreShock; // @synthesize ignoreShock=_ignoreShock;

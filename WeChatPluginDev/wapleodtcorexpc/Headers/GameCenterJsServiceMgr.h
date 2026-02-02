@@ -10,7 +10,6 @@
     GameCenterJsService *_jsService;
 }
 
-- (void).cxx_destruct;
 - (void)processEventFromNative:(id)arg1 event:(id)arg2;
 - (void)processCallbackFromNative:(id)arg1 callbackId:(id)arg2;
 - (void)postMessageFromWebView:(id)arg1 message:(id)arg2;

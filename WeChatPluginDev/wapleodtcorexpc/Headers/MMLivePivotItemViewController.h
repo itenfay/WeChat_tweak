@@ -26,7 +26,6 @@
     unsigned long long _audienceStartLiveMs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPlayedOpenScreenAd; // @synthesize hasPlayedOpenScreenAd=_hasPlayedOpenScreenAd;
 @property(nonatomic) unsigned long long audienceStartLiveMs; // @synthesize audienceStartLiveMs=_audienceStartLiveMs;
 @property(retain, nonatomic) LiveSdkInfo *currentLiveSdkInfo; // @synthesize currentLiveSdkInfo=_currentLiveSdkInfo;

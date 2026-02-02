@@ -12,7 +12,6 @@
     WCTTable *_foldTable;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTTable *foldTable; // @synthesize foldTable=_foldTable;
 @property(retain, nonatomic) WCTTable *analysistable; // @synthesize analysistable=_analysistable;
 @property(retain, nonatomic) WCTDatabase *database; // @synthesize database=_database;

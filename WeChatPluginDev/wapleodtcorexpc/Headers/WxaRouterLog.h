@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WxaRouterLog : NSObject
 {
@@ -13,4 +14,3 @@
 + (void)setLogImpl:(CDUnknownBlockType)arg1;
 
 @end
-

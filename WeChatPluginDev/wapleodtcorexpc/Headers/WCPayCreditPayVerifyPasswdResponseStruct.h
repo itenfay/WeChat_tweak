@@ -15,7 +15,6 @@
     _Bool m_bNeedFillAllInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool m_bNeedFillAllInfo; // @synthesize m_bNeedFillAllInfo;
 @property(retain, nonatomic) NSString *m_nsIDNumberMask; // @synthesize m_nsIDNumberMask;
 @property(retain, nonatomic) NSString *m_nsNameMask; // @synthesize m_nsNameMask;

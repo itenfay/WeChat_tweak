@@ -11,7 +11,6 @@
     NSArray *_arrClusterMsgItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *arrClusterMsgItem; // @synthesize arrClusterMsgItem=_arrClusterMsgItem;
 @property(retain, nonatomic) NSString *clusterUsername; // @synthesize clusterUsername=_clusterUsername;
 

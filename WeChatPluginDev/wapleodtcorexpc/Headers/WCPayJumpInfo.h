@@ -16,7 +16,6 @@
 }
 
 + (id)genFromUnion:(id)arg1;
-- (void).cxx_destruct;
 @property(retain) NSString *pagepath; // @synthesize pagepath=_pagepath;
 @property(retain) NSString *username; // @synthesize username=_username;
 @property(retain) NSString *url; // @synthesize url=_url;

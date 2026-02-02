@@ -19,7 +19,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithExtra_data:(id)arg1 clientmsgid:(id)arg2 flag:(id)arg3 report_data:(id)arg4 clientmsgidStr:(id)arg5;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientmsgidStr; // @synthesize clientmsgidStr=_clientmsgidStr;
 @property(copy, nonatomic) NSString *report_data; // @synthesize report_data=_report_data;
 @property(retain, nonatomic) NSNumber *flag; // @synthesize flag=_flag;

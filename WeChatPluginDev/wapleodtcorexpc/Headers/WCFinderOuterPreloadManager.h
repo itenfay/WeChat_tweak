@@ -12,7 +12,6 @@
     WCFinderLRUCache *_lruCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLRUCache *lruCache; // @synthesize lruCache=_lruCache;
 - (id)outerPreloadTaskWithTid:(id)arg1;
 - (void)saveAllTasks;

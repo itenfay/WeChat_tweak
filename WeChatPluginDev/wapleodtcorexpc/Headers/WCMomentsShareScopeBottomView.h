@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUIButton;
 
@@ -14,7 +15,6 @@
 }
 
 + (double)heightForShareScopeBottomViewWithWidth:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *modifyButton; // @synthesize modifyButton=_modifyButton;
 @property(copy, nonatomic) CDUnknownBlockType modifyShareScopeBlock; // @synthesize modifyShareScopeBlock=_modifyShareScopeBlock;
 - (void)onClickModifyShareScopeButton;
@@ -24,4 +24,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

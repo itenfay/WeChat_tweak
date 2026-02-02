@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, WAEJJavaScriptView;
 @protocol WAOpenGLScreenCanvasDelegate, WAOpenGLViewDelegate;
@@ -16,7 +17,6 @@
     id <WAOpenGLScreenCanvasDelegate> _screenCanvasDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WAOpenGLScreenCanvasDelegate> screenCanvasDelegate; // @synthesize screenCanvasDelegate=_screenCanvasDelegate;
 @property(nonatomic) __weak id <WAOpenGLViewDelegate> delegate; // @synthesize delegate;
 - (struct __CVBuffer *)providePixelBufferByViewId:(unsigned int)arg1 withType:(id)arg2;
@@ -98,4 +98,3 @@
 @property(readonly) Class superclass;
 
 @end
-

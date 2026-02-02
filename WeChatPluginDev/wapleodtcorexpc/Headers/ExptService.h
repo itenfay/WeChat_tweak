@@ -25,7 +25,6 @@
 }
 
 + (_Bool)WCCC_isEnabled;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *globalSequence; // @synthesize globalSequence=_globalSequence;
 @property(nonatomic) _Bool isReqNow; // @synthesize isReqNow=_isReqNow;
 @property(nonatomic) _Bool isAuthOk; // @synthesize isAuthOk=_isAuthOk;

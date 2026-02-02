@@ -15,7 +15,6 @@
     NSString *_monoServiceId;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *monoServiceId; // @synthesize monoServiceId=_monoServiceId;
 @property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(nonatomic) unsigned long long subBusinessType; // @synthesize subBusinessType=_subBusinessType;

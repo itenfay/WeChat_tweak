@@ -21,7 +21,6 @@
     struct _xmlParserCtxt *_parserCtx;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _xmlParserCtxt *parserCtx; // @synthesize parserCtx=_parserCtx;
 @property(nonatomic) unsigned long long encoding; // @synthesize encoding=_encoding;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;

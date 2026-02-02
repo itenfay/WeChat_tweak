@@ -22,7 +22,6 @@
     NSMutableDictionary *_sessionId2ViewModelDic;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool ownerInvalid; // @synthesize ownerInvalid=_ownerInvalid;
 @property(retain, nonatomic) NSMutableDictionary *sessionId2ViewModelDic; // @synthesize sessionId2ViewModelDic=_sessionId2ViewModelDic;
 @property(retain, nonatomic) WCTableSessionStorage *sessionStorage; // @synthesize sessionStorage=_sessionStorage;

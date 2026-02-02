@@ -13,7 +13,6 @@
     UIView *_highlightedView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *highlightedView; // @synthesize highlightedView=_highlightedView;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (void)updateDisplay:(double)arg1;

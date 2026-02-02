@@ -12,7 +12,6 @@
     CADisplayLink *_displayTimer;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResumeTimer; // @synthesize shouldResumeTimer=_shouldResumeTimer;
 @property(retain, nonatomic) CADisplayLink *displayTimer; // @synthesize displayTimer=_displayTimer;
 @property(retain, nonatomic) CMDeviceMotion *oriMotion; // @synthesize oriMotion=_oriMotion;

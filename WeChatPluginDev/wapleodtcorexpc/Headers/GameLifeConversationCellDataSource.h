@@ -16,7 +16,6 @@
     NSMutableDictionary *_sessionId2ViewModelDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sessionId2ViewModelDic; // @synthesize sessionId2ViewModelDic=_sessionId2ViewModelDic;
 @property(retain, nonatomic) MMBaseSessionStorage *conversationStorage; // @synthesize conversationStorage=_conversationStorage;
 @property(nonatomic) unsigned long long currentCount; // @synthesize currentCount=_currentCount;

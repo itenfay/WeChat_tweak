@@ -22,7 +22,6 @@
 
 + (id)terminatorViewParamsWithTip:(id)arg1 darkSytle:(_Bool)arg2;
 + (double)heightForWidth:(double)arg1 darkSytle:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool darkStyle; // @synthesize darkStyle=_darkStyle;
 @property(retain, nonatomic) UIFont *textFont; // @synthesize textFont=_textFont;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

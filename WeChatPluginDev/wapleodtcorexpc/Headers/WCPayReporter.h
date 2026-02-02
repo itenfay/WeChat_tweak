@@ -18,7 +18,6 @@
     NSString *_lastReportUrl;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int channel; // @synthesize channel=_channel;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *lastReportUrl; // @synthesize lastReportUrl=_lastReportUrl;

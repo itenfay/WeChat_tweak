@@ -18,7 +18,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_61da5af9 eventRecordCbWrapper; // @synthesize eventRecordCbWrapper=_eventRecordCbWrapper;
 @property(nonatomic) struct TPThumbPlayerPostProcessFrameCallbackWrapper *postprocessFrameCbWrapper; // @synthesize postprocessFrameCbWrapper=_postprocessFrameCbWrapper;
 @property(nonatomic) struct TPThumbPlayerDemuxerCallbackWrapper *demuxerCbWrapper; // @synthesize demuxerCbWrapper=_demuxerCbWrapper;

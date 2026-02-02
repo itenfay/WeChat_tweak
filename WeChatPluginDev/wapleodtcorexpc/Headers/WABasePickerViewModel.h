@@ -15,7 +15,6 @@
     double _contentMaxHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double contentMaxHeight; // @synthesize contentMaxHeight=_contentMaxHeight;
 @property(retain, nonatomic) NSArray *currentSelectedIdx; // @synthesize currentSelectedIdx=_currentSelectedIdx;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;

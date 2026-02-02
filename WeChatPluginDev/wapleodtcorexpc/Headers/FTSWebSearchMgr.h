@@ -53,7 +53,6 @@
 
 + (_Bool)IsWebRecommendPublishId:(id)arg1;
 + (id)getWKResourceTmpDir;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *trueRecmdDataRequestID; // @synthesize trueRecmdDataRequestID=_trueRecmdDataRequestID;
 @property(nonatomic) _Bool isParallFetchingRecmdData; // @synthesize isParallFetchingRecmdData=_isParallFetchingRecmdData;
 @property(retain, nonatomic) NSMutableArray *searchEventIDArray; // @synthesize searchEventIDArray=_searchEventIDArray;

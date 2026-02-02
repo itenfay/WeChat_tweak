@@ -16,7 +16,6 @@
     unsigned long long _m_startTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long m_startTime; // @synthesize m_startTime=_m_startTime;
 @property(nonatomic) unsigned long long m_timeInternal; // @synthesize m_timeInternal=_m_timeInternal;
 @property(nonatomic) unsigned int m_KeyBase; // @synthesize m_KeyBase=_m_KeyBase;

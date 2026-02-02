@@ -20,7 +20,6 @@
     NSString *_subTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subTitle; // @synthesize subTitle=_subTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *headimgUrl; // @synthesize headimgUrl=_headimgUrl;

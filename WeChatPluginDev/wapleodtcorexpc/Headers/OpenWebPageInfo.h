@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithScene:(id)arg1 hideOptionMenu:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *hideOptionMenu; // @synthesize hideOptionMenu=_hideOptionMenu;
 @property(retain, nonatomic) NSNumber *scene; // @synthesize scene=_scene;
 - (id)toList;

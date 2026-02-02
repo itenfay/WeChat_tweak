@@ -19,7 +19,6 @@
     FinderUserPageResponse *_response;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderUserPageResponse *response; // @synthesize response=_response;
 @property(copy, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property(nonatomic) _Bool continueFlag; // @synthesize continueFlag=_continueFlag;

@@ -133,7 +133,6 @@
 + (void)PBArrayAdd_finderObjectID;
 + (void)PBArrayAdd_finderUsername;
 + (void)PBArrayAdd_finderLiveID;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long cacheTimestamp; // @synthesize cacheTimestamp=_cacheTimestamp;
 @property(copy, nonatomic) NSString *spamLiveExtFlagString; // @synthesize spamLiveExtFlagString=_spamLiveExtFlagString;
 @property(copy, nonatomic) NSString *liveFlag; // @synthesize liveFlag=_liveFlag;

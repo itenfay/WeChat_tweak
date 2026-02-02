@@ -12,7 +12,6 @@
     MISSING_TYPE *data;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)parse;
 - (id)initWithData:(id)arg1;

@@ -23,7 +23,6 @@
 }
 
 + (double)cellHeight;
-- (void).cxx_destruct;
 - (void)onUpdateCellWithCellData:(id)arg1;
 - (id)cellSessionDataLastMsg:(id)arg1;
 - (void)updateBackgroundColorWithSessionCellData:(id)arg1;

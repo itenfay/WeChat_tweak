@@ -13,7 +13,6 @@
     MISSING_TYPE *hotLaunchLoader;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -13,7 +13,6 @@
     id <SecureTunnelLogicDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <SecureTunnelLogicDelegate> m_delegate; // @synthesize m_delegate;
 @property(retain, nonatomic) JSEvent *m_jsEvent; // @synthesize m_jsEvent;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

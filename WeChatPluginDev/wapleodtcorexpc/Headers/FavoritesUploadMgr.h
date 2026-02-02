@@ -18,7 +18,6 @@
     id <FavoritesUploadMgrDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesUploadMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)triggerCapacityExeedFavItemListReUpload:(unsigned long long)arg1 total:(unsigned long long)arg2;
 - (unsigned long long)preCleanGetCacheSize;

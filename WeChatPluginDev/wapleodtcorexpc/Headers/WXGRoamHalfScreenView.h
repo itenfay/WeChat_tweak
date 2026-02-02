@@ -23,7 +23,6 @@
     double _cellHeight;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(nonatomic) _Bool enterIsLowPowerBackup; // @synthesize enterIsLowPowerBackup=_enterIsLowPowerBackup;
 @property(nonatomic) _Bool enterIsAutoBackup; // @synthesize enterIsAutoBackup=_enterIsAutoBackup;

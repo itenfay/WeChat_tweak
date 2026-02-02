@@ -27,7 +27,6 @@
 @property(retain, nonatomic, getter=sImsi, setter=setSImsi:) NSString *jcev2_p_2_o_sImsi; // @synthesize jcev2_p_2_o_sImsi;
 @property(retain, nonatomic, getter=sImei, setter=setSImei:) NSString *jcev2_p_1_o_sImei; // @synthesize jcev2_p_1_o_sImei;
 @property(retain, nonatomic, getter=sQua, setter=setSQua:) NSString *jcev2_p_0_o_sQua; // @synthesize jcev2_p_0_o_sQua;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

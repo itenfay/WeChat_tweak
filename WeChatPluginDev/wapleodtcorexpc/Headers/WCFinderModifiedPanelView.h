@@ -19,7 +19,6 @@
 }
 
 + (id)buildPanelViewByContainerWidth:(double)arg1 modifyDescMaxCount:(long long)arg2 modifyTitleMaxCount:(long long)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *titleBannerArray; // @synthesize titleBannerArray=_titleBannerArray;
 @property(retain, nonatomic) RichTextView *modifyTitleLabel; // @synthesize modifyTitleLabel=_modifyTitleLabel;
 @property(retain, nonatomic) NSMutableArray *descBannerArray; // @synthesize descBannerArray=_descBannerArray;

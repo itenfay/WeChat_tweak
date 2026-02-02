@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ClickCommandRequest;
 
@@ -15,10 +16,8 @@
 }
 
 + (id)requestWrapWithEventID:(unsigned int)arg1 request:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) ClickCommandRequest *request; // @synthesize request=_request;
 @property(nonatomic) unsigned int eventID; // @synthesize eventID=_eventID;
 
 @end
-

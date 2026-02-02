@@ -32,7 +32,6 @@
     struct CGPoint _indoorPickerOffset;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak QMapContext *mapContext; // @synthesize mapContext=_mapContext;
 @property(copy, nonatomic) NSString *indoorPlistPath; // @synthesize indoorPlistPath=_indoorPlistPath;
 @property(copy, nonatomic) NSString *configDirectoryPath; // @synthesize configDirectoryPath=_configDirectoryPath;

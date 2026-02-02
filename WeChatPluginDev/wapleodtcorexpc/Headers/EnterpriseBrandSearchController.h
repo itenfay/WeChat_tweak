@@ -16,7 +16,6 @@
     id <EnterpriseBrandSearchControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EnterpriseBrandSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)getViewController;
 - (id)getMMSearchBar;

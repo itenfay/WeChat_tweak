@@ -61,7 +61,6 @@
     GetDefaultRedpacketResponse *_defaultSkinResp;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) GetDefaultRedpacketResponse *defaultSkinResp; // @synthesize defaultSkinResp=_defaultSkinResp;
 @property(nonatomic) _Bool isFirstTimeOpenRedEnvelope; // @synthesize isFirstTimeOpenRedEnvelope=_isFirstTimeOpenRedEnvelope;
 @property(retain, nonatomic) WCRedEnvelopeQuickSendReportObject *m_quickSendReportObj; // @synthesize m_quickSendReportObj=_m_quickSendReportObj;

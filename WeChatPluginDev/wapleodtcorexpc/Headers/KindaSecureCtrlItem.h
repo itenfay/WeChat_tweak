@@ -12,7 +12,6 @@
     TenpaySecureCtrl *_m_secureCtrlItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TenpaySecureCtrl *m_secureCtrlItem; // @synthesize m_secureCtrlItem=_m_secureCtrlItem;
 - (id)getValue;
 - (void)setRawValue:(id)arg1;

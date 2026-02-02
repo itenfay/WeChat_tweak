@@ -10,7 +10,6 @@
     NSMutableDictionary *_dicMainUserName2ConvergedSessionList;
 }
 
-- (void).cxx_destruct;
 - (void)updateAndConvergeMainSession:(id)arg1;
 - (id)sortAndConvergeSessionList:(id)arg1 chatSessionList:(id)arg2;
 - (void)updateConvergeSessionList:(id)arg1;

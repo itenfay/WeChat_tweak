@@ -16,7 +16,6 @@
     MISSING_TYPE *autoDestroyTime;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)toString;
 - (id)initWithBizName:(id)arg1 singleRootConfig:(id)arg2 delegate:(id)arg3 autoDestroyTime:(double)arg4;

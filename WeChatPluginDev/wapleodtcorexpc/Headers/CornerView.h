@@ -19,7 +19,6 @@
     UIColor *_strokeColor;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int lineSize; // @synthesize lineSize=_lineSize;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;

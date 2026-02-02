@@ -38,7 +38,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_updatetime; // @synthesize m_updatetime=_m_updatetime;
 @property(retain, nonatomic) NSString *m_address; // @synthesize m_address=_m_address;
 @property(retain, nonatomic) NSString *m_language; // @synthesize m_language=_m_language;

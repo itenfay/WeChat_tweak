@@ -20,7 +20,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_cacheVersion;
 + (void)PBArrayAdd_needConvertImageInfo;
-- (void).cxx_destruct;
 @property(nonatomic) long long cacheVersion; // @synthesize cacheVersion=_cacheVersion;
 @property(retain, nonatomic) NSMutableSet *needConvertImageInfo; // @synthesize needConvertImageInfo=_needConvertImageInfo;
 - (void)setNeedConvertPath:(id)arg1;

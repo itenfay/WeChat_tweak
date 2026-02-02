@@ -15,7 +15,6 @@
     UIImageView *_selectImg;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdate; // @synthesize isUpdate=_isUpdate;
 @property(retain, nonatomic) UIImageView *selectImg; // @synthesize selectImg=_selectImg;
 @property(nonatomic) unsigned long long curSelectedType; // @synthesize curSelectedType=_curSelectedType;

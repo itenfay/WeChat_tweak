@@ -15,7 +15,6 @@
     MISSING_TYPE *createTime;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithImageUrl:(id)arg1 mediaId:(id)arg2 isThumb:(_Bool)arg3;
 

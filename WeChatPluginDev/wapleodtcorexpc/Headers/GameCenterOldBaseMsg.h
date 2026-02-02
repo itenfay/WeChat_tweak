@@ -18,7 +18,6 @@
 
 + (id)parseFromDbItem:(id)arg1;
 + (id)parseFromMsgWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) GameCenterMsgActionInfo *actionInfo; // @synthesize actionInfo=_actionInfo;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *formatContent; // @synthesize formatContent=_formatContent;

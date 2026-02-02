@@ -21,7 +21,6 @@
     NSArray *_pageViews;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *pageViews; // @synthesize pageViews=_pageViews;
 @property(retain, nonatomic) NSLayoutConstraint *indicatorTrailing; // @synthesize indicatorTrailing=_indicatorTrailing;
 @property(retain, nonatomic) NSLayoutConstraint *indicatorLeading; // @synthesize indicatorLeading=_indicatorLeading;

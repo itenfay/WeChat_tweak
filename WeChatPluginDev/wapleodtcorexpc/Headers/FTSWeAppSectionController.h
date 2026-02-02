@@ -10,7 +10,6 @@
     NSArray *_contacts;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void)onWASearchResultChangedForDetail;
 - (void)cancelSearch;

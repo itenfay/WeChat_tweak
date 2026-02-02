@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray;
 
@@ -17,7 +18,6 @@
     NSMutableArray *_signalObservers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *signalObservers; // @synthesize signalObservers=_signalObservers;
 @property(readonly, nonatomic) id fireForSignalObserver; // @synthesize fireForSignalObserver=_fireForSignalObserver;
 @property(readonly, nonatomic) id fire; // @synthesize fire=_fire;
@@ -39,4 +39,3 @@
 - (id)initWithProtocol:(id)arg1;
 
 @end
-

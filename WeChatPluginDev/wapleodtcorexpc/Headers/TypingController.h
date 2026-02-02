@@ -21,7 +21,6 @@
     struct _NSRange _m_LastMarkedRange;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange m_LastMarkedRange; // @synthesize m_LastMarkedRange=_m_LastMarkedRange;
 @property(nonatomic) unsigned int m_uLastReveicedMsgTime; // @synthesize m_uLastReveicedMsgTime;
 @property(retain, nonatomic) MMTimer *m_receiveTypingTimer; // @synthesize m_receiveTypingTimer;

@@ -13,7 +13,6 @@
     NSString *_adId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *adId; // @synthesize adId=_adId;
 @property(retain, nonatomic) NSString *promotionUrl; // @synthesize promotionUrl=_promotionUrl;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

@@ -20,7 +20,6 @@
     unsigned long long _customizeAAPayAmount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long customizeAAPayAmount; // @synthesize customizeAAPayAmount=_customizeAAPayAmount;
 @property(retain, nonatomic) CContact *launchContact; // @synthesize launchContact=_launchContact;
 @property(nonatomic) _Bool bIsLaunchSucc; // @synthesize bIsLaunchSucc=_bIsLaunchSucc;

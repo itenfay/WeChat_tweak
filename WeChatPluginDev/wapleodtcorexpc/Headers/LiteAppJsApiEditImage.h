@@ -12,7 +12,6 @@
     WCEditImageViewController *_editImageViewController;
 }
 
-- (void).cxx_destruct;
 - (void)delayNotifyWeb:(id)arg1;
 - (void)onLocalImageSaveFinish:(id)arg1;
 - (void)editImageViewControllerDidCancel:(id)arg1;

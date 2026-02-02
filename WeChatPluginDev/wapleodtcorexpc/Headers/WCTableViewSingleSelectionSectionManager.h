@@ -11,7 +11,6 @@
     long long _selectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak id <WCTableViewSingleSelectionSectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)reloadCells:(id)arg1;

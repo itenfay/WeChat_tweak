@@ -21,7 +21,6 @@
     NewLifeRedPacketActivityView *_redPacketView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NewLifeRedPacketActivityView *redPacketView; // @synthesize redPacketView=_redPacketView;
 @property(retain, nonatomic) CALayer *bottomGradientLayer; // @synthesize bottomGradientLayer=_bottomGradientLayer;
 @property(retain, nonatomic) UIView *photoMaskView; // @synthesize photoMaskView=_photoMaskView;

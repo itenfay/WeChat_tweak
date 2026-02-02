@@ -59,7 +59,6 @@
 + (id)parseFromMsgWrap:(id)arg1 RootNode:(struct XmlReaderNode_t *)arg2;
 + (id)msgWithType:(unsigned int)arg1 xmlNode:(struct XmlReaderNode_t *)arg2;
 + (struct XmlReaderNode_t *)getRootNode:(id)arg1 XmlReader:(struct CXmlReader)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(retain, nonatomic) NSMutableDictionary *fullExposureScoreDict; // @synthesize fullExposureScoreDict=_fullExposureScoreDict;
 @property(retain, nonatomic) NSMutableDictionary *exposureScoreDict; // @synthesize exposureScoreDict=_exposureScoreDict;

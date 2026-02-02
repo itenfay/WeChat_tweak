@@ -13,7 +13,6 @@
     struct CGSize _imgSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) JumpInfo *jumpInfo; // @synthesize jumpInfo=_jumpInfo;
 @property(retain, nonatomic) NSString *coverUrl; // @synthesize coverUrl=_coverUrl;
 @property(retain, nonatomic) GCImgLinkVideoModel *videoModel; // @synthesize videoModel=_videoModel;

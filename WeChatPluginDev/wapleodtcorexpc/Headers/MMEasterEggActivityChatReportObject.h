@@ -17,7 +17,6 @@
     unsigned long long _effectType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long effectType; // @synthesize effectType=_effectType;
 @property(nonatomic) unsigned long long isReceiver; // @synthesize isReceiver=_isReceiver;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

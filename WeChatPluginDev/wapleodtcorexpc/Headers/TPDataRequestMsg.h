@@ -15,7 +15,6 @@
     NSString *_fileName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(nonatomic) int sequence; // @synthesize sequence=_sequence;
 @property(nonatomic) long long end; // @synthesize end=_end;

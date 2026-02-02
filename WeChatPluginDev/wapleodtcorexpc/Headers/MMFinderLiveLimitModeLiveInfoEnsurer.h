@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -13,7 +14,6 @@
     NSString *_tid;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tid; // @synthesize tid=_tid;
 @property(copy, nonatomic) CDUnknownBlockType onLiveInfoUpdated; // @synthesize onLiveInfoUpdated=_onLiveInfoUpdated;
 - (void)onLiveInfoUpdateTimeout;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

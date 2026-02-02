@@ -15,7 +15,6 @@
     UILabel *_bottomLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 @property(retain, nonatomic) UILabel *topLabel; // @synthesize topLabel=_topLabel;
 @property(retain, nonatomic) NSString *bottomText; // @synthesize bottomText=_bottomText;

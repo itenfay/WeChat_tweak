@@ -10,7 +10,6 @@
     NSMutableDictionary *_cache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
 - (void)markTidGetDetailOnceWithTid:(id)arg1 result:(_Bool)arg2 invalideMsg:(id)arg3;
 - (void)markTidGetDetailOnceWithTid:(id)arg1 result:(_Bool)arg2;

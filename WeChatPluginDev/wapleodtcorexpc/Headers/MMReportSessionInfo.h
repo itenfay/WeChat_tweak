@@ -24,7 +24,6 @@
 + (void)PBArrayAdd_bMuteChat;
 + (void)PBArrayAdd_unreadCount;
 + (void)PBArrayAdd_username;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasReply; // @synthesize bHasReply=_bHasReply;
 @property(nonatomic) unsigned int leaveTime; // @synthesize leaveTime=_leaveTime;
 @property(nonatomic) unsigned int enterTime; // @synthesize enterTime=_enterTime;

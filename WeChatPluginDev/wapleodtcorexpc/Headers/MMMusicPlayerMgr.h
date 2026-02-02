@@ -27,7 +27,6 @@
     MusicPlayerActionReporter *_actionReporter;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MusicPlayerActionReporter *actionReporter; // @synthesize actionReporter=_actionReporter;
 @property(nonatomic) unsigned int checkingMusicUrlEventId; // @synthesize checkingMusicUrlEventId=_checkingMusicUrlEventId;
 @property(retain, nonatomic) MMMusicListMgr *musicListMgr; // @synthesize musicListMgr=_musicListMgr;

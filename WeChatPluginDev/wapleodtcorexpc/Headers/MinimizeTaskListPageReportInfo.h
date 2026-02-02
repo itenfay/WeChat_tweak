@@ -18,7 +18,6 @@
     NSArray *_miniSessionIdList;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *miniSessionIdList; // @synthesize miniSessionIdList=_miniSessionIdList;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) unsigned long long taskCount; // @synthesize taskCount=_taskCount;

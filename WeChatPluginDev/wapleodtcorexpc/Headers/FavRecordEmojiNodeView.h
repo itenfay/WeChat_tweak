@@ -13,7 +13,6 @@
     CEmoticonWrap *_emoticonWrap;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CEmoticonWrap *emoticonWrap; // @synthesize emoticonWrap=_emoticonWrap;
 @property(retain, nonatomic) EmoticonCustomAddLogicController *emoticonAddLogicController; // @synthesize emoticonAddLogicController=_emoticonAddLogicController;
 @property(readonly, nonatomic) UIImageView *gameEmojiView; // @synthesize gameEmojiView=_gameEmojiView;

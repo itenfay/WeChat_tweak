@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, TencentLBSLocationManager;
 
@@ -14,7 +15,6 @@
     NSMutableDictionary *_requestObjDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *requestObjDict; // @synthesize requestObjDict=_requestObjDict;
 @property(retain, nonatomic) NSMutableDictionary *completionDict; // @synthesize completionDict=_completionDict;
 @property(retain, nonatomic) TencentLBSLocationManager *locationMgr; // @synthesize locationMgr=_locationMgr;
@@ -28,4 +28,3 @@
 - (id)init;
 
 @end
-

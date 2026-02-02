@@ -11,7 +11,6 @@
     struct CGPoint _layoutOrigin;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint layoutOrigin; // @synthesize layoutOrigin=_layoutOrigin;
 - (void)viewDidLayoutSubviews;
 - (void)onSwitchCell:(id)arg1 cell:(id)arg2;

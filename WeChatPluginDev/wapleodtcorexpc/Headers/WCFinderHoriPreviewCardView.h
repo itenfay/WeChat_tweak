@@ -22,7 +22,6 @@
 + (id)getCoverTitleTipsByStyle:(unsigned long long)arg1;
 + (id)getDescTipsByStyle:(unsigned long long)arg1;
 + (id)getTitleTipsByStyle:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) SightIconView *playIconView; // @synthesize playIconView=_playIconView;
 @property(retain, nonatomic) WCFinderFeedStaticCoverView *coverView; // @synthesize coverView=_coverView;

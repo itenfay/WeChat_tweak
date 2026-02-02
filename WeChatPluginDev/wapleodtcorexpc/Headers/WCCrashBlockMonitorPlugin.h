@@ -25,7 +25,6 @@
 + (_Bool)haveLagFiles;
 + (_Bool)hasCrashReport;
 + (id)getTag;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currentUploadDate; // @synthesize currentUploadDate=_currentUploadDate;
 @property(nonatomic) unsigned long long currentUploadType; // @synthesize currentUploadType=_currentUploadType;
 @property(nonatomic) unsigned long long dumpUploadType; // @synthesize dumpUploadType=_dumpUploadType;

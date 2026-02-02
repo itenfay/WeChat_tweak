@@ -16,7 +16,6 @@
     long long _playerType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long playerType; // @synthesize playerType=_playerType;
 @property(nonatomic) _Bool useP2p; // @synthesize useP2p=_useP2p;
 @property(retain, nonatomic) NSString *definition; // @synthesize definition=_definition;

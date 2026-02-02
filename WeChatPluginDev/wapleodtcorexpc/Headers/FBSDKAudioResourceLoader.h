@@ -18,7 +18,6 @@
 + (id)data;
 + (unsigned long long)version;
 + (id)name;
-- (void).cxx_destruct;
 - (id)_fileURL:(id *)arg1;
 - (void)playSound;
 - (_Bool)loadSound:(id *)arg1;

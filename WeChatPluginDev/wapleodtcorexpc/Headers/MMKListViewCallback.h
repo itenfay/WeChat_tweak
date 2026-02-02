@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)fillData:(int)arg1 contentView:(id)arg2;
 - (int)getViewTypeCount;
 - (int)getViewType:(int)arg1;

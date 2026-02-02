@@ -13,7 +13,6 @@
     double _breakFrameVideoDownloadProgress;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double breakFrameVideoDownloadProgress; // @synthesize breakFrameVideoDownloadProgress=_breakFrameVideoDownloadProgress;
 @property(nonatomic) double fullCardVideoDownloadProgress; // @synthesize fullCardVideoDownloadProgress=_fullCardVideoDownloadProgress;
 @property(nonatomic) _Bool intentToPlay; // @synthesize intentToPlay=_intentToPlay;

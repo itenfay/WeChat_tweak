@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIViewController.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MJDatePickerView, MJSegmentViewModel, NSDate;
 
@@ -14,7 +15,6 @@
     MJDatePickerView *_datePicker;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJDatePickerView *datePicker; // @synthesize datePicker=_datePicker;
 @property(retain, nonatomic) MJSegmentViewModel *segmentVM; // @synthesize segmentVM=_segmentVM;
 @property(copy, nonatomic) CDUnknownBlockType dateDidChageHandler; // @synthesize dateDidChageHandler=_dateDidChageHandler;
@@ -25,4 +25,3 @@
 - (id)initWithSegmentVM:(id)arg1;
 
 @end
-

@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMSystemAuthCancellableToken, NSString;
 
@@ -19,7 +20,6 @@
     MMSystemAuthCancellableToken *_cancellableToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMSystemAuthCancellableToken *cancellableToken; // @synthesize cancellableToken=_cancellableToken;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool weChatIgnored; // @synthesize weChatIgnored=_weChatIgnored;
@@ -35,4 +35,3 @@
 - (void)reportWithAction:(unsigned long long)arg1;
 
 @end
-

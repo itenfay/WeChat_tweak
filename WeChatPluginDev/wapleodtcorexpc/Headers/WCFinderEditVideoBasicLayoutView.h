@@ -11,7 +11,6 @@
     double _currentLyricTotalTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double currentLyricTotalTime; // @synthesize currentLyricTotalTime=_currentLyricTotalTime;
 @property(retain, nonatomic) NSMutableArray *currentMusicLyrics; // @synthesize currentMusicLyrics=_currentMusicLyrics;
 - (void)bgmSelectedViewController:(id)arg1 didClickLyricOnBtn:(_Bool)arg2;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFinderLiveFansGroupInvisibleTipView, MMUILabel, MMWebImageView;
 
 @interface MMFinderLiveFansGroupFanNoticeCell
@@ -15,7 +17,6 @@
 }
 
 + (double)cellHeightWithDesc:(id)arg1 imageUrlString:(id)arg2 maxWidth:(double)arg3;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveFansGroupInvisibleTipView *invisibleTipView; // @synthesize invisibleTipView=_invisibleTipView;
 @property(retain, nonatomic) MMWebImageView *noticeImageView; // @synthesize noticeImageView=_noticeImageView;
 @property(retain, nonatomic) MMUILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
@@ -29,4 +30,3 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
-

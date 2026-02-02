@@ -16,7 +16,6 @@
     unsigned long long m_addSpeedCount;
 }
 
-- (void).cxx_destruct;
 - (float)getSpeed;
 - (void)addSpeed:(float)arg1;
 - (id)initWithWindowSize:(unsigned long long)arg1;

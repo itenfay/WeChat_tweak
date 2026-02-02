@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_currencyUint;
 + (void)PBArrayAdd_currencyType;
 + (void)PBArrayAdd_nsQRCodeUrl;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *noticeUrl; // @synthesize noticeUrl=_noticeUrl;
 @property(retain, nonatomic) NSString *notice; // @synthesize notice=_notice;
 @property(copy, nonatomic) NSString *currencyUint; // @synthesize currencyUint=_currencyUint;

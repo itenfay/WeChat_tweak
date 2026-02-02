@@ -21,7 +21,6 @@
 }
 
 + (id)fromSnsActionGroup:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
 @property(retain, nonatomic) WCSNSRewardInfo *rewardInfo; // @synthesize rewardInfo;
 @property(nonatomic) unsigned int delStatus; // @synthesize delStatus;

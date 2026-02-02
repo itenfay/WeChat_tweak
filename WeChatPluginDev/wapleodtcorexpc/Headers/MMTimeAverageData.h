@@ -12,7 +12,6 @@
     NSMutableArray *_allRecord;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allRecord; // @synthesize allRecord=_allRecord;
 - (void)addRawDataToStr:(id)arg1 dict:(id)arg2 sortedArray:(id)arg3;
 - (id)stringWithDict:(id)arg1;

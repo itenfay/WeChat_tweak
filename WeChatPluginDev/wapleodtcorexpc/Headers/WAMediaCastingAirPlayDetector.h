@@ -15,7 +15,6 @@
 }
 
 + (id)format_WirelessTypeString:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAMediaCastingAirPlayDectectPrivateWindow *dectectWindow; // @synthesize dectectWindow=_dectectWindow;
 @property(nonatomic) __weak id <WAMediaCastingAirPlayDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onWirelessRouteActiveDidChange;

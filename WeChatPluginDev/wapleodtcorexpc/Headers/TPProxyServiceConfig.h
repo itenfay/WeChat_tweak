@@ -19,7 +19,6 @@
     NSString *_initConfig;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *initConfig; // @synthesize initConfig=_initConfig;
 @property(nonatomic) _Bool reportEnable; // @synthesize reportEnable=_reportEnable;
 @property(nonatomic) _Bool vodCachedEnable; // @synthesize vodCachedEnable=_vodCachedEnable;

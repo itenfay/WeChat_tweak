@@ -11,7 +11,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)nonRealTimePitchsAligned5Ms;
 - (id)nonRealTimePitchs;
 - (void)stopTask;

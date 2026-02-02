@@ -14,7 +14,6 @@
     NSURLSession *_urlSession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(nonatomic) _Bool isInDownloadProcess; // @synthesize isInDownloadProcess=_isInDownloadProcess;
 @property(nonatomic) __weak MPPageFastLoadEventMgr *pageFastLoadEventMgr; // @synthesize pageFastLoadEventMgr=_pageFastLoadEventMgr;

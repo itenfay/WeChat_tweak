@@ -14,7 +14,6 @@
     MISSING_TYPE *statusCollection;
 }
 
-- (void).cxx_destruct;
 - (void)giftDidPlay;
 - (void)onStartCustomPixelTransferChange;
 - (void)appEnterForeground;

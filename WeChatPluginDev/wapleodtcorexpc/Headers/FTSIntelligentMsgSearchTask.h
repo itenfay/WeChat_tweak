@@ -37,7 +37,6 @@
     FTSIntelligentMsgSearchResultHandler *_searchResultHandler;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FTSIntelligentMsgSearchResultHandler *searchResultHandler; // @synthesize searchResultHandler=_searchResultHandler;
 @property(retain, nonatomic) NSString *restrictSessionUsrname; // @synthesize restrictSessionUsrname=_restrictSessionUsrname;
 @property(nonatomic) unsigned int newestSearchType; // @synthesize newestSearchType=_newestSearchType;

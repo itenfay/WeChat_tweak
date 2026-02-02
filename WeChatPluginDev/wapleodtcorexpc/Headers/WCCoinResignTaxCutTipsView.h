@@ -12,7 +12,6 @@
     id <WCCoinResignTaxCutTipsViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCCoinResignTaxCutTipsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WecoinTaxReConfirmHalfPageInfo *taxReconfirmInfo; // @synthesize taxReconfirmInfo=_taxReconfirmInfo;
 - (id)titleForPageSheetConfirmButton;

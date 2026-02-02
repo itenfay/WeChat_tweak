@@ -29,7 +29,6 @@
     NSString *_outerTransMoney;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool checkPurchaseFromLqGuide; // @synthesize checkPurchaseFromLqGuide=_checkPurchaseFromLqGuide;
 @property(nonatomic) _Bool showKeyboard; // @synthesize showKeyboard=_showKeyboard;
 @property(nonatomic) unsigned int outerEntranceType; // @synthesize outerEntranceType=_outerEntranceType;

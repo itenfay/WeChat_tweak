@@ -15,7 +15,6 @@
     NSMutableArray *_rangingUUIDArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *rangingUUIDArray; // @synthesize rangingUUIDArray=_rangingUUIDArray;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSArray *lastCallStack; // @synthesize lastCallStack=_lastCallStack;

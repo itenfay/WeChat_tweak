@@ -11,7 +11,6 @@
     NSString *_tipsWording;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tipsWording; // @synthesize tipsWording=_tipsWording;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 - (unsigned long long)sectionType;

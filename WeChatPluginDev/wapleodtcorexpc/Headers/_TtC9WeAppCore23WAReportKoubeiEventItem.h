@@ -13,7 +13,6 @@
     MISSING_TYPE *source;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)reportString;
 - (int)reportID;

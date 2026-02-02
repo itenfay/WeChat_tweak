@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderDirectAddPreviousLiveProductsPageInfo, FinderShopShelfLabelClassifyInfo, MMFinderLiveCouponsView, MMFinderLiveGoodsItem, MMFinderLiveGoodsManagerViewController, MMFinderLiveHotSaleInfosView, MMFinderLiveShopContext, MMFinderLiveShopGoodsSectionHeaderClassifyView, MMFinderLiveShopSelfOpenParams, MMFinderLiveShopShelfContainerView, MMFinderLiveShopShelfCoordinator, MMFinderLiveShopShelfExtraHeaderCell, MMFinderLiveShopShelfGoodsWithCouponView, MMFinderLiveShopShelfHeaderContainerView, MMFinderLiveShopShelfPagesManageView, MMFinderLiveShopShelfTipsView, MMFinderLiveTaskId, MMFinderLiveWithCallbackSet, MMLoadingView, MMTableView, NSDate, NSDictionary, NSMutableArray, NSMutableSet, NSObject, NSString, OrderedDictionary, UIButton;
 @protocol MMFinderLiveShopShelfViewDelegate;
@@ -50,7 +51,6 @@
     NSDate *_enterDate;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *enterDate; // @synthesize enterDate=_enterDate;
 @property(retain, nonatomic) NSDate *enterCurrentClassifyDate; // @synthesize enterCurrentClassifyDate=_enterCurrentClassifyDate;
 @property(retain, nonatomic) NSDictionary *hotSaleLikeAnimationMaskViewsWillReuse; // @synthesize hotSaleLikeAnimationMaskViewsWillReuse=_hotSaleLikeAnimationMaskViewsWillReuse;
@@ -239,4 +239,3 @@
 @property(readonly) Class superclass;
 
 @end
-

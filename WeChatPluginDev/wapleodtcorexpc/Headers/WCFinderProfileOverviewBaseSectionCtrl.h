@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class UICollectionView, UIViewController, WCFinderProfileOverviewHeader, WCFinderProfileOverviewPageModel, WCFinderProfileOverviewSection, WCFinderStreamProfileHeadData;
 @protocol WCFinderProfileOverviewBaseSectionDelegate;
@@ -23,7 +24,6 @@
 + (_Bool)featureSupport:(id)arg1;
 + (id)suppportAllSections;
 + (id)sectionDefines;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCFinderProfileOverviewHeader *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <WCFinderProfileOverviewBaseSectionDelegate> delegate; // @synthesize delegate=_delegate;
@@ -85,4 +85,3 @@
 - (void)relayout;
 
 @end
-

@@ -22,7 +22,6 @@
     CDUnknownFunctionPointerType _viewDidDisappear;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) CDUnknownFunctionPointerType viewDidDisappear; // @synthesize viewDidDisappear=_viewDidDisappear;
 @property(nonatomic) CDUnknownFunctionPointerType viewWillDisappear; // @synthesize viewWillDisappear=_viewWillDisappear;
 @property(nonatomic) CDUnknownFunctionPointerType viewDidAppear; // @synthesize viewDidAppear=_viewDidAppear;

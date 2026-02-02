@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class EmoticonCreateImageUploadTask, EmoticonCreateUploadTask, EmoticonCreateVideoUploadTask, EmoticonCustomAddingItem, EmoticonCustomCreateDownloadTask, EmoticonCustomCreateEditTask, EmoticonCustomCreatePreProcessTask, EmoticonCustomCreateTask, EmoticonCustomManageSelectFromMultiImageViewController, MMUIViewController, NSString, UINavigationController, WCFinderDataItem;
 @protocol MMUIViewControllerDelegate;
@@ -26,7 +27,6 @@
     CDStruct_1b6d18a9 _videoCropStartTime;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) EmoticonCustomCreatePreProcessTask *preprocessTask; // @synthesize preprocessTask=_preprocessTask;
 @property(nonatomic) _Bool isMultiImage; // @synthesize isMultiImage=_isMultiImage;
 @property(nonatomic) CDStruct_1b6d18a9 videoCropStartTime; // @synthesize videoCropStartTime=_videoCropStartTime;
@@ -115,4 +115,3 @@
 @property(readonly) Class superclass;
 
 @end
-

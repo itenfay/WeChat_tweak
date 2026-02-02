@@ -23,7 +23,6 @@
     struct UIEdgeInsets _insetsBefore;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long currentDirection; // @synthesize currentDirection=_currentDirection;
 @property _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(nonatomic) struct UIEdgeInsets insetsBefore; // @synthesize insetsBefore=_insetsBefore;

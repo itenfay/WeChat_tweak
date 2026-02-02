@@ -13,7 +13,6 @@
     id <ChatroomProfileViewLayoutDelegate> _layoutDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <ChatroomProfileViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 @property(nonatomic) _Bool wrapItemAccessibilityElement; // @synthesize wrapItemAccessibilityElement=_wrapItemAccessibilityElement;
 - (void)openContactInfo:(id)arg1;

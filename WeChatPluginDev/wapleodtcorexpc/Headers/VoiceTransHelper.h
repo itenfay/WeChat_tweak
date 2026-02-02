@@ -30,7 +30,6 @@
     NSString *m_nsVoiceID;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int translateScene; // @synthesize translateScene=_translateScene;
 @property(retain, nonatomic) NSString *m_nsVoiceID; // @synthesize m_nsVoiceID;
 @property(retain, nonatomic) CMessageWrap *m_msgWrap; // @synthesize m_msgWrap;

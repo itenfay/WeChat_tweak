@@ -4,8 +4,8 @@
 //
 
 #import <Foundation/NSDictionary.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface NSDictionary (FinderLiveLogReport)
 @property(readonly, nonatomic) CDUnknownBlockType dictionaryAddFinderLiveLogReportKeysWithObject;
 @end
-

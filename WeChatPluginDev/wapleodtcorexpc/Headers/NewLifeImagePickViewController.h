@@ -27,7 +27,6 @@
     unsigned long long _isEnterSubView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long isEnterSubView; // @synthesize isEnterSubView=_isEnterSubView;
 @property(nonatomic) unsigned long long selectTimelinePhotoCount; // @synthesize selectTimelinePhotoCount=_selectTimelinePhotoCount;
 @property(retain, nonatomic) MMSightCameraViewController *sightViewController; // @synthesize sightViewController=_sightViewController;

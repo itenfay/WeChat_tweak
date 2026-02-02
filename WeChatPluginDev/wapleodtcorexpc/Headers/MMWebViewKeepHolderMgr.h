@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMTimer, MMWebViewController, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, OrderedDictionary, WCEliminatedSlotMMKV;
 
 @interface MMWebViewKeepHolderMgr
@@ -52,7 +54,6 @@
 + (CDUnknownBlockType)blockWebviewExitReportAction;
 + (CDUnknownBlockType)blockWebviewCheckAndFixXpcIssue;
 + (CDUnknownBlockType)blockWebviewExitTimeoutActionWithTimeout:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int domainBlockRulesVersion; // @synthesize domainBlockRulesVersion=_domainBlockRulesVersion;
 @property(retain, nonatomic) NSDictionary *dictDomainBlockPaths; // @synthesize dictDomainBlockPaths=_dictDomainBlockPaths;
 @property(retain, nonatomic) NSMutableDictionary *dictTaskCacheTime; // @synthesize dictTaskCacheTime=_dictTaskCacheTime;
@@ -162,4 +163,3 @@
 @property(readonly) Class superclass;
 
 @end
-

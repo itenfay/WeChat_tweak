@@ -18,7 +18,6 @@
     WCFinderLiveNowView *_liveOverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLiveNowView *liveOverView; // @synthesize liveOverView=_liveOverView;
 @property(retain, nonatomic) WCFinderLiveNowView *liveNowView; // @synthesize liveNowView=_liveNowView;
 @property(retain, nonatomic) UIView *highlightMaskView; // @synthesize highlightMaskView=_highlightMaskView;

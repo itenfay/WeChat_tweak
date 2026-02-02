@@ -12,7 +12,6 @@
     WCTDatabase *_msgItemDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTDatabase *msgItemDB; // @synthesize msgItemDB=_msgItemDB;
 - (id)p_getMigrationTable;
 - (id)p_getTagTable;

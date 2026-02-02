@@ -10,7 +10,6 @@
     MMFinderLivePromoteDisplayLease *_lease;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLivePromoteDisplayLease *lease; // @synthesize lease=_lease;
 - (void)setOperationDelegate:(id)arg1;
 - (id)operationDelegate;

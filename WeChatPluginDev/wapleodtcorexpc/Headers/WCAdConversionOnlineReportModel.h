@@ -19,7 +19,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) NSString *jsBundleVersion; // @synthesize jsBundleVersion=_jsBundleVersion;
 @property(retain, nonatomic) NSString *av; // @synthesize av=_av;

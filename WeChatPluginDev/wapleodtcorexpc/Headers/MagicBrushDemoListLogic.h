@@ -12,7 +12,6 @@
     UIView *_pendingView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *pendingView; // @synthesize pendingView=_pendingView;
 @property(retain, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;

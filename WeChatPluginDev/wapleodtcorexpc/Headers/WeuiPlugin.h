@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -15,7 +16,6 @@
 }
 
 + (void)registerWithRegistrar:(id)arg1;
-- (void).cxx_destruct;
 - (id)getKeyboardHeight:(id)arg1;
 - (void)checkIsKeyboardOpen:(id)arg1;
 - (id)showKeyboard:(_Bool)arg1 keyboardHeight:(double)arg2;
@@ -37,4 +37,3 @@
 @property(readonly) Class superclass;
 
 @end
-

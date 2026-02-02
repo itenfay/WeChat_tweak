@@ -17,7 +17,6 @@
 
 + (double)heightWithMusicTopicInfo:(id)arg1;
 + (double)tableViewHeightWithMusicTopicInfo:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMusicEventHeaderRecommendListVM *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) UITableViewDiffableDataSource *diffDataSource; // @synthesize diffDataSource=_diffDataSource;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;

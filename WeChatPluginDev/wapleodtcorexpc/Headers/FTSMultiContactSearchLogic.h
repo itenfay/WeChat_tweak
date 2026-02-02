@@ -28,7 +28,6 @@
 }
 
 + (id)FilterArrKeywords:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bForbidRecommendOpenIMContact; // @synthesize bForbidRecommendOpenIMContact=_bForbidRecommendOpenIMContact;
 @property(nonatomic) _Bool bStrictMatchGroup; // @synthesize bStrictMatchGroup=_bStrictMatchGroup;
 @property(retain, nonatomic) NSArray *arrShareGroupStrictContact; // @synthesize arrShareGroupStrictContact=_arrShareGroupStrictContact;

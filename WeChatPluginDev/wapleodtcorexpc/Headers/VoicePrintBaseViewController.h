@@ -18,7 +18,6 @@
     UIScreenEdgePanGestureRecognizer *_screenEdgePanGesture;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgePanGesture; // @synthesize screenEdgePanGesture=_screenEdgePanGesture;
 @property(retain, nonatomic) MMUIButton *footerLinkButton; // @synthesize footerLinkButton=_footerLinkButton;
 @property(retain, nonatomic) UIButton *footerWeakButton; // @synthesize footerWeakButton=_footerWeakButton;

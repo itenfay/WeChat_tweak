@@ -14,7 +14,6 @@
     NSDictionary *_extInfoDic;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *extInfoDic; // @synthesize extInfoDic=_extInfoDic;
 @property(nonatomic) unsigned long long innerSourceId; // @synthesize innerSourceId=_innerSourceId;
 @property(nonatomic) unsigned long long outSsid; // @synthesize outSsid=_outSsid;

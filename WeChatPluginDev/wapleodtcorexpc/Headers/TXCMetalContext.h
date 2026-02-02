@@ -18,7 +18,6 @@
     struct __CVMetalTextureCache *_metalTextureCache;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CVMetalTextureCache *metalTextureCache; // @synthesize metalTextureCache=_metalTextureCache;
 @property(readonly, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;

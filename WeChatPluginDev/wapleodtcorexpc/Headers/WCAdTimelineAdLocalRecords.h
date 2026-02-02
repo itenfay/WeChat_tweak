@@ -13,7 +13,6 @@
     NSArray *_records;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(retain, nonatomic) NSString *timeConfig; // @synthesize timeConfig=_timeConfig;
 - (id)description;

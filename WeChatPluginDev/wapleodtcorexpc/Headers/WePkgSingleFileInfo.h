@@ -22,7 +22,6 @@
 + (void)PBArrayAdd_md5;
 + (void)PBArrayAdd_mimeType;
 + (void)PBArrayAdd_rid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property(nonatomic) unsigned int downloadNetworkType; // @synthesize downloadNetworkType=_downloadNetworkType;
 @property(retain, nonatomic) NSString *downloadUrl; // @synthesize downloadUrl=_downloadUrl;

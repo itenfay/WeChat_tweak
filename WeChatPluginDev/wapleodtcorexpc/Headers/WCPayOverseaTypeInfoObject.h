@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_m_typeId;
 + (void)PBArrayAdd_m_typeName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_typeId; // @synthesize m_typeId=_m_typeId;
 @property(retain, nonatomic) NSString *m_typeName; // @synthesize m_typeName=_m_typeName;
 - (id)getPBPropertyTable;

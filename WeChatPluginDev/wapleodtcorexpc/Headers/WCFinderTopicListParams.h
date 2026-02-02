@@ -39,7 +39,6 @@
     NSString *_jsapiKVReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int poiFromScene; // @synthesize poiFromScene=_poiFromScene;
 @property(nonatomic) int poiTabID; // @synthesize poiTabID=_poiTabID;
 @property(nonatomic) int poiFromType; // @synthesize poiFromType=_poiFromType;

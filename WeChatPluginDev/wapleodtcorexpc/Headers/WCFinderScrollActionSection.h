@@ -14,7 +14,6 @@
     NSMutableArray *_items;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) long long secType; // @synthesize secType=_secType;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

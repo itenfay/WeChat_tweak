@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class DotLoadingView, MMAppRefreshTokenAppInfo, MMWebImageView, UIImageView, UILabel;
 
 @interface MMAppRefreshTokenLinkingViewController
@@ -16,7 +18,6 @@
     CDUnknownBlockType _dimisssHandler;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dimisssHandler; // @synthesize dimisssHandler=_dimisssHandler;
 @property(retain, nonatomic) MMAppRefreshTokenAppInfo *appInfo; // @synthesize appInfo=_appInfo;
 @property(retain, nonatomic) DotLoadingView *dotLoadingView; // @synthesize dotLoadingView=_dotLoadingView;
@@ -38,4 +39,3 @@
 - (id)initWithWithAppInfo:(id)arg1 dimisssHandler:(CDUnknownBlockType)arg2;
 
 @end
-

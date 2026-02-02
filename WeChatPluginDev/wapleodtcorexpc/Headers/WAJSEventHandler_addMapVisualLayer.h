@@ -11,7 +11,6 @@
     NSMutableArray *_markersAddCluster;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *markersAddCluster; // @synthesize markersAddCluster=_markersAddCluster;
 @property(retain, nonatomic) NSMutableArray *markersAddMap; // @synthesize markersAddMap=_markersAddMap;
 - (void)handleJSEvent:(id)arg1;

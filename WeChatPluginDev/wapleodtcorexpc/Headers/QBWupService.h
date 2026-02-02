@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, QBWupTransfer;
 
@@ -14,11 +15,9 @@
 }
 
 + (id)service;
-- (void).cxx_destruct;
 - (id)invocation:(id)arg1 parameter:(id)arg2 completeHandle:(CDUnknownBlockType)arg3;
 - (id)encodePackageWithFuncName:(id)arg1 parameter:(id)arg2;
 - (id)initWithServant:(id)arg1;
 - (id)init;
 
 @end
-

@@ -12,7 +12,6 @@
     NSString *_otherVerifyTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *otherVerifyTitle; // @synthesize otherVerifyTitle=_otherVerifyTitle;
 @property(nonatomic) _Bool canRetry; // @synthesize canRetry=_canRetry;
 @property(retain, nonatomic) NSString *errorMsg; // @synthesize errorMsg=_errorMsg;

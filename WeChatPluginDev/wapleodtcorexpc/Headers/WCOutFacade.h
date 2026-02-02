@@ -51,7 +51,6 @@
 + (_Bool)isWCOSwitchOpen;
 + (_Bool)showWCOut;
 + (_Bool)isOpenWCOutPlugin;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long showlastFeedbackTs; // @synthesize showlastFeedbackTs=_showlastFeedbackTs;
 @property(nonatomic) unsigned int showTimesFeedback; // @synthesize showTimesFeedback=_showTimesFeedback;
 @property(retain, nonatomic) WCOFeedBackTips *feedbackTips; // @synthesize feedbackTips=_feedbackTips;

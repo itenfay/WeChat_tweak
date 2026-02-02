@@ -14,7 +14,6 @@
     NSDictionary *_serviceData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isConnectable; // @synthesize isConnectable=_isConnectable;
 @property(retain, nonatomic) NSDictionary *serviceData; // @synthesize serviceData=_serviceData;
 @property(retain, nonatomic) NSArray *serviceUUIDs; // @synthesize serviceUUIDs=_serviceUUIDs;

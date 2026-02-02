@@ -18,7 +18,6 @@
     double _maxWidth;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UIButton *feedbackButton; // @synthesize feedbackButton=_feedbackButton;
 @property(retain, nonatomic) NSMutableArray *optionButtonArray; // @synthesize optionButtonArray=_optionButtonArray;

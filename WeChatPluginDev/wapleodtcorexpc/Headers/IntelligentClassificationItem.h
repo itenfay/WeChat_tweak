@@ -13,7 +13,6 @@
     NSString *_originLabelId;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originLabelId; // @synthesize originLabelId=_originLabelId;
 @property(retain, nonatomic) NSString *labelName; // @synthesize labelName=_labelName;
 @property(nonatomic) float score; // @synthesize score=_score;

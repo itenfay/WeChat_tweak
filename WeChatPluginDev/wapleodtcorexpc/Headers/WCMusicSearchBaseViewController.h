@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class WCMusicFooterHintView, WCMusicSearchContext, WCMusicSearchHintView;
 
 @interface WCMusicSearchBaseViewController
@@ -13,7 +15,6 @@
     WCMusicFooterHintView *_currentFooterView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak WCMusicFooterHintView *currentFooterView; // @synthesize currentFooterView=_currentFooterView;
 @property(retain, nonatomic) WCMusicSearchHintView *hintView; // @synthesize hintView=_hintView;
 @property(nonatomic) unsigned long long lastRequestId; // @synthesize lastRequestId=_lastRequestId;
@@ -40,4 +41,3 @@
 - (void)doSearchWithContext:(id)arg1;
 
 @end
-

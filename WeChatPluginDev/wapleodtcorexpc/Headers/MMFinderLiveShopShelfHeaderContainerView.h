@@ -14,7 +14,6 @@
     UIView<MMFinderLiveShopShelfHeaderContentView> *_contentView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<MMFinderLiveShopShelfHeaderContentView> *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) MMFinderLiveShopShelfHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)reportElementsExposed;

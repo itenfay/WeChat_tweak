@@ -14,7 +14,6 @@
     QText *_text;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableCollideLabel; // @synthesize disableCollideLabel=_disableCollideLabel;
 @property(retain, nonatomic) QText *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSArray *lineDashPattern; // @synthesize lineDashPattern=_lineDashPattern;

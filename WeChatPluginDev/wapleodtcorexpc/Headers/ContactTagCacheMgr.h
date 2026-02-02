@@ -11,7 +11,6 @@
     _Bool _bIsAlreadyBuildCacheFromContacts;
 }
 
-- (void).cxx_destruct;
 - (id)GetLabelIDToUserNameList;
 - (id)GetCacheValue:(id)arg1;
 - (void)DelCacheKey:(id)arg1;

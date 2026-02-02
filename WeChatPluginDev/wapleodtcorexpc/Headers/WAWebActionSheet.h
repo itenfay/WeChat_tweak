@@ -21,7 +21,6 @@
     UILabel *_titleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSMutableArray *buttonArr; // @synthesize buttonArr=_buttonArr;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;

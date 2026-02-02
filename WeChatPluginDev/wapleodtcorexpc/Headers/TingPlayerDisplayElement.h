@@ -13,7 +13,6 @@
     struct CGSize _viewSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *playerView; // @synthesize playerView=_playerView;
 @property(nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 

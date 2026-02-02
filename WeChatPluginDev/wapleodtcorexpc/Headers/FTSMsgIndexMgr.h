@@ -25,7 +25,6 @@
     NSMutableSet *_indexRepairingUsrs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitingIndex; // @synthesize isInitingIndex=_isInitingIndex;
 @property(retain) NSMutableSet *indexRepairingUsrs; // @synthesize indexRepairingUsrs=_indexRepairingUsrs;
 @property(retain, nonatomic) FTSMessageDB *ftsMessageDB; // @synthesize ftsMessageDB=_ftsMessageDB;

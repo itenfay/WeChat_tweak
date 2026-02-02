@@ -29,7 +29,6 @@
 + (double)fetchMediaHeightWithScene:(unsigned long long)arg1 fixMediaSize:(struct CGSize)arg2;
 + (double)fetchCardWidthWithScene:(unsigned long long)arg1 fixMediaSize:(struct CGSize)arg2;
 + (double)heightForDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) double slideEdgePagViewInitialShowWidth; // @synthesize slideEdgePagViewInitialShowWidth=_slideEdgePagViewInitialShowWidth;
 @property(nonatomic) double slideEdgePagViewInitialWidth; // @synthesize slideEdgePagViewInitialWidth=_slideEdgePagViewInitialWidth;
 @property(nonatomic) double slideEdgePagViewMaxWidth; // @synthesize slideEdgePagViewMaxWidth=_slideEdgePagViewMaxWidth;

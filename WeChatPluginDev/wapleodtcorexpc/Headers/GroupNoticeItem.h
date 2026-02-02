@@ -14,7 +14,6 @@
 + (id)itemFromXml:(id)arg1;
 + (id)itemFromText:(id)arg1;
 + (id)itemFromFavItem:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *skipDownloadType; // @synthesize skipDownloadType=_skipDownloadType;
 @property(retain, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 - (_Bool)needDownLoad;

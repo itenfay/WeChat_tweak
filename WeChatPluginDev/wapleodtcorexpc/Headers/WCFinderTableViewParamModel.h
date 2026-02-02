@@ -41,7 +41,6 @@
 }
 
 + (id)defaultParamModelWithContentVM:(id)arg1 isSubScene:(_Bool)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forceToolBarStyle; // @synthesize forceToolBarStyle=_forceToolBarStyle;
 @property(nonatomic) struct CGRect tableViewFrame; // @synthesize tableViewFrame=_tableViewFrame;
 @property(nonatomic) _Bool notShowTemplateBubbleEntry; // @synthesize notShowTemplateBubbleEntry=_notShowTemplateBubbleEntry;

@@ -12,7 +12,6 @@
     WCAudioModuleProxy *_auidoModuleProxy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAudioModuleProxy *auidoModuleProxy; // @synthesize auidoModuleProxy=_auidoModuleProxy;
 @property(nonatomic) __weak UIView *playingContainerView; // @synthesize playingContainerView=_playingContainerView;
 @property(retain, nonatomic) MJTemplateMoviePlayer *playingPlayer; // @synthesize playingPlayer=_playingPlayer;

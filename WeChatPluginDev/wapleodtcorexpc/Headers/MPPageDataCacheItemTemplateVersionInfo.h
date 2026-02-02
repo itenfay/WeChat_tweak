@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_versionGroup;
 + (void)PBArrayAdd_version;
 + (void)PBArrayAdd_type;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *versionGroup; // @synthesize versionGroup=_versionGroup;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMUILabel, MMUITextField, NSString, UIColor, UIFont, UIImageView;
 
@@ -23,7 +24,6 @@
     MMUITextField *_textField;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isSetDefaultContent; // @synthesize isSetDefaultContent=_isSetDefaultContent;
 @property(retain, nonatomic) MMUITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) MMUILabel *fansRankLabel; // @synthesize fansRankLabel=_fansRankLabel;
@@ -67,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

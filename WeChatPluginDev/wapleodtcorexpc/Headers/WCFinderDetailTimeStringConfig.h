@@ -21,7 +21,6 @@
 }
 
 + (id)defaultConfig;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *overOneYearFormatText; // @synthesize overOneYearFormatText=_overOneYearFormatText;
 @property(retain, nonatomic) NSString *beforeMonthFormatText; // @synthesize beforeMonthFormatText=_beforeMonthFormatText;
 @property(retain, nonatomic) NSString *beforeWeekFormatText; // @synthesize beforeWeekFormatText=_beforeWeekFormatText;

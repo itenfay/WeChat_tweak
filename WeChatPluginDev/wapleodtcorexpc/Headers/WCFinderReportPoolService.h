@@ -11,7 +11,6 @@
     WCFinderEditVideoReportInfo *_editReportInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderEditVideoReportInfo *editReportInfo; // @synthesize editReportInfo=_editReportInfo;
 @property(copy, nonatomic) NSString *clickPostTimeStamp; // @synthesize clickPostTimeStamp=_clickPostTimeStamp;
 - (void)clearEditVideoReportInfo;

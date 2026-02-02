@@ -13,7 +13,6 @@
 }
 
 + (double)viewHeightByDataModel:(id)arg1 hostView:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) __weak WeToast *weakCurrentToast; // @synthesize weakCurrentToast=_weakCurrentToast;
 @property(retain, nonatomic) ZZFLEXAngel *angel; // @synthesize angel=_angel;
 @property(retain, nonatomic) MMTableView *tableView; // @synthesize tableView=_tableView;

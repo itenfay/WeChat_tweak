@@ -12,7 +12,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (long long)getReportSessionTypeFor:(id)arg1;
 - (void)reportSingleClickWithUnreadCount:(long long)arg1;

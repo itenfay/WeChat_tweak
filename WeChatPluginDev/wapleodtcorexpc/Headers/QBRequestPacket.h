@@ -30,7 +30,6 @@
 @property(retain, nonatomic) NSNumber *iMessageType; // @synthesize iMessageType=_iMessageType;
 @property(retain, nonatomic) NSNumber *cPacketType; // @synthesize cPacketType=_cPacketType;
 @property(retain, nonatomic) NSNumber *iVersion; // @synthesize iVersion=_iVersion;
-- (void).cxx_destruct;
 - (void)__unpack:(id)arg1;
 - (void)__pack:(id)arg1;
 - (id)init;

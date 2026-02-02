@@ -13,7 +13,6 @@
     NSString *_audioId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool lastVituralPlayerForegroundState; // @synthesize lastVituralPlayerForegroundState=_lastVituralPlayerForegroundState;
 @property(nonatomic) _Bool isNotifyTingStateChange; // @synthesize isNotifyTingStateChange=_isNotifyTingStateChange;
 @property(retain, nonatomic) NSString *audioId; // @synthesize audioId=_audioId;

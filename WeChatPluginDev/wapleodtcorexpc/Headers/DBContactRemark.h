@@ -30,7 +30,6 @@
 + (void)PBArrayAdd_remark;
 + (void)PBArrayAdd_aliasName;
 + (void)PBArrayAdd_nickName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *labelIDList; // @synthesize labelIDList=_labelIDList;
 @property(retain, nonatomic) NSString *descriptions; // @synthesize descriptions=_descriptions;
 @property(retain, nonatomic) NSString *fullPinYin; // @synthesize fullPinYin=_fullPinYin;

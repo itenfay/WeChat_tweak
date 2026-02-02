@@ -30,7 +30,6 @@
 + (_Bool)strategyIsAutoReportForTag:(id)arg1;
 + (void)updateStrategy:(id)arg1 forTag:(id)arg2;
 + (void)setUinForStrategy:(unsigned long long)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MatrixStrategyIDCache *strategyIDCache; // @synthesize strategyIDCache=_strategyIDCache;
 @property(retain, nonatomic) Matrix *matrix; // @synthesize matrix=_matrix;
 @property(retain, nonatomic) NSMutableDictionary *reportIssueDict; // @synthesize reportIssueDict=_reportIssueDict;

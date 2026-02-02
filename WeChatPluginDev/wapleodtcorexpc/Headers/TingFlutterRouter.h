@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMFlutterInstance, MMFlutterViewController, NSArray, NSMutableArray, NSString, TingAppNavigationController, TingPlayerManager, UIViewController;
 @protocol ITingApp;
 
@@ -19,7 +21,6 @@
 }
 
 + (id)plugins;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completeBlockArray; // @synthesize completeBlockArray=_completeBlockArray;
 @property _Bool doingWarmUp; // @synthesize doingWarmUp=_doingWarmUp;
 @property _Bool hasWarmUp; // @synthesize hasWarmUp=_hasWarmUp;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-

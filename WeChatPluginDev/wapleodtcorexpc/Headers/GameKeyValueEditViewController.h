@@ -12,7 +12,6 @@
     NSMutableArray *_keyValueArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyValueArray; // @synthesize keyValueArray=_keyValueArray;
 @property(retain, nonatomic) GCCollectionViewManager *viewManager; // @synthesize viewManager=_viewManager;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

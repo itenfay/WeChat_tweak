@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MISSING_TYPE, NSArray, NSData, NSString, WCFinderFeedContentVM;
 
@@ -19,7 +20,6 @@
     MISSING_TYPE *identifierSet;
 }
 
-- (void).cxx_destruct;
 - (id)init;
 - (void)getMockDataList;
 - (_Bool)shouldUseEnterFinderItem;
@@ -34,4 +34,3 @@
 @property(nonatomic, copy) NSArray *listData;
 
 @end
-

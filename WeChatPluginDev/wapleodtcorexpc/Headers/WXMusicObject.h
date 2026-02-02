@@ -18,7 +18,6 @@
 }
 
 + (id)object;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *songLyric; // @synthesize songLyric=_songLyric;
 @property(copy, nonatomic) NSString *songAlbumUrl; // @synthesize songAlbumUrl=_songAlbumUrl;
 @property(retain, nonatomic) NSString *musicLowBandDataUrl; // @synthesize musicLowBandDataUrl;

@@ -17,7 +17,6 @@
     UIImageView *_arrowIcon;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *arrowIcon; // @synthesize arrowIcon=_arrowIcon;
 @property(retain, nonatomic) UILabel *unreadLabel; // @synthesize unreadLabel=_unreadLabel;
 @property(retain, nonatomic) UIButton *notifyButton; // @synthesize notifyButton=_notifyButton;

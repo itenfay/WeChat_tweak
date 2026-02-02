@@ -13,7 +13,6 @@
     WAAppStateChangedContextInfoBluetoothInfo *_bluetoothInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WAAppStateChangedContextInfoBluetoothInfo *bluetoothInfo; // @synthesize bluetoothInfo=_bluetoothInfo;
 @property(retain, nonatomic) WAAppStateChangedContextInfoWXABGAudioInfo *wxaBGAudioInfo; // @synthesize wxaBGAudioInfo=_wxaBGAudioInfo;
 @property(retain, nonatomic) WAAppStateChangedContextInfoLocationInfo *locationInfo; // @synthesize locationInfo=_locationInfo;

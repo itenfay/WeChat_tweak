@@ -27,7 +27,6 @@
     id <WCPayRealnameSuccessViewDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property __weak id <WCPayRealnameSuccessViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) RichTextView *bottomTitle; // @synthesize bottomTitle=_bottomTitle;
 @property double minHeight; // @synthesize minHeight=_minHeight;

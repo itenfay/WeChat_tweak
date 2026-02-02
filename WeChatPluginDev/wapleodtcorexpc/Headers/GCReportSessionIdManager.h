@@ -13,7 +13,6 @@
     NSMutableDictionary *_viewControllerDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *viewControllerDict; // @synthesize viewControllerDict=_viewControllerDict;
 @property(nonatomic) double sessionIdRefreshTime; // @synthesize sessionIdRefreshTime=_sessionIdRefreshTime;
 @property(nonatomic) double sessionIdGenTime; // @synthesize sessionIdGenTime=_sessionIdGenTime;

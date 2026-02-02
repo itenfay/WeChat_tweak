@@ -16,7 +16,6 @@
     MMFinderLiveShopShelfCouponsTableContainerView *_containerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveShopShelfCouponsTableContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) MMFinderLiveTaskId *taskID; // @synthesize taskID=_taskID;
 @property(nonatomic) __weak id <MMFinderLiveCouponsViewDelegate> delegate; // @synthesize delegate=_delegate;

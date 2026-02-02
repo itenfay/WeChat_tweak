@@ -13,7 +13,6 @@
     CustomVisualEffectView *_visualEffectView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CustomVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 - (void)layoutSubviews;

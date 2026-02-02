@@ -12,7 +12,6 @@
     id <WCFinderFeedRetryToolBarDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCFinderFeedRetryToolBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clickRetryAction;
 - (void)clickCancelAction;

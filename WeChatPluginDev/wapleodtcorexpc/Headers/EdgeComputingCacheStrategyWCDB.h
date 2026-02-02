@@ -11,7 +11,6 @@
     WCTTable *_cacheDataTable;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)count;
 - (id)query:(id)arg1;
 - (void)deleteExpire:(unsigned long long)arg1;

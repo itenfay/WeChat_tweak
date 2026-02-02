@@ -10,7 +10,6 @@
     UIImageView *m_bgImageView;
 }
 
-- (void).cxx_destruct;
 - (id)operationMenuItems;
 - (void)addFavorite;
 - (void)forwardMessage;

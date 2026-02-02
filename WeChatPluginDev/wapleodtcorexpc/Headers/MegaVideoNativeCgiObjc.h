@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MegaVideoNativeCgiObjc : NSObject
 {
@@ -18,4 +19,3 @@
 + (void)fetchContinuePlayNextFeed:(id)arg1 lastBuffer:(id)arg2 relatedListLastBuffer:(id)arg3 commentScene:(int)arg4 callback:(CDUnknownBlockType)arg5;
 
 @end
-

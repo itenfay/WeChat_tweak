@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CHHapticEngine, NSDate, NSMutableArray, NSRecursiveLock;
 
@@ -25,7 +26,6 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 @property(nonatomic) double offsetTime; // @synthesize offsetTime=_offsetTime;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSDate *pauseDate; // @synthesize pauseDate=_pauseDate;
@@ -65,4 +65,3 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
-

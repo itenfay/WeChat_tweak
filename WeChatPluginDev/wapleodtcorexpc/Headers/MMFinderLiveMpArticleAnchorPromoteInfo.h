@@ -11,7 +11,6 @@
 }
 
 + (id)createArticleAnchorPromoteInfoFrom:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLivePromoteInfoListMpArticleInfo *articleInfo; // @synthesize articleInfo=_articleInfo;
 - (id)promoteKey;
 

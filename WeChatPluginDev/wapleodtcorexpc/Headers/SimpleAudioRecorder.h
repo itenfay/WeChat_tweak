@@ -14,7 +14,6 @@
 }
 
 + (void)sprintRetCode:(int)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) SimpleRecordState *m_bufferState; // @synthesize m_bufferState=_m_bufferState;
 @property(retain, nonatomic) MMTimer *m_meterTimer; // @synthesize m_meterTimer=_m_meterTimer;
 - (void)printRetCode:(int)arg1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveNoticeInfo, MMFinderLiveNoticeShowReminderBottomView, MMUILabel, NSString, UIView, WCFinderLiveNoticeView;
 
 @interface MMFinderLiveNoticeShowReminderView
@@ -18,7 +20,6 @@
     NSString *_title;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) MMFinderLiveNoticeShowReminderBottomView *bottomView; // @synthesize bottomView=_bottomView;
 @property(nonatomic) double noticeViewHeight; // @synthesize noticeViewHeight=_noticeViewHeight;
@@ -40,4 +41,3 @@
 - (void)updateLiveNoticeInfo:(id)arg1 selectType:(int)arg2;
 
 @end
-

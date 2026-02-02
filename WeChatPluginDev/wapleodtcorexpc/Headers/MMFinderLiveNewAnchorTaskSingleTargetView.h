@@ -21,7 +21,6 @@
     MMUIView *_curProgressView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIView *curProgressView; // @synthesize curProgressView=_curProgressView;
 @property(retain, nonatomic) MMUIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) MMUILabel *opLabel; // @synthesize opLabel=_opLabel;

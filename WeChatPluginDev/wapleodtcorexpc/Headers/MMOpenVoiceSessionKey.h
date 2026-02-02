@@ -13,7 +13,6 @@
     unsigned long long timeoutStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeoutStamp; // @synthesize timeoutStamp;
 @property(retain, nonatomic) NSString *sessionKey; // @synthesize sessionKey;
 - (_Bool)isValid;

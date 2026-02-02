@@ -10,7 +10,6 @@
     MMOverheatingCharacteristics *_currentCharacteristics;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMOverheatingCharacteristics *currentCharacteristics; // @synthesize currentCharacteristics=_currentCharacteristics;
 - (void)handleNetworkChangeToUnreachable;
 - (void)onNetworkStatusChange:(unsigned int)arg1;

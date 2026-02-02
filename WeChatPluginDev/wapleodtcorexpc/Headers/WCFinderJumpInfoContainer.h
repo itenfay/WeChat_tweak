@@ -56,7 +56,6 @@
 + (void)PBArrayAdd_scene;
 + (void)PBArrayAdd_cacheTime;
 + (void)PBArrayAdd_tid;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *jumpInfoBusinessPriorityDict; // @synthesize jumpInfoBusinessPriorityDict=_jumpInfoBusinessPriorityDict;
 @property(retain, nonatomic) FinderAdPreMovieAdInfo *premovieAdInfo; // @synthesize premovieAdInfo=_premovieAdInfo;
 @property(retain, nonatomic) WCFinderJumpInfoArray *adJumpInfoArray; // @synthesize adJumpInfoArray=_adJumpInfoArray;

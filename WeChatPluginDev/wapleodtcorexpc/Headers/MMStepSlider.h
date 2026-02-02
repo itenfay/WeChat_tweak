@@ -20,7 +20,6 @@
     NSArray *_scaleTextSizeArray;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *scaleTextSizeArray; // @synthesize scaleTextSizeArray=_scaleTextSizeArray;
 @property(readonly, nonatomic) NSArray *scaleTextArray; // @synthesize scaleTextArray=_scaleTextArray;
 @property(nonatomic) __weak id <MMStepSliderDelegate> m_delegate; // @synthesize m_delegate;

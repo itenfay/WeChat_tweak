@@ -16,7 +16,6 @@
     id <UIScrollViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIScrollViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <UIScrollViewDelegate> forwardDelegate; // @synthesize forwardDelegate=_forwardDelegate;
 - (void)forwardInvocation:(id)arg1;

@@ -34,7 +34,6 @@
     NSString *_customFont;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDarkMode; // @synthesize isDarkMode=_isDarkMode;
 @property(retain, nonatomic) NSString *customFont; // @synthesize customFont=_customFont;
 @property(nonatomic) __weak id <QScaleViewDelegate> delegate; // @synthesize delegate=_delegate;

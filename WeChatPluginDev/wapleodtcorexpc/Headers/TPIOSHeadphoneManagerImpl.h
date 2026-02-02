@@ -13,7 +13,6 @@
     NSMutableArray *_delegateArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool initialized; // @synthesize initialized=_initialized;
 @property(retain, nonatomic) NSMutableArray *delegateArray; // @synthesize delegateArray=_delegateArray;
 @property(readonly, nonatomic) _Bool headphoneOn; // @dynamic headphoneOn;

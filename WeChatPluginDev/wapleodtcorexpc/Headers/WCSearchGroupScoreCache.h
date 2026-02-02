@@ -14,7 +14,6 @@
     NSMutableDictionary *_dicLeaf;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicLeaf; // @synthesize dicLeaf=_dicLeaf;
 @property(retain, nonatomic) NSMutableDictionary *dicFeatures; // @synthesize dicFeatures=_dicFeatures;
 @property(retain, nonatomic) NSMutableDictionary *dicScore; // @synthesize dicScore=_dicScore;

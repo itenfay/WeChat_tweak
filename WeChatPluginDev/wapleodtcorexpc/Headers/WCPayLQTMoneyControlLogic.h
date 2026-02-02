@@ -32,7 +32,6 @@
     MMPanelView *_largeAmountPanelView;
 }
 
-- (void).cxx_destruct;
 @property(retain) MMPanelView *largeAmountPanelView; // @synthesize largeAmountPanelView=_largeAmountPanelView;
 @property(retain, nonatomic) MMWebViewController *uploadIDCardWebView; // @synthesize uploadIDCardWebView=_uploadIDCardWebView;
 @property(retain) MMTipsViewController *upgradeTipsView; // @synthesize upgradeTipsView=_upgradeTipsView;

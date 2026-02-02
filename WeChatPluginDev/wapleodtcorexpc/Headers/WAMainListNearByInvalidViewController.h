@@ -13,7 +13,6 @@
     UILabel *_contentLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;

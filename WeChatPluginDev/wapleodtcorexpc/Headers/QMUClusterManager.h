@@ -18,7 +18,6 @@
     QMUUnivisalClusterAlgorithm *_clusterStrategy;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) QMUUnivisalClusterAlgorithm *clusterStrategy; // @synthesize clusterStrategy=_clusterStrategy;
 @property(retain, nonatomic) NSMutableSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) QMUPointQuadTree *tree; // @synthesize tree=_tree;

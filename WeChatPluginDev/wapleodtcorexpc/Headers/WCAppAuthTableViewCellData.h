@@ -16,7 +16,6 @@
     NSString *_appScope;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isBottomCell; // @synthesize isBottomCell=_isBottomCell;
 @property(copy, nonatomic) NSString *appScope; // @synthesize appScope=_appScope;
 @property(copy, nonatomic) NSString *appTypeDesc; // @synthesize appTypeDesc=_appTypeDesc;

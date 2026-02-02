@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
@@ -43,7 +44,5 @@
 @property(retain) NSMutableArray *pageIDsForUpload; // @synthesize pageIDsForUpload=_pageIDsForUpload;
 @property(retain) NSMutableDictionary *statusInfo; // @synthesize statusInfo=_statusInfo;
 @property(retain) NSMutableArray *webpages; // @synthesize webpages=_webpages;
-- (void).cxx_destruct;
 
 @end
-

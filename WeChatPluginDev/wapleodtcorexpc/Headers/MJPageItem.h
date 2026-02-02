@@ -16,7 +16,6 @@
     NSArray *_supportedSegmentTypes;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *supportedSegmentTypes; // @synthesize supportedSegmentTypes=_supportedSegmentTypes;
 @property(nonatomic) unsigned long long editContentType; // @synthesize editContentType=_editContentType;
 @property(nonatomic) unsigned long long tab; // @synthesize tab=_tab;

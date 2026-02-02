@@ -14,7 +14,6 @@
     struct CGRect _pendingLayout;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect pendingLayout; // @synthesize pendingLayout=_pendingLayout;
 @property(nonatomic) _Bool pendingFirstFrame; // @synthesize pendingFirstFrame=_pendingFirstFrame;
 @property(retain, nonatomic) UIView *pendingView; // @synthesize pendingView=_pendingView;

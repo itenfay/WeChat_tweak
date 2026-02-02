@@ -25,7 +25,6 @@
     id <OpenIMAddContactRemindDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <OpenIMAddContactRemindDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *m_nsDescContent; // @synthesize m_nsDescContent=_m_nsDescContent;
 - (void)setCloseButton:(id)arg1;

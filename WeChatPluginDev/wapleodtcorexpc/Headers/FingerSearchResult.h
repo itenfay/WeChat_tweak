@@ -15,7 +15,6 @@
     NSString *_content;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) unsigned int location; // @synthesize location=_location;
 @property(nonatomic) unsigned char weight; // @synthesize weight=_weight;

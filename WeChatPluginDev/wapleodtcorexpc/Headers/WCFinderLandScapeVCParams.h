@@ -12,7 +12,6 @@
     WCFinderLandScapePushParams *_pushParams;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderLandScapePushParams *pushParams; // @synthesize pushParams=_pushParams;
 
 @end

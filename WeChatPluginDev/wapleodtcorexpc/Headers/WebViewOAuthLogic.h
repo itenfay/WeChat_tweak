@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class JSApiScopeAuthorizeInfo, JSApiScopeAuthorizePageSheet, JSApiScopeConfirmWindow, MMUIViewController, NSMutableArray, NSString, WOAPPrivacyConfirmLogic;
 
 @interface WebViewOAuthLogic
@@ -27,7 +29,6 @@
     NSString *_refererUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *refererUrl; // @synthesize refererUrl=_refererUrl;
 @property(nonatomic) _Bool cachedIsInteractivePopEnabled; // @synthesize cachedIsInteractivePopEnabled=_cachedIsInteractivePopEnabled;
 @property(retain, nonatomic) JSApiScopeAuthorizePageSheet *pageSheet; // @synthesize pageSheet=_pageSheet;
@@ -79,4 +80,3 @@
 @property(readonly) Class superclass;
 
 @end
-

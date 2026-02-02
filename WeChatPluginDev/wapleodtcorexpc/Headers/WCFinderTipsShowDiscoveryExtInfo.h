@@ -17,7 +17,6 @@
 + (void)initialize;
 + (void)PBArrayAdd_tipsUuid;
 + (void)PBArrayAdd_reportExtInfo;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reportExtInfo; // @synthesize reportExtInfo=_reportExtInfo;
 @property(copy, nonatomic) NSString *tipsUuid; // @synthesize tipsUuid=_tipsUuid;
 - (id)redDotReportExtInfoByCtrlExtInfo:(id)arg1;

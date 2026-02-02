@@ -21,7 +21,6 @@
 }
 
 + (int)getPlayHardwareVolume;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayObservationStarted; // @synthesize isPlayObservationStarted=_isPlayObservationStarted;
 @property(nonatomic) _Bool isCaptureObservationStarted; // @synthesize isCaptureObservationStarted=_isCaptureObservationStarted;
 @property(nonatomic) int playHardwareVolume; // @synthesize playHardwareVolume=_playHardwareVolume;

@@ -13,7 +13,6 @@
 }
 
 + (id)metaForClass:(Class)arg1;
-- (void).cxx_destruct;
 
 @end
 

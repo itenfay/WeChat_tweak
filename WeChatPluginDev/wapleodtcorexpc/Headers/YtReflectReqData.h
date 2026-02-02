@@ -25,7 +25,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(retain) YtFaceFrameInfo *bestImage; // @synthesize bestImage=_bestImage;
 @property(retain) YtExtraOptions *extraOptions; // @synthesize extraOptions=_extraOptions;
 @property(retain) NSString *extraConfig; // @synthesize extraConfig=_extraConfig;

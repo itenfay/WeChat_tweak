@@ -27,7 +27,6 @@
     id <WCAccountLoginByQRCodeViewControllerDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 - (void)viewDidTransitionToNewSize;
 - (void)setDelegate:(id)arg1;
 - (void)updateTipsLabelY;

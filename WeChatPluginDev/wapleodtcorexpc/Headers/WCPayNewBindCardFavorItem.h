@@ -12,7 +12,6 @@
     NSString *_favor_desc;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *favor_desc; // @synthesize favor_desc=_favor_desc;
 
 @end

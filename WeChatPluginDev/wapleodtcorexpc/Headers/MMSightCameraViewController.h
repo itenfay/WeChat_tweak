@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderVideoTemplateInfo, MMShortVideoParamModel, NSMutableArray, NSString, RecommendedMusicInfo, ShortVideoToolbar;
 @protocol MMSightCameraViewControllerDelegate;
 
@@ -33,7 +35,6 @@
     MMShortVideoParamModel *_reportModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isVCFrameUpdated; // @synthesize isVCFrameUpdated=_isVCFrameUpdated;
 @property(retain, nonatomic) MMShortVideoParamModel *reportModel; // @synthesize reportModel=_reportModel;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
@@ -128,4 +129,3 @@
 @property(readonly) Class superclass;
 
 @end
-

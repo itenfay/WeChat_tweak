@@ -12,7 +12,6 @@
     FWFInstanceManager *_instanceManager;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FWFInstanceManager *instanceManager; // @synthesize instanceManager=_instanceManager;
 - (void)createWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)delegateForIdentifier:(id)arg1;

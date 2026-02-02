@@ -21,7 +21,6 @@
     unsigned long long _scanSessionStartTimeStamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needReportStopScanSession; // @synthesize needReportStopScanSession=_needReportStopScanSession;
 @property(nonatomic) unsigned long long scanSessionStartTimeStamp; // @synthesize scanSessionStartTimeStamp=_scanSessionStartTimeStamp;
 @property(nonatomic) unsigned int scanSessionID; // @synthesize scanSessionID=_scanSessionID;

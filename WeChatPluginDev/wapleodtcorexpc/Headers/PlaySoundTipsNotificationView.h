@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUILabel, UIButton, UIImageView;
 
 @interface PlaySoundTipsNotificationView
@@ -14,7 +16,6 @@
     UIButton *_playSoundButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *playSoundButton; // @synthesize playSoundButton=_playSoundButton;
 @property(retain, nonatomic) MMUILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 @property(retain, nonatomic) MMUILabel *textLabel; // @synthesize textLabel=_textLabel;
@@ -26,4 +27,3 @@
 - (void)initContentView;
 
 @end
-

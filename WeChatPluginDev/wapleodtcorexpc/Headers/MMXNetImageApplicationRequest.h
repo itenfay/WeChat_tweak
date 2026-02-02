@@ -14,7 +14,6 @@
 }
 
 + (id)requestWithImage:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *response; // @synthesize response=_response;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 

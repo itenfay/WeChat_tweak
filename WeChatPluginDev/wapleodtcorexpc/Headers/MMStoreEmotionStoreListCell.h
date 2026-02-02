@@ -22,7 +22,6 @@
     struct UIEdgeInsets _contentInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(retain, nonatomic) UIView *accessibilityView; // @synthesize accessibilityView=_accessibilityView;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;

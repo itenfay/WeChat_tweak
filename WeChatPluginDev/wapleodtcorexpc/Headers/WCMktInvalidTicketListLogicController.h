@@ -18,7 +18,6 @@
     WCMktDeleteInvalidTicketCgi *_deleteInvalidTicketCgi;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMktDeleteInvalidTicketCgi *deleteInvalidTicketCgi; // @synthesize deleteInvalidTicketCgi=_deleteInvalidTicketCgi;
 @property(nonatomic) _Bool bIsLoadingMoreMktInvalidTicket; // @synthesize bIsLoadingMoreMktInvalidTicket=_bIsLoadingMoreMktInvalidTicket;
 @property(retain, nonatomic) WCMktInvalidTicketHomePageCgi *invalidTicketHomePageCgi; // @synthesize invalidTicketHomePageCgi=_invalidTicketHomePageCgi;

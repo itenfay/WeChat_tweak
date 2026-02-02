@@ -19,7 +19,6 @@
     UILabel *_wordingLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wordingLabel; // @synthesize wordingLabel=_wordingLabel;
 @property(retain, nonatomic) WCFinderNetPagView *pagView; // @synthesize pagView=_pagView;
 @property(nonatomic) int showPosition; // @synthesize showPosition=_showPosition;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString;
 
 @interface WXPLiteAppBaseCgi
@@ -18,7 +20,6 @@
     NSString *_routeInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *routeInfo; // @synthesize routeInfo=_routeInfo;
 @property(nonatomic) _Bool needNotify; // @synthesize needNotify=_needNotify;
 @property(retain, nonatomic) NSData *requestData; // @synthesize requestData=_requestData;
@@ -41,4 +42,3 @@
 - (id)initWithConfig:(id)arg1 data:(id)arg2 error:(id *)arg3;
 
 @end
-

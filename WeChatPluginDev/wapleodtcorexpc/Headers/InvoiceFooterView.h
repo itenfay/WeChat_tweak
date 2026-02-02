@@ -15,7 +15,6 @@
 
 + (id)attrTitleByTitle:(id)arg1;
 + (double)minHeightWithTitle:(id)arg1 width:(double)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithFrame:(struct CGRect)arg1;

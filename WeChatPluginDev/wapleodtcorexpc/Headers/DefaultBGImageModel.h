@@ -13,7 +13,6 @@
     NSString *_imageUrl;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 @property(copy, nonatomic) NSString *objectID; // @synthesize objectID=_objectID;
 - (id)fromBuffer:(id)arg1;

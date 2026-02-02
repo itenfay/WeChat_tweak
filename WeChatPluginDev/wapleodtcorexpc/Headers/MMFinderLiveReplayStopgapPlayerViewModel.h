@@ -11,7 +11,6 @@
     MMLiveStorageCleanupPinningToken *_resourcesPinningToken;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveStorageCleanupPinningToken *resourcesPinningToken; // @synthesize resourcesPinningToken=_resourcesPinningToken;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void)onPlayerVideoFrameOut:(id)arg1;

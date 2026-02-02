@@ -21,7 +21,6 @@
     id <MMLiveConnectedMicAudienceCellViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMLiveConnectedMicAudienceCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isDisabled; // @synthesize isDisabled=_isDisabled;
 @property(nonatomic) unsigned long long audienceCellState; // @synthesize audienceCellState=_audienceCellState;

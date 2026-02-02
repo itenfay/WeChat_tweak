@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAcceptAgreementCommonHeadView, NSString, UIButton, UIImage;
 @protocol MMAcceptAgreementResultViewControllerDelegate;
 
@@ -23,7 +25,6 @@
     id <MMAcceptAgreementResultViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <MMAcceptAgreementResultViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(copy, nonatomic) CDUnknownBlockType m_resultActionBlock; // @synthesize m_resultActionBlock=_m_resultActionBlock;
 @property(nonatomic) _Bool m_bHiddenOperateButton; // @synthesize m_bHiddenOperateButton=_m_bHiddenOperateButton;
@@ -53,4 +54,3 @@
 @property(readonly) Class superclass;
 
 @end
-

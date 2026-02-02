@@ -15,7 +15,6 @@
     NSString *_feedTid;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int thankScene; // @synthesize thankScene=_thankScene;
 @property(copy, nonatomic) NSString *feedTid; // @synthesize feedTid=_feedTid;
 @property(nonatomic) unsigned long long mentionID; // @synthesize mentionID=_mentionID;

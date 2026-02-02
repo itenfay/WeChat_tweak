@@ -13,7 +13,6 @@
     NSString *_errMsgString;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int ret; // @synthesize ret=_ret;
 @property(retain, nonatomic) NSString *errMsgString; // @synthesize errMsgString=_errMsgString;
 - (id)description;

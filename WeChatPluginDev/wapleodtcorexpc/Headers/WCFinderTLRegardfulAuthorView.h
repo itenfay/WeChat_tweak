@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableArray, NSString, UILabel, UIScrollView, WCFinderTLRegardfulAuthorScrollView;
 
@@ -23,7 +24,6 @@
 }
 
 + (double)viewHeight;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isDismissing; // @synthesize isDismissing=_isDismissing;
 @property(nonatomic) _Bool reorder; // @synthesize reorder=_reorder;
 @property(nonatomic) _Bool showProfile; // @synthesize showProfile=_showProfile;
@@ -63,4 +63,3 @@
 @property(readonly) Class superclass;
 
 @end
-

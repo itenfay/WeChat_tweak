@@ -16,7 +16,6 @@
 }
 
 + (id)createMagicRewardResourceWithCustomizationModel:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *minCodeVersion; // @synthesize minCodeVersion=_minCodeVersion;
 @property(retain, nonatomic) MMFinderLiveNewCustomGiftItemResourceURL *engineResource; // @synthesize engineResource=_engineResource;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;

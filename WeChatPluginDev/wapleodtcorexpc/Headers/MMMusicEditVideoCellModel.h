@@ -22,7 +22,6 @@
     double _cropStartPos;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double cropStartPos; // @synthesize cropStartPos=_cropStartPos;
 @property(retain, nonatomic) NSMutableDictionary *extInfo; // @synthesize extInfo=_extInfo;
 @property(nonatomic) double musicEndTime; // @synthesize musicEndTime=_musicEndTime;

@@ -16,7 +16,6 @@
 }
 
 + (double)heightForOffsetY:(double)arg1;
-- (void).cxx_destruct;
 - (void)initTipsLabel;
 - (void)initLineView;
 - (void)configureWithText:(id)arg1 withOffsetY:(double)arg2;

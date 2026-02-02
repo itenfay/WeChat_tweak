@@ -20,7 +20,6 @@
 
 + (id)generateTopicButton;
 + (id)generateTopicAttrStr:(id)arg1 containerWidth:(double)arg2;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *topicInfoList; // @synthesize topicInfoList=_topicInfoList;
 @property(readonly, nonatomic) double unfoldButtonCenterY; // @synthesize unfoldButtonCenterY=_unfoldButtonCenterY;
 @property(readonly, nonatomic) _Bool hasMultiLines; // @synthesize hasMultiLines=_hasMultiLines;

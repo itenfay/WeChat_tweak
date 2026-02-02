@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BizScanTabBarInfo, CSCHoleMaskViewMgr, CameraScanBlurButtonWrapView, CameraScanTabView, CameraScanViewControllerOpenParams, CameraScannerViewWrapper, MMUIButton, NSMutableDictionary, NSString, OCRTransReport, RecentPhotoBubbleView, UIImageView, UILabel, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol CameraScanUIDelegate;
 
@@ -51,7 +53,6 @@
     unsigned long long _enterTimestampInMS;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int tabSessionID; // @synthesize tabSessionID=_tabSessionID;
 @property(nonatomic) unsigned long long enterTimestampInMS; // @synthesize enterTimestampInMS=_enterTimestampInMS;
 @property(nonatomic) unsigned int enterSessionID; // @synthesize enterSessionID=_enterSessionID;
@@ -264,4 +265,3 @@
 @property(readonly) Class superclass;
 
 @end
-

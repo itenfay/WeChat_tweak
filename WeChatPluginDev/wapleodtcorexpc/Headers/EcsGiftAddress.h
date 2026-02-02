@@ -18,7 +18,6 @@
     NSString *_houseNumber;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *houseNumber; // @synthesize houseNumber=_houseNumber;
 @property(retain, nonatomic) NSString *telNumber; // @synthesize telNumber=_telNumber;
 @property(retain, nonatomic) NSString *nationalCode; // @synthesize nationalCode=_nationalCode;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, WCEliminatedSlotMMKV;
 
 @interface EcsFinderLiveMgr
@@ -10,7 +12,6 @@
     WCEliminatedSlotMMKV *_ecsFinderLiveInfoSlotKV;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCEliminatedSlotMMKV *ecsFinderLiveInfoSlotKV; // @synthesize ecsFinderLiveInfoSlotKV=_ecsFinderLiveInfoSlotKV;
 - (void)getFinderLiveInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateFinderLiveInfoTime:(id)arg1;
@@ -27,4 +28,3 @@
 @property(readonly) Class superclass;
 
 @end
-

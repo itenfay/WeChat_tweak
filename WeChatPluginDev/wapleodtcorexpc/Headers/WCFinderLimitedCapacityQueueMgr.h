@@ -13,7 +13,6 @@
     long long _capacityCount;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long capacityCount; // @synthesize capacityCount=_capacityCount;
 @property(retain, nonatomic) NSMutableDictionary *capacityContainerDic; // @synthesize capacityContainerDic=_capacityContainerDic;
 - (id)getAllCapacityObject;

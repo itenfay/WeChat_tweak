@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class EditVideoBGMPlayer, NSData, NSIndexPath, NSString, UIButton, UICollectionView, UITextField, UIView, WCVideoProducerDataSource, WCVideoProducerLoadMoreView;
 @protocol WCVideoProducerMusicSearcherDelegate;
 
@@ -26,7 +28,6 @@
     NSIndexPath *_selectedIndex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSString *lastSearchKey; // @synthesize lastSearchKey=_lastSearchKey;
 @property(retain, nonatomic) NSData *lastSearchRequestBuffer; // @synthesize lastSearchRequestBuffer=_lastSearchRequestBuffer;
@@ -109,4 +110,3 @@
 @property(readonly) Class superclass;
 
 @end
-

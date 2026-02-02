@@ -17,7 +17,6 @@
     NSMutableDictionary *_tickObservers;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *tickObservers; // @synthesize tickObservers=_tickObservers;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(nonatomic) double lastTime; // @synthesize lastTime=_lastTime;

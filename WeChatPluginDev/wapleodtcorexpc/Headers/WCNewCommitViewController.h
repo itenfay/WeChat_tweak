@@ -75,7 +75,6 @@
     long long _springPostScene;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long springPostScene; // @synthesize springPostScene=_springPostScene;
 @property(nonatomic) long long springContentStyle; // @synthesize springContentStyle=_springContentStyle;
 @property(retain, nonatomic) WCMomentsAnimatedFireworksView *animatedFireworksView; // @synthesize animatedFireworksView=_animatedFireworksView;

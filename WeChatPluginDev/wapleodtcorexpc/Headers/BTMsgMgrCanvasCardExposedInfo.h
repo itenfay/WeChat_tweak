@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_dicMsgId2TraceId;
 + (void)PBArrayAdd_lastFirstExposedTimeMs;
 + (void)PBArrayAdd_dictFirstExposedCardInToday;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dicMsgId2TraceId; // @synthesize dicMsgId2TraceId=_dicMsgId2TraceId;
 @property(nonatomic) unsigned long long lastFirstExposedTimeMs; // @synthesize lastFirstExposedTimeMs=_lastFirstExposedTimeMs;
 @property(retain, nonatomic) NSMutableDictionary *dictFirstExposedCardInToday; // @synthesize dictFirstExposedCardInToday=_dictFirstExposedCardInToday;

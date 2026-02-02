@@ -44,7 +44,6 @@
 + (void)buildKTVSong:(id)arg1 withPlayInfo:(id)arg2;
 + (void)buildKTVSong:(id)arg1 withResourceInfo:(id)arg2;
 + (void)buildKTVSong:(id)arg1 withBasicInfo:(id)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveKtvSongReportInfo *reportInfo; // @synthesize reportInfo=_reportInfo;
 @property(nonatomic) int accompanyQuality; // @synthesize accompanyQuality=_accompanyQuality;
 @property(nonatomic) int songQuality; // @synthesize songQuality=_songQuality;

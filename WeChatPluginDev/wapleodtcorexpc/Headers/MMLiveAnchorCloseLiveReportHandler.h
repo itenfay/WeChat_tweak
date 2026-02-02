@@ -38,7 +38,6 @@
 + (void)MMLiveReportFieldAdd_liveId;
 + (void)MMLiveReportFieldAdd_roomId;
 + (void)MMLiveReportFieldAdd_scene;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long costTime; // @synthesize costTime;
 @property(nonatomic) unsigned int roomCount; // @synthesize roomCount;
 @property(nonatomic) unsigned int allowReplay; // @synthesize allowReplay;

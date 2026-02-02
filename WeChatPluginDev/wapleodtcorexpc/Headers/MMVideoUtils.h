@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface MMVideoUtils : NSObject
 {
@@ -51,4 +52,3 @@
 + (struct opaqueCMSampleBuffer *)newAudioSample:(void *)arg1 size:(unsigned int)arg2 timingInfo:(CDStruct_d2aef016)arg3 numberChannels:(int)arg4 SampleRate:(int)arg5;
 
 @end
-

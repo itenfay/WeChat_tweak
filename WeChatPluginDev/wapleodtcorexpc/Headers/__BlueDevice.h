@@ -15,7 +15,6 @@
     long long _m_deviceId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long m_deviceId; // @synthesize m_deviceId=_m_deviceId;
 @property(nonatomic) unsigned int m_deviceMode; // @synthesize m_deviceMode=_m_deviceMode;
 @property(retain, nonatomic) NSMutableDictionary *m_stopingChannels; // @synthesize m_stopingChannels;

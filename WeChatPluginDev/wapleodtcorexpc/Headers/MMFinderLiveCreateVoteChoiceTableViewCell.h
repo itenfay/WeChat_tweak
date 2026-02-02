@@ -11,7 +11,6 @@
 }
 
 + (id)reuseId;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveLiveVoteChoice *choice; // @synthesize choice=_choice;
 - (void)customizeTextField:(id)arg1;
 - (void)textFieldDidChangeContent:(id)arg1;

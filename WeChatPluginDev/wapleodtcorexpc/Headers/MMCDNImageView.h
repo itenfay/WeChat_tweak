@@ -22,7 +22,6 @@
     NSString *_localSrcTmpPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromC2C; // @synthesize isFromC2C=_isFromC2C;
 @property(nonatomic) _Bool isClipImage; // @synthesize isClipImage=_isClipImage;
 @property(nonatomic) _Bool autoDownloadNoWifi; // @synthesize autoDownloadNoWifi=_autoDownloadNoWifi;

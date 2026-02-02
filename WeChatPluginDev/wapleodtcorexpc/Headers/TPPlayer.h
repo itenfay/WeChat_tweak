@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString, TPContext, TPPlayerLogContext, TPPlayerQueue, TPPlayerTrackInfo, TPPluginManager, TPProxyPlayManager, TPReportController, TPReportPlugin, TPTimer, TPVideoInfo, TPWorkerQueue, UIView;
 @protocol ITPBusinessReportManager, ITPPlayerAdapter, ITPPlayerDelegate, ITPPlayerDetailInfoDelegate, ITPPlayerProxy;
@@ -37,7 +38,6 @@
     TPReportController *_reportController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isPlayerForceStopped; // @synthesize isPlayerForceStopped=_isPlayerForceStopped;
 @property(retain, nonatomic) TPReportController *reportController; // @synthesize reportController=_reportController;
 @property(retain, nonatomic) TPContext *context; // @synthesize context=_context;
@@ -203,4 +203,3 @@
 @property(readonly) Class superclass;
 
 @end
-

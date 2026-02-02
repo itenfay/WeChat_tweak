@@ -32,7 +32,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) double expireTime; // @synthesize expireTime=_expireTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) double updateTime; // @synthesize updateTime=_updateTime;

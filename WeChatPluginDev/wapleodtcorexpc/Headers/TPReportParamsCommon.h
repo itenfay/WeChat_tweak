@@ -49,7 +49,6 @@
     double _duration;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) long long rate; // @synthesize rate=_rate;
 @property(nonatomic) long long fmt; // @synthesize fmt=_fmt;

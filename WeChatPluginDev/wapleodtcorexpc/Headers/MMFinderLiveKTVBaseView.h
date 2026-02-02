@@ -16,7 +16,6 @@
 
 + (double)getAdaptedRatio;
 + (double)getAdaptedValue:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveKTVReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) id <MMLiveUniqueTaskId> taskId; // @synthesize taskId=_taskId;
 - (id)ktvReporter;

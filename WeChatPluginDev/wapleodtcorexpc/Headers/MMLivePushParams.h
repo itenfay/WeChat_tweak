@@ -14,7 +14,6 @@
     TRTCParams *_trtcParams;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool forceUseTRTCAudioDevice; // @synthesize forceUseTRTCAudioDevice=_forceUseTRTCAudioDevice;
 @property(retain, nonatomic) TRTCParams *trtcParams; // @synthesize trtcParams=_trtcParams;
 @property(nonatomic) _Bool isAudience; // @synthesize isAudience=_isAudience;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class FinderLiveLocation, NSData, WCFinderContact, WCFinderDataItem;
 
 @interface WCFinderLiveApplyMicWithAudienceCGI
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(retain, nonatomic) NSData *liveCookies; // @synthesize liveCookies=_liveCookies;
@@ -38,4 +39,3 @@
 - (id)initWithLiveTaskId:(id)arg1 finderDataItem:(id)arg2 toFinderContact:(id)arg3 isAnchor:(_Bool)arg4 withVideo:(_Bool)arg5 finderLiveLocation:(id)arg6 seatId:(unsigned int)arg7 isInvitedByAnchor:(_Bool)arg8 inviteMicBuffer:(id)arg9 liveCookies:(id)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 
 @end
-

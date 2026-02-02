@@ -15,7 +15,6 @@
     NSString *_thumbImageUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thumbImageUrl; // @synthesize thumbImageUrl=_thumbImageUrl;
 @property(retain, nonatomic) NSString *link; // @synthesize link=_link;
 @property(nonatomic) __weak id <JSShareFBLogicHelperDelegate> delegate; // @synthesize delegate=_delegate;

@@ -18,7 +18,6 @@
     NSString *_userName;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(nonatomic) _Bool isClicked; // @synthesize isClicked=_isClicked;

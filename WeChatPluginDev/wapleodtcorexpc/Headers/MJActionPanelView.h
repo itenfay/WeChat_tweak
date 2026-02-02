@@ -13,7 +13,6 @@
     MJActionPanelMainMenuView *_mainMenuView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJActionPanelMainMenuView *mainMenuView; // @synthesize mainMenuView=_mainMenuView;
 @property(nonatomic) __weak id <MJActionPanelViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) MJActionPanelViewModel *viewModel; // @synthesize viewModel=_viewModel;

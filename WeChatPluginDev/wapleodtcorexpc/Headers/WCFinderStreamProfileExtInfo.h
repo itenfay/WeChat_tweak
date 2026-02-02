@@ -130,7 +130,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderJumpInfoArray *jumpInfoList; // @synthesize jumpInfoList=_jumpInfoList;
 @property(retain, nonatomic) WCFinderStreamProfileExtInfoInnerModel *innerModel; // @synthesize innerModel=_innerModel;
 @property(retain, nonatomic) NSMutableSet *hiddenTabs; // @synthesize hiddenTabs=_hiddenTabs;

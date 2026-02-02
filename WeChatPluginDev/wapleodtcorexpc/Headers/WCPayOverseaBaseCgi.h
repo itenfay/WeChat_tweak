@@ -12,7 +12,6 @@
     id <WCPayOverseaBaseCgiDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayOverseaBaseCgiDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void)callOkDelegateWithErrorType:(int)arg1 ErrorMsg:(id)arg2 Dictionary:(id)arg3;
 - (void)callErrorDelegateWithErrorCode:(int)arg1 ErrorMsg:(id)arg2;

@@ -13,7 +13,6 @@
     NSString *_reuseIdentifier;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
 @property(retain, nonatomic) NSMutableArray *dataArray; // @synthesize dataArray=_dataArray;
 

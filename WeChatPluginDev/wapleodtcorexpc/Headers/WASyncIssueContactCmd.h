@@ -10,7 +10,6 @@
     NSString *_contactInfoString;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contactInfoString; // @synthesize contactInfoString=_contactInfoString;
 
 @end

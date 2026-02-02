@@ -13,7 +13,6 @@
     WCFinderMemberCommentInputAreaTipsView *_membershipTipsView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderMemberCommentInputAreaTipsView *membershipTipsView; // @synthesize membershipTipsView=_membershipTipsView;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 - (void)updateWithDisplayMode:(unsigned long long)arg1;

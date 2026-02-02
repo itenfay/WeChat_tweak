@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSMutableDictionary, NSString;
 
@@ -15,7 +16,6 @@
 
 + (id)resolver;
 + (void)initialize;
-- (void).cxx_destruct;
 @property(nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
 @property(retain, nonatomic) NSMutableDictionary *cachedFBSDKAppLinks; // @synthesize cachedFBSDKAppLinks=_cachedFBSDKAppLinks;
 - (void)appLinksFromURLs:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -32,4 +32,3 @@
 @property(readonly) Class superclass;
 
 @end
-

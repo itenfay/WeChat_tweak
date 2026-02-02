@@ -15,7 +15,6 @@
     WCPayPaidDetailJumpInfo *_jump_info;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayPaidDetailJumpInfo *jump_info; // @synthesize jump_info=_jump_info;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) WCPayPaidDetailLogoViewData *settled_logo; // @synthesize settled_logo=_settled_logo;

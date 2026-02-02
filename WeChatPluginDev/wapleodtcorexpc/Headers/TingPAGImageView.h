@@ -15,7 +15,6 @@
     UIImage *_renderImage;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bResignActive; // @synthesize bResignActive=_bResignActive;
 @property(nonatomic) __weak UIImage *renderImage; // @synthesize renderImage=_renderImage;
 @property(retain, nonatomic) UIImageView *coverView; // @synthesize coverView=_coverView;

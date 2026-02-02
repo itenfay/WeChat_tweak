@@ -25,7 +25,6 @@
     UILabel *_subtitleLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *adLabel; // @synthesize adLabel=_adLabel;
 @property(retain, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;

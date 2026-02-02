@@ -18,7 +18,6 @@
     long long _basePkgVersion;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isAdPrefetcherContext; // @synthesize isAdPrefetcherContext=_isAdPrefetcherContext;
 @property(nonatomic) long long basePkgVersion; // @synthesize basePkgVersion=_basePkgVersion;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;

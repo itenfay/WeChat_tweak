@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSData, NSString, SubscribeMsgShowInfo;
 
 @interface WASubscriptionMessagePageSheetViewModel
@@ -38,7 +40,6 @@
     NSString *_kvUid;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *kvUid; // @synthesize kvUid=_kvUid;
 @property(retain, nonatomic) SubscribeMsgShowInfo *showInfo; // @synthesize showInfo=_showInfo;
 @property(nonatomic) unsigned long long operationType; // @synthesize operationType=_operationType;
@@ -83,4 +84,3 @@
 - (id)init;
 
 @end
-

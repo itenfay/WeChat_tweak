@@ -23,7 +23,6 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double descHeight; // @synthesize descHeight=m_descHeight;
 @property(readonly, nonatomic) double titleHeight; // @synthesize titleHeight=m_titleHeight;
 - (id)additionalAccessibilityDescription;

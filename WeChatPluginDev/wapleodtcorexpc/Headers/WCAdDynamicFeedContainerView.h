@@ -10,7 +10,6 @@
     UIImageView *_animationCoverView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *animationCoverView; // @synthesize animationCoverView=_animationCoverView;
 - (void)setMediaContentHidden:(_Bool)arg1;
 - (void)onCanvasPageViewAnimationSetContentHidden:(_Bool)arg1;

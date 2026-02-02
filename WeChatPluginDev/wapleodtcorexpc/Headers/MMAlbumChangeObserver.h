@@ -12,7 +12,6 @@
     NSURL *_lastCaptureAssetURL;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastChangeTime; // @synthesize lastChangeTime=_lastChangeTime;
 @property(nonatomic) _Bool observerRegistered; // @synthesize observerRegistered=_observerRegistered;
 @property(retain, nonatomic) NSURL *lastCaptureAssetURL; // @synthesize lastCaptureAssetURL=_lastCaptureAssetURL;

@@ -13,7 +13,6 @@
     UIView *_view;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 - (id)initWithType:(id)arg1;

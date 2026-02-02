@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @protocol OS_dispatch_queue;
 
@@ -20,7 +21,6 @@
 + (id)consumerQueue;
 + (id)producerQueue;
 + (id)pipelineQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)assertInQueue;
 - (_Bool)isInQueue;
@@ -32,4 +32,3 @@
 - (id)initWithName:(const char *)arg1;
 
 @end
-

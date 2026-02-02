@@ -15,7 +15,6 @@
     UIButton *_iconView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) unsigned long long moreType; // @synthesize moreType=_moreType;
 @property(nonatomic) __weak WCFinderAnimationLoadingView *loadingView; // @synthesize loadingView=_loadingView;

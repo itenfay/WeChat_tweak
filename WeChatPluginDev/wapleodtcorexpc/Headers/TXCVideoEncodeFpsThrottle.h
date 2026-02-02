@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSString, TXCDispatchQueue, TXCTimedOutput;
 
 @interface TXCVideoEncodeFpsThrottle
@@ -15,7 +17,6 @@
     long long _framerate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long framerate; // @synthesize framerate=_framerate;
 @property(nonatomic) long long rpsIdrFramerate; // @synthesize rpsIdrFramerate=_rpsIdrFramerate;
 @property(nonatomic) _Bool isRpsIdrMode; // @synthesize isRpsIdrMode=_isRpsIdrMode;
@@ -42,4 +43,3 @@
 @property(readonly) Class superclass;
 
 @end
-

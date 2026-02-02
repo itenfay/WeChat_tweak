@@ -14,7 +14,6 @@
     NSMutableDictionary *_keyToEntry;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *keyToEntry; // @synthesize keyToEntry=_keyToEntry;
 @property(retain, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(retain, nonatomic) NSRecursiveLock *accessLock; // @synthesize accessLock=_accessLock;

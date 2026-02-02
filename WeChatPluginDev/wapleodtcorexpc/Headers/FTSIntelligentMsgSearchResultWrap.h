@@ -20,7 +20,6 @@
     NSMutableDictionary *_dicSessionResult;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int sessionSearchResultCount; // @synthesize sessionSearchResultCount=_sessionSearchResultCount;
 @property(retain, nonatomic) NSMutableDictionary *dicSessionResult; // @synthesize dicSessionResult=_dicSessionResult;
 @property(retain, nonatomic) NSMutableArray *arrSessionResult; // @synthesize arrSessionResult=_arrSessionResult;

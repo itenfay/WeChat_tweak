@@ -11,7 +11,6 @@
     OrderedDictionary *_fileVcDic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OrderedDictionary *fileVcDic; // @synthesize fileVcDic=_fileVcDic;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (void)onMemoryWarning:(id)arg1;

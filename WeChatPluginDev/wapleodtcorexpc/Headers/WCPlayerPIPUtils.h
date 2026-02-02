@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface WCPlayerPIPUtils : NSObject
 {
@@ -19,4 +20,3 @@
 + (id)GetPathOfPipAssetResource;
 
 @end
-

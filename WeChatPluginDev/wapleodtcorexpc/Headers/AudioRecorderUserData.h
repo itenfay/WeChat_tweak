@@ -37,7 +37,6 @@
     unsigned long long _receiveFirstPCMTimestamp;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bCancelUpload; // @synthesize bCancelUpload=_bCancelUpload;
 @property unsigned long long receiveFirstPCMTimestamp; // @synthesize receiveFirstPCMTimestamp=_receiveFirstPCMTimestamp;
 @property unsigned long long audioQueueStartedTimestamp; // @synthesize audioQueueStartedTimestamp=_audioQueueStartedTimestamp;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class BaseMsgContentLogicController, NSMutableArray, NSString;
 
 @interface MMMsgLogicManager
@@ -14,7 +16,6 @@
     BaseMsgContentLogicController *_lastPeekController;
 }
 
-- (void).cxx_destruct;
 - (void)finishedPeekingWithController:(id)arg1;
 - (id)logicControllerForPeekingWithContact:(id)arg1 messageWrap:(id)arg2;
 - (id)GetCurrentLogicController;
@@ -83,4 +84,3 @@
 @property(readonly) Class superclass;
 
 @end
-

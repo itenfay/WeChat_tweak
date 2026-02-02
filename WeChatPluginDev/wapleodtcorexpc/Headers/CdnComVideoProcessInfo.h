@@ -21,7 +21,6 @@
     NSString *_svrFlag;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int originalVideoFormat; // @synthesize originalVideoFormat=_originalVideoFormat;
 @property(nonatomic) int videoFormat; // @synthesize videoFormat=_videoFormat;
 @property(retain, nonatomic) NSString *svrFlag; // @synthesize svrFlag=_svrFlag;

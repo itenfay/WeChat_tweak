@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMGrowTextView, NSRegularExpression, NSString, UIButton, UILabel, UIScrollView, UIView, WCFinderContact;
 @protocol WCFinderSignatureSettingViewControllerDelegate;
 
@@ -26,7 +28,6 @@
     NSRegularExpression *_ignoreRegex;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSRegularExpression *ignoreRegex; // @synthesize ignoreRegex=_ignoreRegex;
 @property(retain, nonatomic) NSRegularExpression *mailMatcher; // @synthesize mailMatcher=_mailMatcher;
 @property(nonatomic) _Bool showSafePanelAlready; // @synthesize showSafePanelAlready=_showSafePanelAlready;
@@ -80,4 +81,3 @@
 @property(readonly) Class superclass;
 
 @end
-

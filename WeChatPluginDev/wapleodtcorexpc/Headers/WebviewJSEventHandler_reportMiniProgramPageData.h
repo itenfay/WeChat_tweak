@@ -10,7 +10,6 @@
     JSEvent *_event;
 }
 
-- (void).cxx_destruct;
 - (void)onReportFail:(id)arg1;
 - (void)onReportSuccess:(long long)arg1;
 - (void)handleJSEvent:(id)arg1 HandlerFacade:(id)arg2 ExtraData:(id)arg3;

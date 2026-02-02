@@ -53,7 +53,6 @@
     struct UIEdgeInsets _fixedContentInset;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMTextPlaceholderView *placeholderTransitionToView; // @synthesize placeholderTransitionToView=_placeholderTransitionToView;
 @property(retain, nonatomic) MMTextPlaceholderView *placeholderTransitionFromView; // @synthesize placeholderTransitionFromView=_placeholderTransitionFromView;
 @property(nonatomic) _Bool fixAccessibilitySelectedRangeFlag; // @synthesize fixAccessibilitySelectedRangeFlag=_fixAccessibilitySelectedRangeFlag;

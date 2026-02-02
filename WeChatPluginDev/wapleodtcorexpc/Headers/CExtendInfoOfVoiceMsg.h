@@ -21,7 +21,6 @@
 }
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *aesKey; // @synthesize aesKey=_aesKey;
 @property(retain, nonatomic) NSString *voiceUrl; // @synthesize voiceUrl=_voiceUrl;
 @property(nonatomic) __weak CMessageWrap *m_refMessageWrap; // @synthesize m_refMessageWrap;

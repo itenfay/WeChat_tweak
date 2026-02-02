@@ -28,7 +28,6 @@
     NSString *_showPanelLoadingString;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *showPanelLoadingString; // @synthesize showPanelLoadingString=_showPanelLoadingString;
 @property(retain, nonatomic) NSString *consumeLoadingString; // @synthesize consumeLoadingString=_consumeLoadingString;
 @property(retain, nonatomic) NSString *agreementString; // @synthesize agreementString=_agreementString;

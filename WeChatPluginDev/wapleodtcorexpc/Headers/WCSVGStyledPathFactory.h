@@ -17,7 +17,6 @@
     struct CGPoint _previousCurveOperationControlPoint;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *groupAppearanceStack; // @synthesize groupAppearanceStack=_groupAppearanceStack;
 @property(retain, nonatomic) NSMutableArray *affineTransformStack; // @synthesize affineTransformStack=_affineTransformStack;
 @property struct CGPoint previousCurveOperationControlPoint; // @synthesize previousCurveOperationControlPoint=_previousCurveOperationControlPoint;

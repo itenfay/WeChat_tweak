@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSArray, NSString;
 
 @interface WASubscriptionMessageRequestListByIDCgi
@@ -20,7 +22,6 @@
     CDUnknownBlockType _failBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType failBlock; // @synthesize failBlock=_failBlock;
 @property(copy, nonatomic) CDUnknownBlockType successBlock; // @synthesize successBlock=_successBlock;
 @property(copy, nonatomic) NSString *extInfo; // @synthesize extInfo=_extInfo;
@@ -41,4 +42,3 @@
 - (id)initWithTemplateArray:(id)arg1 username:(id)arg2 scene:(unsigned long long)arg3 appid:(id)arg4 appType:(unsigned int)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 
 @end
-

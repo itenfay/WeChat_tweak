@@ -51,7 +51,6 @@
     unsigned int _timelineFoldSectionSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int timelineFoldSectionSize; // @synthesize timelineFoldSectionSize=_timelineFoldSectionSize;
 @property(nonatomic) _Bool hasShowHotImageTip; // @synthesize hasShowHotImageTip=_hasShowHotImageTip;
 @property(nonatomic) _Bool hasShowHotVideoTip; // @synthesize hasShowHotVideoTip=_hasShowHotVideoTip;

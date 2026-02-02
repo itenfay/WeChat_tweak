@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, StoreEmotionExchangeEmotionPackCgi;
 
@@ -18,7 +19,6 @@
 }
 
 + (_Bool)shouldCheck:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *emoticonMd5; // @synthesize emoticonMd5=_emoticonMd5;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;
 @property(retain, nonatomic) StoreEmotionExchangeEmotionPackCgi *exchangePackCgi; // @synthesize exchangePackCgi=_exchangePackCgi;
@@ -41,4 +41,3 @@
 @property(readonly) Class superclass;
 
 @end
-

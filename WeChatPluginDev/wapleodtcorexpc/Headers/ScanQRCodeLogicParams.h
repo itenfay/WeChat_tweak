@@ -31,7 +31,6 @@
     OpenIMContactSearchContext *_openIMContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) OpenIMContactSearchContext *openIMContext; // @synthesize openIMContext=_openIMContext;
 @property(retain, nonatomic) GetUrlInfoReqSession *getUrlInfoSessionParam; // @synthesize getUrlInfoSessionParam=_getUrlInfoSessionParam;
 @property(nonatomic) _Bool wxaIsFromWeAppInnerWebView; // @synthesize wxaIsFromWeAppInnerWebView=_wxaIsFromWeAppInnerWebView;

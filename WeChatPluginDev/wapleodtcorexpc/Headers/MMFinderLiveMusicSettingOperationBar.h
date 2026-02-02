@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSArray, UIImageView;
 
@@ -20,7 +21,6 @@
 
 + (double)preferHeight;
 + (double)preferWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *addMusicIconImg; // @synthesize addMusicIconImg=_addMusicIconImg;
 @property(retain, nonatomic) UIView *volumnIconView; // @synthesize volumnIconView=_volumnIconView;
 @property(retain, nonatomic) UIImageView *volumnIconImg; // @synthesize volumnIconImg=_volumnIconImg;
@@ -41,4 +41,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

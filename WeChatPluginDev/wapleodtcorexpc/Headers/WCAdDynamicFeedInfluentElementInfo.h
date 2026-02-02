@@ -12,7 +12,6 @@
 }
 
 + (id)modelCustomPropertyMapperForConfigTag:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *propertiesToReset; // @synthesize propertiesToReset=_propertiesToReset;
 @property(retain, nonatomic) NSString *isNormalStyleString; // @synthesize isNormalStyleString=_isNormalStyleString;
 - (id)initWithCoder:(id)arg1;

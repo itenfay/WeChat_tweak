@@ -23,7 +23,6 @@
 }
 
 + (void)LocalMsgTest;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *hasShownStepIdSet; // @synthesize hasShownStepIdSet=_hasShownStepIdSet;
 @property(nonatomic) _Bool hasCallLocalMsgText; // @synthesize hasCallLocalMsgText=_hasCallLocalMsgText;
 - (void)onNewSyncFinish;

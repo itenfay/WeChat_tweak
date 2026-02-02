@@ -14,7 +14,6 @@
     WCPayProfession *_profession;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCPayProfession *profession; // @synthesize profession=_profession;
 @property(retain, nonatomic) UILabel *professionLabel; // @synthesize professionLabel=_professionLabel;
 @property(retain, nonatomic) NSArray *professions; // @synthesize professions=_professions;

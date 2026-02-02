@@ -13,7 +13,6 @@
     SEL _sourceActionSel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) SEL sourceActionSel; // @synthesize sourceActionSel=_sourceActionSel;
 @property(copy, nonatomic) NSString *sourceIconName; // @synthesize sourceIconName=_sourceIconName;
 @property(copy, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSDictionary, NSString;
 
 @interface WAJSEventHandler_openCustomerServiceChat
@@ -22,7 +24,6 @@
     NSString *_finderContext;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *finderContext; // @synthesize finderContext=_finderContext;
 @property(nonatomic) _Bool bCanHandleQuickMsgByBusiness; // @synthesize bCanHandleQuickMsgByBusiness=_bCanHandleQuickMsgByBusiness;
 @property(nonatomic) _Bool bShouldUseEntityInParam; // @synthesize bShouldUseEntityInParam=_bShouldUseEntityInParam;
@@ -35,4 +36,3 @@
 - (void)handleJSEvent:(id)arg1;
 
 @end
-

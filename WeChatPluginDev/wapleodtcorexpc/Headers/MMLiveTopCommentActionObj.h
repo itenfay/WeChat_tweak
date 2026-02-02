@@ -13,7 +13,6 @@
     MMLiveCommentPubbleCellFrame *_cellFrame;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveCommentPubbleCellFrame *cellFrame; // @synthesize cellFrame=_cellFrame;
 @property(nonatomic) _Bool isExpand; // @synthesize isExpand=_isExpand;
 

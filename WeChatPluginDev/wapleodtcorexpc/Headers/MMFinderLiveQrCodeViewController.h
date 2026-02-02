@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class ForwardMessageLogicController, MMFinderLiveTask, MMFinderLiveTaskId, MMLiveVerticalTextButtonView, MMLiveVerticalTextButtonViewConfig, MMScrollActionSheet, NSString, UIColor, UIView;
 @protocol MMFinderLiveQrCodeReporter, MMFinderLiveQrCodeViewBase;
 
@@ -21,7 +23,6 @@
     MMLiveVerticalTextButtonView *_shareButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMLiveVerticalTextButtonView *shareButton; // @synthesize shareButton=_shareButton;
 @property(retain, nonatomic) MMLiveVerticalTextButtonView *savePhotoButton; // @synthesize savePhotoButton=_savePhotoButton;
 @property(retain, nonatomic) MMLiveVerticalTextButtonView *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -78,4 +79,3 @@
 @property(readonly) Class superclass;
 
 @end
-

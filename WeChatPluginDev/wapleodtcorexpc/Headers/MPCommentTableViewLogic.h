@@ -27,7 +27,6 @@
     NSMutableArray *_arrSectionData;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *arrSectionData; // @synthesize arrSectionData=_arrSectionData;
 @property(retain, nonatomic) NSMutableSet *commentMsgIdSet; // @synthesize commentMsgIdSet=_commentMsgIdSet;
 @property(nonatomic) int commentNextOffset; // @synthesize commentNextOffset=_commentNextOffset;

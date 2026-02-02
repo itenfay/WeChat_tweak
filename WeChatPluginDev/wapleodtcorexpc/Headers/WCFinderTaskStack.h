@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSRecursiveLock, NSString;
 
@@ -16,7 +17,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxNumberOfTasks; // @synthesize maxNumberOfTasks=_maxNumberOfTasks;
 // Preceding property had unknown attributes: ?
 // Original attribute string: TQ,?,N,V_maxNumberOfTasks
@@ -42,4 +42,3 @@
 @property(readonly) Class superclass;
 
 @end
-

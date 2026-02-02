@@ -10,7 +10,6 @@
     MMFinderLiveGameTeamInfo *_teamInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveGameTeamInfo *teamInfo; // @synthesize teamInfo=_teamInfo;
 - (double)heightForCell;
 - (id)initWithTeamInfo:(id)arg1;

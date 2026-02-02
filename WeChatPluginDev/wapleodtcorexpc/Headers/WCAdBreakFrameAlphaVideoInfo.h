@@ -17,7 +17,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCMediaItem *oneToOneLowMediaItem; // @synthesize oneToOneLowMediaItem=_oneToOneLowMediaItem;
 @property(retain, nonatomic) WCMediaItem *oneToOneHighMediaItem; // @synthesize oneToOneHighMediaItem=_oneToOneHighMediaItem;
 @property(retain, nonatomic) WCMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;

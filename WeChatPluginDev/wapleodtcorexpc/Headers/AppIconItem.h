@@ -14,7 +14,6 @@
     NSString *cmd;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cmd; // @synthesize cmd;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID;
 @property(retain, nonatomic) NSString *appIconUrl; // @synthesize appIconUrl;

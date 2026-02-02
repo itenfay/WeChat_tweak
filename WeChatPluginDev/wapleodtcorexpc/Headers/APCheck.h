@@ -18,7 +18,6 @@
 }
 
 + (id)apCheckFromApBase:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) long long pingCostTimeStart; // @synthesize pingCostTimeStart=_pingCostTimeStart;
 @property(nonatomic) long long pingStatusCode; // @synthesize pingStatusCode=_pingStatusCode;
 @property(retain, nonatomic) NSMutableData *respData; // @synthesize respData=_respData;

@@ -14,7 +14,6 @@
     unsigned long long m_scene;
 }
 
-- (void).cxx_destruct;
 - (void)onWCDeviceUnbindEnd:(id)arg1 Error:(id)arg2;
 - (void)onWCDeviceGetBoundDevices:(id)arg1;
 - (void)onFinishedEditTableView:(id)arg1;

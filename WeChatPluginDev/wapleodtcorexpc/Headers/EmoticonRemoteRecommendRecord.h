@@ -20,7 +20,6 @@
 + (void)PBArrayAdd_lastUpdateTime;
 + (void)PBArrayAdd_wrapList;
 + (void)PBArrayAdd_query;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recSessionId; // @synthesize recSessionId=_recSessionId;
 @property(nonatomic) unsigned int lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(retain, nonatomic) NSMutableArray *wrapList; // @synthesize wrapList=_wrapList;

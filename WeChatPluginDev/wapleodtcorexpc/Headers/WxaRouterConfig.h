@@ -21,7 +21,6 @@
     NSArray *_dartVmArgs;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isReleaseDefaultEngineWhenEmptyView; // @synthesize isReleaseDefaultEngineWhenEmptyView=_isReleaseDefaultEngineWhenEmptyView;
 @property(nonatomic) _Bool isAutoReleaseEngine; // @synthesize isAutoReleaseEngine=_isAutoReleaseEngine;
 @property(nonatomic) _Bool isPreloadNextEngine; // @synthesize isPreloadNextEngine=_isPreloadNextEngine;

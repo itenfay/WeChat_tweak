@@ -14,7 +14,6 @@
     NSString *_liveStreamUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveStreamUrl; // @synthesize liveStreamUrl=_liveStreamUrl;
 @property(retain, nonatomic) NSURL *headViewURL; // @synthesize headViewURL=_headViewURL;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;

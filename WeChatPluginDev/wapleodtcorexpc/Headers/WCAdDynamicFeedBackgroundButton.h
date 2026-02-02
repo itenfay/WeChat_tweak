@@ -10,7 +10,6 @@
     id <WCAdDynamicFeedBackgroundButtonDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCAdDynamicFeedBackgroundButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setHighlighted:(_Bool)arg1;
 

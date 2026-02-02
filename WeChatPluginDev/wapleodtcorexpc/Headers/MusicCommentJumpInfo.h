@@ -14,7 +14,6 @@
     NSString *_appName;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(copy, nonatomic) NSString *entityId; // @synthesize entityId=_entityId;
 @property(nonatomic) unsigned long long refCommentId; // @synthesize refCommentId=_refCommentId;

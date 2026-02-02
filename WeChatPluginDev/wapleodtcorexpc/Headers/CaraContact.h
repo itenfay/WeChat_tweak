@@ -12,7 +12,6 @@
     CContact *_contact;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CContact *contact; // @synthesize contact=_contact;
 - (id)zidl;
 - (id)getDisplayName;

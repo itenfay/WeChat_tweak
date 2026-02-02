@@ -16,7 +16,6 @@
     NSArray *_allScores;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int curIndex; // @synthesize curIndex=_curIndex;
 @property(nonatomic) int lastScore; // @synthesize lastScore=_lastScore;
 @property(retain) NSArray *allScores; // @synthesize allScores=_allScores;

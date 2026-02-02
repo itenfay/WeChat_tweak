@@ -14,7 +14,6 @@
     UIImage *_image;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) unsigned int type; // @synthesize type;

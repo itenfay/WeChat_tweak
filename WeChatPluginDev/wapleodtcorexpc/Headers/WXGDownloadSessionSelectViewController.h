@@ -35,7 +35,6 @@
 }
 
 + (id)getDateWithoutHMS:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedTotalSize; // @synthesize selectedTotalSize=_selectedTotalSize;
 @property(nonatomic) unsigned long long lastSelectTimeIndex; // @synthesize lastSelectTimeIndex=_lastSelectTimeIndex;
 @property(nonatomic) _Bool bSelectAllTime; // @synthesize bSelectAllTime=_bSelectAllTime;

@@ -14,7 +14,6 @@
     _Bool m_clearLocalInfo;
 }
 
-- (void).cxx_destruct;
 - (void)onBack;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;

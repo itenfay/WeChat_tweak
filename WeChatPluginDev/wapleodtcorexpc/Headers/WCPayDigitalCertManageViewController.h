@@ -24,7 +24,6 @@
     id <WCPayDigitalCertManageViewControllerDelegate> _m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WCPayDigitalCertManageViewControllerDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 @property(retain, nonatomic) NSString *m_currentDeviceCertNo; // @synthesize m_currentDeviceCertNo=_m_currentDeviceCertNo;
 @property(retain, nonatomic) TenpayCertificate *m_certControl; // @synthesize m_certControl=_m_certControl;

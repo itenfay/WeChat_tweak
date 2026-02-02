@@ -12,7 +12,6 @@
     id <StrongNotificationExclusiveMsgLogicDelegate> m_delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <StrongNotificationExclusiveMsgLogicDelegate> m_delegate; // @synthesize m_delegate;
 - (void)OnAddMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)closeStrongNotificationWithItemWithForcePushId:(id)arg1;

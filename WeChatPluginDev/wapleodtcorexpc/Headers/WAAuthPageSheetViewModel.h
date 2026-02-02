@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class WAAuthorizeResultInfo, WAAuthorizeSheetInfo;
 @protocol IWAAuthorizePage;
@@ -18,7 +19,6 @@
     CDUnknownBlockType _showNeedAcceptProtocolAnimation;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool disableDismissWhenAccept; // @synthesize disableDismissWhenAccept=_disableDismissWhenAccept;
 @property(copy, nonatomic) CDUnknownBlockType showNeedAcceptProtocolAnimation; // @synthesize showNeedAcceptProtocolAnimation=_showNeedAcceptProtocolAnimation;
 @property(copy, nonatomic) CDUnknownBlockType acceptButtonUpdateAction; // @synthesize acceptButtonUpdateAction=_acceptButtonUpdateAction;
@@ -31,4 +31,3 @@
 - (id)initWithPageSheet:(id)arg1;
 
 @end
-

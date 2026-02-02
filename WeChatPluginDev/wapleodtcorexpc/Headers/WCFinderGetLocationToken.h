@@ -12,7 +12,6 @@
     MMSystemAuthCancellableToken *_inner;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMSystemAuthCancellableToken *inner; // @synthesize inner=_inner;
 - (void)cancel;
 

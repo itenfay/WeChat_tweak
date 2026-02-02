@@ -46,7 +46,6 @@
     UIImageView *_maskView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UILabel *cardChargeFeeTipsLabel; // @synthesize cardChargeFeeTipsLabel=_cardChargeFeeTipsLabel;
 @property(nonatomic) long long selectedDepositAmount; // @synthesize selectedDepositAmount=_selectedDepositAmount;

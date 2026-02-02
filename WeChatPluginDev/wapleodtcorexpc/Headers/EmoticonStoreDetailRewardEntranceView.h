@@ -16,7 +16,6 @@
     id <EmotionStoreDetailRewardEntranceDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <EmotionStoreDetailRewardEntranceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

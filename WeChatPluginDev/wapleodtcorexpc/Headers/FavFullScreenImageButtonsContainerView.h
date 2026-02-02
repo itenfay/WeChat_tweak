@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class ImageBrowseButton;
 
@@ -13,7 +14,6 @@
     CDUnknownBlockType _circleToSearchBlock;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType circleToSearchBlock; // @synthesize circleToSearchBlock=_circleToSearchBlock;
 @property(retain, nonatomic) ImageBrowseButton *circleToSearchButton; // @synthesize circleToSearchButton=_circleToSearchButton;
 - (void)hideCircleToSearchButton;
@@ -24,4 +24,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

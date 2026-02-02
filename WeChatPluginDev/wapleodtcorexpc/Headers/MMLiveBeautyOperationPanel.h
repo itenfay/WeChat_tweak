@@ -30,7 +30,6 @@
     MMUIMaskContainerView *_collectionContainerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIMaskContainerView *collectionContainerView; // @synthesize collectionContainerView=_collectionContainerView;
 @property(nonatomic) _Bool isAppearing; // @synthesize isAppearing=_isAppearing;
 @property(nonatomic) unsigned long long currentTabIndex; // @synthesize currentTabIndex=_currentTabIndex;

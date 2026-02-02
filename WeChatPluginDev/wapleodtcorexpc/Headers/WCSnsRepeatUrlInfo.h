@@ -26,7 +26,6 @@
 + (void)PBArrayAdd_menuItem;
 + (void)PBArrayAdd_expId;
 + (void)PBArrayAdd_layerId;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isMpUrl; // @synthesize isMpUrl=_isMpUrl;
 @property(nonatomic) unsigned int invalidTime; // @synthesize invalidTime=_invalidTime;
 @property(nonatomic) _Bool isShowMenuItem; // @synthesize isShowMenuItem=_isShowMenuItem;

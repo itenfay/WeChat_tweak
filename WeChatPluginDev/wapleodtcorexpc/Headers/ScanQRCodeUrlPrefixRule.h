@@ -12,7 +12,6 @@
     NSMutableArray *_m_handlerArray;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *m_handlerArray; // @synthesize m_handlerArray=_m_handlerArray;
 - (void)reportHandleCount;
 - (_Bool)isTransferUrl:(id)arg1;

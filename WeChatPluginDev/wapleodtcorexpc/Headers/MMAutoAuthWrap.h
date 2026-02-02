@@ -18,7 +18,6 @@
 + (void)PBArrayAdd_m_uiVersion;
 + (void)PBArrayAdd_m_dtServerId;
 + (void)PBArrayAdd_m_dtAutoAuthKey;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int m_uiVersion; // @synthesize m_uiVersion=_m_uiVersion;
 @property(retain, nonatomic) NSData *m_dtServerId; // @synthesize m_dtServerId=_m_dtServerId;
 @property(retain, nonatomic) NSData *m_dtAutoAuthKey; // @synthesize m_dtAutoAuthKey=_m_dtAutoAuthKey;

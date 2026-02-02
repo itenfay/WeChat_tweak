@@ -12,7 +12,6 @@
     MMMusicFadeOutLayer *_gradientMaskLayer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMMusicFadeOutLayer *gradientMaskLayer; // @synthesize gradientMaskLayer=_gradientMaskLayer;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)initWithGradientStepValue:(double)arg1 stepValue2:(double)arg2 isVertical:(_Bool)arg3;

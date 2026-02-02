@@ -19,7 +19,6 @@
 + (void)PBArrayAdd_useCount;
 + (void)PBArrayAdd_timeStamp;
 + (void)PBArrayAdd_feedId;
-- (void).cxx_destruct;
 @property(nonatomic) long long useCount; // @synthesize useCount=_useCount;
 @property(nonatomic) long long timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(copy, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;

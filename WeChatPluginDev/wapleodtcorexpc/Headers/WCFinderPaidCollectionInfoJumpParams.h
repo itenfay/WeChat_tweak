@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class FinderPaidCollectionInfo, NSString, UIViewController;
 @protocol WCFinderCollectionFeedListProvider, WCFinderCollectionFeedListViewControllerDelegate;
@@ -27,7 +28,6 @@
 }
 
 + (id)paramsWithPaidCollection:(id)arg1 fromVC:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool authorJumpDetail; // @synthesize authorJumpDetail=_authorJumpDetail;
 @property(nonatomic) _Bool isSelfCollection; // @synthesize isSelfCollection=_isSelfCollection;
 @property(nonatomic) int commentScene; // @synthesize commentScene=_commentScene;
@@ -44,4 +44,3 @@
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollection; // @synthesize paidCollection=_paidCollection;
 
 @end
-

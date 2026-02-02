@@ -15,7 +15,6 @@
     NSMutableSet *_readUsernameCacheSet;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *readUsernameCacheSet; // @synthesize readUsernameCacheSet=_readUsernameCacheSet;
 @property(retain, nonatomic) NSMutableSet *unreadUsernameCacheSet; // @synthesize unreadUsernameCacheSet=_unreadUsernameCacheSet;
 @property(nonatomic) __weak id <TextStateReadLogicDelegate> delegate; // @synthesize delegate=_delegate;

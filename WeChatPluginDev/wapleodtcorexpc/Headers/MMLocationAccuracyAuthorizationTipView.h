@@ -15,7 +15,6 @@
     UIScrollView *_scrollView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) MMUILabel *tipLabel; // @synthesize tipLabel=_tipLabel;

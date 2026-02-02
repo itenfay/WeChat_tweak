@@ -42,7 +42,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *dataType; // @synthesize dataType=_dataType;
 @property(nonatomic) unsigned int lastModifyTime; // @synthesize lastModifyTime=_lastModifyTime;

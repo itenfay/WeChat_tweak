@@ -17,7 +17,6 @@
     WCFinderHotSpotBannerView *_bannerView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCFinderHotSpotBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) WCFinderLiveAudienceComodityLogReporter *reporter; // @synthesize reporter=_reporter;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;

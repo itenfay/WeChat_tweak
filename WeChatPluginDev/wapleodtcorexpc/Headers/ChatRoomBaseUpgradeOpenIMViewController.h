@@ -16,7 +16,6 @@
     NSString *_m_topTitleText;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_topTitleText; // @synthesize m_topTitleText=_m_topTitleText;
 @property(retain, nonatomic) NSString *m_contentText; // @synthesize m_contentText=_m_contentText;
 @property(retain, nonatomic) NSString *m_titleText; // @synthesize m_titleText=_m_titleText;

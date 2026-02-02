@@ -18,7 +18,6 @@
     NSString *_buttonTitle;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) NSString *buttonIcon; // @synthesize buttonIcon=_buttonIcon;
 @property(copy, nonatomic) NSString *recommendReason; // @synthesize recommendReason=_recommendReason;

@@ -13,7 +13,6 @@
 }
 
 + (void)loadContext;
-- (void).cxx_destruct;
 @property(retain, nonatomic) AffFinderProviderCallback *callback; // @synthesize callback=_callback;
 - (void)reddotWillRevokeTipsUuidArray:(id)arg1;
 - (int)getCurFinderUnreadCountByUsername:(id)arg1 fromRedDotPath:(_Bool)arg2;

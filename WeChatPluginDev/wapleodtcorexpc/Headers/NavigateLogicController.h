@@ -18,7 +18,6 @@
     id <NavigateLogicControllerDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <NavigateLogicControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) QPolyline *lastDirections; // @synthesize lastDirections=_lastDirections;
 @property(retain, nonatomic) NSMutableArray *navigateMaps; // @synthesize navigateMaps=_navigateMaps;

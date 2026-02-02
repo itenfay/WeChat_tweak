@@ -17,7 +17,6 @@
     GetWecoinPriceListResponse *_priceListsResponse;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int settedHeight; // @synthesize settedHeight=_settedHeight;
 @property(retain, nonatomic) GetWecoinPriceListResponse *priceListsResponse; // @synthesize priceListsResponse=_priceListsResponse;
 @property(retain, nonatomic) RichTextView *protocolTextView; // @synthesize protocolTextView=_protocolTextView;

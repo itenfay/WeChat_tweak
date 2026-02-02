@@ -20,7 +20,6 @@
 }
 
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCAdCardBtnInfo *consultButtonJumpActionInfo; // @synthesize consultButtonJumpActionInfo=_consultButtonJumpActionInfo;
 @property(retain, nonatomic) WCAdCardBtnInfo *titleJumpActionInfo; // @synthesize titleJumpActionInfo=_titleJumpActionInfo;
 @property(copy, nonatomic) NSString *iconLight; // @synthesize iconLight=_iconLight;

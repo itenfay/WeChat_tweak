@@ -14,7 +14,6 @@
     UIView *_bottomLineView;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(retain, nonatomic) MMUIImageView *rightIconView; // @synthesize rightIconView=_rightIconView;
 @property(retain, nonatomic) MMUILabel *conditionLabel; // @synthesize conditionLabel=_conditionLabel;

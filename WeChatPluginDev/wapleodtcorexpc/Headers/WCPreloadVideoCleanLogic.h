@@ -13,7 +13,6 @@
     unsigned int _uiLastCleanPreloadTmpFileTime;
 }
 
-- (void).cxx_destruct;
 - (_Bool)isPreloadCompleted:(id)arg1;
 - (void)setPreloadCompelted:(_Bool)arg1 forRecordId:(id)arg2;
 - (unsigned int)getPreloadPercentForRecordId:(id)arg1;

@@ -47,7 +47,6 @@
     struct CGSize _brandLiveSize;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *brandLiveStatusWording; // @synthesize brandLiveStatusWording=_brandLiveStatusWording;
 @property(nonatomic) struct CGSize brandLiveSize; // @synthesize brandLiveSize=_brandLiveSize;
 @property(nonatomic) _Bool isBrandLive; // @synthesize isBrandLive=_isBrandLive;

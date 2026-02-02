@@ -24,7 +24,6 @@
     struct CGSize _activityIconSize;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *activityView; // @synthesize activityView=_activityView;
 @property(retain, nonatomic) UIImageView *activityIcon; // @synthesize activityIcon=_activityIcon;
 @property(retain, nonatomic) UILabel *activityLabel; // @synthesize activityLabel=_activityLabel;

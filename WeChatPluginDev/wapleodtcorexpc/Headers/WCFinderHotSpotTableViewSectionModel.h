@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSData, NSMutableArray;
 
@@ -13,7 +14,6 @@
     NSMutableArray *_hotWords;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *hotWords; // @synthesize hotWords=_hotWords;
 @property(retain, nonatomic) NSData *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 - (void)fetchServerDataCompletion:(CDUnknownBlockType)arg1 failed:(CDUnknownBlockType)arg2;
@@ -23,4 +23,3 @@
 - (unsigned long long)dataCount;
 
 @end
-

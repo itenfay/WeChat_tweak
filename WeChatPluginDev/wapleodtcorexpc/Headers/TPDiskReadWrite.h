@@ -13,7 +13,6 @@
     TPLocalCache *_localCache;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) TPLocalCache *localCache; // @synthesize localCache=_localCache;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 - (id)read:(id)arg1;

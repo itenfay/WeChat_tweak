@@ -14,7 +14,6 @@
     UIView *_topLine;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setHeaderColor:(id)arg1;

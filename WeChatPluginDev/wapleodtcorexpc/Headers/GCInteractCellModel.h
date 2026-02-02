@@ -29,7 +29,6 @@
     id <GCInteractCellDelegate> _interactDelegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <GCInteractCellDelegate> interactDelegate; // @synthesize interactDelegate=_interactDelegate;
 @property(retain, nonatomic) GameCenterMsgSender *msgSender; // @synthesize msgSender=_msgSender;
 @property(nonatomic) _Bool isVoted; // @synthesize isVoted=_isVoted;

@@ -24,7 +24,6 @@
 }
 
 + (id)activityNodeName;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useLightStyle; // @synthesize useLightStyle=_useLightStyle;
 @property(retain, nonatomic) NSString *defaultCoverFilePath; // @synthesize defaultCoverFilePath=_defaultCoverFilePath;
 @property(retain, nonatomic) NSString *defaultButtonTitle; // @synthesize defaultButtonTitle=_defaultButtonTitle;

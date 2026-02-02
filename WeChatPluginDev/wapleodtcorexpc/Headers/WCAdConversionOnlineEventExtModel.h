@@ -14,7 +14,6 @@
     NSString *_adExtInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *adExtInfo; // @synthesize adExtInfo=_adExtInfo;
 @property(nonatomic) int enterScene; // @synthesize enterScene=_enterScene;
 @property(retain, nonatomic) NSString *canvasId; // @synthesize canvasId=_canvasId;

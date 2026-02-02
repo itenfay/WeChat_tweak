@@ -9,7 +9,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)execute;
 - (id)offset:(const void *)arg1;
 - (id)limit:(const void *)arg1;

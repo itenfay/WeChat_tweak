@@ -18,7 +18,6 @@
     FinderPaidCollectionInfo *_paidCollectionInfo;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isContainItem; // @synthesize isContainItem=_isContainItem;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) FinderPaidCollectionInfo *paidCollectionInfo; // @synthesize paidCollectionInfo=_paidCollectionInfo;

@@ -12,7 +12,6 @@
     UIViewController *animatedTransitionRespondViewController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *animatedTransitionRespondViewController; // @synthesize animatedTransitionRespondViewController;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

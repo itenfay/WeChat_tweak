@@ -23,7 +23,6 @@
     long long _thermalState;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool karaEnabled; // @synthesize karaEnabled=_karaEnabled;
 @property(nonatomic) _Bool ftsIndexEnabled; // @synthesize ftsIndexEnabled=_ftsIndexEnabled;
 @property(nonatomic) _Bool diskScanEnabled; // @synthesize diskScanEnabled=_diskScanEnabled;

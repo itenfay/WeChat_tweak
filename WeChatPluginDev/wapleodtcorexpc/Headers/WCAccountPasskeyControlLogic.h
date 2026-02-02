@@ -14,7 +14,6 @@
     NSString *_randomPwd;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *randomPwd; // @synthesize randomPwd=_randomPwd;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) PassKeyVerifyInfo *passkeyVerifyInfo; // @synthesize passkeyVerifyInfo=_passkeyVerifyInfo;

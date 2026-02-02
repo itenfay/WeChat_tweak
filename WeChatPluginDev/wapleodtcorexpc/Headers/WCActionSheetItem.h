@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString, UIColor, UIImage, WCActionSheetItemRedDotInfo;
 
@@ -31,7 +32,6 @@
     struct UIEdgeInsets _contentEdgeInsets;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(copy, nonatomic) CDUnknownBlockType eventAction; // @synthesize eventAction=_eventAction;
 @property(copy, nonatomic) CDUnknownBlockType itemViewConfigAction; // @synthesize itemViewConfigAction=_itemViewConfigAction;
@@ -57,4 +57,3 @@
 - (id)initWithTitle:(id)arg1;
 
 @end
-

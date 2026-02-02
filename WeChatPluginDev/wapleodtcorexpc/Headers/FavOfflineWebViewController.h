@@ -18,7 +18,6 @@
     FavWebCacheScriptMessageHandler *m_scriptMessageHandler;
 }
 
-- (void).cxx_destruct;
 - (void)sendMsgWithImageData:(id)arg1;
 - (void)addImgFavWithImageData:(id)arg1;
 - (void)saveImgWithImageData:(id)arg1;

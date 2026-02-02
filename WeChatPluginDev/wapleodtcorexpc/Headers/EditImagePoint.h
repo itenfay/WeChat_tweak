@@ -14,7 +14,6 @@
     double _angle;
 }
 
-- (void).cxx_destruct;
 - (double)getAngle;
 - (id)getColor;
 - (struct CGPoint)getCGPoint;

@@ -12,7 +12,6 @@
     BrandProfileMessageSectionData *_sectionData;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak BrandProfileMessageSectionData *sectionData; // @synthesize sectionData=_sectionData;
 @property(nonatomic) __weak BrandProfileMsgBaseCell *cellView; // @synthesize cellView=_cellView;
 - (id)tableViewCellClassName;

@@ -23,7 +23,6 @@
     MMAssetPickerBrowserStateInfo *m_stateInfo;
 }
 
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MMAssetPickerBrowserStateInfo *stateInfo; // @synthesize stateInfo=m_stateInfo;
 @property(nonatomic) __weak id <MMAssetPickerBrowserViewDelegate> browserDelegate; // @synthesize browserDelegate;
 @property(nonatomic) _Bool shouldPlayWithEditAttr; // @synthesize shouldPlayWithEditAttr;

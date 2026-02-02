@@ -20,7 +20,6 @@
     BusiF2FSucPageReq *_m_request;
 }
 
-- (void).cxx_destruct;
 @property unsigned int m_currentRetryCount; // @synthesize m_currentRetryCount=_m_currentRetryCount;
 @property(retain) BusiF2FSucPageReq *m_request; // @synthesize m_request=_m_request;
 @property unsigned int m_maxRetryCount; // @synthesize m_maxRetryCount=_m_maxRetryCount;

@@ -11,7 +11,6 @@
     id <IWALocationService> _locationService;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) id <IWALocationService> locationService; // @synthesize locationService=_locationService;
 - (void)onChoosePoiCancel;
 - (void)onChoosePoiFinished:(id)arg1;

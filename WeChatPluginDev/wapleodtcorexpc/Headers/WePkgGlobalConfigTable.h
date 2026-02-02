@@ -26,7 +26,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastCheckUpdateVersion; // @synthesize lastCheckUpdateVersion=_lastCheckUpdateVersion;
 @property(nonatomic) unsigned int lastCheckUpdateTimestamp; // @synthesize lastCheckUpdateTimestamp=_lastCheckUpdateTimestamp;
 @property(retain, nonatomic) NSString *pkgId; // @synthesize pkgId=_pkgId;

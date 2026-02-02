@@ -16,7 +16,6 @@
 + (id)nullableFromList:(id)arg1;
 + (id)fromList:(id)arg1;
 + (id)makeWithFakeNativeWeAppItem:(id)arg1 messageExtraData:(id)arg2;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *messageExtraData; // @synthesize messageExtraData=_messageExtraData;
 @property(retain, nonatomic) BrandEcsProductShareWeappItem *fakeNativeWeAppItem; // @synthesize fakeNativeWeAppItem=_fakeNativeWeAppItem;
 - (id)toList;

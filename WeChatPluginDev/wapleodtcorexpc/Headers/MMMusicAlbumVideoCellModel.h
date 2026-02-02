@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMAsset, NSString;
 
 @interface MMMusicAlbumVideoCellModel
@@ -14,7 +16,6 @@
     NSString *_localPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localPath; // @synthesize localPath=_localPath;
 @property(nonatomic) int pos; // @synthesize pos=_pos;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -29,4 +30,3 @@
 - (void)asyncGetDuration:(CDUnknownBlockType)arg1;
 
 @end
-

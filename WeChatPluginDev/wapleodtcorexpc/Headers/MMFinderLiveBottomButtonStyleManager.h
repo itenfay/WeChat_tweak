@@ -20,7 +20,6 @@
     NSString *_liveShoppingButtonBubblePAGPath;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *liveShoppingButtonBubblePAGPath; // @synthesize liveShoppingButtonBubblePAGPath=_liveShoppingButtonBubblePAGPath;
 @property(retain, nonatomic) MMTimer *animationCountdownTimer; // @synthesize animationCountdownTimer=_animationCountdownTimer;
 @property(retain, nonatomic) MMFinderLiveBottomButtonAnimationItem *playingAnimationItem; // @synthesize playingAnimationItem=_playingAnimationItem;

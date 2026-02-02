@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_idKeyReportList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *idKeyReportList; // @synthesize idKeyReportList=_idKeyReportList;
 - (id)getPBPropertyTable;
 

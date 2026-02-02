@@ -16,7 +16,6 @@
     unsigned long long _routeRule;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long routeRule; // @synthesize routeRule=_routeRule;
 @property(nonatomic) unsigned long long reportPolicy; // @synthesize reportPolicy=_reportPolicy;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;

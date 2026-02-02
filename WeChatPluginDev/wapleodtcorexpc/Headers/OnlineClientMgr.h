@@ -28,7 +28,6 @@
     MMOnlineSilentDownloadLogicController *_silentDownloadLogic;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMOnlineSilentDownloadLogicController *silentDownloadLogic; // @synthesize silentDownloadLogic=_silentDownloadLogic;
 - (void)handleSilentDownloadFileList:(id)arg1;
 - (id)GetBannerIcon;

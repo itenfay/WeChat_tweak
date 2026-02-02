@@ -18,7 +18,6 @@
 }
 
 + (void)registerCellsFor:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) __weak MMStoreEmoticonDesignerPackBrowseViewController *packBrowseVC; // @synthesize packBrowseVC=_packBrowseVC;
 @property(retain, nonatomic) EmoticonStoreItem *rewardingItem; // @synthesize rewardingItem=_rewardingItem;
 @property(nonatomic) __weak EmoticonStoreDesingerIPViewCell *ipCell; // @synthesize ipCell=_ipCell;

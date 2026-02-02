@@ -18,7 +18,6 @@
     NSMutableDictionary *_md5ToCertifacateDict;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *md5ToCertifacateDict; // @synthesize md5ToCertifacateDict=_md5ToCertifacateDict;
 @property(nonatomic) _Bool isGameCenterScene; // @synthesize isGameCenterScene=_isGameCenterScene;
 @property(nonatomic) __weak WKHTTPCookieStore *wkCookieStore; // @synthesize wkCookieStore=_wkCookieStore;

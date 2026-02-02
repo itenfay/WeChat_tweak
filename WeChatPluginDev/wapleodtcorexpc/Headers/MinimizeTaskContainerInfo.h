@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIView, UIViewController;
 @protocol MinimizeTaskContainerInfoDelegate;
 
@@ -23,7 +25,6 @@
     struct CGSize _containerSizeInList;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType positionModificationBlock; // @synthesize positionModificationBlock=_positionModificationBlock;
 @property(nonatomic) _Bool useTightStickType; // @synthesize useTightStickType=_useTightStickType;
 @property(nonatomic) _Bool isFoldDisabled; // @synthesize isFoldDisabled=_isFoldDisabled;
@@ -40,4 +41,3 @@
 - (id)init;
 
 @end
-

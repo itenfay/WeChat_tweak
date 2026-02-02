@@ -13,7 +13,6 @@
     ChatTimeViewModel *_timeViewModel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak ChatTimeViewModel *timeViewModel; // @synthesize timeViewModel=_timeViewModel;
 @property(nonatomic) __weak ReaderMessageFolderViewModel *folderViewModel; // @synthesize folderViewModel=_folderViewModel;
 @property(retain, nonatomic) NSMutableArray *messageWrapList; // @synthesize messageWrapList=_messageWrapList;

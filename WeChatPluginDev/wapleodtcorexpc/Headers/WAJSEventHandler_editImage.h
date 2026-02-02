@@ -10,7 +10,6 @@
     WCEditImageViewController *_editImageViewController;
 }
 
-- (void).cxx_destruct;
 - (void)editImageViewControllerDidCancel:(id)arg1;
 - (void)editImageViewController:(id)arg1 didFinishEditingImage:(id)arg2;
 - (void)handleJSEvent:(id)arg1;

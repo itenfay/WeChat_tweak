@@ -22,7 +22,6 @@
     unsigned long long _lastStartTime;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool hasReported; // @synthesize hasReported=_hasReported;
 @property(nonatomic) unsigned long long lastStartTime; // @synthesize lastStartTime=_lastStartTime;
 @property(nonatomic) long long operationPath; // @synthesize operationPath=_operationPath;

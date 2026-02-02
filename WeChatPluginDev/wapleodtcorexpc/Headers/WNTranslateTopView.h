@@ -17,7 +17,6 @@
     id <WNTranslateTopViewDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WNTranslateTopViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onChangeLanguage:(id)arg1;
 - (void)onClose:(id)arg1;

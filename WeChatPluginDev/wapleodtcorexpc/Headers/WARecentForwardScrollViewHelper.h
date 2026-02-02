@@ -14,7 +14,6 @@
     id <WARecentForwardScrollViewHelperDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <WARecentForwardScrollViewHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) RecentForwardScrollView *forwardView; // @synthesize forwardView=_forwardView;
 - (void)relayoutScrollSheet;

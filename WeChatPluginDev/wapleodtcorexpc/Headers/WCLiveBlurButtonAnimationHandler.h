@@ -13,7 +13,6 @@
     NSString *_currentAnimationKey;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentAnimationKey; // @synthesize currentAnimationKey=_currentAnimationKey;
 @property(nonatomic) __weak CALayer *animationLayer; // @synthesize animationLayer=_animationLayer;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

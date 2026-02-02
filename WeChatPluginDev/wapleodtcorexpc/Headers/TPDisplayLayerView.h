@@ -19,7 +19,6 @@
     struct CGSize _frameSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double boundsOffset; // @synthesize boundsOffset=_boundsOffset;
 @property(copy) NSString *currentVideoGravity; // @synthesize currentVideoGravity=_currentVideoGravity;
 @property(nonatomic) struct CGSize frameSize; // @synthesize frameSize=_frameSize;

@@ -15,7 +15,6 @@
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_7048591f cb_; // @synthesize cb_=_cb_;
 @property(nonatomic) unsigned long long lastPreConnectTimeStampInSeconds; // @synthesize lastPreConnectTimeStampInSeconds=_lastPreConnectTimeStampInSeconds;
 @property(copy, nonatomic) NSString *cdnPreConnectUrl; // @synthesize cdnPreConnectUrl=_cdnPreConnectUrl;

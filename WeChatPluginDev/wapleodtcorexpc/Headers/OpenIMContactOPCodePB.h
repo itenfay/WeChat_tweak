@@ -14,7 +14,6 @@
 
 + (void)initialize;
 + (void)PBArrayAdd_openIMContactOPList;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *openIMContactOPList; // @synthesize openIMContactOPList=_openIMContactOPList;
 - (id)getPBPropertyTable;
 

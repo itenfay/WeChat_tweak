@@ -13,7 +13,6 @@
     double fontSize;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double fontSize; // @synthesize fontSize;
 @property(retain, nonatomic) UIColor *fontColor; // @synthesize fontColor;
 - (_Bool)isEqual:(id)arg1;

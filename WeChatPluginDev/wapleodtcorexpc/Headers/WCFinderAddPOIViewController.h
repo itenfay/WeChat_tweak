@@ -27,7 +27,6 @@
     UILabel *_stateLabel;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *stateLabel; // @synthesize stateLabel=_stateLabel;
 @property(retain, nonatomic) WCFinderArrowTipsView *tipsView; // @synthesize tipsView=_tipsView;
 @property(retain, nonatomic) MMPickLocationViewController *pickLocationViewController; // @synthesize pickLocationViewController=_pickLocationViewController;

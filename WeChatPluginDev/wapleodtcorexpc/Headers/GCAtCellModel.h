@@ -15,7 +15,6 @@
     NSString *_userId;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool showSeperatedLineInLeft; // @synthesize showSeperatedLineInLeft=_showSeperatedLineInLeft;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;

@@ -39,7 +39,6 @@
     int _currentAuthLogType;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int currentAuthLogType; // @synthesize currentAuthLogType=_currentAuthLogType;
 - (void)goToSettingLocationAuthorization;
 - (void)closeRadarSearchViewAnimated:(_Bool)arg1;

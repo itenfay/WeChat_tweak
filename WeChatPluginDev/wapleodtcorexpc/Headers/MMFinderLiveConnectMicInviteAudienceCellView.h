@@ -11,7 +11,6 @@
 }
 
 + (id)ReuseIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;
 - (void)layoutUI;
 - (void)updateRightButton;

@@ -16,7 +16,6 @@
 
 + (double)preferHeight;
 + (double)preferWidth;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *sourceLabel; // @synthesize sourceLabel=_sourceLabel;
 @property(retain, nonatomic) UIImageView *sourceIconImg; // @synthesize sourceIconImg=_sourceIconImg;
 @property(retain, nonatomic) MMUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

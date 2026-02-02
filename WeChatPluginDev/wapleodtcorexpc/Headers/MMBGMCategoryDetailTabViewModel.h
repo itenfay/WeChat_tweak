@@ -13,7 +13,6 @@
     NSData *_sessionBuffer;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sessionBuffer; // @synthesize sessionBuffer=_sessionBuffer;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;
 @property(retain, nonatomic) MMBGMUniqueMutableArray *musicItem; // @synthesize musicItem=_musicItem;

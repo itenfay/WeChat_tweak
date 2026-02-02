@@ -27,7 +27,6 @@
 + (id)allBridgeProperties;
 + (const void *)allProperties;
 + (const void *)objectRelationalMapping;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int realWeight; // @synthesize realWeight=_realWeight;
 @property(retain, nonatomic) NSString *weightStr; // @synthesize weightStr=_weightStr;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

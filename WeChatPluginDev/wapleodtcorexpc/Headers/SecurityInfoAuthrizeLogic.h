@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, UINavigationController, UIScreenEdgePanGestureRecognizer, UserIdAuthorizePageInfo, WAAuthorizeUserIdPageSheet, WAMenuPopInteractiveTransition, WXAPhoneInfo;
 
 @interface SecurityInfoAuthrizeLogic
@@ -28,7 +30,6 @@
     WXAPhoneInfo *_selectedPhoneInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WXAPhoneInfo *selectedPhoneInfo; // @synthesize selectedPhoneInfo=_selectedPhoneInfo;
 @property(retain, nonatomic) UserIdAuthorizePageInfo *pageInfo; // @synthesize pageInfo=_pageInfo;
 @property(retain, nonatomic) UIScreenEdgePanGestureRecognizer *popBackGesture; // @synthesize popBackGesture=_popBackGesture;
@@ -93,4 +94,3 @@
 @property(readonly) Class superclass;
 
 @end
-

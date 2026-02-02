@@ -18,7 +18,6 @@
 + (double)heightForViewWithWidth:(double)arg1 title:(id)arg2 andContent:(id)arg3;
 + (id)contentLabelFont;
 + (id)titleLabelFont;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultIconImageName; // @synthesize defaultIconImageName=_defaultIconImageName;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;

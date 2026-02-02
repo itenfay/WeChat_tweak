@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UICollectionViewCell.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAShapeLayer, MMMusicLiveLyricDisplayView, MMMusicMVEditorCardSlider, MMMusicMVEpisodeItemCellView, MMMusicMVTrackItem, NSString, UIButton, UIImageView;
 @protocol MMMusicMVEditorCardCellDelegate;
@@ -26,7 +27,6 @@
 
 + (double)videoViewCenterYOffset:(double)arg1;
 + (double)videoViewHeightWithCellHeight:(double)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(retain, nonatomic) UIButton *cropButton; // @synthesize cropButton=_cropButton;
 @property(retain, nonatomic) UIButton *revertButton; // @synthesize revertButton=_revertButton;
@@ -65,4 +65,3 @@
 @property(readonly) Class superclass;
 
 @end
-

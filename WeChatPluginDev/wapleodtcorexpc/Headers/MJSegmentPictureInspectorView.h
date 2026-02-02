@@ -16,7 +16,6 @@
     MJPictureAdjustmentValueItem *_selectedItem;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MJPictureAdjustmentValueItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;

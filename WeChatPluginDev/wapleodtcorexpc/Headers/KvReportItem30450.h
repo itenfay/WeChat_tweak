@@ -19,7 +19,6 @@
     NSString *_extInfoStr3;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *extInfoStr3; // @synthesize extInfoStr3=_extInfoStr3;
 @property(copy, nonatomic) NSString *extInfoStr2; // @synthesize extInfoStr2=_extInfoStr2;
 @property(copy, nonatomic) NSString *extInfoStr1; // @synthesize extInfoStr1=_extInfoStr1;

@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class UIImageView, UILabel;
 
 @interface TLProfileLikeButton
@@ -13,7 +15,6 @@
     UILabel *_numLabel;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isLiked; // @synthesize isLiked=_isLiked;
 @property(retain, nonatomic) UILabel *numLabel; // @synthesize numLabel=_numLabel;
 @property(retain, nonatomic) UIImageView *likeIconImageView; // @synthesize likeIconImageView=_likeIconImageView;
@@ -29,4 +30,3 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end
-

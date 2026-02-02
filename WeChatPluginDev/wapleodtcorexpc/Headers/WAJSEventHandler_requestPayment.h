@@ -15,7 +15,6 @@
     NSString *_customPath;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int requestId; // @synthesize requestId=_requestId;
 @property(retain, nonatomic) NSString *customPath; // @synthesize customPath=_customPath;
 @property(retain, nonatomic) NSString *customUsrName; // @synthesize customUsrName=_customUsrName;

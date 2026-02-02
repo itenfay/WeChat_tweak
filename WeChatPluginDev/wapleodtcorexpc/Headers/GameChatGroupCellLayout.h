@@ -35,7 +35,6 @@
     struct UIEdgeInsets _contentInsets;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) double bulletMsgViewHeight; // @synthesize bulletMsgViewHeight=_bulletMsgViewHeight;
 @property(nonatomic) double moreHeightWhenHasTag; // @synthesize moreHeightWhenHasTag=_moreHeightWhenHasTag;
 @property(nonatomic) double imgViewHeight; // @synthesize imgViewHeight=_imgViewHeight;

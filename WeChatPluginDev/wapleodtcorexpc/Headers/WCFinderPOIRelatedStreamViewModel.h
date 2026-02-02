@@ -36,7 +36,6 @@
     NSString *_noticeWording;
 }
 
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *noticeWording; // @synthesize noticeWording=_noticeWording;
 @property(retain, nonatomic) WCFinderContact *bindContact; // @synthesize bindContact=_bindContact;
 @property(retain, nonatomic) SnsPoiDetail *poiDetail; // @synthesize poiDetail=_poiDetail;

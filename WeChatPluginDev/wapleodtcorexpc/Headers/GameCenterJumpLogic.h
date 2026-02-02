@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @interface GameCenterJumpLogic : NSObject
 {
@@ -48,4 +49,3 @@
 + (unsigned long long)opWithJumpInfo:(id)arg1;
 
 @end
-

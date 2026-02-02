@@ -31,7 +31,6 @@
 }
 
 + (id)contactsFromSearchResponse:(id)arg1 req:(id)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool bHasOperateOnlineResult; // @synthesize bHasOperateOnlineResult=_bHasOperateOnlineResult;
 @property(nonatomic) _Bool bHasShownWebSearchCell; // @synthesize bHasShownWebSearchCell=_bHasShownWebSearchCell;
 @property(nonatomic) _Bool bOnlyShowResult; // @synthesize bOnlyShowResult=_bOnlyShowResult;

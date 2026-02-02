@@ -15,7 +15,6 @@
 }
 
 + (void)checkABTest:(id)arg1;
-- (void).cxx_destruct;
 - (_Bool)isEnableGuard;
 - (void)synchronize;
 - (void)setException:(_Bool)arg1;

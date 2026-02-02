@@ -10,7 +10,6 @@
     MMUIButton *_titleButton;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUIButton *titleButton; // @synthesize titleButton=_titleButton;
 - (struct UIEdgeInsets)bodyInsetsInNavigationBar;
 @property(nonatomic) _Bool enable;

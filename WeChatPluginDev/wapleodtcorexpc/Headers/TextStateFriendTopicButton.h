@@ -17,7 +17,6 @@
 }
 
 + (id)defaultButton;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMBadgeView *reddotView; // @synthesize reddotView=_reddotView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *textStateIconView; // @synthesize textStateIconView=_textStateIconView;

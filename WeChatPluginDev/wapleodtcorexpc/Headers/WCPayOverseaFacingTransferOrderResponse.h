@@ -13,7 +13,6 @@
 }
 
 + (id)GenFromDictionary:(id)arg1;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nsPayUrl; // @synthesize nsPayUrl=_nsPayUrl;
 
 @end

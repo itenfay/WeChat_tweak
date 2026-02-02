@@ -4,6 +4,7 @@
 //
 
 #import <objc/NSObject.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class NSString;
 
@@ -16,7 +17,6 @@
     long long _style;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
@@ -24,4 +24,3 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 
 @end
-

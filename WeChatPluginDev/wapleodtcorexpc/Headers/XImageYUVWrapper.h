@@ -18,7 +18,6 @@
 
 + (long long)getFrameFormatFromPixelBuffer:(struct __CVBuffer *)arg1;
 + (id)convertPixelBufferToYUVPanel:(struct __CVBuffer *)arg1;
-- (void).cxx_destruct;
 @property(retain) XImage *uvPanel; // @synthesize uvPanel=_uvPanel;
 @property(retain) XImage *vPanel; // @synthesize vPanel=_vPanel;
 @property(retain) XImage *uPanel; // @synthesize uPanel=_uPanel;

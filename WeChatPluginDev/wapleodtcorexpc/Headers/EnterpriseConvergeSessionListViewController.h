@@ -23,7 +23,6 @@
     CContact *_mainBrandContact;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) CContact *mainBrandContact; // @synthesize mainBrandContact=_mainBrandContact;
 - (void)onBizShareInfoResult:(int)arg1 errorMsg:(id)arg2 shareInfo:(id)arg3 mainBrandUserName:(id)arg4;
 - (void)onWebViewWillClose:(id)arg1;

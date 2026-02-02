@@ -11,7 +11,6 @@
     NSString *_m_customerTitle;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_customerTitle; // @synthesize m_customerTitle=_m_customerTitle;
 - (void)setM_contact:(id)arg1;
 - (id)m_contact;

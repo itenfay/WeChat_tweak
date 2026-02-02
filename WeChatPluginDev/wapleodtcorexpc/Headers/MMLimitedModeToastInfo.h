@@ -15,7 +15,6 @@
     NSString *_nickName;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;

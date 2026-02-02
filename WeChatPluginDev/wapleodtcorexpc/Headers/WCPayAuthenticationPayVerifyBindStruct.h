@@ -19,7 +19,6 @@
     unsigned int _ignore_bind;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int ignore_bind; // @synthesize ignore_bind=_ignore_bind;
 @property(retain, nonatomic) NSString *m_verifySMS; // @synthesize m_verifySMS;
 @property(retain, nonatomic) NSString *m_payToken; // @synthesize m_payToken;

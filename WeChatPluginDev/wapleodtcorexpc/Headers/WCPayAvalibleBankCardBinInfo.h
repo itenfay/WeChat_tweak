@@ -13,7 +13,6 @@
     NSString *m_nsVesionNumber;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *m_nsVesionNumber; // @synthesize m_nsVesionNumber;
 @property(retain, nonatomic) NSArray *m_arrBankCardBin; // @synthesize m_arrBankCardBin;
 - (id)initWithCoder:(id)arg1;

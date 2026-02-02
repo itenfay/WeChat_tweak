@@ -24,7 +24,6 @@
 }
 
 + (id)getSelectAddressDicFromAddress:(id)arg1;
-- (void).cxx_destruct;
 @property(nonatomic) int entryScene; // @synthesize entryScene=_entryScene;
 @property(nonatomic) _Bool isSelectAddressFilledByFriend; // @synthesize isSelectAddressFilledByFriend=_isSelectAddressFilledByFriend;
 @property(nonatomic) _Bool isInGiftMode; // @synthesize isInGiftMode=_isInGiftMode;

@@ -16,7 +16,6 @@
     NSArray *_dashArray;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) NSArray *dashArray; // @synthesize dashArray=_dashArray;
 @property(nonatomic) long long displayLevel; // @synthesize displayLevel=_displayLevel;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;

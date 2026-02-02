@@ -19,7 +19,6 @@
 
 + (double)feedCardWidthWithScreenWid:(double)arg1 maxCardNumInScreen:(long long)arg2;
 + (double)feedCardHeightWithScreenWid:(double)arg1 maxCardNumInScreen:(long long)arg2;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(retain, nonatomic) NSArray *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) long long maxCardNumInScreen; // @synthesize maxCardNumInScreen=_maxCardNumInScreen;

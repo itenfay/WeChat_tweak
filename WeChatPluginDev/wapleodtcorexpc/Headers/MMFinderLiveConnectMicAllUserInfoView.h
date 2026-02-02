@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class CAGradientLayer, MMFinderLiveCommonOnlineMemberSheet, MMFinderLiveConnectMicPkProgressTimeIndicator, MMFinderLiveConnectMicUsersInfo, MMFinderLivePkTaskedBonusBarBackgroundFrenzyView, MMFinderLivePkTaskedBonusBarView, MMFinderLiveTaskId, MMUIButton, NSMutableArray, NSMutableDictionary, NSString, PAGView, UIImageView, UILabel, WCFinderHeadImageView;
 @protocol MMFinderLiveConnectMicAllUserInfoViewDelegate, MMFinderLiveConnectMicAllUserInfoViewGiftNotificationDelegate, MMFinderLiveConnectMicAllUserInfoViewLayoutInfoDelegate, MMFinderLiveConnectMicAllUserInfoViewLotteryPacketDelegate, MMFinderLiveConnectMicOperationViewBase;
@@ -59,7 +60,6 @@
     MMFinderLiveConnectMicUsersInfo *_allMicUsersInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMFinderLiveConnectMicUsersInfo *allMicUsersInfo; // @synthesize allMicUsersInfo=_allMicUsersInfo;
 @property(retain, nonatomic) NSMutableDictionary *userViewWrapDic; // @synthesize userViewWrapDic=_userViewWrapDic;
 @property(retain, nonatomic) MMFinderLiveCommonOnlineMemberSheet *onlineMemberSheet; // @synthesize onlineMemberSheet=_onlineMemberSheet;
@@ -228,4 +228,3 @@
 @property(readonly) Class superclass;
 
 @end
-

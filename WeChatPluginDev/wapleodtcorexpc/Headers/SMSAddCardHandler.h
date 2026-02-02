@@ -11,7 +11,6 @@
     BlockViewController *_blockView;
 }
 
-- (void).cxx_destruct;
 - (void)onBlockViewControllerReturn;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)handleSMSAddCard:(id)arg1;

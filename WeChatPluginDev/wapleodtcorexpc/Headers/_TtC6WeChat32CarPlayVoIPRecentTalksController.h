@@ -11,7 +11,6 @@
     MISSING_TYPE *recentVoIPItems;
 }
 
-- (void).cxx_destruct;
 - (void)onReceiveVoIPMessageHistory:(id)arg1;
 - (void)onInitOK;
 - (void)dealloc;

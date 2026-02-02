@@ -16,7 +16,6 @@
     struct UIEdgeInsets _textPadding;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long textVerticalAlignment; // @synthesize textVerticalAlignment=_textVerticalAlignment;
 @property(nonatomic) struct UIEdgeInsets textPadding; // @synthesize textPadding=_textPadding;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;

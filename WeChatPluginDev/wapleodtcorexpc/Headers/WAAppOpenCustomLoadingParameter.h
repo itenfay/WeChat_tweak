@@ -13,7 +13,6 @@
     Class _customLoadingClass;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) Class customLoadingClass; // @synthesize customLoadingClass=_customLoadingClass;
 @property(copy, nonatomic) NSString *extraData; // @synthesize extraData=_extraData;
 

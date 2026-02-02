@@ -16,7 +16,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(readonly, copy, nonatomic) NSString *tokenString; // @synthesize tokenString=_tokenString;
 @property(readonly, nonatomic) unsigned long long numSkipped; // @synthesize numSkipped=_numSkipped;

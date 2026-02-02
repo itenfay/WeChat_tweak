@@ -12,7 +12,6 @@
     WCTDatabase *_infoDB;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) WCTDatabase *infoDB; // @synthesize infoDB=_infoDB;
 - (void)p_mergeTheTimeIntervalArray:(id)arg1;
 - (id)p_getSessionTimeIntervalTableWithDeviceID:(id)arg1;

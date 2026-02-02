@@ -16,7 +16,6 @@
 }
 
 + (id)viewModelWithDataItem:(id)arg1;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WCMomentsFinderRecommendationViewModel *finderRecommendationViewModel; // @synthesize finderRecommendationViewModel=_finderRecommendationViewModel;
 @property(readonly, nonatomic) double maxContentWidth; // @synthesize maxContentWidth=_maxContentWidth;
 @property(nonatomic) double width; // @synthesize width=_width;

@@ -31,7 +31,6 @@
     FinderLiveLotteryWinnerExtInfo *_winnerInfo;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) FinderLiveLotteryWinnerExtInfo *winnerInfo; // @synthesize winnerInfo=_winnerInfo;
 @property(nonatomic) unsigned long long objectId; // @synthesize objectId=_objectId;
 @property(retain, nonatomic) WCFinderContact *anchorContact; // @synthesize anchorContact=_anchorContact;

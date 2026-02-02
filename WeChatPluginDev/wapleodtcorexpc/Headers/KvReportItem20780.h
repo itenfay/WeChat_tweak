@@ -13,7 +13,6 @@
     NSString *_AppId_21;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int DownloadStatus_24; // @synthesize DownloadStatus_24=_DownloadStatus_24;
 @property(nonatomic) unsigned int PkgVersion_23; // @synthesize PkgVersion_23=_PkgVersion_23;
 @property(nonatomic) unsigned int WxaVersion_22; // @synthesize WxaVersion_22=_WxaVersion_22;

@@ -20,7 +20,6 @@
 
 + (double)momentCellsSpace;
 + (double)extraTopInset;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MMUILabel *momentDescLabel; // @synthesize momentDescLabel=_momentDescLabel;
 @property(retain, nonatomic) UIView *seperatorLine; // @synthesize seperatorLine=_seperatorLine;
 @property(retain, nonatomic) MMUILabel *momentTimeLabel; // @synthesize momentTimeLabel=_momentTimeLabel;

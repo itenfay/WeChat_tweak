@@ -12,7 +12,6 @@
     NSString *deviceType;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType;
 - (void)parseXML:(id)arg1;
 - (void)dealloc;

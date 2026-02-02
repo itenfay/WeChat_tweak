@@ -13,7 +13,6 @@
 }
 
 + (id)getInstance;
-- (void).cxx_destruct;
 - (long long)getOfflineRecordDurationWithVid:(id)arg1 format:(id)arg2;
 - (id)getOfflineRecordVinfo:(id)arg1 withFormat:(id)arg2;
 - (void)setAdapter:(id)arg1;

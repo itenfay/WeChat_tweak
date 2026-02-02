@@ -4,6 +4,7 @@
 //
 
 #import <UIKit/UIView.h>
+typedef void (^CDUnknownBlockType)(void);
 
 @class MMFinderLiveEditImagePreviewPageSheetModel, MMPageSheetAdapter, MMUILabel, NSString, RichTextView, UIImageView, UILabel, WCFinderAuthInfoIconView, WCFinderHeadImageView, WCFinderLiveNowView;
 
@@ -34,7 +35,6 @@
     RichTextView *_mediaTitleTextViewForSquare;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) RichTextView *mediaTitleTextViewForSquare; // @synthesize mediaTitleTextViewForSquare=_mediaTitleTextViewForSquare;
 @property(retain, nonatomic) RichTextView *mediaTitleTextViewForShare; // @synthesize mediaTitleTextViewForShare=_mediaTitleTextViewForShare;
 @property(retain, nonatomic) WCFinderAuthInfoIconView *authInfoIconViewForShare; // @synthesize authInfoIconViewForShare=_authInfoIconViewForShare;
@@ -87,4 +87,3 @@
 @property(readonly) Class superclass;
 
 @end
-

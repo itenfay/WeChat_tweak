@@ -14,7 +14,6 @@
     unsigned long long _ret;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int cacheSeconds; // @synthesize cacheSeconds=_cacheSeconds;
 @property(nonatomic) unsigned int beginTimeStamp; // @synthesize beginTimeStamp=_beginTimeStamp;
 @property(nonatomic) unsigned long long ret; // @synthesize ret=_ret;

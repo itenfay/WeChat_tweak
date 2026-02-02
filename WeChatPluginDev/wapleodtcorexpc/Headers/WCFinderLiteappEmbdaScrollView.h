@@ -14,7 +14,6 @@
     MMLiteAppView *_liteAppView;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) _Bool alreadyStart; // @synthesize alreadyStart=_alreadyStart;
 @property(retain, nonatomic) MMLiteAppView *liteAppView; // @synthesize liteAppView=_liteAppView;
 @property(retain, nonatomic) OpenLiteAppInfo *liteAppInfo; // @synthesize liteAppInfo=_liteAppInfo;

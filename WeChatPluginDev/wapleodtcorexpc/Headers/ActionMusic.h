@@ -16,7 +16,6 @@
     NSString *_webUrl;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *webUrl; // @synthesize webUrl=_webUrl;
 @property(retain, nonatomic) NSString *wapUrl; // @synthesize wapUrl=_wapUrl;
 @property(retain, nonatomic) NSString *wifiUrl; // @synthesize wifiUrl=_wifiUrl;

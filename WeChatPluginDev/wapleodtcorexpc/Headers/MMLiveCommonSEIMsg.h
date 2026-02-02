@@ -19,7 +19,6 @@
     NSString *_rs;
 }
 
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rs; // @synthesize rs=_rs;
 @property(retain, nonatomic) NSString *ks; // @synthesize ks=_ks;
 @property(retain, nonatomic) NSString *lm; // @synthesize lm=_lm;

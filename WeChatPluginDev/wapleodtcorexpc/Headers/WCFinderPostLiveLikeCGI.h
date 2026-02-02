@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+typedef void (^CDUnknownBlockType)(void);
+
 @class NSData, NSString, WCFinderDataItem;
 
 @interface WCFinderPostLiveLikeCGI
@@ -20,7 +22,6 @@
     long long _likeSource;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) long long likeSource; // @synthesize likeSource=_likeSource;
 @property(nonatomic) long long opType; // @synthesize opType=_opType;
 @property(nonatomic) long long likeScene; // @synthesize likeScene=_likeScene;
@@ -40,4 +41,3 @@
 - (id)initWithFinderTaskId:(id)arg1 likeCount:(unsigned long long)arg2 liveCookies:(id)arg3 likeScene:(long long)arg4 opType:(long long)arg5 likeSource:(long long)arg6 successBlock:(CDUnknownBlockType)arg7 failBlock:(CDUnknownBlockType)arg8;
 
 @end
-
