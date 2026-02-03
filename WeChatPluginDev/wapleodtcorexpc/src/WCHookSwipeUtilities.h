@@ -3,11 +3,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // 滑动方向
+#ifndef WCHookSwipeDirection_ENUM_DEFINED
+#define WCHookSwipeDirection_ENUM_DEFINED
 typedef NS_ENUM(NSInteger, WCHookSwipeDirection) {
     WCHookSwipeDirectionLeft,   // 左滑
     WCHookSwipeDirectionRight,  // 右滑
     WCHookSwipeDirectionNone    // 无效
 };
+#endif
 
 @class CommonMessageCellView;
 

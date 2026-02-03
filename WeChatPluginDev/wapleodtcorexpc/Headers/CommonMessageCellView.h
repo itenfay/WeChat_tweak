@@ -3,7 +3,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-#import "WCHookSwipeUtilities.h"
+#import <Foundation/Foundation.h>
+
+#ifndef WCHookSwipeDirection_ENUM_DEFINED
+#define WCHookSwipeDirection_ENUM_DEFINED
+typedef NS_ENUM(NSInteger, WCHookSwipeDirection) {
+    WCHookSwipeDirectionLeft,
+    WCHookSwipeDirectionRight,
+    WCHookSwipeDirectionNone
+};
+#endif
 
 @class AppMessageBlockButton, CADisplayLink, CMessageWrap, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIImpactFeedbackGenerator, UIView, UIVisualEffectView, YYAsyncImageView;
 
