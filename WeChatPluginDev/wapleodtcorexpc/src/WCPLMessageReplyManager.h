@@ -47,4 +47,7 @@ static const NSInteger kWCPLRepeatButtonTag = 10087;
 // 处理图片消息复读（返回执行日志）
 - (NSString *)handleRepeatImageMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController;
 
+// 处理语音消息复读（返回执行日志）
+- (NSString *)handleRepeatVoiceMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController;
+
 @end

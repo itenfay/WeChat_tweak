@@ -112,7 +112,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
-                                                                           version:@"1.8.11"
+                                                                           version:@"1.8.13"
                                                                         controller:@"WCPLSettingViewController"];
         didRegisterWCPLPlugin = YES;
         NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
@@ -645,6 +645,36 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
 %end
 
+// Hook 语音消息 Cell
+%hook VoiceMessageCellView
+
+- (void)layoutSubviews {
+    %orig;
+
+    // 添加复读按钮
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+}
+
+- (void)prepareForReuse {
+    %orig;
+
+    // Cell 复用时移除按钮
+    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
+}
+
+- (void)didMoveToWindow {
+    %orig;
+
+    // 语音消息支持手势
+    if (self.window) {
+        [self wchook_setupSwipeGestureIfNeeded];
+    } else {
+        [self wchook_resetSwipeAnimated:NO];
+    }
+}
+
+%end
+
 // Hook 图片消息 Cell（已禁用复读功能,仅保留结构以供将来扩展）
 %hook ImageMessageCellView
 
@@ -707,6 +737,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         [className isEqualToString:@"AppMessageCellView"] ||
         [className isEqualToString:@"AppEmoticonMessageCellView"] ||
         [className isEqualToString:@"EmoticonMessageCellView"] ||
+        [className isEqualToString:@"VoiceMessageCellView"] ||
         [className isEqualToString:@"ImageMessageCellView"] ||
         [className isEqualToString:@"VideoMessageCellView"]) {
         // 已经在各自的 hook 中处理
@@ -1067,6 +1098,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     // 处理表情包消息（类型47）
     if (msgType == 47) {
         [[WCPLMessageReplyManager sharedManager] handleRepeatEmoticonMessage:msgWrap viewController:chatVC];
+        return;
+    }
+
+    // 处理语音消息（类型34）
+    if (msgType == 34) {
+        [[WCPLMessageReplyManager sharedManager] handleRepeatVoiceMessage:msgWrap viewController:chatVC];
         return;
     }
 

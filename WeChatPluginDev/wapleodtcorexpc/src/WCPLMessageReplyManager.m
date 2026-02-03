@@ -19,7 +19,111 @@
 static char kRepeatContentKey;
 static char kRepeatMsgWrapKey;
 static char kRepeatButtonForCellKey;
+static char kRepeatMessageKey;
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
+
+typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
+    WCPLRepeatMessageKindText,
+    WCPLRepeatMessageKindEmoticon,
+    WCPLRepeatMessageKindImage,
+};
+
+@interface WCPLRepeatSendContext : NSObject
+@property (nonatomic, assign) WCPLRepeatMessageKind kind;
+@property (nonatomic, strong) BaseMsgContentViewController *viewController;
+@property (nonatomic, strong) CMessageWrap *msgWrap;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString *toUserName;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSData *imageData;
+@property (nonatomic, copy) NSString *imagePath;
+@property (nonatomic, copy) NSString *emoticonMD5;
+@property (nonatomic, copy) NSString *emoticonContent;
+@end
+
+@implementation WCPLRepeatSendContext
+@end
+
+typedef BOOL (^WCPLSendStrategyBlock)(void);
+
+static WCPLSendStrategyBlock WCPLSendStrategy(WCPLSendStrategyBlock block) {
+    if (!block) {
+        return ^BOOL { return NO; };
+    }
+    return [block copy];
+}
+
+static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGroups(void) {
+    static NSDictionary<NSString *, NSArray<NSString *> *> *groups = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        groups = @{
+            @"image": @[
+                @"sendImage:",
+                @"SendImage:",
+                @"sendImageWithImage:",
+                @"SendImageWithImage:",
+                @"sendPic:",
+                @"SendPic:",
+                @"sendPicture:",
+                @"SendPicture:"
+            ],
+            @"data": @[
+                @"sendImageData:",
+                @"SendImageData:",
+                @"sendImageWithData:",
+                @"SendImageWithData:"
+            ],
+            @"path": @[
+                @"sendImagePath:",
+                @"SendImagePath:",
+                @"sendImageAtPath:",
+                @"SendImageAtPath:",
+                @"sendImageWithPath:",
+                @"SendImageWithPath:",
+                @"sendPicPath:",
+                @"SendPicPath:",
+                @"sendPicturePath:",
+                @"SendPicturePath:"
+            ],
+            @"imageToUser": @[
+                @"sendImage:toUser:",
+                @"SendImage:toUser:",
+                @"sendImage:toUsr:",
+                @"SendImage:toUsr:",
+                @"sendPic:toUser:",
+                @"SendPic:toUser:",
+                @"sendPicture:toUser:",
+                @"SendPicture:toUser:"
+            ],
+            @"dataToUser": @[
+                @"sendImageData:toUser:",
+                @"SendImageData:toUser:",
+                @"sendImageWithData:toUser:",
+                @"SendImageWithData:toUser:"
+            ],
+            @"pathToUser": @[
+                @"sendImagePath:toUser:",
+                @"SendImagePath:toUser:",
+                @"sendImageAtPath:toUser:",
+                @"SendImageAtPath:toUser:",
+                @"sendImageWithPath:toUser:",
+                @"SendImageWithPath:toUser:",
+                @"sendPicPath:toUser:",
+                @"SendPicPath:toUser:",
+                @"sendPicturePath:toUser:",
+                @"SendPicturePath:toUser:"
+            ],
+            @"imageDataInfo": @[
+                @"SendImageMessage:withData:ImageInfo:",
+                @"sendImageMessage:withData:ImageInfo:",
+                @"SendImageMessage:withData:imageInfo:",
+                @"sendImageMessage:withData:imageInfo:"
+            ]
+        };
+    });
+    return groups;
+}
 
 @implementation WCPLMessageReplyManager
 
@@ -91,18 +195,235 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     }
 }
 
+- (long long)wcpl_messageServerId:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return 0;
+
+    long long serverId = 0;
+    @try {
+        id value = [msgWrap valueForKey:@"m_n64MesSvrID"];
+        if ([value respondsToSelector:@selector(longLongValue)]) {
+            serverId = [value longLongValue];
+        }
+    }
+    @catch (__unused NSException *exception) {
+        serverId = 0;
+    }
+    return serverId;
+}
+
+- (NSString *)wcpl_messageKeyForMessageWrap:(CMessageWrap *)msgWrap content:(NSString *)content {
+    if (!msgWrap) return nil;
+
+    long long serverId = [self wcpl_messageServerId:msgWrap];
+    if (serverId > 0) {
+        return [NSString stringWithFormat:@"svr:%lld", serverId];
+    }
+
+    unsigned int localId = msgWrap.m_uiMesLocalID;
+    if (localId > 0) {
+        return [NSString stringWithFormat:@"local:%u", localId];
+    }
+
+    NSString *fromUser = msgWrap.m_nsFromUsr ?: @"";
+    NSString *toUser = msgWrap.m_nsToUsr ?: @"";
+    NSString *realUser = msgWrap.m_nsRealChatUsr ?: @"";
+    unsigned int createTime = msgWrap.m_uiCreateTime;
+    unsigned int msgType = msgWrap.m_uiMessageType;
+    NSString *seed = content ?: msgWrap.m_nsContent ?: msgWrap.m_nsMsgSource ?: @"";
+    NSUInteger seedHash = seed.hash;
+
+    return [NSString stringWithFormat:@"f:%@|t:%@|r:%@|ct:%u|type:%u|h:%lu",
+            fromUser, toUser, realUser, createTime, msgType, (unsigned long)seedHash];
+}
+
+- (BOOL)wcpl_safeInvokeVoidSelector:(SEL)selector onObject:(id)obj arguments:(NSArray<id> *)arguments {
+    @try {
+        if (!obj || !selector || ![obj respondsToSelector:selector]) return NO;
+
+        NSMethodSignature *signature = [obj methodSignatureForSelector:selector];
+        if (!signature) return NO;
+
+        NSUInteger expectedCount = signature.numberOfArguments > 2 ? (signature.numberOfArguments - 2) : 0;
+        if (arguments.count != expectedCount) return NO;
+
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:obj];
+        [invocation setSelector:selector];
+
+        for (NSUInteger idx = 0; idx < arguments.count; idx++) {
+            id arg = arguments[idx];
+            if (arg == (id)[NSNull null]) arg = nil;
+            [invocation setArgument:&arg atIndex:idx + 2];
+        }
+
+        [invocation invoke];
+        return YES;
+    }
+    @catch (__unused NSException *exception) {
+        return NO;
+    }
+}
+
+- (id)wcpl_safeInvokeObjectSelector:(SEL)selector onObject:(id)obj arguments:(NSArray<id> *)arguments {
+    @try {
+        if (!obj || !selector || ![obj respondsToSelector:selector]) return nil;
+
+        NSMethodSignature *signature = [obj methodSignatureForSelector:selector];
+        if (!signature) return nil;
+
+        NSUInteger expectedCount = signature.numberOfArguments > 2 ? (signature.numberOfArguments - 2) : 0;
+        if (arguments.count != expectedCount) return nil;
+
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:obj];
+        [invocation setSelector:selector];
+
+        for (NSUInteger idx = 0; idx < arguments.count; idx++) {
+            id arg = arguments[idx];
+            if (arg == (id)[NSNull null]) arg = nil;
+            [invocation setArgument:&arg atIndex:idx + 2];
+        }
+
+        [invocation invoke];
+
+        const char *returnType = signature.methodReturnType;
+        if (strcmp(returnType, @encode(void)) == 0) {
+            return nil;
+        }
+        if (returnType[0] == '@') {
+            __unsafe_unretained id result = nil;
+            [invocation getReturnValue:&result];
+            return result;
+        }
+        return nil;
+    }
+    @catch (__unused NSException *exception) {
+        return nil;
+    }
+}
+
+- (BOOL)wcpl_safeInvokeBoolSelector:(SEL)selector onObject:(id)obj arguments:(NSArray<id> *)arguments defaultValue:(BOOL)defaultValue {
+    @try {
+        if (!obj || !selector || ![obj respondsToSelector:selector]) return defaultValue;
+
+        NSMethodSignature *signature = [obj methodSignatureForSelector:selector];
+        if (!signature) return defaultValue;
+
+        NSUInteger expectedCount = signature.numberOfArguments > 2 ? (signature.numberOfArguments - 2) : 0;
+        if (arguments.count != expectedCount) return defaultValue;
+
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:obj];
+        [invocation setSelector:selector];
+
+        for (NSUInteger idx = 0; idx < arguments.count; idx++) {
+            id arg = arguments[idx];
+            if (arg == (id)[NSNull null]) arg = nil;
+            [invocation setArgument:&arg atIndex:idx + 2];
+        }
+
+        [invocation invoke];
+
+        const char *returnType = signature.methodReturnType;
+        if (returnType[0] == '@') {
+            __unsafe_unretained id result = nil;
+            [invocation getReturnValue:&result];
+            if ([result respondsToSelector:@selector(boolValue)]) {
+                return [result boolValue];
+            }
+            return defaultValue;
+        }
+
+        if (strcmp(returnType, @encode(BOOL)) == 0 || strcmp(returnType, "B") == 0) {
+            BOOL value = defaultValue;
+            [invocation getReturnValue:&value];
+            return value;
+        }
+        if (strcmp(returnType, @encode(char)) == 0 || strcmp(returnType, @encode(unsigned char)) == 0) {
+            unsigned char value = 0;
+            [invocation getReturnValue:&value];
+            return value != 0;
+        }
+        if (strcmp(returnType, @encode(int)) == 0 || strcmp(returnType, @encode(unsigned int)) == 0) {
+            unsigned int value = 0;
+            [invocation getReturnValue:&value];
+            return value != 0;
+        }
+
+        return defaultValue;
+    }
+    @catch (__unused NSException *exception) {
+        return defaultValue;
+    }
+}
+
+- (BOOL)wcpl_tryInvokeSelectorNames:(NSArray<NSString *> *)selectors
+                           onObject:(id)target
+                          arguments:(NSArray<id> *)arguments
+                            execLog:(NSMutableString *)execLog
+                               name:(NSString *)name {
+    if (!target || selectors.count == 0) return NO;
+
+    for (NSString *selectorName in selectors) {
+        SEL selector = NSSelectorFromString(selectorName);
+        if ([self wcpl_safeInvokeVoidSelector:selector onObject:target arguments:arguments]) {
+            if (execLog) {
+                [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
+            }
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
+- (BOOL)wcpl_executeSendStrategies:(NSArray<WCPLSendStrategyBlock> *)strategies
+                           execLog:(NSMutableString *)execLog {
+    (void)execLog;
+    if (strategies.count == 0) return NO;
+
+    for (WCPLSendStrategyBlock block in strategies) {
+        if (block && block()) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)wcpl_sendRepeatMessageWithContext:(WCPLRepeatSendContext *)context
+                                 execLog:(NSMutableString *)execLog {
+    if (!context || !context.viewController) return NO;
+
+    switch (context.kind) {
+        case WCPLRepeatMessageKindText:
+            return [self wcpl_sendTextWithContext:context execLog:execLog];
+        case WCPLRepeatMessageKindEmoticon:
+            return [self wcpl_sendEmoticonWithContext:context execLog:execLog];
+        case WCPLRepeatMessageKindImage:
+            return [self wcpl_sendImageWithContext:context execLog:execLog];
+    }
+    return NO;
+}
+
+- (BOOL)wcpl_sendTextWithContext:(WCPLRepeatSendContext *)context
+                         execLog:(NSMutableString *)execLog {
+    if (context.content.length == 0) return NO;
+    [self sendMessageViaInputToolView:context.content
+                       viewController:context.viewController
+                              msgWrap:context.msgWrap];
+    if (execLog) {
+        [execLog appendString:@"✅ 文本发送已触发\n"];
+    }
+    return YES;
+}
+
 // 安全获取服务中心（兼容不同版本的单例入口）
 - (id)wcpl_trySingletonFromClass:(Class)cls selectors:(NSArray<NSString *> *)selectorNames {
     if (!cls || selectorNames.count == 0) return nil;
     for (NSString *name in selectorNames) {
         SEL selector = NSSelectorFromString(name);
-        if (selector && [(id)cls respondsToSelector:selector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            id instance = [(id)cls performSelector:selector];
-#pragma clang diagnostic pop
-            if (instance) return instance;
-        }
+        id instance = [self wcpl_safeInvokeObjectSelector:selector onObject:cls arguments:nil];
+        if (instance) return instance;
     }
     return nil;
 }
@@ -165,15 +486,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     // 尝试从 UIApplication delegate 获取
     Class uiAppClass = objc_getClass("UIApplication");
     if (uiAppClass && [uiAppClass respondsToSelector:@selector(sharedApplication)]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        id application = [uiAppClass performSelector:@selector(sharedApplication)];
-#pragma clang diagnostic pop
-        if (application && [application respondsToSelector:@selector(delegate)]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            id delegate = [application performSelector:@selector(delegate)];
-#pragma clang diagnostic pop
+        id application = [self wcpl_safeInvokeObjectSelector:@selector(sharedApplication) onObject:uiAppClass arguments:nil];
+        if (application) {
+            id delegate = [self wcpl_safeInvokeObjectSelector:@selector(delegate) onObject:application arguments:nil];
             center = [self wcpl_serviceCenterFromObject:delegate];
             if (center) return center;
         }
@@ -207,13 +522,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         if (!obj || selectorName.length == 0) return nil;
 
         SEL selector = NSSelectorFromString(selectorName);
-        if (!selector || ![obj respondsToSelector:selector]) return nil;
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        id value = [obj performSelector:selector];
-#pragma clang diagnostic pop
-
+        id value = [self wcpl_safeInvokeObjectSelector:selector onObject:obj arguments:nil];
         return [value isKindOfClass:[NSString class]] ? (NSString *)value : nil;
     }
     @catch (__unused NSException *exception) {
@@ -226,12 +535,8 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         if (!obj || selectorName.length == 0) return;
 
         SEL selector = NSSelectorFromString(selectorName);
-        if (!selector || ![obj respondsToSelector:selector]) return;
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [obj performSelector:selector withObject:value];
-#pragma clang diagnostic pop
+        NSArray<id> *arguments = value ? @[value] : @[[NSNull null]];
+        [self wcpl_safeInvokeVoidSelector:selector onObject:obj arguments:arguments];
     }
     @catch (__unused NSException *exception) {
         return;
@@ -264,14 +569,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 - (id)wcpl_inputToolViewFromViewController:(BaseMsgContentViewController *)viewController {
     if (!viewController) return nil;
 
-    id toolView = nil;
-    @try {
-        if ([viewController respondsToSelector:@selector(toolView)]) {
-            toolView = [viewController performSelector:@selector(toolView)];
-        }
-    }
-    @catch (__unused NSException *exception) {
-    }
+    id toolView = [self wcpl_safeInvokeObjectSelector:@selector(toolView) onObject:viewController arguments:nil];
 
     if (!toolView) {
         @try {
@@ -366,54 +664,6 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     return nil;
 }
 
-- (BOOL)wcpl_tryInvokeSelector:(SEL)selector onObject:(id)obj argument:(id)argument {
-    @try {
-        if (!obj || !selector || ![obj respondsToSelector:selector]) return NO;
-
-        NSMethodSignature *signature = [obj methodSignatureForSelector:selector];
-        if (!signature) return NO;
-
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-        [invocation setTarget:obj];
-        [invocation setSelector:selector];
-        if (signature.numberOfArguments > 2) {
-            id arg = argument;
-            [invocation setArgument:&arg atIndex:2];
-        }
-        [invocation invoke];
-        return YES;
-    }
-    @catch (__unused NSException *exception) {
-        return NO;
-    }
-}
-
-- (BOOL)wcpl_tryInvokeSelector:(SEL)selector onObject:(id)obj argument:(id)argument argument2:(id)argument2 {
-    @try {
-        if (!obj || !selector || ![obj respondsToSelector:selector]) return NO;
-
-        NSMethodSignature *signature = [obj methodSignatureForSelector:selector];
-        if (!signature) return NO;
-
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-        [invocation setTarget:obj];
-        [invocation setSelector:selector];
-        if (signature.numberOfArguments > 2) {
-            id arg = argument;
-            [invocation setArgument:&arg atIndex:2];
-        }
-        if (signature.numberOfArguments > 3) {
-            id arg2 = argument2;
-            [invocation setArgument:&arg2 atIndex:3];
-        }
-        [invocation invoke];
-        return YES;
-    }
-    @catch (__unused NSException *exception) {
-        return NO;
-    }
-}
-
 - (BOOL)wcpl_trySendImageWithTarget:(id)target
                                name:(NSString *)name
                               image:(UIImage *)image
@@ -423,165 +673,82 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                             execLog:(NSMutableString *)execLog {
     if (!target) return NO;
 
-    NSArray<NSString *> *imageSelectors = @[
-        @"sendImage:",
-        @"SendImage:",
-        @"sendImageWithImage:",
-        @"SendImageWithImage:",
-        @"sendPic:",
-        @"SendPic:",
-        @"sendPicture:",
-        @"SendPicture:"
-    ];
+    NSDictionary<NSString *, NSArray<NSString *> *> *groups = WCPLImageSendSelectorGroups();
+    NSString *targetName = name ?: @"target";
 
-    NSArray<NSString *> *dataSelectors = @[
-        @"sendImageData:",
-        @"SendImageData:",
-        @"sendImageWithData:",
-        @"SendImageWithData:"
-    ];
-
-    NSArray<NSString *> *pathSelectors = @[
-        @"sendImagePath:",
-        @"SendImagePath:",
-        @"sendImageAtPath:",
-        @"SendImageAtPath:",
-        @"sendImageWithPath:",
-        @"SendImageWithPath:",
-        @"sendPicPath:",
-        @"SendPicPath:",
-        @"sendPicturePath:",
-        @"SendPicturePath:"
-    ];
-
-    NSArray<NSString *> *imageToUserSelectors = @[
-        @"sendImage:toUser:",
-        @"SendImage:toUser:",
-        @"sendImage:toUsr:",
-        @"SendImage:toUsr:",
-        @"sendPic:toUser:",
-        @"SendPic:toUser:",
-        @"sendPicture:toUser:",
-        @"SendPicture:toUser:"
-    ];
-
-    NSArray<NSString *> *dataToUserSelectors = @[
-        @"sendImageData:toUser:",
-        @"SendImageData:toUser:",
-        @"sendImageWithData:toUser:",
-        @"SendImageWithData:toUser:"
-    ];
-
-    NSArray<NSString *> *pathToUserSelectors = @[
-        @"sendImagePath:toUser:",
-        @"SendImagePath:toUser:",
-        @"sendImageAtPath:toUser:",
-        @"SendImageAtPath:toUser:",
-        @"sendImageWithPath:toUser:",
-        @"SendImageWithPath:toUser:",
-        @"sendPicPath:toUser:",
-        @"SendPicPath:toUser:",
-        @"sendPicturePath:toUser:",
-        @"SendPicturePath:toUser:"
-    ];
-
-    // 微信官方 API: SendImageMessage:withData:ImageInfo:
-    NSArray<NSString *> *imageDataInfoSelectors = @[
-        @"SendImageMessage:withData:ImageInfo:",
-        @"sendImageMessage:withData:ImageInfo:",
-        @"SendImageMessage:withData:imageInfo:",
-        @"sendImageMessage:withData:imageInfo:"
-    ];
-
-    for (NSString *selectorName in imageSelectors) {
-        if (!image) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([self wcpl_tryInvokeSelector:selector onObject:target argument:image]) {
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
+    if (image && [self wcpl_tryInvokeSelectorNames:groups[@"image"]
+                                          onObject:target
+                                         arguments:@[image]
+                                           execLog:execLog
+                                              name:targetName]) {
+        return YES;
     }
 
-    for (NSString *selectorName in dataSelectors) {
-        if (!imageData || imageData.length == 0) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([self wcpl_tryInvokeSelector:selector onObject:target argument:imageData]) {
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
+    if (imageData.length > 0 &&
+        [self wcpl_tryInvokeSelectorNames:groups[@"data"]
+                                 onObject:target
+                                arguments:@[imageData]
+                                  execLog:execLog
+                                     name:targetName]) {
+        return YES;
     }
 
-    for (NSString *selectorName in pathSelectors) {
-        if (imagePath.length == 0) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([self wcpl_tryInvokeSelector:selector onObject:target argument:imagePath]) {
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
+    if (imagePath.length > 0 &&
+        [self wcpl_tryInvokeSelectorNames:groups[@"path"]
+                                 onObject:target
+                                arguments:@[imagePath]
+                                  execLog:execLog
+                                     name:targetName]) {
+        return YES;
     }
 
     if (toUser.length == 0) return NO;
 
-    for (NSString *selectorName in imageToUserSelectors) {
-        if (!image) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([self wcpl_tryInvokeSelector:selector onObject:target argument:image argument2:toUser]) {
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
+    if (image && [self wcpl_tryInvokeSelectorNames:groups[@"imageToUser"]
+                                          onObject:target
+                                         arguments:@[image, toUser]
+                                           execLog:execLog
+                                              name:targetName]) {
+        return YES;
     }
 
-    for (NSString *selectorName in dataToUserSelectors) {
-        if (!imageData || imageData.length == 0) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([self wcpl_tryInvokeSelector:selector onObject:target argument:imageData argument2:toUser]) {
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
+    if (imageData.length > 0 &&
+        [self wcpl_tryInvokeSelectorNames:groups[@"dataToUser"]
+                                 onObject:target
+                                arguments:@[imageData, toUser]
+                                  execLog:execLog
+                                     name:targetName]) {
+        return YES;
     }
 
-    for (NSString *selectorName in pathToUserSelectors) {
-        if (imagePath.length == 0) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([self wcpl_tryInvokeSelector:selector onObject:target argument:imagePath argument2:toUser]) {
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
+    if (imagePath.length > 0 &&
+        [self wcpl_tryInvokeSelectorNames:groups[@"pathToUser"]
+                                 onObject:target
+                                arguments:@[imagePath, toUser]
+                                  execLog:execLog
+                                     name:targetName]) {
+        return YES;
     }
 
-    // 尝试微信官方 API: SendImageMessage:withData:ImageInfo:
-    for (NSString *selectorName in imageDataInfoSelectors) {
-        if (!image && !imageData) break;
-        SEL selector = NSSelectorFromString(selectorName);
-        if (![target respondsToSelector:selector]) continue;
+    if (!image && imageData.length == 0) return NO;
 
-        @try {
-            NSMethodSignature *signature = [target methodSignatureForSelector:selector];
-            if (!signature || signature.numberOfArguments < 5) continue;
+    NSData *payload = imageData;
+    if (!payload && image) {
+        payload = UIImageJPEGRepresentation(image, 0.8);
+    }
 
-            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-            [invocation setTarget:target];
-            [invocation setSelector:selector];
+    NSArray<id> *args = @[
+        image ?: (id)[NSNull null],
+        payload ?: (id)[NSNull null],
+        [NSNull null]
+    ];
 
-            // 参数1: UIImage
-            id arg1 = image;
-            [invocation setArgument:&arg1 atIndex:2];
-
-            // 参数2: NSData
-            id arg2 = imageData ?: UIImageJPEGRepresentation(image, 0.8);
-            [invocation setArgument:&arg2 atIndex:3];
-
-            // 参数3: ImageInfo (可以传 nil)
-            id arg3 = nil;
-            [invocation setArgument:&arg3 atIndex:4];
-
-            [invocation invoke];
-            [execLog appendFormat:@"✅ %@ 调用 %@\n", name ?: @"target", selectorName];
-            return YES;
-        }
-        @catch (NSException *exception) {
-            [execLog appendFormat:@"✗ %@ 调用 %@ 异常: %@\n", name ?: @"target", selectorName, exception.reason];
-        }
+    if ([self wcpl_tryInvokeSelectorNames:groups[@"imageDataInfo"]
+                                  onObject:target
+                                 arguments:args
+                                   execLog:execLog
+                                      name:targetName]) {
+        return YES;
     }
 
     return NO;
@@ -592,9 +759,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         id contactMgr = [self wcpl_getService:objc_getClass("CContactMgr")];
         if (!contactMgr) return nil;
 
-        if (![contactMgr respondsToSelector:@selector(getSelfContact)]) return nil;
-
-        CContact *selfContact = [contactMgr performSelector:@selector(getSelfContact)];
+        CContact *selfContact = [self wcpl_safeInvokeObjectSelector:@selector(getSelfContact) onObject:contactMgr arguments:nil];
         NSString *selfUserName = [selfContact isKindOfClass:objc_getClass("CContact")] ? selfContact.m_nsUsrName : nil;
         return selfUserName.length > 0 ? selfUserName : nil;
     }
@@ -650,143 +815,91 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
         if (!containerView) return;
 
-        UIButton *associatedButton = objc_getAssociatedObject(cell, &kRepeatButtonForCellKey);
-
-        // 检查功能是否启用
-        if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
+        UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
+        NSString *associatedMessageKey = cell ? objc_getAssociatedObject(cell, &kRepeatMessageKey) : nil;
+        void (^cleanupButtons)(void) = ^{
             if (associatedButton) {
                 [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                if (cell) {
+                    objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                    objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                }
             }
             [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
             [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+        };
+
+        // 检查功能是否启用
+        if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
+            cleanupButtons();
             return;
         }
 
         // 安全获取 ViewModel
-        id viewModel = nil;
-        if ([cellView respondsToSelector:@selector(viewModel)]) {
-            viewModel = [cellView performSelector:@selector(viewModel)];
-        }
+        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
         if (!viewModel) {
-            if (associatedButton) {
-                [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+            cleanupButtons();
             return;
         }
 
         // 安全获取 MessageWrap
-        CMessageWrap *msgWrap = nil;
-        if ([viewModel respondsToSelector:@selector(messageWrap)]) {
-            msgWrap = [viewModel performSelector:@selector(messageWrap)];
-        }
+        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
         if (!msgWrap) {
-            if (associatedButton) {
-                [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+            cleanupButtons();
             return;
         }
 
         // 检查是否可以复读
         if (![self canRepeatMessage:msgWrap]) {
-            if (associatedButton) {
-                [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+            cleanupButtons();
             return;
         }
-
-        // 获取消息唯一标识（用于防止重复添加按钮）
-        unsigned int msgLocalID = msgWrap.m_uiMesLocalID;
 
         // 计算内容（用于更新现有按钮的关联对象）
         NSString *content = nil;
         unsigned int msgType = msgWrap.m_uiMessageType;
         BOOL isEmoticonMessage = (msgType == 47);
         BOOL isImageMessage = (msgType == 3);
-        if (!isEmoticonMessage && !isImageMessage) {
+        BOOL isVoiceMessage = (msgType == 34);
+        if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
             // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
-            if ([viewModel respondsToSelector:@selector(contentText)]) {
-                content = [viewModel performSelector:@selector(contentText)];
+            id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
+            if ([contentText isKindOfClass:[NSString class]]) {
+                content = (NSString *)contentText;
             }
             // 如果 contentText 为空，回退到 msgWrap.m_nsContent
             if (!content || content.length == 0) {
                 content = [self getMessageContent:msgWrap];
             }
             if (!content || content.length == 0) {
-                if (associatedButton) {
-                    [associatedButton removeFromSuperview];
-                    objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                }
-                [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-                [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+                cleanupButtons();
                 return;
             }
+        }
+
+        NSString *messageKey = [self wcpl_messageKeyForMessageWrap:msgWrap content:content];
+        if (!messageKey) {
+            cleanupButtons();
+            return;
         }
 
         // 优先复用已关联的按钮，避免长文本/多次布局导致重复按钮残留
         UIButton *existingButton = nil;
         if (associatedButton && [self wcpl_isRepeatButtonView:associatedButton]) {
-            CMessageWrap *associatedMsgWrap = objc_getAssociatedObject(associatedButton, &kRepeatMsgWrapKey);
-            BOOL isSameMessage = (associatedMsgWrap && associatedMsgWrap.m_uiMesLocalID == msgLocalID);
+            NSString *buttonKey = objc_getAssociatedObject(associatedButton, &kRepeatMessageKey);
+            BOOL isSameMessage = (associatedMessageKey && [associatedMessageKey isEqualToString:messageKey]) ||
+                                 (buttonKey && [buttonKey isEqualToString:messageKey]);
             if (isSameMessage) {
                 existingButton = associatedButton;
                 if (existingButton.superview != containerView) {
                     [existingButton removeFromSuperview];
                     [containerView addSubview:existingButton];
                 }
-            } else if (associatedMsgWrap) {
+            } else {
                 [associatedButton removeFromSuperview];
                 objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
-        }
-
-        // 检查是否已经存在相同消息的按钮
-        NSMutableArray<UIButton *> *repeatButtons = [NSMutableArray array];
-        if (containerView) {
-            NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:containerView];
-            while (stack.count > 0) {
-                UIView *current = stack.lastObject;
-                [stack removeLastObject];
-
-                for (UIView *subview in current.subviews) {
-                    if ([self wcpl_isRepeatButtonView:subview]) {
-                        [repeatButtons addObject:(UIButton *)subview];
-                        continue;
-                    }
-
-                    if (subview.subviews.count > 0) {
-                        [stack addObject:subview];
-                    }
-                }
-            }
-        }
-
-        NSMutableArray<UIButton *> *buttonsToRemove = [NSMutableArray array];
-        for (UIButton *button in repeatButtons) {
-            if (existingButton && button == existingButton) {
-                continue;
-            }
-            CMessageWrap *existingMsgWrap = objc_getAssociatedObject(button, &kRepeatMsgWrapKey);
-            BOOL isSameMessage = (existingMsgWrap && existingMsgWrap.m_uiMesLocalID == msgLocalID);
-
-            if (!existingButton && isSameMessage) {
-                existingButton = button;
-            } else {
-                [buttonsToRemove addObject:button];
-            }
-        }
-
-        for (UIButton *button in buttonsToRemove) {
-            [button removeFromSuperview];
         }
 
         if (existingButton) {
@@ -796,10 +909,12 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             }
 
             objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, existingButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            objc_setAssociatedObject(cell, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
             // 更新关联对象，避免引用回复/渲染更新导致内容不同步
             objc_setAssociatedObject(existingButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
             objc_setAssociatedObject(existingButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            objc_setAssociatedObject(existingButton, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
             [self layoutRepeatButton:existingButton inCellView:cellView];
             existingButton.hidden = NO;
@@ -816,10 +931,12 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         [containerView addSubview:repeatButton];
 
         objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(cell, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
         // 关联消息内容和 msgWrap
         objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
         objc_setAssociatedObject(repeatButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(repeatButton, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
         // 定位按钮到消息气泡旁边
         [self layoutRepeatButton:repeatButton inCellView:cellView];
@@ -842,6 +959,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             [associatedButton removeFromSuperview];
             if (cell) {
                 objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
         }
 
@@ -871,7 +989,12 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         NSLog(@"[WCPL] Repeating message: %@", content);
 
         // 发送消息
-        [self sendMessageViaInputToolView:content viewController:viewController msgWrap:msgWrap];
+        WCPLRepeatSendContext *context = [WCPLRepeatSendContext new];
+        context.kind = WCPLRepeatMessageKindText;
+        context.viewController = viewController;
+        context.msgWrap = msgWrap;
+        context.content = content;
+        [self wcpl_sendRepeatMessageWithContext:context execLog:nil];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in handleRepeatButtonTapWithContent: %@", exception);
@@ -888,8 +1011,8 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         // 49 = 应用消息（包括引用回复）
         unsigned int msgType = msgWrap.m_uiMessageType;
 
-        // 支持文本消息、表情包消息和引用回复消息
-        if (msgType != 1 && msgType != 47 && msgType != 49) {
+        // 支持文本消息、表情包消息、语音消息和引用回复消息
+        if (msgType != 1 && msgType != 47 && msgType != 49 && msgType != 34) {
             return NO;
         }
 
@@ -902,6 +1025,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 表情包消息不检查文本内容，直接允许复读
         if (msgType == 47) {
+            return YES;
+        }
+
+        // 语音消息不检查文本内容，直接允许复读
+        if (msgType == 34) {
             return YES;
         }
 
@@ -949,16 +1077,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 优先使用 CMessageWrap 判断是否为自己发送（更稳定，避免依赖 ServiceCenter）
         Class msgWrapClass = objc_getClass("CMessageWrap");
-        if (msgWrapClass && [msgWrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
-            BOOL isSender = NO;
-            @try {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                isSender = (BOOL)[msgWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
-#pragma clang diagnostic pop
-            } @catch (__unused NSException *exception) {
-                isSender = NO;
-            }
+        if (msgWrapClass) {
+            BOOL isSender = [self wcpl_safeInvokeBoolSelector:@selector(isSenderFromMsgWrap:)
+                                                     onObject:msgWrapClass
+                                                    arguments:@[msgWrap]
+                                                 defaultValue:NO];
             return !isSender;
         }
 
@@ -1222,15 +1345,8 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         UIView *containerView = button.superview ?: cellView;
 
         // 获取 ViewModel 和 MessageWrap 来判断消息方向
-        id viewModel = nil;
-        if ([cellView respondsToSelector:@selector(viewModel)]) {
-            viewModel = [cellView performSelector:@selector(viewModel)];
-        }
-
-        CMessageWrap *msgWrap = nil;
-        if (viewModel && [viewModel respondsToSelector:@selector(messageWrap)]) {
-            msgWrap = [viewModel performSelector:@selector(messageWrap)];
-        }
+        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
+        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
 
         if (!msgWrap) {
             button.hidden = YES;
@@ -1270,62 +1386,6 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
         button.hidden = YES;
-    }
-}
-
-// 查找 m_richTextView（回复文本视图）
-- (UIView *)findRichTextViewInCellView:(CommonMessageCellView *)cellView {
-    @try {
-        // 尝试通过 KVC 获取 m_richTextView
-        @try {
-            UIView *richTextView = [cellView valueForKey:@"m_richTextView"];
-            if (richTextView && !richTextView.hidden && richTextView.frame.size.width > 0) {
-                return richTextView;
-            }
-        }
-        @catch (NSException *e) {
-            // 忽略 KVC 异常
-        }
-
-        // 遍历子视图查找 RichTextView（不是 MMInputMsgReferView 里的）
-        return [self findMainRichTextViewInView:cellView excludeReferView:YES];
-    }
-    @catch (NSException *exception) {
-        return nil;
-    }
-}
-
-// 递归查找主要的 RichTextView（排除引用视图内的）
-- (UIView *)findMainRichTextViewInView:(UIView *)view excludeReferView:(BOOL)exclude {
-    @try {
-        for (UIView *subview in view.subviews) {
-            if (subview.hidden) continue;
-            if (subview.tag == kWCPLRepeatButtonTag) continue;
-
-            NSString *className = NSStringFromClass([subview class]);
-
-            // 跳过引用消息视图
-            if (exclude && [className containsString:@"MsgRefer"]) {
-                continue;
-            }
-
-            // 找到 RichTextView
-            if ([className isEqualToString:@"RichTextView"]) {
-                return subview;
-            }
-
-            // 递归查找（但不进入引用视图）
-            if (exclude && [className containsString:@"MsgRefer"]) {
-                continue;
-            }
-
-            UIView *found = [self findMainRichTextViewInView:subview excludeReferView:exclude];
-            if (found) return found;
-        }
-        return nil;
-    }
-    @catch (NSException *exception) {
-        return nil;
     }
 }
 
@@ -1379,55 +1439,6 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     }
 }
 
-- (BOOL)isSelfMessage:(CMessageWrap *)msgWrap {
-    @try {
-        // 优先使用 CMessageWrap 判断是否为自己发送（更稳定，避免依赖 ServiceCenter）
-        Class msgWrapClass = objc_getClass("CMessageWrap");
-        if (msgWrapClass && [msgWrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
-            BOOL isSender = NO;
-            @try {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                isSender = (BOOL)[msgWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
-#pragma clang diagnostic pop
-            } @catch (__unused NSException *exception) {
-                isSender = NO;
-            }
-            return isSender;
-        }
-
-        // 获取当前用户信息
-        id serviceCenter = [self wcpl_getServiceCenter];
-        if (!serviceCenter) return NO;
-
-        id contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
-        if (!contactMgr) return NO;
-
-        CContact *selfContact = [contactMgr performSelector:@selector(getSelfContact)];
-        if (!selfContact) return NO;
-
-        NSString *selfUserName = selfContact.m_nsUsrName;
-        NSString *fromUser = msgWrap.m_nsFromUsr;
-
-        // 直接比较发送者
-        if ([fromUser isEqualToString:selfUserName]) {
-            return YES;
-        }
-
-        // 群聊中检查实际发送者
-        NSString *realChatUser = msgWrap.m_nsRealChatUsr;
-        if (realChatUser && [realChatUser isEqualToString:selfUserName]) {
-            return YES;
-        }
-
-        return NO;
-    }
-    @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in isSelfMessage: %@", exception);
-        return NO;
-    }
-}
-
 - (void)sendMessageViaInputToolView:(NSString *)content
                      viewController:(BaseMsgContentViewController *)viewController
                             msgWrap:(CMessageWrap *)originalMsgWrap {
@@ -1447,20 +1458,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                 NSLog(@"[WCPL] Found referred message, trying to send with quote");
 
                 // 获取 inputToolView
-                id toolView = nil;
-                @try {
-                    if ([viewController respondsToSelector:@selector(toolView)]) {
-                        toolView = [viewController performSelector:@selector(toolView)];
-                    }
-                }
-                @catch (NSException *e) {}
-
-                if (!toolView) {
-                    @try {
-                        toolView = [viewController valueForKey:@"m_inputToolView"];
-                    }
-                    @catch (NSException *e) {}
-                }
+                id toolView = [self wcpl_inputToolViewFromViewController:viewController];
 
                 if (toolView) {
                     // 方法1：使用 setReplyingMessage: 设置引用，然后 sendMsgWithText: 发送
@@ -1473,25 +1471,18 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                         [toolView respondsToSelector:sendMsgSel]) {
                         NSLog(@"[WCPL] Using setReplyingMessage: + sendMsgWithText:");
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                         // 设置引用消息
-                        [toolView performSelector:setReplyingMsgSel withObject:referredMsg];
+                        [self wcpl_safeInvokeVoidSelector:setReplyingMsgSel onObject:toolView arguments:@[referredMsg]];
                         // 发送文本
-                        [toolView performSelector:sendMsgSel withObject:content];
+                        [self wcpl_safeInvokeVoidSelector:sendMsgSel onObject:toolView arguments:@[content]];
 
                         // 清除引用状态 - 尝试多种方法
                         // 方法1: 设置 nil
-                        [toolView performSelector:setReplyingMsgSel withObject:nil];
+                        [self wcpl_safeInvokeVoidSelector:setReplyingMsgSel onObject:toolView arguments:@[[NSNull null]]];
                         // 方法2: resetReplyMessage
-                        if ([toolView respondsToSelector:resetReplySel]) {
-                            [toolView performSelector:resetReplySel];
-                        }
+                        [self wcpl_safeInvokeVoidSelector:resetReplySel onObject:toolView arguments:@[]];
                         // 方法3: onClearInputMsgRefer
-                        if ([toolView respondsToSelector:clearReferSel]) {
-                            [toolView performSelector:clearReferSel];
-                        }
-#pragma clang diagnostic pop
+                        [self wcpl_safeInvokeVoidSelector:clearReferSel onObject:toolView arguments:@[]];
                         return;
                     }
 
@@ -1513,19 +1504,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                         [inv invoke];
 
                         // 然后发送文本
-                        if ([toolView respondsToSelector:sendMsgSel]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                            [toolView performSelector:sendMsgSel withObject:content];
+                        if ([self wcpl_safeInvokeVoidSelector:sendMsgSel onObject:toolView arguments:@[content]]) {
                             // 清除引用状态
-                            [toolView performSelector:setReplyingMsgSel withObject:nil];
-                            if ([toolView respondsToSelector:resetReplySel]) {
-                                [toolView performSelector:resetReplySel];
-                            }
-                            if ([toolView respondsToSelector:clearReferSel]) {
-                                [toolView performSelector:clearReferSel];
-                            }
-#pragma clang diagnostic pop
+                            [self wcpl_safeInvokeVoidSelector:setReplyingMsgSel onObject:toolView arguments:@[[NSNull null]]];
+                            [self wcpl_safeInvokeVoidSelector:resetReplySel onObject:toolView arguments:@[]];
+                            [self wcpl_safeInvokeVoidSelector:clearReferSel onObject:toolView arguments:@[]];
                             return;
                         }
                     }
@@ -1556,10 +1539,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                      viewController:(BaseMsgContentViewController *)viewController {
     @try {
         // 获取输入框
-        id toolView = nil;
-        if ([viewController respondsToSelector:@selector(toolView)]) {
-            toolView = [viewController performSelector:@selector(toolView)];
-        }
+        id toolView = [self wcpl_inputToolViewFromViewController:viewController];
 
         if (!toolView) {
             NSLog(@"[WCPL] Could not find input tool view");
@@ -1676,9 +1656,16 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             BOOL isEmoticonMessage = (msgType == 47);
             BOOL isImageMessage = (msgType == 3);
             BOOL isVideoMessage = (msgType == 43 || msgType == 62);
+            BOOL isVoiceMessage = (msgType == 34);
 
             if (isImageMessage || isVideoMessage) {
                 WCPLLog(@"Repeat not supported for image/video message");
+                return;
+            }
+
+            if (isVoiceMessage) {
+                NSString *execLog = [self handleRepeatVoiceMessage:msgWrap viewController:viewController];
+                WCPLLog(@"Voice repeat executed:\n%@", execLog);
                 return;
             }
 
@@ -1709,9 +1696,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
         BOOL isImageMessage = (msgWrap && msgWrap.m_uiMessageType == 3);
         BOOL isVideoMessage = (msgWrap && (msgWrap.m_uiMessageType == 43 || msgWrap.m_uiMessageType == 62));
+        BOOL isVoiceMessage = (msgWrap && msgWrap.m_uiMessageType == 34);
         [debugInfo appendFormat:@"4. 是否表情包: %@\n", isEmoticonMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.1 是否图片: %@\n", isImageMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.2 是否视频: %@\n", isVideoMessage ? @"是" : @"否"];
+        [debugInfo appendFormat:@"4.3 是否语音: %@\n", isVoiceMessage ? @"是" : @"否"];
 
         if (isImageMessage || isVideoMessage) {
             [debugInfo appendString:@"\n❌ 图片/视频消息暂不支持复读"];
@@ -1719,7 +1708,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             return;
         }
 
-        if (!isEmoticonMessage && (!content || content.length == 0)) {
+        if (!isEmoticonMessage && !isVoiceMessage && (!content || content.length == 0)) {
             [debugInfo appendString:@"\n❌ 错误: 非表情包消息且无文本内容"];
             [self showDebugAlert:debugInfo];
             return;
@@ -1761,24 +1750,18 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 检查聊天对象
         NSString *toUserName = nil;
-        if ([viewController respondsToSelector:@selector(GetContact)]) {
-            CContact *contact = [viewController performSelector:@selector(GetContact)];
-            if (contact) {
-                toUserName = contact.m_nsUsrName;
-            }
+        CContact *contact = [self wcpl_safeInvokeObjectSelector:@selector(GetContact) onObject:viewController arguments:nil];
+        if (contact) {
+            toUserName = contact.m_nsUsrName;
         }
         [debugInfo appendFormat:@"8. 聊天对象: %@\n", toUserName ?: @"nil"];
 
         // 检查 logicController
-        id logicController = nil;
-        if ([viewController respondsToSelector:@selector(m_logicController)]) {
-            logicController = [viewController performSelector:@selector(m_logicController)];
-        }
-        if (!logicController && [viewController respondsToSelector:NSSelectorFromString(@"logicController")]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            logicController = [viewController performSelector:NSSelectorFromString(@"logicController")];
-#pragma clang diagnostic pop
+        id logicController = [self wcpl_safeInvokeObjectSelector:@selector(m_logicController) onObject:viewController arguments:nil];
+        if (!logicController) {
+            logicController = [self wcpl_safeInvokeObjectSelector:NSSelectorFromString(@"logicController")
+                                                         onObject:viewController
+                                                        arguments:nil];
         }
         [debugInfo appendFormat:@"9. LogicController: %@\n", logicController ? NSStringFromClass([logicController class]) : @"nil"];
 
@@ -1802,7 +1785,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                 [self parseEmoticonMD5FromContent:msgWrap.m_nsMsgSource] ?:
                 [self parseEmoticonMD5FromContent:msgWrap.m_nsAppExtInfo];
             if (bestMD5) {
-                CEmoticonWrap *emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:bestMD5];
+                CEmoticonWrap *emoticonWrap = [self wcpl_safeInvokeObjectSelector:@selector(getEmoticonWrapByMd5:)
+                                                                           onObject:emoticonMgr
+                                                                          arguments:@[bestMD5]];
                 [debugInfo appendFormat:@"13. EmoticonWrap: %@\n", emoticonWrap ? @"获取成功" : @"nil"];
             }
         }
@@ -1822,6 +1807,10 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         // 执行复读并收集执行日志
         if (isEmoticonMessage) {
             NSString *execLog = [self handleRepeatEmoticonMessage:msgWrap viewController:viewController];
+            [debugInfo appendString:@"\n=== 执行日志 ===\n"];
+            [debugInfo appendString:execLog];
+        } else if (isVoiceMessage) {
+            NSString *execLog = [self handleRepeatVoiceMessage:msgWrap viewController:viewController];
             [debugInfo appendString:@"\n=== 执行日志 ===\n"];
             [debugInfo appendString:execLog];
         } else if (isImageMessage) {
@@ -1896,6 +1885,28 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     }
 }
 
+- (NSString *)wcpl_toUserNameFromViewController:(BaseMsgContentViewController *)viewController
+                                        msgWrap:(CMessageWrap *)msgWrap
+                                        execLog:(NSMutableString *)execLog {
+    NSString *toUserName = nil;
+    CContact *contact = [self wcpl_safeInvokeObjectSelector:@selector(GetContact)
+                                                   onObject:viewController
+                                                  arguments:nil];
+    if (contact) {
+        toUserName = contact.m_nsUsrName;
+    }
+
+    if (toUserName.length == 0 && msgWrap) {
+        BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
+        toUserName = isFromSelf ? msgWrap.m_nsToUsr : msgWrap.m_nsFromUsr;
+        if (toUserName.length > 0 && execLog) {
+            [execLog appendFormat:@"✓ 从消息推导聊天对象: %@\n", toUserName];
+        }
+    }
+
+    return toUserName;
+}
+
 // 判断消息是否为自己发送的
 - (BOOL)isMessageFromSelf:(CMessageWrap *)msgWrap {
     @try {
@@ -1903,17 +1914,11 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 优先使用 CMessageWrap 判断是否为自己发送（更稳定，避免依赖 ServiceCenter）
         Class msgWrapClass = objc_getClass("CMessageWrap");
-        if (msgWrapClass && [msgWrapClass respondsToSelector:@selector(isSenderFromMsgWrap:)]) {
-            BOOL isSender = NO;
-            @try {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                isSender = (BOOL)[msgWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
-#pragma clang diagnostic pop
-            } @catch (__unused NSException *exception) {
-                isSender = NO;
-            }
-            return isSender;
+        if (msgWrapClass) {
+            return [self wcpl_safeInvokeBoolSelector:@selector(isSenderFromMsgWrap:)
+                                            onObject:msgWrapClass
+                                           arguments:@[msgWrap]
+                                        defaultValue:NO];
         }
 
         // 获取联系人管理器
@@ -1944,22 +1949,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         }
 
         // 获取聊天对象用户名
-        NSString *toUserName = nil;
-        if ([viewController respondsToSelector:@selector(GetContact)]) {
-            CContact *contact = [viewController performSelector:@selector(GetContact)];
-            if (contact) {
-                toUserName = contact.m_nsUsrName;
-            }
-        }
-
-        if (!toUserName || toUserName.length == 0) {
-            // 回退：从 msgWrap 推导聊天对象
-            BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
-            toUserName = isFromSelf ? msgWrap.m_nsToUsr : msgWrap.m_nsFromUsr;
-            if (toUserName && toUserName.length > 0) {
-                [execLog appendFormat:@"✓ 从消息推导聊天对象: %@\n", toUserName];
-            }
-        }
+        NSString *toUserName = [self wcpl_toUserNameFromViewController:viewController
+                                                               msgWrap:msgWrap
+                                                               execLog:execLog];
 
         if (!toUserName || toUserName.length == 0) {
             [execLog appendString:@"❌ 无法获取聊天对象\n"];
@@ -2034,161 +2026,259 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             }
         }
 
-        // 方法1: 通过 EmoticonWrap 发送
-        if (emoticonMD5 && emoticonMD5.length > 0) {
-            [execLog appendString:@"\n尝试方法1: EmoticonWrap\n"];
-            id emoticonMgr = [self wcpl_getService:objc_getClass("CEmoticonMgr")];
-            if (emoticonMgr && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
-                CEmoticonWrap *emoticonWrap = nil;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                emoticonWrap = [emoticonMgr performSelector:@selector(getEmoticonWrapByMd5:) withObject:emoticonMD5];
-#pragma clang diagnostic pop
+        WCPLRepeatSendContext *context = [WCPLRepeatSendContext new];
+        context.kind = WCPLRepeatMessageKindEmoticon;
+        context.viewController = viewController;
+        context.msgWrap = msgWrap;
+        context.toUserName = toUserName;
+        context.emoticonMD5 = emoticonMD5;
+        context.emoticonContent = content;
+        context.content = content;
 
-                // 兼容：尝试通过 msgWrap / content 获取 EmoticonWrap（不同版本可能存在）
-                if (!emoticonWrap) {
-                    SEL byMsgWrapSel = NSSelectorFromString(@"getEmoticonWrapByMessageWrap:");
-                    if ([emoticonMgr respondsToSelector:byMsgWrapSel]) {
-                        [execLog appendString:@"- 通过getEmoticonWrapByMessageWrap尝试\n"];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                        emoticonWrap = [emoticonMgr performSelector:byMsgWrapSel withObject:msgWrap];
-#pragma clang diagnostic pop
-                    }
-                }
-                if (!emoticonWrap) {
-                    SEL byContentSel = NSSelectorFromString(@"getEmoticonWrapByContent:");
-                    if (content && content.length > 0 && [emoticonMgr respondsToSelector:byContentSel]) {
-                        [execLog appendString:@"- 通过getEmoticonWrapByContent尝试\n"];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                        emoticonWrap = [emoticonMgr performSelector:byContentSel withObject:content];
-#pragma clang diagnostic pop
-                    }
-                }
-
-                if (emoticonWrap) {
-                    [execLog appendString:@"✓ 获取到EmoticonWrap\n"];
-
-                    if ([viewController respondsToSelector:@selector(m_logicController)]) {
-                        id logicController = [viewController performSelector:@selector(m_logicController)];
-                        if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
-                            [logicController performSelector:@selector(SendEmoticonMessage:) withObject:emoticonWrap];
-                            [execLog appendString:@"✅ 通过logicController发送成功\n"];
-                            return execLog;
-                        }
-                    }
-
-                    if ([viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
-                        [viewController performSelector:@selector(SendEmoticonMesssageToolView:) withObject:emoticonWrap];
-                        [execLog appendString:@"✅ 通过ViewController发送成功\n"];
-                        return execLog;
-                    }
-                } else {
-                    [execLog appendString:@"✗ EmoticonWrap为nil\n"];
-
-                    // 方法1.5: 手工构造 CEmoticonWrap（表情未缓存时的 fallback）
-                    [execLog appendString:@"\n尝试方法1.5: 手工构造EmoticonWrap\n"];
-
-                    NSDictionary *emoticonInfo = [self parseEmoticonInfoFromContent:content];
-                    if (emoticonInfo && emoticonInfo[@"encryptUrl"] && emoticonInfo[@"aesKey"]) {
-                        [execLog appendFormat:@"✓ 解析到encryptUrl和aesKey\n"];
-
-                        // 构造 EmojiInfoObj
-                        EmojiInfoObj *emojiInfo = [[objc_getClass("EmojiInfoObj") alloc] init];
-                        if (emojiInfo) {
-                            emojiInfo.md5 = emoticonInfo[@"md5"] ?: emoticonMD5;
-                            emojiInfo.encryptUrl = emoticonInfo[@"encryptUrl"];
-                            emojiInfo.aesKey = emoticonInfo[@"aesKey"];
-                            emojiInfo.thumbUrl = emoticonInfo[@"thumbUrl"];
-                            emojiInfo.productId = emoticonInfo[@"productId"];
-
-                            // 构造 CEmoticonWrap
-                            CEmoticonWrap *manualWrap = [[objc_getClass("CEmoticonWrap") alloc] init];
-                            if (manualWrap) {
-                                manualWrap.m_emojiInfo = emojiInfo;
-                                NSNumber *typeNum = emoticonInfo[@"type"];
-                                manualWrap.m_uiType = typeNum ? [typeNum unsignedIntValue] : 1; // 默认自定义表情
-
-                                [execLog appendString:@"✓ 手工构造EmoticonWrap成功\n"];
-
-                                // 尝试发送
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                                if ([viewController respondsToSelector:@selector(m_logicController)]) {
-                                    id lc = [viewController performSelector:@selector(m_logicController)];
-                                    if (lc && [lc respondsToSelector:@selector(SendEmoticonMessage:)]) {
-                                        [lc performSelector:@selector(SendEmoticonMessage:) withObject:manualWrap];
-                                        [execLog appendString:@"✅ 通过logicController发送成功(手工构造)\n"];
-#pragma clang diagnostic pop
-                                        return execLog;
-                                    }
-                                }
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                                if ([viewController respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
-                                    [viewController performSelector:@selector(SendEmoticonMesssageToolView:) withObject:manualWrap];
-                                    [execLog appendString:@"✅ 通过ViewController发送成功(手工构造)\n"];
-#pragma clang diagnostic pop
-                                    return execLog;
-                                }
-                            }
-                        }
-                        [execLog appendString:@"✗ 手工构造失败\n"];
-                    } else {
-                        [execLog appendFormat:@"✗ XML中缺少必要字段(encryptUrl/aesKey)\n"];
-                    }
-                }
-            } else {
-                [execLog appendString:@"✗ CEmoticonMgr不可用或不支持getEmoticonWrapByMd5\n"];
-            }
-        }
-
-        // 方法2: 通过 CMessageMgr 发送（不依赖本地缓存）
-        if ((content && content.length > 0) || (emoticonMD5 && emoticonMD5.length > 0)) {
-            [execLog appendString:@"\n尝试方法2: CMessageMgr\n"];
-            id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
-            if (!msgMgr) {
-                [execLog appendString:@"❌ 无法获取CMessageMgr\n"];
-            } else {
-                [execLog appendString:@"✓ 获取到CMessageMgr\n"];
-                CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
-                if (!newMsgWrap) {
-                    [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
-                } else {
-                    newMsgWrap.m_uiMessageType = 47;
-                    newMsgWrap.m_nsToUsr = toUserName;
-                    if (content && content.length > 0) {
-                        newMsgWrap.m_nsContent = content;
-                    }
-                    if (emoticonMD5 && emoticonMD5.length > 0) {
-                        [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMD5:" value:emoticonMD5];
-                        [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMd5:" value:emoticonMD5];
-                    }
-
-                    if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
-                        [execLog appendString:@"✓ 调用AddEmoticonMsg\n"];
-                        [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
-                        [execLog appendString:@"✅ AddEmoticonMsg执行完成\n"];
-                        return execLog;
-                    }
-
-                    if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-                        [execLog appendString:@"✓ 调用AddLocalMsg\n"];
-                        [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
-                        [execLog appendString:@"✅ AddLocalMsg执行完成\n"];
-                        return execLog;
-                    }
-
-                    [execLog appendString:@"❌ 没有可用的发送方法\n"];
-                }
-            }
+        if ([self wcpl_sendRepeatMessageWithContext:context execLog:execLog]) {
+            return execLog;
         }
 
         [execLog appendString:@"\n❌ 方法1/1.5/2均失败，表情包复读不可用\n"];
         [execLog appendString:@"提示: 该表情包可能未下载或已过期\n"];
 
+        return execLog;
+    }
+    @catch (NSException *exception) {
+        [execLog appendFormat:@"❌ 异常: %@\n", exception];
+        return execLog;
+    }
+}
+
+- (BOOL)wcpl_sendEmoticonWithContext:(WCPLRepeatSendContext *)context
+                             execLog:(NSMutableString *)execLog {
+    if (!context || !context.viewController || !context.msgWrap) return NO;
+
+    NSString *toUserName = context.toUserName;
+    NSString *content = context.emoticonContent ?: context.content;
+    NSString *emoticonMD5 = context.emoticonMD5;
+
+    if (toUserName.length == 0) {
+        [execLog appendString:@"❌ 无法获取聊天对象\n"];
+        return NO;
+    }
+
+    __block BOOL shouldTryManualWrap = NO;
+
+    NSArray<WCPLSendStrategyBlock> *strategies = @[
+        WCPLSendStrategy(^BOOL{
+            if (emoticonMD5.length == 0) return NO;
+            [execLog appendString:@"\n尝试方法1: EmoticonWrap\n"];
+
+            id emoticonMgr = [self wcpl_getService:objc_getClass("CEmoticonMgr")];
+            if (!emoticonMgr || ![emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
+                [execLog appendString:@"✗ CEmoticonMgr不可用或不支持getEmoticonWrapByMd5\n"];
+                return NO;
+            }
+
+            CEmoticonWrap *emoticonWrap = [self wcpl_safeInvokeObjectSelector:@selector(getEmoticonWrapByMd5:)
+                                                                       onObject:emoticonMgr
+                                                                      arguments:@[emoticonMD5]];
+
+            if (!emoticonWrap) {
+                SEL byMsgWrapSel = NSSelectorFromString(@"getEmoticonWrapByMessageWrap:");
+                if ([emoticonMgr respondsToSelector:byMsgWrapSel]) {
+                    [execLog appendString:@"- 通过getEmoticonWrapByMessageWrap尝试\n"];
+                    emoticonWrap = [self wcpl_safeInvokeObjectSelector:byMsgWrapSel
+                                                               onObject:emoticonMgr
+                                                              arguments:@[context.msgWrap]];
+                }
+            }
+
+            if (!emoticonWrap) {
+                SEL byContentSel = NSSelectorFromString(@"getEmoticonWrapByContent:");
+                if (content.length > 0 && [emoticonMgr respondsToSelector:byContentSel]) {
+                    [execLog appendString:@"- 通过getEmoticonWrapByContent尝试\n"];
+                    emoticonWrap = [self wcpl_safeInvokeObjectSelector:byContentSel
+                                                               onObject:emoticonMgr
+                                                              arguments:@[content]];
+                }
+            }
+
+            if (!emoticonWrap) {
+                [execLog appendString:@"✗ EmoticonWrap为nil\n"];
+                shouldTryManualWrap = YES;
+                return NO;
+            }
+
+            [execLog appendString:@"✓ 获取到EmoticonWrap\n"];
+
+            id logicController = [self wcpl_safeInvokeObjectSelector:@selector(m_logicController)
+                                                             onObject:context.viewController
+                                                            arguments:nil];
+            if (logicController &&
+                [self wcpl_safeInvokeVoidSelector:@selector(SendEmoticonMessage:)
+                                         onObject:logicController
+                                        arguments:@[emoticonWrap]]) {
+                [execLog appendString:@"✅ 通过logicController发送成功\n"];
+                return YES;
+            }
+
+            if ([self wcpl_safeInvokeVoidSelector:@selector(SendEmoticonMesssageToolView:)
+                                         onObject:context.viewController
+                                        arguments:@[emoticonWrap]]) {
+                [execLog appendString:@"✅ 通过ViewController发送成功\n"];
+                return YES;
+            }
+
+            return NO;
+        }),
+        WCPLSendStrategy(^BOOL{
+            if (!shouldTryManualWrap) return NO;
+            [execLog appendString:@"\n尝试方法1.5: 手工构造EmoticonWrap\n"];
+
+            NSDictionary *emoticonInfo = [self parseEmoticonInfoFromContent:content];
+            if (!(emoticonInfo && emoticonInfo[@"encryptUrl"] && emoticonInfo[@"aesKey"])) {
+                [execLog appendFormat:@"✗ XML中缺少必要字段(encryptUrl/aesKey)\n"];
+                return NO;
+            }
+
+            [execLog appendFormat:@"✓ 解析到encryptUrl和aesKey\n"];
+
+            EmojiInfoObj *emojiInfo = [[objc_getClass("EmojiInfoObj") alloc] init];
+            if (!emojiInfo) {
+                [execLog appendString:@"✗ 手工构造失败\n"];
+                return NO;
+            }
+
+            emojiInfo.md5 = emoticonInfo[@"md5"] ?: emoticonMD5;
+            emojiInfo.encryptUrl = emoticonInfo[@"encryptUrl"];
+            emojiInfo.aesKey = emoticonInfo[@"aesKey"];
+            emojiInfo.thumbUrl = emoticonInfo[@"thumbUrl"];
+            emojiInfo.productId = emoticonInfo[@"productId"];
+
+            CEmoticonWrap *manualWrap = [[objc_getClass("CEmoticonWrap") alloc] init];
+            if (!manualWrap) {
+                [execLog appendString:@"✗ 手工构造失败\n"];
+                return NO;
+            }
+
+            manualWrap.m_emojiInfo = emojiInfo;
+            NSNumber *typeNum = emoticonInfo[@"type"];
+            manualWrap.m_uiType = typeNum ? [typeNum unsignedIntValue] : 1;
+
+            [execLog appendString:@"✓ 手工构造EmoticonWrap成功\n"];
+
+            id lc = [self wcpl_safeInvokeObjectSelector:@selector(m_logicController)
+                                               onObject:context.viewController
+                                              arguments:nil];
+            if (lc &&
+                [self wcpl_safeInvokeVoidSelector:@selector(SendEmoticonMessage:)
+                                         onObject:lc
+                                        arguments:@[manualWrap]]) {
+                [execLog appendString:@"✅ 通过logicController发送成功(手工构造)\n"];
+                return YES;
+            }
+
+            if ([self wcpl_safeInvokeVoidSelector:@selector(SendEmoticonMesssageToolView:)
+                                         onObject:context.viewController
+                                        arguments:@[manualWrap]]) {
+                [execLog appendString:@"✅ 通过ViewController发送成功(手工构造)\n"];
+                return YES;
+            }
+
+            return NO;
+        }),
+        WCPLSendStrategy(^BOOL{
+            if (content.length == 0 && emoticonMD5.length == 0) return NO;
+            [execLog appendString:@"\n尝试方法2: CMessageMgr\n"];
+
+            id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
+            if (!msgMgr) {
+                [execLog appendString:@"❌ 无法获取CMessageMgr\n"];
+                return NO;
+            }
+
+            [execLog appendString:@"✓ 获取到CMessageMgr\n"];
+            CMessageWrap *newMsgWrap = [[objc_getClass("CMessageWrap") alloc] init];
+            if (!newMsgWrap) {
+                [execLog appendString:@"❌ 创建CMessageWrap失败\n"];
+                return NO;
+            }
+
+            newMsgWrap.m_uiMessageType = 47;
+            newMsgWrap.m_nsToUsr = toUserName;
+            if (content.length > 0) {
+                newMsgWrap.m_nsContent = content;
+            }
+            if (emoticonMD5.length > 0) {
+                [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMD5:" value:emoticonMD5];
+                [self wcpl_safeSetObject:newMsgWrap selectorName:@"setM_nsEmoticonMd5:" value:emoticonMD5];
+            }
+
+            if ([msgMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+                [execLog appendString:@"✓ 调用AddEmoticonMsg\n"];
+                [msgMgr AddEmoticonMsg:toUserName MsgWrap:newMsgWrap];
+                [execLog appendString:@"✅ AddEmoticonMsg执行完成\n"];
+                return YES;
+            }
+
+            if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+                [execLog appendString:@"✓ 调用AddLocalMsg\n"];
+                [msgMgr AddLocalMsg:toUserName MsgWrap:newMsgWrap fixTime:YES NewMsgArriveNotify:YES];
+                [execLog appendString:@"✅ AddLocalMsg执行完成\n"];
+                return YES;
+            }
+
+            [execLog appendString:@"❌ 没有可用的发送方法\n"];
+            return NO;
+        }),
+    ];
+
+    return [self wcpl_executeSendStrategies:strategies execLog:execLog];
+}
+
+- (NSString *)handleRepeatVoiceMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {
+    NSMutableString *execLog = [NSMutableString string];
+
+    @try {
+        if (!msgWrap || !viewController) {
+            [execLog appendString:@"❌ 参数无效\n"];
+            return execLog;
+        }
+
+        NSString *toUserName = [self wcpl_toUserNameFromViewController:viewController
+                                                               msgWrap:msgWrap
+                                                               execLog:execLog];
+        if (toUserName.length == 0) {
+            [execLog appendString:@"❌ 无法获取聊天对象\n"];
+            return execLog;
+        }
+        [execLog appendFormat:@"✓ 聊天对象: %@\n", toUserName];
+
+        id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
+        if (!msgMgr) {
+            [execLog appendString:@"❌ 无法获取CMessageMgr\n"];
+            return execLog;
+        }
+
+        BOOL didSend = NO;
+        if ([msgMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
+            didSend = [self wcpl_safeInvokeVoidSelector:@selector(ReSendMessage:MsgWrap:)
+                                               onObject:msgMgr
+                                              arguments:@[toUserName, msgWrap]];
+            if (didSend) {
+                [execLog appendString:@"✅ 通过ReSendMessage发送成功\n"];
+            }
+        }
+
+        if (!didSend && [msgMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+            didSend = [self wcpl_safeInvokeVoidSelector:@selector(ResendMsg:MsgWrap:)
+                                               onObject:msgMgr
+                                              arguments:@[toUserName, msgWrap]];
+            if (didSend) {
+                [execLog appendString:@"✅ 通过ResendMsg发送成功\n"];
+            }
+        }
+
+        if (!didSend) {
+            [execLog appendString:@"❌ 没有可用的语音重发方法\n"];
+        }
         return execLog;
     }
     @catch (NSException *exception) {
@@ -2206,21 +2296,9 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             return execLog;
         }
 
-        NSString *toUserName = nil;
-        if ([viewController respondsToSelector:@selector(GetContact)]) {
-            CContact *contact = [viewController performSelector:@selector(GetContact)];
-            if (contact) {
-                toUserName = contact.m_nsUsrName;
-            }
-        }
-
-        if (!toUserName || toUserName.length == 0) {
-            BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
-            toUserName = isFromSelf ? msgWrap.m_nsToUsr : msgWrap.m_nsFromUsr;
-            if (toUserName.length > 0) {
-                [execLog appendFormat:@"✓ 从消息推导聊天对象: %@\n", toUserName];
-            }
-        }
+        NSString *toUserName = [self wcpl_toUserNameFromViewController:viewController
+                                                               msgWrap:msgWrap
+                                                               execLog:execLog];
 
         if (!toUserName || toUserName.length == 0) {
             [execLog appendString:@"❌ 无法获取聊天对象\n"];
@@ -2233,13 +2311,10 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
             if (msgMgr && [msgMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
                 [execLog appendString:@"✓ 尝试使用 CMessageMgr.ReSendMessage 重发图片\n"];
-                BOOL result = NO;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                result = [[msgMgr performSelector:@selector(ReSendMessage:MsgWrap:)
-                                       withObject:toUserName
-                                       withObject:msgWrap] boolValue];
-#pragma clang diagnostic pop
+                BOOL result = [self wcpl_safeInvokeBoolSelector:@selector(ReSendMessage:MsgWrap:)
+                                                       onObject:msgMgr
+                                                      arguments:@[toUserName, msgWrap]
+                                                   defaultValue:NO];
                 if (result) {
                     [execLog appendString:@"✅ 通过 ReSendMessage 发送成功\n"];
                     return execLog;
@@ -2440,59 +2515,16 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             }
         }
 
-        id toolView = [self wcpl_inputToolViewFromViewController:viewController];
-        id logicController = nil;
-        if ([viewController respondsToSelector:@selector(m_logicController)]) {
-            logicController = [viewController performSelector:@selector(m_logicController)];
-        }
-        if (!logicController) {
-            @try {
-                logicController = [viewController valueForKey:@"m_logicController"];
-            }
-            @catch (__unused NSException *exception) {
-            }
-        }
+        WCPLRepeatSendContext *context = [WCPLRepeatSendContext new];
+        context.kind = WCPLRepeatMessageKindImage;
+        context.viewController = viewController;
+        context.msgWrap = msgWrap;
+        context.toUserName = toUserName;
+        context.image = image;
+        context.imageData = imageData;
+        context.imagePath = expandedPath;
 
-        id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
-
-        BOOL sent = NO;
-        // 优先尝试 LogicController (最可能有 SendImageMessage:withData:ImageInfo:)
-        sent = [self wcpl_trySendImageWithTarget:logicController
-                                           name:@"LogicController"
-                                          image:image
-                                      imageData:imageData
-                                      imagePath:expandedPath
-                                         toUser:toUserName
-                                        execLog:execLog];
-        if (!sent) {
-            sent = [self wcpl_trySendImageWithTarget:toolView
-                                               name:@"InputToolView"
-                                              image:image
-                                          imageData:imageData
-                                          imagePath:expandedPath
-                                             toUser:toUserName
-                                            execLog:execLog];
-        }
-        if (!sent) {
-            sent = [self wcpl_trySendImageWithTarget:viewController
-                                               name:@"ViewController"
-                                              image:image
-                                          imageData:imageData
-                                          imagePath:expandedPath
-                                             toUser:toUserName
-                                            execLog:execLog];
-        }
-        if (!sent) {
-            sent = [self wcpl_trySendImageWithTarget:msgMgr
-                                               name:@"CMessageMgr"
-                                              image:image
-                                          imageData:imageData
-                                          imagePath:expandedPath
-                                             toUser:toUserName
-                                            execLog:execLog];
-        }
-
-        if (!sent) {
+        if (![self wcpl_sendRepeatMessageWithContext:context execLog:execLog]) {
             [execLog appendString:@"❌ 未找到可用的图片发送方法\n"];
         }
 
@@ -2502,6 +2534,63 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         [execLog appendFormat:@"❌ 异常: %@\n", exception];
         return execLog;
     }
+}
+
+- (BOOL)wcpl_sendImageWithContext:(WCPLRepeatSendContext *)context
+                          execLog:(NSMutableString *)execLog {
+    if (!context || !context.viewController) return NO;
+    if (context.toUserName.length == 0) return NO;
+
+    id toolView = [self wcpl_inputToolViewFromViewController:context.viewController];
+    id logicController = [self wcpl_safeInvokeObjectSelector:@selector(m_logicController)
+                                                     onObject:context.viewController
+                                                    arguments:nil];
+    if (!logicController) {
+        logicController = [self wcpl_safeValueForObject:context.viewController keyName:@"m_logicController"];
+    }
+
+    id msgMgr = [self wcpl_getService:objc_getClass("CMessageMgr")];
+
+    NSArray<WCPLSendStrategyBlock> *strategies = @[
+        WCPLSendStrategy(^BOOL{
+            return [self wcpl_trySendImageWithTarget:logicController
+                                               name:@"LogicController"
+                                              image:context.image
+                                          imageData:context.imageData
+                                          imagePath:context.imagePath
+                                             toUser:context.toUserName
+                                            execLog:execLog];
+        }),
+        WCPLSendStrategy(^BOOL{
+            return [self wcpl_trySendImageWithTarget:toolView
+                                               name:@"InputToolView"
+                                              image:context.image
+                                          imageData:context.imageData
+                                          imagePath:context.imagePath
+                                             toUser:context.toUserName
+                                            execLog:execLog];
+        }),
+        WCPLSendStrategy(^BOOL{
+            return [self wcpl_trySendImageWithTarget:context.viewController
+                                               name:@"ViewController"
+                                              image:context.image
+                                          imageData:context.imageData
+                                          imagePath:context.imagePath
+                                             toUser:context.toUserName
+                                            execLog:execLog];
+        }),
+        WCPLSendStrategy(^BOOL{
+            return [self wcpl_trySendImageWithTarget:msgMgr
+                                               name:@"CMessageMgr"
+                                              image:context.image
+                                          imageData:context.imageData
+                                          imagePath:context.imagePath
+                                             toUser:context.toUserName
+                                            execLog:execLog];
+        }),
+    ];
+
+    return [self wcpl_executeSendStrategies:strategies execLog:execLog];
 }
 
 // 从消息内容 XML 中解析表情包 MD5

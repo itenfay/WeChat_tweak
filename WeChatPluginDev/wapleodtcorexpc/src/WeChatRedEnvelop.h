@@ -56,6 +56,7 @@
 #import "TextMessageCellView.h"
 #import "TextMessageViewModel.h"
 #import "VideoMessageCellView.h"
+#import "VoiceMessageCellView.h"
 #import "WCBizUtil.h"
 #import "WCPluginsMgr.h"
 #import "ServiceCenter.h"
