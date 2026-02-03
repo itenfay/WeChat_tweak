@@ -25,6 +25,7 @@ typedef void (^CDUnknownBlockType)(void);
 + (id)badgeCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 badge:(id)arg4;
 + (id)editorCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 tip:(id)arg4 focus:(_Bool)arg5 autoCorrect:(_Bool)arg6 text:(id)arg7;
 + (id)normalCellForTitle:(id)arg1 rightValue:(id)arg2;
++ (id)switchCellForSel:(SEL)arg1 target:(id)arg2 title:(NSString *)arg3 on:(_Bool)arg4;
 + (id)normalCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 accessoryType:(long long)arg4;
 + (id)normalCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 detail:(id)arg4 image:(id)arg5 accessoryType:(long long)arg6;
 + (id)normalCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 detail:(id)arg4 imageName:(id)arg5 accessoryType:(long long)arg6;

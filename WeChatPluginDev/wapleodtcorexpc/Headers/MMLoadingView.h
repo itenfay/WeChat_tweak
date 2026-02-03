@@ -30,6 +30,8 @@ typedef void (^CDUnknownBlockType)(void);
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setFrame:(struct CGRect)arg1;
+- (void)setM_bIgnoringInteractionEventsWhenLoading:(_Bool)arg1;
+- (void)setFitFrame:(_Bool)arg1;
 - (void)didMoveToSuperview;
 - (void)privateCheckLoadingViewCenter;
 - (id)privateText;

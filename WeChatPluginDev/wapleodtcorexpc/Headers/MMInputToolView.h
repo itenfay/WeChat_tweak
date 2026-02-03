@@ -397,6 +397,7 @@ typedef void (^CDUnknownBlockType)(void);
 - (void)onOpenTopicSearch;
 - (void)onGrowTextViewMenuItemClicked:(unsigned long long)arg1 growTextView:(id)arg2;
 - (void)onDeleteMsgReplyView:(id)arg1;
+- (void)onTapMsgReplyView:(id)arg1;
 - (void)onAccessoryViewFrameChanged:(struct CGRect)arg1;
 - (void)MMGrowTextViewEndEditing:(id)arg1;
 - (void)MMGrowTextViewBeginEditing:(id)arg1;

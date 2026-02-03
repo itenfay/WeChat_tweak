@@ -12,24 +12,25 @@ TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
-$(TWEAK_NAME)_CFLAGS = -fno-modules -IHeaders
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
 
-src/WCPLAVManager.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLFuncService.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLMultiSelectGroupsViewController.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLReceiveRedEnvelopOperation.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLRedEnvelopConfig.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc -fno-modules
-src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLMessageReplyManager.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCHookMessageNavigator.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc -fno-modules
-src/WCPLLogger.m_CFLAGS = -fobjc-arc -fno-modules
+src/WCPLAVManager.m_CFLAGS = -fobjc-arc
+src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc
+src/WCPLFuncService.m_CFLAGS = -fobjc-arc
+src/WCPLMultiSelectGroupsViewController.m_CFLAGS = -fobjc-arc
+src/WCPLReceiveRedEnvelopOperation.m_CFLAGS = -fobjc-arc
+src/WCPLRedEnvelopConfig.m_CFLAGS = -fobjc-arc
+src/WCPLRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc
+src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
+src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc
+src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc
+src/WCPLMessageReplyManager.m_CFLAGS = -fobjc-arc
+src/WCPLRepeatButton.m_CFLAGS = -fobjc-arc
+src/WCHookMessageNavigator.m_CFLAGS = -fobjc-arc
+src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc
+src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc
+src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc
+src/WCPLLogger.m_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

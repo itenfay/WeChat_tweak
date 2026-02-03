@@ -5,7 +5,7 @@
 
 typedef void (^CDUnknownBlockType)(void);
 
-@class BypSendEmotionMessageMgr, BypSendMessageMgr, CDownloadVideoMgr, CEmoticonDownloadMgr, CEmoticonUploadMgr, CMessageDB, DownloadImageCDNMgr, DownloadImageMgr, DownloadVideoCDNMgr, MessageAssetThreshold, MessagePatternCacheMgr, MultiMediaUploadUnifyMgr, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, OpenDownloadCDNMgr, OpenDownloadMgr, OpenUploadCDNMgr, OpenUploadMgr, OpenUploadVideoCDNMgr, RecordDownloadCDNMgr, RecordUploadCDNMgr, RoomHistoryDownloadCDNMgr, ThumbDownloadMgr, UploadImageCDNMgr, UploadImageMgr, VideoUploadUnifyMgr;
+@class BypSendEmotionMessageMgr, BypSendMessageMgr, CDownloadVideoMgr, CEmoticonDownloadMgr, CEmoticonUploadMgr, CMessageDB, CMessageWrap, DownloadImageCDNMgr, DownloadImageMgr, DownloadVideoCDNMgr, MessageAssetThreshold, MessagePatternCacheMgr, MultiMediaUploadUnifyMgr, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, OpenDownloadCDNMgr, OpenDownloadMgr, OpenUploadCDNMgr, OpenUploadMgr, OpenUploadVideoCDNMgr, RecordDownloadCDNMgr, RecordUploadCDNMgr, RoomHistoryDownloadCDNMgr, ThumbDownloadMgr, UploadImageCDNMgr, UploadImageMgr, VideoUploadUnifyMgr;
 @protocol OS_dispatch_semaphore;
 
 struct XmlReaderNode_t;
@@ -210,6 +210,9 @@ struct XmlReaderNode_t;
 - (_Bool)StartDownloadEmoticonMsgWrap:(id)arg1 HighPriority:(_Bool)arg2;
 - (_Bool)isChatStatusNotifyOpenForMsgWrap:(id)arg1;
 - (void)AddEmoticonMsg:(id)arg1 MsgWrap:(id)arg2;
+- (void)DelMsg:(NSString *)arg1 MsgWrap:(CMessageWrap *)arg2;
+- (void)RevokeMsg:(NSString *)arg1 MsgWrap:(CMessageWrap *)arg2 Counter:(unsigned int)arg3;
+- (void)ReSendMessage:(NSString *)arg1 MsgWrap:(CMessageWrap *)arg2;
 - (_Bool)UpdateLastMsgToUnread:(id)arg1;
 - (void)UpdateMsgFlagToDB:(id)arg1;
 - (void)UpdateMsgSourceToDB:(id)arg1;

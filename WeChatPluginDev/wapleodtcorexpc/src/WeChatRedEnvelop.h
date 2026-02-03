@@ -9,8 +9,10 @@
 // ============ Import WeChat 8.0.55 Headers ============
 
 #import "AppEmoticonMessageCellView.h"
+#import "AppMessageCellView.h"
 #import "BaseMsgContentLogicController.h"
 #import "BaseMsgContentViewController.h"
+#import "ChatRoomContentViewController.h"
 #import "BaseScanLogicController.h"
 #import "CBaseContact.h"
 #import "CContact.h"
@@ -33,8 +35,12 @@
 #import "ImageMessageCellView.h"
 #import "MMLanguageMgr.h"
 #import "MMLoadingView.h"
+#import "MMInputToolView.h"
 #import "MMObject.h"
 #import "MMServiceCenter.h"
+#import "MMAppContext.h"
+#import "MMCore.h"
+#import "MMAppController.h"
 #import "MMTableView.h"
 #import "MMTableViewInfo.h"
 #import "MMUICommonUtil.h"
@@ -51,6 +57,8 @@
 #import "TextMessageViewModel.h"
 #import "VideoMessageCellView.h"
 #import "WCBizUtil.h"
+#import "WCPluginsMgr.h"
+#import "ServiceCenter.h"
 #import "WCPayInfoItem.h"
 #import "WCRedEnvelopesControlData.h"
 #import "WCRedEnvelopesLogicMgr.h"
@@ -62,13 +70,6 @@
 // ============ Classes not in 8.0.55 dump ============
 
 @interface MMService : NSObject
-@end
-
-@interface AppMessageCellView : CommonMessageCellView
-@end
-
-@interface WCPluginsMgr : NSObject
-- (void)registerControllerWithTitle:(NSString *)title version:(NSString *)version controller:(id)controller;
 @end
 
 // ============ Custom Category Extensions ============

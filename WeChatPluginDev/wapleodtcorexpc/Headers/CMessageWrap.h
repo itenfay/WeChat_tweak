@@ -912,6 +912,7 @@ struct XmlReaderNode_t;
 @property(retain, nonatomic) NSString *referMessageSenderDisplayName; // @dynamic referMessageSenderDisplayName;
 @property(retain, nonatomic) NSString *referMessageSenderUsrname; // @dynamic referMessageSenderUsrname;
 @property(retain, nonatomic) CMessageWrap *referingMessageWrap; // @dynamic referingMessageWrap;
+@property(retain, nonatomic) CMessageWrap *replyingMessageWrap; // @dynamic replyingMessageWrap;
 @property(nonatomic) _Bool roomToolsFlag; // @dynamic roomToolsFlag;
 @property(readonly, nonatomic) NSString *secInfo; // @dynamic secInfo;
 @property(readonly) Class superclass;

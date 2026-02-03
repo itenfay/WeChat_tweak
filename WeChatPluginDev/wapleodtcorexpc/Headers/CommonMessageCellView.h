@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@class AppMessageBlockButton, CADisplayLink, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIView, UIVisualEffectView, YYAsyncImageView;
+@class AppMessageBlockButton, CADisplayLink, CMessageWrap, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIView, UIVisualEffectView, YYAsyncImageView;
 
 @interface CommonMessageCellView : UIView
 {
@@ -108,6 +108,9 @@
 - (void)prepareForReuse;
 - (void)setViewModel:(id)arg1;
 - (id)initWithViewModel:(id)arg1;
+- (CMessageWrap *)getCurrentMessageWrap;
+- (CMessageWrap *)messageWrap;
+- (void)onReturnToOriginalMsg;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -120,4 +123,3 @@
 @property(readonly, nonatomic) CommonMessageViewModel *viewModel; // @dynamic viewModel;
 
 @end
-

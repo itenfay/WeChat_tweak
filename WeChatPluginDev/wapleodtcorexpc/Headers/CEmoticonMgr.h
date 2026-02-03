@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@class EmoticonDataDB, EmoticonSendRecordList, NSMutableSet, NSRecursiveLock, NSString;
+@class CMessageWrap, EmoticonDataDB, EmoticonSendRecordList, NSMutableSet, NSRecursiveLock, NSString;
 
 @interface CEmoticonMgr : NSObject
 {
@@ -54,6 +54,8 @@
 - (id)getCustomEmoticonListWithOutGame;
 - (id)getEmoticonListByPackageId:(id)arg1;
 - (id)getEmoticonWrapByMd5:(id)arg1;
+- (id)getEmoticonWrapByMessageWrap:(CMessageWrap *)arg1;
+- (id)getEmoticonWrapByContent:(NSString *)arg1;
 - (id)updatedEmoticonArrayForGame:(id)arg1;
 - (void)onResPackageReady:(id)arg1;
 - (void)willRecoverDatabase;
@@ -89,4 +91,3 @@
 @property(readonly) Class superclass;
 
 @end
-
