@@ -51,6 +51,7 @@ typedef BOOL (^WCPLSendStrategyBlock)(void);
 - (void)wcpl_collectViewsWithTag:(NSInteger)tag
                           inView:(UIView *)view
                          results:(NSMutableArray<UIView *> *)results;
+- (NSString *)wcpl_messageKeyForMsgWrap:(CMessageWrap *)msgWrap;
 @end
 
 static WCPLSendStrategyBlock WCPLSendStrategy(WCPLSendStrategyBlock block) {
@@ -770,8 +771,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         if (!cellView) return;
         if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return;
 
-        // 修复：始终使用 cellView 作为 containerView，避免不一致导致多按钮问题
-        UIView *containerView = cellView;
+        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+        UIView *containerView = (cell && cell.contentView) ? cell.contentView : cellView;
         if (!containerView) return;
 
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
@@ -781,6 +782,10 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             [self removeRepeatButtonFromCellView:cellView];
             return;
         }
+
+        NSString *messageKey = [self wcpl_messageKeyForMsgWrap:msgWrap];
+        NSString *oldKey = objc_getAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:));
+        BOOL isSameMessage = (messageKey.length > 0 && [oldKey isEqualToString:messageKey]);
 
         BOOL canRepeat = [self canRepeatMessage:msgWrap];
         if (!canRepeat) {
@@ -816,9 +821,23 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         }
 
         UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView cellView:cellView];
+        if (isSameMessage && repeatButton) {
+            [self layoutRepeatButtonInContainer:repeatButton
+                                       cellView:cellView
+                                 containerView:containerView
+                                       msgWrap:msgWrap];
+            repeatButton.hidden = NO;
+            repeatButton.alpha = 1.0;
+            [containerView bringSubviewToFront:repeatButton];
+            return;
+        }
+
+        if (!isSameMessage) {
+            [self removeRepeatButtonFromCellView:cellView];
+            repeatButton = nil;
+        }
 
         // 修复：清理可能错误添加到 cell.contentView 的残留按钮
-        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         if (cell && cell.contentView && cell.contentView != cellView) {
             UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
             if (staleButton) {
@@ -831,6 +850,10 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             repeatButton = [self createRepeatButton];
             [containerView addSubview:repeatButton];
             WCPLLog(@"复读按钮创建: cell=%@ frame=%@", NSStringFromClass([cellView class]), NSStringFromCGRect(repeatButton.frame));
+        }
+
+        if (messageKey.length > 0) {
+            objc_setAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:), messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
         }
 
         [self layoutRepeatButtonInContainer:repeatButton
@@ -866,6 +889,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             [staleButton removeFromSuperview];
         }
     }
+
+    objc_setAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:), nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void)handleRepeatButtonTapWithContent:(NSString *)content
@@ -2264,10 +2289,16 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 - (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
                                            cellView:(UIView *)cellView {
-    if (!cellView) return nil;
+    UIView *searchView = containerView ?: cellView;
+    if (!searchView) return nil;
 
     NSMutableArray<UIView *> *taggedViews = [NSMutableArray array];
-    [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
+    [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:searchView results:taggedViews];
+
+    BOOL needsExtraSearch = cellView && searchView != cellView && ![cellView isDescendantOfView:searchView];
+    if (needsExtraSearch) {
+        [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
+    }
 
     UIButton *repeatButton = nil;
     NSInteger removedCount = 0;
@@ -2304,6 +2335,18 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     for (UIView *subview in view.subviews) {
         [self wcpl_collectViewsWithTag:tag inView:subview results:results];
     }
+}
+
+- (NSString *)wcpl_messageKeyForMsgWrap:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return nil;
+    NSString *fromUser = msgWrap.m_nsFromUsr ?: @"";
+    NSString *toUser = msgWrap.m_nsToUsr ?: @"";
+    return [NSString stringWithFormat:@"%u_%lld_%u_%@_%@",
+            msgWrap.m_uiMesLocalID,
+            msgWrap.m_n64MesSvrID,
+            msgWrap.m_uiMessageType,
+            fromUser,
+            toUser];
 }
 
 - (NSString *)handleRepeatImageMessage:(CMessageWrap *)msgWrap viewController:(BaseMsgContentViewController *)viewController {

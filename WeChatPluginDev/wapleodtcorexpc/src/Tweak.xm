@@ -646,6 +646,13 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
 }
 
+- (void)setViewModel:(id)viewModel {
+    %orig;
+
+    // viewModel 设置完成后补一次，避免布局时机导致按钮消失
+    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
+}
+
 - (void)prepareForReuse {
     %orig;
 
