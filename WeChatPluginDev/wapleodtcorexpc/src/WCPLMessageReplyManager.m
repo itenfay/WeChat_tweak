@@ -15,12 +15,7 @@
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
 
-// 关联对象的 key
-static char kRepeatContentKey;
-static char kRepeatMsgWrapKey;
-static char kRepeatButtonForCellKey;
-static char kRepeatMessageKey;
-static char kRepeatButtonBubbleViewKey;
+// 调试弹窗开关 key
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
 
 typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
@@ -48,7 +43,6 @@ typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
 typedef BOOL (^WCPLSendStrategyBlock)(void);
 
 @interface WCPLMessageReplyManager ()
-@property (nonatomic, strong) NSMapTable<NSString *, UIButton *> *repeatButtonsByMessageKey;
 @end
 
 static WCPLSendStrategyBlock WCPLSendStrategy(WCPLSendStrategyBlock block) {
@@ -132,14 +126,6 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 @implementation WCPLMessageReplyManager
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _repeatButtonsByMessageKey = [NSMapTable strongToWeakObjectsMapTable];
-    }
-    return self;
-}
-
 + (WCPLMessageReplyManager *)sharedManager {
     static WCPLMessageReplyManager *manager;
     static dispatch_once_t onceToken;
@@ -163,11 +149,31 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     return foundCell;
 }
 
-- (BOOL)wcpl_isRepeatButtonView:(UIView *)view {
-    if (!view) return NO;
-    if (view.tag != kWCPLRepeatButtonTag) return NO;
-    if (![view isKindOfClass:[UIButton class]]) return NO;
-    return YES;
+- (UIView *)wcpl_findFirstSubviewOfClass:(Class)targetClass inView:(UIView *)view {
+    if (!targetClass || !view) return nil;
+
+    for (UIView *subview in view.subviews) {
+        if ([subview isKindOfClass:targetClass]) {
+            return subview;
+        }
+        UIView *found = [self wcpl_findFirstSubviewOfClass:targetClass inView:subview];
+        if (found) return found;
+    }
+    return nil;
+}
+
+- (CommonMessageCellView *)wcpl_findCellViewFromContainer:(UIView *)containerView {
+    if (!containerView) return nil;
+
+    UITableViewCell *cell = [self wcpl_tableViewCellForView:containerView];
+    Class cellViewClass = objc_getClass("CommonMessageCellView");
+    if (cellViewClass && [cell isKindOfClass:cellViewClass]) {
+        return (CommonMessageCellView *)cell;
+    }
+
+    UIView *rootView = cell ? cell.contentView : containerView;
+    UIView *found = [self wcpl_findFirstSubviewOfClass:cellViewClass inView:rootView];
+    return (CommonMessageCellView *)found;
 }
 
 - (BOOL)wcpl_isVoiceMessage:(CMessageWrap *)msgWrap {
@@ -178,115 +184,6 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                                         defaultValue:NO];
     if (isVoice) return YES;
     return (msgWrap.m_uiMessageType == 34);
-}
-
-- (UIView *)wcpl_findBubbleViewForCellView:(CommonMessageCellView *)cellView {
-    @try {
-        if (!cellView) return nil;
-
-        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
-        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
-        unsigned int msgType = msgWrap ? msgWrap.m_uiMessageType : 0;
-        BOOL isSelfieEmoticon = [self wcpl_safeInvokeBoolSelector:@selector(isSelfieEmoticon)
-                                                         onObject:viewModel
-                                                        arguments:nil
-                                                     defaultValue:NO];
-        NSString *className = NSStringFromClass([cellView class]);
-
-        if (isSelfieEmoticon || msgType == 47 || [className containsString:@"EmoticonMessageCellView"]) {
-            id emoticonView = [self wcpl_safeValueForObject:cellView keyName:@"m_emoticonView"];
-            if ([emoticonView isKindOfClass:[UIView class]]) {
-                UIView *view = (UIView *)emoticonView;
-                if (!view.hidden && view.frame.size.width > 1.0 && view.frame.size.height > 1.0) {
-                    return view;
-                }
-            }
-        }
-
-        return [self findBubbleViewInCellView:cellView];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in wcpl_findBubbleViewForCellView: %@", exception);
-        return nil;
-    }
-}
-
-- (UIButton *)wcpl_repeatButtonForMessageKey:(NSString *)messageKey {
-    if (!messageKey || messageKey.length == 0) return nil;
-
-    UIButton *button = [self.repeatButtonsByMessageKey objectForKey:messageKey];
-    if (button && ![self wcpl_isRepeatButtonView:button]) {
-        [self.repeatButtonsByMessageKey removeObjectForKey:messageKey];
-        button = nil;
-    }
-    if (!button) {
-        button = [self createRepeatButton];
-        if (button) {
-            [self.repeatButtonsByMessageKey setObject:button forKey:messageKey];
-        }
-    }
-    return button;
-}
-
-- (void)wcpl_removeSiblingRepeatButtonsInView:(UIView *)view excludingButton:(UIButton *)excludingButton {
-    if (!view) return;
-
-    NSArray<UIView *> *subviews = [view.subviews copy];
-    for (UIView *subview in subviews) {
-        if ([self wcpl_isRepeatButtonView:subview]) {
-            if (excludingButton && subview == excludingButton) {
-                continue;
-            }
-            [subview removeFromSuperview];
-        }
-    }
-}
-
-- (void)wcpl_clearRepeatAssociationForCell:(UITableViewCell *)cell {
-    if (!cell) return;
-    objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (long long)wcpl_messageServerId:(CMessageWrap *)msgWrap {
-    if (!msgWrap) return 0;
-
-    long long serverId = 0;
-    @try {
-        id value = [msgWrap valueForKey:@"m_n64MesSvrID"];
-        if ([value respondsToSelector:@selector(longLongValue)]) {
-            serverId = [value longLongValue];
-        }
-    }
-    @catch (__unused NSException *exception) {
-        serverId = 0;
-    }
-    return serverId;
-}
-
-- (NSString *)wcpl_messageKeyForMessageWrap:(CMessageWrap *)msgWrap content:(NSString *)content {
-    if (!msgWrap) return nil;
-
-    long long serverId = [self wcpl_messageServerId:msgWrap];
-    if (serverId > 0) {
-        return [NSString stringWithFormat:@"svr:%lld", serverId];
-    }
-
-    unsigned int localId = msgWrap.m_uiMesLocalID;
-    if (localId > 0) {
-        return [NSString stringWithFormat:@"local:%u", localId];
-    }
-
-    NSString *fromUser = msgWrap.m_nsFromUsr ?: @"";
-    NSString *toUser = msgWrap.m_nsToUsr ?: @"";
-    NSString *realUser = msgWrap.m_nsRealChatUsr ?: @"";
-    unsigned int createTime = msgWrap.m_uiCreateTime;
-    unsigned int msgType = msgWrap.m_uiMessageType;
-    NSString *seed = content ?: msgWrap.m_nsContent ?: msgWrap.m_nsMsgSource ?: @"";
-    NSUInteger seedHash = seed.hash;
-
-    return [NSString stringWithFormat:@"f:%@|t:%@|r:%@|ct:%u|type:%u|h:%lu",
-            fromUser, toUser, realUser, createTime, msgType, (unsigned long)seedHash];
 }
 
 - (BOOL)wcpl_safeInvokeVoidSelector:(SEL)selector onObject:(id)obj arguments:(NSArray<id> *)arguments {
@@ -860,124 +757,62 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 #pragma mark - Public Methods
 
-- (BOOL)wcpl_collectRepeatInfoFromCellView:(CommonMessageCellView *)cellView
-                                      cell:(UITableViewCell **)outCell
-                                   msgWrap:(CMessageWrap **)outMsgWrap
-                                   content:(NSString **)outContent
-                                messageKey:(NSString **)outMessageKey {
-    if (!cellView) return NO;
-    if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return NO;
-
-    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
-
-    id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
-    if (!viewModel) return NO;
-
-    CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
-    if (!msgWrap) return NO;
-
-    if (![self canRepeatMessage:msgWrap]) return NO;
-
-    NSString *content = nil;
-    unsigned int msgType = msgWrap.m_uiMessageType;
-    BOOL isEmoticonMessage = (msgType == 47);
-    BOOL isImageMessage = (msgType == 3);
-    BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
-    if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
-        id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
-        if ([contentText isKindOfClass:[NSString class]]) {
-            content = (NSString *)contentText;
-        }
-        if (!content || content.length == 0) {
-            content = [self getMessageContent:msgWrap];
-        }
-        if (!content || content.length == 0) return NO;
-    }
-
-    NSString *messageKey = [self wcpl_messageKeyForMessageWrap:msgWrap content:content];
-    if (!messageKey) return NO;
-
-    if (outCell) *outCell = cell;
-    if (outMsgWrap) *outMsgWrap = msgWrap;
-    if (outContent) *outContent = content;
-    if (outMessageKey) *outMessageKey = messageKey;
-    return YES;
-}
-
-- (void)wcpl_bindRepeatButton:(UIButton *)button
-                       toCell:(UITableViewCell *)cell
-                   messageKey:(NSString *)messageKey
-                      content:(NSString *)content
-                       msgWrap:(CMessageWrap *)msgWrap {
-    if (!button) return;
-    if (cell) {
-        objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, button, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(cell, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
-
-    objc_setAssociatedObject(button, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(button, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(button, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
 - (void)addRepeatButtonToCellView:(CommonMessageCellView *)cellView {
     @try {
         if (!cellView) return;
+        if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return;
 
-        CMessageWrap *msgWrap = nil;
-        NSString *content = nil;
-        NSString *messageKey = nil;
-        UITableViewCell *cell = nil;
-        if (![self wcpl_collectRepeatInfoFromCellView:cellView
-                                                cell:&cell
-                                             msgWrap:&msgWrap
-                                             content:&content
-                                          messageKey:&messageKey]) {
+        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+        UIView *containerView = cell ? cell.contentView : cellView;
+        if (!containerView) return;
+
+        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
+        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
+        if (!msgWrap || ![self canRepeatMessage:msgWrap]) {
             [self removeRepeatButtonFromCellView:cellView];
             return;
         }
 
-        UIView *bubbleView = [self wcpl_findBubbleViewForCellView:cellView];
-        if (!bubbleView) {
-            [self removeRepeatButtonFromCellView:cellView];
-            return;
+        unsigned int msgType = msgWrap.m_uiMessageType;
+        BOOL isEmoticonMessage = (msgType == 47);
+        BOOL isImageMessage = (msgType == 3);
+        BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
+        if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
+            NSString *content = nil;
+            id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
+            if ([contentText isKindOfClass:[NSString class]]) {
+                content = (NSString *)contentText;
+            }
+            if (!content || content.length == 0) {
+                content = [self getMessageContent:msgWrap];
+            }
+            if (!content || content.length == 0) {
+                [self removeRepeatButtonFromCellView:cellView];
+                return;
+            }
         }
 
-        bubbleView.clipsToBounds = NO;
+        UIView *foundView = [containerView viewWithTag:kWCPLRepeatButtonTag];
+        UIButton *repeatButton = nil;
+        if ([foundView isKindOfClass:[UIButton class]]) {
+            repeatButton = (UIButton *)foundView;
+        } else if (foundView) {
+            [foundView removeFromSuperview];
+        }
 
-        UIButton *repeatButton = [self wcpl_repeatButtonForMessageKey:messageKey];
         if (!repeatButton) {
-            [self removeRepeatButtonFromCellView:cellView];
-            return;
+            repeatButton = [self createRepeatButton];
+            [containerView addSubview:repeatButton];
         }
 
-        UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
-        NSString *associatedMessageKey = cell ? objc_getAssociatedObject(cell, &kRepeatMessageKey) : nil;
-        if (associatedButton && associatedButton != repeatButton) {
-            [associatedButton removeFromSuperview];
-        }
-        if (cell && associatedMessageKey && ![associatedMessageKey isEqualToString:messageKey]) {
-            [self wcpl_clearRepeatAssociationForCell:cell];
-        }
-
-        if (repeatButton.superview != bubbleView) {
-            [repeatButton removeFromSuperview];
-            [bubbleView addSubview:repeatButton];
-        }
-
-        [self wcpl_bindRepeatButton:repeatButton
-                             toCell:cell
-                         messageKey:messageKey
-                            content:content
-                             msgWrap:msgWrap];
-
-        [self layoutRepeatButton:repeatButton inCellView:cellView];
+        [self layoutRepeatButtonInContainer:repeatButton
+                                   cellView:cellView
+                             containerView:containerView
+                                   msgWrap:msgWrap];
 
         repeatButton.hidden = NO;
         repeatButton.alpha = 1.0;
-
-        [self wcpl_removeSiblingRepeatButtonsInView:bubbleView excludingButton:repeatButton];
-        [self wcpl_removeSiblingRepeatButtonsInView:cellView excludingButton:repeatButton];
+        [containerView bringSubviewToFront:repeatButton];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in addRepeatButtonToCellView: %@", exception);
@@ -985,29 +820,15 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 }
 
 - (void)removeRepeatButtonFromCellView:(CommonMessageCellView *)cellView {
-    @try {
-        if (!cellView) return;
+    if (!cellView) return;
 
-        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
-        UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
-        NSString *associatedMessageKey = cell ? objc_getAssociatedObject(cell, &kRepeatMessageKey) : nil;
-        if (associatedButton) {
-            [associatedButton removeFromSuperview];
-            if (cell) {
-                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-        }
-        if (associatedMessageKey && associatedMessageKey.length > 0) {
-            [self.repeatButtonsByMessageKey removeObjectForKey:associatedMessageKey];
-        }
+    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+    UIView *containerView = cell ? cell.contentView : cellView;
+    if (!containerView) return;
 
-        UIView *bubbleView = [self wcpl_findBubbleViewForCellView:cellView];
-        [self wcpl_removeSiblingRepeatButtonsInView:bubbleView excludingButton:nil];
-        [self wcpl_removeSiblingRepeatButtonsInView:cellView excludingButton:nil];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in removeRepeatButtonFromCellView: %@", exception);
+    UIView *foundView = [containerView viewWithTag:kWCPLRepeatButtonTag];
+    if (foundView) {
+        [foundView removeFromSuperview];
     }
 }
 
@@ -1379,89 +1200,35 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     } completion:nil];
 }
 
-- (void)layoutRepeatButton:(UIButton *)button inCellView:(CommonMessageCellView *)cellView {
+- (void)layoutRepeatButtonInContainer:(UIButton *)button
+                             cellView:(CommonMessageCellView *)cellView
+                        containerView:(UIView *)containerView
+                              msgWrap:(CMessageWrap *)msgWrap {
     @try {
-        if (!button || !cellView) return;
+        if (!button || !cellView || !containerView || !msgWrap) return;
 
-        UIView *bubbleView = button.superview;
-        if (!bubbleView) {
-            bubbleView = [self wcpl_findBubbleViewForCellView:cellView];
-            if (!bubbleView) {
-                button.hidden = YES;
-                return;
-            }
-            [button removeFromSuperview];
-            [bubbleView addSubview:button];
-        }
-
-        bubbleView.clipsToBounds = NO;
-
-        // 获取 ViewModel 和 MessageWrap 来判断消息方向
-        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
-        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
-
-        if (!msgWrap) {
+        UIView *bubbleView = [self findBubbleViewInCellView:cellView];
+        if (!bubbleView || bubbleView.frame.size.width < 1.0 || bubbleView.frame.size.height < 1.0) {
             button.hidden = YES;
             return;
         }
 
-        // 通过判断消息发送者来确定消息方向（更可靠）
-        BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
-
-        CGFloat buttonSize = 24.0;
-        UIView *attachedBubbleView = objc_getAssociatedObject(button, &kRepeatButtonBubbleViewKey);
-        BOOL shouldResetConstraints = button.translatesAutoresizingMaskIntoConstraints || (attachedBubbleView != bubbleView);
-        if (shouldResetConstraints) {
-            button.translatesAutoresizingMaskIntoConstraints = NO;
-
-            if (attachedBubbleView && attachedBubbleView != bubbleView) {
-                NSMutableArray<NSLayoutConstraint *> *oldConstraints = [NSMutableArray array];
-                for (NSLayoutConstraint *constraint in attachedBubbleView.constraints) {
-                    if (constraint.firstItem == button || constraint.secondItem == button) {
-                        [oldConstraints addObject:constraint];
-                    }
-                }
-                if (oldConstraints.count > 0) {
-                    [attachedBubbleView removeConstraints:oldConstraints];
-                }
-            }
-
-            NSMutableArray<NSLayoutConstraint *> *currentConstraints = [NSMutableArray array];
-            for (NSLayoutConstraint *constraint in bubbleView.constraints) {
-                if (constraint.firstItem == button || constraint.secondItem == button) {
-                    [currentConstraints addObject:constraint];
-                }
-            }
-            if (currentConstraints.count > 0) {
-                [bubbleView removeConstraints:currentConstraints];
-            }
-
-            if (button.constraints.count > 0) {
-                [button removeConstraints:button.constraints];
-            }
-
-            [button.widthAnchor constraintEqualToConstant:buttonSize].active = YES;
-            [button.heightAnchor constraintEqualToConstant:buttonSize].active = YES;
-            [button.bottomAnchor constraintEqualToAnchor:bubbleView.bottomAnchor].active = YES;
-
-            if (isFromSelf) {
-                [button.trailingAnchor constraintEqualToAnchor:bubbleView.leadingAnchor constant:-2.0].active = YES;
-            } else {
-                [button.leadingAnchor constraintEqualToAnchor:bubbleView.trailingAnchor constant:2.0].active = YES;
-            }
-
-            objc_setAssociatedObject(button, &kRepeatButtonBubbleViewKey, bubbleView, OBJC_ASSOCIATION_ASSIGN);
+        CGRect bubbleFrame = CGRectZero;
+        if (bubbleView.superview) {
+            bubbleFrame = [bubbleView.superview convertRect:bubbleView.frame toView:containerView];
+        } else {
+            bubbleFrame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
         }
 
-        [bubbleView bringSubviewToFront:button];
-        button.hidden = NO;
-
-        // 强制立即更新布局
-        [button setNeedsLayout];
-        [button layoutIfNeeded];
+        BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
+        CGFloat buttonSize = 24.0;
+        CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2.0)
+                                     : (CGRectGetMaxX(bubbleFrame) + 2.0);
+        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;
+        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
     }
     @catch (NSException *exception) {
-        NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
+        NSLog(@"[WCPL] Exception in layoutRepeatButtonInContainer: %@", exception);
         button.hidden = YES;
     }
 }
@@ -1720,28 +1487,44 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             [generator impactOccurred];
         }
 
-        NSString *content = objc_getAssociatedObject(sender, &kRepeatContentKey);
-        CMessageWrap *msgWrap = objc_getAssociatedObject(sender, &kRepeatMsgWrapKey);
+        UIView *containerView = sender.superview;
+        CommonMessageCellView *cellView = [self wcpl_findCellViewFromContainer:containerView];
+        if (!cellView) {
+            WCPLLog(@"Repeat tapped but cannot find cellView");
+            return;
+        }
+
+        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
+        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
+        if (!msgWrap) {
+            WCPLLog(@"Repeat tapped but msgWrap is nil");
+            return;
+        }
+
+        NSString *content = nil;
+        unsigned int msgType = msgWrap.m_uiMessageType;
+        BOOL isEmoticonMessage = (msgType == 47);
+        BOOL isImageMessage = (msgType == 3);
+        BOOL isVideoMessage = (msgType == 43 || msgType == 62);
+        BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
+        if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
+            id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
+            if ([contentText isKindOfClass:[NSString class]]) {
+                content = (NSString *)contentText;
+            }
+            if (!content || content.length == 0) {
+                content = [self getMessageContent:msgWrap];
+            }
+        }
 
         // 关闭"调试信息弹窗"时，点击直接复读，仅保留日志输出（默认关闭弹窗）
         BOOL shouldShowDebugAlert = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRepeatDebugAlertEnabledKey];
         if (!shouldShowDebugAlert) {
-            if (!msgWrap) {
-                WCPLLog(@"Repeat tapped but msgWrap is nil");
-                return;
-            }
-
             BaseMsgContentViewController *viewController = [self findViewControllerFromView:sender];
             if (!viewController) {
                 WCPLLog(@"Repeat tapped but cannot find viewController");
                 return;
             }
-
-            unsigned int msgType = msgWrap.m_uiMessageType;
-            BOOL isEmoticonMessage = (msgType == 47);
-            BOOL isImageMessage = (msgType == 3);
-            BOOL isVideoMessage = (msgType == 43 || msgType == 62);
-            BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
 
             if (isImageMessage || isVideoMessage) {
                 WCPLLog(@"Repeat not supported for image/video message");
@@ -1777,11 +1560,6 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         [debugInfo appendFormat:@"2. 消息类型: %u\n", msgWrap ? msgWrap.m_uiMessageType : 0];
         [debugInfo appendFormat:@"3. 文本内容: %@\n", content ? [content substringToIndex:MIN(50, content.length)] : @"nil"];
 
-        // 检查是否是表情包/图片消息
-        BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
-        BOOL isImageMessage = (msgWrap && msgWrap.m_uiMessageType == 3);
-        BOOL isVideoMessage = (msgWrap && (msgWrap.m_uiMessageType == 43 || msgWrap.m_uiMessageType == 62));
-        BOOL isVoiceMessage = (msgWrap && [self wcpl_isVoiceMessage:msgWrap]);
         [debugInfo appendFormat:@"4. 是否表情包: %@\n", isEmoticonMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.1 是否图片: %@\n", isImageMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.2 是否视频: %@\n", isVideoMessage ? @"是" : @"否"];
