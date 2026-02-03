@@ -219,6 +219,34 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     [self.repeatButtonFramesByMessageKey setObject:[NSValue valueWithCGRect:frame] forKey:messageKey];
 }
 
+- (BOOL)wcpl_shouldPreferCachedBubbleFrame:(CGRect)cached
+                                  newFrame:(CGRect)newFrame
+                                   msgWrap:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return NO;
+
+    unsigned int msgType = msgWrap.m_uiMessageType;
+    BOOL isTextMessage = (msgType == 1 || msgType == 49);
+    if (!isTextMessage) return NO;
+
+    if (CGRectIsEmpty(cached) || CGRectIsEmpty(newFrame)) return NO;
+
+    CGFloat cachedHeight = CGRectGetHeight(cached);
+    CGFloat newHeight = CGRectGetHeight(newFrame);
+    if (cachedHeight <= 1.0 || newHeight <= 1.0) return NO;
+
+    // 缓存高度过小，优先采用新帧，避免错误缓存锁死
+    if (cachedHeight < 40.0 && newHeight > cachedHeight * 1.2) {
+        return NO;
+    }
+
+    // 新帧明显变大时优先采用新帧，避免首次缓存错误导致长期偏移
+    if (newHeight > cachedHeight * 1.3) {
+        return NO;
+    }
+
+    return YES;
+}
+
 - (void)wcpl_removeSiblingRepeatButtonsInView:(UIView *)view excludingButton:(UIButton *)excludingButton {
     if (!view) return;
 
@@ -1374,7 +1402,10 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 - (void)layoutRepeatButton:(UIButton *)button inCellView:(CommonMessageCellView *)cellView {
     @try {
-        UIView *containerView = button.superview ?: cellView;
+        UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
+        if (!containerView) {
+            containerView = button.superview ?: cellView;
+        }
 
         // 获取 ViewModel 和 MessageWrap 来判断消息方向
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
@@ -1390,11 +1421,17 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         BOOL hasBubbleFrame = [self wcpl_bubbleFrameForCellView:cellView
                                                   containerView:containerView
                                                        outFrame:&bubbleFrame];
+        CGRect cached = [self wcpl_cachedRepeatButtonFrameForMessageKey:messageKey];
+        BOOL hasCached = !CGRectIsEmpty(cached);
         if (hasBubbleFrame) {
-            [self wcpl_cacheRepeatButtonFrame:bubbleFrame forMessageKey:messageKey];
+            if (hasCached && [self wcpl_shouldPreferCachedBubbleFrame:cached newFrame:bubbleFrame msgWrap:msgWrap]) {
+                bubbleFrame.origin.y = cached.origin.y;
+                bubbleFrame.size.height = cached.size.height;
+            } else {
+                [self wcpl_cacheRepeatButtonFrame:bubbleFrame forMessageKey:messageKey];
+            }
         } else {
-            CGRect cached = [self wcpl_cachedRepeatButtonFrameForMessageKey:messageKey];
-            if (!CGRectIsEmpty(cached)) {
+            if (hasCached) {
                 bubbleFrame = cached;
             } else {
                 button.hidden = YES;
@@ -1406,18 +1443,32 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
 
         // 重新挂载到容器，避免复用时层级异常
-        [button removeFromSuperview];
-        [containerView addSubview:button];
+        if (button.superview != containerView) {
+            [button removeFromSuperview];
+            [containerView addSubview:button];
+        }
 
         // 使用 frame 布局避免约束累积
         CGRect buttonFrame = [self wcpl_repeatButtonFrameForBubbleFrame:bubbleFrame isFromSelf:isFromSelf];
         CGFloat containerWidth = CGRectGetWidth(containerView.bounds);
+        CGFloat containerHeight = CGRectGetHeight(containerView.bounds);
         if (containerWidth > 0) {
             if (CGRectGetMaxX(buttonFrame) > containerWidth) {
                 buttonFrame = [self wcpl_repeatButtonFrameForBubbleFrame:bubbleFrame isFromSelf:YES];
             }
             if (buttonFrame.origin.x < 0) {
                 buttonFrame.origin.x = 0;
+            }
+        }
+        if (containerHeight > 0) {
+            // 仅在气泡完整落在容器内时才做 Y 方向收敛，避免布局阶段高度不稳定导致跳动
+            if (containerHeight >= CGRectGetMaxY(bubbleFrame) + 1.0) {
+                if (CGRectGetMaxY(buttonFrame) > containerHeight) {
+                    buttonFrame.origin.y = MAX(containerHeight - buttonFrame.size.height, 0);
+                }
+                if (buttonFrame.origin.y < 0) {
+                    buttonFrame.origin.y = 0;
+                }
             }
         }
         button.frame = buttonFrame;
@@ -1449,6 +1500,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     if (!cellView || !containerView || !outFrame) return NO;
 
     id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
+    CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
+    unsigned int msgType = msgWrap ? msgWrap.m_uiMessageType : 0;
     BOOL isSelfieEmoticon = [self wcpl_safeInvokeBoolSelector:@selector(isSelfieEmoticon)
                                                      onObject:viewModel
                                                     arguments:nil
@@ -1465,12 +1518,26 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     }
 
     NSString *className = NSStringFromClass([cellView class]);
-    if ([className containsString:@"EmoticonMessageCellView"]) {
+    if (msgType == 47 || [className containsString:@"EmoticonMessageCellView"]) {
         id emoticonView = [self wcpl_safeValueForObject:cellView keyName:@"m_emoticonView"];
         if ([emoticonView isKindOfClass:[UIView class]]) {
             UIView *view = (UIView *)emoticonView;
             if (!view.hidden && view.frame.size.width > 1.0 && view.frame.size.height > 1.0) {
                 *outFrame = [view convertRect:view.bounds toView:containerView];
+                return YES;
+            }
+        }
+    }
+
+    BOOL preferBubbleView =
+        (msgType == 1 || msgType == 49 || [className containsString:@"TextMessageCellView"]);
+
+    if (preferBubbleView) {
+        UIView *bubbleView = [self findBubbleViewInCellView:cellView];
+        if (bubbleView) {
+            CGRect frame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
+            if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
+                *outFrame = frame;
                 return YES;
             }
         }
@@ -1496,12 +1563,14 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         }
     }
 
-    UIView *bubbleView = [self findBubbleViewInCellView:cellView];
-    if (bubbleView) {
-        CGRect frame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
-        if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
-            *outFrame = frame;
-            return YES;
+    if (!preferBubbleView) {
+        UIView *bubbleView = [self findBubbleViewInCellView:cellView];
+        if (bubbleView) {
+            CGRect frame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
+            if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
+                *outFrame = frame;
+                return YES;
+            }
         }
     }
 
