@@ -139,7 +139,9 @@ typedef NS_ENUM(NSInteger, WCHookSwipeDirection) {
 @property(retain, nonatomic) UIPanGestureRecognizer *wchook_swipeGesture;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
 @property(nonatomic) _Bool wchook_feedbackTriggered;
+@property(nonatomic) NSInteger wchook_swipeTriggerStage;
 - (void)wchook_triggerActionForDirection:(WCHookSwipeDirection)direction;
+- (void)wchook_triggerLightActionForDirection:(WCHookSwipeDirection)direction;
 - (void)wchook_showSwipeActionMenuForDirection:(WCHookSwipeDirection)direction;
 - (void)wchook_performQuoteReply;
 - (void)wchook_performRepeatMessage:(id)arg;
