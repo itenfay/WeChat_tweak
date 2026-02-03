@@ -128,6 +128,13 @@
 @property(retain, nonatomic) UIPanGestureRecognizer *wchook_swipeGesture;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
 @property(nonatomic) _Bool wchook_feedbackTriggered;
+- (void)wchook_triggerActionForDirection:(id)direction;
+- (void)wchook_showSwipeActionMenuForDirection:(id)direction;
+- (void)wchook_performQuoteReply;
+- (void)wchook_performRepeatMessage:(id)arg;
+- (void)wchook_performDeleteMessage:(id)arg;
+- (void)wchook_performRevokeMessage:(id)arg;
+- (id)wchook_findChatViewController;
 - (void)wchook_setupSwipeGestureIfNeeded;
 - (void)wchook_resetSwipeAnimated:(_Bool)animated;
 @end
