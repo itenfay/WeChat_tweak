@@ -57,6 +57,18 @@
 @property (assign, nonatomic) NSInteger repeatButtonIconIndex;
 // 自定义图片路径 (存储在 Documents 目录)
 @property (copy, nonatomic) NSString *repeatButtonCustomImagePath;
+// 复读按钮背景透明度 (仅影响背景色)
+@property (assign, nonatomic) CGFloat repeatButtonBackgroundAlpha;
+// 复读按钮尺寸 (正方形边长)
+@property (assign, nonatomic) CGFloat repeatButtonSize;
+// 复读按钮文字颜色模式: 0=统一颜色, 1=按消息类型
+@property (assign, nonatomic) NSInteger repeatButtonTextColorMode;
+// 文字颜色 (Hex 字符串, 例如 #07C160)
+@property (copy, nonatomic) NSString *repeatButtonTextColorDefault;
+@property (copy, nonatomic) NSString *repeatButtonTextColorText;
+@property (copy, nonatomic) NSString *repeatButtonTextColorVoice;
+@property (copy, nonatomic) NSString *repeatButtonTextColorEmoticon;
+@property (copy, nonatomic) NSString *repeatButtonTextColorQuote;
 
 // 消息手势总开关
 @property (assign, nonatomic) BOOL swipeGestureEnable;

@@ -822,10 +822,12 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView cellView:cellView];
         if (isSameMessage && repeatButton) {
+            [self configureButtonContent:repeatButton];
             [self layoutRepeatButtonInContainer:repeatButton
                                        cellView:cellView
                                  containerView:containerView
                                        msgWrap:msgWrap];
+            [self applyRepeatButtonAppearance:repeatButton msgWrap:msgWrap];
             repeatButton.hidden = NO;
             repeatButton.alpha = 1.0;
             [containerView bringSubviewToFront:repeatButton];
@@ -856,10 +858,12 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             objc_setAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:), messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
         }
 
+        [self configureButtonContent:repeatButton];
         [self layoutRepeatButtonInContainer:repeatButton
                                    cellView:cellView
                              containerView:containerView
                                    msgWrap:msgWrap];
+        [self applyRepeatButtonAppearance:repeatButton msgWrap:msgWrap];
 
         repeatButton.hidden = NO;
         repeatButton.alpha = 1.0;
@@ -1116,19 +1120,112 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 #pragma mark - Private Methods
 
+- (CGFloat)repeatButtonSize {
+    CGFloat size = [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize;
+    if (size < 18.0) {
+        size = 18.0;
+    } else if (size > 36.0) {
+        size = 36.0;
+    }
+    return size;
+}
+
+- (CGFloat)repeatButtonBackgroundAlpha {
+    CGFloat alpha = [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha;
+    if (alpha < 0.1) {
+        alpha = 0.1;
+    } else if (alpha > 1.0) {
+        alpha = 1.0;
+    }
+    return alpha;
+}
+
+- (UIColor *)repeatButtonBackgroundColorNormal {
+    return [UIColor colorWithWhite:1.0 alpha:[self repeatButtonBackgroundAlpha]];
+}
+
+- (UIColor *)repeatButtonBackgroundColorPressed {
+    return [UIColor colorWithWhite:0.96 alpha:[self repeatButtonBackgroundAlpha]];
+}
+
+- (UIColor *)wcpl_colorFromHexString:(NSString *)hexString fallback:(UIColor *)fallback {
+    if (![hexString isKindOfClass:[NSString class]]) {
+        return fallback;
+    }
+    NSString *trimmed = [[hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    if (trimmed.length == 0) {
+        return fallback;
+    }
+    if ([trimmed hasPrefix:@"#"]) {
+        trimmed = [trimmed substringFromIndex:1];
+    }
+    if (trimmed.length != 6) {
+        return fallback;
+    }
+    unsigned int rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:trimmed];
+    if (![scanner scanHexInt:&rgbValue]) {
+        return fallback;
+    }
+    CGFloat red = ((rgbValue >> 16) & 0xFF) / 255.0;
+    CGFloat green = ((rgbValue >> 8) & 0xFF) / 255.0;
+    CGFloat blue = (rgbValue & 0xFF) / 255.0;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+}
+
+- (UIColor *)repeatButtonDefaultTextColor {
+    UIColor *fallback = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
+    NSString *hexString = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault;
+    return [self wcpl_colorFromHexString:hexString fallback:fallback];
+}
+
+- (UIColor *)repeatButtonTitleColorForMsgWrap:(CMessageWrap *)msgWrap {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    UIColor *defaultColor = [self repeatButtonDefaultTextColor];
+    if (config.repeatButtonTextColorMode != 1 || !msgWrap) {
+        return defaultColor;
+    }
+
+    if (msgWrap.m_uiMessageType == 49) {
+        return [self wcpl_colorFromHexString:config.repeatButtonTextColorQuote fallback:defaultColor];
+    }
+    if ([self wcpl_isVoiceMessage:msgWrap]) {
+        return [self wcpl_colorFromHexString:config.repeatButtonTextColorVoice fallback:defaultColor];
+    }
+    if ([self wcpl_isEmoticonMessage:msgWrap]) {
+        return [self wcpl_colorFromHexString:config.repeatButtonTextColorEmoticon fallback:defaultColor];
+    }
+    return [self wcpl_colorFromHexString:config.repeatButtonTextColorText fallback:defaultColor];
+}
+
+- (void)applyRepeatButtonAppearance:(UIButton *)button msgWrap:(CMessageWrap *)msgWrap {
+    if (!button) return;
+
+    CGFloat alpha = [self repeatButtonBackgroundAlpha];
+    button.backgroundColor = [self repeatButtonBackgroundColorNormal];
+    button.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:(0.1 * alpha)].CGColor;
+    button.layer.cornerRadius = CGRectGetWidth(button.bounds) * 0.5;
+
+    if (button.currentTitle.length > 0) {
+        UIColor *titleColor = [self repeatButtonTitleColorForMsgWrap:msgWrap];
+        [button setTitleColor:titleColor forState:UIControlStateNormal];
+    }
+}
+
 - (UIButton *)createRepeatButton {
     UIButton *button = [WCPLRepeatButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
 
     // 基础布局 - 稍大的尺寸更易点击
-    button.frame = CGRectMake(0, 0, 24, 24);
+    CGFloat buttonSize = [self repeatButtonSize];
+    button.frame = CGRectMake(0, 0, buttonSize, buttonSize);
 
     // 确保按钮可交互
     button.userInteractionEnabled = YES;
     button.enabled = YES;
 
     // 现代扁平化背景 (Modern Flat Style)
-    button.backgroundColor = [UIColor whiteColor];
+    button.backgroundColor = [self repeatButtonBackgroundColorNormal];
 
     // 阴影与层次感 (Shadow & Depth) - 模仿 iOS 原生控件的悬浮感
     button.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -1138,10 +1235,10 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     button.layer.masksToBounds = NO;               // 允许阴影显示在边界外
 
     // 边框与圆角 (Border & Corner)
-    button.layer.cornerRadius = 12;  // 圆形 (对应 24x24 尺寸)
+    button.layer.cornerRadius = buttonSize * 0.5;  // 圆形 (对应按钮尺寸)
     // 极细的灰色描边，增强在白色背景上的可见度
     button.layer.borderWidth = 0.5;
-    button.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.1].CGColor;
+    button.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:(0.1 * [self repeatButtonBackgroundAlpha])].CGColor;
 
     // 根据配置设置按钮内容
     [self configureButtonContent:button];
@@ -1164,6 +1261,11 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 - (void)configureButtonContent:(UIButton *)button {
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSInteger style = config.repeatButtonStyle;
+    CGFloat buttonSize = [self repeatButtonSize];
+    CGFloat textFontSize = MAX(10.0, buttonSize * 0.45);
+    CGFloat emojiFontSize = MAX(12.0, buttonSize * 0.58);
+    CGFloat imageSize = MAX(12.0, buttonSize * 0.75);
+    UIColor *defaultTextColor = [self repeatButtonDefaultTextColor];
 
     // 清除之前的内容
     [button setTitle:nil forState:UIControlStateNormal];
@@ -1174,10 +1276,9 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
     if (style == 0) {
         // 文字模式 - 使用微信绿色 +1
-        UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
         [button setTitle:@"+1" forState:UIControlStateNormal];
-        [button setTitleColor:weChatGreen forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+        [button setTitleColor:defaultTextColor forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:textFontSize weight:UIFontWeightMedium];
     } else if (style == 1) {
         // 内置图标模式 - 使用 emoji
         NSInteger iconIndex = config.repeatButtonIconIndex;
@@ -1188,14 +1289,13 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         if ([icon isEqualToString:@"+1"]) {
             // +1 使用文字样式
-            UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
             [button setTitle:icon forState:UIControlStateNormal];
-            [button setTitleColor:weChatGreen forState:UIControlStateNormal];
-            button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+            [button setTitleColor:defaultTextColor forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:textFontSize weight:UIFontWeightMedium];
         } else {
             // emoji 图标
             [button setTitle:icon forState:UIControlStateNormal];
-            button.titleLabel.font = [UIFont systemFontOfSize:14];
+            button.titleLabel.font = [UIFont systemFontOfSize:emojiFontSize];
         }
     } else if (style == 2) {
         // 自定义图片模式
@@ -1211,7 +1311,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         if (customImage) {
             // 缩放图片到合适大小
-            CGSize targetSize = CGSizeMake(18, 18);
+            CGSize targetSize = CGSizeMake(imageSize, imageSize);
             UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
             [customImage drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
             UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -1221,17 +1321,15 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             button.imageView.contentMode = UIViewContentModeScaleAspectFit;
         } else {
             // 回退到默认 +1
-            UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
             [button setTitle:@"+1" forState:UIControlStateNormal];
-            [button setTitleColor:weChatGreen forState:UIControlStateNormal];
-            button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+            [button setTitleColor:defaultTextColor forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:textFontSize weight:UIFontWeightMedium];
         }
     } else {
         // 默认 +1
-        UIColor *weChatGreen = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
         [button setTitle:@"+1" forState:UIControlStateNormal];
-        [button setTitleColor:weChatGreen forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
+        [button setTitleColor:defaultTextColor forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:textFontSize weight:UIFontWeightMedium];
     }
 }
 
@@ -1244,7 +1342,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                         options:UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
         sender.transform = CGAffineTransformMakeScale(0.9, 0.9);
-        sender.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1.0];  // 稍微变灰
+        sender.backgroundColor = [self repeatButtonBackgroundColorPressed];  // 稍微变灰
     } completion:nil];
 }
 
@@ -1257,7 +1355,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                         options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
         sender.transform = CGAffineTransformIdentity;
-        sender.backgroundColor = [UIColor whiteColor];
+        sender.backgroundColor = [self repeatButtonBackgroundColorNormal];
     } completion:nil];
 }
 
@@ -1286,7 +1384,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         }
 
         BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
-        CGFloat buttonSize = 24.0;
+        CGFloat buttonSize = [self repeatButtonSize];
         CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2.0)
                                      : (CGRectGetMaxX(bubbleFrame) + 2.0);
         CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;

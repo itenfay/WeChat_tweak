@@ -496,6 +496,16 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     if ([WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
         [section addCell:[self createRepeatButtonHapticCell]];
         [section addCell:[self createRepeatButtonStyleCell]];
+        [section addCell:[self createRepeatButtonBackgroundAlphaCell]];
+        [section addCell:[self createRepeatButtonSizeCell]];
+        [section addCell:[self createRepeatButtonTextColorModeCell]];
+        if ([WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode == 1) {
+            [section addCell:[self createRepeatButtonTextColorDefaultCell]];
+            [section addCell:[self createRepeatButtonTextColorTextCell]];
+            [section addCell:[self createRepeatButtonTextColorVoiceCell]];
+            [section addCell:[self createRepeatButtonTextColorEmoticonCell]];
+            [section addCell:[self createRepeatButtonTextColorQuoteCell]];
+        }
         [section addCell:[self createDebugLogSwitchCell]];
     }
 
@@ -841,6 +851,250 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [alert addAction:cancelAction];
 
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonBackgroundAlphaCell {
+    CGFloat alpha = [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha;
+    NSString *value = [NSString stringWithFormat:@"%.2f", alpha];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonBackgroundAlpha) target:self title:@"按钮背景透明度" rightValue:value accessoryType:1];
+}
+
+- (void)settingRepeatButtonBackgroundAlpha {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"按钮背景透明度"
+                                                                   message:@"范围 0.10 ~ 1.00"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    CGFloat currentValue = [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha;
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"例如：0.85";
+        textField.keyboardType = UIKeyboardTypeDecimalPad;
+        textField.text = [NSString stringWithFormat:@"%.2f", currentValue];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *text = alert.textFields.firstObject.text;
+        double value = 0;
+        if (![self wcpl_parseDoubleFromText:text value:&value]) {
+            [self showErrorAlert:@"请输入有效的数值 (0.10 ~ 1.00)"];
+            return;
+        }
+        if (value < 0.10 || value > 1.00) {
+            [self showErrorAlert:@"范围应在 0.10 ~ 1.00 之间"];
+            return;
+        }
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha = value;
+        [self reloadTableData];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonSizeCell {
+    CGFloat size = [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize;
+    NSString *value = [NSString stringWithFormat:@"%.0f", size];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonSize) target:self title:@"按钮大小" rightValue:value accessoryType:1];
+}
+
+- (void)settingRepeatButtonSize {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"按钮大小"
+                                                                   message:@"范围 18 ~ 36"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    CGFloat currentValue = [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize;
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"例如：24";
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+        textField.text = [NSString stringWithFormat:@"%.0f", currentValue];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *text = alert.textFields.firstObject.text;
+        double value = 0;
+        if (![self wcpl_parseDoubleFromText:text value:&value]) {
+            [self showErrorAlert:@"请输入有效的数值 (18 ~ 36)"];
+            return;
+        }
+        if (value < 18 || value > 36) {
+            [self showErrorAlert:@"范围应在 18 ~ 36 之间"];
+            return;
+        }
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize = value;
+        [self reloadTableData];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonTextColorModeCell {
+    NSArray *modeNames = @[@"统一颜色", @"按消息类型"];
+    NSInteger mode = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode;
+    NSString *modeName = (mode >= 0 && mode < modeNames.count) ? modeNames[mode] : modeNames[0];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonTextColorModePicker) target:self title:@"文字颜色规则" rightValue:modeName accessoryType:1];
+}
+
+- (void)showRepeatButtonTextColorModePicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"文字颜色规则"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"统一颜色" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode = 0;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *typeAction = [UIAlertAction actionWithTitle:@"按消息类型" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode = 1;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+
+    [alert addAction:defaultAction];
+    [alert addAction:typeAction];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonTextColorDefaultCell {
+    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault ?: @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorDefault) target:self title:@"文字颜色-默认" rightValue:value accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonTextColorTextCell {
+    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorText ?: @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorText) target:self title:@"文字颜色-文本" rightValue:value accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonTextColorVoiceCell {
+    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorVoice ?: @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorVoice) target:self title:@"文字颜色-语音" rightValue:value accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonTextColorEmoticonCell {
+    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorEmoticon ?: @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorEmoticon) target:self title:@"文字颜色-表情" rightValue:value accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonTextColorQuoteCell {
+    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorQuote ?: @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorQuote) target:self title:@"文字颜色-引用" rightValue:value accessoryType:1];
+}
+
+- (void)settingRepeatButtonTextColorDefault {
+    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault ?: @"";
+    [self showRepeatButtonTextColorInputWithTitle:@"默认颜色" currentValue:current onConfirm:^(NSString *hexString) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault = hexString;
+        [self reloadTableData];
+    }];
+}
+
+- (void)settingRepeatButtonTextColorText {
+    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorText ?: @"";
+    [self showRepeatButtonTextColorInputWithTitle:@"文本消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorText = hexString;
+        [self reloadTableData];
+    }];
+}
+
+- (void)settingRepeatButtonTextColorVoice {
+    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorVoice ?: @"";
+    [self showRepeatButtonTextColorInputWithTitle:@"语音消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorVoice = hexString;
+        [self reloadTableData];
+    }];
+}
+
+- (void)settingRepeatButtonTextColorEmoticon {
+    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorEmoticon ?: @"";
+    [self showRepeatButtonTextColorInputWithTitle:@"表情消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorEmoticon = hexString;
+        [self reloadTableData];
+    }];
+}
+
+- (void)settingRepeatButtonTextColorQuote {
+    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorQuote ?: @"";
+    [self showRepeatButtonTextColorInputWithTitle:@"引用消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
+        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorQuote = hexString;
+        [self reloadTableData];
+    }];
+}
+
+- (void)showRepeatButtonTextColorInputWithTitle:(NSString *)title
+                                  currentValue:(NSString *)currentValue
+                                      onConfirm:(void (^)(NSString *hexString))onConfirm {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:@"请输入 Hex 颜色，例如 #07C160"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"#RRGGBB";
+        textField.keyboardType = UIKeyboardTypeASCIICapable;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
+        textField.text = currentValue;
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *text = alert.textFields.firstObject.text;
+        NSString *normalized = [self wcpl_normalizedHexColorString:text];
+        if (!normalized) {
+            [self showErrorAlert:@"请输入有效的 Hex 颜色，例如 #07C160"];
+            return;
+        }
+        if (onConfirm) {
+            onConfirm(normalized);
+        }
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (NSString *)wcpl_normalizedHexColorString:(NSString *)input {
+    if (!input) return nil;
+    NSString *trimmed = [[input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    if (trimmed.length == 0) return nil;
+    if (![trimmed hasPrefix:@"#"]) {
+        trimmed = [@"#" stringByAppendingString:trimmed];
+    }
+    if (trimmed.length != 7) return nil;
+    NSString *hexPart = [trimmed substringFromIndex:1];
+    NSCharacterSet *validSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"];
+    for (NSUInteger i = 0; i < hexPart.length; i++) {
+        unichar c = [hexPart characterAtIndex:i];
+        if (![validSet characterIsMember:c]) {
+            return nil;
+        }
+    }
+    return trimmed;
+}
+
+- (BOOL)wcpl_parseDoubleFromText:(NSString *)text value:(double *)value {
+    if (!text) return NO;
+    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (trimmed.length == 0) return NO;
+    NSScanner *scanner = [NSScanner scannerWithString:trimmed];
+    double result = 0;
+    if (![scanner scanDouble:&result] || !scanner.isAtEnd) {
+        return NO;
+    }
+    if (value) {
+        *value = result;
+    }
+    return YES;
 }
 
 - (void)showImagePicker {

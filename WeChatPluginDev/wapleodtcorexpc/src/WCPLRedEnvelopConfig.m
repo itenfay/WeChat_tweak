@@ -26,6 +26,14 @@ static NSString *const kWCPLRepeatButtonHapticEnable = @"kWCPLRepeatButtonHaptic
 static NSString *const kWCPLRepeatButtonStyle       = @"kWCPLRepeatButtonStyle";
 static NSString *const kWCPLRepeatButtonIconIndex   = @"kWCPLRepeatButtonIconIndex";
 static NSString *const kWCPLRepeatButtonCustomImage = @"kWCPLRepeatButtonCustomImage";
+static NSString *const kWCPLRepeatButtonBackgroundAlpha = @"kWCPLRepeatButtonBackgroundAlpha";
+static NSString *const kWCPLRepeatButtonSize        = @"kWCPLRepeatButtonSize";
+static NSString *const kWCPLRepeatButtonTextColorMode = @"kWCPLRepeatButtonTextColorMode";
+static NSString *const kWCPLRepeatButtonTextColorDefault = @"kWCPLRepeatButtonTextColorDefault";
+static NSString *const kWCPLRepeatButtonTextColorText = @"kWCPLRepeatButtonTextColorText";
+static NSString *const kWCPLRepeatButtonTextColorVoice = @"kWCPLRepeatButtonTextColorVoice";
+static NSString *const kWCPLRepeatButtonTextColorEmoticon = @"kWCPLRepeatButtonTextColorEmoticon";
+static NSString *const kWCPLRepeatButtonTextColorQuote = @"kWCPLRepeatButtonTextColorQuote";
 static NSString *const kWCPLSwipeGestureEnable      = @"kWCPLSwipeGestureEnable";
 static NSString *const kWCPLSwipeQuoteEnable        = @"kWCPLSwipeQuoteEnable";
 static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable";
@@ -35,6 +43,14 @@ static NSString *const kWCPLSwipeLeftSelfAction     = @"kWCPLSwipeLeftSelfAction
 static NSString *const kWCPLSwipeRightEnable        = @"kWCPLSwipeRightEnable";
 static NSString *const kWCPLSwipeRightOtherAction   = @"kWCPLSwipeRightOtherAction";
 static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfAction";
+
+static const CGFloat kWCPLRepeatButtonBackgroundAlphaDefault = 1.0;
+static const CGFloat kWCPLRepeatButtonBackgroundAlphaMin = 0.1;
+static const CGFloat kWCPLRepeatButtonBackgroundAlphaMax = 1.0;
+static const CGFloat kWCPLRepeatButtonSizeDefault = 24.0;
+static const CGFloat kWCPLRepeatButtonSizeMin = 18.0;
+static const CGFloat kWCPLRepeatButtonSizeMax = 36.0;
+static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
 
 @interface WCPLThreadSafeMutableDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
 @property (nonatomic, strong) NSMutableDictionary<KeyType, ObjectType> *backing;
@@ -179,6 +195,25 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
         _repeatButtonStyle       = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonStyle];
         _repeatButtonIconIndex   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonIconIndex];
         _repeatButtonCustomImagePath = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonCustomImage];
+        NSNumber *backgroundAlphaValue = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLRepeatButtonBackgroundAlpha];
+        _repeatButtonBackgroundAlpha = backgroundAlphaValue ? backgroundAlphaValue.doubleValue : kWCPLRepeatButtonBackgroundAlphaDefault;
+        if (_repeatButtonBackgroundAlpha < kWCPLRepeatButtonBackgroundAlphaMin ||
+            _repeatButtonBackgroundAlpha > kWCPLRepeatButtonBackgroundAlphaMax) {
+            _repeatButtonBackgroundAlpha = kWCPLRepeatButtonBackgroundAlphaDefault;
+        }
+        NSNumber *sizeValue = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLRepeatButtonSize];
+        _repeatButtonSize = sizeValue ? sizeValue.doubleValue : kWCPLRepeatButtonSizeDefault;
+        if (_repeatButtonSize < kWCPLRepeatButtonSizeMin ||
+            _repeatButtonSize > kWCPLRepeatButtonSizeMax) {
+            _repeatButtonSize = kWCPLRepeatButtonSizeDefault;
+        }
+        NSNumber *textColorModeValue = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLRepeatButtonTextColorMode];
+        _repeatButtonTextColorMode = textColorModeValue ? textColorModeValue.integerValue : 0;
+        _repeatButtonTextColorDefault = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorDefault] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorText = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorText] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorVoice = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorVoice] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorEmoticon = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorEmoticon] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorQuote = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorQuote] ?: kWCPLRepeatButtonTextColorDefaultValue;
         _swipeGestureEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeGestureEnable];
         _swipeQuoteEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeQuoteEnable];
         _tapReferJumpEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLTapReferJumpEnable];
@@ -336,6 +371,63 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
 - (void)setRepeatButtonCustomImagePath:(NSString *)repeatButtonCustomImagePath {
     _repeatButtonCustomImagePath = repeatButtonCustomImagePath;
     [self wcpl_setObject:repeatButtonCustomImagePath forKey:kWCPLRepeatButtonCustomImage];
+}
+
+- (void)setRepeatButtonBackgroundAlpha:(CGFloat)repeatButtonBackgroundAlpha {
+    CGFloat normalized = repeatButtonBackgroundAlpha;
+    if (normalized < kWCPLRepeatButtonBackgroundAlphaMin) {
+        normalized = kWCPLRepeatButtonBackgroundAlphaMin;
+    } else if (normalized > kWCPLRepeatButtonBackgroundAlphaMax) {
+        normalized = kWCPLRepeatButtonBackgroundAlphaMax;
+    }
+    _repeatButtonBackgroundAlpha = normalized;
+    [self wcpl_setDouble:normalized forKey:kWCPLRepeatButtonBackgroundAlpha];
+}
+
+- (void)setRepeatButtonSize:(CGFloat)repeatButtonSize {
+    CGFloat normalized = repeatButtonSize;
+    if (normalized < kWCPLRepeatButtonSizeMin) {
+        normalized = kWCPLRepeatButtonSizeMin;
+    } else if (normalized > kWCPLRepeatButtonSizeMax) {
+        normalized = kWCPLRepeatButtonSizeMax;
+    }
+    _repeatButtonSize = normalized;
+    [self wcpl_setDouble:normalized forKey:kWCPLRepeatButtonSize];
+}
+
+- (void)setRepeatButtonTextColorMode:(NSInteger)repeatButtonTextColorMode {
+    _repeatButtonTextColorMode = repeatButtonTextColorMode;
+    [self wcpl_setInteger:repeatButtonTextColorMode forKey:kWCPLRepeatButtonTextColorMode];
+}
+
+- (void)setRepeatButtonTextColorDefault:(NSString *)repeatButtonTextColorDefault {
+    NSString *value = (repeatButtonTextColorDefault.length > 0) ? repeatButtonTextColorDefault : kWCPLRepeatButtonTextColorDefaultValue;
+    _repeatButtonTextColorDefault = [value copy];
+    [self wcpl_setObject:value forKey:kWCPLRepeatButtonTextColorDefault];
+}
+
+- (void)setRepeatButtonTextColorText:(NSString *)repeatButtonTextColorText {
+    NSString *value = (repeatButtonTextColorText.length > 0) ? repeatButtonTextColorText : kWCPLRepeatButtonTextColorDefaultValue;
+    _repeatButtonTextColorText = [value copy];
+    [self wcpl_setObject:value forKey:kWCPLRepeatButtonTextColorText];
+}
+
+- (void)setRepeatButtonTextColorVoice:(NSString *)repeatButtonTextColorVoice {
+    NSString *value = (repeatButtonTextColorVoice.length > 0) ? repeatButtonTextColorVoice : kWCPLRepeatButtonTextColorDefaultValue;
+    _repeatButtonTextColorVoice = [value copy];
+    [self wcpl_setObject:value forKey:kWCPLRepeatButtonTextColorVoice];
+}
+
+- (void)setRepeatButtonTextColorEmoticon:(NSString *)repeatButtonTextColorEmoticon {
+    NSString *value = (repeatButtonTextColorEmoticon.length > 0) ? repeatButtonTextColorEmoticon : kWCPLRepeatButtonTextColorDefaultValue;
+    _repeatButtonTextColorEmoticon = [value copy];
+    [self wcpl_setObject:value forKey:kWCPLRepeatButtonTextColorEmoticon];
+}
+
+- (void)setRepeatButtonTextColorQuote:(NSString *)repeatButtonTextColorQuote {
+    NSString *value = (repeatButtonTextColorQuote.length > 0) ? repeatButtonTextColorQuote : kWCPLRepeatButtonTextColorDefaultValue;
+    _repeatButtonTextColorQuote = [value copy];
+    [self wcpl_setObject:value forKey:kWCPLRepeatButtonTextColorQuote];
 }
 
 - (void)setSwipeGestureEnable:(BOOL)swipeGestureEnable {
