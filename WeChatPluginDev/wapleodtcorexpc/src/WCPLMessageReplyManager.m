@@ -1408,6 +1408,22 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                            outFrame:(CGRect *)outFrame {
     if (!cellView || !containerView || !outFrame) return NO;
 
+    id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
+    BOOL isSelfieEmoticon = [self wcpl_safeInvokeBoolSelector:@selector(isSelfieEmoticon)
+                                                     onObject:viewModel
+                                                    arguments:nil
+                                                 defaultValue:NO];
+    if (isSelfieEmoticon) {
+        id emoticonView = [self wcpl_safeValueForObject:cellView keyName:@"m_emoticonView"];
+        if ([emoticonView isKindOfClass:[UIView class]]) {
+            UIView *view = (UIView *)emoticonView;
+            if (!view.hidden && view.frame.size.width > 1.0 && view.frame.size.height > 1.0) {
+                *outFrame = [view convertRect:view.bounds toView:containerView];
+                return YES;
+            }
+        }
+    }
+
     id bubbleBorderValue = [self wcpl_safeValueForObject:cellView keyName:@"m_bubbleBorderFrame"];
     if ([bubbleBorderValue isKindOfClass:[NSValue class]]) {
         CGRect frame = [bubbleBorderValue CGRectValue];

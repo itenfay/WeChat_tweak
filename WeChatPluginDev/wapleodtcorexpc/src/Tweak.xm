@@ -82,6 +82,131 @@ static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
     return value;
 }
 
+static id wcpl_getMessageMgr(void) {
+    Class serviceCenterClass = objc_getClass("MMServiceCenter");
+    if (!serviceCenterClass || ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
+        return nil;
+    }
+    id center = [serviceCenterClass defaultCenter];
+    if (!center || ![center respondsToSelector:@selector(getService:)]) {
+        return nil;
+    }
+    return [center getService:objc_getClass("CMessageMgr")];
+}
+
+static CMessageWrap *wcpl_revokeMsgWrapFromObject(id obj) {
+    if (!obj) return nil;
+    if ([obj isKindOfClass:%c(CMessageWrap)]) return (CMessageWrap *)obj;
+    if ([obj respondsToSelector:@selector(msgWrap)]) {
+        @try {
+            id wrap = [obj performSelector:@selector(msgWrap)];
+            if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                return (CMessageWrap *)wrap;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+    return nil;
+}
+
+static NSString *wcpl_revokeChatNameFromObject(id obj) {
+    if (!obj) return nil;
+    if ([obj respondsToSelector:@selector(nsChatName)]) {
+        @try {
+            id chatName = [obj performSelector:@selector(nsChatName)];
+            if ([chatName isKindOfClass:[NSString class]]) {
+                return wcpl_trimString(chatName);
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+    return nil;
+}
+
+static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap) return NO;
+    @try {
+        return [%c(CMessageWrap) isSenderFromMsgWrap:msgWrap];
+    } @catch (__unused NSException *exception) {
+        return NO;
+    }
+}
+
+static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap);
+
+static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNameHint) {
+    if (![revokeWrap isKindOfClass:%c(CMessageWrap)]) return NO;
+    if (wcpl_isSelfRevokeMessage(revokeWrap)) return NO;
+
+    NSString *xml = revokeWrap.m_nsContent;
+    if (xml.length == 0) return NO;
+
+    BOOL looksLikeRevoke = ([xml rangeOfString:@"revokemsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                            [xml rangeOfString:@"replacemsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                            [xml rangeOfString:@"撤回"].location != NSNotFound ||
+                            [xml rangeOfString:@"recalled" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    if (!looksLikeRevoke) return NO;
+
+    NSString *session = wcpl_extractXmlTagValue(xml, @"session");
+    if (session.length == 0) {
+        session = wcpl_trimString(chatNameHint);
+    }
+    if (session.length == 0) {
+        session = wcpl_trimString(revokeWrap.m_nsFromUsr) ?: wcpl_trimString(revokeWrap.m_nsToUsr);
+    }
+    if (session.length == 0) return NO;
+
+    NSString *replaceRaw = wcpl_extractXmlTagValue(xml, @"replacemsg");
+    NSString *replaceText = wcpl_sanitizeInlineText(wcpl_stripCDATAIfNeeded(replaceRaw), 160);
+
+    long long revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"newmsgid");
+    if (revokedMsgId <= 0) revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"msgid");
+
+    CMessageWrap *revokedMsgWrap = nil;
+    id messageMgr = wcpl_getMessageMgr();
+    if (revokedMsgId > 0 && messageMgr && [messageMgr respondsToSelector:@selector(GetMsg:n64SvrID:)]) {
+        id msg = [messageMgr GetMsg:session n64SvrID:revokedMsgId];
+        if ([msg isKindOfClass:%c(CMessageWrap)]) {
+            revokedMsgWrap = (CMessageWrap *)msg;
+        }
+    }
+
+    NSString *revokedDigest = wcpl_digestForMessageWrap(revokedMsgWrap);
+
+    NSString *tipText = replaceText.length > 0 ? [NSString stringWithFormat:@"已拦截撤回：%@", replaceText]
+                                               : @"已拦截一条撤回消息";
+    if (revokedDigest.length > 0) {
+        tipText = [NSString stringWithFormat:@"%@ 原消息：%@", tipText, revokedDigest];
+    }
+
+    CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
+    [msgWrap setM_uiStatus:0x4];
+    [msgWrap setM_nsContent:tipText];
+    [msgWrap setM_uiCreateTime:[revokeWrap m_uiCreateTime]];
+
+    if (wcpl_trimString(revokeWrap.m_nsToUsr)) {
+        [msgWrap setM_nsToUsr:revokeWrap.m_nsToUsr];
+    }
+    if (wcpl_trimString(revokeWrap.m_nsFromUsr)) {
+        [msgWrap setM_nsFromUsr:revokeWrap.m_nsFromUsr];
+    }
+
+    if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
+        [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
+        return YES;
+    }
+    if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+        [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
+        return YES;
+    }
+    if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
+        [messageMgr AddLocalMsg:session MsgWrap:msgWrap];
+        return YES;
+    }
+
+    return NO;
+}
+
 static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return nil;
 
@@ -335,103 +460,16 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     @try {
-        if (!arg1) {
-            %orig;
+        if (wcpl_handleRevokeMessage(arg1, nil)) {
             return;
         }
-
-        // 优化：允许自己撤回（仅拦截他人撤回）
-        BOOL isSelfRevoke = NO;
-        @try {
-            isSelfRevoke = [%c(CMessageWrap) isSenderFromMsgWrap:arg1];
-        } @catch (__unused NSException *exception) {
-            isSelfRevoke = NO;
-        }
-        if (isSelfRevoke) {
-            %orig;
-            return;
-        }
-
-        NSString *xml = arg1.m_nsContent;
-        if (xml.length == 0) {
-            %orig;
-            return;
-        }
-
-        // 兜底：避免误拦截非撤回逻辑
-        BOOL looksLikeRevoke = ([xml rangeOfString:@"revokemsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                                [xml rangeOfString:@"replacemsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                                [xml rangeOfString:@"撤回"].location != NSNotFound ||
-                                [xml rangeOfString:@"recalled" options:NSCaseInsensitiveSearch].location != NSNotFound);
-        if (!looksLikeRevoke) {
-            %orig;
-            return;
-        }
-
-        NSString *session = wcpl_extractXmlTagValue(xml, @"session");
-        if (session.length == 0) {
-            // 少数情况下 session 解析失败，退化到 From/To
-            session = wcpl_trimString(arg1.m_nsFromUsr) ?: wcpl_trimString(arg1.m_nsToUsr);
-        }
-        if (session.length == 0) {
-            // 无法确定会话，避免破坏链路，直接走原逻辑
-            %orig;
-            return;
-        }
-
-        NSString *replaceRaw = wcpl_extractXmlTagValue(xml, @"replacemsg");
-        NSString *replaceText = wcpl_sanitizeInlineText(wcpl_stripCDATAIfNeeded(replaceRaw), 160);
-
-        long long revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"newmsgid");
-        if (revokedMsgId <= 0) revokedMsgId = wcpl_extractLongLongFromXmlTag(xml, @"msgid");
-
-        CMessageWrap *revokedMsgWrap = nil;
-        if (revokedMsgId > 0 && [self respondsToSelector:@selector(GetMsg:n64SvrID:)]) {
-            id msg = [self GetMsg:session n64SvrID:revokedMsgId];
-            if ([msg isKindOfClass:%c(CMessageWrap)]) {
-                revokedMsgWrap = (CMessageWrap *)msg;
-            }
-        }
-
-        NSString *revokedDigest = wcpl_digestForMessageWrap(revokedMsgWrap);
-
-        NSString *tipText;
-        if (replaceText.length > 0) {
-            tipText = [NSString stringWithFormat:@"已拦截撤回：%@", replaceText];
-        } else {
-            tipText = @"已拦截一条撤回消息";
-        }
-
-        if (revokedDigest.length > 0) {
-            tipText = [NSString stringWithFormat:@"%@ 原消息：%@", tipText, revokedDigest];
-        }
-
-        CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
-        [msgWrap setM_uiStatus:0x4];
-        [msgWrap setM_nsContent:tipText];
-        [msgWrap setM_uiCreateTime:[arg1 m_uiCreateTime]];
-
-        // 复用原撤回消息的 From/To，确保插入到正确会话
-        if (wcpl_trimString(arg1.m_nsToUsr)) {
-            [msgWrap setM_nsToUsr:arg1.m_nsToUsr];
-        }
-        if (wcpl_trimString(arg1.m_nsFromUsr)) {
-            [msgWrap setM_nsFromUsr:arg1.m_nsFromUsr];
-        }
-
-        if ([self respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
-            [self AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
-        } else {
-            [self AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
-        }
-
-        // 核心：不调用 %orig，从而阻止撤回删除
-        return;
     } @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in onRevokeMsg hook: %@", exception);
         %orig;
         return;
     }
+
+    %orig;
 }
 
 - (id)GetMsgByCreateTime:(id)arg1 FromID:(unsigned int)arg2 FromCreateTime:(unsigned int)arg3 Limit:(int)arg4 LeftCount:(unsigned int *)arg5 FromSequence:(unsigned int)arg6 {
@@ -448,6 +486,57 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     return result;
+}
+
+%end
+
+%hook MessageRevokeMgr
+
+- (void)onRevokeMsg:(id)arg1 {
+    if (![WCPLRedEnvelopConfig sharedConfig].revokeEnable) {
+        %orig;
+        return;
+    }
+
+    @try {
+        CMessageWrap *revokeWrap = wcpl_revokeMsgWrapFromObject(arg1);
+        NSString *chatName = wcpl_revokeChatNameFromObject(arg1);
+        if (wcpl_handleRevokeMessage(revokeWrap, chatName)) {
+            return;
+        }
+    } @catch (NSException *exception) {
+        NSLog(@"[WCPL] Exception in MessageRevokeMgr onRevokeMsg: %@", exception);
+    }
+
+    %orig;
+}
+
+- (void)replaceRevokedMsg:(id)arg1 {
+    if (![WCPLRedEnvelopConfig sharedConfig].revokeEnable) {
+        %orig;
+        return;
+    }
+
+    CMessageWrap *revokeWrap = wcpl_revokeMsgWrapFromObject(arg1);
+    if (revokeWrap && !wcpl_isSelfRevokeMessage(revokeWrap)) {
+        return;
+    }
+
+    %orig;
+}
+
+- (void)deleteLocalProcessRevokeMsgWithToast:(id)arg1 {
+    if (![WCPLRedEnvelopConfig sharedConfig].revokeEnable) {
+        %orig;
+        return;
+    }
+
+    CMessageWrap *revokeWrap = wcpl_revokeMsgWrapFromObject(arg1);
+    if (revokeWrap && !wcpl_isSelfRevokeMessage(revokeWrap)) {
+        return;
+    }
+
+    %orig;
 }
 
 %end
