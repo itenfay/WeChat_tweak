@@ -3,6 +3,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
+#import "WCHookSwipeUtilities.h"
+
 @class AppMessageBlockButton, CADisplayLink, CMessageWrap, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIImpactFeedbackGenerator, UIView, UIVisualEffectView, YYAsyncImageView;
 
 @interface CommonMessageCellView : UIView
@@ -128,8 +130,8 @@
 @property(retain, nonatomic) UIPanGestureRecognizer *wchook_swipeGesture;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
 @property(nonatomic) _Bool wchook_feedbackTriggered;
-- (void)wchook_triggerActionForDirection:(id)direction;
-- (void)wchook_showSwipeActionMenuForDirection:(id)direction;
+- (void)wchook_triggerActionForDirection:(WCHookSwipeDirection)direction;
+- (void)wchook_showSwipeActionMenuForDirection:(WCHookSwipeDirection)direction;
 - (void)wchook_performQuoteReply;
 - (void)wchook_performRepeatMessage:(id)arg;
 - (void)wchook_performDeleteMessage:(id)arg;

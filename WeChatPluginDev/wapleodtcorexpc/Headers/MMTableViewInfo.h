@@ -13,7 +13,7 @@
 + (id)genSectionFootView:(id)arg1 andTitltContenInset:(struct UIEdgeInsets)arg2 andTableViewWidth:(double)arg3;
 + (id)genSectionFootView:(id)arg1;
 + (double)labelHeight:(id)arg1 maxWidth:(double)arg2 font:(id)arg3;
-- (void)insertSection:(id)section At:(unsigned long long)index;
+- (void)insertSection:(id)section At:(unsigned int)index;
 - (void)addSection:(id)section;
 - (id)getTableView;
 
