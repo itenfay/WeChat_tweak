@@ -43,6 +43,14 @@ typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
 typedef BOOL (^WCPLSendStrategyBlock)(void);
 
 @interface WCPLMessageReplyManager ()
+- (BOOL)wcpl_tryResendVoiceMessage:(CMessageWrap *)msgWrap
+                        toUserName:(NSString *)toUserName
+                           execLog:(NSMutableString *)execLog;
+- (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
+                                           cellView:(UIView *)cellView;
+- (void)wcpl_collectViewsWithTag:(NSInteger)tag
+                          inView:(UIView *)view
+                         results:(NSMutableArray<UIView *> *)results;
 @end
 
 static WCPLSendStrategyBlock WCPLSendStrategy(WCPLSendStrategyBlock block) {
@@ -768,7 +776,15 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
         CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
-        if (!msgWrap || ![self canRepeatMessage:msgWrap]) {
+        if (!msgWrap) {
+            WCPLLog(@"复读按钮跳过: msgWrap=nil cell=%@", NSStringFromClass([cellView class]));
+            [self removeRepeatButtonFromCellView:cellView];
+            return;
+        }
+
+        BOOL canRepeat = [self canRepeatMessage:msgWrap];
+        if (!canRepeat) {
+            WCPLLog(@"复读按钮跳过: 不支持复读 msgType=%u cell=%@", msgWrap.m_uiMessageType, NSStringFromClass([cellView class]));
             [self removeRepeatButtonFromCellView:cellView];
             return;
         }
@@ -777,6 +793,12 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         BOOL isEmoticonMessage = (msgType == 47);
         BOOL isImageMessage = (msgType == 3);
         BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
+        WCPLLog(@"复读按钮检查: cell=%@ msgType=%u emoticon=%d image=%d voice=%d",
+                NSStringFromClass([cellView class]),
+                msgType,
+                isEmoticonMessage,
+                isImageMessage,
+                isVoiceMessage);
         if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
             NSString *content = nil;
             id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
@@ -787,25 +809,20 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                 content = [self getMessageContent:msgWrap];
             }
             if (!content || content.length == 0) {
+                WCPLLog(@"复读按钮跳过: 文本内容为空 msgType=%u cell=%@", msgType, NSStringFromClass([cellView class]));
                 [self removeRepeatButtonFromCellView:cellView];
                 return;
             }
         }
 
-        // 在 cellView 中查找已存在的按钮
-        UIView *foundView = [cellView viewWithTag:kWCPLRepeatButtonTag];
-        UIButton *repeatButton = nil;
-        if ([foundView isKindOfClass:[UIButton class]]) {
-            repeatButton = (UIButton *)foundView;
-        } else if (foundView) {
-            [foundView removeFromSuperview];
-        }
+        UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView cellView:cellView];
 
         // 修复：清理可能错误添加到 cell.contentView 的残留按钮
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         if (cell && cell.contentView && cell.contentView != cellView) {
             UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
             if (staleButton) {
+                WCPLLog(@"复读按钮清理: 移除残留按钮 cell=%@", NSStringFromClass([cellView class]));
                 [staleButton removeFromSuperview];
             }
         }
@@ -813,6 +830,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         if (!repeatButton) {
             repeatButton = [self createRepeatButton];
             [containerView addSubview:repeatButton];
+            WCPLLog(@"复读按钮创建: cell=%@ frame=%@", NSStringFromClass([cellView class]), NSStringFromCGRect(repeatButton.frame));
         }
 
         [self layoutRepeatButtonInContainer:repeatButton
@@ -835,6 +853,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     // 从 cellView 移除按钮
     UIView *foundView = [cellView viewWithTag:kWCPLRepeatButtonTag];
     if (foundView) {
+        WCPLLog(@"复读按钮移除: cell=%@", NSStringFromClass([cellView class]));
         [foundView removeFromSuperview];
     }
 
@@ -843,6 +862,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     if (cell && cell.contentView && cell.contentView != cellView) {
         UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
         if (staleButton) {
+            WCPLLog(@"复读按钮移除: 清理残留 cell=%@", NSStringFromClass([cellView class]));
             [staleButton removeFromSuperview];
         }
     }
@@ -1110,7 +1130,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     [button addTarget:[WCPLMessageReplyManager sharedManager] action:@selector(animateButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
     [button addTarget:[WCPLMessageReplyManager sharedManager] action:@selector(animateButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
 
-    NSLog(@"[WCPL] Created repeat button with target: %@", [WCPLMessageReplyManager sharedManager]);
+    WCPLLog(@"复读按钮创建完成: target=%@", [WCPLMessageReplyManager sharedManager]);
 
     return button;
 }
@@ -1225,6 +1245,10 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         UIView *bubbleView = [self findBubbleViewInCellView:cellView];
         if (!bubbleView || bubbleView.frame.size.width < 1.0 || bubbleView.frame.size.height < 1.0) {
+            WCPLLog(@"复读按钮隐藏: 气泡无效 cell=%@ bubble=%@ frame=%@",
+                    NSStringFromClass([cellView class]),
+                    bubbleView ? NSStringFromClass([bubbleView class]) : @"nil",
+                    bubbleView ? NSStringFromCGRect(bubbleView.frame) : @"");
             button.hidden = YES;
             return;
         }
@@ -1241,7 +1265,16 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2.0)
                                      : (CGRectGetMaxX(bubbleFrame) + 2.0);
         CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;
-        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
+        CGRect newFrame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
+        if (!CGRectEqualToRect(button.frame, newFrame)) {
+            WCPLLog(@"复读按钮布局: cell=%@ bubble=%@ bubbleFrame=%@ buttonFrame=%@ self=%d",
+                    NSStringFromClass([cellView class]),
+                    NSStringFromClass([bubbleView class]),
+                    NSStringFromCGRect(bubbleFrame),
+                    NSStringFromCGRect(newFrame),
+                    isFromSelf);
+        }
+        button.frame = newFrame;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in layoutRepeatButtonInContainer: %@", exception);
@@ -1497,6 +1530,10 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 - (void)repeatButtonTapped:(UIButton *)sender {
     @try {
+        WCPLLog(@"复读按钮点击: frame=%@ super=%@",
+                NSStringFromCGRect(sender.frame),
+                sender.superview ? NSStringFromClass([sender.superview class]) : @"nil");
+
         if ([WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable) {
             UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
             [generator prepare];
@@ -1523,6 +1560,14 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         BOOL isImageMessage = (msgType == 3);
         BOOL isVideoMessage = (msgType == 43 || msgType == 62);
         BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
+        WCPLLog(@"复读按钮点击: msgType=%u emoticon=%d image=%d video=%d voice=%d from=%@ to=%@",
+                msgType,
+                isEmoticonMessage,
+                isImageMessage,
+                isVideoMessage,
+                isVoiceMessage,
+                msgWrap.m_nsFromUsr ?: @"",
+                msgWrap.m_nsToUsr ?: @"");
         if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
             id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
             if ([contentText isKindOfClass:[NSString class]]) {
@@ -2137,47 +2182,38 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         }
 
         BOOL didSend = NO;
-        if ([msgMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
-            didSend = [self wcpl_safeInvokeVoidSelector:@selector(ReSendMessage:MsgWrap:)
-                                               onObject:msgMgr
-                                              arguments:@[toUserName, msgWrap]];
-            if (didSend) {
-                [execLog appendString:@"✅ 通过ReSendMessage发送成功\n"];
+        BOOL preferVoiceResend = [self isMessageFromOther:msgWrap];
+
+        if (preferVoiceResend) {
+            didSend = [self wcpl_tryResendVoiceMessage:msgWrap
+                                            toUserName:toUserName
+                                               execLog:execLog];
+        }
+
+        if (!didSend && [msgMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
+            BOOL invoked = [self wcpl_safeInvokeVoidSelector:@selector(ReSendMessage:MsgWrap:)
+                                                    onObject:msgMgr
+                                                   arguments:@[toUserName, msgWrap]];
+            if (invoked) {
+                [execLog appendString:@"✅ 已调用 ReSendMessage\n"];
+                didSend = YES;
             }
         }
 
         if (!didSend && [msgMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
-            didSend = [self wcpl_safeInvokeVoidSelector:@selector(ResendMsg:MsgWrap:)
-                                               onObject:msgMgr
-                                              arguments:@[toUserName, msgWrap]];
-            if (didSend) {
-                [execLog appendString:@"✅ 通过ResendMsg发送成功\n"];
+            BOOL invoked = [self wcpl_safeInvokeVoidSelector:@selector(ResendMsg:MsgWrap:)
+                                                    onObject:msgMgr
+                                                   arguments:@[toUserName, msgWrap]];
+            if (invoked) {
+                [execLog appendString:@"✅ 已调用 ResendMsg\n"];
+                didSend = YES;
             }
         }
 
-        if (!didSend) {
-            NSArray<NSString *> *resendClasses = @[
-                @"AudioSender",
-                @"MMNewUploadVoiceMgr",
-                @"UploadVoiceCDNMgr",
-                @"BaseUploadVoiceMgr"
-            ];
-            for (NSString *className in resendClasses) {
-                Class cls = objc_getClass([className UTF8String]);
-                if (!cls) continue;
-                id sender = [self wcpl_getService:cls];
-                if (!sender) continue;
-                if ([sender respondsToSelector:@selector(ResendVoiceMsg:MsgWrap:)]) {
-                    BOOL invoked = [self wcpl_safeInvokeVoidSelector:@selector(ResendVoiceMsg:MsgWrap:)
-                                                            onObject:sender
-                                                           arguments:@[toUserName ?: @"", msgWrap]];
-                    if (invoked) {
-                        [execLog appendFormat:@"✅ 通过%@.ResendVoiceMsg发送成功\n", className];
-                        didSend = YES;
-                        break;
-                    }
-                }
-            }
+        if (!didSend && !preferVoiceResend) {
+            didSend = [self wcpl_tryResendVoiceMessage:msgWrap
+                                            toUserName:toUserName
+                                               execLog:execLog];
         }
 
         if (!didSend) {
@@ -2188,6 +2224,85 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     @catch (NSException *exception) {
         [execLog appendFormat:@"❌ 异常: %@\n", exception];
         return execLog;
+    }
+}
+
+- (BOOL)wcpl_tryResendVoiceMessage:(CMessageWrap *)msgWrap
+                        toUserName:(NSString *)toUserName
+                           execLog:(NSMutableString *)execLog {
+    if (!msgWrap) return NO;
+
+    NSArray<NSString *> *resendClasses = @[
+        @"AudioSender",
+        @"MMNewUploadVoiceMgr",
+        @"UploadVoiceCDNMgr",
+        @"BaseUploadVoiceMgr"
+    ];
+
+    for (NSString *className in resendClasses) {
+        Class cls = objc_getClass([className UTF8String]);
+        if (!cls) continue;
+
+        id sender = [self wcpl_getService:cls];
+        if (!sender) continue;
+
+        if ([sender respondsToSelector:@selector(ResendVoiceMsg:MsgWrap:)]) {
+            BOOL invoked = [self wcpl_safeInvokeVoidSelector:@selector(ResendVoiceMsg:MsgWrap:)
+                                                    onObject:sender
+                                                   arguments:@[toUserName ?: @"", msgWrap]];
+            if (invoked) {
+                if (execLog) {
+                    [execLog appendFormat:@"✅ 已调用 %@.ResendVoiceMsg\n", className];
+                }
+                return YES;
+            }
+        }
+    }
+
+    return NO;
+}
+
+- (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
+                                           cellView:(UIView *)cellView {
+    if (!cellView) return nil;
+
+    NSMutableArray<UIView *> *taggedViews = [NSMutableArray array];
+    [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
+
+    UIButton *repeatButton = nil;
+    NSInteger removedCount = 0;
+
+    for (UIView *view in taggedViews) {
+        if (!repeatButton && [view isKindOfClass:[UIButton class]]) {
+            repeatButton = (UIButton *)view;
+        } else {
+            [view removeFromSuperview];
+            removedCount++;
+        }
+    }
+
+    if (repeatButton && repeatButton.superview != containerView) {
+        [repeatButton removeFromSuperview];
+        repeatButton = nil;
+        removedCount++;
+    }
+
+    if (removedCount > 0) {
+        WCPLLog(@"复读按钮去重: 移除=%ld cell=%@", (long)removedCount, NSStringFromClass([cellView class]));
+    }
+
+    return repeatButton;
+}
+
+- (void)wcpl_collectViewsWithTag:(NSInteger)tag
+                          inView:(UIView *)view
+                         results:(NSMutableArray<UIView *> *)results {
+    if (!view) return;
+    if (view.tag == tag) {
+        [results addObject:view];
+    }
+    for (UIView *subview in view.subviews) {
+        [self wcpl_collectViewsWithTag:tag inView:subview results:results];
     }
 }
 

@@ -14,6 +14,8 @@
 #import <objc/runtime.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
+static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl_log";
+
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
@@ -224,6 +226,11 @@
         [self showLogContent:recentLog];
     }];
 
+    // 上传日志到本地
+    UIAlertAction *uploadAction = [UIAlertAction actionWithTitle:@"上传日志到本地(HTTP)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self uploadDebugLogToLocalServer];
+    }];
+
     // 复制日志文件路径
     UIAlertAction *copyPathAction = [UIAlertAction actionWithTitle:@"复制文件路径" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
@@ -256,11 +263,94 @@
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
 
     [alert addAction:viewAction];
+    [alert addAction:uploadAction];
     [alert addAction:copyPathAction];
     [alert addAction:clearAction];
     [alert addAction:cancelAction];
 
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)uploadDebugLogToLocalServer {
+    if (![WCPLLogger sharedLogger].enabled) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"未启用日志"
+                                                                       message:@"请先开启调试日志"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+
+    NSString *urlString = kWCPLDefaultLogUploadURL;
+
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (!url || !url.scheme || !url.host) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"地址无效"
+                                                                       message:urlString
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+
+    NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
+    NSData *logData = [NSData dataWithContentsOfFile:logPath];
+    if (logData.length == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志为空"
+                                                                       message:@"没有可上传的日志内容"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+
+    WCPLLog(@"准备上传日志: url=%@ size=%lu path=%@", urlString, (unsigned long)logData.length, logPath);
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = logData;
+    [request setValue:@"text/plain; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"wcpl_debug.log" forHTTPHeaderField:@"X-Log-Name"];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                WCPLLog(@"日志上传失败: error=%@", error.localizedDescription ?: @"未知错误");
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
+                                                                               message:error.localizedDescription ?: @"未知错误"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+
+            NSInteger statusCode = 0;
+            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                statusCode = ((NSHTTPURLResponse *)response).statusCode;
+            }
+
+            if (statusCode < 200 || statusCode >= 300) {
+                WCPLLog(@"日志上传失败: status=%ld", (long)statusCode);
+                NSString *msg = [NSString stringWithFormat:@"服务器返回状态码: %ld", (long)statusCode];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
+                                                                               message:msg
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+
+            WCPLLog(@"日志上传成功: status=%ld", (long)statusCode);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传成功"
+                                                                           message:@"日志已发送到本地服务器"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
+    }];
+
+    [task resume];
 }
 
 - (void)showLogContent:(NSString *)content {

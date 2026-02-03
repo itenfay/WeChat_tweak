@@ -5,6 +5,7 @@
 //
 
 #import "WCPLLogger.h"
+#import <UIKit/UIKit.h>
 
 @interface WCPLLogger ()
 @property (nonatomic, strong) NSString *logFilePath;
@@ -63,7 +64,7 @@
 
         if (enabled) {
             // 启用日志时写入启动消息
-            NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n", [self currentTimestamp]];
+            NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n", [self currentTimestamp], [self startupContextInfo]];
             [self writeToFile:startupLog];
         }
     }
@@ -198,6 +199,29 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
     return [formatter stringFromDate:[NSDate date]];
+}
+
+- (NSString *)startupContextInfo {
+    UIDevice *device = [UIDevice currentDevice];
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *info = [bundle infoDictionary] ?: @{};
+
+    NSString *bundleId = [bundle bundleIdentifier] ?: @"";
+    NSString *version = info[@"CFBundleShortVersionString"] ?: @"";
+    NSString *build = info[@"CFBundleVersion"] ?: @"";
+    NSString *process = [NSProcessInfo processInfo].processName ?: @"";
+    NSString *systemName = device.systemName ?: @"iOS";
+    NSString *systemVersion = device.systemVersion ?: @"";
+
+    return [NSString stringWithFormat:@"进程: %@\n设备: %@ (%@)\n系统: %@ %@\nApp: %@ %@(%@)",
+            process,
+            device.model ?: @"",
+            device.name ?: @"",
+            systemName,
+            systemVersion,
+            bundleId,
+            version,
+            build];
 }
 
 @end
