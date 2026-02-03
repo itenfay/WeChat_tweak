@@ -46,6 +46,7 @@ typedef BOOL (^WCPLSendStrategyBlock)(void);
 - (BOOL)wcpl_tryResendVoiceMessage:(CMessageWrap *)msgWrap
                         toUserName:(NSString *)toUserName
                            execLog:(NSMutableString *)execLog;
+- (BOOL)wcpl_isEmoticonMessage:(CMessageWrap *)msgWrap;
 - (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
                                            cellView:(UIView *)cellView;
 - (void)wcpl_collectViewsWithTag:(NSInteger)tag
@@ -193,6 +194,11 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                                         defaultValue:NO];
     if (isVoice) return YES;
     return (msgWrap.m_uiMessageType == 34);
+}
+
+- (BOOL)wcpl_isEmoticonMessage:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return NO;
+    return (msgWrap.m_uiMessageType == 47);
 }
 
 - (BOOL)wcpl_safeInvokeVoidSelector:(SEL)selector onObject:(id)obj arguments:(NSArray<id> *)arguments {
