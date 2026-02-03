@@ -6,8 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class MMUIViewController;
+#import "MMUIViewController.h"
 
 @protocol MultiSelectGroupsViewControllerDelegate <NSObject>
 
