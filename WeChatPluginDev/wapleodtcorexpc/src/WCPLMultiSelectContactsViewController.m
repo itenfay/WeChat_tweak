@@ -122,8 +122,15 @@
     if ([obj isKindOfClass:[NSString class]]) {
         return (NSString *)obj;
     }
-    if ([obj isKindOfClass:[CContact class]]) {
-        return ((CContact *)obj).m_nsUsrName;
+    Class contactClass = NSClassFromString(@"CContact");
+    if (contactClass && [obj isKindOfClass:contactClass]) {
+        NSString *usrName = nil;
+        @try {
+            usrName = [obj valueForKey:@"m_nsUsrName"];
+        } @catch (__unused NSException *exception) {
+            usrName = nil;
+        }
+        return usrName;
     }
     return nil;
 }
