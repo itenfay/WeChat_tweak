@@ -43,14 +43,23 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
 
 @implementation WCPLThreadSafeMutableDictionary
 
+- (void)wcpl_setupWithDictionary:(NSDictionary *)dictionary {
+    _backing = dictionary ? [dictionary mutableCopy] : [NSMutableDictionary dictionary];
+    _queue = dispatch_queue_create("com.wcpl.config.threadsafe.dict", DISPATCH_QUEUE_SERIAL);
+}
+
 - (instancetype)init {
-    return [self initWithDictionary:nil];
+    self = [super init];
+    if (self) {
+        [self wcpl_setupWithDictionary:nil];
+    }
+    return self;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    if (self = [super init]) {
-        _backing = dictionary ? [dictionary mutableCopy] : [NSMutableDictionary dictionary];
-        _queue = dispatch_queue_create("com.wcpl.config.threadsafe.dict", DISPATCH_QUEUE_SERIAL);
+    self = [super init];
+    if (self) {
+        [self wcpl_setupWithDictionary:dictionary];
     }
     return self;
 }
@@ -110,7 +119,7 @@ static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfActio
     return [[self dictionaryRepresentation] allValues];
 }
 
-- (void)enumerateKeysAndObjectsUsingBlock:(void (^)(id key, id obj, BOOL *stop))block {
+- (void)enumerateKeysAndObjectsUsingBlock:(void (NS_NOESCAPE ^)(id key, id obj, BOOL *stop))block {
     if (!block) return;
     [[self dictionaryRepresentation] enumerateKeysAndObjectsUsingBlock:block];
 }
