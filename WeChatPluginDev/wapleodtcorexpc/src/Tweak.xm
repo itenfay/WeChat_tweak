@@ -14,6 +14,11 @@
 #import "RichTextView.h"
 #import <objc/runtime.h>
 
+@interface TextMessageCellView (WCPLLocalReplace)
+- (void)wcpl_applyLocalReplaceIfNeeded;
+- (void)wcpl_handleLocalReplaceMenuItem:(id)sender;
+@end
+
 // ==================== 插件注册 ====================
 static BOOL didRegisterWCPLPlugin = NO;
 
@@ -686,6 +691,10 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     if ([navCon.viewControllers indexOfObject:(UIViewController *)self] == NSNotFound) {
         [[WCPLAVManager shareManager] stop];
     }
+
+    if (self.isMovingFromParentViewController || self.isBeingDismissed) {
+        wcpl_clearLocalReplaceMap(self);
+    }
 }
 
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2 {
@@ -705,6 +714,16 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         UIView *view = [self valueForKey:@"view"];
         [[WCPLAVManager shareManager] startCaptureInView:view];
     }
+}
+
+- (void)reloadMessages {
+    wcpl_clearLocalReplaceMap(self);
+    %orig;
+}
+
+- (void)reloadWholePage {
+    wcpl_clearLocalReplaceMap(self);
+    %orig;
 }
 
 %end
@@ -1849,27 +1868,6 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     [alert addAction:confirmAction];
 
     [viewController presentViewController:alert animated:YES completion:nil];
-}
-
-%end
-
-%hook BaseMsgContentViewController
-
-- (void)viewWillDisappear:(_Bool)arg1 {
-    %orig;
-    if (self.isMovingFromParentViewController || self.isBeingDismissed) {
-        wcpl_clearLocalReplaceMap(self);
-    }
-}
-
-- (void)reloadMessages {
-    wcpl_clearLocalReplaceMap(self);
-    %orig;
-}
-
-- (void)reloadWholePage {
-    wcpl_clearLocalReplaceMap(self);
-    %orig;
 }
 
 %end

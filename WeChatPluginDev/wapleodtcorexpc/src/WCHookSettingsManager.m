@@ -3,7 +3,7 @@
 #import <objc/message.h>
 
 NSString *const WCHookPluginName = @"WCHook";
-NSString *const WCHookPluginVersion = @"1.8.19";
+NSString *const WCHookPluginVersion = @"1.8.20";
 static NSString *const WCHookSettingItemTypeToggle = @"toggle";
 static NSString *const WCHookSettingItemTypeNavigation = @"navigation";
 
