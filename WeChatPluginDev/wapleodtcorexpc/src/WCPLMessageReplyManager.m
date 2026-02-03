@@ -20,6 +20,7 @@ static char kRepeatContentKey;
 static char kRepeatMsgWrapKey;
 static char kRepeatButtonForCellKey;
 static char kRepeatMessageKey;
+static char kRepeatButtonBubbleViewKey;
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
 
 typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
@@ -1407,17 +1408,50 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         // 通过判断消息发送者来确定消息方向（更可靠）
         BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
 
-        CGFloat bubbleWidth = CGRectGetWidth(bubbleView.bounds);
-        CGFloat bubbleHeight = CGRectGetHeight(bubbleView.bounds);
         CGFloat buttonSize = 24.0;
-        if (bubbleWidth <= 1.0 || bubbleHeight <= 1.0) {
-            button.hidden = YES;
-            return;
-        }
+        UIView *attachedBubbleView = objc_getAssociatedObject(button, &kRepeatButtonBubbleViewKey);
+        BOOL shouldResetConstraints = button.translatesAutoresizingMaskIntoConstraints || (attachedBubbleView != bubbleView);
+        if (shouldResetConstraints) {
+            button.translatesAutoresizingMaskIntoConstraints = NO;
 
-        CGFloat buttonX = isFromSelf ? (-buttonSize - 2.0) : (bubbleWidth + 2.0);
-        CGFloat buttonY = bubbleHeight - buttonSize;
-        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
+            if (attachedBubbleView && attachedBubbleView != bubbleView) {
+                NSMutableArray<NSLayoutConstraint *> *oldConstraints = [NSMutableArray array];
+                for (NSLayoutConstraint *constraint in attachedBubbleView.constraints) {
+                    if (constraint.firstItem == button || constraint.secondItem == button) {
+                        [oldConstraints addObject:constraint];
+                    }
+                }
+                if (oldConstraints.count > 0) {
+                    [attachedBubbleView removeConstraints:oldConstraints];
+                }
+            }
+
+            NSMutableArray<NSLayoutConstraint *> *currentConstraints = [NSMutableArray array];
+            for (NSLayoutConstraint *constraint in bubbleView.constraints) {
+                if (constraint.firstItem == button || constraint.secondItem == button) {
+                    [currentConstraints addObject:constraint];
+                }
+            }
+            if (currentConstraints.count > 0) {
+                [bubbleView removeConstraints:currentConstraints];
+            }
+
+            if (button.constraints.count > 0) {
+                [button removeConstraints:button.constraints];
+            }
+
+            [button.widthAnchor constraintEqualToConstant:buttonSize].active = YES;
+            [button.heightAnchor constraintEqualToConstant:buttonSize].active = YES;
+            [button.bottomAnchor constraintEqualToAnchor:bubbleView.bottomAnchor].active = YES;
+
+            if (isFromSelf) {
+                [button.trailingAnchor constraintEqualToAnchor:bubbleView.leadingAnchor constant:-2.0].active = YES;
+            } else {
+                [button.leadingAnchor constraintEqualToAnchor:bubbleView.trailingAnchor constant:2.0].active = YES;
+            }
+
+            objc_setAssociatedObject(button, &kRepeatButtonBubbleViewKey, bubbleView, OBJC_ASSOCIATION_ASSIGN);
+        }
 
         [bubbleView bringSubviewToFront:button];
         button.hidden = NO;
