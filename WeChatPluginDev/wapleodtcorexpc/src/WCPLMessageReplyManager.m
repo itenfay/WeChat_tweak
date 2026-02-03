@@ -1476,12 +1476,14 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         }
     }
 
-    UIView *bubbleView = [self findBubbleViewInCellView:cellView];
-    if (bubbleView) {
-        CGRect frame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
-        if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
-            *outFrame = frame;
-            return YES;
+    if ([cellView respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            CGRect rect = [cellView showRectForMenuController];
+            if (!CGRectIsEmpty(rect) && rect.size.width > 1.0 && rect.size.height > 1.0) {
+                *outFrame = [cellView convertRect:rect toView:containerView];
+                return YES;
+            }
+        } @catch (__unused NSException *exception) {
         }
     }
 
@@ -1490,6 +1492,15 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         CGRect frame = [bubbleBorderValue CGRectValue];
         if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
             *outFrame = [cellView convertRect:frame toView:containerView];
+            return YES;
+        }
+    }
+
+    UIView *bubbleView = [self findBubbleViewInCellView:cellView];
+    if (bubbleView) {
+        CGRect frame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
+        if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
+            *outFrame = frame;
             return YES;
         }
     }
