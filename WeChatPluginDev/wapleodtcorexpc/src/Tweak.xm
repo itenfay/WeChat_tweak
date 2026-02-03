@@ -112,7 +112,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
-                                                                           version:@"1.8.13"
+                                                                           version:@"1.8.14"
                                                                         controller:@"WCPLSettingViewController"];
         didRegisterWCPLPlugin = YES;
         NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
@@ -660,17 +660,6 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
     // Cell 复用时移除按钮
     [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
-- (void)didMoveToWindow {
-    %orig;
-
-    // 语音消息支持手势
-    if (self.window) {
-        [self wchook_setupSwipeGestureIfNeeded];
-    } else {
-        [self wchook_resetSwipeAnimated:NO];
-    }
 }
 
 %end
