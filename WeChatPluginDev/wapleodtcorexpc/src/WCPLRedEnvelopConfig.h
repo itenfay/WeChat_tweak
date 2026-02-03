@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @class CContact;
 
@@ -22,12 +23,6 @@
 
 // Advanced sections.
 @property (assign, nonatomic) BOOL revokeEnable;
-
-// Step count.
-@property (assign, nonatomic) NSInteger stepCount;
-@property (strong, nonatomic) NSDate *lastChangeStepCountDate;
-
-- (void)saveLastChangeStepCountDateToLocalFile;
 
 // Filt Messages.
 @property ( copy , nonatomic) NSString *curUsrName;
@@ -69,6 +64,14 @@
 @property (assign, nonatomic) BOOL swipeQuoteEnable;
 // 引用消息点击跳转
 @property (assign, nonatomic) BOOL tapReferJumpEnable;
+
+// 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
+@property (assign, nonatomic) NSInteger swipeSensitivityLevel;
+
+// 消息手势参数（根据 swipeSensitivityLevel 计算）
+- (CGFloat)swipeDistanceScale;
+- (CGFloat)swipeVelocityTrigger;
+- (CGFloat)swipeLightTriggerRatio;
 
 // 消息手势操作类型
 // 0=引用, 1=复读, 2=删除, 3=撤回(仅己方消息)

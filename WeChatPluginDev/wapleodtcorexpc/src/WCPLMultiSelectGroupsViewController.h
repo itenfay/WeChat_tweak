@@ -21,5 +21,6 @@
 - (instancetype)initWithBlackList:(NSArray *)blackList;
 
 @property (nonatomic, weak) id<MultiSelectGroupsViewControllerDelegate> delegate;
+@property (nonatomic, copy) NSString *titleText;
 
 @end

@@ -8,6 +8,7 @@
 #import "WCPLSettingViewController.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLMultiSelectGroupsViewController.h"
+#import "WCPLMultiSelectContactsViewController.h"
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
@@ -16,9 +17,16 @@
 
 static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl_log";
 
-@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
+typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
+    WCPLGroupSelectContextNone = 0,
+    WCPLGroupSelectContextBlackList,
+    WCPLGroupSelectContextIgnoreChatroom,
+};
+
+@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
+@property (nonatomic, assign) WCPLGroupSelectContext groupSelectContext;
 
 @end
 
@@ -181,8 +189,11 @@ static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl
 }
 
 - (void)showBlackList {
+    self.groupSelectContext = WCPLGroupSelectContextBlackList;
+    
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:[WCPLRedEnvelopConfig sharedConfig].blackList];
     multiSGVC.delegate = self;
+    multiSGVC.titleText = @"白名单";
     
     MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
     
@@ -397,25 +408,81 @@ static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl
 }
 
 - (WCTableViewNormalCellManager *)createIgnoredChatroomCountCell {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    __block NSUInteger count = 0;
-    [config.chatIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
-        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
-            count += 1;
-        }
-    }];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForTitle:@"已屏蔽群聊" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)count]];
+    NSArray *chatrooms = [self ignoredChatroomUserNames];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredChatroomList) target:self title:@"已屏蔽群聊" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)chatrooms.count] accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createIgnoredUserCountCell {
+    NSArray *users = [self ignoredUserNames];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredUserList) target:self title:@"已屏蔽好友" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)users.count] accessoryType:1];
+}
+
+- (NSArray<NSString *> *)ignoredChatroomUserNames {
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    __block NSUInteger count = 0;
-    [config.userIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
-        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location == NSNotFound) {
-            count += 1;
+    NSMutableArray<NSString *> *results = [NSMutableArray array];
+    [config.chatIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
+        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
+            [results addObject:key];
         }
     }];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForTitle:@"已屏蔽好友" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)count]];
+    return results.copy;
+}
+
+- (NSArray<NSString *> *)ignoredUserNames {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSMutableArray<NSString *> *results = [NSMutableArray array];
+    [config.userIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
+        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location == NSNotFound) {
+            [results addObject:key];
+        }
+    }];
+    return results.copy;
+}
+
+- (void)showIgnoredChatroomList {
+    self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
+    
+    WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:[self ignoredChatroomUserNames]];
+    multiSGVC.delegate = self;
+    multiSGVC.titleText = @"屏蔽群聊";
+    
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
+    
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)showIgnoredUserList {
+    WCPLMultiSelectContactsViewController *multiSCVC = [[WCPLMultiSelectContactsViewController alloc] initWithSelectedContacts:[self ignoredUserNames]];
+    multiSCVC.delegate = self;
+    multiSCVC.titleText = @"屏蔽好友";
+    
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSCVC];
+    
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)updateChatIgnoreInfoWithChatrooms:(NSArray *)chatrooms {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSMutableDictionary<NSString *, NSNumber *> *dict = [NSMutableDictionary dictionary];
+    for (NSString *chatroom in chatrooms) {
+        if ([chatroom rangeOfString:@"@chatroom"].location != NSNotFound) {
+            dict[chatroom] = @(YES);
+        }
+    }
+    config.chatIgnoreInfo = dict;
+    [config saveChatIgnoreNameListToLocalFile];
+}
+
+- (void)updateUserIgnoreInfoWithUsers:(NSArray *)users {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSMutableDictionary<NSString *, NSNumber *> *dict = [NSMutableDictionary dictionary];
+    for (NSString *user in users) {
+        if ([user rangeOfString:@"@chatroom"].location == NSNotFound) {
+            dict[user] = @(YES);
+        }
+    }
+    config.userIgnoreInfo = dict;
+    [config saveUserIgnoreNameListToLocalFile];
 }
 
 #pragma mark - Message Reply Setting
@@ -445,6 +512,9 @@ static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl
 
     // 只有启用总开关时才显示详细设置
     if ([WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable) {
+        // 灵敏度
+        [section addCell:[self createSwipeSensitivityCell]];
+
         // 左滑功能开关
         [section addCell:[self createSwipeQuoteSwitchCell]];
 
@@ -470,8 +540,23 @@ static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl
     [self.tableViewMgr addSection:section];
 }
 
+- (NSString *)swipeSensitivityNameForLevel:(NSInteger)level {
+    switch (level) {
+        case 0: return @"低";
+        case 2: return @"高";
+        case 1:
+        default: return @"中";
+    }
+}
+
 - (WCTableViewNormalCellManager *)createSwipeGestureSwitchCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用消息手势" on:[WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeSensitivityCell {
+    NSInteger level = [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel;
+    NSString *name = [self swipeSensitivityNameForLevel:level];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeSensitivityPicker) target:self title:@"  手势灵敏度" rightValue:name accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeQuoteSwitchCell {
@@ -552,6 +637,36 @@ static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl
 - (void)settingTapReferJump:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable = sender.on;
     NSLog(@"[WCPL] Tap refer jump feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)showSwipeSensitivityPicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手势灵敏度"
+                                                                   message:@"高=更容易触发，低=更不易误触"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *lowAction = [UIAlertAction actionWithTitle:@"低 (不易误触)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel = 0;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *midAction = [UIAlertAction actionWithTitle:@"中 (默认)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel = 1;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *highAction = [UIAlertAction actionWithTitle:@"高 (更灵敏)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel = 2;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+
+    [alert addAction:lowAction];
+    [alert addAction:midAction];
+    [alert addAction:highAction];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // 左滑对方消息操作选择器
@@ -971,11 +1086,29 @@ static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl
 #pragma mark - MultiSelectGroupsViewControllerDelegate
 
 - (void)onMultiSelectGroupCancel {
+    self.groupSelectContext = WCPLGroupSelectContextNone;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)onMultiSelectGroupReturn:(NSArray *)arg1 {
-    [WCPLRedEnvelopConfig sharedConfig].blackList = arg1;
+    if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
+        [self updateChatIgnoreInfoWithChatrooms:arg1];
+    } else {
+        [WCPLRedEnvelopConfig sharedConfig].blackList = arg1;
+    }
+    [self reloadTableData];
+    self.groupSelectContext = WCPLGroupSelectContextNone;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - WCPLMultiSelectContactsViewControllerDelegate
+
+- (void)onMultiSelectContactCancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)onMultiSelectContactReturn:(NSArray *)arg1 {
+    [self updateUserIgnoreInfoWithUsers:arg1];
     [self reloadTableData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -1,27 +1,26 @@
 //
-// WCPLMultiSelectGroupsViewController.m
+// WCPLMultiSelectContactsViewController.m
 //
 // Created by dyf on 17/4/6.
 // Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "WCPLMultiSelectGroupsViewController.h"
+#import "WCPLMultiSelectContactsViewController.h"
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
-#import <objc/runtime.h>
 
-@interface WCPLMultiSelectGroupsViewController () <ContactSelectViewDelegate>
+@interface WCPLMultiSelectContactsViewController () <ContactSelectViewDelegate>
 
 @property (strong, nonatomic) ContactSelectView *selectView;
-@property (copy  , nonatomic) NSArray *blackList;
+@property (copy  , nonatomic) NSArray *selectedContacts;
 
 @end
 
-@implementation WCPLMultiSelectGroupsViewController
+@implementation WCPLMultiSelectContactsViewController
 
-- (instancetype)initWithBlackList:(NSArray *)blackList {
+- (instancetype)initWithSelectedContacts:(NSArray *)selectedContacts {
     if (self = [super initWithNibName:nil bundle:nil]) {
-        self.blackList = blackList;
+        self.selectedContacts = selectedContacts;
     }
     return self;
 }
@@ -39,9 +38,11 @@
     MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
     CContactMgr *contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
     
-    for (NSString *contactName in self.blackList) {
+    for (NSString *contactName in self.selectedContacts) {
         CContact *contact = [contactMgr getContactByName:contactName];
-        [self.selectView addSelect:contact];
+        if (contact) {
+            [self.selectView addSelect:contact];
+        }
     }
 }
 
@@ -52,9 +53,9 @@
 - (void)initTitleArea {
     self.navigationItem.leftBarButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:@"取消" target:self action:@selector(onCancel:) style:0];
     
-    self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:self.blackList.count];
+    self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:self.selectedContacts.count];
     
-    self.title = self.titleText.length > 0 ? self.titleText : @"白名单";
+    self.title = self.titleText.length > 0 ? self.titleText : @"屏蔽好友";
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]}];
 }
@@ -73,15 +74,15 @@
 }
 
 - (void)onCancel:(UIBarButtonItem *)item {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectGroupCancel)]) {
-        [self.delegate onMultiSelectGroupCancel];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectContactCancel)]) {
+        [self.delegate onMultiSelectContactCancel];
     }
 }
 
 - (void)onDone:(UIBarButtonItem *)item {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectGroupReturn:)]) {
-        NSArray *blacklist = [[self.selectView.m_dicMultiSelect allKeys] copy];
-        [self.delegate onMultiSelectGroupReturn:blacklist];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectContactReturn:)]) {
+        NSArray *contacts = [[self.selectView.m_dicMultiSelect allKeys] copy];
+        [self.delegate onMultiSelectContactReturn:contacts];
     }
 }
 
@@ -91,9 +92,9 @@
     CGFloat cH = WCPLScreenHeight - WCPLStatusBarAndNavigationBarHeight - WCPLViewSafeBottomMargin;
     self.selectView = [[objc_getClass("ContactSelectView") alloc] initWithFrame:CGRectMake(0, cY, cW, cH) delegate:self];
     
-    self.selectView.m_uiGroupScene = 5;
+    self.selectView.m_uiGroupScene = 0;
     self.selectView.m_bMultiSelect = YES;
-    [self.selectView initData:5];
+    [self.selectView initData:0];
     [self.selectView initView];
     
     [self.view addSubview:self.selectView];

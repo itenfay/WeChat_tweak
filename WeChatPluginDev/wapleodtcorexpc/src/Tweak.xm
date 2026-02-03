@@ -812,6 +812,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 %property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
 %property(nonatomic, strong) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
 %property(nonatomic, assign) BOOL wchook_feedbackTriggered;
+%property(nonatomic, assign) NSInteger wchook_swipeTriggerStage;
 
 - (void)layoutSubviews {
     %orig;
@@ -919,12 +920,15 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return;
     }
 
-    CGFloat threshold = [WCHookSwipeUtilities thresholdForView:self];
+    CGFloat threshold = [WCHookSwipeUtilities thresholdForView:self] * [config swipeDistanceScale];
+    CGFloat lightThreshold = threshold * [config swipeLightTriggerRatio];
+    CGFloat hardVelocityTrigger = [config swipeVelocityTrigger];
 
     switch (gesture.state) {
     case UIGestureRecognizerStateBegan: {
         [self.wchook_feedbackGenerator prepare];
         self.wchook_feedbackTriggered = NO;
+        self.wchook_swipeTriggerStage = 0;
         break;
     }
     case UIGestureRecognizerStateChanged: {
@@ -933,23 +937,64 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         CGAffineTransform transform = CGAffineTransformMakeTranslation(clamped, 0.0f);
         [WCHookSwipeUtilities applyTransform:transform toViews:messageViews];
 
-        // 触发震动反馈
+        // 分段反馈：轻触发 -> 重触发
         CGFloat absTranslation = fabs(translation.x);
-        if (!self.wchook_feedbackTriggered && absTranslation >= threshold) {
-            [self.wchook_feedbackGenerator impactOccurred];
-            self.wchook_feedbackTriggered = YES;
+        NSInteger stage = 0;
+        if (absTranslation >= threshold) {
+            stage = 2;
+        } else if (absTranslation >= lightThreshold) {
+            stage = 1;
+        }
+
+        // 只在“首次达到某一段”时触发反馈（避免反复抖动）
+        if (stage > self.wchook_swipeTriggerStage) {
+            CGFloat intensity = (stage == 1) ? 0.35f : 0.85f;
+            if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
+                [self.wchook_feedbackGenerator impactOccurredWithIntensity:intensity];
+            } else {
+                [self.wchook_feedbackGenerator impactOccurred];
+            }
+            self.wchook_swipeTriggerStage = stage;
+            self.wchook_feedbackTriggered = (stage >= 2);
         }
         break;
     }
     case UIGestureRecognizerStateCancelled:
     case UIGestureRecognizerStateEnded: {
-        if ([WCHookSwipeUtilities shouldTriggerWithTranslationBidirectional:translation velocity:velocity threshold:threshold]) {
-            if (!self.wchook_feedbackTriggered) {
-                [self.wchook_feedbackGenerator impactOccurred];
-                self.wchook_feedbackTriggered = YES;
+        CGFloat absTranslation = fabs(translation.x);
+        CGFloat absVelocity = fabs(velocity.x);
+
+        // 方向兜底：轻甩但 translation 不明显时用 velocity 判方向
+        if (direction == WCHookSwipeDirectionNone) {
+            if (velocity.x > 0.0f) {
+                direction = WCHookSwipeDirectionRight;
+            } else if (velocity.x < 0.0f) {
+                direction = WCHookSwipeDirectionLeft;
             }
-            // 根据滑动方向执行不同操作
+        }
+
+        BOOL shouldHardTrigger = (absTranslation >= threshold) || (absVelocity >= hardVelocityTrigger);
+        BOOL shouldLightTrigger = (!shouldHardTrigger && absTranslation >= lightThreshold);
+
+        // 触发轻/重动作：轻滑默认引用，重滑执行用户配置动作
+        if (shouldHardTrigger) {
+            if (self.wchook_swipeTriggerStage < 2) {
+                if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
+                    [self.wchook_feedbackGenerator impactOccurredWithIntensity:0.85f];
+                } else {
+                    [self.wchook_feedbackGenerator impactOccurred];
+                }
+            }
             [self wchook_triggerActionForDirection:direction];
+        } else if (shouldLightTrigger) {
+            if (self.wchook_swipeTriggerStage < 1) {
+                if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
+                    [self.wchook_feedbackGenerator impactOccurredWithIntensity:0.35f];
+                } else {
+                    [self.wchook_feedbackGenerator impactOccurred];
+                }
+            }
+            [self wchook_triggerLightActionForDirection:direction];
         }
         [self wchook_resetSwipeAnimated:YES];
         break;
@@ -968,10 +1013,20 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 }
 
 %new
+- (void)wchook_triggerLightActionForDirection:(WCHookSwipeDirection)direction {
+    // 轻滑动作：默认引用（不区分方向，避免误触发危险操作）
+    (void)direction;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self wchook_performQuoteReply];
+    });
+}
+
+%new
 - (void)wchook_resetSwipeAnimated:(BOOL)animated {
     NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     [WCHookSwipeUtilities animateResetForViews:messageViews animated:animated];
     self.wchook_feedbackTriggered = NO;
+    self.wchook_swipeTriggerStage = 0;
 }
 
 %new
