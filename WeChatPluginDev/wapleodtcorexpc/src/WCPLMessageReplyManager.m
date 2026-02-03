@@ -46,6 +46,10 @@ typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
 
 typedef BOOL (^WCPLSendStrategyBlock)(void);
 
+@interface WCPLMessageReplyManager ()
+@property (nonatomic, strong) NSMapTable<NSString *, UIButton *> *repeatButtonsByMessageKey;
+@end
+
 static WCPLSendStrategyBlock WCPLSendStrategy(WCPLSendStrategyBlock block) {
     if (!block) {
         return ^BOOL { return NO; };
@@ -127,6 +131,14 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 @implementation WCPLMessageReplyManager
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _repeatButtonsByMessageKey = [NSMapTable strongToWeakObjectsMapTable];
+    }
+    return self;
+}
+
 + (WCPLMessageReplyManager *)sharedManager {
     static WCPLMessageReplyManager *manager;
     static dispatch_once_t onceToken;
@@ -165,33 +177,34 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     return YES;
 }
 
-- (void)wcpl_removeRepeatButtonsInView:(UIView *)view excludingButton:(UIButton *)excludingButton {
-    if (!view) return;
+- (UIButton *)wcpl_repeatButtonForMessageKey:(NSString *)messageKey {
+    if (!messageKey || messageKey.length == 0) return nil;
 
-    NSMutableArray<UIView *> *buttonsToRemove = [NSMutableArray array];
-    NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:view];
-
-    while (stack.count > 0) {
-        UIView *current = stack.lastObject;
-        [stack removeLastObject];
-
-        for (UIView *subview in current.subviews) {
-            if ([self wcpl_isRepeatButtonView:subview]) {
-                if (excludingButton && subview == excludingButton) {
-                    continue;
-                }
-                [buttonsToRemove addObject:subview];
-                continue;
-            }
-
-            if (subview.subviews.count > 0) {
-                [stack addObject:subview];
-            }
+    UIButton *button = [self.repeatButtonsByMessageKey objectForKey:messageKey];
+    if (button && ![self wcpl_isRepeatButtonView:button]) {
+        [self.repeatButtonsByMessageKey removeObjectForKey:messageKey];
+        button = nil;
+    }
+    if (!button) {
+        button = [self createRepeatButton];
+        if (button) {
+            [self.repeatButtonsByMessageKey setObject:button forKey:messageKey];
         }
     }
+    return button;
+}
 
-    for (UIView *buttonView in buttonsToRemove) {
-        [buttonView removeFromSuperview];
+- (void)wcpl_removeSiblingRepeatButtonsInView:(UIView *)view excludingButton:(UIButton *)excludingButton {
+    if (!view) return;
+
+    NSArray<UIView *> *subviews = [view.subviews copy];
+    for (UIView *subview in subviews) {
+        if ([self wcpl_isRepeatButtonView:subview]) {
+            if (excludingButton && subview == excludingButton) {
+                continue;
+            }
+            [subview removeFromSuperview];
+        }
     }
 }
 
@@ -861,33 +874,6 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     return YES;
 }
 
-- (UIButton *)wcpl_reuseRepeatButtonForCell:(UITableViewCell *)cell
-                                 messageKey:(NSString *)messageKey
-                              containerView:(UIView *)containerView {
-    if (!cell || !messageKey) return nil;
-
-    UIButton *associatedButton = objc_getAssociatedObject(cell, &kRepeatButtonForCellKey);
-    NSString *associatedMessageKey = objc_getAssociatedObject(cell, &kRepeatMessageKey);
-
-    if (associatedButton && [self wcpl_isRepeatButtonView:associatedButton]) {
-        NSString *buttonKey = objc_getAssociatedObject(associatedButton, &kRepeatMessageKey);
-        BOOL isSameMessage = (associatedMessageKey && [associatedMessageKey isEqualToString:messageKey]) ||
-                             (buttonKey && [buttonKey isEqualToString:messageKey]);
-        if (isSameMessage) {
-            if (containerView && associatedButton.superview != containerView) {
-                [associatedButton removeFromSuperview];
-                [containerView addSubview:associatedButton];
-            }
-            return associatedButton;
-        }
-
-        [associatedButton removeFromSuperview];
-        [self wcpl_clearRepeatAssociationForCell:cell];
-    }
-
-    return nil;
-}
-
 - (void)wcpl_bindRepeatButton:(UIButton *)button
                        toCell:(UITableViewCell *)cell
                    messageKey:(NSString *)messageKey
@@ -908,72 +894,54 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     @try {
         if (!cellView) return;
 
-        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
-        UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
-        UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
-        void (^cleanupButtons)(void) = ^{
-            if (associatedButton) {
-                [associatedButton removeFromSuperview];
-                if (cell) {
-                    [self wcpl_clearRepeatAssociationForCell:cell];
-                }
-            }
-            [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
-        };
-
         CMessageWrap *msgWrap = nil;
         NSString *content = nil;
         NSString *messageKey = nil;
+        UITableViewCell *cell = nil;
+        UIView *containerView = nil;
         if (![self wcpl_collectRepeatInfoFromCellView:cellView
                                                 cell:&cell
                                        containerView:&containerView
                                              msgWrap:&msgWrap
                                              content:&content
                                           messageKey:&messageKey]) {
-            cleanupButtons();
+            [self removeRepeatButtonFromCellView:cellView];
             return;
         }
 
-        // 优先复用已关联的按钮，避免长文本/多次布局导致重复按钮残留
-        UIButton *existingButton = [self wcpl_reuseRepeatButtonForCell:cell
-                                                            messageKey:messageKey
-                                                         containerView:containerView];
-
-        if (existingButton) {
-            // 更新关联对象，避免引用回复/渲染更新导致内容不同步
-            [self wcpl_bindRepeatButton:existingButton
-                                 toCell:cell
-                             messageKey:messageKey
-                                content:content
-                                 msgWrap:msgWrap];
-
-            [self layoutRepeatButton:existingButton inCellView:cellView];
-            existingButton.hidden = NO;
-            existingButton.alpha = 1.0;
+        UIButton *repeatButton = [self wcpl_repeatButtonForMessageKey:messageKey];
+        if (!repeatButton || !containerView) {
+            [self removeRepeatButtonFromCellView:cellView];
             return;
         }
 
-        // 先移除所有旧按钮，确保只有一个
-        [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-        [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+        UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
+        NSString *associatedMessageKey = cell ? objc_getAssociatedObject(cell, &kRepeatMessageKey) : nil;
+        if (associatedButton && associatedButton != repeatButton) {
+            [associatedButton removeFromSuperview];
+        }
+        if (cell && associatedMessageKey && ![associatedMessageKey isEqualToString:messageKey]) {
+            [self wcpl_clearRepeatAssociationForCell:cell];
+        }
 
-        // 创建新按钮
-        UIButton *repeatButton = [self createRepeatButton];
-        [containerView addSubview:repeatButton];
+        if (repeatButton.superview != containerView) {
+            [repeatButton removeFromSuperview];
+            [containerView addSubview:repeatButton];
+        }
 
-        // 关联消息内容和 msgWrap
         [self wcpl_bindRepeatButton:repeatButton
                              toCell:cell
                          messageKey:messageKey
                             content:content
                              msgWrap:msgWrap];
 
-        // 定位按钮到消息气泡旁边
         [self layoutRepeatButton:repeatButton inCellView:cellView];
 
         repeatButton.hidden = NO;
         repeatButton.alpha = 1.0;
+
+        [self wcpl_removeSiblingRepeatButtonsInView:containerView excludingButton:repeatButton];
+        [self wcpl_removeSiblingRepeatButtonsInView:cellView excludingButton:repeatButton];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in addRepeatButtonToCellView: %@", exception);
@@ -986,6 +954,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
+        NSString *associatedMessageKey = cell ? objc_getAssociatedObject(cell, &kRepeatMessageKey) : nil;
         if (associatedButton) {
             [associatedButton removeFromSuperview];
             if (cell) {
@@ -993,10 +962,13 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                 objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
         }
+        if (associatedMessageKey && associatedMessageKey.length > 0) {
+            [self.repeatButtonsByMessageKey removeObjectForKey:associatedMessageKey];
+        }
 
         UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
-        [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
-        [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
+        [self wcpl_removeSiblingRepeatButtonsInView:containerView excludingButton:nil];
+        [self wcpl_removeSiblingRepeatButtonsInView:cellView excludingButton:nil];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in removeRepeatButtonFromCellView: %@", exception);
