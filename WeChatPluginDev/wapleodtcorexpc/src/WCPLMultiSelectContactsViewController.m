@@ -47,8 +47,8 @@
     }
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+- (unsigned long long)supportedInterfaceOrientations {
+    return (unsigned long long)UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)initTitleArea {
