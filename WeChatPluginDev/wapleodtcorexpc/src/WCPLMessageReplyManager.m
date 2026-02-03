@@ -195,6 +195,12 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     }
 }
 
+- (void)wcpl_clearRepeatAssociationForCell:(UITableViewCell *)cell {
+    if (!cell) return;
+    objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (long long)wcpl_messageServerId:(CMessageWrap *)msgWrap {
     if (!msgWrap) return 0;
 
@@ -807,114 +813,140 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 #pragma mark - Public Methods
 
+- (BOOL)wcpl_collectRepeatInfoFromCellView:(CommonMessageCellView *)cellView
+                                      cell:(UITableViewCell **)outCell
+                             containerView:(UIView **)outContainerView
+                                   msgWrap:(CMessageWrap **)outMsgWrap
+                                   content:(NSString **)outContent
+                                messageKey:(NSString **)outMessageKey {
+    if (!cellView) return NO;
+    if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return NO;
+
+    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+    UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
+    if (!containerView) return NO;
+
+    id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
+    if (!viewModel) return NO;
+
+    CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
+    if (!msgWrap) return NO;
+
+    if (![self canRepeatMessage:msgWrap]) return NO;
+
+    NSString *content = nil;
+    unsigned int msgType = msgWrap.m_uiMessageType;
+    BOOL isEmoticonMessage = (msgType == 47);
+    BOOL isImageMessage = (msgType == 3);
+    BOOL isVoiceMessage = (msgType == 34);
+    if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
+        id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
+        if ([contentText isKindOfClass:[NSString class]]) {
+            content = (NSString *)contentText;
+        }
+        if (!content || content.length == 0) {
+            content = [self getMessageContent:msgWrap];
+        }
+        if (!content || content.length == 0) return NO;
+    }
+
+    NSString *messageKey = [self wcpl_messageKeyForMessageWrap:msgWrap content:content];
+    if (!messageKey) return NO;
+
+    if (outCell) *outCell = cell;
+    if (outContainerView) *outContainerView = containerView;
+    if (outMsgWrap) *outMsgWrap = msgWrap;
+    if (outContent) *outContent = content;
+    if (outMessageKey) *outMessageKey = messageKey;
+    return YES;
+}
+
+- (UIButton *)wcpl_reuseRepeatButtonForCell:(UITableViewCell *)cell
+                                 messageKey:(NSString *)messageKey
+                              containerView:(UIView *)containerView {
+    if (!cell || !messageKey) return nil;
+
+    UIButton *associatedButton = objc_getAssociatedObject(cell, &kRepeatButtonForCellKey);
+    NSString *associatedMessageKey = objc_getAssociatedObject(cell, &kRepeatMessageKey);
+
+    if (associatedButton && [self wcpl_isRepeatButtonView:associatedButton]) {
+        NSString *buttonKey = objc_getAssociatedObject(associatedButton, &kRepeatMessageKey);
+        BOOL isSameMessage = (associatedMessageKey && [associatedMessageKey isEqualToString:messageKey]) ||
+                             (buttonKey && [buttonKey isEqualToString:messageKey]);
+        if (isSameMessage) {
+            if (containerView && associatedButton.superview != containerView) {
+                [associatedButton removeFromSuperview];
+                [containerView addSubview:associatedButton];
+            }
+            return associatedButton;
+        }
+
+        [associatedButton removeFromSuperview];
+        [self wcpl_clearRepeatAssociationForCell:cell];
+    }
+
+    return nil;
+}
+
+- (void)wcpl_bindRepeatButton:(UIButton *)button
+                       toCell:(UITableViewCell *)cell
+                   messageKey:(NSString *)messageKey
+                      content:(NSString *)content
+                       msgWrap:(CMessageWrap *)msgWrap {
+    if (!button) return;
+    if (cell) {
+        objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, button, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(cell, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+
+    objc_setAssociatedObject(button, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(button, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(button, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 - (void)addRepeatButtonToCellView:(CommonMessageCellView *)cellView {
     @try {
         if (!cellView) return;
 
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
-        if (!containerView) return;
-
         UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
-        NSString *associatedMessageKey = cell ? objc_getAssociatedObject(cell, &kRepeatMessageKey) : nil;
         void (^cleanupButtons)(void) = ^{
             if (associatedButton) {
                 [associatedButton removeFromSuperview];
                 if (cell) {
-                    objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                    objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                    [self wcpl_clearRepeatAssociationForCell:cell];
                 }
             }
             [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
             [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
         };
 
-        // 检查功能是否启用
-        if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
-            cleanupButtons();
-            return;
-        }
-
-        // 安全获取 ViewModel
-        id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
-        if (!viewModel) {
-            cleanupButtons();
-            return;
-        }
-
-        // 安全获取 MessageWrap
-        CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
-        if (!msgWrap) {
-            cleanupButtons();
-            return;
-        }
-
-        // 检查是否可以复读
-        if (![self canRepeatMessage:msgWrap]) {
-            cleanupButtons();
-            return;
-        }
-
-        // 计算内容（用于更新现有按钮的关联对象）
+        CMessageWrap *msgWrap = nil;
         NSString *content = nil;
-        unsigned int msgType = msgWrap.m_uiMessageType;
-        BOOL isEmoticonMessage = (msgType == 47);
-        BOOL isImageMessage = (msgType == 3);
-        BOOL isVoiceMessage = (msgType == 34);
-        if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
-            // 获取消息内容 - 优先从 ViewModel 的 contentText 获取（用于引用回复消息）
-            id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
-            if ([contentText isKindOfClass:[NSString class]]) {
-                content = (NSString *)contentText;
-            }
-            // 如果 contentText 为空，回退到 msgWrap.m_nsContent
-            if (!content || content.length == 0) {
-                content = [self getMessageContent:msgWrap];
-            }
-            if (!content || content.length == 0) {
-                cleanupButtons();
-                return;
-            }
-        }
-
-        NSString *messageKey = [self wcpl_messageKeyForMessageWrap:msgWrap content:content];
-        if (!messageKey) {
+        NSString *messageKey = nil;
+        if (![self wcpl_collectRepeatInfoFromCellView:cellView
+                                                cell:&cell
+                                       containerView:&containerView
+                                             msgWrap:&msgWrap
+                                             content:&content
+                                          messageKey:&messageKey]) {
             cleanupButtons();
             return;
         }
 
         // 优先复用已关联的按钮，避免长文本/多次布局导致重复按钮残留
-        UIButton *existingButton = nil;
-        if (associatedButton && [self wcpl_isRepeatButtonView:associatedButton]) {
-            NSString *buttonKey = objc_getAssociatedObject(associatedButton, &kRepeatMessageKey);
-            BOOL isSameMessage = (associatedMessageKey && [associatedMessageKey isEqualToString:messageKey]) ||
-                                 (buttonKey && [buttonKey isEqualToString:messageKey]);
-            if (isSameMessage) {
-                existingButton = associatedButton;
-                if (existingButton.superview != containerView) {
-                    [existingButton removeFromSuperview];
-                    [containerView addSubview:existingButton];
-                }
-            } else {
-                [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(cell, &kRepeatMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-        }
+        UIButton *existingButton = [self wcpl_reuseRepeatButtonForCell:cell
+                                                            messageKey:messageKey
+                                                         containerView:containerView];
 
         if (existingButton) {
-            if (existingButton.superview != containerView) {
-                [existingButton removeFromSuperview];
-                [containerView addSubview:existingButton];
-            }
-
-            objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, existingButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            objc_setAssociatedObject(cell, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-
             // 更新关联对象，避免引用回复/渲染更新导致内容不同步
-            objc_setAssociatedObject(existingButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
-            objc_setAssociatedObject(existingButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            objc_setAssociatedObject(existingButton, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            [self wcpl_bindRepeatButton:existingButton
+                                 toCell:cell
+                             messageKey:messageKey
+                                content:content
+                                 msgWrap:msgWrap];
 
             [self layoutRepeatButton:existingButton inCellView:cellView];
             existingButton.hidden = NO;
@@ -930,13 +962,12 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         UIButton *repeatButton = [self createRepeatButton];
         [containerView addSubview:repeatButton];
 
-        objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(cell, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-
         // 关联消息内容和 msgWrap
-        objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        objc_setAssociatedObject(repeatButton, &kRepeatMsgWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(repeatButton, &kRepeatMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        [self wcpl_bindRepeatButton:repeatButton
+                             toCell:cell
+                         messageKey:messageKey
+                            content:content
+                             msgWrap:msgWrap];
 
         // 定位按钮到消息气泡旁边
         [self layoutRepeatButton:repeatButton inCellView:cellView];
@@ -1355,7 +1386,6 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         // 获取气泡视图
         UIView *bubbleView = [self findBubbleViewInCellView:cellView];
-
         if (!bubbleView) {
             button.hidden = YES;
             return;
@@ -1369,12 +1399,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         [containerView addSubview:button];
 
         // 使用 frame 布局避免约束累积
-        CGFloat buttonSize = 24;
         CGRect bubbleFrame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
-        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;
-        CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2)
-                                     : (CGRectGetMaxX(bubbleFrame) + 2);
-        button.frame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
+        button.frame = [self wcpl_repeatButtonFrameForBubbleFrame:bubbleFrame isFromSelf:isFromSelf];
 
         [containerView bringSubviewToFront:button];
         button.hidden = NO;
@@ -1387,6 +1413,14 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         NSLog(@"[WCPL] Exception in layoutRepeatButton: %@", exception);
         button.hidden = YES;
     }
+}
+
+- (CGRect)wcpl_repeatButtonFrameForBubbleFrame:(CGRect)bubbleFrame isFromSelf:(BOOL)isFromSelf {
+    CGFloat buttonSize = 24.0;
+    CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;
+    CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2.0)
+                                 : (CGRectGetMaxX(bubbleFrame) + 2.0);
+    return CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
 }
 
 - (UIView *)findBubbleViewInCellView:(CommonMessageCellView *)cellView {

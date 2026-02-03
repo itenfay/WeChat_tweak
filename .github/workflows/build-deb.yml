@@ -11,6 +11,9 @@ on:
       - 'WeChatPluginDev/**'
       - '.github/workflows/**'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: macos-14
@@ -181,19 +184,22 @@ jobs:
           echo "=== Listing obj directory ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/.theos/obj/ 2>/dev/null || echo "obj directory not found"
 
-      - name: Upload Rootless Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: rootless-deb
-          path: WeChatPluginDev/wapleodtcorexpc/packages/*-rootless.deb
-          if-no-files-found: warn
+      - name: Upload DEB to Nightly Release
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! ls WeChatPluginDev/wapleodtcorexpc/packages/*.deb >/dev/null 2>&1; then
+            echo "No .deb files found"
+            exit 1
+          fi
 
-      - name: Upload Roothide Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: roothide-deb
-          path: WeChatPluginDev/wapleodtcorexpc/packages/*-roothide.deb
-          if-no-files-found: warn
+          if ! gh release view nightly >/dev/null 2>&1; then
+            gh release create nightly -t "nightly" -p
+          fi
+
+          gh release edit nightly --target "$GITHUB_SHA"
+          gh release upload nightly WeChatPluginDev/wapleodtcorexpc/packages/*.deb --clobber
 
       - name: Release
         uses: softprops/action-gh-release@v1

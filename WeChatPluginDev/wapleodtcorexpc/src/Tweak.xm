@@ -112,7 +112,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
-                                                                           version:@"1.8.14"
+                                                                           version:@"1.8.16"
                                                                         controller:@"WCPLSettingViewController"];
         didRegisterWCPLPlugin = YES;
         NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
