@@ -9,21 +9,53 @@
 #import "WCPLRedEnvelopConfig.h"
 #import <objc/runtime.h>
 
-NSString *const WCPLShortDateFormat = @"yyyy-MM-dd";
-NSString *const WCPLLongDateFormat  = @"yyyy-MM-dd HH:mm:ss";
-
 @interface WCPLFuncService ()
 
 @end
 
 @implementation WCPLFuncService
 
-+ (CGFloat)screenWidth {
-    return WCPLScreenWidth;
-}
++ (BOOL)shouldIgnoreMessageWrap:(id)msgWrap {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    if (!config || !config.userIgnoreEnable) {
+        return NO;
+    }
 
-+ (CGFloat)screenHeight {
-    return WCPLScreenHeight;
+    Class CMessageWrapClass = objc_getClass("CMessageWrap");
+    if (!CMessageWrapClass || ![msgWrap isKindOfClass:CMessageWrapClass]) {
+        return NO;
+    }
+
+    BOOL isSender = NO;
+    @try {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        isSender = (BOOL)[CMessageWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
+#pragma clang diagnostic pop
+    } @catch (__unused NSException *exception) {
+        isSender = NO;
+    }
+    if (isSender) {
+        return NO;
+    }
+
+    Ivar nsFromUsrIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsFromUsr");
+    Ivar nsRealChatUsrIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsRealChatUsr");
+
+    NSString *fromUsr = nsFromUsrIvar ? object_getIvar(msgWrap, nsFromUsrIvar) : nil;
+    if (fromUsr.length > 0 && config.chatIgnoreInfo[fromUsr].boolValue) {
+        return YES;
+    }
+    if (fromUsr.length > 0 && config.userIgnoreInfo[fromUsr].boolValue) {
+        return YES;
+    }
+
+    NSString *realChatUsr = nsRealChatUsrIvar ? object_getIvar(msgWrap, nsRealChatUsrIvar) : nil;
+    if (realChatUsr.length > 0 && config.userIgnoreInfo[realChatUsr].boolValue) {
+        return YES;
+    }
+
+    return NO;
 }
 
 + (NSMutableArray *)filtMessageFromMsgList:(NSMutableArray *)msgList {
@@ -31,62 +63,19 @@ NSString *const WCPLLongDateFormat  = @"yyyy-MM-dd HH:mm:ss";
         return msgList;
     }
 
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSMutableArray *msgListResult = [msgList mutableCopy];
-    if (!config.userIgnoreEnable) {
+    if (![WCPLRedEnvelopConfig sharedConfig].userIgnoreEnable) {
         return msgListResult;
     }
-
-    Class CMessageWrapClass = objc_getClass("CMessageWrap");
-    if (!CMessageWrapClass) {
-        return msgListResult;
-    }
-
-    Ivar nsFromUsrIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsFromUsr");
-    Ivar nsRealChatUsrIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsRealChatUsr");
 
     for (id msgWrap in msgList) {
-        if (![msgWrap isKindOfClass:CMessageWrapClass]) {
-            continue;
-        }
-
-        BOOL isSender = NO;
-        @try {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            isSender = (BOOL)[CMessageWrapClass performSelector:@selector(isSenderFromMsgWrap:) withObject:msgWrap];
-#pragma clang diagnostic pop
-        } @catch (__unused NSException *exception) {
-            isSender = NO;
-        }
-        if (isSender) {
-            continue;
-        }
-
-        NSString *fromUsr = nsFromUsrIvar ? object_getIvar(msgWrap, nsFromUsrIvar) : nil;
-        if (fromUsr.length > 0 && config.chatIgnoreInfo[fromUsr].boolValue) {
-            [msgListResult removeObject:msgWrap];
-            continue;
-        }
-        if (fromUsr.length > 0 && config.userIgnoreInfo[fromUsr].boolValue) {
-            [msgListResult removeObject:msgWrap];
-            continue;
-        }
-
-        NSString *realChatUsr = nsRealChatUsrIvar ? object_getIvar(msgWrap, nsRealChatUsrIvar) : nil;
-        if (realChatUsr.length > 0 && config.userIgnoreInfo[realChatUsr].boolValue) {
+        if ([self shouldIgnoreMessageWrap:msgWrap]) {
             [msgListResult removeObject:msgWrap];
             continue;
         }
     }
 
     return msgListResult;
-}
-
-+ (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:format];
-    return [dateFormatter stringFromDate:date];
 }
 
 @end

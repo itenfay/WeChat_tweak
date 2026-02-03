@@ -104,32 +104,6 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 }
 
-static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageWrap *msgWrap) {
-    if (!config || !config.userIgnoreEnable) return NO;
-    if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return NO;
-
-    BOOL isSender = NO;
-    @try {
-        isSender = [%c(CMessageWrap) isSenderFromMsgWrap:msgWrap];
-    } @catch (__unused NSException *exception) {
-        isSender = NO;
-    }
-    if (isSender) return NO;
-
-    NSString *fromUsr = msgWrap.m_nsFromUsr;
-    if (fromUsr.length > 0 && config.chatIgnoreInfo[fromUsr].boolValue) {
-        return YES;
-    }
-    if (fromUsr.length > 0 && config.userIgnoreInfo[fromUsr].boolValue) {
-        return YES;
-    }
-    NSString *realChatUsr = msgWrap.m_nsRealChatUsr;
-    if (realChatUsr.length > 0 && config.userIgnoreInfo[realChatUsr].boolValue) {
-        return YES;
-    }
-    return NO;
-}
-
 %hook MicroMessengerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -138,7 +112,7 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
-                                                                           version:@"1.8.1"
+                                                                           version:@"1.8.11"
                                                                         controller:@"WCPLSettingViewController"];
         didRegisterWCPLPlugin = YES;
         NSLog(@"[WCPL] Plugin registered via WCPluginsMgr");
@@ -237,8 +211,7 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 %hook CMessageMgr
 
 - (void)AsyncOnAddMsg:(NSString *)msg MsgWrap:(CMessageWrap *)wrap {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    if (wcpl_shouldIgnoreMessageWrap(config, wrap)) {
+    if ([WCPLFuncService shouldIgnoreMessageWrap:wrap]) {
         return;
     }
 
@@ -503,20 +476,6 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     [self.navigationController pushViewController:settingViewController animated:YES];
 }
 
-/*
-%new
-- (void)wcpl_followMyOfficalAccount {
-    CContactMgr *contactMgr = [[%c(MMServiceCenter) defaultCenter] getService:%c(CContactMgr)];
-
-    CContact *contact = [contactMgr getContactByName:@"gh_dfca3xx3231"];
-
-    ContactInfoViewController *contactViewController = [[%c(ContactInfoViewController) alloc] init];
-    [contactViewController setM_contact:contact];
-
-    [self.navigationController pushViewController:contactViewController animated:YES]; 
-}
-*/
-
 %end
 
 %hook SyncCmdHandler
@@ -534,34 +493,6 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 
 %hook BaseMsgContentViewController
 
-/*
-- (void)viewWillAppear:(_Bool)arg1 {
-    %orig;
-
-    UINavigationItem *navigationItem = [self valueForKey:@"navigationItem"];
-    if (navigationItem.rightBarButtonItems.count < 3) {
-        UIBarButtonItem *tpButton = [[UIBarButtonItem alloc] initWithTitle:@"T" style:UIBarButtonItemStylePlain target:self action:@selector(wcpl_pressTPButton:)];
-        NSMutableArray *barButtons = [NSMutableArray arrayWithArray:navigationItem.rightBarButtonItems];
-        [barButtons insertObject:tpButton atIndex:0];
-        [navigationItem setRightBarButtonItems:barButtons];
-    }
-}
-*/
-
-/*
-%new
-- (void)wcpl_pressTPButton:(id)sender {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    BOOL isTPOn = [config TPOn];
-    if (isTPOn) {
-        UIView *view = [self valueForKey:@"view"];
-        [[WCPLAVManager shareManager] startCaptureInView:view];
-    } else {
-        [[WCPLAVManager shareManager] stop];
-    }
-}
-*/
-
 - (void)viewDidLoad {
     %orig;
 
@@ -576,11 +507,6 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
     if (contact.m_nsUsrName) {
         [WCPLRedEnvelopConfig sharedConfig].curUsrName = contact.m_nsUsrName;
     }
-
-    /*
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@" name: %@\n nickname: %@\n headurl: %@", contact.m_nsUsrName, contact.m_nsNickName, contact.m_nsHeadImgUrl] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
-    */
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     if ([config TPOn]) {
@@ -1519,23 +1445,6 @@ static BOOL wcpl_shouldIgnoreMessageWrap(WCPLRedEnvelopConfig *config, CMessageW
 }
 
 %end
-
-/*
-%hook SeePeopleNearByLogicController
-
-- (void)onRetrieveLocationOK:(id)arg1 {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    if (config.fakeLocEnable) {
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:config.lat longitude:config.lng];
-        // 用设定的地理信息代替原来获取真正的地理信息
-        %orig(location); 
-    } else {
-        %orig;
-    }    
-}
-
-%end
-*/
 
 %hook MMLocationMgr
 

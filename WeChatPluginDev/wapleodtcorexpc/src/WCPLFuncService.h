@@ -47,24 +47,11 @@
 // View safe bottom margin.
 #define WCPLViewSafeBottomMargin            (WCPLIsPhoneXAll ? 34.f : 0.f)
 
-// Date format: "yyyy-MM-dd".
-FOUNDATION_EXPORT NSString *const WCPLShortDateFormat;
-
-// Date format: "yyyy-MM-dd HH:mm:ss".
-FOUNDATION_EXPORT NSString *const WCPLLongDateFormat;
-
 @interface WCPLFuncService : NSObject
-
-// Return screen width.
-+ (CGFloat)screenWidth;
-
-// Return screen height.
-+ (CGFloat)screenHeight;
 
 // Filt message from list.
 + (NSMutableArray *)filtMessageFromMsgList:(NSMutableArray *)msgList;
-
-// Convert `NSDate` object to string with formatter.
-+ (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format;
+// Check if a single message should be ignored.
++ (BOOL)shouldIgnoreMessageWrap:(id)msgWrap;
 
 @end
