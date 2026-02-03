@@ -177,6 +177,16 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     return YES;
 }
 
+- (BOOL)wcpl_isVoiceMessage:(CMessageWrap *)msgWrap {
+    if (!msgWrap) return NO;
+    BOOL isVoice = [self wcpl_safeInvokeBoolSelector:@selector(IsVoiceMsg)
+                                            onObject:msgWrap
+                                           arguments:nil
+                                        defaultValue:NO];
+    if (isVoice) return YES;
+    return (msgWrap.m_uiMessageType == 34);
+}
+
 - (UIButton *)wcpl_repeatButtonForMessageKey:(NSString *)messageKey {
     if (!messageKey || messageKey.length == 0) return nil;
 
@@ -851,7 +861,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     unsigned int msgType = msgWrap.m_uiMessageType;
     BOOL isEmoticonMessage = (msgType == 47);
     BOOL isImageMessage = (msgType == 3);
-    BOOL isVoiceMessage = (msgType == 34);
+    BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
     if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
         id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
         if ([contentText isKindOfClass:[NSString class]]) {
@@ -1032,7 +1042,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         }
 
         // 语音消息不检查文本内容，直接允许复读
-        if (msgType == 34) {
+        if ([self wcpl_isVoiceMessage:msgWrap]) {
             return YES;
         }
 
@@ -1356,9 +1366,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             return;
         }
 
-        // 获取气泡视图
-        UIView *bubbleView = [self findBubbleViewInCellView:cellView];
-        if (!bubbleView) {
+        CGRect bubbleFrame = CGRectZero;
+        if (![self wcpl_bubbleFrameForCellView:cellView containerView:containerView outFrame:&bubbleFrame]) {
             button.hidden = YES;
             return;
         }
@@ -1371,7 +1380,6 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         [containerView addSubview:button];
 
         // 使用 frame 布局避免约束累积
-        CGRect bubbleFrame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
         button.frame = [self wcpl_repeatButtonFrameForBubbleFrame:bubbleFrame isFromSelf:isFromSelf];
 
         [containerView bringSubviewToFront:button];
@@ -1395,8 +1403,42 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     return CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
 }
 
+- (BOOL)wcpl_bubbleFrameForCellView:(CommonMessageCellView *)cellView
+                      containerView:(UIView *)containerView
+                           outFrame:(CGRect *)outFrame {
+    if (!cellView || !containerView || !outFrame) return NO;
+
+    id bubbleBorderValue = [self wcpl_safeValueForObject:cellView keyName:@"m_bubbleBorderFrame"];
+    if ([bubbleBorderValue isKindOfClass:[NSValue class]]) {
+        CGRect frame = [bubbleBorderValue CGRectValue];
+        if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
+            *outFrame = [cellView convertRect:frame toView:containerView];
+            return YES;
+        }
+    }
+
+    UIView *bubbleView = [self findBubbleViewInCellView:cellView];
+    if (bubbleView) {
+        CGRect frame = [bubbleView convertRect:bubbleView.bounds toView:containerView];
+        if (!CGRectIsEmpty(frame) && frame.size.width > 1.0 && frame.size.height > 1.0) {
+            *outFrame = frame;
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
 - (UIView *)findBubbleViewInCellView:(CommonMessageCellView *)cellView {
     @try {
+        if (!cellView) return nil;
+
+        UIView *bgImageView =
+            [self wcpl_safeInvokeObjectSelector:@selector(getBgImageView) onObject:cellView arguments:nil];
+        if (bgImageView && !bgImageView.hidden && bgImageView.frame.size.width > 20) {
+            return bgImageView;
+        }
+
         // 首先尝试通过 KVC 获取 m_bgImageView（气泡背景）
         @try {
             UIView *bgImageView = [cellView valueForKey:@"m_bgImageView"];
@@ -1662,7 +1704,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             BOOL isEmoticonMessage = (msgType == 47);
             BOOL isImageMessage = (msgType == 3);
             BOOL isVideoMessage = (msgType == 43 || msgType == 62);
-            BOOL isVoiceMessage = (msgType == 34);
+            BOOL isVoiceMessage = [self wcpl_isVoiceMessage:msgWrap];
 
             if (isImageMessage || isVideoMessage) {
                 WCPLLog(@"Repeat not supported for image/video message");
@@ -1702,7 +1744,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         BOOL isEmoticonMessage = (msgWrap && msgWrap.m_uiMessageType == 47);
         BOOL isImageMessage = (msgWrap && msgWrap.m_uiMessageType == 3);
         BOOL isVideoMessage = (msgWrap && (msgWrap.m_uiMessageType == 43 || msgWrap.m_uiMessageType == 62));
-        BOOL isVoiceMessage = (msgWrap && msgWrap.m_uiMessageType == 34);
+        BOOL isVoiceMessage = (msgWrap && [self wcpl_isVoiceMessage:msgWrap]);
         [debugInfo appendFormat:@"4. 是否表情包: %@\n", isEmoticonMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.1 是否图片: %@\n", isImageMessage ? @"是" : @"否"];
         [debugInfo appendFormat:@"4.2 是否视频: %@\n", isVideoMessage ? @"是" : @"否"];
@@ -2279,6 +2321,31 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                                               arguments:@[toUserName, msgWrap]];
             if (didSend) {
                 [execLog appendString:@"✅ 通过ResendMsg发送成功\n"];
+            }
+        }
+
+        if (!didSend) {
+            NSArray<NSString *> *resendClasses = @[
+                @"AudioSender",
+                @"MMNewUploadVoiceMgr",
+                @"UploadVoiceCDNMgr",
+                @"BaseUploadVoiceMgr"
+            ];
+            for (NSString *className in resendClasses) {
+                Class cls = objc_getClass([className UTF8String]);
+                if (!cls) continue;
+                id sender = [self wcpl_getService:cls];
+                if (!sender) continue;
+                if ([sender respondsToSelector:@selector(ResendVoiceMsg:MsgWrap:)]) {
+                    BOOL invoked = [self wcpl_safeInvokeVoidSelector:@selector(ResendVoiceMsg:MsgWrap:)
+                                                            onObject:sender
+                                                           arguments:@[toUserName ?: @"", msgWrap]];
+                    if (invoked) {
+                        [execLog appendFormat:@"✅ 通过%@.ResendVoiceMsg发送成功\n", className];
+                        didSend = YES;
+                        break;
+                    }
+                }
             }
         }
 
