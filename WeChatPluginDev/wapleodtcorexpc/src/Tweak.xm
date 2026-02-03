@@ -1737,12 +1737,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return items;
     }
     SEL action = @selector(wcpl_handleLocalReplaceMenuItem:);
-    NSMutableArray *mutable = items ? [items mutableCopy] : [NSMutableArray array];
-    for (id item in mutable) {
+    NSMutableArray *mutableItems = items ? [items mutableCopy] : [NSMutableArray array];
+    for (id item in mutableItems) {
         if ([item isKindOfClass:menuItemClass] && [item respondsToSelector:@selector(action)]) {
             @try {
                 if ([item action] == action) {
-                    return mutable;
+                    return mutableItems;
                 }
             } @catch (__unused NSException *exception) {
             }
@@ -1750,9 +1750,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
     id menuItem = [[menuItemClass alloc] initWithTitle:@"临时替换显示（仅本地）" target:self action:action];
     if (menuItem) {
-        [mutable addObject:menuItem];
+        [mutableItems addObject:menuItem];
     }
-    return mutable;
+    return mutableItems;
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
