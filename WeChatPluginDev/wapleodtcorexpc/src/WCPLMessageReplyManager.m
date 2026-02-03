@@ -762,8 +762,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         if (!cellView) return;
         if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return;
 
-        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
-        UIView *containerView = cell ? cell.contentView : cellView;
+        // 修复：始终使用 cellView 作为 containerView，避免不一致导致多按钮问题
+        UIView *containerView = cellView;
         if (!containerView) return;
 
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
@@ -792,12 +792,22 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             }
         }
 
-        UIView *foundView = [containerView viewWithTag:kWCPLRepeatButtonTag];
+        // 在 cellView 中查找已存在的按钮
+        UIView *foundView = [cellView viewWithTag:kWCPLRepeatButtonTag];
         UIButton *repeatButton = nil;
         if ([foundView isKindOfClass:[UIButton class]]) {
             repeatButton = (UIButton *)foundView;
         } else if (foundView) {
             [foundView removeFromSuperview];
+        }
+
+        // 修复：清理可能错误添加到 cell.contentView 的残留按钮
+        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+        if (cell && cell.contentView && cell.contentView != cellView) {
+            UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
+            if (staleButton) {
+                [staleButton removeFromSuperview];
+            }
         }
 
         if (!repeatButton) {
@@ -822,13 +832,19 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 - (void)removeRepeatButtonFromCellView:(CommonMessageCellView *)cellView {
     if (!cellView) return;
 
-    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
-    UIView *containerView = cell ? cell.contentView : cellView;
-    if (!containerView) return;
-
-    UIView *foundView = [containerView viewWithTag:kWCPLRepeatButtonTag];
+    // 从 cellView 移除按钮
+    UIView *foundView = [cellView viewWithTag:kWCPLRepeatButtonTag];
     if (foundView) {
         [foundView removeFromSuperview];
+    }
+
+    // 同时清理可能存在于 cell.contentView 中的残留按钮
+    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+    if (cell && cell.contentView && cell.contentView != cellView) {
+        UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
+        if (staleButton) {
+            [staleButton removeFromSuperview];
+        }
     }
 }
 
