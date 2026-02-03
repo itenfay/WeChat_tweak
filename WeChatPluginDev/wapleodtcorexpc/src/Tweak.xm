@@ -11,6 +11,7 @@
 #import "WCPLMessageReplyManager.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
+#import "RichTextView.h"
 #import <objc/runtime.h>
 
 // ==================== 插件注册 ====================
@@ -130,6 +131,80 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
     } @catch (__unused NSException *exception) {
         return NO;
     }
+}
+
+// ==================== 本地文本替换（仅显示） ====================
+static const void *kWCPLLocalReplaceMapKey = &kWCPLLocalReplaceMapKey;
+
+static NSMutableDictionary<NSString *, NSString *> *wcpl_localReplaceMapForController(id controller, BOOL createIfNeeded) {
+    if (!controller) return nil;
+    NSMutableDictionary *map = objc_getAssociatedObject(controller, kWCPLLocalReplaceMapKey);
+    if (!map && createIfNeeded) {
+        map = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(controller, kWCPLLocalReplaceMapKey, map, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return map;
+}
+
+static NSString *wcpl_messageKey(CMessageWrap *msgWrap) {
+    if (!msgWrap) return nil;
+    NSString *fromUser = msgWrap.m_nsFromUsr ?: @"";
+    NSString *toUser = msgWrap.m_nsToUsr ?: @"";
+    unsigned int localId = msgWrap.m_uiMesLocalID;
+    long long svrId = msgWrap.m_n64MesSvrID;
+    if (localId == 0 && svrId == 0) {
+        return [NSString stringWithFormat:@"%@|%@|%p", fromUser, toUser, msgWrap];
+    }
+    return [NSString stringWithFormat:@"%@|%@|%u|%lld", fromUser, toUser, localId, svrId];
+}
+
+static BOOL wcpl_isPlainTextMessage(CMessageWrap *msgWrap) {
+    return (msgWrap && msgWrap.m_uiMessageType == 1);
+}
+
+static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
+    if (!cell || ![cell respondsToSelector:@selector(viewModel)]) return nil;
+    id viewModel = [cell viewModel];
+    if ([viewModel respondsToSelector:@selector(messageWrap)]) {
+        @try {
+            return [viewModel messageWrap];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+    @try {
+        id wrap = [viewModel valueForKey:@"messageWrap"];
+        if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+            return (CMessageWrap *)wrap;
+        }
+    } @catch (__unused NSException *exception) {
+    }
+    return nil;
+}
+
+static void wcpl_setLocalReplaceText(id controller, CMessageWrap *msgWrap, NSString *text) {
+    if (!controller || !msgWrap) return;
+    NSString *key = wcpl_messageKey(msgWrap);
+    if (key.length == 0) return;
+    NSMutableDictionary *map = wcpl_localReplaceMapForController(controller, YES);
+    if (!map) return;
+    if (text.length > 0) {
+        map[key] = text;
+    } else {
+        [map removeObjectForKey:key];
+    }
+}
+
+static NSString *wcpl_localReplaceText(id controller, CMessageWrap *msgWrap) {
+    if (!controller || !msgWrap) return nil;
+    NSString *key = wcpl_messageKey(msgWrap);
+    if (key.length == 0) return nil;
+    NSDictionary *map = wcpl_localReplaceMapForController(controller, NO);
+    return map[key];
+}
+
+static void wcpl_clearLocalReplaceMap(id controller) {
+    NSMutableDictionary *map = wcpl_localReplaceMapForController(controller, NO);
+    [map removeAllObjects];
 }
 
 static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap);
@@ -1619,6 +1694,182 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         config.userIgnoreInfo = igDict;
     }
     [config saveUserIgnoreNameListToLocalFile];
+}
+
+%end
+
+// ==================== 临时替换显示（仅本地） ====================
+
+%hook TextMessageCellView
+
+- (id)operationMenuItems {
+    NSArray *items = %orig;
+    CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
+    if (!wcpl_isPlainTextMessage(msgWrap)) {
+        return items;
+    }
+    Class menuItemClass = objc_getClass("MMMenuItem");
+    if (!menuItemClass) {
+        return items;
+    }
+    SEL action = @selector(wcpl_handleLocalReplaceMenuItem:);
+    NSMutableArray *mutable = items ? [items mutableCopy] : [NSMutableArray array];
+    for (id item in mutable) {
+        if ([item isKindOfClass:menuItemClass] && [item respondsToSelector:@selector(action)]) {
+            @try {
+                if ([item action] == action) {
+                    return mutable;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+    id menuItem = [[menuItemClass alloc] initWithTitle:@"临时替换显示（仅本地）" target:self action:action];
+    if (menuItem) {
+        [mutable addObject:menuItem];
+    }
+    return mutable;
+}
+
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
+    if (arg1 == @selector(wcpl_handleLocalReplaceMenuItem:)) {
+        CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
+        return wcpl_isPlainTextMessage(msgWrap);
+    }
+    return %orig;
+}
+
+- (void)updateStatus {
+    %orig;
+    [self wcpl_applyLocalReplaceIfNeeded];
+}
+
+- (void)onCopy:(id)arg1 {
+    CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
+    id viewController = nil;
+    if ([self respondsToSelector:@selector(getViewController)]) {
+        @try {
+            viewController = [self getViewController];
+        } @catch (__unused NSException *exception) {
+            viewController = nil;
+        }
+    }
+    NSString *replaceText = wcpl_localReplaceText(viewController, msgWrap);
+    if (replaceText.length > 0) {
+        RichTextView *richTextView = nil;
+        @try {
+            richTextView = MSHookIvar<RichTextView *>(self, "m_richTextView");
+        } @catch (__unused NSException *exception) {
+            richTextView = nil;
+        }
+        if (richTextView && [richTextView respondsToSelector:@selector(setContent:)]) {
+            NSString *originText = msgWrap.m_nsContent ?: @"";
+            if (originText.length > 0) {
+                [richTextView setContent:originText];
+            }
+            %orig;
+            [self wcpl_applyLocalReplaceIfNeeded];
+            return;
+        }
+    }
+    %orig;
+}
+
+%new
+- (void)wcpl_applyLocalReplaceIfNeeded {
+    CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
+    if (!wcpl_isPlainTextMessage(msgWrap)) return;
+    id viewController = nil;
+    if ([self respondsToSelector:@selector(getViewController)]) {
+        @try {
+            viewController = [self getViewController];
+        } @catch (__unused NSException *exception) {
+            viewController = nil;
+        }
+    }
+    NSString *replaceText = wcpl_localReplaceText(viewController, msgWrap);
+    RichTextView *richTextView = nil;
+    @try {
+        richTextView = MSHookIvar<RichTextView *>(self, "m_richTextView");
+    } @catch (__unused NSException *exception) {
+        richTextView = nil;
+    }
+    if (!richTextView || ![richTextView respondsToSelector:@selector(setContent:)]) return;
+    NSString *displayText = replaceText.length > 0 ? replaceText : msgWrap.m_nsContent;
+    if (displayText.length == 0) return;
+    [richTextView setContent:displayText];
+    if ([richTextView respondsToSelector:@selector(forceDisplayInSync)]) {
+        [richTextView forceDisplayInSync];
+    }
+}
+
+%new
+- (void)wcpl_handleLocalReplaceMenuItem:(id)sender {
+    CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
+    if (!wcpl_isPlainTextMessage(msgWrap)) return;
+
+    id viewController = nil;
+    if ([self respondsToSelector:@selector(getViewController)]) {
+        @try {
+            viewController = [self getViewController];
+        } @catch (__unused NSException *exception) {
+            viewController = nil;
+        }
+    }
+    if (!viewController || ![viewController respondsToSelector:@selector(presentViewController:animated:completion:)]) {
+        return;
+    }
+
+    NSString *originText = msgWrap.m_nsContent ?: @"";
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"临时替换显示（仅本地）"
+                                                                   message:@"仅在当前聊天页面生效，离开后自动恢复"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.text = originText;
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
+
+    __weak typeof(self) weakSelf = self;
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!strongSelf) return;
+        NSString *input = alert.textFields.firstObject.text ?: @"";
+        NSString *trimmed = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        wcpl_setLocalReplaceText(viewController, msgWrap, trimmed);
+        if ([viewController respondsToSelector:@selector(reloadNodeWithMessageWrap:)]) {
+            @try {
+                [viewController reloadNodeWithMessageWrap:msgWrap];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+
+    [viewController presentViewController:alert animated:YES completion:nil];
+}
+
+%end
+
+%hook BaseMsgContentViewController
+
+- (void)viewWillDisappear:(_Bool)arg1 {
+    %orig;
+    if (self.isMovingFromParentViewController || self.isBeingDismissed) {
+        wcpl_clearLocalReplaceMap(self);
+    }
+}
+
+- (void)reloadMessages {
+    wcpl_clearLocalReplaceMap(self);
+    %orig;
+}
+
+- (void)reloadWholePage {
+    wcpl_clearLocalReplaceMap(self);
+    %orig;
 }
 
 %end

@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class MMUIViewController;
+
 @protocol MultiSelectGroupsViewControllerDelegate <NSObject>
 
 - (void)onMultiSelectGroupReturn:(NSArray *)arg1;
@@ -16,7 +18,7 @@
 
 @end
 
-@interface WCPLMultiSelectGroupsViewController : UIViewController
+@interface WCPLMultiSelectGroupsViewController : MMUIViewController
 
 - (instancetype)initWithBlackList:(NSArray *)blackList;
 
