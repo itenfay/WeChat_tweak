@@ -82,7 +82,7 @@
 
 - (void)onDone:(UIBarButtonItem *)item {
     if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectGroupReturn:)]) {
-        NSArray *blacklist = [[self.selectView.m_dicMultiSelect allKeys] copy];
+        NSArray *blacklist = [self wcpl_selectedUserNames];
         [self.delegate onMultiSelectGroupReturn:blacklist];
     }
 }
@@ -113,6 +113,34 @@
 
 - (unsigned long)getTotalSelectCount {
     return (unsigned long)[self.selectView.m_dicMultiSelect count];
+}
+
+#pragma mark - Private
+
+- (NSString *)wcpl_userNameFromObject:(id)obj {
+    if (!obj) return nil;
+    if ([obj isKindOfClass:[NSString class]]) {
+        return (NSString *)obj;
+    }
+    if ([obj isKindOfClass:[CContact class]]) {
+        return ((CContact *)obj).m_nsUsrName;
+    }
+    return nil;
+}
+
+- (NSArray<NSString *> *)wcpl_selectedUserNames {
+    NSMutableArray<NSString *> *names = [NSMutableArray array];
+    NSDictionary *selected = self.selectView.m_dicMultiSelect ?: @{};
+    for (id key in selected) {
+        NSString *name = [self wcpl_userNameFromObject:key];
+        if (!name) {
+            name = [self wcpl_userNameFromObject:selected[key]];
+        }
+        if (name.length > 0) {
+            [names addObject:name];
+        }
+    }
+    return names.copy;
 }
 
 @end
