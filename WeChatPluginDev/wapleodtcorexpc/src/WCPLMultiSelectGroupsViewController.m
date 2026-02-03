@@ -41,7 +41,9 @@
     
     for (NSString *contactName in self.blackList) {
         CContact *contact = [contactMgr getContactByName:contactName];
-        [self.selectView addSelect:contact];
+        if (contact) {
+            [self.selectView addSelect:contact];
+        }
     }
 }
 
@@ -102,7 +104,7 @@
 #pragma mark - ContactSelectViewDelegate
 
 - (MMUIViewController *)getViewController {
-    return nil;
+    return self;
 }
 
 - (void)onSelectContact:(CContact *)arg1 {

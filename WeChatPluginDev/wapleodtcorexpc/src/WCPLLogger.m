@@ -15,6 +15,8 @@
 
 @implementation WCPLLogger
 
+static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
+
 + (instancetype)sharedLogger {
     static WCPLLogger *logger = nil;
     static dispatch_once_t onceToken;
@@ -26,7 +28,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        // 默认关闭日志
+        // 默认关闭日志，启动时读取持久化开关
         _enabled = NO;
 
         // 创建日志队列，确保线程安全
@@ -46,6 +48,11 @@
         if (_fileHandle) {
             [_fileHandle seekToEndOfFile];
         }
+
+        BOOL savedEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLDebugLogEnabled];
+        if (savedEnabled) {
+            [self setEnabled:YES];
+        }
     }
     return self;
 }
@@ -61,11 +68,16 @@
 - (void)setEnabled:(BOOL)enabled {
     if (_enabled != enabled) {
         _enabled = enabled;
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kWCPLDebugLogEnabled];
 
         if (enabled) {
             // 启用日志时写入启动消息
             NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n", [self currentTimestamp], [self startupContextInfo]];
             [self writeToFile:startupLog];
+        } else {
+            // 关闭日志时记录关闭时间，便于排查
+            NSString *stopLog = [NSString stringWithFormat:@"\n========== WCPL Logger Stopped at %@ ==========\n", [self currentTimestamp]];
+            [self writeToFile:stopLog];
         }
     }
 }

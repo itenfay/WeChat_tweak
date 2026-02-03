@@ -104,7 +104,7 @@
 #pragma mark - ContactSelectViewDelegate
 
 - (MMUIViewController *)getViewController {
-    return nil;
+    return self;
 }
 
 - (void)onSelectContact:(CContact *)arg1 {
