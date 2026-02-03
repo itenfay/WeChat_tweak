@@ -86,3 +86,6 @@
 
 @end
 
+@interface WCRedEnvelopesLogicMgr (WCPL)
+- (unsigned int)wcpl_calculateDelaySeconds;
+@end

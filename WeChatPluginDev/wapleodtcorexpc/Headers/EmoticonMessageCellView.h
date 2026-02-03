@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@class EmoticonCustomAddLogicController, EmoticonMessageViewModel, MMEmoticonView, MMUIActivityIndicatorView, NSString, UIImageView, UILabel, UIView;
+@class EmoticonCustomAddLogicController, EmoticonMessageViewModel, MMEmoticonView, MMUIActivityIndicatorView, NSString, UIImageView, UILabel, UIView, UIWindow;
 
 @interface EmoticonMessageCellView : NSObject
 {
@@ -56,3 +56,8 @@
 
 @end
 
+@interface EmoticonMessageCellView (WCHookSwipe)
+@property(readonly, nonatomic) UIWindow *window;
+- (void)wchook_setupSwipeGestureIfNeeded;
+- (void)wchook_resetSwipeAnimated:(_Bool)animated;
+@end

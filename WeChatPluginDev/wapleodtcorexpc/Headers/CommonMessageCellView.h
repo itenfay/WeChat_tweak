@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@class AppMessageBlockButton, CADisplayLink, CMessageWrap, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIView, UIVisualEffectView, YYAsyncImageView;
+@class AppMessageBlockButton, CADisplayLink, CMessageWrap, CTRichTextView, CommonMessageCellViewExtTarget, CommonMessageViewModel, MMCPLabel, MMHeadImageView, MMUIActivityIndicatorView, NSString, TextStateItemView, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UIImpactFeedbackGenerator, UIView, UIVisualEffectView, YYAsyncImageView;
 
 @interface CommonMessageCellView : UIView
 {
@@ -122,4 +122,12 @@
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) CommonMessageViewModel *viewModel; // @dynamic viewModel;
 
+@end
+
+@interface CommonMessageCellView (WCHookSwipe)
+@property(retain, nonatomic) UIPanGestureRecognizer *wchook_swipeGesture;
+@property(retain, nonatomic) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
+@property(nonatomic) _Bool wchook_feedbackTriggered;
+- (void)wchook_setupSwipeGestureIfNeeded;
+- (void)wchook_resetSwipeAnimated:(_Bool)animated;
 @end

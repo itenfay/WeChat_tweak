@@ -156,6 +156,7 @@
 + (_Bool)isWeWorkKFUserName:(id)arg1;
 + (_Bool)isWeAppUserName:(id)arg1;
 @property(nonatomic, copy) NSString *m_nsUsrName;
+@property(retain, nonatomic) NSString *m_nsHeadImgUrl; // @synthesize m_nsHeadImgUrl=_m_nsHeadImgUrl;
 @property(retain, nonatomic) EncryptSecretInfo *m_encryptSecretInfo; // @synthesize m_encryptSecretInfo=_m_encryptSecretInfo;
 @property(retain, nonatomic) NSString *m_createGroupSessionId; // @synthesize m_createGroupSessionId=_m_createGroupSessionId;
 @property(retain, nonatomic) NSString *m_textStatusData; // @synthesize m_textStatusData=_m_textStatusData;

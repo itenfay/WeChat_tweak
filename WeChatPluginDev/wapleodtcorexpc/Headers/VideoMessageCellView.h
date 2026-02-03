@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@class CAGradientLayer, MMDragManager, NSString, SightIconView, UIButton, UIDragInteraction, UIImageView, UILabel, UIView, VideoMessageViewModel, YYAsyncImageView;
+@class CAGradientLayer, MMDragManager, NSString, SightIconView, UIButton, UIDragInteraction, UIImageView, UILabel, UIView, UIWindow, VideoMessageViewModel, YYAsyncImageView;
 
 @interface VideoMessageCellView : NSObject
 {
@@ -79,3 +79,8 @@
 
 @end
 
+@interface VideoMessageCellView (WCHookSwipe)
+@property(readonly, nonatomic) UIWindow *window;
+- (void)wchook_setupSwipeGestureIfNeeded;
+- (void)wchook_resetSwipeAnimated:(_Bool)animated;
+@end

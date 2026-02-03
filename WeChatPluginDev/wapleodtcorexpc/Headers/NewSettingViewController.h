@@ -3,7 +3,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard. Updated HuangBai-2024 
 //
 
-@class MMTableViewInfo, MMTipsViewController, NSString, WCAccountLogoutLogic, WCAccountSwitchLogic, WCTableViewManager, WCTableViewNormalCellManager;
+@class MMTableViewInfo, MMTipsViewController, NSString, UINavigationController, WCAccountLogoutLogic, WCAccountSwitchLogic, WCTableViewManager, WCTableViewNormalCellManager;
 
 @interface NewSettingViewController : NSObject
 {
@@ -17,6 +17,7 @@
 
 + (void)handleJumpPlugin:(id)arg1 params:(id)arg2;
 @property(nonatomic) __weak WCTableViewNormalCellManager *pluginCellInfo; // @synthesize pluginCellInfo=_pluginCellInfo;
+@property(readonly, nonatomic) UINavigationController *navigationController;
 - (void)onSetElderModeOn:(_Bool)arg1 success:(_Bool)arg2;
 - (void)registerYReportSdk;
 - (void)onLimitedModeChanged;
@@ -66,4 +67,3 @@
 @property(readonly) Class superclass;
 
 @end
-
