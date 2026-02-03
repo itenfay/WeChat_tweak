@@ -184,6 +184,14 @@ jobs:
           echo "=== Listing obj directory ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/.theos/obj/ 2>/dev/null || echo "obj directory not found"
 
+      - name: Upload DEB artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-packages
+          path: WeChatPluginDev/wapleodtcorexpc/packages/*.deb
+          if-no-files-found: warn
+
       - name: Upload DEB to Nightly Release
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         env:
