@@ -18,7 +18,7 @@
 // 关联对象的 key
 static char kRepeatContentKey;
 static char kRepeatMsgWrapKey;
-static char kRepeatButtonForCellViewKey;
+static char kRepeatButtonForCellKey;
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
 
 @implementation WCPLMessageReplyManager
@@ -51,7 +51,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     if (cell && cell.contentView) {
         return cell.contentView;
     }
-    return cellView;
+    return nil;
 }
 
 - (BOOL)wcpl_isRepeatButtonView:(UIView *)view {
@@ -646,16 +646,20 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!cellView) return;
 
+        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
-        UIButton *associatedButton = objc_getAssociatedObject(cellView, &kRepeatButtonForCellViewKey);
+        if (!containerView) return;
+
+        UIButton *associatedButton = objc_getAssociatedObject(cell, &kRepeatButtonForCellKey);
 
         // 检查功能是否启用
         if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
             if (associatedButton) {
                 [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
             [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
             return;
         }
 
@@ -667,9 +671,10 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         if (!viewModel) {
             if (associatedButton) {
                 [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
             [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
             return;
         }
 
@@ -681,9 +686,10 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         if (!msgWrap) {
             if (associatedButton) {
                 [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
             [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
             return;
         }
 
@@ -691,9 +697,10 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
         if (![self canRepeatMessage:msgWrap]) {
             if (associatedButton) {
                 [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
             [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+            [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
             return;
         }
 
@@ -717,9 +724,10 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
             if (!content || content.length == 0) {
                 if (associatedButton) {
                     [associatedButton removeFromSuperview];
-                    objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                    objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                 }
                 [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+                [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
                 return;
             }
         }
@@ -737,7 +745,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                 }
             } else if (associatedMsgWrap) {
                 [associatedButton removeFromSuperview];
-                objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
         }
 
@@ -787,7 +795,7 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
                 [containerView addSubview:existingButton];
             }
 
-            objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, existingButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, existingButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
             // 更新关联对象，避免引用回复/渲染更新导致内容不同步
             objc_setAssociatedObject(existingButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -801,12 +809,13 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
 
         // 先移除所有旧按钮，确保只有一个
         [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+        [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
 
         // 创建新按钮
         UIButton *repeatButton = [self createRepeatButton];
         [containerView addSubview:repeatButton];
 
-        objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         // 关联消息内容和 msgWrap
         objc_setAssociatedObject(repeatButton, &kRepeatContentKey, content, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -827,14 +836,18 @@ static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlert
     @try {
         if (!cellView) return;
 
-        UIButton *associatedButton = objc_getAssociatedObject(cellView, &kRepeatButtonForCellViewKey);
+        UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+        UIButton *associatedButton = cell ? objc_getAssociatedObject(cell, &kRepeatButtonForCellKey) : nil;
         if (associatedButton) {
             [associatedButton removeFromSuperview];
-            objc_setAssociatedObject(cellView, &kRepeatButtonForCellViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            if (cell) {
+                objc_setAssociatedObject(cell, &kRepeatButtonForCellKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
         }
 
         UIView *containerView = [self wcpl_repeatButtonContainerViewForCellView:cellView];
         [self wcpl_removeRepeatButtonsInView:containerView excludingButton:nil];
+        [self wcpl_removeRepeatButtonsInView:cellView excludingButton:nil];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in removeRepeatButtonFromCellView: %@", exception);
