@@ -19,6 +19,11 @@
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender;
 @end
 
+@interface MMMenuItem : NSObject
+- (instancetype)initWithTitle:(id)title target:(id)target action:(SEL)action;
+- (SEL)action;
+@end
+
 // ==================== 插件注册 ====================
 static BOOL didRegisterWCPLPlugin = NO;
 
