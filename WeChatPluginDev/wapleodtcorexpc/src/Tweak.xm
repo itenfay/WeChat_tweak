@@ -260,6 +260,83 @@ static NSDictionary *wcpl_dictionaryFromHongbaoBuffer(SKBuiltinBuffer_t *buffer)
     return nil;
 }
 
+static int wcpl_intFromSelector(id obj, SEL sel) {
+    if (!obj || !sel) return 0;
+    if (![obj respondsToSelector:sel]) return 0;
+    @try {
+        return ((int (*)(id, SEL))objc_msgSend)(obj, sel);
+    } @catch (__unused NSException *exception) {
+        return 0;
+    }
+}
+
+static NSString *wcpl_stringFromSelector(id obj, SEL sel) {
+    if (!obj || !sel) return nil;
+    if (![obj respondsToSelector:sel]) return nil;
+    @try {
+        id value = ((id (*)(id, SEL))objc_msgSend)(obj, sel);
+        if ([value isKindOfClass:[NSString class]]) {
+            return wcpl_trimString((NSString *)value);
+        }
+        return nil;
+    } @catch (__unused NSException *exception) {
+        return nil;
+    }
+}
+
+static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqObj) {
+    unsigned int cmdId = 0;
+    @try {
+        if (reqObj && [reqObj respondsToSelector:@selector(cgiCmd)]) {
+            cmdId = ((unsigned int (*)(id, SEL))objc_msgSend)(reqObj, @selector(cgiCmd));
+        }
+    } @catch (__unused NSException *exception) {
+        cmdId = 0;
+    }
+    if (cmdId == 0) {
+        @try {
+            if (resObj && [resObj respondsToSelector:@selector(cgiCmdid)]) {
+                cmdId = (unsigned int)((int (*)(id, SEL))objc_msgSend)(resObj, @selector(cgiCmdid));
+            }
+        } @catch (__unused NSException *exception) {
+            cmdId = 0;
+        }
+    }
+
+    NSDictionary *requestDict = nil;
+    @try {
+        if (reqObj && [reqObj respondsToSelector:@selector(reqText)]) {
+            SKBuiltinBuffer_t *buf = ((id (*)(id, SEL))objc_msgSend)(reqObj, @selector(reqText));
+            requestDict = wcpl_dictionaryFromHongbaoBuffer(buf);
+        }
+    } @catch (__unused NSException *exception) {
+        requestDict = nil;
+    }
+
+    NSString *sendId = wcpl_stringForKeyInDictionary(requestDict, @"sendId")
+        ?: wcpl_stringForKeyInDictionary(requestDict, @"sendid")
+        ?: wcpl_stringForKeyInDictionary(requestDict, @"send_id");
+    NSString *timingIdentifier = wcpl_stringForKeyInDictionary(requestDict, @"timingIdentifier")
+        ?: wcpl_stringForKeyInDictionary(requestDict, @"timing_identifier");
+
+    int errorType = wcpl_intFromSelector(resObj, @selector(errorType));
+    int platRet = wcpl_intFromSelector(resObj, @selector(platRet));
+    NSString *errorMsg = wcpl_stringFromSelector(resObj, @selector(errorMsg));
+    NSString *platMsg = wcpl_stringFromSelector(resObj, @selector(platMsg));
+
+    WCPLLog(@"红包%@回包: cmd=%u sendId=%@ timing=%@ errorType=%d platRet=%d errorMsg=%@ platMsg=%@ res=%@ req=%@",
+            wcpl_trimString(tag) ?: @"错误",
+            cmdId,
+            sendId ?: @"",
+            timingIdentifier ?: @"",
+            errorType,
+            platRet,
+            wcpl_sanitizeInlineText(errorMsg, 120) ?: @"",
+            wcpl_sanitizeInlineText(platMsg, 120) ?: @"",
+            resObj ? NSStringFromClass([resObj class]) : @"",
+            reqObj ? NSStringFromClass([reqObj class]) : @"");
+}
+
 static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *text) {
     NSString *session = wcpl_trimString(sessionUserName);
     NSString *content = wcpl_trimString(text);
@@ -714,6 +791,57 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
 %hook WCRedEnvelopesLogicMgr
 
+- (void)ReceiverQueryRedEnvelopesRequest:(id)arg1 {
+    NSDictionary *params = [arg1 isKindOfClass:[NSDictionary class]] ? (NSDictionary *)arg1 : nil;
+    NSString *sendId = wcpl_stringForKeyInDictionary(params, @"sendId")
+        ?: wcpl_stringForKeyInDictionary(params, @"sendid")
+        ?: wcpl_stringForKeyInDictionary(params, @"send_id");
+    NSString *channelId = wcpl_stringForKeyInDictionary(params, @"channelId")
+        ?: wcpl_stringForKeyInDictionary(params, @"channelid")
+        ?: wcpl_stringForKeyInDictionary(params, @"channel_id");
+    NSString *msgType = wcpl_stringForKeyInDictionary(params, @"msgType")
+        ?: wcpl_stringForKeyInDictionary(params, @"msgtype")
+        ?: wcpl_stringForKeyInDictionary(params, @"msg_type");
+    WCPLLog(@"ReceiverQueryRedEnvelopesRequest: mainThread=%d sendId=%@ channelId=%@ msgType=%@ keys=%lu",
+            [NSThread isMainThread],
+            sendId ?: @"",
+            channelId ?: @"",
+            msgType ?: @"",
+            (unsigned long)params.count);
+    %orig;
+}
+
+- (void)OpenRedEnvelopesRequest:(id)arg1 {
+    NSDictionary *params = [arg1 isKindOfClass:[NSDictionary class]] ? (NSDictionary *)arg1 : nil;
+    NSString *sendId = wcpl_stringForKeyInDictionary(params, @"sendId")
+        ?: wcpl_stringForKeyInDictionary(params, @"sendid")
+        ?: wcpl_stringForKeyInDictionary(params, @"send_id");
+    NSString *channelId = wcpl_stringForKeyInDictionary(params, @"channelId")
+        ?: wcpl_stringForKeyInDictionary(params, @"channelid")
+        ?: wcpl_stringForKeyInDictionary(params, @"channel_id");
+    NSString *msgType = wcpl_stringForKeyInDictionary(params, @"msgType")
+        ?: wcpl_stringForKeyInDictionary(params, @"msgtype")
+        ?: wcpl_stringForKeyInDictionary(params, @"msg_type");
+    NSString *timingIdentifier = wcpl_stringForKeyInDictionary(params, @"timingIdentifier")
+        ?: wcpl_stringForKeyInDictionary(params, @"timing_identifier");
+    NSString *sessionUserName = wcpl_stringForKeyInDictionary(params, @"sessionUserName")
+        ?: wcpl_stringForKeyInDictionary(params, @"sessionusername")
+        ?: wcpl_stringForKeyInDictionary(params, @"session_user_name");
+    NSString *sign = wcpl_stringForKeyInDictionary(params, @"sign");
+
+    WCPLLog(@"OpenRedEnvelopesRequest: mainThread=%d sendId=%@ channelId=%@ msgType=%@ timingType=%@ timingLen=%lu signLen=%lu session=%@ keys=%lu",
+            [NSThread isMainThread],
+            sendId ?: @"",
+            channelId ?: @"",
+            msgType ?: @"",
+            params[@"timingIdentifier"] ? NSStringFromClass([params[@"timingIdentifier"] class]) : @"",
+            (unsigned long)timingIdentifier.length,
+            (unsigned long)sign.length,
+            sessionUserName ?: @"",
+            (unsigned long)params.count);
+    %orig;
+}
+
 - (void)OnWCToHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
     %orig;
 
@@ -813,7 +941,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     if (allowOpen) {
-        mgrParams.timingIdentifier = responseDict[@"timingIdentifier"];
+        mgrParams.timingIdentifier = wcpl_stringForKeyInDictionary(responseDict, @"timingIdentifier")
+            ?: wcpl_stringForKeyInDictionary(responseDict, @"timing_identifier");
 
         unsigned int delaySeconds = [self wcpl_calculateDelaySeconds];
         WCPLReceiveRedEnvelopOperation *operation = [[WCPLReceiveRedEnvelopOperation alloc] initWithRedEnvelopParam:mgrParams delay:delaySeconds];
@@ -824,6 +953,16 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             [[WCPLRedEnvelopTaskManager sharedManager] addNormalTask:operation];
         }
     }
+}
+
+- (void)OnWCToHongbaoCommonErrorResponse:(id)arg1 Request:(id)arg2 {
+    %orig;
+    wcpl_logHongbaoCommonErrorResponse(@"错误", arg1, arg2);
+}
+
+- (void)OnWCToHongbaoCommonSystemErrorResponse:(id)arg1 Request:(id)arg2 {
+    %orig;
+    wcpl_logHongbaoCommonErrorResponse(@"系统错误", arg1, arg2);
 }
 
 %new
@@ -839,12 +978,15 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     unsigned int cmdId = wcpl_hongbaoCmdId(res, req);
-    // 仅处理“打开红包”回包（通常为 4）；避免其它 CMDID 误触发通知/自动回复。
-    if (cmdId != 4) {
+    NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
+    // 仅处理“打开红包”回包：优先按 cmdId=4；否则以请求参数含 timingIdentifier 作为兜底判断。
+    NSString *requestTiming = wcpl_stringForKeyInDictionary(requestDict, @"timingIdentifier")
+        ?: wcpl_stringForKeyInDictionary(requestDict, @"timing_identifier");
+    BOOL looksLikeOpen = (cmdId == 4 || requestTiming.length > 0);
+    if (!looksLikeOpen) {
         return;
     }
 
-    NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
     NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(res.retText);
     if (requestDict.count == 0 && responseDict.count == 0) {
         return;

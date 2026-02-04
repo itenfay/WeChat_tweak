@@ -12,6 +12,7 @@
 #import "WCPLRedEnvelopOpenTracker.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
+#import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <dispatch/dispatch.h>
 
@@ -45,6 +46,10 @@
     }
 
     self.executing = YES;
+    WCPLLog(@"抢红包任务开始: delay=%u session=%@ sendId=%@",
+            self.delaySeconds,
+            self.redEnvelopParam.sessionUserName ?: @"",
+            self.redEnvelopParam.sendId ?: @"");
 
     uint64_t delayNsec = (uint64_t)self.delaySeconds * NSEC_PER_SEC;
     dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, delayNsec);
@@ -64,10 +69,36 @@
 - (void)main {
     WCPLCrashBreadcrumb(@"自动抢红包: session=%@ sendId=%@", self.redEnvelopParam.sessionUserName ?: @"", self.redEnvelopParam.sendId ?: @"");
     [[WCPLRedEnvelopOpenTracker sharedTracker] trackParam:self.redEnvelopParam];
+
+    NSDictionary *params = [self.redEnvelopParam toParams];
+    WCPLLog(@"抢红包任务执行: mainThread=%d session=%@ sendId=%@ timing=%@ signLen=%lu paramsKeys=%lu",
+            [NSThread isMainThread],
+            self.redEnvelopParam.sessionUserName ?: @"",
+            self.redEnvelopParam.sendId ?: @"",
+            [params[@"timingIdentifier"] isKindOfClass:[NSString class]] ? params[@"timingIdentifier"] : @"",
+            (unsigned long)([params[@"sign"] isKindOfClass:[NSString class]] ? [(NSString *)params[@"sign"] length] : 0),
+            (unsigned long)params.count);
+
     WCRedEnvelopesLogicMgr *logicMgr = WCPLGetService(objc_getClass("WCRedEnvelopesLogicMgr"));
-    if (logicMgr && [logicMgr respondsToSelector:@selector(OpenRedEnvelopesRequest:)]) {
-        [logicMgr OpenRedEnvelopesRequest:[self.redEnvelopParam toParams]];
+    if (!logicMgr) {
+        WCPLLog(@"抢红包任务失败: WCRedEnvelopesLogicMgr=nil");
+        return;
     }
+    if (![logicMgr respondsToSelector:@selector(OpenRedEnvelopesRequest:)]) {
+        WCPLLog(@"抢红包任务失败: OpenRedEnvelopesRequest 不存在 logicMgr=%@", NSStringFromClass([logicMgr class]));
+        return;
+    }
+
+    void (^openBlock)(void) = ^{
+        [logicMgr OpenRedEnvelopesRequest:params];
+    };
+
+    if ([NSThread isMainThread]) {
+        openBlock();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), openBlock);
+    }
+    WCPLLog(@"抢红包任务调用完成: sendId=%@", self.redEnvelopParam.sendId ?: @"");
 }
 
 - (void)cancel {
