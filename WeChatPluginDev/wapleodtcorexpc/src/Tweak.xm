@@ -1890,7 +1890,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             }
         }
         if ([self respondsToSelector:@selector(setNeedsLayout)]) {
-            [self setNeedsLayout];
+            ((void (*)(id, SEL))objc_msgSend)(self, @selector(setNeedsLayout));
         }
     }
 }
