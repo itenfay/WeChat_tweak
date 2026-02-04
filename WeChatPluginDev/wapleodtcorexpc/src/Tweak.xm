@@ -146,6 +146,7 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
 // ==================== 本地文本替换（仅显示） ====================
 static const void *kWCPLLocalReplaceMapKey = &kWCPLLocalReplaceMapKey;
 static const void *kWCPLLocalReplaceOriginKey = &kWCPLLocalReplaceOriginKey;
+static const void *kWCPLLocalReplaceLayoutingKey = &kWCPLLocalReplaceLayoutingKey;
 
 static NSMutableDictionary<NSString *, NSString *> *wcpl_localReplaceMapForController(id controller, BOOL createIfNeeded) {
     if (!controller) return nil;
@@ -1852,6 +1853,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     if (replaceText.length == 0 && !didSync) {
         return;
     }
+    BOOL needsLayoutRefresh = didSync || replaceText.length > 0;
     RichTextView *richTextView = nil;
     @try {
         richTextView = MSHookIvar<RichTextView *>(self, "m_richTextView");
@@ -1865,7 +1867,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         @try {
             NSString *currentText = [richTextView displayedText];
             if ([currentText isKindOfClass:[NSString class]] && [currentText isEqualToString:displayText]) {
-                return;
+                if (!needsLayoutRefresh) {
+                    return;
+                }
             }
         } @catch (__unused NSException *exception) {
         }
@@ -1874,7 +1878,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     if ([richTextView respondsToSelector:@selector(forceDisplayInSync)]) {
         [richTextView forceDisplayInSync];
     }
-    if (didSync) {
+    if (needsLayoutRefresh) {
         id viewModel = nil;
         if ([self respondsToSelector:@selector(viewModel)]) {
             @try {
@@ -1889,8 +1893,11 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             } @catch (__unused NSException *exception) {
             }
         }
-        if ([self respondsToSelector:@selector(setNeedsLayout)]) {
-            ((void (*)(id, SEL))objc_msgSend)(self, @selector(setNeedsLayout));
+        if ([self respondsToSelector:@selector(layoutContentView)] &&
+            !objc_getAssociatedObject(self, kWCPLLocalReplaceLayoutingKey)) {
+            objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            ((void (*)(id, SEL))objc_msgSend)(self, @selector(layoutContentView));
+            objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, nil, OBJC_ASSOCIATION_ASSIGN);
         }
     }
 }
