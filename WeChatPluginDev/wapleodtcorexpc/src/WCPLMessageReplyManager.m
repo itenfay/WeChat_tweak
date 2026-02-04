@@ -782,8 +782,8 @@ static char kWCPLRepeatButtonMessageKey;
         if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return;
 
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
-        UIView *containerView = (cell && cell.contentView) ? cell.contentView : cellView;
-        if (!containerView) return;
+        if (!cell || !cell.contentView) return;
+        UIView *containerView = cell.contentView;
 
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
         CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
@@ -900,21 +900,25 @@ static char kWCPLRepeatButtonMessageKey;
 - (void)removeRepeatButtonFromCellView:(CommonMessageCellView *)cellView {
     if (!cellView) return;
 
-    // 从 cellView 移除按钮
-    UIView *foundView = [cellView viewWithTag:kWCPLRepeatButtonTag];
-    if (foundView) {
-        WCPLLog(@"复读按钮移除: cell=%@", NSStringFromClass([cellView class]));
-        [foundView removeFromSuperview];
-    }
+    NSMutableArray<UIView *> *taggedViews = [NSMutableArray array];
+    [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
 
     // 同时清理可能存在于 cell.contentView 中的残留按钮
     UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
     if (cell && cell.contentView && cell.contentView != cellView) {
-        UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
-        if (staleButton) {
-            WCPLLog(@"复读按钮移除: 清理残留 cell=%@", NSStringFromClass([cellView class]));
-            [staleButton removeFromSuperview];
-        }
+        [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cell.contentView results:taggedViews];
+    }
+
+    NSInteger removedCount = 0;
+    for (UIView *view in taggedViews) {
+        [view removeFromSuperview];
+        removedCount++;
+    }
+
+    if (removedCount > 0) {
+        WCPLLog(@"复读按钮移除: 清理残留 cell=%@ count=%ld",
+                NSStringFromClass([cellView class]),
+                (long)removedCount);
     }
 
     objc_setAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:), nil, OBJC_ASSOCIATION_COPY_NONATOMIC);

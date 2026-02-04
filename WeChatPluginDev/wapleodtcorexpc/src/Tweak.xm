@@ -15,6 +15,21 @@
 #import "RichTextView.h"
 #import <objc/runtime.h>
 
+// 复读按钮入口节流：避免长文本 layoutSubviews 高频触发导致重复创建
+static const NSTimeInterval kWCPLRepeatButtonThrottleInterval = 0.05;
+static char kWCPLRepeatButtonLastCallKey;
+
+static BOOL wcpl_shouldThrottleRepeatButton(id cellView) {
+    if (!cellView) return YES;
+    NSNumber *last = objc_getAssociatedObject(cellView, &kWCPLRepeatButtonLastCallKey);
+    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+    if (last && (now - last.doubleValue) < kWCPLRepeatButtonThrottleInterval) {
+        return YES;
+    }
+    objc_setAssociatedObject(cellView, &kWCPLRepeatButtonLastCallKey, @(now), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return NO;
+}
+
 @interface TextMessageCellView (WCPLLocalReplace)
 - (void)wcpl_applyLocalReplaceIfNeeded;
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender;
@@ -819,6 +834,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     %orig;
 
     // 添加复读按钮
+    if (wcpl_shouldThrottleRepeatButton(self)) {
+        return;
+    }
     [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
 }
 
@@ -826,6 +844,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     %orig;
 
     // viewModel 设置完成后补一次，避免布局时机导致按钮消失
+    if (wcpl_shouldThrottleRepeatButton(self)) {
+        return;
+    }
     [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
 }
 
