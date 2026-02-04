@@ -13,7 +13,6 @@
 #import "WCHookMessageNavigator.h"
 #import "WCPLCrashReporter.h"
 #import "RichTextView.h"
-#import "WAThemeProxy.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -182,10 +181,14 @@ static UIImage *wcpl_clownMenuIconImage(void) {
             "</svg>";
         NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
         id image = nil;
-        @try {
-            image = [WAThemeProxy svgImageFromData:data];
-        } @catch (__unused NSException *exception) {
-            image = nil;
+        Class themeProxyClass = objc_getClass("WAThemeProxy");
+        SEL svgFromDataSel = @selector(svgImageFromData:);
+        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
+            @try {
+                image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
+            } @catch (__unused NSException *exception) {
+                image = nil;
+            }
         }
         if ([image isKindOfClass:[UIImage class]]) {
             icon = (UIImage *)image;
