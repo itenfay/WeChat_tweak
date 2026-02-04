@@ -10,6 +10,7 @@
 #import "WeChatRedEnvelopParam.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLRedEnvelopOpenTracker.h"
+#import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
 #import <objc/runtime.h>
 #import <dispatch/dispatch.h>
@@ -63,8 +64,10 @@
 - (void)main {
     WCPLCrashBreadcrumb(@"自动抢红包: session=%@ sendId=%@", self.redEnvelopParam.sessionUserName ?: @"", self.redEnvelopParam.sendId ?: @"");
     [[WCPLRedEnvelopOpenTracker sharedTracker] trackParam:self.redEnvelopParam];
-    WCRedEnvelopesLogicMgr *logicMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:[objc_getClass("WCRedEnvelopesLogicMgr") class]];
-    [logicMgr OpenRedEnvelopesRequest:[self.redEnvelopParam toParams]];
+    WCRedEnvelopesLogicMgr *logicMgr = WCPLGetService(objc_getClass("WCRedEnvelopesLogicMgr"));
+    if (logicMgr && [logicMgr respondsToSelector:@selector(OpenRedEnvelopesRequest:)]) {
+        [logicMgr OpenRedEnvelopesRequest:[self.redEnvelopParam toParams]];
+    }
 }
 
 - (void)cancel {

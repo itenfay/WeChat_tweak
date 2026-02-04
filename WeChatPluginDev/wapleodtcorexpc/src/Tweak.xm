@@ -6,6 +6,7 @@
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WCPLRedEnvelopOpenTracker.h"
+#import "WCPLServiceCenter.h"
 #import "WCPLNewFuncAddition.h"
 #import "WCPLFuncService.h"
 #import "WCPLAVManager.h"
@@ -121,28 +122,11 @@ static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
 }
 
 static id wcpl_getMessageMgr(void) {
-    Class serviceCenterClass = objc_getClass("MMServiceCenter");
-    if (!serviceCenterClass || ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
-        return nil;
-    }
-    id center = [serviceCenterClass defaultCenter];
-    if (!center || ![center respondsToSelector:@selector(getService:)]) {
-        return nil;
-    }
-    return [center getService:objc_getClass("CMessageMgr")];
+    return WCPLGetService(objc_getClass("CMessageMgr"));
 }
 
 static id wcpl_getService(Class serviceClass) {
-    if (!serviceClass) return nil;
-    Class serviceCenterClass = objc_getClass("MMServiceCenter");
-    if (!serviceCenterClass || ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
-        return nil;
-    }
-    id center = [serviceCenterClass defaultCenter];
-    if (!center || ![center respondsToSelector:@selector(getService:)]) {
-        return nil;
-    }
-    return [center getService:serviceClass];
+    return WCPLGetService(serviceClass);
 }
 
 static NSString *wcpl_getSelfUserName(void) {
@@ -834,7 +818,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
         if (!config.autoReceiveEnable) { break; }
 
-        CContactMgr *contactManager = [[%c(MMServiceCenter) defaultCenter] getService:[%c(CContactMgr) class]];
+        CContactMgr *contactManager = WCPLGetService(objc_getClass("CContactMgr"));
         CContact *selfContact = [contactManager getSelfContact];
         NSString *selfUserName = selfContact.m_nsUsrName ?: @"";
 
@@ -873,7 +857,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         params[@"nativeUrl"] = nativeUrl;
         params[@"sendId"] = [nativeUrlDict stringForKey:@"sendid"];
 
-        WCRedEnvelopesLogicMgr *logicMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:[objc_getClass("WCRedEnvelopesLogicMgr") class]];
+        WCRedEnvelopesLogicMgr *logicMgr = WCPLGetService(objc_getClass("WCRedEnvelopesLogicMgr"));
         [logicMgr ReceiverQueryRedEnvelopesRequest:params];
 
         // 储存参数
@@ -1655,7 +1639,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
 
         // 方法2: 通过 CMessageMgr 删除
-        id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
         if (messageMgr && [messageMgr respondsToSelector:@selector(DelMsg:MsgWrap:)]) {
             NSString *chatName = msgWrap.m_nsFromUsr ?: msgWrap.m_nsToUsr;
             [messageMgr DelMsg:chatName MsgWrap:msgWrap];
@@ -1690,7 +1674,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
 
         // 备用方案：通过 CMessageMgr 撤回 (正确的方法签名是 RevokeMsg:MsgWrap:Counter:)
-        id messageMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CMessageMgr")];
+        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
         if (messageMgr && [messageMgr respondsToSelector:@selector(RevokeMsg:MsgWrap:Counter:)]) {
             NSString *chatName = msgWrap.m_nsToUsr;
             [messageMgr RevokeMsg:chatName MsgWrap:msgWrap Counter:0];

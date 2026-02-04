@@ -10,6 +10,7 @@
 #import "WCPLMultiSelectGroupsViewController.h"
 #import "WCPLMultiSelectContactsViewController.h"
 #import "WCPLFuncService.h"
+#import "WCPLServiceCenter.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
@@ -759,8 +760,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         return [NSMutableDictionary dictionary];
     }
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
-    CContactMgr *contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
     for (NSString *userName in names) {
         if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
             continue;

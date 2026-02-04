@@ -8,6 +8,7 @@
 #import "WCPLMultiSelectGroupsViewController.h"
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLServiceCenter.h"
 #import <objc/runtime.h>
 
 @interface WCPLMultiSelectGroupsViewController () <ContactSelectViewDelegate>
@@ -36,8 +37,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
-    CContactMgr *contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
     
     for (NSString *contactName in self.blackList) {
         CContact *contact = [contactMgr getContactByName:contactName];

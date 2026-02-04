@@ -7,6 +7,7 @@
 
 #import "WCPLBaseViewController.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLServiceCenter.h"
 #import <objc/runtime.h>
 
 @interface WCPLBaseViewController ()
@@ -52,9 +53,14 @@
 - (id)createDefaultLoadingView {
     id loadingView = [[objc_getClass("MMLoadingView") alloc] init];
 
-    id serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
-    id languageMgr = [serviceCenter getService:objc_getClass("MMLanguageMgr")];
-    NSString *loadingText = [languageMgr getStringForCurLanguage:@"Common_DefaultLoadingText"];
+    id languageMgr = WCPLGetService(objc_getClass("MMLanguageMgr"));
+    NSString *loadingText = nil;
+    if (languageMgr && [languageMgr respondsToSelector:@selector(getStringForCurLanguage:)]) {
+        loadingText = [languageMgr getStringForCurLanguage:@"Common_DefaultLoadingText"];
+    }
+    if (loadingText.length == 0) {
+        loadingText = @"加载中…";
+    }
 
     UILabel *label = [loadingView valueForKey:@"m_label"];
     [label setText:loadingText];
