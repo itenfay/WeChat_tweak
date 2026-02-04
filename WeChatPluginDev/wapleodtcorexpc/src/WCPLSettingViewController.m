@@ -192,10 +192,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showBlackList {
     self.groupSelectContext = WCPLGroupSelectContextBlackList;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].blackList];
-    if ([self wcpl_presentGroupSelectContactsControllerWithTitle:@"白名单"
-                                             selectedUserNames:selected]) {
-        return;
-    }
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
@@ -738,10 +734,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showIgnoredChatroomList {
     self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredChatroomUserNames]];
-    if ([self wcpl_presentGroupSelectContactsControllerWithTitle:@"屏蔽群聊"
-                                             selectedUserNames:selected]) {
-        return;
-    }
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
