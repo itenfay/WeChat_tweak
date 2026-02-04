@@ -24,9 +24,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextIgnoreChatroom,
 };
 
-@protocol GroupSelectContactsViewControllerDelegate;
-
-@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, GroupSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
+@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 @property (nonatomic, assign) WCPLGroupSelectContext groupSelectContext;
