@@ -103,7 +103,7 @@
 
 #pragma mark - ContactSelectViewDelegate
 
-- (MMUIViewController *)getViewController {
+- (UIViewController *)getViewController {
     return self;
 }
 

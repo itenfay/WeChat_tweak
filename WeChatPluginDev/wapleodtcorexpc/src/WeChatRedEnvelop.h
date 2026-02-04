@@ -92,7 +92,7 @@
 @end
 
 @protocol MMUIViewControllerDelegate <NSObject>
-- (MMUIViewController *)getViewController;
+- (UIViewController *)getViewController;
 @end
 
 @protocol ContactSelectViewDelegate <MMUIViewControllerDelegate>

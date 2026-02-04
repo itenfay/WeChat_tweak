@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMUIViewController.h"
 
 @protocol MultiSelectGroupsViewControllerDelegate <NSObject>
 
@@ -17,7 +16,7 @@
 
 @end
 
-@interface WCPLMultiSelectGroupsViewController : MMUIViewController
+@interface WCPLMultiSelectGroupsViewController : UIViewController
 
 - (instancetype)initWithBlackList:(NSArray *)blackList;
 

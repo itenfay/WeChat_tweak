@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMUIViewController.h"
 
 @protocol WCPLMultiSelectContactsViewControllerDelegate <NSObject>
 
@@ -17,7 +16,7 @@
 
 @end
 
-@interface WCPLMultiSelectContactsViewController : MMUIViewController
+@interface WCPLMultiSelectContactsViewController : UIViewController
 
 - (instancetype)initWithSelectedContacts:(NSArray *)selectedContacts;
 
