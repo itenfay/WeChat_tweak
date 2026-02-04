@@ -84,12 +84,10 @@
             } @catch (__unused NSException *exception) {
                 WCPLLog(@"好友 addSelect 失败: %@", userName);
             }
-        } else if ([self.selectView respondsToSelector:@selector(updateMultiSelect:)]) {
-            @try {
-                [self.selectView updateMultiSelect:userName];
-            } @catch (__unused NSException *exception) {
-                WCPLLog(@"好友预选失败: %@", userName);
-            }
+        } else {
+            // 兼容：ContactSelectView 内部会把选中对象当 CContact 处理，
+            // 直接传 NSString 可能导致闪退，这里只在能拿到 CContact 时才回显预选。
+            WCPLLog(@"好友预选跳过(未找到联系人): %@", userName);
         }
     }
 

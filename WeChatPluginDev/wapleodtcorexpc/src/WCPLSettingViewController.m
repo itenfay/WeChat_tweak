@@ -763,12 +763,13 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     }
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    Class contactClass = objc_getClass("CContact");
     for (NSString *userName in names) {
         if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
             continue;
         }
-        CContact *contact = [contactMgr getContactByName:userName];
-        if (!contact) {
+        id contact = [contactMgr getContactByName:userName];
+        if (!contact || (contactClass && ![contact isKindOfClass:contactClass])) {
             continue;
         }
         NSString *usrName = nil;

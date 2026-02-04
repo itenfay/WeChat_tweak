@@ -14,5 +14,8 @@
     return self;
 }
 
-@end
+- (BOOL)isAccountDeleted {
+    return NO;
+}
 
+@end
