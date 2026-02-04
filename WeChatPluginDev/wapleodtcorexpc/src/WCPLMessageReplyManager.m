@@ -49,7 +49,8 @@ typedef BOOL (^WCPLSendStrategyBlock)(void);
                            execLog:(NSMutableString *)execLog;
 - (BOOL)wcpl_isEmoticonMessage:(CMessageWrap *)msgWrap;
 - (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
-                                           cellView:(UIView *)cellView;
+                                           cellView:(UIView *)cellView
+                                         messageKey:(NSString *)messageKey;
 - (void)wcpl_collectViewsWithTag:(NSInteger)tag
                           inView:(UIView *)view
                          results:(NSMutableArray<UIView *> *)results;
@@ -136,6 +137,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 }
 
 @implementation WCPLMessageReplyManager
+
+static char kWCPLRepeatButtonMessageKey;
 
 + (WCPLMessageReplyManager *)sharedManager {
     static WCPLMessageReplyManager *manager;
@@ -834,8 +837,13 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             return;
         }
 
-        UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView cellView:cellView];
+        UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView
+                                                                    cellView:cellView
+                                                                  messageKey:messageKey];
         if (isSameMessage && repeatButton) {
+            if (messageKey.length > 0) {
+                objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            }
             [self configureButtonContent:repeatButton];
             [self layoutRepeatButtonInContainer:repeatButton
                                        cellView:cellView
@@ -870,6 +878,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
         if (messageKey.length > 0) {
             objc_setAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:), messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
         }
 
         [self configureButtonContent:repeatButton];
@@ -2402,7 +2411,8 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 }
 
 - (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
-                                           cellView:(UIView *)cellView {
+                                           cellView:(UIView *)cellView
+                                         messageKey:(NSString *)messageKey {
     UIView *searchView = containerView ?: cellView;
     if (!searchView) return nil;
 
@@ -2418,12 +2428,28 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
     NSInteger removedCount = 0;
 
     for (UIView *view in taggedViews) {
-        if (!repeatButton && [view isKindOfClass:[UIButton class]]) {
-            repeatButton = (UIButton *)view;
-        } else {
+        if (![view isKindOfClass:[UIButton class]]) {
             [view removeFromSuperview];
             removedCount++;
+            continue;
         }
+
+        UIButton *candidate = (UIButton *)view;
+        NSString *storedKey = objc_getAssociatedObject(candidate, &kWCPLRepeatButtonMessageKey);
+        BOOL keyMatches = (messageKey.length > 0 && storedKey.length > 0 && [storedKey isEqualToString:messageKey]);
+
+        if (!repeatButton) {
+            if (keyMatches || messageKey.length == 0 || storedKey.length == 0) {
+                repeatButton = candidate;
+                if (messageKey.length > 0 && storedKey.length == 0) {
+                    objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+                }
+                continue;
+            }
+        }
+
+        [candidate removeFromSuperview];
+        removedCount++;
     }
 
     if (repeatButton && repeatButton.superview != containerView) {
