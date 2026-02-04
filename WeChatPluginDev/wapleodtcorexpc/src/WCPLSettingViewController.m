@@ -400,6 +400,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)showBlackList {
+    WCPLCrashBreadcrumb(@"打开群聊白名单");
     self.groupSelectContext = WCPLGroupSelectContextBlackList;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].blackList];
 
@@ -412,6 +413,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)showGroupDenyList {
+    WCPLCrashBreadcrumb(@"打开群聊黑名单");
     self.groupSelectContext = WCPLGroupSelectContextRedEnvelopDenyList;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].groupDenyList];
 
@@ -953,6 +955,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)showIgnoredChatroomList {
+    WCPLCrashBreadcrumb(@"打开已屏蔽群聊列表");
     self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredChatroomUserNames]];
 
@@ -965,6 +968,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)showIgnoredUserList {
+    WCPLCrashBreadcrumb(@"打开已屏蔽好友列表");
     self.groupSelectContext = WCPLGroupSelectContextNone;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredUserNames]];
     WCPLMultiSelectContactsViewController *multiSCVC = [[WCPLMultiSelectContactsViewController alloc] initWithSelectedContacts:selected];
