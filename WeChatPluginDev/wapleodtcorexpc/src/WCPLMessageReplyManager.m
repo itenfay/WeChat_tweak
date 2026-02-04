@@ -827,6 +827,13 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
             }
         }
 
+        UIView *bubbleView = [self findBubbleViewInCellView:cellView];
+        if (!bubbleView || bubbleView.frame.size.width < 1.0 || bubbleView.frame.size.height < 1.0) {
+            WCPLLog(@"复读按钮跳过: 气泡未就绪 cell=%@", NSStringFromClass([cellView class]));
+            [self removeRepeatButtonFromCellView:cellView];
+            return;
+        }
+
         UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView cellView:cellView];
         if (isSameMessage && repeatButton) {
             [self configureButtonContent:repeatButton];
