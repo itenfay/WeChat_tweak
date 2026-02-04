@@ -675,13 +675,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showIgnoredUserList {
     self.groupSelectContext = WCPLGroupSelectContextNone;
     NSArray *selected = [self ignoredUserNames];
-    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"屏蔽好友"
-                                                   onlyChatRoom:NO
-                                                          scene:0
-                                             selectedUserNames:selected]) {
-        return;
-    }
-
     WCPLMultiSelectContactsViewController *multiSCVC = [[WCPLMultiSelectContactsViewController alloc] initWithSelectedContacts:selected];
     multiSCVC.delegate = self;
     multiSCVC.titleText = @"屏蔽好友";
