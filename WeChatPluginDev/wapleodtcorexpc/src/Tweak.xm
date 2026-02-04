@@ -13,7 +13,9 @@
 #import "WCHookMessageNavigator.h"
 #import "WCPLCrashReporter.h"
 #import "RichTextView.h"
+#import "WAThemeProxy.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 // 复读按钮入口节流：避免长文本 layoutSubviews 高频触发导致重复创建
 static const NSTimeInterval kWCPLRepeatButtonThrottleInterval = 0.05;
@@ -163,6 +165,34 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
 static const void *kWCPLLocalReplaceMapKey = &kWCPLLocalReplaceMapKey;
 static const void *kWCPLLocalReplaceOriginKey = &kWCPLLocalReplaceOriginKey;
 static const void *kWCPLLocalReplaceLayoutingKey = &kWCPLLocalReplaceLayoutingKey;
+
+static UIImage *wcpl_clownMenuIconImage(void) {
+    static UIImage *icon = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *svg =
+            @"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>"
+            "<circle cx='12' cy='13' r='7' fill='#FFE0B2' stroke='#222222' stroke-width='1.2'/>"
+            "<circle cx='9' cy='12' r='1' fill='#222222'/>"
+            "<circle cx='15' cy='12' r='1' fill='#222222'/>"
+            "<circle cx='12' cy='14' r='1.3' fill='#E53935' stroke='#222222' stroke-width='0.6'/>"
+            "<path d='M8 16c1.2 1.6 2.6 2.4 4 2.4s2.8-.8 4-2.4' fill='none' stroke='#222222' stroke-width='1.2' stroke-linecap='round'/>"
+            "<circle cx='5.6' cy='13' r='1.4' fill='#90CAF9' stroke='#222222' stroke-width='0.6'/>"
+            "<circle cx='18.4' cy='13' r='1.4' fill='#90CAF9' stroke='#222222' stroke-width='0.6'/>"
+            "</svg>";
+        NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
+        id image = nil;
+        @try {
+            image = [WAThemeProxy svgImageFromData:data];
+        } @catch (__unused NSException *exception) {
+            image = nil;
+        }
+        if ([image isKindOfClass:[UIImage class]]) {
+            icon = (UIImage *)image;
+        }
+    });
+    return icon;
+}
 
 static NSMutableDictionary<NSString *, NSString *> *wcpl_localReplaceMapForController(id controller, BOOL createIfNeeded) {
     if (!controller) return nil;
@@ -1865,8 +1895,17 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             }
         }
     }
-    id menuItem = [[menuItemClass alloc] initWithTitle:@"临时替换显示（仅本地）" target:self action:action];
+    id menuItem = [[menuItemClass alloc] initWithTitle:@"小丑" target:self action:action];
     if (menuItem) {
+        if ([menuItem respondsToSelector:@selector(setIconImage:)]) {
+            UIImage *icon = wcpl_clownMenuIconImage();
+            if (icon) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), icon);
+                } @catch (__unused NSException *exception) {
+                }
+            }
+        }
         [mutableItems addObject:menuItem];
     }
     return mutableItems;
@@ -2019,7 +2058,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     NSString *originText = msgWrap.m_nsContent ?: @"";
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"临时替换显示（仅本地）"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"小丑"
                                                                    message:@"仅在当前聊天页面生效，离开后自动恢复"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -2040,12 +2079,46 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
         wcpl_setLocalReplaceText(viewController, msgWrap, trimmed);
         wcpl_syncLocalReplaceContent(viewController, msgWrap);
+        if ([viewController respondsToSelector:@selector(clearNodeLayoutCache)]) {
+            @try {
+                [(BaseMsgContentViewController *)viewController clearNodeLayoutCache];
+            } @catch (__unused NSException *exception) {
+            }
+        }
         if ([viewController respondsToSelector:@selector(reloadNodeWithMessageWrap:)]) {
             @try {
                 [viewController reloadNodeWithMessageWrap:msgWrap];
             } @catch (__unused NSException *exception) {
             }
         }
+        if ([viewController respondsToSelector:@selector(reloadVisibleNodeWithCellView:)]) {
+            @try {
+                [(BaseMsgContentViewController *)viewController reloadVisibleNodeWithCellView:strongSelf];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+
+        // 文本变更后强制消息列表重新计算该行布局（否则气泡宽度可能沿用旧缓存，需滚动/刷新才会自适配）
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (![viewController respondsToSelector:@selector(getMsgTableView)]) return;
+            UITableView *tableView = nil;
+            @try {
+                id tv = [(BaseMsgContentViewController *)viewController getMsgTableView];
+                if ([tv isKindOfClass:[UITableView class]]) {
+                    tableView = (UITableView *)tv;
+                }
+            } @catch (__unused NSException *exception) {
+                tableView = nil;
+            }
+            if (!tableView) return;
+            [UIView performWithoutAnimation:^{
+                @try {
+                    [tableView beginUpdates];
+                    [tableView endUpdates];
+                } @catch (__unused NSException *exception) {
+                }
+            }];
+        });
     }];
 
     [alert addAction:cancelAction];

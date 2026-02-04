@@ -9,7 +9,7 @@ MODULES = 0
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
-$(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
+$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m, $(wildcard src/*.m)) src/Tweak.xm
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
