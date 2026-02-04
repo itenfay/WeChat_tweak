@@ -475,10 +475,13 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (NSMutableDictionary *)wcpl_multiSelectDictionaryWithUserNames:(NSArray<NSString *> *)names {
+    CFMutableDictionaryRef dictRef = CFDictionaryCreateMutable(kCFAllocatorDefault,
+                                                              0,
+                                                              &kCFTypeDictionaryKeyCallBacks,
+                                                              &kCFTypeDictionaryValueCallBacks);
     if (![names isKindOfClass:[NSArray class]] || names.count == 0) {
-        return [NSMutableDictionary dictionary];
+        return CFBridgingRelease(dictRef);
     }
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
     CContactMgr *contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
     for (NSString *userName in names) {
@@ -489,9 +492,11 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         if (!contact) {
             continue;
         }
-        dict[contact] = contact;
+        CFDictionarySetValue(dictRef,
+                             (__bridge const void *)contact,
+                             (__bridge const void *)contact);
     }
-    return dict;
+    return CFBridgingRelease(dictRef);
 }
 
 - (BOOL)wcpl_presentMultiSelectContactsControllerWithTitle:(NSString *)title
