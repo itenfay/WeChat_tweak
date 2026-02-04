@@ -204,7 +204,7 @@ static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
         }
         if ([viewModel respondsToSelector:@selector(msgWrap)]) {
             @try {
-                id wrap = [viewModel msgWrap];
+                id wrap = ((id (*)(id, SEL))objc_msgSend)(viewModel, @selector(msgWrap));
                 if ([wrap isKindOfClass:%c(CMessageWrap)]) {
                     return (CMessageWrap *)wrap;
                 }
@@ -1933,15 +1933,15 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             if ([self respondsToSelector:@selector(resetLayoutCache)]) {
                 @try {
-                    [self resetLayoutCache];
+                    ((void (*)(id, SEL))objc_msgSend)(self, @selector(resetLayoutCache));
                 } @catch (__unused NSException *exception) {
                 }
             }
             if ([self respondsToSelector:@selector(setNeedsLayout)]) {
-                [self setNeedsLayout];
+                ((void (*)(id, SEL))objc_msgSend)(self, @selector(setNeedsLayout));
             }
             if ([self respondsToSelector:@selector(layoutIfNeeded)]) {
-                [self layoutIfNeeded];
+                ((void (*)(id, SEL))objc_msgSend)(self, @selector(layoutIfNeeded));
             }
             if ([self respondsToSelector:@selector(updateContentOffset)]) {
                 @try {
