@@ -64,6 +64,41 @@ static NSString *wcpl_trimString(NSString *text) {
     return trimmed.length > 0 ? trimmed : nil;
 }
 
+static NSString *wcpl_safeUserNameFromObject(id obj) {
+    if (!obj) return nil;
+    if ([obj isKindOfClass:[NSString class]]) {
+        return wcpl_trimString((NSString *)obj);
+    }
+
+    Class contactClass = objc_getClass("CContact");
+    if (contactClass && [obj isKindOfClass:contactClass]) {
+        @try {
+            return wcpl_trimString(((CContact *)obj).m_nsUsrName);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
+            if ([value isKindOfClass:[NSString class]]) {
+                return wcpl_trimString((NSString *)value);
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    @try {
+        id value = [obj valueForKey:@"m_nsUsrName"];
+        if ([value isKindOfClass:[NSString class]]) {
+            return wcpl_trimString((NSString *)value);
+        }
+    } @catch (__unused NSException *exception) {
+    }
+
+    return nil;
+}
+
 static NSString *wcpl_extractBetweenTokens(NSString *text, NSString *startToken, NSString *endToken) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
     if (startToken.length == 0 || endToken.length == 0) return nil;
@@ -135,8 +170,8 @@ static NSString *wcpl_getSelfUserName(void) {
     if (!contactMgr || ![contactMgr respondsToSelector:@selector(getSelfContact)]) {
         return nil;
     }
-    CContact *selfContact = [contactMgr getSelfContact];
-    return wcpl_trimString(selfContact.m_nsUsrName);
+    id selfContact = [contactMgr getSelfContact];
+    return wcpl_safeUserNameFromObject(selfContact);
 }
 
 static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *text) {
@@ -832,9 +867,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
         if (!config.autoReceiveEnable) { break; }
 
-        CContactMgr *contactManager = WCPLGetService(objc_getClass("CContactMgr"));
-        CContact *selfContact = [contactManager getSelfContact];
-        NSString *selfUserName = selfContact.m_nsUsrName ?: @"";
+        id contactManager = WCPLGetService(objc_getClass("CContactMgr"));
+        id selfContact = nil;
+        if (contactManager && [contactManager respondsToSelector:@selector(getSelfContact)]) {
+            selfContact = [contactManager getSelfContact];
+        }
+        NSString *selfUserName = wcpl_safeUserNameFromObject(selfContact) ?: @"";
 
         BOOL isSender = (selfUserName.length > 0 && [wrap.m_nsFromUsr isEqualToString:selfUserName]);
         BOOL isGroupReceiver = ([wrap.m_nsFromUsr rangeOfString:@"@chatroom"].location != NSNotFound);
@@ -891,8 +929,22 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         mgrParams.msgType = [nativeUrlDict stringForKey:@"msgtype"];
         mgrParams.sendId = [nativeUrlDict stringForKey:@"sendid"];
         mgrParams.channelId = [nativeUrlDict stringForKey:@"channelid"];
-        mgrParams.nickName = [selfContact getContactDisplayName];
-        mgrParams.headImg = [selfContact m_nsHeadImgUrl];
+        if (selfContact) {
+            if ([selfContact respondsToSelector:@selector(getContactDisplayName)]) {
+                @try {
+                    id value = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(getContactDisplayName));
+                    mgrParams.nickName = wcpl_trimString(value);
+                } @catch (__unused NSException *exception) {
+                }
+            }
+            if ([selfContact respondsToSelector:@selector(m_nsHeadImgUrl)]) {
+                @try {
+                    id value = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(m_nsHeadImgUrl));
+                    mgrParams.headImg = wcpl_trimString(value);
+                } @catch (__unused NSException *exception) {
+                }
+            }
+        }
         mgrParams.nativeUrl = nativeUrl;
         mgrParams.sessionUserName = isGroupSender ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
         mgrParams.sign = [nativeUrlDict stringForKey:@"sign"];
@@ -1047,9 +1099,10 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 - (void)viewDidAppear:(_Bool)arg1 {
     %orig;
 
-    CContact *contact = [self GetContact];
-    if (contact.m_nsUsrName) {
-        [WCPLRedEnvelopConfig sharedConfig].curUsrName = contact.m_nsUsrName;
+    id contact = [self GetContact];
+    NSString *usrName = wcpl_safeUserNameFromObject(contact);
+    if (usrName.length > 0) {
+        [WCPLRedEnvelopConfig sharedConfig].curUsrName = usrName;
     }
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
@@ -1870,8 +1923,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     // 从当前控制器获取群聊联系人
-    CContact *chatRoomContact = self.m_chatRoomContact;
-    NSString *usrName = chatRoomContact.m_nsUsrName;
+    id chatRoomContact = self.m_chatRoomContact;
+    NSString *usrName = wcpl_safeUserNameFromObject(chatRoomContact);
     if (usrName.length == 0) {
         return;
     }
@@ -1906,8 +1959,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return;
     }
 
-    CContact *chatRoomContact = self.m_chatRoomContact;
-    NSString *usrName = chatRoomContact.m_nsUsrName;
+    id chatRoomContact = self.m_chatRoomContact;
+    NSString *usrName = wcpl_safeUserNameFromObject(chatRoomContact);
     if (usrName.length == 0) {
         sender.on = NO;
         return;
@@ -1935,8 +1988,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return;
     }
 
-    CContact *contact = self.m_contact;
-    NSString *usrName = contact.m_nsUsrName;
+    id contact = self.m_contact;
+    NSString *usrName = wcpl_safeUserNameFromObject(contact);
     if (usrName.length == 0) {
         return;
     }
@@ -2012,8 +2065,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return;
     }
 
-    CContact *contact = self.m_contact;
-    NSString *usrName = contact.m_nsUsrName;
+    id contact = self.m_contact;
+    NSString *usrName = wcpl_safeUserNameFromObject(contact);
     if (usrName.length == 0) {
         sender.on = NO;
         return;
@@ -2047,8 +2100,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     // 获取联系人
-    CContact *contact = MSHookIvar<CContact *>(self, "m_contact");
-    NSString *usrName = contact.m_nsUsrName;
+    id contact = MSHookIvar<id>(self, "m_contact");
+    NSString *usrName = wcpl_safeUserNameFromObject(contact);
     if (usrName.length == 0) {
         return;
     }
@@ -2094,8 +2147,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return;
     }
 
-    CContact *contact = MSHookIvar<CContact *>(self, "m_contact");
-    NSString *usrName = contact.m_nsUsrName;
+    id contact = MSHookIvar<id>(self, "m_contact");
+    NSString *usrName = wcpl_safeUserNameFromObject(contact);
     if (usrName.length == 0) {
         sender.on = NO;
         return;

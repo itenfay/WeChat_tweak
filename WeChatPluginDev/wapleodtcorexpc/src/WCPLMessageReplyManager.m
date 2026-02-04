@@ -15,9 +15,51 @@
 #import "WCPLLogger.h"
 #import "WCPLCrashReporter.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 // 调试弹窗开关 key
 static NSString *const kWCPLRepeatDebugAlertEnabledKey = @"kWCPLRepeatDebugAlertEnabled";
+
+static NSString *wcpl_mrm_trimString(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
+    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmed.length > 0 ? trimmed : nil;
+}
+
+static NSString *wcpl_mrm_safeUserNameFromObject(id obj) {
+    if (!obj) return nil;
+    if ([obj isKindOfClass:[NSString class]]) {
+        return wcpl_mrm_trimString((NSString *)obj);
+    }
+
+    Class contactClass = objc_getClass("CContact");
+    if (contactClass && [obj isKindOfClass:contactClass]) {
+        @try {
+            return wcpl_mrm_trimString(((CContact *)obj).m_nsUsrName);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
+            if ([value isKindOfClass:[NSString class]]) {
+                return wcpl_mrm_trimString((NSString *)value);
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    @try {
+        id value = [obj valueForKey:@"m_nsUsrName"];
+        if ([value isKindOfClass:[NSString class]]) {
+            return wcpl_mrm_trimString((NSString *)value);
+        }
+    } @catch (__unused NSException *exception) {
+    }
+
+    return nil;
+}
 
 typedef NS_ENUM(NSInteger, WCPLRepeatMessageKind) {
     WCPLRepeatMessageKindText,
@@ -1044,7 +1086,7 @@ static char kWCPLRepeatButtonMessageKey;
         CContact *selfContact = [contactMgr getSelfContact];
         if (!selfContact) return NO;
 
-        NSString *selfUserName = selfContact.m_nsUsrName;
+        NSString *selfUserName = wcpl_mrm_safeUserNameFromObject(selfContact);
         if (!selfUserName || selfUserName.length == 0) return NO;
 
         // 检查消息发送者
@@ -1828,7 +1870,7 @@ static char kWCPLRepeatButtonMessageKey;
         NSString *toUserName = nil;
         CContact *contact = [self wcpl_safeInvokeObjectSelector:@selector(GetContact) onObject:viewController arguments:nil];
         if (contact) {
-            toUserName = contact.m_nsUsrName;
+            toUserName = wcpl_mrm_safeUserNameFromObject(contact);
         }
         [debugInfo appendFormat:@"8. 聊天对象: %@\n", toUserName ?: @"nil"];
 
@@ -1969,7 +2011,7 @@ static char kWCPLRepeatButtonMessageKey;
                                                    onObject:viewController
                                                   arguments:nil];
     if (contact) {
-        toUserName = contact.m_nsUsrName;
+        toUserName = wcpl_mrm_safeUserNameFromObject(contact);
     }
 
     if (toUserName.length == 0 && msgWrap) {
@@ -2002,11 +2044,12 @@ static char kWCPLRepeatButtonMessageKey;
         if (!contactManager) return NO;
 
         // 获取自己的联系人信息
-        CContact *selfContact = [contactManager getSelfContact];
-        if (!selfContact || !selfContact.m_nsUsrName) return NO;
+        id selfContact = [contactManager getSelfContact];
+        NSString *selfUserName = wcpl_mrm_safeUserNameFromObject(selfContact);
+        if (selfUserName.length == 0) return NO;
 
         // 比较消息发送者和自己的用户名
-        return [msgWrap.m_nsFromUsr isEqualToString:selfContact.m_nsUsrName];
+        return [msgWrap.m_nsFromUsr isEqualToString:selfUserName];
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in isMessageFromSelf: %@", exception);
