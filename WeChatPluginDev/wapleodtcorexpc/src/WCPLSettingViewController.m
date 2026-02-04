@@ -486,9 +486,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
             continue;
         }
         CContact *contact = [contactMgr getContactByName:userName];
-        if (contact) {
-            dict[userName] = contact;
+        if (!contact) {
+            continue;
         }
+        dict[contact] = contact;
     }
     return dict;
 }
