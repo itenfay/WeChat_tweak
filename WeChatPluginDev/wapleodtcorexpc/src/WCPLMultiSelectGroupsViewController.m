@@ -55,6 +55,13 @@
     return self;
 }
 
+- (CGFloat)getSafeBottomInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.bottom;
+    }
+    return 0.0f;
+}
+
 
 - (void)initTitleArea {
     self.navigationItem.leftBarButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:@"取消" target:self action:@selector(onCancel:) style:0];
