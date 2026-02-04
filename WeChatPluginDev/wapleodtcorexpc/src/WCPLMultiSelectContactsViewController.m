@@ -47,7 +47,7 @@
     }
 }
 
-- (unsigned long long)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
 }
 
