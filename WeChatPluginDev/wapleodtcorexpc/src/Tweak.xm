@@ -11,6 +11,7 @@
 #import "WCPLMessageReplyManager.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
+#import "WCPLCrashReporter.h"
 #import "RichTextView.h"
 #import <objc/runtime.h>
 
@@ -402,6 +403,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 }
 
 %end
+
+%ctor {
+    @autoreleasepool {
+        [[WCPLCrashReporter sharedReporter] installIfNeeded];
+    }
+}
 
 %hook WCRedEnvelopesLogicMgr
 
@@ -1184,7 +1191,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 %new
 - (void)wchook_triggerLightActionForDirection:(WCHookSwipeDirection)direction {
     // 轻滑动作：默认引用（不区分方向，避免误触发危险操作）
-    (void)direction;
+    NSString *directionName = (direction == WCHookSwipeDirectionRight) ? @"右滑" : @"左滑";
+    WCPLCrashBreadcrumb(@"轻滑触发: %@ 引用", directionName);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self wchook_performQuoteReply];
     });
@@ -1252,6 +1260,24 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     } else {
         action = isSelf ? config.swipeRightSelfAction : config.swipeRightOtherAction;
     }
+
+    NSString *directionName = (direction == WCHookSwipeDirectionLeft) ? @"左滑" : @"右滑";
+    NSString *actionName = @"引用";
+    switch (action) {
+        case 1:
+            actionName = @"复读";
+            break;
+        case 2:
+            actionName = @"删除";
+            break;
+        case 3:
+            actionName = @"撤回";
+            break;
+        default:
+            actionName = @"引用";
+            break;
+    }
+    WCPLCrashBreadcrumb(@"滑动动作: %@ -> %@ msgType=%u from=%@ to=%@", directionName, actionName, msgType, msgWrap.m_nsFromUsr ?: @"", msgWrap.m_nsToUsr ?: @"");
 
     // 复读不支持图片/视频消息
     if (action == 1 && (isImageMessage || isVideoMessage)) {

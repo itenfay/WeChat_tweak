@@ -12,11 +12,11 @@
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
+#import "WCPLLogUploader.h"
+#import "WCPLCrashReporter.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
-
-static NSString *const kWCPLDefaultLogUploadURL = @"http://23.82.96.72:8099/wcpl_log";
 
 typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextNone = 0,
@@ -191,7 +191,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (void)showBlackList {
     self.groupSelectContext = WCPLGroupSelectContextBlackList;
-    NSArray *selected = [WCPLRedEnvelopConfig sharedConfig].blackList ?: @[];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].blackList];
     if ([self wcpl_presentGroupSelectContactsControllerWithTitle:@"白名单"
                                              selectedUserNames:selected]) {
         return;
@@ -212,6 +212,9 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
     [section addCell:[self createAbortRemokeMessageCell]];
     [section addCell:[self createDebugLogCell]];
+    [section addCell:[self createCrashLogSwitchCell]];
+    [section addCell:[self createCrashAutoUploadSwitchCell]];
+    [section addCell:[self createLogUploadURLCell]];
 
     [self.tableViewMgr addSection:section];
 }
@@ -297,10 +300,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         return;
     }
 
-    NSString *urlString = kWCPLDefaultLogUploadURL;
-
-    NSURL *url = [NSURL URLWithString:urlString];
-    if (!url || !url.scheme || !url.host) {
+    NSString *urlString = [WCPLLogUploader currentUploadURLString];
+    if (![WCPLLogUploader isValidUploadURLString:urlString]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"地址无效"
                                                                        message:urlString
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -310,8 +311,9 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     }
 
     NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
-    NSData *logData = [NSData dataWithContentsOfFile:logPath];
-    if (logData.length == 0) {
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
+    unsigned long long logSize = [attributes fileSize];
+    if (logSize == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志为空"
                                                                        message:@"没有可上传的日志内容"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -320,53 +322,30 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         return;
     }
 
-    WCPLLog(@"准备上传日志: url=%@ size=%lu path=%@", urlString, (unsigned long)logData.length, logPath);
+    WCPLLog(@"准备上传日志: url=%@ size=%llu path=%@", urlString, logSize, logPath);
 
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    request.HTTPMethod = @"POST";
-    request.HTTPBody = logData;
-    [request setValue:@"text/plain; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"wcpl_debug.log" forHTTPHeaderField:@"X-Log-Name"];
-
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-                WCPLLog(@"日志上传失败: error=%@", error.localizedDescription ?: @"未知错误");
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
-                                                                               message:error.localizedDescription ?: @"未知错误"
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alert animated:YES completion:nil];
-                return;
+    [WCPLLogUploader uploadLogFileAtPath:logPath logName:@"wcpl_debug.log" completion:^(BOOL success, NSInteger statusCode, NSError *error) {
+        if (!success || error) {
+            NSString *message = error.localizedDescription ?: @"未知错误";
+            if (!error && statusCode != 0) {
+                message = [NSString stringWithFormat:@"服务器返回状态码: %ld", (long)statusCode];
             }
-
-            NSInteger statusCode = 0;
-            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                statusCode = ((NSHTTPURLResponse *)response).statusCode;
-            }
-
-            if (statusCode < 200 || statusCode >= 300) {
-                WCPLLog(@"日志上传失败: status=%ld", (long)statusCode);
-                NSString *msg = [NSString stringWithFormat:@"服务器返回状态码: %ld", (long)statusCode];
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
-                                                                               message:msg
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alert animated:YES completion:nil];
-                return;
-            }
-
-            WCPLLog(@"日志上传成功: status=%ld", (long)statusCode);
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传成功"
-                                                                           message:@"日志已发送到本地服务器"
+            WCPLLog(@"日志上传失败: error=%@", message);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
+                                                                           message:message
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
-        });
-    }];
+            return;
+        }
 
-    [task resume];
+        WCPLLog(@"日志上传成功: status=%ld", (long)statusCode);
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传成功"
+                                                                       message:@"日志已发送到本地服务器"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 - (void)showLogContent:(NSString *)content {
@@ -390,6 +369,70 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
     [alert addAction:copyAction];
     [alert addAction:closeAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createCrashLogSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingCrashLog:) target:self title:@"启用崩溃日志" on:[WCPLCrashReporter sharedReporter].enabled];
+}
+
+- (void)settingCrashLog:(UISwitch *)sender {
+    WCPLCrashReporter *reporter = [WCPLCrashReporter sharedReporter];
+    reporter.enabled = sender.on;
+    if (sender.on) {
+        [reporter installIfNeeded];
+    }
+}
+
+- (WCTableViewNormalCellManager *)createCrashAutoUploadSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingCrashAutoUpload:) target:self title:@"崩溃后自动上传" on:[WCPLCrashReporter sharedReporter].autoUploadEnabled];
+}
+
+- (void)settingCrashAutoUpload:(UISwitch *)sender {
+    WCPLCrashReporter *reporter = [WCPLCrashReporter sharedReporter];
+    reporter.autoUploadEnabled = sender.on;
+    if (sender.on) {
+        [reporter tryUploadPendingReport];
+    }
+}
+
+- (WCTableViewNormalCellManager *)createLogUploadURLCell {
+    NSString *urlString = [WCPLLogUploader currentUploadURLString] ?: @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showLogUploadURLInput) target:self title:@"日志上传地址" rightValue:urlString accessoryType:1];
+}
+
+- (void)showLogUploadURLInput {
+    NSString *current = [WCPLLogUploader currentUploadURLString] ?: @"";
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志上传地址"
+                                                                   message:@"用于上传调试/崩溃日志"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"例如: http://192.168.1.10:8099/wcpl_log";
+        textField.keyboardType = UIKeyboardTypeURL;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        textField.text = current;
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *input = alert.textFields.firstObject.text ?: @"";
+        NSString *trimmed = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (trimmed.length == 0) {
+            [self showErrorAlert:@"请输入有效的地址"];
+            return;
+        }
+        if (![WCPLLogUploader isValidUploadURLString:trimmed]) {
+            [self showErrorAlert:@"地址无效，请包含协议和主机名"];
+            return;
+        }
+        [WCPLLogUploader setCurrentUploadURLString:trimmed];
+        [self reloadTableData];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
 
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -448,7 +491,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     if (![selection isKindOfClass:[NSArray class]]) {
         return @[];
     }
-    NSMutableArray<NSString *> *names = [NSMutableArray array];
+    NSMutableOrderedSet<NSString *> *names = [NSMutableOrderedSet orderedSet];
     Class contactClass = NSClassFromString(@"CContact");
     for (id obj in selection) {
         NSString *name = nil;
@@ -467,21 +510,38 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                 name = nil;
             }
         }
+        if ([name isKindOfClass:[NSString class]]) {
+            name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        }
         if (name.length > 0) {
             [names addObject:name];
         }
     }
-    return names.copy;
+    return names.array;
+}
+
+- (NSArray<NSString *> *)wcpl_sanitizedUserNamesFromArray:(NSArray *)names {
+    if (![names isKindOfClass:[NSArray class]]) {
+        return @[];
+    }
+    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
+    for (id obj in names) {
+        if (![obj isKindOfClass:[NSString class]]) {
+            continue;
+        }
+        NSString *value = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (value.length > 0) {
+            [results addObject:value];
+        }
+    }
+    return results.array;
 }
 
 - (NSMutableDictionary *)wcpl_multiSelectDictionaryWithUserNames:(NSArray<NSString *> *)names {
-    CFMutableDictionaryRef dictRef = CFDictionaryCreateMutable(kCFAllocatorDefault,
-                                                              0,
-                                                              &kCFTypeDictionaryKeyCallBacks,
-                                                              &kCFTypeDictionaryValueCallBacks);
     if (![names isKindOfClass:[NSArray class]] || names.count == 0) {
-        return CFBridgingRelease(dictRef);
+        return [NSMutableDictionary dictionary];
     }
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     MMServiceCenter *serviceCenter = [objc_getClass("MMServiceCenter") defaultCenter];
     CContactMgr *contactMgr = [serviceCenter getService:objc_getClass("CContactMgr")];
     for (NSString *userName in names) {
@@ -492,11 +552,38 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         if (!contact) {
             continue;
         }
-        CFDictionarySetValue(dictRef,
-                             (__bridge const void *)contact,
-                             (__bridge const void *)contact);
+        NSString *usrName = nil;
+        @try {
+            usrName = [contact valueForKey:@"m_nsUsrName"];
+        } @catch (__unused NSException *exception) {
+            usrName = userName;
+        }
+        if (!usrName) {
+            usrName = userName;
+        }
+        dict[usrName] = contact;
     }
-    return CFBridgingRelease(dictRef);
+    return dict;
+}
+
+- (BOOL)wcpl_applyMultiSelectDictionaryWithUserNames:(NSArray<NSString *> *)names toController:(id)controller {
+    if (!controller) {
+        return NO;
+    }
+    NSMutableDictionary *selectedDict = [self wcpl_multiSelectDictionaryWithUserNames:names];
+    if (selectedDict.count == 0) {
+        return YES;
+    }
+    @try {
+        if ([controller respondsToSelector:@selector(setM_dicMultiSelect:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_dicMultiSelect:), selectedDict);
+        } else {
+            [controller setValue:selectedDict forKey:@"m_dicMultiSelect"];
+        }
+        return YES;
+    } @catch (__unused NSException *exception) {
+        return NO;
+    }
 }
 
 - (BOOL)wcpl_presentMultiSelectContactsControllerWithTitle:(NSString *)title
@@ -511,6 +598,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     if (!controller) {
         return NO;
     }
+    NSArray<NSString *> *sanitizedSelected = [self wcpl_sanitizedUserNamesFromArray:selected];
 
     if ([controller respondsToSelector:@selector(setM_delegate:)]) {
         ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_delegate:), self);
@@ -539,16 +627,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         }
     }
 
-    NSMutableDictionary *selectedDict = [self wcpl_multiSelectDictionaryWithUserNames:selected];
-    if (selectedDict.count > 0) {
-        if ([controller respondsToSelector:@selector(setM_dicMultiSelect:)]) {
-            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_dicMultiSelect:), selectedDict);
-        } else {
-            @try {
-                [controller setValue:selectedDict forKey:@"m_dicMultiSelect"];
-            } @catch (__unused NSException *exception) {
-            }
-        }
+    if (![self wcpl_applyMultiSelectDictionaryWithUserNames:sanitizedSelected toController:controller]) {
+        return NO;
     }
 
     if ([controller respondsToSelector:@selector(setTitle:)] && title.length > 0) {
@@ -581,6 +661,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     if (!controller) {
         return NO;
     }
+    NSArray<NSString *> *sanitizedSelected = [self wcpl_sanitizedUserNamesFromArray:selected];
 
     if ([controller respondsToSelector:@selector(setM_delegate:)]) {
         ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_delegate:), self);
@@ -609,16 +690,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         }
     }
 
-    NSMutableDictionary *selectedDict = [self wcpl_multiSelectDictionaryWithUserNames:selected];
-    if (selectedDict.count > 0) {
-        if ([controller respondsToSelector:@selector(setM_dicMultiSelect:)]) {
-            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_dicMultiSelect:), selectedDict);
-        } else {
-            @try {
-                [controller setValue:selectedDict forKey:@"m_dicMultiSelect"];
-            } @catch (__unused NSException *exception) {
-            }
-        }
+    if (![self wcpl_applyMultiSelectDictionaryWithUserNames:sanitizedSelected toController:controller]) {
+        return NO;
     }
 
     if (title.length > 0) {
@@ -664,7 +737,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (void)showIgnoredChatroomList {
     self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
-    NSArray *selected = [self ignoredChatroomUserNames];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredChatroomUserNames]];
     if ([self wcpl_presentGroupSelectContactsControllerWithTitle:@"屏蔽群聊"
                                              selectedUserNames:selected]) {
         return;
@@ -680,7 +753,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (void)showIgnoredUserList {
     self.groupSelectContext = WCPLGroupSelectContextNone;
-    NSArray *selected = [self ignoredUserNames];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredUserNames]];
     WCPLMultiSelectContactsViewController *multiSCVC = [[WCPLMultiSelectContactsViewController alloc] initWithSelectedContacts:selected];
     multiSCVC.delegate = self;
     multiSCVC.titleText = @"屏蔽好友";

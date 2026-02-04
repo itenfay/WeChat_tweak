@@ -13,6 +13,7 @@
 #import "WCPLRedEnvelopConfig.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
+#import "WCPLCrashReporter.h"
 #import <objc/runtime.h>
 
 // 调试弹窗开关 key
@@ -1680,6 +1681,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
         CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
         if (!msgWrap) {
             WCPLLog(@"Repeat tapped but msgWrap is nil");
+            WCPLCrashBreadcrumb(@"复读按钮点击: msgWrap=nil");
             return;
         }
 
@@ -1697,6 +1699,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
                 isVoiceMessage,
                 msgWrap.m_nsFromUsr ?: @"",
                 msgWrap.m_nsToUsr ?: @"");
+        WCPLCrashBreadcrumb(@"复读按钮点击: msgType=%u from=%@ to=%@", msgType, msgWrap.m_nsFromUsr ?: @"", msgWrap.m_nsToUsr ?: @"");
         if (!isEmoticonMessage && !isImageMessage && !isVoiceMessage) {
             id contentText = [self wcpl_safeInvokeObjectSelector:@selector(contentText) onObject:viewModel arguments:nil];
             if ([contentText isKindOfClass:[NSString class]]) {

@@ -1,4 +1,5 @@
 #import "WCHookMessageNavigator.h"
+#import "WCPLCrashReporter.h"
 
 #import <UIKit/UIKit.h>
 #import <objc/message.h>
@@ -34,6 +35,7 @@ static BOOL WCHookPerformSyncOnMainThread(BOOL (^action)(void));
     if (!cell) {
         return NO;
     }
+    WCPLCrashBreadcrumb(@"引用跳转(消息气泡): cell=%@", NSStringFromClass([cell class]));
     return WCHookPerformSyncOnMainThread(^BOOL{
         return WCHookExecuteJumpFromCell(cell);
     });
@@ -43,6 +45,7 @@ static BOOL WCHookPerformSyncOnMainThread(BOOL (^action)(void));
     if (!toolView) {
         return NO;
     }
+    WCPLCrashBreadcrumb(@"引用跳转(输入框): toolView=%@", NSStringFromClass([toolView class]));
     return WCHookPerformSyncOnMainThread(^BOOL{
         return WCHookExecuteJumpFromInput(toolView);
     });
