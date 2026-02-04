@@ -141,10 +141,24 @@ jobs:
           cd WeChatPluginDev/wapleodtcorexpc
           rm -rf packages/*.deb 2>/dev/null || true
           make clean || true
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless 2>&1 || {
-            echo "=== Build failed, showing detailed errors ==="
-            make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-          }
+          set -o pipefail
+          LOG_FILE="$RUNNER_TEMP/wcpl_build_rootless.log"
+          set +e
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless 2>&1 | tee "$LOG_FILE"
+          status=${PIPESTATUS[0]}
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "=== Build failed, extracting errors ==="
+            grep -E "error:|fatal error:|Undefined symbols|ld: " "$LOG_FILE" | tail -n 80 | while IFS= read -r line; do
+              echo "::error::$line"
+            done
+            echo "### Rootless build failed" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            tail -n 200 "$LOG_FILE" >> "$GITHUB_STEP_SUMMARY" || true
+            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            exit "$status"
+          fi
           # Rename rootless package
           for f in packages/*.deb; do
             if [ -f "$f" ]; then
@@ -160,10 +174,24 @@ jobs:
           export PATH="$THEOS/bin:$PATH"
           cd WeChatPluginDev/wapleodtcorexpc
           make clean || true
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide 2>&1 || {
-            echo "=== Build failed, showing detailed errors ==="
-            make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
-          }
+          set -o pipefail
+          LOG_FILE="$RUNNER_TEMP/wcpl_build_roothide.log"
+          set +e
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide 2>&1 | tee "$LOG_FILE"
+          status=${PIPESTATUS[0]}
+          set -e
+          if [ "$status" -ne 0 ]; then
+            echo "=== Build failed, extracting errors ==="
+            grep -E "error:|fatal error:|Undefined symbols|ld: " "$LOG_FILE" | tail -n 80 | while IFS= read -r line; do
+              echo "::error::$line"
+            done
+            echo "### Roothide build failed" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            tail -n 200 "$LOG_FILE" >> "$GITHUB_STEP_SUMMARY" || true
+            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            exit "$status"
+          fi
           # Rename roothide package
           for f in packages/*.deb; do
             if [ -f "$f" ] && [[ ! "$f" == *"-rootless.deb" ]]; then
