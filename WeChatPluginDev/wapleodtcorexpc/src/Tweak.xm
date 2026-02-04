@@ -725,25 +725,41 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     if (cmdId != 3) { return; }
 
     NSDictionary *(^parseRequestNativeUrlDict)() = ^NSDictionary *() {
-        NSString *requestString = [[NSString alloc] initWithData:arg2.reqText.buffer encoding:NSUTF8StringEncoding];
-        if (requestString.length == 0) return nil;
-        NSDictionary *requestDictionary = [%c(WCBizUtil) dictionaryWithDecodedComponets:requestString separator:@"&"];
-        NSString *nativeUrl = [requestDictionary stringForKey:@"nativeUrl"];
+        NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(arg2.reqText);
+        if (![requestDict isKindOfClass:[NSDictionary class]] || requestDict.count == 0) return nil;
+        NSString *nativeUrl = wcpl_stringForKeyInDictionary(requestDict, @"nativeUrl");
         if (nativeUrl.length == 0) return nil;
         nativeUrl = [nativeUrl stringByRemovingPercentEncoding];
         if (nativeUrl.length == 0) return nil;
-        NSDictionary *nativeUrlDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:nativeUrl separator:@"&"];
+
+        NSDictionary *nativeUrlDict = wcpl_dictionaryFromQueryString(nativeUrl);
+        if (nativeUrlDict.count > 0) return nativeUrlDict;
+
+        NSRange qmark = [nativeUrl rangeOfString:@"?"];
+        if (qmark.location != NSNotFound && qmark.location + 1 < nativeUrl.length) {
+            nativeUrlDict = wcpl_dictionaryFromQueryString([nativeUrl substringFromIndex:qmark.location + 1]);
+        }
 
         return nativeUrlDict;
     };
 
-    NSDictionary *responseDict = [[[NSString alloc] initWithData:arg1.retText.buffer encoding:NSUTF8StringEncoding] JSONDictionary];
+    NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(arg1.retText);
+    if (![responseDict isKindOfClass:[NSDictionary class]] || responseDict.count == 0) {
+        return;
+    }
 
     NSDictionary *requestNativeUrlDict = parseRequestNativeUrlDict();
-    NSString *requestSign = [requestNativeUrlDict stringForKey:@"sign"];
-    NSString *requestSendId = [requestNativeUrlDict stringForKey:@"sendid"];
+    NSString *requestSign = wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"sign");
+    NSString *requestSendId = wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"sendid")
+        ?: wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"sendId")
+        ?: wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"send_id");
 
     WeChatRedEnvelopParam *mgrParams = [[WCPLRedEnvelopParamQueue sharedQueue] dequeueMatchingSign:requestSign sendId:requestSendId];
+    WCPLLog(@"红包查询回包: cmd=%u matched=%d signLen=%lu sendId=%@",
+            cmdId,
+            mgrParams != nil,
+            (unsigned long)requestSign.length,
+            requestSendId ?: @"");
 
     BOOL (^shouldReceiveRedEnvelop)() = ^BOOL() {
         // 手动抢红包
@@ -1041,25 +1057,52 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
 
         NSDictionary *nativeUrlDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:[nativeUrl substringFromIndex:prefix.length] separator:@"&"];
-        if (nativeUrlDict.count == 0) { break; }
+        if (nativeUrlDict.count == 0) {
+            nativeUrlDict = wcpl_dictionaryFromQueryString([nativeUrl substringFromIndex:prefix.length]);
+        }
+        if (nativeUrlDict.count == 0) {
+            NSRange qmark = [nativeUrl rangeOfString:@"?"];
+            if (qmark.location != NSNotFound && qmark.location + 1 < nativeUrl.length) {
+                nativeUrlDict = wcpl_dictionaryFromQueryString([nativeUrl substringFromIndex:qmark.location + 1]);
+            }
+        }
+        if (nativeUrlDict.count == 0) {
+            WCPLLog(@"红包解析失败: nativeUrlDict 为空 url=%@", wcpl_sanitizeInlineText(nativeUrl, 160));
+            break;
+        }
+
+        NSString *msgType = wcpl_stringForKeyInDictionary(nativeUrlDict, @"msgtype") ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"msgType");
+        NSString *sendId = wcpl_stringForKeyInDictionary(nativeUrlDict, @"sendid") ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"sendId");
+        NSString *channelId = wcpl_stringForKeyInDictionary(nativeUrlDict, @"channelid") ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"channelId");
+        NSString *sign = wcpl_stringForKeyInDictionary(nativeUrlDict, @"sign");
+        if (msgType.length == 0 || sendId.length == 0 || channelId.length == 0) {
+            WCPLLog(@"红包解析失败: msgType=%@ sendId=%@ channelId=%@ url=%@",
+                    msgType ?: @"",
+                    sendId ?: @"",
+                    channelId ?: @"",
+                    wcpl_sanitizeInlineText(nativeUrl, 160));
+            break;
+        }
 
         // 获取服务端验证参数
         NSMutableDictionary *params = [@{} mutableCopy];
         params[@"agreeDuty"] = @"0";
-        params[@"channelId"] = [nativeUrlDict stringForKey:@"channelid"];
+        params[@"channelId"] = channelId;
         params[@"inWay"] = @"0";
-        params[@"msgType"] = [nativeUrlDict stringForKey:@"msgtype"];
+        params[@"msgType"] = msgType;
         params[@"nativeUrl"] = nativeUrl;
-        params[@"sendId"] = [nativeUrlDict stringForKey:@"sendid"];
+        params[@"sendId"] = sendId;
 
         WCRedEnvelopesLogicMgr *logicMgr = WCPLGetService(objc_getClass("WCRedEnvelopesLogicMgr"));
         [logicMgr ReceiverQueryRedEnvelopesRequest:params];
+        NSString *sessionForLog = isGroupSender ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
+        WCPLLog(@"红包查询请求: session=%@ sendId=%@ signLen=%lu", sessionForLog ?: @"", sendId, (unsigned long)sign.length);
 
         // 储存参数
         WeChatRedEnvelopParam *mgrParams = [[WeChatRedEnvelopParam alloc] init];
-        mgrParams.msgType = [nativeUrlDict stringForKey:@"msgtype"];
-        mgrParams.sendId = [nativeUrlDict stringForKey:@"sendid"];
-        mgrParams.channelId = [nativeUrlDict stringForKey:@"channelid"];
+        mgrParams.msgType = msgType;
+        mgrParams.sendId = sendId;
+        mgrParams.channelId = channelId;
         if (selfContact) {
             if ([selfContact respondsToSelector:@selector(getContactDisplayName)]) {
                 @try {
@@ -1078,10 +1121,14 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
         mgrParams.nativeUrl = nativeUrl;
         mgrParams.sessionUserName = isGroupSender ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
-        mgrParams.sign = [nativeUrlDict stringForKey:@"sign"];
+        mgrParams.sign = sign;
         mgrParams.isGroupSender = isGroupSender;
 
         [[WCPLRedEnvelopParamQueue sharedQueue] enqueue:mgrParams];
+        WCPLLog(@"红包入队: session=%@ sendId=%@ signLen=%lu",
+                mgrParams.sessionUserName ?: @"",
+                sendId,
+                (unsigned long)sign.length);
 
         break;
     }
