@@ -5,6 +5,7 @@
 #import "WCPLRedEnvelopTaskManager.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLRedEnvelopParamQueue.h"
+#import "WCPLRedEnvelopOpenTracker.h"
 #import "WCPLNewFuncAddition.h"
 #import "WCPLFuncService.h"
 #import "WCPLAVManager.h"
@@ -15,6 +16,15 @@
 #import "RichTextView.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+
+@interface SendMessageMgr : NSObject
+- (void)AddMsgToSendTable:(id)chatName MsgWrap:(id)wrap;
+- (void)SendMsg;
+@end
+
+@interface WCRedEnvelopesLogicMgr (WCPLRedEnvelopOpen)
+- (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
+@end
 
 // 复读按钮入口节流：避免长文本 layoutSubviews 高频触发导致重复创建
 static const NSTimeInterval kWCPLRepeatButtonThrottleInterval = 0.05;
@@ -120,6 +130,122 @@ static id wcpl_getMessageMgr(void) {
         return nil;
     }
     return [center getService:objc_getClass("CMessageMgr")];
+}
+
+static id wcpl_getService(Class serviceClass) {
+    if (!serviceClass) return nil;
+    Class serviceCenterClass = objc_getClass("MMServiceCenter");
+    if (!serviceCenterClass || ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
+        return nil;
+    }
+    id center = [serviceCenterClass defaultCenter];
+    if (!center || ![center respondsToSelector:@selector(getService:)]) {
+        return nil;
+    }
+    return [center getService:serviceClass];
+}
+
+static NSString *wcpl_getSelfUserName(void) {
+    CContactMgr *contactMgr = wcpl_getService(objc_getClass("CContactMgr"));
+    if (!contactMgr || ![contactMgr respondsToSelector:@selector(getSelfContact)]) {
+        return nil;
+    }
+    CContact *selfContact = [contactMgr getSelfContact];
+    return wcpl_trimString(selfContact.m_nsUsrName);
+}
+
+static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *text) {
+    NSString *session = wcpl_trimString(sessionUserName);
+    NSString *content = wcpl_trimString(text);
+    if (session.length == 0 || content.length == 0) return NO;
+
+    NSString *selfUserName = wcpl_getSelfUserName();
+    if (selfUserName.length == 0) return NO;
+
+    CMessageWrap *msgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:1 nsFromUsr:selfUserName];
+    [msgWrap setM_nsToUsr:session];
+    [msgWrap setM_nsContent:content];
+    [msgWrap setM_uiCreateTime:(unsigned int)[[NSDate date] timeIntervalSince1970]];
+
+    id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
+    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+        @try {
+            [sendMgr AddMsgToSendTable:session MsgWrap:msgWrap];
+            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
+                [sendMgr SendMsg];
+            }
+            return YES;
+        } @catch (__unused NSException *exception) {
+            return NO;
+        }
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_addLocalSystemMessageToSession(NSString *sessionUserName, NSString *text) {
+    NSString *session = wcpl_trimString(sessionUserName);
+    NSString *content = wcpl_trimString(text);
+    if (session.length == 0 || content.length == 0) return NO;
+
+    id messageMgr = wcpl_getMessageMgr();
+    if (!messageMgr) return NO;
+
+    CMessageWrap *msgWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:0x2710];
+    [msgWrap setM_uiStatus:0x4];
+    [msgWrap setM_nsContent:content];
+    [msgWrap setM_uiCreateTime:(unsigned int)[[NSDate date] timeIntervalSince1970]];
+
+    NSString *selfUserName = wcpl_getSelfUserName();
+    if (selfUserName.length > 0) {
+        [msgWrap setM_nsToUsr:selfUserName];
+    }
+    [msgWrap setM_nsFromUsr:session];
+
+    @try {
+        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
+            [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
+            return YES;
+        }
+        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+            [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
+            return YES;
+        }
+        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
+            [messageMgr AddLocalMsg:session MsgWrap:msgWrap];
+            return YES;
+        }
+    } @catch (__unused NSException *exception) {
+        return NO;
+    }
+
+    return NO;
+}
+
+static NSString *wcpl_displayNameForUserName(NSString *userName) {
+    NSString *name = wcpl_trimString(userName);
+    if (name.length == 0) return nil;
+
+    CContactMgr *contactMgr = wcpl_getService(objc_getClass("CContactMgr"));
+    if (!contactMgr || ![contactMgr respondsToSelector:@selector(getContactByName:)]) {
+        return name;
+    }
+
+    CContact *contact = [contactMgr getContactByName:name];
+    if (!contact) return name;
+
+    NSString *displayName = nil;
+    @try {
+        if ([contact respondsToSelector:@selector(getContactDisplayName)]) {
+            displayName = [contact getContactDisplayName];
+        } else {
+            displayName = [contact valueForKey:@"m_nsNickName"];
+        }
+    } @catch (__unused NSException *exception) {
+        displayName = nil;
+    }
+
+    return wcpl_trimString(displayName) ?: name;
 }
 
 static CMessageWrap *wcpl_revokeMsgWrapFromObject(id obj) {
@@ -463,8 +589,11 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 - (void)OnWCToHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
     %orig;
 
-    // 非参数查询请求
-    if (arg1.cgiCmdid != 3) { return; }
+    // 非参数查询请求：优先尝试处理打开红包回包（用于通知/自动回复）
+    if (arg1.cgiCmdid != 3) {
+        [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
+        return;
+    }
 
     NSDictionary *(^parseRequestNativeUrlDict)() = ^NSDictionary *() {
         NSString *requestString = [[NSString alloc] initWithData:arg2.reqText.buffer encoding:NSUTF8StringEncoding];
@@ -491,6 +620,22 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         // 手动抢红包
         if (!mgrParams) { return NO; }
 
+        WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+        if (!config.autoReceiveEnable) { return NO; }
+
+        BOOL isGroupSession = ([mgrParams.sessionUserName rangeOfString:@"@chatroom"].location != NSNotFound);
+        if (isGroupSession) {
+            if (!config.groupRedEnvelopEnable) { return NO; }
+            if (mgrParams.isGroupSender && !config.receiveSelfRedEnvelop) { return NO; }
+            if (config.groupRedEnvelopScope == 1) {
+                if (![config.blackList containsObject:mgrParams.sessionUserName ?: @""]) { return NO; }
+            } else if (config.groupRedEnvelopScope == 2) {
+                if ([config.groupDenyList containsObject:mgrParams.sessionUserName ?: @""]) { return NO; }
+            }
+        } else {
+            if (!config.privateRedEnvelopEnable) { return NO; }
+        }
+
         // 自己已经抢过
         if ([responseDict[@"receiveStatus"] integerValue] == 2) { return NO; }
 
@@ -500,12 +645,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         // 没有这个字段会被判定为使用外挂
         if (!responseDict[@"timingIdentifier"]) { return NO; }        
 
-        if (mgrParams.isGroupSender) { 
+        if (mgrParams.isGroupSender) {
             // 自己发红包的时候没有 sign 字段
-            return [WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable;
+            return YES;
         } else {
             if (requestSign.length > 0 && ![requestSign isEqualToString:mgrParams.sign]) { return NO; }
-            return [WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable;
+            return YES;
         }
     };
 
@@ -519,6 +664,133 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             [[WCPLRedEnvelopTaskManager sharedManager] addSerialTask:operation];
         } else {
             [[WCPLRedEnvelopTaskManager sharedManager] addNormalTask:operation];
+        }
+    }
+}
+
+%new
+- (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req {
+    if (!res || !req) return;
+
+    NSString *requestString = [[NSString alloc] initWithData:req.reqText.buffer encoding:NSUTF8StringEncoding];
+    if (requestString.length == 0) return;
+    NSDictionary *requestDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:requestString separator:@"&"];
+    if (![requestDict isKindOfClass:[NSDictionary class]]) return;
+
+    NSDictionary *responseDict = [[[NSString alloc] initWithData:res.retText.buffer encoding:NSUTF8StringEncoding] JSONDictionary];
+    if (![responseDict isKindOfClass:[NSDictionary class]] || responseDict.count == 0) return;
+
+    NSString *sendId = [requestDict stringForKey:@"sendId"] ?: [requestDict stringForKey:@"sendid"];
+    if (sendId.length == 0) {
+        // 兜底：从 nativeUrl 里取
+        NSString *nativeUrl = [requestDict stringForKey:@"nativeUrl"];
+        nativeUrl = [nativeUrl stringByRemovingPercentEncoding];
+        if (nativeUrl.length > 0) {
+            NSDictionary *nativeUrlDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:nativeUrl separator:@"&"];
+            sendId = [nativeUrlDict stringForKey:@"sendid"] ?: [nativeUrlDict stringForKey:@"sendId"];
+        }
+    }
+
+    NSString *timingIdentifier = [requestDict stringForKey:@"timingIdentifier"];
+    if (timingIdentifier.length == 0) {
+        id tid = responseDict[@"timingIdentifier"];
+        if ([tid isKindOfClass:[NSString class]]) {
+            timingIdentifier = (NSString *)tid;
+        } else if ([tid respondsToSelector:@selector(stringValue)]) {
+            timingIdentifier = [tid stringValue];
+        }
+    }
+
+    WeChatRedEnvelopParam *param = [[WCPLRedEnvelopOpenTracker sharedTracker] consumeParamForSendId:sendId timingIdentifier:timingIdentifier];
+    if (!param) return;
+
+    NSString *sessionUserName = wcpl_trimString(param.sessionUserName);
+    BOOL isGroup = (sessionUserName.length > 0 && [sessionUserName rangeOfString:@"@chatroom"].location != NSNotFound);
+
+    NSInteger receiveStatus = 0;
+    if ([responseDict[@"receiveStatus"] respondsToSelector:@selector(integerValue)]) {
+        receiveStatus = [responseDict[@"receiveStatus"] integerValue];
+    }
+    NSInteger hbStatus = 0;
+    if ([responseDict[@"hbStatus"] respondsToSelector:@selector(integerValue)]) {
+        hbStatus = [responseDict[@"hbStatus"] integerValue];
+    }
+
+    NSInteger retCode = 0;
+    NSArray<NSString *> *retCodeKeys = @[@"retcode", @"retCode", @"cgiRetcode", @"cgiRetCode"];
+    for (NSString *key in retCodeKeys) {
+        id value = responseDict[key];
+        if (![value respondsToSelector:@selector(integerValue)]) {
+            continue;
+        }
+        NSInteger code = [value integerValue];
+        if (code != 0) {
+            retCode = code;
+            break;
+        }
+    }
+
+    NSString *amount = nil;
+    NSArray<NSString *> *amountKeys = @[@"receiveAmount", @"amount", @"money", @"totalAmount"];
+    for (NSString *key in amountKeys) {
+        id value = responseDict[key];
+        if ([value isKindOfClass:[NSString class]]) {
+            amount = wcpl_trimString((NSString *)value);
+        } else if ([value respondsToSelector:@selector(stringValue)]) {
+            amount = wcpl_trimString([value stringValue]);
+        }
+        if (amount.length > 0) break;
+    }
+
+    BOOL success = NO;
+    if (hbStatus == 4 || retCode != 0) {
+        success = NO;
+    } else if (amount.length > 0 || receiveStatus == 2) {
+        success = YES;
+    } else {
+        success = (res.errorType == 0 && res.platRet == 0);
+    }
+
+    NSString *sessionDisplayName = sessionUserName.length > 0 ? wcpl_displayNameForUserName(sessionUserName) : nil;
+    NSMutableString *resultText = [NSMutableString stringWithFormat:@"[红包] %@ (%@)", success ? @"领取成功" : @"领取失败", isGroup ? @"群聊" : @"私聊"];
+    if (sessionDisplayName.length > 0) {
+        [resultText appendFormat:@" 会话:%@", sessionDisplayName];
+    }
+    if (amount.length > 0) {
+        [resultText appendFormat:@" 金额:%@", amount];
+    }
+    if (!success) {
+        if (hbStatus == 4) {
+            [resultText appendString:@" 已抢完"];
+        } else if (res.errorMsg.length > 0) {
+            [resultText appendFormat:@" %@", res.errorMsg];
+        } else if (retCode != 0) {
+            [resultText appendFormat:@" 错误码:%ld", (long)retCode];
+        }
+    }
+
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSInteger notify = config.redEnvelopResultNotify;
+    if (notify != 0) {
+        NSString *targetSession = nil;
+        if (notify == 2) {
+            targetSession = @"filehelper";
+        } else if (notify == 1) {
+            targetSession = wcpl_getSelfUserName();
+        }
+        if (targetSession.length > 0) {
+            if (!wcpl_sendTextMessageToSession(targetSession, resultText)) {
+                wcpl_addLocalSystemMessageToSession(targetSession, resultText);
+            }
+        }
+    }
+
+    // 领取成功后自动回复
+    if (success && sessionUserName.length > 0) {
+        BOOL allowReply = config.autoReceiveEnable && (isGroup ? config.groupRedEnvelopEnable : config.privateRedEnvelopEnable);
+        NSString *replyText = isGroup ? config.groupRedEnvelopAutoReplyText : config.privateRedEnvelopAutoReplyText;
+        if (allowReply && wcpl_trimString(replyText).length > 0) {
+            wcpl_sendTextMessageToSession(sessionUserName, replyText);
         }
     }
 }
@@ -555,106 +827,69 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     switch(wrap.m_uiMessageType) {
     case 49: { // AppNode
 
-        /** 是否为红包消息 */
-        BOOL (^isRedEnvelopMessage)() = ^BOOL() {
-            return [wrap.m_nsContent rangeOfString:@"wxpay://"].location != NSNotFound;
-        };
-        
-        if (isRedEnvelopMessage()) { // 红包
-            CContactMgr *contactManager = [[%c(MMServiceCenter) defaultCenter] getService:[%c(CContactMgr) class]];
-            CContact *selfContact = [contactManager getSelfContact];
+        NSString *nativeUrl = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];
+        NSString *prefix = @"wxpay://c2cbizmessagehandler/hongbao/receivehongbao?";
+        if (nativeUrl.length == 0 || ![nativeUrl hasPrefix:prefix]) { break; }
 
-            BOOL (^isSender)() = ^BOOL() {
-                return [wrap.m_nsFromUsr isEqualToString:selfContact.m_nsUsrName];
-            };
+        WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+        if (!config.autoReceiveEnable) { break; }
 
-            /** 是否别人在群聊中发消息 */
-            BOOL (^isGroupReceiver)() = ^BOOL() {
-                return [wrap.m_nsFromUsr rangeOfString:@"@chatroom"].location != NSNotFound;
-            };
+        CContactMgr *contactManager = [[%c(MMServiceCenter) defaultCenter] getService:[%c(CContactMgr) class]];
+        CContact *selfContact = [contactManager getSelfContact];
+        NSString *selfUserName = selfContact.m_nsUsrName ?: @"";
 
-            /** 是否自己在群聊中发消息 */
-            BOOL (^isGroupSender)() = ^BOOL() {
-                return isSender() && [wrap.m_nsToUsr rangeOfString:@"chatroom"].location != NSNotFound;
-            };
+        BOOL isSender = (selfUserName.length > 0 && [wrap.m_nsFromUsr isEqualToString:selfUserName]);
+        BOOL isGroupReceiver = ([wrap.m_nsFromUsr rangeOfString:@"@chatroom"].location != NSNotFound);
+        BOOL isGroupSender = (isSender && [wrap.m_nsToUsr rangeOfString:@"@chatroom"].location != NSNotFound);
+        BOOL isGroup = (isGroupReceiver || isGroupSender);
 
-            /** 是否抢自己发的红包 */
-            BOOL (^isReceiveSelfRedEnvelop)() = ^BOOL() {
-                return [WCPLRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop;
-            };
+        if (isGroup) {
+            if (!config.groupRedEnvelopEnable) { break; }
+            if (isGroupSender && !config.receiveSelfRedEnvelop) { break; }
 
-            /** 群聊白名单：仅对白名单内群聊抢红包 */
-            BOOL (^isGroupInAllowList)() = ^BOOL() {
-                NSString *groupUserName = nil;
-                if (isGroupReceiver()) {
-                    groupUserName = wrap.m_nsFromUsr;
-                } else if (isGroupSender()) {
-                    groupUserName = wrap.m_nsToUsr;
-                }
-                if (groupUserName.length == 0) { return NO; }
-                return [[WCPLRedEnvelopConfig sharedConfig].blackList containsObject:groupUserName];
-            };
+            NSString *groupUserName = isGroupReceiver ? wrap.m_nsFromUsr : wrap.m_nsToUsr;
+            if (groupUserName.length == 0) { break; }
 
-            /** 是否自动抢红包 */
-            BOOL (^shouldReceiveRedEnvelop)() = ^BOOL() {
-                if (![WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) { return NO; }
-                if (isGroupReceiver()) {
-                    return isGroupInAllowList();
-                }
-                if (isGroupSender() && isReceiveSelfRedEnvelop()) {
-                    return isGroupInAllowList();
-                }
-                return NO;
-            };
-
-            NSDictionary *(^parseNativeUrl)(NSString *nativeUrl) = ^NSDictionary *(NSString *nativeUrl) {
-                NSString *prefix = @"wxpay://c2cbizmessagehandler/hongbao/receivehongbao?";
-                if (nativeUrl.length == 0 || ![nativeUrl hasPrefix:prefix]) return nil;
-                NSString *query = [nativeUrl substringFromIndex:prefix.length];
-                if (query.length == 0) return nil;
-                return [%c(WCBizUtil) dictionaryWithDecodedComponets:query separator:@"&"];
-            };
-
-            /** 获取服务端验证参数 */
-            void (^queryRedEnvelopesReqeust)(NSDictionary *nativeUrlDict) = ^(NSDictionary *nativeUrlDict) {
-                NSMutableDictionary *params = [@{} mutableCopy];
-                params[@"agreeDuty"] = @"0";
-                params[@"channelId"] = [nativeUrlDict stringForKey:@"channelid"];
-                params[@"inWay"] = @"0";
-                params[@"msgType"] = [nativeUrlDict stringForKey:@"msgtype"];
-                params[@"nativeUrl"] = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];
-                params[@"sendId"] = [nativeUrlDict stringForKey:@"sendid"];
-
-                WCRedEnvelopesLogicMgr *logicMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:[objc_getClass("WCRedEnvelopesLogicMgr") class]];
-                [logicMgr ReceiverQueryRedEnvelopesRequest:params];
-            };
-
-            /** 储存参数 */
-            void (^enqueueParam)(NSDictionary *nativeUrlDict) = ^(NSDictionary *nativeUrlDict) {
-                WeChatRedEnvelopParam *mgrParams = [[WeChatRedEnvelopParam alloc] init];
-                mgrParams.msgType = [nativeUrlDict stringForKey:@"msgtype"];
-                mgrParams.sendId = [nativeUrlDict stringForKey:@"sendid"];
-                mgrParams.channelId = [nativeUrlDict stringForKey:@"channelid"];
-                mgrParams.nickName = [selfContact getContactDisplayName];
-                mgrParams.headImg = [selfContact m_nsHeadImgUrl];
-                mgrParams.nativeUrl = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];
-                mgrParams.sessionUserName = isGroupSender() ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
-                mgrParams.sign = [nativeUrlDict stringForKey:@"sign"];
-
-                mgrParams.isGroupSender = isGroupSender();
-
-                [[WCPLRedEnvelopParamQueue sharedQueue] enqueue:mgrParams];
-            };
-
-            if (shouldReceiveRedEnvelop()) {
-                NSString *nativeUrl = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];            
-                NSDictionary *nativeUrlDict = parseNativeUrl(nativeUrl);
-                if (nativeUrlDict.count == 0) { break; }
-
-                queryRedEnvelopesReqeust(nativeUrlDict);
-                enqueueParam(nativeUrlDict);
+            if (config.groupRedEnvelopScope == 1) { // 仅白名单
+                if (![config.blackList containsObject:groupUserName]) { break; }
+            } else if (config.groupRedEnvelopScope == 2) { // 排除黑名单
+                if ([config.groupDenyList containsObject:groupUserName]) { break; }
             }
-        }    
+        } else {
+            // 私聊红包：仅接收方处理
+            if (!config.privateRedEnvelopEnable) { break; }
+            if (isSender) { break; }
+        }
+
+        NSDictionary *nativeUrlDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:[nativeUrl substringFromIndex:prefix.length] separator:@"&"];
+        if (nativeUrlDict.count == 0) { break; }
+
+        // 获取服务端验证参数
+        NSMutableDictionary *params = [@{} mutableCopy];
+        params[@"agreeDuty"] = @"0";
+        params[@"channelId"] = [nativeUrlDict stringForKey:@"channelid"];
+        params[@"inWay"] = @"0";
+        params[@"msgType"] = [nativeUrlDict stringForKey:@"msgtype"];
+        params[@"nativeUrl"] = nativeUrl;
+        params[@"sendId"] = [nativeUrlDict stringForKey:@"sendid"];
+
+        WCRedEnvelopesLogicMgr *logicMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:[objc_getClass("WCRedEnvelopesLogicMgr") class]];
+        [logicMgr ReceiverQueryRedEnvelopesRequest:params];
+
+        // 储存参数
+        WeChatRedEnvelopParam *mgrParams = [[WeChatRedEnvelopParam alloc] init];
+        mgrParams.msgType = [nativeUrlDict stringForKey:@"msgtype"];
+        mgrParams.sendId = [nativeUrlDict stringForKey:@"sendid"];
+        mgrParams.channelId = [nativeUrlDict stringForKey:@"channelid"];
+        mgrParams.nickName = [selfContact getContactDisplayName];
+        mgrParams.headImg = [selfContact m_nsHeadImgUrl];
+        mgrParams.nativeUrl = nativeUrl;
+        mgrParams.sessionUserName = isGroupSender ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
+        mgrParams.sign = [nativeUrlDict stringForKey:@"sign"];
+        mgrParams.isGroupSender = isGroupSender;
+
+        [[WCPLRedEnvelopParamQueue sharedQueue] enqueue:mgrParams];
+
         break;
     }
     default:

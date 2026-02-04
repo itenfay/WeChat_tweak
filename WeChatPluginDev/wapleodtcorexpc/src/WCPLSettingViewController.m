@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextNone = 0,
     WCPLGroupSelectContextBlackList,
     WCPLGroupSelectContextIgnoreChatroom,
+    WCPLGroupSelectContextRedEnvelopDenyList,
 };
 
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
@@ -81,6 +82,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self.tableViewMgr clearAllSection];
 
     [self addBasicSettingSection];
+    [self addRedEnvelopNotifySection];
     [self addAdvanceSettingSection];
     [self addMessageIgnoreSettingSection];
     [self addOtherSettingSection];
@@ -98,17 +100,31 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 #pragma mark - BasicSetting
 
 - (void)addBasicSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"红包设置"];
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"红包功能"];
     
     [section addCell:[self createAutoReceiveRedEnvelopCell]];
-    [section addCell:[self createReceiveSelfRedEnvelopCell]];
-    [section addCell:[self createDelaySettingCell]];
+
+    if ([WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) {
+        [section addCell:[self createPrivateRedEnvelopCell]];
+        if ([WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable) {
+            [section addCell:[self createPrivateAutoReplyCell]];
+        }
+
+        [section addCell:[self createGroupRedEnvelopCell]];
+        if ([WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable) {
+            [section addCell:[self createGroupScopeCell]];
+            [section addCell:[self createGroupAutoReplyCell]];
+            [section addCell:[self createReceiveSelfRedEnvelopCell]];
+        }
+
+        [section addCell:[self createDelaySettingCell]];
+    }
     
     [self.tableViewMgr addSection:section];
 }
 
 - (WCTableViewNormalCellManager *)createAutoReceiveRedEnvelopCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(switchRedEnvelop:) target:self title:@"自动抢红包" on:[WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(switchRedEnvelop:) target:self title:@"自动领取红包" on:[WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable];
 }
 
 - (void)switchRedEnvelop:(UISwitch *)envelopSwitch {
@@ -117,7 +133,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createReceiveSelfRedEnvelopCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveSelfRedEnvelop:) target:self title:@"抢自己发的红包" on:[WCPLRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveSelfRedEnvelop:) target:self title:@"领取自己的群红包" on:[WCPLRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop];
 }
 
 - (void)settingReceiveSelfRedEnvelop:(UISwitch *)receiveSwitch {
@@ -128,14 +144,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     NSInteger delaySeconds = [WCPLRedEnvelopConfig sharedConfig].delaySeconds;
     NSString *delayString  = delaySeconds == 0 ? @"不延迟" : [NSString stringWithFormat:@"%ld 秒", (long)delaySeconds];
     
-    WCTableViewNormalCellManager *cell;
-    if ([WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) {
-        cell = [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingDelay) target:self title:@"延迟抢红包" rightValue:delayString accessoryType:1];
-    } else {
-        cell = [objc_getClass("WCTableViewNormalCellManager") normalCellForTitle:@"延迟抢红包" rightValue:@"抢红包已关闭"];
-    }
-    
-    return cell;
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingDelay) target:self title:@"延迟抢红包" rightValue:delayString accessoryType:1];
 }
 
 - (void)settingDelay {
@@ -161,13 +170,213 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - Red Envelop Advanced (Private/Group)
+
+- (WCTableViewNormalCellManager *)createPrivateRedEnvelopCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingPrivateRedEnvelop:) target:self title:@"私聊红包" on:[WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable];
+}
+
+- (void)settingPrivateRedEnvelop:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable = sender.on;
+    [self reloadTableData];
+}
+
+- (NSString *)wcpl_autoReplyStatusText:(NSString *)text {
+    return text.length > 0 ? @"已设置" : @"未设置";
+}
+
+- (WCTableViewNormalCellManager *)createPrivateAutoReplyCell {
+    NSString *status = [self wcpl_autoReplyStatusText:[WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopAutoReplyText];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingPrivateAutoReply) target:self title:@"领取后自动回复" rightValue:status accessoryType:1];
+}
+
+- (void)settingPrivateAutoReply {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSString *current = config.privateRedEnvelopAutoReplyText ?: @"";
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"私聊红包自动回复"
+                                                                   message:@"领取后在当前聊天发送一条文本消息（留空=关闭）"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"回复内容";
+        textField.text = current;
+    }];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+
+    if (current.length > 0) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"清除" style:UIAlertActionStyleDestructive handler:^(__unused UIAlertAction *action) {
+            config.privateRedEnvelopAutoReplyText = nil;
+            [self reloadTableData];
+        }]];
+    }
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        NSString *text = alert.textFields.firstObject.text ?: @"";
+        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (text.length == 0) {
+            config.privateRedEnvelopAutoReplyText = nil;
+        } else {
+            config.privateRedEnvelopAutoReplyText = text;
+        }
+        [self reloadTableData];
+    }]];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createGroupRedEnvelopCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingGroupRedEnvelop:) target:self title:@"群聊红包" on:[WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable];
+}
+
+- (void)settingGroupRedEnvelop:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable = sender.on;
+    [self reloadTableData];
+}
+
+- (NSString *)wcpl_groupScopeDisplayText {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    switch (config.groupRedEnvelopScope) {
+        case 0:
+            return @"全部群聊";
+        case 2: {
+            NSUInteger count = config.groupDenyList.count;
+            return count == 0 ? @"黑名单 (未选)" : [NSString stringWithFormat:@"黑名单 (%lu)", (unsigned long)count];
+        }
+        case 1:
+        default: {
+            NSUInteger count = config.blackList.count;
+            return count == 0 ? @"白名单 (未选)" : [NSString stringWithFormat:@"白名单 (%lu)", (unsigned long)count];
+        }
+    }
+}
+
+- (WCTableViewNormalCellManager *)createGroupScopeCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showGroupScopePicker) target:self title:@"生效范围" rightValue:[self wcpl_groupScopeDisplayText] accessoryType:1];
+}
+
+- (void)showGroupScopePicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"群聊红包生效范围"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *allAction = [UIAlertAction actionWithTitle:@"全部群聊" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopScope = 0;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *whiteAction = [UIAlertAction actionWithTitle:@"仅白名单" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopScope = 1;
+        [self reloadTableData];
+        [self showBlackList];
+    }];
+
+    UIAlertAction *blackAction = [UIAlertAction actionWithTitle:@"排除黑名单" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopScope = 2;
+        [self reloadTableData];
+        [self showGroupDenyList];
+    }];
+
+    [alert addAction:allAction];
+    [alert addAction:whiteAction];
+    [alert addAction:blackAction];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (WCTableViewNormalCellManager *)createGroupAutoReplyCell {
+    NSString *status = [self wcpl_autoReplyStatusText:[WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopAutoReplyText];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingGroupAutoReply) target:self title:@"领取后自动回复" rightValue:status accessoryType:1];
+}
+
+- (void)settingGroupAutoReply {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSString *current = config.groupRedEnvelopAutoReplyText ?: @"";
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"群聊红包自动回复"
+                                                                   message:@"领取后在当前群聊发送一条文本消息（留空=关闭）"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"回复内容";
+        textField.text = current;
+    }];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+
+    if (current.length > 0) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"清除" style:UIAlertActionStyleDestructive handler:^(__unused UIAlertAction *action) {
+            config.groupRedEnvelopAutoReplyText = nil;
+            [self reloadTableData];
+        }]];
+    }
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        NSString *text = alert.textFields.firstObject.text ?: @"";
+        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (text.length == 0) {
+            config.groupRedEnvelopAutoReplyText = nil;
+        } else {
+            config.groupRedEnvelopAutoReplyText = text;
+        }
+        [self reloadTableData];
+    }]];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - Red Envelop Notify
+
+- (void)addRedEnvelopNotifySection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"通知设置"];
+    [section addCell:[self createRedEnvelopNotifyCell]];
+    [self.tableViewMgr addSection:section];
+}
+
+- (NSString *)wcpl_redEnvelopNotifyDisplayText {
+    NSInteger value = [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify;
+    switch (value) {
+        case 1: return @"发给自己";
+        case 2: return @"发给文件传输助手";
+        case 0:
+        default: return @"不提醒";
+    }
+}
+
+- (WCTableViewNormalCellManager *)createRedEnvelopNotifyCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRedEnvelopNotifyPicker) target:self title:@"领取结果通知" rightValue:[self wcpl_redEnvelopNotifyDisplayText] accessoryType:1];
+}
+
+- (void)showRedEnvelopNotifyPicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"领取结果通知"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"不提醒" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify = 0;
+        [self reloadTableData];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"发给自己" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify = 1;
+        [self reloadTableData];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"发给文件传输助手" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify = 2;
+        [self reloadTableData];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Advanced Setting
 
 - (void)addAdvanceSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"高级功能"];
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"红包高级功能"];
     
     [section addCell:[self createQueueCell]];
-    [section addCell:[self createBlackListCell]];
     
     [self.tableViewMgr addSection:section];
 }
@@ -196,6 +405,18 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
     multiSGVC.titleText = @"白名单";
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)showGroupDenyList {
+    self.groupSelectContext = WCPLGroupSelectContextRedEnvelopDenyList;
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].groupDenyList];
+
+    WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
+    multiSGVC.delegate = self;
+    multiSGVC.titleText = @"黑名单";
 
     MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
     [self presentViewController:nc animated:YES completion:nil];
@@ -1641,6 +1862,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     NSArray *userNames = [self wcpl_userNamesFromSelection:arg1];
     if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
         [self updateChatIgnoreInfoWithChatrooms:userNames];
+    } else if (self.groupSelectContext == WCPLGroupSelectContextRedEnvelopDenyList) {
+        [WCPLRedEnvelopConfig sharedConfig].groupDenyList = userNames;
     } else {
         [WCPLRedEnvelopConfig sharedConfig].blackList = userNames;
     }

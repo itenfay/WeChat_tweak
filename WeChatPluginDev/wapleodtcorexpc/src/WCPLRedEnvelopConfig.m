@@ -10,9 +10,16 @@
 
 static NSString *const kWCPLDelaySeconds            = @"kWCPLDelaySeconds";
 static NSString *const kWCPLAutoReceiveRedEnvelop   = @"kWCPLAutoReceiveRedEnvelop";
+static NSString *const kWCPLPrivateRedEnvelopEnable = @"kWCPLPrivateRedEnvelopEnable";
+static NSString *const kWCPLGroupRedEnvelopEnable   = @"kWCPLGroupRedEnvelopEnable";
 static NSString *const kWCPLReceiveSelfRedEnvelop   = @"kWCPLReceiveSelfRedEnvelop";
 static NSString *const kWCPLSerialReceive           = @"kWCPLSerialReceive";
+static NSString *const kWCPLGroupRedEnvelopScope    = @"kWCPLGroupRedEnvelopScope";
 static NSString *const kWCPLBlackList               = @"kWCPLBlackList";
+static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
+static NSString *const kWCPLPrivateRedEnvelopAutoReplyText = @"kWCPLPrivateRedEnvelopAutoReplyText";
+static NSString *const kWCPLGroupRedEnvelopAutoReplyText   = @"kWCPLGroupRedEnvelopAutoReplyText";
+static NSString *const kWCPLRedEnvelopResultNotify  = @"kWCPLRedEnvelopResultNotify";
 static NSString *const kWCPLRevokeEnable            = @"kWCPLRevokeEnable";
 static NSString *const kWCPLChatIgnoreInfo          = @"kWCPLChatIgnoreInfo";
 static NSString *const kWCPLUserIgnoreEnable        = @"kWCPLUserIgnoreEnable";
@@ -51,6 +58,47 @@ static const CGFloat kWCPLRepeatButtonSizeDefault = 24.0;
 static const CGFloat kWCPLRepeatButtonSizeMin = 18.0;
 static const CGFloat kWCPLRepeatButtonSizeMax = 36.0;
 static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
+
+static NSArray<NSString *> *wcpl_sanitizeUserNameArray(id value) {
+    if (![value isKindOfClass:[NSArray class]]) {
+        return @[];
+    }
+    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
+    for (id obj in (NSArray *)value) {
+        if (![obj isKindOfClass:[NSString class]]) {
+            continue;
+        }
+        NSString *name = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (name.length > 0) {
+            [results addObject:name];
+        }
+    }
+    return results.array;
+}
+
+static NSDictionary<NSString *, NSNumber *> *wcpl_sanitizeIgnoreDictionary(id value) {
+    if (![value isKindOfClass:[NSDictionary class]]) {
+        return @{};
+    }
+    NSMutableDictionary<NSString *, NSNumber *> *result = [NSMutableDictionary dictionary];
+    [(NSDictionary *)value enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (![key isKindOfClass:[NSString class]]) {
+            return;
+        }
+        NSString *name = [(NSString *)key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (name.length == 0) {
+            return;
+        }
+        BOOL enabled = NO;
+        if ([obj respondsToSelector:@selector(boolValue)]) {
+            enabled = [obj boolValue];
+        }
+        if (enabled) {
+            result[name] = @(YES);
+        }
+    }];
+    return result;
+}
 
 @interface WCPLThreadSafeMutableDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
 @property (nonatomic, strong) NSMutableDictionary<KeyType, ObjectType> *backing;
@@ -177,53 +225,80 @@ static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
 
 - (instancetype)init {
     if (self = [super init]) {
-        _delaySeconds            = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLDelaySeconds];
-        _autoReceiveEnable       = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLAutoReceiveRedEnvelop];
-        _serialReceive           = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSerialReceive];
-        _blackList               = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLBlackList];
-        _receiveSelfRedEnvelop   = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLReceiveSelfRedEnvelop];
-        _revokeEnable            = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRevokeEnable];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        _delaySeconds            = [defaults integerForKey:kWCPLDelaySeconds];
+        _autoReceiveEnable       = [defaults boolForKey:kWCPLAutoReceiveRedEnvelop];
+
+        id privateEnable = [defaults objectForKey:kWCPLPrivateRedEnvelopEnable];
+        _privateRedEnvelopEnable = privateEnable ? [privateEnable boolValue] : NO;
+
+        id groupEnable = [defaults objectForKey:kWCPLGroupRedEnvelopEnable];
+        _groupRedEnvelopEnable   = groupEnable ? [groupEnable boolValue] : YES;
+
+        _serialReceive           = [defaults boolForKey:kWCPLSerialReceive];
+
+        _blackList               = wcpl_sanitizeUserNameArray([defaults objectForKey:kWCPLBlackList]);
+        _groupDenyList           = wcpl_sanitizeUserNameArray([defaults objectForKey:kWCPLGroupDenyList]);
+
+        id scopeValue = [defaults objectForKey:kWCPLGroupRedEnvelopScope];
+        NSInteger defaultScope = (_blackList.count > 0) ? 1 : 0; // 迁移：旧版仅白名单，空名单默认全部群聊
+        _groupRedEnvelopScope    = scopeValue ? [scopeValue integerValue] : defaultScope;
+        if (_groupRedEnvelopScope < 0 || _groupRedEnvelopScope > 2) {
+            _groupRedEnvelopScope = defaultScope;
+        }
+
+        _privateRedEnvelopAutoReplyText = [defaults stringForKey:kWCPLPrivateRedEnvelopAutoReplyText];
+        _groupRedEnvelopAutoReplyText   = [defaults stringForKey:kWCPLGroupRedEnvelopAutoReplyText];
+
+        id notifyValue = [defaults objectForKey:kWCPLRedEnvelopResultNotify];
+        _redEnvelopResultNotify  = notifyValue ? [notifyValue integerValue] : 0;
+        if (_redEnvelopResultNotify < 0 || _redEnvelopResultNotify > 2) {
+            _redEnvelopResultNotify = 0;
+        }
+
+        _receiveSelfRedEnvelop   = [defaults boolForKey:kWCPLReceiveSelfRedEnvelop];
+        _revokeEnable            = [defaults boolForKey:kWCPLRevokeEnable];
         _chatIgnoreInfo          = [self getChatIgnoreNameList];
-        _userIgnoreEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLUserIgnoreEnable];
+        _userIgnoreEnable        = [defaults boolForKey:kWCPLUserIgnoreEnable];
         _userIgnoreInfo          = [self getUserIgnoreNameList];
-        _lat                     = [[NSUserDefaults standardUserDefaults] doubleForKey:kWCPLFakeLocLat];
-        _lng                     = [[NSUserDefaults standardUserDefaults] doubleForKey:kWCPLFakeLocLng];
-        _fakeLocEnable           = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLFakeLocEnable];
-        _TPOn                    = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLAVTPOn];
-        _messageReplyEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLMessageReplyEnable];
-        _repeatButtonHapticEnable = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRepeatButtonHapticEnable];
-        _repeatButtonStyle       = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonStyle];
-        _repeatButtonIconIndex   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLRepeatButtonIconIndex];
-        _repeatButtonCustomImagePath = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonCustomImage];
-        NSNumber *backgroundAlphaValue = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLRepeatButtonBackgroundAlpha];
+        _lat                     = [defaults doubleForKey:kWCPLFakeLocLat];
+        _lng                     = [defaults doubleForKey:kWCPLFakeLocLng];
+        _fakeLocEnable           = [defaults boolForKey:kWCPLFakeLocEnable];
+        _TPOn                    = [defaults boolForKey:kWCPLAVTPOn];
+        _messageReplyEnable      = [defaults boolForKey:kWCPLMessageReplyEnable];
+        _repeatButtonHapticEnable = [defaults boolForKey:kWCPLRepeatButtonHapticEnable];
+        _repeatButtonStyle       = [defaults integerForKey:kWCPLRepeatButtonStyle];
+        _repeatButtonIconIndex   = [defaults integerForKey:kWCPLRepeatButtonIconIndex];
+        _repeatButtonCustomImagePath = [defaults stringForKey:kWCPLRepeatButtonCustomImage];
+        NSNumber *backgroundAlphaValue = [defaults objectForKey:kWCPLRepeatButtonBackgroundAlpha];
         _repeatButtonBackgroundAlpha = backgroundAlphaValue ? backgroundAlphaValue.doubleValue : kWCPLRepeatButtonBackgroundAlphaDefault;
         if (_repeatButtonBackgroundAlpha < kWCPLRepeatButtonBackgroundAlphaMin ||
             _repeatButtonBackgroundAlpha > kWCPLRepeatButtonBackgroundAlphaMax) {
             _repeatButtonBackgroundAlpha = kWCPLRepeatButtonBackgroundAlphaDefault;
         }
-        NSNumber *sizeValue = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLRepeatButtonSize];
+        NSNumber *sizeValue = [defaults objectForKey:kWCPLRepeatButtonSize];
         _repeatButtonSize = sizeValue ? sizeValue.doubleValue : kWCPLRepeatButtonSizeDefault;
         if (_repeatButtonSize < kWCPLRepeatButtonSizeMin ||
             _repeatButtonSize > kWCPLRepeatButtonSizeMax) {
             _repeatButtonSize = kWCPLRepeatButtonSizeDefault;
         }
-        NSNumber *textColorModeValue = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLRepeatButtonTextColorMode];
+        NSNumber *textColorModeValue = [defaults objectForKey:kWCPLRepeatButtonTextColorMode];
         _repeatButtonTextColorMode = textColorModeValue ? textColorModeValue.integerValue : 0;
-        _repeatButtonTextColorDefault = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorDefault] ?: kWCPLRepeatButtonTextColorDefaultValue;
-        _repeatButtonTextColorText = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorText] ?: kWCPLRepeatButtonTextColorDefaultValue;
-        _repeatButtonTextColorVoice = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorVoice] ?: kWCPLRepeatButtonTextColorDefaultValue;
-        _repeatButtonTextColorEmoticon = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorEmoticon] ?: kWCPLRepeatButtonTextColorDefaultValue;
-        _repeatButtonTextColorQuote = [[NSUserDefaults standardUserDefaults] stringForKey:kWCPLRepeatButtonTextColorQuote] ?: kWCPLRepeatButtonTextColorDefaultValue;
-        _swipeGestureEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeGestureEnable];
-        _swipeQuoteEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeQuoteEnable];
-        _tapReferJumpEnable      = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLTapReferJumpEnable];
-        NSNumber *swipeSensitivity = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLSwipeSensitivityLevel];
+        _repeatButtonTextColorDefault = [defaults stringForKey:kWCPLRepeatButtonTextColorDefault] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorText = [defaults stringForKey:kWCPLRepeatButtonTextColorText] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorVoice = [defaults stringForKey:kWCPLRepeatButtonTextColorVoice] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorEmoticon = [defaults stringForKey:kWCPLRepeatButtonTextColorEmoticon] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _repeatButtonTextColorQuote = [defaults stringForKey:kWCPLRepeatButtonTextColorQuote] ?: kWCPLRepeatButtonTextColorDefaultValue;
+        _swipeGestureEnable      = [defaults boolForKey:kWCPLSwipeGestureEnable];
+        _swipeQuoteEnable        = [defaults boolForKey:kWCPLSwipeQuoteEnable];
+        _tapReferJumpEnable      = [defaults boolForKey:kWCPLTapReferJumpEnable];
+        NSNumber *swipeSensitivity = [defaults objectForKey:kWCPLSwipeSensitivityLevel];
         _swipeSensitivityLevel   = swipeSensitivity ? swipeSensitivity.integerValue : 1;
-        _swipeLeftOtherAction    = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeLeftOtherAction];
-        _swipeLeftSelfAction     = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeLeftSelfAction];
-        _swipeRightEnable        = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLSwipeRightEnable];
-        _swipeRightOtherAction   = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeRightOtherAction];
-        _swipeRightSelfAction    = [[NSUserDefaults standardUserDefaults] integerForKey:kWCPLSwipeRightSelfAction];
+        _swipeLeftOtherAction    = [defaults integerForKey:kWCPLSwipeLeftOtherAction];
+        _swipeLeftSelfAction     = [defaults integerForKey:kWCPLSwipeLeftSelfAction];
+        _swipeRightEnable        = [defaults boolForKey:kWCPLSwipeRightEnable];
+        _swipeRightOtherAction   = [defaults integerForKey:kWCPLSwipeRightOtherAction];
+        _swipeRightSelfAction    = [defaults integerForKey:kWCPLSwipeRightSelfAction];
     }
     return self;
 }
@@ -273,6 +348,16 @@ static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
     [self wcpl_setBool:autoReceiveEnable forKey:kWCPLAutoReceiveRedEnvelop];
 }
 
+- (void)setPrivateRedEnvelopEnable:(BOOL)privateRedEnvelopEnable {
+    _privateRedEnvelopEnable = privateRedEnvelopEnable;
+    [self wcpl_setBool:privateRedEnvelopEnable forKey:kWCPLPrivateRedEnvelopEnable];
+}
+
+- (void)setGroupRedEnvelopEnable:(BOOL)groupRedEnvelopEnable {
+    _groupRedEnvelopEnable = groupRedEnvelopEnable;
+    [self wcpl_setBool:groupRedEnvelopEnable forKey:kWCPLGroupRedEnvelopEnable];
+}
+
 - (void)setReceiveSelfRedEnvelop:(BOOL)receiveSelfRedEnvelop {
     _receiveSelfRedEnvelop = receiveSelfRedEnvelop;
     [self wcpl_setBool:receiveSelfRedEnvelop forKey:kWCPLReceiveSelfRedEnvelop];
@@ -283,9 +368,42 @@ static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
     [self wcpl_setBool:serialReceive forKey:kWCPLSerialReceive];
 }
 
+- (void)setGroupRedEnvelopScope:(NSInteger)groupRedEnvelopScope {
+    NSInteger normalized = groupRedEnvelopScope;
+    if (normalized < 0 || normalized > 2) {
+        normalized = 1;
+    }
+    _groupRedEnvelopScope = normalized;
+    [self wcpl_setInteger:normalized forKey:kWCPLGroupRedEnvelopScope];
+}
+
 - (void)setBlackList:(NSArray *)blackList {
-    _blackList = blackList;
-    [self wcpl_setObject:blackList forKey:kWCPLBlackList];
+    _blackList = wcpl_sanitizeUserNameArray(blackList);
+    [self wcpl_setObject:_blackList forKey:kWCPLBlackList];
+}
+
+- (void)setGroupDenyList:(NSArray *)groupDenyList {
+    _groupDenyList = wcpl_sanitizeUserNameArray(groupDenyList);
+    [self wcpl_setObject:_groupDenyList forKey:kWCPLGroupDenyList];
+}
+
+- (void)setPrivateRedEnvelopAutoReplyText:(NSString *)privateRedEnvelopAutoReplyText {
+    _privateRedEnvelopAutoReplyText = [privateRedEnvelopAutoReplyText copy];
+    [self wcpl_setObject:_privateRedEnvelopAutoReplyText forKey:kWCPLPrivateRedEnvelopAutoReplyText];
+}
+
+- (void)setGroupRedEnvelopAutoReplyText:(NSString *)groupRedEnvelopAutoReplyText {
+    _groupRedEnvelopAutoReplyText = [groupRedEnvelopAutoReplyText copy];
+    [self wcpl_setObject:_groupRedEnvelopAutoReplyText forKey:kWCPLGroupRedEnvelopAutoReplyText];
+}
+
+- (void)setRedEnvelopResultNotify:(NSInteger)redEnvelopResultNotify {
+    NSInteger normalized = redEnvelopResultNotify;
+    if (normalized < 0 || normalized > 2) {
+        normalized = 0;
+    }
+    _redEnvelopResultNotify = normalized;
+    [self wcpl_setInteger:normalized forKey:kWCPLRedEnvelopResultNotify];
 }
 
 - (void)setRevokeEnable:(BOOL)revokeEnable {
@@ -295,10 +413,8 @@ static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
 
 - (NSMutableDictionary *)getChatIgnoreNameList {
     NSDictionary *igDict = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLChatIgnoreInfo];
-    if (!igDict) {
-        igDict = [NSDictionary dictionary];
-    }
-    return [self wcpl_threadSafeDictionaryFromDictionary:igDict];
+    NSDictionary *sanitized = wcpl_sanitizeIgnoreDictionary(igDict);
+    return [self wcpl_threadSafeDictionaryFromDictionary:sanitized];
 }
 
 - (void)saveChatIgnoreNameListToLocalFile {
@@ -315,10 +431,8 @@ static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
 
 - (NSMutableDictionary *)getUserIgnoreNameList {
     NSDictionary *igDict = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLUserIgnoreInfo];
-    if (!igDict) {
-        igDict = [NSDictionary dictionary];
-    }
-    return [self wcpl_threadSafeDictionaryFromDictionary:igDict];
+    NSDictionary *sanitized = wcpl_sanitizeIgnoreDictionary(igDict);
+    return [self wcpl_threadSafeDictionaryFromDictionary:sanitized];
 }
 
 - (void)saveUserIgnoreNameListToLocalFile {
@@ -476,11 +590,13 @@ static NSString *const kWCPLRepeatButtonTextColorDefaultValue = @"#07C160";
 }
 
 - (void)setChatIgnoreInfo:(NSMutableDictionary<NSString *,NSNumber *> *)chatIgnoreInfo {
-    _chatIgnoreInfo = [self wcpl_threadSafeDictionaryFromDictionary:chatIgnoreInfo];
+    NSDictionary *sanitized = wcpl_sanitizeIgnoreDictionary(chatIgnoreInfo);
+    _chatIgnoreInfo = [self wcpl_threadSafeDictionaryFromDictionary:sanitized];
 }
 
 - (void)setUserIgnoreInfo:(NSMutableDictionary<NSString *,NSNumber *> *)userIgnoreInfo {
-    _userIgnoreInfo = [self wcpl_threadSafeDictionaryFromDictionary:userIgnoreInfo];
+    NSDictionary *sanitized = wcpl_sanitizeIgnoreDictionary(userIgnoreInfo);
+    _userIgnoreInfo = [self wcpl_threadSafeDictionaryFromDictionary:sanitized];
 }
 
 - (CGFloat)swipeDistanceScale {

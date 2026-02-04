@@ -15,11 +15,26 @@
 + (instancetype)sharedConfig;
 
 @property (assign, nonatomic) BOOL autoReceiveEnable;
+// 私聊红包
+@property (assign, nonatomic) BOOL privateRedEnvelopEnable;
+// 群聊红包
+@property (assign, nonatomic) BOOL groupRedEnvelopEnable;
 @property (assign, nonatomic) NSInteger delaySeconds;
 @property (assign, nonatomic) BOOL receiveSelfRedEnvelop;
 @property (assign, nonatomic) BOOL serialReceive;
+// 群聊红包生效范围：0=全部群聊，1=仅白名单，2=排除黑名单
+@property (assign, nonatomic) NSInteger groupRedEnvelopScope;
 // 群聊白名单（历史字段名 blackList）
 @property (strong, nonatomic) NSArray *blackList;
+// 群聊黑名单（排除列表）
+@property (strong, nonatomic) NSArray *groupDenyList;
+
+// 领取后自动回复（为空则不启用）
+@property (copy, nonatomic) NSString *privateRedEnvelopAutoReplyText;
+@property (copy, nonatomic) NSString *groupRedEnvelopAutoReplyText;
+
+// 领取结果通知：0=不提醒，1=发给自己，2=发给文件传输助手
+@property (assign, nonatomic) NSInteger redEnvelopResultNotify;
 
 // Advanced sections.
 @property (assign, nonatomic) BOOL revokeEnable;
