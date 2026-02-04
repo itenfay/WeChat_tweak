@@ -145,6 +145,7 @@ static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
 
 // ==================== 本地文本替换（仅显示） ====================
 static const void *kWCPLLocalReplaceMapKey = &kWCPLLocalReplaceMapKey;
+static const void *kWCPLLocalReplaceOriginKey = &kWCPLLocalReplaceOriginKey;
 
 static NSMutableDictionary<NSString *, NSString *> *wcpl_localReplaceMapForController(id controller, BOOL createIfNeeded) {
     if (!controller) return nil;
@@ -210,6 +211,38 @@ static NSString *wcpl_localReplaceText(id controller, CMessageWrap *msgWrap) {
     if (key.length == 0) return nil;
     NSDictionary *map = wcpl_localReplaceMapForController(controller, NO);
     return map[key];
+}
+
+static NSString *wcpl_originalContentForMessageWrap(CMessageWrap *msgWrap) {
+    if (!msgWrap) return nil;
+    id stored = objc_getAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey);
+    return [stored isKindOfClass:[NSString class]] ? (NSString *)stored : nil;
+}
+
+static BOOL wcpl_syncLocalReplaceContent(id controller, CMessageWrap *msgWrap) {
+    if (!controller || !msgWrap) return NO;
+    if (!wcpl_isPlainTextMessage(msgWrap)) return NO;
+    NSString *replaceText = wcpl_localReplaceText(controller, msgWrap);
+    NSString *originText = msgWrap.m_nsContent ?: @"";
+    NSString *storedOrigin = wcpl_originalContentForMessageWrap(msgWrap);
+    if (replaceText.length > 0) {
+        if (!storedOrigin && ![originText isEqualToString:replaceText]) {
+            objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, originText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
+        if (![originText isEqualToString:replaceText]) {
+            msgWrap.m_nsContent = replaceText;
+            return YES;
+        }
+        return NO;
+    }
+    if (storedOrigin) {
+        if (![originText isEqualToString:storedOrigin]) {
+            msgWrap.m_nsContent = storedOrigin;
+        }
+        objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, nil, OBJC_ASSOCIATION_ASSIGN);
+        return YES;
+    }
+    return NO;
 }
 
 static void wcpl_clearLocalReplaceMap(id controller) {
@@ -1787,7 +1820,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             richTextView = nil;
         }
         if (richTextView && [richTextView respondsToSelector:@selector(setContent:)]) {
-            NSString *originText = msgWrap.m_nsContent ?: @"";
+            NSString *originText = wcpl_originalContentForMessageWrap(msgWrap) ?: (msgWrap.m_nsContent ?: @"");
             if (originText.length > 0) {
                 [richTextView setContent:originText];
             }
@@ -1810,6 +1843,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         } @catch (__unused NSException *exception) {
             viewController = nil;
         }
+    }
+    if (viewController) {
+        wcpl_syncLocalReplaceContent(viewController, msgWrap);
     }
     NSString *replaceText = wcpl_localReplaceText(viewController, msgWrap);
     RichTextView *richTextView = nil;
@@ -1860,7 +1896,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         if (!strongSelf) return;
         NSString *input = alert.textFields.firstObject.text ?: @"";
         NSString *trimmed = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (trimmed.length > 0 && !wcpl_originalContentForMessageWrap(msgWrap)) {
+            NSString *originText = msgWrap.m_nsContent ?: @"";
+            objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, originText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
         wcpl_setLocalReplaceText(viewController, msgWrap, trimmed);
+        wcpl_syncLocalReplaceContent(viewController, msgWrap);
         if ([viewController respondsToSelector:@selector(reloadNodeWithMessageWrap:)]) {
             @try {
                 [viewController reloadNodeWithMessageWrap:msgWrap];
