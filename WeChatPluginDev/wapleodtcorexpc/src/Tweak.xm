@@ -175,20 +175,56 @@ static BOOL wcpl_isPlainTextMessage(CMessageWrap *msgWrap) {
 }
 
 static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
-    if (!cell || ![cell respondsToSelector:@selector(viewModel)]) return nil;
-    id viewModel = [cell viewModel];
-    if ([viewModel respondsToSelector:@selector(messageWrap)]) {
+    if (!cell) return nil;
+    if ([cell respondsToSelector:@selector(getCurrentMessageWrap)]) {
         @try {
-            return [viewModel messageWrap];
+            id wrap = [cell getCurrentMessageWrap];
+            if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                return (CMessageWrap *)wrap;
+            }
         } @catch (__unused NSException *exception) {
         }
     }
-    @try {
-        id wrap = [viewModel valueForKey:@"messageWrap"];
-        if ([wrap isKindOfClass:%c(CMessageWrap)]) {
-            return (CMessageWrap *)wrap;
+    if ([cell respondsToSelector:@selector(getMediaWrap)]) {
+        @try {
+            id wrap = [cell getMediaWrap];
+            if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                return (CMessageWrap *)wrap;
+            }
+        } @catch (__unused NSException *exception) {
         }
-    } @catch (__unused NSException *exception) {
+    }
+    if ([cell respondsToSelector:@selector(viewModel)]) {
+        id viewModel = [cell viewModel];
+        if ([viewModel respondsToSelector:@selector(messageWrap)]) {
+            @try {
+                return [viewModel messageWrap];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        if ([viewModel respondsToSelector:@selector(msgWrap)]) {
+            @try {
+                id wrap = [viewModel msgWrap];
+                if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                    return (CMessageWrap *)wrap;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        @try {
+            id wrap = [viewModel valueForKey:@"messageWrap"];
+            if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                return (CMessageWrap *)wrap;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+        @try {
+            id wrap = [viewModel valueForKey:@"msgWrap"];
+            if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                return (CMessageWrap *)wrap;
+            }
+        } @catch (__unused NSException *exception) {
+        }
     }
     return nil;
 }
@@ -1893,10 +1929,26 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             } @catch (__unused NSException *exception) {
             }
         }
-        if ([self respondsToSelector:@selector(layoutContentView)] &&
-            !objc_getAssociatedObject(self, kWCPLLocalReplaceLayoutingKey)) {
+        if (!objc_getAssociatedObject(self, kWCPLLocalReplaceLayoutingKey)) {
             objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            ((void (*)(id, SEL))objc_msgSend)(self, @selector(layoutContentView));
+            if ([self respondsToSelector:@selector(resetLayoutCache)]) {
+                @try {
+                    [self resetLayoutCache];
+                } @catch (__unused NSException *exception) {
+                }
+            }
+            if ([self respondsToSelector:@selector(setNeedsLayout)]) {
+                [self setNeedsLayout];
+            }
+            if ([self respondsToSelector:@selector(layoutIfNeeded)]) {
+                [self layoutIfNeeded];
+            }
+            if ([self respondsToSelector:@selector(updateContentOffset)]) {
+                @try {
+                    [self updateContentOffset];
+                } @catch (__unused NSException *exception) {
+                }
+            }
             objc_setAssociatedObject(self, kWCPLLocalReplaceLayoutingKey, nil, OBJC_ASSOCIATION_ASSIGN);
         }
     }

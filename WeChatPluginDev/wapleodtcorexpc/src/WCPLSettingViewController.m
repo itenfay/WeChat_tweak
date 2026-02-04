@@ -24,7 +24,9 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextIgnoreChatroom,
 };
 
-@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
+@protocol GroupSelectContactsViewControllerDelegate;
+
+@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, GroupSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 @property (nonatomic, assign) WCPLGroupSelectContext groupSelectContext;
@@ -192,9 +194,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showBlackList {
     self.groupSelectContext = WCPLGroupSelectContextBlackList;
     NSArray *selected = [WCPLRedEnvelopConfig sharedConfig].blackList ?: @[];
-    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"白名单"
-                                                   onlyChatRoom:YES
-                                                          scene:5
+    if ([self wcpl_presentGroupSelectContactsControllerWithTitle:@"白名单"
                                              selectedUserNames:selected]) {
         return;
     }
@@ -567,12 +567,101 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     return YES;
 }
 
+- (BOOL)wcpl_presentGroupSelectContactsControllerWithTitle:(NSString *)title
+                                       selectedUserNames:(NSArray<NSString *> *)selected {
+    Class controllerClass = NSClassFromString(@"GroupSelectContactsViewController");
+    if (!controllerClass) {
+        return NO;
+    }
+    id controller = [[controllerClass alloc] init];
+    if (!controller) {
+        return NO;
+    }
+
+    if ([controller respondsToSelector:@selector(setM_delegate:)]) {
+        ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_delegate:), self);
+    } else {
+        @try {
+            [controller setValue:self forKey:@"m_delegate"];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([controller respondsToSelector:@selector(setM_bShowSearchBar:)]) {
+        ((void (*)(id, SEL, BOOL))objc_msgSend)(controller, @selector(setM_bShowSearchBar:), YES);
+    } else {
+        @try {
+            [controller setValue:@(YES) forKey:@"m_bShowSearchBar"];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([controller respondsToSelector:@selector(setM_uiDataScene:)]) {
+        ((void (*)(id, SEL, unsigned int))objc_msgSend)(controller, @selector(setM_uiDataScene:), 5);
+    } else {
+        @try {
+            [controller setValue:@(5) forKey:@"m_uiDataScene"];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSMutableDictionary *selectedDict = [self wcpl_multiSelectDictionaryWithUserNames:selected];
+    if (selectedDict.count > 0) {
+        if ([controller respondsToSelector:@selector(setM_dicMultiSelect:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_dicMultiSelect:), selectedDict);
+        } else {
+            @try {
+                [controller setValue:selectedDict forKey:@"m_dicMultiSelect"];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (title.length > 0) {
+        if ([controller respondsToSelector:@selector(setM_viewControllerTitle:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_viewControllerTitle:), title);
+        } else {
+            @try {
+                [controller setValue:title forKey:@"m_viewControllerTitle"];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        if ([controller respondsToSelector:@selector(setM_rightBarButtonTitle:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_rightBarButtonTitle:), @"确定");
+        } else {
+            @try {
+                [controller setValue:@"确定" forKey:@"m_rightBarButtonTitle"];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    UIViewController *presentController = nil;
+    if ([controller isKindOfClass:[UIViewController class]]) {
+        presentController = controller;
+    } else if ([controller respondsToSelector:@selector(getViewController)]) {
+        @try {
+            id viewController = [controller performSelector:@selector(getViewController)];
+            if ([viewController isKindOfClass:[UIViewController class]]) {
+                presentController = viewController;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (!presentController) {
+        return NO;
+    }
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:presentController];
+    [self presentViewController:nc animated:YES completion:nil];
+    return YES;
+}
+
 - (void)showIgnoredChatroomList {
     self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
     NSArray *selected = [self ignoredChatroomUserNames];
-    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"屏蔽群聊"
-                                                   onlyChatRoom:YES
-                                                          scene:5
+    if ([self wcpl_presentGroupSelectContactsControllerWithTitle:@"屏蔽群聊"
                                              selectedUserNames:selected]) {
         return;
     }
@@ -1516,6 +1605,24 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self reloadTableData];
     self.groupSelectContext = WCPLGroupSelectContextNone;
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - GroupSelectContactsViewControllerDelegate
+
+- (void)onGroupMultiSelectContactReturn:(NSArray *)arg1 {
+    [self onMultiSelectContactReturn:arg1];
+}
+
+- (void)onGroupSelectContactReturn:(id)arg1 {
+    if (!arg1) {
+        [self onMultiSelectContactCancel];
+        return;
+    }
+    [self onMultiSelectContactReturn:@[arg1]];
+}
+
+- (_Bool)onShouldSelectContact:(id)arg1 {
+    return YES;
 }
 
 @end
