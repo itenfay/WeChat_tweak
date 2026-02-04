@@ -5,7 +5,7 @@
 // Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "MMUIViewController.h"
+#import <UIKit/UIKit.h>
 
 @protocol WCPLMultiSelectContactsViewControllerDelegate <NSObject>
 
@@ -16,7 +16,7 @@
 
 @end
 
-@interface WCPLMultiSelectContactsViewController : MMUIViewController
+@interface WCPLMultiSelectContactsViewController : UIViewController
 
 - (instancetype)initWithSelectedContacts:(NSArray *)selectedContacts;
 
