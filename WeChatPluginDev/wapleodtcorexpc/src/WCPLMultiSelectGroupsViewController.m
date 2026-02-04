@@ -8,6 +8,7 @@
 #import "WCPLMultiSelectGroupsViewController.h"
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLContactLookup.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
@@ -39,7 +40,6 @@
     [super viewWillAppear:animated];
     
     CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    Class contactClass = objc_getClass("CContact");
 
     for (NSString *contactName in self.blackList) {
         if (![contactName isKindOfClass:[NSString class]] || contactName.length == 0) {
@@ -50,22 +50,13 @@
             continue;
         }
 
-        CContact *contact = nil;
-        if (contactMgr && [contactMgr respondsToSelector:@selector(getContactByName:)]) {
-            contact = [contactMgr getContactByName:userName];
-            if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
-                contact = [contactMgr getContactByNameFromDB:userName];
-            }
-            if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-                contact = [contactMgr getContactByNameFromCache:userName];
-            }
-        }
-        if (contact && contactClass && ![contact isKindOfClass:contactClass]) {
-            WCPLLog(@"群聊预选异常类型: %@ (%@)", NSStringFromClass([contact class]), userName);
-            contact = nil;
+        CContact *contact = WCPLFindContactByUserName(userName, contactMgr, self.selectView.m_contactsDataLogic);
+        if (!contact) {
+            WCPLLog(@"群聊预选跳过(未找到联系人): %@", userName);
+            continue;
         }
 
-        id selectObject = contact ?: userName;
+        id selectObject = contact;
         BOOL alreadySelected = NO;
         if (selectObject && [self.selectView respondsToSelector:@selector(isSelected:)]) {
             @try {
@@ -78,21 +69,10 @@
             continue;
         }
 
-        if (contact) {
-            @try {
-                [self.selectView addSelect:contact];
-            } @catch (__unused NSException *exception) {
-                WCPLLog(@"群聊 addSelect 失败: %@", userName);
-            }
-        } else if ([self.selectView respondsToSelector:@selector(updateMultiSelect:)]) {
-            @try {
-                // 兼容：部分机型/场景 contactMgr 取不到 CContact，但 ContactSelectView 仍可按用户名回显。
-                [self.selectView updateMultiSelect:userName];
-            } @catch (__unused NSException *exception) {
-                WCPLLog(@"群聊预选失败: %@", userName);
-            }
-        } else {
-            WCPLLog(@"群聊预选跳过(未找到联系人且无 updateMultiSelect): %@", userName);
+        @try {
+            [self.selectView addSelect:contact];
+        } @catch (__unused NSException *exception) {
+            WCPLLog(@"群聊 addSelect 失败: %@", userName);
         }
     }
 
