@@ -84,10 +84,15 @@
             } @catch (__unused NSException *exception) {
                 WCPLLog(@"群聊 addSelect 失败: %@", userName);
             }
+        } else if ([self.selectView respondsToSelector:@selector(updateMultiSelect:)]) {
+            @try {
+                // 兼容：部分机型/场景 contactMgr 取不到 CContact，但 ContactSelectView 仍可按用户名回显。
+                [self.selectView updateMultiSelect:userName];
+            } @catch (__unused NSException *exception) {
+                WCPLLog(@"群聊预选失败: %@", userName);
+            }
         } else {
-            // 兼容：ContactSelectView 内部会把选中对象当 CContact 处理（会调用 isAccountDeleted 等），
-            // 直接传 NSString 可能导致闪退，这里只在能拿到 CContact 时才回显预选。
-            WCPLLog(@"群聊预选跳过(未找到联系人): %@", userName);
+            WCPLLog(@"群聊预选跳过(未找到联系人且无 updateMultiSelect): %@", userName);
         }
     }
 
