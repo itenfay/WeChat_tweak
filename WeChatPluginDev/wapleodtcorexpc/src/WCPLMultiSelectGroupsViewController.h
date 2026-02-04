@@ -5,7 +5,7 @@
 // Copyright © 2017 dyf. All rights reserved.
 //
 
-#import "MMUIViewController.h"
+#import <UIKit/UIKit.h>
 
 @protocol MultiSelectGroupsViewControllerDelegate <NSObject>
 
@@ -16,7 +16,7 @@
 
 @end
 
-@interface WCPLMultiSelectGroupsViewController : MMUIViewController
+@interface WCPLMultiSelectGroupsViewController : UIViewController
 
 - (instancetype)initWithBlackList:(NSArray *)blackList;
 

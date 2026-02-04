@@ -47,8 +47,8 @@
     }
 }
 
-- (unsigned long long)supportedInterfaceOrientations {
-    return (unsigned long long)UIInterfaceOrientationMaskPortrait;
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (id)getSafeSearchViewController {
