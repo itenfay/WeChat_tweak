@@ -47,21 +47,14 @@
     }
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+- (unsigned long long)supportedInterfaceOrientations {
+    return (unsigned long long)UIInterfaceOrientationMaskPortrait;
 }
 
 - (id)getSafeSearchViewController {
     return self;
 }
 
-- (BOOL)isKindOfClass:(Class)aClass {
-    Class mmViewControllerClass = NSClassFromString(@"MMUIViewController");
-    if (mmViewControllerClass && aClass == mmViewControllerClass) {
-        return YES;
-    }
-    return [super isKindOfClass:aClass];
-}
 
 - (void)initTitleArea {
     self.navigationItem.leftBarButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithTitle:@"取消" target:self action:@selector(onCancel:) style:0];
