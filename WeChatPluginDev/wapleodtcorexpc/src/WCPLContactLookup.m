@@ -100,18 +100,6 @@ CContact *WCPLFindContactByUserName(NSString *userName, CContactMgr *contactMgr,
         return nil;
     }
 
-    if ([dataLogic respondsToSelector:@selector(getContactForSearchByName:)]) {
-        id result = nil;
-        @try {
-            result = [dataLogic getContactForSearchByName:target];
-        } @catch (__unused NSException *exception) {
-            result = nil;
-        }
-        if (result && (!contactClass || [result isKindOfClass:contactClass])) {
-            return (CContact *)result;
-        }
-    }
-
     id allContacts = nil;
     if ([dataLogic respondsToSelector:@selector(getAllContactsDictionary)]) {
         @try {
