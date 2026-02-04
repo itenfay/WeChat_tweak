@@ -9,6 +9,7 @@
 #import "WCPLFuncService.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLLogger.h"
 #import <objc/runtime.h>
 
 @interface WCPLMultiSelectGroupsViewController () <ContactSelectViewDelegate>
@@ -38,13 +39,52 @@
     [super viewWillAppear:animated];
     
     CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    
+
     for (NSString *contactName in self.blackList) {
-        CContact *contact = [contactMgr getContactByName:contactName];
+        if (![contactName isKindOfClass:[NSString class]] || contactName.length == 0) {
+            continue;
+        }
+        NSString *userName = [contactName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (userName.length == 0) {
+            continue;
+        }
+
+        CContact *contact = nil;
+        if (contactMgr && [contactMgr respondsToSelector:@selector(getContactByName:)]) {
+            contact = [contactMgr getContactByName:userName];
+            if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
+                contact = [contactMgr getContactByNameFromDB:userName];
+            }
+            if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
+                contact = [contactMgr getContactByNameFromCache:userName];
+            }
+        }
+
+        id selectObject = contact ?: userName;
+        BOOL alreadySelected = NO;
+        if (selectObject && [self.selectView respondsToSelector:@selector(isSelected:)]) {
+            @try {
+                alreadySelected = [self.selectView isSelected:selectObject];
+            } @catch (__unused NSException *exception) {
+                alreadySelected = NO;
+            }
+        }
+        if (alreadySelected) {
+            continue;
+        }
+
         if (contact) {
             [self.selectView addSelect:contact];
+        } else if ([self.selectView respondsToSelector:@selector(updateMultiSelect:)]) {
+            @try {
+                [self.selectView updateMultiSelect:userName];
+            } @catch (__unused NSException *exception) {
+                WCPLLog(@"群聊预选失败: %@", userName);
+            }
         }
     }
+
+    self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -134,32 +174,34 @@
     if ([obj isKindOfClass:[NSString class]]) {
         return (NSString *)obj;
     }
-    Class contactClass = NSClassFromString(@"CContact");
-    if (contactClass && [obj isKindOfClass:contactClass]) {
-        NSString *usrName = nil;
-        @try {
-            usrName = [obj valueForKey:@"m_nsUsrName"];
-        } @catch (__unused NSException *exception) {
-            usrName = nil;
+    NSString *usrName = nil;
+    @try {
+        id value = [obj valueForKey:@"m_nsUsrName"];
+        if ([value isKindOfClass:[NSString class]]) {
+            usrName = (NSString *)value;
         }
-        return usrName;
+    } @catch (__unused NSException *exception) {
+        usrName = nil;
     }
-    return nil;
+    return usrName;
 }
 
 - (NSArray<NSString *> *)wcpl_selectedUserNames {
-    NSMutableArray<NSString *> *names = [NSMutableArray array];
+    NSMutableOrderedSet<NSString *> *names = [NSMutableOrderedSet orderedSet];
     NSDictionary *selected = self.selectView.m_dicMultiSelect ?: @{};
     for (id key in selected) {
         NSString *name = [self wcpl_userNameFromObject:key];
         if (!name) {
             name = [self wcpl_userNameFromObject:selected[key]];
         }
-        if (name.length > 0) {
-            [names addObject:name];
+        if ([name isKindOfClass:[NSString class]]) {
+            name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if (name.length > 0) {
+                [names addObject:name];
+            }
         }
     }
-    return names.copy;
+    return names.array;
 }
 
 @end

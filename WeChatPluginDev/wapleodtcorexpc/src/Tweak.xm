@@ -14,6 +14,7 @@
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
 #import "WCPLCrashReporter.h"
+#import "WCPLLogger.h"
 #import "RichTextView.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -638,7 +639,20 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
     };
 
-    if (shouldReceiveRedEnvelop()) {
+    BOOL allowOpen = shouldReceiveRedEnvelop();
+    if (mgrParams) {
+        WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+        BOOL isGroupSession = ([mgrParams.sessionUserName rangeOfString:@"@chatroom"].location != NSNotFound);
+        WCPLLog(@"红包回包判定: session=%@ isGroup=%d scope=%ld wl=%lu deny=%lu allow=%d",
+                mgrParams.sessionUserName ?: @"",
+                isGroupSession,
+                (long)config.groupRedEnvelopScope,
+                (unsigned long)config.blackList.count,
+                (unsigned long)config.groupDenyList.count,
+                allowOpen);
+    }
+
+    if (allowOpen) {
         mgrParams.timingIdentifier = responseDict[@"timingIdentifier"];
 
         unsigned int delaySeconds = [self wcpl_calculateDelaySeconds];
@@ -835,9 +849,21 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             if (groupUserName.length == 0) { break; }
 
             if (config.groupRedEnvelopScope == 1) { // 仅白名单
-                if (![config.blackList containsObject:groupUserName]) { break; }
+                BOOL inWhiteList = [config.blackList containsObject:groupUserName];
+                WCPLLog(@"群红包预检: session=%@ scope=白名单 wl=%lu allow=%d",
+                        groupUserName,
+                        (unsigned long)config.blackList.count,
+                        inWhiteList);
+                if (!inWhiteList) { break; }
             } else if (config.groupRedEnvelopScope == 2) { // 排除黑名单
-                if ([config.groupDenyList containsObject:groupUserName]) { break; }
+                BOOL inDenyList = [config.groupDenyList containsObject:groupUserName];
+                WCPLLog(@"群红包预检: session=%@ scope=黑名单 deny=%lu allow=%d",
+                        groupUserName,
+                        (unsigned long)config.groupDenyList.count,
+                        !inDenyList);
+                if (inDenyList) { break; }
+            } else {
+                WCPLLog(@"群红包预检: session=%@ scope=全部", groupUserName);
             }
         } else {
             // 私聊红包：仅接收方处理
