@@ -1844,10 +1844,14 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             viewController = nil;
         }
     }
+    BOOL didSync = NO;
     if (viewController) {
-        wcpl_syncLocalReplaceContent(viewController, msgWrap);
+        didSync = wcpl_syncLocalReplaceContent(viewController, msgWrap);
     }
     NSString *replaceText = wcpl_localReplaceText(viewController, msgWrap);
+    if (replaceText.length == 0 && !didSync) {
+        return;
+    }
     RichTextView *richTextView = nil;
     @try {
         richTextView = MSHookIvar<RichTextView *>(self, "m_richTextView");
@@ -1857,9 +1861,37 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     if (!richTextView || ![richTextView respondsToSelector:@selector(setContent:)]) return;
     NSString *displayText = replaceText.length > 0 ? replaceText : msgWrap.m_nsContent;
     if (displayText.length == 0) return;
+    if ([richTextView respondsToSelector:@selector(displayedText)]) {
+        @try {
+            NSString *currentText = [richTextView displayedText];
+            if ([currentText isKindOfClass:[NSString class]] && [currentText isEqualToString:displayText]) {
+                return;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
     [richTextView setContent:displayText];
     if ([richTextView respondsToSelector:@selector(forceDisplayInSync)]) {
         [richTextView forceDisplayInSync];
+    }
+    if (didSync) {
+        id viewModel = nil;
+        if ([self respondsToSelector:@selector(viewModel)]) {
+            @try {
+                viewModel = [self viewModel];
+            } @catch (__unused NSException *exception) {
+                viewModel = nil;
+            }
+        }
+        if (viewModel && [viewModel respondsToSelector:@selector(resetLayoutCache)]) {
+            @try {
+                [viewModel resetLayoutCache];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        if ([self respondsToSelector:@selector(setNeedsLayout)]) {
+            [self setNeedsLayout];
+        }
     }
 }
 
