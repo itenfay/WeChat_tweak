@@ -39,6 +39,7 @@
     [super viewWillAppear:animated];
     
     CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    Class contactClass = objc_getClass("CContact");
 
     for (NSString *contactName in self.blackList) {
         if (![contactName isKindOfClass:[NSString class]] || contactName.length == 0) {
@@ -59,6 +60,10 @@
                 contact = [contactMgr getContactByNameFromCache:userName];
             }
         }
+        if (contact && contactClass && ![contact isKindOfClass:contactClass]) {
+            WCPLLog(@"群聊预选异常类型: %@ (%@)", NSStringFromClass([contact class]), userName);
+            contact = nil;
+        }
 
         id selectObject = contact ?: userName;
         BOOL alreadySelected = NO;
@@ -74,7 +79,11 @@
         }
 
         if (contact) {
-            [self.selectView addSelect:contact];
+            @try {
+                [self.selectView addSelect:contact];
+            } @catch (__unused NSException *exception) {
+                WCPLLog(@"群聊 addSelect 失败: %@", userName);
+            }
         } else if ([self.selectView respondsToSelector:@selector(updateMultiSelect:)]) {
             @try {
                 [self.selectView updateMultiSelect:userName];
