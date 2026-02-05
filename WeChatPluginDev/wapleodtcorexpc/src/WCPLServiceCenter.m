@@ -16,7 +16,7 @@ static id wcpl_callClassSelectorIfExists(Class cls, SEL selector) {
 static id wcpl_getServiceCenterForClass(Class cls) {
     if (!cls) return nil;
 
-    static const SEL selectors[] = {
+    const SEL selectors[] = {
         @selector(defaultCenter),
         @selector(defaultServiceCenter),
         @selector(sharedCenter),
