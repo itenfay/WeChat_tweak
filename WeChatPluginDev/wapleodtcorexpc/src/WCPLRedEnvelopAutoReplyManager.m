@@ -187,14 +187,67 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
         return NO;
     }
 
+    NSString *wrapContent = nil;
+    NSString *displayContent = nil;
+    @try {
+        wrapContent = wcpl_rea_trimString(msgWrap.m_nsContent);
+        if ([msgWrap respondsToSelector:@selector(GetDisplayContent)]) {
+            id value = ((id (*)(id, SEL))objc_msgSend)(msgWrap, @selector(GetDisplayContent));
+            if ([value isKindOfClass:[NSString class]]) {
+                displayContent = wcpl_rea_trimString((NSString *)value);
+            }
+        }
+    } @catch (__unused NSException *exception) {
+        wrapContent = nil;
+        displayContent = nil;
+    }
+    WCPLLog(@"红包自动回复发送准备: to=%@ textLen=%lu wrapLen=%lu displayLen=%lu",
+            session,
+            (unsigned long)content.length,
+            (unsigned long)wrapContent.length,
+            (unsigned long)displayContent.length);
+
+    // 关键：部分版本仅把 MsgWrap 入发送队列会导致本地落库/展示内容为空。
+    // 先通过 CMessageMgr.AddMsg 落库生成 localId，再走发送链路（更贴近微信原生流程）。
     id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (messageMgr && [messageMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
+        @try {
+            unsigned int localId = 0;
+            if ([msgWrap respondsToSelector:@selector(m_uiMesLocalID)]) {
+                localId = msgWrap.m_uiMesLocalID;
+            }
+            if (localId == 0) {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), session, msgWrap);
+            }
+            if ([msgWrap respondsToSelector:@selector(m_uiMesLocalID)]) {
+                WCPLLog(@"红包自动回复落库: to=%@ localId=%u", session, msgWrap.m_uiMesLocalID);
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
     Class messageMgrClass = objc_getClass("CMessageMgr");
     if (messageMgr && messageMgrClass) {
         Ivar bypIvar = class_getInstanceVariable(messageMgrClass, "m_bypSendMessageMgr");
         id bypMgr = bypIvar ? object_getIvar(messageMgr, bypIvar) : nil;
+        if (!bypMgr) {
+            @try {
+                bypMgr = [messageMgr valueForKey:@"m_bypSendMessageMgr"];
+            } @catch (__unused NSException *exception) {
+                bypMgr = nil;
+            }
+        }
+        if (!bypMgr) {
+            @try {
+                bypMgr = [messageMgr valueForKey:@"bypSendMessageMgr"];
+            } @catch (__unused NSException *exception) {
+                bypMgr = nil;
+            }
+        }
         if (bypMgr && [bypMgr respondsToSelector:@selector(StartSendMsg:)]) {
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(bypMgr, @selector(StartSendMsg:), msgWrap);
+                WCPLLog(@"红包自动回复发送完成: via=byp to=%@", session);
                 return YES;
             } @catch (__unused NSException *exception) {
             }
@@ -208,6 +261,7 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
             if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
                 ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
             }
+            WCPLLog(@"红包自动回复发送完成: via=sendMgr to=%@", session);
             return YES;
         } @catch (__unused NSException *exception) {
             return NO;
