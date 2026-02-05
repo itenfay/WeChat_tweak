@@ -348,14 +348,42 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
     Class wrapClass = objc_getClass("CMessageWrap");
     if (!wrapClass) return NO;
 
-    CMessageWrap *msgWrap = nil;
-    if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
-        msgWrap = [[wrapClass alloc] initWithMsgType:1 nsFromUsr:selfUserName];
-    } else if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
-        msgWrap = [[wrapClass alloc] initWithMsgType:1];
+    CMessageWrap *(^tryFormTextWrapViaLogic)(void) = ^CMessageWrap *() {
+        Class logicClass = objc_getClass("BaseMsgContentLogicController");
+        if (!logicClass) return nil;
+
+        id logic = nil;
         @try {
-            [msgWrap setM_nsFromUsr:selfUserName];
+            logic = [[logicClass alloc] init];
         } @catch (__unused NSException *exception) {
+            logic = nil;
+        }
+        if (!logic) return nil;
+        if (![logic respondsToSelector:@selector(FormTextMsg:withText:)]) return nil;
+
+        id wrap = nil;
+        @try {
+            wrap = ((id (*)(id, SEL, id, id))objc_msgSend)(logic, @selector(FormTextMsg:withText:), session, content);
+        } @catch (__unused NSException *exception) {
+            wrap = nil;
+        }
+        if ([wrap isKindOfClass:wrapClass]) {
+            return (CMessageWrap *)wrap;
+        }
+        return nil;
+    };
+
+    CMessageWrap *msgWrap = tryFormTextWrapViaLogic();
+    BOOL usedLogicWrap = (msgWrap != nil);
+    if (!msgWrap) {
+        if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
+            msgWrap = [[wrapClass alloc] initWithMsgType:1 nsFromUsr:selfUserName];
+        } else if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
+            msgWrap = [[wrapClass alloc] initWithMsgType:1];
+            @try {
+                [msgWrap setM_nsFromUsr:selfUserName];
+            } @catch (__unused NSException *exception) {
+            }
         }
     }
     if (!msgWrap) return NO;
@@ -379,6 +407,24 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
         if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
             [msgWrap setM_nsPushContent:content];
         }
+        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+            [msgWrap setM_nsFromUsr:selfUserName];
+        }
+        if ([session rangeOfString:@"@chatroom"].location != NSNotFound) {
+            NSString *msgSource = wcpl_trimString(msgWrap.m_nsMsgSource);
+            if (msgSource.length == 0) {
+                msgWrap.m_nsMsgSource = @"<msgsource><atuserlist><![CDATA[]]></atuserlist></msgsource>";
+            }
+            if ([msgWrap respondsToSelector:@selector(ChangeForChatRoom)]) {
+                [msgWrap ChangeForChatRoom];
+            }
+        }
+        if ([msgWrap respondsToSelector:@selector(ChangeForMsgSource)]) {
+            [msgWrap ChangeForMsgSource];
+        }
+        if ([msgWrap respondsToSelector:@selector(UpdateMsgSource)]) {
+            [msgWrap UpdateMsgSource];
+        }
         if ([msgWrap respondsToSelector:@selector(UpdateContent:)]) {
             [msgWrap UpdateContent:content];
         }
@@ -401,12 +447,28 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
 
     NSString *wrapContentAfter = nil;
     NSString *pushContentAfter = nil;
+    NSString *displayContent = nil;
+    NSString *secContent = nil;
     @try {
         wrapContentAfter = wcpl_trimString([msgWrap m_nsContent]);
         pushContentAfter = wcpl_trimString([msgWrap m_nsPushContent]);
+        if ([msgWrap respondsToSelector:@selector(GetDisplayContent)]) {
+            id value = [msgWrap GetDisplayContent];
+            if ([value isKindOfClass:[NSString class]]) {
+                displayContent = wcpl_trimString((NSString *)value);
+            }
+        }
+        if ([msgWrap respondsToSelector:@selector(getSecContent)]) {
+            id value = [msgWrap getSecContent];
+            if ([value isKindOfClass:[NSString class]]) {
+                secContent = wcpl_trimString((NSString *)value);
+            }
+        }
     } @catch (__unused NSException *exception) {
         wrapContentAfter = nil;
         pushContentAfter = nil;
+        displayContent = nil;
+        secContent = nil;
     }
     WCPLLog(@"发送文本准备: to=%@ contentLen=%lu wrapBefore=%lu pushBefore=%lu wrapAfter=%lu pushAfter=%lu",
             session,
@@ -415,6 +477,29 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
             (unsigned long)pushContentBefore.length,
             (unsigned long)wrapContentAfter.length,
             (unsigned long)pushContentAfter.length);
+    WCPLLog(@"发送文本内容: usedLogic=%d msgType=%u msgFlag=%u displayLen=%lu secLen=%lu",
+            usedLogicWrap,
+            msgWrap.m_uiMessageType,
+            msgWrap.m_uiMsgFlag,
+            (unsigned long)displayContent.length,
+            (unsigned long)secContent.length);
+
+    // 优先走 BypSendMessageMgr（更贴近微信原生发送链路）
+    id messageMgr = wcpl_getMessageMgr();
+    Class messageMgrClass = objc_getClass("CMessageMgr");
+    if (messageMgr && messageMgrClass) {
+        Ivar bypIvar = class_getInstanceVariable(messageMgrClass, "m_bypSendMessageMgr");
+        id bypMgr = bypIvar ? object_getIvar(messageMgr, bypIvar) : nil;
+        if (bypMgr && [bypMgr respondsToSelector:@selector(StartSendMsg:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(bypMgr, @selector(StartSendMsg:), msgWrap);
+                WCPLLog(@"发送文本完成: via=byp to=%@ ok=1", session);
+                return YES;
+            } @catch (__unused NSException *exception) {
+                WCPLLog(@"发送文本异常: via=byp to=%@", session);
+            }
+        }
+    }
 
     id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
     if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
@@ -423,8 +508,10 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
             if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
                 [sendMgr SendMsg];
             }
+            WCPLLog(@"发送文本完成: via=sendMgr to=%@ ok=1", session);
             return YES;
         } @catch (__unused NSException *exception) {
+            WCPLLog(@"发送文本异常: via=sendMgr to=%@", session);
             return NO;
         }
     }
