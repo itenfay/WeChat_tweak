@@ -360,15 +360,36 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
     }
     if (!msgWrap) return NO;
 
+    NSString *wrapContentBefore = nil;
+    NSString *pushContentBefore = nil;
+    @try {
+        wrapContentBefore = wcpl_trimString([msgWrap m_nsContent]);
+        pushContentBefore = wcpl_trimString([msgWrap m_nsPushContent]);
+    } @catch (__unused NSException *exception) {
+        wrapContentBefore = nil;
+        pushContentBefore = nil;
+    }
+
     @try {
         [msgWrap setM_nsToUsr:session];
+        // 重要：不同版本 UpdateContent: 行为不一致，不能只依赖它；必须确保 m_nsContent 被设置。
+        if ([msgWrap respondsToSelector:@selector(setM_nsContent:)]) {
+            [msgWrap setM_nsContent:content];
+        }
+        if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
+            [msgWrap setM_nsPushContent:content];
+        }
         if ([msgWrap respondsToSelector:@selector(UpdateContent:)]) {
             [msgWrap UpdateContent:content];
-        } else {
-            [msgWrap setM_nsContent:content];
         }
         if ([msgWrap respondsToSelector:@selector(changeForPlainTextMsg)]) {
             [msgWrap changeForPlainTextMsg];
+        }
+        if ([msgWrap respondsToSelector:@selector(ChangeForPushContent)]) {
+            [msgWrap ChangeForPushContent];
+        }
+        if ([msgWrap respondsToSelector:@selector(ChangeForDisplay)]) {
+            [msgWrap ChangeForDisplay];
         }
         if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
             [msgWrap setM_uiStatus:1];
@@ -377,6 +398,23 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
     } @catch (__unused NSException *exception) {
         return NO;
     }
+
+    NSString *wrapContentAfter = nil;
+    NSString *pushContentAfter = nil;
+    @try {
+        wrapContentAfter = wcpl_trimString([msgWrap m_nsContent]);
+        pushContentAfter = wcpl_trimString([msgWrap m_nsPushContent]);
+    } @catch (__unused NSException *exception) {
+        wrapContentAfter = nil;
+        pushContentAfter = nil;
+    }
+    WCPLLog(@"发送文本准备: to=%@ contentLen=%lu wrapBefore=%lu pushBefore=%lu wrapAfter=%lu pushAfter=%lu",
+            session,
+            (unsigned long)content.length,
+            (unsigned long)wrapContentBefore.length,
+            (unsigned long)pushContentBefore.length,
+            (unsigned long)wrapContentAfter.length,
+            (unsigned long)pushContentAfter.length);
 
     id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
     if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
