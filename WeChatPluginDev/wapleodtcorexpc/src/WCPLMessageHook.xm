@@ -75,6 +75,17 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     return nil;
 }
 
+static id wcpl_safeObjectIvar(id obj, const char *name) {
+    if (!obj || !name) return nil;
+    Class cls = object_getClass(obj);
+    if (!cls) return nil;
+    Ivar ivar = class_getInstanceVariable(cls, name);
+    if (!ivar) return nil;
+    const char *typeEncoding = ivar_getTypeEncoding(ivar);
+    if (!typeEncoding || typeEncoding[0] != '@') return nil;
+    return object_getIvar(obj, ivar);
+}
+
 // ==================== 本地文本替换（仅显示） ====================
 static const void *kWCPLLocalReplaceMapKey = &kWCPLLocalReplaceMapKey;
 static const void *kWCPLLocalReplaceOriginKey = &kWCPLLocalReplaceOriginKey;
@@ -610,11 +621,13 @@ static void wcpl_clearLocalReplaceMap(id controller) {
     }
     NSString *replaceText = wcpl_localReplaceText(viewController, msgWrap);
     if (replaceText.length > 0) {
-        RichTextView *richTextView = nil;
-        @try {
-            richTextView = MSHookIvar<RichTextView *>(self, "m_richTextView");
-        } @catch (__unused NSException *exception) {
-            richTextView = nil;
+        RichTextView *richTextView = (RichTextView *)wcpl_safeObjectIvar(self, "m_richTextView");
+        if (!richTextView) {
+            @try {
+                richTextView = [self valueForKey:@"m_richTextView"];
+            } @catch (__unused NSException *exception) {
+                richTextView = nil;
+            }
         }
         if (richTextView && [richTextView respondsToSelector:@selector(setContent:)]) {
             NSString *originText = wcpl_originalContentForMessageWrap(msgWrap) ?: (msgWrap.m_nsContent ?: @"");
@@ -650,11 +663,13 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         return;
     }
     BOOL needsLayoutRefresh = didSync || replaceText.length > 0;
-    RichTextView *richTextView = nil;
-    @try {
-        richTextView = MSHookIvar<RichTextView *>(self, "m_richTextView");
-    } @catch (__unused NSException *exception) {
-        richTextView = nil;
+    RichTextView *richTextView = (RichTextView *)wcpl_safeObjectIvar(self, "m_richTextView");
+    if (!richTextView) {
+        @try {
+            richTextView = [self valueForKey:@"m_richTextView"];
+        } @catch (__unused NSException *exception) {
+            richTextView = nil;
+        }
     }
     if (!richTextView || ![richTextView respondsToSelector:@selector(setContent:)]) return;
     NSString *displayText = replaceText.length > 0 ? replaceText : msgWrap.m_nsContent;

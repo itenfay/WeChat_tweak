@@ -61,6 +61,17 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
     }
 }
 
+static id wcpl_safeObjectIvar(id obj, const char *name) {
+    if (!obj || !name) return nil;
+    Class cls = object_getClass(obj);
+    if (!cls) return nil;
+    Ivar ivar = class_getInstanceVariable(cls, name);
+    if (!ivar) return nil;
+    const char *typeEncoding = ivar_getTypeEncoding(ivar);
+    if (!typeEncoding || typeEncoding[0] != '@') return nil;
+    return object_getIvar(obj, ivar);
+}
+
 %hook MicroMessengerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -85,16 +96,22 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
 - (void)reloadTableData {
     %orig;
 
-    WCTableViewManager *tableViewMgr = MSHookIvar<id>(self, "m_tableViewMgr");
+    id tableViewMgr = wcpl_safeObjectIvar(self, "m_tableViewMgr");
+    if (!tableViewMgr) {
+        tableViewMgr = wcpl_safeValueForKey(self, @"m_tableViewMgr");
+    }
+    if (!tableViewMgr || ![tableViewMgr respondsToSelector:@selector(insertSection:At:)] || ![tableViewMgr respondsToSelector:@selector(getTableView)]) {
+        return;
+    }
 
     WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoDefaut];
 
     WCTableViewNormalCellManager *settingCell = [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_setting) target:self title:@"微信辣椒" accessoryType:1];
     [sectionMgr addCell:settingCell];
 
-    [tableViewMgr insertSection:sectionMgr At:0];
+    [(WCTableViewManager *)tableViewMgr insertSection:sectionMgr At:0];
 
-    MMTableView *tableView = [tableViewMgr getTableView];
+    MMTableView *tableView = [(WCTableViewManager *)tableViewMgr getTableView];
     [tableView reloadData];
 }
 
@@ -124,7 +141,10 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
     }
 
     // 获取 tableViewInfo
-    MMTableViewInfo *tableViewInfo = MSHookIvar<id>(self, "m_tableViewInfo");
+    id tableViewInfo = wcpl_safeObjectIvar(self, "m_tableViewInfo");
+    if (!tableViewInfo) {
+        tableViewInfo = wcpl_safeValueForKey((id)self, @"m_tableViewInfo");
+    }
     if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
         return;
     }
@@ -196,19 +216,9 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
     id tableViewInfo = nil;
     id assist = nil;
 
-    // 方法1: 尝试使用 MSHookIvar 获取 m_oContactInfoAssist
-    @try {
-        assist = MSHookIvar<id>(self, "m_oContactInfoAssist");
-    } @catch (__unused NSException *exception) {
-        assist = nil;
-    }
-
-    // 方法2: 如果方法1失败，使用 class_getInstanceVariable
+    assist = wcpl_safeObjectIvar(self, "m_oContactInfoAssist");
     if (!assist) {
-        Ivar assistIvar = class_getInstanceVariable([self class], "m_oContactInfoAssist");
-        if (assistIvar) {
-            assist = object_getIvar(self, assistIvar);
-        }
+        assist = wcpl_safeValueForKey(self, @"m_oContactInfoAssist");
     }
 
     if (!assist) {
@@ -217,18 +227,9 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
     }
 
     // 从 assist 获取 m_tableViewInfo
-    @try {
-        tableViewInfo = MSHookIvar<id>(assist, "m_tableViewInfo");
-    } @catch (__unused NSException *exception) {
-        tableViewInfo = nil;
-    }
-
-    // 备用方法：使用 Ivar
+    tableViewInfo = wcpl_safeObjectIvar(assist, "m_tableViewInfo");
     if (!tableViewInfo) {
-        Ivar tableViewInfoIvar = class_getInstanceVariable([assist class], "m_tableViewInfo");
-        if (tableViewInfoIvar) {
-            tableViewInfo = object_getIvar(assist, tableViewInfoIvar);
-        }
+        tableViewInfo = wcpl_safeValueForKey(assist, @"m_tableViewInfo");
     }
 
     if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
@@ -294,7 +295,10 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
     }
 
     // 获取联系人
-    id contact = MSHookIvar<id>(self, "m_contact");
+    id contact = wcpl_safeObjectIvar(self, "m_contact");
+    if (!contact) {
+        contact = wcpl_safeValueForKey(self, @"m_contact");
+    }
     NSString *usrName = wcpl_safeUserNameFromObject(contact);
     if (usrName.length == 0) {
         return;
@@ -311,7 +315,10 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
     }
 
     // 获取 m_tableViewInfo
-    MMTableViewInfo *tableViewInfo = MSHookIvar<MMTableViewInfo *>(self, "m_tableViewInfo");
+    id tableViewInfo = wcpl_safeObjectIvar(self, "m_tableViewInfo");
+    if (!tableViewInfo) {
+        tableViewInfo = wcpl_safeValueForKey(self, @"m_tableViewInfo");
+    }
     if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(insertSection:At:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
         WCPLLogWarning(@"ContactSettingViewController: Failed to get m_tableViewInfo");
         return;
@@ -341,7 +348,10 @@ static id wcpl_safeValueForKey(id obj, NSString *key) {
         return;
     }
 
-    id contact = MSHookIvar<id>(self, "m_contact");
+    id contact = wcpl_safeObjectIvar(self, "m_contact");
+    if (!contact) {
+        contact = wcpl_safeValueForKey(self, @"m_contact");
+    }
     NSString *usrName = wcpl_safeUserNameFromObject(contact);
     if (usrName.length == 0) {
         sender.on = NO;

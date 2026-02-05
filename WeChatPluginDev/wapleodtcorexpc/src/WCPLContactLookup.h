@@ -1,8 +1,9 @@
 //
 // WCPLContactLookup.h
 //
-// 在不同 WeChat 版本中，部分聊天对象可能无法通过 CContactMgr 直接取到；
-// 这里提供一个统一的查找入口，优先使用 CContactMgr，失败后回退到 ContactsDataLogic。
+// 统一的联系人查找入口：
+// - 优先从 ServiceCenter 获取 CContactMgr 查询（支持 DB / Cache），避免依赖外部传入对象指针。
+// - 为稳定性考虑，不再在此处回退遍历 ContactsDataLogic（外部参数保留仅用于兼容签名）。
 //
 
 #import <Foundation/Foundation.h>
@@ -18,4 +19,3 @@ FOUNDATION_EXPORT CContact * _Nullable WCPLFindContactByUserName(NSString * _Nul
                                                                  ContactsDataLogic * _Nullable dataLogic);
 
 NS_ASSUME_NONNULL_END
-
