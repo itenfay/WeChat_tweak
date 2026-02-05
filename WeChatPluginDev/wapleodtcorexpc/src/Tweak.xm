@@ -6,6 +6,7 @@
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WCPLRedEnvelopOpenTracker.h"
+#import "WCPLRedEnvelopAutoReplyManager.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLNewFuncAddition.h"
 #import "WCPLFuncService.h"
@@ -974,6 +975,23 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             (unsigned long)sign.length,
             sessionUserName ?: @"",
             (unsigned long)params.count);
+
+    // 手动/自动打开红包都会走这里：提前记录一次请求参数，确保回包阶段能稳定拿到 sessionUserName（用于通知/自动回复）
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    BOOL needNotify = (config.redEnvelopResultNotify != 0);
+    BOOL hasAutoReply = (wcpl_trimString(config.privateRedEnvelopAutoReplyText).length > 0
+                         || wcpl_trimString(config.groupRedEnvelopAutoReplyText).length > 0);
+    if (needNotify || hasAutoReply) {
+        WeChatRedEnvelopParam *trackParam = [WeChatRedEnvelopParam new];
+        trackParam.sendId = sendId;
+        trackParam.channelId = channelId;
+        trackParam.msgType = msgType;
+        trackParam.sessionUserName = sessionUserName;
+        trackParam.sign = sign;
+        trackParam.timingIdentifier = timingIdentifier;
+        [[WCPLRedEnvelopOpenTracker sharedTracker] trackParam:trackParam];
+    }
+
     %orig;
 }
 
@@ -1278,28 +1296,11 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
 
         // 领取成功后自动回复
-        if (success && sessionUserName.length > 0) {
-            BOOL allowReply = config.autoReceiveEnable && (isGroup ? config.groupRedEnvelopEnable : config.privateRedEnvelopEnable);
-            NSString *replyText = isGroup ? groupAutoReplyText : privateAutoReplyText;
-            // 兼容：只设置了其中一种时，也可作为另一种的兜底，避免用户误以为“没生效”
-            if (replyText.length == 0) {
-                replyText = isGroup ? privateAutoReplyText : groupAutoReplyText;
-            }
-            if (allowReply && replyText.length > 0) {
-                BOOL didReply = wcpl_sendTextMessageToSession(sessionUserName, replyText);
-                WCPLLog(@"领取后自动回复: session=%@ isGroup=%d textLen=%lu ok=%d",
-                        sessionUserName,
-                        isGroup,
-                        (unsigned long)replyText.length,
-                        didReply);
-            } else if (hasAutoReply) {
-                WCPLLog(@"领取后自动回复: skip session=%@ success=%d allow=%d textLen=%lu",
-                        sessionUserName,
-                        success,
-                        allowReply,
-                        (unsigned long)replyText.length);
-            }
-        }
+        [[WCPLRedEnvelopAutoReplyManager sharedManager] handleRedEnvelopOpenResultSuccess:success
+                                                                          sessionUserName:sessionUserName
+                                                                                   isGroup:isGroup
+                                                                                    sendId:sendId
+                                                                          timingIdentifier:timingIdentifier];
     });
 }
 
