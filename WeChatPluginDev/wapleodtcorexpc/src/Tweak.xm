@@ -549,9 +549,9 @@ __attribute__((unused)) static BOOL wcpl_sendTextMessageToSession(NSString *sess
     id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
     if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
         @try {
-            [sendMgr AddMsgToSendTable:session MsgWrap:msgWrap];
+            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMgr, @selector(AddMsgToSendTable:MsgWrap:), session, msgWrap);
             if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
-                [sendMgr SendMsg];
+                ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
             }
             WCPLLog(@"发送文本完成: via=sendMgr to=%@ ok=1", session);
             return YES;
