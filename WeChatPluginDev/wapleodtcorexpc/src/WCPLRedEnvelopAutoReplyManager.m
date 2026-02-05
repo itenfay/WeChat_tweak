@@ -83,11 +83,18 @@ static NSString *wcpl_rea_dedupeKey(NSString *sendId, NSString *timingIdentifier
     return tid.length > 0 ? tid : session;
 }
 
-static CMessageWrap *wcpl_rea_formTextWrap(NSString *sessionUserName, NSString *text) {
+static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *text) {
     NSString *session = wcpl_rea_trimString(sessionUserName);
     NSString *content = wcpl_rea_trimString(text);
-    if (session.length == 0 || content.length == 0) return nil;
+    if (session.length == 0 || content.length == 0) return NO;
 
+    NSString *selfUserName = wcpl_rea_getSelfUserName();
+    if (selfUserName.length == 0) return NO;
+
+    Class wrapClass = objc_getClass("CMessageWrap");
+    if (!wrapClass) return NO;
+
+    CMessageWrap *msgWrap = nil;
     Class logicClass = objc_getClass("BaseMsgContentLogicController");
     if (logicClass) {
         BaseMsgContentLogicController *logic = nil;
@@ -97,7 +104,7 @@ static CMessageWrap *wcpl_rea_formTextWrap(NSString *sessionUserName, NSString *
             logic = nil;
         }
 
-        if (logic) {
+        if (logic && [logic respondsToSelector:@selector(FormTextMsg:withText:)]) {
             @try {
                 CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
                 if (contactMgr && [contactMgr respondsToSelector:@selector(getContactByName:)]) {
@@ -109,36 +116,30 @@ static CMessageWrap *wcpl_rea_formTextWrap(NSString *sessionUserName, NSString *
             } @catch (__unused NSException *exception) {
             }
 
-            if ([logic respondsToSelector:@selector(FormTextMsg:withText:)]) {
-                @try {
-                    id wrap = [logic FormTextMsg:session withText:content];
-                    if ([wrap isKindOfClass:objc_getClass("CMessageWrap")]) {
-                        return (CMessageWrap *)wrap;
-                    }
-                } @catch (__unused NSException *exception) {
+            @try {
+                id wrap = [logic FormTextMsg:session withText:content];
+                if ([wrap isKindOfClass:wrapClass]) {
+                    msgWrap = (CMessageWrap *)wrap;
                 }
+            } @catch (__unused NSException *exception) {
+                msgWrap = nil;
             }
         }
     }
 
-    NSString *selfUserName = wcpl_rea_getSelfUserName();
-    if (selfUserName.length == 0) return nil;
-
-    Class wrapClass = objc_getClass("CMessageWrap");
-    if (!wrapClass) return nil;
-
-    CMessageWrap *msgWrap = nil;
-    if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
-        msgWrap = [[wrapClass alloc] initWithMsgType:1 nsFromUsr:selfUserName];
-    } else if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
-        msgWrap = [[wrapClass alloc] initWithMsgType:1];
-        @try {
-            [msgWrap setM_nsFromUsr:selfUserName];
-        } @catch (__unused NSException *exception) {
+    if (!msgWrap) {
+        if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
+            msgWrap = [[wrapClass alloc] initWithMsgType:1 nsFromUsr:selfUserName];
+        } else if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
+            msgWrap = [[wrapClass alloc] initWithMsgType:1];
+            @try {
+                [msgWrap setM_nsFromUsr:selfUserName];
+            } @catch (__unused NSException *exception) {
+            }
         }
     }
 
-    if (!msgWrap) return nil;
+    if (!msgWrap) return NO;
 
     @try {
         [msgWrap setM_nsToUsr:session];
@@ -147,6 +148,9 @@ static CMessageWrap *wcpl_rea_formTextWrap(NSString *sessionUserName, NSString *
         }
         if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
             [msgWrap setM_nsPushContent:content];
+        }
+        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+            [msgWrap setM_nsFromUsr:selfUserName];
         }
         if ([session rangeOfString:@"@chatroom"].location != NSNotFound) {
             NSString *msgSource = wcpl_rea_trimString(msgWrap.m_nsMsgSource);
@@ -180,19 +184,8 @@ static CMessageWrap *wcpl_rea_formTextWrap(NSString *sessionUserName, NSString *
         }
         [msgWrap setM_uiCreateTime:(unsigned int)[[NSDate date] timeIntervalSince1970]];
     } @catch (__unused NSException *exception) {
-        return nil;
+        return NO;
     }
-
-    return msgWrap;
-}
-
-static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *text) {
-    NSString *session = wcpl_rea_trimString(sessionUserName);
-    NSString *content = wcpl_rea_trimString(text);
-    if (session.length == 0 || content.length == 0) return NO;
-
-    CMessageWrap *msgWrap = wcpl_rea_formTextWrap(session, content);
-    if (!msgWrap) return NO;
 
     id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
     Class messageMgrClass = objc_getClass("CMessageMgr");
@@ -314,4 +307,3 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
 }
 
 @end
-
