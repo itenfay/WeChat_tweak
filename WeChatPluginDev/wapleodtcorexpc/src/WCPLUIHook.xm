@@ -1,8 +1,9 @@
 #import <UIKit/UIKit.h>
+#import "WeChatRedEnvelop.h"
+#import "ChatRoomInfoViewController.h"
 #import "WCPLSettingViewController.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLLogger.h"
-#import "CContact.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
