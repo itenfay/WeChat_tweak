@@ -362,7 +362,17 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
 
     @try {
         [msgWrap setM_nsToUsr:session];
-        [msgWrap setM_nsContent:content];
+        if ([msgWrap respondsToSelector:@selector(UpdateContent:)]) {
+            [msgWrap UpdateContent:content];
+        } else {
+            [msgWrap setM_nsContent:content];
+        }
+        if ([msgWrap respondsToSelector:@selector(changeForPlainTextMsg)]) {
+            [msgWrap changeForPlainTextMsg];
+        }
+        if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+            [msgWrap setM_uiStatus:1];
+        }
         [msgWrap setM_uiCreateTime:(unsigned int)[[NSDate date] timeIntervalSince1970]];
     } @catch (__unused NSException *exception) {
         return NO;
@@ -1059,17 +1069,24 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
     }
 
     BOOL success = NO;
-    if (hbStatus == 4 || retCode != 0) {
+    BOOL hasAmount = (amount.length > 0);
+    BOOL alreadyReceived = (receiveStatus == 2);
+    BOOL networkOk = (res.errorType == 0 && res.platRet == 0);
+    if (retCode != 0) {
         success = NO;
-    } else if (amount.length > 0 || receiveStatus == 2) {
+    } else if (hasAmount || alreadyReceived) {
+        // 注意：部分版本“打开红包”回包 hbStatus 可能固定为 4，但仍然领取成功（receiveStatus=2 / amount 有值）。
         success = YES;
+    } else if (hbStatus == 4) {
+        success = NO;
     } else {
-        success = (res.errorType == 0 && res.platRet == 0);
+        success = networkOk;
     }
 
-    WCPLLog(@"红包打开回包: cmd=%u tracker=%d session=%@ isGroup=%d sendId=%@ timingLen=%lu hbStatus=%ld receiveStatus=%ld retCode=%ld amount=%@ errorType=%d platRet=%d notify=%ld autoReply(priv=%lu group=%lu)",
+    WCPLLog(@"红包打开回包: cmd=%u tracker=%d success=%d session=%@ isGroup=%d sendId=%@ timingLen=%lu hbStatus=%ld receiveStatus=%ld retCode=%ld amount=%@ errorType=%d platRet=%d notify=%ld autoReply(priv=%lu group=%lu)",
             cmdId,
             param != nil,
+            success,
             sessionUserName ?: @"",
             isGroup,
             sendId ?: @"",
