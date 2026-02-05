@@ -46,7 +46,7 @@
     }
 
     self.executing = YES;
-    WCPLLog(@"抢红包任务开始: delay=%u session=%@ sendId=%@",
+    WCPLLog(@"[抢红包] 任务开始: delay=%u session=%@ sendId=%@",
             self.delaySeconds,
             self.redEnvelopParam.sessionUserName ?: @"",
             self.redEnvelopParam.sendId ?: @"");
@@ -71,21 +71,25 @@
     [[WCPLRedEnvelopOpenTracker sharedTracker] trackParam:self.redEnvelopParam];
 
     NSDictionary *params = [self.redEnvelopParam toParams];
-    WCPLLog(@"抢红包任务执行: mainThread=%d session=%@ sendId=%@ timing=%@ signLen=%lu paramsKeys=%lu",
+    WCPLLog(@"[抢红包] 任务执行: mainThread=%d session=%@ sendId=%@ timing=%@ signLen=%lu paramsKeys=%lu",
             [NSThread isMainThread],
             self.redEnvelopParam.sessionUserName ?: @"",
             self.redEnvelopParam.sendId ?: @"",
             [params[@"timingIdentifier"] isKindOfClass:[NSString class]] ? params[@"timingIdentifier"] : @"",
             (unsigned long)([params[@"sign"] isKindOfClass:[NSString class]] ? [(NSString *)params[@"sign"] length] : 0),
             (unsigned long)params.count);
+    WCPLLog(@"[抢红包] 参数详情: channelId=%@ nativeUrl=%@ sendUserName=%@",
+            [params[@"channelId"] isKindOfClass:[NSString class]] ? params[@"channelId"] : @"",
+            [params[@"nativeUrl"] isKindOfClass:[NSString class]] ? params[@"nativeUrl"] : @"",
+            [params[@"sendUserName"] isKindOfClass:[NSString class]] ? params[@"sendUserName"] : @"");
 
     WCRedEnvelopesLogicMgr *logicMgr = WCPLGetService(objc_getClass("WCRedEnvelopesLogicMgr"));
     if (!logicMgr) {
-        WCPLLog(@"抢红包任务失败: WCRedEnvelopesLogicMgr=nil");
+        WCPLLog(@"[抢红包] 任务失败: WCRedEnvelopesLogicMgr=nil");
         return;
     }
     if (![logicMgr respondsToSelector:@selector(OpenRedEnvelopesRequest:)]) {
-        WCPLLog(@"抢红包任务失败: OpenRedEnvelopesRequest 不存在 logicMgr=%@", NSStringFromClass([logicMgr class]));
+        WCPLLog(@"[抢红包] 任务失败: OpenRedEnvelopesRequest 不存在 logicMgr=%@", NSStringFromClass([logicMgr class]) ?: @"");
         return;
     }
 
@@ -98,7 +102,7 @@
     } else {
         dispatch_sync(dispatch_get_main_queue(), openBlock);
     }
-    WCPLLog(@"抢红包任务调用完成: sendId=%@", self.redEnvelopParam.sendId ?: @"");
+    WCPLLog(@"[抢红包] 调用完成: sendId=%@", self.redEnvelopParam.sendId ?: @"");
 }
 
 - (void)cancel {

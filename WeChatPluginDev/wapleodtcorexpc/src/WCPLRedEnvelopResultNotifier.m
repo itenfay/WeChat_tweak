@@ -147,14 +147,29 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
                        hbStatus:(NSInteger)hbStatus
                         retCode:(NSInteger)retCode
                        errorMsg:(NSString *)errorMsg {
+    WCPLLog(@"[红包通知] 方法调用: success=%d session=%@ isGroup=%d sendId=%@ timing=%@ receiveAmt=%@ totalAmt=%@ status=%ld retCode=%ld err=%@",
+            success,
+            sessionUserName ?: @"",
+            isGroup,
+            sendId ?: @"",
+            timingIdentifier ?: @"",
+            receiveAmount ?: @"",
+            totalAmount ?: @"",
+            (long)hbStatus,
+            (long)retCode,
+            errorMsg ?: @"");
+
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSInteger notify = config.redEnvelopResultNotify;
-    if (notify == 0) return;
+    if (notify == 0) {
+        WCPLLog(@"[红包通知] 跳过: 通知已关闭");
+        return;
+    }
 
     NSString *key = wcpl_ren_dedupeKey(sendId, timingIdentifier, sessionUserName);
     NSDate *now = [NSDate date];
     if ([self wcpl_shouldSkipForKey:key now:now]) {
-        WCPLLog(@"领取结果通知: 去重跳过 session=%@ key=%@",
+        WCPLLog(@"[红包通知] 跳过: 去重限制 session=%@ key=%@",
                 WCPLTrimMessageText(sessionUserName) ?: @"",
                 key ?: @"");
         return;
@@ -166,6 +181,11 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
 
     NSString *receiveAmountYuan = wcpl_ren_formatHongbaoAmountYuan(receiveAmount);
     NSString *totalAmountYuan = wcpl_ren_formatHongbaoAmountYuan(totalAmount);
+    WCPLLog(@"[红包通知] 金额格式化: receive原始=%@ 格式化=%@ total原始=%@ 格式化=%@",
+            receiveAmount ?: @"",
+            receiveAmountYuan ?: @"",
+            totalAmount ?: @"",
+            totalAmountYuan ?: @"");
 
     NSMutableString *notifyText = [NSMutableString stringWithFormat:@"[红包] 在%@「%@」",
                                    isGroup ? @"群" : @"聊天",
@@ -192,6 +212,7 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
     }
 
     NSString *finalText = [notifyText copy];
+    WCPLLog(@"[红包通知] 通知文本: '%@'", finalText ?: @"");
 
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *targetSession = nil;
@@ -202,9 +223,11 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
         }
 
         if (targetSession.length == 0) {
-            WCPLLog(@"领取结果通知: 目标会话为空 notify=%ld", (long)notify);
+            WCPLLog(@"[红包通知] 跳过: 目标会话为空 notify=%ld", (long)notify);
             [self wcpl_removeKeyIfNeeded:key];
             return;
+        } else {
+            WCPLLog(@"[红包通知] 目标会话: %@ (notify=%ld)", targetSession ?: @"", (long)notify);
         }
 
         BOOL didSend = [[WCPLTextMessageSender sharedSender] sendText:finalText toSession:targetSession];
@@ -212,7 +235,7 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
             didSend = [[WCPLTextMessageSender sharedSender] sendText:finalText toSession:@"filehelper"];
         }
 
-        WCPLLog(@"领取结果通知: to=%@ ok=%d", targetSession, didSend);
+        WCPLLog(@"[红包通知] 发送结果: to=%@ ok=%d text='%@'", targetSession ?: @"", didSend, finalText ?: @"");
         if (!didSend) {
             [self wcpl_removeKeyIfNeeded:key];
         }
@@ -220,4 +243,3 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
 }
 
 @end
-

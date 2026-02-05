@@ -82,29 +82,57 @@ static NSString *wcpl_rea_dedupeKey(NSString *sendId, NSString *timingIdentifier
                                  isGroup:(BOOL)isGroup
                                   sendId:(nullable NSString *)sendId
                         timingIdentifier:(nullable NSString *)timingIdentifier {
-    if (!success) return;
+    WCPLLog(@"[红包自动回复] 方法调用: success=%d session=%@ isGroup=%d sendId=%@ timing=%@",
+            success,
+            sessionUserName ?: @"",
+            isGroup,
+            sendId ?: @"",
+            timingIdentifier ?: @"");
+
+    if (!success) {
+        WCPLLog(@"[红包自动回复] 跳过: 领取失败 session=%@", sessionUserName ?: @"");
+        return;
+    }
 
     NSString *session = WCPLTrimMessageText(sessionUserName);
-    if (session.length == 0) return;
+    if (session.length == 0) {
+        WCPLLog(@"[红包自动回复] 跳过: session为空");
+        return;
+    }
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSString *rawReplyText = isGroup ? config.groupRedEnvelopAutoReplyText : config.privateRedEnvelopAutoReplyText;
     NSString *replyText = WCPLTrimMessageText(rawReplyText);
+    WCPLLog(@"[红包自动回复] 配置: isGroup=%d rawText='%@' trimmedText='%@'",
+            isGroup,
+            rawReplyText ?: @"",
+            replyText ?: @"");
     if (replyText.length == 0) {
+        WCPLLog(@"[红包自动回复] 跳过: 回复文本为空 isGroup=%d", isGroup);
         return;
     }
 
     NSString *key = wcpl_rea_dedupeKey(sendId, timingIdentifier, session);
     NSDate *now = [NSDate date];
     if ([self wcpl_shouldSkipForKey:key now:now]) {
+        WCPLLog(@"[红包自动回复] 跳过: 去重限制 key=%@ session=%@", key ?: @"", session ?: @"");
         return;
     }
 
+    WCPLLog(@"[红包自动回复] 准备发送: text='%@' to=%@ isGroup=%d",
+            replyText ?: @"",
+            session ?: @"",
+            isGroup);
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL ok = [[WCPLTextMessageSender sharedSender] sendText:replyText toSession:session];
         if (!ok) {
-            WCPLLog(@"红包自动回复发送失败: session=%@ isGroup=%d", session, isGroup);
+            WCPLLog(@"[红包自动回复] 发送失败: session=%@ isGroup=%d", session ?: @"", isGroup);
             [self wcpl_removeKeyIfNeeded:key];
+        } else {
+            WCPLLog(@"[红包自动回复] 发送成功: session=%@ isGroup=%d text='%@'",
+                    session ?: @"",
+                    isGroup,
+                    replyText ?: @"");
         }
     });
 }
