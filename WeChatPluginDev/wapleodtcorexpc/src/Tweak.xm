@@ -485,7 +485,21 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
             (unsigned long)displayContent.length,
             (unsigned long)secContent.length);
 
-    // 优先走 BypSendMessageMgr（更贴近微信原生发送链路）
+    id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
+    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+        @try {
+            [sendMgr AddMsgToSendTable:session MsgWrap:msgWrap];
+            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
+                [sendMgr SendMsg];
+            }
+            WCPLLog(@"发送文本完成: via=sendMgr to=%@ ok=1", session);
+            return YES;
+        } @catch (__unused NSException *exception) {
+            WCPLLog(@"发送文本异常: via=sendMgr to=%@", session);
+        }
+    }
+
+    // 兜底：BypSendMessageMgr（部分版本 sendMgr 不可用）
     id messageMgr = wcpl_getMessageMgr();
     Class messageMgrClass = objc_getClass("CMessageMgr");
     if (messageMgr && messageMgrClass) {
@@ -499,21 +513,6 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
             } @catch (__unused NSException *exception) {
                 WCPLLog(@"发送文本异常: via=byp to=%@", session);
             }
-        }
-    }
-
-    id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
-    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
-        @try {
-            [sendMgr AddMsgToSendTable:session MsgWrap:msgWrap];
-            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
-                [sendMgr SendMsg];
-            }
-            WCPLLog(@"发送文本完成: via=sendMgr to=%@ ok=1", session);
-            return YES;
-        } @catch (__unused NSException *exception) {
-            WCPLLog(@"发送文本异常: via=sendMgr to=%@", session);
-            return NO;
         }
     }
 
@@ -1199,20 +1198,38 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         }
     }
 
-    NSString *amount = nil;
-    NSArray<NSString *> *amountKeys = @[@"receiveAmount", @"amount", @"money", @"totalAmount"];
-    for (NSString *key in amountKeys) {
+    NSString *receiveAmount = nil;
+    NSArray<NSString *> *receiveAmountKeys = @[@"receiveAmount", @"amount", @"money", @"receive_amount", @"receiveMoney"];
+    for (NSString *key in receiveAmountKeys) {
         id value = responseDict[key];
         if ([value isKindOfClass:[NSString class]]) {
-            amount = wcpl_trimString((NSString *)value);
+            receiveAmount = wcpl_trimString((NSString *)value);
         } else if ([value respondsToSelector:@selector(stringValue)]) {
-            amount = wcpl_trimString([value stringValue]);
+            receiveAmount = wcpl_trimString([value stringValue]);
         }
-        if (amount.length > 0) break;
+        if (receiveAmount.length > 0) break;
+    }
+
+    NSString *totalAmount = nil;
+    NSArray<NSString *> *totalAmountKeys = @[@"totalAmount", @"total_amount", @"totalMoney", @"total_money", @"total"];
+    for (NSString *key in totalAmountKeys) {
+        id value = responseDict[key];
+        if ([value isKindOfClass:[NSString class]]) {
+            totalAmount = wcpl_trimString((NSString *)value);
+        } else if ([value respondsToSelector:@selector(stringValue)]) {
+            totalAmount = wcpl_trimString([value stringValue]);
+        }
+        if (totalAmount.length > 0) break;
+    }
+
+    // 兼容：部分版本回包字段不一致，只有 totalAmount 时把它作为“领取金额”。
+    if (receiveAmount.length == 0 && totalAmount.length > 0) {
+        receiveAmount = totalAmount;
+        totalAmount = nil;
     }
 
     BOOL success = NO;
-    BOOL hasAmount = (amount.length > 0);
+    BOOL hasAmount = (receiveAmount.length > 0);
     BOOL alreadyReceived = (receiveStatus == 2);
     BOOL networkOk = (res.errorType == 0 && res.platRet == 0);
     if (retCode != 0) {
@@ -1226,7 +1243,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         success = networkOk;
     }
 
-    WCPLLog(@"红包打开回包: cmd=%u tracker=%d success=%d session=%@ isGroup=%d sendId=%@ timingLen=%lu hbStatus=%ld receiveStatus=%ld retCode=%ld amount=%@ errorType=%d platRet=%d notify=%ld autoReply(priv=%lu group=%lu)",
+    WCPLLog(@"红包打开回包: cmd=%u tracker=%d success=%d session=%@ isGroup=%d sendId=%@ timingLen=%lu hbStatus=%ld receiveStatus=%ld retCode=%ld receiveAmount=%@ totalAmount=%@ errorType=%d platRet=%d notify=%ld autoReply(priv=%lu group=%lu)",
             cmdId,
             param != nil,
             success,
@@ -1237,7 +1254,8 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             (long)hbStatus,
             (long)receiveStatus,
             (long)retCode,
-            amount ?: @"",
+            receiveAmount ?: @"",
+            totalAmount ?: @"",
             (int)res.errorType,
             (int)res.platRet,
             (long)config.redEnvelopResultNotify,
@@ -1245,20 +1263,24 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             (unsigned long)groupAutoReplyText.length);
 
     NSString *sessionDisplayName = sessionUserName.length > 0 ? wcpl_displayNameForUserName(sessionUserName) : nil;
-    NSMutableString *resultText = [NSMutableString stringWithFormat:@"[红包] %@ (%@)", success ? @"领取成功" : @"领取失败", isGroup ? @"群聊" : @"私聊"];
-    if (sessionDisplayName.length > 0) {
-        [resultText appendFormat:@" 会话:%@", sessionDisplayName];
-    }
-    if (amount.length > 0) {
-        [resultText appendFormat:@" 金额:%@", amount];
-    }
-    if (!success) {
+    NSMutableString *notifyText = [NSMutableString stringWithFormat:@"[红包] %@:%@",
+                                   isGroup ? @"群聊" : @"私聊",
+                                   sessionDisplayName.length > 0 ? sessionDisplayName : (sessionUserName ?: @"")];
+    if (success) {
+        if (receiveAmount.length > 0) {
+            [notifyText appendFormat:@" 抢到:%@", receiveAmount];
+        }
+        if (totalAmount.length > 0) {
+            [notifyText appendFormat:@" 总额:%@", totalAmount];
+        }
+    } else {
+        [notifyText appendString:@" 领取失败"];
         if (hbStatus == 4) {
-            [resultText appendString:@" 已抢完"];
+            [notifyText appendString:@" 已抢完"];
         } else if (res.errorMsg.length > 0) {
-            [resultText appendFormat:@" %@", res.errorMsg];
+            [notifyText appendFormat:@" %@", res.errorMsg];
         } else if (retCode != 0) {
-            [resultText appendFormat:@" 错误码:%ld", (long)retCode];
+            [notifyText appendFormat:@" 错误码:%ld", (long)retCode];
         }
     }
 
@@ -1272,24 +1294,13 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
                 targetSession = wcpl_getSelfUserName();
             }
             if (targetSession.length > 0) {
-                BOOL didSend = NO;
-                NSString *mode = @"";
-                if (notify == 1) {
-                    // “发给自己”：优先使用本地系统消息，避免发送到 selfUserName 后用户无法在聊天列表中看到
-                    didSend = wcpl_addLocalSystemMessageToSession(targetSession, resultText);
-                    mode = didSend ? @"local" : @"send";
-                    if (!didSend) {
-                        didSend = wcpl_sendTextMessageToSession(targetSession, resultText);
-                    }
-                } else {
-                    // 文件传输助手：优先走正常发送
-                    didSend = wcpl_sendTextMessageToSession(targetSession, resultText);
-                    mode = didSend ? @"send" : @"local";
-                    if (!didSend) {
-                        didSend = wcpl_addLocalSystemMessageToSession(targetSession, resultText);
-                    }
+                // 按用户要求：通知也使用“原生发送消息”形式发送到自己/文件传输助手。
+                BOOL didSend = wcpl_sendTextMessageToSession(targetSession, notifyText);
+                if (!didSend && notify == 1) {
+                    // 兜底：自己会话发送失败时，尝试文件传输助手（仍然走发送链路）
+                    didSend = wcpl_sendTextMessageToSession(@"filehelper", notifyText);
                 }
-                WCPLLog(@"领取结果通知: to=%@ mode=%@ ok=%d", targetSession, mode, didSend);
+                WCPLLog(@"领取结果通知: to=%@ ok=%d", targetSession, didSend);
             } else {
                 WCPLLog(@"领取结果通知: 目标会话为空 notify=%ld", (long)notify);
             }

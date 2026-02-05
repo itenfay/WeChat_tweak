@@ -207,25 +207,23 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
             (unsigned long)wrapContent.length,
             (unsigned long)displayContent.length);
 
-    // 关键：部分版本仅把 MsgWrap 入发送队列会导致本地落库/展示内容为空。
-    // 先通过 CMessageMgr.AddMsg 落库生成 localId，再走发送链路（更贴近微信原生流程）。
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-    if (messageMgr && [messageMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
+    id sendMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+        BOOL ok = NO;
         @try {
-            unsigned int localId = 0;
-            if ([msgWrap respondsToSelector:@selector(m_uiMesLocalID)]) {
-                localId = msgWrap.m_uiMesLocalID;
+            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMgr, @selector(AddMsgToSendTable:MsgWrap:), session, msgWrap);
+            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
+                ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
             }
-            if (localId == 0) {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), session, msgWrap);
-            }
-            if ([msgWrap respondsToSelector:@selector(m_uiMesLocalID)]) {
-                WCPLLog(@"红包自动回复落库: to=%@ localId=%u", session, msgWrap.m_uiMesLocalID);
-            }
+            WCPLLog(@"红包自动回复发送完成: via=sendMgr to=%@", session);
+            ok = YES;
         } @catch (__unused NSException *exception) {
+            ok = NO;
         }
+        if (ok) return YES;
     }
 
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
     Class messageMgrClass = objc_getClass("CMessageMgr");
     if (messageMgr && messageMgrClass) {
         Ivar bypIvar = class_getInstanceVariable(messageMgrClass, "m_bypSendMessageMgr");
@@ -251,20 +249,6 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
                 return YES;
             } @catch (__unused NSException *exception) {
             }
-        }
-    }
-
-    id sendMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
-    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
-        @try {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMgr, @selector(AddMsgToSendTable:MsgWrap:), session, msgWrap);
-            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
-                ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
-            }
-            WCPLLog(@"红包自动回复发送完成: via=sendMgr to=%@", session);
-            return YES;
-        } @catch (__unused NSException *exception) {
-            return NO;
         }
     }
 
