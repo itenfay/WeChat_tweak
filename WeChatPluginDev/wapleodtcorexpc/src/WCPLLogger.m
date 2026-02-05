@@ -19,6 +19,8 @@
 static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
 static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 
+@dynamic enabled;
+
 + (instancetype)sharedLogger {
     static WCPLLogger *logger = nil;
     static dispatch_once_t onceToken;
@@ -56,9 +58,8 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
             BOOL savedEnabled = [defaults boolForKey:kWCPLDebugLogEnabled];
             _logLevel = savedEnabled ? WCPLLogLevelDebug : WCPLLogLevelNone;
         }
-        _enabled = (_logLevel != WCPLLogLevelNone);
 
-        if (_enabled) {
+        if (_logLevel != WCPLLogLevelNone) {
             NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n",
                                     [self currentTimestamp],
                                     [self startupContextInfo]];
@@ -80,6 +81,10 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
     self.logLevel = enabled ? WCPLLogLevelDebug : WCPLLogLevelNone;
 }
 
+- (BOOL)enabled {
+    return self.logLevel != WCPLLogLevelNone;
+}
+
 - (void)setLogLevel:(WCPLLogLevel)logLevel {
     WCPLLogLevel normalized = logLevel;
     if (normalized < WCPLLogLevelDebug) {
@@ -96,7 +101,6 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
     BOOL willEnabled = (normalized != WCPLLogLevelNone);
 
     _logLevel = normalized;
-    _enabled = willEnabled;
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:normalized forKey:kWCPLLogLevelKey];
