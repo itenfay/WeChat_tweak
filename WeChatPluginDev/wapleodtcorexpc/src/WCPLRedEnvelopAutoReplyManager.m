@@ -144,7 +144,12 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
             @try {
                 id wrap = [logic FormTextMsg:session withText:content];
                 if ([wrap isKindOfClass:wrapClass]) {
-                    msgWrap = (CMessageWrap *)wrap;
+                    CMessageWrap *tmpWrap = (CMessageWrap *)wrap;
+                    // 验证消息类型是否为文本类型 (1)，避免 FormTextMsg 返回错误类型的消息
+                    if (tmpWrap.m_uiMessageType == 1) {
+                        msgWrap = tmpWrap;
+                    }
+                    // 如果类型不是 1，msgWrap 保持 nil，走 fallback 路径手动创建
                 }
             } @catch (__unused NSException *exception) {
                 msgWrap = nil;
