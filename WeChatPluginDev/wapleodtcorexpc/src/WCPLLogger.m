@@ -5,6 +5,7 @@
 //
 
 #import "WCPLLogger.h"
+#import "WCPLConstants.h"
 #import <UIKit/UIKit.h>
 
 @interface WCPLLogger ()
@@ -16,6 +17,7 @@
 @implementation WCPLLogger
 
 static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
+static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 
 + (instancetype)sharedLogger {
     static WCPLLogger *logger = nil;
@@ -28,11 +30,8 @@ static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
 
 - (instancetype)init {
     if (self = [super init]) {
-        // 默认关闭日志，启动时读取持久化开关
-        _enabled = NO;
-
         // 创建日志队列，确保线程安全
-        _logQueue = dispatch_queue_create("com.wcpl.logger", DISPATCH_QUEUE_SERIAL);
+        _logQueue = dispatch_queue_create(kWCPLLoggerQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
 
         // 日志文件路径: Documents/wcpl_debug.log
         NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
@@ -49,9 +48,21 @@ static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
             [_fileHandle seekToEndOfFile];
         }
 
-        BOOL savedEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLDebugLogEnabled];
-        if (savedEnabled) {
-            [self setEnabled:YES];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSNumber *savedLevel = [defaults objectForKey:kWCPLLogLevelKey];
+        if ([savedLevel respondsToSelector:@selector(integerValue)]) {
+            _logLevel = (WCPLLogLevel)savedLevel.integerValue;
+        } else {
+            BOOL savedEnabled = [defaults boolForKey:kWCPLDebugLogEnabled];
+            _logLevel = savedEnabled ? WCPLLogLevelDebug : WCPLLogLevelNone;
+        }
+        _enabled = (_logLevel != WCPLLogLevelNone);
+
+        if (_enabled) {
+            NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n",
+                                    [self currentTimestamp],
+                                    [self startupContextInfo]];
+            [self writeToFile:startupLog];
         }
     }
     return self;
@@ -66,30 +77,53 @@ static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
 #pragma mark - Public Methods
 
 - (void)setEnabled:(BOOL)enabled {
-    if (_enabled != enabled) {
-        _enabled = enabled;
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kWCPLDebugLogEnabled];
+    self.logLevel = enabled ? WCPLLogLevelDebug : WCPLLogLevelNone;
+}
 
-        if (enabled) {
-            // 启用日志时写入启动消息
-            NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n", [self currentTimestamp], [self startupContextInfo]];
-            [self writeToFile:startupLog];
-        } else {
-            // 关闭日志时记录关闭时间，便于排查
-            NSString *stopLog = [NSString stringWithFormat:@"\n========== WCPL Logger Stopped at %@ ==========\n", [self currentTimestamp]];
-            [self writeToFile:stopLog];
-        }
+- (void)setLogLevel:(WCPLLogLevel)logLevel {
+    WCPLLogLevel normalized = logLevel;
+    if (normalized < WCPLLogLevelDebug) {
+        normalized = WCPLLogLevelDebug;
+    } else if (normalized > WCPLLogLevelNone) {
+        normalized = WCPLLogLevelNone;
+    }
+
+    if (_logLevel == normalized) {
+        return;
+    }
+
+    BOOL wasEnabled = (_logLevel != WCPLLogLevelNone);
+    BOOL willEnabled = (normalized != WCPLLogLevelNone);
+
+    _logLevel = normalized;
+    _enabled = willEnabled;
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:normalized forKey:kWCPLLogLevelKey];
+    [defaults setBool:willEnabled forKey:kWCPLDebugLogEnabled];
+
+    if (!wasEnabled && willEnabled) {
+        NSString *startupLog = [NSString stringWithFormat:@"\n\n========== WCPL Logger Started at %@ ==========\n%@\n",
+                                [self currentTimestamp],
+                                [self startupContextInfo]];
+        [self writeToFile:startupLog];
+    } else if (wasEnabled && !willEnabled) {
+        NSString *stopLog = [NSString stringWithFormat:@"\n========== WCPL Logger Stopped at %@ ==========\n",
+                             [self currentTimestamp]];
+        [self writeToFile:stopLog];
     }
 }
 
++ (void)setLogLevel:(WCPLLogLevel)level {
+    [WCPLLogger sharedLogger].logLevel = level;
+}
+
++ (WCPLLogLevel)currentLevel {
+    return [WCPLLogger sharedLogger].logLevel;
+}
+
 - (void)log:(NSString *)message {
-    if (!_enabled || !message || message.length == 0) return;
-
-    NSString *timestampedMessage = [NSString stringWithFormat:@"[%@] %@\n", [self currentTimestamp], message];
-    [self writeToFile:timestampedMessage];
-
-    // 同时输出到系统日志
-    NSLog(@"[WCPL] %@", message);
+    [self logWithLevel:WCPLLogLevelInfo message:message];
 }
 
 - (void)logFormat:(NSString *)format, ... {
@@ -98,7 +132,39 @@ static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
     NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
     va_end(args);
 
-    [self log:message];
+    [self logWithLevel:WCPLLogLevelDebug message:message];
+}
+
+- (void)logWithLevel:(WCPLLogLevel)level message:(NSString *)message {
+    if (!message || message.length == 0) return;
+    if (self.logLevel > level) return;
+
+    NSString *levelText = @"INFO";
+    switch (level) {
+        case WCPLLogLevelDebug: levelText = @"DEBUG"; break;
+        case WCPLLogLevelInfo: levelText = @"INFO"; break;
+        case WCPLLogLevelWarning: levelText = @"WARN"; break;
+        case WCPLLogLevelError: levelText = @"ERROR"; break;
+        case WCPLLogLevelNone: levelText = @"NONE"; break;
+    }
+
+    NSString *timestampedMessage = [NSString stringWithFormat:@"[%@][%@] %@\n",
+                                    [self currentTimestamp],
+                                    levelText,
+                                    message];
+    [self writeToFile:timestampedMessage];
+
+    // 同时输出到系统日志（仅在启用日志时）
+    NSLog(@"[WCPL][%@] %@", levelText, message);
+}
+
+- (void)logWithLevel:(WCPLLogLevel)level format:(NSString *)format, ... {
+    va_list args;
+    va_start(args, format);
+    NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
+    va_end(args);
+
+    [self logWithLevel:level message:message];
 }
 
 - (NSString *)logFilePath {

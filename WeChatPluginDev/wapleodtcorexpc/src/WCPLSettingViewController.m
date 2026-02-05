@@ -6,7 +6,7 @@
 //
 
 #import "WCPLSettingViewController.h"
-#import "WCPLRedEnvelopConfig.h"
+#import "WCPLConfigCenter.h"
 #import "WCPLMultiSelectGroupsViewController.h"
 #import "WCPLMultiSelectContactsViewController.h"
 #import "WCPLFuncService.h"
@@ -84,7 +84,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self.tableViewMgr clearAllSection];
 
     [self addBasicSettingSection];
-    [self addRedEnvelopNotifySection];
     [self addAdvanceSettingSection];
     [self addMessageIgnoreSettingSection];
     [self addOtherSettingSection];
@@ -108,14 +107,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
     if ([WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) {
         [section addCell:[self createPrivateRedEnvelopCell]];
-        if ([WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable) {
-            [section addCell:[self createPrivateAutoReplyCell]];
-        }
 
         [section addCell:[self createGroupRedEnvelopCell]];
         if ([WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable) {
             [section addCell:[self createGroupScopeCell]];
-            [section addCell:[self createGroupAutoReplyCell]];
             [section addCell:[self createReceiveSelfRedEnvelopCell]];
         }
 
@@ -183,50 +178,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self reloadTableData];
 }
 
-- (NSString *)wcpl_autoReplyStatusText:(NSString *)text {
-    return text.length > 0 ? @"已设置" : @"未设置";
-}
-
-- (WCTableViewNormalCellManager *)createPrivateAutoReplyCell {
-    NSString *status = [self wcpl_autoReplyStatusText:[WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopAutoReplyText];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingPrivateAutoReply) target:self title:@"领取后自动回复" rightValue:status accessoryType:1];
-}
-
-- (void)settingPrivateAutoReply {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    NSString *current = config.privateRedEnvelopAutoReplyText ?: @"";
-
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"私聊红包自动回复"
-                                                                   message:@"领取后在当前聊天发送一条文本消息（留空=关闭）"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"回复内容";
-        textField.text = current;
-    }];
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-
-    if (current.length > 0) {
-        [alert addAction:[UIAlertAction actionWithTitle:@"清除" style:UIAlertActionStyleDestructive handler:^(__unused UIAlertAction *action) {
-            config.privateRedEnvelopAutoReplyText = nil;
-            [self reloadTableData];
-        }]];
-    }
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
-        NSString *text = alert.textFields.firstObject.text ?: @"";
-        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (text.length == 0) {
-            config.privateRedEnvelopAutoReplyText = nil;
-        } else {
-            config.privateRedEnvelopAutoReplyText = text;
-        }
-        [self reloadTableData];
-    }]];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 - (WCTableViewNormalCellManager *)createGroupRedEnvelopCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingGroupRedEnvelop:) target:self title:@"群聊红包" on:[WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable];
 }
@@ -242,12 +193,12 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         case 0:
             return @"全部群聊";
         case 2: {
-            NSUInteger count = config.groupDenyList.count;
+            NSUInteger count = config.blockedGroupList.count;
             return count == 0 ? @"黑名单 (未选)" : [NSString stringWithFormat:@"黑名单 (%lu)", (unsigned long)count];
         }
         case 1:
         default: {
-            NSUInteger count = config.blackList.count;
+            NSUInteger count = config.allowedGroupList.count;
             return count == 0 ? @"白名单 (未选)" : [NSString stringWithFormat:@"白名单 (%lu)", (unsigned long)count];
         }
     }
@@ -287,92 +238,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (WCTableViewNormalCellManager *)createGroupAutoReplyCell {
-    NSString *status = [self wcpl_autoReplyStatusText:[WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopAutoReplyText];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingGroupAutoReply) target:self title:@"领取后自动回复" rightValue:status accessoryType:1];
-}
-
-- (void)settingGroupAutoReply {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    NSString *current = config.groupRedEnvelopAutoReplyText ?: @"";
-
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"群聊红包自动回复"
-                                                                   message:@"领取后在当前群聊发送一条文本消息（留空=关闭）"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"回复内容";
-        textField.text = current;
-    }];
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-
-    if (current.length > 0) {
-        [alert addAction:[UIAlertAction actionWithTitle:@"清除" style:UIAlertActionStyleDestructive handler:^(__unused UIAlertAction *action) {
-            config.groupRedEnvelopAutoReplyText = nil;
-            [self reloadTableData];
-        }]];
-    }
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
-        NSString *text = alert.textFields.firstObject.text ?: @"";
-        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (text.length == 0) {
-            config.groupRedEnvelopAutoReplyText = nil;
-        } else {
-            config.groupRedEnvelopAutoReplyText = text;
-        }
-        [self reloadTableData];
-    }]];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-#pragma mark - Red Envelop Notify
-
-- (void)addRedEnvelopNotifySection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"通知设置"];
-    [section addCell:[self createRedEnvelopNotifyCell]];
-    [self.tableViewMgr addSection:section];
-}
-
-- (NSString *)wcpl_redEnvelopNotifyDisplayText {
-    NSInteger value = [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify;
-    switch (value) {
-        case 1: return @"发给自己";
-        case 2: return @"发给文件传输助手";
-        case 0:
-        default: return @"不提醒";
-    }
-}
-
-- (WCTableViewNormalCellManager *)createRedEnvelopNotifyCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRedEnvelopNotifyPicker) target:self title:@"领取结果通知" rightValue:[self wcpl_redEnvelopNotifyDisplayText] accessoryType:1];
-}
-
-- (void)showRedEnvelopNotifyPicker {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"领取结果通知"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"不提醒" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify = 0;
-        [self reloadTableData];
-    }]];
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"发给自己" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify = 1;
-        [self reloadTableData];
-    }]];
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"发给文件传输助手" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].redEnvelopResultNotify = 2;
-        [self reloadTableData];
-    }]];
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 #pragma mark - Advanced Setting
 
 - (void)addAdvanceSettingSection {
@@ -392,10 +257,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createBlackListCell {
-    if ([WCPLRedEnvelopConfig sharedConfig].blackList.count == 0) {
+    if ([WCPLRedEnvelopConfig sharedConfig].allowedGroupList.count == 0) {
         return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showBlackList) target:self title:@"群聊白名单" rightValue:@"未选择" accessoryType:1];
     } else {
-        NSString *blackListCountStr = [NSString stringWithFormat:@"已选 %lu 个群", (unsigned long)[WCPLRedEnvelopConfig sharedConfig].blackList.count];
+        NSString *blackListCountStr = [NSString stringWithFormat:@"已选 %lu 个群", (unsigned long)[WCPLRedEnvelopConfig sharedConfig].allowedGroupList.count];
         return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showBlackList) target:self title:@"群聊白名单" rightValue:blackListCountStr accessoryType:1];
     }
 }
@@ -403,7 +268,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showBlackList {
     WCPLCrashBreadcrumb(@"打开群聊白名单");
     self.groupSelectContext = WCPLGroupSelectContextBlackList;
-    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].blackList];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].allowedGroupList];
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
@@ -416,7 +281,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showGroupDenyList {
     WCPLCrashBreadcrumb(@"打开群聊黑名单");
     self.groupSelectContext = WCPLGroupSelectContextRedEnvelopDenyList;
-    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].groupDenyList];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].blockedGroupList];
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
@@ -442,11 +307,11 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createAbortRemokeMessageCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageRevoke:) target:self title:@"消息防撤回" on:[WCPLRedEnvelopConfig sharedConfig].revokeEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageRevoke:) target:self title:@"消息防撤回" on:[WCPLConfigCenter shared].revoke.revokeEnable];
 }
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].revokeEnable = sender.on;
+    [WCPLConfigCenter shared].revoke.revokeEnable = sender.on;
 }
 
 - (WCTableViewNormalCellManager *)createDebugLogCell {
@@ -693,11 +558,11 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createUserIgnoreEnableCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingUserIgnoreEnable:) target:self title:@"启用消息屏蔽" on:[WCPLRedEnvelopConfig sharedConfig].userIgnoreEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingUserIgnoreEnable:) target:self title:@"启用消息屏蔽" on:[WCPLConfigCenter shared].ignore.userIgnoreEnable];
 }
 
 - (void)settingUserIgnoreEnable:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].userIgnoreEnable = sender.on;
+    [WCPLConfigCenter shared].ignore.userIgnoreEnable = sender.on;
 }
 
 - (WCTableViewNormalCellManager *)createIgnoredChatroomCountCell {
@@ -711,7 +576,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (NSArray<NSString *> *)ignoredChatroomUserNames {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableArray<NSString *> *results = [NSMutableArray array];
     [config.chatIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
         if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
@@ -722,7 +587,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (NSArray<NSString *> *)ignoredUserNames {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableArray<NSString *> *results = [NSMutableArray array];
     [config.userIgnoreInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
         if (obj.boolValue && [key rangeOfString:@"@chatroom"].location == NSNotFound) {
@@ -1006,7 +871,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)updateChatIgnoreInfoWithChatrooms:(NSArray *)chatrooms {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableDictionary<NSString *, NSNumber *> *dict = [NSMutableDictionary dictionary];
     for (NSString *chatroom in chatrooms) {
         if ([chatroom rangeOfString:@"@chatroom"].location != NSNotFound) {
@@ -1018,7 +883,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)updateUserIgnoreInfoWithUsers:(NSArray *)users {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableDictionary<NSString *, NSNumber *> *dict = [NSMutableDictionary dictionary];
     for (NSString *user in users) {
         if ([user rangeOfString:@"@chatroom"].location == NSNotFound) {
@@ -1037,13 +902,13 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [section addCell:[self createMessageReplySwitchCell]];
 
     // 只有启用复读机时才显示详细设置
-    if ([WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) {
+    if ([WCPLConfigCenter shared].repeatButton.messageReplyEnable) {
         [section addCell:[self createRepeatButtonHapticCell]];
         [section addCell:[self createRepeatButtonStyleCell]];
         [section addCell:[self createRepeatButtonBackgroundAlphaCell]];
         [section addCell:[self createRepeatButtonSizeCell]];
         [section addCell:[self createRepeatButtonTextColorModeCell]];
-        if ([WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode == 1) {
+        if ([WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode == 1) {
             [section addCell:[self createRepeatButtonTextColorDefaultCell]];
             [section addCell:[self createRepeatButtonTextColorTextCell]];
             [section addCell:[self createRepeatButtonTextColorVoiceCell]];
@@ -1065,7 +930,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [section addCell:[self createSwipeGestureSwitchCell]];
 
     // 只有启用总开关时才显示详细设置
-    if ([WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable) {
+    if ([WCPLConfigCenter shared].gesture.swipeGestureEnable) {
         // 灵敏度
         [section addCell:[self createSwipeSensitivityCell]];
 
@@ -1073,7 +938,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         [section addCell:[self createSwipeQuoteSwitchCell]];
 
         // 只有启用左滑功能时才显示详细设置
-        if ([WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable) {
+        if ([WCPLConfigCenter shared].gesture.swipeQuoteEnable) {
             [section addCell:[self createSwipeLeftOtherActionCell]];
             [section addCell:[self createSwipeLeftSelfActionCell]];
         }
@@ -1082,7 +947,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         [section addCell:[self createSwipeRightSwitchCell]];
 
         // 只有启用右滑功能时才显示详细设置
-        if ([WCPLRedEnvelopConfig sharedConfig].swipeRightEnable) {
+        if ([WCPLConfigCenter shared].gesture.swipeRightEnable) {
             [section addCell:[self createSwipeRightOtherActionCell]];
             [section addCell:[self createSwipeRightSelfActionCell]];
         }
@@ -1104,25 +969,25 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createSwipeGestureSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用消息手势" on:[WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用消息手势" on:[WCPLConfigCenter shared].gesture.swipeGestureEnable];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeSensitivityCell {
-    NSInteger level = [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel;
+    NSInteger level = [WCPLConfigCenter shared].gesture.swipeSensitivityLevel;
     NSString *name = [self swipeSensitivityNameForLevel:level];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeSensitivityPicker) target:self title:@"  手势灵敏度" rightValue:name accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeQuoteSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"  消息左滑功能" on:[WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"  消息左滑功能" on:[WCPLConfigCenter shared].gesture.swipeQuoteEnable];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeRight:) target:self title:@"  消息右滑功能" on:[WCPLRedEnvelopConfig sharedConfig].swipeRightEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeRight:) target:self title:@"  消息右滑功能" on:[WCPLConfigCenter shared].gesture.swipeRightEnable];
 }
 
 - (WCTableViewNormalCellManager *)createTapReferJumpSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLConfigCenter shared].gesture.tapReferJumpEnable];
 }
 
 // 获取对方消息操作名称（引用、复读、删除）
@@ -1147,50 +1012,50 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createSwipeLeftOtherActionCell {
-    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeLeftOtherAction;
+    NSInteger action = [WCPLConfigCenter shared].gesture.swipeLeftOtherAction;
     NSString *actionName = [self actionNameForOtherMessage:action];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeLeftOtherActionPicker) target:self title:@"      左滑对方消息" rightValue:actionName accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeLeftSelfActionCell {
-    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeLeftSelfAction;
+    NSInteger action = [WCPLConfigCenter shared].gesture.swipeLeftSelfAction;
     NSString *actionName = [self actionNameForSelfMessage:action];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeLeftSelfActionPicker) target:self title:@"      左滑己方消息" rightValue:actionName accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightOtherActionCell {
-    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeRightOtherAction;
+    NSInteger action = [WCPLConfigCenter shared].gesture.swipeRightOtherAction;
     NSString *actionName = [self actionNameForOtherMessage:action];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightOtherActionPicker) target:self title:@"      右滑对方消息" rightValue:actionName accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightSelfActionCell {
-    NSInteger action = [WCPLRedEnvelopConfig sharedConfig].swipeRightSelfAction;
+    NSInteger action = [WCPLConfigCenter shared].gesture.swipeRightSelfAction;
     NSString *actionName = [self actionNameForSelfMessage:action];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightSelfActionPicker) target:self title:@"      右滑己方消息" rightValue:actionName accessoryType:1];
 }
 
 - (void)settingSwipeGesture:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].swipeGestureEnable = sender.on;
-    NSLog(@"[WCPL] Swipe gesture feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [WCPLConfigCenter shared].gesture.swipeGestureEnable = sender.on;
+    WCPLLogInfo(@"Swipe gesture feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
 }
 
 - (void)settingSwipeQuote:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].swipeQuoteEnable = sender.on;
-    NSLog(@"[WCPL] Swipe left feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [WCPLConfigCenter shared].gesture.swipeQuoteEnable = sender.on;
+    WCPLLogInfo(@"Swipe left feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
 }
 
 - (void)settingSwipeRight:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].swipeRightEnable = sender.on;
-    NSLog(@"[WCPL] Swipe right feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [WCPLConfigCenter shared].gesture.swipeRightEnable = sender.on;
+    WCPLLogInfo(@"Swipe right feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
 }
 
 - (void)settingTapReferJump:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].tapReferJumpEnable = sender.on;
-    NSLog(@"[WCPL] Tap refer jump feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [WCPLConfigCenter shared].gesture.tapReferJumpEnable = sender.on;
+    WCPLLogInfo(@"Tap refer jump feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (void)showSwipeSensitivityPicker {
@@ -1199,17 +1064,17 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
 
     UIAlertAction *lowAction = [UIAlertAction actionWithTitle:@"低 (不易误触)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel = 0;
+        [WCPLConfigCenter shared].gesture.swipeSensitivityLevel = 0;
         [self reloadTableData];
     }];
 
     UIAlertAction *midAction = [UIAlertAction actionWithTitle:@"中 (默认)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel = 1;
+        [WCPLConfigCenter shared].gesture.swipeSensitivityLevel = 1;
         [self reloadTableData];
     }];
 
     UIAlertAction *highAction = [UIAlertAction actionWithTitle:@"高 (更灵敏)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeSensitivityLevel = 2;
+        [WCPLConfigCenter shared].gesture.swipeSensitivityLevel = 2;
         [self reloadTableData];
     }];
 
@@ -1228,7 +1093,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self showActionPickerWithTitle:@"左滑对方消息操作"
                            isSelf:NO
                        completion:^(NSInteger action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeLeftOtherAction = action;
+        [WCPLConfigCenter shared].gesture.swipeLeftOtherAction = action;
         [self reloadTableData];
     }];
 }
@@ -1238,7 +1103,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self showActionPickerWithTitle:@"左滑己方消息操作"
                            isSelf:YES
                        completion:^(NSInteger action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeLeftSelfAction = action;
+        [WCPLConfigCenter shared].gesture.swipeLeftSelfAction = action;
         [self reloadTableData];
     }];
 }
@@ -1248,7 +1113,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self showActionPickerWithTitle:@"右滑对方消息操作"
                            isSelf:NO
                        completion:^(NSInteger action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeRightOtherAction = action;
+        [WCPLConfigCenter shared].gesture.swipeRightOtherAction = action;
         [self reloadTableData];
     }];
 }
@@ -1258,7 +1123,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self showActionPickerWithTitle:@"右滑己方消息操作"
                            isSelf:YES
                        completion:^(NSInteger action) {
-        [WCPLRedEnvelopConfig sharedConfig].swipeRightSelfAction = action;
+        [WCPLConfigCenter shared].gesture.swipeRightSelfAction = action;
         [self reloadTableData];
     }];
 }
@@ -1303,15 +1168,15 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (在消息旁显示按钮)" on:[WCPLRedEnvelopConfig sharedConfig].messageReplyEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (在消息旁显示按钮)" on:[WCPLConfigCenter shared].repeatButton.messageReplyEnable];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"复读按钮震动反馈" on:[WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"复读按钮震动反馈" on:[WCPLConfigCenter shared].repeatButton.repeatButtonHapticEnable];
 }
 
 - (void)settingRepeatButtonHaptic:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable = sender.on;
+    [WCPLConfigCenter shared].repeatButton.repeatButtonHapticEnable = sender.on;
 }
 
 - (WCTableViewNormalCellManager *)createDebugLogSwitchCell {
@@ -1337,7 +1202,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (WCTableViewNormalCellManager *)createRepeatButtonStyleCell {
     NSArray *styleNames = @[@"+1 文字", @"内置图标", @"自定义图片"];
-    NSInteger currentStyle = [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle;
+    NSInteger currentStyle = [WCPLConfigCenter shared].repeatButton.repeatButtonStyle;
     NSString *styleName = (currentStyle >= 0 && currentStyle < styleNames.count) ? styleNames[currentStyle] : styleNames[0];
 
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonStylePicker) target:self title:@"按钮样式" rightValue:styleName accessoryType:1];
@@ -1350,19 +1215,19 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
     // 样式 0: +1 文字
     UIAlertAction *textAction = [UIAlertAction actionWithTitle:@"+1 文字 (默认)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle = 0;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonStyle = 0;
         [self reloadTableData];
     }];
 
     // 样式 1: 内置图标
     UIAlertAction *iconAction = [UIAlertAction actionWithTitle:@"内置图标 (emoji)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle = 1;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonStyle = 1;
         [self showBuiltInIconPicker];
     }];
 
     // 样式 2: 自定义图片
     UIAlertAction *customAction = [UIAlertAction actionWithTitle:@"自定义图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonStyle = 2;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonStyle = 2;
         [self showImagePicker];
     }];
 
@@ -1386,7 +1251,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     for (NSInteger i = 0; i < icons.count; i++) {
         NSString *icon = icons[i];
         UIAlertAction *action = [UIAlertAction actionWithTitle:icon style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [WCPLRedEnvelopConfig sharedConfig].repeatButtonIconIndex = i;
+            [WCPLConfigCenter shared].repeatButton.repeatButtonIconIndex = i;
             [self reloadTableData];
         }];
         [alert addAction:action];
@@ -1401,7 +1266,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonBackgroundAlphaCell {
-    CGFloat alpha = [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha;
+    CGFloat alpha = [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha;
     NSString *value = [NSString stringWithFormat:@"%.2f", alpha];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonBackgroundAlpha) target:self title:@"按钮背景透明度" rightValue:value accessoryType:1];
 }
@@ -1411,7 +1276,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                                                                    message:@"范围 0.10 ~ 1.00"
                                                             preferredStyle:UIAlertControllerStyleAlert];
 
-    CGFloat currentValue = [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha;
+    CGFloat currentValue = [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha;
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"例如：0.85";
         textField.keyboardType = UIKeyboardTypeDecimalPad;
@@ -1430,7 +1295,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
             [self showErrorAlert:@"范围应在 0.10 ~ 1.00 之间"];
             return;
         }
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha = value;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha = value;
         [self reloadTableData];
     }];
 
@@ -1441,7 +1306,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonSizeCell {
-    CGFloat size = [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize;
+    CGFloat size = [WCPLConfigCenter shared].repeatButton.repeatButtonSize;
     NSString *value = [NSString stringWithFormat:@"%.0f", size];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonSize) target:self title:@"按钮大小" rightValue:value accessoryType:1];
 }
@@ -1451,7 +1316,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                                                                    message:@"范围 18 ~ 36"
                                                             preferredStyle:UIAlertControllerStyleAlert];
 
-    CGFloat currentValue = [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize;
+    CGFloat currentValue = [WCPLConfigCenter shared].repeatButton.repeatButtonSize;
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"例如：24";
         textField.keyboardType = UIKeyboardTypeNumberPad;
@@ -1470,7 +1335,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
             [self showErrorAlert:@"范围应在 18 ~ 36 之间"];
             return;
         }
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize = value;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonSize = value;
         [self reloadTableData];
     }];
 
@@ -1482,7 +1347,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (WCTableViewNormalCellManager *)createRepeatButtonTextColorModeCell {
     NSArray *modeNames = @[@"统一颜色", @"按消息类型"];
-    NSInteger mode = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode;
+    NSInteger mode = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode;
     NSString *modeName = (mode >= 0 && mode < modeNames.count) ? modeNames[mode] : modeNames[0];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonTextColorModePicker) target:self title:@"文字颜色规则" rightValue:modeName accessoryType:1];
 }
@@ -1493,12 +1358,12 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
 
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"统一颜色" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode = 0;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode = 0;
         [self reloadTableData];
     }];
 
     UIAlertAction *typeAction = [UIAlertAction actionWithTitle:@"按消息类型" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorMode = 1;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode = 1;
         [self reloadTableData];
     }];
 
@@ -1512,66 +1377,66 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonTextColorDefaultCell {
-    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault ?: @"";
+    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault ?: @"";
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorDefault) target:self title:@"文字颜色-默认" rightValue:value accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonTextColorTextCell {
-    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorText ?: @"";
+    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorText ?: @"";
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorText) target:self title:@"文字颜色-文本" rightValue:value accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonTextColorVoiceCell {
-    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorVoice ?: @"";
+    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorVoice ?: @"";
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorVoice) target:self title:@"文字颜色-语音" rightValue:value accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonTextColorEmoticonCell {
-    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorEmoticon ?: @"";
+    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorEmoticon ?: @"";
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorEmoticon) target:self title:@"文字颜色-表情" rightValue:value accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonTextColorQuoteCell {
-    NSString *value = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorQuote ?: @"";
+    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorQuote ?: @"";
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorQuote) target:self title:@"文字颜色-引用" rightValue:value accessoryType:1];
 }
 
 - (void)settingRepeatButtonTextColorDefault {
-    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault ?: @"";
+    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault ?: @"";
     [self showRepeatButtonTextColorInputWithTitle:@"默认颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault = hexString;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault = hexString;
         [self reloadTableData];
     }];
 }
 
 - (void)settingRepeatButtonTextColorText {
-    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorText ?: @"";
+    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorText ?: @"";
     [self showRepeatButtonTextColorInputWithTitle:@"文本消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorText = hexString;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorText = hexString;
         [self reloadTableData];
     }];
 }
 
 - (void)settingRepeatButtonTextColorVoice {
-    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorVoice ?: @"";
+    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorVoice ?: @"";
     [self showRepeatButtonTextColorInputWithTitle:@"语音消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorVoice = hexString;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorVoice = hexString;
         [self reloadTableData];
     }];
 }
 
 - (void)settingRepeatButtonTextColorEmoticon {
-    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorEmoticon ?: @"";
+    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorEmoticon ?: @"";
     [self showRepeatButtonTextColorInputWithTitle:@"表情消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorEmoticon = hexString;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorEmoticon = hexString;
         [self reloadTableData];
     }];
 }
 
 - (void)settingRepeatButtonTextColorQuote {
-    NSString *current = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorQuote ?: @"";
+    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorQuote ?: @"";
     [self showRepeatButtonTextColorInputWithTitle:@"引用消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorQuote = hexString;
+        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorQuote = hexString;
         [self reloadTableData];
     }];
 }
@@ -1771,7 +1636,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [imageData writeToFile:filePath atomically:YES];
 
     // 保存路径到配置
-    [WCPLRedEnvelopConfig sharedConfig].repeatButtonCustomImagePath = fileName;
+    [WCPLConfigCenter shared].repeatButton.repeatButtonCustomImagePath = fileName;
     [self reloadTableData];
 
     // 显示成功提示
@@ -1879,8 +1744,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)settingMessageReply:(UISwitch *)sender {
-    [WCPLRedEnvelopConfig sharedConfig].messageReplyEnable = sender.on;
-    NSLog(@"[WCPL] Message repeat feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [WCPLConfigCenter shared].repeatButton.messageReplyEnable = sender.on;
+    WCPLLogInfo(@"Message repeat feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
 }
 
@@ -1896,9 +1761,9 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
         [self updateChatIgnoreInfoWithChatrooms:userNames];
     } else if (self.groupSelectContext == WCPLGroupSelectContextRedEnvelopDenyList) {
-        [WCPLRedEnvelopConfig sharedConfig].groupDenyList = userNames;
+        [WCPLRedEnvelopConfig sharedConfig].blockedGroupList = userNames;
     } else {
-        [WCPLRedEnvelopConfig sharedConfig].blackList = userNames;
+        [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
     }
     [self reloadTableData];
     self.groupSelectContext = WCPLGroupSelectContextNone;
@@ -1916,7 +1781,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
         [self updateChatIgnoreInfoWithChatrooms:userNames];
     } else if (self.groupSelectContext == WCPLGroupSelectContextBlackList) {
-        [WCPLRedEnvelopConfig sharedConfig].blackList = userNames;
+        [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
     } else {
         [self updateUserIgnoreInfoWithUsers:userNames];
     }

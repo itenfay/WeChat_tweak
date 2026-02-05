@@ -6,111 +6,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-
-@class CContact;
 
 @interface WCPLRedEnvelopConfig : NSObject
 
 + (instancetype)sharedConfig;
 
 @property (assign, nonatomic) BOOL autoReceiveEnable;
-// 私聊红包
 @property (assign, nonatomic) BOOL privateRedEnvelopEnable;
-// 群聊红包
 @property (assign, nonatomic) BOOL groupRedEnvelopEnable;
 @property (assign, nonatomic) NSInteger delaySeconds;
 @property (assign, nonatomic) BOOL receiveSelfRedEnvelop;
 @property (assign, nonatomic) BOOL serialReceive;
-// 群聊红包生效范围：0=全部群聊，1=仅白名单，2=排除黑名单
 @property (assign, nonatomic) NSInteger groupRedEnvelopScope;
-// 群聊白名单（历史字段名 blackList）
-@property (strong, nonatomic) NSArray *blackList;
-// 群聊黑名单（排除列表）
-@property (strong, nonatomic) NSArray *groupDenyList;
+@property (strong, nonatomic) NSArray *allowedGroupList;
+@property (strong, nonatomic) NSArray *blockedGroupList;
 
-// 领取后自动回复（为空则不启用）
-@property (copy, nonatomic) NSString *privateRedEnvelopAutoReplyText;
-@property (copy, nonatomic) NSString *groupRedEnvelopAutoReplyText;
-
-// 领取结果通知：0=不提醒，1=发给自己，2=发给文件传输助手
-@property (assign, nonatomic) NSInteger redEnvelopResultNotify;
-
-// Advanced sections.
-@property (assign, nonatomic) BOOL revokeEnable;
-
-// Filt Messages.
-@property ( copy , nonatomic) NSString *curUsrName;
-@property (strong, nonatomic) NSMutableDictionary<NSString *,NSNumber *> *chatIgnoreInfo;
-
-- (void)saveChatIgnoreNameListToLocalFile;
-
-// 屏蔽联系人消息（总开关 + 名单）
-@property (assign, nonatomic) BOOL userIgnoreEnable;
-@property (strong, nonatomic) NSMutableDictionary<NSString *,NSNumber *> *userIgnoreInfo;
-
-- (void)saveUserIgnoreNameListToLocalFile;
-
-// Fake Location.
-@property (assign, nonatomic) double lat;
-@property (assign, nonatomic) double lng;
-@property (assign, nonatomic) BOOL fakeLocEnable;
-
-// TP.
-@property (assign, nonatomic) BOOL TPOn;
-
-// Message Reply.
-@property (assign, nonatomic) BOOL messageReplyEnable;
-
-// 复读按钮震动反馈
-@property (assign, nonatomic) BOOL repeatButtonHapticEnable;
-
-// Message Reply Button Style.
-// 0 = 文字模式 (+1), 1 = 内置图标, 2 = 自定义图片
-@property (assign, nonatomic) NSInteger repeatButtonStyle;
-// 内置图标索引: 0=+1, 1=👍, 2=❤️, 3=😂, 4=🔥, 5=👏, 6=🎉
-@property (assign, nonatomic) NSInteger repeatButtonIconIndex;
-// 自定义图片路径 (存储在 Documents 目录)
-@property (copy, nonatomic) NSString *repeatButtonCustomImagePath;
-// 复读按钮背景透明度 (仅影响背景色)
-@property (assign, nonatomic) CGFloat repeatButtonBackgroundAlpha;
-// 复读按钮尺寸 (正方形边长)
-@property (assign, nonatomic) CGFloat repeatButtonSize;
-// 复读按钮文字颜色模式: 0=统一颜色, 1=按消息类型
-@property (assign, nonatomic) NSInteger repeatButtonTextColorMode;
-// 文字颜色 (Hex 字符串, 例如 #07C160)
-@property (copy, nonatomic) NSString *repeatButtonTextColorDefault;
-@property (copy, nonatomic) NSString *repeatButtonTextColorText;
-@property (copy, nonatomic) NSString *repeatButtonTextColorVoice;
-@property (copy, nonatomic) NSString *repeatButtonTextColorEmoticon;
-@property (copy, nonatomic) NSString *repeatButtonTextColorQuote;
-
-// 消息手势总开关
-@property (assign, nonatomic) BOOL swipeGestureEnable;
-// 左滑引用功能
-@property (assign, nonatomic) BOOL swipeQuoteEnable;
-// 引用消息点击跳转
-@property (assign, nonatomic) BOOL tapReferJumpEnable;
-
-// 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
-@property (assign, nonatomic) NSInteger swipeSensitivityLevel;
-
-// 消息手势参数（根据 swipeSensitivityLevel 计算）
-- (CGFloat)swipeDistanceScale;
-- (CGFloat)swipeVelocityTrigger;
-- (CGFloat)swipeLightTriggerRatio;
-
-// 消息手势操作类型
-// 0=引用, 1=复读, 2=删除, 3=撤回(仅己方消息)
-// 左滑对方消息操作
-@property (assign, nonatomic) NSInteger swipeLeftOtherAction;
-// 左滑己方消息操作
-@property (assign, nonatomic) NSInteger swipeLeftSelfAction;
-// 右滑功能开关
-@property (assign, nonatomic) BOOL swipeRightEnable;
-// 右滑对方消息操作
-@property (assign, nonatomic) NSInteger swipeRightOtherAction;
-// 右滑己方消息操作
-@property (assign, nonatomic) NSInteger swipeRightSelfAction;
+// 旧命名（保持向后兼容）
+@property (strong, nonatomic) NSArray *blackList __attribute__((deprecated("Use allowedGroupList")));
+@property (strong, nonatomic) NSArray *groupDenyList __attribute__((deprecated("Use blockedGroupList")));
 
 @end

@@ -7,6 +7,7 @@
 
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WeChatRedEnvelopParam.h"
+#import "WCPLConstants.h"
 #import <dispatch/dispatch.h>
 
 @interface WCPLRedEnvelopParamQueue ()
@@ -30,7 +31,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         _queue = [[NSMutableArray alloc] init];
-        _syncQueue = dispatch_queue_create("com.wcpl.redenvelop.queue", DISPATCH_QUEUE_SERIAL);
+        _syncQueue = dispatch_queue_create(kWCPLRedEnvelopQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }

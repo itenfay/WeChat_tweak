@@ -6,7 +6,7 @@
 //
 
 #import "WCPLFuncService.h"
-#import "WCPLRedEnvelopConfig.h"
+#import "WCPLConfigCenter.h"
 #import "WCPLServiceCenter.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
@@ -77,7 +77,7 @@ static BOOL wcpl_isFriendUser(NSString *userName) {
 }
 
 + (BOOL)shouldIgnoreMessageWrap:(id)msgWrap {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     if (!config || !config.userIgnoreEnable) {
         return NO;
     }
@@ -131,7 +131,7 @@ static BOOL wcpl_isFriendUser(NSString *userName) {
     }
 
     NSMutableArray *msgListResult = [msgList mutableCopy];
-    if (![WCPLRedEnvelopConfig sharedConfig].userIgnoreEnable) {
+    if (![WCPLConfigCenter shared].ignore.userIgnoreEnable) {
         return msgListResult;
     }
 

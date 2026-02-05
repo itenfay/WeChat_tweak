@@ -10,7 +10,7 @@
 
 #import "WCPLMessageReplyManager.h"
 #import "WCPLRepeatButton.h"
-#import "WCPLRedEnvelopConfig.h"
+#import "WCPLConfigCenter.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
 #import "WCPLCrashReporter.h"
@@ -821,7 +821,7 @@ static char kWCPLRepeatButtonMessageKey;
 - (void)addRepeatButtonToCellView:(CommonMessageCellView *)cellView {
     @try {
         if (!cellView) return;
-        if (![WCPLRedEnvelopConfig sharedConfig].messageReplyEnable) return;
+        if (![WCPLConfigCenter shared].repeatButton.messageReplyEnable) return;
 
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         if (!cell || !cell.contentView) return;
@@ -1190,7 +1190,7 @@ static char kWCPLRepeatButtonMessageKey;
 #pragma mark - Private Methods
 
 - (CGFloat)repeatButtonSize {
-    CGFloat size = [WCPLRedEnvelopConfig sharedConfig].repeatButtonSize;
+    CGFloat size = [WCPLConfigCenter shared].repeatButton.repeatButtonSize;
     if (size < 18.0) {
         size = 18.0;
     } else if (size > 36.0) {
@@ -1200,7 +1200,7 @@ static char kWCPLRepeatButtonMessageKey;
 }
 
 - (CGFloat)repeatButtonBackgroundAlpha {
-    CGFloat alpha = [WCPLRedEnvelopConfig sharedConfig].repeatButtonBackgroundAlpha;
+    CGFloat alpha = [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha;
     if (alpha < 0.1) {
         alpha = 0.1;
     } else if (alpha > 1.0) {
@@ -1244,12 +1244,12 @@ static char kWCPLRepeatButtonMessageKey;
 
 - (UIColor *)repeatButtonDefaultTextColor {
     UIColor *fallback = [UIColor colorWithRed:7.0/255.0 green:193.0/255.0 blue:96.0/255.0 alpha:1.0];
-    NSString *hexString = [WCPLRedEnvelopConfig sharedConfig].repeatButtonTextColorDefault;
+    NSString *hexString = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault;
     return [self wcpl_colorFromHexString:hexString fallback:fallback];
 }
 
 - (UIColor *)repeatButtonTitleColorForMsgWrap:(CMessageWrap *)msgWrap {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLRepeatButtonConfig *config = [WCPLConfigCenter shared].repeatButton;
     UIColor *defaultColor = [self repeatButtonDefaultTextColor];
     if (config.repeatButtonTextColorMode != 1 || !msgWrap) {
         return defaultColor;
@@ -1328,7 +1328,7 @@ static char kWCPLRepeatButtonMessageKey;
 
 // 根据配置设置按钮内容（文字/图标/自定义图片）
 - (void)configureButtonContent:(UIButton *)button {
-    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    WCPLRepeatButtonConfig *config = [WCPLConfigCenter shared].repeatButton;
     NSInteger style = config.repeatButtonStyle;
     CGFloat buttonSize = [self repeatButtonSize];
     CGFloat textFontSize = MAX(10.0, buttonSize * 0.45);
@@ -1726,7 +1726,7 @@ static char kWCPLRepeatButtonMessageKey;
                 NSStringFromCGRect(sender.frame),
                 sender.superview ? NSStringFromClass([sender.superview class]) : @"nil");
 
-        if ([WCPLRedEnvelopConfig sharedConfig].repeatButtonHapticEnable) {
+        if ([WCPLConfigCenter shared].repeatButton.repeatButtonHapticEnable) {
             UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
             [generator prepare];
             [generator impactOccurred];

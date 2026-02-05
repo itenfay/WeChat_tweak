@@ -7,6 +7,7 @@
 
 #import "WCPLRedEnvelopTaskManager.h"
 #import "WCPLReceiveRedEnvelopOperation.h"
+#import "WCPLConstants.h"
 
 @interface WCPLRedEnvelopTaskManager ()
 
@@ -29,10 +30,10 @@
 - (instancetype)init {
     if (self = [super init]) {
         _serialTaskQueue = [[NSOperationQueue alloc] init];
-        _serialTaskQueue.maxConcurrentOperationCount = 1;
-        
+        _serialTaskQueue.maxConcurrentOperationCount = kWCPLSerialQueueConcurrency;
+
         _normalTaskQueue = [[NSOperationQueue alloc] init];
-        _normalTaskQueue.maxConcurrentOperationCount = 5;
+        _normalTaskQueue.maxConcurrentOperationCount = kWCPLMaxConcurrentRedEnvelopTasks;
     }
     return self;
 }
