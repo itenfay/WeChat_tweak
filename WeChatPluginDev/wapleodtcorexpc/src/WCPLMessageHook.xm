@@ -254,9 +254,10 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 %hook SyncCmdHandler
 
 - (_Bool)BatchAddMsg:(_Bool)arg1 ShowPush:(_Bool)arg2 {
-    NSMutableArray *msgList = [self valueForKey:@"m_arrMsgList"];
+    id handler = (id)self;
+    NSMutableArray *msgList = [handler valueForKey:@"m_arrMsgList"];
     NSMutableArray *msgListResult = [WCPLFuncService filtMessageFromMsgList:msgList];
-    [self setValue:msgListResult forKey:@"m_arrMsgList"];
+    [handler setValue:msgListResult forKey:@"m_arrMsgList"];
 
     return %orig;
 }
