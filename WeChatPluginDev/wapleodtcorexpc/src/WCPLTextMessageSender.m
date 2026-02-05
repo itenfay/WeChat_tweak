@@ -10,6 +10,30 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
+static BOOL wcpl_tm_isVisuallyEmpty(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) return YES;
+
+    static NSRegularExpression *invisibleRegex = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSError *error = nil;
+        invisibleRegex = [NSRegularExpression regularExpressionWithPattern:@"[\\p{Z}\\p{Cc}\\p{Cf}\\p{M}]"
+                                                                   options:0
+                                                                     error:&error];
+        if (error) {
+            invisibleRegex = nil;
+        }
+    });
+
+    if (!invisibleRegex) return NO;
+
+    NSString *stripped = [invisibleRegex stringByReplacingMatchesInString:text
+                                                                  options:0
+                                                                    range:NSMakeRange(0, text.length)
+                                                             withTemplate:@""];
+    return stripped.length == 0;
+}
+
 NSString * _Nullable WCPLTrimMessageText(NSString * _Nullable text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
     static NSCharacterSet *trimSet = nil;
@@ -20,7 +44,8 @@ NSString * _Nullable WCPLTrimMessageText(NSString * _Nullable text) {
         trimSet = [set copy];
     });
     NSString *trimmed = [text stringByTrimmingCharactersInSet:trimSet];
-    return trimmed.length > 0 ? trimmed : nil;
+    if (trimmed.length == 0) return nil;
+    return wcpl_tm_isVisuallyEmpty(trimmed) ? nil : trimmed;
 }
 
 static BOOL wcpl_tm_isChatRoom(NSString *sessionUserName) {
