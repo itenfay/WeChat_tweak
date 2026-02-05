@@ -5,6 +5,7 @@
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLCrashReporter.h"
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
