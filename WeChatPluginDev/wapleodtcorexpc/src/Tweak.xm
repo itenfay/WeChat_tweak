@@ -519,7 +519,7 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
     return NO;
 }
 
-static BOOL wcpl_addLocalSystemMessageToSession(NSString *sessionUserName, NSString *text) {
+__attribute__((unused)) static BOOL wcpl_addLocalSystemMessageToSession(NSString *sessionUserName, NSString *text) {
     NSString *session = wcpl_trimString(sessionUserName);
     NSString *content = wcpl_trimString(text);
     if (session.length == 0 || content.length == 0) return NO;
