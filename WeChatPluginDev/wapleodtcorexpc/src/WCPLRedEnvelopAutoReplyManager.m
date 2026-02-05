@@ -13,8 +13,33 @@
 
 static NSString *wcpl_rea_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    static NSCharacterSet *trimSet = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSMutableCharacterSet *set = [[NSCharacterSet whitespaceAndNewlineCharacterSet] mutableCopy];
+        // 额外剔除常见不可见字符，避免发送“看起来为空”的气泡（例如零宽空格 / BOM）。
+        [set addCharactersInString:@"\u00A0\u200B\u200C\u200D\u200E\u200F\u2060\uFEFF"];
+        trimSet = [set copy];
+    });
+    NSString *trimmed = [text stringByTrimmingCharactersInSet:trimSet];
     return trimmed.length > 0 ? trimmed : nil;
+}
+
+static NSString *wcpl_rea_utf16HexPreview(NSString *text, NSUInteger maxUnits) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0 || maxUnits == 0) return @"";
+    NSUInteger len = MIN(text.length, maxUnits);
+    NSMutableString *result = [NSMutableString stringWithCapacity:len * 5];
+    for (NSUInteger i = 0; i < len; i++) {
+        unichar ch = [text characterAtIndex:i];
+        [result appendFormat:@"%04X", ch];
+        if (i + 1 < len) {
+            [result appendString:@" "];
+        }
+    }
+    if (text.length > len) {
+        [result appendString:@" …"];
+    }
+    return result;
 }
 
 static NSString *wcpl_rea_safeUserNameFromObject(id obj) {
@@ -212,11 +237,13 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
         wrapContent = nil;
         displayContent = nil;
     }
-    WCPLLog(@"红包自动回复发送准备: to=%@ textLen=%lu wrapLen=%lu displayLen=%lu",
+    WCPLLog(@"红包自动回复发送准备: to=%@ textLen=%lu textHex=%@ wrapLen=%lu displayLen=%lu displayHex=%@",
             session,
             (unsigned long)content.length,
+            wcpl_rea_utf16HexPreview(content, 24),
             (unsigned long)wrapContent.length,
-            (unsigned long)displayContent.length);
+            (unsigned long)displayContent.length,
+            wcpl_rea_utf16HexPreview(displayContent, 24));
 
     id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
     Class messageMgrClass = objc_getClass("CMessageMgr");
@@ -329,8 +356,21 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
     if (session.length == 0) return;
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
-    NSString *replyText = wcpl_rea_trimString(isGroup ? config.groupRedEnvelopAutoReplyText : config.privateRedEnvelopAutoReplyText);
-    if (replyText.length == 0) return;
+    NSString *rawReplyText = isGroup ? config.groupRedEnvelopAutoReplyText : config.privateRedEnvelopAutoReplyText;
+    NSString *replyText = wcpl_rea_trimString(rawReplyText);
+    if (replyText.length == 0) {
+        WCPLLog(@"红包自动回复跳过: 文本为空 session=%@ isGroup=%d rawLen=%lu rawHex=%@",
+                session,
+                isGroup,
+                (unsigned long)([rawReplyText isKindOfClass:[NSString class]] ? rawReplyText.length : 0),
+                wcpl_rea_utf16HexPreview(rawReplyText, 24));
+        return;
+    }
+    WCPLLog(@"红包自动回复文本: session=%@ isGroup=%d textLen=%lu textHex=%@",
+            session,
+            isGroup,
+            (unsigned long)replyText.length,
+            wcpl_rea_utf16HexPreview(replyText, 24));
 
     NSString *key = wcpl_rea_dedupeKey(sendId, timingIdentifier, session);
     NSDate *now = [NSDate date];

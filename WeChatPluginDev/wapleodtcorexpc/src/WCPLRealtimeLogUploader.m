@@ -21,6 +21,9 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, assign) unsigned long long lastUploadedOffset;
 @property (nonatomic, assign) BOOL uploading;
+@property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTask;
+@property (nonatomic, assign) NSTimeInterval lastUploadErrorLogAt;
+@property (nonatomic, assign) NSUInteger consecutiveUploadFailures;
 
 @end
 
@@ -41,6 +44,9 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
         _enabled = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRealtimeDebugLogUploadEnabledKey];
         _lastUploadedOffset = 0;
         _uploading = NO;
+        _backgroundTask = UIBackgroundTaskInvalid;
+        _lastUploadErrorLogAt = 0;
+        _consecutiveUploadFailures = 0;
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -105,17 +111,53 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
             self.timer = nil;
         }
         self.uploading = NO;
+
+        if (self.backgroundTask != UIBackgroundTaskInvalid) {
+            UIBackgroundTaskIdentifier task = self.backgroundTask;
+            self.backgroundTask = UIBackgroundTaskInvalid;
+            [[UIApplication sharedApplication] endBackgroundTask:task];
+        }
     });
 }
 
 #pragma mark - Notifications
 
 - (void)onEnterBackground {
-    [self stop];
+    dispatch_async(self.queue, ^{
+        if (!self.enabled) {
+            [self stop];
+            return;
+        }
+
+        if (self.backgroundTask == UIBackgroundTaskInvalid) {
+            __weak typeof(self) weakSelf = self;
+            self.backgroundTask = [[UIApplication sharedApplication]
+                beginBackgroundTaskWithName:@"wcpl.realtime_log_uploader"
+                          expirationHandler:^{
+                              __strong typeof(weakSelf) self = weakSelf;
+                              if (!self) {
+                                  return;
+                              }
+                              dispatch_async(self.queue, ^{
+                                  [self stop];
+                              });
+                          }];
+        }
+
+        // 尽量在系统挂起前把最新日志刷上来
+        [self uploadNextChunkIfNeeded];
+    });
 }
 
 - (void)onBecomeActive {
-    [self startIfNeeded];
+    dispatch_async(self.queue, ^{
+        if (self.backgroundTask != UIBackgroundTaskInvalid) {
+            UIBackgroundTaskIdentifier task = self.backgroundTask;
+            self.backgroundTask = UIBackgroundTaskInvalid;
+            [[UIApplication sharedApplication] endBackgroundTask:task];
+        }
+        [self startIfNeeded];
+    });
 }
 
 #pragma mark - Internal
@@ -196,8 +238,6 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
 
     __weak typeof(self) weakSelf = self;
     [WCPLLogUploader uploadLogData:chunk logName:@"wcpl_debug_live.log" headers:headers completion:^(BOOL success, NSInteger statusCode, NSError *error) {
-        __unused NSInteger _statusCode = statusCode;
-        __unused NSError *_error = error;
         __strong typeof(weakSelf) self = weakSelf;
         if (!self) {
             return;
@@ -205,7 +245,20 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
         dispatch_async(self.queue, ^{
             self.uploading = NO;
             if (!success || error) {
+                self.consecutiveUploadFailures += 1;
+                NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+                if (now - self.lastUploadErrorLogAt > 15.0) {
+                    self.lastUploadErrorLogAt = now;
+                    WCPLLog(@"实时日志上传失败: failures=%lu status=%ld err=%@",
+                            (unsigned long)self.consecutiveUploadFailures,
+                            (long)statusCode,
+                            error.localizedDescription ?: @"");
+                }
                 return;
+            }
+            if (self.consecutiveUploadFailures > 0) {
+                WCPLLog(@"实时日志上传恢复: failures=%lu", (unsigned long)self.consecutiveUploadFailures);
+                self.consecutiveUploadFailures = 0;
             }
             self.lastUploadedOffset = offsetBefore + (unsigned long long)chunk.length;
         });
@@ -213,4 +266,3 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
 }
 
 @end
-

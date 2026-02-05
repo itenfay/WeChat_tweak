@@ -1,5 +1,6 @@
 #import "WeChatRedEnvelop.h"
 #import "WeChatRedEnvelopParam.h"
+#import "WCRedEnvelopesNetworkHelper.h"
 #import "WCPLSettingViewController.h"
 #import "WCPLReceiveRedEnvelopOperation.h"
 #import "WCPLRedEnvelopTaskManager.h"
@@ -101,6 +102,23 @@ static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
         cmd = 0;
     }
 
+    if (cmd == 0 && req) {
+        NSArray<NSString *> *keys = @[@"cgiCmd", @"cgiCmdId", @"cgiCmdid", @"cmdId", @"cmdid"];
+        for (NSString *key in keys) {
+            @try {
+                id value = [req valueForKey:key];
+                if ([value respondsToSelector:@selector(unsignedIntValue)]) {
+                    cmd = [value unsignedIntValue];
+                    if (cmd != 0) break;
+                } else if ([value respondsToSelector:@selector(intValue)]) {
+                    int v = [value intValue];
+                    if (v > 0) { cmd = (unsigned int)v; break; }
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
     if (cmd == 0) {
         @try {
             if (res && [res respondsToSelector:@selector(cgiCmdid)]) {
@@ -108,6 +126,23 @@ static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
             }
         } @catch (__unused NSException *exception) {
             cmd = 0;
+        }
+    }
+
+    if (cmd == 0 && res) {
+        NSArray<NSString *> *keys = @[@"cgiCmdid", @"cgiCmdId", @"cgiCmd", @"cmdId", @"cmdid"];
+        for (NSString *key in keys) {
+            @try {
+                id value = [res valueForKey:key];
+                if ([value respondsToSelector:@selector(unsignedIntValue)]) {
+                    cmd = [value unsignedIntValue];
+                    if (cmd != 0) break;
+                } else if ([value respondsToSelector:@selector(intValue)]) {
+                    int v = [value intValue];
+                    if (v > 0) { cmd = (unsigned int)v; break; }
+                }
+            } @catch (__unused NSException *exception) {
+            }
         }
     }
 
@@ -1035,15 +1070,65 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 - (void)OnWCToHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
     %orig;
 
+    unsigned int cmdId = wcpl_hongbaoCmdId(arg1, arg2);
+    WCPLLog(@"红包公共回包: selector=%@ cmd=%u res=%@ req=%@",
+            NSStringFromSelector(_cmd),
+            cmdId,
+            arg1 ? NSStringFromClass([arg1 class]) : @"",
+            arg2 ? NSStringFromClass([arg2 class]) : @"");
+
     // 优先尝试处理打开红包回包（用于通知/自动回复）
     [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
+    // 自动抢红包：处理查询回包 -> 排队打开
+    [self wcpl_handleRedEnvelopReceiverQueryResponse:arg1 request:arg2];
+}
 
+- (void)OnWCToOpenIMHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
+    %orig;
     unsigned int cmdId = wcpl_hongbaoCmdId(arg1, arg2);
+    WCPLLog(@"OpenIM红包回包: selector=%@ cmd=%u res=%@ req=%@",
+            NSStringFromSelector(_cmd),
+            cmdId,
+            arg1 ? NSStringFromClass([arg1 class]) : @"",
+            arg2 ? NSStringFromClass([arg2 class]) : @"");
+    [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
+    [self wcpl_handleRedEnvelopReceiverQueryResponse:arg1 request:arg2];
+}
+
+- (void)OnWCToLiveStreamHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
+    %orig;
+    unsigned int cmdId = wcpl_hongbaoCmdId(arg1, arg2);
+    WCPLLog(@"LiveStream红包回包: selector=%@ cmd=%u res=%@ req=%@",
+            NSStringFromSelector(_cmd),
+            cmdId,
+            arg1 ? NSStringFromClass([arg1 class]) : @"",
+            arg2 ? NSStringFromClass([arg2 class]) : @"");
+    [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
+    [self wcpl_handleRedEnvelopReceiverQueryResponse:arg1 request:arg2];
+}
+
+- (void)OnWCToHongbaoCommonErrorResponse:(id)arg1 Request:(id)arg2 {
+    %orig;
+    wcpl_logHongbaoCommonErrorResponse(@"错误", arg1, arg2);
+}
+
+- (void)OnWCToHongbaoCommonSystemErrorResponse:(id)arg1 Request:(id)arg2 {
+    %orig;
+    wcpl_logHongbaoCommonErrorResponse(@"系统错误", arg1, arg2);
+}
+
+%new
+- (void)wcpl_handleRedEnvelopReceiverQueryResponse:(HongBaoRes *)res request:(HongBaoReq *)req {
+    if (!res || !req) return;
+
+    unsigned int cmdId = wcpl_hongbaoCmdId(res, req);
     // 非参数查询请求
-    if (cmdId != 3) { return; }
+    if (cmdId != 3) {
+        return;
+    }
 
     NSDictionary *(^parseRequestNativeUrlDict)() = ^NSDictionary *() {
-        NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(arg2.reqText);
+        NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
         if (![requestDict isKindOfClass:[NSDictionary class]] || requestDict.count == 0) return nil;
         NSString *nativeUrl = wcpl_stringForKeyInDictionary(requestDict, @"nativeUrl");
         if (nativeUrl.length == 0) return nil;
@@ -1061,7 +1146,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         return nativeUrlDict;
     };
 
-    NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(arg1.retText);
+    NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(res.retText);
     if (![responseDict isKindOfClass:[NSDictionary class]] || responseDict.count == 0) {
         return;
     }
@@ -1103,10 +1188,12 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         if ([responseDict[@"receiveStatus"] integerValue] == 2) { return NO; }
 
         // 红包被抢完
-        if ([responseDict[@"hbStatus"] integerValue] == 4) { return NO; }        
+        if ([responseDict[@"hbStatus"] integerValue] == 4) { return NO; }
 
         // 没有这个字段会被判定为使用外挂
-        if (!responseDict[@"timingIdentifier"]) { return NO; }        
+        NSString *timingIdentifier = wcpl_stringForKeyInDictionary(responseDict, @"timingIdentifier")
+            ?: wcpl_stringForKeyInDictionary(responseDict, @"timing_identifier");
+        if (timingIdentifier.length == 0) { return NO; }
 
         if (mgrParams.isGroupSender) {
             // 自己发红包的时候没有 sign 字段
@@ -1143,16 +1230,6 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             [[WCPLRedEnvelopTaskManager sharedManager] addNormalTask:operation];
         }
     }
-}
-
-- (void)OnWCToHongbaoCommonErrorResponse:(id)arg1 Request:(id)arg2 {
-    %orig;
-    wcpl_logHongbaoCommonErrorResponse(@"错误", arg1, arg2);
-}
-
-- (void)OnWCToHongbaoCommonSystemErrorResponse:(id)arg1 Request:(id)arg2 {
-    %orig;
-    wcpl_logHongbaoCommonErrorResponse(@"系统错误", arg1, arg2);
 }
 
 %new
@@ -1379,6 +1456,34 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
 %end
 
+%hook WCRedEnvelopesNetworkHelper
+
+- (void)MessageReturnOnHongbao:(id)arg1 Event:(unsigned int)arg2 {
+    WCPLLog(@"HBNet回包: selector=%@ event=%u arg=%@",
+            NSStringFromSelector(_cmd),
+            arg2,
+            arg1 ? NSStringFromClass([arg1 class]) : @"");
+    %orig;
+}
+
+- (void)MessageReturnOnOpenIMHongbao:(id)arg1 Event:(unsigned int)arg2 {
+    WCPLLog(@"HBNet(OpenIM)回包: selector=%@ event=%u arg=%@",
+            NSStringFromSelector(_cmd),
+            arg2,
+            arg1 ? NSStringFromClass([arg1 class]) : @"");
+    %orig;
+}
+
+- (void)MessageReturnOnLiveStreamHongbao:(id)arg1 Event:(unsigned int)arg2 {
+    WCPLLog(@"HBNet(LiveStream)回包: selector=%@ event=%u arg=%@",
+            NSStringFromSelector(_cmd),
+            arg2,
+            arg1 ? NSStringFromClass([arg1 class]) : @"");
+    %orig;
+}
+
+%end
+
 %hook CMessageMgr
 
 - (void)AsyncOnAddMsg:(NSString *)msg MsgWrap:(CMessageWrap *)wrap {
@@ -1478,7 +1583,18 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         params[@"sendId"] = sendId;
 
         WCRedEnvelopesLogicMgr *logicMgr = WCPLGetService(objc_getClass("WCRedEnvelopesLogicMgr"));
-        [logicMgr ReceiverQueryRedEnvelopesRequest:params];
+        BOOL canQuery = (logicMgr && [logicMgr respondsToSelector:@selector(ReceiverQueryRedEnvelopesRequest:)]);
+        BOOL canOpen = (logicMgr && [logicMgr respondsToSelector:@selector(OpenRedEnvelopesRequest:)]);
+        WCPLLog(@"红包逻辑管理器: mgr=%p class=%@ canQuery=%d canOpen=%d",
+                logicMgr,
+                logicMgr ? NSStringFromClass([logicMgr class]) : @"",
+                canQuery,
+                canOpen);
+        if (canQuery) {
+            [logicMgr ReceiverQueryRedEnvelopesRequest:params];
+        } else {
+            WCPLLog(@"红包查询跳过: WCRedEnvelopesLogicMgr 不可用");
+        }
         NSString *sessionForLog = isGroupSender ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
         WCPLLog(@"红包查询请求: session=%@ sendId=%@ signLen=%lu", sessionForLog ?: @"", sendId, (unsigned long)sign.length);
 
