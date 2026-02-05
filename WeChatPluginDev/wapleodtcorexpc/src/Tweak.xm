@@ -8,6 +8,7 @@
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WCPLRedEnvelopOpenTracker.h"
 #import "WCPLRedEnvelopAutoReplyManager.h"
+#import "WCPLRedEnvelopResultNotifier.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLNewFuncAddition.h"
 #import "WCPLFuncService.h"
@@ -21,11 +22,6 @@
 #import "RichTextView.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-
-@interface SendMessageMgr : NSObject
-- (void)AddMsgToSendTable:(id)chatName MsgWrap:(id)wrap;
-- (void)SendMsg;
-@end
 
 @interface WCRedEnvelopesLogicMgr (WCPLRedEnvelopOpen)
 - (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
@@ -66,31 +62,6 @@ static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
     NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return trimmed.length > 0 ? trimmed : nil;
-}
-
-static BOOL wcpl_isDecimalDigitsOnly(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) return NO;
-    for (NSUInteger i = 0; i < text.length; i++) {
-        unichar ch = [text characterAtIndex:i];
-        if (ch < '0' || ch > '9') {
-            return NO;
-        }
-    }
-    return YES;
-}
-
-// 红包金额格式化：回包多数为“分”(整数)。若已包含小数点则视为“元”字符串。
-static NSString *wcpl_formatHongbaoAmountYuan(NSString *rawAmount) {
-    NSString *raw = wcpl_trimString(rawAmount);
-    if (raw.length == 0) return nil;
-    if ([raw rangeOfString:@"."].location != NSNotFound) {
-        return raw;
-    }
-    if (!wcpl_isDecimalDigitsOnly(raw)) {
-        return raw;
-    }
-    long long fen = raw.longLongValue;
-    return [NSString stringWithFormat:@"%.2f", ((double)fen) / 100.0];
 }
 
 static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
@@ -400,7 +371,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
             reqObj ? NSStringFromClass([reqObj class]) : @"");
 }
 
-static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *text) {
+__attribute__((unused)) static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *text) {
     NSString *session = wcpl_trimString(sessionUserName);
     NSString *content = wcpl_trimString(text);
     if (session.length == 0 || content.length == 0) return NO;
@@ -635,7 +606,7 @@ __attribute__((unused)) static BOOL wcpl_addLocalSystemMessageToSession(NSString
     return NO;
 }
 
-static NSString *wcpl_displayNameForUserName(NSString *userName) {
+__attribute__((unused)) static NSString *wcpl_displayNameForUserName(NSString *userName) {
     NSString *name = wcpl_trimString(userName);
     if (name.length == 0) return nil;
 
@@ -1378,63 +1349,22 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             (unsigned long)privateAutoReplyText.length,
             (unsigned long)groupAutoReplyText.length);
 
-    NSString *sessionDisplayName = sessionUserName.length > 0 ? wcpl_displayNameForUserName(sessionUserName) : nil;
-    NSString *sessionName = sessionDisplayName.length > 0 ? sessionDisplayName : (sessionUserName ?: @"");
-    NSString *receiveAmountYuan = wcpl_formatHongbaoAmountYuan(receiveAmount);
-    NSString *totalAmountYuan = wcpl_formatHongbaoAmountYuan(totalAmount);
+    [[WCPLRedEnvelopResultNotifier sharedNotifier] notifyOpenResultSuccess:success
+                                                            sessionUserName:sessionUserName
+                                                                    isGroup:isGroup
+                                                                     sendId:sendId
+                                                           timingIdentifier:timingIdentifier
+                                                              receiveAmount:receiveAmount
+                                                                totalAmount:totalAmount
+                                                                   hbStatus:hbStatus
+                                                                    retCode:retCode
+                                                                   errorMsg:res.errorMsg];
 
-    NSMutableString *notifyText = [NSMutableString stringWithFormat:@"[红包] 在%@「%@」",
-                                   isGroup ? @"群" : @"聊天",
-                                   sessionName];
-    if (success) {
-        if (receiveAmountYuan.length > 0) {
-            [notifyText appendFormat:@" 抢到 %@元", receiveAmountYuan];
-        } else {
-            [notifyText appendString:@" 领取成功"];
-        }
-        if (totalAmountYuan.length > 0) {
-            [notifyText appendFormat:@" 总额 %@元", totalAmountYuan];
-        }
-    } else {
-        [notifyText appendString:@" 领取失败"];
-        if (hbStatus == 4) {
-            [notifyText appendString:@" 已抢完"];
-        } else if (res.errorMsg.length > 0) {
-            [notifyText appendFormat:@" %@", res.errorMsg];
-        } else if (retCode != 0) {
-            [notifyText appendFormat:@" 错误码:%ld", (long)retCode];
-        }
-    }
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSInteger notify = config.redEnvelopResultNotify;
-        if (notify != 0) {
-            NSString *targetSession = nil;
-            if (notify == 2) {
-                targetSession = @"filehelper";
-            } else if (notify == 1) {
-                targetSession = wcpl_getSelfUserName();
-            }
-            if (targetSession.length > 0) {
-                // 按用户要求：通知也使用“原生发送消息”形式发送到自己/文件传输助手。
-                BOOL didSend = wcpl_sendTextMessageToSession(targetSession, notifyText);
-                if (!didSend && notify == 1) {
-                    // 兜底：自己会话发送失败时，尝试文件传输助手（仍然走发送链路）
-                    didSend = wcpl_sendTextMessageToSession(@"filehelper", notifyText);
-                }
-                WCPLLog(@"领取结果通知: to=%@ ok=%d", targetSession, didSend);
-            } else {
-                WCPLLog(@"领取结果通知: 目标会话为空 notify=%ld", (long)notify);
-            }
-        }
-
-        // 领取成功后自动回复
-        [[WCPLRedEnvelopAutoReplyManager sharedManager] handleRedEnvelopOpenResultSuccess:success
-                                                                          sessionUserName:sessionUserName
-                                                                                   isGroup:isGroup
-                                                                                    sendId:sendId
-                                                                          timingIdentifier:timingIdentifier];
-    });
+    [[WCPLRedEnvelopAutoReplyManager sharedManager] handleRedEnvelopOpenResultSuccess:success
+                                                                      sessionUserName:sessionUserName
+                                                                              isGroup:isGroup
+                                                                               sendId:sendId
+                                                                     timingIdentifier:timingIdentifier];
 }
 
 %new

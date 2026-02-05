@@ -4,26 +4,9 @@
 
 #import "WCPLRedEnvelopAutoReplyManager.h"
 #import "WCPLRedEnvelopConfig.h"
-#import "WCPLServiceCenter.h"
+#import "WCPLTextMessageSender.h"
 #import "WCPLLogger.h"
-#import "WeChatRedEnvelop.h"
 #import <dispatch/dispatch.h>
-#import <objc/message.h>
-#import <objc/runtime.h>
-
-static NSString *wcpl_rea_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
-    static NSCharacterSet *trimSet = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSMutableCharacterSet *set = [[NSCharacterSet whitespaceAndNewlineCharacterSet] mutableCopy];
-        // 额外剔除常见不可见字符，避免发送“看起来为空”的气泡（例如零宽空格 / BOM）。
-        [set addCharactersInString:@"\u00A0\u200B\u200C\u200D\u200E\u200F\u2060\uFEFF"];
-        trimSet = [set copy];
-    });
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:trimSet];
-    return trimmed.length > 0 ? trimmed : nil;
-}
 
 static NSString *wcpl_rea_utf16HexPreview(NSString *text, NSUInteger maxUnits) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0 || maxUnits == 0) return @"";
@@ -42,59 +25,10 @@ static NSString *wcpl_rea_utf16HexPreview(NSString *text, NSUInteger maxUnits) {
     return result;
 }
 
-static NSString *wcpl_rea_safeUserNameFromObject(id obj) {
-    if (!obj) return nil;
-    if ([obj isKindOfClass:[NSString class]]) {
-        return wcpl_rea_trimString((NSString *)obj);
-    }
-
-    Class contactClass = objc_getClass("CContact");
-    if (contactClass && [obj isKindOfClass:contactClass]) {
-        @try {
-            return wcpl_rea_trimString(((CContact *)obj).m_nsUsrName);
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
-        @try {
-            id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
-            if ([value isKindOfClass:[NSString class]]) {
-                return wcpl_rea_trimString((NSString *)value);
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    @try {
-        id value = [obj valueForKey:@"m_nsUsrName"];
-        if ([value isKindOfClass:[NSString class]]) {
-            return wcpl_rea_trimString((NSString *)value);
-        }
-    } @catch (__unused NSException *exception) {
-    }
-
-    return nil;
-}
-
-static NSString *wcpl_rea_getSelfUserName(void) {
-    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!contactMgr || ![contactMgr respondsToSelector:@selector(getSelfContact)]) {
-        return nil;
-    }
-    id selfContact = nil;
-    @try {
-        selfContact = [contactMgr getSelfContact];
-    } @catch (__unused NSException *exception) {
-        selfContact = nil;
-    }
-    return wcpl_rea_safeUserNameFromObject(selfContact);
-}
-
 static NSString *wcpl_rea_dedupeKey(NSString *sendId, NSString *timingIdentifier, NSString *sessionUserName) {
-    NSString *sid = wcpl_rea_trimString(sendId);
-    NSString *tid = wcpl_rea_trimString(timingIdentifier);
-    NSString *session = wcpl_rea_trimString(sessionUserName);
+    NSString *sid = WCPLTrimMessageText(sendId);
+    NSString *tid = WCPLTrimMessageText(timingIdentifier);
+    NSString *session = WCPLTrimMessageText(sessionUserName);
 
     if (sid.length > 0 && tid.length > 0) {
         return [NSString stringWithFormat:@"%@|%@", sid, tid];
@@ -106,196 +40,6 @@ static NSString *wcpl_rea_dedupeKey(NSString *sendId, NSString *timingIdentifier
         return [NSString stringWithFormat:@"%@|%@", tid, session];
     }
     return tid.length > 0 ? tid : session;
-}
-
-static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *text) {
-    NSString *session = wcpl_rea_trimString(sessionUserName);
-    NSString *content = wcpl_rea_trimString(text);
-    if (session.length == 0 || content.length == 0) return NO;
-
-    NSString *selfUserName = wcpl_rea_getSelfUserName();
-    if (selfUserName.length == 0) return NO;
-
-    Class wrapClass = objc_getClass("CMessageWrap");
-    if (!wrapClass) return NO;
-
-    CMessageWrap *msgWrap = nil;
-    Class logicClass = objc_getClass("BaseMsgContentLogicController");
-    if (logicClass) {
-        BaseMsgContentLogicController *logic = nil;
-        @try {
-            logic = [[logicClass alloc] init];
-        } @catch (__unused NSException *exception) {
-            logic = nil;
-        }
-
-        if (logic && [logic respondsToSelector:@selector(FormTextMsg:withText:)]) {
-            @try {
-                CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-                if (contactMgr && [contactMgr respondsToSelector:@selector(getContactByName:)]) {
-                    id contact = [contactMgr getContactByName:session];
-                    if (contact) {
-                        logic.m_contact = contact;
-                    }
-                }
-            } @catch (__unused NSException *exception) {
-            }
-
-            @try {
-                id wrap = [logic FormTextMsg:session withText:content];
-                if ([wrap isKindOfClass:wrapClass]) {
-                    CMessageWrap *tmpWrap = (CMessageWrap *)wrap;
-                    // 验证消息类型是否为文本类型 (1)，避免 FormTextMsg 返回错误类型的消息
-                    if (tmpWrap.m_uiMessageType == 1) {
-                        msgWrap = tmpWrap;
-                    }
-                    // 如果类型不是 1，msgWrap 保持 nil，走 fallback 路径手动创建
-                }
-            } @catch (__unused NSException *exception) {
-                msgWrap = nil;
-            }
-        }
-    }
-
-    if (!msgWrap) {
-        if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
-            msgWrap = [[wrapClass alloc] initWithMsgType:1 nsFromUsr:selfUserName];
-        } else if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
-            msgWrap = [[wrapClass alloc] initWithMsgType:1];
-            @try {
-                [msgWrap setM_nsFromUsr:selfUserName];
-            } @catch (__unused NSException *exception) {
-            }
-        }
-    }
-
-    if (!msgWrap) return NO;
-
-    @try {
-        [msgWrap setM_nsToUsr:session];
-        if ([msgWrap respondsToSelector:@selector(setM_nsContent:)]) {
-            [msgWrap setM_nsContent:content];
-        }
-        if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
-            [msgWrap setM_nsPushContent:content];
-        }
-        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
-            [msgWrap setM_nsFromUsr:selfUserName];
-        }
-        if ([session rangeOfString:@"@chatroom"].location != NSNotFound) {
-            NSString *msgSource = wcpl_rea_trimString(msgWrap.m_nsMsgSource);
-            if (msgSource.length == 0) {
-                msgWrap.m_nsMsgSource = @"<msgsource><atuserlist><![CDATA[]]></atuserlist></msgsource>";
-            }
-            if ([msgWrap respondsToSelector:@selector(ChangeForChatRoom)]) {
-                [msgWrap ChangeForChatRoom];
-            }
-        }
-        if ([msgWrap respondsToSelector:@selector(ChangeForMsgSource)]) {
-            [msgWrap ChangeForMsgSource];
-        }
-        if ([msgWrap respondsToSelector:@selector(UpdateMsgSource)]) {
-            [msgWrap UpdateMsgSource];
-        }
-        if ([msgWrap respondsToSelector:@selector(UpdateContent:)]) {
-            [msgWrap UpdateContent:content];
-        }
-        if ([msgWrap respondsToSelector:@selector(changeForPlainTextMsg)]) {
-            [msgWrap changeForPlainTextMsg];
-        }
-        if ([msgWrap respondsToSelector:@selector(ChangeForPushContent)]) {
-            [msgWrap ChangeForPushContent];
-        }
-        if ([msgWrap respondsToSelector:@selector(ChangeForDisplay)]) {
-            [msgWrap ChangeForDisplay];
-        }
-        // 兜底：部分版本在 ChangeForDisplay/UpdateContent 后可能覆盖展示字段，这里强制写回一次。
-        if ([msgWrap respondsToSelector:@selector(setM_nsContent:)]) {
-            [msgWrap setM_nsContent:content];
-        }
-        if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
-            [msgWrap setM_nsPushContent:content];
-        }
-        @try {
-            [msgWrap setValue:content forKey:@"m_nsLastDisplayContent"];
-        } @catch (__unused NSException *exception) {
-        }
-        if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
-            [msgWrap setM_uiStatus:1];
-        }
-        [msgWrap setM_uiCreateTime:(unsigned int)[[NSDate date] timeIntervalSince1970]];
-    } @catch (__unused NSException *exception) {
-        return NO;
-    }
-
-    NSString *wrapContent = nil;
-    NSString *displayContent = nil;
-    @try {
-        wrapContent = wcpl_rea_trimString(msgWrap.m_nsContent);
-        if ([msgWrap respondsToSelector:@selector(GetDisplayContent)]) {
-            id value = ((id (*)(id, SEL))objc_msgSend)(msgWrap, @selector(GetDisplayContent));
-            if ([value isKindOfClass:[NSString class]]) {
-                displayContent = wcpl_rea_trimString((NSString *)value);
-            }
-        }
-    } @catch (__unused NSException *exception) {
-        wrapContent = nil;
-        displayContent = nil;
-    }
-    WCPLLog(@"红包自动回复发送准备: to=%@ textLen=%lu textHex=%@ wrapLen=%lu displayLen=%lu displayHex=%@",
-            session,
-            (unsigned long)content.length,
-            wcpl_rea_utf16HexPreview(content, 24),
-            (unsigned long)wrapContent.length,
-            (unsigned long)displayContent.length,
-            wcpl_rea_utf16HexPreview(displayContent, 24));
-
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-    Class messageMgrClass = objc_getClass("CMessageMgr");
-    if (messageMgr && messageMgrClass) {
-        Ivar bypIvar = class_getInstanceVariable(messageMgrClass, "m_bypSendMessageMgr");
-        id bypMgr = bypIvar ? object_getIvar(messageMgr, bypIvar) : nil;
-        if (!bypMgr) {
-            @try {
-                bypMgr = [messageMgr valueForKey:@"m_bypSendMessageMgr"];
-            } @catch (__unused NSException *exception) {
-                bypMgr = nil;
-            }
-        }
-        if (!bypMgr) {
-            @try {
-                bypMgr = [messageMgr valueForKey:@"bypSendMessageMgr"];
-            } @catch (__unused NSException *exception) {
-                bypMgr = nil;
-            }
-        }
-        if (bypMgr && [bypMgr respondsToSelector:@selector(StartSendMsg:)]) {
-            @try {
-                ((void (*)(id, SEL, id))objc_msgSend)(bypMgr, @selector(StartSendMsg:), msgWrap);
-                WCPLLog(@"红包自动回复发送完成: via=byp to=%@", session);
-                return YES;
-            } @catch (__unused NSException *exception) {
-            }
-        }
-    }
-
-    id sendMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
-    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
-        BOOL ok = NO;
-        @try {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMgr, @selector(AddMsgToSendTable:MsgWrap:), session, msgWrap);
-            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
-                ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
-            }
-            WCPLLog(@"红包自动回复发送完成: via=sendMgr to=%@", session);
-            ok = YES;
-        } @catch (__unused NSException *exception) {
-            ok = NO;
-        }
-        if (ok) return YES;
-    }
-
-    return NO;
 }
 
 @interface WCPLRedEnvelopAutoReplyManager ()
@@ -357,12 +101,12 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
                         timingIdentifier:(NSString *)timingIdentifier {
     if (!success) return;
 
-    NSString *session = wcpl_rea_trimString(sessionUserName);
+    NSString *session = WCPLTrimMessageText(sessionUserName);
     if (session.length == 0) return;
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     NSString *rawReplyText = isGroup ? config.groupRedEnvelopAutoReplyText : config.privateRedEnvelopAutoReplyText;
-    NSString *replyText = wcpl_rea_trimString(rawReplyText);
+    NSString *replyText = WCPLTrimMessageText(rawReplyText);
     if (replyText.length == 0) {
         WCPLLog(@"红包自动回复跳过: 文本为空 session=%@ isGroup=%d rawLen=%lu rawHex=%@",
                 session,
@@ -371,11 +115,6 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
                 wcpl_rea_utf16HexPreview(rawReplyText, 24));
         return;
     }
-    WCPLLog(@"红包自动回复文本: session=%@ isGroup=%d textLen=%lu textHex=%@",
-            session,
-            isGroup,
-            (unsigned long)replyText.length,
-            wcpl_rea_utf16HexPreview(replyText, 24));
 
     NSString *key = wcpl_rea_dedupeKey(sendId, timingIdentifier, session);
     NSDate *now = [NSDate date];
@@ -388,7 +127,7 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        BOOL ok = wcpl_rea_sendTextMessageNative(session, replyText);
+        BOOL ok = [[WCPLTextMessageSender sharedSender] sendText:replyText toSession:session];
         WCPLLog(@"红包自动回复: session=%@ isGroup=%d textLen=%lu ok=%d",
                 session,
                 isGroup,
@@ -401,3 +140,4 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
 }
 
 @end
+

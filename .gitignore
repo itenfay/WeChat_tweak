@@ -71,3 +71,19 @@ iOSInjectionProject/
 *.deb
 packages/
 logs/
+
+# Agent/workspace artifacts
+.ai_memory/
+.autoflow/
+.ccb_config/
+.claude/
+.tmp/
+plugin_source/
+scripts/__pycache__/
+__pycache__/
+*.bak
+WeChatPluginDev/wapleodtcorexpc/src/Tweak.m
+归档.zip
+归档_extracted/
+AGENTS.md
+CLAUDE.md
