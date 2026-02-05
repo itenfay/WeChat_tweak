@@ -971,8 +971,9 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 
     WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
     BOOL needNotify = (config.redEnvelopResultNotify != 0);
-    BOOL hasAutoReply = (wcpl_trimString(config.privateRedEnvelopAutoReplyText).length > 0 ||
-                         wcpl_trimString(config.groupRedEnvelopAutoReplyText).length > 0);
+    NSString *privateAutoReplyText = wcpl_trimString(config.privateRedEnvelopAutoReplyText);
+    NSString *groupAutoReplyText = wcpl_trimString(config.groupRedEnvelopAutoReplyText);
+    BOOL hasAutoReply = (privateAutoReplyText.length > 0 || groupAutoReplyText.length > 0);
     if (!needNotify && !hasAutoReply) {
         return;
     }
@@ -1066,6 +1067,23 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         success = (res.errorType == 0 && res.platRet == 0);
     }
 
+    WCPLLog(@"红包打开回包: cmd=%u tracker=%d session=%@ isGroup=%d sendId=%@ timingLen=%lu hbStatus=%ld receiveStatus=%ld retCode=%ld amount=%@ errorType=%d platRet=%d notify=%ld autoReply(priv=%lu group=%lu)",
+            cmdId,
+            param != nil,
+            sessionUserName ?: @"",
+            isGroup,
+            sendId ?: @"",
+            (unsigned long)timingIdentifier.length,
+            (long)hbStatus,
+            (long)receiveStatus,
+            (long)retCode,
+            amount ?: @"",
+            (int)res.errorType,
+            (int)res.platRet,
+            (long)config.redEnvelopResultNotify,
+            (unsigned long)privateAutoReplyText.length,
+            (unsigned long)groupAutoReplyText.length);
+
     NSString *sessionDisplayName = sessionUserName.length > 0 ? wcpl_displayNameForUserName(sessionUserName) : nil;
     NSMutableString *resultText = [NSMutableString stringWithFormat:@"[红包] %@ (%@)", success ? @"领取成功" : @"领取失败", isGroup ? @"群聊" : @"私聊"];
     if (sessionDisplayName.length > 0) {
@@ -1094,11 +1112,24 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
                 targetSession = wcpl_getSelfUserName();
             }
             if (targetSession.length > 0) {
-                BOOL didSend = wcpl_sendTextMessageToSession(targetSession, resultText);
-                if (!didSend) {
+                BOOL didSend = NO;
+                NSString *mode = @"";
+                if (notify == 1) {
+                    // “发给自己”：优先使用本地系统消息，避免发送到 selfUserName 后用户无法在聊天列表中看到
                     didSend = wcpl_addLocalSystemMessageToSession(targetSession, resultText);
+                    mode = didSend ? @"local" : @"send";
+                    if (!didSend) {
+                        didSend = wcpl_sendTextMessageToSession(targetSession, resultText);
+                    }
+                } else {
+                    // 文件传输助手：优先走正常发送
+                    didSend = wcpl_sendTextMessageToSession(targetSession, resultText);
+                    mode = didSend ? @"send" : @"local";
+                    if (!didSend) {
+                        didSend = wcpl_addLocalSystemMessageToSession(targetSession, resultText);
+                    }
                 }
-                WCPLLog(@"领取结果通知: to=%@ ok=%d", targetSession, didSend);
+                WCPLLog(@"领取结果通知: to=%@ mode=%@ ok=%d", targetSession, mode, didSend);
             } else {
                 WCPLLog(@"领取结果通知: 目标会话为空 notify=%ld", (long)notify);
             }
@@ -1107,11 +1138,24 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
         // 领取成功后自动回复
         if (success && sessionUserName.length > 0) {
             BOOL allowReply = config.autoReceiveEnable && (isGroup ? config.groupRedEnvelopEnable : config.privateRedEnvelopEnable);
-            NSString *replyText = isGroup ? config.groupRedEnvelopAutoReplyText : config.privateRedEnvelopAutoReplyText;
-            replyText = wcpl_trimString(replyText);
+            NSString *replyText = isGroup ? groupAutoReplyText : privateAutoReplyText;
+            // 兼容：只设置了其中一种时，也可作为另一种的兜底，避免用户误以为“没生效”
+            if (replyText.length == 0) {
+                replyText = isGroup ? privateAutoReplyText : groupAutoReplyText;
+            }
             if (allowReply && replyText.length > 0) {
                 BOOL didReply = wcpl_sendTextMessageToSession(sessionUserName, replyText);
-                WCPLLog(@"领取后自动回复: session=%@ ok=%d", sessionUserName, didReply);
+                WCPLLog(@"领取后自动回复: session=%@ isGroup=%d textLen=%lu ok=%d",
+                        sessionUserName,
+                        isGroup,
+                        (unsigned long)replyText.length,
+                        didReply);
+            } else if (hasAutoReply) {
+                WCPLLog(@"领取后自动回复: skip session=%@ success=%d allow=%d textLen=%lu",
+                        sessionUserName,
+                        success,
+                        allowReply,
+                        (unsigned long)replyText.length);
             }
         }
     });
