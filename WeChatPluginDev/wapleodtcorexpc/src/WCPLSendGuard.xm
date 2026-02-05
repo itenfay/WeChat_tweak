@@ -107,6 +107,53 @@ static NSInteger wcpl_sg_safeIntegerForKey(id obj, NSString *key) {
     return 0;
 }
 
+static BOOL wcpl_sg_isFromSelfMsgWrap(id msgWrap) {
+    if (!msgWrap) return NO;
+
+    Class wrapCls = objc_getClass("CMessageWrap");
+    SEL isSenderSel = @selector(isSenderFromMsgWrap:);
+    if (wrapCls && [wrapCls respondsToSelector:isSenderSel]) {
+        @try {
+            return ((BOOL (*)(id, SEL, id))objc_msgSend)(wrapCls, isSenderSel, msgWrap);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    id flag = wcpl_sg_safeValueForKey(msgWrap, @"m_bFromMe");
+    if ([flag respondsToSelector:@selector(boolValue)]) {
+        @try {
+            return [flag boolValue];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSString *stage) {
+    if (!msgWrap) return NO;
+    NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
+    if (msgType != 1) return NO;
+    if (!wcpl_sg_isFromSelfMsgWrap(msgWrap)) return NO;
+
+    id originContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
+    NSString *content = wcpl_sg_sanitizeText(originContent);
+    if (content.length > 0) return NO;
+
+    NSString *sessionName = wcpl_sg_sanitizeText(session) ?: @"";
+    NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
+    NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+    NSString *contentClass = originContent ? NSStringFromClass([originContent class]) : @"nil";
+
+    WCPLLogWarning(@"拦截本地空文本气泡: stage=%@ session=%@ to=%@ from=%@ contentClass=%@",
+                   stage ?: @"",
+                   sessionName,
+                   toUsr,
+                   fromUsr,
+                   contentClass);
+    return YES;
+}
+
 %hook MMInputToolView
 
 - (void)sendMsgWithText:(id)arg1 {
@@ -199,6 +246,38 @@ static NSInteger wcpl_sg_safeIntegerForKey(id obj, NSString *key) {
         }
     }
 
+    %orig;
+}
+
+%end
+
+%hook CMessageMgr
+
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 {
+    if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)AddUniqueLocalMsg:(id)arg1 MsgWrap:(id)arg2 {
+    if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddUniqueLocalMsg")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4 {
+    if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg_fixTime")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4 Unique:(_Bool)arg5 {
+    if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg_fixTime_unique")) {
+        return;
+    }
     %orig;
 }
 
