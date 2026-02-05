@@ -149,3 +149,57 @@ static NSInteger wcpl_sg_safeIntegerForKey(id obj, NSString *key) {
 }
 
 %end
+
+%hook SendMessageMgr
+
+- (void)AddMsgToSendTable:(id)arg1 MsgWrap:(id)arg2 {
+    id msgWrap = arg2;
+    NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
+
+    NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
+    NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+
+    if (msgType == 1) {
+        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        if (content.length == 0) {
+            WCPLLogWarning(@"拦截空文本入队: SendMessageMgr.AddMsgToSendTable to=%@ from=%@", toUsr, fromUsr);
+            return;
+        }
+
+        id originContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
+        if ([originContent isKindOfClass:[NSString class]] && ![(NSString *)originContent isEqualToString:content]) {
+            @try {
+                [msgWrap setValue:content forKey:@"m_nsContent"];
+            } @catch (__unused NSException *exception) {
+            }
+            @try {
+                [msgWrap setValue:content forKey:@"m_nsPushContent"];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+
+        WCPLLogDebug(@"文本入队: SendMessageMgr type=%ld len=%lu to=%@ from=%@",
+                     (long)msgType,
+                     (unsigned long)content.length,
+                     toUsr,
+                     fromUsr);
+    } else {
+        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        if (content.length > 0) {
+            WCPLLogDebug(@"消息入队: SendMessageMgr type=%ld contentLen=%lu to=%@ from=%@",
+                         (long)msgType,
+                         (unsigned long)content.length,
+                         toUsr,
+                         fromUsr);
+        } else {
+            WCPLLogDebug(@"消息入队: SendMessageMgr type=%ld contentLen=0 to=%@ from=%@",
+                         (long)msgType,
+                         toUsr,
+                         fromUsr);
+        }
+    }
+
+    %orig;
+}
+
+%end

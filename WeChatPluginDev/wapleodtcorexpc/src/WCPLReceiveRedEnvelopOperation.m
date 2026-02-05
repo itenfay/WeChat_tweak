@@ -127,24 +127,22 @@
             break;
         }
 
-        __weak typeof(self) weakSelf = self;
-        void (^openBlock)(void) = ^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            if (!strongSelf || strongSelf.isCancelled) {
-                [strongSelf wcpl_notifyResultSuccess:NO error:[strongSelf wcpl_errorWithCode:1003 description:@"操作已取消"]];
+        didSchedule = YES;
+        void (^performOpen)(void) = ^{
+            if (self.isCancelled) {
+                [self wcpl_notifyResultSuccess:NO error:[self wcpl_errorWithCode:1003 description:@"操作已取消"]];
                 return;
             }
             [logicMgr OpenRedEnvelopesRequest:params];
-            WCPLLogInfo(@"[抢红包] 调用完成: sendId=%@", strongSelf.redEnvelopParam.sendId ?: @"");
-            [strongSelf wcpl_notifyResultSuccess:YES error:nil];
+            WCPLLogInfo(@"[抢红包] 调用完成: sendId=%@", self.redEnvelopParam.sendId ?: @"");
+            [self wcpl_notifyResultSuccess:YES error:nil];
         };
 
-        didSchedule = YES;
         if ([NSThread isMainThread]) {
-            openBlock();
+            performOpen();
         } else {
-            // 使用 dispatch_async 避免死锁风险
-            dispatch_async(dispatch_get_main_queue(), openBlock);
+            // 必须确保在 operation 生命周期内完成调用，否则可能因 operation 提前释放导致不执行
+            dispatch_sync(dispatch_get_main_queue(), performOpen);
         }
         break;
     }
