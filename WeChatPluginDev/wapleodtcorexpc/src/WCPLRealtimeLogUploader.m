@@ -21,9 +21,11 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, assign) unsigned long long lastUploadedOffset;
 @property (nonatomic, assign) BOOL uploading;
-@property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTask;
 @property (nonatomic, assign) NSTimeInterval lastUploadErrorLogAt;
 @property (nonatomic, assign) NSUInteger consecutiveUploadFailures;
+@property (nonatomic, copy) NSString *sessionLogName;
+@property (nonatomic, assign) BOOL sessionHasUploaded;
+@property (nonatomic, assign) NSUInteger sessionGeneration;
 
 @end
 
@@ -44,9 +46,11 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
         _enabled = [[NSUserDefaults standardUserDefaults] boolForKey:kWCPLRealtimeDebugLogUploadEnabledKey];
         _lastUploadedOffset = 0;
         _uploading = NO;
-        _backgroundTask = UIBackgroundTaskInvalid;
         _lastUploadErrorLogAt = 0;
         _consecutiveUploadFailures = 0;
+        _sessionLogName = nil;
+        _sessionHasUploaded = NO;
+        _sessionGeneration = 0;
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -68,10 +72,12 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kWCPLRealtimeDebugLogUploadEnabledKey];
 
     if (enabled) {
-        // 新一轮实时上传：从头开始，并让服务端覆盖 live 文件，避免重复拼接
         dispatch_async(self.queue, ^{
             self.lastUploadedOffset = 0;
             self.uploading = NO;
+            self.sessionLogName = nil;
+            self.sessionHasUploaded = NO;
+            self.sessionGeneration += 1;
         });
         [self startIfNeeded];
     } else {
@@ -91,16 +97,20 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
             return;
         }
 
+        [self prepareNewSessionLocked];
+
         dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, self.queue);
         self.timer = timer;
         uint64_t interval = (uint64_t)(kWCPLRealtimeUploadIntervalSeconds * NSEC_PER_SEC);
-        dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, interval), interval, (uint64_t)(0.2 * NSEC_PER_SEC));
+        dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), interval, (uint64_t)(0.2 * NSEC_PER_SEC));
 
         __weak typeof(self) weakSelf = self;
         dispatch_source_set_event_handler(timer, ^{
             [weakSelf uploadNextChunkIfNeeded];
         });
         dispatch_resume(timer);
+
+        [self uploadNextChunkIfNeeded];
     });
 }
 
@@ -111,56 +121,67 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
             self.timer = nil;
         }
         self.uploading = NO;
-
-        if (self.backgroundTask != UIBackgroundTaskInvalid) {
-            UIBackgroundTaskIdentifier task = self.backgroundTask;
-            self.backgroundTask = UIBackgroundTaskInvalid;
-            [[UIApplication sharedApplication] endBackgroundTask:task];
-        }
+        self.lastUploadedOffset = 0;
+        self.sessionLogName = nil;
+        self.sessionHasUploaded = NO;
+        self.sessionGeneration += 1;
     });
 }
 
 #pragma mark - Notifications
 
 - (void)onEnterBackground {
-    dispatch_async(self.queue, ^{
-        if (!self.enabled) {
-            [self stop];
-            return;
-        }
-
-        if (self.backgroundTask == UIBackgroundTaskInvalid) {
-            __weak typeof(self) weakSelf = self;
-            self.backgroundTask = [[UIApplication sharedApplication]
-                beginBackgroundTaskWithName:@"wcpl.realtime_log_uploader"
-                          expirationHandler:^{
-                              __strong typeof(weakSelf) self = weakSelf;
-                              if (!self) {
-                                  return;
-                              }
-                              dispatch_async(self.queue, ^{
-                                  [self stop];
-                              });
-                          }];
-        }
-
-        // 尽量在系统挂起前把最新日志刷上来
-        [self uploadNextChunkIfNeeded];
-    });
+    // 后台立刻停止上传：避免后台保活/网络请求
+    [self stop];
 }
 
 - (void)onBecomeActive {
     dispatch_async(self.queue, ^{
-        if (self.backgroundTask != UIBackgroundTaskInvalid) {
-            UIBackgroundTaskIdentifier task = self.backgroundTask;
-            self.backgroundTask = UIBackgroundTaskInvalid;
-            [[UIApplication sharedApplication] endBackgroundTask:task];
-        }
         [self startIfNeeded];
     });
 }
 
 #pragma mark - Internal
+
+- (NSString *)newTimestampLogNameLocked {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        formatter.dateFormat = @"yyyyMMdd_HHmmss_SSS";
+    });
+
+    NSString *ts = [formatter stringFromDate:[NSDate date]] ?: @"";
+    if (ts.length == 0) {
+        ts = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970] * 1000.0];
+    }
+    return [NSString stringWithFormat:@"wcpl_debug_live_%@.log", ts];
+}
+
+- (void)prepareNewSessionLocked {
+    self.sessionGeneration += 1;
+    self.sessionHasUploaded = NO;
+    self.uploading = NO;
+    self.lastUploadErrorLogAt = 0;
+    self.consecutiveUploadFailures = 0;
+
+    WCPLLogger *logger = [WCPLLogger sharedLogger];
+    NSString *logPath = [logger logFilePath];
+
+    unsigned long long fileSize = 0;
+    if (logPath.length > 0) {
+        NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
+        if (attributes) {
+            fileSize = [attributes fileSize];
+        }
+    }
+
+    self.lastUploadedOffset = fileSize;
+    self.sessionLogName = [self newTimestampLogNameLocked];
+
+    WCPLLogInfo(@"实时日志会话开始: name=%@ offset=%llu", self.sessionLogName ?: @"", self.lastUploadedOffset);
+}
 
 - (void)uploadNextChunkIfNeeded {
     if (!self.enabled) {
@@ -172,6 +193,9 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
 
     WCPLLogger *logger = [WCPLLogger sharedLogger];
     if (!logger.enabled) {
+        return;
+    }
+    if (self.sessionLogName.length == 0) {
         return;
     }
 
@@ -190,14 +214,11 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
         return;
     }
 
-    BOOL shouldReplace = NO;
+    BOOL didTruncate = NO;
     if (self.lastUploadedOffset > fileSize) {
-        // 日志被清空/截断，重置 offset 并覆盖服务端 live 文件
+        // 日志被清空/截断，重置 offset（可能会导致重复，但优先保证不漏日志）
         self.lastUploadedOffset = 0;
-        shouldReplace = YES;
-    }
-    if (self.lastUploadedOffset == 0) {
-        shouldReplace = YES;
+        didTruncate = YES;
     }
     if (fileSize <= self.lastUploadedOffset) {
         return;
@@ -228,6 +249,9 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
     }
 
     unsigned long long offsetBefore = self.lastUploadedOffset;
+    NSString *logName = [self.sessionLogName copy];
+    NSUInteger generation = self.sessionGeneration;
+    BOOL shouldReplace = !self.sessionHasUploaded;
     self.uploading = YES;
 
     NSDictionary<NSString *, NSString *> *headers = @{
@@ -237,30 +261,36 @@ static const NSUInteger kWCPLRealtimeUploadChunkSize = 64 * 1024; // 64KB
     };
 
     __weak typeof(self) weakSelf = self;
-    [WCPLLogUploader uploadLogData:chunk logName:@"wcpl_debug_live.log" headers:headers completion:^(BOOL success, NSInteger statusCode, NSError *error) {
+    [WCPLLogUploader uploadLogData:chunk logName:logName headers:headers completion:^(BOOL success, NSInteger statusCode, NSError *error) {
         __strong typeof(weakSelf) self = weakSelf;
         if (!self) {
             return;
         }
         dispatch_async(self.queue, ^{
+            if (generation != self.sessionGeneration) {
+                return;
+            }
             self.uploading = NO;
             if (!success || error) {
                 self.consecutiveUploadFailures += 1;
                 NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
                 if (now - self.lastUploadErrorLogAt > 15.0) {
                     self.lastUploadErrorLogAt = now;
-                    WCPLLog(@"实时日志上传失败: failures=%lu status=%ld err=%@",
-                            (unsigned long)self.consecutiveUploadFailures,
-                            (long)statusCode,
-                            error.localizedDescription ?: @"");
+                    WCPLLogWarning(@"实时日志上传失败: failures=%lu status=%ld err=%@ name=%@ truncate=%d",
+                                   (unsigned long)self.consecutiveUploadFailures,
+                                   (long)statusCode,
+                                   error.localizedDescription ?: @"",
+                                   logName ?: @"",
+                                   didTruncate ? 1 : 0);
                 }
                 return;
             }
             if (self.consecutiveUploadFailures > 0) {
-                WCPLLog(@"实时日志上传恢复: failures=%lu", (unsigned long)self.consecutiveUploadFailures);
+                WCPLLogInfo(@"实时日志上传恢复: failures=%lu", (unsigned long)self.consecutiveUploadFailures);
                 self.consecutiveUploadFailures = 0;
             }
             self.lastUploadedOffset = offsetBefore + (unsigned long long)chunk.length;
+            self.sessionHasUploaded = YES;
         });
     }];
 }

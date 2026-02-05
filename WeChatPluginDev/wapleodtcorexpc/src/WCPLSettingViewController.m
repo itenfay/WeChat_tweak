@@ -297,6 +297,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
 
     [section addCell:[self createAbortRemokeMessageCell]];
+    [section addCell:[self createDebugLogSwitchCell]];
+    if ([WCPLLogger sharedLogger].enabled) {
+        [section addCell:[self createLogLevelCell]];
+    }
     [section addCell:[self createDebugLogCell]];
     [section addCell:[self createRealtimeDebugLogUploadSwitchCell]];
     [section addCell:[self createCrashLogSwitchCell]];
@@ -316,6 +320,66 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (WCTableViewNormalCellManager *)createDebugLogCell {
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDebugLog) target:self title:@"查看调试日志" rightValue:@"" accessoryType:1];
+}
+
+- (NSString *)wcpl_logLevelName:(WCPLLogLevel)level {
+    switch (level) {
+        case WCPLLogLevelDebug: return @"调试 (Debug)";
+        case WCPLLogLevelInfo: return @"信息 (Info)";
+        case WCPLLogLevelWarning: return @"警告 (Warn)";
+        case WCPLLogLevelError: return @"错误 (Error)";
+        case WCPLLogLevelNone:
+        default: return @"关闭";
+    }
+}
+
+- (WCTableViewNormalCellManager *)createLogLevelCell {
+    WCPLLogLevel level = [WCPLLogger currentLevel];
+    NSString *name = [self wcpl_logLevelName:level];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showLogLevelPicker) target:self title:@"日志等级" rightValue:name accessoryType:1];
+}
+
+- (void)showLogLevelPicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志等级"
+                                                                   message:@"等级越低越详细；关闭将停止写入文件日志"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    __weak typeof(self) weakSelf = self;
+    void (^applyLevel)(WCPLLogLevel) = ^(WCPLLogLevel level) {
+        __strong typeof(weakSelf) self = weakSelf;
+        if (!self) return;
+
+        [WCPLLogger setLogLevel:level];
+        if (level == WCPLLogLevelNone) {
+            [[WCPLRealtimeLogUploader sharedUploader] stop];
+        } else if ([WCPLRealtimeLogUploader sharedUploader].enabled) {
+            [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
+        }
+        [self reloadTableData];
+    };
+
+    NSArray<NSDictionary *> *items = @[
+        @{@"title": @"调试 (Debug) - 最详细", @"level": @(WCPLLogLevelDebug)},
+        @{@"title": @"信息 (Info)", @"level": @(WCPLLogLevelInfo)},
+        @{@"title": @"警告 (Warn)", @"level": @(WCPLLogLevelWarning)},
+        @{@"title": @"错误 (Error)", @"level": @(WCPLLogLevelError)},
+        @{@"title": @"关闭", @"level": @(WCPLLogLevelNone)},
+    ];
+
+    for (NSDictionary *item in items) {
+        NSString *title = item[@"title"];
+        NSNumber *levelNum = item[@"level"];
+        if (![title isKindOfClass:[NSString class]] || ![levelNum respondsToSelector:@selector(integerValue)]) {
+            continue;
+        }
+        UIAlertActionStyle style = ([levelNum integerValue] == WCPLLogLevelNone) ? UIAlertActionStyleDestructive : UIAlertActionStyleDefault;
+        [alert addAction:[UIAlertAction actionWithTitle:title style:style handler:^(__unused UIAlertAction *action) {
+            applyLevel((WCPLLogLevel)[levelNum integerValue]);
+        }]];
+    }
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (WCTableViewNormalCellManager *)createRealtimeDebugLogUploadSwitchCell {
@@ -915,7 +979,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
             [section addCell:[self createRepeatButtonTextColorEmoticonCell]];
             [section addCell:[self createRepeatButtonTextColorQuoteCell]];
         }
-        [section addCell:[self createDebugLogSwitchCell]];
     }
 
     [self.tableViewMgr addSection:section];
@@ -1198,6 +1261,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     } else {
         [[WCPLRealtimeLogUploader sharedUploader] stop];
     }
+
+    [self reloadTableData];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonStyleCell {
