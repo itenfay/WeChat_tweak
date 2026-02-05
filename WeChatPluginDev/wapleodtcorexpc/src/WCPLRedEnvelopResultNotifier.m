@@ -232,6 +232,7 @@ static NSString *wcpl_ren_dedupeKey(NSString *sendId, NSString *timingIdentifier
 
         BOOL didSend = [[WCPLTextMessageSender sharedSender] sendText:finalText toSession:targetSession];
         if (!didSend && notify == 1) {
+            WCPLLog(@"[红包通知] 发送到自己失败，尝试文件传输助手");
             didSend = [[WCPLTextMessageSender sharedSender] sendText:finalText toSession:@"filehelper"];
         }
 
