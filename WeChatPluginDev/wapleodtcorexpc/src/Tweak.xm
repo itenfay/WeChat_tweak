@@ -29,6 +29,7 @@
 
 @interface WCRedEnvelopesLogicMgr (WCPLRedEnvelopOpen)
 - (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
+- (void)wcpl_handleRedEnvelopReceiverQueryResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
 @end
 
 // 复读按钮入口节流：避免长文本 layoutSubviews 高频触发导致重复创建
