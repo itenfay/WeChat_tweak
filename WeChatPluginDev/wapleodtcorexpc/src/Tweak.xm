@@ -16,6 +16,7 @@
 #import "WCHookMessageNavigator.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLLogger.h"
+#import "WCPLRealtimeLogUploader.h"
 #import "RichTextView.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -957,6 +958,7 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
 %ctor {
     @autoreleasepool {
         [[WCPLCrashReporter sharedReporter] installIfNeeded];
+        [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
     }
 }
 

@@ -15,6 +15,7 @@
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
 #import "WCPLCrashReporter.h"
+#import "WCPLRealtimeLogUploader.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
@@ -432,6 +433,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
     [section addCell:[self createAbortRemokeMessageCell]];
     [section addCell:[self createDebugLogCell]];
+    [section addCell:[self createRealtimeDebugLogUploadSwitchCell]];
     [section addCell:[self createCrashLogSwitchCell]];
     [section addCell:[self createCrashAutoUploadSwitchCell]];
     [section addCell:[self createLogUploadURLCell]];
@@ -449,6 +451,29 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (WCTableViewNormalCellManager *)createDebugLogCell {
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDebugLog) target:self title:@"查看调试日志" rightValue:@"" accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRealtimeDebugLogUploadSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRealtimeDebugLogUpload:) target:self title:@"实时上传调试日志" on:[WCPLRealtimeLogUploader sharedUploader].enabled];
+}
+
+- (void)settingRealtimeDebugLogUpload:(UISwitch *)sender {
+    if (sender.on && ![WCPLLogger sharedLogger].enabled) {
+        sender.on = NO;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"未启用日志"
+                                                                       message:@"请先开启调试日志"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+
+    [WCPLRealtimeLogUploader sharedUploader].enabled = sender.on;
+    if (sender.on) {
+        [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
+    } else {
+        [[WCPLRealtimeLogUploader sharedUploader] stop];
+    }
 }
 
 - (void)showDebugLog {
@@ -1297,6 +1322,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [WCPLLogger sharedLogger].enabled = sender.on;
 
     if (sender.on) {
+        [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
         // 显示日志文件路径提示
         NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"调试日志已启用"
@@ -1304,6 +1330,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [[WCPLRealtimeLogUploader sharedUploader] stop];
     }
 }
 

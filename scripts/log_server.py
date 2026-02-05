@@ -18,7 +18,11 @@ class _LogUploadHandler(http.server.BaseHTTPRequestHandler):
             return
 
         content_length = int(self.headers.get("Content-Length", "0"))
-        body = self.rfile.read(content_length) if content_length > 0 else b""
+        try:
+            body = self.rfile.read(content_length) if content_length > 0 else b""
+        except (ConnectionResetError, BrokenPipeError):
+            print(f"[log_server] client disconnected: {self.client_address}", flush=True)
+            return
 
         repo_root = pathlib.Path(__file__).resolve().parents[1]
         logs_dir = repo_root / "logs"
@@ -30,10 +34,23 @@ class _LogUploadHandler(http.server.BaseHTTPRequestHandler):
         if not name.endswith(".log"):
             name = f"{name}.log"
 
-        output_path = logs_dir / f"{timestamp}_{name}"
-        output_path.write_bytes(body)
+        mode = (self.headers.get("X-Log-Mode") or "replace").strip().lower()
+        is_live = (self.headers.get("X-Log-Live") or "").strip().lower() in ("1", "true", "yes", "y", "on")
 
-        response = {"ok": True, "path": str(output_path)}
+        if is_live:
+            live_dir = logs_dir / "live"
+            live_dir.mkdir(parents=True, exist_ok=True)
+            output_path = live_dir / name
+            if mode == "replace":
+                output_path.write_bytes(body)
+            else:
+                with output_path.open("ab") as fp:
+                    fp.write(body)
+        else:
+            output_path = logs_dir / f"{timestamp}_{name}"
+            output_path.write_bytes(body)
+
+        response = {"ok": True, "path": str(output_path), "mode": mode, "live": is_live}
         payload = json.dumps(response).encode("utf-8")
 
         self.send_response(200)
@@ -42,7 +59,11 @@ class _LogUploadHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(payload)
 
-        print(f"[log_server] saved {len(body)} bytes to {output_path}", flush=True)
+        print(
+            f"[log_server] {self.client_address[0]}:{self.client_address[1]} "
+            f"mode={mode} live={int(is_live)} bytes={len(body)} path={output_path}",
+            flush=True,
+        )
 
     def log_message(self, format, *args):
         return

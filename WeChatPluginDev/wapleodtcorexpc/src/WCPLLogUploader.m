@@ -38,23 +38,11 @@ static NSString *const kWCPLLogUploadURLKey = @"kWCPLLogUploadURL";
     [[NSUserDefaults standardUserDefaults] setObject:urlString forKey:kWCPLLogUploadURLKey];
 }
 
-+ (void)uploadLogFileAtPath:(NSString *)filePath
-                    logName:(NSString *)logName
-                 completion:(void (^)(BOOL success, NSInteger statusCode, NSError *error))completion {
-    if (filePath.length == 0) {
-        if (completion) {
-            NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
-                                                 code:-1
-                                             userInfo:@{NSLocalizedDescriptionKey: @"日志路径为空"}];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion(NO, 0, error);
-            });
-        }
-        return;
-    }
-
-    NSData *logData = [NSData dataWithContentsOfFile:filePath];
-    if (logData.length == 0) {
++ (void)uploadLogData:(NSData *)data
+              logName:(NSString *)logName
+              headers:(NSDictionary<NSString *, NSString *> *)headers
+           completion:(void (^)(BOOL success, NSInteger statusCode, NSError *error))completion {
+    if (data.length == 0) {
         if (completion) {
             NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
                                                  code:-2
@@ -82,15 +70,24 @@ static NSString *const kWCPLLogUploadURLKey = @"kWCPLLogUploadURL";
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
-    request.HTTPBody = logData;
+    request.HTTPBody = data;
     [request setValue:@"text/plain; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 
     NSString *uploadName = (logName.length > 0) ? logName : @"wcpl_debug.log";
     [request setValue:uploadName forHTTPHeaderField:@"X-Log-Name"];
 
+    if (headers.count > 0) {
+        [headers enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, __unused BOOL *stop) {
+            if (key.length == 0 || value.length == 0) {
+                return;
+            }
+            [request setValue:value forHTTPHeaderField:key];
+        }];
+    }
+
     NSURLSessionDataTask *task = [[NSURLSession sharedSession]
                                  dataTaskWithRequest:request
-                                 completionHandler:^(__unused NSData *data, NSURLResponse *response, NSError *error) {
+                                 completionHandler:^(__unused NSData *respData, NSURLResponse *response, NSError *error) {
         NSInteger statusCode = 0;
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
             statusCode = ((NSHTTPURLResponse *)response).statusCode;
@@ -105,6 +102,25 @@ static NSString *const kWCPLLogUploadURLKey = @"kWCPLLogUploadURL";
     }];
 
     [task resume];
+}
+
++ (void)uploadLogFileAtPath:(NSString *)filePath
+                    logName:(NSString *)logName
+                 completion:(void (^)(BOOL success, NSInteger statusCode, NSError *error))completion {
+    if (filePath.length == 0) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
+                                                 code:-1
+                                             userInfo:@{NSLocalizedDescriptionKey: @"日志路径为空"}];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(NO, 0, error);
+            });
+        }
+        return;
+    }
+
+    NSData *logData = [NSData dataWithContentsOfFile:filePath];
+    [self uploadLogData:logData logName:logName headers:nil completion:completion];
 }
 
 @end
