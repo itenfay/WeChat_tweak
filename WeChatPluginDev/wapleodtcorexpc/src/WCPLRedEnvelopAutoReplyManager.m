@@ -179,6 +179,17 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
         if ([msgWrap respondsToSelector:@selector(ChangeForDisplay)]) {
             [msgWrap ChangeForDisplay];
         }
+        // 兜底：部分版本在 ChangeForDisplay/UpdateContent 后可能覆盖展示字段，这里强制写回一次。
+        if ([msgWrap respondsToSelector:@selector(setM_nsContent:)]) {
+            [msgWrap setM_nsContent:content];
+        }
+        if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
+            [msgWrap setM_nsPushContent:content];
+        }
+        @try {
+            [msgWrap setValue:content forKey:@"m_nsLastDisplayContent"];
+        } @catch (__unused NSException *exception) {
+        }
         if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
             [msgWrap setM_uiStatus:1];
         }
@@ -207,22 +218,6 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
             (unsigned long)wrapContent.length,
             (unsigned long)displayContent.length);
 
-    id sendMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
-    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
-        BOOL ok = NO;
-        @try {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMgr, @selector(AddMsgToSendTable:MsgWrap:), session, msgWrap);
-            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
-                ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
-            }
-            WCPLLog(@"红包自动回复发送完成: via=sendMgr to=%@", session);
-            ok = YES;
-        } @catch (__unused NSException *exception) {
-            ok = NO;
-        }
-        if (ok) return YES;
-    }
-
     id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
     Class messageMgrClass = objc_getClass("CMessageMgr");
     if (messageMgr && messageMgrClass) {
@@ -250,6 +245,22 @@ static BOOL wcpl_rea_sendTextMessageNative(NSString *sessionUserName, NSString *
             } @catch (__unused NSException *exception) {
             }
         }
+    }
+
+    id sendMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+        BOOL ok = NO;
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMgr, @selector(AddMsgToSendTable:MsgWrap:), session, msgWrap);
+            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
+                ((void (*)(id, SEL))objc_msgSend)(sendMgr, @selector(SendMsg));
+            }
+            WCPLLog(@"红包自动回复发送完成: via=sendMgr to=%@", session);
+            ok = YES;
+        } @catch (__unused NSException *exception) {
+            ok = NO;
+        }
+        if (ok) return YES;
     }
 
     return NO;

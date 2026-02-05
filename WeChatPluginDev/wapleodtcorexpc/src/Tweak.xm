@@ -65,6 +65,31 @@ static NSString *wcpl_trimString(NSString *text) {
     return trimmed.length > 0 ? trimmed : nil;
 }
 
+static BOOL wcpl_isDecimalDigitsOnly(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) return NO;
+    for (NSUInteger i = 0; i < text.length; i++) {
+        unichar ch = [text characterAtIndex:i];
+        if (ch < '0' || ch > '9') {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+// 红包金额格式化：回包多数为“分”(整数)。若已包含小数点则视为“元”字符串。
+static NSString *wcpl_formatHongbaoAmountYuan(NSString *rawAmount) {
+    NSString *raw = wcpl_trimString(rawAmount);
+    if (raw.length == 0) return nil;
+    if ([raw rangeOfString:@"."].location != NSNotFound) {
+        return raw;
+    }
+    if (!wcpl_isDecimalDigitsOnly(raw)) {
+        return raw;
+    }
+    long long fen = raw.longLongValue;
+    return [NSString stringWithFormat:@"%.2f", ((double)fen) / 100.0];
+}
+
 static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
     unsigned int cmd = 0;
     @try {
@@ -438,6 +463,17 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
         if ([msgWrap respondsToSelector:@selector(ChangeForDisplay)]) {
             [msgWrap ChangeForDisplay];
         }
+        // 兜底：部分版本在 ChangeForDisplay/UpdateContent 后可能覆盖展示字段，这里强制写回一次。
+        if ([msgWrap respondsToSelector:@selector(setM_nsContent:)]) {
+            [msgWrap setM_nsContent:content];
+        }
+        if ([msgWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
+            [msgWrap setM_nsPushContent:content];
+        }
+        @try {
+            [msgWrap setValue:content forKey:@"m_nsLastDisplayContent"];
+        } @catch (__unused NSException *exception) {
+        }
         if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
             [msgWrap setM_uiStatus:1];
         }
@@ -485,20 +521,6 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
             (unsigned long)displayContent.length,
             (unsigned long)secContent.length);
 
-    id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
-    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
-        @try {
-            [sendMgr AddMsgToSendTable:session MsgWrap:msgWrap];
-            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
-                [sendMgr SendMsg];
-            }
-            WCPLLog(@"发送文本完成: via=sendMgr to=%@ ok=1", session);
-            return YES;
-        } @catch (__unused NSException *exception) {
-            WCPLLog(@"发送文本异常: via=sendMgr to=%@", session);
-        }
-    }
-
     // 兜底：BypSendMessageMgr（部分版本 sendMgr 不可用）
     id messageMgr = wcpl_getMessageMgr();
     Class messageMgrClass = objc_getClass("CMessageMgr");
@@ -513,6 +535,20 @@ static BOOL wcpl_sendTextMessageToSession(NSString *sessionUserName, NSString *t
             } @catch (__unused NSException *exception) {
                 WCPLLog(@"发送文本异常: via=byp to=%@", session);
             }
+        }
+    }
+
+    id sendMgr = wcpl_getService(objc_getClass("SendMessageMgr"));
+    if (sendMgr && [sendMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+        @try {
+            [sendMgr AddMsgToSendTable:session MsgWrap:msgWrap];
+            if ([sendMgr respondsToSelector:@selector(SendMsg)]) {
+                [sendMgr SendMsg];
+            }
+            WCPLLog(@"发送文本完成: via=sendMgr to=%@ ok=1", session);
+            return YES;
+        } @catch (__unused NSException *exception) {
+            WCPLLog(@"发送文本异常: via=sendMgr to=%@", session);
         }
     }
 
@@ -1263,15 +1299,21 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             (unsigned long)groupAutoReplyText.length);
 
     NSString *sessionDisplayName = sessionUserName.length > 0 ? wcpl_displayNameForUserName(sessionUserName) : nil;
-    NSMutableString *notifyText = [NSMutableString stringWithFormat:@"[红包] %@:%@",
-                                   isGroup ? @"群聊" : @"私聊",
-                                   sessionDisplayName.length > 0 ? sessionDisplayName : (sessionUserName ?: @"")];
+    NSString *sessionName = sessionDisplayName.length > 0 ? sessionDisplayName : (sessionUserName ?: @"");
+    NSString *receiveAmountYuan = wcpl_formatHongbaoAmountYuan(receiveAmount);
+    NSString *totalAmountYuan = wcpl_formatHongbaoAmountYuan(totalAmount);
+
+    NSMutableString *notifyText = [NSMutableString stringWithFormat:@"[红包] 在%@「%@」",
+                                   isGroup ? @"群" : @"聊天",
+                                   sessionName];
     if (success) {
-        if (receiveAmount.length > 0) {
-            [notifyText appendFormat:@" 抢到:%@", receiveAmount];
+        if (receiveAmountYuan.length > 0) {
+            [notifyText appendFormat:@" 抢到 %@元", receiveAmountYuan];
+        } else {
+            [notifyText appendString:@" 领取成功"];
         }
-        if (totalAmount.length > 0) {
-            [notifyText appendFormat:@" 总额:%@", totalAmount];
+        if (totalAmountYuan.length > 0) {
+            [notifyText appendFormat:@" 总额 %@元", totalAmountYuan];
         }
     } else {
         [notifyText appendString:@" 领取失败"];
