@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import "WeChatRedEnvelop.h"
-#import "ChatRoomInfoViewController.h"
 #import "WCPLSettingViewController.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLLogger.h"
@@ -49,6 +48,17 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     }
 
     return nil;
+}
+
+static id wcpl_safeValueForKey(id obj, NSString *key) {
+    if (!obj || ![key isKindOfClass:[NSString class]] || key.length == 0) {
+        return nil;
+    }
+    @try {
+        return [obj valueForKey:key];
+    } @catch (__unused NSException *exception) {
+        return nil;
+    }
 }
 
 %hook MicroMessengerAppDelegate
@@ -107,7 +117,7 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     }
 
     // 从当前控制器获取群聊联系人
-    id chatRoomContact = self.m_chatRoomContact;
+    id chatRoomContact = wcpl_safeValueForKey((id)self, @"m_chatRoomContact");
     NSString *usrName = wcpl_safeUserNameFromObject(chatRoomContact);
     if (usrName.length == 0) {
         return;
@@ -143,7 +153,7 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
         return;
     }
 
-    id chatRoomContact = self.m_chatRoomContact;
+    id chatRoomContact = wcpl_safeValueForKey((id)self, @"m_chatRoomContact");
     NSString *usrName = wcpl_safeUserNameFromObject(chatRoomContact);
     if (usrName.length == 0) {
         sender.on = NO;
