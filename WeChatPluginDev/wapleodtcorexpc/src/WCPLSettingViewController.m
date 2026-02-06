@@ -268,7 +268,14 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showBlackList {
     WCPLCrashBreadcrumb(@"打开群聊白名单");
     self.groupSelectContext = WCPLGroupSelectContextBlackList;
-    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].allowedGroupList];
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:config.allowedGroupList];
+    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:@"kWCPLBlackList"];
+    NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+    WCPLLogInfo(@"[设置] 打开白名单: inMemory=%lu storedType=%@ storedCount=%lu",
+                (unsigned long)selected.count,
+                stored ? NSStringFromClass([stored class]) : @"(nil)",
+                (unsigned long)storedCount);
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
@@ -281,7 +288,14 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)showGroupDenyList {
     WCPLCrashBreadcrumb(@"打开群聊黑名单");
     self.groupSelectContext = WCPLGroupSelectContextRedEnvelopDenyList;
-    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[WCPLRedEnvelopConfig sharedConfig].blockedGroupList];
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:config.blockedGroupList];
+    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:@"kWCPLGroupDenyList"];
+    NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+    WCPLLogInfo(@"[设置] 打开黑名单: inMemory=%lu storedType=%@ storedCount=%lu",
+                (unsigned long)selected.count,
+                stored ? NSStringFromClass([stored class]) : @"(nil)",
+                (unsigned long)storedCount);
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
@@ -1823,12 +1837,25 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (void)onMultiSelectGroupReturn:(NSArray *)arg1 {
     NSArray *userNames = [self wcpl_userNamesFromSelection:arg1];
+    WCPLLogInfo(@"[设置] MultiSelectGroupReturn: ctx=%lu selected=%lu",
+                (unsigned long)self.groupSelectContext,
+                (unsigned long)userNames.count);
     if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
         [self updateChatIgnoreInfoWithChatrooms:userNames];
     } else if (self.groupSelectContext == WCPLGroupSelectContextRedEnvelopDenyList) {
         [WCPLRedEnvelopConfig sharedConfig].blockedGroupList = userNames;
+        id stored = [[NSUserDefaults standardUserDefaults] objectForKey:@"kWCPLGroupDenyList"];
+        NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+        WCPLLogInfo(@"[设置] 黑名单写入后读取: storedType=%@ storedCount=%lu",
+                    stored ? NSStringFromClass([stored class]) : @"(nil)",
+                    (unsigned long)storedCount);
     } else {
         [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
+        id stored = [[NSUserDefaults standardUserDefaults] objectForKey:@"kWCPLBlackList"];
+        NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+        WCPLLogInfo(@"[设置] 白名单写入后读取: storedType=%@ storedCount=%lu",
+                    stored ? NSStringFromClass([stored class]) : @"(nil)",
+                    (unsigned long)storedCount);
     }
     [self reloadTableData];
     self.groupSelectContext = WCPLGroupSelectContextNone;

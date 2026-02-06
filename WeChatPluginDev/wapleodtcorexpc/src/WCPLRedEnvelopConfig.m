@@ -7,6 +7,7 @@
 
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLConfigSanitizer.h"
+#import "WCPLLogger.h"
 #import <dispatch/dispatch.h>
 
 static NSString *const kWCPLDelaySeconds            = @"kWCPLDelaySeconds";
@@ -63,6 +64,11 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
         }
 
         _receiveSelfRedEnvelop = [defaults boolForKey:kWCPLReceiveSelfRedEnvelop];
+
+        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld",
+                    (unsigned long)_blackList.count,
+                    (unsigned long)_groupDenyList.count,
+                    (long)_groupRedEnvelopScope);
     }
     return self;
 }
@@ -130,6 +136,13 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
 - (void)setBlackList:(NSArray *)blackList {
     _blackList = WCPLSanitizeUserNameArray(blackList);
     [self wcpl_setObject:_blackList forKey:kWCPLBlackList];
+
+    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLBlackList];
+    NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+    WCPLLogInfo(@"[红包配置] Save legacy blacklist: sanitized=%lu storedType=%@ storedCount=%lu",
+                (unsigned long)_blackList.count,
+                stored ? NSStringFromClass([stored class]) : @"(nil)",
+                (unsigned long)storedCount);
 }
 
 - (NSArray *)allowedGroupList {
@@ -139,11 +152,25 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
 - (void)setAllowedGroupList:(NSArray *)allowedGroupList {
     _blackList = WCPLSanitizeUserNameArray(allowedGroupList);
     [self wcpl_setObject:_blackList forKey:kWCPLBlackList];
+
+    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLBlackList];
+    NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+    WCPLLogInfo(@"[红包配置] Save whitelist: sanitized=%lu storedType=%@ storedCount=%lu",
+                (unsigned long)_blackList.count,
+                stored ? NSStringFromClass([stored class]) : @"(nil)",
+                (unsigned long)storedCount);
 }
 
 - (void)setGroupDenyList:(NSArray *)groupDenyList {
     _groupDenyList = WCPLSanitizeUserNameArray(groupDenyList);
     [self wcpl_setObject:_groupDenyList forKey:kWCPLGroupDenyList];
+
+    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLGroupDenyList];
+    NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+    WCPLLogInfo(@"[红包配置] Save legacy denylist: sanitized=%lu storedType=%@ storedCount=%lu",
+                (unsigned long)_groupDenyList.count,
+                stored ? NSStringFromClass([stored class]) : @"(nil)",
+                (unsigned long)storedCount);
 }
 
 - (NSArray *)blockedGroupList {
@@ -153,6 +180,13 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
 - (void)setBlockedGroupList:(NSArray *)blockedGroupList {
     _groupDenyList = WCPLSanitizeUserNameArray(blockedGroupList);
     [self wcpl_setObject:_groupDenyList forKey:kWCPLGroupDenyList];
+
+    id stored = [[NSUserDefaults standardUserDefaults] objectForKey:kWCPLGroupDenyList];
+    NSUInteger storedCount = [stored isKindOfClass:[NSArray class]] ? [(NSArray *)stored count] : 0;
+    WCPLLogInfo(@"[红包配置] Save denylist: sanitized=%lu storedType=%@ storedCount=%lu",
+                (unsigned long)_groupDenyList.count,
+                stored ? NSStringFromClass([stored class]) : @"(nil)",
+                (unsigned long)storedCount);
 }
 
 @end
