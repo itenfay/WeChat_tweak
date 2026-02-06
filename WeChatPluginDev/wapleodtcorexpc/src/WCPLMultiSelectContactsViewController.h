@@ -17,7 +17,6 @@
 @end
 
 @interface WCPLMultiSelectContactsViewController : UIViewController
-__attribute__((deprecated("Use WCPLFriendPickerViewController")))
 
 - (instancetype)initWithSelectedContacts:(NSArray *)selectedContacts;
 

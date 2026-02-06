@@ -8,13 +8,14 @@
 #import "WCPLSettingViewController.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
-#import "WCPLGroupPickerViewController.h"
-#import "WCPLFriendPickerViewController.h"
+#import "WCPLMultiSelectGroupsViewController.h"
+#import "WCPLMultiSelectContactsViewController.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLLogSettingsViewController.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextNone = 0,
@@ -23,8 +24,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextAllowList,
 };
 
-@interface WCPLSettingViewController () <WCPLGroupPickerViewControllerDelegate,
-                                         WCPLFriendPickerViewControllerDelegate>
+@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate,
+                                         WCPLMultiSelectContactsViewControllerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 @property (nonatomic, assign) WCPLGroupSelectContext groupSelectContext;
@@ -378,10 +379,22 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                 stored ? NSStringFromClass([stored class]) : @"(nil)",
                 (unsigned long)storedCount);
 
-    WCPLGroupPickerViewController *pickerController = [[WCPLGroupPickerViewController alloc] initWithSelectedIdentifiers:selected];
-    pickerController.delegate = self;
-    pickerController.titleText = @"白名单";
-    [self presentViewController:pickerController animated:NO completion:nil];
+    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"白名单"
+                                                   onlyChatRoom:YES
+                                                          scene:5
+                                             selectedUserNames:selected]) {
+        WCPLLogInfo(@"[设置] 白名单使用系统多选控制器: selected=%lu", (unsigned long)selected.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[设置] 白名单系统多选不可用，回退插件多选控制器");
+
+    WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
+    multiSGVC.delegate = self;
+    multiSGVC.titleText = @"白名单";
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 - (void)showGroupDenyList {
@@ -396,10 +409,22 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                 stored ? NSStringFromClass([stored class]) : @"(nil)",
                 (unsigned long)storedCount);
 
-    WCPLGroupPickerViewController *pickerController = [[WCPLGroupPickerViewController alloc] initWithSelectedIdentifiers:selected];
-    pickerController.delegate = self;
-    pickerController.titleText = @"黑名单";
-    [self presentViewController:pickerController animated:NO completion:nil];
+    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"黑名单"
+                                                   onlyChatRoom:YES
+                                                          scene:5
+                                             selectedUserNames:selected]) {
+        WCPLLogInfo(@"[设置] 黑名单使用系统多选控制器: selected=%lu", (unsigned long)selected.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[设置] 黑名单系统多选不可用，回退插件多选控制器");
+
+    WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
+    multiSGVC.delegate = self;
+    multiSGVC.titleText = @"黑名单";
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 #pragma mark - Other
@@ -536,25 +561,192 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     return results.array;
 }
 
+- (NSArray<NSString *> *)wcpl_userNamesFromSelection:(NSArray *)selection {
+    if (![selection isKindOfClass:[NSArray class]]) {
+        return @[];
+    }
+    NSMutableOrderedSet<NSString *> *names = [NSMutableOrderedSet orderedSet];
+    Class contactClass = NSClassFromString(@"CContact");
+    for (id obj in selection) {
+        NSString *name = nil;
+        if ([obj isKindOfClass:[NSString class]]) {
+            name = (NSString *)obj;
+        } else if (contactClass && [obj isKindOfClass:contactClass]) {
+            @try {
+                name = [obj valueForKey:@"m_nsUsrName"];
+            } @catch (__unused NSException *exception) {
+                name = nil;
+            }
+        } else {
+            @try {
+                name = [obj valueForKey:@"m_nsUsrName"];
+            } @catch (__unused NSException *exception) {
+                name = nil;
+            }
+        }
+        if ([name isKindOfClass:[NSString class]]) {
+            name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        }
+        if (name.length > 0) {
+            [names addObject:name];
+        }
+    }
+    return names.array;
+}
+
+- (NSMutableDictionary *)wcpl_multiSelectDictionaryWithUserNames:(NSArray<NSString *> *)names {
+    if (![names isKindOfClass:[NSArray class]] || names.count == 0) {
+        return [NSMutableDictionary dictionary];
+    }
+
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    Class contactClass = objc_getClass("CContact");
+    for (NSString *userName in names) {
+        if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
+            continue;
+        }
+        id contact = [contactMgr getContactByName:userName];
+        if (!contact || (contactClass && ![contact isKindOfClass:contactClass])) {
+            continue;
+        }
+        NSString *usrName = nil;
+        @try {
+            usrName = [contact valueForKey:@"m_nsUsrName"];
+        } @catch (__unused NSException *exception) {
+            usrName = userName;
+        }
+        if (!usrName) {
+            usrName = userName;
+        }
+        dict[usrName] = contact;
+    }
+    return dict;
+}
+
+- (BOOL)wcpl_applyMultiSelectDictionaryWithUserNames:(NSArray<NSString *> *)names toController:(id)controller {
+    if (!controller) {
+        return NO;
+    }
+
+    NSMutableDictionary *selectedDict = [self wcpl_multiSelectDictionaryWithUserNames:names];
+    if (selectedDict.count == 0) {
+        return YES;
+    }
+
+    @try {
+        if ([controller respondsToSelector:@selector(setM_dicMultiSelect:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_dicMultiSelect:), selectedDict);
+        } else {
+            [controller setValue:selectedDict forKey:@"m_dicMultiSelect"];
+        }
+        return YES;
+    } @catch (__unused NSException *exception) {
+        return NO;
+    }
+}
+
+- (BOOL)wcpl_presentMultiSelectContactsControllerWithTitle:(NSString *)title
+                                             onlyChatRoom:(BOOL)onlyChatRoom
+                                                    scene:(unsigned int)scene
+                                       selectedUserNames:(NSArray<NSString *> *)selected {
+    Class controllerClass = NSClassFromString(@"MultiSelectContactsViewController");
+    if (!controllerClass) {
+        return NO;
+    }
+
+    id controller = [[controllerClass alloc] init];
+    if (!controller) {
+        return NO;
+    }
+
+    NSArray<NSString *> *sanitizedSelected = [self wcpl_sanitizedUserNamesFromArray:selected];
+
+    if ([controller respondsToSelector:@selector(setM_delegate:)]) {
+        ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setM_delegate:), self);
+    } else {
+        @try {
+            [controller setValue:self forKey:@"m_delegate"];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([controller respondsToSelector:@selector(setM_uiGroupScene:)]) {
+        ((void (*)(id, SEL, unsigned int))objc_msgSend)(controller, @selector(setM_uiGroupScene:), scene);
+    } else {
+        @try {
+            [controller setValue:@(scene) forKey:@"m_uiGroupScene"];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([controller respondsToSelector:@selector(setM_onlyChatRoom:)]) {
+        ((void (*)(id, SEL, BOOL))objc_msgSend)(controller, @selector(setM_onlyChatRoom:), onlyChatRoom);
+    } else {
+        @try {
+            [controller setValue:@(onlyChatRoom) forKey:@"m_onlyChatRoom"];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (![self wcpl_applyMultiSelectDictionaryWithUserNames:sanitizedSelected toController:controller]) {
+        return NO;
+    }
+
+    if ([controller respondsToSelector:@selector(setTitle:)] && title.length > 0) {
+        ((void (*)(id, SEL, id))objc_msgSend)(controller, @selector(setTitle:), title);
+    } else {
+        @try {
+            if (title.length > 0) {
+                [controller setValue:title forKey:@"m_nsViewControllerTitle"];
+                [controller setValue:title forKey:@"m_viewcontrllerTitle"];
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (![controller isKindOfClass:[UIViewController class]]) {
+        return NO;
+    }
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:controller];
+    [self presentViewController:nc animated:YES completion:nil];
+    return YES;
+}
+
 - (void)showIgnoredChatroomList {
     WCPLCrashBreadcrumb(@"打开已屏蔽群聊列表");
     self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredChatroomUserNames]];
 
-    WCPLGroupPickerViewController *pickerController = [[WCPLGroupPickerViewController alloc] initWithSelectedIdentifiers:selected];
-    pickerController.delegate = self;
-    pickerController.titleText = @"屏蔽群聊";
-    [self presentViewController:pickerController animated:NO completion:nil];
+    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"屏蔽群聊"
+                                                   onlyChatRoom:YES
+                                                          scene:5
+                                             selectedUserNames:selected]) {
+        WCPLLogInfo(@"[设置] 屏蔽群聊使用系统多选控制器: selected=%lu", (unsigned long)selected.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[设置] 屏蔽群聊系统多选不可用，回退插件多选控制器");
+
+    WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
+    multiSGVC.delegate = self;
+    multiSGVC.titleText = @"屏蔽群聊";
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSGVC];
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 - (void)showIgnoredUserList {
     WCPLCrashBreadcrumb(@"打开已屏蔽好友列表");
     self.groupSelectContext = WCPLGroupSelectContextNone;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredUserNames]];
-    WCPLFriendPickerViewController *pickerController = [[WCPLFriendPickerViewController alloc] initWithSelectedIdentifiers:selected];
-    pickerController.delegate = self;
-    pickerController.titleText = @"屏蔽好友";
-    [self presentViewController:pickerController animated:NO completion:nil];
+    WCPLMultiSelectContactsViewController *multiSCVC = [[WCPLMultiSelectContactsViewController alloc] initWithSelectedContacts:selected];
+    multiSCVC.delegate = self;
+    multiSCVC.titleText = @"屏蔽好友";
+
+    MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSCVC];
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 - (void)updateChatIgnoreInfoWithChatrooms:(NSArray *)chatrooms {
@@ -684,21 +876,25 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLConfigCenter shared].gesture.tapReferJumpEnable];
 }
 
-// 获取对方消息操作名称（引用、删除）
+// 获取对方消息操作名称（引用、关闭、删除、复读）
 - (NSString *)actionNameForOtherMessage:(NSInteger)action {
     switch (action) {
         case 0: return @"引用";
+        case 1: return @"关闭";
         case 2: return @"删除";
+        case 4: return @"复读";
         default: return @"引用";
     }
 }
 
-// 获取己方消息操作名称（引用、删除、撤回）
+// 获取己方消息操作名称（引用、关闭、删除、撤回、复读）
 - (NSString *)actionNameForSelfMessage:(NSInteger)action {
     switch (action) {
         case 0: return @"引用";
+        case 1: return @"关闭";
         case 2: return @"删除";
         case 3: return @"撤回";
+        case 4: return @"复读";
         default: return @"引用";
     }
 }
@@ -852,20 +1048,27 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
 
-    // 引用
     UIAlertAction *quoteAction = [UIAlertAction actionWithTitle:@"引用" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         if (completion) completion(0);
     }];
 
-    // 删除
+    UIAlertAction *repeatAction = [UIAlertAction actionWithTitle:@"复读" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if (completion) completion(4);
+    }];
+
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if (completion) completion(1);
+    }];
+
     UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         if (completion) completion(2);
     }];
 
     [alert addAction:quoteAction];
+    [alert addAction:repeatAction];
+    [alert addAction:closeAction];
     [alert addAction:deleteAction];
 
-    // 己方消息额外有撤回选项
     if (isSelf) {
         UIAlertAction *revokeAction = [UIAlertAction actionWithTitle:@"撤回" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
             if (completion) completion(3);
@@ -879,44 +1082,73 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma mark - WCPLGroupPickerViewControllerDelegate
+#pragma mark - MultiSelectGroupsViewControllerDelegate
 
-- (void)groupPickerDidCancel {
+- (void)onMultiSelectGroupCancel {
     self.groupSelectContext = WCPLGroupSelectContextNone;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)groupPickerDidFinishWithIdentifiers:(NSArray<NSString *> *)identifiers {
-    NSArray *userNames = [self wcpl_sanitizedUserNamesFromArray:identifiers];
-    WCPLLogInfo(@"[设置] GroupPickerFinish: ctx=%lu selected=%lu",
+- (void)onMultiSelectGroupReturn:(NSArray *)arg1 {
+    NSArray *userNames = [self wcpl_userNamesFromSelection:arg1];
+    WCPLLogInfo(@"[设置] MultiSelectGroupReturn: ctx=%lu selected=%lu",
                 (unsigned long)self.groupSelectContext,
                 (unsigned long)userNames.count);
-    if (self.groupSelectContext == WCPLGroupSelectContextAllowList) {
-        [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
-        [self reloadTableData];
-        self.groupSelectContext = WCPLGroupSelectContextNone;
-        return;
-    }
     if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
         [self updateChatIgnoreInfoWithChatrooms:userNames];
     } else if (self.groupSelectContext == WCPLGroupSelectContextRedEnvelopDenyList) {
         [WCPLRedEnvelopConfig sharedConfig].blockedGroupList = userNames;
+    } else {
+        [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
     }
     [self reloadTableData];
     self.groupSelectContext = WCPLGroupSelectContextNone;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - WCPLFriendPickerViewControllerDelegate
+#pragma mark - WCPLMultiSelectContactsViewControllerDelegate
 
-- (void)friendPickerDidCancel {
+- (void)onMultiSelectContactCancel {
     self.groupSelectContext = WCPLGroupSelectContextNone;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)friendPickerDidFinishWithIdentifiers:(NSArray<NSString *> *)identifiers {
-    NSArray *userNames = [self wcpl_sanitizedUserNamesFromArray:identifiers];
-    WCPLLogInfo(@"[设置] FriendPickerFinish: selected=%lu", (unsigned long)userNames.count);
-    [self updateUserIgnoreInfoWithUsers:userNames];
+- (void)onMultiSelectContactReturn:(NSArray *)arg1 {
+    NSArray *userNames = [self wcpl_userNamesFromSelection:arg1];
+    WCPLLogInfo(@"[设置] MultiSelectContactReturn: ctx=%lu selected=%lu",
+                (unsigned long)self.groupSelectContext,
+                (unsigned long)userNames.count);
+    if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
+        [self updateChatIgnoreInfoWithChatrooms:userNames];
+    } else if (self.groupSelectContext == WCPLGroupSelectContextAllowList) {
+        [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
+    } else if (self.groupSelectContext == WCPLGroupSelectContextRedEnvelopDenyList) {
+        [WCPLRedEnvelopConfig sharedConfig].blockedGroupList = userNames;
+    } else {
+        [self updateUserIgnoreInfoWithUsers:userNames];
+    }
     [self reloadTableData];
     self.groupSelectContext = WCPLGroupSelectContextNone;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - GroupSelectContactsViewControllerDelegate Compatibility
+
+- (void)onGroupMultiSelectContactReturn:(NSArray *)arg1 {
+    [self onMultiSelectContactReturn:arg1];
+}
+
+- (void)onGroupSelectContactReturn:(id)arg1 {
+    if (!arg1) {
+        [self onMultiSelectContactCancel];
+        return;
+    }
+    [self onMultiSelectContactReturn:@[arg1]];
+}
+
+- (_Bool)onShouldSelectContact:(id)arg1 {
+    __unused id unusedContact = arg1;
+    return YES;
 }
 
 @end

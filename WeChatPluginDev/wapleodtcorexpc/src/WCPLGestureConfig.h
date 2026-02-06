@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
 @property (assign, nonatomic) NSInteger swipeSensitivityLevel;
 
-// 消息手势操作类型：有效值 0/2/3，历史值 1 自动降级为 0
+// 消息手势操作类型：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读
 // 左滑对方消息操作
 @property (assign, nonatomic) NSInteger swipeLeftOtherAction;
 // 左滑己方消息操作

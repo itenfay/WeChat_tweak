@@ -323,6 +323,99 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     return nil;
 }
 
+static id wcpl_contactForUserName(NSString *userName) {
+    NSString *target = wcpl_normalizeSessionUserName(userName);
+    if (target.length == 0) {
+        return nil;
+    }
+
+    __block id contact = nil;
+    void (^resolveBlock)(void) = ^{
+        CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+        if (!contactMgr) {
+            return;
+        }
+
+        @try {
+            if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
+                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), target);
+            }
+            if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
+                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromDB:), target);
+            }
+            if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
+                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), target);
+            }
+        } @catch (__unused NSException *exception) {
+            contact = nil;
+        }
+    };
+
+    if ([NSThread isMainThread]) {
+        resolveBlock();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), resolveBlock);
+    }
+
+    return contact;
+}
+
+static NSString *wcpl_contactDisplayName(id contact) {
+    if (!contact) {
+        return nil;
+    }
+
+    NSString *displayName = nil;
+    @try {
+        if ([contact respondsToSelector:@selector(getContactDisplayName)]) {
+            id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(getContactDisplayName));
+            displayName = wcpl_trimString(value);
+        }
+    } @catch (__unused NSException *exception) {
+        displayName = nil;
+    }
+
+    if (displayName.length == 0) {
+        @try {
+            if ([contact respondsToSelector:@selector(m_nsNickName)]) {
+                id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsNickName));
+                displayName = wcpl_trimString(value);
+            }
+        } @catch (__unused NSException *exception) {
+            displayName = nil;
+        }
+    }
+
+    if (displayName.length == 0) {
+        @try {
+            id value = [contact valueForKey:@"m_nsRemark"];
+            displayName = wcpl_trimString(value);
+        } @catch (__unused NSException *exception) {
+            displayName = nil;
+        }
+    }
+
+    if (displayName.length > 0) {
+        displayName = [[displayName stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
+                       stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+    }
+    return displayName;
+}
+
+static NSString *wcpl_displayNameForUserName(NSString *userName) {
+    NSString *target = wcpl_normalizeSessionUserName(userName);
+    if (target.length == 0) {
+        return nil;
+    }
+
+    if ([target isEqualToString:kWCPLFileHelperUserName]) {
+        return @"文件传输助手";
+    }
+
+    id contact = wcpl_contactForUserName(target);
+    return wcpl_contactDisplayName(contact);
+}
+
 static NSString *wcpl_notifySceneDisplayText(NSString *sessionUserName) {
     NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
     if (session.length == 0) {
@@ -330,12 +423,22 @@ static NSString *wcpl_notifySceneDisplayText(NSString *sessionUserName) {
     }
 
     BOOL isGroup = ([session rangeOfString:@"@chatroom"].location != NSNotFound);
+    NSString *displayName = wcpl_displayNameForUserName(session);
+
     if (isGroup) {
+        if (displayName.length > 0) {
+            return [NSString stringWithFormat:@"群聊(%@)", displayName];
+        }
+
         NSString *groupId = [session stringByReplacingOccurrencesOfString:@"@chatroom" withString:@""];
         if (groupId.length > 10) {
             groupId = [groupId substringToIndex:10];
         }
         return [NSString stringWithFormat:@"群聊(%@)", groupId.length > 0 ? groupId : @"未知"];
+    }
+
+    if (displayName.length > 0) {
+        return [NSString stringWithFormat:@"私聊(%@)", displayName];
     }
 
     NSString *peer = session;
@@ -971,11 +1074,19 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     NSString *sessionCopy = [session copy];
     NSString *replyCopy = [replyText copy];
     dispatch_async(dispatch_get_main_queue(), ^{
-        BOOL sent = [self wcpl_sendTextMessage:replyCopy toSession:sessionCopy];
-        WCPLLogDebug(@"红包自动回复: session=%@ isGroup=%d textLen=%lu sent=%d",
+        NSString *replyPreview = wcpl_sanitizeInlineText(replyCopy, 80) ?: @"";
+        WCPLLogDebug(@"红包自动回复准备: session=%@ isGroup=%d textLen=%lu preview=%@",
                      sessionCopy,
                      isGroup,
                      (unsigned long)replyCopy.length,
+                     replyPreview);
+
+        BOOL sent = [self wcpl_sendTextMessage:replyCopy toSession:sessionCopy];
+        WCPLLogDebug(@"红包自动回复: session=%@ isGroup=%d textLen=%lu preview=%@ sent=%d",
+                     sessionCopy,
+                     isGroup,
+                     (unsigned long)replyCopy.length,
+                     replyPreview,
                      sent);
     });
 }
@@ -1013,18 +1124,46 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         message = [message stringByAppendingString:@"\n场景：私聊"];
     }
 
+    NSString *sceneDisplay = wcpl_notifySceneDisplayText(session);
+    NSString *messagePreview = wcpl_sanitizeInlineText(message, 120) ?: @"";
+    WCPLLogDebug(@"抢包通知准备: sourceSession=%@ scene=%@ target=%ld receiver=%@ msgLen=%lu preview=%@",
+                 session,
+                 sceneDisplay ?: @"",
+                 (long)target,
+                 notifyReceiver,
+                 (unsigned long)message.length,
+                 messagePreview);
+
     NSString *sourceSessionCopy = [session copy];
     NSString *targetSessionCopy = [notifyReceiver copy];
     NSString *messageCopy = [message copy];
+    NSString *sceneDisplayCopy = sceneDisplay.length > 0 ? [sceneDisplay copy] : @"";
+    NSString *messagePreviewCopy = messagePreview.length > 0 ? [messagePreview copy] : @"";
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL sent = [self wcpl_sendTextMessage:messageCopy toSession:targetSessionCopy];
-        WCPLLogDebug(@"抢包通知发送: sourceSession=%@ targetSession=%@ target=%ld amount=%ld total=%ld sent=%d",
+        NSString *actualTargetSession = targetSessionCopy;
+        BOOL fallbackToFileHelper = NO;
+
+        if (!sent && target == WCPLRedEnvelopNotifyTargetSelf) {
+            BOOL fallbackSent = [self wcpl_sendTextMessage:messageCopy toSession:kWCPLFileHelperUserName];
+            if (fallbackSent) {
+                sent = YES;
+                actualTargetSession = kWCPLFileHelperUserName;
+                fallbackToFileHelper = YES;
+            }
+        }
+
+        WCPLLogDebug(@"抢包通知发送: sourceSession=%@ scene=%@ targetSession=%@ target=%ld amount=%ld total=%ld msgLen=%lu preview=%@ sent=%d fallbackFileHelper=%d",
                      sourceSessionCopy,
-                     targetSessionCopy,
+                     sceneDisplayCopy,
+                     actualTargetSession,
                      (long)target,
                      (long)amount,
                      (long)totalAmount,
-                     sent);
+                     (unsigned long)messageCopy.length,
+                     messagePreviewCopy,
+                     sent,
+                     fallbackToFileHelper);
     });
 }
 
@@ -1138,10 +1277,10 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     }
 
     if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
-        ((void (*)(id, SEL, unsigned int))objc_msgSend)(msgWrap, @selector(setM_uiStatus:), 1);
+        ((void (*)(id, SEL, unsigned int))objc_msgSend)(msgWrap, @selector(setM_uiStatus:), 0);
     } else {
         @try {
-            [msgWrap setValue:@(1) forKey:@"m_uiStatus"];
+            [msgWrap setValue:@(0) forKey:@"m_uiStatus"];
         } @catch (__unused NSException *exceptionStatus) {
         }
     }
@@ -1178,7 +1317,35 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     CMessageMgr *msgMgr = nil;
     if (!sent) {
         msgMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-        if (!msgMgr) {
+        if (msgMgr) {
+            id bypSendMessageMgr = nil;
+            if ([msgMgr respondsToSelector:@selector(m_bypSendMessageMgr)]) {
+                @try {
+                    bypSendMessageMgr = ((id (*)(id, SEL))objc_msgSend)(msgMgr, @selector(m_bypSendMessageMgr));
+                } @catch (__unused NSException *exceptionBypGetter) {
+                    bypSendMessageMgr = nil;
+                }
+            }
+            if (!bypSendMessageMgr) {
+                @try {
+                    bypSendMessageMgr = [msgMgr valueForKey:@"m_bypSendMessageMgr"];
+                } @catch (__unused NSException *exceptionBypKVC) {
+                    bypSendMessageMgr = nil;
+                }
+            }
+
+            if (bypSendMessageMgr && [bypSendMessageMgr respondsToSelector:@selector(StartSendMsg:)]) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(bypSendMessageMgr, @selector(StartSendMsg:), msgWrap);
+                    sent = YES;
+                    path = @"BypSendMessageMgr";
+                } @catch (__unused NSException *exceptionBypSend) {
+                    sent = NO;
+                }
+            }
+        }
+
+        if (!sent && !msgMgr) {
             WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
             return NO;
         }

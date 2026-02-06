@@ -79,16 +79,15 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
 }
 
 static NSInteger wcpl_normalizeSwipeActionValueLegacyAware(NSInteger action, BOOL isSelfAction) {
-    if (action == 1) {
-        return 0;
-    }
-
     if (action < 0) {
         return 0;
     }
 
-    NSInteger maxAction = isSelfAction ? 3 : 2;
-    if (action > maxAction) {
+    if (action == 3 && !isSelfAction) {
+        return 0;
+    }
+
+    if (action > 4) {
         return 0;
     }
 
@@ -358,6 +357,106 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat native resend via messageMgr failed: scene=%@ reason=%@", scene, exception.reason ?: exception);
         }
+    }
+
+    return NO;
+}
+
+
+static NSString *wcpl_repeatAudioPathForMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return nil;
+    }
+
+    Class msgWrapClass = objc_getClass("CMessageWrap");
+    if (!(msgWrapClass && [msgWrapClass respondsToSelector:@selector(getPathOfAudio:)])) {
+        return nil;
+    }
+
+    @try {
+        id value = ((id (*)(id, SEL, id))objc_msgSend)(msgWrapClass, @selector(getPathOfAudio:), msgWrap);
+        if ([value isKindOfClass:[NSString class]]) {
+            return (NSString *)value;
+        }
+    } @catch (__unused NSException *exception) {
+    }
+
+    return nil;
+}
+
+static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap, NSString *chatName) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (!(messageMgr && [messageMgr respondsToSelector:@selector(AddRecordMsg:MsgWrap:)])) {
+        return NO;
+    }
+
+    NSString *audioPath = wcpl_repeatAudioPathForMessage(msgWrap);
+    BOOL hasAudioFile = NO;
+    unsigned long long audioSize = 0;
+    if (audioPath.length > 0) {
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:audioPath error:NULL];
+        NSNumber *fileSize = [attrs isKindOfClass:[NSDictionary class]] ? attrs[NSFileSize] : nil;
+        if ([fileSize respondsToSelector:@selector(unsignedLongLongValue)]) {
+            audioSize = [fileSize unsignedLongLongValue];
+            hasAudioFile = (audioSize > 0);
+        }
+    }
+
+    if (!hasAudioFile && [messageMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
+        BOOL downloadStarted = NO;
+        @try {
+            downloadStarted = ((BOOL (*)(id, SEL, id))objc_msgSend)(messageMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
+        } @catch (__unused NSException *exception) {
+            downloadStarted = NO;
+        }
+        WCPLLogWarning(@"Repeat voice audio missing: msg=%@ path=%@ downloadStarted=%d", wcpl_repeatMessageDebugInfo(msgWrap), audioPath ?: @"(nil)", downloadStarted);
+    }
+
+    id sendWrap = msgWrap;
+    if ([msgWrap respondsToSelector:@selector(copy)]) {
+        @try {
+            id copiedWrap = [msgWrap copy];
+            if ([copiedWrap isKindOfClass:%c(CMessageWrap)]) {
+                sendWrap = copiedWrap;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddRecordMsg:MsgWrap:), chatName, sendWrap);
+        WCPLLogInfo(@"Repeat sent: flow=record_addmsg scene=voice msg=%@ chat=%@ hasAudio=%d audioSize=%llu path=%@",
+                    wcpl_repeatMessageDebugInfo(msgWrap),
+                    chatName,
+                    hasAudioFile,
+                    audioSize,
+                    audioPath ?: @"(nil)");
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat voice via AddRecordMsg failed: msg=%@ chat=%@ hasAudio=%d path=%@ reason=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       chatName,
+                       hasAudioFile,
+                       audioPath ?: @"(nil)",
+                       exception.reason ?: exception);
     }
 
     return NO;
@@ -1124,11 +1223,17 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     // 兼容历史值并兜底越界值，统一回退为 0（引用）
     action = wcpl_normalizeSwipeActionValueLegacyAware(action, isSelf);
     switch (action) {
+        case 1:
+            actionName = @"关闭";
+            break;
         case 2:
             actionName = @"删除";
             break;
         case 3:
             actionName = @"撤回";
+            break;
+        case 4:
+            actionName = @"复读";
             break;
         default:
             actionName = @"引用";
@@ -1137,10 +1242,13 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     WCPLCrashBreadcrumb(@"滑动动作: %@ -> %@ msgType=%u from=%@ to=%@", directionName, actionName, msgType, msgWrap.m_nsFromUsr ?: @"", msgWrap.m_nsToUsr ?: @"");
 
     // 执行对应操作
-    // 0=引用, 2=删除, 3=撤回(仅己方消息)
+    // 0=引用, 1=关闭, 2=删除, 3=撤回(仅己方消息), 4=复读
     switch (action) {
         case 0: // 引用
             [self wchook_performQuoteReply];
+            break;
+        case 1: // 关闭
+            WCPLLogDebug(@"Swipe action close: no-op");
             break;
         case 2: // 删除
             [self wchook_performDeleteMessage:msgWrap];
@@ -1149,9 +1257,11 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             if (isSelf) {
                 [self wchook_performRevokeMessage:msgWrap];
             } else {
-                // 对方消息不能撤回，改为引用
                 [self wchook_performQuoteReply];
             }
+            break;
+        case 4: // 复读
+            [self wchook_repeatMessageWrap:msgWrap];
             break;
         default:
             [self wchook_performQuoteReply];
@@ -1346,10 +1456,14 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
 
     if (msgType == 34) {
+        if (wcpl_repeatVoiceByRecordMessage(msgWrap, chatName)) {
+            return;
+        }
         if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"voice")) {
             return;
         }
-        WCPLLogWarning(@"Repeat voice fallback to text: native resend unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+        WCPLLogError(@"Repeat voice failed: no record/native channel msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+        return;
     }
 
     if (repeatText.length == 0) {

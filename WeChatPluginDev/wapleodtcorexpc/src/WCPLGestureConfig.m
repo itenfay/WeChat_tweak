@@ -20,18 +20,17 @@ static NSString *const kWCPLSwipeRightEnable        = @"kWCPLSwipeRightEnable";
 static NSString *const kWCPLSwipeRightOtherAction   = @"kWCPLSwipeRightOtherAction";
 static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfAction";
 
-// 统一归一化：历史值 1 与越界值均回退为 0（引用）
+// 统一归一化：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读
 static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAction) {
-    if (action == 1) {
-        return 0;
-    }
-
     if (action < 0) {
         return 0;
     }
 
-    NSInteger maxAction = isSelfAction ? 3 : 2;
-    if (action > maxAction) {
+    if (action == 3 && !isSelfAction) {
+        return 0;
+    }
+
+    if (action > 4) {
         return 0;
     }
 

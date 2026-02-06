@@ -9,7 +9,7 @@ MODULES = 0
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
-$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLMultiSelectContactsViewController.m src/WCPLMultiSelectGroupsViewController.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
+$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLContactGroupPickerViewController.m src/WCPLFriendPickerViewController.m src/WCPLGroupPickerViewController.m src/WCPLPickerDataProvider.m src/WCPLPickerItem.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
