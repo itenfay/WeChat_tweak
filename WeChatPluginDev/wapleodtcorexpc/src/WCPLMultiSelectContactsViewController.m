@@ -159,6 +159,7 @@
     }
 
     CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    BOOL didAddSelection = NO;
     for (NSString *contactName in userNames) {
         if (![contactName isKindOfClass:[NSString class]] || contactName.length == 0) {
             continue;
@@ -187,12 +188,48 @@
 
         @try {
             [self.selectView addSelect:contact];
+            didAddSelection = YES;
         } @catch (__unused NSException *exception2) {
             WCPLLog(@"好友预选 addSelect 失败: %@", userName);
         }
     }
 
+    if (didAddSelection) {
+        [self wcpl_refreshSelectionUI];
+    }
     self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
+}
+
+- (void)wcpl_refreshSelectionUI {
+    ContactSelectView *selectView = self.selectView;
+    if (!selectView) {
+        return;
+    }
+
+    if ([selectView respondsToSelector:@selector(updateMultiSelectView)]) {
+        @try {
+            [selectView updateMultiSelectView];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([selectView respondsToSelector:@selector(reloadTableView)]) {
+        @try {
+            [selectView reloadTableView];
+        } @catch (__unused NSException *exception2) {
+        }
+        return;
+    }
+
+    if ([selectView respondsToSelector:@selector(getTableView)]) {
+        @try {
+            id tableView = [selectView getTableView];
+            if ([tableView respondsToSelector:@selector(reloadData)]) {
+                [tableView reloadData];
+            }
+        } @catch (__unused NSException *exception3) {
+        }
+    }
 }
 
 #pragma mark - ContactSelectViewDelegate
