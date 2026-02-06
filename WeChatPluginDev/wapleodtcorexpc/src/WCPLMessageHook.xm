@@ -170,7 +170,7 @@ static NSString *wcpl_extractQuoteTitleFromXML(NSString *content) {
     }
 
     NSArray<NSString *> *patterns = @[
-        @"<title><!\[CDATA\[(.*?)\]\]></title>",
+        @"<title><!\\[CDATA\\[(.*?)\\]\\]></title>",
         @"<title>(.*?)</title>"
     ];
 
