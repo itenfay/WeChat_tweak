@@ -968,12 +968,17 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         return;
     }
 
-    BOOL sent = [self wcpl_sendTextMessage:replyText toSession:session];
-    WCPLLogDebug(@"红包自动回复: session=%@ isGroup=%d textLen=%lu sent=%d",
-                 session,
-                 isGroup,
-                 (unsigned long)replyText.length,
-                 sent);
+    NSString *sessionCopy = [session copy];
+    NSString *replyCopy = [replyText copy];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        WCPLCrashBreadcrumb(@"红包自动回复发送: session=%@ textLen=%lu", sessionCopy, (unsigned long)replyCopy.length);
+        BOOL sent = [self wcpl_sendTextMessage:replyCopy toSession:sessionCopy];
+        WCPLLogDebug(@"红包自动回复: session=%@ isGroup=%d textLen=%lu sent=%d",
+                     sessionCopy,
+                     isGroup,
+                     (unsigned long)replyCopy.length,
+                     sent);
+    });
 }
 
 %new
@@ -1009,14 +1014,20 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         message = [message stringByAppendingString:@"\n场景：私聊"];
     }
 
-    BOOL sent = [self wcpl_sendTextMessage:message toSession:notifyReceiver];
-    WCPLLogDebug(@"抢包通知发送: sourceSession=%@ targetSession=%@ target=%ld amount=%ld total=%ld sent=%d",
-                 session,
-                 notifyReceiver,
-                 (long)target,
-                 (long)amount,
-                 (long)totalAmount,
-                 sent);
+    NSString *sourceSessionCopy = [session copy];
+    NSString *targetSessionCopy = [notifyReceiver copy];
+    NSString *messageCopy = [message copy];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        WCPLCrashBreadcrumb(@"抢包通知发送: source=%@ target=%@ textLen=%lu", sourceSessionCopy, targetSessionCopy, (unsigned long)messageCopy.length);
+        BOOL sent = [self wcpl_sendTextMessage:messageCopy toSession:targetSessionCopy];
+        WCPLLogDebug(@"抢包通知发送: sourceSession=%@ targetSession=%@ target=%ld amount=%ld total=%ld sent=%d",
+                     sourceSessionCopy,
+                     targetSessionCopy,
+                     (long)target,
+                     (long)amount,
+                     (long)totalAmount,
+                     sent);
+    });
 }
 
 %new
@@ -1090,6 +1101,18 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         @try {
             [msgWrap setValue:session forKey:@"m_nsToUsr"];
         } @catch (__unused NSException *exception5) {
+        }
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserName();
+    if (selfUserName.length > 0) {
+        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsFromUsr:), selfUserName);
+        } else {
+            @try {
+                [msgWrap setValue:selfUserName forKey:@"m_nsFromUsr"];
+            } @catch (__unused NSException *exception6) {
+            }
         }
     }
 
