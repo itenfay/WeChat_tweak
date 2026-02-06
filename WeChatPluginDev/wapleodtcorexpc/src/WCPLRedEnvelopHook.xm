@@ -645,16 +645,67 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     }
 
-    CMessageWrap *msgWrap = [[CMessageWrap alloc] initWithMsgType:1];
+    Class msgWrapClass = objc_getClass("CMessageWrap");
+    if (!msgWrapClass) {
+        WCPLLogDebug(@"红包自动回复失败: CMessageWrap 类不可用");
+        return NO;
+    }
+
+    id msgWrap = nil;
+    if ([msgWrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
+        @try {
+            msgWrap = [[msgWrapClass alloc] initWithMsgType:1];
+        } @catch (__unused NSException *exception) {
+            msgWrap = nil;
+        }
+    }
+    if (!msgWrap) {
+        @try {
+            msgWrap = [[msgWrapClass alloc] init];
+        } @catch (__unused NSException *exception2) {
+            msgWrap = nil;
+        }
+    }
     if (!msgWrap) {
         return NO;
     }
 
-    msgWrap.m_uiMessageType = 1;
-    msgWrap.m_nsContent = text;
-    msgWrap.m_nsToUsr = session;
+    if ([msgWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
+        ((void (*)(id, SEL, unsigned int))objc_msgSend)(msgWrap, @selector(setM_uiMessageType:), 1);
+    } else {
+        @try {
+            [msgWrap setValue:@(1) forKey:@"m_uiMessageType"];
+        } @catch (__unused NSException *exception3) {
+        }
+    }
+
+    if ([msgWrap respondsToSelector:@selector(setM_nsContent:)]) {
+        ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsContent:), text);
+    } else {
+        @try {
+            [msgWrap setValue:text forKey:@"m_nsContent"];
+        } @catch (__unused NSException *exception4) {
+        }
+    }
+
+    if ([msgWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
+        ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsToUsr:), session);
+    } else {
+        @try {
+            [msgWrap setValue:session forKey:@"m_nsToUsr"];
+        } @catch (__unused NSException *exception5) {
+        }
+    }
+
     if (selfUserName.length > 0) {
-        msgWrap.m_nsFromUsr = selfUserName;
+        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsFromUsr:), selfUserName);
+        } else {
+            @try {
+                [msgWrap setValue:selfUserName forKey:@"m_nsFromUsr"];
+            } @catch (__unused NSException *exception6) {
+            }
+        }
     }
 
     if ([msgMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
