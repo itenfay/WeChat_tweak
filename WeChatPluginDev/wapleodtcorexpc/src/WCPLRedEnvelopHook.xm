@@ -1163,7 +1163,10 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
     if (sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
         @try {
-            [sendMessageMgr AddMsgToSendTable:session MsgWrap:msgWrap];
+            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
+                                                       @selector(AddMsgToSendTable:MsgWrap:),
+                                                       session,
+                                                       msgWrap);
             sent = YES;
             path = @"SendMessageMgr";
         } @catch (__unused NSException *exceptionSendMgr) {
