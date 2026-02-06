@@ -323,76 +323,50 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     return nil;
 }
 
-static NSString *wcpl_safeDisplayNameFromObject(id obj) {
-    if (!obj) return nil;
-    if ([obj isKindOfClass:[NSString class]]) {
-        return wcpl_trimString((NSString *)obj);
-    }
-
-    SEL selectors[] = {
-        @selector(getContactDisplayName),
-        @selector(getContactName),
-        @selector(m_nsRemark),
-        @selector(m_nsNickName),
-        @selector(m_nsUsrName)
-    };
-
-    for (NSUInteger index = 0; index < sizeof(selectors) / sizeof(selectors[0]); index++) {
-        SEL selector = selectors[index];
-        if (![obj respondsToSelector:selector]) {
-            continue;
-        }
-        NSString *value = wcpl_stringFromSelector(obj, selector);
-        if (value.length > 0) {
-            return value;
-        }
-    }
-
-    NSArray<NSString *> *keys = @[@"m_nsRemark", @"m_nsNickName", @"m_nsUsrName"];
-    for (NSString *key in keys) {
-        @try {
-            id value = [obj valueForKey:key];
-            if ([value isKindOfClass:[NSString class]]) {
-                NSString *trimmed = wcpl_trimString((NSString *)value);
-                if (trimmed.length > 0) {
-                    return trimmed;
-                }
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    return nil;
-}
-
-static NSString *wcpl_displayNameForSession(NSString *sessionUserName) {
+static NSString *wcpl_notifySceneDisplayText(NSString *sessionUserName) {
     NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
     if (session.length == 0) {
-        return nil;
+        return @"当前会话";
     }
 
-    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    if (!contactMgr) {
-        return session;
+    BOOL isGroup = ([session rangeOfString:@"@chatroom"].location != NSNotFound);
+    if (isGroup) {
+        NSString *groupId = [session stringByReplacingOccurrencesOfString:@"@chatroom" withString:@""];
+        if (groupId.length > 10) {
+            groupId = [groupId substringToIndex:10];
+        }
+        return [NSString stringWithFormat:@"群聊(%@)", groupId.length > 0 ? groupId : @"未知"];
     }
 
-    id contact = nil;
-    @try {
-        if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
-            contact = [contactMgr getContactByName:session];
+    NSString *peer = session;
+    if (peer.length > 12) {
+        peer = [peer substringToIndex:12];
+    }
+    return [NSString stringWithFormat:@"私聊(%@)", peer];
+}
+
+static NSString *wcpl_currentSelfUserName(void) {
+    __block NSString *selfUserName = nil;
+    void (^resolveBlock)(void) = ^{
+        CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+        if (!(contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)])) {
+            return;
         }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
-            contact = [contactMgr getContactByNameFromDB:session];
+        @try {
+            id selfContact = [contactMgr getSelfContact];
+            selfUserName = [wcpl_safeUserNameFromObject(selfContact) copy];
+        } @catch (__unused NSException *exception) {
+            selfUserName = nil;
         }
-        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-            contact = [contactMgr getContactByNameFromCache:session];
-        }
-    } @catch (__unused NSException *exception) {
-        contact = nil;
+    };
+
+    if ([NSThread isMainThread]) {
+        resolveBlock();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), resolveBlock);
     }
 
-    NSString *displayName = wcpl_safeDisplayNameFromObject(contact);
-    return displayName.length > 0 ? displayName : session;
+    return selfUserName;
 }
 
 static NSString *wcpl_currencyYuanString(NSInteger amountInCent) {
@@ -404,10 +378,7 @@ static NSString *wcpl_currencyYuanString(NSInteger amountInCent) {
 }
 
 static NSString *wcpl_redEnvelopNotifyMessage(NSString *sessionUserName, NSInteger amount, NSInteger totalAmount) {
-    NSString *sceneName = wcpl_displayNameForSession(sessionUserName);
-    if (sceneName.length == 0) {
-        sceneName = @"当前会话";
-    }
+    NSString *sceneName = wcpl_notifySceneDisplayText(sessionUserName);
 
     NSString *receiveYuan = wcpl_currencyYuanString(amount);
     NSString *totalYuan = wcpl_currencyYuanString(totalAmount);
@@ -1020,15 +991,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     NSString *notifyReceiver = nil;
     if (target == WCPLRedEnvelopNotifyTargetSelf) {
-        CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-        if (contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)]) {
-            @try {
-                id selfContact = [contactMgr getSelfContact];
-                notifyReceiver = wcpl_safeUserNameFromObject(selfContact);
-            } @catch (__unused NSException *exception) {
-                notifyReceiver = nil;
-            }
-        }
+        notifyReceiver = wcpl_currentSelfUserName();
     } else if (target == WCPLRedEnvelopNotifyTargetFileHelper) {
         notifyReceiver = kWCPLFileHelperUserName;
     }
@@ -1068,17 +1031,6 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     if (!msgMgr) {
         WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
         return NO;
-    }
-
-    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    NSString *selfUserName = nil;
-    if (contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)]) {
-        @try {
-            id selfContact = [contactMgr getSelfContact];
-            selfUserName = wcpl_safeUserNameFromObject(selfContact);
-        } @catch (__unused NSException *exception) {
-            selfUserName = nil;
-        }
     }
 
     Class msgWrapClass = objc_getClass("CMessageWrap");
@@ -1130,17 +1082,6 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         @try {
             [msgWrap setValue:session forKey:@"m_nsToUsr"];
         } @catch (__unused NSException *exception5) {
-        }
-    }
-
-    if (selfUserName.length > 0) {
-        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
-            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } else {
-            @try {
-                [msgWrap setValue:selfUserName forKey:@"m_nsFromUsr"];
-            } @catch (__unused NSException *exception6) {
-            }
         }
     }
 
