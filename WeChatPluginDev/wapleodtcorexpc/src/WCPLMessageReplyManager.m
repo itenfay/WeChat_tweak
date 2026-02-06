@@ -831,8 +831,7 @@ static char kWCPLRepeatButtonMessageKey;
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
         CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
         if (!msgWrap) {
-            WCPLLog(@"复读按钮跳过: msgWrap=nil cell=%@", NSStringFromClass([cellView class]));
-            [self removeRepeatButtonFromCellView:cellView];
+            WCPLLog(@"复读按钮跳过: msgWrap=nil，保留现有按钮 cell=%@", NSStringFromClass([cellView class]));
             return;
         }
 
@@ -875,8 +874,7 @@ static char kWCPLRepeatButtonMessageKey;
 
         UIView *bubbleView = [self findBubbleViewInCellView:cellView];
         if (!bubbleView || bubbleView.frame.size.width < 1.0 || bubbleView.frame.size.height < 1.0) {
-            WCPLLog(@"复读按钮跳过: 气泡未就绪 cell=%@", NSStringFromClass([cellView class]));
-            [self removeRepeatButtonFromCellView:cellView];
+            WCPLLog(@"复读按钮跳过: 气泡未就绪，保留现有按钮 cell=%@", NSStringFromClass([cellView class]));
             return;
         }
 
@@ -885,7 +883,6 @@ static char kWCPLRepeatButtonMessageKey;
             WCPLLog(@"复读按钮跳过: 挂载容器无效 cell=%@ bubble=%@",
                     NSStringFromClass([cellView class]),
                     NSStringFromClass([bubbleView class]));
-            [self removeRepeatButtonFromCellView:cellView];
             return;
         }
         WCPLLog(@"复读按钮挂载: cell=%@ bubble=%@ host=%@",
@@ -900,6 +897,9 @@ static char kWCPLRepeatButtonMessageKey;
             if (messageKey.length > 0) {
                 objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
             }
+            WCPLLog(@"复读按钮复用: cell=%@ key=%@",
+                    NSStringFromClass([cellView class]),
+                    messageKey ?: @"");
             [self configureButtonContent:repeatButton];
             [self layoutRepeatButtonInContainer:repeatButton
                                        cellView:cellView
@@ -910,11 +910,6 @@ static char kWCPLRepeatButtonMessageKey;
             repeatButton.alpha = 1.0;
             [containerView bringSubviewToFront:repeatButton];
             return;
-        }
-
-        if (!isSameMessage) {
-            [self removeRepeatButtonFromCellView:cellView];
-            repeatButton = nil;
         }
 
         // 清理历史容器中的残留按钮（旧实现把按钮挂在 cell.contentView）
@@ -2517,8 +2512,9 @@ static char kWCPLRepeatButtonMessageKey;
         [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
     }
 
-    UIButton *repeatButton = nil;
+    NSMutableArray<UIButton *> *buttonCandidates = [NSMutableArray array];
     NSInteger removedCount = 0;
+    NSInteger movedCount = 0;
 
     for (UIView *view in taggedViews) {
         if (![view isKindOfClass:[UIButton class]]) {
@@ -2527,32 +2523,67 @@ static char kWCPLRepeatButtonMessageKey;
             continue;
         }
 
-        UIButton *candidate = (UIButton *)view;
-        NSString *storedKey = objc_getAssociatedObject(candidate, &kWCPLRepeatButtonMessageKey);
-        BOOL keyMatches = (messageKey.length > 0 && storedKey.length > 0 && [storedKey isEqualToString:messageKey]);
+        [buttonCandidates addObject:(UIButton *)view];
+    }
 
-        if (!repeatButton) {
-            if (keyMatches || messageKey.length == 0 || storedKey.length == 0) {
-                repeatButton = candidate;
-                if (messageKey.length > 0 && storedKey.length == 0) {
-                    objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-                }
-                continue;
-            }
+    UIButton *repeatButton = nil;
+    NSInteger bestScore = NSIntegerMin;
+    for (UIButton *candidate in buttonCandidates) {
+        NSString *storedKey = objc_getAssociatedObject(candidate, &kWCPLRepeatButtonMessageKey);
+        BOOL hasTargetKey = (messageKey.length > 0);
+        BOOL hasStoredKey = (storedKey.length > 0);
+        BOOL keyMatches = (hasTargetKey && hasStoredKey && [storedKey isEqualToString:messageKey]);
+
+        NSInteger score = 0;
+        if (keyMatches) {
+            score += 100;
+        } else if (hasTargetKey && hasStoredKey) {
+            score -= 1000;
+        } else {
+            score += 5;
         }
 
+        if (candidate.superview == containerView) {
+            score += 10;
+        }
+
+        if (!repeatButton || score > bestScore) {
+            repeatButton = candidate;
+            bestScore = score;
+        }
+    }
+
+    if (bestScore < 0) {
+        repeatButton = nil;
+    }
+
+    for (UIButton *candidate in buttonCandidates) {
+        if (candidate == repeatButton) {
+            continue;
+        }
         [candidate removeFromSuperview];
         removedCount++;
     }
 
-    if (repeatButton && repeatButton.superview != containerView) {
+    if (repeatButton && containerView && repeatButton.superview != containerView) {
         [repeatButton removeFromSuperview];
-        repeatButton = nil;
-        removedCount++;
+        [containerView addSubview:repeatButton];
+        movedCount++;
     }
 
-    if (removedCount > 0) {
-        WCPLLog(@"复读按钮去重: 移除=%ld cell=%@", (long)removedCount, NSStringFromClass([cellView class]));
+    if (repeatButton && messageKey.length > 0) {
+        objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+
+    if (repeatButton && !repeatButton.superview) {
+        repeatButton = nil;
+    }
+
+    if (removedCount > 0 || movedCount > 0) {
+        WCPLLog(@"复读按钮去重: 移除=%ld 挪动=%ld cell=%@",
+                (long)removedCount,
+                (long)movedCount,
+                NSStringFromClass([cellView class]));
     }
 
     return repeatButton;
@@ -2572,11 +2603,18 @@ static char kWCPLRepeatButtonMessageKey;
 
 - (NSString *)wcpl_messageKeyForMsgWrap:(CMessageWrap *)msgWrap {
     if (!msgWrap) return nil;
+
+    if (msgWrap.m_uiMesLocalID != 0 || msgWrap.m_n64MesSvrID != 0) {
+        return [NSString stringWithFormat:@"%u_%lld_%u",
+                msgWrap.m_uiMesLocalID,
+                msgWrap.m_n64MesSvrID,
+                msgWrap.m_uiMessageType];
+    }
+
     NSString *fromUser = msgWrap.m_nsFromUsr ?: @"";
     NSString *toUser = msgWrap.m_nsToUsr ?: @"";
-    return [NSString stringWithFormat:@"%u_%lld_%u_%@_%@",
-            msgWrap.m_uiMesLocalID,
-            msgWrap.m_n64MesSvrID,
+    return [NSString stringWithFormat:@"ptr_%p_%u_%@_%@",
+            msgWrap,
             msgWrap.m_uiMessageType,
             fromUser,
             toUser];
