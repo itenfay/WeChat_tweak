@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL repeatSupportVoiceEnable;
 // 复读支持图片消息
 @property (assign, nonatomic) BOOL repeatSupportImageEnable;
+// 复读支持视频消息
+@property (assign, nonatomic) BOOL repeatSupportVideoEnable;
 
 // 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
 @property (assign, nonatomic) NSInteger swipeSensitivityLevel;

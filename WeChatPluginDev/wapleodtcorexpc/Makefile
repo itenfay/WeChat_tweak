@@ -9,7 +9,7 @@ MODULES = 0
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
-$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
+$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLMultiSelectContactsViewController.m src/WCPLMultiSelectGroupsViewController.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
@@ -17,7 +17,6 @@ $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
 src/WCPLAVManager.m_CFLAGS = -fobjc-arc
 src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc
 src/WCPLFuncService.m_CFLAGS = -fobjc-arc
-src/WCPLMultiSelectGroupsViewController.m_CFLAGS = -fobjc-arc
 src/WCPLReceiveRedEnvelopOperation.m_CFLAGS = -fobjc-arc
 src/WCPLRedEnvelopConfig.m_CFLAGS = -fobjc-arc
 src/WCPLRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc

@@ -17,6 +17,7 @@
 @end
 
 @interface WCPLMultiSelectGroupsViewController : UIViewController
+__attribute__((deprecated("Use WCPLGroupPickerViewController")))
 
 - (instancetype)initWithBlackList:(NSArray *)blackList;
 

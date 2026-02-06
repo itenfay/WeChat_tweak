@@ -26,6 +26,8 @@ static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonSta
 static NSUInteger gWCPLRepeatButtonCreateCount = 0;
 static NSUInteger gWCPLRepeatButtonUpdateCount = 0;
 
+static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap);
+
 static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
     if (!root || !buttons) {
         return;
@@ -195,6 +197,9 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
     if (msgWrap.m_uiMessageType == 34) {
         return @"[语音]";
     }
+    if (msgWrap.m_uiMessageType == 43) {
+        return @"[视频]";
+    }
     if (msgWrap.m_uiMessageType == 47) {
         return @"[表情]";
     }
@@ -212,6 +217,7 @@ static NSString *wcpl_repeatTypeName(unsigned int msgType) {
         case 1: return @"文本";
         case 3: return @"图片";
         case 34: return @"语音";
+        case 43: return @"视频";
         case 47: return @"表情";
         case 49: return @"引用";
         default: return [NSString stringWithFormat:@"未知(%u)", msgType];
@@ -230,6 +236,8 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
             return config.repeatSupportImageEnable;
         case 34:
             return config.repeatSupportVoiceEnable;
+        case 43:
+            return config.repeatSupportVideoEnable;
         case 47:
             return config.repeatSupportEmoticonEnable;
         case 49:
@@ -320,6 +328,39 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         return msgWrap.m_nsFromUsr;
     }
     return msgWrap.m_nsToUsr;
+}
+
+static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
+                                    NSString *chatName,
+                                    BaseMsgContentViewController *chatVC,
+                                    NSString *sceneTag) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"message";
+    if (chatVC && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
+            WCPLLogInfo(@"Repeat sent: flow=native_resend_chatvc scene=%@ msg=%@ chat=%@", scene, wcpl_repeatMessageDebugInfo(msgWrap), chatName);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat native resend via chatVC failed: scene=%@ reason=%@", scene, exception.reason ?: exception);
+        }
+    }
+
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (messageMgr && [messageMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
+            WCPLLogInfo(@"Repeat sent: flow=native_resend_messagemgr scene=%@ msg=%@ chat=%@", scene, wcpl_repeatMessageDebugInfo(msgWrap), chatName);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat native resend via messageMgr failed: scene=%@ reason=%@", scene, exception.reason ?: exception);
+        }
+    }
+
+    return NO;
 }
 
 static NSString *wcpl_repeatMessageKey(CMessageWrap *msgWrap) {
@@ -1168,12 +1209,13 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     if (!wcpl_isRepeatTypeEnabledByConfig(config, msgWrap)) {
-        WCPLLogWarning(@"Repeat blocked: type=%@(%u) toggle(emoticon=%d voice=%d image=%d)",
+        WCPLLogWarning(@"Repeat blocked: type=%@(%u) toggle(emoticon=%d voice=%d image=%d video=%d)",
                        wcpl_repeatTypeName(msgWrap.m_uiMessageType),
                        msgWrap.m_uiMessageType,
                        config.repeatSupportEmoticonEnable ? 1 : 0,
                        config.repeatSupportVoiceEnable ? 1 : 0,
-                       config.repeatSupportImageEnable ? 1 : 0);
+                       config.repeatSupportImageEnable ? 1 : 0,
+                       config.repeatSupportVideoEnable ? 1 : 0);
         return;
     }
 
@@ -1203,6 +1245,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     unsigned int msgType = msgWrap.m_uiMessageType;
     NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
+    NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
     BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgType == 49);
     WCPLLogDebug(@"Repeat pipeline start: class=%@ cell=%p type=%@ msg=%@ hasQuote=%d textLen=%lu",
                  NSStringFromClass([self class]),
@@ -1289,92 +1332,24 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
 
     if (msgType == 3) {
-        NSData *imageData = msgWrap.m_dtImg;
-        UIImage *image = nil;
-        if ([imageData isKindOfClass:[NSData class]] && imageData.length > 0) {
-            image = [UIImage imageWithData:imageData];
+        if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"image")) {
+            return;
         }
+        WCPLLogWarning(@"Repeat image fallback to text: native resend unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+    }
 
-        if ((!image || imageData.length == 0) && [objc_getClass("CMessageWrap") respondsToSelector:@selector(getPathOfMsgImg:)]) {
-            @try {
-                NSString *imagePath = ((id (*)(id, SEL, id))objc_msgSend)(objc_getClass("CMessageWrap"), @selector(getPathOfMsgImg:), msgWrap);
-                if ([imagePath isKindOfClass:[NSString class]] && imagePath.length > 0) {
-                    NSData *pathData = [NSData dataWithContentsOfFile:imagePath options:NSDataReadingMappedIfSafe error:nil];
-                    if ([pathData isKindOfClass:[NSData class]] && pathData.length > 0) {
-                        imageData = pathData;
-                        image = [UIImage imageWithData:imageData];
-                    }
-                }
-            } @catch (__unused NSException *exception) {
-            }
+    if (msgType == 43) {
+        if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video")) {
+            return;
         }
-
-        id imageInfo = nil;
-        @try {
-            imageInfo = msgWrap.m_oImageInfo;
-        } @catch (__unused NSException *exception) {
-            imageInfo = nil;
-        }
-
-        if (logicController && image && imageData.length > 0 && [logicController respondsToSelector:@selector(SendImageMessage:withData:ImageInfo:)]) {
-            @try {
-                ((void (*)(id, SEL, id, id, id))objc_msgSend)(logicController,
-                                                               @selector(SendImageMessage:withData:ImageInfo:),
-                                                               image,
-                                                               imageData,
-                                                               imageInfo);
-                WCPLLogInfo(@"Repeat sent: flow=logic_image msg=%@ data=%lu", wcpl_repeatMessageDebugInfo(msgWrap), (unsigned long)imageData.length);
-                return;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Repeat image via logicController failed: %@", exception.reason ?: exception);
-            }
-        }
-
-        NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
-        if (chatName.length > 0 && image && [chatVC respondsToSelector:@selector(FormImageMsg:withImage:withData:withImageInfo:)] && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
-            @try {
-                id imageMsg = ((id (*)(id, SEL, id, id, id, id))objc_msgSend)(chatVC,
-                                                                                @selector(FormImageMsg:withImage:withData:withImageInfo:),
-                                                                                chatName,
-                                                                                image,
-                                                                                imageData,
-                                                                                imageInfo);
-                if (imageMsg) {
-                    ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, imageMsg);
-                    WCPLLogInfo(@"Repeat sent: flow=chatvc_form_resend_image msg=%@ chat=%@ data=%lu", wcpl_repeatMessageDebugInfo(msgWrap), chatName, (unsigned long)imageData.length);
-                    return;
-                }
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Repeat image via chatVC FormImageMsg+Resend failed: %@", exception.reason ?: exception);
-            }
-        }
-
-        if (chatName.length > 0 && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
-            @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
-                WCPLLogInfo(@"Repeat sent: flow=chatvc_resend_original_image msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName);
-                return;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Repeat image via chatVC Resend original failed: %@", exception.reason ?: exception);
-            }
-        }
-
-        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-        if (chatName.length > 0 && messageMgr && [messageMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
-            @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
-                WCPLLogInfo(@"Repeat sent: flow=messageMgr_resend_image msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName);
-                return;
-            } @catch (NSException *exception) {
-                WCPLLogWarning(@"Repeat image via messageMgr Resend failed: %@", exception.reason ?: exception);
-            }
-        }
-
-        WCPLLogWarning(@"Repeat image fallback to text: msg=%@ hasImage=%d data=%lu", wcpl_repeatMessageDebugInfo(msgWrap), image ? 1 : 0, (unsigned long)imageData.length);
+        WCPLLogWarning(@"Repeat video fallback to text: native resend unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
     }
 
     if (msgType == 34) {
-        WCPLLogWarning(@"Repeat voice fallback to text: native resend unavailable msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"voice")) {
+            return;
+        }
+        WCPLLogWarning(@"Repeat voice fallback to text: native resend unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
     }
 
     if (repeatText.length == 0) {
@@ -1448,13 +1423,13 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
     if (messageMgr && [messageMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
         @try {
-            NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
+            NSString *targetChatName = chatName.length > 0 ? chatName : wcpl_chatNameForMessage(msgWrap, chatVC);
             CMessageWrap *newWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:1];
             newWrap.m_uiMessageType = 1;
             newWrap.m_nsContent = repeatText;
-            newWrap.m_nsToUsr = chatName;
-            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), chatName, newWrap);
-            WCPLLogInfo(@"Repeat sent: flow=messageMgr_fallback msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            newWrap.m_nsToUsr = targetChatName;
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), targetChatName, newWrap);
+            WCPLLogInfo(@"Repeat sent: flow=messageMgr_fallback msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), targetChatName ?: @"(nil)");
             return;
         } @catch (NSException *exception) {
             WCPLLogError(@"Repeat fallback AddMsg failed: %@", exception.reason ?: exception);

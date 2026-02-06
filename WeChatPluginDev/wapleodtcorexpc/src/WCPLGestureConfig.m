@@ -12,6 +12,7 @@ static NSString *const kWCPLRepeatButtonEnable      = @"kWCPLRepeatButtonEnable"
 static NSString *const kWCPLRepeatSupportEmoticonEnable = @"kWCPLRepeatSupportEmoticonEnable";
 static NSString *const kWCPLRepeatSupportVoiceEnable = @"kWCPLRepeatSupportVoiceEnable";
 static NSString *const kWCPLRepeatSupportImageEnable = @"kWCPLRepeatSupportImageEnable";
+static NSString *const kWCPLRepeatSupportVideoEnable = @"kWCPLRepeatSupportVideoEnable";
 static NSString *const kWCPLSwipeSensitivityLevel   = @"kWCPLSwipeSensitivityLevel";
 static NSString *const kWCPLSwipeLeftOtherAction    = @"kWCPLSwipeLeftOtherAction";
 static NSString *const kWCPLSwipeLeftSelfAction     = @"kWCPLSwipeLeftSelfAction";
@@ -59,10 +60,12 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         NSNumber *repeatEmoticonEnabled = [defaults objectForKey:kWCPLRepeatSupportEmoticonEnable];
         NSNumber *repeatVoiceEnabled = [defaults objectForKey:kWCPLRepeatSupportVoiceEnable];
         NSNumber *repeatImageEnabled = [defaults objectForKey:kWCPLRepeatSupportImageEnable];
+        NSNumber *repeatVideoEnabled = [defaults objectForKey:kWCPLRepeatSupportVideoEnable];
 
         _repeatSupportEmoticonEnable = repeatEmoticonEnabled ? repeatEmoticonEnabled.boolValue : YES;
         _repeatSupportVoiceEnable = repeatVoiceEnabled ? repeatVoiceEnabled.boolValue : YES;
         _repeatSupportImageEnable = repeatImageEnabled ? repeatImageEnabled.boolValue : YES;
+        _repeatSupportVideoEnable = repeatVideoEnabled ? repeatVideoEnabled.boolValue : YES;
 
         NSNumber *sensitivity = [defaults objectForKey:kWCPLSwipeSensitivityLevel];
         _swipeSensitivityLevel = sensitivity ? sensitivity.integerValue : 1;
@@ -114,6 +117,11 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 - (void)setRepeatSupportImageEnable:(BOOL)repeatSupportImageEnable {
     _repeatSupportImageEnable = repeatSupportImageEnable;
     [[NSUserDefaults standardUserDefaults] setBool:repeatSupportImageEnable forKey:kWCPLRepeatSupportImageEnable];
+}
+
+- (void)setRepeatSupportVideoEnable:(BOOL)repeatSupportVideoEnable {
+    _repeatSupportVideoEnable = repeatSupportVideoEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportVideoEnable forKey:kWCPLRepeatSupportVideoEnable];
 }
 
 - (void)setSwipeSensitivityLevel:(NSInteger)swipeSensitivityLevel {
