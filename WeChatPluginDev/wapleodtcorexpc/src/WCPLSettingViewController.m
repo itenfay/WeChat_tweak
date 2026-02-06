@@ -18,7 +18,6 @@
 #import "WCPLRealtimeLogUploader.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextNone = 0,
@@ -27,7 +26,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextRedEnvelopDenyList,
 };
 
-@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
+@interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate, WCPLMultiSelectContactsViewControllerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 @property (nonatomic, assign) WCPLGroupSelectContext groupSelectContext;
@@ -87,7 +86,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self addAdvanceSettingSection];
     [self addMessageIgnoreSettingSection];
     [self addOtherSettingSection];
-    [self addMessageReplySettingSection];
     [self addSwipeQuoteSettingSection];
 
     MMTableView *tableView = [self.tableViewMgr getTableView];
@@ -1084,39 +1082,16 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [config saveUserIgnoreNameListToLocalFile];
 }
 
-#pragma mark - Message Reply Setting
-
-- (void)addMessageReplySettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息复读机"];
-
-    [section addCell:[self createMessageReplySwitchCell]];
-
-    // 只有启用复读机时才显示详细设置
-    if ([WCPLConfigCenter shared].repeatButton.messageReplyEnable) {
-        [section addCell:[self createRepeatButtonHapticCell]];
-        [section addCell:[self createRepeatButtonStyleCell]];
-        [section addCell:[self createRepeatButtonBackgroundAlphaCell]];
-        [section addCell:[self createRepeatButtonSizeCell]];
-        [section addCell:[self createRepeatButtonTextColorModeCell]];
-        if ([WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode == 1) {
-            [section addCell:[self createRepeatButtonTextColorDefaultCell]];
-            [section addCell:[self createRepeatButtonTextColorTextCell]];
-            [section addCell:[self createRepeatButtonTextColorVoiceCell]];
-            [section addCell:[self createRepeatButtonTextColorEmoticonCell]];
-            [section addCell:[self createRepeatButtonTextColorQuoteCell]];
-        }
-    }
-
-    [self.tableViewMgr addSection:section];
-}
-
 #pragma mark - Swipe Quote Setting
 
 - (void)addSwipeQuoteSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势" Footer:@"提示：复读手势暂不支持图片/视频消息"];
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势"];
 
     // 消息手势总开关
     [section addCell:[self createSwipeGestureSwitchCell]];
+
+    // 消息气泡复读按钮开关（与手势开关独立）
+    [section addCell:[self createRepeatButtonSwitchCell]];
 
     // 只有启用总开关时才显示详细设置
     if ([WCPLConfigCenter shared].gesture.swipeGestureEnable) {
@@ -1161,6 +1136,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用消息手势" on:[WCPLConfigCenter shared].gesture.swipeGestureEnable];
 }
 
+- (WCTableViewNormalCellManager *)createRepeatButtonSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButton:) target:self title:@"  气泡复读按钮" on:[WCPLConfigCenter shared].gesture.repeatButtonEnable];
+}
+
 - (WCTableViewNormalCellManager *)createSwipeSensitivityCell {
     NSInteger level = [WCPLConfigCenter shared].gesture.swipeSensitivityLevel;
     NSString *name = [self swipeSensitivityNameForLevel:level];
@@ -1179,21 +1158,19 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLConfigCenter shared].gesture.tapReferJumpEnable];
 }
 
-// 获取对方消息操作名称（引用、复读、删除）
+// 获取对方消息操作名称（引用、删除）
 - (NSString *)actionNameForOtherMessage:(NSInteger)action {
     switch (action) {
         case 0: return @"引用";
-        case 1: return @"复读";
         case 2: return @"删除";
         default: return @"引用";
     }
 }
 
-// 获取己方消息操作名称（引用、复读、删除、撤回）
+// 获取己方消息操作名称（引用、删除、撤回）
 - (NSString *)actionNameForSelfMessage:(NSInteger)action {
     switch (action) {
         case 0: return @"引用";
-        case 1: return @"复读";
         case 2: return @"删除";
         case 3: return @"撤回";
         default: return @"引用";
@@ -1228,6 +1205,11 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [WCPLConfigCenter shared].gesture.swipeGestureEnable = sender.on;
     WCPLLogInfo(@"Swipe gesture feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
+}
+
+- (void)settingRepeatButton:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatButtonEnable = sender.on;
+    WCPLLogInfo(@"Repeat bubble button changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (void)settingSwipeQuote:(UISwitch *)sender {
@@ -1328,18 +1310,12 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         if (completion) completion(0);
     }];
 
-    // 复读
-    UIAlertAction *repeatAction = [UIAlertAction actionWithTitle:@"复读" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        if (completion) completion(1);
-    }];
-
     // 删除
     UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         if (completion) completion(2);
     }];
 
     [alert addAction:quoteAction];
-    [alert addAction:repeatAction];
     [alert addAction:deleteAction];
 
     // 己方消息额外有撤回选项
@@ -1354,18 +1330,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [alert addAction:cancelAction];
 
     [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (与消息气泡一体化)" on:[WCPLConfigCenter shared].repeatButton.messageReplyEnable];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"复读按钮震动反馈" on:[WCPLConfigCenter shared].repeatButton.repeatButtonHapticEnable];
-}
-
-- (void)settingRepeatButtonHaptic:(UISwitch *)sender {
-    [WCPLConfigCenter shared].repeatButton.repeatButtonHapticEnable = sender.on;
 }
 
 - (WCTableViewNormalCellManager *)createDebugLogSwitchCell {
@@ -1391,490 +1355,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self reloadTableData];
 }
 
-- (WCTableViewNormalCellManager *)createRepeatButtonStyleCell {
-    NSArray *styleNames = @[@"+1 文字", @"内置图标", @"自定义图片"];
-    NSInteger currentStyle = [WCPLConfigCenter shared].repeatButton.repeatButtonStyle;
-    NSString *styleName = (currentStyle >= 0 && currentStyle < styleNames.count) ? styleNames[currentStyle] : styleNames[0];
-
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonStylePicker) target:self title:@"按钮样式" rightValue:styleName accessoryType:1];
-}
-
-- (void)showRepeatButtonStylePicker {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择按钮样式"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    // 样式 0: +1 文字
-    UIAlertAction *textAction = [UIAlertAction actionWithTitle:@"+1 文字 (默认)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonStyle = 0;
-        [self reloadTableData];
-    }];
-
-    // 样式 1: 内置图标
-    UIAlertAction *iconAction = [UIAlertAction actionWithTitle:@"内置图标 (emoji)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonStyle = 1;
-        [self showBuiltInIconPicker];
-    }];
-
-    // 样式 2: 自定义图片
-    UIAlertAction *customAction = [UIAlertAction actionWithTitle:@"自定义图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonStyle = 2;
-        [self showImagePicker];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-
-    [alert addAction:textAction];
-    [alert addAction:iconAction];
-    [alert addAction:customAction];
-    [alert addAction:cancelAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (void)showBuiltInIconPicker {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择图标"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    NSArray *icons = @[@"+1", @"👍", @"❤️", @"😂", @"🔥", @"👏", @"🎉"];
-
-    for (NSInteger i = 0; i < icons.count; i++) {
-        NSString *icon = icons[i];
-        UIAlertAction *action = [UIAlertAction actionWithTitle:icon style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [WCPLConfigCenter shared].repeatButton.repeatButtonIconIndex = i;
-            [self reloadTableData];
-        }];
-        [alert addAction:action];
-    }
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [self reloadTableData];
-    }];
-    [alert addAction:cancelAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonBackgroundAlphaCell {
-    CGFloat alpha = [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha;
-    NSString *value = [NSString stringWithFormat:@"%.2f", alpha];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonBackgroundAlpha) target:self title:@"按钮背景透明度" rightValue:value accessoryType:1];
-}
-
-- (void)settingRepeatButtonBackgroundAlpha {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"按钮背景透明度"
-                                                                   message:@"范围 0.10 ~ 1.00"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    CGFloat currentValue = [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha;
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"例如：0.85";
-        textField.keyboardType = UIKeyboardTypeDecimalPad;
-        textField.text = [NSString stringWithFormat:@"%.2f", currentValue];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSString *text = alert.textFields.firstObject.text;
-        double value = 0;
-        if (![self wcpl_parseDoubleFromText:text value:&value]) {
-            [self showErrorAlert:@"请输入有效的数值 (0.10 ~ 1.00)"];
-            return;
-        }
-        if (value < 0.10 || value > 1.00) {
-            [self showErrorAlert:@"范围应在 0.10 ~ 1.00 之间"];
-            return;
-        }
-        [WCPLConfigCenter shared].repeatButton.repeatButtonBackgroundAlpha = value;
-        [self reloadTableData];
-    }];
-
-    [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonSizeCell {
-    CGFloat size = [WCPLConfigCenter shared].repeatButton.repeatButtonSize;
-    NSString *value = [NSString stringWithFormat:@"%.0f", size];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonSize) target:self title:@"按钮大小" rightValue:value accessoryType:1];
-}
-
-- (void)settingRepeatButtonSize {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"按钮大小"
-                                                                   message:@"范围 18 ~ 36"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    CGFloat currentValue = [WCPLConfigCenter shared].repeatButton.repeatButtonSize;
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"例如：24";
-        textField.keyboardType = UIKeyboardTypeNumberPad;
-        textField.text = [NSString stringWithFormat:@"%.0f", currentValue];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSString *text = alert.textFields.firstObject.text;
-        double value = 0;
-        if (![self wcpl_parseDoubleFromText:text value:&value]) {
-            [self showErrorAlert:@"请输入有效的数值 (18 ~ 36)"];
-            return;
-        }
-        if (value < 18 || value > 36) {
-            [self showErrorAlert:@"范围应在 18 ~ 36 之间"];
-            return;
-        }
-        [WCPLConfigCenter shared].repeatButton.repeatButtonSize = value;
-        [self reloadTableData];
-    }];
-
-    [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonTextColorModeCell {
-    NSArray *modeNames = @[@"统一颜色", @"按消息类型"];
-    NSInteger mode = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode;
-    NSString *modeName = (mode >= 0 && mode < modeNames.count) ? modeNames[mode] : modeNames[0];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonTextColorModePicker) target:self title:@"文字颜色规则" rightValue:modeName accessoryType:1];
-}
-
-- (void)showRepeatButtonTextColorModePicker {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"文字颜色规则"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"统一颜色" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode = 0;
-        [self reloadTableData];
-    }];
-
-    UIAlertAction *typeAction = [UIAlertAction actionWithTitle:@"按消息类型" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorMode = 1;
-        [self reloadTableData];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-
-    [alert addAction:defaultAction];
-    [alert addAction:typeAction];
-    [alert addAction:cancelAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonTextColorDefaultCell {
-    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorDefault) target:self title:@"文字颜色-默认" rightValue:value accessoryType:1];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonTextColorTextCell {
-    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorText ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorText) target:self title:@"文字颜色-文本" rightValue:value accessoryType:1];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonTextColorVoiceCell {
-    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorVoice ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorVoice) target:self title:@"文字颜色-语音" rightValue:value accessoryType:1];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonTextColorEmoticonCell {
-    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorEmoticon ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorEmoticon) target:self title:@"文字颜色-表情" rightValue:value accessoryType:1];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonTextColorQuoteCell {
-    NSString *value = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorQuote ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(settingRepeatButtonTextColorQuote) target:self title:@"文字颜色-引用" rightValue:value accessoryType:1];
-}
-
-- (void)settingRepeatButtonTextColorDefault {
-    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault ?: @"";
-    [self showRepeatButtonTextColorInputWithTitle:@"默认颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorDefault = hexString;
-        [self reloadTableData];
-    }];
-}
-
-- (void)settingRepeatButtonTextColorText {
-    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorText ?: @"";
-    [self showRepeatButtonTextColorInputWithTitle:@"文本消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorText = hexString;
-        [self reloadTableData];
-    }];
-}
-
-- (void)settingRepeatButtonTextColorVoice {
-    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorVoice ?: @"";
-    [self showRepeatButtonTextColorInputWithTitle:@"语音消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorVoice = hexString;
-        [self reloadTableData];
-    }];
-}
-
-- (void)settingRepeatButtonTextColorEmoticon {
-    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorEmoticon ?: @"";
-    [self showRepeatButtonTextColorInputWithTitle:@"表情消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorEmoticon = hexString;
-        [self reloadTableData];
-    }];
-}
-
-- (void)settingRepeatButtonTextColorQuote {
-    NSString *current = [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorQuote ?: @"";
-    [self showRepeatButtonTextColorInputWithTitle:@"引用消息颜色" currentValue:current onConfirm:^(NSString *hexString) {
-        [WCPLConfigCenter shared].repeatButton.repeatButtonTextColorQuote = hexString;
-        [self reloadTableData];
-    }];
-}
-
-- (void)showRepeatButtonTextColorInputWithTitle:(NSString *)title
-                                  currentValue:(NSString *)currentValue
-                                      onConfirm:(void (^)(NSString *hexString))onConfirm {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
-                                                                   message:@"请输入 Hex 颜色，例如 #07C160"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"#RRGGBB";
-        textField.keyboardType = UIKeyboardTypeASCIICapable;
-        textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        textField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
-        textField.text = currentValue;
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSString *text = alert.textFields.firstObject.text;
-        NSString *normalized = [self wcpl_normalizedHexColorString:text];
-        if (!normalized) {
-            [self showErrorAlert:@"请输入有效的 Hex 颜色，例如 #07C160"];
-            return;
-        }
-        if (onConfirm) {
-            onConfirm(normalized);
-        }
-    }];
-
-    [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (NSString *)wcpl_normalizedHexColorString:(NSString *)input {
-    if (!input) return nil;
-    NSString *trimmed = [[input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    if (trimmed.length == 0) return nil;
-    if (![trimmed hasPrefix:@"#"]) {
-        trimmed = [@"#" stringByAppendingString:trimmed];
-    }
-    if (trimmed.length != 7) return nil;
-    NSString *hexPart = [trimmed substringFromIndex:1];
-    NSCharacterSet *validSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"];
-    for (NSUInteger i = 0; i < hexPart.length; i++) {
-        unichar c = [hexPart characterAtIndex:i];
-        if (![validSet characterIsMember:c]) {
-            return nil;
-        }
-    }
-    return trimmed;
-}
-
-- (BOOL)wcpl_parseDoubleFromText:(NSString *)text value:(double *)value {
-    if (!text) return NO;
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if (trimmed.length == 0) return NO;
-    NSScanner *scanner = [NSScanner scannerWithString:trimmed];
-    double result = 0;
-    if (![scanner scanDouble:&result] || !scanner.isAtEnd) {
-        return NO;
-    }
-    if (value) {
-        *value = result;
-    }
-    return YES;
-}
-
-- (void)showImagePicker {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择图片来源"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    // 从相册选择
-    UIAlertAction *albumAction = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        [self presentViewController:picker animated:YES completion:nil];
-    }];
-
-    // 从文件选择 (iOS 14+)
-    UIAlertAction *fileAction = [UIAlertAction actionWithTitle:@"从文件选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UIDocumentPickerViewController *documentPicker;
-        if (@available(iOS 14.0, *)) {
-            // iOS 14+ 使用新 API
-            documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[UTTypeImage] asCopy:YES];
-        } else {
-            // iOS 14 以下使用旧 API
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            NSArray *documentTypes = @[@"public.image"];
-            documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:documentTypes inMode:UIDocumentPickerModeImport];
-#pragma clang diagnostic pop
-        }
-        documentPicker.delegate = self;
-        documentPicker.allowsMultipleSelection = NO;
-        [self presentViewController:documentPicker animated:YES completion:nil];
-    }];
-
-    // 输入图片 URL
-    UIAlertAction *urlAction = [UIAlertAction actionWithTitle:@"输入图片路径" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self showImageURLInput];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [self reloadTableData];
-    }];
-
-    [alert addAction:albumAction];
-    [alert addAction:fileAction];
-    [alert addAction:urlAction];
-    [alert addAction:cancelAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-// 输入图片路径
-- (void)showImageURLInput {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"输入图片路径"
-                                                                   message:@"支持本地路径或网络 URL"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"例如: /var/mobile/Documents/icon.png";
-        textField.keyboardType = UIKeyboardTypeURL;
-        textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [self reloadTableData];
-    }];
-
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSString *path = alert.textFields.firstObject.text;
-        [self loadImageFromPath:path];
-    }];
-
-    [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-// 从路径加载图片
-- (void)loadImageFromPath:(NSString *)path {
-    if (!path || path.length == 0) {
-        [self showErrorAlert:@"请输入有效的路径"];
-        return;
-    }
-
-    UIImage *image = nil;
-
-    // 判断是网络 URL 还是本地路径
-    if ([path hasPrefix:@"http://"] || [path hasPrefix:@"https://"]) {
-        // 网络图片 - 异步加载
-        NSURL *url = [NSURL URLWithString:path];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *data = [NSData dataWithContentsOfURL:url];
-            UIImage *downloadedImage = [UIImage imageWithData:data];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (downloadedImage) {
-                    [self saveCustomImage:downloadedImage];
-                } else {
-                    [self showErrorAlert:@"无法加载网络图片"];
-                }
-            });
-        });
-    } else {
-        // 本地路径
-        image = [UIImage imageWithContentsOfFile:path];
-        if (image) {
-            [self saveCustomImage:image];
-        } else {
-            [self showErrorAlert:@"无法加载本地图片，请检查路径是否正确"];
-        }
-    }
-}
-
-// 保存自定义图片
-- (void)saveCustomImage:(UIImage *)image {
-    // 保存图片到 Documents 目录
-    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    NSString *fileName = @"repeat_button_custom.png";
-    NSString *filePath = [documentsPath stringByAppendingPathComponent:fileName];
-
-    // 从图片中心裁剪圆形
-    UIImage *circularImage = [self cropCircularImageFromCenter:image targetSize:CGSizeMake(48, 48)];
-
-    // 保存为 PNG
-    NSData *imageData = UIImagePNGRepresentation(circularImage);
-    [imageData writeToFile:filePath atomically:YES];
-
-    // 保存路径到配置
-    [WCPLConfigCenter shared].repeatButton.repeatButtonCustomImagePath = fileName;
-    [self reloadTableData];
-
-    // 显示成功提示
-    UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
-                                                                          message:@"自定义图片已保存（已裁剪为圆形）"
-                                                                   preferredStyle:UIAlertControllerStyleAlert];
-    [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-    [self presentViewController:successAlert animated:YES completion:nil];
-}
-
-// 从图片中心裁剪圆形
-- (UIImage *)cropCircularImageFromCenter:(UIImage *)image targetSize:(CGSize)targetSize {
-    if (!image) return nil;
-
-    CGFloat imageWidth = image.size.width;
-    CGFloat imageHeight = image.size.height;
-
-    // 计算中心正方形区域（取较短边作为边长）
-    CGFloat squareSize = MIN(imageWidth, imageHeight);
-    CGFloat originX = (imageWidth - squareSize) / 2.0;
-    CGFloat originY = (imageHeight - squareSize) / 2.0;
-    CGRect cropRect = CGRectMake(originX, originY, squareSize, squareSize);
-
-    // 裁剪中心正方形
-    CGImageRef cgImage = CGImageCreateWithImageInRect(image.CGImage, cropRect);
-    UIImage *croppedImage = [UIImage imageWithCGImage:cgImage scale:image.scale orientation:image.imageOrientation];
-    CGImageRelease(cgImage);
-
-    // 创建圆形图片
-    CGFloat diameter = targetSize.width;
-    UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    // 创建圆形裁剪路径
-    CGRect circleRect = CGRectMake(0, 0, diameter, diameter);
-    CGContextAddEllipseInRect(context, circleRect);
-    CGContextClip(context);
-
-    // 绘制图片
-    [croppedImage drawInRect:circleRect];
-
-    UIImage *circularImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return circularImage;
-}
-
 // 显示错误提示
 - (void)showErrorAlert:(NSString *)message {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"错误"
@@ -1884,60 +1364,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         [self reloadTableData];
     }]];
     [self presentViewController:alert animated:YES completion:nil];
-}
-
-#pragma mark - UIDocumentPickerDelegate
-
-- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
-    if (urls.count > 0) {
-        NSURL *url = urls.firstObject;
-
-        // 开始访问安全范围资源
-        BOOL accessing = [url startAccessingSecurityScopedResource];
-
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        UIImage *image = [UIImage imageWithData:imageData];
-
-        if (accessing) {
-            [url stopAccessingSecurityScopedResource];
-        }
-
-        if (image) {
-            [self saveCustomImage:image];
-        } else {
-            [self showErrorAlert:@"无法加载选择的图片"];
-        }
-    }
-}
-
-- (void)documentPickerWasCancelled:(UIDocumentPickerViewController *)controller {
-    [self reloadTableData];
-}
-
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
-    UIImage *image = info[UIImagePickerControllerEditedImage] ?: info[UIImagePickerControllerOriginalImage];
-
-    [picker dismissViewControllerAnimated:YES completion:^{
-        if (image) {
-            [self saveCustomImage:image];
-        } else {
-            [self showErrorAlert:@"无法加载选择的图片"];
-        }
-    }];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:^{
-        [self reloadTableData];
-    }];
-}
-
-- (void)settingMessageReply:(UISwitch *)sender {
-    [WCPLConfigCenter shared].repeatButton.messageReplyEnable = sender.on;
-    WCPLLogInfo(@"Message repeat feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
-    [self reloadTableData];
 }
 
 #pragma mark - MultiSelectGroupsViewControllerDelegate

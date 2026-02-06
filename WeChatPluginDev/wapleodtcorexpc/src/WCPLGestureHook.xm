@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "WeChatRedEnvelop.h"
 #import "WCPLConfigCenter.h"
-#import "WCPLMessageReplyManager.h"
 #import "WCHookSwipeUtilities.h"
 #import "WCHookMessageNavigator.h"
 #import "WCPLServiceCenter.h"
@@ -10,6 +9,193 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+static const NSInteger kWCPLRepeatButtonTag = 0x5743504C;
+static const CGFloat kWCPLRepeatButtonSize = 20.0f;
+static const CGFloat kWCPLRepeatButtonEdgeInset = 1.0f;
+static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
+
+static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return NO;
+    }
+
+    @try {
+        Class msgWrapClass = objc_getClass("CMessageWrap");
+        SEL selector = @selector(isSenderFromMsgWrap:);
+        if (msgWrapClass && [msgWrapClass respondsToSelector:selector]) {
+            BOOL isSender = ((BOOL (*)(id, SEL, id))objc_msgSend)(msgWrapClass, selector, msgWrap);
+            return !isSender;
+        }
+    } @catch (__unused NSException *exception) {
+    }
+
+    return YES;
+}
+
+static NSInteger wcpl_normalizeSwipeActionValueLegacyAware(NSInteger action, BOOL isSelfAction) {
+    if (action == 1) {
+        return 0;
+    }
+
+    if (action < 0) {
+        return 0;
+    }
+
+    NSInteger maxAction = isSelfAction ? 3 : 2;
+    if (action > maxAction) {
+        return 0;
+    }
+
+    return action;
+}
+
+static NSString *wcpl_trimTextForRepeat(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+        return nil;
+    }
+    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmed.length > 0 ? trimmed : nil;
+}
+
+static NSString *wcpl_extractXMLValue(NSString *xml, NSString *openTag, NSString *closeTag) {
+    if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
+        return nil;
+    }
+    NSRange openRange = [xml rangeOfString:openTag];
+    if (openRange.location == NSNotFound) {
+        return nil;
+    }
+    NSUInteger valueStart = NSMaxRange(openRange);
+    if (valueStart >= xml.length) {
+        return nil;
+    }
+    NSRange closeRange = [xml rangeOfString:closeTag options:0 range:NSMakeRange(valueStart, xml.length - valueStart)];
+    if (closeRange.location == NSNotFound || closeRange.location <= valueStart) {
+        return nil;
+    }
+    NSString *value = [xml substringWithRange:NSMakeRange(valueStart, closeRange.location - valueStart)];
+    return wcpl_trimTextForRepeat(value);
+}
+
+static NSString *wcpl_extractQuoteTitleFromXML(NSString *xml) {
+    NSString *title = wcpl_extractXMLValue(xml, @"<title><![CDATA[", @"]]></title>");
+    if (title.length > 0) {
+        return title;
+    }
+    return wcpl_extractXMLValue(xml, @"<title>", @"</title>");
+}
+
+static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
+    if (!cell) {
+        return nil;
+    }
+
+    SEL directSelectors[] = {
+        @selector(getCurrentMessageWrap),
+        @selector(messageWrap),
+        @selector(getMediaWrap)
+    };
+    for (size_t idx = 0; idx < sizeof(directSelectors) / sizeof(directSelectors[0]); ++idx) {
+        SEL selector = directSelectors[idx];
+        if ([cell respondsToSelector:selector]) {
+            @try {
+                id wrap = ((id (*)(id, SEL))objc_msgSend)(cell, selector);
+                if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                    return (CMessageWrap *)wrap;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if ([cell respondsToSelector:@selector(viewModel)]) {
+        id viewModel = nil;
+        @try {
+            viewModel = ((id (*)(id, SEL))objc_msgSend)(cell, @selector(viewModel));
+        } @catch (__unused NSException *exception) {
+            viewModel = nil;
+        }
+        if (viewModel) {
+            SEL vmSelectors[] = {
+                @selector(messageWrap),
+                @selector(getCurrentMessageWrap),
+                @selector(msgWrap)
+            };
+            for (size_t idx = 0; idx < sizeof(vmSelectors) / sizeof(vmSelectors[0]); ++idx) {
+                SEL selector = vmSelectors[idx];
+                if ([viewModel respondsToSelector:selector]) {
+                    @try {
+                        id wrap = ((id (*)(id, SEL))objc_msgSend)(viewModel, selector);
+                        if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                            return (CMessageWrap *)wrap;
+                        }
+                    } @catch (__unused NSException *exception) {
+                    }
+                }
+            }
+        }
+    }
+    return nil;
+}
+
+static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return nil;
+    }
+    if (msgWrap.m_uiMessageType == 1) {
+        return wcpl_trimTextForRepeat(msgWrap.m_nsContent);
+    }
+    if (msgWrap.m_uiMessageType == 49) {
+        return wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
+    }
+    return nil;
+}
+
+static CMessageWrap *wcpl_quoteTargetFromMessageWrap(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return nil;
+    }
+    SEL selectors[] = {
+        @selector(referingMessageWrap),
+        @selector(referHostMsg),
+        @selector(replyingMessageWrap)
+    };
+    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
+        SEL selector = selectors[idx];
+        if ([msgWrap respondsToSelector:selector]) {
+            @try {
+                id target = ((id (*)(id, SEL))objc_msgSend)(msgWrap, selector);
+                if ([target isKindOfClass:%c(CMessageWrap)]) {
+                    return (CMessageWrap *)target;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+    return nil;
+}
+
+static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentViewController *chatVC) {
+    NSString *chatName = nil;
+    if (chatVC && [chatVC respondsToSelector:@selector(getCurrentChatName)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(getCurrentChatName));
+            if ([value isKindOfClass:[NSString class]]) {
+                chatName = (NSString *)value;
+            }
+        } @catch (__unused NSException *exception) {
+            chatName = nil;
+        }
+    }
+    if (chatName.length > 0) {
+        return chatName;
+    }
+    if (msgWrap.m_nsFromUsr.length > 0) {
+        return msgWrap.m_nsFromUsr;
+    }
+    return msgWrap.m_nsToUsr;
+}
+
 %hook CommonMessageCellView
 
 %property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
@@ -17,8 +203,153 @@
 %property(nonatomic, assign) BOOL wchook_feedbackTriggered;
 %property(nonatomic, assign) NSInteger wchook_swipeTriggerStage;
 
+%new
+- (UIButton *)wchook_repeatButton {
+    for (UIView *subview in self.subviews) {
+        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
+            return (UIButton *)subview;
+        }
+    }
+    return nil;
+}
+
+%new
+- (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap {
+    if (!msgWrap) {
+        return NO;
+    }
+    switch (msgWrap.m_uiMessageType) {
+        case 1:   // 文本
+        case 49:  // 引用消息
+            return YES;
+        default:
+            return NO;
+    }
+}
+
+%new
+- (UIView *)wchook_bubbleAnchorView {
+    NSArray<NSString *> *priorityIvars = @[@"m_bgImageView", @"_bgImageView", @"m_maskImageView"];
+    for (NSString *ivarName in priorityIvars) {
+        @try {
+            id candidate = [self valueForKey:ivarName];
+            if ([candidate isKindOfClass:[UIView class]]) {
+                UIView *view = (UIView *)candidate;
+                if (!view.hidden && CGRectGetWidth(view.frame) > 20.0f) {
+                    return view;
+                }
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    UIView *bestView = nil;
+    CGFloat bestScore = 0.0f;
+    for (UIView *subview in self.subviews) {
+        if (subview.hidden || subview.tag == kWCPLRepeatButtonTag) {
+            continue;
+        }
+        NSString *name = NSStringFromClass([subview class]);
+        if ([name containsString:@"Head"] || [name containsString:@"Avatar"] || [name containsString:@"Label"] || [name containsString:@"Button"]) {
+            continue;
+        }
+        CGRect frame = subview.frame;
+        if (CGRectGetWidth(frame) < 40.0f || CGRectGetHeight(frame) < 20.0f) {
+            continue;
+        }
+        CGFloat score = CGRectGetWidth(frame) * CGRectGetHeight(frame);
+        if (score > bestScore) {
+            bestScore = score;
+            bestView = subview;
+        }
+    }
+    return bestView;
+}
+
+%new
+- (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf {
+    if (!button || !bubbleView) {
+        return;
+    }
+    CGRect bubbleFrame = bubbleView.frame;
+    CGFloat centerY = CGRectGetMidY(bubbleFrame);
+    CGFloat centerX = isSelf ? (CGRectGetMinX(bubbleFrame) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonSize * 0.5f)
+                             : (CGRectGetMaxX(bubbleFrame) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonSize * 0.5f);
+    button.bounds = CGRectMake(0.0f, 0.0f, kWCPLRepeatButtonSize, kWCPLRepeatButtonSize);
+    button.center = CGPointMake(centerX, centerY);
+    [self bringSubviewToFront:button];
+}
+
+%new
+- (UIButton *)wchook_buildRepeatButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.tag = kWCPLRepeatButtonTag;
+    button.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.96f];
+    button.layer.cornerRadius = kWCPLRepeatButtonSize * 0.5f;
+    button.layer.borderWidth = 0.5f;
+    button.layer.borderColor = [UIColor colorWithWhite:0.0f alpha:0.12f].CGColor;
+    button.layer.shadowColor = [UIColor blackColor].CGColor;
+    button.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    button.layer.shadowRadius = 2.5f;
+    button.layer.shadowOpacity = 0.10f;
+    [button setTitle:@"+1" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:0.03f green:0.68f blue:0.36f alpha:1.0f] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:11.0f weight:UIFontWeightSemibold];
+    [button addTarget:self action:@selector(wchook_onRepeatButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(wchook_onRepeatButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(wchook_onRepeatButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+    return button;
+}
+
+%new
+- (void)wchook_removeRepeatButtonIfNeeded {
+    UIButton *button = [self wchook_repeatButton];
+    if (button) {
+        [button removeFromSuperview];
+    }
+}
+
+%new
+- (void)wchook_updateRepeatButtonIfNeeded {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.repeatButtonEnable) {
+        [self wchook_removeRepeatButtonIfNeeded];
+        return;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (![self wchook_isMessageSupportedForRepeat:msgWrap]) {
+        [self wchook_removeRepeatButtonIfNeeded];
+        return;
+    }
+
+    BOOL isFromOther = wcpl_isMessageFromOther(msgWrap);
+
+    NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
+    if (repeatText.length == 0) {
+        [self wchook_removeRepeatButtonIfNeeded];
+        return;
+    }
+
+    UIView *bubbleView = [self wchook_bubbleAnchorView];
+    if (!bubbleView) {
+        [self wchook_removeRepeatButtonIfNeeded];
+        return;
+    }
+
+    UIButton *button = [self wchook_repeatButton];
+    if (!button) {
+        button = [self wchook_buildRepeatButton];
+        [self addSubview:button];
+    }
+    objc_setAssociatedObject(button, kWCPLRepeatButtonWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:!isFromOther];
+}
+
 - (void)layoutSubviews {
     %orig;
+
+    [self wchook_updateRepeatButtonIfNeeded];
 
     // 跳过已经单独处理的 Cell 类型
     NSString *className = NSStringFromClass([self class]);
@@ -33,11 +364,17 @@
         return;
     }
 
-    // 其他消息类型暂不处理复读按钮
+    // 其他消息类型由子类自行处理
 }
 
 - (void)didMoveToWindow {
     %orig;
+
+    if (!self.window) {
+        [self wchook_removeRepeatButtonIfNeeded];
+    } else {
+        [self wchook_updateRepeatButtonIfNeeded];
+    }
 
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
@@ -75,6 +412,11 @@
     if (!self.wchook_feedbackGenerator) {
         self.wchook_feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
     }
+}
+
+- (void)prepareForReuse {
+    %orig;
+    [self wchook_removeRepeatButtonIfNeeded];
 }
 
 %new
@@ -269,13 +611,10 @@
     }
 
     // 判断是否是自己发送的消息
-    BOOL isFromOther = [[WCPLMessageReplyManager sharedManager] isMessageFromOther:msgWrap];
+    BOOL isFromOther = wcpl_isMessageFromOther(msgWrap);
     BOOL isSelf = !isFromOther;
 
     unsigned int msgType = msgWrap.m_uiMessageType;
-    NSString *cellClassName = NSStringFromClass([self class]);
-    BOOL isImageMessage = (msgType == 3) || [cellClassName isEqualToString:@"ImageMessageCellView"];
-    BOOL isVideoMessage = (msgType == 43 || msgType == 62) || [cellClassName isEqualToString:@"VideoMessageCellView"];
 
     // 获取配置
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
@@ -290,10 +629,9 @@
 
     NSString *directionName = (direction == WCHookSwipeDirectionLeft) ? @"左滑" : @"右滑";
     NSString *actionName = @"引用";
+    // 兼容历史值并兜底越界值，统一回退为 0（引用）
+    action = wcpl_normalizeSwipeActionValueLegacyAware(action, isSelf);
     switch (action) {
-        case 1:
-            actionName = @"复读";
-            break;
         case 2:
             actionName = @"删除";
             break;
@@ -306,20 +644,11 @@
     }
     WCPLCrashBreadcrumb(@"滑动动作: %@ -> %@ msgType=%u from=%@ to=%@", directionName, actionName, msgType, msgWrap.m_nsFromUsr ?: @"", msgWrap.m_nsToUsr ?: @"");
 
-    // 复读不支持图片/视频消息
-    if (action == 1 && (isImageMessage || isVideoMessage)) {
-        WCPLLogDebug(@"Swipe repeat not supported for image/video message");
-        return;
-    }
-
     // 执行对应操作
-    // 0=引用, 1=复读, 2=删除, 3=撤回(仅己方消息)
+    // 0=引用, 2=删除, 3=撤回(仅己方消息)
     switch (action) {
         case 0: // 引用
             [self wchook_performQuoteReply];
-            break;
-        case 1: // 复读
-            [self wchook_performRepeatMessage:msgWrap];
             break;
         case 2: // 删除
             [self wchook_performDeleteMessage:msgWrap];
@@ -381,6 +710,150 @@
 }
 
 %new
+- (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap {
+    if (!msgWrap) {
+        return;
+    }
+
+    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+    if (!chatVC) {
+        WCPLLogWarning(@"Repeat failed: chat view controller not found");
+        return;
+    }
+
+    NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
+    if (repeatText.length == 0) {
+        WCPLLogWarning(@"Repeat failed: empty repeat text");
+        return;
+    }
+
+    CMessageWrap *quoteTarget = wcpl_quoteTargetFromMessageWrap(msgWrap);
+    if (!quoteTarget && msgWrap.m_uiMessageType == 49) {
+        quoteTarget = msgWrap;
+    }
+
+    id logicController = nil;
+    if ([chatVC respondsToSelector:@selector(m_logicController)]) {
+        @try {
+            logicController = [chatVC m_logicController];
+        } @catch (__unused NSException *exception) {
+            logicController = nil;
+        }
+    }
+
+    if (quoteTarget && logicController && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id, BOOL))objc_msgSend)(logicController,
+                                                             @selector(SendTextMessage:replyingMessage:isPasted:),
+                                                             repeatText,
+                                                             quoteTarget,
+                                                             NO);
+            WCPLLogInfo(@"Repeat sent via logicController quote: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            return;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat quote send via logicController failed: %@", exception.reason ?: exception);
+        }
+    }
+
+    id toolView = nil;
+    if ([chatVC respondsToSelector:@selector(toolView)]) {
+        @try {
+            toolView = [chatVC toolView];
+        } @catch (__unused NSException *exception) {
+            toolView = nil;
+        }
+    }
+
+    if (quoteTarget && toolView) {
+        BOOL didSetReplyingMessage = NO;
+        if ([toolView respondsToSelector:@selector(setReplyingMessage:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(setReplyingMessage:), quoteTarget);
+                didSetReplyingMessage = YES;
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        if ([toolView respondsToSelector:@selector(onClickTextViewSendText:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(onClickTextViewSendText:), repeatText);
+                WCPLLogInfo(@"Repeat sent via toolView quote: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+                return;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat quote send via toolView failed: %@", exception.reason ?: exception);
+            }
+        }
+        if (didSetReplyingMessage && [toolView respondsToSelector:@selector(setReplyingMessage:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(setReplyingMessage:), nil);
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(logicController, @selector(SendTextMessage:), repeatText);
+            WCPLLogInfo(@"Repeat sent via logicController plain: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            return;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([chatVC respondsToSelector:@selector(onSendTextMsg:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(onSendTextMsg:), repeatText);
+            WCPLLogInfo(@"Repeat sent via chatVC plain: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            return;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (messageMgr && [messageMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
+        @try {
+            NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
+            CMessageWrap *newWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:1];
+            newWrap.m_uiMessageType = 1;
+            newWrap.m_nsContent = repeatText;
+            newWrap.m_nsToUsr = chatName;
+            [messageMgr AddMsg:chatName MsgWrap:newWrap];
+            WCPLLogInfo(@"Repeat sent via CMessageMgr fallback: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            return;
+        } @catch (NSException *exception) {
+            WCPLLogError(@"Repeat fallback AddMsg failed: %@", exception.reason ?: exception);
+        }
+    }
+
+    WCPLLogError(@"Repeat failed: no available send method");
+}
+
+%new
+- (void)wchook_onRepeatButtonTapped:(UIButton *)sender {
+    CMessageWrap *msgWrap = objc_getAssociatedObject(sender, kWCPLRepeatButtonWrapKey);
+    if (!msgWrap) {
+        msgWrap = wcpl_messageWrapForCellView(self);
+    }
+    WCPLLogDebug(@"Repeat button tapped: class=%@ type=%u localId=%u", NSStringFromClass([self class]), msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+    [self wchook_repeatMessageWrap:msgWrap];
+}
+
+%new
+- (void)wchook_onRepeatButtonTouchDown:(UIButton *)sender {
+    [UIView animateWithDuration:0.12 animations:^{
+        sender.transform = CGAffineTransformMakeScale(0.92f, 0.92f);
+        sender.alpha = 0.86f;
+    }];
+}
+
+%new
+- (void)wchook_onRepeatButtonTouchUp:(UIButton *)sender {
+    [UIView animateWithDuration:0.12 animations:^{
+        sender.transform = CGAffineTransformIdentity;
+        sender.alpha = 1.0f;
+    }];
+}
+
+%new
 - (void)wchook_performDeleteMessage:(CMessageWrap *)msgWrap {
     if (!msgWrap) return;
 
@@ -437,49 +910,6 @@
     } @catch (NSException *exception) {
         WCPLLogError(@"Revoke message failed: %@", exception);
     }
-}
-
-%new
-- (void)wchook_performRepeatMessage:(CMessageWrap *)msgWrap {
-    if (!msgWrap) return;
-
-    // 获取当前聊天视图控制器
-    BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
-    if (!chatVC) {
-        WCPLLogWarning(@"Cannot find chat view controller");
-        return;
-    }
-
-    unsigned int msgType = msgWrap.m_uiMessageType;
-
-    if (msgType == 3 || msgType == 43 || msgType == 62) {
-        WCPLLogDebug(@"Repeat not supported for image/video message");
-        return;
-    }
-
-    // 处理表情包消息（类型47）
-    if (msgType == 47) {
-        [[WCPLMessageReplyManager sharedManager] handleRepeatEmoticonMessage:msgWrap viewController:chatVC];
-        return;
-    }
-
-    // 处理语音消息（类型34）
-    if (msgType == 34) {
-        [[WCPLMessageReplyManager sharedManager] handleRepeatVoiceMessage:msgWrap viewController:chatVC];
-        return;
-    }
-
-    // 获取消息内容
-    NSString *content = [[WCPLMessageReplyManager sharedManager] getMessageContent:msgWrap];
-    if (!content || content.length == 0) {
-        WCPLLogDebug(@"No content to repeat from swipe");
-        return;
-    }
-
-    // 调用复读功能（文本消息和其他类型）
-    [[WCPLMessageReplyManager sharedManager] handleRepeatButtonTapWithContent:content
-                                                               viewController:chatVC
-                                                                      msgWrap:msgWrap];
 }
 
 %new
