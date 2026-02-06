@@ -1272,12 +1272,13 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                 CMessageWrap *newWrap = [[objc_getClass("CMessageWrap") alloc] init];
                 newWrap.m_uiMessageType = 47;
                 newWrap.m_nsToUsr = chatName;
+                newWrap.m_nsFromUsr = wcpl_trimTextForRepeat(msgWrap.m_nsFromUsr) ?: @"";
                 newWrap.m_nsContent = msgWrap.m_nsContent ?: @"";
                 if (emoticonMD5.length == 32) {
                     newWrap.m_nsEmoticonMD5 = emoticonMD5;
                 }
                 ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddEmoticonMsg:MsgWrap:), chatName, newWrap);
-                WCPLLogInfo(@"Repeat sent: flow=messageMgr_emoticon msg=%@ md5=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)");
+                WCPLLogInfo(@"Repeat sent: flow=messageMgr_emoticon msg=%@ md5=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)", chatName ?: @"(nil)");
                 return;
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat emoticon via messageMgr failed: %@", exception.reason ?: exception);
@@ -1326,6 +1327,46 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                 return;
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat image via logicController failed: %@", exception.reason ?: exception);
+            }
+        }
+
+        NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
+        if (chatName.length > 0 && image && [chatVC respondsToSelector:@selector(FormImageMsg:withImage:withData:withImageInfo:)] && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+            @try {
+                id imageMsg = ((id (*)(id, SEL, id, id, id, id))objc_msgSend)(chatVC,
+                                                                                @selector(FormImageMsg:withImage:withData:withImageInfo:),
+                                                                                chatName,
+                                                                                image,
+                                                                                imageData,
+                                                                                imageInfo);
+                if (imageMsg) {
+                    ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, imageMsg);
+                    WCPLLogInfo(@"Repeat sent: flow=chatvc_form_resend_image msg=%@ chat=%@ data=%lu", wcpl_repeatMessageDebugInfo(msgWrap), chatName, (unsigned long)imageData.length);
+                    return;
+                }
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat image via chatVC FormImageMsg+Resend failed: %@", exception.reason ?: exception);
+            }
+        }
+
+        if (chatName.length > 0 && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
+                WCPLLogInfo(@"Repeat sent: flow=chatvc_resend_original_image msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName);
+                return;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat image via chatVC Resend original failed: %@", exception.reason ?: exception);
+            }
+        }
+
+        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+        if (chatName.length > 0 && messageMgr && [messageMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
+                WCPLLogInfo(@"Repeat sent: flow=messageMgr_resend_image msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName);
+                return;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat image via messageMgr Resend failed: %@", exception.reason ?: exception);
             }
         }
 

@@ -190,6 +190,43 @@ static NSString *wcpl_extractQuoteTitleFromXML(NSString *content) {
     return nil;
 }
 
+static NSString *wcpl_quoteXMLByReplacingTitle(NSString *content, NSString *title) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return nil;
+    }
+
+    NSString *trimmed = wcpl_trimString(title);
+    if (trimmed.length == 0) {
+        return nil;
+    }
+
+    NSString *safeCDATA = [trimmed stringByReplacingOccurrencesOfString:@"]]>" withString:@"] ]>"];
+
+    NSRegularExpression *cdataRegex = [NSRegularExpression regularExpressionWithPattern:@"<title><!\\[CDATA\\[(.*?)\\]\\]></title>"
+                                                                                options:NSRegularExpressionDotMatchesLineSeparators
+                                                                                  error:nil];
+    NSTextCheckingResult *cdataMatch = [cdataRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (cdataMatch.numberOfRanges >= 2) {
+        NSRange titleRange = [cdataMatch rangeAtIndex:1];
+        if (titleRange.location != NSNotFound) {
+            return [content stringByReplacingCharactersInRange:titleRange withString:safeCDATA];
+        }
+    }
+
+    NSRegularExpression *plainRegex = [NSRegularExpression regularExpressionWithPattern:@"<title>(.*?)</title>"
+                                                                                options:NSRegularExpressionDotMatchesLineSeparators
+                                                                                  error:nil];
+    NSTextCheckingResult *plainMatch = [plainRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (plainMatch.numberOfRanges >= 2) {
+        NSRange titleRange = [plainMatch rangeAtIndex:1];
+        if (titleRange.location != NSNotFound) {
+            return [content stringByReplacingCharactersInRange:titleRange withString:trimmed];
+        }
+    }
+
+    return nil;
+}
+
 static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
     if (!msgWrap) {
         return nil;
@@ -330,20 +367,41 @@ static NSString *wcpl_originalContentForMessageWrap(CMessageWrap *msgWrap) {
 
 static BOOL wcpl_syncLocalReplaceContent(id controller, CMessageWrap *msgWrap) {
     if (!controller || !msgWrap) return NO;
-    if (!wcpl_isPlainTextMessage(msgWrap)) return NO;
+    if (!wcpl_isClownSupportedMessage(msgWrap)) return NO;
+
     NSString *replaceText = wcpl_localReplaceText(controller, msgWrap);
     NSString *originText = msgWrap.m_nsContent ?: @"";
     NSString *storedOrigin = wcpl_originalContentForMessageWrap(msgWrap);
+
+    BOOL isPlainText = wcpl_isPlainTextMessage(msgWrap);
+    BOOL isQuoteReply = wcpl_isQuoteReplyMessage(msgWrap);
+
     if (replaceText.length > 0) {
-        if (!storedOrigin && ![originText isEqualToString:replaceText]) {
-            objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, originText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        if (isPlainText) {
+            if (!storedOrigin && ![originText isEqualToString:replaceText]) {
+                objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, originText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            }
+            if (![originText isEqualToString:replaceText]) {
+                msgWrap.m_nsContent = replaceText;
+                return YES;
+            }
+            return NO;
         }
-        if (![originText isEqualToString:replaceText]) {
-            msgWrap.m_nsContent = replaceText;
-            return YES;
+
+        if (isQuoteReply) {
+            NSString *replacedContent = wcpl_quoteXMLByReplacingTitle(originText, replaceText);
+            if (replacedContent.length > 0 && ![originText isEqualToString:replacedContent]) {
+                if (!storedOrigin) {
+                    objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, originText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+                }
+                msgWrap.m_nsContent = replacedContent;
+                return YES;
+            }
         }
+
         return NO;
     }
+
     if (storedOrigin) {
         if (![originText isEqualToString:storedOrigin]) {
             msgWrap.m_nsContent = storedOrigin;
@@ -590,7 +648,10 @@ static void wcpl_clearLocalReplaceMap(id controller) {
             }
         }
         if (richTextView && [richTextView respondsToSelector:@selector(setContent:)]) {
-            NSString *originText = wcpl_originalContentForMessageWrap(msgWrap);
+            NSString *originText = nil;
+            if (wcpl_isPlainTextMessage(msgWrap)) {
+                originText = wcpl_originalContentForMessageWrap(msgWrap);
+            }
             if (originText.length == 0) {
                 originText = wcpl_displayTextForMessage(msgWrap, self) ?: (msgWrap.m_nsContent ?: @"");
             }
@@ -621,7 +682,7 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
     BOOL isPlainText = wcpl_isPlainTextMessage(msgWrap);
     BOOL didSync = NO;
-    if (isPlainText && viewController) {
+    if (wcpl_isClownSupportedMessage(msgWrap) && viewController) {
         didSync = wcpl_syncLocalReplaceContent(viewController, msgWrap);
     }
 
@@ -755,7 +816,7 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         }
 
         wcpl_setLocalReplaceText(viewController, msgWrap, trimmed);
-        if (isPlainText) {
+        if (wcpl_isClownSupportedMessage(msgWrap)) {
             wcpl_syncLocalReplaceContent(viewController, msgWrap);
         }
 

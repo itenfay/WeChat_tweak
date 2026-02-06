@@ -1046,7 +1046,8 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     NSString *selfUserName = wcpl_currentSelfUserName();
     if (selfUserName.length == 0) {
-        WCPLLogDebug(@"红包自动回复提示: selfUserName 为空，使用兼容发送路径 session=%@", session);
+        WCPLLogDebug(@"红包自动回复失败: 无法获取 selfUserName session=%@", session);
+        return NO;
     }
 
     Class msgWrapClass = objc_getClass("CMessageWrap");
@@ -1056,7 +1057,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     }
 
     id msgWrap = nil;
-    if (selfUserName.length > 0 && [msgWrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
+    if ([msgWrapClass instancesRespondToSelector:@selector(initWithMsgType:nsFromUsr:)]) {
         @try {
             msgWrap = [[msgWrapClass alloc] initWithMsgType:1 nsFromUsr:selfUserName];
         } @catch (__unused NSException *exception0) {
@@ -1108,14 +1109,12 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     }
 
-    if (selfUserName.length > 0) {
-        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
-            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } else {
-            @try {
-                [msgWrap setValue:selfUserName forKey:@"m_nsFromUsr"];
-            } @catch (__unused NSException *exception6) {
-            }
+    if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+        ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsFromUsr:), selfUserName);
+    } else {
+        @try {
+            [msgWrap setValue:selfUserName forKey:@"m_nsFromUsr"];
+        } @catch (__unused NSException *exception6) {
         }
     }
 
@@ -1138,7 +1137,16 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     }
 
-    if (selfUserName.length > 0 && [session rangeOfString:@"@chatroom"].location != NSNotFound) {
+    if ([msgWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+        ((void (*)(id, SEL, unsigned int))objc_msgSend)(msgWrap, @selector(setM_uiStatus:), 1);
+    } else {
+        @try {
+            [msgWrap setValue:@(1) forKey:@"m_uiStatus"];
+        } @catch (__unused NSException *exceptionStatus) {
+        }
+    }
+
+    if ([session rangeOfString:@"@chatroom"].location != NSNotFound) {
         if ([msgWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
             ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsRealChatUsr:), selfUserName);
         } else {
@@ -1152,10 +1160,25 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     __block BOOL sent = NO;
     __block NSString *path = @"";
 
-    CMessageMgr *msgMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-    if (!msgMgr) {
-        WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
-        return NO;
+    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    if (sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+        @try {
+            [sendMessageMgr AddMsgToSendTable:session MsgWrap:msgWrap];
+            sent = YES;
+            path = @"SendMessageMgr";
+        } @catch (__unused NSException *exceptionSendMgr) {
+            sent = NO;
+            path = @"";
+        }
+    }
+
+    CMessageMgr *msgMgr = nil;
+    if (!sent) {
+        msgMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+        if (!msgMgr) {
+            WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
+            return NO;
+        }
     }
 
     void (^sendBlock)(void) = ^{
@@ -1190,7 +1213,9 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     };
 
-    sendBlock();
+    if (!sent) {
+        sendBlock();
+    }
 
     WCPLLogDebug(@"红包自动回复发送: session=%@ sent=%d path=%@ mainThread=%d",
                  session,

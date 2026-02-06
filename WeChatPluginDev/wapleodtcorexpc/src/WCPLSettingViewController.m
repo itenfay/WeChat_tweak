@@ -388,6 +388,16 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                 stored ? NSStringFromClass([stored class]) : @"(nil)",
                 (unsigned long)storedCount);
 
+    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"白名单"
+                                                   onlyChatRoom:YES
+                                                          scene:5
+                                             selectedUserNames:selected]) {
+        WCPLLogInfo(@"[设置] 白名单使用系统多选控制器: selected=%lu", (unsigned long)selected.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[设置] 白名单系统多选不可用，回退自定义控制器");
+
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
     multiSGVC.titleText = @"白名单";
@@ -407,6 +417,16 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
                 (unsigned long)selected.count,
                 stored ? NSStringFromClass([stored class]) : @"(nil)",
                 (unsigned long)storedCount);
+
+    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"黑名单"
+                                                   onlyChatRoom:YES
+                                                          scene:5
+                                             selectedUserNames:selected]) {
+        WCPLLogInfo(@"[设置] 黑名单使用系统多选控制器: selected=%lu", (unsigned long)selected.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[设置] 黑名单系统多选不可用，回退自定义控制器");
 
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
@@ -786,6 +806,16 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     self.groupSelectContext = WCPLGroupSelectContextIgnoreChatroom;
     NSArray *selected = [self wcpl_sanitizedUserNamesFromArray:[self ignoredChatroomUserNames]];
 
+    if ([self wcpl_presentMultiSelectContactsControllerWithTitle:@"屏蔽群聊"
+                                                   onlyChatRoom:YES
+                                                          scene:5
+                                             selectedUserNames:selected]) {
+        WCPLLogInfo(@"[设置] 屏蔽群聊使用系统多选控制器: selected=%lu", (unsigned long)selected.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[设置] 屏蔽群聊系统多选不可用，回退自定义控制器");
+
     WCPLMultiSelectGroupsViewController *multiSGVC = [[WCPLMultiSelectGroupsViewController alloc] initWithBlackList:selected];
     multiSGVC.delegate = self;
     multiSGVC.titleText = @"屏蔽群聊";
@@ -1160,10 +1190,15 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (void)onMultiSelectContactReturn:(NSArray *)arg1 {
     NSArray *userNames = [self wcpl_userNamesFromSelection:arg1];
+    WCPLLogInfo(@"[设置] MultiSelectContactReturn: ctx=%lu selected=%lu",
+                (unsigned long)self.groupSelectContext,
+                (unsigned long)userNames.count);
     if (self.groupSelectContext == WCPLGroupSelectContextIgnoreChatroom) {
         [self updateChatIgnoreInfoWithChatrooms:userNames];
     } else if (self.groupSelectContext == WCPLGroupSelectContextBlackList) {
         [WCPLRedEnvelopConfig sharedConfig].allowedGroupList = userNames;
+    } else if (self.groupSelectContext == WCPLGroupSelectContextRedEnvelopDenyList) {
+        [WCPLRedEnvelopConfig sharedConfig].blockedGroupList = userNames;
     } else {
         [self updateUserIgnoreInfoWithUsers:userNames];
     }
