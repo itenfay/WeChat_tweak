@@ -1,10 +1,12 @@
 #import "WCPLLogSettingsViewController.h"
 
 #import "WeChatRedEnvelop.h"
+#import "WCPLFuncService.h"
 #import "WCPLLogger.h"
 #import "WCPLLogUploader.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLRealtimeLogUploader.h"
+#import <objc/runtime.h>
 
 @interface WCPLLogSettingsViewController ()
 
