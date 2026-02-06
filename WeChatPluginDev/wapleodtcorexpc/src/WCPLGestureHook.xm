@@ -14,6 +14,38 @@ static const CGFloat kWCPLRepeatButtonSize = 20.0f;
 static const CGFloat kWCPLRepeatButtonEdgeInset = 1.0f;
 static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
 
+static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
+    if (!root || !buttons) {
+        return;
+    }
+    for (UIView *subview in root.subviews) {
+        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
+            [buttons addObject:(UIButton *)subview];
+        }
+        wcpl_collectRepeatButtonsFromView(subview, buttons);
+    }
+}
+
+static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
+        return NO;
+    }
+    NSString *content = msgWrap.m_nsContent;
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return NO;
+    }
+    if ([content rangeOfString:@"<refermsg>"].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"<type>57</type>"].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"<type><![CDATA[57]]></type>"].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
+}
+
 static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
     if (!msgWrap) {
         return NO;
@@ -146,6 +178,9 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
         return wcpl_trimTextForRepeat(msgWrap.m_nsContent);
     }
     if (msgWrap.m_uiMessageType == 49) {
+        if (!wcpl_isQuoteReplyAppMessage(msgWrap)) {
+            return nil;
+        }
         return wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
     }
     return nil;
@@ -198,6 +233,8 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 
 @interface CommonMessageCellView (WCPLRepeatButton)
 - (UIButton *)wchook_repeatButton;
+- (NSArray<UIButton *> *)wchook_allRepeatButtons;
+- (void)wchook_removeRepeatButtonsExcept:(UIButton *)keeper;
 - (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap;
 - (UIView *)wchook_bubbleAnchorView;
 - (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf;
@@ -216,12 +253,35 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 
 %new
 - (UIButton *)wchook_repeatButton {
-    for (UIView *subview in self.subviews) {
-        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
-            return (UIButton *)subview;
-        }
+    NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
+    if (buttons.count == 0) {
+        return nil;
     }
-    return nil;
+
+    UIButton *keeper = buttons.firstObject;
+    if (buttons.count > 1) {
+        [self wchook_removeRepeatButtonsExcept:keeper];
+        WCPLLogWarning(@"Repeat button dedup in cell: class=%@ removed=%lu", NSStringFromClass([self class]), (unsigned long)(buttons.count - 1));
+    }
+    return keeper;
+}
+
+%new
+- (NSArray<UIButton *> *)wchook_allRepeatButtons {
+    NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+    wcpl_collectRepeatButtonsFromView(self, buttons);
+    return buttons;
+}
+
+%new
+- (void)wchook_removeRepeatButtonsExcept:(UIButton *)keeper {
+    NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
+    for (UIButton *button in buttons) {
+        if (keeper && button == keeper) {
+            continue;
+        }
+        [button removeFromSuperview];
+    }
 }
 
 %new
@@ -231,8 +291,9 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     }
     switch (msgWrap.m_uiMessageType) {
         case 1:   // 文本
-        case 49:  // 引用消息
             return YES;
+        case 49:  // 引用消息
+            return wcpl_isQuoteReplyAppMessage(msgWrap);
         default:
             return NO;
     }
@@ -314,10 +375,14 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 
 %new
 - (void)wchook_removeRepeatButtonIfNeeded {
-    UIButton *button = [self wchook_repeatButton];
-    if (button) {
+    NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
+    if (buttons.count == 0) {
+        return;
+    }
+    for (UIButton *button in buttons) {
         [button removeFromSuperview];
     }
+    WCPLLogDebug(@"Repeat button removed: class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)buttons.count);
 }
 
 %new
@@ -346,6 +411,23 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     if (!bubbleView) {
         [self wchook_removeRepeatButtonIfNeeded];
         return;
+    }
+
+    NSArray<UIView *> *relatedViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+    NSUInteger crossViewRemoved = 0;
+    for (UIView *relatedView in relatedViews) {
+        if (!relatedView || relatedView == self) {
+            continue;
+        }
+        NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+        wcpl_collectRepeatButtonsFromView(relatedView, buttons);
+        for (UIButton *staleButton in buttons) {
+            [staleButton removeFromSuperview];
+            crossViewRemoved += 1;
+        }
+    }
+    if (crossViewRemoved > 0) {
+        WCPLLogWarning(@"Repeat button cross-view dedup: class=%@ removed=%lu", NSStringFromClass([self class]), (unsigned long)crossViewRemoved);
     }
 
     UIButton *button = [self wchook_repeatButton];

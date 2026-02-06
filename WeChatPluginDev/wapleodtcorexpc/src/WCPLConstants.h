@@ -20,6 +20,3 @@ static NSString *const kWCPLLoggerQueueLabel = @"com.wcpl.logger";
 static const NSTimeInterval kWCPLRedEnvelopOperationTimeout = 30.0;
 static const NSTimeInterval kWCPLAPICallTimeout = 5.0;
 
-#pragma mark - UI 配置
-static const NSTimeInterval kWCPLRepeatButtonThrottleInterval = 0.05;
-

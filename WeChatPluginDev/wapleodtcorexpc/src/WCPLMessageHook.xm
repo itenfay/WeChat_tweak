@@ -2,27 +2,11 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLAVManager.h"
-#import "WCPLMessageReplyManager.h"
-#import "WCPLConstants.h"
 #import "WCPLLogger.h"
 #import "RichTextView.h"
 #import <dispatch/dispatch.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
-
-// 复读按钮入口节流：避免长文本 layoutSubviews 高频触发导致重复创建
-static char kWCPLRepeatButtonLastCallKey;
-
-static BOOL wcpl_shouldThrottleRepeatButton(id cellView) {
-    if (!cellView) return YES;
-    NSNumber *last = objc_getAssociatedObject(cellView, &kWCPLRepeatButtonLastCallKey);
-    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-    if (last && (now - last.doubleValue) < kWCPLRepeatButtonThrottleInterval) {
-        return YES;
-    }
-    objc_setAssociatedObject(cellView, &kWCPLRepeatButtonLastCallKey, @(now), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return NO;
-}
 
 @interface TextMessageCellView (WCPLLocalReplace)
 - (void)wcpl_applyLocalReplaceIfNeeded;
@@ -90,6 +74,11 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
 static const void *kWCPLLocalReplaceMapKey = &kWCPLLocalReplaceMapKey;
 static const void *kWCPLLocalReplaceOriginKey = &kWCPLLocalReplaceOriginKey;
 static const void *kWCPLLocalReplaceLayoutingKey = &kWCPLLocalReplaceLayoutingKey;
+
+@interface CommonMessageCellView (WCHookSwipeEntry)
+- (void)wchook_setupSwipeGestureIfNeeded;
+- (void)wchook_resetSwipeAnimated:(BOOL)animated;
+@end
 
 static UIImage *wcpl_clownMenuIconImage(void) {
     static UIImage *icon = nil;
@@ -299,9 +288,6 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
 - (void)viewDidLoad {
     %orig;
-
-    // 复读功能现在通过 Hook CommonMessageCellView 实现
-    // 不再需要在这里添加按钮
 }
 
 - (void)viewDidAppear:(_Bool)arg1 {
@@ -364,80 +350,13 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
 %end
 
-// ==================== 复读机功能 Hook ====================
-// Hook 消息 Cell，添加与气泡一体化的复读按钮
+// 保持特殊消息 Cell 的滑动手势初始化
 
-%hook TextMessageCellView
-
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮
-    if (wcpl_shouldThrottleRepeatButton(self)) {
-        return;
-    }
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)setViewModel:(id)viewModel {
-    %orig;
-
-    // viewModel 设置完成后补一次，避免布局时机导致按钮消失
-    if (wcpl_shouldThrottleRepeatButton(self)) {
-        return;
-    }
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
-%end
-
-// Hook 应用消息 Cell（包括引用回复消息）
-%hook AppMessageCellView
-
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮（仅对引用回复消息）
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
-%end
-
-// Hook 表情包消息 Cell (App类型)
 %hook AppEmoticonMessageCellView
 
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
 - (void)didMoveToWindow {
     %orig;
 
-    // 确保表情包消息也支持滑动手势
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
     } else {
@@ -447,27 +366,11 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
 %end
 
-// Hook 表情包消息 Cell (普通类型)
 %hook EmoticonMessageCellView
 
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
 - (void)didMoveToWindow {
     %orig;
 
-    // 确保表情包消息也支持滑动手势
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
     } else {
@@ -477,42 +380,8 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
 %end
 
-// Hook 语音消息 Cell
-%hook VoiceMessageCellView
-
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
-%end
-
-// Hook 图片消息 Cell
 %hook ImageMessageCellView
 
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
-
 - (void)didMoveToWindow {
     %orig;
 
@@ -525,22 +394,7 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
 %end
 
-// Hook 视频消息 Cell
 %hook VideoMessageCellView
-
-- (void)layoutSubviews {
-    %orig;
-
-    // 添加复读按钮
-    [[WCPLMessageReplyManager sharedManager] addRepeatButtonToCellView:(CommonMessageCellView *)self];
-}
-
-- (void)prepareForReuse {
-    %orig;
-
-    // Cell 复用时移除按钮
-    [[WCPLMessageReplyManager sharedManager] removeRepeatButtonFromCellView:(CommonMessageCellView *)self];
-}
 
 - (void)didMoveToWindow {
     %orig;

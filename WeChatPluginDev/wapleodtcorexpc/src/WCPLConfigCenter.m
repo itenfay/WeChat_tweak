@@ -20,7 +20,6 @@
     if (self = [super init]) {
         _redEnvelop = [WCPLRedEnvelopConfig sharedConfig];
         _gesture = [WCPLGestureConfig sharedConfig];
-        _repeatButton = [WCPLRepeatButtonConfig sharedConfig];
         _location = [WCPLLocationConfig sharedConfig];
         _ignore = [WCPLIgnoreConfig sharedConfig];
         _av = [WCPLAVConfig sharedConfig];
