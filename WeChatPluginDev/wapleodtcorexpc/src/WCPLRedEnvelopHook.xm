@@ -621,6 +621,38 @@ static NSDictionary *wcpl_dictionaryFromHongbaoBuffer(SKBuiltinBuffer_t *buffer)
     return nil;
 }
 
+static NSDictionary *wcpl_nativeUrlDictionaryFromRequestDictionary(NSDictionary *requestDict) {
+    if (![requestDict isKindOfClass:[NSDictionary class]] || requestDict.count == 0) {
+        return nil;
+    }
+
+    NSString *nativeUrl = wcpl_stringForKeysInDictionary(requestDict, @[@"nativeUrl", @"nativeurl", @"native_url"]);
+    if (nativeUrl.length == 0) {
+        return nil;
+    }
+
+    NSString *decodedNativeUrl = [nativeUrl stringByRemovingPercentEncoding] ?: nativeUrl;
+    decodedNativeUrl = wcpl_trimString(decodedNativeUrl);
+    if (decodedNativeUrl.length == 0) {
+        return nil;
+    }
+
+    NSDictionary *nativeUrlDict = wcpl_dictionaryFromQueryString(decodedNativeUrl);
+    if (nativeUrlDict.count > 0) {
+        return nativeUrlDict;
+    }
+
+    NSRange qmark = [decodedNativeUrl rangeOfString:@"?"];
+    if (qmark.location != NSNotFound && qmark.location + 1 < decodedNativeUrl.length) {
+        nativeUrlDict = wcpl_dictionaryFromQueryString([decodedNativeUrl substringFromIndex:qmark.location + 1]);
+        if (nativeUrlDict.count > 0) {
+            return nativeUrlDict;
+        }
+    }
+
+    return nil;
+}
+
 static int wcpl_intFromSelector(id obj, SEL sel) {
     if (!obj || !sel) return 0;
     if (![obj respondsToSelector:sel]) return 0;
@@ -815,31 +847,17 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         return;
     }
 
-    NSDictionary *(^parseRequestNativeUrlDict)() = ^NSDictionary *() {
-        NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
-        if (![requestDict isKindOfClass:[NSDictionary class]] || requestDict.count == 0) return nil;
-        NSString *nativeUrl = wcpl_stringForKeyInDictionary(requestDict, @"nativeUrl");
-        if (nativeUrl.length == 0) return nil;
-        nativeUrl = [nativeUrl stringByRemovingPercentEncoding];
-        if (nativeUrl.length == 0) return nil;
-
-        NSDictionary *nativeUrlDict = wcpl_dictionaryFromQueryString(nativeUrl);
-        if (nativeUrlDict.count > 0) return nativeUrlDict;
-
-        NSRange qmark = [nativeUrl rangeOfString:@"?"];
-        if (qmark.location != NSNotFound && qmark.location + 1 < nativeUrl.length) {
-            nativeUrlDict = wcpl_dictionaryFromQueryString([nativeUrl substringFromIndex:qmark.location + 1]);
-        }
-
-        return nativeUrlDict;
-    };
-
     NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(res.retText);
     if (![responseDict isKindOfClass:[NSDictionary class]] || responseDict.count == 0) {
         return;
     }
 
-    NSDictionary *requestNativeUrlDict = parseRequestNativeUrlDict();
+    NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
+    if (![requestDict isKindOfClass:[NSDictionary class]]) {
+        requestDict = @{};
+    }
+
+    NSDictionary *requestNativeUrlDict = wcpl_nativeUrlDictionaryFromRequestDictionary(requestDict);
     NSString *requestSign = wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"sign");
     NSString *requestSendId = wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"sendid")
         ?: wcpl_stringForKeyInDictionary(requestNativeUrlDict, @"sendId")
@@ -959,12 +977,17 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         requestDict = @{};
     }
 
+    NSDictionary *requestNativeUrlDict = wcpl_nativeUrlDictionaryFromRequestDictionary(requestDict);
+
     NSString *sendId = wcpl_stringForKeysInDictionary(requestDict, @[@"sendId", @"sendid", @"send_id"])
-        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"sendId", @"sendid", @"send_id"]);
+        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"sendId", @"sendid", @"send_id"])
+        ?: wcpl_stringForKeysInDictionary(requestNativeUrlDict, @[@"sendId", @"sendid", @"send_id"]);
     NSString *sign = wcpl_stringForKeysInDictionary(requestDict, @[@"sign"])
-        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"sign"]);
+        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"sign"])
+        ?: wcpl_stringForKeysInDictionary(requestNativeUrlDict, @[@"sign"]);
     NSString *timingIdentifier = wcpl_stringForKeysInDictionary(requestDict, @[@"timingIdentifier", @"timing_identifier"])
-        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"timingIdentifier", @"timing_identifier"]);
+        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"timingIdentifier", @"timing_identifier"])
+        ?: wcpl_stringForKeysInDictionary(requestNativeUrlDict, @[@"timingIdentifier", @"timing_identifier"]);
 
     int errorType = wcpl_intFromSelector(res, @selector(errorType));
     int platRet = wcpl_intFromSelector(res, @selector(platRet));
@@ -1022,8 +1045,12 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     NSString *session = wcpl_stringForKeysInDictionary(requestDict,
                                                        @[@"sessionUserName", @"sessionusername", @"session_user_name"]);
+    if (session.length == 0) {
+        session = wcpl_stringForKeysInDictionary(requestNativeUrlDict,
+                                                 @[@"sessionUserName", @"sessionusername", @"session_user_name", @"chatroomname", @"chatRoomName", @"chat_room_name", @"talker"]);
+    }
     session = wcpl_normalizeSessionUserName(session);
-    NSString *sessionSource = @"request";
+    NSString *sessionSource = session.length > 0 ? (wcpl_stringForKeysInDictionary(requestDict, @[@"sessionUserName", @"sessionusername", @"session_user_name"]).length > 0 ? @"request" : @"request.nativeUrl") : @"request";
 
     if (session.length == 0) {
         NSString *trackedSource = nil;
@@ -1034,11 +1061,12 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     }
 
     if (session.length == 0) {
-        WCPLLogDebug(@"红包打开回包: cmd=4 缺少 sessionUserName，跳过自动回复 sendId=%@ signLen=%lu timingLen=%lu reqKeys=%lu resKeys=%lu",
+        WCPLLogDebug(@"红包打开回包: cmd=4 缺少 sessionUserName，跳过自动回复 sendId=%@ signLen=%lu timingLen=%lu reqKeys=%lu nativeKeys=%lu resKeys=%lu",
                      sendId ?: @"",
                      (unsigned long)sign.length,
                      (unsigned long)timingIdentifier.length,
                      (unsigned long)requestDict.count,
+                     (unsigned long)requestNativeUrlDict.count,
                      (unsigned long)responseDict.count);
         return;
     }

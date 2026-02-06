@@ -329,6 +329,48 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     return msgWrap.m_nsToUsr;
 }
 
+static NSString *wcpl_currentSelfUserNameForRepeat(void) {
+    __block NSString *selfUserName = nil;
+    void (^resolveBlock)(void) = ^{
+        id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+        if (!(contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)])) {
+            return;
+        }
+        @try {
+            id selfContact = ((id (*)(id, SEL))objc_msgSend)(contactMgr, @selector(getSelfContact));
+            if ([selfContact respondsToSelector:@selector(m_nsUsrName)]) {
+                id value = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(m_nsUsrName));
+                if ([value isKindOfClass:[NSString class]]) {
+                    NSString *trimmed = wcpl_trimTextForRepeat((NSString *)value);
+                    if (trimmed.length > 0) {
+                        selfUserName = [trimmed copy];
+                        return;
+                    }
+                }
+            }
+            @try {
+                id value = [selfContact valueForKey:@"m_nsUsrName"];
+                if ([value isKindOfClass:[NSString class]]) {
+                    NSString *trimmed = wcpl_trimTextForRepeat((NSString *)value);
+                    if (trimmed.length > 0) {
+                        selfUserName = [trimmed copy];
+                    }
+                }
+            } @catch (__unused NSException *exception0) {
+            }
+        } @catch (__unused NSException *exception) {
+            selfUserName = nil;
+        }
+    };
+
+    if ([NSThread isMainThread]) {
+        resolveBlock();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), resolveBlock);
+    }
+    return selfUserName;
+}
+
 static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
                                     NSString *chatName,
                                     BaseMsgContentViewController *chatVC,
@@ -427,10 +469,25 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap, NSString *cha
         }
     }
 
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
     if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
         } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)] && selfUserName.length > 0) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionSetFrom) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [chatName rangeOfString:@"@chatroom"].location != NSNotFound && [sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)] && selfUserName.length > 0) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionSetReal) {
         }
     }
 
@@ -456,6 +513,73 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap, NSString *cha
                        chatName,
                        hasAudioFile,
                        audioPath ?: @"(nil)",
+                       exception.reason ?: exception);
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap, NSString *chatName) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
+        return NO;
+    }
+
+    id sendWrap = msgWrap;
+    if ([msgWrap respondsToSelector:@selector(copy)]) {
+        @try {
+            id copiedWrap = [msgWrap copy];
+            if ([copiedWrap isKindOfClass:%c(CMessageWrap)]) {
+                sendWrap = copiedWrap;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
+        } @catch (__unused NSException *exceptionTo) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)] && selfUserName.length > 0) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionFrom) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [chatName rangeOfString:@"@chatroom"].location != NSNotFound && [sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)] && selfUserName.length > 0) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionReal) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
+        } @catch (__unused NSException *exceptionStatus) {
+        }
+    }
+
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
+        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_queue scene=voice msg=%@ chat=%@",
+                    wcpl_repeatMessageDebugInfo(msgWrap),
+                    chatName);
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat voice via SendMessageMgr failed: msg=%@ chat=%@ reason=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       chatName,
                        exception.reason ?: exception);
     }
 
@@ -1457,6 +1581,9 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     if (msgType == 34) {
         if (wcpl_repeatVoiceByRecordMessage(msgWrap, chatName)) {
+            return;
+        }
+        if (wcpl_repeatVoiceBySendMessageMgr(msgWrap, chatName)) {
             return;
         }
         if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"voice")) {
