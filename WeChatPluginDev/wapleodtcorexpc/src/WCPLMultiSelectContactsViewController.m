@@ -19,6 +19,7 @@
 @property (strong, nonatomic) ContactSelectView *selectView;
 @property (copy  , nonatomic) NSArray *selectedContacts;
 @property (nonatomic, assign) BOOL wcpl_didApplyInitialSelections;
+@property (nonatomic, assign) BOOL wcpl_userDidChangeSelection;
 
 @end
 
@@ -96,8 +97,8 @@
 
 - (void)onDone:(UIBarButtonItem *)item {
     if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectContactReturn:)]) {
-        NSArray *contacts = [self wcpl_selectedUserNames];
-        [self.delegate onMultiSelectContactReturn:contacts];
+        NSArray *result = self.wcpl_userDidChangeSelection ? [self wcpl_selectedUserNames] : [self wcpl_sanitizedUserNames:self.selectedContacts];
+        [self.delegate onMultiSelectContactReturn:result];
     }
 }
 
@@ -122,11 +123,21 @@
         return;
     }
     self.wcpl_didApplyInitialSelections = YES;
+    if ([self.selectView respondsToSelector:@selector(reloadContacts)]) {
+        @try {
+            [self.selectView reloadContacts];
+        } @catch (__unused NSException *exception) {
+        }
+    }
     [self wcpl_applySelectionsWithRetryCount:3 delay:0.25];
 }
 
 - (void)wcpl_applySelectionsWithRetryCount:(NSInteger)retryCount delay:(NSTimeInterval)delay {
     [self wcpl_applySelectionsOnce];
+    NSUInteger expected = [self wcpl_sanitizedUserNames:self.selectedContacts].count;
+    if (expected > 0 && [self getTotalSelectCount] >= expected) {
+        return;
+    }
     if (retryCount <= 0) {
         return;
     }
@@ -157,7 +168,7 @@
             continue;
         }
 
-        CContact *contact = WCPLFindContactByUserName(userName, contactMgr, self.selectView.m_contactsDataLogic);
+        id contact = [self wcpl_contactObjectForUserName:userName contactMgr:contactMgr];
         if (!contact) {
             continue;
         }
@@ -191,6 +202,7 @@
 }
 
 - (void)onSelectContact:(CContact *)arg1 {
+    self.wcpl_userDidChangeSelection = YES;
     self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
 }
 
@@ -199,6 +211,82 @@
 }
 
 #pragma mark - Private
+
+- (NSArray<NSString *> *)wcpl_sanitizedUserNames:(NSArray *)names {
+    if (![names isKindOfClass:[NSArray class]]) {
+        return @[];
+    }
+    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
+    for (id obj in names) {
+        if (![obj isKindOfClass:[NSString class]]) {
+            continue;
+        }
+        NSString *value = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (value.length > 0) {
+            [results addObject:value];
+        }
+    }
+    return results.array;
+}
+
+- (id)wcpl_contactObjectForUserName:(NSString *)userName contactMgr:(CContactMgr *)contactMgr {
+    if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
+        return nil;
+    }
+
+    id contact = nil;
+    if (contactMgr) {
+        @try {
+            contact = [contactMgr getContactByName:userName];
+        } @catch (__unused NSException *exception) {
+            contact = nil;
+        }
+        if (!contact) {
+            @try {
+                contact = [contactMgr getContactByNameFromDB:userName];
+            } @catch (__unused NSException *exception2) {
+                contact = nil;
+            }
+        }
+        if (!contact) {
+            @try {
+                contact = [contactMgr getContactByNameFromCache:userName];
+            } @catch (__unused NSException *exception3) {
+                contact = nil;
+            }
+        }
+    }
+    if (contact) {
+        return contact;
+    }
+
+    ContactsDataLogic *logic = self.selectView.m_contactsDataLogic;
+    if (logic && [logic respondsToSelector:@selector(getAllContactsDictionary)]) {
+        NSDictionary *all = nil;
+        @try {
+            all = [logic getAllContactsDictionary];
+        } @catch (__unused NSException *exception4) {
+            all = nil;
+        }
+        id direct = all[userName];
+        if (direct) {
+            return direct;
+        }
+        for (id obj in all.allValues) {
+            NSString *name = nil;
+            @try {
+                name = [obj valueForKey:@"m_nsUsrName"];
+            } @catch (__unused NSException *exception5) {
+                name = nil;
+            }
+            if ([name isKindOfClass:[NSString class]] && [name isEqualToString:userName]) {
+                return obj;
+            }
+        }
+    }
+
+    return nil;
+}
 
 - (NSString *)wcpl_userNameFromObject:(id)obj {
     if (!obj) return nil;
@@ -219,7 +307,20 @@
 
 - (NSArray<NSString *> *)wcpl_selectedUserNames {
     NSMutableOrderedSet<NSString *> *names = [NSMutableOrderedSet orderedSet];
-    NSDictionary *selected = self.selectView.m_dicMultiSelect ?: @{};
+    NSDictionary *selected = @{};
+    if ([self.selectView respondsToSelector:@selector(getDicSelectedContacts)]) {
+        @try {
+            id value = [self.selectView getDicSelectedContacts];
+            if ([value isKindOfClass:[NSDictionary class]]) {
+                selected = (NSDictionary *)value;
+            }
+        } @catch (__unused NSException *exception) {
+            selected = @{};
+        }
+    }
+    if (selected.count == 0) {
+        selected = self.selectView.m_dicMultiSelect ?: @{};
+    }
     for (id key in selected) {
         NSString *name = [self wcpl_userNameFromObject:key];
         if (!name) {
