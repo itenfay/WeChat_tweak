@@ -414,6 +414,7 @@ static NSString *wcpl_redEnvelopNotifyMessage(NSString *sessionUserName, NSInteg
     BOOL hasTotal = (totalAmount > 0);
     if (!hasTotal && amount > 0) {
         totalYuan = receiveYuan;
+        hasTotal = YES;
     }
 
     NSMutableString *message = [NSMutableString stringWithFormat:@"🎉 抢到红包提醒\n会话：%@\n本次金额：¥%@", sceneName, receiveYuan];
