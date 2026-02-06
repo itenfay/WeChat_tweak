@@ -281,6 +281,54 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
            fabs(left.size.height - right.size.height) <= epsilon;
 }
 
+static NSMapTable<NSString *, UIView *> *wcpl_repeatOwnerViewMap(void) {
+    static NSMapTable<NSString *, UIView *> *ownerMap;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        ownerMap = [NSMapTable strongToWeakObjectsMapTable];
+    });
+    return ownerMap;
+}
+
+static UIView *wcpl_repeatOwnerViewForMessageKey(NSString *messageKey) {
+    if (![messageKey isKindOfClass:[NSString class]] || messageKey.length == 0) {
+        return nil;
+    }
+    return [wcpl_repeatOwnerViewMap() objectForKey:messageKey];
+}
+
+static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *ownerView) {
+    if (![messageKey isKindOfClass:[NSString class]] || messageKey.length == 0) {
+        return;
+    }
+    NSMapTable<NSString *, UIView *> *map = wcpl_repeatOwnerViewMap();
+    if (ownerView) {
+        [map setObject:ownerView forKey:messageKey];
+    } else {
+        [map removeObjectForKey:messageKey];
+    }
+}
+
+static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class preferredClass) {
+    UIView *ownerView = nil;
+    for (UIView *candidate in relatedViews) {
+        if (!candidate || !candidate.window || candidate.hidden || candidate.alpha < 0.01f) {
+            continue;
+        }
+        if (!ownerView) {
+            ownerView = candidate;
+            continue;
+        }
+
+        BOOL candidatePreferred = preferredClass && [candidate isKindOfClass:preferredClass];
+        BOOL ownerPreferred = preferredClass && [ownerView isKindOfClass:preferredClass];
+        if (candidatePreferred && !ownerPreferred) {
+            ownerView = candidate;
+        }
+    }
+    return ownerView;
+}
+
 @interface CommonMessageCellView (WCPLRepeatButton)
 - (UIButton *)wchook_repeatButton;
 - (NSArray<UIButton *> *)wchook_allRepeatButtons;
@@ -292,6 +340,8 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
 - (void)wchook_removeRepeatButtonIfNeeded;
 - (void)wchook_updateRepeatButtonIfNeeded;
 - (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap;
+- (CGRect)showRectForMenuController;
+- (UIView *)getBgImageView;
 @end
 
 %hook CommonMessageCellView
@@ -423,10 +473,28 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
         bubbleFrame = [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
     }
 
-    CGFloat centerY = CGRectGetMaxY(bubbleFrame) - kWCPLRepeatButtonTailInsetY - kWCPLRepeatButtonSize * 0.5f;
+    CGRect menuRect = CGRectZero;
+    if ([self respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            menuRect = [self showRectForMenuController];
+        } @catch (__unused NSException *exception) {
+            menuRect = CGRectZero;
+        }
+    }
+
+    BOOL menuRectValid = !CGRectIsEmpty(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, self.bounds);
+    BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) && CGRectGetWidth(bubbleFrame) > 8.0f && CGRectGetHeight(bubbleFrame) > 8.0f;
+
+    CGRect baseRect = bubbleRectValid ? bubbleFrame : menuRect;
+    CGFloat anchorMaxY = bubbleRectValid ? CGRectGetMaxY(bubbleFrame) : CGRectGetMaxY(baseRect);
+    if (menuRectValid) {
+        anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(menuRect));
+    }
+
+    CGFloat centerY = anchorMaxY - kWCPLRepeatButtonTailInsetY - kWCPLRepeatButtonSize * 0.5f;
     CGFloat centerX = isSelf
-        ? (CGRectGetMinX(bubbleFrame) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonTailInsetX - kWCPLRepeatButtonSize * 0.5f)
-        : (CGRectGetMaxX(bubbleFrame) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonTailInsetX + kWCPLRepeatButtonSize * 0.5f);
+        ? (CGRectGetMinX(baseRect) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonTailInsetX - kWCPLRepeatButtonSize * 0.5f)
+        : (CGRectGetMaxX(baseRect) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonTailInsetX + kWCPLRepeatButtonSize * 0.5f);
 
     centerX = wcpl_repeatAlignToPixel(centerX);
     centerY = wcpl_repeatAlignToPixel(centerY);
@@ -470,7 +538,7 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
 
     objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, [NSValue valueWithCGRect:button.frame], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (didClamp) {
-        WCPLLogDebug(@"Repeat button clamped to cell end: class=%@ bubble=%@ button=%@", NSStringFromClass([self class]), NSStringFromCGRect(bubbleFrame), NSStringFromCGRect(button.frame));
+        WCPLLogDebug(@"Repeat button clamped to cell end: class=%@ bubble=%@ menu=%@ button=%@", NSStringFromClass([self class]), NSStringFromCGRect(bubbleFrame), NSStringFromCGRect(menuRect), NSStringFromCGRect(button.frame));
     }
 }
 
@@ -510,6 +578,14 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
     objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (msgWrap) {
+        NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
+        UIView *ownerView = wcpl_repeatOwnerViewForMessageKey(messageKey);
+        if (ownerView == self) {
+            wcpl_setRepeatOwnerViewForMessageKey(messageKey, nil);
+        }
+    }
     if (buttons.count > 1) {
         WCPLLogDebug(@"Repeat button remove cleanup: class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)buttons.count);
     }
@@ -569,19 +645,18 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
 
     objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
+    NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
+
     NSArray<UIView *> *relatedViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     if (relatedViews.count > 1) {
-        UIView *ownerView = self;
-        uintptr_t ownerAddress = (uintptr_t)(__bridge void *)self;
-        for (UIView *relatedView in relatedViews) {
-            if (!relatedView || !relatedView.window) {
-                continue;
+        UIView *ownerView = wcpl_repeatOwnerViewForMessageKey(messageKey);
+        if (!ownerView || !ownerView.window || ownerView.hidden || ownerView.alpha < 0.01f || ![relatedViews containsObject:ownerView]) {
+            ownerView = wcpl_selectRepeatOwnerView(relatedViews, [self class]);
+            if (!ownerView) {
+                ownerView = self;
             }
-            uintptr_t candidateAddress = (uintptr_t)(__bridge void *)relatedView;
-            if (candidateAddress < ownerAddress) {
-                ownerAddress = candidateAddress;
-                ownerView = relatedView;
-            }
+            wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
+            WCPLLogDebug(@"Repeat owner assign: class=%@ msg=%@ owner=%p peers=%lu", NSStringFromClass([self class]), messageKey, ownerView, (unsigned long)relatedViews.count);
         }
 
         if (ownerView != self) {
@@ -615,7 +690,6 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
         }
     }
 
-    NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
     NSString *lastMessageKey = objc_getAssociatedObject(self, kWCPLRepeatButtonMessageKey);
     BOOL isSameMessage = [lastMessageKey isEqualToString:messageKey];
 
