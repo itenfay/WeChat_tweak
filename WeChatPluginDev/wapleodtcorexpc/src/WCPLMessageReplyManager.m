@@ -848,6 +848,16 @@ static char kWCPLRepeatButtonUpdatingKey;
         NSString *oldKey = objc_getAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:));
         BOOL isSameMessage = (messageKey.length > 0 && [oldKey isEqualToString:messageKey]);
 
+        // 仅在“消息已切换”时清理旧按钮，避免同一个 cell 叠加多个残留按钮
+        if (oldKey.length > 0 && messageKey.length > 0 && ![oldKey isEqualToString:messageKey]) {
+            WCPLLog(@"复读按钮消息切换: cell=%@ oldKey=%@ newKey=%@",
+                    NSStringFromClass([cellView class]),
+                    oldKey,
+                    messageKey);
+            [self removeRepeatButtonFromCellView:cellView];
+            isSameMessage = NO;
+        }
+
         BOOL canRepeat = [self canRepeatMessage:msgWrap];
         if (!canRepeat) {
             WCPLLog(@"复读按钮跳过: 不支持复读 msgType=%u cell=%@", msgWrap.m_uiMessageType, NSStringFromClass([cellView class]));
