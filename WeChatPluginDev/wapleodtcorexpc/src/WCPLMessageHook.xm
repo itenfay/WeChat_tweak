@@ -4,7 +4,6 @@
 #import "WCPLAVManager.h"
 #import "WCPLLogger.h"
 #import "RichTextView.h"
-#import "MMMenuItem.h"
 #import <dispatch/dispatch.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -12,6 +11,13 @@
 @interface TextMessageCellView (WCPLLocalReplace)
 - (void)wcpl_applyLocalReplaceIfNeeded;
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender;
+@end
+
+@interface MMMenuItem : NSObject
+- (instancetype)initWithTitle:(id)title target:(id)target action:(SEL)action;
+- (SEL)action;
+- (void)setIconImage:(UIImage *)iconImage;
+@property(retain, nonatomic) UIImage *iconImage;
 @end
 
 static NSString *wcpl_trimString(NSString *text) {
