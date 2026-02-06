@@ -50,29 +50,73 @@
             continue;
         }
 
-        CContact *contact = WCPLFindContactByUserName(userName, contactMgr, self.selectView.m_contactsDataLogic);
-        if (!contact) {
-            WCPLLog(@"群聊预选跳过(未找到联系人): %@", userName);
-            continue;
-        }
-
-        id selectObject = contact;
         BOOL alreadySelected = NO;
-        if (selectObject && [self.selectView respondsToSelector:@selector(isSelected:)]) {
+        if ([self.selectView respondsToSelector:@selector(isSelected:)]) {
             @try {
-                alreadySelected = [self.selectView isSelected:selectObject];
+                alreadySelected = [self.selectView isSelected:userName];
             } @catch (__unused NSException *exception) {
                 alreadySelected = NO;
+            }
+        }
+
+        CContact *contact = nil;
+        if (!alreadySelected) {
+            contact = WCPLFindContactByUserName(userName, contactMgr, self.selectView.m_contactsDataLogic);
+            if (contact && [self.selectView respondsToSelector:@selector(isSelected:)]) {
+                @try {
+                    alreadySelected = [self.selectView isSelected:contact];
+                } @catch (__unused NSException *exception2) {
+                    alreadySelected = NO;
+                }
             }
         }
         if (alreadySelected) {
             continue;
         }
 
-        @try {
-            [self.selectView addSelect:contact];
-        } @catch (__unused NSException *exception) {
-            WCPLLog(@"群聊 addSelect 失败: %@", userName);
+        BOOL didAdd = NO;
+        if (contact) {
+            @try {
+                [self.selectView addSelect:contact];
+                didAdd = YES;
+            } @catch (__unused NSException *exception) {
+                didAdd = NO;
+            }
+        }
+        if (!didAdd) {
+            @try {
+                [self.selectView addSelect:userName];
+            } @catch (__unused NSException *exception2) {
+                // ignore
+            }
+        }
+
+        BOOL selectedNow = NO;
+        if ([self.selectView respondsToSelector:@selector(isSelected:)]) {
+            @try {
+                selectedNow = [self.selectView isSelected:userName];
+            } @catch (__unused NSException *exception3) {
+                selectedNow = NO;
+            }
+        }
+        if (!selectedNow) {
+            @try {
+                NSMutableDictionary *multi = self.selectView.m_dicMultiSelect;
+                if (![multi isKindOfClass:[NSMutableDictionary class]]) {
+                    multi = [multi isKindOfClass:[NSDictionary class]] ? [((NSDictionary *)multi) mutableCopy] : [NSMutableDictionary dictionary];
+                }
+                multi[userName] = userName;
+                self.selectView.m_dicMultiSelect = multi;
+
+                if ([self.selectView respondsToSelector:@selector(updateMultiSelectView)]) {
+                    [self.selectView updateMultiSelectView];
+                }
+                if ([self.selectView respondsToSelector:@selector(reloadTableView)]) {
+                    [self.selectView reloadTableView];
+                }
+            } @catch (__unused NSException *exception4) {
+                WCPLLog(@"群聊预选失败: %@", userName);
+            }
         }
     }
 
