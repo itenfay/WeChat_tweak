@@ -11,12 +11,14 @@
 #import "WCPLContactLookup.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLLogger.h"
+#import <dispatch/dispatch.h>
 #import <objc/runtime.h>
 
 @interface WCPLMultiSelectContactsViewController () <ContactSelectViewDelegate>
 
 @property (strong, nonatomic) ContactSelectView *selectView;
 @property (copy  , nonatomic) NSArray *selectedContacts;
+@property (nonatomic, assign) BOOL wcpl_didApplyInitialSelections;
 
 @end
 
@@ -38,89 +40,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
-    
-    for (NSString *contactName in self.selectedContacts) {
-        if (![contactName isKindOfClass:[NSString class]] || contactName.length == 0) {
-            continue;
-        }
-        NSString *userName = [contactName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (userName.length == 0) {
-            continue;
-        }
-
-        BOOL alreadySelected = NO;
-        if ([self.selectView respondsToSelector:@selector(isSelected:)]) {
-            @try {
-                alreadySelected = [self.selectView isSelected:userName];
-            } @catch (__unused NSException *exception) {
-                alreadySelected = NO;
-            }
-        }
-
-        CContact *contact = nil;
-        if (!alreadySelected) {
-            contact = WCPLFindContactByUserName(userName, contactMgr, self.selectView.m_contactsDataLogic);
-            if (contact && [self.selectView respondsToSelector:@selector(isSelected:)]) {
-                @try {
-                    alreadySelected = [self.selectView isSelected:contact];
-                } @catch (__unused NSException *exception2) {
-                    alreadySelected = NO;
-                }
-            }
-        }
-        if (alreadySelected) {
-            continue;
-        }
-
-        BOOL didAdd = NO;
-        if (contact) {
-            @try {
-                [self.selectView addSelect:contact];
-                didAdd = YES;
-            } @catch (__unused NSException *exception) {
-                didAdd = NO;
-            }
-        }
-        if (!didAdd) {
-            @try {
-                [self.selectView addSelect:userName];
-            } @catch (__unused NSException *exception2) {
-                // ignore
-            }
-        }
-
-        BOOL selectedNow = NO;
-        if ([self.selectView respondsToSelector:@selector(isSelected:)]) {
-            @try {
-                selectedNow = [self.selectView isSelected:userName];
-            } @catch (__unused NSException *exception3) {
-                selectedNow = NO;
-            }
-        }
-        if (!selectedNow) {
-            @try {
-                NSMutableDictionary *multi = self.selectView.m_dicMultiSelect;
-                if (![multi isKindOfClass:[NSMutableDictionary class]]) {
-                    multi = [multi isKindOfClass:[NSDictionary class]] ? [((NSDictionary *)multi) mutableCopy] : [NSMutableDictionary dictionary];
-                }
-                multi[userName] = userName;
-                self.selectView.m_dicMultiSelect = multi;
-
-                if ([self.selectView respondsToSelector:@selector(updateMultiSelectView)]) {
-                    [self.selectView updateMultiSelectView];
-                }
-                if ([self.selectView respondsToSelector:@selector(reloadTableView)]) {
-                    [self.selectView reloadTableView];
-                }
-            } @catch (__unused NSException *exception4) {
-                WCPLLog(@"好友预选失败: %@", userName);
-            }
-        }
-    }
 
     self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self wcpl_applyInitialSelectionsIfNeeded];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -187,6 +113,75 @@
     [self.selectView initView];
     
     [self.view addSubview:self.selectView];
+}
+
+#pragma mark - Preselect
+
+- (void)wcpl_applyInitialSelectionsIfNeeded {
+    if (self.wcpl_didApplyInitialSelections) {
+        return;
+    }
+    self.wcpl_didApplyInitialSelections = YES;
+    [self wcpl_applySelectionsWithRetryCount:3 delay:0.25];
+}
+
+- (void)wcpl_applySelectionsWithRetryCount:(NSInteger)retryCount delay:(NSTimeInterval)delay {
+    [self wcpl_applySelectionsOnce];
+    if (retryCount <= 0) {
+        return;
+    }
+
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        typeof(self) strongSelf = weakSelf;
+        if (!strongSelf || !strongSelf.isViewLoaded || !strongSelf.view.window) {
+            return;
+        }
+        [strongSelf wcpl_applySelectionsWithRetryCount:retryCount - 1 delay:delay];
+    });
+}
+
+- (void)wcpl_applySelectionsOnce {
+    NSArray *userNames = self.selectedContacts;
+    if (![userNames isKindOfClass:[NSArray class]] || userNames.count == 0) {
+        return;
+    }
+
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    for (NSString *contactName in userNames) {
+        if (![contactName isKindOfClass:[NSString class]] || contactName.length == 0) {
+            continue;
+        }
+        NSString *userName = [contactName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (userName.length == 0) {
+            continue;
+        }
+
+        CContact *contact = WCPLFindContactByUserName(userName, contactMgr, self.selectView.m_contactsDataLogic);
+        if (!contact) {
+            continue;
+        }
+
+        BOOL alreadySelected = NO;
+        if ([self.selectView respondsToSelector:@selector(isSelected:)]) {
+            @try {
+                alreadySelected = [self.selectView isSelected:contact];
+            } @catch (__unused NSException *exception) {
+                alreadySelected = NO;
+            }
+        }
+        if (alreadySelected) {
+            continue;
+        }
+
+        @try {
+            [self.selectView addSelect:contact];
+        } @catch (__unused NSException *exception2) {
+            WCPLLog(@"好友预选 addSelect 失败: %@", userName);
+        }
+    }
+
+    self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
 }
 
 #pragma mark - ContactSelectViewDelegate
