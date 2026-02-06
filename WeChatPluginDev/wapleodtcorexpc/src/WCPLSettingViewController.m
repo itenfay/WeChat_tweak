@@ -119,6 +119,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
         }
 
         [section addCell:[self createDelaySettingCell]];
+        [section addCell:[self createRedEnvelopNotifyTargetCell]];
     }
     
     [self.tableViewMgr addSection:section];
@@ -168,6 +169,46 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [alert addAction:cancelAction];
     [alert addAction:confirmAction];
 
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (NSString *)wcpl_redEnvelopNotifyTargetDisplayText {
+    switch ([WCPLRedEnvelopConfig sharedConfig].redEnvelopNotifyTarget) {
+        case WCPLRedEnvelopNotifyTargetSelf:
+            return @"发送给自己";
+        case WCPLRedEnvelopNotifyTargetFileHelper:
+            return @"发送给文件传输助手";
+        case WCPLRedEnvelopNotifyTargetDisabled:
+        default:
+            return @"关闭";
+    }
+}
+
+- (WCTableViewNormalCellManager *)createRedEnvelopNotifyTargetCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRedEnvelopNotifyTargetPicker) target:self title:@"抢包通知" rightValue:[self wcpl_redEnvelopNotifyTargetDisplayText] accessoryType:1];
+}
+
+- (void)showRedEnvelopNotifyTargetPicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"抢包通知"
+                                                                   message:@"抢到红包后发送通知（私聊/群聊都生效）"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].redEnvelopNotifyTarget = WCPLRedEnvelopNotifyTargetDisabled;
+        [self reloadTableData];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"发送给自己" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].redEnvelopNotifyTarget = WCPLRedEnvelopNotifyTargetSelf;
+        [self reloadTableData];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"发送给文件传输助手" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLRedEnvelopConfig sharedConfig].redEnvelopNotifyTarget = WCPLRedEnvelopNotifyTargetFileHelper;
+        [self reloadTableData];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 

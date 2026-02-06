@@ -18,8 +18,13 @@
 @interface WCRedEnvelopesLogicMgr (WCPLRedEnvelopAutoReply)
 - (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
 - (void)wcpl_trySendAutoReplyForSession:(NSString *)sessionUserName isGroup:(BOOL)isGroup;
+- (void)wcpl_trySendRedEnvelopNotifyForSession:(NSString *)sessionUserName isGroup:(BOOL)isGroup amount:(NSInteger)amount totalAmount:(NSInteger)totalAmount;
 - (BOOL)wcpl_sendTextMessage:(NSString *)content toSession:(NSString *)sessionUserName;
 @end
+
+static NSString *const kWCPLFileHelperUserName = @"filehelper";
+
+static NSString *wcpl_stringFromSelector(id obj, SEL sel);
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -316,6 +321,105 @@ static NSString *wcpl_safeUserNameFromObject(id obj) {
     }
 
     return nil;
+}
+
+static NSString *wcpl_safeDisplayNameFromObject(id obj) {
+    if (!obj) return nil;
+    if ([obj isKindOfClass:[NSString class]]) {
+        return wcpl_trimString((NSString *)obj);
+    }
+
+    SEL selectors[] = {
+        @selector(getContactDisplayName),
+        @selector(getContactName),
+        @selector(m_nsRemark),
+        @selector(m_nsNickName),
+        @selector(m_nsUsrName)
+    };
+
+    for (NSUInteger index = 0; index < sizeof(selectors) / sizeof(selectors[0]); index++) {
+        SEL selector = selectors[index];
+        if (![obj respondsToSelector:selector]) {
+            continue;
+        }
+        NSString *value = wcpl_stringFromSelector(obj, selector);
+        if (value.length > 0) {
+            return value;
+        }
+    }
+
+    NSArray<NSString *> *keys = @[@"m_nsRemark", @"m_nsNickName", @"m_nsUsrName"];
+    for (NSString *key in keys) {
+        @try {
+            id value = [obj valueForKey:key];
+            if ([value isKindOfClass:[NSString class]]) {
+                NSString *trimmed = wcpl_trimString((NSString *)value);
+                if (trimmed.length > 0) {
+                    return trimmed;
+                }
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return nil;
+}
+
+static NSString *wcpl_displayNameForSession(NSString *sessionUserName) {
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
+    if (session.length == 0) {
+        return nil;
+    }
+
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!contactMgr) {
+        return session;
+    }
+
+    id contact = nil;
+    @try {
+        if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
+            contact = [contactMgr getContactByName:session];
+        }
+        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
+            contact = [contactMgr getContactByNameFromDB:session];
+        }
+        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
+            contact = [contactMgr getContactByNameFromCache:session];
+        }
+    } @catch (__unused NSException *exception) {
+        contact = nil;
+    }
+
+    NSString *displayName = wcpl_safeDisplayNameFromObject(contact);
+    return displayName.length > 0 ? displayName : session;
+}
+
+static NSString *wcpl_currencyYuanString(NSInteger amountInCent) {
+    if (amountInCent <= 0) {
+        return @"0.00";
+    }
+    double amount = ((double)amountInCent) / 100.0;
+    return [NSString stringWithFormat:@"%.2f", amount];
+}
+
+static NSString *wcpl_redEnvelopNotifyMessage(NSString *sessionUserName, NSInteger amount, NSInteger totalAmount) {
+    NSString *sceneName = wcpl_displayNameForSession(sessionUserName);
+    if (sceneName.length == 0) {
+        sceneName = @"当前会话";
+    }
+
+    NSString *receiveYuan = wcpl_currencyYuanString(amount);
+    NSString *totalYuan = wcpl_currencyYuanString(totalAmount);
+    BOOL hasTotal = (totalAmount > 0);
+    if (!hasTotal && amount > 0) {
+        totalYuan = receiveYuan;
+    }
+
+    NSMutableString *message = [NSMutableString stringWithFormat:@"🎉 抢到红包提醒\n会话：%@\n本次金额：¥%@", sceneName, receiveYuan];
+    [message appendFormat:@"\n红包总额：%@", hasTotal ? [NSString stringWithFormat:@"¥%@", totalYuan] : @"未获取"];
+    [message appendString:@"\n状态：已自动领取"];
+    return message;
 }
 
 static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
@@ -808,6 +912,11 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                                                        @[@"amount", @"receiveAmount", @"receive_amount", @"recvAmount", @"recv_amount"],
                                                        &hasAmount);
 
+    BOOL hasTotalAmount = NO;
+    NSInteger totalAmount = wcpl_integerForKeysInDictionary(responseDict,
+                                                            @[@"totalAmount", @"total_amount", @"totalFee", @"total_fee", @"totalMoney", @"total_money", @"hbTotalAmount", @"hb_total_amount"],
+                                                            &hasTotalAmount);
+
     BOOL hasHbStatus = NO;
     NSInteger hbStatus = wcpl_integerForKeysInDictionary(responseDict, @[@"hbStatus", @"hb_status"], &hasHbStatus);
 
@@ -871,6 +980,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  (long)retCode,
                  (long)amount);
     [self wcpl_trySendAutoReplyForSession:session isGroup:isGroup];
+    [self wcpl_trySendRedEnvelopNotifyForSession:session isGroup:isGroup amount:amount totalAmount:(hasTotalAmount ? totalAmount : 0)];
 }
 
 %new
@@ -891,6 +1001,57 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  session,
                  isGroup,
                  (unsigned long)replyText.length,
+                 sent);
+}
+
+%new
+- (void)wcpl_trySendRedEnvelopNotifyForSession:(NSString *)sessionUserName isGroup:(BOOL)isGroup amount:(NSInteger)amount totalAmount:(NSInteger)totalAmount {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSInteger target = config.redEnvelopNotifyTarget;
+    if (target == WCPLRedEnvelopNotifyTargetDisabled) {
+        return;
+    }
+
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
+    if (session.length == 0) {
+        return;
+    }
+
+    NSString *notifyReceiver = nil;
+    if (target == WCPLRedEnvelopNotifyTargetSelf) {
+        CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+        if (contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)]) {
+            @try {
+                id selfContact = [contactMgr getSelfContact];
+                notifyReceiver = wcpl_safeUserNameFromObject(selfContact);
+            } @catch (__unused NSException *exception) {
+                notifyReceiver = nil;
+            }
+        }
+    } else if (target == WCPLRedEnvelopNotifyTargetFileHelper) {
+        notifyReceiver = kWCPLFileHelperUserName;
+    }
+
+    notifyReceiver = wcpl_normalizeSessionUserName(notifyReceiver);
+    if (notifyReceiver.length == 0) {
+        WCPLLogDebug(@"抢包通知跳过: 原因=目标用户为空 session=%@ target=%ld", session, (long)target);
+        return;
+    }
+
+    NSString *message = wcpl_redEnvelopNotifyMessage(session, amount, totalAmount);
+    if (isGroup) {
+        message = [message stringByAppendingString:@"\n场景：群聊"];
+    } else {
+        message = [message stringByAppendingString:@"\n场景：私聊"];
+    }
+
+    BOOL sent = [self wcpl_sendTextMessage:message toSession:notifyReceiver];
+    WCPLLogDebug(@"抢包通知发送: sourceSession=%@ targetSession=%@ target=%ld amount=%ld total=%ld sent=%d",
+                 session,
+                 notifyReceiver,
+                 (long)target,
+                 (long)amount,
+                 (long)totalAmount,
                  sent);
 }
 

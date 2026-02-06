@@ -21,6 +21,7 @@ static NSString *const kWCPLBlackList               = @"kWCPLBlackList";
 static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
 static NSString *const kWCPLPrivateAutoReplyText    = @"kWCPLPrivateAutoReplyText";
 static NSString *const kWCPLGroupAutoReplyText      = @"kWCPLGroupAutoReplyText";
+static NSString *const kWCPLRedEnvelopNotifyTarget  = @"kWCPLRedEnvelopNotifyTarget";
 
 static NSString *WCPLSanitizeReplyText(id value) {
     if (![value isKindOfClass:[NSString class]]) {
@@ -82,12 +83,20 @@ static NSString *WCPLSanitizeReplyText(id value) {
         _privateAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLPrivateAutoReplyText]);
         _groupAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLGroupAutoReplyText]);
 
-        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld autoReply(priv=%lu group=%lu)",
+        id notifyTargetValue = [defaults objectForKey:kWCPLRedEnvelopNotifyTarget];
+        NSInteger notifyTarget = notifyTargetValue ? [notifyTargetValue integerValue] : WCPLRedEnvelopNotifyTargetDisabled;
+        if (notifyTarget < WCPLRedEnvelopNotifyTargetDisabled || notifyTarget > WCPLRedEnvelopNotifyTargetFileHelper) {
+            notifyTarget = WCPLRedEnvelopNotifyTargetDisabled;
+        }
+        _redEnvelopNotifyTarget = notifyTarget;
+
+        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld autoReply(priv=%lu group=%lu) notifyTarget=%ld",
                     (unsigned long)_blackList.count,
                     (unsigned long)_groupDenyList.count,
                     (long)_groupRedEnvelopScope,
                     (unsigned long)_privateAutoReplyText.length,
-                    (unsigned long)_groupAutoReplyText.length);
+                    (unsigned long)_groupAutoReplyText.length,
+                    (long)_redEnvelopNotifyTarget);
     }
     return self;
 }
@@ -218,6 +227,16 @@ static NSString *WCPLSanitizeReplyText(id value) {
     _groupAutoReplyText = [WCPLSanitizeReplyText(groupAutoReplyText) copy];
     [self wcpl_setObject:_groupAutoReplyText forKey:kWCPLGroupAutoReplyText];
     WCPLLogInfo(@"[红包配置] Save group auto reply len=%lu", (unsigned long)_groupAutoReplyText.length);
+}
+
+- (void)setRedEnvelopNotifyTarget:(NSInteger)redEnvelopNotifyTarget {
+    NSInteger normalized = redEnvelopNotifyTarget;
+    if (normalized < WCPLRedEnvelopNotifyTargetDisabled || normalized > WCPLRedEnvelopNotifyTargetFileHelper) {
+        normalized = WCPLRedEnvelopNotifyTargetDisabled;
+    }
+    _redEnvelopNotifyTarget = normalized;
+    [self wcpl_setInteger:normalized forKey:kWCPLRedEnvelopNotifyTarget];
+    WCPLLogInfo(@"[红包配置] Save notify target=%ld", (long)normalized);
 }
 
 @end

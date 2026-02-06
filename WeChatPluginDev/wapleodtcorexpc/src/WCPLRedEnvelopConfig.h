@@ -7,6 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, WCPLRedEnvelopNotifyTarget) {
+    WCPLRedEnvelopNotifyTargetDisabled = 0,
+    WCPLRedEnvelopNotifyTargetSelf = 1,
+    WCPLRedEnvelopNotifyTargetFileHelper = 2,
+};
+
 @interface WCPLRedEnvelopConfig : NSObject
 
 + (instancetype)sharedConfig;
@@ -22,6 +28,7 @@
 @property (strong, nonatomic) NSArray *blockedGroupList;
 @property (copy, nonatomic) NSString *privateAutoReplyText;
 @property (copy, nonatomic) NSString *groupAutoReplyText;
+@property (assign, nonatomic) NSInteger redEnvelopNotifyTarget;
 
 // 旧命名（保持向后兼容）
 @property (strong, nonatomic) NSArray *blackList __attribute__((deprecated("Use allowedGroupList")));
