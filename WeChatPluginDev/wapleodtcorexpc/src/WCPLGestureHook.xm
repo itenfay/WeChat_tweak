@@ -196,6 +196,17 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     return msgWrap.m_nsToUsr;
 }
 
+@interface CommonMessageCellView (WCPLRepeatButton)
+- (UIButton *)wchook_repeatButton;
+- (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap;
+- (UIView *)wchook_bubbleAnchorView;
+- (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf;
+- (UIButton *)wchook_buildRepeatButton;
+- (void)wchook_removeRepeatButtonIfNeeded;
+- (void)wchook_updateRepeatButtonIfNeeded;
+- (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap;
+@end
+
 %hook CommonMessageCellView
 
 %property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
