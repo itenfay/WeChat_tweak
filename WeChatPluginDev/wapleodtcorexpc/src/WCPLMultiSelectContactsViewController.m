@@ -97,7 +97,21 @@
 
 - (void)onDone:(UIBarButtonItem *)item {
     if (self.delegate && [self.delegate respondsToSelector:@selector(onMultiSelectContactReturn:)]) {
-        NSArray *result = self.wcpl_userDidChangeSelection ? [self wcpl_selectedUserNames] : [self wcpl_sanitizedUserNames:self.selectedContacts];
+        NSArray<NSString *> *initial = [self wcpl_sanitizedUserNames:self.selectedContacts];
+        NSArray<NSString *> *current = [self wcpl_selectedUserNames];
+
+        BOOL didChange = self.wcpl_userDidChangeSelection;
+        if (!didChange) {
+            NSSet<NSString *> *initialSet = [NSSet setWithArray:initial];
+            NSSet<NSString *> *currentSet = [NSSet setWithArray:current];
+            if (![initialSet isEqualToSet:currentSet]) {
+                if (!(current.count == 0 && initial.count > 0)) {
+                    didChange = YES;
+                }
+            }
+        }
+
+        NSArray *result = didChange ? current : initial;
         [self.delegate onMultiSelectContactReturn:result];
     }
 }
@@ -239,15 +253,47 @@
 }
 
 - (void)onSelectContact:(CContact *)arg1 {
-    self.wcpl_userDidChangeSelection = YES;
-    self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
+    [self wcpl_markUserDidChangeSelection];
+}
+
+- (void)onSelectNormalContact:(CContact *)arg1 {
+    [self wcpl_markUserDidChangeSelection];
+}
+
+- (void)onExistContactDidSelected:(CContact *)arg1 {
+    [self wcpl_markUserDidChangeSelection];
+}
+
+- (void)onSelectRecommendGroup:(CContact *)arg1 {
+    [self wcpl_markUserDidChangeSelection];
+}
+
+- (void)onSelectHistoryGroup {
+    [self wcpl_markUserDidChangeSelection];
 }
 
 - (unsigned long)getTotalSelectCount {
-    return (unsigned long)[self.selectView.m_dicMultiSelect count];
+    ContactSelectView *selectView = self.selectView;
+    if (!selectView) {
+        return 0;
+    }
+
+    if ([selectView respondsToSelector:@selector(getTotalSelectCount)]) {
+        @try {
+            return (unsigned long)[selectView getTotalSelectCount];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return (unsigned long)[selectView.m_dicMultiSelect count];
 }
 
 #pragma mark - Private
+
+- (void)wcpl_markUserDidChangeSelection {
+    self.wcpl_userDidChangeSelection = YES;
+    self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:[self getTotalSelectCount]];
+}
 
 - (NSArray<NSString *> *)wcpl_sanitizedUserNames:(NSArray *)names {
     if (![names isKindOfClass:[NSArray class]]) {
