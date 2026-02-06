@@ -527,12 +527,18 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         return items;
     }
 
+    Class menuItemClass = objc_getClass("MMMenuItem");
+    if (!menuItemClass) {
+        return items;
+    }
+
     SEL action = @selector(wcpl_handleLocalReplaceMenuItem:);
     NSMutableArray *mutableItems = items ? [items mutableCopy] : [NSMutableArray array];
     for (id item in mutableItems) {
-        if ([item isKindOfClass:[MMMenuItem class]] && [item respondsToSelector:@selector(action)]) {
+        if ([item isKindOfClass:menuItemClass] && [item respondsToSelector:@selector(action)]) {
             @try {
-                if (((MMMenuItem *)item).action == action) {
+                SEL itemAction = ((SEL (*)(id, SEL))objc_msgSend)(item, @selector(action));
+                if (itemAction == action) {
                     return mutableItems;
                 }
             } @catch (__unused NSException *exception) {
@@ -540,7 +546,7 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         }
     }
 
-    MMMenuItem *menuItem = [[MMMenuItem alloc] initWithTitle:@"小丑" target:self action:action];
+    id menuItem = [[menuItemClass alloc] initWithTitle:@"小丑" target:self action:action];
     if (menuItem) {
         wcpl_applyMenuItemIcon(menuItem, wcpl_clownMenuIconImage());
         [mutableItems addObject:menuItem];
