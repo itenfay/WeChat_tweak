@@ -13,8 +13,11 @@
 static const NSInteger kWCPLRepeatButtonTag = 0x5743504C;
 static const CGFloat kWCPLRepeatButtonSize = 20.0f;
 static const CGFloat kWCPLRepeatButtonEdgeInset = 1.0f;
+static const CGFloat kWCPLRepeatButtonTailInsetX = 4.0f;
+static const CGFloat kWCPLRepeatButtonTailInsetY = 3.0f;
 static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
 static const void *kWCPLRepeatButtonViewKey = &kWCPLRepeatButtonViewKey;
+static const void *kWCPLRepeatButtonLastFrameKey = &kWCPLRepeatButtonLastFrameKey;
 
 static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
     if (!root || !buttons) {
@@ -365,13 +368,50 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     if (!button || !bubbleView) {
         return;
     }
-    CGRect bubbleFrame = bubbleView.frame;
-    CGFloat centerY = CGRectGetMidY(bubbleFrame);
-    CGFloat centerX = isSelf ? (CGRectGetMinX(bubbleFrame) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonSize * 0.5f)
-                             : (CGRectGetMaxX(bubbleFrame) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonSize * 0.5f);
+
+    (void)isSelf;
+
+    CGRect bubbleFrame = [self convertRect:bubbleView.bounds fromView:bubbleView];
+    if (CGRectIsEmpty(bubbleFrame) || CGRectGetWidth(bubbleFrame) <= 0.0f || CGRectGetHeight(bubbleFrame) <= 0.0f) {
+        bubbleFrame = [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
+    }
+
+    CGFloat centerX = CGRectGetMaxX(bubbleFrame) - kWCPLRepeatButtonTailInsetX - kWCPLRepeatButtonSize * 0.5f;
+    CGFloat centerY = CGRectGetMaxY(bubbleFrame) - kWCPLRepeatButtonTailInsetY - kWCPLRepeatButtonSize * 0.5f;
+
+    CGFloat halfSize = kWCPLRepeatButtonSize * 0.5f;
+    CGFloat minX = halfSize + kWCPLRepeatButtonEdgeInset;
+    CGFloat maxX = CGRectGetWidth(self.bounds) - halfSize - kWCPLRepeatButtonEdgeInset;
+    CGFloat minY = halfSize + kWCPLRepeatButtonEdgeInset;
+    CGFloat maxY = CGRectGetHeight(self.bounds) - halfSize - kWCPLRepeatButtonEdgeInset;
+    BOOL didClamp = NO;
+    if (centerX < minX) {
+        centerX = minX;
+        didClamp = YES;
+    } else if (centerX > maxX) {
+        centerX = maxX;
+        didClamp = YES;
+    }
+    if (centerY < minY) {
+        centerY = minY;
+        didClamp = YES;
+    } else if (centerY > maxY) {
+        centerY = maxY;
+        didClamp = YES;
+    }
+
     button.bounds = CGRectMake(0.0f, 0.0f, kWCPLRepeatButtonSize, kWCPLRepeatButtonSize);
     button.center = CGPointMake(centerX, centerY);
     [self bringSubviewToFront:button];
+
+    NSValue *lastFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
+    CGRect lastFrame = lastFrameValue ? lastFrameValue.CGRectValue : CGRectZero;
+    if (!CGRectEqualToRect(lastFrame, button.frame)) {
+        objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, [NSValue valueWithCGRect:button.frame], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        if (didClamp) {
+            WCPLLogDebug(@"Repeat button clamped to cell end: class=%@ bubble=%@ button=%@", NSStringFromClass([self class]), NSStringFromCGRect(bubbleFrame), NSStringFromCGRect(button.frame));
+        }
+    }
 }
 
 %new
