@@ -589,7 +589,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
             if (!error && statusCode != 0) {
                 message = [NSString stringWithFormat:@"服务器返回状态码: %ld", (long)statusCode];
             }
-            WCPLLog(@"日志上传失败: error=%@", message);
+            WCPLLog(@"日志上传失败: url=%@ status=%ld error=%@", urlString, (long)statusCode, message);
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
                                                                            message:message
                                                                     preferredStyle:UIAlertControllerStyleAlert];
