@@ -8,11 +8,13 @@
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#include <stdint.h>
 
 static const NSInteger kWCPLRepeatButtonTag = 0x5743504C;
 static const CGFloat kWCPLRepeatButtonSize = 20.0f;
 static const CGFloat kWCPLRepeatButtonEdgeInset = 1.0f;
 static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
+static const void *kWCPLRepeatButtonViewKey = &kWCPLRepeatButtonViewKey;
 
 static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
     if (!root || !buttons) {
@@ -253,8 +255,17 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 
 %new
 - (UIButton *)wchook_repeatButton {
+    UIButton *cachedButton = objc_getAssociatedObject(self, kWCPLRepeatButtonViewKey);
+    if ([cachedButton isKindOfClass:[UIButton class]] &&
+        cachedButton.tag == kWCPLRepeatButtonTag &&
+        cachedButton.superview &&
+        [cachedButton isDescendantOfView:self]) {
+        return cachedButton;
+    }
+
     NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
     if (buttons.count == 0) {
+        objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return nil;
     }
 
@@ -263,13 +274,23 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         [self wchook_removeRepeatButtonsExcept:keeper];
         WCPLLogWarning(@"Repeat button dedup in cell: class=%@ removed=%lu", NSStringFromClass([self class]), (unsigned long)(buttons.count - 1));
     }
+    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, keeper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return keeper;
 }
 
 %new
 - (NSArray<UIButton *> *)wchook_allRepeatButtons {
     NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
-    wcpl_collectRepeatButtonsFromView(self, buttons);
+    for (UIView *subview in self.subviews) {
+        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
+            [buttons addObject:(UIButton *)subview];
+        }
+    }
+
+    // 兼容历史实现：兜底递归扫描，清理潜在残留节点
+    if (buttons.count == 0) {
+        wcpl_collectRepeatButtonsFromView(self, buttons);
+    }
     return buttons;
 }
 
@@ -282,6 +303,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         }
         [button removeFromSuperview];
     }
+    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, keeper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 %new
@@ -377,12 +399,16 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 - (void)wchook_removeRepeatButtonIfNeeded {
     NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
     if (buttons.count == 0) {
+        objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return;
     }
     for (UIButton *button in buttons) {
         [button removeFromSuperview];
     }
-    WCPLLogDebug(@"Repeat button removed: class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)buttons.count);
+    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (buttons.count > 1) {
+        WCPLLogDebug(@"Repeat button remove cleanup: class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)buttons.count);
+    }
 }
 
 %new
@@ -414,26 +440,50 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     }
 
     NSArray<UIView *> *relatedViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
-    NSUInteger crossViewRemoved = 0;
-    for (UIView *relatedView in relatedViews) {
-        if (!relatedView || relatedView == self) {
-            continue;
+    if (relatedViews.count > 1) {
+        UIView *ownerView = self;
+        uintptr_t ownerAddress = (uintptr_t)(__bridge void *)self;
+        for (UIView *relatedView in relatedViews) {
+            if (!relatedView || !relatedView.window) {
+                continue;
+            }
+            uintptr_t candidateAddress = (uintptr_t)(__bridge void *)relatedView;
+            if (candidateAddress < ownerAddress) {
+                ownerAddress = candidateAddress;
+                ownerView = relatedView;
+            }
         }
-        NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
-        wcpl_collectRepeatButtonsFromView(relatedView, buttons);
-        for (UIButton *staleButton in buttons) {
-            [staleButton removeFromSuperview];
-            crossViewRemoved += 1;
+
+        if (ownerView != self) {
+            [self wchook_removeRepeatButtonIfNeeded];
+            return;
         }
-    }
-    if (crossViewRemoved > 0) {
-        WCPLLogWarning(@"Repeat button cross-view dedup: class=%@ removed=%lu", NSStringFromClass([self class]), (unsigned long)crossViewRemoved);
+
+        NSUInteger crossViewRemoved = 0;
+        for (UIView *relatedView in relatedViews) {
+            if (!relatedView || relatedView == self) {
+                continue;
+            }
+            NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+            wcpl_collectRepeatButtonsFromView(relatedView, buttons);
+            for (UIButton *staleButton in buttons) {
+                [staleButton removeFromSuperview];
+                crossViewRemoved += 1;
+            }
+            if (buttons.count > 0) {
+                objc_setAssociatedObject(relatedView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+        }
+        if (crossViewRemoved > 0) {
+            WCPLLogDebug(@"Repeat button owner cleanup: class=%@ peers=%lu removed=%lu", NSStringFromClass([self class]), (unsigned long)relatedViews.count, (unsigned long)crossViewRemoved);
+        }
     }
 
     UIButton *button = [self wchook_repeatButton];
     if (!button) {
         button = [self wchook_buildRepeatButton];
         [self addSubview:button];
+        objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, button, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     objc_setAssociatedObject(button, kWCPLRepeatButtonWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:!isFromOther];
