@@ -1021,6 +1021,14 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
 %new
 - (BOOL)wcpl_sendTextMessage:(NSString *)content toSession:(NSString *)sessionUserName {
+    if (![NSThread isMainThread]) {
+        __block BOOL sentOnMain = NO;
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            sentOnMain = [self wcpl_sendTextMessage:content toSession:sessionUserName];
+        });
+        return sentOnMain;
+    }
+
     NSString *text = wcpl_trimString(content);
     NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
     if (text.length == 0 || session.length == 0) {
@@ -1119,11 +1127,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     };
 
-    if ([NSThread isMainThread]) {
-        sendBlock();
-    } else {
-        dispatch_sync(dispatch_get_main_queue(), sendBlock);
-    }
+    sendBlock();
 
     WCPLLogDebug(@"红包自动回复发送: session=%@ sent=%d path=%@ mainThread=%d",
                  session,
