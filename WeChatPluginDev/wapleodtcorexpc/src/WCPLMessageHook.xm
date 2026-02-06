@@ -4,6 +4,7 @@
 #import "WCPLAVManager.h"
 #import "WCPLLogger.h"
 #import "RichTextView.h"
+#import "MMMenuItem.h"
 #import <dispatch/dispatch.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -11,11 +12,6 @@
 @interface TextMessageCellView (WCPLLocalReplace)
 - (void)wcpl_applyLocalReplaceIfNeeded;
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender;
-@end
-
-@interface MMMenuItem : NSObject
-- (instancetype)initWithTitle:(id)title target:(id)target action:(SEL)action;
-- (SEL)action;
 @end
 
 static NSString *wcpl_trimString(NSString *text) {
@@ -136,6 +132,112 @@ static NSString *wcpl_messageKey(CMessageWrap *msgWrap) {
 
 static BOOL wcpl_isPlainTextMessage(CMessageWrap *msgWrap) {
     return (msgWrap && msgWrap.m_uiMessageType == 1);
+}
+
+static BOOL wcpl_isQuoteReplyMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
+        return NO;
+    }
+    NSString *content = msgWrap.m_nsContent;
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return NO;
+    }
+    if ([content rangeOfString:@"<refermsg>"].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"<type>57</type>"].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"<type><![CDATA[57]]></type>"].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
+}
+
+static BOOL wcpl_isClownSupportedMessage(CMessageWrap *msgWrap) {
+    return wcpl_isPlainTextMessage(msgWrap) || wcpl_isQuoteReplyMessage(msgWrap);
+}
+
+static NSString *wcpl_extractQuoteTitleFromXML(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return nil;
+    }
+
+    NSArray<NSString *> *patterns = @[
+        @"<title><!\[CDATA\[(.*?)\]\]></title>",
+        @"<title>(.*?)</title>"
+    ];
+
+    for (NSString *pattern in patterns) {
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+        NSTextCheckingResult *result = [regex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+        if (!result || result.numberOfRanges < 2) {
+            continue;
+        }
+        NSString *title = [content substringWithRange:[result rangeAtIndex:1]];
+        NSString *trimmed = wcpl_trimString(title);
+        if (trimmed.length > 0) {
+            return trimmed;
+        }
+    }
+
+    return nil;
+}
+
+static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
+    if (!msgWrap) {
+        return nil;
+    }
+
+    if (wcpl_isPlainTextMessage(msgWrap)) {
+        return msgWrap.m_nsContent ?: @"";
+    }
+
+    if (!wcpl_isQuoteReplyMessage(msgWrap)) {
+        return nil;
+    }
+
+    if (cell && [cell respondsToSelector:@selector(viewModel)]) {
+        @try {
+            id viewModel = [cell viewModel];
+            if (viewModel && [viewModel respondsToSelector:@selector(contentText)]) {
+                id text = ((id (*)(id, SEL))objc_msgSend)(viewModel, @selector(contentText));
+                if ([text isKindOfClass:[NSString class]]) {
+                    NSString *trimmed = wcpl_trimString((NSString *)text);
+                    if (trimmed.length > 0) {
+                        return trimmed;
+                    }
+                }
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSString *title = wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
+    if (title.length > 0) {
+        return title;
+    }
+
+    return wcpl_trimString(msgWrap.m_nsContent);
+}
+
+static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon) {
+    if (!menuItem || !icon) {
+        return;
+    }
+
+    if ([menuItem respondsToSelector:@selector(setIconImage:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), icon);
+            return;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    @try {
+        [menuItem setValue:icon forKey:@"iconImage"];
+    } @catch (__unused NSException *exception) {
+    }
 }
 
 static CMessageWrap *wcpl_messageWrapFromCell(id cell) {
@@ -415,45 +517,37 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 - (id)operationMenuItems {
     NSArray *items = %orig;
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
-    if (!wcpl_isPlainTextMessage(msgWrap)) {
+    if (!wcpl_isClownSupportedMessage(msgWrap)) {
         return items;
     }
-    Class menuItemClass = objc_getClass("MMMenuItem");
-    if (!menuItemClass) {
-        return items;
-    }
+
     SEL action = @selector(wcpl_handleLocalReplaceMenuItem:);
     NSMutableArray *mutableItems = items ? [items mutableCopy] : [NSMutableArray array];
     for (id item in mutableItems) {
-        if ([item isKindOfClass:menuItemClass] && [item respondsToSelector:@selector(action)]) {
+        if ([item isKindOfClass:[MMMenuItem class]] && [item respondsToSelector:@selector(action)]) {
             @try {
-                if ([item action] == action) {
+                if (((MMMenuItem *)item).action == action) {
                     return mutableItems;
                 }
             } @catch (__unused NSException *exception) {
             }
         }
     }
-    id menuItem = [[menuItemClass alloc] initWithTitle:@"小丑" target:self action:action];
+
+    MMMenuItem *menuItem = [[MMMenuItem alloc] initWithTitle:@"小丑" target:self action:action];
     if (menuItem) {
-        if ([menuItem respondsToSelector:@selector(setIconImage:)]) {
-            UIImage *icon = wcpl_clownMenuIconImage();
-            if (icon) {
-                @try {
-                    ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), icon);
-                } @catch (__unused NSException *exception) {
-                }
-            }
-        }
+        wcpl_applyMenuItemIcon(menuItem, wcpl_clownMenuIconImage());
         [mutableItems addObject:menuItem];
+        WCPLLogDebug(@"[小丑] 注入长按菜单: type=%u", msgWrap.m_uiMessageType);
     }
+
     return mutableItems;
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
     if (arg1 == @selector(wcpl_handleLocalReplaceMenuItem:)) {
         CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
-        return wcpl_isPlainTextMessage(msgWrap);
+        return wcpl_isClownSupportedMessage(msgWrap);
     }
     return %orig;
 }
@@ -484,7 +578,10 @@ static void wcpl_clearLocalReplaceMap(id controller) {
             }
         }
         if (richTextView && [richTextView respondsToSelector:@selector(setContent:)]) {
-            NSString *originText = wcpl_originalContentForMessageWrap(msgWrap) ?: (msgWrap.m_nsContent ?: @"");
+            NSString *originText = wcpl_originalContentForMessageWrap(msgWrap);
+            if (originText.length == 0) {
+                originText = wcpl_displayTextForMessage(msgWrap, self) ?: (msgWrap.m_nsContent ?: @"");
+            }
             if (originText.length > 0) {
                 [richTextView setContent:originText];
             }
@@ -499,7 +596,8 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 %new
 - (void)wcpl_applyLocalReplaceIfNeeded {
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
-    if (!wcpl_isPlainTextMessage(msgWrap)) return;
+    if (!wcpl_isClownSupportedMessage(msgWrap)) return;
+
     id viewController = nil;
     if ([self respondsToSelector:@selector(getViewController)]) {
         @try {
@@ -508,14 +606,18 @@ static void wcpl_clearLocalReplaceMap(id controller) {
             viewController = nil;
         }
     }
+
+    BOOL isPlainText = wcpl_isPlainTextMessage(msgWrap);
     BOOL didSync = NO;
-    if (viewController) {
+    if (isPlainText && viewController) {
         didSync = wcpl_syncLocalReplaceContent(viewController, msgWrap);
     }
+
     NSString *replaceText = wcpl_localReplaceText(viewController, msgWrap);
     if (replaceText.length == 0 && !didSync) {
         return;
     }
+
     BOOL needsLayoutRefresh = didSync || replaceText.length > 0;
     RichTextView *richTextView = (RichTextView *)wcpl_safeObjectIvar(self, "m_richTextView");
     if (!richTextView) {
@@ -526,8 +628,18 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         }
     }
     if (!richTextView || ![richTextView respondsToSelector:@selector(setContent:)]) return;
-    NSString *displayText = replaceText.length > 0 ? replaceText : msgWrap.m_nsContent;
+
+    NSString *displayText = nil;
+    if (replaceText.length > 0) {
+        displayText = replaceText;
+    } else if (isPlainText) {
+        displayText = msgWrap.m_nsContent;
+    } else {
+        displayText = wcpl_displayTextForMessage(msgWrap, self);
+    }
+
     if (displayText.length == 0) return;
+
     if ([richTextView respondsToSelector:@selector(displayedText)]) {
         @try {
             NSString *currentText = [richTextView displayedText];
@@ -539,10 +651,12 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         } @catch (__unused NSException *exception) {
         }
     }
+
     [richTextView setContent:displayText];
     if ([richTextView respondsToSelector:@selector(forceDisplayInSync)]) {
         [richTextView forceDisplayInSync];
     }
+
     if (needsLayoutRefresh) {
         id viewModel = nil;
         if ([self respondsToSelector:@selector(viewModel)]) {
@@ -586,7 +700,7 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 %new
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender {
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
-    if (!wcpl_isPlainTextMessage(msgWrap)) return;
+    if (!wcpl_isClownSupportedMessage(msgWrap)) return;
 
     id viewController = nil;
     if ([self respondsToSelector:@selector(getViewController)]) {
@@ -600,7 +714,12 @@ static void wcpl_clearLocalReplaceMap(id controller) {
         return;
     }
 
-    NSString *originText = msgWrap.m_nsContent ?: @"";
+    BOOL isPlainText = wcpl_isPlainTextMessage(msgWrap);
+    NSString *originText = wcpl_displayTextForMessage(msgWrap, self);
+    if (originText.length == 0) {
+        originText = msgWrap.m_nsContent ?: @"";
+    }
+
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"小丑"
                                                                    message:@"仅在当前聊天页面生效，离开后自动恢复"
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -611,17 +730,25 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 
     __weak typeof(self) weakSelf = self;
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (!strongSelf) return;
+
         NSString *input = alert.textFields.firstObject.text ?: @"";
         NSString *trimmed = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (trimmed.length > 0 && !wcpl_originalContentForMessageWrap(msgWrap)) {
-            NSString *originText = msgWrap.m_nsContent ?: @"";
-            objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, originText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+
+        if (isPlainText && trimmed.length > 0 && !wcpl_originalContentForMessageWrap(msgWrap)) {
+            NSString *savedOriginText = msgWrap.m_nsContent ?: @"";
+            objc_setAssociatedObject(msgWrap, kWCPLLocalReplaceOriginKey, savedOriginText, OBJC_ASSOCIATION_COPY_NONATOMIC);
         }
+
         wcpl_setLocalReplaceText(viewController, msgWrap, trimmed);
-        wcpl_syncLocalReplaceContent(viewController, msgWrap);
+        if (isPlainText) {
+            wcpl_syncLocalReplaceContent(viewController, msgWrap);
+        }
+
+        WCPLLogInfo(@"[小丑] 应用替换: type=%u len=%lu", msgWrap.m_uiMessageType, (unsigned long)trimmed.length);
+
         if ([viewController respondsToSelector:@selector(clearNodeLayoutCache)]) {
             @try {
                 [(BaseMsgContentViewController *)viewController clearNodeLayoutCache];
@@ -641,7 +768,6 @@ static void wcpl_clearLocalReplaceMap(id controller) {
             }
         }
 
-        // 文本变更后强制消息列表重新计算该行布局（否则气泡宽度可能沿用旧缓存，需滚动/刷新才会自适配）
         dispatch_async(dispatch_get_main_queue(), ^{
             if (![viewController respondsToSelector:@selector(getMsgTableView)]) return;
             UITableView *tableView = nil;

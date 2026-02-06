@@ -9,6 +9,9 @@ static NSString *const kWCPLSwipeGestureEnable      = @"kWCPLSwipeGestureEnable"
 static NSString *const kWCPLSwipeQuoteEnable        = @"kWCPLSwipeQuoteEnable";
 static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable";
 static NSString *const kWCPLRepeatButtonEnable      = @"kWCPLRepeatButtonEnable";
+static NSString *const kWCPLRepeatSupportEmoticonEnable = @"kWCPLRepeatSupportEmoticonEnable";
+static NSString *const kWCPLRepeatSupportVoiceEnable = @"kWCPLRepeatSupportVoiceEnable";
+static NSString *const kWCPLRepeatSupportImageEnable = @"kWCPLRepeatSupportImageEnable";
 static NSString *const kWCPLSwipeSensitivityLevel   = @"kWCPLSwipeSensitivityLevel";
 static NSString *const kWCPLSwipeLeftOtherAction    = @"kWCPLSwipeLeftOtherAction";
 static NSString *const kWCPLSwipeLeftSelfAction     = @"kWCPLSwipeLeftSelfAction";
@@ -53,6 +56,14 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         _tapReferJumpEnable = [defaults boolForKey:kWCPLTapReferJumpEnable];
         _repeatButtonEnable = [defaults boolForKey:kWCPLRepeatButtonEnable];
 
+        NSNumber *repeatEmoticonEnabled = [defaults objectForKey:kWCPLRepeatSupportEmoticonEnable];
+        NSNumber *repeatVoiceEnabled = [defaults objectForKey:kWCPLRepeatSupportVoiceEnable];
+        NSNumber *repeatImageEnabled = [defaults objectForKey:kWCPLRepeatSupportImageEnable];
+
+        _repeatSupportEmoticonEnable = repeatEmoticonEnabled ? repeatEmoticonEnabled.boolValue : YES;
+        _repeatSupportVoiceEnable = repeatVoiceEnabled ? repeatVoiceEnabled.boolValue : YES;
+        _repeatSupportImageEnable = repeatImageEnabled ? repeatImageEnabled.boolValue : YES;
+
         NSNumber *sensitivity = [defaults objectForKey:kWCPLSwipeSensitivityLevel];
         _swipeSensitivityLevel = sensitivity ? sensitivity.integerValue : 1;
 
@@ -88,6 +99,21 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 - (void)setRepeatButtonEnable:(BOOL)repeatButtonEnable {
     _repeatButtonEnable = repeatButtonEnable;
     [[NSUserDefaults standardUserDefaults] setBool:repeatButtonEnable forKey:kWCPLRepeatButtonEnable];
+}
+
+- (void)setRepeatSupportEmoticonEnable:(BOOL)repeatSupportEmoticonEnable {
+    _repeatSupportEmoticonEnable = repeatSupportEmoticonEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportEmoticonEnable forKey:kWCPLRepeatSupportEmoticonEnable];
+}
+
+- (void)setRepeatSupportVoiceEnable:(BOOL)repeatSupportVoiceEnable {
+    _repeatSupportVoiceEnable = repeatSupportVoiceEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportVoiceEnable forKey:kWCPLRepeatSupportVoiceEnable];
+}
+
+- (void)setRepeatSupportImageEnable:(BOOL)repeatSupportImageEnable {
+    _repeatSupportImageEnable = repeatSupportImageEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatSupportImageEnable forKey:kWCPLRepeatSupportImageEnable];
 }
 
 - (void)setSwipeSensitivityLevel:(NSInteger)swipeSensitivityLevel {

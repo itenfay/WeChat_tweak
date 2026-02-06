@@ -212,6 +212,110 @@ jobs:
           echo "=== Listing obj directory ==="
           ls -la WeChatPluginDev/wapleodtcorexpc/.theos/obj/ 2>/dev/null || echo "obj directory not found"
 
+      - name: Compare rootless and roothide payload
+        if: always()
+        run: |
+          set +e
+
+          PKG_DIR="WeChatPluginDev/wapleodtcorexpc/packages"
+          ROOTLESS_PKG=$(ls "$PKG_DIR"/*-rootless.deb 2>/dev/null | head -n 1)
+          ROOTHIDE_PKG=$(ls "$PKG_DIR"/*-roothide.deb 2>/dev/null | head -n 1)
+
+          echo "rootless pkg: ${ROOTLESS_PKG:-not-found}"
+          echo "roothide pkg: ${ROOTHIDE_PKG:-not-found}"
+
+          extract_deb() {
+            local pkg="$1"
+            local out="$2"
+            rm -rf "$out"
+            mkdir -p "$out"
+
+            if [ ! -f "$pkg" ]; then
+              return 1
+            fi
+
+            ( cd "$out" && ar -x "$GITHUB_WORKSPACE/$pkg" ) || return 1
+            local data_tar
+            data_tar=$(find "$out" -maxdepth 1 -type f -name 'data.tar*' | head -n 1)
+            if [ -z "$data_tar" ]; then
+              return 1
+            fi
+
+            case "$data_tar" in
+              *.xz) tar -xJf "$data_tar" -C "$out" ;;
+              *.zst) tar --use-compress-program=unzstd -xf "$data_tar" -C "$out" ;;
+              *.gz) tar -xzf "$data_tar" -C "$out" ;;
+              *) tar -xf "$data_tar" -C "$out" ;;
+            esac
+          }
+
+          ROOTLESS_OUT="$RUNNER_TEMP/wcpl_rootless_pkg"
+          ROOTHIDE_OUT="$RUNNER_TEMP/wcpl_roothide_pkg"
+
+          extract_deb "$ROOTLESS_PKG" "$ROOTLESS_OUT"
+          rootless_status=$?
+          extract_deb "$ROOTHIDE_PKG" "$ROOTHIDE_OUT"
+          roothide_status=$?
+
+          ROOTLESS_DYLIB=$(find "$ROOTLESS_OUT" -type f -name '*.dylib' | head -n 1)
+          ROOTHIDE_DYLIB=$(find "$ROOTHIDE_OUT" -type f -name '*.dylib' | head -n 1)
+
+          echo "rootless dylib: ${ROOTLESS_DYLIB:-not-found}"
+          echo "roothide dylib: ${ROOTHIDE_DYLIB:-not-found}"
+
+          {
+            echo "### Package Diagnostics"
+            echo ""
+            echo "- Rootless package: \`${ROOTLESS_PKG:-not-found}\`"
+            echo "- Roothide package: \`${ROOTHIDE_PKG:-not-found}\`"
+            echo "- Rootless extract status: $rootless_status"
+            echo "- Roothide extract status: $roothide_status"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ -n "$ROOTLESS_DYLIB" ] && [ -n "$ROOTHIDE_DYLIB" ]; then
+            echo "=== Dylib hash/size ==="
+            shasum -a 256 "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+            ls -lh "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+
+            {
+              echo "#### Dylib Hash"
+              echo "\`\`\`"
+              shasum -a 256 "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Dylib Size"
+              echo "\`\`\`"
+              ls -lh "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Rootless otool -L"
+              echo "\`\`\`"
+              otool -L "$ROOTLESS_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Roothide otool -L"
+              echo "\`\`\`"
+              otool -L "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Rootless key symbols"
+              echo "\`\`\`"
+              nm -j "$ROOTLESS_DYLIB" 2>/dev/null | grep -E 'wchook_repeatMessageWrap|wcpl_handleLocalReplaceMenuItem|WCPLLogSettingsViewController' || true
+              echo "\`\`\`"
+
+              echo "#### Roothide key symbols"
+              echo "\`\`\`"
+              nm -j "$ROOTHIDE_DYLIB" 2>/dev/null | grep -E 'wchook_repeatMessageWrap|wcpl_handleLocalReplaceMenuItem|WCPLLogSettingsViewController' || true
+              echo "\`\`\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Unable to locate both dylibs for diagnostics"
+            echo "- Unable to locate both dylibs for diagnostics" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          set -e
+
       - name: Upload DEB artifacts
         if: always()
         uses: actions/upload-artifact@v4

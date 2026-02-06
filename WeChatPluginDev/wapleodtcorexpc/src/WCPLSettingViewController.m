@@ -13,9 +13,8 @@
 #import "WCPLServiceCenter.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLLogger.h"
-#import "WCPLLogUploader.h"
 #import "WCPLCrashReporter.h"
-#import "WCPLRealtimeLogUploader.h"
+#import "WCPLLogSettingsViewController.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -87,6 +86,8 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self addMessageIgnoreSettingSection];
     [self addOtherSettingSection];
     [self addSwipeQuoteSettingSection];
+    [self addRepeatBubbleSettingSection];
+    [self addLogEntrySection];
 
     MMTableView *tableView = [self.tableViewMgr getTableView];
     [tableView reloadData];
@@ -421,17 +422,23 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
 
     [section addCell:[self createAbortRemokeMessageCell]];
-    [section addCell:[self createDebugLogSwitchCell]];
-    if ([WCPLLogger sharedLogger].enabled) {
-        [section addCell:[self createLogLevelCell]];
-    }
-    [section addCell:[self createDebugLogCell]];
-    [section addCell:[self createRealtimeDebugLogUploadSwitchCell]];
-    [section addCell:[self createCrashLogSwitchCell]];
-    [section addCell:[self createCrashAutoUploadSwitchCell]];
-    [section addCell:[self createLogUploadURLCell]];
 
     [self.tableViewMgr addSection:section];
+}
+
+- (void)addLogEntrySection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"日志与调试"];
+    [section addCell:[self createLogEntryCell]];
+    [self.tableViewMgr addSection:section];
+}
+
+- (WCTableViewNormalCellManager *)createLogEntryCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(openLogSettings) target:self title:@"日志设置" rightValue:@"" accessoryType:1];
+}
+
+- (void)openLogSettings {
+    WCPLLogSettingsViewController *controller = [[WCPLLogSettingsViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (WCTableViewNormalCellManager *)createAbortRemokeMessageCell {
@@ -442,305 +449,13 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [WCPLConfigCenter shared].revoke.revokeEnable = sender.on;
 }
 
-- (WCTableViewNormalCellManager *)createDebugLogCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDebugLog) target:self title:@"查看调试日志" rightValue:@"" accessoryType:1];
-}
-
-- (NSString *)wcpl_logLevelName:(WCPLLogLevel)level {
-    switch (level) {
-        case WCPLLogLevelDebug: return @"调试 (Debug)";
-        case WCPLLogLevelInfo: return @"信息 (Info)";
-        case WCPLLogLevelWarning: return @"警告 (Warn)";
-        case WCPLLogLevelError: return @"错误 (Error)";
-        case WCPLLogLevelNone:
-        default: return @"关闭";
-    }
-}
-
-- (WCTableViewNormalCellManager *)createLogLevelCell {
-    WCPLLogLevel level = [WCPLLogger currentLevel];
-    NSString *name = [self wcpl_logLevelName:level];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showLogLevelPicker) target:self title:@"日志等级" rightValue:name accessoryType:1];
-}
-
-- (void)showLogLevelPicker {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志等级"
-                                                                   message:@"等级越低越详细；关闭将停止写入文件日志"
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    __weak typeof(self) weakSelf = self;
-    void (^applyLevel)(WCPLLogLevel) = ^(WCPLLogLevel level) {
-        __strong typeof(weakSelf) self = weakSelf;
-        if (!self) return;
-
-        [WCPLLogger setLogLevel:level];
-        if (level == WCPLLogLevelNone) {
-            [[WCPLRealtimeLogUploader sharedUploader] stop];
-        } else if ([WCPLRealtimeLogUploader sharedUploader].enabled) {
-            [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
-        }
-        [self reloadTableData];
-    };
-
-    NSArray<NSDictionary *> *items = @[
-        @{@"title": @"调试 (Debug) - 最详细", @"level": @(WCPLLogLevelDebug)},
-        @{@"title": @"信息 (Info)", @"level": @(WCPLLogLevelInfo)},
-        @{@"title": @"警告 (Warn)", @"level": @(WCPLLogLevelWarning)},
-        @{@"title": @"错误 (Error)", @"level": @(WCPLLogLevelError)},
-        @{@"title": @"关闭", @"level": @(WCPLLogLevelNone)},
-    ];
-
-    for (NSDictionary *item in items) {
-        NSString *title = item[@"title"];
-        NSNumber *levelNum = item[@"level"];
-        if (![title isKindOfClass:[NSString class]] || ![levelNum respondsToSelector:@selector(integerValue)]) {
-            continue;
-        }
-        UIAlertActionStyle style = ([levelNum integerValue] == WCPLLogLevelNone) ? UIAlertActionStyleDestructive : UIAlertActionStyleDefault;
-        [alert addAction:[UIAlertAction actionWithTitle:title style:style handler:^(__unused UIAlertAction *action) {
-            applyLevel((WCPLLogLevel)[levelNum integerValue]);
-        }]];
-    }
-
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createRealtimeDebugLogUploadSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRealtimeDebugLogUpload:) target:self title:@"实时上传调试日志" on:[WCPLRealtimeLogUploader sharedUploader].enabled];
-}
-
-- (void)settingRealtimeDebugLogUpload:(UISwitch *)sender {
-    if (sender.on && ![WCPLLogger sharedLogger].enabled) {
-        sender.on = NO;
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"未启用日志"
-                                                                       message:@"请先开启调试日志"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
-
-    [WCPLRealtimeLogUploader sharedUploader].enabled = sender.on;
-    if (sender.on) {
-        [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
-    } else {
-        [[WCPLRealtimeLogUploader sharedUploader] stop];
-    }
-}
-
-- (void)showDebugLog {
-    WCPLLogger *logger = [WCPLLogger sharedLogger];
-    NSString *logPath = [logger logFilePath];
-
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"调试日志"
-                                                                   message:[NSString stringWithFormat:@"日志文件位置:\n%@", logPath]
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    // 查看最近100行日志
-    UIAlertAction *viewAction = [UIAlertAction actionWithTitle:@"查看最近日志" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSString *recentLog = [logger readRecentLog:100];
-        [self showLogContent:recentLog];
-    }];
-
-    // 上传日志到本地
-    UIAlertAction *uploadAction = [UIAlertAction actionWithTitle:@"上传日志到本地(HTTP)" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self uploadDebugLogToLocalServer];
-    }];
-
-    // 复制日志文件路径
-    UIAlertAction *copyPathAction = [UIAlertAction actionWithTitle:@"复制文件路径" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = logPath;
-
-        UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
-                                                                               message:@"日志文件路径已复制到剪贴板"
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-        [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:successAlert animated:YES completion:nil];
-    }];
-
-    // 清空日志
-    UIAlertAction *clearAction = [UIAlertAction actionWithTitle:@"清空日志" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        UIAlertController *confirmAlert = [UIAlertController alertControllerWithTitle:@"确认清空"
-                                                                               message:@"确定要清空所有调试日志吗？"
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-        [confirmAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-        [confirmAlert addAction:[UIAlertAction actionWithTitle:@"清空" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-            [logger clearLog];
-            UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
-                                                                                   message:@"日志已清空"
-                                                                            preferredStyle:UIAlertControllerStyleAlert];
-            [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-            [self presentViewController:successAlert animated:YES completion:nil];
-        }]];
-        [self presentViewController:confirmAlert animated:YES completion:nil];
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-
-    [alert addAction:viewAction];
-    [alert addAction:uploadAction];
-    [alert addAction:copyPathAction];
-    [alert addAction:clearAction];
-    [alert addAction:cancelAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (void)uploadDebugLogToLocalServer {
-    if (![WCPLLogger sharedLogger].enabled) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"未启用日志"
-                                                                       message:@"请先开启调试日志"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
-
-    NSString *urlString = [WCPLLogUploader currentUploadURLString];
-    if (![WCPLLogUploader isValidUploadURLString:urlString]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"地址无效"
-                                                                       message:urlString
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
-
-    NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
-    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:logPath error:nil];
-    unsigned long long logSize = [attributes fileSize];
-    if (logSize == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志为空"
-                                                                       message:@"没有可上传的日志内容"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
-
-    WCPLLog(@"准备上传日志: url=%@ size=%llu path=%@", urlString, logSize, logPath);
-
-    [WCPLLogUploader uploadLogFileAtPath:logPath logName:@"wcpl_debug.log" completion:^(BOOL success, NSInteger statusCode, NSError *error) {
-        if (!success || error) {
-            NSString *message = error.localizedDescription ?: @"未知错误";
-            if (!error && statusCode != 0) {
-                message = [NSString stringWithFormat:@"服务器返回状态码: %ld", (long)statusCode];
-            }
-            WCPLLog(@"日志上传失败: url=%@ status=%ld error=%@", urlString, (long)statusCode, message);
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传失败"
-                                                                           message:message
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-            [self presentViewController:alert animated:YES completion:nil];
-            return;
-        }
-
-        WCPLLog(@"日志上传成功: status=%ld", (long)statusCode);
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上传成功"
-                                                                       message:@"日志已发送到本地服务器"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-    }];
-}
-
-- (void)showLogContent:(NSString *)content {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"最近日志 (最后100行)"
-                                                                   message:content
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    // 复制日志内容
-    UIAlertAction *copyAction = [UIAlertAction actionWithTitle:@"复制日志" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = content;
-
-        UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"成功"
-                                                                               message:@"日志内容已复制到剪贴板"
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-        [successAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:successAlert animated:YES completion:nil];
-    }];
-
-    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
-
-    [alert addAction:copyAction];
-    [alert addAction:closeAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createCrashLogSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingCrashLog:) target:self title:@"启用崩溃日志" on:[WCPLCrashReporter sharedReporter].enabled];
-}
-
-- (void)settingCrashLog:(UISwitch *)sender {
-    WCPLCrashReporter *reporter = [WCPLCrashReporter sharedReporter];
-    reporter.enabled = sender.on;
-    if (sender.on) {
-        [reporter installIfNeeded];
-    }
-}
-
-- (WCTableViewNormalCellManager *)createCrashAutoUploadSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingCrashAutoUpload:) target:self title:@"崩溃后自动上传" on:[WCPLCrashReporter sharedReporter].autoUploadEnabled];
-}
-
-- (void)settingCrashAutoUpload:(UISwitch *)sender {
-    WCPLCrashReporter *reporter = [WCPLCrashReporter sharedReporter];
-    reporter.autoUploadEnabled = sender.on;
-    if (sender.on) {
-        [reporter tryUploadPendingReport];
-    }
-}
-
-- (WCTableViewNormalCellManager *)createLogUploadURLCell {
-    NSString *urlString = [WCPLLogUploader currentUploadURLString] ?: @"";
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showLogUploadURLInput) target:self title:@"日志上传地址" rightValue:urlString accessoryType:1];
-}
-
-- (void)showLogUploadURLInput {
-    NSString *current = [WCPLLogUploader currentUploadURLString] ?: @"";
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"日志上传地址"
-                                                                   message:@"用于上传调试/崩溃日志"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"例如: http://192.168.1.10:8099/wcpl_log";
-        textField.keyboardType = UIKeyboardTypeURL;
-        textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        textField.text = current;
-    }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSString *input = alert.textFields.firstObject.text ?: @"";
-        NSString *trimmed = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (trimmed.length == 0) {
-            [self showErrorAlert:@"请输入有效的地址"];
-            return;
-        }
-        if (![WCPLLogUploader isValidUploadURLString:trimmed]) {
-            [self showErrorAlert:@"地址无效，请包含协议和主机名"];
-            return;
-        }
-        [WCPLLogUploader setCurrentUploadURLString:trimmed];
-        [self reloadTableData];
-    }];
-
-    [alert addAction:cancelAction];
-    [alert addAction:confirmAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 - (void)addMessageIgnoreSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息屏蔽" Footer:@"开启后可在好友资料页/群聊资料页开启屏蔽，屏蔽后不再接收其消息提醒。"];
 
     [section addCell:[self createUserIgnoreEnableCell]];
     [section addCell:[self createIgnoredChatroomCountCell]];
     [section addCell:[self createIgnoredUserCountCell]];
+    [section addCell:[self createIgnoreResetCell]];
 
     [self.tableViewMgr addSection:section];
 }
@@ -761,6 +476,39 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (WCTableViewNormalCellManager *)createIgnoredUserCountCell {
     NSArray *users = [self ignoredUserNames];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredUserList) target:self title:@"已屏蔽好友" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)users.count] accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createIgnoreResetCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(resetAllIgnoredUsers) target:self title:@"重置所有屏蔽" rightValue:@"" accessoryType:1];
+}
+
+- (void)resetAllIgnoredUsers {
+    NSArray<NSString *> *users = [self ignoredUserNames];
+    NSArray<NSString *> *chatrooms = [self ignoredChatroomUserNames];
+    if (users.count == 0 && chatrooms.count == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无需重置"
+                                                                       message:@"当前没有已屏蔽对象"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+
+    NSString *message = [NSString stringWithFormat:@"将清空已屏蔽好友(%lu)和群聊(%lu)", (unsigned long)users.count, (unsigned long)chatrooms.count];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"重置消息屏蔽"
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"重置" style:UIAlertActionStyleDestructive handler:^(__unused UIAlertAction *action) {
+        WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
+        config.userIgnoreInfo = [NSMutableDictionary dictionary];
+        config.chatIgnoreInfo = [NSMutableDictionary dictionary];
+        [config saveUserIgnoreNameListToLocalFile];
+        [config saveChatIgnoreNameListToLocalFile];
+        WCPLLogInfo(@"[设置] 消息屏蔽已重置: users=%lu chatrooms=%lu", (unsigned long)users.count, (unsigned long)chatrooms.count);
+        [self reloadTableData];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSArray<NSString *> *)ignoredChatroomUserNames {
@@ -1090,9 +838,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     // 消息手势总开关
     [section addCell:[self createSwipeGestureSwitchCell]];
 
-    // 消息气泡复读按钮开关（与手势开关独立）
-    [section addCell:[self createRepeatButtonSwitchCell]];
-
     // 只有启用总开关时才显示详细设置
     if ([WCPLConfigCenter shared].gesture.swipeGestureEnable) {
         // 灵敏度
@@ -1123,6 +868,19 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     [self.tableViewMgr addSection:section];
 }
 
+- (void)addRepeatBubbleSettingSection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"复读气泡"];
+    [section addCell:[self createRepeatButtonSwitchCell]];
+
+    if ([WCPLConfigCenter shared].gesture.repeatButtonEnable) {
+        [section addCell:[self createRepeatSupportEmoticonCell]];
+        [section addCell:[self createRepeatSupportVoiceCell]];
+        [section addCell:[self createRepeatSupportImageCell]];
+    }
+
+    [self.tableViewMgr addSection:section];
+}
+
 - (NSString *)swipeSensitivityNameForLevel:(NSInteger)level {
     switch (level) {
         case 0: return @"低";
@@ -1137,7 +895,19 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButton:) target:self title:@"  气泡复读按钮" on:[WCPLConfigCenter shared].gesture.repeatButtonEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButton:) target:self title:@"启用气泡复读按钮" on:[WCPLConfigCenter shared].gesture.repeatButtonEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatSupportEmoticonCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportEmoticon:) target:self title:@"  支持表情包消息" on:[WCPLConfigCenter shared].gesture.repeatSupportEmoticonEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatSupportVoiceCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportVoice:) target:self title:@"  支持语音消息" on:[WCPLConfigCenter shared].gesture.repeatSupportVoiceEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatSupportImageCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatSupportImage:) target:self title:@"  支持图片消息" on:[WCPLConfigCenter shared].gesture.repeatSupportImageEnable];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeSensitivityCell {
@@ -1210,6 +980,22 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)settingRepeatButton:(UISwitch *)sender {
     [WCPLConfigCenter shared].gesture.repeatButtonEnable = sender.on;
     WCPLLogInfo(@"Repeat bubble button changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
+}
+
+- (void)settingRepeatSupportEmoticon:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatSupportEmoticonEnable = sender.on;
+    WCPLLogInfo(@"Repeat emoticon support changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)settingRepeatSupportVoice:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatSupportVoiceEnable = sender.on;
+    WCPLLogInfo(@"Repeat voice support changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)settingRepeatSupportImage:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatSupportImageEnable = sender.on;
+    WCPLLogInfo(@"Repeat image support changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (void)settingSwipeQuote:(UISwitch *)sender {
@@ -1329,40 +1115,6 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:cancelAction];
 
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (WCTableViewNormalCellManager *)createDebugLogSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDebugLog:) target:self title:@"启用调试日志" on:[WCPLLogger sharedLogger].enabled];
-}
-
-- (void)settingDebugLog:(UISwitch *)sender {
-    [WCPLLogger sharedLogger].enabled = sender.on;
-
-    if (sender.on) {
-        [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
-        // 显示日志文件路径提示
-        NSString *logPath = [[WCPLLogger sharedLogger] logFilePath];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"调试日志已启用"
-                                                                       message:[NSString stringWithFormat:@"日志文件路径:\n%@\n\n可通过文件管理器查看", logPath]
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-    } else {
-        [[WCPLRealtimeLogUploader sharedUploader] stop];
-    }
-
-    [self reloadTableData];
-}
-
-// 显示错误提示
-- (void)showErrorAlert:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"错误"
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self reloadTableData];
-    }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 

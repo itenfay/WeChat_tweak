@@ -189,6 +189,15 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
     if (msgWrap.m_uiMessageType == 1) {
         return wcpl_trimTextForRepeat(msgWrap.m_nsContent);
     }
+    if (msgWrap.m_uiMessageType == 3) {
+        return @"[图片]";
+    }
+    if (msgWrap.m_uiMessageType == 34) {
+        return @"[语音]";
+    }
+    if (msgWrap.m_uiMessageType == 47) {
+        return @"[表情]";
+    }
     if (msgWrap.m_uiMessageType == 49) {
         if (!wcpl_isQuoteReplyAppMessage(msgWrap)) {
             return nil;
@@ -196,6 +205,76 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
         return wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
     }
     return nil;
+}
+
+static NSString *wcpl_repeatTypeName(unsigned int msgType) {
+    switch (msgType) {
+        case 1: return @"文本";
+        case 3: return @"图片";
+        case 34: return @"语音";
+        case 47: return @"表情";
+        case 49: return @"引用";
+        default: return [NSString stringWithFormat:@"未知(%u)", msgType];
+    }
+}
+
+static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessageWrap *msgWrap) {
+    if (!msgWrap || !config) {
+        return NO;
+    }
+
+    switch (msgWrap.m_uiMessageType) {
+        case 1:
+            return YES;
+        case 3:
+            return config.repeatSupportImageEnable;
+        case 34:
+            return config.repeatSupportVoiceEnable;
+        case 47:
+            return config.repeatSupportEmoticonEnable;
+        case 49:
+            return wcpl_isQuoteReplyAppMessage(msgWrap);
+        default:
+            return NO;
+    }
+}
+
+
+static NSString *wcpl_emoticonMD5FromMessageWrap(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return nil;
+    }
+
+    NSString *md5 = wcpl_trimTextForRepeat(msgWrap.m_nsEmoticonMD5);
+    if (md5.length == 32) {
+        return md5;
+    }
+
+    NSString *content = msgWrap.m_nsContent;
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return nil;
+    }
+
+    NSArray<NSString *> *patterns = @[
+        @"<md5><![CDATA[",
+        @"<md5>",
+        @"md5=\""
+    ];
+
+    for (NSString *start in patterns) {
+        NSString *end = [start isEqualToString:@"md5=\""] ? @"\"" : ([start isEqualToString:@"<md5>"] ? @"</md5>" : @"]]></md5>");
+        NSString *value = wcpl_extractXMLValue(content, start, end);
+        if (value.length == 32) {
+            return value;
+        }
+    }
+
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-fA-F0-9]{32}" options:0 error:nil];
+    NSTextCheckingResult *match = [regex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+    if (!match || match.range.location == NSNotFound) {
+        return nil;
+    }
+    return [content substringWithRange:match.range];
 }
 
 static CMessageWrap *wcpl_quoteTargetFromMessageWrap(CMessageWrap *msgWrap) {
@@ -410,17 +489,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
 %new
 - (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap {
-    if (!msgWrap) {
-        return NO;
-    }
-    switch (msgWrap.m_uiMessageType) {
-        case 1:   // 文本
-            return YES;
-        case 49:  // 引用消息
-            return wcpl_isQuoteReplyAppMessage(msgWrap);
-        default:
-            return NO;
-    }
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    return wcpl_isRepeatTypeEnabledByConfig(config, msgWrap);
 }
 
 %new
@@ -1096,24 +1166,21 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         return;
     }
 
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!wcpl_isRepeatTypeEnabledByConfig(config, msgWrap)) {
+        WCPLLogWarning(@"Repeat blocked: type=%@(%u) toggle(emoticon=%d voice=%d image=%d)",
+                       wcpl_repeatTypeName(msgWrap.m_uiMessageType),
+                       msgWrap.m_uiMessageType,
+                       config.repeatSupportEmoticonEnable ? 1 : 0,
+                       config.repeatSupportVoiceEnable ? 1 : 0,
+                       config.repeatSupportImageEnable ? 1 : 0);
+        return;
+    }
+
     BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
     if (!chatVC) {
         WCPLLogWarning(@"Repeat failed: chat view controller not found");
         return;
-    }
-
-    NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
-    if (repeatText.length == 0) {
-        WCPLLogWarning(@"Repeat failed: empty repeat text");
-        return;
-    }
-
-    BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgWrap.m_uiMessageType == 49);
-    WCPLLogDebug(@"Repeat pipeline start: class=%@ cell=%p msg=%@ hasQuote=%d textLen=%lu", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap), hasQuote ? 1 : 0, (unsigned long)repeatText.length);
-
-    CMessageWrap *quoteTarget = wcpl_quoteTargetFromMessageWrap(msgWrap);
-    if (!quoteTarget && msgWrap.m_uiMessageType == 49) {
-        quoteTarget = msgWrap;
     }
 
     id logicController = nil;
@@ -1123,6 +1190,160 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         } @catch (__unused NSException *exception) {
             logicController = nil;
         }
+    }
+
+    id toolView = nil;
+    if ([chatVC respondsToSelector:@selector(toolView)]) {
+        @try {
+            toolView = [chatVC toolView];
+        } @catch (__unused NSException *exception) {
+            toolView = nil;
+        }
+    }
+
+    unsigned int msgType = msgWrap.m_uiMessageType;
+    NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
+    BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgType == 49);
+    WCPLLogDebug(@"Repeat pipeline start: class=%@ cell=%p type=%@ msg=%@ hasQuote=%d textLen=%lu",
+                 NSStringFromClass([self class]),
+                 self,
+                 wcpl_repeatTypeName(msgType),
+                 wcpl_repeatMessageDebugInfo(msgWrap),
+                 hasQuote ? 1 : 0,
+                 (unsigned long)repeatText.length);
+
+    if (msgType == 47) {
+        NSString *emoticonMD5 = wcpl_emoticonMD5FromMessageWrap(msgWrap);
+        id emoticonMgr = WCPLGetService(objc_getClass("CEmoticonMgr"));
+        id emoticonWrap = nil;
+
+        if (emoticonMgr) {
+            if (emoticonMD5.length == 32 && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMd5:)]) {
+                @try {
+                    emoticonWrap = ((id (*)(id, SEL, id))objc_msgSend)(emoticonMgr, @selector(getEmoticonWrapByMd5:), emoticonMD5);
+                } @catch (__unused NSException *exception) {
+                    emoticonWrap = nil;
+                }
+            }
+
+            if (!emoticonWrap && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByMessageWrap:)]) {
+                @try {
+                    emoticonWrap = ((id (*)(id, SEL, id))objc_msgSend)(emoticonMgr, @selector(getEmoticonWrapByMessageWrap:), msgWrap);
+                } @catch (__unused NSException *exception) {
+                    emoticonWrap = nil;
+                }
+            }
+
+            if (!emoticonWrap && [emoticonMgr respondsToSelector:@selector(getEmoticonWrapByContent:)] && msgWrap.m_nsContent.length > 0) {
+                @try {
+                    emoticonWrap = ((id (*)(id, SEL, id))objc_msgSend)(emoticonMgr, @selector(getEmoticonWrapByContent:), msgWrap.m_nsContent);
+                } @catch (__unused NSException *exception) {
+                    emoticonWrap = nil;
+                }
+            }
+        }
+
+        if (emoticonWrap) {
+            if (logicController && [logicController respondsToSelector:@selector(SendEmoticonMessage:)]) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(logicController, @selector(SendEmoticonMessage:), emoticonWrap);
+                    WCPLLogInfo(@"Repeat sent: flow=logic_emoticon msg=%@ md5=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)");
+                    return;
+                } @catch (NSException *exception) {
+                    WCPLLogWarning(@"Repeat emoticon via logicController failed: %@", exception.reason ?: exception);
+                }
+            }
+
+            if ([chatVC respondsToSelector:@selector(SendEmoticonMesssageToolView:)]) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(SendEmoticonMesssageToolView:), emoticonWrap);
+                    WCPLLogInfo(@"Repeat sent: flow=chatvc_emoticon msg=%@ md5=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)");
+                    return;
+                } @catch (NSException *exception) {
+                    WCPLLogWarning(@"Repeat emoticon via chatVC failed: %@", exception.reason ?: exception);
+                }
+            }
+        }
+
+        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+        if (messageMgr && [messageMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
+            @try {
+                NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
+                CMessageWrap *newWrap = [[objc_getClass("CMessageWrap") alloc] init];
+                newWrap.m_uiMessageType = 47;
+                newWrap.m_nsToUsr = chatName;
+                newWrap.m_nsContent = msgWrap.m_nsContent ?: @"";
+                if (emoticonMD5.length == 32) {
+                    newWrap.m_nsEmoticonMD5 = emoticonMD5;
+                }
+                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddEmoticonMsg:MsgWrap:), chatName, newWrap);
+                WCPLLogInfo(@"Repeat sent: flow=messageMgr_emoticon msg=%@ md5=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)");
+                return;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat emoticon via messageMgr failed: %@", exception.reason ?: exception);
+            }
+        }
+
+        WCPLLogWarning(@"Repeat emoticon fallback to text: msg=%@ md5=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)");
+    }
+
+    if (msgType == 3) {
+        NSData *imageData = msgWrap.m_dtImg;
+        UIImage *image = nil;
+        if ([imageData isKindOfClass:[NSData class]] && imageData.length > 0) {
+            image = [UIImage imageWithData:imageData];
+        }
+
+        if ((!image || imageData.length == 0) && [objc_getClass("CMessageWrap") respondsToSelector:@selector(getPathOfMsgImg:)]) {
+            @try {
+                NSString *imagePath = ((id (*)(id, SEL, id))objc_msgSend)(objc_getClass("CMessageWrap"), @selector(getPathOfMsgImg:), msgWrap);
+                if ([imagePath isKindOfClass:[NSString class]] && imagePath.length > 0) {
+                    NSData *pathData = [NSData dataWithContentsOfFile:imagePath options:NSDataReadingMappedIfSafe error:nil];
+                    if ([pathData isKindOfClass:[NSData class]] && pathData.length > 0) {
+                        imageData = pathData;
+                        image = [UIImage imageWithData:imageData];
+                    }
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+
+        id imageInfo = nil;
+        @try {
+            imageInfo = msgWrap.m_oImageInfo;
+        } @catch (__unused NSException *exception) {
+            imageInfo = nil;
+        }
+
+        if (logicController && image && imageData.length > 0 && [logicController respondsToSelector:@selector(SendImageMessage:withData:ImageInfo:)]) {
+            @try {
+                ((void (*)(id, SEL, id, id, id))objc_msgSend)(logicController,
+                                                               @selector(SendImageMessage:withData:ImageInfo:),
+                                                               image,
+                                                               imageData,
+                                                               imageInfo);
+                WCPLLogInfo(@"Repeat sent: flow=logic_image msg=%@ data=%lu", wcpl_repeatMessageDebugInfo(msgWrap), (unsigned long)imageData.length);
+                return;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat image via logicController failed: %@", exception.reason ?: exception);
+            }
+        }
+
+        WCPLLogWarning(@"Repeat image fallback to text: msg=%@ hasImage=%d data=%lu", wcpl_repeatMessageDebugInfo(msgWrap), image ? 1 : 0, (unsigned long)imageData.length);
+    }
+
+    if (msgType == 34) {
+        WCPLLogWarning(@"Repeat voice fallback to text: native resend unavailable msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+    }
+
+    if (repeatText.length == 0) {
+        WCPLLogWarning(@"Repeat failed: empty repeat text type=%@ msg=%@", wcpl_repeatTypeName(msgType), wcpl_repeatMessageDebugInfo(msgWrap));
+        return;
+    }
+
+    CMessageWrap *quoteTarget = wcpl_quoteTargetFromMessageWrap(msgWrap);
+    if (!quoteTarget && msgType == 49) {
+        quoteTarget = msgWrap;
     }
 
     if (quoteTarget && logicController && [logicController respondsToSelector:@selector(SendTextMessage:replyingMessage:isPasted:)]) {
@@ -1136,15 +1357,6 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             return;
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat quote send via logicController failed: %@", exception.reason ?: exception);
-        }
-    }
-
-    id toolView = nil;
-    if ([chatVC respondsToSelector:@selector(toolView)]) {
-        @try {
-            toolView = [chatVC toolView];
-        } @catch (__unused NSException *exception) {
-            toolView = nil;
         }
     }
 
@@ -1200,7 +1412,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             newWrap.m_uiMessageType = 1;
             newWrap.m_nsContent = repeatText;
             newWrap.m_nsToUsr = chatName;
-            [messageMgr AddMsg:chatName MsgWrap:newWrap];
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), chatName, newWrap);
             WCPLLogInfo(@"Repeat sent: flow=messageMgr_fallback msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         } @catch (NSException *exception) {
@@ -1208,7 +1420,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         }
     }
 
-    WCPLLogError(@"Repeat failed: no available send method");
+    WCPLLogError(@"Repeat failed: no available send method type=%@ msg=%@", wcpl_repeatTypeName(msgType), wcpl_repeatMessageDebugInfo(msgWrap));
 }
 
 %new
