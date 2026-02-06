@@ -72,6 +72,139 @@ static NSString *wcpl_replyTextForSession(NSString *sessionUserName, BOOL isGrou
     return trimmed;
 }
 
+static NSTimeInterval const kWCPLAutoReplyTrackTTL = 180.0;
+static NSTimeInterval const kWCPLAutoReplyTrackFallbackAge = 12.0;
+static NSUInteger const kWCPLAutoReplyTrackHardLimit = 512;
+
+static dispatch_queue_t wcpl_openReplyTrackQueue(void) {
+    static dispatch_queue_t queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = dispatch_queue_create("com.wcpl.red_envelop.reply_track", DISPATCH_QUEUE_SERIAL);
+    });
+    return queue;
+}
+
+static NSMutableDictionary<NSString *, NSDictionary *> *wcpl_openReplyTrackMap(void) {
+    static NSMutableDictionary<NSString *, NSDictionary *> *tracker;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tracker = [NSMutableDictionary dictionary];
+    });
+    return tracker;
+}
+
+static NSString *wcpl_openReplyTrackKey(NSString *prefix, NSString *token) {
+    NSString *safePrefix = wcpl_trimString(prefix);
+    NSString *safeToken = wcpl_trimString(token);
+    if (safePrefix.length == 0 || safeToken.length == 0) {
+        return nil;
+    }
+    return [NSString stringWithFormat:@"%@:%@", safePrefix, safeToken];
+}
+
+static void wcpl_openReplyTrackCleanupLocked(NSMutableDictionary<NSString *, NSDictionary *> *tracker, NSTimeInterval now) {
+    if (![tracker isKindOfClass:[NSMutableDictionary class]]) return;
+
+    NSTimeInterval expireBefore = now - kWCPLAutoReplyTrackTTL;
+    NSArray<NSString *> *allKeys = [tracker allKeys];
+    for (NSString *key in allKeys) {
+        NSDictionary *entry = [tracker[key] isKindOfClass:[NSDictionary class]] ? tracker[key] : nil;
+        NSNumber *ts = [entry[@"ts"] isKindOfClass:[NSNumber class]] ? entry[@"ts"] : nil;
+        if (!ts || ts.doubleValue < expireBefore) {
+            [tracker removeObjectForKey:key];
+        }
+    }
+
+    if (tracker.count > kWCPLAutoReplyTrackHardLimit) {
+        [tracker removeAllObjects];
+    }
+}
+
+static void wcpl_trackOpenReplySession(NSString *sendId, NSString *sign, NSString *timingIdentifier, NSString *sessionUserName) {
+    NSString *session = wcpl_trimString(sessionUserName);
+    if (session.length == 0) {
+        return;
+    }
+
+    dispatch_sync(wcpl_openReplyTrackQueue(), ^{
+        NSMutableDictionary<NSString *, NSDictionary *> *tracker = wcpl_openReplyTrackMap();
+        NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+        wcpl_openReplyTrackCleanupLocked(tracker, now);
+
+        NSDictionary *entry = @{
+            @"session": session,
+            @"ts": @(now)
+        };
+
+        NSString *sendKey = wcpl_openReplyTrackKey(@"sendId", sendId);
+        NSString *signKey = wcpl_openReplyTrackKey(@"sign", sign);
+        NSString *timingKey = wcpl_openReplyTrackKey(@"timing", timingIdentifier);
+
+        if (sendKey.length > 0) tracker[sendKey] = entry;
+        if (signKey.length > 0) tracker[signKey] = entry;
+        if (timingKey.length > 0) tracker[timingKey] = entry;
+
+        tracker[@"__last__"] = entry;
+    });
+}
+
+static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign, NSString *timingIdentifier, NSString **sourceOut) {
+    __block NSString *session = nil;
+    __block NSString *source = nil;
+
+    dispatch_sync(wcpl_openReplyTrackQueue(), ^{
+        NSMutableDictionary<NSString *, NSDictionary *> *tracker = wcpl_openReplyTrackMap();
+        NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+        wcpl_openReplyTrackCleanupLocked(tracker, now);
+
+        NSString *(^lookupSessionForKey)(NSString *) = ^NSString *(NSString *key) {
+            if (key.length == 0) return nil;
+            NSDictionary *entry = [tracker[key] isKindOfClass:[NSDictionary class]] ? tracker[key] : nil;
+            NSString *trackedSession = wcpl_trimString(entry[@"session"]);
+            if (trackedSession.length == 0) return nil;
+            NSNumber *ts = [entry[@"ts"] isKindOfClass:[NSNumber class]] ? entry[@"ts"] : nil;
+            if (!ts || (now - ts.doubleValue > kWCPLAutoReplyTrackTTL)) return nil;
+            return trackedSession;
+        };
+
+        NSString *sendKey = wcpl_openReplyTrackKey(@"sendId", sendId);
+        NSString *signKey = wcpl_openReplyTrackKey(@"sign", sign);
+        NSString *timingKey = wcpl_openReplyTrackKey(@"timing", timingIdentifier);
+
+        session = lookupSessionForKey(sendKey);
+        if (session.length > 0) {
+            source = @"sendId";
+            return;
+        }
+
+        session = lookupSessionForKey(signKey);
+        if (session.length > 0) {
+            source = @"sign";
+            return;
+        }
+
+        session = lookupSessionForKey(timingKey);
+        if (session.length > 0) {
+            source = @"timing";
+            return;
+        }
+
+        NSDictionary *lastEntry = [tracker[@"__last__"] isKindOfClass:[NSDictionary class]] ? tracker[@"__last__"] : nil;
+        NSString *lastSession = wcpl_trimString(lastEntry[@"session"]);
+        NSNumber *lastTs = [lastEntry[@"ts"] isKindOfClass:[NSNumber class]] ? lastEntry[@"ts"] : nil;
+        if (lastSession.length > 0 && lastTs && (now - lastTs.doubleValue <= kWCPLAutoReplyTrackFallbackAge)) {
+            session = lastSession;
+            source = @"last";
+        }
+    });
+
+    if (sourceOut) {
+        *sourceOut = source;
+    }
+    return session;
+}
+
 static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
     unsigned int cmd = 0;
     @try {
@@ -191,6 +324,54 @@ static NSString *wcpl_stringForKeyInDictionary(NSDictionary *dict, NSString *key
         }
     }
     return nil;
+}
+
+static NSString *wcpl_stringForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys) {
+    if (![keys isKindOfClass:[NSArray class]] || keys.count == 0) {
+        return nil;
+    }
+
+    for (NSString *key in keys) {
+        NSString *value = wcpl_stringForKeyInDictionary(dict, key);
+        if (value.length > 0) {
+            return value;
+        }
+    }
+
+    return nil;
+}
+
+static NSInteger wcpl_integerForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys, BOOL *found) {
+    if (found) {
+        *found = NO;
+    }
+
+    if (![dict isKindOfClass:[NSDictionary class]] || ![keys isKindOfClass:[NSArray class]] || keys.count == 0) {
+        return 0;
+    }
+
+    for (NSString *key in keys) {
+        id value = dict[key];
+        if (!value || value == [NSNull null]) {
+            continue;
+        }
+
+        if (found) {
+            *found = YES;
+        }
+
+        if ([value respondsToSelector:@selector(integerValue)]) {
+            @try {
+                return [value integerValue];
+            } @catch (__unused NSException *exception) {
+                return 0;
+            }
+        }
+
+        return 0;
+    }
+
+    return 0;
 }
 
 static NSDictionary *wcpl_dictionaryFromQueryString(NSString *text) {
@@ -357,7 +538,9 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         ?: wcpl_stringForKeyInDictionary(params, @"session_user_name");
     NSString *sign = wcpl_stringForKeyInDictionary(params, @"sign");
 
-    WCPLLogDebug(@"OpenRedEnvelopesRequest: mainThread=%d sendId=%@ channelId=%@ msgType=%@ timingType=%@ timingLen=%lu signLen=%lu session=%@ keys=%lu",
+    wcpl_trackOpenReplySession(sendId, sign, timingIdentifier, sessionUserName);
+
+    WCPLLogDebug(@"OpenRedEnvelopesRequest: mainThread=%d sendId=%@ channelId=%@ msgType=%@ timingType=%@ timingLen=%lu signLen=%lu session=%@ tracked=%d keys=%lu",
                  [NSThread isMainThread],
                  sendId ?: @"",
                  channelId ?: @"",
@@ -366,6 +549,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  (unsigned long)timingIdentifier.length,
                  (unsigned long)sign.length,
                  sessionUserName ?: @"",
+                 sessionUserName.length > 0,
                  (unsigned long)params.count);
 
     %orig;
@@ -566,37 +750,105 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     }
 
     NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(res.retText);
-    if (![responseDict isKindOfClass:[NSDictionary class]] || responseDict.count == 0) {
-        WCPLLogDebug(@"红包打开回包: cmd=4 responseDict为空，跳过自动回复");
-        return;
-    }
-
-    int errorType = wcpl_intFromSelector(res, @selector(errorType));
-    int platRet = wcpl_intFromSelector(res, @selector(platRet));
-    NSInteger receiveStatus = [responseDict[@"receiveStatus"] integerValue];
-    NSInteger hbStatus = [responseDict[@"hbStatus"] integerValue];
-
-    BOOL success = (errorType == 0 && platRet == 0 && receiveStatus == 2);
-    if (!success) {
-        WCPLLogDebug(@"红包打开回包: cmd=4 未成功 errorType=%d platRet=%d receiveStatus=%ld hbStatus=%ld",
-                     errorType,
-                     platRet,
-                     (long)receiveStatus,
-                     (long)hbStatus);
-        return;
+    if (![responseDict isKindOfClass:[NSDictionary class]]) {
+        responseDict = @{};
     }
 
     NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
-    NSString *session = wcpl_stringForKeyInDictionary(requestDict, @"sessionUserName")
-        ?: wcpl_stringForKeyInDictionary(requestDict, @"sessionusername")
-        ?: wcpl_stringForKeyInDictionary(requestDict, @"session_user_name");
+    if (![requestDict isKindOfClass:[NSDictionary class]]) {
+        requestDict = @{};
+    }
+
+    NSString *sendId = wcpl_stringForKeysInDictionary(requestDict, @[@"sendId", @"sendid", @"send_id"])
+        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"sendId", @"sendid", @"send_id"]);
+    NSString *sign = wcpl_stringForKeysInDictionary(requestDict, @[@"sign"])
+        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"sign"]);
+    NSString *timingIdentifier = wcpl_stringForKeysInDictionary(requestDict, @[@"timingIdentifier", @"timing_identifier"])
+        ?: wcpl_stringForKeysInDictionary(responseDict, @[@"timingIdentifier", @"timing_identifier"]);
+
+    int errorType = wcpl_intFromSelector(res, @selector(errorType));
+    int platRet = wcpl_intFromSelector(res, @selector(platRet));
+
+    BOOL hasReceiveStatus = NO;
+    NSInteger receiveStatus = wcpl_integerForKeysInDictionary(responseDict, @[@"receiveStatus", @"receive_status"], &hasReceiveStatus);
+
+    BOOL hasRetCode = NO;
+    NSInteger retCode = wcpl_integerForKeysInDictionary(responseDict, @[@"retCode", @"retcode"], &hasRetCode);
+    if (!hasRetCode && [res respondsToSelector:@selector(retCode)]) {
+        hasRetCode = YES;
+        retCode = wcpl_intFromSelector(res, @selector(retCode));
+    } else if (!hasRetCode && [res respondsToSelector:@selector(retcode)]) {
+        hasRetCode = YES;
+        retCode = wcpl_intFromSelector(res, @selector(retcode));
+    }
+
+    BOOL hasAmount = NO;
+    NSInteger amount = wcpl_integerForKeysInDictionary(responseDict,
+                                                       @[@"amount", @"receiveAmount", @"receive_amount", @"recvAmount", @"recv_amount"],
+                                                       &hasAmount);
+
+    BOOL hasHbStatus = NO;
+    NSInteger hbStatus = wcpl_integerForKeysInDictionary(responseDict, @[@"hbStatus", @"hb_status"], &hasHbStatus);
+
+    BOOL successByStatus = (hasReceiveStatus && receiveStatus == 2);
+    BOOL successByAmount = (hasAmount && amount > 0);
+    BOOL successByRetCode = (hasRetCode && retCode == 0);
+    BOOL success = (errorType == 0 && platRet == 0 && (successByStatus || successByAmount || successByRetCode));
+
+    if (!success) {
+        WCPLLogDebug(@"红包打开回包: cmd=4 未成功 errorType=%d platRet=%d receiveStatus=%ld hasReceiveStatus=%d retCode=%ld hasRetCode=%d amount=%ld hasAmount=%d hbStatus=%ld hasHbStatus=%d sendId=%@ signLen=%lu timingLen=%lu reqKeys=%lu resKeys=%lu",
+                     errorType,
+                     platRet,
+                     (long)receiveStatus,
+                     hasReceiveStatus,
+                     (long)retCode,
+                     hasRetCode,
+                     (long)amount,
+                     hasAmount,
+                     (long)hbStatus,
+                     hasHbStatus,
+                     sendId ?: @"",
+                     (unsigned long)sign.length,
+                     (unsigned long)timingIdentifier.length,
+                     (unsigned long)requestDict.count,
+                     (unsigned long)responseDict.count);
+        return;
+    }
+
+    NSString *session = wcpl_stringForKeysInDictionary(requestDict,
+                                                       @[@"sessionUserName", @"sessionusername", @"session_user_name"]);
     session = wcpl_trimString(session);
+    NSString *sessionSource = @"request";
+
     if (session.length == 0) {
-        WCPLLogDebug(@"红包打开回包: cmd=4 缺少 sessionUserName，跳过自动回复");
+        NSString *trackedSource = nil;
+        session = wcpl_lookupTrackedOpenSession(sendId, sign, timingIdentifier, &trackedSource);
+        if (session.length > 0) {
+            sessionSource = trackedSource.length > 0 ? [NSString stringWithFormat:@"tracker:%@", trackedSource] : @"tracker";
+        }
+    }
+
+    if (session.length == 0) {
+        WCPLLogDebug(@"红包打开回包: cmd=4 缺少 sessionUserName，跳过自动回复 sendId=%@ signLen=%lu timingLen=%lu reqKeys=%lu resKeys=%lu",
+                     sendId ?: @"",
+                     (unsigned long)sign.length,
+                     (unsigned long)timingIdentifier.length,
+                     (unsigned long)requestDict.count,
+                     (unsigned long)responseDict.count);
         return;
     }
 
     BOOL isGroup = ([session rangeOfString:@"@chatroom"].location != NSNotFound);
+    WCPLLogDebug(@"红包打开回包: cmd=4 成功 isGroup=%d session=%@ source=%@ sendId=%@ signLen=%lu timingLen=%lu receiveStatus=%ld retCode=%ld amount=%ld",
+                 isGroup,
+                 session,
+                 sessionSource,
+                 sendId ?: @"",
+                 (unsigned long)sign.length,
+                 (unsigned long)timingIdentifier.length,
+                 (long)receiveStatus,
+                 (long)retCode,
+                 (long)amount);
     [self wcpl_trySendAutoReplyForSession:session isGroup:isGroup];
 }
 
@@ -609,6 +861,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     NSString *replyText = wcpl_replyTextForSession(session, isGroup);
     if (replyText.length == 0) {
+        WCPLLogDebug(@"红包自动回复跳过: session=%@ isGroup=%d 原因=未配置文案或未命中名单规则", session, isGroup);
         return;
     }
 
@@ -708,31 +961,52 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     }
 
-    if ([msgMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
-        @try {
-            [msgMgr AddMsg:session MsgWrap:msgWrap];
-            return YES;
-        } @catch (__unused NSException *exception) {
+    __block BOOL sent = NO;
+    __block NSString *path = @"";
+    void (^sendBlock)(void) = ^{
+        if ([msgMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
+            @try {
+                [msgMgr AddMsg:session MsgWrap:msgWrap];
+                sent = YES;
+                path = @"AddMsg";
+                return;
+            } @catch (__unused NSException *exception) {
+            }
         }
+
+        if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+            @try {
+                [msgMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:YES NewMsgArriveNotify:YES];
+                sent = YES;
+                path = @"AddLocalMsgFixTime";
+                return;
+            } @catch (__unused NSException *exception) {
+            }
+        }
+
+        if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
+            @try {
+                [msgMgr AddLocalMsg:session MsgWrap:msgWrap];
+                sent = YES;
+                path = @"AddLocalMsg";
+                return;
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    };
+
+    if ([NSThread isMainThread]) {
+        sendBlock();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), sendBlock);
     }
 
-    if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
-        @try {
-            [msgMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:YES NewMsgArriveNotify:YES];
-            return YES;
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
-        @try {
-            [msgMgr AddLocalMsg:session MsgWrap:msgWrap];
-            return YES;
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    return NO;
+    WCPLLogDebug(@"红包自动回复发送: session=%@ sent=%d path=%@ mainThread=%d",
+                 session,
+                 sent,
+                 path,
+                 [NSThread isMainThread]);
+    return sent;
 }
 
 %end
