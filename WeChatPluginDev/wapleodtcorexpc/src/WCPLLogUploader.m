@@ -193,6 +193,7 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
     __block NSData *lastRespData = nil;
 
     __block void (^attemptUpload)(void) = nil;
+    __weak void (^weakAttemptUpload)(void) = nil;
     attemptUpload = ^{
         if (candidateIndex >= candidateURLs.count) {
             if (completion) {
@@ -212,7 +213,9 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
         if (!targetURL) {
             candidateIndex += 1;
             retryCount = 0;
-            attemptUpload();
+            if (weakAttemptUpload) {
+                weakAttemptUpload();
+            }
             return;
         }
 
@@ -256,19 +259,24 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
             if (WCPLShouldRetryUploadError(statusCode, error, retryCount)) {
                 retryCount += 1;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    attemptUpload();
+                    if (weakAttemptUpload) {
+                        weakAttemptUpload();
+                    }
                 });
                 return;
             }
 
             candidateIndex += 1;
             retryCount = 0;
-            attemptUpload();
+            if (weakAttemptUpload) {
+                weakAttemptUpload();
+            }
         }];
 
         [task resume];
     };
 
+    weakAttemptUpload = attemptUpload;
     attemptUpload();
 }
 
