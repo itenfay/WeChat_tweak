@@ -98,6 +98,8 @@ typedef BOOL (^WCPLSendStrategyBlock)(void);
 - (void)wcpl_collectViewsWithTag:(NSInteger)tag
                           inView:(UIView *)view
                          results:(NSMutableArray<UIView *> *)results;
+- (void)wcpl_pruneDuplicateButtonsKeeping:(UIButton *)keepButton
+                                cellView:(CommonMessageCellView *)cellView;
 - (NSString *)wcpl_messageKeyForMsgWrap:(CMessageWrap *)msgWrap;
 @end
 
@@ -184,6 +186,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 
 static char kWCPLRepeatButtonMessageKey;
 static char kWCPLRepeatButtonUpdatingKey;
+static char kWCPLRepeatButtonBoundButtonKey;
 
 + (WCPLMessageReplyManager *)sharedManager {
     static WCPLMessageReplyManager *manager;
@@ -909,9 +912,29 @@ static char kWCPLRepeatButtonUpdatingKey;
                 NSStringFromClass([bubbleView class]),
                 NSStringFromClass([containerView class]));
 
+        UIButton *boundButton = objc_getAssociatedObject(cellView, &kWCPLRepeatButtonBoundButtonKey);
+        if (boundButton && ![boundButton isKindOfClass:[UIButton class]]) {
+            boundButton = nil;
+            objc_setAssociatedObject(cellView, &kWCPLRepeatButtonBoundButtonKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+        if (boundButton && !boundButton.superview) {
+            boundButton = nil;
+            objc_setAssociatedObject(cellView, &kWCPLRepeatButtonBoundButtonKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+
         UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView
                                                                     cellView:cellView
                                                                   messageKey:messageKey];
+        if (!repeatButton && boundButton) {
+            repeatButton = boundButton;
+            if (containerView && repeatButton.superview != containerView) {
+                [repeatButton removeFromSuperview];
+                [containerView addSubview:repeatButton];
+            }
+            if (messageKey.length > 0) {
+                objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            }
+        }
         if (isSameMessage && repeatButton) {
             if (messageKey.length > 0) {
                 objc_setAssociatedObject(repeatButton, &kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -927,6 +950,8 @@ static char kWCPLRepeatButtonUpdatingKey;
             [self applyRepeatButtonAppearance:repeatButton msgWrap:msgWrap];
             repeatButton.hidden = NO;
             repeatButton.alpha = 1.0;
+            objc_setAssociatedObject(cellView, &kWCPLRepeatButtonBoundButtonKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            [self wcpl_pruneDuplicateButtonsKeeping:repeatButton cellView:cellView];
             [containerView bringSubviewToFront:repeatButton];
             return;
         }
@@ -968,6 +993,8 @@ static char kWCPLRepeatButtonUpdatingKey;
 
         repeatButton.hidden = NO;
         repeatButton.alpha = 1.0;
+        objc_setAssociatedObject(cellView, &kWCPLRepeatButtonBoundButtonKey, repeatButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self wcpl_pruneDuplicateButtonsKeeping:repeatButton cellView:cellView];
         [containerView bringSubviewToFront:repeatButton];
     }
     @catch (NSException *exception) {
@@ -1003,6 +1030,7 @@ static char kWCPLRepeatButtonUpdatingKey;
     }
 
     objc_setAssociatedObject(cellView, @selector(wcpl_messageKeyForMsgWrap:), nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(cellView, &kWCPLRepeatButtonBoundButtonKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)handleRepeatButtonTapWithContent:(NSString *)content
@@ -2637,6 +2665,42 @@ static char kWCPLRepeatButtonUpdatingKey;
     }
     for (UIView *subview in view.subviews) {
         [self wcpl_collectViewsWithTag:tag inView:subview results:results];
+    }
+}
+
+- (void)wcpl_pruneDuplicateButtonsKeeping:(UIButton *)keepButton
+                                cellView:(CommonMessageCellView *)cellView {
+    if (!cellView) return;
+
+    NSMutableArray<UIView *> *taggedViews = [NSMutableArray array];
+    [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
+
+    UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
+    if (cell.contentView && cell.contentView != cellView) {
+        [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cell.contentView results:taggedViews];
+    }
+
+    NSMutableSet<NSString *> *seenPointers = [NSMutableSet set];
+    NSInteger removedCount = 0;
+    for (UIView *view in taggedViews) {
+        NSString *pointerKey = [NSString stringWithFormat:@"%p", view];
+        if ([seenPointers containsObject:pointerKey]) {
+            continue;
+        }
+        [seenPointers addObject:pointerKey];
+
+        if (keepButton && view == keepButton) {
+            continue;
+        }
+        [view removeFromSuperview];
+        removedCount++;
+    }
+
+    if (removedCount > 0) {
+        WCPLLog(@"复读按钮裁剪: cell=%@ removed=%ld keep=%@",
+                NSStringFromClass([cellView class]),
+                (long)removedCount,
+                keepButton ? NSStringFromCGRect(keepButton.frame) : @"nil");
     }
 }
 
