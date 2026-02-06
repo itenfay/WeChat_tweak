@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class WCPLPickerItem;
 
 typedef NS_ENUM(NSUInteger, WCPLContactGroupPickerMode) {
@@ -12,8 +14,6 @@ typedef void (^WCPLPickerCancelBlock)(void);
 typedef void (^WCPLPickerSingleSelectBlock)(WCPLPickerItem *item);
 typedef void (^WCPLPickerFinishBlock)(NSArray<WCPLPickerItem *> *selectedItems,
                                       NSArray<NSString *> *selectedIdentifiers);
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface WCPLContactGroupPickerViewController : UIViewController
 
