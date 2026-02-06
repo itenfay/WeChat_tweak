@@ -1357,7 +1357,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createMessageReplySwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (在消息旁显示按钮)" on:[WCPLConfigCenter shared].repeatButton.messageReplyEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageReply:) target:self title:@"启用复读机 (与消息气泡一体化)" on:[WCPLConfigCenter shared].repeatButton.messageReplyEnable];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {

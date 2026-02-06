@@ -90,6 +90,8 @@ typedef BOOL (^WCPLSendStrategyBlock)(void);
                         toUserName:(NSString *)toUserName
                            execLog:(NSMutableString *)execLog;
 - (BOOL)wcpl_isEmoticonMessage:(CMessageWrap *)msgWrap;
+- (UIView *)wcpl_repeatButtonHostViewForCellView:(CommonMessageCellView *)cellView
+                                       bubbleView:(UIView *)bubbleView;
 - (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
                                            cellView:(UIView *)cellView
                                          messageKey:(NSString *)messageKey;
@@ -825,7 +827,6 @@ static char kWCPLRepeatButtonMessageKey;
 
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
         if (!cell || !cell.contentView) return;
-        UIView *containerView = cell.contentView;
 
         id viewModel = [self wcpl_safeInvokeObjectSelector:@selector(viewModel) onObject:cellView arguments:nil];
         CMessageWrap *msgWrap = [self wcpl_safeInvokeObjectSelector:@selector(messageWrap) onObject:viewModel arguments:nil];
@@ -879,6 +880,19 @@ static char kWCPLRepeatButtonMessageKey;
             return;
         }
 
+        UIView *containerView = [self wcpl_repeatButtonHostViewForCellView:cellView bubbleView:bubbleView];
+        if (!containerView) {
+            WCPLLog(@"复读按钮跳过: 挂载容器无效 cell=%@ bubble=%@",
+                    NSStringFromClass([cellView class]),
+                    NSStringFromClass([bubbleView class]));
+            [self removeRepeatButtonFromCellView:cellView];
+            return;
+        }
+        WCPLLog(@"复读按钮挂载: cell=%@ bubble=%@ host=%@",
+                NSStringFromClass([cellView class]),
+                NSStringFromClass([bubbleView class]),
+                NSStringFromClass([containerView class]));
+
         UIButton *repeatButton = [self wcpl_findOrFixRepeatButtonInContainer:containerView
                                                                     cellView:cellView
                                                                   messageKey:messageKey];
@@ -903,12 +917,20 @@ static char kWCPLRepeatButtonMessageKey;
             repeatButton = nil;
         }
 
-        // 修复：清理可能错误添加到 cell.contentView 的残留按钮
+        // 清理历史容器中的残留按钮（旧实现把按钮挂在 cell.contentView）
         if (cell && cell.contentView && cell.contentView != cellView) {
-            UIView *staleButton = [cell.contentView viewWithTag:kWCPLRepeatButtonTag];
-            if (staleButton) {
-                WCPLLog(@"复读按钮清理: 移除残留按钮 cell=%@", NSStringFromClass([cellView class]));
-                [staleButton removeFromSuperview];
+            NSMutableArray<UIView *> *legacyButtons = [NSMutableArray array];
+            [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cell.contentView results:legacyButtons];
+            NSInteger cleanedCount = 0;
+            for (UIView *legacyView in legacyButtons) {
+                if ([legacyView isDescendantOfView:containerView]) {
+                    continue;
+                }
+                [legacyView removeFromSuperview];
+                cleanedCount++;
+            }
+            if (cleanedCount > 0) {
+                WCPLLog(@"复读按钮迁移清理: cell=%@ 清理=%ld", NSStringFromClass([cellView class]), (long)cleanedCount);
             }
         }
 
@@ -1454,17 +1476,27 @@ static char kWCPLRepeatButtonMessageKey;
 
         BOOL isFromSelf = [self isMessageFromSelf:msgWrap];
         CGFloat buttonSize = [self repeatButtonSize];
-        CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize - 2.0)
-                                     : (CGRectGetMaxX(bubbleFrame) + 2.0);
-        CGFloat buttonY = CGRectGetMaxY(bubbleFrame) - buttonSize;
+        CGFloat overlap = MIN(buttonSize * 0.42f, 12.0f);
+        CGFloat buttonX = isFromSelf ? (CGRectGetMinX(bubbleFrame) - buttonSize + overlap)
+                                     : (CGRectGetMaxX(bubbleFrame) - overlap);
+        CGFloat buttonY = CGRectGetMidY(bubbleFrame) - buttonSize * 0.5f;
+        CGFloat minY = CGRectGetMinY(bubbleFrame) - 2.0f;
+        CGFloat maxY = CGRectGetMaxY(bubbleFrame) - buttonSize + 2.0f;
+        if (buttonY < minY) {
+            buttonY = minY;
+        } else if (buttonY > maxY) {
+            buttonY = maxY;
+        }
         CGRect newFrame = CGRectMake(buttonX, buttonY, buttonSize, buttonSize);
         if (!CGRectEqualToRect(button.frame, newFrame)) {
-            WCPLLog(@"复读按钮布局: cell=%@ bubble=%@ bubbleFrame=%@ buttonFrame=%@ self=%d",
+            WCPLLog(@"复读按钮布局(一体化): cell=%@ bubble=%@ host=%@ bubbleFrame=%@ buttonFrame=%@ self=%d overlap=%.2f",
                     NSStringFromClass([cellView class]),
                     NSStringFromClass([bubbleView class]),
+                    NSStringFromClass([containerView class]),
                     NSStringFromCGRect(bubbleFrame),
                     NSStringFromCGRect(newFrame),
-                    isFromSelf);
+                    isFromSelf,
+                    overlap);
         }
         button.frame = newFrame;
     }
@@ -1472,6 +1504,20 @@ static char kWCPLRepeatButtonMessageKey;
         NSLog(@"[WCPL] Exception in layoutRepeatButtonInContainer: %@", exception);
         button.hidden = YES;
     }
+}
+
+- (UIView *)wcpl_repeatButtonHostViewForCellView:(CommonMessageCellView *)cellView
+                                       bubbleView:(UIView *)bubbleView {
+    if (!cellView || !bubbleView) {
+        return nil;
+    }
+
+    UIView *hostView = bubbleView.superview;
+    if (!hostView || ![hostView isDescendantOfView:cellView]) {
+        hostView = cellView;
+    }
+
+    return hostView;
 }
 
 - (UIView *)findBubbleViewInCellView:(CommonMessageCellView *)cellView {

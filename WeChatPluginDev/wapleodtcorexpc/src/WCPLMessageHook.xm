@@ -365,7 +365,7 @@ static void wcpl_clearLocalReplaceMap(id controller) {
 %end
 
 // ==================== 复读机功能 Hook ====================
-// Hook 文本消息 Cell，在别人发送的消息气泡旁边添加 +1 按钮
+// Hook 消息 Cell，添加与气泡一体化的复读按钮
 
 %hook TextMessageCellView
 
