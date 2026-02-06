@@ -15,6 +15,12 @@
 - (void)wcpl_handleRedEnvelopReceiverQueryResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
 @end
 
+@interface WCRedEnvelopesLogicMgr (WCPLRedEnvelopAutoReply)
+- (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req;
+- (void)wcpl_trySendAutoReplyForSession:(NSString *)sessionUserName isGroup:(BOOL)isGroup;
+- (BOOL)wcpl_sendTextMessage:(NSString *)content toSession:(NSString *)sessionUserName;
+@end
+
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
     NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -37,6 +43,33 @@ static BOOL wcpl_userNameInList(NSString *userName, NSArray *list) {
         }
     }
     return NO;
+}
+
+static NSString *wcpl_replyTextForSession(NSString *sessionUserName, BOOL isGroup) {
+    WCPLRedEnvelopConfig *config = [WCPLRedEnvelopConfig sharedConfig];
+    NSString *rawText = isGroup ? config.groupAutoReplyText : config.privateAutoReplyText;
+    NSString *trimmed = wcpl_trimString(rawText);
+    if (trimmed.length == 0) {
+        return nil;
+    }
+
+    if (isGroup) {
+        if (!config.groupRedEnvelopEnable) {
+            return nil;
+        }
+        if (config.groupRedEnvelopScope == 1 && !wcpl_userNameInList(sessionUserName, config.allowedGroupList)) {
+            return nil;
+        }
+        if (config.groupRedEnvelopScope == 2 && wcpl_userNameInList(sessionUserName, config.blockedGroupList)) {
+            return nil;
+        }
+    } else {
+        if (!config.privateRedEnvelopEnable) {
+            return nil;
+        }
+    }
+
+    return trimmed;
 }
 
 static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
@@ -350,6 +383,8 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     // 自动抢红包：处理查询回包 -> 排队打开
     [self wcpl_handleRedEnvelopReceiverQueryResponse:arg1 request:arg2];
+    // 自动回复：处理打开回包（cmd=4）
+    [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
 }
 
 - (void)OnWCToOpenIMHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
@@ -361,6 +396,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  arg1 ? NSStringFromClass([arg1 class]) : @"",
                  arg2 ? NSStringFromClass([arg2 class]) : @"");
     [self wcpl_handleRedEnvelopReceiverQueryResponse:arg1 request:arg2];
+    [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
 }
 
 - (void)OnWCToLiveStreamHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
@@ -372,6 +408,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  arg1 ? NSStringFromClass([arg1 class]) : @"",
                  arg2 ? NSStringFromClass([arg2 class]) : @"");
     [self wcpl_handleRedEnvelopReceiverQueryResponse:arg1 request:arg2];
+    [self wcpl_handleRedEnvelopOpenResponse:arg1 request:arg2];
 }
 
 - (void)OnWCToHongbaoCommonErrorResponse:(id)arg1 Request:(id)arg2 {
@@ -515,6 +552,136 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     } else {
         return (unsigned int)configDelaySeconds;
     }
+}
+
+%new
+- (void)wcpl_handleRedEnvelopOpenResponse:(HongBaoRes *)res request:(HongBaoReq *)req {
+    if (!res || !req) {
+        return;
+    }
+
+    unsigned int cmdId = wcpl_hongbaoCmdId(res, req);
+    if (cmdId != 4) {
+        return;
+    }
+
+    NSDictionary *responseDict = wcpl_dictionaryFromHongbaoBuffer(res.retText);
+    if (![responseDict isKindOfClass:[NSDictionary class]] || responseDict.count == 0) {
+        WCPLLogDebug(@"红包打开回包: cmd=4 responseDict为空，跳过自动回复");
+        return;
+    }
+
+    int errorType = wcpl_intFromSelector(res, @selector(errorType));
+    int platRet = wcpl_intFromSelector(res, @selector(platRet));
+    NSInteger receiveStatus = [responseDict[@"receiveStatus"] integerValue];
+    NSInteger hbStatus = [responseDict[@"hbStatus"] integerValue];
+
+    BOOL success = (errorType == 0 && platRet == 0 && receiveStatus == 2);
+    if (!success) {
+        WCPLLogDebug(@"红包打开回包: cmd=4 未成功 errorType=%d platRet=%d receiveStatus=%ld hbStatus=%ld",
+                     errorType,
+                     platRet,
+                     (long)receiveStatus,
+                     (long)hbStatus);
+        return;
+    }
+
+    NSDictionary *requestDict = wcpl_dictionaryFromHongbaoBuffer(req.reqText);
+    NSString *session = wcpl_stringForKeyInDictionary(requestDict, @"sessionUserName")
+        ?: wcpl_stringForKeyInDictionary(requestDict, @"sessionusername")
+        ?: wcpl_stringForKeyInDictionary(requestDict, @"session_user_name");
+    session = wcpl_trimString(session);
+    if (session.length == 0) {
+        WCPLLogDebug(@"红包打开回包: cmd=4 缺少 sessionUserName，跳过自动回复");
+        return;
+    }
+
+    BOOL isGroup = ([session rangeOfString:@"@chatroom"].location != NSNotFound);
+    [self wcpl_trySendAutoReplyForSession:session isGroup:isGroup];
+}
+
+%new
+- (void)wcpl_trySendAutoReplyForSession:(NSString *)sessionUserName isGroup:(BOOL)isGroup {
+    NSString *session = wcpl_trimString(sessionUserName);
+    if (session.length == 0) {
+        return;
+    }
+
+    NSString *replyText = wcpl_replyTextForSession(session, isGroup);
+    if (replyText.length == 0) {
+        return;
+    }
+
+    BOOL sent = [self wcpl_sendTextMessage:replyText toSession:session];
+    WCPLLogDebug(@"红包自动回复: session=%@ isGroup=%d textLen=%lu sent=%d",
+                 session,
+                 isGroup,
+                 (unsigned long)replyText.length,
+                 sent);
+}
+
+%new
+- (BOOL)wcpl_sendTextMessage:(NSString *)content toSession:(NSString *)sessionUserName {
+    NSString *text = wcpl_trimString(content);
+    NSString *session = wcpl_trimString(sessionUserName);
+    if (text.length == 0 || session.length == 0) {
+        return NO;
+    }
+
+    CMessageMgr *msgMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (!msgMgr) {
+        WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
+        return NO;
+    }
+
+    CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    NSString *selfUserName = nil;
+    if (contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)]) {
+        @try {
+            id selfContact = [contactMgr getSelfContact];
+            selfUserName = wcpl_safeUserNameFromObject(selfContact);
+        } @catch (__unused NSException *exception) {
+            selfUserName = nil;
+        }
+    }
+
+    CMessageWrap *msgWrap = [[CMessageWrap alloc] initWithMsgType:1];
+    if (!msgWrap) {
+        return NO;
+    }
+
+    msgWrap.m_uiMessageType = 1;
+    msgWrap.m_nsContent = text;
+    msgWrap.m_nsToUsr = session;
+    if (selfUserName.length > 0) {
+        msgWrap.m_nsFromUsr = selfUserName;
+    }
+
+    if ([msgMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
+        @try {
+            [msgMgr AddMsg:session MsgWrap:msgWrap];
+            return YES;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+        @try {
+            [msgMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:YES NewMsgArriveNotify:YES];
+            return YES;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([msgMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
+        @try {
+            [msgMgr AddLocalMsg:session MsgWrap:msgWrap];
+            return YES;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return NO;
 }
 
 %end

@@ -20,6 +20,8 @@
 @property (assign, nonatomic) NSInteger groupRedEnvelopScope;
 @property (strong, nonatomic) NSArray *allowedGroupList;
 @property (strong, nonatomic) NSArray *blockedGroupList;
+@property (copy, nonatomic) NSString *privateAutoReplyText;
+@property (copy, nonatomic) NSString *groupAutoReplyText;
 
 // 旧命名（保持向后兼容）
 @property (strong, nonatomic) NSArray *blackList __attribute__((deprecated("Use allowedGroupList")));

@@ -107,9 +107,13 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
     if ([WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) {
         [section addCell:[self createPrivateRedEnvelopCell]];
+        if ([WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable) {
+            [section addCell:[self createPrivateAutoReplyCell]];
+        }
 
         [section addCell:[self createGroupRedEnvelopCell]];
         if ([WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable) {
+            [section addCell:[self createGroupAutoReplyCell]];
             [section addCell:[self createGroupScopeCell]];
             [section addCell:[self createReceiveSelfRedEnvelopCell]];
         }
@@ -173,18 +177,85 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingPrivateRedEnvelop:) target:self title:@"私聊红包" on:[WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable];
 }
 
+- (NSString *)wcpl_autoReplyPreviewText:(NSString *)text {
+    if (![text isKindOfClass:[NSString class]]) {
+        return @"未设置";
+    }
+    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (trimmed.length == 0) {
+        return @"未设置";
+    }
+    if (trimmed.length > 10) {
+        return [[trimmed substringToIndex:10] stringByAppendingString:@"…"];
+    }
+    return trimmed;
+}
+
+- (WCTableViewNormalCellManager *)createPrivateAutoReplyCell {
+    NSString *preview = [self wcpl_autoReplyPreviewText:[WCPLRedEnvelopConfig sharedConfig].privateAutoReplyText];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showPrivateAutoReplyInput) target:self title:@"私聊自动回复" rightValue:preview accessoryType:1];
+}
+
 - (void)settingPrivateRedEnvelop:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].privateRedEnvelopEnable = sender.on;
     [self reloadTableData];
+}
+
+- (void)showPrivateAutoReplyInput {
+    [self showAutoReplyInputWithTitle:@"私聊自动回复"
+                              current:[WCPLRedEnvelopConfig sharedConfig].privateAutoReplyText
+                           completion:^(NSString *value) {
+        [WCPLRedEnvelopConfig sharedConfig].privateAutoReplyText = value;
+        [self reloadTableData];
+    }];
 }
 
 - (WCTableViewNormalCellManager *)createGroupRedEnvelopCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingGroupRedEnvelop:) target:self title:@"群聊红包" on:[WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable];
 }
 
+- (WCTableViewNormalCellManager *)createGroupAutoReplyCell {
+    NSString *preview = [self wcpl_autoReplyPreviewText:[WCPLRedEnvelopConfig sharedConfig].groupAutoReplyText];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showGroupAutoReplyInput) target:self title:@"群聊自动回复" rightValue:preview accessoryType:1];
+}
+
 - (void)settingGroupRedEnvelop:(UISwitch *)sender {
     [WCPLRedEnvelopConfig sharedConfig].groupRedEnvelopEnable = sender.on;
     [self reloadTableData];
+}
+
+- (void)showGroupAutoReplyInput {
+    [self showAutoReplyInputWithTitle:@"群聊自动回复"
+                              current:[WCPLRedEnvelopConfig sharedConfig].groupAutoReplyText
+                           completion:^(NSString *value) {
+        [WCPLRedEnvelopConfig sharedConfig].groupAutoReplyText = value;
+        [self reloadTableData];
+    }];
+}
+
+- (void)showAutoReplyInputWithTitle:(NSString *)title
+                            current:(NSString *)current
+                         completion:(void (^)(NSString *value))completion {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:@"抢到红包后在当前聊天窗口自动发送（留空表示关闭）"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"请输入自动回复内容（留空关闭）";
+        textField.text = current ?: @"";
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        NSString *value = alert.textFields.firstObject.text ?: @"";
+        NSString *trimmed = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (completion) {
+            completion(trimmed);
+        }
+    }]];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSString *)wcpl_groupScopeDisplayText {

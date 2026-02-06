@@ -19,6 +19,21 @@ static NSString *const kWCPLSerialReceive           = @"kWCPLSerialReceive";
 static NSString *const kWCPLGroupRedEnvelopScope    = @"kWCPLGroupRedEnvelopScope";
 static NSString *const kWCPLBlackList               = @"kWCPLBlackList";
 static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
+static NSString *const kWCPLPrivateAutoReplyText    = @"kWCPLPrivateAutoReplyText";
+static NSString *const kWCPLGroupAutoReplyText      = @"kWCPLGroupAutoReplyText";
+
+static NSString *WCPLSanitizeReplyText(id value) {
+    if (![value isKindOfClass:[NSString class]]) {
+        return @"";
+    }
+
+    NSString *text = [(NSString *)value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (text.length == 0) {
+        return @"";
+    }
+
+    return text;
+}
 
 @interface WCPLRedEnvelopConfig ()
 
@@ -64,11 +79,15 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
         }
 
         _receiveSelfRedEnvelop = [defaults boolForKey:kWCPLReceiveSelfRedEnvelop];
+        _privateAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLPrivateAutoReplyText]);
+        _groupAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLGroupAutoReplyText]);
 
-        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld",
+        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld autoReply(priv=%lu group=%lu)",
                     (unsigned long)_blackList.count,
                     (unsigned long)_groupDenyList.count,
-                    (long)_groupRedEnvelopScope);
+                    (long)_groupRedEnvelopScope,
+                    (unsigned long)_privateAutoReplyText.length,
+                    (unsigned long)_groupAutoReplyText.length);
     }
     return self;
 }
@@ -187,6 +206,18 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
                 (unsigned long)_groupDenyList.count,
                 stored ? NSStringFromClass([stored class]) : @"(nil)",
                 (unsigned long)storedCount);
+}
+
+- (void)setPrivateAutoReplyText:(NSString *)privateAutoReplyText {
+    _privateAutoReplyText = [WCPLSanitizeReplyText(privateAutoReplyText) copy];
+    [self wcpl_setObject:_privateAutoReplyText forKey:kWCPLPrivateAutoReplyText];
+    WCPLLogInfo(@"[红包配置] Save private auto reply len=%lu", (unsigned long)_privateAutoReplyText.length);
+}
+
+- (void)setGroupAutoReplyText:(NSString *)groupAutoReplyText {
+    _groupAutoReplyText = [WCPLSanitizeReplyText(groupAutoReplyText) copy];
+    [self wcpl_setObject:_groupAutoReplyText forKey:kWCPLGroupAutoReplyText];
+    WCPLLogInfo(@"[红包配置] Save group auto reply len=%lu", (unsigned long)_groupAutoReplyText.length);
 }
 
 @end
