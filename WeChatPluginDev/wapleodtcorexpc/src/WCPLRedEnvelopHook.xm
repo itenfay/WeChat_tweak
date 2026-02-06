@@ -21,6 +21,24 @@ static NSString *wcpl_trimString(NSString *text) {
     return trimmed.length > 0 ? trimmed : nil;
 }
 
+static BOOL wcpl_userNameInList(NSString *userName, NSArray *list) {
+    NSString *target = wcpl_trimString(userName);
+    if (target.length == 0 || ![list isKindOfClass:[NSArray class]] || list.count == 0) {
+        return NO;
+    }
+
+    for (id obj in list) {
+        if (![obj isKindOfClass:[NSString class]]) {
+            continue;
+        }
+        NSString *candidate = wcpl_trimString((NSString *)obj);
+        if (candidate.length > 0 && [candidate isEqualToString:target]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
     unsigned int cmd = 0;
     @try {
@@ -425,9 +443,9 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
             if (!config.groupRedEnvelopEnable) { return NO; }
             if (mgrParams.isGroupSender && !config.receiveSelfRedEnvelop) { return NO; }
             if (config.groupRedEnvelopScope == 1) {
-                if (![config.allowedGroupList containsObject:mgrParams.sessionUserName ?: @""]) { return NO; }
+                if (!wcpl_userNameInList(mgrParams.sessionUserName, config.allowedGroupList)) { return NO; }
             } else if (config.groupRedEnvelopScope == 2) {
-                if ([config.blockedGroupList containsObject:mgrParams.sessionUserName ?: @""]) { return NO; }
+                if (wcpl_userNameInList(mgrParams.sessionUserName, config.blockedGroupList)) { return NO; }
             }
         } else {
             if (!config.privateRedEnvelopEnable) { return NO; }
@@ -567,14 +585,14 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                 if (groupUserName.length == 0) { break; }
 
                 if (config.groupRedEnvelopScope == 1) { // 仅白名单
-                    BOOL inWhiteList = [config.allowedGroupList containsObject:groupUserName];
+                    BOOL inWhiteList = wcpl_userNameInList(groupUserName, config.allowedGroupList);
                     WCPLLogDebug(@"群红包预检: session=%@ scope=白名单 wl=%lu allow=%d",
                                  groupUserName,
                                  (unsigned long)config.allowedGroupList.count,
                                  inWhiteList);
                     if (!inWhiteList) { break; }
                 } else if (config.groupRedEnvelopScope == 2) { // 排除黑名单
-                    BOOL inDenyList = [config.blockedGroupList containsObject:groupUserName];
+                    BOOL inDenyList = wcpl_userNameInList(groupUserName, config.blockedGroupList);
                     WCPLLogDebug(@"群红包预检: session=%@ scope=黑名单 deny=%lu allow=%d",
                                  groupUserName,
                                  (unsigned long)config.blockedGroupList.count,
@@ -682,4 +700,3 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 }
 
 %end
-
