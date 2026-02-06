@@ -183,6 +183,7 @@ static NSDictionary<NSString *, NSArray<NSString *> *> *WCPLImageSendSelectorGro
 @implementation WCPLMessageReplyManager
 
 static char kWCPLRepeatButtonMessageKey;
+static char kWCPLRepeatButtonUpdatingKey;
 
 + (WCPLMessageReplyManager *)sharedManager {
     static WCPLMessageReplyManager *manager;
@@ -821,8 +822,16 @@ static char kWCPLRepeatButtonMessageKey;
 #pragma mark - Public Methods
 
 - (void)addRepeatButtonToCellView:(CommonMessageCellView *)cellView {
+    if (!cellView) return;
+
+    NSNumber *isUpdating = objc_getAssociatedObject(cellView, &kWCPLRepeatButtonUpdatingKey);
+    if (isUpdating.boolValue) {
+        WCPLLog(@"复读按钮跳过: 正在更新中 cell=%@", NSStringFromClass([cellView class]));
+        return;
+    }
+
+    objc_setAssociatedObject(cellView, &kWCPLRepeatButtonUpdatingKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     @try {
-        if (!cellView) return;
         if (![WCPLConfigCenter shared].repeatButton.messageReplyEnable) return;
 
         UITableViewCell *cell = [self wcpl_tableViewCellForView:cellView];
@@ -953,6 +962,9 @@ static char kWCPLRepeatButtonMessageKey;
     }
     @catch (NSException *exception) {
         NSLog(@"[WCPL] Exception in addRepeatButtonToCellView: %@", exception);
+    }
+    @finally {
+        objc_setAssociatedObject(cellView, &kWCPLRepeatButtonUpdatingKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
 }
 
@@ -2501,22 +2513,33 @@ static char kWCPLRepeatButtonMessageKey;
 - (UIButton *)wcpl_findOrFixRepeatButtonInContainer:(UIView *)containerView
                                            cellView:(UIView *)cellView
                                          messageKey:(NSString *)messageKey {
-    UIView *searchView = containerView ?: cellView;
-    if (!searchView) return nil;
+    if (!containerView && !cellView) return nil;
 
     NSMutableArray<UIView *> *taggedViews = [NSMutableArray array];
-    [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:searchView results:taggedViews];
-
-    BOOL needsExtraSearch = cellView && searchView != cellView && ![cellView isDescendantOfView:searchView];
-    if (needsExtraSearch) {
+    if (containerView) {
+        [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:containerView results:taggedViews];
+    }
+    if (cellView && cellView != containerView) {
         [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:cellView results:taggedViews];
     }
 
+    UITableViewCell *tableViewCell = [self wcpl_tableViewCellForView:cellView ?: containerView];
+    if (tableViewCell.contentView && tableViewCell.contentView != containerView && tableViewCell.contentView != cellView) {
+        [self wcpl_collectViewsWithTag:kWCPLRepeatButtonTag inView:tableViewCell.contentView results:taggedViews];
+    }
+
     NSMutableArray<UIButton *> *buttonCandidates = [NSMutableArray array];
+    NSMutableSet<NSString *> *seenPointers = [NSMutableSet set];
     NSInteger removedCount = 0;
     NSInteger movedCount = 0;
 
     for (UIView *view in taggedViews) {
+        NSString *pointerKey = [NSString stringWithFormat:@"%p", view];
+        if ([seenPointers containsObject:pointerKey]) {
+            continue;
+        }
+        [seenPointers addObject:pointerKey];
+
         if (![view isKindOfClass:[UIButton class]]) {
             [view removeFromSuperview];
             removedCount++;
@@ -2543,7 +2566,7 @@ static char kWCPLRepeatButtonMessageKey;
             score += 5;
         }
 
-        if (candidate.superview == containerView) {
+        if (containerView && candidate.superview == containerView) {
             score += 10;
         }
 
@@ -2585,6 +2608,12 @@ static char kWCPLRepeatButtonMessageKey;
                 (long)movedCount,
                 NSStringFromClass([cellView class]));
     }
+
+    WCPLLog(@"复读按钮扫描: candidates=%ld key=%@ container=%@ cell=%@",
+            (long)buttonCandidates.count,
+            messageKey ?: @"",
+            containerView ? NSStringFromClass([containerView class]) : @"nil",
+            cellView ? NSStringFromClass([cellView class]) : @"nil");
 
     return repeatButton;
 }
