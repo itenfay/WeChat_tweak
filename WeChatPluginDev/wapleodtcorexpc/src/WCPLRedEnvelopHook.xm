@@ -27,8 +27,29 @@ static NSString *wcpl_trimString(NSString *text) {
     return trimmed.length > 0 ? trimmed : nil;
 }
 
+static NSString *wcpl_normalizeSessionUserName(NSString *text) {
+    NSString *session = wcpl_trimString(text);
+    if (session.length == 0) {
+        return nil;
+    }
+
+    for (NSInteger i = 0; i < 2; i++) {
+        if ([session rangeOfString:@"%"].location == NSNotFound) {
+            break;
+        }
+        NSString *decoded = [session stringByRemovingPercentEncoding];
+        NSString *normalized = wcpl_trimString(decoded);
+        if (normalized.length == 0 || [normalized isEqualToString:session]) {
+            break;
+        }
+        session = normalized;
+    }
+
+    return session;
+}
+
 static BOOL wcpl_userNameInList(NSString *userName, NSArray *list) {
-    NSString *target = wcpl_trimString(userName);
+    NSString *target = wcpl_normalizeSessionUserName(userName);
     if (target.length == 0 || ![list isKindOfClass:[NSArray class]] || list.count == 0) {
         return NO;
     }
@@ -37,7 +58,7 @@ static BOOL wcpl_userNameInList(NSString *userName, NSArray *list) {
         if (![obj isKindOfClass:[NSString class]]) {
             continue;
         }
-        NSString *candidate = wcpl_trimString((NSString *)obj);
+        NSString *candidate = wcpl_normalizeSessionUserName((NSString *)obj);
         if (candidate.length > 0 && [candidate isEqualToString:target]) {
             return YES;
         }
@@ -122,7 +143,7 @@ static void wcpl_openReplyTrackCleanupLocked(NSMutableDictionary<NSString *, NSD
 }
 
 static void wcpl_trackOpenReplySession(NSString *sendId, NSString *sign, NSString *timingIdentifier, NSString *sessionUserName) {
-    NSString *session = wcpl_trimString(sessionUserName);
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
     if (session.length == 0) {
         return;
     }
@@ -161,7 +182,7 @@ static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign,
         NSString *(^lookupSessionForKey)(NSString *) = ^NSString *(NSString *key) {
             if (key.length == 0) return nil;
             NSDictionary *entry = [tracker[key] isKindOfClass:[NSDictionary class]] ? tracker[key] : nil;
-            NSString *trackedSession = wcpl_trimString(entry[@"session"]);
+            NSString *trackedSession = wcpl_normalizeSessionUserName(entry[@"session"]);
             if (trackedSession.length == 0) return nil;
             NSNumber *ts = [entry[@"ts"] isKindOfClass:[NSNumber class]] ? entry[@"ts"] : nil;
             if (!ts || (now - ts.doubleValue > kWCPLAutoReplyTrackTTL)) return nil;
@@ -191,7 +212,7 @@ static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign,
         }
 
         NSDictionary *lastEntry = [tracker[@"__last__"] isKindOfClass:[NSDictionary class]] ? tracker[@"__last__"] : nil;
-        NSString *lastSession = wcpl_trimString(lastEntry[@"session"]);
+        NSString *lastSession = wcpl_normalizeSessionUserName(lastEntry[@"session"]);
         NSNumber *lastTs = [lastEntry[@"ts"] isKindOfClass:[NSNumber class]] ? lastEntry[@"ts"] : nil;
         if (lastSession.length > 0 && lastTs && (now - lastTs.doubleValue <= kWCPLAutoReplyTrackFallbackAge)) {
             session = lastSession;
@@ -817,7 +838,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     NSString *session = wcpl_stringForKeysInDictionary(requestDict,
                                                        @[@"sessionUserName", @"sessionusername", @"session_user_name"]);
-    session = wcpl_trimString(session);
+    session = wcpl_normalizeSessionUserName(session);
     NSString *sessionSource = @"request";
 
     if (session.length == 0) {
@@ -854,7 +875,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
 %new
 - (void)wcpl_trySendAutoReplyForSession:(NSString *)sessionUserName isGroup:(BOOL)isGroup {
-    NSString *session = wcpl_trimString(sessionUserName);
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
     if (session.length == 0) {
         return;
     }
@@ -876,7 +897,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 %new
 - (BOOL)wcpl_sendTextMessage:(NSString *)content toSession:(NSString *)sessionUserName {
     NSString *text = wcpl_trimString(content);
-    NSString *session = wcpl_trimString(sessionUserName);
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
     if (text.length == 0 || session.length == 0) {
         return NO;
     }
