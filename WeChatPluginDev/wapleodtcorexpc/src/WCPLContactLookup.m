@@ -21,43 +21,15 @@ CContact *WCPLFindContactByUserName(NSString *userName, CContactMgr *contactMgr,
         return nil;
     }
 
-    // 兼容外部调用：避免使用调用方传入的 mgr/dataLogic（可能为悬空指针），统一从 ServiceCenter 获取。
     (void)contactMgr;
     (void)dataLogic;
 
-    Class contactClass = objc_getClass("CContact");
-    CContact *contact = nil;
-
-    CContactMgr *mgr = (CContactMgr *)WCPLGetService(objc_getClass("CContactMgr"));
-    if (mgr && [mgr respondsToSelector:@selector(getContactByName:)]) {
-        @try {
-            contact = [mgr getContactByName:target];
-        } @catch (__unused NSException *exception) {
-            contact = nil;
-        }
-        if (!contact && [mgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
-            @try {
-                contact = [mgr getContactByNameFromDB:target];
-            } @catch (__unused NSException *exception) {
-                contact = nil;
-            }
-        }
-        if (!contact && [mgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
-            @try {
-                contact = [mgr getContactByNameFromCache:target];
-            } @catch (__unused NSException *exception) {
-                contact = nil;
-            }
-        }
-    }
-
-    if (contact && contactClass && ![contact isKindOfClass:contactClass]) {
-        WCPLLog(@"联系人查找异常类型(CContactMgr): %@ (%@)", NSStringFromClass([contact class]), target);
-        contact = nil;
-    }
-    if (contact) {
-        return contact;
-    }
+    // 稳定性优先：该兜底路径在部分版本会触发底层野指针崩溃。
+    // 分组/联系人预选流程已优先走 ContactsDataLogic；此处仅保守返回 nil。
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        WCPLLog(@"联系人兜底查找已禁用(稳定性保护)");
+    });
 
     return nil;
 }
