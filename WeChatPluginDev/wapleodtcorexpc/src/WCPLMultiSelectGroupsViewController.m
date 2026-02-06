@@ -22,6 +22,7 @@
 @property (nonatomic, assign) BOOL wcpl_userDidChangeSelection;
 @property (nonatomic, assign) BOOL wcpl_isApplyingInitialSelections;
 @property (nonatomic, assign) NSInteger wcpl_initialSelectionToken;
+@property (nonatomic, strong) NSMutableSet<NSString *> *wcpl_resolvedInitialUserNames;
 
 @end
 
@@ -124,6 +125,20 @@
         if (didChange) {
             // 用户主动修改时，使用当前选中结果；否则保持初始结果，避免回显失败导致的误清空。
             current = [self wcpl_sanitizedUserNames:current];
+
+            NSSet<NSString *> *resolvedSet = [NSSet setWithArray:self.wcpl_resolvedInitialUserNames.allObjects ?: @[]];
+            NSMutableOrderedSet<NSString *> *merged = [NSMutableOrderedSet orderedSetWithArray:current];
+            NSUInteger unresolvedCount = 0;
+            for (NSString *name in initial) {
+                if (![resolvedSet containsObject:name]) {
+                    unresolvedCount += 1;
+                    [merged addObject:name];
+                }
+            }
+            if (unresolvedCount > 0) {
+                current = merged.array;
+                WCPLLogWarning(@"[多选群聊] 检测到%lu个初始项未能回显，已合并保留避免误清空", (unsigned long)unresolvedCount);
+            }
         } else {
             current = initial;
         }
@@ -182,7 +197,7 @@
                  (unsigned long)selectedCount,
                  logicReady,
                  (long)token);
-    [self wcpl_applySelectionsWithRetryCount:20 delay:0.25 token:token];
+    [self wcpl_applySelectionsWithRetryCount:80 delay:0.25 token:token];
 }
 
 - (void)wcpl_applySelectionsWithRetryCount:(NSInteger)retryCount delay:(NSTimeInterval)delay token:(NSInteger)token {
@@ -225,6 +240,10 @@
         return;
     }
 
+    if (!self.wcpl_resolvedInitialUserNames) {
+        self.wcpl_resolvedInitialUserNames = [NSMutableSet set];
+    }
+
     self.wcpl_isApplyingInitialSelections = YES;
 
     CContactMgr *contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
@@ -244,6 +263,7 @@
             if (!contact) {
                 continue;
             }
+            [self.wcpl_resolvedInitialUserNames addObject:userName];
 
             BOOL alreadySelected = NO;
             if (canCheckSelected) {
