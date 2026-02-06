@@ -7,6 +7,7 @@
 
 #import "WCPLSettingViewController.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLFuncService.h"
 #import "WCPLGroupPickerViewController.h"
 #import "WCPLFriendPickerViewController.h"
 #import "WeChatRedEnvelop.h"
