@@ -9,6 +9,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #include <stdint.h>
+#include <math.h>
 
 static const NSInteger kWCPLRepeatButtonTag = 0x5743504C;
 static const CGFloat kWCPLRepeatButtonSize = 20.0f;
@@ -18,6 +19,12 @@ static const CGFloat kWCPLRepeatButtonTailInsetY = 3.0f;
 static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
 static const void *kWCPLRepeatButtonViewKey = &kWCPLRepeatButtonViewKey;
 static const void *kWCPLRepeatButtonLastFrameKey = &kWCPLRepeatButtonLastFrameKey;
+static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
+static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterStateKey;
+static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
+
+static NSUInteger gWCPLRepeatButtonCreateCount = 0;
+static NSUInteger gWCPLRepeatButtonUpdateCount = 0;
 
 static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
     if (!root || !buttons) {
@@ -236,6 +243,44 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     return msgWrap.m_nsToUsr;
 }
 
+static NSString *wcpl_repeatMessageKey(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return @"nil";
+    }
+    return [NSString stringWithFormat:@"%u_%lld_%u_%@_%@",
+            msgWrap.m_uiMesLocalID,
+            msgWrap.m_n64MesSvrID,
+            msgWrap.m_uiMessageType,
+            msgWrap.m_nsFromUsr ?: @"",
+            msgWrap.m_nsToUsr ?: @""];
+}
+
+static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return @"nil";
+    }
+    return [NSString stringWithFormat:@"local=%u svr=%lld type=%u",
+            msgWrap.m_uiMesLocalID,
+            msgWrap.m_n64MesSvrID,
+            msgWrap.m_uiMessageType];
+}
+
+static CGFloat wcpl_repeatAlignToPixel(CGFloat value) {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    if (scale <= 0.0f) {
+        scale = 2.0f;
+    }
+    return round(value * scale) / scale;
+}
+
+static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
+    const CGFloat epsilon = 0.5f;
+    return fabs(left.origin.x - right.origin.x) <= epsilon &&
+           fabs(left.origin.y - right.origin.y) <= epsilon &&
+           fabs(left.size.width - right.size.width) <= epsilon &&
+           fabs(left.size.height - right.size.height) <= epsilon;
+}
+
 @interface CommonMessageCellView (WCPLRepeatButton)
 - (UIButton *)wchook_repeatButton;
 - (NSArray<UIButton *> *)wchook_allRepeatButtons;
@@ -269,6 +314,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
     if (buttons.count == 0) {
         objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return nil;
     }
 
@@ -307,6 +353,9 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         [button removeFromSuperview];
     }
     objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, keeper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (!keeper) {
+        objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
 }
 
 %new
@@ -369,15 +418,18 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         return;
     }
 
-    (void)isSelf;
-
     CGRect bubbleFrame = [self convertRect:bubbleView.bounds fromView:bubbleView];
     if (CGRectIsEmpty(bubbleFrame) || CGRectGetWidth(bubbleFrame) <= 0.0f || CGRectGetHeight(bubbleFrame) <= 0.0f) {
         bubbleFrame = [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
     }
 
-    CGFloat centerX = CGRectGetMaxX(bubbleFrame) - kWCPLRepeatButtonTailInsetX - kWCPLRepeatButtonSize * 0.5f;
     CGFloat centerY = CGRectGetMaxY(bubbleFrame) - kWCPLRepeatButtonTailInsetY - kWCPLRepeatButtonSize * 0.5f;
+    CGFloat centerX = isSelf
+        ? (CGRectGetMinX(bubbleFrame) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonTailInsetX - kWCPLRepeatButtonSize * 0.5f)
+        : (CGRectGetMaxX(bubbleFrame) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonTailInsetX + kWCPLRepeatButtonSize * 0.5f);
+
+    centerX = wcpl_repeatAlignToPixel(centerX);
+    centerY = wcpl_repeatAlignToPixel(centerY);
 
     CGFloat halfSize = kWCPLRepeatButtonSize * 0.5f;
     CGFloat minX = halfSize + kWCPLRepeatButtonEdgeInset;
@@ -400,17 +452,25 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         didClamp = YES;
     }
 
+    CGRect targetFrame = CGRectMake(centerX - halfSize,
+                                    centerY - halfSize,
+                                    kWCPLRepeatButtonSize,
+                                    kWCPLRepeatButtonSize);
+
+    NSValue *lastFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
+    CGRect lastFrame = lastFrameValue ? lastFrameValue.CGRectValue : CGRectZero;
+    if (wcpl_repeatRectAlmostEqual(lastFrame, targetFrame)) {
+        [self bringSubviewToFront:button];
+        return;
+    }
+
     button.bounds = CGRectMake(0.0f, 0.0f, kWCPLRepeatButtonSize, kWCPLRepeatButtonSize);
     button.center = CGPointMake(centerX, centerY);
     [self bringSubviewToFront:button];
 
-    NSValue *lastFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
-    CGRect lastFrame = lastFrameValue ? lastFrameValue.CGRectValue : CGRectZero;
-    if (!CGRectEqualToRect(lastFrame, button.frame)) {
-        objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, [NSValue valueWithCGRect:button.frame], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        if (didClamp) {
-            WCPLLogDebug(@"Repeat button clamped to cell end: class=%@ bubble=%@ button=%@", NSStringFromClass([self class]), NSStringFromCGRect(bubbleFrame), NSStringFromCGRect(button.frame));
-        }
+    objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, [NSValue valueWithCGRect:button.frame], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (didClamp) {
+        WCPLLogDebug(@"Repeat button clamped to cell end: class=%@ bubble=%@ button=%@", NSStringFromClass([self class]), NSStringFromCGRect(bubbleFrame), NSStringFromCGRect(button.frame));
     }
 }
 
@@ -440,12 +500,16 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
     if (buttons.count == 0) {
         objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return;
     }
     for (UIButton *button in buttons) {
         [button removeFromSuperview];
     }
     objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (buttons.count > 1) {
         WCPLLogDebug(@"Repeat button remove cleanup: class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)buttons.count);
     }
@@ -455,12 +519,24 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 - (void)wchook_updateRepeatButtonIfNeeded {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     if (!config.repeatButtonEnable) {
+        NSString *filterKey = @"disabled";
+        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
+        if (![lastFilterKey isEqualToString:filterKey]) {
+            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p reason=disabled", NSStringFromClass([self class]), self);
+            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
         [self wchook_removeRepeatButtonIfNeeded];
         return;
     }
 
     CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
     if (![self wchook_isMessageSupportedForRepeat:msgWrap]) {
+        NSString *filterKey = [NSString stringWithFormat:@"unsupported_%u", msgWrap.m_uiMessageType];
+        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
+        if (![lastFilterKey isEqualToString:filterKey]) {
+            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=unsupported", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
+            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
         [self wchook_removeRepeatButtonIfNeeded];
         return;
     }
@@ -469,15 +545,29 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
 
     NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
     if (repeatText.length == 0) {
+        NSString *filterKey = [NSString stringWithFormat:@"empty_%@", wcpl_repeatMessageKey(msgWrap)];
+        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
+        if (![lastFilterKey isEqualToString:filterKey]) {
+            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=emptyText", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
+            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
         [self wchook_removeRepeatButtonIfNeeded];
         return;
     }
 
     UIView *bubbleView = [self wchook_bubbleAnchorView];
     if (!bubbleView) {
+        NSString *filterKey = [NSString stringWithFormat:@"noBubble_%@", wcpl_repeatMessageKey(msgWrap)];
+        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
+        if (![lastFilterKey isEqualToString:filterKey]) {
+            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=noBubble", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
+            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
         [self wchook_removeRepeatButtonIfNeeded];
         return;
     }
+
+    objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
     NSArray<UIView *> *relatedViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     if (relatedViews.count > 1) {
@@ -495,6 +585,12 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         }
 
         if (ownerView != self) {
+            NSString *filterKey = [NSString stringWithFormat:@"nonOwner_%@", wcpl_repeatMessageKey(msgWrap)];
+            NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
+            if (![lastFilterKey isEqualToString:filterKey]) {
+                WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=nonOwner", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
+                objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            }
             [self wchook_removeRepeatButtonIfNeeded];
             return;
         }
@@ -519,14 +615,42 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         }
     }
 
+    NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
+    NSString *lastMessageKey = objc_getAssociatedObject(self, kWCPLRepeatButtonMessageKey);
+    BOOL isSameMessage = [lastMessageKey isEqualToString:messageKey];
+
     UIButton *button = [self wchook_repeatButton];
+    BOOL didCreateButton = NO;
     if (!button) {
         button = [self wchook_buildRepeatButton];
         [self addSubview:button];
         objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, button, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        didCreateButton = YES;
+        gWCPLRepeatButtonCreateCount += 1;
     }
+
+    gWCPLRepeatButtonUpdateCount += 1;
+    objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+
     objc_setAssociatedObject(button, kWCPLRepeatButtonWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (!isSameMessage) {
+        objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+
     [self wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:!isFromOther];
+
+    if (isSameMessage) {
+        NSNumber *stableCountObj = objc_getAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey);
+        NSUInteger stableCount = stableCountObj ? stableCountObj.unsignedIntegerValue : 0;
+        stableCount += 1;
+        objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, @(stableCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        if (stableCount == 1 || stableCount == 5 || stableCount == 20 || (stableCount % 50 == 0)) {
+            WCPLLogDebug(@"Repeat UI stable update: class=%@ cell=%p msg=%@ updates=%lu createTotal=%lu updateTotal=%lu frame=%@", NSStringFromClass([self class]), self, messageKey, (unsigned long)stableCount, (unsigned long)gWCPLRepeatButtonCreateCount, (unsigned long)gWCPLRepeatButtonUpdateCount, NSStringFromCGRect(button.frame));
+        }
+    } else {
+        WCPLLogDebug(@"Repeat UI bind: class=%@ cell=%p msg=%@ created=%d createTotal=%lu updateTotal=%lu bubble=%@ button=%@", NSStringFromClass([self class]), self, messageKey, didCreateButton ? 1 : 0, (unsigned long)gWCPLRepeatButtonCreateCount, (unsigned long)gWCPLRepeatButtonUpdateCount, NSStringFromCGRect([self convertRect:bubbleView.bounds fromView:bubbleView]), NSStringFromCGRect(button.frame));
+    }
 }
 
 - (void)layoutSubviews {
@@ -910,6 +1034,9 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         return;
     }
 
+    BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgWrap.m_uiMessageType == 49);
+    WCPLLogDebug(@"Repeat pipeline start: class=%@ cell=%p msg=%@ hasQuote=%d textLen=%lu", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap), hasQuote ? 1 : 0, (unsigned long)repeatText.length);
+
     CMessageWrap *quoteTarget = wcpl_quoteTargetFromMessageWrap(msgWrap);
     if (!quoteTarget && msgWrap.m_uiMessageType == 49) {
         quoteTarget = msgWrap;
@@ -931,7 +1058,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
                                                              repeatText,
                                                              quoteTarget,
                                                              NO);
-            WCPLLogInfo(@"Repeat sent via logicController quote: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            WCPLLogInfo(@"Repeat sent: flow=logic_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat quote send via logicController failed: %@", exception.reason ?: exception);
@@ -959,7 +1086,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         if ([toolView respondsToSelector:@selector(onClickTextViewSendText:)]) {
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(onClickTextViewSendText:), repeatText);
-                WCPLLogInfo(@"Repeat sent via toolView quote: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+                WCPLLogInfo(@"Repeat sent: flow=toolview_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
                 return;
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat quote send via toolView failed: %@", exception.reason ?: exception);
@@ -976,7 +1103,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     if (logicController && [logicController respondsToSelector:@selector(SendTextMessage:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(logicController, @selector(SendTextMessage:), repeatText);
-            WCPLLogInfo(@"Repeat sent via logicController plain: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            WCPLLogInfo(@"Repeat sent: flow=logic_plain msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         } @catch (__unused NSException *exception) {
         }
@@ -985,7 +1112,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     if ([chatVC respondsToSelector:@selector(onSendTextMsg:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(onSendTextMsg:), repeatText);
-            WCPLLogInfo(@"Repeat sent via chatVC plain: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            WCPLLogInfo(@"Repeat sent: flow=chatvc_plain msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         } @catch (__unused NSException *exception) {
         }
@@ -1000,7 +1127,7 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
             newWrap.m_nsContent = repeatText;
             newWrap.m_nsToUsr = chatName;
             [messageMgr AddMsg:chatName MsgWrap:newWrap];
-            WCPLLogInfo(@"Repeat sent via CMessageMgr fallback: type=%u localId=%u", msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+            WCPLLogInfo(@"Repeat sent: flow=messageMgr_fallback msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         } @catch (NSException *exception) {
             WCPLLogError(@"Repeat fallback AddMsg failed: %@", exception.reason ?: exception);
@@ -1016,7 +1143,8 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     if (!msgWrap) {
         msgWrap = wcpl_messageWrapForCellView(self);
     }
-    WCPLLogDebug(@"Repeat button tapped: class=%@ type=%u localId=%u", NSStringFromClass([self class]), msgWrap.m_uiMessageType, msgWrap.m_uiMesLocalID);
+    BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgWrap && msgWrap.m_uiMessageType == 49);
+    WCPLLogInfo(@"Repeat click: class=%@ cell=%p msg=%@ hasQuote=%d", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap), hasQuote ? 1 : 0);
     [self wchook_repeatMessageWrap:msgWrap];
 }
 
