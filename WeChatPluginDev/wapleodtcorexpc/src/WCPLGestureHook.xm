@@ -716,15 +716,6 @@ static BOOL wcpl_sceneTagLooksLikeVideoOther(NSString *sceneTag) {
     return containsVideo && containsOther;
 }
 
-static BOOL wcpl_sceneTagLooksLikeVideoSelf(NSString *sceneTag) {
-    if (![sceneTag isKindOfClass:[NSString class]] || sceneTag.length == 0) {
-        return NO;
-    }
-    BOOL containsVideo = ([sceneTag rangeOfString:@"video" options:NSCaseInsensitiveSearch].location != NSNotFound);
-    BOOL containsOther = ([sceneTag rangeOfString:@"other" options:NSCaseInsensitiveSearch].location != NSNotFound);
-    return containsVideo && !containsOther;
-}
-
 static BOOL wcpl_sceneTagLooksLikeAnyVideo(NSString *sceneTag) {
     if (![sceneTag isKindOfClass:[NSString class]] || sceneTag.length == 0) {
         return NO;
