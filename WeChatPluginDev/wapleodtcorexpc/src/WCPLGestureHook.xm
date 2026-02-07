@@ -1000,6 +1000,8 @@ static BOOL wcpl_repeatNativeResendByDetachedWrap(CMessageWrap *msgWrap,
         return NO;
     }
 
+    wcpl_restoreVideoIdentityForNativeResendIfNeeded(msgWrap, sendWrap, scene);
+
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, scene);
     return wcpl_repeatNativeResendWithWrap(msgWrap, sendWrap, chatName, chatVC, scene);
