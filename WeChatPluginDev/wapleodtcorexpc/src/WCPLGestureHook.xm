@@ -801,12 +801,12 @@ static BOOL wcpl_acceptNativeResendResult(CMessageWrap *originWrap,
 
     if (originWrap.m_uiMessageType == 43 && wcpl_sceneTagLooksLikeVideoOther(sceneTag) &&
         sendWrap.m_uiMesLocalID == 0 && sendWrap.m_n64MesSvrID == 0) {
-        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=%@ origin=%@ send=%@ branch_decision=accept_native_async error/fallback_reason=local_svr_zero_wait_async",
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=%@ origin=%@ send=%@ branch_decision=reject_native_pseudo_success error/fallback_reason=local_svr_zero_after_resend",
                        sceneTag ?: @"(nil)",
                        flowTag ?: @"(nil)",
                        wcpl_repeatMessageDebugInfo(originWrap),
                        wcpl_repeatMessageDebugInfo(sendWrap));
-        return YES;
+        return NO;
     }
 
     return YES;
@@ -1066,6 +1066,15 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
                     wcpl_repeatMessageDebugInfo(sendWrap),
                     msgWrap,
                     sendWrap);
+
+        if (wcpl_sceneTagLooksLikeVideoOther(sceneTag) && sendLocalID == 0 && sendSvrID == 0) {
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=sendmsgmgr_media origin=%@ send=%@ status=%u branch_decision=accept_sendmsg_async error/fallback_reason=local_svr_zero_wait_upload",
+                           sceneTag ?: @"media",
+                           wcpl_repeatMessageDebugInfo(msgWrap),
+                           wcpl_repeatMessageDebugInfo(sendWrap),
+                           sendStatus);
+            return YES;
+        }
 
         if (wcpl_sceneTagLooksLikeOtherMedia(sceneTag) && sendLocalID == 0 && sendSvrID == 0) {
             WCPLLogWarning(@"Repeat media queued without local id: scene=%@ msg=%@ send=%@ status=%u; treat as failed and fallback",
@@ -2438,15 +2447,21 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                      videoAssetPath ?: @"(nil)");
 
         if (isFromOtherVideo) {
+            if (hasVideoAsset && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
+                return;
+            }
             if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
                 return;
             }
-            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=video_other input=msg(local=%u svr=%lld hasAsset=%d size=%llu) branch_decision=abort_without_sendmsg error/fallback_reason=native_failed_or_blocked",
+            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
+                return;
+            }
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=video_other input=msg(local=%u svr=%lld hasAsset=%d size=%llu) branch_decision=abort_without_sendmsg error/fallback_reason=all_channels_failed",
                            msgWrap.m_uiMesLocalID,
                            msgWrap.m_n64MesSvrID,
                            hasVideoAsset ? 1 : 0,
                            videoAssetSize);
-            WCPLLogWarning(@"Repeat video other-message send failed on native channel: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            WCPLLogWarning(@"Repeat video other-message send failed on native/sendmsg channel: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         }
 
