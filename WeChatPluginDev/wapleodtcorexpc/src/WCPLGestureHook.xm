@@ -777,12 +777,12 @@ static BOOL wcpl_acceptNativeResendResult(CMessageWrap *originWrap,
 
     if (originWrap.m_uiMessageType == 43 && wcpl_sceneTagLooksLikeVideoOther(sceneTag) &&
         sendWrap.m_uiMesLocalID == 0 && sendWrap.m_n64MesSvrID == 0) {
-        WCPLLogWarning(@"Repeat native resend pseudo-success: flow=%@ scene=%@ msg=%@ send=%@ (local/svr both 0), treat as failed",
-                       flowTag ?: @"(nil)",
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=%@ origin=%@ send=%@ branch_decision=accept_native_async error/fallback_reason=local_svr_zero_wait_async",
                        sceneTag ?: @"(nil)",
+                       flowTag ?: @"(nil)",
                        wcpl_repeatMessageDebugInfo(originWrap),
                        wcpl_repeatMessageDebugInfo(sendWrap));
-        return NO;
+        return YES;
     }
 
     return YES;
@@ -2403,13 +2403,12 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
                 return;
             }
-            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-DELETE module=repeat.video scene=video_other input=msg(local=%u svr=%lld) branch_decision=fallback_sendmsgmgr error/fallback_reason=native_failed_or_blocked",
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=video_other input=msg(local=%u svr=%lld hasAsset=%d size=%llu) branch_decision=abort_without_sendmsg error/fallback_reason=native_failed_or_blocked",
                            msgWrap.m_uiMesLocalID,
-                           msgWrap.m_n64MesSvrID);
-            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
-                return;
-            }
-            WCPLLogWarning(@"Repeat video other-message send failed on native/sendmsg channel: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+                           msgWrap.m_n64MesSvrID,
+                           hasVideoAsset ? 1 : 0,
+                           videoAssetSize);
+            WCPLLogWarning(@"Repeat video other-message send failed on native channel: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         }
 
