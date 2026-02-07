@@ -539,16 +539,155 @@ static id wcpl_contactForUserName(NSString *userName) {
     return contact;
 }
 
+static NSString *wcpl_nonEmptyDisplayNameValue(id value) {
+    NSString *displayName = wcpl_trimString(value);
+    if (displayName.length == 0) {
+        return nil;
+    }
+
+    displayName = [[displayName stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
+                   stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+    return wcpl_trimString(displayName);
+}
+
+static BOOL wcpl_isRawGroupSessionName(NSString *displayName, NSString *sessionUserName) {
+    NSString *name = wcpl_normalizeSessionUserName(displayName);
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
+    if (name.length == 0 || session.length == 0) {
+        return NO;
+    }
+
+    if ([name isEqualToString:session]) {
+        return YES;
+    }
+
+    if ([name rangeOfString:@"@chatroom" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+
+    NSString *groupId = [session stringByReplacingOccurrencesOfString:@"@chatroom" withString:@""];
+    if (groupId.length > 0 && [name isEqualToString:groupId]) {
+        return YES;
+    }
+
+    return NO;
+}
+
+static NSString *wcpl_displayNameViaBizUtil(NSString *userName) {
+    NSString *target = wcpl_normalizeSessionUserName(userName);
+    if (target.length == 0) {
+        return nil;
+    }
+
+    Class bizUtilClass = objc_getClass("WCBizUtil");
+    if (!(bizUtilClass && [bizUtilClass respondsToSelector:@selector(getContactDisplayName:)])) {
+        return nil;
+    }
+
+    @try {
+        id value = ((id (*)(id, SEL, id))objc_msgSend)(bizUtilClass, @selector(getContactDisplayName:), target);
+        return wcpl_nonEmptyDisplayNameValue(value);
+    } @catch (__unused NSException *exception) {
+        return nil;
+    }
+}
+
+static NSString *wcpl_groupNameFromChatRoomDataObject(id chatRoomData) {
+    if (!chatRoomData) {
+        return nil;
+    }
+
+    NSArray<NSString *> *selectors = @[@"roomName", @"chatroomName", @"m_nsNickName", @"m_nsChatRoomName", @"topic", @"title", @"name"];
+    for (NSString *selectorName in selectors) {
+        SEL selector = NSSelectorFromString(selectorName);
+        if (!selector || ![chatRoomData respondsToSelector:selector]) {
+            continue;
+        }
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(chatRoomData, selector);
+            NSString *displayName = wcpl_nonEmptyDisplayNameValue(value);
+            if (displayName.length > 0) {
+                return displayName;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSArray<NSString *> *keys = @[@"roomName", @"chatroomName", @"m_nsNickName", @"m_nsChatRoomName", @"topic", @"title", @"name"];
+    for (NSString *key in keys) {
+        @try {
+            id value = [chatRoomData valueForKey:key];
+            NSString *displayName = wcpl_nonEmptyDisplayNameValue(value);
+            if (displayName.length > 0) {
+                return displayName;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return nil;
+}
+
+static NSString *wcpl_groupDisplayNameFromContact(id contact, NSString *sessionUserName) {
+    NSString *session = wcpl_normalizeSessionUserName(sessionUserName);
+    if (!contact || session.length == 0 || [session rangeOfString:@"@chatroom"].location == NSNotFound) {
+        return nil;
+    }
+
+    id chatRoomData = nil;
+    if ([contact respondsToSelector:@selector(m_ChatRoomData)]) {
+        @try {
+            chatRoomData = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_ChatRoomData));
+        } @catch (__unused NSException *exception) {
+            chatRoomData = nil;
+        }
+    }
+    if (!chatRoomData) {
+        @try {
+            chatRoomData = [contact valueForKey:@"m_ChatRoomData"];
+        } @catch (__unused NSException *exception) {
+            chatRoomData = nil;
+        }
+    }
+
+    NSString *displayName = wcpl_groupNameFromChatRoomDataObject(chatRoomData);
+    if (displayName.length > 0 && !wcpl_isRawGroupSessionName(displayName, session)) {
+        return displayName;
+    }
+
+    Class contactClass = objc_getClass("CContact");
+    if (contactClass && [contactClass respondsToSelector:@selector(genChatRoomName:)]) {
+        @try {
+            id value = ((id (*)(id, SEL, id))objc_msgSend)(contactClass, @selector(genChatRoomName:), contact);
+            displayName = wcpl_nonEmptyDisplayNameValue(value);
+            if (displayName.length > 0 && !wcpl_isRawGroupSessionName(displayName, session)) {
+                return displayName;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    displayName = wcpl_displayNameViaBizUtil(session);
+    if (displayName.length > 0 && !wcpl_isRawGroupSessionName(displayName, session)) {
+        return displayName;
+    }
+
+    return nil;
+}
+
 static NSString *wcpl_contactDisplayName(id contact) {
     if (!contact) {
         return nil;
     }
 
+    NSString *rawUserName = wcpl_safeUserNameFromObject(contact);
+    BOOL isGroupContact = ([rawUserName rangeOfString:@"@chatroom"].location != NSNotFound);
+
     NSString *displayName = nil;
     @try {
         if ([contact respondsToSelector:@selector(getContactDisplayName)]) {
             id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(getContactDisplayName));
-            displayName = wcpl_trimString(value);
+            displayName = wcpl_nonEmptyDisplayNameValue(value);
         }
     } @catch (__unused NSException *exception) {
         displayName = nil;
@@ -558,7 +697,7 @@ static NSString *wcpl_contactDisplayName(id contact) {
         @try {
             if ([contact respondsToSelector:@selector(m_nsNickName)]) {
                 id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsNickName));
-                displayName = wcpl_trimString(value);
+                displayName = wcpl_nonEmptyDisplayNameValue(value);
             }
         } @catch (__unused NSException *exception) {
             displayName = nil;
@@ -568,16 +707,20 @@ static NSString *wcpl_contactDisplayName(id contact) {
     if (displayName.length == 0) {
         @try {
             id value = [contact valueForKey:@"m_nsRemark"];
-            displayName = wcpl_trimString(value);
+            displayName = wcpl_nonEmptyDisplayNameValue(value);
         } @catch (__unused NSException *exception) {
             displayName = nil;
         }
     }
 
-    if (displayName.length > 0) {
-        displayName = [[displayName stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-                       stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+    if (isGroupContact && wcpl_isRawGroupSessionName(displayName, rawUserName)) {
+        displayName = nil;
     }
+
+    if (displayName.length == 0 && isGroupContact) {
+        displayName = wcpl_groupDisplayNameFromContact(contact, rawUserName);
+    }
+
     return displayName;
 }
 
@@ -591,8 +734,25 @@ static NSString *wcpl_displayNameForUserName(NSString *userName) {
         return @"文件传输助手";
     }
 
+    BOOL isGroup = ([target rangeOfString:@"@chatroom"].location != NSNotFound);
+
     id contact = wcpl_contactForUserName(target);
-    return wcpl_contactDisplayName(contact);
+    NSString *displayName = wcpl_contactDisplayName(contact);
+    if (isGroup && wcpl_isRawGroupSessionName(displayName, target)) {
+        displayName = nil;
+    }
+
+    if (displayName.length == 0) {
+        NSString *bizDisplayName = wcpl_displayNameViaBizUtil(target);
+        if (bizDisplayName.length > 0 && (!isGroup || !wcpl_isRawGroupSessionName(bizDisplayName, target))) {
+            displayName = bizDisplayName;
+            if (isGroup) {
+                WCPLLogDebug(@"群聊名称解析兜底: session=%@ source=WCBizUtil name=%@", target, displayName);
+            }
+        }
+    }
+
+    return displayName;
 }
 
 static NSString *wcpl_notifySceneDisplayText(NSString *sessionUserName) {
@@ -605,15 +765,11 @@ static NSString *wcpl_notifySceneDisplayText(NSString *sessionUserName) {
     NSString *displayName = wcpl_displayNameForUserName(session);
 
     if (isGroup) {
-        if (displayName.length > 0) {
+        if (displayName.length > 0 && !wcpl_isRawGroupSessionName(displayName, session)) {
             return [NSString stringWithFormat:@"群聊(%@)", displayName];
         }
-
-        NSString *groupId = [session stringByReplacingOccurrencesOfString:@"@chatroom" withString:@""];
-        if (groupId.length > 10) {
-            groupId = [groupId substringToIndex:10];
-        }
-        return [NSString stringWithFormat:@"群聊(%@)", groupId.length > 0 ? groupId : @"未知"];
+        WCPLLogDebug(@"群聊名称解析失败: session=%@ display=%@", session, displayName ?: @"");
+        return @"群聊(未命名群)";
     }
 
     if (displayName.length > 0) {
