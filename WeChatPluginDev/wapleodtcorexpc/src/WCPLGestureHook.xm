@@ -1054,11 +1054,29 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, sceneTag ?: @"media");
 
+    BOOL hasQueueCounter = (sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(GetCountOfSendMessage)]);
+    unsigned long long queueCountBefore = 0;
+    if (hasQueueCounter) {
+        @try {
+            queueCountBefore = ((unsigned long long (*)(id, SEL))objc_msgSend)(sendMessageMgr, @selector(GetCountOfSendMessage));
+        } @catch (__unused NSException *exceptionCountBefore) {
+            hasQueueCounter = NO;
+        }
+    }
+
     @try {
         ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
         unsigned int sendLocalID = sendWrap.m_uiMesLocalID;
         long long sendSvrID = sendWrap.m_n64MesSvrID;
         unsigned int sendStatus = sendWrap.m_uiStatus;
+        unsigned long long queueCountAfter = queueCountBefore;
+        if (hasQueueCounter) {
+            @try {
+                queueCountAfter = ((unsigned long long (*)(id, SEL))objc_msgSend)(sendMessageMgr, @selector(GetCountOfSendMessage));
+            } @catch (__unused NSException *exceptionCountAfter) {
+                hasQueueCounter = NO;
+            }
+        }
         WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_media scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
                     sceneTag ?: @"media",
                     wcpl_repeatMessageDebugInfo(msgWrap),
@@ -1068,6 +1086,16 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
                     sendWrap);
 
         if (wcpl_sceneTagLooksLikeVideoOther(sceneTag) && sendLocalID == 0 && sendSvrID == 0) {
+            if (hasQueueCounter && queueCountAfter <= queueCountBefore) {
+                WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=sendmsgmgr_media origin=%@ send=%@ status=%u queue_before=%llu queue_after=%llu branch_decision=reject_sendmsg_async error/fallback_reason=local_svr_zero_and_queue_unchanged",
+                               sceneTag ?: @"media",
+                               wcpl_repeatMessageDebugInfo(msgWrap),
+                               wcpl_repeatMessageDebugInfo(sendWrap),
+                               sendStatus,
+                               queueCountBefore,
+                               queueCountAfter);
+                return NO;
+            }
             WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=sendmsgmgr_media origin=%@ send=%@ status=%u branch_decision=accept_sendmsg_async error/fallback_reason=local_svr_zero_wait_upload",
                            sceneTag ?: @"media",
                            wcpl_repeatMessageDebugInfo(msgWrap),
@@ -1092,6 +1120,37 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
                        wcpl_repeatMessageDebugInfo(msgWrap),
                        chatName,
                        exception.reason ?: exception);
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_repeatVideoByResendVideoAPI(CMessageWrap *msgWrap,
+                                             NSString *chatName,
+                                             NSString *sceneTag) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (!(messageMgr && [messageMgr respondsToSelector:@selector(ResendVideoMsg:MsgWrap:)])) {
+        return NO;
+    }
+
+    NSString *scene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"video_other_resendvideo";
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendVideoMsg:MsgWrap:), chatName, msgWrap);
+        WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=resend_video_api origin=%@ chat=%@ branch_decision=accept_resend_video_api error/fallback_reason=none",
+                    scene,
+                    wcpl_repeatMessageDebugInfo(msgWrap),
+                    chatName ?: @"(nil)");
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=resend_video_api origin=%@ chat=%@ branch_decision=reject_resend_video_api error/fallback_reason=%@",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       chatName ?: @"(nil)",
+                       exception.reason ?: @"exception");
     }
 
     return NO;
@@ -2447,6 +2506,9 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                      videoAssetPath ?: @"(nil)");
 
         if (isFromOtherVideo) {
+            if (hasVideoAsset && wcpl_repeatVideoByResendVideoAPI(msgWrap, chatName, @"video_other_resendvideo")) {
+                return;
+            }
             if (hasVideoAsset && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
                 return;
             }
