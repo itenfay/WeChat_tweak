@@ -5,7 +5,6 @@
 #import "WCPLContactLookup.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLServiceCenter.h"
-#import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -31,23 +30,9 @@ static BOOL wcpl_isMatchedContactObject(id obj, NSString *targetUserNameLowercas
 }
 
 static void wcpl_logUnexpectedContactType(id obj, NSString *scene, NSString *targetUserName) {
-    if (!obj || ![scene isKindOfClass:[NSString class]]) {
-        return;
-    }
-
-    static NSUInteger anomalyLogCount = 0;
-    if (anomalyLogCount >= 8) {
-        return;
-    }
-    anomalyLogCount += 1;
-
-    NSString *className = NSStringFromClass([obj class]);
-    NSString *resolved = wcpl_userNameFromObject(obj);
-    WCPLLogWarning(@"联系人查找异常对象: scene=%@ target=%@ class=%@ resolved=%@",
-                   scene,
-                   targetUserName ?: @"(nil)",
-                   className ?: @"(nil)",
-                   resolved ?: @"(nil)");
+    (void)obj;
+    (void)scene;
+    (void)targetUserName;
 }
 
 static NSString *wcpl_userNameFromObject(id obj) {
@@ -160,10 +145,6 @@ CContact *WCPLFindContactByUserName(NSString *userName, CContactMgr *contactMgr,
     }
 
     if (![NSThread isMainThread]) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            WCPLLogWarning(@"联系人查找在非主线程调用，已跳过兜底以保证稳定性");
-        });
         return nil;
     }
 
