@@ -67,6 +67,40 @@ static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
     return NO;
 }
 
+static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
+        return NO;
+    }
+    if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
+        return NO;
+    }
+
+    NSString *md5 = wcpl_trimTextForRepeat(msgWrap.m_nsEmoticonMD5);
+    if (md5.length == 32) {
+        return YES;
+    }
+
+    NSString *content = msgWrap.m_nsContent;
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return NO;
+    }
+
+    if ([content rangeOfString:@"<emoji" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"<emoticon" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"<md5" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"md5=\"" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+
+    return NO;
+}
+
 static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
     if (!msgWrap) {
         return NO;
@@ -162,7 +196,9 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
     SEL directSelectors[] = {
         @selector(getCurrentMessageWrap),
         @selector(messageWrap),
-        @selector(getMediaWrap)
+        @selector(getMediaWrap),
+        @selector(msgWrap),
+        @selector(getMessageWrap)
     };
     for (size_t idx = 0; idx < sizeof(directSelectors) / sizeof(directSelectors[0]); ++idx) {
         SEL selector = directSelectors[idx];
@@ -188,7 +224,8 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
             SEL vmSelectors[] = {
                 @selector(messageWrap),
                 @selector(getCurrentMessageWrap),
-                @selector(msgWrap)
+                @selector(msgWrap),
+                @selector(getMessageWrap)
             };
             for (size_t idx = 0; idx < sizeof(vmSelectors) / sizeof(vmSelectors[0]); ++idx) {
                 SEL selector = vmSelectors[idx];
@@ -200,6 +237,20 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
                         }
                     } @catch (__unused NSException *exception) {
                     }
+                }
+            }
+        }
+
+        NSArray<NSString *> *kvcKeys = @[@"msgWrap", @"messageWrap", @"m_msgWrap", @"m_messageWrap", @"_msgWrap", @"_messageWrap", @"m_oMessageWrap"];
+        NSArray *targets = viewModel ? @[cell, viewModel] : @[cell];
+        for (id target in targets) {
+            for (NSString *key in kvcKeys) {
+                @try {
+                    id wrap = [target valueForKey:key];
+                    if ([wrap isKindOfClass:%c(CMessageWrap)]) {
+                        return (CMessageWrap *)wrap;
+                    }
+                } @catch (__unused NSException *exceptionKVC) {
                 }
             }
         }
@@ -227,10 +278,13 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
         return @"[表情]";
     }
     if (msgWrap.m_uiMessageType == 49) {
-        if (!wcpl_isQuoteReplyAppMessage(msgWrap)) {
-            return nil;
+        if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
+            return wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
         }
-        return wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
+        if (wcpl_isAppEmoticonMessage(msgWrap)) {
+            return @"[表情]";
+        }
+        return nil;
     }
     return nil;
 }
@@ -264,7 +318,13 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
         case 47:
             return config.repeatSupportEmoticonEnable;
         case 49:
-            return wcpl_isQuoteReplyAppMessage(msgWrap);
+            if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
+                return YES;
+            }
+            if (config.repeatSupportEmoticonEnable && wcpl_isAppEmoticonMessage(msgWrap)) {
+                return YES;
+            }
+            return NO;
         default:
             return NO;
     }
@@ -861,92 +921,6 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
         return NO;
     }
     return wcpl_repeatNativeResendWithWrap(msgWrap, msgWrap, chatName, chatVC, sceneTag);
-}
-
-static BOOL wcpl_repeatVideoByRoutePatchedOrigin(CMessageWrap *msgWrap,
-                                                 NSString *chatName,
-                                                 BaseMsgContentViewController *chatVC,
-                                                 NSString *sceneTag) {
-    if (!(msgWrap && chatName.length > 0)) {
-        return NO;
-    }
-
-    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"video_route_patch";
-    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
-    NSString *originTo = msgWrap.m_nsToUsr;
-    NSString *originFrom = msgWrap.m_nsFromUsr;
-    NSString *originReal = msgWrap.m_nsRealChatUsr;
-
-    BOOL sent = NO;
-    @try {
-        wcpl_prepareSendWrapRoute(msgWrap, chatName, selfUserName, scene);
-
-        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-        if (messageMgr && [messageMgr respondsToSelector:@selector(ResendVideoMsg:MsgWrap:)]) {
-            @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendVideoMsg:MsgWrap:), chatName, msgWrap);
-                WCPLLogInfo(@"Repeat sent: flow=native_resend_video_routepatch scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
-                            scene,
-                            wcpl_repeatMessageDebugInfo(msgWrap),
-                            chatName,
-                            wcpl_repeatMessageDebugInfo(msgWrap),
-                            msgWrap,
-                            msgWrap);
-                if (wcpl_acceptNativeResendResult(msgWrap, msgWrap, scene, @"native_resend_video_routepatch")) {
-                    sent = YES;
-                }
-            } @catch (NSException *exceptionVideoResend) {
-                WCPLLogWarning(@"Repeat video route patch via ResendVideoMsg failed: scene=%@ reason=%@",
-                               scene,
-                               exceptionVideoResend.reason ?: exceptionVideoResend);
-            }
-        }
-
-        if (!sent) {
-            sent = wcpl_repeatNativeResendWithWrap(msgWrap, msgWrap, chatName, chatVC, [scene stringByAppendingString:@"_generic"]);
-        }
-    } @catch (NSException *exceptionRoutePatch) {
-        WCPLLogWarning(@"Repeat video route patch unexpected error: scene=%@ reason=%@",
-                       scene,
-                       exceptionRoutePatch.reason ?: exceptionRoutePatch);
-    } @finally {
-        if ([msgWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
-            @try {
-                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap,
-                                                      @selector(setM_nsToUsr:),
-                                                      [originTo isKindOfClass:[NSString class]] ? originTo : nil);
-            } @catch (__unused NSException *exceptionRestoreTo) {
-            }
-        }
-
-        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
-            @try {
-                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap,
-                                                      @selector(setM_nsFromUsr:),
-                                                      [originFrom isKindOfClass:[NSString class]] ? originFrom : nil);
-            } @catch (__unused NSException *exceptionRestoreFrom) {
-            }
-        }
-
-        if ([msgWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
-            @try {
-                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap,
-                                                      @selector(setM_nsRealChatUsr:),
-                                                      [originReal isKindOfClass:[NSString class]] ? originReal : nil);
-            } @catch (__unused NSException *exceptionRestoreReal) {
-            }
-        }
-
-        WCPLLogDebug(@"Repeat video route restored: scene=%@ msg=%@ to=%@ from=%@ real=%@ sent=%d",
-                     scene,
-                     wcpl_repeatMessageDebugInfo(msgWrap),
-                     msgWrap.m_nsToUsr ?: @"(nil)",
-                     msgWrap.m_nsFromUsr ?: @"(nil)",
-                     msgWrap.m_nsRealChatUsr ?: @"(nil)",
-                     sent ? 1 : 0);
-    }
-
-    return sent;
 }
 
 static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
@@ -2285,9 +2259,6 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                      videoAssetPath ?: @"(nil)");
 
         if (isFromOtherVideo) {
-            if (wcpl_repeatVideoByRoutePatchedOrigin(msgWrap, chatName, chatVC, @"video_other_routepatch")) {
-                return;
-            }
             if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
                 return;
             }
