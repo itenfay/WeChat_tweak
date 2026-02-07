@@ -107,6 +107,23 @@ static NSInteger wcpl_sg_safeIntegerForKey(id obj, NSString *key) {
     return 0;
 }
 
+static NSUInteger wcpl_sg_safeContentLength(id value) {
+    if (!value) {
+        return 0;
+    }
+    if ([value isKindOfClass:[NSString class]]) {
+        return ((NSString *)value).length;
+    }
+    if ([value respondsToSelector:@selector(length)]) {
+        @try {
+            return ((NSUInteger (*)(id, SEL))objc_msgSend)(value, @selector(length));
+        } @catch (__unused NSException *exception) {
+            return 0;
+        }
+    }
+    return 0;
+}
+
 static BOOL wcpl_sg_isFromSelfMsgWrap(id msgWrap) {
     if (!msgWrap) return NO;
 
@@ -231,19 +248,15 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
                      toUsr,
                      fromUsr);
     } else {
-        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
-        if (content.length > 0) {
-            WCPLLogDebug(@"消息入队: SendMessageMgr type=%ld contentLen=%lu to=%@ from=%@",
-                         (long)msgType,
-                         (unsigned long)content.length,
-                         toUsr,
-                         fromUsr);
-        } else {
-            WCPLLogDebug(@"消息入队: SendMessageMgr type=%ld contentLen=0 to=%@ from=%@",
-                         (long)msgType,
-                         toUsr,
-                         fromUsr);
-        }
+        id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
+        NSUInteger contentLength = wcpl_sg_safeContentLength(rawContent);
+        NSString *contentClass = rawContent ? NSStringFromClass([rawContent class]) : @"nil";
+        WCPLLogDebug(@"消息入队: SendMessageMgr type=%ld contentLen=%lu contentClass=%@ to=%@ from=%@",
+                     (long)msgType,
+                     (unsigned long)contentLength,
+                     contentClass,
+                     toUsr,
+                     fromUsr);
     }
 
     %orig;

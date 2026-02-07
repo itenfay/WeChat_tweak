@@ -2,8 +2,9 @@
 // WCPLContactLookup.h
 //
 // 统一的联系人查找入口：
-// - 优先从 ServiceCenter 获取 CContactMgr 查询（支持 DB / Cache），避免依赖外部传入对象指针。
-// - 为稳定性考虑，不再在此处回退遍历 ContactsDataLogic（外部参数保留仅用于兼容签名）。
+// - 优先从 ContactsDataLogic 的联系人字典取值。
+// - 若未命中，再使用 CContactMgr 的稳定查询路径（含 DB / Cache / 联系人列表遍历）。
+// - 为稳定性考虑，仅允许在主线程执行兜底查找；非主线程直接返回 nil。
 //
 
 #import <Foundation/Foundation.h>

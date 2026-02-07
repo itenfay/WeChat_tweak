@@ -78,6 +78,23 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
     return YES;
 }
 
+static BOOL wcpl_isMessageSettledForRepeat(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return NO;
+    }
+
+    if (msgWrap.m_n64MesSvrID > 0) {
+        return YES;
+    }
+
+    unsigned int status = msgWrap.m_uiStatus;
+    if (status == 2 || status == 3) {
+        return YES;
+    }
+
+    return NO;
+}
+
 static NSInteger wcpl_normalizeSwipeActionValueLegacyAware(NSInteger action, BOOL isSelfAction) {
     if (action < 0) {
         return 0;
@@ -945,6 +962,17 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
         if (![lastFilterKey isEqualToString:filterKey]) {
             WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=unsupported", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
+            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        }
+        [self wchook_removeRepeatButtonIfNeeded];
+        return;
+    }
+
+    if (!wcpl_isMessageSettledForRepeat(msgWrap)) {
+        NSString *filterKey = [NSString stringWithFormat:@"pending_%@", wcpl_repeatMessageKey(msgWrap) ?: @"nil"];
+        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
+        if (![lastFilterKey isEqualToString:filterKey]) {
+            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=pending", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
             objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
         }
         [self wchook_removeRepeatButtonIfNeeded];
