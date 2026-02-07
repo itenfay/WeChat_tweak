@@ -669,21 +669,46 @@ static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *o
     }
 }
 
-static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class preferredClass) {
+static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class preferredClass, UIView *currentView) {
     UIView *ownerView = nil;
+    CGFloat ownerScore = -1.0f;
     for (UIView *candidate in relatedViews) {
         if (!candidate || !candidate.window || candidate.hidden || candidate.alpha < 0.01f) {
             continue;
         }
-        if (!ownerView) {
-            ownerView = candidate;
-            continue;
+
+        CGRect candidateRectInWindow = CGRectZero;
+        CGRect visibleRect = CGRectZero;
+        CGFloat visibleArea = 0.0f;
+        @try {
+            candidateRectInWindow = [candidate convertRect:candidate.bounds toView:candidate.window];
+            visibleRect = CGRectIntersection(candidateRectInWindow, candidate.window.bounds);
+            if (!CGRectIsNull(visibleRect) && !CGRectIsEmpty(visibleRect)) {
+                visibleArea = CGRectGetWidth(visibleRect) * CGRectGetHeight(visibleRect);
+            }
+        } @catch (__unused NSException *exception) {
+            visibleArea = 0.0f;
         }
 
         BOOL candidatePreferred = preferredClass && [candidate isKindOfClass:preferredClass];
-        BOOL ownerPreferred = preferredClass && [ownerView isKindOfClass:preferredClass];
-        if (candidatePreferred && !ownerPreferred) {
+        CGFloat score = visibleArea;
+        if (candidatePreferred) {
+            score += 1000000.0f;
+        }
+        if (candidate == currentView) {
+            score += 5000000.0f;
+        }
+        score += (CGFloat)(candidate.alpha * 1000.0f);
+
+        if (!ownerView || score > ownerScore) {
             ownerView = candidate;
+            ownerScore = score;
+            continue;
+        }
+
+        if (fabs(score - ownerScore) <= 1.0f && candidate == currentView) {
+            ownerView = candidate;
+            ownerScore = score;
         }
     }
     return ownerView;
@@ -801,7 +826,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             continue;
         }
         CGRect frame = subview.frame;
-        if (CGRectGetWidth(frame) < 40.0f || CGRectGetHeight(frame) < 20.0f) {
+        if (CGRectGetWidth(frame) < 24.0f || CGRectGetHeight(frame) < 16.0f) {
             continue;
         }
         CGFloat score = CGRectGetWidth(frame) * CGRectGetHeight(frame);
@@ -810,6 +835,17 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             bestView = subview;
         }
     }
+
+    if (!bestView && [self respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            CGRect menuRect = [self showRectForMenuController];
+            if (!CGRectIsEmpty(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f) {
+                return self;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
     return bestView;
 }
 
@@ -835,6 +871,9 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     BOOL menuRectValid = !CGRectIsEmpty(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, self.bounds);
     BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) && CGRectGetWidth(bubbleFrame) > 8.0f && CGRectGetHeight(bubbleFrame) > 8.0f;
+    if (bubbleView == self && menuRectValid) {
+        bubbleRectValid = NO;
+    }
 
     CGRect baseRect = bubbleRectValid ? bubbleFrame : menuRect;
     CGFloat anchorMaxY = bubbleRectValid ? CGRectGetMaxY(bubbleFrame) : CGRectGetMaxY(baseRect);
@@ -1013,7 +1052,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     if (relatedViews.count > 1) {
         UIView *ownerView = wcpl_repeatOwnerViewForMessageKey(messageKey);
         if (!ownerView || !ownerView.window || ownerView.hidden || ownerView.alpha < 0.01f || ![relatedViews containsObject:ownerView]) {
-            ownerView = wcpl_selectRepeatOwnerView(relatedViews, [self class]);
+            ownerView = wcpl_selectRepeatOwnerView(relatedViews, [self class], self);
             if (!ownerView) {
                 ownerView = self;
             }

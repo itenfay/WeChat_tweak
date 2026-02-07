@@ -25,6 +25,7 @@
 static NSString *const kWCPLFileHelperUserName = @"filehelper";
 
 static NSString *wcpl_stringFromSelector(id obj, SEL sel);
+static NSString *wcpl_stringForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys);
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -229,6 +230,99 @@ static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign,
         *sourceOut = source;
     }
     return session;
+}
+
+static NSString *wcpl_sessionFromDictionary(NSDictionary *dict) {
+    if (![dict isKindOfClass:[NSDictionary class]] || dict.count == 0) {
+        return nil;
+    }
+
+    NSString *session = wcpl_stringForKeysInDictionary(dict,
+                                                       @[@"sessionUserName", @"sessionusername", @"session_user_name",
+                                                         @"chatroomname", @"chatRoomName", @"chat_room_name",
+                                                         @"talker", @"fromUsername", @"fromUserName", @"from_username",
+                                                         @"toUsername", @"toUserName", @"to_username"]);
+    return wcpl_normalizeSessionUserName(session);
+}
+
+static NSString *wcpl_guessSessionFromRequestObject(HongBaoReq *req) {
+    if (!req) {
+        return nil;
+    }
+
+    NSArray<NSString *> *keys = @[@"sessionUserName", @"sessionusername", @"session_user_name",
+                                  @"chatroomname", @"chatRoomName", @"chat_room_name",
+                                  @"talker", @"fromUsername", @"fromUserName", @"from_username",
+                                  @"toUsername", @"toUserName", @"to_username"];
+    for (NSString *key in keys) {
+        @try {
+            id value = [req valueForKey:key];
+            NSString *session = wcpl_normalizeSessionUserName(value);
+            if (session.length > 0) {
+                return session;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return nil;
+}
+
+static NSString *wcpl_bestSessionCandidate(NSString *primarySession,
+                                           NSDictionary *requestDict,
+                                           NSDictionary *responseDict,
+                                           NSDictionary *requestNativeUrlDict,
+                                           HongBaoReq *req,
+                                           NSString **sourceOut) {
+    NSString *session = wcpl_normalizeSessionUserName(primarySession);
+    NSString *source = @"request";
+    if (session.length > 0) {
+        if (sourceOut) {
+            *sourceOut = source;
+        }
+        return session;
+    }
+
+    session = wcpl_sessionFromDictionary(requestDict);
+    if (session.length > 0) {
+        source = @"request.dict";
+        if (sourceOut) {
+            *sourceOut = source;
+        }
+        return session;
+    }
+
+    session = wcpl_sessionFromDictionary(requestNativeUrlDict);
+    if (session.length > 0) {
+        source = @"request.nativeUrl";
+        if (sourceOut) {
+            *sourceOut = source;
+        }
+        return session;
+    }
+
+    session = wcpl_sessionFromDictionary(responseDict);
+    if (session.length > 0) {
+        source = @"response";
+        if (sourceOut) {
+            *sourceOut = source;
+        }
+        return session;
+    }
+
+    session = wcpl_guessSessionFromRequestObject(req);
+    if (session.length > 0) {
+        source = @"request.kvc";
+        if (sourceOut) {
+            *sourceOut = source;
+        }
+        return session;
+    }
+
+    if (sourceOut) {
+        *sourceOut = source;
+    }
+    return nil;
 }
 
 static unsigned int wcpl_hongbaoCmdId(HongBaoRes *res, HongBaoReq *req) {
@@ -1045,18 +1139,26 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 
     NSString *session = wcpl_stringForKeysInDictionary(requestDict,
                                                        @[@"sessionUserName", @"sessionusername", @"session_user_name"]);
-    if (session.length == 0) {
-        session = wcpl_stringForKeysInDictionary(requestNativeUrlDict,
-                                                 @[@"sessionUserName", @"sessionusername", @"session_user_name", @"chatroomname", @"chatRoomName", @"chat_room_name", @"talker"]);
-    }
-    session = wcpl_normalizeSessionUserName(session);
-    NSString *sessionSource = session.length > 0 ? (wcpl_stringForKeysInDictionary(requestDict, @[@"sessionUserName", @"sessionusername", @"session_user_name"]).length > 0 ? @"request" : @"request.nativeUrl") : @"request";
+    NSString *sessionSource = @"request";
+    session = wcpl_bestSessionCandidate(session, requestDict, responseDict, requestNativeUrlDict, req, &sessionSource);
 
     if (session.length == 0) {
         NSString *trackedSource = nil;
         session = wcpl_lookupTrackedOpenSession(sendId, sign, timingIdentifier, &trackedSource);
         if (session.length > 0) {
             sessionSource = trackedSource.length > 0 ? [NSString stringWithFormat:@"tracker:%@", trackedSource] : @"tracker";
+        }
+    }
+
+    if (session.length == 0) {
+        NSString *selfUserName = wcpl_currentSelfUserName();
+        if (selfUserName.length > 0) {
+            session = selfUserName;
+            sessionSource = @"fallback:self";
+            WCPLLogWarning(@"红包打开回包: 使用兜底 self 会话避免通知/回复丢失 sendId=%@ signLen=%lu timingLen=%lu",
+                           sendId ?: @"",
+                           (unsigned long)sign.length,
+                           (unsigned long)timingIdentifier.length);
         }
     }
 
@@ -1110,6 +1212,16 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                      replyPreview);
 
         BOOL sent = [self wcpl_sendTextMessage:replyCopy toSession:sessionCopy];
+        if (!sent) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                BOOL retrySent = [self wcpl_sendTextMessage:replyCopy toSession:sessionCopy];
+                WCPLLogDebug(@"红包自动回复重试: session=%@ isGroup=%d textLen=%lu sent=%d",
+                             sessionCopy,
+                             isGroup,
+                             (unsigned long)replyCopy.length,
+                             retrySent);
+            });
+        }
         WCPLLogDebug(@"红包自动回复: session=%@ isGroup=%d textLen=%lu preview=%@ sent=%d",
                      sessionCopy,
                      isGroup,
@@ -1179,6 +1291,17 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                 actualTargetSession = kWCPLFileHelperUserName;
                 fallbackToFileHelper = YES;
             }
+        }
+
+        if (!sent) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                BOOL retrySent = [self wcpl_sendTextMessage:messageCopy toSession:targetSessionCopy];
+                WCPLLogDebug(@"抢包通知重试: sourceSession=%@ targetSession=%@ target=%ld sent=%d",
+                             sourceSessionCopy,
+                             targetSessionCopy,
+                             (long)target,
+                             retrySent);
+            });
         }
 
         WCPLLogDebug(@"抢包通知发送: sourceSession=%@ scene=%@ targetSession=%@ target=%ld amount=%ld total=%ld msgLen=%lu preview=%@ sent=%d fallbackFileHelper=%d",
