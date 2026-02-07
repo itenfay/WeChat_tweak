@@ -1520,56 +1520,10 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     __block BOOL sent = NO;
     __block NSString *path = @"";
 
-    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
-    if (sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
-        @try {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
-                                                       @selector(AddMsgToSendTable:MsgWrap:),
-                                                       session,
-                                                       msgWrap);
-            sent = YES;
-            path = @"SendMessageMgr";
-        } @catch (__unused NSException *exceptionSendMgr) {
-            sent = NO;
-            path = @"";
-        }
-    }
-
-    CMessageMgr *msgMgr = nil;
-    if (!sent) {
-        msgMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-        if (msgMgr) {
-            id bypSendMessageMgr = nil;
-            if ([msgMgr respondsToSelector:@selector(m_bypSendMessageMgr)]) {
-                @try {
-                    bypSendMessageMgr = ((id (*)(id, SEL))objc_msgSend)(msgMgr, @selector(m_bypSendMessageMgr));
-                } @catch (__unused NSException *exceptionBypGetter) {
-                    bypSendMessageMgr = nil;
-                }
-            }
-            if (!bypSendMessageMgr) {
-                @try {
-                    bypSendMessageMgr = [msgMgr valueForKey:@"m_bypSendMessageMgr"];
-                } @catch (__unused NSException *exceptionBypKVC) {
-                    bypSendMessageMgr = nil;
-                }
-            }
-
-            if (bypSendMessageMgr && [bypSendMessageMgr respondsToSelector:@selector(StartSendMsg:)]) {
-                @try {
-                    ((void (*)(id, SEL, id))objc_msgSend)(bypSendMessageMgr, @selector(StartSendMsg:), msgWrap);
-                    sent = YES;
-                    path = @"BypSendMessageMgr";
-                } @catch (__unused NSException *exceptionBypSend) {
-                    sent = NO;
-                }
-            }
-        }
-
-        if (!sent && !msgMgr) {
-            WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
-            return NO;
-        }
+    CMessageMgr *msgMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (!msgMgr) {
+        WCPLLogDebug(@"红包自动回复失败: CMessageMgr 不可用 session=%@", session);
+        return NO;
     }
 
     void (^sendBlock)(void) = ^{
@@ -1604,8 +1558,54 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         }
     };
 
+    sendBlock();
+
     if (!sent) {
-        sendBlock();
+        WCPLLogDebug(@"红包自动回复发送路径降级: session=%@ reason=AddMsg链路未命中，尝试SendMessageMgr", session);
+
+        id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+        if (sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
+                                                           @selector(AddMsgToSendTable:MsgWrap:),
+                                                           session,
+                                                           msgWrap);
+                sent = YES;
+                path = @"SendMessageMgrFallback";
+            } @catch (__unused NSException *exceptionSendMgr) {
+                sent = NO;
+            }
+        }
+    }
+
+    if (!sent) {
+        WCPLLogDebug(@"红包自动回复发送路径降级: session=%@ reason=SendMessageMgr失败，尝试BypSendMessageMgr", session);
+
+        id bypSendMessageMgr = nil;
+        if ([msgMgr respondsToSelector:@selector(m_bypSendMessageMgr)]) {
+            @try {
+                bypSendMessageMgr = ((id (*)(id, SEL))objc_msgSend)(msgMgr, @selector(m_bypSendMessageMgr));
+            } @catch (__unused NSException *exceptionBypGetter) {
+                bypSendMessageMgr = nil;
+            }
+        }
+        if (!bypSendMessageMgr) {
+            @try {
+                bypSendMessageMgr = [msgMgr valueForKey:@"m_bypSendMessageMgr"];
+            } @catch (__unused NSException *exceptionBypKVC) {
+                bypSendMessageMgr = nil;
+            }
+        }
+
+        if (bypSendMessageMgr && [bypSendMessageMgr respondsToSelector:@selector(StartSendMsg:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(bypSendMessageMgr, @selector(StartSendMsg:), msgWrap);
+                sent = YES;
+                path = @"BypSendMessageMgrFallback";
+            } @catch (__unused NSException *exceptionBypSend) {
+                sent = NO;
+            }
+        }
     }
 
     WCPLLogDebug(@"红包自动回复发送: session=%@ sent=%d path=%@ mainThread=%d",
