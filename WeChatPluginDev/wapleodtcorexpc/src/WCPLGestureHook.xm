@@ -2013,10 +2013,31 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
 
     if (msgType == 43) {
-        if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video")) {
+        BOOL isFromOtherVideo = wcpl_isMessageFromOther(msgWrap);
+        WCPLLogDebug(@"Repeat media strategy: scene=video msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherVideo ? 1 : 0);
+
+        if (isFromOtherVideo) {
+            if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
+                return;
+            }
+            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
+                return;
+            }
+            if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video_other_legacy")) {
+                return;
+            }
+            WCPLLogWarning(@"Repeat video other-message send failed on all channels: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        }
+
+        if (!isFromOtherVideo && wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video")) {
             return;
         }
-        WCPLLogWarning(@"Repeat video fallback to text: native resend unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+
+        if (!isFromOtherVideo && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_self_fallback")) {
+            return;
+        }
+
+        WCPLLogWarning(@"Repeat video fallback to text: native/sendmsg unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
     }
 
     if (msgType == 34) {
