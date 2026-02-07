@@ -725,13 +725,20 @@ static BOOL wcpl_sceneTagLooksLikeVideoSelf(NSString *sceneTag) {
     return containsVideo && !containsOther;
 }
 
+static BOOL wcpl_sceneTagLooksLikeAnyVideo(NSString *sceneTag) {
+    if (![sceneTag isKindOfClass:[NSString class]] || sceneTag.length == 0) {
+        return NO;
+    }
+    return ([sceneTag rangeOfString:@"video" options:NSCaseInsensitiveSearch].location != NSNotFound);
+}
+
 static void wcpl_restoreVideoIdentityForNativeResendIfNeeded(CMessageWrap *originWrap,
                                                               CMessageWrap *sendWrap,
                                                               NSString *sceneTag) {
     if (!(originWrap && sendWrap) || originWrap == sendWrap) {
         return;
     }
-    if (originWrap.m_uiMessageType != 43 || !wcpl_sceneTagLooksLikeVideoSelf(sceneTag)) {
+    if (originWrap.m_uiMessageType != 43 || !wcpl_sceneTagLooksLikeAnyVideo(sceneTag)) {
         return;
     }
 
@@ -787,8 +794,9 @@ static void wcpl_restoreVideoIdentityForNativeResendIfNeeded(CMessageWrap *origi
         }
     }
 
-    WCPLLogDebug(@"Repeat video native identity restored: scene=%@ src(local=%u svr=%lld ptr=%p) send(local=%u svr=%lld ptr=%p)",
+    WCPLLogDebug(@"Repeat video native identity restored: scene=%@ isOther=%d src(local=%u svr=%lld ptr=%p) send(local=%u svr=%lld ptr=%p)",
                  sceneTag ?: @"(nil)",
+                 wcpl_sceneTagLooksLikeVideoOther(sceneTag) ? 1 : 0,
                  originLocalID,
                  originSvrID,
                  originWrap,
@@ -2369,13 +2377,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
                 return;
             }
-            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
-                return;
-            }
-            if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video_other_legacy")) {
-                return;
-            }
-            WCPLLogWarning(@"Repeat video other-message send failed on all channels: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            WCPLLogWarning(@"Repeat video other-message send failed on native channel: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            return;
         }
 
         if (!isFromOtherVideo && wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video")) {
@@ -2386,7 +2389,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             return;
         }
 
-        WCPLLogWarning(@"Repeat video fallback to text: native/sendmsg unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+        WCPLLogWarning(@"Repeat video send failed: native/sendmsg unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+        return;
     }
 
     if (msgType == 34) {
