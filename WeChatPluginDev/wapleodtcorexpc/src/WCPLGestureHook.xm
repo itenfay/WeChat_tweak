@@ -26,6 +26,7 @@ static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterSta
 static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
 static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 1.2;
 static const NSTimeInterval kWCPLSwipeTouchSuppressDuration = 0.55;
+static NSString *const kWCPLIssueIdLongPressMenu = @"wx-bugfix-longpress-menu-20260207";
 
 static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
 static uintptr_t gWCPLQuoteLongPressSuppressCellAddr = 0;
@@ -64,6 +65,29 @@ static NSString *wcpl_swipeStateName(UIGestureRecognizerState state) {
         default:
             return @"unknown";
     }
+}
+
+static void wcpl_logLongPressCompatDecision(id cell,
+                                            WCPLGestureConfig *config,
+                                            UIPanGestureRecognizer *gesture,
+                                            NSString *branchDecision,
+                                            NSString *fallbackReason) {
+    if (!gesture) {
+        return;
+    }
+
+    WCPLLogInfo(@"issue_id=%@ module=WCPLGestureHook scene=message_long_press_menu input={cell=%p,swipeEnable=%d,quoteEnable=%d,rightEnable=%d,cancels=%d,delaysBegan=%d,delaysEnded=%d} branch_decision=%@ error=%@ fallback_reason=%@",
+                kWCPLIssueIdLongPressMenu,
+                cell,
+                config ? (config.swipeGestureEnable ? 1 : 0) : -1,
+                config ? (config.swipeQuoteEnable ? 1 : 0) : -1,
+                config ? (config.swipeRightEnable ? 1 : 0) : -1,
+                gesture.cancelsTouchesInView ? 1 : 0,
+                gesture.delaysTouchesBegan ? 1 : 0,
+                gesture.delaysTouchesEnded ? 1 : 0,
+                branchDecision ?: @"unknown",
+                @"none",
+                fallbackReason ?: @"none");
 }
 
 static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
@@ -1786,8 +1810,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         gesture.maximumNumberOfTouches = 1;
         gesture.minimumNumberOfTouches = 1;
         gesture.cancelsTouchesInView = YES;
-        gesture.delaysTouchesBegan = YES;
-        gesture.delaysTouchesEnded = YES;
+        gesture.delaysTouchesBegan = NO;
+        gesture.delaysTouchesEnded = NO;
         gesture.delegate = (id<UIGestureRecognizerDelegate>)self;
         [self addGestureRecognizer:gesture];
         self.wchook_swipeGesture = gesture;
@@ -1796,12 +1820,26 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                      gesture.cancelsTouchesInView ? 1 : 0,
                      gesture.delaysTouchesBegan ? 1 : 0,
                      gesture.delaysTouchesEnded ? 1 : 0);
+        wcpl_logLongPressCompatDecision(self,
+                                        config,
+                                        gesture,
+                                        @"create_swipe_pan_keep_cancel_disable_delays",
+                                        @"prevent_long_press_block");
     }
 
+    BOOL hadTouchDelays = gesture.delaysTouchesBegan || gesture.delaysTouchesEnded;
     gesture.cancelsTouchesInView = YES;
-    gesture.delaysTouchesBegan = YES;
-    gesture.delaysTouchesEnded = YES;
+    gesture.delaysTouchesBegan = NO;
+    gesture.delaysTouchesEnded = NO;
     gesture.enabled = YES;
+
+    if (hadTouchDelays) {
+        wcpl_logLongPressCompatDecision(self,
+                                        config,
+                                        gesture,
+                                        @"normalize_existing_swipe_pan_disable_delays",
+                                        @"detected_legacy_delay_touch_settings");
+    }
 
     if (!self.wchook_feedbackGenerator) {
         self.wchook_feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
