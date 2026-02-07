@@ -584,6 +584,103 @@ static CMessageWrap *wcpl_buildDetachedSendWrap(CMessageWrap *msgWrap, NSString 
     return sendWrap;
 }
 
+static BOOL wcpl_sceneTagLooksLikeOtherMedia(NSString *sceneTag) {
+    if (![sceneTag isKindOfClass:[NSString class]] || sceneTag.length == 0) {
+        return NO;
+    }
+    return ([sceneTag rangeOfString:@"other" options:NSCaseInsensitiveSearch].location != NSNotFound);
+}
+
+static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
+                                            CMessageWrap *sendWrap,
+                                            NSString *chatName,
+                                            BaseMsgContentViewController *chatVC,
+                                            NSString *sceneTag) {
+    if (!(originWrap && sendWrap) || chatName.length == 0) {
+        return NO;
+    }
+
+    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"message";
+    if (chatVC && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, sendWrap);
+            WCPLLogInfo(@"Repeat sent: flow=native_resend_chatvc scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
+                        scene,
+                        wcpl_repeatMessageDebugInfo(originWrap),
+                        chatName,
+                        wcpl_repeatMessageDebugInfo(sendWrap),
+                        originWrap,
+                        sendWrap);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat native resend via chatVC failed: scene=%@ reason=%@",
+                           scene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (messageMgr && [messageMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendMsg:MsgWrap:), chatName, sendWrap);
+            WCPLLogInfo(@"Repeat sent: flow=native_resend_messagemgr scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
+                        scene,
+                        wcpl_repeatMessageDebugInfo(originWrap),
+                        chatName,
+                        wcpl_repeatMessageDebugInfo(sendWrap),
+                        originWrap,
+                        sendWrap);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat native resend via messageMgr failed: scene=%@ reason=%@",
+                           scene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    if (messageMgr && [messageMgr respondsToSelector:@selector(ReSendMessage:MsgWrap:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ReSendMessage:MsgWrap:), chatName, sendWrap);
+            WCPLLogInfo(@"Repeat sent: flow=native_resend_resendmessage scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
+                        scene,
+                        wcpl_repeatMessageDebugInfo(originWrap),
+                        chatName,
+                        wcpl_repeatMessageDebugInfo(sendWrap),
+                        originWrap,
+                        sendWrap);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat native ReSendMessage failed: scene=%@ reason=%@",
+                           scene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_repeatNativeResendByDetachedWrap(CMessageWrap *msgWrap,
+                                                  NSString *chatName,
+                                                  BaseMsgContentViewController *chatVC,
+                                                  NSString *sceneTag) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"detached";
+    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, scene);
+    if (!sendWrap) {
+        WCPLLogWarning(@"Repeat detached resend skipped: scene=%@ msg=%@ reason=clone_failed",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(msgWrap));
+        return NO;
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+    wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, scene);
+    return wcpl_repeatNativeResendWithWrap(msgWrap, sendWrap, chatName, chatVC, scene);
+}
+
 static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
                                     NSString *chatName,
                                     BaseMsgContentViewController *chatVC,
@@ -591,30 +688,7 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
     if (!msgWrap || chatName.length == 0) {
         return NO;
     }
-
-    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"message";
-    if (chatVC && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
-        @try {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
-            WCPLLogInfo(@"Repeat sent: flow=native_resend_chatvc scene=%@ msg=%@ chat=%@", scene, wcpl_repeatMessageDebugInfo(msgWrap), chatName);
-            return YES;
-        } @catch (NSException *exception) {
-            WCPLLogWarning(@"Repeat native resend via chatVC failed: scene=%@ reason=%@", scene, exception.reason ?: exception);
-        }
-    }
-
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-    if (messageMgr && [messageMgr respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
-        @try {
-            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendMsg:MsgWrap:), chatName, msgWrap);
-            WCPLLogInfo(@"Repeat sent: flow=native_resend_messagemgr scene=%@ msg=%@ chat=%@", scene, wcpl_repeatMessageDebugInfo(msgWrap), chatName);
-            return YES;
-        } @catch (NSException *exception) {
-            WCPLLogWarning(@"Repeat native resend via messageMgr failed: scene=%@ reason=%@", scene, exception.reason ?: exception);
-        }
-    }
-
-    return NO;
+    return wcpl_repeatNativeResendWithWrap(msgWrap, msgWrap, chatName, chatVC, sceneTag);
 }
 
 static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
@@ -639,6 +713,9 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
 
     @try {
         ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
+        unsigned int sendLocalID = sendWrap.m_uiMesLocalID;
+        long long sendSvrID = sendWrap.m_n64MesSvrID;
+        unsigned int sendStatus = sendWrap.m_uiStatus;
         WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_media scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
                     sceneTag ?: @"media",
                     wcpl_repeatMessageDebugInfo(msgWrap),
@@ -646,6 +723,16 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
                     wcpl_repeatMessageDebugInfo(sendWrap),
                     msgWrap,
                     sendWrap);
+
+        if (wcpl_sceneTagLooksLikeOtherMedia(sceneTag) && sendLocalID == 0 && sendSvrID == 0) {
+            WCPLLogWarning(@"Repeat media queued without local id: scene=%@ msg=%@ send=%@ status=%u; treat as failed and fallback",
+                           sceneTag ?: @"media",
+                           wcpl_repeatMessageDebugInfo(msgWrap),
+                           wcpl_repeatMessageDebugInfo(sendWrap),
+                           sendStatus);
+            return NO;
+        }
+
         return YES;
     } @catch (NSException *exception) {
         WCPLLogWarning(@"Repeat media via SendMessageMgr failed: scene=%@ msg=%@ chat=%@ reason=%@",
@@ -1759,13 +1846,6 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         BOOL isFromOtherEmoticon = wcpl_isMessageFromOther(msgWrap);
         WCPLLogDebug(@"Repeat media strategy: scene=emoticon msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherEmoticon ? 1 : 0);
 
-        if (isFromOtherEmoticon) {
-            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"emoticon_other")) {
-                return;
-            }
-            WCPLLogWarning(@"Repeat emoticon other-message fallback to standard path: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
-        }
-
         NSString *emoticonMD5 = wcpl_emoticonMD5FromMessageWrap(msgWrap);
         id emoticonMgr = WCPLGetService(objc_getClass("CEmoticonMgr"));
         id emoticonWrap = nil;
@@ -1822,23 +1902,55 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         if (messageMgr && [messageMgr respondsToSelector:@selector(AddEmoticonMsg:MsgWrap:)]) {
             @try {
                 NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
-                CMessageWrap *newWrap = [[objc_getClass("CMessageWrap") alloc] init];
+                NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+                NSString *sceneTag = isFromOtherEmoticon ? @"emoticon_other_msgmgr" : @"emoticon_msgmgr";
+                CMessageWrap *newWrap = wcpl_buildDetachedSendWrap(msgWrap, sceneTag);
+                if (!newWrap) {
+                    newWrap = [[objc_getClass("CMessageWrap") alloc] init];
+                }
+
                 newWrap.m_uiMessageType = 47;
                 newWrap.m_nsToUsr = chatName;
-                newWrap.m_nsFromUsr = wcpl_trimTextForRepeat(msgWrap.m_nsFromUsr) ?: @"";
+
+                NSString *fromUser = selfUserName.length > 0 ? selfUserName : wcpl_trimTextForRepeat(msgWrap.m_nsFromUsr);
+                if (fromUser.length > 0) {
+                    newWrap.m_nsFromUsr = fromUser;
+                }
+
+                if ([chatName rangeOfString:@"@chatroom"].location != NSNotFound && selfUserName.length > 0 && [newWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
+                    @try {
+                        ((void (*)(id, SEL, id))objc_msgSend)(newWrap, @selector(setM_nsRealChatUsr:), selfUserName);
+                    } @catch (__unused NSException *exceptionSetReal) {
+                    }
+                }
+
                 newWrap.m_nsContent = msgWrap.m_nsContent ?: @"";
                 if (emoticonMD5.length == 32) {
                     newWrap.m_nsEmoticonMD5 = emoticonMD5;
                 }
+
+                wcpl_resetSendWrapIdentity(newWrap);
                 ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddEmoticonMsg:MsgWrap:), chatName, newWrap);
-                WCPLLogInfo(@"Repeat sent: flow=messageMgr_emoticon msg=%@ md5=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)", chatName ?: @"(nil)");
+                WCPLLogInfo(@"Repeat sent: flow=messageMgr_emoticon msg=%@ md5=%@ chat=%@ send=%@ from=%@ to=%@ real=%@",
+                            wcpl_repeatMessageDebugInfo(msgWrap),
+                            emoticonMD5 ?: @"(nil)",
+                            chatName ?: @"(nil)",
+                            wcpl_repeatMessageDebugInfo(newWrap),
+                            newWrap.m_nsFromUsr ?: @"(nil)",
+                            newWrap.m_nsToUsr ?: @"(nil)",
+                            newWrap.m_nsRealChatUsr ?: @"(nil)");
                 return;
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat emoticon via messageMgr failed: %@", exception.reason ?: exception);
             }
         }
 
-        if (!isFromOtherEmoticon && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"emoticon_self_fallback")) {
+        if (isFromOtherEmoticon && wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"emoticon_other_native_fallback")) {
+            return;
+        }
+
+        NSString *emoticonSendScene = isFromOtherEmoticon ? @"emoticon_other_sendmsgmgr_fallback" : @"emoticon_self_fallback";
+        if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, emoticonSendScene)) {
             return;
         }
 
@@ -1850,13 +1962,19 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         WCPLLogDebug(@"Repeat media strategy: scene=image msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherMedia ? 1 : 0);
 
         if (isFromOtherMedia) {
-            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"image_other")) {
+            if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"image_other_native")) {
                 return;
             }
-            WCPLLogWarning(@"Repeat image other-message fallback to native resend: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"image_other_sendmsgmgr")) {
+                return;
+            }
+            if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"image_other_legacy")) {
+                return;
+            }
+            WCPLLogWarning(@"Repeat image other-message send failed on all channels: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
         }
 
-        if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"image")) {
+        if (!isFromOtherMedia && wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"image")) {
             return;
         }
 
