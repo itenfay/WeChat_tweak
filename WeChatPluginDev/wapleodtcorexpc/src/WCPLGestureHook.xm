@@ -1051,13 +1051,22 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     NSArray<UIView *> *relatedViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     if (relatedViews.count > 1) {
         UIView *ownerView = wcpl_repeatOwnerViewForMessageKey(messageKey);
-        if (!ownerView || !ownerView.window || ownerView.hidden || ownerView.alpha < 0.01f || ![relatedViews containsObject:ownerView]) {
+        BOOL ownerMissing = (ownerView == nil);
+        BOOL ownerNotInPeers = (!ownerMissing && ![relatedViews containsObject:ownerView]);
+        if (ownerMissing || ownerNotInPeers) {
+            UIView *previousOwner = ownerView;
             ownerView = wcpl_selectRepeatOwnerView(relatedViews, [self class], self);
             if (!ownerView) {
                 ownerView = self;
             }
             wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
-            WCPLLogDebug(@"Repeat owner assign: class=%@ msg=%@ owner=%p peers=%lu", NSStringFromClass([self class]), messageKey, ownerView, (unsigned long)relatedViews.count);
+            WCPLLogDebug(@"Repeat owner assign: class=%@ msg=%@ owner=%p prev=%p peers=%lu reason=%@",
+                         NSStringFromClass([self class]),
+                         messageKey,
+                         ownerView,
+                         previousOwner,
+                         (unsigned long)relatedViews.count,
+                         ownerMissing ? @"missing" : @"stale");
         }
 
         if (ownerView != self) {
