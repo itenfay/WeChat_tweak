@@ -2,9 +2,12 @@ THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
 
-# 优先使用 13.7（兼容本地 clang-10 与旧 SDK 组合），若不存在则回退 latest（兼容 roothide 环境）
-ifneq ($(wildcard $(THEOS)/sdks/iPhoneOS13.7.sdk),)
-TARGET = iphone:clang:13.7:13.0
+# rootless/roothide 构建统一使用 iOS 14.0 目标，避免 arm64e 能力分叉
+ifneq ($(filter rootless roothide,$(THEOS_PACKAGE_SCHEME)),)
+TARGET = iphone:clang:latest:14.0
+# 本地开发保留旧 SDK 兼容路径，但最低系统保持 14.0
+else ifneq ($(wildcard $(THEOS)/sdks/iPhoneOS13.7.sdk),)
+TARGET = iphone:clang:13.7:14.0
 else
 TARGET = iphone:clang:latest:14.0
 endif

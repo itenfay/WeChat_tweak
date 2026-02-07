@@ -159,6 +159,15 @@ jobs:
             echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
             exit "$status"
           fi
+
+          if grep -E "arm64e binaries for iOS earlier than 14.0" "$LOG_FILE" >/dev/null 2>&1; then
+            echo "::error::Rootless build detected arm64e deployment mismatch (< iOS 14.0)."
+            echo "### Rootless arm64e deployment mismatch" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Found warning: arm64e binaries for iOS earlier than 14.0" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Please ensure TARGET minimum deployment is iOS 14.0+ for rootless." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
           # Rename rootless package
           for f in packages/*.deb; do
             if [ -f "$f" ]; then
@@ -216,6 +225,7 @@ jobs:
         if: always()
         run: |
           set +e
+          validation_failed=0
 
           PKG_DIR="WeChatPluginDev/wapleodtcorexpc/packages"
           ROOTLESS_PKG=$(ls "$PKG_DIR"/*-rootless.deb 2>/dev/null | head -n 1)
@@ -277,11 +287,36 @@ jobs:
             echo "=== Dylib hash/size ==="
             shasum -a 256 "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
             ls -lh "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+            ROOTLESS_LIPO_INFO=$(lipo -info "$ROOTLESS_DYLIB" 2>/dev/null || true)
+            ROOTHIDE_LIPO_INFO=$(lipo -info "$ROOTHIDE_DYLIB" 2>/dev/null || true)
+
+            if [[ "$ROOTLESS_LIPO_INFO" != *"arm64e"* ]]; then
+              echo "::error::Rootless dylib missing arm64e slice"
+              validation_failed=1
+            fi
+            if [[ "$ROOTHIDE_LIPO_INFO" != *"arm64e"* ]]; then
+              echo "::error::Roothide dylib missing arm64e slice"
+              validation_failed=1
+            fi
+
+            python3 scripts/validate_macho_consistency.py "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB"
+
+            python_status=$?
+            if [ "$python_status" -ne 0 ]; then
+              echo "::error::Binary consistency validation failed"
+              validation_failed=1
+            fi
 
             {
               echo "#### Dylib Hash"
               echo "\`\`\`"
               shasum -a 256 "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
+              echo "\`\`\`"
+
+              echo "#### Dylib Architectures"
+              echo "\`\`\`"
+              echo "Rootless: ${ROOTLESS_LIPO_INFO:-unknown}"
+              echo "Roothide: ${ROOTHIDE_LIPO_INFO:-unknown}"
               echo "\`\`\`"
 
               echo "#### Dylib Size"
@@ -312,6 +347,14 @@ jobs:
           else
             echo "Unable to locate both dylibs for diagnostics"
             echo "- Unable to locate both dylibs for diagnostics" >> "$GITHUB_STEP_SUMMARY"
+            validation_failed=1
+          fi
+
+          if [ "$validation_failed" -ne 0 ]; then
+            echo "### Binary validation failed" >> "$GITHUB_STEP_SUMMARY"
+            echo "- rootless/roothide artifacts are inconsistent or invalid" >> "$GITHUB_STEP_SUMMARY"
+            set -e
+            exit 1
           fi
 
           set -e
