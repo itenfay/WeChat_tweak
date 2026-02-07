@@ -26,6 +26,8 @@ static NSString *const kWCPLFileHelperUserName = @"filehelper";
 
 static NSString *wcpl_stringFromSelector(id obj, SEL sel);
 static NSString *wcpl_stringForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys);
+static NSInteger wcpl_integerForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys, BOOL *found);
+static int wcpl_intFromSelector(id obj, SEL sel);
 static NSDictionary *wcpl_nativeUrlDictionaryFromRequestDictionary(NSDictionary *requestDict);
 static NSString *wcpl_sessionFromDictionary(NSDictionary *dict);
 
