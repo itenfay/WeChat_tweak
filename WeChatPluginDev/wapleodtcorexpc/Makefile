@@ -1,7 +1,7 @@
 THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
-TARGET = iphone:clang:latest:14.0
+TARGET = iphone:clang:13.7:13.0
 
 # 禁用 Theos 的模块化编译
 MODULES = 0
@@ -10,7 +10,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLContactGroupPickerViewController.m src/WCPLFriendPickerViewController.m src/WCPLGroupPickerViewController.m src/WCPLPickerDataProvider.m src/WCPLPickerItem.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
-$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation UniformTypeIdentifiers
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
 

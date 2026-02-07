@@ -645,7 +645,9 @@ static NSMapTable<NSString *, UIView *> *wcpl_repeatOwnerViewMap(void) {
     static NSMapTable<NSString *, UIView *> *ownerMap;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ownerMap = [NSMapTable strongToWeakObjectsMapTable];
+        ownerMap = [[NSMapTable alloc] initWithKeyOptions:(NSPointerFunctionsStrongMemory | NSPointerFunctionsObjectPersonality | NSPointerFunctionsCopyIn)
+                                              valueOptions:(NSPointerFunctionsWeakMemory | NSPointerFunctionsObjectPersonality)
+                                                  capacity:128];
     });
     return ownerMap;
 }
@@ -695,21 +697,19 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         if (candidatePreferred) {
             score += 1000000.0f;
         }
-        if (candidate == currentView) {
-            score += 5000000.0f;
-        }
         score += (CGFloat)(candidate.alpha * 1000.0f);
 
-        if (!ownerView || score > ownerScore) {
+        uintptr_t candidateAddr = (uintptr_t)candidate;
+        uintptr_t ownerAddr = (uintptr_t)ownerView;
+        if (!ownerView || score > ownerScore + 0.5f || (fabs(score - ownerScore) <= 0.5f && candidateAddr < ownerAddr)) {
             ownerView = candidate;
             ownerScore = score;
             continue;
         }
+    }
 
-        if (fabs(score - ownerScore) <= 1.0f && candidate == currentView) {
-            ownerView = candidate;
-            ownerScore = score;
-        }
+    if (!ownerView && currentView) {
+        return currentView;
     }
     return ownerView;
 }
