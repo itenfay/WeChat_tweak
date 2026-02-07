@@ -1762,7 +1762,11 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         }
 
         @try {
-            [[UIMenuController sharedMenuController] setMenuVisible:NO animated:NO];
+            id menuController = [UIMenuController sharedMenuController];
+            SEL hideMenuSelector = NSSelectorFromString(@"hideMenuFromView:");
+            if (menuController && [menuController respondsToSelector:hideMenuSelector]) {
+                ((void (*)(id, SEL, id))objc_msgSend)(menuController, hideMenuSelector, self);
+            }
         } @catch (__unused NSException *exceptionMenu) {
         }
 
