@@ -1,7 +1,13 @@
 THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
+
+# 优先使用 13.7（兼容本地 clang-10 与旧 SDK 组合），若不存在则回退 latest（兼容 roothide 环境）
+ifneq ($(wildcard $(THEOS)/sdks/iPhoneOS13.7.sdk),)
 TARGET = iphone:clang:13.7:13.0
+else
+TARGET = iphone:clang:latest:14.0
+endif
 
 # 禁用 Theos 的模块化编译
 MODULES = 0
