@@ -413,6 +413,177 @@ static NSString *wcpl_currentSelfUserNameForRepeat(void) {
     return selfUserName;
 }
 
+static void wcpl_resetSendWrapIdentity(CMessageWrap *sendWrap) {
+    if (!sendWrap) {
+        return;
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), 0);
+        } @catch (__unused NSException *exceptionLocalId) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
+        @try {
+            ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), 0);
+        } @catch (__unused NSException *exceptionSvrId) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
+        } @catch (__unused NSException *exceptionStatus) {
+        }
+    }
+
+    unsigned int now = (unsigned int)[[NSDate date] timeIntervalSince1970];
+    if ([sendWrap respondsToSelector:@selector(setM_uiCreateTime:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiCreateTime:), now);
+        } @catch (__unused NSException *exceptionCreateTime) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiSendTime:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiSendTime:), now);
+        } @catch (__unused NSException *exceptionSendTime) {
+        }
+    }
+}
+
+static void wcpl_prepareSendWrapRoute(CMessageWrap *sendWrap,
+                                      NSString *chatName,
+                                      NSString *selfUserName,
+                                      NSString *sceneTag) {
+    if (!(sendWrap && chatName.length > 0)) {
+        return;
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
+        } @catch (__unused NSException *exceptionTo) {
+        }
+    }
+
+    if (selfUserName.length > 0 && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionFrom) {
+        }
+    }
+
+    BOOL isChatRoom = ([chatName rangeOfString:@"@chatroom"].location != NSNotFound);
+    if ([sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
+        @try {
+            id realChatUsr = (isChatRoom && selfUserName.length > 0) ? selfUserName : nil;
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), realChatUsr);
+        } @catch (__unused NSException *exceptionReal) {
+        }
+    }
+
+    WCPLLogDebug(@"Repeat send route prepared: scene=%@ msg=%@ to=%@ from=%@ real=%@",
+                 sceneTag ?: @"(nil)",
+                 wcpl_repeatMessageDebugInfo(sendWrap),
+                 sendWrap.m_nsToUsr ?: @"(nil)",
+                 sendWrap.m_nsFromUsr ?: @"(nil)",
+                 sendWrap.m_nsRealChatUsr ?: @"(nil)");
+}
+
+static CMessageWrap *wcpl_buildDetachedSendWrap(CMessageWrap *msgWrap, NSString *sceneTag) {
+    if (!msgWrap) {
+        return nil;
+    }
+
+    CMessageWrap *sendWrap = nil;
+    BOOL usedCopyPath = NO;
+
+    if ([msgWrap respondsToSelector:@selector(copy)]) {
+        @try {
+            id copiedWrap = [msgWrap copy];
+            if ([copiedWrap isKindOfClass:%c(CMessageWrap)] && copiedWrap != msgWrap) {
+                sendWrap = (CMessageWrap *)copiedWrap;
+                usedCopyPath = YES;
+            }
+        } @catch (__unused NSException *exceptionCopy) {
+        }
+    }
+
+    if (!sendWrap) {
+        Class wrapClass = objc_getClass("CMessageWrap");
+        if (wrapClass && [wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
+            @try {
+                id allocated = [wrapClass alloc];
+                id created = ((id (*)(id, SEL, long long))objc_msgSend)(allocated,
+                                                                          @selector(initWithMsgType:),
+                                                                          (long long)msgWrap.m_uiMessageType);
+                if ([created isKindOfClass:%c(CMessageWrap)]) {
+                    sendWrap = (CMessageWrap *)created;
+                }
+            } @catch (__unused NSException *exceptionCreate) {
+                sendWrap = nil;
+            }
+        }
+
+        if (sendWrap && [msgWrap respondsToSelector:@selector(copyToMsg:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(copyToMsg:), sendWrap);
+                usedCopyPath = YES;
+            } @catch (__unused NSException *exceptionCopyTo) {
+            }
+        }
+
+        if (sendWrap && !usedCopyPath) {
+            if ([sendWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
+                @try {
+                    ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMessageType:), msgWrap.m_uiMessageType);
+                } @catch (__unused NSException *exceptionType) {
+                }
+            }
+            if ([sendWrap respondsToSelector:@selector(setM_nsContent:)]) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsContent:), msgWrap.m_nsContent);
+                } @catch (__unused NSException *exceptionContent) {
+                }
+            }
+            if ([sendWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsMsgSource:), msgWrap.m_nsMsgSource);
+                } @catch (__unused NSException *exceptionSource) {
+                }
+            }
+            if ([sendWrap respondsToSelector:@selector(setM_nsEmoticonMD5:)]) {
+                @try {
+                    ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsEmoticonMD5:), msgWrap.m_nsEmoticonMD5);
+                } @catch (__unused NSException *exceptionMd5) {
+                }
+            }
+        }
+    }
+
+    if (!(sendWrap && sendWrap != msgWrap)) {
+        WCPLLogWarning(@"Repeat send wrap build failed: scene=%@ msg=%@ src=%p dst=%p",
+                       sceneTag ?: @"(nil)",
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       msgWrap,
+                       sendWrap);
+        return nil;
+    }
+
+    wcpl_resetSendWrapIdentity(sendWrap);
+    WCPLLogDebug(@"Repeat send wrap ready: scene=%@ src=%p dst=%p srcMsg=%@ dstMsg=%@",
+                 sceneTag ?: @"(nil)",
+                 msgWrap,
+                 sendWrap,
+                 wcpl_repeatMessageDebugInfo(msgWrap),
+                 wcpl_repeatMessageDebugInfo(sendWrap));
+    return sendWrap;
+}
+
 static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
                                     NSString *chatName,
                                     BaseMsgContentViewController *chatVC,
@@ -458,53 +629,23 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
         return NO;
     }
 
-    id sendWrap = msgWrap;
-    if ([msgWrap respondsToSelector:@selector(copy)]) {
-        @try {
-            id copiedWrap = [msgWrap copy];
-            if ([copiedWrap isKindOfClass:%c(CMessageWrap)]) {
-                sendWrap = copiedWrap;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, sceneTag ?: @"media");
+    if (!sendWrap) {
+        return NO;
     }
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
-        } @catch (__unused NSException *exceptionTo) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)] && selfUserName.length > 0) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionFrom) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [chatName rangeOfString:@"@chatroom"].location != NSNotFound && [sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)] && selfUserName.length > 0) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionReal) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
-        @try {
-            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
-        } @catch (__unused NSException *exceptionStatus) {
-        }
-    }
+    wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, sceneTag ?: @"media");
 
     @try {
         ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
-        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_media scene=%@ msg=%@ chat=%@",
+        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_media scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
                     sceneTag ?: @"media",
                     wcpl_repeatMessageDebugInfo(msgWrap),
-                    chatName);
+                    chatName,
+                    wcpl_repeatMessageDebugInfo(sendWrap),
+                    msgWrap,
+                    sendWrap);
         return YES;
     } @catch (NSException *exception) {
         WCPLLogWarning(@"Repeat media via SendMessageMgr failed: scene=%@ msg=%@ chat=%@ reason=%@",
@@ -571,45 +712,14 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap, NSString *cha
         WCPLLogWarning(@"Repeat voice audio missing: msg=%@ path=%@ downloadStarted=%d", wcpl_repeatMessageDebugInfo(msgWrap), audioPath ?: @"(nil)", downloadStarted);
     }
 
-    id sendWrap = msgWrap;
-    if ([msgWrap respondsToSelector:@selector(copy)]) {
-        @try {
-            id copiedWrap = [msgWrap copy];
-            if ([copiedWrap isKindOfClass:%c(CMessageWrap)]) {
-                sendWrap = copiedWrap;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, @"voice_record");
+    if (!sendWrap) {
+        WCPLLogWarning(@"Repeat voice record failed: cannot clone send wrap msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        return NO;
     }
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)] && selfUserName.length > 0) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionSetFrom) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [chatName rangeOfString:@"@chatroom"].location != NSNotFound && [sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)] && selfUserName.length > 0) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionSetReal) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
-        @try {
-            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
-        } @catch (__unused NSException *exception) {
-        }
-    }
+    wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, @"voice_record");
 
     @try {
         ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddRecordMsg:MsgWrap:), chatName, sendWrap);
@@ -642,52 +752,22 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap, NSString *ch
         return NO;
     }
 
-    id sendWrap = msgWrap;
-    if ([msgWrap respondsToSelector:@selector(copy)]) {
-        @try {
-            id copiedWrap = [msgWrap copy];
-            if ([copiedWrap isKindOfClass:%c(CMessageWrap)]) {
-                sendWrap = copiedWrap;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, @"voice_sendmsgmgr");
+    if (!sendWrap) {
+        return NO;
     }
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
-        } @catch (__unused NSException *exceptionTo) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)] && selfUserName.length > 0) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionFrom) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [chatName rangeOfString:@"@chatroom"].location != NSNotFound && [sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)] && selfUserName.length > 0) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), selfUserName);
-        } @catch (__unused NSException *exceptionReal) {
-        }
-    }
-
-    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
-        @try {
-            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
-        } @catch (__unused NSException *exceptionStatus) {
-        }
-    }
+    wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, @"voice_sendmsgmgr");
 
     @try {
         ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
-        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_queue scene=voice msg=%@ chat=%@",
+        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_queue scene=voice msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
                     wcpl_repeatMessageDebugInfo(msgWrap),
-                    chatName);
+                    chatName,
+                    wcpl_repeatMessageDebugInfo(sendWrap),
+                    msgWrap,
+                    sendWrap);
         return YES;
     } @catch (NSException *exception) {
         WCPLLogWarning(@"Repeat voice via SendMessageMgr failed: msg=%@ chat=%@ reason=%@",
