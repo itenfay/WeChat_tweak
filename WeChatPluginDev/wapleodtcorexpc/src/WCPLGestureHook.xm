@@ -299,6 +299,24 @@ static BOOL wcpl_shouldSuppressLongPressForCell(id cell, NSString *entry) {
     return YES;
 }
 
+static BOOL wcpl_shouldSuppressTapForCell(id cell, NSString *entry) {
+    CFTimeInterval remain = gWCPLQuoteLongPressSuppressUntil - CACurrentMediaTime();
+    if (remain <= 0) {
+        return NO;
+    }
+
+    if (gWCPLQuoteLongPressSuppressCellAddr != 0 && cell && gWCPLQuoteLongPressSuppressCellAddr != (uintptr_t)cell) {
+        return NO;
+    }
+
+    WCPLLogDebug(@"Quote guard blocked tap: entry=%@ remainMs=%.0f cell=%p type=%u",
+                 entry ?: @"unknown",
+                 (double)(remain * 1000.0),
+                 (void *)cell,
+                 gWCPLQuoteLongPressSuppressMsgType);
+    return YES;
+}
+
 
 static NSString *wcpl_emoticonMD5FromMessageWrap(CMessageWrap *msgWrap) {
     if (!msgWrap) {
@@ -2636,6 +2654,20 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
 - (void)showOperationMenu {
     if (wcpl_shouldSuppressLongPressForCell(self, @"showOperationMenu")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onTouchUpInside {
+    if (wcpl_shouldSuppressTapForCell(self, @"onTouchUpInside")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onDelayedTouchUpInside {
+    if (wcpl_shouldSuppressTapForCell(self, @"onDelayedTouchUpInside")) {
         return;
     }
     %orig;
