@@ -25,6 +25,7 @@ static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedba
 static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterStateKey;
 static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
 static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 1.2;
+static const NSTimeInterval kWCPLSwipeTouchSuppressDuration = 0.55;
 
 static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
 static uintptr_t gWCPLQuoteLongPressSuppressCellAddr = 0;
@@ -34,6 +35,36 @@ static NSUInteger gWCPLRepeatButtonCreateCount = 0;
 static NSUInteger gWCPLRepeatButtonUpdateCount = 0;
 
 static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap);
+
+static NSString *wcpl_swipeDirectionName(WCHookSwipeDirection direction) {
+    switch (direction) {
+        case WCHookSwipeDirectionLeft:
+            return @"left";
+        case WCHookSwipeDirectionRight:
+            return @"right";
+        default:
+            return @"none";
+    }
+}
+
+static NSString *wcpl_swipeStateName(UIGestureRecognizerState state) {
+    switch (state) {
+        case UIGestureRecognizerStatePossible:
+            return @"possible";
+        case UIGestureRecognizerStateBegan:
+            return @"began";
+        case UIGestureRecognizerStateChanged:
+            return @"changed";
+        case UIGestureRecognizerStateEnded:
+            return @"ended";
+        case UIGestureRecognizerStateCancelled:
+            return @"cancelled";
+        case UIGestureRecognizerStateFailed:
+            return @"failed";
+        default:
+            return @"unknown";
+    }
+}
 
 static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIButton *> *buttons) {
     if (!root || !buttons) {
@@ -333,15 +364,24 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
     }
 }
 
-static void wcpl_armQuoteLongPressSuppression(CMessageWrap *msgWrap, id cell, NSString *source) {
-    gWCPLQuoteLongPressSuppressUntil = CACurrentMediaTime() + kWCPLQuoteLongPressSuppressDuration;
+static void wcpl_armTouchSuppression(CMessageWrap *msgWrap, id cell, NSString *source, NSTimeInterval duration) {
+    NSTimeInterval ttl = duration > 0 ? duration : kWCPLQuoteLongPressSuppressDuration;
+    CFTimeInterval until = CACurrentMediaTime() + ttl;
+    if (until < gWCPLQuoteLongPressSuppressUntil) {
+        until = gWCPLQuoteLongPressSuppressUntil;
+    }
+    gWCPLQuoteLongPressSuppressUntil = until;
     gWCPLQuoteLongPressSuppressCellAddr = (uintptr_t)cell;
     gWCPLQuoteLongPressSuppressMsgType = msgWrap ? msgWrap.m_uiMessageType : 0;
     WCPLLogDebug(@"Quote guard armed: source=%@ cell=%p type=%u ttlMs=%.0f",
                  source ?: @"unknown",
                  (void *)cell,
                  gWCPLQuoteLongPressSuppressMsgType,
-                 (double)(kWCPLQuoteLongPressSuppressDuration * 1000.0));
+                 (double)(ttl * 1000.0));
+}
+
+static void wcpl_armQuoteLongPressSuppression(CMessageWrap *msgWrap, id cell, NSString *source) {
+    wcpl_armTouchSuppression(msgWrap, cell, source, kWCPLQuoteLongPressSuppressDuration);
 }
 
 static BOOL wcpl_shouldSuppressLongPressForCell(id cell, NSString *entry) {
@@ -1806,15 +1846,22 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wchook_handleSwipe:)];
         gesture.maximumNumberOfTouches = 1;
         gesture.minimumNumberOfTouches = 1;
-        gesture.cancelsTouchesInView = NO;
-        gesture.delaysTouchesBegan = NO;
-        gesture.delaysTouchesEnded = NO;
+        gesture.cancelsTouchesInView = YES;
+        gesture.delaysTouchesBegan = YES;
+        gesture.delaysTouchesEnded = YES;
         gesture.delegate = (id<UIGestureRecognizerDelegate>)self;
         [self addGestureRecognizer:gesture];
         self.wchook_swipeGesture = gesture;
+        WCPLLogDebug(@"Swipe gesture created: cell=%p cancelsTouches=%d delaysBegan=%d delaysEnded=%d",
+                     self,
+                     gesture.cancelsTouchesInView ? 1 : 0,
+                     gesture.delaysTouchesBegan ? 1 : 0,
+                     gesture.delaysTouchesEnded ? 1 : 0);
     }
 
-    gesture.cancelsTouchesInView = NO;
+    gesture.cancelsTouchesInView = YES;
+    gesture.delaysTouchesBegan = YES;
+    gesture.delaysTouchesEnded = YES;
     gesture.enabled = YES;
 
     if (!self.wchook_feedbackGenerator) {
@@ -1857,6 +1904,16 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     // 如果当前方向未启用，忽略手势
     if (!isDirectionEnabled && gesture.state != UIGestureRecognizerStateBegan) {
+        if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+            WCPLLogDebug(@"Swipe ignored: state=%@ cell=%p direction=%@ enabledQuote=%d enabledRight=%d tx=%.2f vx=%.2f",
+                         wcpl_swipeStateName(gesture.state),
+                         self,
+                         wcpl_swipeDirectionName(direction),
+                         config.swipeQuoteEnable ? 1 : 0,
+                         config.swipeRightEnable ? 1 : 0,
+                         translation.x,
+                         velocity.x);
+        }
         [WCHookSwipeUtilities applyTransform:CGAffineTransformIdentity toViews:messageViews];
         if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
             [self wchook_resetSwipeAnimated:YES];
@@ -1879,6 +1936,17 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     switch (gesture.state) {
     case UIGestureRecognizerStateBegan: {
+        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        wcpl_armTouchSuppression(msgWrap, self, @"swipeBegan", kWCPLSwipeTouchSuppressDuration);
+        WCPLLogDebug(@"Swipe state: began cell=%p direction=%@ tx=%.2f ty=%.2f vx=%.2f vy=%.2f threshold=%.2f light=%.2f",
+                     self,
+                     wcpl_swipeDirectionName(direction),
+                     translation.x,
+                     translation.y,
+                     velocity.x,
+                     velocity.y,
+                     threshold,
+                     lightThreshold);
         [self.wchook_feedbackGenerator prepare];
         self.wchook_feedbackTriggered = NO;
         self.wchook_swipeTriggerStage = 0;
@@ -1909,6 +1977,12 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             }
             self.wchook_swipeTriggerStage = stage;
             self.wchook_feedbackTriggered = (stage >= 2);
+            WCPLLogDebug(@"Swipe stage reached: cell=%p stage=%ld direction=%@ tx=%.2f vx=%.2f",
+                         self,
+                         (long)stage,
+                         wcpl_swipeDirectionName(direction),
+                         translation.x,
+                         velocity.x);
         }
         break;
     }
@@ -1928,9 +2002,21 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
         BOOL shouldHardTrigger = (absTranslation >= threshold) || (absVelocity >= hardVelocityTrigger);
         BOOL shouldLightTrigger = (!shouldHardTrigger && absTranslation >= lightThreshold);
+        WCPLLogDebug(@"Swipe state: %@ cell=%p direction=%@ absTx=%.2f absVx=%.2f threshold=%.2f light=%.2f hard=%d lightHit=%d",
+                     wcpl_swipeStateName(gesture.state),
+                     self,
+                     wcpl_swipeDirectionName(direction),
+                     absTranslation,
+                     absVelocity,
+                     threshold,
+                     lightThreshold,
+                     shouldHardTrigger ? 1 : 0,
+                     shouldLightTrigger ? 1 : 0);
 
         // 触发轻/重动作：轻滑默认引用，重滑执行用户配置动作
         if (shouldHardTrigger) {
+            CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+            wcpl_armTouchSuppression(msgWrap, self, @"swipeHardTrigger", kWCPLSwipeTouchSuppressDuration);
             if (self.wchook_swipeTriggerStage < 2) {
                 if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
                     [self.wchook_feedbackGenerator impactOccurredWithIntensity:0.85f];
@@ -1940,6 +2026,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             }
             [self wchook_triggerActionForDirection:direction];
         } else if (shouldLightTrigger) {
+            CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+            wcpl_armTouchSuppression(msgWrap, self, @"swipeLightTrigger", kWCPLSwipeTouchSuppressDuration);
             if (self.wchook_swipeTriggerStage < 1) {
                 if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
                     [self.wchook_feedbackGenerator impactOccurredWithIntensity:0.35f];
@@ -2776,26 +2864,49 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
         // 检查总开关和是否有任何滑动功能启用
         if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
+            WCPLLogDebug(@"Swipe begin blocked: feature disabled cell=%p", self);
             return NO;
         }
         UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
         CGPoint velocity = [pan velocityInView:self];
         // 使用双向速度检测
         if (![WCHookSwipeUtilities isVelocityEligibleBidirectional:velocity]) {
+            WCPLLogDebug(@"Swipe begin blocked: velocity ineligible cell=%p vx=%.2f vy=%.2f",
+                         self,
+                         velocity.x,
+                         velocity.y);
             return NO;
         }
         // 检查滑动方向是否启用
         if (velocity.x < 0 && !config.swipeQuoteEnable) {
             // 左滑但左滑功能未启用
+            WCPLLogDebug(@"Swipe begin blocked: left disabled cell=%p vx=%.2f vy=%.2f",
+                         self,
+                         velocity.x,
+                         velocity.y);
             return NO;
         }
         if (velocity.x > 0 && !config.swipeRightEnable) {
             // 右滑但右滑功能未启用
+            WCPLLogDebug(@"Swipe begin blocked: right disabled cell=%p vx=%.2f vy=%.2f",
+                         self,
+                         velocity.x,
+                         velocity.y);
             return NO;
         }
+        WCPLLogDebug(@"Swipe begin candidate: cell=%p vx=%.2f vy=%.2f", self, velocity.x, velocity.y);
     }
 
     BOOL result = %orig;
+    if (gestureRecognizer == self.wchook_swipeGesture) {
+        UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint velocity = [pan velocityInView:self];
+        WCPLLogDebug(@"Swipe begin result: cell=%p allow=%d vx=%.2f vy=%.2f",
+                     self,
+                     result ? 1 : 0,
+                     velocity.x,
+                     velocity.y);
+    }
     return result;
 }
 
