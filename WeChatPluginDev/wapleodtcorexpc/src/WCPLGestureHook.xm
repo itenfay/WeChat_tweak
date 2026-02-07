@@ -347,6 +347,30 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
     return msgWrap.m_nsToUsr;
 }
 
+static void wcpl_clearToolViewReplyingMessageIfNeeded(id toolView, NSString *scene) {
+    if (!(toolView && [toolView respondsToSelector:@selector(setReplyingMessage:)])) {
+        return;
+    }
+
+    id previousReply = nil;
+    if ([toolView respondsToSelector:@selector(replyingMessage)]) {
+        @try {
+            previousReply = ((id (*)(id, SEL))objc_msgSend)(toolView, @selector(replyingMessage));
+        } @catch (__unused NSException *exceptionGet) {
+            previousReply = nil;
+        }
+    }
+
+    @try {
+        ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(setReplyingMessage:), nil);
+        if (previousReply) {
+            WCPLLogDebug(@"Repeat quote context cleared: scene=%@", scene ?: @"(nil)");
+        }
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat quote context clear failed: scene=%@ reason=%@", scene ?: @"(nil)", exception.reason ?: exception);
+    }
+}
+
 static NSString *wcpl_currentSelfUserNameForRepeat(void) {
     __block NSString *selfUserName = nil;
     void (^resolveBlock)(void) = ^{
@@ -1051,14 +1075,13 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         NSString *filterKey = [NSString stringWithFormat:@"noBubble_%@", wcpl_repeatMessageKey(msgWrap)];
         NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
         if (![lastFilterKey isEqualToString:filterKey]) {
-            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=noBubble", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
+            WCPLLogWarning(@"Repeat UI bubble fallback: class=%@ cell=%p msg=%@ reason=noBubble_useCell", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
             objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
         }
-        [self wchook_removeRepeatButtonIfNeeded];
-        return;
+        bubbleView = self;
+    } else {
+        objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
-
-    objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
     NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
 
@@ -1703,6 +1726,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                                                              quoteTarget,
                                                              NO);
             WCPLLogInfo(@"Repeat sent: flow=logic_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"logic_quote");
             return;
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat quote send via logicController failed: %@", exception.reason ?: exception);
@@ -1717,6 +1741,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                                                              quoteTarget,
                                                              NO);
             WCPLLogInfo(@"Repeat sent: flow=chatvc_async_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"chatvc_async_quote");
             return;
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat quote send via chatVC AsyncSendMessage failed: %@", exception.reason ?: exception);
@@ -1743,6 +1768,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(SendTextMessageToolView:), repeatText);
                 WCPLLogInfo(@"Repeat sent: flow=chatvc_toolview_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+                wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"chatvc_toolview_quote");
                 return;
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat quote send via chatVC SendTextMessageToolView failed: %@", exception.reason ?: exception);
@@ -1753,6 +1779,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(onClickTextViewSendText:), repeatText);
                 WCPLLogInfo(@"Repeat sent: flow=toolview_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+                wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"toolview_quote");
                 return;
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat quote send via toolView failed: %@", exception.reason ?: exception);
@@ -1770,6 +1797,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(logicController, @selector(SendTextMessage:), repeatText);
             WCPLLogInfo(@"Repeat sent: flow=logic_plain msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"logic_plain");
             return;
         } @catch (__unused NSException *exception) {
         }
@@ -1779,6 +1807,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(onSendTextMsg:), repeatText);
             WCPLLogInfo(@"Repeat sent: flow=chatvc_plain msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"chatvc_plain");
             return;
         } @catch (__unused NSException *exception) {
         }
@@ -1794,6 +1823,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             newWrap.m_nsToUsr = targetChatName;
             ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), targetChatName, newWrap);
             WCPLLogInfo(@"Repeat sent: flow=messageMgr_fallback msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), targetChatName ?: @"(nil)");
+            wcpl_clearToolViewReplyingMessageIfNeeded(toolView, @"messageMgr_fallback");
             return;
         } @catch (NSException *exception) {
             WCPLLogError(@"Repeat fallback AddMsg failed: %@", exception.reason ?: exception);
