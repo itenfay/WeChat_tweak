@@ -26,6 +26,8 @@ static NSString *const kWCPLFileHelperUserName = @"filehelper";
 
 static NSString *wcpl_stringFromSelector(id obj, SEL sel);
 static NSString *wcpl_stringForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys);
+static NSDictionary *wcpl_nativeUrlDictionaryFromRequestDictionary(NSDictionary *requestDict);
+static NSString *wcpl_sessionFromDictionary(NSDictionary *dict);
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -176,6 +178,28 @@ static void wcpl_trackOpenReplySession(NSString *sendId, NSString *sign, NSStrin
     });
 }
 
+static void wcpl_trackOpenReplySessionFromRequest(NSDictionary *params) {
+    if (![params isKindOfClass:[NSDictionary class]] || params.count == 0) {
+        return;
+    }
+
+    NSString *sendId = wcpl_stringForKeysInDictionary(params, @[@"sendId", @"sendid", @"send_id"]);
+    NSString *sign = wcpl_stringForKeysInDictionary(params, @[@"sign"]);
+    NSString *timingIdentifier = wcpl_stringForKeysInDictionary(params, @[@"timingIdentifier", @"timing_identifier"]);
+
+    NSString *session = wcpl_stringForKeysInDictionary(params, @[@"sessionUserName", @"sessionusername", @"session_user_name"]);
+    if (session.length == 0) {
+        NSDictionary *nativeUrlDict = wcpl_nativeUrlDictionaryFromRequestDictionary(params);
+        session = wcpl_sessionFromDictionary(nativeUrlDict);
+    }
+    session = wcpl_normalizeSessionUserName(session);
+    if (session.length == 0) {
+        return;
+    }
+
+    wcpl_trackOpenReplySession(sendId, sign, timingIdentifier, session);
+}
+
 static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign, NSString *timingIdentifier, NSString **sourceOut) {
     __block NSString *session = nil;
     __block NSString *source = nil;
@@ -230,6 +254,65 @@ static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign,
         *sourceOut = source;
     }
     return session;
+}
+
+static BOOL wcpl_hongbaoOpenLooksSuccessful(NSDictionary *responseDict,
+                                            HongBaoRes *res,
+                                            NSInteger *amountOut,
+                                            NSInteger *totalAmountOut,
+                                            NSInteger *receiveStatusOut,
+                                            NSInteger *retCodeOut) {
+    BOOL hasReceiveStatus = NO;
+    NSInteger receiveStatus = wcpl_integerForKeysInDictionary(responseDict, @[@"receiveStatus", @"receive_status"], &hasReceiveStatus);
+
+    BOOL hasRetCode = NO;
+    NSInteger retCode = wcpl_integerForKeysInDictionary(responseDict, @[@"retCode", @"retcode"], &hasRetCode);
+    if (!hasRetCode && [res respondsToSelector:@selector(retCode)]) {
+        hasRetCode = YES;
+        retCode = wcpl_intFromSelector(res, @selector(retCode));
+    } else if (!hasRetCode && [res respondsToSelector:@selector(retcode)]) {
+        hasRetCode = YES;
+        retCode = wcpl_intFromSelector(res, @selector(retcode));
+    }
+
+    BOOL hasAmount = NO;
+    NSInteger amount = wcpl_integerForKeysInDictionary(responseDict,
+                                                       @[@"amount", @"receiveAmount", @"receive_amount", @"recvAmount", @"recv_amount"],
+                                                       &hasAmount);
+
+    BOOL hasTotalAmount = NO;
+    NSInteger totalAmount = wcpl_integerForKeysInDictionary(responseDict,
+                                                            @[@"totalAmount", @"total_amount", @"totalFee", @"total_fee", @"totalMoney", @"total_money", @"hbTotalAmount", @"hb_total_amount"],
+                                                            &hasTotalAmount);
+
+    int errorType = wcpl_intFromSelector(res, @selector(errorType));
+    int platRet = wcpl_intFromSelector(res, @selector(platRet));
+
+    BOOL successByStatus = (hasReceiveStatus && receiveStatus == 2);
+    BOOL successByAmount = (hasAmount && amount > 0);
+    BOOL successByRetCode = (hasRetCode && retCode == 0);
+    BOOL successByTransport = (errorType == 0 && platRet == 0);
+    BOOL hasUsefulPayload = (responseDict.count > 0 || hasRetCode || hasReceiveStatus || hasAmount);
+
+    BOOL success = (successByTransport && (successByStatus || successByAmount || successByRetCode));
+    if (!success) {
+        success = (successByTransport && hasUsefulPayload && (retCode == 0 || receiveStatus == 2 || amount > 0));
+    }
+
+    if (amountOut) {
+        *amountOut = amount;
+    }
+    if (totalAmountOut) {
+        *totalAmountOut = hasTotalAmount ? totalAmount : 0;
+    }
+    if (receiveStatusOut) {
+        *receiveStatusOut = receiveStatus;
+    }
+    if (retCodeOut) {
+        *retCodeOut = retCode;
+    }
+
+    return success;
 }
 
 static NSString *wcpl_sessionFromDictionary(NSDictionary *dict) {
@@ -827,6 +910,10 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 %hook WCRedEnvelopesLogicMgr
 
 - (void)ReceiverQueryRedEnvelopesRequest:(id)arg1 {
+    if ([arg1 isKindOfClass:[NSDictionary class]]) {
+        wcpl_trackOpenReplySessionFromRequest((NSDictionary *)arg1);
+    }
+
     NSDictionary *params = [arg1 isKindOfClass:[NSDictionary class]] ? (NSDictionary *)arg1 : nil;
     NSString *sendId = wcpl_stringForKeyInDictionary(params, @"sendId")
         ?: wcpl_stringForKeyInDictionary(params, @"sendid")
@@ -865,6 +952,9 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
     NSString *sign = wcpl_stringForKeyInDictionary(params, @"sign");
 
     wcpl_trackOpenReplySession(sendId, sign, timingIdentifier, sessionUserName);
+    if (params) {
+        wcpl_trackOpenReplySessionFromRequest(params);
+    }
 
     WCPLLogDebug(@"OpenRedEnvelopesRequest: mainThread=%d sendId=%@ channelId=%@ msgType=%@ timingType=%@ timingLen=%lu signLen=%lu session=%@ tracked=%d keys=%lu",
                  [NSThread isMainThread],
@@ -1083,50 +1173,28 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         ?: wcpl_stringForKeysInDictionary(responseDict, @[@"timingIdentifier", @"timing_identifier"])
         ?: wcpl_stringForKeysInDictionary(requestNativeUrlDict, @[@"timingIdentifier", @"timing_identifier"]);
 
-    int errorType = wcpl_intFromSelector(res, @selector(errorType));
-    int platRet = wcpl_intFromSelector(res, @selector(platRet));
-
-    BOOL hasReceiveStatus = NO;
-    NSInteger receiveStatus = wcpl_integerForKeysInDictionary(responseDict, @[@"receiveStatus", @"receive_status"], &hasReceiveStatus);
-
-    BOOL hasRetCode = NO;
-    NSInteger retCode = wcpl_integerForKeysInDictionary(responseDict, @[@"retCode", @"retcode"], &hasRetCode);
-    if (!hasRetCode && [res respondsToSelector:@selector(retCode)]) {
-        hasRetCode = YES;
-        retCode = wcpl_intFromSelector(res, @selector(retCode));
-    } else if (!hasRetCode && [res respondsToSelector:@selector(retcode)]) {
-        hasRetCode = YES;
-        retCode = wcpl_intFromSelector(res, @selector(retcode));
-    }
-
-    BOOL hasAmount = NO;
-    NSInteger amount = wcpl_integerForKeysInDictionary(responseDict,
-                                                       @[@"amount", @"receiveAmount", @"receive_amount", @"recvAmount", @"recv_amount"],
-                                                       &hasAmount);
-
-    BOOL hasTotalAmount = NO;
-    NSInteger totalAmount = wcpl_integerForKeysInDictionary(responseDict,
-                                                            @[@"totalAmount", @"total_amount", @"totalFee", @"total_fee", @"totalMoney", @"total_money", @"hbTotalAmount", @"hb_total_amount"],
-                                                            &hasTotalAmount);
+    NSInteger amount = 0;
+    NSInteger totalAmount = 0;
+    NSInteger receiveStatus = 0;
+    NSInteger retCode = 0;
 
     BOOL hasHbStatus = NO;
     NSInteger hbStatus = wcpl_integerForKeysInDictionary(responseDict, @[@"hbStatus", @"hb_status"], &hasHbStatus);
 
-    BOOL successByStatus = (hasReceiveStatus && receiveStatus == 2);
-    BOOL successByAmount = (hasAmount && amount > 0);
-    BOOL successByRetCode = (hasRetCode && retCode == 0);
-    BOOL success = (errorType == 0 && platRet == 0 && (successByStatus || successByAmount || successByRetCode));
+    BOOL success = wcpl_hongbaoOpenLooksSuccessful(responseDict, res, &amount, &totalAmount, &receiveStatus, &retCode);
 
     if (!success) {
+        int errorType = wcpl_intFromSelector(res, @selector(errorType));
+        int platRet = wcpl_intFromSelector(res, @selector(platRet));
         WCPLLogDebug(@"红包打开回包: cmd=4 未成功 errorType=%d platRet=%d receiveStatus=%ld hasReceiveStatus=%d retCode=%ld hasRetCode=%d amount=%ld hasAmount=%d hbStatus=%ld hasHbStatus=%d sendId=%@ signLen=%lu timingLen=%lu reqKeys=%lu resKeys=%lu",
                      errorType,
                      platRet,
                      (long)receiveStatus,
-                     hasReceiveStatus,
+                     (receiveStatus != 0),
                      (long)retCode,
-                     hasRetCode,
+                     (retCode != 0),
                      (long)amount,
-                     hasAmount,
+                     (amount != 0),
                      (long)hbStatus,
                      hasHbStatus,
                      sendId ?: @"",
@@ -1185,7 +1253,7 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  (long)retCode,
                  (long)amount);
     [self wcpl_trySendAutoReplyForSession:session isGroup:isGroup];
-    [self wcpl_trySendRedEnvelopNotifyForSession:session isGroup:isGroup amount:amount totalAmount:(hasTotalAmount ? totalAmount : 0)];
+    [self wcpl_trySendRedEnvelopNotifyForSession:session isGroup:isGroup amount:amount totalAmount:totalAmount];
 }
 
 %new

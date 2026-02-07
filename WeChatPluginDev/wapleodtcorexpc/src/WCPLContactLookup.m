@@ -25,10 +25,10 @@ static NSString *wcpl_userNameFromObject(id obj) {
         return wcpl_trimUserName((NSString *)obj);
     }
 
-    NSArray<NSString *> *keys = @[@"m_nsUsrName", @"m_nsUserName", @"userName", @"username", @"m_nsChatRoomName"];
-    for (NSString *key in keys) {
+    Class contactClass = objc_getClass("CContact");
+    if (contactClass && [obj isKindOfClass:contactClass]) {
         @try {
-            id value = [obj valueForKey:key];
+            id value = [obj valueForKey:@"m_nsUsrName"];
             if ([value isKindOfClass:[NSString class]]) {
                 NSString *name = wcpl_trimUserName((NSString *)value);
                 if (name.length > 0) {
@@ -36,6 +36,19 @@ static NSString *wcpl_userNameFromObject(id obj) {
                 }
             }
         } @catch (__unused NSException *exception) {
+        }
+
+        if ([obj respondsToSelector:@selector(m_nsUsrName)]) {
+            @try {
+                id value = ((id (*)(id, SEL))objc_msgSend)(obj, @selector(m_nsUsrName));
+                if ([value isKindOfClass:[NSString class]]) {
+                    NSString *name = wcpl_trimUserName((NSString *)value);
+                    if (name.length > 0) {
+                        return name;
+                    }
+                }
+            } @catch (__unused NSException *exception) {
+            }
         }
     }
 
@@ -52,13 +65,15 @@ static id wcpl_findContactFromDictionary(NSDictionary *allContacts, NSString *ta
         return direct;
     }
 
-    for (id key in allContacts) {
-        id value = allContacts[key];
-        if ([wcpl_userNameFromObject(key) isEqualToString:targetUserName]) {
-            return key;
-        }
+    for (id value in allContacts.allValues) {
         if ([wcpl_userNameFromObject(value) isEqualToString:targetUserName]) {
             return value;
+        }
+    }
+
+    for (id key in allContacts.allKeys) {
+        if ([wcpl_userNameFromObject(key) isEqualToString:targetUserName]) {
+            return key;
         }
     }
 
@@ -84,47 +99,6 @@ static id wcpl_findContactFromContactMgr(CContactMgr *contactMgr, NSString *targ
                 return contact;
             }
         } @catch (__unused NSException *exception) {
-        }
-    }
-
-    NSArray<NSNumber *> *listTypes = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7)];
-    NSArray<NSNumber *> *contactTypes = @[@(0), @(1), @(2), @(3), @(4)];
-    SEL listSelWithExt = NSSelectorFromString(@"getContactList:contactType:needLoadExt:");
-    SEL listSel = NSSelectorFromString(@"getContactList:contactType:");
-
-    if (!([contactMgr respondsToSelector:listSelWithExt] || [contactMgr respondsToSelector:listSel])) {
-        return nil;
-    }
-
-    for (NSNumber *listType in listTypes) {
-        for (NSNumber *contactType in contactTypes) {
-            NSArray *contacts = nil;
-            @try {
-                if ([contactMgr respondsToSelector:listSelWithExt]) {
-                    contacts = ((id (*)(id, SEL, unsigned int, unsigned int, BOOL))objc_msgSend)(contactMgr,
-                                                                                                  listSelWithExt,
-                                                                                                  (unsigned int)listType.unsignedIntValue,
-                                                                                                  (unsigned int)contactType.unsignedIntValue,
-                                                                                                  NO);
-                } else if ([contactMgr respondsToSelector:listSel]) {
-                    contacts = ((id (*)(id, SEL, unsigned int, unsigned int))objc_msgSend)(contactMgr,
-                                                                                           listSel,
-                                                                                           (unsigned int)listType.unsignedIntValue,
-                                                                                           (unsigned int)contactType.unsignedIntValue);
-                }
-            } @catch (__unused NSException *exception) {
-                contacts = nil;
-            }
-
-            if (![contacts isKindOfClass:[NSArray class]] || contacts.count == 0) {
-                continue;
-            }
-
-            for (id contact in contacts) {
-                if ([[wcpl_userNameFromObject(contact) lowercaseString] isEqualToString:targetLower]) {
-                    return contact;
-                }
-            }
         }
     }
 
