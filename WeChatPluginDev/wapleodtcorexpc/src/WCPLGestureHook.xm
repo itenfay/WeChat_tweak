@@ -1226,6 +1226,115 @@ static CMessageWrap *wcpl_extractForwardGeneratedWrap(id generated) {
     return nil;
 }
 
+static BOOL wcpl_repeatVideoByCaptureInfo(id videoInfo,
+                                          NSString *chatName,
+                                          NSString *sceneTag,
+                                          CMessageWrap *originWrap) {
+    Class captureVideoInfoClass = objc_getClass("CaptureVideoInfo");
+    if (!(videoInfo && captureVideoInfoClass && [videoInfo isKindOfClass:captureVideoInfoClass])) {
+        return NO;
+    }
+    if (chatName.length == 0) {
+        return NO;
+    }
+
+    NSString *scene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"video_forward";
+    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+    if (!messageMgr) {
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward error/fallback_reason=message_mgr_unavailable",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(originWrap));
+        return NO;
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+    NSString *fromUser = selfUserName.length > 0 ? selfUserName : chatName;
+
+    SEL addVideoMsgTypeSelector = @selector(AddVideoMsg:ToUsr:VideoInfo:MsgType:);
+    if ([messageMgr respondsToSelector:addVideoMsgTypeSelector]) {
+        @try {
+            id sendResult = ((id (*)(id, SEL, id, id, id, unsigned int))objc_msgSend)(messageMgr,
+                                                                                        addVideoMsgTypeSelector,
+                                                                                        fromUser,
+                                                                                        chatName,
+                                                                                        videoInfo,
+                                                                                        (unsigned int)43);
+            if (sendResult) {
+                WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ result_class=%@ send=%@ branch_decision=accept_capture_forward_msgtype error/fallback_reason=none",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(originWrap),
+                            NSStringFromClass([sendResult class]) ?: @"(nil)",
+                            [sendResult isKindOfClass:%c(CMessageWrap)] ? wcpl_repeatMessageDebugInfo((CMessageWrap *)sendResult) : @"(non_wrap)");
+                return YES;
+            }
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward_msgtype error/fallback_reason=empty_result",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(originWrap));
+        } @catch (NSException *exceptionAddVideoMsgType) {
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward_msgtype error/fallback_reason=%@",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(originWrap),
+                           exceptionAddVideoMsgType.reason ?: @"exception");
+        }
+    }
+
+    SEL addVideoSelector = @selector(AddVideoMsg:ToUsr:VideoInfo:);
+    if ([messageMgr respondsToSelector:addVideoSelector]) {
+        @try {
+            id sendResult = ((id (*)(id, SEL, id, id, id))objc_msgSend)(messageMgr,
+                                                                         addVideoSelector,
+                                                                         fromUser,
+                                                                         chatName,
+                                                                         videoInfo);
+            if (sendResult) {
+                WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ result_class=%@ send=%@ branch_decision=accept_capture_forward_addvideo error/fallback_reason=none",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(originWrap),
+                            NSStringFromClass([sendResult class]) ?: @"(nil)",
+                            [sendResult isKindOfClass:%c(CMessageWrap)] ? wcpl_repeatMessageDebugInfo((CMessageWrap *)sendResult) : @"(non_wrap)");
+                return YES;
+            }
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward_addvideo error/fallback_reason=empty_result",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(originWrap));
+        } @catch (NSException *exceptionAddVideo) {
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward_addvideo error/fallback_reason=%@",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(originWrap),
+                           exceptionAddVideo.reason ?: @"exception");
+        }
+    }
+
+    SEL addShortVideoSelector = @selector(AddShortVideoMsg:ToUsr:VideoInfo:);
+    if ([messageMgr respondsToSelector:addShortVideoSelector]) {
+        @try {
+            id sendResult = ((id (*)(id, SEL, id, id, id))objc_msgSend)(messageMgr,
+                                                                         addShortVideoSelector,
+                                                                         fromUser,
+                                                                         chatName,
+                                                                         videoInfo);
+            if (sendResult) {
+                WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ result_class=%@ send=%@ branch_decision=accept_capture_forward_shortvideo error/fallback_reason=none",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(originWrap),
+                            NSStringFromClass([sendResult class]) ?: @"(nil)",
+                            [sendResult isKindOfClass:%c(CMessageWrap)] ? wcpl_repeatMessageDebugInfo((CMessageWrap *)sendResult) : @"(non_wrap)");
+                return YES;
+            }
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward_shortvideo error/fallback_reason=empty_result",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(originWrap));
+        } @catch (NSException *exceptionAddShortVideo) {
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ branch_decision=reject_capture_forward_shortvideo error/fallback_reason=%@",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(originWrap),
+                           exceptionAddShortVideo.reason ?: @"exception");
+        }
+    }
+
+    return NO;
+}
+
 static BOOL wcpl_repeatVideoByForwardDispatch(CMessageWrap *msgWrap,
                                               NSString *chatName,
                                               NSString *sceneTag) {
@@ -1257,11 +1366,16 @@ static BOOL wcpl_repeatVideoByForwardDispatch(CMessageWrap *msgWrap,
                                                                                    contact,
                                                                                    (unsigned int)0,
                                                                                    nil);
-            WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ result_class=%@ branch_decision=accept_forward_dispatch_sendmsg error/fallback_reason=none",
-                        scene,
-                        wcpl_repeatMessageDebugInfo(msgWrap),
-                        NSStringFromClass([result class]) ?: @"(nil)");
-            return YES;
+            if (result) {
+                WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ result_class=%@ branch_decision=accept_forward_dispatch_sendmsg error/fallback_reason=none",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(msgWrap),
+                            NSStringFromClass([result class]) ?: @"(nil)");
+                return YES;
+            }
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ branch_decision=reject_forward_dispatch_sendmsg error/fallback_reason=empty_result",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(msgWrap));
         } @catch (NSException *exceptionSendMsg) {
             WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ branch_decision=reject_forward_dispatch_sendmsg error/fallback_reason=%@",
                            scene,
@@ -1352,6 +1466,9 @@ static BOOL wcpl_repeatVideoByForwardUtil(CMessageWrap *msgWrap,
                                                             specificSelector,
                                                             msgWrap);
             sendWrap = wcpl_extractForwardGeneratedWrap(generated);
+            if (!sendWrap && wcpl_repeatVideoByCaptureInfo(generated, chatName, scene, msgWrap)) {
+                return YES;
+            }
             if (generated && !sendWrap) {
                 WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ generated_class=%@ branch_decision=reject_forward_wrap error/fallback_reason=specific_generate_nonwrap",
                                scene,
@@ -1373,6 +1490,9 @@ static BOOL wcpl_repeatVideoByForwardUtil(CMessageWrap *msgWrap,
                                                                      msgWrap,
                                                                      contact);
                 sendWrap = wcpl_extractForwardGeneratedWrap(generated);
+                if (!sendWrap && wcpl_repeatVideoByCaptureInfo(generated, chatName, scene, msgWrap)) {
+                    return YES;
+                }
                 if (sendWrap) {
                     WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ branch_decision=fallback_forward_generic error/fallback_reason=specific_generate_failed",
                                 scene,
