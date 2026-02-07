@@ -1679,6 +1679,13 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         BOOL isFromOtherEmoticon = wcpl_isMessageFromOther(msgWrap);
         WCPLLogDebug(@"Repeat media strategy: scene=emoticon msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherEmoticon ? 1 : 0);
 
+        if (isFromOtherEmoticon) {
+            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"emoticon_other")) {
+                return;
+            }
+            WCPLLogWarning(@"Repeat emoticon other-message fallback to standard path: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        }
+
         NSString *emoticonMD5 = wcpl_emoticonMD5FromMessageWrap(msgWrap);
         id emoticonMgr = WCPLGetService(objc_getClass("CEmoticonMgr"));
         id emoticonWrap = nil;
@@ -1749,6 +1756,10 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             } @catch (NSException *exception) {
                 WCPLLogWarning(@"Repeat emoticon via messageMgr failed: %@", exception.reason ?: exception);
             }
+        }
+
+        if (!isFromOtherEmoticon && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"emoticon_self_fallback")) {
+            return;
         }
 
         WCPLLogWarning(@"Repeat emoticon fallback to text: msg=%@ md5=%@", wcpl_repeatMessageDebugInfo(msgWrap), emoticonMD5 ?: @"(nil)");
