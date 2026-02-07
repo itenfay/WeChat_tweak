@@ -593,6 +593,42 @@ static NSString *wcpl_currentSelfUserNameForRepeat(void) {
     return selfUserName;
 }
 
+static id wcpl_repeatContactForChatName(NSString *chatName, CMessageWrap *msgWrap) {
+    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!contactMgr) {
+        return nil;
+    }
+
+    id contact = nil;
+    if (chatName.length > 0) {
+        if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
+            @try {
+                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), chatName);
+            } @catch (__unused NSException *exceptionGetByName) {
+                contact = nil;
+            }
+        }
+
+        if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
+            @try {
+                contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), chatName);
+            } @catch (__unused NSException *exceptionGetFromCache) {
+                contact = nil;
+            }
+        }
+    }
+
+    if (!contact && msgWrap && [contactMgr respondsToSelector:@selector(getMessageChatContactByMessageWrap:)]) {
+        @try {
+            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getMessageChatContactByMessageWrap:), msgWrap);
+        } @catch (__unused NSException *exceptionGetFromMsg) {
+            contact = nil;
+        }
+    }
+
+    return contact;
+}
+
 static void wcpl_resetSendWrapIdentity(CMessageWrap *sendWrap) {
     if (!sendWrap) {
         return;
@@ -1150,19 +1186,58 @@ static BOOL wcpl_repeatVideoByForwardUtil(CMessageWrap *msgWrap,
     }
 
     Class forwardUtilClass = objc_getClass("ForwardMsgUtil");
-    if (!(forwardUtilClass && [forwardUtilClass respondsToSelector:@selector(GenForwardVideoFromMsgWrap:)])) {
+    NSString *scene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"video_forward";
+    if (!forwardUtilClass) {
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ branch_decision=reject_forward_capability error/fallback_reason=forward_util_class_missing",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(msgWrap));
         return NO;
     }
 
-    NSString *scene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"video_forward";
+    SEL specificSelector = @selector(GenForwardVideoFromMsgWrap:);
+    SEL genericSelector = @selector(GenForwardMsgFromMsgWrap:ToContact:);
+    BOOL hasSpecificSelector = [forwardUtilClass respondsToSelector:specificSelector];
+    BOOL hasGenericSelector = [forwardUtilClass respondsToSelector:genericSelector];
+    if (!hasSpecificSelector && !hasGenericSelector) {
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ branch_decision=reject_forward_capability error/fallback_reason=no_forward_selector",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(msgWrap));
+        return NO;
+    }
 
     id generated = nil;
-    @try {
-        generated = ((id (*)(id, SEL, id))objc_msgSend)(forwardUtilClass,
-                                                        @selector(GenForwardVideoFromMsgWrap:),
-                                                        msgWrap);
-    } @catch (__unused NSException *exceptionGenerate) {
-        generated = nil;
+    if (hasSpecificSelector) {
+        @try {
+            generated = ((id (*)(id, SEL, id))objc_msgSend)(forwardUtilClass,
+                                                            specificSelector,
+                                                            msgWrap);
+        } @catch (__unused NSException *exceptionGenerateSpecific) {
+            generated = nil;
+        }
+    }
+
+    if (!generated && hasGenericSelector) {
+        id contact = wcpl_repeatContactForChatName(chatName, msgWrap);
+        if (contact) {
+            @try {
+                generated = ((id (*)(id, SEL, id, id))objc_msgSend)(forwardUtilClass,
+                                                                     genericSelector,
+                                                                     msgWrap,
+                                                                     contact);
+                if (generated) {
+                    WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ branch_decision=fallback_forward_generic error/fallback_reason=specific_generate_failed",
+                                scene,
+                                wcpl_repeatMessageDebugInfo(msgWrap));
+                }
+            } @catch (__unused NSException *exceptionGenerateGeneric) {
+                generated = nil;
+            }
+        } else {
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ chat=%@ branch_decision=reject_forward_wrap error/fallback_reason=forward_contact_unavailable",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(msgWrap),
+                           chatName ?: @"(nil)");
+        }
     }
 
     if (!(generated && [generated isKindOfClass:%c(CMessageWrap)])) {
@@ -1181,7 +1256,13 @@ static BOOL wcpl_repeatVideoByForwardUtil(CMessageWrap *msgWrap,
     }
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
-    wcpl_resetSendWrapIdentity(sendWrap);
+    if (wcpl_hasVideoIdentityCollision(msgWrap, sendWrap)) {
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-DELETE module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ send=%@ branch_decision=reset_forward_identity error/fallback_reason=identity_collision_before_send",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       wcpl_repeatMessageDebugInfo(sendWrap));
+        wcpl_resetSendWrapIdentity(sendWrap);
+    }
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, scene);
 
     id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
@@ -2550,7 +2631,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         NSString *videoAssetPath = nil;
         unsigned long long videoAssetSize = 0;
         BOOL hasVideoAsset = wcpl_probeVideoLocalAsset(msgWrap, &videoAssetPath, &videoAssetSize);
-        WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-DELETE module=repeat.video scene=video_pipeline input=msg(local=%u svr=%lld fromOther=%d hasAsset=%d size=%llu) branch_decision=detached_wrap_native_first error/fallback_reason=none",
+        WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-DELETE module=repeat.video scene=video_pipeline input=msg(local=%u svr=%lld fromOther=%d hasAsset=%d size=%llu) branch_decision=forward_first_skip_native error/fallback_reason=none",
                     msgWrap.m_uiMesLocalID,
                     msgWrap.m_n64MesSvrID,
                     isFromOtherVideo ? 1 : 0,
@@ -2563,41 +2644,26 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                      videoAssetSize,
                      videoAssetPath ?: @"(nil)");
 
-        if (isFromOtherVideo) {
-            if (hasVideoAsset && wcpl_repeatVideoByForwardUtil(msgWrap, chatName, @"video_other_forward")) {
-                return;
-            }
-            if (hasVideoAsset && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
-                return;
-            }
-            if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
-                return;
-            }
-            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_other_sendmsgmgr")) {
-                return;
-            }
-            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=video_other input=msg(local=%u svr=%lld hasAsset=%d size=%llu) branch_decision=abort_without_sendmsg error/fallback_reason=all_channels_failed",
-                           msgWrap.m_uiMesLocalID,
-                           msgWrap.m_n64MesSvrID,
-                           hasVideoAsset ? 1 : 0,
-                           videoAssetSize);
-            WCPLLogWarning(@"Repeat video other-message send failed on native/sendmsg channel: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        NSString *forwardScene = isFromOtherVideo ? @"video_other_forward" : @"video_self_forward";
+        NSString *sendmgrScene = isFromOtherVideo ? @"video_other_sendmsgmgr" : @"video_self_sendmsgmgr";
+
+        if (hasVideoAsset && wcpl_repeatVideoByForwardUtil(msgWrap, chatName, forwardScene)) {
             return;
         }
 
-        if (hasVideoAsset && wcpl_repeatVideoByForwardUtil(msgWrap, chatName, @"video_self_forward")) {
+        if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, sendmgrScene)) {
             return;
         }
 
-        if (!isFromOtherVideo && wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"video")) {
-            return;
-        }
-
-        if (!isFromOtherVideo && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"video_self_fallback")) {
-            return;
-        }
-
-        WCPLLogWarning(@"Repeat video send failed: native/sendmsg unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+        WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=msg(local=%u svr=%lld hasAsset=%d size=%llu) branch_decision=abort_without_native_fallback error/fallback_reason=forward_and_sendmsg_failed",
+                       sendmgrScene,
+                       msgWrap.m_uiMesLocalID,
+                       msgWrap.m_n64MesSvrID,
+                       hasVideoAsset ? 1 : 0,
+                       videoAssetSize);
+        WCPLLogWarning(@"Repeat video send aborted without native fallback: msg=%@ chat=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       chatName ?: @"(nil)");
         return;
     }
 
