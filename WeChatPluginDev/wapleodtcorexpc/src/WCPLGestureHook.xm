@@ -75,7 +75,10 @@ static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
         return NO;
     }
 
-    NSString *md5 = wcpl_trimTextForRepeat(msgWrap.m_nsEmoticonMD5);
+    NSString *md5 = nil;
+    if ([msgWrap.m_nsEmoticonMD5 isKindOfClass:[NSString class]]) {
+        md5 = [msgWrap.m_nsEmoticonMD5 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
     if (md5.length == 32) {
         return YES;
     }
