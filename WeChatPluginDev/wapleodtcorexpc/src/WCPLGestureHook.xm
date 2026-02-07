@@ -1749,37 +1749,60 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 %new
 - (void)wchook_performQuoteReply {
     @try {
-        // 方法1: 直接调用 Cell 的引用方法
-        if ([self respondsToSelector:@selector(onShowMsgReplyMenuItem:)]) {
-            [self performSelector:@selector(onShowMsgReplyMenuItem:) withObject:nil];
-            WCPLLogDebug(@"Quote reply via onShowMsgReplyMenuItem:");
+        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        if (!msgWrap) {
+            WCPLLogWarning(@"Quote reply failed: message wrap not found");
             return;
         }
 
-        // 方法2: 调用 onClickAsRefer 方法（表情包和图片消息可能使用这个）
+        BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+        if (!chatVC) {
+            WCPLLogWarning(@"Quote reply failed: chat view controller not found");
+            return;
+        }
+
+        @try {
+            [[UIMenuController sharedMenuController] setMenuVisible:NO animated:NO];
+        } @catch (__unused NSException *exceptionMenu) {
+        }
+
+        // 优先走 VC 引用入口，避免触发长按菜单链路
+        if ([chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {
+            [chatVC performSelector:@selector(startReplyWithMessageWrap:) withObject:msgWrap];
+            WCPLLogDebug(@"Quote reply via startReplyWithMessageWrap: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            return;
+        }
+
+        // 次选：输入 presenter 引用接口
+        id inputPresenter = nil;
+        if ([chatVC respondsToSelector:@selector(inputPresenter)]) {
+            @try {
+                inputPresenter = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(inputPresenter));
+            } @catch (__unused NSException *exceptionInputPresenter) {
+                inputPresenter = nil;
+            }
+        }
+
+        SEL replySelector = @selector(replyMessage:becomeFirstResponder:showDisplayName:);
+        if (inputPresenter && [inputPresenter respondsToSelector:replySelector]) {
+            @try {
+                ((void (*)(id, SEL, id, BOOL, BOOL))objc_msgSend)(inputPresenter,
+                                                                   replySelector,
+                                                                   msgWrap,
+                                                                   YES,
+                                                                   YES);
+                WCPLLogDebug(@"Quote reply via inputPresenter.replyMessage: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+                return;
+            } @catch (NSException *exceptionReplyPresenter) {
+                WCPLLogWarning(@"Quote reply via inputPresenter failed: %@", exceptionReplyPresenter.reason ?: exceptionReplyPresenter);
+            }
+        }
+
+        // 兜底：仅在没有 VC/presenter 能力时调用，避免误触发长按菜单
         if ([self respondsToSelector:@selector(onClickAsRefer)]) {
             [self performSelector:@selector(onClickAsRefer)];
-            WCPLLogDebug(@"Quote reply via onClickAsRefer");
+            WCPLLogWarning(@"Quote reply fallback via onClickAsRefer: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
-        }
-
-        // 方法3: 通过 ViewController 触发引用
-        BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
-        if (chatVC) {
-            // 获取消息
-            CMessageWrap *msgWrap = nil;
-            if ([self respondsToSelector:@selector(viewModel)]) {
-                id viewModel = [self performSelector:@selector(viewModel)];
-                if ([viewModel respondsToSelector:@selector(messageWrap)]) {
-                    msgWrap = [viewModel performSelector:@selector(messageWrap)];
-                }
-            }
-
-            if (msgWrap && [chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {
-                [chatVC performSelector:@selector(startReplyWithMessageWrap:) withObject:msgWrap];
-                WCPLLogDebug(@"Quote reply via startReplyWithMessageWrap:");
-                return;
-            }
         }
 
         WCPLLogWarning(@"Quote reply: no suitable method found");
