@@ -830,6 +830,15 @@ static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
     }
 
     NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"message";
+    if (originWrap == sendWrap) {
+        WCPLLogWarning(@"Repeat native resend blocked: scene=%@ reason=source_wrap_reused msg=%@ srcPtr=%p sendPtr=%p",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(originWrap),
+                       originWrap,
+                       sendWrap);
+        return NO;
+    }
+
     if (chatVC && [chatVC respondsToSelector:@selector(ResendMsg:MsgWrap:)]) {
         @try {
             ((void (*)(id, SEL, id, id))objc_msgSend)(chatVC, @selector(ResendMsg:MsgWrap:), chatName, sendWrap);
@@ -923,7 +932,19 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
     if (!msgWrap || chatName.length == 0) {
         return NO;
     }
-    return wcpl_repeatNativeResendWithWrap(msgWrap, msgWrap, chatName, chatVC, sceneTag);
+
+    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"message";
+    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, scene);
+    if (!sendWrap) {
+        WCPLLogWarning(@"Repeat native resend skipped: scene=%@ msg=%@ reason=clone_failed_no_source_reuse",
+                       scene,
+                       wcpl_repeatMessageDebugInfo(msgWrap));
+        return NO;
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+    wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, scene);
+    return wcpl_repeatNativeResendWithWrap(msgWrap, sendWrap, chatName, chatVC, scene);
 }
 
 static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
