@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "WeChatRedEnvelop.h"
 #import "WCPLConfigCenter.h"
 #import "WCHookSwipeUtilities.h"
@@ -23,6 +24,11 @@ static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
 static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedbackKey;
 static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterStateKey;
 static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
+static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 0.9;
+
+static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
+static uintptr_t gWCPLQuoteLongPressSuppressCellAddr = 0;
+static unsigned int gWCPLQuoteLongPressSuppressMsgType = 0;
 
 static NSUInteger gWCPLRepeatButtonCreateCount = 0;
 static NSUInteger gWCPLRepeatButtonUpdateCount = 0;
@@ -262,6 +268,35 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
         default:
             return NO;
     }
+}
+
+static void wcpl_armQuoteLongPressSuppression(CMessageWrap *msgWrap, id cell, NSString *source) {
+    gWCPLQuoteLongPressSuppressUntil = CACurrentMediaTime() + kWCPLQuoteLongPressSuppressDuration;
+    gWCPLQuoteLongPressSuppressCellAddr = (uintptr_t)cell;
+    gWCPLQuoteLongPressSuppressMsgType = msgWrap ? msgWrap.m_uiMessageType : 0;
+    WCPLLogDebug(@"Quote guard armed: source=%@ cell=%p type=%u ttlMs=%.0f",
+                 source ?: @"unknown",
+                 (void *)cell,
+                 gWCPLQuoteLongPressSuppressMsgType,
+                 (double)(kWCPLQuoteLongPressSuppressDuration * 1000.0));
+}
+
+static BOOL wcpl_shouldSuppressLongPressForCell(id cell, NSString *entry) {
+    CFTimeInterval remain = gWCPLQuoteLongPressSuppressUntil - CACurrentMediaTime();
+    if (remain <= 0) {
+        return NO;
+    }
+
+    if (gWCPLQuoteLongPressSuppressCellAddr != 0 && cell && gWCPLQuoteLongPressSuppressCellAddr != (uintptr_t)cell) {
+        return NO;
+    }
+
+    WCPLLogDebug(@"Quote guard blocked long-press: entry=%@ remainMs=%.0f cell=%p type=%u",
+                 entry ?: @"unknown",
+                 (double)(remain * 1000.0),
+                 (void *)cell,
+                 gWCPLQuoteLongPressSuppressMsgType);
+    return YES;
 }
 
 
@@ -1761,6 +1796,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             return;
         }
 
+        wcpl_armQuoteLongPressSuppression(msgWrap, self, @"performQuoteReply");
+
         @try {
             id menuController = [UIMenuController sharedMenuController];
             SEL hideMenuSelector = NSSelectorFromString(@"hideMenuFromView:");
@@ -2342,6 +2379,48 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         if ([WCHookMessageNavigator tryJumpFromCell:self]) {
             return;
         }
+    }
+    %orig;
+}
+
+- (void)onLongTouch {
+    if (wcpl_shouldSuppressLongPressForCell(self, @"onLongTouch")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onLongTouch:(CGPoint)point {
+    if (wcpl_shouldSuppressLongPressForCell(self, @"onLongTouch:")) {
+        return;
+    }
+    %orig(point);
+}
+
+- (void)LongPressEvents {
+    if (wcpl_shouldSuppressLongPressForCell(self, @"LongPressEvents")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)triggerLongPressFor3DTouchAtLocation:(CGPoint)location inCoordinateView:(id)coordinateView {
+    if (wcpl_shouldSuppressLongPressForCell(self, @"triggerLongPressFor3DTouch")) {
+        return;
+    }
+    %orig(location, coordinateView);
+}
+
+- (void)onShowOperationMenu {
+    if (wcpl_shouldSuppressLongPressForCell(self, @"onShowOperationMenu")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)showOperationMenu {
+    if (wcpl_shouldSuppressLongPressForCell(self, @"showOperationMenu")) {
+        return;
     }
     %orig;
 }
