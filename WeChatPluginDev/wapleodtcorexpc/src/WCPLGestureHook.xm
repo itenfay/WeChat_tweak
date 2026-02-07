@@ -20,6 +20,7 @@ static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
 static const void *kWCPLRepeatButtonViewKey = &kWCPLRepeatButtonViewKey;
 static const void *kWCPLRepeatButtonLastFrameKey = &kWCPLRepeatButtonLastFrameKey;
 static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
+static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedbackKey;
 static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterStateKey;
 static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
 
@@ -719,6 +720,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 - (NSArray<UIButton *> *)wchook_allRepeatButtons;
 - (void)wchook_removeRepeatButtonsExcept:(UIButton *)keeper;
 - (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap;
+- (UIImpactFeedbackGenerator *)wchook_repeatTapFeedbackGenerator;
 - (UIView *)wchook_bubbleAnchorView;
 - (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf;
 - (UIButton *)wchook_buildRepeatButton;
@@ -797,6 +799,16 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 - (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     return wcpl_isRepeatTypeEnabledByConfig(config, msgWrap);
+}
+
+%new
+- (UIImpactFeedbackGenerator *)wchook_repeatTapFeedbackGenerator {
+    UIImpactFeedbackGenerator *generator = objc_getAssociatedObject(self, kWCPLRepeatButtonTapFeedbackKey);
+    if (![generator isKindOfClass:[UIImpactFeedbackGenerator class]]) {
+        generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+        objc_setAssociatedObject(self, kWCPLRepeatButtonTapFeedbackKey, generator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return generator;
 }
 
 %new
@@ -936,6 +948,8 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 - (UIButton *)wchook_buildRepeatButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
+    button.exclusiveTouch = YES;
+    button.adjustsImageWhenHighlighted = NO;
     button.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.96f];
     button.layer.cornerRadius = kWCPLRepeatButtonSize * 0.5f;
     button.layer.borderWidth = 0.5f;
@@ -1117,6 +1131,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
 
     objc_setAssociatedObject(button, kWCPLRepeatButtonWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(button, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
     if (!isSameMessage) {
         objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -1190,7 +1205,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wchook_handleSwipe:)];
         gesture.maximumNumberOfTouches = 1;
         gesture.minimumNumberOfTouches = 1;
-        gesture.cancelsTouchesInView = YES;
+        gesture.cancelsTouchesInView = NO;
         gesture.delaysTouchesBegan = NO;
         gesture.delaysTouchesEnded = NO;
         gesture.delegate = (id<UIGestureRecognizerDelegate>)self;
@@ -1198,6 +1213,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         self.wchook_swipeGesture = gesture;
     }
 
+    gesture.cancelsTouchesInView = NO;
     gesture.enabled = YES;
 
     if (!self.wchook_feedbackGenerator) {
@@ -1693,7 +1709,27 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         }
     }
 
+    if (quoteTarget && [chatVC respondsToSelector:@selector(AsyncSendMessage:replyingMsg:isPasted:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id, BOOL))objc_msgSend)(chatVC,
+                                                             @selector(AsyncSendMessage:replyingMsg:isPasted:),
+                                                             repeatText,
+                                                             quoteTarget,
+                                                             NO);
+            WCPLLogInfo(@"Repeat sent: flow=chatvc_async_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            return;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat quote send via chatVC AsyncSendMessage failed: %@", exception.reason ?: exception);
+        }
+    }
+
     if (quoteTarget && toolView) {
+        WCPLLogDebug(@"Repeat quote fallback dispatch: msg=%@ canSetReply=%d canChatToolSend=%d canToolClickSend=%d",
+                     wcpl_repeatMessageDebugInfo(msgWrap),
+                     [toolView respondsToSelector:@selector(setReplyingMessage:)] ? 1 : 0,
+                     [chatVC respondsToSelector:@selector(SendTextMessageToolView:)] ? 1 : 0,
+                     [toolView respondsToSelector:@selector(onClickTextViewSendText:)] ? 1 : 0);
+
         BOOL didSetReplyingMessage = NO;
         if ([toolView respondsToSelector:@selector(setReplyingMessage:)]) {
             @try {
@@ -1702,6 +1738,17 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
             } @catch (__unused NSException *exception) {
             }
         }
+
+        if (didSetReplyingMessage && [chatVC respondsToSelector:@selector(SendTextMessageToolView:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(SendTextMessageToolView:), repeatText);
+                WCPLLogInfo(@"Repeat sent: flow=chatvc_toolview_quote msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+                return;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat quote send via chatVC SendTextMessageToolView failed: %@", exception.reason ?: exception);
+            }
+        }
+
         if ([toolView respondsToSelector:@selector(onClickTextViewSendText:)]) {
             @try {
                 ((void (*)(id, SEL, id))objc_msgSend)(toolView, @selector(onClickTextViewSendText:), repeatText);
@@ -1759,11 +1806,57 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 %new
 - (void)wchook_onRepeatButtonTapped:(UIButton *)sender {
     CMessageWrap *msgWrap = objc_getAssociatedObject(sender, kWCPLRepeatButtonWrapKey);
-    if (!msgWrap) {
-        msgWrap = wcpl_messageWrapForCellView(self);
+
+    NSString *buttonMessageKey = objc_getAssociatedObject(sender, kWCPLRepeatButtonMessageKey);
+    CMessageWrap *cellWrap = wcpl_messageWrapForCellView(self);
+    NSString *cellMessageKey = wcpl_repeatMessageKey(cellWrap);
+
+    if (cellWrap && buttonMessageKey.length > 0 && ![buttonMessageKey isEqualToString:cellMessageKey]) {
+        WCPLLogWarning(@"Repeat click stale binding fixed: class=%@ cell=%p buttonMsg=%@ cellMsg=%@",
+                       NSStringFromClass([self class]),
+                       self,
+                       buttonMessageKey,
+                       cellMessageKey);
+        msgWrap = cellWrap;
     }
+
+    if (!msgWrap && cellWrap) {
+        msgWrap = cellWrap;
+    }
+
+    if (msgWrap && cellWrap && msgWrap != cellWrap) {
+        BOOL buttonWrapSupported = [self wchook_isMessageSupportedForRepeat:msgWrap];
+        BOOL cellWrapSupported = [self wchook_isMessageSupportedForRepeat:cellWrap];
+        if (!buttonWrapSupported && cellWrapSupported) {
+            WCPLLogWarning(@"Repeat click replace unsupported wrap with cell wrap: class=%@ cell=%p buttonWrap=%@ cellWrap=%@",
+                           NSStringFromClass([self class]),
+                           self,
+                           wcpl_repeatMessageDebugInfo(msgWrap),
+                           wcpl_repeatMessageDebugInfo(cellWrap));
+            msgWrap = cellWrap;
+        }
+    }
+
+    if (!msgWrap) {
+        WCPLLogWarning(@"Repeat click ignored: class=%@ cell=%p reason=noMessageWrap", NSStringFromClass([self class]), self);
+        return;
+    }
+
+    UIImpactFeedbackGenerator *feedback = [self wchook_repeatTapFeedbackGenerator];
+    [feedback prepare];
+    if ([feedback respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
+        [feedback impactOccurredWithIntensity:0.55f];
+    } else {
+        [feedback impactOccurred];
+    }
+
     BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgWrap && msgWrap.m_uiMessageType == 49);
-    WCPLLogInfo(@"Repeat click: class=%@ cell=%p msg=%@ hasQuote=%d", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap), hasQuote ? 1 : 0);
+    WCPLLogInfo(@"Repeat click: class=%@ cell=%p msg=%@ hasQuote=%d key=%@",
+                NSStringFromClass([self class]),
+                self,
+                wcpl_repeatMessageDebugInfo(msgWrap),
+                hasQuote ? 1 : 0,
+                buttonMessageKey ?: @"(nil)");
     [self wchook_repeatMessageWrap:msgWrap];
 }
 
@@ -1773,6 +1866,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         sender.transform = CGAffineTransformMakeScale(0.92f, 0.92f);
         sender.alpha = 0.86f;
     }];
+    WCPLLogDebug(@"Repeat touch down: class=%@ cell=%p", NSStringFromClass([self class]), self);
 }
 
 %new
@@ -1781,6 +1875,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         sender.transform = CGAffineTransformIdentity;
         sender.alpha = 1.0f;
     }];
+    WCPLLogDebug(@"Repeat touch end: class=%@ cell=%p", NSStringFromClass([self class]), self);
 }
 
 %new
