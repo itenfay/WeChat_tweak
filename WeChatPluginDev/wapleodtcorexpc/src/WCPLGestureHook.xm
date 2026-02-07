@@ -446,6 +446,77 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
     return NO;
 }
 
+static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
+                                             NSString *chatName,
+                                             NSString *sceneTag) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
+        return NO;
+    }
+
+    id sendWrap = msgWrap;
+    if ([msgWrap respondsToSelector:@selector(copy)]) {
+        @try {
+            id copiedWrap = [msgWrap copy];
+            if ([copiedWrap isKindOfClass:%c(CMessageWrap)]) {
+                sendWrap = copiedWrap;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsToUsr:), chatName);
+        } @catch (__unused NSException *exceptionTo) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_nsFromUsr:)] && selfUserName.length > 0) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsFromUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionFrom) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [chatName rangeOfString:@"@chatroom"].location != NSNotFound && [sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)] && selfUserName.length > 0) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), selfUserName);
+        } @catch (__unused NSException *exceptionReal) {
+        }
+    }
+
+    if (sendWrap != msgWrap && [sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), 0);
+        } @catch (__unused NSException *exceptionStatus) {
+        }
+    }
+
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
+        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_media scene=%@ msg=%@ chat=%@",
+                    sceneTag ?: @"media",
+                    wcpl_repeatMessageDebugInfo(msgWrap),
+                    chatName);
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat media via SendMessageMgr failed: scene=%@ msg=%@ chat=%@ reason=%@",
+                       sceneTag ?: @"media",
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       chatName,
+                       exception.reason ?: exception);
+    }
+
+    return NO;
+}
+
 
 static NSString *wcpl_repeatAudioPathForMessage(CMessageWrap *msgWrap) {
     if (!msgWrap) {
@@ -1605,6 +1676,9 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
                  (unsigned long)repeatText.length);
 
     if (msgType == 47) {
+        BOOL isFromOtherEmoticon = wcpl_isMessageFromOther(msgWrap);
+        WCPLLogDebug(@"Repeat media strategy: scene=emoticon msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherEmoticon ? 1 : 0);
+
         NSString *emoticonMD5 = wcpl_emoticonMD5FromMessageWrap(msgWrap);
         id emoticonMgr = WCPLGetService(objc_getClass("CEmoticonMgr"));
         id emoticonWrap = nil;
@@ -1681,10 +1755,25 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
 
     if (msgType == 3) {
+        BOOL isFromOtherMedia = wcpl_isMessageFromOther(msgWrap);
+        WCPLLogDebug(@"Repeat media strategy: scene=image msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherMedia ? 1 : 0);
+
+        if (isFromOtherMedia) {
+            if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"image_other")) {
+                return;
+            }
+            WCPLLogWarning(@"Repeat image other-message fallback to native resend: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        }
+
         if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"image")) {
             return;
         }
-        WCPLLogWarning(@"Repeat image fallback to text: native resend unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+
+        if (!isFromOtherMedia && wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"image_self_fallback")) {
+            return;
+        }
+
+        WCPLLogWarning(@"Repeat image fallback to text: native/sendmsg unavailable msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
     }
 
     if (msgType == 43) {
