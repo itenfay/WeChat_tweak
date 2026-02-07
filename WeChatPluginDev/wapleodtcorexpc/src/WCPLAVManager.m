@@ -6,6 +6,7 @@
 //
 
 #import "WCPLAVManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface WCPLAVManager() <AVCaptureVideoDataOutputSampleBufferDelegate>
 
