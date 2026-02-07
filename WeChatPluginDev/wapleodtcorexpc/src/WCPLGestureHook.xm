@@ -626,6 +626,119 @@ static BOOL wcpl_sceneTagLooksLikeOtherMedia(NSString *sceneTag) {
     return ([sceneTag rangeOfString:@"other" options:NSCaseInsensitiveSearch].location != NSNotFound);
 }
 
+static BOOL wcpl_sceneTagLooksLikeVideoOther(NSString *sceneTag) {
+    if (![sceneTag isKindOfClass:[NSString class]] || sceneTag.length == 0) {
+        return NO;
+    }
+    BOOL containsVideo = ([sceneTag rangeOfString:@"video" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    BOOL containsOther = ([sceneTag rangeOfString:@"other" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    return containsVideo && containsOther;
+}
+
+static BOOL wcpl_acceptNativeResendResult(CMessageWrap *originWrap,
+                                          CMessageWrap *sendWrap,
+                                          NSString *sceneTag,
+                                          NSString *flowTag) {
+    if (!(originWrap && sendWrap)) {
+        return YES;
+    }
+
+    if (originWrap.m_uiMessageType == 43 && wcpl_sceneTagLooksLikeVideoOther(sceneTag) &&
+        sendWrap.m_uiMesLocalID == 0 && sendWrap.m_n64MesSvrID == 0) {
+        WCPLLogWarning(@"Repeat native resend pseudo-success: flow=%@ scene=%@ msg=%@ send=%@ (local/svr both 0), treat as failed",
+                       flowTag ?: @"(nil)",
+                       sceneTag ?: @"(nil)",
+                       wcpl_repeatMessageDebugInfo(originWrap),
+                       wcpl_repeatMessageDebugInfo(sendWrap));
+        return NO;
+    }
+
+    return YES;
+}
+
+static BOOL wcpl_probeVideoLocalAsset(CMessageWrap *msgWrap,
+                                      NSString **pathOut,
+                                      unsigned long long *sizeOut) {
+    if (pathOut) {
+        *pathOut = nil;
+    }
+    if (sizeOut) {
+        *sizeOut = 0;
+    }
+    if (!msgWrap) {
+        return NO;
+    }
+
+    NSMutableArray<NSString *> *candidates = [NSMutableArray array];
+    void (^appendCandidate)(id) = ^(id value) {
+        if ([value isKindOfClass:[NSString class]]) {
+            NSString *path = wcpl_trimTextForRepeat((NSString *)value);
+            if (path.length > 0 && ![candidates containsObject:path]) {
+                [candidates addObject:path];
+            }
+        }
+    };
+
+    Class wrapClass = objc_getClass("CMessageWrap");
+    NSArray<NSString *> *classSelectors = @[
+        @"GetPathOfRawOrCompressVideo:",
+        @"GetPathOfMesVideoWithMessageWrap:",
+        @"GetPathOfRawVideoWithMessageWrap:",
+        @"GetTempPathOfMesVideoWithMessageWrap:",
+        @"GetTempPathOfRawVideoWithMessageWrap:"
+    ];
+    for (NSString *selectorName in classSelectors) {
+        SEL selector = NSSelectorFromString(selectorName);
+        if (!(selector && wrapClass && [wrapClass respondsToSelector:selector])) {
+            continue;
+        }
+        @try {
+            id value = ((id (*)(id, SEL, id))objc_msgSend)(wrapClass, selector, msgWrap);
+            appendCandidate(value);
+        } @catch (__unused NSException *exceptionClass) {
+        }
+    }
+
+    NSArray<NSString *> *instanceSelectors = @[
+        @"getFormatVideoPath",
+        @"getTempVideoPath",
+        @"GetCdnDownloadPathOfVideo",
+        @"GetCdnDownloadThumbPathOfVideo"
+    ];
+    for (NSString *selectorName in instanceSelectors) {
+        SEL selector = NSSelectorFromString(selectorName);
+        if (!(selector && [msgWrap respondsToSelector:selector])) {
+            continue;
+        }
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(msgWrap, selector);
+            appendCandidate(value);
+        } @catch (__unused NSException *exceptionInstance) {
+        }
+    }
+
+    NSString *bestPath = candidates.firstObject;
+    unsigned long long bestSize = 0;
+    for (NSString *path in candidates) {
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:NULL];
+        NSNumber *fileSize = [attrs isKindOfClass:[NSDictionary class]] ? attrs[NSFileSize] : nil;
+        unsigned long long currentSize = fileSize ? fileSize.unsignedLongLongValue : 0;
+        if (currentSize > 0) {
+            bestPath = path;
+            bestSize = currentSize;
+            break;
+        }
+    }
+
+    if (pathOut) {
+        *pathOut = bestPath;
+    }
+    if (sizeOut) {
+        *sizeOut = bestSize;
+    }
+    return (bestPath.length > 0 && bestSize > 0);
+}
+
 static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
                                             CMessageWrap *sendWrap,
                                             NSString *chatName,
@@ -646,7 +759,9 @@ static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
                         wcpl_repeatMessageDebugInfo(sendWrap),
                         originWrap,
                         sendWrap);
-            return YES;
+            if (wcpl_acceptNativeResendResult(originWrap, sendWrap, scene, @"native_resend_chatvc")) {
+                return YES;
+            }
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat native resend via chatVC failed: scene=%@ reason=%@",
                            scene,
@@ -665,7 +780,9 @@ static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
                         wcpl_repeatMessageDebugInfo(sendWrap),
                         originWrap,
                         sendWrap);
-            return YES;
+            if (wcpl_acceptNativeResendResult(originWrap, sendWrap, scene, @"native_resend_messagemgr")) {
+                return YES;
+            }
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat native resend via messageMgr failed: scene=%@ reason=%@",
                            scene,
@@ -683,7 +800,9 @@ static BOOL wcpl_repeatNativeResendWithWrap(CMessageWrap *originWrap,
                         wcpl_repeatMessageDebugInfo(sendWrap),
                         originWrap,
                         sendWrap);
-            return YES;
+            if (wcpl_acceptNativeResendResult(originWrap, sendWrap, scene, @"native_resend_resendmessage")) {
+                return YES;
+            }
         } @catch (NSException *exception) {
             WCPLLogWarning(@"Repeat native ReSendMessage failed: scene=%@ reason=%@",
                            scene,
@@ -724,6 +843,92 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
         return NO;
     }
     return wcpl_repeatNativeResendWithWrap(msgWrap, msgWrap, chatName, chatVC, sceneTag);
+}
+
+static BOOL wcpl_repeatVideoByRoutePatchedOrigin(CMessageWrap *msgWrap,
+                                                 NSString *chatName,
+                                                 BaseMsgContentViewController *chatVC,
+                                                 NSString *sceneTag) {
+    if (!(msgWrap && chatName.length > 0)) {
+        return NO;
+    }
+
+    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"video_route_patch";
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+    NSString *originTo = msgWrap.m_nsToUsr;
+    NSString *originFrom = msgWrap.m_nsFromUsr;
+    NSString *originReal = msgWrap.m_nsRealChatUsr;
+
+    BOOL sent = NO;
+    @try {
+        wcpl_prepareSendWrapRoute(msgWrap, chatName, selfUserName, scene);
+
+        id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
+        if (messageMgr && [messageMgr respondsToSelector:@selector(ResendVideoMsg:MsgWrap:)]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(ResendVideoMsg:MsgWrap:), chatName, msgWrap);
+                WCPLLogInfo(@"Repeat sent: flow=native_resend_video_routepatch scene=%@ msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(msgWrap),
+                            chatName,
+                            wcpl_repeatMessageDebugInfo(msgWrap),
+                            msgWrap,
+                            msgWrap);
+                if (wcpl_acceptNativeResendResult(msgWrap, msgWrap, scene, @"native_resend_video_routepatch")) {
+                    sent = YES;
+                }
+            } @catch (NSException *exceptionVideoResend) {
+                WCPLLogWarning(@"Repeat video route patch via ResendVideoMsg failed: scene=%@ reason=%@",
+                               scene,
+                               exceptionVideoResend.reason ?: exceptionVideoResend);
+            }
+        }
+
+        if (!sent) {
+            sent = wcpl_repeatNativeResendWithWrap(msgWrap, msgWrap, chatName, chatVC, [scene stringByAppendingString:@"_generic"]);
+        }
+    } @catch (NSException *exceptionRoutePatch) {
+        WCPLLogWarning(@"Repeat video route patch unexpected error: scene=%@ reason=%@",
+                       scene,
+                       exceptionRoutePatch.reason ?: exceptionRoutePatch);
+    } @finally {
+        if ([msgWrap respondsToSelector:@selector(setM_nsToUsr:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap,
+                                                      @selector(setM_nsToUsr:),
+                                                      [originTo isKindOfClass:[NSString class]] ? originTo : nil);
+            } @catch (__unused NSException *exceptionRestoreTo) {
+            }
+        }
+
+        if ([msgWrap respondsToSelector:@selector(setM_nsFromUsr:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap,
+                                                      @selector(setM_nsFromUsr:),
+                                                      [originFrom isKindOfClass:[NSString class]] ? originFrom : nil);
+            } @catch (__unused NSException *exceptionRestoreFrom) {
+            }
+        }
+
+        if ([msgWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(msgWrap,
+                                                      @selector(setM_nsRealChatUsr:),
+                                                      [originReal isKindOfClass:[NSString class]] ? originReal : nil);
+            } @catch (__unused NSException *exceptionRestoreReal) {
+            }
+        }
+
+        WCPLLogDebug(@"Repeat video route restored: scene=%@ msg=%@ to=%@ from=%@ real=%@ sent=%d",
+                     scene,
+                     wcpl_repeatMessageDebugInfo(msgWrap),
+                     msgWrap.m_nsToUsr ?: @"(nil)",
+                     msgWrap.m_nsFromUsr ?: @"(nil)",
+                     msgWrap.m_nsRealChatUsr ?: @"(nil)",
+                     sent ? 1 : 0);
+    }
+
+    return sent;
 }
 
 static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
@@ -2051,9 +2256,20 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     if (msgType == 43) {
         BOOL isFromOtherVideo = wcpl_isMessageFromOther(msgWrap);
-        WCPLLogDebug(@"Repeat media strategy: scene=video msg=%@ isFromOther=%d", wcpl_repeatMessageDebugInfo(msgWrap), isFromOtherVideo ? 1 : 0);
+        NSString *videoAssetPath = nil;
+        unsigned long long videoAssetSize = 0;
+        BOOL hasVideoAsset = wcpl_probeVideoLocalAsset(msgWrap, &videoAssetPath, &videoAssetSize);
+        WCPLLogDebug(@"Repeat media strategy: scene=video msg=%@ isFromOther=%d hasAsset=%d size=%llu path=%@",
+                     wcpl_repeatMessageDebugInfo(msgWrap),
+                     isFromOtherVideo ? 1 : 0,
+                     hasVideoAsset ? 1 : 0,
+                     videoAssetSize,
+                     videoAssetPath ?: @"(nil)");
 
         if (isFromOtherVideo) {
+            if (wcpl_repeatVideoByRoutePatchedOrigin(msgWrap, chatName, chatVC, @"video_other_routepatch")) {
+                return;
+            }
             if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"video_other_native")) {
                 return;
             }
