@@ -716,6 +716,87 @@ static BOOL wcpl_sceneTagLooksLikeVideoOther(NSString *sceneTag) {
     return containsVideo && containsOther;
 }
 
+static BOOL wcpl_sceneTagLooksLikeVideoSelf(NSString *sceneTag) {
+    if (![sceneTag isKindOfClass:[NSString class]] || sceneTag.length == 0) {
+        return NO;
+    }
+    BOOL containsVideo = ([sceneTag rangeOfString:@"video" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    BOOL containsOther = ([sceneTag rangeOfString:@"other" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    return containsVideo && !containsOther;
+}
+
+static void wcpl_restoreVideoIdentityForNativeResendIfNeeded(CMessageWrap *originWrap,
+                                                              CMessageWrap *sendWrap,
+                                                              NSString *sceneTag) {
+    if (!(originWrap && sendWrap) || originWrap == sendWrap) {
+        return;
+    }
+    if (originWrap.m_uiMessageType != 43 || !wcpl_sceneTagLooksLikeVideoSelf(sceneTag)) {
+        return;
+    }
+
+    unsigned int originLocalID = originWrap.m_uiMesLocalID;
+    long long originSvrID = originWrap.m_n64MesSvrID;
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiMesLocalID:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMesLocalID:), originLocalID);
+        } @catch (__unused NSException *exceptionLocalID) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_n64MesSvrID:)]) {
+        @try {
+            ((void (*)(id, SEL, long long))objc_msgSend)(sendWrap, @selector(setM_n64MesSvrID:), originSvrID);
+        } @catch (__unused NSException *exceptionSvrID) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiCreateTime:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiCreateTime:), originWrap.m_uiCreateTime);
+        } @catch (__unused NSException *exceptionCreateTime) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiSvrCreateTime:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiSvrCreateTime:), originWrap.m_uiSvrCreateTime);
+        } @catch (__unused NSException *exceptionSvrCreateTime) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiSendTime:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiSendTime:), originWrap.m_uiSendTime);
+        } @catch (__unused NSException *exceptionSendTime) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiStatus:), originWrap.m_uiStatus);
+        } @catch (__unused NSException *exceptionStatus) {
+        }
+    }
+
+    if ([sendWrap respondsToSelector:@selector(setM_uiImgStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiImgStatus:), originWrap.m_uiImgStatus);
+        } @catch (__unused NSException *exceptionImgStatus) {
+        }
+    }
+
+    WCPLLogDebug(@"Repeat video native identity restored: scene=%@ src(local=%u svr=%lld ptr=%p) send(local=%u svr=%lld ptr=%p)",
+                 sceneTag ?: @"(nil)",
+                 originLocalID,
+                 originSvrID,
+                 originWrap,
+                 sendWrap.m_uiMesLocalID,
+                 sendWrap.m_n64MesSvrID,
+                 sendWrap);
+}
+
 static BOOL wcpl_acceptNativeResendResult(CMessageWrap *originWrap,
                                           CMessageWrap *sendWrap,
                                           NSString *sceneTag,
@@ -941,6 +1022,8 @@ static BOOL wcpl_repeatNativeResend(CMessageWrap *msgWrap,
                        wcpl_repeatMessageDebugInfo(msgWrap));
         return NO;
     }
+
+    wcpl_restoreVideoIdentityForNativeResendIfNeeded(msgWrap, sendWrap, scene);
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, scene);
