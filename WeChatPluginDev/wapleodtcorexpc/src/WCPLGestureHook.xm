@@ -24,7 +24,7 @@ static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
 static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedbackKey;
 static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterStateKey;
 static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
-static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 0.9;
+static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 1.2;
 
 static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
 static uintptr_t gWCPLQuoteLongPressSuppressCellAddr = 0;
@@ -2640,6 +2640,20 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     %orig;
 }
 
+- (void)onTouchEnded {
+    if (wcpl_shouldSuppressTapForCell(self, @"onTouchEnded")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if (wcpl_shouldSuppressTapForCell(self, @"touchesEnded:withEvent:")) {
+        return;
+    }
+    %orig(touches, event);
+}
+
 - (void)onDelayedTouchUpInside {
     if (wcpl_shouldSuppressTapForCell(self, @"onDelayedTouchUpInside")) {
         return;
@@ -2698,6 +2712,24 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
     BOOL result = %orig;
     return result;
+}
+
+%end
+
+%hook ImageMessageCellView
+
+- (void)onTouchEnded {
+    if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.onTouchEnded")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)showImage {
+    if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.showImage")) {
+        return;
+    }
+    %orig;
 }
 
 %end
