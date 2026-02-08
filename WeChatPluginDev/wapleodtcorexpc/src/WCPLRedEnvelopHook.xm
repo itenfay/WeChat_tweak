@@ -23,13 +23,20 @@
 @end
 
 static NSString *const kWCPLFileHelperUserName = @"filehelper";
+static NSString *const kWCPLFeatureReceiveDonePageSummary = @"receive_done_page_summary";
+static const void *kWCPLReceiveDonePageSummaryLabelKey = &kWCPLReceiveDonePageSummaryLabelKey;
 
 static NSString *wcpl_stringFromSelector(id obj, SEL sel);
 static NSString *wcpl_stringForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys);
 static NSInteger wcpl_integerForKeysInDictionary(NSDictionary *dict, NSArray<NSString *> *keys, BOOL *found);
 static int wcpl_intFromSelector(id obj, SEL sel);
+static long long wcpl_longLongFromSelector(id obj, SEL sel, BOOL *found);
 static NSDictionary *wcpl_nativeUrlDictionaryFromRequestDictionary(NSDictionary *requestDict);
 static NSString *wcpl_sessionFromDictionary(NSDictionary *dict);
+static NSDictionary *wcpl_receiveDoneSummarySnapshotFromControlData(id controlData);
+static NSString *wcpl_receiveDoneSummaryText(NSDictionary *snapshot);
+static void wcpl_applyReceiveDoneSummaryOnReceiveHomeView(id homeView, id controlData);
+static void wcpl_layoutReceiveDoneSummaryLabelOnReceiveHomeView(id homeView);
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -813,6 +820,232 @@ static NSString *wcpl_currencyYuanString(NSInteger amountInCent) {
     }
     double amount = ((double)amountInCent) / 100.0;
     return [NSString stringWithFormat:@"%.2f", amount];
+}
+
+static long long wcpl_longLongFromSelector(id obj, SEL sel, BOOL *found) {
+    if (found) {
+        *found = NO;
+    }
+    if (!obj || !sel || ![obj respondsToSelector:sel]) {
+        return 0;
+    }
+    @try {
+        long long value = ((long long (*)(id, SEL))objc_msgSend)(obj, sel);
+        if (found) {
+            *found = YES;
+        }
+        return value;
+    } @catch (__unused NSException *exception) {
+        return 0;
+    }
+}
+
+static NSDictionary *wcpl_receiveDoneSummarySnapshotFromControlData(id controlData) {
+    if (!controlData) {
+        return nil;
+    }
+
+    id detailInfo = nil;
+    @try {
+        if ([controlData respondsToSelector:@selector(m_oWCRedEnvelopesDetailInfo)]) {
+            detailInfo = ((id (*)(id, SEL))objc_msgSend)(controlData, @selector(m_oWCRedEnvelopesDetailInfo));
+        }
+    } @catch (__unused NSException *exception) {
+        detailInfo = nil;
+    }
+    if (!detailInfo) {
+        detailInfo = controlData;
+    }
+
+    BOOL hasTotalNum = NO;
+    BOOL hasTotalAmount = NO;
+    BOOL hasRecNum = NO;
+    BOOL hasRecAmount = NO;
+
+    long long totalNum = wcpl_longLongFromSelector(detailInfo, @selector(m_lTotalNum), &hasTotalNum);
+    long long totalAmount = wcpl_longLongFromSelector(detailInfo, @selector(m_lTotalAmount), &hasTotalAmount);
+    long long recNum = wcpl_longLongFromSelector(detailInfo, @selector(m_lRecNum), &hasRecNum);
+    long long recAmount = wcpl_longLongFromSelector(detailInfo, @selector(m_lRecAmount), &hasRecAmount);
+
+    if (!hasTotalNum && !hasTotalAmount && !hasRecNum && !hasRecAmount) {
+        return nil;
+    }
+
+    if (totalNum < 0) totalNum = 0;
+    if (totalAmount < 0) totalAmount = 0;
+    if (recNum < 0) recNum = 0;
+    if (recAmount < 0) recAmount = 0;
+
+    long long remainNum = totalNum - recNum;
+    long long remainAmount = totalAmount - recAmount;
+    if (remainNum < 0) remainNum = 0;
+    if (remainAmount < 0) remainAmount = 0;
+
+    BOOL doneByNum = (hasTotalNum && hasRecNum && totalNum > 0 && recNum >= totalNum);
+    BOOL doneByAmount = (hasTotalAmount && hasRecAmount && totalAmount > 0 && recAmount >= totalAmount);
+    BOOL isReceiveDone = (doneByNum || doneByAmount);
+
+    NSString *traceId = wcpl_stringFromSelector(detailInfo, @selector(m_nsSendId));
+    if (traceId.length == 0) {
+        traceId = wcpl_stringFromSelector(controlData, @selector(m_nsSendID));
+    }
+
+    return @{
+        @"traceId": traceId ?: @"",
+        @"totalNum": @(totalNum),
+        @"totalAmount": @(totalAmount),
+        @"recNum": @(recNum),
+        @"recAmount": @(recAmount),
+        @"remainNum": @(remainNum),
+        @"remainAmount": @(remainAmount),
+        @"isReceiveDone": @(isReceiveDone)
+    };
+}
+
+static NSString *wcpl_receiveDoneSummaryText(NSDictionary *snapshot) {
+    if (![snapshot isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+
+    long long totalNum = [snapshot[@"totalNum"] longLongValue];
+    long long totalAmount = [snapshot[@"totalAmount"] longLongValue];
+    long long remainNum = [snapshot[@"remainNum"] longLongValue];
+    long long remainAmount = [snapshot[@"remainAmount"] longLongValue];
+
+    NSString *totalYuan = wcpl_currencyYuanString((NSInteger)totalAmount);
+    NSString *remainYuan = wcpl_currencyYuanString((NSInteger)remainAmount);
+    return [NSString stringWithFormat:@"总额：¥%@ / 总数：%lld个\n剩余个数：%lld个 / 剩余金：¥%@",
+                                      totalYuan,
+                                      totalNum,
+                                      remainNum,
+                                      remainYuan];
+}
+
+static UILabel *wcpl_receiveDoneSummaryLabelForReceiveHomeView(id homeView, BOOL createIfNeeded) {
+    UILabel *label = objc_getAssociatedObject(homeView, kWCPLReceiveDonePageSummaryLabelKey);
+    if (label || !createIfNeeded) {
+        return label;
+    }
+    if (!(homeView && [homeView respondsToSelector:@selector(addSubview:)])) {
+        return nil;
+    }
+
+    label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:12.0 weight:UIFontWeightSemibold];
+    label.textColor = [UIColor colorWithWhite:1.0 alpha:0.96];
+    label.backgroundColor = [UIColor colorWithWhite:0 alpha:0.28];
+    label.layer.cornerRadius = 8.0;
+    label.layer.masksToBounds = YES;
+    label.hidden = YES;
+    objc_setAssociatedObject(homeView, kWCPLReceiveDonePageSummaryLabelKey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    @try {
+        ((void (*)(id, SEL, id))objc_msgSend)(homeView, @selector(addSubview:), label);
+    } @catch (__unused NSException *exception) {
+    }
+
+    return label;
+}
+
+static void wcpl_layoutReceiveDoneSummaryLabelOnReceiveHomeView(id homeView) {
+    UILabel *label = wcpl_receiveDoneSummaryLabelForReceiveHomeView(homeView, NO);
+    if (!label || label.hidden) {
+        return;
+    }
+    if (![homeView isKindOfClass:[UIView class]]) {
+        return;
+    }
+
+    UIView *container = (UIView *)homeView;
+    CGFloat maxWidth = CGRectGetWidth(container.bounds) - 32.0;
+    if (maxWidth <= 120.0) {
+        return;
+    }
+
+    CGSize textSize = [label sizeThatFits:CGSizeMake(maxWidth - 20.0, CGFLOAT_MAX)];
+    CGFloat width = MIN(maxWidth, MAX(180.0, textSize.width + 20.0));
+    CGFloat height = MAX(40.0, textSize.height + 12.0);
+    CGFloat x = (CGRectGetWidth(container.bounds) - width) / 2.0;
+    CGFloat y = CGRectGetHeight(container.bounds) - height - 92.0;
+    if (y < 84.0) {
+        y = 84.0;
+    }
+
+    label.frame = CGRectMake(x, y, width, height);
+}
+
+static void wcpl_applyReceiveDoneSummaryOnReceiveHomeView(id homeView, id controlData) {
+    BOOL flagState = [WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable;
+    NSDictionary *snapshot = wcpl_receiveDoneSummarySnapshotFromControlData(controlData);
+    NSString *traceId = [snapshot[@"traceId"] isKindOfClass:[NSString class]] ? snapshot[@"traceId"] : @"";
+
+    UILabel *summaryLabel = wcpl_receiveDoneSummaryLabelForReceiveHomeView(homeView, flagState);
+    if (!flagState) {
+        if (summaryLabel) {
+            summaryLabel.hidden = YES;
+        }
+        WCPLLogDebug(@"红包领取完页汇总: feature_id=%@ flag_state=%d trace_id=%@ input=none branch=old_logic(flag_off)",
+                     kWCPLFeatureReceiveDonePageSummary,
+                     flagState,
+                     traceId);
+        return;
+    }
+
+    if (snapshot.count == 0) {
+        if (summaryLabel) {
+            summaryLabel.hidden = YES;
+        }
+        WCPLLogDebug(@"红包领取完页汇总: feature_id=%@ flag_state=%d trace_id=%@ input=empty_snapshot branch=old_logic(no_data)",
+                     kWCPLFeatureReceiveDonePageSummary,
+                     flagState,
+                     traceId);
+        return;
+    }
+
+    long long totalNum = [snapshot[@"totalNum"] longLongValue];
+    long long totalAmount = [snapshot[@"totalAmount"] longLongValue];
+    long long recNum = [snapshot[@"recNum"] longLongValue];
+    long long recAmount = [snapshot[@"recAmount"] longLongValue];
+    long long remainNum = [snapshot[@"remainNum"] longLongValue];
+    long long remainAmount = [snapshot[@"remainAmount"] longLongValue];
+    BOOL isReceiveDone = [snapshot[@"isReceiveDone"] boolValue];
+
+    if (!isReceiveDone) {
+        if (summaryLabel) {
+            summaryLabel.hidden = YES;
+        }
+        WCPLLogDebug(@"红包领取完页汇总: feature_id=%@ flag_state=%d trace_id=%@ input=totalNum:%lld,totalAmount:%lld,recNum:%lld,recAmount:%lld,remainNum:%lld,remainAmount:%lld branch=old_logic(not_done)",
+                     kWCPLFeatureReceiveDonePageSummary,
+                     flagState,
+                     traceId,
+                     totalNum,
+                     totalAmount,
+                     recNum,
+                     recAmount,
+                     remainNum,
+                     remainAmount);
+        return;
+    }
+
+    NSString *summaryText = wcpl_receiveDoneSummaryText(snapshot);
+    if (summaryLabel && summaryText.length > 0) {
+        summaryLabel.hidden = NO;
+        summaryLabel.text = summaryText;
+        wcpl_layoutReceiveDoneSummaryLabelOnReceiveHomeView(homeView);
+    }
+
+    WCPLLogDebug(@"红包领取完页汇总: feature_id=%@ flag_state=%d trace_id=%@ input=totalNum:%lld,totalAmount:%lld,recNum:%lld,recAmount:%lld,remainNum:%lld,remainAmount:%lld branch=new_logic(show_summary)",
+                 kWCPLFeatureReceiveDonePageSummary,
+                 flagState,
+                 traceId,
+                 totalNum,
+                 totalAmount,
+                 recNum,
+                 recAmount,
+                 remainNum,
+                 remainAmount);
 }
 
 static NSString *wcpl_redEnvelopNotifyMessage(NSString *sessionUserName, NSInteger amount, NSInteger totalAmount) {
@@ -1770,6 +2003,34 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                  path,
                  [NSThread isMainThread]);
     return sent;
+}
+
+%end
+
+%hook WCRedEnvelopesReceiveHomeView
+
+- (void)refreshViewWithData:(id)arg1 {
+    %orig;
+
+    @try {
+        wcpl_applyReceiveDoneSummaryOnReceiveHomeView(self, arg1);
+    } @catch (NSException *exception) {
+        BOOL flagState = [WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable;
+        NSString *reason = wcpl_sanitizeInlineText(exception.reason, 120) ?: @"unknown";
+        WCPLLogError(@"红包领取完页汇总异常: feature_id=%@ flag_state=%d trace_id=unknown input=nil branch=old_logic(exception_fallback) fallback_reason=%@",
+                     kWCPLFeatureReceiveDonePageSummary,
+                     flagState,
+                     reason);
+    }
+}
+
+- (void)layoutSubviews {
+    %orig;
+
+    @try {
+        wcpl_layoutReceiveDoneSummaryLabelOnReceiveHomeView(self);
+    } @catch (__unused NSException *exception) {
+    }
 }
 
 %end

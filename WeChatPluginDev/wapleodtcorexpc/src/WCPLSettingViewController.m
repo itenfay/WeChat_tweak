@@ -119,6 +119,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
         [section addCell:[self createDelaySettingCell]];
         [section addCell:[self createRedEnvelopNotifyTargetCell]];
+        [section addCell:[self createReceiveDonePageSummaryCell]];
     }
     
     [self.tableViewMgr addSection:section];
@@ -185,6 +186,14 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (WCTableViewNormalCellManager *)createRedEnvelopNotifyTargetCell {
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRedEnvelopNotifyTargetPicker) target:self title:@"抢包通知" rightValue:[self wcpl_redEnvelopNotifyTargetDisplayText] accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createReceiveDonePageSummaryCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveDonePageSummary:) target:self title:@"领取完展示汇总" on:[WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable];
+}
+
+- (void)settingReceiveDonePageSummary:(UISwitch *)sender {
+    [WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable = sender.on;
 }
 
 - (void)showRedEnvelopNotifyTargetPicker {

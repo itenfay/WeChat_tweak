@@ -22,6 +22,7 @@ static NSString *const kWCPLGroupDenyList           = @"kWCPLGroupDenyList";
 static NSString *const kWCPLPrivateAutoReplyText    = @"kWCPLPrivateAutoReplyText";
 static NSString *const kWCPLGroupAutoReplyText      = @"kWCPLGroupAutoReplyText";
 static NSString *const kWCPLRedEnvelopNotifyTarget  = @"kWCPLRedEnvelopNotifyTarget";
+static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePageSummaryEnable";
 
 static NSString *WCPLSanitizeReplyText(id value) {
     if (![value isKindOfClass:[NSString class]]) {
@@ -90,13 +91,17 @@ static NSString *WCPLSanitizeReplyText(id value) {
         }
         _redEnvelopNotifyTarget = notifyTarget;
 
-        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld autoReply(priv=%lu group=%lu) notifyTarget=%ld",
+        id receiveDonePageSummaryEnableValue = [defaults objectForKey:kWCPLReceiveDonePageSummaryEnable];
+        _receiveDonePageSummaryEnable = receiveDonePageSummaryEnableValue ? [receiveDonePageSummaryEnableValue boolValue] : YES;
+
+        WCPLLogInfo(@"[红包配置] Load: whitelist=%lu deny=%lu scope=%ld autoReply(priv=%lu group=%lu) notifyTarget=%ld pageSummary=%d",
                     (unsigned long)_blackList.count,
                     (unsigned long)_groupDenyList.count,
                     (long)_groupRedEnvelopScope,
                     (unsigned long)_privateAutoReplyText.length,
                     (unsigned long)_groupAutoReplyText.length,
-                    (long)_redEnvelopNotifyTarget);
+                    (long)_redEnvelopNotifyTarget,
+                    _receiveDonePageSummaryEnable);
     }
     return self;
 }
@@ -237,6 +242,12 @@ static NSString *WCPLSanitizeReplyText(id value) {
     _redEnvelopNotifyTarget = normalized;
     [self wcpl_setInteger:normalized forKey:kWCPLRedEnvelopNotifyTarget];
     WCPLLogInfo(@"[红包配置] Save notify target=%ld", (long)normalized);
+}
+
+- (void)setReceiveDonePageSummaryEnable:(BOOL)receiveDonePageSummaryEnable {
+    _receiveDonePageSummaryEnable = receiveDonePageSummaryEnable;
+    [self wcpl_setBool:receiveDonePageSummaryEnable forKey:kWCPLReceiveDonePageSummaryEnable];
+    WCPLLogInfo(@"[红包配置] Save receive done page summary=%d", receiveDonePageSummaryEnable);
 }
 
 @end

@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, WCPLRedEnvelopNotifyTarget) {
 @property (copy, nonatomic) NSString *privateAutoReplyText;
 @property (copy, nonatomic) NSString *groupAutoReplyText;
 @property (assign, nonatomic) NSInteger redEnvelopNotifyTarget;
+@property (assign, nonatomic) BOOL receiveDonePageSummaryEnable;
 
 // 旧命名（保持向后兼容）
 @property (strong, nonatomic) NSArray *blackList __attribute__((deprecated("Use allowedGroupList")));

@@ -9,6 +9,7 @@ static NSString *const kWCPLGroupRedEnvelopScopeKey = @"kWCPLGroupRedEnvelopScop
 static NSString *const kWCPLBlackListKey = @"kWCPLBlackList";
 static NSString *const kWCPLUserIgnoreEnableKey = @"kWCPLUserIgnoreEnable";
 static NSString *const kWCPLUserIgnoreInfoKey = @"kWCPLUserIgnoreInfo";
+static NSString *const kWCPLReceiveDonePageSummaryEnableKey = @"kWCPLReceiveDonePageSummaryEnable";
 
 static void wcpl_clearDefaultsKeys(NSArray<NSString *> *keys) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -121,6 +122,26 @@ static BOOL testIgnoreDictionarySanitize(void) {
     return YES;
 }
 
+static BOOL testReceiveDonePageSummaryDefaultAndPersist(void) {
+    wcpl_clearDefaultsKeys(@[kWCPLReceiveDonePageSummaryEnableKey]);
+
+    WCPLRedEnvelopConfig *config = [[WCPLRedEnvelopConfig alloc] init];
+    WCPL_ASSERT(config.receiveDonePageSummaryEnable == YES, "receiveDonePageSummaryEnable should default to YES");
+
+    config.receiveDonePageSummaryEnable = NO;
+    WCPL_ASSERT(config.receiveDonePageSummaryEnable == NO, "receiveDonePageSummaryEnable should persist NO in memory");
+
+    config = [[WCPLRedEnvelopConfig alloc] init];
+    WCPL_ASSERT(config.receiveDonePageSummaryEnable == NO, "receiveDonePageSummaryEnable should reload persisted NO");
+
+    config.receiveDonePageSummaryEnable = YES;
+    config = [[WCPLRedEnvelopConfig alloc] init];
+    WCPL_ASSERT(config.receiveDonePageSummaryEnable == YES, "receiveDonePageSummaryEnable should reload persisted YES");
+
+    wcpl_clearDefaultsKeys(@[kWCPLReceiveDonePageSummaryEnableKey]);
+    return YES;
+}
+
 static BOOL runTest(const char *name, BOOL (*test)(void)) {
     @autoreleasepool {
         BOOL ok = test();
@@ -137,6 +158,7 @@ int main(void) {
     failed += !runTest("testGroupScopeMigration", testGroupScopeMigration);
     failed += !runTest("testAllowedGroupListAliasing", testAllowedGroupListAliasing);
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
+    failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);
 
     if (failed == 0) {
         fprintf(stdout, "ALL TESTS PASSED\n");
