@@ -24,22 +24,56 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
     WCPLGroupSelectContextAllowList,
 };
 
+typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
+    WCPLSettingPageTypeRoot = 0,
+    WCPLSettingPageTypeRedEnvelop,
+    WCPLSettingPageTypeMessage,
+    WCPLSettingPageTypeGesture,
+    WCPLSettingPageTypeDebug,
+};
+
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate,
                                          WCPLMultiSelectContactsViewControllerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 @property (nonatomic, assign) WCPLGroupSelectContext groupSelectContext;
+@property (nonatomic, assign) WCPLSettingPageType pageType;
+
+- (instancetype)initWithPageType:(WCPLSettingPageType)pageType;
+- (void)wcpl_setupTableViewManager;
+- (NSString *)wcpl_pageTitle;
 
 @end
 
 @implementation WCPLSettingViewController
 
+- (instancetype)init {
+    return [self initWithPageType:WCPLSettingPageTypeRoot];
+}
+
+- (instancetype)initWithPageType:(WCPLSettingPageType)pageType {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _pageType = pageType;
+        [self wcpl_setupTableViewManager];
+    }
+    return self;
+}
+
+- (void)wcpl_setupTableViewManager {
+    if (_tableViewMgr) {
+        return;
+    }
+
+    CGFloat tabY = WCPLStatusBarAndNavigationBarHeight;
+    CGFloat tabW = WCPLScreenWidth;
+    CGFloat tabH = WCPLScreenHeight - WCPLStatusBarAndNavigationBarHeight - WCPLViewSafeBottomMargin;
+    _tableViewMgr = [[objc_getClass("WCTableViewManager") alloc] initWithFrame:CGRectMake(0, tabY, tabW, tabH) style:UITableViewStyleGrouped];
+}
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        CGFloat tabY = WCPLStatusBarAndNavigationBarHeight;
-        CGFloat tabW = WCPLScreenWidth;
-        CGFloat tabH = WCPLScreenHeight - WCPLStatusBarAndNavigationBarHeight - WCPLViewSafeBottomMargin;
-        _tableViewMgr = [[objc_getClass("WCTableViewManager") alloc] initWithFrame:CGRectMake(0, tabY, tabW, tabH) style:UITableViewStyleGrouped];
+        _pageType = WCPLSettingPageTypeRoot;
+        [self wcpl_setupTableViewManager];
     }
     return self;
 }
@@ -68,7 +102,7 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (void)initTitle {
-    self.title = @"微信辣椒 by guanxi";
+    self.title = [self wcpl_pageTitle];
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]}];
     self.navigationItem.leftBarButtonItem = [objc_getClass("MMUICommonUtil") getBarButtonWithImageName:@"ui-resource_back" target:self action:@selector(onBack:) style:0 accessibility:nil];
@@ -81,13 +115,26 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 - (void)reloadTableData {
     [self.tableViewMgr clearAllSection];
 
-    [self addBasicSettingSection];
-    [self addAdvanceSettingSection];
-    [self addMessageIgnoreSettingSection];
-    [self addOtherSettingSection];
-    [self addSwipeQuoteSettingSection];
-    [self addRepeatBubbleSettingSection];
-    [self addLogEntrySection];
+    switch (self.pageType) {
+        case WCPLSettingPageTypeRoot:
+            [self addTopLevelEntrySection];
+            break;
+        case WCPLSettingPageTypeRedEnvelop:
+            [self addBasicSettingSection];
+            [self addAdvanceSettingSection];
+            break;
+        case WCPLSettingPageTypeMessage:
+            [self addMessageIgnoreSettingSection];
+            [self addOtherSettingSection];
+            break;
+        case WCPLSettingPageTypeGesture:
+            [self addSwipeQuoteSettingSection];
+            [self addRepeatBubbleSettingSection];
+            break;
+        case WCPLSettingPageTypeDebug:
+            [self addLogEntrySection];
+            break;
+    }
 
     MMTableView *tableView = [self.tableViewMgr getTableView];
     [tableView reloadData];
@@ -95,6 +142,60 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (NSString *)wcpl_pageTitle {
+    switch (self.pageType) {
+        case WCPLSettingPageTypeRedEnvelop:
+            return @"红包功能";
+        case WCPLSettingPageTypeMessage:
+            return @"消息与防护";
+        case WCPLSettingPageTypeGesture:
+            return @"手势与快捷";
+        case WCPLSettingPageTypeDebug:
+            return @"日志与调试";
+        case WCPLSettingPageTypeRoot:
+        default:
+            return @"微信辣椒 by guanxi";
+    }
+}
+
+#pragma mark - TopLevelEntry
+
+- (void)addTopLevelEntrySection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能分类"];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息与防护" detail:@"防撤回、消息屏蔽" selector:@selector(openMessageSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"手势与快捷" detail:@"滑动、引用、快捷操作" selector:@selector(openGestureSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"日志与调试" detail:@"调试日志与上传" selector:@selector(openDebugSettingsEntry)]];
+    [self.tableViewMgr addSection:section];
+}
+
+- (WCTableViewNormalCellManager *)createTopLevelEntryCellWithTitle:(NSString *)title
+                                                             detail:(NSString *)detail
+                                                           selector:(SEL)selector {
+    NSString *rightValue = [detail isKindOfClass:[NSString class]] ? detail : @"";
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:selector target:self title:title rightValue:rightValue accessoryType:1];
+}
+
+- (void)openRedEnvelopSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeRedEnvelop];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openMessageSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeMessage];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openGestureSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeGesture];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openDebugSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeDebug];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - BasicSetting
@@ -435,10 +536,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 }
 
 - (WCTableViewNormalCellManager *)createLogEntryCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(openLogSettings) target:self title:@"日志设置" rightValue:@"" accessoryType:1];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(openDebugSettings) target:self title:@"日志设置" rightValue:@"" accessoryType:1];
 }
 
-- (void)openLogSettings {
+- (void)openDebugSettings {
     WCPLLogSettingsViewController *controller = [[WCPLLogSettingsViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
