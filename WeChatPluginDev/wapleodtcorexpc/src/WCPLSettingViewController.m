@@ -29,7 +29,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLSettingPageTypeRedEnvelop,
     WCPLSettingPageTypeMessage,
     WCPLSettingPageTypeGesture,
-    WCPLSettingPageTypeDebug,
 };
 
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate,
@@ -131,9 +130,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
             [self addSwipeQuoteSettingSection];
             [self addRepeatBubbleSettingSection];
             break;
-        case WCPLSettingPageTypeDebug:
-            [self addLogEntrySection];
-            break;
     }
 
     MMTableView *tableView = [self.tableViewMgr getTableView];
@@ -152,8 +148,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
             return @"消息与防护";
         case WCPLSettingPageTypeGesture:
             return @"手势与快捷";
-        case WCPLSettingPageTypeDebug:
-            return @"日志与调试";
         case WCPLSettingPageTypeRoot:
         default:
             return @"微信辣椒 by guanxi";
@@ -167,7 +161,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息与防护" detail:@"防撤回、消息屏蔽" selector:@selector(openMessageSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"手势与快捷" detail:@"滑动、引用、快捷操作" selector:@selector(openGestureSettingsEntry)]];
-    [section addCell:[self createTopLevelEntryCellWithTitle:@"日志与调试" detail:@"调试日志与上传" selector:@selector(openDebugSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"日志设置" detail:@"调试日志与上传" selector:@selector(openDebugSettings)]];
     [self.tableViewMgr addSection:section];
 }
 
@@ -190,11 +184,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)openGestureSettingsEntry {
     WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeGesture];
-    [self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)openDebugSettingsEntry {
-    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeDebug];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
