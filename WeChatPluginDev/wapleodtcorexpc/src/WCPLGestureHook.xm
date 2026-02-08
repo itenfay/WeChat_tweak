@@ -1256,6 +1256,26 @@ static CMessageWrap *wcpl_extractForwardGeneratedWrap(id generated) {
     return nil;
 }
 
+static BOOL wcpl_acceptVideoForwardResult(id sendResult,
+                                          CMessageWrap *originWrap,
+                                          BOOL hasQueueMetric,
+                                          BOOL queueIncreased) {
+    if (hasQueueMetric && queueIncreased) {
+        return YES;
+    }
+
+    CMessageWrap *resultWrap = wcpl_extractForwardGeneratedWrap(sendResult);
+    if (!resultWrap) {
+        return NO;
+    }
+
+    if (wcpl_hasVideoIdentityCollision(originWrap, resultWrap)) {
+        return NO;
+    }
+
+    return (resultWrap.m_uiMesLocalID > 0 || resultWrap.m_n64MesSvrID > 0);
+}
+
 static BOOL wcpl_repeatVideoByCaptureInfo(id videoInfo,
                                           NSString *chatName,
                                           NSString *sceneTag,
@@ -1303,7 +1323,11 @@ static BOOL wcpl_repeatVideoByCaptureInfo(id videoInfo,
             BOOL hasQueueAfter = NO;
             unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
             BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
-            if (sendResult || queueIncreased) {
+            BOOL acceptResult = wcpl_acceptVideoForwardResult(sendResult,
+                                                              originWrap,
+                                                              (hasQueueMetric && hasQueueAfter),
+                                                              queueIncreased);
+            if (acceptResult) {
                 WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ result_class=%@ send=%@ branch_decision=accept_capture_forward_msgtype error/fallback_reason=none",
                             scene,
                             wcpl_repeatMessageDebugInfo(originWrap),
@@ -1333,7 +1357,11 @@ static BOOL wcpl_repeatVideoByCaptureInfo(id videoInfo,
             BOOL hasQueueAfter = NO;
             unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
             BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
-            if (sendResult || queueIncreased) {
+            BOOL acceptResult = wcpl_acceptVideoForwardResult(sendResult,
+                                                              originWrap,
+                                                              (hasQueueMetric && hasQueueAfter),
+                                                              queueIncreased);
+            if (acceptResult) {
                 WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ result_class=%@ send=%@ branch_decision=accept_capture_forward_addvideo error/fallback_reason=none",
                             scene,
                             wcpl_repeatMessageDebugInfo(originWrap),
@@ -1363,7 +1391,11 @@ static BOOL wcpl_repeatVideoByCaptureInfo(id videoInfo,
             BOOL hasQueueAfter = NO;
             unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
             BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
-            if (sendResult || queueIncreased) {
+            BOOL acceptResult = wcpl_acceptVideoForwardResult(sendResult,
+                                                              originWrap,
+                                                              (hasQueueMetric && hasQueueAfter),
+                                                              queueIncreased);
+            if (acceptResult) {
                 WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_capture_videoinfo origin=%@ result_class=%@ send=%@ branch_decision=accept_capture_forward_shortvideo error/fallback_reason=none",
                             scene,
                             wcpl_repeatMessageDebugInfo(originWrap),
@@ -1422,7 +1454,11 @@ static BOOL wcpl_repeatVideoByForwardDispatch(CMessageWrap *msgWrap,
             BOOL hasQueueAfter = NO;
             unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
             BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
-            if (result || queueIncreased) {
+            BOOL acceptResult = wcpl_acceptVideoForwardResult(result,
+                                                              msgWrap,
+                                                              (hasQueueMetric && hasQueueAfter),
+                                                              queueIncreased);
+            if (acceptResult) {
                 WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ result_class=%@ branch_decision=accept_forward_dispatch_sendmsg error/fallback_reason=none",
                             scene,
                             wcpl_repeatMessageDebugInfo(msgWrap),
@@ -1452,7 +1488,11 @@ static BOOL wcpl_repeatVideoByForwardDispatch(CMessageWrap *msgWrap,
             BOOL hasQueueAfter = NO;
             unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
             BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
-            if (hasQueueMetric && !queueIncreased) {
+            BOOL acceptResult = wcpl_acceptVideoForwardResult(nil,
+                                                              msgWrap,
+                                                              (hasQueueMetric && hasQueueAfter),
+                                                              queueIncreased);
+            if (!acceptResult) {
                 WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ branch_decision=reject_forward_dispatch_api4 error/fallback_reason=queue_unchanged",
                                scene,
                                wcpl_repeatMessageDebugInfo(msgWrap));
@@ -1481,7 +1521,11 @@ static BOOL wcpl_repeatVideoByForwardDispatch(CMessageWrap *msgWrap,
             BOOL hasQueueAfter = NO;
             unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
             BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
-            if (hasQueueMetric && !queueIncreased) {
+            BOOL acceptResult = wcpl_acceptVideoForwardResult(nil,
+                                                              msgWrap,
+                                                              (hasQueueMetric && hasQueueAfter),
+                                                              queueIncreased);
+            if (!acceptResult) {
                 WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_dispatch origin=%@ branch_decision=reject_forward_dispatch_api3 error/fallback_reason=queue_unchanged",
                                scene,
                                wcpl_repeatMessageDebugInfo(msgWrap));
@@ -1624,11 +1668,29 @@ static BOOL wcpl_repeatVideoByForwardUtil(CMessageWrap *msgWrap,
         return NO;
     }
 
+    BOOL hasQueueMetric = NO;
+    unsigned long long queueBefore = wcpl_getSendMessageQueueCount(&hasQueueMetric);
+
     @try {
         ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
                                                    @selector(AddMsgToSendTable:MsgWrap:),
                                                    chatName,
                                                    sendWrap);
+        BOOL hasQueueAfter = NO;
+        unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&hasQueueAfter);
+        BOOL queueIncreased = (hasQueueMetric && hasQueueAfter && queueAfter > queueBefore);
+        BOOL acceptResult = wcpl_acceptVideoForwardResult(sendWrap,
+                                                          msgWrap,
+                                                          (hasQueueMetric && hasQueueAfter),
+                                                          queueIncreased);
+        if (!acceptResult) {
+            WCPLLogWarning(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ send=%@ chat=%@ branch_decision=reject_forward_send error/fallback_reason=empty_result_and_queue_unchanged",
+                           scene,
+                           wcpl_repeatMessageDebugInfo(msgWrap),
+                           wcpl_repeatMessageDebugInfo(sendWrap),
+                           chatName ?: @"(nil)");
+            return NO;
+        }
         WCPLLogInfo(@"issue_id=WXBUG-VIDEO-REPEAT-EMPTY module=repeat.video scene=%@ input=flow=forward_video_util origin=%@ send=%@ chat=%@ branch_decision=accept_forward_send error/fallback_reason=none",
                     scene,
                     wcpl_repeatMessageDebugInfo(msgWrap),
