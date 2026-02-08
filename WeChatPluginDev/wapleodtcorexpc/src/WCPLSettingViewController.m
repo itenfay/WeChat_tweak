@@ -193,6 +193,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"红包功能"];
     
     [section addCell:[self createAutoReceiveRedEnvelopCell]];
+    [section addCell:[self createReceiveDonePageSummaryCell]];
 
     if ([WCPLRedEnvelopConfig sharedConfig].autoReceiveEnable) {
         [section addCell:[self createPrivateRedEnvelopCell]];
@@ -209,7 +210,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
         [section addCell:[self createDelaySettingCell]];
         [section addCell:[self createRedEnvelopNotifyTargetCell]];
-        [section addCell:[self createReceiveDonePageSummaryCell]];
     }
     
     [self.tableViewMgr addSection:section];
