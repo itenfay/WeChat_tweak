@@ -124,6 +124,39 @@ static NSUInteger wcpl_sg_safeContentLength(id value) {
     return 0;
 }
 
+static BOOL wcpl_sg_looksLikeVoiceXml(NSString *sanitizedContent) {
+    if (![sanitizedContent isKindOfClass:[NSString class]] || sanitizedContent.length == 0) {
+        return NO;
+    }
+    if ([sanitizedContent rangeOfString:@"<voicemsg" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+        return NO;
+    }
+    if ([sanitizedContent rangeOfString:@"<msg" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+        return NO;
+    }
+    return YES;
+}
+
+static BOOL wcpl_sg_isVoiceXmlText(id msgWrap, NSString *sanitizedContent) {
+    if (!msgWrap || sanitizedContent.length == 0) return NO;
+
+    NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
+    if (msgType != 1) return NO;
+
+    return wcpl_sg_looksLikeVoiceXml(sanitizedContent);
+}
+
+static NSString *wcpl_sg_contentSnippet(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return @"";
+    }
+    NSUInteger limit = 180;
+    if (content.length <= limit) {
+        return content;
+    }
+    return [[content substringToIndex:limit] stringByAppendingString:@"..."];
+}
+
 static BOOL wcpl_sg_isFromSelfMsgWrap(id msgWrap) {
     if (!msgWrap) return NO;
 
@@ -155,6 +188,19 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
     id originContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
     NSString *content = wcpl_sg_sanitizeText(originContent);
+    if (wcpl_sg_looksLikeVoiceXml(content)) {
+        NSString *sessionName = wcpl_sg_sanitizeText(session) ?: @"";
+        NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
+        NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+        WCPLLogWarning(@"拦截本地语音XML文本气泡: stage=%@ session=%@ to=%@ from=%@ len=%lu snippet=%@",
+                       stage ?: @"",
+                       sessionName,
+                       toUsr,
+                       fromUsr,
+                       (unsigned long)content.length,
+                       wcpl_sg_contentSnippet(content));
+        return YES;
+    }
     if (content.length > 0) return NO;
 
     NSString *sessionName = wcpl_sg_sanitizeText(session) ?: @"";
@@ -179,6 +225,12 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
         WCPLLogDebug(@"拦截空文本发送: MMInputToolView.sendMsgWithText");
         return;
     }
+    if (wcpl_sg_looksLikeVoiceXml(sanitized)) {
+        WCPLLogWarning(@"拦截语音XML文本发送: MMInputToolView.sendMsgWithText len=%lu snippet=%@",
+                       (unsigned long)sanitized.length,
+                       wcpl_sg_contentSnippet(sanitized));
+        return;
+    }
     %orig(sanitized);
 }
 
@@ -191,6 +243,17 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     if (msgType == 1) {
         NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        if (content.length > 0) {
+            WCPLLogDebug(@"BypStartSend 文本发送诊断: len=%lu snippet=%@",
+                         (unsigned long)content.length,
+                         wcpl_sg_contentSnippet(content));
+        }
+        if (wcpl_sg_isVoiceXmlText(msgWrap, content)) {
+            WCPLLogWarning(@"拦截语音XML文本发送: BypSendMessageMgr.StartSendMsg from=%@ to=%@",
+                           wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"",
+                           wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"");
+            return;
+        }
         if (content.length == 0) {
             WCPLLogDebug(@"拦截空文本发送: BypSendMessageMgr.StartSendMsg");
             return;
@@ -225,6 +288,10 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
     if (msgType == 1) {
         NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        if (wcpl_sg_isVoiceXmlText(msgWrap, content)) {
+            WCPLLogWarning(@"拦截语音XML文本入队: SendMessageMgr.AddMsgToSendTable to=%@ from=%@", toUsr, fromUsr);
+            return;
+        }
         if (content.length == 0) {
             WCPLLogWarning(@"拦截空文本入队: SendMessageMgr.AddMsgToSendTable to=%@ from=%@", toUsr, fromUsr);
             return;
@@ -242,11 +309,12 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
             }
         }
 
-        WCPLLogDebug(@"文本入队: SendMessageMgr type=%ld len=%lu to=%@ from=%@",
+        WCPLLogDebug(@"文本入队: SendMessageMgr type=%ld len=%lu to=%@ from=%@ snippet=%@",
                      (long)msgType,
                      (unsigned long)content.length,
                      toUsr,
-                     fromUsr);
+                     fromUsr,
+                     wcpl_sg_contentSnippet(content));
     } else {
         id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
         NSUInteger contentLength = wcpl_sg_safeContentLength(rawContent);
@@ -265,6 +333,91 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 %end
 
 %hook CMessageMgr
+
+- (void)AddMsg:(id)arg1 MsgWrap:(id)arg2 {
+    id msgWrap = arg2;
+    NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
+    NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
+    NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+    if (msgType == 1) {
+        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        if (content.length > 0) {
+            WCPLLogDebug(@"CMessageMgr.AddMsg 文本诊断: to=%@ from=%@ len=%lu snippet=%@",
+                         toUsr,
+                         fromUsr,
+                         (unsigned long)content.length,
+                         wcpl_sg_contentSnippet(content));
+        }
+        if (wcpl_sg_isVoiceXmlText(msgWrap, content)) {
+            WCPLLogWarning(@"拦截语音XML文本AddMsg: CMessageMgr.AddMsg to=%@ from=%@", toUsr, fromUsr);
+            return;
+        }
+    } else if (msgType == 34) {
+        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        WCPLLogDebug(@"CMessageMgr.AddMsg 语音诊断: to=%@ from=%@ len=%lu snippet=%@",
+                     toUsr,
+                     fromUsr,
+                     (unsigned long)content.length,
+                     wcpl_sg_contentSnippet(content));
+    }
+    %orig;
+}
+
+- (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2 {
+    id msgWrap = arg2;
+    NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
+    NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
+    NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+    NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+
+    if (msgType == 1 && wcpl_sg_looksLikeVoiceXml(content)) {
+        WCPLLogWarning(@"拦截语音XML文本AsyncOnAddMsg: to=%@ from=%@ len=%lu snippet=%@",
+                       toUsr,
+                       fromUsr,
+                       (unsigned long)content.length,
+                       wcpl_sg_contentSnippet(content));
+        return;
+    }
+
+    if (wcpl_sg_looksLikeVoiceXml(content)) {
+        WCPLLogDebug(@"AsyncOnAddMsg 语音XML诊断: type=%ld to=%@ from=%@ len=%lu snippet=%@",
+                     (long)msgType,
+                     toUsr,
+                     fromUsr,
+                     (unsigned long)content.length,
+                     wcpl_sg_contentSnippet(content));
+    }
+
+    %orig;
+}
+
+- (void)AsyncOnPreAddMsg:(id)arg1 MsgWrap:(id)arg2 {
+    id msgWrap = arg2;
+    NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
+    NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
+    NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+    NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+
+    if (msgType == 1 && wcpl_sg_looksLikeVoiceXml(content)) {
+        WCPLLogWarning(@"拦截语音XML文本AsyncOnPreAddMsg: to=%@ from=%@ len=%lu snippet=%@",
+                       toUsr,
+                       fromUsr,
+                       (unsigned long)content.length,
+                       wcpl_sg_contentSnippet(content));
+        return;
+    }
+
+    if (wcpl_sg_looksLikeVoiceXml(content)) {
+        WCPLLogDebug(@"AsyncOnPreAddMsg 语音XML诊断: type=%ld to=%@ from=%@ len=%lu snippet=%@",
+                     (long)msgType,
+                     toUsr,
+                     fromUsr,
+                     (unsigned long)content.length,
+                     wcpl_sg_contentSnippet(content));
+    }
+
+    %orig;
+}
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 {
     if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg")) {

@@ -693,21 +693,28 @@ static void wcpl_prepareSendWrapRoute(CMessageWrap *sendWrap,
         }
     }
 
-    BOOL isChatRoom = ([chatName rangeOfString:@"@chatroom"].location != NSNotFound);
+    // 设置发送者身份
+    if ([sendWrap respondsToSelector:@selector(setM_uiIsSenderStatus:)]) {
+        @try {
+            ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiIsSenderStatus:), 1);
+        } @catch (__unused NSException *exceptionSenderStatus) {
+        }
+    }
+
+    // 主动发送场景 realChatUsr 保持空，避免被误判为"代他人发言"
     if ([sendWrap respondsToSelector:@selector(setM_nsRealChatUsr:)]) {
         @try {
-            id realChatUsr = (isChatRoom && selfUserName.length > 0) ? selfUserName : nil;
-            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), realChatUsr);
+            ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsRealChatUsr:), nil);
         } @catch (__unused NSException *exceptionReal) {
         }
     }
 
-    WCPLLogDebug(@"Repeat send route prepared: scene=%@ msg=%@ to=%@ from=%@ real=%@",
+    WCPLLogDebug(@"Repeat send route prepared: scene=%@ msg=%@ to=%@ from=%@ senderStatus=%u",
                  sceneTag ?: @"(nil)",
                  wcpl_repeatMessageDebugInfo(sendWrap),
                  sendWrap.m_nsToUsr ?: @"(nil)",
                  sendWrap.m_nsFromUsr ?: @"(nil)",
-                 sendWrap.m_nsRealChatUsr ?: @"(nil)");
+                 sendWrap.m_uiIsSenderStatus);
 }
 
 static CMessageWrap *wcpl_buildDetachedSendWrap(CMessageWrap *msgWrap, NSString *sceneTag) {
@@ -1724,6 +1731,234 @@ static NSString *wcpl_repeatAudioPathForMessage(CMessageWrap *msgWrap) {
     return nil;
 }
 
+// ── 语音复读公共辅助 ──
+
+static NSData *wcpl_loadVoiceAudioData(CMessageWrap *msgWrap, NSString **outPath) {
+    if (outPath) { *outPath = nil; }
+    if (!msgWrap) { return nil; }
+
+    NSString *audioPath = wcpl_repeatAudioPathForMessage(msgWrap);
+    if (outPath) { *outPath = audioPath; }
+    if (audioPath.length == 0) { return nil; }
+
+    NSData *data = [NSData dataWithContentsOfFile:audioPath];
+    return (data.length > 0) ? data : nil;
+}
+
+static unsigned int wcpl_voiceTimeFromWrap(CMessageWrap *msgWrap) {
+    if (!msgWrap) { return 1; }
+    unsigned int t = 0;
+    if ([msgWrap respondsToSelector:@selector(m_uiVoiceTime)]) {
+        @try { t = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiVoiceTime)); }
+        @catch (__unused NSException *e) {}
+    }
+    return (t > 0) ? t : 1;
+}
+
+static unsigned int wcpl_voiceFormatFromWrap(CMessageWrap *msgWrap) {
+    if (!msgWrap) { return 4; }
+    unsigned int f = 0;
+    if ([msgWrap respondsToSelector:@selector(m_uiVoiceFormat)]) {
+        @try { f = ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiVoiceFormat)); }
+        @catch (__unused NSException *e) {}
+    }
+    return (f > 0) ? f : 4;
+}
+
+static NSString *wcpl_buildMinimalVoiceContent(unsigned int voiceTime, unsigned int voiceFormat) {
+    unsigned int lengthMs = voiceTime * 1000;
+    unsigned int fmt = (voiceFormat > 0) ? voiceFormat : 4;
+    return [NSString stringWithFormat:@"<msg><voicemsg voicelength=\"%u\" voiceformat=\"%u\" forwardflag=\"0\" /></msg>",
+            lengthMs, fmt];
+}
+
+static void wcpl_applyVoiceFieldsToWrap(CMessageWrap *sendWrap,
+                                         NSData *audioData,
+                                         unsigned int voiceTime,
+                                         unsigned int voiceFormat) {
+    if (!sendWrap) { return; }
+
+    // 语音类型
+    if ([sendWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiMessageType:), 34); }
+        @catch (__unused NSException *e) {}
+    }
+    // 语音二进制数据
+    if (audioData && [sendWrap respondsToSelector:@selector(setM_dtVoice:)]) {
+        @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_dtVoice:), audioData); }
+        @catch (__unused NSException *e) {}
+    }
+    // 录音完成标志
+    if ([sendWrap respondsToSelector:@selector(setM_uiVoiceEndFlag:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceEndFlag:), 1); }
+        @catch (__unused NSException *e) {}
+    }
+    // 取消/转发标志清零
+    if ([sendWrap respondsToSelector:@selector(setM_uiVoiceCancelFlag:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceCancelFlag:), 0); }
+        @catch (__unused NSException *e) {}
+    }
+    if ([sendWrap respondsToSelector:@selector(setM_uiVoiceForwardFlag:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceForwardFlag:), 0); }
+        @catch (__unused NSException *e) {}
+    }
+    // 语音时长/格式
+    if ([sendWrap respondsToSelector:@selector(setM_uiVoiceTime:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceTime:), voiceTime); }
+        @catch (__unused NSException *e) {}
+    }
+    if ([sendWrap respondsToSelector:@selector(setM_uiVoiceFormat:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiVoiceFormat:), voiceFormat); }
+        @catch (__unused NSException *e) {}
+    }
+    // 发送者身份
+    if ([sendWrap respondsToSelector:@selector(setM_uiIsSenderStatus:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(sendWrap, @selector(setM_uiIsSenderStatus:), 1); }
+        @catch (__unused NSException *e) {}
+    }
+    // 最小语音 XML，清除来源字段（防止泄露原始发送者信息）
+    NSString *voiceContent = wcpl_buildMinimalVoiceContent(voiceTime, voiceFormat);
+    if ([sendWrap respondsToSelector:@selector(setM_nsContent:)]) {
+        @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsContent:), voiceContent); }
+        @catch (__unused NSException *e) {}
+    }
+    if ([sendWrap respondsToSelector:@selector(setM_nsPushContent:)]) {
+        @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsPushContent:), @""); }
+        @catch (__unused NSException *e) {}
+    }
+    if ([sendWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
+        @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setM_nsMsgSource:), @""); }
+        @catch (__unused NSException *e) {}
+    }
+    if ([sendWrap respondsToSelector:@selector(setVoiceUrl:)]) {
+        @try { ((void (*)(id, SEL, id))objc_msgSend)(sendWrap, @selector(setVoiceUrl:), @""); }
+        @catch (__unused NSException *e) {}
+    }
+}
+
+static CMessageWrap *wcpl_buildFreshVoiceSendWrap(void) {
+    Class wrapClass = objc_getClass("CMessageWrap");
+    if (!wrapClass) { return nil; }
+    CMessageWrap *sendWrap = nil;
+    if ([wrapClass instancesRespondToSelector:@selector(initWithMsgType:)]) {
+        @try {
+            id created = ((id (*)(id, SEL, long long))objc_msgSend)([wrapClass alloc],
+                                                                      @selector(initWithMsgType:),
+                                                                      (long long)34);
+            if ([created isKindOfClass:%c(CMessageWrap)]) {
+                sendWrap = (CMessageWrap *)created;
+            }
+        } @catch (__unused NSException *e) {}
+    }
+    if (!sendWrap) {
+        @try {
+            sendWrap = [[wrapClass alloc] init];
+        } @catch (__unused NSException *e) {}
+    }
+    return sendWrap;
+}
+
+// ── 语音复读链路 ──
+
+// 主策略：优先走 ForwardVoiceMsg 专用接口（修正为本人身份）
+static BOOL wcpl_repeatVoiceByForwardDispatch(CMessageWrap *msgWrap, NSString *chatName) {
+    if (!msgWrap || chatName.length == 0) {
+        return NO;
+    }
+
+    Class forwardUtilClass = objc_getClass("ForwardMsgUtil");
+    if (!forwardUtilClass) {
+        WCPLLogWarning(@"Repeat voice forward_voice: ForwardMsgUtil unavailable");
+        return NO;
+    }
+
+    id contact = wcpl_repeatContactForChatName(chatName, msgWrap);
+    if (!contact) {
+        WCPLLogWarning(@"Repeat voice forward_voice: contact unavailable");
+        return NO;
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+
+    CMessageWrap *routedWrap = nil;
+    @try { routedWrap = [msgWrap copy]; }
+    @catch (__unused NSException *e) {}
+    if (!routedWrap) {
+        WCPLLogWarning(@"Repeat voice forward_voice: copy failed");
+        return NO;
+    }
+
+    wcpl_prepareSendWrapRoute(routedWrap, chatName, selfUserName, @"voice_forward_voice");
+    if ([routedWrap respondsToSelector:@selector(setM_uiMessageType:)]) {
+        @try { ((void (*)(id, SEL, unsigned int))objc_msgSend)(routedWrap, @selector(setM_uiMessageType:), 34); }
+        @catch (__unused NSException *e) {}
+    }
+
+    SEL forwardVoiceSel = @selector(ForwardVoiceMsg:ToContact:);
+    if ([forwardUtilClass instancesRespondToSelector:forwardVoiceSel]) {
+        id forwardUtilObj = nil;
+        @try { forwardUtilObj = [[forwardUtilClass alloc] init]; }
+        @catch (__unused NSException *e) {}
+        if (forwardUtilObj && [forwardUtilObj respondsToSelector:forwardVoiceSel]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(forwardUtilObj,
+                                                           forwardVoiceSel,
+                                                           routedWrap,
+                                                           contact);
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat voice forward_voice instance exception: %@", exception.reason ?: @"unknown");
+            }
+        }
+    }
+
+    if ([forwardUtilClass respondsToSelector:forwardVoiceSel]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(forwardUtilClass,
+                                                       forwardVoiceSel,
+                                                       routedWrap,
+                                                       contact);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat voice forward_voice class exception: %@", exception.reason ?: @"unknown");
+        }
+    }
+
+    SEL sendMsgSel = @selector(SendMsgWithOriMsg:Contact:ForwardType:EditImageAttr:);
+    if (![forwardUtilClass respondsToSelector:sendMsgSel]) {
+        WCPLLogWarning(@"Repeat voice forward_voice: selector missing SendMsgWithOriMsg");
+        return NO;
+    }
+
+    id generated = nil;
+    @try {
+        generated = ((id (*)(id, SEL, id, id, unsigned int, id))objc_msgSend)(
+            forwardUtilClass,
+            sendMsgSel,
+            routedWrap,
+            contact,
+            (unsigned int)0,
+            nil);
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat voice forward_voice SendMsgWithOriMsg exception: %@", exception.reason ?: @"unknown");
+        return NO;
+    }
+
+    CMessageWrap *resultWrap = wcpl_extractForwardGeneratedWrap(generated);
+    if (!resultWrap) {
+        WCPLLogWarning(@"Repeat voice forward_voice: no result wrap generated");
+        return NO;
+    }
+
+    BOOL fromSelf = (selfUserName.length > 0 && [resultWrap.m_nsFromUsr isEqualToString:selfUserName]);
+    if (!fromSelf) {
+        WCPLLogWarning(@"Repeat voice forward_voice fallback rejected: still not self sender");
+        return NO;
+    }
+
+    return (resultWrap.m_uiMesLocalID > 0);
+}
+
 static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap, NSString *chatName) {
     if (!msgWrap || chatName.length == 0) {
         return NO;
@@ -1734,56 +1969,73 @@ static BOOL wcpl_repeatVoiceByRecordMessage(CMessageWrap *msgWrap, NSString *cha
         return NO;
     }
 
-    NSString *audioPath = wcpl_repeatAudioPathForMessage(msgWrap);
-    BOOL hasAudioFile = NO;
-    unsigned long long audioSize = 0;
-    if (audioPath.length > 0) {
-        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:audioPath error:NULL];
-        NSNumber *fileSize = [attrs isKindOfClass:[NSDictionary class]] ? attrs[NSFileSize] : nil;
-        if ([fileSize respondsToSelector:@selector(unsignedLongLongValue)]) {
-            audioSize = [fileSize unsignedLongLongValue];
-            hasAudioFile = (audioSize > 0);
+    // 在重置 localID 之前读取音频数据（路径依赖原始 localID）
+    NSString *srcAudioPath = nil;
+    NSData *audioData = wcpl_loadVoiceAudioData(msgWrap, &srcAudioPath);
+    unsigned int voiceTime = wcpl_voiceTimeFromWrap(msgWrap);
+    unsigned int voiceFormat = wcpl_voiceFormatFromWrap(msgWrap);
+
+    if (!audioData) {
+        // 音频不在本地，尝试触发下载
+        if ([messageMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
+            @try {
+                ((BOOL (*)(id, SEL, id))objc_msgSend)(messageMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
+            } @catch (__unused NSException *e) {}
         }
+        WCPLLogWarning(@"Repeat voice audio missing: msg=%@ path=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap), srcAudioPath ?: @"(nil)");
+        return NO;
     }
 
-    if (!hasAudioFile && [messageMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
-        BOOL downloadStarted = NO;
-        @try {
-            downloadStarted = ((BOOL (*)(id, SEL, id))objc_msgSend)(messageMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
-        } @catch (__unused NSException *exception) {
-            downloadStarted = NO;
-        }
-        WCPLLogWarning(@"Repeat voice audio missing: msg=%@ path=%@ downloadStarted=%d", wcpl_repeatMessageDebugInfo(msgWrap), audioPath ?: @"(nil)", downloadStarted);
-    }
-
-    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, @"voice_record");
+    // 对方语音用 fresh wrap，避免继承对方隐藏字段；自己语音用 detached copy
+    BOOL sourceFromOther = wcpl_isMessageFromOther(msgWrap);
+    CMessageWrap *sendWrap = sourceFromOther
+        ? wcpl_buildFreshVoiceSendWrap()
+        : wcpl_buildDetachedSendWrap(msgWrap, @"voice_record");
     if (!sendWrap) {
-        WCPLLogWarning(@"Repeat voice record failed: cannot clone send wrap msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+        WCPLLogWarning(@"Repeat voice record: wrap build failed msg=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap));
         return NO;
     }
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, @"voice_record");
+    wcpl_applyVoiceFieldsToWrap(sendWrap, audioData, voiceTime, voiceFormat);
 
+    unsigned int origLocalID = msgWrap.m_uiMesLocalID;
     @try {
-        ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddRecordMsg:MsgWrap:), chatName, sendWrap);
-        WCPLLogInfo(@"Repeat sent: flow=record_addmsg scene=voice msg=%@ chat=%@ hasAudio=%d audioSize=%llu path=%@",
-                    wcpl_repeatMessageDebugInfo(msgWrap),
-                    chatName,
-                    hasAudioFile,
-                    audioSize,
-                    audioPath ?: @"(nil)");
-        return YES;
+        ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr,
+                                                    @selector(AddRecordMsg:MsgWrap:),
+                                                    chatName, sendWrap);
     } @catch (NSException *exception) {
-        WCPLLogWarning(@"Repeat voice via AddRecordMsg failed: msg=%@ chat=%@ hasAudio=%d path=%@ reason=%@",
-                       wcpl_repeatMessageDebugInfo(msgWrap),
-                       chatName,
-                       hasAudioFile,
-                       audioPath ?: @"(nil)",
-                       exception.reason ?: exception);
+        WCPLLogWarning(@"Repeat voice AddRecordMsg exception: msg=%@ reason=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap), exception.reason ?: exception);
+        return NO;
     }
 
-    return NO;
+    unsigned int newLocalID = sendWrap.m_uiMesLocalID;
+    if (newLocalID == 0 || newLocalID == origLocalID) {
+        WCPLLogWarning(@"Repeat voice record no-op: newLocalID=%u origLocalID=%u msg=%@ -> fallback",
+                       newLocalID, origLocalID, wcpl_repeatMessageDebugInfo(msgWrap));
+        return NO;
+    }
+
+    // AddRecordMsg 分配了新 localID，拷贝音频到新路径
+    NSString *newAudioPath = wcpl_repeatAudioPathForMessage(sendWrap);
+    if (newAudioPath.length > 0 && ![newAudioPath isEqualToString:srcAudioPath]) {
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if (![fm fileExistsAtPath:newAudioPath]) {
+            NSString *dir = [newAudioPath stringByDeletingLastPathComponent];
+            if (dir.length > 0 && ![fm fileExistsAtPath:dir]) {
+                [fm createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL];
+            }
+            [fm copyItemAtPath:srcAudioPath toPath:newAudioPath error:NULL];
+        }
+    }
+    WCPLLogInfo(@"Repeat sent: flow=record_addmsg scene=voice msg=%@ chat=%@ newLocalID=%u audioLen=%lu fromOther=%d",
+                wcpl_repeatMessageDebugInfo(msgWrap), chatName, newLocalID,
+                (unsigned long)audioData.length, sourceFromOther ? 1 : 0);
+    return YES;
 }
 
 static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap, NSString *chatName) {
@@ -1796,30 +2048,46 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap, NSString *ch
         return NO;
     }
 
-    CMessageWrap *sendWrap = wcpl_buildDetachedSendWrap(msgWrap, @"voice_sendmsgmgr");
+    // 在重置 localID 之前读取音频数据
+    NSString *srcAudioPath = nil;
+    NSData *audioData = wcpl_loadVoiceAudioData(msgWrap, &srcAudioPath);
+    if (!audioData) {
+        WCPLLogWarning(@"Repeat voice sendmgr: audio empty path=%@", srcAudioPath ?: @"(nil)");
+        return NO;
+    }
+    unsigned int voiceTime = wcpl_voiceTimeFromWrap(msgWrap);
+    unsigned int voiceFormat = wcpl_voiceFormatFromWrap(msgWrap);
+
+    BOOL sourceFromOther = wcpl_isMessageFromOther(msgWrap);
+    CMessageWrap *sendWrap = sourceFromOther
+        ? wcpl_buildFreshVoiceSendWrap()
+        : wcpl_buildDetachedSendWrap(msgWrap, @"voice_sendmsgmgr");
     if (!sendWrap) {
         return NO;
     }
 
     NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
     wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, @"voice_sendmsgmgr");
+    wcpl_applyVoiceFieldsToWrap(sendWrap, audioData, voiceTime, voiceFormat);
 
     @try {
-        ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr, @selector(AddMsgToSendTable:MsgWrap:), chatName, sendWrap);
-        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_queue scene=voice msg=%@ chat=%@ send=%@ srcPtr=%p sendPtr=%p",
-                    wcpl_repeatMessageDebugInfo(msgWrap),
-                    chatName,
-                    wcpl_repeatMessageDebugInfo(sendWrap),
-                    msgWrap,
-                    sendWrap);
+        ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
+                                                    @selector(AddMsgToSendTable:MsgWrap:),
+                                                    chatName, sendWrap);
+        unsigned int sendStatus = sendWrap.m_uiStatus;
+        if (sendStatus == 5) {
+            WCPLLogWarning(@"Repeat voice sendmgr rejected: status=5 msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
+            return NO;
+        }
+        WCPLLogInfo(@"Repeat sent: flow=sendmsgmgr_queue scene=voice msg=%@ chat=%@ localID=%u status=%u audioLen=%lu fromOther=%d",
+                    wcpl_repeatMessageDebugInfo(msgWrap), chatName,
+                    sendWrap.m_uiMesLocalID, sendStatus,
+                    (unsigned long)audioData.length, sourceFromOther ? 1 : 0);
         return YES;
     } @catch (NSException *exception) {
-        WCPLLogWarning(@"Repeat voice via SendMessageMgr failed: msg=%@ chat=%@ reason=%@",
-                       wcpl_repeatMessageDebugInfo(msgWrap),
-                       chatName,
-                       exception.reason ?: exception);
+        WCPLLogWarning(@"Repeat voice SendMessageMgr exception: msg=%@ reason=%@",
+                       wcpl_repeatMessageDebugInfo(msgWrap), exception.reason ?: exception);
     }
-
     return NO;
 }
 
@@ -1891,49 +2159,6 @@ static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *o
     }
 }
 
-static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class preferredClass, UIView *currentView) {
-    UIView *ownerView = nil;
-    CGFloat ownerScore = -1.0f;
-    for (UIView *candidate in relatedViews) {
-        if (!candidate || !candidate.window || candidate.hidden || candidate.alpha < 0.01f) {
-            continue;
-        }
-
-        CGRect candidateRectInWindow = CGRectZero;
-        CGRect visibleRect = CGRectZero;
-        CGFloat visibleArea = 0.0f;
-        @try {
-            candidateRectInWindow = [candidate convertRect:candidate.bounds toView:candidate.window];
-            visibleRect = CGRectIntersection(candidateRectInWindow, candidate.window.bounds);
-            if (!CGRectIsNull(visibleRect) && !CGRectIsEmpty(visibleRect)) {
-                visibleArea = CGRectGetWidth(visibleRect) * CGRectGetHeight(visibleRect);
-            }
-        } @catch (__unused NSException *exception) {
-            visibleArea = 0.0f;
-        }
-
-        BOOL candidatePreferred = preferredClass && [candidate isKindOfClass:preferredClass];
-        CGFloat score = visibleArea;
-        if (candidatePreferred) {
-            score += 1000000.0f;
-        }
-        score += (CGFloat)(candidate.alpha * 1000.0f);
-
-        uintptr_t candidateAddr = (uintptr_t)candidate;
-        uintptr_t ownerAddr = (uintptr_t)ownerView;
-        if (!ownerView || score > ownerScore + 0.5f || (fabs(score - ownerScore) <= 0.5f && candidateAddr < ownerAddr)) {
-            ownerView = candidate;
-            ownerScore = score;
-            continue;
-        }
-    }
-
-    if (!ownerView && currentView) {
-        return currentView;
-    }
-    return ownerView;
-}
-
 @interface CommonMessageCellView (WCPLRepeatButton)
 - (UIButton *)wchook_repeatButton;
 - (NSArray<UIButton *> *)wchook_allRepeatButtons;
@@ -1944,11 +2169,139 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 - (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf;
 - (UIButton *)wchook_buildRepeatButton;
 - (void)wchook_removeRepeatButtonIfNeeded;
+- (void)wchook_cleanupCrossViewDuplicateRepeatButtonsForMessageKey:(NSString *)messageKey keeper:(UIButton *)keeper;
 - (void)wchook_updateRepeatButtonIfNeeded;
 - (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap;
 - (CGRect)showRectForMenuController;
 - (UIView *)getBgImageView;
 @end
+
+static UITableView *wcpl_findContainingTableView(UIView *view) {
+    UIView *current = view;
+    while (current) {
+        if ([current isKindOfClass:[UITableView class]]) {
+            return (UITableView *)current;
+        }
+        current = current.superview;
+    }
+    return nil;
+}
+
+static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIView *> *storage) {
+    if (!root || !storage) {
+        return;
+    }
+
+    static Class commonMessageCellViewClass;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        commonMessageCellViewClass = NSClassFromString(@"CommonMessageCellView");
+    });
+
+    if (commonMessageCellViewClass && [root isKindOfClass:commonMessageCellViewClass]) {
+        [storage addObject:root];
+    }
+
+    for (UIView *subview in root.subviews) {
+        wcpl_collectMessageCellViewsInView(subview, storage);
+    }
+}
+
+static NSArray<UIView *> *wcpl_visibleMessageViewsForMessageKey(UITableView *tableView, NSString *messageKey) {
+    if (![tableView isKindOfClass:[UITableView class]] || messageKey.length == 0) {
+        return @[];
+    }
+
+    NSMutableArray<UIView *> *matchedViews = [NSMutableArray array];
+    for (UITableViewCell *cell in [tableView visibleCells]) {
+        if (![cell isKindOfClass:[UITableViewCell class]]) {
+            continue;
+        }
+
+        UIView *rootView = cell.contentView ?: (UIView *)cell;
+        NSMutableArray<UIView *> *messageViews = [NSMutableArray array];
+        wcpl_collectMessageCellViewsInView(rootView, messageViews);
+
+        for (UIView *messageView in messageViews) {
+            CMessageWrap *wrap = wcpl_messageWrapForCellView(messageView);
+            NSString *candidateMessageKey = wcpl_repeatMessageKey(wrap);
+            if (![candidateMessageKey isEqualToString:messageKey]) {
+                continue;
+            }
+            if (![matchedViews containsObject:messageView]) {
+                [matchedViews addObject:messageView];
+            }
+        }
+    }
+
+    return [matchedViews copy];
+}
+
+static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableView *tableView, UIView *fallback) {
+    if (![views isKindOfClass:[NSArray class]] || views.count == 0 || ![tableView isKindOfClass:[UITableView class]]) {
+        return fallback;
+    }
+
+    UIView *ownerView = nil;
+    CGFloat ownerMaxY = -CGFLOAT_MAX;
+    CGFloat ownerVisibleArea = -1.0f;
+
+    for (UIView *candidate in views) {
+        if (![candidate isKindOfClass:[UIView class]] || !candidate.window || candidate.hidden || candidate.alpha < 0.01f) {
+            continue;
+        }
+
+        CGFloat maxY = -CGFLOAT_MAX;
+        CGFloat visibleArea = 0.0f;
+        BOOL hasValidGeometry = NO;
+        @try {
+            CGRect rectInTable = [candidate convertRect:candidate.bounds toView:tableView];
+            maxY = CGRectGetMaxY(rectInTable);
+            hasValidGeometry = !isnan(maxY) && !isinf(maxY);
+
+            CGRect visibleRect = CGRectIntersection(rectInTable, tableView.bounds);
+            if (!CGRectIsNull(visibleRect) && !CGRectIsEmpty(visibleRect)) {
+                visibleArea = CGRectGetWidth(visibleRect) * CGRectGetHeight(visibleRect);
+            }
+        } @catch (__unused NSException *exception) {
+            hasValidGeometry = NO;
+            visibleArea = 0.0f;
+        }
+
+        if (!hasValidGeometry) {
+            continue;
+        }
+
+        BOOL shouldReplace = NO;
+        if (!ownerView) {
+            shouldReplace = YES;
+        } else if (maxY > ownerMaxY + 0.5f) {
+            shouldReplace = YES;
+        } else if (fabs(maxY - ownerMaxY) <= 0.5f) {
+            if (visibleArea > ownerVisibleArea + 0.5f) {
+                shouldReplace = YES;
+            } else if (fabs(visibleArea - ownerVisibleArea) <= 0.5f) {
+                uintptr_t candidateAddr = (uintptr_t)candidate;
+                uintptr_t ownerAddr = (uintptr_t)ownerView;
+                if (candidateAddr < ownerAddr) {
+                    shouldReplace = YES;
+                }
+            }
+        }
+
+        if (shouldReplace) {
+            ownerView = candidate;
+            ownerMaxY = maxY;
+            ownerVisibleArea = visibleArea;
+        }
+    }
+
+    if (!ownerView) {
+        return fallback;
+    }
+    return ownerView;
+}
+
 
 %hook CommonMessageCellView
 
@@ -2102,14 +2455,23 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     BOOL menuRectValid = !CGRectIsEmpty(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, self.bounds);
     BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) && CGRectGetWidth(bubbleFrame) > 8.0f && CGRectGetHeight(bubbleFrame) > 8.0f;
-    if (bubbleView == self && menuRectValid) {
-        bubbleRectValid = NO;
+
+    CGRect baseRect = CGRectZero;
+    if (bubbleRectValid) {
+        baseRect = bubbleFrame;
+    } else if (menuRectValid) {
+        baseRect = menuRect;
+    } else {
+        baseRect = self.bounds;
     }
 
-    CGRect baseRect = bubbleRectValid ? bubbleFrame : menuRect;
     CGFloat anchorMaxY = bubbleRectValid ? CGRectGetMaxY(bubbleFrame) : CGRectGetMaxY(baseRect);
     if (menuRectValid) {
         anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(menuRect));
+    }
+    if (bubbleView == self) {
+        // 长文本等场景中 showRectForMenuController 可能只覆盖局部，Y 轴锚点至少贴到底部
+        anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(self.bounds));
     }
 
     CGFloat centerY = anchorMaxY - kWCPLRepeatButtonTailInsetY - kWCPLRepeatButtonSize * 0.5f;
@@ -2215,6 +2577,60 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 }
 
 %new
+- (void)wchook_cleanupCrossViewDuplicateRepeatButtonsForMessageKey:(NSString *)messageKey keeper:(UIButton *)keeper {
+    if (messageKey.length == 0 || ![keeper isKindOfClass:[UIButton class]]) {
+        return;
+    }
+
+    UITableView *tableView = wcpl_findContainingTableView(self);
+    if (!(tableView && [tableView respondsToSelector:@selector(visibleCells)])) {
+        return;
+    }
+
+    NSUInteger removedCount = 0;
+    for (UITableViewCell *cell in [tableView visibleCells]) {
+        if (![cell isKindOfClass:[UITableViewCell class]]) {
+            continue;
+        }
+
+        UIView *rootView = cell.contentView ?: (UIView *)cell;
+        NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+        wcpl_collectRepeatButtonsFromView(rootView, buttons);
+
+        for (UIButton *button in buttons) {
+            if (![button isKindOfClass:[UIButton class]] || button == keeper) {
+                continue;
+            }
+
+            NSString *buttonMessageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
+            if (![buttonMessageKey isKindOfClass:[NSString class]] || ![buttonMessageKey isEqualToString:messageKey]) {
+                continue;
+            }
+
+            UIView *hostView = button;
+            while (hostView && ![hostView isKindOfClass:%c(CommonMessageCellView)]) {
+                hostView = hostView.superview;
+            }
+            if (hostView && hostView != self) {
+                objc_setAssociatedObject(hostView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(hostView, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(hostView, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+
+            [button removeFromSuperview];
+            removedCount += 1;
+        }
+    }
+
+    if (removedCount > 0) {
+        WCPLLogDebug(@"Repeat button table-level cleanup: class=%@ msg=%@ removed=%lu",
+                     NSStringFromClass([self class]),
+                     messageKey,
+                     (unsigned long)removedCount);
+    }
+}
+
+%new
 - (void)wchook_updateRepeatButtonIfNeeded {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     if (!config.repeatButtonEnable) {
@@ -2280,26 +2696,11 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
 
-    NSArray<UIView *> *relatedViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
-    if (relatedViews.count > 1) {
-        UIView *ownerView = wcpl_repeatOwnerViewForMessageKey(messageKey);
-        BOOL ownerMissing = (ownerView == nil);
-        BOOL ownerNotInPeers = (!ownerMissing && ![relatedViews containsObject:ownerView]);
-        if (ownerMissing || ownerNotInPeers) {
-            UIView *previousOwner = ownerView;
-            ownerView = wcpl_selectRepeatOwnerView(relatedViews, [self class], self);
-            if (!ownerView) {
-                ownerView = self;
-            }
-            wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
-            WCPLLogDebug(@"Repeat owner assign: class=%@ msg=%@ owner=%p prev=%p peers=%lu reason=%@",
-                         NSStringFromClass([self class]),
-                         messageKey,
-                         ownerView,
-                         previousOwner,
-                         (unsigned long)relatedViews.count,
-                         ownerMissing ? @"missing" : @"stale");
-        }
+    UITableView *tableView = wcpl_findContainingTableView(self);
+    NSArray<UIView *> *peerViews = wcpl_visibleMessageViewsForMessageKey(tableView, messageKey);
+    if (peerViews.count > 1) {
+        UIView *ownerView = wcpl_selectBottomMostOwnerView(peerViews, tableView, self);
+        wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
 
         if (ownerView != self) {
             NSString *filterKey = [NSString stringWithFormat:@"nonOwner_%@", wcpl_repeatMessageKey(msgWrap)];
@@ -2313,22 +2714,24 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
         }
 
         NSUInteger crossViewRemoved = 0;
-        for (UIView *relatedView in relatedViews) {
-            if (!relatedView || relatedView == self) {
+        for (UIView *peerView in peerViews) {
+            if (!peerView || peerView == self) {
                 continue;
             }
             NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
-            wcpl_collectRepeatButtonsFromView(relatedView, buttons);
+            wcpl_collectRepeatButtonsFromView(peerView, buttons);
             for (UIButton *staleButton in buttons) {
                 [staleButton removeFromSuperview];
                 crossViewRemoved += 1;
             }
             if (buttons.count > 0) {
-                objc_setAssociatedObject(relatedView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(peerView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(peerView, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(peerView, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
         }
         if (crossViewRemoved > 0) {
-            WCPLLogDebug(@"Repeat button owner cleanup: class=%@ peers=%lu removed=%lu", NSStringFromClass([self class]), (unsigned long)relatedViews.count, (unsigned long)crossViewRemoved);
+            WCPLLogDebug(@"Repeat button owner cleanup: class=%@ peers=%lu removed=%lu", NSStringFromClass([self class]), (unsigned long)peerViews.count, (unsigned long)crossViewRemoved);
         }
     }
 
@@ -2356,6 +2759,7 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
 
     [self wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:!isFromOther];
+    [self wchook_cleanupCrossViewDuplicateRepeatButtonsForMessageKey:messageKey keeper:button];
 
     if (isSameMessage) {
         NSNumber *stableCountObj = objc_getAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey);
@@ -2396,9 +2800,11 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
 
     if (!self.window) {
         [self wchook_removeRepeatButtonIfNeeded];
-    } else {
-        [self wchook_updateRepeatButtonIfNeeded];
     }
+
+    // 说明：避免在 didMoveToWindow 同步触发按钮更新（内部会扫描 visibleCells 并做跨视图清理），
+    // 该时机容易与 UIKit 视图迁移/布局递归重入，导致崩溃。
+    // 按钮更新统一由 layoutSubviews 驱动。
 
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
@@ -3094,16 +3500,18 @@ static UIView *wcpl_selectRepeatOwnerView(NSArray<UIView *> *relatedViews, Class
     }
 
     if (msgType == 34) {
+        // 语音复读：ForwardDispatch (主) → RecordMessage → SendMessageMgr (兜底)
+        if (wcpl_repeatVoiceByForwardDispatch(msgWrap, chatName)) {
+            return;
+        }
         if (wcpl_repeatVoiceByRecordMessage(msgWrap, chatName)) {
             return;
         }
         if (wcpl_repeatVoiceBySendMessageMgr(msgWrap, chatName)) {
             return;
         }
-        if (wcpl_repeatNativeResend(msgWrap, chatName, chatVC, @"voice")) {
-            return;
-        }
-        WCPLLogError(@"Repeat voice failed: no record/native channel msg=%@ chat=%@", wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
+        WCPLLogError(@"Repeat voice failed: all channels exhausted msg=%@ chat=%@",
+                     wcpl_repeatMessageDebugInfo(msgWrap), chatName ?: @"(nil)");
         return;
     }
 

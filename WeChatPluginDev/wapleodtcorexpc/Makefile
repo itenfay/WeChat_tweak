@@ -2,6 +2,12 @@ THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
 
+# Linux 工具链生成 arm64e 时可能为旧 ABI。
+# 为保证 rootless/roothide 产物一致且可稳定注入，二者统一回退到 arm64。
+ifeq ($(shell uname -s),Linux)
+ARCHS = arm64
+endif
+
 # rootless/roothide 构建统一使用 iOS 14.0 目标，避免 arm64e 能力分叉
 ifneq ($(filter rootless roothide,$(THEOS_PACKAGE_SCHEME)),)
 TARGET = iphone:clang:latest:14.0

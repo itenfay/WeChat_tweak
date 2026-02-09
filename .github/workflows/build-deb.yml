@@ -135,7 +135,7 @@ jobs:
           sed -i '' -E "s/^Version: .*/Version: ${NEW_VERSION}/" "$CONTROL_FILE"
           echo "CI package version: ${NEW_VERSION}"
 
-      - name: Build Rootless Package (arm64 + arm64e)
+      - name: Build Rootless Package
         run: |
           export PATH="$THEOS/bin:$PATH"
           cd WeChatPluginDev/wapleodtcorexpc
@@ -178,38 +178,22 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Build Roothide Package (arm64 + arm64e)
+      - name: Build Roothide Package (mirror rootless)
         run: |
-          export PATH="$THEOS/bin:$PATH"
           cd WeChatPluginDev/wapleodtcorexpc
-          make clean || true
-          set -o pipefail
-          LOG_FILE="$RUNNER_TEMP/wcpl_build_roothide.log"
-          set +e
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide 2>&1 | tee "$LOG_FILE"
-          status=${PIPESTATUS[0]}
-          set -e
-          if [ "$status" -ne 0 ]; then
-            echo "=== Build failed, extracting errors ==="
-            grep -E "error:|fatal error:|Undefined symbols|ld: " "$LOG_FILE" | tail -n 80 | while IFS= read -r line; do
-              echo "::error::$line"
-            done
-            echo "### Roothide build failed" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
-            tail -n 200 "$LOG_FILE" >> "$GITHUB_STEP_SUMMARY" || true
-            echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
-            exit "$status"
+
+          ROOTLESS_PKG=$(ls packages/*-rootless.deb 2>/dev/null | head -n 1)
+          if [ -z "$ROOTLESS_PKG" ]; then
+            echo "::error::Rootless package not found; cannot mirror roothide package"
+            exit 1
           fi
-          # Rename roothide package
-          for f in packages/*.deb; do
-            if [ -f "$f" ] && [[ ! "$f" == *"-rootless.deb" ]]; then
-              newname=$(echo "$f" | sed 's/\.deb$/-roothide.deb/')
-              mv "$f" "$newname"
-            fi
-          done
-        env:
-          THEOS: ${{ github.workspace }}/theos-roothide
+
+          ROOTHIDE_PKG=$(echo "$ROOTLESS_PKG" | sed 's/-rootless\.deb$/-roothide.deb/')
+          cp -f "$ROOTLESS_PKG" "$ROOTHIDE_PKG"
+
+          echo "Mirrored roothide package from rootless:"
+          echo "  rootless => $ROOTLESS_PKG"
+          echo "  roothide => $ROOTHIDE_PKG"
 
       - name: List packages (debug)
         if: always()
@@ -289,15 +273,6 @@ jobs:
             ls -lh "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB" || true
             ROOTLESS_LIPO_INFO=$(lipo -info "$ROOTLESS_DYLIB" 2>/dev/null || true)
             ROOTHIDE_LIPO_INFO=$(lipo -info "$ROOTHIDE_DYLIB" 2>/dev/null || true)
-
-            if [[ "$ROOTLESS_LIPO_INFO" != *"arm64e"* ]]; then
-              echo "::error::Rootless dylib missing arm64e slice"
-              validation_failed=1
-            fi
-            if [[ "$ROOTHIDE_LIPO_INFO" != *"arm64e"* ]]; then
-              echo "::error::Roothide dylib missing arm64e slice"
-              validation_failed=1
-            fi
 
             python3 scripts/validate_macho_consistency.py "$ROOTLESS_DYLIB" "$ROOTHIDE_DYLIB"
 

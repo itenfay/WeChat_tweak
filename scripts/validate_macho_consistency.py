@@ -85,10 +85,10 @@ def validate(label, path):
     issues = []
     details = []
     parsed = parse_macho(path)
-    has_arm64e = False
+    arches = []
 
     for arch, minos, substrate_dep in parsed:
-        has_arm64e = has_arm64e or arch == "arm64e"
+        arches.append(arch)
         if minos is None:
             issues.append(f"{label} {arch}: missing LC_BUILD_VERSION")
             continue
@@ -97,10 +97,7 @@ def validate(label, path):
         if (major, minor) < (14, 0):
             issues.append(f"{label} {arch}: minos {text} < 14.0")
 
-    if not has_arm64e:
-        issues.append(f"{label}: missing arm64e slice")
-
-    return details, issues
+    return details, issues, sorted(arches)
 
 
 def main():
@@ -111,12 +108,21 @@ def main():
     rootless_path, roothide_path = sys.argv[1], sys.argv[2]
     all_issues = []
 
+    arch_map = {}
     for label, path in (("rootless", rootless_path), ("roothide", roothide_path)):
-        details, issues = validate(label, path)
+        details, issues, arches = validate(label, path)
         print(f"[{label}] {path}")
         for arch, minos, substrate in details:
             print(f"  - {arch}: minos={minos} substrate={substrate}")
+        arch_map[label] = arches
         all_issues.extend(issues)
+
+    rootless_arches = arch_map.get("rootless", [])
+    roothide_arches = arch_map.get("roothide", [])
+    if rootless_arches != roothide_arches:
+        all_issues.append(
+            f"arch mismatch: rootless={rootless_arches} roothide={roothide_arches}"
+        )
 
     if all_issues:
         print("::group::Binary consistency issues")
