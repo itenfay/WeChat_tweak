@@ -1,0 +1,3 @@
+[submodule "theos-roothide"]
+	path = theos-roothide
+	url = https://github.com/roothide/theos.git

@@ -77,11 +77,13 @@ logs/
 .autoflow/
 .ccb_config/
 .claude/
+.opencode/
 .tmp/
 plugin_source/
 scripts/__pycache__/
 __pycache__/
 *.bak
+theos-roothide/
 WeChatPluginDev/wapleodtcorexpc/src/Tweak.m
 归档.zip
 归档_extracted/
