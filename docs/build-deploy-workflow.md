@@ -1,5 +1,16 @@
 # WeChat Tweak 编译部署热更新流程
 
+## Rootless 更正说明（重要）
+
+本文原先的 rootless 本地编译方法在 Linux 环境下存在误导：  
+`make package THEOS_PACKAGE_SCHEME=rootless` 直接产物可能出现 `code signature invalid`，导致安装后不注入。
+
+请优先使用下面这份经过实测的 rootless 正确流程：
+
+- `docs/rootless-local-build.md`
+
+本文其余内容可作为 roothide/通用部署参考。
+
 ## 项目结构
 
 ```
