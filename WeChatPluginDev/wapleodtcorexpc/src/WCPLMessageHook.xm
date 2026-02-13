@@ -106,8 +106,11 @@ static NSUInteger wcpl_searchEnhanceRetryCount(id controller);
 static BOOL wcpl_consumeSearchEnhanceRetryBudget(id controller, NSUInteger maxRetry);
 static void wcpl_markForceFullSearchMode(id controller, BOOL enable);
 static BOOL wcpl_shouldForceFullSearchMode(id controller);
+static BOOL wcpl_isInjectedChatSearchFlow(id controller);
 static BOOL wcpl_classNameContainsSearchToken(NSString *className);
 static BOOL wcpl_viewTreeHasSearchLikeNode(UIView *view, NSUInteger depth);
+static NSString *wcpl_barButtonActionName(UIBarButtonItem *item);
+static BOOL wcpl_barButtonItemLooksLikeMoreEntry(UIBarButtonItem *item);
 static BOOL wcpl_softDisableSearchOverlayInTree(UIView *view,
                                                 UIView *excludedRoot,
                                                 UIView *scanRoot,
@@ -160,6 +163,122 @@ static UIImage *wcpl_chatSearchButtonIconImage(void) {
     return icon;
 }
 
+static BOOL wcpl_barButtonItemHasRenderableContent(UIBarButtonItem *item) {
+    if (![item isKindOfClass:[UIBarButtonItem class]]) {
+        return NO;
+    }
+
+    CGFloat itemWidth = 0.0f;
+    @try {
+        itemWidth = item.width;
+    } @catch (__unused NSException *exception) {
+        itemWidth = 0.0f;
+    }
+
+    UIView *customView = nil;
+    @try {
+        customView = item.customView;
+    } @catch (__unused NSException *exception) {
+        customView = nil;
+    }
+    if ([customView isKindOfClass:[UIView class]]) {
+        CGFloat customWidth = CGRectGetWidth(customView.bounds);
+        if (customWidth <= 0.1f) {
+            customWidth = CGRectGetWidth(customView.frame);
+        }
+
+        if ([customView isKindOfClass:[UIButton class]]) {
+            UIButton *btn = (UIButton *)customView;
+            UIImage *btnImage = [btn imageForState:UIControlStateNormal];
+            NSString *btnTitle = [btn titleForState:UIControlStateNormal] ?: @"";
+            if ([btnImage isKindOfClass:[UIImage class]] || btnTitle.length > 0) {
+                return YES;
+            }
+        }
+
+        // 密友同款按钮正常宽度约 30+，10 这类宽度通常是空占位，视为不可见。
+        if (itemWidth >= 20.0f || customWidth >= 20.0f) {
+            return YES;
+        }
+    }
+
+    NSString *title = [item.title isKindOfClass:[NSString class]] ? item.title : @"";
+    if (title.length > 0) {
+        return YES;
+    }
+
+    if ([item respondsToSelector:@selector(image)]) {
+        @try {
+            UIImage *image = ((UIImage * (*)(id, SEL))objc_msgSend)(item, @selector(image));
+            if ([image isKindOfClass:[UIImage class]]) {
+                return YES;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([item respondsToSelector:@selector(landscapeImagePhone)]) {
+        @try {
+            UIImage *landscapeImage = ((UIImage * (*)(id, SEL))objc_msgSend)(item, @selector(landscapeImagePhone));
+            if ([landscapeImage isKindOfClass:[UIImage class]]) {
+                return YES;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (itemWidth >= 20.0f) {
+        return YES;
+    }
+
+    return NO;
+}
+
+static NSString *wcpl_barButtonItemDebugSummary(UIBarButtonItem *item) {
+    if (![item isKindOfClass:[UIBarButtonItem class]]) {
+        return @"<nil>";
+    }
+
+    NSString *cls = NSStringFromClass([item class]) ?: @"Unknown";
+    NSString *title = [item.title isKindOfClass:[NSString class]] ? item.title : @"";
+    NSString *action = wcpl_barButtonActionName(item);
+
+    NSString *imageState = @"n/a";
+    if ([item respondsToSelector:@selector(image)]) {
+        @try {
+            imageState = ((UIImage * (*)(id, SEL))objc_msgSend)(item, @selector(image)) ? @"yes" : @"no";
+        } @catch (__unused NSException *exception) {
+            imageState = @"err";
+        }
+    }
+
+    NSString *customViewClass = @"nil";
+    CGFloat customWidth = 0.0f;
+    @try {
+        UIView *customView = item.customView;
+        if ([customView isKindOfClass:[UIView class]]) {
+            customViewClass = NSStringFromClass([customView class]) ?: @"UIView";
+            customWidth = CGRectGetWidth(customView.bounds);
+            if (customWidth <= 0.1f) {
+                customWidth = CGRectGetWidth(customView.frame);
+            }
+        }
+    } @catch (__unused NSException *exception) {
+        customViewClass = @"err";
+        customWidth = 0.0f;
+    }
+
+    CGFloat width = 0.0f;
+    @try {
+        width = item.width;
+    } @catch (__unused NSException *exception) {
+        width = 0.0f;
+    }
+
+    return [NSString stringWithFormat:@"class=%@ action=%@ title=%@ image=%@ custom=%@ customW=%.1f width=%.1f",
+            cls, action.length > 0 ? action : @"<none>", title.length > 0 ? title : @"<none>", imageState, customViewClass, customWidth, width];
+}
+
 static BOOL wcpl_isInjectedChatSearchButtonItem(UIBarButtonItem *item) {
     if (![item isKindOfClass:[UIBarButtonItem class]]) {
         return NO;
@@ -168,7 +287,121 @@ static BOOL wcpl_isInjectedChatSearchButtonItem(UIBarButtonItem *item) {
     if ([marker respondsToSelector:@selector(boolValue)] && [marker boolValue]) {
         return YES;
     }
-    return item.action == @selector(wcpl_onTapChatSearchButton:);
+    return item.action == @selector(onSearchItem) ||
+           item.action == @selector(wcpl_onTapChatSearchButton:);
+}
+
+static BOOL wcpl_barButtonItemArrayPointerEqual(NSArray<UIBarButtonItem *> *lhs, NSArray<UIBarButtonItem *> *rhs) {
+    if (lhs == rhs) {
+        return YES;
+    }
+    if (![lhs isKindOfClass:[NSArray class]] || ![rhs isKindOfClass:[NSArray class]]) {
+        return NO;
+    }
+    if (lhs.count != rhs.count) {
+        return NO;
+    }
+    for (NSUInteger i = 0; i < lhs.count; i++) {
+        if (lhs[i] != rhs[i]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+static BOOL wcpl_barButtonItemEquivalent(UIBarButtonItem *lhs, UIBarButtonItem *rhs) {
+    if (lhs == rhs) {
+        return YES;
+    }
+    if (![lhs isKindOfClass:[UIBarButtonItem class]] || ![rhs isKindOfClass:[UIBarButtonItem class]]) {
+        return NO;
+    }
+
+    BOOL lhsInjected = wcpl_isInjectedChatSearchButtonItem(lhs);
+    BOOL rhsInjected = wcpl_isInjectedChatSearchButtonItem(rhs);
+    if (lhsInjected || rhsInjected) {
+        return lhsInjected && rhsInjected;
+    }
+
+    NSString *lhsAction = wcpl_barButtonActionName(lhs);
+    NSString *rhsAction = wcpl_barButtonActionName(rhs);
+    if ((lhsAction.length > 0 || rhsAction.length > 0) && ![lhsAction isEqualToString:rhsAction]) {
+        return NO;
+    }
+
+    NSString *lhsTitle = [lhs.title isKindOfClass:[NSString class]] ? lhs.title : @"";
+    NSString *rhsTitle = [rhs.title isKindOfClass:[NSString class]] ? rhs.title : @"";
+    if ((lhsTitle.length > 0 || rhsTitle.length > 0) && ![lhsTitle isEqualToString:rhsTitle]) {
+        return NO;
+    }
+
+    NSString *lhsClass = NSStringFromClass([lhs class]) ?: @"";
+    NSString *rhsClass = NSStringFromClass([rhs class]) ?: @"";
+    return [lhsClass isEqualToString:rhsClass];
+}
+
+static BOOL wcpl_barButtonItemArrayEquivalent(NSArray<UIBarButtonItem *> *lhs, NSArray<UIBarButtonItem *> *rhs) {
+    if (wcpl_barButtonItemArrayPointerEqual(lhs, rhs)) {
+        return YES;
+    }
+    if (![lhs isKindOfClass:[NSArray class]] || ![rhs isKindOfClass:[NSArray class]]) {
+        return NO;
+    }
+    if (lhs.count != rhs.count) {
+        return NO;
+    }
+    for (NSUInteger i = 0; i < lhs.count; i++) {
+        if (!wcpl_barButtonItemEquivalent(lhs[i], rhs[i])) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+static UIBarButtonItem *wcpl_controllerCurrentNativeRightItem(id viewController, NSArray<UIBarButtonItem *> *items) {
+    if ([viewController respondsToSelector:@selector(getRightBarButton:)]) {
+        @try {
+            id right = ((id (*)(id, SEL, BOOL))objc_msgSend)(viewController, @selector(getRightBarButton:), YES);
+            if ([right isKindOfClass:[UIBarButtonItem class]]) {
+                return right;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+        @try {
+            id right = ((id (*)(id, SEL, BOOL))objc_msgSend)(viewController, @selector(getRightBarButton:), NO);
+            if ([right isKindOfClass:[UIBarButtonItem class]]) {
+                return right;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([viewController respondsToSelector:@selector(getRightBarButton)]) {
+        @try {
+            id right = ((id (*)(id, SEL))objc_msgSend)(viewController, @selector(getRightBarButton));
+            if ([right isKindOfClass:[UIBarButtonItem class]]) {
+                return right;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    for (UIBarButtonItem *item in items) {
+        if (wcpl_isInjectedChatSearchButtonItem(item)) {
+            continue;
+        }
+        if (wcpl_barButtonItemLooksLikeMoreEntry(item)) {
+            return item;
+        }
+    }
+
+    for (UIBarButtonItem *item in items) {
+        if (!wcpl_isInjectedChatSearchButtonItem(item)) {
+            return item;
+        }
+    }
+
+    return nil;
 }
 
 static BOOL wcpl_stringContainsAnyToken(NSString *value, NSArray<NSString *> *tokens) {
@@ -202,7 +435,7 @@ static NSString *wcpl_barButtonActionName(UIBarButtonItem *item) {
     return [selName isKindOfClass:[NSString class]] ? selName : @"";
 }
 
-static BOOL wcpl_barButtonItemLooksLikeSearchOrDateEntry(UIBarButtonItem *item) {
+static __attribute__((unused)) BOOL wcpl_barButtonItemLooksLikeSearchOrDateEntry(UIBarButtonItem *item) {
     if (![item isKindOfClass:[UIBarButtonItem class]] || wcpl_isInjectedChatSearchButtonItem(item)) {
         return NO;
     }
@@ -278,18 +511,105 @@ static UIBarButtonItem *wcpl_chatSearchNavButtonItem(id viewController) {
     }
 
     UIBarButtonItem *item = objc_getAssociatedObject(viewController, kWCPLChatSearchNavButtonKey);
-    if ([item isKindOfClass:[UIBarButtonItem class]]) {
+    if ([item isKindOfClass:[UIBarButtonItem class]] && wcpl_barButtonItemHasRenderableContent(item)) {
         return item;
     }
+    if ([item isKindOfClass:[UIBarButtonItem class]]) {
+        WCPLLogInfo(@"[搜索按钮] 缓存按钮不可见，准备重建: %@",
+                    wcpl_barButtonItemDebugSummary(item));
+        objc_setAssociatedObject(viewController, kWCPLChatSearchNavButtonKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        item = nil;
+    }
 
-    UIImage *icon = wcpl_chatSearchButtonIconImage();
-    if (icon) {
-        item = [[UIBarButtonItem alloc] initWithImage:icon style:UIBarButtonItemStylePlain target:viewController action:@selector(wcpl_onTapChatSearchButton:)];
-    } else {
-        item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:viewController action:@selector(wcpl_onTapChatSearchButton:)];
+    NSArray<NSString *> *iconNames = @[
+        @"ui-resource_search",
+        @"icons_outlined_search",
+        @"icons_filled_search",
+        @"icons_filled_magnifier",
+        @"barbuttonicon_search",
+        @"icon_search",
+        @"search",
+        @"Q"
+    ];
+    NSArray<NSString *> *accessibilityNames = @[
+        @"查找聊天内容",
+        @"搜索",
+        @"Search"
+    ];
+
+    SEL factorySel = @selector(getBarButtonWithImageName:target:action:style:accessibility:);
+    Class utilClass = objc_getClass("MMUICommonUtil");
+    if (utilClass && [utilClass respondsToSelector:factorySel]) {
+        for (NSString *iconName in iconNames) {
+            for (NSString *accessibility in accessibilityNames) {
+                @try {
+                    id generated = ((id (*)(id, SEL, id, id, SEL, unsigned long long, id))objc_msgSend)(
+                        utilClass, factorySel, iconName, viewController, @selector(onSearchItem), (unsigned long long)2, accessibility);
+                    if ([generated isKindOfClass:[UIBarButtonItem class]] &&
+                        wcpl_barButtonItemHasRenderableContent((UIBarButtonItem *)generated)) {
+                        item = generated;
+                        WCPLLogInfo(@"[搜索按钮] MMUICommonUtil 生成成功 icon=%@ accessibility=%@ -> %@",
+                                    iconName, accessibility, wcpl_barButtonItemDebugSummary((UIBarButtonItem *)generated));
+                        break;
+                    }
+                } @catch (__unused NSException *exception) {
+                }
+            }
+            if ([item isKindOfClass:[UIBarButtonItem class]]) {
+                break;
+            }
+        }
+    }
+
+    if (![item isKindOfClass:[UIBarButtonItem class]] && [viewController respondsToSelector:factorySel]) {
+        for (NSString *iconName in iconNames) {
+            for (NSString *accessibility in accessibilityNames) {
+                @try {
+                    id generated = ((id (*)(id, SEL, id, id, SEL, unsigned long long, id))objc_msgSend)(
+                        viewController, factorySel, iconName, viewController, @selector(onSearchItem), (unsigned long long)2, accessibility);
+                    if ([generated isKindOfClass:[UIBarButtonItem class]] &&
+                        wcpl_barButtonItemHasRenderableContent((UIBarButtonItem *)generated)) {
+                        item = generated;
+                        WCPLLogInfo(@"[搜索按钮] controller 工厂生成成功 icon=%@ accessibility=%@ -> %@",
+                                    iconName, accessibility, wcpl_barButtonItemDebugSummary((UIBarButtonItem *)generated));
+                        break;
+                    }
+                } @catch (__unused NSException *exception) {
+                }
+            }
+            if ([item isKindOfClass:[UIBarButtonItem class]]) {
+                break;
+            }
+        }
     }
 
     if (![item isKindOfClass:[UIBarButtonItem class]]) {
+        UIImage *icon = wcpl_chatSearchButtonIconImage();
+        UIButton *compactButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        compactButton.frame = CGRectMake(0, 0, 32.0, 32.0);
+        compactButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        compactButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        compactButton.adjustsImageWhenHighlighted = NO;
+        compactButton.accessibilityLabel = @"查找聊天内容";
+        [compactButton addTarget:viewController action:@selector(onSearchItem) forControlEvents:UIControlEventTouchUpInside];
+
+        if (icon && [compactButton respondsToSelector:@selector(setImage:forState:)]) {
+            if ([compactButton respondsToSelector:@selector(setPreferredSymbolConfiguration:forImageInState:)]) {
+                UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:16 weight:UIImageSymbolWeightRegular];
+                [compactButton setPreferredSymbolConfiguration:config forImageInState:UIControlStateNormal];
+            }
+            [compactButton setImage:icon forState:UIControlStateNormal];
+        } else {
+            [compactButton setTitle:@"搜" forState:UIControlStateNormal];
+            compactButton.titleLabel.font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightRegular];
+        }
+
+        item = [[UIBarButtonItem alloc] initWithCustomView:compactButton];
+        WCPLLogInfo(@"[搜索按钮] 工厂未命中，使用 customView 回退按钮");
+    }
+
+    if (![item isKindOfClass:[UIBarButtonItem class]]) {
+        WCPLLogInfo(@"[搜索按钮] 创建失败：最终未得到 UIBarButtonItem");
         return nil;
     }
 
@@ -1601,7 +1921,7 @@ static BOOL wcpl_forceDismissSearchPresentationController(id controller, NSStrin
     return changed;
 }
 
-static BOOL wcpl_immediateHardCleanupAfterCancel(id controller, NSString *stage) {
+static __attribute__((unused)) BOOL wcpl_immediateHardCleanupAfterCancel(id controller, NSString *stage) {
     if (![controller isKindOfClass:[UIViewController class]]) {
         return NO;
     }
@@ -1794,7 +2114,7 @@ static BOOL wcpl_forceDisableSearchPresentationOverlay(id controller, NSString *
     return changed;
 }
 
-static void wcpl_preflightRepairBeforeSearchActivation(id controller) {
+static __attribute__((unused)) void wcpl_preflightRepairBeforeSearchActivation(id controller) {
     if (!controller) {
         return;
     }
@@ -1918,12 +2238,20 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
     }
 
     NSMutableArray<UIBarButtonItem *> *rightItems = nil;
+    NSArray<UIBarButtonItem *> *currentItems = nil;
     if ([navigationItem.rightBarButtonItems isKindOfClass:[NSArray class]] && navigationItem.rightBarButtonItems.count > 0) {
-        rightItems = [navigationItem.rightBarButtonItems mutableCopy];
+        currentItems = navigationItem.rightBarButtonItems;
+        rightItems = [currentItems mutableCopy];
     } else if ([navigationItem.rightBarButtonItem isKindOfClass:[UIBarButtonItem class]]) {
+        currentItems = @[navigationItem.rightBarButtonItem];
         rightItems = [NSMutableArray arrayWithObject:navigationItem.rightBarButtonItem];
     } else {
-        return;
+        UIBarButtonItem *nativeFallback = wcpl_controllerCurrentNativeRightItem(viewController, @[]);
+        currentItems = @[];
+        rightItems = [NSMutableArray array];
+        if ([nativeFallback isKindOfClass:[UIBarButtonItem class]]) {
+            [rightItems addObject:nativeFallback];
+        }
     }
 
     NSMutableArray<UIBarButtonItem *> *filteredItems = [NSMutableArray arrayWithCapacity:rightItems.count];
@@ -1934,73 +2262,256 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
     }
 
     BOOL targetChat = wcpl_isTargetChatForSearchButton(viewController);
-    BOOL showingSearch = wcpl_isControllerShowingSearchUI(viewController);
-    if (!targetChat || showingSearch) {
-        navigationItem.rightBarButtonItems = filteredItems;
+    if (!targetChat && [viewController respondsToSelector:@selector(updateRightBar)]) {
+        targetChat = YES;
+    }
+    if (!targetChat) {
+        if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], filteredItems ?: @[])) {
+            navigationItem.rightBarButtonItems = filteredItems;
+        }
         return;
-    }
-
-    BOOL removedNativeSearchOrDate = NO;
-    NSMutableArray<UIBarButtonItem *> *stableItems = [NSMutableArray arrayWithCapacity:filteredItems.count];
-    for (UIBarButtonItem *item in filteredItems) {
-        if (wcpl_barButtonItemLooksLikeSearchOrDateEntry(item)) {
-            removedNativeSearchOrDate = YES;
-            WCPLLogInfo(@"[搜索] 替换原生搜索入口 class=%@ action=%@ title=%@",
-                        NSStringFromClass([item class]) ?: @"UIBarButtonItem",
-                        wcpl_barButtonActionName(item),
-                        [item.title isKindOfClass:[NSString class]] ? item.title : @"");
-            continue;
-        }
-        [stableItems addObject:item];
-    }
-
-    // 防御性兜底：当原生入口无法通过 token 命中且右侧是两按钮结构时，移除非“更多”项，
-    // 强制保持“更多 + 插件搜索”稳定组合，避免退回日期类搜索。
-    if (!removedNativeSearchOrDate && stableItems.count >= 2) {
-        UIBarButtonItem *first = stableItems.firstObject;
-        UIBarButtonItem *second = stableItems[1];
-        BOOL firstMore = wcpl_barButtonItemLooksLikeMoreEntry(first);
-        BOOL secondMore = wcpl_barButtonItemLooksLikeMoreEntry(second);
-        NSUInteger removeIndex = NSNotFound;
-        if (firstMore && !secondMore) {
-            removeIndex = 1;
-        } else if (!firstMore && secondMore) {
-            removeIndex = 0;
-        } else {
-            removeIndex = 1;
-        }
-        if (removeIndex < stableItems.count) {
-            UIBarButtonItem *removedItem = stableItems[removeIndex];
-            WCPLLogInfo(@"[搜索] 兜底移除原生次按钮 class=%@ action=%@ title=%@",
-                        NSStringFromClass([removedItem class]) ?: @"UIBarButtonItem",
-                        wcpl_barButtonActionName(removedItem),
-                        [removedItem.title isKindOfClass:[NSString class]] ? removedItem.title : @"");
-            [stableItems removeObjectAtIndex:removeIndex];
-        }
     }
 
     UIBarButtonItem *searchButtonItem = wcpl_chatSearchNavButtonItem(viewController);
     if (![searchButtonItem isKindOfClass:[UIBarButtonItem class]]) {
-        navigationItem.rightBarButtonItems = stableItems;
+        if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], filteredItems ?: @[])) {
+            navigationItem.rightBarButtonItems = filteredItems;
+        }
+        WCPLLogInfo(@"[搜索按钮] 生成搜索按钮失败，保持原生右键 vc=%@",
+                    NSStringFromClass([viewController class]));
         return;
     }
 
-    if (stableItems.count > 0) {
-        UIBarButtonItem *anchor = stableItems.firstObject;
-        if ([anchor isKindOfClass:[UIBarButtonItem class]] && anchor.tintColor) {
-            searchButtonItem.tintColor = anchor.tintColor;
+    UIBarButtonItem *nativeItem = wcpl_controllerCurrentNativeRightItem(viewController, filteredItems);
+    if (![nativeItem isKindOfClass:[UIBarButtonItem class]]) {
+        for (UIBarButtonItem *candidate in filteredItems) {
+            if (![candidate isKindOfClass:[UIBarButtonItem class]] || wcpl_isInjectedChatSearchButtonItem(candidate)) {
+                continue;
+            }
+            nativeItem = candidate;
+            break;
         }
     }
 
-    NSUInteger insertIndex = stableItems.count > 0 ? 1 : 0;
-    if (insertIndex > stableItems.count) {
-        insertIndex = stableItems.count;
+    NSMutableArray<UIBarButtonItem *> *stableItems = [NSMutableArray arrayWithCapacity:2];
+    if ([nativeItem isKindOfClass:[UIBarButtonItem class]]) {
+        [stableItems addObject:nativeItem];
+        if (nativeItem.tintColor) {
+            searchButtonItem.tintColor = nativeItem.tintColor;
+            if ([searchButtonItem.customView isKindOfClass:[UIButton class]]) {
+                ((UIButton *)searchButtonItem.customView).tintColor = nativeItem.tintColor;
+            }
+        }
     }
-    [stableItems insertObject:searchButtonItem atIndex:insertIndex];
-    navigationItem.rightBarButtonItems = stableItems;
+    [stableItems addObject:searchButtonItem];
+
+    if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], stableItems ?: @[])) {
+        navigationItem.rightBarButtonItems = stableItems;
+        WCPLLogInfo(@"[搜索按钮] 已更新 rightBar: native={%@} search={%@}",
+                    [nativeItem isKindOfClass:[UIBarButtonItem class]] ? wcpl_barButtonItemDebugSummary(nativeItem) : @"<nil>",
+                    wcpl_barButtonItemDebugSummary(searchButtonItem));
+    }
 }
 
-static BOOL wcpl_pushSearchSceneFallback(id contact, UINavigationController *navigationController) {
+static id wcpl_miyouSearcherFromController(id controller) {
+    if (!controller) {
+        return nil;
+    }
+
+    SEL searcherSel = @selector(searcher);
+    if ([controller respondsToSelector:searcherSel]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(controller, searcherSel);
+            if (value) {
+                return value;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSArray<NSString *> *controllerKeys = @[@"searcher", @"m_searcher"];
+    for (NSString *key in controllerKeys) {
+        @try {
+            id value = [controller valueForKey:key];
+            if (value) {
+                return value;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    id helper = wcpl_msgSearchHelperFromController(controller);
+    NSArray<NSString *> *helperKeys = @[@"searcher", @"m_searcher", @"searchController", @"m_searchController"];
+    for (NSString *key in helperKeys) {
+        @try {
+            id value = [helper valueForKey:key];
+            if (value) {
+                return value;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return nil;
+}
+
+static UIView *wcpl_miyouSearchBarContainer(id searcher) {
+    if (!searcher) {
+        return nil;
+    }
+
+    id searchBar = nil;
+    SEL searchBarSel = @selector(searchBar);
+    if ([searcher respondsToSelector:searchBarSel]) {
+        @try {
+            searchBar = ((id (*)(id, SEL))objc_msgSend)(searcher, searchBarSel);
+        } @catch (__unused NSException *exception) {
+            searchBar = nil;
+        }
+    }
+    if (![searchBar isKindOfClass:[UIView class]]) {
+        return nil;
+    }
+
+    UIView *container = nil;
+    @try {
+        container = ((UIView *(*)(id, SEL))objc_msgSend)(searchBar, @selector(superview));
+    } @catch (__unused NSException *exception) {
+        container = nil;
+    }
+
+    return [container isKindOfClass:[UIView class]] ? container : nil;
+}
+
+static CGFloat wcpl_miyouStatusBarHeight(void) {
+    CGFloat statusBarHeight = 0.0f;
+
+    Class mmUtilityClass = objc_getClass("MMUICommonUtility");
+    SEL normalStatusBarHeightSel = @selector(normalStatusBarHeight);
+    if (mmUtilityClass && [mmUtilityClass respondsToSelector:normalStatusBarHeightSel]) {
+        @try {
+            statusBarHeight = ((CGFloat (*)(id, SEL))objc_msgSend)(mmUtilityClass, normalStatusBarHeightSel);
+        } @catch (__unused NSException *exception) {
+            statusBarHeight = 0.0f;
+        }
+    }
+
+    if (statusBarHeight <= 0.0f) {
+        UIWindow *window = nil;
+        if (@available(iOS 13.0, *)) {
+            NSSet<UIScene *> *scenes = UIApplication.sharedApplication.connectedScenes;
+            for (UIScene *scene in scenes) {
+                if (![scene isKindOfClass:[UIWindowScene class]]) {
+                    continue;
+                }
+                UIWindowScene *windowScene = (UIWindowScene *)scene;
+                for (UIWindow *candidate in windowScene.windows) {
+                    if (candidate.isKeyWindow) {
+                        window = candidate;
+                        break;
+                    }
+                }
+                if (window) {
+                    break;
+                }
+            }
+        } else {
+            NSArray<UIWindow *> *windows = UIApplication.sharedApplication.windows;
+            for (UIWindow *candidate in windows) {
+                if (candidate.isKeyWindow) {
+                    window = candidate;
+                    break;
+                }
+            }
+            if (!window && windows.count > 0) {
+                window = windows.firstObject;
+            }
+        }
+
+        if ([window isKindOfClass:[UIWindow class]]) {
+            if (@available(iOS 11.0, *)) {
+                statusBarHeight = window.safeAreaInsets.top;
+            }
+        }
+    }
+
+    if (statusBarHeight <= 0.0f) {
+        statusBarHeight = 20.0f;
+    }
+    return statusBarHeight;
+}
+
+static void wcpl_miyouHideSearchBarContainer(id controller, NSString *stage) {
+    id searcher = wcpl_miyouSearcherFromController(controller);
+    UIView *container = wcpl_miyouSearchBarContainer(searcher);
+    if (![container isKindOfClass:[UIView class]]) {
+        return;
+    }
+
+    container.hidden = YES;
+
+    CGFloat y = wcpl_miyouStatusBarHeight();
+    if ([container respondsToSelector:@selector(setY:)]) {
+        @try {
+            ((void (*)(id, SEL, CGFloat))objc_msgSend)(container, @selector(setY:), y);
+        } @catch (__unused NSException *exception) {
+        }
+    } else {
+        CGRect frame = container.frame;
+        frame.origin.y = y;
+        container.frame = frame;
+    }
+
+    WCPLLogInfo(@"[搜索] %@ hideSearchBarContainer class=%@ y=%.2f",
+                stage ?: @"miyou",
+                NSStringFromClass([container class]) ?: @"unknown",
+                y);
+}
+
+static void wcpl_miyouFinishSearch(id controller, NSString *stage) {
+    BOOL finished = NO;
+
+    id searcher = wcpl_miyouSearcherFromController(controller);
+    if (searcher && [searcher respondsToSelector:@selector(finishSearch)]) {
+        @try {
+            ((void (*)(id, SEL))objc_msgSend)(searcher, @selector(finishSearch));
+            finished = YES;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (!finished) {
+        id helper = wcpl_msgSearchHelperFromController(controller);
+        if (helper && [helper respondsToSelector:@selector(finishSearch)]) {
+            @try {
+                ((void (*)(id, SEL))objc_msgSend)(helper, @selector(finishSearch));
+                finished = YES;
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (finished) {
+        WCPLLogInfo(@"[搜索] %@ finishSearch 已执行", stage ?: @"miyou");
+    }
+}
+
+static BOOL wcpl_miyouPushSearchController(id controller) {
+    id searcher = wcpl_miyouSearcherFromController(controller);
+    SEL pushSel = @selector(pushSearchControllerWithCompletion:);
+    if (!searcher || ![searcher respondsToSelector:pushSel]) {
+        return NO;
+    }
+
+    @try {
+        ((void (*)(id, SEL, id))objc_msgSend)(searcher, pushSel, nil);
+        return YES;
+    } @catch (__unused NSException *exception) {
+        return NO;
+    }
+}
+
+static __attribute__((unused)) BOOL wcpl_pushSearchSceneFallback(id contact, UINavigationController *navigationController) {
     if (!contact || ![navigationController isKindOfClass:[UINavigationController class]]) {
         return NO;
     }
@@ -2821,7 +3332,7 @@ static void wcpl_schedulePostActivationTouchProbes(id controller) {
     }
 }
 
-static BOOL wcpl_activateInPageSearchState(id controller) {
+static __attribute__((unused)) BOOL wcpl_activateInPageSearchState(id controller) {
     if (!controller) {
         return NO;
     }
@@ -2910,7 +3421,7 @@ static BOOL wcpl_activateInPageSearchState(id controller) {
     return activated;
 }
 
-static BOOL wcpl_beginChatSearchTransition(id controller) {
+static __attribute__((unused)) BOOL wcpl_beginChatSearchTransition(id controller) {
     if (!controller) {
         return NO;
     }
@@ -2925,7 +3436,7 @@ static BOOL wcpl_beginChatSearchTransition(id controller) {
     return YES;
 }
 
-static void wcpl_endChatSearchTransition(id controller) {
+static __attribute__((unused)) void wcpl_endChatSearchTransition(id controller) {
     if (!controller) {
         return;
     }
@@ -2933,7 +3444,7 @@ static void wcpl_endChatSearchTransition(id controller) {
     objc_setAssociatedObject(controller, kWCPLChatSearchTransitioningKey, @NO, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-static BOOL wcpl_beginCancelTransition(id controller) {
+static __attribute__((unused)) BOOL wcpl_beginCancelTransition(id controller) {
     if (!controller) {
         return NO;
     }
@@ -2948,7 +3459,7 @@ static BOOL wcpl_beginCancelTransition(id controller) {
     return YES;
 }
 
-static void wcpl_endCancelTransition(id controller) {
+static __attribute__((unused)) void wcpl_endCancelTransition(id controller) {
     if (!controller) {
         return;
     }
@@ -2995,7 +3506,7 @@ static void wcpl_markForceFullSearchMode(id controller, BOOL enable) {
     objc_setAssociatedObject(controller, kWCPLChatSearchForceFullModeKey, @(enable), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-static BOOL wcpl_shouldForceFullSearchMode(id controller) {
+static __attribute__((unused)) BOOL wcpl_shouldForceFullSearchMode(id controller) {
     if (!controller) {
         return NO;
     }
@@ -3007,7 +3518,7 @@ static BOOL wcpl_shouldForceFullSearchMode(id controller) {
     return wcpl_isTargetChatForSearchButton(controller);
 }
 
-static void wcpl_clearSearchEnhanceRetry(id controller) {
+static __attribute__((unused)) void wcpl_clearSearchEnhanceRetry(id controller) {
     if (!controller) {
         return;
     }
@@ -3166,7 +3677,7 @@ static void wcpl_finalizeExitSearchUIIfNeeded(id controller, NSString *stagePref
     wcpl_scheduleExitSearchSnapshots(controller, stagePrefix);
 }
 
-static BOOL wcpl_shouldFinalizeSearchDismiss(id controller) {
+static __attribute__((unused)) BOOL wcpl_shouldFinalizeSearchDismiss(id controller) {
     if (!controller) {
         return NO;
     }
@@ -3186,6 +3697,80 @@ static BOOL wcpl_shouldFinalizeSearchDismiss(id controller) {
     return wcpl_controllerRootHasSearchResidue(controller);
 }
 
+static __attribute__((unused)) BOOL wcpl_shouldPreferNativeReturnAnimation(id controller) {
+    if (!controller) {
+        return NO;
+    }
+    // 密友行为对齐：仅在插件注入搜索链中优先保留原生取消动画。
+    return wcpl_isInjectedChatSearchFlow(controller);
+}
+
+static __attribute__((unused)) void wcpl_scheduleNativeReturnTouchFailSafe(id controller, NSString *stagePrefix, NSTimeInterval delay) {
+    if (!controller) {
+        return;
+    }
+
+    NSString *prefix = ([stagePrefix isKindOfClass:[NSString class]] && stagePrefix.length > 0)
+        ? stagePrefix
+        : @"[搜索] native-return-touch";
+    __weak id weakController = controller;
+    NSTimeInterval safeDelay = delay > 0 ? delay : 0.20;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(safeDelay * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        id strongController = weakController;
+        if (!strongController) {
+            return;
+        }
+
+        BOOL recovered = wcpl_forceDisableSearchPresentationOverlay(strongController,
+                                                                    [NSString stringWithFormat:@"%@ 触控兜底", prefix]);
+        if (recovered) {
+            WCPLLogInfo(@"[搜索] %@ 触控兜底恢复完成", prefix);
+        }
+    });
+}
+
+static __attribute__((unused)) void wcpl_scheduleNativeReturnFallbackCleanup(id controller, NSString *stagePrefix, NSTimeInterval delay) {
+    if (!controller) {
+        return;
+    }
+
+    NSString *prefix = ([stagePrefix isKindOfClass:[NSString class]] && stagePrefix.length > 0)
+        ? stagePrefix
+        : @"[搜索] native-return";
+    __weak id weakController = controller;
+    NSTimeInterval safeDelay = delay > 0 ? delay : 0.75;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(safeDelay * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        id strongController = weakController;
+        if (!strongController) {
+            return;
+        }
+
+        // native-return 保留动画时，优先只做触控恢复，不做激进清理。
+        BOOL recoveredTouch = wcpl_forceDisableSearchPresentationOverlay(strongController,
+                                                                         [NSString stringWithFormat:@"%@ 触控兜底", prefix]);
+        if (recoveredTouch) {
+            WCPLLogInfo(@"[搜索] %@ 延迟触控兜底恢复完成", prefix);
+        }
+
+        BOOL stillSearchLike = wcpl_isControllerShowingSearchUI(strongController) ||
+                               wcpl_navTitleViewLooksSearchLike(strongController) ||
+                               wcpl_navBarHasSearchResidue(strongController) ||
+                               wcpl_controllerRootHasSearchResidue(strongController);
+        if (!stillSearchLike) {
+            WCPLLogInfo(@"[搜索] %@ 保持原生回退动画完成", prefix);
+            return;
+        }
+
+        WCPLLogInfo(@"[搜索] %@ 检测到残留，触发兜底收口", prefix);
+        wcpl_markForceDelayedExitRepair(strongController, YES);
+        wcpl_finalizeExitSearchUIIfNeeded(strongController, [NSString stringWithFormat:@"%@ 兜底收口", prefix]);
+    });
+}
+
 static void wcpl_markChatSearchAutoPopOnCancel(id controller, BOOL enable) {
     if (!controller) {
         return;
@@ -3194,7 +3779,7 @@ static void wcpl_markChatSearchAutoPopOnCancel(id controller, BOOL enable) {
     objc_setAssociatedObject(controller, kWCPLChatSearchAutoPopOnCancelKey, @(enable), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-static void wcpl_tryAutoPopAfterSearchCancel(id controller) {
+static __attribute__((unused)) void wcpl_tryAutoPopAfterSearchCancel(id controller) {
     id marker = controller ? objc_getAssociatedObject(controller, kWCPLChatSearchAutoPopOnCancelKey) : nil;
     BOOL shouldPop = [marker respondsToSelector:@selector(boolValue)] ? [marker boolValue] : NO;
     if (!shouldPop) {
@@ -3933,7 +4518,7 @@ static UIViewController *wcpl_viewControllerFromCell(id cell) {
     return (UIViewController *)viewController;
 }
 
-static UIViewController *wcpl_viewControllerFromResponderChain(UIResponder *responder) {
+static __attribute__((unused)) UIViewController *wcpl_viewControllerFromResponderChain(UIResponder *responder) {
     UIResponder *cursor = responder;
     while (cursor) {
         if ([cursor isKindOfClass:[UIViewController class]]) {
@@ -3947,7 +4532,7 @@ static UIViewController *wcpl_viewControllerFromResponderChain(UIResponder *resp
     return nil;
 }
 
-static BOOL wcpl_viewHasSearchLikeAncestor(UIView *view) {
+static __attribute__((unused)) BOOL wcpl_viewHasSearchLikeAncestor(UIView *view) {
     if (![view isKindOfClass:[UIView class]]) {
         return NO;
     }
@@ -4158,41 +4743,14 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 - (void)viewWillAppear:(_Bool)arg1 {
     %orig;
-
-    if (wcpl_isInjectedChatSearchFlow(self) || wcpl_isControllerShowingSearchUI(self)) {
-        return;
-    }
-
-    BOOL dismissed = wcpl_forceDismissSearchPresentationController(self, @"[搜索] viewWillAppear 入场清理");
-    BOOL disabled = wcpl_forceDisableSearchPresentationOverlay(self, @"[搜索] viewWillAppear 入场清理");
-    if (dismissed || disabled) {
-        WCPLLogInfo(@"[搜索] viewWillAppear 检测到僵尸搜索层 dismissed=%@ disabled=%@",
-                    dismissed ? @"YES" : @"NO",
-                    disabled ? @"YES" : @"NO");
-        wcpl_repairExitSearchNavState(self, @"[搜索] viewWillAppear 入场收口", NO);
-    }
+    wcpl_updateChatSearchButtonForViewController(self);
 }
 
 - (void)viewDidAppear:(_Bool)arg1 {
     %orig;
-
-    BOOL shouldEntryRepair = !wcpl_isInjectedChatSearchFlow(self) && !wcpl_isControllerShowingSearchUI(self);
-    BOOL dismissedOnAppear = NO;
-    BOOL disabledOnAppear = NO;
-    if (shouldEntryRepair) {
-        dismissedOnAppear = wcpl_forceDismissSearchPresentationController(self, @"[搜索] viewDidAppear 入场清理");
-        disabledOnAppear = wcpl_forceDisableSearchPresentationOverlay(self, @"[搜索] viewDidAppear 入场清理");
+    if ([self respondsToSelector:@selector(updateRightBar)]) {
+        ((void (*)(id, SEL))objc_msgSend)(self, @selector(updateRightBar));
     }
-
-    if (!wcpl_isInjectedChatSearchFlow(self) &&
-        (dismissedOnAppear ||
-         disabledOnAppear ||
-         wcpl_navTitleViewLooksSearchLike(self) ||
-         wcpl_navBarHasSearchResidue(self) ||
-         wcpl_controllerRootHasSearchResidue(self))) {
-        wcpl_repairExitSearchNavState(self, @"[搜索] viewDidAppear 残留兜底", YES);
-    }
-
     wcpl_updateChatSearchButtonForViewController(self);
 
     id contact = [self GetContact];
@@ -4252,7 +4810,6 @@ static void wcpl_presentClownEditorForCell(id cell) {
 - (void)reloadWholePage {
     wcpl_clearLocalReplaceMap(self);
     %orig;
-    wcpl_updateChatSearchButtonForViewController(self);
 }
 
 - (void)updateRightBar {
@@ -4266,199 +4823,31 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (unsigned int)getMsgSearchBusinessType {
-    unsigned int originalType = %orig;
-    if (!wcpl_shouldForceFullSearchMode(self)) {
-        return originalType;
-    }
-    if (originalType != 0) {
-        WCPLLogInfo(@"[搜索] 强制 getMsgSearchBusinessType: %u -> 0", originalType);
-    }
-    return 0;
+    return %orig;
 }
 
 - (void)initMsgSearchHelper:(int)type {
-    int forcedType = type;
-    if (wcpl_shouldForceFullSearchMode(self) && type != 0) {
-        forcedType = 0;
-        WCPLLogInfo(@"[搜索] 强制 initMsgSearchHelper: %d -> 0", type);
-    }
-
-    %orig(forcedType);
-
-    if (!wcpl_shouldForceFullSearchMode(self)) {
-        return;
-    }
-
-    wcpl_forceSetSearchBusinessTypeToNormal(self, @"[搜索] init后");
-    id helper = wcpl_msgSearchHelperFromController(self);
-    BOOL isSpecial = wcpl_isSpecialMsgSearchHelper(helper);
-    if (isSpecial) {
-        WCPLLogInfo(@"[搜索] init后仍为 special helper=%@，清理并等待原生重建",
-                    helper ? (NSStringFromClass([helper class]) ?: @"unknown") : @"nil");
-        wcpl_resetSpecialHelperForNativeFullSearch(self, @"[搜索] init后");
-    } else if (helper) {
-        wcpl_enableFullSearchButtonsForHelper(helper);
-    }
+    %orig(type);
 }
 
 - (void)msgSearchBarCancel {
-    BOOL injectedFlow = wcpl_isInjectedChatSearchFlow(self);
-    BOOL enterCancel = injectedFlow ? wcpl_beginCancelTransition(self) : NO;
-    if (injectedFlow && !enterCancel) {
-        WCPLLogInfo(@"[搜索] cancel 重入拦截 (normal)");
-        return;
-    }
-
-    wcpl_logSearchHelperSnapshot(self, @"[搜索] cancel 前(normal)");
-    wcpl_markForceDelayedExitRepair(self, NO);
-    BOOL preHidden = wcpl_preHideSearchPresentationOnCancel(self, @"[搜索] cancel 前(normal)");
-    BOOL preDismissed = wcpl_forceDismissSearchPresentationController(self, @"[搜索] cancel 前预退场(normal)");
-    if (preHidden || preDismissed) {
-        wcpl_markForceDelayedExitRepair(self, YES);
-        WCPLLogInfo(@"[搜索] cancel 前预处理命中(normal) hidden=%@ dismissed=%@",
-                    preHidden ? @"YES" : @"NO",
-                    preDismissed ? @"YES" : @"NO");
-    }
     %orig;
-
-    BOOL immediateCleared = wcpl_immediateHardCleanupAfterCancel(self, @"[搜索] cancel 后即时硬清理(normal)");
-    if (immediateCleared) {
-        wcpl_markForceDelayedExitRepair(self, YES);
-    }
-
-    id helperAfterCancel = wcpl_msgSearchHelperFromController(self);
-    id searchController = wcpl_searchControllerFromHelper(helperAfterCancel);
-    if (wcpl_objectLooksLikeSearchController(searchController) && wcpl_searchControllerIsActive(searchController)) {
-        wcpl_setSearchControllerActiveState(searchController, NO, @"[搜索] cancel 后强制失活");
-    }
-
-    __weak id weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.45 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        id strongSelf = weakSelf;
-        if (!strongSelf || wcpl_isControllerShowingSearchUI(strongSelf)) {
-            return;
-        }
-        BOOL dismissed = wcpl_forceDismissSearchPresentationController(strongSelf, @"[搜索] cancel 延迟兜底");
-        BOOL disabled = wcpl_forceDisableSearchPresentationOverlay(strongSelf, @"[搜索] cancel 延迟兜底");
-        if (dismissed || disabled) {
-            WCPLLogInfo(@"[搜索] cancel 延迟清理命中 dismissed=%@ disabled=%@",
-                        dismissed ? @"YES" : @"NO",
-                        disabled ? @"YES" : @"NO");
-            wcpl_repairExitSearchNavState(strongSelf, @"[搜索] cancel 延迟收口", YES);
-        }
-    });
-
-    BOOL shouldFinalize = injectedFlow || wcpl_shouldFinalizeSearchDismiss(self);
-    if (shouldFinalize) {
-        wcpl_finalizeExitSearchUIIfNeeded(self, @"[搜索] cancel 收口快照");
-        WCPLLogInfo(@"[搜索] cancel 收口完成 (normal)");
-    } else {
-        wcpl_markForceDelayedExitRepair(self, NO);
-    }
-
-    wcpl_markInjectedChatSearchFlow(self, NO);
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_clearSearchEnhanceRetry(self);
-    wcpl_endChatSearchTransition(self);
-    wcpl_tryAutoPopAfterSearchCancel(self);
-    wcpl_endCancelTransition(self);
+    wcpl_miyouHideSearchBarContainer(self, @"[搜索] cancel");
+    wcpl_miyouFinishSearch(self, @"[搜索] cancel");
 }
 
 - (void)msgSearchBarCancelForSpecialMsg {
-    BOOL injectedFlow = wcpl_isInjectedChatSearchFlow(self);
-    BOOL enterCancel = injectedFlow ? wcpl_beginCancelTransition(self) : NO;
-    if (injectedFlow && !enterCancel) {
-        WCPLLogInfo(@"[搜索] cancel 重入拦截 (special)");
-        return;
-    }
-
-    wcpl_logSearchHelperSnapshot(self, @"[搜索] cancel 前(special)");
-    wcpl_markForceDelayedExitRepair(self, NO);
-    BOOL preHidden = wcpl_preHideSearchPresentationOnCancel(self, @"[搜索] cancel 前(special)");
-    BOOL preDismissed = wcpl_forceDismissSearchPresentationController(self, @"[搜索] cancel 前预退场(special)");
-    if (preHidden || preDismissed) {
-        wcpl_markForceDelayedExitRepair(self, YES);
-        WCPLLogInfo(@"[搜索] cancel 前预处理命中(special) hidden=%@ dismissed=%@",
-                    preHidden ? @"YES" : @"NO",
-                    preDismissed ? @"YES" : @"NO");
-    }
     %orig;
-
-    BOOL immediateCleared = wcpl_immediateHardCleanupAfterCancel(self, @"[搜索] cancel 后即时硬清理(special)");
-    if (immediateCleared) {
-        wcpl_markForceDelayedExitRepair(self, YES);
-    }
-
-    id helperAfterCancel = wcpl_msgSearchHelperFromController(self);
-    id searchController = wcpl_searchControllerFromHelper(helperAfterCancel);
-    if (wcpl_objectLooksLikeSearchController(searchController) && wcpl_searchControllerIsActive(searchController)) {
-        wcpl_setSearchControllerActiveState(searchController, NO, @"[搜索] special cancel 后强制失活");
-    }
-
-    __weak id weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.45 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        id strongSelf = weakSelf;
-        if (!strongSelf || wcpl_isControllerShowingSearchUI(strongSelf)) {
-            return;
-        }
-        BOOL dismissed = wcpl_forceDismissSearchPresentationController(strongSelf, @"[搜索] special cancel 延迟兜底");
-        BOOL disabled = wcpl_forceDisableSearchPresentationOverlay(strongSelf, @"[搜索] special cancel 延迟兜底");
-        if (dismissed || disabled) {
-            WCPLLogInfo(@"[搜索] special cancel 延迟清理命中 dismissed=%@ disabled=%@",
-                        dismissed ? @"YES" : @"NO",
-                        disabled ? @"YES" : @"NO");
-            wcpl_repairExitSearchNavState(strongSelf, @"[搜索] special cancel 延迟收口", YES);
-        }
-    });
-
-    BOOL shouldFinalize = injectedFlow || wcpl_shouldFinalizeSearchDismiss(self);
-    if (shouldFinalize) {
-        wcpl_finalizeExitSearchUIIfNeeded(self, @"[搜索] cancel 收口快照");
-        WCPLLogInfo(@"[搜索] cancel 收口完成 (special)");
-    } else {
-        wcpl_markForceDelayedExitRepair(self, NO);
-    }
-
-    wcpl_markInjectedChatSearchFlow(self, NO);
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_clearSearchEnhanceRetry(self);
-    wcpl_endChatSearchTransition(self);
-    wcpl_tryAutoPopAfterSearchCancel(self);
-    wcpl_endCancelTransition(self);
+    wcpl_miyouHideSearchBarContainer(self, @"[搜索] special cancel");
+    wcpl_miyouFinishSearch(self, @"[搜索] special cancel");
 }
 
 - (void)msgSearchDidDismissForSpecialMsg {
-    wcpl_logSearchHelperSnapshot(self, @"[搜索] dismiss 前(special)");
     %orig;
-
-    if (wcpl_shouldFinalizeSearchDismiss(self)) {
-        wcpl_finalizeExitSearchUIIfNeeded(self, @"[搜索] dismiss 收口快照");
-        WCPLLogInfo(@"[搜索] dismiss 收口完成 (special)");
-    }
-
-    wcpl_markInjectedChatSearchFlow(self, NO);
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_markForceDelayedExitRepair(self, NO);
-    wcpl_clearSearchEnhanceRetry(self);
-    wcpl_endChatSearchTransition(self);
-    wcpl_endCancelTransition(self);
 }
 
 - (void)msgSearchDidDismiss {
-    wcpl_logSearchHelperSnapshot(self, @"[搜索] dismiss 前(normal)");
     %orig;
-
-    if (wcpl_shouldFinalizeSearchDismiss(self)) {
-        wcpl_finalizeExitSearchUIIfNeeded(self, @"[搜索] dismiss 收口快照");
-        WCPLLogInfo(@"[搜索] dismiss 收口完成 (normal)");
-    }
-
-    wcpl_markInjectedChatSearchFlow(self, NO);
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_markForceDelayedExitRepair(self, NO);
-    wcpl_clearSearchEnhanceRetry(self);
-    wcpl_endChatSearchTransition(self);
-    wcpl_endCancelTransition(self);
 }
 
 - (void)onSearchButton:(id)sender {
@@ -4467,132 +4856,36 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 %new
-- (void)searchItemAction {
+- (void)onSearchItem {
     if (![NSThread isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            ((void (*)(id, SEL))objc_msgSend)(self, @selector(searchItemAction));
+            ((void (*)(id, SEL))objc_msgSend)(self, @selector(onSearchItem));
         });
         return;
     }
 
-    if (!wcpl_beginChatSearchTransition(self)) {
-        WCPLLogInfo(@"[搜索] 忽略重复触发，上一轮仍在执行");
-        return;
+    WCPLLogInfo(@"[搜索] onSearchItem 命中，进入密友同款链路");
+
+    SEL panSel = @selector(setBUsePanCancelGesture:);
+    if ([self respondsToSelector:panSel]) {
+        ((void (*)(id, SEL, BOOL))objc_msgSend)(self, panSel, YES);
     }
 
-    // 独立链优先：避免原生 onSearchButton 在部分会话里落入 special/date 搜索。
-    wcpl_markInjectedChatSearchFlow(self, NO);
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_clearSearchEnhanceRetry(self);
-    wcpl_preflightRepairBeforeSearchActivation(self);
+    wcpl_miyouHideSearchBarContainer(self, @"[搜索] onSearchItem");
+    wcpl_miyouPushSearchController(self);
+}
 
-    CFAbsoluteTime begin = CFAbsoluteTimeGetCurrent();
-    id contact = [self GetContact];
-    UINavigationController *nav = self.navigationController;
-
-    if (!contact || !nav) {
-        WCPLLogInfo(@"[搜索] contact=%@ nav=%@, 退出", contact ? @"OK" : @"nil", nav ? @"OK" : @"nil");
-        wcpl_markInjectedChatSearchFlow(self, NO);
-        wcpl_markForceFullSearchMode(self, NO);
-        wcpl_endChatSearchTransition(self);
-        return;
-    }
-
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_markInjectedChatSearchFlow(self, YES);
-    wcpl_logSearchHelperSnapshot(self, @"[搜索] 点击后激活前");
-    BOOL activated = wcpl_activateInPageSearchState(self);
-    if (activated) {
-        wcpl_markChatSearchAutoPopOnCancel(self, NO);
-        WCPLLogInfo(@"[搜索] 独立链完整搜索激活成功");
-        wcpl_endChatSearchTransition(self);
-
-        double costMs = (CFAbsoluteTimeGetCurrent() - begin) * 1000.0;
-        WCPLLogInfo(@"[搜索] searchItemAction 结束(独立链), cost=%.2fms", costMs);
-        return;
-    }
-
-    // 禁用 ChatInfo bridge 回退：
-    // 该链路会进入 ChatRoomInfoViewController，触发“群名上方搜索框”异常。
-    WCPLLogInfo(@"[搜索] 独立链未激活，已跳过 bridge B 链路");
-
-    BOOL logicFallbackStarted = wcpl_pushSearchSceneFallback(contact, nav);
-    if (logicFallbackStarted) {
-        WCPLLogInfo(@"[搜索] bridge 不可用，已触发 MMMsgLogic 搜索链路");
-        wcpl_endChatSearchTransition(self);
-
-        double costMs = (CFAbsoluteTimeGetCurrent() - begin) * 1000.0;
-        WCPLLogInfo(@"[搜索] searchItemAction 结束(logicFallback), cost=%.2fms", costMs);
-        return;
-    }
-
-    SEL nativeSel = @selector(onSearchButton:);
-    if ([self respondsToSelector:nativeSel]) {
-        wcpl_markForceFullSearchMode(self, YES);
-        wcpl_forceSetSearchBusinessTypeToNormal(self, @"[搜索] 独立链失败后native前");
-        BOOL clearedSpecial = wcpl_resetSpecialHelperForNativeFullSearch(self, @"[搜索] 独立链失败后native前");
-
-        id preHelper = wcpl_msgSearchHelperFromController(self);
-        if (preHelper && !wcpl_isSpecialMsgSearchHelper(preHelper)) {
-            wcpl_enableFullSearchButtonsForHelper(preHelper);
-        }
-        WCPLLogInfo(@"[搜索] native前校正 complete businessType=%u helper=%@ clearedSpecial=%@",
-                    wcpl_msgSearchBusinessType(self),
-                    preHelper ? (NSStringFromClass([preHelper class]) ?: @"unknown") : @"nil",
-                    clearedSpecial ? @"YES" : @"NO");
-
-        WCPLLogInfo(@"[搜索] 独立链不可用，回退原生 onSearchButton:");
-        ((void (*)(id, SEL, id))objc_msgSend)(self, nativeSel, nil);
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.08 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            wcpl_forceSetSearchBusinessTypeToNormal(self, @"[搜索] native后");
-            id postHelper = wcpl_msgSearchHelperFromController(self);
-            BOOL isSpecial = wcpl_isSpecialMsgSearchHelper(postHelper);
-            if (postHelper && !isSpecial) {
-                wcpl_enableFullSearchButtonsForHelper(postHelper);
-            }
-            WCPLLogInfo(@"[搜索] native后校正 businessType=%u helper=%@ special=%@",
-                        wcpl_msgSearchBusinessType(self),
-                        postHelper ? (NSStringFromClass([postHelper class]) ?: @"unknown") : @"nil",
-                        isSpecial ? @"YES" : @"NO");
-        });
-
-        wcpl_endChatSearchTransition(self);
-
-        double costMs = (CFAbsoluteTimeGetCurrent() - begin) * 1000.0;
-        WCPLLogInfo(@"[搜索] searchItemAction 结束(native兜底), cost=%.2fms", costMs);
-        return;
-    }
-
-    wcpl_markInjectedChatSearchFlow(self, NO);
-    wcpl_markForceFullSearchMode(self, NO);
-    wcpl_endChatSearchTransition(self);
-
-    double costMs = (CFAbsoluteTimeGetCurrent() - begin) * 1000.0;
-    WCPLLogInfo(@"[搜索] searchItemAction 结束(无可用链路), cost=%.2fms", costMs);
+%new
+- (void)searchItemAction {
+    ((void (*)(id, SEL))objc_msgSend)(self, @selector(onSearchItem));
 }
 
 %new
 - (void)wcpl_onTapChatSearchButton:(id)sender {
-    SEL themeBoxActionSel = @selector(searchItemAction);
-    if ([self respondsToSelector:themeBoxActionSel]) {
-        WCPLLogInfo(@"[搜索] 点击按钮，优先走 searchItemAction");
-        ((void (*)(id, SEL))objc_msgSend)(self, themeBoxActionSel);
-        return;
+    (void)sender;
+    if ([self respondsToSelector:@selector(onSearchItem)]) {
+        ((void (*)(id, SEL))objc_msgSend)(self, @selector(onSearchItem));
     }
-
-    SEL nativeSel = @selector(onSearchButton:);
-    if ([self respondsToSelector:nativeSel]) {
-        WCPLLogInfo(@"[搜索] searchItemAction 不可用，回退原生 onSearchButton:");
-        wcpl_markInjectedChatSearchFlow(self, YES);
-        wcpl_markForceFullSearchMode(self, YES);
-        wcpl_forceSetSearchBusinessTypeToNormal(self, @"[搜索] 直接native前");
-        wcpl_resetSpecialHelperForNativeFullSearch(self, @"[搜索] 直接native前");
-        ((void (*)(id, SEL, id))objc_msgSend)(self, nativeSel, sender);
-        return;
-    }
-
-    WCPLLogInfo(@"[搜索] onSearchButton:/searchItemAction 均不可用（未使用 onSearchItem 回退）");
 }
 
 %end
@@ -4600,82 +4893,10 @@ static void wcpl_presentClownEditorForCell(id cell) {
 %hook UIControl
 
 - (void)sendAction:(SEL)action to:(id)target forEvent:(id)event {
-    NSString *selName = action ? (NSStringFromSelector(action) ?: @"") : @"";
-    NSString *selLower = selName.lowercaseString ?: @"";
-    BOOL looksCancelAction = [selLower containsString:@"cancel"];
-    UIViewController *postCancelCandidate = nil;
-    BOOL shouldRunPostCancelHardCleanup = NO;
-
-    if (looksCancelAction && [self isKindOfClass:[UIView class]]) {
-        UIView *senderView = (UIView *)self;
-        UIViewController *candidate = nil;
-
-        if ([target isKindOfClass:[UIViewController class]]) {
-            candidate = (UIViewController *)target;
-        }
-        if (!candidate) {
-            candidate = wcpl_viewControllerFromResponderChain(senderView);
-        }
-        if (!candidate && [target respondsToSelector:@selector(valueForKey:)]) {
-            NSArray<NSString *> *keys = @[@"m_contentsController", @"contentsController", @"viewController", @"m_msgContentVC"];
-            for (NSString *key in keys) {
-                id value = nil;
-                @try {
-                    value = [target valueForKey:key];
-                } @catch (__unused NSException *exception) {
-                    value = nil;
-                }
-                if ([value isKindOfClass:[UIViewController class]]) {
-                    candidate = (UIViewController *)value;
-                    break;
-                }
-            }
-        }
-
-        if ([candidate isKindOfClass:[UIViewController class]]) {
-            BOOL senderSearchLike = wcpl_viewHasSearchLikeAncestor(senderView) ||
-                                    wcpl_viewTreeHasSearchLikeNode(senderView, 0);
-            BOOL sceneSearchLike = wcpl_isControllerShowingSearchUI(candidate) ||
-                                   wcpl_navTitleViewLooksSearchLike(candidate) ||
-                                   wcpl_navBarHasSearchResidue(candidate) ||
-                                   wcpl_controllerRootHasSearchResidue(candidate);
-            if (!sceneSearchLike && [candidate.navigationController isKindOfClass:[UINavigationController class]]) {
-                UIViewController *top = candidate.navigationController.topViewController;
-                if ([top isKindOfClass:[UIViewController class]]) {
-                    sceneSearchLike = wcpl_isControllerShowingSearchUI(top) ||
-                                      wcpl_navTitleViewLooksSearchLike(top) ||
-                                      wcpl_navBarHasSearchResidue(top) ||
-                                      wcpl_controllerRootHasSearchResidue(top);
-                    if (sceneSearchLike) {
-                        candidate = top;
-                    }
-                }
-            }
-
-            if (senderSearchLike || sceneSearchLike) {
-                shouldRunPostCancelHardCleanup = YES;
-                postCancelCandidate = candidate;
-                BOOL preCleared = wcpl_immediateHardCleanupAfterCancel(candidate, @"[搜索] sendAction cancel 前置硬清理");
-                if (preCleared) {
-                    wcpl_markForceDelayedExitRepair(candidate, YES);
-                    WCPLLogInfo(@"[搜索] sendAction 前置硬清理命中 action=%@ sender=%@ target=%@",
-                                selName,
-                                NSStringFromClass([senderView class]) ?: @"UIView",
-                                target ? (NSStringFromClass([target class]) ?: @"unknown") : @"nil");
-                }
-            }
-        }
-    }
-
+    (void)action;
+    (void)target;
+    (void)event;
     %orig;
-
-    if (shouldRunPostCancelHardCleanup && [postCancelCandidate isKindOfClass:[UIViewController class]]) {
-        BOOL postCleared = wcpl_immediateHardCleanupAfterCancel(postCancelCandidate, @"[搜索] sendAction cancel 后置硬清理");
-        if (postCleared) {
-            wcpl_markForceDelayedExitRepair(postCancelCandidate, YES);
-            WCPLLogInfo(@"[搜索] sendAction 后置硬清理命中 action=%@", selName);
-        }
-    }
 }
 
 %end
