@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL tapReferJumpEnable;
 // 消息气泡复读按钮
 @property (assign, nonatomic) BOOL repeatButtonEnable;
+// 复读按钮点击震动反馈
+@property (assign, nonatomic) BOOL repeatButtonHapticEnable;
+// 复读按钮大小（16~30，默认 20）
+@property (assign, nonatomic) CGFloat repeatButtonSize;
 // 复读支持表情包消息
 @property (assign, nonatomic) BOOL repeatSupportEmoticonEnable;
 // 复读支持语音消息

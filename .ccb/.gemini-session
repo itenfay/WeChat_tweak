@@ -1,0 +1,19 @@
+{
+  "session_id": "ai-1770904753-1235094",
+  "ccb_project_id": "6fbd6f9e869e6600684d23342c266f5cb27615cf4c3bd06aba1b0f57ff232238",
+  "runtime_dir": "/tmp/claude-ai-root/ai-1770904753-1235094/gemini",
+  "terminal": "tmux",
+  "tmux_session": null,
+  "pane_id": "%2",
+  "pane_title_marker": "CCB-Gemini",
+  "work_dir": "/root/WeChat_tweak",
+  "work_dir_norm": "/root/WeChat_tweak",
+  "start_dir": "/root/WeChat_tweak",
+  "active": false,
+  "started_at": "2026-02-12 21:59:14",
+  "start_cmd": "export CCB_MANAGED=1; export CCB_PARENT_PID=1235094; export CCB_RUN_DIR=/root/.cache/ccb/projects/6fbd6f9e869e6600; export PATH=/root/.local/share/codex-dual/bin:/root/.opencode/bin:/root/.cargo/bin:/root/.local/bin:/usr/lib/go-1.24/bin:/opt/theos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; gemini",
+  "gemini_session_path": "/root/.gemini/tmp/6fbd6f9e869e6600684d23342c266f5cb27615cf4c3bd06aba1b0f57ff232238/chats/session-2026-02-12T13-59-6fedb357.json",
+  "gemini_project_hash": "6fbd6f9e869e6600684d23342c266f5cb27615cf4c3bd06aba1b0f57ff232238",
+  "gemini_session_id": "82b53420-6bb2-45a8-a5f4-a1b430ef64d8",
+  "ended_at": "2026-02-13 01:46:38"
+}

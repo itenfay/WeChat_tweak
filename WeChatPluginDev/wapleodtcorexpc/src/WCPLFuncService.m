@@ -8,6 +8,7 @@
 #import "WCPLFuncService.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLLogger.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
 
@@ -25,15 +26,36 @@ static NSString *wcpl_safeUserNameString(id value) {
     return trimmed.length > 0 ? trimmed : nil;
 }
 
-static BOOL wcpl_isFriendUser(NSString *userName) {
+static NSString *wcpl_groupSenderFromContent(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length < 3) {
+        return nil;
+    }
+    NSRange sep = [content rangeOfString:@":\n"];
+    if (sep.location == NSNotFound || sep.location == 0 || sep.location > 128) {
+        return nil;
+    }
+
+    NSString *candidate = wcpl_safeUserNameString([content substringToIndex:sep.location]);
+    if (candidate.length == 0) {
+        return nil;
+    }
+    if ([candidate rangeOfString:@"\n"].location != NSNotFound ||
+        [candidate rangeOfString:@"\t"].location != NSNotFound ||
+        [candidate rangeOfString:@" "].location != NSNotFound) {
+        return nil;
+    }
+    return candidate;
+}
+
+static id wcpl_contactForUserName(NSString *userName) {
     NSString *target = wcpl_safeUserNameString(userName);
     if (target.length == 0) {
-        return NO;
+        return nil;
     }
 
     id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
     if (!contactMgr) {
-        return NO;
+        return nil;
     }
 
     id contact = nil;
@@ -51,29 +73,132 @@ static BOOL wcpl_isFriendUser(NSString *userName) {
         contact = nil;
     }
 
-    if (!contact) {
+    return contact;
+}
+
+static NSSet<NSString *> *wcpl_normalizedFriendUserSet(NSArray<NSString *> *userNames) {
+    if (![userNames isKindOfClass:[NSArray class]]) {
+        return [NSSet set];
+    }
+
+    NSMutableSet<NSString *> *set = [NSMutableSet setWithCapacity:userNames.count];
+    for (NSString *userName in userNames) {
+        NSString *target = wcpl_safeUserNameString(userName);
+        if (target.length == 0 || [target rangeOfString:@"@chatroom"].location != NSNotFound) {
+            continue;
+        }
+        [set addObject:target];
+    }
+    return set.copy;
+}
+
+static BOOL wcpl_changeNotifyStatus(id contactMgr, id contact, BOOL notifyOpen) {
+    if (!contactMgr || !contact || ![contactMgr respondsToSelector:@selector(ChangeNotifyStatus:withStatus:sync:)]) {
+        return NO;
+    }
+    return ((BOOL (*)(id, SEL, id, BOOL, BOOL))objc_msgSend)(contactMgr,
+                                                               @selector(ChangeNotifyStatus:withStatus:sync:),
+                                                               contact,
+                                                               notifyOpen,
+                                                               YES);
+}
+
++ (BOOL)syncIgnoreUserToSystemNotifyStatus:(NSString *)userName enabled:(BOOL)enabled {
+    NSString *target = wcpl_safeUserNameString(userName);
+    if (target.length == 0 || [target rangeOfString:@"@chatroom"].location != NSNotFound) {
         return NO;
     }
 
-    if ([contact respondsToSelector:@selector(isMyContact)]) {
-        @try {
-            BOOL isMyContact = ((BOOL (*)(id, SEL))objc_msgSend)(contact, @selector(isMyContact));
-            if (isMyContact) {
-                return YES;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!contactMgr) {
+        WCPLLogWarning(@"[屏蔽同步] 通知状态同步失败: contactMgr不存在 user=%@", target);
+        return NO;
     }
+
+    id contact = wcpl_contactForUserName(target);
+    if (!contact) {
+        WCPLLogWarning(@"[屏蔽同步] 通知状态同步失败: 联系人不存在 user=%@", target);
+        return NO;
+    }
+
+    BOOL notifyOpen = !enabled;
+    BOOL synced = NO;
+    BOOL localApplied = NO;
 
     @try {
-        id friendScene = [contact valueForKey:@"m_uiFriendScene"];
-        if ([friendScene respondsToSelector:@selector(integerValue)]) {
-            return ((NSInteger)[friendScene integerValue]) > 0;
+        synced = wcpl_changeNotifyStatus(contactMgr, contact, notifyOpen);
+
+        if (!synced && [contactMgr respondsToSelector:@selector(ModifyNotifyStatus:withStatus:)]) {
+            unsigned int status = notifyOpen ? 1 : 0;
+            synced = ((BOOL (*)(id, SEL, id, unsigned int))objc_msgSend)(contactMgr,
+                                                                          @selector(ModifyNotifyStatus:withStatus:),
+                                                                          contact,
+                                                                          status);
         }
-    } @catch (__unused NSException *exception) {
+
+        if ([contact respondsToSelector:@selector(setChatStatusNotifyOpen:)]) {
+            ((void (*)(id, SEL, BOOL))objc_msgSend)(contact, @selector(setChatStatusNotifyOpen:), notifyOpen);
+            localApplied = YES;
+        }
+
+        if ([contactMgr respondsToSelector:@selector(setLocalContact:notifyOpen:)]) {
+            BOOL localOK = ((BOOL (*)(id, SEL, id, BOOL))objc_msgSend)(contactMgr,
+                                                                        @selector(setLocalContact:notifyOpen:),
+                                                                        contact,
+                                                                        notifyOpen);
+            localApplied = localApplied || localOK;
+        }
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[屏蔽同步] 通知状态同步异常: user=%@ enabled=%d reason=%@",
+                       target,
+                       enabled ? 1 : 0,
+                       exception.reason ?: @"unknown");
+        synced = NO;
     }
 
-    return NO;
+    BOOL finalOK = synced || localApplied;
+    if (finalOK) {
+        WCPLLogInfo(@"[屏蔽同步] 通知状态同步成功: user=%@ enabled=%d notifyOpen=%d",
+                    target,
+                    enabled ? 1 : 0,
+                    notifyOpen ? 1 : 0);
+    } else {
+        WCPLLogWarning(@"[屏蔽同步] 通知状态同步失败: user=%@ enabled=%d notifyOpen=%d",
+                       target,
+                       enabled ? 1 : 0,
+                       notifyOpen ? 1 : 0);
+    }
+
+    return finalOK;
+}
+
++ (void)syncIgnoredUsersToSystemNotifyStatus:(NSArray<NSString *> *)ignoredUsers
+                     previousIgnoredUsers:(nullable NSArray<NSString *> *)previousIgnoredUsers {
+    NSSet<NSString *> *targetSet = wcpl_normalizedFriendUserSet(ignoredUsers);
+    NSSet<NSString *> *previousSet = wcpl_normalizedFriendUserSet(previousIgnoredUsers);
+
+    NSUInteger successCount = 0;
+    NSUInteger totalCount = 0;
+
+    for (NSString *target in targetSet) {
+        totalCount += 1;
+        if ([self syncIgnoreUserToSystemNotifyStatus:target enabled:YES]) {
+            successCount += 1;
+        }
+    }
+
+    for (NSString *target in previousSet) {
+        if (![targetSet containsObject:target]) {
+            totalCount += 1;
+            if ([self syncIgnoreUserToSystemNotifyStatus:target enabled:NO]) {
+                successCount += 1;
+            }
+        }
+    }
+
+    WCPLLogInfo(@"[屏蔽同步] 通知状态批量同步完成: total=%lu success=%lu",
+                (unsigned long)totalCount,
+                (unsigned long)successCount);
 }
 
 + (BOOL)shouldIgnoreMessageWrap:(id)msgWrap {
@@ -102,6 +227,7 @@ static BOOL wcpl_isFriendUser(NSString *userName) {
 
     Ivar nsFromUsrIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsFromUsr");
     Ivar nsRealChatUsrIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsRealChatUsr");
+    Ivar nsContentIvar = class_getInstanceVariable(CMessageWrapClass, "m_nsContent");
 
     NSString *fromUsr = wcpl_safeUserNameString(nsFromUsrIvar ? object_getIvar(msgWrap, nsFromUsrIvar) : nil);
     NSString *realChatUsr = wcpl_safeUserNameString(nsRealChatUsrIvar ? object_getIvar(msgWrap, nsRealChatUsrIvar) : nil);
@@ -112,14 +238,22 @@ static BOOL wcpl_isFriendUser(NSString *userName) {
 
     BOOL isGroupMessage = (fromUsr.length > 0 && [fromUsr rangeOfString:@"@chatroom"].location != NSNotFound);
     if (isGroupMessage) {
-        if (realChatUsr.length > 0 && config.userIgnoreInfo[realChatUsr].boolValue) {
+        NSString *groupSender = realChatUsr;
+        if (groupSender.length == 0) {
+            NSString *content = wcpl_safeUserNameString(nsContentIvar ? object_getIvar(msgWrap, nsContentIvar) : nil);
+            if (content.length > 0) {
+                groupSender = wcpl_groupSenderFromContent(content);
+            }
+        }
+
+        if (groupSender.length > 0 && config.userIgnoreInfo[groupSender].boolValue) {
             return YES;
         }
         return NO;
     }
 
     if (fromUsr.length > 0 && config.userIgnoreInfo[fromUsr].boolValue) {
-        return wcpl_isFriendUser(fromUsr);
+        return YES;
     }
 
     return NO;

@@ -1,0 +1,23 @@
+{
+  "session_id": "ai-1770904753-1235094",
+  "runtime_dir": "/tmp/claude-ai-root/ai-1770904753-1235094/codex",
+  "input_fifo": "/tmp/claude-ai-root/ai-1770904753-1235094/codex/input.fifo",
+  "output_fifo": "/tmp/claude-ai-root/ai-1770904753-1235094/codex/output.fifo",
+  "terminal": "tmux",
+  "tmux_session": null,
+  "pane_id": "%3",
+  "tmux_log": "/tmp/claude-ai-root/ai-1770904753-1235094/codex/bridge_output.log",
+  "work_dir": "/root/WeChat_tweak",
+  "work_dir_norm": "/root/WeChat_tweak",
+  "active": false,
+  "started_at": "2026-02-12 21:59:13",
+  "ended_at": "2026-02-13 01:46:38",
+  "ccb_project_id": "6fbd6f9e869e6600684d23342c266f5cb27615cf4c3bd06aba1b0f57ff232238",
+  "pane_title_marker": "CCB-Codex",
+  "start_dir": "/root/WeChat_tweak",
+  "start_cmd": "export CCB_MANAGED=1; export CCB_PARENT_PID=1235094; export CCB_RUN_DIR=/root/.cache/ccb/projects/6fbd6f9e869e6600; export PATH=/root/.local/share/codex-dual/bin:/root/.opencode/bin:/root/.cargo/bin:/root/.local/bin:/usr/lib/go-1.24/bin:/opt/theos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; codex -c disable_paste_burst=true",
+  "codex_start_cmd": "codex resume 019c5226-2058-7990-a9ba-736252aea7cc",
+  "codex_session_path": "/root/.codex/sessions/2026/02/12/rollout-2026-02-12T21-59-16-019c5226-2058-7990-a9ba-736252aea7cc.jsonl",
+  "codex_session_id": "019c5226-2058-7990-a9ba-736252aea7cc",
+  "updated_at": "2026-02-12 21:59:40"
+}

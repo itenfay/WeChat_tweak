@@ -2,16 +2,19 @@ THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = arm64 arm64e
 
-# Linux 工具链生成 arm64e 时可能为旧 ABI。
-# 为保证 rootless/roothide 产物一致且可稳定注入，二者统一回退到 arm64。
+# Linux 下本地调试默认回退到 arm64，避免旧工具链兼容问题；
+# roothide/rootless 需在 arm64e 设备稳定注入，因此默认切到 arm64e。
 ifeq ($(shell uname -s),Linux)
+ifneq ($(filter rootless roothide,$(THEOS_PACKAGE_SCHEME)),)
+ARCHS = arm64e
+else
 ARCHS = arm64
+endif
 endif
 
 # rootless/roothide 构建统一使用 iOS 14.0 目标，避免 arm64e 能力分叉
 ifneq ($(filter rootless roothide,$(THEOS_PACKAGE_SCHEME)),)
-TARGET = iphone:clang:latest:14.0
-# 本地开发保留旧 SDK 兼容路径，但最低系统保持 14.0
+TARGET = iphone:clang:13.7:14.0
 else ifneq ($(wildcard $(THEOS)/sdks/iPhoneOS13.7.sdk),)
 TARGET = iphone:clang:13.7:14.0
 else
@@ -27,7 +30,7 @@ TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLContactGroupPickerViewController.m src/WCPLFriendPickerViewController.m src/WCPLGroupPickerViewController.m src/WCPLPickerDataProvider.m src/WCPLPickerItem.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
-$(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
 
 src/WCPLAVManager.m_CFLAGS = -fobjc-arc
 src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc

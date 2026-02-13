@@ -1,0 +1,19 @@
+{
+  "session_id": "ai-1770388120-115478",
+  "ccb_project_id": "6fbd6f9e869e6600684d23342c266f5cb27615cf4c3bd06aba1b0f57ff232238",
+  "work_dir": "/root/WeChat_tweak",
+  "work_dir_norm": "/root/WeChat_tweak",
+  "start_dir": "/root/WeChat_tweak",
+  "terminal": "tmux",
+  "active": false,
+  "started_at": "2026-02-02 18:11:51",
+  "updated_at": "2026-02-08 12:15:49",
+  "pane_id": "%0",
+  "pane_title_marker": "CCB-Claude",
+  "ended_at": "2026-02-13 01:46:38",
+  "claude_session_path": "/root/.claude/projects/-root-WeChat-tweak/34757150-1285-44a0-adc0-d73eecaacc0a.jsonl",
+  "claude_session_id": "34757150-1285-44a0-adc0-d73eecaacc0a",
+  "old_claude_session_id": "0b3731de-c8ca-428d-8d5c-b3922dd194e5",
+  "old_claude_session_path": "/root/.claude/projects/-root-WeChat-tweak/0b3731de-c8ca-428d-8d5c-b3922dd194e5.jsonl",
+  "old_updated_at": "2026-02-08 12:15:43"
+}

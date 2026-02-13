@@ -2,6 +2,7 @@
 #import <dispatch/dispatch.h>
 
 #import "WCPLLogger.h"
+#import "WCPLFuncService.h"
 
 #import <objc/message.h>
 
@@ -281,6 +282,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
 - (void)AddMsgToSendTable:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
+    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
+        return;
+    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
 
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
@@ -336,6 +340,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
 - (void)AddMsg:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
+    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
+        return;
+    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
@@ -365,6 +372,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
 - (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
+    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
+        return;
+    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
@@ -393,6 +403,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
 - (void)AsyncOnPreAddMsg:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
+    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
+        return;
+    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
@@ -420,6 +433,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 }
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 {
+    if ([WCPLFuncService shouldIgnoreMessageWrap:arg2]) {
+        return;
+    }
     if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg")) {
         return;
     }
@@ -427,6 +443,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 }
 
 - (void)AddUniqueLocalMsg:(id)arg1 MsgWrap:(id)arg2 {
+    if ([WCPLFuncService shouldIgnoreMessageWrap:arg2]) {
+        return;
+    }
     if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddUniqueLocalMsg")) {
         return;
     }
@@ -434,6 +453,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 }
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4 {
+    if ([WCPLFuncService shouldIgnoreMessageWrap:arg2]) {
+        return;
+    }
     if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg_fixTime")) {
         return;
     }
@@ -441,6 +463,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 }
 
 - (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4 Unique:(_Bool)arg5 {
+    if ([WCPLFuncService shouldIgnoreMessageWrap:arg2]) {
+        return;
+    }
     if (wcpl_sg_shouldBlockLocalEmptyTextBubble(arg1, arg2, @"AddLocalMsg_fixTime_unique")) {
         return;
     }

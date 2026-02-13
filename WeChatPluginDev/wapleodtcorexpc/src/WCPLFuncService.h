@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 // The width of the screen.
 #define WCPLScreenWidth   UIScreen.mainScreen.bounds.size.width
 
@@ -54,4 +56,11 @@
 // Check if a single message should be ignored.
 + (BOOL)shouldIgnoreMessageWrap:(id)msgWrap;
 
+// Sync ignored users to WeChat notify status (屏蔽=免打扰, 取消屏蔽=恢复提醒).
++ (BOOL)syncIgnoreUserToSystemNotifyStatus:(NSString *)userName enabled:(BOOL)enabled;
++ (void)syncIgnoredUsersToSystemNotifyStatus:(NSArray<NSString *> *)ignoredUsers
+                     previousIgnoredUsers:(nullable NSArray<NSString *> *)previousIgnoredUsers;
+
 @end
+
+NS_ASSUME_NONNULL_END

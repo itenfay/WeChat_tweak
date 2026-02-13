@@ -13,7 +13,9 @@
 #include <math.h>
 
 static const NSInteger kWCPLRepeatButtonTag = 0x5743504C;
-static const CGFloat kWCPLRepeatButtonSize = 20.0f;
+static const CGFloat kWCPLRepeatButtonDefaultSize = 20.0f;
+static const CGFloat kWCPLRepeatButtonMinSize = 16.0f;
+static const CGFloat kWCPLRepeatButtonMaxSize = 30.0f;
 static const CGFloat kWCPLRepeatButtonEdgeInset = 1.0f;
 static const CGFloat kWCPLRepeatButtonTailInsetX = 4.0f;
 static const CGFloat kWCPLRepeatButtonTailInsetY = 3.0f;
@@ -21,21 +23,69 @@ static const void *kWCPLRepeatButtonWrapKey = &kWCPLRepeatButtonWrapKey;
 static const void *kWCPLRepeatButtonViewKey = &kWCPLRepeatButtonViewKey;
 static const void *kWCPLRepeatButtonLastFrameKey = &kWCPLRepeatButtonLastFrameKey;
 static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
+static const void *kWCPLRepeatButtonTextAnchorLogOnceKey = &kWCPLRepeatButtonTextAnchorLogOnceKey;
 static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedbackKey;
-static const void *kWCPLRepeatButtonFilterStateKey = &kWCPLRepeatButtonFilterStateKey;
-static const void *kWCPLRepeatButtonStableUpdateCountKey = &kWCPLRepeatButtonStableUpdateCountKey;
+static const void *kWCPLRepeatAnchorMessageKey = &kWCPLRepeatAnchorMessageKey;
+static const void *kWCPLRepeatAnchorWrapKey = &kWCPLRepeatAnchorWrapKey;
+static const void *kWCPLRepeatAnchorReportTimeKey = &kWCPLRepeatAnchorReportTimeKey;
+static const void *kWCPLRepeatAnchorIsSelfKey = &kWCPLRepeatAnchorIsSelfKey;
+static const void *kWCPLRepeatAnchorSignatureKey = &kWCPLRepeatAnchorSignatureKey;
+static const void *kWCPLRepeatAnchorQuoteProxyKey = &kWCPLRepeatAnchorQuoteProxyKey;
+static const void *kWCPLRepeatAnchorQuoteReferSvrIDKey = &kWCPLRepeatAnchorQuoteReferSvrIDKey;
 static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 1.2;
 static const NSTimeInterval kWCPLSwipeTouchSuppressDuration = 0.55;
+static const NSTimeInterval kWCPLRepeatAnchorStaleInterval = 0.75;
+static const NSTimeInterval kWCPLRepeatRefreshThrottleInterval = 0.15;
+static const NSTimeInterval kWCPLRepeatSettleRefreshDelay = 0.12;
+static const NSTimeInterval kWCPLRepeatSettleRefreshFollowDelay = 0.32;
+static const NSUInteger kWCPLRepeatFullResyncInterval = 16;
 static NSString *const kWCPLIssueIdLongPressMenu = @"wx-bugfix-longpress-menu-20260207";
 
 static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
 static uintptr_t gWCPLQuoteLongPressSuppressCellAddr = 0;
 static unsigned int gWCPLQuoteLongPressSuppressMsgType = 0;
 
-static NSUInteger gWCPLRepeatButtonCreateCount = 0;
-static NSUInteger gWCPLRepeatButtonUpdateCount = 0;
+static BOOL gWCPLRepeatGlobalRefreshPending = NO;
+static BOOL gWCPLRepeatRefreshGateEnabled = NO;
+static CFTimeInterval gWCPLRepeatResumeSuppressUntil = 0;
+static CFTimeInterval gWCPLRepeatLastRefreshAt = 0;
+static NSUInteger gWCPLRepeatRefreshScheduleToken = 0;
+static BOOL gWCPLRepeatSettleRefreshPending = NO;
+static BOOL gWCPLRepeatSettleRefreshFollowPending = NO;
+static BOOL gWCPLRepeatNeedFullResync = YES;
+static NSUInteger gWCPLRepeatRefreshRoundCounter = 0;
 
 static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap);
+static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap);
+static NSArray<NSString *> *wcpl_repeatIdentityTokens(CMessageWrap *msgWrap);
+static NSString *wcpl_currentSelfUserNameForRepeat(void);
+static long long wcpl_quoteReferServerIDFromContent(NSString *content);
+static CMessageWrap *wcpl_quoteTargetFromMessageWrap(CMessageWrap *msgWrap);
+static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessageWrap *msgWrap);
+static BOOL wcpl_tryResolveIsSelfFromCellView(id cellView, BOOL *isSelfOut);
+static BOOL wcpl_resolveIsSelfByGeometry(UIView *cellView,
+                                         CGRect menuRect,
+                                         BOOL menuRectValid,
+                                         CGRect bubbleRect,
+                                         BOOL bubbleRectValid,
+                                         BOOL fallbackIsSelf);
+static NSArray<UIWindow *> *wcpl_applicationWindows(void);
+static void wcpl_clearRepeatOwnerMaps(void);
+static void wcpl_forceClearRepeatButtonsInRootView(UIView *rootView);
+static void wcpl_forceClearRepeatButtonsInAllWindows(void);
+static void wcpl_resyncGlobalRepeatButtonsMap(void);
+static BOOL wcpl_pruneGlobalRepeatButtonsMapLightweight(void);
+static void wcpl_clearRepeatAnchorForCell(UIView *cellView);
+static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIView *> *storage);
+static UITableView *wcpl_findContainingTableView(UIView *view);
+static UITableView *wcpl_findAnyScrollingTableView(void);
+static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableView *tableView, UIView *fallback);
+static NSMutableDictionary<NSString *, UIButton *> *wcpl_repeatGlobalButtonMap(void);
+static UIView *wcpl_repeatOwnerViewForMessageKey(NSString *messageKey);
+static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *ownerView);
+static void wcpl_bindRepeatButtonTargetsToOwner(UIButton *button, id owner);
+static void wcpl_removeRepeatButtonFromGlobalMap(NSMutableDictionary<NSString *, UIButton *> *buttonMap, UIButton *button, NSString *messageKey);
+static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *messageKey, BOOL isSelf, UIView *bubbleView);
 
 static NSString *wcpl_swipeDirectionName(WCHookSwipeDirection direction) {
     switch (direction) {
@@ -102,6 +152,35 @@ static void wcpl_collectRepeatButtonsFromView(UIView *root, NSMutableArray<UIBut
     }
 }
 
+static NSString *wcpl_decodeBasicXMLEntities(NSString *text) {
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+        return nil;
+    }
+    if ([text rangeOfString:@"&"].location == NSNotFound) {
+        return text;
+    }
+
+    NSString *decoded = text;
+    for (NSUInteger pass = 0; pass < 3; pass++) {
+        NSString *next = [[[[decoded stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"]
+                           stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"]
+                          stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""]
+                         stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+        next = [next stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+
+        if ([next isEqualToString:decoded]) {
+            break;
+        }
+        decoded = next;
+
+        if ([decoded rangeOfString:@"&"].location == NSNotFound) {
+            break;
+        }
+    }
+
+    return decoded;
+}
+
 static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
     if (!msgWrap || msgWrap.m_uiMessageType != 49) {
         return NO;
@@ -110,15 +189,78 @@ static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
     if (![content isKindOfClass:[NSString class]] || content.length == 0) {
         return NO;
     }
-    if ([content rangeOfString:@"<refermsg>"].location != NSNotFound) {
+
+    BOOL (^containsQuoteMarkers)(NSString *) = ^BOOL(NSString *xml) {
+        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
+            return NO;
+        }
+
+        NSArray<NSString *> *markers = @[
+            @"<refermsg",
+            @"<refer_msg",
+            @"<type>57</type>",
+            @"<type><![CDATA[57]]></type>",
+            @"<referfromscene",
+            @"<referfromusername",
+            @"<refermsgsvrid"
+        ];
+
+        for (NSString *marker in markers) {
+            if ([xml rangeOfString:marker options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                return YES;
+            }
+        }
+        return NO;
+    };
+
+    if (containsQuoteMarkers(content)) {
         return YES;
     }
-    if ([content rangeOfString:@"<type>57</type>"].location != NSNotFound) {
+
+    NSString *decodedContent = wcpl_decodeBasicXMLEntities(content);
+    if (decodedContent.length > 0 && ![decodedContent isEqualToString:content] && containsQuoteMarkers(decodedContent)) {
         return YES;
     }
-    if ([content rangeOfString:@"<type><![CDATA[57]]></type>"].location != NSNotFound) {
+
+    return wcpl_quoteReferServerIDFromContent(content) > 0;
+}
+
+static BOOL wcpl_isFileAppMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
+        return NO;
+    }
+
+    NSString *content = msgWrap.m_nsContent;
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return NO;
+    }
+
+    BOOL (^looksLikeFileType)(NSString *) = ^BOOL(NSString *xml) {
+        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
+            return NO;
+        }
+
+        BOOL hasFileTypeMarker =
+            [xml rangeOfString:@"<type>6</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+            [xml rangeOfString:@"<type><![CDATA[6]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound;
+        if (!hasFileTypeMarker) {
+            return NO;
+        }
+
+        return [xml rangeOfString:@"<appattach" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+               [xml rangeOfString:@"<fileext" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+               [xml rangeOfString:@"<totallen" options:NSCaseInsensitiveSearch].location != NSNotFound;
+    };
+
+    if (looksLikeFileType(content)) {
         return YES;
     }
+
+    NSString *decoded = wcpl_decodeBasicXMLEntities(content);
+    if (decoded.length > 0 && ![decoded isEqualToString:content] && looksLikeFileType(decoded)) {
+        return YES;
+    }
+
     return NO;
 }
 
@@ -149,12 +291,6 @@ static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
     if ([content rangeOfString:@"<emoticon" options:NSCaseInsensitiveSearch].location != NSNotFound) {
         return YES;
     }
-    if ([content rangeOfString:@"<md5" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        return YES;
-    }
-    if ([content rangeOfString:@"md5=\"" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        return YES;
-    }
 
     return NO;
 }
@@ -164,17 +300,173 @@ static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
         return NO;
     }
 
+    BOOL isSender = NO;
+    BOOL shouldFallback = YES;
+
     @try {
         Class msgWrapClass = objc_getClass("CMessageWrap");
         SEL selector = @selector(isSenderFromMsgWrap:);
         if (msgWrapClass && [msgWrapClass respondsToSelector:selector]) {
-            BOOL isSender = ((BOOL (*)(id, SEL, id))objc_msgSend)(msgWrapClass, selector, msgWrap);
-            return !isSender;
+            isSender = ((BOOL (*)(id, SEL, id))objc_msgSend)(msgWrapClass, selector, msgWrap);
+            // 主路径可信时直接采用，仅在“判为非发送者”时再做兜底补判
+            shouldFallback = !isSender;
         }
     } @catch (__unused NSException *exception) {
     }
 
-    return YES;
+    if (shouldFallback) {
+        @try {
+            // 兜底1：优先使用发送者状态字段
+            if (msgWrap.m_uiIsSenderStatus > 0) {
+                isSender = YES;
+                shouldFallback = NO;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+
+        if (shouldFallback) {
+            @try {
+                // 兜底2：兼容旧字段 m_bFromMe
+                id fromMeValue = [msgWrap valueForKey:@"m_bFromMe"];
+                if ([fromMeValue respondsToSelector:@selector(boolValue)]) {
+                    isSender = [fromMeValue boolValue];
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+
+        if (shouldFallback) {
+            @try {
+                // 兜底3：当发送者字段缺失时，用当前账号与 fromUsr 比对
+                NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+                NSString *fromUser = [msgWrap.m_nsFromUsr isKindOfClass:[NSString class]] ? msgWrap.m_nsFromUsr : nil;
+                if (selfUserName.length > 0 && fromUser.length > 0 && [fromUser isEqualToString:selfUserName]) {
+                    isSender = YES;
+                    shouldFallback = NO;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    return !isSender;
+}
+
+static BOOL wcpl_tryResolveIsSelfFromCellView(id cellView, BOOL *isSelfOut) {
+    if (!isSelfOut || !cellView) {
+        return NO;
+    }
+
+    id viewModel = nil;
+    if ([cellView respondsToSelector:@selector(viewModel)]) {
+        @try {
+            viewModel = ((id (*)(id, SEL))objc_msgSend)(cellView, @selector(viewModel));
+        } @catch (__unused NSException *exception) {
+            viewModel = nil;
+        }
+    }
+
+    if (!viewModel) {
+        @try {
+            viewModel = [cellView valueForKey:@"viewModel"];
+        } @catch (__unused NSException *exception) {
+            viewModel = nil;
+        }
+    }
+
+    if (!viewModel) {
+        return NO;
+    }
+
+    if ([viewModel respondsToSelector:@selector(isSender)]) {
+        @try {
+            BOOL isSender = ((BOOL (*)(id, SEL))objc_msgSend)(viewModel, @selector(isSender));
+            *isSelfOut = isSender;
+            return YES;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    @try {
+        id isSenderValue = [viewModel valueForKey:@"isSender"];
+        if ([isSenderValue respondsToSelector:@selector(boolValue)]) {
+            *isSelfOut = [isSenderValue boolValue];
+            return YES;
+        }
+    } @catch (__unused NSException *exception) {
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_resolveIsSelfByGeometry(UIView *cellView,
+                                         CGRect menuRect,
+                                         BOOL menuRectValid,
+                                         CGRect bubbleRect,
+                                         BOOL bubbleRectValid,
+                                         BOOL fallbackIsSelf) {
+    if (![cellView isKindOfClass:[UIView class]]) {
+        return fallbackIsSelf;
+    }
+
+    CGRect cellBounds = cellView.bounds;
+    if (CGRectIsEmpty(cellBounds) || CGRectIsNull(cellBounds) || CGRectIsInfinite(cellBounds) || CGRectGetWidth(cellBounds) <= 16.0f) {
+        return fallbackIsSelf;
+    }
+
+    BOOL (^inferFromRect)(CGRect, BOOL *) = ^BOOL(CGRect rect, BOOL *didInfer) {
+        if (didInfer) {
+            *didInfer = NO;
+        }
+
+        BOOL rectValid = !CGRectIsEmpty(rect) && !CGRectIsNull(rect) && !CGRectIsInfinite(rect) &&
+                         CGRectGetWidth(rect) > 8.0f && CGRectGetHeight(rect) > 8.0f &&
+                         CGRectIntersectsRect(rect, cellBounds);
+        if (!rectValid) {
+            return fallbackIsSelf;
+        }
+
+        CGFloat leftGap = CGRectGetMinX(rect) - CGRectGetMinX(cellBounds);
+        CGFloat rightGap = CGRectGetMaxX(cellBounds) - CGRectGetMaxX(rect);
+        CGFloat gapDelta = leftGap - rightGap;
+        if (fabs(gapDelta) > 6.0f) {
+            if (didInfer) {
+                *didInfer = YES;
+            }
+            return gapDelta > 0.0f;
+        }
+
+        CGFloat cellMidX = CGRectGetMidX(cellBounds);
+        CGFloat rectMidX = CGRectGetMidX(rect);
+        CGFloat midDelta = rectMidX - cellMidX;
+        // 靠近中轴的矩形不参与方向推断，避免大气泡跨中线时误判。
+        if (fabs(midDelta) <= 8.0f) {
+            return fallbackIsSelf;
+        }
+
+        if (didInfer) {
+            *didInfer = YES;
+        }
+        return midDelta > 0.0f;
+    };
+
+    BOOL didInfer = NO;
+    // 优先依据气泡几何，其次再看 menuRect，避免引用消息 menuRect 左偏导致自消息误判。
+    if (bubbleRectValid) {
+        BOOL inferred = inferFromRect(bubbleRect, &didInfer);
+        if (didInfer) {
+            return inferred;
+        }
+    }
+
+    if (menuRectValid) {
+        BOOL inferred = inferFromRect(menuRect, &didInfer);
+        if (didInfer) {
+            return inferred;
+        }
+    }
+
+    return fallbackIsSelf;
 }
 
 static BOOL wcpl_isMessageSettledForRepeat(CMessageWrap *msgWrap) {
@@ -240,10 +532,22 @@ static NSString *wcpl_extractXMLValue(NSString *xml, NSString *openTag, NSString
 
 static NSString *wcpl_extractQuoteTitleFromXML(NSString *xml) {
     NSString *title = wcpl_extractXMLValue(xml, @"<title><![CDATA[", @"]]></title>");
-    if (title.length > 0) {
-        return title;
+    if (title.length == 0) {
+        title = wcpl_extractXMLValue(xml, @"<title>", @"</title>");
     }
-    return wcpl_extractXMLValue(xml, @"<title>", @"</title>");
+
+    if (title.length == 0) {
+        NSString *decodedXML = wcpl_decodeBasicXMLEntities(xml);
+        if (decodedXML.length > 0 && ![decodedXML isEqualToString:xml]) {
+            title = wcpl_extractXMLValue(decodedXML, @"<title><![CDATA[", @"]]></title>");
+            if (title.length == 0) {
+                title = wcpl_extractXMLValue(decodedXML, @"<title>", @"</title>");
+            }
+        }
+    }
+
+    title = wcpl_trimTextForRepeat(title);
+    return title.length > 0 ? title : nil;
 }
 
 static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
@@ -336,8 +640,15 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
         return @"[表情]";
     }
     if (msgWrap.m_uiMessageType == 49) {
+        if (wcpl_isFileAppMessage(msgWrap)) {
+            return nil;
+        }
         if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
-            return wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
+            NSString *quoteTitle = wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
+            if (quoteTitle.length > 0) {
+                return quoteTitle;
+            }
+            return @"[引用]";
         }
         if (wcpl_isAppEmoticonMessage(msgWrap)) {
             return @"[表情]";
@@ -375,7 +686,10 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
             return config.repeatSupportVideoEnable;
         case 47:
             return config.repeatSupportEmoticonEnable;
-        case 49:
+        case 49: {
+            if (wcpl_isFileAppMessage(msgWrap)) {
+                return NO;
+            }
             if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
                 return YES;
             }
@@ -383,6 +697,7 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
                 return YES;
             }
             return NO;
+        }
         default:
             return NO;
     }
@@ -2095,12 +2410,17 @@ static NSString *wcpl_repeatMessageKey(CMessageWrap *msgWrap) {
     if (!msgWrap) {
         return @"nil";
     }
-    return [NSString stringWithFormat:@"%u_%lld_%u_%@_%@",
-            msgWrap.m_uiMesLocalID,
-            msgWrap.m_n64MesSvrID,
-            msgWrap.m_uiMessageType,
-            msgWrap.m_nsFromUsr ?: @"",
-            msgWrap.m_nsToUsr ?: @""];
+
+    long long stablePrimaryID = 0;
+    if (msgWrap.m_n64MesSvrID > 0) {
+        stablePrimaryID = msgWrap.m_n64MesSvrID;
+    } else if (msgWrap.m_uiMesLocalID > 0) {
+        stablePrimaryID = (long long)msgWrap.m_uiMesLocalID;
+    } else {
+        stablePrimaryID = (long long)msgWrap.m_uiCreateTime;
+    }
+
+    return [NSString stringWithFormat:@"m_%lld", stablePrimaryID];
 }
 
 static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap) {
@@ -2112,6 +2432,120 @@ static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap) {
             msgWrap.m_n64MesSvrID,
             msgWrap.m_uiMessageType];
 }
+
+static NSArray<NSString *> *wcpl_repeatIdentityTokens(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return @[];
+    }
+
+    NSMutableArray<NSString *> *tokens = [NSMutableArray arrayWithCapacity:4];
+    unsigned int msgType = msgWrap.m_uiMessageType;
+
+    if (msgWrap.m_n64MesSvrID > 0) {
+        [tokens addObject:[NSString stringWithFormat:@"s:%u:%lld", msgType, msgWrap.m_n64MesSvrID]];
+        [tokens addObject:[NSString stringWithFormat:@"s:*:%lld", msgWrap.m_n64MesSvrID]];
+    }
+    if (msgWrap.m_uiMesLocalID > 0) {
+        [tokens addObject:[NSString stringWithFormat:@"l:%u:%u", msgType, msgWrap.m_uiMesLocalID]];
+    }
+    if (msgWrap.m_uiCreateTime > 0) {
+        [tokens addObject:[NSString stringWithFormat:@"c:%u:%u", msgType, msgWrap.m_uiCreateTime]];
+    }
+
+    return tokens;
+}
+
+static long long wcpl_quoteReferServerIDFromContent(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return 0;
+    }
+
+    NSArray<NSArray<NSString *> *> *tagPairs = @[
+        @[@"<svrid><![CDATA[", @"]]></svrid>"],
+        @[@"<svrid>", @"</svrid>"],
+        @[@"<msgsvrid><![CDATA[", @"]]></msgsvrid>"],
+        @[@"<msgsvrid>", @"</msgsvrid>"]
+    ];
+
+    long long (^extractServerIDFromXML)(NSString *) = ^long long(NSString *xml) {
+        if (![xml isKindOfClass:[NSString class]] || xml.length == 0) {
+            return 0;
+        }
+
+        for (NSArray<NSString *> *pair in tagPairs) {
+            if (pair.count != 2) {
+                continue;
+            }
+            NSString *value = wcpl_extractXMLValue(xml, pair[0], pair[1]);
+            if (![value isKindOfClass:[NSString class]] || value.length == 0) {
+                continue;
+            }
+            long long svrID = strtoll(value.UTF8String, NULL, 10);
+            if (svrID > 0) {
+                return svrID;
+            }
+        }
+
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<(?:msg)?svrid>(?:<!\\[CDATA\\[)?([0-9]{5,})(?:\\]\\]>)?</(?:msg)?svrid>" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSTextCheckingResult *match = [regex firstMatchInString:xml options:0 range:NSMakeRange(0, xml.length)];
+        if (!match || match.numberOfRanges < 2 || match.range.location == NSNotFound) {
+            return 0;
+        }
+
+        NSString *value = [xml substringWithRange:[match rangeAtIndex:1]];
+        if (![value isKindOfClass:[NSString class]] || value.length == 0) {
+            return 0;
+        }
+
+        long long svrID = strtoll(value.UTF8String, NULL, 10);
+        return svrID > 0 ? svrID : 0;
+    };
+
+    NSString *referSection = wcpl_extractXMLValue(content, @"<refermsg>", @"</refermsg>");
+    if (referSection.length == 0) {
+        NSRegularExpression *referRegex = [NSRegularExpression regularExpressionWithPattern:@"<refermsg[^>]*>([\\s\\S]*?)</refermsg>" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSTextCheckingResult *referMatch = [referRegex firstMatchInString:content options:0 range:NSMakeRange(0, content.length)];
+        if (referMatch && referMatch.numberOfRanges >= 2 && referMatch.range.location != NSNotFound) {
+            referSection = [content substringWithRange:[referMatch rangeAtIndex:1]];
+        }
+    }
+
+    if (referSection.length == 0) {
+        NSString *decodedContent = [[[content stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"]
+                                    stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"]
+                                   stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+        if (decodedContent.length > 0 && ![decodedContent isEqualToString:content]) {
+            referSection = wcpl_extractXMLValue(decodedContent, @"<refermsg>", @"</refermsg>");
+            if (referSection.length == 0) {
+                NSRegularExpression *referRegex = [NSRegularExpression regularExpressionWithPattern:@"<refermsg[^>]*>([\\s\\S]*?)</refermsg>" options:NSRegularExpressionCaseInsensitive error:nil];
+                NSTextCheckingResult *referMatch = [referRegex firstMatchInString:decodedContent options:0 range:NSMakeRange(0, decodedContent.length)];
+                if (referMatch && referMatch.numberOfRanges >= 2 && referMatch.range.location != NSNotFound) {
+                    referSection = [decodedContent substringWithRange:[referMatch rangeAtIndex:1]];
+                }
+            }
+        }
+    }
+
+    if (referSection.length > 0) {
+        long long referSvrID = extractServerIDFromXML(referSection);
+        if (referSvrID > 0) {
+            return referSvrID;
+        }
+
+        NSString *decodedRefer = [[[referSection stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"]
+                                 stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"]
+                                stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+        if (decodedRefer.length > 0 && ![decodedRefer isEqualToString:referSection]) {
+            referSvrID = extractServerIDFromXML(decodedRefer);
+            if (referSvrID > 0) {
+                return referSvrID;
+            }
+        }
+    }
+
+    return 0;
+}
+
 
 static CGFloat wcpl_repeatAlignToPixel(CGFloat value) {
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -2129,6 +2563,144 @@ static BOOL wcpl_repeatRectAlmostEqual(CGRect left, CGRect right) {
            fabs(left.size.height - right.size.height) <= epsilon;
 }
 
+static NSString *wcpl_repeatAnchorSignatureForCell(UIView *cellView, NSString *messageKey, BOOL isSelf, UIView *bubbleView) {
+    if (![cellView isKindOfClass:[UIView class]] || ![messageKey isKindOfClass:[NSString class]] || messageKey.length == 0) {
+        return nil;
+    }
+
+    CGRect bubbleRect = CGRectZero;
+    BOOL bubbleRectValid = NO;
+    if ([bubbleView isKindOfClass:[UIView class]]) {
+        bubbleRect = [cellView convertRect:bubbleView.bounds fromView:bubbleView];
+        if (CGRectIsEmpty(bubbleRect) || CGRectGetWidth(bubbleRect) <= 0.0f || CGRectGetHeight(bubbleRect) <= 0.0f) {
+            UIView *sourceSuperview = bubbleView.superview;
+            if (sourceSuperview) {
+                bubbleRect = [cellView convertRect:bubbleView.frame fromView:sourceSuperview];
+            } else if (bubbleView == cellView) {
+                bubbleRect = cellView.bounds;
+            }
+        }
+        bubbleRectValid = !CGRectIsNull(bubbleRect) && !CGRectIsInfinite(bubbleRect) && CGRectGetWidth(bubbleRect) > 0.5f && CGRectGetHeight(bubbleRect) > 0.5f;
+    }
+
+    CGRect bubbleRectForAnchor = bubbleRect;
+    BOOL bubbleRectForAnchorValid = !CGRectIsEmpty(bubbleRectForAnchor) && !CGRectIsNull(bubbleRectForAnchor) && !CGRectIsInfinite(bubbleRectForAnchor) && CGRectGetWidth(bubbleRectForAnchor) > 8.0f && CGRectGetHeight(bubbleRectForAnchor) > 8.0f;
+
+    if (!bubbleRectValid) {
+        bubbleRect = cellView.bounds;
+    }
+
+    CGRect menuRect = CGRectZero;
+    if ([cellView respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            menuRect = ((CGRect (*)(id, SEL))objc_msgSend)(cellView, @selector(showRectForMenuController));
+        } @catch (__unused NSException *exception) {
+            menuRect = CGRectZero;
+        }
+    }
+
+    BOOL menuRectValid = !CGRectIsEmpty(menuRect) && !CGRectIsNull(menuRect) && !CGRectIsInfinite(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, cellView.bounds);
+
+    CGRect baseRect = CGRectZero;
+    if (bubbleRectForAnchorValid) {
+        baseRect = bubbleRectForAnchor;
+    } else if (menuRectValid) {
+        baseRect = menuRect;
+    } else {
+        baseRect = cellView.bounds;
+    }
+
+    CGFloat anchorMaxY = bubbleRectForAnchorValid ? CGRectGetMaxY(bubbleRectForAnchor) : CGRectGetMaxY(baseRect);
+    if (menuRectValid) {
+        anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(menuRect));
+    }
+    if (bubbleView == cellView) {
+        anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(cellView.bounds));
+    }
+
+    CGFloat rx = wcpl_repeatAlignToPixel(CGRectGetMinX(bubbleRect));
+    CGFloat ry = wcpl_repeatAlignToPixel(CGRectGetMinY(bubbleRect));
+    CGFloat rw = wcpl_repeatAlignToPixel(CGRectGetWidth(bubbleRect));
+    CGFloat rh = wcpl_repeatAlignToPixel(CGRectGetHeight(bubbleRect));
+
+    CGFloat mx = menuRectValid ? wcpl_repeatAlignToPixel(CGRectGetMinX(menuRect)) : 0.0f;
+    CGFloat my = menuRectValid ? wcpl_repeatAlignToPixel(CGRectGetMinY(menuRect)) : 0.0f;
+    CGFloat mw = menuRectValid ? wcpl_repeatAlignToPixel(CGRectGetWidth(menuRect)) : 0.0f;
+    CGFloat mh = menuRectValid ? wcpl_repeatAlignToPixel(CGRectGetHeight(menuRect)) : 0.0f;
+    CGFloat anchorY = wcpl_repeatAlignToPixel(anchorMaxY);
+    CGFloat cellWidth = wcpl_repeatAlignToPixel(CGRectGetWidth(cellView.bounds));
+    CGFloat cellHeight = wcpl_repeatAlignToPixel(CGRectGetHeight(cellView.bounds));
+
+    return [NSString stringWithFormat:@"%@|%@|%.2f,%.2f,%.2f,%.2f|m:%d,%.2f,%.2f,%.2f,%.2f|a:%.2f|c:%.2f,%.2f",
+            messageKey,
+            isSelf ? @"self" : @"other",
+            rx,
+            ry,
+            rw,
+            rh,
+            menuRectValid ? 1 : 0,
+            mx,
+            my,
+            mw,
+            mh,
+            anchorY,
+            cellWidth,
+            cellHeight];
+}
+
+static CGFloat wcpl_repeatButtonSizeFromConfig(void) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    CGFloat size = config ? config.repeatButtonSize : kWCPLRepeatButtonDefaultSize;
+    if (size < kWCPLRepeatButtonMinSize) {
+        size = kWCPLRepeatButtonMinSize;
+    } else if (size > kWCPLRepeatButtonMaxSize) {
+        size = kWCPLRepeatButtonMaxSize;
+    }
+    return size;
+}
+
+static void wcpl_setupRepeatLifecycleObserver(void) {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        void (^handleResignOrBackground)(__unused NSNotification *note) = ^(__unused NSNotification *note) {
+            gWCPLRepeatRefreshGateEnabled = YES;
+            gWCPLRepeatNeedFullResync = YES;
+            gWCPLRepeatRefreshRoundCounter = 0;
+            wcpl_clearRepeatOwnerMaps();
+            wcpl_forceClearRepeatButtonsInAllWindows();
+        };
+        [center addObserverForName:UIApplicationWillResignActiveNotification
+                            object:nil
+                             queue:[NSOperationQueue mainQueue]
+                        usingBlock:handleResignOrBackground];
+        [center addObserverForName:UIApplicationDidEnterBackgroundNotification
+                            object:nil
+                             queue:[NSOperationQueue mainQueue]
+                        usingBlock:handleResignOrBackground];
+        [center addObserverForName:UIApplicationDidBecomeActiveNotification
+                            object:nil
+                             queue:[NSOperationQueue mainQueue]
+                        usingBlock:^(__unused NSNotification *note) {
+            gWCPLRepeatRefreshGateEnabled = YES;
+            gWCPLRepeatResumeSuppressUntil = CACurrentMediaTime() + 0.70;
+            gWCPLRepeatNeedFullResync = YES;
+            gWCPLRepeatRefreshRoundCounter = 0;
+
+            wcpl_clearRepeatOwnerMaps();
+            wcpl_forceClearRepeatButtonsInAllWindows();
+
+            Class cellClass = %c(CommonMessageCellView);
+            if (cellClass && [cellClass respondsToSelector:@selector(wchook_scheduleGlobalRepeatButtonRefresh)]) {
+                ((void (*)(id, SEL))objc_msgSend)(cellClass, @selector(wchook_scheduleGlobalRepeatButtonRefresh));
+            }
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.85 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                gWCPLRepeatRefreshGateEnabled = NO;
+            });
+        }];
+    });
+}
+
 static NSMapTable<NSString *, UIView *> *wcpl_repeatOwnerViewMap(void) {
     static NSMapTable<NSString *, UIView *> *ownerMap;
     static dispatch_once_t onceToken;
@@ -2138,6 +2710,238 @@ static NSMapTable<NSString *, UIView *> *wcpl_repeatOwnerViewMap(void) {
                                                   capacity:128];
     });
     return ownerMap;
+}
+
+static NSMutableDictionary<NSString *, NSNumber *> *wcpl_repeatOwnerRankMap(void) {
+    static NSMutableDictionary<NSString *, NSNumber *> *rankMap;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        rankMap = [NSMutableDictionary dictionaryWithCapacity:128];
+    });
+    return rankMap;
+}
+
+static NSMutableDictionary<NSString *, UIButton *> *wcpl_repeatGlobalButtonMap(void) {
+    static NSMutableDictionary<NSString *, UIButton *> *buttonMap;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        buttonMap = [NSMutableDictionary dictionaryWithCapacity:128];
+    });
+    return buttonMap;
+}
+
+static void wcpl_bindRepeatButtonTargetsToOwner(UIButton *button, id owner) {
+    if (![button isKindOfClass:[UIButton class]] || !owner) {
+        return;
+    }
+    [button removeTarget:nil action:@selector(wchook_onRepeatButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [button removeTarget:nil action:@selector(wchook_onRepeatButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [button removeTarget:nil action:@selector(wchook_onRepeatButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+
+    [button addTarget:owner action:@selector(wchook_onRepeatButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:owner action:@selector(wchook_onRepeatButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:owner action:@selector(wchook_onRepeatButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+}
+
+static void wcpl_removeRepeatButtonFromGlobalMap(NSMutableDictionary<NSString *, UIButton *> *buttonMap, UIButton *button, NSString *messageKey) {
+    if (![buttonMap isKindOfClass:[NSMutableDictionary class]] || ![button isKindOfClass:[UIButton class]]) {
+        return;
+    }
+
+    NSMutableArray<NSString *> *keysToRemove = [NSMutableArray arrayWithCapacity:2];
+    if ([messageKey isKindOfClass:[NSString class]] && messageKey.length > 0 && buttonMap[messageKey] == button) {
+        [keysToRemove addObject:messageKey];
+    }
+
+    for (NSString *key in [buttonMap allKeys]) {
+        if (buttonMap[key] != button || [keysToRemove containsObject:key]) {
+            continue;
+        }
+        [keysToRemove addObject:key];
+    }
+
+    for (NSString *key in keysToRemove) {
+        [buttonMap removeObjectForKey:key];
+        wcpl_setRepeatOwnerViewForMessageKey(key, nil);
+    }
+}
+
+static void wcpl_collectGlobalRepeatButtonsInView(UIView *root, NSMutableDictionary<NSString *, UIButton *> *storage) {
+    if (![root isKindOfClass:[UIView class]] || !storage) {
+        return;
+    }
+
+    for (UIView *subview in root.subviews) {
+        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
+            UIButton *button = (UIButton *)subview;
+            NSString *messageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
+            if ([messageKey isKindOfClass:[NSString class]] && messageKey.length > 0 && !storage[messageKey]) {
+                storage[messageKey] = button;
+            }
+        }
+        wcpl_collectGlobalRepeatButtonsInView(subview, storage);
+    }
+}
+
+static void wcpl_clearRepeatAnchorForCell(UIView *cellView) {
+    if (![cellView isKindOfClass:[UIView class]]) {
+        return;
+    }
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorMessageKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorWrapKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorReportTimeKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorIsSelfKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorSignatureKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorQuoteProxyKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(cellView, kWCPLRepeatAnchorQuoteReferSvrIDKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+static NSArray<UIWindow *> *wcpl_applicationWindows(void) {
+    UIApplication *application = nil;
+    if ([UIApplication respondsToSelector:@selector(sharedApplication)]) {
+        @try {
+            application = [UIApplication sharedApplication];
+        } @catch (__unused NSException *exception) {
+            application = nil;
+        }
+    }
+    if (!application) {
+        return @[];
+    }
+
+    NSArray *windows = nil;
+    SEL windowsSelector = NSSelectorFromString(@"windows");
+    if ([application respondsToSelector:windowsSelector]) {
+        @try {
+            windows = ((id (*)(id, SEL))objc_msgSend)(application, windowsSelector);
+        } @catch (__unused NSException *exception) {
+            windows = nil;
+        }
+    }
+    if (![windows isKindOfClass:[NSArray class]] || windows.count == 0) {
+        return @[];
+    }
+
+    NSMutableArray<UIWindow *> *result = [NSMutableArray arrayWithCapacity:windows.count];
+    for (id windowObj in windows) {
+        if (![windowObj isKindOfClass:[UIWindow class]]) {
+            continue;
+        }
+        UIWindow *window = (UIWindow *)windowObj;
+        if (window.hidden || window.alpha < 0.01f) {
+            continue;
+        }
+        [result addObject:window];
+    }
+    return [result copy];
+}
+
+static void wcpl_clearRepeatOwnerMaps(void) {
+    NSMapTable<NSString *, UIView *> *ownerMap = wcpl_repeatOwnerViewMap();
+    NSMutableDictionary<NSString *, NSNumber *> *rankMap = wcpl_repeatOwnerRankMap();
+    NSArray<NSString *> *keys = [rankMap allKeys];
+    for (NSString *key in keys) {
+        [ownerMap removeObjectForKey:key];
+    }
+    [rankMap removeAllObjects];
+}
+
+static void wcpl_forceClearRepeatButtonsInRootView(UIView *rootView) {
+    if (![rootView isKindOfClass:[UIView class]]) {
+        return;
+    }
+
+    NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+    wcpl_collectRepeatButtonsFromView(rootView, buttons);
+    for (UIButton *button in buttons) {
+        [button removeFromSuperview];
+    }
+
+    NSMutableArray<UIView *> *messageViews = [NSMutableArray array];
+    wcpl_collectMessageCellViewsInView(rootView, messageViews);
+    for (UIView *messageView in messageViews) {
+        objc_setAssociatedObject(messageView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(messageView, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        wcpl_clearRepeatAnchorForCell(messageView);
+    }
+}
+
+static void wcpl_forceClearRepeatButtonsInAllWindows(void) {
+    NSMutableDictionary<NSString *, UIButton *> *globalButtonMap = wcpl_repeatGlobalButtonMap();
+    for (UIButton *button in [globalButtonMap allValues]) {
+        [button removeFromSuperview];
+    }
+    [globalButtonMap removeAllObjects];
+
+    NSArray<UIWindow *> *windows = wcpl_applicationWindows();
+    for (UIWindow *window in windows) {
+        wcpl_forceClearRepeatButtonsInRootView(window);
+    }
+}
+
+static BOOL wcpl_pruneGlobalRepeatButtonsMapLightweight(void) {
+    NSMutableDictionary<NSString *, UIButton *> *globalButtonMap = wcpl_repeatGlobalButtonMap();
+    BOOL foundMismatch = NO;
+
+    for (NSString *messageKey in [globalButtonMap allKeys]) {
+        UIButton *button = globalButtonMap[messageKey];
+        BOOL shouldRemove = NO;
+        if (![button isKindOfClass:[UIButton class]]) {
+            shouldRemove = YES;
+        } else if (!button.superview || !button.window || button.hidden || button.alpha < 0.01f) {
+            shouldRemove = YES;
+        } else {
+            NSString *buttonMessageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
+            if (![buttonMessageKey isKindOfClass:[NSString class]] || buttonMessageKey.length == 0 || ![buttonMessageKey isEqualToString:messageKey]) {
+                shouldRemove = YES;
+                foundMismatch = YES;
+            }
+        }
+
+        if (shouldRemove) {
+            [button removeFromSuperview];
+            [globalButtonMap removeObjectForKey:messageKey];
+            wcpl_setRepeatOwnerViewForMessageKey(messageKey, nil);
+        }
+    }
+
+    return foundMismatch;
+}
+
+static void wcpl_resyncGlobalRepeatButtonsMap(void) {
+    NSMutableDictionary<NSString *, UIButton *> *globalButtonMap = wcpl_repeatGlobalButtonMap();
+
+    NSArray<NSString *> *existingKeys = [globalButtonMap allKeys];
+    for (NSString *messageKey in existingKeys) {
+        UIButton *button = globalButtonMap[messageKey];
+        if (![button isKindOfClass:[UIButton class]] || !button.superview) {
+            [globalButtonMap removeObjectForKey:messageKey];
+        }
+    }
+
+    NSArray<UIWindow *> *windows = wcpl_applicationWindows();
+    NSMutableDictionary<NSString *, UIButton *> *scannedButtons = [NSMutableDictionary dictionaryWithCapacity:64];
+    for (UIWindow *window in windows) {
+        wcpl_collectGlobalRepeatButtonsInView(window, scannedButtons);
+    }
+
+    for (NSString *messageKey in scannedButtons) {
+        UIButton *button = scannedButtons[messageKey];
+        UIButton *mapped = globalButtonMap[messageKey];
+        if (![mapped isKindOfClass:[UIButton class]] || mapped != button) {
+            globalButtonMap[messageKey] = button;
+        }
+    }
+
+    for (NSString *messageKey in [globalButtonMap allKeys]) {
+        if (scannedButtons[messageKey]) {
+            continue;
+        }
+        UIButton *button = globalButtonMap[messageKey];
+        [button removeFromSuperview];
+        [globalButtonMap removeObjectForKey:messageKey];
+        wcpl_setRepeatOwnerViewForMessageKey(messageKey, nil);
+    }
 }
 
 static UIView *wcpl_repeatOwnerViewForMessageKey(NSString *messageKey) {
@@ -2152,28 +2956,33 @@ static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *o
         return;
     }
     NSMapTable<NSString *, UIView *> *map = wcpl_repeatOwnerViewMap();
+    NSMutableDictionary<NSString *, NSNumber *> *rankMap = wcpl_repeatOwnerRankMap();
     if (ownerView) {
         [map setObject:ownerView forKey:messageKey];
+        rankMap[messageKey] = @((uintptr_t)ownerView);
     } else {
         [map removeObjectForKey:messageKey];
+        [rankMap removeObjectForKey:messageKey];
     }
 }
 
 @interface CommonMessageCellView (WCPLRepeatButton)
-- (UIButton *)wchook_repeatButton;
-- (NSArray<UIButton *> *)wchook_allRepeatButtons;
-- (void)wchook_removeRepeatButtonsExcept:(UIButton *)keeper;
++ (void)wchook_scheduleGlobalRepeatButtonRefresh;
++ (void)wchook_scheduleGlobalRepeatButtonRefreshAfterDelay:(NSTimeInterval)delay;
++ (void)wchook_scheduleGlobalRepeatButtonSettleRefresh;
++ (void)wchook_runGlobalRepeatButtonRefresh;
++ (UIButton *)wchook_globalRepeatButtonForMessageKey:(NSString *)messageKey owner:(id)owner createIfNeeded:(BOOL)createIfNeeded;
 - (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap;
 - (UIImpactFeedbackGenerator *)wchook_repeatTapFeedbackGenerator;
 - (UIView *)wchook_bubbleAnchorView;
 - (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf;
 - (UIButton *)wchook_buildRepeatButton;
+- (void)wchook_clearRepeatAnchorAndLegacyButton;
+- (BOOL)wchook_reportRepeatAnchorIfNeeded;
 - (void)wchook_removeRepeatButtonIfNeeded;
-- (void)wchook_cleanupCrossViewDuplicateRepeatButtonsForMessageKey:(NSString *)messageKey keeper:(UIButton *)keeper;
 - (void)wchook_updateRepeatButtonIfNeeded;
 - (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap;
 - (CGRect)showRectForMenuController;
-- (UIView *)getBgImageView;
 @end
 
 static UITableView *wcpl_findContainingTableView(UIView *view) {
@@ -2183,6 +2992,32 @@ static UITableView *wcpl_findContainingTableView(UIView *view) {
             return (UITableView *)current;
         }
         current = current.superview;
+    }
+    return nil;
+}
+
+// 浅层查找任意正在拖拽的 UITableView（最多 3 层深度）
+static UITableView *wcpl_findAnyScrollingTableView(void) {
+    NSArray<UIWindow *> *windows = wcpl_applicationWindows();
+    for (UIWindow *window in windows) {
+        for (UIView *child1 in window.subviews) {
+            if ([child1 isKindOfClass:[UITableView class]]) {
+                UITableView *tv = (UITableView *)child1;
+                if (tv.isDragging) return tv;
+            }
+            for (UIView *child2 in child1.subviews) {
+                if ([child2 isKindOfClass:[UITableView class]]) {
+                    UITableView *tv = (UITableView *)child2;
+                    if (tv.isDragging) return tv;
+                }
+                for (UIView *child3 in child2.subviews) {
+                    if ([child3 isKindOfClass:[UITableView class]]) {
+                        UITableView *tv = (UITableView *)child3;
+                        if (tv.isDragging) return tv;
+                    }
+                }
+            }
+        }
     }
     return nil;
 }
@@ -2207,34 +3042,46 @@ static void wcpl_collectMessageCellViewsInView(UIView *root, NSMutableArray<UIVi
     }
 }
 
-static NSArray<UIView *> *wcpl_visibleMessageViewsForMessageKey(UITableView *tableView, NSString *messageKey) {
-    if (![tableView isKindOfClass:[UITableView class]] || messageKey.length == 0) {
-        return @[];
+static BOOL wcpl_measureViewGeometryInTable(UIView *candidate,
+                                            UITableView *tableView,
+                                            CGFloat *maxYOut,
+                                            CGFloat *visibleAreaOut) {
+    if (![candidate isKindOfClass:[UIView class]] ||
+        ![tableView isKindOfClass:[UITableView class]] ||
+        !candidate.window ||
+        candidate.hidden ||
+        candidate.alpha < 0.01f) {
+        return NO;
     }
 
-    NSMutableArray<UIView *> *matchedViews = [NSMutableArray array];
-    for (UITableViewCell *cell in [tableView visibleCells]) {
-        if (![cell isKindOfClass:[UITableViewCell class]]) {
-            continue;
-        }
+    CGFloat maxY = -CGFLOAT_MAX;
+    CGFloat visibleArea = 0.0f;
+    BOOL hasValidGeometry = NO;
+    @try {
+        CGRect rectInTable = [candidate convertRect:candidate.bounds toView:tableView];
+        maxY = CGRectGetMaxY(rectInTable);
+        hasValidGeometry = !isnan(maxY) && !isinf(maxY);
 
-        UIView *rootView = cell.contentView ?: (UIView *)cell;
-        NSMutableArray<UIView *> *messageViews = [NSMutableArray array];
-        wcpl_collectMessageCellViewsInView(rootView, messageViews);
-
-        for (UIView *messageView in messageViews) {
-            CMessageWrap *wrap = wcpl_messageWrapForCellView(messageView);
-            NSString *candidateMessageKey = wcpl_repeatMessageKey(wrap);
-            if (![candidateMessageKey isEqualToString:messageKey]) {
-                continue;
-            }
-            if (![matchedViews containsObject:messageView]) {
-                [matchedViews addObject:messageView];
-            }
+        CGRect visibleRect = CGRectIntersection(rectInTable, tableView.bounds);
+        if (!CGRectIsNull(visibleRect) && !CGRectIsEmpty(visibleRect)) {
+            visibleArea = CGRectGetWidth(visibleRect) * CGRectGetHeight(visibleRect);
         }
+    } @catch (__unused NSException *exception) {
+        hasValidGeometry = NO;
+        visibleArea = 0.0f;
     }
 
-    return [matchedViews copy];
+    if (!hasValidGeometry) {
+        return NO;
+    }
+
+    if (maxYOut) {
+        *maxYOut = maxY;
+    }
+    if (visibleAreaOut) {
+        *visibleAreaOut = visibleArea;
+    }
+    return YES;
 }
 
 static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableView *tableView, UIView *fallback) {
@@ -2242,36 +3089,26 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
         return fallback;
     }
 
+    CMessageWrap *fallbackWrap = wcpl_messageWrapForCellView(fallback);
+    NSString *mappedKey = wcpl_repeatMessageKey(fallbackWrap);
+    NSNumber *stickyRank = nil;
+    if (mappedKey.length > 0) {
+        stickyRank = wcpl_repeatOwnerRankMap()[mappedKey];
+    }
+
     UIView *ownerView = nil;
     CGFloat ownerMaxY = -CGFLOAT_MAX;
     CGFloat ownerVisibleArea = -1.0f;
+    uintptr_t ownerRank = 0;
 
     for (UIView *candidate in views) {
-        if (![candidate isKindOfClass:[UIView class]] || !candidate.window || candidate.hidden || candidate.alpha < 0.01f) {
-            continue;
-        }
-
         CGFloat maxY = -CGFLOAT_MAX;
         CGFloat visibleArea = 0.0f;
-        BOOL hasValidGeometry = NO;
-        @try {
-            CGRect rectInTable = [candidate convertRect:candidate.bounds toView:tableView];
-            maxY = CGRectGetMaxY(rectInTable);
-            hasValidGeometry = !isnan(maxY) && !isinf(maxY);
-
-            CGRect visibleRect = CGRectIntersection(rectInTable, tableView.bounds);
-            if (!CGRectIsNull(visibleRect) && !CGRectIsEmpty(visibleRect)) {
-                visibleArea = CGRectGetWidth(visibleRect) * CGRectGetHeight(visibleRect);
-            }
-        } @catch (__unused NSException *exception) {
-            hasValidGeometry = NO;
-            visibleArea = 0.0f;
-        }
-
-        if (!hasValidGeometry) {
+        if (!wcpl_measureViewGeometryInTable(candidate, tableView, &maxY, &visibleArea)) {
             continue;
         }
 
+        uintptr_t candidateRank = (uintptr_t)candidate;
         BOOL shouldReplace = NO;
         if (!ownerView) {
             shouldReplace = YES;
@@ -2281,9 +3118,15 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
             if (visibleArea > ownerVisibleArea + 0.5f) {
                 shouldReplace = YES;
             } else if (fabs(visibleArea - ownerVisibleArea) <= 0.5f) {
-                uintptr_t candidateAddr = (uintptr_t)candidate;
-                uintptr_t ownerAddr = (uintptr_t)ownerView;
-                if (candidateAddr < ownerAddr) {
+                if (stickyRank) {
+                    uintptr_t stickyValue = (uintptr_t)stickyRank.unsignedLongLongValue;
+                    BOOL ownerIsSticky = (ownerRank == stickyValue);
+                    BOOL candidateIsSticky = (candidateRank == stickyValue);
+                    if (!ownerIsSticky && candidateIsSticky) {
+                        shouldReplace = YES;
+                    }
+                }
+                if (!shouldReplace && candidateRank < ownerRank) {
                     shouldReplace = YES;
                 }
             }
@@ -2293,6 +3136,7 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
             ownerView = candidate;
             ownerMaxY = maxY;
             ownerVisibleArea = visibleArea;
+            ownerRank = candidateRank;
         }
     }
 
@@ -2305,66 +3149,650 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
 
 %hook CommonMessageCellView
 
++ (void)load {
+    %orig;
+    wcpl_setupRepeatLifecycleObserver();
+}
+
 %property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
 %property(nonatomic, strong) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
 %property(nonatomic, assign) BOOL wchook_feedbackTriggered;
 %property(nonatomic, assign) NSInteger wchook_swipeTriggerStage;
 
 %new
-- (UIButton *)wchook_repeatButton {
-    UIButton *cachedButton = objc_getAssociatedObject(self, kWCPLRepeatButtonViewKey);
-    if ([cachedButton isKindOfClass:[UIButton class]] &&
-        cachedButton.tag == kWCPLRepeatButtonTag &&
-        cachedButton.superview &&
-        [cachedButton isDescendantOfView:self]) {
-        return cachedButton;
++ (void)wchook_runGlobalRepeatButtonRefresh {
+    CFTimeInterval now = CACurrentMediaTime();
+    if ((now - gWCPLRepeatLastRefreshAt) < kWCPLRepeatRefreshThrottleInterval) {
+        [self wchook_scheduleGlobalRepeatButtonRefreshAfterDelay:kWCPLRepeatRefreshThrottleInterval];
+        return;
     }
 
-    NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
-    if (buttons.count == 0) {
-        objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return nil;
+    gWCPLRepeatGlobalRefreshPending = NO;
+    gWCPLRepeatLastRefreshAt = now;
+
+    // 滚动拖拽期间延迟全局刷新，避免大量字典分配和视图树遍历
+    UITableView *scrollingTable = wcpl_findAnyScrollingTableView();
+    if (scrollingTable && scrollingTable.isDragging) {
+        [self wchook_scheduleGlobalRepeatButtonRefreshAfterDelay:0.25];
+        return;
     }
 
-    UIButton *keeper = buttons.firstObject;
-    if (buttons.count > 1) {
-        [self wchook_removeRepeatButtonsExcept:keeper];
-        WCPLLogWarning(@"Repeat button dedup in cell: class=%@ removed=%lu", NSStringFromClass([self class]), (unsigned long)(buttons.count - 1));
+    if (now < gWCPLRepeatResumeSuppressUntil) {
+        wcpl_forceClearRepeatButtonsInAllWindows();
+        return;
     }
-    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, keeper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return keeper;
-}
 
-%new
-- (NSArray<UIButton *> *)wchook_allRepeatButtons {
-    NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
-    for (UIView *subview in self.subviews) {
-        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
-            [buttons addObject:(UIButton *)subview];
+    BOOL gateEnabled = gWCPLRepeatRefreshGateEnabled;
+    NSArray<UIWindow *> *windows = wcpl_applicationWindows();
+    if (windows.count == 0) {
+        return;
+    }
+
+    gWCPLRepeatRefreshRoundCounter += 1;
+    BOOL needPeriodicResync = (gWCPLRepeatRefreshRoundCounter % kWCPLRepeatFullResyncInterval) == 0;
+    BOOL lightweightMapMismatch = wcpl_pruneGlobalRepeatButtonsMapLightweight();
+    BOOL shouldFullResync = gWCPLRepeatNeedFullResync || needPeriodicResync || lightweightMapMismatch;
+    if (shouldFullResync) {
+        wcpl_resyncGlobalRepeatButtonsMap();
+        gWCPLRepeatNeedFullResync = NO;
+    }
+
+    NSMutableDictionary<NSString *, UIView *> *ownerByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, CMessageWrap *> *wrapByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *isSelfByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *quoteProxyByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *quoteProxyReferSvrIDByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, UIView *> *nonProxyOwnerByIdentityToken = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, CMessageWrap *> *nonProxyWrapByIdentityToken = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *nonProxyIsSelfByIdentityToken = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, UIView *> *visibleOwnerByIdentityToken = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, CMessageWrap *> *visibleWrapByIdentityToken = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *visibleIsSelfByIdentityToken = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, UIView *> *visibleNonQuoteOwnerByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, CMessageWrap *> *visibleNonQuoteWrapByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *visibleNonQuoteIsSelfByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, UIView *> *visibleAnchorOwnerByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, CMessageWrap *> *visibleAnchorWrapByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *visibleAnchorIsSelfByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString *, NSNumber *> *visibleAnchorQuoteProxyByMessageKey = [NSMutableDictionary dictionary];
+    NSMutableSet<NSString *> *activeMessageKeys = [NSMutableSet set];
+    NSMutableArray<UIView *> *staleAnchorCells = [NSMutableArray array];
+
+    for (UIWindow *window in windows) {
+        NSMutableArray<UIView *> *messageViews = [NSMutableArray array];
+        wcpl_collectMessageCellViewsInView(window, messageViews);
+
+        for (UIView *messageView in messageViews) {
+            if (![messageView isKindOfClass:%c(CommonMessageCellView)]) {
+                continue;
+            }
+
+            BOOL messageViewVisible = messageView.window && !messageView.hidden && messageView.alpha >= 0.01f;
+
+            CMessageWrap *cellWrap = wcpl_messageWrapForCellView(messageView);
+            if ([cellWrap isKindOfClass:objc_getClass("CMessageWrap")] && messageViewVisible) {
+                BOOL cellIsSelf = !wcpl_isMessageFromOther(cellWrap);
+                BOOL resolvedCellIsSelf = NO;
+                if (wcpl_tryResolveIsSelfFromCellView(messageView, &resolvedCellIsSelf)) {
+                    cellIsSelf = resolvedCellIsSelf;
+                }
+                NSArray<NSString *> *visibleTokens = wcpl_repeatIdentityTokens(cellWrap);
+                for (NSString *token in visibleTokens) {
+                    if (![token isKindOfClass:[NSString class]] || token.length == 0) {
+                        continue;
+                    }
+
+                    UIView *existingOwner = visibleOwnerByIdentityToken[token];
+                    if (existingOwner) {
+                        CMessageWrap *existingWrap = visibleWrapByIdentityToken[token];
+                        BOOL existingQuoteType = [existingWrap isKindOfClass:objc_getClass("CMessageWrap")] && existingWrap.m_uiMessageType == 49;
+                        BOOL candidateQuoteType = cellWrap.m_uiMessageType == 49;
+                        if (!(existingQuoteType && !candidateQuoteType)) {
+                            continue;
+                        }
+                    }
+
+                    visibleOwnerByIdentityToken[token] = messageView;
+                    visibleWrapByIdentityToken[token] = cellWrap;
+                    visibleIsSelfByIdentityToken[token] = @(cellIsSelf);
+                }
+
+                if (cellWrap.m_uiMessageType != 49) {
+                    NSString *visibleMessageKey = wcpl_repeatMessageKey(cellWrap);
+                    if ([visibleMessageKey isKindOfClass:[NSString class]] && visibleMessageKey.length > 0) {
+                        UIView *existingOwner = visibleNonQuoteOwnerByMessageKey[visibleMessageKey];
+                        if (!existingOwner) {
+                            visibleNonQuoteOwnerByMessageKey[visibleMessageKey] = messageView;
+                            visibleNonQuoteWrapByMessageKey[visibleMessageKey] = cellWrap;
+                            visibleNonQuoteIsSelfByMessageKey[visibleMessageKey] = @(cellIsSelf);
+                        } else {
+                            UITableView *tableView = wcpl_findContainingTableView(messageView) ?: wcpl_findContainingTableView(existingOwner);
+                            UIView *resolvedOwner = wcpl_selectBottomMostOwnerView(@[existingOwner, messageView], tableView, existingOwner);
+                            if (resolvedOwner == messageView) {
+                                visibleNonQuoteOwnerByMessageKey[visibleMessageKey] = messageView;
+                                visibleNonQuoteWrapByMessageKey[visibleMessageKey] = cellWrap;
+                                visibleNonQuoteIsSelfByMessageKey[visibleMessageKey] = @(cellIsSelf);
+                            }
+                        }
+                    }
+                }
+            }
+
+            NSString *anchorMessageKey = objc_getAssociatedObject(messageView, kWCPLRepeatAnchorMessageKey);
+            CMessageWrap *anchorWrap = objc_getAssociatedObject(messageView, kWCPLRepeatAnchorWrapKey);
+            NSNumber *anchorTimeObj = objc_getAssociatedObject(messageView, kWCPLRepeatAnchorReportTimeKey);
+            NSNumber *anchorIsSelfObj = objc_getAssociatedObject(messageView, kWCPLRepeatAnchorIsSelfKey);
+            NSNumber *anchorQuoteProxyObj = objc_getAssociatedObject(messageView, kWCPLRepeatAnchorQuoteProxyKey);
+            NSNumber *anchorQuoteReferSvrIDObj = objc_getAssociatedObject(messageView, kWCPLRepeatAnchorQuoteReferSvrIDKey);
+            CFTimeInterval anchorTime = anchorTimeObj ? anchorTimeObj.doubleValue : 0;
+            BOOL anchorIsQuoteProxy = anchorQuoteProxyObj ? anchorQuoteProxyObj.boolValue : NO;
+
+            if (![anchorMessageKey isKindOfClass:[NSString class]] || anchorMessageKey.length == 0 ||
+                ![anchorWrap isKindOfClass:objc_getClass("CMessageWrap")] ||
+                (!messageViewVisible && (now - anchorTime) > kWCPLRepeatAnchorStaleInterval)) {
+                if ([anchorMessageKey isKindOfClass:[NSString class]] && anchorMessageKey.length > 0) {
+                    [staleAnchorCells addObject:messageView];
+                }
+                continue;
+            }
+
+            NSString *messageKey = anchorMessageKey;
+            [activeMessageKeys addObject:messageKey];
+
+            if (messageViewVisible) {
+                BOOL anchorIsSelf = [anchorIsSelfObj boolValue];
+                UIView *existingVisibleAnchorOwner = visibleAnchorOwnerByMessageKey[messageKey];
+                if (!existingVisibleAnchorOwner) {
+                    visibleAnchorOwnerByMessageKey[messageKey] = messageView;
+                    visibleAnchorWrapByMessageKey[messageKey] = anchorWrap;
+                    visibleAnchorIsSelfByMessageKey[messageKey] = @(anchorIsSelf);
+                    visibleAnchorQuoteProxyByMessageKey[messageKey] = @(anchorIsQuoteProxy);
+                } else {
+                    BOOL existingVisibleAnchorIsQuoteProxy = [visibleAnchorQuoteProxyByMessageKey[messageKey] boolValue];
+                    UIView *resolvedVisibleAnchorOwner = existingVisibleAnchorOwner;
+                    if (existingVisibleAnchorIsQuoteProxy != anchorIsQuoteProxy) {
+                        resolvedVisibleAnchorOwner = existingVisibleAnchorIsQuoteProxy ? messageView : existingVisibleAnchorOwner;
+                    } else {
+                        UITableView *tableView = wcpl_findContainingTableView(messageView) ?: wcpl_findContainingTableView(existingVisibleAnchorOwner);
+                        UIView *owner = wcpl_selectBottomMostOwnerView(@[existingVisibleAnchorOwner, messageView], tableView, existingVisibleAnchorOwner);
+                        resolvedVisibleAnchorOwner = owner ?: existingVisibleAnchorOwner;
+                    }
+
+                    if (resolvedVisibleAnchorOwner == messageView) {
+                        visibleAnchorOwnerByMessageKey[messageKey] = messageView;
+                        visibleAnchorWrapByMessageKey[messageKey] = anchorWrap;
+                        visibleAnchorIsSelfByMessageKey[messageKey] = @(anchorIsSelf);
+                        visibleAnchorQuoteProxyByMessageKey[messageKey] = @(anchorIsQuoteProxy);
+                    }
+                }
+            }
+
+            if (!anchorIsQuoteProxy) {
+                NSArray<NSString *> *tokens = wcpl_repeatIdentityTokens(anchorWrap);
+                BOOL anchorIsSelf = [anchorIsSelfObj boolValue];
+                for (NSString *token in tokens) {
+                    if (![token isKindOfClass:[NSString class]] || token.length == 0 || nonProxyOwnerByIdentityToken[token]) {
+                        continue;
+                    }
+                    nonProxyOwnerByIdentityToken[token] = messageView;
+                    nonProxyWrapByIdentityToken[token] = anchorWrap;
+                    nonProxyIsSelfByIdentityToken[token] = @(anchorIsSelf);
+                }
+            }
+
+            UIView *existingKeeper = ownerByMessageKey[messageKey];
+            if (!existingKeeper) {
+                ownerByMessageKey[messageKey] = messageView;
+                wrapByMessageKey[messageKey] = anchorWrap;
+                isSelfByMessageKey[messageKey] = @([anchorIsSelfObj boolValue]);
+                quoteProxyByMessageKey[messageKey] = @(anchorIsQuoteProxy);
+                if ([anchorQuoteReferSvrIDObj isKindOfClass:[NSNumber class]]) {
+                    quoteProxyReferSvrIDByMessageKey[messageKey] = anchorQuoteReferSvrIDObj;
+                }
+            } else {
+                BOOL existingIsQuoteProxy = [quoteProxyByMessageKey[messageKey] boolValue];
+                CMessageWrap *existingCellWrap = wcpl_messageWrapForCellView(existingKeeper);
+                CMessageWrap *candidateCellWrap = wcpl_messageWrapForCellView(messageView);
+                BOOL existingIsQuoteCell = [existingCellWrap isKindOfClass:objc_getClass("CMessageWrap")] && existingCellWrap.m_uiMessageType == 49;
+                BOOL candidateIsQuoteCell = [candidateCellWrap isKindOfClass:objc_getClass("CMessageWrap")] && candidateCellWrap.m_uiMessageType == 49;
+
+                UIView *resolvedOwner = existingKeeper;
+                BOOL existingVisible = existingKeeper.window && !existingKeeper.hidden && existingKeeper.alpha >= 0.01f;
+                BOOL candidateVisible = messageViewVisible;
+                if (existingVisible != candidateVisible) {
+                    resolvedOwner = candidateVisible ? messageView : existingKeeper;
+                } else if (existingIsQuoteProxy != anchorIsQuoteProxy) {
+                    resolvedOwner = existingIsQuoteProxy ? messageView : existingKeeper;
+                } else if (existingIsQuoteCell != candidateIsQuoteCell) {
+                    resolvedOwner = existingIsQuoteCell ? messageView : existingKeeper;
+                } else {
+                    UITableView *tableView = wcpl_findContainingTableView(messageView) ?: wcpl_findContainingTableView(existingKeeper);
+                    UIView *owner = wcpl_selectBottomMostOwnerView(@[existingKeeper, messageView], tableView, existingKeeper);
+                    resolvedOwner = owner ?: existingKeeper;
+                }
+
+                ownerByMessageKey[messageKey] = resolvedOwner;
+                if (resolvedOwner == messageView) {
+                    wrapByMessageKey[messageKey] = anchorWrap;
+                    isSelfByMessageKey[messageKey] = @([anchorIsSelfObj boolValue]);
+                    quoteProxyByMessageKey[messageKey] = @(anchorIsQuoteProxy);
+                    if ([anchorQuoteReferSvrIDObj isKindOfClass:[NSNumber class]]) {
+                        quoteProxyReferSvrIDByMessageKey[messageKey] = anchorQuoteReferSvrIDObj;
+                    }
+                }
+            }
         }
     }
 
-    // 兼容历史实现：兜底递归扫描，清理潜在残留节点
-    if (buttons.count == 0) {
-        wcpl_collectRepeatButtonsFromView(self, buttons);
+    for (UIView *staleCell in staleAnchorCells) {
+        if ([staleCell isKindOfClass:%c(CommonMessageCellView)]) {
+            [(CommonMessageCellView *)staleCell wchook_clearRepeatAnchorAndLegacyButton];
+        }
     }
-    return buttons;
-}
 
-%new
-- (void)wchook_removeRepeatButtonsExcept:(UIButton *)keeper {
-    NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
-    for (UIButton *button in buttons) {
-        if (keeper && button == keeper) {
+    NSMutableDictionary<NSString *, UIButton *> *globalButtons = wcpl_repeatGlobalButtonMap();
+    BOOL detectedMapInconsistency = NO;
+    for (NSString *messageKey in [globalButtons allKeys]) {
+        if ([activeMessageKeys containsObject:messageKey]) {
+            continue;
+        }
+        UIButton *button = globalButtons[messageKey];
+        if ([button isKindOfClass:[UIButton class]] && button.window && !button.hidden && button.alpha >= 0.01f) {
             continue;
         }
         [button removeFromSuperview];
+        [globalButtons removeObjectForKey:messageKey];
+        wcpl_setRepeatOwnerViewForMessageKey(messageKey, nil);
     }
-    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, keeper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (!keeper) {
-        objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    for (NSString *messageKey in activeMessageKeys) {
+        UIView *ownerView = ownerByMessageKey[messageKey];
+        CMessageWrap *wrap = wrapByMessageKey[messageKey];
+        BOOL isSelf = [isSelfByMessageKey[messageKey] boolValue];
+        BOOL ownerIsQuoteProxy = [quoteProxyByMessageKey[messageKey] boolValue];
+        long long referSvrID = [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue];
+        if (ownerIsQuoteProxy &&
+            [wrap isKindOfClass:objc_getClass("CMessageWrap")] &&
+            wrap.m_uiMessageType == 49 &&
+            referSvrID > 0 &&
+            wrap.m_n64MesSvrID > 0 &&
+            referSvrID == wrap.m_n64MesSvrID) {
+            ownerIsQuoteProxy = NO;
+            WCPLLogDebug(@"issue_id=wx-bugfix-repeat-quote-button-20260210 module=WCPLGestureHook scene=repeat_owner_proxy_guard branch_decision=force_self_owner fallback_reason=refer_svrid_equals_msg_svrid input={referSvr=%lld,msgSvr=%lld,messageKey=%@} msg=%@",
+                         referSvrID,
+                         wrap.m_n64MesSvrID,
+                         messageKey,
+                         wcpl_repeatMessageDebugInfo(wrap));
+        }
+
+        if (ownerIsQuoteProxy) {
+            UIView *promotedOwner = nil;
+            CMessageWrap *promotedWrap = nil;
+            NSNumber *promotedIsSelfObj = nil;
+
+            UIView *stickyOwner = wcpl_repeatOwnerViewForMessageKey(messageKey);
+            if ([stickyOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                stickyOwner != ownerView &&
+                stickyOwner.window && !stickyOwner.hidden && stickyOwner.alpha >= 0.01f) {
+                CMessageWrap *stickyWrap = wcpl_messageWrapForCellView(stickyOwner);
+                BOOL stickyIsQuoteCell = [stickyWrap isKindOfClass:objc_getClass("CMessageWrap")] && stickyWrap.m_uiMessageType == 49;
+                if (!stickyIsQuoteCell) {
+                    promotedOwner = stickyOwner;
+                    promotedWrap = stickyWrap;
+                    if ([stickyWrap isKindOfClass:objc_getClass("CMessageWrap")]) {
+                        promotedIsSelfObj = @(!wcpl_isMessageFromOther(stickyWrap));
+                    }
+                }
+            }
+
+            if (!promotedOwner) {
+                for (NSString *token in wcpl_repeatIdentityTokens(wrap)) {
+                UIView *candidateOwner = nonProxyOwnerByIdentityToken[token];
+                if (![candidateOwner isKindOfClass:%c(CommonMessageCellView)]) {
+                    continue;
+                }
+                if (!candidateOwner.window || candidateOwner.hidden || candidateOwner.alpha < 0.01f) {
+                    continue;
+                }
+                promotedOwner = candidateOwner;
+                promotedWrap = nonProxyWrapByIdentityToken[token];
+                promotedIsSelfObj = nonProxyIsSelfByIdentityToken[token];
+                break;
+            }
+            }
+
+            if (!promotedOwner) {
+                long long referSvrID = [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue];
+                if (referSvrID > 0) {
+                    NSString *svrToken = [NSString stringWithFormat:@"s:*:%lld", referSvrID];
+                    UIView *candidateOwner = nonProxyOwnerByIdentityToken[svrToken];
+                    if ([candidateOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                        candidateOwner.window && !candidateOwner.hidden && candidateOwner.alpha >= 0.01f) {
+                        promotedOwner = candidateOwner;
+                        promotedWrap = nonProxyWrapByIdentityToken[svrToken];
+                        promotedIsSelfObj = nonProxyIsSelfByIdentityToken[svrToken];
+                    }
+                }
+            }
+
+            if (!promotedOwner) {
+                long long referSvrID = [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue];
+                if (referSvrID > 0) {
+                    NSString *referMessageKey = [NSString stringWithFormat:@"m_%lld", referSvrID];
+                    UIView *candidateOwner = ownerByMessageKey[referMessageKey];
+                    if ([candidateOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                        candidateOwner != ownerView &&
+                        candidateOwner.window && !candidateOwner.hidden && candidateOwner.alpha >= 0.01f) {
+                        promotedOwner = candidateOwner;
+                        promotedWrap = wrapByMessageKey[referMessageKey];
+                        promotedIsSelfObj = isSelfByMessageKey[referMessageKey];
+                    }
+                }
+            }
+
+            if (!promotedOwner) {
+                UIView *candidateOwner = visibleNonQuoteOwnerByMessageKey[messageKey];
+                if ([candidateOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                    candidateOwner != ownerView &&
+                    candidateOwner.window && !candidateOwner.hidden && candidateOwner.alpha >= 0.01f) {
+                    promotedOwner = candidateOwner;
+                    promotedWrap = visibleNonQuoteWrapByMessageKey[messageKey];
+                    promotedIsSelfObj = visibleNonQuoteIsSelfByMessageKey[messageKey];
+                }
+            }
+
+            if (!promotedOwner) {
+                long long referSvrID = [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue];
+                if (referSvrID > 0) {
+                    NSString *referMessageKey = [NSString stringWithFormat:@"m_%lld", referSvrID];
+                    UIView *candidateOwner = visibleNonQuoteOwnerByMessageKey[referMessageKey];
+                    if ([candidateOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                        candidateOwner != ownerView &&
+                        candidateOwner.window && !candidateOwner.hidden && candidateOwner.alpha >= 0.01f) {
+                        promotedOwner = candidateOwner;
+                        promotedWrap = visibleNonQuoteWrapByMessageKey[referMessageKey];
+                        promotedIsSelfObj = visibleNonQuoteIsSelfByMessageKey[referMessageKey];
+                    }
+                }
+            }
+
+            if (!promotedOwner) {
+                for (NSString *token in wcpl_repeatIdentityTokens(wrap)) {
+                    UIView *candidateOwner = visibleOwnerByIdentityToken[token];
+                    if (![candidateOwner isKindOfClass:%c(CommonMessageCellView)]) {
+                        continue;
+                    }
+                    if (!candidateOwner.window || candidateOwner.hidden || candidateOwner.alpha < 0.01f) {
+                        continue;
+                    }
+                    promotedOwner = candidateOwner;
+                    promotedWrap = visibleWrapByIdentityToken[token];
+                    promotedIsSelfObj = visibleIsSelfByIdentityToken[token];
+                    break;
+                }
+            }
+
+            if (!promotedOwner) {
+                long long referSvrID = [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue];
+                if (referSvrID > 0) {
+                    NSString *svrToken = [NSString stringWithFormat:@"s:*:%lld", referSvrID];
+                    UIView *candidateOwner = visibleOwnerByIdentityToken[svrToken];
+                    if ([candidateOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                        candidateOwner.window && !candidateOwner.hidden && candidateOwner.alpha >= 0.01f) {
+                        promotedOwner = candidateOwner;
+                        promotedWrap = visibleWrapByIdentityToken[svrToken];
+                        promotedIsSelfObj = visibleIsSelfByIdentityToken[svrToken];
+                    }
+                }
+            }
+
+            if (!promotedOwner) {
+                UIView *candidateOwner = visibleAnchorOwnerByMessageKey[messageKey];
+                NSNumber *candidateQuoteProxyObj = visibleAnchorQuoteProxyByMessageKey[messageKey];
+                if ([candidateOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                    candidateOwner != ownerView &&
+                    candidateOwner.window && !candidateOwner.hidden && candidateOwner.alpha >= 0.01f &&
+                    ![candidateQuoteProxyObj boolValue]) {
+                    promotedOwner = candidateOwner;
+                    promotedWrap = visibleAnchorWrapByMessageKey[messageKey];
+                    promotedIsSelfObj = visibleAnchorIsSelfByMessageKey[messageKey];
+                }
+            }
+
+            if (promotedOwner) {
+                ownerView = promotedOwner;
+                if ([promotedWrap isKindOfClass:objc_getClass("CMessageWrap")]) {
+                    wrap = promotedWrap;
+                }
+                if ([promotedIsSelfObj isKindOfClass:[NSNumber class]]) {
+                    isSelf = promotedIsSelfObj.boolValue;
+                }
+                ownerIsQuoteProxy = NO;
+            }
+        }
+
+        if (ownerIsQuoteProxy) {
+            NSArray<NSString *> *debugTokens = wcpl_repeatIdentityTokens(wrap);
+            UIButton *keptButton = globalButtons[messageKey];
+            BOOL hasVisibleKeptButton = [keptButton isKindOfClass:[UIButton class]] && keptButton.window && !keptButton.hidden && keptButton.alpha >= 0.01f;
+            if (hasVisibleKeptButton) {
+                WCPLLogDebug(@"Repeat proxy unresolved keep: key=%@ referSvr=%lld msg=%@ tokens=%@",
+                             messageKey,
+                             [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue],
+                             wcpl_repeatMessageDebugInfo(wrap),
+                             [debugTokens componentsJoinedByString:@","]);
+            }
+
+            if (!([ownerView isKindOfClass:%c(CommonMessageCellView)] && ownerView.window && !ownerView.hidden && ownerView.alpha >= 0.01f)) {
+                UIView *fallbackVisibleOwner = visibleAnchorOwnerByMessageKey[messageKey];
+                if ([fallbackVisibleOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                    fallbackVisibleOwner.window && !fallbackVisibleOwner.hidden && fallbackVisibleOwner.alpha >= 0.01f) {
+                    ownerView = fallbackVisibleOwner;
+                    CMessageWrap *fallbackWrap = visibleAnchorWrapByMessageKey[messageKey];
+                    NSNumber *fallbackIsSelfObj = visibleAnchorIsSelfByMessageKey[messageKey];
+                    NSNumber *fallbackQuoteProxyObj = visibleAnchorQuoteProxyByMessageKey[messageKey];
+                    if ([fallbackWrap isKindOfClass:objc_getClass("CMessageWrap")]) {
+                        wrap = fallbackWrap;
+                    }
+                    if ([fallbackIsSelfObj isKindOfClass:[NSNumber class]]) {
+                        isSelf = fallbackIsSelfObj.boolValue;
+                    }
+                    ownerIsQuoteProxy = [fallbackQuoteProxyObj boolValue];
+                }
+            }
+
+            if (!([ownerView isKindOfClass:%c(CommonMessageCellView)] && ownerView.window && !ownerView.hidden && ownerView.alpha >= 0.01f) && hasVisibleKeptButton) {
+                UIView *keptOwner = keptButton.superview;
+                if ([keptOwner isKindOfClass:%c(CommonMessageCellView)] &&
+                    keptOwner.window && !keptOwner.hidden && keptOwner.alpha >= 0.01f) {
+                    ownerView = keptOwner;
+                    CMessageWrap *keptWrap = objc_getAssociatedObject(keptButton, kWCPLRepeatButtonWrapKey);
+                    if ([keptWrap isKindOfClass:objc_getClass("CMessageWrap")]) {
+                        wrap = keptWrap;
+                        isSelf = !wcpl_isMessageFromOther(keptWrap);
+                    }
+                }
+            }
+
+            if ([ownerView isKindOfClass:%c(CommonMessageCellView)] && ownerView.window && !ownerView.hidden && ownerView.alpha >= 0.01f) {
+                BOOL fallbackOwnerIsQuoteProxy = ownerIsQuoteProxy;
+                WCPLLogWarning(@"Repeat proxy unresolved fallback-owner: key=%@ referSvr=%lld msg=%@ tokens=%@ fallbackProxy=%d kept=%d",
+                               messageKey,
+                               [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue],
+                               wcpl_repeatMessageDebugInfo(wrap),
+                               [debugTokens componentsJoinedByString:@","],
+                               fallbackOwnerIsQuoteProxy ? 1 : 0,
+                               hasVisibleKeptButton ? 1 : 0);
+                ownerIsQuoteProxy = NO;
+            } else {
+                WCPLLogWarning(@"Repeat proxy unresolved no-button: key=%@ referSvr=%lld msg=%@ tokens=%@",
+                               messageKey,
+                               [quoteProxyReferSvrIDByMessageKey[messageKey] longLongValue],
+                               wcpl_repeatMessageDebugInfo(wrap),
+                               [debugTokens componentsJoinedByString:@","]);
+                continue;
+            }
+        }
+
+        if (![ownerView isKindOfClass:%c(CommonMessageCellView)] || !ownerView.window || ownerView.hidden || ownerView.alpha < 0.01f) {
+            UIButton *keptButton = globalButtons[messageKey];
+            if ([keptButton isKindOfClass:[UIButton class]] && keptButton.window && !keptButton.hidden && keptButton.alpha >= 0.01f) {
+                continue;
+            }
+            UIButton *staleButton = globalButtons[messageKey];
+            [staleButton removeFromSuperview];
+            [globalButtons removeObjectForKey:messageKey];
+            wcpl_setRepeatOwnerViewForMessageKey(messageKey, nil);
+            continue;
+        }
+
+        CommonMessageCellView *ownerCell = (CommonMessageCellView *)ownerView;
+        if (gateEnabled) {
+            UIButton *gateButton = globalButtons[messageKey];
+            if (gateButton && gateButton.superview != ownerView) {
+                [gateButton removeFromSuperview];
+                wcpl_removeRepeatButtonFromGlobalMap(globalButtons, gateButton, messageKey);
+                detectedMapInconsistency = YES;
+                gateButton = nil;
+            }
+            if (gateButton && gateButton.window && gateButton.window != ownerView.window) {
+                [gateButton removeFromSuperview];
+                wcpl_removeRepeatButtonFromGlobalMap(globalButtons, gateButton, messageKey);
+                detectedMapInconsistency = YES;
+                gateButton = nil;
+            }
+            objc_setAssociatedObject(ownerCell, kWCPLRepeatButtonViewKey, gateButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            objc_setAssociatedObject(ownerCell, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+            wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
+        }
+
+        UIButton *button = [self wchook_globalRepeatButtonForMessageKey:messageKey owner:ownerCell createIfNeeded:YES];
+        if (![button isKindOfClass:[UIButton class]]) {
+            continue;
+        }
+
+        UIButton *mappedButton = globalButtons[messageKey];
+        if (mappedButton && mappedButton != button) {
+            [mappedButton removeFromSuperview];
+            wcpl_removeRepeatButtonFromGlobalMap(globalButtons, mappedButton, messageKey);
+            detectedMapInconsistency = YES;
+            globalButtons[messageKey] = button;
+        }
+
+        NSString *buttonMessageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
+        if ([buttonMessageKey isKindOfClass:[NSString class]] && buttonMessageKey.length > 0 && ![buttonMessageKey isEqualToString:messageKey]) {
+            wcpl_removeRepeatButtonFromGlobalMap(globalButtons, button, buttonMessageKey);
+            detectedMapInconsistency = YES;
+            globalButtons[messageKey] = button;
+        }
+
+        if (button.superview != ownerView) {
+            [button removeFromSuperview];
+            [ownerView addSubview:button];
+        }
+
+        objc_setAssociatedObject(button, kWCPLRepeatButtonWrapKey, wrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(button, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+
+        UIView *bubbleView = [ownerCell wchook_bubbleAnchorView];
+        if (!bubbleView) {
+            bubbleView = ownerView;
+        }
+
+        [ownerCell wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:isSelf];
+        button.layer.cornerRadius = CGRectGetHeight(button.bounds) * 0.5f;
+        CGFloat titleSize = MIN(14.0f, MAX(10.0f, CGRectGetHeight(button.bounds) * 0.55f));
+        button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
+
+        objc_setAssociatedObject(ownerCell, kWCPLRepeatButtonViewKey, button, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(ownerCell, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
     }
+
+    if (detectedMapInconsistency) {
+        gWCPLRepeatNeedFullResync = YES;
+    }
+
+}
+
+%new
++ (void)wchook_scheduleGlobalRepeatButtonRefresh {
+    [self wchook_scheduleGlobalRepeatButtonRefreshAfterDelay:0];
+}
+
+%new
++ (void)wchook_scheduleGlobalRepeatButtonRefreshAfterDelay:(NSTimeInterval)delay {
+    if (delay < 0) {
+        delay = 0;
+    }
+
+    CFTimeInterval now = CACurrentMediaTime();
+    NSTimeInterval minDelay = kWCPLRepeatRefreshThrottleInterval - (now - gWCPLRepeatLastRefreshAt);
+    if (minDelay < 0) {
+        minDelay = 0;
+    }
+    NSTimeInterval finalDelay = MAX(delay, minDelay);
+
+    if (gWCPLRepeatGlobalRefreshPending && finalDelay <= 0) {
+        return;
+    }
+
+    gWCPLRepeatRefreshScheduleToken += 1;
+    NSUInteger token = gWCPLRepeatRefreshScheduleToken;
+    gWCPLRepeatGlobalRefreshPending = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(finalDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (token != gWCPLRepeatRefreshScheduleToken) {
+            return;
+        }
+        [self wchook_runGlobalRepeatButtonRefresh];
+    });
+}
+
+%new
++ (void)wchook_scheduleGlobalRepeatButtonSettleRefresh {
+    if (gWCPLRepeatSettleRefreshPending) {
+        return;
+    }
+
+    gWCPLRepeatSettleRefreshPending = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kWCPLRepeatSettleRefreshDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        gWCPLRepeatSettleRefreshPending = NO;
+        [self wchook_scheduleGlobalRepeatButtonRefresh];
+
+        if (gWCPLRepeatSettleRefreshFollowPending) {
+            return;
+        }
+        gWCPLRepeatSettleRefreshFollowPending = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kWCPLRepeatSettleRefreshFollowDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            gWCPLRepeatSettleRefreshFollowPending = NO;
+            [self wchook_scheduleGlobalRepeatButtonRefresh];
+        });
+    });
+}
+
+%new
++ (UIButton *)wchook_globalRepeatButtonForMessageKey:(NSString *)messageKey owner:(id)owner createIfNeeded:(BOOL)createIfNeeded {
+    if (![messageKey isKindOfClass:[NSString class]] || messageKey.length == 0) {
+        return nil;
+    }
+
+    NSMutableDictionary<NSString *, UIButton *> *buttonMap = wcpl_repeatGlobalButtonMap();
+    UIButton *button = buttonMap[messageKey];
+    if (![button isKindOfClass:[UIButton class]]) {
+        button = nil;
+    }
+
+    if (!button && createIfNeeded && [owner isKindOfClass:%c(CommonMessageCellView)]) {
+        button = [(CommonMessageCellView *)owner wchook_buildRepeatButton];
+        if (button) {
+            buttonMap[messageKey] = button;
+        }
+    }
+
+    if (button && owner) {
+        wcpl_bindRepeatButtonTargetsToOwner(button, owner);
+    }
+    return button;
 }
 
 %new
@@ -2439,9 +3867,22 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
         return;
     }
 
+    CGFloat buttonSize = wcpl_repeatButtonSizeFromConfig();
+
     CGRect bubbleFrame = [self convertRect:bubbleView.bounds fromView:bubbleView];
+    CGRect bubbleFrameFromSuperview = CGRectZero;
+    BOOL bubbleFrameFromSuperviewValid = NO;
+    if ([bubbleView.superview isKindOfClass:[UIView class]]) {
+        bubbleFrameFromSuperview = [self convertRect:bubbleView.frame fromView:bubbleView.superview];
+        bubbleFrameFromSuperviewValid = !CGRectIsEmpty(bubbleFrameFromSuperview) &&
+                                        !CGRectIsNull(bubbleFrameFromSuperview) &&
+                                        !CGRectIsInfinite(bubbleFrameFromSuperview) &&
+                                        CGRectGetWidth(bubbleFrameFromSuperview) > 8.0f &&
+                                        CGRectGetHeight(bubbleFrameFromSuperview) > 8.0f;
+    }
+
     if (CGRectIsEmpty(bubbleFrame) || CGRectGetWidth(bubbleFrame) <= 0.0f || CGRectGetHeight(bubbleFrame) <= 0.0f) {
-        bubbleFrame = [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
+        bubbleFrame = bubbleFrameFromSuperviewValid ? bubbleFrameFromSuperview : [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
     }
 
     CGRect menuRect = CGRectZero;
@@ -2454,13 +3895,26 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
     }
 
     BOOL menuRectValid = !CGRectIsEmpty(menuRect) && CGRectGetWidth(menuRect) > 8.0f && CGRectGetHeight(menuRect) > 8.0f && CGRectIntersectsRect(menuRect, self.bounds);
-    BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) && CGRectGetWidth(bubbleFrame) > 8.0f && CGRectGetHeight(bubbleFrame) > 8.0f;
+    BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) && !CGRectIsNull(bubbleFrame) && !CGRectIsInfinite(bubbleFrame) && CGRectGetWidth(bubbleFrame) > 8.0f && CGRectGetHeight(bubbleFrame) > 8.0f;
+    BOOL hasReliableAnchorGeometry = menuRectValid || bubbleRectValid || bubbleFrameFromSuperviewValid;
+
+    CMessageWrap *msgWrap = objc_getAssociatedObject(button, kWCPLRepeatButtonWrapKey);
+    unsigned int msgType = msgWrap ? msgWrap.m_uiMessageType : 0;
+
+    BOOL effectiveIsSelf = wcpl_resolveIsSelfByGeometry(self,
+                                                        menuRect,
+                                                        menuRectValid,
+                                                        bubbleFrame,
+                                                        bubbleRectValid,
+                                                        isSelf);
 
     CGRect baseRect = CGRectZero;
     if (bubbleRectValid) {
         baseRect = bubbleFrame;
     } else if (menuRectValid) {
         baseRect = menuRect;
+    } else if (bubbleFrameFromSuperviewValid) {
+        baseRect = bubbleFrameFromSuperview;
     } else {
         baseRect = self.bounds;
     }
@@ -2469,20 +3923,77 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
     if (menuRectValid) {
         anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(menuRect));
     }
-    if (bubbleView == self) {
-        // 长文本等场景中 showRectForMenuController 可能只覆盖局部，Y 轴锚点至少贴到底部
-        anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(self.bounds));
+    if (!bubbleRectValid && bubbleFrameFromSuperviewValid) {
+        anchorMaxY = MAX(anchorMaxY, CGRectGetMaxY(bubbleFrameFromSuperview));
     }
 
-    CGFloat centerY = anchorMaxY - kWCPLRepeatButtonTailInsetY - kWCPLRepeatButtonSize * 0.5f;
-    CGFloat centerX = isSelf
-        ? (CGRectGetMinX(baseRect) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonTailInsetX - kWCPLRepeatButtonSize * 0.5f)
-        : (CGRectGetMaxX(baseRect) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonTailInsetX + kWCPLRepeatButtonSize * 0.5f);
+    CGFloat cellBottomY = CGRectGetMaxY(self.bounds);
+    if (bubbleView == self) {
+        // 长文本等场景中 showRectForMenuController 可能只覆盖局部，Y 轴锚点至少贴到底部
+        anchorMaxY = MAX(anchorMaxY, cellBottomY);
+    } else if (effectiveIsSelf && !hasReliableAnchorGeometry && cellBottomY > 10.0f) {
+        // 自己发送的新消息首屏初次布局阶段，bubble/menu 几何可能暂时偏小，保守兜底到底部附近，避免按钮出现在中部。
+        CGFloat selfFloorY = cellBottomY - MAX(2.0f, kWCPLRepeatButtonTailInsetY + 1.0f);
+        if (anchorMaxY < selfFloorY) {
+            anchorMaxY = selfFloorY;
+        }
+    }
+
+    if (msgType == 1 && cellBottomY > 10.0f) {
+        BOOL shouldApplyTextFallback = (!hasReliableAnchorGeometry || bubbleView == self);
+        if (!shouldApplyTextFallback) {
+            // 已有可靠气泡几何时，不再强制贴 cell 底部，避免与消息气泡脱离。
+            shouldApplyTextFallback = NO;
+        }
+        CGFloat textFallbackThreshold = MAX(12.0f, buttonSize * 0.55f);
+#ifdef DEBUG
+        CGFloat anchorBeforeTextFallback = anchorMaxY;
+#endif
+        if (shouldApplyTextFallback && (cellBottomY - anchorMaxY) > textFallbackThreshold) {
+            CGFloat textFloorY = cellBottomY - MAX(2.0f, kWCPLRepeatButtonTailInsetY + 1.0f);
+            anchorMaxY = MAX(anchorMaxY, textFloorY);
+#ifdef DEBUG
+            NSNumber *didLogTextFallback = objc_getAssociatedObject(button, kWCPLRepeatButtonTextAnchorLogOnceKey);
+            if (![didLogTextFallback boolValue]) {
+                WCPLLogDebug(@"Repeat text anchor fallback: class=%@ msgType=%u anchorBefore=%.2f anchorAfter=%.2f cellBottom=%.2f",
+                             NSStringFromClass([self class]),
+                             msgType,
+                             anchorBeforeTextFallback,
+                             anchorMaxY,
+                             cellBottomY);
+                objc_setAssociatedObject(button, kWCPLRepeatButtonTextAnchorLogOnceKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+#endif
+        }
+    }
+
+    CGFloat centerY = anchorMaxY - kWCPLRepeatButtonTailInsetY - buttonSize * 0.5f;
+    CGRect xAnchorRect = bubbleRectValid ? bubbleFrame : (bubbleFrameFromSuperviewValid ? bubbleFrameFromSuperview : baseRect);
+
+    BOOL bubbleAnchorSuspicious = (bubbleView == self);
+    if (!bubbleAnchorSuspicious && bubbleRectValid) {
+        CGFloat cellWidth = CGRectGetWidth(self.bounds);
+        CGFloat bubbleWidth = CGRectGetWidth(bubbleFrame);
+        CGFloat bubbleMinX = CGRectGetMinX(bubbleFrame);
+        CGFloat bubbleMaxX = CGRectGetMaxX(bubbleFrame);
+        BOOL bubbleCoversWholeRow = (cellWidth > 20.0f) && (bubbleWidth >= (cellWidth - 12.0f));
+        BOOL bubbleTouchesBothSides = (bubbleMinX <= (kWCPLRepeatButtonEdgeInset + 2.0f)) &&
+                                      ((cellWidth - bubbleMaxX) <= (kWCPLRepeatButtonEdgeInset + 2.0f));
+        bubbleAnchorSuspicious = bubbleCoversWholeRow || bubbleTouchesBothSides;
+    }
+
+    if ((!bubbleRectValid || bubbleAnchorSuspicious) && menuRectValid) {
+        xAnchorRect = menuRect;
+    }
+
+    CGFloat centerX = effectiveIsSelf
+        ? (CGRectGetMinX(xAnchorRect) - kWCPLRepeatButtonEdgeInset - kWCPLRepeatButtonTailInsetX - buttonSize * 0.5f)
+        : (CGRectGetMaxX(xAnchorRect) + kWCPLRepeatButtonEdgeInset + kWCPLRepeatButtonTailInsetX + buttonSize * 0.5f);
 
     centerX = wcpl_repeatAlignToPixel(centerX);
     centerY = wcpl_repeatAlignToPixel(centerY);
 
-    CGFloat halfSize = kWCPLRepeatButtonSize * 0.5f;
+    CGFloat halfSize = buttonSize * 0.5f;
     CGFloat minX = halfSize + kWCPLRepeatButtonEdgeInset;
     CGFloat maxX = CGRectGetWidth(self.bounds) - halfSize - kWCPLRepeatButtonEdgeInset;
     CGFloat minY = halfSize + kWCPLRepeatButtonEdgeInset;
@@ -2505,8 +4016,8 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
 
     CGRect targetFrame = CGRectMake(centerX - halfSize,
                                     centerY - halfSize,
-                                    kWCPLRepeatButtonSize,
-                                    kWCPLRepeatButtonSize);
+                                    buttonSize,
+                                    buttonSize);
 
     NSValue *lastFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
     CGRect lastFrame = lastFrameValue ? lastFrameValue.CGRectValue : CGRectZero;
@@ -2515,7 +4026,7 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
         return;
     }
 
-    button.bounds = CGRectMake(0.0f, 0.0f, kWCPLRepeatButtonSize, kWCPLRepeatButtonSize);
+    button.bounds = CGRectMake(0.0f, 0.0f, buttonSize, buttonSize);
     button.center = CGPointMake(centerX, centerY);
     [self bringSubviewToFront:button];
 
@@ -2527,21 +4038,26 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
 
 %new
 - (UIButton *)wchook_buildRepeatButton {
+    CGFloat buttonSize = wcpl_repeatButtonSizeFromConfig();
+
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = kWCPLRepeatButtonTag;
     button.exclusiveTouch = YES;
     button.adjustsImageWhenHighlighted = NO;
     button.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.96f];
-    button.layer.cornerRadius = kWCPLRepeatButtonSize * 0.5f;
+    button.layer.cornerRadius = buttonSize * 0.5f;
     button.layer.borderWidth = 0.5f;
     button.layer.borderColor = [UIColor colorWithWhite:0.0f alpha:0.12f].CGColor;
     button.layer.shadowColor = [UIColor blackColor].CGColor;
     button.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
     button.layer.shadowRadius = 2.5f;
     button.layer.shadowOpacity = 0.10f;
+    button.layer.shouldRasterize = YES;
+    button.layer.rasterizationScale = [UIScreen mainScreen].scale;
     [button setTitle:@"+1" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithRed:0.03f green:0.68f blue:0.36f alpha:1.0f] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:11.0f weight:UIFontWeightSemibold];
+    CGFloat titleSize = MIN(14.0f, MAX(10.0f, buttonSize * 0.55f));
+    button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
     [button addTarget:self action:@selector(wchook_onRepeatButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [button addTarget:self action:@selector(wchook_onRepeatButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
     [button addTarget:self action:@selector(wchook_onRepeatButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
@@ -2550,256 +4066,288 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
 
 %new
 - (void)wchook_removeRepeatButtonIfNeeded {
-    NSArray<UIButton *> *buttons = [self wchook_allRepeatButtons];
-    if (buttons.count == 0) {
-        objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return;
-    }
-    for (UIButton *button in buttons) {
-        [button removeFromSuperview];
-    }
-    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
-    if (msgWrap) {
-        NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
-        UIView *ownerView = wcpl_repeatOwnerViewForMessageKey(messageKey);
-        if (ownerView == self) {
-            wcpl_setRepeatOwnerViewForMessageKey(messageKey, nil);
+    NSMutableDictionary<NSString *, UIButton *> *globalButtons = wcpl_repeatGlobalButtonMap();
+    NSString *anchorMessageKey = objc_getAssociatedObject(self, kWCPLRepeatAnchorMessageKey);
+    if ([anchorMessageKey isKindOfClass:[NSString class]] && anchorMessageKey.length > 0) {
+        UIButton *anchorButton = globalButtons[anchorMessageKey];
+        if ([anchorButton isKindOfClass:[UIButton class]] && anchorButton.superview == self) {
+            [anchorButton removeFromSuperview];
+            wcpl_removeRepeatButtonFromGlobalMap(globalButtons, anchorButton, anchorMessageKey);
         }
     }
-    if (buttons.count > 1) {
-        WCPLLogDebug(@"Repeat button remove cleanup: class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)buttons.count);
+
+    UIButton *cachedButton = objc_getAssociatedObject(self, kWCPLRepeatButtonViewKey);
+    NSString *cachedMessageKey = objc_getAssociatedObject(self, kWCPLRepeatButtonMessageKey);
+
+    if ([cachedButton isKindOfClass:[UIButton class]] && cachedButton.superview == self) {
+        NSString *buttonMessageKey = objc_getAssociatedObject(cachedButton, kWCPLRepeatButtonMessageKey);
+        NSString *messageKey = ([buttonMessageKey isKindOfClass:[NSString class]] && buttonMessageKey.length > 0)
+            ? buttonMessageKey
+            : cachedMessageKey;
+        [cachedButton removeFromSuperview];
+        wcpl_removeRepeatButtonFromGlobalMap(globalButtons, cachedButton, messageKey);
+    }
+
+    NSMutableArray<UIButton *> *directButtons = [NSMutableArray array];
+    for (UIView *subview in self.subviews) {
+        if ([subview isKindOfClass:[UIButton class]] && subview.tag == kWCPLRepeatButtonTag) {
+            UIButton *button = (UIButton *)subview;
+            [directButtons addObject:button];
+        }
+    }
+    for (UIButton *button in directButtons) {
+        NSString *buttonMessageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
+        [button removeFromSuperview];
+        wcpl_removeRepeatButtonFromGlobalMap(globalButtons, button, buttonMessageKey);
+    }
+
+    NSMutableArray<UIButton *> *legacyButtons = [NSMutableArray array];
+    if (directButtons.count == 0 && cachedButton == nil && anchorMessageKey.length == 0) {
+        wcpl_collectRepeatButtonsFromView(self, legacyButtons);
+        for (UIButton *button in legacyButtons) {
+            if (button.superview == self) {
+                continue;
+            }
+            NSString *buttonMessageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
+            [button removeFromSuperview];
+            wcpl_removeRepeatButtonFromGlobalMap(globalButtons, button, buttonMessageKey);
+        }
+    }
+
+    if ([cachedMessageKey isKindOfClass:[NSString class]] && cachedMessageKey.length > 0) {
+        UIView *owner = wcpl_repeatOwnerViewForMessageKey(cachedMessageKey);
+        if (!owner || owner == self) {
+            wcpl_setRepeatOwnerViewForMessageKey(cachedMessageKey, nil);
+        }
+    }
+
+    objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSUInteger legacyFallbackCount = legacyButtons.count;
+    if (legacyFallbackCount > 0) {
+        gWCPLRepeatNeedFullResync = YES;
+    }
+    if (directButtons.count > 1) {
+        gWCPLRepeatNeedFullResync = YES;
+    }
+    if (legacyFallbackCount > 1) {
+        WCPLLogDebug(@"Repeat button remove cleanup(legacy-fallback): class=%@ count=%lu", NSStringFromClass([self class]), (unsigned long)legacyFallbackCount);
     }
 }
 
 %new
-- (void)wchook_cleanupCrossViewDuplicateRepeatButtonsForMessageKey:(NSString *)messageKey keeper:(UIButton *)keeper {
-    if (messageKey.length == 0 || ![keeper isKindOfClass:[UIButton class]]) {
-        return;
-    }
+- (void)wchook_clearRepeatAnchorAndLegacyButton {
+    NSString *anchorMessageKey = objc_getAssociatedObject(self, kWCPLRepeatAnchorMessageKey);
+    wcpl_clearRepeatAnchorForCell(self);
 
-    UITableView *tableView = wcpl_findContainingTableView(self);
-    if (!(tableView && [tableView respondsToSelector:@selector(visibleCells)])) {
-        return;
-    }
-
-    NSUInteger removedCount = 0;
-    for (UITableViewCell *cell in [tableView visibleCells]) {
-        if (![cell isKindOfClass:[UITableViewCell class]]) {
-            continue;
-        }
-
-        UIView *rootView = cell.contentView ?: (UIView *)cell;
-        NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
-        wcpl_collectRepeatButtonsFromView(rootView, buttons);
-
-        for (UIButton *button in buttons) {
-            if (![button isKindOfClass:[UIButton class]] || button == keeper) {
-                continue;
-            }
-
-            NSString *buttonMessageKey = objc_getAssociatedObject(button, kWCPLRepeatButtonMessageKey);
-            if (![buttonMessageKey isKindOfClass:[NSString class]] || ![buttonMessageKey isEqualToString:messageKey]) {
-                continue;
-            }
-
-            UIView *hostView = button;
-            while (hostView && ![hostView isKindOfClass:%c(CommonMessageCellView)]) {
-                hostView = hostView.superview;
-            }
-            if (hostView && hostView != self) {
-                objc_setAssociatedObject(hostView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(hostView, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(hostView, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-
-            [button removeFromSuperview];
-            removedCount += 1;
+    if ([anchorMessageKey isKindOfClass:[NSString class]] && anchorMessageKey.length > 0) {
+        UIView *owner = wcpl_repeatOwnerViewForMessageKey(anchorMessageKey);
+        if (owner == self) {
+            wcpl_setRepeatOwnerViewForMessageKey(anchorMessageKey, nil);
         }
     }
 
-    if (removedCount > 0) {
-        WCPLLogDebug(@"Repeat button table-level cleanup: class=%@ msg=%@ removed=%lu",
-                     NSStringFromClass([self class]),
-                     messageKey,
-                     (unsigned long)removedCount);
+    [self wchook_removeRepeatButtonIfNeeded];
+}
+
+%new
+- (BOOL)wchook_reportRepeatAnchorIfNeeded {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.repeatButtonEnable) {
+        NSString *lastSignature = objc_getAssociatedObject(self, kWCPLRepeatAnchorSignatureKey);
+        [self wchook_clearRepeatAnchorAndLegacyButton];
+        return [lastSignature isKindOfClass:[NSString class]] && lastSignature.length > 0;
     }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (![self wchook_isMessageSupportedForRepeat:msgWrap] || !wcpl_isMessageSettledForRepeat(msgWrap)) {
+        NSString *lastSignature = objc_getAssociatedObject(self, kWCPLRepeatAnchorSignatureKey);
+        [self wchook_clearRepeatAnchorAndLegacyButton];
+        return [lastSignature isKindOfClass:[NSString class]] && lastSignature.length > 0;
+    }
+
+    CMessageWrap *anchorWrapForButton = msgWrap;
+    BOOL anchorFromQuoteProxy = NO;
+    long long anchorQuoteReferSvrID = 0;
+    if (msgWrap.m_uiMessageType == 49) {
+        anchorQuoteReferSvrID = wcpl_quoteReferServerIDFromContent(msgWrap.m_nsContent);
+        BOOL referPointsToSelf = (anchorQuoteReferSvrID > 0 && msgWrap.m_n64MesSvrID > 0 && anchorQuoteReferSvrID == msgWrap.m_n64MesSvrID);
+        CMessageWrap *quoteTarget = wcpl_quoteTargetFromMessageWrap(msgWrap);
+        if ([quoteTarget isKindOfClass:objc_getClass("CMessageWrap")] &&
+            [self wchook_isMessageSupportedForRepeat:quoteTarget] &&
+            wcpl_isMessageSettledForRepeat(quoteTarget)) {
+            WCPLLogDebug(@"issue_id=wx-bugfix-repeat-quote-button-20260210 module=WCPLGestureHook scene=repeat_anchor_quote_detect branch_decision=force_self_key_for_stability fallback_reason=disable_quote_proxy_key input={msgType=%u,contentLen=%lu,referSvr=%lld,msgSvr=%lld,quoteSvr=%lld} msg=%@",
+                         msgWrap.m_uiMessageType,
+                         (unsigned long)([msgWrap.m_nsContent isKindOfClass:[NSString class]] ? msgWrap.m_nsContent.length : 0),
+                         anchorQuoteReferSvrID,
+                         msgWrap.m_n64MesSvrID,
+                         quoteTarget.m_n64MesSvrID,
+                         wcpl_repeatMessageDebugInfo(msgWrap));
+            anchorWrapForButton = msgWrap;
+            anchorFromQuoteProxy = NO;
+            anchorQuoteReferSvrID = 0;
+        } else if (anchorQuoteReferSvrID > 0 && !referPointsToSelf) {
+            WCPLLogDebug(@"issue_id=wx-bugfix-repeat-quote-button-20260210 module=WCPLGestureHook scene=repeat_anchor_quote_detect branch_decision=no_quote_target_use_self_key fallback_reason=quote_target_missing_use_self_key input={msgType=%u,contentLen=%lu,referSvr=%lld,msgSvr=%lld} msg=%@",
+                         msgWrap.m_uiMessageType,
+                         (unsigned long)([msgWrap.m_nsContent isKindOfClass:[NSString class]] ? msgWrap.m_nsContent.length : 0),
+                         anchorQuoteReferSvrID,
+                         msgWrap.m_n64MesSvrID,
+                         wcpl_repeatMessageDebugInfo(msgWrap));
+            anchorWrapForButton = msgWrap;
+            anchorFromQuoteProxy = NO;
+            anchorQuoteReferSvrID = 0;
+        } else {
+            WCPLLogDebug(@"issue_id=wx-bugfix-repeat-quote-button-20260210 module=WCPLGestureHook scene=repeat_anchor_quote_detect branch_decision=degrade_to_self_anchor fallback_reason=refer_svrid_self_or_missing input={msgType=%u,contentLen=%lu,referSvr=%lld,msgSvr=%lld} msg=%@",
+                         msgWrap.m_uiMessageType,
+                         (unsigned long)([msgWrap.m_nsContent isKindOfClass:[NSString class]] ? msgWrap.m_nsContent.length : 0),
+                         anchorQuoteReferSvrID,
+                         msgWrap.m_n64MesSvrID,
+                         wcpl_repeatMessageDebugInfo(msgWrap));
+            anchorWrapForButton = msgWrap;
+            anchorFromQuoteProxy = NO;
+            anchorQuoteReferSvrID = 0;
+        }
+    }
+
+    NSString *repeatText = wcpl_repeatTextForMessageWrap(anchorWrapForButton);
+    if (repeatText.length == 0) {
+        NSString *lastSignature = objc_getAssociatedObject(self, kWCPLRepeatAnchorSignatureKey);
+        [self wchook_clearRepeatAnchorAndLegacyButton];
+        return [lastSignature isKindOfClass:[NSString class]] && lastSignature.length > 0;
+    }
+
+    NSString *messageKey = nil;
+    if (anchorFromQuoteProxy && anchorQuoteReferSvrID > 0) {
+        messageKey = [NSString stringWithFormat:@"m_%lld", anchorQuoteReferSvrID];
+    }
+    if (msgWrap.m_uiMessageType == 49 && !anchorFromQuoteProxy) {
+        messageKey = wcpl_repeatMessageKey(msgWrap);
+    }
+    if (![messageKey isKindOfClass:[NSString class]] || messageKey.length == 0) {
+        messageKey = wcpl_repeatMessageKey(anchorWrapForButton);
+    }
+    if (![messageKey isKindOfClass:[NSString class]] || messageKey.length == 0) {
+        NSString *lastSignature = objc_getAssociatedObject(self, kWCPLRepeatAnchorSignatureKey);
+        [self wchook_clearRepeatAnchorAndLegacyButton];
+        return [lastSignature isKindOfClass:[NSString class]] && lastSignature.length > 0;
+    }
+
+    BOOL isSelf = !wcpl_isMessageFromOther(anchorWrapForButton);
+    BOOL resolvedIsSelf = NO;
+    if (wcpl_tryResolveIsSelfFromCellView(self, &resolvedIsSelf)) {
+        isSelf = resolvedIsSelf;
+    }
+    UIView *bubbleView = [self wchook_bubbleAnchorView];
+    if (!bubbleView) {
+        bubbleView = self;
+    }
+
+    CGRect bubbleRectForDirection = CGRectZero;
+    BOOL bubbleRectForDirectionValid = NO;
+    if ([bubbleView isKindOfClass:[UIView class]]) {
+        bubbleRectForDirection = [self convertRect:bubbleView.bounds fromView:bubbleView];
+        if (CGRectIsEmpty(bubbleRectForDirection) || CGRectGetWidth(bubbleRectForDirection) <= 0.0f || CGRectGetHeight(bubbleRectForDirection) <= 0.0f) {
+            UIView *sourceSuperview = bubbleView.superview;
+            if (sourceSuperview) {
+                bubbleRectForDirection = [self convertRect:bubbleView.frame fromView:sourceSuperview];
+            } else if (bubbleView == self) {
+                bubbleRectForDirection = self.bounds;
+            }
+        }
+        bubbleRectForDirectionValid = !CGRectIsEmpty(bubbleRectForDirection) &&
+                                      !CGRectIsNull(bubbleRectForDirection) &&
+                                      !CGRectIsInfinite(bubbleRectForDirection) &&
+                                      CGRectGetWidth(bubbleRectForDirection) > 8.0f &&
+                                      CGRectGetHeight(bubbleRectForDirection) > 8.0f &&
+                                      CGRectIntersectsRect(bubbleRectForDirection, self.bounds);
+    }
+
+    CGRect menuRectForDirection = CGRectZero;
+    BOOL menuRectForDirectionValid = NO;
+    if ([self respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            menuRectForDirection = ((CGRect (*)(id, SEL))objc_msgSend)(self, @selector(showRectForMenuController));
+        } @catch (__unused NSException *exception) {
+            menuRectForDirection = CGRectZero;
+        }
+        menuRectForDirectionValid = !CGRectIsEmpty(menuRectForDirection) &&
+                                    !CGRectIsNull(menuRectForDirection) &&
+                                    !CGRectIsInfinite(menuRectForDirection) &&
+                                    CGRectGetWidth(menuRectForDirection) > 8.0f &&
+                                    CGRectGetHeight(menuRectForDirection) > 8.0f &&
+                                    CGRectIntersectsRect(menuRectForDirection, self.bounds);
+    }
+
+    isSelf = wcpl_resolveIsSelfByGeometry(self,
+                                          menuRectForDirection,
+                                          menuRectForDirectionValid,
+                                          bubbleRectForDirection,
+                                          bubbleRectForDirectionValid,
+                                          isSelf);
+
+    NSString *anchorSignature = wcpl_repeatAnchorSignatureForCell(self, messageKey, isSelf, bubbleView);
+    if (![anchorSignature isKindOfClass:[NSString class]] || anchorSignature.length == 0) {
+        anchorSignature = [NSString stringWithFormat:@"%@|%@|fallback", messageKey, isSelf ? @"self" : @"other"];
+    }
+
+    NSString *previousSignature = objc_getAssociatedObject(self, kWCPLRepeatAnchorSignatureKey);
+    BOOL didChange = !([previousSignature isKindOfClass:[NSString class]] && [previousSignature isEqualToString:anchorSignature]);
+    BOOL hasPreviousSignature = [previousSignature isKindOfClass:[NSString class]] && previousSignature.length > 0;
+
+    if (didChange && hasPreviousSignature && anchorWrapForButton.m_uiMessageType == 1) {
+        CGFloat cellHeight = wcpl_repeatAlignToPixel(CGRectGetHeight(self.bounds));
+        WCPLLogInfo(@"Repeat anchor signature changed: type=%u cellH=%.2f old=%@ new=%@",
+                    anchorWrapForButton.m_uiMessageType,
+                    cellHeight,
+                    previousSignature,
+                    anchorSignature);
+    }
+
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorWrapKey, anchorWrapForButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorReportTimeKey, @(CACurrentMediaTime()), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorIsSelfKey, @(isSelf), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorSignatureKey, anchorSignature, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorQuoteProxyKey, @(anchorFromQuoteProxy), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWCPLRepeatAnchorQuoteReferSvrIDKey, (anchorQuoteReferSvrID > 0 ? @(anchorQuoteReferSvrID) : nil), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    return didChange;
 }
 
 %new
 - (void)wchook_updateRepeatButtonIfNeeded {
-    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (!config.repeatButtonEnable) {
-        NSString *filterKey = @"disabled";
-        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
-        if (![lastFilterKey isEqualToString:filterKey]) {
-            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p reason=disabled", NSStringFromClass([self class]), self);
-            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        }
-        [self wchook_removeRepeatButtonIfNeeded];
-        return;
-    }
-
-    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
-    if (![self wchook_isMessageSupportedForRepeat:msgWrap]) {
-        NSString *filterKey = [NSString stringWithFormat:@"unsupported_%u", msgWrap.m_uiMessageType];
-        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
-        if (![lastFilterKey isEqualToString:filterKey]) {
-            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=unsupported", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
-            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        }
-        [self wchook_removeRepeatButtonIfNeeded];
-        return;
-    }
-
-    if (!wcpl_isMessageSettledForRepeat(msgWrap)) {
-        NSString *filterKey = [NSString stringWithFormat:@"pending_%@", wcpl_repeatMessageKey(msgWrap) ?: @"nil"];
-        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
-        if (![lastFilterKey isEqualToString:filterKey]) {
-            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=pending", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
-            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        }
-        [self wchook_removeRepeatButtonIfNeeded];
-        return;
-    }
-
-    BOOL isFromOther = wcpl_isMessageFromOther(msgWrap);
-
-    NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
-    if (repeatText.length == 0) {
-        NSString *filterKey = [NSString stringWithFormat:@"empty_%@", wcpl_repeatMessageKey(msgWrap)];
-        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
-        if (![lastFilterKey isEqualToString:filterKey]) {
-            WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=emptyText", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
-            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        }
-        [self wchook_removeRepeatButtonIfNeeded];
-        return;
-    }
-
-    UIView *bubbleView = [self wchook_bubbleAnchorView];
-    if (!bubbleView) {
-        NSString *filterKey = [NSString stringWithFormat:@"noBubble_%@", wcpl_repeatMessageKey(msgWrap)];
-        NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
-        if (![lastFilterKey isEqualToString:filterKey]) {
-            WCPLLogWarning(@"Repeat UI bubble fallback: class=%@ cell=%p msg=%@ reason=noBubble_useCell", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
-            objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        }
-        bubbleView = self;
-    } else {
-        objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
-
-    NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
-
-    UITableView *tableView = wcpl_findContainingTableView(self);
-    NSArray<UIView *> *peerViews = wcpl_visibleMessageViewsForMessageKey(tableView, messageKey);
-    if (peerViews.count > 1) {
-        UIView *ownerView = wcpl_selectBottomMostOwnerView(peerViews, tableView, self);
-        wcpl_setRepeatOwnerViewForMessageKey(messageKey, ownerView);
-
-        if (ownerView != self) {
-            NSString *filterKey = [NSString stringWithFormat:@"nonOwner_%@", wcpl_repeatMessageKey(msgWrap)];
-            NSString *lastFilterKey = objc_getAssociatedObject(self, kWCPLRepeatButtonFilterStateKey);
-            if (![lastFilterKey isEqualToString:filterKey]) {
-                WCPLLogDebug(@"Repeat UI filter: class=%@ cell=%p msg=%@ reason=nonOwner", NSStringFromClass([self class]), self, wcpl_repeatMessageDebugInfo(msgWrap));
-                objc_setAssociatedObject(self, kWCPLRepeatButtonFilterStateKey, filterKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-            }
-            [self wchook_removeRepeatButtonIfNeeded];
-            return;
-        }
-
-        NSUInteger crossViewRemoved = 0;
-        for (UIView *peerView in peerViews) {
-            if (!peerView || peerView == self) {
-                continue;
-            }
-            NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
-            wcpl_collectRepeatButtonsFromView(peerView, buttons);
-            for (UIButton *staleButton in buttons) {
-                [staleButton removeFromSuperview];
-                crossViewRemoved += 1;
-            }
-            if (buttons.count > 0) {
-                objc_setAssociatedObject(peerView, kWCPLRepeatButtonViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(peerView, kWCPLRepeatButtonMessageKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(peerView, kWCPLRepeatButtonStableUpdateCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            }
-        }
-        if (crossViewRemoved > 0) {
-            WCPLLogDebug(@"Repeat button owner cleanup: class=%@ peers=%lu removed=%lu", NSStringFromClass([self class]), (unsigned long)peerViews.count, (unsigned long)crossViewRemoved);
-        }
-    }
-
-    NSString *lastMessageKey = objc_getAssociatedObject(self, kWCPLRepeatButtonMessageKey);
-    BOOL isSameMessage = [lastMessageKey isEqualToString:messageKey];
-
-    UIButton *button = [self wchook_repeatButton];
-    BOOL didCreateButton = NO;
-    if (!button) {
-        button = [self wchook_buildRepeatButton];
-        [self addSubview:button];
-        objc_setAssociatedObject(self, kWCPLRepeatButtonViewKey, button, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        didCreateButton = YES;
-        gWCPLRepeatButtonCreateCount += 1;
-    }
-
-    gWCPLRepeatButtonUpdateCount += 1;
-    objc_setAssociatedObject(self, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-
-    objc_setAssociatedObject(button, kWCPLRepeatButtonWrapKey, msgWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(button, kWCPLRepeatButtonMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    if (!isSameMessage) {
-        objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-
-    [self wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:!isFromOther];
-    [self wchook_cleanupCrossViewDuplicateRepeatButtonsForMessageKey:messageKey keeper:button];
-
-    if (isSameMessage) {
-        NSNumber *stableCountObj = objc_getAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey);
-        NSUInteger stableCount = stableCountObj ? stableCountObj.unsignedIntegerValue : 0;
-        stableCount += 1;
-        objc_setAssociatedObject(self, kWCPLRepeatButtonStableUpdateCountKey, @(stableCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        if (stableCount == 1 || stableCount == 5 || stableCount == 20 || (stableCount % 50 == 0)) {
-            WCPLLogDebug(@"Repeat UI stable update: class=%@ cell=%p msg=%@ updates=%lu createTotal=%lu updateTotal=%lu frame=%@", NSStringFromClass([self class]), self, messageKey, (unsigned long)stableCount, (unsigned long)gWCPLRepeatButtonCreateCount, (unsigned long)gWCPLRepeatButtonUpdateCount, NSStringFromCGRect(button.frame));
-        }
-    } else {
-        WCPLLogDebug(@"Repeat UI bind: class=%@ cell=%p msg=%@ created=%d createTotal=%lu updateTotal=%lu bubble=%@ button=%@", NSStringFromClass([self class]), self, messageKey, didCreateButton ? 1 : 0, (unsigned long)gWCPLRepeatButtonCreateCount, (unsigned long)gWCPLRepeatButtonUpdateCount, NSStringFromCGRect([self convertRect:bubbleView.bounds fromView:bubbleView]), NSStringFromCGRect(button.frame));
+    BOOL anchorChanged = [self wchook_reportRepeatAnchorIfNeeded];
+    if (anchorChanged) {
+        [[self class] wchook_scheduleGlobalRepeatButtonRefresh];
+        [[self class] wchook_scheduleGlobalRepeatButtonSettleRefresh];
     }
 }
 
 - (void)layoutSubviews {
     %orig;
 
-    [self wchook_updateRepeatButtonIfNeeded];
-
-    // 跳过已经单独处理的 Cell 类型
-    NSString *className = NSStringFromClass([self class]);
-    if ([className isEqualToString:@"TextMessageCellView"] ||
-        [className isEqualToString:@"AppMessageCellView"] ||
-        [className isEqualToString:@"AppEmoticonMessageCellView"] ||
-        [className isEqualToString:@"EmoticonMessageCellView"] ||
-        [className isEqualToString:@"VoiceMessageCellView"] ||
-        [className isEqualToString:@"ImageMessageCellView"] ||
-        [className isEqualToString:@"VideoMessageCellView"]) {
-        // 已经在各自的 hook 中处理
+    CFTimeInterval now = CACurrentMediaTime();
+    if (now < gWCPLRepeatResumeSuppressUntil) {
+        [self wchook_clearRepeatAnchorAndLegacyButton];
         return;
     }
 
-    // 其他消息类型由子类自行处理
+    // 滚动拖拽期间跳过锚点重计算，按钮作为 cell subview 会随 cell 自动滚动
+    UITableView *tv = wcpl_findContainingTableView(self);
+    if (tv && tv.isTracking && tv.isDragging) {
+        return;
+    }
+
+    [self wchook_updateRepeatButtonIfNeeded];
+
+    // 通用链路仅负责锚点上报与全局刷新调度，具体消息布局行为由各子类自身实现。
 }
 
 - (void)didMoveToWindow {
     %orig;
 
     if (!self.window) {
-        [self wchook_removeRepeatButtonIfNeeded];
+        [self wchook_clearRepeatAnchorAndLegacyButton];
     }
 
     // 说明：避免在 didMoveToWindow 同步触发按钮更新（内部会扫描 visibleCells 并做跨视图清理），
@@ -2808,6 +4356,7 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
 
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
+        [[self class] wchook_scheduleGlobalRepeatButtonRefresh];
     } else {
         [self wchook_resetSwipeAnimated:NO];
     }
@@ -2868,7 +4417,7 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
 
 - (void)prepareForReuse {
     %orig;
-    [self wchook_removeRepeatButtonIfNeeded];
+    [self wchook_clearRepeatAnchorAndLegacyButton];
 }
 
 %new
@@ -3679,12 +5228,15 @@ static UIView *wcpl_selectBottomMostOwnerView(NSArray<UIView *> *views, UITableV
         return;
     }
 
-    UIImpactFeedbackGenerator *feedback = [self wchook_repeatTapFeedbackGenerator];
-    [feedback prepare];
-    if ([feedback respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
-        [feedback impactOccurredWithIntensity:0.55f];
-    } else {
-        [feedback impactOccurred];
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.repeatButtonHapticEnable) {
+        UIImpactFeedbackGenerator *feedback = [self wchook_repeatTapFeedbackGenerator];
+        [feedback prepare];
+        if ([feedback respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
+            [feedback impactOccurredWithIntensity:0.55f];
+        } else {
+            [feedback impactOccurred];
+        }
     }
 
     BOOL hasQuote = (wcpl_quoteTargetFromMessageWrap(msgWrap) != nil) || (msgWrap && msgWrap.m_uiMessageType == 49);

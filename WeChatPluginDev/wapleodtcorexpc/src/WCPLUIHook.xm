@@ -2,6 +2,7 @@
 #import "WeChatRedEnvelop.h"
 #import "WCPLSettingViewController.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLFuncService.h"
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -273,10 +274,12 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
 
     if (sender.on) {
         config.userIgnoreInfo[usrName] = @(YES);
+        [WCPLFuncService syncIgnoreUserToSystemNotifyStatus:usrName enabled:YES];
     } else {
         NSMutableDictionary *igDict = config.userIgnoreInfo;
         [igDict removeObjectForKey:usrName];
         config.userIgnoreInfo = igDict;
+        [WCPLFuncService syncIgnoreUserToSystemNotifyStatus:usrName enabled:NO];
     }
     [config saveUserIgnoreNameListToLocalFile];
 }
@@ -364,10 +367,12 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
 
     if (sender.on) {
         config.userIgnoreInfo[usrName] = @(YES);
+        [WCPLFuncService syncIgnoreUserToSystemNotifyStatus:usrName enabled:YES];
     } else {
         NSMutableDictionary *igDict = config.userIgnoreInfo;
         [igDict removeObjectForKey:usrName];
         config.userIgnoreInfo = igDict;
+        [WCPLFuncService syncIgnoreUserToSystemNotifyStatus:usrName enabled:NO];
     }
     [config saveUserIgnoreNameListToLocalFile];
 }

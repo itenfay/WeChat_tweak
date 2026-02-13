@@ -74,7 +74,7 @@
     
     self.navigationItem.rightBarButtonItem = [self rightBarButtonWithSelectCount:self.selectedContacts.count];
     
-    self.title = self.titleText.length > 0 ? self.titleText : @"屏蔽好友";
+    self.title = self.titleText.length > 0 ? self.titleText : @"屏蔽用户";
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]}];
 }

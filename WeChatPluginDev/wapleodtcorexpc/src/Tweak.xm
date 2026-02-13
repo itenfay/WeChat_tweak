@@ -3,6 +3,52 @@
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
 
+static void wcpl_appendProbeRecord(NSString *path, NSString *record) {
+    if (![path isKindOfClass:[NSString class]] || path.length == 0) {
+        return;
+    }
+    if (![record isKindOfClass:[NSString class]] || record.length == 0) {
+        return;
+    }
+
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+    if (!fileHandle) {
+        [record writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        return;
+    }
+    @try {
+        [fileHandle seekToEndOfFile];
+        NSData *data = [record dataUsingEncoding:NSUTF8StringEncoding];
+        if (data.length > 0) {
+            [fileHandle writeData:data];
+        }
+        [fileHandle closeFile];
+    } @catch (__unused NSException *exception) {
+    }
+}
+
+static void wcpl_appendBootProbe(NSString *line) {
+    @autoreleasepool {
+        NSString *globalProbePath = @"/var/mobile/Documents/wcpl_boot_probe_global.log";
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSString *appProbePath = nil;
+        if ([documentsPath isKindOfClass:[NSString class]] && documentsPath.length > 0) {
+            appProbePath = [documentsPath stringByAppendingPathComponent:@"wcpl_boot_probe.log"];
+        }
+
+        NSString *timestamp = [[NSDate date] description];
+        NSString *record = [NSString stringWithFormat:@"[%@] %@\n", timestamp, line ?: @"(nil)"];
+
+        if (appProbePath.length > 0) {
+            wcpl_appendProbeRecord(appProbePath, record);
+        }
+
+        if (![appProbePath isEqualToString:globalProbePath]) {
+            wcpl_appendProbeRecord(globalProbePath, record);
+        }
+    }
+}
+
 static void wcpl_logRuntimeDiagnostics(void) {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL hasVarJB = [fileManager fileExistsAtPath:@"/var/jb"];
@@ -33,8 +79,16 @@ static void wcpl_logRuntimeDiagnostics(void) {
 
 %ctor {
     @autoreleasepool {
-        wcpl_logRuntimeDiagnostics();
-        [[WCPLCrashReporter sharedReporter] installIfNeeded];
-        [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
+        wcpl_appendBootProbe(@"ctor-enter");
+        @try {
+            wcpl_logRuntimeDiagnostics();
+            wcpl_appendBootProbe(@"runtime-diag-ok");
+            [[WCPLCrashReporter sharedReporter] installIfNeeded];
+            wcpl_appendBootProbe(@"crash-reporter-ok");
+            [[WCPLRealtimeLogUploader sharedUploader] startIfNeeded];
+            wcpl_appendBootProbe(@"realtime-uploader-ok");
+        } @catch (NSException *exception) {
+            wcpl_appendBootProbe([NSString stringWithFormat:@"ctor-exception: %@", exception.reason ?: @"unknown"]);
+        }
     }
 }

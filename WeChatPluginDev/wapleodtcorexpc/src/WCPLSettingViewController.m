@@ -542,7 +542,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (void)addMessageIgnoreSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息屏蔽" Footer:@"开启后可在好友资料页/群聊资料页开启屏蔽，屏蔽后不再接收其消息提醒。"];
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息屏蔽" Footer:@"开启后可在用户资料页/群聊资料页开启屏蔽，屏蔽后不再接收其消息提醒。"];
 
     [section addCell:[self createUserIgnoreEnableCell]];
     [section addCell:[self createIgnoredChatroomCountCell]];
@@ -567,7 +567,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (WCTableViewNormalCellManager *)createIgnoredUserCountCell {
     NSArray *users = [self ignoredUserNames];
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredUserList) target:self title:@"已屏蔽好友" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)users.count] accessoryType:1];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showIgnoredUserList) target:self title:@"已屏蔽用户" rightValue:[NSString stringWithFormat:@"%lu", (unsigned long)users.count] accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createIgnoreResetCell {
@@ -586,7 +586,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         return;
     }
 
-    NSString *message = [NSString stringWithFormat:@"将清空已屏蔽好友(%lu)和群聊(%lu)", (unsigned long)users.count, (unsigned long)chatrooms.count];
+    NSString *message = [NSString stringWithFormat:@"将清空已屏蔽用户(%lu)和群聊(%lu)", (unsigned long)users.count, (unsigned long)chatrooms.count];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"重置消息屏蔽"
                                                                    message:message
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -597,6 +597,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         config.chatIgnoreInfo = [NSMutableDictionary dictionary];
         [config saveUserIgnoreNameListToLocalFile];
         [config saveChatIgnoreNameListToLocalFile];
+        [WCPLFuncService syncIgnoredUsersToSystemNotifyStatus:@[] previousIgnoredUsers:users];
         WCPLLogInfo(@"[设置] 消息屏蔽已重置: users=%lu chatrooms=%lu", (unsigned long)users.count, (unsigned long)chatrooms.count);
         [self reloadTableData];
     }]];
@@ -747,7 +748,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLLogInfo(@"[设置] 屏蔽好友使用联系人控制器: selected=%lu", (unsigned long)selected.count);
     WCPLMultiSelectContactsViewController *multiSCVC = [[WCPLMultiSelectContactsViewController alloc] initWithSelectedContacts:selected];
     multiSCVC.delegate = self;
-    multiSCVC.titleText = @"屏蔽好友";
+    multiSCVC.titleText = @"屏蔽用户";
 
     MMUINavigationController *nc = [[objc_getClass("MMUINavigationController") alloc] initWithRootViewController:multiSCVC];
     [self presentViewController:nc animated:YES completion:nil];
@@ -766,6 +767,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (void)updateUserIgnoreInfoWithUsers:(NSArray *)users {
+    NSArray<NSString *> *previousUsers = [self ignoredUserNames];
     NSArray<NSString *> *sanitizedUsers = [self wcpl_friendUserNamesFromArray:users scene:@"ignore_user_save"];
     WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
     NSMutableDictionary<NSString *, NSNumber *> *dict = [NSMutableDictionary dictionary];
@@ -774,6 +776,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     }
     config.userIgnoreInfo = dict;
     [config saveUserIgnoreNameListToLocalFile];
+    [WCPLFuncService syncIgnoredUsersToSystemNotifyStatus:sanitizedUsers previousIgnoredUsers:previousUsers];
     WCPLLogInfo(@"[设置] 保存屏蔽好友: count=%lu", (unsigned long)sanitizedUsers.count);
 }
 
@@ -820,6 +823,8 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [section addCell:[self createRepeatButtonSwitchCell]];
 
     if ([WCPLConfigCenter shared].gesture.repeatButtonEnable) {
+        [section addCell:[self createRepeatButtonHapticCell]];
+        [section addCell:[self createRepeatButtonSizeCell]];
         [section addCell:[self createRepeatSupportEmoticonCell]];
         [section addCell:[self createRepeatSupportVoiceCell]];
         [section addCell:[self createRepeatSupportImageCell]];
@@ -844,6 +849,16 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (WCTableViewNormalCellManager *)createRepeatButtonSwitchCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButton:) target:self title:@"启用气泡复读按钮" on:[WCPLConfigCenter shared].gesture.repeatButtonEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"  点击震动反馈" on:[WCPLConfigCenter shared].gesture.repeatButtonHapticEnable];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonSizeCell {
+    CGFloat size = [WCPLConfigCenter shared].gesture.repeatButtonSize;
+    NSString *sizeValue = [NSString stringWithFormat:@"%.0f", size];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonSizePicker) target:self title:@"  按钮大小" rightValue:sizeValue accessoryType:1];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportEmoticonCell {
@@ -937,6 +952,30 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [WCPLConfigCenter shared].gesture.repeatButtonEnable = sender.on;
     WCPLLogInfo(@"Repeat bubble button changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
+}
+
+- (void)settingRepeatButtonHaptic:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatButtonHapticEnable = sender.on;
+    WCPLLogInfo(@"Repeat bubble haptic changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)showRepeatButtonSizePicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"复读按钮大小"
+                                                                   message:@"范围 16~30，数值越大按钮越大"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    NSArray<NSNumber *> *sizes = @[@16, @18, @20, @22, @24, @26, @28, @30];
+    for (NSNumber *size in sizes) {
+        NSString *title = [NSString stringWithFormat:@"%@", size];
+        [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+            [WCPLConfigCenter shared].gesture.repeatButtonSize = size.doubleValue;
+            WCPLLogInfo(@"Repeat bubble size changed: %@", title);
+            [self reloadTableData];
+        }]];
+    }
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)settingRepeatSupportEmoticon:(UISwitch *)sender {

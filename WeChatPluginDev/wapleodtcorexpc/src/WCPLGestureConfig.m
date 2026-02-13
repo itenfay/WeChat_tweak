@@ -9,6 +9,8 @@ static NSString *const kWCPLSwipeGestureEnable      = @"kWCPLSwipeGestureEnable"
 static NSString *const kWCPLSwipeQuoteEnable        = @"kWCPLSwipeQuoteEnable";
 static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable";
 static NSString *const kWCPLRepeatButtonEnable      = @"kWCPLRepeatButtonEnable";
+static NSString *const kWCPLRepeatButtonHapticEnable = @"kWCPLRepeatButtonHapticEnable";
+static NSString *const kWCPLRepeatButtonSize        = @"kWCPLRepeatButtonSize";
 static NSString *const kWCPLRepeatSupportEmoticonEnable = @"kWCPLRepeatSupportEmoticonEnable";
 static NSString *const kWCPLRepeatSupportVoiceEnable = @"kWCPLRepeatSupportVoiceEnable";
 static NSString *const kWCPLRepeatSupportImageEnable = @"kWCPLRepeatSupportImageEnable";
@@ -56,6 +58,17 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         _tapReferJumpEnable = [defaults boolForKey:kWCPLTapReferJumpEnable];
         _repeatButtonEnable = [defaults boolForKey:kWCPLRepeatButtonEnable];
 
+        NSNumber *repeatButtonHapticEnabled = [defaults objectForKey:kWCPLRepeatButtonHapticEnable];
+        NSNumber *repeatButtonSize = [defaults objectForKey:kWCPLRepeatButtonSize];
+        _repeatButtonHapticEnable = repeatButtonHapticEnabled ? repeatButtonHapticEnabled.boolValue : YES;
+        CGFloat configuredButtonSize = repeatButtonSize ? repeatButtonSize.doubleValue : 20.0f;
+        if (configuredButtonSize < 16.0f) {
+            configuredButtonSize = 16.0f;
+        } else if (configuredButtonSize > 30.0f) {
+            configuredButtonSize = 30.0f;
+        }
+        _repeatButtonSize = configuredButtonSize;
+
         NSNumber *repeatEmoticonEnabled = [defaults objectForKey:kWCPLRepeatSupportEmoticonEnable];
         NSNumber *repeatVoiceEnabled = [defaults objectForKey:kWCPLRepeatSupportVoiceEnable];
         NSNumber *repeatImageEnabled = [defaults objectForKey:kWCPLRepeatSupportImageEnable];
@@ -79,6 +92,8 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         [defaults setInteger:_swipeLeftSelfAction forKey:kWCPLSwipeLeftSelfAction];
         [defaults setInteger:_swipeRightOtherAction forKey:kWCPLSwipeRightOtherAction];
         [defaults setInteger:_swipeRightSelfAction forKey:kWCPLSwipeRightSelfAction];
+        [defaults setBool:_repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
+        [defaults setDouble:_repeatButtonSize forKey:kWCPLRepeatButtonSize];
     }
     return self;
 }
@@ -101,6 +116,22 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 - (void)setRepeatButtonEnable:(BOOL)repeatButtonEnable {
     _repeatButtonEnable = repeatButtonEnable;
     [[NSUserDefaults standardUserDefaults] setBool:repeatButtonEnable forKey:kWCPLRepeatButtonEnable];
+}
+
+- (void)setRepeatButtonHapticEnable:(BOOL)repeatButtonHapticEnable {
+    _repeatButtonHapticEnable = repeatButtonHapticEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
+}
+
+- (void)setRepeatButtonSize:(CGFloat)repeatButtonSize {
+    CGFloat normalized = repeatButtonSize;
+    if (normalized < 16.0f) {
+        normalized = 16.0f;
+    } else if (normalized > 30.0f) {
+        normalized = 30.0f;
+    }
+    _repeatButtonSize = normalized;
+    [[NSUserDefaults standardUserDefaults] setDouble:normalized forKey:kWCPLRepeatButtonSize];
 }
 
 - (void)setRepeatSupportEmoticonEnable:(BOOL)repeatSupportEmoticonEnable {
