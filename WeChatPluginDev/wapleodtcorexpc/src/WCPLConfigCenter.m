@@ -22,6 +22,7 @@
         _gesture = [WCPLGestureConfig sharedConfig];
         _location = [WCPLLocationConfig sharedConfig];
         _ignore = [WCPLIgnoreConfig sharedConfig];
+        _login = [WCPLLoginConfig sharedConfig];
         _av = [WCPLAVConfig sharedConfig];
         _revoke = [WCPLRevokeConfig sharedConfig];
     }

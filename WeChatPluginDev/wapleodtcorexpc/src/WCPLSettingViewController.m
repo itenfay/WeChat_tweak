@@ -27,8 +27,10 @@ typedef NS_ENUM(NSUInteger, WCPLGroupSelectContext) {
 typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLSettingPageTypeRoot = 0,
     WCPLSettingPageTypeRedEnvelop,
-    WCPLSettingPageTypeMessage,
-    WCPLSettingPageTypeGesture,
+    WCPLSettingPageTypeMessageIgnore,
+    WCPLSettingPageTypeOther,
+    WCPLSettingPageTypeSwipeGesture,
+    WCPLSettingPageTypeRepeatBubble,
 };
 
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate,
@@ -122,12 +124,16 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
             [self addBasicSettingSection];
             [self addAdvanceSettingSection];
             break;
-        case WCPLSettingPageTypeMessage:
+        case WCPLSettingPageTypeMessageIgnore:
             [self addMessageIgnoreSettingSection];
+            break;
+        case WCPLSettingPageTypeOther:
             [self addOtherSettingSection];
             break;
-        case WCPLSettingPageTypeGesture:
+        case WCPLSettingPageTypeSwipeGesture:
             [self addSwipeQuoteSettingSection];
+            break;
+        case WCPLSettingPageTypeRepeatBubble:
             [self addRepeatBubbleSettingSection];
             break;
     }
@@ -144,10 +150,14 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     switch (self.pageType) {
         case WCPLSettingPageTypeRedEnvelop:
             return @"红包功能";
-        case WCPLSettingPageTypeMessage:
-            return @"消息与防护";
-        case WCPLSettingPageTypeGesture:
-            return @"手势与快捷";
+        case WCPLSettingPageTypeMessageIgnore:
+            return @"消息屏蔽";
+        case WCPLSettingPageTypeOther:
+            return @"其他";
+        case WCPLSettingPageTypeSwipeGesture:
+            return @"消息手势";
+        case WCPLSettingPageTypeRepeatBubble:
+            return @"复读气泡";
         case WCPLSettingPageTypeRoot:
         default:
             return @"微信辣椒 by guanxi";
@@ -159,8 +169,10 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)addTopLevelEntrySection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能分类"];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
-    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息与防护" detail:@"防撤回、消息屏蔽" selector:@selector(openMessageSettingsEntry)]];
-    [section addCell:[self createTopLevelEntryCellWithTitle:@"手势与快捷" detail:@"滑动、引用、快捷操作" selector:@selector(openGestureSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息屏蔽" detail:@"屏蔽用户和群聊提醒" selector:@selector(openMessageIgnoreSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"其他" detail:@"防撤回、模拟 iPad 登录" selector:@selector(openOtherSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息手势" detail:@"左右滑动、引用跳转" selector:@selector(openSwipeGestureSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"复读气泡" detail:@"复读按钮和类型支持" selector:@selector(openRepeatBubbleSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"日志设置" detail:@"调试日志与上传" selector:@selector(openDebugSettings)]];
     [self.tableViewMgr addSection:section];
 }
@@ -177,13 +189,23 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)openMessageSettingsEntry {
-    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeMessage];
+- (void)openMessageIgnoreSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeMessageIgnore];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)openGestureSettingsEntry {
-    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeGesture];
+- (void)openOtherSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeOther];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openSwipeGestureSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeSwipeGesture];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openRepeatBubbleSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeRepeatBubble];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -513,6 +535,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)addOtherSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
 
+    [section addCell:[self createEmulateIPadLoginCell]];
     [section addCell:[self createAbortRemokeMessageCell]];
 
     [self.tableViewMgr addSection:section];
@@ -539,6 +562,14 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)settingMessageRevoke:(UISwitch *)sender {
     [WCPLConfigCenter shared].revoke.revokeEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createEmulateIPadLoginCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingEmulateIPadLogin:) target:self title:@"模拟 iPad 登录" on:[WCPLConfigCenter shared].login.emulateIPadLoginEnable];
+}
+
+- (void)settingEmulateIPadLogin:(UISwitch *)sender {
+    [WCPLConfigCenter shared].login.emulateIPadLoginEnable = sender.on;
 }
 
 - (void)addMessageIgnoreSettingSection {

@@ -12,6 +12,9 @@
 @property (nonatomic, strong) NSString *logFilePath;
 @property (nonatomic, strong) NSFileHandle *fileHandle;
 @property (nonatomic, strong) dispatch_queue_t logQueue;
+@property (nonatomic, strong) NSDateFormatter *timestampFormatter;
+@property (nonatomic, assign) NSUInteger writeCounter;
+@property (nonatomic, assign) BOOL appInBackground;
 @end
 
 @implementation WCPLLogger
@@ -34,6 +37,12 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
     if (self = [super init]) {
         // 创建日志队列，确保线程安全
         _logQueue = dispatch_queue_create(kWCPLLoggerQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
+        _writeCounter = 0;
+        _appInBackground = NO;
+
+        _timestampFormatter = [[NSDateFormatter alloc] init];
+        _timestampFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        _timestampFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
 
         // 日志文件路径: Documents/wcpl_debug.log
         NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
@@ -65,11 +74,21 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
                                     [self startupContextInfo]];
             [self writeToFile:startupLog];
         }
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onEnterBackground)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onBecomeActive)
+                                                     name:UIApplicationDidBecomeActiveNotification
+                                                   object:nil];
     }
     return self;
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (_fileHandle) {
         [_fileHandle closeFile];
     }
@@ -142,6 +161,7 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 - (void)logWithLevel:(WCPLLogLevel)level message:(NSString *)message {
     if (!message || message.length == 0) return;
     if (self.logLevel > level) return;
+    if (self.appInBackground && level <= WCPLLogLevelInfo) return;
 
     NSString *levelText = @"INFO";
     switch (level) {
@@ -158,8 +178,10 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
                                     message];
     [self writeToFile:timestampedMessage];
 
-    // 同时输出到系统日志（仅在启用日志时）
-    NSLog(@"[WCPL][%@] %@", levelText, message);
+    // 控制系统日志量：后台与高频场景只保留告警/错误
+    if (level >= WCPLLogLevelWarning) {
+        NSLog(@"[WCPL][%@] %@", levelText, message);
+    }
 }
 
 - (void)logWithLevel:(WCPLLogLevel)level format:(NSString *)format, ... {
@@ -215,33 +237,37 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 
 - (void)writeToFile:(NSString *)message {
     dispatch_async(_logQueue, ^{
-        @try {
-            if (self.fileHandle) {
-                NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-                [self.fileHandle writeData:data];
+        @autoreleasepool {
+            @try {
+                if (self.fileHandle) {
+                    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+                    [self.fileHandle writeData:data];
+                } else {
+                    // 文件句柄失效，直接追加写入
+                    NSFileHandle *tempHandle = [NSFileHandle fileHandleForWritingAtPath:self.logFilePath];
+                    if (tempHandle) {
+                        [tempHandle seekToEndOfFile];
+                        NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+                        [tempHandle writeData:data];
+                        [tempHandle closeFile];
+                    }
+                }
 
-                // 定期同步到磁盘，避免数据丢失
-                static NSInteger writeCount = 0;
-                writeCount++;
-                if (writeCount % 10 == 0) {
+                self.writeCounter += 1;
+
+                // 同步频率降低，减少 IO 抖动
+                if (self.fileHandle && (self.writeCounter % 64 == 0)) {
                     [self.fileHandle synchronizeFile];
                 }
-            } else {
-                // 文件句柄失效，直接追加写入
-                NSFileHandle *tempHandle = [NSFileHandle fileHandleForWritingAtPath:self.logFilePath];
-                if (tempHandle) {
-                    [tempHandle seekToEndOfFile];
-                    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-                    [tempHandle writeData:data];
-                    [tempHandle closeFile];
+
+                // 轮转检查改为低频触发，降低每条日志的系统调用成本
+                if (self.writeCounter % 128 == 0) {
+                    [self checkAndRotateLogFile];
                 }
             }
-
-            // 日志文件大小限制: 5MB，超过则自动清理旧日志
-            [self checkAndRotateLogFile];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"[WCPL] Failed to write log: %@", exception.reason);
+            @catch (NSException *exception) {
+                NSLog(@"[WCPL] Failed to write log: %@", exception.reason);
+            }
         }
     });
 }
@@ -253,11 +279,23 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 
         // 超过 5MB，保留最后 2MB 的日志
         if (fileSize > 5 * 1024 * 1024) {
-            NSString *content = [NSString stringWithContentsOfFile:_logFilePath encoding:NSUTF8StringEncoding error:nil];
-            if (content && content.length > 2 * 1024 * 1024) {
-                // 截取最后 2MB
-                NSString *recentContent = [content substringFromIndex:content.length - 2 * 1024 * 1024];
-                [recentContent writeToFile:_logFilePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+            unsigned long long keepBytes = 2 * 1024 * 1024;
+            unsigned long long startOffset = (fileSize > keepBytes) ? (fileSize - keepBytes) : 0;
+
+            NSData *tailData = nil;
+            NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:_logFilePath];
+            if (readHandle) {
+                @try {
+                    [readHandle seekToFileOffset:startOffset];
+                    tailData = [readHandle readDataToEndOfFile];
+                } @catch (__unused NSException *exceptionReadTail) {
+                    tailData = nil;
+                }
+                [readHandle closeFile];
+            }
+
+            if (tailData.length > 0) {
+                [tailData writeToFile:_logFilePath atomically:YES];
 
                 // 重新打开文件句柄
                 if (self.fileHandle) {
@@ -278,9 +316,25 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 }
 
 - (NSString *)currentTimestamp {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
-    return [formatter stringFromDate:[NSDate date]];
+    @synchronized (self.timestampFormatter) {
+        return [self.timestampFormatter stringFromDate:[NSDate date]];
+    }
+}
+
+- (void)onEnterBackground {
+    self.appInBackground = YES;
+    dispatch_async(self.logQueue, ^{
+        @try {
+            if (self.fileHandle) {
+                [self.fileHandle synchronizeFile];
+            }
+        } @catch (__unused NSException *exceptionSync) {
+        }
+    });
+}
+
+- (void)onBecomeActive {
+    self.appInBackground = NO;
 }
 
 - (NSString *)startupContextInfo {
