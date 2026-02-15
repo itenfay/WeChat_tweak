@@ -74,11 +74,30 @@ static NSDictionary *wcpl_safeUserInfoFromNotificationResponse(id response) {
 }
 
 static NSString *wcpl_push2chat_targetUserNameFromUserInfo(NSDictionary *userInfo) {
-    if (![userInfo isKindOfClass:[NSDictionary class]]) return nil;
-    id value = userInfo[@"u"];
-    if ([value isKindOfClass:[NSString class]]) {
-        return wcpl_trimString((NSString *)value);
+    if (![userInfo isKindOfClass:[NSDictionary class]] || userInfo.count == 0) return nil;
+
+    // 兼容不同通知 payload 键名：优先使用 wcpush 的约定 key="u"。
+    NSArray<NSString *> *candidateKeys = @[
+        @"u",
+        @"userName",
+        @"username",
+        @"sessionUserName",
+        @"session",
+        @"fromUserName",
+        @"fromusername",
+        @"fromUser",
+    ];
+
+    for (NSString *key in candidateKeys) {
+        id value = userInfo[key];
+        if ([value isKindOfClass:[NSString class]]) {
+            NSString *trimmed = wcpl_trimString((NSString *)value);
+            if (trimmed.length > 0) {
+                return trimmed;
+            }
+        }
     }
+
     return nil;
 }
 
@@ -88,6 +107,17 @@ static id wcpl_push2chat_contactForUserName(NSString *userName) {
 
     id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
     if (!contactMgr) return nil;
+
+    // 冷启动场景：联系人 DB 未加载时 getContactByName* 往往返回空，需等待就绪。
+    @try {
+        if ([contactMgr respondsToSelector:@selector(checkHadLoadContactDB)]) {
+            BOOL loaded = ((BOOL (*)(id, SEL))objc_msgSend)(contactMgr, @selector(checkHadLoadContactDB));
+            if (!loaded) {
+                return nil;
+            }
+        }
+    } @catch (__unused NSException *exception) {
+    }
 
     id contact = nil;
     @try {
@@ -100,8 +130,16 @@ static id wcpl_push2chat_contactForUserName(NSString *userName) {
         if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
             contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), target);
         }
+        if (!contact && [contactMgr respondsToSelector:@selector(getContactForSearchByName:)]) {
+            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactForSearchByName:), target);
+        }
     } @catch (__unused NSException *exception) {
         contact = nil;
+    }
+
+    Class contactClass = objc_getClass("CContact");
+    if (contactClass && contact && ![contact isKindOfClass:contactClass]) {
+        return nil;
     }
 
     return contact;
@@ -118,8 +156,8 @@ static UIViewController *wcpl_push2chat_findTopViewControllerFallback(void) {
                 continue;
             }
             UIWindowScene *windowScene = (UIWindowScene *)scene;
-            if (windowScene.activationState != UISceneActivationStateForegroundActive &&
-                windowScene.activationState != UISceneActivationStateForegroundInactive) {
+            // 与 wcpush 对齐：只在前台 active 时寻找 keyWindow，避免 UI 未就绪导致“半屏已弹但无效果”。
+            if (windowScene.activationState != UISceneActivationStateForegroundActive) {
                 continue;
             }
             for (UIWindow *window in windowScene.windows) {
@@ -130,26 +168,14 @@ static UIViewController *wcpl_push2chat_findTopViewControllerFallback(void) {
             }
             if (keyWindow) break;
         }
-
-        if (!keyWindow) {
-            for (id scene in connectedScenes) {
-                if (![scene isKindOfClass:[UIWindowScene class]]) {
-                    continue;
-                }
-                UIWindowScene *windowScene = (UIWindowScene *)scene;
-                for (UIWindow *window in windowScene.windows) {
-                    if ([window isKindOfClass:[UIWindow class]]) {
-                        keyWindow = window;
-                        break;
-                    }
-                }
-                if (keyWindow) break;
-            }
+        // 若还没进入 active（例如冷启动/后台唤起初期），此处返回 nil 触发重试等待。
+        if (![keyWindow isKindOfClass:[UIWindow class]]) {
+            return nil;
         }
     }
 
     // 避免使用 deprecated 的 application.keyWindow（工程开启了 -Werror）。
-    if (!keyWindow && [application respondsToSelector:@selector(windows)]) {
+    if (!keyWindow && ![application respondsToSelector:@selector(connectedScenes)] && [application respondsToSelector:@selector(windows)]) {
         for (UIWindow *window in application.windows) {
             if (![window isKindOfClass:[UIWindow class]]) {
                 continue;
@@ -202,46 +228,8 @@ static UIViewController *wcpl_push2chat_findTopViewControllerFallback(void) {
 }
 
 static UIViewController *wcpl_push2chat_findTopViewController(void) {
-    Class managerClass = objc_getClass("CAppViewControllerManager");
-    if (managerClass && [managerClass respondsToSelector:@selector(topMostController)]) {
-        @try {
-            id top = ((id (*)(id, SEL))objc_msgSend)(managerClass, @selector(topMostController));
-            if ([top isKindOfClass:[UIViewController class]]) {
-                return (UIViewController *)top;
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
+    // 与 wcpush 逻辑保持一致：使用基于 keyWindow 的 topVC 选择，避免 topMostController 返回不可展示 VC。
     return wcpl_push2chat_findTopViewControllerFallback();
-}
-
-static UINavigationController *wcpl_push2chat_findNavigationControllerForTopVC(UIViewController *topVC) {
-    UINavigationController *nav = nil;
-
-    Class managerClass = objc_getClass("CAppViewControllerManager");
-    if (managerClass && [managerClass respondsToSelector:@selector(getCurrentNavigationController)]) {
-        @try {
-            id current = ((id (*)(id, SEL))objc_msgSend)(managerClass, @selector(getCurrentNavigationController));
-            if ([current isKindOfClass:[UINavigationController class]]) {
-                nav = (UINavigationController *)current;
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    if (!nav && [topVC isKindOfClass:[UINavigationController class]]) {
-        nav = (UINavigationController *)topVC;
-    }
-
-    if (!nav && [topVC isKindOfClass:[UIViewController class]]) {
-        UINavigationController *candidate = topVC.navigationController;
-        if ([candidate isKindOfClass:[UINavigationController class]]) {
-            nav = candidate;
-        }
-    }
-
-    return nav;
 }
 
 static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPush2ChatContext context) {
@@ -249,48 +237,22 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
         return YES;
     }
 
+    // 与 wcpush 对齐：以 topVC 作为展示 VC，并强依赖其 navigationController 存在，否则等待重试。
     UIViewController *topVC = wcpl_push2chat_findTopViewController();
-    UINavigationController *nav = wcpl_push2chat_findNavigationControllerForTopVC(topVC);
-    if (![nav isKindOfClass:[UINavigationController class]]) {
+    if (![topVC isKindOfClass:[UIViewController class]]) {
         return NO;
     }
-
-    // 直达入口需一个“可展示”的 VC，用于 pageSheet 或状态判断；navigation push 则以 nav 为准。
-    UIViewController *fromVC = topVC;
-    if ([fromVC isKindOfClass:[UINavigationController class]]) {
-        UIViewController *visible = nav.visibleViewController ?: nav.topViewController;
-        if ([visible isKindOfClass:[UIViewController class]]) {
-            fromVC = visible;
-        }
-    } else if ([fromVC isKindOfClass:[UITabBarController class]]) {
-        UIViewController *selected = ((UITabBarController *)fromVC).selectedViewController;
-        if ([selected isKindOfClass:[UINavigationController class]]) {
-            UIViewController *visible = ((UINavigationController *)selected).visibleViewController ?: ((UINavigationController *)selected).topViewController;
-            if ([visible isKindOfClass:[UIViewController class]]) {
-                fromVC = visible;
-            } else {
-                fromVC = (UIViewController *)selected;
-            }
-        } else if ([selected isKindOfClass:[UIViewController class]]) {
-            fromVC = selected;
-        }
-    }
-    if (![fromVC isKindOfClass:[UIViewController class]]) {
-        UIViewController *candidate = nav.visibleViewController ?: nav.topViewController;
-        if ([candidate isKindOfClass:[UIViewController class]]) {
-            fromVC = candidate;
-        }
-    }
-    if (![fromVC isKindOfClass:[UIViewController class]]) {
+    UINavigationController *nav = topVC.navigationController;
+    if (![nav isKindOfClass:[UINavigationController class]]) {
         return NO;
     }
 
     // 前台路径：若已在目标会话，直接结束重试。
     if (context == WCPLPush2ChatContextForeground) {
         Class baseMsgClass = objc_getClass("BaseMsgContentViewController");
-        if (baseMsgClass && [fromVC isKindOfClass:baseMsgClass]) {
+        if (baseMsgClass && [topVC isKindOfClass:baseMsgClass]) {
             @try {
-                id chatContact = ((id (*)(id, SEL))objc_msgSend)(fromVC, @selector(getChatContact));
+                id chatContact = ((id (*)(id, SEL))objc_msgSend)(topVC, @selector(getChatContact));
                 NSString *currentUsr = nil;
                 if ([chatContact isKindOfClass:objc_getClass("CContact")]) {
                     currentUsr = ((CContact *)chatContact).m_nsUsrName;
@@ -312,11 +274,12 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
         id quickMgr = WCPLGetService(objc_getClass("QuickReplyMsgMgr"));
         if (quickMgr && [quickMgr respondsToSelector:@selector(showPageSheetSession:fromViewController:)]) {
             @try {
-                ((void (*)(id, SEL, id, id))objc_msgSend)(quickMgr, @selector(showPageSheetSession:fromViewController:), contact, fromVC);
+                ((void (*)(id, SEL, id, id))objc_msgSend)(quickMgr, @selector(showPageSheetSession:fromViewController:), contact, topVC);
+                return YES;
             } @catch (__unused NSException *exception) {
             }
         }
-        return YES;
+        // 半屏不可用时降级全屏，保证“直达”能力不丢。
     }
 
     id logicMgr = WCPLGetService(objc_getClass("MMMsgLogicManager"));
@@ -327,11 +290,12 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
                                                             contact,
                                                             nav,
                                                             YES);
+            return YES;
         } @catch (__unused NSException *exception) {
         }
     }
 
-    return YES;
+    return NO;
 }
 
 static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLPush2ChatContext context) {
@@ -345,21 +309,29 @@ static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLP
         return;
     }
 
-    id contact = wcpl_push2chat_contactForUserName(userName);
-    if (!contact) {
-        WCPLLogInfo(@"[消息直达] contact not found: %@", userName);
-        return;
-    }
-
-    if (wcpl_push2chat_tryOpenSession(contact, userName, context)) {
-        return;
-    }
-
+    // 冷启动/后台唤起：联系人与 UI 可能未就绪，需轮询重试。
+    const NSInteger maxAttempts = 20;
     __block NSInteger attempts = 0;
     __block NSTimer *timer = nil;
+
+    BOOL (^attemptOpen)(void) = ^BOOL{
+        id contact = wcpl_push2chat_contactForUserName(userName);
+        if (!contact) {
+            return NO;
+        }
+        return wcpl_push2chat_tryOpenSession(contact, userName, context);
+    };
+
+    if (attemptOpen()) {
+        return;
+    }
+
     timer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(__unused NSTimer *t) {
         attempts += 1;
-        if (wcpl_push2chat_tryOpenSession(contact, userName, context) || attempts >= 10) {
+        if (attemptOpen() || attempts >= maxAttempts) {
+            if (attempts >= maxAttempts) {
+                WCPLLogWarning(@"[消息直达] open failed after retries: %@", userName);
+            }
             [timer invalidate];
             timer = nil;
         }
