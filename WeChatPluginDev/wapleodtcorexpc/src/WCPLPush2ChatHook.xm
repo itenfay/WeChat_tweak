@@ -5,6 +5,7 @@
 #import "WCPLLogger.h"
 #import "WCPLServiceCenter.h"
 
+#import <dispatch/dispatch.h>
 #import <objc/message.h>
 
 #import "BaseMsgContentViewController.h"
@@ -20,6 +21,57 @@ typedef NS_ENUM(NSInteger, WCPLPush2ChatContext) {
     WCPLPush2ChatContextBackground = 0,
     WCPLPush2ChatContextForeground = 1,
 };
+
+static dispatch_queue_t wcpl_push2chat_traceQueue(void) {
+    static dispatch_queue_t queue = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = dispatch_queue_create("com.wcpl.push2chat.trace", DISPATCH_QUEUE_SERIAL);
+    });
+    return queue;
+}
+
+static NSString *wcpl_push2chat_traceFilePath(void) {
+    // 独立日志文件，避免依赖 WCPLLogger 的 logLevel 开关。
+    return @"/var/mobile/wcpl_push2chat.log";
+}
+
+static void wcpl_push2chat_trace(NSString *format, ...) {
+    if (![format isKindOfClass:[NSString class]] || format.length == 0) return;
+
+    va_list args;
+    va_start(args, format);
+    NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
+    va_end(args);
+
+    NSString *line = [NSString stringWithFormat:@"[%@] %@\n", [NSDate date], message];
+    NSLog(@"[WCPL][Push2Chat] %@", message);
+
+    dispatch_async(wcpl_push2chat_traceQueue(), ^{
+        @autoreleasepool {
+            NSString *path = wcpl_push2chat_traceFilePath();
+            NSData *data = [line dataUsingEncoding:NSUTF8StringEncoding];
+            if (!data) return;
+
+            NSFileManager *fm = [NSFileManager defaultManager];
+            if (![fm fileExistsAtPath:path]) {
+                [fm createFileAtPath:path contents:nil attributes:nil];
+            }
+
+            NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:path];
+            if (!fh) return;
+            @try {
+                [fh seekToEndOfFile];
+                [fh writeData:data];
+            } @catch (__unused NSException *exception) {
+            }
+            @try {
+                [fh closeFile];
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    });
+}
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) {
@@ -107,17 +159,6 @@ static id wcpl_push2chat_contactForUserName(NSString *userName) {
 
     id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
     if (!contactMgr) return nil;
-
-    // 冷启动场景：联系人 DB 未加载时 getContactByName* 往往返回空，需等待就绪。
-    @try {
-        if ([contactMgr respondsToSelector:@selector(checkHadLoadContactDB)]) {
-            BOOL loaded = ((BOOL (*)(id, SEL))objc_msgSend)(contactMgr, @selector(checkHadLoadContactDB));
-            if (!loaded) {
-                return nil;
-            }
-        }
-    } @catch (__unused NSException *exception) {
-    }
 
     id contact = nil;
     @try {
@@ -240,10 +281,12 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
     // 与 wcpush 对齐：以 topVC 作为展示 VC，并强依赖其 navigationController 存在，否则等待重试。
     UIViewController *topVC = wcpl_push2chat_findTopViewController();
     if (![topVC isKindOfClass:[UIViewController class]]) {
+        wcpl_push2chat_trace(@"tryOpen: topVC=nil user=%@", userName);
         return NO;
     }
     UINavigationController *nav = topVC.navigationController;
     if (![nav isKindOfClass:[UINavigationController class]]) {
+        wcpl_push2chat_trace(@"tryOpen: nav=nil topVC=%@ user=%@", NSStringFromClass([topVC class]), userName);
         return NO;
     }
 
@@ -269,14 +312,22 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
 
     WCPLPush2ChatConfig *cfg = [WCPLConfigCenter shared].push2Chat;
     NSInteger mode = (context == WCPLPush2ChatContextForeground) ? cfg.foregroundPushMode : cfg.backgroundPushMode;
+    wcpl_push2chat_trace(@"tryOpen: ctx=%@ mode=%ld topVC=%@ nav=%@ user=%@",
+                         (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg",
+                         (long)mode,
+                         NSStringFromClass([topVC class]),
+                         NSStringFromClass([nav class]),
+                         userName);
 
     if (mode == 1) {
         id quickMgr = WCPLGetService(objc_getClass("QuickReplyMsgMgr"));
         if (quickMgr && [quickMgr respondsToSelector:@selector(showPageSheetSession:fromViewController:)]) {
             @try {
+                wcpl_push2chat_trace(@"open(pageSheet): user=%@ contact=%@", userName, contact);
                 ((void (*)(id, SEL, id, id))objc_msgSend)(quickMgr, @selector(showPageSheetSession:fromViewController:), contact, topVC);
                 return YES;
             } @catch (__unused NSException *exception) {
+                wcpl_push2chat_trace(@"open(pageSheet) exception: user=%@", userName);
             }
         }
         // 半屏不可用时降级全屏，保证“直达”能力不丢。
@@ -285,6 +336,7 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
     id logicMgr = WCPLGetService(objc_getClass("MMMsgLogicManager"));
     if (logicMgr && [logicMgr respondsToSelector:@selector(PushOtherBaseMsgControllerByContact:navigationController:animated:)]) {
         @try {
+            wcpl_push2chat_trace(@"open(push): user=%@ contact=%@ nav=%@", userName, contact, nav);
             ((void (*)(id, SEL, id, id, BOOL))objc_msgSend)(logicMgr,
                                                             @selector(PushOtherBaseMsgControllerByContact:navigationController:animated:),
                                                             contact,
@@ -292,6 +344,7 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
                                                             YES);
             return YES;
         } @catch (__unused NSException *exception) {
+            wcpl_push2chat_trace(@"open(push) exception: user=%@", userName);
         }
     }
 
@@ -317,12 +370,29 @@ static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLP
     BOOL (^attemptOpen)(void) = ^BOOL{
         id contact = wcpl_push2chat_contactForUserName(userName);
         if (!contact) {
+            if (attempts == 0 || (attempts % 4) == 0) {
+                wcpl_push2chat_trace(@"attempt %ld: contact=nil user=%@", (long)attempts, userName);
+            }
             return NO;
+        }
+        if (attempts == 0) {
+            wcpl_push2chat_trace(@"contact ok: user=%@ contact=%@", userName, contact);
         }
         return wcpl_push2chat_tryOpenSession(contact, userName, context);
     };
 
+    wcpl_push2chat_trace(@"open start: ctx=%@ user=%@ fgEnable=%d bgEnable=%d fgMode=%ld bgMode=%ld",
+                         (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg",
+                         userName,
+                         (int)cfg.enableForegroundPush,
+                         (int)cfg.enableBackgroundPush,
+                         (long)cfg.foregroundPushMode,
+                         (long)cfg.backgroundPushMode);
+
     if (attemptOpen()) {
+        wcpl_push2chat_trace(@"open done(immediate): ctx=%@ user=%@",
+                             (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg",
+                             userName);
         return;
     }
 
@@ -331,6 +401,14 @@ static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLP
         if (attemptOpen() || attempts >= maxAttempts) {
             if (attempts >= maxAttempts) {
                 WCPLLogWarning(@"[消息直达] open failed after retries: %@", userName);
+                wcpl_push2chat_trace(@"open failed(after retries): ctx=%@ user=%@",
+                                     (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg",
+                                     userName);
+            } else {
+                wcpl_push2chat_trace(@"open done(retry#%ld): ctx=%@ user=%@",
+                                     (long)attempts,
+                                     (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg",
+                                     userName);
             }
             [timer invalidate];
             timer = nil;
@@ -341,6 +419,11 @@ static void wcpl_push2chat_openWithUserNameOnMainQueue(NSString *userName, WCPLP
 static void wcpl_push2chat_handleNotificationResponse(id response, WCPLPush2ChatContext context) {
     NSDictionary *userInfo = wcpl_safeUserInfoFromNotificationResponse(response);
     NSString *userName = wcpl_push2chat_targetUserNameFromUserInfo(userInfo);
+    NSArray *keys = [userInfo isKindOfClass:[NSDictionary class]] ? [[userInfo allKeys] sortedArrayUsingSelector:@selector(compare:)] : @[];
+    wcpl_push2chat_trace(@"tap: ctx=%@ user=%@ keys=%@",
+                         (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg",
+                         userName ?: @"(nil)",
+                         keys);
     if (userName.length == 0) {
         return;
     }
