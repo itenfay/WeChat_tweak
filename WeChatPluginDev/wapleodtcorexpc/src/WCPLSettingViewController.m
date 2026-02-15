@@ -170,7 +170,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能分类"];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息屏蔽" detail:@"屏蔽用户和群聊提醒" selector:@selector(openMessageIgnoreSettingsEntry)]];
-    [section addCell:[self createTopLevelEntryCellWithTitle:@"其他" detail:@"防撤回、模拟 iPad 登录" selector:@selector(openOtherSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"其他" detail:@"防撤回、模拟 iPad、朋友圈广告" selector:@selector(openOtherSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息手势" detail:@"左右滑动、引用跳转" selector:@selector(openSwipeGestureSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"复读气泡" detail:@"复读按钮和类型支持" selector:@selector(openRepeatBubbleSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"日志设置" detail:@"调试日志与上传" selector:@selector(openDebugSettings)]];
@@ -535,6 +535,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)addOtherSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
 
+    [section addCell:[self createTimelineAdBlockCell]];
     [section addCell:[self createEmulateIPadLoginCell]];
     [section addCell:[self createAbortRemokeMessageCell]];
 
@@ -570,6 +571,14 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)settingEmulateIPadLogin:(UISwitch *)sender {
     [WCPLConfigCenter shared].login.emulateIPadLoginEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createTimelineAdBlockCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTimelineAdBlock:) target:self title:@"屏蔽朋友圈广告" on:[WCPLConfigCenter shared].timeline.blockTimelineBrandAdsEnable];
+}
+
+- (void)settingTimelineAdBlock:(UISwitch *)sender {
+    [WCPLConfigCenter shared].timeline.blockTimelineBrandAdsEnable = sender.on;
 }
 
 - (void)addMessageIgnoreSettingSection {
@@ -856,6 +865,9 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     if ([WCPLConfigCenter shared].gesture.repeatButtonEnable) {
         [section addCell:[self createRepeatButtonHapticCell]];
         [section addCell:[self createRepeatButtonSizeCell]];
+#ifdef DEBUG
+        [section addCell:[self createRepeatButtonEngineV2Cell]];
+#endif
         [section addCell:[self createRepeatSupportEmoticonCell]];
         [section addCell:[self createRepeatSupportVoiceCell]];
         [section addCell:[self createRepeatSupportImageCell]];
@@ -890,6 +902,10 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     CGFloat size = [WCPLConfigCenter shared].gesture.repeatButtonSize;
     NSString *sizeValue = [NSString stringWithFormat:@"%.0f", size];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonSizePicker) target:self title:@"  按钮大小" rightValue:sizeValue accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatButtonEngineV2Cell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonEngineV2:) target:self title:@"  [调试] V2 同步渲染引擎" on:[WCPLConfigCenter shared].gesture.repeatButtonEngineV2Enable];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportEmoticonCell {
@@ -988,6 +1004,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)settingRepeatButtonHaptic:(UISwitch *)sender {
     [WCPLConfigCenter shared].gesture.repeatButtonHapticEnable = sender.on;
     WCPLLogInfo(@"Repeat bubble haptic changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)settingRepeatButtonEngineV2:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatButtonEngineV2Enable = sender.on;
+    WCPLLogInfo(@"Repeat bubble engine V2 changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (void)showRepeatButtonSizePicker {

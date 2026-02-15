@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL repeatSupportImageEnable;
 // 复读支持视频消息
 @property (assign, nonatomic) BOOL repeatSupportVideoEnable;
+// 复读按钮引擎 V2（单 cell 同步渲染），默认关闭，仅用于灰度调试
+@property (assign, nonatomic) BOOL repeatButtonEngineV2Enable;
 
 // 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
 @property (assign, nonatomic) NSInteger swipeSensitivityLevel;

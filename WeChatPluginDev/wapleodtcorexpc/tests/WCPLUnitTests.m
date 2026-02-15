@@ -4,12 +4,14 @@
 #import "WeChatRedEnvelopParam.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLIgnoreConfig.h"
+#import "WCPLGestureConfig.h"
 
 static NSString *const kWCPLGroupRedEnvelopScopeKey = @"kWCPLGroupRedEnvelopScope";
 static NSString *const kWCPLBlackListKey = @"kWCPLBlackList";
 static NSString *const kWCPLUserIgnoreEnableKey = @"kWCPLUserIgnoreEnable";
 static NSString *const kWCPLUserIgnoreInfoKey = @"kWCPLUserIgnoreInfo";
 static NSString *const kWCPLReceiveDonePageSummaryEnableKey = @"kWCPLReceiveDonePageSummaryEnable";
+static NSString *const kWCPLRepeatButtonEngineV2EnableKey = @"kWCPLRepeatButtonEngineV2Enable";
 
 static void wcpl_clearDefaultsKeys(NSArray<NSString *> *keys) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -142,6 +144,26 @@ static BOOL testReceiveDonePageSummaryDefaultAndPersist(void) {
     return YES;
 }
 
+static BOOL testRepeatButtonEngineV2DefaultAndPersist(void) {
+    wcpl_clearDefaultsKeys(@[kWCPLRepeatButtonEngineV2EnableKey]);
+
+    WCPLGestureConfig *config = [[WCPLGestureConfig alloc] init];
+    WCPL_ASSERT(config.repeatButtonEngineV2Enable == NO, "repeatButtonEngineV2Enable should default to NO");
+
+    config.repeatButtonEngineV2Enable = YES;
+    WCPL_ASSERT(config.repeatButtonEngineV2Enable == YES, "repeatButtonEngineV2Enable should persist YES in memory");
+
+    config = [[WCPLGestureConfig alloc] init];
+    WCPL_ASSERT(config.repeatButtonEngineV2Enable == YES, "repeatButtonEngineV2Enable should reload persisted YES");
+
+    config.repeatButtonEngineV2Enable = NO;
+    config = [[WCPLGestureConfig alloc] init];
+    WCPL_ASSERT(config.repeatButtonEngineV2Enable == NO, "repeatButtonEngineV2Enable should reload persisted NO");
+
+    wcpl_clearDefaultsKeys(@[kWCPLRepeatButtonEngineV2EnableKey]);
+    return YES;
+}
+
 static BOOL runTest(const char *name, BOOL (*test)(void)) {
     @autoreleasepool {
         BOOL ok = test();
@@ -159,6 +181,7 @@ int main(void) {
     failed += !runTest("testAllowedGroupListAliasing", testAllowedGroupListAliasing);
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
     failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);
+    failed += !runTest("testRepeatButtonEngineV2DefaultAndPersist", testRepeatButtonEngineV2DefaultAndPersist);
 
     if (failed == 0) {
         fprintf(stdout, "ALL TESTS PASSED\n");

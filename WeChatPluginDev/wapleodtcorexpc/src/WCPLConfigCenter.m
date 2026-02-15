@@ -25,6 +25,7 @@
         _login = [WCPLLoginConfig sharedConfig];
         _av = [WCPLAVConfig sharedConfig];
         _revoke = [WCPLRevokeConfig sharedConfig];
+        _timeline = [WCPLTimelineConfig sharedConfig];
     }
     return self;
 }

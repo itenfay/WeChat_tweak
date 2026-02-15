@@ -11,6 +11,7 @@
 #import "WCPLLocationConfig.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLRevokeConfig.h"
+#import "WCPLTimelineConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) WCPLLoginConfig *login;
 @property (readonly, nonatomic) WCPLAVConfig *av;
 @property (readonly, nonatomic) WCPLRevokeConfig *revoke;
+@property (readonly, nonatomic) WCPLTimelineConfig *timeline;
 
 @end
 

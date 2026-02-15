@@ -158,6 +158,41 @@ static NSString *wcpl_sg_contentSnippet(NSString *content) {
     return [[content substringToIndex:limit] stringByAppendingString:@"..."];
 }
 
+static BOOL wcpl_sg_looksLikeQuoteAppMsg(NSString *sanitizedContent) {
+    if (![sanitizedContent isKindOfClass:[NSString class]] || sanitizedContent.length == 0) {
+        return NO;
+    }
+    if ([sanitizedContent rangeOfString:@"<appmsg" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+        return NO;
+    }
+    if ([sanitizedContent rangeOfString:@"<refermsg" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([sanitizedContent rangeOfString:@"<refermsgsvrid" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
+}
+
+static void wcpl_sg_logQuoteDiagnostic(NSString *stage,
+                                       NSInteger msgType,
+                                       NSString *toUsr,
+                                       NSString *fromUsr,
+                                       NSString *content) {
+    if (msgType != 49) {
+        return;
+    }
+    BOOL hasRefer = wcpl_sg_looksLikeQuoteAppMsg(content);
+    WCPLLogDebug(@"引用消息诊断: stage=%@ type=%ld to=%@ from=%@ len=%lu hasRefer=%d snippet=%@",
+                 stage ?: @"",
+                 (long)msgType,
+                 toUsr ?: @"",
+                 fromUsr ?: @"",
+                 (unsigned long)content.length,
+                 hasRefer ? 1 : 0,
+                 wcpl_sg_contentSnippet(content));
+}
+
 static BOOL wcpl_sg_isFromSelfMsgWrap(id msgWrap) {
     if (!msgWrap) return NO;
 
@@ -323,12 +358,14 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
         id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
         NSUInteger contentLength = wcpl_sg_safeContentLength(rawContent);
         NSString *contentClass = rawContent ? NSStringFromClass([rawContent class]) : @"nil";
+        NSString *content = wcpl_sg_sanitizeText(rawContent);
         WCPLLogDebug(@"消息入队: SendMessageMgr type=%ld contentLen=%lu contentClass=%@ to=%@ from=%@",
                      (long)msgType,
                      (unsigned long)contentLength,
                      contentClass,
                      toUsr,
                      fromUsr);
+        wcpl_sg_logQuoteDiagnostic(@"SendMessageMgr.AddMsgToSendTable", msgType, toUsr, fromUsr, content);
     }
 
     %orig;
@@ -366,6 +403,9 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
                      fromUsr,
                      (unsigned long)content.length,
                      wcpl_sg_contentSnippet(content));
+    } else if (msgType == 49) {
+        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+        wcpl_sg_logQuoteDiagnostic(@"CMessageMgr.AddMsg", msgType, toUsr, fromUsr, content);
     }
     %orig;
 }
@@ -397,6 +437,7 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
                      (unsigned long)content.length,
                      wcpl_sg_contentSnippet(content));
     }
+    wcpl_sg_logQuoteDiagnostic(@"CMessageMgr.AsyncOnAddMsg", msgType, toUsr, fromUsr, content);
 
     %orig;
 }
@@ -428,6 +469,7 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
                      (unsigned long)content.length,
                      wcpl_sg_contentSnippet(content));
     }
+    wcpl_sg_logQuoteDiagnostic(@"CMessageMgr.AsyncOnPreAddMsg", msgType, toUsr, fromUsr, content);
 
     %orig;
 }
