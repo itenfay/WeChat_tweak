@@ -348,6 +348,21 @@ static BOOL wcpl_push2chat_tryOpenSession(id contact, NSString *userName, WCPLPu
         }
     }
 
+    // 兜底：部分场景（例如 split view / 特殊导航栈）push 可能无效，尝试交由 AppViewControllerManager 处理。
+    Class appMgrClass = objc_getClass("CAppViewControllerManager");
+    if (appMgrClass && [appMgrClass respondsToSelector:@selector(getAppViewControllerManager)]) {
+        @try {
+            id mgr = ((id (*)(id, SEL))objc_msgSend)(appMgrClass, @selector(getAppViewControllerManager));
+            if (mgr && [mgr respondsToSelector:@selector(jumpToChat:msgToLocate:)]) {
+                wcpl_push2chat_trace(@"open(jumpToChat): user=%@ contact=%@", userName, contact);
+                ((void (*)(id, SEL, id, id))objc_msgSend)(mgr, @selector(jumpToChat:msgToLocate:), contact, nil);
+                return YES;
+            }
+        } @catch (__unused NSException *exception) {
+            wcpl_push2chat_trace(@"open(jumpToChat) exception: user=%@", userName);
+        }
+    }
+
     return NO;
 }
 
