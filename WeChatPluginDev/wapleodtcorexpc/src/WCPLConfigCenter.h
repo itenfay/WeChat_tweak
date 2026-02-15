@@ -9,6 +9,7 @@
 #import "WCPLIgnoreConfig.h"
 #import "WCPLLoginConfig.h"
 #import "WCPLLocationConfig.h"
+#import "WCPLPush2ChatConfig.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLRevokeConfig.h"
 #import "WCPLTimelineConfig.h"
@@ -27,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) WCPLAVConfig *av;
 @property (readonly, nonatomic) WCPLRevokeConfig *revoke;
 @property (readonly, nonatomic) WCPLTimelineConfig *timeline;
+@property (readonly, nonatomic) WCPLPush2ChatConfig *push2Chat;
 
 @end
 

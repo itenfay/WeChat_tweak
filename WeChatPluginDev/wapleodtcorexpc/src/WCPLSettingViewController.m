@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLSettingPageTypeOther,
     WCPLSettingPageTypeSwipeGesture,
     WCPLSettingPageTypeRepeatBubble,
+    WCPLSettingPageTypePush2Chat,
 };
 
 @interface WCPLSettingViewController () <MultiSelectGroupsViewControllerDelegate,
@@ -43,6 +44,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (instancetype)initWithPageType:(WCPLSettingPageType)pageType;
 - (void)wcpl_setupTableViewManager;
 - (NSString *)wcpl_pageTitle;
+- (void)addPush2ChatSettingSection;
 
 @end
 
@@ -136,6 +138,9 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         case WCPLSettingPageTypeRepeatBubble:
             [self addRepeatBubbleSettingSection];
             break;
+        case WCPLSettingPageTypePush2Chat:
+            [self addPush2ChatSettingSection];
+            break;
     }
 
     MMTableView *tableView = [self.tableViewMgr getTableView];
@@ -158,6 +163,8 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
             return @"消息手势";
         case WCPLSettingPageTypeRepeatBubble:
             return @"复读气泡";
+        case WCPLSettingPageTypePush2Chat:
+            return @"消息直达";
         case WCPLSettingPageTypeRoot:
         default:
             return @"微信辣椒 by guanxi";
@@ -168,6 +175,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)addTopLevelEntrySection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能分类"];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息直达" detail:@"推送直达聊天" selector:@selector(openPush2ChatSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息屏蔽" detail:@"屏蔽用户和群聊提醒" selector:@selector(openMessageIgnoreSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"其他" detail:@"防撤回、模拟 iPad、朋友圈广告" selector:@selector(openOtherSettingsEntry)]];
@@ -189,6 +197,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)openPush2ChatSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypePush2Chat];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)openMessageIgnoreSettingsEntry {
     WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeMessageIgnore];
     [self.navigationController pushViewController:controller animated:YES];
@@ -207,6 +220,62 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)openRepeatBubbleSettingsEntry {
     WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeRepeatBubble];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma mark - Push2Chat
+
+- (void)addPush2ChatSettingSection {
+    WCPLPush2ChatConfig *config = [WCPLConfigCenter shared].push2Chat;
+    if (!config) {
+        return;
+    }
+
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"功能设置"];
+    section.footerTitle = @"注意：\n直达功能需要重启微信后生效";
+
+    [section addCell:[objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingEnableForegroundPush2Chat:)
+                                                                    target:self
+                                                                     title:@"开启前台直达"
+                                                                        on:config.enableForegroundPush]];
+    if (config.enableForegroundPush) {
+        UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"全屏", @"半屏"]];
+        seg.selectedSegmentIndex = config.foregroundPushMode;
+        [seg addTarget:self action:@selector(settingForegroundPush2ChatModeChanged:) forControlEvents:UIControlEventValueChanged];
+        id cell = [objc_getClass("WCTableViewCellManager") normalCellForSel:nil target:self title:@"↳ 前台直达模式" rightView:seg];
+        [section addCell:cell];
+    }
+
+    [section addCell:[objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingEnableBackgroundPush2Chat:)
+                                                                    target:self
+                                                                     title:@"开启后台直达"
+                                                                        on:config.enableBackgroundPush]];
+    if (config.enableBackgroundPush) {
+        UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"全屏", @"半屏"]];
+        seg.selectedSegmentIndex = config.backgroundPushMode;
+        [seg addTarget:self action:@selector(settingBackgroundPush2ChatModeChanged:) forControlEvents:UIControlEventValueChanged];
+        id cell = [objc_getClass("WCTableViewCellManager") normalCellForSel:nil target:self title:@"↳ 后台直达模式" rightView:seg];
+        [section addCell:cell];
+    }
+
+    [self.tableViewMgr addSection:section];
+}
+
+- (void)settingEnableForegroundPush2Chat:(UISwitch *)sender {
+    [WCPLConfigCenter shared].push2Chat.enableForegroundPush = sender.on;
+    [self reloadTableData];
+}
+
+- (void)settingEnableBackgroundPush2Chat:(UISwitch *)sender {
+    [WCPLConfigCenter shared].push2Chat.enableBackgroundPush = sender.on;
+    [self reloadTableData];
+}
+
+- (void)settingForegroundPush2ChatModeChanged:(UISegmentedControl *)sender {
+    [WCPLConfigCenter shared].push2Chat.foregroundPushMode = sender.selectedSegmentIndex;
+}
+
+- (void)settingBackgroundPush2ChatModeChanged:(UISegmentedControl *)sender {
+    [WCPLConfigCenter shared].push2Chat.backgroundPushMode = sender.selectedSegmentIndex;
 }
 
 #pragma mark - BasicSetting

@@ -26,6 +26,7 @@
         _av = [WCPLAVConfig sharedConfig];
         _revoke = [WCPLRevokeConfig sharedConfig];
         _timeline = [WCPLTimelineConfig sharedConfig];
+        _push2Chat = [WCPLPush2ChatConfig sharedConfig];
     }
     return self;
 }
