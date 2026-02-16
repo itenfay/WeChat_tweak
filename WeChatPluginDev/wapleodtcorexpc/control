@@ -1,4 +1,4 @@
-Package: com.aple.wapleodtcorexpc
+Package: com.aple.wechatpepper
 Name: 微信辣椒
 Depends: mobilesubstrate | ellekit | libhooker
 Version: 1.8.36

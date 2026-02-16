@@ -16,7 +16,7 @@ MODULES = 0
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = wapleodtcorexpc
+TWEAK_NAME = wechatpepper
 $(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLContactGroupPickerViewController.m src/WCPLFriendPickerViewController.m src/WCPLGroupPickerViewController.m src/WCPLPickerDataProvider.m src/WCPLPickerItem.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
@@ -49,7 +49,7 @@ after-package::
 		echo "[wcpl] skip local ldid: not found"; \
 		exit 0; \
 	fi; \
-	DEB_PATH="$$(ls -t "$(CURDIR)"/packages/com.aple.wapleodtcorexpc_*.deb 2>/dev/null | head -n 1)"; \
+		DEB_PATH="$$(ls -t "$(CURDIR)"/packages/com.aple.wechatpepper_*.deb 2>/dev/null | head -n 1)"; \
 	if [ -z "$$DEB_PATH" ]; then \
 		echo "[wcpl] skip local ldid: package not found"; \
 		exit 0; \
