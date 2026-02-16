@@ -35,13 +35,18 @@ static const void *kWCPLRepeatAnchorSignatureKey = &kWCPLRepeatAnchorSignatureKe
 static const void *kWCPLRepeatAnchorQuoteProxyKey = &kWCPLRepeatAnchorQuoteProxyKey;
 static const void *kWCPLRepeatAnchorQuoteReferSvrIDKey = &kWCPLRepeatAnchorQuoteReferSvrIDKey;
 static const void *kWCPLRepeatViewModelIsEligibleKey = &kWCPLRepeatViewModelIsEligibleKey;
+static const void *kWCPLRepeatMergedForwardCacheKey = &kWCPLRepeatMergedForwardCacheKey;
+static const void *kWCPLRepeatFileAppCacheKey = &kWCPLRepeatFileAppCacheKey;
+static const void *kWCPLRepeatQuoteAppCacheKey = &kWCPLRepeatQuoteAppCacheKey;
+static const void *kWCPLRepeatEmoticonAppCacheKey = &kWCPLRepeatEmoticonAppCacheKey;
 static const NSTimeInterval kWCPLQuoteLongPressSuppressDuration = 1.2;
 static const NSTimeInterval kWCPLSwipeTouchSuppressDuration = 0.55;
 static const NSTimeInterval kWCPLRepeatAnchorStaleInterval = 0.75;
 static const NSTimeInterval kWCPLRepeatRefreshThrottleInterval = 0.15;
 static const NSTimeInterval kWCPLRepeatSettleRefreshDelay = 0.12;
 static const NSTimeInterval kWCPLRepeatSettleRefreshFollowDelay = 0.32;
-static const NSTimeInterval kWCPLRepeatButtonTapDebounceInterval = 0.25;
+static const NSTimeInterval kWCPLRepeatButtonTapDebounceInterval = 0.08;
+static const NSTimeInterval kWCPLRepeatBurstSendMinInterval = 0.42;
 static const NSUInteger kWCPLRepeatFullResyncInterval = 16;
 static NSString *const kWCPLIssueIdLongPressMenu = @"wx-bugfix-longpress-menu-20260207";
 
@@ -60,14 +65,22 @@ static BOOL gWCPLRepeatNeedFullResync = YES;
 static NSUInteger gWCPLRepeatRefreshRoundCounter = 0;
 static BOOL gWCPLRepeatEngineModeInitialized = NO;
 static BOOL gWCPLRepeatEngineV2LastEnabled = NO;
+static CFTimeInterval gWCPLRepeatLastQueuedSendAt = 0;
+static const BOOL kWCPLRepeatForceLocalCellEngine = YES;
 
 static NSString *wcpl_repeatMessageDebugInfo(CMessageWrap *msgWrap);
 static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap);
 static NSArray<NSString *> *wcpl_repeatIdentityTokens(CMessageWrap *msgWrap);
 static NSString *wcpl_currentSelfUserNameForRepeat(void);
+static void wcpl_scheduleSwipeQuoteAtUserIfNeeded(CMessageWrap *msgWrap,
+                                                   BaseMsgContentViewController *chatVC,
+                                                   NSString *sceneTag);
 static long long wcpl_quoteReferServerIDFromContent(NSString *content);
 static CMessageWrap *wcpl_quoteTargetFromMessageWrap(CMessageWrap *msgWrap);
 static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessageWrap *msgWrap);
+static BOOL wcpl_isMediaBubbleRepeatMessage(CMessageWrap *msgWrap);
+static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap);
+static BOOL wcpl_isMergedForwardAppMessage(CMessageWrap *msgWrap);
 static id wcpl_viewModelForCellView(id cellView);
 static BOOL wcpl_resolveRepeatButtonEligibleBySubViewModel(id viewModel);
 static void wcpl_markRepeatButtonEligibilityForViewModel(id viewModel);
@@ -103,6 +116,13 @@ static BOOL wcpl_repeatQuoteNativeResendFresh(CMessageWrap *msgWrap,
                                               NSString *chatName,
                                               BaseMsgContentViewController *chatVC,
                                               NSString *sceneTag);
+
+static BOOL wcpl_shouldUseLocalCellRepeatEngine(WCPLGestureConfig *config) {
+    if (kWCPLRepeatForceLocalCellEngine) {
+        return YES;
+    }
+    return config.repeatButtonEngineV2Enable;
+}
 
 static NSString *wcpl_swipeDirectionName(WCHookSwipeDirection direction) {
     switch (direction) {
@@ -202,8 +222,17 @@ static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
     if (!msgWrap || msgWrap.m_uiMessageType != 49) {
         return NO;
     }
+    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey);
+    if ([cached isKindOfClass:[NSNumber class]]) {
+        return cached.boolValue;
+    }
+    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return NO;
+    }
     NSString *content = msgWrap.m_nsContent;
     if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return NO;
     }
 
@@ -231,24 +260,37 @@ static BOOL wcpl_isQuoteReplyAppMessage(CMessageWrap *msgWrap) {
     };
 
     if (containsQuoteMarkers(content)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
 
     NSString *decodedContent = wcpl_decodeBasicXMLEntities(content);
     if (decodedContent.length > 0 && ![decodedContent isEqualToString:content] && containsQuoteMarkers(decodedContent)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
 
-    return wcpl_quoteReferServerIDFromContent(content) > 0;
+    BOOL isQuote = (wcpl_quoteReferServerIDFromContent(content) > 0);
+    objc_setAssociatedObject(msgWrap, kWCPLRepeatQuoteAppCacheKey, @(isQuote), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return isQuote;
 }
 
 static BOOL wcpl_isFileAppMessage(CMessageWrap *msgWrap) {
     if (!msgWrap || msgWrap.m_uiMessageType != 49) {
         return NO;
     }
+    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey);
+    if ([cached isKindOfClass:[NSNumber class]]) {
+        return cached.boolValue;
+    }
+    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return NO;
+    }
 
     NSString *content = msgWrap.m_nsContent;
     if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return NO;
     }
 
@@ -270,14 +312,17 @@ static BOOL wcpl_isFileAppMessage(CMessageWrap *msgWrap) {
     };
 
     if (looksLikeFileType(content)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
 
     NSString *decoded = wcpl_decodeBasicXMLEntities(content);
     if (decoded.length > 0 && ![decoded isEqualToString:content] && looksLikeFileType(decoded)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
 
+    objc_setAssociatedObject(msgWrap, kWCPLRepeatFileAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return NO;
 }
 
@@ -285,7 +330,16 @@ static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
     if (!msgWrap || msgWrap.m_uiMessageType != 49) {
         return NO;
     }
+    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey);
+    if ([cached isKindOfClass:[NSNumber class]]) {
+        return cached.boolValue;
+    }
+    if (wcpl_isMergedForwardAppMessage(msgWrap)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return NO;
+    }
     if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return NO;
     }
 
@@ -294,22 +348,120 @@ static BOOL wcpl_isAppEmoticonMessage(CMessageWrap *msgWrap) {
         md5 = [msgWrap.m_nsEmoticonMD5 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     if (md5.length == 32) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
 
     NSString *content = msgWrap.m_nsContent;
     if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return NO;
     }
 
     if ([content rangeOfString:@"<emoji" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
     if ([content rangeOfString:@"<emoticon" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return YES;
     }
 
+    objc_setAssociatedObject(msgWrap, kWCPLRepeatEmoticonAppCacheKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return NO;
+}
+
+static NSInteger wcpl_appMessageInnerTypeFast(CMessageWrap *msgWrap) {
+    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
+        return 0;
+    }
+
+    SEL selectors[] = {
+        NSSelectorFromString(@"appMsgInnerType"),
+        NSSelectorFromString(@"uiAppMsgInnerType"),
+        NSSelectorFromString(@"m_uiAppMsgInnerType"),
+        NSSelectorFromString(@"appMsgType"),
+        NSSelectorFromString(@"uiAppMsgType"),
+        NSSelectorFromString(@"m_uiAppMsgType")
+    };
+    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
+        SEL sel = selectors[idx];
+        if (![msgWrap respondsToSelector:sel]) {
+            continue;
+        }
+        @try {
+            NSUInteger value = ((NSUInteger (*)(id, SEL))objc_msgSend)(msgWrap, sel);
+            if (value > 0 && value < 10000) {
+                return (NSInteger)value;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSArray<NSString *> *kvcKeys = @[
+        @"m_uiAppMsgInnerType",
+        @"uiAppMsgInnerType",
+        @"appMsgInnerType",
+        @"m_uiAppMsgType",
+        @"uiAppMsgType",
+        @"appMsgType"
+    ];
+    for (NSString *key in kvcKeys) {
+        @try {
+            id value = [msgWrap valueForKey:key];
+            NSInteger innerType = 0;
+            if ([value isKindOfClass:[NSNumber class]]) {
+                innerType = [(NSNumber *)value integerValue];
+            } else if ([value isKindOfClass:[NSString class]]) {
+                innerType = [(NSString *)value integerValue];
+            }
+            if (innerType > 0 && innerType < 10000) {
+                return innerType;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return 0;
+}
+
+static BOOL wcpl_isMergedForwardAppMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap || msgWrap.m_uiMessageType != 49) {
+        return NO;
+    }
+
+    NSNumber *cached = objc_getAssociatedObject(msgWrap, kWCPLRepeatMergedForwardCacheKey);
+    if ([cached isKindOfClass:[NSNumber class]]) {
+        return cached.boolValue;
+    }
+
+    BOOL mergedForward = NO;
+    NSInteger innerType = wcpl_appMessageInnerTypeFast(msgWrap);
+    if (innerType == 19) {
+        mergedForward = YES;
+    }
+
+    if (!mergedForward) {
+        NSString *content = msgWrap.m_nsContent;
+        if ([content isKindOfClass:[NSString class]] && content.length > 0) {
+            NSString *prefix = content;
+            if (prefix.length > 4096) {
+                prefix = [prefix substringToIndex:4096];
+            }
+
+            BOOL hasRecordMarkers =
+                [prefix rangeOfString:@"<recorditem" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                [prefix rangeOfString:@"<datalist" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                [prefix rangeOfString:@"<recordxml" options:NSCaseInsensitiveSearch].location != NSNotFound;
+            BOOL hasType19 =
+                [prefix rangeOfString:@"<type>19</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                [prefix rangeOfString:@"<type><![CDATA[19]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound;
+            mergedForward = hasRecordMarkers || hasType19;
+        }
+    }
+
+    objc_setAssociatedObject(msgWrap, kWCPLRepeatMergedForwardCacheKey, @(mergedForward), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return mergedForward;
 }
 
 static BOOL wcpl_isMessageFromOther(CMessageWrap *msgWrap) {
@@ -775,6 +927,21 @@ static CMessageWrap *wcpl_messageWrapForCellView(id cell) {
     return nil;
 }
 
+static BOOL wcpl_isMediaBubbleRepeatMessage(CMessageWrap *msgWrap) {
+    if (!msgWrap) {
+        return NO;
+    }
+    if (msgWrap.m_uiMessageType == 3 ||
+        msgWrap.m_uiMessageType == 43 ||
+        msgWrap.m_uiMessageType == 47) {
+        return YES;
+    }
+    if (msgWrap.m_uiMessageType == 49 && wcpl_isAppEmoticonMessage(msgWrap)) {
+        return YES;
+    }
+    return NO;
+}
+
 static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
     if (!msgWrap) {
         return nil;
@@ -795,6 +962,9 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
         return @"[表情]";
     }
     if (msgWrap.m_uiMessageType == 49) {
+        if (wcpl_isMergedForwardAppMessage(msgWrap)) {
+            return nil;
+        }
         if (wcpl_isFileAppMessage(msgWrap)) {
             return nil;
         }
@@ -842,6 +1012,9 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
         case 47:
             return config.repeatSupportEmoticonEnable;
         case 49: {
+            if (wcpl_isMergedForwardAppMessage(msgWrap)) {
+                return NO;
+            }
             if (wcpl_isFileAppMessage(msgWrap)) {
                 return NO;
             }
@@ -995,6 +1168,615 @@ static NSString *wcpl_chatNameForMessage(CMessageWrap *msgWrap, BaseMsgContentVi
         return msgWrap.m_nsFromUsr;
     }
     return msgWrap.m_nsToUsr;
+}
+
+static BOOL wcpl_isChatRoomName(NSString *name) {
+    NSString *trimmed = wcpl_trimTextForRepeat(name);
+    if (trimmed.length == 0) {
+        return NO;
+    }
+    return ([trimmed rangeOfString:@"@chatroom" options:NSCaseInsensitiveSearch].location != NSNotFound);
+}
+
+static NSString *wcpl_normalizeMentionCandidate(NSString *candidate) {
+    NSString *value = wcpl_trimTextForRepeat(candidate);
+    if (value.length == 0) {
+        return nil;
+    }
+
+    if ([value hasPrefix:@"@"]) {
+        value = wcpl_trimTextForRepeat([value substringFromIndex:1]);
+    }
+    if ([value hasSuffix:@":"]) {
+        value = wcpl_trimTextForRepeat([value substringToIndex:MAX((NSInteger)value.length - 1, 0)]);
+    }
+    if (value.length == 0 || value.length > 128) {
+        return nil;
+    }
+
+    if ([value rangeOfString:@"<"].location != NSNotFound || [value rangeOfString:@">"].location != NSNotFound) {
+        return nil;
+    }
+    if ([value rangeOfCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].location != NSNotFound) {
+        return nil;
+    }
+    if (wcpl_isChatRoomName(value)) {
+        return nil;
+    }
+
+    return value;
+}
+
+static NSString *wcpl_extractMentionCandidateFromXML(NSString *xmlText) {
+    if (![xmlText isKindOfClass:[NSString class]] || xmlText.length == 0) {
+        return nil;
+    }
+
+    NSArray<NSArray<NSString *> *> *tagPairs = @[
+        @[@"<memberusername><![CDATA[", @"]]></memberusername>"],
+        @[@"<memberusername>", @"</memberusername>"],
+        @[@"<senderusername><![CDATA[", @"]]></senderusername>"],
+        @[@"<senderusername>", @"</senderusername>"],
+        @[@"<fromusr><![CDATA[", @"]]></fromusr>"],
+        @[@"<fromusr>", @"</fromusr>"],
+        @[@"<chatusr><![CDATA[", @"]]></chatusr>"],
+        @[@"<chatusr>", @"</chatusr>"],
+        @[@"<realchatname><![CDATA[", @"]]></realchatname>"],
+        @[@"<realchatname>", @"</realchatname>"],
+        @[@"<username><![CDATA[", @"]]></username>"],
+        @[@"<username>", @"</username>"]
+    ];
+
+    NSString *(^extractFromText)(NSString *) = ^NSString *(NSString *text) {
+        if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+            return nil;
+        }
+        for (NSArray<NSString *> *pair in tagPairs) {
+            if (pair.count != 2) {
+                continue;
+            }
+            NSString *value = wcpl_extractXMLValue(text, pair[0], pair[1]);
+            NSString *candidate = wcpl_normalizeMentionCandidate(value);
+            if (candidate.length > 0) {
+                return candidate;
+            }
+        }
+        return nil;
+    };
+
+    NSString *candidate = extractFromText(xmlText);
+    if (candidate.length > 0) {
+        return candidate;
+    }
+
+    NSString *decoded = wcpl_decodeBasicXMLEntities(xmlText);
+    if (decoded.length > 0 && ![decoded isEqualToString:xmlText]) {
+        candidate = extractFromText(decoded);
+        if (candidate.length > 0) {
+            return candidate;
+        }
+    }
+
+    return nil;
+}
+
+static NSString *wcpl_extractMentionCandidateFromGroupContentPrefix(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return nil;
+    }
+
+    NSRange newlineRange = [content rangeOfString:@"\n"];
+    if (newlineRange.location == NSNotFound || newlineRange.location == 0) {
+        return nil;
+    }
+
+    NSString *firstLine = [content substringToIndex:newlineRange.location];
+    return wcpl_normalizeMentionCandidate(firstLine);
+}
+
+static NSString *wcpl_quoteMentionUserNameForMessage(CMessageWrap *msgWrap,
+                                                     NSString *chatName,
+                                                     NSString *selfUserName) {
+    if (!msgWrap) {
+        return nil;
+    }
+
+    NSString *selfName = wcpl_trimTextForRepeat(selfUserName);
+    if (selfName.length == 0) {
+        selfName = wcpl_trimTextForRepeat(wcpl_currentSelfUserNameForRepeat());
+    }
+
+    BOOL isGroupChat = wcpl_isChatRoomName(chatName) ||
+                       wcpl_isChatRoomName(msgWrap.m_nsFromUsr) ||
+                       wcpl_isChatRoomName(msgWrap.m_nsToUsr);
+
+    if (!isGroupChat) {
+        return nil;
+    }
+
+    NSMutableArray<NSString *> *candidates = [NSMutableArray arrayWithCapacity:6];
+
+    NSString *realChatUsr = wcpl_normalizeMentionCandidate(msgWrap.m_nsRealChatUsr);
+    if (realChatUsr.length > 0) {
+        [candidates addObject:realChatUsr];
+    }
+
+    NSString *fromUsr = wcpl_normalizeMentionCandidate(msgWrap.m_nsFromUsr);
+    if (fromUsr.length > 0) {
+        [candidates addObject:fromUsr];
+    }
+
+    if (isGroupChat) {
+        NSString *msgSourceCandidate = wcpl_extractMentionCandidateFromXML(msgWrap.m_nsMsgSource);
+        if (msgSourceCandidate.length > 0) {
+            [candidates addObject:msgSourceCandidate];
+        }
+
+        NSString *contentPrefixCandidate = wcpl_extractMentionCandidateFromGroupContentPrefix(msgWrap.m_nsContent);
+        if (contentPrefixCandidate.length > 0) {
+            [candidates addObject:contentPrefixCandidate];
+        }
+
+        NSString *contentXMLCandidate = wcpl_extractMentionCandidateFromXML(msgWrap.m_nsContent);
+        if (contentXMLCandidate.length > 0) {
+            [candidates addObject:contentXMLCandidate];
+        }
+    }
+
+    for (NSString *candidate in candidates) {
+        if (candidate.length == 0) {
+            continue;
+        }
+        if (selfName.length > 0 && [candidate isEqualToString:selfName]) {
+            continue;
+        }
+        return candidate;
+    }
+
+    return nil;
+}
+
+static id wcpl_quoteContactForUserName(NSString *userName) {
+    if (userName.length == 0) {
+        return nil;
+    }
+
+    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!contactMgr) {
+        return nil;
+    }
+
+    id contact = nil;
+    if ([contactMgr respondsToSelector:@selector(getContactByName:)]) {
+        @try {
+            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByName:), userName);
+        } @catch (__unused NSException *exceptionGetByName) {
+            contact = nil;
+        }
+    }
+
+    if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromCache:)]) {
+        @try {
+            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromCache:), userName);
+        } @catch (__unused NSException *exceptionGetFromCache) {
+            contact = nil;
+        }
+    }
+
+    if (!contact && [contactMgr respondsToSelector:@selector(getContactForSearchByName:)]) {
+        @try {
+            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactForSearchByName:), userName);
+        } @catch (__unused NSException *exceptionSearchByName) {
+            contact = nil;
+        }
+    }
+
+    if (!contact && [contactMgr respondsToSelector:@selector(getContactByNameFromDB:)]) {
+        @try {
+            contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getContactByNameFromDB:), userName);
+        } @catch (__unused NSException *exceptionGetByNameFromDB) {
+            contact = nil;
+        }
+    }
+
+    return contact;
+}
+
+static id wcpl_quoteContactFromMessage(CMessageWrap *msgWrap, NSString *expectedUserName) {
+    if (!msgWrap) {
+        return nil;
+    }
+
+    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!(contactMgr && [contactMgr respondsToSelector:@selector(getMessageChatContactByMessageWrap:)])) {
+        return nil;
+    }
+
+    id contact = nil;
+    @try {
+        contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, @selector(getMessageChatContactByMessageWrap:), msgWrap);
+    } @catch (__unused NSException *exceptionGetByWrap) {
+        contact = nil;
+    }
+
+    if (!contact || expectedUserName.length == 0 || ![contact respondsToSelector:@selector(m_nsUsrName)]) {
+        return contact;
+    }
+
+    NSString *contactUserName = nil;
+    @try {
+        id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsUsrName));
+        if ([value isKindOfClass:[NSString class]]) {
+            contactUserName = wcpl_trimTextForRepeat((NSString *)value);
+        }
+    } @catch (__unused NSException *exceptionContactUser) {
+        contactUserName = nil;
+    }
+
+    if (contactUserName.length > 0 && ![contactUserName isEqualToString:expectedUserName]) {
+        WCPLLogDebug(@"Swipe quote mention contact mismatch(fromMessage): expect=%@ got=%@",
+                     expectedUserName ?: @"(nil)",
+                     contactUserName ?: @"(nil)");
+    }
+
+    return contact;
+}
+
+static BOOL wcpl_quoteContactMatchesUserName(id contact, NSString *expectedUserName) {
+    if (!contact) {
+        return NO;
+    }
+    if (expectedUserName.length == 0) {
+        return YES;
+    }
+
+    NSString *contactUserName = nil;
+    if ([contact isKindOfClass:[NSString class]]) {
+        contactUserName = wcpl_trimTextForRepeat((NSString *)contact);
+    } else if ([contact respondsToSelector:@selector(m_nsUsrName)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsUsrName));
+            if ([value isKindOfClass:[NSString class]]) {
+                contactUserName = wcpl_trimTextForRepeat((NSString *)value);
+            }
+        } @catch (__unused NSException *exceptionContactUser) {
+            contactUserName = nil;
+        }
+    }
+
+    return (contactUserName.length > 0 && [contactUserName isEqualToString:expectedUserName]);
+}
+
+static id wcpl_quoteContactFromChatVC(BaseMsgContentViewController *chatVC,
+                                      CMessageWrap *msgWrap,
+                                      NSString *expectedUserName) {
+    if (!(chatVC && msgWrap)) {
+        return nil;
+    }
+
+    if (![chatVC respondsToSelector:@selector(getMessageChatContactByMessageWrap:)]) {
+        return nil;
+    }
+
+    id contact = nil;
+    @try {
+        contact = ((id (*)(id, SEL, id))objc_msgSend)(chatVC,
+                                                       @selector(getMessageChatContactByMessageWrap:),
+                                                       msgWrap);
+    } @catch (__unused NSException *exceptionGetByChatVC) {
+        contact = nil;
+    }
+
+    if (contact && expectedUserName.length > 0 && !wcpl_quoteContactMatchesUserName(contact, expectedUserName)) {
+        WCPLLogDebug(@"Swipe quote mention contact mismatch(fromChatVC): expect=%@",
+                     expectedUserName ?: @"(nil)");
+    }
+
+    return contact;
+}
+
+static id wcpl_quoteLogicControllerForChatVC(BaseMsgContentViewController *chatVC) {
+    if (!chatVC) {
+        return nil;
+    }
+
+    id logicController = nil;
+    if ([chatVC respondsToSelector:@selector(m_logicController)]) {
+        @try {
+            logicController = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(m_logicController));
+        } @catch (__unused NSException *exceptionLogic0) {
+            logicController = nil;
+        }
+    }
+
+    if (!logicController && [chatVC respondsToSelector:@selector(logicController)]) {
+        @try {
+            logicController = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(logicController));
+        } @catch (__unused NSException *exceptionLogic1) {
+            logicController = nil;
+        }
+    }
+
+    return logicController;
+}
+
+static id wcpl_quoteToolViewForChatVC(BaseMsgContentViewController *chatVC) {
+    if (!(chatVC && [chatVC respondsToSelector:@selector(toolView)])) {
+        return nil;
+    }
+
+    id toolView = nil;
+    @try {
+        toolView = ((id (*)(id, SEL))objc_msgSend)(chatVC, @selector(toolView));
+    } @catch (__unused NSException *exceptionToolView) {
+        toolView = nil;
+    }
+    return toolView;
+}
+
+static id wcpl_quoteCurrentLogicControllerFromManager(void) {
+    id logicManager = WCPLGetService(objc_getClass("MMMsgLogicManager"));
+    if (!(logicManager && [logicManager respondsToSelector:@selector(GetCurrentLogicController)])) {
+        return nil;
+    }
+
+    id currentLogic = nil;
+    @try {
+        currentLogic = ((id (*)(id, SEL))objc_msgSend)(logicManager, @selector(GetCurrentLogicController));
+    } @catch (__unused NSException *exceptionCurrentLogic) {
+        currentLogic = nil;
+    }
+    return currentLogic;
+}
+
+static NSString *wcpl_quoteInputTextFromToolView(id toolView) {
+    if (!toolView) {
+        return nil;
+    }
+
+    NSString *inputText = nil;
+    if ([toolView respondsToSelector:@selector(inputText)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(toolView, @selector(inputText));
+            if ([value isKindOfClass:[NSString class]]) {
+                inputText = (NSString *)value;
+            }
+        } @catch (__unused NSException *exceptionInputText) {
+            inputText = nil;
+        }
+    }
+
+    if (inputText.length == 0 && [toolView respondsToSelector:@selector(text)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(toolView, @selector(text));
+            if ([value isKindOfClass:[NSString class]]) {
+                inputText = (NSString *)value;
+            }
+        } @catch (__unused NSException *exceptionText) {
+            inputText = nil;
+        }
+    }
+
+    return wcpl_trimTextForRepeat(inputText);
+}
+
+static BOOL wcpl_quoteInputHasAtSymbol(BaseMsgContentViewController *chatVC) {
+    id toolView = wcpl_quoteToolViewForChatVC(chatVC);
+    NSString *inputText = wcpl_quoteInputTextFromToolView(toolView);
+    if (inputText.length == 0) {
+        return NO;
+    }
+    return ([inputText rangeOfString:@"@"].location != NSNotFound);
+}
+
+static NSString *wcpl_quoteUserNameFromContact(id contact) {
+    if (!contact) {
+        return nil;
+    }
+
+    if ([contact isKindOfClass:[NSString class]]) {
+        return wcpl_trimTextForRepeat((NSString *)contact);
+    }
+
+    NSString *userName = nil;
+    if ([contact respondsToSelector:@selector(m_nsUsrName)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(contact, @selector(m_nsUsrName));
+            if ([value isKindOfClass:[NSString class]]) {
+                userName = wcpl_trimTextForRepeat((NSString *)value);
+            }
+        } @catch (__unused NSException *exceptionUser0) {
+            userName = nil;
+        }
+    }
+
+    if (userName.length == 0) {
+        @try {
+            id value = [contact valueForKey:@"m_nsUsrName"];
+            if ([value isKindOfClass:[NSString class]]) {
+                userName = wcpl_trimTextForRepeat((NSString *)value);
+            }
+        } @catch (__unused NSException *exceptionUser1) {
+            userName = nil;
+        }
+    }
+
+    return userName;
+}
+
+static BOOL wcpl_tryInvokeSingleArgSelector(id target, SEL selector, id arg) {
+    if (!(target && selector && arg) || ![target respondsToSelector:selector]) {
+        return NO;
+    }
+    @try {
+        ((void (*)(id, SEL, id))objc_msgSend)(target, selector, arg);
+        return YES;
+    } @catch (__unused NSException *exception) {
+        return NO;
+    }
+}
+
+static BOOL wcpl_applySwipeQuoteAtUserIfNeeded(CMessageWrap *msgWrap,
+                                                BaseMsgContentViewController *chatVC,
+                                                NSString *sceneTag) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!(config && config.swipeQuoteAtUserEnable) || !(msgWrap && chatVC)) {
+        return NO;
+    }
+
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+    NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
+    NSString *mentionUserName = wcpl_quoteMentionUserNameForMessage(msgWrap, chatName, selfUserName);
+    if (mentionUserName.length == 0) {
+        return NO;
+    }
+
+    NSString *realChatUserName = wcpl_normalizeMentionCandidate(msgWrap.m_nsRealChatUsr);
+    if (realChatUserName.length > 0 && selfUserName.length > 0 && [realChatUserName isEqualToString:selfUserName]) {
+        realChatUserName = nil;
+    }
+
+    id contact = wcpl_quoteContactFromChatVC(chatVC, msgWrap, mentionUserName);
+    if (!contact) {
+        contact = wcpl_quoteContactFromMessage(msgWrap, mentionUserName);
+    }
+    if (!contact && realChatUserName.length > 0) {
+        contact = wcpl_quoteContactForUserName(realChatUserName);
+    }
+    if (!contact) {
+        contact = wcpl_quoteContactForUserName(mentionUserName);
+    }
+    NSString *contactUserName = wcpl_quoteUserNameFromContact(contact);
+    if (contactUserName.length > 0 && !wcpl_isChatRoomName(contactUserName)) {
+        mentionUserName = contactUserName;
+    } else if (realChatUserName.length > 0) {
+        mentionUserName = realChatUserName;
+    }
+    id mentionTarget = contact ?: mentionUserName;
+
+    id managerLogicController = wcpl_quoteCurrentLogicControllerFromManager();
+    id logicController = wcpl_quoteLogicControllerForChatVC(chatVC);
+    id toolView = wcpl_quoteToolViewForChatVC(chatVC);
+    id primaryLogicController = managerLogicController ?: logicController;
+    BOOL injectedByDidSelect = NO;
+    BOOL injectedByAddAt = NO;
+
+    if (primaryLogicController && contact) {
+        injectedByDidSelect = wcpl_tryInvokeSingleArgSelector(primaryLogicController, @selector(didSelectContact:), contact);
+    }
+    if (!injectedByDidSelect && logicController && logicController != primaryLogicController && contact) {
+        injectedByDidSelect = wcpl_tryInvokeSingleArgSelector(logicController, @selector(didSelectContact:), contact);
+    }
+
+    NSMutableArray *addAtArgs = [NSMutableArray arrayWithCapacity:2];
+    if (contact) {
+        [addAtArgs addObject:contact];
+    }
+    if (mentionUserName.length > 0) {
+        [addAtArgs addObject:mentionUserName];
+    }
+
+    SEL addAtLowerSelector = NSSelectorFromString(@"addAtUser:");
+    NSArray<NSString *> *addAtSelectorNames = @[@"AddAtUser:", @"addAtUser:"];
+    NSMutableArray *addAtTargets = [NSMutableArray arrayWithCapacity:4];
+    if (primaryLogicController) {
+        [addAtTargets addObject:primaryLogicController];
+    }
+    if (logicController && logicController != primaryLogicController) {
+        [addAtTargets addObject:logicController];
+    }
+    if (toolView) {
+        [addAtTargets addObject:toolView];
+    }
+    if (chatVC) {
+        [addAtTargets addObject:chatVC];
+    }
+    for (id target in addAtTargets) {
+        if (injectedByAddAt) {
+            break;
+        }
+        for (NSString *selectorName in addAtSelectorNames) {
+            if (injectedByAddAt) {
+                break;
+            }
+            SEL selector = [selectorName isEqualToString:@"addAtUser:"] ? addAtLowerSelector : NSSelectorFromString(selectorName);
+            for (id arg in addAtArgs) {
+                if (wcpl_tryInvokeSingleArgSelector(target, selector, arg)) {
+                    injectedByAddAt = YES;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (!injectedByDidSelect && toolView && contact) {
+        injectedByDidSelect = wcpl_tryInvokeSingleArgSelector(toolView, @selector(didSelectContact:), contact);
+    }
+    if (!injectedByDidSelect && chatVC && contact) {
+        injectedByDidSelect = wcpl_tryInvokeSingleArgSelector(chatVC, @selector(didSelectContact:), contact);
+    }
+    if (!injectedByDidSelect && managerLogicController && managerLogicController != primaryLogicController && contact) {
+        injectedByDidSelect = wcpl_tryInvokeSingleArgSelector(managerLogicController, @selector(didSelectContact:), contact);
+    }
+
+    BOOL syncedToSession = NO;
+    id sessionMgr = WCPLGetService(objc_getClass("MMNewSessionMgr"));
+    if (sessionMgr && mentionTarget && [sessionMgr respondsToSelector:@selector(addContact:AtUser:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(sessionMgr, @selector(addContact:AtUser:), mentionTarget, mentionUserName);
+            syncedToSession = YES;
+        } @catch (__unused NSException *exceptionSessionAt) {
+            syncedToSession = NO;
+        }
+    }
+
+    BOOL injectedAny = (injectedByDidSelect || injectedByAddAt || syncedToSession);
+    WCPLLogInfo(@"Swipe quote mention applied: scene=%@ user=%@ real=%@ contact=%d didSelect=%d addAt=%d session_sync=%d injected=%d logic_primary=%@ logic_mgr=%@ logic_vc=%@ tool=%@ has_at=%d msg=%@",
+                sceneTag ?: @"swipe_quote",
+                mentionUserName,
+                realChatUserName ?: @"(nil)",
+                contact ? 1 : 0,
+                injectedByDidSelect ? 1 : 0,
+                injectedByAddAt ? 1 : 0,
+                syncedToSession ? 1 : 0,
+                injectedAny ? 1 : 0,
+                primaryLogicController ? NSStringFromClass([primaryLogicController class]) : @"(nil)",
+                managerLogicController ? NSStringFromClass([managerLogicController class]) : @"(nil)",
+                logicController ? NSStringFromClass([logicController class]) : @"(nil)",
+                toolView ? NSStringFromClass([toolView class]) : @"(nil)",
+                wcpl_quoteInputHasAtSymbol(chatVC) ? 1 : 0,
+                wcpl_repeatMessageDebugInfo(msgWrap));
+    return injectedAny;
+}
+
+static void wcpl_scheduleSwipeQuoteAtUserIfNeeded(CMessageWrap *msgWrap,
+                                                   BaseMsgContentViewController *chatVC,
+                                                   NSString *sceneTag) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!(config && config.swipeQuoteAtUserEnable) || !(msgWrap && chatVC)) {
+        return;
+    }
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.14 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        BOOL injected = wcpl_applySwipeQuoteAtUserIfNeeded(msgWrap, chatVC, sceneTag ?: @"swipe_quote");
+        if (!injected) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                wcpl_applySwipeQuoteAtUserIfNeeded(msgWrap, chatVC, [NSString stringWithFormat:@"%@_retry", sceneTag ?: @"swipe_quote"]);
+            });
+        }
+    });
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.42 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!wcpl_quoteInputHasAtSymbol(chatVC)) {
+            wcpl_applySwipeQuoteAtUserIfNeeded(msgWrap, chatVC, [NSString stringWithFormat:@"%@_retry2_no_at", sceneTag ?: @"swipe_quote"]);
+        }
+    });
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!wcpl_quoteInputHasAtSymbol(chatVC)) {
+            wcpl_applySwipeQuoteAtUserIfNeeded(msgWrap, chatVC, [NSString stringWithFormat:@"%@_retry3_no_at", sceneTag ?: @"swipe_quote"]);
+        }
+    });
 }
 
 static void wcpl_clearToolViewReplyingMessageIfNeeded(id toolView, NSString *scene) {
@@ -1976,6 +2758,154 @@ static BOOL wcpl_repeatMediaBySendMessageMgr(CMessageWrap *msgWrap,
                        wcpl_repeatMessageDebugInfo(msgWrap),
                        chatName,
                        exception.reason ?: exception);
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_repeatTextBySendMessageMgrFresh(CMessageWrap *msgWrap,
+                                                 NSString *chatName,
+                                                 NSString *sceneTag) {
+    if (!(msgWrap && chatName.length > 0) || msgWrap.m_uiMessageType != 1) {
+        return NO;
+    }
+
+    NSString *repeatText = wcpl_repeatTextForMessageWrap(msgWrap);
+    if (repeatText.length == 0) {
+        return NO;
+    }
+
+    id sendMessageMgr = WCPLGetService(objc_getClass("SendMessageMgr"));
+    if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
+        return NO;
+    }
+
+    CMessageWrap *sendWrap = nil;
+    @try {
+        sendWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:1];
+    } @catch (__unused NSException *exceptionInitTextWrap) {
+        sendWrap = nil;
+    }
+    if (!sendWrap) {
+        return NO;
+    }
+
+    sendWrap.m_uiMessageType = 1;
+    sendWrap.m_nsContent = repeatText;
+    NSString *selfUserName = wcpl_currentSelfUserNameForRepeat();
+    wcpl_prepareSendWrapRoute(sendWrap, chatName, selfUserName, sceneTag ?: @"text_sendmsgmgr_fresh");
+
+    BOOL queueCountAvailable = NO;
+    unsigned long long queueBefore = wcpl_getSendMessageQueueCount(&queueCountAvailable);
+
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
+                                                   @selector(AddMsgToSendTable:MsgWrap:),
+                                                   chatName,
+                                                   sendWrap);
+        unsigned int sendStatus = sendWrap.m_uiStatus;
+        unsigned int sendLocalID = sendWrap.m_uiMesLocalID;
+        long long sendSvrID = sendWrap.m_n64MesSvrID;
+        BOOL queueAfterAvailable = NO;
+        unsigned long long queueAfter = wcpl_getSendMessageQueueCount(&queueAfterAvailable);
+        BOOL queueIncreased = (queueCountAvailable && queueAfterAvailable && queueAfter > queueBefore);
+
+        if (sendStatus == 5) {
+            WCPLLogWarning(@"Repeat text sendmgr rejected: scene=%@ status=5 msg=%@",
+                           sceneTag ?: @"text_sendmsgmgr_fresh",
+                           wcpl_repeatMessageDebugInfo(msgWrap));
+            return NO;
+        }
+
+        if (sendLocalID > 0 || sendSvrID > 0 || queueIncreased) {
+            WCPLLogInfo(@"Repeat sent: flow=text_sendmsgmgr_fresh scene=%@ msg=%@ chat=%@ send=%@ status=%u queue_before=%llu queue_after=%llu",
+                        sceneTag ?: @"text_sendmsgmgr_fresh",
+                        wcpl_repeatMessageDebugInfo(msgWrap),
+                        chatName ?: @"(nil)",
+                        wcpl_repeatMessageDebugInfo(sendWrap),
+                        sendStatus,
+                        queueBefore,
+                        queueAfter);
+            return YES;
+        }
+
+        WCPLLogWarning(@"Repeat text sendmgr pseudo-success rejected: scene=%@ msg=%@ send=%@ status=%u queue_before=%llu queue_after=%llu",
+                       sceneTag ?: @"text_sendmsgmgr_fresh",
+                       wcpl_repeatMessageDebugInfo(msgWrap),
+                       wcpl_repeatMessageDebugInfo(sendWrap),
+                       sendStatus,
+                       queueBefore,
+                       queueAfter);
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat text via SendMessageMgr failed: scene=%@ reason=%@",
+                       sceneTag ?: @"text_sendmsgmgr_fresh",
+                       exception.reason ?: exception);
+    }
+
+    return NO;
+}
+
+static BOOL wcpl_repeatTextByLogicController(CMessageWrap *msgWrap,
+                                             NSString *repeatText,
+                                             id logicController,
+                                             BaseMsgContentViewController *chatVC,
+                                             NSString *sceneTag) {
+    NSString *text = wcpl_trimTextForRepeat(repeatText);
+    if (!(msgWrap && text.length > 0)) {
+        return NO;
+    }
+
+    NSString *scene = [sceneTag isKindOfClass:[NSString class]] ? sceneTag : @"text_logic";
+
+    NSMutableArray *targets = [NSMutableArray arrayWithCapacity:3];
+    if (logicController) {
+        [targets addObject:logicController];
+    }
+    id managerLogic = wcpl_quoteCurrentLogicControllerFromManager();
+    if (managerLogic && managerLogic != logicController) {
+        [targets addObject:managerLogic];
+    }
+    if (chatVC) {
+        [targets addObject:chatVC];
+    }
+
+    for (id target in targets) {
+        if (!target) {
+            continue;
+        }
+
+        if ([target respondsToSelector:@selector(SendTextMessage:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(SendTextMessage:), text);
+                WCPLLogInfo(@"Repeat sent: flow=text_logiccontroller scene=%@ msg=%@ target=%@",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(msgWrap),
+                            NSStringFromClass([target class]));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat text via SendTextMessage failed: scene=%@ target=%@ reason=%@",
+                               scene,
+                               NSStringFromClass([target class]),
+                               exception.reason ?: exception);
+            }
+        }
+
+        SEL externSelector = @selector(SendTextMessage:externInfo:);
+        if ([target respondsToSelector:externSelector]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(target, externSelector, text, nil);
+                WCPLLogInfo(@"Repeat sent: flow=text_logiccontroller_extern scene=%@ msg=%@ target=%@",
+                            scene,
+                            wcpl_repeatMessageDebugInfo(msgWrap),
+                            NSStringFromClass([target class]));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat text via SendTextMessage:externInfo: failed: scene=%@ target=%@ reason=%@",
+                               scene,
+                               NSStringFromClass([target class]),
+                               exception.reason ?: exception);
+            }
+        }
     }
 
     return NO;
@@ -3276,8 +4206,9 @@ static BOOL wcpl_repeatVoiceBySendMessageMgr(CMessageWrap *msgWrap,
 }
 
 static BOOL wcpl_repeatForceNativeOnly(void) {
-    // 用户要求：全部消息都走原生链路。
-    return YES;
+    // 原生链路在文本场景存在“本地成功、远端丢失”的伪成功问题。
+    // 默认关闭强制 native-only，走按类型定制的可靠发送策略。
+    return NO;
 }
 
 static BOOL wcpl_repeatByNativeOnlyPipeline(CMessageWrap *msgWrap,
@@ -3600,7 +4531,7 @@ static CGFloat wcpl_repeatButtonSizeFromConfig(void) {
 
 static void wcpl_syncRepeatEngineModeIfNeeded(void) {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    BOOL v2Enabled = config.repeatButtonEngineV2Enable;
+    BOOL v2Enabled = wcpl_shouldUseLocalCellRepeatEngine(config);
 
     if (!gWCPLRepeatEngineModeInitialized) {
         gWCPLRepeatEngineModeInitialized = YES;
@@ -3622,7 +4553,6 @@ static void wcpl_syncRepeatEngineModeIfNeeded(void) {
     gWCPLRepeatNeedFullResync = YES;
 
     wcpl_clearRepeatOwnerMaps();
-    wcpl_forceClearRepeatButtonsInAllWindows();
 
     if (v2Enabled) {
         gWCPLRepeatRefreshGateEnabled = NO;
@@ -3644,7 +4574,7 @@ static void wcpl_setupRepeatLifecycleObserver(void) {
         NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
         void (^handleResignOrBackground)(__unused NSNotification *note) = ^(__unused NSNotification *note) {
             WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-            if (config.repeatButtonEngineV2Enable) {
+            if (wcpl_shouldUseLocalCellRepeatEngine(config)) {
                 gWCPLRepeatGlobalRefreshPending = NO;
                 gWCPLRepeatRefreshScheduleToken += 1;
                 gWCPLRepeatRefreshGateEnabled = NO;
@@ -3656,7 +4586,6 @@ static void wcpl_setupRepeatLifecycleObserver(void) {
             gWCPLRepeatNeedFullResync = YES;
             gWCPLRepeatRefreshRoundCounter = 0;
             wcpl_clearRepeatOwnerMaps();
-            wcpl_forceClearRepeatButtonsInAllWindows();
         };
         [center addObserverForName:UIApplicationWillResignActiveNotification
                             object:nil
@@ -3671,7 +4600,7 @@ static void wcpl_setupRepeatLifecycleObserver(void) {
                              queue:[NSOperationQueue mainQueue]
                         usingBlock:^(__unused NSNotification *note) {
             WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-            if (config.repeatButtonEngineV2Enable) {
+            if (wcpl_shouldUseLocalCellRepeatEngine(config)) {
                 gWCPLRepeatGlobalRefreshPending = NO;
                 gWCPLRepeatRefreshScheduleToken += 1;
                 gWCPLRepeatRefreshGateEnabled = NO;
@@ -3685,7 +4614,6 @@ static void wcpl_setupRepeatLifecycleObserver(void) {
             gWCPLRepeatRefreshRoundCounter = 0;
 
             wcpl_clearRepeatOwnerMaps();
-            wcpl_forceClearRepeatButtonsInAllWindows();
 
             Class cellClass = %c(CommonMessageCellView);
             if (cellClass && [cellClass respondsToSelector:@selector(wchook_scheduleGlobalRepeatButtonRefresh)]) {
@@ -4233,7 +5161,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     wcpl_syncRepeatEngineModeIfNeeded();
 
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.repeatButtonEngineV2Enable) {
+    if (wcpl_shouldUseLocalCellRepeatEngine(config)) {
         gWCPLRepeatGlobalRefreshPending = NO;
         return;
     }
@@ -4802,7 +5730,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     wcpl_syncRepeatEngineModeIfNeeded();
 
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.repeatButtonEngineV2Enable) {
+    if (wcpl_shouldUseLocalCellRepeatEngine(config)) {
         gWCPLRepeatGlobalRefreshPending = NO;
         gWCPLRepeatRefreshScheduleToken += 1;
         return;
@@ -4991,6 +5919,17 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     }
 
     CGFloat buttonSize = wcpl_repeatButtonSizeFromConfig();
+    id buttonWrapObj = objc_getAssociatedObject(button, kWCPLRepeatButtonWrapKey);
+    CMessageWrap *buttonWrap = [buttonWrapObj isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)buttonWrapObj : nil;
+    BOOL mediaMessage = wcpl_isMediaBubbleRepeatMessage(buttonWrap);
+    NSValue *cachedFrameValue = objc_getAssociatedObject(button, kWCPLRepeatButtonLastFrameKey);
+    CGRect cachedFrame = cachedFrameValue ? cachedFrameValue.CGRectValue : CGRectZero;
+    BOOL cachedFrameValid = !CGRectIsEmpty(cachedFrame) &&
+                            !CGRectIsNull(cachedFrame) &&
+                            !CGRectIsInfinite(cachedFrame) &&
+                            CGRectGetWidth(cachedFrame) > 8.0f &&
+                            CGRectGetHeight(cachedFrame) > 8.0f &&
+                            CGRectIntersectsRect(cachedFrame, self.bounds);
 
     CGRect bubbleFrame = [self convertRect:bubbleView.bounds fromView:bubbleView];
     CGRect bubbleFrameFromSuperview = CGRectZero;
@@ -5008,6 +5947,22 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
         bubbleFrame = bubbleFrameFromSuperviewValid ? bubbleFrameFromSuperview : [self convertRect:bubbleView.frame fromView:bubbleView.superview ?: self];
     }
 
+    CGRect menuRect = CGRectZero;
+    BOOL menuRectValid = NO;
+    if ([self respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            menuRect = ((CGRect (*)(id, SEL))objc_msgSend)(self, @selector(showRectForMenuController));
+        } @catch (__unused NSException *exception) {
+            menuRect = CGRectZero;
+        }
+        menuRectValid = !CGRectIsEmpty(menuRect) &&
+                        !CGRectIsNull(menuRect) &&
+                        !CGRectIsInfinite(menuRect) &&
+                        CGRectGetWidth(menuRect) > 8.0f &&
+                        CGRectGetHeight(menuRect) > 8.0f &&
+                        CGRectIntersectsRect(menuRect, self.bounds);
+    }
+
     BOOL bubbleRectValid = !CGRectIsEmpty(bubbleFrame) &&
                            !CGRectIsNull(bubbleFrame) &&
                            !CGRectIsInfinite(bubbleFrame) &&
@@ -5018,9 +5973,23 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
         bubbleFrame = bubbleFrameFromSuperview;
         bubbleRectValid = CGRectIntersectsRect(bubbleFrame, self.bounds);
     }
+    if (!bubbleRectValid && mediaMessage && menuRectValid) {
+        bubbleFrame = menuRect;
+        bubbleRectValid = YES;
+    }
     if (!bubbleRectValid) {
-        button.hidden = YES;
-        objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        if (mediaMessage && cachedFrameValid) {
+            button.hidden = NO;
+            button.alpha = 0.96f;
+            button.userInteractionEnabled = YES;
+            button.frame = cachedFrame;
+            [self bringSubviewToFront:button];
+        } else {
+            button.hidden = YES;
+            if (!mediaMessage) {
+                objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+        }
         return;
     }
 
@@ -5031,10 +6000,34 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     BOOL bubbleCoversWholeRow = (cellWidth > 20.0f) && (bubbleWidth >= (cellWidth - 12.0f));
     BOOL bubbleTouchesBothSides = (bubbleMinX <= (kWCPLRepeatButtonEdgeInset + 2.0f)) &&
                                   ((cellWidth - bubbleMaxX) <= (kWCPLRepeatButtonEdgeInset + 2.0f));
-    BOOL bubbleAnchorSuspicious = (bubbleView == self) || bubbleCoversWholeRow || bubbleTouchesBothSides;
+    BOOL bubbleAnchorSuspicious = bubbleCoversWholeRow || bubbleTouchesBothSides;
+    if (!mediaMessage && bubbleView == self) {
+        bubbleAnchorSuspicious = YES;
+    }
+    if (bubbleAnchorSuspicious && mediaMessage && menuRectValid) {
+        bubbleFrame = menuRect;
+        cellWidth = CGRectGetWidth(self.bounds);
+        bubbleWidth = CGRectGetWidth(bubbleFrame);
+        bubbleMinX = CGRectGetMinX(bubbleFrame);
+        bubbleMaxX = CGRectGetMaxX(bubbleFrame);
+        bubbleCoversWholeRow = (cellWidth > 20.0f) && (bubbleWidth >= (cellWidth - 12.0f));
+        bubbleTouchesBothSides = (bubbleMinX <= (kWCPLRepeatButtonEdgeInset + 2.0f)) &&
+                                 ((cellWidth - bubbleMaxX) <= (kWCPLRepeatButtonEdgeInset + 2.0f));
+        bubbleAnchorSuspicious = bubbleCoversWholeRow || bubbleTouchesBothSides;
+    }
     if (bubbleAnchorSuspicious) {
-        button.hidden = YES;
-        objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        if (mediaMessage && cachedFrameValid) {
+            button.hidden = NO;
+            button.alpha = 0.96f;
+            button.userInteractionEnabled = YES;
+            button.frame = cachedFrame;
+            [self bringSubviewToFront:button];
+        } else {
+            button.hidden = YES;
+            if (!mediaMessage) {
+                objc_setAssociatedObject(button, kWCPLRepeatButtonLastFrameKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+        }
         return;
     }
 
@@ -5221,7 +6214,13 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 
 %new
 - (void)wchook_hideRepeatButtonByNFQPrinciple {
+    CMessageWrap *cellWrap = wcpl_messageWrapForCellView(self);
     UIButton *cachedButton = objc_getAssociatedObject(self, kWCPLRepeatButtonViewKey);
+    id cachedButtonWrapObj = [cachedButton isKindOfClass:[UIButton class]]
+        ? objc_getAssociatedObject(cachedButton, kWCPLRepeatButtonWrapKey)
+        : nil;
+    CMessageWrap *cachedButtonWrap = [cachedButtonWrapObj isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)cachedButtonWrapObj : nil;
+
     NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
     if ([cachedButton isKindOfClass:[UIButton class]]) {
         [buttons addObject:cachedButton];
@@ -5235,6 +6234,27 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
         if (![buttons containsObject:button]) {
             [buttons addObject:button];
         }
+    }
+
+    BOOL mediaContext = wcpl_isMediaBubbleRepeatMessage(cellWrap) || wcpl_isMediaBubbleRepeatMessage(cachedButtonWrap);
+    if (!mediaContext) {
+        for (UIButton *button in buttons) {
+            id buttonWrapObj = objc_getAssociatedObject(button, kWCPLRepeatButtonWrapKey);
+            CMessageWrap *buttonWrap = [buttonWrapObj isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)buttonWrapObj : nil;
+            if (wcpl_isMediaBubbleRepeatMessage(buttonWrap)) {
+                mediaContext = YES;
+                break;
+            }
+        }
+    }
+
+    if (mediaContext) {
+        for (UIButton *button in buttons) {
+            button.hidden = YES;
+            button.alpha = 0.0f;
+            button.userInteractionEnabled = NO;
+        }
+        return;
     }
 
     for (UIButton *button in buttons) {
@@ -5299,8 +6319,15 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     button.userInteractionEnabled = YES;
 
     BOOL isSelf = wcpl_resolveIsSelfForRepeatCell(self, msgWrap, NULL);
+    BOOL mediaMessage = wcpl_isMediaBubbleRepeatMessage(msgWrap);
 
     UIView *bubbleView = [self wchook_repeatDisplayAnchorViewByNFQPrinciple];
+    if (![bubbleView isKindOfClass:[UIView class]]) {
+        bubbleView = [self wchook_bubbleAnchorView];
+    }
+    if (![bubbleView isKindOfClass:[UIView class]] && mediaMessage) {
+        bubbleView = self;
+    }
     if (![bubbleView isKindOfClass:[UIView class]]) {
         [self wchook_hideRepeatButtonByNFQPrinciple];
         return;
@@ -5425,7 +6452,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 %new
 - (void)wchook_clearRepeatAnchorAndButtonForCurrentEngine {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
-    if (config.repeatButtonEngineV2Enable) {
+    if (wcpl_shouldUseLocalCellRepeatEngine(config)) {
         [self wchook_clearRepeatAnchorAndButtonLocalOnly];
     } else {
         [self wchook_clearRepeatAnchorAndLegacyButton];
@@ -6036,6 +7063,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
         // 优先走 VC 引用入口，避免触发长按菜单链路
         if ([chatVC respondsToSelector:@selector(startReplyWithMessageWrap:)]) {
             [chatVC performSelector:@selector(startReplyWithMessageWrap:) withObject:msgWrap];
+            wcpl_scheduleSwipeQuoteAtUserIfNeeded(msgWrap, chatVC, @"quote_reply_startReply");
             WCPLLogDebug(@"Quote reply via startReplyWithMessageWrap: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         }
@@ -6058,6 +7086,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
                                                                    msgWrap,
                                                                    YES,
                                                                    YES);
+                wcpl_scheduleSwipeQuoteAtUserIfNeeded(msgWrap, chatVC, @"quote_reply_inputPresenter");
                 WCPLLogDebug(@"Quote reply via inputPresenter.replyMessage: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
                 return;
             } @catch (NSException *exceptionReplyPresenter) {
@@ -6068,6 +7097,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
         // 兜底：仅在没有 VC/presenter 能力时调用，避免误触发长按菜单
         if ([self respondsToSelector:@selector(onClickAsRefer)]) {
             [self performSelector:@selector(onClickAsRefer)];
+            wcpl_scheduleSwipeQuoteAtUserIfNeeded(msgWrap, chatVC, @"quote_reply_onClickAsRefer");
             WCPLLogWarning(@"Quote reply fallback via onClickAsRefer: msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
             return;
         }
@@ -6408,6 +7438,26 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
         return;
     }
 
+    if (msgType == 1) {
+        if (wcpl_repeatTextByLogicController(msgWrap,
+                                             repeatText,
+                                             logicController,
+                                             chatVC,
+                                             @"text_logiccontroller_primary")) {
+            return;
+        }
+        if (wcpl_repeatTextBySendMessageMgrFresh(msgWrap, chatName, @"text_sendmsgmgr_fresh")) {
+            return;
+        }
+        if (wcpl_repeatTextBySendMessageMgrFresh(msgWrap, chatName, @"text_sendmsgmgr_fresh_retry")) {
+            return;
+        }
+        WCPLLogError(@"Repeat text failed: sendmsgmgr rejected msg=%@ chat=%@",
+                     wcpl_repeatMessageDebugInfo(msgWrap),
+                     chatName ?: @"(nil)");
+        return;
+    }
+
     if (wcpl_repeatNativeResendByDetachedWrap(msgWrap, chatName, chatVC, @"alltype_native_detached")) {
         WCPLLogInfo(@"Repeat sent: flow=alltype_native_detached msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
         return;
@@ -6421,25 +7471,6 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     if (wcpl_repeatMediaBySendMessageMgr(msgWrap, chatName, @"alltype_sendmsgmgr")) {
         WCPLLogInfo(@"Repeat sent: flow=alltype_sendmsgmgr msg=%@", wcpl_repeatMessageDebugInfo(msgWrap));
         return;
-    }
-
-    id messageMgr = WCPLGetService(objc_getClass("CMessageMgr"));
-    if (msgType == 1 && messageMgr && [messageMgr respondsToSelector:@selector(AddMsg:MsgWrap:)]) {
-        @try {
-            NSString *targetChatName = chatName.length > 0 ? chatName : wcpl_chatNameForMessage(msgWrap, chatVC);
-            CMessageWrap *newWrap = [[objc_getClass("CMessageWrap") alloc] initWithMsgType:1];
-            newWrap.m_uiMessageType = 1;
-            newWrap.m_nsContent = repeatText;
-            newWrap.m_nsToUsr = targetChatName;
-            wcpl_resetSendWrapIdentity(newWrap);
-            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr, @selector(AddMsg:MsgWrap:), targetChatName, newWrap);
-            WCPLLogInfo(@"Repeat sent: flow=alltype_addmsg_fallback msg=%@ chat=%@",
-                        wcpl_repeatMessageDebugInfo(msgWrap),
-                        targetChatName ?: @"(nil)");
-            return;
-        } @catch (NSException *exception) {
-            WCPLLogError(@"Repeat AddMsg fallback failed: %@", exception.reason ?: exception);
-        }
     }
 
     WCPLLogError(@"Repeat failed(native-only): type=%@ msg=%@", wcpl_repeatTypeName(msgType), wcpl_repeatMessageDebugInfo(msgWrap));
@@ -6510,6 +7541,29 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
                 wcpl_repeatMessageDebugInfo(msgWrap),
                 hasQuote ? 1 : 0,
                 buttonMessageKey ?: @"(nil)");
+
+    // 快速连点时串行排队发送，避免远端只收到部分消息。
+    CFTimeInterval nextAllowed = gWCPLRepeatLastQueuedSendAt + kWCPLRepeatBurstSendMinInterval;
+    CFTimeInterval scheduledAt = now;
+    if (nextAllowed > scheduledAt) {
+        scheduledAt = nextAllowed;
+    }
+    gWCPLRepeatLastQueuedSendAt = scheduledAt;
+
+    NSTimeInterval delay = scheduledAt - now;
+    if (delay > 0.01) {
+        WCPLLogInfo(@"Repeat click queued: class=%@ cell=%p delay=%.3f msg=%@",
+                    NSStringFromClass([self class]),
+                    self,
+                    delay,
+                    wcpl_repeatMessageDebugInfo(msgWrap));
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+            [self wchook_repeatMessageWrap:msgWrap];
+        });
+        return;
+    }
+
     [self wchook_repeatMessageWrap:msgWrap];
 }
 

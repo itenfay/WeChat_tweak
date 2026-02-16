@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL swipeQuoteEnable;
 // 引用消息点击跳转
 @property (assign, nonatomic) BOOL tapReferJumpEnable;
+// 手势触发引用时自动@被引用消息发送者
+@property (assign, nonatomic) BOOL swipeQuoteAtUserEnable;
 // 消息气泡复读按钮
 @property (assign, nonatomic) BOOL repeatButtonEnable;
 // 复读按钮点击震动反馈

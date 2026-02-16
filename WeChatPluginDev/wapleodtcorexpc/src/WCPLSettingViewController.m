@@ -902,6 +902,9 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         // 灵敏度
         [section addCell:[self createSwipeSensitivityCell]];
 
+        // 手势引用时自动@发送者（独立开关，不跟左右滑配置绑定）
+        [section addCell:[self createSwipeQuoteAtUserCell]];
+
         // 左滑功能开关
         [section addCell:[self createSwipeQuoteSwitchCell]];
 
@@ -1001,6 +1004,10 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (WCTableViewNormalCellManager *)createSwipeQuoteSwitchCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuote:) target:self title:@"  消息左滑功能" on:[WCPLConfigCenter shared].gesture.swipeQuoteEnable];
+}
+
+- (WCTableViewNormalCellManager *)createSwipeQuoteAtUserCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeQuoteAtUser:) target:self title:@"  引用时自动@发送者" on:[WCPLConfigCenter shared].gesture.swipeQuoteAtUserEnable];
 }
 
 - (WCTableViewNormalCellManager *)createSwipeRightSwitchCell {
@@ -1123,6 +1130,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [WCPLConfigCenter shared].gesture.swipeQuoteEnable = sender.on;
     WCPLLogInfo(@"Swipe left feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
     [self reloadTableData];
+}
+
+- (void)settingSwipeQuoteAtUser:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.swipeQuoteAtUserEnable = sender.on;
+    WCPLLogInfo(@"Swipe quote mention changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (void)settingSwipeRight:(UISwitch *)sender {

@@ -74,7 +74,7 @@ static NSString *wcpl_userNameFromObject(id obj) {
     return @"";
 }
 
-static id wcpl_findContactFromDictionary(NSDictionary *allContacts, NSString *targetUserName) {
+__attribute__((unused)) static id wcpl_findContactFromDictionary(NSDictionary *allContacts, NSString *targetUserName) {
     if (![allContacts isKindOfClass:[NSDictionary class]] || allContacts.count == 0 || targetUserName.length == 0) {
         return nil;
     }
@@ -110,7 +110,7 @@ static id wcpl_findContactFromDictionary(NSDictionary *allContacts, NSString *ta
     return nil;
 }
 
-static id wcpl_findContactFromContactMgr(CContactMgr *contactMgr, NSString *targetUserName) {
+__attribute__((unused)) static id wcpl_findContactFromContactMgr(CContactMgr *contactMgr, NSString *targetUserName) {
     if (!contactMgr || targetUserName.length == 0) {
         return nil;
     }
@@ -139,42 +139,32 @@ static id wcpl_findContactFromContactMgr(CContactMgr *contactMgr, NSString *targ
 }
 
 CContact *WCPLFindContactByUserName(NSString *userName, CContactMgr *contactMgr, ContactsDataLogic *dataLogic) {
+    (void)contactMgr;
+    (void)dataLogic;
+
     NSString *target = wcpl_trimUserName(userName);
-    if (target.length == 0) {
-        return nil;
-    }
+    if (target.length == 0) return nil;
+    if (![NSThread isMainThread]) return nil;
 
-    if (![NSThread isMainThread]) {
-        return nil;
-    }
-
-    ContactsDataLogic *logic = dataLogic;
-    if (logic && [logic respondsToSelector:@selector(getAllContactsDictionary)]) {
-        @try {
-            NSDictionary *all = [logic getAllContactsDictionary];
-            id found = wcpl_findContactFromDictionary(all, target);
-            if (wcpl_isContactObject(found)) {
-                return (CContact *)found;
-            }
-            if (found) {
-                wcpl_logUnexpectedContactType(found, @"dict_result", target);
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    CContactMgr *mgr = contactMgr;
-    if (!mgr) {
+    // 稳定性优先：仅保留轻量联系人查询，避免复杂容器遍历触发野指针崩溃。
+    // 如后续确认稳定，可再逐步恢复 dictionary/cache 兜底逻辑。
+    id mgr = nil;
+    @try {
         mgr = WCPLGetService(objc_getClass("CContactMgr"));
+    } @catch (__unused NSException *exceptionService) {
+        mgr = nil;
     }
+    if (!mgr) return nil;
 
-    id foundFromMgr = wcpl_findContactFromContactMgr(mgr, target);
-    if (wcpl_isContactObject(foundFromMgr)) {
-        return (CContact *)foundFromMgr;
-    }
-    if (foundFromMgr) {
-        wcpl_logUnexpectedContactType(foundFromMgr, @"mgr_result", target);
-    }
+    SEL selector = NSSelectorFromString(@"getContactByName:");
+    if (![mgr respondsToSelector:selector]) return nil;
 
+    @try {
+        id contact = ((id (*)(id, SEL, id))objc_msgSend)(mgr, selector, target);
+        if (wcpl_isContactObject(contact)) {
+            return (CContact *)contact;
+        }
+    } @catch (__unused NSException *exceptionGetContact) {
+    }
     return nil;
 }

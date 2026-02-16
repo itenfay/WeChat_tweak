@@ -8,6 +8,7 @@
 static NSString *const kWCPLSwipeGestureEnable      = @"kWCPLSwipeGestureEnable";
 static NSString *const kWCPLSwipeQuoteEnable        = @"kWCPLSwipeQuoteEnable";
 static NSString *const kWCPLTapReferJumpEnable      = @"kWCPLTapReferJumpEnable";
+static NSString *const kWCPLSwipeQuoteAtUserEnable  = @"kWCPLSwipeQuoteAtUserEnable";
 static NSString *const kWCPLRepeatButtonEnable      = @"kWCPLRepeatButtonEnable";
 static NSString *const kWCPLRepeatButtonHapticEnable = @"kWCPLRepeatButtonHapticEnable";
 static NSString *const kWCPLRepeatButtonSize        = @"kWCPLRepeatButtonSize";
@@ -57,6 +58,8 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         _swipeGestureEnable = [defaults boolForKey:kWCPLSwipeGestureEnable];
         _swipeQuoteEnable = [defaults boolForKey:kWCPLSwipeQuoteEnable];
         _tapReferJumpEnable = [defaults boolForKey:kWCPLTapReferJumpEnable];
+        NSNumber *swipeQuoteAtUserEnabled = [defaults objectForKey:kWCPLSwipeQuoteAtUserEnable];
+        _swipeQuoteAtUserEnable = swipeQuoteAtUserEnabled ? swipeQuoteAtUserEnabled.boolValue : YES;
         _repeatButtonEnable = [defaults boolForKey:kWCPLRepeatButtonEnable];
 
         NSNumber *repeatButtonHapticEnabled = [defaults objectForKey:kWCPLRepeatButtonHapticEnable];
@@ -114,6 +117,11 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 - (void)setTapReferJumpEnable:(BOOL)tapReferJumpEnable {
     _tapReferJumpEnable = tapReferJumpEnable;
     [[NSUserDefaults standardUserDefaults] setBool:tapReferJumpEnable forKey:kWCPLTapReferJumpEnable];
+}
+
+- (void)setSwipeQuoteAtUserEnable:(BOOL)swipeQuoteAtUserEnable {
+    _swipeQuoteAtUserEnable = swipeQuoteAtUserEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:swipeQuoteAtUserEnable forKey:kWCPLSwipeQuoteAtUserEnable];
 }
 
 - (void)setRepeatButtonEnable:(BOOL)repeatButtonEnable {

@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import "WeChatRedEnvelop.h"
-#import "WCPLSettingViewController.h"
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
@@ -88,38 +87,6 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
     }
 
     return result;
-}
-
-%end
-
-%hook NewSettingViewController
-
-- (void)reloadTableData {
-    %orig;
-
-    id tableViewMgr = wcpl_safeObjectIvar(self, "m_tableViewMgr");
-    if (!tableViewMgr) {
-        tableViewMgr = wcpl_safeValueForKey(self, @"m_tableViewMgr");
-    }
-    if (!tableViewMgr || ![tableViewMgr respondsToSelector:@selector(insertSection:At:)] || ![tableViewMgr respondsToSelector:@selector(getTableView)]) {
-        return;
-    }
-
-    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoDefaut];
-
-    WCTableViewNormalCellManager *settingCell = [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_setting) target:self title:@"微信辣椒" accessoryType:1];
-    [sectionMgr addCell:settingCell];
-
-    [(WCTableViewManager *)tableViewMgr insertSection:sectionMgr At:0];
-
-    MMTableView *tableView = [(WCTableViewManager *)tableViewMgr getTableView];
-    [tableView reloadData];
-}
-
-%new
-- (void)wcpl_setting {
-    WCPLSettingViewController *settingViewController = [[WCPLSettingViewController alloc] init];
-    [self.navigationController pushViewController:settingViewController animated:YES];
 }
 
 %end

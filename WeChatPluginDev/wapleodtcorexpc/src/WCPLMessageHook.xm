@@ -15,6 +15,7 @@
 @end
 
 static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon);
+static void wcpl_applyMenuItemIconWithTint(id menuItem, UIImage *icon, BOOL shouldTint);
 
 @interface MMMenuItem : NSObject
 - (instancetype)initWithTitle:(id)title target:(id)target action:(SEL)action;
@@ -4112,15 +4113,127 @@ static UIImage *wcpl_clownMenuIconImage(void) {
     static UIImage *icon = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        // 直接手绘，避免 WAThemeProxy/SF Symbol 兜底造成样式跑偏。
+        CGSize size = CGSizeMake(24.0, 24.0);
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+        UIColor *ink = [UIColor colorWithWhite:0.0 alpha:1.0];
+        [ink setStroke];
+        [ink setFill];
+
+        CGFloat strokeW = 1.6;
+
+        UIBezierPath *face = [UIBezierPath bezierPath];
+        face.lineWidth = strokeW;
+        face.lineCapStyle = kCGLineCapRound;
+        face.lineJoinStyle = kCGLineJoinRound;
+        [face moveToPoint:CGPointMake(5.2, 9.4)];
+        [face addCurveToPoint:CGPointMake(12.0, 18.8)
+                controlPoint1:CGPointMake(5.2, 15.2)
+                controlPoint2:CGPointMake(8.3, 18.8)];
+        [face addCurveToPoint:CGPointMake(18.8, 9.4)
+                controlPoint1:CGPointMake(15.7, 18.8)
+                controlPoint2:CGPointMake(18.8, 15.2)];
+        [face stroke];
+
+        UIBezierPath *eyeL = [UIBezierPath bezierPath];
+        eyeL.lineWidth = strokeW;
+        eyeL.lineCapStyle = kCGLineCapRound;
+        eyeL.lineJoinStyle = kCGLineJoinRound;
+        [eyeL moveToPoint:CGPointMake(7.8, 10.8)];
+        [eyeL addCurveToPoint:CGPointMake(10.2, 10.2)
+                controlPoint1:CGPointMake(7.8, 10.1)
+                controlPoint2:CGPointMake(9.7, 9.7)];
+        [eyeL stroke];
+
+        UIBezierPath *eyeR = [UIBezierPath bezierPath];
+        eyeR.lineWidth = strokeW;
+        eyeR.lineCapStyle = kCGLineCapRound;
+        eyeR.lineJoinStyle = kCGLineJoinRound;
+        [eyeR moveToPoint:CGPointMake(13.8, 10.2)];
+        [eyeR addCurveToPoint:CGPointMake(16.2, 10.8)
+                controlPoint1:CGPointMake(14.3, 9.7)
+                controlPoint2:CGPointMake(16.2, 10.1)];
+        [eyeR stroke];
+
+        UIBezierPath *nose = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(10.6, 11.0, 2.8, 2.8)];
+        [nose fill];
+
+        UIBezierPath *mouth = [UIBezierPath bezierPath];
+        mouth.lineWidth = strokeW;
+        mouth.lineCapStyle = kCGLineCapRound;
+        mouth.lineJoinStyle = kCGLineJoinRound;
+        [mouth moveToPoint:CGPointMake(8.5, 14.8)];
+        [mouth addCurveToPoint:CGPointMake(15.5, 14.8)
+                 controlPoint1:CGPointMake(9.7, 16.6)
+                 controlPoint2:CGPointMake(14.3, 16.6)];
+        [mouth stroke];
+
+        UIBezierPath *hatL = [UIBezierPath bezierPath];
+        hatL.lineWidth = strokeW;
+        hatL.lineCapStyle = kCGLineCapRound;
+        hatL.lineJoinStyle = kCGLineJoinRound;
+        [hatL moveToPoint:CGPointMake(5.2, 9.4)];
+        [hatL addLineToPoint:CGPointMake(3.0, 4.8)];
+        [hatL stroke];
+
+        UIBezierPath *hatR = [UIBezierPath bezierPath];
+        hatR.lineWidth = strokeW;
+        hatR.lineCapStyle = kCGLineCapRound;
+        hatR.lineJoinStyle = kCGLineJoinRound;
+        [hatR moveToPoint:CGPointMake(18.8, 9.4)];
+        [hatR addLineToPoint:CGPointMake(21.0, 4.8)];
+        [hatR stroke];
+
+        UIBezierPath *hatC = [UIBezierPath bezierPath];
+        hatC.lineWidth = strokeW;
+        hatC.lineCapStyle = kCGLineCapRound;
+        hatC.lineJoinStyle = kCGLineJoinRound;
+        [hatC moveToPoint:CGPointMake(7.8, 7.2)];
+        [hatC addLineToPoint:CGPointMake(12.0, 2.4)];
+        [hatC addLineToPoint:CGPointMake(16.2, 7.2)];
+        [hatC stroke];
+
+        [[UIBezierPath bezierPathWithOvalInRect:CGRectMake(1.8, 3.9, 2.4, 2.4)] fill];
+        [[UIBezierPath bezierPathWithOvalInRect:CGRectMake(19.8, 3.9, 2.4, 2.4)] fill];
+        [[UIBezierPath bezierPathWithOvalInRect:CGRectMake(10.8, 1.3, 2.4, 2.4)] fill];
+
+        UIBezierPath *collar = [UIBezierPath bezierPath];
+        collar.lineWidth = strokeW;
+        collar.lineCapStyle = kCGLineCapRound;
+        collar.lineJoinStyle = kCGLineJoinRound;
+        [collar moveToPoint:CGPointMake(4.2, 18.6)];
+        [collar addLineToPoint:CGPointMake(6.6, 20.8)];
+        [collar addLineToPoint:CGPointMake(9.0, 18.6)];
+        [collar addLineToPoint:CGPointMake(11.4, 20.8)];
+        [collar addLineToPoint:CGPointMake(13.8, 18.6)];
+        [collar addLineToPoint:CGPointMake(16.2, 20.8)];
+        [collar addLineToPoint:CGPointMake(18.6, 18.6)];
+        [collar addLineToPoint:CGPointMake(20.8, 20.8)];
+        [collar stroke];
+
+        UIImage *drawn = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        if ([drawn isKindOfClass:[UIImage class]]) {
+            icon = drawn;
+        }
+
+        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        }
+    });
+    return icon;
+}
+
+static UIImage *wcpl_voiceForwardMenuIconImage(void) {
+    static UIImage *icon = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         NSString *svg =
             @"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>"
-            "<path d='M5 9.2c1.9-3 4.2-4.6 7-4.6s5.1 1.6 7 4.6' fill='none' stroke='#ECECF0' stroke-width='1.4' stroke-linecap='round'/>"
-            "<circle cx='5' cy='9.3' r='1.15' fill='none' stroke='#ECECF0' stroke-width='1.1'/>"
-            "<circle cx='19' cy='9.3' r='1.15' fill='none' stroke='#ECECF0' stroke-width='1.1'/>"
-            "<path d='M8 10.5h8v2.2c0 2.5-1.8 4.5-4 4.5s-4-2-4-4.5z' fill='none' stroke='#ECECF0' stroke-width='1.2'/>"
-            "<circle cx='10.2' cy='13' r='0.8' fill='#ECECF0'/>"
-            "<circle cx='13.8' cy='13' r='0.8' fill='#ECECF0'/>"
-            "<path d='M9.8 15.2c.6.6 1.4.9 2.2.9s1.6-.3 2.2-.9' fill='none' stroke='#ECECF0' stroke-width='1.1' stroke-linecap='round'/>"
+            "<path d='M7 9C8.5 10.5 8.5 13.5 7 15' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round'/>"
+            "<path d='M10 7C12.5 9.5 12.5 14.5 10 17' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round'/>"
+            "<path d='M14 19H5C3.89543 19 3 18.1046 3 17V7C3 5.89543 3.89543 5 5 5H15C16.1046 5 17 5.89543 17 7V11' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
+            "<path d='M16 15H21M21 15L18 12M21 15L18 18' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
             "</svg>";
         NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
         id image = nil;
@@ -4141,38 +4254,26 @@ static UIImage *wcpl_clownMenuIconImage(void) {
             UIImage *symbol = nil;
             if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
                 UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:16 weight:UIImageSymbolWeightRegular scale:UIImageSymbolScaleMedium];
-                symbol = [UIImage systemImageNamed:@"theatermasks" withConfiguration:config];
+                symbol = [UIImage systemImageNamed:@"arrowshape.turn.up.right" withConfiguration:config];
+                if (!symbol) {
+                    symbol = [UIImage systemImageNamed:@"waveform" withConfiguration:config];
+                }
             }
-            if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-                symbol = [UIImage systemImageNamed:@"theatermasks"];
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"arrowshape.turn.up.right"];
             }
-            if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
-                symbol = [UIImage systemImageNamed:@"face.smiling"];
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"waveform"];
+            }
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"arrow.right"];
             }
             if (symbol) {
                 icon = symbol;
             }
         }
 
-        if (!icon) {
-            CGSize size = CGSizeMake(20.0, 20.0);
-            UIGraphicsBeginImageContextWithOptions(size, NO, 0);
-            [@"🤡" drawInRect:CGRectMake(0, 0, size.width, size.height)
-                withAttributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:17.0] }];
-            UIImage *fallback = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            if ([fallback isKindOfClass:[UIImage class]]) {
-                icon = fallback;
-            }
-        }
-
         if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            if ([icon respondsToSelector:@selector(imageWithTintColor:)]) {
-                @try {
-                    icon = [icon imageWithTintColor:[UIColor colorWithWhite:0.92 alpha:1.0]];
-                } @catch (__unused NSException *exception) {
-                }
-            }
             icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         }
     });
@@ -4600,15 +4701,45 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
     return wcpl_trimString(msgWrap.m_nsContent);
 }
 
+static UIColor *wcpl_menuIconTintColor(void) {
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle style = UIUserInterfaceStyleUnspecified;
+        UIApplication *application = [UIApplication sharedApplication];
+        if ([application respondsToSelector:@selector(windows)]) {
+            for (UIWindow *window in application.windows) {
+                if (![window isKindOfClass:[UIWindow class]]) {
+                    continue;
+                }
+                UIUserInterfaceStyle windowStyle = window.traitCollection.userInterfaceStyle;
+                if (windowStyle != UIUserInterfaceStyleUnspecified) {
+                    style = windowStyle;
+                    if (window.isKeyWindow) {
+                        break;
+                    }
+                }
+            }
+        }
+        if (style == UIUserInterfaceStyleDark) {
+            return [UIColor colorWithWhite:0.92 alpha:1.0];
+        }
+        return [UIColor colorWithWhite:0.16 alpha:1.0];
+    }
+    return [UIColor colorWithWhite:0.16 alpha:1.0];
+}
+
 static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon) {
+    wcpl_applyMenuItemIconWithTint(menuItem, icon, YES);
+}
+
+static void wcpl_applyMenuItemIconWithTint(id menuItem, UIImage *icon, BOOL shouldTint) {
     if (!menuItem || !icon) {
         return;
     }
 
     UIImage *finalIcon = icon;
-    if ([finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
+    if (shouldTint && [finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
         @try {
-            finalIcon = [finalIcon imageWithTintColor:[UIColor colorWithWhite:0.92 alpha:1.0]];
+            finalIcon = [finalIcon imageWithTintColor:wcpl_menuIconTintColor()];
         } @catch (__unused NSException *exception) {
         }
     }
@@ -4924,21 +5055,27 @@ static id wcpl_createVoiceForwardMenuItem(Class menuItemClass, id cell, SEL acti
     }
 
     NSString *title = @"语音转发";
-    if ([menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
+    UIImage *icon = wcpl_voiceForwardMenuIconImage();
+    id menuItem = nil;
+
+    if (icon && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:icon:target:action:)]) {
         @try {
-            return [[menuItemClass alloc] initWithTitle:title target:cell action:action];
+            menuItem = [[menuItemClass alloc] initWithTitle:title icon:icon target:cell action:action];
         } @catch (__unused NSException *exception) {
         }
     }
 
-    if ([menuItemClass instancesRespondToSelector:@selector(initWithTitle:icon:target:action:)]) {
+    if (!menuItem && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
         @try {
-            return [[menuItemClass alloc] initWithTitle:title icon:nil target:cell action:action];
+            menuItem = [[menuItemClass alloc] initWithTitle:title target:cell action:action];
         } @catch (__unused NSException *exception) {
         }
     }
 
-    return nil;
+    if (menuItem && icon) {
+        wcpl_applyMenuItemIcon(menuItem, icon);
+    }
+    return menuItem;
 }
 
 static NSArray *wcpl_injectVoiceForwardMenuItemIfNeeded(id cell, NSArray *items) {
