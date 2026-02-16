@@ -174,6 +174,25 @@ static BOOL wcpl_sg_looksLikeQuoteAppMsg(NSString *sanitizedContent) {
     return NO;
 }
 
+static BOOL wcpl_sg_looksLikeHongbaoPayload(NSString *sanitizedContent) {
+    if (![sanitizedContent isKindOfClass:[NSString class]] || sanitizedContent.length == 0) {
+        return NO;
+    }
+    if ([sanitizedContent rangeOfString:@"红包"].location != NSNotFound) {
+        return YES;
+    }
+    if ([sanitizedContent rangeOfString:@"hongbao" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([sanitizedContent rangeOfString:@"receivehongbao" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([sanitizedContent rangeOfString:@"wxhb_" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
+}
+
 static void wcpl_sg_logQuoteDiagnostic(NSString *stage,
                                        NSInteger msgType,
                                        NSString *toUsr,
@@ -412,13 +431,28 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
 - (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
-    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
-        return;
-    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
     NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+    BOOL maybeHongbao = wcpl_sg_looksLikeHongbaoPayload(content);
+
+    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
+        WCPLLogDebug(@"AsyncOnAddMsg 诊断(忽略): type=%ld to=%@ from=%@ len=%lu hongbao=%d",
+                     (long)msgType,
+                     toUsr,
+                     fromUsr,
+                     (unsigned long)content.length,
+                     maybeHongbao ? 1 : 0);
+        return;
+    }
+
+    WCPLLogDebug(@"AsyncOnAddMsg 诊断: type=%ld to=%@ from=%@ len=%lu hongbao=%d",
+                 (long)msgType,
+                 toUsr,
+                 fromUsr,
+                 (unsigned long)content.length,
+                 maybeHongbao ? 1 : 0);
 
     if (msgType == 1 && wcpl_sg_looksLikeVoiceXml(content)) {
         WCPLLogWarning(@"拦截语音XML文本AsyncOnAddMsg: to=%@ from=%@ len=%lu snippet=%@",
@@ -444,13 +478,28 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
 
 - (void)AsyncOnPreAddMsg:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
-    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
-        return;
-    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
     NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
+    BOOL maybeHongbao = wcpl_sg_looksLikeHongbaoPayload(content);
+
+    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
+        WCPLLogDebug(@"AsyncOnPreAddMsg 诊断(忽略): type=%ld to=%@ from=%@ len=%lu hongbao=%d",
+                     (long)msgType,
+                     toUsr,
+                     fromUsr,
+                     (unsigned long)content.length,
+                     maybeHongbao ? 1 : 0);
+        return;
+    }
+
+    WCPLLogDebug(@"AsyncOnPreAddMsg 诊断: type=%ld to=%@ from=%@ len=%lu hongbao=%d",
+                 (long)msgType,
+                 toUsr,
+                 fromUsr,
+                 (unsigned long)content.length,
+                 maybeHongbao ? 1 : 0);
 
     if (msgType == 1 && wcpl_sg_looksLikeVoiceXml(content)) {
         WCPLLogWarning(@"拦截语音XML文本AsyncOnPreAddMsg: to=%@ from=%@ len=%lu snippet=%@",

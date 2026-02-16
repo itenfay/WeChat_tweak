@@ -15,6 +15,8 @@
 #import <objc/runtime.h>
 #import <dispatch/dispatch.h>
 
+static NSTimeInterval const kWCPLLogicMgrRetrySleepInterval = 0.08;
+
 @interface WCPLReceiveRedEnvelopOperation ()
 
 @property (assign, nonatomic, getter=isExecuting) BOOL executing;
@@ -66,6 +68,12 @@
         }
     });
 
+    if (self.delaySeconds == 0) {
+        [self main];
+        [self completeOperation];
+        return;
+    }
+
     uint64_t delayNsec = (uint64_t)self.delaySeconds * NSEC_PER_SEC;
     dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, delayNsec);
     dispatch_after(when, dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
@@ -115,7 +123,7 @@
                            (long)maxRetry,
                            self.redEnvelopParam.sendId ?: @"");
             if (attempt < maxRetry) {
-                [NSThread sleepForTimeInterval:0.5];
+                [NSThread sleepForTimeInterval:kWCPLLogicMgrRetrySleepInterval];
                 continue;
             }
             break;

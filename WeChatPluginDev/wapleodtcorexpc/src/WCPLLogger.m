@@ -15,12 +15,17 @@
 @property (nonatomic, strong) NSDateFormatter *timestampFormatter;
 @property (nonatomic, assign) NSUInteger writeCounter;
 @property (nonatomic, assign) BOOL appInBackground;
+// 后台保留关键链路日志（例如红包），避免排障时丢失现场
+- (BOOL)shouldKeepLogWhenBackgroundWithLevel:(WCPLLogLevel)level message:(NSString *)message;
+- (void)writeToFileUrgent:(NSString *)message;
+- (void)writeToFileLocked:(NSString *)message forceSync:(BOOL)forceSync;
 @end
 
 @implementation WCPLLogger
 
 static NSString *const kWCPLDebugLogEnabled = @"kWCPLDebugLogEnabled";
 static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
+static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
 
 @dynamic enabled;
 
@@ -37,6 +42,7 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
     if (self = [super init]) {
         // 创建日志队列，确保线程安全
         _logQueue = dispatch_queue_create(kWCPLLoggerQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_set_specific(_logQueue, kWCPLLoggerQueueSpecificKey, (void *)kWCPLLoggerQueueSpecificKey, NULL);
         _writeCounter = 0;
         _appInBackground = NO;
 
@@ -161,7 +167,15 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 - (void)logWithLevel:(WCPLLogLevel)level message:(NSString *)message {
     if (!message || message.length == 0) return;
     if (self.logLevel > level) return;
-    if (self.appInBackground && level <= WCPLLogLevelInfo) return;
+    BOOL keepWhenBackground = NO;
+    if (self.appInBackground &&
+        level <= WCPLLogLevelInfo &&
+        ![self shouldKeepLogWhenBackgroundWithLevel:level message:message]) {
+        return;
+    }
+    if (self.appInBackground && level <= WCPLLogLevelInfo) {
+        keepWhenBackground = YES;
+    }
 
     NSString *levelText = @"INFO";
     switch (level) {
@@ -176,12 +190,50 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
                                     [self currentTimestamp],
                                     levelText,
                                     message];
-    [self writeToFile:timestampedMessage];
+    if (keepWhenBackground) {
+        // 后台关键链路使用同步写入，避免进程挂起导致日志丢失
+        [self writeToFileUrgent:timestampedMessage];
+    } else {
+        [self writeToFile:timestampedMessage];
+    }
 
     // 控制系统日志量：后台与高频场景只保留告警/错误
     if (level >= WCPLLogLevelWarning) {
         NSLog(@"[WCPL][%@] %@", levelText, message);
     }
+}
+
+- (BOOL)shouldKeepLogWhenBackgroundWithLevel:(WCPLLogLevel)level message:(NSString *)message {
+    if (level >= WCPLLogLevelWarning) {
+        return YES;
+    }
+    if (![message isKindOfClass:[NSString class]] || message.length == 0) {
+        return NO;
+    }
+
+    static NSArray<NSString *> *keywords = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        keywords = @[
+            @"红包",
+            @"hongbao",
+            @"RedEnvelop",
+            @"receivehongbao",
+            @"OpenRedEnvelopesRequest",
+            @"ReceiverQueryRedEnvelopesRequest",
+            @"抢红包",
+            @"引用消息诊断",
+            @"AsyncOnAddMsg",
+            @"AsyncOnPreAddMsg"
+        ];
+    });
+
+    for (NSString *keyword in keywords) {
+        if ([message rangeOfString:keyword options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)logWithLevel:(WCPLLogLevel)level format:(NSString *)format, ... {
@@ -239,37 +291,74 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
     dispatch_async(_logQueue, ^{
         @autoreleasepool {
             @try {
-                if (self.fileHandle) {
-                    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-                    [self.fileHandle writeData:data];
-                } else {
-                    // 文件句柄失效，直接追加写入
-                    NSFileHandle *tempHandle = [NSFileHandle fileHandleForWritingAtPath:self.logFilePath];
-                    if (tempHandle) {
-                        [tempHandle seekToEndOfFile];
-                        NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-                        [tempHandle writeData:data];
-                        [tempHandle closeFile];
-                    }
-                }
-
-                self.writeCounter += 1;
-
-                // 同步频率降低，减少 IO 抖动
-                if (self.fileHandle && (self.writeCounter % 64 == 0)) {
-                    [self.fileHandle synchronizeFile];
-                }
-
-                // 轮转检查改为低频触发，降低每条日志的系统调用成本
-                if (self.writeCounter % 128 == 0) {
-                    [self checkAndRotateLogFile];
-                }
+                [self writeToFileLocked:message forceSync:NO];
             }
             @catch (NSException *exception) {
                 NSLog(@"[WCPL] Failed to write log: %@", exception.reason);
             }
         }
     });
+}
+
+- (void)writeToFileUrgent:(NSString *)message {
+    if (message.length == 0) {
+        return;
+    }
+
+    if (dispatch_get_specific(kWCPLLoggerQueueSpecificKey)) {
+        @autoreleasepool {
+            @try {
+                [self writeToFileLocked:message forceSync:YES];
+            } @catch (NSException *exception) {
+                NSLog(@"[WCPL] Failed to write urgent log(inline): %@", exception.reason);
+            }
+        }
+        return;
+    }
+
+    dispatch_sync(_logQueue, ^{
+        @autoreleasepool {
+            @try {
+                [self writeToFileLocked:message forceSync:YES];
+            } @catch (NSException *exception) {
+                NSLog(@"[WCPL] Failed to write urgent log: %@", exception.reason);
+            }
+        }
+    });
+}
+
+- (void)writeToFileLocked:(NSString *)message forceSync:(BOOL)forceSync {
+    if (message.length == 0) {
+        return;
+    }
+
+    if (self.fileHandle) {
+        NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+        [self.fileHandle writeData:data];
+    } else {
+        // 文件句柄失效，直接追加写入
+        NSFileHandle *tempHandle = [NSFileHandle fileHandleForWritingAtPath:self.logFilePath];
+        if (tempHandle) {
+            [tempHandle seekToEndOfFile];
+            NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+            [tempHandle writeData:data];
+            if (forceSync) {
+                [tempHandle synchronizeFile];
+            }
+            [tempHandle closeFile];
+        }
+    }
+
+    self.writeCounter += 1;
+
+    if (self.fileHandle && (forceSync || (self.writeCounter % 64 == 0))) {
+        [self.fileHandle synchronizeFile];
+    }
+
+    // 轮转检查改为低频触发，降低每条日志的系统调用成本
+    if (self.writeCounter % 128 == 0) {
+        [self checkAndRotateLogFile];
+    }
 }
 
 - (void)checkAndRotateLogFile {
@@ -323,6 +412,7 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 
 - (void)onEnterBackground {
     self.appInBackground = YES;
+    [self logWithLevel:WCPLLogLevelWarning message:@"[日志] 应用进入后台，启用关键日志保留"];
     dispatch_async(self.logQueue, ^{
         @try {
             if (self.fileHandle) {
@@ -335,6 +425,7 @@ static NSString *const kWCPLLogLevelKey = @"kWCPLLogLevel";
 
 - (void)onBecomeActive {
     self.appInBackground = NO;
+    [self logWithLevel:WCPLLogLevelWarning message:@"[日志] 应用回到前台，恢复常规日志策略"];
 }
 
 - (NSString *)startupContextInfo {

@@ -17,6 +17,7 @@ static NSString *const kWCPLRepeatSupportVoiceEnable = @"kWCPLRepeatSupportVoice
 static NSString *const kWCPLRepeatSupportImageEnable = @"kWCPLRepeatSupportImageEnable";
 static NSString *const kWCPLRepeatSupportVideoEnable = @"kWCPLRepeatSupportVideoEnable";
 static NSString *const kWCPLRepeatButtonEngineV2Enable = @"kWCPLRepeatButtonEngineV2Enable";
+static NSString *const kWCPLRepeatImmediateRenderEnable = @"kWCPLRepeatImmediateRenderEnable";
 static NSString *const kWCPLSwipeSensitivityLevel   = @"kWCPLSwipeSensitivityLevel";
 static NSString *const kWCPLSwipeLeftOtherAction    = @"kWCPLSwipeLeftOtherAction";
 static NSString *const kWCPLSwipeLeftSelfAction     = @"kWCPLSwipeLeftSelfAction";
@@ -78,12 +79,14 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         NSNumber *repeatImageEnabled = [defaults objectForKey:kWCPLRepeatSupportImageEnable];
         NSNumber *repeatVideoEnabled = [defaults objectForKey:kWCPLRepeatSupportVideoEnable];
         NSNumber *repeatButtonEngineV2Enabled = [defaults objectForKey:kWCPLRepeatButtonEngineV2Enable];
+        NSNumber *repeatImmediateRenderEnabled = [defaults objectForKey:kWCPLRepeatImmediateRenderEnable];
 
         _repeatSupportEmoticonEnable = repeatEmoticonEnabled ? repeatEmoticonEnabled.boolValue : YES;
         _repeatSupportVoiceEnable = repeatVoiceEnabled ? repeatVoiceEnabled.boolValue : YES;
         _repeatSupportImageEnable = repeatImageEnabled ? repeatImageEnabled.boolValue : YES;
         _repeatSupportVideoEnable = repeatVideoEnabled ? repeatVideoEnabled.boolValue : YES;
         _repeatButtonEngineV2Enable = repeatButtonEngineV2Enabled ? repeatButtonEngineV2Enabled.boolValue : NO;
+        _repeatImmediateRenderEnable = repeatImmediateRenderEnabled ? repeatImmediateRenderEnabled.boolValue : YES;
 
         NSNumber *sensitivity = [defaults objectForKey:kWCPLSwipeSensitivityLevel];
         _swipeSensitivityLevel = sensitivity ? sensitivity.integerValue : 1;
@@ -100,6 +103,7 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         [defaults setInteger:_swipeRightSelfAction forKey:kWCPLSwipeRightSelfAction];
         [defaults setBool:_repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
         [defaults setDouble:_repeatButtonSize forKey:kWCPLRepeatButtonSize];
+        [defaults setBool:_repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
     }
     return self;
 }
@@ -168,6 +172,11 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 - (void)setRepeatButtonEngineV2Enable:(BOOL)repeatButtonEngineV2Enable {
     _repeatButtonEngineV2Enable = repeatButtonEngineV2Enable;
     [[NSUserDefaults standardUserDefaults] setBool:repeatButtonEngineV2Enable forKey:kWCPLRepeatButtonEngineV2Enable];
+}
+
+- (void)setRepeatImmediateRenderEnable:(BOOL)repeatImmediateRenderEnable {
+    _repeatImmediateRenderEnable = repeatImmediateRenderEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
 }
 
 - (void)setSwipeSensitivityLevel:(NSInteger)swipeSensitivityLevel {

@@ -790,6 +790,29 @@ static BOOL wcpl_isMessageSettledForRepeat(CMessageWrap *msgWrap) {
         return YES;
     }
 
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.repeatImmediateRenderEnable) {
+        return NO;
+    }
+    if (wcpl_isMessageFromOther(msgWrap)) {
+        return NO;
+    }
+    if (status > 1) {
+        return NO;
+    }
+    if (msgWrap.m_uiMesLocalID > 0) {
+        return YES;
+    }
+
+    // 本地发送早期阶段可能尚未分配 localID，用短时间窗允许首帧显示复读按钮。
+    if (msgWrap.m_uiCreateTime > 0) {
+        NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+        NSTimeInterval delta = fabs(now - (NSTimeInterval)msgWrap.m_uiCreateTime);
+        if (delta <= 30.0) {
+            return YES;
+        }
+    }
+
     return NO;
 }
 
