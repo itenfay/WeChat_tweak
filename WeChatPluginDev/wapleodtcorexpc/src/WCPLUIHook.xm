@@ -6,7 +6,6 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-// ==================== 插件注册 ====================
 static BOOL didRegisterWCPLPlugin = NO;
 
 static NSString *wcpl_trimString(NSString *text) {
@@ -76,8 +75,6 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     BOOL result = %orig(application, launchOptions);
-
-    // 通过 WCPluginsMgr 注册插件入口
     if (NSClassFromString(@"WCPluginsMgr") && !didRegisterWCPLPlugin) {
         [[objc_getClass("WCPluginsMgr") sharedInstance] registerControllerWithTitle:@"微信辣椒"
                                                                            version:@"1.8.36"
@@ -85,7 +82,6 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
         didRegisterWCPLPlugin = YES;
         WCPLLogInfo(@"Plugin registered via WCPluginsMgr");
     }
-
     return result;
 }
 

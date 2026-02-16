@@ -16,6 +16,7 @@
 #import <dispatch/dispatch.h>
 
 static NSTimeInterval const kWCPLLogicMgrRetrySleepInterval = 0.08;
+static NSUInteger const kWCPLHotPathLogSampleMask = 0x0F; // 约 1/16 采样
 
 @interface WCPLReceiveRedEnvelopOperation ()
 
@@ -32,6 +33,13 @@ static NSTimeInterval const kWCPLLogicMgrRetrySleepInterval = 0.08;
 
 @synthesize executing = _executing;
 @synthesize finished  = _finished;
+
+static BOOL wcpl_shouldSampleHotPathLog(NSString *sendId) {
+    if (![sendId isKindOfClass:[NSString class]] || sendId.length == 0) {
+        return NO;
+    }
+    return ((sendId.hash & kWCPLHotPathLogSampleMask) == 0);
+}
 
 - (instancetype)initWithRedEnvelopParam:(WeChatRedEnvelopParam *)param delay:(unsigned int)delaySeconds {
     if (self = [super init]) {
@@ -93,17 +101,20 @@ static NSTimeInterval const kWCPLLogicMgrRetrySleepInterval = 0.08;
     WCPLCrashBreadcrumb(@"自动抢红包: session=%@ sendId=%@", self.redEnvelopParam.sessionUserName ?: @"", self.redEnvelopParam.sendId ?: @"");
 
     NSDictionary *params = [self.redEnvelopParam toParams];
-    WCPLLogDebug(@"[抢红包] 任务执行: mainThread=%d session=%@ sendId=%@ timing=%@ signLen=%lu paramsKeys=%lu",
-                 [NSThread isMainThread],
-                 self.redEnvelopParam.sessionUserName ?: @"",
-                 self.redEnvelopParam.sendId ?: @"",
-                 [params[@"timingIdentifier"] isKindOfClass:[NSString class]] ? params[@"timingIdentifier"] : @"",
-                 (unsigned long)([params[@"sign"] isKindOfClass:[NSString class]] ? [(NSString *)params[@"sign"] length] : 0),
-                 (unsigned long)params.count);
-    WCPLLogDebug(@"[抢红包] 参数详情: channelId=%@ nativeUrl=%@ sendUserName=%@",
-                 [params[@"channelId"] isKindOfClass:[NSString class]] ? params[@"channelId"] : @"",
-                 [params[@"nativeUrl"] isKindOfClass:[NSString class]] ? params[@"nativeUrl"] : @"",
-                 [params[@"sendUserName"] isKindOfClass:[NSString class]] ? params[@"sendUserName"] : @"");
+    BOOL shouldLogDetail = wcpl_shouldSampleHotPathLog(self.redEnvelopParam.sendId);
+    if (shouldLogDetail) {
+        WCPLLogDebug(@"[抢红包] 任务执行: mainThread=%d session=%@ sendId=%@ timing=%@ signLen=%lu paramsKeys=%lu",
+                     [NSThread isMainThread],
+                     self.redEnvelopParam.sessionUserName ?: @"",
+                     self.redEnvelopParam.sendId ?: @"",
+                     [params[@"timingIdentifier"] isKindOfClass:[NSString class]] ? params[@"timingIdentifier"] : @"",
+                     (unsigned long)([params[@"sign"] isKindOfClass:[NSString class]] ? [(NSString *)params[@"sign"] length] : 0),
+                     (unsigned long)params.count);
+        WCPLLogDebug(@"[抢红包] 参数详情: channelId=%@ nativeUrl=%@ sendUserName=%@",
+                     [params[@"channelId"] isKindOfClass:[NSString class]] ? params[@"channelId"] : @"",
+                     [params[@"nativeUrl"] isKindOfClass:[NSString class]] ? params[@"nativeUrl"] : @"",
+                     [params[@"sendUserName"] isKindOfClass:[NSString class]] ? params[@"sendUserName"] : @"");
+    }
 
     NSInteger maxRetry = self.maxRetryCount > 0 ? self.maxRetryCount : 1;
     NSError *lastError = nil;
@@ -136,13 +147,18 @@ static NSTimeInterval const kWCPLLogicMgrRetrySleepInterval = 0.08;
         }
 
         didSchedule = YES;
+        BOOL shouldLogCompletion = shouldLogDetail || (attempt > 1);
         void (^performOpen)(void) = ^{
             if (self.isCancelled) {
                 [self wcpl_notifyResultSuccess:NO error:[self wcpl_errorWithCode:1003 description:@"操作已取消"]];
                 return;
             }
             [logicMgr OpenRedEnvelopesRequest:params];
-            WCPLLogInfo(@"[抢红包] 调用完成: sendId=%@", self.redEnvelopParam.sendId ?: @"");
+            if (shouldLogCompletion) {
+                WCPLLogDebug(@"[抢红包] 调用完成: sendId=%@ attempt=%ld",
+                             self.redEnvelopParam.sendId ?: @"",
+                             (long)attempt);
+            }
             [self wcpl_notifyResultSuccess:YES error:nil];
         };
 
