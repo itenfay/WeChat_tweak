@@ -6,6 +6,9 @@
 
 #import <objc/message.h>
 
+static NSString *const kWCPLDouyinParserCommandNotification = @"WCPLDouyinParserCommandNotification";
+static BOOL wcpl_sg_isFromSelfMsgWrap(id msgWrap);
+
 static id wcpl_sg_invokeObject(id obj, SEL sel) {
     if (!obj || !sel) return nil;
     if (![obj respondsToSelector:sel]) return nil;
@@ -138,7 +141,7 @@ static BOOL wcpl_sg_looksLikeVoiceXml(NSString *sanitizedContent) {
     return YES;
 }
 
-static BOOL wcpl_sg_isVoiceXmlText(id msgWrap, NSString *sanitizedContent) {
+static BOOL __unused wcpl_sg_isVoiceXmlText(id msgWrap, NSString *sanitizedContent) {
     if (!msgWrap || sanitizedContent.length == 0) return NO;
 
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
@@ -156,6 +159,116 @@ static NSString *wcpl_sg_contentSnippet(NSString *content) {
         return content;
     }
     return [[content substringToIndex:limit] stringByAppendingString:@"..."];
+}
+
+static NSString *wcpl_sg_rawStringValue(id value) {
+    return [value isKindOfClass:[NSString class]] ? (NSString *)value : nil;
+}
+
+static BOOL wcpl_sg_hasDouyinCommandPrefixFast(id rawValue) {
+    NSString *text = wcpl_sg_rawStringValue(rawValue);
+    if (text.length < 3) {
+        return NO;
+    }
+    if ([text characterAtIndex:0] != '/') {
+        return NO;
+    }
+
+    unichar c1 = [text characterAtIndex:1];
+    unichar c2 = [text characterAtIndex:2];
+    if (c1 >= 'A' && c1 <= 'Z') c1 = (unichar)(c1 + ('a' - 'A'));
+    if (c2 >= 'A' && c2 <= 'Z') c2 = (unichar)(c2 + ('a' - 'A'));
+    return (c1 == 'd' && c2 == 'y');
+}
+
+static BOOL wcpl_sg_looksLikeVoiceXmlRaw(id rawValue) {
+    NSString *text = wcpl_sg_rawStringValue(rawValue);
+    if (text.length == 0) {
+        return NO;
+    }
+    if ([text rangeOfString:@"<voicemsg" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+        return NO;
+    }
+    if ([text rangeOfString:@"<msg" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+        return NO;
+    }
+    return YES;
+}
+
+static NSString *wcpl_sg_extractDouyinCommandPayload(NSString *sanitizedContent) {
+    if (![sanitizedContent isKindOfClass:[NSString class]] || sanitizedContent.length < 3) {
+        return nil;
+    }
+    if (![[sanitizedContent lowercaseString] hasPrefix:@"/dy"]) {
+        return nil;
+    }
+
+    NSString *payload = @"";
+    if (sanitizedContent.length > 3) {
+        payload = [sanitizedContent substringFromIndex:3] ?: @"";
+        payload = [payload stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ?: @"";
+    }
+    return payload;
+}
+
+static BOOL wcpl_sg_isDuplicateDouyinCommand(NSString *chatUser, NSString *payload) {
+    static NSString *lastKey = nil;
+    static CFAbsoluteTime lastTs = 0;
+    NSString *key = [NSString stringWithFormat:@"%@|%@", chatUser ?: @"", payload ?: @""];
+    CFAbsoluteTime now = CFAbsoluteTimeGetCurrent();
+
+    @synchronized([NSObject class]) {
+        BOOL duplicated = (lastKey && [lastKey isEqualToString:key] && (now - lastTs) < 1.2);
+        lastKey = [key copy];
+        lastTs = now;
+        return duplicated;
+    }
+}
+
+static void wcpl_sg_postDouyinCommand(id inputTool, NSString *rawText, NSString *payload, NSString *chatUser) {
+    if (wcpl_sg_isDuplicateDouyinCommand(chatUser, payload)) {
+        return;
+    }
+
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    if ([rawText isKindOfClass:[NSString class]]) {
+        userInfo[@"rawText"] = rawText;
+    }
+    if ([payload isKindOfClass:[NSString class]]) {
+        userInfo[@"payload"] = payload;
+    }
+    if ([chatUser isKindOfClass:[NSString class]] && chatUser.length > 0) {
+        userInfo[@"chatUser"] = chatUser;
+    }
+    if (inputTool) {
+        userInfo[@"inputTool"] = inputTool;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kWCPLDouyinParserCommandNotification
+                                                        object:inputTool
+                                                      userInfo:[userInfo copy]];
+}
+
+static BOOL wcpl_sg_tryHandleDouyinCommandFromMsgWrap(id msgWrap, NSString *content, NSString *stage) {
+    if (!msgWrap || !wcpl_sg_isFromSelfMsgWrap(msgWrap)) {
+        return NO;
+    }
+
+    NSString *payload = wcpl_sg_extractDouyinCommandPayload(content);
+    if (payload == nil) {
+        return NO;
+    }
+
+    NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr"));
+    WCPLLogInfo(@"[抖音解析] 输入命令兜底拦截: stage=%@ chat=%@ payloadLen=%lu snippet=%@",
+                stage ?: @"",
+                toUsr ?: @"",
+                (unsigned long)payload.length,
+                wcpl_sg_contentSnippet(payload));
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        wcpl_sg_postDouyinCommand(nil, content, payload, toUsr);
+    });
+    return YES;
 }
 
 static BOOL wcpl_sg_looksLikeQuoteAppMsg(NSString *sanitizedContent) {
@@ -272,21 +385,152 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
     return YES;
 }
 
+static NSString *wcpl_sg_extractTextFromInputTool(id inputTool) {
+    if (!inputTool) {
+        return nil;
+    }
+
+    NSArray<NSString *> *selectorNames = @[@"GetCurrentText", @"inputText", @"text"];
+    for (NSString *selectorName in selectorNames) {
+        SEL sel = NSSelectorFromString(selectorName);
+        id value = wcpl_sg_invokeObject(inputTool, sel);
+        NSString *sanitized = wcpl_sg_sanitizeText(value);
+        if (sanitized.length > 0) {
+            return sanitized;
+        }
+    }
+
+    id textView = wcpl_sg_safeValueForKey(inputTool, @"textView");
+    if (textView) {
+        NSString *sanitized = wcpl_sg_sanitizeText(wcpl_sg_invokeObject(textView, @selector(text)));
+        if (sanitized.length > 0) {
+            return sanitized;
+        }
+    }
+
+    return nil;
+}
+
+static NSString *wcpl_sg_chatUserFromChatController(id chatController, id inputTool) {
+    NSString *chatName = wcpl_sg_sanitizeText(wcpl_sg_invokeObject(chatController, @selector(getCurrentChatName)));
+    if (chatName.length > 0) {
+        return chatName;
+    }
+
+    id contact = wcpl_sg_invokeObject(chatController, @selector(GetContact));
+    chatName = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(contact, @"m_nsUsrName"));
+    if (chatName.length > 0) {
+        return chatName;
+    }
+
+    chatName = wcpl_sg_sanitizeText(wcpl_sg_invokeObject(inputTool, @selector(getChatUsername)));
+    if (chatName.length > 0) {
+        return chatName;
+    }
+
+    id inputContact = wcpl_sg_safeValueForKey(inputTool, @"contact");
+    chatName = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(inputContact, @"m_nsUsrName"));
+    if (chatName.length > 0) {
+        return chatName;
+    }
+
+    return nil;
+}
+
+static BOOL wcpl_sg_tryHandleDouyinCommandFromInputTool(id chatController, id inputTool, NSString *stage) {
+    NSString *content = wcpl_sg_extractTextFromInputTool(inputTool);
+    if (content.length == 0) {
+        content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(chatController, @"m_text"));
+    }
+    NSString *payload = wcpl_sg_extractDouyinCommandPayload(content);
+    if (payload == nil) {
+        return NO;
+    }
+
+    NSString *chatUser = wcpl_sg_chatUserFromChatController(chatController, inputTool);
+    WCPLLogInfo(@"[抖音解析] 上游命令拦截: stage=%@ chat=%@ payloadLen=%lu snippet=%@",
+                stage ?: @"",
+                chatUser ?: @"",
+                (unsigned long)payload.length,
+                wcpl_sg_contentSnippet(payload));
+
+    if ([inputTool respondsToSelector:@selector(resetText)]) {
+        @try {
+            ((void (*)(id, SEL))objc_msgSend)(inputTool, @selector(resetText));
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        wcpl_sg_postDouyinCommand(inputTool, content, payload, chatUser);
+    });
+    return YES;
+}
+
+%hook BaseMsgContentViewController
+
+- (void)SendTextMessageToolView:(id)arg1 {
+    if (wcpl_sg_tryHandleDouyinCommandFromInputTool(self, arg1, @"BaseMsgContentViewController.SendTextMessageToolView")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)sendToolViewText {
+    id inputTool = wcpl_sg_safeValueForKey(self, @"toolView");
+    if (wcpl_sg_tryHandleDouyinCommandFromInputTool(self, inputTool, @"BaseMsgContentViewController.sendToolViewText")) {
+        return;
+    }
+    %orig;
+}
+
+%end
+
 %hook MMInputToolView
 
 - (void)sendMsgWithText:(id)arg1 {
-    NSString *sanitized = wcpl_sg_sanitizeText(arg1);
-    if (sanitized.length == 0) {
+    NSString *rawText = wcpl_sg_rawStringValue(arg1);
+    NSString *fallbackText = nil;
+    if (rawText.length == 0) {
+        fallbackText = wcpl_sg_sanitizeText(arg1);
+    }
+    NSString *textForCheck = rawText.length > 0 ? rawText : fallbackText;
+    if (textForCheck.length == 0) {
         WCPLLogDebug(@"拦截空文本发送: MMInputToolView.sendMsgWithText");
         return;
     }
-    if (wcpl_sg_looksLikeVoiceXml(sanitized)) {
+    if (wcpl_sg_looksLikeVoiceXmlRaw(textForCheck)) {
         WCPLLogWarning(@"拦截语音XML文本发送: MMInputToolView.sendMsgWithText len=%lu snippet=%@",
-                       (unsigned long)sanitized.length,
-                       wcpl_sg_contentSnippet(sanitized));
+                       (unsigned long)textForCheck.length,
+                       wcpl_sg_contentSnippet(textForCheck));
         return;
     }
-    %orig(sanitized);
+
+    NSString *dyPayload = nil;
+    NSString *sanitizedForCommand = nil;
+    if (wcpl_sg_hasDouyinCommandPrefixFast(textForCheck)) {
+        sanitizedForCommand = wcpl_sg_sanitizeText(textForCheck);
+        dyPayload = wcpl_sg_extractDouyinCommandPayload(sanitizedForCommand);
+    }
+    if (dyPayload != nil) {
+        WCPLLogInfo(@"[抖音解析] 输入框命令触发: payloadLen=%lu snippet=%@",
+                    (unsigned long)dyPayload.length,
+                    wcpl_sg_contentSnippet(dyPayload));
+        id toolView = (id)self;
+        if ([toolView respondsToSelector:@selector(resetText)]) {
+            @try {
+                ((void (*)(id, SEL))objc_msgSend)(toolView, @selector(resetText));
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            wcpl_sg_postDouyinCommand(toolView, sanitizedForCommand, dyPayload, nil);
+        });
+        return;
+    }
+
+    id textToSend = rawText.length > 0 ? arg1 : fallbackText;
+    %orig(textToSend);
 }
 
 %end
@@ -297,33 +541,22 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
     id msgWrap = arg1;
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
     if (msgType == 1) {
-        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
-        if (content.length > 0) {
+        id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
+        NSString *rawText = wcpl_sg_rawStringValue(rawContent);
+        if (rawText.length > 0) {
             WCPLLogDebug(@"BypStartSend 文本发送诊断: len=%lu snippet=%@",
-                         (unsigned long)content.length,
-                         wcpl_sg_contentSnippet(content));
+                         (unsigned long)rawText.length,
+                         wcpl_sg_contentSnippet(rawText));
         }
-        if (wcpl_sg_isVoiceXmlText(msgWrap, content)) {
+        if (wcpl_sg_isFromSelfMsgWrap(msgWrap) && wcpl_sg_looksLikeVoiceXmlRaw(rawContent)) {
             WCPLLogWarning(@"拦截语音XML文本发送: BypSendMessageMgr.StartSendMsg from=%@ to=%@",
                            wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"",
                            wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"");
             return;
         }
-        if (content.length == 0) {
+        if ([rawContent isKindOfClass:[NSString class]] && rawText.length == 0) {
             WCPLLogDebug(@"拦截空文本发送: BypSendMessageMgr.StartSendMsg");
             return;
-        }
-
-        id originContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
-        if ([originContent isKindOfClass:[NSString class]] && ![originContent isEqualToString:content]) {
-            @try {
-                [msgWrap setValue:content forKey:@"m_nsContent"];
-            } @catch (__unused NSException *exception) {
-            }
-            @try {
-                [msgWrap setValue:content forKey:@"m_nsPushContent"];
-            } @catch (__unused NSException *exception) {
-            }
         }
     }
 
@@ -345,34 +578,31 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
 
     if (msgType == 1) {
-        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
-        if (wcpl_sg_isVoiceXmlText(msgWrap, content)) {
+        id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
+        NSString *rawText = wcpl_sg_rawStringValue(rawContent);
+        if (wcpl_sg_isFromSelfMsgWrap(msgWrap) && wcpl_sg_looksLikeVoiceXmlRaw(rawContent)) {
             WCPLLogWarning(@"拦截语音XML文本入队: SendMessageMgr.AddMsgToSendTable to=%@ from=%@", toUsr, fromUsr);
             return;
         }
-        if (content.length == 0) {
+        if ([rawContent isKindOfClass:[NSString class]] && rawText.length == 0) {
             WCPLLogWarning(@"拦截空文本入队: SendMessageMgr.AddMsgToSendTable to=%@ from=%@", toUsr, fromUsr);
             return;
         }
-
-        id originContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
-        if ([originContent isKindOfClass:[NSString class]] && ![(NSString *)originContent isEqualToString:content]) {
-            @try {
-                [msgWrap setValue:content forKey:@"m_nsContent"];
-            } @catch (__unused NSException *exception) {
-            }
-            @try {
-                [msgWrap setValue:content forKey:@"m_nsPushContent"];
-            } @catch (__unused NSException *exception) {
+        if (wcpl_sg_hasDouyinCommandPrefixFast(rawContent)) {
+            NSString *commandContent = wcpl_sg_sanitizeText(rawContent);
+            if (wcpl_sg_tryHandleDouyinCommandFromMsgWrap(msgWrap,
+                                                          commandContent,
+                                                          @"SendMessageMgr.AddMsgToSendTable")) {
+                return;
             }
         }
 
         WCPLLogDebug(@"文本入队: SendMessageMgr type=%ld len=%lu to=%@ from=%@ snippet=%@",
                      (long)msgType,
-                     (unsigned long)content.length,
+                     (unsigned long)rawText.length,
                      toUsr,
                      fromUsr,
-                     wcpl_sg_contentSnippet(content));
+                     wcpl_sg_contentSnippet(rawText));
     } else {
         id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
         NSUInteger contentLength = wcpl_sg_safeContentLength(rawContent);
@@ -403,17 +633,24 @@ static BOOL wcpl_sg_shouldBlockLocalEmptyTextBubble(id session, id msgWrap, NSSt
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
     if (msgType == 1) {
-        NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
-        if (content.length > 0) {
+        id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
+        NSString *rawText = wcpl_sg_rawStringValue(rawContent);
+        if (rawText.length > 0) {
             WCPLLogDebug(@"CMessageMgr.AddMsg 文本诊断: to=%@ from=%@ len=%lu snippet=%@",
                          toUsr,
                          fromUsr,
-                         (unsigned long)content.length,
-                         wcpl_sg_contentSnippet(content));
+                         (unsigned long)rawText.length,
+                         wcpl_sg_contentSnippet(rawText));
         }
-        if (wcpl_sg_isVoiceXmlText(msgWrap, content)) {
+        if (wcpl_sg_isFromSelfMsgWrap(msgWrap) && wcpl_sg_looksLikeVoiceXmlRaw(rawContent)) {
             WCPLLogWarning(@"拦截语音XML文本AddMsg: CMessageMgr.AddMsg to=%@ from=%@", toUsr, fromUsr);
             return;
+        }
+        if (wcpl_sg_hasDouyinCommandPrefixFast(rawContent)) {
+            NSString *commandContent = wcpl_sg_sanitizeText(rawContent);
+            if (wcpl_sg_tryHandleDouyinCommandFromMsgWrap(msgWrap, commandContent, @"CMessageMgr.AddMsg")) {
+                return;
+            }
         }
     } else if (msgType == 34) {
         NSString *content = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent"));
