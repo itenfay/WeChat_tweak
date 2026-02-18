@@ -569,13 +569,17 @@ static BOOL wcpl_sg_tryHandleDouyinCommandFromInputTool(id chatController, id in
 
 - (void)AddMsgToSendTable:(id)arg1 MsgWrap:(id)arg2 {
     id msgWrap = arg2;
-    if ([WCPLFuncService shouldIgnoreMessageWrap:msgWrap]) {
-        return;
-    }
     NSInteger msgType = wcpl_sg_safeIntegerForKey(msgWrap, @"m_uiMessageType");
 
     NSString *toUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsToUsr")) ?: @"";
     NSString *fromUsr = wcpl_sg_sanitizeText(wcpl_sg_safeValueForKey(msgWrap, @"m_nsFromUsr")) ?: @"";
+    BOOL ignoredByRule = [WCPLFuncService shouldIgnoreMessageWrap:msgWrap];
+    if (ignoredByRule) {
+        WCPLLogWarning(@"命中忽略规则但继续发送: stage=SendMessageMgr.AddMsgToSendTable type=%ld to=%@ from=%@",
+                       (long)msgType,
+                       toUsr,
+                       fromUsr);
+    }
 
     if (msgType == 1) {
         id rawContent = wcpl_sg_safeValueForKey(msgWrap, @"m_nsContent");
