@@ -27,6 +27,10 @@ static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
 static const void *kWCPLRepeatButtonTextAnchorLogOnceKey = &kWCPLRepeatButtonTextAnchorLogOnceKey;
 static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedbackKey;
 static const void *kWCPLRepeatButtonLastTapTimeKey = &kWCPLRepeatButtonLastTapTimeKey;
+static const void *kWCPLDoubleTapLastHandledAtKey = &kWCPLDoubleTapLastHandledAtKey;
+static const void *kWCPLDoubleTapLastTapAtKey = &kWCPLDoubleTapLastTapAtKey;
+static const void *kWCPLDoubleTapManualTapCountKey = &kWCPLDoubleTapManualTapCountKey;
+static const void *kWCPLNativeDoubleTapRecognizerDisabledKey = &kWCPLNativeDoubleTapRecognizerDisabledKey;
 static const void *kWCPLRepeatAnchorMessageKey = &kWCPLRepeatAnchorMessageKey;
 static const void *kWCPLRepeatAnchorWrapKey = &kWCPLRepeatAnchorWrapKey;
 static const void *kWCPLRepeatAnchorReportTimeKey = &kWCPLRepeatAnchorReportTimeKey;
@@ -46,8 +50,13 @@ static const NSTimeInterval kWCPLRepeatRefreshThrottleInterval = 0.15;
 static const NSTimeInterval kWCPLRepeatSettleRefreshDelay = 0.12;
 static const NSTimeInterval kWCPLRepeatSettleRefreshFollowDelay = 0.32;
 static const NSTimeInterval kWCPLRepeatButtonTapDebounceInterval = 0.08;
+static const NSTimeInterval kWCPLDoubleTapTriggerDebounceInterval = 0.22;
 static const NSTimeInterval kWCPLRepeatBurstSendMinInterval = 0.42;
 static const NSUInteger kWCPLRepeatFullResyncInterval = 16;
+static const CGFloat kWCPLMessageTimeLabelMinWidth = 36.0f;
+static const CGFloat kWCPLMessageTimeLabelMaxWidth = 86.0f;
+static const CGFloat kWCPLMessageTimeLabelTopInset = -3.0f;
+static const CGFloat kWCPLMessageTimeLabelMinHeight = 12.0f;
 static NSString *const kWCPLIssueIdLongPressMenu = @"wx-bugfix-longpress-menu-20260207";
 
 static CFTimeInterval gWCPLQuoteLongPressSuppressUntil = 0;
@@ -116,6 +125,13 @@ static BOOL wcpl_repeatQuoteNativeResendFresh(CMessageWrap *msgWrap,
                                               NSString *chatName,
                                               BaseMsgContentViewController *chatVC,
                                               NSString *sceneTag);
+static UIView *wcpl_findMessageCellAncestorView(UIView *view);
+static BOOL wcpl_shouldBlockNativeDoubleTapForView(id ownerView, id sender, NSString *scopeTag);
+static void wcpl_enforceTripleTapPriorityForViewTree(UIView *root, UITapGestureRecognizer *tripleTap, id ownerCell);
+static BOOL wcpl_isPointInMessageBubbleArea(id cell, CGPoint pointInCell, NSString *scopeTag);
+static BOOL wcpl_isTouchInMessageBubbleArea(id cell, UITouch *touch, NSString *scopeTag);
+static NSDateFormatter *wcpl_messageTimeFormatter(void);
+static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp);
 
 static BOOL wcpl_shouldUseLocalCellRepeatEngine(WCPLGestureConfig *config) {
     if (kWCPLRepeatForceLocalCellEngine) {
@@ -825,7 +841,7 @@ static NSInteger wcpl_normalizeSwipeActionValueLegacyAware(NSInteger action, BOO
         return 0;
     }
 
-    if (action > 4) {
+    if (action > 5) {
         return 0;
     }
 
@@ -988,15 +1004,16 @@ static NSString *wcpl_repeatTextForMessageWrap(CMessageWrap *msgWrap) {
         if (wcpl_isMergedForwardAppMessage(msgWrap)) {
             return nil;
         }
-        if (wcpl_isFileAppMessage(msgWrap)) {
-            return nil;
-        }
+        // 引用文件消息的 refer 内容里可能包含 <type>6，需优先识别为引用。
         if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
             NSString *quoteTitle = wcpl_extractQuoteTitleFromXML(msgWrap.m_nsContent);
             if (quoteTitle.length > 0) {
                 return quoteTitle;
             }
             return @"[引用]";
+        }
+        if (wcpl_isFileAppMessage(msgWrap)) {
+            return nil;
         }
         if (wcpl_isAppEmoticonMessage(msgWrap)) {
             return @"[表情]";
@@ -1038,11 +1055,13 @@ static BOOL wcpl_isRepeatTypeEnabledByConfig(WCPLGestureConfig *config, CMessage
             if (wcpl_isMergedForwardAppMessage(msgWrap)) {
                 return NO;
             }
-            if (wcpl_isFileAppMessage(msgWrap)) {
-                return NO;
-            }
+            // 引用文件消息外层是引用(type=57)，仅 refer 内层可能出现文件(type=6)。
+            // 先判引用，避免“引用文件”被误拦截为“文件消息”。
             if (wcpl_isQuoteReplyAppMessage(msgWrap)) {
                 return YES;
+            }
+            if (wcpl_isFileAppMessage(msgWrap)) {
+                return NO;
             }
             if (config.repeatSupportEmoticonEnable && wcpl_isAppEmoticonMessage(msgWrap)) {
                 return YES;
@@ -1108,6 +1127,299 @@ static BOOL wcpl_shouldSuppressTapForCell(id cell, NSString *entry) {
                  (void *)cell,
                  gWCPLQuoteLongPressSuppressMsgType);
     return YES;
+}
+
+static BOOL wcpl_shouldSuppressTapForTripleSequence(id cell, NSString *entry) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        return NO;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(cell);
+    if (!msgWrap) {
+        return NO;
+    }
+
+    NSNumber *lastTapAt = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey);
+    NSNumber *tapCountObj = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey);
+    NSInteger tapCount = [tapCountObj isKindOfClass:[NSNumber class]] ? tapCountObj.integerValue : 0;
+    if (tapCount < 2 || ![lastTapAt isKindOfClass:[NSNumber class]]) {
+        return NO;
+    }
+
+    static const NSTimeInterval kWCPLManualDoubleTapInterval = 1.60;
+    CFTimeInterval delta = CACurrentMediaTime() - lastTapAt.doubleValue;
+    if (delta < 0 || delta > kWCPLManualDoubleTapInterval) {
+        return NO;
+    }
+
+    WCPLLogDebug(@"Triple tap pre-suppress native tap: entry=%@ cell=%p count=%ld delta=%.3f msg=%@",
+                 entry ?: @"unknown",
+                 cell,
+                 (long)tapCount,
+                 delta,
+                 wcpl_repeatMessageDebugInfo(msgWrap));
+    return YES;
+}
+
+static BOOL wcpl_isPointInMessageBubbleArea(id cell, CGPoint pointInCell, NSString *scopeTag) {
+    if (![cell isKindOfClass:[UIView class]]) {
+        return NO;
+    }
+
+    UIView *cellView = (UIView *)cell;
+    if (!CGRectContainsPoint(cellView.bounds, pointInCell)) {
+        return NO;
+    }
+
+    BOOL (^isRectUsable)(CGRect) = ^BOOL(CGRect rect) {
+        return !CGRectIsEmpty(rect) &&
+               !CGRectIsNull(rect) &&
+               !CGRectIsInfinite(rect) &&
+               CGRectGetWidth(rect) > 8.0f &&
+               CGRectGetHeight(rect) > 8.0f &&
+               CGRectIntersectsRect(rect, cellView.bounds);
+    };
+
+    BOOL (^isRowWideRect)(CGRect) = ^BOOL(CGRect rect) {
+        if (!isRectUsable(rect)) {
+            return NO;
+        }
+        CGFloat cellWidth = CGRectGetWidth(cellView.bounds);
+        if (cellWidth <= 24.0f) {
+            return NO;
+        }
+        CGFloat widthRatio = CGRectGetWidth(rect) / cellWidth;
+        BOOL spansBothSides = (CGRectGetMinX(rect) <= 10.0f) &&
+                              ((cellWidth - CGRectGetMaxX(rect)) <= 10.0f);
+        return widthRatio >= 0.80f || spansBothSides;
+    };
+
+    CGRect anchorRect = CGRectZero;
+    BOOL anchorRectValid = NO;
+    if ([(id)cell respondsToSelector:@selector(wchook_bubbleAnchorView)]) {
+        @try {
+            UIView *bubbleView = ((id (*)(id, SEL))objc_msgSend)((id)cell, @selector(wchook_bubbleAnchorView));
+            if ([bubbleView isKindOfClass:[UIView class]]) {
+                anchorRect = [cellView convertRect:bubbleView.bounds fromView:bubbleView];
+                anchorRectValid = isRectUsable(anchorRect);
+            }
+        } @catch (__unused NSException *exceptionBubble) {
+            anchorRectValid = NO;
+        }
+    }
+
+    CGRect menuRect = CGRectZero;
+    BOOL menuRectValid = NO;
+    if ([(id)cell respondsToSelector:@selector(showRectForMenuController)]) {
+        @try {
+            menuRect = ((CGRect (*)(id, SEL))objc_msgSend)((id)cell, @selector(showRectForMenuController));
+            menuRectValid = isRectUsable(menuRect);
+        } @catch (__unused NSException *exceptionMenuRect) {
+            menuRectValid = NO;
+        }
+    }
+
+    CGRect bubbleRect = CGRectZero;
+    BOOL bubbleRectValid = NO;
+    if (anchorRectValid && menuRectValid) {
+        CGRect intersectRect = CGRectIntersection(anchorRect, menuRect);
+        if (isRectUsable(intersectRect)) {
+            bubbleRect = intersectRect;
+        } else {
+            BOOL anchorWide = isRowWideRect(anchorRect);
+            BOOL menuWide = isRowWideRect(menuRect);
+            if (anchorWide && !menuWide) {
+                bubbleRect = menuRect;
+            } else if (menuWide && !anchorWide) {
+                bubbleRect = anchorRect;
+            } else {
+                CGFloat anchorArea = CGRectGetWidth(anchorRect) * CGRectGetHeight(anchorRect);
+                CGFloat menuArea = CGRectGetWidth(menuRect) * CGRectGetHeight(menuRect);
+                bubbleRect = (menuArea > 0.0f && menuArea < anchorArea) ? menuRect : anchorRect;
+            }
+        }
+        bubbleRectValid = YES;
+    } else if (anchorRectValid) {
+        bubbleRect = anchorRect;
+        bubbleRectValid = YES;
+    } else if (menuRectValid) {
+        bubbleRect = menuRect;
+        bubbleRectValid = YES;
+    }
+
+    // 严格范围控制：无法确定气泡矩形时，默认不触发。
+    if (!bubbleRectValid) {
+        WCPLLogDebug(@"Triple tap ignored: bubble rect unavailable scope=%@ class=%@ point=(%.1f,%.1f)",
+                     scopeTag ?: @"unknown",
+                     NSStringFromClass([cellView class]),
+                     pointInCell.x,
+                     pointInCell.y);
+        return NO;
+    }
+
+    if (isRowWideRect(bubbleRect)) {
+        WCPLLogDebug(@"Triple tap ignored: bubble rect too wide scope=%@ class=%@ point=(%.1f,%.1f) bubble=(%.1f,%.1f,%.1f,%.1f)",
+                     scopeTag ?: @"unknown",
+                     NSStringFromClass([cellView class]),
+                     pointInCell.x,
+                     pointInCell.y,
+                     bubbleRect.origin.x,
+                     bubbleRect.origin.y,
+                     bubbleRect.size.width,
+                     bubbleRect.size.height);
+        return NO;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(cell);
+    if (msgWrap && CGRectGetWidth(cellView.bounds) > 20.0f) {
+        BOOL isSelf = !wcpl_isMessageFromOther(msgWrap);
+        CGFloat cellMidX = CGRectGetMidX(cellView.bounds);
+        CGRect sideClampedRect = bubbleRect;
+        if (isSelf) {
+            CGFloat minX = MAX(CGRectGetMinX(sideClampedRect), cellMidX - 12.0f);
+            CGFloat maxX = CGRectGetMaxX(sideClampedRect);
+            if (maxX - minX > 8.0f) {
+                sideClampedRect.origin.x = minX;
+                sideClampedRect.size.width = maxX - minX;
+            }
+        } else {
+            CGFloat minX = CGRectGetMinX(sideClampedRect);
+            CGFloat maxX = MIN(CGRectGetMaxX(sideClampedRect), cellMidX + 12.0f);
+            if (maxX - minX > 8.0f) {
+                sideClampedRect.origin.x = minX;
+                sideClampedRect.size.width = maxX - minX;
+            }
+        }
+        bubbleRect = sideClampedRect;
+    }
+
+    CGRect hitRect = CGRectInset(bubbleRect, 1.0f, 1.0f);
+    if (CGRectIsEmpty(hitRect) || CGRectGetWidth(hitRect) <= 2.0f || CGRectGetHeight(hitRect) <= 2.0f) {
+        hitRect = bubbleRect;
+    }
+    BOOL inside = CGRectContainsPoint(hitRect, pointInCell);
+    if (!inside) {
+        WCPLLogDebug(@"Triple tap ignored outside bubble: scope=%@ class=%@ point=(%.1f,%.1f) bubble=(%.1f,%.1f,%.1f,%.1f)",
+                     scopeTag ?: @"unknown",
+                     NSStringFromClass([cellView class]),
+                     pointInCell.x,
+                     pointInCell.y,
+                     bubbleRect.origin.x,
+                     bubbleRect.origin.y,
+                     bubbleRect.size.width,
+                     bubbleRect.size.height);
+    }
+    return inside;
+}
+
+static BOOL wcpl_isTouchInMessageBubbleArea(id cell, UITouch *touch, NSString *scopeTag) {
+    if (![cell isKindOfClass:[UIView class]] || ![touch isKindOfClass:[UITouch class]]) {
+        return NO;
+    }
+    UIView *cellView = (UIView *)cell;
+    CGPoint pointInCell = [touch locationInView:cellView];
+    return wcpl_isPointInMessageBubbleArea(cell, pointInCell, scopeTag);
+}
+
+static UIView *wcpl_findMessageCellAncestorView(UIView *view) {
+    UIView *current = view;
+    Class commonCellClass = objc_getClass("CommonMessageCellView");
+    while (current) {
+        if ((commonCellClass && [current isKindOfClass:commonCellClass]) ||
+            [NSStringFromClass([current class]) hasSuffix:@"MessageCellView"]) {
+            return current;
+        }
+        current = current.superview;
+    }
+    return nil;
+}
+
+static BOOL wcpl_shouldBlockNativeDoubleTap(id cell, id sender, NSString *scopeTag) {
+    return wcpl_shouldBlockNativeDoubleTapForView(cell, sender, scopeTag);
+}
+
+static BOOL wcpl_shouldBlockNativeDoubleTapForView(id ownerView, id sender, NSString *scopeTag) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        return NO;
+    }
+
+    UIView *originView = nil;
+    if ([sender isKindOfClass:[UIGestureRecognizer class]]) {
+        originView = ((UIGestureRecognizer *)sender).view;
+    } else if ([sender isKindOfClass:[UIView class]]) {
+        originView = (UIView *)sender;
+    }
+    if (!originView && [ownerView isKindOfClass:[UIView class]]) {
+        originView = (UIView *)ownerView;
+    }
+
+    UIView *cellView = wcpl_findMessageCellAncestorView(originView);
+    if (!cellView && [ownerView isKindOfClass:[UIView class]]) {
+        cellView = wcpl_findMessageCellAncestorView((UIView *)ownerView);
+    }
+    if (!cellView) {
+        return NO;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(cellView);
+    NSString *scope = ([scopeTag isKindOfClass:[NSString class]] && scopeTag.length > 0) ? scopeTag : @"unknown";
+    NSString *senderClass = sender ? NSStringFromClass([sender class]) : @"(nil)";
+    WCPLLogInfo(@"Native double tap blocked: scope=%@ class=%@ sender=%@ msg=%@",
+                scope,
+                NSStringFromClass([cellView class]),
+                senderClass,
+                wcpl_repeatMessageDebugInfo(msgWrap));
+    return YES;
+}
+
+static void wcpl_enforceTripleTapPriorityForViewTree(UIView *root, UITapGestureRecognizer *tripleTap, id ownerCell) {
+    if (!root || !tripleTap) {
+        return;
+    }
+
+    NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:root];
+    while (stack.count > 0) {
+        UIView *view = stack.lastObject;
+        [stack removeLastObject];
+
+        NSArray<UIGestureRecognizer *> *recognizers = [view.gestureRecognizers copy];
+        for (UIGestureRecognizer *recognizer in recognizers) {
+            if (recognizer == tripleTap || ![recognizer isKindOfClass:[UITapGestureRecognizer class]]) {
+                continue;
+            }
+
+            UITapGestureRecognizer *tap = (UITapGestureRecognizer *)recognizer;
+            if (tap.numberOfTouchesRequired != 1) {
+                continue;
+            }
+
+            if (tap.numberOfTapsRequired == 2) {
+                if (tap.enabled) {
+                    tap.enabled = NO;
+                    NSNumber *didLog = objc_getAssociatedObject(tap, kWCPLNativeDoubleTapRecognizerDisabledKey);
+                    if (![didLog isKindOfClass:[NSNumber class]] || !didLog.boolValue) {
+                        WCPLLogInfo(@"Native double tap recognizer disabled: cell=%p owner=%@ view=%@ recognizer=%@",
+                                    ownerCell,
+                                    ownerCell ? NSStringFromClass([ownerCell class]) : @"(nil)",
+                                    NSStringFromClass([view class]),
+                                    NSStringFromClass([tap class]));
+                        objc_setAssociatedObject(tap, kWCPLNativeDoubleTapRecognizerDisabledKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                    }
+                }
+                continue;
+            }
+
+            if (tap.numberOfTapsRequired > 0 && tap.numberOfTapsRequired < tripleTap.numberOfTapsRequired) {
+                [tap requireGestureRecognizerToFail:tripleTap];
+            }
+        }
+
+        for (UIView *subview in view.subviews) {
+            [stack addObject:subview];
+        }
+    }
 }
 
 
@@ -4915,6 +5227,8 @@ static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *o
 }
 
 @interface CommonMessageCellView (WCPLRepeatButton)
+@property(nonatomic, strong) UITapGestureRecognizer *wchook_doubleTapGesture;
+@property(nonatomic, strong) UILabel *wchook_messageTimeLabel;
 + (void)wchook_scheduleGlobalRepeatButtonRefresh;
 + (void)wchook_scheduleGlobalRepeatButtonRefreshAfterDelay:(NSTimeInterval)delay;
 + (void)wchook_scheduleGlobalRepeatButtonSettleRefresh;
@@ -4937,7 +5251,34 @@ static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *o
 - (BOOL)wchook_reportRepeatAnchorIfNeeded;
 - (void)wchook_removeRepeatButtonIfNeeded;
 - (void)wchook_updateRepeatButtonIfNeeded;
+- (UIView *)wchook_headImageViewForMessageTime;
+- (UILabel *)wchook_messageTimeLabelEnsureCreate:(BOOL)createIfNeeded;
+- (void)wchook_updateMessageTimeLabel;
+- (void)wchook_hideMessageTimeLabel;
 - (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap;
+- (void)wchook_setupDoubleTapGestureIfNeeded;
+- (void)wchook_handleDoubleTap:(UITapGestureRecognizer *)gesture;
+- (void)wchook_fireDoubleTapActionWithSource:(NSString *)source;
+- (BOOL)wchook_tryFireManualDoubleTapWithSource:(NSString *)source;
+- (BOOL)wchook_tryHandleDoubleTapFromTouches:(id)touches event:(id)event;
+- (NSString *)wchook_actionNameForAction:(NSInteger)action;
+- (void)wchook_performConfiguredAction:(NSInteger)action
+                           messageWrap:(CMessageWrap *)msgWrap
+                                isSelf:(BOOL)isSelf
+                              sceneTag:(NSString *)sceneTag;
+- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap;
+- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap sceneTag:(NSString *)sceneTag;
+- (BOOL)wchook_tryForwardViaMiyouPrimaryRoutes:(CMessageWrap *)msgWrap
+                                         chatVC:(BaseMsgContentViewController *)chatVC
+                                       sceneTag:(NSString *)sceneTag;
+- (BOOL)wchook_tryForwardViaMiyouOnForward:(CMessageWrap *)msgWrap
+                                      chatVC:(BaseMsgContentViewController *)chatVC
+                                    sceneTag:(NSString *)sceneTag;
+- (BOOL)wchook_tryForwardViaLegacyFallback:(CMessageWrap *)msgWrap
+                                      chatVC:(BaseMsgContentViewController *)chatVC
+                                    sceneTag:(NSString *)sceneTag;
+- (UIViewController *)wchook_findTopViewController;
+- (BaseMsgContentViewController *)wchook_findChatViewController;
 - (CGRect)showRectForMenuController;
 @end
 
@@ -5165,6 +5506,39 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     return resolvedOwner == cellView;
 }
 
+static NSDateFormatter *wcpl_messageTimeFormatter(void) {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        formatter.locale = [NSLocale autoupdatingCurrentLocale];
+        formatter.dateFormat = @"HH:mm:ss";
+    });
+    return formatter;
+}
+
+static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
+    if (timestamp == 0) {
+        return nil;
+    }
+
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(NSTimeInterval)timestamp];
+    if (![date isKindOfClass:[NSDate class]]) {
+        return nil;
+    }
+
+    NSString *text = nil;
+    @try {
+        text = [wcpl_messageTimeFormatter() stringFromDate:date];
+    } @catch (__unused NSException *exception) {
+        text = nil;
+    }
+    if (![text isKindOfClass:[NSString class]] || text.length == 0) {
+        return nil;
+    }
+    return text;
+}
+
 
 %hook CommonMessageCellView
 
@@ -5175,6 +5549,8 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 }
 
 %property(nonatomic, strong) UIPanGestureRecognizer *wchook_swipeGesture;
+%property(nonatomic, strong) UITapGestureRecognizer *wchook_doubleTapGesture;
+%property(nonatomic, strong) UILabel *wchook_messageTimeLabel;
 %property(nonatomic, strong) UIImpactFeedbackGenerator *wchook_feedbackGenerator;
 %property(nonatomic, assign) BOOL wchook_feedbackTriggered;
 %property(nonatomic, assign) NSInteger wchook_swipeTriggerStage;
@@ -6637,10 +7013,205 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     [self wchook_updateRepeatButtonByNFQPrinciple];
 }
 
+%new
+- (UIView *)wchook_headImageViewForMessageTime {
+    UIView *headView = nil;
+    if ([self respondsToSelector:@selector(getHeadImageView)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(self, @selector(getHeadImageView));
+            if ([value isKindOfClass:[UIView class]]) {
+                headView = (UIView *)value;
+            }
+        } @catch (__unused NSException *exception) {
+            headView = nil;
+        }
+    }
+
+    if (!headView) {
+        NSArray<NSString *> *selectorNames = @[@"headImageView", @"getHeadView"];
+        for (NSString *selectorName in selectorNames) {
+            SEL selector = NSSelectorFromString(selectorName);
+            if (![self respondsToSelector:selector]) {
+                continue;
+            }
+            @try {
+                id value = ((id (*)(id, SEL))objc_msgSend)(self, selector);
+                if ([value isKindOfClass:[UIView class]]) {
+                    headView = (UIView *)value;
+                    break;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (!headView) {
+        NSArray<NSString *> *keys = @[@"m_headImageView", @"headImageView", @"_headImageView"];
+        for (NSString *key in keys) {
+            @try {
+                id value = [self valueForKey:key];
+                if ([value isKindOfClass:[UIView class]]) {
+                    headView = (UIView *)value;
+                    break;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (!headView) {
+        static Class headImageClass = Nil;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            headImageClass = NSClassFromString(@"MMHeadImageView");
+        });
+
+        for (UIView *subview in self.subviews) {
+            if ((headImageClass && [subview isKindOfClass:headImageClass]) ||
+                [NSStringFromClass([subview class]) rangeOfString:@"HeadImage" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                headView = subview;
+                break;
+            }
+        }
+    }
+
+    return headView;
+}
+
+%new
+- (UILabel *)wchook_messageTimeLabelEnsureCreate:(BOOL)createIfNeeded {
+    UILabel *label = self.wchook_messageTimeLabel;
+    if (![label isKindOfClass:[UILabel class]]) {
+        if (!createIfNeeded) {
+            return nil;
+        }
+
+        label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.userInteractionEnabled = NO;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.numberOfLines = 1;
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:8.0f weight:UIFontWeightMedium];
+        if (@available(iOS 13.0, *)) {
+            label.textColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                    return [UIColor colorWithWhite:0.74f alpha:0.92f];
+                }
+                return [UIColor colorWithWhite:0.56f alpha:0.95f];
+            }];
+        } else {
+            label.textColor = [UIColor colorWithWhite:0.56f alpha:0.95f];
+        }
+        label.hidden = YES;
+        [self addSubview:label];
+        self.wchook_messageTimeLabel = label;
+    } else if (label.superview != self) {
+        [label removeFromSuperview];
+        [self addSubview:label];
+    }
+
+    return label;
+}
+
+%new
+- (void)wchook_hideMessageTimeLabel {
+    UILabel *label = [self wchook_messageTimeLabelEnsureCreate:NO];
+    if ([label isKindOfClass:[UILabel class]]) {
+        label.hidden = YES;
+    }
+}
+
+%new
+- (void)wchook_updateMessageTimeLabel {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.messageTimeEnable) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (![msgWrap isKindOfClass:%c(CMessageWrap)] || msgWrap.m_uiCreateTime == 0) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    UIView *headView = [self wchook_headImageViewForMessageTime];
+    if (![headView isKindOfClass:[UIView class]] || headView.hidden || headView.alpha < 0.01f) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    CGRect headRect = CGRectZero;
+    if (headView == self) {
+        headRect = self.bounds;
+    } else {
+        headRect = [self convertRect:headView.bounds fromView:headView];
+    }
+    if (CGRectIsEmpty(headRect) || CGRectGetWidth(headRect) <= 0.0f || CGRectGetHeight(headRect) <= 0.0f) {
+        UIView *container = headView.superview;
+        if (container) {
+            headRect = [self convertRect:headView.frame fromView:container];
+        }
+    }
+
+    if (CGRectIsEmpty(headRect) ||
+        CGRectIsNull(headRect) ||
+        CGRectIsInfinite(headRect) ||
+        CGRectGetWidth(headRect) < 16.0f ||
+        CGRectGetHeight(headRect) < 16.0f) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    NSString *timeText = wcpl_messageTimeTextForTimestamp(msgWrap.m_uiCreateTime);
+    if (![timeText isKindOfClass:[NSString class]] || timeText.length == 0) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    UILabel *label = [self wchook_messageTimeLabelEnsureCreate:YES];
+    if (![label isKindOfClass:[UILabel class]]) {
+        return;
+    }
+
+    if (![label.text isEqualToString:timeText]) {
+        label.text = timeText;
+    }
+
+    UIFont *font = label.font ?: [UIFont systemFontOfSize:8.0f weight:UIFontWeightMedium];
+    CGSize textSize = [timeText sizeWithAttributes:@{NSFontAttributeName: font}];
+    CGFloat width = MIN(kWCPLMessageTimeLabelMaxWidth, MAX(kWCPLMessageTimeLabelMinWidth, ceil(textSize.width) + 6.0f));
+    CGFloat height = MAX(kWCPLMessageTimeLabelMinHeight, ceil(textSize.height));
+    CGFloat x = floor(CGRectGetMidX(headRect) - width * 0.5f);
+    CGFloat y = floor(CGRectGetMaxY(headRect) + kWCPLMessageTimeLabelTopInset);
+
+    CGRect bounds = self.bounds;
+    CGFloat boundsWidth = CGRectGetWidth(bounds);
+    CGFloat boundsHeight = CGRectGetHeight(bounds);
+    if (boundsWidth > width + 2.0f) {
+        CGFloat minX = 1.0f;
+        CGFloat maxX = boundsWidth - width - 1.0f;
+        x = MIN(MAX(x, minX), maxX);
+    }
+    if (boundsHeight <= 0.0f || y >= boundsHeight + 8.0f) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+    if (y + height > boundsHeight - 1.0f) {
+        y = MAX(0.0f, boundsHeight - height - 1.0f);
+    }
+
+    label.frame = CGRectIntegral(CGRectMake(x, y, width, height));
+    label.hidden = NO;
+    label.alpha = 1.0f;
+    [self bringSubviewToFront:label];
+}
+
 - (void)setViewModel:(id)viewModel {
     %orig;
 
     wcpl_markRepeatButtonEligibilityForViewModel(viewModel ?: wcpl_viewModelForCellView(self));
+    [self wchook_updateMessageTimeLabel];
     wcpl_syncRepeatEngineModeIfNeeded();
     [self wchook_updateRepeatButtonIfNeeded];
 }
@@ -6648,6 +7219,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 - (void)onAppear {
     %orig;
 
+    [self wchook_updateMessageTimeLabel];
     wcpl_syncRepeatEngineModeIfNeeded();
     [self wchook_updateRepeatButtonIfNeeded];
 }
@@ -6655,6 +7227,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 - (void)layoutInternal {
     %orig;
 
+    [self wchook_updateMessageTimeLabel];
     wcpl_syncRepeatEngineModeIfNeeded();
     [self wchook_updateRepeatButtonIfNeeded];
 }
@@ -6662,6 +7235,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 - (void)updateNodeStatus {
     %orig;
 
+    [self wchook_updateMessageTimeLabel];
     wcpl_syncRepeatEngineModeIfNeeded();
     [self wchook_updateRepeatButtonIfNeeded];
 }
@@ -6670,6 +7244,11 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     %orig;
 
     wcpl_syncRepeatEngineModeIfNeeded();
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (self.window && config.doubleTapGestureEnable) {
+        [self wchook_setupDoubleTapGestureIfNeeded];
+    }
+    [self wchook_updateMessageTimeLabel];
     CFTimeInterval now = CACurrentMediaTime();
     if (now < gWCPLRepeatResumeSuppressUntil) {
         [self wchook_hideRepeatButtonByNFQPrinciple];
@@ -6683,6 +7262,7 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 
     wcpl_syncRepeatEngineModeIfNeeded();
     if (!self.window) {
+        [self wchook_hideMessageTimeLabel];
         [self wchook_hideRepeatButtonByNFQPrinciple];
     }
 
@@ -6692,8 +7272,14 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 
     if (self.window) {
         [self wchook_setupSwipeGestureIfNeeded];
+        [self wchook_setupDoubleTapGestureIfNeeded];
+        [self wchook_updateMessageTimeLabel];
         [self wchook_updateRepeatButtonIfNeeded];
     } else {
+        [self wchook_hideMessageTimeLabel];
+        if (self.wchook_doubleTapGesture) {
+            self.wchook_doubleTapGesture.enabled = NO;
+        }
         [self wchook_resetSwipeAnimated:NO];
     }
 }
@@ -6751,8 +7337,42 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     }
 }
 
+%new
+- (void)wchook_setupDoubleTapGestureIfNeeded {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        if (self.wchook_doubleTapGesture) {
+            self.wchook_doubleTapGesture.enabled = NO;
+        }
+        return;
+    }
+
+    UITapGestureRecognizer *gesture = self.wchook_doubleTapGesture;
+    if (!gesture) {
+        gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wchook_handleDoubleTap:)];
+        gesture.numberOfTapsRequired = 3;
+        gesture.numberOfTouchesRequired = 1;
+        gesture.cancelsTouchesInView = YES;
+        gesture.delaysTouchesBegan = NO;
+        gesture.delaysTouchesEnded = NO;
+        gesture.delegate = (id<UIGestureRecognizerDelegate>)self;
+        [self addGestureRecognizer:gesture];
+        self.wchook_doubleTapGesture = gesture;
+        WCPLLogDebug(@"Triple tap gesture created: cell=%p", self);
+    }
+
+    // 递归约束整棵消息 cell 视图树：禁用原生双击，低阶点击等待三击失败。
+    wcpl_enforceTripleTapPriorityForViewTree(self, gesture, self);
+
+    gesture.enabled = YES;
+    if (!self.wchook_feedbackGenerator) {
+        self.wchook_feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
+    }
+}
+
 - (void)prepareForReuse {
     %orig;
+    [self wchook_hideMessageTimeLabel];
     wcpl_syncRepeatEngineModeIfNeeded();
     [self wchook_hideRepeatButtonByNFQPrinciple];
 }
@@ -6930,6 +7550,198 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 }
 
 %new
+- (void)wchook_handleDoubleTap:(UITapGestureRecognizer *)gesture {
+    if (gesture && gesture.state != UIGestureRecognizerStateRecognized) {
+        return;
+    }
+
+    if (gesture && [self isKindOfClass:[UIView class]]) {
+        CGPoint pointInCell = [gesture locationInView:(UIView *)self];
+        if (!wcpl_isPointInMessageBubbleArea(self, pointInCell, @"gesture_recognized_scope")) {
+            CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+            if (msgWrap) {
+                objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+            WCPLLogDebug(@"Triple tap gesture ignored at recognized stage: cell=%p point=(%.1f,%.1f)",
+                         self,
+                         pointInCell.x,
+                         pointInCell.y);
+            return;
+        }
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    NSNumber *tapCountObj = msgWrap ? objc_getAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey) : nil;
+    NSNumber *lastTapAt = msgWrap ? objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey) : nil;
+    NSInteger tapCount = [tapCountObj isKindOfClass:[NSNumber class]] ? tapCountObj.integerValue : 0;
+    CFTimeInterval delta = ([lastTapAt isKindOfClass:[NSNumber class]]) ? (CACurrentMediaTime() - lastTapAt.doubleValue) : -1.0;
+    static const NSTimeInterval kWCPLManualGateInterval = 1.60;
+    if (tapCount < 2 || delta < 0 || delta > kWCPLManualGateInterval) {
+        WCPLLogDebug(@"Triple tap gesture ignored: manual gate miss cell=%p tapCount=%ld delta=%.3f",
+                     self,
+                     (long)tapCount,
+                     delta);
+        return;
+    }
+
+    [self wchook_fireDoubleTapActionWithSource:@"gesture"];
+}
+
+%new
+- (void)wchook_fireDoubleTapActionWithSource:(NSString *)source {
+    NSString *triggerSource = ([source isKindOfClass:[NSString class]] && source.length > 0) ? source : @"unknown";
+
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        return;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (!msgWrap) {
+        WCPLLogDebug(@"Double tap ignored: message wrap unavailable cell=%p source=%@", self, triggerSource);
+        return;
+    }
+
+    CFTimeInterval now = CACurrentMediaTime();
+    NSNumber *lastHandledAt = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastHandledAtKey);
+    if ([lastHandledAt isKindOfClass:[NSNumber class]] &&
+        (now - lastHandledAt.doubleValue) < kWCPLDoubleTapTriggerDebounceInterval) {
+        WCPLLogDebug(@"Double tap ignored by debounce: cell=%p source=%@ delta=%.3f",
+                     self,
+                     triggerSource,
+                     now - lastHandledAt.doubleValue);
+        return;
+    }
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastHandledAtKey, @(now), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    // 一旦进入触发链路，重置手动连击状态，避免历史点击影响下一轮识别。
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+    BOOL isFromOther = wcpl_isMessageFromOther(msgWrap);
+    BOOL isSelf = !isFromOther;
+    NSInteger action = isSelf ? config.doubleTapSelfAction : config.doubleTapOtherAction;
+    action = wcpl_normalizeSwipeActionValueLegacyAware(action, isSelf);
+
+    WCPLLogInfo(@"Triple tap trigger: cell=%p source=%@ isFromOther=%d action=%ld otherAction=%ld selfAction=%ld msg=%@",
+                self,
+                triggerSource,
+                isFromOther ? 1 : 0,
+                (long)action,
+                (long)config.doubleTapOtherAction,
+                (long)config.doubleTapSelfAction,
+                wcpl_repeatMessageDebugInfo(msgWrap));
+
+    wcpl_armTouchSuppression(msgWrap, self, @"tripleTapTrigger", kWCPLSwipeTouchSuppressDuration);
+
+    [self.wchook_feedbackGenerator prepare];
+    if ([self.wchook_feedbackGenerator respondsToSelector:@selector(impactOccurredWithIntensity:)]) {
+        [self.wchook_feedbackGenerator impactOccurredWithIntensity:0.55f];
+    } else {
+        [self.wchook_feedbackGenerator impactOccurred];
+    }
+
+    [self wchook_performConfiguredAction:action messageWrap:msgWrap isSelf:isSelf sceneTag:@"三击"];
+}
+
+%new
+- (BOOL)wchook_tryFireManualDoubleTapWithSource:(NSString *)source {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        return NO;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (!msgWrap) {
+        return NO;
+    }
+
+    NSString *triggerSource = ([source isKindOfClass:[NSString class]] && source.length > 0) ? source : @"manual";
+    static const NSTimeInterval kWCPLManualDoubleTapInterval = 1.60;
+    CFTimeInterval now = CACurrentMediaTime();
+    NSNumber *lastTapAt = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey);
+    NSNumber *manualTapCount = objc_getAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey);
+    NSInteger sequenceCount = 1;
+    double delta = -1.0;
+    if ([lastTapAt isKindOfClass:[NSNumber class]] &&
+        (now - lastTapAt.doubleValue) <= kWCPLManualDoubleTapInterval) {
+        delta = now - lastTapAt.doubleValue;
+        sequenceCount = [manualTapCount isKindOfClass:[NSNumber class]] ? manualTapCount.integerValue + 1 : 2;
+    }
+
+    if (sequenceCount >= 3) {
+        objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        WCPLLogDebug(@"Triple tap manual matched: cell=%p source=%@ count=%ld delta=%.3f msg=%@",
+                     self,
+                     triggerSource,
+                     (long)sequenceCount,
+                     delta,
+                     wcpl_repeatMessageDebugInfo(msgWrap));
+        [self wchook_fireDoubleTapActionWithSource:[@"manual_" stringByAppendingString:triggerSource]];
+        return YES;
+    }
+
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, @(now), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, @(sequenceCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    BOOL shouldSuppressNativeTap = (sequenceCount >= 2);
+    WCPLLogDebug(@"Triple tap manual armed: cell=%p source=%@ count=%ld delta=%.3f suppress=%d msg=%@",
+                 self,
+                 triggerSource,
+                 (long)sequenceCount,
+                 delta,
+                 shouldSuppressNativeTap ? 1 : 0,
+                 wcpl_repeatMessageDebugInfo(msgWrap));
+    // 从第二击开始吞掉 touchesEnded，避免原生双击放大链路抢先触发。
+    return shouldSuppressNativeTap;
+}
+
+%new
+- (BOOL)wchook_tryHandleDoubleTapFromTouches:(id)touches event:(id)event {
+    (void)event;
+
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.doubleTapGestureEnable) {
+        return NO;
+    }
+
+    UITouch *touch = nil;
+    if ([touches respondsToSelector:@selector(anyObject)]) {
+        @try {
+            touch = ((id (*)(id, SEL))objc_msgSend)(touches, @selector(anyObject));
+        } @catch (__unused NSException *exceptionTouch) {
+            touch = nil;
+        }
+    }
+
+    if (![touch isKindOfClass:[UITouch class]]) {
+        return NO;
+    }
+
+    if (touch.phase != UITouchPhaseEnded) {
+        return NO;
+    }
+
+    if (!wcpl_isTouchInMessageBubbleArea(self, touch, @"touchesEnded_scope")) {
+        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        if (msgWrap) {
+            objc_setAssociatedObject(msgWrap, kWCPLDoubleTapLastTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            objc_setAssociatedObject(msgWrap, kWCPLDoubleTapManualTapCountKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+        return NO;
+    }
+
+    NSInteger tapCount = touch.tapCount;
+    if (tapCount >= 3) {
+        [self wchook_fireDoubleTapActionWithSource:@"touchesEnded"];
+        return YES;
+    }
+
+    NSString *manualSource = [NSString stringWithFormat:@"touchesEnded_tap%ld", (long)tapCount];
+    return [self wchook_tryFireManualDoubleTapWithSource:manualSource];
+}
+
+%new
 - (void)wchook_triggerActionForDirection:(WCHookSwipeDirection)direction {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self wchook_showSwipeActionMenuForDirection:direction];
@@ -6993,8 +7805,6 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     BOOL isFromOther = wcpl_isMessageFromOther(msgWrap);
     BOOL isSelf = !isFromOther;
 
-    unsigned int msgType = msgWrap.m_uiMessageType;
-
     // 获取配置
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     NSInteger action = 0;
@@ -7007,36 +7817,54 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     }
 
     NSString *directionName = (direction == WCHookSwipeDirectionLeft) ? @"左滑" : @"右滑";
-    NSString *actionName = @"引用";
     // 兼容历史值并兜底越界值，统一回退为 0（引用）
     action = wcpl_normalizeSwipeActionValueLegacyAware(action, isSelf);
+    [self wchook_performConfiguredAction:action messageWrap:msgWrap isSelf:isSelf sceneTag:directionName];
+}
+
+%new
+- (NSString *)wchook_actionNameForAction:(NSInteger)action {
     switch (action) {
         case 1:
-            actionName = @"关闭";
-            break;
+            return @"关闭";
         case 2:
-            actionName = @"删除";
-            break;
+            return @"删除";
         case 3:
-            actionName = @"撤回";
-            break;
+            return @"撤回";
         case 4:
-            actionName = @"复读";
-            break;
+            return @"复读";
+        case 5:
+            return @"转发";
         default:
-            actionName = @"引用";
-            break;
+            return @"引用";
     }
-    WCPLCrashBreadcrumb(@"滑动动作: %@ -> %@ msgType=%u from=%@ to=%@", directionName, actionName, msgType, msgWrap.m_nsFromUsr ?: @"", msgWrap.m_nsToUsr ?: @"");
+}
 
-    // 执行对应操作
-    // 0=引用, 1=关闭, 2=删除, 3=撤回(仅己方消息), 4=复读
+%new
+- (void)wchook_performConfiguredAction:(NSInteger)action
+                           messageWrap:(CMessageWrap *)msgWrap
+                                isSelf:(BOOL)isSelf
+                              sceneTag:(NSString *)sceneTag {
+    if (!msgWrap) {
+        return;
+    }
+
+    NSString *resolvedScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
+    NSString *actionName = [self wchook_actionNameForAction:action];
+    WCPLCrashBreadcrumb(@"%@动作: %@ msgType=%u from=%@ to=%@",
+                        resolvedScene,
+                        actionName,
+                        msgWrap.m_uiMessageType,
+                        msgWrap.m_nsFromUsr ?: @"",
+                        msgWrap.m_nsToUsr ?: @"");
+
+    // 0=引用, 1=关闭, 2=删除, 3=撤回(仅己方消息), 4=复读, 5=转发
     switch (action) {
         case 0: // 引用
             [self wchook_performQuoteReply];
             break;
         case 1: // 关闭
-            WCPLLogDebug(@"Swipe action close: no-op");
+            WCPLLogDebug(@"%@ action close: no-op", resolvedScene);
             break;
         case 2: // 删除
             [self wchook_performDeleteMessage:msgWrap];
@@ -7050,6 +7878,9 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
             break;
         case 4: // 复读
             [self wchook_repeatMessageWrap:msgWrap];
+            break;
+        case 5: // 转发
+            [self wchook_performForwardMessage:msgWrap sceneTag:resolvedScene];
             break;
         default:
             [self wchook_performQuoteReply];
@@ -7668,6 +8499,373 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
 }
 
 %new
+- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap {
+    [self wchook_performForwardMessage:msgWrap sceneTag:@"手势"];
+}
+
+%new
+- (BOOL)wchook_tryForwardViaMiyouPrimaryRoutes:(CMessageWrap *)msgWrap
+                                         chatVC:(BaseMsgContentViewController *)chatVC
+                                       sceneTag:(NSString *)sceneTag {
+    if (!msgWrap) {
+        return NO;
+    }
+
+    NSString *routeScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
+    NSString *chatName = wcpl_chatNameForMessage(msgWrap, chatVC);
+    id contact = wcpl_repeatContactForChatName(chatName, msgWrap);
+    UIViewController *fromVC = chatVC ?: [self wchook_findTopViewController];
+
+    id forwardMgr = WCPLGetService(objc_getClass("ForwardMessageMgr"));
+    if (forwardMgr && fromVC) {
+        SEL forwardToContactSel = NSSelectorFromString(@"forwardMessage:fromViewController:toContact:");
+        if (contact && [forwardMgr respondsToSelector:forwardToContactSel]) {
+            @try {
+                ((void (*)(id, SEL, id, id, id))objc_msgSend)(forwardMgr,
+                                                               forwardToContactSel,
+                                                               msgWrap,
+                                                               fromVC,
+                                                               contact);
+                WCPLLogInfo(@"Gesture forward route=ForwardMessageMgr.toContact scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=ForwardMessageMgr.toContact failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+
+        SEL forwardSel = NSSelectorFromString(@"forwardMessage:fromViewController:");
+        if ([forwardMgr respondsToSelector:forwardSel]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(forwardMgr,
+                                                           forwardSel,
+                                                           msgWrap,
+                                                           fromVC);
+                WCPLLogInfo(@"Gesture forward route=ForwardMessageMgr.default scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=ForwardMessageMgr.default failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+    }
+
+    Class forwardUtilClass = objc_getClass("ForwardMsgUtil");
+    if (forwardUtilClass && contact) {
+        SEL sendMsgSelector = @selector(SendMsgWithOriMsg:Contact:ForwardType:EditImageAttr:);
+        if ([forwardUtilClass respondsToSelector:sendMsgSelector]) {
+            @try {
+                ((id (*)(id, SEL, id, id, unsigned int, id))objc_msgSend)(forwardUtilClass,
+                                                                           sendMsgSelector,
+                                                                           msgWrap,
+                                                                           contact,
+                                                                           (unsigned int)0,
+                                                                           nil);
+                WCPLLogInfo(@"Gesture forward route=ForwardMsgUtil.SendMsg scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=ForwardMsgUtil.SendMsg failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+
+        SEL forward4Selector = @selector(ForwardMsg:ToContact:Scene:forwardType:);
+        if ([forwardUtilClass respondsToSelector:forward4Selector]) {
+            @try {
+                ((void (*)(id, SEL, id, id, unsigned int, unsigned int))objc_msgSend)(forwardUtilClass,
+                                                                                       forward4Selector,
+                                                                                       msgWrap,
+                                                                                       contact,
+                                                                                       (unsigned int)0,
+                                                                                       (unsigned int)0);
+                WCPLLogInfo(@"Gesture forward route=ForwardMsgUtil.ForwardMsg4 scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=ForwardMsgUtil.ForwardMsg4 failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+
+        SEL forward3Selector = @selector(ForwardMsg:ToContact:Scene:);
+        if ([forwardUtilClass respondsToSelector:forward3Selector]) {
+            @try {
+                ((void (*)(id, SEL, id, id, unsigned int))objc_msgSend)(forwardUtilClass,
+                                                                         forward3Selector,
+                                                                         msgWrap,
+                                                                         contact,
+                                                                         (unsigned int)0);
+                WCPLLogInfo(@"Gesture forward route=ForwardMsgUtil.ForwardMsg3 scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=ForwardMsgUtil.ForwardMsg3 failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+    }
+
+    Class lmUtilsClass = objc_getClass("LMUtils");
+    if (lmUtilsClass && contact) {
+        SEL lmForwardSelector = @selector(ForwardMsg:ToContact:);
+        if ([lmUtilsClass respondsToSelector:lmForwardSelector]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(lmUtilsClass,
+                                                           lmForwardSelector,
+                                                           msgWrap,
+                                                           contact);
+                WCPLLogInfo(@"Gesture forward route=LMUtils.class scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=LMUtils.class failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+
+        id lmUtilsInstance = nil;
+        if ([lmUtilsClass instancesRespondToSelector:@selector(init)]) {
+            @try {
+                lmUtilsInstance = [[lmUtilsClass alloc] init];
+            } @catch (__unused NSException *exceptionLMUtilsAlloc) {
+                lmUtilsInstance = nil;
+            }
+        }
+        if (lmUtilsInstance && [lmUtilsInstance respondsToSelector:lmForwardSelector]) {
+            @try {
+                ((void (*)(id, SEL, id, id))objc_msgSend)(lmUtilsInstance,
+                                                           lmForwardSelector,
+                                                           msgWrap,
+                                                           contact);
+                WCPLLogInfo(@"Gesture forward route=LMUtils.instance scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Gesture forward route=LMUtils.instance failed scene=%@ reason=%@",
+                               routeScene,
+                               exception.reason ?: exception);
+            }
+        }
+    }
+
+    return NO;
+}
+
+%new
+- (BOOL)wchook_tryForwardViaMiyouOnForward:(CMessageWrap *)msgWrap
+                                      chatVC:(BaseMsgContentViewController *)chatVC
+                                    sceneTag:(NSString *)sceneTag {
+    if (!msgWrap) {
+        return NO;
+    }
+
+    NSString *routeScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
+    BOOL isFileApp = wcpl_isFileAppMessage(msgWrap);
+
+    if ([self respondsToSelector:@selector(onForward:)]) {
+        @try {
+            id payload = isFileApp ? (id)self : (id)msgWrap;
+            ((void (*)(id, SEL, id))objc_msgSend)(self, @selector(onForward:), payload);
+            WCPLLogInfo(@"Gesture forward route=%@ scene=%@ msg=%@",
+                        isFileApp ? @"MiYou.onForwardSender.self" : @"MiYou.onForwardMsgWrap.self",
+                        routeScene,
+                        wcpl_repeatMessageDebugInfo(msgWrap));
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Gesture forward route=%@ failed scene=%@ reason=%@",
+                           isFileApp ? @"MiYou.onForwardSender.self" : @"MiYou.onForwardMsgWrap.self",
+                           routeScene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    if (chatVC && [chatVC respondsToSelector:@selector(onForward:)]) {
+        @try {
+            id payload = isFileApp ? (id)self : (id)msgWrap;
+            ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(onForward:), payload);
+            WCPLLogInfo(@"Gesture forward route=%@ scene=%@ msg=%@",
+                        isFileApp ? @"MiYou.onForwardSender.chatVC" : @"MiYou.onForwardMsgWrap.chatVC",
+                        routeScene,
+                        wcpl_repeatMessageDebugInfo(msgWrap));
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Gesture forward route=%@ failed scene=%@ reason=%@",
+                           isFileApp ? @"MiYou.onForwardSender.chatVC" : @"MiYou.onForwardMsgWrap.chatVC",
+                           routeScene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    return NO;
+}
+
+%new
+- (BOOL)wchook_tryForwardViaLegacyFallback:(CMessageWrap *)msgWrap
+                                      chatVC:(BaseMsgContentViewController *)chatVC
+                                    sceneTag:(NSString *)sceneTag {
+    if (!msgWrap) {
+        return NO;
+    }
+
+    NSString *routeScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
+    BOOL isFileApp = wcpl_isFileAppMessage(msgWrap);
+
+    if (isFileApp && [self respondsToSelector:@selector(doForward)]) {
+        @try {
+            ((void (*)(id, SEL))objc_msgSend)(self, @selector(doForward));
+            WCPLLogInfo(@"Gesture forward route=file.legacy.doForward.first scene=%@ msg=%@",
+                        routeScene,
+                        wcpl_repeatMessageDebugInfo(msgWrap));
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Gesture forward route=file.legacy.doForward.first failed scene=%@ reason=%@",
+                           routeScene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    if ([self respondsToSelector:@selector(onForward:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(self, @selector(onForward:), self);
+            WCPLLogInfo(@"Gesture forward route=legacy.onForward scene=%@ msg=%@",
+                        routeScene,
+                        wcpl_repeatMessageDebugInfo(msgWrap));
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Gesture forward route=legacy.onForward failed scene=%@ reason=%@",
+                           routeScene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    if ([self respondsToSelector:@selector(doForward)]) {
+        @try {
+            ((void (*)(id, SEL))objc_msgSend)(self, @selector(doForward));
+            WCPLLogInfo(@"Gesture forward route=legacy.doForward scene=%@ msg=%@",
+                        routeScene,
+                        wcpl_repeatMessageDebugInfo(msgWrap));
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Gesture forward route=legacy.doForward failed scene=%@ reason=%@",
+                           routeScene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    if (chatVC && [chatVC respondsToSelector:@selector(onForward:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(chatVC, @selector(onForward:), self);
+            WCPLLogInfo(@"Gesture forward route=legacy.chatVC.onForward scene=%@ msg=%@",
+                        routeScene,
+                        wcpl_repeatMessageDebugInfo(msgWrap));
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Gesture forward route=legacy.chatVC.onForward failed scene=%@ reason=%@",
+                           routeScene,
+                           exception.reason ?: exception);
+        }
+    }
+
+    return NO;
+}
+
+%new
+- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap sceneTag:(NSString *)sceneTag {
+    if (!msgWrap) {
+        return;
+    }
+
+    NSString *routeScene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0) ? sceneTag : @"手势";
+    @try {
+        if (msgWrap.m_uiMessageType == 34 && [self respondsToSelector:@selector(wcpl_handleVoiceForwardMenuItem:)]) {
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(self, @selector(wcpl_handleVoiceForwardMenuItem:), self);
+                WCPLLogInfo(@"Gesture forward route=miyou.voiceMenu scene=%@ msg=%@",
+                            routeScene,
+                            wcpl_repeatMessageDebugInfo(msgWrap));
+                return;
+            } @catch (NSException *voiceException) {
+                WCPLLogWarning(@"Gesture forward route=miyou.voiceMenu failed scene=%@ reason=%@",
+                               routeScene,
+                               voiceException.reason ?: voiceException);
+            }
+        }
+
+        BaseMsgContentViewController *chatVC = [self wchook_findChatViewController];
+        BOOL isFromOther = wcpl_isMessageFromOther(msgWrap);
+        BOOL isFileApp = wcpl_isFileAppMessage(msgWrap);
+        WCPLLogInfo(@"Gesture forward dispatch: scene=%@ isFromOther=%d class=%@ msg=%@",
+                    routeScene,
+                    isFromOther ? 1 : 0,
+                    NSStringFromClass([self class]),
+                    wcpl_repeatMessageDebugInfo(msgWrap));
+        if (isFileApp) {
+            // 文件消息优先原生菜单链路（onForward/doForward），避免 msgWrap 路由“假成功不弹窗”。
+            if ([self wchook_tryForwardViaLegacyFallback:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            if ([self wchook_tryForwardViaMiyouOnForward:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            if ([self wchook_tryForwardViaMiyouPrimaryRoutes:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            WCPLLogWarning(@"Gesture forward file route=none scene=%@ class=%@ msg=%@",
+                           routeScene,
+                           NSStringFromClass([self class]),
+                           wcpl_repeatMessageDebugInfo(msgWrap));
+            return;
+        }
+
+        if (isFromOther) {
+            // 对方消息优先走可见菜单链路（与密友体验一致），再降级到静默转发链路。
+            if ([self wchook_tryForwardViaLegacyFallback:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            if ([self wchook_tryForwardViaMiyouOnForward:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            if ([self wchook_tryForwardViaMiyouPrimaryRoutes:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+        } else {
+            if ([self wchook_tryForwardViaMiyouOnForward:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            if ([self wchook_tryForwardViaMiyouPrimaryRoutes:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+            if ([self wchook_tryForwardViaLegacyFallback:msgWrap chatVC:chatVC sceneTag:routeScene]) {
+                return;
+            }
+        }
+
+        WCPLLogWarning(@"Gesture forward route=none scene=%@ class=%@ msg=%@",
+                       routeScene,
+                       NSStringFromClass([self class]),
+                       wcpl_repeatMessageDebugInfo(msgWrap));
+    } @catch (NSException *exception) {
+        WCPLLogError(@"Forward message failed: scene=%@ reason=%@", routeScene, exception.reason ?: exception);
+    }
+}
+
+%new
 - (UIViewController *)wchook_findTopViewController {
     UIResponder *responder = self;
     while (responder) {
@@ -7746,6 +8944,9 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     if (wcpl_shouldSuppressTapForCell(self, @"onTouchUpInside")) {
         return;
     }
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
     %orig;
 }
 
@@ -7753,10 +8954,16 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     if (wcpl_shouldSuppressTapForCell(self, @"onTouchEnded")) {
         return;
     }
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
     %orig;
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
+    if ([self wchook_tryHandleDoubleTapFromTouches:touches event:event]) {
+        return;
+    }
     if (wcpl_shouldSuppressTapForCell(self, @"touchesEnded:withEvent:")) {
         return;
     }
@@ -7815,6 +9022,19 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
             return NO;
         }
         WCPLLogDebug(@"Swipe begin candidate: cell=%p vx=%.2f vy=%.2f", self, velocity.x, velocity.y);
+    } else if (gestureRecognizer == self.wchook_doubleTapGesture) {
+        WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+        if (!config.doubleTapGestureEnable) {
+            WCPLLogDebug(@"Double tap begin blocked: feature disabled cell=%p", self);
+            return NO;
+        }
+        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        if (!msgWrap) {
+            WCPLLogDebug(@"Double tap begin blocked: message wrap unavailable cell=%p", self);
+            return NO;
+        }
+        WCPLLogDebug(@"Double tap begin forced allow: cell=%p msg=%@", self, wcpl_repeatMessageDebugInfo(msgWrap));
+        return YES;
     }
 
     BOOL result = %orig;
@@ -7826,13 +9046,52 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
                      result ? 1 : 0,
                      velocity.x,
                      velocity.y);
+    } else if (gestureRecognizer == self.wchook_doubleTapGesture) {
+        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        WCPLLogDebug(@"Double tap begin result: cell=%p allow=%d msg=%@",
+                     self,
+                     result ? 1 : 0,
+                     wcpl_repeatMessageDebugInfo(msgWrap));
     }
     return result;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if (gestureRecognizer == self.wchook_doubleTapGesture) {
+        WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+        if (!config.doubleTapGestureEnable) {
+            WCPLLogDebug(@"Double tap receive blocked: feature disabled cell=%p", self);
+            return NO;
+        }
+        CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+        if (!msgWrap) {
+            WCPLLogDebug(@"Double tap receive blocked: message wrap unavailable cell=%p touchClass=%@",
+                         self,
+                         NSStringFromClass([touch.view class]));
+            return NO;
+        }
+        if (!wcpl_isTouchInMessageBubbleArea(self, touch, @"gesture_shouldReceive_scope")) {
+            WCPLLogDebug(@"Double tap receive blocked: outside bubble cell=%p touchClass=%@",
+                         self,
+                         NSStringFromClass([touch.view class]));
+            return NO;
+        }
+        WCPLLogDebug(@"Double tap receive allow: cell=%p touchClass=%@ tapCount=%ld msg=%@",
+                     self,
+                     NSStringFromClass([touch.view class]),
+                     (long)touch.tapCount,
+                     wcpl_repeatMessageDebugInfo(msgWrap));
+        return YES;
+    }
+    return YES;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     if (gestureRecognizer == self.wchook_swipeGesture) {
         return NO;
+    }
+    if (gestureRecognizer == self.wchook_doubleTapGesture) {
+        return YES;
     }
     BOOL result = %orig;
     return result;
@@ -7846,22 +9105,487 @@ static BOOL wcpl_isBottomMostRepeatOwnerForMessageKey(UIView *cellView, NSString
     return result;
 }
 
+- (void)handleDoubleTapFrom:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTap(self, sender, @"CommonMessageCellView.handleDoubleTapFrom")) {
+        return;
+    }
+    %orig(sender);
+}
+
+- (void)onHeadImageDoubleClick:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTap(self, sender, @"CommonMessageCellView.onHeadImageDoubleClick")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook BaseMessageCellView
+
+- (BOOL)supportDoubleTap {
+    BOOL original = %orig;
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.doubleTapGestureEnable) {
+        return NO;
+    }
+    return original;
+}
+
+- (void)handleDoubleTapFrom:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTap(self, sender, @"BaseMessageCellView.handleDoubleTapFrom")) {
+        return;
+    }
+    %orig(sender);
+}
+
+- (void)onTouchUpInside {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onTouchEnded {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig;
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig(touches, event);
+}
+
+%end
+
+%hook SystemMessageCellView
+
+- (void)onTouchUpInside {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onTouchEnded {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig;
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig(touches, event);
+}
+
+- (void)onTap {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onClick {
+    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig;
+}
+
+%end
+
+%hook TextMessageCellView
+
+- (BOOL)supportDoubleTap {
+    BOOL original = %orig;
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.doubleTapGestureEnable) {
+        return NO;
+    }
+    return original;
+}
+
+- (void)showFloatPreviewForContentText {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.doubleTapGestureEnable) {
+        WCPLLogInfo(@"Native double tap blocked: scope=TextMessageCellView.showFloatPreviewForContentText class=%@",
+                    NSStringFromClass([(id)self class]));
+        return;
+    }
+    %orig;
+}
+
+- (void)showFloatPreviewWithForceUseOriginText:(BOOL)forceUseOriginText {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.doubleTapGestureEnable) {
+        WCPLLogInfo(@"Native double tap blocked: scope=TextMessageCellView.showFloatPreviewWithForce class=%@ force=%d",
+                    NSStringFromClass([(id)self class]),
+                    forceUseOriginText ? 1 : 0);
+        return;
+    }
+    %orig(forceUseOriginText);
+}
+
+- (void)onTouchUpInside {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"TextMessageCellView.onTouchUpInside.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.onTouchUpInside")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)onTouchEnded {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"TextMessageCellView.onTouchEnded.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.onTouchEnded")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if ([(id)self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
+        BOOL handled = NO;
+        @try {
+            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)((id)self,
+                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
+                                                                  touches,
+                                                                  event);
+        } @catch (__unused NSException *exceptionTextTriple) {
+            handled = NO;
+        }
+        if (handled) {
+            return;
+        }
+    }
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"TextMessageCellView.touchesEnded.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.touchesEnded")) {
+        return;
+    }
+    %orig(touches, event);
+}
+
+- (void)onDoubleTapTranslateView:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTap(self, sender, @"TextMessageCellView.onDoubleTapTranslateView")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook VoiceMessageCellView
+
+- (BOOL)supportDoubleTap {
+    BOOL original = %orig;
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.doubleTapGestureEnable) {
+        return NO;
+    }
+    return original;
+}
+
+- (void)onDoubleTapTranslateView:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTap(self, sender, @"VoiceMessageCellView.onDoubleTapTranslateView")) {
+        return;
+    }
+    %orig(sender);
+}
+
+- (void)onDoubleTapTextTranslateView:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTap(self, sender, @"VoiceMessageCellView.onDoubleTapTextTranslateView")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook WCPayBaseMessageCellView
+
+- (void)onTouchUpInside {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"WCPayBaseMessageCellView.onTouchUpInside.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"WCPayBaseMessageCellView.onTouchUpInside")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if ([(id)self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
+        BOOL handled = NO;
+        @try {
+            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)((id)self,
+                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
+                                                                  touches,
+                                                                  event);
+        } @catch (__unused NSException *exceptionPayBaseTriple) {
+            handled = NO;
+        }
+        if (handled) {
+            return;
+        }
+    }
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"WCPayBaseMessageCellView.touchesEnded.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"WCPayBaseMessageCellView.touchesEnded")) {
+        return;
+    }
+    %orig(touches, event);
+}
+
+%end
+
+%hook WCPayC2CMessageCellView
+
+- (void)onTouchUpInside {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"WCPayC2CMessageCellView.onTouchUpInside.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"WCPayC2CMessageCellView.onTouchUpInside")) {
+        return;
+    }
+    %orig;
+}
+
+%end
+
+%hook WCPayThirdC2CMessageCellView
+
+- (void)onTouchUpInside {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"WCPayThirdC2CMessageCellView.onTouchUpInside.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"WCPayThirdC2CMessageCellView.onTouchUpInside")) {
+        return;
+    }
+    %orig;
+}
+
+%end
+
+%hook MMRichTextCoverView
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MMRichTextCoverView.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+- (BOOL)onClickPreViewWithPoint:(CGPoint)point DoubleClick:(BOOL)doubleClick {
+    if (doubleClick && wcpl_shouldBlockNativeDoubleTapForView(self, nil, @"MMRichTextCoverView.onClickPreView")) {
+        return NO;
+    }
+    return %orig(point, doubleClick);
+}
+
+%end
+
+%hook MMContentScrollView
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MMContentScrollView.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook WCImageScrollView
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"WCImageScrollView.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook ImageScrollView
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"ImageScrollView.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook MultiImageScrollView
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MultiImageScrollView.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook MsgImgFullScreenContainer
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MsgImgFullScreenContainer.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook WCBizMultiImageBrowseViewContainer
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"WCBizMultiImageBrowseViewContainer.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook MMImageBrowseView
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MMImageBrowseView.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook MMImageScrollViewHelper
+
+- (void)onDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MMImageScrollViewHelper.onDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+%end
+
+%hook MMUILongPressImageView
+
+- (void)handleDoubleTap:(id)sender {
+    if (wcpl_shouldBlockNativeDoubleTapForView(self, sender, @"MMUILongPressImageView.handleDoubleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
+- (void)tapGestureRecognizerBegan:(id)recognizer tapCount:(unsigned long long)tapCount {
+    if (tapCount >= 2 && wcpl_shouldBlockNativeDoubleTapForView(self, recognizer, @"MMUILongPressImageView.tapGestureRecognizerBegan")) {
+        return;
+    }
+    %orig(recognizer, tapCount);
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    UIView *cellView = wcpl_findMessageCellAncestorView((UIView *)self);
+    if (cellView && [cellView respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
+        BOOL handled = NO;
+        @try {
+            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)(cellView,
+                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
+                                                                  touches,
+                                                                  event);
+        } @catch (__unused NSException *exceptionTripleFromImageView) {
+            handled = NO;
+        }
+        if (handled) {
+            return;
+        }
+    }
+    %orig(touches, event);
+}
+
 %end
 
 %hook ImageMessageCellView
 
 - (void)onTouchEnded {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.onTouchEnded.triple")) {
+        return;
+    }
     if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.onTouchEnded")) {
         return;
     }
     %orig;
 }
 
+- (void)onTouchUpInside {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.onTouchUpInside.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.onTouchUpInside")) {
+        return;
+    }
+    %orig;
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if ([self respondsToSelector:@selector(wchook_tryHandleDoubleTapFromTouches:event:)]) {
+        BOOL handled = NO;
+        @try {
+            handled = ((BOOL (*)(id, SEL, id, id))objc_msgSend)(self,
+                                                                  @selector(wchook_tryHandleDoubleTapFromTouches:event:),
+                                                                  touches,
+                                                                  event);
+        } @catch (__unused NSException *exceptionImageTriple) {
+            handled = NO;
+        }
+        if (handled) {
+            return;
+        }
+    }
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.touchesEnded.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.touchesEnded")) {
+        return;
+    }
+    %orig(touches, event);
+}
+
 - (void)showImage {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.showImage.triple")) {
+        return;
+    }
     if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.showImage")) {
         return;
     }
     %orig;
+}
+
+- (void)showImageNeedEdit:(BOOL)needEdit {
+    if (wcpl_shouldSuppressTapForTripleSequence(self, @"ImageMessageCellView.showImageNeedEdit.triple")) {
+        return;
+    }
+    if (wcpl_shouldSuppressTapForCell(self, @"ImageMessageCellView.showImageNeedEdit")) {
+        return;
+    }
+    %orig(needEdit);
 }
 
 %end

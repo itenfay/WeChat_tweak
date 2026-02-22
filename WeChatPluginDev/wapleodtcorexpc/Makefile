@@ -17,7 +17,7 @@ MODULES = 0
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wechatpepper
-$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m src/WCPLContactGroupPickerViewController.m src/WCPLFriendPickerViewController.m src/WCPLGroupPickerViewController.m src/WCPLPickerDataProvider.m src/WCPLPickerItem.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
+$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
@@ -36,6 +36,7 @@ src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc
 src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc
 src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc
 src/WCPLLogger.m_CFLAGS = -fobjc-arc
+src/WCPLDouyinParserHook.xm_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

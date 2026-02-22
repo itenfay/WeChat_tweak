@@ -1325,10 +1325,6 @@ static NSDictionary *wcpl_receiveDoneSummarySnapshotFromControlData(id controlDa
     BOOL hasRecNum = wcpl_summaryMetricFromControlData(detailInfo, controlData, recNumSelectors, recNumKeys, &recNum);
     BOOL hasRecAmount = wcpl_summaryMetricFromControlData(detailInfo, controlData, recAmountSelectors, recAmountKeys, &recAmount);
 
-    if (!hasTotalNum && !hasTotalAmount && !hasRecNum && !hasRecAmount) {
-        return nil;
-    }
-
     if (totalNum < 0) totalNum = 0;
     if (totalAmount < 0) totalAmount = 0;
     if (recNum < 0) recNum = 0;
@@ -1355,6 +1351,10 @@ static NSDictionary *wcpl_receiveDoneSummarySnapshotFromControlData(id controlDa
         @"recAmount": @(recAmount),
         @"remainNum": @(remainNum),
         @"remainAmount": @(remainAmount),
+        @"hasTotalNum": @(hasTotalNum),
+        @"hasTotalAmount": @(hasTotalAmount),
+        @"hasRecNum": @(hasRecNum),
+        @"hasRecAmount": @(hasRecAmount),
         @"isReceiveDone": @(isReceiveDone),
         @"detailClass": detailClass,
         @"controlClass": controlClass
@@ -1370,14 +1370,26 @@ static NSString *wcpl_receiveDoneSummaryText(NSDictionary *snapshot) {
     long long totalAmount = [snapshot[@"totalAmount"] longLongValue];
     long long remainNum = [snapshot[@"remainNum"] longLongValue];
     long long remainAmount = [snapshot[@"remainAmount"] longLongValue];
+    BOOL hasTotalNum = [snapshot[@"hasTotalNum"] boolValue];
+    BOOL hasTotalAmount = [snapshot[@"hasTotalAmount"] boolValue];
+    BOOL hasRecNum = [snapshot[@"hasRecNum"] boolValue];
+    BOOL hasRecAmount = [snapshot[@"hasRecAmount"] boolValue];
 
-    NSString *totalYuan = wcpl_currencyYuanString((NSInteger)totalAmount);
-    NSString *remainYuan = wcpl_currencyYuanString((NSInteger)remainAmount);
-    return [NSString stringWithFormat:@"总额：¥%@ / 总数：%lld个\n剩余个数：%lld个 / 剩余金：¥%@",
-                                      totalYuan,
-                                      totalNum,
-                                      remainNum,
-                                      remainYuan];
+    NSString *totalNumText = hasTotalNum ? [NSString stringWithFormat:@"%lld个", totalNum] : @"--";
+    NSString *totalAmountText = hasTotalAmount
+        ? [NSString stringWithFormat:@"¥%@", wcpl_currencyYuanString((NSInteger)totalAmount)]
+        : @"--";
+
+    NSString *remainNumText = (hasTotalNum && hasRecNum) ? [NSString stringWithFormat:@"%lld个", remainNum] : @"--";
+    NSString *remainAmountText = (hasTotalAmount && hasRecAmount)
+        ? [NSString stringWithFormat:@"¥%@", wcpl_currencyYuanString((NSInteger)remainAmount)]
+        : @"--";
+
+    return [NSString stringWithFormat:@"总额：%@ / 总数：%@\n剩余个数：%@ / 剩余金：%@",
+                                      totalAmountText,
+                                      totalNumText,
+                                      remainNumText,
+                                      remainAmountText];
 }
 
 static UILabel *wcpl_receiveDoneSummaryLabelForReceiveHomeView(id homeView, BOOL createIfNeeded) {

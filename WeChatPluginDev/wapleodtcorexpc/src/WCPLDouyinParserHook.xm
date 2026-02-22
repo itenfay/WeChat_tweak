@@ -1135,7 +1135,7 @@ static void wcpl_douyin_requestVideoURL(NSString *douyinLink,
         return;
     }
 
-    NSURLComponents *components = [NSURLComponents componentsWithString:@"http://23.82.96.72:8888/api/hybrid/video_data"];
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"https://dy.cenai.de/api/hybrid/video_data"];
     components.queryItems = @[
         [NSURLQueryItem queryItemWithName:@"url" value:link],
         [NSURLQueryItem queryItemWithName:@"minimal" value:@"false"]

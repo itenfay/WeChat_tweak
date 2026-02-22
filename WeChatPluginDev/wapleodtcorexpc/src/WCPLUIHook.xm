@@ -3,6 +3,7 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
+#import "WCPLSettingViewController.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -71,6 +72,64 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
     return object_getIvar(obj, ivar);
 }
 
+static NSString *wcpl_safeCellTitle(id cellManager) {
+    id cellConfig = wcpl_safeValueForKey(cellManager, @"cellConfig");
+    id leftConfig = wcpl_safeValueForKey(cellConfig, @"leftConfig");
+    id title = wcpl_safeValueForKey(leftConfig, @"title");
+    return [title isKindOfClass:[NSString class]] ? wcpl_trimString((NSString *)title) : nil;
+}
+
+static BOOL wcpl_settingsAlreadyHasPluginEntry(id tableViewMgr) {
+    if (!tableViewMgr) return NO;
+
+    NSArray *sections = nil;
+    if ([tableViewMgr respondsToSelector:@selector(getAllSections)]) {
+        @try {
+            sections = ((id (*)(id, SEL))objc_msgSend)(tableViewMgr, @selector(getAllSections));
+        } @catch (__unused NSException *exception) {
+            sections = nil;
+        }
+    }
+    if (![sections isKindOfClass:[NSArray class]]) {
+        id value = wcpl_safeValueForKey(tableViewMgr, @"sections");
+        if ([value isKindOfClass:[NSArray class]]) {
+            sections = (NSArray *)value;
+        }
+    }
+    if (![sections isKindOfClass:[NSArray class]] || sections.count == 0) {
+        return NO;
+    }
+
+    for (id section in sections) {
+        NSArray *cells = nil;
+        if ([section respondsToSelector:@selector(getAllCells)]) {
+            @try {
+                cells = ((id (*)(id, SEL))objc_msgSend)(section, @selector(getAllCells));
+            } @catch (__unused NSException *exception) {
+                cells = nil;
+            }
+        }
+        if (![cells isKindOfClass:[NSArray class]]) {
+            id value = wcpl_safeValueForKey(section, @"cells");
+            if ([value isKindOfClass:[NSArray class]]) {
+                cells = (NSArray *)value;
+            }
+        }
+        if (![cells isKindOfClass:[NSArray class]] || cells.count == 0) {
+            continue;
+        }
+
+        for (id cell in cells) {
+            NSString *title = wcpl_safeCellTitle(cell);
+            if ([title isEqualToString:@"微信辣椒"]) {
+                return YES;
+            }
+        }
+    }
+
+    return NO;
+}
+
 %hook MicroMessengerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -83,6 +142,65 @@ static id wcpl_safeObjectIvar(id obj, const char *name) {
         WCPLLogInfo(@"Plugin registered via WCPluginsMgr");
     }
     return result;
+}
+
+%end
+
+%hook NewSettingViewController
+
+- (void)reloadTableData {
+    %orig;
+
+    id tableViewMgr = wcpl_safeObjectIvar(self, "m_tableViewMgr");
+    if (!tableViewMgr) {
+        tableViewMgr = wcpl_safeValueForKey(self, @"m_tableViewMgr");
+    }
+    if (!tableViewMgr ||
+        ![tableViewMgr respondsToSelector:@selector(insertSection:At:)] ||
+        ![tableViewMgr respondsToSelector:@selector(getTableView)]) {
+        WCPLLogWarning(@"NewSettingViewController: m_tableViewMgr unavailable");
+        return;
+    }
+
+    if (wcpl_settingsAlreadyHasPluginEntry(tableViewMgr)) {
+        return;
+    }
+
+    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoDefaut];
+    if (![sectionMgr respondsToSelector:@selector(addCell:)]) {
+        return;
+    }
+
+    WCTableViewNormalCellManager *settingCell =
+    [%c(WCTableViewNormalCellManager) normalCellForSel:@selector(wcpl_setting)
+                                                 target:self
+                                                  title:@"微信辣椒"
+                                          accessoryType:1];
+    if (!settingCell) {
+        return;
+    }
+    [sectionMgr addCell:settingCell];
+
+    @try {
+        [tableViewMgr insertSection:sectionMgr At:0];
+    } @catch (__unused NSException *exception) {
+        WCPLLogWarning(@"NewSettingViewController: insert section failed");
+        return;
+    }
+
+    id tableView = [tableViewMgr getTableView];
+    if ([tableView respondsToSelector:@selector(reloadData)]) {
+        [tableView reloadData];
+    }
+}
+
+%new
+- (void)wcpl_setting {
+    WCPLSettingViewController *settingViewController = [[WCPLSettingViewController alloc] init];
+    if (![settingViewController isKindOfClass:[UIViewController class]]) {
+        return;
+    }
+    [self.navigationController pushViewController:settingViewController animated:YES];
 }
 
 %end

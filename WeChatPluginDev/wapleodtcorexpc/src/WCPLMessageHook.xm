@@ -95,6 +95,7 @@ static const void *kWCPLChatSearchCancellingKey = &kWCPLChatSearchCancellingKey;
 static const void *kWCPLChatSearchExitCleanupEpochKey = &kWCPLChatSearchExitCleanupEpochKey;
 static const void *kWCPLChatSearchForceFullModeKey = &kWCPLChatSearchForceFullModeKey;
 static const void *kWCPLChatSearchForceDelayedRepairKey = &kWCPLChatSearchForceDelayedRepairKey;
+static const void *kWCPLChatSearchButtonRepairEpochKey = &kWCPLChatSearchButtonRepairEpochKey;
 static const void *kWCPLSearchBarContainerOriginalYKey = &kWCPLSearchBarContainerOriginalYKey;
 static const NSUInteger kWCPLSearchTreeMaxDepth = 16;
 static id wcpl_msgSearchHelperFromController(id controller);
@@ -115,6 +116,8 @@ static BOOL wcpl_classNameContainsSearchToken(NSString *className);
 static BOOL wcpl_viewTreeHasSearchLikeNode(UIView *view, NSUInteger depth);
 static NSString *wcpl_barButtonActionName(UIBarButtonItem *item);
 static BOOL wcpl_barButtonItemLooksLikeMoreEntry(UIBarButtonItem *item);
+static BOOL wcpl_controllerHasInjectedChatSearchButton(id viewController);
+static void wcpl_scheduleChatSearchButtonRepair(id controller, NSString *stage);
 static id wcpl_serviceByClass(Class serviceClass);
 static BOOL wcpl_softDisableSearchOverlayInTree(UIView *view,
                                                 UIView *excludedRoot,
@@ -158,7 +161,23 @@ static void wcpl_setViewOriginY(UIView *view, CGFloat y) {
 @end
 
 static BOOL wcpl_isTargetChatForSearchButton(id viewController) {
-    if (!viewController || ![viewController respondsToSelector:@selector(GetContact)]) {
+    if (![viewController isKindOfClass:[UIViewController class]]) {
+        return NO;
+    }
+
+    Class baseMsgVCClass = objc_getClass("BaseMsgContentViewController");
+    if (baseMsgVCClass && ![viewController isKindOfClass:baseMsgVCClass]) {
+        return NO;
+    }
+
+    if (!baseMsgVCClass) {
+        NSString *className = NSStringFromClass([viewController class]) ?: @"";
+        if ([className rangeOfString:@"MsgContentViewController" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+            return NO;
+        }
+    }
+
+    if (![viewController respondsToSelector:@selector(GetContact)]) {
         return NO;
     }
 
@@ -412,8 +431,7 @@ static BOOL wcpl_isInjectedChatSearchButtonItem(UIBarButtonItem *item) {
     if ([marker respondsToSelector:@selector(boolValue)] && [marker boolValue]) {
         return YES;
     }
-    return item.action == @selector(onSearchItem) ||
-           item.action == @selector(wcpl_onTapChatSearchButton:);
+    return NO;
 }
 
 static BOOL wcpl_barButtonItemArrayPointerEqual(NSArray<UIBarButtonItem *> *lhs, NSArray<UIBarButtonItem *> *rhs) {
@@ -2355,6 +2373,7 @@ static void wcpl_repairExitSearchNavState(id controller, NSString *stage, BOOL a
     }
 
     wcpl_logSearchNavSnapshot(controller, stage ?: @"repair");
+    wcpl_scheduleChatSearchButtonRepair(controller, [NSString stringWithFormat:@"%@/afterRepair", stage ?: @"repair"]);
 }
 
 static void wcpl_updateChatSearchButtonForViewController(id viewController) {
@@ -2390,11 +2409,17 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
             [filteredItems addObject:item];
         }
     }
+    BOOL hadInjectedItem = filteredItems.count != rightItems.count;
 
     BOOL targetChat = wcpl_isTargetChatForSearchButton(viewController);
-    if (!targetChat && [viewController respondsToSelector:@selector(updateRightBar)]) {
-        targetChat = YES;
-    }
+    BOOL showingSearch = wcpl_isControllerShowingSearchUI(viewController);
+    WCPLLogDebug(@"[搜索按钮] update vc=%@ target=%@ showingSearch=%@ right=%lu filtered=%lu",
+                 NSStringFromClass([viewController class]) ?: @"unknown",
+                 targetChat ? @"YES" : @"NO",
+                 showingSearch ? @"YES" : @"NO",
+                 (unsigned long)(currentItems ?: @[]).count,
+                 (unsigned long)filteredItems.count);
+
     if (!targetChat) {
         if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], filteredItems ?: @[])) {
             navigationItem.rightBarButtonItems = filteredItems;
@@ -2402,13 +2427,10 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
         return;
     }
 
-    UIBarButtonItem *searchButtonItem = wcpl_chatSearchNavButtonItem(viewController);
-    if (![searchButtonItem isKindOfClass:[UIBarButtonItem class]]) {
-        if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], filteredItems ?: @[])) {
-            navigationItem.rightBarButtonItems = filteredItems;
-        }
-        WCPLLogInfo(@"[搜索按钮] 生成搜索按钮失败，保持原生右键 vc=%@",
-                    NSStringFromClass([viewController class]));
+    if (showingSearch) {
+        WCPLLogDebug(@"[搜索按钮] skip inject: controller is showing search UI vc=%@ keepInjected=%@",
+                     NSStringFromClass([viewController class]) ?: @"unknown",
+                     hadInjectedItem ? @"YES" : @"NO");
         return;
     }
 
@@ -2423,14 +2445,26 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
         }
     }
 
+    if (![nativeItem isKindOfClass:[UIBarButtonItem class]]) {
+        WCPLLogDebug(@"[搜索按钮] skip inject: native right item not ready vc=%@ keepInjected=%@",
+                     NSStringFromClass([viewController class]) ?: @"unknown",
+                     hadInjectedItem ? @"YES" : @"NO");
+        return;
+    }
+
+    UIBarButtonItem *searchButtonItem = wcpl_chatSearchNavButtonItem(viewController);
+    if (![searchButtonItem isKindOfClass:[UIBarButtonItem class]]) {
+        WCPLLogInfo(@"[搜索按钮] 生成搜索按钮失败，保留当前右键 vc=%@",
+                    NSStringFromClass([viewController class]) ?: @"unknown");
+        return;
+    }
+
     NSMutableArray<UIBarButtonItem *> *stableItems = [NSMutableArray arrayWithCapacity:2];
-    if ([nativeItem isKindOfClass:[UIBarButtonItem class]]) {
-        [stableItems addObject:nativeItem];
-        if (nativeItem.tintColor) {
-            searchButtonItem.tintColor = nativeItem.tintColor;
-            if ([searchButtonItem.customView isKindOfClass:[UIButton class]]) {
-                ((UIButton *)searchButtonItem.customView).tintColor = nativeItem.tintColor;
-            }
+    [stableItems addObject:nativeItem];
+    if (nativeItem.tintColor) {
+        searchButtonItem.tintColor = nativeItem.tintColor;
+        if ([searchButtonItem.customView isKindOfClass:[UIButton class]]) {
+            ((UIButton *)searchButtonItem.customView).tintColor = nativeItem.tintColor;
         }
     }
     [stableItems addObject:searchButtonItem];
@@ -2440,6 +2474,93 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
         WCPLLogInfo(@"[搜索按钮] 已更新 rightBar: native={%@} search={%@}",
                     [nativeItem isKindOfClass:[UIBarButtonItem class]] ? wcpl_barButtonItemDebugSummary(nativeItem) : @"<nil>",
                     wcpl_barButtonItemDebugSummary(searchButtonItem));
+    }
+}
+
+static BOOL wcpl_controllerHasInjectedChatSearchButton(id viewController) {
+    if (![viewController isKindOfClass:[UIViewController class]]) {
+        return NO;
+    }
+
+    UINavigationItem *navigationItem = ((UIViewController *)viewController).navigationItem;
+    if (![navigationItem isKindOfClass:[UINavigationItem class]]) {
+        return NO;
+    }
+
+    NSArray<UIBarButtonItem *> *rightItems = [navigationItem.rightBarButtonItems isKindOfClass:[NSArray class]]
+        ? navigationItem.rightBarButtonItems
+        : nil;
+    if ([rightItems isKindOfClass:[NSArray class]] && rightItems.count > 0) {
+        for (UIBarButtonItem *item in rightItems) {
+            if (wcpl_isInjectedChatSearchButtonItem(item)) {
+                return YES;
+            }
+        }
+    }
+
+    UIBarButtonItem *single = navigationItem.rightBarButtonItem;
+    return wcpl_isInjectedChatSearchButtonItem(single);
+}
+
+static NSUInteger wcpl_nextChatSearchButtonRepairEpoch(id controller) {
+    if (!controller) {
+        return 0;
+    }
+
+    id marker = objc_getAssociatedObject(controller, kWCPLChatSearchButtonRepairEpochKey);
+    NSUInteger epoch = [marker respondsToSelector:@selector(unsignedIntegerValue)] ? [marker unsignedIntegerValue] : 0;
+    epoch += 1;
+    objc_setAssociatedObject(controller, kWCPLChatSearchButtonRepairEpochKey, @(epoch), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return epoch;
+}
+
+static NSUInteger wcpl_currentChatSearchButtonRepairEpoch(id controller) {
+    if (!controller) {
+        return 0;
+    }
+
+    id marker = objc_getAssociatedObject(controller, kWCPLChatSearchButtonRepairEpochKey);
+    return [marker respondsToSelector:@selector(unsignedIntegerValue)] ? [marker unsignedIntegerValue] : 0;
+}
+
+static void wcpl_scheduleChatSearchButtonRepair(id controller, NSString *stage) {
+    if (!controller || ![controller isKindOfClass:[UIViewController class]]) {
+        return;
+    }
+
+    void (^scheduleOnMain)(void) = ^{
+        NSUInteger epoch = wcpl_nextChatSearchButtonRepairEpoch(controller);
+        NSString *source = [stage isKindOfClass:[NSString class]] && stage.length > 0 ? stage : @"unknown";
+        NSArray<NSNumber *> *delays = @[@(0.08), @(0.35), @(0.95)];
+        NSArray<NSString *> *tags = @[@"80ms", @"350ms", @"950ms"];
+        for (NSUInteger idx = 0; idx < delays.count; idx++) {
+            NSTimeInterval delay = [delays[idx] doubleValue];
+            NSString *timeTag = idx < tags.count ? tags[idx] : @"retry";
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (wcpl_currentChatSearchButtonRepairEpoch(controller) != epoch) {
+                    return;
+                }
+                if (!wcpl_isTargetChatForSearchButton(controller)) {
+                    return;
+                }
+                if (wcpl_isControllerShowingSearchUI(controller)) {
+                    WCPLLogDebug(@"[搜索按钮] 延迟修复跳过 source=%@(%@): 搜索界面进行中", source, timeTag);
+                    return;
+                }
+                BOOL before = wcpl_controllerHasInjectedChatSearchButton(controller);
+                wcpl_updateChatSearchButtonForViewController(controller);
+                BOOL after = wcpl_controllerHasInjectedChatSearchButton(controller);
+                if (!before && after) {
+                    WCPLLogInfo(@"[搜索按钮] 延迟修复生效 source=%@(%@)", source, timeTag);
+                }
+            });
+        }
+    };
+
+    if ([NSThread isMainThread]) {
+        scheduleOnMain();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), scheduleOnMain);
     }
 }
 
@@ -5158,9 +5279,11 @@ static NSArray *wcpl_injectVoiceForwardMenuItemIfNeeded(id cell, NSArray *items)
     SEL nativeForwardAction = @selector(onForward:);
     SEL nativeDoForwardAction = @selector(doForward);
     SEL bridgeAction = @selector(wcpl_handleVoiceForwardMenuItem:);
-    SEL injectedAction = [cell respondsToSelector:nativeForwardAction] ? nativeForwardAction : bridgeAction;
+    SEL injectedAction = [cell respondsToSelector:nativeForwardAction] ? nativeForwardAction :
+                         ([cell respondsToSelector:nativeDoForwardAction] ? nativeDoForwardAction : bridgeAction);
 
     NSMutableArray *mutableItems = items ? [items mutableCopy] : [NSMutableArray array];
+
     for (id item in mutableItems) {
         if (![item isKindOfClass:menuItemClass] || ![item respondsToSelector:@selector(action)]) {
             continue;
@@ -5614,6 +5737,391 @@ static unsigned int wcpl_vmiyou_voiceFormat(CMessageWrap *msgWrap) {
     return voiceFormat > 0 ? voiceFormat : 4;
 }
 
+static NSString *wcpl_voiceForwardTraceWrap(CMessageWrap *wrap) {
+    if (!wrap) {
+        return @"(nil)";
+    }
+    NSString *content = [wrap.m_nsContent isKindOfClass:[NSString class]] ? wrap.m_nsContent : @"";
+    return [NSString stringWithFormat:@"type=%u local=%u svr=%lld voiceLen=%u contentLen=%lu",
+                                      wrap.m_uiMessageType,
+                                      wrap.m_uiMesLocalID,
+                                      wrap.m_n64MesSvrID,
+                                      wcpl_vmiyou_voiceLengthMs(wrap),
+                                      (unsigned long)content.length];
+}
+
+static const void *kWCPLVoiceForwardPendingTokenKey = &kWCPLVoiceForwardPendingTokenKey;
+static const void *kWCPLVoiceForwardPendingWrapKey = &kWCPLVoiceForwardPendingWrapKey;
+static const void *kWCPLVoiceForwardPendingViewControllerKey = &kWCPLVoiceForwardPendingViewControllerKey;
+static const void *kWCPLVoiceForwardPendingForwardTypeKey = &kWCPLVoiceForwardPendingForwardTypeKey;
+static const void *kWCPLVoiceForwardTargetObservedKey = &kWCPLVoiceForwardTargetObservedKey;
+
+static unsigned long long wcpl_voiceForwardNextToken(void) {
+    static unsigned long long token = 0;
+    @synchronized ([NSObject class]) {
+        token += 1;
+        return token;
+    }
+}
+
+static void wcpl_voiceForwardClearPendingContext(id manager) {
+    if (!manager) {
+        return;
+    }
+    objc_setAssociatedObject(manager, kWCPLVoiceForwardPendingTokenKey, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(manager, kWCPLVoiceForwardPendingWrapKey, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(manager, kWCPLVoiceForwardPendingViewControllerKey, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(manager, kWCPLVoiceForwardPendingForwardTypeKey, nil, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(manager, kWCPLVoiceForwardTargetObservedKey, nil, OBJC_ASSOCIATION_ASSIGN);
+}
+
+static void wcpl_voiceForwardSetPendingContext(id manager, CMessageWrap *wrap, id viewController, long long forwardType) {
+    if (!(manager && wrap && wcpl_isVoiceMessage(wrap))) {
+        return;
+    }
+    unsigned long long token = wcpl_voiceForwardNextToken();
+    objc_setAssociatedObject(manager,
+                             kWCPLVoiceForwardPendingTokenKey,
+                             @(token),
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(manager,
+                             kWCPLVoiceForwardPendingWrapKey,
+                             wrap,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if ([viewController isKindOfClass:[UIViewController class]]) {
+        objc_setAssociatedObject(manager,
+                                 kWCPLVoiceForwardPendingViewControllerKey,
+                                 viewController,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    } else {
+        objc_setAssociatedObject(manager,
+                                 kWCPLVoiceForwardPendingViewControllerKey,
+                                 nil,
+                                 OBJC_ASSOCIATION_ASSIGN);
+    }
+    objc_setAssociatedObject(manager,
+                             kWCPLVoiceForwardPendingForwardTypeKey,
+                             @(forwardType),
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(manager,
+                             kWCPLVoiceForwardTargetObservedKey,
+                             @NO,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+static void wcpl_voiceForwardMarkTargetObserved(id manager, id target) {
+    if (!(manager && target)) {
+        return;
+    }
+    objc_setAssociatedObject(manager,
+                             kWCPLVoiceForwardTargetObservedKey,
+                             @YES,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+static BOOL wcpl_voiceForwardTargetObserved(id manager) {
+    NSNumber *observed = objc_getAssociatedObject(manager, kWCPLVoiceForwardTargetObservedKey);
+    return observed.boolValue;
+}
+
+static void wcpl_logForwardManagerMethodCatalogIfNeeded(id manager) {
+    static BOOL logged = NO;
+    if (logged || !manager) {
+        return;
+    }
+    logged = YES;
+
+    NSMutableArray<NSString *> *entries = [NSMutableArray array];
+    for (Class cls = [manager class]; cls && cls != [NSObject class]; cls = class_getSuperclass(cls)) {
+        unsigned int methodCount = 0;
+        Method *methods = class_copyMethodList(cls, &methodCount);
+        if (!methods) {
+            continue;
+        }
+        for (unsigned int idx = 0; idx < methodCount; idx++) {
+            Method m = methods[idx];
+            SEL sel = method_getName(m);
+            const char *name = sel_getName(sel);
+            if (!name) {
+                continue;
+            }
+            NSString *selectorName = [NSString stringWithUTF8String:name];
+            if (selectorName.length == 0) {
+                continue;
+            }
+            NSString *lower = selectorName.lowercaseString;
+            if ([lower rangeOfString:@"forward"].location == NSNotFound &&
+                [lower rangeOfString:@"contact"].location == NSNotFound &&
+                [lower rangeOfString:@"select"].location == NSNotFound) {
+                continue;
+            }
+            const char *type = method_getTypeEncoding(m);
+            [entries addObject:[NSString stringWithFormat:@"%@::%@::%s",
+                                NSStringFromClass(cls) ?: @"(nil)",
+                                selectorName,
+                                type ?: ""]];
+        }
+        free(methods);
+    }
+    [entries sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+
+    NSUInteger limit = MIN((NSUInteger)80, entries.count);
+    for (NSUInteger i = 0; i < limit; i++) {
+        WCPLLogInfo(@"[语音转发][catalog] %@", entries[i]);
+    }
+    WCPLLogInfo(@"[语音转发][catalog] total=%lu shown=%lu",
+                (unsigned long)entries.count,
+                (unsigned long)limit);
+}
+
+static NSString *wcpl_voiceForwardTraceTarget(id targetContact) {
+    if (!targetContact) {
+        return @"(nil)";
+    }
+    NSString *userName = wcpl_safeUserNameFromObject(targetContact);
+    if (userName.length > 0) {
+        return userName;
+    }
+    if ([targetContact isKindOfClass:[NSString class]]) {
+        NSString *text = wcpl_trimString((NSString *)targetContact);
+        if (text.length > 0) {
+            return text;
+        }
+    }
+    return NSStringFromClass([targetContact class]) ?: @"(unknown)";
+}
+
+static BOOL wcpl_voiceForwardSelectorLooksUseful(NSString *selectorName) {
+    if (selectorName.length == 0) {
+        return NO;
+    }
+    NSString *lower = selectorName.lowercaseString;
+    NSArray<NSString *> *tokens = @[@"contact", @"select", @"target", @"pick", @"choose", @"forward"];
+    for (NSString *token in tokens) {
+        if ([lower rangeOfString:token].location != NSNotFound) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+static BOOL wcpl_voiceForwardClassLooksUseful(NSString *className) {
+    if (className.length == 0) {
+        return NO;
+    }
+    NSString *lower = className.lowercaseString;
+    NSArray<NSString *> *tokens = @[@"forwardmessage", @"logiccontroller", @"contact", @"select", @"target", @"picker"];
+    for (NSString *token in tokens) {
+        if ([lower rangeOfString:token].location != NSNotFound) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+static void wcpl_logForwardPayloadCatalogIfNeeded(id payload) {
+    if (!payload) {
+        return;
+    }
+    NSString *className = NSStringFromClass([payload class]) ?: @"";
+    if (!wcpl_voiceForwardClassLooksUseful(className)) {
+        return;
+    }
+
+    static NSMutableSet<NSString *> *loggedClassNames = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        loggedClassNames = [NSMutableSet set];
+    });
+
+    @synchronized (loggedClassNames) {
+        if ([loggedClassNames containsObject:className]) {
+            return;
+        }
+        [loggedClassNames addObject:className];
+    }
+
+    NSMutableArray<NSString *> *entries = [NSMutableArray array];
+    for (Class cls = [payload class]; cls && cls != [NSObject class]; cls = class_getSuperclass(cls)) {
+        unsigned int methodCount = 0;
+        Method *methods = class_copyMethodList(cls, &methodCount);
+        if (!methods) {
+            continue;
+        }
+        for (unsigned int idx = 0; idx < methodCount; idx++) {
+            SEL sel = method_getName(methods[idx]);
+            const char *name = sel_getName(sel);
+            if (!name) {
+                continue;
+            }
+            NSString *selectorName = [NSString stringWithUTF8String:name];
+            if (!wcpl_voiceForwardSelectorLooksUseful(selectorName)) {
+                continue;
+            }
+            [entries addObject:[NSString stringWithFormat:@"%@::%@",
+                                NSStringFromClass(cls) ?: @"(nil)",
+                                selectorName ?: @"(nil)"]];
+        }
+        free(methods);
+    }
+
+    [entries sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    NSUInteger limit = MIN((NSUInteger)50, entries.count);
+    for (NSUInteger idx = 0; idx < limit; idx++) {
+        WCPLLogInfo(@"[语音转发][payload-catalog] %@", entries[idx]);
+    }
+    WCPLLogInfo(@"[语音转发][payload-catalog] class=%@ total=%lu shown=%lu",
+                className,
+                (unsigned long)entries.count,
+                (unsigned long)limit);
+}
+
+static void wcpl_voiceForwardCollectTargetsFromPayload(id payload,
+                                                       NSMutableDictionary<NSString *, id> *targetMap,
+                                                       NSMutableSet<NSValue *> *visited,
+                                                       NSUInteger depth) {
+    if (!(payload && targetMap && visited) || depth > 4) {
+        return;
+    }
+
+    NSValue *identity = [NSValue valueWithPointer:(__bridge const void *)(payload)];
+    if ([visited containsObject:identity]) {
+        return;
+    }
+    [visited addObject:identity];
+
+    if ([payload isKindOfClass:[NSArray class]]) {
+        for (id item in (NSArray *)payload) {
+            wcpl_voiceForwardCollectTargetsFromPayload(item, targetMap, visited, depth + 1);
+        }
+        return;
+    }
+    if ([payload isKindOfClass:[NSSet class]]) {
+        for (id item in (NSSet *)payload) {
+            wcpl_voiceForwardCollectTargetsFromPayload(item, targetMap, visited, depth + 1);
+        }
+        return;
+    }
+    if ([payload isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary *)payload;
+        for (id value in dict.allValues) {
+            wcpl_voiceForwardCollectTargetsFromPayload(value, targetMap, visited, depth + 1);
+        }
+        return;
+    }
+
+    NSString *userName = wcpl_safeUserNameFromObject(payload);
+    if (userName.length == 0 && [payload isKindOfClass:[NSString class]]) {
+        userName = wcpl_trimString((NSString *)payload);
+    }
+    if (userName.length > 0) {
+        if (!targetMap[userName]) {
+            targetMap[userName] = payload;
+        }
+        return;
+    }
+
+    NSString *className = NSStringFromClass([payload class]) ?: @"";
+    if (!wcpl_voiceForwardClassLooksUseful(className)) {
+        return;
+    }
+
+    wcpl_logForwardPayloadCatalogIfNeeded(payload);
+
+    NSArray<NSString *> *keys = @[
+        @"selectedContacts",
+        @"selectedContact",
+        @"selectedContactList",
+        @"selectedContactsArray",
+        @"allSelectedContacts",
+        @"m_selectedContacts",
+        @"m_arrSelectedContacts",
+        @"m_arrSelectContacts",
+        @"m_selectContacts",
+        @"targets",
+        @"targetContacts",
+        @"targetContact",
+        @"toContacts",
+        @"toContact",
+        @"contacts",
+        @"pickedContacts",
+        @"pickedUsers",
+        @"selectedUsers",
+        @"selectedItems",
+        @"m_targets",
+        @"m_targetContacts",
+        @"m_toContacts",
+        @"m_contacts",
+        @"m_selectedUsers",
+        @"m_oSelectContacts",
+        @"m_oTargetContact",
+        @"m_oToContact"
+    ];
+
+    for (NSString *key in keys) {
+        SEL selector = NSSelectorFromString(key);
+        if ([payload respondsToSelector:selector]) {
+            @try {
+                id value = ((id (*)(id, SEL))objc_msgSend)(payload, selector);
+                wcpl_voiceForwardCollectTargetsFromPayload(value, targetMap, visited, depth + 1);
+            } @catch (__unused NSException *exceptionSelector) {
+            }
+        }
+
+        @try {
+            id value = [payload valueForKey:key];
+            wcpl_voiceForwardCollectTargetsFromPayload(value, targetMap, visited, depth + 1);
+        } @catch (__unused NSException *exceptionKVC) {
+        }
+
+        const char *ivarName = key.UTF8String;
+        id ivarValue = wcpl_safeObjectIvar(payload, ivarName);
+        wcpl_voiceForwardCollectTargetsFromPayload(ivarValue, targetMap, visited, depth + 1);
+        if (![key hasPrefix:@"_"]) {
+            NSString *underscoreKey = [@"_" stringByAppendingString:key];
+            id underscoredValue = wcpl_safeObjectIvar(payload, underscoreKey.UTF8String);
+            wcpl_voiceForwardCollectTargetsFromPayload(underscoredValue, targetMap, visited, depth + 1);
+        }
+    }
+
+    if ([payload respondsToSelector:@selector(allValues)]) {
+        @try {
+            id values = ((id (*)(id, SEL))objc_msgSend)(payload, @selector(allValues));
+            wcpl_voiceForwardCollectTargetsFromPayload(values, targetMap, visited, depth + 1);
+        } @catch (__unused NSException *exceptionAllValues) {
+        }
+    }
+    if ([payload respondsToSelector:@selector(allObjects)]) {
+        @try {
+            id values = ((id (*)(id, SEL))objc_msgSend)(payload, @selector(allObjects));
+            wcpl_voiceForwardCollectTargetsFromPayload(values, targetMap, visited, depth + 1);
+        } @catch (__unused NSException *exceptionAllObjects) {
+        }
+    }
+}
+
+static NSArray<id> *wcpl_voiceForwardExtractTargetsFromPayload(id payload) {
+    NSMutableDictionary<NSString *, id> *targetMap = [NSMutableDictionary dictionary];
+    NSMutableSet<NSValue *> *visited = [NSMutableSet set];
+    wcpl_voiceForwardCollectTargetsFromPayload(payload, targetMap, visited, 0);
+    return targetMap.allValues ?: @[];
+}
+
+static NSString *wcpl_voiceForwardTargetsSummary(NSArray<id> *targets) {
+    if (![targets isKindOfClass:[NSArray class]] || targets.count == 0) {
+        return @"(empty)";
+    }
+    NSMutableArray<NSString *> *items = [NSMutableArray array];
+    NSUInteger limit = MIN((NSUInteger)6, targets.count);
+    for (NSUInteger idx = 0; idx < limit; idx++) {
+        [items addObject:wcpl_voiceForwardTraceTarget(targets[idx]) ?: @"(unknown)"];
+    }
+    if (targets.count > limit) {
+        [items addObject:[NSString stringWithFormat:@"+%lu", (unsigned long)(targets.count - limit)]];
+    }
+    return [items componentsJoinedByString:@","];
+}
+
 static NSString *wcpl_vmiyou_buildMinimalVoiceContent(unsigned int voiceLengthMs, unsigned int voiceFormat) {
     unsigned int safeLength = voiceLengthMs > 0 ? voiceLengthMs : 1000;
     unsigned int safeFormat = voiceFormat > 0 ? voiceFormat : 4;
@@ -5929,6 +6437,52 @@ static CMessageWrap *wcpl_generatedForwardVoiceWrap(CMessageWrap *msgWrap,
     }
 }
 
+static void wcpl_patchGeneratedNativeForwardVoiceWrap(CMessageWrap *sourceWrap,
+                                                      id targetContact,
+                                                      id generated,
+                                                      NSString *sceneTag) {
+    if (!wcpl_isVoiceMessage(sourceWrap)) {
+        return;
+    }
+
+    CMessageWrap *sendWrap = wcpl_extractForwardMessageWrap(generated);
+    if (!(sendWrap && sendWrap != sourceWrap)) {
+        return;
+    }
+
+    NSString *targetUserName = wcpl_safeUserNameFromObject(targetContact);
+    if (targetUserName.length == 0 && [targetContact isKindOfClass:[NSString class]]) {
+        targetUserName = wcpl_trimString((NSString *)targetContact);
+    }
+
+    NSString *audioPath = nil;
+    NSData *audioData = wcpl_vmiyou_loadVoiceAudioData(sourceWrap, &audioPath);
+    if (audioData.length == 0) {
+        wcpl_startDownloadVoiceIfNeeded(sourceWrap, sceneTag ?: @"native_gen_forward");
+        WCPLLogWarning(@"[语音转发] 原生构包补丁跳过: 音频未就绪 scene=%@ path=%@",
+                       sceneTag ?: @"native_gen_forward",
+                       audioPath ?: @"(nil)");
+        return;
+    }
+
+    unsigned int voiceTime = wcpl_vmiyou_voiceTime(sourceWrap);
+    unsigned int voiceFormat = wcpl_vmiyou_voiceFormat(sourceWrap);
+    NSString *selfUserName = wcpl_vmiyou_currentSelfUserName();
+
+    wcpl_vmiyou_resetIdentity(sendWrap);
+    if (targetUserName.length > 0) {
+        wcpl_vmiyou_prepareRoute(sendWrap, targetUserName, selfUserName);
+    }
+    wcpl_vmiyou_applyVoiceFields(sendWrap, sourceWrap, audioData, voiceTime, voiceFormat);
+
+    WCPLLogDebug(@"[语音转发] 原生构包补齐: scene=%@ target=%@ audioLen=%lu voiceTime=%u voiceFormat=%u",
+                 sceneTag ?: @"native_gen_forward",
+                 targetUserName.length > 0 ? targetUserName : @"(unknown)",
+                 (unsigned long)audioData.length,
+                 voiceTime,
+                 voiceFormat);
+}
+
 static NSArray<NSString *> *wcpl_sanitizedForwardIdentifiers(NSArray<NSString *> *identifiers) {
     if (![identifiers isKindOfClass:[NSArray class]]) {
         return @[];
@@ -5969,10 +6523,233 @@ static CContact *wcpl_forwardContactForIdentifier(NSString *identifier, UIViewCo
     return WCPLFindContactByUserName(userName, contactMgr, dataLogic);
 }
 
-static BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
-                                      UIViewController *viewController,
-                                      id targetContact,
-                                      NSString *targetIdentifier) {
+static BOOL wcpl_forwardQueueVoiceBySendMessageMgr(NSString *chatName,
+                                                   CMessageWrap *sendWrap,
+                                                   NSString *targetTag) {
+    if (!(chatName.length > 0 && sendWrap)) {
+        return NO;
+    }
+    id sendMessageMgr = wcpl_serviceByClass(objc_getClass("SendMessageMgr"));
+    if (!(sendMessageMgr && [sendMessageMgr respondsToSelector:@selector(AddMsgToSendTable:MsgWrap:)])) {
+        return NO;
+    }
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(sendMessageMgr,
+                                                   @selector(AddMsgToSendTable:MsgWrap:),
+                                                   chatName,
+                                                   sendWrap);
+        unsigned int sendStatus = sendWrap.m_uiStatus;
+        unsigned int localID = sendWrap.m_uiMesLocalID;
+        if (sendStatus == 5 || localID == 0) {
+            WCPLLogWarning(@"[语音转发] SendMessageMgr.queue 未入队: target=%@ status=%u localID=%u",
+                           targetTag ?: @"(unknown)",
+                           sendStatus,
+                           localID);
+            return NO;
+        }
+        WCPLLogInfo(@"[语音转发] 命中链路 route=%@",
+                    [NSString stringWithFormat:@"SendMessageMgr.queue/%@ localID=%u status=%u",
+                                               targetTag ?: @"(unknown)",
+                                               localID,
+                                               sendStatus]);
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[语音转发] SendMessageMgr.queue 异常: target=%@ reason=%@",
+                       targetTag ?: @"(unknown)",
+                       exception.reason ?: @"unknown");
+        return NO;
+    }
+}
+
+static BOOL wcpl_forwardAddLocalVoiceMsg(id messageMgr,
+                                         NSString *chatName,
+                                         CMessageWrap *sendWrap,
+                                         NSString *targetTag) {
+    if (!(messageMgr && chatName.length > 0 && sendWrap)) {
+        return NO;
+    }
+    @try {
+        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
+            ((void (*)(id, SEL, id, id, BOOL, BOOL, BOOL))objc_msgSend)(messageMgr,
+                                                                          @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:),
+                                                                          chatName,
+                                                                          sendWrap,
+                                                                          YES,
+                                                                          NO,
+                                                                          YES);
+            WCPLLogDebug(@"[语音转发] AddLocalMsg(unq) target=%@ localID=%u",
+                         targetTag ?: @"(unknown)",
+                         sendWrap.m_uiMesLocalID);
+            return YES;
+        }
+        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:)]) {
+            ((void (*)(id, SEL, id, id, BOOL, BOOL))objc_msgSend)(messageMgr,
+                                                                   @selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:),
+                                                                   chatName,
+                                                                   sendWrap,
+                                                                   YES,
+                                                                   NO);
+            WCPLLogDebug(@"[语音转发] AddLocalMsg target=%@ localID=%u",
+                         targetTag ?: @"(unknown)",
+                         sendWrap.m_uiMesLocalID);
+            return YES;
+        }
+        if ([messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:)]) {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr,
+                                                       @selector(AddLocalMsg:MsgWrap:),
+                                                       chatName,
+                                                       sendWrap);
+            WCPLLogDebug(@"[语音转发] AddLocalMsg(simple) target=%@ localID=%u",
+                         targetTag ?: @"(unknown)",
+                         sendWrap.m_uiMesLocalID);
+            return YES;
+        }
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[语音转发] AddLocalMsg 异常: target=%@ reason=%@",
+                       targetTag ?: @"(unknown)",
+                       exception.reason ?: @"unknown");
+    }
+    return NO;
+}
+
+static BOOL wcpl_forwardInvokeResendVoiceTarget(id target,
+                                                id routeArg,
+                                                CMessageWrap *sendWrap,
+                                                NSString *targetTag,
+                                                NSString *senderTag) {
+    SEL resendVoiceSel = NSSelectorFromString(@"ResendVoiceMsg:MsgWrap:");
+    if (!(target && routeArg && sendWrap && [target respondsToSelector:resendVoiceSel])) {
+        return NO;
+    }
+    @try {
+        ((void (*)(id, SEL, id, id))objc_msgSend)(target, resendVoiceSel, routeArg, sendWrap);
+        WCPLLogInfo(@"[语音转发] 命中链路 route=%@",
+                    [NSString stringWithFormat:@"ResendVoice.%@/%@",
+                                               senderTag ?: @"(unknown)",
+                                               targetTag ?: @"(unknown)"]);
+        return YES;
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[语音转发] ResendVoice 异常: sender=%@ target=%@ reason=%@",
+                       senderTag ?: @"(unknown)",
+                       targetTag ?: @"(unknown)",
+                       exception.reason ?: @"unknown");
+        return NO;
+    }
+}
+
+static BOOL wcpl_forwardVoiceByResendRoute(NSString *chatName,
+                                           CMessageWrap *sendWrap,
+                                           NSString *targetTag) {
+    if (!(chatName.length > 0 && sendWrap)) {
+        return NO;
+    }
+    id messageMgr = wcpl_serviceByClass(objc_getClass("CMessageMgr"));
+    if (!messageMgr) {
+        return NO;
+    }
+    if (!wcpl_forwardAddLocalVoiceMsg(messageMgr, chatName, sendWrap, targetTag)) {
+        return NO;
+    }
+
+    id audioSender = wcpl_serviceByClass(objc_getClass("AudioSender"));
+    if (wcpl_forwardInvokeResendVoiceTarget(audioSender, chatName, sendWrap, targetTag, @"AudioSender")) {
+        return YES;
+    }
+
+    id uploadVoiceMgr = wcpl_serviceByClass(objc_getClass("MMNewUploadVoiceMgr"));
+    if (wcpl_forwardInvokeResendVoiceTarget(uploadVoiceMgr, chatName, sendWrap, targetTag, @"MMNewUploadVoiceMgr")) {
+        return YES;
+    }
+
+    id uploadVoiceCDNMgr = wcpl_serviceByClass(objc_getClass("UploadVoiceCDNMgr"));
+    if (wcpl_forwardInvokeResendVoiceTarget(uploadVoiceCDNMgr, chatName, sendWrap, targetTag, @"UploadVoiceCDNMgr")) {
+        return YES;
+    }
+
+    if ([messageMgr respondsToSelector:@selector(DelMsg:MsgWrap:)]) {
+        @try {
+            ((void (*)(id, SEL, id, id))objc_msgSend)(messageMgr,
+                                                       @selector(DelMsg:MsgWrap:),
+                                                       chatName,
+                                                       sendWrap);
+            WCPLLogWarning(@"[语音转发] ResendVoice 全失败，已清理本地占位: target=%@ localID=%u",
+                           targetTag ?: @"(unknown)",
+                           sendWrap.m_uiMesLocalID);
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"[语音转发] ResendVoice 清理占位异常: target=%@ reason=%@",
+                           targetTag ?: @"(unknown)",
+                           exception.reason ?: @"unknown");
+        }
+    }
+    return NO;
+}
+
+static BOOL wcpl_forwardVoiceToTargetStrict(CMessageWrap *msgWrap,
+                                            UIViewController *viewController,
+                                            id targetContact,
+                                            NSString *targetIdentifier) {
+    (void)viewController;
+    if (!(wcpl_isVoiceMessage(msgWrap) && targetContact)) {
+        return NO;
+    }
+    NSString *target = targetIdentifier.length > 0 ? targetIdentifier : @"(unknown)";
+    NSString *chatName = wcpl_safeUserNameFromObject(targetContact);
+    if (chatName.length == 0) {
+        chatName = wcpl_trimString(targetIdentifier);
+    }
+    if (chatName.length == 0) {
+        WCPLLogWarning(@"[语音转发][strict] 目标会话为空: target=%@", target);
+        return NO;
+    }
+
+    NSString *audioPath = nil;
+    NSData *audioData = wcpl_vmiyou_loadVoiceAudioData(msgWrap, &audioPath);
+    if (audioData.length == 0) {
+        id messageMgr = wcpl_serviceByClass(objc_getClass("CMessageMgr"));
+        if (messageMgr && [messageMgr respondsToSelector:@selector(StartDownloadByRecordMsg:)]) {
+            @try {
+                ((BOOL (*)(id, SEL, id))objc_msgSend)(messageMgr, @selector(StartDownloadByRecordMsg:), msgWrap);
+            } @catch (__unused NSException *exceptionDownloadVoice) {
+            }
+        }
+        WCPLLogWarning(@"[语音转发][strict] 音频未就绪: target=%@ path=%@",
+                       target,
+                       audioPath ?: @"(nil)");
+        return NO;
+    }
+
+    unsigned int voiceTime = wcpl_vmiyou_voiceTime(msgWrap);
+    unsigned int voiceFormat = wcpl_vmiyou_voiceFormat(msgWrap);
+    NSString *selfUserName = wcpl_vmiyou_currentSelfUserName();
+
+    CMessageWrap *queueWrap = wcpl_vmiyou_buildVoiceSendWrap(msgWrap,
+                                                             chatName,
+                                                             selfUserName,
+                                                             audioData,
+                                                             voiceTime,
+                                                             voiceFormat);
+    if (queueWrap && wcpl_forwardQueueVoiceBySendMessageMgr(chatName, queueWrap, target)) {
+        return YES;
+    }
+
+    CMessageWrap *resendWrap = wcpl_vmiyou_buildVoiceSendWrap(msgWrap,
+                                                              chatName,
+                                                              selfUserName,
+                                                              audioData,
+                                                              voiceTime,
+                                                              voiceFormat);
+    if (resendWrap && wcpl_forwardVoiceByResendRoute(chatName, resendWrap, target)) {
+        return YES;
+    }
+
+    WCPLLogWarning(@"[语音转发][strict] 可靠发送链路失败: target=%@", target);
+    return NO;
+}
+
+static __unused BOOL wcpl_forwardVoiceToTarget(CMessageWrap *msgWrap,
+                                               UIViewController *viewController,
+                                               id targetContact,
+                                               NSString *targetIdentifier) {
     if (!(wcpl_isVoiceMessage(msgWrap) &&
           [viewController isKindOfClass:[UIViewController class]] &&
           targetContact)) {
@@ -6221,10 +6998,10 @@ static NSUInteger wcpl_forwardVoiceToIdentifiers(CMessageWrap *msgWrap,
         CContact *contact = wcpl_forwardContactForIdentifier(identifier, viewController);
         BOOL success = NO;
         if (contact) {
-            success = wcpl_forwardVoiceToTarget(msgWrap, viewController, contact, identifier);
+            success = wcpl_forwardVoiceToTargetStrict(msgWrap, viewController, contact, identifier);
         }
         if (!success) {
-            success = wcpl_forwardVoiceToTarget(msgWrap, viewController, identifier, identifier);
+            success = wcpl_forwardVoiceToTargetStrict(msgWrap, viewController, identifier, identifier);
         }
         successCount += success ? 1 : 0;
     }
@@ -6486,11 +7263,13 @@ static void wcpl_presentClownEditorForCell(id cell) {
 - (void)viewDidLoad {
     %orig;
     wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"viewDidLoad");
 }
 
 - (void)viewWillAppear:(_Bool)arg1 {
     %orig;
     wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"viewWillAppear");
 }
 
 - (void)viewDidAppear:(_Bool)arg1 {
@@ -6499,6 +7278,7 @@ static void wcpl_presentClownEditorForCell(id cell) {
         ((void (*)(id, SEL))objc_msgSend)(self, @selector(updateRightBar));
     }
     wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"viewDidAppear");
 
     id contact = [self GetContact];
     NSString *usrName = wcpl_safeUserNameFromObject(contact);
@@ -6558,11 +7338,13 @@ static void wcpl_presentClownEditorForCell(id cell) {
 - (void)updateRightBar {
     %orig;
     wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"updateRightBar");
 }
 
 - (void)handleMsgUpdateRightBar {
     %orig;
     wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"handleMsgUpdateRightBar");
 }
 
 - (unsigned int)getMsgSearchBusinessType {
@@ -6938,10 +7720,13 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (void)onForward:(id)sender {
-    (void)sender;
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
     NSString *audioPath = wcpl_voiceAudioPathFromWrap(msgWrap);
     unsigned long long audioSize = wcpl_fileSizeAtPath(audioPath);
+    WCPLLogInfo(@"[语音转发][trace] onForward sender=%@ wrap={%@} audioSize=%llu",
+                sender ? (NSStringFromClass([sender class]) ?: @"(unknown)") : @"(nil)",
+                wcpl_voiceForwardTraceWrap(msgWrap),
+                audioSize);
 
     if (audioSize == 0) {
         wcpl_startDownloadVoiceIfNeeded(msgWrap, @"onForward");
@@ -7002,6 +7787,161 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
     WCPLLogWarning(@"[语音转发] 所有链路不可用: class=%@",
                    NSStringFromClass([self class]) ?: @"(nil)");
+}
+
+%end
+
+%hook ForwardMsgUtil
+
++ (id)GenForwardMsgFromMsgWrap:(id)arg1 ToContact:(id)arg2 {
+    id generated = %orig;
+    CMessageWrap *sourceWrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
+    CMessageWrap *generatedWrap = wcpl_extractForwardMessageWrap(generated);
+    WCPLLogInfo(@"[语音转发][trace] GenForward(class) target=%@ src={%@} gen={%@}",
+                wcpl_voiceForwardTraceTarget(arg2),
+                wcpl_voiceForwardTraceWrap(sourceWrap),
+                wcpl_voiceForwardTraceWrap(generatedWrap));
+    wcpl_patchGeneratedNativeForwardVoiceWrap(sourceWrap, arg2, generated, @"ForwardMsgUtil.class.GenForward");
+    return generated;
+}
+
+- (id)GenForwardMsgFromMsgWrap:(id)arg1 ToContact:(id)arg2 {
+    id generated = %orig;
+    CMessageWrap *sourceWrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
+    CMessageWrap *generatedWrap = wcpl_extractForwardMessageWrap(generated);
+    WCPLLogInfo(@"[语音转发][trace] GenForward(instance) target=%@ src={%@} gen={%@}",
+                wcpl_voiceForwardTraceTarget(arg2),
+                wcpl_voiceForwardTraceWrap(sourceWrap),
+                wcpl_voiceForwardTraceWrap(generatedWrap));
+    wcpl_patchGeneratedNativeForwardVoiceWrap(sourceWrap, arg2, generated, @"ForwardMsgUtil.instance.GenForward");
+    return generated;
+}
+
+%end
+
+%hook ForwardMessageMgr
+
+- (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 {
+    wcpl_logForwardManagerMethodCatalogIfNeeded(self);
+    CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
+    WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage(noTarget) wrap={%@} vc=%@",
+                wcpl_voiceForwardTraceWrap(wrap),
+                arg2 ? (NSStringFromClass([arg2 class]) ?: @"(unknown)") : @"(nil)");
+    if (wcpl_isVoiceMessage(wrap)) {
+        wcpl_voiceForwardSetPendingContext(self, wrap, arg2, -1);
+    } else {
+        wcpl_voiceForwardClearPendingContext(self);
+    }
+    %orig;
+}
+
+- (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 forwardType:(long long)arg3 {
+    wcpl_logForwardManagerMethodCatalogIfNeeded(self);
+    CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
+    WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage(noTarget+type) forwardType=%lld wrap={%@} vc=%@",
+                arg3,
+                wcpl_voiceForwardTraceWrap(wrap),
+                arg2 ? (NSStringFromClass([arg2 class]) ?: @"(unknown)") : @"(nil)");
+    if (wcpl_isVoiceMessage(wrap)) {
+        wcpl_voiceForwardSetPendingContext(self, wrap, arg2, arg3);
+    } else {
+        wcpl_voiceForwardClearPendingContext(self);
+    }
+    %orig;
+}
+
+- (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 toContact:(id)arg3 {
+    wcpl_logForwardManagerMethodCatalogIfNeeded(self);
+    CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
+    WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage target=%@ wrap={%@} vc=%@",
+                wcpl_voiceForwardTraceTarget(arg3),
+                wcpl_voiceForwardTraceWrap(wrap),
+                arg2 ? (NSStringFromClass([arg2 class]) ?: @"(unknown)") : @"(nil)");
+    wcpl_voiceForwardMarkTargetObserved(self, arg3);
+    %orig;
+}
+
+- (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 toContact:(id)arg3 forwardType:(long long)arg4 {
+    wcpl_logForwardManagerMethodCatalogIfNeeded(self);
+    CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
+    WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage+type target=%@ forwardType=%lld wrap={%@} vc=%@",
+                wcpl_voiceForwardTraceTarget(arg3),
+                arg4,
+                wcpl_voiceForwardTraceWrap(wrap),
+                arg2 ? (NSStringFromClass([arg2 class]) ?: @"(unknown)") : @"(nil)");
+    wcpl_voiceForwardMarkTargetObserved(self, arg3);
+    %orig;
+}
+
+- (void)OnForwardMessageCancel:(id)arg1 {
+    WCPLLogInfo(@"[语音转发][trace] OnForwardMessageCancel payload=%@",
+                arg1 ? (NSStringFromClass([arg1 class]) ?: @"(unknown)") : @"(nil)");
+    wcpl_voiceForwardClearPendingContext(self);
+    %orig;
+}
+
+- (void)OnForwardMessageSend:(id)arg1 {
+    NSNumber *pendingToken = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingTokenKey);
+    CMessageWrap *pendingWrap = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingWrapKey);
+    NSNumber *pendingForwardType = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingForwardTypeKey);
+
+    NSMutableArray<id> *targetCandidates = [NSMutableArray array];
+    NSArray *payloadTargets = wcpl_voiceForwardExtractTargetsFromPayload(arg1);
+    if (payloadTargets.count > 0) {
+        [targetCandidates addObjectsFromArray:payloadTargets];
+    }
+
+    if ([(id)self respondsToSelector:@selector(forwardMessageLogics)]) {
+        @try {
+            id logics = ((id (*)(id, SEL))objc_msgSend)(self, @selector(forwardMessageLogics));
+            NSArray *logicTargets = wcpl_voiceForwardExtractTargetsFromPayload(logics);
+            if (logicTargets.count > 0) {
+                [targetCandidates addObjectsFromArray:logicTargets];
+            }
+        } @catch (__unused NSException *exceptionForwardLogicsTargets) {
+        }
+    }
+
+    NSArray *targets = wcpl_voiceForwardExtractTargetsFromPayload(targetCandidates);
+    WCPLLogInfo(@"[语音转发][trace] OnForwardMessageSend payload=%@ pending=%@ forwardType=%@ targets=%lu {%@}",
+                arg1 ? (NSStringFromClass([arg1 class]) ?: @"(unknown)") : @"(nil)",
+                pendingToken ? @"yes" : @"no",
+                pendingForwardType ?: @(-1),
+                (unsigned long)targets.count,
+                wcpl_voiceForwardTargetsSummary(targets));
+    BOOL hasPendingVoice = (pendingToken && pendingWrap && wcpl_isVoiceMessage(pendingWrap));
+    if (!(hasPendingVoice && targets.count > 0)) {
+        %orig;
+        return;
+    }
+
+    UIViewController *currentVC = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingViewControllerKey);
+    BOOL observed = wcpl_voiceForwardTargetObserved(self);
+    wcpl_voiceForwardClearPendingContext(self);
+
+    if (observed) {
+        WCPLLogInfo(@"[语音转发][aggressive] 原生已命中具体目标，继续原生流程");
+        %orig;
+        return;
+    }
+
+    NSUInteger successCount = 0;
+    for (id target in targets) {
+        NSString *identifier = wcpl_voiceForwardTraceTarget(target);
+        if (wcpl_forwardVoiceToTargetStrict(pendingWrap, currentVC, target, identifier)) {
+            successCount += 1;
+        }
+    }
+
+    if (successCount > 0) {
+        WCPLLogWarning(@"[语音转发][aggressive] 接管原生发送，密友链路 success=%lu/%lu",
+                       (unsigned long)successCount,
+                       (unsigned long)targets.count);
+        return;
+    }
+
+    WCPLLogWarning(@"[语音转发][aggressive] 接管发送失败，回退原生");
+    %orig;
 }
 
 %end

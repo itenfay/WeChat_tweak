@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
 @property (assign, nonatomic) NSInteger swipeSensitivityLevel;
 
-// 消息手势操作类型：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读
+// 消息手势操作类型：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读，5=转发
 // 左滑对方消息操作
 @property (assign, nonatomic) NSInteger swipeLeftOtherAction;
 // 左滑己方消息操作
@@ -52,6 +52,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSInteger swipeRightOtherAction;
 // 右滑己方消息操作
 @property (assign, nonatomic) NSInteger swipeRightSelfAction;
+// 双击功能开关
+@property (assign, nonatomic) BOOL doubleTapGestureEnable;
+// 双击对方消息操作
+@property (assign, nonatomic) NSInteger doubleTapOtherAction;
+// 双击己方消息操作
+@property (assign, nonatomic) NSInteger doubleTapSelfAction;
+// 头像下方显示消息时间
+@property (assign, nonatomic) BOOL messageTimeEnable;
 
 // 手势参数（根据 swipeSensitivityLevel 计算）
 - (CGFloat)swipeDistanceScale;

@@ -24,8 +24,12 @@ static NSString *const kWCPLSwipeLeftSelfAction     = @"kWCPLSwipeLeftSelfAction
 static NSString *const kWCPLSwipeRightEnable        = @"kWCPLSwipeRightEnable";
 static NSString *const kWCPLSwipeRightOtherAction   = @"kWCPLSwipeRightOtherAction";
 static NSString *const kWCPLSwipeRightSelfAction    = @"kWCPLSwipeRightSelfAction";
+static NSString *const kWCPLDoubleTapGestureEnable  = @"kWCPLDoubleTapGestureEnable";
+static NSString *const kWCPLDoubleTapOtherAction    = @"kWCPLDoubleTapOtherAction";
+static NSString *const kWCPLDoubleTapSelfAction     = @"kWCPLDoubleTapSelfAction";
+static NSString *const kWCPLMessageTimeEnable       = @"kWCPLMessageTimeEnable";
 
-// 统一归一化：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读
+// 统一归一化：0=引用，1=关闭，2=删除，3=撤回(仅己方)，4=复读，5=转发
 static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAction) {
     if (action < 0) {
         return 0;
@@ -35,7 +39,7 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         return 0;
     }
 
-    if (action > 4) {
+    if (action > 5) {
         return 0;
     }
 
@@ -96,11 +100,19 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         _swipeRightEnable = [defaults boolForKey:kWCPLSwipeRightEnable];
         _swipeRightOtherAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLSwipeRightOtherAction], NO);
         _swipeRightSelfAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLSwipeRightSelfAction], YES);
+        _doubleTapGestureEnable = [defaults boolForKey:kWCPLDoubleTapGestureEnable];
+        _doubleTapOtherAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLDoubleTapOtherAction], NO);
+        _doubleTapSelfAction = wcpl_normalizeSwipeActionValue([defaults integerForKey:kWCPLDoubleTapSelfAction], YES);
+        NSNumber *messageTimeEnabled = [defaults objectForKey:kWCPLMessageTimeEnable];
+        _messageTimeEnable = messageTimeEnabled ? messageTimeEnabled.boolValue : YES;
 
         [defaults setInteger:_swipeLeftOtherAction forKey:kWCPLSwipeLeftOtherAction];
         [defaults setInteger:_swipeLeftSelfAction forKey:kWCPLSwipeLeftSelfAction];
         [defaults setInteger:_swipeRightOtherAction forKey:kWCPLSwipeRightOtherAction];
         [defaults setInteger:_swipeRightSelfAction forKey:kWCPLSwipeRightSelfAction];
+        [defaults setInteger:_doubleTapOtherAction forKey:kWCPLDoubleTapOtherAction];
+        [defaults setInteger:_doubleTapSelfAction forKey:kWCPLDoubleTapSelfAction];
+        [defaults setBool:_messageTimeEnable forKey:kWCPLMessageTimeEnable];
         [defaults setBool:_repeatButtonHapticEnable forKey:kWCPLRepeatButtonHapticEnable];
         [defaults setDouble:_repeatButtonSize forKey:kWCPLRepeatButtonSize];
         [defaults setBool:_repeatImmediateRenderEnable forKey:kWCPLRepeatImmediateRenderEnable];
@@ -211,6 +223,28 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
     NSInteger normalized = wcpl_normalizeSwipeActionValue(swipeRightSelfAction, YES);
     _swipeRightSelfAction = normalized;
     [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLSwipeRightSelfAction];
+}
+
+- (void)setDoubleTapGestureEnable:(BOOL)doubleTapGestureEnable {
+    _doubleTapGestureEnable = doubleTapGestureEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:doubleTapGestureEnable forKey:kWCPLDoubleTapGestureEnable];
+}
+
+- (void)setDoubleTapOtherAction:(NSInteger)doubleTapOtherAction {
+    NSInteger normalized = wcpl_normalizeSwipeActionValue(doubleTapOtherAction, NO);
+    _doubleTapOtherAction = normalized;
+    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLDoubleTapOtherAction];
+}
+
+- (void)setDoubleTapSelfAction:(NSInteger)doubleTapSelfAction {
+    NSInteger normalized = wcpl_normalizeSwipeActionValue(doubleTapSelfAction, YES);
+    _doubleTapSelfAction = normalized;
+    [[NSUserDefaults standardUserDefaults] setInteger:normalized forKey:kWCPLDoubleTapSelfAction];
+}
+
+- (void)setMessageTimeEnable:(BOOL)messageTimeEnable {
+    _messageTimeEnable = messageTimeEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:messageTimeEnable forKey:kWCPLMessageTimeEnable];
 }
 
 - (CGFloat)swipeDistanceScale {

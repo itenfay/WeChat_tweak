@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) WCPLRevokeConfig *revoke;
 @property (readonly, nonatomic) WCPLTimelineConfig *timeline;
 @property (readonly, nonatomic) WCPLPush2ChatConfig *push2Chat;
+@property (assign, nonatomic) BOOL douyinParserEnable;
 
 @end
 

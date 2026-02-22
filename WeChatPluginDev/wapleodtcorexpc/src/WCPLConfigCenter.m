@@ -5,6 +5,8 @@
 #import "WCPLConfigCenter.h"
 #import <dispatch/dispatch.h>
 
+static NSString *const kWCPLDouyinParserEnable = @"kWCPLDouyinParserEnable";
+
 @implementation WCPLConfigCenter
 
 + (instancetype)shared {
@@ -27,8 +29,18 @@
         _revoke = [WCPLRevokeConfig sharedConfig];
         _timeline = [WCPLTimelineConfig sharedConfig];
         _push2Chat = [WCPLPush2ChatConfig sharedConfig];
+
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSNumber *enableObj = [defaults objectForKey:kWCPLDouyinParserEnable];
+        _douyinParserEnable = enableObj ? enableObj.boolValue : YES;
+        [defaults setBool:_douyinParserEnable forKey:kWCPLDouyinParserEnable];
     }
     return self;
+}
+
+- (void)setDouyinParserEnable:(BOOL)douyinParserEnable {
+    _douyinParserEnable = douyinParserEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:douyinParserEnable forKey:kWCPLDouyinParserEnable];
 }
 
 @end

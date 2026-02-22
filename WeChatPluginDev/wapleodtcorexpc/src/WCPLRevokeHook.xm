@@ -68,6 +68,34 @@ static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
     return value;
 }
 
+static NSString *wcpl_escapeXmlText(NSString *text) {
+    NSString *value = wcpl_trimString(text);
+    if (value.length == 0) return @"";
+
+    value = [value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+    value = [value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+    value = [value stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+    return value;
+}
+
+static NSString *wcpl_buildRevokeJumpMeta(NSString *session, long long svrID, unsigned int localID, NSString *baseSource) {
+    if (svrID <= 0 && localID == 0) {
+        return wcpl_trimString(baseSource);
+    }
+
+    NSString *safeSession = wcpl_escapeXmlText(session);
+    NSString *meta = [NSString stringWithFormat:
+                      @"<wcpl_revoke_jump><wcpl_revoke_session>%@</wcpl_revoke_session><wcpl_revoke_svrid>%lld</wcpl_revoke_svrid><wcpl_revoke_localid>%u</wcpl_revoke_localid></wcpl_revoke_jump>",
+                      safeSession ?: @"",
+                      svrID > 0 ? svrID : 0,
+                      localID];
+    NSString *base = wcpl_trimString(baseSource);
+    if (base.length == 0) {
+        return meta;
+    }
+    return [base stringByAppendingString:meta];
+}
+
 static NSString *wcpl_revokeTimeTextFromTimestamp(unsigned int timestamp) {
     NSDate *date = timestamp > 0 ? [NSDate dateWithTimeIntervalSince1970:timestamp] : [NSDate date];
 
@@ -231,14 +259,93 @@ static NSString *wcpl_revokeChatNameFromObject(id obj) {
     return nil;
 }
 
+static NSString *wcpl_selfUserName(void) {
+    id contactMgr = WCPLGetService(objc_getClass("CContactMgr"));
+    if (!(contactMgr && [contactMgr respondsToSelector:@selector(getSelfContact)])) {
+        return nil;
+    }
+
+    id selfContact = nil;
+    @try {
+        selfContact = ((id (*)(id, SEL))objc_msgSend)(contactMgr, @selector(getSelfContact));
+    } @catch (__unused NSException *exceptionSelfContact) {
+        selfContact = nil;
+    }
+    if (!selfContact) {
+        return nil;
+    }
+
+    if ([selfContact respondsToSelector:@selector(m_nsUsrName)]) {
+        @try {
+            id userName = ((id (*)(id, SEL))objc_msgSend)(selfContact, @selector(m_nsUsrName));
+            NSString *trimmed = wcpl_trimString(userName);
+            if (trimmed.length > 0) return trimmed;
+        } @catch (__unused NSException *exceptionUserName) {
+        }
+    }
+
+    @try {
+        id userName = [selfContact valueForKey:@"m_nsUsrName"];
+        NSString *trimmed = wcpl_trimString(userName);
+        if (trimmed.length > 0) return trimmed;
+    } @catch (__unused NSException *exceptionUserNameKVC) {
+    }
+
+    return nil;
+}
+
+static BOOL wcpl_revokeReplaceTextLooksSelf(NSString *replaceText) {
+    NSString *text = wcpl_trimString(replaceText);
+    if (text.length == 0) return NO;
+
+    NSArray<NSString *> *selfTokens = @[
+        @"你撤回了一条消息",
+        @"你撤回了一则消息",
+        @"You recalled a message",
+        @"You recalled this message"
+    ];
+    for (NSString *token in selfTokens) {
+        if ([text rangeOfString:token options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 static BOOL wcpl_isSelfRevokeMessage(CMessageWrap *msgWrap) {
     if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return NO;
 
     @try {
-        return [%c(CMessageWrap) isSenderFromMsgWrap:msgWrap];
+        if ([%c(CMessageWrap) isSenderFromMsgWrap:msgWrap]) {
+            return YES;
+        }
     } @catch (__unused NSException *exceptionSender) {
-        return NO;
     }
+
+    NSString *xml = wcpl_trimString(msgWrap.m_nsContent);
+    if (xml.length > 0) {
+        NSString *replaceRaw = wcpl_extractXmlTagValue(xml, @"replacemsg");
+        NSString *replaceText = wcpl_stripCDATAIfNeeded(replaceRaw);
+        if (wcpl_revokeReplaceTextLooksSelf(replaceText)) {
+            return YES;
+        }
+
+        NSString *selfUserName = wcpl_selfUserName();
+        if (selfUserName.length > 0) {
+            NSString *actorFromXml = wcpl_trimString(wcpl_extractXmlTagValue(xml, @"fromusr"));
+            NSString *actorFromWrap = wcpl_trimString(msgWrap.m_nsRealChatUsr);
+            if (actorFromWrap.length == 0) {
+                actorFromWrap = wcpl_trimString(msgWrap.m_nsFromUsr);
+            }
+
+            if ((actorFromXml.length > 0 && [actorFromXml isEqualToString:selfUserName]) ||
+                (actorFromWrap.length > 0 && [actorFromWrap isEqualToString:selfUserName])) {
+                return YES;
+            }
+        }
+    }
+
+    return NO;
 }
 
 static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
@@ -665,7 +772,10 @@ static void wcpl_applyRevokeTimeColorToMessageCell(id cell) {
 
 static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNameHint) {
     if (![revokeWrap isKindOfClass:%c(CMessageWrap)]) return NO;
-    if (wcpl_isSelfRevokeMessage(revokeWrap)) return NO;
+    if (wcpl_isSelfRevokeMessage(revokeWrap)) {
+        WCPLLogDebug(@"[防撤回] skip self revoke");
+        return NO;
+    }
 
     NSString *xml = revokeWrap.m_nsContent;
     if (xml.length == 0) return NO;
@@ -717,6 +827,7 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
                          timeText ?: @"",
                          actorName,
                          revokedContent];
+    unsigned int revokedLocalID = revokedMsgWrap ? revokedMsgWrap.m_uiMesLocalID : 0;
 
     CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
     [msgWrap setM_uiStatus:0x4];
@@ -729,6 +840,14 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsRealChatUsr:), nil);
         } @catch (__unused NSException *exceptionRealUsr) {
+        }
+    }
+
+    NSString *jumpMeta = wcpl_buildRevokeJumpMeta(session, revokedMsgId, revokedLocalID, revokeWrap.m_nsMsgSource);
+    if (jumpMeta.length > 0 && [msgWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsMsgSource:), jumpMeta);
+        } @catch (__unused NSException *exceptionMsgSource) {
         }
     }
 

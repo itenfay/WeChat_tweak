@@ -173,7 +173,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息屏蔽" detail:@"屏蔽用户和群聊提醒" selector:@selector(openMessageIgnoreSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"其他" detail:@"防撤回、模拟 iPad、朋友圈广告" selector:@selector(openOtherSettingsEntry)]];
-    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息手势" detail:@"左右滑动、引用跳转" selector:@selector(openSwipeGestureSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"消息手势" detail:@"左右滑动、双击、引用跳转" selector:@selector(openSwipeGestureSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"复读气泡" detail:@"复读按钮和类型支持" selector:@selector(openRepeatBubbleSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"日志设置" detail:@"调试日志与上传" selector:@selector(openDebugSettings)]];
     [self.tableViewMgr addSection:section];
@@ -364,7 +364,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (WCTableViewNormalCellManager *)createReceiveDonePageSummaryCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveDonePageSummary:) target:self title:@"领取完展示汇总" on:[WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingReceiveDonePageSummary:) target:self title:@"红包详情始终显示" on:[WCPLRedEnvelopConfig sharedConfig].receiveDonePageSummaryEnable];
 }
 
 - (void)settingReceiveDonePageSummary:(UISwitch *)sender {
@@ -612,9 +612,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)addOtherSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
 
+    [section addCell:[self createDouyinParserCell]];
     [section addCell:[self createTimelineAdBlockCell]];
     [section addCell:[self createEmulateIPadLoginCell]];
     [section addCell:[self createAbortRemokeMessageCell]];
+    [section addCell:[self createMessageTimeSwitchCell]];
 
     [self.tableViewMgr addSection:section];
 }
@@ -656,6 +658,17 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)settingTimelineAdBlock:(UISwitch *)sender {
     [WCPLConfigCenter shared].timeline.blockTimelineBrandAdsEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createDouyinParserCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDouyinParserEnable:)
+                                                                     target:self
+                                                                      title:@"启用抖音链接解析"
+                                                                         on:[WCPLConfigCenter shared].douyinParserEnable];
+}
+
+- (void)settingDouyinParserEnable:(UISwitch *)sender {
+    [WCPLConfigCenter shared].douyinParserEnable = sender.on;
 }
 
 - (void)addMessageIgnoreSettingSection {
@@ -910,10 +923,10 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)addSwipeQuoteSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"消息手势"];
 
-    // 消息手势总开关
+    // 滑动手势开关
     [section addCell:[self createSwipeGestureSwitchCell]];
 
-    // 只有启用总开关时才显示详细设置
+    // 只有启用滑动手势时才显示滑动相关设置
     if ([WCPLConfigCenter shared].gesture.swipeGestureEnable) {
         // 灵敏度
         [section addCell:[self createSwipeSensitivityCell]];
@@ -941,6 +954,13 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
         // 引用消息点击跳转
         [section addCell:[self createTapReferJumpSwitchCell]];
+    }
+
+    // 双击配置独立于滑动开关
+    [section addCell:[self createDoubleTapGestureSwitchCell]];
+    if ([WCPLConfigCenter shared].gesture.doubleTapGestureEnable) {
+        [section addCell:[self createDoubleTapOtherActionCell]];
+        [section addCell:[self createDoubleTapSelfActionCell]];
     }
 
     [self.tableViewMgr addSection:section];
@@ -975,7 +995,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (WCTableViewNormalCellManager *)createSwipeGestureSwitchCell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用消息手势" on:[WCPLConfigCenter shared].gesture.swipeGestureEnable];
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingSwipeGesture:) target:self title:@"启用滑动手势" on:[WCPLConfigCenter shared].gesture.swipeGestureEnable];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonSwitchCell {
@@ -1034,18 +1054,30 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingTapReferJump:) target:self title:@"  引用消息点击跳转" on:[WCPLConfigCenter shared].gesture.tapReferJumpEnable];
 }
 
-// 获取对方消息操作名称（引用、关闭、删除、复读）
+- (WCTableViewNormalCellManager *)createDoubleTapGestureSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingDoubleTapGesture:) target:self title:@"  消息双击功能" on:[WCPLConfigCenter shared].gesture.doubleTapGestureEnable];
+}
+
+- (WCTableViewNormalCellManager *)createMessageTimeSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMessageTimeDisplay:)
+                                                                     target:self
+                                                                      title:@"头像下方显示时间(HH:mm:ss)"
+                                                                         on:[WCPLConfigCenter shared].gesture.messageTimeEnable];
+}
+
+// 获取对方消息操作名称（引用、关闭、删除、复读、转发）
 - (NSString *)actionNameForOtherMessage:(NSInteger)action {
     switch (action) {
         case 0: return @"引用";
         case 1: return @"关闭";
         case 2: return @"删除";
         case 4: return @"复读";
+        case 5: return @"转发";
         default: return @"引用";
     }
 }
 
-// 获取己方消息操作名称（引用、关闭、删除、撤回、复读）
+// 获取己方消息操作名称（引用、关闭、删除、撤回、复读、转发）
 - (NSString *)actionNameForSelfMessage:(NSInteger)action {
     switch (action) {
         case 0: return @"引用";
@@ -1053,6 +1085,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         case 2: return @"删除";
         case 3: return @"撤回";
         case 4: return @"复读";
+        case 5: return @"转发";
         default: return @"引用";
     }
 }
@@ -1079,6 +1112,18 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     NSInteger action = [WCPLConfigCenter shared].gesture.swipeRightSelfAction;
     NSString *actionName = [self actionNameForSelfMessage:action];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showSwipeRightSelfActionPicker) target:self title:@"      右滑己方消息" rightValue:actionName accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createDoubleTapOtherActionCell {
+    NSInteger action = [WCPLConfigCenter shared].gesture.doubleTapOtherAction;
+    NSString *actionName = [self actionNameForOtherMessage:action];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDoubleTapOtherActionPicker) target:self title:@"      双击对方消息" rightValue:actionName accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createDoubleTapSelfActionCell {
+    NSInteger action = [WCPLConfigCenter shared].gesture.doubleTapSelfAction;
+    NSString *actionName = [self actionNameForSelfMessage:action];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showDoubleTapSelfActionPicker) target:self title:@"      双击己方消息" rightValue:actionName accessoryType:1];
 }
 
 - (void)settingSwipeGesture:(UISwitch *)sender {
@@ -1164,6 +1209,17 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLLogInfo(@"Tap refer jump feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
+- (void)settingDoubleTapGesture:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.doubleTapGestureEnable = sender.on;
+    WCPLLogInfo(@"Double tap message feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
+}
+
+- (void)settingMessageTimeDisplay:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.messageTimeEnable = sender.on;
+    WCPLLogInfo(@"Message time display changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
 - (void)showSwipeSensitivityPicker {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手势灵敏度"
                                                                    message:@"高=更容易触发，低=更不易误触"
@@ -1234,6 +1290,26 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     }];
 }
 
+// 双击对方消息操作选择器
+- (void)showDoubleTapOtherActionPicker {
+    [self showActionPickerWithTitle:@"双击对方消息操作"
+                           isSelf:NO
+                       completion:^(NSInteger action) {
+        [WCPLConfigCenter shared].gesture.doubleTapOtherAction = action;
+        [self reloadTableData];
+    }];
+}
+
+// 双击己方消息操作选择器
+- (void)showDoubleTapSelfActionPicker {
+    [self showActionPickerWithTitle:@"双击己方消息操作"
+                           isSelf:YES
+                       completion:^(NSInteger action) {
+        [WCPLConfigCenter shared].gesture.doubleTapSelfAction = action;
+        [self reloadTableData];
+    }];
+}
+
 // 通用操作选择器
 - (void)showActionPickerWithTitle:(NSString *)title isSelf:(BOOL)isSelf completion:(void(^)(NSInteger action))completion {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
@@ -1248,6 +1324,10 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         if (completion) completion(4);
     }];
 
+    UIAlertAction *forwardAction = [UIAlertAction actionWithTitle:@"转发" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if (completion) completion(5);
+    }];
+
     UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         if (completion) completion(1);
     }];
@@ -1258,6 +1338,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
     [alert addAction:quoteAction];
     [alert addAction:repeatAction];
+    [alert addAction:forwardAction];
     [alert addAction:closeAction];
     [alert addAction:deleteAction];
 
