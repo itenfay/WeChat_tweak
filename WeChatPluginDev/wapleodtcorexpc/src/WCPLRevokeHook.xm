@@ -843,7 +843,13 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
         }
     }
 
-    (void)revokedLocalID;
+    // 将被撤回消息的定位信息写入 m_nsMsgSource，供点击跳转使用
+    if ([msgWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
+        NSString *jumpMeta = wcpl_buildRevokeJumpMeta(session, revokedMsgId, revokedLocalID, nil);
+        if (jumpMeta.length > 0) {
+            [msgWrap setM_nsMsgSource:jumpMeta];
+        }
+    }
 
     if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
         [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];
