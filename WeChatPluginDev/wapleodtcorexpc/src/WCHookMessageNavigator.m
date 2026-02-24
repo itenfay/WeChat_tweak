@@ -4,7 +4,6 @@
 
 #import <UIKit/UIKit.h>
 #import <objc/message.h>
-#include <stdlib.h>
 
 @interface CommonMessageCellView : UIView
 @end
@@ -13,19 +12,29 @@ static Class WCHookReferViewClass(void);
 static BOOL WCHookObjectIsReferView(id object);
 static id WCHookInvokeObject(id target, SEL selector);
 static UIResponder *WCHookLocateResponderForView(UIView *view);
+static UIView *WCHookLocateCarrierViewFromObject(id object);
 static id WCHookMessageWrapFromObject(id object);
 static id WCHookMessageWrapForCell(CommonMessageCellView *cell);
 static id WCHookReferMessageFromWrap(id messageWrap);
-static id WCHookRevokeTargetFromTipWrap(id tipWrap);
 static id WCHookLocateTargetFromObject(id object);
-static BOOL WCHookLooksLikeRevokeTipContent(NSString *content);
+static BOOL WCHookLooksLikeQuitMonitorTipContent(NSString *content);
+static NSString *WCHookStringFieldFromWrap(id messageWrap, SEL selector, NSString *kvcKey);
+static NSString *WCHookMessageContentFromWrap(id messageWrap);
+static NSString *WCHookMsgSourceFromWrap(id messageWrap);
 static NSString *WCHookTrimString(NSString *text);
 static NSString *WCHookExtractTagValue(NSString *text, NSString *tag);
-static long long WCHookExtractLongLongTagValue(NSString *text, NSString *tag);
-static id WCHookMessageMgr(void);
+static NSString *WCHookExtractFirstCSVItem(NSString *text);
+static NSString *WCHookExtractQuitMonitorUserNameFromMsgSource(NSString *msgSource);
+static NSString *WCHookExtractQuitMonitorUserNameFromContent(NSString *content);
+static NSString *WCHookStripHTMLTags(NSString *text);
+static NSString *WCHookExtractQuitMonitorDisplayNameFromContent(NSString *content);
+static id WCHookContactForUserName(NSString *userName);
+static id WCHookResolveProfileOpenTargetFromCell(CommonMessageCellView *cell);
+static BOOL WCHookOpenProfileWithTarget(id target, NSString *userName, NSString *displayName);
+static BOOL WCHookExecuteOpenQuitMemberProfileFromCell(CommonMessageCellView *cell);
 static BOOL WCHookExecuteJumpToMessageFromCell(CommonMessageCellView *cell, id targetMessage);
+static BOOL WCHookExecuteJumpToMessageWithTarget(id locateTarget, id targetMessage);
 static BOOL WCHookExecuteJumpFromCell(CommonMessageCellView *cell);
-static BOOL WCHookExecuteJumpFromRevokeTipCell(CommonMessageCellView *cell);
 static BOOL WCHookExecuteJumpFromInput(id toolView);
 static BOOL WCHookPerformSyncOnMainThread(BOOL (^action)(void));
 
@@ -61,16 +70,13 @@ static BOOL WCHookPerformSyncOnMainThread(BOOL (^action)(void));
     });
 }
 
-+ (BOOL)tryJumpFromRevokeTipCell:(CommonMessageCellView *)cell {
++ (BOOL)tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)cell {
     if (!cell) {
         return NO;
     }
-    WCPLCrashBreadcrumb(@"撤回跳转(系统提示): cell=%@", NSStringFromClass([cell class]));
-    BOOL result = WCHookPerformSyncOnMainThread(^BOOL{
-        return WCHookExecuteJumpFromRevokeTipCell(cell);
+    return WCHookPerformSyncOnMainThread(^BOOL{
+        return WCHookExecuteOpenQuitMemberProfileFromCell(cell);
     });
-    WCPLLogDebug(@"Revoke tip jump attempt: cell=%@ result=%d", NSStringFromClass([cell class]), result ? 1 : 0);
-    return result;
 }
 
 @end
@@ -107,6 +113,29 @@ static UIResponder *WCHookLocateResponderForView(UIView *view) {
             return responder;
         }
         responder = [responder nextResponder];
+    }
+    return nil;
+}
+
+static UIView *WCHookLocateCarrierViewFromObject(id object) {
+    if (!object) {
+        return nil;
+    }
+    if ([object isKindOfClass:[UIView class]]) {
+        return (UIView *)object;
+    }
+
+    SEL selectors[] = {
+        @selector(getRichTextView),
+        @selector(getContentView),
+        @selector(contentView),
+        @selector(view)
+    };
+    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
+        id candidate = WCHookInvokeObject(object, selectors[idx]);
+        if ([candidate isKindOfClass:[UIView class]]) {
+            return (UIView *)candidate;
+        }
     }
     return nil;
 }
@@ -166,12 +195,45 @@ static id WCHookReferMessageFromWrap(id messageWrap) {
     return nil;
 }
 
-static BOOL WCHookLooksLikeRevokeTipContent(NSString *content) {
+static BOOL WCHookLooksLikeQuitMonitorTipContent(NSString *content) {
     if (![content isKindOfClass:[NSString class]] || content.length == 0) {
         return NO;
     }
-    return ([content rangeOfString:@"撤回了一条消息"].location != NSNotFound ||
-            [content rangeOfString:@"已拦截撤回"].location != NSNotFound);
+    return ([content rangeOfString:@"[退群监控]"].location != NSNotFound &&
+            ([content rangeOfString:@"已退出群聊"].location != NSNotFound ||
+             [content rangeOfString:@"退出群聊"].location != NSNotFound));
+}
+
+static NSString *WCHookStringFieldFromWrap(id messageWrap, SEL selector, NSString *kvcKey) {
+    if (!messageWrap) {
+        return nil;
+    }
+
+    id fieldObj = WCHookInvokeObject(messageWrap, selector);
+    if ([fieldObj isKindOfClass:[NSString class]]) {
+        return (NSString *)fieldObj;
+    }
+
+    if (![kvcKey isKindOfClass:[NSString class]] || kvcKey.length == 0) {
+        return nil;
+    }
+
+    @try {
+        id kvcValue = [messageWrap valueForKey:kvcKey];
+        if ([kvcValue isKindOfClass:[NSString class]]) {
+            return (NSString *)kvcValue;
+        }
+    } @catch (__unused NSException *exceptionKVC) {
+    }
+    return nil;
+}
+
+static NSString *WCHookMessageContentFromWrap(id messageWrap) {
+    return WCHookStringFieldFromWrap(messageWrap, @selector(m_nsContent), @"m_nsContent");
+}
+
+static NSString *WCHookMsgSourceFromWrap(id messageWrap) {
+    return WCHookStringFieldFromWrap(messageWrap, @selector(m_nsMsgSource), @"m_nsMsgSource");
 }
 
 static NSString *WCHookTrimString(NSString *text) {
@@ -180,6 +242,22 @@ static NSString *WCHookTrimString(NSString *text) {
     }
     NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return trimmed.length > 0 ? trimmed : nil;
+}
+
+static NSString *WCHookExtractFirstCSVItem(NSString *text) {
+    NSString *trimmed = WCHookTrimString(text);
+    if (trimmed.length == 0) {
+        return nil;
+    }
+    NSCharacterSet *separators = [NSCharacterSet characterSetWithCharactersInString:@",; \n\t\r"];
+    NSArray<NSString *> *parts = [trimmed componentsSeparatedByCharactersInSet:separators];
+    for (NSString *part in parts) {
+        NSString *value = WCHookTrimString(part);
+        if (value.length > 0) {
+            return value;
+        }
+    }
+    return nil;
 }
 
 static NSString *WCHookExtractTagValue(NSString *text, NSString *tag) {
@@ -211,131 +289,305 @@ static NSString *WCHookExtractTagValue(NSString *text, NSString *tag) {
     return WCHookTrimString(value);
 }
 
-static long long WCHookExtractLongLongTagValue(NSString *text, NSString *tag) {
-    NSString *value = WCHookExtractTagValue(text, tag);
-    if (![value isKindOfClass:[NSString class]] || value.length == 0) {
-        return 0;
+static NSString *WCHookExtractQuitMonitorUserNameFromMsgSource(NSString *msgSource) {
+    NSString *userName = WCHookExtractTagValue(msgSource, @"memberusername");
+    if (userName.length == 0) {
+        userName = WCHookExtractTagValue(msgSource, @"username");
     }
-    long long parsed = strtoll(value.UTF8String, NULL, 10);
-    return parsed > 0 ? parsed : 0;
+    if (userName.length == 0) {
+        userName = WCHookExtractTagValue(msgSource, @"fromusr");
+    }
+    if (userName.length == 0) {
+        NSString *atUserList = WCHookExtractTagValue(msgSource, @"atuserlist");
+        userName = WCHookExtractFirstCSVItem(atUserList);
+    }
+    return WCHookTrimString(userName);
 }
 
-static id WCHookMessageMgr(void) {
-    Class serviceCenterClass = NSClassFromString(@"MMServiceCenter");
-    Class messageMgrClass = NSClassFromString(@"CMessageMgr");
-    if (!serviceCenterClass || !messageMgrClass ||
-        ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
+static NSString *WCHookExtractQuitMonitorUserNameFromContent(NSString *content) {
+    NSString *text = WCHookTrimString(content);
+    if (text.length == 0) {
         return nil;
     }
 
+    NSRange profileRange = [text rangeOfString:@"weixin://contacts/profile/" options:NSCaseInsensitiveSearch];
+    if (profileRange.location != NSNotFound) {
+        NSUInteger start = NSMaxRange(profileRange);
+        if (start < text.length) {
+            NSCharacterSet *endSet = [NSCharacterSet characterSetWithCharactersInString:@"\"'<> )】\n\r\t"];
+            NSRange searchRange = NSMakeRange(start, text.length - start);
+            NSRange endRange = [text rangeOfCharacterFromSet:endSet options:0 range:searchRange];
+            NSUInteger end = (endRange.location == NSNotFound) ? text.length : endRange.location;
+            if (end > start && end <= text.length) {
+                NSString *encoded = [text substringWithRange:NSMakeRange(start, end - start)];
+                NSString *decoded = [encoded stringByRemovingPercentEncoding] ?: encoded;
+                NSString *trimmed = WCHookTrimString(decoded);
+                if (trimmed.length > 0) {
+                    return trimmed;
+                }
+            }
+        }
+    }
+
+    NSString *userName = WCHookExtractTagValue(text, @"memberusername");
+    if (userName.length == 0) {
+        userName = WCHookExtractTagValue(text, @"username");
+    }
+    if (userName.length == 0) {
+        userName = WCHookExtractTagValue(text, @"fromusr");
+    }
+    return WCHookTrimString(userName);
+}
+
+static NSString *WCHookStripHTMLTags(NSString *text) {
+    NSString *input = WCHookTrimString(text);
+    if (input.length == 0) {
+        return nil;
+    }
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<[^>]+>"
+                                                                           options:0
+                                                                             error:&error];
+    if (error || !regex) {
+        return input;
+    }
+    NSString *stripped = [regex stringByReplacingMatchesInString:input
+                                                         options:0
+                                                           range:NSMakeRange(0, input.length)
+                                                    withTemplate:@""];
+    return WCHookTrimString(stripped);
+}
+
+static NSString *WCHookExtractQuitMonitorDisplayNameFromContent(NSString *content) {
+    NSString *text = WCHookTrimString(content);
+    if (text.length == 0) {
+        return nil;
+    }
+
+    NSString *nickName = WCHookExtractTagValue(text, @"nickname");
+    if (nickName.length == 0) {
+        nickName = WCHookExtractTagValue(text, @"displayname");
+    }
+    if (nickName.length > 0) {
+        return WCHookTrimString(nickName);
+    }
+
+    NSRange prefixRange = [text rangeOfString:@"[退群监控]"];
+    if (prefixRange.location != NSNotFound) {
+        text = [text substringFromIndex:NSMaxRange(prefixRange)];
+    }
+
+    NSRange suffixRange = [text rangeOfString:@"已退出群聊"];
+    if (suffixRange.location != NSNotFound) {
+        text = [text substringToIndex:suffixRange.location];
+    } else {
+        suffixRange = [text rangeOfString:@"退出群聊"];
+        if (suffixRange.location != NSNotFound) {
+            text = [text substringToIndex:suffixRange.location];
+        }
+    }
+
+    text = WCHookStripHTMLTags(text);
+    if (text.length == 0) {
+        return nil;
+    }
+
+    text = [text stringByReplacingOccurrencesOfString:@"（" withString:@" "];
+    text = [text stringByReplacingOccurrencesOfString:@"）" withString:@" "];
+    text = [text stringByReplacingOccurrencesOfString:@"(" withString:@" "];
+    text = [text stringByReplacingOccurrencesOfString:@")" withString:@" "];
+    text = [text stringByReplacingOccurrencesOfString:@"、" withString:@" "];
+    text = [text stringByReplacingOccurrencesOfString:@"@" withString:@""];
+    text = WCHookExtractFirstCSVItem(text);
+    return WCHookTrimString(text);
+}
+
+static id WCHookContactForUserName(NSString *userName) {
+    NSString *target = WCHookTrimString(userName);
+    if (target.length == 0) {
+        return nil;
+    }
+
+    Class serviceCenterClass = NSClassFromString(@"MMServiceCenter");
+    Class contactMgrClass = NSClassFromString(@"CContactMgr");
+    if (!serviceCenterClass || !contactMgrClass ||
+        ![serviceCenterClass respondsToSelector:@selector(defaultCenter)]) {
+        return nil;
+    }
     id serviceCenter = ((id (*)(id, SEL))objc_msgSend)(serviceCenterClass, @selector(defaultCenter));
     if (!serviceCenter || ![serviceCenter respondsToSelector:@selector(getService:)]) {
         return nil;
     }
-    return ((id (*)(id, SEL, id))objc_msgSend)(serviceCenter, @selector(getService:), messageMgrClass);
+    id contactMgr = ((id (*)(id, SEL, id))objc_msgSend)(serviceCenter, @selector(getService:), contactMgrClass);
+    if (!contactMgr) {
+        return nil;
+    }
+
+    SEL selectors[] = {
+        NSSelectorFromString(@"getContactByName:"),
+        NSSelectorFromString(@"getContactByNameFromDB:"),
+        NSSelectorFromString(@"getContactByNameFromCache:")
+    };
+    for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
+        SEL selector = selectors[idx];
+        if (![contactMgr respondsToSelector:selector]) {
+            continue;
+        }
+        @try {
+            id contact = ((id (*)(id, SEL, id))objc_msgSend)(contactMgr, selector, target);
+            if (contact) {
+                return contact;
+            }
+        } @catch (__unused NSException *exceptionLookup) {
+        }
+    }
+    return nil;
 }
 
-static id WCHookRevokeTargetFromTipWrap(id tipWrap) {
-    if (!tipWrap) {
+static id WCHookResolveProfileOpenTargetFromCell(CommonMessageCellView *cell) {
+    if (!cell) {
         return nil;
     }
 
-    NSString *content = nil;
-    id contentObj = WCHookInvokeObject(tipWrap, @selector(m_nsContent));
-    if ([contentObj isKindOfClass:[NSString class]]) {
-        content = (NSString *)contentObj;
-    } else {
-        @try {
-            id kvcContent = [tipWrap valueForKey:@"m_nsContent"];
-            if ([kvcContent isKindOfClass:[NSString class]]) {
-                content = (NSString *)kvcContent;
-            }
-        } @catch (__unused NSException *exceptionContent) {
+    id locateTarget = WCHookLocateTargetFromObject(cell);
+    if (locateTarget) {
+        return locateTarget;
+    }
+
+    id viewController = WCHookInvokeObject(cell, @selector(getViewController));
+    if (viewController) {
+        return viewController;
+    }
+
+    UIView *carrier = WCHookLocateCarrierViewFromObject(cell);
+    UIResponder *responder = carrier;
+    while (responder) {
+        if ([responder respondsToSelector:@selector(jumpToUserProfile:Displayname:Scence:)] ||
+            [responder respondsToSelector:@selector(jumpToUserProfile:Displayname:Scence:fromBanner:)] ||
+            [responder respondsToSelector:@selector(OpenContactInfo:)]) {
+            return responder;
         }
+        responder = [responder nextResponder];
     }
-    if (!WCHookLooksLikeRevokeTipContent(content)) {
-        WCPLLogDebug(@"Revoke tip jump skip: content not revoke tip");
-        return nil;
-    }
-
-    NSString *msgSource = nil;
-    id sourceObj = WCHookInvokeObject(tipWrap, @selector(m_nsMsgSource));
-    if ([sourceObj isKindOfClass:[NSString class]]) {
-        msgSource = (NSString *)sourceObj;
-    } else {
-        @try {
-            id kvcSource = [tipWrap valueForKey:@"m_nsMsgSource"];
-            if ([kvcSource isKindOfClass:[NSString class]]) {
-                msgSource = (NSString *)kvcSource;
-            }
-        } @catch (__unused NSException *exceptionSource) {
-        }
-    }
-
-    NSString *session = WCHookExtractTagValue(msgSource, @"wcpl_revoke_session");
-    if (session.length == 0) {
-        id toUsrObj = WCHookInvokeObject(tipWrap, @selector(m_nsToUsr));
-        id fromUsrObj = WCHookInvokeObject(tipWrap, @selector(m_nsFromUsr));
-        NSString *toUsr = [toUsrObj isKindOfClass:[NSString class]] ? (NSString *)toUsrObj : nil;
-        NSString *fromUsr = [fromUsrObj isKindOfClass:[NSString class]] ? (NSString *)fromUsrObj : nil;
-        session = WCHookTrimString(toUsr) ?: WCHookTrimString(fromUsr);
-    }
-    if (session.length == 0) {
-        WCPLLogDebug(@"Revoke tip jump skip: session unavailable");
-        return nil;
-    }
-
-    long long svrID = WCHookExtractLongLongTagValue(msgSource, @"wcpl_revoke_svrid");
-    unsigned int localID = (unsigned int)WCHookExtractLongLongTagValue(msgSource, @"wcpl_revoke_localid");
-
-    id messageMgr = WCHookMessageMgr();
-    if (!messageMgr) {
-        WCPLLogDebug(@"Revoke tip jump skip: CMessageMgr unavailable");
-        return nil;
-    }
-
-    if (svrID > 0 && [messageMgr respondsToSelector:@selector(GetMsg:n64SvrID:)]) {
-        id msg = ((id (*)(id, SEL, id, long long))objc_msgSend)(messageMgr, @selector(GetMsg:n64SvrID:), session, svrID);
-        if (msg) {
-            WCPLLogInfo(@"Revoke tip jump resolve by svrID: session=%@ svrID=%lld", session, svrID);
-            return msg;
-        }
-    }
-
-    if (localID > 0) {
-        SEL localSelectors[] = {
-            NSSelectorFromString(@"GetMsg:LocalID:"),
-            NSSelectorFromString(@"GetMsg:localID:"),
-            NSSelectorFromString(@"GetMsg:MesLocalID:")
-        };
-        for (size_t idx = 0; idx < sizeof(localSelectors) / sizeof(localSelectors[0]); ++idx) {
-            SEL selector = localSelectors[idx];
-            if (![messageMgr respondsToSelector:selector]) {
-                continue;
-            }
-            id msg = ((id (*)(id, SEL, id, unsigned int))objc_msgSend)(messageMgr, selector, session, localID);
-            if (msg) {
-                WCPLLogInfo(@"Revoke tip jump resolve by localID: session=%@ localID=%u", session, localID);
-                return msg;
-            }
-        }
-    }
-
-    WCPLLogDebug(@"Revoke tip jump resolve miss: session=%@ svrID=%lld localID=%u msgSourceLen=%lu",
-                 session,
-                 svrID,
-                 localID,
-                 (unsigned long)([msgSource isKindOfClass:[NSString class]] ? msgSource.length : 0));
     return nil;
+}
+
+static BOOL WCHookOpenProfileWithTarget(id target, NSString *userName, NSString *displayName) {
+    NSString *targetUser = WCHookTrimString(userName);
+    if (!target || targetUser.length == 0) {
+        return NO;
+    }
+    NSString *targetName = WCHookTrimString(displayName) ?: targetUser;
+
+    SEL jumpWithBanner = NSSelectorFromString(@"jumpToUserProfile:Displayname:Scence:fromBanner:");
+    if ([target respondsToSelector:jumpWithBanner]) {
+        @try {
+            ((void (*)(id, SEL, id, id, unsigned int, BOOL))objc_msgSend)(target,
+                                                                           jumpWithBanner,
+                                                                           targetUser,
+                                                                           targetName,
+                                                                           89,
+                                                                           NO);
+            return YES;
+        } @catch (__unused NSException *exceptionJumpBanner) {
+        }
+    }
+
+    SEL jumpBasic = NSSelectorFromString(@"jumpToUserProfile:Displayname:Scence:");
+    if ([target respondsToSelector:jumpBasic]) {
+        @try {
+            ((void (*)(id, SEL, id, id, unsigned int))objc_msgSend)(target,
+                                                                     jumpBasic,
+                                                                     targetUser,
+                                                                     targetName,
+                                                                     89);
+            return YES;
+        } @catch (__unused NSException *exceptionJumpBasic) {
+        }
+    }
+
+    id contact = WCHookContactForUserName(targetUser);
+    if (!contact) {
+        return NO;
+    }
+
+    SEL openSelectors[] = {
+        NSSelectorFromString(@"OpenContactInfo:"),
+        NSSelectorFromString(@"openContactInfo:"),
+        NSSelectorFromString(@"_openContactInfo:"),
+        NSSelectorFromString(@"showContactInfoView:"),
+        NSSelectorFromString(@"openUserProfileViewControllerWithContact:")
+    };
+    for (size_t idx = 0; idx < sizeof(openSelectors) / sizeof(openSelectors[0]); ++idx) {
+        SEL selector = openSelectors[idx];
+        if (![target respondsToSelector:selector]) {
+            continue;
+        }
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(target, selector, contact);
+            return YES;
+        } @catch (__unused NSException *exceptionOpen) {
+        }
+    }
+    return NO;
+}
+
+static BOOL WCHookExecuteOpenQuitMemberProfileFromCell(CommonMessageCellView *cell) {
+    id messageWrap = WCHookMessageWrapForCell(cell);
+    NSString *content = WCHookMessageContentFromWrap(messageWrap);
+    if (!WCHookLooksLikeQuitMonitorTipContent(content)) {
+        return NO;
+    }
+
+    NSString *msgSource = WCHookMsgSourceFromWrap(messageWrap);
+    NSString *userName = WCHookExtractQuitMonitorUserNameFromMsgSource(msgSource);
+    if (userName.length == 0) {
+        userName = WCHookExtractQuitMonitorUserNameFromContent(content);
+    }
+    if (userName.length == 0) {
+        WCPLLogDebug(@"Quit monitor profile open skip: username missing content=%@", content ?: @"");
+        return NO;
+    }
+
+    NSString *displayName = WCHookExtractQuitMonitorDisplayNameFromContent(content);
+    id target = WCHookResolveProfileOpenTargetFromCell(cell);
+    BOOL opened = WCHookOpenProfileWithTarget(target, userName, displayName);
+    if (!opened) {
+        id viewController = WCHookInvokeObject(target, @selector(getViewController));
+        if (viewController && viewController != target) {
+            opened = WCHookOpenProfileWithTarget(viewController, userName, displayName);
+        }
+    }
+
+    if (opened) {
+        WCPLLogInfo(@"Quit monitor profile open success: user=%@ name=%@ target=%@",
+                    userName,
+                    displayName ?: @"",
+                    NSStringFromClass([target class]));
+    } else {
+        WCPLLogWarning(@"Quit monitor profile open failed: user=%@ name=%@ target=%@",
+                       userName,
+                       displayName ?: @"",
+                       target ? NSStringFromClass([target class]) : @"(nil)");
+    }
+    return opened;
 }
 
 static id WCHookLocateTargetFromObject(id object) {
     id locateTarget = nil;
-    if ([object isKindOfClass:[UIView class]]) {
-        locateTarget = WCHookLocateResponderForView((UIView *)object);
+    UIView *carrierView = WCHookLocateCarrierViewFromObject(object);
+    if (carrierView) {
+        locateTarget = WCHookLocateResponderForView(carrierView);
     }
     if (!locateTarget) {
         locateTarget = WCHookInvokeObject(object, @selector(getViewController));
+    }
+    if (!locateTarget) {
+        id viewModel = WCHookInvokeObject(object, @selector(viewModel));
+        id dataSource = WCHookInvokeObject(viewModel, @selector(recordNodeDataSource));
+        if (dataSource && [dataSource respondsToSelector:@selector(locateToMsg:)]) {
+            locateTarget = dataSource;
+        }
     }
     return locateTarget;
 }
@@ -346,11 +598,17 @@ static BOOL WCHookExecuteJumpToMessageFromCell(CommonMessageCellView *cell, id t
     }
 
     id locateTarget = WCHookLocateTargetFromObject(cell);
-    SEL locateSelector = @selector(locateToMsg:);
-    if (!locateTarget || ![locateTarget respondsToSelector:locateSelector]) {
+    return WCHookExecuteJumpToMessageWithTarget(locateTarget, targetMessage);
+}
+
+static BOOL WCHookExecuteJumpToMessageWithTarget(id locateTarget, id targetMessage) {
+    if (!locateTarget || !targetMessage) {
         return NO;
     }
-
+    SEL locateSelector = @selector(locateToMsg:);
+    if (![locateTarget respondsToSelector:locateSelector]) {
+        return NO;
+    }
     ((void (*)(id, SEL, id))objc_msgSend)(locateTarget, locateSelector, targetMessage);
     return YES;
 }
@@ -375,18 +633,6 @@ static BOOL WCHookExecuteJumpFromCell(CommonMessageCellView *cell) {
         return NO;
     }
 
-    return WCHookExecuteJumpToMessageFromCell(cell, targetMessage);
-}
-
-static BOOL WCHookExecuteJumpFromRevokeTipCell(CommonMessageCellView *cell) {
-    if (!cell) {
-        return NO;
-    }
-    id messageWrap = WCHookMessageWrapForCell(cell);
-    id targetMessage = WCHookRevokeTargetFromTipWrap(messageWrap);
-    if (!targetMessage) {
-        return NO;
-    }
     return WCHookExecuteJumpToMessageFromCell(cell, targetMessage);
 }
 

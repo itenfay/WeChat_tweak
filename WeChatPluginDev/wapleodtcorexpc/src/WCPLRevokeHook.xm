@@ -78,7 +78,7 @@ static NSString *wcpl_escapeXmlText(NSString *text) {
     return value;
 }
 
-static NSString *wcpl_buildRevokeJumpMeta(NSString *session, long long svrID, unsigned int localID, NSString *baseSource) {
+static __attribute__((unused)) NSString *wcpl_buildRevokeJumpMeta(NSString *session, long long svrID, unsigned int localID, NSString *baseSource) {
     if (svrID <= 0 && localID == 0) {
         return wcpl_trimString(baseSource);
     }
@@ -843,13 +843,7 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
         }
     }
 
-    NSString *jumpMeta = wcpl_buildRevokeJumpMeta(session, revokedMsgId, revokedLocalID, revokeWrap.m_nsMsgSource);
-    if (jumpMeta.length > 0 && [msgWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsMsgSource:), jumpMeta);
-        } @catch (__unused NSException *exceptionMsgSource) {
-        }
-    }
+    (void)revokedLocalID;
 
     if (messageMgr && [messageMgr respondsToSelector:@selector(AddLocalMsg:MsgWrap:fixTime:NewMsgArriveNotify:Unique:)]) {
         [messageMgr AddLocalMsg:session MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0 Unique:0x1];

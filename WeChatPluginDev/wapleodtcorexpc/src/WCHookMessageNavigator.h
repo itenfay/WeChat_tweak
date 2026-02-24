@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)senderLooksLikeReferView:(id)sender;
 + (BOOL)tryJumpFromCell:(CommonMessageCellView *)cell;
 + (BOOL)tryJumpFromInputTool:(id)toolView;
-+ (BOOL)tryJumpFromRevokeTipCell:(CommonMessageCellView *)cell;
++ (BOOL)tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)cell;
 
 @end
 

@@ -10,6 +10,8 @@
 static NSString *const kWCPLChatIgnoreInfo          = @"kWCPLChatIgnoreInfo";
 static NSString *const kWCPLUserIgnoreEnable        = @"kWCPLUserIgnoreEnable";
 static NSString *const kWCPLUserIgnoreInfo          = @"kWCPLUserIgnoreInfo";
+static NSString *const kWCPLQuitMonitorEnable       = @"kWCPLQuitMonitorEnable";
+static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhitelistInfo";
 
 @interface WCPLIgnoreConfig ()
 @end
@@ -29,8 +31,12 @@ static NSString *const kWCPLUserIgnoreInfo          = @"kWCPLUserIgnoreInfo";
     if (self = [super init]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         _userIgnoreEnable = [defaults boolForKey:kWCPLUserIgnoreEnable];
+        NSNumber *quitMonitorEnableObj = [defaults objectForKey:kWCPLQuitMonitorEnable];
+        _quitMonitorEnable = quitMonitorEnableObj ? quitMonitorEnableObj.boolValue : NO;
         _chatIgnoreInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLChatIgnoreInfo];
         _userIgnoreInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLUserIgnoreInfo];
+        _quitMonitorWhitelistInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLQuitMonitorWhitelistInfo];
+        [defaults setBool:_quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
     }
     return self;
 }
@@ -46,6 +52,11 @@ static NSString *const kWCPLUserIgnoreInfo          = @"kWCPLUserIgnoreInfo";
     [[NSUserDefaults standardUserDefaults] setBool:userIgnoreEnable forKey:kWCPLUserIgnoreEnable];
 }
 
+- (void)setQuitMonitorEnable:(BOOL)quitMonitorEnable {
+    _quitMonitorEnable = quitMonitorEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
+}
+
 - (void)setChatIgnoreInfo:(NSMutableDictionary<NSString *,NSNumber *> *)chatIgnoreInfo {
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(chatIgnoreInfo);
     _chatIgnoreInfo = [[WCPLThreadSafeMutableDictionary alloc] initWithDictionary:sanitized];
@@ -54,6 +65,11 @@ static NSString *const kWCPLUserIgnoreInfo          = @"kWCPLUserIgnoreInfo";
 - (void)setUserIgnoreInfo:(NSMutableDictionary<NSString *,NSNumber *> *)userIgnoreInfo {
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(userIgnoreInfo);
     _userIgnoreInfo = [[WCPLThreadSafeMutableDictionary alloc] initWithDictionary:sanitized];
+}
+
+- (void)setQuitMonitorWhitelistInfo:(NSMutableDictionary<NSString *,NSNumber *> *)quitMonitorWhitelistInfo {
+    NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(quitMonitorWhitelistInfo);
+    _quitMonitorWhitelistInfo = [[WCPLThreadSafeMutableDictionary alloc] initWithDictionary:sanitized];
 }
 
 - (void)saveChatIgnoreNameListToLocalFile {
@@ -70,6 +86,14 @@ static NSString *const kWCPLUserIgnoreInfo          = @"kWCPLUserIgnoreInfo";
         : [_userIgnoreInfo copy];
     NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(snapshot);
     [[NSUserDefaults standardUserDefaults] setObject:sanitized forKey:kWCPLUserIgnoreInfo];
+}
+
+- (void)saveQuitMonitorWhitelistToLocalFile {
+    NSDictionary *snapshot = [_quitMonitorWhitelistInfo isKindOfClass:[WCPLThreadSafeMutableDictionary class]]
+        ? [(WCPLThreadSafeMutableDictionary *)_quitMonitorWhitelistInfo dictionaryRepresentation]
+        : [_quitMonitorWhitelistInfo copy];
+    NSDictionary *sanitized = WCPLSanitizeIgnoreDictionary(snapshot);
+    [[NSUserDefaults standardUserDefaults] setObject:sanitized forKey:kWCPLQuitMonitorWhitelistInfo];
 }
 
 @end

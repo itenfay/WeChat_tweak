@@ -8,6 +8,7 @@
 #import <objc/message.h>
 
 static BOOL didRegisterWCPLPlugin = NO;
+static const void * __attribute__((unused)) kWCPLChatRoomIgnoreSectionInjectedKey = &kWCPLChatRoomIgnoreSectionInjectedKey;
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -209,42 +210,6 @@ static BOOL wcpl_settingsAlreadyHasPluginEntry(id tableViewMgr) {
 
 - (void)reloadTableData {
     %orig;
-
-    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
-    if (!config.userIgnoreEnable) {
-        return;
-    }
-
-    // 从当前控制器获取群聊联系人
-    id chatRoomContact = wcpl_safeValueForKey((id)self, @"m_chatRoomContact");
-    NSString *usrName = wcpl_safeUserNameFromObject(chatRoomContact);
-    if (usrName.length == 0) {
-        return;
-    }
-
-    // 获取 tableViewInfo
-    id tableViewInfo = wcpl_safeObjectIvar(self, "m_tableViewInfo");
-    if (!tableViewInfo) {
-        tableViewInfo = wcpl_safeValueForKey((id)self, @"m_tableViewInfo");
-    }
-    if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
-        return;
-    }
-
-    // 创建新的 section 并添加屏蔽开关，插入到靠前的位置（第1个section之后）
-    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
-    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreChatRoom:) target:self title:@"屏蔽群消息" on:config.chatIgnoreInfo[usrName].boolValue];
-    [sectionMgr addCell:ignoreCell];
-
-    // 插入到第1个位置（在群头像section之后），使选项更显眼
-    if ([tableViewInfo respondsToSelector:@selector(insertSection:At:)]) {
-        [tableViewInfo insertSection:sectionMgr At:1];
-    } else {
-        [tableViewInfo addSection:sectionMgr];
-    }
-
-    MMTableView *tableView = [tableViewInfo getTableView];
-    [tableView reloadData];
 }
 
 %new
@@ -278,60 +243,6 @@ static BOOL wcpl_settingsAlreadyHasPluginEntry(id tableViewMgr) {
 
 - (void)reloadTableData {
     %orig;
-
-    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
-    if (!config.userIgnoreEnable) {
-        return;
-    }
-
-    id contact = self.m_contact;
-    NSString *usrName = wcpl_safeUserNameFromObject(contact);
-    if (usrName.length == 0) {
-        return;
-    }
-    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) {
-        return;
-    }
-
-    // ContactInfoViewController 使用 m_oContactInfoAssist 管理表格
-    // m_oContactInfoAssist (WeixinContactInfoAssist) 中包含 m_tableViewInfo
-    id tableViewInfo = nil;
-    id assist = nil;
-
-    assist = wcpl_safeObjectIvar(self, "m_oContactInfoAssist");
-    if (!assist) {
-        assist = wcpl_safeValueForKey(self, @"m_oContactInfoAssist");
-    }
-
-    if (!assist) {
-        WCPLLogWarning(@"ContactInfoViewController: Failed to get m_oContactInfoAssist");
-        return;
-    }
-
-    // 从 assist 获取 m_tableViewInfo
-    tableViewInfo = wcpl_safeObjectIvar(assist, "m_tableViewInfo");
-    if (!tableViewInfo) {
-        tableViewInfo = wcpl_safeValueForKey(assist, @"m_tableViewInfo");
-    }
-
-    if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(addSection:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
-        WCPLLogWarning(@"ContactInfoViewController: Failed to get m_tableViewInfo or invalid tableViewInfo");
-        return;
-    }
-
-    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
-    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreUser:) target:self title:@"屏蔽此人消息" on:config.userIgnoreInfo[usrName].boolValue];
-    [sectionMgr addCell:ignoreCell];
-
-    // 插入到第1个位置，使选项更显眼
-    if ([tableViewInfo respondsToSelector:@selector(insertSection:At:)]) {
-        [tableViewInfo insertSection:sectionMgr At:1];
-    } else {
-        [tableViewInfo addSection:sectionMgr];
-    }
-
-    MMTableView *tableView = [tableViewInfo getTableView];
-    [tableView reloadData];
 }
 
 %new
@@ -372,56 +283,6 @@ static BOOL wcpl_settingsAlreadyHasPluginEntry(id tableViewMgr) {
 
 - (void)viewWillAppear:(_Bool)arg1 {
     %orig;
-
-    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
-    if (!config.userIgnoreEnable) {
-        return;
-    }
-
-    // 获取联系人
-    id contact = wcpl_safeObjectIvar(self, "m_contact");
-    if (!contact) {
-        contact = wcpl_safeValueForKey(self, @"m_contact");
-    }
-    NSString *usrName = wcpl_safeUserNameFromObject(contact);
-    if (usrName.length == 0) {
-        return;
-    }
-    // 排除群聊
-    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) {
-        return;
-    }
-
-    // 检查是否已经添加过（避免重复添加）
-    static const void *kWCPLIgnoreSectionAddedKey = &kWCPLIgnoreSectionAddedKey;
-    if (objc_getAssociatedObject(self, kWCPLIgnoreSectionAddedKey)) {
-        return;
-    }
-
-    // 获取 m_tableViewInfo
-    id tableViewInfo = wcpl_safeObjectIvar(self, "m_tableViewInfo");
-    if (!tableViewInfo) {
-        tableViewInfo = wcpl_safeValueForKey(self, @"m_tableViewInfo");
-    }
-    if (!tableViewInfo || ![tableViewInfo respondsToSelector:@selector(insertSection:At:)] || ![tableViewInfo respondsToSelector:@selector(getTableView)]) {
-        WCPLLogWarning(@"ContactSettingViewController: Failed to get m_tableViewInfo");
-        return;
-    }
-
-    // 创建消息屏蔽 section
-    WCTableViewSectionManager *sectionMgr = [%c(WCTableViewSectionManager) sectionInfoHeader:@"消息屏蔽"];
-    WCTableViewNormalCellManager *ignoreCell = [%c(WCTableViewNormalCellManager) switchCellForSel:@selector(wcpl_handleIgnoreUserInSetting:) target:self title:@"屏蔽此人消息" on:config.userIgnoreInfo[usrName].boolValue];
-    [sectionMgr addCell:ignoreCell];
-
-    // 插入到第0个位置（最顶部，在编辑备注之前）
-    [tableViewInfo insertSection:sectionMgr At:0];
-
-    // 标记已添加
-    objc_setAssociatedObject(self, kWCPLIgnoreSectionAddedKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
-    // 刷新表格
-    MMTableView *tableView = [tableViewInfo getTableView];
-    [tableView reloadData];
 }
 
 %new

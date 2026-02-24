@@ -8,6 +8,7 @@
 #import "WCPLCrashReporter.h"
 #import "WCPLLogger.h"
 #import "WCPLRepeatButtonEngine.h"
+#import "WCPLRepeatButtonAssetManager.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #include <stdint.h>
@@ -27,6 +28,8 @@ static const void *kWCPLRepeatButtonMessageKey = &kWCPLRepeatButtonMessageKey;
 static const void *kWCPLRepeatButtonTextAnchorLogOnceKey = &kWCPLRepeatButtonTextAnchorLogOnceKey;
 static const void *kWCPLRepeatButtonTapFeedbackKey = &kWCPLRepeatButtonTapFeedbackKey;
 static const void *kWCPLRepeatButtonLastTapTimeKey = &kWCPLRepeatButtonLastTapTimeKey;
+static const void *kWCPLRepeatButtonStyleStampKey = &kWCPLRepeatButtonStyleStampKey;
+static const void *kWCPLRepeatButtonAppearanceTokenKey = &kWCPLRepeatButtonAppearanceTokenKey;
 static const void *kWCPLDoubleTapLastHandledAtKey = &kWCPLDoubleTapLastHandledAtKey;
 static const void *kWCPLDoubleTapLastTapAtKey = &kWCPLDoubleTapLastTapAtKey;
 static const void *kWCPLDoubleTapManualTapCountKey = &kWCPLDoubleTapManualTapCountKey;
@@ -130,6 +133,7 @@ static BOOL wcpl_isPointInMessageBubbleArea(id cell, CGPoint pointInCell, NSStri
 static BOOL wcpl_isTouchInMessageBubbleArea(id cell, UITouch *touch, NSString *scopeTag);
 static NSDateFormatter *wcpl_messageTimeFormatter(void);
 static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp);
+static void wcpl_updateRepeatButtonVisualShape(UIButton *button);
 
 static BOOL wcpl_shouldUseLocalCellRepeatEngine(WCPLGestureConfig *config) {
     if (kWCPLRepeatForceLocalCellEngine) {
@@ -1331,6 +1335,91 @@ static UIView *wcpl_findMessageCellAncestorView(UIView *view) {
         current = current.superview;
     }
     return nil;
+}
+
+static NSArray<id> *wcpl_revokeCandidatesFromRichTextObject(id richTextObj) {
+    if (!richTextObj) {
+        return @[];
+    }
+
+    NSMutableArray<id> *candidates = [NSMutableArray array];
+    [candidates addObject:richTextObj];
+
+    SEL selDelegateView = @selector(delegateView);
+    if ([richTextObj respondsToSelector:selDelegateView]) {
+        @try {
+            id delegateView = ((id (*)(id, SEL))objc_msgSend)(richTextObj, selDelegateView);
+            if (delegateView) {
+                [candidates addObject:delegateView];
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    SEL selCoverView = @selector(richTextCoverView);
+    if ([richTextObj respondsToSelector:selCoverView]) {
+        @try {
+            id coverView = ((id (*)(id, SEL))objc_msgSend)(richTextObj, selCoverView);
+            if (coverView) {
+                [candidates addObject:coverView];
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    NSArray<NSString *> *keys = @[@"linkDelegate", @"layoutDelegate", @"delegate", @"textSelectEventDelegate", @"menuResponder"];
+    for (NSString *key in keys) {
+        id candidate = nil;
+        @try {
+            candidate = [richTextObj valueForKey:key];
+        } @catch (__unused NSException *exceptionKVC) {
+            candidate = nil;
+        }
+        if (candidate) {
+            [candidates addObject:candidate];
+        }
+    }
+
+    NSMutableArray<id> *unique = [NSMutableArray arrayWithCapacity:candidates.count];
+    for (id candidate in candidates) {
+        if (!candidate) {
+            continue;
+        }
+        BOOL exists = NO;
+        for (id existing in unique) {
+            if (existing == candidate) {
+                exists = YES;
+                break;
+            }
+        }
+        if (!exists) {
+            [unique addObject:candidate];
+        }
+    }
+    return unique;
+}
+
+static BOOL wcpl_tryOpenQuitMemberProfileByRichTextObject(id richTextObj, NSString *scene) {
+    NSArray<id> *candidates = wcpl_revokeCandidatesFromRichTextObject(richTextObj);
+    for (id candidate in candidates) {
+        UIView *cellView = nil;
+        if ([candidate isKindOfClass:[UIView class]]) {
+            cellView = wcpl_findMessageCellAncestorView((UIView *)candidate);
+            if (!cellView) {
+                cellView = (UIView *)candidate;
+            }
+        }
+        if (!cellView) {
+            continue;
+        }
+        if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)cellView]) {
+            WCPLLogInfo(@"Quit monitor profile open handled by rich text: scene=%@ cell=%@",
+                        scene ?: @"unknown",
+                        NSStringFromClass([cellView class]));
+            return YES;
+        }
+    }
+    return NO;
 }
 
 static BOOL wcpl_shouldBlockNativeDoubleTap(id cell, id sender, NSString *scopeTag) {
@@ -4816,6 +4905,23 @@ static CGFloat wcpl_repeatButtonSizeFromConfig(void) {
     return size;
 }
 
+static void wcpl_updateRepeatButtonVisualShape(UIButton *button) {
+    if (![button isKindOfClass:[UIButton class]]) {
+        return;
+    }
+
+    CGRect bounds = button.bounds;
+    CGFloat width = CGRectGetWidth(bounds);
+    CGFloat height = CGRectGetHeight(bounds);
+    if (width < 1.0f || height < 1.0f) {
+        return;
+    }
+
+    CGFloat radius = height * 0.5f;
+    button.layer.cornerRadius = radius;
+    button.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:radius].CGPath;
+}
+
 static void wcpl_syncRepeatEngineModeIfNeeded(void) {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     BOOL v2Enabled = wcpl_shouldUseLocalCellRepeatEngine(config);
@@ -4909,6 +5015,25 @@ static void wcpl_setupRepeatLifecycleObserver(void) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.85 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 gWCPLRepeatRefreshGateEnabled = NO;
             });
+        }];
+        [center addObserverForName:kWCPLRepeatButtonAssetDidChangeNotification
+                            object:nil
+                             queue:[NSOperationQueue mainQueue]
+                        usingBlock:^(__unused NSNotification *note) {
+            WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+            [[WCPLRepeatButtonAssetManager sharedManager] migrateIfNeededForConfig:config];
+
+            gWCPLRepeatNeedFullResync = YES;
+            gWCPLRepeatRefreshRoundCounter = 0;
+            gWCPLRepeatGlobalRefreshPending = NO;
+            gWCPLRepeatRefreshScheduleToken += 1;
+            wcpl_clearRepeatOwnerMaps();
+            wcpl_forceClearRepeatButtonsInAllWindows();
+
+            Class cellClass = %c(CommonMessageCellView);
+            if (cellClass && [cellClass respondsToSelector:@selector(wchook_scheduleGlobalRepeatButtonRefresh)]) {
+                ((void (*)(id, SEL))objc_msgSend)(cellClass, @selector(wchook_scheduleGlobalRepeatButtonRefresh));
+            }
         }];
     });
 }
@@ -5192,6 +5317,8 @@ static void wcpl_setRepeatOwnerViewForMessageKey(NSString *messageKey, UIView *o
 - (UIView *)wchook_bubbleAnchorView;
 - (void)wchook_layoutRepeatButton:(UIButton *)button withBubbleView:(UIView *)bubbleView isSelf:(BOOL)isSelf;
 - (UIButton *)wchook_buildRepeatButton;
+- (NSInteger)wchook_repeatButtonStyleStampForCurrentTrait;
+- (void)wchook_applyThemeStyleForRepeatButton:(UIButton *)button force:(BOOL)force;
 - (NSDictionary *)wchook_repeatAnchorContextForV2;
 - (UIButton *)wchook_repeatButtonForV2EnsureCreate:(BOOL)createIfNeeded;
 - (void)wchook_bindRepeatButtonForV2:(UIButton *)button wrap:(id)wrap messageKey:(NSString *)messageKey;
@@ -6055,8 +6182,9 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
             bubbleView = ownerView;
         }
 
+        [ownerCell wchook_applyThemeStyleForRepeatButton:button force:NO];
         [ownerCell wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:isSelf];
-        button.layer.cornerRadius = CGRectGetHeight(button.bounds) * 0.5f;
+        wcpl_updateRepeatButtonVisualShape(button);
         CGFloat titleSize = MIN(14.0f, MAX(10.0f, CGRectGetHeight(button.bounds) * 0.55f));
         button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
 
@@ -6443,6 +6571,142 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
 }
 
 %new
+- (NSInteger)wchook_repeatButtonStyleStampForCurrentTrait {
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle style = self.traitCollection.userInterfaceStyle;
+        return (style == UIUserInterfaceStyleDark) ? 2 : 1;
+    }
+    return 1;
+}
+
+%new
+- (void)wchook_applyThemeStyleForRepeatButton:(UIButton *)button force:(BOOL)force {
+    if (![button isKindOfClass:[UIButton class]]) {
+        return;
+    }
+
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config) {
+        return;
+    }
+    WCPLRepeatButtonAssetManager *assetManager = [WCPLRepeatButtonAssetManager sharedManager];
+    if (config.repeatButtonCustomImageSchemaVersion != kWCPLRepeatButtonAssetSchemaVersionCurrent) {
+        [assetManager migrateIfNeededForConfig:config];
+    }
+
+    NSInteger styleStamp = [self wchook_repeatButtonStyleStampForCurrentTrait];
+    BOOL isDarkMode = NO;
+    if (@available(iOS 13.0, *)) {
+        isDarkMode = (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark);
+    }
+
+    CGFloat buttonSize = wcpl_repeatButtonSizeFromConfig();
+    CGFloat screenScale = [UIScreen mainScreen].scale;
+    BOOL useCustomImage = config.repeatButtonCustomImageEnable && config.repeatButtonCustomImageRelativePath.length > 0;
+    NSInteger imageRevision = MAX((NSInteger)0, config.repeatButtonCustomImageRevision);
+
+    NSString *appearanceToken = [NSString stringWithFormat:@"style:%ld|custom:%d|rev:%ld|size:%.0f|scale:%.0f",
+                                 (long)styleStamp,
+                                 useCustomImage ? 1 : 0,
+                                 (long)imageRevision,
+                                 buttonSize,
+                                 screenScale];
+    NSString *cachedToken = objc_getAssociatedObject(button, kWCPLRepeatButtonAppearanceTokenKey);
+    if (!force &&
+        [cachedToken isKindOfClass:[NSString class]] &&
+        [cachedToken isEqualToString:appearanceToken]) {
+        return;
+    }
+
+    UIColor *backgroundColor = isDarkMode
+        ? [UIColor colorWithWhite:0.16f alpha:0.94f]
+        : [UIColor colorWithWhite:1.0f alpha:0.96f];
+    UIColor *titleColor = isDarkMode
+        ? [UIColor colorWithRed:0.37f green:0.88f blue:0.55f alpha:1.0f]
+        : [UIColor colorWithRed:0.03f green:0.68f blue:0.36f alpha:1.0f];
+    UIColor *borderColor = isDarkMode
+        ? [UIColor colorWithWhite:1.0f alpha:0.20f]
+        : [UIColor colorWithWhite:0.0f alpha:0.12f];
+    UIColor *shadowColor = isDarkMode
+        ? [UIColor colorWithWhite:0.0f alpha:1.0f]
+        : [UIColor blackColor];
+
+    @try {
+        button.layer.shadowColor = shadowColor.CGColor;
+        button.layer.shouldRasterize = YES;
+        button.layer.rasterizationScale = screenScale;
+        button.layer.masksToBounds = NO;
+
+        UIImage *customImage = nil;
+        if (useCustomImage) {
+            customImage = [assetManager displayImageForConfig:config
+                                                   buttonSize:buttonSize
+                                                        scale:screenScale];
+        }
+
+        if ([customImage isKindOfClass:[UIImage class]]) {
+            button.backgroundColor = [UIColor clearColor];
+            button.layer.borderWidth = 0.5f;
+            button.layer.borderColor = borderColor.CGColor;
+            button.layer.shadowOpacity = 0.0f;
+            button.layer.shadowOffset = CGSizeZero;
+            button.layer.shadowRadius = 0.0f;
+            [button setImage:nil forState:UIControlStateNormal];
+            [button setTitle:nil forState:UIControlStateNormal];
+            [button setTitle:nil forState:UIControlStateHighlighted];
+            [button setBackgroundImage:customImage forState:UIControlStateNormal];
+            [button setBackgroundImage:customImage forState:UIControlStateHighlighted];
+        } else {
+            button.layer.borderWidth = 0.5f;
+            button.layer.borderColor = borderColor.CGColor;
+            button.layer.shadowOpacity = isDarkMode ? 0.28f : 0.10f;
+            button.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+            button.layer.shadowRadius = 2.5f;
+            [button setBackgroundImage:nil forState:UIControlStateNormal];
+            [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+            button.backgroundColor = backgroundColor;
+            [button setImage:nil forState:UIControlStateNormal];
+            [button setTitle:@"+1" forState:UIControlStateNormal];
+            [button setTitleColor:titleColor forState:UIControlStateNormal];
+            CGFloat titleSize = MIN(14.0f, MAX(10.0f, buttonSize * 0.55f));
+            button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
+        }
+
+        wcpl_updateRepeatButtonVisualShape(button);
+
+        objc_setAssociatedObject(button,
+                                 kWCPLRepeatButtonStyleStampKey,
+                                 @(styleStamp),
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        if ([customImage isKindOfClass:[UIImage class]] || !useCustomImage) {
+            objc_setAssociatedObject(button,
+                                     kWCPLRepeatButtonAppearanceTokenKey,
+                                     appearanceToken,
+                                     OBJC_ASSOCIATION_COPY_NONATOMIC);
+        } else {
+            // 自定义图开启但资源未命中时，不缓存 token，允许后续重试加载。
+            objc_setAssociatedObject(button, kWCPLRepeatButtonAppearanceTokenKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"Repeat button custom style failed: %@ - %@", exception.name ?: @"<nil>", exception.reason ?: @"<nil>");
+        button.layer.borderWidth = 0.5f;
+        button.layer.borderColor = borderColor.CGColor;
+        button.layer.shadowOpacity = isDarkMode ? 0.28f : 0.10f;
+        button.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+        button.layer.shadowRadius = 2.5f;
+        [button setBackgroundImage:nil forState:UIControlStateNormal];
+        [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+        button.backgroundColor = backgroundColor;
+        [button setTitle:@"+1" forState:UIControlStateNormal];
+        [button setTitleColor:titleColor forState:UIControlStateNormal];
+        CGFloat titleSize = MIN(14.0f, MAX(10.0f, buttonSize * 0.55f));
+        button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
+        wcpl_updateRepeatButtonVisualShape(button);
+        objc_setAssociatedObject(button, kWCPLRepeatButtonAppearanceTokenKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+}
+
+%new
 - (UIButton *)wchook_buildRepeatButton {
     CGFloat buttonSize = wcpl_repeatButtonSizeFromConfig();
 
@@ -6450,20 +6714,17 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
     button.tag = kWCPLRepeatButtonTag;
     button.exclusiveTouch = YES;
     button.adjustsImageWhenHighlighted = NO;
-    button.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.96f];
+    button.clipsToBounds = NO;
     button.layer.cornerRadius = buttonSize * 0.5f;
     button.layer.borderWidth = 0.5f;
-    button.layer.borderColor = [UIColor colorWithWhite:0.0f alpha:0.12f].CGColor;
-    button.layer.shadowColor = [UIColor blackColor].CGColor;
     button.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
     button.layer.shadowRadius = 2.5f;
-    button.layer.shadowOpacity = 0.10f;
     button.layer.shouldRasterize = YES;
     button.layer.rasterizationScale = [UIScreen mainScreen].scale;
     [button setTitle:@"+1" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:0.03f green:0.68f blue:0.36f alpha:1.0f] forState:UIControlStateNormal];
     CGFloat titleSize = MIN(14.0f, MAX(10.0f, buttonSize * 0.55f));
     button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
+    [self wchook_applyThemeStyleForRepeatButton:button force:YES];
     [button addTarget:self action:@selector(wchook_onRepeatButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [button addTarget:self action:@selector(wchook_onRepeatButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
     [button addTarget:self action:@selector(wchook_onRepeatButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
@@ -6663,6 +6924,7 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
         [self wchook_hideRepeatButtonByNFQPrinciple];
         return;
     }
+    [self wchook_applyThemeStyleForRepeatButton:button force:NO];
 
     [self wchook_bindRepeatButtonForV2:button wrap:msgWrap messageKey:messageKey];
     button.hidden = NO;
@@ -6685,7 +6947,7 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
     }
 
     [self wchook_layoutRepeatButton:button withBubbleView:bubbleView isSelf:isSelf];
-    button.layer.cornerRadius = CGRectGetHeight(button.bounds) * 0.5f;
+    wcpl_updateRepeatButtonVisualShape(button);
     CGFloat titleSize = MIN(14.0f, MAX(10.0f, CGRectGetHeight(button.bounds) * 0.55f));
     button.titleLabel.font = [UIFont systemFontOfSize:titleSize weight:UIFontWeightSemibold];
 
@@ -7207,6 +7469,27 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
         return;
     }
     [self wchook_updateRepeatButtonIfNeeded];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    %orig;
+
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle currentStyle = self.traitCollection.userInterfaceStyle;
+        UIUserInterfaceStyle previousStyle = previousTraitCollection
+            ? previousTraitCollection.userInterfaceStyle
+            : UIUserInterfaceStyleUnspecified;
+        if (previousTraitCollection && currentStyle == previousStyle) {
+            return;
+        }
+
+        UIButton *button = [self wchook_repeatButtonForV2EnsureCreate:NO];
+        if (![button isKindOfClass:[UIButton class]]) {
+            return;
+        }
+        [self wchook_applyThemeStyleForRepeatButton:button force:YES];
+        [self bringSubviewToFront:button];
+    }
 }
 
 - (void)didMoveToWindow {
@@ -8998,7 +9281,7 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     if (wcpl_shouldSuppressTapForCell(self, @"onTouchUpInside")) {
         return;
     }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
@@ -9008,7 +9291,7 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     if (wcpl_shouldSuppressTapForCell(self, @"onTouchEnded")) {
         return;
     }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
@@ -9194,21 +9477,21 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onTouchUpInside {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
 }
 
 - (void)onTouchEnded {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig(touches, event);
@@ -9219,38 +9502,52 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 %hook SystemMessageCellView
 
 - (void)onTouchUpInside {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
 }
 
 - (void)onTouchEnded {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig(touches, event);
 }
 
 - (void)onTap {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
 }
 
 - (void)onClick {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
+}
+
+- (void)onLinkClicked:(id)linkInfo withRect:(CGRect)rect {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig(linkInfo, rect);
+}
+
+- (void)onWeAppLinkClicked:(id)linkInfo withRect:(CGRect)rect {
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
+        return;
+    }
+    %orig(linkInfo, rect);
 }
 
 %end
@@ -9294,6 +9591,9 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.onTouchUpInside")) {
         return;
     }
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
+        return;
+    }
     %orig;
 }
 
@@ -9302,6 +9602,9 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         return;
     }
     if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.onTouchEnded")) {
+        return;
+    }
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig;
@@ -9326,6 +9629,9 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         return;
     }
     if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.touchesEnded")) {
+        return;
+    }
+    if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig(touches, event);
@@ -9442,11 +9748,64 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     %orig(sender);
 }
 
+- (void)onSingleTap:(id)sender {
+    if (wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"MMRichTextCoverView.onSingleTap")) {
+        return;
+    }
+    %orig(sender);
+}
+
 - (BOOL)onClickPreViewWithPoint:(CGPoint)point DoubleClick:(BOOL)doubleClick {
+    if (!doubleClick && wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"MMRichTextCoverView.onClickPreView")) {
+        return YES;
+    }
     if (doubleClick && wcpl_shouldBlockNativeDoubleTapForView(self, nil, @"MMRichTextCoverView.onClickPreView")) {
         return NO;
     }
     return %orig(point, doubleClick);
+}
+
+%end
+
+%hook RichTextView
+
+- (void)clickOnTextEvent:(id)event {
+    if (wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"RichTextView.clickOnTextEvent")) {
+        return;
+    }
+    %orig(event);
+}
+
+- (void)clickOnLinkEvent:(id)event {
+    if (wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"RichTextView.clickOnLinkEvent")) {
+        return;
+    }
+    %orig(event);
+}
+
+- (void)clickOnWeAppLinkEvent:(id)event {
+    if (wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"RichTextView.clickOnWeAppLinkEvent")) {
+        return;
+    }
+    %orig(event);
+}
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if (wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"RichTextView.touchesEnded")) {
+        return;
+    }
+    %orig(touches, event);
+}
+
+%end
+
+%hook CTRichTextView
+
+- (void)touchesEnded:(id)touches withEvent:(id)event {
+    if (wcpl_tryOpenQuitMemberProfileByRichTextObject(self, @"CTRichTextView.touchesEnded")) {
+        return;
+    }
+    %orig(touches, event);
 }
 
 %end

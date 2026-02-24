@@ -18,4 +18,8 @@
     return NO;
 }
 
+- (BOOL)isChatroom {
+    return [self rangeOfString:@"@chatroom" options:NSCaseInsensitiveSearch].location != NSNotFound;
+}
+
 @end

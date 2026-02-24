@@ -14,22 +14,27 @@
 #import "WCPLLogger.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLLogSettingsViewController.h"
+#import "WCPLRepeatButtonAssetManager.h"
 #import <objc/runtime.h>
 
 typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLSettingPageTypeRoot = 0,
     WCPLSettingPageTypeRedEnvelop,
     WCPLSettingPageTypeMessageIgnore,
+    WCPLSettingPageTypeGroupMonitor,
     WCPLSettingPageTypeOther,
     WCPLSettingPageTypeSwipeGesture,
     WCPLSettingPageTypeRepeatBubble,
+    WCPLSettingPageTypeLongPressPanel,
     WCPLSettingPageTypePush2Chat,
 };
 
-@interface WCPLSettingViewController ()
+@interface WCPLSettingViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) WCTableViewManager *tableViewMgr;
 @property (nonatomic, assign) WCPLSettingPageType pageType;
+@property (nonatomic, strong, nullable) UIImagePickerController *wcplRepeatImagePicker;
+@property (nonatomic, assign) BOOL wcplPendingEnableRepeatCustomImageAfterPick;
 
 - (instancetype)initWithPageType:(WCPLSettingPageType)pageType;
 - (void)wcpl_setupTableViewManager;
@@ -123,6 +128,9 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         case WCPLSettingPageTypeMessageIgnore:
             [self addMessageIgnoreSettingSection];
             break;
+        case WCPLSettingPageTypeGroupMonitor:
+            [self addGroupMonitorSettingSection];
+            break;
         case WCPLSettingPageTypeOther:
             [self addOtherSettingSection];
             break;
@@ -131,6 +139,9 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
             break;
         case WCPLSettingPageTypeRepeatBubble:
             [self addRepeatBubbleSettingSection];
+            break;
+        case WCPLSettingPageTypeLongPressPanel:
+            [self addLongPressPanelSettingSection];
             break;
         case WCPLSettingPageTypePush2Chat:
             [self addPush2ChatSettingSection];
@@ -151,12 +162,16 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
             return @"红包功能";
         case WCPLSettingPageTypeMessageIgnore:
             return @"消息屏蔽";
+        case WCPLSettingPageTypeGroupMonitor:
+            return @"群聊监控";
         case WCPLSettingPageTypeOther:
             return @"其他";
         case WCPLSettingPageTypeSwipeGesture:
             return @"消息手势";
         case WCPLSettingPageTypeRepeatBubble:
             return @"复读气泡";
+        case WCPLSettingPageTypeLongPressPanel:
+            return @"长按面板";
         case WCPLSettingPageTypePush2Chat:
             return @"消息直达";
         case WCPLSettingPageTypeRoot:
@@ -172,9 +187,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息直达" detail:@"推送直达聊天" selector:@selector(openPush2ChatSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"红包功能" detail:@"自动抢包、提醒、汇总" selector:@selector(openRedEnvelopSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息屏蔽" detail:@"屏蔽用户和群聊提醒" selector:@selector(openMessageIgnoreSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"群聊监控" detail:@"退群提示与成员变化提醒" selector:@selector(openGroupMonitorSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"其他" detail:@"防撤回、模拟 iPad、朋友圈广告" selector:@selector(openOtherSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"消息手势" detail:@"左右滑动、双击、引用跳转" selector:@selector(openSwipeGestureSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"复读气泡" detail:@"复读按钮和类型支持" selector:@selector(openRepeatBubbleSettingsEntry)]];
+    [section addCell:[self createTopLevelEntryCellWithTitle:@"长按面板" detail:@"复读/小丑/语音转发/抖音解析开关" selector:@selector(openLongPressPanelSettingsEntry)]];
     [section addCell:[self createTopLevelEntryCellWithTitle:@"日志设置" detail:@"调试日志与上传" selector:@selector(openDebugSettings)]];
     [self.tableViewMgr addSection:section];
 }
@@ -206,6 +223,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)openGroupMonitorSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeGroupMonitor];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)openSwipeGestureSettingsEntry {
     WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeSwipeGesture];
     [self.navigationController pushViewController:controller animated:YES];
@@ -213,6 +235,11 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)openRepeatBubbleSettingsEntry {
     WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeRepeatBubble];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openLongPressPanelSettingsEntry {
+    WCPLSettingViewController *controller = [[WCPLSettingViewController alloc] initWithPageType:WCPLSettingPageTypeLongPressPanel];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -612,7 +639,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)addOtherSettingSection {
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"其他"];
 
-    [section addCell:[self createDouyinParserCell]];
     [section addCell:[self createTimelineAdBlockCell]];
     [section addCell:[self createEmulateIPadLoginCell]];
     [section addCell:[self createAbortRemokeMessageCell]];
@@ -682,12 +708,51 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [self.tableViewMgr addSection:section];
 }
 
+- (void)addGroupMonitorSettingSection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"群聊监控" Footer:@"开启后，当检测到群成员退出时，会在对应群会话插入本地提示消息。\n白名单为空=监控全部群聊；白名单非空=仅监控白名单群聊。"];
+    [section addCell:[self createQuitMonitorEnableCell]];
+    [section addCell:[self createQuitMonitorWhitelistCell]];
+    [self.tableViewMgr addSection:section];
+}
+
 - (WCTableViewNormalCellManager *)createUserIgnoreEnableCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingUserIgnoreEnable:) target:self title:@"启用消息屏蔽" on:[WCPLConfigCenter shared].ignore.userIgnoreEnable];
 }
 
 - (void)settingUserIgnoreEnable:(UISwitch *)sender {
     [WCPLConfigCenter shared].ignore.userIgnoreEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createQuitMonitorEnableCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingQuitMonitorEnable:)
+                                                                     target:self
+                                                                      title:@"退群监控提示"
+                                                                         on:[WCPLConfigCenter shared].ignore.quitMonitorEnable];
+}
+
+- (void)settingQuitMonitorEnable:(UISwitch *)sender {
+    [WCPLConfigCenter shared].ignore.quitMonitorEnable = sender.on;
+}
+
+- (WCTableViewNormalCellManager *)createQuitMonitorWhitelistCell {
+    NSArray<NSString *> *chatrooms = [self quitMonitorWhitelistedChatrooms];
+    NSString *countText = [NSString stringWithFormat:@"%lu", (unsigned long)chatrooms.count];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showQuitMonitorWhitelistSelector)
+                                                                     target:self
+                                                                      title:@"退群监控白名单"
+                                                                 rightValue:countText
+                                                              accessoryType:1];
+}
+
+- (NSArray<NSString *> *)quitMonitorWhitelistedChatrooms {
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
+    NSMutableArray<NSString *> *results = [NSMutableArray array];
+    [config.quitMonitorWhitelistInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
+        if (obj.boolValue && [key rangeOfString:@"@chatroom"].location != NSNotFound) {
+            [results addObject:key];
+        }
+    }];
+    return results.copy;
 }
 
 - (WCTableViewNormalCellManager *)createIgnoredChatroomCountCell {
@@ -860,6 +925,24 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     }];
 }
 
+- (void)showQuitMonitorWhitelistSelector {
+    WCPLCrashBreadcrumb(@"打开退群监控白名单");
+    NSArray *selected = [self wcpl_chatroomUserNamesFromArray:[self quitMonitorWhitelistedChatrooms] scene:@"quit_monitor_whitelist_open"];
+    WCPLLogInfo(@"[设置] 退群监控白名单使用统一控制器: selected=%lu", (unsigned long)selected.count);
+
+    __weak typeof(self) weakSelf = self;
+    [self wcpl_presentUnifiedSelectorWithType:WCPLUnifiedMultiSelectTypeChatroom
+                                        title:@"退群监控白名单"
+                                     selected:selected
+                                       onDone:^(NSArray<NSString *> *userNames) {
+        typeof(self) strongSelf = weakSelf;
+        if (!strongSelf) {
+            return;
+        }
+        [strongSelf updateQuitMonitorWhitelistWithChatrooms:userNames];
+    }];
+}
+
 - (void)wcpl_presentUnifiedSelectorWithType:(WCPLUnifiedMultiSelectType)selectType
                                       title:(NSString *)title
                                    selected:(NSArray<NSString *> *)selected
@@ -918,6 +1001,18 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     WCPLLogInfo(@"[设置] 保存屏蔽好友: count=%lu", (unsigned long)sanitizedUsers.count);
 }
 
+- (void)updateQuitMonitorWhitelistWithChatrooms:(NSArray *)chatrooms {
+    NSArray<NSString *> *sanitizedChatrooms = [self wcpl_chatroomUserNamesFromArray:chatrooms scene:@"quit_monitor_whitelist_save"];
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
+    NSMutableDictionary<NSString *, NSNumber *> *dict = [NSMutableDictionary dictionary];
+    for (NSString *chatroom in sanitizedChatrooms) {
+        dict[chatroom] = @(YES);
+    }
+    config.quitMonitorWhitelistInfo = dict;
+    [config saveQuitMonitorWhitelistToLocalFile];
+    WCPLLogInfo(@"[设置] 保存退群监控白名单: count=%lu", (unsigned long)sanitizedChatrooms.count);
+}
+
 #pragma mark - Swipe Quote Setting
 
 - (void)addSwipeQuoteSettingSection {
@@ -967,12 +1062,20 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (void)addRepeatBubbleSettingSection {
+    WCPLGestureConfig *gestureConfig = [WCPLConfigCenter shared].gesture;
+    [[WCPLRepeatButtonAssetManager sharedManager] migrateIfNeededForConfig:gestureConfig];
+
     WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"复读气泡"];
     [section addCell:[self createRepeatButtonSwitchCell]];
 
-    if ([WCPLConfigCenter shared].gesture.repeatButtonEnable) {
+    if (gestureConfig.repeatButtonEnable) {
         [section addCell:[self createRepeatButtonHapticCell]];
         [section addCell:[self createRepeatButtonSizeCell]];
+        [section addCell:[self createRepeatCustomImageSwitchCell]];
+        [section addCell:[self createRepeatCustomImagePickerCell]];
+        if (gestureConfig.repeatButtonCustomImageRelativePath.length > 0) {
+            [section addCell:[self createRepeatCustomImageResetCell]];
+        }
 #ifdef DEBUG
         [section addCell:[self createRepeatButtonEngineV2Cell]];
 #endif
@@ -982,6 +1085,15 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         [section addCell:[self createRepeatSupportVideoCell]];
     }
 
+    [self.tableViewMgr addSection:section];
+}
+
+- (void)addLongPressPanelSettingSection {
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"长按面板" Footer:@"控制消息长按菜单中的复读、小丑、语音转发与抖音解析。"];
+    [section addCell:[self createRepeatLongPressMenuSwitchCell]];
+    [section addCell:[self createClownFeatureSwitchCell]];
+    [section addCell:[self createVoiceForwardFeatureSwitchCell]];
+    [section addCell:[self createDouyinParserCell]];
     [self.tableViewMgr addSection:section];
 }
 
@@ -1002,6 +1114,27 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButton:) target:self title:@"启用气泡复读按钮" on:[WCPLConfigCenter shared].gesture.repeatButtonEnable];
 }
 
+- (WCTableViewNormalCellManager *)createRepeatLongPressMenuSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatLongPressMenuEnable:)
+                                                                     target:self
+                                                                      title:@"启用长按面板复读"
+                                                                         on:[WCPLConfigCenter shared].gesture.repeatLongPressMenuEnable];
+}
+
+- (WCTableViewNormalCellManager *)createClownFeatureSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingClownFeatureEnable:)
+                                                                     target:self
+                                                                      title:@"启用小丑功能"
+                                                                         on:[WCPLConfigCenter shared].gesture.clownFeatureEnable];
+}
+
+- (WCTableViewNormalCellManager *)createVoiceForwardFeatureSwitchCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingVoiceForwardFeatureEnable:)
+                                                                     target:self
+                                                                      title:@"启用语音转发"
+                                                                         on:[WCPLConfigCenter shared].gesture.voiceForwardFeatureEnable];
+}
+
 - (WCTableViewNormalCellManager *)createRepeatButtonHapticCell {
     return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonHaptic:) target:self title:@"  点击震动反馈" on:[WCPLConfigCenter shared].gesture.repeatButtonHapticEnable];
 }
@@ -1010,6 +1143,29 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     CGFloat size = [WCPLConfigCenter shared].gesture.repeatButtonSize;
     NSString *sizeValue = [NSString stringWithFormat:@"%.0f", size];
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatButtonSizePicker) target:self title:@"  按钮大小" rightValue:sizeValue accessoryType:1];
+}
+
+- (NSString *)wcpl_repeatCustomImageStatusText {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (config.repeatButtonCustomImageRelativePath.length == 0) {
+        return @"未设置";
+    }
+    return config.repeatButtonCustomImageEnable ? @"已启用" : @"已设置";
+}
+
+- (WCTableViewNormalCellManager *)createRepeatCustomImageSwitchCell {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    BOOL on = config.repeatButtonCustomImageEnable && config.repeatButtonCustomImageRelativePath.length > 0;
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatCustomImageEnable:) target:self title:@"  使用自定义图片按钮" on:on];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatCustomImagePickerCell {
+    NSString *status = [self wcpl_repeatCustomImageStatusText];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showRepeatCustomImageActionSheet) target:self title:@"  上传按钮图片" rightValue:status accessoryType:1];
+}
+
+- (WCTableViewNormalCellManager *)createRepeatCustomImageResetCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(confirmResetRepeatCustomImage) target:self title:@"  恢复默认 +1 按钮" rightValue:@"" accessoryType:0];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatButtonEngineV2Cell {
@@ -1138,6 +1294,21 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [self reloadTableData];
 }
 
+- (void)settingRepeatLongPressMenuEnable:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.repeatLongPressMenuEnable = sender.on;
+    WCPLLogInfo(@"Repeat long press menu changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)settingClownFeatureEnable:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.clownFeatureEnable = sender.on;
+    WCPLLogInfo(@"Clown feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
+- (void)settingVoiceForwardFeatureEnable:(UISwitch *)sender {
+    [WCPLConfigCenter shared].gesture.voiceForwardFeatureEnable = sender.on;
+    WCPLLogInfo(@"Voice forward feature changed: %@", sender.on ? @"Enabled" : @"Disabled");
+}
+
 - (void)settingRepeatButtonHaptic:(UISwitch *)sender {
     [WCPLConfigCenter shared].gesture.repeatButtonHapticEnable = sender.on;
     WCPLLogInfo(@"Repeat bubble haptic changed: %@", sender.on ? @"Enabled" : @"Disabled");
@@ -1157,7 +1328,14 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     for (NSNumber *size in sizes) {
         NSString *title = [NSString stringWithFormat:@"%@", size];
         [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
-            [WCPLConfigCenter shared].gesture.repeatButtonSize = size.doubleValue;
+            WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+            config.repeatButtonSize = size.doubleValue;
+            if (config.repeatButtonCustomImageEnable && config.repeatButtonCustomImageRelativePath.length > 0) {
+                [[WCPLRepeatButtonAssetManager sharedManager] displayImageForConfig:config
+                                                                         buttonSize:config.repeatButtonSize
+                                                                              scale:[UIScreen mainScreen].scale];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kWCPLRepeatButtonAssetDidChangeNotification object:nil];
+            }
             WCPLLogInfo(@"Repeat bubble size changed: %@", title);
             [self reloadTableData];
         }]];
@@ -1165,6 +1343,136 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)wcpl_presentSimpleAlertWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)settingRepeatCustomImageEnable:(UISwitch *)sender {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (sender.on && config.repeatButtonCustomImageRelativePath.length == 0) {
+        sender.on = NO;
+        self.wcplPendingEnableRepeatCustomImageAfterPick = YES;
+        [self wcpl_presentRepeatCustomImagePicker];
+        return;
+    }
+
+    config.repeatButtonCustomImageEnable = sender.on;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kWCPLRepeatButtonAssetDidChangeNotification object:nil];
+    WCPLLogInfo(@"Repeat custom image mode changed: %@", sender.on ? @"Enabled" : @"Disabled");
+    [self reloadTableData];
+}
+
+- (void)showRepeatCustomImageActionSheet {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义复读按钮图片"
+                                                                   message:@"上传后会自动处理为圆形按钮图，并按按钮尺寸加载。"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"从相册选择"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(__unused UIAlertAction *action) {
+        [self wcpl_presentRepeatCustomImagePicker];
+    }]];
+
+    if (config.repeatButtonCustomImageRelativePath.length > 0) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"恢复默认 +1"
+                                                  style:UIAlertActionStyleDestructive
+                                                handler:^(__unused UIAlertAction *action) {
+            [self confirmResetRepeatCustomImage];
+        }]];
+    }
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)confirmResetRepeatCustomImage {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"恢复默认按钮"
+                                                                   message:@"清除已上传图片并回退到默认 +1 样式。"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确认恢复"
+                                              style:UIAlertActionStyleDestructive
+                                            handler:^(__unused UIAlertAction *action) {
+        [self resetRepeatCustomImage];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)resetRepeatCustomImage {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    [[WCPLRepeatButtonAssetManager sharedManager] resetCustomButtonImageForConfig:config];
+    config.repeatButtonCustomImageEnable = NO;
+    self.wcplPendingEnableRepeatCustomImageAfterPick = NO;
+    WCPLLogInfo(@"Repeat custom image reset by user");
+    [self reloadTableData];
+}
+
+- (void)wcpl_presentRepeatCustomImagePicker {
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        [self wcpl_presentSimpleAlertWithTitle:@"无法打开相册" message:@"当前环境不支持从相册选择图片。"];
+        return;
+    }
+
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    picker.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.wcplRepeatImagePicker = picker;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:^{
+        self.wcplRepeatImagePicker = nil;
+        self.wcplPendingEnableRepeatCustomImageAfterPick = NO;
+        [self reloadTableData];
+    }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *pickedImage = info[UIImagePickerControllerEditedImage];
+    if (![pickedImage isKindOfClass:[UIImage class]]) {
+        pickedImage = info[UIImagePickerControllerOriginalImage];
+    }
+
+    [picker dismissViewControllerAnimated:YES completion:^{
+        self.wcplRepeatImagePicker = nil;
+
+        if (![pickedImage isKindOfClass:[UIImage class]]) {
+            [self wcpl_presentSimpleAlertWithTitle:@"图片无效" message:@"未获取到有效图片，请重新选择。"];
+            self.wcplPendingEnableRepeatCustomImageAfterPick = NO;
+            [self reloadTableData];
+            return;
+        }
+
+        NSError *saveError = nil;
+        WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+        BOOL saved = [[WCPLRepeatButtonAssetManager sharedManager] saveCustomButtonImage:pickedImage
+                                                                               forConfig:config
+                                                                                   error:&saveError];
+        if (saved) {
+            config.repeatButtonCustomImageEnable = YES;
+            [self wcpl_presentSimpleAlertWithTitle:@"上传成功" message:@"复读按钮图片已更新。"];
+            WCPLLogInfo(@"Repeat custom image updated: path=%@ revision=%ld",
+                        config.repeatButtonCustomImageRelativePath ?: @"<nil>",
+                        (long)config.repeatButtonCustomImageRevision);
+        } else {
+            NSString *errorText = saveError.localizedDescription ?: @"未知错误";
+            [self wcpl_presentSimpleAlertWithTitle:@"上传失败" message:errorText];
+            WCPLLogWarning(@"Repeat custom image update failed: %@", errorText);
+        }
+
+        self.wcplPendingEnableRepeatCustomImageAfterPick = NO;
+        [self reloadTableData];
+    }];
 }
 
 - (void)settingRepeatSupportEmoticon:(UISwitch *)sender {

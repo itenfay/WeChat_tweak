@@ -47,6 +47,51 @@ static NSString *wcpl_groupSenderFromContent(NSString *content) {
     return candidate;
 }
 
+static unsigned int wcpl_messageTypeFromWrap(id msgWrap) {
+    if (!msgWrap) {
+        return 0;
+    }
+
+    @try {
+        if ([msgWrap respondsToSelector:@selector(m_uiMessageType)]) {
+            return ((unsigned int (*)(id, SEL))objc_msgSend)(msgWrap, @selector(m_uiMessageType));
+        }
+
+        id value = [msgWrap valueForKey:@"m_uiMessageType"];
+        if ([value respondsToSelector:@selector(unsignedIntValue)]) {
+            return ((unsigned int (*)(id, SEL))objc_msgSend)(value, @selector(unsignedIntValue));
+        }
+    } @catch (__unused NSException *exception) {
+        return 0;
+    }
+
+    return 0;
+}
+
+static BOOL wcpl_isRedEnvelopMessageWrap(id msgWrap, Ivar nsContentIvar) {
+    if (!msgWrap || wcpl_messageTypeFromWrap(msgWrap) != 49) {
+        return NO;
+    }
+
+    NSString *content = wcpl_safeUserNameString(nsContentIvar ? object_getIvar(msgWrap, nsContentIvar) : nil);
+    if (content.length == 0) {
+        return NO;
+    }
+
+    // 消息屏蔽链路保留红包可见，避免密友红包被上游过滤。
+    if ([content rangeOfString:@"wxpay://c2cbizmessagehandler/hongbao/" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+    if ([content rangeOfString:@"receivehongbao" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+
+    BOOL hasWCPayInfo = ([content rangeOfString:@"<wcpayinfo" options:NSCaseInsensitiveSearch].location != NSNotFound);
+    BOOL hasHongbaoKeyword = ([content rangeOfString:@"hongbao" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                              [content rangeOfString:@"红包"].location != NSNotFound);
+    return hasWCPayInfo && hasHongbaoKeyword;
+}
+
 static id wcpl_contactForUserName(NSString *userName) {
     NSString *target = wcpl_safeUserNameString(userName);
     if (target.length == 0) {
@@ -233,7 +278,7 @@ static BOOL wcpl_changeNotifyStatus(id contactMgr, id contact, BOOL notifyOpen) 
     NSString *realChatUsr = wcpl_safeUserNameString(nsRealChatUsrIvar ? object_getIvar(msgWrap, nsRealChatUsrIvar) : nil);
 
     if (fromUsr.length > 0 && config.chatIgnoreInfo[fromUsr].boolValue) {
-        return YES;
+        return !wcpl_isRedEnvelopMessageWrap(msgWrap, nsContentIvar);
     }
 
     BOOL isGroupMessage = (fromUsr.length > 0 && [fromUsr rangeOfString:@"@chatroom"].location != NSNotFound);
@@ -247,13 +292,13 @@ static BOOL wcpl_changeNotifyStatus(id contactMgr, id contact, BOOL notifyOpen) 
         }
 
         if (groupSender.length > 0 && config.userIgnoreInfo[groupSender].boolValue) {
-            return YES;
+            return !wcpl_isRedEnvelopMessageWrap(msgWrap, nsContentIvar);
         }
         return NO;
     }
 
     if (fromUsr.length > 0 && config.userIgnoreInfo[fromUsr].boolValue) {
-        return YES;
+        return !wcpl_isRedEnvelopMessageWrap(msgWrap, nsContentIvar);
     }
 
     return NO;

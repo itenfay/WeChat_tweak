@@ -25,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL repeatButtonHapticEnable;
 // 复读按钮大小（16~30，默认 20）
 @property (assign, nonatomic) CGFloat repeatButtonSize;
+// 复读按钮使用自定义图片
+@property (assign, nonatomic) BOOL repeatButtonCustomImageEnable;
+// 自定义图片相对路径（相对 app 沙盒根目录）
+@property (copy, nonatomic, nullable) NSString *repeatButtonCustomImageRelativePath;
+// 自定义图片资源版本号（每次上传递增/刷新）
+@property (assign, nonatomic) NSInteger repeatButtonCustomImageRevision;
+// 自定义图片存储结构版本号（用于升级迁移）
+@property (assign, nonatomic) NSInteger repeatButtonCustomImageSchemaVersion;
 // 复读支持表情包消息
 @property (assign, nonatomic) BOOL repeatSupportEmoticonEnable;
 // 复读支持语音消息
@@ -37,6 +45,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL repeatButtonEngineV2Enable;
 // 复读按钮立即显示（自己发送消息不等待状态稳定），默认开启
 @property (assign, nonatomic) BOOL repeatImmediateRenderEnable;
+// 长按面板复读菜单开关（默认开启）
+@property (assign, nonatomic) BOOL repeatLongPressMenuEnable;
+// 小丑功能开关（默认开启）
+@property (assign, nonatomic) BOOL clownFeatureEnable;
+// 语音转发功能开关（默认开启）
+@property (assign, nonatomic) BOOL voiceForwardFeatureEnable;
 
 // 消息手势灵敏度：0=低(不易误触), 1=中(默认), 2=高(更灵敏)
 @property (assign, nonatomic) NSInteger swipeSensitivityLevel;

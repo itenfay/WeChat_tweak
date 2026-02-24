@@ -4,6 +4,7 @@
 #import "WCPLAVManager.h"
 #import "WCPLContactLookup.h"
 #import "WCPLLogger.h"
+#import "WCHookMessageNavigator.h"
 #import "RichTextView.h"
 #import <dispatch/dispatch.h>
 #import <objc/runtime.h>
@@ -12,6 +13,11 @@
 @interface TextMessageCellView (WCPLLocalReplace)
 - (void)wcpl_applyLocalReplaceIfNeeded;
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender;
+@end
+
+@interface CommonMessageCellView (WCPLRepeatMenuBridge)
+- (BOOL)wchook_isMessageSupportedForRepeat:(CMessageWrap *)msgWrap;
+- (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap;
 @end
 
 static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon);
@@ -161,39 +167,9 @@ static void wcpl_setViewOriginY(UIView *view, CGFloat y) {
 @end
 
 static BOOL wcpl_isTargetChatForSearchButton(id viewController) {
-    if (![viewController isKindOfClass:[UIViewController class]]) {
-        return NO;
-    }
-
-    Class baseMsgVCClass = objc_getClass("BaseMsgContentViewController");
-    if (baseMsgVCClass && ![viewController isKindOfClass:baseMsgVCClass]) {
-        return NO;
-    }
-
-    if (!baseMsgVCClass) {
-        NSString *className = NSStringFromClass([viewController class]) ?: @"";
-        if ([className rangeOfString:@"MsgContentViewController" options:NSCaseInsensitiveSearch].location == NSNotFound) {
-            return NO;
-        }
-    }
-
-    if (![viewController respondsToSelector:@selector(GetContact)]) {
-        return NO;
-    }
-
-    id contact = nil;
-    @try {
-        contact = [viewController GetContact];
-    } @catch (__unused NSException *exception) {
-        contact = nil;
-    }
-
-    NSString *usrName = wcpl_safeUserNameFromObject(contact);
-    if (usrName.length == 0) {
-        return NO;
-    }
-
-    return YES;
+    (void)viewController;
+    // 稳定性优先：暂时关闭聊天页搜索按钮注入链路（该链路会影响群资料/邀请流程）
+    return NO;
 }
 
 static UIImage *wcpl_chatSearchButtonIconImage(void) {
@@ -501,33 +477,27 @@ static BOOL wcpl_barButtonItemArrayEquivalent(NSArray<UIBarButtonItem *> *lhs, N
     return YES;
 }
 
-static UIBarButtonItem *wcpl_controllerCurrentNativeRightItem(id viewController, NSArray<UIBarButtonItem *> *items) {
-    if ([viewController respondsToSelector:@selector(getRightBarButton:)]) {
-        @try {
-            id right = ((id (*)(id, SEL, BOOL))objc_msgSend)(viewController, @selector(getRightBarButton:), YES);
-            if ([right isKindOfClass:[UIBarButtonItem class]]) {
-                return right;
-            }
-        } @catch (__unused NSException *exception) {
-        }
-        @try {
-            id right = ((id (*)(id, SEL, BOOL))objc_msgSend)(viewController, @selector(getRightBarButton:), NO);
-            if ([right isKindOfClass:[UIBarButtonItem class]]) {
-                return right;
-            }
-        } @catch (__unused NSException *exception) {
-        }
+static void wcpl_setRightBarButtonItemsWithoutAnimation(UINavigationItem *navigationItem,
+                                                         NSArray<UIBarButtonItem *> *items) {
+    if (![navigationItem isKindOfClass:[UINavigationItem class]]) {
+        return;
     }
+    NSArray<UIBarButtonItem *> *safeItems = [items isKindOfClass:[NSArray class]] ? items : @[];
+    if ([navigationItem respondsToSelector:@selector(setRightBarButtonItems:animated:)]) {
+        [UIView performWithoutAnimation:^{
+            [navigationItem setRightBarButtonItems:safeItems animated:NO];
+        }];
+    } else {
+        [UIView performWithoutAnimation:^{
+            navigationItem.rightBarButtonItems = safeItems;
+        }];
+    }
+}
 
-    if ([viewController respondsToSelector:@selector(getRightBarButton)]) {
-        @try {
-            id right = ((id (*)(id, SEL))objc_msgSend)(viewController, @selector(getRightBarButton));
-            if ([right isKindOfClass:[UIBarButtonItem class]]) {
-                return right;
-            }
-        } @catch (__unused NSException *exception) {
-        }
-    }
+static UIBarButtonItem *wcpl_controllerCurrentNativeRightItem(id viewController, NSArray<UIBarButtonItem *> *items) {
+    (void)viewController;
+    // 稳定性优先：不要主动触发 getRightBarButton* 动态链路。
+    // 新版本群聊场景里该链路可能把 NSString 当联系人，进而触发 isChatroom 崩溃。
 
     for (UIBarButtonItem *item in items) {
         if (wcpl_isInjectedChatSearchButtonItem(item)) {
@@ -2422,7 +2392,7 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
 
     if (!targetChat) {
         if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], filteredItems ?: @[])) {
-            navigationItem.rightBarButtonItems = filteredItems;
+            wcpl_setRightBarButtonItemsWithoutAnimation(navigationItem, filteredItems);
         }
         return;
     }
@@ -2470,7 +2440,7 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
     [stableItems addObject:searchButtonItem];
 
     if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], stableItems ?: @[])) {
-        navigationItem.rightBarButtonItems = stableItems;
+        wcpl_setRightBarButtonItemsWithoutAnimation(navigationItem, stableItems);
         WCPLLogInfo(@"[搜索按钮] 已更新 rightBar: native={%@} search={%@}",
                     [nativeItem isKindOfClass:[UIBarButtonItem class]] ? wcpl_barButtonItemDebugSummary(nativeItem) : @"<nil>",
                     wcpl_barButtonItemDebugSummary(searchButtonItem));
@@ -2995,7 +2965,7 @@ static void wcpl_markBridgeAutoPop(id controller, BOOL enable) {
     objc_setAssociatedObject(controller, kWCPLChatSearchBridgeAutoPopKey, @(enable), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-static BOOL wcpl_isBridgeAutoPop(id controller) {
+static __attribute__((unused)) BOOL wcpl_isBridgeAutoPop(id controller) {
     if (!controller) {
         return NO;
     }
@@ -3909,7 +3879,7 @@ static BOOL wcpl_shouldForceDelayedExitRepair(id controller) {
     return [marker respondsToSelector:@selector(boolValue)] ? [marker boolValue] : NO;
 }
 
-static void wcpl_markInjectedChatSearchFlow(id controller, BOOL enable) {
+static __attribute__((unused)) void wcpl_markInjectedChatSearchFlow(id controller, BOOL enable) {
     if (!controller) {
         return;
     }
@@ -4402,6 +4372,62 @@ static UIImage *wcpl_voiceForwardMenuIconImage(void) {
     return icon;
 }
 
+static UIImage *wcpl_repeatMenuIconImage(void) {
+    static UIImage *icon = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *svg =
+            @"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>"
+            "<path d='M17 7H8.8C6.70132 7 5 8.70132 5 10.8V11.2' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
+            "<path d='M7.4 9L5 11.2L7.4 13.4' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
+            "<path d='M7 17H15.2C17.2987 17 19 15.2987 19 13.2V12.8' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
+            "<path d='M16.6 15L19 12.8L16.6 10.6' fill='none' stroke='#ECECF0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
+            "</svg>";
+        NSData *data = [svg dataUsingEncoding:NSUTF8StringEncoding];
+        id image = nil;
+        Class themeProxyClass = objc_getClass("WAThemeProxy");
+        SEL svgFromDataSel = @selector(svgImageFromData:);
+        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
+            @try {
+                image = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, data);
+            } @catch (__unused NSException *exception) {
+                image = nil;
+            }
+        }
+        if ([image isKindOfClass:[UIImage class]]) {
+            icon = (UIImage *)image;
+        }
+
+        if (!icon && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
+            UIImage *symbol = nil;
+            if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
+                UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:16 weight:UIImageSymbolWeightRegular scale:UIImageSymbolScaleMedium];
+                symbol = [UIImage systemImageNamed:@"arrow.2.squarepath" withConfiguration:config];
+                if (!symbol) {
+                    symbol = [UIImage systemImageNamed:@"repeat" withConfiguration:config];
+                }
+            }
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"arrow.2.squarepath"];
+            }
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"repeat"];
+            }
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"arrow.clockwise"];
+            }
+            if (symbol) {
+                icon = symbol;
+            }
+        }
+
+        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        }
+    });
+    return icon;
+}
+
 static id wcpl_createClownMenuItem(Class menuItemClass, id cell, SEL action) {
     if (!menuItemClass || !cell || !action) {
         return nil;
@@ -4431,6 +4457,35 @@ static id wcpl_createClownMenuItem(Class menuItemClass, id cell, SEL action) {
         wcpl_applyMenuItemIcon(menuItem, icon);
     }
 
+    return menuItem;
+}
+
+static id wcpl_createRepeatMenuItem(Class menuItemClass, id cell, SEL action) {
+    if (!menuItemClass || !cell || !action) {
+        return nil;
+    }
+
+    NSString *title = @"复读";
+    UIImage *icon = wcpl_repeatMenuIconImage();
+    id menuItem = nil;
+
+    if (icon && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:icon:target:action:)]) {
+        @try {
+            menuItem = [[menuItemClass alloc] initWithTitle:title icon:icon target:cell action:action];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (!menuItem && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
+        @try {
+            menuItem = [[menuItemClass alloc] initWithTitle:title target:cell action:action];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if (menuItem && icon) {
+        wcpl_applyMenuItemIcon(menuItem, icon);
+    }
     return menuItem;
 }
 
@@ -4824,29 +4879,7 @@ static NSString *wcpl_displayTextForMessage(CMessageWrap *msgWrap, id cell) {
 }
 
 static UIColor *wcpl_menuIconTintColor(void) {
-    if (@available(iOS 13.0, *)) {
-        UIUserInterfaceStyle style = UIUserInterfaceStyleUnspecified;
-        UIApplication *application = [UIApplication sharedApplication];
-        if ([application respondsToSelector:@selector(windows)]) {
-            for (UIWindow *window in application.windows) {
-                if (![window isKindOfClass:[UIWindow class]]) {
-                    continue;
-                }
-                UIUserInterfaceStyle windowStyle = window.traitCollection.userInterfaceStyle;
-                if (windowStyle != UIUserInterfaceStyleUnspecified) {
-                    style = windowStyle;
-                    if (window.isKeyWindow) {
-                        break;
-                    }
-                }
-            }
-        }
-        if (style == UIUserInterfaceStyleDark) {
-            return [UIColor colorWithWhite:0.92 alpha:1.0];
-        }
-        return [UIColor colorWithWhite:0.16 alpha:1.0];
-    }
-    return [UIColor colorWithWhite:0.16 alpha:1.0];
+    return [UIColor colorWithWhite:1.0 alpha:1.0];
 }
 
 static void wcpl_applyMenuItemIcon(id menuItem, UIImage *icon) {
@@ -5106,7 +5139,26 @@ static __attribute__((unused)) BOOL wcpl_viewHasSearchLikeAncestor(UIView *view)
     return NO;
 }
 
+static BOOL wcpl_isRepeatLongPressMenuEnabled(void) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    return config ? config.repeatLongPressMenuEnable : YES;
+}
+
+static BOOL wcpl_isClownFeatureEnabled(void) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    return config ? config.clownFeatureEnable : YES;
+}
+
+static BOOL wcpl_isVoiceForwardFeatureEnabled(void) {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    return config ? config.voiceForwardFeatureEnable : YES;
+}
+
 static NSArray *wcpl_injectClownMenuItemIfNeeded(id cell, NSArray *items) {
+    if (!wcpl_isClownFeatureEnabled()) {
+        return items;
+    }
+
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(cell);
     if (!wcpl_isClownSupportedMessage(msgWrap)) {
         return items;
@@ -5138,6 +5190,110 @@ static NSArray *wcpl_injectClownMenuItemIfNeeded(id cell, NSArray *items) {
     }
 
     return mutableItems;
+}
+
+static BOOL wcpl_isRepeatSupportedForCell(id cell) {
+    if (!wcpl_isRepeatLongPressMenuEnabled()) {
+        return NO;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapFromCell(cell);
+    if (!msgWrap) {
+        return NO;
+    }
+
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    SEL supportSel = @selector(wchook_isMessageSupportedForRepeat:);
+    if ([cell respondsToSelector:supportSel]) {
+        @try {
+            return ((BOOL (*)(id, SEL, id))objc_msgSend)(cell, supportSel, msgWrap);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    switch (msgWrap.m_uiMessageType) {
+        case 1:
+            return YES;
+        case 3:
+            return config.repeatSupportImageEnable;
+        case 34:
+            return config.repeatSupportVoiceEnable;
+        case 43:
+            return config.repeatSupportVideoEnable;
+        case 47:
+            return config.repeatSupportEmoticonEnable;
+        default:
+            return NO;
+    }
+}
+
+static NSArray *wcpl_injectRepeatMenuItemIfNeeded(id cell, NSArray *items) {
+    if (!wcpl_isRepeatSupportedForCell(cell)) {
+        return items;
+    }
+
+    Class menuItemClass = objc_getClass("MMMenuItem");
+    if (!menuItemClass) {
+        return items;
+    }
+
+    SEL action = @selector(wcpl_handleRepeatMenuItem:);
+    NSMutableArray *mutableItems = items ? [items mutableCopy] : [NSMutableArray array];
+    for (id item in mutableItems) {
+        if (![item isKindOfClass:menuItemClass] || ![item respondsToSelector:@selector(action)]) {
+            continue;
+        }
+        @try {
+            SEL itemAction = ((SEL (*)(id, SEL))objc_msgSend)(item, @selector(action));
+            if (itemAction == action) {
+                return mutableItems;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    id menuItem = wcpl_createRepeatMenuItem(menuItemClass, cell, action);
+    if (menuItem) {
+        [mutableItems addObject:menuItem];
+        CMessageWrap *msgWrap = wcpl_messageWrapFromCell(cell);
+        WCPLLogDebug(@"[复读] 注入长按菜单: type=%u class=%@",
+                     msgWrap ? msgWrap.m_uiMessageType : 0,
+                     NSStringFromClass([cell class]) ?: @"(nil)");
+    }
+    return mutableItems;
+}
+
+static void wcpl_handleRepeatMenuActionForCell(id cell) {
+    if (!cell) {
+        return;
+    }
+
+    if (![NSThread isMainThread]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            wcpl_handleRepeatMenuActionForCell(cell);
+        });
+        return;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapFromCell(cell);
+    if (!msgWrap || !wcpl_isRepeatSupportedForCell(cell)) {
+        return;
+    }
+
+    SEL repeatSel = @selector(wchook_repeatMessageWrap:);
+    if (![cell respondsToSelector:repeatSel]) {
+        WCPLLogWarning(@"[复读] 菜单触发失败: selector 缺失 class=%@",
+                       NSStringFromClass([cell class]) ?: @"(nil)");
+        return;
+    }
+
+    @try {
+        ((void (*)(id, SEL, id))objc_msgSend)(cell, repeatSel, msgWrap);
+    } @catch (NSException *exception) {
+        WCPLLogWarning(@"[复读] 菜单触发异常: class=%@ reason=%@",
+                       NSStringFromClass([cell class]) ?: @"(nil)",
+                       exception.reason ?: @"unknown");
+    }
 }
 
 static BOOL wcpl_isVoiceMessage(CMessageWrap *msgWrap) {
@@ -5265,6 +5421,10 @@ static id wcpl_createVoiceForwardMenuItem(Class menuItemClass, id cell, SEL acti
 }
 
 static NSArray *wcpl_injectVoiceForwardMenuItemIfNeeded(id cell, NSArray *items) {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        return items;
+    }
+
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(cell);
     if (!wcpl_isVoiceMessage(msgWrap)) {
         return items;
@@ -7274,9 +7434,6 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 - (void)viewDidAppear:(_Bool)arg1 {
     %orig;
-    if ([self respondsToSelector:@selector(updateRightBar)]) {
-        ((void (*)(id, SEL))objc_msgSend)(self, @selector(updateRightBar));
-    }
     wcpl_updateChatSearchButtonForViewController(self);
     wcpl_scheduleChatSearchButtonRepair(self, @"viewDidAppear");
 
@@ -7445,39 +7602,10 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 - (void)msgSearchDidPresent {
     %orig;
-
-    if (!wcpl_isBridgeAutoPop(self)) {
-        return;
-    }
-
-    id source = objc_getAssociatedObject(self, kWCPLChatSearchBridgeSourceControllerKey);
-    if (source) {
-        wcpl_markInjectedChatSearchFlow(source, YES);
-    }
-
-    wcpl_markBridgeAutoPop(self, NO);
-
-    id selfObj = (id)self;
-    UINavigationController *nav = nil;
-    @try {
-        nav = [selfObj valueForKey:@"navigationController"];
-    } @catch (__unused NSException *exception) {
-        nav = nil;
-    }
-
-    if ([nav isKindOfClass:[UINavigationController class]] && nav.topViewController == (UIViewController *)self) {
-        [nav popViewControllerAnimated:NO];
-        WCPLLogInfo(@"[搜索] bridge: msgSearchDidPresent 后自动返回聊天页");
-    }
 }
 
 - (void)viewWillDisappear:(_Bool)arg1 {
     %orig;
-
-    id source = objc_getAssociatedObject(self, kWCPLChatSearchBridgeSourceControllerKey);
-    if (source) {
-        wcpl_markBridgePending(source, NO);
-    }
 }
 
 %end
@@ -7496,6 +7624,24 @@ static void wcpl_presentClownEditorForCell(id cell) {
     }
 }
 
+- (id)operationMenuItems {
+    NSArray *items = %orig;
+    return wcpl_injectRepeatMenuItemIfNeeded(self, items);
+}
+
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
+    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+        return wcpl_isRepeatSupportedForCell(self);
+    }
+    return %orig;
+}
+
+%new
+- (void)wcpl_handleRepeatMenuItem:(id)sender {
+    (void)sender;
+    wcpl_handleRepeatMenuActionForCell(self);
+}
+
 %end
 
 %hook EmoticonMessageCellView
@@ -7508,6 +7654,24 @@ static void wcpl_presentClownEditorForCell(id cell) {
     } else {
         [self wchook_resetSwipeAnimated:NO];
     }
+}
+
+- (id)operationMenuItems {
+    NSArray *items = %orig;
+    return wcpl_injectRepeatMenuItemIfNeeded(self, items);
+}
+
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
+    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+        return wcpl_isRepeatSupportedForCell(self);
+    }
+    return %orig;
+}
+
+%new
+- (void)wcpl_handleRepeatMenuItem:(id)sender {
+    (void)sender;
+    wcpl_handleRepeatMenuActionForCell(self);
 }
 
 %end
@@ -7524,6 +7688,24 @@ static void wcpl_presentClownEditorForCell(id cell) {
     }
 }
 
+- (id)operationMenuItems {
+    NSArray *items = %orig;
+    return wcpl_injectRepeatMenuItemIfNeeded(self, items);
+}
+
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
+    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+        return wcpl_isRepeatSupportedForCell(self);
+    }
+    return %orig;
+}
+
+%new
+- (void)wcpl_handleRepeatMenuItem:(id)sender {
+    (void)sender;
+    wcpl_handleRepeatMenuActionForCell(self);
+}
+
 %end
 
 %hook VideoMessageCellView
@@ -7538,6 +7720,24 @@ static void wcpl_presentClownEditorForCell(id cell) {
     }
 }
 
+- (id)operationMenuItems {
+    NSArray *items = %orig;
+    return wcpl_injectRepeatMenuItemIfNeeded(self, items);
+}
+
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
+    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+        return wcpl_isRepeatSupportedForCell(self);
+    }
+    return %orig;
+}
+
+%new
+- (void)wcpl_handleRepeatMenuItem:(id)sender {
+    (void)sender;
+    wcpl_handleRepeatMenuActionForCell(self);
+}
+
 %end
 
 // ==================== 临时替换显示（仅本地） ====================
@@ -7546,13 +7746,17 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 - (id)operationMenuItems {
     NSArray *items = %orig;
-    return wcpl_injectClownMenuItemIfNeeded(self, items);
+    items = wcpl_injectClownMenuItemIfNeeded(self, items);
+    return wcpl_injectRepeatMenuItemIfNeeded(self, items);
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
+    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+        return wcpl_isRepeatSupportedForCell(self);
+    }
     if (arg1 == @selector(wcpl_handleLocalReplaceMenuItem:)) {
         CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
-        return wcpl_isClownSupportedMessage(msgWrap);
+        return wcpl_isClownFeatureEnabled() && wcpl_isClownSupportedMessage(msgWrap);
     }
     return %orig;
 }
@@ -7707,7 +7911,16 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 %new
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender {
+    if (!wcpl_isClownFeatureEnabled()) {
+        return;
+    }
     wcpl_presentClownEditorForCell(self);
+}
+
+%new
+- (void)wcpl_handleRepeatMenuItem:(id)sender {
+    (void)sender;
+    wcpl_handleRepeatMenuActionForCell(self);
 }
 
 %end
@@ -7716,10 +7929,16 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 - (id)operationMenuItems {
     NSArray *items = %orig;
-    return wcpl_injectVoiceForwardMenuItemIfNeeded(self, items);
+    items = wcpl_injectVoiceForwardMenuItemIfNeeded(self, items);
+    return wcpl_injectRepeatMenuItemIfNeeded(self, items);
 }
 
 - (void)onForward:(id)sender {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
     NSString *audioPath = wcpl_voiceAudioPathFromWrap(msgWrap);
     unsigned long long audioSize = wcpl_fileSizeAtPath(audioPath);
@@ -7736,9 +7955,21 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
-    if (arg1 == @selector(wcpl_handleVoiceForwardMenuItem:) ||
-        arg1 == @selector(onForward:) ||
+    if (arg1 == @selector(wcpl_handleRepeatMenuItem:)) {
+        return wcpl_isRepeatSupportedForCell(self);
+    }
+    if (arg1 == @selector(wcpl_handleVoiceForwardMenuItem:)) {
+        if (!wcpl_isVoiceForwardFeatureEnabled()) {
+            return NO;
+        }
+        CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
+        return wcpl_isVoiceMessage(msgWrap);
+    }
+    if (arg1 == @selector(onForward:) ||
         arg1 == @selector(doForward)) {
+        if (!wcpl_isVoiceForwardFeatureEnabled()) {
+            return %orig;
+        }
         CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
         return wcpl_isVoiceMessage(msgWrap);
     }
@@ -7747,6 +7978,10 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 %new
 - (void)wcpl_handleVoiceForwardMenuItem:(id)sender {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        return;
+    }
+
     (void)sender;
     if (![NSThread isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -7789,11 +8024,21 @@ static void wcpl_presentClownEditorForCell(id cell) {
                    NSStringFromClass([self class]) ?: @"(nil)");
 }
 
+%new
+- (void)wcpl_handleRepeatMenuItem:(id)sender {
+    (void)sender;
+    wcpl_handleRepeatMenuActionForCell(self);
+}
+
 %end
 
 %hook ForwardMsgUtil
 
 + (id)GenForwardMsgFromMsgWrap:(id)arg1 ToContact:(id)arg2 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        return %orig;
+    }
+
     id generated = %orig;
     CMessageWrap *sourceWrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
     CMessageWrap *generatedWrap = wcpl_extractForwardMessageWrap(generated);
@@ -7806,6 +8051,10 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (id)GenForwardMsgFromMsgWrap:(id)arg1 ToContact:(id)arg2 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        return %orig;
+    }
+
     id generated = %orig;
     CMessageWrap *sourceWrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
     CMessageWrap *generatedWrap = wcpl_extractForwardMessageWrap(generated);
@@ -7822,6 +8071,11 @@ static void wcpl_presentClownEditorForCell(id cell) {
 %hook ForwardMessageMgr
 
 - (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     wcpl_logForwardManagerMethodCatalogIfNeeded(self);
     CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
     WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage(noTarget) wrap={%@} vc=%@",
@@ -7836,6 +8090,11 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 forwardType:(long long)arg3 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     wcpl_logForwardManagerMethodCatalogIfNeeded(self);
     CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
     WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage(noTarget+type) forwardType=%lld wrap={%@} vc=%@",
@@ -7851,6 +8110,11 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 toContact:(id)arg3 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     wcpl_logForwardManagerMethodCatalogIfNeeded(self);
     CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
     WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage target=%@ wrap={%@} vc=%@",
@@ -7862,6 +8126,11 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (void)forwardMessage:(id)arg1 fromViewController:(id)arg2 toContact:(id)arg3 forwardType:(long long)arg4 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     wcpl_logForwardManagerMethodCatalogIfNeeded(self);
     CMessageWrap *wrap = [arg1 isKindOfClass:%c(CMessageWrap)] ? (CMessageWrap *)arg1 : nil;
     WCPLLogInfo(@"[语音转发][trace] ForwardMessageMgr.forwardMessage+type target=%@ forwardType=%lld wrap={%@} vc=%@",
@@ -7874,6 +8143,11 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (void)OnForwardMessageCancel:(id)arg1 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     WCPLLogInfo(@"[语音转发][trace] OnForwardMessageCancel payload=%@",
                 arg1 ? (NSStringFromClass([arg1 class]) ?: @"(unknown)") : @"(nil)");
     wcpl_voiceForwardClearPendingContext(self);
@@ -7881,6 +8155,11 @@ static void wcpl_presentClownEditorForCell(id cell) {
 }
 
 - (void)OnForwardMessageSend:(id)arg1 {
+    if (!wcpl_isVoiceForwardFeatureEnabled()) {
+        %orig;
+        return;
+    }
+
     NSNumber *pendingToken = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingTokenKey);
     CMessageWrap *pendingWrap = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingWrapKey);
     NSNumber *pendingForwardType = objc_getAssociatedObject(self, kWCPLVoiceForwardPendingForwardTypeKey);
@@ -7956,7 +8235,7 @@ static void wcpl_presentClownEditorForCell(id cell) {
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 {
     if (arg1 == @selector(wcpl_handleLocalReplaceMenuItem:)) {
         CMessageWrap *msgWrap = wcpl_messageWrapFromCell(self);
-        return wcpl_isClownSupportedMessage(msgWrap);
+        return wcpl_isClownFeatureEnabled() && wcpl_isClownSupportedMessage(msgWrap);
     }
     return %orig;
 }
@@ -7979,6 +8258,9 @@ static void wcpl_presentClownEditorForCell(id cell) {
 
 %new
 - (void)wcpl_handleLocalReplaceMenuItem:(id)sender {
+    if (!wcpl_isClownFeatureEnabled()) {
+        return;
+    }
     wcpl_presentClownEditorForCell(self);
 }
 

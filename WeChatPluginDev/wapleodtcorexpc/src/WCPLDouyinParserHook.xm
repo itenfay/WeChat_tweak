@@ -11,7 +11,10 @@
 
 @interface MMMenuItem : NSObject
 - (instancetype)initWithTitle:(id)title target:(id)target action:(SEL)action;
+- (instancetype)initWithTitle:(id)title icon:(UIImage *)icon target:(id)target action:(SEL)action;
 - (SEL)action;
+- (void)setIconImage:(UIImage *)iconImage;
+@property(retain, nonatomic) UIImage *iconImage;
 @end
 
 @interface CommonMessageCellView (WCPLDouyinParserAction)
@@ -1660,18 +1663,104 @@ static BOOL wcpl_douyin_shouldShowActionForCell(id cell) {
     return (wcpl_douyin_extractLinkFromText(content).length > 0);
 }
 
+static UIColor *wcpl_douyin_menuIconTintColor(void) {
+    return [UIColor colorWithWhite:1.0 alpha:1.0];
+}
+
+static UIImage *wcpl_douyin_menuIconImage(void) {
+    static UIImage *icon = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIImage *symbol = nil;
+        if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
+            UIImageSymbolConfiguration *config =
+                [UIImageSymbolConfiguration configurationWithPointSize:16
+                                                                weight:UIImageSymbolWeightRegular
+                                                                 scale:UIImageSymbolScaleMedium];
+            symbol = [UIImage systemImageNamed:@"link.badge.plus" withConfiguration:config];
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"play.square.stack" withConfiguration:config];
+            }
+            if (!symbol) {
+                symbol = [UIImage systemImageNamed:@"link" withConfiguration:config];
+            }
+        }
+        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
+            symbol = [UIImage systemImageNamed:@"link.badge.plus"];
+        }
+        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
+            symbol = [UIImage systemImageNamed:@"play.square.stack"];
+        }
+        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
+            symbol = [UIImage systemImageNamed:@"link"];
+        }
+        if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
+            symbol = [UIImage systemImageNamed:@"play.rectangle"];
+        }
+        if ([symbol isKindOfClass:[UIImage class]]) {
+            icon = [symbol imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        }
+    });
+    return icon;
+}
+
+static void wcpl_douyin_applyMenuItemIcon(id menuItem, UIImage *icon) {
+    if (!menuItem || !icon) {
+        return;
+    }
+
+    UIImage *finalIcon = icon;
+    if ([finalIcon respondsToSelector:@selector(imageWithTintColor:)]) {
+        @try {
+            finalIcon = [finalIcon imageWithTintColor:wcpl_douyin_menuIconTintColor()];
+        } @catch (__unused NSException *exception) {
+        }
+    }
+    if ([finalIcon respondsToSelector:@selector(imageWithRenderingMode:)]) {
+        finalIcon = [finalIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+
+    if ([menuItem respondsToSelector:@selector(setIconImage:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(menuItem, @selector(setIconImage:), finalIcon);
+            return;
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    @try {
+        [menuItem setValue:finalIcon forKey:@"iconImage"];
+    } @catch (__unused NSException *exception) {
+    }
+}
+
 static id wcpl_douyin_createMenuItemIfNeeded(Class menuItemClass, id cell, SEL action) {
     if (!menuItemClass || !cell || !action) {
         return nil;
     }
 
+    UIImage *icon = wcpl_douyin_menuIconImage();
     id menuItem = nil;
-    if ([menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
+    if (icon && [menuItemClass instancesRespondToSelector:@selector(initWithTitle:icon:target:action:)]) {
         @try {
-            menuItem = [[menuItemClass alloc] initWithTitle:kWCPLDouyinParserMenuTitle target:cell action:action];
+            menuItem = [[menuItemClass alloc] initWithTitle:kWCPLDouyinParserMenuTitle icon:icon target:cell action:action];
         } @catch (__unused NSException *exception) {
             menuItem = nil;
         }
+    }
+
+    if ([menuItemClass instancesRespondToSelector:@selector(initWithTitle:target:action:)]) {
+        if (!menuItem) {
+            @try {
+                menuItem = [[menuItemClass alloc] initWithTitle:kWCPLDouyinParserMenuTitle target:cell action:action];
+            } @catch (__unused NSException *exception) {
+                menuItem = nil;
+            }
+        }
+    }
+
+    if (menuItem && icon) {
+        wcpl_douyin_applyMenuItemIcon(menuItem, icon);
     }
 
     return menuItem;

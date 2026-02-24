@@ -17,7 +17,11 @@ MODULES = 0
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wechatpepper
-$(TWEAK_NAME)_FILES = $(filter-out src/Tweak.m, $(wildcard src/*.m)) $(wildcard src/*.xm)
+$(TWEAK_NAME)_FILES = $(filter-out \
+	src/Tweak.m \
+	src/WCPLUIHook.xm \
+	src/WCPLSendGuard.xm, \
+	$(wildcard src/*.m) $(wildcard src/*.xm))
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
