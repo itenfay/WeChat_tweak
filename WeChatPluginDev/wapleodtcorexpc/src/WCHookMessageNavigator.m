@@ -2067,7 +2067,9 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
                                                            &excerpt);
     if (!targetMessage && !messageMgr) {
         WCHookShowDebugToast(@"撤回提示: 消息服务未就绪");
-        return NO;
+        // 说明：撤回提示消息点击后，官方链路在部分消息类型（如表情包）会触发崩溃。
+        // 即使本次无法定位原消息，也要吞掉点击，避免继续走官方处理逻辑。
+        return YES;
     }
     if (!targetMessage) {
         WCPLLogWarning(@"Revoke tip jump miss target: session=%@ svrID=%lld localID=%u excerpt=%@",
@@ -2076,7 +2078,8 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
                        localID,
                        excerpt ?: @"");
         WCHookShowDebugToast(@"撤回提示: 未找到原消息");
-        return NO;
+        // 同上：避免落回官方点击处理导致崩溃/重启。
+        return YES;
     }
 
     // 兜底路径也写入 refer，配合官方 returnToOriginalMsg: 出现官方“返回”入口。
@@ -2092,7 +2095,7 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
                        svrID,
                        localID);
         WCHookShowDebugToast(@"撤回提示: 无法定位会话");
-        return NO;
+        return YES;
     }
 
     BOOL jumped = WCHookLocateAndEmphasizeRevokeTarget(effectiveLocateTarget,
@@ -2105,8 +2108,11 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
                     svrID,
                     localID);
         WCHookShowDebugToast(@"撤回提示: 跳转成功");
+    } else {
+        // 说明：即使跳转失败，也吞掉点击，避免官方链路重复处理导致异常。
+        WCHookShowDebugToast(@"撤回提示: 跳转失败");
     }
-    return jumped;
+    return YES;
 }
 
 static BOOL WCHookTryJumpFromRevokeTipCell(CommonMessageCellView *cell) {
