@@ -2054,6 +2054,21 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
         return NO;
     }
 
+    // ⚠️ 经验性防护：
+    // 部分“表情包撤回”场景下，撤回提示尾行会是「[未知消息]」，此时继续走定位/高亮链路
+    // 在某些机型/微信版本会触发 SIGSEGV（用户反馈：点击即崩溃重启）。
+    // 该场景本身也无法可靠定位原消息，因此直接吞掉点击，避免崩溃。
+    NSString *inlineExcerpt = WCHookExtractRevokeExcerptFromTipContent(content);
+    if ([inlineExcerpt isKindOfClass:[NSString class]] && inlineExcerpt.length > 0) {
+        if ([inlineExcerpt rangeOfString:@"未知消息"].location != NSNotFound ||
+            [inlineExcerpt rangeOfString:@"[未知"].location != NSNotFound ||
+            [inlineExcerpt rangeOfString:@"[类型:"].location != NSNotFound) {
+            WCPLLogWarning(@"Revoke tip jump skipped: unsafe excerpt=%@", inlineExcerpt);
+            WCHookShowDebugToast(@"撤回提示: 原消息未知，已阻止点击");
+            return YES;
+        }
+    }
+
     id messageMgr = WCHookMessageMgr();
     NSString *usedSession = nil;
     long long svrID = 0;
