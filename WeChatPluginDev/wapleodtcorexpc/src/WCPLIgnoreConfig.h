@@ -6,6 +6,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, WCPLQuitMonitorScope) {
+    /// 监控全部群聊
+    WCPLQuitMonitorScopeAll = 0,
+    /// 仅监控白名单群聊
+    WCPLQuitMonitorScopeWhitelist = 1,
+};
+
 @interface WCPLIgnoreConfig : NSObject
 
 + (instancetype)sharedConfig;
@@ -14,7 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL userIgnoreEnable;
 // 退群监控开关（检测群成员列表减少并在群内插入本地提示）
 @property (assign, nonatomic) BOOL quitMonitorEnable;
-// 退群监控白名单（空=监控全部群；非空=仅监控白名单群）
+// 退群监控生效范围（对齐抢红包：全部群聊 / 白名单）
+@property (assign, nonatomic) WCPLQuitMonitorScope quitMonitorScope;
+// 退群监控白名单（仅在 quitMonitorScope=Whitelist 时生效）
 @property (strong, nonatomic) NSMutableDictionary<NSString *,NSNumber *> *quitMonitorWhitelistInfo;
 @property (copy, nonatomic, nullable) NSString *curUsrName;
 @property (strong, nonatomic) NSMutableDictionary<NSString *,NSNumber *> *chatIgnoreInfo;

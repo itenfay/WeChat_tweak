@@ -923,9 +923,13 @@ static BOOL wcpl_qm_shouldMonitorRoom(NSString *roomUserName) {
     }
 
     WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
+    if (config.quitMonitorScope != WCPLQuitMonitorScopeWhitelist) {
+        return YES;
+    }
+
     NSDictionary<NSString *, NSNumber *> *whitelist = config.quitMonitorWhitelistInfo;
     if (![whitelist isKindOfClass:[NSDictionary class]] || whitelist.count == 0) {
-        return YES;
+        return NO;
     }
 
     __block BOOL hasValidRule = NO;
@@ -948,7 +952,7 @@ static BOOL wcpl_qm_shouldMonitorRoom(NSString *roomUserName) {
     }];
 
     if (!hasValidRule) {
-        return YES;
+        return NO;
     }
     return matchedAllowed;
 }

@@ -709,9 +709,12 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (void)addGroupMonitorSettingSection {
-    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"群聊监控" Footer:@"开启后，当检测到群成员退出时，会在对应群会话插入本地提示消息。\n白名单为空=监控全部群聊；白名单非空=仅监控白名单群聊。"];
+    WCTableViewSectionManager *section = [objc_getClass("WCTableViewSectionManager") sectionInfoHeader:@"群聊监控" Footer:@"开启后，当检测到群成员退出时，会在对应群会话插入本地提示消息。\n可设置生效范围：全部群聊 / 白名单。"];
     [section addCell:[self createQuitMonitorEnableCell]];
-    [section addCell:[self createQuitMonitorWhitelistCell]];
+    [section addCell:[self createQuitMonitorScopeCell]];
+    if ([WCPLConfigCenter shared].ignore.quitMonitorScope == WCPLQuitMonitorScopeWhitelist) {
+        [section addCell:[self createQuitMonitorWhitelistCell]];
+    }
     [self.tableViewMgr addSection:section];
 }
 
@@ -732,6 +735,47 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (void)settingQuitMonitorEnable:(UISwitch *)sender {
     [WCPLConfigCenter shared].ignore.quitMonitorEnable = sender.on;
+}
+
+- (NSString *)wcpl_quitMonitorScopeDisplayText {
+    WCPLIgnoreConfig *config = [WCPLConfigCenter shared].ignore;
+    if (config.quitMonitorScope != WCPLQuitMonitorScopeWhitelist) {
+        return @"全部群聊";
+    }
+
+    NSUInteger count = [self quitMonitorWhitelistedChatrooms].count;
+    return count == 0 ? @"白名单 (未选)" : [NSString stringWithFormat:@"白名单 (%lu)", (unsigned long)count];
+}
+
+- (WCTableViewNormalCellManager *)createQuitMonitorScopeCell {
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(showQuitMonitorScopePicker)
+                                                                     target:self
+                                                                      title:@"生效范围"
+                                                                 rightValue:[self wcpl_quitMonitorScopeDisplayText]
+                                                              accessoryType:1];
+}
+
+- (void)showQuitMonitorScopePicker {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"退群监控生效范围"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *allAction = [UIAlertAction actionWithTitle:@"全部群聊" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLConfigCenter shared].ignore.quitMonitorScope = WCPLQuitMonitorScopeAll;
+        [self reloadTableData];
+    }];
+
+    UIAlertAction *whiteAction = [UIAlertAction actionWithTitle:@"仅白名单" style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+        [WCPLConfigCenter shared].ignore.quitMonitorScope = WCPLQuitMonitorScopeWhitelist;
+        [self reloadTableData];
+        [self showQuitMonitorWhitelistSelector];
+    }];
+
+    [alert addAction:allAction];
+    [alert addAction:whiteAction];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (WCTableViewNormalCellManager *)createQuitMonitorWhitelistCell {
