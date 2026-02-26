@@ -5924,41 +5924,9 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
         return [lastSignature isKindOfClass:[NSString class]] && lastSignature.length > 0;
     }
 
-    CGRect bubbleRectForDirection = CGRectZero;
-    BOOL bubbleRectForDirectionValid = NO;
-    if ([bubbleView isKindOfClass:[UIView class]]) {
-        bubbleRectForDirection = [self convertRect:bubbleView.bounds fromView:bubbleView];
-        if (CGRectIsEmpty(bubbleRectForDirection) || CGRectGetWidth(bubbleRectForDirection) <= 0.0f || CGRectGetHeight(bubbleRectForDirection) <= 0.0f) {
-            UIView *sourceSuperview = bubbleView.superview;
-            if (sourceSuperview) {
-                bubbleRectForDirection = [self convertRect:bubbleView.frame fromView:sourceSuperview];
-            } else if (bubbleView == self) {
-                bubbleRectForDirection = self.bounds;
-            }
-        }
-        bubbleRectForDirectionValid = !CGRectIsEmpty(bubbleRectForDirection) &&
-                                      !CGRectIsNull(bubbleRectForDirection) &&
-                                      !CGRectIsInfinite(bubbleRectForDirection) &&
-                                      CGRectGetWidth(bubbleRectForDirection) > 8.0f &&
-                                      CGRectGetHeight(bubbleRectForDirection) > 8.0f &&
-                                      CGRectIntersectsRect(bubbleRectForDirection, self.bounds);
-    }
-
-    CGRect menuRectForDirection = CGRectZero;
-    BOOL menuRectForDirectionValid = NO;
-    if ([self respondsToSelector:@selector(showRectForMenuController)]) {
-        @try {
-            menuRectForDirection = ((CGRect (*)(id, SEL))objc_msgSend)(self, @selector(showRectForMenuController));
-        } @catch (__unused NSException *exception) {
-            menuRectForDirection = CGRectZero;
-        }
-        menuRectForDirectionValid = !CGRectIsEmpty(menuRectForDirection) &&
-                                    !CGRectIsNull(menuRectForDirection) &&
-                                    !CGRectIsInfinite(menuRectForDirection) &&
-                                    CGRectGetWidth(menuRectForDirection) > 8.0f &&
-                                    CGRectGetHeight(menuRectForDirection) > 8.0f &&
-                                    CGRectIntersectsRect(menuRectForDirection, self.bounds);
-    }
+    // 这里曾尝试根据气泡/菜单 rect 计算“方向有效性”以微调定位，
+    // 但后续实现不再依赖该逻辑，保留会触发 CI 的 -Werror=unused-but-set-variable。
+    // 为避免死代码长期积累，这里直接移除（不影响现有布局与锚点签名逻辑）。
 
     NSString *anchorSignature = wcpl_repeatAnchorSignatureForCell(self, messageKey, isSelf, bubbleView);
     if (![anchorSignature isKindOfClass:[NSString class]] || anchorSignature.length == 0) {
@@ -6292,6 +6260,26 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
 // ===== WCPLSwipeQuoteHook.xm =====
 
 #line 1 "src/WCPLSwipeQuoteHook.xm"
+// 说明：滑动过程中 relatedMessageViews 可能因 cell 复用/布局抖动而变化，
+// 导致部分 view 没被 reset，表现为头像/气泡残留偏移。
+// 这里缓存「本次滑动实际影响的 view 列表」，reset 时优先清理同一批 view。
+static const void *kWCPLSwipeQuoteAffectedViewsKey = &kWCPLSwipeQuoteAffectedViewsKey;
+
+static NSArray<UIView *> *wcpl_swipeQuote_affectedViews(id cell) {
+    if (!cell) {
+        return nil;
+    }
+    id value = objc_getAssociatedObject(cell, kWCPLSwipeQuoteAffectedViewsKey);
+    return [value isKindOfClass:[NSArray class]] ? (NSArray<UIView *> *)value : nil;
+}
+
+static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) {
+    if (!cell) {
+        return;
+    }
+    objc_setAssociatedObject(cell, kWCPLSwipeQuoteAffectedViewsKey, views, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 %hook CommonMessageCellView
 
 %new
@@ -6299,6 +6287,8 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     // 检查总开关和是否有任何滑动功能启用
     if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
+        // 兜底：动态关闭功能时，确保上一次滑动残留的 transform 被清理。
+        [self wchook_resetSwipeAnimated:NO];
         if (self.wchook_swipeGesture) {
             self.wchook_swipeGesture.enabled = NO;
         }
@@ -6384,6 +6374,8 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
     %orig;
     [self wchook_hideMessageTimeLabel];
     [self wchook_hideRepeatButtonByNFQPrinciple];
+    // 兜底：避免滑动过程中 cell 复用导致 transform 残留（常见表现：头像/气泡偏移）
+    [self wchook_resetSwipeAnimated:NO];
 }
 
 %new
@@ -6399,7 +6391,11 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
         return;
     }
 
-    NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+    NSArray<UIView *> *messageViews = wcpl_swipeQuote_affectedViews(self);
+    if (gesture.state == UIGestureRecognizerStateBegan || messageViews.count == 0) {
+        messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+        wcpl_swipeQuote_setAffectedViews(self, messageViews);
+    }
     CGPoint translation = [gesture translationInView:self];
     CGPoint velocity = [gesture velocityInView:self];
 
@@ -6499,6 +6495,7 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
         break;
     }
     case UIGestureRecognizerStateCancelled:
+    case UIGestureRecognizerStateFailed:
     case UIGestureRecognizerStateEnded: {
         CGFloat absTranslation = fabs(translation.x);
         CGFloat absVelocity = fabs(velocity.x);
@@ -6769,10 +6766,14 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
 
 %new
 - (void)wchook_resetSwipeAnimated:(BOOL)animated {
-    NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+    NSArray<UIView *> *messageViews = wcpl_swipeQuote_affectedViews(self);
+    if (messageViews.count == 0) {
+        messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
+    }
     [WCHookSwipeUtilities animateResetForViews:messageViews animated:animated];
     self.wchook_feedbackTriggered = NO;
     self.wchook_swipeTriggerStage = 0;
+    wcpl_swipeQuote_setAffectedViews(self, nil);
 }
 
 %new
