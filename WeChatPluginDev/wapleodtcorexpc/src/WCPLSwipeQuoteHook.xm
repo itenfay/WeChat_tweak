@@ -1,20 +1,3 @@
-static const void *kWCPLSwipeQuoteAffectedViewsKey = &kWCPLSwipeQuoteAffectedViewsKey;
-
-static NSArray<UIView *> *wcpl_swipeQuote_affectedViews(id cell) {
-    if (!cell) {
-        return nil;
-    }
-    id value = objc_getAssociatedObject(cell, kWCPLSwipeQuoteAffectedViewsKey);
-    return [value isKindOfClass:[NSArray class]] ? (NSArray<UIView *> *)value : nil;
-}
-
-static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) {
-    if (!cell) {
-        return;
-    }
-    objc_setAssociatedObject(cell, kWCPLSwipeQuoteAffectedViewsKey, views, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 %hook CommonMessageCellView
 
 %new
@@ -22,8 +5,6 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
     // 检查总开关和是否有任何滑动功能启用
     if (!config.swipeGestureEnable || (!config.swipeQuoteEnable && !config.swipeRightEnable)) {
-        // 兜底：动态关闭功能时，确保上一次滑动残留的 transform 被清理。
-        [self wchook_resetSwipeAnimated:NO];
         if (self.wchook_swipeGesture) {
             self.wchook_swipeGesture.enabled = NO;
         }
@@ -109,8 +90,6 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
     %orig;
     [self wchook_hideMessageTimeLabel];
     [self wchook_hideRepeatButtonByNFQPrinciple];
-    // 兜底：避免滑动过程中 cell 复用导致 transform 残留（常见表现：头像/气泡偏移）
-    [self wchook_resetSwipeAnimated:NO];
 }
 
 %new
@@ -126,11 +105,7 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
         return;
     }
 
-    NSArray<UIView *> *messageViews = wcpl_swipeQuote_affectedViews(self);
-    if (gesture.state == UIGestureRecognizerStateBegan || messageViews.count == 0) {
-        messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
-        wcpl_swipeQuote_setAffectedViews(self, messageViews);
-    }
+    NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     CGPoint translation = [gesture translationInView:self];
     CGPoint velocity = [gesture velocityInView:self];
 
@@ -230,7 +205,6 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
         break;
     }
     case UIGestureRecognizerStateCancelled:
-    case UIGestureRecognizerStateFailed:
     case UIGestureRecognizerStateEnded: {
         CGFloat absTranslation = fabs(translation.x);
         CGFloat absVelocity = fabs(velocity.x);
@@ -501,14 +475,10 @@ static void wcpl_swipeQuote_setAffectedViews(id cell, NSArray<UIView *> *views) 
 
 %new
 - (void)wchook_resetSwipeAnimated:(BOOL)animated {
-    NSArray<UIView *> *messageViews = wcpl_swipeQuote_affectedViews(self);
-    if (messageViews.count == 0) {
-        messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
-    }
+    NSArray<UIView *> *messageViews = [WCHookSwipeUtilities relatedMessageViewsForCommonView:self];
     [WCHookSwipeUtilities animateResetForViews:messageViews animated:animated];
     self.wchook_feedbackTriggered = NO;
     self.wchook_swipeTriggerStage = 0;
-    wcpl_swipeQuote_setAffectedViews(self, nil);
 }
 
 %new
