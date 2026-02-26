@@ -791,41 +791,9 @@
         return [lastSignature isKindOfClass:[NSString class]] && lastSignature.length > 0;
     }
 
-    CGRect bubbleRectForDirection = CGRectZero;
-    BOOL bubbleRectForDirectionValid = NO;
-    if ([bubbleView isKindOfClass:[UIView class]]) {
-        bubbleRectForDirection = [self convertRect:bubbleView.bounds fromView:bubbleView];
-        if (CGRectIsEmpty(bubbleRectForDirection) || CGRectGetWidth(bubbleRectForDirection) <= 0.0f || CGRectGetHeight(bubbleRectForDirection) <= 0.0f) {
-            UIView *sourceSuperview = bubbleView.superview;
-            if (sourceSuperview) {
-                bubbleRectForDirection = [self convertRect:bubbleView.frame fromView:sourceSuperview];
-            } else if (bubbleView == self) {
-                bubbleRectForDirection = self.bounds;
-            }
-        }
-        bubbleRectForDirectionValid = !CGRectIsEmpty(bubbleRectForDirection) &&
-                                      !CGRectIsNull(bubbleRectForDirection) &&
-                                      !CGRectIsInfinite(bubbleRectForDirection) &&
-                                      CGRectGetWidth(bubbleRectForDirection) > 8.0f &&
-                                      CGRectGetHeight(bubbleRectForDirection) > 8.0f &&
-                                      CGRectIntersectsRect(bubbleRectForDirection, self.bounds);
-    }
-
-    CGRect menuRectForDirection = CGRectZero;
-    BOOL menuRectForDirectionValid = NO;
-    if ([self respondsToSelector:@selector(showRectForMenuController)]) {
-        @try {
-            menuRectForDirection = ((CGRect (*)(id, SEL))objc_msgSend)(self, @selector(showRectForMenuController));
-        } @catch (__unused NSException *exception) {
-            menuRectForDirection = CGRectZero;
-        }
-        menuRectForDirectionValid = !CGRectIsEmpty(menuRectForDirection) &&
-                                    !CGRectIsNull(menuRectForDirection) &&
-                                    !CGRectIsInfinite(menuRectForDirection) &&
-                                    CGRectGetWidth(menuRectForDirection) > 8.0f &&
-                                    CGRectGetHeight(menuRectForDirection) > 8.0f &&
-                                    CGRectIntersectsRect(menuRectForDirection, self.bounds);
-    }
+    // 这里曾尝试根据气泡/菜单 rect 计算“方向有效性”以微调定位，
+    // 但后续实现不再依赖该逻辑，保留会触发 CI 的 -Werror=unused-but-set-variable。
+    // 为避免死代码长期积累，这里直接移除（不影响现有布局与锚点签名逻辑）。
 
     NSString *anchorSignature = wcpl_repeatAnchorSignatureForCell(self, messageKey, isSelf, bubbleView);
     if (![anchorSignature isKindOfClass:[NSString class]] || anchorSignature.length == 0) {
