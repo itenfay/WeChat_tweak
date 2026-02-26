@@ -11,12 +11,15 @@ else
 TARGET = iphone:clang:latest:14.0
 endif
 
-# 禁用 Theos 的模块化编译
-MODULES = 0
+# 禁用 clang modules（否则 CI 的 macOS Theos 默认开启 -fmodules，
+# 会触发 iPhoneOS13.7.sdk 里的 simd 模块构建，进而报 'cmath' file not found）。
+# 注意：Theos 的开关是 <instance>_USE_MODULES，而不是 MODULES。
+# 这里用 $(TWEAK_NAME)_USE_MODULES 以避免重命名 tweak 时漏改。
 
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = wechatpepper
+$(TWEAK_NAME)_USE_MODULES = 0
 # 显式固化编译白名单，避免 wildcard/filter-out 带来的“已生效”误判
 WCPL_COMPILE_FILES := \
 	src/Tweak.xm \
@@ -121,7 +124,7 @@ before-all::
 	@echo "[wcpl] internal include files (must stay blocked): $(WCPL_INTERNAL_INCLUDE_FILES)"
 	@echo "[wcpl] blocked files: $(WCPL_BLOCKED_FILES)"
 
-$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
 
