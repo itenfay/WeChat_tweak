@@ -222,7 +222,6 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:targetURL];
         request.HTTPMethod = @"POST";
         request.timeoutInterval = 12.0;
-        request.HTTPBody = data;
         [request setValue:@"text/plain; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         [request setValue:uploadName forHTTPHeaderField:@"X-Log-Name"];
 
@@ -235,9 +234,10 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
             }];
         }
 
-        NSURLSessionDataTask *task = [[NSURLSession sharedSession]
-                                      dataTaskWithRequest:request
-                                      completionHandler:^(NSData *respData, NSURLResponse *response, NSError *error) {
+        NSURLSessionUploadTask *task = [[NSURLSession sharedSession]
+                                        uploadTaskWithRequest:request
+                                                      fromData:data
+                                             completionHandler:^(NSData *respData, NSURLResponse *response, NSError *error) {
             NSInteger statusCode = 0;
             if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 statusCode = ((NSHTTPURLResponse *)response).statusCode;
@@ -295,8 +295,144 @@ static NSArray<NSString *> *WCPLCandidateUploadURLStrings(NSString *urlString) {
         return;
     }
 
-    NSData *logData = [NSData dataWithContentsOfFile:filePath];
-    [self uploadLogData:logData logName:logName headers:nil completion:completion];
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
+    NSString *fileType = [attributes fileType];
+    unsigned long long fileSize = [attributes fileSize];
+    if (![fileType isEqualToString:NSFileTypeRegular] || fileSize == 0) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
+                                                 code:-2
+                                             userInfo:@{NSLocalizedDescriptionKey: @"日志为空"}];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(NO, 0, error);
+            });
+        }
+        return;
+    }
+
+    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+    if (!fileURL) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
+                                                 code:-2
+                                             userInfo:@{NSLocalizedDescriptionKey: @"日志为空"}];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(NO, 0, error);
+            });
+        }
+        return;
+    }
+
+    NSString *urlString = [self currentUploadURLString];
+    if (![self isValidUploadURLString:urlString]) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
+                                                 code:-3
+                                             userInfo:@{NSLocalizedDescriptionKey: @"日志上传地址无效"}];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(NO, 0, error);
+            });
+        }
+        return;
+    }
+
+    NSString *uploadName = (logName.length > 0) ? logName : @"wcpl_debug.log";
+    NSArray<NSString *> *candidateURLs = WCPLCandidateUploadURLStrings(urlString);
+    if (candidateURLs.count == 0) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"WCPLLogUploader"
+                                                 code:-4
+                                             userInfo:@{NSLocalizedDescriptionKey: @"没有可用的上传地址"}];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(NO, 0, error);
+            });
+        }
+        return;
+    }
+
+    __block NSUInteger candidateIndex = 0;
+    __block NSInteger retryCount = 0;
+    __block NSInteger lastStatusCode = 0;
+    __block NSError *lastError = nil;
+    __block NSData *lastRespData = nil;
+
+    __block void (^attemptUpload)(void) = nil;
+    __weak void (^weakAttemptUpload)(void) = nil;
+    attemptUpload = ^{
+        if (candidateIndex >= candidateURLs.count) {
+            if (completion) {
+                NSError *finalError = WCPLBuildUploadNSError(lastStatusCode,
+                                                            candidateURLs.count > 0 ? candidateURLs.lastObject : urlString,
+                                                            lastRespData,
+                                                            lastError);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(NO, lastStatusCode, finalError);
+                });
+            }
+            return;
+        }
+
+        NSString *targetURLString = candidateURLs[candidateIndex];
+        NSURL *targetURL = [NSURL URLWithString:targetURLString];
+        if (!targetURL) {
+            candidateIndex += 1;
+            retryCount = 0;
+            if (weakAttemptUpload) {
+                weakAttemptUpload();
+            }
+            return;
+        }
+
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:targetURL];
+        request.HTTPMethod = @"POST";
+        request.timeoutInterval = 12.0;
+        [request setValue:@"text/plain; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:uploadName forHTTPHeaderField:@"X-Log-Name"];
+
+        NSURLSessionUploadTask *task = [[NSURLSession sharedSession]
+                                        uploadTaskWithRequest:request
+                                                      fromFile:fileURL
+                                             completionHandler:^(NSData *respData, NSURLResponse *response, NSError *error) {
+            NSInteger statusCode = 0;
+            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                statusCode = ((NSHTTPURLResponse *)response).statusCode;
+            }
+            BOOL success = (error == nil && statusCode >= 200 && statusCode < 300);
+            if (success) {
+                if (completion) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completion(YES, statusCode, nil);
+                    });
+                }
+                return;
+            }
+
+            lastStatusCode = statusCode;
+            lastError = error;
+            lastRespData = respData;
+
+            if (WCPLShouldRetryUploadError(statusCode, error, retryCount)) {
+                retryCount += 1;
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    if (weakAttemptUpload) {
+                        weakAttemptUpload();
+                    }
+                });
+                return;
+            }
+
+            candidateIndex += 1;
+            retryCount = 0;
+            if (weakAttemptUpload) {
+                weakAttemptUpload();
+            }
+        }];
+
+        [task resume];
+    };
+
+    weakAttemptUpload = attemptUpload;
+    attemptUpload();
 }
 
 @end

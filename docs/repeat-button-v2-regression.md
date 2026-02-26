@@ -2,7 +2,7 @@
 
 ## 1. 目标
 
-本指南用于验证 `repeatButtonEngineV2Enable` 开启后的稳定性，重点关注：
+本指南用于验证 **复读按钮 V2(sync-cell) 渲染路径** 的稳定性，重点关注：
 
 - 滚动与复用是否出现重影/错位/串绑
 - 前后台切换后按钮是否恢复正常
@@ -11,7 +11,7 @@
 ## 2. 前置步骤
 
 1. 编译并部署最新 tweak。
-2. 在设置页打开「复读气泡」和「`[调试] V2 同步渲染引擎`」。
+2. 在设置页打开「复读气泡」（V2 引擎已默认启用，开关已移除）。
 3. 准备日志文件（推荐本地 `wcpl_debug.log`）。
 
 ## 3. 手工回归清单
@@ -66,4 +66,7 @@ WeChatPluginDev/wapleodtcorexpc/scripts/repeat_v2_gray_check.sh --strict --repor
 
 ## 5. 回滚
 
-若回归不通过，关闭 `repeatButtonEngineV2Enable`，即可回到旧引擎路径。
+若回归不通过，需要通过 **版本/代码回退** 恢复旧引擎路径（V1/global-refresh），例如：
+
+- 回退到包含旧引擎的稳定 deb/commit
+- 或在 `WCPLGestureHook.xm` 中将 `wcpl_shouldUseLocalCellRepeatEngine()` 改为返回 `NO` 并重新编译部署

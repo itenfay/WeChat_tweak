@@ -303,7 +303,19 @@ static UIImage *wcpl_repeatRenderCircularImageFillSquare(UIImage *sourceImage, C
     }
 
     for (NSString *candidatePath in candidatePaths) {
-        NSData *data = [NSData dataWithContentsOfFile:candidatePath];
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:candidatePath error:nil];
+        NSString *fileType = [attrs fileType];
+        unsigned long long fileSize = [attrs fileSize];
+        // 自定义图片应很小，避免误读超大文件导致内存暴涨/OOM。
+        static const unsigned long long kWCPLRepeatButtonLegacyImageMaxBytes = 10 * 1024 * 1024; // 10MB
+        if (![fileType isEqualToString:NSFileTypeRegular] || fileSize == 0 || fileSize > kWCPLRepeatButtonLegacyImageMaxBytes) {
+            continue;
+        }
+
+        NSError *readError = nil;
+        NSData *data = [NSData dataWithContentsOfFile:candidatePath
+                                              options:NSDataReadingMappedIfSafe
+                                                error:&readError];
         NSData *normalized = [self normalizedJPEGDataFromImageData:data];
         if (normalized.length > 0) {
             WCPLLogInfo(@"Repeat button recovered legacy custom image: %@", candidatePath);

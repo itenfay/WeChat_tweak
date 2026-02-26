@@ -268,14 +268,61 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
 }
 
 - (NSString *)readRecentLog:(NSInteger)lines {
+    NSInteger requestedLines = lines;
+    if (requestedLines <= 0) {
+        requestedLines = 1;
+    } else if (requestedLines > 2000) {
+        requestedLines = 2000;
+    }
+
     @try {
-        NSString *content = [NSString stringWithContentsOfFile:_logFilePath encoding:NSUTF8StringEncoding error:nil];
-        if (!content || content.length == 0) {
+        NSString *path = _logFilePath;
+        if (![path isKindOfClass:[NSString class]] || path.length == 0) {
             return @"日志文件为空";
         }
 
+        NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+        unsigned long long fileSize = [attributes fileSize];
+        if (fileSize == 0) {
+            return @"日志文件为空";
+        }
+
+        static const unsigned long long kWCPLRecentLogMaxBytes = 256ull * 1024ull;
+        unsigned long long offset = 0;
+        if (fileSize > kWCPLRecentLogMaxBytes) {
+            offset = fileSize - kWCPLRecentLogMaxBytes;
+        }
+
+        NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:path];
+        if (!handle) {
+            return @"日志文件为空";
+        }
+        [handle seekToFileOffset:offset];
+        NSData *data = [handle readDataToEndOfFile];
+        [handle closeFile];
+
+        if (![data isKindOfClass:[NSData class]] || data.length == 0) {
+            return @"日志文件为空";
+        }
+
+        NSString *content = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        if (!content) {
+            content = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+        }
+        if (content.length == 0) {
+            return @"读取日志失败: 编码错误";
+        }
+
+        // 从文件尾部截取时，首行可能是半行，丢弃它以避免展示乱码片段。
+        if (offset > 0) {
+            NSRange firstNewline = [content rangeOfString:@"\n"];
+            if (firstNewline.location != NSNotFound && firstNewline.location + 1 < content.length) {
+                content = [content substringFromIndex:firstNewline.location + 1];
+            }
+        }
+
         NSArray *allLines = [content componentsSeparatedByString:@"\n"];
-        NSInteger startIndex = MAX(0, (NSInteger)allLines.count - lines);
+        NSInteger startIndex = MAX(0, (NSInteger)allLines.count - requestedLines);
         NSArray *recentLines = [allLines subarrayWithRange:NSMakeRange(startIndex, allLines.count - startIndex)];
 
         return [recentLines componentsJoinedByString:@"\n"];

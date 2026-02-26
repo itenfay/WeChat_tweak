@@ -1,0 +1,285 @@
+%hook CommonMessageCellView
+
+%new
+- (UIView *)wchook_headImageViewForMessageTime {
+    UIView *headView = nil;
+    if ([self respondsToSelector:@selector(getHeadImageView)]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(self, @selector(getHeadImageView));
+            if ([value isKindOfClass:[UIView class]]) {
+                headView = (UIView *)value;
+            }
+        } @catch (__unused NSException *exception) {
+            headView = nil;
+        }
+    }
+
+    if (!headView) {
+        NSArray<NSString *> *selectorNames = @[@"headImageView", @"getHeadView"];
+        for (NSString *selectorName in selectorNames) {
+            SEL selector = NSSelectorFromString(selectorName);
+            if (![self respondsToSelector:selector]) {
+                continue;
+            }
+            @try {
+                id value = ((id (*)(id, SEL))objc_msgSend)(self, selector);
+                if ([value isKindOfClass:[UIView class]]) {
+                    headView = (UIView *)value;
+                    break;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (!headView) {
+        NSArray<NSString *> *keys = @[@"m_headImageView", @"headImageView", @"_headImageView"];
+        for (NSString *key in keys) {
+            @try {
+                id value = [self valueForKey:key];
+                if ([value isKindOfClass:[UIView class]]) {
+                    headView = (UIView *)value;
+                    break;
+                }
+            } @catch (__unused NSException *exception) {
+            }
+        }
+    }
+
+    if (!headView) {
+        static Class headImageClass = Nil;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            headImageClass = NSClassFromString(@"MMHeadImageView");
+        });
+
+        for (UIView *subview in self.subviews) {
+            if ((headImageClass && [subview isKindOfClass:headImageClass]) ||
+                [NSStringFromClass([subview class]) rangeOfString:@"HeadImage" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                headView = subview;
+                break;
+            }
+        }
+    }
+
+    return headView;
+}
+
+%new
+- (UILabel *)wchook_messageTimeLabelEnsureCreate:(BOOL)createIfNeeded {
+    UILabel *label = self.wchook_messageTimeLabel;
+    if (![label isKindOfClass:[UILabel class]]) {
+        if (!createIfNeeded) {
+            return nil;
+        }
+
+        label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.userInteractionEnabled = NO;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.numberOfLines = 1;
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:8.0f weight:UIFontWeightMedium];
+        if (@available(iOS 13.0, *)) {
+            label.textColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                    return [UIColor colorWithWhite:0.74f alpha:0.92f];
+                }
+                return [UIColor colorWithWhite:0.56f alpha:0.95f];
+            }];
+        } else {
+            label.textColor = [UIColor colorWithWhite:0.56f alpha:0.95f];
+        }
+        label.hidden = YES;
+        [self addSubview:label];
+        self.wchook_messageTimeLabel = label;
+    } else if (label.superview != self) {
+        [label removeFromSuperview];
+        [self addSubview:label];
+    }
+
+    return label;
+}
+
+%new
+- (void)wchook_hideMessageTimeLabel {
+    UILabel *label = [self wchook_messageTimeLabelEnsureCreate:NO];
+    if ([label isKindOfClass:[UILabel class]]) {
+        label.hidden = YES;
+    }
+}
+
+%new
+- (void)wchook_updateMessageTimeLabel {
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (!config.messageTimeEnable) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    CMessageWrap *msgWrap = wcpl_messageWrapForCellView(self);
+    if (![msgWrap isKindOfClass:%c(CMessageWrap)] || msgWrap.m_uiCreateTime == 0) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    UIView *headView = [self wchook_headImageViewForMessageTime];
+    if (![headView isKindOfClass:[UIView class]] || headView.hidden || headView.alpha < 0.01f) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    CGRect headRect = CGRectZero;
+    if (headView == self) {
+        headRect = self.bounds;
+    } else {
+        headRect = [self convertRect:headView.bounds fromView:headView];
+    }
+    if (CGRectIsEmpty(headRect) || CGRectGetWidth(headRect) <= 0.0f || CGRectGetHeight(headRect) <= 0.0f) {
+        UIView *container = headView.superview;
+        if (container) {
+            headRect = [self convertRect:headView.frame fromView:container];
+        }
+    }
+
+    if (CGRectIsEmpty(headRect) ||
+        CGRectIsNull(headRect) ||
+        CGRectIsInfinite(headRect) ||
+        CGRectGetWidth(headRect) < 16.0f ||
+        CGRectGetHeight(headRect) < 16.0f) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    NSString *timeText = wcpl_messageTimeTextForTimestamp(msgWrap.m_uiCreateTime);
+    if (![timeText isKindOfClass:[NSString class]] || timeText.length == 0) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+
+    UILabel *label = [self wchook_messageTimeLabelEnsureCreate:YES];
+    if (![label isKindOfClass:[UILabel class]]) {
+        return;
+    }
+
+    if (![label.text isEqualToString:timeText]) {
+        label.text = timeText;
+    }
+
+    UIFont *font = label.font ?: [UIFont systemFontOfSize:8.0f weight:UIFontWeightMedium];
+    CGSize textSize = [timeText sizeWithAttributes:@{NSFontAttributeName: font}];
+    CGFloat width = MIN(kWCPLMessageTimeLabelMaxWidth, MAX(kWCPLMessageTimeLabelMinWidth, ceil(textSize.width) + 6.0f));
+    CGFloat height = MAX(kWCPLMessageTimeLabelMinHeight, ceil(textSize.height));
+    CGFloat x = floor(CGRectGetMidX(headRect) - width * 0.5f);
+    CGFloat y = floor(CGRectGetMaxY(headRect) + kWCPLMessageTimeLabelTopInset);
+
+    CGRect bounds = self.bounds;
+    CGFloat boundsWidth = CGRectGetWidth(bounds);
+    CGFloat boundsHeight = CGRectGetHeight(bounds);
+    if (boundsWidth > width + 2.0f) {
+        CGFloat minX = 1.0f;
+        CGFloat maxX = boundsWidth - width - 1.0f;
+        x = MIN(MAX(x, minX), maxX);
+    }
+    if (boundsHeight <= 0.0f || y >= boundsHeight + 8.0f) {
+        [self wchook_hideMessageTimeLabel];
+        return;
+    }
+    if (y + height > boundsHeight - 1.0f) {
+        y = MAX(0.0f, boundsHeight - height - 1.0f);
+    }
+
+    label.frame = CGRectIntegral(CGRectMake(x, y, width, height));
+    label.hidden = NO;
+    label.alpha = 1.0f;
+    [self bringSubviewToFront:label];
+}
+
+- (void)setViewModel:(id)viewModel {
+    %orig;
+
+    wcpl_markRepeatButtonEligibilityForViewModel(viewModel ?: wcpl_viewModelForCellView(self));
+    [self wchook_updateMessageTimeLabel];
+    [self wchook_updateRepeatButtonIfNeeded];
+}
+
+- (void)onAppear {
+    %orig;
+
+    [self wchook_updateMessageTimeLabel];
+    [self wchook_updateRepeatButtonIfNeeded];
+}
+
+- (void)layoutInternal {
+    %orig;
+
+    [self wchook_updateMessageTimeLabel];
+    [self wchook_updateRepeatButtonIfNeeded];
+}
+
+- (void)updateNodeStatus {
+    %orig;
+
+    [self wchook_updateMessageTimeLabel];
+    [self wchook_updateRepeatButtonIfNeeded];
+}
+
+- (void)layoutSubviews {
+    %orig;
+
+    WCPLGestureConfig *config = [WCPLConfigCenter shared].gesture;
+    if (self.window && config.doubleTapGestureEnable) {
+        [self wchook_setupDoubleTapGestureIfNeeded];
+    }
+    [self wchook_updateMessageTimeLabel];
+    [self wchook_updateRepeatButtonIfNeeded];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    %orig;
+
+    if (@available(iOS 13.0, *)) {
+        UIUserInterfaceStyle currentStyle = self.traitCollection.userInterfaceStyle;
+        UIUserInterfaceStyle previousStyle = previousTraitCollection
+            ? previousTraitCollection.userInterfaceStyle
+            : UIUserInterfaceStyleUnspecified;
+        if (previousTraitCollection && currentStyle == previousStyle) {
+            return;
+        }
+
+        UIButton *button = [self wchook_repeatButtonForV2EnsureCreate:NO];
+        if (![button isKindOfClass:[UIButton class]]) {
+            return;
+        }
+        [self wchook_applyThemeStyleForRepeatButton:button force:YES];
+        [self bringSubviewToFront:button];
+    }
+}
+
+- (void)didMoveToWindow {
+    %orig;
+
+    if (!self.window) {
+        [self wchook_hideMessageTimeLabel];
+        [self wchook_hideRepeatButtonByNFQPrinciple];
+    }
+
+    // 说明：避免在 didMoveToWindow 同步触发按钮更新（内部会扫描 visibleCells 并做跨视图清理），
+    // 该时机容易与 UIKit 视图迁移/布局递归重入，导致崩溃。
+    // 按钮更新统一由 layoutSubviews 驱动。
+
+    if (self.window) {
+        [self wchook_setupSwipeGestureIfNeeded];
+        [self wchook_setupDoubleTapGestureIfNeeded];
+        [self wchook_updateMessageTimeLabel];
+        [self wchook_updateRepeatButtonIfNeeded];
+    } else {
+        [self wchook_hideMessageTimeLabel];
+        if (self.wchook_doubleTapGesture) {
+            self.wchook_doubleTapGesture.enabled = NO;
+        }
+        [self wchook_resetSwipeAnimated:NO];
+    }
+}
+
+
+%end

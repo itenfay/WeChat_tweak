@@ -1671,6 +1671,27 @@ static UIImage *wcpl_douyin_menuIconImage(void) {
     static UIImage *icon = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        NSString *svg =
+            @"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none'>"
+            "<path d='M10 3V15.5C10 17.433 8.433 19 6.5 19C4.567 19 3 17.433 3 15.5C3 13.567 4.567 12 6.5 12C7.289 12 8.015 12.246 8.605 12.664' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round'/>"
+            "<path d='M10 6.5C12.5 6.5 14.5 8.5 14.5 11' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round'/>"
+            "<circle cx='18' cy='16' r='4' stroke='#FFFFFF' stroke-width='1.5'/>"
+            "<path d='M18 14V18M18 18L16.5 16.5M18 18L19.5 16.5' stroke='#FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>"
+            "</svg>";
+        NSData *svgData = [svg dataUsingEncoding:NSUTF8StringEncoding];
+        id svgImage = nil;
+        Class themeProxyClass = objc_getClass("WAThemeProxy");
+        SEL svgFromDataSel = @selector(svgImageFromData:);
+        if (themeProxyClass && [themeProxyClass respondsToSelector:svgFromDataSel]) {
+            @try {
+                svgImage = ((id (*)(id, SEL, id))objc_msgSend)(themeProxyClass, svgFromDataSel, svgData);
+            } @catch (__unused NSException *exception) {
+            }
+        }
+        if ([svgImage isKindOfClass:[UIImage class]]) {
+            icon = (UIImage *)svgImage;
+        }
+
         UIImage *symbol = nil;
         if ([UIImage respondsToSelector:@selector(systemImageNamed:withConfiguration:)]) {
             UIImageSymbolConfiguration *config =
@@ -1697,8 +1718,11 @@ static UIImage *wcpl_douyin_menuIconImage(void) {
         if (!symbol && [UIImage respondsToSelector:@selector(systemImageNamed:)]) {
             symbol = [UIImage systemImageNamed:@"play.rectangle"];
         }
-        if ([symbol isKindOfClass:[UIImage class]]) {
-            icon = [symbol imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        if (!icon && [symbol isKindOfClass:[UIImage class]]) {
+            icon = symbol;
+        }
+        if (icon && [icon respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         }
     });
     return icon;

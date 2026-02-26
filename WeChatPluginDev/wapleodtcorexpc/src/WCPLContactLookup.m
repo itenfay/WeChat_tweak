@@ -4,6 +4,7 @@
 
 #import "WCPLContactLookup.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLDispatchUtils.h"
 #import "WCPLServiceCenter.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -144,7 +145,17 @@ CContact *WCPLFindContactByUserName(NSString *userName, CContactMgr *contactMgr,
 
     NSString *target = wcpl_trimUserName(userName);
     if (target.length == 0) return nil;
-    if (![NSThread isMainThread]) return nil;
+    if (![NSThread isMainThread]) {
+        NSString *targetCopy = [target copy];
+        __block CContact *resolved = nil;
+        BOOL didFinish = WCPLDispatchMainSyncWithTimeout(2.0, ^{
+            resolved = WCPLFindContactByUserName(targetCopy, contactMgr, dataLogic);
+        });
+        if (!didFinish) {
+            return nil;
+        }
+        return resolved;
+    }
 
     // 稳定性优先：仅保留轻量联系人查询，避免复杂容器遍历触发野指针崩溃。
     // 如后续确认稳定，可再逐步恢复 dictionary/cache 兜底逻辑。

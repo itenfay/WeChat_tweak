@@ -9,12 +9,10 @@
 #import "WCPLLogUploader.h"
 
 #import <UIKit/UIKit.h>
-#import <execinfo.h>
 #import <signal.h>
 #import <fcntl.h>
 #import <unistd.h>
 #import <sys/stat.h>
-#import <time.h>
 #import <limits.h>
 #import <string.h>
 
@@ -30,10 +28,52 @@ static char wcpl_crash_marker_path[PATH_MAX] = {0};
 static char wcpl_last_action[256] = {0};
 
 static void WCPLWriteCString(int fd, const char *text) {
-    if (!text) {
+    if (fd < 0 || !text) {
         return;
     }
-    write(fd, text, strlen(text));
+    size_t len = 0;
+    while (text[len] != '\0') {
+        len += 1;
+    }
+
+    const char *p = text;
+    size_t remaining = len;
+    while (remaining > 0) {
+        ssize_t written = write(fd, p, remaining);
+        if (written <= 0) {
+            return;
+        }
+        p += written;
+        remaining -= (size_t)written;
+    }
+}
+
+static void WCPLWriteInt(int fd, int value) {
+    char buf[32] = {0};
+    size_t idx = 0;
+    long long v = (long long)value;
+
+    if (v == 0) {
+        buf[idx++] = '0';
+        write(fd, buf, idx);
+        return;
+    }
+
+    if (v < 0) {
+        buf[idx++] = '-';
+        v = -v;
+    }
+
+    char digits[24] = {0};
+    size_t digitCount = 0;
+    while (v > 0 && digitCount < sizeof(digits)) {
+        digits[digitCount++] = (char)('0' + (v % 10));
+        v /= 10;
+    }
+    for (size_t i = 0; i < digitCount; i++) {
+        buf[idx++] = digits[digitCount - 1 - i];
+    }
+    write(fd, buf, idx);
 }
 
 static void WCPLCreateCrashMarkerFile(void) {
@@ -50,9 +90,8 @@ static void WCPLCreateCrashMarkerFile(void) {
 
 static void WCPLSignalHandler(int sig) {
     if (!wcpl_crash_enabled || wcpl_is_handling_crash) {
-        signal(sig, SIG_DFL);
-        raise(sig);
-        return;
+        kill(getpid(), sig);
+        _exit(128 + sig);
     }
 
     wcpl_is_handling_crash = 1;
@@ -63,27 +102,14 @@ static void WCPLSignalHandler(int sig) {
     }
 
     if (fd >= 0) {
-        time_t now = time(NULL);
-        struct tm timeinfo;
-        localtime_r(&now, &timeinfo);
-        char timebuf[64] = {0};
-        strftime(timebuf, sizeof(timebuf), "%Y-%m-%d %H:%M:%S", &timeinfo);
-
-        char header[256] = {0};
-        snprintf(header, sizeof(header), "\n\n===== WCPL Signal Crash =====\nTime: %s\nSignal: %d\n", timebuf, sig);
-        WCPLWriteCString(fd, header);
+        // 信号处理仅使用 async-signal-safe API，避免 backtrace/时间格式化/Objective-C 调用导致二次崩溃。
+        WCPLWriteCString(fd, "\n\n===== WCPL Signal Crash =====\nSignal: ");
+        WCPLWriteInt(fd, sig);
+        WCPLWriteCString(fd, "\n");
 
         if (wcpl_last_action[0] != '\0') {
             WCPLWriteCString(fd, "LastAction: ");
             WCPLWriteCString(fd, wcpl_last_action);
-            WCPLWriteCString(fd, "\n");
-        }
-
-        void *callstack[64];
-        int frames = backtrace(callstack, 64);
-        if (frames > 0) {
-            WCPLWriteCString(fd, "Backtrace:\n");
-            backtrace_symbols_fd(callstack, frames, fd);
             WCPLWriteCString(fd, "\n");
         }
 
@@ -92,8 +118,18 @@ static void WCPLSignalHandler(int sig) {
 
     WCPLCreateCrashMarkerFile();
 
-    signal(sig, SIG_DFL);
-    raise(sig);
+    // sigaction 已通过 SA_RESETHAND 恢复默认处理；这里用 kill 触发默认行为。
+    kill(getpid(), sig);
+    _exit(128 + sig);
+}
+
+static void WCPLInstallSignalHandler(int sig) {
+    struct sigaction action;
+    memset(&action, 0, sizeof(action));
+    action.sa_handler = WCPLSignalHandler;
+    sigemptyset(&action.sa_mask);
+    action.sa_flags = SA_RESETHAND | SA_NODEFER;
+    sigaction(sig, &action, NULL);
 }
 
 @interface WCPLCrashReporter (Private)
@@ -148,13 +184,19 @@ static void WCPLHandleException(NSException *exception) {
 
     NSSetUncaughtExceptionHandler(&WCPLHandleException);
 
-    signal(SIGABRT, WCPLSignalHandler);
-    signal(SIGILL, WCPLSignalHandler);
-    signal(SIGSEGV, WCPLSignalHandler);
-    signal(SIGFPE, WCPLSignalHandler);
-    signal(SIGBUS, WCPLSignalHandler);
-    signal(SIGPIPE, WCPLSignalHandler);
-    signal(SIGTRAP, WCPLSignalHandler);
+    WCPLInstallSignalHandler(SIGABRT);
+    WCPLInstallSignalHandler(SIGILL);
+    WCPLInstallSignalHandler(SIGSEGV);
+    WCPLInstallSignalHandler(SIGFPE);
+    WCPLInstallSignalHandler(SIGBUS);
+    // 避免覆盖宿主已忽略 SIGPIPE 的行为，否则可能引入“原本不崩 -> 变崩”的回归。
+    struct sigaction oldPipeAction;
+    if (sigaction(SIGPIPE, NULL, &oldPipeAction) == 0 && oldPipeAction.sa_handler == SIG_IGN) {
+        // keep ignored
+    } else {
+        WCPLInstallSignalHandler(SIGPIPE);
+    }
+    WCPLInstallSignalHandler(SIGTRAP);
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self tryUploadPendingReport];

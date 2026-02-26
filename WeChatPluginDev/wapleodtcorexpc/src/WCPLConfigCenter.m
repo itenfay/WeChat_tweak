@@ -6,6 +6,7 @@
 #import <dispatch/dispatch.h>
 
 static NSString *const kWCPLDouyinParserEnable = @"kWCPLDouyinParserEnable";
+static NSString *const kWCPLMarkAllReadTopRightMenuEnable = @"kWCPLMarkAllReadTopRightMenuEnable";
 
 @implementation WCPLConfigCenter
 
@@ -34,6 +35,10 @@ static NSString *const kWCPLDouyinParserEnable = @"kWCPLDouyinParserEnable";
         NSNumber *enableObj = [defaults objectForKey:kWCPLDouyinParserEnable];
         _douyinParserEnable = enableObj ? enableObj.boolValue : YES;
         [defaults setBool:_douyinParserEnable forKey:kWCPLDouyinParserEnable];
+
+        NSNumber *markAllReadObj = [defaults objectForKey:kWCPLMarkAllReadTopRightMenuEnable];
+        _markAllReadTopRightMenuEnable = markAllReadObj ? markAllReadObj.boolValue : NO;
+        [defaults setBool:_markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
     }
     return self;
 }
@@ -41,6 +46,11 @@ static NSString *const kWCPLDouyinParserEnable = @"kWCPLDouyinParserEnable";
 - (void)setDouyinParserEnable:(BOOL)douyinParserEnable {
     _douyinParserEnable = douyinParserEnable;
     [[NSUserDefaults standardUserDefaults] setBool:douyinParserEnable forKey:kWCPLDouyinParserEnable];
+}
+
+- (void)setMarkAllReadTopRightMenuEnable:(BOOL)markAllReadTopRightMenuEnable {
+    _markAllReadTopRightMenuEnable = markAllReadTopRightMenuEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:markAllReadTopRightMenuEnable forKey:kWCPLMarkAllReadTopRightMenuEnable];
 }
 
 @end

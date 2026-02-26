@@ -1,9 +1,12 @@
 #import "WeChatRedEnvelop.h"
 #import "WCPLConfigCenter.h"
+#import "WCPLHookGovernance.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLLogger.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+
+static void wcpl_applyRevokeTimeColorToMessageCell(id cell);
 
 static NSString *wcpl_trimString(NSString *text) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
@@ -363,8 +366,37 @@ static NSString *wcpl_digestForMessageWrap(CMessageWrap *msgWrap) {
             return @"[视频]";
         case 47:
             return @"[表情]";
-        case 49:
+        case 49: {
+            // 引用回复在微信底层通常也是 49(AppMsg) + <type>57</type> + <refermsg>。
+            // 撤回提示仅需要展示“本次回复的文本”，不需要带引用内容。
+            NSString *content = msgWrap.m_nsContent;
+            NSString *trimmed = wcpl_trimString(content);
+            if (trimmed.length > 0 &&
+                ([trimmed rangeOfString:@"<refermsg" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                 [trimmed rangeOfString:@"<type>57</type>" options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                 [trimmed rangeOfString:@"<type><![CDATA[57]]></type>" options:NSCaseInsensitiveSearch].location != NSNotFound)) {
+
+                // 只在 <refermsg> 之前提取 <title>/<des>，避免误取到被引用消息里嵌套的 AppMsg 标题。
+                NSString *header = trimmed;
+                NSRange referRange = [trimmed rangeOfString:@"<refermsg" options:NSCaseInsensitiveSearch];
+                if (referRange.location != NSNotFound && referRange.location > 0) {
+                    header = [trimmed substringToIndex:referRange.location];
+                }
+
+                NSString *titleRaw = wcpl_extractXmlTagValue(header, @"title");
+                NSString *title = wcpl_sanitizeInlineText(wcpl_stripCDATAIfNeeded(titleRaw), 120);
+                if (title.length > 0) {
+                    return title;
+                }
+
+                NSString *desRaw = wcpl_extractXmlTagValue(header, @"des");
+                NSString *des = wcpl_sanitizeInlineText(wcpl_stripCDATAIfNeeded(desRaw), 120);
+                if (des.length > 0) {
+                    return des;
+                }
+            }
             return @"[应用消息]";
+        }
         default:
             return [NSString stringWithFormat:@"[类型:%u]", type];
     }
@@ -867,24 +899,82 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     return NO;
 }
 
+static NSString *const kWCPLHookFeatureRevoke = @"revoke";
+
+static void wcpl_revokeHookLog(NSString *className,
+                               NSString *selectorName,
+                               NSString *stage,
+                               NSString *decision,
+                               WCPLHookOrigPolicy policy,
+                               NSString *detail) {
+    wcpl_hookGovernanceLog(kWCPLHookFeatureRevoke,
+                           className,
+                           selectorName,
+                           stage,
+                           decision,
+                           policy,
+                           detail);
+}
+
+static void wcpl_revokeApplyTimeColorWithGovernance(id cell, NSString *className, NSString *selectorName) {
+    static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyPre;
+    @try {
+        wcpl_applyRevokeTimeColorToMessageCell(cell);
+    } @catch (NSException *exception) {
+        wcpl_revokeHookLog(className,
+                           selectorName,
+                           @"feature",
+                           @"exception",
+                           kOrigPolicy,
+                           exception.reason ?: @"unknown");
+    }
+}
+
 %hook CMessageMgr
 
 - (void)onRevokeMsg:(CMessageWrap *)arg1 {
+    static NSString *const kHookSelector = @"onRevokeMsg:";
+    static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyConditionalShortCircuit;
+
     if (![WCPLConfigCenter shared].revoke.revokeEnable) {
+        wcpl_revokeHookLog(@"CMessageMgr",
+                           kHookSelector,
+                           @"pre_filter",
+                           @"skip_feature",
+                           kOrigPolicy,
+                           @"reason=feature_disabled");
         %orig;
         return;
     }
 
     @try {
         if (wcpl_handleRevokeMessage(arg1, nil)) {
+            wcpl_revokeHookLog(@"CMessageMgr",
+                               kHookSelector,
+                               @"feature",
+                               @"short_circuit",
+                               kOrigPolicy,
+                               @"reason=handled_by_plugin");
             return;
         }
     } @catch (NSException *exception) {
         WCPLLogError(@"Exception in CMessageMgr.onRevokeMsg: %@", exception);
+        wcpl_revokeHookLog(@"CMessageMgr",
+                           kHookSelector,
+                           @"feature",
+                           @"exception",
+                           kOrigPolicy,
+                           exception.reason ?: @"unknown");
         %orig;
         return;
     }
 
+    wcpl_revokeHookLog(@"CMessageMgr",
+                       kHookSelector,
+                       @"fallback",
+                       @"pass_through",
+                       kOrigPolicy,
+                       @"reason=not_handled");
     %orig;
 }
 
@@ -945,18 +1035,12 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
 
 - (void)updateStatus {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"SystemMessageCellView", @"updateStatus");
 }
 
 - (void)layoutContentView {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"SystemMessageCellView", @"layoutContentView");
 }
 
 %end
@@ -965,18 +1049,12 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
 
 - (void)updateStatus {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"TextMessageCellView", @"updateStatus");
 }
 
 - (void)layoutContentView {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"TextMessageCellView", @"layoutContentView");
 }
 
 %end
@@ -985,18 +1063,12 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
 
 - (void)updateStatus {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"CommonMessageCellView", @"updateStatus");
 }
 
 - (void)layoutContentView {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"CommonMessageCellView", @"layoutContentView");
 }
 
 %end
@@ -1005,18 +1077,12 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
 
 - (void)updateStatus {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"BaseMessageCellView", @"updateStatus");
 }
 
 - (void)layoutContentView {
     %orig;
-    @try {
-        wcpl_applyRevokeTimeColorToMessageCell(self);
-    } @catch (__unused NSException *exception) {
-    }
+    wcpl_revokeApplyTimeColorWithGovernance(self, @"BaseMessageCellView", @"layoutContentView");
 }
 
 %end

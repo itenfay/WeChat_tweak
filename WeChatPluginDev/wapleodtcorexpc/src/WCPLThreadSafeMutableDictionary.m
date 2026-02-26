@@ -6,6 +6,8 @@
 #import "WCPLConstants.h"
 #import <dispatch/dispatch.h>
 
+static const void *kWCPLThreadSafeDictionaryQueueSpecificKey = &kWCPLThreadSafeDictionaryQueueSpecificKey;
+
 @interface WCPLThreadSafeMutableDictionary<KeyType, ObjectType> ()
 @property (nonatomic, strong) NSMutableDictionary<KeyType, ObjectType> *backing;
 @property (nonatomic) dispatch_queue_t queue;
@@ -15,7 +17,43 @@
 
 - (void)wcpl_setupWithDictionary:(NSDictionary *)dictionary {
     _backing = dictionary ? [dictionary mutableCopy] : [NSMutableDictionary dictionary];
-    _queue = dispatch_queue_create(kWCPLConfigQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
+    _queue = dispatch_queue_create(kWCPLConfigQueueLabel.UTF8String, DISPATCH_QUEUE_CONCURRENT);
+    // 通过 queue-specific 检测当前是否已在同一队列内，避免重入 sync 死锁。
+    dispatch_queue_set_specific(_queue,
+                                kWCPLThreadSafeDictionaryQueueSpecificKey,
+                                (__bridge void *)self,
+                                NULL);
+}
+
+- (BOOL)wcpl_isOnOwnQueue {
+    return dispatch_get_specific(kWCPLThreadSafeDictionaryQueueSpecificKey) == (__bridge void *)self;
+}
+
+- (void)wcpl_readSync:(dispatch_block_t)block {
+    if (!block) return;
+    if ([self wcpl_isOnOwnQueue]) {
+        block();
+        return;
+    }
+    dispatch_sync(self.queue, block);
+}
+
+- (void)wcpl_writeSync:(dispatch_block_t)block {
+    if (!block) return;
+    if ([self wcpl_isOnOwnQueue]) {
+        block();
+        return;
+    }
+    dispatch_barrier_sync(self.queue, block);
+}
+
+- (void)wcpl_writeAsync:(dispatch_block_t)block {
+    if (!block) return;
+    if ([self wcpl_isOnOwnQueue]) {
+        block();
+        return;
+    }
+    dispatch_barrier_async(self.queue, block);
 }
 
 - (instancetype)init {
@@ -36,18 +74,18 @@
 
 - (NSUInteger)count {
     __block NSUInteger count = 0;
-    dispatch_sync(self.queue, ^{
+    [self wcpl_readSync:^{
         count = self.backing.count;
-    });
+    }];
     return count;
 }
 
 - (id)objectForKey:(id)aKey {
     if (!aKey) return nil;
     __block id value = nil;
-    dispatch_sync(self.queue, ^{
+    [self wcpl_readSync:^{
         value = self.backing[aKey];
-    });
+    }];
     return value;
 }
 
@@ -57,20 +95,20 @@
 
 - (void)setObject:(id)anObject forKey:(id<NSCopying>)aKey {
     if (!aKey) return;
-    dispatch_sync(self.queue, ^{
+    [self wcpl_writeSync:^{
         if (anObject) {
             self.backing[aKey] = anObject;
         } else {
             [self.backing removeObjectForKey:aKey];
         }
-    });
+    }];
 }
 
 - (void)removeObjectForKey:(id)aKey {
     if (!aKey) return;
-    dispatch_sync(self.queue, ^{
+    [self wcpl_writeSync:^{
         [self.backing removeObjectForKey:aKey];
-    });
+    }];
 }
 
 - (id)objectForKeyedSubscript:(id)key {
@@ -96,9 +134,9 @@
 
 - (NSDictionary *)dictionaryRepresentation {
     __block NSDictionary *snapshot = nil;
-    dispatch_sync(self.queue, ^{
+    [self wcpl_readSync:^{
         snapshot = [self.backing copy];
-    });
+    }];
     return snapshot ?: @{};
 }
 
@@ -113,4 +151,3 @@
 }
 
 @end
-

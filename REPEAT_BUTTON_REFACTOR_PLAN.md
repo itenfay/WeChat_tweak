@@ -7,6 +7,9 @@
 - 保持现有发送能力（文本/图片/语音/视频/表情/引用）不回退。
 - 保留可灰度、可回滚能力。
 
+> 现状说明（2026-02）：当前实现已默认启用 V2(sync-cell)，并移除了
+> `repeatButtonEngineV2Enable` 运行时开关；如需回滚到 V1，需要走版本/代码回退。
+
 ## 2. 范围
 
 - 重构按钮生命周期、布局、绑定、清理链路。
@@ -25,11 +28,11 @@
 
 ## 4. 分阶段实施
 
-### 阶段 0：灰度开关
+### 阶段 0：灰度开关（历史阶段，已移除）
 
-1. 在 `WCPLGestureConfig` 增加 `repeatButtonEngineV2Enable`（默认 `NO`）。
-2. 在设置页增加调试入口，仅内部可见。
-3. 旧引擎保留，支持一键回滚。
+1. （历史）曾在 `WCPLGestureConfig` 增加 `repeatButtonEngineV2Enable` 并在设置页增加调试入口。
+2. （当前）开关已移除，`WCPLGestureHook.xm` 统一走 V2(sync-cell)。
+3. 旧引擎代码仍保留，回滚改为“版本/代码回退”。
 
 ### 阶段 1：引擎抽离
 
@@ -92,7 +95,7 @@
    - `kWCPLRepeatSupportVoiceEnable`
    - `kWCPLRepeatSupportImageEnable`
    - `kWCPLRepeatSupportVideoEnable`
-2. 仅新增 V2 引擎开关键。
+2. 不再提供 V2 引擎运行时开关键（统一默认 V2）。
 
 ### 阶段 9：验证与发布
 
@@ -128,7 +131,9 @@
 
 ### 回滚
 
-1. 关闭 `repeatButtonEngineV2Enable` 即恢复旧实现。
+1. 通过版本回退或代码回退恢复 V1(global-refresh)：
+   - 回退到包含旧引擎的稳定 deb/commit
+   - 或在 `WCPLGestureHook.xm` 中将 `wcpl_shouldUseLocalCellRepeatEngine()` 改为返回 `NO` 并重新编译部署
 2. 不需要回滚发送链路。
 
 ## 8. 执行顺序建议（最小可运行）
@@ -139,4 +144,3 @@
 4. 阶段 3（去重）
 5. 阶段 4（清理）
 6. 再进入灰度验证
-

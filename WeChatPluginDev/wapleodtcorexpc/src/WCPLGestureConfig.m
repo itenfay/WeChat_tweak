@@ -20,7 +20,6 @@ static NSString *const kWCPLRepeatSupportEmoticonEnable = @"kWCPLRepeatSupportEm
 static NSString *const kWCPLRepeatSupportVoiceEnable = @"kWCPLRepeatSupportVoiceEnable";
 static NSString *const kWCPLRepeatSupportImageEnable = @"kWCPLRepeatSupportImageEnable";
 static NSString *const kWCPLRepeatSupportVideoEnable = @"kWCPLRepeatSupportVideoEnable";
-static NSString *const kWCPLRepeatButtonEngineV2Enable = @"kWCPLRepeatButtonEngineV2Enable";
 static NSString *const kWCPLRepeatImmediateRenderEnable = @"kWCPLRepeatImmediateRenderEnable";
 static NSString *const kWCPLRepeatLongPressMenuEnable = @"kWCPLRepeatLongPressMenuEnable";
 static NSString *const kWCPLClownFeatureEnable = @"kWCPLClownFeatureEnable";
@@ -100,7 +99,6 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         NSNumber *repeatVoiceEnabled = [defaults objectForKey:kWCPLRepeatSupportVoiceEnable];
         NSNumber *repeatImageEnabled = [defaults objectForKey:kWCPLRepeatSupportImageEnable];
         NSNumber *repeatVideoEnabled = [defaults objectForKey:kWCPLRepeatSupportVideoEnable];
-        NSNumber *repeatButtonEngineV2Enabled = [defaults objectForKey:kWCPLRepeatButtonEngineV2Enable];
         NSNumber *repeatImmediateRenderEnabled = [defaults objectForKey:kWCPLRepeatImmediateRenderEnable];
         NSNumber *repeatLongPressMenuEnabled = [defaults objectForKey:kWCPLRepeatLongPressMenuEnable];
         NSNumber *clownFeatureEnabled = [defaults objectForKey:kWCPLClownFeatureEnable];
@@ -110,7 +108,6 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
         _repeatSupportVoiceEnable = repeatVoiceEnabled ? repeatVoiceEnabled.boolValue : YES;
         _repeatSupportImageEnable = repeatImageEnabled ? repeatImageEnabled.boolValue : YES;
         _repeatSupportVideoEnable = repeatVideoEnabled ? repeatVideoEnabled.boolValue : YES;
-        _repeatButtonEngineV2Enable = repeatButtonEngineV2Enabled ? repeatButtonEngineV2Enabled.boolValue : NO;
         _repeatImmediateRenderEnable = repeatImmediateRenderEnabled ? repeatImmediateRenderEnabled.boolValue : YES;
         _repeatLongPressMenuEnable = repeatLongPressMenuEnabled ? repeatLongPressMenuEnabled.boolValue : YES;
         _clownFeatureEnable = clownFeatureEnabled ? clownFeatureEnabled.boolValue : YES;
@@ -245,11 +242,6 @@ static NSInteger wcpl_normalizeSwipeActionValue(NSInteger action, BOOL isSelfAct
 - (void)setRepeatSupportVideoEnable:(BOOL)repeatSupportVideoEnable {
     _repeatSupportVideoEnable = repeatSupportVideoEnable;
     [[NSUserDefaults standardUserDefaults] setBool:repeatSupportVideoEnable forKey:kWCPLRepeatSupportVideoEnable];
-}
-
-- (void)setRepeatButtonEngineV2Enable:(BOOL)repeatButtonEngineV2Enable {
-    _repeatButtonEngineV2Enable = repeatButtonEngineV2Enable;
-    [[NSUserDefaults standardUserDefaults] setBool:repeatButtonEngineV2Enable forKey:kWCPLRepeatButtonEngineV2Enable];
 }
 
 - (void)setRepeatImmediateRenderEnable:(BOOL)repeatImmediateRenderEnable {

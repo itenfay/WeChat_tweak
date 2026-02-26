@@ -2,6 +2,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #import "WCPLConfigCenter.h"
+#import "WCPLHookGovernance.h"
 #import "WCPLLogger.h"
 #import "WCPLServiceCenter.h"
 
@@ -21,6 +22,23 @@ typedef NS_ENUM(NSInteger, WCPLPush2ChatContext) {
     WCPLPush2ChatContextBackground = 0,
     WCPLPush2ChatContextForeground = 1,
 };
+
+static NSString *const kWCPLHookFeaturePush2Chat = @"push2chat";
+
+static void wcpl_push2chat_hookLog(NSString *className,
+                                   NSString *selectorName,
+                                   NSString *stage,
+                                   NSString *decision,
+                                   WCPLHookOrigPolicy policy,
+                                   NSString *detail) {
+    wcpl_hookGovernanceLog(kWCPLHookFeaturePush2Chat,
+                           className,
+                           selectorName,
+                           stage,
+                           decision,
+                           policy,
+                           detail);
+}
 
 static NSString *wcpl_push2chat_contextDescription(WCPLPush2ChatContext context) {
     return (context == WCPLPush2ChatContextForeground) ? @"fg" : @"bg";
@@ -1149,48 +1167,96 @@ static void wcpl_push2chat_handleNotificationResponse(id response, WCPLPush2Chat
     });
 }
 
-%hook MicroMessengerAppDelegate
-
-- (void)userNotificationCenter:(id)center didReceiveNotificationResponse:(id)response withCompletionHandler:(void (^)(void))completionHandler {
-    wcpl_push2chat_handleNotificationResponse(response, WCPLPush2ChatContextForeground, @"MicroMessengerAppDelegate");
-    %orig(center, response, completionHandler);
+#ifdef __cplusplus
+extern "C" {
+#endif
+void wcpl_push2chat_handleLaunchOptions(id launchOptions);
+void wcpl_push2chat_handleForegroundNotificationResponse(id response);
+#ifdef __cplusplus
 }
+#endif
 
-- (BOOL)application:(id)application didFinishLaunchingWithOptions:(id)launchOptions {
-    BOOL ok = %orig(application, launchOptions);
+// 提供给 WCPLPluginEntryHook.xm 调用：统一走主入口 didFinishLaunching 链路。
+void wcpl_push2chat_handleLaunchOptions(id launchOptions) {
+    static NSString *const kHookSelector = @"application:didFinishLaunchingWithOptions:";
+    static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyPre;
 
-    // 兜底：冷启动从通知进入时，可能先走 launchOptions 而不是 didReceiveNotificationResponse。
     NSDictionary *options = [launchOptions isKindOfClass:[NSDictionary class]] ? (NSDictionary *)launchOptions : nil;
     NSDictionary *userInfo = nil;
     if (options) {
-        id v = options[UIApplicationLaunchOptionsRemoteNotificationKey];
-        if ([v isKindOfClass:[NSDictionary class]]) {
-            userInfo = (NSDictionary *)v;
+        id value = options[UIApplicationLaunchOptionsRemoteNotificationKey];
+        if ([value isKindOfClass:[NSDictionary class]]) {
+            userInfo = (NSDictionary *)value;
         }
     }
     NSString *userName = wcpl_push2chat_targetUserNameFromUserInfo(userInfo);
     NSArray *keys = [userInfo isKindOfClass:[NSDictionary class]] ? [[userInfo allKeys] sortedArrayUsingSelector:@selector(compare:)] : @[];
     wcpl_push2chat_trace(@"launch: user=%@ keys=%@", userName ?: @"(nil)", keys);
 
-    if (userName.length > 0) {
-        WCPLPush2ChatConfig *cfg = [WCPLConfigCenter shared].push2Chat;
-        if (cfg.enableBackgroundPush) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                wcpl_push2chat_installDidBecomeActiveObserverOnce();
-                wcpl_push2chat_setPendingUserName(userName, @"launchOptions");
-            });
-        }
+    if (userName.length == 0) {
+        wcpl_push2chat_hookLog(@"MicroMessengerAppDelegate",
+                               kHookSelector,
+                               @"pre_filter",
+                               @"skip_feature",
+                               kOrigPolicy,
+                               @"reason=target_user_empty");
+        return;
     }
 
-    return ok;
+    WCPLPush2ChatConfig *cfg = [WCPLConfigCenter shared].push2Chat;
+    if (!cfg.enableBackgroundPush) {
+        wcpl_push2chat_hookLog(@"MicroMessengerAppDelegate",
+                               kHookSelector,
+                               @"pre_filter",
+                               @"skip_feature",
+                               kOrigPolicy,
+                               @"reason=background_push_disabled");
+        return;
+    }
+
+    wcpl_push2chat_hookLog(@"MicroMessengerAppDelegate",
+                           kHookSelector,
+                           @"feature",
+                           @"queue_pending",
+                           kOrigPolicy,
+                           [NSString stringWithFormat:@"user=%@", userName ?: @"(nil)"]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        wcpl_push2chat_installDidBecomeActiveObserverOnce();
+        wcpl_push2chat_setPendingUserName(userName, @"launchOptions");
+    });
 }
 
-%end
+// 提供给 WCPLPluginEntryHook.xm 调用：统一由主入口 hook 分发前台通知响应。
+void wcpl_push2chat_handleForegroundNotificationResponse(id response) {
+    static NSString *const kHookSelector = @"userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:";
+    static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyPost;
+    wcpl_push2chat_hookLog(@"MicroMessengerAppDelegate",
+                           kHookSelector,
+                           @"feature",
+                           @"dispatch",
+                           kOrigPolicy,
+                           @"context=foreground");
+    wcpl_push2chat_handleNotificationResponse(response, WCPLPush2ChatContextForeground, @"MicroMessengerAppDelegate");
+}
 
 %hook NotificationActionsMgr
 
 - (void)userNotificationCenter:(id)center didReceiveNotificationResponse:(id)response withCompletionHandler:(void (^)(void))completionHandler {
+    static NSString *const kHookSelector = @"userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:";
+    static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyPost;
+    wcpl_push2chat_hookLog(@"NotificationActionsMgr",
+                           kHookSelector,
+                           @"feature",
+                           @"dispatch",
+                           kOrigPolicy,
+                           @"context=background");
     wcpl_push2chat_handleNotificationResponse(response, WCPLPush2ChatContextBackground, @"NotificationActionsMgr");
+    wcpl_push2chat_hookLog(@"NotificationActionsMgr",
+                           kHookSelector,
+                           @"fallback",
+                           @"pass_through",
+                           kOrigPolicy,
+                           @"reason=call_orig");
     %orig(center, response, completionHandler);
 }
 

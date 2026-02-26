@@ -1,17 +1,20 @@
 #import <Foundation/Foundation.h>
+#import <dispatch/dispatch.h>
 
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WeChatRedEnvelopParam.h"
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLIgnoreConfig.h"
 #import "WCPLGestureConfig.h"
+#import "WCPLThreadSafeMutableDictionary.h"
 
 static NSString *const kWCPLGroupRedEnvelopScopeKey = @"kWCPLGroupRedEnvelopScope";
 static NSString *const kWCPLBlackListKey = @"kWCPLBlackList";
 static NSString *const kWCPLUserIgnoreEnableKey = @"kWCPLUserIgnoreEnable";
 static NSString *const kWCPLUserIgnoreInfoKey = @"kWCPLUserIgnoreInfo";
+static NSString *const kWCPLQuitMonitorScopeKey = @"kWCPLQuitMonitorScope";
+static NSString *const kWCPLQuitMonitorWhitelistInfoKey = @"kWCPLQuitMonitorWhitelistInfo";
 static NSString *const kWCPLReceiveDonePageSummaryEnableKey = @"kWCPLReceiveDonePageSummaryEnable";
-static NSString *const kWCPLRepeatButtonEngineV2EnableKey = @"kWCPLRepeatButtonEngineV2Enable";
 
 static void wcpl_clearDefaultsKeys(NSArray<NSString *> *keys) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -124,6 +127,39 @@ static BOOL testIgnoreDictionarySanitize(void) {
     return YES;
 }
 
+static BOOL testQuitMonitorScopeMigration(void) {
+    wcpl_clearDefaultsKeys(@[kWCPLQuitMonitorScopeKey, kWCPLQuitMonitorWhitelistInfoKey]);
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@{
+        @"  room@chatroom  ": @YES,
+        @"not_chatroom": @YES,
+    } forKey:kWCPLQuitMonitorWhitelistInfoKey];
+
+    WCPLIgnoreConfig *config = [[WCPLIgnoreConfig alloc] init];
+    WCPL_ASSERT(config.quitMonitorScope == WCPLQuitMonitorScopeWhitelist, "default scope should be whitelist when whitelist not empty");
+
+    [defaults removeObjectForKey:kWCPLQuitMonitorWhitelistInfoKey];
+    [defaults removeObjectForKey:kWCPLQuitMonitorScopeKey];
+    config = [[WCPLIgnoreConfig alloc] init];
+    WCPL_ASSERT(config.quitMonitorScope == WCPLQuitMonitorScopeAll, "default scope should be all when whitelist empty");
+
+    [defaults setInteger:99 forKey:kWCPLQuitMonitorScopeKey];
+    config = [[WCPLIgnoreConfig alloc] init];
+    WCPL_ASSERT(config.quitMonitorScope == WCPLQuitMonitorScopeAll, "invalid scope should be normalized to default");
+
+    wcpl_clearDefaultsKeys(@[kWCPLQuitMonitorScopeKey, kWCPLQuitMonitorWhitelistInfoKey]);
+    [defaults setObject:@{
+        @"not_chatroom": @YES,
+        @"still_not_chatroom": @YES,
+    } forKey:kWCPLQuitMonitorWhitelistInfoKey];
+    config = [[WCPLIgnoreConfig alloc] init];
+    WCPL_ASSERT(config.quitMonitorScope == WCPLQuitMonitorScopeAll, "default scope should be all when whitelist has no valid chatroom");
+
+    wcpl_clearDefaultsKeys(@[kWCPLQuitMonitorScopeKey, kWCPLQuitMonitorWhitelistInfoKey]);
+    return YES;
+}
+
 static BOOL testReceiveDonePageSummaryDefaultAndPersist(void) {
     wcpl_clearDefaultsKeys(@[kWCPLReceiveDonePageSummaryEnableKey]);
 
@@ -144,23 +180,50 @@ static BOOL testReceiveDonePageSummaryDefaultAndPersist(void) {
     return YES;
 }
 
-static BOOL testRepeatButtonEngineV2DefaultAndPersist(void) {
-    wcpl_clearDefaultsKeys(@[kWCPLRepeatButtonEngineV2EnableKey]);
+static BOOL testThreadSafeDictionaryConcurrentReadWriteNoDeadlock(void) {
+    WCPLThreadSafeMutableDictionary<NSString *, NSNumber *> *dictionary =
+        [[WCPLThreadSafeMutableDictionary alloc] init];
 
-    WCPLGestureConfig *config = [[WCPLGestureConfig alloc] init];
-    WCPL_ASSERT(config.repeatButtonEngineV2Enable == NO, "repeatButtonEngineV2Enable should default to NO");
+    const NSInteger workerCount = 12;
+    const NSInteger operationsPerWorker = 2000;
+    dispatch_queue_t workerQueue = dispatch_queue_create("com.wcpl.tests.threadsafe.dict.stress",
+                                                         DISPATCH_QUEUE_CONCURRENT);
+    dispatch_group_t group = dispatch_group_create();
 
-    config.repeatButtonEngineV2Enable = YES;
-    WCPL_ASSERT(config.repeatButtonEngineV2Enable == YES, "repeatButtonEngineV2Enable should persist YES in memory");
+    for (NSInteger worker = 0; worker < workerCount; worker++) {
+        dispatch_group_async(group, workerQueue, ^{
+            @autoreleasepool {
+                for (NSInteger index = 0; index < operationsPerWorker; index++) {
+                    NSString *key = [NSString stringWithFormat:@"k_%ld_%ld",
+                                     (long)worker,
+                                     (long)(index % 64)];
 
-    config = [[WCPLGestureConfig alloc] init];
-    WCPL_ASSERT(config.repeatButtonEngineV2Enable == YES, "repeatButtonEngineV2Enable should reload persisted YES");
+                    if (((worker + index) % 3) == 0) {
+                        dictionary[key] = @(index);
+                        continue;
+                    }
 
-    config.repeatButtonEngineV2Enable = NO;
-    config = [[WCPLGestureConfig alloc] init];
-    WCPL_ASSERT(config.repeatButtonEngineV2Enable == NO, "repeatButtonEngineV2Enable should reload persisted NO");
+                    if (((worker + index) % 5) == 0) {
+                        [dictionary removeObjectForKey:key];
+                        continue;
+                    }
 
-    wcpl_clearDefaultsKeys(@[kWCPLRepeatButtonEngineV2EnableKey]);
+                    (void)[dictionary objectForKey:key];
+                    (void)dictionary.count;
+                    (void)[dictionary dictionaryRepresentation];
+                }
+            }
+        });
+    }
+
+    long waitResult = dispatch_group_wait(group,
+                                          dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)));
+    WCPL_ASSERT(waitResult == 0, "thread-safe dictionary stress should not deadlock");
+
+    dictionary[@"final_check"] = @1;
+    WCPL_ASSERT([dictionary[@"final_check"] isEqualToNumber:@1],
+                "thread-safe dictionary should remain consistent after stress");
+
     return YES;
 }
 
@@ -180,8 +243,10 @@ int main(void) {
     failed += !runTest("testGroupScopeMigration", testGroupScopeMigration);
     failed += !runTest("testAllowedGroupListAliasing", testAllowedGroupListAliasing);
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
+    failed += !runTest("testQuitMonitorScopeMigration", testQuitMonitorScopeMigration);
     failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);
-    failed += !runTest("testRepeatButtonEngineV2DefaultAndPersist", testRepeatButtonEngineV2DefaultAndPersist);
+    failed += !runTest("testThreadSafeDictionaryConcurrentReadWriteNoDeadlock",
+                       testThreadSafeDictionaryConcurrentReadWriteNoDeadlock);
 
     if (failed == 0) {
         fprintf(stdout, "ALL TESTS PASSED\n");

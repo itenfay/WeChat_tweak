@@ -1,5 +1,6 @@
 #import "WCHookMessageNavigator.h"
 #import "WCPLCrashReporter.h"
+#import "WCPLDispatchUtils.h"
 #import "WCPLLogger.h"
 #import "WCPLServiceCenter.h"
 
@@ -2445,8 +2446,12 @@ static BOOL WCHookPerformSyncOnMainThread(BOOL (^action)(void)) {
         return action();
     }
     __block BOOL result = NO;
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    BOOL didFinish = WCPLDispatchMainSyncWithTimeout(2.0, ^{
         result = action();
     });
+    if (!didFinish) {
+        WCPLLogWarning(@"[引用跳转] 主线程同步调度超时，已放弃执行");
+        return NO;
+    }
     return result;
 }

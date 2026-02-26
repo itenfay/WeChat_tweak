@@ -17,7 +17,12 @@
 @property (strong, nonatomic) NSMutableDictionary<NSString *, NSMutableArray<WeChatRedEnvelopParam *> *> *queueBySign;
 @property (nonatomic) dispatch_queue_t syncQueue;
 
+- (BOOL)wcpl_isOnSyncQueue;
+- (void)wcpl_sync:(dispatch_block_t)block;
+
 @end
+
+static const void *kWCPLRedEnvelopParamQueueSpecificKey = &kWCPLRedEnvelopParamQueueSpecificKey;
 
 static NSString *wcpl_trimQueueKey(NSString *value) {
     if (![value isKindOfClass:[NSString class]] || value.length == 0) {
@@ -44,28 +49,46 @@ static NSString *wcpl_trimQueueKey(NSString *value) {
         _queueBySendId = [[NSMutableDictionary alloc] init];
         _queueBySign = [[NSMutableDictionary alloc] init];
         _syncQueue = dispatch_queue_create(kWCPLRedEnvelopQueueLabel.UTF8String, DISPATCH_QUEUE_SERIAL);
+        // 通过 queue-specific 判断同队列重入，避免 dispatch_sync 死锁。
+        dispatch_queue_set_specific(_syncQueue,
+                                    kWCPLRedEnvelopParamQueueSpecificKey,
+                                    (__bridge void *)self,
+                                    NULL);
     }
     return self;
 }
 
+- (BOOL)wcpl_isOnSyncQueue {
+    return dispatch_get_specific(kWCPLRedEnvelopParamQueueSpecificKey) == (__bridge void *)self;
+}
+
+- (void)wcpl_sync:(dispatch_block_t)block {
+    if (!block) return;
+    if ([self wcpl_isOnSyncQueue]) {
+        block();
+        return;
+    }
+    dispatch_sync(self.syncQueue, block);
+}
+
 - (void)enqueue:(WeChatRedEnvelopParam *)param {
     if (!param) return;
-    dispatch_sync(self.syncQueue, ^{
+    [self wcpl_sync:^{
         [self.queue addObject:param];
         [self wcpl_indexParam:param];
-    });
+    }];
 }
 
 - (WeChatRedEnvelopParam *)dequeue {
     __block WeChatRedEnvelopParam *first = nil;
-    dispatch_sync(self.syncQueue, ^{
+    [self wcpl_sync:^{
         if (self.queue.count == 0) {
             return;
         }
         first = self.queue.firstObject;
         [self.queue removeObjectAtIndex:0];
         [self wcpl_deindexParam:first];
-    });
+    }];
     return first;
 }
 
@@ -74,7 +97,7 @@ static NSString *wcpl_trimQueueKey(NSString *value) {
     NSString *normalizedSendId = wcpl_trimQueueKey(sendId);
 
     __block WeChatRedEnvelopParam *matched = nil;
-    dispatch_sync(self.syncQueue, ^{
+    [self wcpl_sync:^{
         if (self.queue.count == 0) return;
 
         if (normalizedSendId.length > 0) {
@@ -101,26 +124,26 @@ static NSString *wcpl_trimQueueKey(NSString *value) {
             [self wcpl_removeParamFromQueue:matched];
             [self wcpl_deindexParam:matched];
         }
-    });
+    }];
     return matched;
 }
 
 - (WeChatRedEnvelopParam *)peek {
     __block WeChatRedEnvelopParam *first = nil;
-    dispatch_sync(self.syncQueue, ^{
+    [self wcpl_sync:^{
         if (self.queue.count == 0) {
             return;
         }
         first = self.queue.firstObject;
-    });
+    }];
     return first;
 }
 
 - (BOOL)isEmpty {
     __block BOOL empty = YES;
-    dispatch_sync(self.syncQueue, ^{
+    [self wcpl_sync:^{
         empty = (self.queue.count == 0);
-    });
+    }];
     return empty;
 }
 

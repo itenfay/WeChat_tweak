@@ -7,6 +7,8 @@
 #import "WCPLRedEnvelopParamQueue.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLFuncService.h"
+#import "WCPLDispatchUtils.h"
+#import "WCPLHookGovernance.h"
 #import "WCPLLogger.h"
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
@@ -34,6 +36,19 @@ static NSTimeInterval const kWCPLReceiverQueryMatchRetryDelay = 0.03;
 static NSUInteger const kWCPLReceiverQueryMatchMaxRetryCount = 3;
 static NSTimeInterval const kWCPLReceiverQueryHedgeDelays[] = {0.20, 0.55};
 static NSString *const kWCPLHongbaoBackgroundTaskName = @"com.wcpl.hongbao.receive";
+static NSString *const kWCPLHookFeatureRedEnvelop = @"red_envelop";
+static const void *kWCPLHongbaoBackgroundTaskQueueSpecificKey = &kWCPLHongbaoBackgroundTaskQueueSpecificKey;
+static const void *kWCPLReceiverQueryTrackQueueSpecificKey = &kWCPLReceiverQueryTrackQueueSpecificKey;
+static const void *kWCPLOpenReplyTrackQueueSpecificKey = &kWCPLOpenReplyTrackQueueSpecificKey;
+
+static inline void wcpl_dispatch_sync_safe(dispatch_queue_t queue, const void *key, dispatch_block_t block) {
+    if (!block) return;
+    if (dispatch_get_specific(key)) {
+        block();
+        return;
+    }
+    dispatch_sync(queue, block);
+}
 
 static NSString *wcpl_stringFromSelector(id obj, SEL sel);
 static NSString *wcpl_trimString(NSString *text);
@@ -49,6 +64,20 @@ static BOOL wcpl_isReceiverQueryPending(NSString *sendId, NSString *sign);
 static NSTimeInterval wcpl_markReceiverQueryFinished(NSString *sendId, NSString *sign);
 static void wcpl_scheduleReceiverQueryHedgeRequests(NSString *sendId, NSString *sign, NSDictionary *params, NSString *sessionUserName);
 static void wcpl_miyouStyleHookStoryViewControllerViewDidLoad(void);
+
+static void wcpl_redEnvelopHookLogCMessageMgr(NSString *selectorName,
+                                              NSString *stage,
+                                              NSString *decision,
+                                              WCPLHookOrigPolicy policy,
+                                              NSString *detail) {
+    wcpl_hookGovernanceLog(kWCPLHookFeatureRedEnvelop,
+                           @"CMessageMgr",
+                           selectorName,
+                           stage,
+                           decision,
+                           policy,
+                           detail);
+}
 
 static void (*wcpl_orig_StoryViewController_viewDidLoad)(id, SEL) = NULL;
 
@@ -71,6 +100,10 @@ static dispatch_queue_t wcpl_hongbaoBackgroundTaskQueue(void) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         queue = dispatch_queue_create("com.wcpl.red_envelop.bg_task", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_set_specific(queue,
+                                    kWCPLHongbaoBackgroundTaskQueueSpecificKey,
+                                    (void *)kWCPLHongbaoBackgroundTaskQueueSpecificKey,
+                                    NULL);
     });
     return queue;
 }
@@ -105,7 +138,7 @@ static void wcpl_beginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
     }
 
     __block BOOL alreadyTracked = NO;
-    dispatch_sync(wcpl_hongbaoBackgroundTaskQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), kWCPLHongbaoBackgroundTaskQueueSpecificKey, ^{
         NSNumber *existing = wcpl_hongbaoBackgroundTaskMap()[token];
         alreadyTracked = (existing != nil && existing.unsignedIntegerValue != UIBackgroundTaskInvalid);
     });
@@ -118,7 +151,7 @@ static void wcpl_beginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
     taskId = [app beginBackgroundTaskWithName:kWCPLHongbaoBackgroundTaskName expirationHandler:^{
         UIApplication *innerApp = [UIApplication sharedApplication];
         __block BOOL shouldEnd = NO;
-        dispatch_sync(wcpl_hongbaoBackgroundTaskQueue(), ^{
+        wcpl_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), kWCPLHongbaoBackgroundTaskQueueSpecificKey, ^{
             NSMutableDictionary<NSString *, NSNumber *> *tracker = wcpl_hongbaoBackgroundTaskMap();
             NSNumber *stored = tracker[tokenCopy];
             if (stored && stored.unsignedIntegerValue == taskId) {
@@ -138,7 +171,7 @@ static void wcpl_beginHongbaoBackgroundTask(NSString *sendId, NSString *sign) {
         return;
     }
 
-    dispatch_sync(wcpl_hongbaoBackgroundTaskQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), kWCPLHongbaoBackgroundTaskQueueSpecificKey, ^{
         wcpl_hongbaoBackgroundTaskMap()[tokenCopy] = @(taskId);
     });
 
@@ -170,7 +203,7 @@ static void wcpl_endHongbaoBackgroundTask(NSString *sendId, NSString *sign, NSSt
     }
 
     __block UIBackgroundTaskIdentifier taskId = UIBackgroundTaskInvalid;
-    dispatch_sync(wcpl_hongbaoBackgroundTaskQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_hongbaoBackgroundTaskQueue(), kWCPLHongbaoBackgroundTaskQueueSpecificKey, ^{
         NSMutableDictionary<NSString *, NSNumber *> *tracker = wcpl_hongbaoBackgroundTaskMap();
         NSNumber *stored = tracker[token];
         if (stored) {
@@ -193,6 +226,10 @@ static dispatch_queue_t wcpl_receiverQueryTrackQueue(void) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         queue = dispatch_queue_create("com.wcpl.red_envelop.query_track", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_set_specific(queue,
+                                    kWCPLReceiverQueryTrackQueueSpecificKey,
+                                    (void *)kWCPLReceiverQueryTrackQueueSpecificKey,
+                                    NULL);
     });
     return queue;
 }
@@ -213,7 +250,7 @@ static void wcpl_markReceiverQueryPending(NSString *sendId, NSString *sign) {
     }
 
     NSTimeInterval now = CFAbsoluteTimeGetCurrent();
-    dispatch_sync(wcpl_receiverQueryTrackQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_receiverQueryTrackQueue(), kWCPLReceiverQueryTrackQueueSpecificKey, ^{
         wcpl_receiverQueryTrackMap()[token] = @(now);
     });
 }
@@ -225,7 +262,7 @@ static BOOL wcpl_isReceiverQueryPending(NSString *sendId, NSString *sign) {
     }
 
     __block BOOL pending = NO;
-    dispatch_sync(wcpl_receiverQueryTrackQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_receiverQueryTrackQueue(), kWCPLReceiverQueryTrackQueueSpecificKey, ^{
         pending = (wcpl_receiverQueryTrackMap()[token] != nil);
     });
     return pending;
@@ -239,7 +276,7 @@ static NSTimeInterval wcpl_markReceiverQueryFinished(NSString *sendId, NSString 
 
     __block NSTimeInterval elapsed = -1;
     NSTimeInterval now = CFAbsoluteTimeGetCurrent();
-    dispatch_sync(wcpl_receiverQueryTrackQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_receiverQueryTrackQueue(), kWCPLReceiverQueryTrackQueueSpecificKey, ^{
         NSMutableDictionary<NSString *, NSNumber *> *tracker = wcpl_receiverQueryTrackMap();
         NSNumber *start = tracker[token];
         if (start) {
@@ -374,6 +411,10 @@ static dispatch_queue_t wcpl_openReplyTrackQueue(void) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         queue = dispatch_queue_create("com.wcpl.red_envelop.reply_track", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_set_specific(queue,
+                                    kWCPLOpenReplyTrackQueueSpecificKey,
+                                    (void *)kWCPLOpenReplyTrackQueueSpecificKey,
+                                    NULL);
     });
     return queue;
 }
@@ -420,7 +461,7 @@ static void wcpl_trackOpenReplySession(NSString *sendId, NSString *sign, NSStrin
         return;
     }
 
-    dispatch_sync(wcpl_openReplyTrackQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_openReplyTrackQueue(), kWCPLOpenReplyTrackQueueSpecificKey, ^{
         NSMutableDictionary<NSString *, NSDictionary *> *tracker = wcpl_openReplyTrackMap();
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         wcpl_openReplyTrackCleanupLocked(tracker, now);
@@ -468,7 +509,7 @@ static NSString *wcpl_lookupTrackedOpenSession(NSString *sendId, NSString *sign,
     __block NSString *session = nil;
     __block NSString *source = nil;
 
-    dispatch_sync(wcpl_openReplyTrackQueue(), ^{
+    wcpl_dispatch_sync_safe(wcpl_openReplyTrackQueue(), kWCPLOpenReplyTrackQueueSpecificKey, ^{
         NSMutableDictionary<NSString *, NSDictionary *> *tracker = wcpl_openReplyTrackMap();
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
         wcpl_openReplyTrackCleanupLocked(tracker, now);
@@ -795,7 +836,11 @@ static id wcpl_contactForUserName(NSString *userName) {
     if ([NSThread isMainThread]) {
         resolveBlock();
     } else {
-        dispatch_sync(dispatch_get_main_queue(), resolveBlock);
+        BOOL didFinish = WCPLDispatchMainSyncWithTimeout(2.0, resolveBlock);
+        if (!didFinish) {
+            WCPLLogWarning(@"联系人解析超时: user=%@", target);
+            return nil;
+        }
     }
 
     return contact;
@@ -1063,7 +1108,11 @@ static NSString *wcpl_currentSelfUserName(void) {
     if ([NSThread isMainThread]) {
         resolveBlock();
     } else {
-        dispatch_sync(dispatch_get_main_queue(), resolveBlock);
+        BOOL didFinish = WCPLDispatchMainSyncWithTimeout(2.0, resolveBlock);
+        if (!didFinish) {
+            WCPLLogWarning(@"获取 selfUserName 超时，已放弃");
+            return nil;
+        }
     }
 
     return selfUserName;
@@ -2215,9 +2264,21 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 - (BOOL)wcpl_sendTextMessage:(NSString *)content toSession:(NSString *)sessionUserName {
     if (![NSThread isMainThread]) {
         __block BOOL sentOnMain = NO;
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            sentOnMain = [self wcpl_sendTextMessage:content toSession:sessionUserName];
+        NSString *contentCopy = [content copy];
+        NSString *sessionCopy = [sessionUserName copy];
+        __weak id weakSelf = self;
+        BOOL didFinish = WCPLDispatchMainSyncWithTimeout(2.0, ^{
+            id strongSelf = weakSelf;
+            if (!strongSelf) {
+                return;
+            }
+            sentOnMain = [strongSelf wcpl_sendTextMessage:contentCopy toSession:sessionCopy];
         });
+        if (!didFinish) {
+            WCPLLogWarning(@"红包自动回复失败: 主线程调度超时 session=%@",
+                           wcpl_normalizeSessionUserName(sessionCopy) ?: @"");
+            return NO;
+        }
         return sentOnMain;
     }
 
@@ -2472,6 +2533,9 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
 %hook CMessageMgr
 
 - (void)AsyncOnAddMsg:(NSString *)msg MsgWrap:(CMessageWrap *)wrap {
+    static NSString *const kHookSelector = @"AsyncOnAddMsg:MsgWrap:";
+    static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyPre;
+
     if ([WCPLFuncService shouldIgnoreMessageWrap:wrap]) {
         if (wrap.m_uiMessageType == 49) {
             WCPLLogDebug(@"红包入口跳过: reason=message_ignored type=%u from=%@ to=%@",
@@ -2479,11 +2543,26 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                          wrap.m_nsFromUsr ?: @"",
                          wrap.m_nsToUsr ?: @"");
         }
+        wcpl_redEnvelopHookLogCMessageMgr(kHookSelector,
+                                          @"pre_filter",
+                                          @"skip_feature",
+                                          kOrigPolicy,
+                                          @"reason=message_ignored");
+        // 兜底放行：即使红包功能跳过，也不能阻断原生和其他 Hook 链路。
+        %orig;
         return;
     }
 
+    // 统一策略：同类入口先放行原生，再做插件功能，降低 Hook 链顺序敏感性。
+    %orig;
+
     switch(wrap.m_uiMessageType) {
         case 49: { // AppNode
+            wcpl_redEnvelopHookLogCMessageMgr(kHookSelector,
+                                              @"feature",
+                                              @"enter",
+                                              kOrigPolicy,
+                                              @"message_type=49");
             NSString *fromUserName = wrap.m_nsFromUsr ?: @"";
             NSString *toUserName = wrap.m_nsToUsr ?: @"";
             NSString *msgText = [msg isKindOfClass:[NSString class]] ? (NSString *)msg : @"";
@@ -2696,8 +2775,6 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
         default:
             break;
     }
-
-    %orig;
 }
 
 %end

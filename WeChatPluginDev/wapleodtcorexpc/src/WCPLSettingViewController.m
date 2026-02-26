@@ -643,8 +643,20 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     [section addCell:[self createEmulateIPadLoginCell]];
     [section addCell:[self createAbortRemokeMessageCell]];
     [section addCell:[self createMessageTimeSwitchCell]];
+    [section addCell:[self createMarkAllReadTopRightMenuEnableCell]];
 
     [self.tableViewMgr addSection:section];
+}
+
+- (WCTableViewNormalCellManager *)createMarkAllReadTopRightMenuEnableCell {
+    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingMarkAllReadTopRightMenuEnable:)
+                                                                     target:self
+                                                                      title:@"右上角+ 一键已读"
+                                                                         on:[WCPLConfigCenter shared].markAllReadTopRightMenuEnable];
+}
+
+- (void)settingMarkAllReadTopRightMenuEnable:(UISwitch *)sender {
+    [WCPLConfigCenter shared].markAllReadTopRightMenuEnable = sender.on;
 }
 
 - (void)addLogEntrySection {
@@ -1120,9 +1132,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
         if (gestureConfig.repeatButtonCustomImageRelativePath.length > 0) {
             [section addCell:[self createRepeatCustomImageResetCell]];
         }
-#ifdef DEBUG
-        [section addCell:[self createRepeatButtonEngineV2Cell]];
-#endif
         [section addCell:[self createRepeatSupportEmoticonCell]];
         [section addCell:[self createRepeatSupportVoiceCell]];
         [section addCell:[self createRepeatSupportImageCell]];
@@ -1210,10 +1219,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 
 - (WCTableViewNormalCellManager *)createRepeatCustomImageResetCell {
     return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(confirmResetRepeatCustomImage) target:self title:@"  恢复默认 +1 按钮" rightValue:@"" accessoryType:0];
-}
-
-- (WCTableViewNormalCellManager *)createRepeatButtonEngineV2Cell {
-    return [objc_getClass("WCTableViewNormalCellManager") switchCellForSel:@selector(settingRepeatButtonEngineV2:) target:self title:@"  [调试] V2 同步渲染引擎" on:[WCPLConfigCenter shared].gesture.repeatButtonEngineV2Enable];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportEmoticonCell {
@@ -1356,11 +1361,6 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 - (void)settingRepeatButtonHaptic:(UISwitch *)sender {
     [WCPLConfigCenter shared].gesture.repeatButtonHapticEnable = sender.on;
     WCPLLogInfo(@"Repeat bubble haptic changed: %@", sender.on ? @"Enabled" : @"Disabled");
-}
-
-- (void)settingRepeatButtonEngineV2:(UISwitch *)sender {
-    [WCPLConfigCenter shared].gesture.repeatButtonEngineV2Enable = sender.on;
-    WCPLLogInfo(@"Repeat bubble engine V2 changed: %@", sender.on ? @"Enabled" : @"Disabled");
 }
 
 - (void)showRepeatButtonSizePicker {

@@ -8,6 +8,7 @@
 #import "WCPLReceiveRedEnvelopOperation.h"
 #import "WeChatRedEnvelopParam.h"
 #import "WeChatRedEnvelop.h"
+#import "WCPLDispatchUtils.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLCrashReporter.h"
 #import "WCPLConstants.h"
@@ -162,11 +163,20 @@ static BOOL wcpl_shouldSampleHotPathLog(NSString *sendId) {
             [self wcpl_notifyResultSuccess:YES error:nil];
         };
 
+        BOOL didPerform = NO;
         if ([NSThread isMainThread]) {
+            didPerform = YES;
             performOpen();
         } else {
-            // 必须确保在 operation 生命周期内完成调用，否则可能因 operation 提前释放导致不执行
-            dispatch_sync(dispatch_get_main_queue(), performOpen);
+            // 不使用 dispatch_sync(main) 避免互锁卡死；这里用超时保护同步等待。
+            didPerform = WCPLDispatchMainSyncWithTimeout(2.0, performOpen);
+        }
+        if (!didPerform) {
+            lastError = [self wcpl_errorWithCode:1005 description:@"主线程调度超时"];
+            WCPLLogWarning(@"[抢红包] 主线程调度超时: sendId=%@ attempt=%ld",
+                           self.redEnvelopParam.sendId ?: @"",
+                           (long)attempt);
+            didSchedule = NO;
         }
         break;
     }
