@@ -371,6 +371,57 @@ static void wcpl_entry_insertPluginCell(id tableViewMgr, id target, SEL action, 
 
 %end
 
+static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
+
+%hook RightTopMenuItemBtn
+
+- (id)initWithBtnData:(id)btnData showNew:(BOOL)showNew {
+    id itemBtn = %orig(btnData, showNew);
+    if (!itemBtn) {
+        return itemBtn;
+    }
+
+    NSString *itemID = wcpl_entry_safeValueForKey(btnData, @"m_nsID");
+    if (![itemID isKindOfClass:[NSString class]] ||
+        ![(NSString *)itemID isEqualToString:@"wcpl_mark_all_read"]) {
+        return itemBtn;
+    }
+
+    UIImage *icon = wcpl_topRightMenu_markAllReadIconImage();
+    if (icon && [itemBtn respondsToSelector:@selector(setImage:forState:)]) {
+        @try {
+            ((void (*)(id, SEL, id, unsigned long long))objc_msgSend)(itemBtn,
+                                                                       @selector(setImage:forState:),
+                                                                       icon,
+                                                                       UIControlStateNormal);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([itemBtn respondsToSelector:@selector(setTintColor:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(itemBtn,
+                                                  @selector(setTintColor:),
+                                                  [UIColor whiteColor]);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([itemBtn respondsToSelector:@selector(setTitle:forState:)]) {
+        @try {
+            ((void (*)(id, SEL, id, unsigned long long))objc_msgSend)(itemBtn,
+                                                                       @selector(setTitle:forState:),
+                                                                       @"一键已读",
+                                                                       UIControlStateNormal);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return itemBtn;
+}
+
+%end
+
 %hook NewSettingViewController
 
 - (void)reloadTableData {
@@ -763,6 +814,9 @@ static NSString *wcpl_topRightMenu_safeItemIDFromSender(id sender) {
 
     NSString *itemID = wcpl_entry_safeValueForKey(data, @"m_nsID");
     if (![itemID isKindOfClass:[NSString class]] || itemID.length == 0) {
+        itemID = wcpl_entry_safeValueForKey(sender, @"m_nsID");
+    }
+    if (![itemID isKindOfClass:[NSString class]] || itemID.length == 0) {
         return nil;
     }
     return itemID;
@@ -818,83 +872,41 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void) {
     return icon;
 }
 
-static id wcpl_topRightMenu_createMarkAllReadButton(id menuBtn) {
+static id wcpl_topRightMenu_createMarkAllReadItemData(void) {
     Class btnDataClass = objc_getClass("RightTopMenuItemBtnData");
-    Class btnClass = objc_getClass("RightTopMenuItemBtn");
-    if (!btnClass) {
+    if (!(btnDataClass && [btnDataClass respondsToSelector:@selector(genItemWithID:title:imageName:actionType:actionName:pluginUserName:)])) {
         return nil;
     }
 
     id btnData = nil;
-    if (btnDataClass && [btnDataClass respondsToSelector:@selector(genItemWithID:title:imageName:actionType:actionName:pluginUserName:)]) {
-        SEL sel = @selector(genItemWithID:title:imageName:actionType:actionName:pluginUserName:);
-        @try {
-            btnData = ((id (*)(id, SEL, id, id, id, unsigned long long, id, id))objc_msgSend)(btnDataClass,
-                                                                                              sel,
-                                                                                              kWCPLTopRightMenuMarkAllReadID,
-                                                                                              @"一键已读",
-                                                                                              @"",
-                                                                                              0,
-                                                                                              nil,
-                                                                                              nil);
-        } @catch (__unused NSException *exception) {
-            btnData = nil;
-        }
+    SEL sel = @selector(genItemWithID:title:imageName:actionType:actionName:pluginUserName:);
+    @try {
+        btnData = ((id (*)(id, SEL, id, id, id, unsigned long long, id, id))objc_msgSend)(btnDataClass,
+                                                                                             sel,
+                                                                                             kWCPLTopRightMenuMarkAllReadID,
+                                                                                             @"一键已读",
+                                                                                             @"",
+                                                                                             0,
+                                                                                             nil,
+                                                                                             nil);
+    } @catch (__unused NSException *exception) {
+        btnData = nil;
     }
+    return btnData;
+}
 
-    id btn = nil;
-    if ([btnClass instancesRespondToSelector:@selector(initWithBtnData:showNew:)]) {
-        @try {
-            id allocated = [btnClass alloc];
-            btn = ((id (*)(id, SEL, id, BOOL))objc_msgSend)(allocated, @selector(initWithBtnData:showNew:), btnData, NO);
-        } @catch (__unused NSException *exception) {
-            btn = nil;
-        }
+static BOOL wcpl_topRightMenu_itemLooksDataObject(id item) {
+    if (!item) {
+        return NO;
     }
-    if (!btn) {
-        @try {
-            btn = [[btnClass alloc] init];
-        } @catch (__unused NSException *exception) {
-            btn = nil;
-        }
+    if ([item respondsToSelector:@selector(m_nsTitleID)]) {
+        return YES;
     }
-    if (!btn) {
-        return nil;
+    if ([item respondsToSelector:@selector(m_nsID)]) {
+        return YES;
     }
-
-    if ([btn respondsToSelector:@selector(setTitle:forState:)]) {
-        @try {
-            ((void (*)(id, SEL, id, unsigned long long))objc_msgSend)(btn,
-                                                                      @selector(setTitle:forState:),
-                                                                      @"一键已读",
-                                                                      UIControlStateNormal);
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    UIImage *icon = wcpl_topRightMenu_markAllReadIconImage();
-    if (icon && [btn respondsToSelector:@selector(setImage:forState:)]) {
-        @try {
-            ((void (*)(id, SEL, id, unsigned long long))objc_msgSend)(btn,
-                                                                      @selector(setImage:forState:),
-                                                                      icon,
-                                                                      UIControlStateNormal);
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    if ([btn respondsToSelector:@selector(addTarget:action:forControlEvents:)]) {
-        @try {
-            ((void (*)(id, SEL, id, SEL, unsigned long long))objc_msgSend)(btn,
-                                                                           @selector(addTarget:action:forControlEvents:),
-                                                                           menuBtn,
-                                                                           @selector(onItemAction:),
-                                                                           UIControlEventTouchUpInside);
-        } @catch (__unused NSException *exception) {
-        }
-    }
-
-    return btn;
+    NSString *className = NSStringFromClass([item class]) ?: @"";
+    return [className rangeOfString:@"RightTopMenuItemBtnData" options:NSCaseInsensitiveSearch].location != NSNotFound;
 }
 
 static void wcpl_topRightMenu_syncMarkAllReadMenuItem(id menuBtn) {
@@ -924,24 +936,45 @@ static void wcpl_topRightMenu_syncMarkAllReadMenuItem(id menuBtn) {
         [showIDsArray addObject:kWCPLTopRightMenuMarkAllReadID];
     }
 
-    if ([itemsDict objectForKey:kWCPLTopRightMenuMarkAllReadID]) {
+    id existingItem = [itemsDict objectForKey:kWCPLTopRightMenuMarkAllReadID];
+    if (existingItem) {
+        // 部分版本会在读取 m_nsTitleID 时崩溃；若当前是按钮对象则改写为 Data 对象再返回。
+        if (!wcpl_topRightMenu_itemLooksDataObject(existingItem)) {
+            id existingData = wcpl_entry_safeValueForKey(existingItem, @"m_data");
+            if (wcpl_topRightMenu_itemLooksDataObject(existingData)) {
+                [itemsDict setObject:existingData forKey:kWCPLTopRightMenuMarkAllReadID];
+            } else {
+                [itemsDict removeObjectForKey:kWCPLTopRightMenuMarkAllReadID];
+            }
+        } else {
+            return;
+        }
+    }
+
+    id itemToStore = wcpl_topRightMenu_createMarkAllReadItemData();
+    if (!wcpl_topRightMenu_itemLooksDataObject(itemToStore)) {
+        // 当前版本菜单链路会读取 m_nsTitleID，写入按钮对象会导致崩溃，失败时直接撤销入口。
+        [itemsDict removeObjectForKey:kWCPLTopRightMenuMarkAllReadID];
+        [showIDsArray removeObject:kWCPLTopRightMenuMarkAllReadID];
+        WCPLLogError(@"TopRightMenu sync failed: mark-all-read item data unavailable");
         return;
     }
 
-    id btn = wcpl_topRightMenu_createMarkAllReadButton(menuBtn);
-    if (btn) {
-        [itemsDict setObject:btn forKey:kWCPLTopRightMenuMarkAllReadID];
+    [itemsDict setObject:itemToStore forKey:kWCPLTopRightMenuMarkAllReadID];
+}
+
+static BOOL wcpl_topRightMenu_resolveShowIDResult(id itemID, BOOL origResult) {
+    if ([itemID isKindOfClass:[NSString class]] &&
+        [(NSString *)itemID isEqualToString:kWCPLTopRightMenuMarkAllReadID]) {
+        return wcpl_markAllRead_isTopRightMenuEnabled();
     }
+    return origResult;
 }
 
 %hook CAppViewControllerManager
 
 + (BOOL)shouldTopRightMenuShowID:(id)arg1 {
-    BOOL result = %orig(arg1);
-    if ([arg1 isKindOfClass:[NSString class]] && [(NSString *)arg1 isEqualToString:kWCPLTopRightMenuMarkAllReadID]) {
-        return wcpl_markAllRead_isTopRightMenuEnabled();
-    }
-    return result;
+    return wcpl_topRightMenu_resolveShowIDResult(arg1, %orig(arg1));
 }
 
 %end
@@ -949,11 +982,7 @@ static void wcpl_topRightMenu_syncMarkAllReadMenuItem(id menuBtn) {
 %hook NewMainFrameViewController
 
 - (BOOL)isTopRightMenuShowID:(id)arg1 {
-    BOOL result = %orig(arg1);
-    if ([arg1 isKindOfClass:[NSString class]] && [(NSString *)arg1 isEqualToString:kWCPLTopRightMenuMarkAllReadID]) {
-        return wcpl_markAllRead_isTopRightMenuEnabled();
-    }
-    return result;
+    return wcpl_topRightMenu_resolveShowIDResult(arg1, %orig(arg1));
 }
 
 %end
@@ -971,11 +1000,7 @@ static void wcpl_topRightMenu_syncMarkAllReadMenuItem(id menuBtn) {
 }
 
 - (BOOL)isTopRightMenuShowID:(id)arg1 {
-    BOOL result = %orig(arg1);
-    if ([arg1 isKindOfClass:[NSString class]] && [(NSString *)arg1 isEqualToString:kWCPLTopRightMenuMarkAllReadID]) {
-        return wcpl_markAllRead_isTopRightMenuEnabled();
-    }
-    return result;
+    return wcpl_topRightMenu_resolveShowIDResult(arg1, %orig(arg1));
 }
 
 - (void)onItemAction:(id)sender {
