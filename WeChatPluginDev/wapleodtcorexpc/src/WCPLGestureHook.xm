@@ -121,6 +121,65 @@ static NSDateFormatter *wcpl_messageTimeFormatter(void);
 static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp);
 static void wcpl_updateRepeatButtonVisualShape(UIButton *button);
 
+static BOOL wcpl_dispatchRepeatMessageWrapSafely(id source,
+                                                 CMessageWrap *msgWrap,
+                                                 NSString *sceneTag) {
+    if (!source || !msgWrap) {
+        return NO;
+    }
+
+    NSString *scene = ([sceneTag isKindOfClass:[NSString class]] && sceneTag.length > 0)
+        ? sceneTag
+        : @"repeat_dispatch";
+    SEL repeatSel = @selector(wchook_repeatMessageWrap:);
+
+    if ([source respondsToSelector:repeatSel]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(source, repeatSel, msgWrap);
+            return YES;
+        } @catch (NSException *exception) {
+            WCPLLogWarning(@"Repeat dispatch failed(%@): class=%@ reason=%@",
+                           scene,
+                           NSStringFromClass([source class]),
+                           exception.reason ?: @"unknown");
+        }
+    }
+
+    if ([source isKindOfClass:[UIView class]]) {
+        UIView *ancestor = (UIView *)source;
+        while ([ancestor isKindOfClass:[UIView class]]) {
+            ancestor = ancestor.superview;
+            if (![ancestor isKindOfClass:[UIView class]]) {
+                break;
+            }
+            if (![ancestor respondsToSelector:repeatSel]) {
+                continue;
+            }
+            @try {
+                ((void (*)(id, SEL, id))objc_msgSend)(ancestor, repeatSel, msgWrap);
+                WCPLLogInfo(@"Repeat dispatch rerouted(%@): from=%@ to=%@",
+                            scene,
+                            NSStringFromClass([source class]),
+                            NSStringFromClass([ancestor class]));
+                return YES;
+            } @catch (NSException *exception) {
+                WCPLLogWarning(@"Repeat dispatch reroute failed(%@): from=%@ to=%@ reason=%@",
+                               scene,
+                               NSStringFromClass([source class]),
+                               NSStringFromClass([ancestor class]),
+                               exception.reason ?: @"unknown");
+                break;
+            }
+        }
+    }
+
+    WCPLLogError(@"Repeat dispatch dropped(%@): class=%@ msg=%@",
+                 scene,
+                 NSStringFromClass([source class]),
+                 wcpl_repeatMessageDebugInfo(msgWrap));
+    return NO;
+}
+
 static NSString *wcpl_swipeDirectionName(WCHookSwipeDirection direction) {
     switch (direction) {
         case WCHookSwipeDirectionLeft:
@@ -4837,7 +4896,6 @@ static NSArray<UIWindow *> *wcpl_applicationWindows(void) {
                            messageWrap:(CMessageWrap *)msgWrap
                                 isSelf:(BOOL)isSelf
                               sceneTag:(NSString *)sceneTag;
-- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap;
 - (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap sceneTag:(NSString *)sceneTag;
 - (BOOL)wchook_tryForwardViaMiyouPrimaryRoutes:(CMessageWrap *)msgWrap
                                          chatVC:(BaseMsgContentViewController *)chatVC
@@ -6718,13 +6776,6 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
 }
 
 %new
-- (void)wchook_triggerQuoteReply {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self wchook_showSwipeActionMenuForDirection:WCHookSwipeDirectionLeft];
-    });
-}
-
-%new
 - (void)wchook_showSwipeActionMenuForDirection:(WCHookSwipeDirection)direction {
     // 获取消息内容
     CMessageWrap *msgWrap = nil;
@@ -6828,7 +6879,7 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
             }
             break;
         case 4: // 复读
-            [self wchook_repeatMessageWrap:msgWrap];
+            wcpl_dispatchRepeatMessageWrapSafely(self, msgWrap, resolvedScene);
             break;
         case 5: // 转发
             [self wchook_performForwardMessage:msgWrap sceneTag:resolvedScene];
@@ -7337,9 +7388,9 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
                  wcpl_repeatMessageDebugInfo(msgWrap));
 }
 
-
 %hook CommonMessageCellView
 
+%new
 - (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap {
     if (!msgWrap) {
         return;
@@ -7479,7 +7530,7 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
                     buttonMessageKey ?: @"(nil)");
     }
 
-    [self wchook_repeatMessageWrap:msgWrap];
+    wcpl_dispatchRepeatMessageWrapSafely(self, msgWrap, @"repeat_button_tap");
 }
 
 %new
@@ -7557,11 +7608,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     } @catch (NSException *exception) {
         WCPLLogError(@"Revoke message failed: %@", exception);
     }
-}
-
-%new
-- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap {
-    [self wchook_performForwardMessage:msgWrap sceneTag:@"手势"];
 }
 
 %new
@@ -7951,7 +7997,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 %end
-
 
 
 // ===== WCPLDoubleTapHook.xm =====

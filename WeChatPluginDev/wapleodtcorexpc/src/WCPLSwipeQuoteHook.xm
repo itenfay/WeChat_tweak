@@ -482,13 +482,6 @@
 }
 
 %new
-- (void)wchook_triggerQuoteReply {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self wchook_showSwipeActionMenuForDirection:WCHookSwipeDirectionLeft];
-    });
-}
-
-%new
 - (void)wchook_showSwipeActionMenuForDirection:(WCHookSwipeDirection)direction {
     // 获取消息内容
     CMessageWrap *msgWrap = nil;
@@ -592,7 +585,7 @@
             }
             break;
         case 4: // 复读
-            [self wchook_repeatMessageWrap:msgWrap];
+            wcpl_dispatchRepeatMessageWrapSafely(self, msgWrap, resolvedScene);
             break;
         case 5: // 转发
             [self wchook_performForwardMessage:msgWrap sceneTag:resolvedScene];

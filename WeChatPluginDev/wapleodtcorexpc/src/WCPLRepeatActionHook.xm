@@ -416,9 +416,9 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
                  wcpl_repeatMessageDebugInfo(msgWrap));
 }
 
-
 %hook CommonMessageCellView
 
+%new
 - (void)wchook_repeatMessageWrap:(CMessageWrap *)msgWrap {
     if (!msgWrap) {
         return;
@@ -558,7 +558,7 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
                     buttonMessageKey ?: @"(nil)");
     }
 
-    [self wchook_repeatMessageWrap:msgWrap];
+    wcpl_dispatchRepeatMessageWrapSafely(self, msgWrap, @"repeat_button_tap");
 }
 
 %new
@@ -636,11 +636,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     } @catch (NSException *exception) {
         WCPLLogError(@"Revoke message failed: %@", exception);
     }
-}
-
-%new
-- (void)wchook_performForwardMessage:(CMessageWrap *)msgWrap {
-    [self wchook_performForwardMessage:msgWrap sceneTag:@"手势"];
 }
 
 %new
@@ -1030,4 +1025,3 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 %end
-
