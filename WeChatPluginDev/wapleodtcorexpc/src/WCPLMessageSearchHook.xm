@@ -92,6 +92,12 @@
     }
 }
 
+- (void)viewDidLayoutSubviews {
+    %orig;
+    // 对齐密友：在布局完成后再补一次右上角按钮注入，减少“出现-消失-再出现”的闪烁。
+    wcpl_updateChatSearchButtonForViewController(self);
+}
+
 - (void)viewWillDisappear:(_Bool)arg1 {
     %orig;
 

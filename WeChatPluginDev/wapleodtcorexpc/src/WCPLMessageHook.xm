@@ -1375,6 +1375,21 @@ static BOOL wcpl_barButtonItemHasRenderableContent(UIBarButtonItem *item) {
             }
         }
 
+        // 仅用宽度判断会在“布局尚未完成”时误判为不可见，导致按钮反复重建从而闪烁。
+        // 这里对齐密友实测：只要 customView 内已经有可见子视图，基本就能正确渲染。
+        NSArray<UIView *> *subviews = customView.subviews;
+        if ([subviews isKindOfClass:[NSArray class]] && subviews.count > 0) {
+            for (UIView *subview in subviews) {
+                if (![subview isKindOfClass:[UIView class]]) {
+                    continue;
+                }
+                if (subview.hidden || subview.alpha <= 0.01f) {
+                    continue;
+                }
+                return YES;
+            }
+        }
+
         // 密友同款按钮正常宽度约 30+，10 这类宽度通常是空占位，视为不可见。
         if (itemWidth >= 20.0f || customWidth >= 20.0f) {
             return YES;
@@ -1478,6 +1493,29 @@ static UIControl *wcpl_findFirstControlInView(UIView *root, NSUInteger depth) {
     return nil;
 }
 
+static void wcpl_configureSearchButtonControl(UIControl *control) {
+    if (![control isKindOfClass:[UIControl class]]) {
+        return;
+    }
+
+    // 体验对齐密友：点击不出现“闪一下”的高亮/变暗效果。
+    if ([control respondsToSelector:@selector(setShowsTouchWhenHighlighted:)]) {
+        @try {
+            ((void (*)(id, SEL, BOOL))objc_msgSend)(control, @selector(setShowsTouchWhenHighlighted:), NO);
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    if ([control isKindOfClass:[UIButton class]]) {
+        UIButton *button = (UIButton *)control;
+        button.adjustsImageWhenHighlighted = NO;
+        button.adjustsImageWhenDisabled = NO;
+        if (button.alpha < 0.99f) {
+            button.alpha = 1.0f;
+        }
+    }
+}
+
 static void wcpl_forceBindSearchButtonAction(UIBarButtonItem *item, id viewController, NSString *sourceTag) {
     if (![item isKindOfClass:[UIBarButtonItem class]] || !viewController) {
         return;
@@ -1501,6 +1539,9 @@ static void wcpl_forceBindSearchButtonAction(UIBarButtonItem *item, id viewContr
     }
     if ([customView isKindOfClass:[UIView class]]) {
         customView.userInteractionEnabled = YES;
+        if ([customView isKindOfClass:[UIControl class]]) {
+            wcpl_configureSearchButtonControl((UIControl *)customView);
+        }
     }
 
     UIControl *targetControl = nil;
@@ -1527,6 +1568,7 @@ static void wcpl_forceBindSearchButtonAction(UIBarButtonItem *item, id viewContr
             [targetControl removeTarget:nil action:NULL forControlEvents:UIControlEventTouchUpInside];
             [targetControl addTarget:viewController action:tapSel forControlEvents:UIControlEventTouchUpInside];
             targetControl.userInteractionEnabled = YES;
+            wcpl_configureSearchButtonControl(targetControl);
             WCPLLogInfo(@"[搜索按钮] 绑定点击链路 source=%@ control=%@ action=%@",
                         sourceTag ?: @"unknown",
                         NSStringFromClass([targetControl class]) ?: @"UIControl",
@@ -1774,14 +1816,10 @@ static UIBarButtonItem *wcpl_chatSearchNavButtonItem(id viewController) {
     }
 
     UIBarButtonItem *item = objc_getAssociatedObject(viewController, kWCPLChatSearchNavButtonKey);
-    if ([item isKindOfClass:[UIBarButtonItem class]] && wcpl_barButtonItemHasRenderableContent(item)) {
-        return item;
-    }
     if ([item isKindOfClass:[UIBarButtonItem class]]) {
-        WCPLLogInfo(@"[搜索按钮] 缓存按钮不可见，准备重建: %@",
-                    wcpl_barButtonItemDebugSummary(item));
-        objc_setAssociatedObject(viewController, kWCPLChatSearchNavButtonKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        item = nil;
+        // 不要因为“布局尚未完成”的宽度/内容误判为不可见而反复重建。
+        // 反复重建会导致右上角按钮出现肉眼可见的闪烁。
+        return item;
     }
 
     NSArray<NSString *> *iconNames = @[
@@ -5481,6 +5519,12 @@ static __attribute__((unused)) void wcpl_tryAutoPopAfterSearchCancel(id controll
         UIView *view = [self valueForKey:@"view"];
         [[WCPLAVManager shareManager] startCaptureInView:view];
     }
+}
+
+- (void)viewDidLayoutSubviews {
+    %orig;
+    // 对齐密友：在布局完成后再补一次右上角按钮注入，减少“出现-消失-再出现”的闪烁。
+    wcpl_updateChatSearchButtonForViewController(self);
 }
 
 - (void)viewWillDisappear:(_Bool)arg1 {
