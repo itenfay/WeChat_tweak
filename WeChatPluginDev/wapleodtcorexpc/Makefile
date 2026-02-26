@@ -176,9 +176,14 @@ after-package::
 		echo "[wcpl] skip local ldid: package not found"; \
 		exit 0; \
 	fi; \
+	DPKG_DEB_BIN="$$(command -v dpkg-deb 2>/dev/null || true)"; \
+	if [ -z "$$DPKG_DEB_BIN" ]; then \
+		echo "[wcpl] skip local ldid repack: dpkg-deb not found"; \
+		exit 0; \
+	fi; \
 	TMP_DIR="$$(mktemp -d)"; \
 	trap 'rm -rf "$$TMP_DIR"' EXIT INT TERM; \
-	dpkg-deb -R "$$DEB_PATH" "$$TMP_DIR/pkg"; \
+	"$$DPKG_DEB_BIN" -R "$$DEB_PATH" "$$TMP_DIR/pkg"; \
 	SIGNED=0; \
 	for DYLIB in \
 		"$$TMP_DIR/pkg/Library/MobileSubstrate/DynamicLibraries/$(TWEAK_NAME).dylib" \
@@ -194,7 +199,7 @@ after-package::
 		echo "[wcpl] skip local ldid: dylib path not found in package"; \
 		exit 0; \
 	fi; \
-	dpkg-deb -Zgzip -z6 -b "$$TMP_DIR/pkg" "$$DEB_PATH" >/dev/null; \
+	"$$DPKG_DEB_BIN" -Zgzip -z6 -b "$$TMP_DIR/pkg" "$$DEB_PATH" >/dev/null; \
 	echo "[wcpl] local ldid repack done: $$DEB_PATH"
 
 after-install::
