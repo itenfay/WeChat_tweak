@@ -106,6 +106,17 @@ static NSDateFormatter *wcpl_messageTimeFormatter(void);
 static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp);
 static void wcpl_updateRepeatButtonVisualShape(UIButton *button);
 
+static BOOL wcpl_instanceMethodExists(id object, SEL selector) {
+    if (!object || !selector) {
+        return NO;
+    }
+    Class cls = object_getClass(object);
+    if (!cls) {
+        return NO;
+    }
+    return class_getInstanceMethod(cls, selector) != NULL;
+}
+
 static BOOL wcpl_dispatchRepeatMessageWrapSafely(id source,
                                                  CMessageWrap *msgWrap,
                                                  NSString *sceneTag) {
@@ -118,7 +129,7 @@ static BOOL wcpl_dispatchRepeatMessageWrapSafely(id source,
         : @"repeat_dispatch";
     SEL repeatSel = @selector(wchook_repeatMessageWrap:);
 
-    if ([source respondsToSelector:repeatSel]) {
+    if (wcpl_instanceMethodExists(source, repeatSel)) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(source, repeatSel, msgWrap);
             return YES;
@@ -137,7 +148,7 @@ static BOOL wcpl_dispatchRepeatMessageWrapSafely(id source,
             if (![ancestor isKindOfClass:[UIView class]]) {
                 break;
             }
-            if (![ancestor respondsToSelector:repeatSel]) {
+            if (!wcpl_instanceMethodExists(ancestor, repeatSel)) {
                 continue;
             }
             @try {

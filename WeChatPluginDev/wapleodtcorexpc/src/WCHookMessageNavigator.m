@@ -476,7 +476,7 @@ static void WCHookInstallEdgeTipsClickTracker(void) {
     });
 }
 
-static void WCHookInstallOfficialEdgeTipsInterceptor(void) {
+static __attribute__((unused)) void WCHookInstallOfficialEdgeTipsInterceptor(void) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         WCHookInstallEdgeTipsTouchTracker();
@@ -501,7 +501,7 @@ static void WCHookInstallOfficialEdgeTipsInterceptor(void) {
     });
 }
 
-static BOOL WCHookShowOfficialRevokeReturnEdgeTip(id officialTarget) {
+static __attribute__((unused)) BOOL WCHookShowOfficialRevokeReturnEdgeTip(id officialTarget) {
     if (!officialTarget) {
         return NO;
     }
@@ -1644,7 +1644,7 @@ static UIScrollView *WCHookFindPreferredScrollViewInView(UIView *rootView) {
     return bestScrollView;
 }
 
-static UIScrollView *WCHookResolveScrollViewFromTarget(id object) {
+static __attribute__((unused)) UIScrollView *WCHookResolveScrollViewFromTarget(id object) {
     if (!object) {
         return nil;
     }
@@ -1693,9 +1693,7 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget,
     BOOL locateTargetLooksUsable = NO;
     if (target) {
         locateTargetLooksUsable = ((msgContentVCClass && [target isKindOfClass:msgContentVCClass]) ||
-                                   [target respondsToSelector:@selector(locateToMsg:)] ||
-                                   [target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:animated:)] ||
-                                   [target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:)]);
+                                   [target respondsToSelector:@selector(locateToMsg:)]);
     }
     if (!locateTargetLooksUsable) {
         target = WCHookResolveMsgContentTargetFromObject(locateTarget) ?: locateTarget;
@@ -1704,156 +1702,16 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget,
         return NO;
     }
 
-    __block id officialTarget = nil;
-    __block SEL returnSelector = @selector(returnToOriginalMsg:);
-    BOOL (^prepareOfficialReturn)(void) = ^BOOL{
-        if (!tipMessageWrap) {
-            return NO;
-        }
-        if (!officialTarget) {
-            __block id preferredOfficialTarget = nil;
-            __block id fallbackOfficialTarget = nil;
-            void (^considerOfficialTarget)(id) = ^(id candidate) {
-                if (!candidate) {
-                    return;
-                }
-                if (![candidate respondsToSelector:returnSelector]) {
-                    return;
-                }
-                if (msgContentVCClass && [candidate isKindOfClass:msgContentVCClass]) {
-                    preferredOfficialTarget = candidate;
-                    return;
-                }
-                if (!fallbackOfficialTarget) {
-                    fallbackOfficialTarget = candidate;
-                }
-            };
-
-            considerOfficialTarget(target);
-            if (!preferredOfficialTarget && !fallbackOfficialTarget) {
-                considerOfficialTarget(WCHookInvokeObject(target, @selector(getViewController)));
-            }
-            if (!preferredOfficialTarget && !fallbackOfficialTarget && locateTarget != target) {
-                considerOfficialTarget(locateTarget);
-            }
-            if (!preferredOfficialTarget && !fallbackOfficialTarget && locateTarget != target) {
-                considerOfficialTarget(WCHookInvokeObject(locateTarget, @selector(getViewController)));
-            }
-            officialTarget = preferredOfficialTarget ?: fallbackOfficialTarget;
-        }
-
-        if (officialTarget) {
-            @try {
-                WCHookInstallOfficialEdgeTipsInterceptor();
-                NSTimeInterval now = NSDate.date.timeIntervalSince1970;
-                objc_setAssociatedObject(officialTarget,
-                                         kWCHookOfficialReturnTipWrapKey,
-                                         tipMessageWrap,
-                                         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(officialTarget,
-                                         kWCHookOfficialReturnExpireKey,
-                                         @(now + 180.0),
-                                         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(officialTarget,
-                                         kWCHookOfficialReturnEnableAtKey,
-                                         @(now + 0.25),
-                                         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(officialTarget,
-                                         kWCHookOfficialReturnTapAtKey,
-                                         nil,
-                                         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
-                if (WCHookShowOfficialRevokeReturnEdgeTip(officialTarget)) {
-                    WCPLLogInfo(@"Revoke tip official return prepared(native-edge): target=%@",
-                                NSStringFromClass([officialTarget class]));
-                    return YES;
-                }
-                WCPLLogWarning(@"Revoke tip official return tip show failed: target=%@",
-                               NSStringFromClass([officialTarget class]));
-            } @catch (__unused NSException *exceptionOfficialReturnPrepare) {
-            }
-        } else {
-            WCPLLogWarning(@"Revoke tip official return prepare skipped: no target");
-        }
-        return NO;
-    };
-
-    UIScrollView *trackedScrollView = WCHookResolveScrollViewFromTarget(target);
-    if (!trackedScrollView && locateTarget != target) {
-        trackedScrollView = WCHookResolveScrollViewFromTarget(locateTarget);
-    }
-    CGFloat baselineOffsetY = CGFLOAT_MAX;
-    if ([trackedScrollView isKindOfClass:[UIScrollView class]]) {
-        baselineOffsetY = trackedScrollView.contentOffset.y;
-    }
-
     BOOL jumped = NO;
-    SEL scrollSelector = @selector(scrollToMessage:highlight:marginTop:animated:);
-    // 优先走带动画滚动，贴近微信原生“平移到目标消息”的观感。
-    if (!jumped && [target respondsToSelector:scrollSelector]) {
-        @try {
-            ((void (*)(id, SEL, id, BOOL, double, BOOL))objc_msgSend)(target,
-                                                                       scrollSelector,
-                                                                       targetMessage,
-                                                                       YES,
-                                                                       120.0,
-                                                                       YES);
-            jumped = YES;
-        } @catch (__unused NSException *exceptionScrollEx) {
-        }
-    }
-
-    if (!jumped && locateTarget != target && [locateTarget respondsToSelector:scrollSelector]) {
-        @try {
-            ((void (*)(id, SEL, id, BOOL, double, BOOL))objc_msgSend)(locateTarget,
-                                                                       scrollSelector,
-                                                                       targetMessage,
-                                                                       YES,
-                                                                       120.0,
-                                                                       YES);
-            jumped = YES;
-        } @catch (__unused NSException *exceptionScrollExRaw) {
-        }
-    }
-
-    if (!jumped && [target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:)]) {
-        @try {
-            ((void (*)(id, SEL, id, BOOL, double))objc_msgSend)(target,
-                                                                 @selector(scrollToMessage:highlight:marginTop:),
-                                                                 targetMessage,
-                                                                 YES,
-                                                                 120.0);
-            jumped = YES;
-        } @catch (__unused NSException *exceptionScroll) {
-        }
-    }
-
-    if (!jumped && locateTarget != target && [locateTarget respondsToSelector:@selector(scrollToMessage:highlight:marginTop:)]) {
-        @try {
-            ((void (*)(id, SEL, id, BOOL, double))objc_msgSend)(locateTarget,
-                                                                 @selector(scrollToMessage:highlight:marginTop:),
-                                                                 targetMessage,
-                                                                 YES,
-                                                                 120.0);
-            jumped = YES;
-        } @catch (__unused NSException *exceptionScrollRaw) {
-        }
-    }
-
-    // 若当前控制器不支持滚动接口，再回退到 locateToMsg，保证兼容性。
-    if (!jumped && [target respondsToSelector:@selector(locateToMsg:)]) {
+    // 安全策略：仅使用 locateToMsg:。
+    // 备注：部分微信版本/机型在 scrollToMessage/highlightMsg 链路存在 SIGSEGV 风险（线上反馈）。
+    // 这里牺牲“平滑滚动+高亮”效果，优先保证点击不崩溃。
+    if ([target respondsToSelector:@selector(locateToMsg:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(locateToMsg:), targetMessage);
             jumped = YES;
         } @catch (__unused NSException *exceptionLocate) {
-        }
-    }
-
-    if (!jumped && locateTarget != target && [locateTarget respondsToSelector:@selector(locateToMsg:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(locateTarget, @selector(locateToMsg:), targetMessage);
-            jumped = YES;
-        } @catch (__unused NSException *exceptionLocateRaw) {
+            jumped = NO;
         }
     }
 
@@ -1861,29 +1719,12 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget,
         return NO;
     }
 
-    if ([target respondsToSelector:@selector(highlightMsg:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(highlightMsg:), targetMessage);
-        } @catch (__unused NSException *exceptionHighlight) {
-        }
-    }
-
-    // 优先使用原生 edge tips 返回入口；若当前环境无法展示，则降级插件按钮。
+    // 返回入口策略：不再使用原生 edge tips，统一降级为插件悬浮按钮，减少不确定性与崩溃面。
     if (tipMessageWrap && prepareOfficialReturnAnchor) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.08 * NSEC_PER_SEC)),
                        dispatch_get_main_queue(), ^{
-            BOOL prepared = prepareOfficialReturn();
-            if (!prepared) {
-                WCHookShowRevokeReturnButton(target, tipMessageWrap);
-                WCPLLogInfo(@"Revoke tip official return fallback: use plugin return button");
-            }
-            WCHookScheduleAutoHideRevokeReturnEntry(tipMessageWrap,
-                                                    officialTarget ?: target,
-                                                    trackedScrollView,
-                                                    baselineOffsetY);
+            WCHookShowRevokeReturnButton(target, tipMessageWrap);
         });
-    } else if (tipMessageWrap) {
-        WCPLLogInfo(@"Revoke tip official return prepare skipped: native already requested");
     }
 
     return YES;
@@ -2192,7 +2033,7 @@ static BOOL WCHookShouldAutoHideRevokeReturnEntry(UIScrollView *trackedScrollVie
     return nearJump;
 }
 
-static void WCHookScheduleAutoHideRevokeReturnEntry(id tipMessageWrap,
+static __attribute__((unused)) void WCHookScheduleAutoHideRevokeReturnEntry(id tipMessageWrap,
                                                     id preferredTarget,
                                                     UIScrollView *trackedScrollView,
                                                     CGFloat baselineOffsetY) {

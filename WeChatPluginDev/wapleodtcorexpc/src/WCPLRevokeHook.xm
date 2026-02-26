@@ -819,8 +819,22 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     if (!looksLikeRevoke) return NO;
 
     NSString *session = wcpl_extractXmlTagValue(xml, @"session");
-    if (session.length == 0) session = wcpl_trimString(chatNameHint);
-    if (session.length == 0) session = wcpl_trimString(revokeWrap.m_nsFromUsr) ?: wcpl_trimString(revokeWrap.m_nsToUsr);
+    NSMutableArray<NSString *> *sessionCandidates = [NSMutableArray array];
+    void (^appendSession)(NSString *) = ^(NSString *value) {
+        NSString *trimmed = wcpl_trimString(value);
+        if (trimmed.length == 0) return;
+        for (NSString *existing in sessionCandidates) {
+            if ([existing isEqualToString:trimmed]) return;
+        }
+        [sessionCandidates addObject:trimmed];
+    };
+    appendSession(session);
+    appendSession(chatNameHint);
+    // 系统撤回提示的 From/To 在不同版本里含义不稳定；优先 ToUsr，避免误用 self 用户名导致查库失败。
+    appendSession(revokeWrap.m_nsToUsr);
+    appendSession(revokeWrap.m_nsFromUsr);
+
+    session = sessionCandidates.firstObject;
     if (session.length == 0) return NO;
 
     NSString *replaceRaw = wcpl_extractXmlTagValue(xml, @"replacemsg");
@@ -832,9 +846,12 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     CMessageWrap *revokedMsgWrap = nil;
     id messageMgr = wcpl_getMessageMgr();
     if (revokedMsgId > 0 && messageMgr && [messageMgr respondsToSelector:@selector(GetMsg:n64SvrID:)]) {
-        id msg = [messageMgr GetMsg:session n64SvrID:revokedMsgId];
-        if ([msg isKindOfClass:%c(CMessageWrap)]) {
-            revokedMsgWrap = (CMessageWrap *)msg;
+        for (NSString *candidateSession in sessionCandidates) {
+            id msg = [messageMgr GetMsg:candidateSession n64SvrID:revokedMsgId];
+            if ([msg isKindOfClass:%c(CMessageWrap)]) {
+                revokedMsgWrap = (CMessageWrap *)msg;
+                break;
+            }
         }
     }
 
