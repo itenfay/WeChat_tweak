@@ -1308,14 +1308,33 @@ static BOOL wcpl_isTargetChatForSearchButton(id viewController) {
     }
 
     // 仅对聊天页控制器启用，避免误伤其它页面。
+    //
+    // ⚠️ 历史日志里出现过：objc_getClass("BaseMsgContentViewController") 返回 nil，
+    // 导致 BaseMsgContentViewController 场景被误判为 NO（搜索按钮因此完全不注入）。
+    // 所以这里必须准备“类名/selector”兜底，保证注入链路稳定。
+
     Class baseChatClass = objc_getClass("BaseMsgContentViewController");
+    if (!baseChatClass) {
+        baseChatClass = NSClassFromString(@"BaseMsgContentViewController");
+    }
     if (baseChatClass && [viewController isKindOfClass:baseChatClass]) {
         return YES;
     }
 
-    // 兜底：部分机型/版本可能存在混淆或继承链差异，做一个弱匹配。
     NSString *className = NSStringFromClass([viewController class]) ?: @"";
+    if ([className isEqualToString:@"BaseMsgContentViewController"]) {
+        return YES;
+    }
+
+    // 兜底：部分机型/版本可能存在混淆或继承链差异，做一个弱匹配。
     if ([className rangeOfString:@"MsgContentViewController"].location != NSNotFound) {
+        return YES;
+    }
+
+    // 再兜底：用 selector 做弱特征，避免仅靠 class 名称在混淆/变体下失效。
+    if ([viewController respondsToSelector:@selector(GetContact)] &&
+        ([viewController respondsToSelector:@selector(handleMsgUpdateRightBar)] ||
+         [viewController respondsToSelector:@selector(updateRightBar)])) {
         return YES;
     }
 
@@ -1366,6 +1385,24 @@ static BOOL wcpl_barButtonItemHasRenderableContent(UIBarButtonItem *item) {
             customWidth = CGRectGetWidth(customView.frame);
         }
 
+        // 某些版本的 MMBarItemCustomView 在未入层级前 frame/bounds 可能为 0，
+        // 这里尽量触发一次自适应尺寸，避免误判“空按钮”。
+        if (customWidth <= 0.1f) {
+            @try {
+                [customView setNeedsLayout];
+                [customView layoutIfNeeded];
+                if ([customView respondsToSelector:@selector(sizeToFit)]) {
+                    [customView sizeToFit];
+                }
+            } @catch (__unused NSException *exception) {
+            }
+
+            customWidth = CGRectGetWidth(customView.bounds);
+            if (customWidth <= 0.1f) {
+                customWidth = CGRectGetWidth(customView.frame);
+            }
+        }
+
         if ([customView isKindOfClass:[UIButton class]]) {
             UIButton *btn = (UIButton *)customView;
             UIImage *btnImage = [btn imageForState:UIControlStateNormal];
@@ -1376,7 +1413,8 @@ static BOOL wcpl_barButtonItemHasRenderableContent(UIBarButtonItem *item) {
         }
 
         // 仅用宽度判断会在“布局尚未完成”时误判为不可见，导致按钮反复重建从而闪烁。
-        // 这里对齐密友实测：只要 customView 内已经有可见子视图，基本就能正确渲染。
+        // 但“只要有子视图就算可见”也过于宽松：资源缺失时会拿到空壳 view，
+        // 看起来就像“按钮不见了”。所以这里要求子视图具备真实内容或有效尺寸。
         NSArray<UIView *> *subviews = customView.subviews;
         if ([subviews isKindOfClass:[NSArray class]] && subviews.count > 0) {
             for (UIView *subview in subviews) {
@@ -1386,7 +1424,46 @@ static BOOL wcpl_barButtonItemHasRenderableContent(UIBarButtonItem *item) {
                 if (subview.hidden || subview.alpha <= 0.01f) {
                     continue;
                 }
-                return YES;
+
+                CGFloat w = CGRectGetWidth(subview.bounds);
+                CGFloat h = CGRectGetHeight(subview.bounds);
+                if (w <= 0.1f || h <= 0.1f) {
+                    CGRect frame = subview.frame;
+                    if (w <= 0.1f) {
+                        w = CGRectGetWidth(frame);
+                    }
+                    if (h <= 0.1f) {
+                        h = CGRectGetHeight(frame);
+                    }
+                }
+
+                if ([subview isKindOfClass:[UIImageView class]]) {
+                    UIImage *image = ((UIImageView *)subview).image;
+                    if ([image isKindOfClass:[UIImage class]]) {
+                        return YES;
+                    }
+                }
+
+                if ([subview isKindOfClass:[UIButton class]]) {
+                    UIButton *btn = (UIButton *)subview;
+                    UIImage *btnImage = [btn imageForState:UIControlStateNormal];
+                    NSString *btnTitle = [btn titleForState:UIControlStateNormal] ?: @"";
+                    if ([btnImage isKindOfClass:[UIImage class]] || btnTitle.length > 0) {
+                        return YES;
+                    }
+                }
+
+                if ([subview isKindOfClass:[UILabel class]]) {
+                    NSString *text = ((UILabel *)subview).text ?: @"";
+                    if (text.length > 0) {
+                        return YES;
+                    }
+                }
+
+                // 兜底：子视图已有稳定尺寸时，一般也能正常渲染。
+                if (w >= 16.0f && h >= 16.0f) {
+                    return YES;
+                }
             }
         }
 
@@ -1823,13 +1900,14 @@ static UIBarButtonItem *wcpl_chatSearchNavButtonItem(id viewController) {
     }
 
     NSArray<NSString *> *iconNames = @[
-        @"ui-resource_search",
         @"icons_outlined_search",
         @"icons_filled_search",
         @"icons_filled_magnifier",
         @"barbuttonicon_search",
         @"icon_search",
         @"search",
+        // 部分版本该资源名会返回“空壳按钮”（宽度 10 左右，实际不显示），放后面兜底。
+        @"ui-resource_search",
         @"Q"
     ];
     NSArray<NSString *> *accessibilityNames = @[
