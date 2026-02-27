@@ -1218,7 +1218,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (WCTableViewNormalCellManager *)createRepeatCustomImageResetCell {
-    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(confirmResetRepeatCustomImage) target:self title:@"  恢复默认 +1 按钮" rightValue:@"" accessoryType:0];
+    return [objc_getClass("WCTableViewNormalCellManager") normalCellForSel:@selector(confirmResetRepeatCustomImage) target:self title:@"  恢复默认图标" rightValue:@"" accessoryType:0];
 }
 
 - (WCTableViewNormalCellManager *)createRepeatSupportEmoticonCell {
@@ -1425,7 +1425,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     }]];
 
     if (config.repeatButtonCustomImageRelativePath.length > 0) {
-        [alert addAction:[UIAlertAction actionWithTitle:@"恢复默认 +1"
+        [alert addAction:[UIAlertAction actionWithTitle:@"恢复默认图标"
                                                   style:UIAlertActionStyleDestructive
                                                 handler:^(__unused UIAlertAction *action) {
             [self confirmResetRepeatCustomImage];
@@ -1437,8 +1437,8 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (void)confirmResetRepeatCustomImage {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"恢复默认按钮"
-                                                                   message:@"清除已上传图片并回退到默认 +1 样式。"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"恢复默认图标"
+                                                                   message:@"清除已上传图片并回退到默认图标样式。"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"确认恢复"
