@@ -133,11 +133,15 @@
 - (void)reloadMessages {
     wcpl_clearLocalReplaceMap(self);
     %orig;
+    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"reloadMessages");
 }
 
 - (void)reloadWholePage {
     wcpl_clearLocalReplaceMap(self);
     %orig;
+    wcpl_updateChatSearchButtonForViewController(self);
+    wcpl_scheduleChatSearchButtonRepair(self, @"reloadWholePage");
 }
 
 - (void)updateRightBar {

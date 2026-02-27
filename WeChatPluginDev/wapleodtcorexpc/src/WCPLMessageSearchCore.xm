@@ -2570,8 +2570,10 @@ static void wcpl_scheduleChatSearchButtonRepair(id controller, NSString *stage) 
     void (^scheduleOnMain)(void) = ^{
         NSUInteger epoch = wcpl_nextChatSearchButtonRepairEpoch(controller);
         NSString *source = [stage isKindOfClass:[NSString class]] && stage.length > 0 ? stage : @"unknown";
-        NSArray<NSNumber *> *delays = @[@(0.08), @(0.35), @(0.95)];
-        NSArray<NSString *> *tags = @[@"80ms", @"350ms", @"950ms"];
+        // 微信某些场景会在 1s+ 之后再次刷新右上角按钮，导致注入按钮被覆盖。
+        // 这里拉长修复窗口，但依旧通过 epoch 防重入，避免无意义重复。
+        NSArray<NSNumber *> *delays = @[@(0.08), @(0.35), @(0.95), @(1.8), @(3.0)];
+        NSArray<NSString *> *tags = @[@"80ms", @"350ms", @"950ms", @"1800ms", @"3000ms"];
         for (NSUInteger idx = 0; idx < delays.count; idx++) {
             NSTimeInterval delay = [delays[idx] doubleValue];
             NSString *timeTag = idx < tags.count ? tags[idx] : @"retry";
