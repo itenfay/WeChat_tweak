@@ -1598,8 +1598,9 @@ static void wcpl_forceBindSearchButtonAction(UIBarButtonItem *item, id viewContr
         return;
     }
 
-    SEL tapSel = @selector(wcpl_onTapChatSearchButton:);
     SEL searchSel = @selector(onSearchItem);
+    // 对齐密友：按钮 action 直接指向 onSearchItem（尽量避免额外桥接 selector）。
+    SEL tapSel = [viewController respondsToSelector:searchSel] ? searchSel : @selector(wcpl_onTapChatSearchButton:);
 
     @try {
         item.target = viewController;
@@ -1655,10 +1656,10 @@ static void wcpl_forceBindSearchButtonAction(UIBarButtonItem *item, id viewContr
         }
     }
 
-    // 兜底：至少确保 barButtonItem 自身 action 指向 onSearchItem。
+    // 兜底：至少确保 barButtonItem 自身 action 指向 onSearchItem（或桥接 selector）。
     @try {
         item.target = viewController;
-        item.action = searchSel;
+        item.action = [viewController respondsToSelector:searchSel] ? searchSel : @selector(wcpl_onTapChatSearchButton:);
         item.enabled = YES;
     } @catch (__unused NSException *exception) {
     }
@@ -3615,7 +3616,39 @@ static void wcpl_repairExitSearchNavState(id controller, NSString *stage, BOOL a
     wcpl_scheduleChatSearchButtonRepair(controller, [NSString stringWithFormat:@"%@/afterRepair", stage ?: @"repair"]);
 }
 
-static void wcpl_updateChatSearchButtonForViewController(id viewController) {
+static UIBarButtonItem *wcpl_controllerGetRightBarButtonSafe(id viewController) {
+    if (!viewController) {
+        return nil;
+    }
+
+    // 激进模式（对齐密友）：优先从 controller 直接取 getRightBarButton。
+    // 该链路可能触发微信内部动态构造按钮，为避免异常导致崩溃，全程 @try 包裹。
+    SEL sel = @selector(getRightBarButton);
+    if ([viewController respondsToSelector:sel]) {
+        @try {
+            id value = ((id (*)(id, SEL))objc_msgSend)(viewController, sel);
+            if ([value isKindOfClass:[UIBarButtonItem class]]) {
+                return (UIBarButtonItem *)value;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    SEL sel2 = @selector(getRightBarButton:);
+    if ([viewController respondsToSelector:sel2]) {
+        @try {
+            id value = ((id (*)(id, SEL, BOOL))objc_msgSend)(viewController, sel2, NO);
+            if ([value isKindOfClass:[UIBarButtonItem class]]) {
+                return (UIBarButtonItem *)value;
+            }
+        } @catch (__unused NSException *exception) {
+        }
+    }
+
+    return nil;
+}
+
+static void wcpl_applyChatSearchRightBarMiYouStyle(id viewController, UIBarButtonItem *nativeCandidate, NSString *stage) {
     if (!viewController || ![viewController isKindOfClass:[UIViewController class]]) {
         return;
     }
@@ -3625,40 +3658,33 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
         return;
     }
 
-    NSMutableArray<UIBarButtonItem *> *rightItems = nil;
     NSArray<UIBarButtonItem *> *currentItems = nil;
     if ([navigationItem.rightBarButtonItems isKindOfClass:[NSArray class]] && navigationItem.rightBarButtonItems.count > 0) {
         currentItems = navigationItem.rightBarButtonItems;
-        rightItems = [currentItems mutableCopy];
     } else if ([navigationItem.rightBarButtonItem isKindOfClass:[UIBarButtonItem class]]) {
         currentItems = @[navigationItem.rightBarButtonItem];
-        rightItems = [NSMutableArray arrayWithObject:navigationItem.rightBarButtonItem];
     } else {
-        UIBarButtonItem *nativeFallback = wcpl_controllerCurrentNativeRightItem(viewController, @[]);
         currentItems = @[];
-        rightItems = [NSMutableArray array];
-        if ([nativeFallback isKindOfClass:[UIBarButtonItem class]]) {
-            [rightItems addObject:nativeFallback];
-        }
     }
 
-    NSMutableArray<UIBarButtonItem *> *filteredItems = [NSMutableArray arrayWithCapacity:rightItems.count];
-    for (UIBarButtonItem *item in rightItems) {
+    NSMutableArray<UIBarButtonItem *> *filteredItems = [NSMutableArray arrayWithCapacity:currentItems.count];
+    for (UIBarButtonItem *item in currentItems) {
         if (!wcpl_isInjectedChatSearchButtonItem(item)) {
             [filteredItems addObject:item];
         }
     }
-    BOOL hadInjectedItem = filteredItems.count != rightItems.count;
 
     BOOL targetChat = wcpl_isTargetChatForSearchButton(viewController);
     BOOL showingSearch = wcpl_isControllerShowingSearchUI(viewController);
-    WCPLLogDebug(@"[搜索按钮] update vc=%@ target=%@ showingSearch=%@ right=%lu filtered=%lu",
+    WCPLLogDebug(@"[搜索按钮] miyou_style vc=%@ target=%@ showingSearch=%@ stage=%@ right=%lu filtered=%lu",
                  NSStringFromClass([viewController class]) ?: @"unknown",
                  targetChat ? @"YES" : @"NO",
                  showingSearch ? @"YES" : @"NO",
-                 (unsigned long)(currentItems ?: @[]).count,
+                 stage ?: @"<none>",
+                 (unsigned long)currentItems.count,
                  (unsigned long)filteredItems.count);
 
+    // 非聊天页：只做“清掉注入按钮”的收敛。
     if (!targetChat) {
         if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], filteredItems ?: @[])) {
             wcpl_setRightBarButtonItemsWithoutAnimation(navigationItem, filteredItems);
@@ -3667,13 +3693,17 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
     }
 
     if (showingSearch) {
-        WCPLLogDebug(@"[搜索按钮] skip inject: controller is showing search UI vc=%@ keepInjected=%@",
-                     NSStringFromClass([viewController class]) ?: @"unknown",
-                     hadInjectedItem ? @"YES" : @"NO");
         return;
     }
 
-    UIBarButtonItem *nativeItem = wcpl_controllerCurrentNativeRightItem(viewController, filteredItems);
+    UIBarButtonItem *nativeItem = ([nativeCandidate isKindOfClass:[UIBarButtonItem class]] &&
+                                   !wcpl_isInjectedChatSearchButtonItem(nativeCandidate))
+        ? nativeCandidate
+        : nil;
+
+    if (![nativeItem isKindOfClass:[UIBarButtonItem class]]) {
+        nativeItem = wcpl_controllerCurrentNativeRightItem(viewController, filteredItems);
+    }
     if (![nativeItem isKindOfClass:[UIBarButtonItem class]]) {
         for (UIBarButtonItem *candidate in filteredItems) {
             if (![candidate isKindOfClass:[UIBarButtonItem class]] || wcpl_isInjectedChatSearchButtonItem(candidate)) {
@@ -3685,25 +3715,17 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
     }
 
     if (![nativeItem isKindOfClass:[UIBarButtonItem class]]) {
-        WCPLLogDebug(@"[搜索按钮] skip inject: native right item not ready vc=%@ keepInjected=%@",
+        WCPLLogDebug(@"[搜索按钮] miyou_style skip: native item not ready vc=%@ stage=%@",
                      NSStringFromClass([viewController class]) ?: @"unknown",
-                     hadInjectedItem ? @"YES" : @"NO");
+                     stage ?: @"<none>");
         return;
     }
 
     UIBarButtonItem *searchButtonItem = wcpl_chatSearchNavButtonItem(viewController);
     if (![searchButtonItem isKindOfClass:[UIBarButtonItem class]]) {
-        WCPLLogInfo(@"[搜索按钮] 生成搜索按钮失败，保留当前右键 vc=%@",
-                    NSStringFromClass([viewController class]) ?: @"unknown");
-        return;
-    }
-
-    // 重要：不要用“两枚固定按钮”覆盖原生 rightBarButtonItems。
-    // 早期实现会误判/丢失“…”入口，从而影响群资料/邀请成员等流程。
-    // 这里改为“在原列表基础上插入搜索按钮”，最大化保留原生按钮行为。
-    NSMutableArray<UIBarButtonItem *> *stableItems = [filteredItems mutableCopy] ?: [NSMutableArray array];
-    if (stableItems.count == 0) {
-        // 原生按钮未就绪时，不要强行注入，避免覆盖后续动态更新。
+        WCPLLogInfo(@"[搜索按钮] miyou_style 生成搜索按钮失败 vc=%@ stage=%@",
+                    NSStringFromClass([viewController class]) ?: @"unknown",
+                    stage ?: @"<none>");
         return;
     }
 
@@ -3714,28 +3736,20 @@ static void wcpl_updateChatSearchButtonForViewController(id viewController) {
         }
     }
 
-    NSUInteger insertIndex = stableItems.count;
-    NSUInteger moreIndex = NSNotFound;
-    for (NSUInteger idx = 0; idx < stableItems.count; idx++) {
-        if (wcpl_barButtonItemLooksLikeMoreEntry(stableItems[idx])) {
-            moreIndex = idx;
-            break;
-        }
-    }
-    if (moreIndex != NSNotFound) {
-        insertIndex = MIN(moreIndex + 1, stableItems.count);
-    } else {
-        // 默认放在最右按钮的左侧（iOS 右侧按钮从数组左到右依次向左展开）
-        insertIndex = MIN((NSUInteger)1, stableItems.count);
-    }
-    [stableItems insertObject:searchButtonItem atIndex:insertIndex];
-
-    if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], stableItems ?: @[])) {
-        wcpl_setRightBarButtonItemsWithoutAnimation(navigationItem, stableItems);
-        WCPLLogInfo(@"[搜索按钮] 已更新 rightBar: native={%@} search={%@}",
-                    [nativeItem isKindOfClass:[UIBarButtonItem class]] ? wcpl_barButtonItemDebugSummary(nativeItem) : @"<nil>",
+    // 密友实现：固定两枚按钮（原生右键 + 搜索按钮），直接覆盖 rightBarButtonItems。
+    NSArray<UIBarButtonItem *> *desiredItems = @[nativeItem, searchButtonItem];
+    if (!wcpl_barButtonItemArrayEquivalent(currentItems ?: @[], desiredItems ?: @[])) {
+        wcpl_setRightBarButtonItemsWithoutAnimation(navigationItem, desiredItems);
+        WCPLLogInfo(@"[搜索按钮] miyou_style 已更新 rightBar stage=%@: native={%@} search={%@}",
+                    stage ?: @"<none>",
+                    wcpl_barButtonItemDebugSummary(nativeItem),
                     wcpl_barButtonItemDebugSummary(searchButtonItem));
     }
+}
+
+static void wcpl_updateChatSearchButtonForViewController(id viewController) {
+    UIBarButtonItem *native = wcpl_controllerGetRightBarButtonSafe(viewController);
+    wcpl_applyChatSearchRightBarMiYouStyle(viewController, native, @"update");
 }
 
 static BOOL wcpl_controllerHasInjectedChatSearchButton(id viewController) {
