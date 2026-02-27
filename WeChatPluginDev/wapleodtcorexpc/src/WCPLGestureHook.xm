@@ -6105,6 +6105,18 @@ static NSString *wcpl_messageTimeTextForTimestamp(unsigned int timestamp) {
         return;
     }
 
+    // 说明：微信在长消息/重排场景里可能会同时存在多个 CommonMessageCellView 实例指向同一条消息，
+    // 导致“头像下方时间”被重复绘制（看起来像同一个头像下面出现多条时间）。
+    // 这里复用复读按钮的 owner 选择逻辑：同一 messageKey 只允许最底部（最可见）的那个 view 显示时间。
+    NSString *messageKey = wcpl_repeatMessageKey(msgWrap);
+    if ([messageKey isKindOfClass:[NSString class]] && messageKey.length > 0) {
+        objc_setAssociatedObject(self, kWCPLRepeatAnchorMessageKey, messageKey, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        if (!wcpl_isBottomMostRepeatOwnerForMessageKey(self, messageKey)) {
+            [self wchook_hideMessageTimeLabel];
+            return;
+        }
+    }
+
     UIView *headView = [self wchook_headImageViewForMessageTime];
     if (![headView isKindOfClass:[UIView class]] || headView.hidden || headView.alpha < 0.01f) {
         [self wchook_hideMessageTimeLabel];
