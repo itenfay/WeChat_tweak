@@ -124,7 +124,7 @@ before-all::
 	@echo "[wcpl] internal include files (must stay blocked): $(WCPL_INTERNAL_INCLUDE_FILES)"
 	@echo "[wcpl] blocked files: $(WCPL_BLOCKED_FILES)"
 
-$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore
+$(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation CoreGraphics CoreMedia CoreVideo QuartzCore UserNotifications
 $(TWEAK_NAME)_LDFLAGS = -Wl,-no_warn_inits
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -IHeaders -fno-modules
 

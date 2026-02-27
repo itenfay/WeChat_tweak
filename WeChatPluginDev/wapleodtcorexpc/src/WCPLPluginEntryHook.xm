@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 void wcpl_push2chat_handleLaunchOptions(id launchOptions) __attribute__((weak_import));
-void wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribute__((weak_import));
+BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribute__((weak_import));
 #ifdef __cplusplus
 }
 #endif
@@ -328,6 +328,7 @@ static void wcpl_entry_insertPluginCell(id tableViewMgr, id target, SEL action, 
     static const WCPLHookOrigPolicy kOrigPolicy = WCPLHookOrigPolicyPost;
     uint64_t startMs = wcpl_entry_perf_uptimeMillis();
     uint64_t push2chatMs = 0;
+    BOOL suppressOrig = NO;
 
     if (wcpl_push2chat_handleForegroundNotificationResponse) {
         uint64_t pushStartMs = wcpl_entry_perf_uptimeMillis();
@@ -338,7 +339,7 @@ static void wcpl_entry_insertPluginCell(id tableViewMgr, id target, SEL action, 
                           kOrigPolicy,
                           @"target=wcpl_push2chat_handleForegroundNotificationResponse");
         @try {
-            wcpl_push2chat_handleForegroundNotificationResponse(response);
+            suppressOrig = wcpl_push2chat_handleForegroundNotificationResponse(response);
         } @catch (NSException *exception) {
             WCPLLogWarning(@"[入口] push2chat 前台通知分发失败: %@", exception.reason ?: @"unknown");
             wcpl_entryHookLog(@"MicroMessengerAppDelegate",
@@ -350,6 +351,25 @@ static void wcpl_entry_insertPluginCell(id tableViewMgr, id target, SEL action, 
         }
         uint64_t pushEndMs = wcpl_entry_perf_uptimeMillis();
         push2chatMs = pushEndMs >= pushStartMs ? (pushEndMs - pushStartMs) : 0;
+    }
+
+    if (suppressOrig) {
+        wcpl_entryHookLog(@"MicroMessengerAppDelegate",
+                          kHookSelector,
+                          @"feature",
+                          @"intercept",
+                          kOrigPolicy,
+                          @"reason=pagesheet");
+        if (completionHandler) completionHandler();
+
+        uint64_t endMs = wcpl_entry_perf_uptimeMillis();
+        uint64_t totalMs = endMs >= startMs ? (endMs - startMs) : 0;
+        WCPLLogInfo(@"[PERF][ENTRY] selector=foreground_notification total_ms=%llu orig_ms=%llu push2chat_ms=%llu rss_kb=%llu",
+                    (unsigned long long)totalMs,
+                    (unsigned long long)0,
+                    (unsigned long long)push2chatMs,
+                    wcpl_entry_perf_residentKB());
+        return;
     }
     wcpl_entryHookLog(@"MicroMessengerAppDelegate",
                       kHookSelector,
