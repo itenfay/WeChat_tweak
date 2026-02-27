@@ -861,7 +861,16 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
         revokedContent = wcpl_extractRevokedContentFromReplaceText(replaceText);
     }
     revokedContent = wcpl_sanitizeInlineText(revokedContent, 180);
-    if (revokedContent.length == 0) revokedContent = @"[未知消息]";
+    // 兼容“表情包撤回”场景：
+    // 有些机型/版本撤回 XML 无法反查到原消息，且 replacemsg 也不给可用摘要，
+    // 这时历史实现会显示「[未知消息]」。按需求改为默认展示「[表情]」，避免误导用户。
+    if (revokedContent.length == 0 ||
+        (!revokedMsgWrap &&
+         ([revokedContent rangeOfString:@"未知消息"].location != NSNotFound ||
+          [revokedContent rangeOfString:@"[未知"].location != NSNotFound ||
+          [revokedContent rangeOfString:@"[类型:"].location != NSNotFound))) {
+        revokedContent = @"[表情]";
+    }
 
     NSString *actorName = wcpl_extractRevokerNameFromReplaceText(replaceText);
     if (actorName.length == 0) {
