@@ -31,6 +31,7 @@ static id WCHookMessageWrapForCell(CommonMessageCellView *cell);
 static id WCHookReferMessageFromWrap(id messageWrap);
 static id WCHookLocateTargetFromObject(id object);
 static BOOL WCHookLooksLikeRevokeTipContent(NSString *content);
+static BOOL WCHookLooksLikeSelfRevokeTipContent(NSString *content);
 static BOOL WCHookLooksLikeQuitMonitorTipContent(NSString *content);
 static NSString *WCHookStringFieldFromWrap(id messageWrap, SEL selector, NSString *kvcKey);
 static NSNumber *WCHookNumberFieldFromWrap(id messageWrap, SEL selector, NSString *kvcKey);
@@ -711,6 +712,25 @@ static BOOL WCHookLooksLikeRevokeTipContent(NSString *content) {
     }
     return ([content rangeOfString:@"撤回了一条消息"].location != NSNotFound ||
             [content rangeOfString:@"已拦截撤回"].location != NSNotFound);
+}
+
+static BOOL WCHookLooksLikeSelfRevokeTipContent(NSString *content) {
+    NSString *text = WCHookTrimString(content);
+    if (text.length == 0) {
+        return NO;
+    }
+
+    // 说明：自己撤回的提示通常包含「你撤回……」，且该提示往往带有「重新编辑」入口。
+    // 我们的“撤回提示跳转”逻辑如果吞掉点击，会导致「重新编辑」无响应，因此必须跳过自撤回提示。
+    if ([text rangeOfString:@"你撤回"].location != NSNotFound) {
+        return YES;
+    }
+
+    if ([text rangeOfString:@"You recalled" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+
+    return NO;
 }
 
 static BOOL WCHookLooksLikeQuitMonitorTipContent(NSString *content) {
@@ -1895,6 +1915,11 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
         return NO;
     }
 
+    // 说明：自撤回提示包含「重新编辑」入口。这里必须放行给微信原生处理，否则会出现点击无响应。
+    if (WCHookLooksLikeSelfRevokeTipContent(content)) {
+        return NO;
+    }
+
     // ⚠️ 经验性防护：
     // 部分“表情包撤回”场景下，撤回提示尾行会是「[未知消息]」，此时继续走定位/高亮链路
     // 在某些机型/微信版本会触发 SIGSEGV（用户反馈：点击即崩溃重启）。
@@ -1976,11 +2001,7 @@ static BOOL WCHookTryJumpFromRevokeTipCell(CommonMessageCellView *cell) {
         return NO;
     }
     NSTimeInterval now = NSDate.date.timeIntervalSince1970;
-    if (now < gWCHookRevokeTipTapThrottleUntil) {
-        WCPLLogInfo(@"Revoke tip tap throttled: remain=%.3f",
-                    gWCHookRevokeTipTapThrottleUntil - now);
-        return YES;
-    }
+    BOOL throttled = (now < gWCHookRevokeTipTapThrottleUntil);
 
     CommonMessageCellView *resolvedCell = WCHookResolveMessageCellForObject(cell) ?: cell;
     if (resolvedCell != cell) {
@@ -1993,9 +2014,23 @@ static BOOL WCHookTryJumpFromRevokeTipCell(CommonMessageCellView *cell) {
     if (!messageWrap) {
         return NO;
     }
-    if (!WCHookLooksLikeRevokeTipContent(WCHookMessageContentFromWrap(messageWrap))) {
+
+    NSString *content = WCHookMessageContentFromWrap(messageWrap);
+    if (!WCHookLooksLikeRevokeTipContent(content)) {
         return NO;
     }
+
+    // 自撤回提示（含「重新编辑」）必须放行给微信原生逻辑处理。
+    if (WCHookLooksLikeSelfRevokeTipContent(content)) {
+        return NO;
+    }
+
+    if (throttled) {
+        WCPLLogInfo(@"Revoke tip tap throttled: remain=%.3f",
+                    gWCHookRevokeTipTapThrottleUntil - now);
+        return YES;
+    }
+
     WCHookShowDebugToast(@"撤回提示: 已点击");
     gWCHookRevokeTipTapThrottleUntil = now + 0.2;
 
