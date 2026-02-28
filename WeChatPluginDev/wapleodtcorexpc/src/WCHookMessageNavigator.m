@@ -1872,10 +1872,17 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
 
     // 激进策略：尽量走微信“定位原文”同款链路，让顶部时间变红且出现原生“返回”入口。
     // 备注：少数版本/机型在定位/高亮链路可能存在 SIGSEGV 风险；用户已要求对齐原生体验，接受该取舍。
+    UIScrollView *trackedScrollView = WCHookResolveScrollViewFromTarget(target);
+    CGFloat baselineOffsetY = 0.0;
+    if ([trackedScrollView isKindOfClass:[UIScrollView class]]) {
+        baselineOffsetY = trackedScrollView.contentOffset.y;
+    }
+
     WCHookInstallRevokeReturnEntryPinHook();
-    // 说明：同屏自动收起逻辑在部分场景会引发点击撤回提示后的 SIGSEGV，
-    // 这里先固定 pin 一段时间确保稳定（止血优先）。
-    WCHookRevokeReturnEntryPinActivate(target, kWCHookRevokeReturnEntryPinDuration);
+    // 先短暂 pin，防止“返回”入口刚出现就被原生逻辑隐藏；随后基于滚动距离决定是否需要延长 pin。
+    WCHookRevokeReturnEntryPinActivate(target, 0.75);
+    NSNumber *pinTokenObj = objc_getAssociatedObject(target, kWCHookRevokeReturnEntryPinTokenKey);
+    NSUInteger pinToken = [pinTokenObj isKindOfClass:[NSNumber class]] ? pinTokenObj.unsignedIntegerValue : 0;
     WCHookPrepareRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
     BOOL jumped = WCHookScrollToMessageHighlight(target, targetMessage);
     if (jumped) {
@@ -1903,6 +1910,62 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
                 WCHookRevokeReturnEntryPinCaptureTipsView(target);
             });
         }
+
+        // ✅ 同屏/近距离优化：
+        // 当撤回提示与原消息距离很近（滚动距离在 1 屏以内）时，不需要出现“返回”入口；
+        // 这里用 scrollView.contentOffset 的变化量做判定，避免遍历 visibleCells（该方案在部分环境会触发 SIGSEGV）。
+        __weak id weakTarget = target;
+        __weak UIScrollView *weakScrollView = trackedScrollView;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.32 * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+            id strongTarget = weakTarget;
+            UIScrollView *strongScrollView = weakScrollView;
+            if (!strongTarget) {
+                return;
+            }
+
+            NSNumber *currentTokenObj = objc_getAssociatedObject(strongTarget, kWCHookRevokeReturnEntryPinTokenKey);
+            NSUInteger currentToken = [currentTokenObj isKindOfClass:[NSNumber class]] ? currentTokenObj.unsignedIntegerValue : 0;
+            if (pinToken > 0 && currentToken != pinToken) {
+                return;
+            }
+
+            CGFloat delta = CGFLOAT_MAX;
+            CGFloat viewportHeight = 0.0;
+            if ([strongScrollView isKindOfClass:[UIScrollView class]]) {
+                delta = fabs(strongScrollView.contentOffset.y - baselineOffsetY);
+                viewportHeight = CGRectGetHeight(strongScrollView.bounds);
+            }
+            if (viewportHeight <= 0.0) {
+                viewportHeight = CGRectGetHeight(UIScreen.mainScreen.bounds);
+            }
+            CGFloat threshold = MAX(220.0, viewportHeight * 0.85);
+            BOOL nearEnough = (delta != CGFLOAT_MAX && delta <= threshold);
+
+            if (nearEnough) {
+                WCHookRevokeReturnEntryPinClear(strongTarget);
+                @try {
+                    [strongTarget setValue:nil forKey:@"m_referOwnerMsg"];
+                } @catch (__unused NSException *exceptionClearOwner) {
+                }
+                @try {
+                    [strongTarget setValue:nil forKey:@"m_referKeeperMsg"];
+                } @catch (__unused NSException *exceptionClearKeeper) {
+                }
+                if ([strongTarget respondsToSelector:@selector(removeTipView)]) {
+                    @try {
+                        ((void (*)(id, SEL))objc_msgSend)(strongTarget, @selector(removeTipView));
+                    } @catch (__unused NSException *exceptionRemoveTip) {
+                    }
+                }
+                return;
+            }
+
+            // 距离较远：延长 pin，保证“返回”入口稳定可见。
+            WCHookRevokeReturnEntryPinActivate(strongTarget, kWCHookRevokeReturnEntryPinDuration);
+            WCHookPrepareRevokeReturnAnchor(strongTarget, tipMessageWrap, targetMessage);
+            WCHookStabilizeRevokeReturnAnchor(strongTarget, tipMessageWrap, targetMessage);
+        });
     } else {
         WCHookRevokeReturnEntryPinClear(target);
     }
