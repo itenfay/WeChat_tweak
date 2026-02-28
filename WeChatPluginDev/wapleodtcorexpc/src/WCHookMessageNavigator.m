@@ -1862,8 +1862,9 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
     // 激进策略：尽量走微信“定位原文”同款链路，让顶部时间变红且出现原生“返回”入口。
     // 备注：少数版本/机型在定位/高亮链路可能存在 SIGSEGV 风险；用户已要求对齐原生体验，接受该取舍。
     WCHookInstallRevokeReturnEntryPinHook();
-    // 先短暂 pin，防止“返回”入口刚出现就被原生逻辑隐藏；后续再按距离判定是否延长 pin。
-    WCHookRevokeReturnEntryPinActivate(target, 0.55);
+    // 说明：同屏自动收起逻辑在部分场景会引发点击撤回提示后的 SIGSEGV，
+    // 这里先固定 pin 一段时间确保稳定（止血优先）。
+    WCHookRevokeReturnEntryPinActivate(target, kWCHookRevokeReturnEntryPinDuration);
     WCHookPrepareRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
     BOOL jumped = WCHookScrollToMessageHighlight(target, targetMessage);
     if (jumped) {
@@ -1891,64 +1892,6 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
                 WCHookRevokeReturnEntryPinCaptureTipsView(target);
             });
         }
-
-        // 距离判定：如果撤回提示仍在同屏内，则无需“返回”入口，尽量按原生体验自动收起。
-        unsigned int tipLocalID = WCHookUIntFieldFromWrap(tipMessageWrap, @selector(m_uiMesLocalID), @"m_uiMesLocalID");
-        UIScrollView *scrollView = WCHookResolveScrollViewFromTarget(target);
-        __weak id weakTarget = target;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)),
-                       dispatch_get_main_queue(), ^{
-            id strongTarget = weakTarget;
-            if (!strongTarget) {
-                return;
-            }
-
-            BOOL tipStillVisible = NO;
-            if (tipLocalID > 0 && [scrollView respondsToSelector:@selector(visibleCells)]) {
-                NSArray *cells = nil;
-                @try {
-                    cells = ((id (*)(id, SEL))objc_msgSend)(scrollView, @selector(visibleCells));
-                } @catch (__unused NSException *exceptionCells) {
-                    cells = nil;
-                }
-                if ([cells isKindOfClass:[NSArray class]]) {
-                    for (id cell in cells) {
-                        id cellWrap = WCHookMessageWrapFromObject(cell);
-                        if (!cellWrap) {
-                            continue;
-                        }
-                        unsigned int cellLocalID = WCHookUIntFieldFromWrap(cellWrap,
-                                                                           @selector(m_uiMesLocalID),
-                                                                           @"m_uiMesLocalID");
-                        if (cellLocalID == tipLocalID) {
-                            tipStillVisible = YES;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (tipStillVisible) {
-                WCHookRevokeReturnEntryPinClear(strongTarget);
-                @try {
-                    [strongTarget setValue:nil forKey:@"m_referOwnerMsg"];
-                } @catch (__unused NSException *exceptionClearOwner) {
-                }
-                @try {
-                    [strongTarget setValue:nil forKey:@"m_referKeeperMsg"];
-                } @catch (__unused NSException *exceptionClearKeeper) {
-                }
-                if ([strongTarget respondsToSelector:@selector(removeTipView)]) {
-                    @try {
-                        ((void (*)(id, SEL))objc_msgSend)(strongTarget, @selector(removeTipView));
-                    } @catch (__unused NSException *exceptionRemove) {
-                    }
-                }
-            } else {
-                // 距离较远：延长 pin，保证“返回”入口稳定可见。
-                WCHookRevokeReturnEntryPinActivate(strongTarget, kWCHookRevokeReturnEntryPinDuration);
-            }
-        });
     } else {
         WCHookRevokeReturnEntryPinClear(target);
     }
