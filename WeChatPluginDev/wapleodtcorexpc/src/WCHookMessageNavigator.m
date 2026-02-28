@@ -12,11 +12,6 @@
 @interface CommonMessageCellView : UIView
 @end
 
-@interface WCHookRevokeReturnBridge : NSObject
-+ (instancetype)sharedBridge;
-- (void)onTapReturnButton:(UIButton *)sender;
-@end
-
 static Class WCHookReferViewClass(void);
 static BOOL WCHookObjectIsReferView(id object);
 static id WCHookInvokeObject(id target, SEL selector);
@@ -28,6 +23,7 @@ static UIView *WCHookLocateCarrierViewFromObject(id object);
 static CommonMessageCellView *WCHookResolveMessageCellForObject(id object);
 static id WCHookMessageWrapFromObject(id object);
 static id WCHookMessageWrapForCell(CommonMessageCellView *cell);
+static BOOL WCHookLooksLikeMessageWrapObject(id object);
 static id WCHookReferMessageFromWrap(id messageWrap);
 static id WCHookLocateTargetFromObject(id object);
 static BOOL WCHookLooksLikeRevokeTipContent(NSString *content);
@@ -62,34 +58,20 @@ static id WCHookResolveRevokeTipTargetMessage(id messageWrap,
                                               long long *svrIDOut,
                                               unsigned int *localIDOut,
                                               NSString **excerptOut);
-static void WCHookBindReferRelationForRevokeTip(id tipMessageWrap, id targetMessageWrap);
-static void WCHookClearReferRelationForRevokeTip(id tipMessageWrap);
 static id WCHookResolveMsgContentTargetFromObject(id object);
-static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget,
-                                                 id tipMessageWrap,
-                                                 id targetMessage,
-                                                 BOOL prepareOfficialReturnAnchor);
+static double WCHookResolveScrollMarginTop(id target);
+static void WCHookPrepareRevokeReturnAnchor(id target, id tipMessageWrap, id targetMessage);
+static void WCHookStabilizeRevokeReturnAnchor(id target, id tipMessageWrap, id targetMessage);
+static void WCHookHighlightMessageIfPossible(id target, id targetMessage);
+static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage);
+static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageWrap, id targetMessage);
 static NSInteger WCHookMsgTargetScore(id object);
 static UIScrollView *WCHookFindPreferredScrollViewInView(UIView *rootView);
 static UIScrollView *WCHookResolveScrollViewFromTarget(id object);
-static void WCHookShowRevokeReturnButton(id locateTarget, id tipMessageWrap);
-static void WCHookHideRevokeReturnButton(void);
-static void WCHookHandleRevokeReturnButtonTap(UIButton *button);
-static void WCHookInstallOfficialEdgeTipsInterceptor(void);
-static void WCHookInstallEdgeTipsTouchTracker(void);
-static void WCHookInstallEdgeTipsClickTracker(void);
-static BOOL WCHookShowOfficialRevokeReturnEdgeTip(id officialTarget);
-static void WCHookOnClickEdgeTipsViewIntercept(id self, SEL _cmd, id sender);
-static void WCHookEdgeTipsOnClickBtnIntercept(id self, SEL _cmd);
-static void WCHookEdgeTipsTouchesEndedIntercept(id self, SEL _cmd, id touches, id event);
 static id WCHookFallbackLocateTarget(void);
 static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarget);
 static BOOL WCHookTryJumpFromRevokeTipCell(CommonMessageCellView *cell);
-static BOOL WCHookShouldAutoHideRevokeReturnEntry(UIScrollView *trackedScrollView, CGFloat baselineOffsetY);
-static void WCHookScheduleAutoHideRevokeReturnEntry(id tipMessageWrap,
-                                                    id preferredTarget,
-                                                    UIScrollView *trackedScrollView,
-                                                    CGFloat baselineOffsetY);
+static BOOL WCHookCellMayContainRevokeTip(CommonMessageCellView *cell);
 static id WCHookResolveProfileOpenTargetFromCell(CommonMessageCellView *cell);
 static BOOL WCHookOpenProfileWithTarget(id target, NSString *userName, NSString *displayName);
 static BOOL WCHookExecuteOpenQuitMemberProfileFromCell(CommonMessageCellView *cell);
@@ -100,40 +82,9 @@ static BOOL WCHookExecuteJumpFromInput(id toolView);
 static BOOL WCHookPerformSyncOnMainThread(BOOL (^action)(void));
 
 static NSString *const kWCHookRevokeDebugToastEnabledKey = @"kWCPLRevokeDebugToastEnabled";
-static NSInteger const kWCHookRevokeReturnButtonTag = 0x57435254;
-static const void *kWCHookRevokeReturnLocateTargetKey = &kWCHookRevokeReturnLocateTargetKey;
-static const void *kWCHookRevokeReturnTipWrapKey = &kWCHookRevokeReturnTipWrapKey;
-static const void *kWCHookRevokeReturnHideTokenKey = &kWCHookRevokeReturnHideTokenKey;
-static const void *kWCHookOfficialReturnTipWrapKey = &kWCHookOfficialReturnTipWrapKey;
-static const void *kWCHookOfficialReturnExpireKey = &kWCHookOfficialReturnExpireKey;
-static const void *kWCHookOfficialReturnEnableAtKey = &kWCHookOfficialReturnEnableAtKey;
-static const void *kWCHookOfficialReturnTapAtKey = &kWCHookOfficialReturnTapAtKey;
-static const void *kWCHookOfficialReturnOwnerKey = &kWCHookOfficialReturnOwnerKey;
 static NSTimeInterval gWCHookRevokeTipTapThrottleUntil = 0;
-
-typedef void (*WCHookOnClickEdgeTipsViewIMP)(id, SEL, id);
-static WCHookOnClickEdgeTipsViewIMP gWCHookOriginalOnClickEdgeTipsView = NULL;
-typedef void (*WCHookEdgeTipsTouchesEndedIMP)(id, SEL, id, id);
-static WCHookEdgeTipsTouchesEndedIMP gWCHookOriginalEdgeTipsTouchesEnded = NULL;
-typedef void (*WCHookEdgeTipsOnClickBtnIMP)(id, SEL);
-static WCHookEdgeTipsOnClickBtnIMP gWCHookOriginalEdgeTipsOnClickBtn = NULL;
-
-@implementation WCHookRevokeReturnBridge
-
-+ (instancetype)sharedBridge {
-    static WCHookRevokeReturnBridge *bridge = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        bridge = [[WCHookRevokeReturnBridge alloc] init];
-    });
-    return bridge;
-}
-
-- (void)onTapReturnButton:(UIButton *)sender {
-    WCHookHandleRevokeReturnButtonTap(sender);
-}
-
-@end
+static NSTimeInterval const kWCHookRevokeAnchorStabilizeInterval = 0.12;
+static NSInteger const kWCHookRevokeAnchorStabilizeAttempts = 12;
 
 @implementation WCHookMessageNavigator
 
@@ -178,6 +129,9 @@ static WCHookEdgeTipsOnClickBtnIMP gWCHookOriginalEdgeTipsOnClickBtn = NULL;
 
 + (BOOL)tryJumpFromRevokeTipCell:(CommonMessageCellView *)cell {
     if (!cell) {
+        return NO;
+    }
+    if (!WCHookCellMayContainRevokeTip(cell)) {
         return NO;
     }
     WCPLCrashBreadcrumb(@"防撤回提示跳转(消息气泡): cell=%@", NSStringFromClass([cell class]));
@@ -287,297 +241,10 @@ static void WCHookShowDebugToast(NSString *text) {
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
             toast.alpha = 0.0;
-        } completion:^(__unused BOOL finishedOut) {
+    } completion:^(__unused BOOL finishedOut) {
             [toast removeFromSuperview];
         }];
     }];
-}
-
-static void WCHookOnClickEdgeTipsViewIntercept(id self, SEL _cmd, id sender) {
-    id tipWrap = objc_getAssociatedObject(self, kWCHookOfficialReturnTipWrapKey);
-    NSNumber *expireObj = objc_getAssociatedObject(self, kWCHookOfficialReturnExpireKey);
-    NSNumber *enableAtObj = objc_getAssociatedObject(self, kWCHookOfficialReturnEnableAtKey);
-    NSNumber *tapAtObj = objc_getAssociatedObject(self, kWCHookOfficialReturnTapAtKey);
-    if (!tipWrap) {
-        if (gWCHookOriginalOnClickEdgeTipsView) {
-            gWCHookOriginalOnClickEdgeTipsView(self, _cmd, sender);
-        }
-        return;
-    }
-
-    NSTimeInterval now = NSDate.date.timeIntervalSince1970;
-    BOOL activeWindowPassed = YES;
-    BOOL notExpired = YES;
-    BOOL tapWindowPassed = NO;
-    if ([enableAtObj isKindOfClass:[NSNumber class]]) {
-        activeWindowPassed = (now >= enableAtObj.doubleValue);
-    }
-    if ([expireObj isKindOfClass:[NSNumber class]]) {
-        notExpired = (now <= expireObj.doubleValue);
-    }
-    if ([tapAtObj isKindOfClass:[NSNumber class]]) {
-        NSTimeInterval delta = now - tapAtObj.doubleValue;
-        tapWindowPassed = (delta >= -0.05 && delta <= 1.2);
-    }
-
-    if (!notExpired) {
-        WCPLLogInfo(@"Revoke tip official back expired, fallback original");
-        objc_setAssociatedObject(self, kWCHookOfficialReturnTipWrapKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCHookOfficialReturnExpireKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCHookOfficialReturnEnableAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kWCHookOfficialReturnTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        if (gWCHookOriginalOnClickEdgeTipsView) {
-            gWCHookOriginalOnClickEdgeTipsView(self, _cmd, sender);
-        }
-        return;
-    }
-
-    if (!(activeWindowPassed && tapWindowPassed)) {
-        WCPLLogInfo(@"Revoke tip official back blocked(auto): sender=%@ tap=%d active=%d",
-                    sender ? NSStringFromClass([sender class]) : @"nil",
-                    tapWindowPassed ? 1 : 0,
-                    activeWindowPassed ? 1 : 0);
-        return;
-    }
-
-    WCPLLogInfo(@"Revoke tip official back handled(custom)");
-    objc_setAssociatedObject(self, kWCHookOfficialReturnTipWrapKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(self, kWCHookOfficialReturnExpireKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(self, kWCHookOfficialReturnEnableAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(self, kWCHookOfficialReturnTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
-    // 原生 edge tips 点击统一走“返回撤回提示”逻辑，保持与插件返回按钮一致。
-    WCHookClearReferRelationForRevokeTip(tipWrap);
-    id effectiveTarget = WCHookResolveMsgContentTargetFromObject(self);
-    if (!effectiveTarget) {
-        effectiveTarget = WCHookFallbackLocateTarget();
-    }
-    if (WCHookLocateAndEmphasizeRevokeTarget(effectiveTarget, nil, tipWrap, NO)) {
-        if ([self respondsToSelector:@selector(removeTipView)]) {
-            @try {
-                ((void (*)(id, SEL))objc_msgSend)(self, @selector(removeTipView));
-            } @catch (__unused NSException *exceptionHideTip) {
-            }
-        }
-        WCHookShowDebugToast(@"撤回提示: 已返回提示位置");
-        return;
-    }
-
-    WCHookShowDebugToast(@"撤回提示: 返回失败");
-    if (gWCHookOriginalOnClickEdgeTipsView) {
-        gWCHookOriginalOnClickEdgeTipsView(self, _cmd, sender);
-    }
-}
-
-static void WCHookTrackOfficialEdgeTipTap(id senderObject, id fallbackTarget) {
-    Class msgContentVCClass = NSClassFromString(@"BaseMsgContentViewController");
-    id matchedController = nil;
-    if (senderObject) {
-        matchedController = objc_getAssociatedObject(senderObject, kWCHookOfficialReturnOwnerKey);
-    }
-    if (!matchedController && senderObject && [senderObject respondsToSelector:@selector(delegate)]) {
-        @try {
-            id delegate = ((id (*)(id, SEL))objc_msgSend)(senderObject, @selector(delegate));
-            if ((msgContentVCClass && [delegate isKindOfClass:msgContentVCClass]) ||
-                [delegate respondsToSelector:@selector(onClickEdgeTipsView:)]) {
-                matchedController = delegate;
-            }
-        } @catch (__unused NSException *exceptionDelegate) {
-        }
-    }
-    if (!matchedController && fallbackTarget &&
-        ((msgContentVCClass && [fallbackTarget isKindOfClass:msgContentVCClass]) ||
-         [fallbackTarget respondsToSelector:@selector(onClickEdgeTipsView:)])) {
-        matchedController = fallbackTarget;
-    }
-    if (!matchedController && [senderObject isKindOfClass:[UIView class]]) {
-        UIResponder *responder = (UIResponder *)senderObject;
-        while (responder) {
-            if ((msgContentVCClass && [responder isKindOfClass:msgContentVCClass]) ||
-                [responder respondsToSelector:@selector(onClickEdgeTipsView:)]) {
-                matchedController = responder;
-                break;
-            }
-            responder = [responder nextResponder];
-        }
-    }
-    if (!matchedController) {
-        return;
-    }
-
-    objc_setAssociatedObject(matchedController,
-                             kWCHookOfficialReturnTapAtKey,
-                             @(NSDate.date.timeIntervalSince1970),
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    WCPLLogInfo(@"Revoke tip official edge tap tracked: sender=%@ target=%@",
-                senderObject ? NSStringFromClass([senderObject class]) : @"nil",
-                NSStringFromClass([matchedController class]));
-}
-
-static void WCHookEdgeTipsOnClickBtnIntercept(id self, SEL _cmd) {
-    WCHookTrackOfficialEdgeTipTap(self, nil);
-    if (gWCHookOriginalEdgeTipsOnClickBtn) {
-        gWCHookOriginalEdgeTipsOnClickBtn(self, _cmd);
-    }
-}
-
-static void WCHookEdgeTipsTouchesEndedIntercept(id self, SEL _cmd, id touches, id event) {
-    WCHookTrackOfficialEdgeTipTap(self, nil);
-
-    if (gWCHookOriginalEdgeTipsTouchesEnded) {
-        gWCHookOriginalEdgeTipsTouchesEnded(self, _cmd, touches, event);
-    }
-}
-
-static void WCHookInstallEdgeTipsTouchTracker(void) {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class edgeTipsClass = NSClassFromString(@"MMEdgeTipsView");
-        SEL selector = @selector(touchesEnded:withEvent:);
-        if (!edgeTipsClass) {
-            WCPLLogWarning(@"Revoke tip edge-tips touch tracker skipped: class missing");
-            return;
-        }
-
-        Method method = class_getInstanceMethod(edgeTipsClass, selector);
-        if (!method) {
-            WCPLLogWarning(@"Revoke tip edge-tips touch tracker skipped: method missing");
-            return;
-        }
-
-        IMP oldImp = class_getMethodImplementation(edgeTipsClass, selector);
-        const char *typeEncoding = method_getTypeEncoding(method);
-        class_replaceMethod(edgeTipsClass, selector, (IMP)WCHookEdgeTipsTouchesEndedIntercept, typeEncoding);
-        gWCHookOriginalEdgeTipsTouchesEnded = (WCHookEdgeTipsTouchesEndedIMP)oldImp;
-        WCPLLogInfo(@"Revoke tip edge-tips touch tracker installed");
-    });
-}
-
-static void WCHookInstallEdgeTipsClickTracker(void) {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class edgeTipsClass = NSClassFromString(@"MMEdgeTipsView");
-        SEL selector = @selector(onClickBtn);
-        if (!edgeTipsClass) {
-            WCPLLogWarning(@"Revoke tip edge-tips click tracker skipped: class missing");
-            return;
-        }
-
-        Method method = class_getInstanceMethod(edgeTipsClass, selector);
-        if (!method) {
-            WCPLLogWarning(@"Revoke tip edge-tips click tracker skipped: method missing");
-            return;
-        }
-
-        IMP oldImp = class_getMethodImplementation(edgeTipsClass, selector);
-        const char *typeEncoding = method_getTypeEncoding(method);
-        class_replaceMethod(edgeTipsClass, selector, (IMP)WCHookEdgeTipsOnClickBtnIntercept, typeEncoding);
-        gWCHookOriginalEdgeTipsOnClickBtn = (WCHookEdgeTipsOnClickBtnIMP)oldImp;
-        WCPLLogInfo(@"Revoke tip edge-tips click tracker installed");
-    });
-}
-
-static __attribute__((unused)) void WCHookInstallOfficialEdgeTipsInterceptor(void) {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        WCHookInstallEdgeTipsTouchTracker();
-        WCHookInstallEdgeTipsClickTracker();
-        Class contentClass = NSClassFromString(@"BaseMsgContentViewController");
-        SEL selector = @selector(onClickEdgeTipsView:);
-        if (!contentClass || !class_respondsToSelector(contentClass, selector)) {
-            WCPLLogWarning(@"Revoke tip edge-tips interceptor skipped: class/selector missing");
-            return;
-        }
-
-        Method method = class_getInstanceMethod(contentClass, selector);
-        if (!method) {
-            WCPLLogWarning(@"Revoke tip edge-tips interceptor skipped: method missing");
-            return;
-        }
-
-        IMP oldImp = method_getImplementation(method);
-        gWCHookOriginalOnClickEdgeTipsView = (WCHookOnClickEdgeTipsViewIMP)oldImp;
-        method_setImplementation(method, (IMP)WCHookOnClickEdgeTipsViewIntercept);
-        WCPLLogInfo(@"Revoke tip edge-tips interceptor installed");
-    });
-}
-
-static __attribute__((unused)) BOOL WCHookShowOfficialRevokeReturnEdgeTip(id officialTarget) {
-    if (!officialTarget) {
-        return NO;
-    }
-
-    Class edgeTipsClass = NSClassFromString(@"MMEdgeTipsView");
-    if (!edgeTipsClass) {
-        return NO;
-    }
-
-    id parentView = WCHookInvokeObject(officialTarget, @selector(view));
-    if (!parentView) {
-        parentView = WCHookLocateCarrierViewFromObject(officialTarget);
-    }
-    if (!parentView) {
-        return NO;
-    }
-
-    if ([officialTarget respondsToSelector:@selector(removeTipView)]) {
-        @try {
-            ((void (*)(id, SEL))objc_msgSend)(officialTarget, @selector(removeTipView));
-        } @catch (__unused NSException *exceptionRemoveTip) {
-        }
-    }
-
-    SEL initSelector = @selector(initWithTitle:image:);
-    if (![edgeTipsClass instancesRespondToSelector:initSelector]) {
-        return NO;
-    }
-
-    id tipsView = nil;
-    @try {
-        tipsView = ((id (*)(id, SEL, id, id))objc_msgSend)([edgeTipsClass alloc],
-                                                            initSelector,
-                                                            @"返回撤回提示",
-                                                            nil);
-    } @catch (__unused NSException *exceptionCreateTip) {
-        tipsView = nil;
-    }
-    if (!tipsView) {
-        return NO;
-    }
-
-    objc_setAssociatedObject(tipsView,
-                             kWCHookOfficialReturnOwnerKey,
-                             officialTarget,
-                             OBJC_ASSOCIATION_ASSIGN);
-
-    if ([tipsView respondsToSelector:@selector(setDelegate:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(tipsView, @selector(setDelegate:), officialTarget);
-        } @catch (__unused NSException *exceptionSetDelegate) {
-        }
-    }
-    if ([officialTarget respondsToSelector:@selector(setReferTipsView:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(officialTarget, @selector(setReferTipsView:), tipsView);
-        } @catch (__unused NSException *exceptionSetReferTip) {
-        }
-    }
-
-    SEL showSelector = @selector(showAnimate:parentView:finishBlock:);
-    if (![tipsView respondsToSelector:showSelector]) {
-        return NO;
-    }
-
-    @try {
-        ((void (*)(id, SEL, BOOL, id, id))objc_msgSend)(tipsView,
-                                                         showSelector,
-                                                         YES,
-                                                         parentView,
-                                                         nil);
-        return YES;
-    } @catch (__unused NSException *exceptionShowTip) {
-    }
-    return NO;
 }
 
 static id WCHookInvokeObject(id target, SEL selector) {
@@ -687,6 +354,32 @@ static id WCHookMessageWrapForCell(CommonMessageCellView *cell) {
     return messageWrap;
 }
 
+static BOOL WCHookLooksLikeMessageWrapObject(id object) {
+    if (!object) {
+        return NO;
+    }
+
+    Class messageWrapClass = NSClassFromString(@"CMessageWrap");
+    if (messageWrapClass) {
+        return [object isKindOfClass:messageWrapClass];
+    }
+
+    if ([object isKindOfClass:[NSString class]] ||
+        [object isKindOfClass:[NSNumber class]] ||
+        [object isKindOfClass:[NSArray class]] ||
+        [object isKindOfClass:[NSDictionary class]]) {
+        return NO;
+    }
+
+    if ([object respondsToSelector:@selector(isValid)] ||
+        [object respondsToSelector:@selector(m_uiMesLocalID)] ||
+        [object respondsToSelector:@selector(m_n64MesSvrID)]) {
+        return YES;
+    }
+
+    return NO;
+}
+
 static id WCHookReferMessageFromWrap(id messageWrap) {
     if (!messageWrap) {
         return nil;
@@ -699,7 +392,7 @@ static id WCHookReferMessageFromWrap(id messageWrap) {
     for (size_t idx = 0; idx < sizeof(selectors) / sizeof(selectors[0]); ++idx) {
         SEL selector = selectors[idx];
         id result = WCHookInvokeObject(messageWrap, selector);
-        if (result) {
+        if (WCHookLooksLikeMessageWrapObject(result)) {
             return result;
         }
     }
@@ -1366,9 +1059,9 @@ static id WCHookResolveRevokeTipTargetMessage(id messageWrap,
         }
         [sessionCandidates addObject:trimmed];
     };
+    appendSessionIfNeeded(WCHookStringFieldFromWrap(messageWrap, @selector(m_nsSpecifiedChatName), @"m_nsSpecifiedChatName"));
     appendSessionIfNeeded(WCHookStringFieldFromWrap(messageWrap, @selector(m_nsToUsr), @"m_nsToUsr"));
     appendSessionIfNeeded(WCHookStringFieldFromWrap(messageWrap, @selector(m_nsFromUsr), @"m_nsFromUsr"));
-    appendSessionIfNeeded(WCHookStringFieldFromWrap(messageWrap, @selector(m_nsSpecifiedChatName), @"m_nsSpecifiedChatName"));
 
     long long svrID = WCHookLongLongFieldFromWrap(messageWrap, @selector(m_revokedReferSvrid), @"m_revokedReferSvrid");
     unsigned int localID = 0;
@@ -1440,6 +1133,13 @@ static id WCHookResolveRevokeTipTargetMessage(id messageWrap,
         }
     }
 
+    if (targetMessage && !WCHookLooksLikeMessageWrapObject(targetMessage)) {
+        WCPLLogWarning(@"Revoke tip resolve got unexpected target type: class=%@ session=%@",
+                       NSStringFromClass([targetMessage class]),
+                       usedSession ?: @"");
+        targetMessage = nil;
+    }
+
     if (!usedSession && sessionCandidates.count > 0) {
         usedSession = sessionCandidates.firstObject;
     }
@@ -1453,110 +1153,6 @@ static id WCHookResolveRevokeTipTargetMessage(id messageWrap,
         *localIDOut = localID;
     }
     return targetMessage;
-}
-
-static void WCHookBindReferRelationForRevokeTip(id tipMessageWrap, id targetMessageWrap) {
-    if (!tipMessageWrap || !targetMessageWrap || tipMessageWrap == targetMessageWrap) {
-        return;
-    }
-
-    Class messageWrapClass = NSClassFromString(@"CMessageWrap");
-    if (messageWrapClass) {
-        if (![tipMessageWrap isKindOfClass:messageWrapClass] ||
-            ![targetMessageWrap isKindOfClass:messageWrapClass]) {
-            return;
-        }
-    }
-
-    // 先清掉历史 refer，避免沿用旧状态导致官方返回链路错乱。
-    WCHookClearReferRelationForRevokeTip(tipMessageWrap);
-
-    SEL wrapSetters[] = {
-        @selector(setReferHostMsg:),
-        @selector(setReferingMessageWrap:),
-        @selector(setReplyingMessageWrap:),
-        @selector(setM_refMessageWrap:)
-    };
-    for (size_t idx = 0; idx < sizeof(wrapSetters) / sizeof(wrapSetters[0]); ++idx) {
-        SEL setter = wrapSetters[idx];
-        if (![tipMessageWrap respondsToSelector:setter]) {
-            continue;
-        }
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(tipMessageWrap, setter, targetMessageWrap);
-        } @catch (__unused NSException *exceptionBindWrap) {
-        }
-    }
-
-    // 补齐撤回 refer 的 svr id，降低 returnToOriginalMsg: 命中错误目标的概率。
-    long long targetSvrID = 0;
-    if ([targetMessageWrap respondsToSelector:@selector(m_n64MesSvrID)]) {
-        @try {
-            targetSvrID = ((long long (*)(id, SEL))objc_msgSend)(targetMessageWrap, @selector(m_n64MesSvrID));
-        } @catch (__unused NSException *exceptionTargetSvrID) {
-            targetSvrID = 0;
-        }
-    }
-    if (targetSvrID <= 0 && [targetMessageWrap respondsToSelector:@selector(m_uiOriginMsgSvrId)]) {
-        @try {
-            unsigned int originSvrID = ((unsigned int (*)(id, SEL))objc_msgSend)(targetMessageWrap, @selector(m_uiOriginMsgSvrId));
-            if (originSvrID > 0) {
-                targetSvrID = (long long)originSvrID;
-            }
-        } @catch (__unused NSException *exceptionTargetOriginSvrID) {
-            targetSvrID = 0;
-        }
-    }
-    if (targetSvrID > 0 && [tipMessageWrap respondsToSelector:@selector(setM_revokedReferSvrid:)]) {
-        @try {
-            ((void (*)(id, SEL, unsigned long long))objc_msgSend)(tipMessageWrap,
-                                                                   @selector(setM_revokedReferSvrid:),
-                                                                   (unsigned long long)targetSvrID);
-        } @catch (__unused NSException *exceptionBindSvrID) {
-        }
-    }
-
-    WCPLLogInfo(@"Revoke tip refer bound: targetSvrID=%lld", targetSvrID);
-}
-
-static void WCHookClearReferRelationForRevokeTip(id tipMessageWrap) {
-    if (!tipMessageWrap) {
-        return;
-    }
-
-    SEL wrapSetters[] = {
-        @selector(setReferHostMsg:),
-        @selector(setReferingMessageWrap:),
-        @selector(setReplyingMessageWrap:),
-        @selector(setM_refMessageWrap:)
-    };
-    for (size_t idx = 0; idx < sizeof(wrapSetters) / sizeof(wrapSetters[0]); ++idx) {
-        SEL setter = wrapSetters[idx];
-        if (![tipMessageWrap respondsToSelector:setter]) {
-            continue;
-        }
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(tipMessageWrap, setter, nil);
-        } @catch (__unused NSException *exceptionClearWrap) {
-        }
-    }
-
-    if ([tipMessageWrap respondsToSelector:@selector(setM_revokedReferSvrid:)]) {
-        @try {
-            ((void (*)(id, SEL, unsigned long long))objc_msgSend)(tipMessageWrap,
-                                                                   @selector(setM_revokedReferSvrid:),
-                                                                   0);
-        } @catch (__unused NSException *exceptionClearSvr) {
-        }
-    }
-    if ([tipMessageWrap respondsToSelector:@selector(setM_referFromScene:)]) {
-        @try {
-            ((void (*)(id, SEL, unsigned int))objc_msgSend)(tipMessageWrap,
-                                                             @selector(setM_referFromScene:),
-                                                             0);
-        } @catch (__unused NSException *exceptionClearScene) {
-        }
-    }
 }
 
 static NSInteger WCHookMsgTargetScore(id object) {
@@ -1700,160 +1296,177 @@ static __attribute__((unused)) UIScrollView *WCHookResolveScrollViewFromTarget(i
     return nil;
 }
 
-static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget,
-                                                 id tipMessageWrap,
-                                                 id targetMessage,
-                                                 BOOL prepareOfficialReturnAnchor) {
-    if (!targetMessage) {
-        return NO;
+static double WCHookResolveScrollMarginTop(id target) {
+    if (!target) {
+        return 0.0;
+    }
+
+    SEL contentYSelector = @selector(getContentViewY);
+    if ([target respondsToSelector:contentYSelector]) {
+        @try {
+            double value = ((double (*)(id, SEL))objc_msgSend)(target, contentYSelector);
+            if (value > 0.0) {
+                return value;
+            }
+        } @catch (__unused NSException *exceptionContentY) {
+        }
+    }
+
+    id viewObj = WCHookInvokeObject(target, @selector(view));
+    if ([viewObj isKindOfClass:[UIView class]]) {
+        UIView *view = (UIView *)viewObj;
+        CGFloat topInset = view.safeAreaInsets.top;
+        if (topInset > 0.0) {
+            return (double)topInset;
+        }
+    }
+
+    return 0.0;
+}
+
+static void WCHookPrepareRevokeReturnAnchor(id target, id tipMessageWrap, id targetMessage) {
+    if (!target || !tipMessageWrap || !targetMessage) {
+        return;
     }
 
     Class msgContentVCClass = NSClassFromString(@"BaseMsgContentViewController");
-    id target = locateTarget;
-    BOOL locateTargetLooksUsable = NO;
-    if (target) {
-        locateTargetLooksUsable = ((msgContentVCClass && [target isKindOfClass:msgContentVCClass]) ||
-                                   [target respondsToSelector:@selector(locateToMsg:)]);
+    if (!(msgContentVCClass && [target isKindOfClass:msgContentVCClass])) {
+        return;
     }
-    if (!locateTargetLooksUsable) {
-        target = WCHookResolveMsgContentTargetFromObject(locateTarget) ?: locateTarget;
+
+    // 让微信原生“返回”入口能回到撤回提示处。
+    @try {
+        [target setValue:tipMessageWrap forKey:@"m_referOwnerMsg"];
+    } @catch (__unused NSException *exceptionSetOwner) {
     }
+    @try {
+        [target setValue:targetMessage forKey:@"m_referKeeperMsg"];
+    } @catch (__unused NSException *exceptionSetKeeper) {
+    }
+}
+
+static void WCHookStabilizeRevokeReturnAnchor(id target, id tipMessageWrap, id targetMessage) {
+    if (!target || !tipMessageWrap || !targetMessage) {
+        return;
+    }
+
+    Class msgContentVCClass = NSClassFromString(@"BaseMsgContentViewController");
+    if (!(msgContentVCClass && [target isKindOfClass:msgContentVCClass])) {
+        return;
+    }
+
+    // 先立即补一次，避免原生逻辑在滚动过程中清空锚点导致“返回”按钮闪一下就消失。
+    @try {
+        [target setValue:tipMessageWrap forKey:@"m_referOwnerMsg"];
+    } @catch (__unused NSException *exceptionOwnerImmediate) {
+    }
+    @try {
+        [target setValue:targetMessage forKey:@"m_referKeeperMsg"];
+    } @catch (__unused NSException *exceptionKeeperImmediate) {
+    }
+
+    for (NSInteger attempt = 1; attempt <= kWCHookRevokeAnchorStabilizeAttempts; attempt++) {
+        NSTimeInterval delay = kWCHookRevokeAnchorStabilizeInterval * (NSTimeInterval)attempt;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+            @try {
+                id currentOwner = [target valueForKey:@"m_referOwnerMsg"];
+                id currentKeeper = [target valueForKey:@"m_referKeeperMsg"];
+                if (currentOwner != tipMessageWrap || currentKeeper != targetMessage) {
+                    [target setValue:tipMessageWrap forKey:@"m_referOwnerMsg"];
+                    [target setValue:targetMessage forKey:@"m_referKeeperMsg"];
+                }
+            } @catch (__unused NSException *exceptionStabilize) {
+            }
+        });
+    }
+}
+
+static void WCHookHighlightMessageIfPossible(id target, id targetMessage) {
+    if (!target || !targetMessage) {
+        return;
+    }
+    SEL selector = @selector(highlightMsg:);
+    if (![target respondsToSelector:selector]) {
+        return;
+    }
+    @try {
+        ((void (*)(id, SEL, id))objc_msgSend)(target, selector, targetMessage);
+    } @catch (__unused NSException *exceptionHighlight) {
+    }
+}
+
+static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
+    if (!target || !targetMessage) {
+        return NO;
+    }
+
+    double marginTop = WCHookResolveScrollMarginTop(target);
+    if ([target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:animated:)]) {
+        @try {
+            ((void (*)(id, SEL, id, BOOL, double, BOOL))objc_msgSend)(target,
+                                                                      @selector(scrollToMessage:highlight:marginTop:animated:),
+                                                                      targetMessage,
+                                                                      YES,
+                                                                      marginTop,
+                                                                      YES);
+            WCHookHighlightMessageIfPossible(target, targetMessage);
+            return YES;
+        } @catch (__unused NSException *exceptionScroll) {
+        }
+    }
+
+    if ([target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:)]) {
+        @try {
+            ((void (*)(id, SEL, id, BOOL, double))objc_msgSend)(target,
+                                                               @selector(scrollToMessage:highlight:marginTop:),
+                                                               targetMessage,
+                                                               YES,
+                                                               marginTop);
+            WCHookHighlightMessageIfPossible(target, targetMessage);
+            return YES;
+        } @catch (__unused NSException *exceptionScroll) {
+        }
+    }
+
+    // 回退链路：某些版本没有 scrollToMessage:*，仍可定位到原消息。
+    if ([target respondsToSelector:@selector(locateToMsg:)]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(locateToMsg:), targetMessage);
+            WCHookHighlightMessageIfPossible(target, targetMessage);
+            return YES;
+        } @catch (__unused NSException *exceptionLocate) {
+            return NO;
+        }
+    }
+
+    return NO;
+}
+
+static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageWrap, id targetMessage) {
+    if (!WCHookLooksLikeMessageWrapObject(targetMessage)) {
+        if (targetMessage) {
+            WCPLLogWarning(@"Revoke tip locate blocked by target type: class=%@",
+                           NSStringFromClass([targetMessage class]));
+        }
+        return NO;
+    }
+
+    id target = WCHookResolveMsgContentTargetFromObject(locateTarget) ?: locateTarget;
     if (!target) {
         return NO;
     }
 
-    BOOL jumped = NO;
-    // 安全策略：仅使用 locateToMsg:。
-    // 备注：部分微信版本/机型在 scrollToMessage/highlightMsg 链路存在 SIGSEGV 风险（线上反馈）。
-    // 这里牺牲“平滑滚动+高亮”效果，优先保证点击不崩溃。
-    if ([target respondsToSelector:@selector(locateToMsg:)]) {
-        @try {
-            ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(locateToMsg:), targetMessage);
-            jumped = YES;
-        } @catch (__unused NSException *exceptionLocate) {
-            jumped = NO;
-        }
+    // 激进策略：尽量走微信“定位原文”同款链路，让顶部时间变红且出现原生“返回”入口。
+    // 备注：少数版本/机型在定位/高亮链路可能存在 SIGSEGV 风险；用户已要求对齐原生体验，接受该取舍。
+    WCHookPrepareRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
+    BOOL jumped = WCHookScrollToMessageHighlight(target, targetMessage);
+    if (jumped) {
+        // 部分版本在 scrollToMessage 内部会清空 refer 锚点，这里立刻补一次，避免返回按钮闪退。
+        WCHookPrepareRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
+        WCHookStabilizeRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
     }
-
-    if (!jumped) {
-        return NO;
-    }
-
-    // 返回入口策略：不再使用原生 edge tips，统一降级为插件悬浮按钮，减少不确定性与崩溃面。
-    if (tipMessageWrap && prepareOfficialReturnAnchor) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.08 * NSEC_PER_SEC)),
-                       dispatch_get_main_queue(), ^{
-            WCHookShowRevokeReturnButton(target, tipMessageWrap);
-        });
-    }
-
-    return YES;
-}
-
-static void WCHookShowRevokeReturnButton(id locateTarget, id tipMessageWrap) {
-    if (!locateTarget || !tipMessageWrap) {
-        return;
-    }
-    UIWindow *window = WCHookActiveWindow();
-    if (!window) {
-        return;
-    }
-
-    UIButton *existing = (UIButton *)[window viewWithTag:kWCHookRevokeReturnButtonTag];
-    if ([existing isKindOfClass:[UIButton class]]) {
-        [existing removeFromSuperview];
-    }
-
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.tag = kWCHookRevokeReturnButtonTag;
-    [button setTitle:@"返回撤回提示" forState:UIControlStateNormal];
-    [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:13.0 weight:UIFontWeightSemibold];
-    button.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.78];
-    button.layer.cornerRadius = 15.0;
-    button.layer.masksToBounds = YES;
-    button.contentEdgeInsets = UIEdgeInsetsMake(6.0, 12.0, 6.0, 12.0);
-    [button sizeToFit];
-
-    CGFloat width = MIN(MAX(CGRectGetWidth(button.bounds) + 12.0, 110.0), CGRectGetWidth(window.bounds) - 24.0);
-    CGFloat height = MAX(CGRectGetHeight(button.bounds), 30.0);
-    CGFloat topInset = 92.0;
-    button.frame = CGRectMake((CGRectGetWidth(window.bounds) - width) * 0.5,
-                              topInset,
-                              width,
-                              height);
-    button.alpha = 0.0;
-    [button addTarget:[WCHookRevokeReturnBridge sharedBridge]
-               action:@selector(onTapReturnButton:)
-     forControlEvents:UIControlEventTouchUpInside];
-
-    objc_setAssociatedObject(button, kWCHookRevokeReturnLocateTargetKey, locateTarget, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(button, kWCHookRevokeReturnTipWrapKey, tipMessageWrap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    NSUInteger hideToken = (NSUInteger)(NSDate.date.timeIntervalSince1970 * 1000.0);
-    objc_setAssociatedObject(button, kWCHookRevokeReturnHideTokenKey, @(hideToken), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
-    [window addSubview:button];
-    [UIView animateWithDuration:0.16 animations:^{
-        button.alpha = 1.0;
-    }];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        UIButton *current = (UIButton *)[window viewWithTag:kWCHookRevokeReturnButtonTag];
-        if (![current isKindOfClass:[UIButton class]]) {
-            return;
-        }
-        NSNumber *tokenObj = objc_getAssociatedObject(current, kWCHookRevokeReturnHideTokenKey);
-        if (![tokenObj isKindOfClass:[NSNumber class]] || tokenObj.unsignedIntegerValue != hideToken) {
-            return;
-        }
-        [UIView animateWithDuration:0.16 animations:^{
-            current.alpha = 0.0;
-        } completion:^(__unused BOOL finished) {
-            [current removeFromSuperview];
-        }];
-    });
-}
-
-static void WCHookHideRevokeReturnButton(void) {
-    UIWindow *window = WCHookActiveWindow();
-    if (!window) {
-        return;
-    }
-    UIView *existing = [window viewWithTag:kWCHookRevokeReturnButtonTag];
-    if (!existing) {
-        return;
-    }
-    [UIView animateWithDuration:0.12 animations:^{
-        existing.alpha = 0.0;
-    } completion:^(__unused BOOL finished) {
-        [existing removeFromSuperview];
-    }];
-}
-
-static void WCHookHandleRevokeReturnButtonTap(UIButton *button) {
-    if (![button isKindOfClass:[UIButton class]]) {
-        return;
-    }
-    id locateTarget = objc_getAssociatedObject(button, kWCHookRevokeReturnLocateTargetKey);
-    id tipMessageWrap = objc_getAssociatedObject(button, kWCHookRevokeReturnTipWrapKey);
-    if (!tipMessageWrap) {
-        WCHookHideRevokeReturnButton();
-        return;
-    }
-
-    // 避免返回提示后触发官方引用返回按钮循环。
-    WCHookClearReferRelationForRevokeTip(tipMessageWrap);
-
-    id effectiveTarget = WCHookResolveMsgContentTargetFromObject(locateTarget);
-    if (!effectiveTarget) {
-        effectiveTarget = WCHookFallbackLocateTarget();
-    }
-
-    if (WCHookLocateAndEmphasizeRevokeTarget(effectiveTarget, nil, tipMessageWrap, NO)) {
-        WCHookShowDebugToast(@"撤回提示: 已返回提示位置");
-    } else {
-        WCHookShowDebugToast(@"撤回提示: 返回失败");
-    }
+    return jumped;
 }
 
 static id WCHookFallbackLocateTarget(void) {
@@ -1963,9 +1576,6 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
         return YES;
     }
 
-    // 兜底路径也写入 refer，配合官方 returnToOriginalMsg: 出现官方“返回”入口。
-    WCHookBindReferRelationForRevokeTip(messageWrap, targetMessage);
-
     id effectiveLocateTarget = locateTarget;
     if (!(effectiveLocateTarget && [effectiveLocateTarget respondsToSelector:@selector(locateToMsg:)])) {
         effectiveLocateTarget = WCHookFallbackLocateTarget();
@@ -1979,10 +1589,7 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
         return YES;
     }
 
-    BOOL jumped = WCHookLocateAndEmphasizeRevokeTarget(effectiveLocateTarget,
-                                                       messageWrap,
-                                                       targetMessage,
-                                                       YES);
+    BOOL jumped = WCHookLocateAndEmphasizeRevokeTarget(effectiveLocateTarget, messageWrap, targetMessage);
     if (jumped) {
         WCPLLogInfo(@"Revoke tip jump success: session=%@ svrID=%lld localID=%u",
                     usedSession ?: @"",
@@ -2038,81 +1645,47 @@ static BOOL WCHookTryJumpFromRevokeTipCell(CommonMessageCellView *cell) {
     return WCHookTryJumpFromRevokeTipMessageWrap(messageWrap, locateTarget);
 }
 
-static BOOL WCHookShouldAutoHideRevokeReturnEntry(UIScrollView *trackedScrollView, CGFloat baselineOffsetY) {
-    if (![trackedScrollView isKindOfClass:[UIScrollView class]]) {
+static BOOL WCHookCellMayContainRevokeTip(CommonMessageCellView *cell) {
+    if (!cell) {
         return NO;
     }
-    if (baselineOffsetY == CGFLOAT_MAX) {
+    NSString *className = NSStringFromClass([cell class]);
+    if (className.length == 0) {
         return NO;
     }
 
-    CGFloat currentOffsetY = trackedScrollView.contentOffset.y;
-    CGFloat delta = currentOffsetY - baselineOffsetY;
-    if (delta < 0) {
-        delta = -delta;
-    }
-    CGFloat adaptiveThreshold = CGRectGetHeight(trackedScrollView.bounds) * 0.40;
-    if (adaptiveThreshold < 220.0) {
-        adaptiveThreshold = 220.0;
-    } else if (adaptiveThreshold > 320.0) {
-        adaptiveThreshold = 320.0;
-    }
-
-    BOOL nearJump = (delta <= adaptiveThreshold);
-    WCPLLogInfo(@"Revoke tip return scroll distance: baseline=%.1f current=%.1f delta=%.1f threshold=%.1f near=%d",
-                baselineOffsetY,
-                currentOffsetY,
-                delta,
-                adaptiveThreshold,
-                nearJump ? 1 : 0);
-    return nearJump;
-}
-
-static __attribute__((unused)) void WCHookScheduleAutoHideRevokeReturnEntry(id tipMessageWrap,
-                                                    id preferredTarget,
-                                                    UIScrollView *trackedScrollView,
-                                                    CGFloat baselineOffsetY) {
-    if (!tipMessageWrap) {
-        return;
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.42 * NSEC_PER_SEC)),
-                   dispatch_get_main_queue(), ^{
-        if (!WCHookShouldAutoHideRevokeReturnEntry(trackedScrollView, baselineOffsetY)) {
-            return;
-        }
-
-        id target = WCHookResolveMsgContentTargetFromObject(preferredTarget) ?: preferredTarget;
-        if (target) {
-            id anchoredTip = objc_getAssociatedObject(target, kWCHookOfficialReturnTipWrapKey);
-            if (!anchoredTip || anchoredTip == tipMessageWrap) {
-                objc_setAssociatedObject(target, kWCHookOfficialReturnTipWrapKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(target, kWCHookOfficialReturnExpireKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(target, kWCHookOfficialReturnEnableAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                objc_setAssociatedObject(target, kWCHookOfficialReturnTapAtKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                if ([target respondsToSelector:@selector(removeTipView)]) {
-                    @try {
-                        ((void (*)(id, SEL))objc_msgSend)(target, @selector(removeTipView));
-                    } @catch (__unused NSException *exceptionHideEdgeTip) {
-                    }
-                }
-            }
-        }
-
-        UIWindow *window = WCHookActiveWindow();
-        UIButton *button = (UIButton *)[window viewWithTag:kWCHookRevokeReturnButtonTag];
-        if ([button isKindOfClass:[UIButton class]]) {
-            id buttonTip = objc_getAssociatedObject(button, kWCHookRevokeReturnTipWrapKey);
-            if (!buttonTip || buttonTip == tipMessageWrap) {
-                [UIView animateWithDuration:0.12 animations:^{
-                    button.alpha = 0.0;
-                } completion:^(__unused BOOL finished) {
-                    [button removeFromSuperview];
-                }];
-            }
-        }
-
-        WCPLLogInfo(@"Revoke tip return entry auto hidden: near jump");
+    static NSArray<NSString *> *highRiskSuffixes;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        highRiskSuffixes = @[
+            @"ImageMessageCellView",
+            @"VideoMessageCellView",
+            @"VoiceMessageCellView",
+            @"LocationMessageCellView",
+            @"EmoticonMessageCellView",
+            @"AppEmoticonMessageCellView",
+            @"FileMessageCellView"
+        ];
     });
+    for (NSString *suffix in highRiskSuffixes) {
+        if ([className hasSuffix:suffix]) {
+            return NO;
+        }
+    }
+
+    if ([className hasSuffix:@"SystemMessageCellView"] ||
+        [className hasSuffix:@"TextMessageCellView"] ||
+        [className rangeOfString:@"MessageSys" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
+
+    if ([className hasSuffix:@"MessageCellView"] &&
+        [cell respondsToSelector:@selector(getCurrentMessageWrap)] &&
+        [cell respondsToSelector:@selector(onReturnToOriginalMsg)]) {
+        return YES;
+    }
+
+    return NO;
 }
 
 static id WCHookResolveProfileOpenTargetFromCell(CommonMessageCellView *cell) {
@@ -2276,6 +1849,11 @@ static BOOL WCHookExecuteJumpToMessageWithTarget(id locateTarget, id targetMessa
     if (!locateTarget || !targetMessage) {
         return NO;
     }
+    if (!WCHookLooksLikeMessageWrapObject(targetMessage)) {
+        WCPLLogWarning(@"Message jump blocked by target type: class=%@",
+                       NSStringFromClass([targetMessage class]));
+        return NO;
+    }
     SEL locateSelector = @selector(locateToMsg:);
     if (![locateTarget respondsToSelector:locateSelector]) {
         return NO;
@@ -2322,6 +1900,11 @@ static BOOL WCHookExecuteJumpFromInput(id toolView) {
 
     id replyingMessage = WCHookInvokeObject(toolView, @selector(replyingMessage));
     if (!replyingMessage) {
+        return NO;
+    }
+    if (!WCHookLooksLikeMessageWrapObject(replyingMessage)) {
+        WCPLLogWarning(@"Input jump blocked by target type: class=%@",
+                       NSStringFromClass([replyingMessage class]));
         return NO;
     }
 
