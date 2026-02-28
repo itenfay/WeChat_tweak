@@ -73,6 +73,9 @@ static NSString *WCHookEdgeTipsLabelText(id tipsView);
 static BOOL WCHookEdgeTipsLooksLikeReturnEntry(id tipsView);
 static BOOL WCHookLocateToMsgNoThrow(id target, id messageWrap);
 static void WCHookHighlightMessageIfPossible(id target, id targetMessage);
+static void WCHookInstallRevokeStableHighlightHook(void);
+static void WCHookRevokeStableHighlightActivate(id target, id targetMessage);
+static void WCHookRevokeStableHighlightClear(id target);
 static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage);
 static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageWrap, id targetMessage);
 static NSInteger WCHookMsgTargetScore(id object);
@@ -103,6 +106,13 @@ static const void *kWCHookRevokeReturnEntryPinnedTipsViewKey = &kWCHookRevokeRet
 static const void *kWCHookRevokeReturnEntryTipWrapKey = &kWCHookRevokeReturnEntryTipWrapKey;
 static const void *kWCHookRevokeReturnEntryTargetWrapKey = &kWCHookRevokeReturnEntryTargetWrapKey;
 
+static NSTimeInterval const kWCHookRevokeStableHighlightDuration = 1.8;
+static NSInteger const kWCHookRevokeStableHighlightOverlayTag = 0x57435048;
+static const void *kWCHookRevokeStableHighlightLocalIDKey = &kWCHookRevokeStableHighlightLocalIDKey;
+static const void *kWCHookRevokeStableHighlightExpireKey = &kWCHookRevokeStableHighlightExpireKey;
+static const void *kWCHookRevokeStableHighlightTokenKey = &kWCHookRevokeStableHighlightTokenKey;
+static BOOL gWCHookRevokeStableHighlightArmed = NO;
+
 typedef void (*WCHookBaseMsgContentRemoveTipViewIMP)(id, SEL);
 static WCHookBaseMsgContentRemoveTipViewIMP gWCHookOriginalRemoveTipView = NULL;
 typedef void (*WCHookBaseMsgContentCheckRemoveTipViewIMP)(id, SEL);
@@ -114,6 +124,9 @@ typedef void (*WCHookMMEdgeTipsHideAnimateIMP)(id, SEL, BOOL, id, id);
 static WCHookMMEdgeTipsHideAnimateIMP gWCHookOriginalEdgeTipsHideAnimate = NULL;
 typedef void (*WCHookMMEdgeTipsShowAnimateIMP)(id, SEL, BOOL, id, id);
 static WCHookMMEdgeTipsShowAnimateIMP gWCHookOriginalEdgeTipsShowAnimate = NULL;
+
+typedef void (*WCHookCommonMessageCellDidMoveToWindowIMP)(id, SEL);
+static WCHookCommonMessageCellDidMoveToWindowIMP gWCHookOriginalCommonMessageCellDidMoveToWindow = NULL;
 
 @implementation WCHookMessageNavigator
 
@@ -1800,12 +1813,221 @@ static void WCHookHighlightMessageIfPossible(id target, id targetMessage) {
     }
 }
 
+static id WCHookResolveBaseMsgContentViewControllerFromView(UIView *view) {
+    if (![view isKindOfClass:[UIView class]]) {
+        return nil;
+    }
+    Class msgContentVCClass = NSClassFromString(@"BaseMsgContentViewController");
+    if (!msgContentVCClass) {
+        return nil;
+    }
+    UIResponder *responder = view;
+    while (responder) {
+        if ([responder isKindOfClass:msgContentVCClass]) {
+            return responder;
+        }
+        responder = [responder nextResponder];
+    }
+    return nil;
+}
+
+static id WCHookResolveBaseMsgContentViewControllerFromObject(id object) {
+    if (!object) {
+        return nil;
+    }
+    Class msgContentVCClass = NSClassFromString(@"BaseMsgContentViewController");
+    if (!msgContentVCClass) {
+        return nil;
+    }
+    if ([object isKindOfClass:msgContentVCClass]) {
+        return object;
+    }
+    id viewController = WCHookInvokeObject(object, @selector(getViewController));
+    if (viewController && [viewController isKindOfClass:msgContentVCClass]) {
+        return viewController;
+    }
+    UIView *carrier = WCHookLocateCarrierViewFromObject(object);
+    return WCHookResolveBaseMsgContentViewControllerFromView(carrier);
+}
+
+static void WCHookApplyRevokeStableHighlightOverlay(UIView *cellView) {
+    if (![cellView isKindOfClass:[UIView class]]) {
+        return;
+    }
+    UIView *existing = [cellView viewWithTag:kWCHookRevokeStableHighlightOverlayTag];
+    if (existing) {
+        [existing removeFromSuperview];
+    }
+
+    UIView *overlay = [[UIView alloc] initWithFrame:cellView.bounds];
+    overlay.tag = kWCHookRevokeStableHighlightOverlayTag;
+    overlay.userInteractionEnabled = NO;
+    overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    overlay.backgroundColor = [UIColor colorWithRed:1.0 green:0.20 blue:0.20 alpha:0.18];
+    overlay.alpha = 0.0;
+
+    // 放在最上层，确保在各种消息类型（图片/表情/引用）上都能看见高亮效果。
+    [cellView addSubview:overlay];
+
+    [UIView animateWithDuration:0.14
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+        overlay.alpha = 1.0;
+    } completion:^(__unused BOOL finishedIn) {
+        [UIView animateWithDuration:0.62
+                              delay:0.32
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+            overlay.alpha = 0.0;
+        } completion:^(__unused BOOL finishedOut) {
+            [overlay removeFromSuperview];
+        }];
+    }];
+}
+
+static void WCHookRevokeStableHighlightClearWithController(id msgContentVC) {
+    if (!msgContentVC) {
+        return;
+    }
+    objc_setAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightLocalIDKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightExpireKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightTokenKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    gWCHookRevokeStableHighlightArmed = NO;
+}
+
+static void WCHookRevokeStableHighlightClear(id target) {
+    id msgContentVC = WCHookResolveBaseMsgContentViewControllerFromObject(target);
+    if (msgContentVC) {
+        WCHookRevokeStableHighlightClearWithController(msgContentVC);
+    } else {
+        gWCHookRevokeStableHighlightArmed = NO;
+    }
+}
+
+static void WCHookCommonMessageCellDidMoveToWindowIntercept(id self, SEL _cmd) {
+    if (gWCHookOriginalCommonMessageCellDidMoveToWindow) {
+        gWCHookOriginalCommonMessageCellDidMoveToWindow(self, _cmd);
+    }
+
+    if (!gWCHookRevokeStableHighlightArmed) {
+        return;
+    }
+    if (![self isKindOfClass:[UIView class]]) {
+        return;
+    }
+
+    UIView *cellView = (UIView *)self;
+    if (!cellView.window) {
+        return;
+    }
+
+    id msgContentVC = WCHookResolveBaseMsgContentViewControllerFromView(cellView);
+    if (!msgContentVC) {
+        return;
+    }
+
+    NSNumber *expireObj = objc_getAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightExpireKey);
+    NSTimeInterval expireAt = [expireObj isKindOfClass:[NSNumber class]] ? expireObj.doubleValue : 0;
+    if (expireAt > 0 && WCHookRevokeNow() > expireAt) {
+        WCHookRevokeStableHighlightClearWithController(msgContentVC);
+        return;
+    }
+
+    NSNumber *localObj = objc_getAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightLocalIDKey);
+    unsigned int pendingLocalID = [localObj isKindOfClass:[NSNumber class]] ? localObj.unsignedIntValue : 0;
+    if (pendingLocalID == 0) {
+        return;
+    }
+
+    id messageWrap = WCHookMessageWrapForCell((CommonMessageCellView *)self);
+    unsigned int cellLocalID = WCHookUIntFieldFromWrap(messageWrap, @selector(m_uiMesLocalID), @"m_uiMesLocalID");
+    if (cellLocalID == 0 || cellLocalID != pendingLocalID) {
+        return;
+    }
+
+    // 命中目标 cell：立刻解除 armed，避免复用/刷新导致重复高亮。
+    WCHookRevokeStableHighlightClearWithController(msgContentVC);
+    WCHookApplyRevokeStableHighlightOverlay(cellView);
+}
+
+static void WCHookInstallRevokeStableHighlightHook(void) {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class cellClass = NSClassFromString(@"CommonMessageCellView");
+        if (!cellClass) {
+            return;
+        }
+        SEL selector = @selector(didMoveToWindow);
+        Method method = class_getInstanceMethod(cellClass, selector);
+        if (!method) {
+            return;
+        }
+        IMP oldImp = method_getImplementation(method);
+        const char *types = method_getTypeEncoding(method);
+        if (!types) {
+            types = "v@:";
+        }
+        // 关键：CommonMessageCellView 可能不重写 didMoveToWindow。
+        // 如果直接 method_setImplementation，会把 UIView 的实现全局替换，风险极高。
+        BOOL added = class_addMethod(cellClass,
+                                     selector,
+                                     (IMP)WCHookCommonMessageCellDidMoveToWindowIntercept,
+                                     types);
+        if (!added) {
+            // 已在本类实现，安全替换。
+            method_setImplementation(method, (IMP)WCHookCommonMessageCellDidMoveToWindowIntercept);
+        }
+        gWCHookOriginalCommonMessageCellDidMoveToWindow = (WCHookCommonMessageCellDidMoveToWindowIMP)oldImp;
+    });
+}
+
+static void WCHookRevokeStableHighlightActivate(id target, id targetMessage) {
+    if (!target || !targetMessage) {
+        return;
+    }
+
+    id msgContentVC = WCHookResolveBaseMsgContentViewControllerFromObject(target);
+    if (!msgContentVC) {
+        return;
+    }
+
+    unsigned int localID = WCHookUIntFieldFromWrap(targetMessage, @selector(m_uiMesLocalID), @"m_uiMesLocalID");
+    if (localID == 0) {
+        return;
+    }
+
+    WCHookInstallRevokeStableHighlightHook();
+
+    NSTimeInterval now = WCHookRevokeNow();
+    NSUInteger token = (NSUInteger)(now * 1000.0);
+    NSTimeInterval expireAt = now + kWCHookRevokeStableHighlightDuration;
+
+    objc_setAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightLocalIDKey, @(localID), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightExpireKey, @(expireAt), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightTokenKey, @(token), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    gWCHookRevokeStableHighlightArmed = YES;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((kWCHookRevokeStableHighlightDuration + 0.25) * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        NSNumber *currentToken = objc_getAssociatedObject(msgContentVC, kWCHookRevokeStableHighlightTokenKey);
+        if (![currentToken isKindOfClass:[NSNumber class]] || currentToken.unsignedIntegerValue != token) {
+            return;
+        }
+        WCHookRevokeStableHighlightClearWithController(msgContentVC);
+    });
+}
+
 static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
     if (!target || !targetMessage) {
         return NO;
     }
 
     BOOL avoidHighlight = WCHookRevokeAvoidUnsafeHighlightChain();
+    if (avoidHighlight) {
+        // iOS16：不走微信原生 highlightMsg/scrollToMessage(highlight=YES)，改为“稳态命中 cell 后再高亮”，避免 SIGSEGV。
+        WCHookRevokeStableHighlightActivate(target, targetMessage);
+    }
     double marginTop = WCHookResolveScrollMarginTop(target);
     if ([target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:animated:)]) {
         @try {
@@ -1851,6 +2073,9 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
         }
     }
 
+    if (avoidHighlight) {
+        WCHookRevokeStableHighlightClear(target);
+    }
     return NO;
 }
 
