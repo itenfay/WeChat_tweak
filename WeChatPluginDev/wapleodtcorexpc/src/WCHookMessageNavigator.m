@@ -1358,8 +1358,9 @@ static NSTimeInterval WCHookRevokeNow(void) {
 }
 
 static BOOL WCHookRevokeAvoidUnsafeHighlightChain(void) {
-    // iOS 16（微信 8.0.69）在 scrollToMessage/highlightMsg 的组合链路上存在 SIGSEGV 反馈，
-    // 这里对该系统版本做降级：保留滚动动画，但关闭高亮相关逻辑，优先保证不崩溃。
+    // iOS 16（微信 8.0.69）在 highlightMsg: 相关链路上存在 SIGSEGV 反馈，
+    // 这里对该系统版本做降级：仍允许 scrollToMessage 自带的 highlight 参数，
+    // 但不再额外调用 highlightMsg:，优先保证不崩溃。
     NSOperatingSystemVersion version = [NSProcessInfo processInfo].operatingSystemVersion;
     return version.majorVersion >= 16;
 }
@@ -1805,17 +1806,18 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
         return NO;
     }
 
-    BOOL avoidHighlight = WCHookRevokeAvoidUnsafeHighlightChain();
+    BOOL avoidHighlightMsg = WCHookRevokeAvoidUnsafeHighlightChain();
+    BOOL scrollHighlight = YES;
     double marginTop = WCHookResolveScrollMarginTop(target);
     if ([target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:animated:)]) {
         @try {
             ((void (*)(id, SEL, id, BOOL, double, BOOL))objc_msgSend)(target,
                                                                       @selector(scrollToMessage:highlight:marginTop:animated:),
                                                                       targetMessage,
-                                                                      avoidHighlight ? NO : YES,
+                                                                      scrollHighlight,
                                                                       marginTop,
                                                                       YES);
-            if (!avoidHighlight) {
+            if (!avoidHighlightMsg) {
                 WCHookHighlightMessageIfPossible(target, targetMessage);
             }
             return YES;
@@ -1828,9 +1830,9 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
             ((void (*)(id, SEL, id, BOOL, double))objc_msgSend)(target,
                                                                @selector(scrollToMessage:highlight:marginTop:),
                                                                targetMessage,
-                                                               avoidHighlight ? NO : YES,
+                                                               scrollHighlight,
                                                                marginTop);
-            if (!avoidHighlight) {
+            if (!avoidHighlightMsg) {
                 WCHookHighlightMessageIfPossible(target, targetMessage);
             }
             return YES;
@@ -1842,7 +1844,7 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
     if ([target respondsToSelector:@selector(locateToMsg:)]) {
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(locateToMsg:), targetMessage);
-            if (!avoidHighlight) {
+            if (!avoidHighlightMsg) {
                 WCHookHighlightMessageIfPossible(target, targetMessage);
             }
             return YES;
