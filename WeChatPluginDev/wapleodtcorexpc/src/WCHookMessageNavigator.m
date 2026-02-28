@@ -67,6 +67,9 @@ static void WCHookRevokeReturnEntryPinActivate(id target);
 static void WCHookRevokeReturnEntryPinCaptureTipsView(id target);
 static void WCHookRevokeReturnEntryPinClear(id target);
 static BOOL WCHookRevokeReturnEntryPinIsActive(id target);
+static NSString *WCHookEdgeTipsLabelText(id tipsView);
+static BOOL WCHookEdgeTipsLooksLikeReturnEntry(id tipsView);
+static BOOL WCHookLocateToMsgNoThrow(id target, id messageWrap);
 static void WCHookHighlightMessageIfPossible(id target, id targetMessage);
 static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage);
 static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageWrap, id targetMessage);
@@ -95,6 +98,8 @@ static NSTimeInterval const kWCHookRevokeReturnEntryPinDuration = 6.0;
 static const void *kWCHookRevokeReturnEntryPinExpireKey = &kWCHookRevokeReturnEntryPinExpireKey;
 static const void *kWCHookRevokeReturnEntryPinTokenKey = &kWCHookRevokeReturnEntryPinTokenKey;
 static const void *kWCHookRevokeReturnEntryPinnedTipsViewKey = &kWCHookRevokeReturnEntryPinnedTipsViewKey;
+static const void *kWCHookRevokeReturnEntryTipWrapKey = &kWCHookRevokeReturnEntryTipWrapKey;
+static const void *kWCHookRevokeReturnEntryTargetWrapKey = &kWCHookRevokeReturnEntryTargetWrapKey;
 
 typedef void (*WCHookBaseMsgContentRemoveTipViewIMP)(id, SEL);
 static WCHookBaseMsgContentRemoveTipViewIMP gWCHookOriginalRemoveTipView = NULL;
@@ -1376,6 +1381,8 @@ static void WCHookRevokeReturnEntryPinClear(id target) {
     objc_setAssociatedObject(target, kWCHookRevokeReturnEntryPinExpireKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(target, kWCHookRevokeReturnEntryPinTokenKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(target, kWCHookRevokeReturnEntryPinnedTipsViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(target, kWCHookRevokeReturnEntryTipWrapKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(target, kWCHookRevokeReturnEntryTargetWrapKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 static void WCHookRevokeReturnEntryPinActivate(id target) {
@@ -1450,6 +1457,7 @@ static void WCHookBaseMsgContentCheckRemoveTipViewIntercept(id self, SEL _cmd) {
 
 static void WCHookBaseMsgContentOnClickEdgeTipsViewIntercept(id self, SEL _cmd, id sender) {
     if (WCHookRevokeReturnEntryPinIsActive(self)) {
+        BOOL isReturnEntry = NO;
         id referTips = nil;
         @try {
             referTips = [self valueForKey:@"referTipsView"];
@@ -1458,7 +1466,40 @@ static void WCHookBaseMsgContentOnClickEdgeTipsViewIntercept(id self, SEL _cmd, 
         }
         id pinnedTips = objc_getAssociatedObject(self, kWCHookRevokeReturnEntryPinnedTipsViewKey);
         if (sender && (sender == referTips || sender == pinnedTips)) {
+            isReturnEntry = YES;
+        } else if (sender && WCHookEdgeTipsLooksLikeReturnEntry(sender)) {
+            isReturnEntry = YES;
+        }
+
+        if (isReturnEntry) {
+            id tipMessageWrap = objc_getAssociatedObject(self, kWCHookRevokeReturnEntryTipWrapKey);
+            if (!tipMessageWrap) {
+                @try {
+                    tipMessageWrap = [self valueForKey:@"m_referOwnerMsg"];
+                } @catch (__unused NSException *exceptionOwner) {
+                    tipMessageWrap = nil;
+                }
+            }
+
             WCHookRevokeReturnEntryPinClear(self);
+            @try {
+                [self setValue:nil forKey:@"m_referOwnerMsg"];
+            } @catch (__unused NSException *exceptionClearOwner) {
+            }
+            @try {
+                [self setValue:nil forKey:@"m_referKeeperMsg"];
+            } @catch (__unused NSException *exceptionClearKeeper) {
+            }
+
+            if (tipMessageWrap && WCHookLocateToMsgNoThrow(self, tipMessageWrap)) {
+                if ([self respondsToSelector:@selector(removeTipView)]) {
+                    @try {
+                        ((void (*)(id, SEL))objc_msgSend)(self, @selector(removeTipView));
+                    } @catch (__unused NSException *exceptionRemoveTip) {
+                    }
+                }
+                return;
+            }
         }
     }
     if (gWCHookOriginalOnClickEdgeTipsView) {
@@ -1495,6 +1536,51 @@ static BOOL WCHookEdgeTipsLooksLikeReturnEntry(id tipsView) {
         return NO;
     }
     return [text rangeOfString:@"返回"].location != NSNotFound;
+}
+
+static BOOL WCHookLocateToMsgNoThrow(id target, id messageWrap) {
+    if (!target || !messageWrap) {
+        return NO;
+    }
+    SEL selector = @selector(locateToMsg:);
+    if ([target respondsToSelector:selector]) {
+        @try {
+            ((void (*)(id, SEL, id))objc_msgSend)(target, selector, messageWrap);
+            return YES;
+        } @catch (__unused NSException *exceptionLocate) {
+            return NO;
+        }
+    }
+
+    double marginTop = WCHookResolveScrollMarginTop(target);
+    if ([target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:animated:)]) {
+        @try {
+            ((void (*)(id, SEL, id, BOOL, double, BOOL))objc_msgSend)(target,
+                                                                      @selector(scrollToMessage:highlight:marginTop:animated:),
+                                                                      messageWrap,
+                                                                      NO,
+                                                                      marginTop,
+                                                                      YES);
+            return YES;
+        } @catch (__unused NSException *exceptionScroll) {
+            return NO;
+        }
+    }
+
+    if ([target respondsToSelector:@selector(scrollToMessage:highlight:marginTop:)]) {
+        @try {
+            ((void (*)(id, SEL, id, BOOL, double))objc_msgSend)(target,
+                                                               @selector(scrollToMessage:highlight:marginTop:),
+                                                               messageWrap,
+                                                               NO,
+                                                               marginTop);
+            return YES;
+        } @catch (__unused NSException *exceptionScroll) {
+            return NO;
+        }
+    }
+
+    return NO;
 }
 
 static void WCHookMMEdgeTipsShowAnimateIntercept(id self, SEL _cmd, BOOL animated, id parentView, id finishBlock) {
@@ -1745,6 +1831,19 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
     WCHookPrepareRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
     BOOL jumped = WCHookScrollToMessageHighlight(target, targetMessage);
     if (jumped) {
+        if (tipMessageWrap) {
+            objc_setAssociatedObject(target,
+                                     kWCHookRevokeReturnEntryTipWrapKey,
+                                     tipMessageWrap,
+                                     OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+        if (targetMessage) {
+            objc_setAssociatedObject(target,
+                                     kWCHookRevokeReturnEntryTargetWrapKey,
+                                     targetMessage,
+                                     OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+
         // 部分版本在 scrollToMessage 内部会清空 refer 锚点，这里立刻补一次，避免返回按钮闪退。
         WCHookPrepareRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
         WCHookStabilizeRevokeReturnAnchor(target, tipMessageWrap, targetMessage);
@@ -1756,6 +1855,8 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
                 WCHookRevokeReturnEntryPinCaptureTipsView(target);
             });
         }
+    } else {
+        WCHookRevokeReturnEntryPinClear(target);
     }
     return jumped;
 }
