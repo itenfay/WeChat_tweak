@@ -73,6 +73,7 @@ static NSString *WCHookEdgeTipsLabelText(id tipsView);
 static BOOL WCHookEdgeTipsLooksLikeReturnEntry(id tipsView);
 static BOOL WCHookLocateToMsgNoThrow(id target, id messageWrap);
 static void WCHookHighlightMessageIfPossible(id target, id targetMessage);
+static void WCHookHighlightMessageFallback(id target, id targetMessage);
 static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage);
 static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageWrap, id targetMessage);
 static NSInteger WCHookMsgTargetScore(id object);
@@ -102,6 +103,8 @@ static const void *kWCHookRevokeReturnEntryPinTokenKey = &kWCHookRevokeReturnEnt
 static const void *kWCHookRevokeReturnEntryPinnedTipsViewKey = &kWCHookRevokeReturnEntryPinnedTipsViewKey;
 static const void *kWCHookRevokeReturnEntryTipWrapKey = &kWCHookRevokeReturnEntryTipWrapKey;
 static const void *kWCHookRevokeReturnEntryTargetWrapKey = &kWCHookRevokeReturnEntryTargetWrapKey;
+
+static NSInteger const kWCHookCustomHighlightTag = 0x5743484c;
 
 typedef void (*WCHookBaseMsgContentRemoveTipViewIMP)(id, SEL);
 static WCHookBaseMsgContentRemoveTipViewIMP gWCHookOriginalRemoveTipView = NULL;
@@ -1508,23 +1511,23 @@ static void WCHookBaseMsgContentOnClickEdgeTipsViewIntercept(id self, SEL _cmd, 
 
             if (tipMessageWrap) {
                 WCHookRevokeReturnEntryPinClear(self);
-                if (WCHookLocateToMsgNoThrow(self, tipMessageWrap)) {
-                    // 清掉 refer 锚点，避免返回后又被官方链路重置出新的“返回”入口。
+                // 先清掉 refer 锚点（以及当前 edgeTips），避免定位过程中又被微信内部逻辑拉起新的“返回”入口。
+                @try {
+                    [self setValue:nil forKey:@"m_referOwnerMsg"];
+                } @catch (__unused NSException *exceptionClearOwner) {
+                }
+                @try {
+                    [self setValue:nil forKey:@"m_referKeeperMsg"];
+                } @catch (__unused NSException *exceptionClearKeeper) {
+                }
+                if ([self respondsToSelector:@selector(removeTipView)]) {
                     @try {
-                        [self setValue:nil forKey:@"m_referOwnerMsg"];
-                    } @catch (__unused NSException *exceptionClearOwner) {
+                        ((void (*)(id, SEL))objc_msgSend)(self, @selector(removeTipView));
+                    } @catch (__unused NSException *exceptionRemoveTip) {
                     }
-                    @try {
-                        [self setValue:nil forKey:@"m_referKeeperMsg"];
-                    } @catch (__unused NSException *exceptionClearKeeper) {
-                    }
+                }
 
-                    if ([self respondsToSelector:@selector(removeTipView)]) {
-                        @try {
-                            ((void (*)(id, SEL))objc_msgSend)(self, @selector(removeTipView));
-                        } @catch (__unused NSException *exceptionRemoveTip) {
-                        }
-                    }
+                if (WCHookLocateToMsgNoThrow(self, tipMessageWrap)) {
                     return;
                 }
             }
@@ -1760,10 +1763,19 @@ static void WCHookStabilizeRevokeReturnAnchor(id target, id tipMessageWrap, id t
     } @catch (__unused NSException *exceptionKeeperImmediate) {
     }
 
+    NSNumber *tokenObj = objc_getAssociatedObject(target, kWCHookRevokeReturnEntryPinTokenKey);
+    NSUInteger expectedToken = [tokenObj isKindOfClass:[NSNumber class]] ? tokenObj.unsignedIntegerValue : 0;
+
     for (NSInteger attempt = 1; attempt <= kWCHookRevokeAnchorStabilizeAttempts; attempt++) {
         NSTimeInterval delay = kWCHookRevokeAnchorStabilizeInterval * (NSTimeInterval)attempt;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)),
                        dispatch_get_main_queue(), ^{
+            NSNumber *currentToken = objc_getAssociatedObject(target, kWCHookRevokeReturnEntryPinTokenKey);
+            if (![currentToken isKindOfClass:[NSNumber class]] ||
+                currentToken.unsignedIntegerValue != expectedToken ||
+                !WCHookRevokeReturnEntryPinIsActive(target)) {
+                return;
+            }
             @try {
                 id currentOwner = [target valueForKey:@"m_referOwnerMsg"];
                 id currentKeeper = [target valueForKey:@"m_referKeeperMsg"];
@@ -1791,6 +1803,95 @@ static void WCHookHighlightMessageIfPossible(id target, id targetMessage) {
     }
 }
 
+static void WCHookHighlightMessageFallback(id target, id targetMessage) {
+    if (!target || !targetMessage) {
+        return;
+    }
+
+    unsigned int targetLocalID = WCHookUIntFieldFromWrap(targetMessage,
+                                                         @selector(m_uiMesLocalID),
+                                                         @"m_uiMesLocalID");
+    if (targetLocalID == 0) {
+        return;
+    }
+
+    UIScrollView *scrollView = WCHookResolveScrollViewFromTarget(target);
+    if (!scrollView) {
+        return;
+    }
+
+    __weak UIScrollView *weakScrollView = scrollView;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.22 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        UIScrollView *strongScrollView = weakScrollView;
+        if (!strongScrollView) {
+            return;
+        }
+        if (![strongScrollView respondsToSelector:@selector(visibleCells)]) {
+            return;
+        }
+
+        NSArray *cells = nil;
+        @try {
+            cells = ((id (*)(id, SEL))objc_msgSend)(strongScrollView, @selector(visibleCells));
+        } @catch (__unused NSException *exceptionCells) {
+            cells = nil;
+        }
+        if (![cells isKindOfClass:[NSArray class]] || cells.count == 0) {
+            return;
+        }
+
+        UIView *targetCell = nil;
+        for (id cell in cells) {
+            if (![cell isKindOfClass:[UIView class]]) {
+                continue;
+            }
+            id cellWrap = WCHookMessageWrapFromObject(cell);
+            if (!cellWrap) {
+                continue;
+            }
+            unsigned int cellLocalID = WCHookUIntFieldFromWrap(cellWrap,
+                                                               @selector(m_uiMesLocalID),
+                                                               @"m_uiMesLocalID");
+            if (cellLocalID == targetLocalID) {
+                targetCell = (UIView *)cell;
+                break;
+            }
+        }
+
+        if (!targetCell) {
+            return;
+        }
+
+        UIView *existing = [targetCell viewWithTag:kWCHookCustomHighlightTag];
+        if (existing) {
+            [existing removeFromSuperview];
+        }
+
+        UIView *overlay = [[UIView alloc] initWithFrame:targetCell.bounds];
+        overlay.tag = kWCHookCustomHighlightTag;
+        overlay.userInteractionEnabled = NO;
+        overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        overlay.backgroundColor = [[UIColor colorWithRed:1.0 green:0.2 blue:0.2 alpha:0.18]
+                                   colorWithAlphaComponent:0.18];
+        overlay.alpha = 0.0;
+
+        [targetCell addSubview:overlay];
+        [UIView animateWithDuration:0.16 animations:^{
+            overlay.alpha = 1.0;
+        } completion:^(__unused BOOL finishedIn) {
+            [UIView animateWithDuration:0.55
+                                  delay:0.28
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                overlay.alpha = 0.0;
+            } completion:^(__unused BOOL finishedOut) {
+                [overlay removeFromSuperview];
+            }];
+        }];
+    });
+}
+
 static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
     if (!target || !targetMessage) {
         return NO;
@@ -1808,6 +1909,8 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
                                                                       YES);
             if (!avoidHighlight) {
                 WCHookHighlightMessageIfPossible(target, targetMessage);
+            } else {
+                WCHookHighlightMessageFallback(target, targetMessage);
             }
             return YES;
         } @catch (__unused NSException *exceptionScroll) {
@@ -1823,6 +1926,8 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
                                                                marginTop);
             if (!avoidHighlight) {
                 WCHookHighlightMessageIfPossible(target, targetMessage);
+            } else {
+                WCHookHighlightMessageFallback(target, targetMessage);
             }
             return YES;
         } @catch (__unused NSException *exceptionScroll) {
@@ -1835,6 +1940,8 @@ static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage) {
             ((void (*)(id, SEL, id))objc_msgSend)(target, @selector(locateToMsg:), targetMessage);
             if (!avoidHighlight) {
                 WCHookHighlightMessageIfPossible(target, targetMessage);
+            } else {
+                WCHookHighlightMessageFallback(target, targetMessage);
             }
             return YES;
         } @catch (__unused NSException *exceptionLocate) {
