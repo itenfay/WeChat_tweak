@@ -43,6 +43,7 @@ WCPL_COMPILE_FILES := \
 	src/WCPLGroupPickerViewController.m \
 	src/WCPLIPadLoginHook.xm \
 	src/WCPLIgnoreConfig.m \
+	src/WCPLIgnoreUIHook.xm \
 	src/WCPLLegacyUIKitCompat.m \
 	src/WCPLLocationConfig.m \
 	src/WCPLLogSettingsViewController.m \
