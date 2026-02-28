@@ -74,11 +74,14 @@ static BOOL WCHookEdgeTipsLooksLikeReturnEntry(id tipsView);
 static BOOL WCHookLocateToMsgNoThrow(id target, id messageWrap);
 static void WCHookHighlightMessageIfPossible(id target, id targetMessage);
 static unsigned int WCHookMessageLocalIDFromWrap(id messageWrap);
-static id WCHookResolveRevokeVisibilityHost(id target);
-static BOOL WCHookRevokeTargetIsVisibleInScreen(id host, unsigned int localID, id targetMessage);
-static UIView *WCHookResolveVisibleMessageCellView(id host, unsigned int localID, id targetMessage);
+static long long WCHookMessageSvrIDFromWrap(id messageWrap);
 static void WCHookPerformSoftHighlightOnView(UIView *view);
-static BOOL WCHookHighlightVisibleMessageOnly(id host, id target, id targetMessage);
+static UIView *WCHookFindVisibleMessageCellView(id locateTarget,
+                                                unsigned int targetLocalID,
+                                                long long targetSvrID,
+                                                unsigned int tipLocalID,
+                                                NSString *excerpt);
+static BOOL WCHookTryHighlightRevokeTargetIfVisible(id locateTarget, id tipMessageWrap);
 static BOOL WCHookScrollToMessageHighlight(id target, id targetMessage);
 static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageWrap, id targetMessage);
 static NSInteger WCHookMsgTargetScore(id object);
@@ -1815,131 +1818,11 @@ static unsigned int WCHookMessageLocalIDFromWrap(id messageWrap) {
     return WCHookUIntFieldFromWrap(messageWrap, @selector(m_uiMesLocalID), @"m_uiMesLocalID");
 }
 
-static id WCHookResolveRevokeVisibilityHost(id target) {
-    if (!target) {
-        return nil;
+static long long WCHookMessageSvrIDFromWrap(id messageWrap) {
+    if (!messageWrap) {
+        return 0;
     }
-
-    SEL visibleSelectors[] = {
-        @selector(getVisibleLocalIds),
-        @selector(getMsgCellByLocalId:),
-        @selector(getVisibleMsgCells),
-        @selector(getNodeRectInScreen:),
-        @selector(getNodeRectInScreen:innerVisible:),
-        @selector(getNodeRectInScreenWithMsg:)
-    };
-    for (size_t idx = 0; idx < sizeof(visibleSelectors) / sizeof(visibleSelectors[0]); ++idx) {
-        if ([target respondsToSelector:visibleSelectors[idx]]) {
-            return target;
-        }
-    }
-
-    id viewController = WCHookInvokeObject(target, @selector(getViewController));
-    if (viewController && viewController != target) {
-        for (size_t idx = 0; idx < sizeof(visibleSelectors) / sizeof(visibleSelectors[0]); ++idx) {
-            if ([viewController respondsToSelector:visibleSelectors[idx]]) {
-                return viewController;
-            }
-        }
-    }
-
-    return target;
-}
-
-static BOOL WCHookRevokeTargetIsVisibleInScreen(id host, unsigned int localID, id targetMessage) {
-    if (!host || !targetMessage) {
-        return NO;
-    }
-
-    // 优先使用微信内部的可见 localID 列表（比遍历 UITableView.visibleCells 稳定）。
-    if (localID > 0 && [host respondsToSelector:@selector(getVisibleLocalIds)]) {
-        @try {
-            id ids = ((id (*)(id, SEL))objc_msgSend)(host, @selector(getVisibleLocalIds));
-            if ([ids isKindOfClass:[NSArray class]]) {
-                for (id obj in (NSArray *)ids) {
-                    if ([obj respondsToSelector:@selector(unsignedIntValue)]) {
-                        unsigned int value = ((unsigned int (*)(id, SEL))objc_msgSend)(obj, @selector(unsignedIntValue));
-                        if (value == localID) {
-                            return YES;
-                        }
-                    }
-                }
-            }
-        } @catch (__unused NSException *exceptionVisibleIDs) {
-        }
-    }
-
-    // 次选：尝试直接获取可见 cell（若返回 view 且在 window 上，视为同屏可见）。
-    UIView *cellView = WCHookResolveVisibleMessageCellView(host, localID, targetMessage);
-    if ([cellView isKindOfClass:[UIView class]] && cellView.window) {
-        return YES;
-    }
-
-    // 兜底：使用 node rect 判断是否在屏幕内（用于 localID=0 等极端情况）。
-    if ([host respondsToSelector:@selector(getNodeRectInScreenWithMsg:)]) {
-        @try {
-            CGRect rect = ((CGRect (*)(id, SEL, id))objc_msgSend)(host, @selector(getNodeRectInScreenWithMsg:), targetMessage);
-            if (!CGRectIsEmpty(rect) && !CGRectIsNull(rect)) {
-                CGRect screenBounds = UIScreen.mainScreen.bounds;
-                if (CGRectIntersectsRect(rect, screenBounds)) {
-                    return YES;
-                }
-            }
-        } @catch (__unused NSException *exceptionRect) {
-        }
-    }
-
-    return NO;
-}
-
-static UIView *WCHookResolveVisibleMessageCellView(id host, unsigned int localID, id targetMessage) {
-    if (!host || !targetMessage) {
-        return nil;
-    }
-
-    // 1) getMsgCellByLocalId:
-    if (localID > 0 && [host respondsToSelector:@selector(getMsgCellByLocalId:)]) {
-        @try {
-            id cellObj = ((id (*)(id, SEL, unsigned int))objc_msgSend)(host, @selector(getMsgCellByLocalId:), localID);
-            UIView *cellView = WCHookLocateCarrierViewFromObject(cellObj);
-            if ([cellView isKindOfClass:[UIView class]]) {
-                return cellView;
-            }
-        } @catch (__unused NSException *exceptionCell) {
-        }
-    }
-
-    // 2) getVisibleMsgCells（微信封装，避免 UITableView.visibleCells）
-    if ([host respondsToSelector:@selector(getVisibleMsgCells)]) {
-        @try {
-            id cells = ((id (*)(id, SEL))objc_msgSend)(host, @selector(getVisibleMsgCells));
-            if ([cells isKindOfClass:[NSArray class]]) {
-                for (id obj in (NSArray *)cells) {
-                    CommonMessageCellView *cell = WCHookResolveMessageCellForObject(obj);
-                    if (!cell) {
-                        continue;
-                    }
-                    id wrap = WCHookMessageWrapForCell(cell);
-                    if (!wrap) {
-                        continue;
-                    }
-                    unsigned int candidateID = WCHookMessageLocalIDFromWrap(wrap);
-                    if (localID > 0) {
-                        if (candidateID == localID) {
-                            return (UIView *)cell;
-                        }
-                    } else {
-                        if (wrap == targetMessage) {
-                            return (UIView *)cell;
-                        }
-                    }
-                }
-            }
-        } @catch (__unused NSException *exceptionVisibleCells) {
-        }
-    }
-
-    return nil;
+    return WCHookLongLongFieldFromWrap(messageWrap, @selector(m_n64MesSvrID), @"m_n64MesSvrID");
 }
 
 static void WCHookPerformSoftHighlightOnView(UIView *view) {
@@ -1981,20 +1864,126 @@ static void WCHookPerformSoftHighlightOnView(UIView *view) {
     }];
 }
 
-static BOOL WCHookHighlightVisibleMessageOnly(id host, id target, id targetMessage) {
-    if (!target || !targetMessage) {
+static UIView *WCHookFindVisibleMessageCellView(id locateTarget,
+                                                unsigned int targetLocalID,
+                                                long long targetSvrID,
+                                                unsigned int tipLocalID,
+                                                NSString *excerpt) {
+    id target = WCHookResolveMsgContentTargetFromObject(locateTarget) ?: locateTarget;
+    if (!target) {
+        return nil;
+    }
+
+    UIScrollView *scrollView = WCHookResolveScrollViewFromTarget(target);
+    if (![scrollView isKindOfClass:[UIScrollView class]]) {
+        return nil;
+    }
+
+    NSString *trimmedExcerpt = WCHookInlineText(excerpt);
+    UIView *fuzzyCandidate = nil;
+
+    NSMutableArray<UIView *> *stack = [NSMutableArray arrayWithObject:scrollView];
+    NSUInteger visited = 0;
+    const NSUInteger maxVisited = 2600;
+
+    while (stack.count > 0 && visited < maxVisited) {
+        UIView *candidate = stack.lastObject;
+        [stack removeLastObject];
+        visited += 1;
+
+        if (![candidate isKindOfClass:[UIView class]]) {
+            continue;
+        }
+
+        NSString *className = NSStringFromClass([candidate class]);
+        BOOL looksLikeCell = (className.length > 0 && [className hasSuffix:@"MessageCellView"]);
+        if (looksLikeCell) {
+            CommonMessageCellView *cell = (CommonMessageCellView *)candidate;
+            id wrap = WCHookMessageWrapForCell(cell);
+            if (wrap) {
+                unsigned int localID = WCHookMessageLocalIDFromWrap(wrap);
+                if (tipLocalID > 0 && localID == tipLocalID) {
+                    // skip revoke tip itself
+                } else if (targetLocalID > 0 && localID == targetLocalID) {
+                    return cell;
+                } else {
+                    long long svrID = WCHookMessageSvrIDFromWrap(wrap);
+                    if (targetSvrID > 0 && svrID == targetSvrID) {
+                        return cell;
+                    }
+
+                    if (trimmedExcerpt.length > 0) {
+                        NSString *content = WCHookMessageContentFromWrap(wrap);
+                        if (WCHookLooksLikeRevokeTipContent(content)) {
+                            // skip revoke tip-like system message
+                        } else {
+                            NSString *digest = WCHookDigestForMessageWrap(wrap);
+                            if (digest.length > 0) {
+                                if ([digest isEqualToString:trimmedExcerpt]) {
+                                    return cell;
+                                }
+                                if ([digest rangeOfString:trimmedExcerpt].location != NSNotFound ||
+                                    [trimmedExcerpt rangeOfString:digest].location != NSNotFound) {
+                                    if (!fuzzyCandidate) {
+                                        fuzzyCandidate = cell;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (UIView *sub in candidate.subviews) {
+            if ([sub isKindOfClass:[UIView class]]) {
+                [stack addObject:sub];
+            }
+        }
+    }
+
+    return fuzzyCandidate;
+}
+
+static BOOL WCHookTryHighlightRevokeTargetIfVisible(id locateTarget, id tipMessageWrap) {
+    if (!tipMessageWrap) {
         return NO;
     }
 
-    BOOL avoidHighlightMsg = WCHookRevokeAvoidUnsafeHighlightChain();
-    if (!avoidHighlightMsg && [target respondsToSelector:@selector(highlightMsg:)]) {
-        WCHookHighlightMessageIfPossible(target, targetMessage);
-        return YES;
+    NSString *content = WCHookMessageContentFromWrap(tipMessageWrap);
+    NSString *excerpt = WCHookExtractRevokeExcerptFromTipContent(content);
+
+    unsigned int tipLocalID = WCHookMessageLocalIDFromWrap(tipMessageWrap);
+    unsigned int targetLocalID = 0;
+    long long targetSvrID = WCHookLongLongFieldFromWrap(tipMessageWrap, @selector(m_revokedReferSvrid), @"m_revokedReferSvrid");
+
+    if (targetSvrID <= 0) {
+        unsigned int originSvrID = WCHookUIntFieldFromWrap(tipMessageWrap, @selector(m_uiOriginMsgSvrId), @"m_uiOriginMsgSvrId");
+        if (originSvrID > 0) {
+            targetSvrID = (long long)originSvrID;
+        }
     }
 
-    unsigned int localID = WCHookMessageLocalIDFromWrap(targetMessage);
-    UIView *cellView = WCHookResolveVisibleMessageCellView(host ?: target, localID, targetMessage);
-    if (![cellView isKindOfClass:[UIView class]]) {
+    for (NSString *metaSource in WCHookMetaSourceCandidatesFromWrap(tipMessageWrap)) {
+        if ([metaSource rangeOfString:@"wcpl_revoke_jump" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+            continue;
+        }
+        if (targetSvrID <= 0) {
+            long long parsedSvrID = WCHookParseLongLong(WCHookExtractTagValue(metaSource, @"wcpl_revoke_svrid"));
+            if (parsedSvrID > 0) {
+                targetSvrID = parsedSvrID;
+            }
+        }
+        if (targetLocalID == 0) {
+            unsigned int parsedLocalID = WCHookParseUInt(WCHookExtractTagValue(metaSource, @"wcpl_revoke_localid"));
+            if (parsedLocalID > 0) {
+                targetLocalID = parsedLocalID;
+            }
+        }
+    }
+
+    UIView *cellView = WCHookFindVisibleMessageCellView(locateTarget, targetLocalID, targetSvrID, tipLocalID, excerpt);
+    if (![cellView isKindOfClass:[UIView class]] || !cellView.window) {
         return NO;
     }
 
@@ -2071,12 +2060,12 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
         return NO;
     }
 
-    // ✅ 同屏可见：不滚动、不跳转，只做高亮。
-    // 对齐微信原生行为：当原消息已在当前屏幕内时，点击撤回提示应该仅高亮原消息。
-    id visibilityHost = WCHookResolveRevokeVisibilityHost(target);
+    // ✅ 同屏可见：不滚动、不跳转，只做高亮（纯视图扫描，避开微信内部可见性 API）。
+    unsigned int tipLocalID = WCHookMessageLocalIDFromWrap(tipMessageWrap);
     unsigned int targetLocalID = WCHookMessageLocalIDFromWrap(targetMessage);
-    if (WCHookRevokeTargetIsVisibleInScreen(visibilityHost, targetLocalID, targetMessage)) {
-        // 清理可能残留的“返回”入口锚点，避免同屏高亮时也弹出返回按钮。
+    long long targetSvrID = WCHookMessageSvrIDFromWrap(targetMessage);
+    UIView *visibleCell = WCHookFindVisibleMessageCellView(target, targetLocalID, targetSvrID, tipLocalID, nil);
+    if ([visibleCell isKindOfClass:[UIView class]] && visibleCell.window) {
         WCHookRevokeReturnEntryPinClear(target);
         @try {
             [target setValue:nil forKey:@"m_referOwnerMsg"];
@@ -2092,13 +2081,9 @@ static BOOL WCHookLocateAndEmphasizeRevokeTarget(id locateTarget, id tipMessageW
             } @catch (__unused NSException *exceptionRemoveTip) {
             }
         }
-
-        if (WCHookHighlightVisibleMessageOnly(visibilityHost, target, targetMessage)) {
-            WCPLLogInfo(@"Revoke tip highlight-only (same screen): localID=%u", targetLocalID);
-            return YES;
-        }
-        // 高亮失败才回退到跳转逻辑（极少数环境取不到可见 cell）。
-        WCPLLogWarning(@"Revoke tip highlight-only failed, fallback to jump: localID=%u", targetLocalID);
+        WCHookPerformSoftHighlightOnView(visibleCell);
+        WCPLLogInfo(@"Revoke tip highlight-only (same screen): localID=%u", targetLocalID);
+        return YES;
     }
 
     // 激进策略：尽量走微信“定位原文”同款链路，让顶部时间变红且出现原生“返回”入口。
@@ -2280,6 +2265,23 @@ static BOOL WCHookTryJumpFromRevokeTipMessageWrap(id messageWrap, id locateTarge
             WCHookShowDebugToast(@"撤回提示: 原消息未知，已阻止点击");
             return YES;
         }
+    }
+
+    // ✅ iOS16（微信 8.0.69）安全模式：仅同屏高亮，不做跳转，避免触发不可控的 SIGSEGV 链路。
+    // 说明：SIGSEGV 无法通过 @try 捕获，因此在该系统版本上优先保证“点击不崩溃”。
+    if (WCHookRevokeAvoidUnsafeHighlightChain()) {
+        if (WCHookTryHighlightRevokeTargetIfVisible(locateTarget, messageWrap)) {
+            WCHookShowDebugToast(@"撤回提示: 同屏已高亮");
+        } else {
+            WCHookShowDebugToast(@"撤回提示: 不在当前屏幕(安全模式)");
+        }
+        return YES;
+    }
+
+    // 非 iOS16：如果原消息在当前屏幕内，则不需要滚动跳转，只做高亮即可。
+    if (WCHookTryHighlightRevokeTargetIfVisible(locateTarget, messageWrap)) {
+        WCHookShowDebugToast(@"撤回提示: 同屏已高亮");
+        return YES;
     }
 
     id messageMgr = WCHookMessageMgr();
