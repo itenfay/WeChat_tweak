@@ -190,8 +190,9 @@ static const void *kWCPLLoggerQueueSpecificKey = &kWCPLLoggerQueueSpecificKey;
                                     [self currentTimestamp],
                                     levelText,
                                     message];
-    if (keepWhenBackground) {
-        // 后台关键链路使用同步写入，避免进程挂起导致日志丢失
+    BOOL forceSync = keepWhenBackground || level >= WCPLLogLevelWarning;
+    if (forceSync) {
+        // 后台关键链路 / 告警错误：同步写入并落盘，尽量保留崩溃前现场。
         [self writeToFileUrgent:timestampedMessage];
     } else {
         [self writeToFile:timestampedMessage];

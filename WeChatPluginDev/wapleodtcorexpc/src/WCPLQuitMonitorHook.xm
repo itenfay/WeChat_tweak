@@ -983,6 +983,10 @@ static BOOL wcpl_qm_isLowSignalSystemText(NSString *text) {
     if (trimmed.length == 0) {
         return YES;
     }
+    // m_nsMsgSource 常为 <msgsource>...</msgsource>，不具备退群语义且会遮蔽真实展示文本。
+    if ([trimmed rangeOfString:@"<msgsource" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        return YES;
+    }
     if ([trimmed rangeOfString:@"@chatroom"].location != NSNotFound) {
         return YES;
     }
@@ -1198,14 +1202,15 @@ static BOOL wcpl_qm_shouldMonitorRoom(NSString *roomUserName) {
         if (![key isKindOfClass:[NSString class]]) {
             return;
         }
-        if (!wcpl_qm_isChatRoomUserName(key)) {
+        NSString *normalizedKey = wcpl_qm_trimString(key);
+        if (!wcpl_qm_isChatRoomUserName(normalizedKey)) {
             return;
         }
         if (![value respondsToSelector:@selector(boolValue)] || !value.boolValue) {
             return;
         }
         hasValidRule = YES;
-        if ([key isEqualToString:trimmedRoom]) {
+        if ([normalizedKey isEqualToString:trimmedRoom]) {
             matchedAllowed = YES;
             *stop = YES;
         }

@@ -13,6 +13,7 @@
 #import <fcntl.h>
 #import <unistd.h>
 #import <sys/stat.h>
+#import <stdint.h>
 #import <limits.h>
 #import <string.h>
 
@@ -21,11 +22,20 @@ static NSString *const kWCPLCrashAutoUploadEnabledKey = @"kWCPLCrashAutoUploadEn
 static NSString *const kWCPLCrashLogFileName = @"wcpl_crash.log";
 static NSString *const kWCPLCrashPendingMarkerName = @"wcpl_crash_pending.flag";
 
+enum {
+    kWCPLCrashBreadcrumbRingSize = 24,
+    kWCPLCrashBreadcrumbMaxLen = 240,
+    kWCPLCrashSignalDebugLogTailMaxBytes = 24 * 1024,
+};
+
 static volatile sig_atomic_t wcpl_crash_enabled = 1;
 static volatile sig_atomic_t wcpl_is_handling_crash = 0;
 static char wcpl_crash_log_path[PATH_MAX] = {0};
 static char wcpl_crash_marker_path[PATH_MAX] = {0};
 static char wcpl_last_action[256] = {0};
+static char wcpl_debug_log_path[PATH_MAX] = {0};
+static volatile uint32_t wcpl_breadcrumb_seq = 0;
+static char wcpl_breadcrumb_ring[kWCPLCrashBreadcrumbRingSize][kWCPLCrashBreadcrumbMaxLen] = {{0}};
 
 static void WCPLWriteCString(int fd, const char *text) {
     if (fd < 0 || !text) {
@@ -38,6 +48,22 @@ static void WCPLWriteCString(int fd, const char *text) {
 
     const char *p = text;
     size_t remaining = len;
+    while (remaining > 0) {
+        ssize_t written = write(fd, p, remaining);
+        if (written <= 0) {
+            return;
+        }
+        p += written;
+        remaining -= (size_t)written;
+    }
+}
+
+static void WCPLWriteBytes(int fd, const void *bytes, size_t length) {
+    if (fd < 0 || !bytes || length == 0) {
+        return;
+    }
+    const char *p = (const char *)bytes;
+    size_t remaining = length;
     while (remaining > 0) {
         ssize_t written = write(fd, p, remaining);
         if (written <= 0) {
@@ -76,6 +102,76 @@ static void WCPLWriteInt(int fd, int value) {
     write(fd, buf, idx);
 }
 
+static const char *WCPLSignalName(int sig) {
+    switch (sig) {
+        case SIGABRT: return "SIGABRT";
+        case SIGILL: return "SIGILL";
+        case SIGSEGV: return "SIGSEGV";
+        case SIGFPE: return "SIGFPE";
+        case SIGBUS: return "SIGBUS";
+        case SIGPIPE: return "SIGPIPE";
+        case SIGTRAP: return "SIGTRAP";
+        default: return "UNKNOWN";
+    }
+}
+
+static void WCPLWriteBreadcrumbRing(int fd) {
+    uint32_t seq = __atomic_load_n(&wcpl_breadcrumb_seq, __ATOMIC_RELAXED);
+    uint32_t total = seq < (uint32_t)kWCPLCrashBreadcrumbRingSize ? seq : (uint32_t)kWCPLCrashBreadcrumbRingSize;
+    if (total == 0) {
+        return;
+    }
+
+    WCPLWriteCString(fd, "\n--- Recent Breadcrumbs ---\n");
+    uint32_t startSeq = seq - total;
+    for (uint32_t s = startSeq; s < seq; s++) {
+        uint32_t idx = s % (uint32_t)kWCPLCrashBreadcrumbRingSize;
+        if (wcpl_breadcrumb_ring[idx][0] == '\0') {
+            continue;
+        }
+        WCPLWriteCString(fd, wcpl_breadcrumb_ring[idx]);
+        WCPLWriteCString(fd, "\n");
+    }
+}
+
+static void WCPLWriteFileTail(int fd, const char *path, size_t maxBytes) {
+    if (fd < 0 || !path || path[0] == '\0' || maxBytes == 0) {
+        return;
+    }
+    int inputFd = open(path, O_RDONLY);
+    if (inputFd < 0) {
+        return;
+    }
+
+    struct stat st;
+    if (fstat(inputFd, &st) != 0 || st.st_size <= 0) {
+        close(inputFd);
+        return;
+    }
+
+    off_t fileSize = st.st_size;
+    off_t start = 0;
+    if ((unsigned long long)fileSize > (unsigned long long)maxBytes) {
+        start = fileSize - (off_t)maxBytes;
+    }
+    if (lseek(inputFd, start, SEEK_SET) == (off_t)-1) {
+        close(inputFd);
+        return;
+    }
+
+    WCPLWriteCString(fd, "\n--- Debug Log Tail ---\n");
+    char buf[4096];
+    for (;;) {
+        ssize_t n = read(inputFd, buf, sizeof(buf));
+        if (n <= 0) {
+            break;
+        }
+        WCPLWriteBytes(fd, buf, (size_t)n);
+    }
+    WCPLWriteCString(fd, "\n");
+    close(inputFd);
+}
+
 static void WCPLCreateCrashMarkerFile(void) {
     if (wcpl_crash_marker_path[0] == '\0') {
         return;
@@ -104,14 +200,19 @@ static void WCPLSignalHandler(int sig) {
     if (fd >= 0) {
         // 信号处理仅使用 async-signal-safe API，避免 backtrace/时间格式化/Objective-C 调用导致二次崩溃。
         WCPLWriteCString(fd, "\n\n===== WCPL Signal Crash =====\nSignal: ");
+        WCPLWriteCString(fd, WCPLSignalName(sig));
+        WCPLWriteCString(fd, " (");
         WCPLWriteInt(fd, sig);
-        WCPLWriteCString(fd, "\n");
+        WCPLWriteCString(fd, ")\n");
 
         if (wcpl_last_action[0] != '\0') {
             WCPLWriteCString(fd, "LastAction: ");
             WCPLWriteCString(fd, wcpl_last_action);
             WCPLWriteCString(fd, "\n");
         }
+
+        WCPLWriteBreadcrumbRing(fd);
+        WCPLWriteFileTail(fd, wcpl_debug_log_path, (size_t)kWCPLCrashSignalDebugLogTailMaxBytes);
 
         close(fd);
     }
@@ -182,6 +283,12 @@ static void WCPLHandleException(NSException *exception) {
     [self loadSettings];
     [self recordBreadcrumb:@"启动"];    
 
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(wcpl_onDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [center addObserver:self selector:@selector(wcpl_onDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [center addObserver:self selector:@selector(wcpl_onWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
+    [center addObserver:self selector:@selector(wcpl_onMemoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+
     NSSetUncaughtExceptionHandler(&WCPLHandleException);
 
     WCPLInstallSignalHandler(SIGABRT);
@@ -201,6 +308,22 @@ static void WCPLHandleException(NSException *exception) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self tryUploadPendingReport];
     });
+}
+
+- (void)wcpl_onDidEnterBackground {
+    [self recordBreadcrumb:@"进入后台"];
+}
+
+- (void)wcpl_onDidBecomeActive {
+    [self recordBreadcrumb:@"回到前台"];
+}
+
+- (void)wcpl_onWillTerminate {
+    [self recordBreadcrumb:@"WillTerminate"];
+}
+
+- (void)wcpl_onMemoryWarning {
+    [self recordBreadcrumb:@"内存警告"];
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -233,6 +356,11 @@ static void WCPLHandleException(NSException *exception) {
     if (cString) {
         strncpy(wcpl_last_action, cString, sizeof(wcpl_last_action) - 1);
         wcpl_last_action[sizeof(wcpl_last_action) - 1] = '\0';
+
+        uint32_t seq = __atomic_fetch_add(&wcpl_breadcrumb_seq, 1, __ATOMIC_RELAXED);
+        uint32_t idx = seq % (uint32_t)kWCPLCrashBreadcrumbRingSize;
+        strncpy(wcpl_breadcrumb_ring[idx], cString, kWCPLCrashBreadcrumbMaxLen - 1);
+        wcpl_breadcrumb_ring[idx][kWCPLCrashBreadcrumbMaxLen - 1] = '\0';
     }
 }
 
@@ -301,6 +429,7 @@ static void WCPLHandleException(NSException *exception) {
 
     self.crashLogPathInternal = [documentsPath stringByAppendingPathComponent:kWCPLCrashLogFileName];
     self.crashMarkerPathInternal = [documentsPath stringByAppendingPathComponent:kWCPLCrashPendingMarkerName];
+    NSString *debugLogPath = [documentsPath stringByAppendingPathComponent:@"wcpl_debug.log"];
 
     const char *logPath = [self.crashLogPathInternal fileSystemRepresentation];
     if (logPath) {
@@ -312,6 +441,12 @@ static void WCPLHandleException(NSException *exception) {
     if (markerPath) {
         strncpy(wcpl_crash_marker_path, markerPath, sizeof(wcpl_crash_marker_path) - 1);
         wcpl_crash_marker_path[sizeof(wcpl_crash_marker_path) - 1] = '\0';
+    }
+
+    const char *debugPath = [debugLogPath fileSystemRepresentation];
+    if (debugPath) {
+        strncpy(wcpl_debug_log_path, debugPath, sizeof(wcpl_debug_log_path) - 1);
+        wcpl_debug_log_path[sizeof(wcpl_debug_log_path) - 1] = '\0';
     }
 }
 
@@ -402,8 +537,15 @@ static void WCPLHandleException(NSException *exception) {
         }
     }
 
+    NSString *breadcrumbSnapshot = [self breadcrumbSnapshot];
+    if (breadcrumbSnapshot.length > 0) {
+        [report appendString:@"\n--- Recent Breadcrumbs ---\n"];
+        [report appendString:breadcrumbSnapshot];
+        [report appendString:@"\n"];
+    }
+
     if ([WCPLLogger sharedLogger].enabled) {
-        NSString *recentLog = [[WCPLLogger sharedLogger] readRecentLog:200];
+        NSString *recentLog = [[WCPLLogger sharedLogger] readRecentLog:600];
         if (recentLog.length > 0) {
             [report appendString:@"\n--- Recent Debug Log ---\n"];    
             [report appendString:recentLog];
@@ -413,6 +555,29 @@ static void WCPLHandleException(NSException *exception) {
 
     [self appendCrashReport:report];
     [self createCrashMarker];
+}
+
+- (NSString *)breadcrumbSnapshot {
+    uint32_t seq = __atomic_load_n(&wcpl_breadcrumb_seq, __ATOMIC_RELAXED);
+    uint32_t total = seq < (uint32_t)kWCPLCrashBreadcrumbRingSize ? seq : (uint32_t)kWCPLCrashBreadcrumbRingSize;
+    if (total == 0) {
+        return @"";
+    }
+
+    NSMutableArray<NSString *> *items = [NSMutableArray arrayWithCapacity:(NSUInteger)total];
+    uint32_t startSeq = seq - total;
+    for (uint32_t s = startSeq; s < seq; s++) {
+        uint32_t idx = s % (uint32_t)kWCPLCrashBreadcrumbRingSize;
+        const char *cString = wcpl_breadcrumb_ring[idx];
+        if (!cString || cString[0] == '\0') {
+            continue;
+        }
+        NSString *line = [NSString stringWithUTF8String:cString];
+        if (line.length > 0) {
+            [items addObject:line];
+        }
+    }
+    return [items componentsJoinedByString:@"\n"];
 }
 
 - (void)appendCrashReport:(NSString *)report {
