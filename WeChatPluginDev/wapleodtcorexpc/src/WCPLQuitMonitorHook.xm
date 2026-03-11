@@ -1474,18 +1474,11 @@ static void wcpl_qm_handleContactRefreshDiff(CContactMgr *contactMgr,
     NSArray<NSString *> *oldMembersFromRaw = wcpl_qm_memberListFromRawString(oldRawList);
     NSArray<NSString *> *effectiveOldMembers = oldMembersFromRaw;
     NSString *oldSource = @"contact_refresh_raw";
-    NSUInteger newCount = effectiveNewMembers.count;
     NSUInteger oldRawCount = oldMembersFromRaw.count;
     NSUInteger cacheCount = cachedMembersBefore.count;
     if (oldRawCount == 0 && cacheCount > 0) {
         effectiveOldMembers = cachedMembersBefore;
         oldSource = @"cache_before_refresh_raw_empty";
-    } else if (newCount > 0 &&
-               oldRawCount <= newCount &&
-               cacheCount > newCount &&
-               (cacheCount - newCount) <= 8) {
-        effectiveOldMembers = cachedMembersBefore;
-        oldSource = @"cache_before_refresh_raw_not_older";
     }
 
     NSString *effectiveOldRawList = oldRawList;
