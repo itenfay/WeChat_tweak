@@ -1449,6 +1449,75 @@ static NSArray<NSString *> *wcpl_qm_fetchCurrentMembersForRoom(CContactMgr *cont
     return members ?: @[];
 }
 
+// 这类联系人刷新回调不一定直接携带“变更前成员列表”，因此用变更前缓存兜底，
+// 尽量在 updateContact/handleLocalField 这类较早入口就完成退群差分。
+static void wcpl_qm_handleContactRefreshDiff(CContactMgr *contactMgr,
+                                             NSString *roomUserName,
+                                             NSString *oldRawList,
+                                             NSArray<NSString *> *cachedMembersBefore,
+                                             CContact *fallbackRoomContact,
+                                             NSString *sourceTag) {
+    NSString *room = wcpl_qm_trimString(roomUserName);
+    if (room.length == 0 || !contactMgr) {
+        return;
+    }
+
+    CContact *latestRoomContact = nil;
+    NSString *newRawList = nil;
+    NSArray<NSString *> *newMembers = wcpl_qm_fetchCurrentMembersForRoom(contactMgr,
+                                                                         room,
+                                                                         &latestRoomContact,
+                                                                         &newRawList);
+    NSArray<NSString *> *newMembersFromRaw = wcpl_qm_memberListFromRawString(newRawList);
+    NSArray<NSString *> *effectiveNewMembers = newMembers.count > 0 ? newMembers : newMembersFromRaw;
+
+    NSArray<NSString *> *oldMembersFromRaw = wcpl_qm_memberListFromRawString(oldRawList);
+    NSArray<NSString *> *effectiveOldMembers = oldMembersFromRaw;
+    NSString *oldSource = @"contact_refresh_raw";
+    NSUInteger newCount = effectiveNewMembers.count;
+    NSUInteger oldRawCount = oldMembersFromRaw.count;
+    NSUInteger cacheCount = cachedMembersBefore.count;
+    if (oldRawCount == 0 && cacheCount > 0) {
+        effectiveOldMembers = cachedMembersBefore;
+        oldSource = @"cache_before_refresh_raw_empty";
+    } else if (newCount > 0 &&
+               oldRawCount <= newCount &&
+               cacheCount > newCount &&
+               (cacheCount - newCount) <= 8) {
+        effectiveOldMembers = cachedMembersBefore;
+        oldSource = @"cache_before_refresh_raw_not_older";
+    }
+
+    NSString *effectiveOldRawList = oldRawList;
+    if (effectiveOldMembers.count > 0 &&
+        ((effectiveOldMembers != oldMembersFromRaw) || effectiveOldRawList.length == 0)) {
+        effectiveOldRawList = [effectiveOldMembers componentsJoinedByString:@";"];
+    }
+    if (newRawList.length == 0 && effectiveNewMembers.count > 0) {
+        newRawList = [effectiveNewMembers componentsJoinedByString:@";"];
+    }
+
+    CContact *roomContact = latestRoomContact ?: fallbackRoomContact;
+    WCPLLogDebug(@"[退群监控] %@ 采样: room=%@ old=%lu(cache=%lu raw=%lu src=%@) new=%lu",
+                 sourceTag ?: @"contact_refresh",
+                 room,
+                 (unsigned long)effectiveOldMembers.count,
+                 (unsigned long)cacheCount,
+                 (unsigned long)oldRawCount,
+                 oldSource,
+                 (unsigned long)effectiveNewMembers.count);
+
+    wcpl_qm_handleMemberListDiff(contactMgr,
+                                 nil,
+                                 roomContact,
+                                 effectiveOldRawList,
+                                 newRawList,
+                                 sourceTag);
+    if (effectiveNewMembers.count > 0) {
+        wcpl_qm_updateCachedMembersForRoom(room, effectiveNewMembers);
+    }
+}
+
 static void wcpl_qm_primeSnapshotIfNeeded(CContactMgr *contactMgr, NSString *roomUserName, NSString *sourceTag) {
     NSString *room = wcpl_qm_trimString(roomUserName);
     if (room.length == 0 || !contactMgr) {
@@ -2128,6 +2197,118 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
 
 %end
 
+%group WCPLQuitMonitorUpdateContactHookGroup
+
+%hook CContactMgr
+
+- (void)updateContact:(id)contact {
+    NSString *roomUserName = [contact isKindOfClass:%c(CContact)]
+        ? wcpl_qm_trimString(((CContact *)contact).m_nsUsrName) : nil;
+    BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName) && wcpl_qm_shouldMonitorRoom(roomUserName);
+    NSArray<NSString *> *cachedMembersBefore = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];
+    NSString *oldRawList = nil;
+    if (shouldTrack) {
+        (void)wcpl_qm_fetchCurrentMembersForRoom((CContactMgr *)self, roomUserName, nil, &oldRawList);
+        if (oldRawList.length == 0 && cachedMembersBefore.count > 0) {
+            oldRawList = [cachedMembersBefore componentsJoinedByString:@";"];
+        }
+    }
+
+    %orig;
+
+    if (!shouldTrack) {
+        return;
+    }
+    wcpl_qm_handleContactRefreshDiff((CContactMgr *)self,
+                                     roomUserName,
+                                     oldRawList,
+                                     cachedMembersBefore,
+                                     [contact isKindOfClass:%c(CContact)] ? (CContact *)contact : nil,
+                                     @"updateContact");
+}
+
+%end
+
+%end
+
+%group WCPLQuitMonitorHandleNotChatRoomFieldHookGroup
+
+%hook CContactMgr
+
+- (void)handleNotChatRoomMemberField:(id)contact oldContact:(id)oldContact {
+    NSString *roomUserName = [oldContact isKindOfClass:%c(CContact)]
+        ? wcpl_qm_trimString(((CContact *)oldContact).m_nsUsrName) : nil;
+    if (roomUserName.length == 0 && [contact isKindOfClass:%c(CContact)]) {
+        roomUserName = wcpl_qm_trimString(((CContact *)contact).m_nsUsrName);
+    }
+
+    BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName) && wcpl_qm_shouldMonitorRoom(roomUserName);
+    NSArray<NSString *> *cachedMembersBefore = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];
+    NSString *oldRawList = [oldContact isKindOfClass:%c(CContact)]
+        ? [((CContact *)oldContact).m_nsChatRoomMemList copy] : nil;
+    if (shouldTrack && oldRawList.length == 0) {
+        (void)wcpl_qm_fetchCurrentMembersForRoom((CContactMgr *)self, roomUserName, nil, &oldRawList);
+        if (oldRawList.length == 0 && cachedMembersBefore.count > 0) {
+            oldRawList = [cachedMembersBefore componentsJoinedByString:@";"];
+        }
+    }
+
+    %orig;
+
+    if (!shouldTrack) {
+        return;
+    }
+    wcpl_qm_handleContactRefreshDiff((CContactMgr *)self,
+                                     roomUserName,
+                                     oldRawList,
+                                     cachedMembersBefore,
+                                     [contact isKindOfClass:%c(CContact)] ? (CContact *)contact : nil,
+                                     @"handleNotChatRoomMemberField");
+}
+
+%end
+
+%end
+
+%group WCPLQuitMonitorHandleLocalFieldHookGroup
+
+%hook CContactMgr
+
+- (void)handleLocalField:(id)contact oldContact:(id)oldContact {
+    NSString *roomUserName = [oldContact isKindOfClass:%c(CContact)]
+        ? wcpl_qm_trimString(((CContact *)oldContact).m_nsUsrName) : nil;
+    if (roomUserName.length == 0 && [contact isKindOfClass:%c(CContact)]) {
+        roomUserName = wcpl_qm_trimString(((CContact *)contact).m_nsUsrName);
+    }
+
+    BOOL shouldTrack = wcpl_qm_isChatRoomUserName(roomUserName) && wcpl_qm_shouldMonitorRoom(roomUserName);
+    NSArray<NSString *> *cachedMembersBefore = shouldTrack ? wcpl_qm_cachedMembersForRoom(roomUserName) : @[];
+    NSString *oldRawList = [oldContact isKindOfClass:%c(CContact)]
+        ? [((CContact *)oldContact).m_nsChatRoomMemList copy] : nil;
+    if (shouldTrack && oldRawList.length == 0) {
+        (void)wcpl_qm_fetchCurrentMembersForRoom((CContactMgr *)self, roomUserName, nil, &oldRawList);
+        if (oldRawList.length == 0 && cachedMembersBefore.count > 0) {
+            oldRawList = [cachedMembersBefore componentsJoinedByString:@";"];
+        }
+    }
+
+    %orig;
+
+    if (!shouldTrack) {
+        return;
+    }
+    wcpl_qm_handleContactRefreshDiff((CContactMgr *)self,
+                                     roomUserName,
+                                     oldRawList,
+                                     cachedMembersBefore,
+                                     [contact isKindOfClass:%c(CContact)] ? (CContact *)contact : nil,
+                                     @"handleLocalField");
+}
+
+%end
+
+%end
+
 %group WCPLQuitMonitorSystemHookGroup
 
 %hook CMessageMgr
@@ -2261,14 +2442,51 @@ static void wcpl_qm_handleMemberListDiff(CContactMgr *contactMgr,
             WCPLLogWarning(@"[退群监控] 未找到 CContactMgr（已跳过差分入口）");
         }
 
+        if (contactMgrClass && [contactMgrClass instancesRespondToSelector:@selector(updateContact:)]) {
+            %init(WCPLQuitMonitorUpdateContactHookGroup);
+            didInitAny = YES;
+            WCPLLogInfo(@"[退群监控] 已挂载联系人刷新入口: updateContact:");
+        } else if (contactMgrClass) {
+            WCPLLogWarning(@"[退群监控] 未找到 updateContact:（已跳过联系人刷新入口）");
+        }
+
+        if (contactMgrClass && [contactMgrClass instancesRespondToSelector:@selector(handleNotChatRoomMemberField:oldContact:)]) {
+            %init(WCPLQuitMonitorHandleNotChatRoomFieldHookGroup);
+            didInitAny = YES;
+            WCPLLogInfo(@"[退群监控] 已挂载联系人刷新入口: handleNotChatRoomMemberField:oldContact:");
+        } else if (contactMgrClass) {
+            WCPLLogWarning(@"[退群监控] 未找到 handleNotChatRoomMemberField:oldContact:（已跳过联系人刷新入口）");
+        }
+
+        if (contactMgrClass && [contactMgrClass instancesRespondToSelector:@selector(handleLocalField:oldContact:)]) {
+            %init(WCPLQuitMonitorHandleLocalFieldHookGroup);
+            didInitAny = YES;
+            WCPLLogInfo(@"[退群监控] 已挂载联系人刷新入口: handleLocalField:oldContact:");
+        } else if (contactMgrClass) {
+            WCPLLogWarning(@"[退群监控] 未找到 handleLocalField:oldContact:（已跳过联系人刷新入口）");
+        }
+
+        BOOL hasAddMsgHook = messageMgrClass && [messageMgrClass instancesRespondToSelector:@selector(AddMsg:MsgWrap:)];
+        BOOL hasAsyncOnAddMsgHook = messageMgrClass && [messageMgrClass instancesRespondToSelector:@selector(AsyncOnAddMsg:MsgWrap:)];
+        BOOL hasAsyncOnPreAddMsgHook = messageMgrClass && [messageMgrClass instancesRespondToSelector:@selector(AsyncOnPreAddMsg:MsgWrap:)];
         if (messageMgrClass &&
-            ([messageMgrClass instancesRespondToSelector:@selector(AsyncOnAddMsg:MsgWrap:)] ||
-             [messageMgrClass instancesRespondToSelector:@selector(AsyncOnPreAddMsg:MsgWrap:)])) {
+            (hasAddMsgHook || hasAsyncOnAddMsgHook || hasAsyncOnPreAddMsgHook)) {
             %init(WCPLQuitMonitorSystemHookGroup);
             didInitAny = YES;
-            WCPLLogInfo(@"[退群监控] 已挂载系统消息入口: AsyncOnAddMsg/AsyncOnPreAddMsg");
+            NSMutableArray<NSString *> *selectors = [NSMutableArray array];
+            if (hasAddMsgHook) {
+                [selectors addObject:@"AddMsg:MsgWrap:"];
+            }
+            if (hasAsyncOnAddMsgHook) {
+                [selectors addObject:@"AsyncOnAddMsg:MsgWrap:"];
+            }
+            if (hasAsyncOnPreAddMsgHook) {
+                [selectors addObject:@"AsyncOnPreAddMsg:MsgWrap:"];
+            }
+            WCPLLogInfo(@"[退群监控] 已挂载系统消息入口: %@",
+                        selectors.count > 0 ? [selectors componentsJoinedByString:@"/"] : @"(none)");
         } else {
-            WCPLLogWarning(@"[退群监控] 未找到系统消息入口（AsyncOnAddMsg/AsyncOnPreAddMsg）");
+            WCPLLogWarning(@"[退群监控] 未找到系统消息入口（AddMsg/AsyncOnAddMsg/AsyncOnPreAddMsg）");
         }
 
         if (!didInitAny) {

@@ -1449,12 +1449,6 @@ static BOOL wcpl_tryOpenQuitMemberProfileByRichTextObject(id richTextObj, NSStri
         if (!cellView) {
             continue;
         }
-        if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)cellView]) {
-            WCPLLogInfo(@"Revoke tip jump handled by rich text: scene=%@ cell=%@",
-                        scene ?: @"unknown",
-                        NSStringFromClass([cellView class]));
-            return YES;
-        }
         if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)cellView]) {
             WCPLLogInfo(@"Quit monitor profile open handled by rich text: scene=%@ cell=%@",
                         scene ?: @"unknown",
@@ -8083,9 +8077,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     if (wcpl_shouldSuppressTapForCell(self, @"onTouchUpInside")) {
         return;
     }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8094,9 +8085,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 
 - (void)onTouchEnded {
     if (wcpl_shouldSuppressTapForCell(self, @"onTouchEnded")) {
-        return;
-    }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
         return;
     }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
@@ -8110,9 +8098,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         return;
     }
     if (wcpl_shouldSuppressTapForCell(self, @"touchesEnded:withEvent:")) {
-        return;
-    }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
         return;
     }
     %orig(touches, event);
@@ -8288,9 +8273,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onTouchUpInside {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8298,9 +8280,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onTouchEnded {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8308,9 +8287,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8322,9 +8298,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 %hook SystemMessageCellView
 
 - (void)onTouchUpInside {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8332,9 +8305,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onTouchEnded {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8342,9 +8312,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)touchesEnded:(id)touches withEvent:(id)event {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8352,9 +8319,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onTap {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8362,9 +8326,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onClick {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8372,9 +8333,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onLinkClicked:(id)linkInfo withRect:(CGRect)rect {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8382,9 +8340,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
 }
 
 - (void)onWeAppLinkClicked:(id)linkInfo withRect:(CGRect)rect {
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8432,9 +8387,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
     if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.onTouchUpInside")) {
         return;
     }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
-        return;
-    }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
         return;
     }
@@ -8446,9 +8398,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         return;
     }
     if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.onTouchEnded")) {
-        return;
-    }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
         return;
     }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {
@@ -8476,9 +8425,6 @@ static void wcpl_repeatHandleAllTypeFallback(CMessageWrap *msgWrap,
         return;
     }
     if (wcpl_shouldSuppressTapForCell(self, @"TextMessageCellView.touchesEnded")) {
-        return;
-    }
-    if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)self]) {
         return;
     }
     if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)self]) {

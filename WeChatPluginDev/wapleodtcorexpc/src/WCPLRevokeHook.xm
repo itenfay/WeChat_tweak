@@ -71,34 +71,6 @@ static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
     return value;
 }
 
-static NSString *wcpl_escapeXmlText(NSString *text) {
-    NSString *value = wcpl_trimString(text);
-    if (value.length == 0) return @"";
-
-    value = [value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
-    value = [value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
-    value = [value stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
-    return value;
-}
-
-static __attribute__((unused)) NSString *wcpl_buildRevokeJumpMeta(NSString *session, long long svrID, unsigned int localID, NSString *baseSource) {
-    if (svrID <= 0 && localID == 0) {
-        return wcpl_trimString(baseSource);
-    }
-
-    NSString *safeSession = wcpl_escapeXmlText(session);
-    NSString *meta = [NSString stringWithFormat:
-                      @"<wcpl_revoke_jump><wcpl_revoke_session>%@</wcpl_revoke_session><wcpl_revoke_svrid>%lld</wcpl_revoke_svrid><wcpl_revoke_localid>%u</wcpl_revoke_localid></wcpl_revoke_jump>",
-                      safeSession ?: @"",
-                      svrID > 0 ? svrID : 0,
-                      localID];
-    NSString *base = wcpl_trimString(baseSource);
-    if (base.length == 0) {
-        return meta;
-    }
-    return [base stringByAppendingString:meta];
-}
-
 static NSString *wcpl_revokeTimeTextFromTimestamp(unsigned int timestamp) {
     NSDate *date = timestamp > 0 ? [NSDate dateWithTimeIntervalSince1970:timestamp] : [NSDate date];
 
@@ -415,6 +387,53 @@ static BOOL wcpl_isRevokeTipDisplayText(NSString *content) {
             [content rangeOfString:@"已拦截撤回"].location != NSNotFound);
 }
 
+static BOOL wcpl_isQuitMonitorTipDisplayText(NSString *content) {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) return NO;
+    return [content rangeOfString:@"[退群监控]"].location != NSNotFound;
+}
+
+static BOOL wcpl_shouldTintAlertTipDisplayText(NSString *content) {
+    return wcpl_isRevokeTipDisplayText(content) || wcpl_isQuitMonitorTipDisplayText(content);
+}
+
+static BOOL wcpl_isSysMsgTemplateContent(NSString *content) {
+    NSString *trimmed = wcpl_trimString(content);
+    if (trimmed.length == 0) return NO;
+
+    return ([trimmed rangeOfString:@"<sysmsg" options:NSCaseInsensitiveSearch].location != NSNotFound &&
+            [trimmed rangeOfString:@"sysmsgtemplate" options:NSCaseInsensitiveSearch].location != NSNotFound);
+}
+
+static NSString *wcpl_plainTextFromSysMsgTemplateContent(NSString *content) {
+    NSString *trimmed = wcpl_trimString(content);
+    if (trimmed.length == 0 || !wcpl_isSysMsgTemplateContent(trimmed)) return nil;
+
+    static NSString *const kPlainStartToken = @"<plain><![CDATA[";
+    static NSString *const kPlainEndToken = @"]]></plain>";
+
+    NSRange start = [trimmed rangeOfString:kPlainStartToken options:NSCaseInsensitiveSearch];
+    if (start.location == NSNotFound) return nil;
+
+    NSUInteger from = NSMaxRange(start);
+    if (from >= trimmed.length) return nil;
+
+    NSRange end = [trimmed rangeOfString:kPlainEndToken
+                                 options:NSCaseInsensitiveSearch
+                                   range:NSMakeRange(from, trimmed.length - from)];
+    if (end.location == NSNotFound || end.location <= from) return nil;
+
+    NSString *plain = [trimmed substringWithRange:NSMakeRange(from, end.location - from)];
+    return [plain isKindOfClass:[NSString class]] ? wcpl_trimString(plain) : nil;
+}
+
+static NSString *wcpl_alertTipDisplayTextFromContent(NSString *content) {
+    NSString *trimmed = wcpl_trimString(content);
+    if (trimmed.length == 0) return nil;
+
+    NSString *plainText = wcpl_plainTextFromSysMsgTemplateContent(trimmed);
+    return plainText.length > 0 ? plainText : trimmed;
+}
+
 static BOOL wcpl_extractLeadingTimestampRange(NSString *text, NSRange *timeRangeOut) {
     if (![text isKindOfClass:[NSString class]] || text.length == 0) return NO;
 
@@ -641,7 +660,21 @@ static void wcpl_applyRevokeTimeTintToRichTextView(id richTextView, NSString *co
 
     if (!didTint && [richTextView respondsToSelector:@selector(setAttributedText:)]) {
         @try {
-            NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:content];
+            NSAttributedString *sourceAttr = nil;
+            if ([richTextView respondsToSelector:@selector(attributedText)]) {
+                @try {
+                    id attrValue = ((id (*)(id, SEL))objc_msgSend)(richTextView, @selector(attributedText));
+                    if ([attrValue isKindOfClass:[NSAttributedString class]]) {
+                        sourceAttr = (NSAttributedString *)attrValue;
+                    }
+                } @catch (__unused NSException *exceptionGetAttr) {
+                    sourceAttr = nil;
+                }
+            }
+
+            NSMutableAttributedString *attr = sourceAttr.length > 0
+                ? [[NSMutableAttributedString alloc] initWithAttributedString:sourceAttr]
+                : [[NSMutableAttributedString alloc] initWithString:content];
             if (NSMaxRange(timeRange) <= attr.length) {
                 [attr addAttribute:NSForegroundColorAttributeName value:wcpl_revokeTimeColor() range:timeRange];
                 ((void (*)(id, SEL, id))objc_msgSend)(richTextView, @selector(setAttributedText:), attr);
@@ -792,8 +825,8 @@ static void wcpl_applyRevokeTimeColorToMessageCell(id cell) {
     CMessageWrap *msgWrap = wcpl_messageWrapFromCellForRevoke(cell);
     if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return;
 
-    NSString *content = wcpl_trimString(msgWrap.m_nsContent);
-    if (!wcpl_isRevokeTipDisplayText(content)) return;
+    NSString *content = wcpl_alertTipDisplayTextFromContent(msgWrap.m_nsContent);
+    if (!wcpl_shouldTintAlertTipDisplayText(content)) return;
 
     id timeLabel = wcpl_revokeTimeLabelFromCell(cell);
     wcpl_applyRevokeColorToTimeLabel(timeLabel);
@@ -880,17 +913,21 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
     actorName = wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(actorName), 40);
     if (actorName.length == 0) actorName = @"对方";
 
+    unsigned int tipInsertTime = revokeWrap.m_uiCreateTime;
+    if (revokedMsgWrap && revokedMsgWrap.m_uiCreateTime > 0) {
+        tipInsertTime = revokedMsgWrap.m_uiCreateTime;
+    }
+
     NSString *timeText = wcpl_revokeTimeTextFromTimestamp(revokeWrap.m_uiCreateTime);
     NSString *tipText = [NSString stringWithFormat:@"%@\n\"%@\"撤回了一条消息\n%@",
                          timeText ?: @"",
                          actorName,
                          revokedContent];
-    unsigned int revokedLocalID = revokedMsgWrap ? revokedMsgWrap.m_uiMesLocalID : 0;
 
     CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];
     [msgWrap setM_uiStatus:0x4];
     [msgWrap setM_nsContent:tipText];
-    [msgWrap setM_uiCreateTime:[revokeWrap m_uiCreateTime]];
+    [msgWrap setM_uiCreateTime:tipInsertTime];
     [msgWrap setM_nsToUsr:session];
     [msgWrap setM_nsFromUsr:session];
 
@@ -898,14 +935,6 @@ static BOOL wcpl_handleRevokeMessage(CMessageWrap *revokeWrap, NSString *chatNam
         @try {
             ((void (*)(id, SEL, id))objc_msgSend)(msgWrap, @selector(setM_nsRealChatUsr:), nil);
         } @catch (__unused NSException *exceptionRealUsr) {
-        }
-    }
-
-    // 将被撤回消息的定位信息写入 m_nsMsgSource，供点击跳转使用
-    if ([msgWrap respondsToSelector:@selector(setM_nsMsgSource:)]) {
-        NSString *jumpMeta = wcpl_buildRevokeJumpMeta(session, revokedMsgId, revokedLocalID, nil);
-        if (jumpMeta.length > 0) {
-            [msgWrap setM_nsMsgSource:jumpMeta];
         }
     }
 

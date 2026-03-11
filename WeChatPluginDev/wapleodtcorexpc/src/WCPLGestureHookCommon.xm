@@ -1434,12 +1434,6 @@ static BOOL wcpl_tryOpenQuitMemberProfileByRichTextObject(id richTextObj, NSStri
         if (!cellView) {
             continue;
         }
-        if ([WCHookMessageNavigator tryJumpFromRevokeTipCell:(CommonMessageCellView *)cellView]) {
-            WCPLLogInfo(@"Revoke tip jump handled by rich text: scene=%@ cell=%@",
-                        scene ?: @"unknown",
-                        NSStringFromClass([cellView class]));
-            return YES;
-        }
         if ([WCHookMessageNavigator tryOpenQuitMemberProfileFromCell:(CommonMessageCellView *)cellView]) {
             WCPLLogInfo(@"Quit monitor profile open handled by rich text: scene=%@ cell=%@",
                         scene ?: @"unknown",

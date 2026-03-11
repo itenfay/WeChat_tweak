@@ -28,6 +28,8 @@ BOOL wcpl_push2chat_handleForegroundNotificationResponse(id response) __attribut
 
 static NSString *const kWCPLEntryPluginTitle = @"微信辣椒";
 static NSString *const kWCPLEntryPluginLegacyTitle = @"微信辣椒设置";
+static NSString *const kWCPLEntryPluginsHubTitle = @"插件";
+static NSString *const kWCPLEntryPluginsManagerTitle = @"插件管理";
 static NSString *const kWCPLEntryPluginVersion = @"1.8.36";
 static NSString *const kWCPLEntryControllerClassName = @"WCPLSettingViewController";
 static const long long kWCPLEntryInsertSectionIndex = 0;
@@ -116,9 +118,9 @@ static NSString *wcpl_entry_safeCellTitle(id cellManager) {
     return wcpl_entry_trim(title);
 }
 
-static BOOL wcpl_entry_hasPluginCellInTableMgr(id tableViewMgr) {
+static NSArray *wcpl_entry_allSections(id tableViewMgr) {
     if (!tableViewMgr) {
-        return NO;
+        return nil;
     }
 
     NSArray *sections = nil;
@@ -135,37 +137,70 @@ static BOOL wcpl_entry_hasPluginCellInTableMgr(id tableViewMgr) {
             sections = (NSArray *)value;
         }
     }
-    if (![sections isKindOfClass:[NSArray class]] || sections.count == 0) {
+    return [sections isKindOfClass:[NSArray class]] ? sections : nil;
+}
+
+static NSArray *wcpl_entry_allCells(id section) {
+    if (!section) {
+        return nil;
+    }
+
+    NSArray *cells = nil;
+    if ([section respondsToSelector:@selector(getAllCells)]) {
+        @try {
+            cells = ((id (*)(id, SEL))objc_msgSend)(section, @selector(getAllCells));
+        } @catch (__unused NSException *exception) {
+            cells = nil;
+        }
+    }
+    if (![cells isKindOfClass:[NSArray class]]) {
+        id value = wcpl_entry_safeValueForKey(section, @"cells");
+        if ([value isKindOfClass:[NSArray class]]) {
+            cells = (NSArray *)value;
+        }
+    }
+    return [cells isKindOfClass:[NSArray class]] ? cells : nil;
+}
+
+static BOOL wcpl_entry_tableMgrContainsCellWithTitles(id tableViewMgr, NSArray<NSString *> *titles) {
+    NSArray *sections = wcpl_entry_allSections(tableViewMgr);
+    if (sections.count == 0 || titles.count == 0) {
         return NO;
     }
 
     for (id section in sections) {
-        NSArray *cells = nil;
-        if ([section respondsToSelector:@selector(getAllCells)]) {
-            @try {
-                cells = ((id (*)(id, SEL))objc_msgSend)(section, @selector(getAllCells));
-            } @catch (__unused NSException *exception) {
-                cells = nil;
-            }
-        }
-        if (![cells isKindOfClass:[NSArray class]]) {
-            id value = wcpl_entry_safeValueForKey(section, @"cells");
-            if ([value isKindOfClass:[NSArray class]]) {
-                cells = (NSArray *)value;
-            }
-        }
-        if (![cells isKindOfClass:[NSArray class]] || cells.count == 0) {
+        NSArray *cells = wcpl_entry_allCells(section);
+        if (cells.count == 0) {
             continue;
         }
         for (id cell in cells) {
             NSString *title = wcpl_entry_safeCellTitle(cell);
-            if ([title isEqualToString:kWCPLEntryPluginTitle] ||
-                [title isEqualToString:kWCPLEntryPluginLegacyTitle]) {
+            if (title.length > 0 && [titles containsObject:title]) {
                 return YES;
             }
         }
     }
     return NO;
+}
+
+static BOOL wcpl_entry_hasPluginCellInTableMgr(id tableViewMgr) {
+    return wcpl_entry_tableMgrContainsCellWithTitles(tableViewMgr,
+                                                     @[kWCPLEntryPluginTitle,
+                                                       kWCPLEntryPluginLegacyTitle]);
+}
+
+static BOOL wcpl_entry_hasExternalPluginsPortal(id controller, id tableViewMgr) {
+    id pluginCellInfo = wcpl_entry_safeObjectIvar(controller, "_pluginCellInfo");
+    if (!pluginCellInfo) {
+        pluginCellInfo = wcpl_entry_safeValueForKey(controller, @"pluginCellInfo");
+    }
+    if (pluginCellInfo) {
+        return YES;
+    }
+
+    NSArray<NSString *> *externalPortalTitles = @[kWCPLEntryPluginsHubTitle,
+                                                  kWCPLEntryPluginsManagerTitle];
+    return wcpl_entry_tableMgrContainsCellWithTitles(tableViewMgr, externalPortalTitles);
 }
 
 static void wcpl_entry_insertPluginCell(id tableViewMgr, id target, SEL action, NSString *sceneTag) {
@@ -453,7 +488,11 @@ static UIImage *wcpl_topRightMenu_markAllReadIconImage(void);
         tableViewMgr = wcpl_entry_safeValueForKey(self, @"m_tableViewMgr");
     }
     uint64_t injectStartMs = wcpl_entry_perf_uptimeMillis();
-    wcpl_entry_insertPluginCell(tableViewMgr, self, @selector(wcpl_setting), @"NewSettingViewController");
+    if (wcpl_entry_hasExternalPluginsPortal(self, tableViewMgr)) {
+        WCPLLogInfo(@"[入口] 检测到设置页已有插件入口，跳过微信辣椒入口注入");
+    } else {
+        wcpl_entry_insertPluginCell(tableViewMgr, self, @selector(wcpl_setting), @"NewSettingViewController");
+    }
     uint64_t endMs = wcpl_entry_perf_uptimeMillis();
     uint64_t totalMs = endMs >= startMs ? (endMs - startMs) : 0;
     uint64_t origMs = afterOrigMs >= startMs ? (afterOrigMs - startMs) : 0;
