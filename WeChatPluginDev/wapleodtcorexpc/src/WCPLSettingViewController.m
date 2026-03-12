@@ -15,6 +15,7 @@
 #import "WCPLCrashReporter.h"
 #import "WCPLLogSettingsViewController.h"
 #import "WCPLRepeatButtonAssetManager.h"
+#import "WCPLPureHelpers.h"
 #import <objc/runtime.h>
 
 typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
@@ -878,20 +879,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
 }
 
 - (NSArray<NSString *> *)wcpl_sanitizedUserNamesFromArray:(NSArray *)names {
-    if (![names isKindOfClass:[NSArray class]]) {
-        return @[];
-    }
-    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
-    for (id obj in names) {
-        if (![obj isKindOfClass:[NSString class]]) {
-            continue;
-        }
-        NSString *value = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (value.length > 0) {
-            [results addObject:value];
-        }
-    }
-    return results.array;
+    return WCPLSanitizeIdentifierArray(names);
 }
 
 - (NSArray<NSString *> *)wcpl_chatroomUserNamesFromArray:(NSArray<NSString *> *)userNames scene:(NSString *)scene {
@@ -903,7 +891,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     NSMutableArray<NSString *> *chatrooms = [NSMutableArray array];
     NSUInteger dropped = 0;
     for (NSString *userName in sanitized) {
-        if ([userName rangeOfString:@"@chatroom"].location != NSNotFound) {
+        if (WCPLIsChatRoomName(userName)) {
             [chatrooms addObject:userName];
         } else {
             dropped += 1;
@@ -928,7 +916,7 @@ typedef NS_ENUM(NSUInteger, WCPLSettingPageType) {
     NSMutableArray<NSString *> *friends = [NSMutableArray array];
     NSUInteger dropped = 0;
     for (NSString *userName in sanitized) {
-        if ([userName rangeOfString:@"@chatroom"].location == NSNotFound) {
+        if (!WCPLIsChatRoomName(userName)) {
             [friends addObject:userName];
         } else {
             dropped += 1;

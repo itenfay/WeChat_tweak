@@ -2,16 +2,16 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLHookGovernance.h"
 #import "WCPLServiceCenter.h"
+#import "WCPLAlertTextHelpers.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
 static void wcpl_applyRevokeTimeColorToMessageCell(id cell);
 
 static NSString *wcpl_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
+    return WCPLTrimText(text);
 }
 
 static NSString *wcpl_extractBetweenTokens(NSString *text, NSString *startToken, NSString *endToken) {
@@ -40,7 +40,7 @@ static NSString *wcpl_extractXmlTagValue(NSString *xml, NSString *tagName) {
 
     NSString *startToken = [NSString stringWithFormat:@"<%@>", tagName];
     NSString *endToken = [NSString stringWithFormat:@"</%@>", tagName];
-    return wcpl_extractBetweenTokens(xml, startToken, endToken);
+    return WCPLExtractXMLValue(xml, startToken, endToken);
 }
 
 static long long wcpl_extractLongLongFromXmlTag(NSString *xml, NSString *tagName) {
@@ -59,16 +59,7 @@ static NSString *wcpl_stripCDATAIfNeeded(NSString *text) {
 }
 
 static NSString *wcpl_sanitizeInlineText(NSString *text, NSUInteger maxLen) {
-    NSString *value = wcpl_trimString(text);
-    if (value.length == 0) return nil;
-
-    value = [[value stringByReplacingOccurrencesOfString:@"\r" withString:@" "]
-             stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-
-    if (maxLen > 0 && value.length > maxLen) {
-        value = [[value substringToIndex:maxLen] stringByAppendingString:@"…"];
-    }
-    return value;
+    return WCPLSanitizeInlineText(text, maxLen);
 }
 
 static NSString *wcpl_revokeTimeTextFromTimestamp(unsigned int timestamp) {
@@ -106,48 +97,11 @@ static NSString *wcpl_stripWrappedQuotes(NSString *text) {
 }
 
 static NSString *wcpl_extractRevokerNameFromReplaceText(NSString *replaceText) {
-    NSString *text = wcpl_trimString(replaceText);
-    if (text.length == 0) return nil;
-
-    NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?:\\\"|“)([^\\\"”]+?)(?:\\\"|”)撤回了"
-                                                                           options:0
-                                                                             error:&error];
-    if (!error && regex) {
-        NSTextCheckingResult *match = [regex firstMatchInString:text options:0 range:NSMakeRange(0, text.length)];
-        if (match.numberOfRanges >= 2) {
-            NSString *name = [text substringWithRange:[match rangeAtIndex:1]];
-            return wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(name), 40);
-        }
-    }
-
-    NSRange revokeRange = [text rangeOfString:@"撤回了一条消息"];
-    if (revokeRange.location != NSNotFound && revokeRange.location > 0) {
-        NSString *prefix = [text substringToIndex:revokeRange.location];
-        NSRange colonRange = [prefix rangeOfString:@"：" options:NSBackwardsSearch];
-        if (colonRange.location != NSNotFound && NSMaxRange(colonRange) < prefix.length) {
-            prefix = [prefix substringFromIndex:NSMaxRange(colonRange)];
-        }
-        return wcpl_sanitizeInlineText(wcpl_stripWrappedQuotes(prefix), 40);
-    }
-
-    return nil;
+    return WCPLExtractRevokerNameFromReplaceText(replaceText);
 }
 
 static NSString *wcpl_extractRevokedContentFromReplaceText(NSString *replaceText) {
-    NSString *text = wcpl_trimString(replaceText);
-    if (text.length == 0) return nil;
-
-    NSArray<NSString *> *tokens = @[@"原消息：", @"原消息:"];
-    for (NSString *token in tokens) {
-        NSRange tokenRange = [text rangeOfString:token];
-        if (tokenRange.location == NSNotFound || NSMaxRange(tokenRange) >= text.length) continue;
-        NSString *suffix = [text substringFromIndex:NSMaxRange(tokenRange)];
-        NSString *result = wcpl_sanitizeInlineText(suffix, 180);
-        if (result.length > 0) return result;
-    }
-
-    return nil;
+    return WCPLExtractRevokedContentFromReplaceText(replaceText);
 }
 
 static NSString *wcpl_displayNameForUserName(NSString *userName) {
@@ -184,7 +138,7 @@ static NSString *wcpl_displayNameForUserName(NSString *userName) {
 static NSString *wcpl_revokeActorUserNameFromMessageWrap(CMessageWrap *msgWrap, NSString *session) {
     if (![msgWrap isKindOfClass:%c(CMessageWrap)]) return nil;
 
-    BOOL isChatroom = ([session rangeOfString:@"@chatroom"].location != NSNotFound);
+    BOOL isChatroom = WCPLIsChatRoomName(session);
     NSString *candidate = nil;
     if (isChatroom) {
         candidate = wcpl_trimString(msgWrap.m_nsRealChatUsr);
@@ -192,7 +146,7 @@ static NSString *wcpl_revokeActorUserNameFromMessageWrap(CMessageWrap *msgWrap, 
     if (candidate.length == 0) {
         candidate = wcpl_trimString(msgWrap.m_nsFromUsr);
     }
-    if (candidate.length == 0 || [candidate hasSuffix:@"@chatroom"]) return nil;
+    if (candidate.length == 0 || WCPLIsChatRoomName(candidate)) return nil;
 
     return candidate;
 }
@@ -381,57 +335,12 @@ static UIColor *wcpl_revokeTimeColor(void) {
                            alpha:1.0];
 }
 
-static BOOL wcpl_isRevokeTipDisplayText(NSString *content) {
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) return NO;
-    return ([content rangeOfString:@"撤回了一条消息"].location != NSNotFound ||
-            [content rangeOfString:@"已拦截撤回"].location != NSNotFound);
-}
-
-static BOOL wcpl_isQuitMonitorTipDisplayText(NSString *content) {
-    if (![content isKindOfClass:[NSString class]] || content.length == 0) return NO;
-    return [content rangeOfString:@"[退群监控]"].location != NSNotFound;
-}
-
 static BOOL wcpl_shouldTintAlertTipDisplayText(NSString *content) {
-    return wcpl_isRevokeTipDisplayText(content) || wcpl_isQuitMonitorTipDisplayText(content);
-}
-
-static BOOL wcpl_isSysMsgTemplateContent(NSString *content) {
-    NSString *trimmed = wcpl_trimString(content);
-    if (trimmed.length == 0) return NO;
-
-    return ([trimmed rangeOfString:@"<sysmsg" options:NSCaseInsensitiveSearch].location != NSNotFound &&
-            [trimmed rangeOfString:@"sysmsgtemplate" options:NSCaseInsensitiveSearch].location != NSNotFound);
-}
-
-static NSString *wcpl_plainTextFromSysMsgTemplateContent(NSString *content) {
-    NSString *trimmed = wcpl_trimString(content);
-    if (trimmed.length == 0 || !wcpl_isSysMsgTemplateContent(trimmed)) return nil;
-
-    static NSString *const kPlainStartToken = @"<plain><![CDATA[";
-    static NSString *const kPlainEndToken = @"]]></plain>";
-
-    NSRange start = [trimmed rangeOfString:kPlainStartToken options:NSCaseInsensitiveSearch];
-    if (start.location == NSNotFound) return nil;
-
-    NSUInteger from = NSMaxRange(start);
-    if (from >= trimmed.length) return nil;
-
-    NSRange end = [trimmed rangeOfString:kPlainEndToken
-                                 options:NSCaseInsensitiveSearch
-                                   range:NSMakeRange(from, trimmed.length - from)];
-    if (end.location == NSNotFound || end.location <= from) return nil;
-
-    NSString *plain = [trimmed substringWithRange:NSMakeRange(from, end.location - from)];
-    return [plain isKindOfClass:[NSString class]] ? wcpl_trimString(plain) : nil;
+    return WCPLShouldTintAlertTipDisplayText(content);
 }
 
 static NSString *wcpl_alertTipDisplayTextFromContent(NSString *content) {
-    NSString *trimmed = wcpl_trimString(content);
-    if (trimmed.length == 0) return nil;
-
-    NSString *plainText = wcpl_plainTextFromSysMsgTemplateContent(trimmed);
-    return plainText.length > 0 ? plainText : trimmed;
+    return WCPLAlertTipDisplayTextFromContent(content);
 }
 
 static BOOL wcpl_extractLeadingTimestampRange(NSString *text, NSRange *timeRangeOut) {

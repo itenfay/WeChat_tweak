@@ -4,6 +4,7 @@
 
 #import "WCPLIgnoreConfig.h"
 #import "WCPLConfigSanitizer.h"
+#import "WCPLSharedConfigHelpers.h"
 #import "WCPLThreadSafeMutableDictionary.h"
 #import <dispatch/dispatch.h>
 
@@ -38,28 +39,9 @@ static NSString *const kWCPLQuitMonitorWhitelistInfo = @"kWCPLQuitMonitorWhiteli
         _userIgnoreInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLUserIgnoreInfo];
         _quitMonitorWhitelistInfo = [self wcpl_loadThreadSafeIgnoreDictionaryForKey:kWCPLQuitMonitorWhitelistInfo];
 
-        __block NSUInteger validWhitelistCount = 0;
-        [_quitMonitorWhitelistInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
-            if (![key isKindOfClass:[NSString class]]) {
-                return;
-            }
-            if ([key rangeOfString:@"@chatroom"].location == NSNotFound) {
-                return;
-            }
-            if (![obj respondsToSelector:@selector(boolValue)] || !obj.boolValue) {
-                return;
-            }
-            validWhitelistCount += 1;
-        }];
-
         NSNumber *scopeObj = [defaults objectForKey:kWCPLQuitMonitorScope];
-        WCPLQuitMonitorScope defaultScope =
-            (validWhitelistCount > 0) ? WCPLQuitMonitorScopeWhitelist : WCPLQuitMonitorScopeAll;
-        NSInteger rawScope = scopeObj ? scopeObj.integerValue : defaultScope;
-        if (rawScope != WCPLQuitMonitorScopeAll && rawScope != WCPLQuitMonitorScopeWhitelist) {
-            rawScope = defaultScope;
-        }
-        _quitMonitorScope = (WCPLQuitMonitorScope)rawScope;
+        _quitMonitorScope = (WCPLQuitMonitorScope)WCPLResolveQuitMonitorScope(scopeObj,
+                                                                              _quitMonitorWhitelistInfo);
 
         [defaults setBool:_quitMonitorEnable forKey:kWCPLQuitMonitorEnable];
         [defaults setInteger:_quitMonitorScope forKey:kWCPLQuitMonitorScope];

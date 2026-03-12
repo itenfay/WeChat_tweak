@@ -5,9 +5,10 @@
 本文原先的 rootless 本地编译方法在 Linux 环境下存在误导：  
 `make package THEOS_PACKAGE_SCHEME=rootless` 直接产物可能出现 `code signature invalid`，导致安装后不注入。
 
-请优先使用下面这份经过实测的 rootless 正确流程：
+请优先使用下面两份文档：
 
-- `docs/rootless-local-build.md`
+- `docs/local-build-validation.md`（本地门禁与最小回归验收入口）
+- `docs/rootless-local-build.md`（rootless 正确构建/重签流程）
 
 本文其余内容可作为 roothide/通用部署参考。
 
@@ -45,6 +46,33 @@
 | SSH 认证 | 已配置公钥免密（`ssh iphone`） |
 
 > 说明：本文默认已在 `~/.ssh/config` 配置 `Host iphone`（`User mobile` + 公钥）。
+
+## 本地门禁入口（先于完整部署）
+
+在进入完整打包/安装前，建议先跑统一本地门禁：
+
+```bash
+cd /root/WeChat_tweak/WeChatPluginDev/wapleodtcorexpc
+./scripts/local_gate.sh
+```
+
+说明：
+
+- 该入口会统一串起 generate / doctor / unit tests / `make before-all`
+- `--strict-toolchain` 会进一步真实执行 `make clean package`
+- 若当前机器没有完整 make/Theos/宿主测试环境，会以 degraded 方式给出明确阻塞说明
+- 若你要求本机具备完整门禁能力，再使用：
+
+```bash
+./scripts/local_gate.sh --strict-toolchain
+```
+
+完整说明见：`docs/local-build-validation.md`
+
+补充：
+
+- Linux 本机可承担 cross-platform 最小回归和真实 Theos 打包验收
+- Darwin host suite 现在由 `macos-14` CI job 真实执行，不再只是待办项
 
 ## 完整流程
 

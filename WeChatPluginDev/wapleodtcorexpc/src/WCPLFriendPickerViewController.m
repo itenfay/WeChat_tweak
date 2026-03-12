@@ -2,6 +2,11 @@
 #import "WCPLContactGroupPickerViewController.h"
 #import "WCPLPickerDataProvider.h"
 #import "WCPLPickerItem.h"
+#import "WCPLPureHelpers.h"
+
+static NSArray<NSString *> *wcpl_sanitizedPickerIdentifiers(id identifiers) {
+    return WCPLSanitizeIdentifierArray(identifiers);
+}
 
 @interface WCPLFriendPickerViewController ()
 
@@ -16,7 +21,7 @@
 - (instancetype)initWithSelectedIdentifiers:(NSArray<NSString *> *)selectedIdentifiers {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        _selectedIdentifiers = [self wcpl_sanitizeIdentifiers:selectedIdentifiers];
+        _selectedIdentifiers = wcpl_sanitizedPickerIdentifiers(selectedIdentifiers);
     }
     return self;
 }
@@ -65,7 +70,7 @@
             return;
         }
         strongSelf.didNotifyResult = YES;
-        strongSelf.pendingResultIdentifiers = [strongSelf wcpl_sanitizeIdentifiers:selectedIdentifiers];
+        strongSelf.pendingResultIdentifiers = wcpl_sanitizedPickerIdentifiers(selectedIdentifiers);
     };
     picker.onCancel = ^{
         typeof(self) strongSelf = weakSelf;
@@ -79,24 +84,6 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:picker];
     navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:navigationController animated:NO completion:nil];
-}
-
-- (NSArray<NSString *> *)wcpl_sanitizeIdentifiers:(NSArray<NSString *> *)identifiers {
-    if (![identifiers isKindOfClass:[NSArray class]]) {
-        return @[];
-    }
-
-    NSMutableOrderedSet<NSString *> *result = [NSMutableOrderedSet orderedSet];
-    for (id obj in identifiers) {
-        if (![obj isKindOfClass:[NSString class]]) {
-            continue;
-        }
-        NSString *value = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (value.length > 0) {
-            [result addObject:value];
-        }
-    }
-    return result.array;
 }
 
 @end

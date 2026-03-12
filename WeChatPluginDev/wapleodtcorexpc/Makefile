@@ -29,6 +29,7 @@ WCPL_COMPILE_FILES := \
 	src/WCHookTableViewFactory.m \
 	src/WCPLAVConfig.m \
 	src/WCPLAVManager.m \
+	src/WCPLAlertTextHelpers.m \
 	src/WCPLBaseViewController.m \
 	src/WCPLConfigCenter.m \
 	src/WCPLConfigSanitizer.m \
@@ -56,6 +57,7 @@ WCPL_COMPILE_FILES := \
 	src/WCPLPluginEntryHook.xm \
 	src/WCPLPush2ChatConfig.m \
 	src/WCPLPush2ChatHook.xm \
+	src/WCPLPureHelpers.m \
 	src/WCPLQuitMonitorHook.xm \
 	src/WCPLRealtimeLogUploader.m \
 	src/WCPLReceiveRedEnvelopOperation.m \
@@ -69,6 +71,7 @@ WCPL_COMPILE_FILES := \
 	src/WCPLRevokeHook.xm \
 	src/WCPLSafeStringContact.m \
 	src/WCPLServiceCenter.m \
+	src/WCPLSharedConfigHelpers.m \
 	src/WCPLSettingViewController.m \
 	src/WCPLSystemHook.xm \
 	src/WCPLThreadSafeMutableDictionary.m \
@@ -82,6 +85,11 @@ $(TWEAK_NAME)_FILES = $(WCPL_COMPILE_FILES)
 WCPL_LEGACY_FILES := src/Tweak.m
 WCPL_INTERNAL_INCLUDE_FILES := \
 	src/WCPLGestureHookCommon.xm \
+	src/WCPLGesturePureHelpers.xm \
+	src/WCPLGestureDebugHelpers.xm \
+	src/WCPLGestureRepeatEligibilityHelpers.xm \
+	src/WCPLGestureCellContextHelpers.xm \
+	src/WCPLGestureLayoutHelpers.xm \
 	src/WCPLRepeatButtonHook.xm \
 	src/WCPLRepeatActionHook.xm \
 	src/WCPLSwipeQuoteHook.xm \
@@ -92,6 +100,12 @@ WCPL_INTERNAL_INCLUDE_FILES := \
 	src/WCPLMessageSearchHook.xm \
 	src/WCPLMessageLocalReplaceHook.xm \
 	src/WCPLMessageLongPressMenuHook.xm \
+	src/WCPLEntrySafeHelpers.xm \
+	src/WCPLEntryPerfHelpers.xm \
+	src/WCPLEntrySettingsUIHelpers.xm \
+	src/WCPLEntrySettingsControllerHook.xm \
+	src/WCPLMarkAllReadService.xm \
+	src/WCPLMarkAllReadMenuHooks.xm \
 	src/WCPLVoiceForwardCore.xm \
 	src/WCPLVoiceForwardHook.xm \
 	src/WCPLClownFeatureHook.xm
@@ -117,6 +131,8 @@ endif
 before-all::
 	@./scripts/generate_wcpl_message_hook.sh
 	@./scripts/generate_wcpl_gesture_hook.sh
+	@./scripts/build_doctor.sh || exit $$?
+	@echo "[wcpl] local gate: ./scripts/local_gate.sh (generate + doctor + unit tests + make preflight)"
 	@echo "[wcpl] compile whitelist ($(words $(WCPL_COMPILE_FILES)) files)"
 	@printf '%s\n' $(WCPL_COMPILE_FILES)
 	@echo "[wcpl] entry chain: src/Tweak.xm -> src/WCPLPluginEntryHook.xm"
@@ -145,10 +161,12 @@ WCPL_MESSAGE_HOOK_SWITCH_DEFINES := \
 $(TWEAK_NAME)_CFLAGS += $(WCPL_MESSAGE_HOOK_SWITCH_DEFINES)
 
 src/WCPLAVManager.m_CFLAGS = -fobjc-arc
+src/WCPLAlertTextHelpers.m_CFLAGS = -fobjc-arc
 src/WCPLBaseViewController.m_CFLAGS = -fobjc-arc
 src/WCPLFuncService.m_CFLAGS = -fobjc-arc
 src/WCPLReceiveRedEnvelopOperation.m_CFLAGS = -fobjc-arc
 src/WCPLRedEnvelopConfig.m_CFLAGS = -fobjc-arc
+src/WCPLPureHelpers.m_CFLAGS = -fobjc-arc
 src/WCPLRedEnvelopParamQueue.m_CFLAGS = -fobjc-arc
 src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
 src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc
@@ -158,6 +176,7 @@ src/WCHookSettingsManager.m_CFLAGS = -fobjc-arc
 src/WCHookSwipeUtilities.m_CFLAGS = -fobjc-arc
 src/WCHookTableViewFactory.m_CFLAGS = -fobjc-arc
 src/WCPLLogger.m_CFLAGS = -fobjc-arc
+src/WCPLSharedConfigHelpers.m_CFLAGS = -fobjc-arc
 src/WCPLDouyinParserHook.xm_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

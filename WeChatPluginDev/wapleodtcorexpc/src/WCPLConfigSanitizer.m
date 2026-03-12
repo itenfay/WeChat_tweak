@@ -3,23 +3,10 @@
 //
 
 #import "WCPLConfigSanitizer.h"
+#import "WCPLPureHelpers.h"
 
 NSArray<NSString *> *WCPLSanitizeUserNameArray(id value) {
-    if (![value isKindOfClass:[NSArray class]]) {
-        return @[];
-    }
-
-    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
-    for (id obj in (NSArray *)value) {
-        if (![obj isKindOfClass:[NSString class]]) {
-            continue;
-        }
-        NSString *name = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (name.length > 0) {
-            [results addObject:name];
-        }
-    }
-    return results.array;
+    return WCPLSanitizeIdentifierArray(value);
 }
 
 NSDictionary<NSString *, NSNumber *> *WCPLSanitizeIgnoreDictionary(id value) {
@@ -32,7 +19,7 @@ NSDictionary<NSString *, NSNumber *> *WCPLSanitizeIgnoreDictionary(id value) {
         if (![key isKindOfClass:[NSString class]]) {
             return;
         }
-        NSString *name = [(NSString *)key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *name = WCPLTrimText(key);
         if (name.length == 0) {
             return;
         }
