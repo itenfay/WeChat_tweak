@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import urllib.parse
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -277,10 +278,23 @@ _PERCENT_RE = re.compile(r"%([0-9A-Fa-f]{2})")
 
 
 def unescape_percent(value: str) -> str:
-    def repl(match: re.Match[str]) -> str:
-        return bytes.fromhex(match.group(1)).decode("utf-8", errors="replace")
+    return urllib.parse.unquote(value, encoding="utf-8", errors="replace")
 
-    return _PERCENT_RE.sub(repl, value)
+
+def objc_integer_value(value: Any) -> int:
+    if isinstance(value, bool):
+        return 1 if value else 0
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        return int(value)
+    if isinstance(value, str):
+        trimmed = value.strip()
+        if not trimmed:
+            return 0
+        numeric_match = re.match(r"^[+-]?\d+", trimmed)
+        return int(numeric_match.group(0)) if numeric_match else 0
+    return 0
 
 
 def red_envelop_param_to_params(param: WeChatRedEnvelopParam) -> Dict[str, str]:
@@ -339,19 +353,19 @@ def build_red_envelop_params(raw_fields: Any) -> Dict[str, str]:
 
 def resolve_red_envelop_group_scope(raw_scope_value: Any, allowed_groups: Any) -> int:
     default_scope = 1 if sanitize_identifier_array(allowed_groups) else 0
-    resolved = int(raw_scope_value) if raw_scope_value is not None else default_scope
+    resolved = objc_integer_value(raw_scope_value) if raw_scope_value is not None else default_scope
     return resolved if 0 <= resolved <= 2 else default_scope
 
 
 def normalize_red_envelop_notify_target(raw_notify_target_value: Any) -> int:
-    resolved = int(raw_notify_target_value) if raw_notify_target_value is not None else 0
+    resolved = objc_integer_value(raw_notify_target_value) if raw_notify_target_value is not None else 0
     return resolved if 0 <= resolved <= 2 else 0
 
 
 def resolve_quit_monitor_scope(raw_scope_value: Any, raw_whitelist_info: Any) -> int:
     sanitized = sanitize_ignore_dictionary(raw_whitelist_info)
     default_scope = 1 if any(is_chatroom_name(key) and enabled for key, enabled in sanitized.items()) else 0
-    resolved = int(raw_scope_value) if raw_scope_value is not None else default_scope
+    resolved = objc_integer_value(raw_scope_value) if raw_scope_value is not None else default_scope
     return resolved if resolved in (0, 1) else default_scope
 
 

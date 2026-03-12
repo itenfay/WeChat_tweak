@@ -51,6 +51,12 @@
       "key": "sendUserName",
       "url": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendUserName=%20%20",
       "expected": null
+    },
+    {
+      "name": "decode_multibyte_utf8_value",
+      "key": "sendusername",
+      "url": "wxpay://c2cbizmessagehandler/hongbao/receivehongbao?sendusername=%E4%BD%A0%E5%A5%BD",
+      "expected": "你好"
     }
   ],
   "decode_basic_xml_entities": [
@@ -324,6 +330,14 @@
       "scope": 2,
       "allowed_groups": [],
       "expected": 2
+    },
+    {
+      "name": "nonnumeric_string_matches_integer_value_semantics",
+      "scope": "abc",
+      "allowed_groups": [
+        "room@chatroom"
+      ],
+      "expected": 0
     }
   ],
   "normalize_red_envelop_notify_target": [
@@ -340,6 +354,11 @@
     {
       "name": "invalid_value_resets_to_disabled",
       "input": 99,
+      "expected": 0
+    },
+    {
+      "name": "nonnumeric_string_becomes_zero",
+      "input": "abc",
       "expected": 0
     }
   ],
@@ -374,6 +393,14 @@
       "scope": 1,
       "whitelist_info": {},
       "expected": 1
+    },
+    {
+      "name": "nonnumeric_string_matches_integer_value_semantics",
+      "scope": "abc",
+      "whitelist_info": {
+        "room@chatroom": true
+      },
+      "expected": 0
     }
   ],
   "sanitize_inline_text": [
