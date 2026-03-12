@@ -1,5 +1,6 @@
 #import "WCPLPickerDataProvider.h"
 #import "WCPLPickerItem.h"
+#import "WCPLPureHelpers.h"
 #import "WeChatRedEnvelop.h"
 #import "WCPLServiceCenter.h"
 #import <objc/message.h>
@@ -48,7 +49,7 @@
             continue;
         }
 
-        WCPLPickerItemType type = [identifier rangeOfString:@"@chatroom"].location != NSNotFound
+        WCPLPickerItemType type = WCPLIsChatRoomName(identifier)
                                  ? WCPLPickerItemTypeGroup
                                  : WCPLPickerItemTypeUser;
         NSString *displayName = [self wcpl_displayNameFromContact:contact fallback:identifier];
@@ -119,8 +120,7 @@
         return @"";
     }
 
-    NSString *trimmed = [userName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : @"";
+    return WCPLTrimText(userName) ?: @"";
 }
 
 + (NSString *)wcpl_displayNameFromContact:(id)contact fallback:(NSString *)fallback {
@@ -153,8 +153,7 @@
         }
     }
 
-    NSString *trimmed = [displayName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : fallback;
+    return WCPLTrimText(displayName) ?: fallback;
 }
 
 @end

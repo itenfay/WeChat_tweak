@@ -6,6 +6,7 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 
 /**
  消息屏蔽 UI 注入（群聊资料页 / 好友资料页 / 好友设置页）
@@ -25,9 +26,7 @@ static NSString *const kWCPLIgnoreUIChatroomCellTitle = @"屏蔽群消息";
 static NSString *const kWCPLIgnoreUIUserCellTitle = @"屏蔽此人消息";
 
 static NSString *wcpl_ignoreUI_trimString(NSString *text) {
-    if (![text isKindOfClass:[NSString class]] || text.length == 0) return nil;
-    NSString *trimmed = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
+    return WCPLTrimText(text);
 }
 
 static id wcpl_ignoreUI_safeValueForKey(id obj, NSString *key) {
@@ -202,7 +201,7 @@ static void wcpl_ignoreUI_injectChatroomSwitchIfNeeded(id controller) {
     }
 
     NSString *usrName = wcpl_ignoreUI_safeUserNameFromObject(chatroom);
-    if (usrName.length == 0) return;
+    if (usrName.length == 0 || !WCPLIsChatRoomName(usrName)) return;
 
     id tableInfo = wcpl_ignoreUI_safeObjectIvar(controller, "m_tableViewInfo");
     if (!tableInfo) {
@@ -270,7 +269,7 @@ static void wcpl_ignoreUI_injectUserSwitchInContactInfoIfNeeded(id controller) {
 
     NSString *usrName = wcpl_ignoreUI_safeUserNameFromObject(contact);
     if (usrName.length == 0) return;
-    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) return;
+    if (WCPLIsChatRoomName(usrName)) return;
 
     id tableInfo = wcpl_ignoreUI_contactInfoTableInfo(controller);
     if (!tableInfo) return;
@@ -319,7 +318,7 @@ static void wcpl_ignoreUI_injectUserSwitchInContactSettingIfNeeded(id controller
 
     NSString *usrName = wcpl_ignoreUI_safeUserNameFromObject(contact);
     if (usrName.length == 0) return;
-    if ([usrName rangeOfString:@"@chatroom"].location != NSNotFound) return;
+    if (WCPLIsChatRoomName(usrName)) return;
 
     id tableInfo = wcpl_ignoreUI_safeObjectIvar(controller, "m_tableViewInfo");
     if (!tableInfo) {
@@ -373,7 +372,7 @@ static void wcpl_ignoreUI_injectUserSwitchInContactSettingIfNeeded(id controller
         chatroom = wcpl_ignoreUI_safeValueForKey(self, @"m_chatRoomContact");
     }
     NSString *targetName = wcpl_ignoreUI_safeUserNameFromObject(chatroom);
-    if (targetName.length == 0) {
+    if (targetName.length == 0 || !WCPLIsChatRoomName(targetName)) {
         sender.on = NO;
         return;
     }
@@ -405,7 +404,7 @@ static void wcpl_ignoreUI_injectUserSwitchInContactSettingIfNeeded(id controller
         contact = wcpl_ignoreUI_safeValueForKey(self, @"m_contact");
     }
     NSString *targetName = wcpl_ignoreUI_safeUserNameFromObject(contact);
-    if (targetName.length == 0 || [targetName rangeOfString:@"@chatroom"].location != NSNotFound) {
+    if (targetName.length == 0 || WCPLIsChatRoomName(targetName)) {
         sender.on = NO;
         return;
     }
@@ -440,7 +439,7 @@ static void wcpl_ignoreUI_injectUserSwitchInContactSettingIfNeeded(id controller
     }
 
     NSString *targetName = wcpl_ignoreUI_safeUserNameFromObject(contact);
-    if (targetName.length == 0 || [targetName rangeOfString:@"@chatroom"].location != NSNotFound) {
+    if (targetName.length == 0 || WCPLIsChatRoomName(targetName)) {
         sender.on = NO;
         return;
     }

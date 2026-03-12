@@ -1,3 +1,5 @@
+// Darwin/Foundation host suite only.
+// Cross-platform minimal gate lives in tests/cross_platform/run_cross_platform_tests.py.
 #import <Foundation/Foundation.h>
 #import <dispatch/dispatch.h>
 
@@ -7,6 +9,10 @@
 #import "WCPLIgnoreConfig.h"
 #import "WCPLGestureConfig.h"
 #import "WCPLThreadSafeMutableDictionary.h"
+#import "WCPLAlertTextHelpers.h"
+#import "WCPLConfigSanitizer.h"
+#import "WCPLPureHelpers.h"
+#import "WCPLSharedConfigHelpers.h"
 
 static NSString *const kWCPLGroupRedEnvelopScopeKey = @"kWCPLGroupRedEnvelopScope";
 static NSString *const kWCPLBlackListKey = @"kWCPLBlackList";
@@ -15,6 +21,7 @@ static NSString *const kWCPLUserIgnoreInfoKey = @"kWCPLUserIgnoreInfo";
 static NSString *const kWCPLQuitMonitorScopeKey = @"kWCPLQuitMonitorScope";
 static NSString *const kWCPLQuitMonitorWhitelistInfoKey = @"kWCPLQuitMonitorWhitelistInfo";
 static NSString *const kWCPLReceiveDonePageSummaryEnableKey = @"kWCPLReceiveDonePageSummaryEnable";
+static NSString *const kWCPLPureHelperContractPath = @"tests/contracts/wcpl_pure_helper_contracts.json";
 
 static void wcpl_clearDefaultsKeys(NSArray<NSString *> *keys) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -30,6 +37,65 @@ static void wcpl_clearDefaultsKeys(NSArray<NSString *> *keys) {
             return NO; \
         } \
     } while (0)
+
+static id wcpl_jsonValueOrNil(id value) {
+    return value == [NSNull null] ? nil : value;
+}
+
+static BOOL wcpl_optionalObjectsEqual(id actual, id expected) {
+    if (!actual || !expected) {
+        return actual == expected;
+    }
+    return [actual isEqual:expected];
+}
+
+static NSDictionary<NSString *, NSArray<NSDictionary *> *> *wcpl_loadPureHelperContracts(void) {
+    static NSDictionary<NSString *, NSArray<NSDictionary *> *> *contracts = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *path = [[[NSFileManager defaultManager] currentDirectoryPath]
+            stringByAppendingPathComponent:kWCPLPureHelperContractPath];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        if (!data) {
+            return;
+        }
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            contracts = json;
+        }
+    });
+    return contracts;
+}
+
+static NSArray<NSDictionary *> *wcpl_contractCases(NSDictionary<NSString *, NSArray<NSDictionary *> *> *contracts,
+                                                   NSString *group) {
+    id cases = contracts[group];
+    return [cases isKindOfClass:[NSArray class]] ? cases : nil;
+}
+
+static NSString *wcpl_validatePureHelperContractGroup(NSDictionary<NSString *, NSArray<NSDictionary *> *> *contracts,
+                                                      NSString *group,
+                                                      id (^resolver)(NSDictionary *caseInfo)) {
+    NSArray<NSDictionary *> *cases = wcpl_contractCases(contracts, group);
+    if (cases.count == 0 || !resolver) {
+        return [NSString stringWithFormat:@"missing contract group: %@", group];
+    }
+
+    for (NSDictionary *caseInfo in cases) {
+        NSString *caseName = [caseInfo[@"name"] isKindOfClass:[NSString class]] ? caseInfo[@"name"] : @"<unnamed>";
+        id actual = resolver(caseInfo);
+        id expected = wcpl_jsonValueOrNil(caseInfo[@"expected"]);
+        if (!wcpl_optionalObjectsEqual(actual, expected)) {
+            return [NSString stringWithFormat:@"%@/%@ mismatch: expected %@ got %@",
+                                              group,
+                                              caseName,
+                                              expected ?: @"<nil>",
+                                              actual ?: @"<nil>"];
+        }
+    }
+
+    return nil;
+}
 
 static BOOL testParamQueueEnqueueDequeue(void) {
     WCPLRedEnvelopParamQueue *queue = [[WCPLRedEnvelopParamQueue alloc] init];
@@ -100,6 +166,164 @@ static BOOL testAllowedGroupListAliasing(void) {
 #pragma clang diagnostic pop
 
     wcpl_clearDefaultsKeys(@[kWCPLBlackListKey]);
+    return YES;
+}
+
+static BOOL testConfigSanitizerHostFunctions(void) {
+    NSArray *names = WCPLSanitizeUserNameArray(@[@"  alice ", @"", @123, @"bob", @"alice"]);
+    WCPL_ASSERT([names isEqualToArray:@[@"alice", @"bob"]], "WCPLSanitizeUserNameArray should sanitize and dedupe");
+
+    NSDictionary<NSString *, NSNumber *> *ignoreInfo = WCPLSanitizeIgnoreDictionary(@{
+        @"  ": @YES,
+        @"alice": @YES,
+        @"bob": @0,
+        @123: @YES,
+        @"carol": @"1",
+    });
+    WCPL_ASSERT(ignoreInfo.count == 2, "WCPLSanitizeIgnoreDictionary should keep enabled string keys only");
+    WCPL_ASSERT(ignoreInfo[@"alice"].boolValue == YES, "alice should be retained");
+    WCPL_ASSERT(ignoreInfo[@"carol"].boolValue == YES, "carol should be retained");
+    return YES;
+}
+
+static BOOL testPureHelperSharedContracts(void) {
+    NSDictionary<NSString *, NSArray<NSDictionary *> *> *contracts = wcpl_loadPureHelperContracts();
+    WCPL_ASSERT(contracts != nil, "failed to load pure helper contracts");
+
+    NSString *error = nil;
+    error = wcpl_validatePureHelperContractGroup(contracts, @"trim_text", ^id(NSDictionary *caseInfo) {
+        return WCPLTrimText(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"sanitize_identifier_array", ^id(NSDictionary *caseInfo) {
+        return WCPLSanitizeIdentifierArray(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"sanitize_ignore_dictionary", ^id(NSDictionary *caseInfo) {
+        return WCPLSanitizeIgnoreDictionary(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"sanitize_reply_text", ^id(NSDictionary *caseInfo) {
+        return WCPLSanitizeReplyText(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"query_value_for_key_in_url", ^id(NSDictionary *caseInfo) {
+        return WCPLQueryValueForKeyInURL(wcpl_jsonValueOrNil(caseInfo[@"key"]), wcpl_jsonValueOrNil(caseInfo[@"url"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"decode_basic_xml_entities", ^id(NSDictionary *caseInfo) {
+        return WCPLDecodeBasicXMLEntities(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_xml_value", ^id(NSDictionary *caseInfo) {
+        return WCPLExtractXMLValue(wcpl_jsonValueOrNil(caseInfo[@"xml"]),
+                                   wcpl_jsonValueOrNil(caseInfo[@"open_tag"]),
+                                   wcpl_jsonValueOrNil(caseInfo[@"close_tag"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_quote_title_from_xml", ^id(NSDictionary *caseInfo) {
+        return WCPLExtractQuoteTitleFromXML(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"is_chatroom_name", ^id(NSDictionary *caseInfo) {
+        return @(WCPLIsChatRoomName(wcpl_jsonValueOrNil(caseInfo[@"input"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"normalize_mention_candidate", ^id(NSDictionary *caseInfo) {
+        return WCPLNormalizeMentionCandidate(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_mention_candidate_from_xml", ^id(NSDictionary *caseInfo) {
+        return WCPLExtractMentionCandidateFromXML(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_mention_candidate_from_group_content_prefix", ^id(NSDictionary *caseInfo) {
+        return WCPLExtractMentionCandidateFromGroupContentPrefix(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_voice_attr_uint", ^id(NSDictionary *caseInfo) {
+        return @(WCPLExtractVoiceAttrUInt(wcpl_jsonValueOrNil(caseInfo[@"xml"]),
+                                          wcpl_jsonValueOrNil(caseInfo[@"attr_name"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"build_minimal_voice_content", ^id(NSDictionary *caseInfo) {
+        return WCPLBuildMinimalVoiceContent([caseInfo[@"voice_length_ms"] unsignedIntValue],
+                                            [caseInfo[@"voice_format"] unsignedIntValue]);
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"quote_refer_server_id_from_content", ^id(NSDictionary *caseInfo) {
+        return @(WCPLQuoteReferServerIDFromContent(wcpl_jsonValueOrNil(caseInfo[@"input"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"build_red_envelop_params", ^id(NSDictionary *caseInfo) {
+        return WCPLBuildRedEnvelopParamsFromDictionary(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"resolve_red_envelop_group_scope", ^id(NSDictionary *caseInfo) {
+        return @(WCPLResolveRedEnvelopGroupScope(wcpl_jsonValueOrNil(caseInfo[@"scope"]),
+                                                 wcpl_jsonValueOrNil(caseInfo[@"allowed_groups"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"normalize_red_envelop_notify_target", ^id(NSDictionary *caseInfo) {
+        return @(WCPLNormalizeRedEnvelopNotifyTarget(wcpl_jsonValueOrNil(caseInfo[@"input"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"resolve_quit_monitor_scope", ^id(NSDictionary *caseInfo) {
+        return @(WCPLResolveQuitMonitorScope(wcpl_jsonValueOrNil(caseInfo[@"scope"]),
+                                             wcpl_jsonValueOrNil(caseInfo[@"whitelist_info"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"sanitize_inline_text", ^id(NSDictionary *caseInfo) {
+        return WCPLSanitizeInlineText(wcpl_jsonValueOrNil(caseInfo[@"input"]),
+                                      [caseInfo[@"max_len"] unsignedIntegerValue]);
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_revoker_name_from_replace_text", ^id(NSDictionary *caseInfo) {
+        return WCPLExtractRevokerNameFromReplaceText(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"extract_revoked_content_from_replace_text", ^id(NSDictionary *caseInfo) {
+        return WCPLExtractRevokedContentFromReplaceText(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"is_sysmsg_template_content", ^id(NSDictionary *caseInfo) {
+        return @(WCPLIsSysMsgTemplateContent(wcpl_jsonValueOrNil(caseInfo[@"input"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"plain_text_from_sysmsg_template_content", ^id(NSDictionary *caseInfo) {
+        return WCPLPlainTextFromSysMsgTemplateContent(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"alert_tip_display_text_from_content", ^id(NSDictionary *caseInfo) {
+        return WCPLAlertTipDisplayTextFromContent(wcpl_jsonValueOrNil(caseInfo[@"input"]));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    error = wcpl_validatePureHelperContractGroup(contracts, @"should_tint_alert_tip_display_text", ^id(NSDictionary *caseInfo) {
+        return @(WCPLShouldTintAlertTipDisplayText(wcpl_jsonValueOrNil(caseInfo[@"input"])));
+    });
+    WCPL_ASSERT(error == nil, error.UTF8String);
+    return YES;
+}
+
+static BOOL testGenerateClientMsgID(void) {
+    NSString *explicitSender = WCPLGenerateClientMsgID(@"  alice  ");
+    WCPL_ASSERT([explicitSender hasPrefix:@"alice_"], "explicit sender should be trimmed and used as prefix");
+
+    NSString *fallbackSender = WCPLGenerateClientMsgID(nil);
+    WCPL_ASSERT([fallbackSender hasPrefix:@"wcpl_"], "missing sender should fall back to wcpl prefix");
+
+    NSRegularExpression *regex =
+        [NSRegularExpression regularExpressionWithPattern:@"^[A-Za-z0-9_]+_[0-9]{9,10}_[0-9]+$"
+                                                  options:0
+                                                    error:nil];
+    NSRange explicitRange = NSMakeRange(0, explicitSender.length);
+    NSRange fallbackRange = NSMakeRange(0, fallbackSender.length);
+    WCPL_ASSERT([regex firstMatchInString:explicitSender options:0 range:explicitRange] != nil,
+                "explicit sender client msg id should match expected format");
+    WCPL_ASSERT([regex firstMatchInString:fallbackSender options:0 range:fallbackRange] != nil,
+                "fallback client msg id should match expected format");
+    WCPL_ASSERT(![explicitSender isEqualToString:fallbackSender],
+                "different invocations should not collapse to the same client msg id");
     return YES;
 }
 
@@ -242,6 +466,9 @@ int main(void) {
     failed += !runTest("testParamQueueMatchBySendId", testParamQueueMatchBySendId);
     failed += !runTest("testGroupScopeMigration", testGroupScopeMigration);
     failed += !runTest("testAllowedGroupListAliasing", testAllowedGroupListAliasing);
+    failed += !runTest("testPureHelperSharedContracts", testPureHelperSharedContracts);
+    failed += !runTest("testGenerateClientMsgID", testGenerateClientMsgID);
+    failed += !runTest("testConfigSanitizerHostFunctions", testConfigSanitizerHostFunctions);
     failed += !runTest("testIgnoreDictionarySanitize", testIgnoreDictionarySanitize);
     failed += !runTest("testQuitMonitorScopeMigration", testQuitMonitorScopeMigration);
     failed += !runTest("testReceiveDonePageSummaryDefaultAndPersist", testReceiveDonePageSummaryDefaultAndPersist);

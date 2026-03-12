@@ -9,6 +9,7 @@
 #import "WCPLContactLookup.h"
 #import "WCPLFuncService.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 #import "WCPLServiceCenter.h"
 #import "WeChatRedEnvelop.h"
 #import <dispatch/dispatch.h>
@@ -431,7 +432,7 @@
     if (![userName isKindOfClass:[NSString class]] || userName.length == 0) {
         return NO;
     }
-    BOOL isChatroom = [userName rangeOfString:@"@chatroom"].location != NSNotFound;
+    BOOL isChatroom = WCPLIsChatRoomName(userName);
     if (self.selectType == WCPLUnifiedMultiSelectTypeChatroom) {
         return isChatroom;
     }
@@ -465,15 +466,27 @@
     if (![names isKindOfClass:[NSArray class]]) {
         return @[];
     }
-    NSMutableOrderedSet<NSString *> *results = [NSMutableOrderedSet orderedSet];
+
+    NSMutableArray<NSString *> *rawNames = [NSMutableArray arrayWithCapacity:[(NSArray *)names count]];
     for (id obj in names) {
         NSString *value = [self wcpl_userNameFromObject:obj];
-        if (![self wcpl_shouldKeepUserName:value]) {
-            continue;
+        if (value.length > 0) {
+            [rawNames addObject:value];
         }
-        [results addObject:value];
     }
-    return results.array ?: @[];
+
+    NSArray<NSString *> *sanitized = WCPLSanitizeIdentifierArray(rawNames);
+    if (sanitized.count == 0) {
+        return @[];
+    }
+
+    NSMutableArray<NSString *> *filtered = [NSMutableArray arrayWithCapacity:sanitized.count];
+    for (NSString *value in sanitized) {
+        if ([self wcpl_shouldKeepUserName:value]) {
+            [filtered addObject:value];
+        }
+    }
+    return filtered.copy ?: @[];
 }
 
 - (id)wcpl_contactObjectForUserName:(NSString *)userName
@@ -501,19 +514,16 @@
         return nil;
     }
     if ([obj isKindOfClass:[NSString class]]) {
-        NSString *value = [(NSString *)obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        return value.length > 0 ? value : nil;
+        return WCPLTrimText(obj);
     }
 
     NSArray<NSString *> *keys = @[@"m_nsUsrName", @"m_nsUserName", @"userName", @"username", @"m_nsChatRoomName"];
     for (NSString *key in keys) {
         @try {
             id value = [obj valueForKey:key];
-            if ([value isKindOfClass:[NSString class]]) {
-                NSString *usrName = [(NSString *)value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                if (usrName.length > 0) {
-                    return usrName;
-                }
+            NSString *usrName = WCPLTrimText(value);
+            if (usrName.length > 0) {
+                return usrName;
             }
         } @catch (__unused NSException *exception) {
         }
@@ -522,7 +532,7 @@
 }
 
 - (NSArray<NSString *> *)wcpl_selectedUserNames {
-    NSMutableOrderedSet<NSString *> *names = [NSMutableOrderedSet orderedSet];
+    NSMutableArray<NSString *> *candidateNames = [NSMutableArray array];
 
     NSArray *orderKeys = nil;
     if ([self.selectView respondsToSelector:@selector(multiSelectOrderKey)]) {
@@ -535,12 +545,13 @@
     if ([orderKeys isKindOfClass:[NSArray class]] && orderKeys.count > 0) {
         for (id obj in orderKeys) {
             NSString *name = [self wcpl_userNameFromObject:obj];
-            if ([self wcpl_shouldKeepUserName:name]) {
-                [names addObject:name];
+            if (name.length > 0) {
+                [candidateNames addObject:name];
             }
         }
-        if (names.count > 0) {
-            return names.array;
+        NSArray<NSString *> *orderedNames = [self wcpl_sanitizedUserNames:candidateNames];
+        if (orderedNames.count > 0) {
+            return orderedNames;
         }
     }
 
@@ -571,10 +582,10 @@
         }
 
         if (name.length > 0) {
-            [names addObject:name];
+            [candidateNames addObject:name];
         }
     }
-    return names.array ?: @[];
+    return [self wcpl_sanitizedUserNames:candidateNames];
 }
 
 - (BOOL)wcpl_isContactsLogicReady {

@@ -8,6 +8,7 @@
 #import "WCPLRedEnvelopConfig.h"
 #import "WCPLConfigSanitizer.h"
 #import "WCPLLogger.h"
+#import "WCPLSharedConfigHelpers.h"
 #import <dispatch/dispatch.h>
 
 static NSString *const kWCPLDelaySeconds            = @"kWCPLDelaySeconds";
@@ -23,19 +24,6 @@ static NSString *const kWCPLPrivateAutoReplyText    = @"kWCPLPrivateAutoReplyTex
 static NSString *const kWCPLGroupAutoReplyText      = @"kWCPLGroupAutoReplyText";
 static NSString *const kWCPLRedEnvelopNotifyTarget  = @"kWCPLRedEnvelopNotifyTarget";
 static NSString *const kWCPLReceiveDonePageSummaryEnable = @"kWCPLReceiveDonePageSummaryEnable";
-
-static NSString *WCPLSanitizeReplyText(id value) {
-    if (![value isKindOfClass:[NSString class]]) {
-        return @"";
-    }
-
-    NSString *text = [(NSString *)value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if (text.length == 0) {
-        return @"";
-    }
-
-    return text;
-}
 
 @interface WCPLRedEnvelopConfig ()
 
@@ -74,22 +62,14 @@ static NSString *WCPLSanitizeReplyText(id value) {
         _groupDenyList = WCPLSanitizeUserNameArray([defaults objectForKey:kWCPLGroupDenyList]);
 
         id scopeValue = [defaults objectForKey:kWCPLGroupRedEnvelopScope];
-        NSInteger defaultScope = (_blackList.count > 0) ? 1 : 0;
-        _groupRedEnvelopScope = scopeValue ? [scopeValue integerValue] : defaultScope;
-        if (_groupRedEnvelopScope < 0 || _groupRedEnvelopScope > 2) {
-            _groupRedEnvelopScope = defaultScope;
-        }
+        _groupRedEnvelopScope = WCPLResolveRedEnvelopGroupScope(scopeValue, _blackList);
 
         _receiveSelfRedEnvelop = [defaults boolForKey:kWCPLReceiveSelfRedEnvelop];
         _privateAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLPrivateAutoReplyText]);
         _groupAutoReplyText = WCPLSanitizeReplyText([defaults objectForKey:kWCPLGroupAutoReplyText]);
 
         id notifyTargetValue = [defaults objectForKey:kWCPLRedEnvelopNotifyTarget];
-        NSInteger notifyTarget = notifyTargetValue ? [notifyTargetValue integerValue] : WCPLRedEnvelopNotifyTargetDisabled;
-        if (notifyTarget < WCPLRedEnvelopNotifyTargetDisabled || notifyTarget > WCPLRedEnvelopNotifyTargetFileHelper) {
-            notifyTarget = WCPLRedEnvelopNotifyTargetDisabled;
-        }
-        _redEnvelopNotifyTarget = notifyTarget;
+        _redEnvelopNotifyTarget = WCPLNormalizeRedEnvelopNotifyTarget(notifyTargetValue);
 
         id receiveDonePageSummaryEnableValue = [defaults objectForKey:kWCPLReceiveDonePageSummaryEnable];
         _receiveDonePageSummaryEnable = receiveDonePageSummaryEnableValue ? [receiveDonePageSummaryEnableValue boolValue] : YES;
@@ -235,10 +215,7 @@ static NSString *WCPLSanitizeReplyText(id value) {
 }
 
 - (void)setRedEnvelopNotifyTarget:(NSInteger)redEnvelopNotifyTarget {
-    NSInteger normalized = redEnvelopNotifyTarget;
-    if (normalized < WCPLRedEnvelopNotifyTargetDisabled || normalized > WCPLRedEnvelopNotifyTargetFileHelper) {
-        normalized = WCPLRedEnvelopNotifyTargetDisabled;
-    }
+    NSInteger normalized = WCPLNormalizeRedEnvelopNotifyTarget(@(redEnvelopNotifyTarget));
     _redEnvelopNotifyTarget = normalized;
     [self wcpl_setInteger:normalized forKey:kWCPLRedEnvelopNotifyTarget];
     WCPLLogInfo(@"[红包配置] Save notify target=%ld", (long)normalized);

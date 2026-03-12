@@ -10,6 +10,7 @@
 #import "WCPLDispatchUtils.h"
 #import "WCPLHookGovernance.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -2689,10 +2690,20 @@ static void wcpl_logHongbaoCommonErrorResponse(NSString *tag, id resObj, id reqO
                 break;
             }
 
-            NSString *msgType = wcpl_stringForKeyInDictionary(nativeUrlDict, @"msgtype") ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"msgType");
-            NSString *sendId = wcpl_stringForKeyInDictionary(nativeUrlDict, @"sendid") ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"sendId");
-            NSString *channelId = wcpl_stringForKeyInDictionary(nativeUrlDict, @"channelid") ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"channelId");
-            NSString *sign = wcpl_stringForKeyInDictionary(nativeUrlDict, @"sign");
+            NSString *msgType = WCPLQueryValueForKeyInURL(@"msgtype", nativeUrl)
+                ?: WCPLQueryValueForKeyInURL(@"msgType", nativeUrl)
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"msgtype")
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"msgType");
+            NSString *sendId = WCPLQueryValueForKeyInURL(@"sendid", nativeUrl)
+                ?: WCPLQueryValueForKeyInURL(@"sendId", nativeUrl)
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"sendid")
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"sendId");
+            NSString *channelId = WCPLQueryValueForKeyInURL(@"channelid", nativeUrl)
+                ?: WCPLQueryValueForKeyInURL(@"channelId", nativeUrl)
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"channelid")
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"channelId");
+            NSString *sign = WCPLQueryValueForKeyInURL(@"sign", nativeUrl)
+                ?: wcpl_stringForKeyInDictionary(nativeUrlDict, @"sign");
             if (msgType.length == 0 || sendId.length == 0 || channelId.length == 0) {
                 WCPLLogDebug(@"红包解析失败: msgType=%@ sendId=%@ channelId=%@ url=%@",
                              msgType ?: @"",

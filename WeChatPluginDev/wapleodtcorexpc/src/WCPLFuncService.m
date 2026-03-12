@@ -9,6 +9,7 @@
 #import "WCPLConfigCenter.h"
 #import "WCPLServiceCenter.h"
 #import "WCPLLogger.h"
+#import "WCPLPureHelpers.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
 
@@ -19,11 +20,7 @@
 @implementation WCPLFuncService
 
 static NSString *wcpl_safeUserNameString(id value) {
-    if (![value isKindOfClass:[NSString class]]) {
-        return nil;
-    }
-    NSString *trimmed = [(NSString *)value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return trimmed.length > 0 ? trimmed : nil;
+    return WCPLTrimText(value);
 }
 
 static NSString *wcpl_groupSenderFromContent(NSString *content) {
@@ -35,16 +32,7 @@ static NSString *wcpl_groupSenderFromContent(NSString *content) {
         return nil;
     }
 
-    NSString *candidate = wcpl_safeUserNameString([content substringToIndex:sep.location]);
-    if (candidate.length == 0) {
-        return nil;
-    }
-    if ([candidate rangeOfString:@"\n"].location != NSNotFound ||
-        [candidate rangeOfString:@"\t"].location != NSNotFound ||
-        [candidate rangeOfString:@" "].location != NSNotFound) {
-        return nil;
-    }
-    return candidate;
+    return WCPLNormalizeMentionCandidate([content substringToIndex:sep.location + 1]);
 }
 
 static unsigned int wcpl_messageTypeFromWrap(id msgWrap) {
@@ -122,14 +110,14 @@ static id wcpl_contactForUserName(NSString *userName) {
 }
 
 static NSSet<NSString *> *wcpl_normalizedFriendUserSet(NSArray<NSString *> *userNames) {
-    if (![userNames isKindOfClass:[NSArray class]]) {
+    NSArray<NSString *> *sanitized = WCPLSanitizeIdentifierArray(userNames);
+    if (sanitized.count == 0) {
         return [NSSet set];
     }
 
-    NSMutableSet<NSString *> *set = [NSMutableSet setWithCapacity:userNames.count];
-    for (NSString *userName in userNames) {
-        NSString *target = wcpl_safeUserNameString(userName);
-        if (target.length == 0 || [target rangeOfString:@"@chatroom"].location != NSNotFound) {
+    NSMutableSet<NSString *> *set = [NSMutableSet setWithCapacity:sanitized.count];
+    for (NSString *target in sanitized) {
+        if (WCPLIsChatRoomName(target)) {
             continue;
         }
         [set addObject:target];
@@ -150,7 +138,7 @@ static BOOL wcpl_changeNotifyStatus(id contactMgr, id contact, BOOL notifyOpen) 
 
 + (BOOL)syncIgnoreUserToSystemNotifyStatus:(NSString *)userName enabled:(BOOL)enabled {
     NSString *target = wcpl_safeUserNameString(userName);
-    if (target.length == 0 || [target rangeOfString:@"@chatroom"].location != NSNotFound) {
+    if (target.length == 0 || WCPLIsChatRoomName(target)) {
         return NO;
     }
 
@@ -281,7 +269,7 @@ static BOOL wcpl_changeNotifyStatus(id contactMgr, id contact, BOOL notifyOpen) 
         return !wcpl_isRedEnvelopMessageWrap(msgWrap, nsContentIvar);
     }
 
-    BOOL isGroupMessage = (fromUsr.length > 0 && [fromUsr rangeOfString:@"@chatroom"].location != NSNotFound);
+    BOOL isGroupMessage = WCPLIsChatRoomName(fromUsr);
     if (isGroupMessage) {
         NSString *groupSender = realChatUsr;
         if (groupSender.length == 0) {
